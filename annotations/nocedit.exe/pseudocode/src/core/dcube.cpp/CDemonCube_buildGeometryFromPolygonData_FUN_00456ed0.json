@@ -287,6 +287,15 @@
       "severity": "moderate",
       "text": "} while (iVar4 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_1c + -0x14));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 70,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonCubeTriangle *)",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

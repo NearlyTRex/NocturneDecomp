@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 419,
+    "complexity_score": 439,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 99,
-    "suspect_count": 30,
+    "suspect_count": 32,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
@@ -388,6 +388,22 @@
       "match": "(uint *)(uVar4 + (int)ppHVar1",
       "severity": "moderate",
       "text": "ValidateHeapIntegrity((uint *)(uVar4 + (int)ppHVar1) + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 64,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + *in_stack_00000010);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 71,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + uVar1);",
       "type": "pointer_cast"
     }
   ]

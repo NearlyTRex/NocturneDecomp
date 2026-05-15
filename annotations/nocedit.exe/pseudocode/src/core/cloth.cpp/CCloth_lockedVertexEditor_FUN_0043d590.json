@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 369,
+    "complexity_score": 399,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 31,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 299,
-    "suspect_count": 6,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk"
@@ -576,6 +576,30 @@
       "match": "(int *)(iVar12 + (int)this_ptr",
       "severity": "moderate",
       "text": "iVar9 = *(int *)(iVar12 + (int)this_ptr->vertex_sort_buffer);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 160,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar12 + 3) & 0x80) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 161,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar12) >> 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 162,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar9 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar12) >> 0x10;",
       "type": "pointer_cast"
     },
     {

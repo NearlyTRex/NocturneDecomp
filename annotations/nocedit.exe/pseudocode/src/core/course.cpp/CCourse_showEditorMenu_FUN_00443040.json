@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 638,
-    "complexity_score": 303,
+    "complexity_score": 358,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 50,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 278,
-    "suspect_count": 2,
+    "suspect_count": 7,
     "suspect_types": [
+      "pointer_cast",
       "unrolled_memcpy"
     ],
     "total_lines": 916
@@ -774,6 +775,46 @@
       "severity": "moderate",
       "text": "local_9c.max.x = (pCVar3->pos).x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 199,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(&local_74,(CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar6),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 201,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 234,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "point = (CVector3f *)((int)&(this_ptr->frames->pos).x + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 253,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(&local_38,(CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar6));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 256,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -85,6 +85,8 @@ SUSPECT_SEVERITY = {
     'fast_sqrt_inline': 'moderate',
     'fast_inv_sqrt_inline': 'moderate',
     'bitcast_double_pair': 'moderate',
+    'bitcast_double': 'moderate',
+    'sibling_array_undersized': 'moderate',
     'self_copy_guard': 'moderate',
     'shadow_pointer_walk': 'moderate',
     'memcpy_oversized_source': 'moderate',
@@ -157,8 +159,13 @@ _SUSPECT_PATTERN_DEFS = [
     # The TYPE allows multi-word forms like `unsigned int *`, `long long *`.
     # `\*+` covers single and double-pointer casts (`(int *)`, `(int **)`) —
     # both shapes appear when Ghidra walks a global array of pointers via
-    # byte-offset arithmetic.
-    (r'\(\w+(?:\s+\w+)*\s*\*+\s*\)\s*\([^)]*\(int\)\s*\w+(?!\w|\s*\()',
+    # byte-offset arithmetic. After `(int)` the operand may be either a bare
+    # identifier (`(int)pSVar2`) or a parenthesized expression followed by
+    # struct access (`(int)(local_1f4.tri_data)->attribute_indices`); both
+    # forms are byte-offset trampolines that should be rewritten as typed
+    # field/index access in a .keep.
+    (r'\(\w+(?:\s+\w+)*\s*\*+\s*\)\s*\([^)]*\(int\)\s*'
+     r'(?:\([^()]*\)\s*(?:->|\.)\s*\w+|\w+)(?!\w|\s*\()',
      'pointer_cast', 'Complex pointer cast'),
     # _._N_N_ field access patterns (mangled/unknown field names)
     (r'\._\d+_\d+_', 'unknown_field', 'Unknown/mangled field access'),
@@ -222,6 +229,15 @@ _SUSPECT_PATTERN_DEFS = [
     # Fixable in a .keep by merging the two uint declarations into one double.
     (r'__BITCAST_DOUBLE\s*\(\s*CONCAT44\s*\(', 'bitcast_double_pair',
      'Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) — fixable by merging into a single double local'),
+    # Any other use of the __BITCAST_DOUBLE intrinsic. The macro is a preprocessor
+    # hack to bridge Ghidra's split-double representations through compilation —
+    # nothing in clean code should reach for it. The CONCAT44 form above has a
+    # distinct fix recipe (merge two uints into one double local), so this rule
+    # explicitly excludes that shape via negative lookahead. Common remaining
+    # shape: `__BITCAST_DOUBLE(0xNNNNNNNNNNNNNNNNULL)` for a hardcoded constant —
+    # round-trip the hex bits to a decimal literal and drop the bitcast.
+    (r'__BITCAST_DOUBLE\s*\((?!\s*CONCAT44\s*\()', 'bitcast_double',
+     '__BITCAST_DOUBLE intrinsic — preprocessor hack to bridge split-double representations. Replace with a typed double or plain decimal literal in a .keep.'),
     # SUB84(): extracting 32-bit value from 64-bit (truncation artifact)
     (r'\bSUB84\s*\(', 'sub84_truncation',
      'SUB84 truncation (extracting 32-bit from 64-bit value)'),
@@ -2168,13 +2184,123 @@ def identify_self_copy_guard(decompiled_code):
     return suspects
 
 
+# Local-array declaration of the form `T NAME[N];`. Accepts multi-word
+# types (`unsigned int`, `struct CFoo`) and optional pointer asterisks.
+_LOCAL_ARRAY_DECL_RE = re.compile(
+    r'^\s+([A-Za-z_][\w\s\*]*?)\s+([A-Za-z_]\w*)\s*\[\s*(\d+)\s*\]\s*;\s*$'
+)
+
+# Primitive element types where varying array sizes are routine and
+# almost always intentional (char string buffers, int counters, float
+# coefficient tables). Excluded from the sibling-mismatch detector to
+# keep false positives down.
+_SIBLING_ARRAY_PRIMITIVE_TYPES = frozenset((
+    'char', 'uchar', 'unsigned char', 'signed char', 'byte',
+    'short', 'ushort', 'unsigned short', 'signed short',
+    'int', 'uint', 'unsigned int', 'signed int',
+    'long', 'ulong', 'unsigned long', 'signed long',
+    'longlong', 'ulonglong', 'unsigned long long', 'long long',
+    'float', 'double', 'long double', 'bool', 'void',
+    'size_t', 'ssize_t', 'ptrdiff_t', 'intptr_t', 'uintptr_t',
+    'wchar_t',
+))
+
+
+def identify_sibling_array_undersized(decompiled_code):
+    """Detect Ghidra-split array shapes via sibling-size mismatch.
+
+    When Watcom emitted a single `T arr[N]` source array, Ghidra
+    occasionally splits it into one or more smaller pieces (e.g. the
+    canonical `local_186c[95]` next to `local_122c[100]` /
+    `local_bec[100]` in `CDeformableModelInstance::updateMotion`). The
+    asm still drives all three arrays from the same loop bound (typically
+    a per-bone or per-vertex count read from the object), so writes to
+    the undersized array overrun its declared bound and trip ASan as
+    `stack-buffer-overflow`. cppcheck's `objectIndex` only catches the
+    `(&NAME)[N]` form where Ghidra produced a *single-element* split;
+    properly-arrayed-but-undersized siblings slip through.
+
+    Heuristic: in each function, group local-array declarations by their
+    element type. If a non-primitive type has 2+ arrays at one size and
+    1+ arrays strictly smaller than that size, flag each smaller array.
+    Restricted to struct/class types — primitive arrays (char buffers,
+    int counters) routinely vary in size for legitimate reasons.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, located at the offending decl line.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+
+    # Collect array decls. We don't split into per-function scopes here —
+    # a single decompile typically holds one function body — but if that
+    # changes, callers can pre-split the input.
+    decls = []
+    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+        stripped = line.lstrip()
+        if (stripped.startswith('//') or stripped.startswith('/*') or
+                stripped.startswith('* ')):
+            continue
+        m = _LOCAL_ARRAY_DECL_RE.match(line)
+        if not m:
+            continue
+        elem_type = ' '.join(m.group(1).split())  # collapse whitespace
+        if elem_type in _SIBLING_ARRAY_PRIMITIVE_TYPES:
+            continue
+        # Skip pointer-of-T arrays — they're typically jump tables /
+        # vtables with intentional varied sizes.
+        if '*' in elem_type:
+            continue
+        decls.append((line_no, elem_type, m.group(2), int(m.group(3))))
+
+    # Group by element type.
+    by_type = {}
+    for d in decls:
+        by_type.setdefault(d[1], []).append(d)
+
+    for elem_type, group in by_type.items():
+        if len(group) < 2:
+            continue
+        sizes = [g[3] for g in group]
+        max_size = max(sizes)
+        # Require at least 2 arrays at the max to call it the "right" size.
+        # A single 100 against a single 95 is ambiguous; 100, 100, 95 is not.
+        if sum(1 for s in sizes if s == max_size) < 2:
+            continue
+        for line_no, _, name, size in group:
+            if size >= max_size:
+                continue
+            suspects.append({
+                'line': line_no,
+                'type': 'sibling_array_undersized',
+                'match': '%s %s[%d] vs sibling %s[%d]' % (
+                    elem_type, name, size, elem_type, max_size),
+                'text': ('%s %s[%d];' % (elem_type, name, size))[:120],
+                'description': (
+                    '%s %s[%d] is smaller than sibling %s arrays in this '
+                    'function (largest is [%d]). Likely Ghidra split a '
+                    '%s[%d] source array; cross-check the asm loop bound '
+                    'and resize in a .keep.' % (
+                        elem_type, name, size, elem_type, max_size,
+                        elem_type, max_size)),
+                'severity': 'moderate',
+            })
+    return suspects
+
+
 # Multi-line variant of the `pointer_cast` regex. The single-line detector
 # in `identify_suspect_lines` iterates per-line, so it misses cases where
 # Ghidra split `(TYPE *)` onto one line and the `((int)NAME ...)` operand
 # onto the next — a common shape on long deep-struct paths. Same regex
-# body as the single-line version, applied to the full text.
+# body as the single-line version, applied to the full text. The operand
+# alternation matches both `(int)NAME` and `(int)(EXPR)->field` forms.
 _POINTER_CAST_FULLTEXT_RE = re.compile(
-    r'\(\w+(?:\s+\w+)*\s*\*+\s*\)\s*\([^)]*\(int\)\s*\w+(?!\w|\s*\()')
+    r'\(\w+(?:\s+\w+)*\s*\*+\s*\)\s*\([^)]*\(int\)\s*'
+    r'(?:\([^()]*\)\s*(?:->|\.)\s*\w+|\w+)(?!\w|\s*\()')
 
 
 def identify_pointer_cast_multiline(decompiled_code):
@@ -2247,9 +2373,16 @@ _INT_ADDR_ARITH_RE = re.compile(
     # index (e.g. `[i + 1]`) doesn't trigger the arithmetic-context match.
     # The address tail accepts struct fields, arrow chains, and bracketed
     # indices; outer arithmetic must come after the closing `]`.
-    r'\(int\)\s*&\w+(?:\.\w+|->\w+|\[[^\]]*\])*\s*[\+\-]'
+    # The base after `&` may be either a bare identifier (`&local_ec`) or
+    # a parenthesized expression followed by a struct access — Watcom emits
+    # the latter when the original source took the address of a sub-field
+    # of a deep struct walk, e.g.
+    #   `(int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0`.
+    r'\(int\)\s*&(?:\([^()]*\)\s*(?:->|\.)\s*\w+|\w+)'
+    r'(?:\.\w+|->\w+|\[[^\]]*\])*\s*[\+\-]'
     r'|'
-    r'[\+\-]\s*\(int\)\s*&\w+(?:\.\w+|->\w+|\[[^\]]*\])*'
+    r'[\+\-]\s*\(int\)\s*&(?:\([^()]*\)\s*(?:->|\.)\s*\w+|\w+)'
+    r'(?:\.\w+|->\w+|\[[^\]]*\])*'
 )
 
 
@@ -3532,6 +3665,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_unrolled_field_copy(code))
     found.extend(identify_cascade_constant_fill(code))
     found.extend(identify_self_copy_guard(code))
+    found.extend(identify_sibling_array_undersized(code))
     found.extend(identify_pointer_cast_multiline(code))
     found.extend(identify_int_address_arithmetic(code))
     found.extend(identify_shadow_pointer_walk(code))

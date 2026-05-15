@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 307,
+    "complexity_score": 317,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 117,
-    "suspect_count": 18,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
@@ -485,6 +485,14 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_ac + iVar4) << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 116,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);",
       "type": "pointer_cast"
     }
   ]

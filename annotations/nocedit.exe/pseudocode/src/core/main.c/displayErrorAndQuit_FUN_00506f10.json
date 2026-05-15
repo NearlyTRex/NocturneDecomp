@@ -4903,31 +4903,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "displayErrorAndQuit_FUN_00506f10.keep.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointerArithmetic",
-          "column": 23,
-          "line": 81,
-          "message": "Pointer addition with NULL pointer.",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Pointer addition with NULL pointer.",
-      "line": 81,
-      "match": "Cppcheck: null pointer arithmetic",
-      "severity": "major",
-      "text": "pcVar1 = pcVar5 + 1;",
-      "type": "static_null_pointer_arithmetic"
-    }
-  ]
+  "suspects": []
 }

@@ -224,6 +224,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 96,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)&(pSVar2->projected_vertex).transformed_x + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `local_18->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 143,
       "match": "local_18 = (T *)((local_18->FIELD).ARRAY[N] + CONST)",

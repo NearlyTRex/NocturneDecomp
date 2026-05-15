@@ -293,6 +293,15 @@
       "severity": "moderate",
       "text": "*(float *)((int)local_28.max.z + 0x14) = (this_ptr_00->min).z;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 17,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00 = (CBoundingBox3D *)((int)&(model_ptr->frame_bounds->min).x + (int)local_28.max.x)",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

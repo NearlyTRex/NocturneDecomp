@@ -484,6 +484,15 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 166,
+      "match": "(int *)((int)(this_ptr->data).v_string_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar9 = (int *)((int)(this_ptr->data).v_string_ptr + ((this_ptr->param1).v_int * 10 + 1) * 4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 174,
       "match": "(char *)((int)piVar9",
       "resolution_source": "keep",

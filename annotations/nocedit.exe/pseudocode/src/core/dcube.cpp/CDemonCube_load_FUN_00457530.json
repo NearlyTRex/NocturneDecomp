@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 128,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 48,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
@@ -135,6 +135,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(CDemonCubeTriangle *)((int)(this_ptr->triangle_buffer->triangle).vertices",
+      "severity": "moderate",
+      "text": "((CDemonCubeTriangle *)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar3)",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 40,

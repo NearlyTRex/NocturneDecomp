@@ -22,8 +22,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
   CQuaternion4f *pCVar12;
   CQuaternion4f *pCVar11;
   float local_1870;
-  CQuaternion4f local_186c [95];
-  CQuaternion4f local_122c;
+  CQuaternion4f local_186c [100];
+  CQuaternion4f local_122c [100];
   CQuaternion4f local_bec [100];
   int aiStack_5ac [100];
   int aiStack_41c [100];
@@ -167,7 +167,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
         if (-1 < iVar11) {
           pCVar12 = core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050
                               (this_ptr_00,local_18,local_70);
-          (&local_122c)[local_18] = *pCVar12;
+          local_122c[local_18] = *pCVar12;
           core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
                     (this_ptr_00,local_18,local_84,local_88,local_1870,&local_16c);
           local_186c[local_18] = local_16c;
@@ -180,7 +180,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
     if (-1 < iVar10) {
       pCVar11 = core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050
                           (this_ptr_00,iVar10,local_70);
-      (&local_122c)[iVar10] = *pCVar11;
+      local_122c[iVar10] = *pCVar11;
       core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
                 (this_ptr_00,local_78,local_84,local_88,local_1870,&local_22c);
       local_186c[iVar10] = local_22c;
@@ -191,12 +191,12 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
       do {
         if (-1 < aiStack_41c[local_30]) {
           local_28 = this_ptr_00->bone_list[local_30].parent_index;
-          local_1cc = (&local_122c)[local_30];
+          local_1cc = local_122c[local_30];
           local_dc = local_186c[local_30];
           local_ec = (this_ptr->bone_transform).pose_data.bone_rotations[local_30];
           if (-1 < (int)local_ec.z) {
             core_xform_cpp_negateFirstComponent_FUN_005f75e0
-                      (&local_122c + (int)local_ec.z,&local_fc);
+                      (local_122c + (int)local_ec.z,&local_fc);
             core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_1cc,&local_fc,&local_25c);
             local_1cc = local_25c;
             core_xform_cpp_negateFirstComponent_FUN_005f75e0

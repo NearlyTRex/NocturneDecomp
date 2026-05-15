@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (413 diagnostics)
+Cppcheck (quick) (402 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -693,7 +693,7 @@ uninitvar (68)
     Uninitialized variable: local_288
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (67)
+selfAssignment (64)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -795,18 +795,6 @@ selfAssignment (67)
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 201
     File: core/skeledit.cpp
     Redundant assignment of 'puVar12' to itself.
-
-  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 519
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar17' to itself.
-
-  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 520
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar21' to itself.
-
-  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 601
-    File: core/skeledit.cpp
-    Redundant assignment of 'pCVar8' to itself.
 
   core_skeledit.cpp_CDeformableModel_determinePartsF line 1141
     File: core/skeledit.cpp
@@ -1437,7 +1425,7 @@ identicalInnerCondition (24)
     Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (20)
+invalidPointerCast (18)
 ----------------------------------------------------------------------------------------------------
 
   core_chain.cpp_fastSqrt_FUN_00431350               line 13
@@ -1487,14 +1475,6 @@ invalidPointerCast (20)
   core_skeledit.cpp_CDeformableModelInstance_viewMod line 790
     File: core/skeledit.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 408
-    File: core/skeledit.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 409
-    File: core/skeledit.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
 
   core_skeledit.cpp_CDeformableModel_extractLodLevel line 176
     File: core/skeledit.cpp
@@ -1677,48 +1657,12 @@ invalidScanfArgType_int (3)
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
-objectIndex (3)
-----------------------------------------------------------------------------------------------------
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 170
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 183
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 194
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-----------------------------------------------------------------------------------------------------
-arrayIndexOutOfBounds (2)
-----------------------------------------------------------------------------------------------------
-
-  core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQu line 209
-    File: core/dmodel.cpp
-    Array 'local_f0[4]' accessed at index 6, which is out of bounds.
-
-  core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQu line 210
-    File: core/dmodel.cpp
-    Array 'local_f0[4]' accessed at index 9, which is out of bounds.
-
-----------------------------------------------------------------------------------------------------
 oppositeInnerCondition (1)
 ----------------------------------------------------------------------------------------------------
 
   core_script.cpp_CScript_parseActionTemplate_FUN_00 line 21
     File: core/script.cpp
     Opposite inner 'if' condition leads to a dead code block.
-
-----------------------------------------------------------------------------------------------------
-nullPointerArithmetic (1)
-----------------------------------------------------------------------------------------------------
-
-  core_main.c_displayErrorAndQuit_FUN_00506f10       line 81
-    File: core/main.c
-    Pointer addition with NULL pointer.
 
 ----------------------------------------------------------------------------------------------------
 nullPointerArithmeticRedundantCheck (1)

@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 55,
+    "complexity_score": 80,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
-      "negative_offset"
+      "negative_offset",
+      "pointer_cast"
     ],
     "total_lines": 92
   },
@@ -184,6 +185,22 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(int *)((int)(this_ptr->base).layout_info",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)(this_ptr->base).layout_info + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(int *)((int)(this_ptr->base).layout_info",
+      "severity": "moderate",
+      "text": "*(int *)((int)(this_ptr->base).layout_info + 4) + -0x10) = &g_FStreamBase_IOSDestructor;",
+      "type": "pointer_cast"
+    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 18,

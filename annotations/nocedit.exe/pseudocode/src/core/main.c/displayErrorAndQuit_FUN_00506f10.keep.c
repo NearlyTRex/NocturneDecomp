@@ -17,7 +17,6 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
   int *piVar2;
   int *puVar3;
   char *pcVar4;
-  char *pcVar5;
   char *pcVar1;
   va_list_t local_14;
   time_t local_10;
@@ -74,11 +73,7 @@ LAB_00506f71:
         wincore_winrun_cpp_endPeriod_FUN_005f2db0();
         wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(g_ErrorMessageBuffer_02dd3130);
       }
-      pcVar5 = strchr(g_CurrentFilename,'\\');
-      if (pcVar5 == (char *)0x0) {
-        pcVar5 = (char *)0x0;
-      }
-      pcVar1 = pcVar5 + 1;
+      pcVar1 = pcVar4 + 1;
       g_CurrentFilename = pcVar1;
     }
   } while( true );

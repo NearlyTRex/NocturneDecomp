@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 149
-  Total diagnostics: 413
+  Functions with findings: 145
+  Total diagnostics: 402
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 149, raw .cpp files: 0
+  .keep.cpp files: 145, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -262,16 +262,6 @@ core_path.cpp_CPathMap_findPathToDestination_FUN_00547320  [.keep] [Cppcheck (qu
   Line  191: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190  [.keep] [Cppcheck (quick)]
-  File: core/skeledit.cpp  (5 diagnostics)
-
-  Line  408: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line  409: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line  519: [selfAssignment] Redundant assignment of 'pSVar17' to itself.
-  Line  520: [selfAssignment] Redundant assignment of 'pSVar21' to itself.
-  Line  601: [selfAssignment] Redundant assignment of 'pCVar8' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_sound.cpp_updateListeners_FUN_005b1870  [.keep] [Cppcheck (quick)]
   File: core/sound.cpp  (5 diagnostics)
 
@@ -472,14 +462,6 @@ core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00  [.ke
   Line  117: [uninitvar] Uninitialized variable: local_64
 
 ----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0  [.keep] [Cppcheck (quick)]
-  File: core/skeleton.cpp  (3 diagnostics)
-
-  Line  170: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  183: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  194: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-
-----------------------------------------------------------------------------------------------------
 core_stranger.cpp_CStranger_processFrame_FUN_005bb960  [.keep] [Cppcheck (quick)]
   File: core/stranger.cpp  (3 diagnostics)
 
@@ -596,13 +578,6 @@ core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440  [.keep] [Cppcheck (
 
   Line   54: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   58: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0  [.keep] [Cppcheck (quick)]
-  File: core/dmodel.cpp  (2 diagnostics)
-
-  Line  209: [arrayIndexOutOfBounds] Array 'local_f0[4]' accessed at index 6, which is out of bounds.
-  Line  210: [arrayIndexOutOfBounds] Array 'local_f0[4]' accessed at index 9, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 core_dskybox.cpp_renderSkyDome_FUN_004901f0  [.keep] [Cppcheck (quick)]
@@ -893,12 +868,6 @@ core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0  [.keep] [Cppcheck (qui
   File: core/lightgun.cpp  (1 diagnostics)
 
   Line   24: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-core_main.c_displayErrorAndQuit_FUN_00506f10  [.keep] [Cppcheck (quick)]
-  File: core/main.c  (1 diagnostics)
-
-  Line   81: [nullPointerArithmetic] Pointer addition with NULL pointer.
 
 ----------------------------------------------------------------------------------------------------
 core_mission.cpp_CDemonMission_loadActor_FUN_00523990  [.keep] [Cppcheck (quick)]

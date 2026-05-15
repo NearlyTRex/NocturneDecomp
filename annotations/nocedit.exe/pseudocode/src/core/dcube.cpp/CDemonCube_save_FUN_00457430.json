@@ -100,6 +100,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(CDemonCubeTriangle *)((int)(this_ptr->triangle_buffer->triangle).vertices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonCubeTriangle *)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar2)",
+      "type": "pointer_cast"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 17,
       "match": "(int)&NAME used in byte-offset arithmetic",

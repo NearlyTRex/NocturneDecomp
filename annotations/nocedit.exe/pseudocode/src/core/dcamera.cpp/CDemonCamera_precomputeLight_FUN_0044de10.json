@@ -228,6 +228,15 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(void *)((int)(light_source->base).base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_48 = (void *)((int)(light_source->base).base.rotation_matrix.m + (int)local_78 * 4 + -0x10",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 133,
       "match": "(int *)((int)light_source",
       "resolution_source": "keep",

@@ -279,6 +279,15 @@
       "severity": "moderate",
       "text": "*(uint *)((int)pdVar7 + 0x34) = pCVar5->state_flags;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 95,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar7 = (double *)((int)&(this_ptr->vertex_data->position).x + local_18);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

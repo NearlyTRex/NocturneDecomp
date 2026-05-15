@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 80,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "pointer_cast",
       "unrolled_memcpy"
     ],
     "total_lines": 137
@@ -202,6 +203,14 @@
       "severity": "moderate",
       "text": "g_TempNormal2.y = pCVar1->y;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 17,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "((STriangleRef *)",
+      "type": "pointer_cast"
     }
   ]
 }

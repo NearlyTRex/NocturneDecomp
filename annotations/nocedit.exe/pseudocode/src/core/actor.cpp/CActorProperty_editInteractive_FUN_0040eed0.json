@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2062,
-    "complexity_score": 752,
+    "complexity_score": 767,
     "cross_reference_count": 3,
     "function_call_count": 31,
     "global_count": 44,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 752,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 2814
   },
   "cross_references": [
@@ -1110,5 +1112,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 534,
+      "match": "(char **)(iVar19 + (int)(this_ptr->param2).v_ptr",
+      "severity": "moderate",
+      "text": "(&local_1e54.base,*(char **)(iVar19 + (int)(this_ptr->param2).v_ptr));",
+      "type": "pointer_cast"
+    }
+  ]
 }

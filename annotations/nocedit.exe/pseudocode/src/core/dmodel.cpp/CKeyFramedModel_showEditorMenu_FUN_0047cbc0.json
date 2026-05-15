@@ -8,13 +8,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2523,
-    "complexity_score": 1117,
+    "complexity_score": 1147,
     "cross_reference_count": 2,
     "function_call_count": 72,
     "global_count": 128,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 857,
-    "suspect_count": 23,
+    "suspect_count": 26,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset",
@@ -2151,6 +2151,30 @@
       "severity": "moderate",
       "text": "local_108.x = pCVar17->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 203,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar11 + 3) & 0x80) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 204,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 205,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "x = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar11) >> 0x10;",
+      "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

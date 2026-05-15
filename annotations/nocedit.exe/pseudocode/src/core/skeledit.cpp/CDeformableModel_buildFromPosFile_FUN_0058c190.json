@@ -8,19 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1804,
-    "complexity_score": 1005,
+    "complexity_score": 715,
     "cross_reference_count": 0,
     "function_call_count": 64,
     "global_count": 65,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 715,
-    "suspect_count": 27,
-    "suspect_types": [
-      "pointer_cast",
-      "preinc_loop_idiom",
-      "unrolled_memcpy",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2519
   },
   "cross_references": [],
@@ -820,6 +815,33 @@
       "type": "unknown_field"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 377,
+      "match": "(uint *)((int)pSVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)pcVar21 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 378,
+      "match": "(uint *)((int)pSVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(pcVar21 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 379,
+      "match": "(uint *)((int)pSVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(pcVar21 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 390,
       "match": "._0_4_",
@@ -827,6 +849,42 @@
       "severity": "mild",
       "text": "if (((iVar8 != 1) || (local_94 < 1)) || ((int)local_a228._0_4_ < local_94)) {",
       "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 423,
+      "match": "(uint *)((int)(local_1f4.tri_data)->attribute_indices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_58);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 427,
+      "match": "(uint *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 465,
+      "match": "(uint *)((int)(local_1f4.tri_data)->attribute_indices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar13 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 469,
+      "match": "(uint *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_50);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
@@ -838,6 +896,24 @@
       "type": "unknown_field"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 510,
+      "match": "(SMRGLTextureLod *)((int)pSVar21",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar21 = (SMRGLTextureLod *)((int)pSVar21 + (uint)bVar23 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 511,
+      "match": "(STextureSet *)((int)pSVar17",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar17 = (STextureSet *)((int)pSVar17 + (uint)bVar23 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 529,
       "match": "._0_4_",
@@ -845,6 +921,204 @@
       "severity": "mild",
       "text": "local_350.extra_attribute_count = local_a228._0_4_;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 590,
+      "match": "(int *)((int)local_d8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar9 = *(int *)((int)local_d8 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 612,
+      "match": "(int *)((int)local_ec",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&local_1f4,*(int *)((int)local_ec + local_40),&local_2dc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 321,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 628,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 692,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 509,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar8 = 0x12; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 210,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[0].w + iVar5) = local_11c.m[0].w;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 211,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[0].x + iVar5) = local_11c.m[0].x;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 212,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[0].y + iVar5) = local_11c.m[0].y;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 213,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[0].z + iVar5) = local_11c.m[0].z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 214,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[1].w + iVar5) = local_11c.m[1].w;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 215,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[1].x + iVar5) = local_11c.m[1].x;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 216,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[1].y + iVar5) = local_11c.m[1].y;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 217,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[1].z + iVar5) = local_11c.m[1].z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 218,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[2].w + iVar5) = local_11c.m[2].w;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 219,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[2].x + iVar5) = local_11c.m[2].x;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 220,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[2].y + iVar5) = local_11c.m[2].y;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 221,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_2520[0].m[2].z + iVar5) = local_11c.m[2].z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 425,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_5c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 467,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_4c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar8` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
+      "line": 588,
+      "match": "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1178,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0058d03f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -1346,283 +1620,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDeformableModel_buildFromPosFile_FUN_0058c190.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 5,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 12,
-          "line": 408,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 17,
-          "line": 409,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 17,
-          "line": 519,
-          "message": "Redundant assignment of 'pSVar17' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 17,
-          "line": 520,
-          "message": "Redundant assignment of 'pSVar21' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 18,
-          "line": 601,
-          "message": "Redundant assignment of 'pCVar8' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 377,
-      "match": "(uint *)((int)pSVar2",
-      "severity": "moderate",
-      "text": "*(uint *)pcVar21 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 378,
-      "match": "(uint *)((int)pSVar2",
-      "severity": "moderate",
-      "text": "*(uint *)(pcVar21 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 379,
-      "match": "(uint *)((int)pSVar2",
-      "severity": "moderate",
-      "text": "*(uint *)(pcVar21 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 427,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_60);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 469,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_50);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 510,
-      "match": "(SMRGLTextureLod *)((int)pSVar21",
-      "severity": "moderate",
-      "text": "pSVar21 = (SMRGLTextureLod *)((int)pSVar21 + (uint)bVar23 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 511,
-      "match": "(STextureSet *)((int)pSVar17",
-      "severity": "moderate",
-      "text": "pSVar17 = (STextureSet *)((int)pSVar17 + (uint)bVar23 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 590,
-      "match": "(int *)((int)local_d8",
-      "severity": "moderate",
-      "text": "iVar9 = *(int *)((int)local_d8 + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 612,
-      "match": "(int *)((int)local_ec",
-      "severity": "moderate",
-      "text": "(&local_1f4,*(int *)((int)local_ec + local_40),&local_2dc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 321,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 628,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 692,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 509,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar8 = 0x12; iVar8 != 0; iVar8 = iVar8 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 210,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[0].w + iVar5) = local_11c.m[0].w;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 211,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[0].x + iVar5) = local_11c.m[0].x;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 212,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[0].y + iVar5) = local_11c.m[0].y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 213,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[0].z + iVar5) = local_11c.m[0].z;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 214,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[1].w + iVar5) = local_11c.m[1].w;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 215,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[1].x + iVar5) = local_11c.m[1].x;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 216,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[1].y + iVar5) = local_11c.m[1].y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 217,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[1].z + iVar5) = local_11c.m[1].z;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 218,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[2].w + iVar5) = local_11c.m[2].w;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 219,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[2].x + iVar5) = local_11c.m[2].x;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 220,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[2].y + iVar5) = local_11c.m[2].y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 221,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_2520[0].m[2].z + iVar5) = local_11c.m[2].z;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar8` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
-      "line": 588,
-      "match": "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "preinc_loop_idiom"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 1178,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0058d03f: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 408,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(pcVar21 + (local_90 + 3) * 4) =",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 409,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)(pcVar21 + (local_90 + 3) * 4) + local_8c;",
-      "type": "static_invalid_pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 192,
-    "complexity_score": 113,
+    "complexity_score": 128,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 73,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "pointer_cast",
       "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
@@ -290,6 +291,14 @@
       "severity": "moderate",
       "text": "(this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 63,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x + iVar1) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

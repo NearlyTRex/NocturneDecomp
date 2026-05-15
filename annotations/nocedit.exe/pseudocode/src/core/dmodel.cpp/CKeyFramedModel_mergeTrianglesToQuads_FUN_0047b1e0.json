@@ -7,18 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 811,
-    "complexity_score": 491,
+    "complexity_score": 336,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 336,
-    "suspect_count": 14,
-    "suspect_types": [
-      "bitcast_double_pair",
-      "pointer_cast",
-      "sub84_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1147
   },
   "cross_references": [
@@ -270,6 +266,132 @@
       "severity": "moderate",
       "text": "int aiStackY_10d8 [1006];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(uint *)(local_7c->part_list[0].poly_count + (int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar10 = (uint *)(local_7c->part_list[0].poly_count + (int)local_50);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(int *)(local_70 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)(local_70 + (int)this_ptr->poly_texture_index_list) ==",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(int *)(local_5c + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(local_5c + (int)this_ptr->poly_texture_index_list))) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(uchar *)((int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(uchar *)((int)local_50 + (int)puVar2) == puVar2[local_48])))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
+      "match": "(int *)((int)g_TriangleMatchTableA",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)(iVar11 + *(int *)((int)g_TriangleMatchTableA + local_44) * 0xc",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 140,
+      "match": "(int *)((int)g_TriangleMatchTableB",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(iVar17 + *(int *)((int)g_TriangleMatchTableB + iVar15) * 0xc +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 213,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_108 = SUB84(__BITCAST_UINT64(dVar24),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 214,
+      "match": "(int *)((int)local_f0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar14 = pCVar3 + iVar18 + *(int *)((int)local_f0 + local_20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 252,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_104 = SUB84(__BITCAST_UINT64(dVar24),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 266,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar24 = __BITCAST_DOUBLE(CONCAT44(uStack_104,local_108)) +",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 267,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_fc,local_100));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 284,
+      "match": "(uint *)((int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_50 = (uint *)((int)local_50 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 313,
+      "match": "(uint *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)this_ptr->poly_texture_index_list + iVar18) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 314,
+      "match": "(uint *)(local_80 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(local_80 + (int)this_ptr->poly_texture_index_list);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
@@ -666,158 +788,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "arrayIndexOutOfBounds",
-          "column": 63,
-          "line": 209,
-          "message": "Array 'local_f0[4]' accessed at index 6, which is out of bounds.",
-          "severity": "error"
-        },
-        {
-          "check_id": "arrayIndexOutOfBounds",
-          "column": 63,
-          "line": 210,
-          "message": "Array 'local_f0[4]' accessed at index 9, which is out of bounds.",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(uint *)(local_7c->part_list[0].poly_count + (int)local_50",
-      "severity": "moderate",
-      "text": "puVar10 = (uint *)(local_7c->part_list[0].poly_count + (int)local_50);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 124,
-      "match": "(int *)(local_70 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "(*(int *)(local_70 + (int)this_ptr->poly_texture_index_list) ==",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(int *)(local_5c + (int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)(local_5c + (int)this_ptr->poly_texture_index_list))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(uchar *)((int)local_50",
-      "severity": "moderate",
-      "text": "(*(uchar *)((int)local_50 + (int)puVar2) == puVar2[local_48])))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 138,
-      "match": "(int *)((int)g_TriangleMatchTableA",
-      "severity": "moderate",
-      "text": "(*(int *)(iVar11 + *(int *)((int)g_TriangleMatchTableA + local_44) * 0xc",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 140,
-      "match": "(int *)((int)g_TriangleMatchTableB",
-      "severity": "moderate",
-      "text": "*(int *)(iVar17 + *(int *)((int)g_TriangleMatchTableB + iVar15) * 0xc +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 213,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_108 = SUB84(__BITCAST_UINT64(dVar24),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 214,
-      "match": "(int *)((int)local_f0",
-      "severity": "moderate",
-      "text": "pCVar14 = pCVar3 + iVar18 + *(int *)((int)local_f0 + local_20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 252,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "uStack_104 = SUB84(__BITCAST_UINT64(dVar24),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 266,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar24 = __BITCAST_DOUBLE(CONCAT44(uStack_104,local_108)) +",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 267,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_fc,local_100));",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 284,
-      "match": "(uint *)((int)local_50",
-      "severity": "moderate",
-      "text": "local_50 = (uint *)((int)local_50 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 313,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr->poly_texture_index_list + iVar18) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 314,
-      "match": "(uint *)(local_80 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "*(uint *)(local_80 + (int)this_ptr->poly_texture_index_list);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Array 'local_f0[4]' accessed at index 6, which is out of bounds.",
-      "line": 209,
-      "match": "Cppcheck: array index out of bounds",
-      "severity": "major",
-      "text": "pCVar16 = pCVar3 + iVar18 + local_f0[((iVar19 + 1) % 4) * 3];",
-      "type": "static_array_oob"
-    },
-    {
-      "description": "Array 'local_f0[4]' accessed at index 9, which is out of bounds.",
-      "line": 210,
-      "match": "Cppcheck: array index out of bounds",
-      "severity": "major",
-      "text": "pCVar21 = pCVar3 + iVar18 + local_f0[(iVar15 % 4) * 3];",
-      "type": "static_array_oob"
-    }
-  ]
+  "suspects": []
 }

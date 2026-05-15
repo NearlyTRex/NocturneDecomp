@@ -8,15 +8,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3423,
-    "complexity_score": 1291,
+    "complexity_score": 1326,
     "cross_reference_count": 2,
     "function_call_count": 90,
     "global_count": 144,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1076,
-    "suspect_count": 18,
+    "suspect_count": 21,
     "suspect_types": [
       "missing_cave_copy",
+      "pointer_cast",
       "raw_address_constant",
       "shadow_pointer_walk",
       "unrolled_memcpy",
@@ -2483,6 +2484,30 @@
       "severity": "moderate",
       "text": "local_6c->z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 425,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar16 + 3) & 0x80) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 426,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_68 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar16) >> 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 427,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "x = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar16) >> 0x10;",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar15` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar15->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

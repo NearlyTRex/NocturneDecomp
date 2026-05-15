@@ -10,8 +10,6 @@
 int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry)
 
 {
-  char cVar2;
-  float fVar3;
   CBoneStructure *pCVar4;
   CBoneStructure *pCVar5;
   int iVar6;
@@ -22,25 +20,11 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   _FILE *file_ptr;
   int iVar7;
   int iVar9;
-  CDeformableModel *pCVar8;
-  uint *puVar12;
-  uint *puVar10;
-  ushort *puVar14;
-  ushort *puVar11;
-  CDeformableModel *pCVar15;
   char *pcVar16;
   int iVar12;
-  uint *puVar17;
-  uint *puVar13;
-  char *pcVar19;
   char *pcVar15;
-  ushort *puVar16;
-  STextureSet *pSVar17;
-  char *pcVar18;
-  char *pcVar20;
-  SMRGLTextureLod *pSVar21;
   char *pcVar21;
-  byte bVar23;
+  CLodVert *pCLodVert;
   CBoneStructure local_a228;
   CBoneStructure local_6d04;
   CMatrix3x4f local_6d04_inverse_matrices [100];
@@ -84,16 +68,6 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   int local_74;
   float *local_70;
   STextureSet *local_6c;
-  int local_68;
-  int local_64;
-  int local_60;
-  int local_5c;
-  int local_58;
-  CDeformableModel *local_54;
-  int local_50;
-  int local_4c;
-  int local_48;
-  CDeformableModel *local_44;
   int local_40;
   STextureSet *local_3c;
   int local_38;
@@ -103,17 +77,10 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   int local_28;
   CBoneStructure *local_24;
   byte local_20 [4];
-  uint local_1c;
   char local_18 [4];
   char local_14 [4];
-  char cVar1;
-  float fVar4;
   SVert *pSVar2;
-  uint uVar3;
-  CDeformableModel *local_84;
-  CDeformableModel *local_7c;
-  
-  bVar23 = 0;
+
   g_SkeleditStatusMessage[0] = '\0';
   pCVar5 = (CBoneStructure *)
            shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -209,24 +176,11 @@ LAB_0058c613:
   local_28 = 0;
   if (0 < (int)local_a228.bone_count) {
     local_70 = (float *)&local_a228.bones[0].world_matrix;
-    iVar5 = 0;
     do {
       core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)local_70,&local_11c);
-      *(float *)((int)&local_2520[0].m[0].w + iVar5) = local_11c.m[0].w;
-      *(float *)((int)&local_2520[0].m[0].x + iVar5) = local_11c.m[0].x;
-      *(float *)((int)&local_2520[0].m[0].y + iVar5) = local_11c.m[0].y;
-      *(float *)((int)&local_2520[0].m[0].z + iVar5) = local_11c.m[0].z;
-      *(float *)((int)&local_2520[0].m[1].w + iVar5) = local_11c.m[1].w;
-      *(float *)((int)&local_2520[0].m[1].x + iVar5) = local_11c.m[1].x;
-      *(float *)((int)&local_2520[0].m[1].y + iVar5) = local_11c.m[1].y;
-      *(float *)((int)&local_2520[0].m[1].z + iVar5) = local_11c.m[1].z;
-      *(float *)((int)&local_2520[0].m[2].w + iVar5) = local_11c.m[2].w;
-      *(float *)((int)&local_2520[0].m[2].x + iVar5) = local_11c.m[2].x;
-      *(float *)((int)&local_2520[0].m[2].y + iVar5) = local_11c.m[2].y;
-      *(float *)((int)&local_2520[0].m[2].z + iVar5) = local_11c.m[2].z;
+      local_2520[local_28] = local_11c;
       local_28 = local_28 + 1;
       local_70 = local_70 + 0x21;
-      iVar5 = iVar5 + 0x30;
     } while (local_28 < (int)local_a228.bone_count);
   }
   splitpath
@@ -323,16 +277,7 @@ LAB_0058c613:
     }
     pcVar15 = "$$TEST";
 LAB_0058c4df:
-    pcVar20 = local_b20;
-    do {
-      cVar1 = *pcVar15;
-      *pcVar20 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar2 = pcVar15[1];
-      pcVar15 = pcVar15 + 2;
-      pcVar20[1] = cVar2;
-      pcVar20 = pcVar20 + 2;
-    } while (cVar2 != '\0');
+    strcpy(local_b20, pcVar15);
   }
   else {
     if (entry->skip_generation == 2) {
@@ -375,23 +320,11 @@ LAB_0058c4df:
   } while ((iVar8 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   iVar5 = 0;
   if (0 < this_ptr->vertex_count[0]) {
-    local_68 = 0;
-    local_64 = 0;
     do {
       pSVar2 = this_ptr->vertex_data_ptr[0];
-      pcVar21 = (local_1f4.vertex_data)->lod_workspace + local_64 + -0x10;
-      *(uint *)pcVar21 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);
-      *(uint *)(pcVar21 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);
-      *(uint *)(pcVar21 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);
-      pcVar16 = pcVar21;
-      do {
-        pcVar19 = pcVar16 + 4;
-        pcVar16[0xc] = '\0';
-        pcVar16[0xd] = '\0';
-        pcVar16[0xe] = '\0';
-        pcVar16[0xf] = '\0';
-        pcVar16 = pcVar19;
-      } while (pcVar19 != pcVar21 + 400);
+      pCLodVert = local_1f4.vertex_data + iVar5;
+      pCLodVert->position = pSVar2[iVar5].position;
+      memset(&pCLodVert->material_id, 0, 400);
       iVar8 = _fscanf((_FILE *)local_24,"%d\n",&local_94);
       if (((iVar8 != 1) || (local_94 < 1)) || ((int)local_a228.bone_count < local_94)) {
 LAB_0058c601:
@@ -405,97 +338,66 @@ LAB_0058c601:
           if (iVar7 != 2) goto LAB_0058c601;
           local_90 = local_a228.shuffled_bone_indices[local_90];
           iVar8 = iVar8 + 1;
-          *(float *)(pcVar21 + (local_90 + 3) * 4) =
-               *(float *)(pcVar21 + (local_90 + 3) * 4) + local_8c;
+          ((float *)&pCLodVert->material_id)[local_90] += local_8c;
         } while (iVar8 < local_94);
       }
       iVar5 = iVar5 + 1;
-      local_68 = local_68 + 0x34;
-      local_64 = local_64 + 0x4c4;
     } while (iVar5 < this_ptr->vertex_count[0]);
   }
   iVar5 = 0;
   local_30 = 0;
   if (0 < this_ptr->num_parts) {
-    local_54 = this_ptr;
     do {
-      local_84 = local_54;
-      local_60 = iVar5 * 4;
-      local_5c = iVar5 * 0x12;
-      local_58 = iVar5 * 0x8c;
       local_88 = 0;
-      if (0 < local_54->parts[0].tri_counts[0]) {
+      if (0 < this_ptr->parts[local_30].tri_counts[0]) {
         do {
-          puVar17 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_58);
-          puVar14 = (ushort *)
-                    ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_5c);
-          puVar17[1] = local_30;
-          uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_60);
-          puVar17[2] = 0;
-          puVar17[3] = 0xfffe7961;
-          puVar16 = puVar14 + 3;
-          *puVar17 = uVar3;
-          fVar4 = (float)0.00390625;
-          puVar12 = puVar17;
-          do {
-            puVar17[4] = (uint)*puVar14;
-            puVar12[7] = (float)puVar14[3] * fVar4;
-            local_1c = (uint)puVar14[6];
-            puVar17 = puVar17 + 1;
-            puVar14 = puVar14 + 1;
-            puVar12[8] = (float)local_1c * fVar4;
-            puVar12 = puVar12 + 2;
-          } while (puVar14 != puVar16);
+          CLodFace *face = &local_1f4.tri_data[iVar5];
+          SInputFace *src = &this_ptr->tri_data_ptr[0][iVar5];
+          face->attribute_indices[0] = (uint)this_ptr->index_data_ptr[0][iVar5];
+          face->attribute_indices[1] = local_30;
+          face->attribute_indices[2] = 0;
+          face->submesh_id = 0xfffe7961;
+          face->vertex_idx_0 = (int)src->vertex_indices.vertex_index_0;
+          face->vertex_idx_1 = (int)src->vertex_indices.vertex_index_1;
+          face->vertex_idx_2 = (int)src->vertex_indices.vertex_index_2;
+          face->uv_coords[0][0] = (float)src->u_coord_0 * 0.00390625f;
+          face->uv_coords[0][1] = (float)src->v_coord_0 * 0.00390625f;
+          face->uv_coords[1][0] = (float)src->u_coord_1 * 0.00390625f;
+          face->uv_coords[1][1] = (float)src->v_coord_1 * 0.00390625f;
+          face->uv_coords[2][0] = (float)src->u_coord_2 * 0.00390625f;
+          face->uv_coords[2][1] = (float)src->v_coord_2 * 0.00390625f;
           iVar5 = iVar5 + 1;
-          local_60 = local_60 + 4;
-          local_5c = local_5c + 0x12;
-          local_58 = local_58 + 0x8c;
           local_88 = local_88 + 1;
-        } while (local_88 < local_54->parts[0].tri_counts[0]);
+        } while (local_88 < this_ptr->parts[local_30].tri_counts[0]);
       }
-      local_54 = (CDeformableModel *)(local_54->tri_count + 3);
       local_30 = local_30 + 1;
     } while (local_30 < this_ptr->num_parts);
   }
   local_34 = 0;
   if (0 < this_ptr->num_parts) {
-    local_44 = this_ptr;
     do {
       local_80 = 0;
-      local_7c = local_44;
-      local_50 = iVar5 * 4;
-      local_4c = iVar5 * 0x12;
-      local_48 = iVar5 * 0x8c;
-      if (0 < local_44->parts[0].cap_tri_counts[0]) {
+      if (0 < this_ptr->parts[local_34].cap_tri_counts[0]) {
         do {
-          puVar13 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_48);
-          puVar11 = (ushort *)
-                    ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_4c);
-          puVar13[1] = local_34;
-          uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_50);
-          puVar13[2] = 1;
-          *puVar13 = uVar3;
-          puVar13[3] = this_ptr->cap_index_ptr[0][iVar5 - this_ptr->tri_count[0]];
-          puVar14 = puVar11 + 3;
-          fVar3 = (float)0.00390625;
-          puVar10 = puVar13;
-          do {
-            puVar13[4] = (uint)*puVar11;
-            puVar10[7] = (float)puVar11[3] * fVar3;
-            local_1c = (uint)puVar11[6];
-            puVar13 = puVar13 + 1;
-            puVar11 = puVar11 + 1;
-            puVar10[8] = (float)local_1c * fVar3;
-            puVar10 = puVar10 + 2;
-          } while (puVar11 != puVar14);
+          CLodFace *face = &local_1f4.tri_data[iVar5];
+          SInputFace *src = &this_ptr->tri_data_ptr[0][iVar5];
+          face->attribute_indices[0] = (uint)this_ptr->index_data_ptr[0][iVar5];
+          face->attribute_indices[1] = local_34;
+          face->attribute_indices[2] = 1;
+          face->submesh_id = this_ptr->cap_index_ptr[0][iVar5 - this_ptr->tri_count[0]];
+          face->vertex_idx_0 = (int)src->vertex_indices.vertex_index_0;
+          face->vertex_idx_1 = (int)src->vertex_indices.vertex_index_1;
+          face->vertex_idx_2 = (int)src->vertex_indices.vertex_index_2;
+          face->uv_coords[0][0] = (float)src->u_coord_0 * 0.00390625f;
+          face->uv_coords[0][1] = (float)src->v_coord_0 * 0.00390625f;
+          face->uv_coords[1][0] = (float)src->u_coord_1 * 0.00390625f;
+          face->uv_coords[1][1] = (float)src->v_coord_1 * 0.00390625f;
+          face->uv_coords[2][0] = (float)src->u_coord_2 * 0.00390625f;
+          face->uv_coords[2][1] = (float)src->v_coord_2 * 0.00390625f;
           iVar5 = iVar5 + 1;
-          local_50 = local_50 + 4;
-          local_48 = local_48 + 0x8c;
           local_80 = local_80 + 1;
-          local_4c = local_4c + 0x12;
-        } while (local_80 < local_44->parts[0].cap_tri_counts[0]);
+        } while (local_80 < this_ptr->parts[local_34].cap_tri_counts[0]);
       }
-      local_44 = (CDeformableModel *)(local_44->tri_count + 3);
       local_34 = local_34 + 1;
     } while (local_34 < this_ptr->num_parts);
   }
@@ -507,20 +409,10 @@ LAB_0058c601:
   local_1f4.active_attribute_count = 4;
   local_1f4.extra_attribute_count = local_a228.bone_count;
   iVar5 = 0;
-  pCVar15 = this_ptr;
   if (0 < this_ptr->num_textures) {
     do {
-      pSVar17 = pCVar15->texture_sets;
-      pSVar21 = local_1f4.lod_textures + iVar5;
-      for (iVar8 = 0x12; iVar8 != 0; iVar8 = iVar8 + -1) {
-        pSVar21 = (SMRGLTextureLod *)((int)pSVar21 + (uint)bVar23 * -8 + 4);
-        pSVar17 = (STextureSet *)((int)pSVar17 + (uint)bVar23 * -8 + 4);
-        pSVar21->textures[0].base.type = pSVar17->textures[0].textures[0].base.type;
-        pSVar17 = pSVar17;
-        pSVar21 = pSVar21;
-      }
+      local_1f4.lod_textures[iVar5] = this_ptr->texture_sets[0].textures[iVar5];
       iVar5 = iVar5 + 1;
-      pCVar15 = (CDeformableModel *)(pCVar15->vertex_data_ptr + 2);
     } while (iVar5 < this_ptr->num_textures);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)local_24,"..\\core\\skeledit.cpp",0x75a);
@@ -589,16 +481,10 @@ LAB_0058c601:
       if (iVar5 < 1) goto LAB_0058d5ef;
       iVar8 = 0;
       if (0 < iVar5) {
-        iVar5 = 0;
-        pCVar8 = this_ptr;
         do {
-          pCVar8 = (CDeformableModel *)&pCVar8->lod_info[0].shadow_only_flag;
-          iVar9 = *(int *)((int)local_d8 + iVar5);
-          pCVar8->num_lods = 0;
-          pCVar8->lod_info[0].pixel_height = iVar9;
+          this_ptr->lod_info[iVar8].pixel_height = local_d8[iVar8];
+          this_ptr->lod_info[iVar8].shadow_only_flag = 0;
           iVar8 = iVar8 + 1;
-          iVar5 = iVar5 + 4;
-          pCVar8 = pCVar8;
         } while (iVar8 < this_ptr->num_lods);
       }
     }
@@ -615,7 +501,7 @@ LAB_0058c601:
         }
         else {
           shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920
-                    (&local_1f4,*(int *)((int)local_ec + local_40),&local_2dc);
+                    (&local_1f4,local_ec[iVar5],&local_2dc);
         }
         shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(&local_2dc);
         if (iVar5 == 0) {
@@ -626,21 +512,10 @@ LAB_0058c601:
           }
           iVar8 = 0;
           if (0 < local_2dc.lod_texture_count) {
-            pcVar16 = local_78->textures[0].textures[0].texture_name;
             do {
-              pcVar18 = local_2dc.lod_textures[iVar8].textures[0].texture_name;
+              strcpy(local_78->textures[iVar8].textures[0].texture_name,
+                     local_2dc.lod_textures[iVar8].textures[0].texture_name);
               iVar8 = iVar8 + 1;
-              pcVar21 = pcVar16;
-              do {
-                cVar2 = *pcVar18;
-                *pcVar21 = cVar2;
-                if (cVar2 == '\0') break;
-                cVar2 = pcVar18[1];
-                pcVar18 = pcVar18 + 2;
-                pcVar21[1] = cVar2;
-                pcVar21 = pcVar21 + 2;
-              } while (cVar2 != '\0');
-              pcVar16 = pcVar16 + 0x48;
             } while (iVar8 < local_2dc.lod_texture_count);
           }
         }
@@ -691,21 +566,10 @@ LAB_0058c601:
         }
         local_74 = 0;
         if (0 < local_a0) {
-          pcVar16 = local_3c->textures[0].textures[0].texture_name;
           do {
             pcVar21 = shape_design_c_getTextureName_FUN_0046e060(local_74);
-            pcVar19 = pcVar16 + 0x48;
-            do {
-              cVar2 = *pcVar21;
-              *pcVar16 = cVar2;
-              if (cVar2 == '\0') break;
-              cVar2 = pcVar21[1];
-              pcVar21 = pcVar21 + 2;
-              pcVar16[1] = cVar2;
-              pcVar16 = pcVar16 + 2;
-            } while (cVar2 != '\0');
+            strcpy(local_3c->textures[local_74].textures[0].texture_name, pcVar21);
             local_74 = local_74 + 1;
-            pcVar16 = pcVar19;
           } while (local_74 < local_a0);
         }
         local_3c = local_3c + 1;

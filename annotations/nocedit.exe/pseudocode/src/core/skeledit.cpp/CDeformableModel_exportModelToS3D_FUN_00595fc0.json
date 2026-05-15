@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 317,
+    "complexity_score": 337,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 252,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -790,6 +790,22 @@
       "match": "(int *)((int)aiStack_140",
       "severity": "moderate",
       "text": "local_88 = local_88 + *(int *)((int)aiStack_140 + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 148,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(this_ptr->tri_data_ptr[lod_level]->vertex_indices).vertex_index_0 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 171,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(this_ptr->tri_data_ptr[lod_level]->vertex_indices).vertex_index_0 +",
       "type": "pointer_cast"
     }
   ]

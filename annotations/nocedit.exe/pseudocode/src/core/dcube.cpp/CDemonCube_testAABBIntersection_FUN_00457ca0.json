@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 21,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 67
   },
   "cross_references": [
@@ -123,5 +125,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices",
+      "severity": "moderate",
+      "text": "((CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar2)",
+      "type": "pointer_cast"
+    }
+  ]
 }

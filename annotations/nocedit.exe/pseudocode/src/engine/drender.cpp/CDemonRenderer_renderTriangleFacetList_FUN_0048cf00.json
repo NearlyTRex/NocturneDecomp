@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 130,
+    "complexity_score": 160,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 115,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -281,6 +281,30 @@
       "match": "(SMRGLHeaderPrimitive **)((int)g_VisibleFacePointers",
       "severity": "moderate",
       "text": "*(SMRGLHeaderPrimitive **)((int)g_VisibleFacePointers + local_18) = primitive_array;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 48,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 100,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 113,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);",
       "type": "pointer_cast"
     }
   ]

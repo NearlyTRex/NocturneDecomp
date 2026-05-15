@@ -69,17 +69,6 @@
     },
     "pcode_op_count": 108
   },
-  "resolved_suspects": [
-    {
-      "description": "Unrolled-memcpy loop reads 12 elements from local array `local_34[6]` (declared size 6) \u2014 overruns by 6. Likely Ghidra dropped explicit `local_34[k] = ...` stores before the copy, OR the asm has an off-by-one REP MOVSD count. Fix in a .keep by restoring all stores and using a properly-sized memcpy or struct assignment.",
-      "line": 19,
-      "match": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "memcpy_oversized_source"
-    }
-  ],
   "stack_frame": {
     "frame_size": 60,
     "local_size": 56,

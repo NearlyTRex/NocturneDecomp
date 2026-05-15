@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 33,
+    "complexity_score": 48,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 4,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 133
   },
   "cross_references": [
@@ -253,5 +255,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "remove(*(char **)((int)&(local_438.directory_entries)->name + iVar2))",
+      "type": "pointer_cast"
+    }
+  ]
 }

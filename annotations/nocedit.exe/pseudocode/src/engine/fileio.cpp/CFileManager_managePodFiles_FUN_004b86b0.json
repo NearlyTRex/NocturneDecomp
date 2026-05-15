@@ -8,13 +8,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2078,
-    "complexity_score": 934,
+    "complexity_score": 944,
     "cross_reference_count": 0,
     "function_call_count": 51,
     "global_count": 109,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 809,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strcpy",
@@ -1398,6 +1398,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 215,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)((int)&(local_1b38.directory_entries)->name + local_68);",
+      "type": "pointer_cast"
     }
   ]
 }

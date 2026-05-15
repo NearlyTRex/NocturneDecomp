@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 221,
+    "complexity_score": 231,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 161,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
@@ -612,6 +612,14 @@
     "file_variant": "keep"
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 108,
+      "match": "(uint **)((int)(*bitmap_ptr)->row_table",
+      "severity": "moderate",
+      "text": "puVar10 = *(uint **)((int)(*bitmap_ptr)->row_table + local_18);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 118,
