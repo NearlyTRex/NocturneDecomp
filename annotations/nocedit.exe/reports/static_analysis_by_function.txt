@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 145
-  Total diagnostics: 402
+  Functions with findings: 143
+  Total diagnostics: 399
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 145, raw .cpp files: 0
+  .keep.cpp files: 143, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -538,13 +538,6 @@ cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20  [.keep] [C
   Line   38: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0  [.keep] [Cppcheck (quick)]
-  File: core/actor.cpp  (2 diagnostics)
-
-  Line  306: [invalidFunctionArgStr] Invalid strcpy() argument nr 2. A nul-terminated string is required.
-  Line  323: [invalidFunctionArgStr] Invalid strcpy() argument nr 2. A nul-terminated string is required.
-
-----------------------------------------------------------------------------------------------------
 core_chain.cpp_fastSqrt_FUN_00431350  [.keep] [Cppcheck (quick)]
   File: core/chain.cpp  (2 diagnostics)
 
@@ -1012,12 +1005,6 @@ engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30  [.keep] [Cppcheck (qui
   File: engine/keyframe.c  (1 diagnostics)
 
   Line   49: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40  [.keep] [Cppcheck (quick)]
-  File: engine/keyframe.c  (1 diagnostics)
-
-  Line   74: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 engine_light.cpp_calculatePhongLighting_FUN_00505530  [.keep] [Cppcheck (quick)]

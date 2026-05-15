@@ -10,7 +10,6 @@
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max)
 
 {
-  uint *puVar1;
   float fVar2;
   int iVar3;
   uint uVar4;
@@ -75,13 +74,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&corner_input);
   }
   uVar4 = 0xffffffff;
-  iVar3 = 0xea480;
-  do {
-    puVar1 = (uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
-                     iVar3);
-    iVar3 = iVar3 + 0x30;
-    uVar4 = uVar4 & *puVar1;
-  } while (iVar3 != 960000);
+  for (iVar3 = 0x4e18; iVar3 < 0x4e20; iVar3 = iVar3 + 1) {
+    uVar4 = uVar4 & (uint)g_CDemonRendererPtr2->vertex_buffer_ptr[iVar3].projected_vertex.screen_x;
+  }
   iVar3 = 1;
   if (((uVar4 & 0x80000000) != 0) && ((char)uVar4 != '\0')) {
     iVar3 = 0;

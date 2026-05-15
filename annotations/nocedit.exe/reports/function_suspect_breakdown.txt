@@ -4,16 +4,16 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5707 functions
-  1 suspects: 120 functions
-  2 suspects: 180 functions
+  0 suspects: 5713 functions
+  1 suspects: 115 functions
+  2 suspects: 179 functions
   3 suspects: 107 functions
   4 suspects: 83 functions
   5 suspects: 47 functions
   6 suspects: 51 functions
   7 suspects: 21 functions
-  8 suspects: 31 functions
-  9 suspects: 11 functions
+  8 suspects: 32 functions
+  9 suspects: 10 functions
   10 suspects: 17 functions
   11 suspects: 9 functions
   12 suspects: 11 functions
@@ -44,7 +44,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [pointer_cast] (48 functions)
+  [pointer_cast] (43 functions)
   ------------------------------------------------------------
     shape_design.c_findVertexListInModel_FUN_00468000  ( 14 lines)
       model_ptr = (SMRGLHeaderExtended *)((int)&(model_ptr->base)....
@@ -54,8 +54,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x ...
     shape_superopt.cpp_CObj_saveVertexPositions_FUN_00 ( 22 lines)
       puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x ...
-    sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_ ( 23 lines)
-      *(uint *)((int)&(this_ptr->options).delay_remaining + 4) = 0...
     engine_fileio.cpp_CFileManager_deleteLocalFilesFro ( 33 lines)
       remove(*(char **)((int)&(local_438.directory_entries)->name ...
     core_platfrm.cpp_CPlatform_updateAttachedActors_FU ( 37 lines)
@@ -86,8 +84,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).ty...
     core_msnedit.cpp_buildActorClassHierarchy_FUN_0053 ( 59 lines)
       parent_class_00 = *(CDemonActorType **)((int)g_ActorClassReg...
-    engine_palette.cpp_CPaletteManager_scanTextures_FU ( 60 lines)
-      local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).ty...
     core_setedit.cpp_CDemonSet_drawCameraCoverageMap_F ( 60 lines)
       puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_...
     engine_2d.c_mapFrameBuffer_FUN_00403430            ( 66 lines)
@@ -108,8 +104,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       *(uint *)(iVar6 + (int)this_ptr->act) = uVar8 | uVar5;...
     core_game.cpp_captureDebugMovieFrame_FUN_004d7810  (103 lines)
       *(int *)((int)g_ScreenBufferArray + iStack_1c));...
-    engine_keyframe.c_loadAndInterpolateKeyframes_FUN_ (104 lines)
-      ((int)&(keyframe_model->base_keyframes->header).base.type + ...
     core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbi (104 lines)
       output_buffer = (ulonglong *)((int)output_buffer + 4);...
     shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FU (123 lines)
@@ -134,14 +128,10 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_in...
     core_skeleton.cpp_CDeformableModel_renderParts_FUN (254 lines)
       ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).v...
-    core_flame.cpp_CFlame_renderTransparent_FUN_004ca1 (256 lines)
-      ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_v...
     core_dstrender.cpp_renderPerspectiveCorrectTexture (357 lines)
       g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBuffer...
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
-    core_actor.cpp_CActorProperty_editInteractive_FUN_ (752 lines)
-      (&local_1e54.base,*(char **)(iVar19 + (int)(this_ptr->param2...
 
   [unrolled_memcpy] (36 functions)
   ------------------------------------------------------------
@@ -465,8 +455,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/quantize.cpp, Lines: 48, Types: ['pointer_cast']
   core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004
     File: core/dstrender.cpp, Lines: 49, Types: ['pointer_cast']
-  shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004
-    File: shape/edittool.cpp, Lines: 49, Types: ['bitcast_double']
   engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0
     File: engine/3d.c, Lines: 50, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_setutil.cpp_C3DSCamera_apply_FUN_00585870

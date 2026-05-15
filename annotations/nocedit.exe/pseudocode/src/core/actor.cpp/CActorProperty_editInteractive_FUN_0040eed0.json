@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2062,
-    "complexity_score": 767,
+    "complexity_score": 752,
     "cross_reference_count": 3,
     "function_call_count": 31,
     "global_count": 44,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 752,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2814
   },
   "cross_references": [
@@ -558,6 +556,15 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 534,
+      "match": "(char **)(iVar19 + (int)(this_ptr->param2).v_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&local_1e54.base,*(char **)(iVar19 + (int)(this_ptr->param2).v_ptr));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 553,
       "match": "(int *)((int)pvVar10",
       "resolution_source": "keep",
@@ -1088,38 +1095,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CActorProperty_editInteractive_FUN_0040eed0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "invalidFunctionArgStr",
-          "column": 42,
-          "line": 306,
-          "message": "Invalid strcpy() argument nr 2. A nul-terminated string is required.",
-          "severity": "error"
-        },
-        {
-          "check_id": "invalidFunctionArgStr",
-          "column": 42,
-          "line": 323,
-          "message": "Invalid strcpy() argument nr 2. A nul-terminated string is required.",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 534,
-      "match": "(char **)(iVar19 + (int)(this_ptr->param2).v_ptr",
-      "severity": "moderate",
-      "text": "(&local_1e54.base,*(char **)(iVar19 + (int)(this_ptr->param2).v_ptr));",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

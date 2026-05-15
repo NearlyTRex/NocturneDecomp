@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 74,
+    "complexity_score": 49,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 49,
-    "suspect_count": 2,
-    "suspect_types": [
-      "bitcast_double"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 170
   },
   "cross_references": [],
@@ -291,24 +289,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "__BITCAST_DOUBLE intrinsic \u2014 preprocessor hack to bridge split-double representations. Replace with a typed double or plain decimal literal in a .keep.",
-      "introduced_by": "keep",
-      "line": 51,
-      "match": "__BITCAST_DOUBLE(",
-      "severity": "moderate",
-      "text": "__BITCAST_DOUBLE(local_40),__BITCAST_DOUBLE(local_38));",
-      "type": "bitcast_double"
-    },
-    {
-      "description": "__BITCAST_DOUBLE intrinsic \u2014 preprocessor hack to bridge split-double representations. Replace with a typed double or plain decimal literal in a .keep.",
-      "introduced_by": "keep",
-      "line": 51,
-      "match": "__BITCAST_DOUBLE(",
-      "severity": "moderate",
-      "text": "__BITCAST_DOUBLE(local_40),__BITCAST_DOUBLE(local_38));",
-      "type": "bitcast_double"
-    }
-  ]
+  "suspects": []
 }

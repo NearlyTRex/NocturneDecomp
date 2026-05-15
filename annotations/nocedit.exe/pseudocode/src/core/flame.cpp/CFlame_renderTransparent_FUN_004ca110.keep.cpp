@@ -38,7 +38,6 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   CVector3i CStack_34;
   CVector3f CStack_28;
   int iStack_18;
-  int fStack_10;
   CDemonRenderer *this_ptr_00;
   float fVar4;
   float fVar3;
@@ -215,11 +214,8 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       CStack_40.z = 0;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_40);
-      fStack_10 = 0;
-      do {
-        point = (SProjectedVertex *)
-                ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
-                fStack_10);
+      for (int i = 0; i < 4; i = i + 1) {
+        point = &g_CDemonRendererPtr2->vertex_buffer_ptr[i].projected_vertex;
         iVar6 = point->transformed_z;
         if (0x200 < iVar6) {
           iVar1 = iVar6 + -0x100;
@@ -231,8 +227,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           engine_matrix_c_projectTransformedPoint_FUN_0050cdc0(point);
         }
         this_ptr_00 = g_CDemonRendererPtr2;
-        fStack_10 = fStack_10 + 0x30;
-      } while (fStack_10 != 0xc0);
+      }
       g_CDemonRendererPtr2->vertex_buffer_ptr->a = 0x4000;
       this_ptr_00->vertex_buffer_ptr[1].a = 0x4000;
       this_ptr_00->vertex_buffer_ptr[2].a = 0x4000;

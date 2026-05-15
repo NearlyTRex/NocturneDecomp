@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (402 diagnostics)
+Cppcheck (quick) (399 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (101)
+shiftTooManyBitsSigned (100)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
@@ -301,10 +301,6 @@ shiftTooManyBitsSigned (101)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   engine_keyframe.c_interpolateCubicKeyframes_FUN_00 line 49
-    File: engine/keyframe.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_keyframe.c_loadAndInterpolateKeyframes_FUN_ line 74
     File: engine/keyframe.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -1589,26 +1585,6 @@ nullPointer (8)
     Possible null pointer dereference: local_20
 
 ----------------------------------------------------------------------------------------------------
-invalidFunctionArgStr (4)
-----------------------------------------------------------------------------------------------------
-
-  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 306
-    File: core/actor.cpp
-    Invalid strcpy() argument nr 2. A nul-terminated string is required.
-
-  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 323
-    File: core/actor.cpp
-    Invalid strcpy() argument nr 2. A nul-terminated string is required.
-
-  shape_edittool.cpp_CEditorTools_showDirectoryBrows line 85
-    File: shape/edittool.cpp
-    Invalid strlen() argument nr 1. A nul-terminated string is required.
-
-  shape_edittool.cpp_CEditorTools_showDirectoryBrows line 129
-    File: shape/edittool.cpp
-    Invalid strlen() argument nr 1. A nul-terminated string is required.
-
-----------------------------------------------------------------------------------------------------
 shiftNegativeLHS (3)
 ----------------------------------------------------------------------------------------------------
 
@@ -1655,6 +1631,18 @@ invalidScanfArgType_int (3)
   sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 line 29
     File: sound/mp3.cpp
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+----------------------------------------------------------------------------------------------------
+invalidFunctionArgStr (2)
+----------------------------------------------------------------------------------------------------
+
+  shape_edittool.cpp_CEditorTools_showDirectoryBrows line 85
+    File: shape/edittool.cpp
+    Invalid strlen() argument nr 1. A nul-terminated string is required.
+
+  shape_edittool.cpp_CEditorTools_showDirectoryBrows line 129
+    File: shape/edittool.cpp
+    Invalid strlen() argument nr 1. A nul-terminated string is required.
 
 ----------------------------------------------------------------------------------------------------
 oppositeInnerCondition (1)

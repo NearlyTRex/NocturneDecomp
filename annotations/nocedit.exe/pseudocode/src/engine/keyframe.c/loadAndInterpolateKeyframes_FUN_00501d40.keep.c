@@ -35,7 +35,7 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKey
   iVar4 = engine_model_c_getMRGLSize_FUN_00528700(&keyframe_model->base_keyframes->header);
   iVar5 = engine_model_c_getMRGLSize_FUN_00528700
                     ((SMRGLHeaderExtended *)
-                     ((int)&(keyframe_model->base_keyframes->header).base.type + iVar4));
+                     ((char *)keyframe_model->base_keyframes + iVar4));
   iVar12 = 0;
   if (0 < (keyframe_model->header).child_count) {
     do {
@@ -71,7 +71,7 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKey
       uVar3 = (keyframe_model->loaded_frames[local_14]->header).base.count;
       if ((pSVar3->header).base.count != uVar3) {
         uVar6 = (pSVar3->header).base.count;
-        uVar10 = (int)uVar6 >> 0x1f;
+        uVar10 = -(uVar6 >> 0x1f);
         uVar7 = uVar6 ^ uVar10;
         uVar8 = uVar7 / uVar3;
         if (0x7ffe < uVar8) {

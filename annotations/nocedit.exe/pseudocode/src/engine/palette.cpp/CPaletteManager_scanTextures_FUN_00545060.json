@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 75,
+    "complexity_score": 60,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 60,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 198
   },
   "cross_references": [],
@@ -96,6 +94,17 @@
     },
     "pcode_op_count": 567
   },
+  "resolved_suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).type + (uVar1 & 0xfffffffc))) {",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 32,
     "local_size": 24,
@@ -126,14 +135,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).type + (uVar1 & 0xfffffffc))) {",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

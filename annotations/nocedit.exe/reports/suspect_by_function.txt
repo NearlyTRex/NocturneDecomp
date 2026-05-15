@@ -5,15 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5687 (88.1%)
-With suspects: 767
-Total suspects: 3900
-
-====================================================================================================
-core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (1 suspect)
-  File: core/actor.cpp
-====================================================================================================
-  Line 534 [pointer_cast]: (&local_1e54.base,*(char **)(iVar19 + (int)(this_ptr->param2).v_ptr));
+Clean: 5693 (88.2%)
+With suspects: 761
+Total suspects: 3892
 
 ====================================================================================================
 core_bugs.cpp_CBugs_ctor_FUN_00424cb0 (3 suspects)
@@ -476,18 +470,17 @@ core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0 (14 suspects)
   Line 203 [shadow_pointer_walk]: pSVar13 = (SCurtainVertex *)&(pSVar13->local_position).y;
 
 ====================================================================================================
-core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 (9 suspects)
+core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 (8 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
-  Line 21 [decompiler_intrinsic]: g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));
-  Line 21 [decompiler_intrinsic]: g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));
-  Line 22 [decompiler_intrinsic]: g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));
-  Line 22 [decompiler_intrinsic]: g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));
-  Line 23 [decompiler_intrinsic]: g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
-  Line 23 [decompiler_intrinsic]: g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
-  Line 29 [decompiler_intrinsic]: corner_input.x = (int)ROUND(bbox_max->x * 256.0f);
-  Line 30 [decompiler_intrinsic]: corner_input.y = (int)ROUND(bbox_min->y * 256.0f);
-  Line 131 [pointer_cast]: puVar1 = (uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
+  Line 20 [decompiler_intrinsic]: g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));
+  Line 20 [decompiler_intrinsic]: g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));
+  Line 21 [decompiler_intrinsic]: g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));
+  Line 21 [decompiler_intrinsic]: g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));
+  Line 22 [decompiler_intrinsic]: g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
+  Line 22 [decompiler_intrinsic]: g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
+  Line 28 [decompiler_intrinsic]: corner_input.x = (int)ROUND(bbox_max->x * 256.0f);
+  Line 29 [decompiler_intrinsic]: corner_input.y = (int)ROUND(bbox_min->y * 256.0f);
 
 ====================================================================================================
 core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (6 suspects)
@@ -1499,12 +1492,6 @@ core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 (1 suspect)
   File: core/fire.cpp
 ====================================================================================================
   Line 14 [stack_alignment_array]: float afStackY_1000 [997];
-
-====================================================================================================
-core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 (1 suspect)
-  File: core/flame.cpp
-====================================================================================================
-  Line 214 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
 
 ====================================================================================================
 core_flies.cpp_CFlies_initFly_FUN_004cc760 (2 suspects)
@@ -5916,12 +5903,6 @@ engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650 (2 suspects)
   Line 51 [unrolled_strcpy]: do {
 
 ====================================================================================================
-engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40 (1 suspect)
-  File: engine/keyframe.c
-====================================================================================================
-  Line 33 [pointer_cast]: ((int)&(keyframe_model->base_keyframes->header).base.type + iVar4));
-
-====================================================================================================
 engine_model.c_byteswapMRGLData_FUN_00527e40 (2 suspects)
   File: engine/model.c
 ====================================================================================================
@@ -5940,12 +5921,6 @@ engine_model.c_loadModelChunk_FUN_00528970 (2 suspects)
 ====================================================================================================
   Line 38 [pointer_cast]: *(uint *)((int)&(buffer->base).type + model_size) = 0;
   Line 41 [pointer_cast]: *(uint *)((int)&(buffer->base).type + model_size) = 0;
-
-====================================================================================================
-engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 (1 suspect)
-  File: engine/palette.cpp
-====================================================================================================
-  Line 43 [pointer_cast]: local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).type + (uVar1 & 0xfffffffc))) {
 
 ====================================================================================================
 engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0 (3 suspects)
@@ -6593,13 +6568,6 @@ shape_design.c_writePolygonModel_FUN_0045a320 (4 suspects)
   Line 27 [decompiler_intrinsic]: iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
   Line 27 [decompiler_intrinsic]: iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
   Line 40 [unrolled_strcpy]: do {
-
-====================================================================================================
-shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0 (2 suspects)
-  File: shape/edittool.cpp
-====================================================================================================
-  Line 51 [bitcast_double]: __BITCAST_DOUBLE(local_40),__BITCAST_DOUBLE(local_38));
-  Line 51 [bitcast_double]: __BITCAST_DOUBLE(local_40),__BITCAST_DOUBLE(local_38));
 
 ====================================================================================================
 shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 (3 suspects)
@@ -7737,9 +7705,3 @@ shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (4 suspects)
   Line 44 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);
   Line 45 [pointer_cast]: pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
   Line 76 [unrolled_memcpy]: // 005d6488: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070 (1 suspect)
-  File: sound/sndmain.cpp
-====================================================================================================
-  Line 16 [pointer_cast]: *(uint *)((int)&(this_ptr->options).delay_remaining + 4) = 0;

@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5713 (88.5%)
-Functions with suspects: 741 (11.5%)
+Clean functions: 5720 (88.6%)
+Functions with suspects: 734 (11.4%)
 
-Total suspect patterns: 3900
+Total suspect patterns: 3892
 Average suspects per function: 0.60
 
-Virtual files: 214 total, 136 at 100%, 145 at 90%+
+Virtual files: 214 total, 143 at 100%, 146 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 54.6
+Average complexity score: 54.5
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,7 +28,7 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1695
+  pointer_cast              1689
   unrolled_memcpy           925
   unrolled_strcpy           299
   missing_cave_copy         170
@@ -54,7 +54,6 @@ SUSPECT PATTERN BREAKDOWN
   unrolled_strcat           6
   unaffected_reg            6
   static_array_oob_cond     3
-  bitcast_double            2
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -108,7 +107,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5663 more
+  ... and 5670 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -141,12 +140,12 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (score: 794, suspects: 13, lines: 634)
   00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (score: 779, suspects: 9, lines: 674)
   0041e350: core_box.cpp_CBox_processPhysics_FUN_0041e350 (score: 779, suspects: 0, lines: 779)
-  0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 767, suspects: 1, lines: 752)
+  0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 752, suspects: 0, lines: 752)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (400 functions):
+  pointer_cast (394 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
@@ -157,7 +156,7 @@ FUNCTIONS BY SUSPECT TYPE
     00403430: engine_2d.c_mapFrameBuffer_FUN_00403430
     00401900: engine_2d.c_drawCharacterMasked_FUN_00401900
     00401140: engine_2d.c_plotPixel_FUN_00401140
-    ... and 390 more
+    ... and 384 more
 
   unrolled_memcpy (311 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
@@ -385,6 +384,3 @@ FUNCTIONS BY SUSPECT TYPE
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
 
   static_array_oob_cond (0 functions):
-
-  bitcast_double (1 functions):
-    004a01f0: shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0

@@ -4,8 +4,8 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1695 ( 43.5%)
-  unrolled_memcpy                  925 ( 23.7%)
+  pointer_cast                    1689 ( 43.4%)
+  unrolled_memcpy                  925 ( 23.8%)
   unrolled_strcpy                  299 (  7.7%)
   missing_cave_copy                170 (  4.4%)
   shadow_pointer_walk              151 (  3.9%)
@@ -30,14 +30,13 @@ SUSPECT TYPE COUNTS
   unrolled_strcat                    6 (  0.2%)
   unaffected_reg                     6 (  0.2%)
   static_array_oob_cond              3 (  0.1%)
-  bitcast_double                     2 (  0.1%)
 
 ====================================================================================================
-TYPE: pointer_cast (1695 occurrences)
+TYPE: pointer_cast (1689 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   693x  (int)&NAME used in byte-offset arithmetic
+   688x  (int)&NAME used in byte-offset arithmetic
     42x  (int *)((int)this_ptr
     34x  (int *)((int)g_ScreenBufferArray
     32x  (uint *)((int)this_ptr
@@ -59,7 +58,6 @@ Unique patterns:
      9x  (double *)((int)pdVar11
 
 Functions:
-  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0
   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340
   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
@@ -76,7 +74,6 @@ Functions:
   core_curtain.cpp_CCurtain_process_FUN_0044a920
   core_curtain.cpp_CCurtain_setup_FUN_00449810
   core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0
-  core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
   core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
   core_dcube.cpp_CDemonCube_load_FUN_00457530
@@ -120,7 +117,6 @@ Functions:
   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0
   core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0
   core_event.cpp_CEventList_getActorByVarName_FUN_004b0b80
-  core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
   core_flies.cpp_drawFlyPixel_FUN_004cc230
   core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870
@@ -347,10 +343,8 @@ Functions:
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
   engine_fileio.cpp_readTimestampFile_FUN_004b23a0
-  engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40
   engine_model.c_byteswapMRGLData_FUN_00527e40
   engine_model.c_loadModelChunk_FUN_00528970
-  engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060
   engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
   engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
@@ -458,7 +452,6 @@ Functions:
   shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
-  sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070
 
 ====================================================================================================
 TYPE: unrolled_memcpy (925 occurrences)
@@ -1625,13 +1618,3 @@ Unique patterns:
 Functions:
   core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870
   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
-
-====================================================================================================
-TYPE: bitcast_double (2 occurrences)
-====================================================================================================
-
-Unique patterns:
-     2x  __BITCAST_DOUBLE(
-
-Functions:
-  shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0

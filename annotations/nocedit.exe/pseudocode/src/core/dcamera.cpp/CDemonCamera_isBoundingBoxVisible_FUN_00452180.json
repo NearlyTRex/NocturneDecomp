@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 239,
+    "complexity_score": 224,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 139,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
     "total_lines": 501
   },
@@ -272,6 +271,15 @@
       "severity": "moderate",
       "text": "g_TransformMatrix.m[0].x = (this_ptr->source_matrix).m[0].x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 131,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -705,17 +713,18 @@
   },
   "suspects": [
     {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 131,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
-      "type": "pointer_cast"
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 20,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "introduced_by": "keep",
-      "line": 21,
+      "line": 20,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));",
@@ -727,13 +736,13 @@
       "line": 21,
       "match": "ROUND",
       "severity": "mild",
-      "text": "g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));",
+      "text": "g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "introduced_by": "keep",
-      "line": 22,
+      "line": 21,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));",
@@ -745,13 +754,13 @@
       "line": 22,
       "match": "ROUND",
       "severity": "mild",
-      "text": "g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));",
+      "text": "g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "introduced_by": "keep",
-      "line": 23,
+      "line": 22,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));",
@@ -760,16 +769,7 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "introduced_by": "keep",
-      "line": 23,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 29,
+      "line": 28,
       "match": "ROUND",
       "severity": "mild",
       "text": "corner_input.x = (int)ROUND(bbox_max->x * 256.0f);",
@@ -778,7 +778,7 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "introduced_by": "keep",
-      "line": 30,
+      "line": 29,
       "match": "ROUND",
       "severity": "mild",
       "text": "corner_input.y = (int)ROUND(bbox_min->y * 256.0f);",

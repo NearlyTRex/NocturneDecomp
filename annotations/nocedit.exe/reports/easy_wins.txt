@@ -10,34 +10,6 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  engine/palette.cpp (1 remaining of 10)
-    - engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060
-      Suspects: pointer_cast
-
-  engine/keyframe.c (1 remaining of 5)
-    - engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40
-      Suspects: pointer_cast
-
-  sound/sndmain.cpp (1 remaining of 193)
-    - sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070
-      Suspects: pointer_cast
-
-  core/dcamera.cpp (1 remaining of 86)
-    - core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
-      Suspects: pointer_cast, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
-
-  core/actor.cpp (1 remaining of 183)
-    - core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-      Suspects: pointer_cast
-
-  core/flame.cpp (1 remaining of 17)
-    - core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
-      Suspects: pointer_cast
-
-  shape/edittool.cpp (1 remaining of 151)
-    - shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
-      Suspects: bitcast_double, bitcast_double
-
   engine/model.c (2 remaining of 8)
     - engine_model.c_byteswapMRGLData_FUN_00527e40
       Suspects: pointer_cast, pointer_cast
@@ -48,12 +20,11 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [pointer_cast] - 8 functions
+  [pointer_cast] - 7 functions
     shape_design.c_findVertexListInModel_FUN_00468000                      ( 14 lines)
     core_dcube.cpp_CDemonCube_testAABBIntersection_FUN_00457ca0            ( 21 lines)
     shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860            ( 22 lines)
     shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760               ( 22 lines)
-    sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070         ( 23 lines)
     engine_fileio.cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50    ( 33 lines)
     core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320           ( 37 lines)
     core_course.cpp_CCourse_load_FUN_00442580                              ( 45 lines)
@@ -68,26 +39,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  sound/sndmain.cpp (99.5% complete)
-    1 functions remaining:
-      sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070 (23 lines)
-        Types: ['pointer_cast']
-
-  core/actor.cpp (99.5% complete)
-    1 functions remaining:
-      core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (752 lines)
-        Types: ['pointer_cast']
-
-  shape/edittool.cpp (99.3% complete)
-    1 functions remaining:
-      shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0 (49 lines)
-        Types: ['bitcast_double']
-
-  core/dcamera.cpp (98.8% complete)
-    1 functions remaining:
-      core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 (139 lines)
-        Types: ['decompiler_intrinsic', 'pointer_cast']
-
   core/fire.cpp (97.8% complete)
     4 functions remaining:
       core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80 (40 lines)
@@ -98,11 +49,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['stack_alignment_array']
       core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 (40 lines)
         Types: ['stack_alignment_array', 'warning_inlined_function']
-
-  core/flame.cpp (94.1% complete)
-    1 functions remaining:
-      core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 (256 lines)
-        Types: ['pointer_cast']
 
   core/skeleton.cpp (94.0% complete)
     7 functions remaining:
@@ -128,11 +74,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_morph.cpp_CMorphModel_findNearestPoint_FUN_0052b280 (32 lines)
         Types: ['pointer_cast']
       core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920 (32 lines)
-        Types: ['pointer_cast']
-
-  engine/palette.cpp (90.0% complete)
-    1 functions remaining:
-      engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 (60 lines)
         Types: ['pointer_cast']
 
 ====================================================================================================
