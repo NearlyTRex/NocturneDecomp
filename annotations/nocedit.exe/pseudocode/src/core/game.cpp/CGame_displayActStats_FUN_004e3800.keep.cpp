@@ -7,12 +7,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
 
 {
-  char cVar2;
   float fVar4;
   float fVar5;
   char *pcVar4;
@@ -30,7 +27,6 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   char local_148 [256];
   CAlphaBitmap local_48;
   float fVar2;
-  char cVar1;
   CBitFont *this_ptr_00;
   float fVar3;
   
@@ -52,34 +48,16 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   fVar3 = (float)100;
   this_ptr->total_kill_count = this_ptr->total_kill_count + this_ptr->damageable_enemy_count;
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Level time");
-  do {
-    cVar1 = *pcVar4;
-    *pcVar9 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar9[1] = cVar2;
-    pcVar9 = pcVar9 + 2;
-  } while (cVar2 != '\0');
+  strcpy(pcVar9, pcVar4);
   strcat(local_548,"\n\n");
-  uVar8 = 0;
   _sprintf(local_148,"%2d:%2d:%2d.%2d\n\n",iVar8,(int)ROUND(ROUND(fVar2 * fVar5)),iVar6,
              (int)ROUND(ROUND(fVar4 * fVar3)));
-  do {
-    uVar6 = 0xffffffff;
-    pcVar11 = local_148;
-    do {
-      if (uVar6 == 0) break;
-      uVar6 = uVar6 - 1;
-      cVar2 = *pcVar11;
-      pcVar11 = pcVar11 + (uint)bVar11 * -2 + 1;
-    } while (cVar2 != '\0');
-    if (~uVar6 - 1 <= uVar8) break;
+  uVar6 = strlen(local_148);
+  for (uVar8 = 0; uVar8 < uVar6; uVar8 = uVar8 + 1) {
     if (local_148[uVar8] == ' ') {
       local_148[uVar8] = '0';
     }
-    uVar8 = uVar8 + 1;
-  } while( true );
+  }
   strcat(local_548,local_148);
   pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Body count");
   strcat(local_548,pcVar12);

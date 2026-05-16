@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5743 (89.0%)
-Files at 100%: 147
-Files at 90%+: 147
+Clean functions: 5755 (89.2%)
+Files at 100%: 148
+Files at 90%+: 148
 Files at 50%+: 214
 
 ====================================================================================================
@@ -65,6 +65,7 @@ FILES AT 100% (COMPLETE)
   core/flamegun.cpp: 10 functions, 143 lines
   core/flashlit.cpp: 7 functions, 66 lines
   core/flattn.cpp: 2 functions, 11 lines
+  core/game.cpp: 66 functions, 6746 lines
   core/gargoyle.cpp: 16 functions, 941 lines
   core/gasmask.cpp: 14 functions, 131 lines
   core/grave.cpp: 17 functions, 266 lines
@@ -162,7 +163,7 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 147 files
+Total: 148 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -308,20 +309,6 @@ FILES AT 50-89%
            - core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 (178 lines) [pointer_cast, unrolled_memcpy]
            - core_flies.cpp_CFlies_initFly_FUN_004cc760 (38 lines) [unrolled_memcpy]
            - core_flies.cpp_drawFlyPixel_FUN_004cc230 (51 lines) [pointer_cast]
-   81.8% | core/game.cpp
-         54/66 clean, 12 remaining
-           - core_game.cpp_CGame_beginFadeOut_FUN_004e0960 (57 lines) [pointer_cast, stack_alignment_array]
-           - core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 (53 lines) [pointer_cast, stack_alignment_array]
-           - core_game.cpp_CGame_finishAct_FUN_004e3b90 (233 lines) [unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - core_game.cpp_CGame_rollCredits_FUN_004e4010 (155 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - core_game.cpp_CGame_processFrame_FUN_004da100 (374 lines) [unrolled_memcpy]
-           - core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 (414 lines) [pointer_cast, unrolled_strcpy]
-           - core_game.cpp_CGame_displayActStats_FUN_004e3800 (206 lines) [unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - core_game.cpp_captureDebugMovieFrame_FUN_004d7810 (103 lines) [pointer_cast]
-           - core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1728 lines) [shadow_pointer_walk, unrolled_strcpy]
-           - core_game.cpp_CGame_saveGame_FUN_004e0cd0 (179 lines) [pointer_cast, unrolled_strcpy]
-           - core_game.cpp_CGame_loadGame_FUN_004e12b0 (322 lines) [pointer_cast, unrolled_strcpy]
-           - core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 (194 lines) [pointer_cast]
    81.7% | engine/3d.c
          85/104 clean, 19 remaining
            - engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860 (77 lines) [pointer_cast, raw_address_constant, shadow_pointer_walk]
@@ -1018,7 +1005,7 @@ FILES AT 50-89%
            - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [shadow_pointer_walk, unrolled_memcpy]
 
-Total: 67 files
+Total: 66 files
 
 ====================================================================================================
 FILES BELOW 50%

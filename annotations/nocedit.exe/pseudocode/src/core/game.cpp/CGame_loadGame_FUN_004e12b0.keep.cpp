@@ -11,7 +11,6 @@
 void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode)
 
 {
-  char cVar1;
   int iVar2;
   _FILE *file_handle;
   CDemonActor *actor_ptr;
@@ -54,17 +53,7 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *sav
   iVar2 = _stricmp(local_430,"noc");
   if ((iVar2 == 0) ||
      (iVar2 = _stricmp(local_430,".noc"), iVar2 == 0)) {
-    pcVar7 = local_638;
-    pcVar5 = g_CurrentSaveFile;
-    do {
-      cVar1 = *pcVar5;
-      *pcVar7 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar5[1];
-      pcVar5 = pcVar5 + 2;
-      pcVar7[1] = cVar1;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar1 != '\0');
+    strcpy(local_638, g_CurrentSaveFile);
   }
   else {
     local_638[0] = '\0';
@@ -98,15 +87,7 @@ LAB_004e17ac:
       }
     }
     else {
-      do {
-        cVar1 = *pcVar7;
-        *pcVar5 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar7[1];
-        pcVar5[1] = cVar1;
-        pcVar7 = pcVar7 + 2;
-        pcVar5 = pcVar5 + 2;
-      } while (cVar1 != '\0');
+      strcpy(local_638, save_filename);
     }
     core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(g_CEventListPtr);
     core_level_cpp_CLevelLoader_show_FUN_00503dc0(g_CLevelLoaderPtr,9,0,-1);
@@ -115,17 +96,7 @@ LAB_004e17ac:
     iVar4 = 1;
     iVar2 = _stricmp(g_CurrentSaveFile,local_638);
     if (iVar2 != 0) {
-      pcVar5 = g_CurrentSaveFile;
-      pcVar7 = local_638;
-      do {
-        cVar1 = *pcVar7;
-        *pcVar5 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar7[1];
-        pcVar7 = pcVar7 + 2;
-        pcVar5[1] = cVar1;
-        pcVar5 = pcVar5 + 2;
-      } while (cVar1 != '\0');
+      strcpy(g_CurrentSaveFile, local_638);
       iVar4 = 0;
     }
     if (load_mode == 0) {
@@ -251,14 +222,14 @@ LAB_004e14f5:
             actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                                   (g_CDemonMissionPtr,local_230);
             pCVar3 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,uVar12);
-            *(CHero **)((int)g_HeroActors + iVar2) = pCVar3;
+            g_HeroActors[iVar2] = pCVar3;
             if (pCVar3 == (CHero *)0x0) {
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",0xe4a);
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                         (g_CEditorToolsPtr,"Can't find hero %s.  Sorry.",local_230);
             }
             local_14 = local_14 + 1;
-            iVar2 = iVar2 + 4;
+            iVar2 = iVar2 + 1;
           } while (local_14 < g_HeroCount);
         }
         iVar2 = core_mission_cpp_CDemonMission_startMission_FUN_00524760(g_CDemonMissionPtr);

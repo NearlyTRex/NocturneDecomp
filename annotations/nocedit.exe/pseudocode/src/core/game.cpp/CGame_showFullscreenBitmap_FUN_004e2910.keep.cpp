@@ -18,16 +18,13 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
   int iVar4;
   int iVar5;
   byte *pbVar5;
-  int iVar6;
   int iVar8;
-  int iVar7;
   char *pcVar10;
   uint auStack_a30 [256];
   byte local_630 [768];
   ushort auStack_330 [256];
   char local_130 [256];
   int local_24;
-  int local_20;
   int local_1c;
   byte bVar10;
   
@@ -67,10 +64,9 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\game.cpp",0xfff);
     iVar4 = 0;
     iVar8 = 0;
-    local_20 = 0;
     do {
       if (g_BitsPerPixel == 0x10) {
-        *(ushort *)((int)auStack_330 + iVar8) =
+        auStack_330[iVar8] =
              (ushort)((uint)local_630[iVar4 + 2] / (uint)g_BlueScaleFactor <<
                      (g_BlueBitPosition.bytes[0] & 0x1f)) |
              (ushort)((uint)local_630[iVar4] / (uint)g_RedScaleFactor <<
@@ -79,20 +75,19 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
                      (g_GreenBitPosition.bytes[0] & 0x1f));
       }
       else if (g_BitsPerPixel == 0x20) {
-        *(uint *)((int)auStack_a30 + local_20) =
+        auStack_a30[iVar8] =
              (uint)local_630[iVar4] << (g_RedBitPosition.bytes[0] & 0x1f) |
              (uint)local_630[iVar4 + 1] << (g_GreenBitPosition.bytes[0] & 0x1f) |
              (uint)local_630[iVar4 + 2] << (g_BlueBitPosition.bytes[0] & 0x1f);
       }
       else {
-        *(uint *)((int)auStack_a30 + local_20) =
+        auStack_a30[iVar8] =
              (uint)local_630[iVar4 + 1] << 8 | (uint)local_630[iVar4] << 0x10 |
              (uint)local_630[iVar4 + 2];
       }
-      iVar8 = iVar8 + 2;
-      local_20 = local_20 + 4;
+      iVar8 = iVar8 + 1;
       iVar4 = iVar4 + 3;
-    } while (iVar8 != 0x200);
+    } while (iVar8 != 0x100);
     wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
     wincore_windll_cpp_lockFrame_FUN_005b7210();
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -121,25 +116,19 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
           iVar4 = this_ptr->bitmap_width;
           iVar5 = 0;
           if (0 < g_WindowWidth) {
-            iVar6 = 0;
-            iVar7 = 0;
             do {
-              pbVar5 = (byte *)((int)buffer +
-                               (this_ptr->bitmap_width * iVar5) / g_WindowWidth + iVar4 * iVar8);
+              pbVar5 = (byte *)buffer +
+                       (this_ptr->bitmap_width * iVar5) / g_WindowWidth + iVar4 * iVar8;
               if (g_BitsPerPixel == 0x10) {
-                *(ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7) =
-                     auStack_330[*pbVar5];
+                ((ushort *)g_ScreenBufferArray[local_24])[iVar5] = auStack_330[*pbVar5];
               }
               else {
-                *(uint *)(iVar6 + *(int *)((int)g_ScreenBufferArray + local_24)) =
-                     auStack_a30[*pbVar5];
+                ((uint *)g_ScreenBufferArray[local_24])[iVar5] = auStack_a30[*pbVar5];
               }
-              iVar6 = iVar6 + 4;
               iVar5 = iVar5 + 1;
-              iVar7 = iVar7 + 2;
             } while (iVar5 < g_WindowWidth);
           }
-          local_24 = local_24 + 4;
+          local_24 = local_24 + 1;
           local_1c = local_1c + 1;
         } while (local_1c < g_WindowHeight);
       }

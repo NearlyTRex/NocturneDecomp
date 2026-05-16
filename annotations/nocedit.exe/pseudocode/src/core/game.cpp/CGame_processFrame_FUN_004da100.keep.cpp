@@ -24,8 +24,6 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   EDeathState EVar15;
   char *pcVar16;
   char *pcVar7;
-  CLocation *pCVar17;
-  UOrientationVector *pUVar18;
   uint *puVar19;
   int iVar8;
   int iVar14;
@@ -92,19 +90,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
     else {
       core_slew_cpp_CSlew_init_FUN_005a2060(&local_b0);
       pCVar4 = g_HeroActors[g_LocalHeroIndex];
-      pCVar17 = &(pCVar4->base).base.location;
-      if (&local_b0 != (CSlew *)pCVar17) {
-        local_b0.position.x = (pCVar17->position).x;
-        local_b0.position.y = (pCVar4->base).base.location.position.y;
-        local_b0.position.z = (pCVar4->base).base.location.position.z;
-      }
-      pCVar2 = g_HeroActors[g_LocalHeroIndex];
-      pUVar18 = &(pCVar2->base).base.orient;
-      if (&local_b0.orientation != pUVar18) {
-        local_b0.orientation.vec.x = (pUVar18->vec).x;
-        local_b0.orientation.vec.y = (pCVar2->base).base.orient.vec.y;
-        local_b0.orientation.vec.z = (pCVar2->base).base.orient.vec.z;
-      }
+      local_b0.position = (pCVar4->base).base.location.position;
+      local_b0.orientation.vec = (pCVar4->base).base.orient.vec;
       core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_b0);
       (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->setPositionAndOrientation)
                 ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_b0.position,

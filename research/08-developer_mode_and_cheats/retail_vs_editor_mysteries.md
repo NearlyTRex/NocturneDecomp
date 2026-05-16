@@ -82,6 +82,57 @@ The flag follows the `NOCTURNE_AUTHENTIC_*` polarity convention — `1` means "m
 
 Default (`= 0`) plays voices. Override with `-DNOCTURNE_AUTHENTIC_VOICE=1` to revert to the shipped editor binary's silent cutscenes.
 
+## 3. Why does START show every `.msn` file in a flat picker instead of the curated chapter list?
+
+**Question:** Booting the editor build with a retail data set, pressing START on the main menu opens a generic "Select mission to play" dialog listing every `.msn` file in `world/`. The retail player binary instead shows a curated Volume 1–5 pick list, then a Chapter 1–N pick list once a volume is chosen. Data files are identical between the two runs — only the exe differs. What's the gate?
+
+**Answer (definitive): the presence of `pod.ini` in the working directory.**
+
+### What we found
+
+`core/game.cpp:CGame_showChapterSelect_FUN_004e1cb0` opens `pod.ini` near the top, closes it immediately, and **keeps the file pointer's non-null-ness as a sentinel**:
+
+```c
+p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0("pod.ini", (char *)0x0, "rt", ...);
+if (p_Var3 != (_FILE *)0x0) {
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3, ...);
+}
+// p_Var3 retains the opened-pointer value here (used as boolean below)
+```
+
+A few lines later, the dispatch:
+
+```c
+if (bVar8 || p_Var3 != (_FILE *)0x0) {
+  iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+                    (g_CEditorToolsPtr, "Select mission to play", "world", "*.msn",
+                     local_144, 0);
+  // → generic flat .msn picker, then jump straight to load
+}
+else {
+  // → curated Volume 1–5 / Chapter pick-list UI
+}
+```
+
+`bVar8 = (select_mode == 1)` — the other trigger, set by the caller. The pod.ini trigger fires whenever the file simply *exists* in cwd; contents don't matter (the file is closed without being read).
+
+### Verified empirically
+
+Removing `pod.ini` from `nocedit.exe`'s working directory restores the curated chapter UI on START.
+
+### Why this gate exists
+
+`pod.ini` is the dev/editor-side pod override list ([`ini_settings.md`](ini_settings.md) §`pod.ini`) — present when you're running from a working dir that has loose `.pod` overrides to mount in a specific order, absent in retail installs where the pod scanner just picks up everything in cwd alphabetically. So "pod.ini exists" is being repurposed here as "this is a dev environment, show the dev UI." Retail ships without `pod.ini`, falls through to the chapter list.
+
+### What remains uncertain
+
+- The retail player binary (`nocturne.exe`) presumably never reaches this function at all — or has a different/simpler version. The editor binary's "if dev environment, show the editor picker" branch is a likely candidate for the divergence between the two builds.
+- It's possible the retail build inverts the test or removes the branch entirely.
+
+### Restoration plan — none needed
+
+This isn't a "kill" the editor build hardcoded — it's a runtime decision driven by an external file. Users who want the curated chapter UI just delete (or rename) `pod.ini`.
+
 ## How to add a new mystery
 
 When you find another retail-vs-editor difference worth investigating, follow the per-section template:

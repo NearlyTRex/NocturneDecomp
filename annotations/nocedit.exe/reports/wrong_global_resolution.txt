@@ -37,8 +37,8 @@ SUMMARY
     g_CWeaponClassInfo                                 1 functions
     g_SourcePaletteData                                1 functions
 
-  .keep files with issues: 28 (these need manual review)
-  Raw .cpp files with issues: 41
+  .keep files with issues: 30 (these need manual review)
+  Raw .cpp files with issues: 39
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -133,6 +133,30 @@ core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840  [.keep]  (6 suspicious glob
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0  [.keep]  (5 suspicious globals)
+  File: core/game.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 41
+    NOT found in function reference list
+
+  g_IrisFadeCenterX
+    Used at lines: 46, 53, 53
+    NOT found in function reference list
+
+  g_IrisFadeCenterY
+    Used at lines: 49, 54, 54
+    NOT found in function reference list
+
+  g_WindowHeight
+    Used at lines: 52, 54
+    NOT found in function reference list
+
+  g_WindowWidth
+    Used at lines: 53
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_script.cpp_clearSelections_FUN_005644e0  [.keep]  (4 suspicious globals)
   File: core/script.cpp
 
@@ -150,6 +174,18 @@ core_script.cpp_clearSelections_FUN_005644e0  [.keep]  (4 suspicious globals)
 
   g_SelectionStartLine
     Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep]  (2 suspicious globals)
+  File: core/game.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 45
+    NOT found in function reference list
+
+  g_CScriptPtr
+    Used at lines: 30, 40
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -193,7 +229,7 @@ core_game.cpp_CGame_finishAct_FUN_004e3b90  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_CDemonCameraInstance
-    Used at lines: 43
+    Used at lines: 40
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -201,7 +237,7 @@ core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_ColorCubeLookup
-    Used at lines: 341
+    Used at lines: 328
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -401,30 +437,6 @@ engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80  [.cpp]  (10 suspicious glob
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0  [.cpp]  (5 suspicious globals)
-  File: core/game.cpp
-
-  g_CDemonCameraInstance
-    Used at lines: 43
-    NOT found in function reference list
-
-  g_IrisFadeCenterX
-    Used at lines: 49, 56, 56
-    NOT found in function reference list
-
-  g_IrisFadeCenterY
-    Used at lines: 52, 57, 57
-    NOT found in function reference list
-
-  g_WindowHeight
-    Used at lines: 55, 57
-    NOT found in function reference list
-
-  g_WindowWidth
-    Used at lines: 56
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 entry  [.cpp]  (5 suspicious globals)
   File: entry
 
@@ -482,18 +494,6 @@ engine_keys.cpp_CKeys_clearKeypresses_FUN_00502450  [.cpp]  (3 suspicious global
 
   g_InputWriteIndex
     Used at lines: 12
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.cpp]  (2 suspicious globals)
-  File: core/game.cpp
-
-  g_CDemonCameraInstance
-    Used at lines: 47
-    NOT found in function reference list
-
-  g_CScriptPtr
-    Used at lines: 32, 42
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

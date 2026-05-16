@@ -7,12 +7,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
 
 {
-  char cVar2;
   float fVar3;
   float fVar4;
   float fVar5;
@@ -35,8 +32,8 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
   char local_14c [256];
   CAlphaBitmap local_4c;
   float fVar2;
-  char cVar1;
-  
+
+
   bVar12 = 0;
   if (this_ptr->act_completion_state == 2) {
     pCVar9 = g_ThemeFont;
@@ -74,35 +71,16 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
   this_ptr->total_game_time = fVar3;
   fVar5 = (float)100;
   pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Mission time");
-  pcVar9 = local_54c;
-  do {
-    cVar1 = *pcVar5;
-    *pcVar9 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar9[1] = cVar2;
-    pcVar9 = pcVar9 + 2;
-  } while (cVar2 != '\0');
+  strcpy(local_54c, pcVar5);
   strcat(local_54c,"\n\n");
-  uVar8 = 0;
   _sprintf(local_14c,"%2d:%2d:%2d.%2d\n\n",iVar8,(int)ROUND(ROUND(fVar2 * fVar4)),iVar7,
              (int)ROUND(ROUND(fVar3 * fVar5)));
-  do {
-    uVar7 = 0xffffffff;
-    pcVar9 = local_14c;
-    do {
-      if (uVar7 == 0) break;
-      uVar7 = uVar7 - 1;
-      cVar2 = *pcVar9;
-      pcVar9 = pcVar9 + (uint)bVar12 * -2 + 1;
-    } while (cVar2 != '\0');
-    if (~uVar7 - 1 <= uVar8) break;
+  uVar7 = strlen(local_14c);
+  for (uVar8 = 0; uVar8 < uVar7; uVar8 = uVar8 + 1) {
     if (local_14c[uVar8] == ' ') {
       local_14c[uVar8] = '0';
     }
-    uVar8 = uVar8 + 1;
-  } while( true );
+  }
   strcat(local_54c,local_14c);
   pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Total body count");
   strcat(local_54c,pcVar11);

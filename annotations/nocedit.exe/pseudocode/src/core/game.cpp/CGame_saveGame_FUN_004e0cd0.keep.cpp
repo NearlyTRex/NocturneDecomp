@@ -11,8 +11,6 @@
 void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *save_filename)
 
 {
-  uint *puVar1;
-  char cVar2;
   int iVar3;
   _FILE *file;
   int iVar4;
@@ -42,17 +40,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   iVar3 = _stricmp(local_24c,"noc");
   if ((iVar3 == 0) ||
      (iVar3 = _stricmp(local_24c,".noc"), iVar3 == 0)) {
-    pcVar6 = local_558;
-    pcVar5 = g_CurrentSaveFile;
-    do {
-      cVar2 = *pcVar5;
-      *pcVar6 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar5[1];
-      pcVar5 = pcVar5 + 2;
-      pcVar6[1] = cVar2;
-      pcVar6 = pcVar6 + 2;
-    } while (cVar2 != '\0');
+    strcpy(local_558, g_CurrentSaveFile);
   }
   else {
     local_558[0] = '\0';
@@ -74,15 +62,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     _sprintf(local_558,"%s.noc",local_454);
   }
   else {
-    do {
-      cVar2 = *save_filename;
-      *pcVar5 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = save_filename[1];
-      save_filename = save_filename + 2;
-      pcVar5[1] = cVar2;
-      pcVar5 = pcVar5 + 2;
-    } while (cVar2 != '\0');
+    strcpy(local_558, save_filename);
   }
   _mkdir("save");
   local_14 = 0;
@@ -103,10 +83,9 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   if (0 < g_HeroCount) {
     iVar4 = 0;
     do {
-      puVar1 = (uint *)((int)g_HeroActors + iVar4);
-      iVar4 = iVar4 + 4;
       iVar3 = iVar3 + 1;
-      _fprintf(file,"%s\n",((CDemonActor *)*puVar1)->actor_name);
+      _fprintf(file,"%s\n",((CDemonActor *)g_HeroActors[iVar4])->actor_name);
+      iVar4 = iVar4 + 1;
     } while (iVar3 < g_HeroCount);
   }
   core_event_cpp_CEventList_saveState_FUN_004b1380(g_CEventListPtr,file);
@@ -164,17 +143,6 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     }
   }
   remove("save\\$$SAVE$$.TMP");
-  pcVar5 = g_CurrentSaveFile;
-  do {
-    cVar2 = *pcVar6;
-    *pcVar5 = cVar2;
-    if (cVar2 == '\0') {
-      return;
-    }
-    cVar2 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar5[1] = cVar2;
-    pcVar5 = pcVar5 + 2;
-  } while (cVar2 != '\0');
+  strcpy(g_CurrentSaveFile, local_558);
   return;
 }

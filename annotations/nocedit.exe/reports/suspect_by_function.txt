@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5716 (88.6%)
-With suspects: 738
-Total suspects: 3866
+Clean: 5728 (88.8%)
+With suspects: 726
+Total suspects: 3818
 
 ====================================================================================================
 core_bugs.cpp_CBugs_ctor_FUN_00424cb0 (3 suspects)
@@ -1625,114 +1625,6 @@ core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (15 suspects)
   Line 90 [unrolled_memcpy]: local_31c.m[0].w = pCVar8->m[0].w;
   Line 104 [unrolled_memcpy]: (pCVar4->base).location.position.x = pCVar3->x;
   Line 112 [unrolled_memcpy]: (pUVar5->vec).x = (pUVar6->vec).x;
-
-====================================================================================================
-core_game.cpp_CGame_beginFadeOut_FUN_004e0960 (3 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 8 [stack_alignment_array]: int aiStackY_1018 [1000];
-  Line 42 [pointer_cast]: aiStack_2c[(uint)bVar2 * -2] = *(int *)((int)&CStack_24 + (uint)bVar2 * -8 + 4);
-  Line 44 [pointer_cast]: *(int *)((int)&CStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-
-====================================================================================================
-core_game.cpp_CGame_displayActStats_FUN_004e3800 (3 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 57 [unrolled_strcpy]: do {
-  Line 69 [unrolled_strlen]: do {
-
-====================================================================================================
-core_game.cpp_CGame_finishAct_FUN_004e3b90 (3 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 81 [unrolled_strcpy]: do {
-  Line 93 [unrolled_strlen]: do {
-
-====================================================================================================
-core_game.cpp_CGame_loadGame_FUN_004e12b0 (4 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 54 [unrolled_strcpy]: do {
-  Line 96 [unrolled_strcpy]: do {
-  Line 115 [unrolled_strcpy]: do {
-  Line 264 [pointer_cast]: *(CHero **)((int)g_HeroActors + iVar2) = pCVar3;
-
-====================================================================================================
-core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (2 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 629 [unrolled_strcpy]: do {
-  Line 636 [shadow_pointer_walk]: pCVar19 = (CKeyActor *)((pCVar19->base).actor_name + 2);
-
-====================================================================================================
-core_game.cpp_CGame_processFrame_FUN_004da100 (2 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 96 [unrolled_memcpy]: local_b0.position.x = (pCVar17->position).x;
-  Line 103 [unrolled_memcpy]: local_b0.orientation.vec.x = (pUVar18->vec).x;
-
-====================================================================================================
-core_game.cpp_CGame_rollCredits_FUN_004e4010 (8 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 42 [pointer_cast]: *(uint *)((int)local_1134 + iVar3) = 0;
-  Line 59 [unrolled_strlen]: do {
-  Line 66 [pointer_cast]: *(void **)((int)local_1134 + iVar7) = pvVar5;
-  Line 73 [pointer_cast]: pcVar9 = *(char **)((int)local_1134 + iVar7);
-  Line 74 [unrolled_strcpy]: do {
-  Line 113 [pointer_cast]: pcVar4 = *(char **)((int)local_1134 + iVar8);
-  Line 140 [pointer_cast]: puVar1 = (uint *)((int)local_1134 + iVar2);
-
-====================================================================================================
-core_game.cpp_CGame_saveGame_FUN_004e0cd0 (4 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 42 [unrolled_strcpy]: do {
-  Line 72 [unrolled_strcpy]: do {
-  Line 101 [pointer_cast]: puVar1 = (uint *)((int)g_HeroActors + iVar4);
-  Line 170 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 (9 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 117 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar4),
-  Line 173 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),
-  Line 220 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),
-  Line 274 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),
-  Line 307 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),
-  Line 331 [pointer_cast]: ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),
-  Line 357 [unrolled_strcpy]: do {
-  Line 375 [unrolled_strcpy]: do {
-  Line 392 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 (6 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 92 [pointer_cast]: *(ushort *)((int)auStack_330 + iVar8) =
-  Line 101 [pointer_cast]: *(uint *)((int)auStack_a30 + local_20) =
-  Line 107 [pointer_cast]: *(uint *)((int)auStack_a30 + local_20) =
-  Line 146 [pointer_cast]: pbVar5 = (byte *)((int)buffer +
-  Line 149 [pointer_cast]: *(ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7) =
-  Line 153 [pointer_cast]: *(uint *)(iVar6 + *(int *)((int)g_ScreenBufferArray + local_24)) =
-
-====================================================================================================
-core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 (3 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 8 [stack_alignment_array]: int aiStackY_1018 [1000];
-  Line 38 [pointer_cast]: aiStack_2c[(uint)bVar2 * -2] = *(int *)((int)&CStack_24 + (uint)bVar2 * -8 + 4);
-  Line 40 [pointer_cast]: *(int *)((int)&CStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-
-====================================================================================================
-core_game.cpp_captureDebugMovieFrame_FUN_004d7810 (1 suspect)
-  File: core/game.cpp
-====================================================================================================
-  Line 72 [pointer_cast]: *(int *)((int)g_ScreenBufferArray + iStack_1c));
 
 ====================================================================================================
 core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004e82d0 (1 suspect)

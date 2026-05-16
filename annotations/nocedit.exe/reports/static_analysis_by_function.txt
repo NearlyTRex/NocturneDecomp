@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 144
-  Total diagnostics: 400
+  Functions with findings: 146
+  Total diagnostics: 408
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 144, raw .cpp files: 0
+  .keep.cpp files: 146, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -280,6 +280,24 @@ shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10  [.keep] [Cppcheck (
   Line   46: [legacyUninitvar] Uninitialized variable: local_30
   Line   47: [uninitvar] Uninitialized variable: fStack_2c
   Line   48: [uninitvar] Uninitialized variable: fStack_28
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep] [Cppcheck (quick)]
+  File: core/game.cpp  (4 diagnostics)
+
+  Line   51: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   52: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   54: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   55: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0  [.keep] [Cppcheck (quick)]
+  File: core/game.cpp  (4 diagnostics)
+
+  Line   47: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   48: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   50: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   51: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_ghoul.cpp_CGhoul_process_FUN_004e6600  [.keep] [Cppcheck (quick)]
@@ -625,8 +643,8 @@ core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870  [.keep] [Cp
 core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0  [.keep] [Cppcheck (quick)]
   File: core/game.cpp  (2 diagnostics)
 
-  Line  142: [selfAssignment] Redundant assignment of 'iVar19' to itself.
-  Line 1580: [selfAssignment] Redundant assignment of 'pbVar21' to itself.
+  Line  139: [selfAssignment] Redundant assignment of 'iVar19' to itself.
+  Line 1567: [selfAssignment] Redundant assignment of 'pbVar21' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_keyactor.cpp_CKeyActor_process_FUN_00501710  [.keep] [Cppcheck (quick)]

@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1095,
-    "complexity_score": 514,
+    "complexity_score": 414,
     "cross_reference_count": 2,
     "function_call_count": 21,
     "global_count": 96,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 414,
-    "suspect_count": 9,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1509
   },
   "cross_references": [
@@ -796,6 +793,89 @@
     },
     "pcode_op_count": 3730
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 117,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 173,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 220,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 274,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 307,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 331,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 357,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 375,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 392,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1784,
     "local_size": 1776,
@@ -920,78 +1000,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 117,
-      "match": "(char **)((int)g_ChapterMissionFiles",
-      "severity": "moderate",
-      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 173,
-      "match": "(char **)((int)g_ChapterMissionFiles",
-      "severity": "moderate",
-      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 220,
-      "match": "(char **)((int)g_ChapterMissionFiles",
-      "severity": "moderate",
-      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 274,
-      "match": "(char **)((int)g_ChapterMissionFiles",
-      "severity": "moderate",
-      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 307,
-      "match": "(char **)((int)g_ChapterMissionFiles",
-      "severity": "moderate",
-      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 331,
-      "match": "(char **)((int)g_ChapterMissionFiles",
-      "severity": "moderate",
-      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 357,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 375,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 392,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ]
+  "suspects": []
 }

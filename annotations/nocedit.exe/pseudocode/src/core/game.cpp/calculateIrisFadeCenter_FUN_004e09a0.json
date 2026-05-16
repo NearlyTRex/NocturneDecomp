@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 93,
+    "complexity_score": 53,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 53,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_alignment_array"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 69
   },
   "cross_references": [
@@ -90,19 +87,12 @@
     },
     "pcode_op_count": 57
   },
-  "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": []
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 8,
       "match": "aiStackY_1018",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "int aiStackY_1018 [1000];",
       "type": "stack_alignment_array"
@@ -111,6 +101,7 @@
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 38,
       "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "aiStack_2c[(uint)bVar2 * -2] = *(int *)((int)&CStack_24 + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
@@ -119,9 +110,57 @@
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 40,
       "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)&CStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "calculateIrisFadeCenter_FUN_004e09a0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 47,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 35,
+          "line": 48,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 50,
+          "line": 50,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 39,
+          "line": 51,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

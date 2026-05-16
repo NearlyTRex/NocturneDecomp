@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 474,
-    "complexity_score": 259,
+    "complexity_score": 194,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 35,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 194,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 668
   },
   "cross_references": [
@@ -416,6 +414,60 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(ushort *)((int)auStack_330",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)auStack_330 + iVar8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(uint *)((int)auStack_a30",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_a30 + local_20) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(uint *)((int)auStack_a30",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_a30 + local_20) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(byte *)((int)buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pbVar5 = (byte *)((int)buffer +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 153,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar6 + *(int *)((int)g_ScreenBufferArray + local_24)) =",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 70,
       "match": "do {",
@@ -543,54 +595,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(ushort *)((int)auStack_330",
-      "severity": "moderate",
-      "text": "*(ushort *)((int)auStack_330 + iVar8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(uint *)((int)auStack_a30",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_a30 + local_20) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 107,
-      "match": "(uint *)((int)auStack_a30",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_a30 + local_20) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 146,
-      "match": "(byte *)((int)buffer",
-      "severity": "moderate",
-      "text": "pbVar5 = (byte *)((int)buffer +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 149,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "*(ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 153,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "*(uint *)(iVar6 + *(int *)((int)g_ScreenBufferArray + local_24)) =",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

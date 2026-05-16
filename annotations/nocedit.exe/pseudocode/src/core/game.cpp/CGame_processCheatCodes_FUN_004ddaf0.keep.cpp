@@ -12,7 +12,6 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
 {
   CDeformableModelInstance *this_ptr_04;
   byte bVar1;
-  char cVar2;
   CWeapon *actor_ptr;
   double dVar3;
   float fVar4;
@@ -36,7 +35,6 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   int iVar13;
   int iVar18;
   int iVar19;
-  CKeyActor *pCVar19;
   byte *pbVar20;
   byte *pbVar21;
   byte bVar22;
@@ -93,7 +91,6 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   float fVar23;
   CDemonSet *this_ptr_03;
   byte bVar2;
-  char cVar3;
   int *piVar1;
   CSound *this_ptr_00;
   CWeapon *pCVar4;
@@ -499,19 +496,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         if (pCVar16 == (CDemonActor *)0x0) {
           this_ptr_01 = (CKeyActor *)
                         core_actor_cpp_createActorByName_FUN_0040c430("CKeyActor");
-          pcVar8 = "Skeleton_key";
           (*((this_ptr_01->base).vtable._ub)->setup)((CDemonActor *)this_ptr_01);
           this_ptr_01->key_mask = -1;
-          pCVar19 = this_ptr_01;
-          do {
-            cVar3 = *pcVar8;
-            (pCVar19->base).actor_name[0] = cVar3;
-            if (cVar3 == '\0') break;
-            cVar2 = pcVar8[1];
-            pcVar8 = pcVar8 + 2;
-            (pCVar19->base).actor_name[1] = cVar2;
-            pCVar19 = (CKeyActor *)((pCVar19->base).actor_name + 2);
-          } while (cVar2 != '\0');
+          strcpy((this_ptr_01->base).actor_name, "Skeleton_key");
           core_sound_cpp_CSound_playSound_FUN_005b3a20
                     (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
           core_inv_cpp_CInventory_addItem_FUN_004fd600

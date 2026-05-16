@@ -181,6 +181,8 @@ The first integer is the count; each subsequent line is one filename to mount. I
 
 So `pod.ini` is just a manual override for which pods to load and in what order — useful for development builds where you have many archives present but only want a subset mounted.
 
+**Secondary effect — chapter-select UI.** `core/game.cpp:CGame_showChapterSelect_FUN_004e1cb0` also probes for `pod.ini` near the top (open + immediate close, contents ignored). If the file exists, the START menu skips the curated Volume 1–5 / Chapter pick-list and opens a generic flat ".msn file picker" instead. So `pod.ini`'s mere presence flips the chapter-select UI into "dev mode" regardless of what's inside it. See [`retail_vs_editor_mysteries.md`](retail_vs_editor_mysteries.md) §3.
+
 ## `skeledit.ini` — skeleton editor state (plain text, not a true INI)
 
 Read/written by `core/skeledit.cpp:viewModel_FUN_00598fc0` (via `fopen("skeledit.ini", ...)`). Persists the last-used model viewer state — model name, zoom, rotation, etc. — so the editor reopens at the same view next time.

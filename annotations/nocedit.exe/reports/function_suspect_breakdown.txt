@@ -4,16 +4,16 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5736 functions
-  1 suspects: 103 functions
-  2 suspects: 171 functions
-  3 suspects: 98 functions
-  4 suspects: 87 functions
+  0 suspects: 5748 functions
+  1 suspects: 102 functions
+  2 suspects: 169 functions
+  3 suspects: 94 functions
+  4 suspects: 85 functions
   5 suspects: 49 functions
-  6 suspects: 51 functions
+  6 suspects: 50 functions
   7 suspects: 22 functions
-  8 suspects: 31 functions
-  9 suspects: 10 functions
+  8 suspects: 30 functions
+  9 suspects: 9 functions
   10 suspects: 17 functions
   11 suspects: 9 functions
   12 suspects: 11 functions
@@ -119,7 +119,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [pointer_cast] (32 functions)
+  [pointer_cast] (31 functions)
   ------------------------------------------------------------
     core_dstrender.cpp_renderDepth16BitConditional_FUN ( 50 lines)
       psVar9 = (short *)((int)g_ScreenBufferArray[scanline_y] + uV...
@@ -161,8 +161,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices ...
     engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 (100 lines)
       *(uint *)(iVar6 + (int)this_ptr->act) = uVar8 | uVar5;...
-    core_game.cpp_captureDebugMovieFrame_FUN_004d7810  (103 lines)
-      *(int *)((int)g_ScreenBufferArray + iStack_1c));...
     core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbi (104 lines)
       output_buffer = (ulonglong *)((int)output_buffer + 4);...
     shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FU (123 lines)
@@ -615,16 +613,12 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/inv.cpp, Lines: 366, Types: ['decompiler_intrinsic']
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
     File: engine/pod.cpp, Lines: 368, Types: ['unrolled_memcpy']
-  core_game.cpp_CGame_processFrame_FUN_004da100
-    File: core/game.cpp, Lines: 374, Types: ['unrolled_memcpy']
   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437c
     File: engine/clipper.c, Lines: 446, Types: ['pointer_cast']
   engine_clipper.c_clipPolygonToViewport_FUN_00438420
     File: engine/clipper.c, Lines: 464, Types: ['pointer_cast']
   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
     File: core/set.cpp, Lines: 567, Types: ['unrolled_memcpy']
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
-    File: core/game.cpp, Lines: 1728, Types: ['shadow_pointer_walk', 'unrolled_strcpy']
   shape_superopt.cpp_CP3D_copy2_FUN_005d84a0
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
   shape_superopt.cpp_CVec_copy3_FUN_005d82b0
@@ -691,8 +685,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 52, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0
     File: engine/drender.cpp, Lines: 53, Types: ['pointer_cast']
-  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0
-    File: core/game.cpp, Lines: 53, Types: ['pointer_cast', 'stack_alignment_array']
   shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40
     File: shape/meshlod.cpp, Lines: 53, Types: ['pointer_cast']
   core_script.cpp_CScript_checkSyntax_FUN_00566080
@@ -703,8 +695,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/2d.c, Lines: 56, Types: ['pointer_cast']
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
     File: core/manpuz.cpp, Lines: 56, Types: ['pointer_cast', 'unrolled_memcpy']
-  core_game.cpp_CGame_beginFadeOut_FUN_004e0960
-    File: core/game.cpp, Lines: 57, Types: ['pointer_cast', 'stack_alignment_array']
   shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350
     File: shape/superopt.cpp, Lines: 58, Types: ['pointer_cast']
   core_chain.cpp_CChain_ctor_FUN_0042fb80
@@ -809,12 +799,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 180, Types: ['unrolled_strcpy']
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     File: engine/fileio.cpp, Lines: 193, Types: ['pointer_cast', 'unrolled_strcpy']
-  core_game.cpp_CGame_displayActStats_FUN_004e3800
-    File: core/game.cpp, Lines: 206, Types: ['unrolled_strcpy', 'unrolled_strlen', 'warning_inlined_function']
   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_004268e0
     File: core/bugs.cpp, Lines: 222, Types: ['self_copy_guard', 'unrolled_memcpy']
-  core_game.cpp_CGame_finishAct_FUN_004e3b90
-    File: core/game.cpp, Lines: 233, Types: ['unrolled_strcpy', 'unrolled_strlen', 'warning_inlined_function']
   core_icepick.cpp_CIcePick_processAI_FUN_004f8c70
     File: core/icepick.cpp, Lines: 243, Types: ['unrolled_memcpy']
   core_emitter.cpp_CEmitter_process_FUN_004a8070
