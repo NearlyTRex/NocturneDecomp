@@ -63,11 +63,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
         if ((iVar12 == 0) && (iVar1 != 0)) {
           engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
           if (local_b0 < iVar9) {
-            local_44 = local_b0 * 0x12;
+            local_44 = local_b0;
             do {
-              puVar8 = (ushort *)
-                       ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
-                       local_44);
+              puVar8 = &this_ptr->tri_data_ptr[lod_index][local_44].vertex_indices.vertex_index_0;
               pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
               pSVar6 = pSVar3 + *puVar8;
               pSVar1 = pSVar3 + puVar8[1];
@@ -129,8 +127,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
               local_12c.base.count = 3;
               engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
                         (g_CDemonRendererPtr2,&local_12c);
-              local_44 = local_44 + 0x12;
-            } while (local_44 < iVar9 * 0x12);
+              local_44 = local_44 + 1;
+            } while (local_44 < iVar9);
           }
         }
         else if ((this_ptr->num_textures == 1) ||

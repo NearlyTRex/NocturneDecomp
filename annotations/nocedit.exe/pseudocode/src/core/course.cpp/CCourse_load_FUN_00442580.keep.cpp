@@ -13,7 +13,6 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00442580(CCourse *this_ptr,char *f
   _FILE *file;
   int iVar1;
   int iVar4;
-  int iVar3;
   int auStack_18;
   int local_14;
   
@@ -41,11 +40,9 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00442580(CCourse *this_ptr,char *f
   } while (iVar4 != 10);
   iVar4 = 0;
   if (0 < this_ptr->len) {
-    iVar3 = 0;
     do {
-      CCourseFrame *frame = (CCourseFrame *)((int)&(this_ptr->frames->pos).x + iVar3);
+      CCourseFrame *frame = &this_ptr->frames[iVar4];
       iVar4 = iVar4 + 1;
-      iVar3 = iVar3 + 0x1c;
       _fscanf(file,"%f,%f,%f, %f,%f,%f,%f\n",
                  &frame->pos.x,&frame->pos.y,&frame->pos.z,
                  &frame->orient.x,&frame->orient.y,&frame->orient.z,&frame->orient.w);

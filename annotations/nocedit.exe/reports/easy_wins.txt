@@ -10,71 +10,16 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  engine/model.c (2 remaining of 8)
-    - engine_model.c_byteswapMRGLData_FUN_00527e40
-      Suspects: pointer_cast, pointer_cast
-    - engine_model.c_loadModelChunk_FUN_00528970
-      Suspects: pointer_cast, pointer_cast
-
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [pointer_cast] - 7 functions
-    shape_design.c_findVertexListInModel_FUN_00468000                      ( 14 lines)
-    core_dcube.cpp_CDemonCube_testAABBIntersection_FUN_00457ca0            ( 21 lines)
-    shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860            ( 22 lines)
-    shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760               ( 22 lines)
-    engine_fileio.cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50    ( 33 lines)
-    core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320           ( 37 lines)
-    core_course.cpp_CCourse_load_FUN_00442580                              ( 45 lines)
-
   [warning_inlined_function] - 1 functions
     shape_design.c_arePolygonsCoplanar_FUN_00461b70                        ( 25 lines)
-
-  [stack_alignment_array] - 1 functions
-    core_fire.cpp_CSpark_setupRenderState_FUN_004c0300                     ( 48 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
-
-  core/fire.cpp (97.8% complete)
-    4 functions remaining:
-      core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80 (40 lines)
-        Types: ['stack_alignment_array', 'warning_inlined_function']
-      core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (474 lines)
-        Types: ['unrolled_memcpy']
-      core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 (48 lines)
-        Types: ['stack_alignment_array']
-      core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 (40 lines)
-        Types: ['stack_alignment_array', 'warning_inlined_function']
-
-  core/skeleton.cpp (94.0% complete)
-    7 functions remaining:
-      core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0 (27 lines)
-        Types: ['pointer_cast']
-      core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (179 lines)
-        Types: ['pointer_cast']
-      core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (124 lines)
-        Types: ['pointer_cast']
-      core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (198 lines)
-        Types: ['pointer_cast']
-      core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0 (86 lines)
-        Types: ['pointer_cast']
-      core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (200 lines)
-        Types: ['pointer_cast']
-      core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (254 lines)
-        Types: ['pointer_cast']
-
-  core/morph.cpp (93.9% complete)
-    3 functions remaining:
-      core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580 (51 lines)
-        Types: ['pointer_cast']
-      core_morph.cpp_CMorphModel_findNearestPoint_FUN_0052b280 (32 lines)
-        Types: ['pointer_cast']
-      core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920 (32 lines)
-        Types: ['pointer_cast']
 
 ====================================================================================================
 ALL REMAINING FILES
@@ -115,12 +60,12 @@ ALL REMAINING FILES
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
   core/stranger.cpp                                             76.2%  (48/63 clean, 15 remaining)
   core/set.cpp                                                  75.9%  (66/87 clean, 21 remaining)
+  shape/superopt.cpp                                            75.8%  (141/186 clean, 45 remaining)
   core/setutil.cpp                                              75.6%  (31/41 clean, 10 remaining)
   engine/drender.cpp                                            75.0%  (66/88 clean, 22 remaining)
   core/ground.cpp                                               75.0%  (15/20 clean, 5 remaining)
   core/emitter.cpp                                              75.0%  (15/20 clean, 5 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
-  shape/superopt.cpp                                            74.7%  (139/186 clean, 47 remaining)
   core/cloth.cpp                                                74.5%  (41/55 clean, 14 remaining)
   core/gabriela.cpp                                             73.7%  (28/38 clean, 10 remaining)
   core/dpart.cpp                                                73.3%  (11/15 clean, 4 remaining)
@@ -129,20 +74,20 @@ ALL REMAINING FILES
   core/setdir.cpp                                               71.9%  (23/32 clean, 9 remaining)
   core/texlist.cpp                                              71.4%  (10/14 clean, 4 remaining)
   core/chain.cpp                                                71.4%  (15/21 clean, 6 remaining)
+  shape/design.c                                                71.2%  (116/163 clean, 47 remaining)
   core/dtrace.cpp                                               70.6%  (36/51 clean, 15 remaining)
-  shape/design.c                                                70.6%  (115/163 clean, 48 remaining)
   core/setcolid.cpp                                             70.0%  (28/40 clean, 12 remaining)
+  core/platfrm.cpp                                              70.0%  (21/30 clean, 9 remaining)
   core/dmodel.cpp                                               69.7%  (46/66 clean, 20 remaining)
   core/skeledit.cpp                                             68.6%  (48/70 clean, 22 remaining)
   core/dtri.cpp                                                 67.9%  (19/28 clean, 9 remaining)
   shape/meshlod.cpp                                             67.7%  (84/124 clean, 40 remaining)
+  engine/fileio.cpp                                             67.1%  (49/73 clean, 24 remaining)
   core/ghoul.cpp                                                66.7%  (12/18 clean, 6 remaining)
-  core/platfrm.cpp                                              66.7%  (20/30 clean, 10 remaining)
-  engine/fileio.cpp                                             65.8%  (48/73 clean, 25 remaining)
   core/weather.cpp                                              60.0%  (6/10 clean, 4 remaining)
   core/path.cpp                                                 60.0%  (15/25 clean, 10 remaining)
   core/glass.cpp                                                58.3%  (14/24 clean, 10 remaining)
   engine/alphabit.cpp                                           55.6%  (5/9 clean, 4 remaining)
+  core/dcube.cpp                                                53.8%  (21/39 clean, 18 remaining)
+  core/course.cpp                                               53.3%  (8/15 clean, 7 remaining)
   core/setedit.cpp                                              51.7%  (30/58 clean, 28 remaining)
-  core/dcube.cpp                                                51.3%  (20/39 clean, 19 remaining)
-  core/course.cpp                                               46.7%  (7/15 clean, 8 remaining)

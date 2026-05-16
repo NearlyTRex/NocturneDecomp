@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 36,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 21,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 67
   },
   "cross_references": [
@@ -95,6 +93,17 @@
     },
     "pcode_op_count": 178
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar2)",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -125,14 +134,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices",
-      "severity": "moderate",
-      "text": "((CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar2)",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

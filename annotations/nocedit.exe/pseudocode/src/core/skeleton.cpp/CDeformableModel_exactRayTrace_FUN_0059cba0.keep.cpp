@@ -16,7 +16,6 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDef
   int iVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
   int iVar6;
   CDemonTriangle local_6c;
   byte *local_28;
@@ -53,17 +52,13 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDef
     do {
       iVar2 = *(int *)(local_24 + 0x7164) + iVar3;
       if (((*local_28 & 1) != 0) && (iVar3 < iVar2)) {
-        iVar5 = iVar3 * 0x12;
         do {
           pSVar1 = this_ptr->tri_data_ptr[lod_index];
           core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                     (&local_6c,
-                     g_FloatVertexArray +
-                     *(ushort *)((int)&(pSVar1->vertex_indices).vertex_index_0 + iVar5),
-                     g_FloatVertexArray +
-                     *(ushort *)((int)&(pSVar1->vertex_indices).vertex_index_1 + iVar5),
-                     g_FloatVertexArray +
-                     *(ushort *)((int)&(pSVar1->vertex_indices).vertex_index_2 + iVar5));
+                     g_FloatVertexArray + pSVar1[iVar3].vertex_indices.vertex_index_0,
+                     g_FloatVertexArray + pSVar1[iVar3].vertex_indices.vertex_index_1,
+                     g_FloatVertexArray + pSVar1[iVar3].vertex_indices.vertex_index_2);
           fVar2 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
                             (&local_6c,ray_origin,ray_direction);
           if (((fVar2 < local_18) && (0.0 <= fVar2)) && (fVar2 <= 1.0)) {
@@ -76,7 +71,6 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDef
             local_18 = fVar2;
           }
           iVar3 = iVar3 + 1;
-          iVar5 = iVar5 + 0x12;
         } while (iVar3 < iVar2);
       }
       iVar6 = iVar6 + 1;

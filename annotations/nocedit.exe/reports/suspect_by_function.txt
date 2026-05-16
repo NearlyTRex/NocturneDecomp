@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5693 (88.2%)
-With suspects: 761
-Total suspects: 3892
+Clean: 5716 (88.6%)
+With suspects: 738
+Total suspects: 3866
 
 ====================================================================================================
 core_bugs.cpp_CBugs_ctor_FUN_00424cb0 (3 suspects)
@@ -369,12 +369,6 @@ core_course.cpp_CCourse_interpolate_FUN_004427a0 (3 suspects)
   Line 103 [unrolled_memcpy]: out_pos->x = local_3c.x;
 
 ====================================================================================================
-core_course.cpp_CCourse_load_FUN_00442580 (1 suspect)
-  File: core/course.cpp
-====================================================================================================
-  Line 39 [pointer_cast]: iVar2 = (int)&(this_ptr->frames->pos).x + iVar3;
-
-====================================================================================================
 core_course.cpp_CCourse_preview_FUN_00443bc0 (4 suspects)
   File: core/course.cpp
 ====================================================================================================
@@ -569,12 +563,6 @@ core_dcube.cpp_CDemonCube_setBounds_FUN_00456a90 (2 suspects)
 ====================================================================================================
   Line 6 [unrolled_memcpy]: (this_ptr->min_bounds).x = min_bounds->x;
   Line 15 [unrolled_memcpy]: (this_ptr->max_bounds).x = max_bounds->x;
-
-====================================================================================================
-core_dcube.cpp_CDemonCube_testAABBIntersection_FUN_00457ca0 (1 suspect)
-  File: core/dcube.cpp
-====================================================================================================
-  Line 14 [pointer_cast]: ((CVector3f **)((int)(this_ptr->triangle_buffer->triangle).vertices + iVar2)
 
 ====================================================================================================
 core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_00457a90 (4 suspects)
@@ -1465,35 +1453,6 @@ core_fire.cpp_CFireball_render_FUN_004c0e70 (2 suspects)
   Line 151 [static_uninitvar]: fVar4 = -local_18 * local_e0.min.x;
 
 ====================================================================================================
-core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80 (2 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 14 [stack_alignment_array]: float afStackY_1000 [997];
-
-====================================================================================================
-core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (4 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 152 [unrolled_memcpy]: local_1d4.x = pCVar7->x;
-  Line 194 [unrolled_memcpy]: local_168.x = local_150.x;
-  Line 239 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr->r = (this_ptr->color).r;
-  Line 244 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[1].r = (this_ptr->color).r;
-
-====================================================================================================
-core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 (2 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 14 [stack_alignment_array]: float afStackY_1000 [997];
-
-====================================================================================================
-core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 (1 suspect)
-  File: core/fire.cpp
-====================================================================================================
-  Line 14 [stack_alignment_array]: float afStackY_1000 [997];
-
-====================================================================================================
 core_flies.cpp_CFlies_initFly_FUN_004cc760 (2 suspects)
   File: core/flies.cpp
 ====================================================================================================
@@ -1805,11 +1764,12 @@ core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0 (5 suspects)
   Line 83 [unrolled_memcpy]: pCVar3->x = pCVar1->x;
 
 ====================================================================================================
-core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0 (2 suspects)
+core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0 (3 suspects)
   File: core/ghoul.cpp
 ====================================================================================================
   Line 42 [unrolled_memcpy]: (this_ptr->prev_position).x = (pCVar1->position).x;
   Line 99 [pointer_cast]: pCVar6 = (CGhoul *)((int)&(pCVar6->base).base.base.orient + 8);
+  Line 99 [shadow_pointer_walk]: pCVar6 = (CGhoul *)((int)&(pCVar6->base).base.base.orient + 8);
 
 ====================================================================================================
 core_ghoul.cpp_CGhoul_process_FUN_004e6600 (14 suspects)
@@ -2516,28 +2476,6 @@ core_mobster.cpp_CMobster_process_FUN_00525840 (6 suspects)
   Line 565 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
-core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580 (1 suspect)
-  File: core/morph.cpp
-====================================================================================================
-  Line 21 [pointer_cast]: pSVar6 = (SMRGLHeaderPrimitive *)((int)&(pSVar6->base).type + poly_stride);
-
-====================================================================================================
-core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920 (3 suspects)
-  File: core/morph.cpp
-====================================================================================================
-  Line 27 [pointer_cast]: *(float *)((int)&(pSVar1->position).x + iVar3) = (float)vertex_buffer->x * 0.00390625f;
-  Line 28 [pointer_cast]: *(float *)((int)&(pSVar1->position).y + iVar3) = (float)vertex_buffer->y * 0.00390625f;
-  Line 29 [pointer_cast]: *(float *)((int)&(pSVar1->position).z + iVar3) = (float)vertex_buffer->z * 0.00390625f;
-
-====================================================================================================
-core_morph.cpp_CMorphModel_findNearestPoint_FUN_0052b280 (3 suspects)
-  File: core/morph.cpp
-====================================================================================================
-  Line 22 [pointer_cast]: fVar2 = position->x - *(float *)((int)&(pSVar1->position).x + iVar5);
-  Line 23 [pointer_cast]: fVar3 = position->y - *(float *)((int)&(pSVar1->position).y + iVar5);
-  Line 24 [pointer_cast]: fVar4 = position->z - *(float *)((int)&(pSVar1->position).z + iVar5);
-
-====================================================================================================
 core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (7 suspects)
   File: core/msnedit.cpp
 ====================================================================================================
@@ -2889,20 +2827,25 @@ core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90 (1 suspect)
   Line 51 [unrolled_memcpy]: (this_ptr->swing_tip_world).x = pCVar2->x;
 
 ====================================================================================================
-core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0 (3 suspects)
+core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0 (6 suspects)
   File: core/platfrm.cpp
 ====================================================================================================
   Line 78 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
+  Line 78 [shadow_pointer_walk]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
   Line 89 [pointer_cast]: pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
+  Line 89 [shadow_pointer_walk]: pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
   Line 100 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
+  Line 100 [shadow_pointer_walk]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
 
 ====================================================================================================
-core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 (3 suspects)
+core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 (5 suspects)
   File: core/platfrm.cpp
 ====================================================================================================
   Line 36 [unrolled_memcpy]: pCVar6->attach_actors[0].matrix.m[0].w = local_70.m[0].w;
   Line 53 [pointer_cast]: pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);
+  Line 53 [shadow_pointer_walk]: pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);
   Line 61 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
+  Line 61 [shadow_pointer_walk]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
 
 ====================================================================================================
 core_platfrm.cpp_CPlatform_ctor_FUN_0054c850 (4 suspects)
@@ -2923,11 +2866,13 @@ core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 (4 suspects)
   Line 61 [unrolled_memcpy]: (out_euler_00->vec).x = pCVar2->x;
 
 ====================================================================================================
-core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0 (2 suspects)
+core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0 (4 suspects)
   File: core/platfrm.cpp
 ====================================================================================================
   Line 11 [pointer_cast]: this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
+  Line 11 [shadow_pointer_walk]: this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
   Line 16 [pointer_cast]: this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
+  Line 16 [shadow_pointer_walk]: this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
 
 ====================================================================================================
 core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 (18 suspects)
@@ -2972,17 +2917,13 @@ core_platfrm.cpp_CPlatform_renderOpaque_FUN_0054d720 (4 suspects)
   Line 92 [unrolled_memcpy]: (pUVar4->vec).x = pCVar3->x;
 
 ====================================================================================================
-core_platfrm.cpp_CPlatform_setup_FUN_0054ca20 (2 suspects)
+core_platfrm.cpp_CPlatform_setup_FUN_0054ca20 (4 suspects)
   File: core/platfrm.cpp
 ====================================================================================================
   Line 22 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
+  Line 22 [shadow_pointer_walk]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
   Line 27 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320 (1 suspect)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 37 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
+  Line 27 [shadow_pointer_walk]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
 
 ====================================================================================================
 core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (15 suspects)
@@ -4454,63 +4395,6 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005
   Line 30 [static_invalid_pointer_cast]: (int *)local_24,&local_60);
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (1 suspect)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 72 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_2c);
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (1 suspect)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 111 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_1c);
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (8 suspects)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 66 [pointer_cast]: g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1;
-  Line 67 [pointer_cast]: g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1;
-  Line 68 [pointer_cast]: puVar11 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);
-  Line 77 [pointer_cast]: g_VertexRemapTable[*(ushort *)((int)&(pSVar4->vertex_indices).vertex_index_0 + iVar5)] = 1;
-  Line 78 [pointer_cast]: g_VertexRemapTable[*(ushort *)((int)&(pSVar4->vertex_indices).vertex_index_1 + iVar5)] = 1;
-  Line 79 [pointer_cast]: puVar11 = (ushort *)((int)&(pSVar4->vertex_indices).vertex_index_2 + iVar5);
-  Line 108 [pointer_cast]: piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar13);
-  Line 134 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0 (3 suspects)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 60 [pointer_cast]: *(ushort *)((int)&(pSVar1->vertex_indices).vertex_index_0 + iVar5),
-  Line 62 [pointer_cast]: *(ushort *)((int)&(pSVar1->vertex_indices).vertex_index_1 + iVar5),
-  Line 64 [pointer_cast]: *(ushort *)((int)&(pSVar1->vertex_indices).vertex_index_2 + iVar5));
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (1 suspect)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 104 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0 (6 suspects)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 16 [pointer_cast]: (uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_0 + iVar5),
-  Line 17 [pointer_cast]: (uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_1 + iVar5));
-  Line 20 [pointer_cast]: (uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_1 + iVar5),
-  Line 21 [pointer_cast]: (uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_2 + iVar5));
-  Line 22 [pointer_cast]: puVar1 = (ushort *)((int)&(pSVar3->vertex_indices).vertex_index_0 + iVar5);
-  Line 23 [pointer_cast]: puVar2 = (ushort *)((int)&(pSVar3->vertex_indices).vertex_index_2 + iVar5);
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (2 suspects)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 97 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 + iVar8
-  Line 109 [pointer_cast]: *(uint *)((int)&local_94.x + iVar7) = (uint)puVar5[3];
-
-====================================================================================================
 core_sound.cpp_updateListeners_FUN_005b1870 (5 suspects)
   File: core/sound.cpp
 ====================================================================================================
@@ -5550,11 +5434,12 @@ engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550 (2 suspects)
   Line 24 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
 
 ====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320 (4 suspects)
+engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320 (5 suspects)
   File: engine/drender.cpp
 ====================================================================================================
   Line 13 [pointer_cast]: this_ptr->vertex_buffer_ptr[uVar1].u = (uint)*(ushort *)((int)&(pSVar3->base).count + 2) << 8;
   Line 15 [pointer_cast]: pSVar3 = (SMRGLHeaderPrimitive *)((int)&(pSVar3->base).type + 2);
+  Line 15 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)((int)&(pSVar3->base).type + 2);
   Line 17 [pointer_cast]: } while (pSVar3 != (SMRGLHeaderPrimitive *)((int)&(prim->base).count + 2));
   Line 20 [pointer_cast]: g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(prim->base).type + 2);
 
@@ -5611,11 +5496,12 @@ engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970 (4 suspects)
   Line 48 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
 
 ====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030 (4 suspects)
+engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030 (5 suspects)
   File: engine/drender.cpp
 ====================================================================================================
   Line 21 [pointer_cast]: this_ptr->vertex_buffer_ptr[uVar1].u = (uint)*(ushort *)((int)&(pSVar3->base).count + 2) << 8;
   Line 23 [pointer_cast]: pSVar3 = (SMRGLHeaderPrimitive *)((int)&(pSVar3->base).type + 2);
+  Line 23 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)((int)&(pSVar3->base).type + 2);
   Line 25 [pointer_cast]: } while (pSVar3 != (SMRGLHeaderPrimitive *)((int)&(primitive->base).count + 2));
   Line 28 [pointer_cast]: g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(primitive->base).type + 2);
 
@@ -5743,12 +5629,6 @@ engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40 (3 suspe
   Line 49 [unrolled_strcpy]: do {
   Line 125 [pointer_cast]: pcVar8 = *(char **)((int)&local_40->directory_entries->name + local_34);
   Line 137 [pointer_cast]: *(uint *)((int)&local_40->directory_entries->checksum + local_34)
-
-====================================================================================================
-engine_fileio.cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50 (1 suspect)
-  File: engine/fileio.cpp
-====================================================================================================
-  Line 25 [pointer_cast]: remove(*(char **)((int)&(local_438.directory_entries)->name + iVar2))
 
 ====================================================================================================
 engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 (2 suspects)
@@ -5903,24 +5783,10 @@ engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650 (2 suspects)
   Line 51 [unrolled_strcpy]: do {
 
 ====================================================================================================
-engine_model.c_byteswapMRGLData_FUN_00527e40 (2 suspects)
-  File: engine/model.c
-====================================================================================================
-  Line 88 [pointer_cast]: mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);
-  Line 96 [pointer_cast]: mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);
-
-====================================================================================================
 engine_model.c_getMRGLBounds_FUN_00528140 (1 suspect)
   File: engine/model.c
 ====================================================================================================
   Line 134 [static_uninitvar]: *output_bounds = *puVar11;
-
-====================================================================================================
-engine_model.c_loadModelChunk_FUN_00528970 (2 suspects)
-  File: engine/model.c
-====================================================================================================
-  Line 38 [pointer_cast]: *(uint *)((int)&(buffer->base).type + model_size) = 0;
-  Line 41 [pointer_cast]: *(uint *)((int)&(buffer->base).type + model_size) = 0;
 
 ====================================================================================================
 engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0 (3 suspects)
@@ -6213,12 +6079,6 @@ shape_design.c_exportModelToMDL_FUN_00459e80 (1 suspect)
   File: shape/design.c
 ====================================================================================================
   Line 16 [unrolled_strcpy]: do {
-
-====================================================================================================
-shape_design.c_findVertexListInModel_FUN_00468000 (1 suspect)
-  File: shape/design.c
-====================================================================================================
-  Line 9 [pointer_cast]: model_ptr = (SMRGLHeaderExtended *)((int)&(model_ptr->base).type + iVar1);
 
 ====================================================================================================
 shape_design.c_generateGlobe_FUN_00468910 (3 suspects)
@@ -6910,14 +6770,16 @@ shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (7 suspects)
   Line 78 [pointer_cast]: [*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x24)].
 
 ====================================================================================================
-shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70 (5 suspects)
+shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70 (7 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 11 [shadow_pointer_walk]: source = (CLodVert *)&(source->position).y;
   Line 11 [unrolled_memcpy]: // 0051ee87: MOVSD.REP ES:EDI,ESI
   Line 12 [shadow_pointer_walk]: pCVar2 = (CLodVert *)&(pCVar2->position).y;
   Line 16 [pointer_cast]: source = (CLodVert *)((int)&(source->position).x + 1);
+  Line 16 [shadow_pointer_walk]: source = (CLodVert *)((int)&(source->position).x + 1);
   Line 17 [pointer_cast]: pCVar2 = (CLodVert *)((int)&(pCVar2->position).x + 1);
+  Line 17 [shadow_pointer_walk]: pCVar2 = (CLodVert *)((int)&(pCVar2->position).x + 1);
 
 ====================================================================================================
 shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480 (2 suspects)
@@ -7186,18 +7048,6 @@ shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (6 suspects)
   Line 41 [pointer_cast]: *(uint *)((int)pCVar1->uv_coords + iVar4 + -4) = uVar2 - 1;
 
 ====================================================================================================
-shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860 (1 suspect)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 13 [pointer_cast]: puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar3);
-
-====================================================================================================
-shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760 (1 suspect)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 13 [pointer_cast]: puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar3);
-
-====================================================================================================
 shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0 (14 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
@@ -7300,19 +7150,21 @@ shape_superopt.cpp_CP2D_copy_FUN_005d8330 (2 suspects)
   Line 8 [pointer_cast]: *(uint *)((int)&(dst->impl).y + 4) = *(uint *)((int)&(src->impl).y + 4);
 
 ====================================================================================================
-shape_superopt.cpp_CP3D_add1_FUN_005d8520 (3 suspects)
+shape_superopt.cpp_CP3D_add1_FUN_005d8520 (4 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 19 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
   Line 20 [pointer_cast]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
+  Line 20 [shadow_pointer_walk]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
   Line 25 [unrolled_memcpy]: // 005d855c: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-shape_superopt.cpp_CP3D_add2_FUN_005d85a0 (3 suspects)
+shape_superopt.cpp_CP3D_add2_FUN_005d85a0 (4 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 19 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
   Line 20 [pointer_cast]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
+  Line 20 [shadow_pointer_walk]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
   Line 25 [unrolled_memcpy]: // 005d85dc: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -7332,27 +7184,30 @@ shape_superopt.cpp_CP3D_copy2_FUN_005d84a0 (3 suspects)
   Line 10 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).z + 4) = *(uint *)((int)&(other->impl).z + 4);
 
 ====================================================================================================
-shape_superopt.cpp_CP3D_multiply_FUN_005d85f0 (3 suspects)
+shape_superopt.cpp_CP3D_multiply_FUN_005d85f0 (4 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 19 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
   Line 20 [pointer_cast]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
+  Line 20 [shadow_pointer_walk]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
   Line 23 [unrolled_memcpy]: // 005d8628: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-shape_superopt.cpp_CP3D_scale_FUN_005d8630 (3 suspects)
+shape_superopt.cpp_CP3D_scale_FUN_005d8630 (4 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 19 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
   Line 20 [pointer_cast]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
+  Line 20 [shadow_pointer_walk]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
   Line 23 [unrolled_memcpy]: // 005d8666: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-shape_superopt.cpp_CP3D_subtract_FUN_005d84d0 (3 suspects)
+shape_superopt.cpp_CP3D_subtract_FUN_005d84d0 (4 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 19 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
   Line 20 [pointer_cast]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
+  Line 20 [shadow_pointer_walk]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
   Line 25 [unrolled_memcpy]: // 005d850c: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -7381,7 +7236,7 @@ shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0 (20 suspects)
   Line 197 [static_uninitvar]: dVar6 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);
 
 ====================================================================================================
-shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0 (14 suspects)
+shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0 (18 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 15 [unrolled_memcpy]: // 005cc6c2: MOVSD.REP ES:EDI,ESI
@@ -7389,9 +7244,13 @@ shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0 (14 suspects)
   Line 21 [pointer_cast]: pCVar4 = (CPoly *)((int)pCVar4 + 1);
   Line 26 [unrolled_memcpy]: // 005cc6dd: MOVSD.REP ES:EDI,ESI
   Line 27 [pointer_cast]: pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 4);
+  Line 27 [shadow_pointer_walk]: pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 4);
   Line 28 [pointer_cast]: pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 4);
+  Line 28 [shadow_pointer_walk]: pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 4);
   Line 32 [pointer_cast]: pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 1);
+  Line 32 [shadow_pointer_walk]: pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 1);
   Line 33 [pointer_cast]: pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 1);
+  Line 33 [shadow_pointer_walk]: pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 1);
   Line 38 [pointer_cast]: *(uint *)((int)&(this_ptr->normal).impl.x + 4) =
   Line 39 [pointer_cast]: *(uint *)((int)&(source->normal).impl.x + 4);
   Line 41 [pointer_cast]: *(uint *)((int)&(this_ptr->normal).impl.y + 4) =

@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 52,
+    "complexity_score": 77,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
     "total_lines": 91
   },
@@ -162,6 +163,22 @@
       "severity": "moderate",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 22,
+      "match": "pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 27,
+      "match": "pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

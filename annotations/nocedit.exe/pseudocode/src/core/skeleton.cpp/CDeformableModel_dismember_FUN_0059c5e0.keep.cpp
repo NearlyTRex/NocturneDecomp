@@ -26,8 +26,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
   int iVar13;
   int local_30;
   int local_2c;
-  int local_24;
-  int local_20;
   int local_1c;
   int local_18;
   int local_14;
@@ -61,26 +59,24 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
     }
     memset(g_VertexRemapTable,0,this_ptr->vertex_count[lod_index] << 2);
     if (local_2c < iVar8) {
-      iVar3 = local_2c * 0x12;
+      iVar3 = local_2c;
       do {
         pSVar2 = this_ptr->tri_data_ptr[lod_index];
-        g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1;
-        g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1;
-        puVar11 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);
-        iVar3 = iVar3 + 0x12;
-        g_VertexRemapTable[*puVar11] = 1;
-      } while (iVar3 < iVar8 * 0x12);
+        g_VertexRemapTable[pSVar2[iVar3].vertex_indices.vertex_index_0] = 1;
+        g_VertexRemapTable[pSVar2[iVar3].vertex_indices.vertex_index_1] = 1;
+        g_VertexRemapTable[pSVar2[iVar3].vertex_indices.vertex_index_2] = 1;
+        iVar3 = iVar3 + 1;
+      } while (iVar3 < iVar8);
     }
     if (local_30 < iVar12) {
-      iVar5 = local_30 * 0x12;
+      iVar5 = local_30;
       do {
         pSVar4 = this_ptr->tri_data_ptr[lod_index];
-        g_VertexRemapTable[*(ushort *)((int)&(pSVar4->vertex_indices).vertex_index_0 + iVar5)] = 1;
-        g_VertexRemapTable[*(ushort *)((int)&(pSVar4->vertex_indices).vertex_index_1 + iVar5)] = 1;
-        puVar11 = (ushort *)((int)&(pSVar4->vertex_indices).vertex_index_2 + iVar5);
-        iVar5 = iVar5 + 0x12;
-        g_VertexRemapTable[*puVar11] = 1;
-      } while (iVar5 < iVar12 * 0x12);
+        g_VertexRemapTable[pSVar4[iVar5].vertex_indices.vertex_index_0] = 1;
+        g_VertexRemapTable[pSVar4[iVar5].vertex_indices.vertex_index_1] = 1;
+        g_VertexRemapTable[pSVar4[iVar5].vertex_indices.vertex_index_2] = 1;
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < iVar12);
     }
     local_14 = body_part_ptr->tri_count;
     iVar5 = body_part_ptr->vertex_count;
@@ -115,15 +111,12 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::dismember - Hell froze 1!");
     }
     if (local_2c < iVar8) {
-      local_20 = local_2c * 0x12;
       iVar13 = local_14 * 0x3c;
       iVar5 = local_2c;
       do {
         iVar10 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).
                        base.type + iVar13;
-        puVar11 = (ushort *)
-                  ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
-                  local_20);
+        puVar11 = &this_ptr->tri_data_ptr[lod_index][iVar5].vertex_indices.vertex_index_0;
         *(uint *)(iVar10 + 4) = 3;
         puVar10 = puVar11 + 3;
         do {
@@ -140,22 +133,18 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
                             this_ptr->texture_sets[texture_set_index].textures
                             [this_ptr->index_data_ptr[lod_index][iVar5]].textures[0]
                             .texture_name);
-        local_20 = local_20 + 0x12;
         body_part_ptr->face_texture_indices[local_14] = iVar10;
         iVar5 = iVar5 + 1;
         local_14 = local_14 + 1;
       } while (iVar5 < iVar8);
     }
     if (local_30 < iVar12) {
-      local_24 = local_30 * 0x12;
       local_1c = local_14 * 0x3c;
       iVar13 = local_30;
       do {
         iVar10 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).
                        base.type + local_1c;
-        puVar5 = (ushort *)
-                 ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
-                 local_24);
+        puVar5 = &this_ptr->tri_data_ptr[lod_index][iVar13].vertex_indices.vertex_index_0;
         *(uint *)(iVar10 + 4) = 3;
         puVar11 = puVar5 + 3;
         do {
@@ -173,7 +162,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
                             texture_name);
         body_part_ptr->face_texture_indices[local_14] = iVar10;
         local_1c = local_1c + 0x3c;
-        local_24 = local_24 + 0x12;
         iVar13 = iVar13 + 1;
         local_14 = local_14 + 1;
       } while (iVar13 < iVar12);

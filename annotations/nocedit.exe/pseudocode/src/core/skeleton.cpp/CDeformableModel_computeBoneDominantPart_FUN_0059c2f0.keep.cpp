@@ -27,7 +27,6 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c
   CDeformableModel *local_3c;
   int local_38;
   int local_30;
-  int local_2c;
   int local_28;
   int local_1c;
   float local_18;
@@ -64,11 +63,9 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c
         local_1c = 0;
         local_28 = 0;
         local_14 = 0.0;
-        local_2c = local_30 * 0x12;
         if (0 < local_3c->parts[0].tri_counts[0]) {
           do {
-            puVar6 = (ushort *)
-                     ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_2c);
+            puVar6 = &this_ptr->tri_data_ptr[0][local_30].vertex_indices.vertex_index_0;
             puVar4 = puVar6 + 3;
             do {
               pSVar7 = this_ptr->vertex_data_ptr[0] + *puVar6;
@@ -86,7 +83,6 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c
               local_18 = fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 + local_18;
             } while (puVar6 != puVar4);
             local_30 = local_30 + 1;
-            local_2c = local_2c + 0x12;
             local_28 = local_28 + 1;
           } while (local_28 < local_3c->parts[0].tri_counts[0]);
         }

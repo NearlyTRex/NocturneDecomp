@@ -1290,6 +1290,132 @@ def identify_unrolled_memcpy_loops(decompiled_code):
     return suspects
 
 
+# Single-line indexed copy of the form `[*]IDENT[A] = [*]IDENT[B];` —
+# captures (lhs_deref_ident, lhs_index_ident, lhs_index_N,
+# rhs_deref_ident, rhs_index_ident, rhs_index_N). Either deref or index
+# form is allowed on each side. Used by `identify_unrolled_memcpy_index_form`
+# to walk runs of consecutive same-pointer indexed copies (Watcom's
+# straight-line lowering of a struct copy, e.g. CVector3d → CVector3d via
+# 6 dword writes).
+_INDEX_COPY_LINE_RE = re.compile(
+    r'^\s*'
+    r'(?:\*\s*(\w+)|(\w+)\s*\[\s*(\d+|0x[0-9a-fA-F]+)\s*\])'
+    r'\s*=\s*'
+    r'(?:\*\s*(\w+)|(\w+)\s*\[\s*(\d+|0x[0-9a-fA-F]+)\s*\])'
+    r'\s*;\s*$'
+)
+# Minimum run length (number of consecutive matching `ptr[N] = ptr[N+K];`
+# lines) before flagging as an unrolled memcpy. 4+ avoids false positives
+# on small swaps or scattered assignments; real Watcom struct copies
+# unrolled this way are typically 6+ (e.g. a CVector3d's 3 doubles =
+# 6 dwords, a CMatrix3x4f's 48 bytes = 12 dwords).
+_INDEX_COPY_MIN_RUN = 4
+
+
+def identify_unrolled_memcpy_index_form(decompiled_code):
+    """Detect straight-line indexed-store struct copies (no loop).
+
+    Catches Watcom's REP MOVSD lowering when the source-side decompile
+    shows up as a run of `puVar[N] = puVar[N+K];` assignments rather than
+    a countdown for-loop. Example from `CObj_restoreVertexPositions`:
+
+        puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar3);
+        *puVar1 = puVar1[6];
+        puVar1[1] = puVar1[7];
+        puVar1[2] = puVar1[8];
+        puVar1[3] = puVar1[9];
+        puVar1[4] = puVar1[10];
+        puVar1[5] = puVar1[0xb];
+
+    The 6-store run is a `CVector3d`-sized copy between two adjacent
+    fields (`position` ← `orig_position`). `identify_unrolled_memcpy_loops`
+    misses this because there's no loop; the existing detectors are all
+    loop-anchored. This one is anchored on the constant-stride indexed-
+    store run instead.
+
+    Detection rule:
+    - >= `_INDEX_COPY_MIN_RUN` consecutive lines match `_INDEX_COPY_LINE_RE`
+      with the same identifier on both sides.
+    - All lines share the same delta `rhs_N - lhs_N` (positive or negative).
+    - LHS indices are consecutive (`0, 1, 2, ...` or `K, K+1, K+2, ...`).
+
+    Replace the run with a struct assignment or `memcpy(dst, src, N)` in
+    a .keep.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts (one per run, located at the first line).
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+
+    def parse(line):
+        m = _INDEX_COPY_LINE_RE.match(line)
+        if not m:
+            return None
+        lhs_d, lhs_i, lhs_n, rhs_d, rhs_i, rhs_n = m.groups()
+        lhs_ident = lhs_d or lhs_i
+        rhs_ident = rhs_d or rhs_i
+        if lhs_ident != rhs_ident:
+            return None
+        lhs_idx = 0 if lhs_d else int(lhs_n, 0)
+        rhs_idx = 0 if rhs_d else int(rhs_n, 0)
+        if lhs_idx == rhs_idx:
+            return None  # self-store, not a copy
+        return (lhs_ident, lhs_idx, rhs_idx)
+
+    i = 0
+    n = len(lines)
+    while i < n:
+        first = parse(lines[i])
+        if first is None:
+            i += 1
+            continue
+        ident, start_lhs, start_rhs = first
+        delta = start_rhs - start_lhs
+        run_end = i + 1
+        prev_lhs = start_lhs
+        while run_end < n:
+            nxt = parse(lines[run_end])
+            if nxt is None:
+                break
+            nxt_ident, nxt_lhs, nxt_rhs = nxt
+            if (nxt_ident != ident
+                    or (nxt_rhs - nxt_lhs) != delta
+                    or nxt_lhs != prev_lhs + 1):
+                break
+            prev_lhs = nxt_lhs
+            run_end += 1
+        run_len = run_end - i
+        if run_len >= _INDEX_COPY_MIN_RUN:
+            suspects.append({
+                'line': i + 1,
+                'type': 'unrolled_memcpy',
+                'match': 'run of %d × `%s[N] = %s[N+%d];`' % (
+                    run_len, ident, ident,
+                    delta) if delta > 0 else
+                    'run of %d × `%s[N] = %s[N-%d];`' % (
+                        run_len, ident, ident, -delta),
+                'text': lines[i].strip()[:120],
+                'description': (
+                    'Watcom straight-line unrolled memcpy — a run of %d '
+                    'consecutive `%s[N] = %s[N%+d];` assignments at constant '
+                    'stride (no enclosing loop). The setup line just above '
+                    'is typically a typed-pointer cast (`puVar = (T *)((int)'
+                    '&NAME + offset)`); together they implement an inline '
+                    'struct copy. Replace with a struct assignment (`dst = '
+                    'src;`) or `memcpy(dst, src, N)` in a .keep.' % (
+                        run_len, ident, ident, delta)),
+                'severity': 'moderate',
+            })
+        i = run_end if run_len >= _INDEX_COPY_MIN_RUN else i + 1
+    return suspects
+
+
 # Variant of `_UNROLLED_MEMCPY_FOR_RE` that also captures the literal
 # iteration count from the for-init. Only used by
 # `identify_memcpy_oversized_source` — the regular unrolled-memcpy detector
@@ -1854,6 +1980,33 @@ def identify_unrolled_field_copy(decompiled_code):
             first_rhs_prefix = normalize(m.group(3))
             if (is_rename_copy_at_same_prefix(j, first_lhs_prefix, first_rhs_prefix) or
                     is_rename_copy_at_same_prefix(i - 1, first_lhs_prefix, first_rhs_prefix)):
+                i = j
+                continue
+            # Suppress if any LHS prefix in the run also appears as an RHS
+            # prefix (or vice versa). In a real struct copy `dst = src;` the
+            # destination and source are distinct objects/paths, so their
+            # prefix sets are disjoint. Overlap means a slot is being both
+            # read from and written to within the same run — that's a
+            # cross-index shuffle (e.g. `v[0].t = v[1].t; v[1].u = v[2].u;`),
+            # not a collapsible struct copy.
+            if set(prefix_map_lhs_to_rhs.keys()) & set(prefix_map_rhs_to_lhs.keys()):
+                i = j
+                continue
+            # Suppress if the run is already inside a for-loop body whose
+            # index variable appears as an array subscript in the LHS path
+            # (e.g. `vertex_buffer_ptr[i].r = color.r;` ... `.b = .b;` inside
+            # `for (int i = 0; i < 4; i = i + 1)`). The user has already
+            # factored the unrolled copies; flagging the 3-line body would
+            # suggest re-unrolling.
+            lhs_subscripts = set(re.findall(r'\[(\w+)\]', first_lhs_prefix))
+            if lhs_subscripts:
+                for k in range(max(0, i - 5), i):
+                    for_m = re.match(r'\s*for\s*\(\s*(?:int|\w+)\s+(\w+)\s*=',
+                                     lines[k])
+                    if for_m and for_m.group(1) in lhs_subscripts:
+                        lhs_subscripts = None
+                        break
+            if lhs_subscripts is None:
                 i = j
                 continue
             suspects.append({
@@ -2493,6 +2646,23 @@ _SHADOW_PTR_WALK_ARRAY_DECAY_PLUS_RE = re.compile(
     r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)+
     r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
 )
+# Int-address-plus-const variant:
+#   `IDENT = (T *)((int)&(IDENT->FIELD).SUBFIELD + CONST);`
+# Watcom advances the shadow pointer by taking the address of a sibling
+# subfield, numerically casting to `int`, then adding a small constant —
+# the sum is one element-size step (e.g. `(int)&(p->base).orient + 4` =
+# offset 0x34 = `sizeof(SPlatformAttachment)`). Same antipattern as
+# `_SHADOW_PTR_WALK_ADDR_RE` but with the `(int)` numeric cast and an
+# explicit `+ CONST`; pointer_cast also flags the `(int)&NAME` arithmetic,
+# but a shadow_pointer_walk classification is more specific.
+_SHADOW_PTR_WALK_INT_ADDR_CONST_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'\(\s*\(\s*int\s*\)\s*'                         # ( (int)
+    r'&\s*\(\s*\1\s*->\s*\w+\s*\)'                   # & ( IDENT->FIELD )
+    r'(?:\s*\.\s*\w+(?:\s*\[\s*\d+\s*\])?)*'         # (.SUBFIELD[N]?)*
+    r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
+)
 # Two-step variants: same four shapes as above, but the LHS is a scratch
 # `TMP` instead of the rebound `IDENT`. The rebind happens on a later line
 # (`IDENT = TMP;`) — functionally identical to the self-update form. The
@@ -2652,6 +2822,25 @@ def identify_shadow_pointer_walk(decompiled_code):
                     '`%s->some_field[0]` reads with direct indexing on '
                     'the original pointer; drop the shadow init and '
                     'self-update.' % (m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
+            continue
+        m = _SHADOW_PTR_WALK_INT_ADDR_CONST_RE.match(line)
+        if m:
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)((int)&(%s->FIELD).SUBFIELD + CONST)' % (
+                    m.group(1), m.group(1)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates by '
+                    'taking the address of a sibling subfield, numerically '
+                    'casting to `int`, then adding a small constant — the '
+                    'sum equals one element-size step of the array being '
+                    'walked. Replace `%s->some_field[0]` reads with direct '
+                    'indexing on the original pointer; drop the shadow '
+                    'init and self-update.' % (m.group(1), m.group(1))),
                 'severity': 'moderate',
             })
             continue
@@ -3662,6 +3851,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_memcpy_oversized_source(code))
     found.extend(identify_dropped_loop_counter(code))
     found.extend(identify_unrolled_memcpy_dword_byte_split(code))
+    found.extend(identify_unrolled_memcpy_index_form(code))
     found.extend(identify_unrolled_field_copy(code))
     found.extend(identify_cascade_constant_fill(code))
     found.extend(identify_self_copy_guard(code))

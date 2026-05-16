@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (399 diagnostics)
+Cppcheck (quick) (400 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -1497,7 +1497,7 @@ invalidPointerCast (18)
     Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
-nullPointerRedundantCheck (12)
+nullPointerRedundantCheck (13)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 64
@@ -1519,6 +1519,10 @@ nullPointerRedundantCheck (12)
   engine_prim.c_renderScanlinePolygon_FUN_00553470   line 259
     File: engine/prim.c
     Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
+
+  shape_design.c_findVertexListInModel_FUN_00468000  line 15
+    File: shape/design.c
+    Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.
 
   shape_design.c_getVertexCountFromModel_FUN_0046808 line 15
     File: shape/design.c

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 37,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 22,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 60
   },
   "cross_references": [],
@@ -87,6 +85,26 @@
     ],
     "vtable_offset": 144
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom straight-line unrolled memcpy \u2014 a run of 6 consecutive `puVar1[N] = puVar1[N-6];` assignments at constant stride (no enclosing loop). The setup line just above is typically a typed-pointer cast (`puVar = (T *)((int)&NAME + offset)`); together they implement an inline struct copy. Replace with a struct assignment (`dst = src;`) or `memcpy(dst, src, N)` in a .keep.",
+      "line": 15,
+      "match": "run of 6 \u00d7 `puVar1[N] = puVar1[N-6];`",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1[6] = *puVar1;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 13,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar3);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -103,16 +121,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 13,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar3);",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

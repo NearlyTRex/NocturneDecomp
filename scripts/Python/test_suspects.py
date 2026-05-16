@@ -102,6 +102,7 @@ def run_detectors(susp, code):
     found.extend(susp.identify_memcpy_oversized_source(code))
     found.extend(susp.identify_dropped_loop_counter(code))
     found.extend(susp.identify_unrolled_memcpy_dword_byte_split(code))
+    found.extend(susp.identify_unrolled_memcpy_index_form(code))
     found.extend(susp.identify_unrolled_field_copy(code))
     found.extend(susp.identify_cascade_constant_fill(code))
     found.extend(susp.identify_self_copy_guard(code))

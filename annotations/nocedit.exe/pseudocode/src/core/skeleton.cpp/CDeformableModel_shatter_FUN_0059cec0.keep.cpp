@@ -20,8 +20,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
   int iVar6;
   CVector3f *pCVar7;
   int iVar11;
-  int iVar8;
-  int iVar9;
   CMatrix3x3f local_e0;
   STriangleVertices local_b8;
   CVector3i local_94;
@@ -78,11 +76,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
       iVar3 = *(int *)(local_54 + 0x7164) + iVar11;
       iVar2 = *local_58;
       if (((*local_4c & 1) != 0) && (iVar11 < iVar3)) {
-        iVar8 = iVar11 * 0x12;
         do {
-          puVar5 = (ushort *)
-                   ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 + iVar8
-                   );
+          puVar5 = &this_ptr->tri_data_ptr[lod_index][iVar11].vertex_indices.vertex_index_0;
           pCVar4 = local_b8.vertices;
           uVar2 = puVar5[0];
           if (pCVar4 != g_ShatterVertexArray + uVar2) {
@@ -107,7 +102,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
                      this_ptr->texture_sets[iVar2].textures
                      [this_ptr->index_data_ptr[lod_index][iVar11]].textures,0xffff);
           iVar11 = iVar11 + 1;
-          iVar8 = iVar8 + 0x12;
         } while (iVar11 < iVar3);
       }
       local_4c = local_4c + 4;
@@ -124,11 +118,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
     do {
       iVar11 = *(int *)(local_50 + 0x7178) + iVar3;
       if (((*local_48 & 1) != 0) && (iVar2 = texture_set_indices[local_3c], iVar3 < iVar11)) {
-        iVar9 = iVar3 * 0x12;
         do {
-          puVar4 = (ushort *)
-                   ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 + iVar9
-                   );
+          puVar4 = &this_ptr->tri_data_ptr[lod_index][iVar3].vertex_indices.vertex_index_0;
           if ((*(byte *)(part_visibility_flags +
                         this_ptr->cap_index_ptr[lod_index][iVar3 - this_ptr->tri_count[lod_index]])
               & 1) == 0) {
@@ -157,7 +148,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
                        [this_ptr->index_data_ptr[lod_index][iVar3]].textures,
                        0xffff);
           }
-          iVar9 = iVar9 + 0x12;
           iVar3 = iVar3 + 1;
         } while (iVar3 < iVar11);
       }

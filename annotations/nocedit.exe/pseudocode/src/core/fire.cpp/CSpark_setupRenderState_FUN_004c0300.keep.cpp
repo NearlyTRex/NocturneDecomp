@@ -11,16 +11,6 @@ int __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)
 
 {
   CVector3i *pCVar1;
-  int iVar2;
-  CMatrix3x3f *pCVar3;
-  uint *puVar4;
-  float *pfVar5;
-  uint *puVar6;
-  byte bVar7;
-  float afStackY_1000 [997];
-  float local_60;
-  float local_54;
-  float local_48;
   CVector3i local_18;
   
   g_BillboardPrimitive.base.base.count = 4;

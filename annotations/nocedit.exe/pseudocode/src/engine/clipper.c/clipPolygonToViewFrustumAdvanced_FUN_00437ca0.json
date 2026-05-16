@@ -918,6 +918,24 @@
       "type": "shadow_pointer_walk"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 79,
+      "match": "pSVar8 = (T *)((int)&(pSVar8->FIELD).SUBFIELD + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar8 = (SRenderVertex *)((int)&(pSVar8->projected_vertex).transformed_x + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar10` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pSVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 80,
+      "match": "pSVar10 = (T *)((int)&(pSVar10->FIELD).SUBFIELD + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar10 = (SRenderVertex *)((int)&(pSVar10->projected_vertex).transformed_x + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 434,
       "match": "pSVar5 = (T *)&(pSVar5->FIELD).SUBFIELD",
@@ -933,6 +951,24 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar8 = (SRenderVertex *)&(pSVar8->projected_vertex).transformed_y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 440,
+      "match": "pSVar5 = (T *)((int)&(pSVar5->FIELD).SUBFIELD + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SRenderVertex *)((int)&(pSVar5->projected_vertex).transformed_x + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 441,
+      "match": "pSVar8 = (T *)((int)&(pSVar8->FIELD).SUBFIELD + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar8 = (SRenderVertex *)((int)&(pSVar8->projected_vertex).transformed_x + 1);",
       "type": "shadow_pointer_walk"
     },
     {

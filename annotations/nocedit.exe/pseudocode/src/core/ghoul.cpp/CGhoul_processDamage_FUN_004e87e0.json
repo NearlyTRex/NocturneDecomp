@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 179,
+    "complexity_score": 194,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 149,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
+      "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
     "total_lines": 494
@@ -279,6 +280,14 @@
       "severity": "moderate",
       "text": "pCVar6 = (CGhoul *)((int)&(pCVar6->base).base.base.orient + 8);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 99,
+      "match": "pCVar6 = (T *)((int)&(pCVar6->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pCVar6 = (CGhoul *)((int)&(pCVar6->base).base.base.orient + 8);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {
