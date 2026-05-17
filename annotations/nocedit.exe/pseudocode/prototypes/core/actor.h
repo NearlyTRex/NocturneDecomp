@@ -521,7 +521,7 @@ void __cdecl drawTextLine(int *y_position,char *text);
 
 // Original: core_actor.cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270
 // Address: 0040d270
-int __cdecl CDemonActor::propertyValidatorCallback(CDemonActor *this_ptr,int new_value);
+int __cdecl CDemonActor::propertyValidatorCallback(CDemonActor *this_ptr,char *new_value);
 
 // Original: core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 // Address: 0040d290
@@ -661,7 +661,7 @@ int __cdecl CActorProperty::getNameWidth(CActorProperty *this_ptr);
 
 // Original: core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50
 // Address: 0040ee50
-int __cdecl CActorProperty::getValueWidth(CActorProperty *this_ptr,int index);
+int __cdecl CActorProperty::getValueWidth(CActorProperty *this_ptr,CDemonActor *actor);
 
 // Original: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
 // Address: 0040eed0

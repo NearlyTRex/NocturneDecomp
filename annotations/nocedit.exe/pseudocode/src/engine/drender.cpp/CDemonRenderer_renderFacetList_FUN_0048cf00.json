@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 135,
+    "complexity_score": 120,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 120,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 365
   },
   "cross_references": [
@@ -209,6 +207,17 @@
     },
     "pcode_op_count": 880
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(SMRGLPrimitiveQuad **)((int)g_VisibleFacePointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(SMRGLPrimitiveQuad **)((int)g_VisibleFacePointers + local_18) = primitive_array;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 64,
     "local_size": 44,
@@ -274,14 +283,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(SMRGLPrimitiveQuad **)((int)g_VisibleFacePointers",
-      "severity": "moderate",
-      "text": "*(SMRGLPrimitiveQuad **)((int)g_VisibleFacePointers + local_18) = primitive_array;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

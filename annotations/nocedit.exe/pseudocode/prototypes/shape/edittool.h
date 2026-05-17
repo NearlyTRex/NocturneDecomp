@@ -433,7 +433,7 @@ int __cdecl CPickList::getItemHotKey(CPickList *this_ptr,int index);
 
 // Original: shape_edittool.cpp_CPickList_insert_FUN_004a5670
 // Address: 004a5670
-void __cdecl CPickList::insert(CPickList *this_ptr,int insert_index,int item_data);
+void __cdecl CPickList::insert(CPickList *this_ptr,int insert_index,char *string_data);
 
 // Original: shape_edittool.cpp_CPickList_remove_FUN_004a56f0
 // Address: 004a56f0

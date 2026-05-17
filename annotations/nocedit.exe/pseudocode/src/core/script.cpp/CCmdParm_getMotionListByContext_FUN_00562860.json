@@ -34,8 +34,8 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860",
-    "signature": "CMotionList * __cdecl core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860(CCmdParse *this_ptr,int param_index)"
+    "name": "core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860",
+    "signature": "CMotionList * __cdecl core_script_cpp_CCmdParm_getMotionListByContext_FUN_00562860(CCmdParm *this_ptr,CCmdParse *context)"
   },
   "function_calls": [
     {
@@ -46,7 +46,7 @@
     {
       "addr": "005627f0",
       "is_variadic": false,
-      "name": "core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0"
+      "name": "core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0"
     }
   ],
   "globals": [],
@@ -116,14 +116,14 @@
         "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "CCmdParse *"
+        "type": "CCmdParm *"
       },
       {
         "is_param": true,
-        "name": "param_index",
+        "name": "context",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "CCmdParse *"
       }
     ]
   },

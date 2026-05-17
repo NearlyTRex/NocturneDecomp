@@ -2,11 +2,11 @@
 // Address: 00493dc4
 // Address Range: [[00493dc4, 004940e8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 
 {
   uint uVar1;
@@ -95,7 +95,7 @@ void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_004
                               CONCAT11((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9)
                                        ,(uVar5 != 0) * (uVar5 < 0x100) * (char)uVar5 -
                                         (0xff < uVar5))));
-    *(uint *)output_buffer =
+    *output_buffer =
          (uint)(((uVar8 & g_BlueMask32.mm) >> g_BlueBitShift.mm |
                  (uVar8 & g_GreenMask32.mm) >> g_GreenBlueBits.mm |
                 (uVar8 & g_RedMask32.mm) >> g_TotalColorBits.mm) << 0x10) |
@@ -105,7 +105,7 @@ void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_004
     texture_buffer = texture_buffer + 1;
     texture_indices = texture_indices + 2;
     lightmap_indices = lightmap_indices + 2;
-    output_buffer = (ulonglong *)((int)output_buffer + 4);
+    output_buffer = output_buffer + 1;
     iVar4 = pixel_count + -2;
     bVar2 = 1 < pixel_count;
     pixel_count = iVar4;

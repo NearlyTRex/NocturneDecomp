@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 336,
-    "complexity_score": 157,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 26,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 157,
+    "pseudocode_lines": 158,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 493
+    "total_lines": 494
   },
   "cross_references": [
     {
@@ -332,7 +332,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 107,
+      "line": 108,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -341,7 +341,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 110,
+      "line": 111,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -350,7 +350,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 86,
+      "line": 87,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -359,7 +359,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 88,
+      "line": 89,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -368,7 +368,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 89,
+      "line": 90,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -377,7 +377,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 142,
+      "line": 143,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -386,7 +386,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 144,
+      "line": 145,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -395,7 +395,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 145,
+      "line": 146,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",

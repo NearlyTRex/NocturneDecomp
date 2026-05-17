@@ -2,11 +2,11 @@
 // Address: 00562920
 // Address Range: [[00562920, 00564006]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
+// Signature: int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param,CCmdParse *context)
 
 #include "nocturne.h"
 
-int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
+int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param,CCmdParse *context)
 
 {
   char cVar2;
@@ -93,10 +93,10 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     break;
   case 3:
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3004);
-    local_18 = param_info->modifier_string;
+    local_18 = param->modifier_string;
     iVar5 = 0;
     for (iVar8 = 0; iVar8 < g_CDemonSetPtr->actor_count; iVar8 = iVar8 + 1) {
-      if (((param_info->modifier_string[0] == '\0') ||
+      if (((param->modifier_string[0] == '\0') ||
           (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),local_18),
           iVar3 != 0)) &&
@@ -108,7 +108,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       }
       iVar5 = iVar5 + 4;
     }
-    if ((param_info->modifier_string[0] == '\0') ||
+    if ((param->modifier_string[0] == '\0') ||
        (iVar5 = core_actor_cpp_matchesClassName_FUN_0040c740(&g_CHeroClassInfo,local_18), iVar5 != 0
        )) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3004.base,"$");
@@ -384,7 +384,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     return 1;
   case 0x12:
     splitpath
-              (param_info->modifier_string,(char *)0x0,local_370,local_470,local_270);
+              (param->modifier_string,(char *)0x0,local_370,local_470,local_270);
     makepath(local_574,(char *)0x0,(char *)0x0,local_470,local_270);
     iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,local_7cc,local_370,local_574,value_buffer,1);
@@ -470,8 +470,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     }
     break;
   case 0x17:
-    pCVar6 = core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
-                       ((CCmdParse *)param_info,(int)param_name);
+    pCVar6 = core_script_cpp_CCmdParm_getMotionListByContext_FUN_00562860(param,context);
     if (pCVar6 != (CMotionList *)0x0) {
       iVar5 = 0;
       local_2c = pCVar6;
@@ -503,8 +502,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     }
     break;
   case 0x18:
-    pCVar2 = core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
-                       ((CCmdParse *)param_info,(int)param_name);
+    pCVar2 = core_script_cpp_CCmdParm_getMotionListByContext_FUN_00562860(param,context);
     if (pCVar2 != (CMotionList *)0x0) {
       iVar5 = 0;
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1dbc);
@@ -644,8 +642,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
               (g_CEditorToolsPtr,"WARNING! chooseParm - unknown parm type %d (code needs to be updated)");
     return 0;
   case 0x1e:
-    character = core_script_cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0
-                          ((CCmdParse *)param_info,(int)param_name);
+    character = core_script_cpp_CCmdParm_getCharacterByContext_FUN_005627f0(param,context);
     if (character != (CCharacter *)0x0) {
       iVar5 = core_script_cpp_parseBodyPartMask_FUN_00559730(character,value_buffer,(int *)local_a8)
       ;

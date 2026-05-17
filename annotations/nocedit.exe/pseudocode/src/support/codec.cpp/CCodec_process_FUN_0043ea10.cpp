@@ -2,18 +2,18 @@
 // Address: 0043ea10
 // Address Range: [[0043ea10, 0043ea75]]
 // Convention: __cdecl
-// Signature: int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_istream *istream,int byte_count,_ostream *ostream)
+// Signature: int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_istream *istream,int *byte_count,_ostream *ostream)
 
 #include "nocturne.h"
 
-int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_istream *istream,int byte_count,_ostream *ostream)
+int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_istream *istream,int *byte_count,_ostream *ostream)
 
 {
   uint uVar1;
   byte local_14 [4];
   
   do {
-    if (*(int *)byte_count < 1) {
+    if (*byte_count < 1) {
 LAB_0043ea2c:
       uVar1 = 0xffffffff;
     }
@@ -22,7 +22,7 @@ LAB_0043ea2c:
       if (*(int *)((istream->_ios).padding +
                   ((istream->_istream_core).layout_info)->offset_to_base + -0x21) != 0)
       goto LAB_0043ea2c;
-      *(int *)byte_count = *(int *)byte_count + -1;
+      *byte_count = *byte_count + -1;
       uVar1 = (uint)local_14[0];
     }
     if ((int)uVar1 < 0) {

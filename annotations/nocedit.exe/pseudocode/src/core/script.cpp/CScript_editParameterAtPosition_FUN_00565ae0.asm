@@ -104,7 +104,7 @@ section .text
     LEA EAX,[ESP + 0x2650]              ; 00565b6e
     PUSH EAX                            ; 00565b75
     CALL core_script.cpp_editParameterValue_FUN_00562920 ; 00565b76
-        ;   XREF to: 00562920 (UNCONDITIONAL_CALL)  ; int core_script.cpp_editParameterValue_FUN_00562920(char * value_buffer, int param_type, CCmdParm * param_info, char * param_name)
+        ;   XREF to: 00562920 (UNCONDITIONAL_CALL)  ; int core_script.cpp_editParameterValue_FUN_00562920(char * value_buffer, int param_type, CCmdParm * param, CCmdParse * context)
     ADD ESP,0x10                        ; 00565b7b
     TEST EAX,EAX                        ; 00565b7e
     JZ 0x00565afb                       ; 00565b80

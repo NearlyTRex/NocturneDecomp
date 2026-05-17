@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+; void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 ;
 ; Parameters:
-; ulonglong *      Stack[0x4]:4   output_buffer
+; uint *           Stack[0x4]:4   output_buffer
 ; ulonglong *      Stack[0x8]:4   texture_buffer
 ; byte *           Stack[0xc]:4   texture_indices
 ; byte *           Stack[0x10]:4   lightmap_indices

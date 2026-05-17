@@ -4,19 +4,19 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1606 ( 42.5%)
-  unrolled_memcpy                  903 ( 23.9%)
-  unrolled_strcpy                  286 (  7.6%)
-  shadow_pointer_walk              173 (  4.6%)
-  missing_cave_copy                170 (  4.5%)
+  pointer_cast                    1573 ( 42.3%)
+  unrolled_memcpy                  904 ( 24.3%)
+  unrolled_strcpy                  274 (  7.4%)
+  missing_cave_copy                170 (  4.6%)
+  shadow_pointer_walk              153 (  4.1%)
   raw_address_constant              91 (  2.4%)
-  unrolled_strlen                   80 (  2.1%)
+  unrolled_strlen                   80 (  2.2%)
   static_uninitvar                  68 (  1.8%)
   unrolled_memset                   67 (  1.8%)
   warning_inlined_function          49 (  1.3%)
-  unrolled_strchr                   43 (  1.1%)
+  unrolled_strchr                   43 (  1.2%)
   bitcast_double_pair               42 (  1.1%)
-  static_legacy_uninitvar           32 (  0.8%)
+  static_legacy_uninitvar           32 (  0.9%)
   decompiler_intrinsic              25 (  0.7%)
   warning_unreachable               22 (  0.6%)
   warning_type_propagation          19 (  0.5%)
@@ -32,16 +32,15 @@ SUSPECT TYPE COUNTS
   static_array_oob_cond              3 (  0.1%)
 
 ====================================================================================================
-TYPE: pointer_cast (1606 occurrences)
+TYPE: pointer_cast (1573 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   633x  (int)&NAME used in byte-offset arithmetic
+   631x  (int)&NAME used in byte-offset arithmetic
     42x  (int *)((int)this_ptr
     32x  (uint *)((int)this_ptr
     31x  (int *)((int)g_ScreenBufferArray
-    22x  (int *)((int)g_VertexIndexBuffer
-    22x  (CDemonActor **)((int)g_CDemonSetPtr
+    20x  (CDemonActor **)((int)g_CDemonSetPtr
     17x  (uint *)((int)g_ModelPolygonData
     16x  (byte *)((int)this_ptr
     14x  (int *)((int)g_ModelPolygonData
@@ -56,6 +55,7 @@ Unique patterns:
     10x  (uint *)((int)pCVar1
      9x  (char *)((int)pSVar6
      9x  (double *)((int)pdVar11
+     9x  (double *)((int)pdVar6
 
 Functions:
   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0
@@ -102,9 +102,7 @@ Functions:
   core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10
   core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0
   core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40
-  core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4
   core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d
-  core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0
   core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
   core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58
   core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7
@@ -185,7 +183,6 @@ Functions:
   core_script.cpp_CScript_parseCommand_FUN_00567080
   core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630
   core_script.cpp_CScript_step_FUN_0055a810
-  core_script.cpp_editParameterValue_FUN_00562920
   core_script.cpp_parseCommandWithTemplates_FUN_00561690
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
   core_set.cpp_CDemonSet_process_FUN_0056f940
@@ -284,20 +281,8 @@ Functions:
   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0
   engine_clipper.c_clipPolygonToViewport_FUN_00438420
   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50
-  engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0
-  engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0
-  engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420
-  engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970
   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170
-  engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00
-  engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0048b730
-  engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
-  engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40
-  engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0048bfe0
   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
-  engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550
-  engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
-  engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
   engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -422,11 +407,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (903 occurrences)
+TYPE: unrolled_memcpy (904 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   702x  field-by-field struct copy
+   703x  field-by-field struct copy
    103x  for (...; != 0; ... + -1)
     96x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -482,6 +467,7 @@ Functions:
   core_door.cpp_CDoor_processInEditor_FUN_00481590
   core_door.cpp_CDoor_process_FUN_004800c0
   core_door.cpp_CDoor_reposition_FUN_0047fd20
+  core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10
   core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_00486360
   core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0
@@ -740,11 +726,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (286 occurrences)
+TYPE: unrolled_strcpy (274 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   286x  do {
+   274x  do {
 
 Functions:
   core_bugs.cpp_CBugs_ctor_FUN_00424cb0
@@ -800,7 +786,6 @@ Functions:
   core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0
   core_script.cpp_CScript_extractCrossReferences_FUN_005671a0
   core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70
-  core_script.cpp_editParameterValue_FUN_00562920
   core_script.cpp_getActor_FUN_005594e0
   core_script.cpp_parseCommandWithTemplates_FUN_00561690
   core_script.cpp_parseConditionExpression_FUN_00561a30
@@ -863,19 +848,70 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (173 occurrences)
+TYPE: missing_cave_copy (170 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    17x  pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD
-    12x  pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD
+     3x  CMatrix3x4f local_7c; ... f(&local_7c, ...);
+     2x  CQuaternion4f CStack_84; ... f(&CStack_84, ...);
+     2x  CMatrix3x4f local_a8; ... f(&local_a8, ...);
+     2x  CMatrix3x4f local_1cc; ... f(&local_1cc, ...);
+     2x  CMatrix3x4f local_19c; ... f(&local_19c, ...);
+     2x  CMatrix3x4f local_16c; ... f(&local_16c, ...);
+     2x  CMatrix3x4f local_ac; ... f(&local_ac, ...);
+     2x  CMatrix3x4f local_4c; ... f(&local_4c, ...);
+     2x  CMatrix3x4f CStack_164; ... f(&CStack_164, ...);
+     2x  CMatrix3x4f CStack_134; ... f(&CStack_134, ...);
+     1x  CQuaternion4f CStack_94; ... f(&CStack_94, ...);
+     1x  CMatrix3x4f local_100; ... f(&local_100, ...);
+     1x  CMatrix3x4f local_d0; ... f(&local_d0, ...);
+     1x  CMatrix3x4f local_70; ... f(&local_70, ...);
+     1x  CQuaternion4f CStack_74; ... f(&CStack_74, ...);
+     1x  CQuaternion4f local_15c; ... f(&local_15c, ...);
+     1x  CQuaternion4f local_14c; ... f(&local_14c, ...);
+     1x  CQuaternion4f local_11c; ... f(&local_11c, ...);
+     1x  CQuaternion4f local_10c; ... f(&local_10c, ...);
+     1x  CQuaternion4f local_ec; ... f(&local_ec, ...);
+
+Functions:
+  core_course.cpp_CCourse_evaluate_FUN_00442710
+  core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
+  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
+  core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550
+  core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
+  core_icepick.cpp_CIcePick_process_FUN_004f80b0
+  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
+  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
+  core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
+  core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
+  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
+  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
+  core_scat.cpp_CScat_process_FUN_005571f0
+  core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
+  core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
+  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
+  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
+  core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
+  core_tentacle.cpp_CTentacle_process_FUN_005db050
+  core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
+
+====================================================================================================
+TYPE: shadow_pointer_walk (153 occurrences)
+====================================================================================================
+
+Unique patterns:
     12x  pCVar4 = (T *)pCVar4->ARRAY
+     8x  pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD
      8x  pCVar2 = (T *)pCVar2->ARRAY
      7x  pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)
      6x  pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)
      5x  pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD
      5x  local_18 = (T *)local_18->ARRAY
-     4x  pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD
+     4x  pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD
      4x  pCVar10 = (T *)&(pCVar10->FIELD).SUBFIELD
      3x  pCVar1 = (T *)pCVar1->ARRAY
      3x  pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)
@@ -887,6 +923,7 @@ Unique patterns:
      2x  local_48 = (T *)((local_48->FIELD).SUBFIELD...ARRAY + CONST)
      2x  pCVar11 = (T *)&(pCVar11->FIELD).SUBFIELD
      2x  pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)
+     2x  local_28 = (T *)&(local_28->FIELD).SUBFIELD
 
 Functions:
   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340
@@ -969,18 +1006,7 @@ Functions:
   engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0
   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50
   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320
-  engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0
-  engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0
-  engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420
-  engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970
-  engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0048b730
-  engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40
-  engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0048bfe0
   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
-  engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550
-  engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030
-  engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
-  engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
   engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950
   engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
@@ -996,58 +1022,6 @@ Functions:
   shape_superopt.cpp_CP3D_scale_FUN_005d8630
   shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
   shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
-
-====================================================================================================
-TYPE: missing_cave_copy (170 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  CMatrix3x4f local_7c; ... f(&local_7c, ...);
-     2x  CQuaternion4f CStack_84; ... f(&CStack_84, ...);
-     2x  CMatrix3x4f local_a8; ... f(&local_a8, ...);
-     2x  CMatrix3x4f local_1cc; ... f(&local_1cc, ...);
-     2x  CMatrix3x4f local_19c; ... f(&local_19c, ...);
-     2x  CMatrix3x4f local_16c; ... f(&local_16c, ...);
-     2x  CMatrix3x4f local_ac; ... f(&local_ac, ...);
-     2x  CMatrix3x4f local_4c; ... f(&local_4c, ...);
-     2x  CMatrix3x4f CStack_164; ... f(&CStack_164, ...);
-     2x  CMatrix3x4f CStack_134; ... f(&CStack_134, ...);
-     1x  CQuaternion4f CStack_94; ... f(&CStack_94, ...);
-     1x  CMatrix3x4f local_100; ... f(&local_100, ...);
-     1x  CMatrix3x4f local_d0; ... f(&local_d0, ...);
-     1x  CMatrix3x4f local_70; ... f(&local_70, ...);
-     1x  CQuaternion4f CStack_74; ... f(&CStack_74, ...);
-     1x  CQuaternion4f local_15c; ... f(&local_15c, ...);
-     1x  CQuaternion4f local_14c; ... f(&local_14c, ...);
-     1x  CQuaternion4f local_11c; ... f(&local_11c, ...);
-     1x  CQuaternion4f local_10c; ... f(&local_10c, ...);
-     1x  CQuaternion4f local_ec; ... f(&local_ec, ...);
-
-Functions:
-  core_course.cpp_CCourse_evaluate_FUN_00442710
-  core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
-  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
-  core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550
-  core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
-  core_icepick.cpp_CIcePick_process_FUN_004f80b0
-  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
-  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
-  core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
-  core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
-  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
-  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
-  core_scat.cpp_CScat_process_FUN_005571f0
-  core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
-  core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
-  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
-  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
-  core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
-  core_tentacle.cpp_CTentacle_process_FUN_005db050
-  core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
 
 ====================================================================================================
 TYPE: raw_address_constant (91 occurrences)

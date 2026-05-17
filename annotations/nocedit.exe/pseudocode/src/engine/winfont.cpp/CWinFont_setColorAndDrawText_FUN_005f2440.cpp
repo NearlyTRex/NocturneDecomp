@@ -2,11 +2,11 @@
 // Address: 005f2440
 // Address Range: [[005f2440, 005f285c]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x_position,int y_position,int foreground_color,int background_color)
+// Signature: void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color)
 
 #include "nocturne.h"
 
-void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x_position,int y_position,int foreground_color,int background_color)
+void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color)
 
 {
   char cVar2;
@@ -70,17 +70,17 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
     (*g_SetTextColorFunc)(this_ptr->device_context_handle,CStack_24);
     (*g_TextOutAFunc)(this_ptr->device_context_handle,0,0,text_string,~uVar6 - 1);
   }
-  if (this_ptr->right + x_position < g_WindowWidth) {
+  if (this_ptr->right + x < g_WindowWidth) {
     iVar7 = this_ptr->right;
   }
   else {
-    iVar7 = g_WindowWidth - x_position;
+    iVar7 = g_WindowWidth - x;
   }
-  if (this_ptr->top + y_position < g_WindowHeight) {
+  if (this_ptr->top + y < g_WindowHeight) {
     CStack_24 = this_ptr->top;
   }
   else {
-    CStack_24 = g_WindowHeight - y_position;
+    CStack_24 = g_WindowHeight - y;
   }
   if (this_ptr->cached_string_width < iVar7) {
     iVar7 = this_ptr->cached_string_width;
@@ -91,13 +91,13 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   if (g_BitsPerPixel == 0x10) {
     CStack_18 = 0;
     if (0 < (int)CStack_24) {
-      pcStack_1c = (char *)y_position;
+      pcStack_1c = (char *)y;
       do {
         pcVar8 = pcStack_1c + this_ptr->y_offset1;
         if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
           iVar4 = 0;
           if (0 < iVar7) {
-            puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + x_position * 2);
+            puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + x * 2);
             do {
               uVar2 = *(ushort *)
                        ((int)this_ptr->ppv_bits + (CStack_18 * this_ptr->right + iVar4) * 2);
@@ -124,13 +124,13 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   else {
     iVar9 = 0;
     if (0 < (int)CStack_24) {
-      pcStack_20 = (char *)y_position;
+      pcStack_20 = (char *)y;
       do {
         pcVar8 = pcStack_20 + this_ptr->y_offset1;
         if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
           iVar5 = 0;
           if (0 < iVar7) {
-            piVar9 = (int *)(x_position * 4 + (int)g_ScreenBufferArray[(int)pcVar8]);
+            piVar9 = (int *)(x * 4 + (int)g_ScreenBufferArray[(int)pcVar8]);
             do {
               iVar6 = *(int *)((this_ptr->right * iVar9 + iVar5) * 4 + (int)this_ptr->ppv_bits);
               if (iVar6 != GAME_COLOR_MAGENTA_TRANSPARENT) {

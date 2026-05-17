@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCharacter * __cdecl core_script_cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0(CCmdParse *this_ptr,int param_index)
+; CCharacter * __cdecl core_script_cpp_CCmdParm_getCharacterByContext_FUN_005627f0(CCmdParm *this_ptr,CCmdParse *context)
 ;
 ; Parameters:
-; CCmdParse *      Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   param_index
+; CCmdParm *       Stack[0x4]:4   this_ptr
+; CCmdParse *      Stack[0x8]:4   context
 ; Local Variables:
 ; int              Stack[-0x4]:4  local_4
 ;
 ; XREF[2]:
-;   core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860 at 0056286a
+;   core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860 at 0056286a
 ;   core_script.cpp_editParameterValue_FUN_00562920 at 00563d6d
 ;
 ; Referenced Globals:
@@ -27,7 +27,7 @@
 section .text
 
     SUB ESP,0x4                         ; 005627f0
-        ;   Label: core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0
+        ;   Label: core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0
     MOV EAX,ESP                         ; 005627f3
     PUSH EAX                            ; 005627f5
     MOV EAX,dword ptr [ESP + 0xc]       ; 005627f6

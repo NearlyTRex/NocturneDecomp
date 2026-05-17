@@ -148,7 +148,7 @@ LAB_004e14f5:
         support_codec_cpp_CLZWDecompress_ctor_FUN_0043f490(&local_6c,0x8000,8);
         support_codec_cpp_CLZWDecompress_init_FUN_0043f4d0(&local_6c);
         support_codec_cpp_CLZWDecompress_process_FUN_0043f510
-                  (&local_6c,watcom_istream_from(ifs),(int)&local_30,watcom_ostream_from(ofs));
+                  (&local_6c,watcom_istream_from(ifs),&local_30,watcom_ostream_from(ofs));
         support_codec_cpp_CLZWDecompress_finalize_FUN_0043f590(&local_6c,watcom_ostream_from(ofs));
         ifs.sync();
         ofs.flush();

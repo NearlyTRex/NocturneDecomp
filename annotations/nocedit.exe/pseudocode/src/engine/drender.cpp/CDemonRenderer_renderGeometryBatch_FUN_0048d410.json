@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 191,
+    "complexity_score": 116,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 116,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 401
   },
   "cross_references": [],
@@ -184,6 +182,26 @@
     },
     "pcode_op_count": 1011
   },
+  "resolved_suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 56,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_68[0].x + iVar2) = (uint)*puVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 100,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_68[0].x + iVar4) = (uint)*puVar2;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 128,
     "local_size": 108,
@@ -249,67 +267,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 56,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&local_68[0].x + iVar2) = (uint)*puVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 100,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&local_68[0].x + iVar4) = (uint)*puVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 45,
-      "match": "(ushort *)((int)vertex_indices",
-      "severity": "moderate",
-      "text": "(v1 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 50,
-      "match": "(int *)((int)vertex_indices",
-      "severity": "moderate",
-      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 82,
-      "match": "(int *)((int)vertex_indices",
-      "severity": "moderate",
-      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 95,
-      "match": "(ushort *)((int)vertex_indices",
-      "severity": "moderate",
-      "text": "(pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 121,
-      "match": "(int *)((int)vertex_indices",
-      "severity": "moderate",
-      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

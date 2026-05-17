@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 145
-  Total diagnostics: 407
+  Functions with findings: 144
+  Total diagnostics: 401
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 145, raw .cpp files: 0
+  .keep.cpp files: 144, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -207,17 +207,6 @@ core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0  [.keep] [Cppchec
   Line   59: [uninitvar] Uninitialized variable: local_20
   Line   65: [uninitvar] Uninitialized variable: local_24
   Line   70: [uninitvar] Uninitialized variable: local_28
-
-----------------------------------------------------------------------------------------------------
-core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0  [.keep] [Cppcheck (quick)]
-  File: core/dstrender.cpp  (6 diagnostics)
-
-  Line   64: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   67: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   78: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   81: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  172: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  175: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_loadModelBinary_FUN_00458170  [.keep] [Cppcheck (quick)]

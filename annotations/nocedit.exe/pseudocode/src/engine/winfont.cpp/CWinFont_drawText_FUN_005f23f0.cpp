@@ -2,11 +2,11 @@
 // Address: 005f23f0
 // Address Range: [[005f23f0, 005f2438]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr,int x_position,int y_position,char *text_string,int text_color,int draw_flags)
+// Signature: int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color)
 
 #include "nocturne.h"
 
-int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr,int x_position,int y_position,char *text_string,int text_color,int draw_flags)
+int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color)
 
 {
   int iVar1;
@@ -16,7 +16,7 @@ int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr
     return 0;
   }
   engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440
-            (this_ptr,this_ptr->device_context_handle,(char *)x_position,y_position,(int)text_string
-             ,text_color,draw_flags);
+            (this_ptr,this_ptr->device_context_handle,text_string,x,y,foreground_color,
+             background_color);
   return 0;
 }

@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5733 (88.8%)
-With suspects: 721
-Total suspects: 3783
+Clean: 5749 (89.1%)
+With suspects: 705
+Total suspects: 3719
 
 ====================================================================================================
 core_bugs.cpp_CBugs_ctor_FUN_00424cb0 (3 suspects)
@@ -986,7 +986,7 @@ core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0 (11 suspects)
   Line 35 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).D + iVar1) =
 
 ====================================================================================================
-core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10 (25 suspects)
+core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10 (26 suspects)
   File: core/dpart.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -1000,9 +1000,10 @@ core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10 (25 suspects)
   Line 73 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar7) = local_28;
   Line 74 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar7) = local_30;
   Line 75 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar7) = local_2c;
-  Line 76 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.x + local_20) = *pfVar6;
-  Line 77 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.y + local_20) = pfVar6[1];
-  Line 78 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.z + local_20) = pfVar6[2];
+  Line 76 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.x + local_20) = (pCVar6->vertex1).x;
+  Line 77 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.y + local_20) = (pCVar6->vertex1).y;
+  Line 78 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.z + local_20) = (pCVar6->vertex1).z;
+  Line 79 [unrolled_memcpy]: g_LoadedVertices[local_30].vertex.x = pCVar5->x;
   Line 91 [pointer_cast]: *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 8) = local_2c;
   Line 92 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -0x14) = 3;
   Line 93 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_u + iVar4) = 0;
@@ -1098,22 +1099,10 @@ core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0 (2 suspects)
   Line 104 [unrolled_memcpy]: (local_20->tangent).x = pCVar5->x;
 
 ====================================================================================================
-core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 101 [pointer_cast]: output_buffer = (ulonglong *)((int)output_buffer + 4);
-
-====================================================================================================
 core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d (1 suspect)
   File: core/dstrender.cpp
 ====================================================================================================
   Line 30 [pointer_cast]: psVar9 = (short *)((int)g_ScreenBufferArray[scanline_y] + uVar5 * 2);
-
-====================================================================================================
-core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 35 [pointer_cast]: g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);
 
 ====================================================================================================
 core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9 (2 suspects)
@@ -3025,27 +3014,6 @@ core_script.cpp_CScript_step_FUN_0055a810 (6 suspects)
   Line 624 [pointer_cast]: (*(CDemonActor **)
   Line 1378 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
   Line 1417 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
-
-====================================================================================================
-core_script.cpp_editParameterValue_FUN_00562920 (16 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 94 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),local_18),
-  Line 97 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),
-  Line 100 [pointer_cast]: (&local_3004.base,*(char **)((int)g_CDemonSetPtr->actors + iVar5));
-  Line 119 [unrolled_strcpy]: do {
-  Line 149 [unrolled_strcpy]: do {
-  Line 177 [unrolled_strcpy]: do {
-  Line 227 [unrolled_strcpy]: do {
-  Line 260 [unrolled_strcpy]: do {
-  Line 289 [unrolled_strcpy]: do {
-  Line 367 [unrolled_strcpy]: do {
-  Line 407 [unrolled_strcpy]: do {
-  Line 521 [unrolled_strcpy]: do {
-  Line 562 [unrolled_strcpy]: do {
-  Line 573 [unrolled_strcpy]: do {
-  Line 600 [unrolled_strcpy]: do {
-  Line 683 [pointer_cast]: if (*(int *)((int)local_a8 + local_14) != 0) {
 
 ====================================================================================================
 core_script.cpp_getActor_FUN_005594e0 (1 suspect)
@@ -5222,91 +5190,10 @@ engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320 (1 suspect
   Line 15 [shadow_pointer_walk]: pSVar3 = (SInputFace *)&(pSVar3->vertex_indices).vertex_index_1;
 
 ====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0 (4 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 26 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar5) = iVar1;
-  Line 27 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
-  Line 39 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar1->vertices[0].vertex_index;
-  Line 42 [shadow_pointer_walk]: pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0 (4 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 24 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
-  Line 27 [shadow_pointer_walk]: pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
-  Line 45 [pointer_cast]: iVar2 = *(int *)((int)g_VertexIndexBuffer + iVar6);
-  Line 48 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420 (4 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 26 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar5) = iVar1;
-  Line 27 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
-  Line 39 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar1->vertices[0].vertex_index;
-  Line 42 [shadow_pointer_walk]: pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970 (4 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 24 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
-  Line 27 [shadow_pointer_walk]: pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
-  Line 45 [pointer_cast]: iVar2 = *(int *)((int)g_VertexIndexBuffer + iVar6);
-  Line 48 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-
-====================================================================================================
 engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 (1 suspect)
   File: engine/drender.cpp
 ====================================================================================================
   Line 57 [pointer_cast]: *(SInputFace **)((int)g_VisibleFacePointers + local_18) = face_array;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 (1 suspect)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 64 [pointer_cast]: *(SMRGLPrimitiveQuad **)((int)g_VisibleFacePointers + local_18) = primitive_array;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0048b730 (4 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 24 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
-  Line 27 [shadow_pointer_walk]: pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
-  Line 45 [pointer_cast]: iVar2 = *(int *)((int)g_VertexIndexBuffer + iVar6);
-  Line 48 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 (7 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 45 [pointer_cast]: (v1 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),
-  Line 50 [pointer_cast]: vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);
-  Line 56 [pointer_cast]: *(uint *)((int)&local_68[0].x + iVar2) = (uint)*puVar1;
-  Line 82 [pointer_cast]: vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);
-  Line 95 [pointer_cast]: (pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),
-  Line 100 [pointer_cast]: *(uint *)((int)&local_68[0].x + iVar4) = (uint)*puVar2;
-  Line 121 [pointer_cast]: vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40 (4 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 24 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;
-  Line 27 [shadow_pointer_walk]: pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
-  Line 38 [pointer_cast]: iVar2 = *(int *)((int)g_VertexIndexBuffer + iVar6);
-  Line 41 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0048bfe0 (4 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 24 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
-  Line 27 [shadow_pointer_walk]: pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
-  Line 45 [pointer_cast]: iVar2 = *(int *)((int)g_VertexIndexBuffer + iVar6);
-  Line 48 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0 (2 suspects)
@@ -5314,37 +5201,6 @@ engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0 (2 suspects)
 ====================================================================================================
   Line 16 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar1->vertices[0].vertex_index;
   Line 18 [shadow_pointer_walk]: pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550 (2 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 23 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;
-  Line 24 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030 (1 suspect)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 23 [shadow_pointer_walk]: pSVar3 = (SInputFace *)&(pSVar3->vertex_indices).vertex_index_1;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 (4 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 31 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar5) = iVar1;
-  Line 32 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-  Line 44 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar1->vertices[0].vertex_index;
-  Line 47 [shadow_pointer_walk]: pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0 (4 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 24 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
-  Line 27 [shadow_pointer_walk]: pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
-  Line 45 [pointer_cast]: iVar2 = *(int *)((int)g_VertexIndexBuffer + iVar6);
-  Line 48 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950 (2 suspects)

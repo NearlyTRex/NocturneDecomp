@@ -359,7 +359,7 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
 void __cdecl core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor *this_ptr,int *y_pos);
 void __cdecl core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0(int *y_position,char *left_text,char *right_text);
 void __cdecl core_actor_cpp_drawTextLine_FUN_0040d240(int *y_position,char *text);
-int __cdecl core_actor_cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270(CDemonActor *this_ptr,int new_value);
+int __cdecl core_actor_cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270(CDemonActor *this_ptr,char *new_value);
 void __cdecl core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3f *start_point,CVector3f *direction_offset);
 void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color);
@@ -430,6 +430,6 @@ void __cdecl core_actor_cpp_CActorPropertyList_render_FUN_0040e850(CActorPropert
 int __cdecl core_actor_cpp_CActorPropertyList_hitTest_FUN_0040e9c0(CActorPropertyList *this_ptr,int x,int y);
 void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty *this_ptr,CDemonActor *actor,char *output_buffer);
 int __cdecl core_actor_cpp_CActorProperty_getNameWidth_FUN_0040ee30(CActorProperty *this_ptr);
-int __cdecl core_actor_cpp_CActorProperty_getValueWidth_FUN_0040ee50(CActorProperty *this_ptr,int index);
+int __cdecl core_actor_cpp_CActorProperty_getValueWidth_FUN_0040ee50(CActorProperty *this_ptr,CDemonActor *actor);
 int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorProperty *this_ptr,CDemonActor *actor);
 

@@ -14,7 +14,6 @@
 #include "types/classes/CDirectSoundDevice.h"
 #include "types/classes/CIniFile.h"
 #include "types/classes/CMotionController.h"
-#include "types/classes/COrientation.h"
 #include "types/classes/CSampleInfo.h"
 #include "types/classes/CSfxOptions.h"
 #include "types/classes/CSfxSample.h"
@@ -34,6 +33,7 @@
 #include "types/structs/SStereoBuffers.h"
 #include "types/structs/SStereoGains.h"
 #include "types/structs/SVert.h"
+#include "types/unions/UOrientationVector.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x5A0000
@@ -61,7 +61,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90(CDeformableModelInstance *this_ptr,float start_frame,float end_frame,float scale_factor);
 CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10(CDeformableModelInstance *this_ptr,CVector3f *output_buffer,float start_frame,float end_frame);
 CDeformableModelInstance * __cdecl core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_005a0f50(CMotionController *motion_controller,CDeformableModelInstance *deformable_model,int motion_index,float start_frame,float end_frame);
-CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,COrientation *orientation,CVector3f *velocity,CDemonActor *source_actor,int unknown);
+CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040(CDeformableModelInstance *this_ptr,CBodyPart *body_part,int part_index);
 float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0(CDeformableModelInstance *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160(CDeformableModelInstance *this_ptr,CVector3f *point);

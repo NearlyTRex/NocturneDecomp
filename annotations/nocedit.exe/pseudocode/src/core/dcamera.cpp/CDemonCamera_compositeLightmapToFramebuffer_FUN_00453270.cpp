@@ -79,7 +79,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
       else {
         if (this_ptr->scale_factor == 1) {
           core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4
-                    (puVar6,puVar7,(byte *)pacVar8,(byte *)pacVar5,this_ptr->framebuffer_width);
+                    ((uint *)puVar6,puVar7,(byte *)pacVar8,(byte *)pacVar5,
+                     this_ptr->framebuffer_width);
         }
         if (this_ptr->scale_factor == 2) {
           core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00493450

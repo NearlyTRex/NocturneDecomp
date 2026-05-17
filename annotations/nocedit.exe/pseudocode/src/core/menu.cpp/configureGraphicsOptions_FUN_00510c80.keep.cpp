@@ -381,7 +381,7 @@ LAB_00510f71:
     }
     pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Graphic Options");
     iVar7 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
-                      (g_GraphicsMenuTextPointers,iVar7,&local_20,0xfa,(int)pcVar14);
+                      (g_GraphicsMenuTextPointers,iVar7,&local_20,0xfa,pcVar14);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar6 = _stricmp(g_RendererDllPath,"trid3d.dll");
     pCVar4 = g_CGamePtr;

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_istream *istream,int byte_count,_ostream *ostream)
+; int __cdecl support_codec_cpp_CCodec_process_FUN_0043ea10(CCodec *this_ptr,_istream *istream,int *byte_count,_ostream *ostream)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr
 ; _istream *       Stack[0x8]:4   istream
-; int              Stack[0xc]:4   byte_count
+; int *            Stack[0xc]:4   byte_count
 ; _ostream *       Stack[0x10]:4   ostream
 ; Local Variables:
 ; byte[4]          Stack[-0x14]:4  local_14

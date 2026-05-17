@@ -107,7 +107,7 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
                    CStack_2c4c.properties[*(int *)(pcVar8 + 0x108)].name);
       }
       _sprintf(local_3a0,"\t%s\t%s",local_1ac,local_e4);
-      shape_edittool_cpp_CPickList_insert_FUN_004a5670(&local_748,iVar5,(int)local_3a0);
+      shape_edittool_cpp_CPickList_insert_FUN_004a5670(&local_748,iVar5,local_3a0);
       *(int *)(pcVar8 + 0x110) = iVar5;
       if (0 < local_18) {
         iVar4 = 0;

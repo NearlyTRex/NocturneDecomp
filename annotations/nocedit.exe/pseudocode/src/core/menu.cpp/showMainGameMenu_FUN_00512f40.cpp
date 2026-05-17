@@ -116,8 +116,8 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
       iVar6 = iVar6 + 4;
       pacVar9 = pacVar9 + 1;
     } while (iVar6 != 0x10);
-    iVar8 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(g_MenuTextPointers,4,&iStack_c,0xfa,0)
-    ;
+    iVar8 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
+                      (g_MenuTextPointers,4,&iStack_c,0xfa,(char *)0x0);
     if (iStack_8 != 0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
     }

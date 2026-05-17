@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 378,
+    "complexity_score": 393,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 118,
-    "suspect_count": 25,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "warning_inlined_function"
     ],
     "total_lines": 391
@@ -31,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10",
-    "signature": "int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count,CDemonTriangle *triangle_data)"
+    "signature": "int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,CDemonTriangle *triangles)"
   },
   "function_calls": [
     {
@@ -210,9 +211,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 5,
-    "declared_stack_bytes": 20,
-    "estimated_params": 5,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -251,10 +252,10 @@
     "pcode_op_count": 1305
   },
   "stack_frame": {
-    "frame_size": 332,
+    "frame_size": 324,
     "local_size": 312,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -343,22 +344,8 @@
       },
       {
         "is_param": true,
-        "name": "enable_alloc",
+        "name": "triangles",
         "offset": 12,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "source_triangle_count",
-        "offset": 16,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "triangle_data",
-        "offset": 20,
         "size": 4,
         "type": "CDemonTriangle *"
       }
@@ -462,6 +449,14 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 79,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_LoadedVertices[local_30].vertex.x = pCVar5->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 50,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -546,7 +541,7 @@
       "line": 76,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + local_20) = *pfVar6;",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + local_20) = (pCVar6->vertex1).x;",
       "type": "pointer_cast"
     },
     {
@@ -554,7 +549,7 @@
       "line": 77,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + local_20) = pfVar6[1];",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + local_20) = (pCVar6->vertex1).y;",
       "type": "pointer_cast"
     },
     {
@@ -562,7 +557,7 @@
       "line": 78,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + local_20) = pfVar6[2];",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + local_20) = (pCVar6->vertex1).z;",
       "type": "pointer_cast"
     }
   ]

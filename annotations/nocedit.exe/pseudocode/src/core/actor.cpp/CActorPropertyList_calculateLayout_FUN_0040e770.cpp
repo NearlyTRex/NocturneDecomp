@@ -27,8 +27,7 @@ void __cdecl core_actor_cpp_CActorPropertyList_calculateLayout_FUN_0040e770(CAct
       if (iVar2 < iVar1) {
         iVar2 = iVar1;
       }
-      iVar4 = core_actor_cpp_CActorProperty_getValueWidth_FUN_0040ee50
-                        (this_ptr_00,(int)this_ptr->owner);
+      iVar4 = core_actor_cpp_CActorProperty_getValueWidth_FUN_0040ee50(this_ptr_00,this_ptr->owner);
       if (local_14 < iVar4) {
         local_14 = iVar4;
       }

@@ -289,7 +289,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     }
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound Options");
     iVar3 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
-                      (g_SoundOptionsMenuPointers,local_24,local_3c,0xe1,(int)pcVar4);
+                      (g_SoundOptionsMenuPointers,local_24,local_3c,0xe1,pcVar4);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     switch(iVar3) {
     case 0:

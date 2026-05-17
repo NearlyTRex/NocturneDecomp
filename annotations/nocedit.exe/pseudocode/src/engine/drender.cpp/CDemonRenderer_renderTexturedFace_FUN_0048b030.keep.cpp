@@ -10,9 +10,7 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030(CDemonRenderer *this_ptr,SInputFace *face,int render_flags)
 
 {
-  ushort *puVar1;
   ushort uVar2;
-  SInputFace *pSVar3;
   
   if (render_flags == -1) {
     render_flags = 0x2cd;
@@ -23,14 +21,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030(C
     return;
   }
   if ((this_ptr->face_count == 0) && (this_ptr->skip_uv_extraction == 0)) {
-    pSVar3 = face;
-    do {
-      uVar2 = (pSVar3->vertex_indices).vertex_index_0;
-      this_ptr->vertex_buffer_ptr[uVar2].u = (uint)pSVar3->u_coord_0 << 8;
-      puVar1 = &pSVar3->v_coord_0;
-      pSVar3 = (SInputFace *)&(pSVar3->vertex_indices).vertex_index_1;
-      this_ptr->vertex_buffer_ptr[uVar2].v = (uint)*puVar1 << 8;
-    } while (pSVar3 != (SInputFace *)&face->u_coord_0);
+    uVar2 = face->vertex_indices.vertex_index_0;
+    this_ptr->vertex_buffer_ptr[uVar2].u = (uint)face->u_coord_0 << 8;
+    this_ptr->vertex_buffer_ptr[uVar2].v = (uint)face->v_coord_0 << 8;
+    uVar2 = face->vertex_indices.vertex_index_1;
+    this_ptr->vertex_buffer_ptr[uVar2].u = (uint)face->u_coord_1 << 8;
+    this_ptr->vertex_buffer_ptr[uVar2].v = (uint)face->v_coord_1 << 8;
+    uVar2 = face->vertex_indices.vertex_index_2;
+    this_ptr->vertex_buffer_ptr[uVar2].u = (uint)face->u_coord_2 << 8;
+    this_ptr->vertex_buffer_ptr[uVar2].v = (uint)face->v_coord_2 << 8;
   }
   g_VertexIndexBuffer[0] = (int)(face->vertex_indices).vertex_index_0;
   g_VertexIndexBuffer[1] = (int)(face->vertex_indices).vertex_index_1;

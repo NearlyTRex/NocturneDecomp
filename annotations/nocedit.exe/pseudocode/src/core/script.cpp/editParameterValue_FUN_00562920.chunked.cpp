@@ -2,14 +2,14 @@
 // Address: 00562920
 // Address Range: [[00562920, 00564006]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
+// Signature: int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param,CCmdParse *context)
 
 #include "nocturne.h"
 typedef struct editParameterValue_Ctx {
     char *value_buffer;
     int param_type;
-    CCmdParm *param_info;
-    char *param_name;
+    CCmdParm *param;
+    CCmdParse *context;
     char cVar2;
     int iVar3;
     int iVar5;
@@ -26,7 +26,7 @@ typedef struct editParameterValue_Ctx {
     int iVar7;
 } editParameterValue_Ctx;
 
-// Chunk: check_pCVar6_0 (lines 449-478 of original)
+// Chunk: check_pCVar6_0 (lines 448-477 of original)
 static int editParameterValue_check_pCVar6_0(editParameterValue_Ctx *ctx) {
     char *&value_buffer = ctx->value_buffer;
     int &iVar5 = ctx->iVar5;
@@ -64,7 +64,7 @@ static int editParameterValue_check_pCVar6_0(editParameterValue_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: check_pCVar2_1 (lines 482-514 of original)
+// Chunk: check_pCVar2_1 (lines 480-512 of original)
 static int editParameterValue_check_pCVar2_1(editParameterValue_Ctx *ctx) {
     char *&value_buffer = ctx->value_buffer;
     char &cVar2 = ctx->cVar2;
@@ -104,7 +104,7 @@ static int editParameterValue_check_pCVar2_1(editParameterValue_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: check_character_2 (lines 623-712 of original)
+// Chunk: check_character_2 (lines 620-709 of original)
 static int editParameterValue_check_character_2(editParameterValue_Ctx *ctx) {
     char *&value_buffer = ctx->value_buffer;
     char &cVar2 = ctx->cVar2;
@@ -205,15 +205,15 @@ static int editParameterValue_check_character_2(editParameterValue_Ctx *ctx) {
     return 0;
 }
 
-int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
+int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param,CCmdParse *context)
 
 {
   editParameterValue_Ctx _ctx_storage = {};
   editParameterValue_Ctx *ctx = &_ctx_storage;
   ctx->value_buffer = value_buffer;
   ctx->param_type = param_type;
-  ctx->param_info = param_info;
-  ctx->param_name = param_name;
+  ctx->param = param;
+  ctx->context = context;
 
     char &cVar2 = ctx->cVar2;
     int &iVar3 = ctx->iVar3;
@@ -231,8 +231,8 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     int &iVar7 = ctx->iVar7;
   // param value_buffer aliased into ctx above
   // param param_type aliased into ctx above
-  // param param_info aliased into ctx above
-  // param param_name aliased into ctx above
+  // param param aliased into ctx above
+  // param context aliased into ctx above
 
   char (*string_data) [30];
   char *pcVar8;
@@ -304,10 +304,10 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     break;
   case 3:
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3004);
-    local_18 = param_info->modifier_string;
+    local_18 = param->modifier_string;
     iVar5 = 0;
     for (iVar8 = 0; iVar8 < g_CDemonSetPtr->actor_count; iVar8 = iVar8 + 1) {
-      if (((param_info->modifier_string[0] == '\0') ||
+      if (((param->modifier_string[0] == '\0') ||
           (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),local_18),
           iVar3 != 0)) &&
@@ -319,7 +319,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       }
       iVar5 = iVar5 + 4;
     }
-    if ((param_info->modifier_string[0] == '\0') ||
+    if ((param->modifier_string[0] == '\0') ||
        (iVar5 = core_actor_cpp_matchesClassName_FUN_0040c740(&g_CHeroClassInfo,local_18), iVar5 != 0
        )) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3004.base,"$");
@@ -595,7 +595,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     return 1;
   case 0x12:
     splitpath
-              (param_info->modifier_string,(char *)0x0,local_370,local_470,local_270);
+              (param->modifier_string,(char *)0x0,local_370,local_470,local_270);
     makepath(local_574,(char *)0x0,(char *)0x0,local_470,local_270);
     iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,local_7cc,local_370,local_574,value_buffer,1);
@@ -681,15 +681,13 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     }
     break;
   case 0x17:
-    pCVar6 = core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
-                       ((CCmdParse *)param_info,(int)param_name);
+    pCVar6 = core_script_cpp_CCmdParm_getMotionListByContext_FUN_00562860(param,context);
     if (pCVar6 != (CMotionList *)0x0) {
       editParameterValue_check_pCVar6_0(ctx);
     }
     break;
   case 0x18:
-    pCVar2 = core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
-                       ((CCmdParse *)param_info,(int)param_name);
+    pCVar2 = core_script_cpp_CCmdParm_getMotionListByContext_FUN_00562860(param,context);
     if (pCVar2 != (CMotionList *)0x0) {
       editParameterValue_check_pCVar2_1(ctx);
     }
@@ -800,8 +798,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
               (g_CEditorToolsPtr,"WARNING! chooseParm - unknown parm type %d (code needs to be updated)");
     return 0;
   case 0x1e:
-    character = core_script_cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0
-                          ((CCmdParse *)param_info,(int)param_name);
+    character = core_script_cpp_CCmdParm_getCharacterByContext_FUN_005627f0(param,context);
     if (character != (CCharacter *)0x0) {
       editParameterValue_check_character_2(ctx);
     }

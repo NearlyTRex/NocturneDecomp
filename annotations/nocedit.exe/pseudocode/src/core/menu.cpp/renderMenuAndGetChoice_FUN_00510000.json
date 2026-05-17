@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 403,
-    "complexity_score": 134,
+    "complexity_score": 133,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 13,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 134,
+    "pseudocode_lines": 133,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 537
+    "total_lines": 536
   },
   "cross_references": [
     {
@@ -59,7 +59,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00510000",
-    "signature": "int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,int spacing_flag)"
+    "signature": "int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title)"
   },
   "function_calls": [
     {
@@ -281,7 +281,7 @@
   "resolved_suspects": [
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
-      "line": 92,
+      "line": 91,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -347,10 +347,10 @@
       },
       {
         "is_param": true,
-        "name": "spacing_flag",
+        "name": "title",
         "offset": 20,
         "size": 4,
-        "type": "int"
+        "type": "char *"
       }
     ]
   },

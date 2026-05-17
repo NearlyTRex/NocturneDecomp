@@ -207,7 +207,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x20]      ; 0045345b
     PUSH EDX                            ; 0045345f
     CALL core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4 ; 00453460
-        ;   XREF to: 00493dc4 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(ulonglong * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
+        ;   XREF to: 00493dc4 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 00453465
     CMP dword ptr [EDI + 0x14c],0x2     ; 00453468
         ;   Label: LAB_00453468

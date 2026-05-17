@@ -2,11 +2,11 @@
 // Address: 00510000
 // Address Range: [[00510000, 0051040d]]
 // Convention: __cdecl
-// Signature: int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,int spacing_flag)
+// Signature: int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title)
 
 #include "nocturne.h"
 
-int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,int spacing_flag)
+int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title)
 
 {
   int iVar1;
@@ -25,9 +25,8 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
   CBitFont *this_ptr;
   
   this_ptr = g_ThemeFont;
-  if (spacing_flag != 0) {
-    engine_font_cpp_CBitFont_drawText_FUN_004cda80
-              (g_ThemeFont,(char *)spacing_flag,0xa0,y_position,7,0);
+  if (title != (char *)0x0) {
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_ThemeFont,title,0xa0,y_position,7,0);
     iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(this_ptr,0x58);
     y_position = y_position + iVar4 * 2;
   }
@@ -63,7 +62,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
       engine_font_cpp_CBitFont_drawText_FUN_004cda80(this_ptr,*local_1c,0xa0,y_position,local_24,-1)
       ;
       y_position = y_position + iVar1;
-      if (spacing_flag == 0) {
+      if (title == (char *)0x0) {
         y_position = y_position + iVar1;
       }
       local_1c = local_1c + 1;
@@ -72,21 +71,21 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
   }
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   if (g_MessageCount == 0) {
-    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
+    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_SmallEditorFont,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
-    iVar4 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40
+    iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40
                       (g_SmallEditorFont,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
   }
   else {
-    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
+    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_SmallEditorFont,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
-    iVar4 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40
+    iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40
                       (g_SmallEditorFont,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.";
   }
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
-            (g_SmallEditorFont,pcVar7,0x27f - iVar3,0x1df - iVar4,0xf8,0);
+            (g_SmallEditorFont,pcVar7,0x27f - iVar4,0x1df - iVar3,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0x8000);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,g_MenuVersionText,0x206,99,0xf8,0);

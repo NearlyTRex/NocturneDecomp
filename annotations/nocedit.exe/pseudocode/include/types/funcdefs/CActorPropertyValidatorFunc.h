@@ -7,5 +7,5 @@
 struct CDemonActor;
 
 // Function Definition: CActorPropertyValidatorFunc
-typedef int CActorPropertyValidatorFunc(struct CDemonActor* actor, int new_value);
+typedef int CActorPropertyValidatorFunc(struct CDemonActor* actor, char* new_value);
 

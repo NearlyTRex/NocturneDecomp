@@ -2,18 +2,17 @@
 // Address: 005a0fe0
 // Address Range: [[005a0fe0, 005a1037]]
 // Convention: __cdecl
-// Signature: CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,COrientation *orientation,CVector3f *velocity,CDemonActor *source_actor,int unknown)
+// Signature: CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source)
 
 #include "nocturne.h"
 
-CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,COrientation *orientation,CVector3f *velocity,CDemonActor *source_actor,int unknown)
+CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source)
 
 {
   CBodyPart *body_part;
   
   body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10
-                        ((CVector3f *)orientation,(UOrientationVector *)velocity,
-                         (CVector3f *)source_actor,(CDemonActor *)unknown,0,0,0);
+                        (position,orientation,initial_velocity,scale_source,0,0,0);
   core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
             (this_ptr,body_part,part_index);
   if (body_part == (CBodyPart *)0x0) {

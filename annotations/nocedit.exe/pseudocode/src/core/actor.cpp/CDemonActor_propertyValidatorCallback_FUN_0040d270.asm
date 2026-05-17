@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270(CDemonActor *this_ptr,int new_value)
+; int __cdecl core_actor_cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270(CDemonActor *this_ptr,char *new_value)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   new_value
+; char *           Stack[0x8]:4   new_value
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 at 0040d29b

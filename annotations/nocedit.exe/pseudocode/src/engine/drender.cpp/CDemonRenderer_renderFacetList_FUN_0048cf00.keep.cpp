@@ -10,12 +10,10 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int primitive_stride,int render_flags)
 
 {
-  int iVar1;
   int iVar2;
   int iVar3;
   int polygon_count;
   int local_28 [4];
-  int local_18;
   int local_14;
   SMRGLHeaderBasic *pSVar1;
   
@@ -62,15 +60,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDem
         polygon_count = 0;
         local_14 = 0;
         if (0 < primitive_count) {
-          local_18 = 0;
           do {
             iVar2 = engine_prim_c_getTriangleWindingFromIndices1_FUN_00552210
                               ((SMRGLPrimitiveTriangle *)primitive_array);
             if (iVar2 != 0) {
+              g_VisibleFacePointers[polygon_count] = primitive_array;
               polygon_count = polygon_count + 1;
-              iVar1 = local_18 + 4;
-              *(SMRGLPrimitiveQuad **)((int)g_VisibleFacePointers + local_18) = primitive_array;
-              local_18 = iVar1;
               if (1999 < polygon_count) {
                 g_CurrentFilename = "..\\engine\\drender.cpp";
                 g_CurrentLineNumber = 0x9b6;

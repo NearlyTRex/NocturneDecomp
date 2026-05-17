@@ -151,7 +151,7 @@ section .text
     LEA EAX,[ESP + 0x250c]              ; 005678ac
     PUSH EAX                            ; 005678b3
     CALL shape_edittool.cpp_CPickList_insert_FUN_004a5670 ; 005678b4
-        ;   XREF to: 004a5670 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_insert_FUN_004a5670(CPickList * this_ptr, int insert_index, int item_data)
+        ;   XREF to: 004a5670 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_insert_FUN_004a5670(CPickList * this_ptr, int insert_index, char * string_data)
     ADD ESP,0xc                         ; 005678b9
     MOV EAX,dword ptr [ESP + 0x2c38]    ; 005678bc
     MOV dword ptr [EAX + 0x110],EBX     ; 005678c3

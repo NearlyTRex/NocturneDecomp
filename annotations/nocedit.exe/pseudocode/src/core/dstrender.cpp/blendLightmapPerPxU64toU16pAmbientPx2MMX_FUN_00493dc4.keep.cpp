@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[00493dc4, 004940e8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 {
   ushort solid_ws[4];
   uint solid_raw;
@@ -89,12 +89,12 @@ void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_004
               (uint)((pix_bytes[1] & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
               (uint)((pix_bytes[1] & g_RedMask32.mm) >> g_TotalColorBits.mm);
 
-    *(uint *)output_buffer = pix0_16 | (pix1_16 << 0x10);
+    *output_buffer = pix0_16 | (pix1_16 << 0x10);
 
     texture_buffer = texture_buffer + 1;
     texture_indices = texture_indices + 2;
     lightmap_indices = lightmap_indices + 2;
-    output_buffer = (ulonglong *)((int)output_buffer + 4);
+    output_buffer = output_buffer + 1;
     pixel_count = pixel_count - 2;
   } while (pixel_count > 0);
   return;

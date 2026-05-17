@@ -11,12 +11,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b
 
 {
   int iVar2;
-  SMRGLPrimitivePoly *pSVar3;
-  SMRGLHeaderPrimitive *pSVar2;
-  int iVar3;
   int iVar5;
   int iVar4;
-  int iVar6;
   uint local_14;
   int iVar1;
   
@@ -25,14 +21,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b
     iVar4 = 0;
     local_14 = 0xffffffff;
     if (0 < (poly->base).base.count) {
-      iVar3 = 0;
-      pSVar3 = poly;
       do {
-        iVar1 = pSVar3->vertices[0].vertex_index;
-        *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
-        iVar3 = iVar3 + 4;
+        iVar1 = poly->vertices[iVar4].vertex_index;
+        g_VertexIndexBuffer[iVar4] = iVar1;
         local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
-        pSVar3 = (SMRGLPrimitivePoly *)&(pSVar3->base).surface_normal.B;
         iVar4 = iVar4 + 1;
       } while (iVar4 < (poly->base).base.count);
     }
@@ -47,15 +39,11 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b
         g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
         g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE | RENDER_COLOR_FROM_VERTEX);
         if ((this_ptr->skip_uv_extraction == 0) && (iVar5 = 0, 0 < (poly->base).base.count)) {
-          iVar6 = 0;
-          pSVar2 = &poly->base;
           do {
-            iVar2 = *(int *)((int)g_VertexIndexBuffer + iVar6);
-            this_ptr->vertex_buffer_ptr[iVar2].u = pSVar2[1].base.count;
-            this_ptr->vertex_buffer_ptr[iVar2].v = pSVar2[1].surface_normal.A.i;
-            pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
+            iVar2 = g_VertexIndexBuffer[iVar5];
+            this_ptr->vertex_buffer_ptr[iVar2].u = poly->vertices[iVar5].texture_u;
+            this_ptr->vertex_buffer_ptr[iVar2].v = poly->vertices[iVar5].texture_v;
             iVar5 = iVar5 + 1;
-            iVar6 = iVar6 + 4;
           } while (iVar5 < (poly->base).base.count);
         }
       }

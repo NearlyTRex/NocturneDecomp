@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0",
-    "signature": "int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr,int x_position,int y_position,char *text_string,int text_color,int draw_flags)"
+    "signature": "int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color)"
   },
   "function_calls": [
     {
@@ -91,35 +91,35 @@
       },
       {
         "is_param": true,
-        "name": "x_position",
+        "name": "text_string",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "y_position",
+        "name": "x",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "text_string",
+        "name": "y",
         "offset": 16,
         "size": 4,
-        "type": "char *"
+        "type": "int"
       },
       {
         "is_param": true,
-        "name": "text_color",
+        "name": "foreground_color",
         "offset": 20,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "draw_flags",
+        "name": "background_color",
         "offset": 24,
         "size": 4,
         "type": "int"

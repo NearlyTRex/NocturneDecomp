@@ -2,21 +2,21 @@
 // Address: 00482a10
 // Address Range: [[00482a10, 00482e3a]]
 // Convention: __cdecl
-// Signature: int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count,CDemonTriangle *triangle_data)
+// Signature: int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,CDemonTriangle *triangles)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count,CDemonTriangle *triangle_data)
+int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,CDemonTriangle *triangles)
 
 {
   char *pcVar1;
   float fVar2;
   double dVar3;
   int iVar4;
-  float *pfVar5;
-  float *pfVar6;
+  CVector3f *pCVar5;
+  CDemonTriangle *pCVar6;
   int iVar7;
   char local_134 [256];
   int local_34;
@@ -49,46 +49,46 @@ int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart
       local_1c = 0xc;
       local_24 = 0;
       local_20 = 0;
-      pfVar5 = (float *)(enable_alloc + 0xc);
+      pCVar5 = &triangles->vertex2;
       iVar4 = 0;
       do {
-        pfVar6 = (float *)(local_18 * 0x38 + enable_alloc);
+        pCVar6 = triangles + local_18;
         fVar2 = (float)256;
         *(int *)((int)&this_ptr->vertex_positions->x + local_24) =
-             (int)ROUND(ROUND(*pfVar6 * fVar2));
+             (int)ROUND(ROUND((pCVar6->vertex1).x * fVar2));
         *(int *)((int)&this_ptr->vertex_positions->y + local_24) =
-             (int)ROUND(ROUND(pfVar6[1] * fVar2));
+             (int)ROUND(ROUND((pCVar6->vertex1).y * fVar2));
         *(int *)((int)&this_ptr->vertex_positions->z + local_24) =
-             (int)ROUND(ROUND(pfVar6[2] * fVar2));
+             (int)ROUND(ROUND((pCVar6->vertex1).z * fVar2));
         local_28 = local_18 * 3;
         local_30 = local_28 + 1;
         *(int *)((int)&this_ptr->vertex_positions->x + local_1c) =
-             (int)ROUND(ROUND(*pfVar5 * fVar2));
+             (int)ROUND(ROUND(pCVar5->x * fVar2));
         *(int *)((int)&this_ptr->vertex_positions->y + local_1c) =
-             (int)ROUND(ROUND(pfVar5[1] * fVar2));
+             (int)ROUND(ROUND(pCVar5->y * fVar2));
         *(int *)((int)&this_ptr->vertex_positions->z + local_1c) =
-             (int)ROUND(ROUND(pfVar5[2] * fVar2));
+             (int)ROUND(ROUND(pCVar5->z * fVar2));
         dVar3 = 256;
         local_2c = local_28 + 2;
         local_34 = local_2c * 0xc;
         this_ptr->vertex_positions[local_2c].x =
-             (int)ROUND(ROUND((double)pfVar5[3] * 256));
-        this_ptr->vertex_positions[local_2c].y = (int)ROUND(ROUND((double)pfVar5[4] * dVar3));
-        local_14 = (int)ROUND(ROUND((double)pfVar5[5] * dVar3));
+             (int)ROUND(ROUND((double)pCVar5[1].x * 256));
+        this_ptr->vertex_positions[local_2c].y = (int)ROUND(ROUND((double)pCVar5[1].y * dVar3));
+        local_14 = (int)ROUND(ROUND((double)pCVar5[1].z * dVar3));
         this_ptr->vertex_positions[local_2c].z = local_14;
         *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar7) = 0xffffffff;
         *(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar7) = local_28;
         *(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar7) = local_30;
         *(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar7) = local_2c;
-        *(float *)((int)&g_LoadedVertices[0].vertex.x + local_20) = *pfVar6;
-        *(float *)((int)&g_LoadedVertices[0].vertex.y + local_20) = pfVar6[1];
-        *(float *)((int)&g_LoadedVertices[0].vertex.z + local_20) = pfVar6[2];
-        g_LoadedVertices[local_30].vertex.x = *pfVar5;
-        g_LoadedVertices[local_30].vertex.y = pfVar5[1];
-        g_LoadedVertices[local_30].vertex.z = pfVar5[2];
-        g_LoadedVertices[local_2c].vertex.x = pfVar5[3];
-        g_LoadedVertices[local_2c].vertex.y = pfVar5[4];
-        fVar2 = pfVar5[5];
+        *(float *)((int)&g_LoadedVertices[0].vertex.x + local_20) = (pCVar6->vertex1).x;
+        *(float *)((int)&g_LoadedVertices[0].vertex.y + local_20) = (pCVar6->vertex1).y;
+        *(float *)((int)&g_LoadedVertices[0].vertex.z + local_20) = (pCVar6->vertex1).z;
+        g_LoadedVertices[local_30].vertex.x = pCVar5->x;
+        g_LoadedVertices[local_30].vertex.y = pCVar5->y;
+        g_LoadedVertices[local_30].vertex.z = pCVar5->z;
+        g_LoadedVertices[local_2c].vertex.x = pCVar5[1].x;
+        g_LoadedVertices[local_2c].vertex.y = pCVar5[1].y;
+        fVar2 = pCVar5[1].z;
         pcVar1 = g_ModelPolygonData[0].texture_name + iVar4 + -4;
         pcVar1[0] = '\x01';
         pcVar1[1] = '\0';
@@ -103,7 +103,7 @@ int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart
         *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 4) = 0;
         *(uint *)((int)g_ModelPolygonData[0].uv_u + iVar4 + 8) = 0;
         *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 8) = 0;
-        pfVar5 = pfVar5 + 0xe;
+        pCVar5 = (CVector3f *)((int)(pCVar5 + 4) + 8);
         *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 0x40) = 0;
         iVar7 = iVar7 + 0x20;
         *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4) = local_28;

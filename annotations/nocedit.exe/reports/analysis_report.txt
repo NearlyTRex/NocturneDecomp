@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5761 (89.3%)
-Functions with suspects: 693 (10.7%)
+Clean functions: 5777 (89.5%)
+Functions with suspects: 677 (10.5%)
 
-Total suspect patterns: 3783
-Average suspects per function: 0.59
+Total suspect patterns: 3719
+Average suspects per function: 0.58
 
-Virtual files: 214 total, 148 at 100%, 148 at 90%+
+Virtual files: 214 total, 148 at 100%, 149 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 54.3
+Average complexity score: 54.2
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,11 +28,11 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1606
-  unrolled_memcpy           903
-  unrolled_strcpy           286
-  shadow_pointer_walk       173
+  pointer_cast              1573
+  unrolled_memcpy           904
+  unrolled_strcpy           274
   missing_cave_copy         170
+  shadow_pointer_walk       153
   raw_address_constant      91
   unrolled_strlen           80
   static_uninitvar          68
@@ -107,7 +107,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5711 more
+  ... and 5727 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -129,7 +129,6 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (score: 1028, suspects: 37, lines: 643)
   00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (score: 997, suspects: 16, lines: 832)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 945, suspects: 12, lines: 810)
-  00562920: core_script.cpp_editParameterValue_FUN_00562920 (score: 924, suspects: 16, lines: 754)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 917, suspects: 0, lines: 917)
   005138e0: core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (score: 917, suspects: 0, lines: 917)
   00511e50: core_menu.cpp_configureSoundOptions_FUN_00511e50 (score: 888, suspects: 12, lines: 743)
@@ -141,11 +140,12 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (score: 779, suspects: 9, lines: 674)
   0041e350: core_box.cpp_CBox_processPhysics_FUN_0041e350 (score: 779, suspects: 0, lines: 779)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 752, suspects: 0, lines: 752)
+  00562920: core_script.cpp_editParameterValue_FUN_00562920 (score: 751, suspects: 0, lines: 751)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (362 functions):
+  pointer_cast (347 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
@@ -156,9 +156,9 @@ FUNCTIONS BY SUSPECT TYPE
     00403430: engine_2d.c_mapFrameBuffer_FUN_00403430
     00401900: engine_2d.c_drawCharacterMasked_FUN_00401900
     00401140: engine_2d.c_plotPixel_FUN_00401140
-    ... and 352 more
+    ... and 337 more
 
-  unrolled_memcpy (306 functions):
+  unrolled_memcpy (307 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -169,9 +169,9 @@ FUNCTIONS BY SUSPECT TYPE
     00407470: engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
     00408070: engine_3d.c_clipAndDrawLine3D_FUN_00408070
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-    ... and 296 more
+    ... and 297 more
 
-  unrolled_strcpy (114 functions):
+  unrolled_strcpy (113 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
     004050c0: engine_3d.c_updateAnimatedTexture_FUN_004050c0
     004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
@@ -182,20 +182,7 @@ FUNCTIONS BY SUSPECT TYPE
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     004b23a0: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
     004ba740: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
-    ... and 104 more
-
-  shadow_pointer_walk (107 functions):
-    005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
-    00550ef0: engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0
-    00406860: engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
-    004046c0: engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0
-    00407290: engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290
-    00406430: engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430
-    00406a20: engine_3d.c_renderPolygonLitDetailedAmbient_FUN_00406a20
-    00405170: engine_3d.c_renderPolygonUVTextureEnableVertexLit_FUN_00405170
-    00407720: engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720
-    00403f20: engine_3d.c_renderPolygonTextureNormalizedLit_FUN_00403f20
-    ... and 97 more
+    ... and 103 more
 
   missing_cave_copy (24 functions):
     004f80b0: core_icepick.cpp_CIcePick_process_FUN_004f80b0
@@ -209,6 +196,19 @@ FUNCTIONS BY SUSPECT TYPE
     00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
     005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     ... and 14 more
+
+  shadow_pointer_walk (96 functions):
+    005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
+    00550ef0: engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0
+    00406860: engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
+    004046c0: engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0
+    00407290: engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290
+    00406430: engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430
+    00406a20: engine_3d.c_renderPolygonLitDetailedAmbient_FUN_00406a20
+    00405170: engine_3d.c_renderPolygonUVTextureEnableVertexLit_FUN_00405170
+    00407720: engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720
+    00403f20: engine_3d.c_renderPolygonTextureNormalizedLit_FUN_00403f20
+    ... and 86 more
 
   raw_address_constant (20 functions):
     00406860: engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860

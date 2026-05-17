@@ -58,7 +58,7 @@ void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FU
 void __cdecl core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00493450(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_004937b6(ushort *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index);
 void __cdecl core_dstrender_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00493860(uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
-void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
+void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __cdecl core_dtrace_cpp_staticInit_FUN_004941e0(void);
 CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_ctor_FUN_00494200(CDemonRaytrace *this_ptr);

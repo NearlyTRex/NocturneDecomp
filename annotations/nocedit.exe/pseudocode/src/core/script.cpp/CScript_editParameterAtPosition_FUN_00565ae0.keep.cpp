@@ -47,7 +47,7 @@ void __cdecl core_script_cpp_CScript_editParameterAtPosition_FUN_00565ae0(CScrip
                         (input_text,pcVar9,pcVar8,pcVar4,iVar3,parm_out,parse_out);
       if (0 < iVar3) {
         iVar3 = core_script_cpp_editParameterValue_FUN_00562920
-                          (local_3f4,iVar3,&local_910,(char *)&CStack_2a38);
+                          (local_3f4,iVar3,&local_910,&CStack_2a38);
         if (iVar3 != 0) {
           pcVar5 = local_200;
           pcVar6 = g_CurrentLineBuffer + 1;

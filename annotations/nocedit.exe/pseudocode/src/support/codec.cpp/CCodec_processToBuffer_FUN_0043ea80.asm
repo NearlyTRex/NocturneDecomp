@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec *this_ptr,_istream *ifstream,int byte_count,char *output_buffer,int *output_size,int enable_finalize)
+; int __cdecl support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80(CCodec *this_ptr,_istream *ifstream,int *byte_count,char *output_buffer,int *output_size,int enable_finalize)
 ;
 ; Parameters:
 ; CCodec *         Stack[0x4]:4   this_ptr
 ; _istream *       Stack[0x8]:4   ifstream
-; int              Stack[0xc]:4   byte_count
+; int *            Stack[0xc]:4   byte_count
 ; char *           Stack[0x10]:4   output_buffer
 ; int *            Stack[0x14]:4   output_size
 ; int              Stack[0x18]:4   enable_finalize

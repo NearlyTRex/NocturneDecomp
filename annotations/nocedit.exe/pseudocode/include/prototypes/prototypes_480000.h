@@ -115,7 +115,7 @@ void __cdecl core_dpart_cpp_CDemonPart_save_FUN_004824c0(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_004824f0(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position);
 void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart *this_ptr);
-int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count,CDemonTriangle *triangle_data);
+int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,CDemonTriangle *triangles);
 void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40(CDemonPart *this_ptr,int enable_vertex_reduction,int enable_polygon_optimize);
 void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);

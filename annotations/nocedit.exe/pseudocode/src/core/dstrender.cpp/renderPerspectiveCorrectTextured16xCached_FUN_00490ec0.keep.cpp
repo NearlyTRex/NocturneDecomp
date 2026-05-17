@@ -40,7 +40,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
   uVar2 = uVar2 >> 0x10;
   iVar3 = (uVar14 >> 0x10) - uVar2;
   if (iVar3 != 0 && uVar2 <= uVar14 >> 0x10) {
-    g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);
+    g_PerspectiveScanlineColorPtr = (uint *)g_ScreenBufferArray[scanline_y] + uVar2;
     g_PerspectiveScanlineZPtr = g_ZBufferScanlineArray[scanline_y] + uVar2;
     g_PerspectiveLeftU = (pSVar12->base).u_current;
     g_PerspectiveRightU = (left_edge->base).u_current;
@@ -61,11 +61,9 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
                ((longlong)(int)(g_PerspectiveRightZ - uVar1) *
                (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20) << 4;
     g_PerspectiveCurrentU =
-         (uint)(CONCAT44(((int)g_PerspectiveLeftU >> 0x1f) << 0x18 | g_PerspectiveLeftU >> 8,
-                         g_PerspectiveLeftU << 0x18) / (longlong)(int)uVar1);
+         (uint)(((longlong)(int)g_PerspectiveLeftU << 24) / (longlong)(int)uVar1);
     g_PerspectiveCurrentV =
-         (uint)(CONCAT44(((int)g_PerspectiveLeftV >> 0x1f) << 0x18 | g_PerspectiveLeftV >> 8,
-                         g_PerspectiveLeftV << 0x18) / (longlong)(int)uVar1);
+         (uint)(((longlong)(int)g_PerspectiveLeftV << 24) / (longlong)(int)uVar1);
     puVar15 = g_PerspectiveColorCache;
     g_PerspectiveLeftZ = uVar1;
     g_PerspectiveScanlinePixelCount = iVar3;
@@ -75,12 +73,9 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
       g_PerspectiveInterpolatedW = g_PerspectiveLeftV + g_PerspectiveSubdivDeltaV;
       g_PerspectiveRightW = g_PerspectiveLeftZ + g_PerspectiveSubdivDeltaZ;
       g_PerspectiveNextU =
-           (uint)(CONCAT44(((int)g_PerspectiveLeftW >> 0x1f) << 0x18 | g_PerspectiveLeftW >> 8,
-                           g_PerspectiveLeftW * 0x1000000) / (longlong)(int)g_PerspectiveRightW);
+           (uint)(((longlong)(int)g_PerspectiveLeftW << 24) / (longlong)(int)g_PerspectiveRightW);
       g_PerspectiveNextV =
-           (uint)(CONCAT44(((int)g_PerspectiveInterpolatedW >> 0x1f) << 0x18 |
-                           g_PerspectiveInterpolatedW >> 8,g_PerspectiveInterpolatedW * 0x1000000) /
-                 (longlong)(int)g_PerspectiveRightW);
+           (uint)(((longlong)(int)g_PerspectiveInterpolatedW << 24) / (longlong)(int)g_PerspectiveRightW);
       iVar13 = (int)(g_PerspectiveNextU - g_PerspectiveCurrentU) >> 0xc;
       iVar11 = (int)(g_PerspectiveNextV - g_PerspectiveCurrentV) >> 0xc;
       iVar4 = ((int)g_PerspectiveCurrentU >> 8) + iVar13;
@@ -169,11 +164,9 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
     }
     if (-1 < iVar3) {
       g_PerspectiveNextU =
-           (uint)(CONCAT44(((int)g_PerspectiveRightU >> 0x1f) << 0x18 | g_PerspectiveRightU >> 8,
-                           g_PerspectiveRightU << 0x18) / (longlong)(int)g_PerspectiveRightZ);
+           (uint)(((longlong)(int)g_PerspectiveRightU << 24) / (longlong)(int)g_PerspectiveRightZ);
       g_PerspectiveNextV =
-           (uint)(CONCAT44(((int)g_PerspectiveRightV >> 0x1f) << 0x18 | g_PerspectiveRightV >> 8,
-                           g_PerspectiveRightV << 0x18) / (longlong)(int)g_PerspectiveRightZ);
+           (uint)(((longlong)(int)g_PerspectiveRightV << 24) / (longlong)(int)g_PerspectiveRightZ);
       iVar4 = (int)((longlong)(int)(g_PerspectiveNextV - g_PerspectiveCurrentV) *
                     (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1] >> 0x28);
       uVar14 = (uint)((longlong)(int)(g_PerspectiveNextU - g_PerspectiveCurrentU) *

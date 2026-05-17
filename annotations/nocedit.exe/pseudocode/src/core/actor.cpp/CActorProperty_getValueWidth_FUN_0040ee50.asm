@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_CActorProperty_getValueWidth_FUN_0040ee50(CActorProperty *this_ptr,int index)
+; int __cdecl core_actor_cpp_CActorProperty_getValueWidth_FUN_0040ee50(CActorProperty *this_ptr,CDemonActor *actor)
 ;
 ; Parameters:
 ; CActorProperty * Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   index
+; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770 at 0040e79f

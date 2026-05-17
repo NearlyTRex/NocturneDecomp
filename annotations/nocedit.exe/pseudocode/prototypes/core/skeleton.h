@@ -373,7 +373,7 @@ CDeformableModelInstance * __cdecl getRootMotionDeltaForMotion(CMotionController
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0
 // Address: 005a0fe0
-CBodyPart * __cdecl CDeformableModelInstance::spawnDismemberedBodyPart(CDeformableModelInstance *this_ptr,int part_index,COrientation *orientation,CVector3f *velocity,CDemonActor *source_actor,int unknown);
+CBodyPart * __cdecl CDeformableModelInstance::spawnDismemberedBodyPart(CDeformableModelInstance *this_ptr,int part_index,CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
 // Address: 005a1040

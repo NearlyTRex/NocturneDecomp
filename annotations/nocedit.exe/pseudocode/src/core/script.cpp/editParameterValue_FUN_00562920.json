@@ -8,18 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2421,
-    "complexity_score": 924,
+    "complexity_score": 751,
     "cross_reference_count": 1,
     "function_call_count": 33,
     "global_count": 85,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 754,
-    "suspect_count": 16,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_strcpy"
-    ],
-    "total_lines": 3175
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 751,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 3172
   },
   "cross_references": [
     {
@@ -40,7 +37,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_script.cpp_editParameterValue_FUN_00562920",
-    "signature": "int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)"
+    "signature": "int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param,CCmdParse *context)"
   },
   "function_calls": [
     {
@@ -61,12 +58,12 @@
     {
       "addr": "005627f0",
       "is_variadic": false,
-      "name": "core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0"
+      "name": "core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0"
     },
     {
       "addr": "00562860",
       "is_variadic": false,
-      "name": "core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860"
+      "name": "core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860"
     },
     {
       "addr": "005677a0",
@@ -780,8 +777,44 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),local_18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 100,
+      "match": "(char **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&local_3004.base,*(char **)((int)g_CDemonSetPtr->actors + iVar5));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 680,
+      "match": "(int *)((int)local_a8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)local_a8 + local_14) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 695,
+      "line": 119,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -790,7 +823,115 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 717,
+      "line": 149,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 177,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 227,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 260,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 289,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 367,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 407,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 519,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 560,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 571,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 598,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 692,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 714,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -799,7 +940,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 686,
+      "line": 683,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -808,7 +949,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 708,
+      "line": 705,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -817,7 +958,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 686,
+      "line": 683,
       "match": "strlen + <p> + -1 + strcpy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -826,7 +967,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 708,
+      "line": 705,
       "match": "strlen + <p> + -1 + strcpy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1074,17 +1215,17 @@
       },
       {
         "is_param": true,
-        "name": "param_info",
+        "name": "param",
         "offset": 12,
         "size": 4,
         "type": "CCmdParm *"
       },
       {
         "is_param": true,
-        "name": "param_name",
+        "name": "context",
         "offset": 16,
         "size": 4,
-        "type": "char *"
+        "type": "CCmdParse *"
       }
     ]
   },
@@ -1105,134 +1246,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),local_18),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 100,
-      "match": "(char **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(&local_3004.base,*(char **)((int)g_CDemonSetPtr->actors + iVar5));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 683,
-      "match": "(int *)((int)local_a8",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)local_a8 + local_14) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 119,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 149,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 177,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 227,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 260,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 289,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 367,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 407,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 521,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 562,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 573,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 600,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ]
+  "suspects": []
 }

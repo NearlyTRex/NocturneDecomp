@@ -58,9 +58,9 @@ void __cdecl core_script_cpp_CCmdParse_toString_FUN_005624f0(CCmdParse *this_ptr
 int __cdecl core_script_cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620(CCmdParse *this_ptr,int cursor_position);
 int __cdecl core_script_cpp_CCmdParse_getParamTextLength_FUN_005626d0(CCmdParse *this_ptr,int param_count);
 int __cdecl core_script_cpp_CCmdParse_getParamTextLengthAt_FUN_00562760(CCmdParse *this_pointer,int param_index);
-CCharacter * __cdecl core_script_cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0(CCmdParse *this_ptr,int param_index);
-CMotionList * __cdecl core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860(CCmdParse *this_ptr,int param_index);
-int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name);
+CCharacter * __cdecl core_script_cpp_CCmdParm_getCharacterByContext_FUN_005627f0(CCmdParm *this_ptr,CCmdParse *context);
+CMotionList * __cdecl core_script_cpp_CCmdParm_getMotionListByContext_FUN_00562860(CCmdParm *this_ptr,CCmdParse *context);
+int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param,CCmdParse *context);
 void __cdecl core_script_cpp_CCmdParse_applyActorParameters_FUN_00564090(CCmdParse *this_ptr,CDemonActor *actor);
 void __cdecl core_script_cpp_expandTemplateText_FUN_005643d0(char *buffer,char *template_text);
 void __cdecl core_script_cpp_clearSelections_FUN_005644e0(void);

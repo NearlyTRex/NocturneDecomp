@@ -4,14 +4,14 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5754 functions
-  1 suspects: 105 functions
-  2 suspects: 166 functions
+  0 suspects: 5770 functions
+  1 suspects: 101 functions
+  2 suspects: 165 functions
   3 suspects: 92 functions
-  4 suspects: 84 functions
+  4 suspects: 75 functions
   5 suspects: 47 functions
   6 suspects: 50 functions
-  7 suspects: 22 functions
+  7 suspects: 21 functions
   8 suspects: 30 functions
   9 suspects: 9 functions
   10 suspects: 17 functions
@@ -20,7 +20,7 @@ SUSPECT COUNT DISTRIBUTION
   13 suspects: 3 functions
   14 suspects: 8 functions
   15 suspects: 6 functions
-  16 suspects: 7 functions
+  16 suspects: 6 functions
   17 suspects: 4 functions
   18 suspects: 7 functions
   19 suspects: 2 functions
@@ -29,8 +29,7 @@ SUSPECT COUNT DISTRIBUTION
   22 suspects: 3 functions
   23 suspects: 1 functions
   24 suspects: 1 functions
-  25 suspects: 1 functions
-  26 suspects: 1 functions
+  26 suspects: 2 functions
   27 suspects: 1 functions
   28 suspects: 1 functions
   29 suspects: 2 functions
@@ -119,7 +118,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [pointer_cast] (32 functions)
+  [pointer_cast] (29 functions)
   ------------------------------------------------------------
     core_dstrender.cpp_renderDepth16BitConditional_FUN ( 50 lines)
       psVar9 = (short *)((int)g_ScreenBufferArray[scanline_y] + uV...
@@ -161,10 +160,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices ...
     engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 (100 lines)
       *(uint *)(iVar6 + (int)this_ptr->act) = uVar8 | uVar5;...
-    core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbi (104 lines)
-      output_buffer = (ulonglong *)((int)output_buffer + 4);...
-    engine_drender.cpp_CDemonRenderer_renderFacetList_ (120 lines)
-      *(SMRGLPrimitiveQuad **)((int)g_VisibleFacePointers + local_...
     engine_drender.cpp_CDemonRenderer_renderFaceList_F (123 lines)
       *(SInputFace **)((int)g_VisibleFacePointers + local_18) = fa...
     shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FU (123 lines)
@@ -181,8 +176,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       piVar15 = (int *)((int)pCVar1->uv_coords + local_64 + -0xc);...
     core_dstrender.cpp_renderSolidColorDepth16xUnrolle (160 lines)
       piVar6 = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar...
-    core_dstrender.cpp_renderPerspectiveCorrectTexture (357 lines)
-      g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBuffer...
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
 
@@ -217,11 +210,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_setedit.cpp_CDemonSet_showEditorMenu_FUN_0058 (184 lines)
       do {...
 
-  [shadow_pointer_walk] (12 functions)
+  [shadow_pointer_walk] (11 functions)
   ------------------------------------------------------------
     engine_drender.cpp_CDemonRenderer_renderAlphaBlend ( 36 lines)
-      pSVar3 = (SInputFace *)&(pSVar3->vertex_indices).vertex_inde...
-    engine_drender.cpp_CDemonRenderer_renderTexturedFa ( 44 lines)
       pSVar3 = (SInputFace *)&(pSVar3->vertex_indices).vertex_inde...
     engine_pod.cpp_CPod_getNextSearchResult_FUN_00550e ( 53 lines)
       pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).f...
@@ -407,8 +398,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/skeledit.cpp, Lines: 44, Types: ['pointer_cast']
   core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
     File: core/dmodel.cpp, Lines: 44, Types: ['negative_offset']
-  engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FU
-    File: engine/drender.cpp, Lines: 45, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_event.cpp_CRuleList_insert_FUN_004b1680
     File: core/event.cpp, Lines: 45, Types: ['unrolled_strcpy']
   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN

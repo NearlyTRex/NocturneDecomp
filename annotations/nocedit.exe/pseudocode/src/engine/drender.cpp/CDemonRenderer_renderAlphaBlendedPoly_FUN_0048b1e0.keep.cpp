@@ -10,44 +10,32 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly)
 
 {
-  int iVar2;
-  SMRGLHeaderPrimitive *pSVar3;
-  SMRGLPrimitivePoly *pSVar1;
   int iVar3;
   int iVar4;
-  int iVar5;
   int iVar1;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403950(&(poly->base).surface_normal), iVar3 != 0)) {
     if (this_ptr->face_count == 0) {
       if (0 < (poly->base).base.count) {
-        iVar5 = 0;
         iVar3 = 0;
-        pSVar3 = &poly->base;
         do {
-          iVar1 = pSVar3[1].base.type;
+          iVar1 = poly->vertices[iVar3].vertex_index;
           if (this_ptr->skip_uv_extraction == 0) {
-            this_ptr->vertex_buffer_ptr[iVar1].u = pSVar3[1].base.count;
-            this_ptr->vertex_buffer_ptr[iVar1].v = pSVar3[1].surface_normal.A.i;
+            this_ptr->vertex_buffer_ptr[iVar1].u = poly->vertices[iVar3].texture_u;
+            this_ptr->vertex_buffer_ptr[iVar1].v = poly->vertices[iVar3].texture_v;
           }
-          *(int *)((int)g_VertexIndexBuffer + iVar5) = iVar1;
-          pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
+          g_VertexIndexBuffer[iVar3] = iVar1;
           iVar3 = iVar3 + 1;
-          iVar5 = iVar5 + 4;
         } while (iVar3 < (poly->base).base.count);
       }
     }
     else {
       iVar4 = 0;
       if (0 < (poly->base).base.count) {
-        iVar2 = 0;
-        pSVar1 = poly;
         do {
-          *(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar1->vertices[0].vertex_index;
-          iVar2 = iVar2 + 4;
+          g_VertexIndexBuffer[iVar4] = poly->vertices[iVar4].vertex_index;
           iVar4 = iVar4 + 1;
-          pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;
         } while (iVar4 < (poly->base).base.count);
       }
     }

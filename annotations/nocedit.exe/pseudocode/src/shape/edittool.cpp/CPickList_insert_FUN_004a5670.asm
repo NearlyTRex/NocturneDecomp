@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CPickList_insert_FUN_004a5670(CPickList *this_ptr,int insert_index,int item_data)
+; void __cdecl shape_edittool_cpp_CPickList_insert_FUN_004a5670(CPickList *this_ptr,int insert_index,char *string_data)
 ;
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   insert_index
-; int              Stack[0xc]:4   item_data
+; char *           Stack[0xc]:4   string_data
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 at 005678b4

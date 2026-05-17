@@ -182,7 +182,7 @@ LAB_00511b4c:
     }
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Control Options");
     iVar5 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
-                      (g_ControlOptionsMenuPointers,iVar5,&local_14,0xfa,(int)pcVar3);
+                      (g_ControlOptionsMenuPointers,iVar5,&local_14,0xfa,pcVar3);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     pCVar3 = g_CGamePtr;
     switch(iVar5) {

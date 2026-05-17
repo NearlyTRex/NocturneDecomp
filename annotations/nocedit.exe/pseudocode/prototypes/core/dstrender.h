@@ -121,7 +121,7 @@ void __cdecl blendLightmapPerPxU32toU16pBB12Px2MMX(uint *output_buffer,uint *tex
 
 // Original: core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4
 // Address: 00493dc4
-void __cdecl blendLightmapPerPxU64toU16pAmbientPx2MMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapPerPxU64toU16pAmbientPx2MMX(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
 // Address: 004940e9

@@ -100,7 +100,7 @@ void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(CPickList *thi
 int __cdecl shape_edittool_cpp_CPickList_isItemEnabled_FUN_004a54e0(CPickList *this_ptr,int item_index);
 void __cdecl shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540(CPickList *this_ptr,int item_index,int hotkey_code);
 int __cdecl shape_edittool_cpp_CPickList_getItemHotKey_FUN_004a5610(CPickList *this_ptr,int index);
-void __cdecl shape_edittool_cpp_CPickList_insert_FUN_004a5670(CPickList *this_ptr,int insert_index,int item_data);
+void __cdecl shape_edittool_cpp_CPickList_insert_FUN_004a5670(CPickList *this_ptr,int insert_index,char *string_data);
 void __cdecl shape_edittool_cpp_CPickList_remove_FUN_004a56f0(CPickList *this_ptr,int start_index,int end_index);
 void __cdecl shape_edittool_cpp_CPickList_clear_FUN_004a5770(CPickList *this_ptr);
 void __cdecl shape_edittool_cpp_CPickList_sort_FUN_004a57f0(CPickList *this_ptr,int sort_type,int sort_order);

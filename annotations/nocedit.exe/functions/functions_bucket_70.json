@@ -4219,7 +4219,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         }
       ],
       "ret_storage":{
@@ -39961,7 +39961,7 @@
           "type":"int"
         },
         {
-          "name":"item_data",
+          "name":"string_data",
           "storage":{
             "offset":12,
             "size":4,
@@ -39974,7 +39974,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         }
       ]
     }
@@ -83379,7 +83379,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0",
+    "name":"core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0",
     "ret":"CCharacter*",
     "vars":{
       "locals":[
@@ -83430,10 +83430,10 @@
               }
             ]
           },
-          "type":"CCmdParse*"
+          "type":"CCmdParm*"
         },
         {
-          "name":"param_index",
+          "name":"context",
           "storage":{
             "offset":8,
             "size":4,
@@ -83446,7 +83446,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CCmdParse*"
         }
       ],
       "ret_storage":{
@@ -110617,7 +110617,7 @@
           "type":"CWinFont*"
         },
         {
-          "name":"x_position",
+          "name":"text_string",
           "storage":{
             "offset":8,
             "size":4,
@@ -110630,10 +110630,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"y_position",
+          "name":"x",
           "storage":{
             "offset":12,
             "size":4,
@@ -110649,7 +110649,7 @@
           "type":"int"
         },
         {
-          "name":"text_string",
+          "name":"y",
           "storage":{
             "offset":16,
             "size":4,
@@ -110662,10 +110662,10 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
-          "name":"text_color",
+          "name":"foreground_color",
           "storage":{
             "offset":20,
             "size":4,
@@ -110681,7 +110681,7 @@
           "type":"int"
         },
         {
-          "name":"draw_flags",
+          "name":"background_color",
           "storage":{
             "offset":24,
             "size":4,

@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,int spacing_flag)
+; int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title)
 ;
 ; Parameters:
 ; char * *         Stack[0x4]:4   menu_text_array
 ; int              Stack[0x8]:4   menu_count
 ; int *            Stack[0xc]:4   selected_index_ptr
 ; int              Stack[0x10]:4   y_position
-; int              Stack[0x14]:4   spacing_flag
+; char *           Stack[0x14]:4   title
 ; Local Variables:
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20

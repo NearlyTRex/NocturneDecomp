@@ -1,14 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count,CDemonTriangle *triangle_data)
+; int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,CDemonTriangle *triangles)
 ;
 ; Parameters:
 ; CDemonPart *     Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   triangle_count
-; int              Stack[0xc]:4   enable_alloc
-; int              Stack[0x10]:4   source_triangle_count
-; CDemonTriangle * Stack[0x14]:4   triangle_data
+; CDemonTriangle * Stack[0xc]:4   triangles
 ; Local Variables:
 ; undefined        Stack[-0x134]:1  local_134
 ; undefined4       Stack[-0x34]:4  local_34

@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,COrientation *orientation,CVector3f *velocity,CDemonActor *source_actor,int unknown)
+; CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source)
 ;
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   part_index
-; COrientation *   Stack[0xc]:4   orientation
-; CVector3f *      Stack[0x10]:4   velocity
-; CDemonActor *    Stack[0x14]:4   source_actor
-; int              Stack[0x18]:4   unknown
+; CVector3f *      Stack[0xc]:4   position
+; UOrientationVector * Stack[0x10]:4   orientation
+; CVector3f *      Stack[0x14]:4   initial_velocity
+; CDemonActor *    Stack[0x18]:4   scale_source
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050

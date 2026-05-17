@@ -16743,7 +16743,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"int*"
         },
         {
           "name":"ostream",
@@ -61806,7 +61806,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860",
+    "name":"core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860",
     "ret":"CMotionList*",
     "vars":{
       "params":[
@@ -61824,10 +61824,10 @@
               }
             ]
           },
-          "type":"CCmdParse*"
+          "type":"CCmdParm*"
         },
         {
-          "name":"param_index",
+          "name":"context",
           "storage":{
             "offset":8,
             "size":4,
@@ -61840,7 +61840,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CCmdParse*"
         }
       ],
       "ret_storage":{
@@ -71914,7 +71914,7 @@
           "type":"int"
         },
         {
-          "name":"orientation",
+          "name":"position",
           "storage":{
             "offset":12,
             "size":4,
@@ -71927,10 +71927,10 @@
               }
             ]
           },
-          "type":"COrientation*"
+          "type":"CVector3f*"
         },
         {
-          "name":"velocity",
+          "name":"orientation",
           "storage":{
             "offset":16,
             "size":4,
@@ -71943,10 +71943,10 @@
               }
             ]
           },
-          "type":"CVector3f*"
+          "type":"UOrientationVector*"
         },
         {
-          "name":"source_actor",
+          "name":"initial_velocity",
           "storage":{
             "offset":20,
             "size":4,
@@ -71959,10 +71959,10 @@
               }
             ]
           },
-          "type":"CDemonActor*"
+          "type":"CVector3f*"
         },
         {
-          "name":"unknown",
+          "name":"scale_source",
           "storage":{
             "offset":24,
             "size":4,
@@ -71975,7 +71975,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"CDemonActor*"
         }
       ],
       "ret_storage":{

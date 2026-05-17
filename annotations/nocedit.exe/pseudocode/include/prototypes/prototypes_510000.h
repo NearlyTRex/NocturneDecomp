@@ -20,7 +20,7 @@
 // FUNCTION PROTOTYPES - Range 0x510000
 // =============================================================================
 
-int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,int spacing_flag);
+int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
 void __cdecl core_menu_cpp_showJoystickCalibrationScreen_FUN_00510410(char *instruction_text,char *message_text);
 int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void);
 void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(int *sensitivity_value_ptr,char *window_title);

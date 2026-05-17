@@ -7,15 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 14,
+    "complexity_score": 13,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 14,
+    "pseudocode_lines": 13,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 63
+    "total_lines": 62
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0",
-    "signature": "CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,COrientation *orientation,CVector3f *velocity,CDemonActor *source_actor,int unknown)"
+    "signature": "CBodyPart * __cdecl core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance *this_ptr,int part_index,CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source)"
   },
   "function_calls": [
     {
@@ -102,31 +102,31 @@
       },
       {
         "is_param": true,
-        "name": "orientation",
+        "name": "position",
         "offset": 12,
-        "size": 4,
-        "type": "COrientation *"
-      },
-      {
-        "is_param": true,
-        "name": "velocity",
-        "offset": 16,
         "size": 4,
         "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "source_actor",
-        "offset": 20,
+        "name": "orientation",
+        "offset": 16,
         "size": 4,
-        "type": "CDemonActor *"
+        "type": "UOrientationVector *"
       },
       {
         "is_param": true,
-        "name": "unknown",
+        "name": "initial_velocity",
+        "offset": 20,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "scale_source",
         "offset": 24,
         "size": 4,
-        "type": "int"
+        "type": "CDemonActor *"
       }
     ]
   },

@@ -14,16 +14,28 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [shadow_pointer_walk] - 2 functions
-    engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320  ( 36 lines)
-    engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030      ( 44 lines)
-
   [warning_inlined_function] - 1 functions
     shape_design.c_arePolygonsCoplanar_FUN_00461b70                        ( 25 lines)
+
+  [shadow_pointer_walk] - 1 functions
+    engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320  ( 36 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
+
+  engine/drender.cpp (94.3% complete)
+    5 functions remaining:
+      engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950 (52 lines)
+        Types: ['pointer_cast', 'shadow_pointer_walk']
+      engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0 (33 lines)
+        Types: ['pointer_cast', 'shadow_pointer_walk']
+      engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50 (47 lines)
+        Types: ['pointer_cast', 'shadow_pointer_walk']
+      engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 (123 lines)
+        Types: ['pointer_cast']
+      engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320 (36 lines)
+        Types: ['shadow_pointer_walk']
 
 ====================================================================================================
 ALL REMAINING FILES
@@ -39,6 +51,7 @@ ALL REMAINING FILES
   core/curtain.cpp                                              84.6%  (22/26 clean, 4 remaining)
   core/msnedit.cpp                                              84.1%  (53/63 clean, 10 remaining)
   core/dracbrid.cpp                                             84.0%  (21/25 clean, 4 remaining)
+  core/dstrender.cpp                                            83.9%  (26/31 clean, 5 remaining)
   core/xform.cpp                                                83.6%  (51/61 clean, 10 remaining)
   core/hero.cpp                                                 83.3%  (40/48 clean, 8 remaining)
   core/trigger.cpp                                              82.6%  (19/23 clean, 4 remaining)
@@ -50,17 +63,15 @@ ALL REMAINING FILES
   core/manpuz.cpp                                               81.0%  (51/63 clean, 12 remaining)
   shape/cramtex.cpp                                             81.0%  (17/21 clean, 4 remaining)
   core/mobster.cpp                                              80.8%  (21/26 clean, 5 remaining)
+  core/script.cpp                                               80.2%  (77/96 clean, 19 remaining)
   core/scat.cpp                                                 80.0%  (20/25 clean, 5 remaining)
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
   core/ground.cpp                                               80.0%  (16/20 clean, 4 remaining)
   core/netgame.cpp                                              79.7%  (51/64 clean, 13 remaining)
-  engine/drender.cpp                                            79.5%  (70/88 clean, 18 remaining)
-  core/script.cpp                                               79.2%  (76/96 clean, 20 remaining)
   core/turret.cpp                                               79.2%  (19/24 clean, 5 remaining)
   core/dfilter.cpp                                              78.9%  (15/19 clean, 4 remaining)
   core/door.cpp                                                 78.6%  (22/28 clean, 6 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
-  core/dstrender.cpp                                            77.4%  (24/31 clean, 7 remaining)
   core/bugs.cpp                                                 77.3%  (34/44 clean, 10 remaining)
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
   core/stranger.cpp                                             76.2%  (48/63 clean, 15 remaining)

@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 112,
+    "complexity_score": 62,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 62,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 189
   },
   "cross_references": [
@@ -139,6 +136,44 @@
     },
     "pcode_op_count": 423
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(int *)((int)g_VertexIndexBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar5) = iVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(int *)((int)g_VertexIndexBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar1->vertices[0].vertex_index;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 27,
+      "match": "pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 42,
+      "match": "pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -162,38 +197,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(int *)((int)g_VertexIndexBuffer",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_VertexIndexBuffer + iVar5) = iVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(int *)((int)g_VertexIndexBuffer",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar1->vertices[0].vertex_index;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 27,
-      "match": "pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 42,
-      "match": "pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr,int x_position,int y_position,char *text_string,int text_color,int draw_flags)
+; int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color)
 ;
 ; Parameters:
 ; CWinFont *       Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   x_position
-; int              Stack[0xc]:4   y_position
-; char *           Stack[0x10]:4   text_string
-; int              Stack[0x14]:4   text_color
-; int              Stack[0x18]:4   draw_flags
+; char *           Stack[0x8]:4   text_string
+; int              Stack[0xc]:4   x
+; int              Stack[0x10]:4   y
+; int              Stack[0x14]:4   foreground_color
+; int              Stack[0x18]:4   background_color
 ;
 ; Called Functions:
 ;   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860
@@ -52,7 +52,7 @@ section .text
     PUSH EAX                            ; 005f2428
     PUSH EBX                            ; 005f2429
     CALL engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440 ; 005f242a
-        ;   XREF to: 005f2440 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont * this_ptr, HDC device_context, char * text_string, int x_position, ...)
+        ;   XREF to: 005f2440 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont * this_ptr, HDC device_context, char * text_string, int x, ...)
     ADD ESP,0x1c                        ; 005f242f
     XOR EAX,EAX                         ; 005f2432
     POP ESI                             ; 005f2434

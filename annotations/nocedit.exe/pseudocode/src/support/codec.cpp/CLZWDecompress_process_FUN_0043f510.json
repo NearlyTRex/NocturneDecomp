@@ -7,15 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 25,
+    "complexity_score": 24,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 24,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 82
+    "total_lines": 81
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "support_codec.cpp_CLZWDecompress_process_FUN_0043f510",
-    "signature": "int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress *this_ptr,_istream *istream,int byte_count,_ostream *ostream)"
+    "signature": "int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress *this_ptr,_istream *istream,int *byte_count,_ostream *ostream)"
   },
   "function_calls": [
     {
@@ -126,7 +126,7 @@
         "name": "byte_count",
         "offset": 12,
         "size": 4,
-        "type": "int"
+        "type": "int *"
       },
       {
         "is_param": true,

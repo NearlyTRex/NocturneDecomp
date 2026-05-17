@@ -45,7 +45,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
     g_CGamePtr->hero_number = HERO_TYPE_STRANGER;
     pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Option Menu");
     iVar3 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
-                      (g_OptionsMenuPointers,4,&local_10,0xfa,(int)pcVar1);
+                      (g_OptionsMenuPointers,4,&local_10,0xfa,pcVar1);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     switch(iVar3) {
     case 0:

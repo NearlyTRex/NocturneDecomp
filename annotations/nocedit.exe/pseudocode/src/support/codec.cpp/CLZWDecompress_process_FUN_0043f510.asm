@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress *this_ptr,_istream *istream,int byte_count,_ostream *ostream)
+; int __cdecl support_codec_cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress *this_ptr,_istream *istream,int *byte_count,_ostream *ostream)
 ;
 ; Parameters:
 ; CLZWDecompress * Stack[0x4]:4   this_ptr
 ; _istream *       Stack[0x8]:4   istream
-; int              Stack[0xc]:4   byte_count
+; int *            Stack[0xc]:4   byte_count
 ; _ostream *       Stack[0x10]:4   ostream
 ;
 ; XREF[1]:

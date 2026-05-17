@@ -54,8 +54,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_addFilesToExtract_FUN_005f21f0(CWerewol
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_005f2220(CWerewolf *this_ptr,uint flags);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
 CWinFont * __cdecl engine_winfont_cpp_CWinFont_dtor_FUN_005f2390(CWinFont *this_ptr,uint flags);
-int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr,int x_position,int y_position,char *text_string,int text_color,int draw_flags);
-void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x_position,int y_position,int foreground_color,int background_color);
+int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color);
+void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x,int y,int foreground_color,int background_color);
 int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860(CWinFont *this_ptr,int width,int height);
 void __cdecl engine_winfont_cpp_CWinFont_reset_FUN_005f2a30(CWinFont *this_ptr);
 int __cdecl engine_winfont_cpp_CWinFont_getStringWidth_FUN_005f2aa0(CWinFont *this_ptr,char *text_string);

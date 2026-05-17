@@ -3,19 +3,17 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[00562920, 00564006]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
+// Signature: int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param,CCmdParse *context)
 
 #include "nocturne.h"
 
-int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
+int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param,CCmdParse *context)
 
 {
-  char cVar2;
   int iVar3;
   int iVar5;
   CMotionList *pCVar6;
   CMotionList *pCVar2;
-  char *pcVar3;
   CCharacter *character;
   int iVar4;
   SPart *pSVar5;
@@ -57,12 +55,11 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
   CDeformableModel *local_20;
   char *local_1c;
   char *local_18;
-  int local_14;
   uint uVar10;
   byte bVar9;
   
   bVar9 = 0;
-  _sprintf(local_7cc,"Enter %s",param_info->default_value);
+  _sprintf(local_7cc,"Enter %s",param->default_value);
   switch(param_type) {
   case 0:
     iVar5 = sscanf(value_buffer,"%d",&local_30);
@@ -92,22 +89,19 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     break;
   case 3:
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3004);
-    local_18 = param_info->modifier_string;
-    iVar5 = 0;
+    local_18 = param->modifier_string;
     for (iVar8 = 0; iVar8 < g_CDemonSetPtr->actor_count; iVar8 = iVar8 + 1) {
-      if (((param_info->modifier_string[0] == '\0') ||
+      if (((param->modifier_string[0] == '\0') ||
           (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                             (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),local_18),
+                             (g_CDemonSetPtr->actors[iVar8],local_18),
           iVar3 != 0)) &&
          (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                            (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),
-                             "CHeroPlaceHolder"), iVar3 == 0)) {
+                            (g_CDemonSetPtr->actors[iVar8],"CHeroPlaceHolder"), iVar3 == 0)) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  (&local_3004.base,*(char **)((int)g_CDemonSetPtr->actors + iVar5));
+                  (&local_3004.base,g_CDemonSetPtr->actors[iVar8]->actor_name);
       }
-      iVar5 = iVar5 + 4;
     }
-    if ((param_info->modifier_string[0] == '\0') ||
+    if ((param->modifier_string[0] == '\0') ||
        (iVar5 = core_actor_cpp_matchesClassName_FUN_0040c740(&g_CHeroClassInfo,local_18), iVar5 != 0
        )) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3004.base,"$");
@@ -121,16 +115,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3004,0);
       return 0;
     }
-    pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3004.base,iVar5);
-    do {
-      cVar2 = *pcVar9;
-      *value_buffer = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      value_buffer[1] = cVar2;
-      value_buffer = value_buffer + 2;
-    } while (cVar2 != '\0');
+    strcpy(value_buffer, shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3004.base,iVar5));
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3004,0);
     return 1;
   case 4:
@@ -151,16 +136,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_28b4,0);
       return 0;
     }
-    pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_28b4.base,iVar5);
-    do {
-      cVar2 = *pcVar9;
-      *value_buffer = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      value_buffer[1] = cVar2;
-      value_buffer = value_buffer + 2;
-    } while (cVar2 != '\0');
+    strcpy(value_buffer, shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_28b4.base,iVar5));
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_28b4,0);
     return 1;
   case 6:
@@ -179,16 +155,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_b74,0);
       return 0;
     }
-    pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_b74.base,iVar5);
-    do {
-      cVar2 = *pcVar9;
-      *value_buffer = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      value_buffer[1] = cVar2;
-      value_buffer = value_buffer + 2;
-    } while (cVar2 != '\0');
+    strcpy(value_buffer, shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_b74.base,iVar5));
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_b74,0);
     return 1;
   case 7:
@@ -229,16 +196,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_250c,0);
       return 0;
     }
-    pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_250c.base,iVar5);
-    do {
-      cVar2 = *pcVar9;
-      *value_buffer = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      value_buffer[1] = cVar2;
-      value_buffer = value_buffer + 2;
-    } while (cVar2 != '\0');
+    strcpy(value_buffer, shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_250c.base,iVar5));
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_250c,0);
     return 1;
   case 9:
@@ -262,16 +220,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2164,0);
       return 0;
     }
-    pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_2164.base,iVar5);
-    do {
-      cVar2 = *pcVar9;
-      *value_buffer = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      value_buffer[1] = cVar2;
-      value_buffer = value_buffer + 2;
-    } while (cVar2 != '\0');
+    strcpy(value_buffer, shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_2164.base,iVar5));
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2164,0);
     return 1;
   case 10:
@@ -291,16 +240,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1a14,0);
       return 0;
     }
-    pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1a14.base,iVar5);
-    do {
-      cVar2 = *pcVar9;
-      *value_buffer = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      value_buffer[1] = cVar2;
-      value_buffer = value_buffer + 2;
-    } while (cVar2 != '\0');
+    strcpy(value_buffer, shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1a14.base,iVar5));
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1a14,0);
     return 1;
   case 0xb:
@@ -369,21 +309,12 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_166c,0);
       return 0;
     }
-    pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_166c.base,iVar5);
-    do {
-      cVar2 = *pcVar9;
-      *value_buffer = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      value_buffer[1] = cVar2;
-      value_buffer = value_buffer + 2;
-    } while (cVar2 != '\0');
+    strcpy(value_buffer, shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_166c.base,iVar5));
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_166c,0);
     return 1;
   case 0x12:
     splitpath
-              (param_info->modifier_string,(char *)0x0,local_370,local_470,local_270);
+              (param->modifier_string,(char *)0x0,local_370,local_470,local_270);
     makepath(local_574,(char *)0x0,(char *)0x0,local_470,local_270);
     iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,local_7cc,local_370,local_574,value_buffer,1);
@@ -409,16 +340,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_12c4,0);
       return 0;
     }
-    pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_12c4.base,iVar5);
-    do {
-      cVar2 = *pcVar9;
-      *value_buffer = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      value_buffer[1] = cVar2;
-      value_buffer = value_buffer + 2;
-    } while (cVar2 != '\0');
+    strcpy(value_buffer, shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_12c4.base,iVar5));
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_12c4,0);
     return 1;
   case 0x14:
@@ -469,8 +391,8 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     }
     break;
   case 0x17:
-    pCVar6 = core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
-                       ((CCmdParse *)param_info,(int)param_name);
+    pCVar6 = core_script_cpp_CCmdParm_getMotionListByContext_FUN_00562860
+                       (param,context);
     if (pCVar6 != (CMotionList *)0x0) {
       iVar5 = 0;
       local_2c = pCVar6;
@@ -502,8 +424,8 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     }
     break;
   case 0x18:
-    pCVar2 = core_script_cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
-                       ((CCmdParse *)param_info,(int)param_name);
+    pCVar2 = core_script_cpp_CCmdParm_getMotionListByContext_FUN_00562860
+                       (param,context);
     if (pCVar2 != (CMotionList *)0x0) {
       iVar5 = 0;
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1dbc);
@@ -523,16 +445,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1dbc,0);
         return 0;
       }
-      pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1dbc.base,iVar5);
-      do {
-        cVar2 = *pcVar9;
-        *value_buffer = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar9[1];
-        pcVar9 = pcVar9 + 2;
-        value_buffer[1] = cVar2;
-        value_buffer = value_buffer + 2;
-      } while (cVar2 != '\0');
+      strcpy(value_buffer, shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1dbc.base,iVar5));
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1dbc,0);
       return 1;
     }
@@ -564,27 +477,9 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_33ac,0);
       return 0;
     }
-    pcVar9 = g_CScriptPtr->dialog_entries[iVar5].data;
-    do {
-      cVar2 = *pcVar9;
-      *value_buffer = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      value_buffer[1] = cVar2;
-      value_buffer = value_buffer + 2;
-    } while (cVar2 != '\0');
+    strcpy(value_buffer, g_CScriptPtr->dialog_entries[iVar5].data);
     pcVar10 = g_ScriptTempBuffer;
-    pcVar9 = g_CScriptPtr->dialog_entries[iVar5].data;
-    do {
-      cVar2 = *pcVar9;
-      *pcVar10 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      pcVar10[1] = cVar2;
-      pcVar10 = pcVar10 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar10, g_CScriptPtr->dialog_entries[iVar5].data);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_33ac,0);
     return 1;
   case 0x1a:
@@ -602,16 +497,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_f1c,0);
       return 0;
     }
-    pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_f1c.base,iVar5);
-    do {
-      cVar2 = *pcVar3;
-      *value_buffer = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      value_buffer[1] = cVar2;
-      value_buffer = value_buffer + 2;
-    } while (cVar2 != '\0');
+    strcpy(value_buffer, shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_f1c.base,iVar5));
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_f1c,0);
     return 1;
   case 0x1b:
@@ -643,8 +529,8 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
               (g_CEditorToolsPtr,"WARNING! chooseParm - unknown parm type %d (code needs to be updated)",param_type);
     return 0;
   case 0x1e:
-    character = core_script_cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0
-                          ((CCmdParse *)param_info,(int)param_name);
+    character = core_script_cpp_CCmdParm_getCharacterByContext_FUN_005627f0
+                          (param,context);
     if (character != (CCharacter *)0x0) {
       iVar5 = core_script_cpp_parseBodyPartMask_FUN_00559730(character,value_buffer,(int *)local_a8)
       ;
@@ -678,7 +564,6 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2c5c,0);
       }
       iVar5 = 0;
-      local_14 = 0;
       local_1c = &s_EmptyChar_00643d07;
       *value_buffer = '\0';
       do {
@@ -687,13 +572,12 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2c5c,0);
           return 1;
         }
-        if (*(int *)((int)local_a8 + local_14) != 0) {
+        if (local_a8[iVar5] != 0) {
           strcat(value_buffer,local_1c);
           local_1c = " ";
           pSVar7 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(local_20,iVar5);
           strcat(value_buffer,pSVar7->part_name);
         }
-        local_14 = local_14 + 4;
         iVar5 = iVar5 + 1;
       } while( true );
     }

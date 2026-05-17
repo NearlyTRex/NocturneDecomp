@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name)
+; int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,int param_type,CCmdParm *param,CCmdParse *context)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   value_buffer
 ; int              Stack[0x8]:4   param_type
-; CCmdParm *       Stack[0xc]:4   param_info
-; char *           Stack[0x10]:4   param_name
+; CCmdParm *       Stack[0xc]:4   param
+; CCmdParse *      Stack[0x10]:4   context
 ; Local Variables:
 ; undefined8       Stack[-0x3760]:8  local_3760
 ; float            Stack[-0x3758]:4  local_3758
@@ -66,8 +66,8 @@
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_actor.cpp_matchesClassName_FUN_0040c740
 ;   core_charactr.cpp_getDeformableModelPartCount_FUN_0042f9c0
-;   core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0
-;   core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
+;   core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0
+;   core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860
 ;   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
 ;   core_script.cpp_CScript_collectLabels_FUN_00566fa0
 ;   core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630
@@ -1681,8 +1681,8 @@ section .text
     PUSH ESI                            ; 0056381c
         ;   Label: caseD_17
     PUSH EBX                            ; 0056381d
-    CALL core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860 ; 0056381e
-        ;   XREF to: 00562860 (UNCONDITIONAL_CALL)  ; CMotionList * core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860(CCmdParse * this_ptr, int param_index)
+    CALL core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860 ; 0056381e
+        ;   XREF to: 00562860 (UNCONDITIONAL_CALL)  ; CMotionList * core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860(CCmdParm * this_ptr, CCmdParse * context)
     ADD ESP,0x8                         ; 00563823
     MOV EDI,EAX                         ; 00563826
     MOV dword ptr [ESP + 0x372c],EAX    ; 00563828
@@ -1797,8 +1797,8 @@ section .text
     PUSH ESI                            ; 00563950
         ;   Label: caseD_18
     PUSH EBX                            ; 00563951
-    CALL core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860 ; 00563952
-        ;   XREF to: 00562860 (UNCONDITIONAL_CALL)  ; CMotionList * core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860(CCmdParse * this_ptr, int param_index)
+    CALL core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860 ; 00563952
+        ;   XREF to: 00562860 (UNCONDITIONAL_CALL)  ; CMotionList * core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860(CCmdParm * this_ptr, CCmdParse * context)
     MOV EDI,EAX                         ; 00563957
     ADD ESP,0x8                         ; 00563959
     MOV EBX,EAX                         ; 0056395c
@@ -2243,8 +2243,8 @@ section .text
     PUSH ESI                            ; 00563d6b
         ;   Label: caseD_1e
     PUSH EBX                            ; 00563d6c
-    CALL core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0 ; 00563d6d
-        ;   XREF to: 005627f0 (UNCONDITIONAL_CALL)  ; CCharacter * core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0(CCmdParse * this_ptr, int param_index)
+    CALL core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0 ; 00563d6d
+        ;   XREF to: 005627f0 (UNCONDITIONAL_CALL)  ; CCharacter * core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0(CCmdParm * this_ptr, CCmdParse * context)
     ADD ESP,0x8                         ; 00563d72
     MOV ESI,EAX                         ; 00563d75
     TEST EAX,EAX                        ; 00563d77

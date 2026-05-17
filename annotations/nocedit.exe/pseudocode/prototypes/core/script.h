@@ -199,17 +199,17 @@ int __cdecl CCmdParse::getParamTextLength(CCmdParse *this_ptr,int param_count);
 // Address: 00562760
 int __cdecl CCmdParse::getParamTextLengthAt(CCmdParse *this_pointer,int param_index);
 
-// Original: core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0
+// Original: core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0
 // Address: 005627f0
-CCharacter * __cdecl CCmdParse::getCharacterByParamIndex(CCmdParse *this_ptr,int param_index);
+CCharacter * __cdecl CCmdParm::getCharacterByContext(CCmdParm *this_ptr,CCmdParse *context);
 
-// Original: core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860
+// Original: core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860
 // Address: 00562860
-CMotionList * __cdecl CCmdParse::getMotionListByParamIndex(CCmdParse *this_ptr,int param_index);
+CMotionList * __cdecl CCmdParm::getMotionListByContext(CCmdParm *this_ptr,CCmdParse *context);
 
 // Original: core_script.cpp_editParameterValue_FUN_00562920
 // Address: 00562920
-int __cdecl editParameterValue(char *value_buffer,int param_type,CCmdParm *param_info,char *param_name);
+int __cdecl editParameterValue(char *value_buffer,int param_type,CCmdParm *param,CCmdParse *context);
 
 // Original: core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090
 // Address: 00564090

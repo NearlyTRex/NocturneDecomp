@@ -56,7 +56,7 @@ section .text
     PUSH EDX                            ; 0040e79d
     PUSH EBX                            ; 0040e79e
     CALL core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50 ; 0040e79f
-        ;   XREF to: 0040ee50 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50(CActorProperty * this_ptr, int index)
+        ;   XREF to: 0040ee50 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorProperty_getValueWidth_FUN_0040ee50(CActorProperty * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0040e7a4
     CMP EAX,dword ptr [ESP]             ; 0040e7a7
     JLE 0x0040e7af                      ; 0040e7aa

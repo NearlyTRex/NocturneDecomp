@@ -134,7 +134,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
       support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(&local_50,0x8000,8);
       support_codec_cpp_CLZWCompress_init_FUN_0043f320(&local_50);
       support_codec_cpp_CLZWCompress_process_FUN_0043f360
-                (&local_50,watcom_istream_from(ifs),(int)&local_18,watcom_ostream_from(ofs));
+                (&local_50,watcom_istream_from(ifs),&local_18,watcom_ostream_from(ofs));
       support_codec_cpp_CLZWCompress_finalize_FUN_0043f440(&local_50,watcom_ostream_from(ofs));
       ifs.sync();
       ofs.flush();

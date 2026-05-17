@@ -21,7 +21,7 @@
     {
       "addr": "00562860",
       "from_addr": "0056286a",
-      "name": "core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860",
+      "name": "core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,8 +40,8 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "core_script.cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0",
-    "signature": "CCharacter * __cdecl core_script_cpp_CCmdParse_getCharacterByParamIndex_FUN_005627f0(CCmdParse *this_ptr,int param_index)"
+    "name": "core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0",
+    "signature": "CCharacter * __cdecl core_script_cpp_CCmdParm_getCharacterByContext_FUN_005627f0(CCmdParm *this_ptr,CCmdParse *context)"
   },
   "function_calls": [
     {
@@ -81,7 +81,7 @@
       {
         "call_addr": "0056286a",
         "call_type": "direct",
-        "caller": "core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860",
+        "caller": "core_script.cpp_CCmdParm_getMotionListByContext_FUN_00562860",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,14 +154,14 @@
         "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "CCmdParse *"
+        "type": "CCmdParm *"
       },
       {
         "is_param": true,
-        "name": "param_index",
+        "name": "context",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "CCmdParse *"
       }
     ]
   },
