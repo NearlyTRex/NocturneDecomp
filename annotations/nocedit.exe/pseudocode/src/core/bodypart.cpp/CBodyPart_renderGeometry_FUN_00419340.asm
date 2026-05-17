@@ -28,7 +28,7 @@
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
-;   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
+;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
 ;
 ; *****************************************************************************
 
@@ -156,8 +156,8 @@ section .text
     PUSH EBX                            ; 0041947d
     MOV EBX,dword ptr [0x006703ec]      ; 0041947e | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 00419484 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 00419485
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 ; 00419485
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly, int render_flags)
     ADD ESP,0xc                         ; 0041948a
     INC EBP                             ; 0041948d
     MOV EAX,dword ptr [ESP + 0x8]       ; 0041948e

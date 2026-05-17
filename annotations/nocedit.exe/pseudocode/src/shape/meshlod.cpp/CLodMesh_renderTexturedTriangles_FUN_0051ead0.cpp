@@ -73,8 +73,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
         if (atlas_texture_index < 0) {
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
                     (g_CDemonRendererPtr2,-((local_1c & 0x7f) + 0x80));
-          engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-                    (g_CDemonRendererPtr2,&SStack_78);
+          engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+                    (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&SStack_78);
         }
         else {
           if (atlas_texture_index != local_24) {
@@ -99,8 +99,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
             engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(texture);
             local_24 = atlas_texture_index;
           }
-          engine_drender_cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
-                    (g_CDemonRendererPtr2,&SStack_78);
+          engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0
+                    (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&SStack_78);
         }
       }
       local_1c = local_1c + 1;

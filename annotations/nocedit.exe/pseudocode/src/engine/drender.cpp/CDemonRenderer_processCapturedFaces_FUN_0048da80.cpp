@@ -53,8 +53,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
         piVar1 = (int *)((int)g_CapturedFacePointers + iVar5);
         iVar5 = iVar5 + 4;
         iVar3 = iVar3 + 1;
-        engine_drender_cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
-                  (this_ptr,(SMRGLHeaderPrimitive *)(*piVar1 + 0xc),*(int *)(*piVar1 + 4));
+        engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030
+                  (this_ptr,(SInputFace *)(*piVar1 + 0xc),*(int *)(*piVar1 + 4));
       } while (iVar3 < g_CaptureFaceCount);
     }
     engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(this_ptr,0);

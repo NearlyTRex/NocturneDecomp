@@ -17,7 +17,7 @@ int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0044b060(CCurtain *this_ptr
   int iVar4;
   int *piVar5;
   SCurtainVertex *pSVar6;
-  SMRGLHeaderPrimitive *pSVar7;
+  SMRGLPrimitivePoly *pSVar7;
   CBoundingBox3D local_3c;
   CBoundingBox3D local_24;
   
@@ -59,7 +59,7 @@ int __cdecl core_curtain_cpp_CCurtain_renderMesh_FUN_0044b060(CCurtain *this_ptr
   if (this_ptr->cinched_top == 0) {
     bVar1 = true;
 LAB_0044b1a4:
-    pSVar7 = &(this_ptr->mesh).front_faces[0].base;
+    pSVar7 = (SMRGLPrimitivePoly *)(this_ptr->mesh).front_faces;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,this_ptr->vertex_count,
                (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2,pSVar7,
@@ -67,9 +67,9 @@ LAB_0044b1a4:
     if (this_ptr->opacity < 0xfde9) {
       for (iVar4 = 0; iVar4 < (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2;
           iVar4 = iVar4 + 1) {
-        engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
+        engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0
                   (g_CDemonRendererPtr2,pSVar7);
-        pSVar7 = pSVar7 + 3;
+        pSVar7 = (SMRGLPrimitivePoly *)(pSVar7->vertices + 4);
       }
     }
     else {
@@ -80,7 +80,7 @@ LAB_0044b1a4:
   }
   else if (g_RelativeZ < 0) goto LAB_0044b1a4;
   if (bVar1) {
-    pSVar7 = &(this_ptr->mesh).back_faces[0].base;
+    pSVar7 = (SMRGLPrimitivePoly *)(this_ptr->mesh).back_faces;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,this_ptr->vertex_count,
                (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2,pSVar7,
@@ -88,9 +88,9 @@ LAB_0044b1a4:
     if (this_ptr->opacity < 0xfde9) {
       for (iVar4 = 0; iVar4 < (this_ptr->mesh).grid_cols * (this_ptr->mesh).grid_rows * 2;
           iVar4 = iVar4 + 1) {
-        engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
+        engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0
                   (g_CDemonRendererPtr2,pSVar7);
-        pSVar7 = pSVar7 + 3;
+        pSVar7 = (SMRGLPrimitivePoly *)(pSVar7->vertices + 4);
       }
     }
     else {

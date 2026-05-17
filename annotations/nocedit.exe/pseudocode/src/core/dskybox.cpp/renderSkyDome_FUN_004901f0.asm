@@ -50,7 +50,7 @@
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
+;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
@@ -297,8 +297,8 @@ section .text
     PUSH EAX                            ; 004904f5 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x4c],EBX      ; 004904f6
     MOV dword ptr [ESP + 0x50],EBX      ; 004904fa
-    CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 004904fe
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 ; 004904fe
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly, int render_flags)
     ADD ESP,0xc                         ; 00490503
     MOV dword ptr [ESP + 0x90],EDI      ; 00490506
     MOV ESI,dword ptr [ESP + 0x90]      ; 0049050d
@@ -393,8 +393,8 @@ section .text
     PUSH EAX                            ; 00490642 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x50],EBP      ; 00490643
     ADD ESI,0x1000000                   ; 00490647 | g_LightBufferPool[13][93688]
-    CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 0049064d
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 ; 0049064d
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly, int render_flags)
     ADD ESP,0xc                         ; 00490652
     CMP EDI,0x3                         ; 00490655
     JL 0x00490593                       ; 00490658

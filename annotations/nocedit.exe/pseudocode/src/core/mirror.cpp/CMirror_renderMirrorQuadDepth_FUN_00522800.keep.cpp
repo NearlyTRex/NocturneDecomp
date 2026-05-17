@@ -58,7 +58,7 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror 
   SStack_88.vertices[0].vertex_index = 0;
   SStack_88.vertices[3].vertex_index = 3;
   SStack_88.vertices[1].vertex_index = 1;
-  engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
-            (g_CDemonRendererPtr2,&SStack_88.base);
+  engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950
+            (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&SStack_88);
   return;
 }

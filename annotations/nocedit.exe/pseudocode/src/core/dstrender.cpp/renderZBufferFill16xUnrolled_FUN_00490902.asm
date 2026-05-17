@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950 at 0048aa31
+;   engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950 at 0048aa31
 ;
 ; Referenced Globals:
 ;   void*[1200] g_ScreenBufferArray

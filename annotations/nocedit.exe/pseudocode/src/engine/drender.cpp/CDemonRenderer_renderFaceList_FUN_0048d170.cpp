@@ -110,10 +110,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemo
       if (0 < face_count) {
         do {
           iVar4 = iVar4 + 1;
-          engine_drender_cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
-                    (this_ptr,(SMRGLHeaderPrimitive *)face_array,render_flags);
-          face_array = (SInputFace *)
-                       ((int)&(((SMRGLHeaderPrimitive *)face_array)->surface_normal).C + 2);
+          engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030
+                    (this_ptr,face_array,render_flags);
+          face_array = face_array + 1;
         } while (iVar4 < face_count);
         return;
       }

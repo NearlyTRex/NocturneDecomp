@@ -19,7 +19,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_006220ea
 ;   TerminatedCString s_CDemonRenderer_demonGZFa_00622100
-;   SInputFace*[2000] g_VisibleFacePointers
+;   SMRGLPrimitiveQuad*[2000] g_VisibleFacePointers
 ;   int g_BitsPerPixel = 0x8
 ;   int g_CullingMode
 ;   MainScanlineFunc* g_ScanlineRenderFunc
@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0
-;   engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
+;   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030
 ;   engine_drender.cpp_renderTriangleSimple_FUN_004839f0
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00483370
 ;   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
@@ -103,8 +103,8 @@ section .text
     PUSH EBX                            ; 0048d1d4
     PUSH ESI                            ; 0048d1d5
     INC EBP                             ; 0048d1d6
-    CALL engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030 ; 0048d1d7
-        ;   XREF to: 0048b030 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030 ; 0048d1d7
+        ;   XREF to: 0048b030 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030(CDemonRenderer * this_ptr, SInputFace * face, int render_flags)
     ADD EBX,0x12                        ; 0048d1dc
     ADD ESP,0xc                         ; 0048d1df
     CMP EBP,EDI                         ; 0048d1e2

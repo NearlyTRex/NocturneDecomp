@@ -66,7 +66,7 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
       pCVar1 = g_CDemonRendererPtr2;
       pCVar4->broken_quads[0].base.surface_normal.C.i = 0;
       pCVar4->broken_quads[0].base.surface_normal.D.i = 0;
-      engine_drender_cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550(pCVar1,prim);
+      engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550(pCVar1,(SMRGLPrimitivePoly *)prim);
       pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);
       iVar2 = iVar2 + 1;
       prim = prim + 3;

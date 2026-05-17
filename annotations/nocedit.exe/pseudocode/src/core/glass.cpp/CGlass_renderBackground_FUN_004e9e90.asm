@@ -21,7 +21,7 @@
 ;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
+;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
 ;
 ; *****************************************************************************
 
@@ -127,8 +127,8 @@ section .text
     PUSH EAX                            ; 004e9fb5 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x6c0],0x0     ; 004e9fb6
     ADD EBX,0x48                        ; 004e9fc0
-    CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 004e9fc3
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 ; 004e9fc3
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly, int render_flags)
     ADD ESI,0x48                        ; 004e9fc8
     MOV EDX,dword ptr [EBP + 0xb38]     ; 004e9fcb
     ADD ESP,0xc                         ; 004e9fd1

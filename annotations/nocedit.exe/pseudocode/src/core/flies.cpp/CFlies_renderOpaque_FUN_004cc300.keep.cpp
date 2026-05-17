@@ -168,8 +168,8 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
             *(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =
                  *(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) +
                  1;
-            engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                      (this_ptr_01,&SStack_a0.base,999);
+            engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
+                      (this_ptr_01,(SMRGLPrimitivePoly *)&SStack_a0,999);
           }
         }
         pSStack_20 = pSStack_20 + 1;

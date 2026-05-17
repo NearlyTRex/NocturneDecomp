@@ -137,12 +137,12 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
         SStack_118.base.surface_normal.D.i = 0;
       }
       if (alpha < 0xfde9) {
-        engine_drender_cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970
-                  (g_CDemonRendererPtr2,&SStack_118.base);
+        engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970
+                  (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&SStack_118);
       }
       else {
-        engine_drender_cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
-                  (g_CDemonRendererPtr2,&SStack_118.base);
+        engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0
+                  (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&SStack_118);
       }
       face_data = face_data + 1;
       local_28[2] = local_28[2] + 1;

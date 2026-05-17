@@ -15,7 +15,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
   CVector3i *pCVar2;
   CGlass *pCVar3;
   int iVar4;
-  SMRGLHeaderPrimitive *prim;
+  SMRGLPrimitivePoly *poly;
   SMRGLTextureBasic *texture;
   CBoundingBox3D CStack_20;
   
@@ -54,7 +54,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
     core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
               (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->render_vertices);
     if (0 < this_ptr->broken_polygon_count) {
-      prim = &this_ptr->broken_quads[0].base;
+      poly = (SMRGLPrimitivePoly *)this_ptr->broken_quads;
       pCVar3 = this_ptr;
       do {
         pCVar3->broken_quads[0].base.surface_normal.A.i = 0;
@@ -64,9 +64,8 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
         pCVar3->broken_quads[0].base.surface_normal.C.i = 0;
         pCVar3->broken_quads[0].base.surface_normal.D.i = 0;
         pCVar3 = (CGlass *)((pCVar3->base).orient_matrix.m + 1);
-        engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(this_ptr_00,prim,0xc1)
-        ;
-        prim = prim + 3;
+        engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0(this_ptr_00,poly,0xc1);
+        poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
       } while (iVar4 < this_ptr->broken_polygon_count);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);

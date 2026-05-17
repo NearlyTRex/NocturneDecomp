@@ -115,8 +115,8 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap *this_pt
         this_ptr_00->vertex_buffer_ptr[3].g = iVar4;
         this_ptr_00->vertex_buffer_ptr[3].b = iVar5;
         this_ptr_00->vertex_buffer_ptr[3].a = iVar6;
-        engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
-                  (this_ptr_00,&SMRGLPrimitiveQuad_030d4fd0.base);
+        engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
+                  (this_ptr_00,(SMRGLPrimitivePoly *)&SMRGLPrimitiveQuad_030d4fd0);
       }
       local_54[1] = local_54[1] + 1;
       local_18 = local_18 + 400;

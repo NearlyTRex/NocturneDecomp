@@ -41,8 +41,8 @@ void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_0052b160(CMorphModel *th
              iVar3);
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + 0x3c;
-      engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                (g_CDemonRendererPtr2,prim,0x267);
+      engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
+                (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)prim,0x267);
     } while (iVar4 < this_ptr->num_faces);
   }
   engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);

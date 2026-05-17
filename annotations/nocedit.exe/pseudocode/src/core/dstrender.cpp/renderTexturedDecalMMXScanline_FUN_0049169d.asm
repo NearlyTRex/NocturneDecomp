@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420 at 0048b52d
+;   engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420 at 0048b52d
 ;
 ; Referenced Globals:
 ;   uint g_PerspectiveNextU = 0x0

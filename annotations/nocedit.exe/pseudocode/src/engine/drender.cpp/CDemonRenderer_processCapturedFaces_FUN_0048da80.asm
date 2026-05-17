@@ -29,7 +29,7 @@
 ; Called Functions:
 ;   crt_stdlib.c__qsort_FUN_005fdf38
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
+;   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;
 ; *****************************************************************************
@@ -114,8 +114,8 @@ section .text
     PUSH EBP                            ; 0048db3f
     ADD EBX,0x4                         ; 0048db40
     INC ESI                             ; 0048db43
-    CALL engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030 ; 0048db44
-        ;   XREF to: 0048b030 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030 ; 0048db44
+        ;   XREF to: 0048b030 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030(CDemonRenderer * this_ptr, SInputFace * face, int render_flags)
     MOV EAX,[0x02c6d5ec]                ; 0048db49 | g_CaptureFaceCount
     ADD ESP,0xc                         ; 0048db4e
     CMP ESI,EAX                         ; 0048db51

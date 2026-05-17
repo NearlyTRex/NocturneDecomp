@@ -106,8 +106,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
               (this_ptr_00,(this_ptr->light_texture).textures);
     engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,0);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-    engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
-              (g_CDemonRendererPtr2,&SStack_a8.base);
+    engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
+              (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&SStack_a8);
     engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   }

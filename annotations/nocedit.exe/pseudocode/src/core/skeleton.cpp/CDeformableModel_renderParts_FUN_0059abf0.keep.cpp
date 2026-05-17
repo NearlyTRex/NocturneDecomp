@@ -29,7 +29,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
   ushort *puVar8;
   int iVar9;
   float local_130;
-  SMRGLHeaderPrimitive local_12c;
+  SMRGLPrimitiveTriangle local_12c;
   byte *local_cc;
   int local_c8;
   byte *local_c4;
@@ -124,9 +124,12 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
                          (int)ROUND(ROUND(fVar10 * local_130 + 127.0f)),
                          (int)ROUND(ROUND(fVar9 * local_130 + 127.0f)),
                          (int)ROUND(ROUND(fVar5 * local_130 + 127.0f)));
-              local_12c.base.count = 3;
-              engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-                        (g_CDemonRendererPtr2,&local_12c);
+              local_12c.base.base.count = 3;
+              local_12c.vertices[0].vertex_index = (int)*puVar8;
+              local_12c.vertices[1].vertex_index = (int)puVar8[1];
+              local_12c.vertices[2].vertex_index = (int)puVar8[2];
+              engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+                        (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&local_12c);
               local_44 = local_44 + 1;
             } while (local_44 < iVar9);
           }

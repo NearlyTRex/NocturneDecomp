@@ -110,8 +110,8 @@ float __cdecl core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0(CZTh
     do {
       puVar2 = (uint *)((int)aiStack_4c + iVar8);
       iVar8 = iVar8 + 4;
-      iVar6 = engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
-                        (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)*puVar2);
+      iVar6 = engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50
+                        (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)*puVar2);
       iVar2 = iVar2 + iVar6;
     } while (iVar8 < local_20 * 4);
   }

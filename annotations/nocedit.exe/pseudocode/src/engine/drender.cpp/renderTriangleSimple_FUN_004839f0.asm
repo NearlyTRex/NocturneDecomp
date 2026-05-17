@@ -21,8 +21,8 @@
 ; XREF[4]:
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740 at 0048a776
 ;   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 at 0048d352
+;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 at 0048cfad
 ;   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 at 0048d544
-;   engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 at 0048cfad
 ;
 ; Referenced Globals:
 ;   SRenderVertex[20000] g_RenderVertexBuffer

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50 at 0048ab29
+;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50 at 0048ab29
 ;
 ; Referenced Globals:
 ;   int g_RenderPixelCounter

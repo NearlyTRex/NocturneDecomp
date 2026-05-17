@@ -32248,7 +32248,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970",
+    "name":"engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970",
     "ret":"void",
     "vars":{
       "locals":[
@@ -32414,7 +32414,7 @@
           "type":"CDemonRenderer*"
         },
         {
-          "name":"prim",
+          "name":"poly",
           "storage":{
             "offset":8,
             "size":4,
@@ -32427,7 +32427,7 @@
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive*"
+          "type":"SMRGLPrimitivePoly*"
         }
       ]
     }
@@ -92059,68 +92059,20 @@
           "type":"float"
         },
         {
-          "name":"local_fc",
-          "storage":{
-            "offset":-252,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xfc]",
-                "offset":-252,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
-        },
-        {
-          "name":"local_108",
-          "storage":{
-            "offset":-264,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x108]",
-                "offset":-264,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
-        },
-        {
-          "name":"local_114",
-          "storage":{
-            "offset":-276,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x114]",
-                "offset":-276,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
-        },
-        {
           "name":"local_12c",
           "storage":{
             "offset":-300,
-            "size":24,
+            "size":60,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x12c]",
                 "offset":-300,
-                "size":24
+                "size":60
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveTriangle"
         },
         {
           "name":"local_130",

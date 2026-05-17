@@ -12,7 +12,7 @@
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90 at 0048cec2
-;   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 at 0048af67
+;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 at 0048af67
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403950

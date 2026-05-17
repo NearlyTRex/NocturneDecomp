@@ -24,7 +24,7 @@
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
-;   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
+;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;   engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0
@@ -107,8 +107,8 @@ section .text
     PUSH EDX                            ; 0052b224 | g_CDemonRendererInstance
     INC EBP                             ; 0052b225
     ADD EBX,0x3c                        ; 0052b226
-    CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 0052b229
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 ; 0052b229
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly, int render_flags)
     MOV ECX,dword ptr [EDI + 0x5c]      ; 0052b22e
     ADD ESP,0xc                         ; 0052b231
     CMP EBP,ECX                         ; 0052b234

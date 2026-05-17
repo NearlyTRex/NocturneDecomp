@@ -15,8 +15,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90
     render_flags = 0x2cd;
   }
   if (this_ptr->texture_capture_enabled == 0) {
-    engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
-              (this_ptr,primitive_array,primitive_count,0x48,render_flags);
+    engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00
+              (this_ptr,(SMRGLPrimitiveQuad *)primitive_array,primitive_count,0x48,render_flags);
     return;
   }
   iVar1 = 0;

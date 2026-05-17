@@ -17,7 +17,7 @@
 ; XREF[3]:
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 at 00407b28
 ;   engine_3d.c_flushRenderQueue_FUN_00407a30 at 00407a88
-;   engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 at 0048d152
+;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 at 0048d152
 ;
 ; Referenced Globals:
 ;   int g_UseExternalRenderer

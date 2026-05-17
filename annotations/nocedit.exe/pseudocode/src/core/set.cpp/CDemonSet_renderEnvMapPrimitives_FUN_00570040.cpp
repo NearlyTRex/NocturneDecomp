@@ -112,12 +112,12 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040(CDemonSe
         } while (iVar7 < SStack_f4.base.base.count);
       }
       if (alpha < 0xfde9) {
-        engine_drender_cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970
-                  (g_CDemonRendererPtr2,&SStack_f4.base);
+        engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970
+                  (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&SStack_f4);
       }
       else {
-        engine_drender_cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
-                  (g_CDemonRendererPtr2,&SStack_f4.base);
+        engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0
+                  (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&SStack_f4);
       }
       local_14 = local_14 + 1;
       prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);

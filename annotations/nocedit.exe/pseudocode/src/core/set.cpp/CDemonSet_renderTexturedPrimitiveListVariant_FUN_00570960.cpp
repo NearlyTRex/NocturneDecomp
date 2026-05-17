@@ -17,9 +17,9 @@ void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570
       if (0 < count) {
         do {
           iVar1 = iVar1 + 1;
-          engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-                    (g_CDemonRendererPtr2,prim);
-          prim = prim + 3;
+          engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+                    (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)prim);
+          prim = (SMRGLHeaderPrimitive *)(((SMRGLPrimitivePoly *)prim)->vertices + 4);
         } while (iVar1 < count);
         return;
       }

@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_0048d700
-;   engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
+;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     PUSH EBP                            ; 0048ce78
     PUSH ESI                            ; 0048ce79
     PUSH EBX                            ; 0048ce7a
-    CALL engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 ; 0048ce7b
-        ;   XREF to: 0048cf00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int primitive_stride, ...)
+    CALL engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 ; 0048ce7b
+        ;   XREF to: 0048cf00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDemonRenderer * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int primitive_stride, ...)
     ADD ESP,0x14                        ; 0048ce80
     POP EBP                             ; 0048ce83
     POP EDI                             ; 0048ce84

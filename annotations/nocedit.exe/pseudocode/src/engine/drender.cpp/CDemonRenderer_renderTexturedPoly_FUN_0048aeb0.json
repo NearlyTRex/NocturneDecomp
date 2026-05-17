@@ -1,0 +1,327 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "keep.cpp",
+  "complexity": {
+    "assembly_lines": 150,
+    "complexity_score": 121,
+    "cross_reference_count": 7,
+    "function_call_count": 3,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 71,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast",
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 221
+  },
+  "cross_references": [
+    {
+      "addr": "00419340",
+      "from_addr": "00419485",
+      "name": "core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004901f0",
+      "from_addr": "0049064d",
+      "name": "core_dskybox.cpp_renderSkyDome_FUN_004901f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cc300",
+      "from_addr": "004cc6a0",
+      "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004cc300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e9e90",
+      "from_addr": "004e9fc3",
+      "name": "core_glass.cpp_CGlass_renderBackground_FUN_004e9e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052b160",
+      "from_addr": "0052b229",
+      "name": "core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005eb280",
+      "from_addr": "005eb48f",
+      "name": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048cf00",
+      "from_addr": "0048cf27",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048aeb0",
+    "address_range": [
+      [
+        "0048aeb0",
+        "0048b021"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly,int render_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403950",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "0048a740",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740"
+    },
+    {
+      "addr": "0048d7a0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02c6d5ac",
+      "name": "g_VertexIndexBuffer",
+      "type": "int[16]",
+      "value": null
+    },
+    {
+      "addr": "02c6d5b0",
+      "name": "g_VertexIndexBuffer[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "004cc6a0",
+        "call_type": "direct",
+        "caller": "core_flies.cpp_CFlies_renderOpaque_FUN_004cc300",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004e9fc3",
+        "call_type": "direct",
+        "caller": "core_glass.cpp_CGlass_renderBackground_FUN_004e9e90",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00419485",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048cf27",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0052b229",
+        "call_type": "direct",
+        "caller": "core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0049064d",
+        "call_type": "direct",
+        "caller": "core_dskybox.cpp_renderSkyDome_FUN_004901f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005eb48f",
+        "call_type": "direct",
+        "caller": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004904fe",
+        "call_type": "direct",
+        "caller": "core_dskybox.cpp_renderSkyDome_FUN_004901f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.491071428571429,
+    "instruction_count": 112,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 2,
+      "BRANCH": 6,
+      "CALL": 3,
+      "CBRANCH": 12,
+      "COPY": 91,
+      "INT_ADD": 55,
+      "INT_AND": 66,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 63,
+      "INT_LESS": 9,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 13,
+      "INT_SEXT": 3,
+      "INT_SLESS": 31,
+      "INT_SUB": 23,
+      "INT_XOR": 5,
+      "LOAD": 37,
+      "POPCOUNT": 31,
+      "RETURN": 2,
+      "STORE": 20,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 503
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "poly",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLPrimitivePoly *"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)g_VertexIndexBuffer",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar5) = iVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(int *)((int)g_VertexIndexBuffer",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar1->vertices[0].vertex_index;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 32,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 47,
+      "match": "pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

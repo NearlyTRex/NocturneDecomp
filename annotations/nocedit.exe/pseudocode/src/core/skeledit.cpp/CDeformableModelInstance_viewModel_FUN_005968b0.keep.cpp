@@ -508,8 +508,8 @@ LAB_0059722b:
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                 (g_CDemonRendererPtr2,&SMRGLTextureBasic_006819e4);
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr2,0xff,0,0xff);
-      engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40
-                (g_CDemonRendererPtr2,&local_3a4.base);
+      engine_drender_cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40
+                (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&local_3a4);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     }
     iVar7 = local_a4;

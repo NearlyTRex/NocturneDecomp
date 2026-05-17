@@ -48,8 +48,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(CLodM
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
                     (g_CDemonRendererPtr2,-((uVar2 & 0x7f) + 0x80));
         }
-        engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-                  (g_CDemonRendererPtr2,&SStack_60.base);
+        engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+                  (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&SStack_60);
       }
       uVar2 = uVar2 + 1;
       iVar3 = iVar3 + 0x8c;

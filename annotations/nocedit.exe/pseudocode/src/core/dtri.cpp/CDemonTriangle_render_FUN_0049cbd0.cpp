@@ -44,7 +44,7 @@ void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *th
   SStack_78.base.surface_normal.D.i =
        (int)ROUND(ROUND(this_ptr->plane_distance * (float)65536 *
                         (float)256));
-  engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr1,&SStack_78.base);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+            (g_CDemonRendererPtr1,(SMRGLPrimitivePoly *)&SStack_78);
   return;
 }

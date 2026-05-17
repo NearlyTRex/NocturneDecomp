@@ -15,7 +15,7 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterA
   CBoundingBox3D *this_ptr_00;
   CVector3i *pCVar4;
   SWaterVertex *pSVar5;
-  SMRGLHeaderPrimitive *primitive_array;
+  SMRGLPrimitivePoly *poly;
   CVector3f *vertex_position;
   int iVar6;
   CBoundingBox3D CStack_24;
@@ -72,22 +72,21 @@ int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005eb280(CWaterA
           iVar6 = iVar6 + 0x30;
         } while (iVar3 < this_ptr->vertex_count);
       }
-      primitive_array = &this_ptr->primitives[0].base;
+      poly = (SMRGLPrimitivePoly *)this_ptr->primitives;
       if (this_ptr->opacity < 0xfde9) {
         iVar3 = 0;
         if (0 < this_ptr->primitive_count) {
           do {
             iVar3 = iVar3 + 1;
-            engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                      (g_CDemonRendererPtr2,primitive_array,0x267);
-            primitive_array = primitive_array + 3;
+            engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
+                      (g_CDemonRendererPtr2,poly,0x267);
+            poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
           } while (iVar3 < this_ptr->primitive_count);
         }
       }
       else {
         core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
-                  (g_CDemonSetPtr,(SMRGLPrimitiveQuad *)primitive_array,this_ptr->primitive_count,-1
-                  );
+                  (g_CDemonSetPtr,(SMRGLPrimitiveQuad *)poly,this_ptr->primitive_count,-1);
       }
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
     }

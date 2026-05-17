@@ -12,7 +12,7 @@
 ; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 at 0048d0de
+;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 at 0048d0de
 ;
 ; Referenced Globals:
 ;   SRenderVertex[20000] g_RenderVertexBuffer

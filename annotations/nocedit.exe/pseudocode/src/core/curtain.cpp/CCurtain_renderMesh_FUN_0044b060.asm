@@ -30,7 +30,7 @@
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
+;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;
@@ -186,8 +186,8 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 0044b202 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0044b208 | g_CDemonRendererInstance
     INC EDI                             ; 0044b209
-    CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 ; 0044b20a
-        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0 ; 0044b20a
+        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD EBX,0x48                        ; 0044b20f
     ADD ESP,0x8                         ; 0044b212
     JMP 0x0044b1ec                      ; 0044b215
@@ -266,8 +266,8 @@ section .text
     MOV EAX,[0x006703ec]                ; 0044b2d7 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0044b2dc | g_CDemonRendererInstance
     INC EBX                             ; 0044b2dd
-    CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 ; 0044b2de
-        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0 ; 0044b2de
+        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD EDI,0x48                        ; 0044b2e3
     ADD ESP,0x8                         ; 0044b2e6
     JMP 0x0044b2c1                      ; 0044b2e9

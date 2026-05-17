@@ -30,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410",
-    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,int render_mode)"
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,ushort *vertex_indices,int face_count,int vertices_per_face ,int render_mode)"
   },
   "function_calls": [
     {
@@ -224,7 +224,7 @@
         "name": "vertex_indices",
         "offset": 8,
         "size": 4,
-        "type": "int *"
+        "type": "ushort *"
       },
       {
         "is_param": true,
@@ -251,46 +251,6 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(ushort *)((int)vertex_indices",
-      "severity": "moderate",
-      "text": "(v1 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(int *)((int)vertex_indices",
-      "severity": "moderate",
-      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(int *)((int)vertex_indices",
-      "severity": "moderate",
-      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(ushort *)((int)vertex_indices",
-      "severity": "moderate",
-      "text": "(pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 115,
-      "match": "(int *)((int)vertex_indices",
-      "severity": "moderate",
-      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 56,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -304,6 +264,51 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_68[0].x + iVar4) = (uint)*puVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 45,
+      "match": "(ushort *)((int)vertex_indices",
+      "severity": "moderate",
+      "text": "(v1 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 50,
+      "match": "(int *)((int)vertex_indices",
+      "severity": "moderate",
+      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 82,
+      "match": "(int *)((int)vertex_indices",
+      "severity": "moderate",
+      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 95,
+      "match": "(ushort *)((int)vertex_indices",
+      "severity": "moderate",
+      "text": "(pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 121,
+      "match": "(int *)((int)vertex_indices",
+      "severity": "moderate",
+      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"
     }
   ]

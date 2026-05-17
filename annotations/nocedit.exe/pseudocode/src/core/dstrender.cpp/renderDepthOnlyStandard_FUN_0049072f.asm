@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[20]:
-;   engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0 at 0048a8e8
+;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320 at 0048b3ed
+;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0 at 0048b23c
 ;   engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 at 0048a839
-;   engine_drender.cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048bfe0 at 0048c055
+;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0 at 0048be35
 ;   engine_drender.cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10 at 0048bf65
-;   engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 at 0048be35
+;   engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420 at 0048b47c
 ;   engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 at 0048bd45
 ;   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 at 0048d30e
+;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 at 0048cf5d
 ;   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 at 0048d46d
-;   engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0 at 0048bc15
-;   engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 at 0048bb25
 ;   ... and 10 more
 ;
 ; Referenced Globals:

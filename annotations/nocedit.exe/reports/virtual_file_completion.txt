@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5757 (89.2%)
+Clean functions: 5760 (89.2%)
 Files at 100%: 148
 Files at 90%+: 148
 Files at 50%+: 214
@@ -288,7 +288,7 @@ FILES AT 50-89%
            - core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0 (210 lines) [shadow_pointer_walk, unrolled_memset]
            - core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740 (64 lines) [unrolled_memcpy]
            - core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0 (56 lines) [unrolled_strcpy]
-           - core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280 (88 lines) [pointer_cast]
+           - core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280 (87 lines) [pointer_cast]
    82.4% | core/conveyor.cpp
          14/17 clean, 3 remaining
            - core_conveyor.cpp_CConveyor_setup_FUN_00441d60 (38 lines) [stack_alignment_array, unrolled_memcpy]
@@ -432,6 +432,27 @@ FILES AT 50-89%
            - core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20 (83 lines) [unrolled_memcpy]
            - core_door.cpp_CDoor_reposition_FUN_0047fd20 (127 lines) [unrolled_memcpy]
            - core_door.cpp_CDoor_archive_FUN_00480aa0 (81 lines) [unrolled_strcpy]
+   78.4% | engine/drender.cpp
+         69/88 clean, 19 remaining
+           - engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950 (52 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0 (61 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0048b730 (61 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0 (62 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0 (33 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50 (47 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550 (45 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030 (44 lines) [shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0 (61 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420 (57 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 (123 lines) [pointer_cast]
+           - engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 (120 lines) [pointer_cast]
+           - engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970 (61 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0048bfe0 (61 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 (116 lines) [pointer_cast]
+           - engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 (71 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80 (53 lines) [pointer_cast]
+           - engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320 (36 lines) [shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40 (60 lines) [pointer_cast, shadow_pointer_walk]
    78.3% | core/icepick.cpp
          18/23 clean, 5 remaining
            - core_icepick.cpp_CIcePick_process_FUN_004f80b0 (313 lines) [missing_cave_copy, unrolled_memset, warning_unreachable]
@@ -581,30 +602,6 @@ FILES AT 50-89%
            - core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (169 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
            - core_mimic.cpp_CMimic_setupCloth_FUN_00520500 (51 lines) [pointer_cast, unrolled_memcpy]
            - core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 (321 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
-   75.0% | engine/drender.cpp
-         66/88 clean, 22 remaining
-           - engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50 (47 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 (115 lines) [pointer_cast]
-           - engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550 (45 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 (69 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 (61 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40 (60 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0 (40 lines) [unrolled_memcpy]
-           - engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320 (36 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 (124 lines) [pointer_cast]
-           - engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950 (52 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20 (40 lines) [unrolled_memcpy]
-           - engine_drender.cpp_CDemonRenderer_renderEnhancedQualityWithIndices_FUN_0048b730 (61 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030 (44 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0 (61 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048bfe0 (61 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 (116 lines) [pointer_cast]
-           - engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80 (53 lines) [pointer_cast]
-           - engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970 (61 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420 (57 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0 (225 lines) [unrolled_memcpy]
-           - engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0 (62 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0 (33 lines) [pointer_cast, shadow_pointer_walk]
    74.5% | core/cloth.cpp
          41/55 clean, 14 remaining
            - core_cloth.cpp_CClothList_render_FUN_0043c320 (23 lines) [shadow_pointer_walk]
@@ -928,13 +925,13 @@ FILES AT 50-89%
    58.3% | core/glass.cpp
          14/24 clean, 10 remaining
            - core_glass.cpp_CGlass_ctor_FUN_004e9040 (61 lines) [unrolled_strcpy]
-           - core_glass.cpp_CGlass_renderOpaque_FUN_004e9930 (67 lines) [shadow_pointer_walk]
+           - core_glass.cpp_CGlass_renderOpaque_FUN_004e9930 (66 lines) [shadow_pointer_walk]
            - core_glass.cpp_CGlass_shatter_FUN_004eaef0 (124 lines) [raw_address_constant, unrolled_strcpy]
            - core_glass.cpp_CGlass_setup_FUN_004e9180 (268 lines) [unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
-           - core_glass.cpp_CGlass_renderBackground_FUN_004e9e90 (65 lines) [shadow_pointer_walk]
+           - core_glass.cpp_CGlass_renderBackground_FUN_004e9e90 (64 lines) [shadow_pointer_walk]
            - core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0 (71 lines) [shadow_pointer_walk]
            - core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (387 lines) [unrolled_memcpy]
-           - core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0 (65 lines) [shadow_pointer_walk]
+           - core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0 (64 lines) [shadow_pointer_walk]
            - core_glass.cpp_CGlass_onLaserHit_FUN_004eb250 (48 lines) [pointer_cast, warning_inlined_function]
            - core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690 (96 lines) [unrolled_strchr, unrolled_strcpy]
    55.6% | engine/alphabit.cpp

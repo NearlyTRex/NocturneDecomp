@@ -2,11 +2,11 @@
 // Address: 0048d410
 // Address Range: [[0048d410, 0048d6b2]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,int render_mode)
+// Signature: void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,ushort *vertex_indices,int face_count,int vertices_per_face ,int render_mode)
 
 #include "nocturne.h"
 
-void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,int render_mode)
+void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,ushort *vertex_indices,int face_count,int vertices_per_face ,int render_mode)
 
 {
   ushort *puVar2;
@@ -43,19 +43,19 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
     if (0 < face_count) {
       do {
         while ((g_CullingMode != 0 &&
-               (v1 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),
+               (v1 = this_ptr->vertex_buffer_ptr + vertex_indices[1],
                iVar4 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
-                                 (this_ptr->vertex_buffer_ptr + *(ushort *)vertex_indices,v1,v1),
-               iVar4 == 0))) {
+                                 (this_ptr->vertex_buffer_ptr + *vertex_indices,v1,v1), iVar4 == 0))
+              ) {
           face_count = face_count + -1;
-          vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);
+          vertex_indices = vertex_indices + vertices_per_face;
           if (face_count < 1) {
             return;
           }
         }
         iVar4 = 0;
         if (0 < vertices_per_face) {
-          puVar1 = (ushort *)vertex_indices;
+          puVar1 = vertex_indices;
           iVar2 = 0;
           do {
             if (*puVar1 == 0xffff) break;
@@ -80,7 +80,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
           engine_clipper_c_clipPolygonToViewport_FUN_00438420(iVar4,&local_68[0].x);
         }
         face_count = face_count + -1;
-        vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);
+        vertex_indices = vertex_indices + vertices_per_face;
         if (face_count < 1) {
           return;
         }
@@ -93,13 +93,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
     g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
     for (; 0 < face_count; face_count = face_count + -1) {
       if ((g_CullingMode == 0) ||
-         (pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),
+         (pSVar4 = this_ptr->vertex_buffer_ptr + vertex_indices[1],
          iVar4 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
-                           (this_ptr->vertex_buffer_ptr + *(ushort *)vertex_indices,pSVar4,pSVar4),
-         iVar4 != 0)) {
+                           (this_ptr->vertex_buffer_ptr + *vertex_indices,pSVar4,pSVar4), iVar4 != 0
+         )) {
         iVar3 = 0;
         if (0 < vertices_per_face) {
-          puVar2 = (ushort *)vertex_indices;
+          puVar2 = vertex_indices;
           iVar4 = 0;
           do {
             if (*puVar2 == 0xffff) break;
@@ -119,7 +119,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
           }
         }
       }
-      vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);
+      vertex_indices = vertex_indices + vertices_per_face;
     }
   }
   return;

@@ -44,10 +44,10 @@
 ;   core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-;   engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
-;   engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
-;   engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420
+;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0
+;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0
+;   engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420
+;   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
 ;   engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -385,8 +385,8 @@ section .text
     PUSH 0x684678                       ; 005ea75b | g_WaterTexturesEnd
     MOV ECX,dword ptr [0x006703ec]      ; 005ea760 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 005ea766 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 ; 005ea767
-        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0 ; 005ea767
+        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 005ea76c
         ;   Label: LAB_005ea76c
     MOV EDI,dword ptr [ESP + 0x58]      ; 005ea76f
@@ -424,8 +424,8 @@ section .text
     PUSH 0x684678                       ; 005ea7bc | g_WaterTexturesEnd
     MOV EBX,dword ptr [0x006703ec]      ; 005ea7c1 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 005ea7c7 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0 ; 005ea7c8
-        ;   XREF to: 0048b1e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0 ; 005ea7c8
+        ;   XREF to: 0048b1e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     JMP 0x005ea76c                      ; 005ea7cd
         ;   XREF to: 005ea76c (UNCONDITIONAL_JUMP)  ; LAB_005ea76c
     PUSH 0x1                            ; 005ea7cf
@@ -438,16 +438,16 @@ section .text
     PUSH 0x684678                       ; 005ea7e0 | g_WaterTexturesEnd
     MOV EAX,[0x006703ec]                ; 005ea7e5 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 005ea7ea | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0 ; 005ea7eb
-        ;   XREF to: 0048a8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0 ; 005ea7eb
+        ;   XREF to: 0048a8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     JMP 0x005ea76c                      ; 005ea7f0
         ;   XREF to: 005ea76c (UNCONDITIONAL_JUMP)  ; LAB_005ea76c
     PUSH 0x684678                       ; 005ea7f5 | g_WaterTexturesEnd
         ;   Label: LAB_005ea7f5
     MOV ECX,dword ptr [0x006703ec]      ; 005ea7fa | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 005ea800 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420 ; 005ea801
-        ;   XREF to: 0048b420 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420 ; 005ea801
+        ;   XREF to: 0048b420 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     JMP 0x005ea76c                      ; 005ea806
         ;   XREF to: 005ea76c (UNCONDITIONAL_JUMP)  ; LAB_005ea76c
 

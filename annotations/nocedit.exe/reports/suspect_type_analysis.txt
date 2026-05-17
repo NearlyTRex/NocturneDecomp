@@ -4,10 +4,10 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1620 ( 42.5%)
-  unrolled_memcpy                  919 ( 24.1%)
-  unrolled_strcpy                  286 (  7.5%)
-  shadow_pointer_walk              173 (  4.5%)
+  pointer_cast                    1609 ( 42.5%)
+  unrolled_memcpy                  903 ( 23.9%)
+  unrolled_strcpy                  286 (  7.6%)
+  shadow_pointer_walk              173 (  4.6%)
   missing_cave_copy                170 (  4.5%)
   raw_address_constant              91 (  2.4%)
   unrolled_strlen                   80 (  2.1%)
@@ -32,11 +32,11 @@ SUSPECT TYPE COUNTS
   static_array_oob_cond              3 (  0.1%)
 
 ====================================================================================================
-TYPE: pointer_cast (1620 occurrences)
+TYPE: pointer_cast (1609 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   644x  (int)&NAME used in byte-offset arithmetic
+   633x  (int)&NAME used in byte-offset arithmetic
     42x  (int *)((int)this_ptr
     32x  (uint *)((int)this_ptr
     31x  (int *)((int)g_ScreenBufferArray
@@ -283,25 +283,23 @@ Functions:
   engine_clipper.c_clipPolygonNearPlane_FUN_00436420
   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0
   engine_clipper.c_clipPolygonToViewport_FUN_00438420
+  engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50
   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
-  engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
-  engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-  engine_drender.cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048bfe0
-  engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
-  engine_drender.cpp_CDemonRenderer_renderEnhancedQualityWithIndices_FUN_0048b730
+  engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0
+  engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0
+  engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420
+  engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970
   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170
+  engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00
+  engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0048b730
   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
-  engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
-  engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550
-  engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320
-  engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
-  engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420
-  engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
-  engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40
-  engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
-  engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970
-  engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
-  engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
+  engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40
+  engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0048bfe0
+  engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+  engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550
+  engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
+  engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
+  engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
@@ -425,11 +423,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (919 occurrences)
+TYPE: unrolled_memcpy (903 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   718x  field-by-field struct copy
+   702x  field-by-field struct copy
    103x  for (...; != 0; ... + -1)
     96x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -685,9 +683,6 @@ Functions:
   engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290
   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0
   engine_alphabit.cpp_copyBytes_FUN_00410d20
-  engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-  engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20
-  engine_drender.cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
@@ -873,7 +868,7 @@ TYPE: shadow_pointer_walk (173 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    15x  pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD
+    17x  pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD
     12x  pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD
     12x  pCVar4 = (T *)pCVar4->ARRAY
      8x  pCVar2 = (T *)pCVar2->ARRAY
@@ -889,10 +884,10 @@ Unique patterns:
      3x  pCVar6 = (T *)pCVar6->ARRAY
      3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
      2x  pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)
-     2x  pSVar3 = (T *)((int)&(pSVar3->FIELD).SUBFIELD + CONST)
      2x  pCVar17 = (T *)((pCVar17->FIELD).SUBFIELD...ARRAY + CONST)
      2x  local_48 = (T *)((local_48->FIELD).SUBFIELD...ARRAY + CONST)
      2x  pCVar11 = (T *)&(pCVar11->FIELD).SUBFIELD
+     2x  pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)
 
 Functions:
   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340
@@ -973,21 +968,21 @@ Functions:
   engine_3d.c_renderPolygonUVTextureEnableVertexLit_FUN_00405170
   engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840
   engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0
-  engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
-  engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-  engine_drender.cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048bfe0
-  engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
-  engine_drender.cpp_CDemonRenderer_renderEnhancedQualityWithIndices_FUN_0048b730
-  engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
-  engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550
-  engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320
-  engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
-  engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420
-  engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
-  engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40
-  engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970
-  engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
-  engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
+  engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50
+  engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320
+  engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0
+  engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0
+  engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420
+  engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970
+  engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0048b730
+  engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40
+  engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0048bfe0
+  engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+  engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550
+  engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030
+  engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
+  engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
+  engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950
   engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
   shape_design.c_removeDegeneratePolygons_FUN_00465310

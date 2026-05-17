@@ -42,8 +42,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart *
                     (g_CDemonRendererPtr2,this_ptr->textures + iVar1);
           local_18 = iVar1;
         }
-        engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                  (g_CDemonRendererPtr2,&this_ptr->faces[iVar4].base,render_flags);
+        engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
+                  (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&this_ptr->faces[iVar4],render_flags);
         iVar4 = iVar4 + 1;
       } while (iVar4 < this_ptr->tri_count);
     }

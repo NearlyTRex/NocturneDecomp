@@ -21,7 +21,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550
+;   engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550
 ;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -157,8 +157,8 @@ section .text
     MOV dword ptr [ESI + 0x6bc],0x0     ; 004e9e1c
     PUSH EAX                            ; 004e9e26 | g_CDemonRendererInstance
     MOV dword ptr [ESI + 0x6c0],0x0     ; 004e9e27
-    CALL engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550 ; 004e9e31
-        ;   XREF to: 0048b550 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550 ; 004e9e31
+        ;   XREF to: 0048b550 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 004e9e36
     MOV EAX,dword ptr [ESP + 0x38]      ; 004e9e39
     ADD ESI,0x48                        ; 004e9e3d

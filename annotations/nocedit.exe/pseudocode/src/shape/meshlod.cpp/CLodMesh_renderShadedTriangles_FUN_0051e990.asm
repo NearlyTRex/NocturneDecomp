@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
-;   engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
+;   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
 ;   engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
@@ -115,8 +115,8 @@ section .text
     PUSH EAX                            ; 0051ea53
     MOV EAX,[0x006703ec]                ; 0051ea54 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0051ea59 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0 ; 0051ea5a
-        ;   XREF to: 0048a8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0 ; 0051ea5a
+        ;   XREF to: 0048a8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 0051ea5f
     JMP 0x0051e9f5                      ; 0051ea62
         ;   XREF to: 0051e9f5 (UNCONDITIONAL_JUMP)  ; LAB_0051e9f5

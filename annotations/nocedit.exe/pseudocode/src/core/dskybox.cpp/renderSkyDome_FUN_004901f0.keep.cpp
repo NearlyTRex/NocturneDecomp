@@ -109,8 +109,8 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_te
   local_b4.vertices[2].texture_v = 0x80000;
   local_b4.vertices[3].texture_u = 0x80000;
   local_b4.vertices[3].texture_v = 0x80000;
-  engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-            (this_ptr,&local_b4.base,0x2c5);
+  engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
+            (this_ptr,(SMRGLPrimitivePoly *)&local_b4,0x2c5);
   local_24 = 0;
   do {
     iVar6 = 0;
@@ -151,8 +151,8 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_te
       local_b4.vertices[2].texture_v = local_b4.vertices[1].texture_v;
       local_b4.vertices[3].texture_u = uVar4 + 0x400000;
       local_b4.vertices[3].texture_v = local_b4.vertices[0].texture_v;
-      engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                (g_CDemonRendererPtr2,&local_b4.base,0x2c5);
+      engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
+                (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&local_b4,0x2c5);
     } while (iVar8 < 3);
     local_20 = local_20 + 4;
     uStack_28 = (uint)(byte)((uchar)(uStack_28 >> 24) + 1) << 0x18;

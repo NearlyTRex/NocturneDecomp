@@ -15,7 +15,7 @@
 #include "types/classes/CKeys.h"
 #include "types/classes/CLevelLoader.h"
 #include "types/structs/SEnumPair.h"
-#include "types/structs/SInputFace.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLSkyTexture.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SMpegLayer3BandIndex.h"
@@ -79,8 +79,8 @@ extern SEnumPair g_MansionPuzzleSlewTypePairs[5];
 // SEnumPair[9]
 extern SEnumPair g_MeleeDamageTypePairs[9];
 
-// SInputFace*[2000]
-extern SInputFace* g_VisibleFacePointers[2000];
+// SMRGLPrimitiveQuad*[2000]
+extern SMRGLPrimitiveQuad* g_VisibleFacePointers[2000];
 
 // SMRGLSkyTexture*
 extern SMRGLSkyTexture* g_SkyDomeTexturePtr;

@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
-;   engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
+;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
@@ -192,8 +192,8 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 00547fa2 | g_CDemonRendererInstance
     PUSH EAX                            ; 00547fa4 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0xbc],ECX      ; 00547fa5
-    CALL engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0 ; 00547fab
-        ;   XREF to: 0048bba0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0 ; 00547fab
+        ;   XREF to: 0048bba0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 00547fb0
     ADD ESP,0x24                        ; 00547fb3
     POP EBP                             ; 00547fb6

@@ -47,7 +47,7 @@
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
-;   engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
+;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
@@ -371,8 +371,8 @@ section .text
     PUSH EAX                            ; 0050a17c
     MOV EBP,dword ptr [0x006703ec]      ; 0050a17d | g_CDemonRendererPtr2
     PUSH EBP                            ; 0050a183 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0 ; 0050a184
-        ;   XREF to: 0048bba0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0 ; 0050a184
+        ;   XREF to: 0048bba0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 0050a189
     PUSH 0x1                            ; 0050a18c
     MOV EAX,[0x006703ec]                ; 0050a18e | g_CDemonRendererPtr2

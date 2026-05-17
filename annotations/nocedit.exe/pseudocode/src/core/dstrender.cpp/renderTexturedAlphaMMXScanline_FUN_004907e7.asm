@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
+;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970 at 0048b9e8
 ;   engine_drender.cpp_CDemonRenderer_renderEnhancedQualityDirect_FUN_0048b650 at 0048b6a8
-;   engine_drender.cpp_CDemonRenderer_renderEnhancedQualityWithIndices_FUN_0048b730 at 0048b7a8
-;   engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550 at 0048b5c4
+;   engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0048b730 at 0048b7a8
+;   engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550 at 0048b5c4
 ;   engine_drender.cpp_CDemonRenderer_renderUltraPremiumDirect_FUN_0048b890 at 0048b8e8
-;   engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970 at 0048b9e8
 ;
 ; Referenced Globals:
 ;   uint g_PerspectiveNextU = 0x0

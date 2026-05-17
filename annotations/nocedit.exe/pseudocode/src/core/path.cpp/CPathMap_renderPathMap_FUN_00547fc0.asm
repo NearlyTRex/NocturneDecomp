@@ -55,7 +55,7 @@
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
+;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
@@ -365,8 +365,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x58]      ; 00548373
     PUSH EAX                            ; 00548377 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0xbc],ECX      ; 00548378
-    CALL engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0 ; 0054837e
-        ;   XREF to: 0048bba0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0 ; 0054837e
+        ;   XREF to: 0048bba0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 00548383
     JMP 0x00548120                      ; 00548386
         ;   XREF to: 00548120 (UNCONDITIONAL_JUMP)  ; LAB_00548120

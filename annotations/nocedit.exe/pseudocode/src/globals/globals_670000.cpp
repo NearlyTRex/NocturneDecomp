@@ -122,8 +122,8 @@ SEnumPair g_MeleeDamageTypePairs[9] = {
     {.name = (char *)s_Mercury_00635d9c, .value = 0x00000008}
 };
 
-// SInputFace*[2000]
-SInputFace* g_VisibleFacePointers[2000] = {};
+// SMRGLPrimitiveQuad*[2000]
+SMRGLPrimitiveQuad* g_VisibleFacePointers[2000] = {};
 
 // SMRGLSkyTexture*
 SMRGLSkyTexture* g_SkyDomeTexturePtr = (SMRGLSkyTexture*)&g_SkyDomeTextureData;

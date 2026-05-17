@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40 at 0048ad6b
+;   engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40 at 0048ad6b
 ;
 ; Referenced Globals:
 ;   uint g_PerspectiveLeftU = 0x0

@@ -40,8 +40,8 @@
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-;   engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
-;   engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970
+;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0
+;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;
@@ -198,8 +198,8 @@ section .text
     PUSH EAX                            ; 00570217
     MOV EDX,dword ptr [0x006703ec]      ; 00570218 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0057021e | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0 ; 0057021f
-        ;   XREF to: 0048b1e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0 ; 0057021f
+        ;   XREF to: 0048b1e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 00570224
         ;   Label: LAB_00570224
     MOV EBX,dword ptr [ESP + 0x108]     ; 00570227
@@ -244,8 +244,8 @@ section .text
     PUSH EAX                            ; 0057029b
     MOV EAX,[0x006703ec]                ; 0057029c | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 005702a1 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970 ; 005702a2
-        ;   XREF to: 0048b970 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970 ; 005702a2
+        ;   XREF to: 0048b970 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     JMP 0x00570224                      ; 005702a7
         ;   XREF to: 00570224 (UNCONDITIONAL_JUMP)  ; LAB_00570224
 

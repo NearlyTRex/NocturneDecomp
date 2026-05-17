@@ -43,7 +43,7 @@
 ;   core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
+;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
 ;   engine_prim.c_replaceWWithDepth_FUN_00552110
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
@@ -341,8 +341,8 @@ section .text
     INC ECX                             ; 004cc69a
     PUSH EAX                            ; 004cc69b | g_CDemonRendererInstance
     MOV word ptr [EBX + 0x76],CX        ; 004cc69c
-    CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 004cc6a0
-        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 ; 004cc6a0
+        ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly, int render_flags)
     ADD ESP,0xc                         ; 004cc6a5
     JMP 0x004cc58d                      ; 004cc6a8
         ;   XREF to: 004cc58d (UNCONDITIONAL_JUMP)  ; LAB_004cc58d

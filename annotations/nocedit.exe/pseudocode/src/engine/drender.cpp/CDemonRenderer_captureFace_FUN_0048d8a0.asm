@@ -12,7 +12,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0 at 0048d88d
 ;   engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_0048d700 at 0048d792
 ;   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 at 0048d19e
-;   engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030 at 0048b0b6
+;   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030 at 0048b0b6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0062217e

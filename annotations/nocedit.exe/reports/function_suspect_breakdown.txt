@@ -4,19 +4,19 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5750 functions
-  1 suspects: 102 functions
-  2 suspects: 168 functions
+  0 suspects: 5753 functions
+  1 suspects: 105 functions
+  2 suspects: 166 functions
   3 suspects: 93 functions
-  4 suspects: 85 functions
-  5 suspects: 49 functions
+  4 suspects: 84 functions
+  5 suspects: 47 functions
   6 suspects: 50 functions
   7 suspects: 22 functions
   8 suspects: 30 functions
   9 suspects: 9 functions
   10 suspects: 17 functions
   11 suspects: 9 functions
-  12 suspects: 11 functions
+  12 suspects: 10 functions
   13 suspects: 3 functions
   14 suspects: 8 functions
   15 suspects: 6 functions
@@ -119,7 +119,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [pointer_cast] (31 functions)
+  [pointer_cast] (32 functions)
   ------------------------------------------------------------
     core_dstrender.cpp_renderDepth16BitConditional_FUN ( 50 lines)
       psVar9 = (short *)((int)g_ScreenBufferArray[scanline_y] + uV...
@@ -163,10 +163,12 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       *(uint *)(iVar6 + (int)this_ptr->act) = uVar8 | uVar5;...
     core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbi (104 lines)
       output_buffer = (ulonglong *)((int)output_buffer + 4);...
+    engine_drender.cpp_CDemonRenderer_renderFacetList_ (120 lines)
+      *(SMRGLPrimitiveQuad **)((int)g_VisibleFacePointers + local_...
+    engine_drender.cpp_CDemonRenderer_renderFaceList_F (123 lines)
+      *(SInputFace **)((int)g_VisibleFacePointers + local_18) = fa...
     shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FU (123 lines)
       *(int *)((int)this_ptr->edges_ptr[iVar1].adjacent_tri_indice...
-    engine_drender.cpp_CDemonRenderer_renderFaceList_F (124 lines)
-      *(SInputFace **)((int)g_VisibleFacePointers + local_18) = fa...
     engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (134 lines)
       iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_ve...
     core_setedit.cpp_renderBackdropImage_FUN_0057ce80  (134 lines)
@@ -215,17 +217,21 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_setedit.cpp_CDemonSet_showEditorMenu_FUN_0058 (184 lines)
       do {...
 
-  [shadow_pointer_walk] (10 functions)
+  [shadow_pointer_walk] (12 functions)
   ------------------------------------------------------------
+    engine_drender.cpp_CDemonRenderer_renderAlphaBlend ( 36 lines)
+      pSVar3 = (SInputFace *)&(pSVar3->vertex_indices).vertex_inde...
+    engine_drender.cpp_CDemonRenderer_renderTexturedFa ( 44 lines)
+      pSVar3 = (SInputFace *)&(pSVar3->vertex_indices).vertex_inde...
     engine_pod.cpp_CPod_getNextSearchResult_FUN_00550e ( 53 lines)
       pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).f...
     core_set.cpp_CDemonSet_buildActorTypeLists_FUN_005 ( 60 lines)
       pCVar5 = (CDemonSet *)pCVar5->cameras;...
-    core_glass.cpp_CGlass_renderBackground_FUN_004e9e9 ( 65 lines)
+    core_glass.cpp_CGlass_renderBackground_FUN_004e9e9 ( 64 lines)
       pCVar3 = (CGlass *)((pCVar3->base).orient_matrix.m + 1);...
-    core_glass.cpp_CGlass_renderTransparent_FUN_004e9a ( 65 lines)
+    core_glass.cpp_CGlass_renderTransparent_FUN_004e9a ( 64 lines)
       pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
-    core_glass.cpp_CGlass_renderOpaque_FUN_004e9930    ( 67 lines)
+    core_glass.cpp_CGlass_renderOpaque_FUN_004e9930    ( 66 lines)
       pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
     core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9c ( 71 lines)
       pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);...
@@ -361,7 +367,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mirror.cpp, Lines: 31, Types: ['stack_alignment_array', 'unrolled_memcpy']
   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340
     File: core/setcolid.cpp, Lines: 32, Types: ['unrolled_memcpy']
-  engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant
+  engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0
     File: engine/drender.cpp, Lines: 33, Types: ['pointer_cast', 'shadow_pointer_walk']
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
     File: shape/quantize.cpp, Lines: 34, Types: ['unrolled_strchr', 'warning_inlined_function']
@@ -381,10 +387,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/flies.cpp, Lines: 38, Types: ['unrolled_memcpy']
   core_setedit.cpp_blitThumbnailToScreen32_FUN_00577330
     File: core/setedit.cpp, Lines: 39, Types: ['pointer_cast']
-  engine_drender.cpp_CDemonRenderer_setupCameraAndViewport_FUN
-    File: engine/drender.cpp, Lines: 40, Types: ['unrolled_memcpy']
-  engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_
-    File: engine/drender.cpp, Lines: 40, Types: ['unrolled_memcpy']
   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
     File: core/gore.cpp, Lines: 40, Types: ['stack_alignment_array', 'warning_inlined_function']
   core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FU
@@ -405,11 +407,11 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/skeledit.cpp, Lines: 44, Types: ['pointer_cast']
   core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
     File: core/dmodel.cpp, Lines: 44, Types: ['negative_offset']
-  engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0
+  engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FU
     File: engine/drender.cpp, Lines: 45, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_event.cpp_CRuleList_insert_FUN_004b1680
     File: core/event.cpp, Lines: 45, Types: ['unrolled_strcpy']
-  engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN
+  engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN
     File: engine/drender.cpp, Lines: 47, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_hero.cpp_CHero_tryInteract_FUN_004f2af0
     File: core/hero.cpp, Lines: 48, Types: ['pointer_cast']
@@ -425,7 +427,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/setutil.cpp, Lines: 51, Types: ['unrolled_memcpy']
   shape_design.c_detachFaces_FUN_0046eba0
     File: shape/design.c, Lines: 51, Types: ['unrolled_memcpy']
-  engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN
+  engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_004
     File: engine/drender.cpp, Lines: 52, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00454970
     File: core/dcube.cpp, Lines: 53, Types: ['unrolled_memcpy']

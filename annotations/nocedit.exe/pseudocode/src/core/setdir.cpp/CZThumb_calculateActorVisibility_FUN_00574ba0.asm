@@ -33,9 +33,9 @@
 ;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70
 ;   core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
+;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -236,8 +236,8 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 00574d8a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00574d90 | g_CDemonRendererInstance
     ADD ESI,0x4                         ; 00574d91
-    CALL engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50 ; 00574d94
-        ;   XREF to: 0048aa50 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50 ; 00574d94
+        ;   XREF to: 0048aa50 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 00574d99
     ADD EBX,EAX                         ; 00574d9c
     CMP ESI,EDI                         ; 00574d9e

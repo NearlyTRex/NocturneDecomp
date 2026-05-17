@@ -45,9 +45,9 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart *
                     (g_CDemonRendererPtr2,this_ptr->textures + iVar1);
           local_18 = iVar1;
         }
-        engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
+        engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
                   (g_CDemonRendererPtr2,
-                   (SMRGLHeaderPrimitive *)
+                   (SMRGLPrimitivePoly *)
                    ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
                           type + iVar3),render_flags);
         iVar4 = iVar4 + 1;

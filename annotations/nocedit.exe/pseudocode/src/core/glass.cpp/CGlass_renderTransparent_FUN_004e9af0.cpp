@@ -17,7 +17,7 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
   CVector3i *pCVar3;
   CVector3f *pCVar4;
   CGlass *pCVar5;
-  SMRGLHeaderPrimitive *prim;
+  SMRGLPrimitivePoly *poly;
   CBoundingBox3D local_24;
   int iStack_c;
   
@@ -48,9 +48,9 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
     lVar1 = (longlong)(0xffff - g_PerspectiveReciprocal) * (longlong)this_ptr->opacity;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    prim = &this_ptr->broken_quads[0].base;
+    poly = (SMRGLPrimitivePoly *)this_ptr->broken_quads;
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
-              (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->broken_polygon_count,prim,
+              (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->broken_polygon_count,poly,
                input_vertices,4,(CVector3i *)0x0);
     iVar2 = 0;
     pCVar5 = this_ptr;
@@ -62,9 +62,8 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
         iVar2 = iVar2 + 1;
         pCVar5->broken_quads[0].base.surface_normal.C.i = 0;
         pCVar5->broken_quads[0].base.surface_normal.D.i = 0;
-        engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
-                  (this_ptr_00,prim);
-        prim = prim + 3;
+        engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0(this_ptr_00,poly);
+        poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
         pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);
       } while (iVar2 < this_ptr->broken_polygon_count);
     }

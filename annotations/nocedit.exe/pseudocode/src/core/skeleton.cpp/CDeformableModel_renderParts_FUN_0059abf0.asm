@@ -12,10 +12,7 @@
 ; int              Stack[0x18]:4   skip_texture_capture
 ; Local Variables:
 ; float            Stack[-0x130]:4  local_130
-; SMRGLHeaderPrimitive Stack[-0x12c]:24  local_12c
-; uint             Stack[-0x114]:4  local_114
-; uint             Stack[-0x108]:4  local_108
-; uint             Stack[-0xfc]:4  local_fc
+; SMRGLPrimitiveTriangle Stack[-0x12c]:60  local_12c
 ; float            Stack[-0xd0]:4  local_d0
 ; byte *           Stack[-0xcc]:4  local_cc
 ; int              Stack[-0xc8]:4  local_c8
@@ -91,7 +88,7 @@
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
+;   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
 ;
@@ -597,8 +594,8 @@ section .text
     PUSH EAX                            ; 0059b379
     MOV EDX,dword ptr [0x006703ec]      ; 0059b37a | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0059b380 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0 ; 0059b381
-        ;   XREF to: 0048a8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0 ; 0059b381
+        ;   XREF to: 0048a8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 0059b386
     MOV ECX,dword ptr [ESP + 0xec]      ; 0059b389
     ADD ECX,0x12                        ; 0059b390

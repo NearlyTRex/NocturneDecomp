@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0 at 0048a909
 ;   engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 at 0048a882
+;   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0 at 0048a909
 ;
 ; Referenced Globals:
 ;   void*[1200] g_ScreenBufferArray

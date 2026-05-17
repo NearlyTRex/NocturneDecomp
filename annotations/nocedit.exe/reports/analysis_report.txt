@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5757 (89.2%)
-Functions with suspects: 697 (10.8%)
+Clean functions: 5760 (89.2%)
+Functions with suspects: 694 (10.8%)
 
-Total suspect patterns: 3813
+Total suspect patterns: 3786
 Average suspects per function: 0.59
 
 Virtual files: 214 total, 148 at 100%, 148 at 90%+
@@ -18,7 +18,7 @@ Virtual files: 214 total, 148 at 100%, 148 at 90%+
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 54.4
+Average complexity score: 54.3
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,8 +28,8 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1620
-  unrolled_memcpy           919
+  pointer_cast              1609
+  unrolled_memcpy           903
   unrolled_strcpy           286
   shadow_pointer_walk       173
   missing_cave_copy         170
@@ -107,7 +107,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5707 more
+  ... and 5710 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -145,7 +145,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (365 functions):
+  pointer_cast (363 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
@@ -156,9 +156,9 @@ FUNCTIONS BY SUSPECT TYPE
     00403430: engine_2d.c_mapFrameBuffer_FUN_00403430
     00401900: engine_2d.c_drawCharacterMasked_FUN_00401900
     00401140: engine_2d.c_plotPixel_FUN_00401140
-    ... and 355 more
+    ... and 353 more
 
-  unrolled_memcpy (309 functions):
+  unrolled_memcpy (306 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -168,8 +168,8 @@ FUNCTIONS BY SUSPECT TYPE
     00407d70: engine_3d.c_clipAndDrawLine2D_FUN_00407d70
     00407470: engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
     00408070: engine_3d.c_clipAndDrawLine3D_FUN_00408070
-    0048dcc0: engine_drender.cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0
-    ... and 299 more
+    004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
+    ... and 296 more
 
   unrolled_strcpy (114 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0

@@ -24,7 +24,7 @@
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
+;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;
 ; *****************************************************************************
@@ -162,8 +162,8 @@ section .text
     PUSH ECX                            ; 004e9c5b | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x6c0],0x0     ; 004e9c5c
     ADD EBX,0x48                        ; 004e9c66
-    CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 ; 004e9c69
-        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0 ; 004e9c69
+        ;   XREF to: 0048bdc0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD EDI,0x48                        ; 004e9c6e
     MOV EAX,dword ptr [EBP + 0xb38]     ; 004e9c71
     ADD ESP,0x8                         ; 004e9c77

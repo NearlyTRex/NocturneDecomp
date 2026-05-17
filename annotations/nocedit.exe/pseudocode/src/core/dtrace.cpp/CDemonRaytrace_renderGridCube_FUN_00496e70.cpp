@@ -92,38 +92,38 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRa
   local_dc.vertices[2].vertex_index = 1;
   local_dc.vertices[0].vertex_index = 4;
   local_dc.vertices[1].vertex_index = 5;
-  engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc.base);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+            (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&local_dc);
   local_dc.vertices[3].vertex_index = 2;
   local_dc.vertices[2].vertex_index = 3;
   local_dc.vertices[1].vertex_index = 7;
   local_dc.vertices[0].vertex_index = 6;
-  engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc.base);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+            (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&local_dc);
   local_dc.vertices[1].vertex_index = 7;
   local_dc.vertices[3].vertex_index = 0;
   local_dc.vertices[2].vertex_index = 4;
   local_dc.vertices[0].vertex_index = 3;
-  engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc.base);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+            (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&local_dc);
   local_dc.vertices[3].vertex_index = 1;
   local_dc.vertices[2].vertex_index = 2;
   local_dc.vertices[1].vertex_index = 6;
   local_dc.vertices[0].vertex_index = 5;
-  engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc.base);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+            (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&local_dc);
   local_dc.vertices[1].vertex_index = 6;
   local_dc.vertices[3].vertex_index = 4;
   local_dc.vertices[2].vertex_index = 5;
   local_dc.vertices[0].vertex_index = 7;
-  engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc.base);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+            (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&local_dc);
   local_dc.vertices[2].vertex_index = 2;
   local_dc.vertices[1].vertex_index = 1;
   local_dc.vertices[3].vertex_index = 3;
   local_dc.vertices[0].vertex_index = 0;
-  engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc.base);
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0
+            (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)&local_dc);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   return;
 }
