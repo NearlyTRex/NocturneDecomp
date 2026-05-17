@@ -132,16 +132,16 @@ LAB_00531a14:
     if ((local_14 <= uVar2) || (0x23f < (int)uVar9)) break;
     sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_0052f350
               (this_ptr,local_28,&local_48,&local_44,&local_40,&local_3c);
-    quantized_dest->samples[(int)uVar9 / 0x12][(int)uVar9 % 0x12] = local_40;
-    quantized_dest->samples[iVar7 / 0x12][iVar7 % 0x12] = local_3c;
-    quantized_dest->samples[iVar11 / 0x12][iVar11 % 0x12] = local_48;
+    if ((int)uVar9 < 0x240) quantized_dest->samples[(int)uVar9 / 0x12][(int)uVar9 % 0x12] = local_40;
+    if (iVar7 < 0x240) quantized_dest->samples[iVar7 / 0x12][iVar7 % 0x12] = local_3c;
+    if (iVar11 < 0x240) quantized_dest->samples[iVar11 / 0x12][iVar11 % 0x12] = local_48;
     iVar3 = iVar12 / 0x12;
     iVar5 = iVar12 % 0x12;
     uVar9 = uVar9 + 4;
     iVar7 = iVar7 + 4;
     iVar11 = iVar11 + 4;
     iVar12 = iVar12 + 4;
-    quantized_dest->samples[iVar3][iVar5] = local_44;
+    if (iVar3 < 0x20) quantized_dest->samples[iVar3][iVar5] = local_44;
   }
   sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(this_ptr);
   iVar12 = side_info->channels[channel].granules[granule].part_2_3_length;

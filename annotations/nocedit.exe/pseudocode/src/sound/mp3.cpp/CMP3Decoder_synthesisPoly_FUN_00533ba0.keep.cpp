@@ -27,13 +27,11 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *t
   iVar3 = 0;
   pafVar3 = this_ptr->synthesis_history[channel] + subband_index;
   do {
-    pafVar3 = (float (*) [18])(*pafVar3 + 1);
     iVar2 = iVar3 + 1;
-    *output_buffer = local_94[iVar3] + (*pafVar3)[0];
-    (*pafVar3)[0] = local_94[iVar3 + 0x12];
+    *output_buffer = local_94[iVar3] + (*pafVar3)[iVar3];
+    (*pafVar3)[iVar3] = local_94[iVar3 + 0x12];
     iVar3 = iVar2;
     output_buffer = output_buffer + 1;
-    pafVar3 = pafVar3;
   } while (iVar2 < 0x12);
   return;
 }

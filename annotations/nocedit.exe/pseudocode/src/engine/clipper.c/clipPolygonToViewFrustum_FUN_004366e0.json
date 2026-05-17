@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1036,
-    "complexity_score": 616,
+    "complexity_score": 581,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 68,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 581,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1617
   },
   "cross_references": [
@@ -715,6 +713,24 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 151,
+      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 8));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 400,
       "match": "(longlong **)((int)auStack_150",
       "resolution_source": "keep",
@@ -784,6 +800,15 @@
       "severity": "mild",
       "text": "lVar3._4_4_ = (pSVar19->projected_vertex).transformed_y;",
       "type": "unknown_field"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 428,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar17` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar17->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
@@ -1013,7 +1038,7 @@
         {
           "check_id": "arrayIndexOutOfBoundsCond",
           "column": 45,
-          "line": 159,
+          "line": 158,
           "message": "Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.",
           "severity": "warning"
         }
@@ -1024,32 +1049,8 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 150,
-      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
-      "severity": "moderate",
-      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 151,
-      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
-      "severity": "moderate",
-      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 8));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 428,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.",
-      "line": 159,
+      "line": 158,
       "match": "Cppcheck: array index OOB depending on condition",
       "severity": "moderate",
       "text": "pSVar11 = (SRenderVertex *)auStack_150[vertex_count];",

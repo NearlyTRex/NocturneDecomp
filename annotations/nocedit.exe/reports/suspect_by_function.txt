@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5728 (88.8%)
-With suspects: 726
-Total suspects: 3818
+Clean: 5729 (88.8%)
+With suspects: 725
+Total suspects: 3813
 
 ====================================================================================================
 core_bugs.cpp_CBugs_ctor_FUN_00424cb0 (3 suspects)
@@ -1883,13 +1883,6 @@ core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880 (5 suspects)
   Line 10 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[1]].v = 0xf80000;
   Line 12 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[0]].v = 0xf80000;
   Line 15 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[2]].u = 0xf80000;
-
-====================================================================================================
-core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef490 (2 suspects)
-  File: core/ground.cpp
-====================================================================================================
-  Line 87 [pointer_cast]: iVar1 = *(int *)((int)local_6c + iVar4) / iVar8;
-  Line 88 [pointer_cast]: iVar2 = *(int *)((int)local_6c + iVar4 + 8) / iVar8;
 
 ====================================================================================================
 core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 (2 suspects)
@@ -5203,13 +5196,10 @@ engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0 (2 suspects)
   Line 408 [pointer_cast]: *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar7 + 8));
 
 ====================================================================================================
-engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0 (4 suspects)
+engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0 (1 suspect)
   File: engine/clipper.c
 ====================================================================================================
-  Line 150 [pointer_cast]: *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 4),
-  Line 151 [pointer_cast]: *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 8));
-  Line 159 [static_array_oob_cond]: pSVar11 = (SRenderVertex *)auStack_150[vertex_count];
-  Line 428 [pointer_cast]: iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +
+  Line 158 [static_array_oob_cond]: pSVar11 = (SRenderVertex *)auStack_150[vertex_count];
 
 ====================================================================================================
 engine_clipper.c_clipPolygonToViewport_FUN_00438420 (2 suspects)

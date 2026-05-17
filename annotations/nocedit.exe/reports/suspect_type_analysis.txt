@@ -4,7 +4,7 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1625 ( 42.6%)
+  pointer_cast                    1620 ( 42.5%)
   unrolled_memcpy                  919 ( 24.1%)
   unrolled_strcpy                  286 (  7.5%)
   shadow_pointer_walk              173 (  4.5%)
@@ -32,11 +32,11 @@ SUSPECT TYPE COUNTS
   static_array_oob_cond              3 (  0.1%)
 
 ====================================================================================================
-TYPE: pointer_cast (1625 occurrences)
+TYPE: pointer_cast (1620 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   645x  (int)&NAME used in byte-offset arithmetic
+   644x  (int)&NAME used in byte-offset arithmetic
     42x  (int *)((int)this_ptr
     32x  (uint *)((int)this_ptr
     31x  (int *)((int)g_ScreenBufferArray
@@ -130,7 +130,6 @@ Functions:
   core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0
   core_ground.cpp_CGround_load_FUN_004ef030
   core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880
-  core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef490
   core_hero.cpp_CHero_dtor_FUN_004f2470
   core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0
   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0
@@ -283,7 +282,6 @@ Functions:
   engine_alphabit.cpp_copyBytes_FUN_00410d20
   engine_clipper.c_clipPolygonNearPlane_FUN_00436420
   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
   engine_clipper.c_clipPolygonToViewport_FUN_00438420
   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
   engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950

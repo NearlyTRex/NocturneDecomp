@@ -18,7 +18,6 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuan
   int iVar7;
   int iVar8;
   float10 fVar5;
-  float10 base;
   float10 fVar6;
   float10 fVar9;
   float10 fVar7;
@@ -55,14 +54,9 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuan
       g_MpegRequantPowerTable[iVar3] = (double)fVar5;
       iVar3 = iVar3 + 1;
     } while (iVar3 < 200);
-    base = (float10)2;
-    fVar7 = (float10)0.25;
     iVar4 = 0;
     do {
-      fVar5 = (float10)-iVar4 * fVar7;
-      fVar6 = pow(base,(float10)-iVar4 * fVar7);
-      base = fVar7;
-      fVar7 = fVar5;
+      fVar6 = pow((float10)2, (float10)-iVar4 * (float10)0.25);
       g_MpegRequantGainTable[iVar4] = (double)fVar6;
       iVar4 = iVar4 + 1;
     } while (iVar4 < 200);

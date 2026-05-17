@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 146
-  Total diagnostics: 408
+  Functions with findings: 145
+  Total diagnostics: 407
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 146, raw .cpp files: 0
+  .keep.cpp files: 145, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -1004,7 +1004,7 @@ engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290  [.keep] [Cppch
 engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0  [.keep] [Cppcheck (quick)]
   File: engine/clipper.c  (1 diagnostics)
 
-  Line  159: [arrayIndexOutOfBoundsCond] Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
+  Line  158: [arrayIndexOutOfBoundsCond] Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60  [.keep] [Cppcheck (quick)]
@@ -1109,12 +1109,6 @@ sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20  [.keep] [Cppcheck
   Line  120: [selfAssignment] Redundant assignment of 'piVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0  [.keep] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (1 diagnostics)
-
-  Line   36: [selfAssignment] Redundant assignment of 'pafVar3' to itself.
-
-----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_00533f80  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
@@ -1130,7 +1124,7 @@ sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30  [.keep] [Cppcheck (quick)]
 sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
-  Line  138: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  132: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660  [.keep] [Cppcheck (quick)]

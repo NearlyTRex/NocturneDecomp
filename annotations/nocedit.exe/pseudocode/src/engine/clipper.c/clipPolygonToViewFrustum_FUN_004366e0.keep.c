@@ -32,7 +32,6 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
   bool bVar21;
   char local_24c [252];
   SRenderVertex *auStack_150 [32];
-  SRenderVertex *uStack_d0;
   SRenderVertex *local_cc [32];
   int local_4c;
   int local_48;
@@ -120,8 +119,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
             do {
               iVar9 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
                                 (g_ClipperCullingPointers[0],
-                                 *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 4),
-                                 *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 8));
+                                 g_ClipperCullingPointers[iVar10 / 4 + 1],
+                                 g_ClipperCullingPointers[iVar10 / 4 + 2]);
               if (iVar9 == 0) {
                 iVar16 = iVar16 + 1;
               }
@@ -209,7 +208,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
       iVar10 = 0;
       local_40 = iVar7;
       local_3c = 0;
-      pSVar11 = (SRenderVertex *)(&uStack_d0)[iVar7];
+      pSVar11 = (SRenderVertex *)local_cc[iVar7 - 1];
       puVar5 = local_cc;
       if (0 < iVar7) {
         do {
@@ -277,7 +276,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
             switch(bVar6) {
             case 0:
               iVar7 = iVar7 + 1;
-              (&uStack_d0)[iVar7] = pSVar11;
+              local_cc[iVar7 - 1] = pSVar11;
               break;
             case 1:
               if (0xb < g_ClipperTempCount) {
@@ -288,11 +287,11 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
               pSVar16 = g_ClipperTempBuffer + g_ClipperTempCount;
               iVar7 = iVar7 + 1;
               g_ClipperTempCount = g_ClipperTempCount + 1;
-              (&uStack_d0)[iVar7] = pSVar16;
+              local_cc[iVar7 - 1] = pSVar16;
               engine_clipper_c_interpolateVertexBottomClip_FUN_00435c00(pSVar15,pSVar11,pSVar16);
               break;
             case 2:
-              (&uStack_d0)[iVar7 + 1] = pSVar11;
+              local_cc[iVar7] = pSVar11;
               if (0xb < g_ClipperTempCount) {
                 g_CurrentFilename = "..\\engine\\clipper.c";
                 g_CurrentLineNumber = 0x5e;
@@ -301,7 +300,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
               pSVar16 = g_ClipperTempBuffer + g_ClipperTempCount;
               iVar7 = iVar7 + 2;
               g_ClipperTempCount = g_ClipperTempCount + 1;
-              (&uStack_d0)[iVar7] = pSVar16;
+              local_cc[iVar7 - 1] = pSVar16;
               engine_clipper_c_interpolateVertexBottomClip_FUN_00435c00(pSVar11,pSVar15,pSVar16);
             }
             local_34 = local_34 + 1;
@@ -315,7 +314,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
           iVar10 = 0;
           local_30 = iVar7;
           local_2c = 0;
-          pSVar11 = (SRenderVertex *)(&uStack_d0)[iVar7];
+          pSVar11 = (SRenderVertex *)local_cc[iVar7 - 1];
           puVar5 = local_cc;
           if (0 < iVar7) {
             do {
@@ -380,8 +379,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
               if (0 < g_ClippedVertexCount) {
                 iVar10 = 0;
                 do {
-                  iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +
-                                   iVar10);
+                  iVar12 = g_ClippedVertexBuffer[iVar10 / 0x30].projected_vertex.transformed_z;
                   if (iVar7 < iVar12) {
                     iVar7 = iVar12;
                   }

@@ -113,6 +113,7 @@ When you are editing a `.keep` for any reason — creating one for a compile err
 - `sibling_array_undersized` — Ghidra-split array detected via sibling-size mismatch. Same function has two-or-more arrays of the same struct type but the flagged one is sized smaller than its peers (e.g. `CQuaternion4f local_186c[95]` alongside `local_122c[100]` and `local_bec[100]`). Latent runtime bug: the asm drives all three arrays from one loop bound (per-bone, per-vertex, etc.), so writes overrun the smaller declaration and trip ASan as `stack-buffer-overflow`. Cross-check the asm for the actual loop bound and resize the undersized array in a `.keep` to match its siblings. The detector skips primitive-typed arrays (`char`/`int`/`float`/etc.) since size variation there is usually intentional.
 - `self_copy_guard` — §23 (Dead self-copy guard). `if (&LOCAL_A != &LOCAL_B) { LOCAL_A = LOCAL_B; ... }` where both sides are bare addresses of stack locals. The guard never skips (different stack slots) and just adds visual noise around an unconditional struct copy; drop the if-wrapper in a `.keep`.
 - `shadow_pointer_walk` — §24 (Shadow-pointer walk via struct-field byte arithmetic). `pCVar = (T *)((pCVar->some_field).some_array[N] + CONST);` where the chosen field/index/constant sum to one element-size step. Watcom's lowering of a shadow pointer that gets advanced by `sizeof(element)` per iteration so `shadow->arr[0]` resolves to `original->arr[i]`. Replace with direct array indexing on the original pointer; the shadow-pointer local typically becomes unused.
+- `loop_clobbered_constant` — §25 (Loop-clobbered constant). A do/while body reassigns a variable that was initialized to a literal constant before the loop, via an adjacent swap-chain `A = B; B = C;` where `A` is also read elsewhere in the body as a math arg. Ghidra register-spill artifact — the compiler kept the "constant" in a register and Ghidra emitted the spill stores as reassignments to other locals, breaking the loop's math after iter 0. Canonical example: the `requantizeLayer3Samples` gain-table init where `pow(base, ...)` returned `1` for every entry because `base` got clobbered to `0.25` and `fVar7` (the exponent step) to `0` on iteration 0. Fix: drop the swap-chain lines in a `.keep` so the loop runs with its original literal constants.
 
 **Ineligible for `.keep` cleanup — fix upstream in Ghidra instead:** structural suspects like `decompilation_failed`, stack/ESP anchor mismatches, `warning_*` (bad spacebase, unmapped variables, type propagation). See "Prefer Ghidra Fixes Over Code Fixes."
 
@@ -743,6 +744,51 @@ do {
 
 **Eligibility:** `.keep`-layer fix. The `shadow_pointer_walk` suspect type flags the self-update line. Replacing the shadow-walk with direct indexing typically renders the shadow-pointer local unused — drop its declaration in the same edit.
 
+### 25. Loop-clobbered constant (Ghidra register-spill artifact)
+
+**Cause:** Watcom kept loop-invariant math constants in registers across iterations of a numeric init loop. Ghidra modeled the register-spill stores as reassignments to other local variables inside the loop body, which silently breaks the loop's math after iteration 0 — every subsequent iteration computes with the wrong values.
+
+**Canonical example (the `requantizeLayer3Samples` gain-table bug):**
+
+```c
+base = (float10)2;
+fVar7 = (float10)0.25;
+iVar4 = 0;
+do {
+    fVar5 = (float10)-iVar4 * fVar7;
+    fVar6 = pow(base, (float10)-iVar4 * fVar7);   // base used as math base
+    base = fVar7;            // <-- swap chain: base becomes 0.25
+    fVar7 = fVar5;           // <-- swap chain: fVar7 becomes 0
+    g_MpegRequantGainTable[iVar4] = (double)fVar6;
+    iVar4 = iVar4 + 1;
+} while (iVar4 < 200);
+```
+
+After iteration 0: `base = 0.25`, `fVar7 = 0`. Every subsequent `pow(0.25, 0) = 1`, so the table fills with 1.0 across the board instead of the intended `pow(2, -i/4)` falloff. With `g_MpegRequantGainTable[i] = 1` for all `i`, the MP3 requantization formula loses its gain-attenuation step — samples come out 10-100× too loud and saturate to ±32767 in the synthesis filterbank.
+
+**Symptoms:** A `do { ... } while (...)` loop body contains:
+1. Adjacent simple-identifier assignments `A = B;` then `B = C;` with `A`, `B`, `C` all distinct (the swap chain).
+2. `A` is also read elsewhere in the same loop body as a math arg (e.g. inside `pow(A, ...)`, `A * x`).
+3. Before the loop, `A` was assigned a literal constant (optionally cast): `A = (float10)2;`, `A = 0.5f;`, `A = 0x1FC00000;`.
+
+**Diagnosis:** the swap chain inside a numeric loop is the smoking gun. Linked-list traversal (`prev = curr; curr = curr->next;`) and array element swap (`arr[i] = arr[j]; arr[j] = tmp;`) don't match because the RHS isn't a bare identifier or the pre-loop literal init isn't there.
+
+**Fix:** drop the swap-chain lines in a `.keep` so the loop runs with its original constants. The variables that were being "swapped into" (`base`/`fVar7` in the example) are pure spill scratch — removing the writes is safe.
+
+```c
+// FIXED:
+iVar4 = 0;
+do {
+    fVar6 = pow((float10)2, (float10)-iVar4 * (float10)0.25);
+    g_MpegRequantGainTable[iVar4] = (double)fVar6;
+    iVar4 = iVar4 + 1;
+} while (iVar4 < 200);
+```
+
+The intermediate locals (`base`, `fVar7`, `fVar5`) become unused and should be dropped from the declarations.
+
+**Eligibility:** `.keep`-layer fix. The `loop_clobbered_constant` suspect flags the swap-chain line; the detector requires the full signature (do-loop + adjacent swap chain + math read of `A` + pre-loop literal init) so false positives on legitimate swaps/traversals are unlikely.
+
 ## Workflow
 
 1. **Check for a `.chunked.cpp` file** (same base name, `.chunked.cpp` extension). If one exists, read it first — it splits the function into a context struct and small static helper functions, making it much easier to understand and fix large functions. Use it as a reference to understand which chunk each error falls in, but the `.keep` file is still based on the original `.cpp`.
@@ -782,7 +828,34 @@ This is purely a comprehension aid — the `.keep` file is still based on the or
 
 When a `.keep` compiles cleanly but the program **misbehaves at runtime** — hangs, traps a sanitizer, renders nothing, leaks NaN through animation — you need a live gdb session. The build provides `debug.sh --tmux` so an agent can drive gdb via `tmux send-keys` while the user watches in another terminal.
 
-### Launching
+### Use `scripts/Bash/dbg.sh` for agent-driven workflows
+
+`scripts/Bash/dbg.sh` is a thin wrapper around `debug.sh --tmux` that hides the tmux/gdb plumbing behind subcommands. **Prefer it for any agent-driven session** — it cuts the per-step token cost (one short command instead of three `tmux send-keys` lines + a `capture-pane`) and standardizes the log location so probe output is always at `/tmp/nocturne_dbg.log`.
+
+```bash
+scripts/Bash/dbg.sh build              # ninja build, re-globs new .keep files
+scripts/Bash/dbg.sh start              # launch in tmux 'nodebug', paused at gdb
+scripts/Bash/dbg.sh cont               # resume (game runs freely)
+scripts/Bash/dbg.sh restart            # stop + start (preserves log)
+scripts/Bash/dbg.sh probe path.gdb     # pause → source <file> → resume
+scripts/Bash/dbg.sh cmd 'p g_FooBar'   # one-shot gdb cmd; output → stdout
+scripts/Bash/dbg.sh log [N]            # tail N lines of probe log (default 50)
+scripts/Bash/dbg.sh log-full           # whole probe log
+scripts/Bash/dbg.sh clear              # wipe probe log
+scripts/Bash/dbg.sh pause              # Ctrl-C to gdb
+scripts/Bash/dbg.sh status             # pane snapshot + log size
+scripts/Bash/dbg.sh stop               # kill session
+scripts/Bash/dbg.sh attach             # exec into tmux attach (interactive)
+```
+
+**Probe-file conventions when using `dbg.sh probe`:**
+- Write breakpoints with `commands ... silent ... printf ... cont ... end`. Probe printfs land in `/tmp/nocturne_dbg.log` automatically.
+- Do **not** call `set logging ...` from inside the probe — `dbg.sh start` already configures logging (redirect off so output appears in both the tmux pane and the log file).
+- Use `dbg.sh cmd` for one-shot inspection (`p VAR`, `bt`, `x/8w ADDR`); it captures output between marker printfs so you don't need to grep through unrelated probe lines.
+
+Fall back to the raw `debug.sh --tmux` plus manual `tmux send-keys` flow below only when you need something the wrapper doesn't expose — e.g. multiline gdb input that the `cmd` marker trick can't handle, or interactive use without log redirection.
+
+### Launching (raw debug.sh)
 
 ```bash
 # Default — gdb stays interactive in current terminal

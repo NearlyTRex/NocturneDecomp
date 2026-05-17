@@ -302,6 +302,15 @@
       "severity": "moderate",
       "text": "local_6c = (float *)((int)local_6c + 0x12);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Loop body reassigns `base` (initialized to a literal constant before the loop) via swap-chain `base = fVar7; fVar7 = fVar5;`, corrupting the loop's math after iter 0. Ghidra register-spill artifact \u2014 drop the swap-chain lines in a .keep so the loop runs with its original constants.",
+      "line": 64,
+      "match": "do { ...A used in math...; A = B; B = C; ...} with pre-loop `A = <literal>;`",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "base = fVar7;",
+      "type": "loop_clobbered_constant"
     }
   ],
   "stack_frame": {
@@ -471,7 +480,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 27,
-          "line": 138,
+          "line": 132,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }

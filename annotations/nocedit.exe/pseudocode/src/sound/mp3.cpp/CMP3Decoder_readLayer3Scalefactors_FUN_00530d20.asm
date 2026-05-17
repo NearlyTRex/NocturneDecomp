@@ -34,8 +34,8 @@
 ;   int[3] g_Layer3ShortBandGroupCounts
 ;   undefined4 g_Layer3ShortBandGroupCounts[1]
 ;   undefined4 g_Layer3ShortBandGroupCounts[2]
-;   int[16] g_Layer3ScalefacLengths1
-;   int[16] g_Layer3ScalefacLengths2
+;   int[2][16] g_Layer3ScalefacLengths
+;   undefined4 g_Layer3ScalefacLengths[1][0]
 ;
 ; Called Functions:
 ;   sound_mp3.cpp_CMP3Decoder_readBits_FUN_0052f170
@@ -114,7 +114,7 @@ section .text
     MOV EDX,EAX                         ; 00530deb
     SHL EDX,0x6                         ; 00530ded
     MOV EAX,dword ptr [ESI + 0xc]       ; 00530df0
-    MOV ECX,dword ptr [EDX + EAX*0x4 + 0x67e648] ; 00530df3 | g_Layer3ScalefacLengths1
+    MOV ECX,dword ptr [EDX + EAX*0x4 + 0x67e648] ; 00530df3 | g_Layer3ScalefacLengths
     PUSH ECX                            ; 00530dfa
     PUSH EDI                            ; 00530dfb
     CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_0052f170 ; 00530dfc
@@ -170,7 +170,7 @@ section .text
     ADD EBP,0x20                        ; 00530e83
     MOV EAX,dword ptr [ESI + 0xc]       ; 00530e86
         ;   Label: LAB_00530e86
-    MOV EDX,dword ptr [EAX*0x4 + 0x67e648] ; 00530e89 | g_Layer3ScalefacLengths1
+    MOV EDX,dword ptr [EAX*0x4 + 0x67e648] ; 00530e89 | g_Layer3ScalefacLengths
     PUSH EDX                            ; 00530e90
     PUSH EDI                            ; 00530e91
     ADD EBX,0x4                         ; 00530e92
@@ -204,7 +204,7 @@ section .text
     ADD EBX,EAX                         ; 00530ee7
     MOV EAX,dword ptr [ESI + 0xc]       ; 00530ee9
         ;   Label: LAB_00530ee9
-    MOV EDX,dword ptr [EAX*0x4 + 0x67e648] ; 00530eec | g_Layer3ScalefacLengths1
+    MOV EDX,dword ptr [EAX*0x4 + 0x67e648] ; 00530eec | g_Layer3ScalefacLengths
     PUSH EDX                            ; 00530ef3
     PUSH EDI                            ; 00530ef4
     ADD EBX,0x34                        ; 00530ef5
@@ -247,7 +247,7 @@ section .text
     ADD EBX,ECX                         ; 00530f64
     MOV EAX,dword ptr [ESI + 0xc]       ; 00530f66
         ;   Label: LAB_00530f66
-    MOV EDX,dword ptr [EAX*0x4 + 0x67e688] ; 00530f69 | g_Layer3ScalefacLengths2
+    MOV EDX,dword ptr [EAX*0x4 + 0x67e688] ; 00530f69 | g_Layer3ScalefacLengths[1][0]
     PUSH EDX                            ; 00530f70
     PUSH EDI                            ; 00530f71
     ADD EBX,0x34                        ; 00530f72
@@ -322,7 +322,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x50]      ; 00531036
     SHL EAX,0x2                         ; 0053103a
     ADD EAX,EDX                         ; 0053103d
-    MOV ECX,dword ptr [EAX + 0x67e648]  ; 0053103f | g_Layer3ScalefacLengths1
+    MOV ECX,dword ptr [EAX + 0x67e648]  ; 0053103f | g_Layer3ScalefacLengths
     PUSH ECX                            ; 00531045
     PUSH EDI                            ; 00531046
     ADD EBX,0x34                        ; 00531047

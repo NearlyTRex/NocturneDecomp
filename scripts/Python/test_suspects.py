@@ -113,6 +113,7 @@ def run_detectors(susp, code):
     found.extend(susp.identify_unrolled_strcat_loops(code))
     found.extend(susp.identify_unrolled_strchr_loops(code))
     found.extend(susp.identify_preinc_loop_idiom(code))
+    found.extend(susp.identify_loop_clobbered_constant(code))
     found.extend(susp.identify_fast_sqrt_inline(code))
     return found
 

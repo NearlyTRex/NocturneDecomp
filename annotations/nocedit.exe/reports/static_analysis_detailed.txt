@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (408 diagnostics)
+Cppcheck (quick) (407 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -396,7 +396,7 @@ shiftTooManyBitsSigned (108)
     File: shape/quantize.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50 line 138
+  sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50 line 132
     File: sound/mp3.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -721,7 +721,7 @@ uninitvar (68)
     Uninitialized variable: local_288
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (64)
+selfAssignment (63)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -975,10 +975,6 @@ selfAssignment (64)
   sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_F line 120
     File: sound/mp3.cpp
     Redundant assignment of 'piVar3' to itself.
-
-  sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533b line 36
-    File: sound/mp3.cpp
-    Redundant assignment of 'pafVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
 invalidscanf (59)
@@ -1648,7 +1644,7 @@ arrayIndexOutOfBoundsCond (3)
     File: core/gabriela.cpp
     Either the condition 'local_28!=3' is redundant or the array 'local_bc[3]' is accessed at index 11, which is out of bounds.
 
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 159
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 158
     File: engine/clipper.c
     Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
 

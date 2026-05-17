@@ -348,12 +348,11 @@ extern int g_MpegSynthesisTableInitialized;
 extern int g_Mp3AntiAliasInitialized;
 extern int g_Mp3SynthesisTablesInitialized;
 
-// int[16]
-extern int g_Layer3ScalefacLengths1[16];
-extern int g_Layer3ScalefacLengths2[16];
-
 // int[22]
 extern int g_Layer3Pretab[22];
+
+// int[2][16]
+extern int g_Layer3ScalefacLengths[2][16];
 
 // int[2][3][15]
 extern int g_MpegBitrateTable[2][3][15];

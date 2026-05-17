@@ -91,6 +91,7 @@ SUSPECT_SEVERITY = {
     'shadow_pointer_walk': 'moderate',
     'memcpy_oversized_source': 'moderate',
     'dropped_loop_counter': 'moderate',
+    'loop_clobbered_constant': 'moderate',
 }
 
 
@@ -3294,6 +3295,159 @@ def identify_preinc_loop_idiom(decompiled_code):
     return suspects
 
 
+# Loop-clobbered constant: a do/while loop body reassigns variables that were
+# initialized to literal constants before the loop, breaking the loop's own
+# math after iteration 0. Ghidra register-spill decompile artifact — the
+# compiler kept the "constant" in a register and Ghidra emitted the spill
+# stores as reassignments to other locals.
+#
+# Canonical shape (the requantizeLayer3Samples gain-table init bug):
+#     base = (float10)2;            // pre-loop init to literal
+#     fVar7 = (float10)0.25;
+#     iVar4 = 0;
+#     do {
+#         fVar5 = (float10)-iVar4 * fVar7;
+#         fVar6 = pow(base, (float10)-iVar4 * fVar7);   // base read as math arg
+#         base = fVar7;             // <-- swap chain: base clobbered
+#         fVar7 = fVar5;            // <-- swap chain: fVar7 clobbered
+#         g_MpegRequantGainTable[iVar4] = (double)fVar6;
+#         iVar4 = iVar4 + 1;
+#     } while (iVar4 < 200);
+#
+# After iter 0, base==0.25 and fVar7==0, so `pow(0, 0) = 1` for every
+# subsequent iter — the table fills with 1s instead of pow(2, -i*0.25).
+# The fix is to drop the swap-chain lines (they're spill artifacts) and let
+# the loop run with the original constants.
+#
+# Detector requires the whole signature, not just a swap chain:
+# - `do {` loop
+# - Two adjacent simple-identifier assignments inside the body of the form
+#   `A = B;` then `B = C;` with A, B, C all distinct.
+# - `A` is also READ elsewhere in the body (in a non-LHS context like
+#   `pow(A, ...)` or `A * x`).
+# - Before the loop, `A` was initialized to a literal constant (optionally
+#   cast), e.g. `A = (float10)2;` or `A = 0.5;` or `A = 0x1FC00000;`.
+#
+# Linked-list traversal (`prev = curr; curr = curr->next;`) and array swap
+# (`arr[i] = arr[j]; arr[j] = tmp;`) don't match because the RHS isn't a
+# bare identifier or the pre-loop literal init isn't there.
+
+_LCC_DO_RE = re.compile(r"^\s*do\s*\{?\s*$")
+_LCC_SIMPLE_ASSIGN_RE = re.compile(r"^\s*(\w+)\s*=\s*(\w+)\s*;\s*$")
+# Numeric literal — int, float, hex — with optional cast and unary minus.
+_LCC_LITERAL_INIT_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*"
+    # optional cast: `(float10)`, `(int)`, `(unsigned long)`, etc.
+    r"(?:\(\s*[\w\s\*]+\s*\)\s*)?"
+    # optional unary minus
+    r"-?\s*"
+    # numeric literal
+    r"(?:0[xX][\da-fA-F]+|\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?|\.\d+(?:[eE][+\-]?\d+)?)"
+    r"[lLfFuU]*\s*;\s*$"
+)
+
+
+def identify_loop_clobbered_constant(decompiled_code):
+    """Detect loops that reassign their own pre-loop-init math constants.
+
+    Ghidra register-spill artifact in numeric init loops: a variable
+    initialized to a literal constant before the loop gets reassigned
+    inside the loop body via a swap-chain, breaking the loop's math after
+    iteration 0. Canonical example is the `requantizeLayer3Samples`
+    gain-table init where `base = (float10)2` got clobbered to 0.25 inside
+    the loop, making `pow(base, ...)` return 1 for every entry.
+
+    Detection requires all four signals together (see header comment):
+    do-loop, adjacent simple-identifier swap chain `A = B; B = C;` with
+    distinct identifiers, `A` read elsewhere in the body, and `A`
+    initialized to a literal constant before the loop. This combination
+    is highly specific to the spill artifact — linked-list traversal and
+    array swaps don't match.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, located at the swap-chain `A = B;` line.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    for i in range(n):
+        if not _LCC_DO_RE.match(lines[i]):
+            continue
+        # Collect body lines up to matching close brace, capped to keep
+        # false-positive risk low on huge loops.
+        body_lines = []
+        depth = 1
+        body_start = i + 1
+        for j in range(body_start, min(body_start + 80, n)):
+            body_lines.append(lines[j])
+            depth += lines[j].count("{") - lines[j].count("}")
+            if depth <= 0:
+                break
+
+        # Scan for swap-chain pair: `A = B;` immediately followed by `B = C;`
+        # with A, B, C all distinct simple identifiers.
+        for k in range(len(body_lines) - 1):
+            m1 = _LCC_SIMPLE_ASSIGN_RE.match(body_lines[k])
+            m2 = _LCC_SIMPLE_ASSIGN_RE.match(body_lines[k + 1])
+            if not (m1 and m2):
+                continue
+            a, b1 = m1.group(1), m1.group(2)
+            b2, c = m2.group(1), m2.group(2)
+            if b1 != b2 or a == b1 or a == c or b1 == c:
+                continue
+
+            # `A` must be read in the body in a non-LHS context.
+            a_word = re.compile(r'\b' + re.escape(a) + r'\b')
+            a_read = False
+            for idx, bl in enumerate(body_lines):
+                if idx == k:
+                    continue  # the swap-chain LHS itself doesn't count as a read
+                m = _LCC_SIMPLE_ASSIGN_RE.match(bl)
+                if m and m.group(1) == a:
+                    # `A = something;` — bare LHS, doesn't count as a read.
+                    continue
+                if a_word.search(bl):
+                    a_read = True
+                    break
+            if not a_read:
+                continue
+
+            # `A` must be initialized to a literal constant somewhere in
+            # the ~20 lines above the do {.
+            init_found = False
+            for prev in range(i - 1, max(-1, i - 20), -1):
+                pm = _LCC_LITERAL_INIT_RE.match(lines[prev])
+                if pm and pm.group(1) == a:
+                    init_found = True
+                    break
+            if not init_found:
+                continue
+
+            swap_line_no = body_start + k + 1  # 1-indexed
+            suspects.append({
+                'line': swap_line_no,
+                'type': 'loop_clobbered_constant',
+                'match': "do { ...A used in math...; A = B; B = C; ...} "
+                         "with pre-loop `A = <literal>;`",
+                'text': body_lines[k].strip()[:120],
+                'description': (
+                    "Loop body reassigns `%s` (initialized to a literal "
+                    "constant before the loop) via swap-chain `%s = %s; "
+                    "%s = %s;`, corrupting the loop's math after iter 0. "
+                    "Ghidra register-spill artifact — drop the swap-chain "
+                    "lines in a .keep so the loop runs with its original "
+                    "constants." % (a, a, b1, b1, c)),
+                'severity': 'moderate',
+            })
+            break  # one swap-chain hit per loop is enough
+    return suspects
+
+
 # Fast-(inverse-)sqrt bit-trick patterns. The Watcom binary has dedicated
 # helpers `fastSqrt_FUN_00431350` and `fastInvSqrt_FUN_0043e2a0`, but the
 # approximation is also frequently inlined at call sites. Ghidra's emit
@@ -3863,6 +4017,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_unrolled_strcat_loops(code))
     found.extend(identify_unrolled_strchr_loops(code))
     found.extend(identify_preinc_loop_idiom(code))
+    found.extend(identify_loop_clobbered_constant(code))
     found.extend(identify_fast_sqrt_inline(code))
     return found
 

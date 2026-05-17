@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 142,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 142,
+    "pseudocode_lines": 141,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 482
+    "total_lines": 481
   },
   "cross_references": [
     {
@@ -83,14 +83,14 @@
     },
     {
       "addr": "0067e648",
-      "name": "g_Layer3ScalefacLengths1",
-      "type": "int[16]",
+      "name": "g_Layer3ScalefacLengths",
+      "type": "int[2][16]",
       "value": null
     },
     {
       "addr": "0067e688",
-      "name": "g_Layer3ScalefacLengths2",
-      "type": "int[16]",
+      "name": "g_Layer3ScalefacLengths[1][0]",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -176,10 +176,10 @@
     {
       "description": "Complex pointer cast",
       "line": 47,
-      "match": "(uint *)((int)g_Layer3ScalefacLengths1",
+      "match": "(uint *)((int)g_Layer3ScalefacLengths",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(this_ptr,*(uint *)((int)g_Layer3ScalefacLengths1 +",
+      "text": "(this_ptr,*(uint *)((int)g_Layer3ScalefacLengths[0] +",
       "type": "pointer_cast"
     },
     {
@@ -229,7 +229,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 135,
       "match": "(int *)((int)g_Layer3LongBandGroupCounts",
       "resolution_source": "keep",
       "severity": "moderate",
