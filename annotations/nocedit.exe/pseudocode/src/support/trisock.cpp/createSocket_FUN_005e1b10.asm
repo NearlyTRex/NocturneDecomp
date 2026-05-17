@@ -7,7 +7,7 @@
 ; _SOCKET *        Stack[0x4]:4   socket_handle
 ;
 ; Called Functions:
-;   crt_wsock32.c_shutdown
+;   crt_wsock32.c_socket
 ;   support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20
 ;
 ; *****************************************************************************
@@ -24,8 +24,8 @@ section .text
     PUSH 0x0                            ; 005e1b1e
     PUSH 0x1                            ; 005e1b20
     PUSH 0x2                            ; 005e1b22
-    CALL crt_wsock32.c_shutdown         ; 005e1b24
-        ;   XREF to: 00610f28 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_shutdown(_SOCKET s, int how)
+    CALL crt_wsock32.c_socket           ; 005e1b24
+        ;   XREF to: 00610f28 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_socket(int af, int type, int protocol)
     MOV dword ptr [EBX],EAX             ; 005e1b29
     CMP EAX,-0x1                        ; 005e1b2b
     SETNZ AL                            ; 005e1b2e

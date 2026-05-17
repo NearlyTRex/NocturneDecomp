@@ -972,6 +972,8 @@ static void shim_GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer) {
     lpBuffer->dwLength = sizeof(_MEMORYSTATUS);
     lpBuffer->dwTotalPhys = 256 * 1024 * 1024;  // 256 MB
     lpBuffer->dwAvailPhys = 128 * 1024 * 1024;
+    lpBuffer->dwTotalPageFile = 512 * 1024 * 1024;  // 512 MB
+    lpBuffer->dwAvailPageFile = 512 * 1024 * 1024;  // 512 MB
     lpBuffer->dwTotalVirtual = 0x7FFFFFFF;
     lpBuffer->dwAvailVirtual = 0x7FFFFFFF;
 }

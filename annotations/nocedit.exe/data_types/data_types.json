@@ -6441,6 +6441,10 @@
       "type":"function_definition"
     },
     {
+      "name":"SOCKET_FUNC",
+      "type":"function_definition"
+    },
+    {
       "name":"_STARTUPINFOA",
       "type":"struct"
     },
@@ -23273,6 +23277,28 @@
         }
       ],
       "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/winsock.h",
+      "importable":true,
+      "name":"SOCKET_FUNC",
+      "parameters":[
+        {
+          "name":"af",
+          "type":"int"
+        },
+        {
+          "name":"type",
+          "type":"int"
+        },
+        {
+          "name":"protocol",
+          "type":"int"
+        }
+      ],
+      "return_type":"_SOCKET",
       "type":"function_definition"
     },
     {

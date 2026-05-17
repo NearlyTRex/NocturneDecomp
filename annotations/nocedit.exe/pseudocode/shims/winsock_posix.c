@@ -11,6 +11,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <unistd.h>
+#include <fcntl.h>
 #include <string.h>
 
 #ifdef __cplusplus
@@ -73,6 +74,13 @@ int posix_close(int fd) {
 }
 
 int posix_ioctl(int fd, unsigned long request, void* argp) {
+    if (request == 0x8004667EUL) {
+        int flags = fcntl(fd, F_GETFL, 0);
+        if (flags < 0) return -1;
+        int nonblock = argp && *(unsigned int*)argp != 0;
+        flags = nonblock ? (flags | O_NONBLOCK) : (flags & ~O_NONBLOCK);
+        return fcntl(fd, F_SETFL, flags);
+    }
     return ioctl(fd, request, argp);
 }
 

@@ -192,7 +192,7 @@ void shims_init_winsock() {
     g_sendFunc = (SEND_FUNC*)send;
     g_sendtoFunc = (SEND_TO_FUNC*)sendto;
     g_setsockoptFunc = (SET_SOCK_OPT_FUNC*)setsockopt;
-    g_shutdownFunc = shutdown;
+    g_socketFunc = socket;
     g_ntohsFunc = ntohs;
     g_WSAStartupFunc = WSAStartup;
     g_WSACleanupFunc = WSACleanup;

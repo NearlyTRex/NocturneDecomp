@@ -12,7 +12,7 @@ int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(_SOCKET *socket_han
   _SOCKET _Var1;
   
   support_trisock_cpp_bindAndInvalidateSocket_FUN_005e1d20(socket_handle);
-  _Var1 = shutdown(2,2);
+  _Var1 = socket(2,2,0);
   *socket_handle = _Var1;
   return (uint)(_Var1 != 0xffffffff);
 }

@@ -10,7 +10,7 @@
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0053fbc0 at 0053fbeb
 ;
 ; Called Functions:
-;   crt_wsock32.c_shutdown
+;   crt_wsock32.c_socket
 ;   support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20
 ;
 ; *****************************************************************************
@@ -27,8 +27,8 @@ section .text
     PUSH 0x0                            ; 005e1b4e
     PUSH 0x2                            ; 005e1b50
     PUSH 0x2                            ; 005e1b52
-    CALL crt_wsock32.c_shutdown         ; 005e1b54
-        ;   XREF to: 00610f28 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_shutdown(_SOCKET s, int how)
+    CALL crt_wsock32.c_socket           ; 005e1b54
+        ;   XREF to: 00610f28 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_socket(int af, int type, int protocol)
     MOV dword ptr [EBX],EAX             ; 005e1b59
     CMP EAX,-0x1                        ; 005e1b5b
     SETNZ AL                            ; 005e1b5e

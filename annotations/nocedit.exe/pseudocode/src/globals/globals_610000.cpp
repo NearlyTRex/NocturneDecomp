@@ -457,11 +457,11 @@ SET_UNHANDLED_EXCEPTION_FILTER_FUNC* g_SetUnhandledExceptionFilterFunc = nullptr
 // SHOW_WINDOW_FUNC*
 SHOW_WINDOW_FUNC* g_ShowWindowFunc = nullptr; // DAT_00211c06
 
-// SHUTDOWN_FUNC*
-SHUTDOWN_FUNC* g_shutdownFunc = nullptr; // DAT_80000017
-
 // SLEEP_FUNC*
 SLEEP_FUNC* g_SleepFunc = nullptr; // DAT_00212228
+
+// SOCKET_FUNC*
+SOCKET_FUNC* g_socketFunc = nullptr; // DAT_80000017
 
 // SYSTEM_TIME_TO_FILE_TIME_FUNC*
 SYSTEM_TIME_TO_FILE_TIME_FUNC* g_SystemTimeToFileTimeFunc = nullptr; // DAT_00212230

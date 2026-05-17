@@ -17,7 +17,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)
   char (*pacVar6) [256];
   int iStack_c;
   int iStack_8;
-  
+
   pCVar2 = g_CGamePtr;
   if (g_WindowHeight < 0x1e0) {
     return 1;
@@ -111,6 +111,9 @@ LAB_005131d5:
     }
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar4 != 0) {
+      iVar5 = 99;
+    }
+    if (g_InputDisabled != 0) {
       iVar5 = 99;
     }
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);

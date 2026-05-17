@@ -418,9 +418,11 @@ static BOOL shim_PeekMessageA(LPMSG lpMsg, HWND hWnd,
 }
 
 static void shim_PostQuitMessage(int nExitCode) {
-    SDL_Event ev;
-    ev.type = SDL_QUIT;
-    SDL_PushEvent(&ev);
+    MSG msg;
+    memset(&msg, 0, sizeof(msg));
+    msg.message = 0x0012; // WM_QUIT
+    msg.wParam = (uintptr_t)nExitCode;
+    s_msgQueue.push(msg);
 }
 
 static ATOM shim_RegisterClassA(WNDCLASSA* lpWndClass) {

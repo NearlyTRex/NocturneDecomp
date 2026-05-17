@@ -13,7 +13,7 @@ SUMMARY
 
   Functions checked: 6908
   Functions with suspicious globals: 69
-  Total suspicious global references: 115
+  Total suspicious global references: 116
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -45,11 +45,11 @@ DETAILED FINDINGS
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (14 suspicious globals)
+core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (15 suspicious globals)
   File: core/main.c
 
   g_CDemonFileManagerInstance
-    Used at lines: 148
+    Used at lines: 153
     NOT found in function reference list
 
   g_CGamePtr
@@ -65,7 +65,11 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (14 suspicious globals)
     NOT found in function reference list
 
   g_CSoundPtr
-    Used at lines: 76, 101, 107, 121, 139, ...
+    Used at lines: 76, 101, 107, 126, 144, ...
+    NOT found in function reference list
+
+  g_InputDisabled
+    Used at lines: 116, 118
     NOT found in function reference list
 
   g_MainMenuTextBuffers
@@ -97,7 +101,7 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (14 suspicious globals)
     NOT found in function reference list
 
   g_UseDirect3D
-    Used at lines: 25, 129, 137
+    Used at lines: 25, 134, 142
     NOT found in function reference list
 
   g_WindowHeight

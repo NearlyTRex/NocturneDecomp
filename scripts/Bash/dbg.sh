@@ -89,8 +89,7 @@ cmd="$1"; shift
 
 case "${cmd}" in
   build)
-    # cmake's GLOB on the .keep files needs a re-check before ninja builds.
-    # `--build` does the re-glob step + incremental compile + link in one shot.
+    touch "${PROJECT_ROOT}/cmake/skip_list.txt"
     cmake --build "${PROJECT_ROOT}/build/exe-linux-asan" "$@"
     ;;
 

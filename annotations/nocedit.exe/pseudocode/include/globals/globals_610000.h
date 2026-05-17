@@ -469,11 +469,11 @@ extern SET_UNHANDLED_EXCEPTION_FILTER_FUNC* g_SetUnhandledExceptionFilterFunc;
 // SHOW_WINDOW_FUNC*
 extern SHOW_WINDOW_FUNC* g_ShowWindowFunc;
 
-// SHUTDOWN_FUNC*
-extern SHUTDOWN_FUNC* g_shutdownFunc;
-
 // SLEEP_FUNC*
 extern SLEEP_FUNC* g_SleepFunc;
+
+// SOCKET_FUNC*
+extern SOCKET_FUNC* g_socketFunc;
 
 // SYSTEM_TIME_TO_FILE_TIME_FUNC*
 extern SYSTEM_TIME_TO_FILE_TIME_FUNC* g_SystemTimeToFileTimeFunc;

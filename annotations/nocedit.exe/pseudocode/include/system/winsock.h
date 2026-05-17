@@ -145,6 +145,9 @@ typedef int SET_SOCK_OPT_FUNC(_SOCKET s, int level, int optname, char* optval, i
 // Function Definition: SHUTDOWN_FUNC
 typedef int SHUTDOWN_FUNC(_SOCKET s, int how);
 
+// Function Definition: SOCKET_FUNC
+typedef _SOCKET SOCKET_FUNC(int af, int type, int protocol);
+
 // =============================================================================
 // WINSOCK FUNCTIONS
 // =============================================================================
