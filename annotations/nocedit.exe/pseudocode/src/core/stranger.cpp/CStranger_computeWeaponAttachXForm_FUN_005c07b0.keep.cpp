@@ -28,14 +28,10 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CVector3f *pCVar4;
   float fVar14;
   CMatrix3x4f *pCVar15;
-  CMatrix3x4f *pCVar16;
-  CMatrix3x4f *pCVar17;
   CMatrix3x4f local_d5c;
   CMatrix3x4f local_d2c;
   CMatrix3x4f local_cfc;
   CMatrix3x4f local_ccc;
-  CMatrix3x4f local_c9c;
-  CMatrix3x4f local_c6c;
   CMatrix3x4f local_c3c;
   CMatrix3x4f local_c0c;
   CMatrix3x4f local_bdc;
@@ -44,7 +40,6 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CMatrix3x4f local_b4c;
   CMatrix3x4f local_b1c;
   CMatrix3x4f local_aec;
-  CMatrix3x4f local_abc;
   CMatrix3x4f local_a8c;
   CMatrix3x4f local_a5c;
   CMatrix3x4f local_9fc;
@@ -63,9 +58,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CMatrix3x4f local_78c;
   CMatrix3x4f local_75c;
   CMatrix3x4f local_72c;
-  CMatrix3x4f local_6fc;
   CMatrix3x4f local_6cc;
-  CMatrix3x4f local_69c;
   CMatrix3x4f local_66c;
   CMatrix3x4f local_63c;
   CMatrix3x4f local_60c;
@@ -74,15 +67,12 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CMatrix3x4f local_57c;
   CMatrix3x4f local_54c;
   CMatrix3x4f local_51c;
-  CMatrix3x4f local_4ec;
-  CMatrix3x4f local_4bc;
   CMatrix3x4f local_48c;
   CMatrix3x4f local_45c;
   CMatrix3x4f local_42c;
   CMatrix3x4f local_3fc;
   CMatrix3x4f local_3cc;
   CMatrix3x4f local_39c;
-  CMatrix3x4f local_36c;
   CMatrix3x4f local_33c;
   CMatrix3x4f local_30c;
   CMatrix3x4f local_2dc;
@@ -128,7 +118,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CVector3f local_30;
   CVector3f local_24;
   ELightActorType EVar1;
-  
+
   iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   local_180_weapon = (CWeapon *)
               core_actor_cpp_castToClassHash_FUN_0040c790
@@ -255,25 +245,21 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     else if (hand_index == 0) {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_75c,&CVector3f_03f6babc,&g_ZeroVector.f);
-      pCVar17 = &local_75c;
       core_xform_cpp_buildRotationX_FUN_005f6c40(1.5707964,&local_66c);
-      pCVar16 = &local_c6c;
       core_xform_cpp_buildRotationY_FUN_005f6cc0(-1.5707964,&local_bac);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_c9c,pCVar16,&local_b7c);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_6fc,pCVar17,&local_b4c);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_69c,pCVar15,&local_5ac);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_bac,&local_66c,&local_b7c);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_b7c,&local_75c,&local_b4c);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_b4c,pCVar15,&local_5ac);
       pCVar15 = &local_5ac;
     }
     else {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_aec,&CVector3f_03f6bab0,&g_ZeroVector.f);
-      pCVar17 = &local_aec;
       core_xform_cpp_buildRotationX_FUN_005f6c40(1.5707964,&local_72c);
-      pCVar16 = &local_36c;
       core_xform_cpp_buildRotationY_FUN_005f6cc0(1.5707964,&local_60c);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_abc,pCVar16,&local_42c);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_4ec,pCVar17,&local_39c);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_4bc,pCVar15,&local_24c);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_60c,&local_72c,&local_42c);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_42c,&local_aec,&local_39c);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_39c,pCVar15,&local_24c);
       pCVar15 = &local_24c;
     }
     goto LAB_005c0946;

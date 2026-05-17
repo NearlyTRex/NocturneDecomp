@@ -29,11 +29,9 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
   CVector3f local_30;
   CVector3f CStack_24;
   CDeformableModelInstance *frame_index;
-  CVector3f *output_normal;
-  CVector3f *ray_origin_00;
   int triangle_index;
   CDemonSet *pCVar1;
-  
+
   if (bbox_type == 0) {
     return 2.0;
   }
@@ -100,13 +98,10 @@ LAB_004095c9:
     frame_index = collision_info->deformable_model;
     if (frame_index == (CDeformableModelInstance *)0x0) {
       if (collision_info->keyframed_model != (CKeyFramedModelInstance *)0x0) {
-        output_normal = (CVector3f *)&local_54.y;
-        pCVar2 = (CVector3f *)&local_84.max.y;
-        ray_origin_00 = (CVector3f *)&local_6c.max.y;
         this_ptr_01 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                                 (collision_info->keyframed_model);
         local_a0 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
-                             (this_ptr_01,(int)frame_index,ray_origin_00,pCVar2,output_normal);
+                             (this_ptr_01,(int)frame_index,&local_3c,&local_54,&local_30);
         if (local_a0 < 0.0) {
           return 2.0;
         }
@@ -118,8 +113,7 @@ LAB_004095c9:
     }
     else {
       local_a0 = core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0
-                           (collision_info->deformable_model,(CVector3f *)&local_6c.max.y,
-                            (CVector3f *)&local_84.max.y);
+                           (collision_info->deformable_model,&local_3c,&local_54);
       if (local_a0 < 0.0) {
         return 2.0;
       }
@@ -136,11 +130,7 @@ LAB_004095c9:
                               (collision_info->deformable_model);
       out_hit->bone_index = core_skeleton_cpp_CDeformableModel_findMaxWeightBone_FUN_0059dca0
                                       (this_ptr_02,lod_level,triangle_index);
-      if (&local_54.y != &g_DeformableModelRayHitNormal.x) {
-        local_54.y = g_DeformableModelRayHitNormal.x;
-        local_54.z = g_DeformableModelRayHitNormal.y;
-        local_48.x = g_DeformableModelRayHitNormal.z;
-      }
+      local_30 = g_DeformableModelRayHitNormal;
     }
   }
   pCVar3 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(this_ptr,&CStack_24,&local_30);

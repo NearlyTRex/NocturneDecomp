@@ -14,8 +14,8 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(CStra
   CVector3f *new_orientation;
   CVector3f *new_position;
   CMatrix3x4f local_114;
-  CMatrix3x4f local_b4;
   CMatrix3x4f local_84;
+  CMatrix3x4f local_54;
   CVector3f local_24;
   CVector3f local_18;
   CWeapon *pCVar1;
@@ -30,11 +30,11 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(CStra
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_84,&(this_ptr->base).base.base.location.position,
                &(this_ptr->base).base.base.orient.vec);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_b4,&local_84,&local_114);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_114,&local_84,&local_54);
     this_ptr_00 = this_ptr->weapon;
     pCVar2 = (this_ptr_00->base).vtable._ub;
-    new_orientation = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_b4,&local_24);
-    new_position = core_xform_cpp_getTranslation_FUN_005f6110(&local_b4,&local_18);
+    new_orientation = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_54,&local_24);
+    new_position = core_xform_cpp_getTranslation_FUN_005f6110(&local_54,&local_18);
     (*pCVar2->setPositionAndOrientation)(&this_ptr_00->base,new_position,new_orientation);
   }
   return;
