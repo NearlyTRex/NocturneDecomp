@@ -44,7 +44,7 @@
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
@@ -288,8 +288,8 @@ section .text
     PUSH EAX                            ; 004c3e56
     MOV EAX,[0x006703ec]                ; 004c3e57 | g_CDemonRendererPtr2
     PUSH EAX                            ; 004c3e5c | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 004c3e5d
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10 ; 004c3e5d
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 004c3e62
     XOR EBX,EBX                         ; 004c3e65
     PUSH EBX                            ; 004c3e67

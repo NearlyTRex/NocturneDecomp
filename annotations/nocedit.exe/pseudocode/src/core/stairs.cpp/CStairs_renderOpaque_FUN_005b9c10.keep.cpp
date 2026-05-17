@@ -109,13 +109,13 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           local_e4.vertices[3] = iVar39 + 1;
           local_e4.vertices[4] = iVar39 + 3;
           local_e4.vertices[5] = iVar39 + 2;
-          engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+          engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                     (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&local_e4.base.surface_normal);
           local_e4.vertices[2] = iVar39 + 1;
           local_e4.vertices[3] = iVar39 + 4;
           local_e4.vertices[4] = iVar39 + 6;
           local_e4.vertices[5] = iVar39 + 3;
-          engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+          engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                     (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&local_e4.base.surface_normal);
           iVar39 = iVar39 + 4;
         }
@@ -160,7 +160,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           vert->u = 0x800000;
           vert->v = 0x800000;
         }
-        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+        engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                   (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&local_e4.base.surface_normal);
       }
     }

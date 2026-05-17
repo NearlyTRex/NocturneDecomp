@@ -47,7 +47,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemo
     SStack_50.base.surface_normal.D.i =
          (int)ROUND(ROUND((float)g_CoronaFacePrimitives[iVar2].normal.D.i *
                           this_ptr->radius));
-    engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+    engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
               (g_CDemonRendererPtr1,&SStack_50.base);
     iVar2 = iVar2 + 1;
   } while (iVar2 != 84);

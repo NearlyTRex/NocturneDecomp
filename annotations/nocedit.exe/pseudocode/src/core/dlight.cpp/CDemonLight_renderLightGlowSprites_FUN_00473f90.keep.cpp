@@ -156,7 +156,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
               this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
               this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
-              engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10
+              engine_drender_cpp_CDemonRenderer_renderOverlayDirect_FUN_0048bf10
                         (this_ptr_00,&local_138.base);
               engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
               iSpriteIndex = iSpriteIndex + 1;

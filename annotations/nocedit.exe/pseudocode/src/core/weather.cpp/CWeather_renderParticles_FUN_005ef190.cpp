@@ -154,7 +154,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
       local_98.z = (int)ROUND(256.0f * 0.0);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_98);
-      engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+      engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
                 (g_CDemonRendererPtr2,&local_f0.base);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     }
@@ -205,7 +205,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
         local_44.z = (int)ROUND(256.0f * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_44);
-        engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+        engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
                   (g_CDemonRendererPtr2,&local_f0.base);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
       }

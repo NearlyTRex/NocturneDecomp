@@ -92,7 +92,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   local_8c.vertices[1] = 1;
   local_8c.vertices[2] = 2;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(this_ptr_00,1);
-  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_8c.base,0x123);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);

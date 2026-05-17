@@ -46,37 +46,37 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDem
   SStack_74.vertices[1] = 2;
   SStack_74.vertices[2] = 6;
   SStack_74.vertices[3] = 4;
-  engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
             (g_CDemonRendererPtr2,&SStack_74.base);
   SStack_74.vertices[0] = 1;
   SStack_74.vertices[1] = 3;
   SStack_74.vertices[2] = 7;
   SStack_74.vertices[3] = 5;
-  engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
             (g_CDemonRendererPtr2,&SStack_74.base);
   SStack_74.vertices[2] = 3;
   SStack_74.vertices[0] = 0;
   SStack_74.vertices[1] = 1;
   SStack_74.vertices[3] = 2;
-  engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
             (g_CDemonRendererPtr2,&SStack_74.base);
   SStack_74.vertices[0] = 4;
   SStack_74.vertices[1] = 5;
   SStack_74.vertices[2] = 7;
   SStack_74.vertices[3] = 6;
-  engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
             (g_CDemonRendererPtr2,&SStack_74.base);
   SStack_74.vertices[2] = 7;
   SStack_74.vertices[0] = 2;
   SStack_74.vertices[1] = 3;
   SStack_74.vertices[3] = 6;
-  engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
             (g_CDemonRendererPtr2,&SStack_74.base);
   SStack_74.vertices[1] = 1;
   SStack_74.vertices[3] = 4;
   SStack_74.vertices[0] = 0;
   SStack_74.vertices[2] = 5;
-  engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
             (g_CDemonRendererPtr2,&SStack_74.base);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(this_ptr);
   return;

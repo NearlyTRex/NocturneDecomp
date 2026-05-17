@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5760 (89.2%)
+Clean functions: 5761 (89.3%)
 Files at 100%: 148
 Files at 90%+: 148
 Files at 50%+: 214
@@ -49,7 +49,7 @@ FILES AT 100% (COMPLETE)
   core/dglobe.cpp: 6 functions, 237 lines
   core/dimage.cpp: 6 functions, 131 lines
   core/dirmat.cpp: 7 functions, 336 lines
-  core/dlight.cpp: 34 functions, 2233 lines
+  core/dlight.cpp: 34 functions, 2234 lines
   core/dog.cpp: 13 functions, 455 lines
   core/drip.cpp: 17 functions, 414 lines
   core/drone.cpp: 13 functions, 472 lines
@@ -87,7 +87,7 @@ FILES AT 100% (COMPLETE)
   core/lightgun.cpp: 14 functions, 579 lines
   core/litecone.cpp: 12 functions, 170 lines
   core/main.c: 10 functions, 1308 lines
-  core/marquee.cpp: 16 functions, 425 lines
+  core/marquee.cpp: 16 functions, 426 lines
   core/melee.cpp: 17 functions, 268 lines
   core/minecar.cpp: 7 functions, 71 lines
   core/mission.cpp: 41 functions, 1366 lines
@@ -389,6 +389,26 @@ FILES AT 50-89%
            - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines) [pointer_cast, stack_alignment_array, unrolled_memcpy, unrolled_strcpy]
            - core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 (438 lines) [pointer_cast, unrolled_strcpy, warning_unreachable]
            - core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (117 lines) [pointer_cast, unrolled_strcpy]
+   79.5% | engine/drender.cpp
+         70/88 clean, 18 remaining
+           - engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950 (52 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0 (61 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0048b730 (61 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0 (62 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0 (33 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50 (47 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550 (45 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030 (44 lines) [shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0 (61 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420 (57 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 (123 lines) [pointer_cast]
+           - engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 (120 lines) [pointer_cast]
+           - engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970 (61 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0048bfe0 (61 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 (116 lines) [pointer_cast]
+           - engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 (71 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320 (36 lines) [shadow_pointer_walk]
+           - engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40 (60 lines) [pointer_cast, shadow_pointer_walk]
    79.2% | core/script.cpp
          76/96 clean, 20 remaining
            - core_script.cpp_getActor_FUN_005594e0 (69 lines) [unrolled_strcpy]
@@ -432,27 +452,6 @@ FILES AT 50-89%
            - core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20 (83 lines) [unrolled_memcpy]
            - core_door.cpp_CDoor_reposition_FUN_0047fd20 (127 lines) [unrolled_memcpy]
            - core_door.cpp_CDoor_archive_FUN_00480aa0 (81 lines) [unrolled_strcpy]
-   78.4% | engine/drender.cpp
-         69/88 clean, 19 remaining
-           - engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950 (52 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0 (61 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderFullEffectsPoly_FUN_0048b730 (61 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0 (62 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0 (33 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50 (47 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550 (45 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0048b030 (44 lines) [shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0 (61 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0048b420 (57 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 (123 lines) [pointer_cast]
-           - engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 (120 lines) [pointer_cast]
-           - engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970 (61 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0048bfe0 (61 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 (116 lines) [pointer_cast]
-           - engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 (71 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80 (53 lines) [pointer_cast]
-           - engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320 (36 lines) [shadow_pointer_walk]
-           - engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40 (60 lines) [pointer_cast, shadow_pointer_walk]
    78.3% | core/icepick.cpp
          18/23 clean, 5 remaining
            - core_icepick.cpp_CIcePick_process_FUN_004f80b0 (313 lines) [missing_cave_copy, unrolled_memset, warning_unreachable]

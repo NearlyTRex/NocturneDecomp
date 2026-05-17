@@ -660,13 +660,13 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           local_e4.vertices[2] = iVar39;
           local_e4.vertices[3] = iVar39 + 1;
           local_bc.min.x = (float)(iVar39 + 3);
-          engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+          engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                     (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&local_e4.base.surface_normal);
           local_bc.min.x = (float)(iVar39 + 6);
           local_e4.vertices[2] = iVar39 + 1;
           local_e4.vertices[3] = iVar39 + 4;
           local_bc.min.y = (float)(iVar39 + 3);
-          engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+          engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                     (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&local_e4.base.surface_normal);
           iVar4 = iVar4 + 1;
           iVar39 = iVar39 + 4;
@@ -713,7 +713,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           *(uint *)((int)&pCVar40->vertex_buffer_ptr->v + iVar4) = 0x800000;
           iVar4 = iVar39;
         } while (iVar39 != 0x90);
-        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+        engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                   (pCVar40,(SMRGLHeaderPrimitive *)&local_e4.base.surface_normal);
         local_28 = (UOrientationVector *)((int)local_28 + 0x38);
         local_2c = local_2c + 0xe;

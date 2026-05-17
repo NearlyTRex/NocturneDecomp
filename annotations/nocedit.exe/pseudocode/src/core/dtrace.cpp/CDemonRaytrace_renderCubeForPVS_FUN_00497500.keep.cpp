@@ -132,7 +132,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                (int)ROUND(ROUND(((float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                                 (float)-256));
           SStack_d4.vertices[1] = 1;
-          iVar2 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+          iVar2 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
                             (g_CDemonRendererPtr1,&SStack_d4.base);
           if (iVar2 == 0) {
             SStack_d4.base.surface_normal.C.i = 1;
@@ -145,7 +145,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                                   (this_ptr->bbox_min).z) * (float)256));
             SStack_d4.base.surface_normal.A.i = iVar2;
             SStack_d4.base.surface_normal.B.i = iVar2;
-            UVar6.i = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+            UVar6.i = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
                                 (g_CDemonRendererPtr1,&SStack_d4.base);
             if (UVar6.i == 0) {
               SStack_d4.base.surface_normal.A.i = -1;
@@ -158,7 +158,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
               SStack_d4.base.surface_normal.B.i = UVar6.i;
               SStack_d4.base.surface_normal.C.i = UVar6.i;
               SStack_d4.vertices[0] = UVar6.i;
-              UVar6.i = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+              UVar6.i = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
                                   (g_CDemonRendererPtr1,&SStack_d4.base);
               if (UVar6.i == 0) {
                 SStack_d4.base.surface_normal.A.i = 1;
@@ -171,7 +171,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                 SStack_d4.vertices[1] = 2;
                 SStack_d4.base.surface_normal.B.i = UVar6.i;
                 SStack_d4.base.surface_normal.C.i = UVar6.i;
-                UVar6.i = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                UVar6.i = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
                                     (g_CDemonRendererPtr1,&SStack_d4.base);
                 if (UVar6.i == 0) {
                   SStack_d4.base.surface_normal.B.i = 1;
@@ -184,7 +184,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                        (int)ROUND(ROUND(((float)(grid_y + 1) * (this_ptr->cell_size).y +
                                         (this_ptr->bbox_min).y) * (float)256));
                   SStack_d4.base.surface_normal.A.i = UVar6.i;
-                  UVar6.i = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                  UVar6.i = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
                                       (g_CDemonRendererPtr1,&SStack_d4.base);
                   if (UVar6.i == 0) {
                     SStack_d4.base.surface_normal.B.i = -1;
@@ -197,7 +197,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
                                           (this_ptr->bbox_min).y) * (float)-256));
                     SStack_d4.vertices[1] = 1;
                     SStack_d4.base.surface_normal.A.i = UVar6.i;
-                    iVar7 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                    iVar7 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
                                       (g_CDemonRendererPtr1,&SStack_d4.base);
                     if (iVar7 == 0) {
                       return;

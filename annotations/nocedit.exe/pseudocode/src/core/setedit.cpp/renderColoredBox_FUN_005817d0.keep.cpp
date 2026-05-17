@@ -67,37 +67,37 @@ void __cdecl core_setedit_cpp_renderColoredBox_FUN_005817d0(CVector3f *corner_a,
         local_54.base.base.count = 4;
         local_54.vertices[3] = 4;
         local_54.vertices[1] = 2;
-        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+        engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54.base);
         local_54.vertices[3] = 5;
         local_54.vertices[0] = 1;
         local_54.vertices[1] = 3;
         local_54.vertices[2] = 7;
-        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+        engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54.base);
         local_54.vertices[0] = 0;
         local_54.vertices[1] = 1;
         local_54.vertices[2] = 3;
         local_54.vertices[3] = 2;
-        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+        engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54.base);
         local_54.vertices[0] = 4;
         local_54.vertices[1] = 5;
         local_54.vertices[2] = 7;
         local_54.vertices[3] = 6;
-        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+        engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54.base);
         local_54.vertices[0] = 2;
         local_54.vertices[3] = 6;
         local_54.vertices[1] = 3;
         local_54.vertices[2] = 7;
-        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+        engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54.base);
         local_54.vertices[1] = 1;
         local_54.vertices[0] = 0;
         local_54.vertices[2] = 5;
         local_54.vertices[3] = 4;
-        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+        engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54.base);
         return;
       }

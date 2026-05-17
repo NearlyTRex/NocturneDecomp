@@ -116,7 +116,7 @@ LAB_004ecf33:
   g_RenderVertexBuffer[3].g = 0;
 LAB_004ecf83:
   g_RenderVertexBuffer[3].b = 0;
-  engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
             (g_CDemonRendererPtr2,&g_GoreQuadPrimitive.base);
   return;
 }

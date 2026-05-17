@@ -373,27 +373,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0048b150",
+      "from_addr": "0048b19b",
+      "name": "engine_drender.cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_0048b150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0048b1e0",
       "from_addr": "0048b278",
       "name": "engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0048a820",
-      "from_addr": "0048a869",
-      "name": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820",
+      "addr": "0048bcf0",
+      "from_addr": "0048bd75",
+      "name": "engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0048bdc0",
       "from_addr": "0048be76",
       "name": "engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0048bf10",
-      "from_addr": "0048bf95",
-      "name": "engine_drender.cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -409,6 +409,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0048ab50",
+      "from_addr": "0048abf7",
+      "name": "engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048b890",
+      "from_addr": "0048b91a",
+      "name": "engine_drender.cpp_CDemonRenderer_renderDestReadBlendDirect_FUN_0048b890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0048b970",
       "from_addr": "0048ba36",
       "name": "engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970",
@@ -417,13 +429,7 @@
     {
       "addr": "0048b650",
       "from_addr": "0048b6da",
-      "name": "engine_drender.cpp_CDemonRenderer_renderEnhancedQualityDirect_FUN_0048b650",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0048bcf0",
-      "from_addr": "0048bd75",
-      "name": "engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0048b650",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -433,15 +439,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0048bad0",
-      "from_addr": "0048bb55",
-      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0048ac40",
       "from_addr": "0048ad09",
       "name": "engine_drender.cpp_CDemonRenderer_renderNearPlaneTexturedPoly_FUN_0048ac40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048bf10",
+      "from_addr": "0048bf95",
+      "name": "engine_drender.cpp_CDemonRenderer_renderOverlayDirect_FUN_0048bf10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -457,15 +463,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0048ae10",
-      "from_addr": "0048ae69",
-      "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0048b150",
-      "from_addr": "0048b19b",
-      "name": "engine_drender.cpp_CDemonRenderer_renderPremiumDirect_FUN_0048b150",
+      "addr": "0048a820",
+      "from_addr": "0048a869",
+      "name": "engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0048a820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -481,9 +481,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0048ab50",
-      "from_addr": "0048abf7",
-      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50",
+      "addr": "0048ae10",
+      "from_addr": "0048ae69",
+      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -493,9 +493,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0048b890",
-      "from_addr": "0048b91a",
-      "name": "engine_drender.cpp_CDemonRenderer_renderUltraPremiumDirect_FUN_0048b890",
+      "addr": "0048bad0",
+      "from_addr": "0048bb55",
+      "name": "engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -646,7 +646,7 @@
       {
         "call_addr": "0048a869",
         "call_type": "direct",
-        "caller": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820",
+        "caller": "engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0048a820",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -679,7 +679,7 @@
       {
         "call_addr": "0048ae69",
         "call_type": "direct",
-        "caller": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10",
+        "caller": "engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

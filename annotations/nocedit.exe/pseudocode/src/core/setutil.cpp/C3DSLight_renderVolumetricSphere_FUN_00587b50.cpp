@@ -95,7 +95,7 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
       iVar2 = iVar2 + 1;
       local_78.vertices[2] = local_14 + iVar2;
       local_78.vertices[3] = local_10 + iVar2;
-      engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+      engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
                 (g_CDemonRendererPtr2,&local_78.base);
     } while (iVar2 < 4);
     local_10 = local_10 + 10;

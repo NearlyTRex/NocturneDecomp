@@ -35,7 +35,7 @@
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
@@ -225,8 +225,8 @@ section .text
     LEA ECX,[EDI + ESI*0x1]             ; 00587d95
     PUSH EBP                            ; 00587d98 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x38],ECX      ; 00587d99
-    CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 00587d9d
-        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0 ; 00587d9d
+        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 00587da2
     CMP ESI,0x4                         ; 00587da5
     JL 0x00587d74                       ; 00587da8

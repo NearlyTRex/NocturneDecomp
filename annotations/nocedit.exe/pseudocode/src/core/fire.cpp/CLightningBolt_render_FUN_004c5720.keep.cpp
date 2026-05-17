@@ -129,7 +129,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
     local_18.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_18);
-    engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+    engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
               (g_CDemonRendererPtr2,&local_dc.base);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   }
@@ -173,7 +173,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
     pCVar6->vertex_buffer_ptr[3].projected_vertex.screen_x = -0x80000000;
     pCVar6->vertex_buffer_ptr[3].projected_vertex.transformed_y =
          pCVar6->vertex_buffer_ptr[3].projected_vertex.transformed_y - iVar3;
-    engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(pCVar6,&local_dc.base);
+    engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(pCVar6,&local_dc.base);
     local_54.x = (int)ROUND(world_position->x * 256.0f);
     local_54.y = (int)ROUND((this_ptr->start_position).y * 256.0f);
     local_54.z = (int)ROUND((this_ptr->start_position).z * 256.0f);
@@ -207,7 +207,7 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
     this_ptr_00->vertex_buffer_ptr[3].projected_vertex.screen_x = -0x80000000;
     this_ptr_00->vertex_buffer_ptr[3].projected_vertex.transformed_x =
          this_ptr_00->vertex_buffer_ptr[3].projected_vertex.transformed_x - iVar3;
-    engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(this_ptr_00,&local_dc.base)
+    engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(this_ptr_00,&local_dc.base)
     ;
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);

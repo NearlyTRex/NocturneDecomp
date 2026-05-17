@@ -115,7 +115,7 @@ LAB_004ebdb7:
             (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
             (g_CDemonRendererPtr2,0xffff - g_PerspectiveReciprocal);
-  engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
             (g_CDemonRendererPtr2,&g_GoreQuadPrimitive.base);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   CStack_e8.y = (this_ptr->base).position.x;
@@ -188,7 +188,7 @@ LAB_004ebdb7:
               (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,0xffff - g_PerspectiveReciprocal);
-    engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+    engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
               (g_CDemonRendererPtr2,&g_GoreQuadPrimitive.base);
     iVar7 = iVar7 + 1;
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);

@@ -1,0 +1,177 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 54,
+    "complexity_score": 20,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 74
+  },
+  "cross_references": [
+    {
+      "addr": "00522560",
+      "from_addr": "00522589",
+      "name": "core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005225e0",
+      "from_addr": "0052265c",
+      "name": "core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005708e0",
+      "from_addr": "00570946",
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048a820",
+    "address_range": [
+      [
+        "0048a820",
+        "0048a89a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0048a820",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0048a820(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403950",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "0048a740",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00570946",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00522589",
+        "call_type": "direct",
+        "caller": "core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052265c",
+        "call_type": "direct",
+        "caller": "core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3658536585365852,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 37,
+      "INT_ADD": 14,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 12,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 138
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": []
+}

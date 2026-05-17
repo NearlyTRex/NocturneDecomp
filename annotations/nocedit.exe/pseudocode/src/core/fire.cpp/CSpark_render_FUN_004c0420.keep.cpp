@@ -98,7 +98,7 @@ LAB_004c04af:
   g_RenderVertexBuffer[2].a = g_RenderVertexBuffer[0].a;
   g_RenderVertexBuffer[3].a = g_RenderVertexBuffer[0].a;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-  engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
             (g_CDemonRendererPtr2,&g_BillboardPrimitive.base);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
@@ -166,7 +166,7 @@ LAB_004c04af:
     g_RenderVertexBuffer[2].a = g_RenderVertexBuffer[0].a;
     g_RenderVertexBuffer[3].a = g_RenderVertexBuffer[0].a;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-    engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+    engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
               (g_CDemonRendererPtr2,&g_BillboardPrimitive.base);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
     iVar6 = iVar6 + 1;

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50 at 0048ab81
+;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50 at 0048ab81
 ;
 ; Referenced Globals:
 ;   int g_RenderPixelBudget = 0x1

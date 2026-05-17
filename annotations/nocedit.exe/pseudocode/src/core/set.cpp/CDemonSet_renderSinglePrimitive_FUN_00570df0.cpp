@@ -16,7 +16,7 @@ int __cdecl core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(CDemonSet 
                       (this_ptr->active_mirror,prim);
     return iVar1;
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+  iVar1 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
                     (g_CDemonRendererPtr2,prim);
   return iVar1;
 }

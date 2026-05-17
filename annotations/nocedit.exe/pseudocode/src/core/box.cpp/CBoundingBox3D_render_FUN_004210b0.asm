@@ -35,7 +35,7 @@
 ;   core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;
@@ -207,8 +207,8 @@ section .text
     PUSH ECX                            ; 0042131a | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x9c],EDX      ; 0042131b
     XOR ESI,ESI                         ; 00421322
-    CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 00421324
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10 ; 00421324
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     MOV EDX,0x7                         ; 00421329
     ADD ESP,0xc                         ; 0042132e
     MOV ECX,0x5                         ; 00421331
@@ -227,8 +227,8 @@ section .text
     PUSH EBX                            ; 00421376 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x98],EDX      ; 00421377
     MOV dword ptr [ESP + 0x9c],ECX      ; 0042137e
-    CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 00421385
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10 ; 00421385
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     MOV ECX,0x1                         ; 0042138a
     ADD ESP,0xc                         ; 0042138f
     MOV EBX,0x5                         ; 00421392
@@ -251,8 +251,8 @@ section .text
     PUSH EDI                            ; 004213ec | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x9c],ESI      ; 004213ed
     MOV ESI,0x7                         ; 004213f4
-    CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 004213f9
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10 ; 004213f9
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     MOV EAX,0x1                         ; 004213fe
     MOV ECX,0x2                         ; 00421403
     ADD ESP,0xc                         ; 00421408
@@ -274,8 +274,8 @@ section .text
     PUSH EBP                            ; 0042145b | g_CDemonRendererInstance
     MOV EDI,0x2                         ; 0042145c
     XOR ESI,ESI                         ; 00421461
-    CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 00421463
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10 ; 00421463
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     MOV ECX,0xffffffff                  ; 00421468
     MOV EBP,0x3                         ; 0042146d
     ADD ESP,0xc                         ; 00421472
@@ -299,8 +299,8 @@ section .text
     PUSH EDX                            ; 004214c9 | g_CDemonRendererInstance
     MOV EDI,0x4                         ; 004214ca
     MOV dword ptr [ESP + 0x8c],EBX      ; 004214cf
-    CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 004214d6
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10 ; 004214d6
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 004214db
     MOV EBP,0x5                         ; 004214de
     MOV EAX,dword ptr [ESP + 0xb4]      ; 004214e3
@@ -323,8 +323,8 @@ section .text
     MOV EDX,0x6                         ; 0042152f
     PUSH ECX                            ; 00421534 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x90],EDX      ; 00421535
-    CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 0042153c
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10 ; 0042153c
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 00421541
     ADD ESP,0xac                        ; 00421544
     POP EBP                             ; 0042154a

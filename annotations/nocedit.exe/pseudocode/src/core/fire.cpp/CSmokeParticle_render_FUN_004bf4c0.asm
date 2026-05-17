@@ -48,7 +48,7 @@
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;   wincore_windll.cpp_transformPoint_FUN_005b5a25
@@ -295,8 +295,8 @@ section .text
     PUSH 0x2d12dcc                      ; 004bf7c3 | g_BillboardPrimitive
     MOV EBX,dword ptr [0x006703ec]      ; 004bf7c8 | g_CDemonRendererPtr2
     PUSH EBX                            ; 004bf7ce | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 004bf7cf
-        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0 ; 004bf7cf
+        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004bf7d4
     MOV ESI,dword ptr [0x006703ec]      ; 004bf7d7 | g_CDemonRendererPtr2
     PUSH ESI                            ; 004bf7dd | g_CDemonRendererInstance

@@ -66,6 +66,6 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee *th
   local_44.vertices[3] = 3;
   local_44.vertices[1] = 1;
   local_44.vertices[2] = 2;
-  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(this_ptr_00,&local_44.base,99);
+  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(this_ptr_00,&local_44.base,99);
   return;
 }

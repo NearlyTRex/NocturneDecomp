@@ -119,7 +119,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
                  iVar9),&local_78);
       iVar9 = iVar9 + 0x30;
     } while (iVar9 != 0x90);
-    engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+    engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
               (g_CDemonRendererPtr2,&local_e8.base,0x267);
     local_20 = local_20 + 3;
     local_30 = local_30 + -0x8000;
@@ -153,7 +153,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
                  iVar10),&local_6c);
       iVar10 = iVar10 + 0x30;
     } while (iVar10 != 0x90);
-    engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+    engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
               (g_CDemonRendererPtr2,&local_e8.base,0x267);
     local_24 = local_24 + 3;
     local_28 = local_28 + -0x8000;
@@ -211,7 +211,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
       local_e8.vertices[2] = iVar5 + 1;
       local_e8.vertices[3] = iVar5;
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(pCVar6,0x4000);
-      engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+      engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
                 (g_CDemonRendererPtr2,&local_e8.base,0x267);
     }
     iVar11 = iVar11 + 0x60;
@@ -256,7 +256,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
       local_e8.vertices[1] = iVar11 + -1;
       local_e8.vertices[2] = iVar11;
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(pCVar6,0x4000);
-      engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+      engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
                 (g_CDemonRendererPtr2,&local_e8.base,0x267);
     }
     iVar11 = iVar11 + 1;

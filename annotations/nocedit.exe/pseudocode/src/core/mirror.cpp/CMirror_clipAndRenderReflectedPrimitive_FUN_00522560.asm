@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
-;   engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820
+;   engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0048a820
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EAX                            ; 00522581
     MOV EBX,dword ptr [0x006703ec]      ; 00522582 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 00522588 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 ; 00522589
-        ;   XREF to: 0048a820 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0048a820 ; 00522589
+        ;   XREF to: 0048a820 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0052258e
     POP EBX                             ; 00522591
     RET                                 ; 00522592

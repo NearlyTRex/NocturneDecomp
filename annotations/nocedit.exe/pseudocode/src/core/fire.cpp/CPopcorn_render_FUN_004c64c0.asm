@@ -43,7 +43,7 @@
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;   wincore_windll.cpp_transformPoint_FUN_005b5a25
@@ -290,8 +290,8 @@ section .text
     PUSH EDX                            ; 004c67eb | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x28],EDI      ; 004c67ec
     MOV dword ptr [ESP + 0x2c],EBP      ; 004c67f0
-    CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 004c67f4
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0 ; 004c67f4
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004c67f9
     XOR EBX,EBX                         ; 004c67fc
     PUSH EBX                            ; 004c67fe

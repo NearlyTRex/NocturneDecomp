@@ -44,7 +44,7 @@
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
@@ -271,8 +271,8 @@ section .text
         ;   Label: LAB_004ec7e0
     MOV EDX,dword ptr [0x006703ec]      ; 004ec7e5 | g_CDemonRendererPtr2
     PUSH EDX                            ; 004ec7eb | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 004ec7ec
-        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0 ; 004ec7ec
+        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV ECX,dword ptr [ESI + 0x10]      ; 004ec7f1
     ADD ESP,0x8                         ; 004ec7f4
     CMP ECX,0x1                         ; 004ec7f7

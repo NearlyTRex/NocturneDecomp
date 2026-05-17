@@ -92,7 +92,7 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   SStack_a0.base.base.count = 4;
   SStack_a0.vertices[1] = 1;
   SStack_a0.vertices[2] = 2;
-  engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+  engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
             (g_CDemonRendererPtr2,&SStack_a0.base);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);

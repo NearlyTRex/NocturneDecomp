@@ -124,7 +124,7 @@
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0048bdc0
-;   engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0048bba0
 ;   ... and 4 more
 ;
@@ -630,8 +630,8 @@ section .text
     LEA EAX,[ESP + 0xc8]                ; 004c2d2e
     PUSH EAX                            ; 004c2d35
     PUSH EDX                            ; 004c2d36 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 004c2d37
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0 ; 004c2d37
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004c2d3c
     MOV EDX,dword ptr [0x006703ec]      ; 004c2d3f | g_CDemonRendererPtr2
     PUSH EDX                            ; 004c2d45 | g_CDemonRendererInstance

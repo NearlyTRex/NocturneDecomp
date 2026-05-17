@@ -216,7 +216,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       pCVar3->vertex_buffer_ptr[2].v = 0x8 << 16;
       pCVar3->vertex_buffer_ptr[3].u = 0xf8 << 16;
       pCVar3->vertex_buffer_ptr[3].v = 0x8 << 16;
-      engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(pCVar3,&local_248.base);
+      engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0(pCVar3,&local_248.base);
       iVar6 = iVar6 + 1;
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     } while (iVar6 < 0x19);

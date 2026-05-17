@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5732 (88.8%)
-With suspects: 722
-Total suspects: 3786
+Clean: 5733 (88.8%)
+With suspects: 721
+Total suspects: 3783
 
 ====================================================================================================
 core_bugs.cpp_CBugs_ctor_FUN_00424cb0 (3 suspects)
@@ -5214,14 +5214,6 @@ engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50 (2 suspect
 ====================================================================================================
   Line 24 [pointer_cast]: *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
   Line 26 [shadow_pointer_walk]: pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80 (3 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 19 [pointer_cast]: *(SFace **)((int)g_CapturedFacePointers + iVar3) = pSVar4;
-  Line 40 [pointer_cast]: iVar2 = **(int **)((int)g_CapturedFacePointers + iVar5);
-  Line 46 [pointer_cast]: piVar1 = (int *)((int)g_CapturedFacePointers + iVar5);
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320 (1 suspect)

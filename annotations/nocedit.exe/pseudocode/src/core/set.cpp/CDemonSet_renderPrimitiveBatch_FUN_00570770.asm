@@ -29,7 +29,7 @@
 ;   core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-;   engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90
+;   engine_drender.cpp_CDemonRenderer_renderQuadBatch_FUN_0048ce90
 ;
 ; *****************************************************************************
 
@@ -101,8 +101,8 @@ section .text
     PUSH EBP                            ; 00570826
     MOV EBX,dword ptr [0x006703ec]      ; 00570827 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EBX                            ; 0057082d | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90 ; 0057082e
-        ;   XREF to: 0048ce90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderQuadBatch_FUN_0048ce90 ; 0057082e
+        ;   XREF to: 0048ce90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderQuadBatch_FUN_0048ce90(CDemonRenderer * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00570833
     ADD ESP,0x28                        ; 00570836
         ;   Label: LAB_00570836

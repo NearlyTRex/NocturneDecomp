@@ -49,7 +49,7 @@ void __cdecl core_inv_cpp_drawItemIconBackground_FUN_005001e0(int x1,int y1,int 
   local_48.vertices[3] = 3;
   local_48.vertices[1] = 1;
   local_48.vertices[2] = 2;
-  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(this_ptr,&local_48.base,0xa3);
+  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(this_ptr,&local_48.base,0xa3);
   core_dcamera_cpp_CDemonCamera_pushRect_FUN_0044c740(&g_CDemonCameraInstance,x1,x2,y1,y2);
   return;
 }

@@ -77,7 +77,7 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   g_RenderVertexBuffer[3].r = 0xffff;
   g_RenderVertexBuffer[3].g = 0xffff;
   g_RenderVertexBuffer[3].b = 0xffff;
-  engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
             (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff88);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);

@@ -37,7 +37,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
@@ -151,8 +151,8 @@ section .text
     MOV EBP,0x1                         ; 0040e013
     MOV dword ptr [ESP + 0x28],ESI      ; 0040e018
     MOV dword ptr [ESP + 0x2c],EDI      ; 0040e01c
-    CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 0040e020
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0 ; 0040e020
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV EAX,0x1                         ; 0040e025
     MOV EDX,0x3                         ; 0040e02a
     MOV ECX,0x7                         ; 0040e02f
@@ -167,8 +167,8 @@ section .text
     PUSH ESI                            ; 0040e04e | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x2c],EBX      ; 0040e04f
     MOV EBX,0x4                         ; 0040e053
-    CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 0040e058
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0 ; 0040e058
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV EAX,0x3                         ; 0040e05d
     MOV EDX,0x2                         ; 0040e062
     MOV ESI,0x5                         ; 0040e067
@@ -183,8 +183,8 @@ section .text
     PUSH ECX                            ; 0040e088 | g_CDemonRendererInstance
     MOV EDI,0x7                         ; 0040e089
     MOV EBP,0x6                         ; 0040e08e
-    CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 0040e093
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0 ; 0040e093
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0040e098
     MOV EAX,ESP                         ; 0040e09b
     MOV dword ptr [ESP + 0x18],EBX      ; 0040e09d
@@ -194,8 +194,8 @@ section .text
     PUSH EAX                            ; 0040e0ab | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x28],EDI      ; 0040e0ac
     MOV dword ptr [ESP + 0x2c],EBP      ; 0040e0b0
-    CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 0040e0b4
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0 ; 0040e0b4
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV EDX,0x2                         ; 0040e0b9
     MOV ECX,0x3                         ; 0040e0be
     ADD ESP,0x8                         ; 0040e0c3
@@ -207,8 +207,8 @@ section .text
     PUSH EDI                            ; 0040e0d7 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x24],ECX      ; 0040e0d8
     MOV dword ptr [ESP + 0x2c],EBP      ; 0040e0dc
-    CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 0040e0e0
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0 ; 0040e0e0
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     MOV EAX,0x1                         ; 0040e0e5
     ADD ESP,0x8                         ; 0040e0ea
     MOV dword ptr [ESP + 0x1c],EAX      ; 0040e0ed
@@ -220,8 +220,8 @@ section .text
     PUSH EBX                            ; 0040e100 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x20],EBP      ; 0040e101
     MOV dword ptr [ESP + 0x28],ESI      ; 0040e105
-    CALL engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0 ; 0040e109
-        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0 ; 0040e109
+        ;   XREF to: 0048bad0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0040e10e
     MOV ESI,dword ptr [ESP + 0x78]      ; 0040e111
     PUSH ESI                            ; 0040e115

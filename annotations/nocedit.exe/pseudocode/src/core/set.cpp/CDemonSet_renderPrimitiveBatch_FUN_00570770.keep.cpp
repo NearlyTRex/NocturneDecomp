@@ -39,8 +39,8 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(CDemonSet 
                    core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0);
       } while (iVar2 < primitive_count);
     }
-    engine_drender_cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90
-              (g_CDemonRendererPtr2,&primitive_array->base,primitive_count,render_flags);
+    engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_0048ce90
+              (g_CDemonRendererPtr2,primitive_array,primitive_count,render_flags);
   }
   return;
 }

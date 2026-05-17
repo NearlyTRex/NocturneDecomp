@@ -135,7 +135,8 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *pos
       local_b8.vertices[0] = 0;
       local_b8.vertices[1] = 1;
       local_b8.vertices[2] = 2;
-      engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(this_ptr,&local_b8.base);
+      engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
+                (this_ptr,&local_b8.base);
     } while (iVar2 < 8);
     iVar11 = iVar11 + 1;
   } while (iVar11 < 8);

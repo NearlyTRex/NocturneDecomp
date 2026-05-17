@@ -354,7 +354,7 @@ __asm {
         push ECX
         mov dword ptr [ESP + 0x30],EBP
         mov dword ptr [ESP + 0x34],EBX
-        call engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+        call engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
         add ESP,0x8
         lea EAX,[ESP + 0xc]
         mov dword ptr [ESP + 0x24],EBP
@@ -366,7 +366,7 @@ __asm {
         push EBX
         mov dword ptr [ESP + 0x30],EBP
         mov dword ptr [ESP + 0x34],ESI
-        call engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+        call engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
         add ESP,0x8
         mov EAX,dword ptr [ESP + 0xf4]
         inc EDI
@@ -489,7 +489,7 @@ __asm {
         lea EAX,[ESP + 0xc]
         push EAX
         push EDX
-        call engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+        call engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
         add ESP,0x8
         mov EBX,dword ptr [ESP + 0xc0]
         mov EAX,dword ptr [ESP + 0xbc]

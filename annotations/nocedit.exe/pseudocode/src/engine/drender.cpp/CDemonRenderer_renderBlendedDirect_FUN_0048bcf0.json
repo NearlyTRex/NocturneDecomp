@@ -1,0 +1,336 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "keep.cpp",
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 39,
+    "cross_reference_count": 13,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 39,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 127
+  },
+  "cross_references": [
+    {
+      "addr": "004308f0",
+      "from_addr": "00430e92",
+      "name": "core_chain.cpp_CChain_renderTransparent_FUN_004308f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bfac0",
+      "from_addr": "004bfd0e",
+      "name": "core_fire.cpp_CBulletHole_render_FUN_004bfac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c4620",
+      "from_addr": "004c4865",
+      "name": "core_fire.cpp_CCrater_render_FUN_004c4620",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c1ef0",
+      "from_addr": "004c20cd",
+      "name": "core_fire.cpp_CGlassParticle_render_FUN_004c1ef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c5720",
+      "from_addr": "004c5a34",
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_004c5720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bf4c0",
+      "from_addr": "004bf7cf",
+      "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c5e90",
+      "from_addr": "004c6136",
+      "name": "core_fire.cpp_CTrail_render_FUN_004c5e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ebac0",
+      "from_addr": "004ebe49",
+      "name": "core_gore.cpp_CBloodParticle_render_FUN_004ebac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ecce0",
+      "from_addr": "004ecf8f",
+      "name": "core_gore.cpp_CBloodPool_render_FUN_004ecce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ec500",
+      "from_addr": "004ec7ec",
+      "name": "core_gore.cpp_CBloodSplat_render_FUN_004ec500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ed3c0",
+      "from_addr": "004ed5a1",
+      "name": "core_gore.cpp_CFootstep_render_FUN_004ed3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00587b50",
+      "from_addr": "00587d9d",
+      "name": "core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ef190",
+      "from_addr": "005ef5dd",
+      "name": "core_weather.cpp_CWeather_renderParticles_FUN_005ef190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048bcf0",
+    "address_range": [
+      [
+        "0048bcf0",
+        "0048bdb9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403950",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "0048a740",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 19,
+    "call_sites": [
+      {
+        "call_addr": "004ed5a1",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_CFootstep_render_FUN_004ed3c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c4865",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CCrater_render_FUN_004c4620",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c482a",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CCrater_render_FUN_004c4620",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ecf8f",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_CBloodPool_render_FUN_004ecce0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00430e92",
+        "call_type": "direct",
+        "caller": "core_chain.cpp_CChain_renderTransparent_FUN_004308f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00430c5a",
+        "call_type": "direct",
+        "caller": "core_chain.cpp_CChain_renderTransparent_FUN_004308f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00587d9d",
+        "call_type": "direct",
+        "caller": "core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bf7cf",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bfd0e",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CBulletHole_render_FUN_004bfac0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c20cd",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CGlassParticle_render_FUN_004c1ef0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.015625,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 57,
+      "INT_ADD": 21,
+      "INT_AND": 35,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 30,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 4,
+      "INT_SEXT": 3,
+      "INT_SLESS": 15,
+      "INT_SUB": 14,
+      "INT_XOR": 2,
+      "LOAD": 15,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 10,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 257
+  },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 18,
+      "match": "pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar1 = (SMRGLHeaderPrimitive *)&(pSVar1->base).count;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": []
+}

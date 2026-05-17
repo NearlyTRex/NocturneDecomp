@@ -18,12 +18,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
   
   if (this_ptr->face_count == 0) {
     if (0 < g_CaptureFaceCount) {
-      pSVar4 = g_CapturedFaces;
       iVar3 = 0;
       do {
-        g_CapturedFacePointers[iVar3] = pSVar4;
+        g_CapturedFacePointers[iVar3] = &g_CapturedFaces[iVar3];
         iVar3 = iVar3 + 1;
-        pSVar4 = pSVar4 + 1;
       } while (iVar3 < g_CaptureFaceCount);
     }
     if (this_ptr->texture_capture_enabled == 1) {

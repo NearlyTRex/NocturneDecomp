@@ -11,7 +11,7 @@
 ; STrianglePackedIndices Stack[-0x24]:6  local_24
 ;
 ; XREF[2]:
-;   engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90 at 0048cec2
+;   engine_drender.cpp_CDemonRenderer_renderQuadBatch_FUN_0048ce90 at 0048cec2
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0 at 0048af67
 ;
 ; Called Functions:

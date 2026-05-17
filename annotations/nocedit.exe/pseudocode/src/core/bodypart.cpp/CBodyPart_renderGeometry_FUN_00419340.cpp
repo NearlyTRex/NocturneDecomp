@@ -29,8 +29,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart *
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                 (g_CDemonRendererPtr2,this_ptr->textures);
     }
-    engine_drender_cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
-              (g_CDemonRendererPtr2,&this_ptr->faces->base,this_ptr->tri_count,render_flags);
+    engine_drender_cpp_CDemonRenderer_renderTriangleBatch_FUN_0048ce20
+              (g_CDemonRendererPtr2,this_ptr->faces,this_ptr->tri_count,render_flags);
   }
   else {
     iVar4 = 0;

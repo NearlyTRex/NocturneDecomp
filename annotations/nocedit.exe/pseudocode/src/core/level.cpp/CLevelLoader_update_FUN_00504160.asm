@@ -54,7 +54,7 @@
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890
-;   engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
@@ -368,8 +368,8 @@ section .text
     PUSH EAX                            ; 00504550
     MOV ECX,dword ptr [0x006703ec]      ; 00504551 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00504557 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 00504558
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10 ; 00504558
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 0050455d
     XOR EBX,EBX                         ; 00504560
     PUSH EBX                            ; 00504562

@@ -20,7 +20,7 @@
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
+;   engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_0048ce20
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH ECX                            ; 0057073a
     MOV EBX,dword ptr [0x006703ec]      ; 0057073b | g_CDemonRendererPtr2
     PUSH EBX                            ; 00570741 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20 ; 00570742
-        ;   XREF to: 0048ce20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_0048ce20 ; 00570742
+        ;   XREF to: 0048ce20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_0048ce20(CDemonRenderer * this_ptr, SMRGLPrimitiveTriangle * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00570747
     POP EBP                             ; 0057074a
         ;   Label: LAB_0057074a

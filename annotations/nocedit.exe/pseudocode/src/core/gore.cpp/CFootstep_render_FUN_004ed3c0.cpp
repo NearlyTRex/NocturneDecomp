@@ -128,7 +128,7 @@ LAB_004ed550:
   g_RenderVertexBuffer[3].g = 0;
   g_RenderVertexBuffer[3].b = 0;
 LAB_004ed595:
-  engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
             (g_CDemonRendererPtr2,&g_FootstepPrimitive.base);
   if (expire_flag != 0) {
     this_ptr->expired = 1;

@@ -151,7 +151,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
           local_e0.vertices[0] = 0;
           local_e0.vertices[3] = 3;
           local_e0.vertices[2] = 2;
-          engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+          engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                     (this_ptr_00,&local_e0.base);
         } while (iVar2 < 4);
         local_4c = local_4c + 1;

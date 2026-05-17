@@ -159,7 +159,7 @@ LAB_004ec7a1:
   g_RenderVertexBuffer[3].g = 0;
 LAB_004ec7e0:
   g_RenderVertexBuffer[3].b = 0;
-  engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
             (g_CDemonRendererPtr2,&g_GoreQuadPrimitive.base);
   if (this_ptr->is_wall_splat == 1) {
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);

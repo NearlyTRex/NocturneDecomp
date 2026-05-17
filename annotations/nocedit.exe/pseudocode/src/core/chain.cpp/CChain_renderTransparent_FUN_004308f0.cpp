@@ -106,7 +106,7 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
         CStack_6c.z = (int)ROUND((pSVar4->position).z * 256.0f);
         core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
                   (g_CDemonSetPtr,&CStack_6c,(CVector3i *)0x0,2,2);
-        engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+        engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
                   (g_CDemonRendererPtr2,&SStack_b8.base);
         CStack_30.x = (int)ROUND((pSVar5->position).x * 256.0f);
         CStack_30.y = (int)ROUND((pSVar5->position).y * 256.0f);
@@ -160,7 +160,7 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
         core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
                   (g_CDemonSetPtr,&CStack_6c,(CVector3i *)0x0,2,2);
         pSVar5 = pSVar5 + 1;
-        engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+        engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
                   (g_CDemonRendererPtr2,&SStack_b8.base);
       }
       return 1;

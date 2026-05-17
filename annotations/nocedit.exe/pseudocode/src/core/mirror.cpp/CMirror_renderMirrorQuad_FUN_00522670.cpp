@@ -46,7 +46,7 @@ int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_00522670(CMirror *this_
   local_64.vertices[1] = 1;
   local_64.vertices[2] = 2;
   local_64.vertices[3] = 3;
-  iVar1 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+  iVar1 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
                     (g_CDemonRendererPtr2,&local_64.base);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   return iVar1;

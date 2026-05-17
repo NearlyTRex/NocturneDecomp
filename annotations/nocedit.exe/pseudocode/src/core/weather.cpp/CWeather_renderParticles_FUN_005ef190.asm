@@ -61,7 +61,7 @@
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -379,8 +379,8 @@ section .text
     PUSH EAX                            ; 005ef5d6
     MOV EAX,[0x006703ec]                ; 005ef5d7 | g_CDemonRendererPtr2
     PUSH EAX                            ; 005ef5dc | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 005ef5dd
-        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0 ; 005ef5dd
+        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 005ef5e2
     MOV EDX,dword ptr [0x006703ec]      ; 005ef5e5 | g_CDemonRendererPtr2
     PUSH EDX                            ; 005ef5eb | g_CDemonRendererInstance
@@ -586,8 +586,8 @@ section .text
     PUSH EAX                            ; 005ef89b
     MOV ECX,dword ptr [0x006703ec]      ; 005ef89c | g_CDemonRendererPtr2
     PUSH ECX                            ; 005ef8a2 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0 ; 005ef8a3
-        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0 ; 005ef8a3
+        ;   XREF to: 0048bcf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 005ef8a8
     MOV EBX,dword ptr [0x006703ec]      ; 005ef8ab | g_CDemonRendererPtr2
     PUSH EBX                            ; 005ef8b1 | g_CDemonRendererInstance

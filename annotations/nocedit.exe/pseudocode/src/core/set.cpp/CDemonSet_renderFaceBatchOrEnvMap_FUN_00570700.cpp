@@ -19,8 +19,8 @@ void __cdecl core_set_cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_00570700(CDemonS
         return;
       }
     }
-    engine_drender_cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
-              (g_CDemonRendererPtr2,prims,count,flags);
+    engine_drender_cpp_CDemonRenderer_renderTriangleBatch_FUN_0048ce20
+              (g_CDemonRendererPtr2,(SMRGLPrimitiveTriangle *)prims,count,flags);
   }
   return;
 }

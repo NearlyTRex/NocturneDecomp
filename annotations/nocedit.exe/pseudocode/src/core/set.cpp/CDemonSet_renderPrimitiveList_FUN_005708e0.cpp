@@ -17,7 +17,7 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_005708e0(CDemonSet *
       if (0 < primitive_count) {
         do {
           iVar1 = iVar1 + 1;
-          engine_drender_cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820
+          engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0048a820
                     (g_CDemonRendererPtr2,primitive_array);
           primitive_array = (SMRGLHeaderPrimitive *)&primitive_array[1].surface_normal.C;
         } while (iVar1 < primitive_count);

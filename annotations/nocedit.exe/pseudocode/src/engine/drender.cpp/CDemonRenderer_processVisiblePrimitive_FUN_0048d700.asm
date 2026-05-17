@@ -11,7 +11,7 @@
 ; STrianglePackedIndices Stack[-0x18]:6  local_18
 ;
 ; XREF[1]:
-;   engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20 at 0048ce52
+;   engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_0048ce20 at 0048ce52
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403950

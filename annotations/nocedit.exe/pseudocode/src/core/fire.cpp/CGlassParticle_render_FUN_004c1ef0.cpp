@@ -58,7 +58,7 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
   g_RenderVertexBuffer[2].u = (this_ptr->uv_u_per_vertex).z;
   g_RenderVertexBuffer[2].v = (this_ptr->uv_v_per_vertex).z;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
-  engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
             (g_CDemonRendererPtr2,&SStack_68.base);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   return;

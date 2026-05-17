@@ -18,7 +18,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
-;   engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;   wincore_windll.cpp_transformPoint_FUN_005b5a25
 ;
@@ -135,8 +135,8 @@ section .text
     PUSH ESI                            ; 005227cd | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x28],ECX      ; 005227ce
     MOV dword ptr [ESP + 0x2c],EBX      ; 005227d2
-    CALL engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50 ; 005227d6
-        ;   XREF to: 0048ab50 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50 ; 005227d6
+        ;   XREF to: 0048ab50 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 005227db
     PUSH 0x1                            ; 005227de
     MOV EDI,dword ptr [0x006703ec]      ; 005227e0 | g_CDemonRendererPtr2

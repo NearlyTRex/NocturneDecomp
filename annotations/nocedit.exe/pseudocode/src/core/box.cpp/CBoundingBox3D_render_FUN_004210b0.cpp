@@ -88,7 +88,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   local_50.vertices[2] = 6;
   local_50.base.surface_normal.D.i = -(int)ROUND(fVar1);
   local_50.vertices[3] = 2;
-  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
   local_50.base.surface_normal.A.i = 1;
   local_50.base.surface_normal.B.i = 0;
@@ -98,7 +98,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   local_50.vertices[2] = 7;
   local_50.vertices[3] = 5;
   local_50.base.surface_normal.D.i = (int)ROUND(fVar4);
-  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
   local_50.base.surface_normal.A.i = 0;
   local_50.base.surface_normal.B.i = -1;
@@ -108,7 +108,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   local_50.base.surface_normal.D.i = -(int)ROUND(fVar2);
   local_50.vertices[2] = 5;
   local_50.vertices[3] = 4;
-  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
   local_50.base.surface_normal.A.i = 0;
   local_50.base.surface_normal.B.i = 1;
@@ -118,7 +118,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   local_50.vertices[2] = 7;
   local_50.vertices[3] = 3;
   local_50.base.surface_normal.D.i = (int)ROUND(fVar5);
-  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
   local_50.base.surface_normal.A.i = 0;
   local_50.base.surface_normal.B.i = 0;
@@ -128,7 +128,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   local_50.vertices[1] = 2;
   local_50.vertices[2] = 3;
   local_50.base.surface_normal.D.i = -(int)ROUND(fVar3);
-  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
   local_50.base.surface_normal.A.i = 0;
   local_50.base.surface_normal.B.i = 0;
@@ -138,7 +138,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   local_50.vertices[2] = 7;
   local_50.vertices[3] = 6;
   local_50.base.surface_normal.D.i = (int)ROUND(fVar6);
-  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+  engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
   return;
 }

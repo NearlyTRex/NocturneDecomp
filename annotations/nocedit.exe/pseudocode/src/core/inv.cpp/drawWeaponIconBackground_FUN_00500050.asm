@@ -29,7 +29,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_pushRect_FUN_0044c740
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;
 ; *****************************************************************************
@@ -122,8 +122,8 @@ section .text
     PUSH EAX                            ; 0050017f | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x28],ESI      ; 00500180
     MOV dword ptr [ESP + 0x2c],EDI      ; 00500184
-    CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 00500188
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10 ; 00500188
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 0050018d
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00500190
     MOV dword ptr [ESP + 0x28],EAX      ; 00500194

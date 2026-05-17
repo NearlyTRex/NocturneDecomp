@@ -128,7 +128,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     local_d4.vertices[3] = 3;
     local_d4.vertices[1] = 1;
     local_d4.vertices[2] = 2;
-    engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+    engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
               (g_CDemonRendererPtr2,&local_d4.base);
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);

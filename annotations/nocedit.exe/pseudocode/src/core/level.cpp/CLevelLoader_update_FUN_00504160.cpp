@@ -135,7 +135,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(pCVar3,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&g_LoadingMoonGlowTexture);
-    engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+    engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
               (g_CDemonRendererPtr2,&local_88.base,0x327);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850

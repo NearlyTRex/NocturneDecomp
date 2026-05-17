@@ -15,7 +15,7 @@
 ;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0 at 004e9d07
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 at 00575637
 ;   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 at 00574ae0
-;   engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50 at 0048aba6
+;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50 at 0048aba6
 ;
 ; Referenced Globals:
 ;   int g_TexturesDisabled

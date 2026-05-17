@@ -68,10 +68,10 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_004c4620(CCrater *this_ptr)
   local_6c.base.count = 3;
   local_6c.surface_normal.D.i = 0;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
-  engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-            (g_CDemonRendererPtr2,&local_6c);
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(g_CDemonRendererPtr2,&local_6c)
+  ;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
-  engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-            (g_CDemonRendererPtr2,&local_6c);
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(g_CDemonRendererPtr2,&local_6c)
+  ;
   return;
 }

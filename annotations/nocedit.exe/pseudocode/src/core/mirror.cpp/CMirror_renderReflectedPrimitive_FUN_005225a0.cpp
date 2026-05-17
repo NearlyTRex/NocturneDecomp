@@ -16,7 +16,7 @@ int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_005225a0(CMirro
   if (uVar1 == 0) {
     return 0;
   }
-  iVar2 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+  iVar2 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
                     (g_CDemonRendererPtr2,&(this_ptr->clip_primitive).base);
   return iVar2;
 }

@@ -53,7 +53,7 @@
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
@@ -380,8 +380,8 @@ section .text
     MOV ECX,0x2                         ; 005ea2b4
     PUSH EDX                            ; 005ea2b9 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x28],ECX      ; 005ea2ba
-    CALL engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50 ; 005ea2be
-        ;   XREF to: 0048ab50 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50 ; 005ea2be
+        ;   XREF to: 0048ab50 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 005ea2c3
     TEST EAX,EAX                        ; 005ea2c6
     JZ 0x005ea314                       ; 005ea2c8

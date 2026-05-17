@@ -27,8 +27,8 @@
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
+;   engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_0048ce20
 ;
 ; *****************************************************************************
 
@@ -103,8 +103,8 @@ section .text
     PUSH EAX                            ; 004193f5
     MOV EDX,dword ptr [0x006703ec]      ; 004193f6 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 004193fc | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20 ; 004193fd
-        ;   XREF to: 0048ce20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)
+    CALL engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_0048ce20 ; 004193fd
+        ;   XREF to: 0048ce20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_0048ce20(CDemonRenderer * this_ptr, SMRGLPrimitiveTriangle * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00419402
     PUSH 0x1                            ; 00419405
         ;   Label: LAB_00419405

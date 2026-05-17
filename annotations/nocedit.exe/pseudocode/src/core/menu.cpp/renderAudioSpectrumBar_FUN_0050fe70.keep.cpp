@@ -55,7 +55,7 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int 
                        (g_AudioVisualizationCounter >> 0x1f) * -0x10000) -
                       (uint)((g_AudioVisualizationCounter >> 0x1f) << 0xf < 0)) >> 0x10) + x_center
                & 7));
-    engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+    engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
               (g_CDemonRendererPtr2,&local_2c.base,0x23);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);

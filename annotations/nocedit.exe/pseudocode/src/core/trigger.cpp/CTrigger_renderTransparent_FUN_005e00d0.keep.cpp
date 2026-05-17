@@ -219,18 +219,18 @@ LAB_005e0160:
       SStack_cc.vertices[1] = iVar2 + 5;
       SStack_cc.vertices[2] = iVar2 + 3;
       SStack_cc.vertices[3] = iVar2 + 2;
-      engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+      engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
                 (g_CDemonRendererPtr2,&SStack_cc.base,0x367);
       SStack_cc.base.base.count = 3;
       SStack_cc.vertices[2] = 0;
       SStack_cc.vertices[0] = iVar2 + 4;
       SStack_cc.vertices[1] = iVar2 + 2;
-      engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+      engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
                 (g_CDemonRendererPtr2,&SStack_cc.base,0x367);
       SStack_cc.vertices[2] = 1;
       SStack_cc.vertices[0] = iVar2 + 3;
       SStack_cc.vertices[1] = iVar2 + 5;
-      engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+      engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
                 (g_CDemonRendererPtr2,&SStack_cc.base,0x367);
       iVar6 = iVar6 + 1;
     } while (iVar6 < iStack_d0);

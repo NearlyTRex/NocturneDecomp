@@ -15,8 +15,8 @@
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20 at 0048ce7b
-;   engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90 at 0048ceeb
+;   engine_drender.cpp_CDemonRenderer_renderQuadBatch_FUN_0048ce90 at 0048ceeb
+;   engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_0048ce20 at 0048ce7b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0062208d

@@ -127,7 +127,7 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *th
           g_RenderPixelBudget = 0x10;
           SStack_b4.vertices[1] = 1;
           SStack_b4.vertices[2] = 2;
-          iVar4 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+          iVar4 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0048ab50
                             (g_CDemonRendererPtr2,&SStack_b4.base);
           if (iVar4 != 0) {
             if (0xfff < g_VisibleWaterTileCount) {

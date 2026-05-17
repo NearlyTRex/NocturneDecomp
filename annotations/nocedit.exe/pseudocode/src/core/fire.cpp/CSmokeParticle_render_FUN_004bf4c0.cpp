@@ -92,7 +92,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
     lVar1 = (longlong)(0xffff - g_PerspectiveReciprocal) * (longlong)this_ptr->alpha_value;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
+    engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
               (g_CDemonRendererPtr2,&g_BillboardPrimitive.base);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   }
