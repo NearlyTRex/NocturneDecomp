@@ -97,9 +97,7 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
       pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                          (rotation_matrix,local_a0,&local_64);
       if (&local_64 != pCVar7) {
-        local_64.x = pCVar7->x;
-        local_64.y = pCVar7->y;
-        local_64.z = pCVar7->z;
+        local_64 = *pCVar7;
       }
       if ((((aabb_min->x <= local_64.x + pCVar1->atten_end) &&
            (aabb_min->y <= local_64.y + pCVar1->atten_end)) &&

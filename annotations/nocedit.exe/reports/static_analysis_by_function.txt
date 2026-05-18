@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 144
-  Total diagnostics: 401
+  Functions with findings: 143
+  Total diagnostics: 399
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 144, raw .cpp files: 0
+  .keep.cpp files: 143, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -289,15 +289,6 @@ core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0  [.keep] [Cppcheck (quick)]
   Line   51: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_ghoul.cpp_CGhoul_process_FUN_004e6600  [.keep] [Cppcheck (quick)]
-  File: core/ghoul.cpp  (4 diagnostics)
-
-  Line  155: [uninitvar] Uninitialized variable: local_1c0
-  Line  158: [uninitvar] Uninitialized variable: local_1c4
-  Line  682: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
-  Line  683: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
 core_path.cpp_CPathMap_searchGrid_FUN_005487a0  [.keep] [Cppcheck (quick)]
   File: core/path.cpp  (4 diagnostics)
 
@@ -493,6 +484,14 @@ engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190  [.keep] [Cppchec
   Line  130: [selfAssignment] Redundant assignment of 'pCVar8' to itself.
 
 ----------------------------------------------------------------------------------------------------
+shape_design.c_arePolygonsCoplanar_FUN_00461b70  [.keep] [Cppcheck (quick)]
+  File: shape/design.c  (3 diagnostics)
+
+  Line   21: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   25: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
 shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180  [.keep] [Cppcheck (quick)]
   File: shape/quantize.cpp  (3 diagnostics)
 
@@ -636,6 +635,13 @@ core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0  [.keep] [Cppcheck (quick)]
   Line 1567: [selfAssignment] Redundant assignment of 'pbVar21' to itself.
 
 ----------------------------------------------------------------------------------------------------
+core_ghoul.cpp_CGhoul_process_FUN_004e6600  [.keep] [Cppcheck (quick)]
+  File: core/ghoul.cpp  (2 diagnostics)
+
+  Line  680: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+  Line  681: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
 core_keyactor.cpp_CKeyActor_process_FUN_00501710  [.keep] [Cppcheck (quick)]
   File: core/keyactor.cpp  (2 diagnostics)
 
@@ -669,13 +675,6 @@ core_script.cpp_parseCommandWithTemplates_FUN_00561690  [.keep] [Cppcheck (quick
 
   Line   45: [selfAssignment] Redundant assignment of 'pCVar6' to itself.
   Line   46: [selfAssignment] Redundant assignment of 'pCVar9' to itself.
-
-----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_processActors_FUN_0056b810  [.keep] [Cppcheck (quick)]
-  File: core/set.cpp  (2 diagnostics)
-
-  Line   99: [uninitvar] Uninitialized variable: local_3c
-  Line  114: [uninitvar] Uninitialized variable: fStack_5c
 
 ----------------------------------------------------------------------------------------------------
 core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  [.keep] [Cppcheck (quick)]
@@ -906,12 +905,6 @@ core_script.cpp_trimLine_FUN_005592c0  [.keep] [Cppcheck (quick)]
   Line   38: [nullPointer] Possible null pointer dereference: pcVar2
 
 ----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0  [.keep] [Cppcheck (quick)]
-  File: core/set.cpp  (1 diagnostics)
-
-  Line  141: [selfAssignment] Redundant assignment of 'pCVar12' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_load_FUN_00569410  [.keep] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
@@ -921,7 +914,7 @@ core_set.cpp_CDemonSet_load_FUN_00569410  [.keep] [Cppcheck (quick)]
 core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990  [.keep] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
-  Line  105: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   95: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660  [.keep] [Cppcheck (quick)]

@@ -20,13 +20,12 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_004268e0(CBugs *this
   float fVar12;
   float fVar13;
   int *piVar5;
-  int *piVar14;
+  CVector3i *pCVar14;
   CVector3f *pCVar6;
   CDeformableModel *pCVar7;
-  int *piVar15;
-  int *piVar16;
-  CVector3f *pCVar17;
-  int iVar18;
+  CVector3i *pCVar15;
+  CVector3f *pCVar16;
+  int iVar17;
   ushort *puVar8;
   int iVar9;
   float local_118;
@@ -77,15 +76,14 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_004268e0(CBugs *this
   
   local_118 = delta_time;
   if (bug_data->current_vertex < 0) {
-    piVar14 = (int *)(this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4] +
-                     bug_data->dest_vertex * 0xc);
-    local_6c.x = (float)*piVar14 * 0.00390625f;
-    local_6c.y = (float)piVar14[1] * 0.00390625f;
-    local_6c.z = (float)piVar14[2] * 0.00390625f;
+    pCVar14 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + bug_data->dest_vertex;
+    local_6c.x = (float)pCVar14->x * 0.00390625f;
+    local_6c.y = (float)pCVar14->y * 0.00390625f;
+    local_6c.z = (float)pCVar14->z * 0.00390625f;
     core_xform_cpp_transformVector3x4InPlace_FUN_005f4e20(&local_6c,&this_ptr->model_world_matrix);
-    iVar18 = core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420
+    iVar17 = core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420
                        (this_ptr,bug_data,delta_time,&local_6c);
-    if (iVar18 != 0) {
+    if (iVar17 != 0) {
       core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(this_ptr,bug_data);
       bug_data->interp_t = 0.0;
       return;
@@ -116,16 +114,14 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_004268e0(CBugs *this
         bug_data->interp_t = 1.0;
       }
     }
-    piVar5 = (int *)(bug_data->current_vertex * 0xc +
-                    this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4]);
+    piVar5 = &this_ptr->deformable_model_ptr->skinned_vertices_buffer[bug_data->current_vertex].x;
     fVar9 = (float)*piVar5 * 0.00390625f;
     fVar10 = (float)piVar5[1] * 0.00390625f;
     fVar11 = (float)piVar5[2] * 0.00390625f;
-    piVar14 = (int *)(bug_data->dest_vertex * 0xc +
-                     this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4]);
-    fVar6 = (float)*piVar14 * 0.00390625f;
-    fVar7 = (float)piVar14[1] * 0.00390625f;
-    fVar8 = (float)piVar14[2] * 0.00390625f;
+    pCVar14 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + bug_data->dest_vertex;
+    fVar6 = (float)pCVar14->x * 0.00390625f;
+    fVar7 = (float)pCVar14->y * 0.00390625f;
+    fVar8 = (float)pCVar14->z * 0.00390625f;
     pfVar1 = &bug_data->interp_t;
     local_b4 = fVar6 * *pfVar1;
     local_b0 = fVar7 * *pfVar1;
@@ -144,23 +140,23 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_004268e0(CBugs *this
     fVar6 = fVar6 - fVar9;
     fVar7 = fVar7 - fVar10;
     fVar8 = fVar8 - fVar11;
-    iVar18 = this_ptr->swarm_vertices[bug_data->current_vertex].first_edge_data;
+    iVar17 = this_ptr->swarm_vertices[bug_data->current_vertex].first_edge_data;
     iVar1 = this_ptr->lod_index;
     pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                       ((CDeformableModelInstance *)this_ptr->deformable_model_ptr);
-    puVar8 = (ushort *)(pCVar7->tri_data_ptr[iVar1] + iVar18);
-    piVar14 = (int *)((uint)*puVar8 * 0xc +
-                     this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4]);
-    piVar15 = (int *)(this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4] +
-                     (uint)puVar8[1] * 0xc);
-    piVar16 = (int *)((uint)puVar8[2] * 0xc +
-                     this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4]);
-    fVar9 = (float)piVar15[1] * 0.00390625f - (float)piVar14[1] * 0.00390625f;
-    fVar5 = (float)piVar16[2] * 0.00390625f - (float)piVar15[2] * 0.00390625f;
-    fVar11 = (float)piVar15[2] * 0.00390625f - (float)piVar14[2] * 0.00390625f;
-    fVar10 = (float)*piVar16 * 0.00390625f - (float)*piVar15 * 0.00390625f;
-    fVar13 = (float)*piVar15 * 0.00390625f - (float)*piVar14 * 0.00390625f;
-    fVar12 = (float)piVar16[1] * 0.00390625f - (float)piVar15[1] * 0.00390625f;
+                       (this_ptr->deformable_model_ptr);
+    puVar8 = (ushort *)(pCVar7->tri_data_ptr[iVar1] + iVar17);
+    pCVar14 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + *puVar8;
+    pCVar15 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + puVar8[1];
+    fVar13 = (float)pCVar15->x * 0.00390625f;
+    fVar12 = (float)pCVar15->y * 0.00390625f;
+    fVar11 = (float)pCVar15->z * 0.00390625f;
+    pCVar15 = this_ptr->deformable_model_ptr->skinned_vertices_buffer + puVar8[2];
+    fVar9 = fVar12 - (float)pCVar14->y * 0.00390625f;
+    fVar5 = (float)pCVar15->z * 0.00390625f - fVar11;
+    fVar11 = fVar11 - (float)pCVar14->z * 0.00390625f;
+    fVar10 = (float)pCVar15->x * 0.00390625f - fVar13;
+    fVar13 = fVar13 - (float)pCVar14->x * 0.00390625f;
+    fVar12 = (float)pCVar15->y * 0.00390625f - fVar12;
     local_bc = fVar11 * fVar10 - fVar13 * fVar5;
     local_b8 = fVar13 * fVar12 - fVar9 * fVar10;
     local_c0 = fVar9 * fVar5 - fVar11 * fVar12;
@@ -220,11 +216,11 @@ void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_004268e0(CBugs *this
     local_100.m[2].x = local_88;
     local_100.m[2].y = local_b8;
     local_100.m[2].z = local_d0;
-    pCVar17 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(&local_100,&local_48);
-    if (&bug_data->orientation != pCVar17) {
-      (bug_data->orientation).x = pCVar17->x;
-      (bug_data->orientation).y = pCVar17->y;
-      (bug_data->orientation).z = pCVar17->z;
+    pCVar16 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(&local_100,&local_48);
+    if (&bug_data->orientation != pCVar16) {
+      (bug_data->orientation).x = pCVar16->x;
+      (bug_data->orientation).y = pCVar16->y;
+      (bug_data->orientation).z = pCVar16->z;
       return;
     }
   }

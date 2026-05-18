@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (401 diagnostics)
+Cppcheck (quick) (399 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (102)
+shiftTooManyBitsSigned (105)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
@@ -252,7 +252,7 @@ shiftTooManyBitsSigned (102)
     File: core/path.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 105
+  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 95
     File: core/set.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -314,6 +314,18 @@ shiftTooManyBitsSigned (102)
 
   engine_light.cpp_calculatePhongLighting_FUN_005055 line 103
     File: engine/light.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 21
+    File: shape/design.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 25
+    File: shape/design.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 28
+    File: shape/design.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   shape_edittool.cpp_CEditorTools_createModalWindow_ line 108
@@ -421,7 +433,7 @@ shiftTooManyBitsSigned (102)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (68)
+uninitvar (64)
 ----------------------------------------------------------------------------------------------------
 
   core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 92
@@ -528,14 +540,6 @@ uninitvar (68)
     File: core/gabriela.cpp
     Uninitialized variable: local_98
 
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 155
-    File: core/ghoul.cpp
-    Uninitialized variable: local_1c0
-
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 158
-    File: core/ghoul.cpp
-    Uninitialized variable: local_1c4
-
   core_path.cpp_CPathMap_findPathToDestination_FUN_0 line 169
     File: core/path.cpp
     Uninitialized variable: local_7c
@@ -543,14 +547,6 @@ uninitvar (68)
   core_path.cpp_CPathMap_findPathToDestination_FUN_0 line 170
     File: core/path.cpp
     Uninitialized variable: local_74
-
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 99
-    File: core/set.cpp
-    Uninitialized variable: local_3c
-
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 114
-    File: core/set.cpp
-    Uninitialized variable: fStack_5c
 
   core_skeledit.cpp_CDeformableModel_importVertexAss line 55
     File: core/skeledit.cpp
@@ -697,7 +693,7 @@ uninitvar (68)
     Uninitialized variable: local_288
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (63)
+selfAssignment (62)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -767,10 +763,6 @@ selfAssignment (63)
   core_script.cpp_parseCommandWithTemplates_FUN_0056 line 46
     File: core/script.cpp
     Redundant assignment of 'pCVar9' to itself.
-
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 141
-    File: core/set.cpp
-    Redundant assignment of 'pCVar12' to itself.
 
   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 237
     File: core/setedit.cpp
@@ -1448,11 +1440,11 @@ invalidPointerCast (18)
     File: core/elephant.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 682
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 680
     File: core/ghoul.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 683
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 681
     File: core/ghoul.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 

@@ -16,24 +16,16 @@ void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet
   }
   else {
     if (position != &g_LightingReferencePosition) {
-      g_LightingReferencePosition.x = position->x;
-      g_LightingReferencePosition.z = position->z;
-      g_LightingReferencePosition.y = position->y;
+      g_LightingReferencePosition = *position;
     }
     if (orientation != (UOrientationVector *)&g_LightingOrientation) {
-      g_LightingOrientation.x = (orientation->vec).x;
-      g_LightingOrientation.z = (orientation->vec).z;
-      g_LightingOrientation.y = (orientation->vec).y;
+      g_LightingOrientation = orientation->vec;
     }
     if (aabb_min != &g_LightingAABBMin) {
-      g_LightingAABBMin.x = aabb_min->x;
-      g_LightingAABBMin.z = aabb_min->z;
-      g_LightingAABBMin.y = aabb_min->y;
+      g_LightingAABBMin = *aabb_min;
     }
     if (aabb_max != &g_LightingAABBMax) {
-      g_LightingAABBMax.x = aabb_max->x;
-      g_LightingAABBMax.z = aabb_max->z;
-      g_LightingAABBMax.y = aabb_max->y;
+      g_LightingAABBMax = *aabb_max;
     }
     if (rotation_matrix == (CMatrix3x3f *)0x0) {
       g_LightingRotationMatrix.m[0].y = 0.0f;

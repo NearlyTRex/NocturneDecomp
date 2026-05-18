@@ -36,7 +36,7 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
             (&ADJ(this_ptr_00)->base.base.model,"guul.dfm");
   ADJ(this_ptr_00)->swarm_target = (CDemonActor *)0x0;
   pcVar2 = "true";
-  ADJ(this_ptr_00)->deformable_model_ptr = (CKeyFramedModelInstance *)0x0;
+  ADJ(this_ptr_00)->deformable_model_ptr = (CDeformableModelInstance *)0x0;
   ADJ(this_ptr_00)->swarm_vertex_count = 0;
   pcVar3 = ADJ(this_ptr_00)->allow_chase_event;
   ADJ(this_ptr_00)->allow_chase = 0;

@@ -20,7 +20,6 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
   CVector3i local_30;
   CVector3i local_24;
   int local_18;
-  CDemonSet *local_14;
   CVector3i *light_direction;
   CVector3f *orientation;
   CVector3f *aabb_max;
@@ -66,33 +65,27 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
                       (g_GlobeLights[iVar8],world_position,surface_normal);
     iVar3 = iVar3 + iVar6;
   }
-  local_18 = 0;
-  if (0 < this_ptr->mirror_glass_actor_count) {
-    local_14 = this_ptr;
-    do {
-      core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
-                (&(local_14->mirror_glass_actors[0]->mirror).reflection,(CVector3f *)world_position,
-                 &local_3c);
-      if (surface_normal != (CVector3i *)0x0) {
-        core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
-                  (&(local_14->mirror_glass_actors[0]->mirror).reflection,world_position,
-                   surface_normal,&local_30);
+  for (local_18 = 0; local_18 < this_ptr->mirror_glass_actor_count; local_18 = local_18 + 1) {
+    core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
+              (&(this_ptr->mirror_glass_actors[local_18]->mirror).reflection,
+               (CVector3f *)world_position,&local_3c);
+    if (surface_normal != (CVector3i *)0x0) {
+      core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
+                (&(this_ptr->mirror_glass_actors[local_18]->mirror).reflection,world_position,
+                 surface_normal,&local_30);
+    }
+    for (iVar8 = 0; iVar8 < g_DynamicLightCount; iVar8 = iVar8 + 1) {
+      light_source = g_DynamicLights[iVar8];
+      if (surface_normal == (CVector3i *)0x0) {
+        light_direction = (CVector3i *)0x0;
       }
-      for (iVar8 = 0; iVar8 < g_DynamicLightCount; iVar8 = iVar8 + 1) {
-        light_source = g_DynamicLights[iVar8];
-        if (surface_normal == (CVector3i *)0x0) {
-          light_direction = (CVector3i *)0x0;
-        }
-        else {
-          light_direction = &local_24;
-        }
-        iVar6 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
-                          (&g_CDemonCameraInstance,&local_48,light_source,light_direction);
-        iVar3 = iVar3 + iVar6;
+      else {
+        light_direction = &local_24;
       }
-      local_14 = (CDemonSet *)local_14->cameras;
-      local_18 = local_18 + 1;
-    } while (local_18 < this_ptr->mirror_glass_actor_count);
+      iVar6 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
+                        (&g_CDemonCameraInstance,&local_48,light_source,light_direction);
+      iVar3 = iVar3 + iVar6;
+    }
   }
   return iVar3;
 }

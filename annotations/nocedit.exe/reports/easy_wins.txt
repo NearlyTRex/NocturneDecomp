@@ -10,32 +10,31 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
+  core/xform.cpp (1 remaining of 61)
+    - core_xform.cpp_transformAndClipGeometry_FUN_005f8550
+      Suspects: warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, static_uninitvar
+
+  core/set.cpp (1 remaining of 87)
+    - core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040
+      Suspects: pointer_cast, pointer_cast, unrolled_memcpy, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast
+
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
-
-  [warning_inlined_function] - 1 functions
-    shape_design.c_arePolygonsCoplanar_FUN_00461b70                        ( 25 lines)
-
-  [shadow_pointer_walk] - 1 functions
-    engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320  ( 36 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  engine/drender.cpp (94.3% complete)
-    5 functions remaining:
-      engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0048a950 (52 lines)
-        Types: ['pointer_cast', 'shadow_pointer_walk']
-      engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0048a8a0 (33 lines)
-        Types: ['pointer_cast', 'shadow_pointer_walk']
-      engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa50 (47 lines)
-        Types: ['pointer_cast', 'shadow_pointer_walk']
-      engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 (123 lines)
-        Types: ['pointer_cast']
-      engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0048b320 (36 lines)
-        Types: ['shadow_pointer_walk']
+  core/set.cpp (98.9% complete)
+    1 functions remaining:
+      core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (117 lines)
+        Types: ['pointer_cast', 'unrolled_memcpy']
+
+  core/xform.cpp (98.4% complete)
+    1 functions remaining:
+      core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (490 lines)
+        Types: ['warning_unreachable']
 
 ====================================================================================================
 ALL REMAINING FILES
@@ -52,7 +51,6 @@ ALL REMAINING FILES
   core/msnedit.cpp                                              84.1%  (53/63 clean, 10 remaining)
   core/dracbrid.cpp                                             84.0%  (21/25 clean, 4 remaining)
   core/dstrender.cpp                                            83.9%  (26/31 clean, 5 remaining)
-  core/xform.cpp                                                83.6%  (51/61 clean, 10 remaining)
   core/hero.cpp                                                 83.3%  (40/48 clean, 8 remaining)
   core/trigger.cpp                                              82.6%  (19/23 clean, 4 remaining)
   core/wateract.cpp                                             82.6%  (19/23 clean, 4 remaining)
@@ -70,12 +68,9 @@ ALL REMAINING FILES
   core/netgame.cpp                                              79.7%  (51/64 clean, 13 remaining)
   core/turret.cpp                                               79.2%  (19/24 clean, 5 remaining)
   core/dfilter.cpp                                              78.9%  (15/19 clean, 4 remaining)
-  core/door.cpp                                                 78.6%  (22/28 clean, 6 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
-  core/bugs.cpp                                                 77.3%  (34/44 clean, 10 remaining)
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
   core/stranger.cpp                                             76.2%  (48/63 clean, 15 remaining)
-  core/set.cpp                                                  75.9%  (66/87 clean, 21 remaining)
   shape/superopt.cpp                                            75.8%  (141/186 clean, 45 remaining)
   core/setutil.cpp                                              75.6%  (31/41 clean, 10 remaining)
   core/emitter.cpp                                              75.0%  (15/20 clean, 5 remaining)
@@ -86,9 +81,9 @@ ALL REMAINING FILES
   core/menu.cpp                                                 72.7%  (16/22 clean, 6 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)
   core/setdir.cpp                                               71.9%  (23/32 clean, 9 remaining)
+  shape/design.c                                                71.8%  (117/163 clean, 46 remaining)
   core/texlist.cpp                                              71.4%  (10/14 clean, 4 remaining)
   core/chain.cpp                                                71.4%  (15/21 clean, 6 remaining)
-  shape/design.c                                                71.2%  (116/163 clean, 47 remaining)
   core/dtrace.cpp                                               70.6%  (36/51 clean, 15 remaining)
   core/setcolid.cpp                                             70.0%  (28/40 clean, 12 remaining)
   core/platfrm.cpp                                              70.0%  (21/30 clean, 9 remaining)

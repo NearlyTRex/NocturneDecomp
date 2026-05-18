@@ -10,33 +10,22 @@
 CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationX_FUN_005f6c40(float angle_radians,CMatrix3x4f *matrix_out)
 
 {
-  int iVar1;
-  float *pfVar2;
-  float *pfVar3;
   float10 fVar4;
   float10 fVar5;
-  float local_48 [12];
 
   fVar4 = (float10)fsin((float10)angle_radians);
   fVar5 = (float10)fcos((float10)angle_radians);
-  local_48[0] = 1.0;
-  local_48[1] = 0.0;
-  local_48[2] = 0.0;
-  local_48[3] = 0.0;
-  local_48[4] = 0.0;
-  local_48[5] = (float)fVar5;
-  local_48[6] = -(float)fVar4;
-  local_48[7] = 0.0;
-  local_48[8] = 0.0;
-  local_48[9] = (float)fVar4;
-  local_48[10] = (float)fVar5;
-  local_48[11] = 0.0;
-  pfVar2 = local_48;
-  pfVar3 = (float *)matrix_out;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *pfVar3 = *pfVar2;
-    pfVar2 = pfVar2 + 1;
-    pfVar3 = pfVar3 + 1;
-  }
+  matrix_out->m[0].w = 1.0;
+  matrix_out->m[0].x = 0.0;
+  matrix_out->m[0].y = 0.0;
+  matrix_out->m[0].z = 0.0;
+  matrix_out->m[1].w = 0.0;
+  matrix_out->m[1].x = (float)fVar5;
+  matrix_out->m[1].y = -(float)fVar4;
+  matrix_out->m[1].z = 0.0;
+  matrix_out->m[2].w = 0.0;
+  matrix_out->m[2].x = (float)fVar4;
+  matrix_out->m[2].y = (float)fVar5;
+  matrix_out->m[2].z = 0.0;
   return matrix_out;
 }

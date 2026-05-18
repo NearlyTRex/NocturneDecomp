@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 138,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 123,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 391
   },
   "cross_references": [
@@ -178,6 +176,17 @@
     },
     "pcode_op_count": 1198
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(SInputFace **)((int)g_VisibleFacePointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(SInputFace **)((int)g_VisibleFacePointers + local_18) = face_array;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 56,
     "local_size": 40,
@@ -236,14 +245,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(SInputFace **)((int)g_VisibleFacePointers",
-      "severity": "moderate",
-      "text": "*(SInputFace **)((int)g_VisibleFacePointers + local_18) = face_array;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

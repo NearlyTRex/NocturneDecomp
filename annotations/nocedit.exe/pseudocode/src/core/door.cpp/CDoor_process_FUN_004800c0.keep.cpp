@@ -20,7 +20,6 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
   int iVar8;
   int iVar2;
   CVector3f *pCVar3;
-  int iVar4;
   SCollisionInfo SStack_d0;
   CBoundingBox3D local_a8;
   CVector3f CStack_90;
@@ -112,12 +111,11 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
 LAB_004801a8:
   core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
   if ((this_ptr->param != fVar4) && (this_ptr->door_type != DOOR_TYPE_TILT)) {
-    iVar4 = 0;
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_a8);
     iStack_18 = 0;
     while( true ) {
       if (g_CDemonSetPtr->character_count <= iStack_18) break;
-      iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);
+      iVar1 = (int)g_CDemonSetPtr->characters[iStack_18];
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_d0);
       iVar2 = (*(((CDemonActor *)iVar1)->vtable._ub)->getCollisionType)((CDemonActor *)iVar1,&SStack_d0);
       if (((iVar2 == 2) &&
@@ -131,9 +129,7 @@ LAB_004801a8:
         pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                            (&(this_ptr->base).orient_matrix,&CStack_90,&CStack_84);
         if (aCStack_6c != pCVar3) {
-          aCStack_6c[0].x = pCVar3->x;
-          aCStack_6c[0].y = pCVar3->y;
-          aCStack_6c[0].z = pCVar3->z;
+          aCStack_6c[0] = *pCVar3;
         }
         if (((local_a8.min.x <= aCStack_6c[0].x + SStack_d0.cylinder_radius) &&
             (aCStack_6c[0].x - SStack_d0.cylinder_radius <= local_a8.max.x)) &&
@@ -179,7 +175,6 @@ LAB_0048059d:
         }
       }
       iStack_18 = iStack_18 + 1;
-      iVar4 = iVar4 + 4;
     }
   }
   return;

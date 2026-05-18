@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 226,
+    "complexity_score": 166,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 24,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 166,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 531
   },
   "cross_references": [
@@ -413,6 +410,51 @@
       "type": "wrong_global"
     },
     {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 136,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)&g_SetDisplayListSortBuffer[0].actor + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 152,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)&g_SetDisplayListSortBuffer[0].actor + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 120,
+      "match": "pCVar2 = (T *)pCVar2->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 133,
+      "match": "pCVar12 = (T *)pCVar12->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar12 = (CDemonSet *)pCVar12->cameras;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 154,
+      "match": "pCVar2 = (T *)pCVar2->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Compiler displaced index base: [reg*8 + 0x3342b48] lands in g_VertexNormalArray but intended target is g_SetDisplayListCount at 0x3342b4c (displaced by 4 bytes)",
       "displaced_from": "g_VertexNormalArray",
       "displacement": "0x3342b48",
@@ -548,63 +590,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_buildDisplayList_FUN_0056fbd0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 17,
-          "line": 141,
-          "message": "Redundant assignment of 'pCVar12' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 136,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(CDemonActor **)((int)&g_SetDisplayListSortBuffer[0].actor + iVar10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 152,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(CDemonActor **)((int)&g_SetDisplayListSortBuffer[0].actor + iVar11);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 120,
-      "match": "pCVar2 = (T *)pCVar2->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 133,
-      "match": "pCVar12 = (T *)pCVar12->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar12 = (CDemonSet *)pCVar12->cameras;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 154,
-      "match": "pCVar2 = (T *)pCVar2->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

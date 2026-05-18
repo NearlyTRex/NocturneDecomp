@@ -53,27 +53,17 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs *this_pt
       local_50.x = pCVar1->x - (bug_data->position).x;
       local_50.y = (bug_data->dest_position).y - (bug_data->position).y;
       local_50.z = (bug_data->dest_position).z - (bug_data->position).z;
-      if (&local_68 != &local_50) {
-        local_68.x = local_50.x;
-        local_68.y = local_50.y;
-        local_68.z = local_50.z;
-      }
+      local_68 = local_50;
       local_90 = SQRT(local_68.z * local_68.z + local_68.x * local_68.x + local_68.y * local_68.y);
     }
     else {
       if (pCVar1 != dest_vertex) {
-        pCVar1->x = dest_vertex->x;
-        (bug_data->dest_position).y = dest_vertex->y;
-        (bug_data->dest_position).z = dest_vertex->z;
+        *pCVar1 = *dest_vertex;
       }
       local_74.x = (bug_data->dest_position).x - (bug_data->position).x;
       local_74.y = (bug_data->dest_position).y - (bug_data->position).y;
       local_74.z = (bug_data->dest_position).z - (bug_data->position).z;
-      if (&local_68 != &local_74) {
-        local_68.x = local_74.x;
-        local_68.y = local_74.y;
-        local_68.z = local_74.z;
-      }
+      local_68 = local_74;
       local_90 = SQRT(local_68.z * local_68.z + local_68.x * local_68.x + local_68.y * local_68.y);
       if (local_90 < 0.5f) {
         return 1;

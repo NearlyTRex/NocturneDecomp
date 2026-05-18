@@ -102,9 +102,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                   local_13c.y = g_RenderVertexBuffer[iVar24].projected_vertex.transformed_y;
                   local_13c.z = g_RenderVertexBuffer[iVar24].projected_vertex.transformed_z;
                   core_set_cpp_transformToWorldSpace_FUN_0056e890(&local_13c,&local_118);
-                  g_TransformedVertexArray[iVar24].x = local_118.x;
-                  g_TransformedVertexArray[iVar24].y = local_118.y;
-                  g_TransformedVertexArray[iVar24].z = local_118.z;
+                  g_TransformedVertexArray[iVar24] = local_118;
                   iVar24 = iVar24 + 1;
                 } while (iVar24 < vertex_count);
               }
@@ -319,9 +317,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                   local_e8.y = g_RenderVertexBuffer[iVar19].projected_vertex.transformed_y;
                   local_e8.z = g_RenderVertexBuffer[iVar19].projected_vertex.transformed_z;
                   core_set_cpp_transformToWorldSpace_FUN_0056e890(&local_e8,&local_130);
-                  g_TransformedVertexArray[iVar19].x = local_130.x;
-                  g_TransformedVertexArray[iVar19].y = local_130.y;
-                  g_TransformedVertexArray[iVar19].z = local_130.z;
+                  g_TransformedVertexArray[iVar19] = local_130;
                   iVar19 = iVar19 + 1;
                 } while (iVar19 < vertex_count);
               }

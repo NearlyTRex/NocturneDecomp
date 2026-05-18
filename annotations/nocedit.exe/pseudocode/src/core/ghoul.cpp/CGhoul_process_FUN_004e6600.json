@@ -2184,35 +2184,21 @@
   "static_analysis": {
     "analyzed_file": "CGhoul_process_FUN_004e6600.keep.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 4,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
           "check_id": "invalidPointerCast",
           "column": 16,
-          "line": 682,
+          "line": 680,
           "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
           "column": 20,
-          "line": 683,
+          "line": 681,
           "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
           "severity": "portability"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 155,
-          "message": "Uninitialized variable: local_1c0",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 158,
-          "message": "Uninitialized variable: local_1c4",
-          "severity": "error"
         }
       ],
       "error": null
@@ -2302,7 +2288,7 @@
     },
     {
       "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
-      "line": 682,
+      "line": 680,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "*(float *)&local_78 = core_chain_cpp_fastSqrt_FUN_00431350(local_7c);",
@@ -2310,27 +2296,11 @@
     },
     {
       "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
-      "line": 683,
+      "line": 681,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "if (*(float *)&local_78 < (float)8) goto LAB_004e7243;",
       "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: local_1c0",
-      "line": 155,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "fVar1 = local_1c0 - (pCVar3->base).location.position.z;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_1c4",
-      "line": 158,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "if (ABS(local_1c4 - (pCVar3->base).location.position.y) <= (float)4) {",
-      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

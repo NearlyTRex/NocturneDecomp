@@ -28,14 +28,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
   int local_18;
   char *local_14;
   float fVar1;
-  
+
   g_CurrentLightForCorona = light_source;
-  // Original asm REP MOVSD copies 10 dwords (40 bytes) but rotation_matrix is
-  // only 36 bytes — the 10th dword reads CCameraView::dead and would stomp
-  // g_CameraEdgeDetectionResults[0].v at the destination. Almost certainly a
-  // Watcom REP-count optimization rounded up from sizeof(matrix); copy only
-  // the matrix proper. Readers (renderCoronaProjectedTextureScanline et al.)
-  // consume just the 9-float matrix, never the spilled tail.
   memcpy(&g_CoronaCameraRotationMatrix, &(light_source->base).base.rotation_matrix,
          sizeof(g_CoronaCameraRotationMatrix));
   for (iVar1 = 0; iVar1 < 256; iVar1 = iVar1 + 1) {
@@ -53,7 +47,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
   core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(light_source);
   fVar1 = (light_source->base).max_distance * (float)256;
   local_30 = 0;
-  g_CoronaDepthShift = (int)ROUND(ROUND(fVar1 * 0.30103 * (float)3.3219280948900001));
+  g_CoronaDepthShift = (int)ROUND(ROUND((float)log((double)fVar1) / (float)log(2.0)));
   g_CoronaMaxDepth = (int)ROUND(ROUND(fVar1));
   g_CoronaDepthShift = g_CoronaDepthShift + -1;
   if (0 < this_ptr->display_height) {

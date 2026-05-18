@@ -30,14 +30,7 @@ void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60(CDemonSet *t
       else {
         pCVar2 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&CStack_44);
         if (&CStack_2c != pCVar2) {
-          CStack_2c.min.x = (pCVar2->min).x;
-          CStack_2c.min.y = (pCVar2->min).y;
-          CStack_2c.min.z = (pCVar2->min).z;
-        }
-        if (&CStack_2c.max != &pCVar2->max) {
-          CStack_2c.max.x = (pCVar2->max).x;
-          CStack_2c.max.y = (pCVar2->max).y;
-          CStack_2c.max.z = (pCVar2->max).z;
+          CStack_2c = *pCVar2;
         }
         core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380
                   (this_ptr,&(this_ptr_00->location).position,&this_ptr_00->orient,&CStack_2c.min,

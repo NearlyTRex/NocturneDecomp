@@ -48,14 +48,10 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
         pCVar3 = core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
                            (&g_CDemonCameraInstance,local_74);
         if (&this_ptr_00->box_min != pCVar3) {
-          (this_ptr_00->box_min).x = pCVar3->x;
-          (this_ptr_00->box_min).y = pCVar3->y;
-          (this_ptr_00->box_min).z = pCVar3->z;
+          this_ptr_00->box_min = pCVar3[0];
         }
         if (&this_ptr_00->box_max != pCVar3 + 1) {
-          (this_ptr_00->box_max).x = pCVar3[1].x;
-          (this_ptr_00->box_max).y = pCVar3[1].y;
-          (this_ptr_00->box_max).z = pCVar3[1].z;
+          this_ptr_00->box_max = pCVar3[1];
         }
         _sprintf
                   (local_174,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)",
@@ -93,10 +89,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
               this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;
               core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
                         (&g_CDemonCameraInstance,light_source,&local_5c);
-              this_ptr->lights[local_14].camera_light_bounds[local_20].x_min = local_5c.x_min;
-              this_ptr->lights[local_14].camera_light_bounds[local_20].x_max = local_5c.x_max;
-              this_ptr->lights[local_14].camera_light_bounds[local_20].y_min = local_5c.y_min;
-              this_ptr->lights[local_14].camera_light_bounds[local_20].y_max = local_5c.y_max;
+              this_ptr->lights[local_14].camera_light_bounds[local_20] = local_5c;
               if (this_ptr->lights[local_14].visible_flags[local_20] != '\0') {
                 _sprintf(local_174,"Light %d, Box : %d,%d,%d,%d",local_14,
                          local_5c.x_min,local_5c.x_max,local_5c.y_min,local_5c.y_max);

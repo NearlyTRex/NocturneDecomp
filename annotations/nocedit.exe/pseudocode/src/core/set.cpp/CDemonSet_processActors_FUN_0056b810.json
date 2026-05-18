@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 338,
+    "complexity_score": 268,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 268,
-    "suspect_count": 6,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 844
   },
   "cross_references": [
@@ -456,6 +453,60 @@
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)g_ActorProfileActors + iVar8);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 155,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "aCStack_94[0].x = CStack_58.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 54,
+      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 73,
+      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 130,
+      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 201,
+      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 266,
+      "match": "pCVar11 = (T *)pCVar11->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar11 = (CDemonSet *)pCVar11->cameras;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -631,94 +682,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_processActors_FUN_0056b810.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 59,
-          "line": 99,
-          "message": "Uninitialized variable: local_3c",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 22,
-          "line": 114,
-          "message": "Uninitialized variable: fStack_5c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 155,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "aCStack_94[0].x = CStack_58.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 54,
-      "match": "pCVar4 = (T *)pCVar4->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 73,
-      "match": "pCVar4 = (T *)pCVar4->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 130,
-      "match": "pCVar4 = (T *)pCVar4->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 201,
-      "match": "pCVar4 = (T *)pCVar4->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 266,
-      "match": "pCVar11 = (T *)pCVar11->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar11 = (CDemonSet *)pCVar11->cameras;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: local_3c",
-      "line": 99,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "g_ActorProfileTimes[local_20] = iVar3 - local_3c;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: fStack_5c",
-      "line": 114,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "(fStack_5c == (g_CurrentProcessingActor->orient).vec.x)) &&",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

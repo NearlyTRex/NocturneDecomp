@@ -9,12 +9,14 @@
 void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_ptr,SBug *bug_data)
 
 {
-  int *piVar2;
-  int *piVar3;
-  int iVar3;
+  CVector3i *pCVar1;
+  CVector3i *pCVar2;
   int iVar6;
+  int iVar3;
+  int iVar8;
   int iVar4;
   int iVar5;
+  int iVar9;
   SSwarmVertex *pSVar6;
   int iVar7;
   int *piVar8;
@@ -44,8 +46,7 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_pt
   local_20 = 0;
   do {
     pSVar6 = local_30 + bug_data->current_vertex;
-    local_28 = *(int *)(this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4] + 4 +
-                       bug_data->current_vertex * 0xc);
+    local_28 = this_ptr->deformable_model_ptr->skinned_vertices_buffer[bug_data->current_vertex].y;
     iVar7 = 0;
     iVar5 = 0;
     local_24 = pSVar6;
@@ -53,8 +54,7 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_pt
       iVar3 = 0;
       do {
         iVar2 = pSVar6->neighbors[0];
-        local_1c = *(int *)(this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4] +
-                            iVar2 * 0xc + 4);
+        local_1c = this_ptr->deformable_model_ptr->skinned_vertices_buffer[iVar2].y;
         local_18 = 1;
         if ((local_20 != 0) ||
            ((iVar2 != local_2c && ((bug_data->downward_bias < 1 || (local_28 <= local_1c)))))) {
@@ -81,13 +81,13 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_pt
     iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,iVar7 + -1);
     bug_data->dest_vertex = local_68[iVar6];
   }
-  iVar6 = this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4];
-  piVar2 = (int *)(iVar6 + bug_data->current_vertex * 0xc);
-  piVar3 = (int *)(iVar6 + *(int *)(piVar2[2] + 0x30) * 0xc);
-  iVar6 = piVar2[2] - piVar3[2];
+  pCVar2 = this_ptr->deformable_model_ptr->skinned_vertices_buffer;
+  pCVar1 = pCVar2 + bug_data->current_vertex;
+  pCVar2 = pCVar2 + *(int *)(pCVar1->z + 0x30);
+  iVar9 = pCVar1->x - pCVar2->x;
+  iVar6 = pCVar1->y - pCVar2->y;
+  iVar8 = pCVar1->z - pCVar2->z;
   bug_data->crawl_duration =
-       SQRT((float)(iVar6 * iVar6 +
-                   (*piVar2 - *piVar3) * (*piVar2 - *piVar3) +
-                   (piVar2[1] - piVar3[1]) * (piVar2[1] - piVar3[1]))) * (float)0.00390625;
+       SQRT((float)(iVar8 * iVar8 + iVar9 * iVar9 + iVar6 * iVar6)) * (float)0.00390625;
   return;
 }

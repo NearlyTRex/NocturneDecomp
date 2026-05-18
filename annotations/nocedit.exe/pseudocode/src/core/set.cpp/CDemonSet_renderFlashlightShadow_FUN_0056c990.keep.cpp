@@ -14,7 +14,6 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
   int iVar3;
   CVector3f *input_local_point;
   int iVar4;
-  CDemonSet *pCVar5;
   CMatrix3x4f *matrix;
   int iVar5;
   CVector3i local_5c;
@@ -43,18 +42,14 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
   local_20.x = local_38.x + (float)0.261799387791667;
   g_CDemonLightInstance.volumetric_enabled = 0;
   local_20.y = local_38.y + (this_ptr_00->base).base.orient.vec.y;
-  g_CDemonLightInstance.base.base.position.f.x = local_2c.x;
-  g_CDemonLightInstance.base.base.position.f.y = local_2c.y;
-  g_CDemonLightInstance.base.base.position.f.z = local_2c.z;
+  g_CDemonLightInstance.base.base.position.f = local_2c;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             (&g_CDemonLightInstance.base.base.rotation_matrix,&local_20);
   g_CDemonLightInstance.base.max_distance = 32.0;
   g_CDemonLightInstance.base.base.focal_length = 32.0;
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,1.0);
   iVar5 = g_UseExternalRenderer;
-  g_CDemonCameraInstance.base.position.f.x = local_2c.x;
-  g_CDemonCameraInstance.base.position.f.y = local_2c.y;
-  g_CDemonCameraInstance.base.position.f.z = local_2c.z;
+  g_CDemonCameraInstance.base.position.f = local_2c;
   if (g_CGamePtr->geometry_debug_enabled == 0) {
     core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(&g_CDemonLightInstance,0);
     core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_004735c0(&g_CDemonLightInstance);
@@ -66,15 +61,10 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
     core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0056aca0(this_ptr,1);
     iVar5 = 0;
     core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(this_ptr,1);
-    pCVar5 = this_ptr;
-    if (0 < this_ptr->sorted_render_actor_count) {
-      do {
-        (*((pCVar5->sorted_render_actors[0]->vtable)._ub)->renderOpaque)
-                  (pCVar5->sorted_render_actors[0]);
-        pCVar5 = (CDemonSet *)pCVar5->cameras;
-        iVar5 = iVar5 + 1;
-        engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
-      } while (iVar5 < this_ptr->sorted_render_actor_count);
+    for (iVar5 = 0; iVar5 < this_ptr->sorted_render_actor_count; iVar5 = iVar5 + 1) {
+      (*((this_ptr->sorted_render_actors[iVar5]->vtable)._ub)->renderOpaque)
+                (this_ptr->sorted_render_actors[iVar5]);
+      engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
     }
     core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
     core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);

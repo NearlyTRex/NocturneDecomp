@@ -12,10 +12,8 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
 {
   CDemonLight *this_ptr_00;
   char *text;
-  CVector3f *pCVar2;
   int iVar3;
   CDemonLight *pCVar1;
-  CVector3f *pCVar4;
   int iVar4;
   int iVar6;
   
@@ -29,19 +27,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0044c0f0(&g_CDemonCameraInstance);
   core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_00453640
             (&g_CDemonCameraInstance,&this_ptr->scene_fog);
-  pCVar4 = &(this_ptr->scene_fog).scroll;
-  (this_ptr->active_fog).color_index.r = (this_ptr->scene_fog).color_index.r;
-  (this_ptr->active_fog).color_index.g = (this_ptr->scene_fog).color_index.g;
-  pCVar2 = &(this_ptr->active_fog).scroll;
-  (this_ptr->active_fog).color_index.b = (this_ptr->scene_fog).color_index.b;
-  if (pCVar2 != pCVar4) {
-    pCVar2->x = pCVar4->x;
-    (this_ptr->active_fog).scroll.y = (this_ptr->scene_fog).scroll.y;
-    (this_ptr->active_fog).scroll.z = (this_ptr->scene_fog).scroll.z;
-  }
-  (this_ptr->active_fog).height_threshold = (this_ptr->scene_fog).height_threshold;
-  (this_ptr->active_fog).density_multiplier = (this_ptr->scene_fog).density_multiplier;
-  (this_ptr->active_fog).temperature = (this_ptr->scene_fog).temperature;
+  this_ptr->active_fog = this_ptr->scene_fog;
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
             (&g_CDemonCameraInstance,this_ptr->min_ambient_value);
   for (iVar4 = 0; iVar4 < 96; iVar4 = iVar4 + 1) {

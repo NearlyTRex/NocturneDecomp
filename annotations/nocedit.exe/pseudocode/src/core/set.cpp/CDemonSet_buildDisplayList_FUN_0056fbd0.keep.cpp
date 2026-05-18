@@ -12,11 +12,7 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *thi
 {
   int iVar8;
   CBoundingBox3D *pCVar9;
-  int iVar10;
   int iVar1;
-  int iVar11;
-  CDemonSet *pCVar2;
-  CDemonSet *pCVar12;
   int iVar3;
   CBoundingBox3D local_88;
   CVector3f local_70;
@@ -50,10 +46,9 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *thi
     local_28 = local_28 | 0x22;
   }
   local_24 = 0;
-  pCVar2 = this_ptr;
   if (0 < this_ptr->renderable_actor_count) {
     do {
-      this_ptr_00 = (CHero *)pCVar2->renderable_actors[0];
+      this_ptr_00 = (CHero *)this_ptr->renderable_actors[local_24];
       if ((this_ptr_00 != g_HeroActors[g_LocalHeroIndex]) &&
          ((g_CDemonMissionPtr->is_in_editor == 0 || ((this_ptr_00->base).base.is_editor_hidden == 0)
           ))) {
@@ -111,15 +106,14 @@ joined_r0x0056fede:
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr_00,&CStack_38,&CStack_50);
         g_SetDisplayListSortBuffer[g_SetDisplayListCount].actor = (CDemonActor *)this_ptr_00;
-        g_SetDisplayListCount = g_SetDisplayListCount + 1;
         g_SetDisplayListSortBuffer[g_SetDisplayListCount].distance_sq =
              ((local_70.x - CStack_38.x) * (local_70.x - CStack_38.x) +
               (local_70.y - CStack_38.y) * (local_70.y - CStack_38.y) +
               (local_70.z - CStack_38.z) * (local_70.z - CStack_38.z));
+        g_SetDisplayListCount = g_SetDisplayListCount + 1;
       }
 LAB_0056fc73:
       local_24 = local_24 + 1;
-      pCVar2 = (CDemonSet *)pCVar2->cameras;
     } while (local_24 < this_ptr->renderable_actor_count);
   }
   _qsort
@@ -127,34 +121,14 @@ LAB_0056fc73:
              core_set_cpp_qsortByDisplayListEntry_FUN_0056fba0);
   iVar1 = g_SetDisplayListCount;
   if (g_HeroActors[g_LocalHeroIndex] == (CHero *)0x0) {
-    iVar3 = 0;
-    if (0 < g_SetDisplayListCount) {
-      iVar10 = 0;
-      pCVar12 = this_ptr;
-      do {
-        pCVar12 = (CDemonSet *)pCVar12->cameras;
-        iVar3 = iVar3 + 1;
-        pCVar12->sorted_render_actors[0] =
-             *(CDemonActor **)((int)&g_SetDisplayListSortBuffer[0].actor + iVar10);
-        iVar10 = iVar10 + 8;
-        iVar1 = g_SetDisplayListCount;
-        pCVar12 = pCVar12;
-      } while (iVar3 < g_SetDisplayListCount);
+    for (iVar3 = 0; iVar3 < g_SetDisplayListCount; iVar3 = iVar3 + 1) {
+      this_ptr->sorted_render_actors[iVar3] = g_SetDisplayListSortBuffer[iVar3].actor;
     }
   }
   else {
-    iVar8 = 0;
     this_ptr->sorted_render_actors[0] = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
-    if (0 < iVar1) {
-      iVar11 = 0;
-      pCVar2 = this_ptr;
-      do {
-        iVar8 = iVar8 + 1;
-        pCVar2->sorted_render_actors[1] =
-             *(CDemonActor **)((int)&g_SetDisplayListSortBuffer[0].actor + iVar11);
-        iVar11 = iVar11 + 8;
-        pCVar2 = (CDemonSet *)pCVar2->cameras;
-      } while (iVar8 < g_SetDisplayListCount);
+    for (iVar8 = 0; iVar8 < g_SetDisplayListCount; iVar8 = iVar8 + 1) {
+      this_ptr->sorted_render_actors[iVar8 + 1] = g_SetDisplayListSortBuffer[iVar8].actor;
     }
     iVar1 = g_SetDisplayListCount + 1;
   }

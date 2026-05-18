@@ -51,9 +51,7 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   CVector3f local_1ec;
   CVector3f local_1e0;
   CVector3f local_1d4;
-  float local_1c8;
-  float local_1c4;
-  float local_1c0;
+  CVector3f local_1c8;
   CVector3f local_1bc;
   CVector3f local_1b0;
   CVector3f local_1a4;
@@ -149,13 +147,13 @@ switchD_004e6f9a_caseD_e:
             local_174.x = 0.0;
             local_174.y = 0.0;
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                      ((CDemonActor *)this_ptr,(CVector3f *)&local_1c8,&local_174);
+                      ((CDemonActor *)this_ptr,&local_1c8,&local_174);
             pCVar3 = (this_ptr->base).victim;
-            fVar23 = local_1c8 - (pCVar3->base).location.position.x;
-            fVar1 = local_1c0 - (pCVar3->base).location.position.z;
+            fVar23 = local_1c8.x - (pCVar3->base).location.position.x;
+            fVar1 = local_1c8.z - (pCVar3->base).location.position.z;
             bVar5 = SQRT(fVar1 * fVar1 + fVar23 * fVar23) <= 1.0;
             pCVar3 = (this_ptr->base).victim;
-            if (ABS(local_1c4 - (pCVar3->base).location.position.y) <= (float)4) {
+            if (ABS(local_1c8.y - (pCVar3->base).location.position.y) <= (float)4) {
               if (bVar5) {
                 iVar7 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabbed)
                                   (pCVar3,(CDemonActor *)this_ptr,0);

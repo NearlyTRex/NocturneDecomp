@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 241,
-    "complexity_score": 136,
+    "complexity_score": 121,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 121,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 362
   },
   "cross_references": [
@@ -334,6 +332,15 @@
       "severity": "moderate",
       "text": "light_source = *(CDemonLight **)((int)g_DynamicLights + iVar7);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 119,
+      "match": "local_14 = (T *)local_14->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_14 = (CDemonSet *)local_14->cameras;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -415,14 +422,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 119,
-      "match": "local_14 = (T *)local_14->ARRAY",
-      "severity": "moderate",
-      "text": "local_14 = (CDemonSet *)local_14->cameras;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

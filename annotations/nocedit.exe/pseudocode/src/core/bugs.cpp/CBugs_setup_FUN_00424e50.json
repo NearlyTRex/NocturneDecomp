@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 167,
+    "complexity_score": 92,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 92,
-    "suspect_count": 6,
-    "suspect_types": [
-      "negative_offset",
-      "unrolled_memcpy",
-      "unrolled_memset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 292
   },
   "cross_references": [],
@@ -137,6 +133,62 @@
     },
     "pcode_op_count": 936
   },
+  "resolved_suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 79,
+      "match": "pCVar7[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar10->x = pCVar7[-1].x;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 80,
+      "match": "pCVar7[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar10->y = pCVar7[-1].y;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 81,
+      "match": "pCVar7[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar10->z = pCVar7[-1].z;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 79,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10->x = pCVar7[-1].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 22,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.base.orient.vec.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 73,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7->z = 0.0;",
+      "type": "unrolled_memset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 52,
     "local_size": 48,
@@ -198,56 +250,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 79,
-      "match": "pCVar7[-1].",
-      "severity": "mild",
-      "text": "pCVar10->x = pCVar7[-1].x;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 80,
-      "match": "pCVar7[-1].",
-      "severity": "mild",
-      "text": "pCVar10->y = pCVar7[-1].y;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 81,
-      "match": "pCVar7[-1].",
-      "severity": "mild",
-      "text": "pCVar10->z = pCVar7[-1].z;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 79,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar10->x = pCVar7[-1].x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 22,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.base.orient.vec.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 73,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "pCVar7->z = 0.0;",
-      "type": "unrolled_memset"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        47 ( 0.7%)
+  Functions with type issues:        46 ( 0.7%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      47
+    Undefined types in variables:      46
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   172 functions
+  Excluded (.keep / MMX / by-value):   173 functions
     Wrong calling convention:          1
-    Undefined types in variables:      170
+    Undefined types in variables:      171
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (47)
+Undefined types in variables (46)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -142,11 +142,6 @@ Undefined types in variables (47)
   CPoly_rayIntersect
     Address: 0x005d0010  File: shape/superopt.cpp
     Locals:  local_c8 (undefined4[4]), local_b8 (undefined4), local_b4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CBugs_findNextSwarmVertex
-    Address: 0x004270f0  File: core/bugs.cpp
-    Locals:  local_68 (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CLodMesh_findClosestFaceToSamplePoint
@@ -372,7 +367,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (170)
+Undefined types - .keep overrides (171)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -758,6 +753,11 @@ Undefined types - .keep overrides (170)
   CActorProperty_editInteractive
     Address: 0x0040eed0  File: core/actor.cpp
     Locals:  local_10f (undefined1[99]), local_ab (undefined1[99])
+    Suggested: Resolve undefined types to concrete types
+
+  CBugs_findNextSwarmVertex
+    Address: 0x004270f0  File: core/bugs.cpp
+    Locals:  local_68 (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CCharacter_buildLayerActionTransitionCosts

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 562,
-    "complexity_score": 276,
+    "complexity_score": 261,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 34,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 261,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 823
   },
   "cross_references": [
@@ -541,6 +539,15 @@
       "type": "wrong_global"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 145,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_64.x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Inlined fast sqrt bit-trick. Replace with `fastSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_00431350).",
       "line": 226,
       "match": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + g_FastSqrtMagic) *",
@@ -765,14 +772,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 145,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_64.x = pCVar7->x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

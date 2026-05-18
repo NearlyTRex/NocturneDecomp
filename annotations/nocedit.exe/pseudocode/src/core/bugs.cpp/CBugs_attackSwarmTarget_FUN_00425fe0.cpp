@@ -148,10 +148,9 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00425fe0(CBugs *this_ptr,
   (this_ptr->model_world_matrix).m[2].x = CStack_ec.m[2].x;
   (this_ptr->model_world_matrix).m[2].y = CStack_ec.m[2].y;
   (this_ptr->model_world_matrix).m[2].z = CStack_ec.m[2].z;
-  if (this_ptr->lod_index !=
-      ((CDeformableModelInstance *)this_ptr->deformable_model_ptr)->cached_skinned_lod_index) {
+  if (this_ptr->lod_index != this_ptr->deformable_model_ptr->cached_skinned_lod_index) {
     core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
-              ((CDeformableModelInstance *)this_ptr->deformable_model_ptr,this_ptr->lod_index);
+              (this_ptr->deformable_model_ptr,this_ptr->lod_index);
   }
   iVar6 = 0;
   if (0 < this_ptr->count) {

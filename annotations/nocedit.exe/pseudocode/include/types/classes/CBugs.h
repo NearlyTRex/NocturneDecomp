@@ -1,6 +1,7 @@
 #pragma once
 
 // Forward declarations
+struct CDeformableModelInstance;
 struct CDemonActor;
 
 // Dependencies
@@ -25,7 +26,7 @@ typedef struct CBugs {
     CKeyFramedModelInstance models[4]; // 0x122c8
     float ground_heights[12][12]; // 0x128b8
     struct CDemonActor* swarm_target; // 0x12af8
-    struct CKeyFramedModelInstance* deformable_model_ptr; // 0x12afc
+    struct CDeformableModelInstance* deformable_model_ptr; // 0x12afc
     CMatrix3x4f model_world_matrix; // 0x12b00
     int lod_index; // 0x12b30
     int swarm_vertex_count; // 0x12b34

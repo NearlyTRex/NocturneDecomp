@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 205,
-    "complexity_score": 113,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 83,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_alignment_array"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 288
   },
   "cross_references": [
@@ -140,6 +137,26 @@
     },
     "pcode_op_count": 840
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 17,
+      "match": "aiStackY_1030",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_1030 [1008];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)local_68",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_68 + iVar3) = iVar2;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4156,
     "local_size": 4148,
@@ -268,22 +285,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
-      "match": "aiStackY_1030",
-      "severity": "moderate",
-      "text": "int aiStackY_1030 [1008];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(int *)((int)local_68",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_68 + iVar3) = iVar2;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

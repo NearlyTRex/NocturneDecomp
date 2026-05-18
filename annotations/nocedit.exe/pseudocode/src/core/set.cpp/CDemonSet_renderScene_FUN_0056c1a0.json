@@ -7,18 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 801,
-    "complexity_score": 452,
+    "complexity_score": 297,
     "cross_reference_count": 6,
     "function_call_count": 35,
     "global_count": 47,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 297,
-    "suspect_count": 14,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1098
   },
   "cross_references": [
@@ -648,6 +644,60 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(CDemonLight **)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((*(CDemonLight **)((int)g_SpotLightList + iVar8))->light_enabled_flag != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(CDemonLight **)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,*(CDemonLight **)((int)g_SpotLightList + iVar8));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 = *(CDemonLight **)((int)g_DynamicLights + local_1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,*(CDemonLight **)((int)g_DynamicLights + local_1c))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(CDemonGlobe **)((int)g_CoronaGlobes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,*(CDemonGlobe **)((int)g_CoronaGlobes + local_18),0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(CDemonGlobe **)((int)g_CoronaGlobes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,*(CDemonGlobe **)((int)g_CoronaGlobes + local_18),1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 118,
       "match": "(CDemonGlobe **)((int)g_QueuedCoronaGlobes",
       "resolution_source": "keep",
@@ -675,12 +725,84 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 181,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar1 = *(CDemonLight **)((int)g_DynamicLights + local_34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 228,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar1 = *(CDemonLight **)((int)g_DynamicLights + local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 259,
       "match": "(uint *)((int)g_SpotLightList",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)g_SpotLightList + iVar5);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 183,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_64.x = (pCVar1->base).base.position.f.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 230,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_58.x = (pCVar1->base).base.position.f.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 285,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar2->previous_transform_state).position.x = (pCVar2->location).position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 291,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pUVar2->vec).x = (pCVar2->orient).vec.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 220,
+      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 296,
+      "match": "pCVar6 = (T *)pCVar6->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -811,118 +933,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(CDemonLight **)((int)g_SpotLightList",
-      "severity": "moderate",
-      "text": "if ((*(CDemonLight **)((int)g_SpotLightList + iVar8))->light_enabled_flag != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(CDemonLight **)((int)g_SpotLightList",
-      "severity": "moderate",
-      "text": "(&g_CDemonCameraInstance,*(CDemonLight **)((int)g_SpotLightList + iVar8));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(CDemonLight **)((int)g_DynamicLights",
-      "severity": "moderate",
-      "text": "pCVar3 = *(CDemonLight **)((int)g_DynamicLights + local_1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(CDemonLight **)((int)g_DynamicLights",
-      "severity": "moderate",
-      "text": "(&g_CDemonCameraInstance,*(CDemonLight **)((int)g_DynamicLights + local_1c))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(CDemonGlobe **)((int)g_CoronaGlobes",
-      "severity": "moderate",
-      "text": "(&g_CDemonCameraInstance,*(CDemonGlobe **)((int)g_CoronaGlobes + local_18),0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(CDemonGlobe **)((int)g_CoronaGlobes",
-      "severity": "moderate",
-      "text": "(&g_CDemonCameraInstance,*(CDemonGlobe **)((int)g_CoronaGlobes + local_18),1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 181,
-      "match": "(CDemonLight **)((int)g_DynamicLights",
-      "severity": "moderate",
-      "text": "pCVar1 = *(CDemonLight **)((int)g_DynamicLights + local_34);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 228,
-      "match": "(CDemonLight **)((int)g_DynamicLights",
-      "severity": "moderate",
-      "text": "pCVar1 = *(CDemonLight **)((int)g_DynamicLights + local_38);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 183,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_64.x = (pCVar1->base).base.position.f.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 230,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_58.x = (pCVar1->base).base.position.f.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 285,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pCVar2->previous_transform_state).position.x = (pCVar2->location).position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 291,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pUVar2->vec).x = (pCVar2->orient).vec.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 220,
-      "match": "pCVar4 = (T *)pCVar4->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 296,
-      "match": "pCVar6 = (T *)pCVar6->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDemonSet *)pCVar6->cameras;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }
