@@ -9,17 +9,17 @@
 void __cdecl shape_design_c_renderEditorBackgroundOverlay_FUN_0045d920(void)
 
 {
-  int local_1c;
+  SMRGLHeaderBasic local_20;
   int local_18;
-  int *local_14;
+  int local_14;
   
   if (((g_EditorTextureMode == 1) || (g_EditorTextureMode == 3)) || (g_EditorTextureMode == 4)) {
     if (g_AntiAliasingEnabled == 0) {
-      local_1c = -g_EditorBackgroundColors[g_EditorCurrentTexture];
-      engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffe0);
+      local_20.count = -g_EditorBackgroundColors[g_EditorCurrentTexture];
+      engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&local_20);
     }
     else {
-      local_14 = (int *)g_EditorBackgroundColors[g_EditorCurrentTexture];
+      local_14 = g_EditorBackgroundColors[g_EditorCurrentTexture];
     }
     for (local_18 = 0; local_18 < g_PolygonCount; local_18 = local_18 + 1) {
       shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(local_18,local_14);

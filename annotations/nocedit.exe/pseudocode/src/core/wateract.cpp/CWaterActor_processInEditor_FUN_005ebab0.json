@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 43,
+    "complexity_score": 68,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "bit_int_float_compare"
+    ],
     "total_lines": 170
   },
   "cross_references": [],
@@ -131,7 +133,24 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f000000 is the IEEE 754 bit pattern of 0.5f. Rewrite in a .keep as a plain float compare against 0.5f.",
+      "line": 27,
+      "match": "(int)(this_ptr->size).x < 0x3f000000",
+      "severity": "moderate",
+      "text": "if ((int)(this_ptr->size).x < 0x3f000000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
+      "line": 33,
+      "match": "0x42c80000 < (int)(this_ptr->size).x)",
+      "severity": "moderate",
+      "text": "if (0x42c80000 < (int)(this_ptr->size).x) {",
+      "type": "bit_int_float_compare"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

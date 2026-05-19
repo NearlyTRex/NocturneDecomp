@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 193,
+    "complexity_score": 208,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 158,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "bit_int_float_compare",
       "unrolled_memcpy"
     ],
     "total_lines": 537
@@ -380,6 +381,14 @@
       "severity": "moderate",
       "text": "local_3c.x = pCVar6->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x41f00000 is the IEEE 754 bit pattern of 30f. Rewrite in a .keep as a plain float compare against 30f.",
+      "line": 54,
+      "match": "(int)local_30 < 0x41f00000",
+      "severity": "moderate",
+      "text": "if ((pCVar4 != (CHero *)0x0) && ((int)local_30 < 0x41f00000)) {",
+      "type": "bit_int_float_compare"
     }
   ]
 }

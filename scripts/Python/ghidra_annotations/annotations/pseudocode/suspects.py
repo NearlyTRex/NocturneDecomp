@@ -84,6 +84,7 @@ SUSPECT_SEVERITY = {
     'missing_cave_copy': 'moderate',
     'fast_sqrt_inline': 'moderate',
     'fast_inv_sqrt_inline': 'moderate',
+    'bit_int_float_compare': 'moderate',
     'bitcast_double_pair': 'moderate',
     'bitcast_double': 'moderate',
     'sibling_array_undersized': 'moderate',
@@ -3542,6 +3543,89 @@ def identify_fast_sqrt_inline(decompiled_code):
     return suspects
 
 
+# Watcom's float-via-int-compare optimization: a float comparison like
+# `if (x >= 20.0f)` gets emitted as `CMP dword ptr [x_bytes], 0x41a00000`
+# (a single-instruction raw-bytes compare, where 0x41a00000 is the IEEE 754
+# bit pattern of 20.0f). For positive normal floats, bit-pattern integer
+# compare is order-equivalent to float compare, so the asm is correct.
+#
+# Ghidra MISTRANSLATES this idiom as `(int)x < BIT_PATTERN` (using a numeric
+# float→int conversion instead of bit reinterpretation). The two forms give
+# wildly different results: `(int)20.0 = 20` vs `*(int*)&20.0f = 0x41a00000
+# ≈ 1.1e9`. Wrap-around / clamp loops built on the bad cast NEVER FIRE for
+# normal-range float values, causing runtime drift past the intended bound
+# (e.g. anim_frame indexing one past the end of a texture array → SEGV).
+#
+# Fix in a .keep: rewrite as a plain float compare against the decoded
+# constant, e.g. `if (x >= 20.0f)`.
+_BIT_INT_HEX_LHS_RE = re.compile(
+    r"0x([0-9a-fA-F]{8})\s*(<=?|>=?)\s*\(\s*int\s*\)\s*[\w\[\]>\-.()]+")
+_BIT_INT_HEX_RHS_RE = re.compile(
+    r"\(\s*int\s*\)\s*[\w\[\]>\-.()]+\s*(<=?|>=?)\s*0x([0-9a-fA-F]{8})")
+
+
+def identify_bit_int_float_compare(decompiled_code):
+    """Detect Ghidra's float bit-pattern compare mistranslated as `(int)x`.
+
+    Catches lines like:
+        if (0x41a00000 < (int)this_ptr->anim_frame) { ... }
+        while (0x419fffff < (int)x) { ... }
+
+    Only fires when the hex constant, decoded as IEEE 754, lands in a
+    "looks like a real float threshold" range (roughly 0.01 to 1e8). This
+    filters out unrelated comparisons where the hex really is intended as
+    an int (addresses, sizes, magic IDs).
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per matching line.
+    """
+    import struct
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    # Bit-pattern range for "this looks like a float threshold":
+    #   0x3c23d70a ≈ 0.01    (lower bound: small but human-meaningful)
+    #   0x4cbebc20 ≈ 1e8     (upper bound: large but still float-shaped)
+    # Outside this range, a hex constant is more likely an int (address,
+    # size, hash) than an IEEE 754 float.
+    BITS_LO = 0x3c23d70a
+    BITS_HI = 0x4cbebc20
+    lines = decompiled_code.split('\n')
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if not stripped or stripped.startswith('//'):
+            continue
+        for regex in (_BIT_INT_HEX_LHS_RE, _BIT_INT_HEX_RHS_RE):
+            m = regex.search(line)
+            if not m:
+                continue
+            # Hex group is at index 1 for LHS regex, index 2 for RHS regex
+            hex_str = m.group(1 if regex is _BIT_INT_HEX_LHS_RE else 2)
+            bit_pattern = int(hex_str, 16)
+            if not (BITS_LO <= bit_pattern <= BITS_HI):
+                continue
+            float_value = struct.unpack(
+                '<f', struct.pack('<I', bit_pattern))[0]
+            suspects.append({
+                'line': i + 1,
+                'type': 'bit_int_float_compare',
+                'match': m.group()[:80],
+                'text': stripped[:120],
+                'description': (
+                    "Ghidra mistranslated a Watcom float bit-pattern "
+                    "compare as `(int)x`. Hex 0x{hex} is the IEEE 754 "
+                    "bit pattern of {val:g}f. Rewrite in a .keep as a "
+                    "plain float compare against {val:g}f.".format(
+                        hex=hex_str, val=float_value)),
+                'severity': 'moderate',
+            })
+            break  # at most one suspect per line
+    return suspects
+
+
 # Struct-type locals that the missing-cave-copy bug pattern typically affects,
 # mapped to their declared sizes in bytes. Only struct types whose size
 # matches a detected cave block are eligible candidates — a 48-byte cave
@@ -4019,6 +4103,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_preinc_loop_idiom(code))
     found.extend(identify_loop_clobbered_constant(code))
     found.extend(identify_fast_sqrt_inline(code))
+    found.extend(identify_bit_int_float_compare(code))
     return found
 
 

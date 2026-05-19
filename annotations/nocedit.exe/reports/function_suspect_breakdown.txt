@@ -4,16 +4,16 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5821 functions
-  1 suspects: 94 functions
-  2 suspects: 139 functions
+  0 suspects: 5800 functions
+  1 suspects: 110 functions
+  2 suspects: 140 functions
   3 suspects: 84 functions
-  4 suspects: 72 functions
-  5 suspects: 46 functions
-  6 suspects: 48 functions
-  7 suspects: 21 functions
-  8 suspects: 29 functions
-  9 suspects: 8 functions
+  4 suspects: 78 functions
+  5 suspects: 45 functions
+  6 suspects: 49 functions
+  7 suspects: 19 functions
+  8 suspects: 30 functions
+  9 suspects: 9 functions
   10 suspects: 16 functions
   11 suspects: 9 functions
   12 suspects: 10 functions
@@ -22,11 +22,11 @@ SUSPECT COUNT DISTRIBUTION
   15 suspects: 6 functions
   16 suspects: 6 functions
   17 suspects: 4 functions
-  18 suspects: 8 functions
+  18 suspects: 7 functions
   19 suspects: 2 functions
   20 suspects: 2 functions
   21 suspects: 4 functions
-  22 suspects: 3 functions
+  22 suspects: 2 functions
   23 suspects: 1 functions
   24 suspects: 1 functions
   26 suspects: 2 functions
@@ -42,7 +42,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [unrolled_memcpy] (35 functions)
+  [unrolled_memcpy] (34 functions)
   ------------------------------------------------------------
     core_msnedit.cpp_CDemonMission_raycastPickActor_FU ( 52 lines)
       local_28.x = g_CDemonCameraInstance.base.position.f.x;...
@@ -92,8 +92,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       g_TempNormal2.y = g_ZeroVector.f.y;...
     shape_superopt.cpp_CObj_removeUnusedVertices_FUN_0 (115 lines)
       dst_vert->position = pCVar5->position;...
-    core_turret.cpp_CTurret_updateTargeting_FUN_005e2d (123 lines)
-      CStack_90.x = CStack_48.x;...
     core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c (128 lines)
       CStack_90.x = CStack_b4.x;...
     core_stranger.cpp_CStranger_tryClimbLadder_FUN_005 (130 lines)
@@ -174,6 +172,41 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
 
+  [bit_int_float_compare] (16 functions)
+  ------------------------------------------------------------
+    core_lever.cpp_CLever_setState_FUN_00504b20        ( 36 lines)
+      (((int)new_state < 0x3f800000 && (1.0 <= this_ptr->param))))...
+    core_curtain.cpp_CCurtain_processInEditor_FUN_0044 ( 37 lines)
+      if ((int)(this_ptr->curtain_size).x < 0x3f000000) {...
+    core_flame.cpp_CFlame_processInEditor_FUN_004caf60 ( 40 lines)
+      if ((int)(this_ptr->flame_size).x < 0x3dcccccd) {...
+    core_conveyor.cpp_CConveyor_processInEditor_FUN_00 ( 41 lines)
+      if ((int)(this_ptr->size).x < 0x3f000000) {...
+    core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0    ( 42 lines)
+      if (((g_IrisFadeType < 4) && (g_IrisFadeType != 1)) && (0x3f...
+    core_glass.cpp_CGlass_processInEditor_FUN_004eb490 ( 45 lines)
+      if ((int)(this_ptr->glass_size).x < 0x3f000000) {...
+    core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0 ( 47 lines)
+      if ((int)(this_ptr->box_size).x < 0x3f000000) {...
+    core_barrier.cpp_CBarrier_processInEditor_FUN_0041 ( 54 lines)
+      if ((int)(this_ptr->size).x < 0x3f000000) {...
+    core_trigger.cpp_CTrigger_processInEditor_FUN_005e ( 57 lines)
+      if ((int)(this_ptr->trigger_size).x < 0x3c23d70a) {...
+    core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 ( 59 lines)
+      if ((int)this_ptr->max_distance < 0x3f000000) {...
+    core_teleport.cpp_CTeleport_processInEditor_FUN_00 ( 63 lines)
+      if ((int)(this_ptr->trigger_extents).x < 0x3f000000) {...
+    core_flame.cpp_CFlame_process_FUN_004c9c00         (138 lines)
+      if (0x40ffffff < (int)this_ptr->animation_time) {...
+    core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN (162 lines)
+      if (((float)5 <= fVar2) && ((int)fVar2 < 0x41700001)) {...
+    core_charactr.cpp_CCharacter_findSomethingToLookAt (216 lines)
+      (int)fVar6 < 0x44610001)) &&...
+    core_stranger.cpp_CStranger_makeDrawDecision_FUN_0 (238 lines)
+      if ((int)local_1c < 0x3f800001) {...
+    core_stranger.cpp_CStranger_updateProceduralAnimat (516 lines)
+      if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {...
+
   [unrolled_strcpy] (13 functions)
   ------------------------------------------------------------
     core_cloth.cpp_CClothList_remove_FUN_0043c170      ( 51 lines)
@@ -241,6 +274,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 *...
     core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  (290 lines)
       CStack_30.y = (int)ROUND(fStack_y * 256.0f);...
+
+  [warning_inlined_function] (1 functions)
+  ------------------------------------------------------------
+    shape_design.c_renderSinglePolygonWithColorOverlay ( 30 lines)
+      /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 ...
 
   [stack_alignment_array] (1 functions)
   ------------------------------------------------------------
@@ -342,6 +380,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/netgame.cpp, Lines: 42, Types: ['unrolled_strcpy']
   core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730
     File: core/dfilter.cpp, Lines: 43, Types: ['pointer_cast']
+  core_wateract.cpp_CWaterActor_processInEditor_FUN_005ebab0
+    File: core/wateract.cpp, Lines: 43, Types: ['bit_int_float_compare']
   core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
     File: core/mimic.cpp, Lines: 43, Types: ['unrolled_strcpy', 'warning_type_propagation']
   engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00
@@ -484,6 +524,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/path.cpp, Lines: 118, Types: ['stack_alignment_array', 'warning_inlined_function']
   engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
     File: engine/fileio.cpp, Lines: 122, Types: ['unrolled_strcpy']
+  core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
+    File: core/turret.cpp, Lines: 123, Types: ['bit_int_float_compare', 'unrolled_memcpy']
   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
     File: core/mobster.cpp, Lines: 129, Types: ['stack_alignment_array', 'warning_type_propagation']
   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
@@ -496,8 +538,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/script.cpp, Lines: 139, Types: ['unrolled_strlen']
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
     File: core/setedit.cpp, Lines: 140, Types: ['pointer_cast']
-  core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40
-    File: core/frankgen.cpp, Lines: 141, Types: ['unrolled_memcpy']
   core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_
     File: core/dmodel.cpp, Lines: 143, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
@@ -508,8 +548,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/script.cpp, Lines: 147, Types: ['pointer_cast']
   core_cloth.cpp_CCloth_render_FUN_0043bae0
     File: core/cloth.cpp, Lines: 148, Types: ['shadow_pointer_walk']
-  core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
-    File: core/mobster.cpp, Lines: 148, Types: ['pointer_cast']
   core_turret.cpp_CTurret_fire_FUN_005e3750
     File: core/turret.cpp, Lines: 159, Types: ['unrolled_memcpy']
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
@@ -520,6 +558,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/script.cpp, Lines: 172, Types: ['unrolled_strcpy']
   core_turret.cpp_CTurret_process_FUN_005e2430
     File: core/turret.cpp, Lines: 179, Types: ['unrolled_memcpy']
+  core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
+    File: core/netgame.cpp, Lines: 183, Types: ['bit_int_float_compare']
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
     File: core/wateract.cpp, Lines: 210, Types: ['shadow_pointer_walk', 'unrolled_memset']
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_F
@@ -568,8 +608,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/cloth.cpp, Lines: 27, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_00486360
     File: core/dracbrid.cpp, Lines: 33, Types: ['unrolled_memcpy']
-  core_path.cpp_renderPathMapsAtPosition_FUN_00548680
-    File: core/path.cpp, Lines: 34, Types: ['pointer_cast', 'stack_alignment_array']
   engine_fileio.cpp_CFileManager_setVersionControlCredentials_
     File: engine/fileio.cpp, Lines: 38, Types: ['unrolled_strcpy']
   core_setutil.cpp_C3DSLight_apply_FUN_00586bf0
@@ -686,6 +724,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dracbrid.cpp, Lines: 143, Types: ['unrolled_memcpy']
   shape_design.c_modelExportWizard_FUN_0045a7b0
     File: shape/design.c, Lines: 146, Types: ['unrolled_strchr', 'unrolled_strlen']
+  core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
+    File: core/mobster.cpp, Lines: 148, Types: ['bit_int_float_compare', 'pointer_cast']
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
     File: core/ghoul.cpp, Lines: 149, Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy']
   shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
@@ -694,8 +734,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 157, Types: ['pointer_cast', 'self_copy_guard']
   shape_superopt.cpp_CComplexPolygon_validateSubChainVisibilit
     File: shape/superopt.cpp, Lines: 157, Types: ['decompiler_intrinsic']
-  core_scat.cpp_CScat_updateAI_FUN_005578e0
-    File: core/scat.cpp, Lines: 158, Types: ['unrolled_memcpy']
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_F
     File: engine/fileio.cpp, Lines: 173, Types: ['pointer_cast', 'unrolled_strcpy']
   shape_design.c_polygonToolModeManager_FUN_00464c90
@@ -706,3 +744,5 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/icepick.cpp, Lines: 243, Types: ['unrolled_memcpy']
   core_emitter.cpp_CEmitter_process_FUN_004a8070
     File: core/emitter.cpp, Lines: 253, Types: ['unrolled_memcpy']
+  core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005
+    File: core/stranger.cpp, Lines: 379, Types: ['bit_int_float_compare']

@@ -1125,6 +1125,15 @@
       "resolution_source": "keep",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
+      "line": 934,
+      "match": "0x42c80000 < (int)local_2bc.damage_amount)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0x42c80000 < (int)local_2bc.damage_amount) {",
+      "type": "bit_int_float_compare"
     }
   ],
   "stack_frame": {

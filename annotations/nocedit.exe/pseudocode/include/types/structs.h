@@ -96,6 +96,8 @@
 #include "types/structs/SMRGLLightPrimitive.h"
 #include "types/structs/SMRGLModelBounds.h"
 #include "types/structs/SMRGLPointerArray.h"
+#include "types/structs/SMRGLPrimitiveBigPoly.h"
+#include "types/structs/SMRGLPrimitiveBigPolyIndex.h"
 #include "types/structs/SMRGLPrimitivePoly.h"
 #include "types/structs/SMRGLPrimitivePolyIndex.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"

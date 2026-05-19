@@ -14,27 +14,117 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_xform.cpp_transformAndClipGeometry_FUN_005f8550
       Suspects: warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, static_uninitvar
 
+  core/barrier.cpp (1 remaining of 14)
+    - core_barrier.cpp_CBarrier_processInEditor_FUN_00414460
+      Suspects: bit_int_float_compare
+
+  core/fire.cpp (1 remaining of 185)
+    - core_fire.cpp_CCrater_render_FUN_004c4620
+      Suspects: raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant
+
   core/set.cpp (1 remaining of 87)
     - core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040
       Suspects: pointer_cast, pointer_cast, unrolled_memcpy, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast
+
+  core/boneguy.cpp (1 remaining of 28)
+    - core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40
+      Suspects: bit_int_float_compare
+
+  core/charactr.cpp (1 remaining of 109)
+    - core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
+      Suspects: bit_int_float_compare
+
+  core/lever.cpp (1 remaining of 22)
+    - core_lever.cpp_CLever_setState_FUN_00504b20
+      Suspects: bit_int_float_compare
+
+  core/teleport.cpp (1 remaining of 23)
+    - core_teleport.cpp_CTeleport_processInEditor_FUN_005dabe0
+      Suspects: bit_int_float_compare
+
+  core/tvbat.cpp (1 remaining of 20)
+    - core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260
+      Suspects: bit_int_float_compare
+
+  core/game.cpp (1 remaining of 66)
+    - core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0
+      Suspects: bit_int_float_compare
+
+  core/flame.cpp (2 remaining of 17)
+    - core_flame.cpp_CFlame_processInEditor_FUN_004caf60
+      Suspects: bit_int_float_compare
+    - core_flame.cpp_CFlame_process_FUN_004c9c00
+      Suspects: bit_int_float_compare
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
+  [bit_int_float_compare] - 7 functions
+    core_lever.cpp_CLever_setState_FUN_00504b20                            ( 36 lines)
+    core_curtain.cpp_CCurtain_processInEditor_FUN_0044b7a0                 ( 37 lines)
+    core_flame.cpp_CFlame_processInEditor_FUN_004caf60                     ( 40 lines)
+    core_conveyor.cpp_CConveyor_processInEditor_FUN_004421c0               ( 41 lines)
+    core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0                        ( 42 lines)
+    core_glass.cpp_CGlass_processInEditor_FUN_004eb490                     ( 45 lines)
+    core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0                     ( 47 lines)
+
+  [warning_inlined_function] - 1 functions
+    shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0        ( 30 lines)
+
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
+
+  core/fire.cpp (99.5% complete)
+    1 functions remaining:
+      core_fire.cpp_CCrater_render_FUN_004c4620 (73 lines)
+        Types: ['raw_address_constant']
+
+  core/charactr.cpp (99.1% complete)
+    1 functions remaining:
+      core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (216 lines)
+        Types: ['bit_int_float_compare']
 
   core/set.cpp (98.9% complete)
     1 functions remaining:
       core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (117 lines)
         Types: ['pointer_cast', 'unrolled_memcpy']
 
+  core/game.cpp (98.5% complete)
+    1 functions remaining:
+      core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0 (42 lines)
+        Types: ['bit_int_float_compare']
+
   core/xform.cpp (98.4% complete)
     1 functions remaining:
       core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (490 lines)
         Types: ['warning_unreachable']
+
+  core/boneguy.cpp (96.4% complete)
+    1 functions remaining:
+      core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 (162 lines)
+        Types: ['bit_int_float_compare']
+
+  core/teleport.cpp (95.7% complete)
+    1 functions remaining:
+      core_teleport.cpp_CTeleport_processInEditor_FUN_005dabe0 (63 lines)
+        Types: ['bit_int_float_compare']
+
+  core/lever.cpp (95.5% complete)
+    1 functions remaining:
+      core_lever.cpp_CLever_setState_FUN_00504b20 (36 lines)
+        Types: ['bit_int_float_compare']
+
+  core/tvbat.cpp (95.0% complete)
+    1 functions remaining:
+      core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 (59 lines)
+        Types: ['bit_int_float_compare']
+
+  core/barrier.cpp (92.9% complete)
+    1 functions remaining:
+      core_barrier.cpp_CBarrier_processInEditor_FUN_00414460 (54 lines)
+        Types: ['bit_int_float_compare']
 
 ====================================================================================================
 ALL REMAINING FILES
@@ -42,34 +132,34 @@ ALL REMAINING FILES
   engine/clipper.c                                              89.3%  (25/28 clean, 3 remaining)
   core/zombie.cpp                                               87.5%  (28/32 clean, 4 remaining)
   core/event.cpp                                                87.5%  (49/56 clean, 7 remaining)
-  core/frankgen.cpp                                             87.5%  (21/24 clean, 3 remaining)
   engine/2d.c                                                   85.5%  (65/76 clean, 11 remaining)
   core/gore.cpp                                                 85.2%  (46/54 clean, 8 remaining)
   core/pendulum.cpp                                             85.0%  (17/20 clean, 3 remaining)
   core/vehicle.cpp                                              85.0%  (17/20 clean, 3 remaining)
-  core/curtain.cpp                                              84.6%  (22/26 clean, 4 remaining)
   core/msnedit.cpp                                              84.1%  (53/63 clean, 10 remaining)
   core/dracbrid.cpp                                             84.0%  (21/25 clean, 4 remaining)
   core/dstrender.cpp                                            83.9%  (26/31 clean, 5 remaining)
   core/hero.cpp                                                 83.3%  (40/48 clean, 8 remaining)
-  core/trigger.cpp                                              82.6%  (19/23 clean, 4 remaining)
-  core/wateract.cpp                                             82.6%  (19/23 clean, 4 remaining)
+  core/frankgen.cpp                                             83.3%  (20/24 clean, 4 remaining)
   engine/pod.cpp                                                82.4%  (28/34 clean, 6 remaining)
-  core/conveyor.cpp                                             82.4%  (14/17 clean, 3 remaining)
-  core/flies.cpp                                                81.8%  (18/22 clean, 4 remaining)
   engine/3d.c                                                   81.7%  (85/104 clean, 19 remaining)
   core/manpuz.cpp                                               81.0%  (51/63 clean, 12 remaining)
   shape/cramtex.cpp                                             81.0%  (17/21 clean, 4 remaining)
   core/mobster.cpp                                              80.8%  (21/26 clean, 5 remaining)
+  core/curtain.cpp                                              80.8%  (21/26 clean, 5 remaining)
   core/script.cpp                                               80.2%  (77/96 clean, 19 remaining)
   core/scat.cpp                                                 80.0%  (20/25 clean, 5 remaining)
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
   core/ground.cpp                                               80.0%  (16/20 clean, 4 remaining)
-  core/netgame.cpp                                              79.7%  (51/64 clean, 13 remaining)
   core/turret.cpp                                               79.2%  (19/24 clean, 5 remaining)
   core/dfilter.cpp                                              78.9%  (15/19 clean, 4 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
+  core/trigger.cpp                                              78.3%  (18/23 clean, 5 remaining)
+  core/wateract.cpp                                             78.3%  (18/23 clean, 5 remaining)
+  core/netgame.cpp                                              78.1%  (50/64 clean, 14 remaining)
+  core/flies.cpp                                                77.3%  (17/22 clean, 5 remaining)
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
+  core/conveyor.cpp                                             76.5%  (13/17 clean, 4 remaining)
   core/stranger.cpp                                             76.2%  (48/63 clean, 15 remaining)
   shape/superopt.cpp                                            75.8%  (141/186 clean, 45 remaining)
   core/setutil.cpp                                              75.6%  (31/41 clean, 10 remaining)
@@ -81,12 +171,12 @@ ALL REMAINING FILES
   core/menu.cpp                                                 72.7%  (16/22 clean, 6 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)
   core/setdir.cpp                                               71.9%  (23/32 clean, 9 remaining)
-  shape/design.c                                                71.8%  (117/163 clean, 46 remaining)
   core/texlist.cpp                                              71.4%  (10/14 clean, 4 remaining)
   core/chain.cpp                                                71.4%  (15/21 clean, 6 remaining)
   core/dtrace.cpp                                               70.6%  (36/51 clean, 15 remaining)
   core/setcolid.cpp                                             70.0%  (28/40 clean, 12 remaining)
   core/platfrm.cpp                                              70.0%  (21/30 clean, 9 remaining)
+  shape/design.c                                                69.9%  (114/163 clean, 49 remaining)
   core/dmodel.cpp                                               69.7%  (46/66 clean, 20 remaining)
   core/skeledit.cpp                                             68.6%  (48/70 clean, 22 remaining)
   core/dtri.cpp                                                 67.9%  (19/28 clean, 9 remaining)
@@ -95,8 +185,8 @@ ALL REMAINING FILES
   core/ghoul.cpp                                                66.7%  (12/18 clean, 6 remaining)
   core/weather.cpp                                              60.0%  (6/10 clean, 4 remaining)
   core/path.cpp                                                 60.0%  (15/25 clean, 10 remaining)
-  core/glass.cpp                                                58.3%  (14/24 clean, 10 remaining)
   engine/alphabit.cpp                                           55.6%  (5/9 clean, 4 remaining)
+  core/glass.cpp                                                54.2%  (13/24 clean, 11 remaining)
   core/dcube.cpp                                                53.8%  (21/39 clean, 18 remaining)
   core/course.cpp                                               53.3%  (8/15 clean, 7 remaining)
   core/setedit.cpp                                              51.7%  (30/58 clean, 28 remaining)

@@ -2,16 +2,16 @@
 // Address: 0045d1d0
 // Address Range: [[0045d1d0, 0045d2fb]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int *color_value)
+// Signature: void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int color_value)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int *color_value)
+void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int color_value)
 
 {
-  SMRGLPrimitivePolyIndex local_6c;
+  SMRGLPrimitiveBigPolyIndex local_6c;
   int local_14;
   
   if (((g_WireframeMode == 0) || (g_CurrentPartIndex == -1)) ||
@@ -34,8 +34,7 @@ void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int
       shape_design_c_renderPolygonWireframe_FUN_0045d300(&local_6c.base);
     }
     else {
-      shape_design_c_renderPolygonWireframeAntialiased_FUN_0045d470(&local_6c.base,(int)color_value)
-      ;
+      shape_design_c_renderPolygonWireframeAntialiased_FUN_0045d470(&local_6c.base,color_value);
     }
   }
   return;

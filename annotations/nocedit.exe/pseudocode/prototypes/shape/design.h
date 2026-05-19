@@ -145,7 +145,7 @@ void __cdecl renderSinglePolygon(int polygon_index);
 
 // Original: shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0
 // Address: 0045d1d0
-void __cdecl renderSinglePolygonWithColorOverlay(int polygon_index,int *color_value);
+void __cdecl renderSinglePolygonWithColorOverlay(int polygon_index,int color_value);
 
 // Original: shape_design.c_renderPolygonWireframe_FUN_0045d300
 // Address: 0045d300

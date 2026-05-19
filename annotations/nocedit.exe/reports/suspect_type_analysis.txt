@@ -4,16 +4,17 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1545 ( 43.6%)
-  unrolled_memcpy                  828 ( 23.4%)
+  pointer_cast                    1545 ( 43.5%)
+  unrolled_memcpy                  823 ( 23.2%)
   unrolled_strcpy                  267 (  7.5%)
-  missing_cave_copy                154 (  4.3%)
   shadow_pointer_walk              122 (  3.4%)
-  raw_address_constant              91 (  2.6%)
+  missing_cave_copy                111 (  3.1%)
+  raw_address_constant              95 (  2.7%)
   unrolled_strlen                   80 (  2.3%)
   unrolled_memset                   65 (  1.8%)
   static_uninitvar                  64 (  1.8%)
-  warning_inlined_function          47 (  1.3%)
+  bit_int_float_compare             49 (  1.4%)
+  warning_inlined_function          48 (  1.4%)
   unrolled_strchr                   43 (  1.2%)
   bitcast_double_pair               42 (  1.2%)
   static_legacy_uninitvar           32 (  0.9%)
@@ -394,11 +395,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (828 occurrences)
+TYPE: unrolled_memcpy (823 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   648x  field-by-field struct copy
+   643x  field-by-field struct copy
     92x  for (...; != 0; ... + -1)
     86x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -585,7 +586,6 @@ Functions:
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
   core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370
   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960
-  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
   core_stranger.cpp_CStranger_processFrame_FUN_005bb960
   core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
   core_stranger.cpp_CStranger_setup_FUN_005bb4b0
@@ -594,7 +594,6 @@ Functions:
   core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680
   core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850
   core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20
-  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
   core_tentacle.cpp_CTentacle_process_FUN_005db050
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
@@ -798,58 +797,6 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: missing_cave_copy (154 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  CMatrix3x4f local_7c; ... f(&local_7c, ...);
-     2x  CQuaternion4f CStack_84; ... f(&CStack_84, ...);
-     2x  CMatrix3x4f local_a8; ... f(&local_a8, ...);
-     2x  CMatrix3x4f local_1cc; ... f(&local_1cc, ...);
-     2x  CMatrix3x4f local_19c; ... f(&local_19c, ...);
-     2x  CMatrix3x4f local_16c; ... f(&local_16c, ...);
-     2x  CMatrix3x4f local_ac; ... f(&local_ac, ...);
-     2x  CMatrix3x4f local_4c; ... f(&local_4c, ...);
-     2x  CMatrix3x4f CStack_164; ... f(&CStack_164, ...);
-     2x  CMatrix3x4f CStack_134; ... f(&CStack_134, ...);
-     1x  CQuaternion4f CStack_94; ... f(&CStack_94, ...);
-     1x  CMatrix3x4f local_100; ... f(&local_100, ...);
-     1x  CMatrix3x4f local_d0; ... f(&local_d0, ...);
-     1x  CMatrix3x4f local_70; ... f(&local_70, ...);
-     1x  CQuaternion4f CStack_74; ... f(&CStack_74, ...);
-     1x  CQuaternion4f local_15c; ... f(&local_15c, ...);
-     1x  CQuaternion4f local_14c; ... f(&local_14c, ...);
-     1x  CQuaternion4f local_11c; ... f(&local_11c, ...);
-     1x  CQuaternion4f local_10c; ... f(&local_10c, ...);
-     1x  CQuaternion4f local_ec; ... f(&local_ec, ...);
-
-Functions:
-  core_course.cpp_CCourse_evaluate_FUN_00442710
-  core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
-  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
-  core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550
-  core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
-  core_icepick.cpp_CIcePick_process_FUN_004f80b0
-  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
-  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
-  core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
-  core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
-  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
-  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
-  core_scat.cpp_CScat_process_FUN_005571f0
-  core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
-  core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
-  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
-  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
-  core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
-  core_tentacle.cpp_CTentacle_process_FUN_005db050
-  core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
-
-====================================================================================================
 TYPE: shadow_pointer_walk (122 occurrences)
 ====================================================================================================
 
@@ -957,11 +904,60 @@ Functions:
   shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
 
 ====================================================================================================
-TYPE: raw_address_constant (91 occurrences)
+TYPE: missing_cave_copy (111 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    40x  0xf80000
+     3x  CMatrix3x4f local_7c; ... f(&local_7c, ...);
+     2x  CQuaternion4f CStack_84; ... f(&CStack_84, ...);
+     2x  CMatrix3x4f local_a8; ... f(&local_a8, ...);
+     2x  CMatrix3x4f local_1cc; ... f(&local_1cc, ...);
+     2x  CMatrix3x4f local_19c; ... f(&local_19c, ...);
+     2x  CMatrix3x4f local_16c; ... f(&local_16c, ...);
+     2x  CMatrix3x4f local_ac; ... f(&local_ac, ...);
+     2x  CMatrix3x4f local_4c; ... f(&local_4c, ...);
+     2x  CMatrix3x4f CStack_164; ... f(&CStack_164, ...);
+     2x  CMatrix3x4f CStack_134; ... f(&CStack_134, ...);
+     1x  CQuaternion4f CStack_94; ... f(&CStack_94, ...);
+     1x  CMatrix3x4f local_100; ... f(&local_100, ...);
+     1x  CMatrix3x4f local_d0; ... f(&local_d0, ...);
+     1x  CMatrix3x4f local_70; ... f(&local_70, ...);
+     1x  CQuaternion4f CStack_74; ... f(&CStack_74, ...);
+     1x  CQuaternion4f local_15c; ... f(&local_15c, ...);
+     1x  CQuaternion4f local_14c; ... f(&local_14c, ...);
+     1x  CQuaternion4f local_11c; ... f(&local_11c, ...);
+     1x  CQuaternion4f local_10c; ... f(&local_10c, ...);
+     1x  CQuaternion4f local_ec; ... f(&local_ec, ...);
+
+Functions:
+  core_course.cpp_CCourse_evaluate_FUN_00442710
+  core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
+  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
+  core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550
+  core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
+  core_icepick.cpp_CIcePick_process_FUN_004f80b0
+  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
+  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
+  core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
+  core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
+  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
+  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
+  core_scat.cpp_CScat_process_FUN_005571f0
+  core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
+  core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
+  core_tentacle.cpp_CTentacle_process_FUN_005db050
+  core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
+
+====================================================================================================
+TYPE: raw_address_constant (95 occurrences)
+====================================================================================================
+
+Unique patterns:
+    44x  0xf80000
     12x  0xfeffff
      8x  0xfbffff
      8x  0xfe0000
@@ -980,6 +976,7 @@ Unique patterns:
 
 Functions:
   core_chain.cpp_CChain_renderTransparent_FUN_004308f0
+  core_fire.cpp_CCrater_render_FUN_004c4620
   core_glass.cpp_CGlass_shatter_FUN_004eaef0
   core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40
   core_gore.cpp_CBloodSplat_setupRenderState_FUN_004ec470
@@ -1109,11 +1106,72 @@ Functions:
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 
 ====================================================================================================
-TYPE: warning_inlined_function (47 occurrences)
+TYPE: bit_int_float_compare (49 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    47x  WARNING: Inlined function:
+     3x  (int)(this_ptr->size).x < 0x3f000000
+     2x  (int)fVar2 < 0x41700001
+     2x  (int)local_20 < 0x40800000
+     2x  0x437b0000 < (int)local_20)
+     2x  (int)local_1c < 0x40800000
+     2x  0x437b0000 < (int)local_1c)
+     1x  0x40400000 < (int)local_24))
+     1x  0x40a00000 < (int)local_2c))
+     1x  (int)(this_ptr->box_size).x < 0x3f000000
+     1x  (int)(local_3c->extents).x < 0x3f800000
+     1x  (int)(local_18->extents).x < 0x3f800000
+     1x  (int)(this_ptr->glass_size).x < 0x3f000000
+     1x  (int)(this_ptr->flame_size).x < 0x3dcccccd
+     1x  0x40ffffff < (int)this_ptr->animation_time)
+     1x  0x3e999999 < (int)FLOAT_00680818))
+     1x  (int)CStack_90.y < 0x42c60001
+     1x  (int)local_30 < 0x41f00000
+     1x  (int)(this_ptr->curtain_size).x < 0x3f000000
+     1x  (int)local_68.z < 0x40c00001
+     1x  (int)this_ptr->turn_blend_weight < 0x3e19999a
+
+Functions:
+  core_barrier.cpp_CBarrier_processInEditor_FUN_00414460
+  core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40
+  core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
+  core_conveyor.cpp_CConveyor_processInEditor_FUN_004421c0
+  core_curtain.cpp_CCurtain_processInEditor_FUN_0044b7a0
+  core_emitter.cpp_CEmitter_processInEditor_FUN_004a8fe0
+  core_event.cpp_CEventList_executeCommand_FUN_004aacc0
+  core_flame.cpp_CFlame_processInEditor_FUN_004caf60
+  core_flame.cpp_CFlame_process_FUN_004c9c00
+  core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0
+  core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40
+  core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70
+  core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0
+  core_glass.cpp_CGlass_processInEditor_FUN_004eb490
+  core_lever.cpp_CLever_setState_FUN_00504b20
+  core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
+  core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
+  core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
+  core_path.cpp_renderPathMapsAtPosition_FUN_00548680
+  core_scat.cpp_CScat_updateAI_FUN_005578e0
+  core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
+  core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20
+  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
+  core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270
+  core_teleport.cpp_CTeleport_processInEditor_FUN_005dabe0
+  core_trigger.cpp_CTrigger_processInEditor_FUN_005e1180
+  core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
+  core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260
+  core_wateract.cpp_CWaterActor_processInEditor_FUN_005ebab0
+  shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20
+  shape_design.c_addQuadPolygonOctant_FUN_00469220
+
+====================================================================================================
+TYPE: warning_inlined_function (48 occurrences)
+====================================================================================================
+
+Unique patterns:
+    48x  WARNING: Inlined function:
 
 Functions:
   core_curtain.cpp_CCurtain_setup_FUN_00449810
@@ -1152,6 +1210,7 @@ Functions:
   shape_design.c_createKeyframeModel_FUN_00468320
   shape_design.c_exportModelToBIN_FUN_0045aa80
   shape_design.c_loadTextureData_FUN_0046b060
+  shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0
   shape_design.c_renderSinglePolygon_FUN_0045ce20
   shape_design.c_showFacetPartEditor_FUN_0045f1d0
   shape_design.c_tileTextureMaps_FUN_0046a180

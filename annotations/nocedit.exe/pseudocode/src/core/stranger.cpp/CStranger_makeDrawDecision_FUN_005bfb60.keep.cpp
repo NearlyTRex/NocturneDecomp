@@ -28,16 +28,12 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_005bfb60(CStranger
   float local_100;
   float local_f8;
   CQuaternion4f local_f0;
-  CQuaternion4f local_e0;
   CQuaternion4f local_d0;
   CQuaternion4f local_c0;
   CQuaternion4f local_b0;
-  CQuaternion4f local_a0;
   CQuaternion4f local_90;
   CQuaternion4f local_80;
-  CQuaternion4f local_70;
   CQuaternion4f local_60;
-  CQuaternion4f local_50;
   float local_24;
   int local_20;
   float local_1c;
@@ -171,7 +167,7 @@ LAB_005bfd3a:
       iVar9 = g_StrangerIndices[0x11];
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(fVar4,&local_90);
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-                (&(this_ptr->base).base.model,&local_70,fVar5,iVar9,pcVar16);
+                (&(this_ptr->base).base.model,&local_90,fVar5,iVar9,pcVar16);
     }
     core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(this_ptr,0);
     core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(this_ptr,1);
@@ -202,12 +198,12 @@ LAB_005bfd3a:
               ((this_ptr->right_arm_aim).target_pitch,&local_80);
     pCVar8 = &(this_ptr->base).base.model;
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-              (pCVar8,&local_e0,fVar4,g_StrangerIndices[0x11],
+              (pCVar8,&local_80,fVar4,g_StrangerIndices[0x11],
                core_stranger_cpp_blendWeightCallback_FUN_005baee0);
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((this_ptr->right_arm_aim).target_yaw,&local_60)
     ;
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-              (pCVar8,&local_50,fVar4,g_StrangerIndices[0x11],
+              (pCVar8,&local_60,fVar4,g_StrangerIndices[0x11],
                core_stranger_cpp_blendWeightCallback_FUN_005baee0);
     if ((this_ptr->base).base.layer_action_index != 0xe) {
       return;
@@ -221,11 +217,11 @@ LAB_005bfd3a:
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((float)fVar10,&local_d0);
   pCVar8 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-            (pCVar8,&local_a0,1.0,g_StrangerIndices[4],
+            (pCVar8,&local_d0,1.0,g_StrangerIndices[4],
              core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(-(float)fVar10,&local_b0);
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-            (pCVar8,&local_a0,1.0,g_StrangerIndices[3],
+            (pCVar8,&local_b0,1.0,g_StrangerIndices[3],
              core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
   return;
 }

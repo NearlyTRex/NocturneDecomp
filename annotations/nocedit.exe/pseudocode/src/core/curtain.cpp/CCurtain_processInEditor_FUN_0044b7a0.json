@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 37,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "bit_int_float_compare"
+    ],
     "total_lines": 143
   },
   "cross_references": [],
@@ -131,7 +133,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f000000 is the IEEE 754 bit pattern of 0.5f. Rewrite in a .keep as a plain float compare against 0.5f.",
+      "line": 27,
+      "match": "(int)(this_ptr->curtain_size).x < 0x3f000000",
+      "severity": "moderate",
+      "text": "if ((int)(this_ptr->curtain_size).x < 0x3f000000) {",
+      "type": "bit_int_float_compare"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

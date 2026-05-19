@@ -6,7 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   polygon_index
 ; Local Variables:
-; SMRGLPrimitivePolyIndex Stack[-0xc4]:56  local_c4
+; SMRGLPrimitiveBigPolyIndex Stack[-0xc4]:88  local_c4
 ; SMRGLTextureBasic[3] Stack[-0x6c]:72  local_6c
 ; uint             Stack[-0x20]:4  local_20
 ; uint             Stack[-0x1c]:4  local_1c

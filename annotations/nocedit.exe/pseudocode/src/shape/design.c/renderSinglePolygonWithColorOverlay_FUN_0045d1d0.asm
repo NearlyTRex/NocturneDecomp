@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int *color_value)
+; void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int color_value)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   polygon_index
-; int *            Stack[0x8]:4   color_value
+; int              Stack[0x8]:4   color_value
 ; Local Variables:
-; SMRGLPrimitivePolyIndex Stack[-0x6c]:56  local_6c
+; SMRGLPrimitiveBigPolyIndex Stack[-0x6c]:88  local_6c
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

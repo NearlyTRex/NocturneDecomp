@@ -4789,6 +4789,14 @@
       "type":"struct"
     },
     {
+      "name":"SMRGLPrimitiveBigPoly",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLPrimitiveBigPolyIndex",
+      "type":"struct"
+    },
+    {
       "name":"SMRGLPrimitivePoly",
       "type":"struct"
     },
@@ -58120,6 +58128,54 @@
       "importable":true,
       "len":16,
       "name":"SMRGLPointerArray",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderPrimitive"
+        },
+        {
+          "len":192,
+          "name":"vertices",
+          "offset":24,
+          "type":"SMRGLVertex[16]"
+        }
+      ],
+      "importable":true,
+      "len":216,
+      "name":"SMRGLPrimitiveBigPoly",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderPrimitive"
+        },
+        {
+          "len":64,
+          "name":"vertices",
+          "offset":24,
+          "type":"int[16]"
+        }
+      ],
+      "importable":true,
+      "len":88,
+      "name":"SMRGLPrimitiveBigPolyIndex",
       "pack":false,
       "type":"struct"
     },

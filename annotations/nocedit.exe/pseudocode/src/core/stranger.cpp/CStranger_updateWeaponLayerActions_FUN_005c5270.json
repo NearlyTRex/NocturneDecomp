@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 840,
-    "complexity_score": 379,
+    "complexity_score": 414,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 16,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 379,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "bit_int_float_compare"
+    ],
     "total_lines": 1219
   },
   "cross_references": [
@@ -468,6 +470,30 @@
     "file_variant": "keep"
   },
   "suspects": [
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f199999 is the IEEE 754 bit pattern of 0.6f. Rewrite in a .keep as a plain float compare against 0.6f.",
+      "line": 245,
+      "match": "0x3f199999 < (int)(this_ptr->base).base.layer_action_t))",
+      "severity": "moderate",
+      "text": "if ((((int)fVar9 < 0x3f19999a) && (0x3f199999 < (int)(this_ptr->base).base.layer_action_t)) &&",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3ebd70a3 is the IEEE 754 bit pattern of 0.37f. Rewrite in a .keep as a plain float compare against 0.37f.",
+      "line": 252,
+      "match": "0x3ebd70a3 < (int)(this_ptr->base).base.layer_action_t))",
+      "severity": "moderate",
+      "text": "if ((((int)fVar9 < 0x3ebd70a4) && (0x3ebd70a3 < (int)(this_ptr->base).base.layer_action_t)) &&",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f28f5c2 is the IEEE 754 bit pattern of 0.66f. Rewrite in a .keep as a plain float compare against 0.66f.",
+      "line": 258,
+      "match": "0x3f28f5c2 < (int)(this_ptr->base).base.layer_action_t))",
+      "severity": "moderate",
+      "text": "if ((((int)fVar9 < 0x3f28f5c3) && (0x3f28f5c2 < (int)(this_ptr->base).base.layer_action_t)) &&",
+      "type": "bit_int_float_compare"
+    },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
       "line": 222,

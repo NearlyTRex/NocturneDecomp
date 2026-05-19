@@ -38,18 +38,12 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CMatrix3x4f local_bac;
   CMatrix3x4f local_b7c;
   CMatrix3x4f local_b4c;
-  CMatrix3x4f local_b1c;
   CMatrix3x4f local_aec;
-  CMatrix3x4f local_a8c;
   CMatrix3x4f local_a5c;
   CMatrix3x4f local_9fc;
-  CMatrix3x4f local_9cc;
-  CMatrix3x4f local_99c;
-  CMatrix3x4f local_96c;
   CMatrix3x4f local_93c;
   CMatrix3x4f local_90c;
   CMatrix3x4f local_8dc;
-  CMatrix3x4f local_8ac;
   CMatrix3x4f local_87c;
   CMatrix3x4f local_84c;
   CMatrix3x4f local_81c;
@@ -60,7 +54,6 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CMatrix3x4f local_72c;
   CMatrix3x4f local_6cc;
   CMatrix3x4f local_66c;
-  CMatrix3x4f local_63c;
   CMatrix3x4f local_60c;
   CMatrix3x4f local_5dc;
   CMatrix3x4f local_5ac;
@@ -146,7 +139,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
       fVar11 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                          ((CCharacter *)this_ptr,3);
       core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_87c,&local_6cc,1.0 - fVar11,&local_51c);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_a8c,pCVar15,&local_3fc);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_51c,pCVar15,&local_3fc);
       pCVar15 = &local_3fc;
     }
     else if (iVar12 == 2) {
@@ -169,7 +162,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
       fVar11 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                          ((CCharacter *)this_ptr,3);
       core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_3cc,&local_ccc,1.0 - fVar11,&local_7bc);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_b1c,pCVar15,&local_9fc);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_7bc,pCVar15,&local_9fc);
       pCVar15 = &local_9fc;
     }
     else if (iVar12 == 4) {
@@ -192,7 +185,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
       fVar11 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                          ((CCharacter *)this_ptr,3);
       core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_27c,&local_81c,1.0 - fVar11,&local_5dc);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_63c,pCVar15,&local_57c);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_5dc,pCVar15,&local_57c);
       pCVar15 = &local_57c;
     }
     else if (iVar12 == 3) {
@@ -239,7 +232,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
       fVar11 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                          ((CCharacter *)this_ptr,0);
       core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_c0c,&local_bdc,1.0 - fVar11,&local_54c);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_8ac,pCVar15,&local_78c);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_54c,pCVar15,&local_78c);
       pCVar15 = &local_78c;
     }
     else if (hand_index == 0) {
@@ -292,7 +285,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     if (this_ptr->pickup_facing_reversed != 0) {
       pCVar15 = &local_2ac;
       core_xform_cpp_buildRotationY_FUN_005f6cc0(3.1415927,&local_93c);
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_96c,pCVar15,&local_90c);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_93c,pCVar15,&local_90c);
       local_2ac = local_90c;
     }
     pCVar15 = &local_2ac;
@@ -306,11 +299,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     local_150.x = (local_21c.min.x + local_21c.max.x) * 0.5f;
     local_150.y = (local_21c.min.y + local_21c.max.y) * 0.5f;
     local_150.z = (local_21c.min.z + local_21c.max.z) * 0.5f;
-    if (&local_180 != &local_150) {
-      local_180.x = local_150.x;
-      local_180.y = local_150.y;
-      local_180.z = local_150.z;
-    }
+    local_180 = local_150;
     EVar1 = pCVar2->light_actor_type;
     if (EVar1 != LIGHT_TYPE_LANTERN) {
       if (EVar1 == LIGHT_TYPE_FLASHLIGHT) {
@@ -334,9 +323,7 @@ LAB_005c1504:
         pCVar13 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
                             (&local_45c,&local_3c);
         if (&local_84 != pCVar13) {
-          local_84.x = pCVar13->x;
-          local_84.y = pCVar13->y;
-          local_84.z = pCVar13->z;
+          local_84 = *pCVar13;
         }
         local_180.z =
                       (local_21c.max.z * (float)0.29999999999999999 +
@@ -375,12 +362,10 @@ LAB_005c10ab:
     fVar11 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                        ((CCharacter *)this_ptr,0);
     core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_d2c,&local_cfc,1.0 - fVar11,&local_84c);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_99c,pCVar15,&local_d5c);
-    pCVar3 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_9cc,&local_78);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_84c,pCVar15,&local_d5c);
+    pCVar3 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_d5c,&local_78);
     if (&local_84 != pCVar3) {
-      local_84.x = pCVar3->x;
-      local_84.y = pCVar3->y;
-      local_84.z = pCVar3->z;
+      local_84 = *pCVar3;
     }
   }
   if (hand_index == 0) {

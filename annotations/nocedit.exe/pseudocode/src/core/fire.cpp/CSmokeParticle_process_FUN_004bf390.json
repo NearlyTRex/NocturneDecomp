@@ -136,6 +136,17 @@
     },
     "pcode_op_count": 613
   },
+  "resolved_suspects": [
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x421fffff is the IEEE 754 bit pattern of 40f. Rewrite in a .keep as a plain float compare against 40f.",
+      "line": 15,
+      "match": "0x421fffff < (int)this_ptr->age)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0x421fffff < (int)this_ptr->age) {",
+      "type": "bit_int_float_compare"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,

@@ -4,18 +4,20 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "keep.c",
+  "compile_source": "c",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 31,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 31,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 132
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_inlined_function"
+    ],
+    "total_lines": 131
   },
   "cross_references": [
     {
@@ -36,7 +38,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0",
-    "signature": "void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int *color_value)"
+    "signature": "void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int color_value)"
   },
   "function_calls": [
     {
@@ -186,17 +188,6 @@
     },
     "pcode_op_count": 484
   },
-  "resolved_suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    }
-  ],
   "stack_frame": {
     "frame_size": 120,
     "local_size": 112,
@@ -208,8 +199,8 @@
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 56,
-        "type": "SMRGLPrimitivePolyIndex"
+        "size": 88,
+        "type": "SMRGLPrimitiveBigPolyIndex"
       },
       {
         "is_param": false,
@@ -230,9 +221,18 @@
         "name": "color_value",
         "offset": 8,
         "size": 4,
-        "type": "int *"
+        "type": "int"
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    }
+  ]
 }

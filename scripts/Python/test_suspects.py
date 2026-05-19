@@ -115,6 +115,7 @@ def run_detectors(susp, code):
     found.extend(susp.identify_preinc_loop_idiom(code))
     found.extend(susp.identify_loop_clobbered_constant(code))
     found.extend(susp.identify_fast_sqrt_inline(code))
+    found.extend(susp.identify_bit_int_float_compare(code))
     return found
 
 

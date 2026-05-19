@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 74,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "bit_int_float_compare",
       "pointer_cast",
       "stack_alignment_array"
     ],
@@ -244,6 +245,14 @@
       "severity": "moderate",
       "text": "this_ptr = *(CPathMap **)((int)g_PathMapList + iVar1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x461c3c01 is the IEEE 754 bit pattern of 9999f. Rewrite in a .keep as a plain float compare against 9999f.",
+      "line": 27,
+      "match": "(int)(this_ptr->cached_world_position).x < 0x461c3c01",
+      "severity": "moderate",
+      "text": "if (((((int)(this_ptr->cached_world_position).x < 0x461c3c01) &&",
+      "type": "bit_int_float_compare"
     }
   ]
 }

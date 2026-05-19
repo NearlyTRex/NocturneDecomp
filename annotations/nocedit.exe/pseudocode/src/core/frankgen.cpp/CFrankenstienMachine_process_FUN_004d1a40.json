@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 166,
+    "complexity_score": 201,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 29,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
+      "bit_int_float_compare",
       "unrolled_memcpy"
     ],
     "total_lines": 507
@@ -401,6 +402,30 @@
       "severity": "moderate",
       "text": "CStack_38.x = pCVar3->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44ac8000 is the IEEE 754 bit pattern of 1380f. Rewrite in a .keep as a plain float compare against 1380f.",
+      "line": 41,
+      "match": "0x44ac8000 < (int)fVar1)",
+      "severity": "moderate",
+      "text": "if ((0x44ac8000 < (int)fVar1) && ((int)fVar1 < 0x44c58000)) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44b90000 is the IEEE 754 bit pattern of 1480f. Rewrite in a .keep as a plain float compare against 1480f.",
+      "line": 42,
+      "match": "(int)fVar1 < 0x44b90000",
+      "severity": "moderate",
+      "text": "if ((int)fVar1 < 0x44b90000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44e10000 is the IEEE 754 bit pattern of 1800f. Rewrite in a .keep as a plain float compare against 1800f.",
+      "line": 78,
+      "match": "0x44e10000 < (int)this_ptr->master_frame)",
+      "severity": "moderate",
+      "text": "if ((0x44e10000 < (int)this_ptr->master_frame) && ((int)this_ptr->master_frame < 0x44ed8000)) {",
+      "type": "bit_int_float_compare"
     }
   ],
   "vtable_info": {

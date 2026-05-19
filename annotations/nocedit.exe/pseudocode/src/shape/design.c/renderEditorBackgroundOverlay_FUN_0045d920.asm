@@ -4,9 +4,9 @@
 ; void __cdecl shape_design_c_renderEditorBackgroundOverlay_FUN_0045d920(void)
 ;
 ; Local Variables:
-; int              Stack[-0x1c]:4  local_1c
+; SMRGLHeaderBasic Stack[-0x20]:8  local_20
 ; int              Stack[-0x18]:4  local_18
-; int *            Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0045f552
@@ -84,7 +84,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x8]      ; 0045d9a3
     PUSH EAX                            ; 0045d9a6
     CALL shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0 ; 0045d9a7
-        ;   XREF to: 0045d1d0 (UNCONDITIONAL_CALL)  ; void shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index, int * color_value)
+        ;   XREF to: 0045d1d0 (UNCONDITIONAL_CALL)  ; void shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index, int color_value)
     ADD ESP,0x8                         ; 0045d9ac
     JMP 0x0045d98e                      ; 0045d9af
         ;   XREF to: 0045d98e (UNCONDITIONAL_JUMP)  ; LAB_0045d98e

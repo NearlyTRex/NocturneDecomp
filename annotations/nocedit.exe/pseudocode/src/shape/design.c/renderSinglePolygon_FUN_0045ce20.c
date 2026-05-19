@@ -14,7 +14,7 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
   char cVar2;
   char *pcVar2;
   char *pcVar3;
-  SMRGLPrimitivePolyIndex local_c4;
+  SMRGLPrimitiveBigPolyIndex local_c4;
   SMRGLTextureBasic local_6c [3];
   uint local_20;
   uint local_1c;
