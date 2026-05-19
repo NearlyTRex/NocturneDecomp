@@ -14,8 +14,7 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
   char cVar2;
   char *pcVar2;
   char *pcVar3;
-  SMRGLHeaderPrimitive local_c4;
-  uint auStack_ac [16];
+  SMRGLPrimitivePolyIndex local_c4;
   SMRGLTextureBasic local_6c [3];
   uint local_20;
   uint local_1c;
@@ -29,19 +28,19 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
       ((g_CurrentPartIndex == -1 ||
        (g_ModelPolygonData[polygon_index].part_assignment == g_CurrentPartIndex)))))) {
     shape_design_c_calculatePolygonNormal_FUN_0045caa0(g_ModelPolygonData + polygon_index);
-    local_c4.base.count = g_ModelPolygonData[polygon_index].vertex_indices_count;
-    local_c4.surface_normal.A.i =
+    local_c4.base.base.count = g_ModelPolygonData[polygon_index].vertex_indices_count;
+    local_c4.base.surface_normal.A.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
-    local_c4.surface_normal.B.i =
+    local_c4.base.surface_normal.B.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));
-    local_c4.surface_normal.C.i =
+    local_c4.base.surface_normal.C.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));
-    local_c4.surface_normal.D.i =
+    local_c4.base.surface_normal.D.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].plane_distance * 65535.0f *
                           256.0f));
     for (local_18 = 0; local_18 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
         local_18 = local_18 + 1) {
-      auStack_ac[local_18] = g_ModelPolygonData[polygon_index].vertex_indices[local_18];
+      local_c4.vertices[local_18] = g_ModelPolygonData[polygon_index].vertex_indices[local_18];
     }
     local_1c = (uint)(g_ModelPolygonData[polygon_index].texture_name[0] == '\0');
     if ((g_ModelPolygonData[polygon_index].polygon_type == 2) &&
@@ -70,13 +69,13 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
                               (float)65536));
       }
       if (g_ZBufferEnabled == 0) {
-        engine_3d_c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40(&local_c4);
+        engine_3d_c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40(&local_c4.base);
       }
       else if (g_GouraudShadingEnabled == 0) {
-        engine_3d_c_renderPolygonPlaneMaskedComplex_FUN_00404c60(&local_c4);
+        engine_3d_c_renderPolygonPlaneMaskedComplex_FUN_00404c60(&local_c4.base);
       }
       else {
-        engine_3d_c_renderPolygonTextureWrappedStandard_FUN_00405ce0(&local_c4);
+        engine_3d_c_renderPolygonTextureWrappedStandard_FUN_00405ce0(&local_c4.base);
       }
     }
     else if (local_1c == 0) {
@@ -85,17 +84,17 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
         engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);
         if (g_GouraudShadingEnabled == 0) {
           if (g_ZBufferEnabled == 0) {
-            engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad0(&local_c4);
+            engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad0(&local_c4.base);
           }
           else {
-            engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(&local_c4);
+            engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(&local_c4.base);
           }
         }
         else if (g_ZBufferEnabled == 0) {
-          engine_3d_c_renderPolygon_FUN_00403ba0(&local_c4);
+          engine_3d_c_renderPolygon_FUN_00403ba0(&local_c4.base);
         }
         else {
-          engine_3d_c_renderPolygonUVMappedComplex_FUN_00404d50(&local_c4);
+          engine_3d_c_renderPolygonUVMappedComplex_FUN_00404d50(&local_c4.base);
         }
       }
     }
@@ -103,10 +102,10 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
       local_20 = -g_EditorColorMode;
       engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);
       if (g_ZBufferEnabled == 0) {
-        engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad0(&local_c4);
+        engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad0(&local_c4.base);
       }
       else {
-        engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(&local_c4);
+        engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(&local_c4.base);
       }
     }
   }

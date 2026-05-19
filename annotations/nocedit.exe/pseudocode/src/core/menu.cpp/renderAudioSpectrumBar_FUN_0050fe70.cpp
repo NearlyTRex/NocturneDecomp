@@ -12,7 +12,7 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int 
   int iVar1;
   int iVar3;
   int iVar2;
-  SMRGLHeaderPrimitive local_2c;
+  SMRGLPrimitiveQuadIndex local_2c;
   CDemonRenderer *this_ptr;
   
   this_ptr = g_CDemonRendererPtr2;
@@ -36,11 +36,15 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int 
     this_ptr->vertex_buffer_ptr[2].v = 0x80000;
     this_ptr->vertex_buffer_ptr[3].u = 0x80000;
     this_ptr->vertex_buffer_ptr[3].v = 0x80000;
-    local_2c.base.count = 4;
-    local_2c.surface_normal.D.i = 0;
-    local_2c.surface_normal.C.i = 0;
-    local_2c.surface_normal.B.i = 0;
-    local_2c.surface_normal.A.i = 0;
+    local_2c.base.base.count = 4;
+    local_2c.base.surface_normal.D.i = 0;
+    local_2c.base.surface_normal.C.i = 0;
+    local_2c.base.surface_normal.B.i = 0;
+    local_2c.base.surface_normal.A.i = 0;
+    local_2c.vertices[0] = 0;
+    local_2c.vertices[2] = 2;
+    local_2c.vertices[3] = 3;
+    local_2c.vertices[1] = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(this_ptr,0x8000);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -51,7 +55,7 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int 
                       (uint)((g_AudioVisualizationCounter >> 0x1f) << 0xf < 0)) >> 0x10) + x_center
                & 7));
     engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
-              (g_CDemonRendererPtr2,&local_2c,0x23);
+              (g_CDemonRendererPtr2,&local_2c.base,0x23);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   }

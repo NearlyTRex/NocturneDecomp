@@ -92,6 +92,18 @@
 #define NOCTURNE_AUTHENTIC_EDITOR 0
 #endif
 
+// NOCTURNE_WINDOW_SCALE
+//   Integer scale factor applied to the SDL window only. The game still
+//   renders internally at its native resolution (640x480) and SDL stretches
+//   the framebuffer texture to fill the larger window. Integer-scale mode is
+//   enabled so the result is crisp pixel-doubling (no blurry filtering).
+//
+//   1 = native (640x480), 2 = 1280x960, 3 = 1920x1440, etc.
+//   Override with -DNOCTURNE_WINDOW_SCALE=N from CMake.
+#ifndef NOCTURNE_WINDOW_SCALE
+#define NOCTURNE_WINDOW_SCALE 2
+#endif
+
 // NOCTURNE_FPU_TRAP
 //   1: compile in nocturne_fpu_trap_on(mask) / nocturne_fpu_trap_off() helpers
 //      that arm SIGFPE on configurable x87/SSE exception bits. The first FP

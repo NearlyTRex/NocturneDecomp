@@ -137,8 +137,8 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
               aCStack_94[0] = CStack_58;
             }
             damage_info = (CPathMap *)&local_a0;
-            (*(((pCStack_30->base).vtable._uc)->_uc).processDamage)
-                      (pCStack_30,(SDamageInfo *)damage_info);
+            (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)
+                      (this_ptr_01,(SDamageInfo *)damage_info);
           }
         }
         this_ptr_02 = (CGlass *)

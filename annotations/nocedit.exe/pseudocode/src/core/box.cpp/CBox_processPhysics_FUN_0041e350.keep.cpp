@@ -26,6 +26,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   int iVar18;
   int iVar16;
   CMatrix3x3f local_420;
+  CVector3f local_delta_v;
   float local_3f8;
   float local_3f4;
   float local_3f0;
@@ -159,14 +160,14 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
     pCVar9 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&this_ptr->rotation_matrix,(CVector3f *)&local_344.angular_velocity_temp.z,
                         &this_ptr->linear_velocity_temp);
-    local_344.extents.y = pCVar9->x * delta_time;
-    local_344.extents.z = pCVar9->y * delta_time;
-    local_344.scrape_point_count = (int)(delta_time * pCVar9->z);
+    local_delta_v.x = pCVar9->x * delta_time;
+    local_delta_v.y = pCVar9->y * delta_time;
+    local_delta_v.z = delta_time * pCVar9->z;
     pCVar14 = &this_ptr->linear_velocity;
-    pCVar14->x = pCVar14->x + local_344.extents.y;
-    (this_ptr->linear_velocity).y = (this_ptr->linear_velocity).y + local_344.extents.z;
+    pCVar14->x = pCVar14->x + local_delta_v.x;
+    (this_ptr->linear_velocity).y = (this_ptr->linear_velocity).y + local_delta_v.y;
     (this_ptr->linear_velocity).z =
-         (this_ptr->linear_velocity).z + (float)local_344.scrape_point_count;
+         (this_ptr->linear_velocity).z + local_delta_v.z;
     pCVar14 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                         (&this_ptr->rotation_matrix,&local_344.scrape_points[0].transformed_position
                          ,pCVar14);

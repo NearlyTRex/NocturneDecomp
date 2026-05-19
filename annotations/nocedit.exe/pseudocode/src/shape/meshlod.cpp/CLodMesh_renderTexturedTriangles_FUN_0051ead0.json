@@ -234,15 +234,8 @@
         "is_param": false,
         "name": "SStack_78",
         "offset": -120,
-        "size": 24,
-        "type": "SMRGLHeaderPrimitive"
-      },
-      {
-        "is_param": false,
-        "name": "aiStack_60",
-        "offset": -96,
-        "size": 48,
-        "type": "int[12]"
+        "size": 72,
+        "type": "SMRGLPrimitiveQuad"
       },
       {
         "is_param": false,
@@ -327,34 +320,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "local_18 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(int *)((int)aiStack_60",
-      "severity": "moderate",
-      "text": "*(int *)((int)aiStack_60 + iVar4) = piVar5[4];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(int *)((int)aiStack_60",
-      "severity": "moderate",
-      "text": "*(int *)((int)aiStack_60 + iVar4 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(int *)((int)aiStack_60",
-      "severity": "moderate",
-      "text": "*(int *)((int)aiStack_60 + iVar4 + 8) = local_28;",
       "type": "pointer_cast"
     },
     {
@@ -364,6 +333,30 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 51,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&SStack_78.vertices[0].vertex_index + iVar4) = piVar5[4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 60,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&SStack_78.vertices[0].texture_u + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 63,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&SStack_78.vertices[0].texture_v + iVar4) = local_28;",
+      "type": "pointer_cast"
     }
   ]
 }

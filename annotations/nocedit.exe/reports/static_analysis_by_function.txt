@@ -10,7 +10,7 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions with findings: 143
-  Total diagnostics: 399
+  Total diagnostics: 398
   Functions flagged by multiple tools: 0
   .keep.cpp files: 143, raw .cpp files: 0
 
@@ -628,13 +628,6 @@ core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870  [.keep] [Cp
   Line  124: [arrayIndexOutOfBoundsCond] Either the condition 'local_28!=3' is redundant or the array 'local_bc[3]' is accessed at index 11, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0  [.keep] [Cppcheck (quick)]
-  File: core/game.cpp  (2 diagnostics)
-
-  Line  139: [selfAssignment] Redundant assignment of 'iVar19' to itself.
-  Line 1567: [selfAssignment] Redundant assignment of 'pbVar21' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_ghoul.cpp_CGhoul_process_FUN_004e6600  [.keep] [Cppcheck (quick)]
   File: core/ghoul.cpp  (2 diagnostics)
 
@@ -855,6 +848,12 @@ core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20  [.keep] 
   File: core/fileman.cpp  (1 diagnostics)
 
   Line   75: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0  [.keep] [Cppcheck (quick)]
+  File: core/game.cpp  (1 diagnostics)
+
+  Line 1564: [selfAssignment] Redundant assignment of 'pbVar21' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.keep] [Cppcheck (quick)]

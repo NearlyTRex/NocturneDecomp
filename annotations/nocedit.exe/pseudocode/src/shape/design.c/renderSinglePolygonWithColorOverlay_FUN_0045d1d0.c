@@ -11,31 +11,31 @@
 void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int *color_value)
 
 {
-  SMRGLHeaderPrimitive local_6c;
-  uint auStack_54 [16];
+  SMRGLPrimitivePolyIndex local_6c;
   int local_14;
   
   if (((g_WireframeMode == 0) || (g_CurrentPartIndex == -1)) ||
      (g_ModelPolygonData[polygon_index].part_assignment == g_CurrentPartIndex)) {
-    local_6c.base.count = g_ModelPolygonData[polygon_index].vertex_indices_count;
-    local_6c.surface_normal.A.i =
+    local_6c.base.base.count = g_ModelPolygonData[polygon_index].vertex_indices_count;
+    local_6c.base.surface_normal.A.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
-    local_6c.surface_normal.B.i =
+    local_6c.base.surface_normal.B.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));
-    local_6c.surface_normal.C.i =
+    local_6c.base.surface_normal.C.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));
-    local_6c.surface_normal.D.i =
+    local_6c.base.surface_normal.D.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].plane_distance * 65535.0f *
                           256.0f));
     for (local_14 = 0; local_14 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
         local_14 = local_14 + 1) {
-      auStack_54[local_14] = g_ModelPolygonData[polygon_index].vertex_indices[local_14];
+      local_6c.vertices[local_14] = g_ModelPolygonData[polygon_index].vertex_indices[local_14];
     }
     if (g_AntiAliasingEnabled == 0) {
-      shape_design_c_renderPolygonWireframe_FUN_0045d300(&local_6c);
+      shape_design_c_renderPolygonWireframe_FUN_0045d300(&local_6c.base);
     }
     else {
-      shape_design_c_renderPolygonWireframeAntialiased_FUN_0045d470(&local_6c,(int)color_value);
+      shape_design_c_renderPolygonWireframeAntialiased_FUN_0045d470(&local_6c.base,(int)color_value)
+      ;
     }
   }
   return;

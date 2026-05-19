@@ -7,8 +7,7 @@
 ; int              Stack[0x4]:4   polygon_index
 ; int *            Stack[0x8]:4   color_value
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x6c]:24  local_6c
-; uint[16]         Stack[-0x54]:64  auStack_54
+; SMRGLPrimitivePolyIndex Stack[-0x6c]:56  local_6c
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

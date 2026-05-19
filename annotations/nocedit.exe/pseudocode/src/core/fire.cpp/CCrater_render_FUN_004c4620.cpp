@@ -9,7 +9,7 @@
 void __cdecl core_fire_cpp_CCrater_render_FUN_004c4620(CCrater *this_ptr)
 
 {
-  SMRGLHeaderPrimitive local_6c;
+  SMRGLPrimitiveTriangleIndex local_6c;
   CVector3i local_38;
   CVector3i local_2c;
   CVector3i local_20;
@@ -62,16 +62,22 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_004c4620(CCrater *this_ptr)
   g_RenderVertexBuffer[2].v = 0x80000;
   g_RenderVertexBuffer[3].u = 0x80000;
   g_RenderVertexBuffer[3].v = 0x80000;
-  local_6c.surface_normal.B.i = 0xffff;
-  local_6c.surface_normal.A.i = 0;
-  local_6c.surface_normal.C.i = 0;
-  local_6c.base.count = 3;
-  local_6c.surface_normal.D.i = 0;
+  local_6c.base.surface_normal.B.i = 0xffff;
+  local_6c.base.surface_normal.A.i = 0;
+  local_6c.base.surface_normal.C.i = 0;
+  local_6c.base.base.count = 3;
+  local_6c.base.surface_normal.D.i = 0;
+  local_6c.vertices[0] = 0;
+  local_6c.vertices[1] = 1;
+  local_6c.vertices[2] = 2;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
-  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(g_CDemonRendererPtr2,&local_6c)
-  ;
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
+            (g_CDemonRendererPtr2,&local_6c.base);
+  local_6c.vertices[0] = 0;
+  local_6c.vertices[1] = 2;
+  local_6c.vertices[2] = 3;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
-  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0(g_CDemonRendererPtr2,&local_6c)
-  ;
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
+            (g_CDemonRendererPtr2,&local_6c.base);
   return;
 }

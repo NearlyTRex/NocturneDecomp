@@ -7,8 +7,7 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   enable_texture_lookup
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x78]:24  SStack_78
-; int[12]          Stack[-0x60]:48  aiStack_60
+; SMRGLPrimitiveQuad Stack[-0x78]:72  SStack_78
 ; float            Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
 ; int              Stack[-0x28]:4  local_28

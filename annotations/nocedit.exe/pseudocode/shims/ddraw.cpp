@@ -17,6 +17,7 @@
 
 #include "system/ddraw.h"
 #include "debug_log.h"
+#include "shim_config.h"
 
 extern SDL_Window* g_sdlWindow;
 extern bool g_sdlWindowReadyToShow;
@@ -406,6 +407,12 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
     ddraw->display_height = height;
     ddraw->display_bpp = bpp;
 
+    // Window is sized at a scaled multiple of the game's native resolution;
+    // the renderer keeps a logical size at the native resolution so all
+    // RenderCopy calls still target the framebuffer the game drew.
+    DWORD win_w = width * NOCTURNE_WINDOW_SCALE;
+    DWORD win_h = height * NOCTURNE_WINDOW_SCALE;
+
     if (!ddraw->window) {
         if (g_sdlWindow) {
             ddraw->window = g_sdlWindow;
@@ -413,10 +420,10 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
             Uint32 flags = SDL_WINDOW_HIDDEN;
             ddraw->window = SDL_CreateWindow("Nocturne",
                                               SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                                              width, height, flags);
+                                              win_w, win_h, flags);
             if (!ddraw->window) return DDERR_GENERIC;
         }
-        SDL_SetWindowSize(ddraw->window, width, height);
+        SDL_SetWindowSize(ddraw->window, win_w, win_h);
 
         ddraw->renderer = SDL_CreateRenderer(ddraw->window, -1,
                                               SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
@@ -424,8 +431,13 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
             ddraw->renderer = SDL_CreateRenderer(ddraw->window, -1, 0);
         }
         if (!ddraw->renderer) return DDERR_GENERIC;
+
+        SDL_RenderSetLogicalSize(ddraw->renderer, width, height);
+        SDL_RenderSetIntegerScale(ddraw->renderer, SDL_TRUE);
     } else {
-        SDL_SetWindowSize(ddraw->window, width, height);
+        SDL_SetWindowSize(ddraw->window, win_w, win_h);
+        SDL_RenderSetLogicalSize(ddraw->renderer, width, height);
+        SDL_RenderSetIntegerScale(ddraw->renderer, SDL_TRUE);
         if (ddraw->cooperative_level & DDSCL_FULLSCREEN) {
             //SDL_SetWindowFullscreen(ddraw->window, SDL_WINDOW_FULLSCREEN);
         }

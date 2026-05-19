@@ -5546,7 +5546,7 @@ shape_design.c_renderSinglePolygon_FUN_0045ce20 (2 suspects)
   File: shape/design.c
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 45 [unrolled_strcpy]: do {
+  Line 44 [unrolled_strcpy]: do {
 
 ====================================================================================================
 shape_design.c_samplePixelAndAccumulate_FUN_0046ad00 (4 suspects)
@@ -5980,10 +5980,10 @@ shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (6 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 39 [pointer_cast]: local_18 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);
-  Line 52 [pointer_cast]: *(int *)((int)aiStack_60 + iVar4) = piVar5[4];
-  Line 61 [pointer_cast]: *(int *)((int)aiStack_60 + iVar4 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));
-  Line 63 [pointer_cast]: *(int *)((int)aiStack_60 + iVar4 + 8) = local_28;
+  Line 38 [pointer_cast]: local_18 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);
+  Line 51 [pointer_cast]: *(int *)((int)&SStack_78.vertices[0].vertex_index + iVar4) = piVar5[4];
+  Line 60 [pointer_cast]: *(int *)((int)&SStack_78.vertices[0].texture_u + iVar4) =
+  Line 63 [pointer_cast]: *(int *)((int)&SStack_78.vertices[0].texture_v + iVar4) = local_28;
   Line 81 [unrolled_strcpy]: do {
 
 ====================================================================================================

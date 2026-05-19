@@ -19,8 +19,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
   int *piVar5;
   int *piVar6;
   char *pcVar7;
-  SMRGLHeaderPrimitive SStack_78;
-  int aiStack_60 [12];
+  SMRGLPrimitiveQuad SStack_78;
   float local_30;
   float local_2c;
   int local_28;
@@ -33,11 +32,11 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
   char cVar1;
   int *piVar2;
   
-  SStack_78.surface_normal.D.i = 0;
-  SStack_78.surface_normal.C.i = 0;
-  SStack_78.surface_normal.B.i = 0;
-  SStack_78.surface_normal.A.i = 0;
-  SStack_78.base.count = 3;
+  SStack_78.base.surface_normal.D.i = 0;
+  SStack_78.base.surface_normal.C.i = 0;
+  SStack_78.base.surface_normal.B.i = 0;
+  SStack_78.base.surface_normal.A.i = 0;
+  SStack_78.base.base.count = 3;
   local_24 = -1;
   local_1c = 0;
   if (0 < this_ptr->tri_count) {
@@ -56,7 +55,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
         piVar5 = local_18;
         piVar6 = local_18;
         do {
-          *(int *)((int)aiStack_60 + iVar4) = piVar5[4];
+          *(int *)((int)&SStack_78.vertices[0].vertex_index + iVar4) = piVar5[4];
           local_30 = (float)piVar6[7];
           local_2c = (float)piVar6[8];
           if ((-1 < atlas_texture_index) && (enable_texture_lookup != 0)) {
@@ -65,9 +64,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
           piVar2 = local_14;
           piVar6 = piVar6 + 2;
           local_28 = (int)ROUND(ROUND(local_2c * 65535.0f));
-          *(int *)((int)aiStack_60 + iVar4 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));
+          *(int *)((int)&SStack_78.vertices[0].texture_u + iVar4) =
+               (int)ROUND(ROUND(local_30 * 65535.0f));
           piVar5 = piVar5 + 1;
-          *(int *)((int)aiStack_60 + iVar4 + 8) = local_28;
+          *(int *)((int)&SStack_78.vertices[0].texture_v + iVar4) = local_28;
           iVar4 = iVar4 + 0xc;
         } while (piVar5 != piVar2);
         if (atlas_texture_index < 0) {

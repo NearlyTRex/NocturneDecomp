@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   y_top
 ; int              Stack[0xc]:4   height_half
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x2c]:24  local_2c
+; SMRGLPrimitiveQuadIndex Stack[-0x2c]:40  local_2c
 ;
 ; XREF[2]:
 ;   core_menu.cpp_configureSoundOptions_FUN_00511e50 at 00512646
