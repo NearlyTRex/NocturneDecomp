@@ -48,15 +48,9 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0(CDemon
         normal_out->z = 0.0;
         normal_out->x = 0.0;
       }
-      g_TempNormal2.y = g_ZeroVector.f.y;
-      g_TempNormal2.z = g_ZeroVector.f.z;
-      g_TempNormal2.x = g_ZeroVector.f.x;
-      g_TempNormal1.y = g_ZeroVector.f.y;
-      g_TempNormal1.z = g_ZeroVector.f.z;
-      g_TempNormal1.x = g_ZeroVector.f.x;
-      g_TempNormal0.y = g_ZeroVector.f.y;
-      g_TempNormal0.z = g_ZeroVector.f.z;
-      g_TempNormal0.x = g_ZeroVector.f.x;
+      g_TempNormal2 = g_ZeroVector.f;
+      g_TempNormal1 = g_ZeroVector.f;
+      g_TempNormal0 = g_ZeroVector.f;
       return fVar7;
     }
     this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
@@ -69,9 +63,7 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0(CDemon
     grid_y = grid_y + -1;
   }
   if ((normal_out != (CVector3f *)0x0) && (normal_out != &local_44)) {
-    normal_out->x = local_44.x;
-    normal_out->y = local_44.y;
-    normal_out->z = local_44.z;
+    *normal_out = local_44;
   }
   return fVar8 * local_38.y + local_5c.y;
 }

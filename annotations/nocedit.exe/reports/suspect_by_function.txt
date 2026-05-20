@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5780 (89.6%)
-With suspects: 674
-Total suspects: 3552
+Clean: 5825 (90.3%)
+With suspects: 629
+Total suspects: 3422
 
 ====================================================================================================
 core_barrier.cpp_CBarrier_processInEditor_FUN_00414460 (1 suspect)
@@ -994,371 +994,16 @@ core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0 (2 suspects)
   Line 104 [unrolled_memcpy]: (local_20->tangent).x = pCVar5->x;
 
 ====================================================================================================
-core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 30 [pointer_cast]: psVar9 = (short *)((int)g_ScreenBufferArray[scanline_y] + uVar5 * 2);
-
-====================================================================================================
-core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9 (2 suspects)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 24 [pointer_cast]: g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);
-  Line 40 [pointer_cast]: *(uint *)((int)g_PerspectiveScanlineColorPtr + uVar1) =
-
-====================================================================================================
-core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 32 [pointer_cast]: piVar6 = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);
-
-====================================================================================================
-core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7 (3 suspects)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 27 [pointer_cast]: g_PerspectiveScanlineZPtr = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);
-  Line 48 [pointer_cast]: if (uVar1 < *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7)) {
-  Line 56 [pointer_cast]: *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7) = (ushort)uVar1;
-
-====================================================================================================
-core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d (3 suspects)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 25 [pointer_cast]: g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);
-  Line 48 [pointer_cast]: if (*(int *)((int)g_PerspectiveScanlineZPtr + uVar6) <= (int)uVar1) {
-  Line 49 [pointer_cast]: *(uint *)((int)g_PerspectiveScanlineColorPtr + uVar6) =
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_00499e70 (7 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 31 [unrolled_memcpy]: for (iVar2 = 0x10; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 33 [pointer_cast]: pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar5 * -8 + 4);
-  Line 34 [pointer_cast]: pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -8 + 4);
-  Line 36 [unrolled_memcpy]: for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 37 [pointer_cast]: pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -2 + 1);
-  Line 38 [pointer_cast]: pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar5 * -2 + 1);
-  Line 82 [unrolled_memcpy]: // 00499efb: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450 (2 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 35 [pointer_cast]: this_ptr->triangle_count + *(int *)((int)this_ptr->cube_list->voxel_data + iVar1);
-  Line 43 [pointer_cast]: puVar6 = (uint *)((int)this_ptr->cube_list->voxel_data + local_20 + -0x14);
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310 (4 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 122 [pointer_cast]: piVar11 = (int *)((int)&(this_ptr->triangle_list->vertex1).x + local_68);
-  Line 334 [pointer_cast]: local_38 = (float *)((int)local_38 + 1);
-  Line 337 [pointer_cast]: local_3c = (float *)((int)local_3c + 1);
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950 (1 suspect)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 71 [unrolled_memcpy]: normal_out->x = CStack_58.x;
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0 (4 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 53 [unrolled_memcpy]: g_TempNormal2.y = g_ZeroVector.f.y;
-  Line 56 [unrolled_memcpy]: g_TempNormal1.y = g_ZeroVector.f.y;
-  Line 59 [unrolled_memcpy]: g_TempNormal0.y = g_ZeroVector.f.y;
-  Line 74 [unrolled_memcpy]: normal_out->x = local_44.x;
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0 (7 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 72 [pointer_cast]: buffer = (SIZE_T *)((int)this_ptr->cube_list->voxel_data + local_24 + -0x14);
-  Line 129 [pointer_cast]: piVar4 = (int *)((int)this_ptr->cube_list->voxel_data + iVar3 + -0x14);
-  Line 165 [pointer_cast]: ((CDemonTriangle *)((int)&(this_ptr->triangle_list->vertex1).x + iVar3),
-  Line 176 [pointer_cast]: piVar4 = (int *)((int)this_ptr->cube_list->voxel_data + iVar12 + -0x14);
-  Line 205 [pointer_cast]: piVar10 = (int *)((int)pSVar2->voxel_data + iVar1 + -0x14);
-  Line 210 [pointer_cast]: ((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + local_20),
-  Line 241 [pointer_cast]: ((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar9),file_handle);
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00499c20 (1 suspect)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 65 [unrolled_memcpy]: local_4c.x = local_64.x;
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220 (2 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 70 [static_uninitvar]: (iVar7 = local_20, iVar6 = local_1c, local_28 != local_60)) {
-  Line 70 [static_uninitvar]: (iVar7 = local_20, iVar6 = local_1c, local_28 != local_60)) {
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70 (3 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 128 [static_legacy_uninitvar]: iVar2 = local_2c;
-  Line 129 [static_legacy_uninitvar]: iVar3 = local_28;
-  Line 146 [unrolled_memcpy]: out_intersection_point->x = local_84.x;
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500 (1 suspect)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 229 [unrolled_memcpy]: g_PVSCubePositions[iVar7].x = local_4c.x;
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70 (1 suspect)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 28 [self_copy_guard]: if (&local_4c != &local_1c) {
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0 (1 suspect)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 42 [pointer_cast]: if (pCVar3 == *(CDemonCube **)((int)g_PVSCubePointers + iVar7)) break;
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60 (1 suspect)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 66 [unrolled_memcpy]: g_TempNormal2.y = g_ZeroVector.f.y;
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_00499f10 (1 suspect)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 65 [unrolled_memcpy]: local_4c.x = local_64.x;
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330 (2 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 67 [static_uninitvar]: (iVar11 = local_20, iVar12 = local_1c, iVar1 != iVar4)) {
-  Line 67 [static_uninitvar]: (iVar11 = local_20, iVar12 = local_1c, iVar1 != iVar4)) {
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0 (2 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 9 [stack_alignment_array]: int aiStackY_1004 [1016];
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880 (2 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 11 [stack_alignment_array]: int aiStackY_1004 [1016];
-
-====================================================================================================
-core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790 (3 suspects)
-  File: core/dtri.cpp
-====================================================================================================
-  Line 6 [unrolled_memcpy]: (this_ptr->vertex1).x = vertex1->x;
-  Line 11 [unrolled_memcpy]: (this_ptr->vertex2).x = vertex2->x;
-  Line 16 [unrolled_memcpy]: (this_ptr->vertex3).x = vertex3->x;
-
-====================================================================================================
-core_dtri.cpp_clipPolygonToBottom_FUN_0049b9c0 (2 suspects)
-  File: core/dtri.cpp
-====================================================================================================
-  Line 25 [unrolled_memcpy]: g_ClipBuffer2Vertices[g_ClipBuffer2VertexCount].x = point1_ptr->x;
-  Line 37 [unrolled_memcpy]: g_ClipBuffer2Vertices[g_ClipBuffer2VertexCount].x = point1_ptr->x;
-
-====================================================================================================
-core_dtri.cpp_clipPolygonToFar_FUN_0049bf60 (2 suspects)
-  File: core/dtri.cpp
-====================================================================================================
-  Line 25 [unrolled_memcpy]: g_ClipOutputVertices[g_ClipOutputVertexCount].x = point1_ptr->x;
-  Line 37 [unrolled_memcpy]: g_ClipOutputVertices[g_ClipOutputVertexCount].x = point1_ptr->x;
-
-====================================================================================================
-core_dtri.cpp_clipPolygonToLeft_FUN_0049bc90 (2 suspects)
-  File: core/dtri.cpp
-====================================================================================================
-  Line 27 [unrolled_memcpy]: g_ClipBuffer4Vertices[g_ClipBuffer4VertexCount].x = point1_ptr->x;
-  Line 39 [unrolled_memcpy]: g_ClipBuffer4Vertices[g_ClipBuffer4VertexCount].x = point1_ptr->x;
-
-====================================================================================================
-core_dtri.cpp_clipPolygonToNear_FUN_0049bdf0 (2 suspects)
-  File: core/dtri.cpp
-====================================================================================================
-  Line 25 [unrolled_memcpy]: g_ClipBuffer5Vertices[g_ClipBuffer5VertexCount].x = point1_ptr->x;
-  Line 37 [unrolled_memcpy]: g_ClipBuffer5Vertices[g_ClipBuffer5VertexCount].x = point1_ptr->x;
-
-====================================================================================================
-core_dtri.cpp_clipPolygonToRight_FUN_0049bb30 (2 suspects)
-  File: core/dtri.cpp
-====================================================================================================
-  Line 27 [unrolled_memcpy]: g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = point1_ptr->x;
-  Line 39 [unrolled_memcpy]: g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = point1_ptr->x;
-
-====================================================================================================
-core_dtri.cpp_clipPolygonToTop_FUN_0049b860 (2 suspects)
-  File: core/dtri.cpp
-====================================================================================================
-  Line 25 [unrolled_memcpy]: g_ClipBuffer1Vertices[g_ClipBuffer1VertexCount].x = point1_ptr->x;
-  Line 37 [unrolled_memcpy]: g_ClipBuffer1Vertices[g_ClipBuffer1VertexCount].x = point1_ptr->x;
-
-====================================================================================================
-core_dtri.cpp_clipTriangleToBounds_FUN_0049c120 (6 suspects)
-  File: core/dtri.cpp
-====================================================================================================
-  Line 24 [unrolled_memcpy]: g_ClipInputVertices[0].x = triangle_vertices->x;
-  Line 29 [unrolled_memcpy]: g_ClipInputVertices[1].x = triangle_vertices[1].x;
-  Line 34 [unrolled_memcpy]: g_ClipInputVertices[2].x = triangle_vertices[2].x;
-  Line 67 [unrolled_memcpy]: g_ClipOutputVertices[0].x = triangle_vertices->x;
-  Line 72 [unrolled_memcpy]: g_ClipOutputVertices[1].x = triangle_vertices[1].x;
-  Line 77 [unrolled_memcpy]: g_ClipOutputVertices[2].x = triangle_vertices[2].x;
-
-====================================================================================================
-core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 (5 suspects)
-  File: core/dtri.cpp
-====================================================================================================
-  Line 41 [unrolled_memcpy]: local_4c.x = local_58.x;
-  Line 61 [unrolled_memcpy]: local_34[0].x = local_58.x;
-  Line 65 [unrolled_memcpy]: local_58.x = local_70.x;
-  Line 77 [unrolled_memcpy]: local_7c.x = local_4c.x;
-  Line 81 [unrolled_memcpy]: local_4c.x = local_58.x;
-
-====================================================================================================
 core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
   File: core/elephant.cpp
 ====================================================================================================
   Line 25 [static_invalid_pointer_cast]: if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {
 
 ====================================================================================================
-core_emitter.cpp_CEmitter_ctor_FUN_004a7ca0 (2 suspects)
-  File: core/emitter.cpp
-====================================================================================================
-  Line 20 [unrolled_strcpy]: do {
-  Line 31 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80 (5 suspects)
-  File: core/emitter.cpp
-====================================================================================================
-  Line 36 [self_copy_guard]: if (&local_6c != &local_60) {
-  Line 42 [static_uninitvar]: local_68 = local_68 + 5.0f;
-  Line 48 [static_uninitvar]: fVar8 = (float10)local_64;
-  Line 49 [static_uninitvar]: local_64 = (float)((float10)fVar2 + fVar8);
-  Line 64 [unrolled_memcpy]: local_48.x = local_54.x;
-
-====================================================================================================
-core_emitter.cpp_CEmitter_processInEditor_FUN_004a8fe0 (8 suspects)
-  File: core/emitter.cpp
-====================================================================================================
-  Line 40 [unrolled_memcpy]: g_EmitterTarget.x = pCVar4->x;
-  Line 46 [unrolled_memcpy]: g_EmitterEditorOrientation.vec.x = (pUVar2->vec).x;
-  Line 59 [unrolled_memcpy]: (pCVar1->position).x = g_EmitterTarget.x;
-  Line 63 [unrolled_memcpy]: (pUVar2->vec).x = g_EmitterEditorOrientation.vec.x;
-  Line 71 [unrolled_memcpy]: g_EmitterTarget.x = (pCVar1->position).x;
-  Line 77 [unrolled_memcpy]: g_EmitterEditorOrientation.vec.x = (pUVar2->vec).x;
-  Line 92 [unrolled_memcpy]: (pUVar2->vec).x = pCVar4->x;
-  Line 127 [bit_int_float_compare]: if ((int)(this_ptr->emitter_size).x < 0x3f000000) {
-
-====================================================================================================
-core_emitter.cpp_CEmitter_process_FUN_004a8070 (3 suspects)
-  File: core/emitter.cpp
-====================================================================================================
-  Line 110 [unrolled_memcpy]: local_70.x = (pCVar4->position).x;
-  Line 174 [unrolled_memcpy]: local_4c[0].x = (pCVar4->position).x;
-  Line 212 [unrolled_memcpy]: CStack_58.x = CStack_7c.x;
-
-====================================================================================================
-core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860 (3 suspects)
-  File: core/emitter.cpp
-====================================================================================================
-  Line 23 [unrolled_memcpy]: local_d0.laser_type = this_ptr->laser_type;
-  Line 30 [unrolled_memcpy]: local_d0.beam_width = local_7c.beam_width;
-  Line 52 [unrolled_memcpy]: local_7c.laser_type = local_d0.laser_type;
-
-====================================================================================================
-core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (8 suspects)
-  File: core/event.cpp
-====================================================================================================
-  Line 291 [unrolled_memcpy]: local_128.x = (pCVar8->location).position.x;
-  Line 483 [unrolled_strcpy]: do {
-  Line 1160 [bit_int_float_compare]: if ((local_78 < 0.0) || (0x42c80000 < (int)local_78)) {
-  Line 1266 [bit_int_float_compare]: if ((local_60 < 0.0) || (0x42c80000 < (int)local_60)) {
-  Line 2032 [unrolled_memcpy]: local_134.x = (pCVar8->orient).vec.x;
-  Line 2045 [unrolled_memcpy]: local_134.x = (pCVar8->orient).vec.x;
-  Line 2069 [unrolled_memcpy]: local_11c.x = (pCVar13->location).position.x;
-  Line 2075 [unrolled_memcpy]: local_134.x = (pCVar13->orient).vec.x;
-
-====================================================================================================
-core_event.cpp_CEventList_getActorByVarName_FUN_004b0b80 (2 suspects)
-  File: core/event.cpp
-====================================================================================================
-  Line 15 [pointer_cast]: (*(char **)((int)g_CDemonSetPtr->actors + iVar3),
-  Line 18 [pointer_cast]: return *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3);
-
-====================================================================================================
 core_event.cpp_CEventList_process_FUN_004aaac0 (1 suspect)
   File: core/event.cpp
 ====================================================================================================
   Line 19 [unrolled_memcpy]: // 004aaaee: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_event.cpp_CEventList_setActorVariable_FUN_004b09a0 (4 suspects)
-  File: core/event.cpp
-====================================================================================================
-  Line 30 [unrolled_strcpy]: do {
-  Line 40 [unrolled_strcpy]: do {
-  Line 67 [unrolled_strcpy]: do {
-  Line 76 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0 (1 suspect)
-  File: core/event.cpp
-====================================================================================================
-  Line 32 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_event.cpp_CRuleList_insert_FUN_004b1680 (2 suspects)
-  File: core/event.cpp
-====================================================================================================
-  Line 27 [unrolled_strcpy]: do {
-  Line 36 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_event.cpp_resolveActorByName_FUN_004aa400 (1 suspect)
-  File: core/event.cpp
-====================================================================================================
-  Line 14 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_fire.cpp_CCrater_render_FUN_004c4620 (4 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 51 [raw_address_constant]: g_RenderVertexBuffer[0].v = 0xf80000;
-  Line 52 [raw_address_constant]: g_RenderVertexBuffer[1].u = 0xf80000;
-  Line 53 [raw_address_constant]: g_RenderVertexBuffer[1].v = 0xf80000;
-  Line 54 [raw_address_constant]: g_RenderVertexBuffer[2].u = 0xf80000;
-
-====================================================================================================
-core_fire.cpp_CFireball_render_FUN_004c0e70 (2 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 72 [static_uninitvar]: fVar2 = -local_1c;
-  Line 151 [static_uninitvar]: fVar4 = -local_18 * local_e0.min.x;
-
-====================================================================================================
-core_flame.cpp_CFlame_processInEditor_FUN_004caf60 (1 suspect)
-  File: core/flame.cpp
-====================================================================================================
-  Line 27 [bit_int_float_compare]: if ((int)(this_ptr->flame_size).x < 0x3dcccccd) {
-
-====================================================================================================
-core_flame.cpp_CFlame_process_FUN_004c9c00 (1 suspect)
-  File: core/flame.cpp
-====================================================================================================
-  Line 57 [bit_int_float_compare]: if (0x40ffffff < (int)this_ptr->animation_time) {
 
 ====================================================================================================
 core_flies.cpp_CFlies_initFly_FUN_004cc760 (2 suspects)
@@ -1779,46 +1424,13 @@ core_gore.cpp_CGore_spawnFlies_FUN_004edf30 (2 suspects)
   Line 31 [unrolled_memcpy]: (this_ptr_01->box_size).x = box_size->x;
 
 ====================================================================================================
-core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30 (5 suspects)
+core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880 (4 suspects)
   File: core/ground.cpp
 ====================================================================================================
-  Line 66 [pointer_cast]: iVar14 = this_ptr->height_scale * (int)*(short *)((int)pvVar3 + (iVar13 + uVar11) * 4);
-  Line 69 [pointer_cast]: ((int)*(short *)((int)pvVar3 + (uVar12 + iVar13) * 4) * this_ptr->height_scale - iVar14)
-  Line 78 [pointer_cast]: iVar9 = this_ptr->height_scale * (int)*(short *)((int)pvVar1 + (uVar12 + iVar8) * 4);
-  Line 79 [pointer_cast]: iVar15 = (int)*(short *)((int)pvVar1 + ((this_ptr->width_minus_1 & uVar2) + iVar8) * 4) *
-  Line 85 [pointer_cast]: (int)*(short *)((int)pvVar1 +
-
-====================================================================================================
-core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0 (5 suspects)
-  File: core/ground.cpp
-====================================================================================================
-  Line 51 [pointer_cast]: iVar7 = (int)*(short *)((int)pvVar2 + ((this_ptr->width_minus_1 & uVar1) + iVar6) * 4) *
-  Line 53 [pointer_cast]: local_3c.x = (int)*(short *)((int)pvVar2 + (iVar6 + uVar7) * 4) * this_ptr->height_scale -
-  Line 57 [pointer_cast]: (int)*(short *)((int)pvVar2 +
-  Line 95 [pointer_cast]: iVar7 = (int)*(short *)((int)pvVar3 + (uVar8 + iVar6) * 4) * this_ptr->height_scale;
-  Line 96 [pointer_cast]: local_3c.x = (int)*(short *)((int)pvVar3 + (iVar6 + uVar7) * 4) * this_ptr->height_scale - iVar7
-
-====================================================================================================
-core_ground.cpp_CGround_load_FUN_004ef030 (7 suspects)
-  File: core/ground.cpp
-====================================================================================================
-  Line 42 [unrolled_strchr]: do {
-  Line 59 [unrolled_strcpy]: do {
-  Line 89 [pointer_cast]: *(short *)((int)this_ptr->terrain_data + (local_18 * this_ptr->width + iVar8) * 4) =
-  Line 100 [unrolled_strcpy]: do {
-  Line 110 [unrolled_strchr]: do {
-  Line 127 [unrolled_strcpy]: do {
-  Line 150 [pointer_cast]: _fread((void *)((int)this_ptr->terrain_data + iVar4 * 4 + 2),1,2,file_00);
-
-====================================================================================================
-core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880 (5 suspects)
-  File: core/ground.cpp
-====================================================================================================
-  Line 7 [pointer_cast]: (uint)*(ushort *)
-  Line 9 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[1]].u = 0xf80000;
-  Line 10 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[1]].v = 0xf80000;
-  Line 12 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[0]].v = 0xf80000;
-  Line 15 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[2]].u = 0xf80000;
+  Line 8 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[1]].u = 0xf80000;
+  Line 9 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[1]].v = 0xf80000;
+  Line 11 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[0]].v = 0xf80000;
+  Line 14 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[2]].u = 0xf80000;
 
 ====================================================================================================
 core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 (2 suspects)
@@ -3171,10 +2783,11 @@ core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005744d0 (2 suspects)
   Line 16 [unrolled_memcpy]: CStack_1c.max.x = (pCVar1->max).x;
 
 ====================================================================================================
-core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (2 suspects)
+core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (3 suspects)
   File: core/setdir.cpp
 ====================================================================================================
   Line 172 [pointer_cast]: this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_1c);
+  Line 184 [unrolled_memcpy]: g_VDNearbyActorBoundingBoxes[g_VDNearbyActorCount].min.x = (pCVar8->min).x;
   Line 189 [unrolled_memcpy]: g_VDNearbyActorBoundingBoxes[iVar10].max.x = (pCVar8->max).x;
 
 ====================================================================================================
@@ -5423,7 +5036,7 @@ shape_design.c_detachFaces_FUN_0046eba0 (2 suspects)
 shape_design.c_duplicateSharedVertices_FUN_00465d50 (1 suspect)
   File: shape/design.c
 ====================================================================================================
-  Line 48 [unrolled_memcpy]: g_LoadedVertices[iVar3].vertex.y = g_LoadedVertices[uVar2].vertex.y;
+  Line 47 [unrolled_memcpy]: g_LoadedVertices[g_VertexCount].vertex.x = g_LoadedVertices[uVar2].vertex.x;
 
 ====================================================================================================
 shape_design.c_exportModelToBIN_FUN_0045aa80 (4 suspects)
@@ -6930,3 +6543,35 @@ shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (4 suspects)
   Line 44 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);
   Line 45 [pointer_cast]: pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
   Line 76 [unrolled_memcpy]: // 005d6488: MOVSD.REP ES:EDI,ESI
+
+====================================================================================================
+sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50 (7 suspects)
+  File: sound/mp3.cpp
+====================================================================================================
+  Line 59 [primitive_walker_cast]: } while (puVar9 != (uint *)&local_18[1].codes.q[0][local_48]);
+  Line 62 [primitive_walker_cast]: puVar4 = (uint *)&pSVar5[local_2c * 16 + *local_1c];
+  Line 72 [primitive_walker_cast]: } while (puVar10 != (uint *)&local_18[1].codes.q[0][local_48]);
+  Line 82 [primitive_walker_cast]: } while (puVar11 != (uint *)&local_18[1].codes.q[0][local_48]);
+  Line 91 [primitive_walker_cast]: } while (puVar8 != (uint *)&sample_array[1].codes.q[0][local_48]);
+  Line 108 [primitive_walker_cast]: puVar7 = (uint *)&sample_array[iVar9].codes.q[0][iVar11];
+  Line 113 [primitive_walker_cast]: } while (puVar7 != (uint *)&sample_array[iVar9 + 1].codes.q[0][iVar11]);
+
+====================================================================================================
+sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0 (1 suspect)
+  File: sound/mp3.cpp
+====================================================================================================
+  Line 54 [primitive_walker_cast]: puVar4 = (uint *)&scfsi_array->scfsi[iVar2];
+
+====================================================================================================
+sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (1 suspect)
+  File: sound/mp3.cpp
+====================================================================================================
+  Line 154 [primitive_walker_cast]: int *band_idx_s = (int *)&g_Layer3BandIndex[0].s;
+
+====================================================================================================
+sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0 (3 suspects)
+  File: sound/mp3.cpp
+====================================================================================================
+  Line 39 [primitive_walker_cast]: local_30 = (uint *)&scalefactor_indices[local_54 + local_40];
+  Line 40 [primitive_walker_cast]: local_28 = (int *)&quantized_samples[local_54];
+  Line 84 [primitive_walker_cast]: puVar3 = (uint *)&dequantized_output[iVar6 + iVar2];

@@ -10,12 +10,10 @@
 void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *this_ptr,char *name,float duration)
 
 {
-  char cVar1;
   int iVar3;
   int iVar4;
   char (*pacVar5) [32];
   double dVar1;
-  char cVar2;
 
   dVar1 = (double)duration;
   if (dVar1 < 0.0) {
@@ -33,15 +31,7 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *th
         core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setTimerEvent - too many timers!");
       }
       pacVar5 = (this_ptr->timers).names + (this_ptr->timers).count;
-      do {
-        cVar2 = *name;
-        (*pacVar5)[0] = cVar2;
-        if (cVar2 == '\0') break;
-        cVar1 = name[1];
-        name = name + 2;
-        (*pacVar5)[1] = cVar1;
-        pacVar5 = (char (*) [32])(*pacVar5 + 2);
-      } while (cVar1 != '\0');
+      strcpy(*pacVar5,name);
       (this_ptr->timers).durations[(this_ptr->timers).count] = duration;
       (this_ptr->timers).count = (this_ptr->timers).count + 1;
       return;

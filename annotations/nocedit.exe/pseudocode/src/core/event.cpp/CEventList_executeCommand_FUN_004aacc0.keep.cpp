@@ -261,9 +261,7 @@ LAB_004aad41:
             local_f0 = 0;
           }
           else if ((CLocation *)&local_128 != &pCVar8->location) {
-            local_128.x = (pCVar8->location).position.x;
-            local_128.y = (pCVar8->location).position.y;
-            local_128.z = (pCVar8->location).position.z;
+            local_128 = (pCVar8->location).position;
           }
         }
         if (local_e4 < 0) {
@@ -446,18 +444,7 @@ LAB_004aad41:
                                       ((char **)&local_ec,local_194,0x20);
                   if (pcVar18 != (char *)0x0) {
 LAB_004aaf38:
-                    pcVar17 = g_EventErrorMessageBuffer;
-                    do {
-                      cVar1 = *pcVar18;
-                      *pcVar17 = cVar1;
-                      if (cVar1 == '\0') {
-                        return 0;
-                      }
-                      cVar1 = pcVar18[1];
-                      pcVar18 = pcVar18 + 2;
-                      pcVar17[1] = cVar1;
-                      pcVar17 = pcVar17 + 2;
-                    } while (cVar1 != '\0');
+                    strcpy(g_EventErrorMessageBuffer,pcVar18);
                     return 0;
                   }
                   if (local_f0 != 0) {
@@ -1049,7 +1036,7 @@ LAB_004aaf38:
                                                      "Camera \"%s\" does not exist.",local_12e5 + 1);
                                           return 0;
                                         }
-                                        if ((local_78 < 0.0) || (0x42c80000 < (int)local_78)) {
+                                        if ((local_78 < 0.0) || (100.0f < local_78)) {
                                           _sprintf
                                                     (g_EventErrorMessageBuffer,
                                                      "Ambient value %g is out of range (1..100)",
@@ -1152,7 +1139,7 @@ LAB_004aaf38:
                                               return 0;
                                             }
                                             local_ec = local_ec + local_5c;
-                                            if ((local_60 < 0.0) || (0x42c80000 < (int)local_60)) {
+                                            if ((local_60 < 0.0) || (100.0f < local_60)) {
                                               _sprintf
                                                         (g_EventErrorMessageBuffer,
                                                          "Ambient value %g is out of range (1..100)",
@@ -1842,9 +1829,7 @@ LAB_004aaf38:
                                                     if ((local_f0 != 0) &&
                                                        (&local_134 != (CVector3f *)&pCVar8->orient))
                                                     {
-                                                      local_134.x = (pCVar8->orient).vec.x;
-                                                      local_134.y = (pCVar8->orient).vec.y;
-                                                      local_134.z = (pCVar8->orient).vec.z;
+                                                      local_134 = (pCVar8->orient).vec;
                                                     }
                                                     sscanf
                                                               (local_59d + 1,"%f,%f,%f,%f%n",
@@ -1855,9 +1840,7 @@ LAB_004aaf38:
                                                     if ((local_f0 != 0) &&
                                                        (&local_134 != (CVector3f *)&pCVar8->orient))
                                                     {
-                                                      local_134.x = (pCVar8->orient).vec.x;
-                                                      local_134.y = (pCVar8->orient).vec.y;
-                                                      local_134.z = (pCVar8->orient).vec.z;
+                                                      local_134 = (pCVar8->orient).vec;
                                                     }
                                                     sscanf
                                                               (local_59d + 1,"%f,%f,%f%n",
@@ -1879,15 +1862,11 @@ LAB_004aaf38:
                                                   else {
                                                     if ((CLocation *)&local_11c !=
                                                         &pCVar13->location) {
-                                                      local_11c.x = (pCVar13->location).position.x;
-                                                      local_11c.y = (pCVar13->location).position.y;
-                                                      local_11c.z = (pCVar13->location).position.z;
+                                                      local_11c = (pCVar13->location).position;
                                                     }
                                                     if (&local_134 != (CVector3f *)&pCVar13->orient)
                                                     {
-                                                      local_134.x = (pCVar13->orient).vec.x;
-                                                      local_134.y = (pCVar13->orient).vec.y;
-                                                      local_134.z = (pCVar13->orient).vec.z;
+                                                      local_134 = (pCVar13->orient).vec;
                                                     }
                                                     local_18 = strlen(local_59d + 1);
                                                   }

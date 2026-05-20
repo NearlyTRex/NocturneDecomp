@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 118,
+    "complexity_score": 93,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 93,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 252
   },
   "cross_references": [
@@ -175,6 +173,24 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr->triangle_count + *(int *)((int)this_ptr->cube_list->voxel_data + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(uint *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)this_ptr->cube_list->voxel_data + local_20 + -0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 50,
       "match": "(CDemonTriangle *)((int)pCVar9",
       "resolution_source": "keep",
@@ -292,22 +308,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "this_ptr->triangle_count + *(int *)((int)this_ptr->cube_list->voxel_data + iVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "puVar6 = (uint *)((int)this_ptr->cube_list->voxel_data + local_20 + -0x14);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

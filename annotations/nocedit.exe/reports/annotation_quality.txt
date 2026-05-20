@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        46 ( 0.7%)
+  Functions with type issues:        45 ( 0.7%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      46
+    Undefined types in variables:      45
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   173 functions
+  Excluded (.keep / MMX / by-value):   174 functions
     Wrong calling convention:          1
-    Undefined types in variables:      171
+    Undefined types in variables:      172
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (46)
+Undefined types in variables (45)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -197,11 +197,6 @@ Undefined types in variables (46)
   CGlass_renderTransparent
     Address: 0x004e9af0  File: core/glass.cpp
     Locals:  local_24 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  CGround_getNormalAtPosition
-    Address: 0x004effb0  File: core/ground.cpp
-    Locals:  auStackY_1024 (undefined4[1008])
     Suggested: Resolve undefined types to concrete types
 
   CGround_renderVisibleTerrain
@@ -367,7 +362,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (171)
+Undefined types - .keep overrides (172)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1003,6 +998,11 @@ Undefined types - .keep overrides (171)
   CGlass_setup
     Address: 0x004e9180  File: core/glass.cpp
     Locals:  local_d0 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CGround_getNormalAtPosition
+    Address: 0x004effb0  File: core/ground.cpp
+    Locals:  auStackY_1024 (undefined4[1008])
     Suggested: Resolve undefined types to concrete types
 
   CLarva_process

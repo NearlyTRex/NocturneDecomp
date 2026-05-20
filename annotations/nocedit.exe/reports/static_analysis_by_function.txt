@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 143
-  Total diagnostics: 398
+  Functions with findings: 138
+  Total diagnostics: 381
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 143, raw .cpp files: 0
+  .keep.cpp files: 138, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -23,27 +23,27 @@ core_event.cpp_CEventList_executeCommand_FUN_004aacc0  [.keep] [Cppcheck (quick)
   File: core/event.cpp  (22 diagnostics)
 
   Line  238: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  347: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  404: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  532: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  610: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  345: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  402: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  519: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  597: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  644: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  651: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line  657: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  664: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  670: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  757: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  795: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  899: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  929: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1017: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1077: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1181: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1233: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1325: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1419: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1482: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1589: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1702: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1775: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  744: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  782: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  886: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  916: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1004: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1064: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1168: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1220: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1312: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1406: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1469: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1576: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1689: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1762: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_event.cpp_CEventList_evaluateAtom_FUN_004ae140  [.keep] [Cppcheck (quick)]
@@ -149,19 +149,6 @@ core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0  [.keep] [Cppcheck (
   Line  646: [legacyUninitvar] Uninitialized variable: local_164
   Line  647: [legacyUninitvar] Uninitialized variable: local_174
   Line  647: [legacyUninitvar] Uninitialized variable: local_168
-
-----------------------------------------------------------------------------------------------------
-core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330  [.keep] [Cppcheck (quick)]
-  File: core/dtrace.cpp  (8 diagnostics)
-
-  Line   67: [uninitvar] Uninitialized variable: local_20
-  Line   67: [uninitvar] Uninitialized variable: local_1c
-  Line  116: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  117: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  118: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  119: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  120: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  121: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0  [.keep] [Cppcheck (quick)]
@@ -396,14 +383,6 @@ core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppc
   Line   66: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
 ----------------------------------------------------------------------------------------------------
-core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80  [.keep] [Cppcheck (quick)]
-  File: core/emitter.cpp  (3 diagnostics)
-
-  Line   42: [uninitvar] Uninitialized variable: local_68
-  Line   48: [uninitvar] Uninitialized variable: local_64
-  Line   49: [uninitvar] Uninitialized variable: fVar8
-
-----------------------------------------------------------------------------------------------------
 core_gabriela.cpp_CGabriella_processAI_FUN_004d4190  [.keep] [Cppcheck (quick)]
   File: core/gabriela.cpp  (3 diagnostics)
 
@@ -586,32 +565,11 @@ core_dskybox.cpp_renderSkyDome_FUN_004901f0  [.keep] [Cppcheck (quick)]
   Line  145: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220  [.keep] [Cppcheck (quick)]
-  File: core/dtrace.cpp  (2 diagnostics)
-
-  Line   70: [uninitvar] Uninitialized variable: local_20
-  Line   70: [uninitvar] Uninitialized variable: local_1c
-
-----------------------------------------------------------------------------------------------------
-core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70  [.keep] [Cppcheck (quick)]
-  File: core/dtrace.cpp  (2 diagnostics)
-
-  Line  128: [legacyUninitvar] Uninitialized variable: local_2c
-  Line  129: [legacyUninitvar] Uninitialized variable: local_28
-
-----------------------------------------------------------------------------------------------------
 core_fire.cpp_CFireball_process_FUN_004c0b30  [.keep] [Cppcheck (quick)]
   File: core/fire.cpp  (2 diagnostics)
 
   Line   50: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   51: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_fire.cpp_CFireball_render_FUN_004c0e70  [.keep] [Cppcheck (quick)]
-  File: core/fire.cpp  (2 diagnostics)
-
-  Line   72: [uninitvar] Uninitialized variable: local_1c
-  Line  151: [uninitvar] Uninitialized variable: local_18
 
 ----------------------------------------------------------------------------------------------------
 core_flame.cpp_CFlame_updateGlobe_FUN_004cad90  [.keep] [Cppcheck (quick)]

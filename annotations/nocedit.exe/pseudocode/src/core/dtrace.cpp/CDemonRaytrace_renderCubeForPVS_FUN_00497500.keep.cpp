@@ -220,9 +220,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500(CDemon
         iVar7 = g_PVSDrawnCubeCount;
         g_PVSCubePointers[g_PVSDrawnCubeCount] = this_ptr_00;
         if (g_PVSCubePositions + iVar7 != &local_4c) {
-          g_PVSCubePositions[iVar7].x = local_4c.x;
-          g_PVSCubePositions[iVar7].y = local_4c.y;
-          g_PVSCubePositions[iVar7].z = local_4c.z;
+          g_PVSCubePositions[iVar7] = local_4c;
         }
         g_PVSDrawnCubeCount = g_PVSDrawnCubeCount + 1;
         if (19999 < g_PVSDrawnCubeCount) {

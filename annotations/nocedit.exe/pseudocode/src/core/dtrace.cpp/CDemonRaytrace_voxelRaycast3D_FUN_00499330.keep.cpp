@@ -46,7 +46,9 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330(CDemonRay
   float fVar3;
   float fVar2;
   int iVar1;
-  
+
+  local_20 = 0;
+  local_1c = 0;
   fVar12 = 1.0 / ((this_ptr->cell_size).x * 0.125f);
   fVar10 = 1.0 / ((this_ptr->cell_size).y * 0.125f);
   fVar11 = (start_position->x - (this_ptr->bbox_min).x) * fVar12;
@@ -113,12 +115,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330(CDemonRay
     local_20 = iVar11;
     local_24 = iVar1;
     pCVar16 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
-                        (this_ptr,(int)((local_30 + (local_30 >> 0x1f) * -8) -
-                                       (uint)((local_30 >> 0x1f) << 2 < 0)) >> 3,
-                         (int)((local_2c + (local_2c >> 0x1f) * -8) -
-                              (uint)((local_2c >> 0x1f) << 2 < 0)) >> 3,
-                         (int)((local_24 + (local_24 >> 0x1f) * -8) -
-                              (uint)((local_24 >> 0x1f) << 2 < 0)) >> 3);
+                        (this_ptr,local_30 / 8,local_2c / 8,local_24 / 8);
     if (pCVar16 != (CDemonCube *)0x0) {
       if ((pCVar16->voxel_buffer1 != (SVoxelGrid *)0x0) &&
          ((pCVar16->voxel_buffer1->voxels[local_24 % 8][local_2c % 8] &

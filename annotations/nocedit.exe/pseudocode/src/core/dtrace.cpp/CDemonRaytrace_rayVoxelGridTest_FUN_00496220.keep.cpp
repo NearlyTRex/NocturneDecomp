@@ -46,6 +46,8 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220(CDemonR
   int iVar2;
   float fVar1;
   
+  local_20 = 0;
+  local_1c = 0;
   local_50 = (start_pos->y - (this_ptr->bbox_min).y) / (this_ptr->cell_size).y;
   fVar1 = 1.0 / (this_ptr->cell_size).x;
   local_58 = (start_pos->z - (this_ptr->bbox_min).z) / (this_ptr->cell_size).z;

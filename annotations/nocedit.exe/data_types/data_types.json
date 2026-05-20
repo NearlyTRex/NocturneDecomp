@@ -3941,6 +3941,10 @@
       "type":"typedef"
     },
     {
+      "name":"SGroundCell",
+      "type":"struct"
+    },
+    {
       "name":"SHORT",
       "type":"typedef"
     },
@@ -4558,6 +4562,10 @@
     },
     {
       "name":"STrainNoise",
+      "type":"struct"
+    },
+    {
+      "name":"STriangleBoundsEntry",
       "type":"struct"
     },
     {
@@ -37521,7 +37529,7 @@
           "len":4,
           "name":"terrain_data",
           "offset":36,
-          "type":"void*"
+          "type":"SGroundCell*"
         },
         {
           "len":4,
@@ -55965,6 +55973,30 @@
       "desc":"",
       "fields":[
         {
+          "len":2,
+          "name":"height",
+          "offset":0,
+          "type":"short"
+        },
+        {
+          "len":2,
+          "name":"color",
+          "offset":2,
+          "type":"short"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"SGroundCell",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"y_min",
           "offset":0,
@@ -61543,6 +61575,36 @@
       "importable":true,
       "len":28,
       "name":"STreeNode",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"triangle_index",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":12,
+          "name":"min",
+          "offset":4,
+          "type":"CVector3f"
+        },
+        {
+          "len":12,
+          "name":"max",
+          "offset":16,
+          "type":"CVector3f"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"STriangleBoundsEntry",
       "pack":false,
       "type":"struct"
     },

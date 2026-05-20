@@ -10,7 +10,7 @@ CVector3i * __stack3_esi core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb
 
 {
   uint uVar2;
-  void *pvVar3;
+  SGroundCell *pSVar3;
   ulonglong uVar5;
   int iVar6;
   uint uVar3;
@@ -69,42 +69,40 @@ CVector3i * __stack3_esi core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb
       pCVar6 = &local_54;
     }
     else {
-      pvVar3 = this_ptr->terrain_data;
+      pSVar3 = this_ptr->terrain_data;
       iVar6 = (this_ptr->height_minus_1 & uVar2) * this_ptr->width;
-      iVar7 = (int)*(short *)((iVar6 + uVar7) * 4 + (int)pvVar3) * this_ptr->height_scale;
+      iVar7 = (int)pSVar3[iVar6 + uVar7].height * this_ptr->height_scale;
       local_3c.x = iVar7 - this_ptr->height_scale *
-                           (int)*(short *)(((uVar1 & this_ptr->width_minus_1) + iVar6) * 4 +
-                                          (int)pvVar3);
+                           (int)pSVar3[(uVar1 & this_ptr->width_minus_1) + iVar6].height;
       local_3c.y = this_ptr->vertical_scale << 8;
-      local_3c.z = (int)*(short *)((uVar3 * this_ptr->width + uVar7) * 4 + (int)pvVar3) *
-                   this_ptr->height_scale - iVar7;
+      local_3c.z = (int)pSVar3[uVar3 * this_ptr->width + uVar7].height * this_ptr->height_scale -
+                   iVar7;
       engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&local_3c,&local_30);
       pCVar6 = &local_30;
     }
   }
   else if (iVar7 < 0x10000 - iVar6) {
     iVar6 = this_ptr->width * uVar3;
-    pvVar3 = this_ptr->terrain_data;
-    iVar7 = this_ptr->height_scale * (int)*(short *)((iVar6 + uVar7) * 4 + (int)pvVar3);
-    local_3c.x = iVar7 - (int)*(short *)(((uVar1 & this_ptr->width_minus_1) + iVar6) * 4 +
-                                        (int)pvVar3) * this_ptr->height_scale;
+    pSVar3 = this_ptr->terrain_data;
+    iVar7 = this_ptr->height_scale * (int)pSVar3[iVar6 + uVar7].height;
+    local_3c.x = iVar7 - (int)pSVar3[(uVar1 & this_ptr->width_minus_1) + iVar6].height *
+                         this_ptr->height_scale;
     local_3c.y = this_ptr->vertical_scale << 8;
     local_3c.z = iVar7 - this_ptr->height_scale *
-                         (int)*(short *)((uVar7 + (uVar2 & this_ptr->height_minus_1) *
-                                                  this_ptr->width) * 4 + (int)pvVar3);
+                         (int)pSVar3[uVar7 + (uVar2 & this_ptr->height_minus_1) * this_ptr->width].
+                              height;
     engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&local_3c,&local_60);
     pCVar6 = &local_60;
   }
   else {
     uVar8 = this_ptr->width_minus_1 & uVar1;
-    pvVar3 = this_ptr->terrain_data;
+    pSVar3 = this_ptr->terrain_data;
     iVar6 = (uVar2 & this_ptr->height_minus_1) * this_ptr->width;
-    iVar7 = (int)*(short *)((int)pvVar3 + (uVar8 + iVar6) * 4) * this_ptr->height_scale;
-    local_3c.x = (int)*(short *)((int)pvVar3 + (iVar6 + uVar7) * 4) * this_ptr->height_scale - iVar7
-    ;
+    iVar7 = (int)pSVar3[uVar8 + iVar6].height * this_ptr->height_scale;
+    local_3c.x = (int)pSVar3[iVar6 + uVar7].height * this_ptr->height_scale - iVar7;
     local_3c.y = this_ptr->vertical_scale << 8;
-    local_3c.z = this_ptr->height_scale *
-                 (int)*(short *)((uVar3 * this_ptr->width + uVar8) * 4 + (int)pvVar3) - iVar7;
+    local_3c.z = this_ptr->height_scale * (int)pSVar3[uVar3 * this_ptr->width + uVar8].height -
+                 iVar7;
     engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&local_3c,&local_48);
     pCVar6 = &local_48;
   }

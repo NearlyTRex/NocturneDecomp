@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5807 (90.0%)
-Functions with suspects: 647 (10.0%)
+Clean functions: 5849 (90.6%)
+Functions with suspects: 605 (9.4%)
 
-Total suspect patterns: 3552
-Average suspects per function: 0.55
+Total suspect patterns: 3422
+Average suspects per function: 0.53
 
-Virtual files: 214 total, 142 at 100%, 152 at 90%+
+Virtual files: 214 total, 147 at 100%, 159 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 53.9
+Average complexity score: 53.7
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,27 +28,28 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1545
-  unrolled_memcpy           823
-  unrolled_strcpy           267
+  pointer_cast              1503
+  unrolled_memcpy           766
+  unrolled_strcpy           253
   shadow_pointer_walk       122
   missing_cave_copy         111
-  raw_address_constant      95
+  raw_address_constant      91
   unrolled_strlen           80
   unrolled_memset           65
-  static_uninitvar          64
-  bit_int_float_compare     49
-  warning_inlined_function  48
-  unrolled_strchr           43
+  static_uninitvar          55
+  warning_inlined_function  45
+  bit_int_float_compare     44
   bitcast_double_pair       42
-  static_legacy_uninitvar   32
+  unrolled_strchr           41
+  static_legacy_uninitvar   30
   decompiler_intrinsic      25
   warning_unreachable       22
   static_invalid_pointer_cast 18
   warning_type_propagation  17
-  stack_alignment_array     17
+  stack_alignment_array     15
   negative_offset           13
-  self_copy_guard           13
+  primitive_walker_cast     12
+  self_copy_guard           11
   sub84_truncation          10
   static_null_pointer       8
   stack_param               8
@@ -108,14 +109,14 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5757 more
+  ... and 5799 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
   0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3412, suspects: 6, lines: 3337)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2291, suspects: 83, lines: 1436)
-  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2233, suspects: 8, lines: 2138)
   00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2162, suspects: 27, lines: 1852)
+  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2138, suspects: 0, lines: 2138)
   004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1728, suspects: 0, lines: 1728)
   004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1591, suspects: 0, lines: 1591)
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 1564, suspects: 8, lines: 1474)
@@ -146,7 +147,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (334 functions):
+  pointer_cast (319 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
@@ -157,9 +158,9 @@ FUNCTIONS BY SUSPECT TYPE
     00403430: engine_2d.c_mapFrameBuffer_FUN_00403430
     00401900: engine_2d.c_drawCharacterMasked_FUN_00401900
     00401140: engine_2d.c_plotPixel_FUN_00401140
-    ... and 324 more
+    ... and 309 more
 
-  unrolled_memcpy (271 functions):
+  unrolled_memcpy (249 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -170,9 +171,9 @@ FUNCTIONS BY SUSPECT TYPE
     00407470: engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
     00408070: engine_3d.c_clipAndDrawLine3D_FUN_00408070
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-    ... and 261 more
+    ... and 239 more
 
-  unrolled_strcpy (110 functions):
+  unrolled_strcpy (103 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
     004050c0: engine_3d.c_updateAnimatedTexture_FUN_004050c0
     004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
@@ -183,7 +184,7 @@ FUNCTIONS BY SUSPECT TYPE
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     004b23a0: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
     004ba740: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
-    ... and 100 more
+    ... and 93 more
 
   shadow_pointer_walk (79 functions):
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
@@ -211,7 +212,7 @@ FUNCTIONS BY SUSPECT TYPE
     005dbb70: core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
     ... and 11 more
 
-  raw_address_constant (21 functions):
+  raw_address_constant (20 functions):
     00406860: engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
     00404220: engine_3d.c_renderPolygonLitDetailedClamped_FUN_00404220
     00406290: engine_3d.c_renderPolygonTexturePerspectiveCorrectClamped_FUN_00406290
@@ -219,10 +220,10 @@ FUNCTIONS BY SUSPECT TYPE
     004ed3c0: core_gore.cpp_CFootstep_render_FUN_004ed3c0
     004ec470: core_gore.cpp_CBloodSplat_setupRenderState_FUN_004ec470
     004eaef0: core_glass.cpp_CGlass_shatter_FUN_004eaef0
-    004c4620: core_fire.cpp_CCrater_render_FUN_004c4620
     005ef190: core_weather.cpp_CWeather_renderParticles_FUN_005ef190
     005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    ... and 11 more
+    005dc760: core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760
+    ... and 10 more
 
   unrolled_strlen (34 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
@@ -252,20 +253,7 @@ FUNCTIONS BY SUSPECT TYPE
 
   static_uninitvar (0 functions):
 
-  bit_int_float_compare (33 functions):
-    0053fd00: core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
-    004ccaf0: core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0
-    00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
-    00581aa0: core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0
-    00414460: core_barrier.cpp_CBarrier_processInEditor_FUN_00414460
-    00526d90: core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
-    004eb490: core_glass.cpp_CGlass_processInEditor_FUN_004eb490
-    004caf60: core_flame.cpp_CFlame_processInEditor_FUN_004caf60
-    004c9c00: core_flame.cpp_CFlame_process_FUN_004c9c00
-    005390f0: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
-    ... and 23 more
-
-  warning_inlined_function (47 functions):
+  warning_inlined_function (44 functions):
     00541390: core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470
     004825c0: core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0
@@ -276,20 +264,20 @@ FUNCTIONS BY SUSPECT TYPE
     005874d0: core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
     00585c90: core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
     00586bf0: core_setutil.cpp_C3DSLight_apply_FUN_00586bf0
-    ... and 37 more
+    ... and 34 more
 
-  unrolled_strchr (20 functions):
-    004b5640: engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640
-    00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
-    00578420: core_setedit.cpp_loadGroundTypes_FUN_00578420
-    00584e70: core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
-    0057d660: core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
-    005671a0: core_script.cpp_CScript_extractCrossReferences_FUN_005671a0
-    00561a30: core_script.cpp_parseConditionExpression_FUN_00561a30
-    004eb690: core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690
-    0053d220: core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220
-    005dbe00: core_texlist.cpp_CTextureList_load_FUN_005dbe00
-    ... and 10 more
+  bit_int_float_compare (29 functions):
+    0053fd00: core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
+    004ccaf0: core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0
+    00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+    00581aa0: core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0
+    00414460: core_barrier.cpp_CBarrier_processInEditor_FUN_00414460
+    00526d90: core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
+    004eb490: core_glass.cpp_CGlass_processInEditor_FUN_004eb490
+    005390f0: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
+    004421c0: core_conveyor.cpp_CConveyor_processInEditor_FUN_004421c0
+    005e2d50: core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
+    ... and 19 more
 
   bitcast_double_pair (8 functions):
     0055a810: core_script.cpp_CScript_step_FUN_0055a810
@@ -300,6 +288,19 @@ FUNCTIONS BY SUSPECT TYPE
     005d5e60: shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
     005d2ac0: shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
+
+  unrolled_strchr (19 functions):
+    004b5640: engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640
+    00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
+    00578420: core_setedit.cpp_loadGroundTypes_FUN_00578420
+    00584e70: core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
+    0057d660: core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
+    005671a0: core_script.cpp_CScript_extractCrossReferences_FUN_005671a0
+    00561a30: core_script.cpp_parseConditionExpression_FUN_00561a30
+    004eb690: core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690
+    0053d220: core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220
+    005dbe00: core_texlist.cpp_CTextureList_load_FUN_005dbe00
+    ... and 9 more
 
   static_legacy_uninitvar (0 functions):
 
@@ -339,7 +340,7 @@ FUNCTIONS BY SUSPECT TYPE
     005db050: core_tentacle.cpp_CTentacle_process_FUN_005db050
     ... and 7 more
 
-  stack_alignment_array (17 functions):
+  stack_alignment_array (15 functions):
     00542470: core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
     004f8810: core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810
     004eb9d0: core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
@@ -350,7 +351,7 @@ FUNCTIONS BY SUSPECT TYPE
     004d2190: core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
     00546a60: core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
     00547fc0: core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
-    ... and 7 more
+    ... and 5 more
 
   negative_offset (6 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
@@ -360,7 +361,13 @@ FUNCTIONS BY SUSPECT TYPE
     00477690: core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
     004300d0: core_chain.cpp_CChain_process_FUN_004300d0
 
-  self_copy_guard (10 functions):
+  primitive_walker_cast (4 functions):
+    0052fee0: sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0
+    0052fc50: sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50
+    005325e0: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
+    0052f8e0: sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0
+
+  self_copy_guard (8 functions):
     00457cf0: core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
     0043a420: core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
     005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470
@@ -368,8 +375,6 @@ FUNCTIONS BY SUSPECT TYPE
     004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600
     005214c0: core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
     004300d0: core_chain.cpp_CChain_process_FUN_004300d0
-    00496e70: core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70
-    004a7e80: core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80
     00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
 
   sub84_truncation (7 functions):

@@ -11,9 +11,9 @@ void __cdecl core_ground_cpp_CGround_free_FUN_004eefb0(CGround *this_ptr)
 {
   CTextureList *ptr;
   
-  if (this_ptr->terrain_data != (void *)0x0) {
+  if (this_ptr->terrain_data != (SGroundCell *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->terrain_data,"..\\core\\ground.cpp",0xe7);
-    this_ptr->terrain_data = (void *)0x0;
+    this_ptr->terrain_data = (SGroundCell *)0x0;
   }
   g_CurrentDebugLine = 0xeb;
   g_CurrentDebugFilename = "..\\core\\ground.cpp";

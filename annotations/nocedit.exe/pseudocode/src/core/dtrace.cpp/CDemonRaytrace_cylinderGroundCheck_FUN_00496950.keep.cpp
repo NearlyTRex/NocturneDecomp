@@ -73,9 +73,7 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950(CD
       }
       if (bVar4) {
         if ((normal_out != (CVector3f *)0x0) && (&CStack_58 != normal_out)) {
-          normal_out->x = CStack_58.x;
-          normal_out->y = CStack_58.y;
-          normal_out->z = CStack_58.z;
+          *normal_out = CStack_58;
         }
         if (hit_flag != (int *)0x0) {
           *hit_flag = local_30;

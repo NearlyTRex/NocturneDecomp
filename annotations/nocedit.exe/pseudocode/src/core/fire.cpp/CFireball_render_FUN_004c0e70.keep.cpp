@@ -69,6 +69,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
     g_RenderVertexBuffer[3].v = 0x8 << 16;
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
               (g_CDemonRendererPtr2,&g_BillboardCameraRight,(CVector3i *)0x0);
+    local_1c = 0.666f;
     fVar2 = -local_1c;
     local_44[0].x = 0;
     local_74.y = (int)ROUND(fVar2 * 256.0f);
@@ -136,6 +137,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
       local_e0.min.y = 0.1;
       local_5c.y = (int)(this_ptr->base).velocity.z;
       local_e0.min.x = 1.0;
+      local_18 = 4.0f;
       do {
         local_e0.min.y = local_e0.min.y * (float)0.69999999999999996;
         local_e0.min.x = (float)0.69999999999999996 * local_e0.min.x;

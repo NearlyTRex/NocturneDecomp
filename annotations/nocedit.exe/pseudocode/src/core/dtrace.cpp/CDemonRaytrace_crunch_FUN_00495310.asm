@@ -44,7 +44,7 @@
 ; int *            Stack[-0x50]:4  local_50
 ; int *            Stack[-0x4c]:4  local_4c
 ; int *            Stack[-0x48]:4  local_48
-; int *            Stack[-0x44]:4  local_44
+; STriangleBoundsEntry * Stack[-0x44]:4  local_44
 ; int *            Stack[-0x40]:4  local_40
 ; float *          Stack[-0x3c]:4  local_3c
 ; float *          Stack[-0x38]:4  local_38

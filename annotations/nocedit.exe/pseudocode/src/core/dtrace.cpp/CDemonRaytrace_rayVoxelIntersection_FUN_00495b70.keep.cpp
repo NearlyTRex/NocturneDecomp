@@ -46,7 +46,9 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70(C
   float fVar3;
   float fVar2;
   float fVar1;
-  
+
+  local_2c = 0;
+  local_28 = 0;
   fVar1 = (ray_start->x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x;
   fVar2 = (ray_start->y - (this_ptr->bbox_min).y) / (this_ptr->cell_size).y;
   fVar3 = (ray_start->z - (this_ptr->bbox_min).z) / (this_ptr->cell_size).z;
@@ -139,9 +141,7 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70(C
           if (fVar13 < local_98) {
             if ((out_intersection_point != (CVector3f *)0x0) &&
                (out_intersection_point != &local_84)) {
-              out_intersection_point->x = local_84.x;
-              out_intersection_point->y = local_84.y;
-              out_intersection_point->z = local_84.z;
+              *out_intersection_point = local_84;
             }
             local_98 = fVar13;
             if (out_intersection_type != (int *)0x0) {

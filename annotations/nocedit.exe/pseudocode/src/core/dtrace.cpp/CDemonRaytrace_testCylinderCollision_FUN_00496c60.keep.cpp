@@ -69,9 +69,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60(C
   g_TempNormal0.z = g_ZeroVector.f.z;
   g_TempNormal0.x = g_ZeroVector.f.x;
   g_TempNormal1.y = g_ZeroVector.f.y;
-  g_TempNormal2.y = g_ZeroVector.f.y;
-  g_TempNormal2.z = g_ZeroVector.f.z;
-  g_TempNormal2.x = g_ZeroVector.f.x;
+  g_TempNormal2 = g_ZeroVector.f;
   uVar12 = g_ZeroVector.f.x;
   uVar13 = g_ZeroVector.f.z;
   uVar14 = g_ZeroVector.f.y;

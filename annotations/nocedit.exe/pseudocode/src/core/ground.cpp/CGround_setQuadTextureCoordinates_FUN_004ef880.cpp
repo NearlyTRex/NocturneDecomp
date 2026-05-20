@@ -11,8 +11,7 @@ void __cdecl core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004ef880(CGro
 {
   core_texlist_cpp_CTextureList_captureTexture_FUN_005dc270
             (this_ptr->texture_list,
-             (uint)*(ushort *)
-                    ((int)this_ptr->terrain_data + (row * this_ptr->width + column) * 4 + 2));
+             (uint)(ushort)this_ptr->terrain_data[row * this_ptr->width + column].color);
   g_RenderVertexBuffer[this_ptr->vertex_indices[1]].u = 0xf80000;
   g_RenderVertexBuffer[this_ptr->vertex_indices[1]].v = 0xf80000;
   g_RenderVertexBuffer[this_ptr->vertex_indices[0]].u = 0x80000;

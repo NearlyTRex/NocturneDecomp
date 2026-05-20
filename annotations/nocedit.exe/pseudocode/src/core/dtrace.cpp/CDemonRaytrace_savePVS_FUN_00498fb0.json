@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 71,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 56,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 174
   },
   "cross_references": [
@@ -197,6 +195,17 @@
     },
     "pcode_op_count": 411
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(CDemonCube **)((int)g_PVSCubePointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (pCVar3 == *(CDemonCube **)((int)g_PVSCubePointers + iVar7)) break;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -227,14 +236,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(CDemonCube **)((int)g_PVSCubePointers",
-      "severity": "moderate",
-      "text": "if (pCVar3 == *(CDemonCube **)((int)g_PVSCubePointers + iVar7)) break;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

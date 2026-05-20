@@ -4,21 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 395,
+    "complexity_score": 348,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 345,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
-    ],
-    "total_lines": 1150
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 348,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 1153
   },
   "cross_references": [
     {
@@ -264,6 +261,62 @@
     },
     "pcode_op_count": 3739
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 295,
+      "match": "(float *)((int)pfVar12",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar12 = (float *)((int)pfVar12 + -0x24) + 2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 337,
+      "match": "(float *)((int)local_38",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_38 = (float *)((int)local_38 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 340,
+      "match": "(float *)((int)local_3c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_3c = (float *)((int)local_3c + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 348,
+      "match": "local_44[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_44[-1].max.z);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 125,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&(this_ptr->triangle_list->vertex1).x + local_68);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 244,
     "local_size": 236,
@@ -535,7 +588,7 @@
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "int *"
+        "type": "STriangleBoundsEntry *"
       },
       {
         "is_param": false,
@@ -637,38 +690,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 334,
-      "match": "(float *)((int)local_38",
-      "severity": "moderate",
-      "text": "local_38 = (float *)((int)local_38 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 337,
-      "match": "(float *)((int)local_3c",
-      "severity": "moderate",
-      "text": "local_3c = (float *)((int)local_3c + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 122,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "piVar11 = (int *)((int)&(this_ptr->triangle_list->vertex1).x + local_68);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -49,7 +49,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
   }
   if (this_ptr->flame_state != 0) {
     this_ptr->animation_time = delta_time * (float)16 + this_ptr->animation_time;
-    if (0x40ffffff < (int)this_ptr->animation_time) {
+    if (8.0f <= this_ptr->animation_time) {
       this_ptr->animation_time = this_ptr->animation_time + -8.0f;
     }
     (this_ptr->base).orient.vec.x = 0.0;

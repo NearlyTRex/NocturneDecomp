@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 248,
-    "complexity_score": 123,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 123,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "primitive_walker_cast"
+    ],
     "total_lines": 371
   },
   "cross_references": [
@@ -252,5 +254,15 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "introduced_by": "keep",
+      "line": 54,
+      "match": "(uint *)&scfsi_array->scfsi[",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)&scfsi_array->scfsi[iVar2];",
+      "type": "primitive_walker_cast"
+    }
+  ]
 }

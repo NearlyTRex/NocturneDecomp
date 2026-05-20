@@ -60,11 +60,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_markShadowVoxels_FUN_00499c20(CDemon
               local_64.x = pCVar5->x + offset->x;
               local_64.y = pCVar5->y + offset->y;
               local_64.z = pCVar5->z + offset->z;
-              if (&local_4c != &local_64) {
-                local_4c.x = local_64.x;
-                local_4c.y = local_64.y;
-                local_4c.z = local_64.z;
-              }
+              local_4c = local_64;
               core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160(this_ptr,&local_4c);
               iVar6 = iVar6 + 1;
             } while (iVar6 < iVar3);

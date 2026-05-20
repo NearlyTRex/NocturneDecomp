@@ -93,6 +93,7 @@ SUSPECT_SEVERITY = {
     'memcpy_oversized_source': 'moderate',
     'dropped_loop_counter': 'moderate',
     'loop_clobbered_constant': 'moderate',
+    'primitive_walker_cast': 'moderate',
 }
 
 
@@ -169,6 +170,23 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\(\w+(?:\s+\w+)*\s*\*+\s*\)\s*\([^)]*\(int\)\s*'
      r'(?:\([^()]*\)\s*(?:->|\.)\s*\w+|\w+)(?!\w|\s*\()',
      'pointer_cast', 'Complex pointer cast'),
+    # Primitive-pointer cast on a typed struct-array element address —
+    # Ghidra walks the struct field-by-field via `(int *)[N]` / `(uint *)[N]`
+    # / `(SIZE_T *)[N]` indexing after losing the struct type for the local.
+    # The walker pattern is `LOCAL = (int *)&NAME[IDX];` or
+    # `LOCAL = (int *)&NAME->FIELD[IDX];` — an assignment to a primitive-typed
+    # local, NOT a `*(int *)&...` bit-cast dereference (which is a different
+    # pattern, usually intentional float-bit reinterpretation). The negative
+    # lookbehind `(?<!\*)` excludes the dereference form. Fix in a .keep by
+    # retyping the LHS local to the struct's element type and using field
+    # names instead of `local[1]`/`local[3]`/`local[0x15]` etc.
+    # Restricted to pointer-sized primitives (int/uint/SIZE_T/size_t/long);
+    # `char *` / `byte *` / `uchar *` are excluded since they often
+    # legitimately appear in serialization byte-stream code.
+    (r'(?<!\*)\((?:int|uint|SIZE_T|size_t|long|unsigned\s+long|unsigned\s+int)\s*\*\s*\)\s*'
+     r'&\s*\w+(?:\s*(?:->|\.)\s*\w+)?\s*\[',
+     'primitive_walker_cast',
+     'Primitive-pointer cast hiding struct field walk — retype to element type'),
     # _._N_N_ field access patterns (mangled/unknown field names)
     (r'\._\d+_\d+_', 'unknown_field', 'Unknown/mangled field access'),
     # `code *` — Ghidra's placeholder type for unresolved function pointers
@@ -1652,6 +1670,14 @@ _POINTER_ALIAS_ADDR_RE = re.compile(
 # when the alias name is reassigned to anything not matching the patterns
 # above.
 _ANY_ASSIGN_LHS_RE = re.compile(r"^\s*(\w+)\s*=")
+# Pure scalar rename: `IDENT = IDENT2;` with no arithmetic. Watcom spills a
+# loop count/index into a second local at the top of a loop body, then
+# writes one struct field through the original count and the rest through
+# the spilled copy. Used by `_resolve_scalar_index_aliases` to normalize
+# array subscripts so the field-copy detector groups the run. The RHS must
+# be a non-numeric identifier — `count = 0;` is a literal init, not a
+# rename, and must NOT create a `count -> 0` alias.
+_SCALAR_ALIAS_RENAME_RE = re.compile(r"^\s*(\w+)\s*=\s*([A-Za-z_]\w*)\s*;\s*$")
 
 _FIELD_COPY_RE = re.compile(
     r"^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(.+?)(?:\.|->)\2\s*;\s*$")
@@ -1789,6 +1815,66 @@ def _resolve_pointer_aliases(decompiled_code):
     return '\n'.join(out)
 
 
+def _resolve_scalar_index_aliases(decompiled_code):
+    """Normalize array subscripts that use a pure-rename scalar alias.
+
+    Watcom commonly spills a loop count/index into a second local at the top
+    of a loop body, then writes one struct field through the original count
+    and the rest through the spilled copy:
+
+        iVar2 = g_ClipBuffer1VertexCount;
+        ...
+        g_ClipBuffer1Vertices[g_ClipBuffer1VertexCount].x = pCVar7->x;
+        g_ClipBuffer1Vertices[iVar2].y = pCVar7->y;   // [iVar2] -> [g_ClipBuffer1VertexCount]
+        g_ClipBuffer1Vertices[iVar2].z = pCVar7->z;
+
+    Both subscripts denote the same element (iVar2 == count here), but the
+    differing index text makes `identify_unrolled_field_copy` treat the run
+    as coordinate routing (one source filling two distinct slots) and split
+    it. Rewriting `[iVar2]` to `[g_ClipBuffer1VertexCount]` lets the run group
+    as a single struct copy.
+
+    Only the pure-rename form `IDENT = IDENT2;` is tracked (no arithmetic).
+    The alias is dropped as soon as either side is reassigned, so a later
+    `count = count + 1;` correctly stops further substitution. Substitution
+    is confined to bracketed subscripts (`[IDENT]`) so non-index uses are
+    untouched. Output has the same line count as the input.
+    """
+    if not decompiled_code:
+        return decompiled_code
+    lines = decompiled_code.split('\n')
+    aliases = {}  # ident -> replacement ident
+    out = []
+    for raw in lines:
+        rewritten = raw
+        if aliases:
+            def sub_idx(m):
+                repl = aliases.get(m.group(1))
+                return '[' + repl + ']' if repl is not None else m.group(0)
+            rewritten = re.sub(r'\[(\w+)\]', sub_idx, rewritten)
+        out.append(rewritten)
+
+        # Update tracking from the ORIGINAL line.
+        m_rename = _SCALAR_ALIAS_RENAME_RE.match(raw)
+        if m_rename:
+            lhs, rhs = m_rename.group(1), m_rename.group(2)
+            # Any alias whose value was lhs is now stale (lhs is overwritten).
+            for k in [k for k, v in aliases.items() if v == lhs]:
+                del aliases[k]
+            if lhs != rhs:
+                aliases[lhs] = rhs
+            else:
+                aliases.pop(lhs, None)
+            continue
+        any_m = _ANY_ASSIGN_LHS_RE.match(raw)
+        if any_m:
+            tgt = any_m.group(1)
+            # Drop aliases keyed on tgt or whose value references tgt.
+            for k in [k for k, v in aliases.items() if k == tgt or v == tgt]:
+                del aliases[k]
+    return '\n'.join(out)
+
+
 def identify_unrolled_field_copy(decompiled_code):
     """Detect Watcom-emitted field-by-field struct copies.
 
@@ -1838,7 +1924,8 @@ def identify_unrolled_field_copy(decompiled_code):
     # still uses the original line text so the user sees the source as
     # written.
     original_lines = decompiled_code.split('\n')
-    lines = _resolve_pointer_aliases(decompiled_code).split('\n')
+    lines = _resolve_scalar_index_aliases(
+        _resolve_pointer_aliases(decompiled_code)).split('\n')
     n = len(lines)
     # 3 catches `x/y/z` vector copies; the same-root grouping below keeps
     # false positives from unrelated 3-line runs in check.

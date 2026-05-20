@@ -93,8 +93,7 @@ LAB_004ef09d:
             file->_ptr = (char *)(pbVar2 + 1);
             uVar3 = (uint)*pbVar2;
           }
-          *(short *)((int)this_ptr->terrain_data + (local_18 * this_ptr->width + iVar8) * 4) =
-               (short)(uVar3 << 7);
+          this_ptr->terrain_data[local_18 * this_ptr->width + iVar8].height = (short)(uVar3 << 7);
           iVar8 = iVar8 + 1;
         } while (iVar8 < this_ptr->width);
       }
@@ -154,7 +153,7 @@ LAB_004ef1f1:
         do {
           iVar4 = local_14 * this_ptr->width + iVar5;
           iVar5 = iVar5 + 1;
-          _fread((void *)((int)this_ptr->terrain_data + iVar4 * 4 + 2),1,2,file_00);
+          _fread(&this_ptr->terrain_data[iVar4].color,1,2,file_00);
         } while (iVar5 < this_ptr->width);
       }
       local_14 = local_14 + 1;

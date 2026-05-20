@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 534
+// Structs : 538
 
 #include "nocturne.h"
 
@@ -8502,6 +8502,14 @@ static_assert(__builtin_offsetof(SGem, collision_tri_b) == 116,
 static_assert(__builtin_offsetof(SGem, sfx_handles) == 172,
               "offsetof(SGem, sfx_handles) != 172");
 
+// ---- SGroundCell (4 bytes) ----
+static_assert(sizeof(SGroundCell) == 4,
+              "sizeof(SGroundCell) != 4");
+static_assert(__builtin_offsetof(SGroundCell, height) == 0,
+              "offsetof(SGroundCell, height) != 0");
+static_assert(__builtin_offsetof(SGroundCell, color) == 2,
+              "offsetof(SGroundCell, color) != 2");
+
 // ---- SHardwareEdge (56 bytes) ----
 static_assert(sizeof(SHardwareEdge) == 56,
               "sizeof(SHardwareEdge) != 56");
@@ -8869,6 +8877,22 @@ static_assert(__builtin_offsetof(SMRGLPointerArray, base) == 0,
               "offsetof(SMRGLPointerArray, base) != 0");
 static_assert(__builtin_offsetof(SMRGLPointerArray, entries) == 12,
               "offsetof(SMRGLPointerArray, entries) != 12");
+
+// ---- SMRGLPrimitiveBigPoly (216 bytes) ----
+static_assert(sizeof(SMRGLPrimitiveBigPoly) == 216,
+              "sizeof(SMRGLPrimitiveBigPoly) != 216");
+static_assert(__builtin_offsetof(SMRGLPrimitiveBigPoly, base) == 0,
+              "offsetof(SMRGLPrimitiveBigPoly, base) != 0");
+static_assert(__builtin_offsetof(SMRGLPrimitiveBigPoly, vertices) == 24,
+              "offsetof(SMRGLPrimitiveBigPoly, vertices) != 24");
+
+// ---- SMRGLPrimitiveBigPolyIndex (88 bytes) ----
+static_assert(sizeof(SMRGLPrimitiveBigPolyIndex) == 88,
+              "sizeof(SMRGLPrimitiveBigPolyIndex) != 88");
+static_assert(__builtin_offsetof(SMRGLPrimitiveBigPolyIndex, base) == 0,
+              "offsetof(SMRGLPrimitiveBigPolyIndex, base) != 0");
+static_assert(__builtin_offsetof(SMRGLPrimitiveBigPolyIndex, vertices) == 24,
+              "offsetof(SMRGLPrimitiveBigPolyIndex, vertices) != 24");
 
 // ---- SMRGLPrimitivePoly (120 bytes) ----
 static_assert(sizeof(SMRGLPrimitivePoly) == 120,
@@ -10249,6 +10273,16 @@ static_assert(__builtin_offsetof(STreeNode, data3) == 20,
               "offsetof(STreeNode, data3) != 20");
 static_assert(__builtin_offsetof(STreeNode, data4) == 24,
               "offsetof(STreeNode, data4) != 24");
+
+// ---- STriangleBoundsEntry (28 bytes) ----
+static_assert(sizeof(STriangleBoundsEntry) == 28,
+              "sizeof(STriangleBoundsEntry) != 28");
+static_assert(__builtin_offsetof(STriangleBoundsEntry, triangle_index) == 0,
+              "offsetof(STriangleBoundsEntry, triangle_index) != 0");
+static_assert(__builtin_offsetof(STriangleBoundsEntry, min) == 4,
+              "offsetof(STriangleBoundsEntry, min) != 4");
+static_assert(__builtin_offsetof(STriangleBoundsEntry, max) == 16,
+              "offsetof(STriangleBoundsEntry, max) != 16");
 
 // ---- STrianglePackedIndices (6 bytes) ----
 static_assert(sizeof(STrianglePackedIndices) == 6,

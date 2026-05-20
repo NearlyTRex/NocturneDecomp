@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 99,
+    "complexity_score": 64,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 64,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 151
   },
   "cross_references": [
@@ -205,19 +203,12 @@
     },
     "pcode_op_count": 362
   },
-  "stack_frame": {
-    "frame_size": 0,
-    "local_size": 0,
-    "param_offset": 0,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": []
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(uint *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "g_PerspectiveScanlineZPtr = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);",
       "type": "pointer_cast"
@@ -226,6 +217,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(ushort *)((int)g_PerspectiveScanlineZPtr",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "if (uVar1 < *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7)) {",
       "type": "pointer_cast"
@@ -234,9 +226,19 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(ushort *)((int)g_PerspectiveScanlineZPtr",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7) = (ushort)uVar1;",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

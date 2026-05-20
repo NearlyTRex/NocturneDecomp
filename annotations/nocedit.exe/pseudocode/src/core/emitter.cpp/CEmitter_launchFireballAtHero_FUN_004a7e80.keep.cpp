@@ -34,11 +34,9 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitte
   local_60 = (iVar2->base).base.location.position.x - (location->position).x;
   local_5c = (iVar2->base).base.location.position.y - (this_ptr->base).location.position.y;
   local_58 = (iVar2->base).base.location.position.z - (this_ptr->base).location.position.z;
-  if (&local_6c != &local_60) {
-    local_6c = local_60;
-    local_68 = local_5c;
-    local_64 = local_58;
-  }
+  local_6c = local_60;
+  local_68 = local_5c;
+  local_64 = local_58;
   local_68 = local_68 + 5.0f;
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-8.0,8.0);
   local_6c = fVar2 + local_6c;
@@ -61,11 +59,7 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitte
     local_54.x = local_48.x * fVar2;
     local_54.y = local_48.y * fVar2;
     local_54.z = local_48.z * fVar2;
-    if (&local_48 != &local_54) {
-      local_48.x = local_54.x;
-      local_48.y = local_54.y;
-      local_48.z = local_54.z;
-    }
+    local_48 = local_54;
     core_fire_cpp_CFireEffect_createFireball_FUN_004c7db0
               (g_CFireEffectPtr,&(this_ptr->base).location.position,&local_48,0,0);
   }

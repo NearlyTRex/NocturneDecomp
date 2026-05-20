@@ -9,15 +9,15 @@
 void __cdecl core_ground_cpp_CGround_init_FUN_004eef00(CGround *this_ptr)
 
 {
-  void *pvVar1;
+  SGroundCell *pSVar1;
   CTextureList *this_ptr_00;
   CTextureList *pCVar2;
   
   core_ground_cpp_CGround_free_FUN_004eefb0(this_ptr);
-  pvVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+  pSVar1 = (SGroundCell *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      (this_ptr->width * this_ptr->height * 4,"..\\core\\ground.cpp",0xd2);
-  this_ptr->terrain_data = pvVar1;
-  if (pvVar1 == (void *)0x0) {
+  this_ptr->terrain_data = pSVar1;
+  if (pSVar1 == (SGroundCell *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
     g_CurrentLineNumber = 0xd3;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CGround::init - Out of memory");

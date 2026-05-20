@@ -20,9 +20,9 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGroun
   local_1c.x = this_ptr->vertical_scale * column * 0x100;
   local_1c.z = this_ptr->vertical_scale * row * 0x100;
   local_1c.y = this_ptr->height_scale *
-               (int)*(short *)((int)this_ptr->terrain_data +
-                              ((row & this_ptr->height_minus_1) * this_ptr->width +
-                              (column & this_ptr->width_minus_1)) * 4);
+               (int)this_ptr->terrain_data
+                    [(row & this_ptr->height_minus_1) * this_ptr->width +
+                     (column & this_ptr->width_minus_1)].height;
   wincore_windll_cpp_transformPoint_FUN_005b5a25
             (&g_RenderVertexBuffer[iVar1].projected_vertex,&local_1c);
   g_RenderVertexBuffer[iVar1].r = 0x3fff;

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 65,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 50,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 97
   },
   "cross_references": [
@@ -102,6 +100,17 @@
     },
     "pcode_op_count": 274
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(short *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "psVar9 = (short *)((int)g_ScreenBufferArray[scanline_y] + uVar5 * 2);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 0,
     "local_size": 0,
@@ -110,14 +119,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(short *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "psVar9 = (short *)((int)g_ScreenBufferArray[scanline_y] + uVar5 * 2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }
