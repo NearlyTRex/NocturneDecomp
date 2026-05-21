@@ -598,6 +598,69 @@
       "severity": "moderate",
       "text": "local_20 = (CTrigger *)((local_20->base).actor_name + 4);",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Sub-field-address vector field-pun \u2014 `(CVector3f *)&local_74.y` casts the address of a non-first component of a vector to a vector pointer, so a 3-component access starts mid-vector and overruns `local_74` by 4-8 bytes (ASan stack-buffer-overflow; \u00a726). Introduce a real contiguous CVector3f local, write all 3 components (recover dropped writes from the .asm), and pass its address.",
+      "line": 102,
+      "match": "(CVector3f *)&local_74.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonActor *)pCVar6,(CVector3f *)&local_74.y,(CVector3f *)&local_bc.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address vector field-pun \u2014 `(CVector3f *)&local_bc.y` casts the address of a non-first component of a vector to a vector pointer, so a 3-component access starts mid-vector and overruns `local_bc` by 4-8 bytes (ASan stack-buffer-overflow; \u00a726). Introduce a real contiguous CVector3f local, write all 3 components (recover dropped writes from the .asm), and pass its address.",
+      "line": 102,
+      "match": "(CVector3f *)&local_bc.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonActor *)pCVar6,(CVector3f *)&local_74.y,(CVector3f *)&local_bc.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address vector field-pun \u2014 `(CVector3f *)&local_98.z` casts the address of a non-first component of a vector to a vector pointer, so a 3-component access starts mid-vector and overruns `local_98` by 4-8 bytes (ASan stack-buffer-overflow; \u00a726). Introduce a real contiguous CVector3f local, write all 3 components (recover dropped writes from the .asm), and pass its address.",
+      "line": 120,
+      "match": "(CVector3f *)&local_98.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "core_glass_cpp_CGlass_shatter_FUN_004eaef0(pCVar6,(CVector3f *)&local_98.z);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address vector field-pun \u2014 `(CVector3f *)&local_68.y` casts the address of a non-first component of a vector to a vector pointer, so a 3-component access starts mid-vector and overruns `local_68` by 4-8 bytes (ASan stack-buffer-overflow; \u00a726). Introduce a real contiguous CVector3f local, write all 3 components (recover dropped writes from the .asm), and pass its address.",
+      "line": 129,
+      "match": "(CVector3f *)&local_68.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonActor *)pCVar5,(CVector3f *)&local_68.y,(CVector3f *)&local_bc.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address vector field-pun \u2014 `(CVector3f *)&local_bc.y` casts the address of a non-first component of a vector to a vector pointer, so a 3-component access starts mid-vector and overruns `local_bc` by 4-8 bytes (ASan stack-buffer-overflow; \u00a726). Introduce a real contiguous CVector3f local, write all 3 components (recover dropped writes from the .asm), and pass its address.",
+      "line": 129,
+      "match": "(CVector3f *)&local_bc.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonActor *)pCVar5,(CVector3f *)&local_68.y,(CVector3f *)&local_bc.y);",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address vector field-pun \u2014 `(CVector3f *)&local_b0.y` casts the address of a non-first component of a vector to a vector pointer, so a 3-component access starts mid-vector and overruns `local_b0` by 4-8 bytes (ASan stack-buffer-overflow; \u00a726). Introduce a real contiguous CVector3f local, write all 3 components (recover dropped writes from the .asm), and pass its address.",
+      "line": 190,
+      "match": "(CVector3f *)&local_b0.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_CDemonSetPtr,(CVector3f *)&local_b0.y,(CVector3f *)&local_bc.y),",
+      "type": "subfield_vector_pun"
+    },
+    {
+      "description": "Sub-field-address vector field-pun \u2014 `(CVector3f *)&local_bc.y` casts the address of a non-first component of a vector to a vector pointer, so a 3-component access starts mid-vector and overruns `local_bc` by 4-8 bytes (ASan stack-buffer-overflow; \u00a726). Introduce a real contiguous CVector3f local, write all 3 components (recover dropped writes from the .asm), and pass its address.",
+      "line": 190,
+      "match": "(CVector3f *)&local_bc.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_CDemonSetPtr,(CVector3f *)&local_b0.y,(CVector3f *)&local_bc.y),",
+      "type": "subfield_vector_pun"
     }
   ],
   "stack_frame": {

@@ -94,6 +94,7 @@ SUSPECT_SEVERITY = {
     'dropped_loop_counter': 'moderate',
     'loop_clobbered_constant': 'moderate',
     'primitive_walker_cast': 'moderate',
+    'subfield_vector_pun': 'moderate',
 }
 
 
@@ -3028,6 +3029,79 @@ def identify_shadow_pointer_walk(decompiled_code):
     return suspects
 
 
+# §26 Sub-field-address vector field-pun. Ghidra splits a contiguous Watcom
+# stack block that holds a 3-component vector across adjacent locals and emits
+# the call argument (or store target) as the address of a *non-first*
+# component of a vector local, cast to a vector pointer: `(CVector3f *)&LOCAL.y`
+# or `&LOCAL.z`. A 3-float access that starts at `.y` (offset 4) or `.z`
+# (offset 8) of a 12-byte CVector3f reads/writes 4-8 bytes past the local's
+# end — valid under Watcom's compact stack layout (it spilled into the next
+# local) but a guaranteed `stack-buffer-overflow` under ASan's redzones.
+#
+# Fix in a `.keep`: introduce a real contiguous vector local, write all 3
+# components to it (recover any dropped writes from the .asm), pass
+# `&real_local`. See section 26 of fix_compilation.md.
+#
+# Base is restricted to a *bare* local identifier (`&local_168.y`): Ghidra only
+# omits the field name when the local itself is typed as a standalone vector, so
+# `&local_X.y/.z` is a 12-byte CVector3f and the 3-component access always
+# overruns it. Nested forms (`&local_box.velocity.z`, `&local_bbox.max.y`) are
+# deliberately excluded — whether they overrun depends on the field's offset
+# and the containing struct's size (e.g. a vector field mid-way through a large
+# struct stays in bounds), which a regex can't determine, so flagging them
+# would be noisy. Pointer-deref (`->`) and array-index (`[i]`) bases are
+# excluded for the same reason. Only `.y`/`.z` are flagged — a `.x` start
+# (offset 0) is the vector head and doesn't overrun.
+_SUBFIELD_VECTOR_PUN_RE = re.compile(
+    r'\(\s*(CVector3[fi])\s*\*\s*\)\s*'        # cast to (CVector3f/i *)
+    r'&\s*'                                     # address-of
+    r'(\w+)'                                     # bare local identifier
+    r'\s*\.\s*([yz])\b'                          # .y or .z component
+)
+
+
+def identify_subfield_vector_pun(decompiled_code):
+    """Detect §26 sub-field-address vector field-puns.
+
+    Flags `(CVector3f *)&LOCAL.y` / `&LOCAL.z` — taking the address of a
+    non-first component of a vector local and casting to a vector pointer,
+    which makes a 3-component access overrun the local (ASan
+    stack-buffer-overflow).
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+        stripped = line.lstrip()
+        if (stripped.startswith('//') or stripped.startswith('/*') or
+                stripped.startswith('*')):
+            continue
+        for m in _SUBFIELD_VECTOR_PUN_RE.finditer(line):
+            vtype, base, comp = m.group(1), m.group(2).replace(' ', ''), m.group(3)
+            suspects.append({
+                'line': line_no,
+                'type': 'subfield_vector_pun',
+                'match': '(%s *)&%s.%s' % (vtype, base, comp),
+                'text': line.strip()[:120],
+                'description': (
+                    'Sub-field-address vector field-pun — `(%s *)&%s.%s` casts '
+                    'the address of a non-first component of a vector to a '
+                    'vector pointer, so a 3-component access starts mid-vector '
+                    'and overruns `%s` by 4-8 bytes (ASan stack-buffer-overflow; '
+                    '§26). Introduce a real contiguous %s local, write all '
+                    '3 components (recover dropped writes from the .asm), and '
+                    'pass its address.' % (vtype, base, comp, base, vtype)),
+                'severity': 'moderate',
+            })
+    return suspects
+
+
 # Watcom's REP SCASB strlen idiom. ECX is initialized to -1 (0xFFFFFFFF),
 # then decremented inside a do-while that reads a byte per iteration. The
 # `(uint)<bool> * -2 + 1` direction trick picks the step (1 forward, -1
@@ -4233,6 +4307,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_pointer_cast_multiline(code))
     found.extend(identify_int_address_arithmetic(code))
     found.extend(identify_shadow_pointer_walk(code))
+    found.extend(identify_subfield_vector_pun(code))
     found.extend(identify_unrolled_strlen_loops(code))
     found.extend(identify_unrolled_strcat_loops(code))
     found.extend(identify_unrolled_strchr_loops(code))

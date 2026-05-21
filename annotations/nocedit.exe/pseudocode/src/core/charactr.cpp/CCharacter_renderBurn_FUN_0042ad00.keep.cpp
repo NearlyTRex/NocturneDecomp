@@ -20,7 +20,6 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
   uchar *puVar13;
   CDeformableModelInstance *this_ptr_00;
   float local_30;
-  int local_1c;
   float *pfVar2;
   uchar *puVar1;
   float fVar4;
@@ -68,9 +67,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
     this_ptr->burn_alpha = 1.0;
     this_ptr->is_fully_burned = 1;
   }
-  local_1c = 0;
   for (iVar1 = 0; iVar1 < pCVar7->vertex_count[iVar3]; iVar1 = iVar1 + 1) {
-    puVar13 = pCVar7->vertex_data_ptr[iVar3]->bone_indices + local_1c + -1;
+    puVar13 = (uchar *)&pCVar7->vertex_data_ptr[iVar3][iVar1];
     local_30 = 0.0;
     puVar9 = puVar13;
     puVar12 = puVar13;
@@ -84,7 +82,6 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
     if ((float)65535 < local_30) {
       local_30 = 65535.0;
     }
-    local_1c = local_1c + 0x34;
     g_CDemonRendererPtr2->vertex_buffer_ptr[iVar1].a = (int)ROUND(ROUND(local_30));
   }
   core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150

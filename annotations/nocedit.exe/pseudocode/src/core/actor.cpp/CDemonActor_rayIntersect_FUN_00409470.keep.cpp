@@ -77,8 +77,7 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
     }
     if (bbox_type == 3) {
       local_a0 = (*((this_ptr->vtable)._ub)->customRayIntersect)
-                           (this_ptr,(CVector3f *)&local_54.z,(CVector3f *)&local_6c.min.z,
-                            (CVector3f *)&local_48.z);
+                           (this_ptr,&local_3c,&local_54,&local_30);
       goto LAB_004095c9;
     }
   }

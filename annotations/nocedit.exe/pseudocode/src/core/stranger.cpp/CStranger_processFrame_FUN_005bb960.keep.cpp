@@ -60,6 +60,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
   CVector3f local_194 [2];
   CVector3f local_174;
   CVector3f local_168;
+  CVector3f local_dir;
   CVector3f local_14c [2];
   CVector3f local_134;
   CVector3f local_128;
@@ -112,13 +113,11 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
       (this_ptr->carry_object_bbox).max.y = (pCVar15->max).y;
       (this_ptr->carry_object_bbox).max.z = (pCVar15->max).z;
     }
-    local_fc.y = (this_ptr->carry_object_bbox).min.x + (this_ptr->carry_object_bbox).max.x;
-    local_fc.z = (this_ptr->carry_object_bbox).min.y + (this_ptr->carry_object_bbox).max.y;
-    local_c0.y = local_fc.y * 0.5f;
-    local_c0.z = local_fc.z * 0.5f;
+    local_dir.x = ((this_ptr->carry_object_bbox).min.x + (this_ptr->carry_object_bbox).max.x) * 0.5f;
+    local_dir.y = ((this_ptr->carry_object_bbox).min.y + (this_ptr->carry_object_bbox).max.y) * 0.5f;
+    local_dir.z = ((this_ptr->carry_object_bbox).min.z + (this_ptr->carry_object_bbox).max.z) * 0.5f;
     pCVar16 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                        ((this_ptr->base).base.carry_hands[1].carry_actor,&local_b0,
-                         (CVector3f *)&local_c0.y);
+                        ((this_ptr->base).base.carry_hands[1].carry_actor,&local_b0,&local_dir);
     pCVar16 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                         ((CDemonActor *)this_ptr,&local_134,pCVar16);
     if (&this_ptr->carry_object_world_center != pCVar16) {
@@ -506,7 +505,7 @@ LAB_005bd19f:
         else {
           if ((this_ptr->base).base.grabbed_type == 0) {
             pCVar16 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                                ((CDemonActor *)this_ptr,(CVector3f *)&local_168.y,
+                                ((CDemonActor *)this_ptr,&local_dir,
                                  &(pCVar9->location).position);
             pCVar16 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                 (&local_1dc,pCVar16);
@@ -629,16 +628,17 @@ LAB_005bd19f:
                             (this_ptr->base).base.base.orient.vec.y);
             core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0
                       ((CCharacter *)this_ptr,(UOrientationVector *)&local_84);
-            local_1dc.z = 0.0;
             delta_time = local_280.pitch_min + (float)-1;
+            local_dir.x = 0.0;
+            local_dir.y = 0.0;
+            local_dir.z = delta_time;
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                      ((this_ptr->base).nearby_interactive_actor,&local_fc,(CVector3f *)&local_1dc.z
-                      );
-            local_134.z = local_fc.x - (this_ptr->base).base.base.location.position.x;
-            local_128.x = local_fc.y - (this_ptr->base).base.base.location.position.y;
-            local_128.y = local_fc.z - (this_ptr->base).base.base.location.position.z;
+                      ((this_ptr->base).nearby_interactive_actor,&local_fc,&local_dir);
+            local_dir.x = local_fc.x - (this_ptr->base).base.base.location.position.x;
+            local_dir.y = local_fc.y - (this_ptr->base).base.base.location.position.y;
+            local_dir.z = local_fc.z - (this_ptr->base).base.base.location.position.z;
             pCVar16 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                                ((CDemonActor *)this_ptr,&local_c0,(CVector3f *)&local_134.z);
+                                ((CDemonActor *)this_ptr,&local_c0,&local_dir);
             local_174.x = pCVar16->x * this_ptr->interact_blend;
             local_174.y = pCVar16->y * this_ptr->interact_blend;
             local_174.z = pCVar16->z * this_ptr->interact_blend;

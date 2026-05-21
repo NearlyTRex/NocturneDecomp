@@ -280,6 +280,15 @@
       "severity": "moderate",
       "text": "g_CDemonLightInstance.base.base.position.f.x = local_20.x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Sub-field-address vector field-pun \u2014 `(CVector3f *)&local_20.y` casts the address of a non-first component of a vector to a vector pointer, so a 3-component access starts mid-vector and overruns `local_20` by 4-8 bytes (ASan stack-buffer-overflow; \u00a726). Introduce a real contiguous CVector3f local, write all 3 components (recover dropped writes from the .asm), and pass its address.",
+      "line": 45,
+      "match": "(CVector3f *)&local_20.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&g_WeaponCoronaGlobe,(CVector3f *)&local_20.y);",
+      "type": "subfield_vector_pun"
     }
   ],
   "stack_frame": {
