@@ -149,6 +149,15 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&(pCVar5->sfx_handles).entries[0].playback_position + 4));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar5->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 106,
+      "match": "pCVar5 = (T *)((pCVar5->FIELD).ARRAY[N] + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar5 = (CEventList *)((pCVar5->events).names[8] + 0x1c);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

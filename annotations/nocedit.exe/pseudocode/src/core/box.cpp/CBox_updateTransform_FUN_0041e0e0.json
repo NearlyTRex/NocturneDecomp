@@ -216,6 +216,15 @@
       "severity": "moderate",
       "text": "(this_ptr->linear_velocity).z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar13) + offsetof(subfield)` equals the real array stride. Replace `pCVar13->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 89,
+      "match": "pCVar13 = (T *)&pCVar13[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar13 = (CVector3f *)&pCVar13[4].y;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

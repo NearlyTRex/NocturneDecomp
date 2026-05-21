@@ -421,7 +421,7 @@ void __cdecl computeBoneWorldMatrices(SPose *bone_data,CDeformableModelInstance 
 
 // Original: core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70
 // Address: 005a1b70
-void __cdecl blendBoneTransformData(CVector3f *result_root_pos,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr);
+void __cdecl blendBoneTransformData(SPose *result_pose,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr);
 
 // Original: core_skeleton.cpp_getDeformableModel_FUN_005a1cf0
 // Address: 005a1cf0

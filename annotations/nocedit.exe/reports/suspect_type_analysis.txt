@@ -4,12 +4,12 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1503 ( 43.9%)
-  unrolled_memcpy                  766 ( 22.4%)
+  pointer_cast                    1503 ( 43.7%)
+  unrolled_memcpy                  766 ( 22.3%)
   unrolled_strcpy                  253 (  7.4%)
-  shadow_pointer_walk              122 (  3.6%)
+  shadow_pointer_walk              138 (  4.0%)
   missing_cave_copy                111 (  3.2%)
-  raw_address_constant              91 (  2.7%)
+  raw_address_constant              91 (  2.6%)
   unrolled_strlen                   80 (  2.3%)
   unrolled_memset                   65 (  1.9%)
   static_uninitvar                  55 (  1.6%)
@@ -24,7 +24,7 @@ SUSPECT TYPE COUNTS
   warning_type_propagation          17 (  0.5%)
   stack_alignment_array             15 (  0.4%)
   negative_offset                   13 (  0.4%)
-  primitive_walker_cast             12 (  0.4%)
+  primitive_walker_cast             12 (  0.3%)
   self_copy_guard                   11 (  0.3%)
   sub84_truncation                  10 (  0.3%)
   static_null_pointer                8 (  0.2%)
@@ -754,7 +754,7 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (122 occurrences)
+TYPE: shadow_pointer_walk (138 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -768,28 +768,32 @@ Unique patterns:
      4x  pCVar10 = (T *)&(pCVar10->FIELD).SUBFIELD
      4x  local_18 = (T *)local_18->ARRAY
      3x  pCVar1 = (T *)pCVar1->ARRAY
+     3x  pCVar2 = (T *)&pCVar2[N].SUBFIELD
      3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
      2x  pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)
      2x  pCVar17 = (T *)((pCVar17->FIELD).SUBFIELD...ARRAY + CONST)
-     2x  local_48 = (T *)((local_48->FIELD).SUBFIELD...ARRAY + CONST)
      2x  pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)
+     2x  pCVar2 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST)
      2x  pCVar10 = (T *)pCVar10->ARRAY
+     2x  pCVar3 = (T *)&pCVar3[N].SUBFIELD
      2x  pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)
-     2x  pSVar13 = (T *)&(pSVar13->FIELD).SUBFIELD
-     2x  pCVar6 = (T *)((int)&(pCVar6->FIELD).SUBFIELD + CONST)
-     2x  this_ptr = (T *)((int)&(this_ptr->FIELD).SUBFIELD + CONST)
+     2x  pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)
 
 Functions:
+  core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0
+  core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270
+  core_box.cpp_CBox_setupN_FUN_0041df50
+  core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
+  core_charactr.cpp_CCharacter_renderFlames_FUN_0042b110
   core_cloth.cpp_CClothList_render_FUN_0043c320
   core_cloth.cpp_CClothList_setWindVelocity_FUN_0043c3e0
   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
-  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
+  core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
   core_cloth.cpp_CCloth_initializeConnections_FUN_004394e0
   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590
   core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110
   core_cloth.cpp_CCloth_render_FUN_0043bae0
-  core_cloth.cpp_CCloth_setup_FUN_00439710
   core_cloth.cpp_CCloth_step_FUN_0043abb0
   core_curtain.cpp_CCurtain_process_FUN_0044a920
   core_curtain.cpp_CCurtain_setup_FUN_00449810
@@ -801,14 +805,20 @@ Functions:
   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
   core_glass.cpp_CGlass_renderOpaque_FUN_004e9930
   core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0
+  core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_0050adf0
   core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
+  core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_005097e0
+  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
   core_mimic.cpp_CMimic_updatePose_FUN_0051f930
   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
+  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
   core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0
   core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
   core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0
   core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
+  core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0
+  core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0
   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0
   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
@@ -820,17 +830,18 @@ Functions:
   core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0
   core_setutil.cpp_C3DSLight_create_FUN_00586a90
   core_setutil.cpp_C3DSLight_save_FUN_00587090
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
   core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0
   core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
   core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
   core_texlist.cpp_CTextureList_load_FUN_005dbe00
   core_texlist.cpp_CTextureList_save_FUN_005dc0d0
+  core_vehicle.cpp_CVehicle_setup_FUN_005e7b90
+  core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
+  core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005eafa0
   engine_3d.c_renderOverlayTextureEnable_FUN_00404020
   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720
   engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
@@ -853,6 +864,7 @@ Functions:
   shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
   shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
   shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
+  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
   shape_superopt.cpp_CP3D_add1_FUN_005d8520
   shape_superopt.cpp_CP3D_add2_FUN_005d85a0
   shape_superopt.cpp_CP3D_multiply_FUN_005d85f0

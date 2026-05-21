@@ -35,10 +35,8 @@ static_assert(__builtin_offsetof(C3DSCamera, fog) == 340,
               "offsetof(C3DSCamera, fog) != 340");
 static_assert(__builtin_offsetof(C3DSCamera, reverb_preset) == 376,
               "offsetof(C3DSCamera, reverb_preset) != 376");
-static_assert(__builtin_offsetof(C3DSCamera, box_min) == 380,
-              "offsetof(C3DSCamera, box_min) != 380");
-static_assert(__builtin_offsetof(C3DSCamera, box_max) == 392,
-              "offsetof(C3DSCamera, box_max) != 392");
+static_assert(__builtin_offsetof(C3DSCamera, box) == 380,
+              "offsetof(C3DSCamera, box) != 380");
 static_assert(__builtin_offsetof(C3DSCamera, pvs_count) == 404,
               "offsetof(C3DSCamera, pvs_count) != 404");
 static_assert(__builtin_offsetof(C3DSCamera, pvs_list) == 408,
@@ -4209,10 +4207,8 @@ static_assert(__builtin_offsetof(CKeyFramedModel, part_count) == 21892,
               "offsetof(CKeyFramedModel, part_count) != 21892");
 static_assert(__builtin_offsetof(CKeyFramedModel, part_list) == 21896,
               "offsetof(CKeyFramedModel, part_list) != 21896");
-static_assert(__builtin_offsetof(CKeyFramedModel, bounds_min) == 22136,
-              "offsetof(CKeyFramedModel, bounds_min) != 22136");
-static_assert(__builtin_offsetof(CKeyFramedModel, bounds_max) == 22148,
-              "offsetof(CKeyFramedModel, bounds_max) != 22148");
+static_assert(__builtin_offsetof(CKeyFramedModel, bounds) == 22136,
+              "offsetof(CKeyFramedModel, bounds) != 22136");
 static_assert(__builtin_offsetof(CKeyFramedModel, frame_bounds) == 22160,
               "offsetof(CKeyFramedModel, frame_bounds) != 22160");
 static_assert(__builtin_offsetof(CKeyFramedModel, collision_triangle_count) == 22164,
@@ -10279,10 +10275,8 @@ static_assert(sizeof(STriangleBoundsEntry) == 28,
               "sizeof(STriangleBoundsEntry) != 28");
 static_assert(__builtin_offsetof(STriangleBoundsEntry, triangle_index) == 0,
               "offsetof(STriangleBoundsEntry, triangle_index) != 0");
-static_assert(__builtin_offsetof(STriangleBoundsEntry, min) == 4,
-              "offsetof(STriangleBoundsEntry, min) != 4");
-static_assert(__builtin_offsetof(STriangleBoundsEntry, max) == 16,
-              "offsetof(STriangleBoundsEntry, max) != 16");
+static_assert(__builtin_offsetof(STriangleBoundsEntry, box) == 4,
+              "offsetof(STriangleBoundsEntry, box) != 4");
 
 // ---- STrianglePackedIndices (6 bytes) ----
 static_assert(sizeof(STrianglePackedIndices) == 6,

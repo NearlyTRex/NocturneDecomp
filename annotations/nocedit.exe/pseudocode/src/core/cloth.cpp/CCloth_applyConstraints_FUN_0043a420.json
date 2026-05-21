@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 480,
-    "complexity_score": 277,
+    "complexity_score": 262,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 212,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "self_copy_guard",
-      "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
     "total_lines": 692
@@ -146,6 +145,24 @@
     "pcode_op_count": 3193
   },
   "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 142,
+      "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar8 = (SClothVertex *)&(pSVar8->position).y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_14) + offsetof(subfield)` equals the real array stride. Replace `local_14->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 210,
+      "match": "local_14 = (T *)&local_14[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_14 = (CVector3f *)&local_14[0xe].y;",
+      "type": "shadow_pointer_walk"
+    },
     {
       "description": "Inlined fast sqrt bit-trick. Replace with `fastSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_00431350).",
       "line": 106,
@@ -656,42 +673,42 @@
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 92,
+          "line": 90,
           "message": "Uninitialized variable: local_74",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 40,
-          "line": 92,
+          "line": 90,
           "message": "Uninitialized variable: local_7c",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 62,
-          "line": 92,
+          "line": 90,
           "message": "Uninitialized variable: local_78",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 150,
+          "line": 147,
           "message": "Uninitialized variable: local_b0",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 151,
+          "line": 148,
           "message": "Uninitialized variable: local_b8",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 152,
+          "line": 149,
           "message": "Uninitialized variable: local_b4",
           "severity": "warning"
         }
@@ -734,16 +751,8 @@
       "type": "self_copy_guard"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 142,
-      "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pSVar8 = (SClothVertex *)&(pSVar8->position).y;",
-      "type": "shadow_pointer_walk"
-    },
-    {
       "description": "Uninitialized variable: local_74",
-      "line": 92,
+      "line": 90,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
@@ -751,7 +760,7 @@
     },
     {
       "description": "Uninitialized variable: local_7c",
-      "line": 92,
+      "line": 90,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
@@ -759,7 +768,7 @@
     },
     {
       "description": "Uninitialized variable: local_78",
-      "line": 92,
+      "line": 90,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
@@ -767,7 +776,7 @@
     },
     {
       "description": "Uninitialized variable: local_b0",
-      "line": 150,
+      "line": 147,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_a4 = local_b0 * local_38[local_20].local_matrix.m[2].z +",
@@ -775,7 +784,7 @@
     },
     {
       "description": "Uninitialized variable: local_b8",
-      "line": 151,
+      "line": 148,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_b8 * local_38[local_20].local_matrix.m[0].z +",
@@ -783,7 +792,7 @@
     },
     {
       "description": "Uninitialized variable: local_b4",
-      "line": 152,
+      "line": 149,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_b4 * local_38[local_20].local_matrix.m[1].z;",

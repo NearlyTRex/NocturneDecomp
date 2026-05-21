@@ -23,8 +23,8 @@ void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_00449e40(CCurtai
   if (0 < this_ptr->vertex_count) {
     local_18 = this_ptr->vertices;
     local_14 = &(this_ptr->base).orient_matrix;
-    pCVar2 = &this_ptr->vertices[0].world_position;
     do {
+      pCVar2 = &this_ptr->vertices[iVar3].world_position;
       input = &local_18[iVar3].local_position;
       pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(local_14,&local_30,input);
       local_24.x = pCVar1->x + (this_ptr->base).location.position.x;
@@ -37,7 +37,6 @@ void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_00449e40(CCurtai
         memcpy(&input[4].z, &input[2].z, sizeof(CVector3f));
       }
       iVar3 = iVar3 + 1;
-      pCVar2 = (CVector3f *)&pCVar2[9].z;
     } while (iVar3 < this_ptr->vertex_count);
   }
   return;

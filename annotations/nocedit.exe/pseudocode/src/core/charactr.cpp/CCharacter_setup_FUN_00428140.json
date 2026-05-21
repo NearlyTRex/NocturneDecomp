@@ -273,6 +273,24 @@
       "severity": "moderate",
       "text": "pCVar6 = (CCharacter *)&(pCVar6->base).orient_matrix.m[0].z;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 80,
+      "match": "pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CCharacter *)((pCVar4->base).actor_name + 0x18);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 85,
+      "match": "pCVar6 = (T *)&(pCVar6->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar6 = (CCharacter *)&(pCVar6->model).transformed_vertices[0x14].y;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

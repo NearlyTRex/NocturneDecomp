@@ -85,9 +85,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,(this_ptr->light_texture).textures);
   pCVar8 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->panel_model);
-  fVar9 = (pCVar8->bounds_min).y;
-  fVar10 = (pCVar8->bounds_max).y;
-  fVar11 = (pCVar8->bounds_max).z;
+  fVar9 = (pCVar8->bounds).min.y;
+  fVar10 = (pCVar8->bounds).max.y;
+  fVar11 = (pCVar8->bounds).max.z;
   this_ptr->panel_radius = 12.1391;
   fVar17 = (float10)fcos((float10)0.5235988f * (float10)0.5);
   fVar1 = (this_ptr->emitter_pos).f.y;
@@ -113,10 +113,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_17c,&this_ptr->gem_pos,&(this_ptr->gem_orient).vec);
   pCVar14 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->gem_model);
-  fVar9 = (pCVar14->bounds_min).x;
-  fVar10 = (pCVar14->bounds_min).z;
-  fVar11 = (pCVar14->bounds_max).x;
-  fVar12 = (pCVar14->bounds_max).z;
+  fVar9 = (pCVar14->bounds).min.x;
+  fVar10 = (pCVar14->bounds).min.z;
+  fVar11 = (pCVar14->bounds).max.x;
+  fVar12 = (pCVar14->bounds).max.z;
   local_28 = &this_ptr->gems[0].position;
   local_2c = &this_ptr->gems[0].color.g;
   local_30 = &this_ptr->gems[0].color.b;

@@ -22,8 +22,6 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   char local_a0 [100];
   CVector3f local_3c;
   CVector3f local_30;
-  CMatrix3x3f *local_1c;
-  CMatrix3x3f *local_18;
   
   this_ptr->set_file_version = 0x1c;
   file = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"wt");
@@ -88,18 +86,16 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   _fprintf(file,"%d\n",this_ptr->room_count);
   iVar3 = 0;
   if (0 < this_ptr->room_count) {
-    local_18 = &this_ptr->rooms[0].rotation_matrix;
     do {
       pSVar2 = this_ptr->rooms + iVar3;
       _fprintf(file,"%g,%g,%g\n",(double)(pSVar2->position).x,(double)(pSVar2->position).y,
                  (double)(pSVar2->position).z);
       _fprintf(file,"%g,%g,%g\n",(double)(pSVar2->extents).x,(double)(pSVar2->extents).y,
                  (double)(pSVar2->extents).z);
-      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(local_18,&local_30);
+      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(&pSVar2->rotation_matrix,&local_30);
       _fprintf(file,"%g,%g,%g\n",(double)local_30.x,(double)local_30.z,(double)local_30.y);
       _fprintf(file,"%d\n",pSVar2->reverb_size);
       iVar3 = iVar3 + 1;
-      local_18 = (CMatrix3x3f *)&local_18[1].m[2].z;
     } while (iVar3 < this_ptr->room_count);
   }
   _fprintf(file,"Default ground type\n");
@@ -110,17 +106,15 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   _fprintf(file,"%d\n",this_ptr->vdir_box_count);
   iVar3 = 0;
   if (0 < this_ptr->vdir_box_count) {
-    local_1c = &this_ptr->vdir_boxes[0].rotation_matrix;
     do {
       pSVar3 = this_ptr->vdir_boxes + iVar3;
       _fprintf(file,"%g,%g,%g\n",(double)(pSVar3->position).x,(double)(pSVar3->position).y,
                  (double)(pSVar3->position).z);
       _fprintf(file,"%g,%g,%g\n",(double)(pSVar3->extents).x,(double)(pSVar3->extents).y,
                  (double)(pSVar3->extents).z);
-      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(local_1c,&local_3c);
+      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(&pSVar3->rotation_matrix,&local_3c);
       _fprintf(file,"%g,%g,%g\n",(double)local_3c.x,(double)local_3c.z,(double)local_3c.y);
       iVar3 = iVar3 + 1;
-      local_1c = (CMatrix3x3f *)&local_1c[1].m[2].z;
     } while (iVar3 < this_ptr->vdir_box_count);
   }
   _fprintf(file,"PVS list\n");

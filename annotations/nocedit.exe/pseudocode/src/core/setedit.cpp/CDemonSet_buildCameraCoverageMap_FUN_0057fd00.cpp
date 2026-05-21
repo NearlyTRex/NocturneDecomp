@@ -61,7 +61,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
   core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,0);
   local_14 = 0;
   if (0 < this_ptr->camera_count) {
-    local_28 = (CBoundingBox3D *)&this_ptr->cameras[0].box_min;
+    local_28 = &this_ptr->cameras[0].box;
     local_24 = &this_ptr->cameras[0].orientation;
     local_20 = &this_ptr->cameras[0].position;
     do {

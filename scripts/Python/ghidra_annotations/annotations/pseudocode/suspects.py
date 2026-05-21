@@ -2689,12 +2689,19 @@ def identify_int_address_arithmetic(decompiled_code):
 # Fix in a `.keep`: replace `shadow->bone_list[0]` reads with
 # `original->bone_list[index]`, drop the shadow-pointer init and the
 # self-update line. The shadow-pointer local typically becomes unused.
+# Integer literals in Ghidra output may be decimal *or* hex. The shadow-walk
+# strides/indices the decompiler emits are constants and frequently hex
+# (`0x18` = sizeof(SFire), `0x2a` = a flame-stride index, `0x14` = a vertex
+# index). Match either form everywhere a count/offset/index appears — using
+# bare `\d+` silently skips every hex-constant walk.
+_SPW_INT = r'(?:0[xX][0-9a-fA-F]+|\d+)'
+
 _SHADOW_PTR_WALK_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # LHS identifier
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'\(\s*\(\s*\1\s*->\s*\w+\s*\)'                  # ( IDENT->FIELD )
-    r'\s*\.\s*\w+\s*\[\s*\d+\s*\]'                   # .ARRAY[N]
-    r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
+    r'\s*\.\s*\w+\s*\[\s*' + _SPW_INT + r'\s*\]'     # .ARRAY[N]
+    r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
 # Address-of-field variant: `IDENT = (T *)&(IDENT->FIELD).SUBFIELD;` —
 # Watcom advances the pointer by the byte offset of a sibling field
@@ -2707,7 +2714,21 @@ _SHADOW_PTR_WALK_ADDR_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # LHS identifier
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'&\s*\(\s*\1\s*->\s*\w+\s*\)'                   # &( IDENT->FIELD )
-    r'(?:\s*\.\s*\w+(?:\s*\[\s*\d+\s*\])?)+'         # .SUBFIELD[N]?(.SUBFIELD[N]?)*
+    r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'  # .SUBFIELD[N]?(.SUBFIELD[N]?)*
+    r'\s*;\s*$'                                      # ;
+)
+# Self-index address variant: `IDENT = (T *)&IDENT[N].SUBFIELD(.SUBFIELD)*;`
+# Watcom advances the shadow pointer by taking the address of a constant
+# index into the pointer itself plus a subfield path, where
+# `N*sizeof(*IDENT) + offsetof(subfield)` equals the real array stride
+# (e.g. `&pCVar11[0x2a].position.y` = 0x2a*16 + 4 = 0x2a4 = sizeof(CFlame)).
+# Same antipattern as the `&(IDENT->FIELD)` form, just shaped as `&IDENT[N]`
+# self-indexing rather than a field dereference.
+_SHADOW_PTR_WALK_SELF_INDEX_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'&\s*\1\s*\[\s*' + _SPW_INT + r'\s*\]'          # &IDENT[N]
+    r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'  # .SUBFIELD[N]?(.SUBFIELD[N]?)*
     r'\s*;\s*$'                                      # ;
 )
 # Array-decay variant: `IDENT = (T *)IDENT->ARRAY_FIELD;` — Watcom advances
@@ -2733,7 +2754,7 @@ _SHADOW_PTR_WALK_ARRAY_DECAY_PLUS_RE = re.compile(
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'\(\s*\(\s*\1\s*->\s*\w+\s*\)'                  # ( IDENT->FIELD )
     r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)+
-    r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
+    r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
 # Int-address-plus-const variant:
 #   `IDENT = (T *)((int)&(IDENT->FIELD).SUBFIELD + CONST);`
@@ -2749,8 +2770,8 @@ _SHADOW_PTR_WALK_INT_ADDR_CONST_RE = re.compile(
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'\(\s*\(\s*int\s*\)\s*'                         # ( (int)
     r'&\s*\(\s*\1\s*->\s*\w+\s*\)'                   # & ( IDENT->FIELD )
-    r'(?:\s*\.\s*\w+(?:\s*\[\s*\d+\s*\])?)*'         # (.SUBFIELD[N]?)*
-    r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
+    r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)*'  # (.SUBFIELD[N]?)*
+    r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
 # Two-step variants: same four shapes as above, but the LHS is a scratch
 # `TMP` instead of the rebound `IDENT`. The rebind happens on a later line
@@ -2763,14 +2784,21 @@ _SHADOW_PTR_WALK_TWOSTEP_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # TMP identifier
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'\(\s*\(\s*(\w+)\s*->\s*\w+\s*\)'               # ( IDENT->FIELD )
-    r'\s*\.\s*\w+\s*\[\s*\d+\s*\]'                   # .ARRAY[N]
-    r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
+    r'\s*\.\s*\w+\s*\[\s*' + _SPW_INT + r'\s*\]'     # .ARRAY[N]
+    r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
 _SHADOW_PTR_WALK_TWOSTEP_ADDR_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # TMP identifier
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'&\s*\(\s*(\w+)\s*->\s*\w+\s*\)'                # &( IDENT->FIELD )
-    r'(?:\s*\.\s*\w+(?:\s*\[\s*\d+\s*\])?)+'         # .SUBFIELD[N]?(.SUBFIELD[N]?)*
+    r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'  # .SUBFIELD[N]?(.SUBFIELD[N]?)*
+    r'\s*;\s*$'                                      # ;
+)
+_SHADOW_PTR_WALK_TWOSTEP_SELF_INDEX_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # TMP identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'&\s*(\w+)\s*\[\s*' + _SPW_INT + r'\s*\]'       # &IDENT[N]
+    r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'  # .SUBFIELD[N]?(.SUBFIELD[N]?)*
     r'\s*;\s*$'                                      # ;
 )
 _SHADOW_PTR_WALK_TWOSTEP_DECAY_RE = re.compile(
@@ -2783,7 +2811,7 @@ _SHADOW_PTR_WALK_TWOSTEP_ARRAY_DECAY_PLUS_RE = re.compile(
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'\(\s*\(\s*(\w+)\s*->\s*\w+\s*\)'               # ( IDENT->FIELD )
     r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)+
-    r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
+    r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
 # Scan window for the rebind line when matching the two-step form. Loop
 # bodies that emit this pattern are typically ≤20 lines; longer ones are
@@ -2933,6 +2961,25 @@ def identify_shadow_pointer_walk(decompiled_code):
                 'severity': 'moderate',
             })
             continue
+        m = _SHADOW_PTR_WALK_SELF_INDEX_RE.match(line)
+        if m:
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)&%s[N].SUBFIELD' % (
+                    m.group(1), m.group(1)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates via the '
+                    'address of a constant index into itself plus a subfield '
+                    'path, where `N*sizeof(*%s) + offsetof(subfield)` equals '
+                    'the real array stride. Replace `%s->some_field[0]` (or '
+                    'the zero-index access) reads with direct indexing on the '
+                    'original pointer; drop the shadow init and self-update.'
+                    % (m.group(1), m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
+            continue
         # Two-step variants. The first line advances a scratch `TMP`; a
         # later line rebinds `IDENT = TMP;`. Same antipattern as the
         # self-update forms above, just split across two statements.
@@ -2941,6 +2988,8 @@ def identify_shadow_pointer_walk(decompiled_code):
              '(T *)((IDENT->FIELD).ARRAY[N] + CONST)'),
             (_SHADOW_PTR_WALK_TWOSTEP_ADDR_RE,
              '(T *)&(IDENT->FIELD).SUBFIELD'),
+            (_SHADOW_PTR_WALK_TWOSTEP_SELF_INDEX_RE,
+             '(T *)&IDENT[N].SUBFIELD'),
             (_SHADOW_PTR_WALK_TWOSTEP_DECAY_RE,
              '(T *)IDENT->ARRAY'),
             (_SHADOW_PTR_WALK_TWOSTEP_ARRAY_DECAY_PLUS_RE,

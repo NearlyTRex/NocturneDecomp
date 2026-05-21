@@ -32,9 +32,9 @@ void __cdecl core_fire_cpp_CToss_create_FUN_004c3ee0(CToss *this_ptr,int toss_ty
   }
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
-  local_2c.x = (pCVar1->bounds_max).x - (pCVar1->bounds_min).x;
-  local_2c.y = (pCVar1->bounds_max).y - (pCVar1->bounds_min).y;
-  local_2c.z = (pCVar1->bounds_max).z - (pCVar1->bounds_min).z;
+  local_2c.x = (pCVar1->bounds).max.x - (pCVar1->bounds).min.x;
+  local_2c.y = (pCVar1->bounds).max.y - (pCVar1->bounds).min.y;
+  local_2c.z = (pCVar1->bounds).max.z - (pCVar1->bounds).min.z;
   core_box_cpp_CBox_setupCorners_FUN_0041dd20
             (&this_ptr->physics_box,position,&orientation->vec,&local_2c,local_14);
   local_20.z = 0.0;

@@ -14,13 +14,13 @@ void __cdecl core_setutil_cpp_C3DSCamera_reset_FUN_005853b0(C3DSCamera *this_ptr
   core_setutil_cpp_C3DSCamera_free_FUN_00585360(this_ptr);
   memset(this_ptr,0,0x1a4);
   this_ptr->projection_scale = 28.0;
-  (this_ptr->box_min).y = -300.0;
-  (this_ptr->box_min).z = 0.0;
-  (this_ptr->box_max).z = 300.0;
+  (this_ptr->box).min.y = -300.0;
+  (this_ptr->box).min.z = 0.0;
+  (this_ptr->box).max.z = 300.0;
   this_ptr->is_panning = 0;
-  fVar1 = (this_ptr->box_max).z;
-  (this_ptr->box_min).x = (this_ptr->box_min).y;
-  (this_ptr->box_max).y = fVar1;
-  (this_ptr->box_max).x = fVar1;
+  fVar1 = (this_ptr->box).max.z;
+  (this_ptr->box).min.x = (this_ptr->box).min.y;
+  (this_ptr->box).max.y = fVar1;
+  (this_ptr->box).max.x = fVar1;
   return;
 }

@@ -59,10 +59,10 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
   core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,0);
   local_14 = 0;
   if (0 < this_ptr->camera_count) {
-    local_28 = (CBoundingBox3D *)&this_ptr->cameras[0].box_min;
     local_24 = &this_ptr->cameras[0].orientation;
     local_20 = &this_ptr->cameras[0].position;
     do {
+      local_28 = &this_ptr->cameras[local_14].box;
       if (local_14 != exclude_camera_index) {
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr2,local_20);
@@ -96,7 +96,6 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
           }
         }
       }
-      local_28 = (CBoundingBox3D *)&local_28[0x11].max;
       local_24 = local_24 + 0x23;
       local_14 = local_14 + 1;
       local_20 = local_20 + 0x23;

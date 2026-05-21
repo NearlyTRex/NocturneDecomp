@@ -138,6 +138,15 @@
       "severity": "moderate",
       "text": "inverse_matrices->m[0].w = local_38.m[0].w;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `matrix_in` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*matrix_in) + offsetof(subfield)` equals the real array stride. Replace `matrix_in->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 33,
+      "match": "matrix_in = (T *)&matrix_in[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "matrix_in = (CMatrix3x4f *)&matrix_in[2].m[2].x;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

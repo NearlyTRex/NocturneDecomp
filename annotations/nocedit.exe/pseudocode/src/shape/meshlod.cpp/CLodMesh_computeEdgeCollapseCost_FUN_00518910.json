@@ -485,6 +485,15 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar7->collapse_cost + 4) = local_110._4_4_;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar17` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar17) + offsetof(subfield)` equals the real array stride. Replace `pCVar17->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 320,
+      "match": "pCVar17 = (T *)&pCVar17[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar17 = (CVector3f *)&pCVar17[0xb].z;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -878,7 +887,7 @@
         {
           "check_id": "identicalInnerCondition",
           "column": 21,
-          "line": 318,
+          "line": 315,
           "message": "Identical inner 'if' condition is always true.",
           "severity": "warning"
         }

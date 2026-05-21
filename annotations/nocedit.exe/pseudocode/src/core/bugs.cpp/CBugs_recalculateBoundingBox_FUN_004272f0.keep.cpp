@@ -29,11 +29,9 @@ void __cdecl core_bugs_cpp_CBugs_recalculateBoundingBox_FUN_004272f0(CBugs *this
   }
   iVar8 = 1;
   if (1 < this_ptr->count) {
-    pCVar7 = &this_ptr->bugs[1].position;
     do {
+      core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&this_ptr->bounds,&this_ptr->bugs[iVar8].position);
       iVar8 = iVar8 + 1;
-      core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&this_ptr->bounds,pCVar7);
-      pCVar7 = (CVector3f *)&pCVar7[5].y;
     } while (iVar8 < this_ptr->count);
   }
   fVar2 = (this_ptr->bounds).min.x + -0.3333333f;

@@ -192,6 +192,15 @@
       "severity": "moderate",
       "text": "puVar3 = (uint *)(iVar6 + iVar2 + (int)dequantized_output);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_58` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_58) + offsetof(subfield)` equals the real array stride. Replace `local_58->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 80,
+      "match": "local_58 = (T *)&local_58[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_58 = (SMpegAllocationTable *)&local_58[9].num_lines;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

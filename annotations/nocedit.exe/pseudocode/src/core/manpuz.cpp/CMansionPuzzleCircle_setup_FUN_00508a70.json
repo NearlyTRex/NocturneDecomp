@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 517,
-    "complexity_score": 337,
+    "complexity_score": 352,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 247,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
+      "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
     "total_lines": 764
@@ -565,6 +566,14 @@
       "severity": "moderate",
       "text": "this_ptr->reflectors[0].start_position.x = pCVar16->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_28) + offsetof(subfield)` equals the real array stride. Replace `local_28->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 194,
+      "match": "local_28 = (T *)&local_28[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_28 = (CVector3f *)&local_28[0xf].y;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

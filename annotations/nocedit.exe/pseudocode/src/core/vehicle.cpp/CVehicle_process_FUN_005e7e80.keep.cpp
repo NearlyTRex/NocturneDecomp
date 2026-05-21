@@ -19,7 +19,6 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   CVehicle *pCVar13;
   float fVar14;
   CVector3f *pCVar9;
-  CVehicle *pCVar10;
   CMobster *pCVar11;
   ECollisionType EVar12;
   int iVar13;
@@ -114,13 +113,11 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
     (this_ptr->local_velocity).z = pCVar9->z;
   }
   iVar16 = 0;
-  pCVar10 = this_ptr;
   if (0 < this_ptr->tire_count) {
     do {
+      this_ptr->tires[iVar16].spin_angle.x =
+           this_ptr->tires[iVar16].radius * local_24 + this_ptr->tires[iVar16].spin_angle.x;
       iVar16 = iVar16 + 1;
-      pCVar10->tires[0].spin_angle.x =
-           pCVar10->tires[0].radius * local_24 + pCVar10->tires[0].spin_angle.x;
-      pCVar10 = (CVehicle *)((pCVar10->model).part_visibility_flags + 0x17);
     } while (iVar16 < this_ptr->tire_count);
   }
   fVar6 = (this_ptr->base).location.position.y;

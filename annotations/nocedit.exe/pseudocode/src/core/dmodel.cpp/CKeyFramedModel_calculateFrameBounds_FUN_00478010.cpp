@@ -18,7 +18,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
   
   local_28.max.y = 0.0;
   if (0 < model_ptr->frame_count) {
-    local_28.max.z = (float)&model_ptr->bounds_min;
+    local_28.max.z = (float)&model_ptr->bounds;
     local_28.max.x = 0.0;
     do {
       this_ptr_00 = (CBoundingBox3D *)((int)&(model_ptr->frame_bounds->min).x + (int)local_28.max.x)

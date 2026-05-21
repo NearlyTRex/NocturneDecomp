@@ -23,7 +23,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
   float *pfVar10;
   float *src;
   int *piVar11;
-  CVector3f *pCVar14;
+  CBoundingBox3D *pCVar14;
   float *pfVar12;
   int iVar15;
   float local_e8;
@@ -141,47 +141,47 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
       local_74 = (float)piVar11[7];
       local_70 = (float)piVar11[8];
       pSVar13->triangle_index = iVar9;
-      (pSVar13->max).x = fVar1;
-      (pSVar13->min).x = (pSVar13->max).x;
-      (pSVar13->max).y = fVar8;
-      (pSVar13->min).y = (pSVar13->max).y;
-      (pSVar13->max).z = fVar9;
-      (pSVar13->min).z = (pSVar13->max).z;
-      if (local_84 < (pSVar13->min).x) {
-        (pSVar13->min).x = local_84;
+      (pSVar13->box).max.x = fVar1;
+      (pSVar13->box).min.x = (pSVar13->box).max.x;
+      (pSVar13->box).max.y = fVar8;
+      (pSVar13->box).min.y = (pSVar13->box).max.y;
+      (pSVar13->box).max.z = fVar9;
+      (pSVar13->box).min.z = (pSVar13->box).max.z;
+      if (local_84 < (pSVar13->box).min.x) {
+        (pSVar13->box).min.x = local_84;
       }
-      if ((pSVar13->max).x < local_84) {
-        (pSVar13->max).x = local_84;
+      if ((pSVar13->box).max.x < local_84) {
+        (pSVar13->box).max.x = local_84;
       }
-      if (local_80 < (pSVar13->min).y) {
-        (pSVar13->min).y = local_80;
+      if (local_80 < (pSVar13->box).min.y) {
+        (pSVar13->box).min.y = local_80;
       }
-      if ((pSVar13->max).y < local_80) {
-        (pSVar13->max).y = local_80;
+      if ((pSVar13->box).max.y < local_80) {
+        (pSVar13->box).max.y = local_80;
       }
-      if (local_7c < (pSVar13->min).z) {
-        (pSVar13->min).z = local_7c;
+      if (local_7c < (pSVar13->box).min.z) {
+        (pSVar13->box).min.z = local_7c;
       }
-      if ((pSVar13->max).z < local_7c) {
-        (pSVar13->max).z = local_7c;
+      if ((pSVar13->box).max.z < local_7c) {
+        (pSVar13->box).max.z = local_7c;
       }
-      if (local_78 < (pSVar13->min).x) {
-        (pSVar13->min).x = local_78;
+      if (local_78 < (pSVar13->box).min.x) {
+        (pSVar13->box).min.x = local_78;
       }
-      if ((pSVar13->max).x < local_78) {
-        (pSVar13->max).x = local_78;
+      if ((pSVar13->box).max.x < local_78) {
+        (pSVar13->box).max.x = local_78;
       }
-      if (local_74 < (pSVar13->min).y) {
-        (pSVar13->min).y = local_74;
+      if (local_74 < (pSVar13->box).min.y) {
+        (pSVar13->box).min.y = local_74;
       }
-      if ((pSVar13->max).y < local_74) {
-        (pSVar13->max).y = local_74;
+      if ((pSVar13->box).max.y < local_74) {
+        (pSVar13->box).max.y = local_74;
       }
-      if (local_70 < (pSVar13->min).z) {
-        (pSVar13->min).z = local_70;
+      if (local_70 < (pSVar13->box).min.z) {
+        (pSVar13->box).min.z = local_70;
       }
-      if ((pSVar13->max).z < local_70) {
-        (pSVar13->max).z = local_70;
+      if ((pSVar13->box).max.z < local_70) {
+        (pSVar13->box).max.z = local_70;
       }
       pSVar13 = pSVar13 + 1;
       iVar9 = iVar9 + 1;
@@ -201,7 +201,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
       if (-1 < local_58) {
         local_50 = &local_44->triangle_index;
         local_4c = &local_44[local_58].triangle_index;
-        pCVar14 = &local_44[local_58].min;
+        pCVar14 = &local_44[local_58].box;
         do {
           piVar12 = local_50;
           local_48 = local_50;
@@ -218,10 +218,10 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
             core_charactr_cpp_copyFloat1_FUN_0042fae0(&local_d4,local_14 + 2);
             local_64 = local_4c;
             *local_48 = *local_4c;
-            if ((CVector3f *)pfVar10 != pCVar14) {
-              *pfVar10 = pCVar14->x;
-              piVar12[2] = (int)pCVar14->y;
-              piVar12[3] = (int)pCVar14->z;
+            if ((CBoundingBox3D *)pfVar10 != pCVar14) {
+              *pfVar10 = (pCVar14->min).x;
+              piVar12[2] = (int)(pCVar14->min).y;
+              piVar12[3] = (int)(pCVar14->min).z;
             }
             if (local_48 + 4 != local_4c + 4) {
               local_48[4] = local_4c[4];
@@ -239,7 +239,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
               local_54[5] = (int)local_d8;
               local_54[6] = (int)local_d4;
             }
-            pCVar14 = (CVector3f *)((int)(pCVar14 + -3) + 8);
+            pCVar14 = (CBoundingBox3D *)((int)(pCVar14 + -2) + 0x14);
             local_4c = local_4c + -7;
             local_58 = local_58 + -1;
           }
@@ -261,7 +261,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
           if (-1 < local_60) {
             local_28 = &local_44->triangle_index;
             local_2c = &local_44[local_60].triangle_index;
-            pfVar12 = &local_44[local_60].min.x;
+            pfVar12 = (float *)&local_44[local_60].box;
             do {
               piVar12 = local_28;
               local_24 = local_28;
@@ -279,9 +279,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
                 local_40 = local_2c;
                 *local_24 = *local_2c;
                 if (src != pfVar12) {
-                  *src = ((CVector3f *)pfVar12)->x;
-                  piVar12[2] = (int)((CVector3f *)pfVar12)->y;
-                  piVar12[3] = (int)((CVector3f *)pfVar12)->z;
+                  *src = (((CBoundingBox3D *)pfVar12)->min).x;
+                  piVar12[2] = (int)(((CBoundingBox3D *)pfVar12)->min).y;
+                  piVar12[3] = (int)(((CBoundingBox3D *)pfVar12)->min).z;
                 }
                 if (local_24 + 4 != local_2c + 4) {
                   local_24[4] = local_2c[4];
@@ -299,7 +299,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
                   local_30[5] = (int)local_bc;
                   local_30[6] = (int)local_b8;
                 }
-                pfVar12 = (float *)((int)pfVar12 + -0x24) + 2;
+                pfVar12 = (float *)((int)pfVar12 + -0x30) + 5;
                 local_2c = local_2c + -7;
                 local_34 = local_34 + -1;
               }
@@ -352,7 +352,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
   g_CurrentDebugFilename = "..\\core\\dtrace.cpp";
   g_CurrentDebugLine = 0x38c;
   if (local_44 != (STriangleBoundsEntry *)0x0) {
-    shape_memdbg_cpp_free_FUN_005fe659(&local_44[-1].max.z);
+    shape_memdbg_cpp_free_FUN_005fe659(&local_44[-1].box.max.z);
     return;
   }
   return;

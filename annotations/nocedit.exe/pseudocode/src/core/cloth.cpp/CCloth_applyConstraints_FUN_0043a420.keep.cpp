@@ -21,7 +21,6 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
   CVector3f *pCVar5;
   int iVar6;
   float *pfVar7;
-  SClothVertex *pSVar8;
   float local_130;
   float local_12c;
   float local_128;
@@ -78,9 +77,8 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
     pCVar1 = &vertex->secondary_velocity;
     pfVar7 = &this_ptr->inv_delta_time;
     local_3c = this_ptr->vertices;
-    pSVar8 = vertex;
     do {
-      pSVar4 = local_3c + pSVar8->connected_indices[0];
+      pSVar4 = local_3c + vertex->connected_indices[iVar6];
       local_130 = (vertex->position).x - (pSVar4->position).x;
       local_12c = (vertex->position).y - (pSVar4->position).y;
       local_128 = (vertex->position).z - (pSVar4->position).z;
@@ -91,7 +89,7 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
       }
       local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
       local_24 = core_chain_cpp_fastSqrt_FUN_00431350(local_5c);
-      local_1c = pSVar8->rest_lengths[0];
+      local_1c = vertex->rest_lengths[iVar6];
       if (local_1c < local_24) {
         local_2c = local_24 - local_1c;
         fVar5 = 1.0 / local_24;
@@ -126,7 +124,6 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
         (vertex->secondary_velocity).z = (vertex->secondary_velocity).z + fVar7 * fVar4;
       }
       iVar6 = iVar6 + 1;
-      pSVar8 = (SClothVertex *)&(pSVar8->position).y;
       local_40 = (byte *)&local_130;
       local_18 = local_24;
     } while (iVar6 < vertex->connected_count);
@@ -135,8 +132,8 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
   if (0 < this_ptr->collide_bone_count) {
     local_30 = &this_ptr->inv_delta_time;
     local_38 = this_ptr->collide_bones;
-    local_14 = &this_ptr->collide_bones[0].position_offset;
     do {
+      local_14 = &local_38[local_20].position_offset;
       iVar8 = local_20;
       pSVar3 = local_38;
       local_70 = (vertex->position).x - local_14->x;
@@ -194,7 +191,6 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
           vertex->body_collision = 1;
         }
       }
-      local_14 = (CVector3f *)&local_14[0xe].y;
       local_20 = local_20 + 1;
     } while (local_20 < this_ptr->collide_bone_count);
   }

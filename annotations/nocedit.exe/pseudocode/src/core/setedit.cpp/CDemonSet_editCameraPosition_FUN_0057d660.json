@@ -7,12 +7,12 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1112,
-    "complexity_score": 501,
+    "complexity_score": 502,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 411,
+    "pseudocode_lines": 412,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
@@ -20,7 +20,7 @@
       "unrolled_strchr",
       "unrolled_strcpy"
     ],
-    "total_lines": 1523
+    "total_lines": 1524
   },
   "cross_references": [
     {
@@ -810,29 +810,29 @@
   "resolved_suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 151,
+      "line": 152,
       "match": "&stack0xffffee80",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "*(int *)(&stack0xffffee80 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;",
+      "text": "*(int *)(&stack0xffffee80 + iVar21) = (int)uVar12 / 3 + (int)fStack_50 + iStack_4c;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 286,
-      "match": "(char *)(*piVar1 * 0x1a4 + (int)p_Stack_20",
+      "line": 287,
+      "match": "(char *)(*piVar2 * 0x1a4 + (int)p_Stack_20",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(*piVar1 * 0x1a4 + (int)p_Stack_20));",
+      "text": "engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(*piVar2 * 0x1a4 + (int)p_Stack_20));",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 327,
+      "line": 328,
       "match": "&stack0xffffee8c",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "uStack_38 = *(uint *)(&stack0xffffee8c + (uint)*pbVar18 * 4);",
+      "text": "uStack_38 = *(uint *)(&stack0xffffee8c + (uint)*pbVar19 * 4);",
       "type": "stack_ref"
     }
   ],
@@ -1127,23 +1127,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 150,
       "match": "(uint *)((int)auStack_d80",
       "severity": "moderate",
-      "text": "*(uint *)((int)auStack_d80 + iVar20) = uVar16 | uVar12;",
+      "text": "*(uint *)((int)auStack_d80 + iVar21) = uVar17 | uVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 284,
+      "line": 285,
       "match": "(int *)((int)auStack_96c",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)auStack_96c + iVar13);",
+      "text": "piVar2 = (int *)((int)auStack_96c + iVar14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 296,
+      "line": 297,
       "match": "(int *)((int)pvStack_1c",
       "severity": "moderate",
       "text": "if (*(int *)((int)pvStack_1c + 0x144) == 0) {",
@@ -1151,7 +1151,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 74,
+      "line": 75,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1159,7 +1159,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 185,
+      "line": 186,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;",
@@ -1167,7 +1167,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 84,
+      "line": 85,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

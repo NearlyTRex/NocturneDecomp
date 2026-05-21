@@ -120,9 +120,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
     engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
     iVar6 = 0;
     if (0 < this_ptr->room_count) {
-      local_14 = &local_20->rotation_matrix;
-      pCVar4 = &local_20->extents;
       do {
+        local_14 = &local_20[iVar6].rotation_matrix;
+        pCVar4 = &local_20[iVar6].extents;
         world_position = &local_20[iVar6].position;
         core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(local_14,&local_7c);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -151,8 +151,6 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
           core_setedit_cpp_renderColoredBox_FUN_005817d0(&local_c4,pCVar4,0.2,0,0,0xff);
         }
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
-        local_14 = (CMatrix3x3f *)&local_14[1].m[2].z;
-        pCVar4 = (CVector3f *)&pCVar4[5].z;
         iVar6 = iVar6 + 1;
       } while (iVar6 < this_ptr->room_count);
     }

@@ -23,7 +23,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
     // frame_bounds is mistyped as CVector3f* in CKeyFramedModel but actually
     // points at an array of CBoundingBox3D (24-byte stride per asm).
     frame_bounds_array = (CBoundingBox3D *)model_ptr->frame_bounds;
-    bounds_min_ptr = (CBoundingBox3D *)&model_ptr->bounds_min;
+    bounds_min_ptr = &model_ptr->bounds;
     frame_index = 0;
     do {
       this_ptr_00 = &frame_bounds_array[frame_index];

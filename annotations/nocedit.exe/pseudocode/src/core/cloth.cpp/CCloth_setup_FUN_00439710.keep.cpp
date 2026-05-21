@@ -21,7 +21,6 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
   CDeformableModel *this_ptr_00;
   CVector3f *pCVar10;
   CVector3f *pCVar7;
-  CCloth *pCVar11;
   CVector3f *pCVar12;
   int iVar13;
   int *piVar14;
@@ -37,10 +36,8 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
   int *piVar12;
   float *pfVar22;
   int iVar14;
-  CCloth *pCVar16;
   float *pfVar17;
   SVert *pSVar23;
-  SClothVertex *pSVar19;
   float local_f0;
   float local_ec;
   float local_e8;
@@ -55,12 +52,10 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
   int local_90;
   int local_64;
   float local_60;
-  CCloth *local_48;
   int local_44;
   int local_40;
   char *local_3c;
   int local_38;
-  CCloth *local_34;
   int local_30;
   int local_2c;
   int local_28;
@@ -123,8 +118,8 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
   if (0 < (this_ptr->model).vertex_count) {
     pCVar7 = &this_ptr->vertices[0].offset_pos;
     pCVar8 = &this_ptr->vertices[0].force;
-    pCVar9 = &this_ptr->vertices[0].velocity;
     do {
+      pCVar9 = &this_ptr->vertices[iVar14].velocity;
       pSVar11 = this_ptr->vertices + iVar14;
       if (pSVar11 != (SClothVertex *)pCVar7) {
         (pSVar11->position).x = pCVar7->x;
@@ -144,17 +139,14 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
       pCVar9->x = pCVar9->y;
       pCVar9[1].x = fVar1;
       pCVar8 = (CVector3f *)((int)(pCVar8 + 0x17) + 8);
-      pCVar9 = (CVector3f *)&pCVar9[0x17].z;
     } while (iVar14 < (this_ptr->model).vertex_count);
   }
   core_cloth_cpp_CCloth_initializeConnections_FUN_004394e0(this_ptr);
   iVar14 = 0;
-  pCVar16 = this_ptr;
   if (0 < this_ptr->locked_vertex_count) {
     do {
-      this_ptr->vertices[pCVar16->locked_vertex_indices[0]].locked = 1;
+      this_ptr->vertices[this_ptr->locked_vertex_indices[iVar14]].locked = 1;
       iVar14 = iVar14 + 1;
-      pCVar16 = (CCloth *)((pCVar16->model).model_filename + 4);
     } while (iVar14 < this_ptr->locked_vertex_count);
   }
   if (model_ptr != (CDeformableModelInstance *)0x0) {
@@ -164,8 +156,8 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
     if (0 < (this_ptr->model).vertex_count) {
       pSVar18 = this_ptr->vertices;
       iVar10 = 0;
-      pCVar12 = &this_ptr->vertices[0].offset_pos;
       do {
+        pCVar12 = &this_ptr->vertices[iVar14].offset_pos;
         local_e4 = pCVar12->x + this_ptr_00->bbox_pool[0].min.x;
         local_e0 = pCVar12->y + this_ptr_00->bbox_pool[0].min.y;
         local_dc = pCVar12->z + this_ptr_00->bbox_pool[0].min.z;
@@ -175,7 +167,6 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
           (pSVar18->position).z = local_dc;
         }
         piVar12 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar10);
-        pCVar12 = (CVector3f *)&pCVar12[0x17].z;
         *piVar12 = (int)ROUND((pSVar18->position).x * 256.0f);
         piVar12[1] = (int)ROUND((pSVar18->position).y * 256.0f);
         piVar12[2] = (int)ROUND((pSVar18->position).z * 256.0f);
@@ -188,9 +179,8 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
     core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(model_ptr);
     local_2c = 0;
     if (0 < this_ptr->locked_vertex_count) {
-      local_48 = this_ptr;
       do {
-        pSVar11 = this_ptr->vertices + local_48->locked_vertex_indices[0];
+        pSVar11 = this_ptr->vertices + this_ptr->locked_vertex_indices[local_2c];
         local_14 = 1e+30;
         local_20 = 0;
         if (0 < this_ptr_00->vertex_count[0]) {
@@ -227,26 +217,19 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
         if (bVar2 != 0) {
           pCVar7 = pSVar11->bone_positions;
           pCVar8 = &pSVar20->position;
-          pSVar23 = pSVar20;
-          pSVar19 = pSVar11;
           do {
-            pSVar19->bone_index[0] = (uint)pSVar20->bone_indices[0];
+            pSVar11->bone_index[iVar14] = (uint)pSVar20->bone_indices[iVar14];
             if (pCVar7 != pCVar8) {
               pCVar7->x = pCVar8->x;
               pCVar7->y = pCVar8->y;
               pCVar7->z = pCVar8->z;
             }
-            pfVar17 = pSVar23->bone_weights;
             pCVar7 = pCVar7 + 1;
             pCVar8 = pCVar8 + 1;
-            pSVar20 = (SVert *)pSVar20->bone_indices;
-            pSVar23 = (SVert *)pSVar23->bone_weights;
+            pSVar11->bone_weights[iVar14] = pSVar20->bone_weights[iVar14];
             iVar14 = iVar14 + 1;
-            pSVar19->bone_weights[0] = *pfVar17;
-            pSVar19 = (SClothVertex *)&(pSVar19->position).y;
           } while (iVar14 < pSVar11->bone_influence_count);
         }
-        local_48 = (CCloth *)((local_48->model).model_filename + 4);
         local_2c = local_2c + 1;
       } while (local_2c < this_ptr->locked_vertex_count);
     }
@@ -260,10 +243,9 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
     local_90 = 0;
     if (0 < this_ptr->locked_vertex_count) {
       local_38 = 0;
-      local_34 = this_ptr;
       do {
         local_30 = 0;
-        pSVar11 = this_ptr->vertices + local_34->locked_vertex_indices[0];
+        pSVar11 = this_ptr->vertices + this_ptr->locked_vertex_indices[local_90];
         local_40 = 0;
         local_3c = (this_ptr->model).model_filename + local_38;
         while (local_30 < this_ptr_00->num_lods) {
@@ -306,19 +288,16 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
           local_3c = local_3c + 400;
         }
         local_38 = local_38 + 4;
-        local_34 = (CCloth *)((local_34->model).model_filename + 4);
         local_90 = local_90 + 1;
       } while (local_90 < this_ptr->locked_vertex_count);
     }
     core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(model_ptr);
   }
   iVar14 = 0;
-  pCVar11 = this_ptr;
   if (0 < (this_ptr->model).vertex_count) {
     do {
-      pCVar11->vertices[0].collide_bone_index = -1;
+      this_ptr->vertices[iVar14].collide_bone_index = -1;
       iVar14 = iVar14 + 1;
-      pCVar11 = (CCloth *)&(pCVar11->model).env_map_opac_list;
     } while (iVar14 < (this_ptr->model).vertex_count);
   }
   (this_ptr->wind_velocity).z = 0.0;

@@ -19,7 +19,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   CMatrix3x4f *pCVar8;
   CBoneStructure *pCVar9;
   uint *puVar10;
-  CBoneStructure *pCVar5;
   SBoneData *pSVar6;
   SBoneData *pSVar11;
   uint *puVar12;
@@ -141,10 +140,10 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
       if (0 < local_24) {
         local_20 = local_30;
         local_1c = local_30 + 1;
-        pCVar8 = &local_28->local_matrix;
         local_18 = local_28 + 1;
         piVar4 = local_248;
         do {
+          pCVar8 = &local_28[local_14].local_matrix;
           puVar10 = (uint *)(piVar4 + 1);
           uVar3 = local_248[local_14] - local_248[local_14 + 1];
           if (uVar3 == 0) {
@@ -205,7 +204,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
             *piVar4 = *puVar10;
             *puVar10 = uVar3;
           }
-          pCVar8 = (CMatrix3x4f *)&pCVar8[2].m[2].x;
           local_14 = local_14 + 1;
           local_20 = local_20 + 1;
           local_1c = local_1c + 1;
@@ -219,16 +217,14 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   uVar3 = 0;
   if (0 < this_ptr->bone_count) {
     bone_name = g_BoneNameBuffer;
-    pCVar5 = this_ptr;
     do {
       iVar3 = core_skeledit_cpp_CBoneStructure_findBoneByName_FUN_0058ac30(this_ptr,*bone_name);
-      pCVar5->shuffled_bone_indices[0] = iVar3;
+      this_ptr->shuffled_bone_indices[uVar3] = iVar3;
       if (iVar3 < 0) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         g_CurrentLineNumber = 0x2e8;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze while shuffling bones...");
       }
-      pCVar5 = (CBoneStructure *)pCVar5->bones;
       uVar3 = uVar3 + 1;
       bone_name = bone_name + 1;
     } while (uVar3 < this_ptr->bone_count);

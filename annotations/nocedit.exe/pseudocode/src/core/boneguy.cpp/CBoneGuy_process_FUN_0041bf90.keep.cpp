@@ -49,11 +49,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   int local_34;
   float local_30;
   SBoneGuyBox *local_2c;
-  CQuaternion4f *local_28;
   float *local_24;
-  CQuaternion4f *local_20;
   int local_1c;
-  CVector3f *local_18;
   float local_14;
   SDamageInfo *damage_info;
   float fVar18;
@@ -96,17 +93,14 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
       }
       local_2c = this_ptr->boxes;
       local_24 = &this_ptr->recombine_interpolation;
-      local_28 = &this_ptr->boxes[0].dest_orient;
-      local_20 = &this_ptr->boxes[0].start_orient;
-      local_18 = &this_ptr->boxes[0].source_pos;
       do {
         pSVar8 = local_2c + local_1c;
         pCVar6 = pSVar8->body_part;
-        local_ac = local_18->x + ((pSVar8->pos).x - local_18->x) * *local_24;
-        local_a8 = local_18->y + ((pSVar8->pos).y - local_18->y) * *local_24;
-        local_a4 = local_18->z + ((pSVar8->pos).z - local_18->z) * *local_24;
+        local_ac = (pSVar8->source_pos).x + ((pSVar8->pos).x - (pSVar8->source_pos).x) * *local_24;
+        local_a8 = (pSVar8->source_pos).y + ((pSVar8->pos).y - (pSVar8->source_pos).y) * *local_24;
+        local_a4 = (pSVar8->source_pos).z + ((pSVar8->pos).z - (pSVar8->source_pos).z) * *local_24;
         core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                  (local_28,local_20,this_ptr->recombine_interpolation,&local_11c);
+                  (&pSVar8->dest_orient,&pSVar8->start_orient,this_ptr->recombine_interpolation,&local_11c);
         local_12c = local_11c;
         core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(&local_88,&local_12c);
         local_88.x = this_ptr->recombine_interpolation * (float)6.2831853070000001 + local_88.x;
@@ -126,9 +120,6 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
         if ((CVector3f *)pCVar12 != &local_88) {
           (pCVar6->physics_box).orientation = local_88;
         }
-        local_28 = (CQuaternion4f *)&local_28[4].y;
-        local_20 = (CQuaternion4f *)&local_20[4].y;
-        local_18 = local_18 + 6;
         local_1c = local_1c + 1;
       } while (local_1c < this_ptr->box_count);
       return;

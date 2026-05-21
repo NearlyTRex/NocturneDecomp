@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 38,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 40,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 131
+    "total_lines": 133
   },
   "cross_references": [],
   "function": {
@@ -116,7 +116,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 17,
+      "line": 18,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -125,7 +125,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 22,
+      "line": 23,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -134,20 +134,20 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 31,
+      "line": 32,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(out_box->min).x = (pCVar2->bounds_min).x;",
+      "text": "(out_box->min).x = (pCVar2->bounds).min.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 36,
+      "line": 38,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(out_box->max).x = (pCVar2->bounds_max).x;",
+      "text": "(out_box->max).x = pCVar1->x;",
       "type": "unrolled_memcpy"
     }
   ],

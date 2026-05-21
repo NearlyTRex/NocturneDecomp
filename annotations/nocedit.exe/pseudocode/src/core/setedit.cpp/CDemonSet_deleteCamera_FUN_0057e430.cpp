@@ -11,6 +11,8 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(CDemonSet *thi
 {
   int iVar1;
   int *piVar2;
+  CVector3f *pCVar3;
+  CVector3f *pCVar4;
   char *pcVar3;
   int iVar4;
   char *pcVar5;
@@ -82,15 +84,17 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(CDemonSet *thi
         (local_20->fog).density_multiplier = (local_c->fog).density_multiplier;
         (local_20->fog).temperature = (local_c->fog).temperature;
         local_20->reverb_preset = local_c->reverb_preset;
-        if (&local_20->box_min != &local_c->box_min) {
-          (local_20->box_min).x = (local_c->box_min).x;
-          (local_20->box_min).y = (local_c->box_min).y;
-          (local_20->box_min).z = (local_c->box_min).z;
+        if (&local_20->box != &local_c->box) {
+          (local_20->box).min.x = (local_c->box).min.x;
+          (local_20->box).min.y = (local_c->box).min.y;
+          (local_20->box).min.z = (local_c->box).min.z;
         }
-        if (&local_20->box_max != &local_c->box_max) {
-          (local_20->box_max).x = (local_c->box_max).x;
-          (local_20->box_max).y = (local_c->box_max).y;
-          (local_20->box_max).z = (local_c->box_max).z;
+        pCVar3 = &(local_c->box).max;
+        pCVar4 = &(local_20->box).max;
+        if (pCVar4 != pCVar3) {
+          pCVar4->x = pCVar3->x;
+          (local_20->box).max.y = (local_c->box).max.y;
+          (local_20->box).max.z = (local_c->box).max.z;
         }
         local_20->pvs_count = local_c->pvs_count;
         local_20->pvs_list = local_c->pvs_list;

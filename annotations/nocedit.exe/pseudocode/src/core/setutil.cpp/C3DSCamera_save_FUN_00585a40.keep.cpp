@@ -32,10 +32,10 @@ void __cdecl core_setutil_cpp_C3DSCamera_save_FUN_00585a40(C3DSCamera *this_ptr,
     core_dcamera_cpp_saveCameraFog_FUN_00453f10(&this_ptr->fog,file_handle);
   }
   _fprintf(file_handle,"box min, max\n");
-  _fprintf(file_handle,"%g,%g,%g\n",(double)(this_ptr->box_min).x,
-             (double)(this_ptr->box_min).y,(double)(this_ptr->box_min).z);
-  _fprintf(file_handle,"%g,%g,%g\n",(double)(this_ptr->box_max).x,
-             (double)(this_ptr->box_max).y,(double)(this_ptr->box_max).z);
+  _fprintf(file_handle,"%g,%g,%g\n",(double)(this_ptr->box.min).x,
+             (double)(this_ptr->box.min).y,(double)(this_ptr->box.min).z);
+  _fprintf(file_handle,"%g,%g,%g\n",(double)(this_ptr->box.max).x,
+             (double)(this_ptr->box.max).y,(double)(this_ptr->box.max).z);
   _fprintf(file_handle,"reverbPreset\n");
   _fprintf(file_handle,"%d\n",this_ptr->reverb_preset);
   return;

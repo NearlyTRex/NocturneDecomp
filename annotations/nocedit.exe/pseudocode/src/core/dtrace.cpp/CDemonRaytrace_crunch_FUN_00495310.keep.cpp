@@ -109,43 +109,43 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
       local_74 = piVar11->vertex3.y;
       local_70 = piVar11->vertex3.z;
       pSVar13->triangle_index = iVar9;
-      pSVar13->max = piVar11->vertex1;
-      pSVar13->min = piVar11->vertex1;
-      if (local_84 < (pSVar13->min).x) {
-        (pSVar13->min).x = local_84;
+      pSVar13->box.max = piVar11->vertex1;
+      pSVar13->box.min = piVar11->vertex1;
+      if (local_84 < (pSVar13->box.min).x) {
+        (pSVar13->box.min).x = local_84;
       }
-      if ((pSVar13->max).x < local_84) {
-        (pSVar13->max).x = local_84;
+      if ((pSVar13->box.max).x < local_84) {
+        (pSVar13->box.max).x = local_84;
       }
-      if (local_80 < (pSVar13->min).y) {
-        (pSVar13->min).y = local_80;
+      if (local_80 < (pSVar13->box.min).y) {
+        (pSVar13->box.min).y = local_80;
       }
-      if ((pSVar13->max).y < local_80) {
-        (pSVar13->max).y = local_80;
+      if ((pSVar13->box.max).y < local_80) {
+        (pSVar13->box.max).y = local_80;
       }
-      if (local_7c < (pSVar13->min).z) {
-        (pSVar13->min).z = local_7c;
+      if (local_7c < (pSVar13->box.min).z) {
+        (pSVar13->box.min).z = local_7c;
       }
-      if ((pSVar13->max).z < local_7c) {
-        (pSVar13->max).z = local_7c;
+      if ((pSVar13->box.max).z < local_7c) {
+        (pSVar13->box.max).z = local_7c;
       }
-      if (local_78 < (pSVar13->min).x) {
-        (pSVar13->min).x = local_78;
+      if (local_78 < (pSVar13->box.min).x) {
+        (pSVar13->box.min).x = local_78;
       }
-      if ((pSVar13->max).x < local_78) {
-        (pSVar13->max).x = local_78;
+      if ((pSVar13->box.max).x < local_78) {
+        (pSVar13->box.max).x = local_78;
       }
-      if (local_74 < (pSVar13->min).y) {
-        (pSVar13->min).y = local_74;
+      if (local_74 < (pSVar13->box.min).y) {
+        (pSVar13->box.min).y = local_74;
       }
-      if ((pSVar13->max).y < local_74) {
-        (pSVar13->max).y = local_74;
+      if ((pSVar13->box.max).y < local_74) {
+        (pSVar13->box.max).y = local_74;
       }
-      if (local_70 < (pSVar13->min).z) {
-        (pSVar13->min).z = local_70;
+      if (local_70 < (pSVar13->box.min).z) {
+        (pSVar13->box.min).z = local_70;
       }
-      if ((pSVar13->max).z < local_70) {
-        (pSVar13->max).z = local_70;
+      if ((pSVar13->box.max).z < local_70) {
+        (pSVar13->box.max).z = local_70;
       }
       pSVar13 = pSVar13 + 1;
       iVar9 = iVar9 + 1;
@@ -165,7 +165,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
         local_4c = local_44 + local_58;
         do {
           local_48 = local_50;
-          if ((local_b4.x < local_50->min.x) || (local_50->max.x < local_9c.x)) {
+          if ((local_b4.x < local_50->box.min.x) || (local_50->box.max.x < local_9c.x)) {
             local_54 = local_4c;
             saved_x = *local_50;
             *local_48 = *local_4c;
@@ -192,7 +192,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
             local_2c = local_44 + local_60;
             do {
               local_24 = local_28;
-              if ((local_b4.y < local_28->min.y) || (local_28->max.y < local_9c.y)) {
+              if ((local_b4.y < local_28->box.min.y) || (local_28->box.max.y < local_9c.y)) {
                 local_30 = local_2c;
                 saved_y = *local_28;
                 *local_24 = *local_2c;

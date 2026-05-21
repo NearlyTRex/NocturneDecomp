@@ -67,10 +67,10 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00585420(C3DSCamera *this_ptr,
   }
   if (0x16 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);
-    _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->box_min,&(this_ptr->box_min).y,
-               &(this_ptr->box_min).z);
-    _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->box_max,&(this_ptr->box_max).y,
-               &(this_ptr->box_max).z);
+    _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->box,&(this_ptr->box).min.y,
+               &(this_ptr->box).min.z);
+    _fscanf(file_handle,"%f,%f,%f\n",&(this_ptr->box).max,&(this_ptr->box).max.y,
+               &(this_ptr->box).max.z);
   }
   if (0x16 < g_CDemonSetPtr->set_file_version) {
     _fgets(local_110,0xff,file_handle);

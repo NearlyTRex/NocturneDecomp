@@ -9,5 +9,5 @@
 CVector3f * __cdecl core_fire_cpp_CKeyFramedModel_getBoundsMin_FUN_004c9450(CKeyFramedModel *model_ptr)
 
 {
-  return &model_ptr->bounds_min;
+  return &(model_ptr->bounds).min;
 }

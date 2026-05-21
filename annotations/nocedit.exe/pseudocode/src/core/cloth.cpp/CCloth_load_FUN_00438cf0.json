@@ -443,6 +443,35 @@
     },
     "pcode_op_count": 1479
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_18) + offsetof(subfield)` equals the real array stride. Replace `local_18->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 123,
+      "match": "local_18 = (T *)&local_18[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 = (CVector3f *)&local_18[0xe].y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_24) + offsetof(subfield)` equals the real array stride. Replace `local_24->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 126,
+      "match": "local_24 = (T *)&local_24[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24 = (CVector3f *)&local_24[0xe].y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar10) + offsetof(subfield)` equals the real array stride. Replace `pCVar10->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 143,
+      "match": "pCVar10 = (T *)&pCVar10[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10 = (CVector3f *)&pCVar10[0x17].z;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 580,
     "local_size": 572,

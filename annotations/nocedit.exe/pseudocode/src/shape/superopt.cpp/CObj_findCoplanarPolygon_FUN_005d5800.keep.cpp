@@ -45,10 +45,10 @@ int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_
   local_20 = 0;
   if (this_ptr->poly_count != 0) {
     local_24 = &search_polygon->normal;
-    pCVar4 = &local_18->normal;
     piVar7 = &local_18->vertex_idx_0;
     piVar2 = &search_polygon->vertex_idx_0;
     do {
+      pCVar4 = &local_18->normal;
       if (((local_18->flags & 0x2000) == 0) &&
          (1.0 - coplanar_threshold <=
           (pCVar4->impl).z * (search_polygon->normal).impl.z +
@@ -99,7 +99,6 @@ LAB_005d59af:
         }
       }
       local_18 = local_18 + 1;
-      pCVar4 = (CP3D *)&pCVar4[4].impl.y;
       piVar7 = piVar7 + 0x1a;
       local_20 = local_20 + 1;
     } while (local_20 < (uint)this_ptr->poly_count);

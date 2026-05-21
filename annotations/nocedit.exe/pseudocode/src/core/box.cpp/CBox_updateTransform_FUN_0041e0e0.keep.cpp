@@ -77,8 +77,8 @@ void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0(CBox *this_ptr,CVect
   iVar14 = 0;
   if (0 < this_ptr->scrape_point_count) {
     local_14 = this_ptr->scrape_points;
-    pCVar13 = &this_ptr->scrape_points[0].transformed_position;
     do {
+      pCVar13 = &this_ptr->scrape_points[iVar14].transformed_position;
       pCVar12 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                           (&this_ptr->rotation_matrix,&local_2c,&local_14[iVar14].local_position);
       local_20 = (this_ptr->position).x + pCVar12->x;
@@ -90,7 +90,6 @@ void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0(CBox *this_ptr,CVect
         pCVar13->z = local_18;
       }
       iVar14 = iVar14 + 1;
-      pCVar13 = (CVector3f *)&pCVar13[4].y;
     } while (iVar14 < this_ptr->scrape_point_count);
   }
   this_ptr->is_valid = 1;

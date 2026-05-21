@@ -7,19 +7,19 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1759,
-    "complexity_score": 854,
+    "complexity_score": 857,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 101,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 699,
+    "pseudocode_lines": 702,
     "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 2458
+    "total_lines": 2461
   },
   "cross_references": [
     {
@@ -1405,7 +1405,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 369,
+      "line": 370,
       "match": "(C3DSCamera *)((int)pCVar18",
       "severity": "moderate",
       "text": "pCVar18 = (C3DSCamera *)((int)pCVar18 + (uint)bVar19 * -8 + 4);",
@@ -1413,7 +1413,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 371,
+      "line": 372,
       "match": "(C3DSCamera *)((int)pCVar15",
       "severity": "moderate",
       "text": "pCVar15 = (C3DSCamera *)((int)pCVar15 + (uint)bVar19 * -8 + 4);",
@@ -1421,7 +1421,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 368,
+      "line": 369,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar11 = 0x40; iVar11 != 0; iVar11 = iVar11 + -1) {",
@@ -1429,7 +1429,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 375,
+      "line": 376,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar11->position).x = (pCVar7->position).x;",
@@ -1437,7 +1437,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 380,
+      "line": 381,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar11->orientation).x = (pCVar7->orientation).x;",
@@ -1445,7 +1445,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (17 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 384,
+      "line": 385,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar11->rotation_matrix).m[0].x = (pCVar7->rotation_matrix).m[0].x;",
@@ -1453,7 +1453,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 405,
+      "line": 406,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar2->x = pCVar1->x;",
@@ -1461,7 +1461,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 409,
+      "line": 410,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar11->fog).height_threshold = (pCVar7->fog).height_threshold;",
@@ -1469,23 +1469,23 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 414,
+      "line": 415,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pCVar11->box_min).x = (pCVar7->box_min).x;",
+      "text": "(pCVar11->box).min.x = (pCVar7->box).min.x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 419,
+      "line": 422,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(pCVar11->box_max).x = (pCVar7->box_max).x;",
+      "text": "pCVar3->x = pCVar2->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 423,
+      "line": 426,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar11->pvs_count = pCVar7->pvs_count;",
@@ -1493,7 +1493,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 271,
+      "line": 272,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1501,7 +1501,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 636,
+      "line": 639,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

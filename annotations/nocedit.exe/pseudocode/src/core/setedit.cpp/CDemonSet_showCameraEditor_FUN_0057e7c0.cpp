@@ -10,11 +10,12 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
 
 {
   CVector3f *pCVar2;
-  char cVar3;
-  byte bVar4;
-  float fVar5;
+  CVector3f *pCVar3;
+  char cVar4;
+  byte bVar5;
   float fVar6;
   float fVar7;
+  float fVar8;
   C3DSCamera *pCVar9;
   int iVar10;
   int iVar11;
@@ -170,21 +171,21 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
         pCVar15 = local_44 + this_ptr->camera_count;
         do {
           pbVar12 = pbVar12 + 2;
-          bVar4 = *pbVar12;
-          pCVar15->name[0] = bVar4;
-          if (bVar4 == 0) break;
-          bVar4 = pbVar12[1];
-          pCVar15->name[1] = bVar4;
+          bVar5 = *pbVar12;
+          pCVar15->name[0] = bVar5;
+          if (bVar5 == 0) break;
+          bVar5 = pbVar12[1];
+          pCVar15->name[1] = bVar5;
           pCVar15 = (C3DSCamera *)(pCVar15->name + 2);
-        } while (bVar4 != 0);
+        } while (bVar5 != 0);
         iVar11 = -1;
         pbVar12 = abStack_4be + 2;
         do {
           if (iVar11 == 0) break;
           iVar11 = iVar11 + -1;
-          bVar4 = *pbVar12;
+          bVar5 = *pbVar12;
           pbVar12 = pbVar12 + (uint)bVar19 * -2 + 1;
-        } while (bVar4 != 0);
+        } while (bVar5 != 0);
         if ((iVar11 != -2) &&
            (iVar11 = core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660
                                (this_ptr,this_ptr->camera_count), iVar11 != 0)) {
@@ -248,19 +249,19 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
           if (iVar11 == 0) break;
           iVar11 = iVar11 + -1;
           pbVar16 = pbVar16 + (uint)bVar19 * -2 + 1;
-          bVar4 = *pbVar16;
+          bVar5 = *pbVar16;
           pbVar16 = pbVar16;
-        } while (bVar4 != 0);
+        } while (bVar5 != 0);
         pbVar12 = pbVar16 + -1;
         do {
-          bVar4 = *pcVar14;
-          *pbVar12 = bVar4;
-          if (bVar4 == 0) break;
-          bVar4 = pcVar14[1];
+          bVar5 = *pcVar14;
+          *pbVar12 = bVar5;
+          if (bVar5 == 0) break;
+          bVar5 = pcVar14[1];
           pcVar14 = pcVar14 + 2;
-          pbVar12[1] = bVar4;
+          pbVar12[1] = bVar5;
           pbVar12 = pbVar12 + 2;
-        } while (bVar4 != 0);
+        } while (bVar5 != 0);
         strupr((char *)(abStack_4be + 2));
       }
       iVar11 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
@@ -278,9 +279,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
       do {
         if (iVar11 == 0) break;
         iVar11 = iVar11 + -1;
-        cVar3 = *pcVar16;
+        cVar4 = *pcVar16;
         pcVar16 = pcVar16 + (uint)bVar19 * -2 + 1;
-      } while (cVar3 != '\0');
+      } while (cVar4 != '\0');
       if (iVar11 != -2) {
         iVar11 = 0;
         pCVar10 = pCVar9;
@@ -318,18 +319,18 @@ LAB_0057eb3b:
             bVar3 = pCVar15->name[0];
             *pbVar12 = bVar3;
             if (bVar3 == 0) break;
-            bVar4 = pCVar15->name[1];
+            bVar5 = pCVar15->name[1];
             pCVar15 = (C3DSCamera *)(pCVar15->name + 2);
-            pbVar12[1] = bVar4;
-          } while (bVar4 != 0);
+            pbVar12[1] = bVar5;
+          } while (bVar5 != 0);
           uVar6 = 0xffffffff;
           pbVar12 = abStack_4be + 2;
           do {
             if (uVar6 == 0) break;
             uVar6 = uVar6 - 1;
-            bVar4 = *pbVar12;
+            bVar5 = *pbVar12;
             pbVar12 = pbVar12 + (uint)bVar19 * -2 + 1;
-          } while (bVar4 != 0);
+          } while (bVar5 != 0);
           iVar11 = ~uVar6 - 2;
           if (0 < iVar11) {
             pbVar12 = abStack_4be + ~uVar6;
@@ -351,13 +352,13 @@ LAB_0057eb3b:
                 pbVar17 = local_7bc;
                 do {
                   pbVar12 = pbVar12 + 2;
-                  bVar4 = *pbVar12;
-                  *pbVar17 = bVar4;
-                  if (bVar4 == 0) break;
-                  bVar4 = pbVar12[1];
-                  pbVar17[1] = bVar4;
+                  bVar5 = *pbVar12;
+                  *pbVar17 = bVar5;
+                  if (bVar5 == 0) break;
+                  bVar5 = pbVar12[1];
+                  pbVar17[1] = bVar5;
                   pbVar17 = pbVar17 + 2;
-                } while (bVar4 != 0);
+                } while (bVar5 != 0);
                 iVar11 = -1;
                 _sprintf((char *)(abStack_4be + 2),"%s1",local_7bc);
               }
@@ -417,15 +418,17 @@ LAB_0057eb3b:
             (pCVar11->fog).density_multiplier = (pCVar7->fog).density_multiplier;
             (pCVar11->fog).temperature = (pCVar7->fog).temperature;
             pCVar11->reverb_preset = pCVar7->reverb_preset;
-            if (&pCVar11->box_min != &pCVar7->box_min) {
-              (pCVar11->box_min).x = (pCVar7->box_min).x;
-              (pCVar11->box_min).y = (pCVar7->box_min).y;
-              (pCVar11->box_min).z = (pCVar7->box_min).z;
+            if (&pCVar11->box != &pCVar7->box) {
+              (pCVar11->box).min.x = (pCVar7->box).min.x;
+              (pCVar11->box).min.y = (pCVar7->box).min.y;
+              (pCVar11->box).min.z = (pCVar7->box).min.z;
             }
-            if (&pCVar11->box_max != &pCVar7->box_max) {
-              (pCVar11->box_max).x = (pCVar7->box_max).x;
-              (pCVar11->box_max).y = (pCVar7->box_max).y;
-              (pCVar11->box_max).z = (pCVar7->box_max).z;
+            pCVar2 = &(pCVar7->box).max;
+            pCVar3 = &(pCVar11->box).max;
+            if (pCVar3 != pCVar2) {
+              pCVar3->x = pCVar2->x;
+              (pCVar11->box).max.y = (pCVar7->box).max.y;
+              (pCVar11->box).max.z = (pCVar7->box).max.z;
             }
             pCVar11->pvs_count = pCVar7->pvs_count;
             pCVar11->pvs_list = pCVar7->pvs_list;
@@ -437,13 +440,13 @@ LAB_0057eb3b:
             pCVar15 = local_44 + this_ptr->camera_count;
             do {
               pbVar12 = pbVar12 + 2;
-              bVar4 = *pbVar12;
-              pCVar15->name[0] = bVar4;
-              if (bVar4 == 0) break;
-              bVar4 = pbVar12[1];
-              pCVar15->name[1] = bVar4;
+              bVar5 = *pbVar12;
+              pCVar15->name[0] = bVar5;
+              if (bVar5 == 0) break;
+              bVar5 = pbVar12[1];
+              pCVar15->name[1] = bVar5;
               pCVar15 = (C3DSCamera *)(pCVar15->name + 2);
-            } while (bVar4 != 0);
+            } while (bVar5 != 0);
             iVar11 = core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660
                                (this_ptr,this_ptr->camera_count);
             if (iVar11 != 0) {
@@ -584,15 +587,15 @@ LAB_0057eb3b:
           if (0 < this_ptr->camera_count) {
             pCVar8 = &local_34->position;
 LAB_0057f7c1:
-            fVar5 = local_b60.position.x - pCVar8->x;
-            fVar6 = local_b60.position.y - pCVar8->y;
-            fVar7 = local_b60.position.z - pCVar8->z;
+            fVar6 = local_b60.position.x - pCVar8->x;
+            fVar7 = local_b60.position.y - pCVar8->y;
+            fVar8 = local_b60.position.z - pCVar8->z;
             pCVar15 = local_34 + iVar11;
-            if (((float)0.10000000000000001 <= SQRT(fVar7 * fVar7 + fVar5 * fVar5 + fVar6 * fVar6)) ||
-               (fVar5 = local_b60.orientation.x - (pCVar15->orientation).x,
-               fVar6 = local_b60.orientation.y - (pCVar15->orientation).y,
-               fVar7 = local_b60.orientation.z - (pCVar15->orientation).z,
-               (float)0.10000000000000001 <= SQRT(fVar7 * fVar7 + fVar5 * fVar5 + fVar6 * fVar6)))
+            if (((float)0.10000000000000001 <= SQRT(fVar8 * fVar8 + fVar6 * fVar6 + fVar7 * fVar7)) ||
+               (fVar6 = local_b60.orientation.x - (pCVar15->orientation).x,
+               fVar7 = local_b60.orientation.y - (pCVar15->orientation).y,
+               fVar8 = local_b60.orientation.z - (pCVar15->orientation).z,
+               (float)0.10000000000000001 <= SQRT(fVar8 * fVar8 + fVar6 * fVar6 + fVar7 * fVar7)))
             goto LAB_0057fa69;
             _sprintf(local_6bc,"%s.raw",&local_b60);
             local_48 = engine_dosio_cpp_getFile_FUN_00481a50

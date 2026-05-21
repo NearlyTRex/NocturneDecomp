@@ -15,7 +15,6 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
   int iVar8;
   int iVar1;
   uchar *puVar9;
-  CCharacter *pCVar11;
   int iVar2;
   uchar *puVar12;
   uchar *puVar13;
@@ -49,13 +48,11 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
   iVar1 = 0;
   if (0 < this_ptr->fire_count) {
     fVar4 = (float)65535;
-    pCVar11 = this_ptr;
     do {
-      iVar2 = pCVar11->fires[0].bone_index;
+      iVar2 = this_ptr->fires[iVar1].bone_index;
       g_BoneBurnIntensity[iVar2] =
-           g_BoneBurnIntensity[iVar2] + (pCVar11->fires[0].size * fVar4) / fVar5;
+           g_BoneBurnIntensity[iVar2] + (this_ptr->fires[iVar1].size * fVar4) / fVar5;
       iVar1 = iVar1 + 1;
-      pCVar11 = (CCharacter *)((pCVar11->base).actor_name + 0x18);
     } while (iVar1 < this_ptr->fire_count);
   }
   iVar2 = 0;

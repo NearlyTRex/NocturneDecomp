@@ -36,7 +36,7 @@ CBoundingBox3D * __cdecl core_ladder_cpp_CLadder_getBoundingBox_FUN_005028c0(CLa
     return out_box;
   }
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
-  out_box->min = pCVar1->bounds_min;
-  out_box->max = pCVar1->bounds_max;
+  out_box->min = pCVar1->bounds.min;
+  out_box->max = pCVar1->bounds.max;
   return out_box;
 }

@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 389,
-    "complexity_score": 172,
+    "complexity_score": 187,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 157,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
     "total_lines": 546
   },
@@ -197,6 +198,14 @@
       "severity": "moderate",
       "text": "piVar15 = (int *)((int)pCVar1->uv_coords + local_64 + -0xc);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_60` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCStack_60) + offsetof(subfield)` equals the real array stride. Replace `pCStack_60->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 150,
+      "match": "pCStack_60 = (T *)&pCStack_60[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCStack_60 = (CP3D *)&pCStack_60[4].impl.y;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

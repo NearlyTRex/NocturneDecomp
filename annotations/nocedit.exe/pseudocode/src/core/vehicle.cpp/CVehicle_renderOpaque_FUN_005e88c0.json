@@ -182,6 +182,24 @@
       "severity": "moderate",
       "text": "CStack_48.x = pCVar4->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar4) + offsetof(subfield)` equals the real array stride. Replace `pCVar4->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 44,
+      "match": "pCVar4 = (T *)&pCVar4[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CVector3f *)&pCVar4[0x24].y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `position` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*position) + offsetof(subfield)` equals the real array stride. Replace `position->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 45,
+      "match": "position = (T *)&position[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "position = (CVector3f *)&position[0x24].y;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

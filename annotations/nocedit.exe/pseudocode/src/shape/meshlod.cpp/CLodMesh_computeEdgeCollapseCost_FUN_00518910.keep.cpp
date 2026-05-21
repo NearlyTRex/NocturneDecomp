@@ -54,7 +54,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
   float local_a0;
   float local_9c;
   CVector3f local_98;
-  CVector3f *local_7c;
   int local_6c;
   int local_64;
   int local_54;
@@ -194,7 +193,6 @@ LAB_0051919d:
       local_a4 = (pCVar6->position).x;
       local_a0 = (pCVar6->position).y;
       local_9c = (pCVar6->position).z;
-      local_7c = &g_TempNeighborFaces[0].normal;
       local_64 = 0;
       do {
         if ((g_LodReplayMode != 0) ||
@@ -296,9 +294,9 @@ LAB_0051919d:
             if (pCVar7->collapse_cost < local_110) goto LAB_00518f71;
           }
           iVar16 = 0;
-          pCVar17 = local_7c;
           if (0 < iVar19) {
             do {
+              pCVar17 = &g_TempNeighborFaces[iVar16].normal;
               shape_meshlod_cpp_CLodMesh_validateFace_FUN_00519830
                         (this_ptr,g_TempNeighborFaces + iVar16);
               iVar14 = g_TempNeighborFaces[iVar16].visited_stamp;
@@ -307,7 +305,6 @@ LAB_0051919d:
                   pCVar17->x * pCVar18[iVar14].normal.x + pCVar17->y * pCVar18[iVar14].normal.y <
                   0.0) break;
               iVar16 = iVar16 + 1;
-              pCVar17 = (CVector3f *)&pCVar17[0xb].z;
             } while (iVar16 < iVar19);
           }
           if (iVar19 <= iVar16) {

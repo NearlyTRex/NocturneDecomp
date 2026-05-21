@@ -684,6 +684,33 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `granule` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*granule) + offsetof(subfield)` equals the real array stride. Replace `granule->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 391,
+      "match": "granule = (T *)&granule[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "granule = (SMpegLayer3GranuleInfo *)&granule[2].window_switching_flag;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_4c` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_4c) + offsetof(subfield)` equals the real array stride. Replace `local_4c->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 454,
+      "match": "local_4c = (T *)&local_4c[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_4c = (SMpegFrame *)&local_4c[5].js_bound;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_44` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_44) + offsetof(subfield)` equals the real array stride. Replace `local_44->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 456,
+      "match": "local_44 = (T *)&local_44[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_44 = (SMpegFrame *)&local_44[5].js_bound;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 708,
       "match": "MOVSD.REP",

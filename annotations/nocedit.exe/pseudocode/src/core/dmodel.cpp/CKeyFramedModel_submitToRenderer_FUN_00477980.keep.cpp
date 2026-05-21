@@ -32,9 +32,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyF
     engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2, 1);
   }
   else {
-    dx = (this_ptr->bounds_max).x - (this_ptr->bounds_min).x;
-    dy = (this_ptr->bounds_max).y - (this_ptr->bounds_min).y;
-    dz = (this_ptr->bounds_max).z - (this_ptr->bounds_min).z;
+    dx = (this_ptr->bounds.max).x - (this_ptr->bounds.min).x;
+    dy = (this_ptr->bounds.max).y - (this_ptr->bounds.min).y;
+    dz = (this_ptr->bounds.max).z - (this_ptr->bounds.min).z;
     if (SQRT(dx * dx + dy * dy + dz * dz) > (float)250) {
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2, 1);
     }

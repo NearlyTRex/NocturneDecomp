@@ -494,6 +494,24 @@
       "type": "unrolled_strcpy"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_18) + offsetof(subfield)` equals the real array stride. Replace `local_18->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 105,
+      "match": "local_18 = (T *)&local_18[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 = (CMatrix3x3f *)&local_18[1].m[2].z;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_1c) + offsetof(subfield)` equals the real array stride. Replace `local_1c->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 126,
+      "match": "local_1c = (T *)&local_1c[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c = (CMatrix3x3f *)&local_1c[1].m[2].z;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
       "line": 152,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",

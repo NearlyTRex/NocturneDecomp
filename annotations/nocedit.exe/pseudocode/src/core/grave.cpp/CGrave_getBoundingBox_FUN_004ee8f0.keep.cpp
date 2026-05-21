@@ -29,11 +29,11 @@ CBoundingBox3D * __cdecl core_grave_cpp_CGrave_getBoundingBox_FUN_004ee8f0(CGrav
   }
   else {
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
-    if (out_box != (CBoundingBox3D *)&pCVar2->bounds_min) {
-      out_box->min = pCVar2->bounds_min;
+    if (out_box != &pCVar2->bounds) {
+      out_box->min = pCVar2->bounds.min;
     }
-    if (&out_box->max != &pCVar2->bounds_max) {
-      out_box->max = pCVar2->bounds_max;
+    if (&out_box->max != &pCVar2->bounds.max) {
+      out_box->max = pCVar2->bounds.max;
     }
   }
   return out_box;

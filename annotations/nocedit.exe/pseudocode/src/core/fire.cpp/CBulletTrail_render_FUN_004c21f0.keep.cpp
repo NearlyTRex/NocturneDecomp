@@ -29,7 +29,7 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
   local_60.z = (this_ptr->end_position).z - (this_ptr->start_position).z;
   pCVar2 = this_ptr->model_ptr;
   fVar3 = SQRT(local_60.z * local_60.z + local_60.x * local_60.x + local_60.y * local_60.y) -
-          ((pCVar2->bounds_max).z - (pCVar2->bounds_min).z);
+          ((pCVar2->bounds.max).z - (pCVar2->bounds.min).z);
   if (0.0 < fVar3) {
     local_20 = 2;
     if (0.0 < this_ptr->segment_length) {

@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 78,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 78,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 242
   },
   "cross_references": [],
@@ -228,5 +230,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar3) + offsetof(subfield)` equals the real array stride. Replace `pCVar3->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 74,
+      "match": "pCVar3 = (T *)&pCVar3[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CVector3f *)&pCVar3[4].y;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

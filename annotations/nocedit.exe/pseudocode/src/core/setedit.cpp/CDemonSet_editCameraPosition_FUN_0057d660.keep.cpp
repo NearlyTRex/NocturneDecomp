@@ -223,21 +223,21 @@ LAB_0057d6df:
                   (&this_ptr->cameras[camera_index].rotation_matrix,(CVector3f *)euler_angles);
         fStack_58 = this_ptr->cameras[camera_index].position.x + -500.0f;
         local_54 = this_ptr->cameras[camera_index].position.y + -500.0f;
-        pCVar8 = &this_ptr->cameras[camera_index].box_min;
+        pCVar8 = &this_ptr->cameras[camera_index].box.min;
         fStack_50 = -500.0f + this_ptr->cameras[camera_index].position.z;
         if (pCVar8 != (CVector3f *)&fStack_58) {
           pCVar8->x = fStack_58;
-          this_ptr->cameras[camera_index].box_min.y = local_54;
-          this_ptr->cameras[camera_index].box_min.z = fStack_50;
+          this_ptr->cameras[camera_index].box.min.y = local_54;
+          this_ptr->cameras[camera_index].box.min.z = fStack_50;
         }
         fStack_64 = this_ptr->cameras[camera_index].position.x + 500.0;
         local_60 = this_ptr->cameras[camera_index].position.y + 500.0;
-        pCVar8 = &this_ptr->cameras[camera_index].box_max;
+        pCVar8 = &this_ptr->cameras[camera_index].box.max;
         local_5c = this_ptr->cameras[camera_index].position.z + 500.0;
         if (pCVar8 != (CVector3f *)&fStack_64) {
           pCVar8->x = fStack_64;
-          this_ptr->cameras[camera_index].box_max.y = local_60;
-          this_ptr->cameras[camera_index].box_max.z = local_5c;
+          this_ptr->cameras[camera_index].box.max.y = local_60;
+          this_ptr->cameras[camera_index].box.max.z = local_5c;
         }
         core_setedit_cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340
                   (this_ptr,this_ptr->cameras + camera_index);

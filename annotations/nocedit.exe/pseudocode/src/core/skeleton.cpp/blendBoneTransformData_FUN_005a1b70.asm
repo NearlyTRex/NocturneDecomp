@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
+; void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(SPose *result_pose,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x4]:4   result_root_pos
+; SPose *          Stack[0x4]:4   result_pose
 ; SPose *          Stack[0x8]:4   bone_data_out
 ; SPose *          Stack[0xc]:4   bone_data_in
 ; float            Stack[0x10]:4   blend_weight

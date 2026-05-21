@@ -33,7 +33,7 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
       }
       local_30 = g_ZeroVector.f;
       pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
-      local_30.z = local_30.z + (pCVar2->bounds_max).z;
+      local_30.z = local_30.z + (pCVar2->bounds.max).z;
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                          (&(this_ptr->physics_box).rotation_matrix,&local_18,&local_30);
       local_24 = (this_ptr_01->position).x + pCVar3->x;

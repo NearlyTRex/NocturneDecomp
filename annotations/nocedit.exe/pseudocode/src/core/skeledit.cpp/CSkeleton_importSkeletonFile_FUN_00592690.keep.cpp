@@ -190,7 +190,6 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   int local_5c;
   int local_58;
   float local_54;
-  CSkeleton *local_50;
   CMatrix3x4f *local_4c;
   CMatrix3x4f *local_48;
   char (*local_44) [260];
@@ -402,11 +401,10 @@ LAB_00592a67:
         iVar16 = 0;
         if (0 < this_ptr->bone_count) {
           pSVar14 = local_ded4.bones;
-          local_50 = this_ptr;
           pSVar12 = this_ptr->bone_list;
           do {
             pSVar13 = pSVar12 + 1;
-            local_50->bone_list[0].parent_index = local_ded4.bones[iVar16].parent_index;
+            this_ptr->bone_list[iVar16].parent_index = local_ded4.bones[iVar16].parent_index;
             iVar16 = iVar16 + 1;
             pSVar21 = pSVar14;
             do {
@@ -419,7 +417,6 @@ LAB_00592a67:
               pSVar12 = (SBone *)(pSVar12->bone_name + 2);
             } while (cVar2 != '\0');
             pSVar14 = pSVar14 + 1;
-            local_50 = (CSkeleton *)((local_50->motion_list).state_names[1] + 2);
             pSVar12 = pSVar13;
           } while (iVar16 < this_ptr->bone_count);
         }
@@ -1340,11 +1337,10 @@ LAB_0059518b:
                 if (iVar16 != 0) {
                   iVar16 = 0;
                   if (0 < local_748c.bone_count) {
-                    pCVar19 = &local_748c.bones[0].world_matrix;
                     do {
-                      iVar16 = iVar16 + 1;
+                      pCVar19 = &local_748c.bones[iVar16].world_matrix;
                       core_xform_cpp_multiplyMatrix3x4InPlace_FUN_005f50c0(pCVar19,&local_434);
-                      pCVar19 = (CMatrix3x4f *)&pCVar19[2].m[2].x;
+                      iVar16 = iVar16 + 1;
                     } while (iVar16 < local_748c.bone_count);
                   }
                   core_skeledit_cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80(&local_748c);

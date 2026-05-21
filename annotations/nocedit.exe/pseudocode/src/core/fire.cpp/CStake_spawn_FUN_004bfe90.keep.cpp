@@ -39,9 +39,9 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,CVector3f 
   this_ptr->active = 0;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      (&g_FireEffectFlamingStakeModel);
-  local_2c.x = (pCVar1->bounds_max).x - (pCVar1->bounds_min).x;
-  local_2c.y = (pCVar1->bounds_max).y - (pCVar1->bounds_min).y;
-  local_2c.z = (pCVar1->bounds_max).z - (pCVar1->bounds_min).z;
+  local_2c.x = (pCVar1->bounds.max).x - (pCVar1->bounds.min).x;
+  local_2c.y = (pCVar1->bounds.max).y - (pCVar1->bounds.min).y;
+  local_2c.z = (pCVar1->bounds.max).z - (pCVar1->bounds.min).z;
   local_74 = local_2c;
   core_box_cpp_CBox_setupCorners_FUN_0041dd20
             (&this_ptr->physics_box,spawn_position,orientation_angles,&local_74,2.0);

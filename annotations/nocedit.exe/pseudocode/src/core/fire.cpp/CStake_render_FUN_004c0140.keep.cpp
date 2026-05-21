@@ -22,8 +22,8 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004c0140(CStake *this_ptr)
             (g_CDemonRendererPtr2,orientation,(CVector3f *)0x0);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      (&g_FireEffectFlamingStakeModel);
-  local_24.min = pCVar1->bounds_min;
-  local_24.max = pCVar1->bounds_max;
+  local_24.min = pCVar1->bounds.min;
+  local_24.max = pCVar1->bounds.max;
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(&local_24);
   if (iVar2 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380

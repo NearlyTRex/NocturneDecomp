@@ -25,9 +25,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyF
   if (0 < this_ptr->poly_count) {
     if (this_ptr->disable_backface_culling == 0) {
       if ((0 < this_ptr->frame_count) ||
-         (fVar1 = (this_ptr->bounds_max).x - (this_ptr->bounds_min).x,
-         fVar2 = (this_ptr->bounds_max).y - (this_ptr->bounds_min).y,
-         fVar3 = (this_ptr->bounds_max).z - (this_ptr->bounds_min).z,
+         (fVar1 = (this_ptr->bounds).max.x - (this_ptr->bounds).min.x,
+         fVar2 = (this_ptr->bounds).max.y - (this_ptr->bounds).min.y,
+         fVar3 = (this_ptr->bounds).max.z - (this_ptr->bounds).min.z,
          (float)250 < SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2))) {
         engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
       }

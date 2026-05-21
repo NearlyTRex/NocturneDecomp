@@ -32,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70",
-    "signature": "void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)"
+    "signature": "void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(SPose *result_pose,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)"
   },
   "function_calls": [
     {
@@ -116,8 +116,17 @@
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "result_root_pos->x = local_44.x;",
+      "text": "(result_pose->pose_data).root_position.x = local_44.x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar1) + offsetof(subfield)` equals the real array stride. Replace `pCVar1->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 60,
+      "match": "pCVar1 = (T *)&pCVar1[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar1 = (CVector3f *)&pCVar1[1].y;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -220,10 +229,10 @@
       },
       {
         "is_param": true,
-        "name": "result_root_pos",
+        "name": "result_pose",
         "offset": 4,
         "size": 4,
-        "type": "CVector3f *"
+        "type": "SPose *"
       },
       {
         "is_param": true,

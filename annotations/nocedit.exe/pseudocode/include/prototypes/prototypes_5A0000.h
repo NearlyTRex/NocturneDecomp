@@ -73,7 +73,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderSkeleton_FUN_005a1
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderBones_FUN_005a17e0(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr,int u_offset,int v_offset);
 void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SPose *bone_data,CDeformableModelInstance *instance_ptr);
-void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr);
+void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(SPose *result_pose,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr);
 CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_005a1cf0(char *model_filename);
 void __cdecl core_skeleton_cpp_freeAllModels_FUN_005a1dc0(void);
 CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_005a1df0(char *filename);

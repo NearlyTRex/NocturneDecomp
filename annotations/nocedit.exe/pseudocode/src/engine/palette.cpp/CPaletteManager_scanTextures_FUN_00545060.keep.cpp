@@ -14,7 +14,6 @@ void __cdecl engine_palette_cpp_CPaletteManager_scanTextures_FUN_00545060(CPalet
   SMRGLHeaderExtended *mrgl_data_00;
   int iVar2;
   SMRGLHeaderExtended *pSVar3;
-  SMRGLHeaderExtended *filename_00;
   int *filename;
   int iVar1;
   SMRGLHeaderExtended *local_14;
@@ -24,13 +23,12 @@ void __cdecl engine_palette_cpp_CPaletteManager_scanTextures_FUN_00545060(CPalet
   if (iVar1 == 0x20) {
     iVar1 = 0;
     if (0 < mrgl_data->child_count) {
-      filename_00 = mrgl_data + 2;
       do {
-        mrgl_data_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)filename_00);
+        mrgl_data_00 = engine_model_c_loadModelFile_FUN_00527ec0
+                                 (((SMRGLKeyframeModel *)mrgl_data)->filenames[iVar1]);
         engine_palette_cpp_CPaletteManager_scanTextures_FUN_00545060(this_ptr,mrgl_data_00);
         engine_model_c_freeMRGLData_FUN_005280b0(mrgl_data_00);
         iVar1 = iVar1 + 1;
-        filename_00 = (SMRGLHeaderExtended *)&filename_00[1].base.count;
       } while (iVar1 < mrgl_data->child_count);
     }
   }

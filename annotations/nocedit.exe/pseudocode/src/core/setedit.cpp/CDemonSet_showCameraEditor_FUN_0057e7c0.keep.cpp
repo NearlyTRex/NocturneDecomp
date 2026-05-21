@@ -409,15 +409,15 @@ LAB_0057eb3b:
             (pCVar11->fog).density_multiplier = (pCVar7->fog).density_multiplier;
             (pCVar11->fog).temperature = (pCVar7->fog).temperature;
             pCVar11->reverb_preset = pCVar7->reverb_preset;
-            if (&pCVar11->box_min != &pCVar7->box_min) {
-              (pCVar11->box_min).x = (pCVar7->box_min).x;
-              (pCVar11->box_min).y = (pCVar7->box_min).y;
-              (pCVar11->box_min).z = (pCVar7->box_min).z;
+            if (&pCVar11->box.min != &pCVar7->box.min) {
+              (pCVar11->box.min).x = (pCVar7->box.min).x;
+              (pCVar11->box.min).y = (pCVar7->box.min).y;
+              (pCVar11->box.min).z = (pCVar7->box.min).z;
             }
-            if (&pCVar11->box_max != &pCVar7->box_max) {
-              (pCVar11->box_max).x = (pCVar7->box_max).x;
-              (pCVar11->box_max).y = (pCVar7->box_max).y;
-              (pCVar11->box_max).z = (pCVar7->box_max).z;
+            if (&pCVar11->box.max != &pCVar7->box.max) {
+              (pCVar11->box.max).x = (pCVar7->box.max).x;
+              (pCVar11->box.max).y = (pCVar7->box.max).y;
+              (pCVar11->box.max).z = (pCVar7->box.max).z;
             }
             pCVar11->pvs_count = pCVar7->pvs_count;
             pCVar11->pvs_list = pCVar7->pvs_list;

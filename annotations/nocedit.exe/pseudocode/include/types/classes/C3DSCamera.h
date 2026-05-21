@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SFog.h"
@@ -22,8 +23,7 @@ typedef struct C3DSCamera {
     int fog_enabled; // 0x150
     SFog fog; // 0x154
     int reverb_preset; // 0x178
-    CVector3f box_min; // 0x17c
-    CVector3f box_max; // 0x188
+    CBoundingBox3D box; // 0x17c
     int pvs_count; // 0x194
     int* pvs_list; // 0x198
     int vdir_zone; // 0x19c

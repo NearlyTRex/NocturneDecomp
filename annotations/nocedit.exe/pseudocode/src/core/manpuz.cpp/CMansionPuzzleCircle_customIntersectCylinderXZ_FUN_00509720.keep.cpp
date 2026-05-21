@@ -15,8 +15,8 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_
   CBoundingBox3D local_24;
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->panel_model);
-  local_24.min = pCVar1->bounds_min;
-  local_24.max = pCVar1->bounds_max;
+  local_24.min = pCVar1->bounds.min;
+  local_24.max = pCVar1->bounds.max;
   pSVar2 = this_ptr->panels;
   do {
     while (pSVar2->exists != 0) {

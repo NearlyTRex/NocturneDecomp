@@ -9,9 +9,10 @@
 void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int light_index)
 
 {
+  CVector3f *pCVar2;
   int iVar2;
   CVector3f *pCVar3;
-  int iVar1;
+  int iVar3;
   int iVar4;
   C3DSCamera *this_ptr_00;
   int iVar5;
@@ -64,20 +65,21 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
         core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(&g_CDemonCameraInstance);
         pCVar3 = core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
                            (&g_CDemonCameraInstance,local_74);
-        if (&this_ptr_00->box_min != pCVar3) {
-          (this_ptr_00->box_min).x = pCVar3->x;
-          (this_ptr_00->box_min).y = pCVar3->y;
-          (this_ptr_00->box_min).z = pCVar3->z;
+        if (&this_ptr_00->box != (CBoundingBox3D *)pCVar3) {
+          (this_ptr_00->box).min.x = pCVar3->x;
+          (this_ptr_00->box).min.y = pCVar3->y;
+          (this_ptr_00->box).min.z = pCVar3->z;
         }
-        if (&this_ptr_00->box_max != pCVar3 + 1) {
-          (this_ptr_00->box_max).x = pCVar3[1].x;
-          (this_ptr_00->box_max).y = pCVar3[1].y;
-          (this_ptr_00->box_max).z = pCVar3[1].z;
+        pCVar2 = &(this_ptr_00->box).max;
+        if (pCVar2 != pCVar3 + 1) {
+          pCVar2->x = pCVar3[1].x;
+          (this_ptr_00->box).max.y = pCVar3[1].y;
+          (this_ptr_00->box).max.z = pCVar3[1].z;
         }
         _sprintf(local_174,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)",
-                   (double)local_3c->cameras[0].box_min.x,(double)local_3c->cameras[0].box_min.y,
-                   (double)local_3c->cameras[0].box_min.z,(double)local_3c->cameras[0].box_max.x,
-                   (double)local_3c->cameras[0].box_max.y,(double)local_3c->cameras[0].box_max.z);
+                   (double)local_3c->cameras[0].box.min.x,(double)local_3c->cameras[0].box.min.y,
+                   (double)local_3c->cameras[0].box.min.z,(double)local_3c->cameras[0].box.max.x,
+                   (double)local_3c->cameras[0].box.max.y,(double)local_3c->cameras[0].box.max.z);
         engine_2d_c_drawText_FUN_00401fd0(local_174,0,0x16);
       }
       local_1c = 0x21;
@@ -114,9 +116,9 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
             if (local_3c->cameras[0].is_panning == 0) {
               core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10
                         (&g_CDemonCameraInstance,light_source,(CRect *)0x0);
-              iVar1 = core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450fc0
+              iVar3 = core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450fc0
                                 (&g_CDemonCameraInstance,light_source);
-              *(char *)(local_18 + 0x19b58) = (char)iVar1;
+              *(char *)(local_18 + 0x19b58) = (char)iVar3;
               core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
                         (&g_CDemonCameraInstance,light_source,&local_5c);
               *(int *)(iVar5 + 0x19c54) = local_5c.x_min;
@@ -132,8 +134,8 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
           }
           else if (local_3c->cameras[0].is_panning == 0) {
             core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
-            iVar1 = core_setutil_cpp_C3DSLight_isVisible_FUN_00587df0(this_ptr->lights + local_14);
-            this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;
+            iVar3 = core_setutil_cpp_C3DSLight_isVisible_FUN_00587df0(this_ptr->lights + local_14);
+            this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar3;
             core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
             *(uint *)
              ((int)&this_ptr->lights[local_14].camera_light_bounds[0].x_min + local_40) = 0;

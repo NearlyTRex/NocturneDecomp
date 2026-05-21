@@ -16,13 +16,11 @@ void __cdecl core_wateract_cpp_CWaterActor_updateLocalPositions_FUN_005eb040(CWa
   int iVar4;
   CVector3f local_30;
   CVector3f local_24;
-  CMatrix3x3f *local_18;
-  SWaterVertex *local_14;
   
   iVar4 = 0;
   if (0 < this_ptr->vertex_count) {
-    pCVar2 = &this_ptr->vertices[0].world_position;
     do {
+      pCVar2 = &this_ptr->vertices[iVar4].world_position;
       local_30.x = pCVar2->x - (this_ptr->base).location.position.x;
       pCVar3 = &this_ptr->vertices[iVar4].local_position;
       local_30.y = pCVar2->y - (this_ptr->base).location.position.y;
@@ -33,7 +31,6 @@ void __cdecl core_wateract_cpp_CWaterActor_updateLocalPositions_FUN_005eb040(CWa
         *pCVar3 = *pCVar1;
       }
       iVar4 = iVar4 + 1;
-      pCVar2 = (CVector3f *)&pCVar2[2].z;
     } while (iVar4 < this_ptr->vertex_count);
   }
   return;

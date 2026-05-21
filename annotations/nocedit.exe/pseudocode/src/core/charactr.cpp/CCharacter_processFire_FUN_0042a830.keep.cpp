@@ -22,17 +22,13 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
   uint uVar9;
   uint uVar7;
   int iVar8;
-  CCharacter *pCVar9;
-  CCharacter *pCVar10;
   SFire *pSVar10;
   int iVar11;
-  CLocation *pCVar11;
   CVector3f local_68;
   CVector3f local_5c;
   int local_30;
   int local_2c;
   int local_28;
-  CCharacter *local_24;
   SFire *local_20;
   float fVar1;
   CDeformableModelInstance *this_ptr_00;
@@ -51,13 +47,11 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
       iVar6 = 0;
       if (0 < this_ptr->fire_count) {
         fVar2 = (float)65535;
-        pCVar10 = this_ptr;
         do {
-          iVar11 = pCVar10->fires[0].bone_index;
-          iVar6 = iVar6 + 1;
+          iVar11 = this_ptr->fires[iVar6].bone_index;
           g_BoneBurnIntensity[iVar11] =
-               g_BoneBurnIntensity[iVar11] + (pCVar10->fires[0].size * fVar2) / fVar3;
-          pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);
+               g_BoneBurnIntensity[iVar11] + (this_ptr->fires[iVar6].size * fVar2) / fVar3;
+          iVar6 = iVar6 + 1;
         } while (iVar6 < this_ptr->fire_count);
       }
       iVar6 = 0;
@@ -105,8 +99,6 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
   local_28 = 0;
   if (0 < this_ptr->fire_count) {
     pSVar10 = this_ptr->fires;
-    local_24 = this_ptr;
-    pCVar11 = &this_ptr->flames[0].base.location;
     do {
       if ((this_ptr->model).part_data.visibility_flags[pSVar10->bone_part] != 0) {
         (this_ptr->base).is_transparent = 1;
@@ -116,17 +108,15 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
                             pSVar10->bone_index);
         pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            (&this_ptr->base,&local_68,pCVar6);
-        pCVar11->position = *pCVar8;
+        this_ptr->flames[local_28].base.location.position = *pCVar8;
         fVar3 = (float)0.5;
-        local_24->flames[0].flame_size.x = pSVar10->size * fVar3;
-        local_24->flames[0].flame_size.y = pSVar10->size;
-        local_24->flames[0].flame_size.z = pSVar10->size * fVar3;
-        (*((UActorVTable *)(this_ptr->flames[local_28].base.actor_name + 0x154))->_ub->process)
+        this_ptr->flames[local_28].flame_size.x = pSVar10->size * fVar3;
+        this_ptr->flames[local_28].flame_size.y = pSVar10->size;
+        this_ptr->flames[local_28].flame_size.z = pSVar10->size * fVar3;
+        (*this_ptr->flames[local_28].base.vtable._ub->process)
                   (&this_ptr->flames[local_28].base,delta_time);
       }
       pSVar10 = pSVar10 + 1;
-      pCVar11 = (CLocation *)&pCVar11[0x2a].position.y;
-      local_24 = (CCharacter *)&(local_24->model).transformed_vertices[0x14].y;
       local_28 = local_28 + 1;
     } while (local_28 < this_ptr->fire_count);
   }
@@ -143,12 +133,10 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
           uVar9 = skeleton->bone_list[iVar6].parent_index;
           if (uVar9 == local_20->bone_index) {
             uVar7 = uVar9 ^ local_20->bone_index;
-            pCVar9 = this_ptr;
             if (0 < this_ptr->fire_count) {
               do {
-                if (iVar6 == pCVar9->fires[0].bone_index) break;
+                if (iVar6 == this_ptr->fires[uVar7].bone_index) break;
                 uVar7 = uVar7 + 1;
-                pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
               } while ((int)uVar7 < this_ptr->fire_count);
             }
             if (uVar7 == this_ptr->fire_count) {
@@ -158,12 +146,10 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
         }
         iVar6 = 0;
         if (0 < this_ptr->fire_count) {
-          pCVar10 = this_ptr;
           do {
             if (skeleton->bone_list[local_20->bone_index].parent_index ==
-                pCVar10->fires[0].bone_index) break;
+                this_ptr->fires[iVar6].bone_index) break;
             iVar6 = iVar6 + 1;
-            pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);
           } while (iVar6 < this_ptr->fire_count);
         }
         if (iVar6 == this_ptr->fire_count) {

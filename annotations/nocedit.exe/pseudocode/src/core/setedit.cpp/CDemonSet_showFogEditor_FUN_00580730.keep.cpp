@@ -229,9 +229,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
                           (g_CEditorToolsPtr,"Reset all cameras to master fog setting?");
         if (iVar5 != 0) {
           pCVar5 = &this_ptr->cameras[0].fog.scroll;
-          pSVar7 = &this_ptr->cameras[0].fog;
           pCVar11 = this_ptr;
           do {
+            pSVar7 = &pCVar11->cameras[0].fog;
             pCVar11->cameras[0].fog_enabled = 1;
             (pSVar7->color_index).r = (pSVar3->color_index).r;
             (pSVar7->color_index).g = (this_ptr->scene_fog).color_index.g;
@@ -246,7 +246,6 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
             pSVar7->height_threshold = (this_ptr->scene_fog).height_threshold;
             pSVar7->density_multiplier = (this_ptr->scene_fog).density_multiplier;
             pSVar7->temperature = (this_ptr->scene_fog).temperature;
-            pSVar7 = (SFog *)&pSVar7[0xb].height_threshold;
           } while (pCVar11 != (CDemonSet *)&this_ptr->cameras[0xf9].enabled);
         }
       }

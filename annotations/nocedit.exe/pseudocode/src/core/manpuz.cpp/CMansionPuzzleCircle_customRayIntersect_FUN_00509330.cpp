@@ -40,12 +40,12 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_005093
   float local_18;
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->panel_model);
-  local_cc.min.x = (pCVar1->bounds_min).x;
-  local_cc.min.y = (pCVar1->bounds_min).y;
-  local_cc.min.z = (pCVar1->bounds_min).z;
-  local_cc.max.x = (pCVar1->bounds_max).x;
-  local_cc.max.y = (pCVar1->bounds_max).y;
-  local_cc.max.z = (pCVar1->bounds_max).z;
+  local_cc.min.x = (pCVar1->bounds).min.x;
+  local_cc.min.y = (pCVar1->bounds).min.y;
+  local_cc.min.z = (pCVar1->bounds).min.z;
+  local_cc.max.x = (pCVar1->bounds).max.x;
+  local_cc.max.y = (pCVar1->bounds).max.y;
+  local_cc.max.z = (pCVar1->bounds).max.z;
   local_1c = 1.01;
   local_2c = this_ptr->panels;
   local_20 = 0;
@@ -93,15 +93,16 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_005093
   } while (local_20 != 0x8a0);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      (&this_ptr->reflector_model);
-  if (&local_cc != (CBoundingBox3D *)&pCVar3->bounds_min) {
-    local_cc.min.x = (pCVar3->bounds_min).x;
-    local_cc.min.y = (pCVar3->bounds_min).y;
-    local_cc.min.z = (pCVar3->bounds_min).z;
+  if (&local_cc != &pCVar3->bounds) {
+    local_cc.min.x = (pCVar3->bounds).min.x;
+    local_cc.min.y = (pCVar3->bounds).min.y;
+    local_cc.min.z = (pCVar3->bounds).min.z;
   }
-  if (&local_cc.max != &pCVar3->bounds_max) {
-    local_cc.max.x = (pCVar3->bounds_max).x;
-    local_cc.max.y = (pCVar3->bounds_max).y;
-    local_cc.max.z = (pCVar3->bounds_max).z;
+  pCVar4 = &(pCVar3->bounds).max;
+  if (&local_cc.max != pCVar4) {
+    local_cc.max.x = pCVar4->x;
+    local_cc.max.y = (pCVar3->bounds).max.y;
+    local_cc.max.z = (pCVar3->bounds).max.z;
   }
   pSVar4 = this_ptr->reflectors;
   do {

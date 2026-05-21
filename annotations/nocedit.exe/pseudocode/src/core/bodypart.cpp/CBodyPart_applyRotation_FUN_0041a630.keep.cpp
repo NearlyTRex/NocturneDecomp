@@ -101,8 +101,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a630(CBodyPart *t
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   iVar21 = 0;
   if (0 < this_ptr->fire_count) {
-    pCVar20 = &this_ptr->fires[0].local_position;
     do {
+      pCVar20 = &this_ptr->fires[iVar21].local_position;
       pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                          (&local_a4,&local_64,pCVar20);
       if (pCVar20 != pCVar6) {
@@ -114,13 +114,12 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a630(CBodyPart *t
       pCVar20[3].z = pCVar19->x;
       pCVar20[4].x = pCVar19->y;
       pCVar20[4].y = pCVar19->z;
-      pCVar20 = (CVector3f *)&pCVar20[0x39].y;
     } while (iVar21 < this_ptr->fire_count);
   }
   local_1c = 0;
   if (0 < this_ptr->attached_model_count) {
-    pCVar20 = (CVector3f *)this_ptr->attached_models;
     do {
+      pCVar20 = (CVector3f *)&this_ptr->attached_models[local_1c];
       pCVar19 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                           (&local_a4,&local_58,pCVar20);
       if (pCVar20 != pCVar19) {
@@ -134,7 +133,6 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a630(CBodyPart *t
       if (euler_angles_01 != pCVar19) {
         *euler_angles_01 = *pCVar19;
       }
-      pCVar20 = (CVector3f *)&pCVar20[0x21].z;
       local_1c = local_1c + 1;
     } while (local_1c < this_ptr->attached_model_count);
   }

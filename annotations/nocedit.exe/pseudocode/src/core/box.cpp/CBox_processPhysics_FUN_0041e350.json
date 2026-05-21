@@ -388,6 +388,24 @@
       "type": "unrolled_memset"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar14` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar14) + offsetof(subfield)` equals the real array stride. Replace `pCVar14->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 352,
+      "match": "pCVar14 = (T *)&pCVar14[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar14 = (CVector3f *)&pCVar14[4].y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_6c` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_6c) + offsetof(subfield)` equals the real array stride. Replace `local_6c->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 353,
+      "match": "local_6c = (T *)&local_6c[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_6c = (CVector3f *)&local_6c[4].y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar17` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar17->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 355,
       "match": "pCVar17 = (T *)&(pCVar17->FIELD).SUBFIELD",

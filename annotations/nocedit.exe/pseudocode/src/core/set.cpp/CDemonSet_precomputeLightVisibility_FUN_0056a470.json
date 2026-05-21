@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 410,
-    "complexity_score": 160,
+    "complexity_score": 162,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 15,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 160,
+    "pseudocode_lines": 162,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 570
+    "total_lines": 572
   },
   "cross_references": [
     {
@@ -361,7 +361,7 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 96,
       "match": "(int *)((int)g_MasterLightList",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -370,25 +370,25 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 61,
+      "line": 62,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(this_ptr_00->box_min).x = pCVar3->x;",
+      "text": "(this_ptr_00->box).min.x = pCVar3->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 66,
+      "line": 68,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(this_ptr_00->box_max).x = pCVar3[1].x;",
+      "text": "pCVar2->x = pCVar3[1].x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 132,
+      "line": 134,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -397,7 +397,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 134,
+      "line": 136,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -406,7 +406,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 136,
+      "line": 138,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -415,7 +415,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 138,
+      "line": 140,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",

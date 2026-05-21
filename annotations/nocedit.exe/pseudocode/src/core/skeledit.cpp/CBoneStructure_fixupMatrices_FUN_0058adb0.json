@@ -182,6 +182,15 @@
       "severity": "moderate",
       "text": "local_28 = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `matrix` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*matrix) + offsetof(subfield)` equals the real array stride. Replace `matrix->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 30,
+      "match": "matrix = (T *)&matrix[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "matrix = (CMatrix3x4f *)&matrix[2].m[2].x;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

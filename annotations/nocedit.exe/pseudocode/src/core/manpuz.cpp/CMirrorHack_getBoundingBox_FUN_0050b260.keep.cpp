@@ -14,7 +14,7 @@ CBoundingBox3D * __cdecl core_manpuz_cpp_CMirrorHack_getBoundingBox_FUN_0050b260
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->mirror_model)
   ;
-  out_box->min = pCVar1->bounds_min;
-  out_box->max = pCVar1->bounds_max;
+  out_box->min = pCVar1->bounds.min;
+  out_box->max = pCVar1->bounds.max;
   return out_box;
 }

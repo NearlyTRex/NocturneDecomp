@@ -249,8 +249,8 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
     }
     iVar18 = 0;
     if (0 < this_ptr->scrape_point_count) {
-      pCVar14 = &this_ptr->scrape_points[0].transformed_position;
       do {
+        pCVar14 = &this_ptr->scrape_points[iVar18].transformed_position;
         pCVar16 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                             (&this_ptr->rotation_matrix,
                              (CVector3f *)&local_344.scrape_points[2].previous_position.y,
@@ -264,17 +264,16 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
           pCVar14->z = local_d8;
         }
         iVar18 = iVar18 + 1;
-        pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);
       } while (iVar18 < this_ptr->scrape_point_count);
     }
     pSVar2 = this_ptr->scrape_points;
     local_20 = 0;
-    local_6c = &this_ptr->scrape_points[0].previous_position;
     local_1c = 0;
-    pCVar14 = &this_ptr->scrape_points[0].transformed_position;
     local_28 = pSVar2;
     if (0 < this_ptr->scrape_point_count) {
       do {
+        pCVar14 = &this_ptr->scrape_points[local_20].transformed_position;
+        local_6c = &this_ptr->scrape_points[local_20].previous_position;
         if (this_ptr[1].position.x <= this_ptr->scrape_points[local_20].transformed_position.y) {
           fVar12 = pCVar14->x - local_6c->x;
           fVar8 = pCVar14->y - local_6c->y;
@@ -309,8 +308,6 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
           local_3d0[local_1c] = local_20;
           local_1c = local_1c + 1;
         }
-        pCVar14 = (CVector3f *)&pCVar14[4].y;
-        local_6c = (CVector3f *)&local_6c[4].y;
         local_20 = local_20 + 1;
         local_28 = local_28 + 1;
       } while (local_20 < this_ptr->scrape_point_count);

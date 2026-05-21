@@ -18,21 +18,13 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_barrier.cpp_CBarrier_processInEditor_FUN_00414460
       Suspects: bit_int_float_compare
 
-  core/set.cpp (1 remaining of 87)
-    - core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040
-      Suspects: pointer_cast, pointer_cast, unrolled_memcpy, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast
+  core/box.cpp (1 remaining of 30)
+    - core_box.cpp_CBox_setupN_FUN_0041df50
+      Suspects: shadow_pointer_walk
 
   core/event.cpp (1 remaining of 56)
     - core_event.cpp_CEventList_process_FUN_004aaac0
       Suspects: unrolled_memcpy
-
-  core/boneguy.cpp (1 remaining of 28)
-    - core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40
-      Suspects: bit_int_float_compare
-
-  core/charactr.cpp (1 remaining of 109)
-    - core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
-      Suspects: bit_int_float_compare
 
   core/lever.cpp (1 remaining of 22)
     - core_lever.cpp_CLever_setState_FUN_00504b20
@@ -54,6 +46,16 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0
       Suspects: bit_int_float_compare
 
+  core/bodypart.cpp (1 remaining of 45)
+    - core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0
+      Suspects: shadow_pointer_walk
+
+  core/boneguy.cpp (2 remaining of 28)
+    - core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270
+      Suspects: shadow_pointer_walk, shadow_pointer_walk
+    - core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40
+      Suspects: bit_int_float_compare
+
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
@@ -66,22 +68,19 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_glass.cpp_CGlass_processInEditor_FUN_004eb490                     ( 45 lines)
     core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0                     ( 47 lines)
 
+  [shadow_pointer_walk] - 5 functions
+    core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0          ( 28 lines)
+    core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_0050adf0              ( 31 lines)
+    core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005eafa0        ( 32 lines)
+    core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0                   ( 33 lines)
+    core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0                  ( 47 lines)
+
   [warning_inlined_function] - 1 functions
     shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0        ( 30 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
-
-  core/charactr.cpp (99.1% complete)
-    1 functions remaining:
-      core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (216 lines)
-        Types: ['bit_int_float_compare']
-
-  core/set.cpp (98.9% complete)
-    1 functions remaining:
-      core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (117 lines)
-        Types: ['pointer_cast', 'unrolled_memcpy']
 
   core/game.cpp (98.5% complete)
     1 functions remaining:
@@ -98,10 +97,33 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_event.cpp_CEventList_process_FUN_004aaac0 (53 lines)
         Types: ['unrolled_memcpy']
 
-  core/boneguy.cpp (96.4% complete)
+  core/bodypart.cpp (97.8% complete)
     1 functions remaining:
-      core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 (162 lines)
+      core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0 (47 lines)
+        Types: ['shadow_pointer_walk']
+
+  core/charactr.cpp (97.2% complete)
+    3 functions remaining:
+      core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (216 lines)
         Types: ['bit_int_float_compare']
+      core_charactr.cpp_CCharacter_renderFlames_FUN_0042b110 (23 lines)
+        Types: ['shadow_pointer_walk']
+      core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 (33 lines)
+        Types: ['shadow_pointer_walk']
+
+  core/box.cpp (96.7% complete)
+    1 functions remaining:
+      core_box.cpp_CBox_setupN_FUN_0041df50 (78 lines)
+        Types: ['shadow_pointer_walk']
+
+  core/set.cpp (96.6% complete)
+    3 functions remaining:
+      core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (117 lines)
+        Types: ['pointer_cast', 'unrolled_memcpy']
+      core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0 (30 lines)
+        Types: ['shadow_pointer_walk']
+      core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0 (28 lines)
+        Types: ['shadow_pointer_walk']
 
   core/teleport.cpp (95.7% complete)
     1 functions remaining:
@@ -139,6 +161,13 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_barrier.cpp_CBarrier_processInEditor_FUN_00414460 (54 lines)
         Types: ['bit_int_float_compare']
 
+  core/boneguy.cpp (92.9% complete)
+    2 functions remaining:
+      core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270 (58 lines)
+        Types: ['shadow_pointer_walk']
+      core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 (162 lines)
+        Types: ['bit_int_float_compare']
+
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
@@ -154,7 +183,6 @@ ALL REMAINING FILES
   core/frankgen.cpp                                             83.3%  (20/24 clean, 4 remaining)
   engine/pod.cpp                                                82.4%  (28/34 clean, 6 remaining)
   engine/3d.c                                                   81.7%  (85/104 clean, 19 remaining)
-  core/manpuz.cpp                                               81.0%  (51/63 clean, 12 remaining)
   shape/cramtex.cpp                                             81.0%  (17/21 clean, 4 remaining)
   core/mobster.cpp                                              80.8%  (21/26 clean, 5 remaining)
   core/curtain.cpp                                              80.8%  (21/26 clean, 5 remaining)
@@ -165,8 +193,8 @@ ALL REMAINING FILES
   core/dfilter.cpp                                              78.9%  (15/19 clean, 4 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
   core/trigger.cpp                                              78.3%  (18/23 clean, 5 remaining)
-  core/wateract.cpp                                             78.3%  (18/23 clean, 5 remaining)
   core/netgame.cpp                                              78.1%  (50/64 clean, 14 remaining)
+  core/manpuz.cpp                                               77.8%  (49/63 clean, 14 remaining)
   core/flies.cpp                                                77.3%  (17/22 clean, 5 remaining)
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
   core/conveyor.cpp                                             76.5%  (13/17 clean, 4 remaining)
@@ -175,6 +203,7 @@ ALL REMAINING FILES
   core/setutil.cpp                                              75.6%  (31/41 clean, 10 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
   core/cloth.cpp                                                74.5%  (41/55 clean, 14 remaining)
+  core/wateract.cpp                                             73.9%  (17/23 clean, 6 remaining)
   core/gabriela.cpp                                             73.7%  (28/38 clean, 10 remaining)
   core/dpart.cpp                                                73.3%  (11/15 clean, 4 remaining)
   core/menu.cpp                                                 72.7%  (16/22 clean, 6 remaining)

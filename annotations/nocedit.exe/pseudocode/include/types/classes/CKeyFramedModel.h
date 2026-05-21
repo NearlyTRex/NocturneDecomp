@@ -1,13 +1,13 @@
 #pragma once
 
 // Forward declarations
-struct CBoundingBox3D;
 struct CDemonTriangle;
 struct CVector3i;
 struct SMRGLPrimitiveQuad;
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CKeyFramedModelPart.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
@@ -30,8 +30,7 @@ typedef struct CKeyFramedModel {
     SMRGLTextureLod texture_list[300]; // 0x124
     int part_count; // 0x5584, max=30
     CKeyFramedModelPart part_list[30]; // 0x5588
-    CVector3f bounds_min; // 0x5678
-    CVector3f bounds_max; // 0x5684
+    CBoundingBox3D bounds; // 0x5678
     struct CBoundingBox3D* frame_bounds; // 0x5690
     int collision_triangle_count; // 0x5694
     struct CDemonTriangle* collision_triangle_list; // 0x5698
