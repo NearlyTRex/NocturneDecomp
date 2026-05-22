@@ -58,13 +58,6 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
     return;
   }
 
-  // Clamp reciprocal-table index to the last filled entry (1599). The original
-  // binary's Watcom `[ECX + base+4]` pattern lets `pixel_count + 1` reach 1600+
-  // at the 1600-pixel max resolution, spilling into adjacent globals and
-  // producing garbage interpolation deltas. Clamping uses the last valid
-  // reciprocal instead.
-  int recip_idx = (pixel_count + 1 < 1600) ? pixel_count + 1 : 1599;
-
   // Diff from 16-bit: screen_ptr stride is 4 bytes (uint *) instead of 2 (ushort *).
   screen_ptr = (uint *)g_ScreenBufferArray[scanline_y] + left_x;
   zbuf_ptr   = (int *)g_ZBufferScanlineArray[scanline_y] + left_x;
@@ -76,7 +69,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
   if (g_RenderStateFlags.dword == RENDER_DEPTH_WRITE) {
     start_w = (lo->base).depth_current;
     delta_w = (int)((((longlong)(hi->base).depth_current - (longlong)start_w)
-                     * (longlong)(int)g_ReciprocalLookupTable[recip_idx]) >> 32);
+                     * (longlong)(int)g_ReciprocalLookupTable[pixel_count + 1]) >> 32);
     g_StartDepthW = start_w;
     g_HardwareDeltaDepthZ = delta_w;
     for (i = 0; i < pixel_count; i++) {
@@ -86,7 +79,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
     return;
   }
 
-  recip = (int)g_ReciprocalLookupTable[recip_idx];
+  recip = (int)g_ReciprocalLookupTable[pixel_count + 1];
 
   // Texture U/V setup — perspective-corrected vs linear.
   if (g_VertexPreprocessMode == PREPROCESS_PERSPECTIVE_TEXTURE) {

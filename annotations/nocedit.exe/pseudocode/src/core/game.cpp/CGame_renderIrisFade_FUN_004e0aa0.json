@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 57,
+    "complexity_score": 42,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 42,
-    "suspect_count": 1,
-    "suspect_types": [
-      "bit_int_float_compare"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 138
   },
   "cross_references": [
@@ -187,6 +185,15 @@
       "severity": "moderate",
       "text": "puVar3 = *(uint **)((int)g_ScreenBufferArray + iVar4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f7fffff is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 14,
+      "match": "0x3f7fffff < (int)g_IrisFadeRadius))",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((g_IrisFadeType < 4) && (g_IrisFadeType != 1)) && (0x3f7fffff < (int)g_IrisFadeRadius)) {",
+      "type": "bit_int_float_compare"
     }
   ],
   "stack_frame": {
@@ -205,14 +212,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f7fffff is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 14,
-      "match": "0x3f7fffff < (int)g_IrisFadeRadius))",
-      "severity": "moderate",
-      "text": "if (((g_IrisFadeType < 4) && (g_IrisFadeType != 1)) && (0x3f7fffff < (int)g_IrisFadeRadius)) {",
-      "type": "bit_int_float_compare"
-    }
-  ]
+  "suspects": []
 }

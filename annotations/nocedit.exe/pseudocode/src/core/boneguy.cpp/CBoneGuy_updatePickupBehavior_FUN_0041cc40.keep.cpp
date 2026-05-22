@@ -126,7 +126,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(CBoneGuy
                         (this_ptr->base).base.base.location.position.z;
                 fVar3 = fVar3 * fVar3;
                 fVar2 = SQRT(fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3);
-                if (((float)5 <= fVar2) && ((int)fVar2 < 0x41700001)) {
+                if (((float)5 <= fVar2) && (fVar2 <= 15.0)) {
                   auStack_d4[local_2c] = pCVar1;
                   local_2c = local_2c + 1;
                   if (10 <= local_2c) break;

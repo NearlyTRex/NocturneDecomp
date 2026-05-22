@@ -16,7 +16,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_0049169
   uint uVar4;
   SSoftwareEdge *pSVar5;
   uint uVar6;
-  
+
   uVar3 = (right_edge->base).x_current;
   uVar4 = (left_edge->base).x_current;
   uVar1 = uVar3;

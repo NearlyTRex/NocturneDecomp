@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 437,
-    "complexity_score": 177,
+    "complexity_score": 162,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 162,
-    "suspect_count": 1,
-    "suspect_types": [
-      "bit_int_float_compare"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 599
   },
   "cross_references": [
@@ -276,6 +274,15 @@
       "severity": "moderate",
       "text": "*(CDemonActor **)((int)auStack_d4 + iVar6) = pCVar1;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x41700001 is the IEEE 754 bit pattern of 15f. Rewrite in a .keep as a plain float compare against 15f.",
+      "line": 133,
+      "match": "(int)fVar2 < 0x41700001",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((float)5 <= fVar2) && ((int)fVar2 < 0x41700001)) {",
+      "type": "bit_int_float_compare"
     }
   ],
   "stack_frame": {
@@ -444,14 +451,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x41700001 is the IEEE 754 bit pattern of 15f. Rewrite in a .keep as a plain float compare against 15f.",
-      "line": 133,
-      "match": "(int)fVar2 < 0x41700001",
-      "severity": "moderate",
-      "text": "if (((float)5 <= fVar2) && ((int)fVar2 < 0x41700001)) {",
-      "type": "bit_int_float_compare"
-    }
-  ]
+  "suspects": []
 }

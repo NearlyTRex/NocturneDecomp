@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart *this_ptr,char *model_name,CVector3i *scale,CVector3i *position)
+; void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart *this_ptr,char *model_name,CVector3f *scale,CVector3f *position)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   model_name
-; CVector3i *      Stack[0xc]:4   scale
-; CVector3i *      Stack[0x10]:4   position
+; CVector3f *      Stack[0xc]:4   scale
+; CVector3f *      Stack[0x10]:4   position
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 at 0042bee1

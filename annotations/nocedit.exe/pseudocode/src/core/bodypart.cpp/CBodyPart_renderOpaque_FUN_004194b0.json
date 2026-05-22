@@ -4,20 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 62,
+    "complexity_score": 46,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
-    "total_lines": 170
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 46,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 169
   },
   "cross_references": [],
   "function": {
@@ -136,6 +134,17 @@
     },
     "pcode_op_count": 453
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `position` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*position) + offsetof(subfield)` equals the real array stride. Replace `position->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 35,
+      "match": "position = (T *)&position[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "position = (CVector3f *)&position[0x21].z;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 40,
     "local_size": 36,
@@ -166,16 +175,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `position` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*position) + offsetof(subfield)` equals the real array stride. Replace `position->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 36,
-      "match": "position = (T *)&position[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "position = (CVector3f *)&position[0x21].z;",
-      "type": "shadow_pointer_walk"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 793,
-    "complexity_score": 595,
+    "complexity_score": 468,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 53,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 490,
-    "suspect_count": 10,
-    "suspect_types": [
-      "warning_unreachable"
-    ],
-    "total_lines": 1283
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 468,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 1261
   },
   "cross_references": [
     {
@@ -49,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_xform.cpp_transformAndClipGeometry_FUN_005f8550",
-    "signature": "SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *vertex_indices)"
+    "signature": "void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *vertex_indices)"
   },
   "function_calls": [
     {
@@ -670,80 +668,98 @@
   },
   "resolved_suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EAX",
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
       "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX;",
-      "type": "extra_output"
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8bef) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_EAX_00",
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
       "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_00;",
-      "type": "extra_output"
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8b55) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_EAX_01",
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
       "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_01;",
-      "type": "extra_output"
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8abb) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_EAX_02",
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
       "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_02;",
-      "type": "extra_output"
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8a21) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_EAX_03",
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
       "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_03;",
-      "type": "extra_output"
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f85b8) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EAX_04",
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
       "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_04;",
-      "type": "extra_output"
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8641) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EAX_05",
+      "description": "Unreachable code block removed",
+      "line": 8,
+      "match": "WARNING: Removing unreachable block",
       "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_05;",
-      "type": "extra_output"
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f86f8) */",
+      "type": "warning_unreachable"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
-      "match": "extraout_EAX_06",
+      "description": "Unreachable code block removed",
+      "line": 9,
+      "match": "WARNING: Removing unreachable block",
       "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_06;",
-      "type": "extra_output"
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f87c2) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 10,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8887) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 11,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8952) */",
+      "type": "warning_unreachable"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 84,
+      "line": 76,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -752,7 +768,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 85,
+      "line": 77,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -761,7 +777,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 120,
+      "line": 112,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -770,7 +786,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 121,
+      "line": 113,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -779,7 +795,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 163,
+      "line": 153,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -788,7 +804,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 164,
+      "line": 154,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -796,17 +812,8 @@
       "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 184,
-      "match": "extraout_EAX",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 191,
+      "line": 180,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -815,7 +822,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 192,
+      "line": 181,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -823,17 +830,8 @@
       "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 210,
-      "match": "extraout_EAX_00",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 240,
+      "line": 226,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -842,7 +840,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 241,
+      "line": 227,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -850,17 +848,8 @@
       "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 261,
-      "match": "extraout_EAX_01",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_01;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 268,
+      "line": 253,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -869,7 +858,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 269,
+      "line": 254,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -877,17 +866,8 @@
       "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 288,
-      "match": "extraout_EAX_02",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_02;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 316,
+      "line": 299,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -896,7 +876,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 317,
+      "line": 300,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -904,17 +884,8 @@
       "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 339,
-      "match": "extraout_EAX_03",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_03;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 346,
+      "line": 328,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -923,7 +894,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 347,
+      "line": 329,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -931,17 +902,8 @@
       "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 367,
-      "match": "extraout_EAX_04",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_04;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 395,
+      "line": 375,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -950,7 +912,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 396,
+      "line": 376,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -958,17 +920,8 @@
       "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 419,
-      "match": "extraout_EAX_05",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_05;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 426,
+      "line": 405,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -977,7 +930,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 427,
+      "line": 406,
       "match": "._4_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -985,44 +938,17 @@
       "type": "unknown_field"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 448,
-      "match": "extraout_EAX_06",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_06;",
-      "type": "extra_output"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 70,
+      "line": 92,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 100,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `local_24->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 70,
-      "match": "local_24 = (T *)((int)&(local_24->FIELD).SUBFIELD + CONST)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);",
-      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 86,
+      "line": 78,
       "match": "pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1030,17 +956,17 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 90,
-      "match": "pSVar5 = (T *)&(pSVar5->FIELD).SUBFIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar6` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 82,
+      "match": "pSVar6 = (T *)&(pSVar6->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "pSVar5 = (SRenderVertex *)&(pSVar5->projected_vertex).transformed_z;",
+      "text": "pSVar6 = (SRenderVertex *)&(pSVar6->projected_vertex).transformed_z;",
       "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `local_24->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 100,
+      "line": 92,
       "match": "local_24 = (T *)((int)&(local_24->FIELD).SUBFIELD + CONST)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1049,7 +975,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 122,
+      "line": 114,
       "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1058,7 +984,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 126,
+      "line": 118,
       "match": "pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1067,7 +993,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 165,
+      "line": 155,
       "match": "pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1076,7 +1002,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 169,
+      "line": 159,
       "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1085,7 +1011,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 193,
+      "line": 182,
       "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1094,7 +1020,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar9` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 197,
+      "line": 186,
       "match": "pSVar9 = (T *)&(pSVar9->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1103,7 +1029,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 242,
+      "line": 228,
       "match": "pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1112,7 +1038,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 246,
+      "line": 232,
       "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1121,7 +1047,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar19` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar19->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 270,
+      "line": 255,
       "match": "pSVar19 = (T *)&(pSVar19->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1130,7 +1056,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar21` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar21->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 274,
+      "line": 259,
       "match": "pSVar21 = (T *)&(pSVar21->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1139,7 +1065,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 318,
+      "line": 301,
       "match": "pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1148,7 +1074,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 322,
+      "line": 305,
       "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1157,7 +1083,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 348,
+      "line": 330,
       "match": "pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1166,7 +1092,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 352,
+      "line": 334,
       "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1175,7 +1101,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 397,
+      "line": 377,
       "match": "pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1184,7 +1110,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 401,
+      "line": 381,
       "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1193,7 +1119,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar20` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar20->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 428,
+      "line": 407,
       "match": "pSVar20 = (T *)&(pSVar20->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1202,7 +1128,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 432,
+      "line": 411,
       "match": "pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1275,111 +1201,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "transformAndClipGeometry_FUN_005f8550.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 10,
-          "line": 281,
-          "message": "Uninitialized variable: local_24",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f8bef) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f8b55) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 4,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f8abb) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 5,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f8a21) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 6,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f85b8) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 7,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f8641) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 8,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f86f8) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 9,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f87c2) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 10,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f8887) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 11,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f8952) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Uninitialized variable: local_24",
-      "line": 281,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "return local_24;",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

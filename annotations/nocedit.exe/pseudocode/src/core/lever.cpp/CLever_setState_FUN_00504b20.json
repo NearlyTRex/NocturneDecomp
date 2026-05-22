@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 51,
+    "complexity_score": 36,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 1,
-    "suspect_types": [
-      "bit_int_float_compare"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 185
   },
   "cross_references": [
@@ -231,6 +229,15 @@
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar1),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 19,
+      "match": "(int)new_state < 0x3f800000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(((int)new_state < 0x3f800000 && (1.0 <= this_ptr->param)))) {",
+      "type": "bit_int_float_compare"
     }
   ],
   "stack_frame": {
@@ -256,14 +263,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
-      "line": 19,
-      "match": "(int)new_state < 0x3f800000",
-      "severity": "moderate",
-      "text": "(((int)new_state < 0x3f800000 && (1.0 <= this_ptr->param)))) {",
-      "type": "bit_int_float_compare"
-    }
-  ]
+  "suspects": []
 }

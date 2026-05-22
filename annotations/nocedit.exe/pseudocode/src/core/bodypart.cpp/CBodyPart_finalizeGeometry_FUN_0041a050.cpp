@@ -95,10 +95,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
     if (0 < this_ptr->attached_model_count) {
       pSVar6 = this_ptr->attached_models;
       do {
-        (pSVar6->scale).x = (int)((float)(pSVar6->scale).x + local_6c.x);
-        (pSVar6->scale).y = (int)((float)(pSVar6->scale).y + local_6c.y);
+        (pSVar6->scale).x = (pSVar6->scale).x + local_6c.x;
+        (pSVar6->scale).y = (pSVar6->scale).y + local_6c.y;
         iVar9 = iVar9 + 1;
-        (pSVar6->scale).z = (int)((float)(pSVar6->scale).z + local_6c.z);
+        (pSVar6->scale).z = (pSVar6->scale).z + local_6c.z;
         pSVar6 = pSVar6 + 1;
       } while (iVar9 < this_ptr->attached_model_count);
     }

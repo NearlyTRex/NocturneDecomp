@@ -165,6 +165,9 @@ extern SIGNAL_HANDLER_TYPE g_GlobalSignalHandlers[26];
 // SIOControlBlock*
 extern SIOControlBlock* g_IOControlBlock;
 
+// SMRGLPrimitiveQuad
+extern SMRGLPrimitiveQuad g_WaterRenderQuad;
+
 // SMRGLPrimitiveQuad*
 extern SMRGLPrimitiveQuad* g_BoundingBoxQuadTemplateEnd;
 
@@ -185,9 +188,6 @@ extern SMRGLTextureBasic g_RainDropTexture;
 extern SMRGLTextureBasic g_RainSplashTexture;
 extern SMRGLTextureBasic g_SnowflakeTexture;
 extern SMRGLTextureBasic SMRGLTextureBasic_0068495c;
-
-// SMRGLTextureBasic*
-extern SMRGLTextureBasic* g_WaterTexturesEnd;
 
 // SMRGLTextureBasic[16]
 extern SMRGLTextureBasic g_WaterTextures[16];

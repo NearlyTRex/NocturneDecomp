@@ -245,4 +245,4 @@ void __cdecl clampClippedVertices(void);
 
 // Original: core_xform.cpp_transformAndClipGeometry_FUN_005f8550
 // Address: 005f8550
-SRenderVertex * __cdecl transformAndClipGeometry(int vertex_count,int *vertex_indices);
+void __cdecl transformAndClipGeometry(int vertex_count,int *vertex_indices);

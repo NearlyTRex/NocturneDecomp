@@ -59,7 +59,7 @@ void __cdecl core_teleport_cpp_CTeleport_processInEditor_FUN_005dabe0(CTeleport 
     if (iVar2 != 0) {
       (this_ptr->trigger_extents).z = (this_ptr->trigger_extents).z + fVar1;
     }
-    if ((int)(this_ptr->trigger_extents).x < 0x3f000000) {
+    if ((this_ptr->trigger_extents).x < 0.5) {
       (this_ptr->trigger_extents).x = 0.5;
     }
     if ((this_ptr->trigger_extents).y < 0.5) {

@@ -5,40 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5815 (90.1%)
-With suspects: 639
-Total suspects: 3438
-
-====================================================================================================
-core_barrier.cpp_CBarrier_processInEditor_FUN_00414460 (1 suspect)
-  File: core/barrier.cpp
-====================================================================================================
-  Line 46 [bit_int_float_compare]: if ((int)(this_ptr->size).x < 0x3f000000) {
-
-====================================================================================================
-core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0 (1 suspect)
-  File: core/bodypart.cpp
-====================================================================================================
-  Line 36 [shadow_pointer_walk]: position = (CVector3f *)&position[0x21].z;
-
-====================================================================================================
-core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270 (2 suspects)
-  File: core/boneguy.cpp
-====================================================================================================
-  Line 47 [shadow_pointer_walk]: quat_ptr = (CQuaternion4f *)&quat_ptr[4].y;
-  Line 51 [shadow_pointer_walk]: local_18 = (CQuaternion4f *)&local_18[4].y;
-
-====================================================================================================
-core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 (1 suspect)
-  File: core/boneguy.cpp
-====================================================================================================
-  Line 133 [bit_int_float_compare]: if (((float)5 <= fVar2) && ((int)fVar2 < 0x41700001)) {
-
-====================================================================================================
-core_box.cpp_CBox_setupN_FUN_0041df50 (1 suspect)
-  File: core/box.cpp
-====================================================================================================
-  Line 74 [shadow_pointer_walk]: pCVar3 = (CVector3f *)&pCVar3[4].y;
+Clean: 5825 (90.3%)
+With suspects: 629
+Total suspects: 3417
 
 ====================================================================================================
 core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0 (1 suspect)
@@ -1226,12 +1195,6 @@ core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (15 suspects)
   Line 112 [unrolled_memcpy]: (pUVar5->vec).x = (pUVar6->vec).x;
 
 ====================================================================================================
-core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0 (1 suspect)
-  File: core/game.cpp
-====================================================================================================
-  Line 14 [bit_int_float_compare]: if (((g_IrisFadeType < 4) && (g_IrisFadeType != 1)) && (0x3f7fffff < (int)g_IrisFadeRadius)) {
-
-====================================================================================================
 core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004e82d0 (1 suspect)
   File: core/ghoul.cpp
 ====================================================================================================
@@ -1563,12 +1526,6 @@ core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (1 suspect)
   File: core/ladder.cpp
 ====================================================================================================
   Line 33 [decompiler_intrinsic]: CStack_30.y = (int)ROUND(fStack_y * 256.0f);
-
-====================================================================================================
-core_lever.cpp_CLever_setState_FUN_00504b20 (1 suspect)
-  File: core/lever.cpp
-====================================================================================================
-  Line 19 [bit_int_float_compare]: (((int)new_state < 0x3f800000 && (1.0 <= this_ptr->param)))) {
 
 ====================================================================================================
 core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0 (1 suspect)
@@ -3839,12 +3796,6 @@ core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 (4 suspects)
   Line 258 [bit_int_float_compare]: if ((((int)fVar9 < 0x3f28f5c3) && (0x3f28f5c2 < (int)(this_ptr->base).base.layer_action_t)) &&
 
 ====================================================================================================
-core_teleport.cpp_CTeleport_processInEditor_FUN_005dabe0 (1 suspect)
-  File: core/teleport.cpp
-====================================================================================================
-  Line 54 [bit_int_float_compare]: if ((int)(this_ptr->trigger_extents).x < 0x3f000000) {
-
-====================================================================================================
 core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (6 suspects)
   File: core/tentacle.cpp
 ====================================================================================================
@@ -3992,12 +3943,6 @@ core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50 (2 suspects)
   Line 118 [unrolled_memcpy]: CStack_90.x = CStack_48.x;
 
 ====================================================================================================
-core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 (1 suspect)
-  File: core/tvbat.cpp
-====================================================================================================
-  Line 52 [bit_int_float_compare]: if ((int)this_ptr->max_distance < 0x3f000000) {
-
-====================================================================================================
 core_tvbat.cpp_CTVBat_process_FUN_005e4210 (4 suspects)
   File: core/tvbat.cpp
 ====================================================================================================
@@ -4143,22 +4088,6 @@ core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 (1 suspect)
   File: core/xform.cpp
 ====================================================================================================
   Line 23 [decompiler_intrinsic]: inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
-
-====================================================================================================
-core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (11 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8bef) */
-  Line 3 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8b55) */
-  Line 4 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8abb) */
-  Line 5 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8a21) */
-  Line 6 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f85b8) */
-  Line 7 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8641) */
-  Line 8 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f86f8) */
-  Line 9 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f87c2) */
-  Line 10 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8887) */
-  Line 11 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8952) */
-  Line 281 [static_uninitvar]: return local_24;
 
 ====================================================================================================
 core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0 (4 suspects)

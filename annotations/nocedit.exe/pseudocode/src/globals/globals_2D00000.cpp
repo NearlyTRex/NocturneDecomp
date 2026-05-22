@@ -110,8 +110,8 @@ int g_EventDryRun = {};
 // uchar[768]
 uchar g_DefaultPalette[768] = {};
 
-// uint[1600]
-uint g_ReciprocalLookupTable[1600] = {};
+// uint[1601]
+uint g_ReciprocalLookupTable[1601] = {};
 
 // uint[256]
 uint g_Hardware32BitPalette[256] = {};

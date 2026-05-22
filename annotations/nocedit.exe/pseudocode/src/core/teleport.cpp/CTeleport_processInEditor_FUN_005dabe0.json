@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 78,
+    "complexity_score": 63,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 63,
-    "suspect_count": 1,
-    "suspect_types": [
-      "bit_int_float_compare"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 257
   },
   "cross_references": [],
@@ -168,6 +166,17 @@
     },
     "pcode_op_count": 856
   },
+  "resolved_suspects": [
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f000000 is the IEEE 754 bit pattern of 0.5f. Rewrite in a .keep as a plain float compare against 0.5f.",
+      "line": 54,
+      "match": "(int)(this_ptr->trigger_extents).x < 0x3f000000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int)(this_ptr->trigger_extents).x < 0x3f000000) {",
+      "type": "bit_int_float_compare"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -184,16 +193,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f000000 is the IEEE 754 bit pattern of 0.5f. Rewrite in a .keep as a plain float compare against 0.5f.",
-      "line": 54,
-      "match": "(int)(this_ptr->trigger_extents).x < 0x3f000000",
-      "severity": "moderate",
-      "text": "if ((int)(this_ptr->trigger_extents).x < 0x3f000000) {",
-      "type": "bit_int_float_compare"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

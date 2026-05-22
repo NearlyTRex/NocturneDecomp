@@ -53,7 +53,7 @@ void __cdecl core_tvbat_cpp_CTVBat_processInEditor_FUN_005e5260(CTVBat *this_ptr
   if (iVar3 != 0) {
     this_ptr->max_distance = this_ptr->max_distance + fVar2;
   }
-  if ((int)this_ptr->max_distance < 0x3f000000) {
+  if (this_ptr->max_distance < 0.5) {
     this_ptr->max_distance = 0.5;
   }
   if (this_ptr->max_height < 0.5) {

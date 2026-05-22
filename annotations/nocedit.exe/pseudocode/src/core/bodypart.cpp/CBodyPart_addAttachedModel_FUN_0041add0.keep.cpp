@@ -3,15 +3,15 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[0041add0, 0041ae4b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart *this_ptr,char *model_name,CVector3i *scale,CVector3i *position)
+// Signature: void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart *this_ptr,char *model_name,CVector3f *scale,CVector3f *position)
 
 #include "nocturne.h"
 
-void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart *this_ptr,char *model_name,CVector3i *scale,CVector3i *position)
+void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart *this_ptr,char *model_name,CVector3f *scale,CVector3f *position)
 
 {
   int iVar1;
-  CVector3i *pCVar2;
+  CVector3f *pCVar2;
   
   iVar1 = this_ptr->attached_model_count;
   if (iVar1 < 3) {

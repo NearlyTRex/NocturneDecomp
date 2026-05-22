@@ -8,17 +8,17 @@ Total globals analyzed:      19526
 Gaps found:                  1765
   With exact size bounds:    1674
   With estimated bounds:     91
-Total gap bytes:             13,376,263
-  Exact gap bytes:           13,367,225
+Total gap bytes:             13,376,195
+  Exact gap bytes:           13,367,157
 Overlaps (size <= 0):        13365
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
   1-4 bytes (likely padding/alignment)          493
-  5-16 bytes (small vars)                       527
+  5-16 bytes (small vars)                       528
   17-64 bytes (structs/small arrays)            334
-  65-256 bytes (medium data)                    126
+  65-256 bytes (medium data)                    125
   257-1024 bytes (large structs/arrays)         91
   1-4 KB                                        70
   4-64 KB                                       107
@@ -551,7 +551,6 @@ ALL EXACT GAPS (1674) - size bounds are known precisely
           88 bytes  at 0x00661ac8  between g_CMolochTypeInfo              and g_SBatTypeInfo
           87 bytes  at 0x00625537  between s_k_value_must_be_a_power_of_2 and s_isBroken_0062558e
           84 bytes  at 0x00662968  between g_SRaytraceStateTypeInfo       and g_VDCoordinateScaleFactor
-          84 bytes  at 0x0068467c  between g_WaterTexturesEnd             and g_WaterActorStateTypePairs
           84 bytes  at 0x00685218  between g_MaxHandleCount               and g_IOControlBlock
           84 bytes  at 0x02f46848  between g_Mp3WindowTables[1][19]+4     and g_Mp3WindowTables[1][30]+4
           84 bytes  at 0x02f469f8  between g_Mp3WindowTables[3][1]+4      and g_Mp3WindowTables[3][12]+4
@@ -979,6 +978,7 @@ ALL EXACT GAPS (1674) - size bounds are known precisely
           16 bytes  at 0x006843e8  between g_CTriggerClassVersion         and g_CTerrainPtr
           16 bytes  at 0x00684440  between g_CTurretClassVersion          and g_CTVBatClassVersion
           16 bytes  at 0x00684454  between g_CTVBatClassVersion           and g_CVampireBossVersion
+          16 bytes  at 0x006846c0  between g_WaterRenderQuad              and g_WaterActorStateTypePairs
           16 bytes  at 0x00684948  between g_SnowflakeTexture             and g_CWerewolfClassVersion
           16 bytes  at 0x006849b4  between g_CZombieClassVersion          and g_CharacterClassificationTable
           16 bytes  at 0x00685460  between g_AlphaNumericCharacters2      and g_ConsoleInputState

@@ -4,6 +4,10 @@
 // SHIM CONFIG — build-time toggles for shim/keep behavior
 // =============================================================================
 
+// Numeric magnitude constants used by keep/shim code (kept separate from the
+// behavior toggles below).
+#include "shim_constants.h"
+
 // NOCTURNE_AUTHENTIC_WINDOWS
 //   1: game behaves like the original Windows binary. Main loop pauses while
 //      the window is unfocused, the window auto-minimizes on deactivation,

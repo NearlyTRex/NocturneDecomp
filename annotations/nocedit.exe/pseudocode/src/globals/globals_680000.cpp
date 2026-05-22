@@ -2936,6 +2936,36 @@ SIGNAL_HANDLER_TYPE g_GlobalSignalHandlers[26] = {
 // SIOControlBlock*
 SIOControlBlock* g_IOControlBlock = nullptr;
 
+// SMRGLPrimitiveQuad
+SMRGLPrimitiveQuad g_WaterRenderQuad = {
+    .base = {
+        .base = {.type = 0x00000000, .count = 0x00000004},
+        .surface_normal = {
+            .A = 0x00000000,
+            .B = 0x00000000,
+            .C = 0x00000000,
+            .D = 0x00000000
+        }
+    },
+    .vertices = {{
+        .vertex_index = 0x00000000,
+        .texture_u = 0x00000000,
+        .texture_v = 0x00000000
+    }, {
+        .vertex_index = 0x00000001,
+        .texture_u = 0x01000000,
+        .texture_v = 0x00000000
+    }, {
+        .vertex_index = 0x00000002,
+        .texture_u = 0x01000000,
+        .texture_v = 0x01000000
+    }, {
+        .vertex_index = 0x00000003,
+        .texture_u = 0x00000000,
+        .texture_v = 0x01000000
+    }}
+};
+
 // SMRGLPrimitiveQuad*
 SMRGLPrimitiveQuad* g_BoundingBoxQuadTemplateEnd = nullptr;
 
@@ -3164,9 +3194,6 @@ SMRGLTextureBasic SMRGLTextureBasic_0068495c = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "REDSPARK.RAW"
 };
-
-// SMRGLTextureBasic*
-SMRGLTextureBasic* g_WaterTexturesEnd = nullptr;
 
 // SMRGLTextureBasic[16]
 SMRGLTextureBasic g_WaterTextures[16] = {

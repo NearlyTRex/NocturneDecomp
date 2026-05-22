@@ -101,7 +101,7 @@ void __cdecl CBodyPart::optimizeBoundingBoxRotation(CBodyPart *this_ptr,CVector3
 
 // Original: core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0
 // Address: 0041add0
-void __cdecl CBodyPart::addAttachedModel(CBodyPart *this_ptr,char *model_name,CVector3i *scale,CVector3i *position);
+void __cdecl CBodyPart::addAttachedModel(CBodyPart *this_ptr,char *model_name,CVector3f *scale,CVector3f *position);
 
 // Original: core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50
 // Address: 0041ae50

@@ -10,70 +10,29 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  core/xform.cpp (1 remaining of 61)
-    - core_xform.cpp_transformAndClipGeometry_FUN_005f8550
-      Suspects: warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, warning_unreachable, static_uninitvar
-
-  core/barrier.cpp (1 remaining of 14)
-    - core_barrier.cpp_CBarrier_processInEditor_FUN_00414460
-      Suspects: bit_int_float_compare
-
-  core/box.cpp (1 remaining of 30)
-    - core_box.cpp_CBox_setupN_FUN_0041df50
-      Suspects: shadow_pointer_walk
-
   core/event.cpp (1 remaining of 56)
     - core_event.cpp_CEventList_process_FUN_004aaac0
       Suspects: unrolled_memcpy
-
-  core/lever.cpp (1 remaining of 22)
-    - core_lever.cpp_CLever_setState_FUN_00504b20
-      Suspects: bit_int_float_compare
-
-  core/teleport.cpp (1 remaining of 23)
-    - core_teleport.cpp_CTeleport_processInEditor_FUN_005dabe0
-      Suspects: bit_int_float_compare
 
   core/ground.cpp (1 remaining of 20)
     - core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880
       Suspects: raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant
 
-  core/tvbat.cpp (1 remaining of 20)
-    - core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260
-      Suspects: bit_int_float_compare
-
-  core/game.cpp (1 remaining of 66)
-    - core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0
-      Suspects: bit_int_float_compare
-
-  core/bodypart.cpp (1 remaining of 45)
-    - core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0
-      Suspects: shadow_pointer_walk
-
-  core/boneguy.cpp (2 remaining of 28)
-    - core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270
-      Suspects: shadow_pointer_walk, shadow_pointer_walk
-    - core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40
-      Suspects: bit_int_float_compare
-
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [bit_int_float_compare] - 6 functions
-    core_lever.cpp_CLever_setState_FUN_00504b20                            ( 36 lines)
-    core_curtain.cpp_CCurtain_processInEditor_FUN_0044b7a0                 ( 37 lines)
-    core_conveyor.cpp_CConveyor_processInEditor_FUN_004421c0               ( 41 lines)
-    core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0                        ( 42 lines)
-    core_glass.cpp_CGlass_processInEditor_FUN_004eb490                     ( 45 lines)
-    core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0                     ( 47 lines)
-
-  [shadow_pointer_walk] - 5 functions
+  [shadow_pointer_walk] - 4 functions
     core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0          ( 28 lines)
     core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_0050adf0              ( 31 lines)
     core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005eafa0        ( 32 lines)
     core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0                   ( 33 lines)
-    core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0                  ( 47 lines)
+
+  [bit_int_float_compare] - 4 functions
+    core_curtain.cpp_CCurtain_processInEditor_FUN_0044b7a0                 ( 37 lines)
+    core_conveyor.cpp_CConveyor_processInEditor_FUN_004421c0               ( 41 lines)
+    core_glass.cpp_CGlass_processInEditor_FUN_004eb490                     ( 45 lines)
+    core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0                     ( 47 lines)
 
   [warning_inlined_function] - 1 functions
     shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0        ( 30 lines)
@@ -82,25 +41,10 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  core/game.cpp (98.5% complete)
-    1 functions remaining:
-      core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0 (42 lines)
-        Types: ['bit_int_float_compare']
-
-  core/xform.cpp (98.4% complete)
-    1 functions remaining:
-      core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (490 lines)
-        Types: ['warning_unreachable']
-
   core/event.cpp (98.2% complete)
     1 functions remaining:
       core_event.cpp_CEventList_process_FUN_004aaac0 (53 lines)
         Types: ['unrolled_memcpy']
-
-  core/bodypart.cpp (97.8% complete)
-    1 functions remaining:
-      core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0 (47 lines)
-        Types: ['shadow_pointer_walk']
 
   core/charactr.cpp (97.2% complete)
     3 functions remaining:
@@ -109,11 +53,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_charactr.cpp_CCharacter_renderFlames_FUN_0042b110 (23 lines)
         Types: ['shadow_pointer_walk']
       core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 (33 lines)
-        Types: ['shadow_pointer_walk']
-
-  core/box.cpp (96.7% complete)
-    1 functions remaining:
-      core_box.cpp_CBox_setupN_FUN_0041df50 (78 lines)
         Types: ['shadow_pointer_walk']
 
   core/set.cpp (96.6% complete)
@@ -125,25 +64,10 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0 (28 lines)
         Types: ['shadow_pointer_walk']
 
-  core/teleport.cpp (95.7% complete)
-    1 functions remaining:
-      core_teleport.cpp_CTeleport_processInEditor_FUN_005dabe0 (63 lines)
-        Types: ['bit_int_float_compare']
-
-  core/lever.cpp (95.5% complete)
-    1 functions remaining:
-      core_lever.cpp_CLever_setState_FUN_00504b20 (36 lines)
-        Types: ['bit_int_float_compare']
-
   core/ground.cpp (95.0% complete)
     1 functions remaining:
       core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880 (15 lines)
         Types: ['raw_address_constant']
-
-  core/tvbat.cpp (95.0% complete)
-    1 functions remaining:
-      core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 (59 lines)
-        Types: ['bit_int_float_compare']
 
   sound/mp3.cpp (93.0% complete)
     4 functions remaining:
@@ -155,18 +79,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['primitive_walker_cast']
       sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0 (123 lines)
         Types: ['primitive_walker_cast']
-
-  core/barrier.cpp (92.9% complete)
-    1 functions remaining:
-      core_barrier.cpp_CBarrier_processInEditor_FUN_00414460 (54 lines)
-        Types: ['bit_int_float_compare']
-
-  core/boneguy.cpp (92.9% complete)
-    2 functions remaining:
-      core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270 (58 lines)
-        Types: ['shadow_pointer_walk']
-      core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 (162 lines)
-        Types: ['bit_int_float_compare']
 
 ====================================================================================================
 ALL REMAINING FILES

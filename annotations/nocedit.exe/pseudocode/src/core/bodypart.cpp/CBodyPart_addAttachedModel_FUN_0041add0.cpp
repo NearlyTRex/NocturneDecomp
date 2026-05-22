@@ -2,22 +2,22 @@
 // Address: 0041add0
 // Address Range: [[0041add0, 0041ae4b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart *this_ptr,char *model_name,CVector3i *scale,CVector3i *position)
+// Signature: void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart *this_ptr,char *model_name,CVector3f *scale,CVector3f *position)
 
 #include "nocturne.h"
 
-void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart *this_ptr,char *model_name,CVector3i *scale,CVector3i *position)
+void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart *this_ptr,char *model_name,CVector3f *scale,CVector3f *position)
 
 {
   int iVar1;
-  CVector3i *pCVar2;
+  CVector3f *pCVar2;
   
   iVar1 = this_ptr->attached_model_count;
   if (iVar1 < 3) {
     pCVar2 = &this_ptr->attached_models[iVar1].scale;
     this_ptr->attached_model_count = iVar1 + 1;
     if (pCVar2 != scale) {
-      ((CVector3i *)&pCVar2->x)->x = scale->x;
+      ((CVector3f *)&pCVar2->x)->x = scale->x;
       pCVar2->y = scale->y;
       pCVar2->z = scale->z;
     }

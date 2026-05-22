@@ -11,7 +11,7 @@
 ; Local Variables:
 ; CMatrix3x4f      Stack[-0x9c]:48  local_9c
 ; CMatrix3x4f      Stack[-0x6c]:48  local_6c
-; CVector3i        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x3c]:12  local_3c
 ; CVector3f        Stack[-0x30]:12  local_30
 ; CVector3f        Stack[-0x24]:12  local_24
 ; CMatrix3x4f *    Stack[-0x18]:4  local_18
@@ -197,7 +197,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x8a]      ; 0042beda
     PUSH EDI                            ; 0042bee0
     CALL core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0 ; 0042bee1
-        ;   XREF to: 0041add0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart * this_ptr, char * model_name, CVector3i * scale, CVector3i * position)
+        ;   XREF to: 0041add0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0(CBodyPart * this_ptr, char * model_name, CVector3f * scale, CVector3f * position)
     ADD ESP,0x10                        ; 0042bee6
     JMP 0x0042bdcb                      ; 0042bee9
         ;   XREF to: 0042bdcb (UNCONDITIONAL_JUMP)  ; LAB_0042bdcb

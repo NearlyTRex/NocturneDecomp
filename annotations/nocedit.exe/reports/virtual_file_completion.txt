@@ -6,8 +6,8 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5839 (90.5%)
-Files at 100%: 145
+Clean functions: 5849 (90.6%)
+Files at 100%: 154
 Files at 90%+: 159
 Files at 50%+: 214
 
@@ -25,12 +25,16 @@ FILES AT 100% (COMPLETE)
   core/armour.cpp: 19 functions, 269 lines
   core/backgnd.cpp: 15 functions, 161 lines
   core/baron.cpp: 34 functions, 853 lines
+  core/barrier.cpp: 14 functions, 211 lines
   core/bat.cpp: 16 functions, 312 lines
   core/batcreat.cpp: 14 functions, 744 lines
   core/batman.cpp: 16 functions, 1026 lines
   core/battery.cpp: 17 functions, 155 lines
   core/beast.cpp: 14 functions, 164 lines
   core/biggs.cpp: 14 functions, 366 lines
+  core/bodypart.cpp: 45 functions, 1562 lines
+  core/boneguy.cpp: 28 functions, 1348 lines
+  core/box.cpp: 30 functions, 2014 lines
   core/boxactor.cpp: 46 functions, 1100 lines
   core/bride.cpp: 14 functions, 771 lines
   core/bugs.cpp: 44 functions, 1795 lines
@@ -66,6 +70,7 @@ FILES AT 100% (COMPLETE)
   core/flamegun.cpp: 10 functions, 143 lines
   core/flashlit.cpp: 7 functions, 66 lines
   core/flattn.cpp: 2 functions, 11 lines
+  core/game.cpp: 66 functions, 6745 lines
   core/gargoyle.cpp: 16 functions, 941 lines
   core/gasmask.cpp: 14 functions, 131 lines
   core/grave.cpp: 17 functions, 268 lines
@@ -83,6 +88,7 @@ FILES AT 100% (COMPLETE)
   core/ladder.cpp: 19 functions, 576 lines
   core/larva.cpp: 13 functions, 552 lines
   core/level.cpp: 6 functions, 281 lines
+  core/lever.cpp: 22 functions, 476 lines
   core/lightgun.cpp: 14 functions, 579 lines
   core/litecone.cpp: 12 functions, 170 lines
   core/main.c: 10 functions, 1308 lines
@@ -115,10 +121,12 @@ FILES AT 100% (COMPLETE)
   core/succubus.cpp: 14 functions, 614 lines
   core/svetlana.cpp: 19 functions, 958 lines
   core/tbplayer.cpp: 16 functions, 315 lines
+  core/teleport.cpp: 23 functions, 324 lines
   core/terrain.cpp: 4 functions, 54 lines
   core/tommygun.cpp: 9 functions, 365 lines
   core/trap.cpp: 17 functions, 202 lines
   core/trash.cpp: 15 functions, 441 lines
+  core/tvbat.cpp: 20 functions, 727 lines
   core/vampboss.cpp: 23 functions, 1271 lines
   core/vecdir.cpp: 2 functions, 33 lines
   core/vessel.cpp: 20 functions, 574 lines
@@ -126,6 +134,7 @@ FILES AT 100% (COMPLETE)
   core/waypoint.cpp: 19 functions, 519 lines
   core/weapon.cpp: 27 functions, 449 lines
   core/werewolf.cpp: 21 functions, 1396 lines
+  core/xform.cpp: 61 functions, 2831 lines
   engine/boss.c: 5 functions, 64 lines
   engine/colquant.c: 9 functions, 592 lines
   engine/console.cpp: 8 functions, 201 lines
@@ -160,26 +169,14 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 145 files
+Total: 154 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   98.5% | core/game.cpp
-         65/66 clean, 1 remaining
-           - core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0 (42 lines) [bit_int_float_compare]
-
-   98.4% | core/xform.cpp
-         60/61 clean, 1 remaining
-           - core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (490 lines) [warning_unreachable]
-
    98.2% | core/event.cpp
          55/56 clean, 1 remaining
            - core_event.cpp_CEventList_process_FUN_004aaac0 (53 lines) [unrolled_memcpy]
-
-   97.8% | core/bodypart.cpp
-         44/45 clean, 1 remaining
-           - core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0 (47 lines) [shadow_pointer_walk]
 
    97.2% | core/charactr.cpp
          106/109 clean, 3 remaining
@@ -187,31 +184,15 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_charactr.cpp_CCharacter_renderFlames_FUN_0042b110 (23 lines) [shadow_pointer_walk]
            - core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 (33 lines) [shadow_pointer_walk]
 
-   96.7% | core/box.cpp
-         29/30 clean, 1 remaining
-           - core_box.cpp_CBox_setupN_FUN_0041df50 (78 lines) [shadow_pointer_walk]
-
    96.6% | core/set.cpp
          84/87 clean, 3 remaining
            - core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (117 lines) [pointer_cast, unrolled_memcpy]
            - core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0 (30 lines) [shadow_pointer_walk]
            - core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0 (28 lines) [shadow_pointer_walk]
 
-   95.7% | core/teleport.cpp
-         22/23 clean, 1 remaining
-           - core_teleport.cpp_CTeleport_processInEditor_FUN_005dabe0 (63 lines) [bit_int_float_compare]
-
-   95.5% | core/lever.cpp
-         21/22 clean, 1 remaining
-           - core_lever.cpp_CLever_setState_FUN_00504b20 (36 lines) [bit_int_float_compare]
-
    95.0% | core/ground.cpp
          19/20 clean, 1 remaining
            - core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880 (15 lines) [raw_address_constant]
-
-   95.0% | core/tvbat.cpp
-         19/20 clean, 1 remaining
-           - core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 (59 lines) [bit_int_float_compare]
 
    93.0% | sound/mp3.cpp
          53/57 clean, 4 remaining
@@ -220,16 +201,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (541 lines) [primitive_walker_cast]
            - sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0 (123 lines) [primitive_walker_cast]
 
-   92.9% | core/barrier.cpp
-         13/14 clean, 1 remaining
-           - core_barrier.cpp_CBarrier_processInEditor_FUN_00414460 (54 lines) [bit_int_float_compare]
-
-   92.9% | core/boneguy.cpp
-         26/28 clean, 2 remaining
-           - core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270 (58 lines) [shadow_pointer_walk]
-           - core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 (162 lines) [bit_int_float_compare]
-
-Total: 14 files
+Total: 5 files
 
 ====================================================================================================
 FILES AT 50-89%

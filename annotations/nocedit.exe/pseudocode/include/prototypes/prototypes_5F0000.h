@@ -159,7 +159,7 @@ void __cdecl core_xform_cpp_clipPolygonStage2_FUN_005f8040(void);
 void __cdecl core_xform_cpp_clipPolygonStage3_FUN_005f81c0(void);
 void __cdecl core_xform_cpp_clipPolygonStage4_FUN_005f8330(void);
 void __cdecl core_xform_cpp_clampClippedVertices_FUN_005f84a0(void);
-SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *vertex_indices);
+void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *vertex_indices);
 void __cdecl core_zombie_cpp_staticInit_FUN_005f8c90(void);
 float __cdecl core_zombie_cpp_getObjectHeightScale_FUN_005f8cc0(CDemonActor *actor);
 CVector3f * __cdecl core_zombie_cpp_getObjectGrabPointLocal_FUN_005f8d30(CVector3f *out_point,CDemonActor *actor);

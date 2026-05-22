@@ -4,9 +4,9 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5832 functions
-  1 suspects: 104 functions
-  2 suspects: 129 functions
+  0 suspects: 5842 functions
+  1 suspects: 96 functions
+  2 suspects: 128 functions
   3 suspects: 80 functions
   4 suspects: 77 functions
   5 suspects: 40 functions
@@ -14,7 +14,7 @@ SUSPECT COUNT DISTRIBUTION
   7 suspects: 18 functions
   8 suspects: 26 functions
   9 suspects: 9 functions
-  10 suspects: 17 functions
+  10 suspects: 16 functions
   11 suspects: 10 functions
   12 suspects: 10 functions
   13 suspects: 4 functions
@@ -151,7 +151,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
 
-  [shadow_pointer_walk] (15 functions)
+  [shadow_pointer_walk] (13 functions)
   ------------------------------------------------------------
     core_set.cpp_CDemonSet_getReverbPresetAtPosition_F ( 28 lines)
       this_ptr_00 = (CMatrix3x3f *)&this_ptr_00[1].m[2].z;...
@@ -161,8 +161,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       pCVar2 = (CVector3f *)&pCVar2[2].z;...
     core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5 ( 33 lines)
       pCVar3 = (CCharacter *)((pCVar3->base).actor_name + 0x18);...
-    core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00419 ( 47 lines)
-      position = (CVector3f *)&position[0x21].z;...
     engine_pod.cpp_CPod_getNextSearchResult_FUN_00550e ( 53 lines)
       pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).f...
     core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FU ( 53 lines)
@@ -177,43 +175,10 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);...
     core_texlist.cpp_CTextureList_save_FUN_005dc0d0    ( 73 lines)
       pCVar3 = (CTextureList *)pCVar3->texture_entries;...
-    core_box.cpp_CBox_setupN_FUN_0041df50              ( 78 lines)
-      pCVar3 = (CVector3f *)&pCVar3[4].y;...
     shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_ ( 81 lines)
       pCVar7 = (CLodVert *)&(pCVar7->position).y;...
     core_dmodel.cpp_CKeyFramedModel_removeUnusedVertic (169 lines)
       pSVar12 = (SMRGLPrimitiveQuad *)&(pSVar12->base).surface_nor...
-
-  [bit_int_float_compare] (14 functions)
-  ------------------------------------------------------------
-    core_lever.cpp_CLever_setState_FUN_00504b20        ( 36 lines)
-      (((int)new_state < 0x3f800000 && (1.0 <= this_ptr->param))))...
-    core_curtain.cpp_CCurtain_processInEditor_FUN_0044 ( 37 lines)
-      if ((int)(this_ptr->curtain_size).x < 0x3f000000) {...
-    core_conveyor.cpp_CConveyor_processInEditor_FUN_00 ( 41 lines)
-      if ((int)(this_ptr->size).x < 0x3f000000) {...
-    core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0    ( 42 lines)
-      if (((g_IrisFadeType < 4) && (g_IrisFadeType != 1)) && (0x3f...
-    core_glass.cpp_CGlass_processInEditor_FUN_004eb490 ( 45 lines)
-      if ((int)(this_ptr->glass_size).x < 0x3f000000) {...
-    core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0 ( 47 lines)
-      if ((int)(this_ptr->box_size).x < 0x3f000000) {...
-    core_barrier.cpp_CBarrier_processInEditor_FUN_0041 ( 54 lines)
-      if ((int)(this_ptr->size).x < 0x3f000000) {...
-    core_trigger.cpp_CTrigger_processInEditor_FUN_005e ( 57 lines)
-      if ((int)(this_ptr->trigger_size).x < 0x3c23d70a) {...
-    core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 ( 59 lines)
-      if ((int)this_ptr->max_distance < 0x3f000000) {...
-    core_teleport.cpp_CTeleport_processInEditor_FUN_00 ( 63 lines)
-      if ((int)(this_ptr->trigger_extents).x < 0x3f000000) {...
-    core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN (162 lines)
-      if (((float)5 <= fVar2) && ((int)fVar2 < 0x41700001)) {...
-    core_charactr.cpp_CCharacter_findSomethingToLookAt (216 lines)
-      (int)fVar6 < 0x44610001)) &&...
-    core_stranger.cpp_CStranger_makeDrawDecision_FUN_0 (238 lines)
-      if ((int)local_1c < 0x3f800001) {...
-    core_stranger.cpp_CStranger_updateProceduralAnimat (516 lines)
-      if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {...
 
   [unrolled_strcpy] (11 functions)
   ------------------------------------------------------------
@@ -239,6 +204,25 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     core_setedit.cpp_CDemonSet_showEditorMenu_FUN_0058 (184 lines)
       do {...
+
+  [bit_int_float_compare] (8 functions)
+  ------------------------------------------------------------
+    core_curtain.cpp_CCurtain_processInEditor_FUN_0044 ( 37 lines)
+      if ((int)(this_ptr->curtain_size).x < 0x3f000000) {...
+    core_conveyor.cpp_CConveyor_processInEditor_FUN_00 ( 41 lines)
+      if ((int)(this_ptr->size).x < 0x3f000000) {...
+    core_glass.cpp_CGlass_processInEditor_FUN_004eb490 ( 45 lines)
+      if ((int)(this_ptr->glass_size).x < 0x3f000000) {...
+    core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0 ( 47 lines)
+      if ((int)(this_ptr->box_size).x < 0x3f000000) {...
+    core_trigger.cpp_CTrigger_processInEditor_FUN_005e ( 57 lines)
+      if ((int)(this_ptr->trigger_size).x < 0x3c23d70a) {...
+    core_charactr.cpp_CCharacter_findSomethingToLookAt (216 lines)
+      (int)fVar6 < 0x44610001)) &&...
+    core_stranger.cpp_CStranger_makeDrawDecision_FUN_0 (238 lines)
+      if ((int)local_1c < 0x3f800001) {...
+    core_stranger.cpp_CStranger_updateProceduralAnimat (516 lines)
+      if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {...
 
   [unrolled_memset] (4 functions)
   ------------------------------------------------------------
@@ -415,8 +399,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/wateract.cpp, Lines: 56, Types: ['unrolled_strcpy']
   engine_2d.c_drawCharacterHighlighted_FUN_00401b70
     File: engine/2d.c, Lines: 58, Types: ['pointer_cast']
-  core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270
-    File: core/boneguy.cpp, Lines: 58, Types: ['shadow_pointer_walk']
   core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf4
     File: core/dmodel.cpp, Lines: 59, Types: ['pointer_cast']
   core_chain.cpp_CChain_getBoundingBox_FUN_00430eb0

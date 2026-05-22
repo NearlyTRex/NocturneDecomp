@@ -23,7 +23,7 @@ void __cdecl core_lever_cpp_CLever_setState_FUN_00504b20(CLever *this_ptr,float 
       }
     }
     if (((0.0 < new_state) && (this_ptr->param <= 0.0)) ||
-       (((int)new_state < 0x3f800000 && (1.0 <= this_ptr->param)))) {
+       ((new_state < 1.0 && (1.0 <= this_ptr->param)))) {
       (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->sound);
     }
     this_ptr->param = new_state;

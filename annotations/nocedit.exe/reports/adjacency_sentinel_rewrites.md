@@ -252,8 +252,8 @@ globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.
 
 ### `core_water.cpp_CWater_captureTextures_FUN_005e9e40`
 
-- Pool `g_WaterTextures` sentinel `g_WaterTexturesEnd` (count 16)
-  - Before: `while (texture != (SMRGLTextureBasic *)&g_WaterTexturesEnd)`
+- Pool `g_WaterTextures` sentinel `g_WaterRenderQuad` (count 16)
+  - Before: `while ((SMRGLPrimitiveQuad *)texture != &g_WaterRenderQuad)`
   - After:  `while (texture != g_WaterTextures + 16)`
 
 ### `sound_sndmain.cpp_closeSoundDevice_FUN_005ab660`

@@ -1,5 +1,6 @@
 // Name: core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0
 // Address: 004194b0
+// MANUAL RECONSTRUCTION
 // Address Range: [[004194b0, 00419607]]
 // Convention: __cdecl
 // Signature: int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *this_ptr)
@@ -12,9 +13,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
   CBoundingBox3D *this_ptr_00;
   int iVar2;
   int iVar1;
-  CVector3f *position;
   CBoundingBox3D local_20;
-  SBodyPartModel *pSStack_8;
   SBodyPartModel *pSVar1;
   
   if (this_ptr->render_in_background < 2) {
@@ -32,14 +31,12 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
       iVar1 = 0;
       if (0 < this_ptr->attached_model_count) {
         pSVar1 = (SBodyPartModel *)&this_ptr->attached_models[0].model;
-        position = &this_ptr->attached_models[0].position;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                    (g_CDemonRendererPtr2,position,&this_ptr->attached_models[iVar1].scale);
+                    (g_CDemonRendererPtr2,&this_ptr->attached_models[iVar1].position,&this_ptr->attached_models[iVar1].scale);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                     ((CKeyFramedModelInstance *)pSVar1,0.0,-1);
           iVar1 = iVar1 + 1;
-          position = (CVector3f *)&position[0x21].z;
           pSVar1 = pSVar1 + 1;
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
         } while (iVar1 < this_ptr->attached_model_count);

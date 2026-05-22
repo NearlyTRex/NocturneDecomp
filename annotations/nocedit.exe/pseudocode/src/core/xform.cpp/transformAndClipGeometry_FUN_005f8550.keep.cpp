@@ -3,22 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[005f8550, 005f8c84]]
 // Convention: __cdecl
-// Signature: SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *vertex_indices)
+// Signature: void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *vertex_indices)
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x005f8bef) */
-/* WARNING: Removing unreachable block (ram,0x005f8b55) */
-/* WARNING: Removing unreachable block (ram,0x005f8abb) */
-/* WARNING: Removing unreachable block (ram,0x005f8a21) */
-/* WARNING: Removing unreachable block (ram,0x005f85b8) */
-/* WARNING: Removing unreachable block (ram,0x005f8641) */
-/* WARNING: Removing unreachable block (ram,0x005f86f8) */
-/* WARNING: Removing unreachable block (ram,0x005f87c2) */
-/* WARNING: Removing unreachable block (ram,0x005f8887) */
-/* WARNING: Removing unreachable block (ram,0x005f8952) */
-
-SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *vertex_indices)
+void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *vertex_indices)
 
 {
   int iVar1;
@@ -278,5 +267,5 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
       }
     }
   }
-  return local_24;
+  return;
 }

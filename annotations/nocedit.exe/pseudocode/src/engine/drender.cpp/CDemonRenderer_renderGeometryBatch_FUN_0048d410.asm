@@ -116,7 +116,7 @@ section .text
     PUSH EAX                            ; 0048d4d1
     PUSH EDX                            ; 0048d4d2
     CALL core_xform.cpp_transformAndClipGeometry_FUN_005f8550 ; 0048d4d3
-        ;   XREF to: 005f8550 (UNCONDITIONAL_CALL)  ; SRenderVertex * core_xform.cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count, int * vertex_indices)
+        ;   XREF to: 005f8550 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count, int * vertex_indices)
     MOV EDI,dword ptr [0x00824e24]      ; 0048d4d8 | g_ClippedVertexCount
     ADD ESP,0x8                         ; 0048d4de
     CMP EDI,0x2                         ; 0048d4e1
@@ -314,7 +314,7 @@ section .text
     PUSH EAX                            ; 0048d68b
     PUSH EDX                            ; 0048d68c
     CALL core_xform.cpp_transformAndClipGeometry_FUN_005f8550 ; 0048d68d
-        ;   XREF to: 005f8550 (UNCONDITIONAL_CALL)  ; SRenderVertex * core_xform.cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count, int * vertex_indices)
+        ;   XREF to: 005f8550 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count, int * vertex_indices)
     MOV EAX,[0x00824e24]                ; 0048d692 | g_ClippedVertexCount
     ADD ESP,0x8                         ; 0048d697
     CMP EAX,0x2                         ; 0048d69a
