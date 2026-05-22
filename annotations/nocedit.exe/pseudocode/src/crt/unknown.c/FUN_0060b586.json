@@ -2,16 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 216,
+    "complexity_score": 361,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 15,
+    "suspect_count": 29,
     "suspect_types": [
       "extra_output",
       "register_param",
+      "sign_compare_idiom",
       "unnamed_param"
     ],
     "total_lines": 107
@@ -181,6 +182,54 @@
       "type": "register_param"
     },
     {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 28,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "bVar13 = CARRY4(uVar12,uVar12);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 29,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "bVar14 = CARRY4(uVar6,uVar6);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 32,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)CARRY4(uVar12 * 2,uVar12 * 2);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 34,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "uVar2 = (uint)CARRY4(uVar12 * 4,uVar12);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 35,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "bVar15 = CARRY4(uVar8,uVar6);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 39,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "uVar3 = (uint)CARRY4(uVar12 * 5,uVar12 * 5);",
+      "type": "sign_compare_idiom"
+    },
+    {
       "description": "Inferred register parameter",
       "line": 41,
       "match": "in_EAX",
@@ -195,6 +244,70 @@
       "severity": "mild",
       "text": "uVar4 = (uint)CARRY4(uVar6,*in_EAX & 0xffffff0f);",
       "type": "register_param"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 42,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "uVar4 = (uint)CARRY4(uVar6,*in_EAX & 0xffffff0f);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 44,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "uVar11 = (uVar11 * 5 + (uint)(bVar14 || CARRY4(uVar5,(uint)bVar13)) * 2 +",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 45,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "(uint)(CARRY4(uVar7,uVar7) || CARRY4(uVar7 * 2,uVar1)) +",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 45,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "(uint)(CARRY4(uVar7,uVar7) || CARRY4(uVar7 * 2,uVar1)) +",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 46,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "(uint)(bVar15 || CARRY4(uVar8,uVar2))) * 2 +",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 47,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "(uint)(CARRY4(uVar9,uVar9) || CARRY4(uVar9 * 2,uVar3)) + (uint)CARRY4(uVar10,uVar4);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 47,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "(uint)(CARRY4(uVar9,uVar9) || CARRY4(uVar9 * 2,uVar3)) + (uint)CARRY4(uVar10,uVar4);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 47,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "(uint)(CARRY4(uVar9,uVar9) || CARRY4(uVar9 * 2,uVar3)) + (uint)CARRY4(uVar10,uVar4);",
+      "type": "sign_compare_idiom"
     },
     {
       "description": "Inferred register parameter",

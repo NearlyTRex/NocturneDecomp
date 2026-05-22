@@ -16,7 +16,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   CDemonLight *pCVar1;
   int iVar4;
   int iVar6;
-  
+
   iVar6 = 0;
   text = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Initializing scene");
   core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,text,iVar6);
@@ -64,6 +64,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   g_OmniLightCount = 0;
   g_CoronaGlobeCount = 0;
   g_QueuedCoronaGlobeCount = 0;
+  g_VisibleCoronaGlobeCount = 0;
   this_ptr->previous_best_camera_timer = 0.0;
   core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710(this_ptr);
   for (iVar4 = 0; iVar4 < this_ptr->camera_count; iVar4 = iVar4 + 1) {

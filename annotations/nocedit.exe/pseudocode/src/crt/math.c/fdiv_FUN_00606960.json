@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 386,
+    "complexity_score": 421,
     "cross_reference_count": 43,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 33,
+    "suspect_count": 36,
     "suspect_types": [
+      "sign_compare_idiom",
       "stack_param",
       "unknown_type"
     ],
@@ -475,6 +476,14 @@
       "type": "stack_param"
     },
     {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 17,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "if (CARRY4(in_stack_00000008,in_stack_00000008)) break;",
+      "type": "sign_compare_idiom"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000004",
@@ -523,6 +532,14 @@
       "type": "stack_param"
     },
     {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 21,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "if (CARRY4(in_stack_00000014,in_stack_00000014)) goto LAB_00606a70;",
+      "type": "sign_compare_idiom"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000018",
@@ -545,6 +562,14 @@
       "severity": "moderate",
       "text": "(!CARRY4(in_stack_00000014,in_stack_00000014))) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 24,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "(!CARRY4(in_stack_00000014,in_stack_00000014))) {",
+      "type": "sign_compare_idiom"
     },
     {
       "description": "Unresolved stack parameter",

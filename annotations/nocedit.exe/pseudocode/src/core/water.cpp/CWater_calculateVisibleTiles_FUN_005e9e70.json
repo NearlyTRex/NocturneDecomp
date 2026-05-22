@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 143,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 28,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 143,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "sign_compare_idiom"
+    ],
     "total_lines": 490
   },
   "cross_references": [
@@ -488,5 +490,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 73,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "if (SBORROW4(iVar7,iVar1) != iVar1 * -2 < 0) {",
+      "type": "sign_compare_idiom"
+    }
+  ]
 }

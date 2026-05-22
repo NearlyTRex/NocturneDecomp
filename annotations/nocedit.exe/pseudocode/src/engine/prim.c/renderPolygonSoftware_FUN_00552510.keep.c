@@ -28,12 +28,11 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *ver
   SRenderVertex *pSVar12;
   uint uVar10;
   SRenderVertex *pSVar11;
-  bool bVar12;
   int local_1c;
   SSoftwareEdge *local_14;
   int *piVar1;
   longlong lVar2;
-  
+
   if ((g_VertexProcessingEnabled != 0) && (iVar9 = 0, pSVar4 = vertices, 0 < vertex_count)) {
     do {
       if ((int)((pSVar4->projected_vertex).screen_x & -0x80000000) != 0) {
@@ -198,9 +197,7 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *ver
   if ((edge_ptr != (SSoftwareEdge *)0x0) &&
      (local_14 = engine_prim_c_findEdgeInBuffer_FUN_00551f70(g_SoftwareMinScanline,edge_ptr),
      iVar10 = g_SoftwareMinScanline, local_14 != (SSoftwareEdge *)0x0)) {
-    iVar2 = g_SoftwareMinScanline - g_MaxViewportScanline;
-    bVar12 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);
-    while (bVar12 != iVar2 < 0) {
+    while (iVar10 < g_MaxViewportScanline) {
       if ((edge_ptr->base).y_max <= iVar10) {
         (edge_ptr->base).y_min = -1;
         edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_00551f70(iVar10,local_14);
@@ -226,13 +223,10 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *ver
       (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
       (local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;
       (local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;
-      local_1c = local_1c + 1;
+      iVar10 = iVar10 + 1;
       (local_14->base).red_current = (local_14->base).red_current + (local_14->base).red_gradient;
-      iVar5 = g_MaxViewportScanline;
       (local_14->base).depth_current = (local_14->base).depth_current + (local_14->base).depth_gradient;
       (local_14->base).alpha_current = (local_14->base).alpha_current + (local_14->base).alpha_gradient;
-      iVar2 = local_1c - iVar5;
-      bVar12 = SBORROW4(local_1c,iVar5);
     }
   }
   return;

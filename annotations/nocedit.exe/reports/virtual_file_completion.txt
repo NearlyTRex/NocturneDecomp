@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5849 (90.6%)
-Files at 100%: 154
-Files at 90%+: 159
+Clean functions: 5823 (90.2%)
+Files at 100%: 148
+Files at 90%+: 157
 Files at 50%+: 214
 
 ====================================================================================================
@@ -43,7 +43,6 @@ FILES AT 100% (COMPLETE)
   core/cow.cpp: 14 functions, 520 lines
   core/crate.cpp: 20 functions, 309 lines
   core/crossbow.cpp: 12 functions, 312 lines
-  core/dcamera.cpp: 86 functions, 4962 lines
   core/dest.cpp: 13 functions, 258 lines
   core/dfont.cpp: 3 functions, 279 lines
   core/dglobe.cpp: 6 functions, 237 lines
@@ -56,7 +55,6 @@ FILES AT 100% (COMPLETE)
   core/drone.cpp: 13 functions, 472 lines
   core/dskybox.cpp: 4 functions, 245 lines
   core/dstrender.cpp: 31 functions, 3122 lines
-  core/dtrace.cpp: 51 functions, 3537 lines
   core/dtri.cpp: 28 functions, 1494 lines
   core/dynamite.cpp: 12 functions, 163 lines
   core/elephant.cpp: 10 functions, 409 lines
@@ -130,11 +128,9 @@ FILES AT 100% (COMPLETE)
   core/vampboss.cpp: 23 functions, 1271 lines
   core/vecdir.cpp: 2 functions, 33 lines
   core/vessel.cpp: 20 functions, 574 lines
-  core/water.cpp: 8 functions, 326 lines
   core/waypoint.cpp: 19 functions, 519 lines
   core/weapon.cpp: 27 functions, 449 lines
   core/werewolf.cpp: 21 functions, 1396 lines
-  core/xform.cpp: 61 functions, 2831 lines
   engine/boss.c: 5 functions, 64 lines
   engine/colquant.c: 9 functions, 592 lines
   engine/console.cpp: 8 functions, 201 lines
@@ -150,7 +146,6 @@ FILES AT 100% (COMPLETE)
   engine/ncursfx.cpp: 11 functions, 163 lines
   engine/palette.cpp: 10 functions, 392 lines
   engine/pcx.c: 4 functions, 331 lines
-  engine/prim.c: 21 functions, 1870 lines
   engine/texture.cpp: 22 functions, 654 lines
   engine/winfont.cpp: 9 functions, 330 lines
   shape/dsemodel.cpp: 10 functions, 329 lines
@@ -159,7 +154,6 @@ FILES AT 100% (COMPLETE)
   shape/multicrm.cpp: 6 functions, 115 lines
   shape/spotview.cpp: 6 functions, 215 lines
   sound/snddx.cpp: 32 functions, 1433 lines
-  sound/sndmain.cpp: 193 functions, 6577 lines
   sound/sndwav.cpp: 35 functions, 765 lines
   support/codec.cpp: 40 functions, 821 lines
   support/newmsg.cpp: 4 functions, 210 lines
@@ -169,14 +163,28 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 154 files
+Total: 148 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
+   99.0% | sound/sndmain.cpp
+         191/193 clean, 2 remaining
+           - sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70 (51 lines) [sign_compare_idiom]
+           - sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0 (51 lines) [sign_compare_idiom]
+
    98.2% | core/event.cpp
          55/56 clean, 1 remaining
            - core_event.cpp_CEventList_process_FUN_004aaac0 (53 lines) [unrolled_memcpy]
+
+   98.0% | core/dtrace.cpp
+         50/51 clean, 1 remaining
+           - core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (668 lines) [sign_compare_idiom]
+
+   97.7% | core/dcamera.cpp
+         84/86 clean, 2 remaining
+           - core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 (271 lines) [sign_compare_idiom]
+           - core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0 (122 lines) [sign_compare_idiom]
 
    97.2% | core/charactr.cpp
          106/109 clean, 3 remaining
@@ -194,6 +202,13 @@ FILES AT 90-99% (ALMOST COMPLETE)
          19/20 clean, 1 remaining
            - core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880 (15 lines) [raw_address_constant]
 
+   93.4% | core/xform.cpp
+         57/61 clean, 4 remaining
+           - core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00 (47 lines) [sign_compare_idiom]
+           - core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80 (47 lines) [sign_compare_idiom]
+           - core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0 (47 lines) [sign_compare_idiom]
+           - core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40 (47 lines) [sign_compare_idiom]
+
    93.0% | sound/mp3.cpp
          53/57 clean, 4 remaining
            - sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0 (100 lines) [primitive_walker_cast]
@@ -201,16 +216,14 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (541 lines) [primitive_walker_cast]
            - sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0 (123 lines) [primitive_walker_cast]
 
-Total: 5 files
+Total: 9 files
 
 ====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
-   89.3% | engine/clipper.c
-         25/28 clean, 3 remaining
-           - engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0 (446 lines) [pointer_cast]
-           - engine_clipper.c_clipPolygonToViewport_FUN_00438420 (464 lines) [pointer_cast]
-           - engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (134 lines) [pointer_cast]
+   87.5% | core/water.cpp
+         7/8 clean, 1 remaining
+           - core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70 (143 lines) [sign_compare_idiom]
    87.5% | core/zombie.cpp
          28/32 clean, 4 remaining
            - core_zombie.cpp_CZombie_process_FUN_005f9470 (1031 lines) [self_copy_guard, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_inlined_function, warning_type_propagation, warning_unreachable]
@@ -289,30 +302,9 @@ FILES AT 50-89%
            - engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0 (42 lines) [pointer_cast, unrolled_memcpy]
            - engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 (188 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
            - engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230 (120 lines) [pointer_cast]
-           - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines) [unrolled_memcpy]
+           - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines) [sign_compare_idiom, unrolled_memcpy]
            - engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (111 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen]
            - engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0 (53 lines) [shadow_pointer_walk]
-   81.7% | engine/3d.c
-         85/104 clean, 19 remaining
-           - engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860 (77 lines) [pointer_cast, raw_address_constant, shadow_pointer_walk]
-           - engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0 (50 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290 (104 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-           - engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430 (109 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_3d.c_renderPolygonLitDetailedAmbient_FUN_00406a20 (45 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_3d.c_updateAnimatedTexture_FUN_004050c0 (35 lines) [pointer_cast, unrolled_strcpy]
-           - engine_3d.c_renderPolygonUVTextureEnableVertexLit_FUN_00405170 (42 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720 (61 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_3d.c_renderPolygonTextureNormalizedLit_FUN_00403f20 (42 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_3d.c_renderOverlayTextureEnable_FUN_00404020 (36 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50 (56 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 (116 lines) [pointer_cast]
-           - engine_3d.c_renderPolygonLitDetailedClamped_FUN_00404220 (89 lines) [pointer_cast, raw_address_constant, shadow_pointer_walk]
-           - engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0 (88 lines) [pointer_cast]
-           - engine_3d.c_clipAndDrawLine2D_FUN_00407d70 (194 lines) [unrolled_memcpy]
-           - engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470 (93 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-           - engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840 (92 lines) [pointer_cast, shadow_pointer_walk]
-           - engine_3d.c_renderPolygonTexturePerspectiveCorrectClamped_FUN_00406290 (74 lines) [pointer_cast, raw_address_constant, shadow_pointer_walk]
-           - engine_3d.c_clipAndDrawLine3D_FUN_00408070 (197 lines) [unrolled_memcpy]
    81.0% | shape/cramtex.cpp
          17/21 clean, 4 remaining
            - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (832 lines) [pointer_cast]
@@ -333,14 +325,49 @@ FILES AT 50-89%
            - core_mobster.cpp_CMobster_getTargetPoints_FUN_005278d0 (41 lines) [unrolled_memcpy]
            - core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20 (97 lines) [unrolled_memcpy]
            - core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (129 lines) [stack_alignment_array, warning_type_propagation]
-   80.2% | core/script.cpp
-         77/96 clean, 19 remaining
+   80.8% | engine/3d.c
+         84/104 clean, 20 remaining
+           - engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860 (77 lines) [pointer_cast, raw_address_constant, shadow_pointer_walk]
+           - engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0 (50 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290 (104 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
+           - engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430 (109 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_3d.c_renderPolygonLitDetailedAmbient_FUN_00406a20 (45 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_3d.c_updateAnimatedTexture_FUN_004050c0 (35 lines) [pointer_cast, unrolled_strcpy]
+           - engine_3d.c_renderPolygonUVTextureEnableVertexLit_FUN_00405170 (42 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720 (61 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_3d.c_renderPolygonTextureNormalizedLit_FUN_00403f20 (42 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_3d.c_renderOverlayTextureEnable_FUN_00404020 (36 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50 (56 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 (116 lines) [pointer_cast]
+           - engine_3d.c_renderPolygonLitDetailedClamped_FUN_00404220 (89 lines) [pointer_cast, raw_address_constant, shadow_pointer_walk]
+           - engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0 (88 lines) [pointer_cast]
+           - engine_3d.c_isVisiblePlane_FUN_00403950 (22 lines) [sign_compare_idiom]
+           - engine_3d.c_clipAndDrawLine2D_FUN_00407d70 (194 lines) [unrolled_memcpy]
+           - engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470 (93 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
+           - engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840 (92 lines) [pointer_cast, shadow_pointer_walk]
+           - engine_3d.c_renderPolygonTexturePerspectiveCorrectClamped_FUN_00406290 (74 lines) [pointer_cast, raw_address_constant, shadow_pointer_walk]
+           - engine_3d.c_clipAndDrawLine3D_FUN_00408070 (197 lines) [unrolled_memcpy]
+   80.0% | core/scat.cpp
+         20/25 clean, 5 remaining
+           - core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (48 lines) [missing_cave_copy, warning_type_propagation]
+           - core_scat.cpp_CScat_process_FUN_005571f0 (311 lines) [missing_cave_copy, unrolled_memset]
+           - core_scat.cpp_CScat_updateAiming_FUN_00558720 (151 lines) [pointer_cast]
+           - core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (80 lines) [missing_cave_copy, stack_alignment_array, unrolled_memcpy, warning_type_propagation]
+           - core_scat.cpp_CScat_updateAI_FUN_005578e0 (158 lines) [bit_int_float_compare, unrolled_memcpy]
+   80.0% | core/tentacle.cpp
+         12/15 clean, 3 remaining
+           - core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 (45 lines) [missing_cave_copy, unrolled_memcpy]
+           - core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (35 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
+           - core_tentacle.cpp_CTentacle_process_FUN_005db050 (258 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
+   79.2% | core/script.cpp
+         76/96 clean, 20 remaining
            - core_script.cpp_getActor_FUN_005594e0 (69 lines) [unrolled_strcpy]
            - core_script.cpp_CScript_loadScript_FUN_00559f80 (147 lines) [pointer_cast]
            - core_script.cpp_CScript_checkSyntax_FUN_00566080 (54 lines) [pointer_cast, unrolled_strcpy]
            - core_script.cpp_CScript_extractCrossReferences_FUN_005671a0 (80 lines) [pointer_cast, unrolled_memcpy, unrolled_strchr, unrolled_strcpy]
            - core_script.cpp_CScript_parseCommand_FUN_00567080 (65 lines) [pointer_cast, unrolled_memcpy]
            - core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090 (192 lines) [pointer_cast, unrolled_strcpy]
+           - core_script.cpp_compareEventXRefs_FUN_005675a0 (48 lines) [sign_compare_idiom]
            - core_script.cpp_parseConditionExpression_FUN_00561a30 (162 lines) [unrolled_strcat, unrolled_strchr, unrolled_strcpy, unrolled_strlen]
            - core_script.cpp_parseCommandWithTemplates_FUN_00561690 (284 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy, unrolled_strlen]
            - core_script.cpp_CCmdParse_toString_FUN_005624f0 (121 lines) [unrolled_strcpy]
@@ -354,18 +381,6 @@ FILES AT 50-89%
            - core_script.cpp_CScript_addEventXRef_FUN_00567510 (24 lines) [pointer_cast, unrolled_memcpy]
            - core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0 (43 lines) [pointer_cast]
            - core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70 (66 lines) [unrolled_strcpy]
-   80.0% | core/scat.cpp
-         20/25 clean, 5 remaining
-           - core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (48 lines) [missing_cave_copy, warning_type_propagation]
-           - core_scat.cpp_CScat_process_FUN_005571f0 (311 lines) [missing_cave_copy, unrolled_memset]
-           - core_scat.cpp_CScat_updateAiming_FUN_00558720 (151 lines) [pointer_cast]
-           - core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (80 lines) [missing_cave_copy, stack_alignment_array, unrolled_memcpy, warning_type_propagation]
-           - core_scat.cpp_CScat_updateAI_FUN_005578e0 (158 lines) [bit_int_float_compare, unrolled_memcpy]
-   80.0% | core/tentacle.cpp
-         12/15 clean, 3 remaining
-           - core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 (45 lines) [missing_cave_copy, unrolled_memcpy]
-           - core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (35 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
-           - core_tentacle.cpp_CTentacle_process_FUN_005db050 (258 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
    79.2% | core/turret.cpp
          19/24 clean, 5 remaining
            - core_turret.cpp_CTurret_ctor_FUN_005e20f0 (54 lines) [unrolled_memcpy]
@@ -462,6 +477,13 @@ FILES AT 50-89%
            - core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 (379 lines) [bit_int_float_compare]
            - core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680 (283 lines) [unrolled_memcpy]
            - core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 (260 lines) [unrolled_memcpy]
+   76.2% | engine/prim.c
+         16/21 clean, 5 remaining
+           - engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210 (42 lines) [sign_compare_idiom]
+           - engine_prim.c_getTriangleWindingFromIndices2_FUN_00552300 (42 lines) [sign_compare_idiom]
+           - engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40 (238 lines) [sign_compare_idiom]
+           - engine_prim.c_calculateTriangleWindingOrder_FUN_00552150 (29 lines) [sign_compare_idiom]
+           - engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0 (43 lines) [sign_compare_idiom]
    75.8% | shape/superopt.cpp
          141/186 clean, 45 remaining
            - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
@@ -720,7 +742,7 @@ FILES AT 50-89%
            - core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (156 lines) [pointer_cast, unrolled_memcpy]
            - core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80 (44 lines) [missing_cave_copy, pointer_cast, unrolled_memcpy]
            - core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0 (101 lines) [pointer_cast]
-           - core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (1852 lines) [missing_cave_copy, pointer_cast, unrolled_memcpy, unrolled_memset, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
+           - core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (1852 lines) [missing_cave_copy, pointer_cast, sign_compare_idiom, unrolled_memcpy, unrolled_memset, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
            - core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (243 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
            - core_skeledit.cpp_CLodVert_copy_FUN_00599550 (26 lines) [unrolled_memcpy]
            - core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (85 lines) [pointer_cast, shadow_pointer_walk]
@@ -831,6 +853,20 @@ FILES AT 50-89%
            - core_weather.cpp_CWeather_update_FUN_005eeaf0 (141 lines) [pointer_cast]
            - core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940 (69 lines) [pointer_cast, unrolled_memcpy]
            - core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 (83 lines) [unrolled_memcpy]
+   57.1% | engine/clipper.c
+         16/28 clean, 12 remaining
+           - engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230 (55 lines) [sign_compare_idiom]
+           - engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360 (54 lines) [sign_compare_idiom]
+           - engine_clipper.c_interpolateVertexTopClip_FUN_00435d00 (49 lines) [sign_compare_idiom]
+           - engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00 (50 lines) [sign_compare_idiom]
+           - engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0 (446 lines) [pointer_cast]
+           - engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00 (50 lines) [sign_compare_idiom]
+           - engine_clipper.c_interpolateVertexNearClip_FUN_00435e00 (52 lines) [sign_compare_idiom]
+           - engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490 (55 lines) [sign_compare_idiom]
+           - engine_clipper.c_clipPolygonToViewport_FUN_00438420 (464 lines) [pointer_cast]
+           - engine_clipper.c_interpolateVertexRightClip_FUN_00435b00 (49 lines) [sign_compare_idiom]
+           - engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0 (54 lines) [sign_compare_idiom]
+           - engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (134 lines) [pointer_cast]
    55.6% | engine/alphabit.cpp
          5/9 clean, 4 remaining
            - engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 (100 lines) [pointer_cast]
@@ -910,7 +946,7 @@ FILES AT 50-89%
            - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [shadow_pointer_walk, unrolled_memcpy]
 
-Total: 55 files
+Total: 57 files
 
 ====================================================================================================
 FILES BELOW 50%

@@ -10,6 +10,10 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
+  core/water.cpp (1 remaining of 8)
+    - core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
+      Suspects: sign_compare_idiom
+
   core/event.cpp (1 remaining of 56)
     - core_event.cpp_CEventList_process_FUN_004aaac0
       Suspects: unrolled_memcpy
@@ -17,6 +21,22 @@ PRIORITY 1: Files with 1-2 functions remaining
   core/ground.cpp (1 remaining of 20)
     - core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880
       Suspects: raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant
+
+  core/dtrace.cpp (1 remaining of 51)
+    - core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
+      Suspects: sign_compare_idiom, sign_compare_idiom, sign_compare_idiom, sign_compare_idiom
+
+  sound/sndmain.cpp (2 remaining of 193)
+    - sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
+      Suspects: sign_compare_idiom
+    - sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
+      Suspects: sign_compare_idiom
+
+  core/dcamera.cpp (2 remaining of 86)
+    - core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
+      Suspects: sign_compare_idiom
+    - core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
+      Suspects: sign_compare_idiom
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
@@ -41,10 +61,29 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
+  sound/sndmain.cpp (99.0% complete)
+    2 functions remaining:
+      sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70 (51 lines)
+        Types: ['sign_compare_idiom']
+      sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0 (51 lines)
+        Types: ['sign_compare_idiom']
+
   core/event.cpp (98.2% complete)
     1 functions remaining:
       core_event.cpp_CEventList_process_FUN_004aaac0 (53 lines)
         Types: ['unrolled_memcpy']
+
+  core/dtrace.cpp (98.0% complete)
+    1 functions remaining:
+      core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (668 lines)
+        Types: ['sign_compare_idiom']
+
+  core/dcamera.cpp (97.7% complete)
+    2 functions remaining:
+      core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 (271 lines)
+        Types: ['sign_compare_idiom']
+      core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0 (122 lines)
+        Types: ['sign_compare_idiom']
 
   core/charactr.cpp (97.2% complete)
     3 functions remaining:
@@ -69,6 +108,17 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880 (15 lines)
         Types: ['raw_address_constant']
 
+  core/xform.cpp (93.4% complete)
+    4 functions remaining:
+      core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00 (47 lines)
+        Types: ['sign_compare_idiom']
+      core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80 (47 lines)
+        Types: ['sign_compare_idiom']
+      core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0 (47 lines)
+        Types: ['sign_compare_idiom']
+      core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40 (47 lines)
+        Types: ['sign_compare_idiom']
+
   sound/mp3.cpp (93.0% complete)
     4 functions remaining:
       sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0 (100 lines)
@@ -83,7 +133,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
-  engine/clipper.c                                              89.3%  (25/28 clean, 3 remaining)
   core/zombie.cpp                                               87.5%  (28/32 clean, 4 remaining)
   engine/2d.c                                                   85.5%  (65/76 clean, 11 remaining)
   core/gore.cpp                                                 85.2%  (46/54 clean, 8 remaining)
@@ -94,13 +143,13 @@ ALL REMAINING FILES
   core/hero.cpp                                                 83.3%  (40/48 clean, 8 remaining)
   core/frankgen.cpp                                             83.3%  (20/24 clean, 4 remaining)
   engine/pod.cpp                                                82.4%  (28/34 clean, 6 remaining)
-  engine/3d.c                                                   81.7%  (85/104 clean, 19 remaining)
   shape/cramtex.cpp                                             81.0%  (17/21 clean, 4 remaining)
+  engine/3d.c                                                   80.8%  (84/104 clean, 20 remaining)
   core/mobster.cpp                                              80.8%  (21/26 clean, 5 remaining)
   core/curtain.cpp                                              80.8%  (21/26 clean, 5 remaining)
-  core/script.cpp                                               80.2%  (77/96 clean, 19 remaining)
   core/scat.cpp                                                 80.0%  (20/25 clean, 5 remaining)
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
+  core/script.cpp                                               79.2%  (76/96 clean, 20 remaining)
   core/turret.cpp                                               79.2%  (19/24 clean, 5 remaining)
   core/dfilter.cpp                                              78.9%  (15/19 clean, 4 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
@@ -110,6 +159,7 @@ ALL REMAINING FILES
   core/flies.cpp                                                77.3%  (17/22 clean, 5 remaining)
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
   core/conveyor.cpp                                             76.5%  (13/17 clean, 4 remaining)
+  engine/prim.c                                                 76.2%  (16/21 clean, 5 remaining)
   core/stranger.cpp                                             76.2%  (48/63 clean, 15 remaining)
   shape/superopt.cpp                                            75.8%  (141/186 clean, 45 remaining)
   core/setutil.cpp                                              75.6%  (31/41 clean, 10 remaining)
@@ -133,6 +183,7 @@ ALL REMAINING FILES
   core/ghoul.cpp                                                66.7%  (12/18 clean, 6 remaining)
   core/weather.cpp                                              60.0%  (6/10 clean, 4 remaining)
   core/path.cpp                                                 60.0%  (15/25 clean, 10 remaining)
+  engine/clipper.c                                              57.1%  (16/28 clean, 12 remaining)
   engine/alphabit.cpp                                           55.6%  (5/9 clean, 4 remaining)
   core/glass.cpp                                                54.2%  (13/24 clean, 11 remaining)
   core/dcube.cpp                                                53.8%  (21/39 clean, 18 remaining)

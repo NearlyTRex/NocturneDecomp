@@ -7,14 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 489,
-    "complexity_score": 238,
+    "complexity_score": 263,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 34,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 238,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "sign_compare_idiom"
+    ],
     "total_lines": 727
   },
   "cross_references": [
@@ -409,5 +411,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 187,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar13 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 222,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar13 = SBORROW4(local_1c,g_MaxViewportScanline);",
+      "type": "sign_compare_idiom"
+    }
+  ]
 }

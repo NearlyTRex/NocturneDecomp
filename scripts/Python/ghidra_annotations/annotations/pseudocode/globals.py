@@ -34,16 +34,6 @@ GLOBAL_TYPE_OVERRIDES = {
     # constants_560000.h still type-check (a 2-D shape would make the inner
     # element a CVector3i[320] row with no .y member).
     'g_PrecomputedWorldPositions': 'CVector3i[77120]',
-    # Software scanline renderers index g_ReciprocalLookupTable[pixel_count + 1]
-    # (renderMMXPerspectiveScanline*, renderPerspectiveCorrectScanline*,
-    # renderTexturedDecalMMXScanline, renderTexturedAlphaMMXScanline, and the
-    # depth/solid-color variants). A full-width span at the 1600px max resolution
-    # reaches index 1600 — one past Ghidra's [1600], which Ghidra can't grow
-    # because the next symbol abuts the array. The original binary read the
-    # adjacent global (benign on Windows); UBSan flags it. Widen the emitted
-    # storage to [1601]; initGraphicsSystem's fill loop is bumped to 0x641 to
-    # populate the new last entry (0xffffffff / 1600).
-    'g_ReciprocalLookupTable': 'uint[1601]',
 }
 
 

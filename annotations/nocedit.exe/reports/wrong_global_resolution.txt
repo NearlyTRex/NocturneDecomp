@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 68
-  Total suspicious global references: 115
+  Functions with suspicious globals: 70
+  Total suspicious global references: 117
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -28,6 +28,7 @@ SUMMARY
     g_UseDirect3D                                      2 functions
     g_CMoonInstance                                    2 functions
     g_CKeysPtr                                         2 functions
+    g_VisibleCoronaGlobeCount                          2 functions
     g_CommandTemplates                                 2 functions
     g_PositiveInfinity                                 2 functions
     g_MMXSupported                                     1 functions
@@ -35,9 +36,8 @@ SUMMARY
     g_CBaronWeaponClassInfo                            1 functions
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
-    g_SourcePaletteData                                1 functions
 
-  .keep files with issues: 29 (these need manual review)
+  .keep files with issues: 31 (these need manual review)
   Raw .cpp files with issues: 39
 
 ====================================================================================================
@@ -253,6 +253,14 @@ core_main.c_initializeGameSystems_FUN_00507a60  [.keep]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_mission.cpp_CDemonMission_clearMissionData_FUN_00522d30  [.keep]  (1 suspicious globals)
+  File: core/mission.cpp
+
+  g_VisibleCoronaGlobeCount
+    Used at lines: 15
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_script.cpp_CScript_parseActionTemplate_FUN_00567490  [.keep]  (1 suspicious globals)
   File: core/script.cpp
 
@@ -274,6 +282,14 @@ core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110  [.keep]  (1 suspicious globa
 
   g_CoronaGlobes
     Used at lines: 14
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_initScene_FUN_0056aa10  [.keep]  (1 suspicious globals)
+  File: core/set.cpp
+
+  g_VisibleCoronaGlobeCount
+    Used at lines: 67
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

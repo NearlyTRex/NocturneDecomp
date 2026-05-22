@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 240,
+    "complexity_score": 275,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 19,
+    "suspect_count": 22,
     "suspect_types": [
       "fpu_register_input",
+      "sign_compare_idiom",
       "unaffected_reg",
       "unnamed_param"
     ],
@@ -245,6 +246,30 @@
       "severity": "mild",
       "text": "for (; -1 < (int)param_2; param_2 = param_2 * 2 + (uint)(bVar6 || CARRY4(uVar1,(uint)bVar5))) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 29,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "for (; -1 < (int)param_2; param_2 = param_2 * 2 + (uint)(bVar6 || CARRY4(uVar1,(uint)bVar5))) {",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 30,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "bVar5 = CARRY4(uVar4,uVar4);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 32,
+      "match": "CARRY4",
+      "severity": "moderate",
+      "text": "bVar6 = CARRY4(uVar2,uVar2);",
+      "type": "sign_compare_idiom"
     },
     {
       "description": "FPU register input (calling convention issue)",

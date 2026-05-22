@@ -4,15 +4,16 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1503 ( 44.0%)
-  unrolled_memcpy                  766 ( 22.4%)
-  unrolled_strcpy                  253 (  7.4%)
-  shadow_pointer_walk              134 (  3.9%)
+  pointer_cast                    1503 ( 42.7%)
+  unrolled_memcpy                  766 ( 21.8%)
+  unrolled_strcpy                  253 (  7.2%)
+  shadow_pointer_walk              134 (  3.8%)
   missing_cave_copy                111 (  3.2%)
-  raw_address_constant              91 (  2.7%)
+  sign_compare_idiom               101 (  2.9%)
+  raw_address_constant              91 (  2.6%)
   unrolled_strlen                   80 (  2.3%)
-  unrolled_memset                   65 (  1.9%)
-  static_uninitvar                  54 (  1.6%)
+  unrolled_memset                   65 (  1.8%)
+  static_uninitvar                  54 (  1.5%)
   warning_inlined_function          45 (  1.3%)
   bitcast_double_pair               42 (  1.2%)
   unrolled_strchr                   41 (  1.2%)
@@ -23,8 +24,8 @@ SUSPECT TYPE COUNTS
   warning_type_propagation          17 (  0.5%)
   stack_alignment_array             15 (  0.4%)
   negative_offset                   13 (  0.4%)
-  warning_unreachable               12 (  0.4%)
-  primitive_walker_cast             12 (  0.4%)
+  warning_unreachable               12 (  0.3%)
+  primitive_walker_cast             12 (  0.3%)
   self_copy_guard                   11 (  0.3%)
   sub84_truncation                  10 (  0.3%)
   static_null_pointer                8 (  0.2%)
@@ -917,6 +918,44 @@ Functions:
   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
   core_tentacle.cpp_CTentacle_process_FUN_005db050
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
+
+====================================================================================================
+TYPE: sign_compare_idiom (101 occurrences)
+====================================================================================================
+
+Unique patterns:
+    77x  CARRY4
+    24x  SBORROW4
+
+Functions:
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
+  core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
+  core_script.cpp_compareEventXRefs_FUN_005675a0
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
+  core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00
+  core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80
+  core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0
+  core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40
+  engine_3d.c_isVisiblePlane_FUN_00403950
+  engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
+  engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
+  engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
+  engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
+  engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
+  engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
+  engine_clipper.c_interpolateVertexRightClip_FUN_00435b00
+  engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
+  engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
+  engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
+  engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210
+  engine_prim.c_getTriangleWindingFromIndices2_FUN_00552300
+  engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
+  engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
 
 ====================================================================================================
 TYPE: raw_address_constant (91 occurrences)

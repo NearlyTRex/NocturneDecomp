@@ -13,7 +13,7 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
   int iVar2;
   _FILE *file;
   uint uVar3;
-  
+
   iVar2 = wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ecc10(g_WindowWidth,g_WindowHeight);
   if (iVar2 == 0) {
     g_CurrentFilename = "..\\engine\\2d.c";

@@ -18,13 +18,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int h
   DDSURFACEDESC DStack_84;
   DDSCAPS DStack_18;
   int iStack_14;
-  int backbuffer_guard;
 
-#if NOCTURNE_AUTHENTIC_WINDOWS
-  backbuffer_guard = 0;
-#else
-  backbuffer_guard = NOCTURNE_BACKBUFFER_GUARD_BYTES;
-#endif
   if (g_DirectDrawUnknown != (IUnknown *)0x0 && g_DirectDrawUnknown->vtable != (IUnknown_vtable *)0x0) {
     (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
     g_DirectDrawUnknown = (IUnknown *)0x0;
@@ -56,8 +50,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int h
   g_BackBuffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                            (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
                                   (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *
-                            g_WindowHeight * g_WindowWidth + backbuffer_guard,
-                            "..\\wincore\\wddvmem.cpp",0xe9);
+                            g_WindowHeight * g_WindowWidth,"..\\wincore\\wddvmem.cpp",0xe9);
   if (g_BackBuffer == (void *)0x0) {
     g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
     g_CurrentLineNumber = 0xea;

@@ -8,16 +8,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5207,
-    "complexity_score": 2147,
+    "complexity_score": 2162,
     "cross_reference_count": 0,
     "function_call_count": 57,
     "global_count": 186,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1852,
-    "suspect_count": 26,
+    "suspect_count": 27,
     "suspect_types": [
       "missing_cave_copy",
       "pointer_cast",
+      "sign_compare_idiom",
       "unrolled_memcpy",
       "unrolled_memset",
       "unrolled_strcpy",
@@ -3191,6 +3192,14 @@
       "severity": "moderate",
       "text": "} while (iVar4 < *(int *)((int)aiStack_2900 + iVar16));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "line": 1598,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "while (bVar25 || SBORROW4(iVar4,local_94) != iVar16 < 0) {",
+      "type": "sign_compare_idiom"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

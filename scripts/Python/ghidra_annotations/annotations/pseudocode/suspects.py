@@ -95,6 +95,7 @@ SUSPECT_SEVERITY = {
     'loop_clobbered_constant': 'moderate',
     'primitive_walker_cast': 'moderate',
     'subfield_vector_pun': 'moderate',
+    'sign_compare_idiom': 'moderate',
 }
 
 
@@ -283,9 +284,16 @@ _SUSPECT_PATTERN_DEFS = [
     # WARNING: Unable to use type for symbol
     (r'WARNING:\s*Unable to use type for symbol', 'warning_unable_to_use_type',
      'Ghidra could not apply type to a symbol'),
+    # Borrow/carry compare idioms - Ghidra's spelling of a signed/unsigned
+    # comparison via CPU flag math, e.g. `SBORROW4(a,b) != (int)(a-b) < 0` is just
+    # signed `a < b` (how JL/JGE read SF^OF). Always reducible to a plain
+    # </<=/>/>= comparison in a .keep, so flag for cleanup (not omitted like the
+    # genuinely-needed intrinsics below).
+    (r'\b(SBORROW\d*|SCARRY\d*|CARRY\d*)\b', 'sign_compare_idiom',
+     'Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) — Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.'),
     # Decompiler intrinsics - pseudo-functions and artifacts (not real C)
-    # Includes: ROUND(), SQRT(), CONCAT44, SUB84, SBORROW, CARRY4, NAN(), fsin, fcos, fptan, ADJ(), etc.
-    (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CARRY\d*|SCARRY\d*|SBORROW\d*|CONCAT\d+|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs|ADJ)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),
+    # Includes: ROUND(), SQRT(), CONCAT44, SUB84, NAN(), fsin, fcos, fptan, ADJ(), etc.
+    (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CONCAT\d+|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs|ADJ)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),
     # CPUID intrinsics - Ghidra's representation of CPUID instruction
     (r'\bcpuid_\w+\b', 'cpuid_intrinsic', 'CPUID intrinsic (CPU detection)'),
     # builtin_* - Ghidra builtin functions
