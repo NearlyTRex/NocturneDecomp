@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 391,
+    "complexity_score": 366,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 53,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 366,
-    "suspect_count": 2,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1444
   },
   "cross_references": [
@@ -822,24 +820,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 87,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 87,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

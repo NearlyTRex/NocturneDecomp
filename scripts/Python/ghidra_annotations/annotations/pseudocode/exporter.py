@@ -769,8 +769,17 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
             # still has REP MOVSD; if the keep eliminated the cpp's
             # `for (... = N; ... != 0; ... = ... + -1)` loop, count it
             # as one resolution.
+            #
+            # The condition slot allows a leading comma-expression because
+            # Watcom folds the per-iteration pointer advances into the
+            # loop header: `for (i = N; src = src->f, dst = dst->f, i != 0;
+            # i = i + -1)`. Ghidra lowers a `current = events` struct
+            # assignment (REP MOVSD in asm) to exactly this shape, and
+            # without `[^;]*?` before the terminal `i != 0` the loop went
+            # uncredited, leaving an asm-anchored `unrolled_memcpy` suspect
+            # on a keep that had fully collapsed the copy.
             _COUNTDOWN_FOR_RE = re.compile(
-                r'for\s*\([^;]*;\s*\w+\s*!=\s*0\s*;'
+                r'for\s*\([^;]*;[^;]*?\b\w+\s*!=\s*0\s*;'
                 r'\s*\w+\s*=\s*\w+\s*\+\s*-1\s*\)')
             countdown_delta = max(
                 0,
@@ -845,6 +854,16 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
             resolved_suspects.extend(resolved_by_keep)
         except Exception as e:
             log_info("keep-resolution failed for %s: %s" % (func_name, str(e)))
+
+        # The OMIT_SUSPECT_TYPES filter above runs *before* this keep block,
+        # but the block appends keep-introduced / re-added entries afterward.
+        # An omitted type the keep introduces (e.g. a `decompiler_intrinsic`
+        # ROUND/SQRT the .cpp didn't have, matched once more in the keep) would
+        # otherwise leak into the JSON. Re-apply the filter so the keep path
+        # honors OMIT_SUSPECT_TYPES exactly like the raw .cpp path.
+        suspects = [s for s in suspects if s.get('type') not in OMIT_SUSPECT_TYPES]
+        resolved_suspects = [s for s in resolved_suspects
+                             if s.get('type') not in OMIT_SUSPECT_TYPES]
 
     # Calculate complexity metrics (Python-only)
     complexity = calculate_complexity_metrics(

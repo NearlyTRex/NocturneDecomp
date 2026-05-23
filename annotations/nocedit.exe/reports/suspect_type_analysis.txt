@@ -4,9 +4,9 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1485 ( 43.1%)
-  unrolled_memcpy                  765 ( 22.2%)
-  unrolled_strcpy                  253 (  7.3%)
+  pointer_cast                    1485 ( 43.4%)
+  unrolled_memcpy                  764 ( 22.3%)
+  unrolled_strcpy                  253 (  7.4%)
   shadow_pointer_walk              126 (  3.7%)
   missing_cave_copy                111 (  3.2%)
   raw_address_constant              87 (  2.5%)
@@ -14,18 +14,17 @@ SUSPECT TYPE COUNTS
   unrolled_memset                   65 (  1.9%)
   carry_arith_idiom                 63 (  1.8%)
   static_uninitvar                  54 (  1.6%)
-  warning_inlined_function          45 (  1.3%)
+  warning_inlined_function          44 (  1.3%)
   bitcast_double_pair               42 (  1.2%)
   unrolled_strchr                   41 (  1.2%)
   bit_int_float_compare             33 (  1.0%)
   static_legacy_uninitvar           30 (  0.9%)
-  decompiler_intrinsic              25 (  0.7%)
   static_invalid_pointer_cast       18 (  0.5%)
   warning_type_propagation          17 (  0.5%)
   sign_compare_idiom                17 (  0.5%)
   stack_alignment_array             15 (  0.4%)
   negative_offset                   13 (  0.4%)
-  warning_unreachable               12 (  0.3%)
+  warning_unreachable               12 (  0.4%)
   self_copy_guard                   11 (  0.3%)
   sub84_truncation                  10 (  0.3%)
   static_null_pointer                8 (  0.2%)
@@ -381,13 +380,13 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (765 occurrences)
+TYPE: unrolled_memcpy (764 occurrences)
 ====================================================================================================
 
 Unique patterns:
    589x  field-by-field struct copy
     89x  for (...; != 0; ... + -1)
-    85x  MOVSD.REP
+    84x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
@@ -435,7 +434,6 @@ Functions:
   core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0
   core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0
-  core_event.cpp_CEventList_process_FUN_004aaac0
   core_flies.cpp_CFlies_initFly_FUN_004cc760
   core_flies.cpp_CFlies_process_FUN_004cbf00
   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
@@ -1078,11 +1076,11 @@ Functions:
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 
 ====================================================================================================
-TYPE: warning_inlined_function (45 occurrences)
+TYPE: warning_inlined_function (44 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    45x  WARNING: Inlined function:
+    44x  WARNING: Inlined function:
 
 Functions:
   core_curtain.cpp_CCurtain_setup_FUN_00449810
@@ -1118,7 +1116,6 @@ Functions:
   shape_design.c_createKeyframeModel_FUN_00468320
   shape_design.c_exportModelToBIN_FUN_0045aa80
   shape_design.c_loadTextureData_FUN_0046b060
-  shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0
   shape_design.c_renderSinglePolygon_FUN_0045ce20
   shape_design.c_showFacetPartEditor_FUN_0045f1d0
   shape_design.c_tileTextureMaps_FUN_0046a180
@@ -1237,26 +1234,6 @@ Functions:
   engine_2d.c_findBestPaletteMatch_FUN_00401460
   shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
   shape_design.c_loadModelBinary_FUN_00458170
-
-====================================================================================================
-TYPE: decompiler_intrinsic (25 occurrences)
-====================================================================================================
-
-Unique patterns:
-    17x  ROUND
-     7x  ABS
-     1x  SQRT
-
-Functions:
-  core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
-  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
-  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
-  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0
-  shape_design.c_writePolygonModel_FUN_0045a320
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
-  shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
-  shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
 
 ====================================================================================================
 TYPE: static_invalid_pointer_cast (18 occurrences)

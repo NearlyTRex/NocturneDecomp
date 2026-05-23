@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 500,
-    "complexity_score": 185,
+    "complexity_score": 150,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 150,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 650
   },
   "cross_references": [
@@ -971,33 +969,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 36,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "abs_nx = ABS((this_ptr->normal).x);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 37,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "abs_ny = ABS((this_ptr->normal).y);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 38,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "abs_nz = ABS((this_ptr->normal).z);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

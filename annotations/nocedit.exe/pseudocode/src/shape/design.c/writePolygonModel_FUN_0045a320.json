@@ -7,15 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 113,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 32,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
@@ -349,24 +348,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 27,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 27,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

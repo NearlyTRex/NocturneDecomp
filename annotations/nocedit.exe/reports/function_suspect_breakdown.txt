@@ -4,15 +4,15 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5843 functions
-  1 suspects: 85 functions
+  0 suspects: 5852 functions
+  1 suspects: 80 functions
   2 suspects: 132 functions
-  3 suspects: 79 functions
-  4 suspects: 77 functions
+  3 suspects: 77 functions
+  4 suspects: 76 functions
   5 suspects: 40 functions
   6 suspects: 51 functions
   7 suspects: 18 functions
-  8 suspects: 30 functions
+  8 suspects: 29 functions
   9 suspects: 9 functions
   10 suspects: 16 functions
   11 suspects: 10 functions
@@ -26,10 +26,10 @@ SUSPECT COUNT DISTRIBUTION
   19 suspects: 1 functions
   20 suspects: 1 functions
   21 suspects: 4 functions
-  22 suspects: 2 functions
+  22 suspects: 3 functions
   23 suspects: 1 functions
   24 suspects: 1 functions
-  26 suspects: 2 functions
+  26 suspects: 1 functions
   27 suspects: 1 functions
   28 suspects: 1 functions
   29 suspects: 2 functions
@@ -42,14 +42,12 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [unrolled_memcpy] (28 functions)
+  [unrolled_memcpy] (27 functions)
   ------------------------------------------------------------
     core_msnedit.cpp_CDemonMission_raycastPickActor_FU ( 52 lines)
       local_28.x = g_CDemonCameraInstance.base.position.f.x;...
     shape_design.c_selectVertexToDelete_FUN_0045c5b0   ( 52 lines)
       g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1...
-    core_event.cpp_CEventList_process_FUN_004aaac0     ( 53 lines)
-      // 004aaaee: MOVSD.REP ES:EDI,ESI...
     core_turret.cpp_CTurret_ctor_FUN_005e20f0          ( 54 lines)
       (ADJ(this_ptr_00)->patrol_target).x = pCVar3->x;...
     shape_design.c_duplicateSharedVertices_FUN_00465d5 ( 54 lines)
@@ -218,20 +216,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_stranger.cpp_CStranger_updateProceduralAnimat (516 lines)
       if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {...
 
-  [decompiler_intrinsic] (3 functions)
-  ------------------------------------------------------------
-    shape_superopt.cpp_COptimize_findCoplanarPolygons_ ( 90 lines)
-      if ((ABS(dVar1 - dVar3) <= this_ptr->coplanar_distance_thres...
-    core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 (162 lines)
-      inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 *...
-    core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  (290 lines)
-      CStack_30.y = (int)ROUND(fStack_y * 256.0f);...
-
-  [warning_inlined_function] (1 functions)
-  ------------------------------------------------------------
-    shape_design.c_renderSinglePolygonWithColorOverlay ( 30 lines)
-      /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 ...
-
   [stack_alignment_array] (1 functions)
   ------------------------------------------------------------
     core_icepick.cpp_CIcePick_updateShootBlend_FUN_004 ( 58 lines)
@@ -383,6 +367,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/wateract.cpp, Lines: 56, Types: ['unrolled_strcpy']
   engine_2d.c_drawCharacterHighlighted_FUN_00401b70
     File: engine/2d.c, Lines: 58, Types: ['pointer_cast']
+  shape_design.c_writePolygonModel_FUN_0045a320
+    File: shape/design.c, Lines: 58, Types: ['unrolled_strcpy', 'warning_inlined_function']
   core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf4
     File: core/dmodel.cpp, Lines: 59, Types: ['pointer_cast']
   core_chain.cpp_CChain_getBoundingBox_FUN_00430eb0
@@ -503,8 +489,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/setedit.cpp, Lines: 259, Types: ['shadow_pointer_walk', 'unrolled_strcpy']
   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960
     File: core/stranger.cpp, Lines: 270, Types: ['unrolled_memcpy']
-  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
-    File: core/inv.cpp, Lines: 366, Types: ['decompiler_intrinsic']
   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437c
     File: engine/clipper.c, Lines: 446, Types: ['pointer_cast']
   engine_clipper.c_clipPolygonToViewport_FUN_00438420
@@ -649,12 +633,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mobster.cpp, Lines: 148, Types: ['bit_int_float_compare', 'pointer_cast']
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
     File: core/ghoul.cpp, Lines: 149, Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy']
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
-    File: shape/superopt.cpp, Lines: 150, Types: ['decompiler_intrinsic']
   shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
     File: shape/meshlod.cpp, Lines: 157, Types: ['pointer_cast', 'self_copy_guard']
-  shape_superopt.cpp_CComplexPolygon_validateSubChainVisibilit
-    File: shape/superopt.cpp, Lines: 157, Types: ['decompiler_intrinsic']
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_F
     File: engine/fileio.cpp, Lines: 173, Types: ['pointer_cast', 'unrolled_strcpy']
   shape_design.c_polygonToolModeManager_FUN_00464c90

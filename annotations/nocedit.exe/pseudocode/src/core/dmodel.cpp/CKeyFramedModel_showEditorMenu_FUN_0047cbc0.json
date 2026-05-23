@@ -8,15 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2523,
-    "complexity_score": 1147,
+    "complexity_score": 1102,
     "cross_reference_count": 2,
     "function_call_count": 72,
     "global_count": 128,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 857,
-    "suspect_count": 26,
+    "suspect_count": 22,
     "suspect_types": [
-      "decompiler_intrinsic",
       "negative_offset",
       "pointer_cast",
       "unrolled_memcpy",
@@ -2271,42 +2270,6 @@
       "severity": "moderate",
       "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar18) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 155,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(this_ptr,(int)ROUND(ROUND(local_70)),(CKeyFramedModelInstance *)0x0,-1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 155,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(this_ptr,(int)ROUND(ROUND(local_70)),(CKeyFramedModelInstance *)0x0,-1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 178,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(local_408,\"Frame: %d of %d\",(int)ROUND(ROUND(local_70)),this_ptr->frame_count);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 178,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(local_408,\"Frame: %d of %d\",(int)ROUND(ROUND(local_70)),this_ptr->frame_count);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Uninitialized variable: local_ca8",

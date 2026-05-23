@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5826 (90.3%)
-With suspects: 628
-Total suspects: 3449
+Clean: 5835 (90.4%)
+With suspects: 619
+Total suspects: 3422
 
 ====================================================================================================
 core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0 (1 suspect)
@@ -367,19 +367,6 @@ core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0 (14 suspects)
   Line 94 [pointer_cast]: *(float *)((int)&CVector3f_ARRAY_008879c0[0].z + iVar11);
   Line 112 [pointer_cast]: fVar17 = *(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11);
   Line 203 [shadow_pointer_walk]: pSVar13 = (SCurtainVertex *)&(pSVar13->local_position).y;
-
-====================================================================================================
-core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 (8 suspects)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 20 [decompiler_intrinsic]: g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));
-  Line 20 [decompiler_intrinsic]: g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));
-  Line 21 [decompiler_intrinsic]: g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));
-  Line 21 [decompiler_intrinsic]: g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));
-  Line 22 [decompiler_intrinsic]: g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
-  Line 22 [decompiler_intrinsic]: g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
-  Line 28 [decompiler_intrinsic]: corner_input.x = (int)ROUND(bbox_max->x * 256.0f);
-  Line 29 [decompiler_intrinsic]: corner_input.y = (int)ROUND(bbox_min->y * 256.0f);
 
 ====================================================================================================
 core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (6 suspects)
@@ -755,14 +742,10 @@ core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0 (6 suspects)
   Line 25 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->z + iVar1) = (int)ROUND(ROUND(dVar1));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (33 suspects)
+core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (29 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 155 [decompiler_intrinsic]: (this_ptr,(int)ROUND(ROUND(local_70)),(CKeyFramedModelInstance *)0x0,-1);
-  Line 155 [decompiler_intrinsic]: (this_ptr,(int)ROUND(ROUND(local_70)),(CKeyFramedModelInstance *)0x0,-1);
-  Line 178 [decompiler_intrinsic]: (local_408,"Frame: %d of %d",(int)ROUND(ROUND(local_70)),this_ptr->frame_count);
-  Line 178 [decompiler_intrinsic]: (local_408,"Frame: %d of %d",(int)ROUND(ROUND(local_70)),this_ptr->frame_count);
   Line 179 [unrolled_memcpy]: local_90.x = pCVar8->x;
   Line 203 [pointer_cast]: if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar11 + 3) & 0x80) == 0) {
   Line 204 [pointer_cast]: iVar12 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar11);
@@ -964,12 +947,6 @@ core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
   File: core/elephant.cpp
 ====================================================================================================
   Line 25 [static_invalid_pointer_cast]: if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {
-
-====================================================================================================
-core_event.cpp_CEventList_process_FUN_004aaac0 (1 suspect)
-  File: core/event.cpp
-====================================================================================================
-  Line 19 [unrolled_memcpy]: // 004aaaee: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
 core_flies.cpp_CFlies_initFly_FUN_004cc760 (2 suspects)
@@ -1461,19 +1438,6 @@ core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810 (1 suspect)
   File: core/icepick.cpp
 ====================================================================================================
   Line 12 [stack_alignment_array]: float afStackY_180c [1519];
-
-====================================================================================================
-core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (2 suspects)
-  File: core/inv.cpp
-====================================================================================================
-  Line 87 [decompiler_intrinsic]: local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));
-  Line 87 [decompiler_intrinsic]: local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));
-
-====================================================================================================
-core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (1 suspect)
-  File: core/ladder.cpp
-====================================================================================================
-  Line 33 [decompiler_intrinsic]: CStack_30.y = (int)ROUND(fStack_y * 256.0f);
 
 ====================================================================================================
 core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0 (1 suspect)
@@ -3991,12 +3955,6 @@ core_weather.cpp_CWeather_update_FUN_005eeaf0 (8 suspects)
   Line 70 [pointer_cast]: local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);
 
 ====================================================================================================
-core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 (1 suspect)
-  File: core/xform.cpp
-====================================================================================================
-  Line 23 [decompiler_intrinsic]: inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
-
-====================================================================================================
 core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0 (4 suspects)
   File: core/zombie.cpp
 ====================================================================================================
@@ -5308,12 +5266,6 @@ shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470 (5 suspects)
   Line 96 [unrolled_memcpy]: g_RenderVertexBuffer[0x7ff].u = g_RenderVertexBuffer[iVar1].u;
 
 ====================================================================================================
-shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0 (1 suspect)
-  File: shape/design.c
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
-====================================================================================================
 shape_design.c_renderSinglePolygon_FUN_0045ce20 (2 suspects)
   File: shape/design.c
 ====================================================================================================
@@ -5453,12 +5405,10 @@ shape_design.c_vertexReducer_FUN_00467850 (14 suspects)
   Line 174 [pointer_cast]: *(uint *)((int)base + g_ModelPolygonData[local_34].vertex_indices[local_30] * 8 + 4);
 
 ====================================================================================================
-shape_design.c_writePolygonModel_FUN_0045a320 (4 suspects)
+shape_design.c_writePolygonModel_FUN_0045a320 (2 suspects)
   File: shape/design.c
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 27 [decompiler_intrinsic]: iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
-  Line 27 [decompiler_intrinsic]: iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
   Line 40 [unrolled_strcpy]: do {
 
 ====================================================================================================
@@ -5996,14 +5946,6 @@ shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 (12 suspects)
   Line 130 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < dVar7) {
 
 ====================================================================================================
-shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0 (3 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 36 [decompiler_intrinsic]: abs_nx = ABS((this_ptr->normal).x);
-  Line 37 [decompiler_intrinsic]: abs_ny = ABS((this_ptr->normal).y);
-  Line 38 [decompiler_intrinsic]: abs_nz = ABS((this_ptr->normal).z);
-
-====================================================================================================
 shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0 (11 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
@@ -6018,14 +5960,6 @@ shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0 (11 suspects)
   Line 48 [pointer_cast]: local_34[0xb] = *(uint *)((int)edge_b->end_uv + 4);
   Line 50 [pointer_cast]: local_34[0xd] = *(uint *)((int)edge_b->end_uv + 0xc);
   Line 71 [pointer_cast]: local_20 = (void *)((int)local_20 + 0x60);
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90 (3 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 29 [decompiler_intrinsic]: abs_nx = ABS(normal->x);
-  Line 30 [decompiler_intrinsic]: abs_ny = ABS(normal->y);
-  Line 31 [decompiler_intrinsic]: abs_nz = ABS(normal->z);
 
 ====================================================================================================
 shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60 (12 suspects)
@@ -6160,12 +6094,6 @@ shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00 (10 suspects)
   Line 135 [pointer_cast]: *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + 4) = iVar5;
   Line 136 [pointer_cast]: *(float *)((int)g_ModelPolygonData[0].uv_u + iVar7 + 4) =
   Line 142 [pointer_cast]: *(float *)((int)g_ModelPolygonData[0].uv_v + iVar7 + 4) =
-
-====================================================================================================
-shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460 (1 suspect)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 47 [decompiler_intrinsic]: if ((ABS(dVar1 - dVar3) <= this_ptr->coplanar_distance_threshold) &&
 
 ====================================================================================================
 shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350 (3 suspects)

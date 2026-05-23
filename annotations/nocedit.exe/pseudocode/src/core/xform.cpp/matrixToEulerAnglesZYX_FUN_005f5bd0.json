@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 177,
+    "complexity_score": 162,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 162,
-    "suspect_count": 1,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 617
   },
   "cross_references": [
@@ -674,15 +672,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 23,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }
