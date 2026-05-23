@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 538
+// Structs : 537
 
 #include "nocturne.h"
 
@@ -9144,24 +9144,6 @@ static_assert(__builtin_offsetof(SMpegAllocationEntry, mode_flag) == 8,
 static_assert(__builtin_offsetof(SMpegAllocationEntry, requantization_index) == 12,
               "offsetof(SMpegAllocationEntry, requantization_index) != 12");
 
-// ---- SMpegAllocationTable (28 bytes) ----
-static_assert(sizeof(SMpegAllocationTable) == 28,
-              "sizeof(SMpegAllocationTable) != 28");
-static_assert(__builtin_offsetof(SMpegAllocationTable, table_version) == 0,
-              "offsetof(SMpegAllocationTable, table_version) != 0");
-static_assert(__builtin_offsetof(SMpegAllocationTable, num_lines) == 4,
-              "offsetof(SMpegAllocationTable, num_lines) != 4");
-static_assert(__builtin_offsetof(SMpegAllocationTable, allocation_data_ptr) == 8,
-              "offsetof(SMpegAllocationTable, allocation_data_ptr) != 8");
-static_assert(__builtin_offsetof(SMpegAllocationTable, table_index) == 12,
-              "offsetof(SMpegAllocationTable, table_index) != 12");
-static_assert(__builtin_offsetof(SMpegAllocationTable, num_subbands) == 16,
-              "offsetof(SMpegAllocationTable, num_subbands) != 16");
-static_assert(__builtin_offsetof(SMpegAllocationTable, num_allocation_groups) == 20,
-              "offsetof(SMpegAllocationTable, num_allocation_groups) != 20");
-static_assert(__builtin_offsetof(SMpegAllocationTable, num_granules) == 24,
-              "offsetof(SMpegAllocationTable, num_granules) != 24");
-
 // ---- SMpegFrame (28 bytes) ----
 static_assert(sizeof(SMpegFrame) == 28,
               "sizeof(SMpegFrame) != 28");
@@ -9307,8 +9289,8 @@ static_assert(__builtin_offsetof(SMpegStereoSubbandSamples, channels) == 0,
 // ---- SMpegSubbandAllocation (128 bytes) ----
 static_assert(sizeof(SMpegSubbandAllocation) == 128,
               "sizeof(SMpegSubbandAllocation) != 128");
-static_assert(__builtin_offsetof(SMpegSubbandAllocation, granules) == 0,
-              "offsetof(SMpegSubbandAllocation, granules) != 0");
+static_assert(__builtin_offsetof(SMpegSubbandAllocation, bit_allocations) == 0,
+              "offsetof(SMpegSubbandAllocation, bit_allocations) != 0");
 
 // ---- SMpegSubbandQuantizedSamples (2304 bytes) ----
 static_assert(sizeof(SMpegSubbandQuantizedSamples) == 2304,

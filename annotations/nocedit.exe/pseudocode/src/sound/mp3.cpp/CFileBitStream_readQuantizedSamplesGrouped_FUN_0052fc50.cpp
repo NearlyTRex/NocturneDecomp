@@ -2,11 +2,11 @@
 // Address: 0052fc50
 // Address Range: [[0052fc50, 0052fedc]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SMpegAllocationTable *allocation_table)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SMpegAllocationTable *allocation_table)
+void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SMpegFrame *frame)
 
 {
   int iVar2;
@@ -32,17 +32,17 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc
   SMpegSubbandScalefactors *local_18;
   int iVar1;
   
-  iVar1 = allocation_table->num_subbands;
-  iVar2 = allocation_table->num_granules;
-  iVar4 = allocation_table->num_allocation_groups;
-  pSVar5 = allocation_table->allocation_data_ptr;
+  iVar1 = frame->channel_count;
+  iVar2 = frame->sblimit;
+  iVar4 = frame->js_bound;
+  pSVar5 = frame->allocation_entries;
   local_2c = 0;
   if (0 < iVar2) {
     local_48 = 0;
     local_4c = pSVar5;
     do {
       local_18 = sample_array;
-      local_1c = (int *)((int)allocation_array->granules + local_48);
+      local_1c = (int *)((int)allocation_array->bit_allocations + local_48);
       local_20 = 0;
       while( true ) {
         iVar3 = iVar1;
@@ -65,8 +65,9 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc
               puVar10 = puVar11 + 0x20;
               uVar5 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40
                                 (this_ptr,*(int *)((int)local_4c +
-                                                  *(int *)((int)allocation_array[local_20].granules
-                                                          + local_48) * 0x10 + 4));
+                                                  *(int *)((int)allocation_array[local_20].
+                                                                bit_allocations + local_48) * 0x10 +
+                                                  4));
               *puVar11 = uVar5;
               puVar11 = puVar10;
             } while (puVar10 != (uint *)((int)&local_18[1].codes + local_48));

@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[0052f670, 0052f79f]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegAllocationTable *alloc_table_info)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegAllocationTable *alloc_table_info)
+void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegFrame *frame)
 
 {
   SMpegAllocationEntry *pvVar1;
@@ -22,10 +22,10 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFil
   int local_14;
   int iVar1;
 
-  iVar4 = alloc_table_info->num_granules;
-  iVar1 = alloc_table_info->num_subbands;
-  iVar6 = alloc_table_info->num_allocation_groups;
-  pvVar1 = alloc_table_info->allocation_data_ptr;
+  iVar4 = frame->sblimit;
+  iVar1 = frame->channel_count;
+  iVar6 = frame->js_bound;
+  pvVar1 = frame->allocation_entries;
   if (0 < iVar6) {
     local_14 = 0;
     local_18 = pvVar1;
@@ -35,7 +35,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFil
         do {
           uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40
                             (this_ptr,local_18->bit_count);
-          output_allocation->granules[local_14 + iVar7 * 0x20] = uVar2 & 0xff;
+          output_allocation->bit_allocations[local_14 + iVar7 * 0x20] = uVar2 & 0xff;
           iVar7 = iVar7 + 1;
         } while (iVar7 < iVar1);
       }
@@ -48,8 +48,8 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFil
     do {
       uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,pvVar8->bit_count);
       pvVar8 = pvVar8 + 16;
-      output_allocation->granules[iVar6 + 0x20] = uVar3 & 0xff;
-      output_allocation->granules[iVar6] = uVar3 & 0xff;
+      output_allocation->bit_allocations[iVar6 + 0x20] = uVar3 & 0xff;
+      output_allocation->bit_allocations[iVar6] = uVar3 & 0xff;
       iVar6 = iVar6 + 1;
     } while (iVar6 < iVar4);
   }
@@ -59,7 +59,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFil
       iVar4 = 0;
       if (0 < iVar1) {
         do {
-          output_allocation->granules[iVar9 + iVar4 * 0x20] = 0;
+          output_allocation->bit_allocations[iVar9 + iVar4 * 0x20] = 0;
           iVar4 = iVar4 + 1;
         } while (iVar4 < iVar1);
       }

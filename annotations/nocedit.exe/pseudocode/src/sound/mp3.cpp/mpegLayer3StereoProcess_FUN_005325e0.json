@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1031,
-    "complexity_score": 556,
+    "complexity_score": 541,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 20,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 541,
-    "suspect_count": 1,
-    "suspect_types": [
-      "primitive_walker_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1572
   },
   "cross_references": [
@@ -1311,15 +1309,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 154,
-      "match": "(int *)&g_Layer3BandIndex[",
-      "severity": "moderate",
-      "text": "int *band_idx_s = (int *)&g_Layer3BandIndex[0].s;",
-      "type": "primitive_walker_cast"
-    }
-  ]
+  "suspects": []
 }

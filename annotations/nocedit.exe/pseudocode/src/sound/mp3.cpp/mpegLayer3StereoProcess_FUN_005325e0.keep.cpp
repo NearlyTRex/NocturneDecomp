@@ -149,9 +149,10 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
 
   // Flat int views over the packed g_Layer3BandIndex[6] (each entry is 37 ints =
   // l[23] + s[14], total 0x94 bytes). Byte-stride lookups in the asm collapse to
-  // band_idx_l[N/4] / band_idx_s[N/4] indexing here.
+  // band_idx_l[N/4] / band_idx_s[N/4] indexing here. band_idx_s is the same flat
+  // view based at .s[0] — i.e. advanced past entry 0's long-band (l) ints.
   int *band_idx_l = (int *)g_Layer3BandIndex;
-  int *band_idx_s = (int *)&g_Layer3BandIndex[0].s;
+  int *band_idx_s = band_idx_l + sizeof(g_Layer3BandIndex[0].l) / sizeof(int);
 
   channel_count = frame->channel_count;
 

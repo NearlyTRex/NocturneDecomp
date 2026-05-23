@@ -4,10 +4,10 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1503 ( 43.2%)
-  unrolled_memcpy                  766 ( 22.0%)
+  pointer_cast                    1485 ( 43.1%)
+  unrolled_memcpy                  765 ( 22.2%)
   unrolled_strcpy                  253 (  7.3%)
-  shadow_pointer_walk              126 (  3.6%)
+  shadow_pointer_walk              126 (  3.7%)
   missing_cave_copy                111 (  3.2%)
   raw_address_constant              87 (  2.5%)
   unrolled_strlen                   80 (  2.3%)
@@ -17,12 +17,12 @@ SUSPECT TYPE COUNTS
   warning_inlined_function          45 (  1.3%)
   bitcast_double_pair               42 (  1.2%)
   unrolled_strchr                   41 (  1.2%)
-  bit_int_float_compare             33 (  0.9%)
+  bit_int_float_compare             33 (  1.0%)
   static_legacy_uninitvar           30 (  0.9%)
   decompiler_intrinsic              25 (  0.7%)
-  sign_compare_idiom                21 (  0.6%)
   static_invalid_pointer_cast       18 (  0.5%)
   warning_type_propagation          17 (  0.5%)
+  sign_compare_idiom                17 (  0.5%)
   stack_alignment_array             15 (  0.4%)
   negative_offset                   13 (  0.4%)
   warning_unreachable               12 (  0.3%)
@@ -32,15 +32,14 @@ SUSPECT TYPE COUNTS
   stack_param                        8 (  0.2%)
   unrolled_strcat                    6 (  0.2%)
   unaffected_reg                     6 (  0.2%)
-  primitive_walker_cast              5 (  0.1%)
   static_array_oob_cond              3 (  0.1%)
 
 ====================================================================================================
-TYPE: pointer_cast (1503 occurrences)
+TYPE: pointer_cast (1485 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   627x  (int)&NAME used in byte-offset arithmetic
+   611x  (int)&NAME used in byte-offset arithmetic
     39x  (int *)((int)this_ptr
     31x  (uint *)((int)this_ptr
     30x  (int *)((int)g_ScreenBufferArray
@@ -168,7 +167,6 @@ Functions:
   core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630
   core_script.cpp_CScript_step_FUN_0055a810
   core_script.cpp_parseCommandWithTemplates_FUN_00561690
-  core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
   core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70
   core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0
@@ -383,12 +381,12 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (766 occurrences)
+TYPE: unrolled_memcpy (765 occurrences)
 ====================================================================================================
 
 Unique patterns:
    589x  field-by-field struct copy
-    90x  for (...; != 0; ... + -1)
+    89x  for (...; != 0; ... + -1)
     85x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
@@ -507,7 +505,6 @@ Functions:
   core_script.cpp_CScript_extractCrossReferences_FUN_005671a0
   core_script.cpp_CScript_parseCommand_FUN_00567080
   core_script.cpp_parseCommandWithTemplates_FUN_00561690
-  core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040
   core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440
   core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00572800
   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
@@ -1262,25 +1259,6 @@ Functions:
   shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
 
 ====================================================================================================
-TYPE: sign_compare_idiom (21 occurrences)
-====================================================================================================
-
-Unique patterns:
-    21x  SBORROW4
-
-Functions:
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
-  core_script.cpp_compareEventXRefs_FUN_005675a0
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  engine_3d.c_isVisiblePlane_FUN_00403950
-  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
-  engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
-  engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210
-  engine_prim.c_getTriangleWindingFromIndices2_FUN_00552300
-  engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
-  engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
-
-====================================================================================================
 TYPE: static_invalid_pointer_cast (18 occurrences)
 ====================================================================================================
 
@@ -1326,6 +1304,24 @@ Functions:
   core_zombie.cpp_CZombie_processPickup_FUN_005fb530
   core_zombie.cpp_CZombie_process_FUN_005f9470
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
+
+====================================================================================================
+TYPE: sign_compare_idiom (17 occurrences)
+====================================================================================================
+
+Unique patterns:
+    17x  SBORROW4
+
+Functions:
+  core_script.cpp_compareEventXRefs_FUN_005675a0
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  engine_3d.c_isVisiblePlane_FUN_00403950
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
+  engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
+  engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210
+  engine_prim.c_getTriangleWindingFromIndices2_FUN_00552300
+  engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
+  engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
 
 ====================================================================================================
 TYPE: stack_alignment_array (15 occurrences)
@@ -1483,21 +1479,6 @@ Unique patterns:
 
 Functions:
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
-
-====================================================================================================
-TYPE: primitive_walker_cast (5 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  (uint *)&quantized_samples->codes.q[
-     1x  (uint *)&scalefactors->codes.q[
-     1x  (int *)&g_Layer3BandIndex[
-
-Functions:
-  sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50
-  sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
-  sound_mp3.cpp_requantizeSamples_FUN_005301b0
 
 ====================================================================================================
 TYPE: static_array_oob_cond (3 occurrences)

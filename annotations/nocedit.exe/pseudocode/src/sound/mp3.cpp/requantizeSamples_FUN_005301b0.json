@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 67,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 52,
-    "suspect_count": 1,
-    "suspect_types": [
-      "primitive_walker_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 175
   },
   "cross_references": [
@@ -108,7 +106,7 @@
       "match": "(int *)((int)allocation",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "piVar5 = (int *)((int)allocation->granules + local_28);",
+      "text": "piVar5 = (int *)((int)allocation->bit_allocations + local_28);",
       "type": "pointer_cast"
     },
     {
@@ -207,15 +205,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 30,
-      "match": "(uint *)&quantized_samples->codes.q[",
-      "severity": "moderate",
-      "text": "puVar9 = (uint *)&quantized_samples->codes.q[0][local_28];",
-      "type": "primitive_walker_cast"
-    }
-  ]
+  "suspects": []
 }

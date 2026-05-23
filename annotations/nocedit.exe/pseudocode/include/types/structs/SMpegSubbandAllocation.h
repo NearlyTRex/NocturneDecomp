@@ -7,7 +7,7 @@
 // Ghidra size: 0x80 (128 bytes)
 #pragma pack(push, 1)
 typedef struct SMpegSubbandAllocation {
-    int granules[32]; // 0x0
+    int bit_allocations[32]; // 0x0
 } SMpegSubbandAllocation;
 #pragma pack(pop)
 

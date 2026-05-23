@@ -3,69 +3,45 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[0052fb50, 0052fc41]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegAllocationTable *alloc_table)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegAllocationTable *alloc_table)
+void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame)
 
 {
-  int iVar2;
-  uint uVar3;
-  uint uVar2;
-  uint *puVar3;
-  int iVar4;
-  int *piVar5;
-  uint *puVar4;
-  int iVar6;
-  int iVar5;
-  int *local_18;
-  int local_14;
-  int iVar1;
-  
-  iVar1 = alloc_table->num_subbands;
-  iVar2 = alloc_table->num_allocation_groups;
-  if (0 < iVar2) {
-    local_14 = 0;
-    do {
-      iVar6 = 0;
-      if (0 < iVar1) {
-        piVar5 = &allocation->granules[local_14];
-        puVar3 = (uint *)&quantized_samples->codes.q[0][local_14];
-        do {
-          uVar3 = 0;
-          if (*piVar5 != 0) {
-            uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,*piVar5 + 1);
-          }
-          *puVar3 = uVar3;
-          puVar3 = puVar3 + 0x60;
-          iVar6 = iVar6 + 1;
-          piVar5 = piVar5 + 0x20;
-        } while (iVar6 < iVar1);
+  uint bits_value;
+  uint shared_value;
+  int channel;
+  int subband;
+  int channel_count;
+  int js_bound;
+
+  channel_count = frame->channel_count;
+  js_bound = frame->js_bound;
+
+  // Subbands below the JS bound: each channel reads its own allocation.
+  for (subband = 0; subband < js_bound; subband = subband + 1) {
+    for (channel = 0; channel < channel_count; channel = channel + 1) {
+      bits_value = 0;
+      if (allocation[channel].bit_allocations[subband] != 0) {
+        bits_value = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40
+                       (this_ptr,allocation[channel].bit_allocations[subband] + 1);
       }
-      local_14 = local_14 + 1;
-    } while (local_14 < iVar2);
+      quantized_samples[channel].codes.q[0][subband] = bits_value;
+    }
   }
-  if (iVar2 < 0x20) {
-    iVar5 = iVar2;
-    local_18 = allocation->granules + iVar2;
-    do {
-      uVar2 = 0;
-      if (*local_18 != 0) {
-        uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,*local_18 + 1);
-      }
-      iVar4 = 0;
-      if (0 < iVar1) {
-        puVar4 = (uint *)&quantized_samples->codes.q[0][iVar5];
-        do {
-          iVar4 = iVar4 + 1;
-          *puVar4 = uVar2;
-          puVar4 = puVar4 + 0x60;
-        } while (iVar4 < iVar1);
-      }
-      local_18 = local_18 + 1;
-      iVar5 = iVar5 + 1;
-    } while (iVar5 < 0x20);
+
+  // Subbands at/above the JS bound: one shared allocation, broadcast to every channel.
+  for (subband = js_bound; subband < 0x20; subband = subband + 1) {
+    shared_value = 0;
+    if (allocation->bit_allocations[subband] != 0) {
+      shared_value = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40
+                       (this_ptr,allocation->bit_allocations[subband] + 1);
+    }
+    for (channel = 0; channel < channel_count; channel = channel + 1) {
+      quantized_samples[channel].codes.q[0][subband] = shared_value;
+    }
   }
   return;
 }

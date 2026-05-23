@@ -35,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0",
-    "signature": "void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info)"
+    "signature": "void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame)"
   },
   "function_calls": [],
   "globals": [
@@ -197,7 +197,7 @@
       "match": "local_58 = (T *)&local_58[N].SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "local_58 = (SMpegAllocationTable *)&local_58[9].num_lines;",
+      "text": "local_58 = (SMpegFrame *)&local_58[9].channel_mode;",
       "type": "shadow_pointer_walk"
     }
   ],
@@ -213,7 +213,7 @@
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "SMpegAllocationTable *"
+        "type": "SMpegFrame *"
       },
       {
         "is_param": false,
@@ -308,7 +308,7 @@
       },
       {
         "is_param": true,
-        "name": "frame_info",
+        "name": "frame",
         "offset": 16,
         "size": 4,
         "type": "SMpegFrame *"

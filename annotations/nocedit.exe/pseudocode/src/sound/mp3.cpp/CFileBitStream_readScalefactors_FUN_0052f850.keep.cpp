@@ -3,41 +3,29 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[0052f850, 0052f8c2]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegAllocationTable *alloc_info)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegAllocationTable *alloc_info)
+void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegFrame *frame)
 
 {
-  uint uVar2;
-  uint *puVar3;
-  int iVar4;
-  int *piVar5;
-  int local_14;
-  int iVar1;
-  
-  local_14 = 0;
-  iVar1 = alloc_info->num_subbands;
-  do {
-    iVar4 = 0;
-    if (0 < iVar1) {
-      puVar3 = (uint *)&scalefactors->codes.q[0][local_14];
-      piVar5 = &allocation_indices->granules[local_14];
-      do {
-        if (*piVar5 == 0) {
-          *puVar3 = 0x3f;
-        }
-        else {
-          uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,6);
-          *puVar3 = uVar2;
-        }
-        puVar3 = puVar3 + 0x60;
-        iVar4 = iVar4 + 1;
-        piVar5 = piVar5 + 0x20;
-      } while (iVar4 < iVar1);
+  uint scale_value;
+  int channel;
+  int subband;
+  int channel_count;
+
+  channel_count = frame->channel_count;
+  for (subband = 0; subband < 0x20; subband = subband + 1) {
+    for (channel = 0; channel < channel_count; channel = channel + 1) {
+      if (allocation_indices[channel].bit_allocations[subband] == 0) {
+        scalefactors[channel].codes.q[0][subband] = 0x3f;
+      }
+      else {
+        scale_value = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,6);
+        scalefactors[channel].codes.q[0][subband] = scale_value;
+      }
     }
-    local_14 = local_14 + 1;
-  } while (local_14 != 0x20);
+  }
   return;
 }

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1406,
-    "complexity_score": 713,
+    "complexity_score": 668,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 668,
-    "suspect_count": 4,
-    "suspect_types": [
-      "sign_compare_idiom"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2074
   },
   "cross_references": [
@@ -315,6 +313,42 @@
       "severity": "moderate",
       "text": "int aiStackY_1138 [989];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 390,
+      "match": "SBORROW4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar12 = SBORROW4(iVar1,iVar11);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 398,
+      "match": "SBORROW4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar12 = SBORROW4(iVar8,iVar11);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 510,
+      "match": "SBORROW4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar7 = SBORROW4(iVar1,iVar10);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 518,
+      "match": "SBORROW4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar7 = SBORROW4(iVar8,iVar10);",
+      "type": "sign_compare_idiom"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
@@ -1014,38 +1048,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 390,
-      "match": "SBORROW4",
-      "severity": "moderate",
-      "text": "bVar12 = SBORROW4(iVar1,iVar11);",
-      "type": "sign_compare_idiom"
-    },
-    {
-      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 398,
-      "match": "SBORROW4",
-      "severity": "moderate",
-      "text": "bVar12 = SBORROW4(iVar8,iVar11);",
-      "type": "sign_compare_idiom"
-    },
-    {
-      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 510,
-      "match": "SBORROW4",
-      "severity": "moderate",
-      "text": "bVar7 = SBORROW4(iVar1,iVar10);",
-      "type": "sign_compare_idiom"
-    },
-    {
-      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 518,
-      "match": "SBORROW4",
-      "severity": "moderate",
-      "text": "bVar7 = SBORROW4(iVar8,iVar10);",
-      "type": "sign_compare_idiom"
-    }
-  ]
+  "suspects": []
 }

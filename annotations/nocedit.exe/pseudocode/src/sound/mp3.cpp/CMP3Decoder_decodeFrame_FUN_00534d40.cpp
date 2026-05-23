@@ -174,13 +174,13 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
           local_60d0 = 0x20;
           local_60cc = 0x180;
           sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0
-                    (pCVar2,(uint *)local_290,(SMpegAllocationTable *)&local_e0);
+                    (pCVar2,(uint *)local_290,(SMpegFrame *)&local_e0);
           sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850
-                    (pCVar2,local_290,local_fc8,(SMpegAllocationTable *)&local_e0);
+                    (pCVar2,local_290,local_fc8,(SMpegFrame *)&local_e0);
           local_20 = 0;
           do {
             sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50
-                      (pCVar2,local_cc8,local_290,(SMpegAllocationTable *)&local_e0);
+                      (pCVar2,local_cc8,local_290,(SMpegFrame *)&local_e0);
             sound_mp3_cpp_requantizeSamples_FUN_005301b0
                       (local_cc8,local_9c8,local_290,(SMpegFrame *)&local_e0);
             local_5c = 0;
@@ -219,13 +219,13 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         local_60cc = 0x480;
         local_60d0 = 8;
         sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670
-                  (pCVar2,local_290,(SMpegAllocationTable *)&local_e0);
+                  (pCVar2,local_290,(SMpegFrame *)&local_e0);
         sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0
-                  (pCVar2,local_390,local_290,local_fc8,(SMpegAllocationTable *)&local_e0);
+                  (pCVar2,local_390,local_290,local_fc8,(SMpegFrame *)&local_e0);
         local_e0.copyright = 0;
         do {
           sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50
-                    (pCVar2,local_cc8,local_290,(SMpegAllocationTable *)&local_e0);
+                    (pCVar2,local_cc8,local_290,(SMpegFrame *)&local_e0);
           sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0
                     ((int *)local_cc8,(uint *)local_290,(float *)local_9c8,(SMpegFrame *)&local_e0);
           sound_mp3_cpp_applyScalefactorsToSubbands_FUN_005302f0

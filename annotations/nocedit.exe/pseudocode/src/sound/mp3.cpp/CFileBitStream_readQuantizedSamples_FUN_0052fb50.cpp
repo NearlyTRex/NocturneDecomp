@@ -2,11 +2,11 @@
 // Address: 0052fb50
 // Address Range: [[0052fb50, 0052fc41]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegAllocationTable *alloc_table)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegAllocationTable *alloc_table)
+void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame)
 
 {
   int iVar2;
@@ -22,14 +22,14 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFil
   int local_14;
   int iVar1;
   
-  iVar1 = alloc_table->num_subbands;
-  iVar2 = alloc_table->num_allocation_groups;
+  iVar1 = frame->channel_count;
+  iVar2 = frame->js_bound;
   if (0 < iVar2) {
     local_14 = 0;
     do {
       iVar6 = 0;
       if (0 < iVar1) {
-        piVar5 = (int *)((int)allocation->granules + local_14);
+        piVar5 = (int *)((int)allocation->bit_allocations + local_14);
         puVar3 = (uint *)((int)&quantized_samples->codes + local_14);
         do {
           uVar3 = 0;
@@ -47,7 +47,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFil
   }
   if (iVar2 < 0x20) {
     iVar5 = iVar2 * 4;
-    local_18 = allocation->granules + iVar2;
+    local_18 = allocation->bit_allocations + iVar2;
     do {
       uVar2 = 0;
       if (*local_18 != 0) {

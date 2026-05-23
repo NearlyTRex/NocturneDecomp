@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream *this_ptr,uint *output_array,SMpegAllocationTable *alloc_table)
+; void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream *this_ptr,uint *output_array,SMpegFrame *frame)
 ;
 ; Parameters:
 ; CFileBitStream * Stack[0x4]:4   this_ptr
 ; uint *           Stack[0x8]:4   output_array
-; SMpegAllocationTable * Stack[0xc]:4   alloc_table
+; SMpegFrame *     Stack[0xc]:4   frame
 ; Local Variables:
 ; int              Stack[-0x14]:4  local_14
 ;

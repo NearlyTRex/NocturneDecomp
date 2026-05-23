@@ -6,8 +6,8 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5844 (90.5%)
-Files at 100%: 154
+Clean functions: 5850 (90.6%)
+Files at 100%: 157
 Files at 90%+: 158
 Files at 50%+: 214
 
@@ -57,6 +57,7 @@ FILES AT 100% (COMPLETE)
   core/drone.cpp: 13 functions, 472 lines
   core/dskybox.cpp: 4 functions, 245 lines
   core/dstrender.cpp: 31 functions, 3122 lines
+  core/dtrace.cpp: 51 functions, 3537 lines
   core/dtri.cpp: 28 functions, 1494 lines
   core/dynamite.cpp: 12 functions, 163 lines
   core/elephant.cpp: 10 functions, 409 lines
@@ -108,6 +109,7 @@ FILES AT 100% (COMPLETE)
   core/podmain.cpp: 4 functions, 64 lines
   core/procedur.cpp: 4 functions, 234 lines
   core/sentinel.cpp: 14 functions, 737 lines
+  core/set.cpp: 87 functions, 5060 lines
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
   core/simbox.cpp: 15 functions, 319 lines
@@ -158,6 +160,7 @@ FILES AT 100% (COMPLETE)
   shape/memdbg.cpp: 26 functions, 605 lines
   shape/multicrm.cpp: 6 functions, 115 lines
   shape/spotview.cpp: 6 functions, 215 lines
+  sound/mp3.cpp: 57 functions, 4680 lines
   sound/snddx.cpp: 32 functions, 1433 lines
   sound/sndmain.cpp: 193 functions, 6577 lines
   sound/sndwav.cpp: 35 functions, 765 lines
@@ -169,31 +172,16 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 154 files
+Total: 157 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   98.9% | core/set.cpp
-         86/87 clean, 1 remaining
-           - core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (117 lines) [pointer_cast, unrolled_memcpy]
-
    98.2% | core/event.cpp
          55/56 clean, 1 remaining
            - core_event.cpp_CEventList_process_FUN_004aaac0 (53 lines) [unrolled_memcpy]
 
-   98.0% | core/dtrace.cpp
-         50/51 clean, 1 remaining
-           - core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (668 lines) [sign_compare_idiom]
-
-   93.0% | sound/mp3.cpp
-         53/57 clean, 4 remaining
-           - sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850 (32 lines) [primitive_walker_cast]
-           - sound_mp3.cpp_requantizeSamples_FUN_005301b0 (52 lines) [primitive_walker_cast]
-           - sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50 (60 lines) [primitive_walker_cast]
-           - sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (541 lines) [primitive_walker_cast]
-
-Total: 4 files
+Total: 1 files
 
 ====================================================================================================
 FILES AT 50-89%

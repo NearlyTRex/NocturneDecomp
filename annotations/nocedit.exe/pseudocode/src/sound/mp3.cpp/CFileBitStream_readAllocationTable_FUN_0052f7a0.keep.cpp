@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[0052f7a0, 0052f84a]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream *this_ptr,uint *output_array,SMpegAllocationTable *alloc_table)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream *this_ptr,uint *output_array,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream *this_ptr,uint *output_array,SMpegAllocationTable *alloc_table)
+void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream *this_ptr,uint *output_array,SMpegFrame *frame)
 
 {
   uint uVar2;
@@ -18,8 +18,8 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFile
   int local_14;
   int iVar1;
 
-  iVar1 = alloc_table->num_subbands;
-  iVar2 = alloc_table->num_allocation_groups;
+  iVar1 = frame->channel_count;
+  iVar2 = frame->js_bound;
   if (0 < iVar2) {
     local_14 = 0;
     do {

@@ -2,11 +2,11 @@
 // Address: 0052f850
 // Address Range: [[0052f850, 0052f8c2]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegAllocationTable *alloc_info)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegAllocationTable *alloc_info)
+void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegFrame *frame)
 
 {
   uint uVar2;
@@ -17,12 +17,12 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBit
   int iVar1;
   
   local_14 = 0;
-  iVar1 = alloc_info->num_subbands;
+  iVar1 = frame->channel_count;
   do {
     iVar4 = 0;
     if (0 < iVar1) {
       puVar3 = (uint *)((int)&scalefactors->codes + local_14);
-      piVar5 = (int *)((int)allocation_indices->granules + local_14);
+      piVar5 = (int *)((int)allocation_indices->bit_allocations + local_14);
       do {
         if (*piVar5 == 0) {
           *puVar3 = 0x3f;

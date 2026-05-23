@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info)
+; void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame)
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   scalefactor_indices
 ; uint *           Stack[0x8]:4   quantized_samples
 ; float *          Stack[0xc]:4   dequantized_output
-; SMpegFrame *     Stack[0x10]:4   frame_info
+; SMpegFrame *     Stack[0x10]:4   frame
 ; Local Variables:
-; SMpegAllocationTable * Stack[-0x58]:4  local_58
+; SMpegFrame *     Stack[-0x58]:4  local_58
 ; int              Stack[-0x54]:4  local_54
 ; int              Stack[-0x40]:4  local_40
 ; undefined4 *     Stack[-0x34]:4  local_34

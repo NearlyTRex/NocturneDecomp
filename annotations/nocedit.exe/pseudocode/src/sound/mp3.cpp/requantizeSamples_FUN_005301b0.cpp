@@ -28,7 +28,7 @@ void __cdecl sound_mp3_cpp_requantizeSamples_FUN_005301b0(SMpegSubbandScalefacto
     if (0 < iVar1) {
       puVar9 = (uint *)((int)&quantized_samples->codes + local_28);
       pfVar4 = (float *)((int)&dequantized_samples->codes + local_28);
-      piVar5 = (int *)((int)allocation->granules + local_28);
+      piVar5 = (int *)((int)allocation->bit_allocations + local_28);
       pfVar6 = pfVar4;
       do {
         if (*piVar5 == 0) {

@@ -21,8 +21,6 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
   int iVar11;
   int iVar4;
   int iVar5;
-  bool bVar7;
-  bool bVar12;
   int frustum_corners[15];
   CVector3i local_150;
   int local_108;
@@ -327,18 +325,11 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
                   iVar11 = iVar6;
                 } while (iVar6 <= (this_ptr->grid_bounds_max).y);
               }
-              iVar11 = (this_ptr->grid_bounds_min).y;
-              iVar6 = iVar1 - iVar11;
-              bVar12 = SBORROW4(iVar1,iVar11);
               iVar11 = iVar1;
-              while (bVar12 == iVar6 < 0) {
-                iVar8 = iVar11 + -1;
+              while ((this_ptr->grid_bounds_min).y <= iVar11) {
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,local_3c,iVar11,iVar7,local_64);
-                iVar11 = (this_ptr->grid_bounds_min).y;
-                iVar6 = iVar8 - iVar11;
-                bVar12 = SBORROW4(iVar8,iVar11);
-                iVar11 = iVar8;
+                iVar11 = iVar11 + -1;
               }
               local_3c = local_3c + 1;
             } while (local_3c <= (this_ptr->grid_bounds_max).x);
@@ -447,18 +438,11 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
                   iVar10 = iVar6;
                 } while (iVar6 <= (this_ptr->grid_bounds_max).z);
               }
-              iVar10 = (this_ptr->grid_bounds_min).z;
-              iVar6 = iVar1 - iVar10;
-              bVar7 = SBORROW4(iVar1,iVar10);
               iVar10 = iVar1;
-              while (bVar7 == iVar6 < 0) {
-                iVar8 = iVar10 + -1;
+              while ((this_ptr->grid_bounds_min).z <= iVar10) {
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,local_4c,iVar7,iVar10,local_5c);
-                iVar10 = (this_ptr->grid_bounds_min).z;
-                iVar6 = iVar8 - iVar10;
-                bVar7 = SBORROW4(iVar8,iVar10);
-                iVar10 = iVar8;
+                iVar10 = iVar10 + -1;
               }
               local_4c = local_4c + 1;
             } while (local_4c <= (this_ptr->grid_bounds_max).x);

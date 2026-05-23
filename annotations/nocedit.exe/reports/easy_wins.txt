@@ -10,17 +10,9 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  core/set.cpp (1 remaining of 87)
-    - core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040
-      Suspects: pointer_cast, pointer_cast, unrolled_memcpy, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast
-
   core/event.cpp (1 remaining of 56)
     - core_event.cpp_CEventList_process_FUN_004aaac0
       Suspects: unrolled_memcpy
-
-  core/dtrace.cpp (1 remaining of 51)
-    - core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
-      Suspects: sign_compare_idiom, sign_compare_idiom, sign_compare_idiom, sign_compare_idiom
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
@@ -29,38 +21,14 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
   [warning_inlined_function] - 1 functions
     shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0        ( 30 lines)
 
-  [primitive_walker_cast] - 1 functions
-    sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850             ( 32 lines)
-
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
-
-  core/set.cpp (98.9% complete)
-    1 functions remaining:
-      core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (117 lines)
-        Types: ['pointer_cast', 'unrolled_memcpy']
 
   core/event.cpp (98.2% complete)
     1 functions remaining:
       core_event.cpp_CEventList_process_FUN_004aaac0 (53 lines)
         Types: ['unrolled_memcpy']
-
-  core/dtrace.cpp (98.0% complete)
-    1 functions remaining:
-      core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (668 lines)
-        Types: ['sign_compare_idiom']
-
-  sound/mp3.cpp (93.0% complete)
-    4 functions remaining:
-      sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850 (32 lines)
-        Types: ['primitive_walker_cast']
-      sound_mp3.cpp_requantizeSamples_FUN_005301b0 (52 lines)
-        Types: ['primitive_walker_cast']
-      sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50 (60 lines)
-        Types: ['primitive_walker_cast']
-      sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (541 lines)
-        Types: ['primitive_walker_cast']
 
 ====================================================================================================
 ALL REMAINING FILES

@@ -2,11 +2,11 @@
 // Address: 0052fee0
 // Address Range: [[0052fee0, 005301ac]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info)
+// Signature: void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info)
+void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame)
 
 {
   byte bVar2;
@@ -15,7 +15,7 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
   int iVar2;
   int iVar5;
   int iVar6;
-  SMpegAllocationTable *local_58;
+  SMpegFrame *local_58;
   int local_54;
   int local_40;
   uint *local_34;
@@ -28,9 +28,9 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
   float *local_18;
   int iVar1;
   
-  iVar1 = frame_info->channel_count;
-  iVar2 = frame_info->sblimit;
-  local_58 = (SMpegAllocationTable *)frame_info->allocation_entries;
+  iVar1 = frame->channel_count;
+  iVar2 = frame->sblimit;
+  local_58 = (SMpegFrame *)frame->allocation_entries;
   if (0 < iVar2) {
     local_54 = 0;
     do {
@@ -51,9 +51,9 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
             }
             else {
               for (bVar2 = 0;
-                  (uint)(1 << (bVar2 & 0x1f)) <
-                  (uint)(&local_58->table_version)
-                        [*(int *)((int)quantized_samples + local_54 + local_1c * 0x80) * 4];
+                  (SMpegFrameHeader *)(1 << (bVar2 & 0x1f)) <
+                  (&local_58->header)
+                  [*(int *)((int)quantized_samples + local_54 + local_1c * 0x80) * 4];
                   bVar2 = bVar2 + 1) {
               }
               if ((*local_2c >> (bVar2 - 1 & 0x1f) & 1) == 1) {
@@ -84,7 +84,7 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
         local_40 = local_40 + 0x80;
       } while (local_40 != 0x180);
       local_54 = local_54 + 4;
-      local_58 = (SMpegAllocationTable *)&local_58[9].num_lines;
+      local_58 = (SMpegFrame *)&local_58[9].channel_mode;
     } while (local_54 < iVar2 * 4);
   }
   if (iVar2 < 0x20) {

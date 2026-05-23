@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegAllocationTable *alloc_table)
+; void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame)
 ;
 ; Parameters:
 ; CFileBitStream * Stack[0x4]:4   this_ptr
 ; SMpegSubbandScalefactors * Stack[0x8]:4   quantized_samples
 ; SMpegSubbandAllocation * Stack[0xc]:4   allocation
-; SMpegAllocationTable * Stack[0x10]:4   alloc_table
+; SMpegFrame *     Stack[0x10]:4   frame
 ; Local Variables:
 ; int *            Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14

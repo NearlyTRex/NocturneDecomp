@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5844 (90.5%)
-Functions with suspects: 610 (9.5%)
+Clean functions: 5850 (90.6%)
+Functions with suspects: 604 (9.4%)
 
-Total suspect patterns: 3477
-Average suspects per function: 0.54
+Total suspect patterns: 3449
+Average suspects per function: 0.53
 
-Virtual files: 214 total, 154 at 100%, 158 at 90%+
+Virtual files: 214 total, 157 at 100%, 158 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -28,8 +28,8 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1503
-  unrolled_memcpy           766
+  pointer_cast              1485
+  unrolled_memcpy           765
   unrolled_strcpy           253
   shadow_pointer_walk       126
   missing_cave_copy         111
@@ -44,9 +44,9 @@ SUSPECT PATTERN BREAKDOWN
   bit_int_float_compare     33
   static_legacy_uninitvar   30
   decompiler_intrinsic      25
-  sign_compare_idiom        21
   static_invalid_pointer_cast 18
   warning_type_propagation  17
+  sign_compare_idiom        17
   stack_alignment_array     15
   negative_offset           13
   warning_unreachable       12
@@ -56,7 +56,6 @@ SUSPECT PATTERN BREAKDOWN
   stack_param               8
   unrolled_strcat           6
   unaffected_reg            6
-  primitive_walker_cast     5
   static_array_oob_cond     3
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
@@ -111,7 +110,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5794 more
+  ... and 5800 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -149,7 +148,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (319 functions):
+  pointer_cast (318 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
@@ -160,9 +159,9 @@ FUNCTIONS BY SUSPECT TYPE
     00403430: engine_2d.c_mapFrameBuffer_FUN_00403430
     00401900: engine_2d.c_drawCharacterMasked_FUN_00401900
     00401140: engine_2d.c_plotPixel_FUN_00401140
-    ... and 309 more
+    ... and 308 more
 
-  unrolled_memcpy (249 functions):
+  unrolled_memcpy (248 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -173,7 +172,7 @@ FUNCTIONS BY SUSPECT TYPE
     00407470: engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
     00408070: engine_3d.c_clipAndDrawLine3D_FUN_00408070
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-    ... and 239 more
+    ... and 238 more
 
   unrolled_strcpy (103 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
@@ -328,18 +327,6 @@ FUNCTIONS BY SUSPECT TYPE
     005cb3a0: shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
     005cbf90: shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
 
-  sign_compare_idiom (10 functions):
-    0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
-    00552210: engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210
-    00552300: engine_prim.c_getTriangleWindingFromIndices2_FUN_00552300
-    00552a40: engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
-    00552150: engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
-    005523f0: engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
-    00403950: engine_3d.c_isVisiblePlane_FUN_00403950
-    005675a0: core_script.cpp_compareEventXRefs_FUN_005675a0
-    00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    00497e50: core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
-
   static_invalid_pointer_cast (0 functions):
 
   warning_type_propagation (17 functions):
@@ -354,6 +341,17 @@ FUNCTIONS BY SUSPECT TYPE
     005dbb70: core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
     005db050: core_tentacle.cpp_CTentacle_process_FUN_005db050
     ... and 7 more
+
+  sign_compare_idiom (9 functions):
+    0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
+    00552210: engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210
+    00552300: engine_prim.c_getTriangleWindingFromIndices2_FUN_00552300
+    00552a40: engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
+    00552150: engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
+    005523f0: engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
+    00403950: engine_3d.c_isVisiblePlane_FUN_00403950
+    005675a0: core_script.cpp_compareEventXRefs_FUN_005675a0
+    00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
 
   stack_alignment_array (15 functions):
     00542470: core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
@@ -417,11 +415,5 @@ FUNCTIONS BY SUSPECT TYPE
 
   unaffected_reg (1 functions):
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
-
-  primitive_walker_cast (4 functions):
-    0052f850: sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850
-    005301b0: sound_mp3.cpp_requantizeSamples_FUN_005301b0
-    0052fb50: sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50
-    005325e0: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
 
   static_array_oob_cond (0 functions):

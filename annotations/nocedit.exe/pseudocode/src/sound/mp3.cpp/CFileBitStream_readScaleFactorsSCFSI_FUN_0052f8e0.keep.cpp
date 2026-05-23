@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[0052f8e0, 0052fb46]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SMpegAllocationTable *allocation_table)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SMpegAllocationTable *allocation_table)
+void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SMpegFrame *frame)
 
 {
   int iVar2;
@@ -24,14 +24,14 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFi
   int *local_14;
   int iVar1;
   
-  iVar1 = allocation_table->num_subbands;
-  iVar6 = allocation_table->num_granules;
+  iVar1 = frame->channel_count;
+  iVar6 = frame->sblimit;
   if (0 < iVar6) {
     local_28 = 0;
     do {
       iVar4 = 0;
       if (0 < iVar1) {
-        piVar8 = &allocation_array->granules[local_28];
+        piVar8 = &allocation_array->bit_allocations[local_28];
         do {
           if (*piVar8 != 0) {
             uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,2);
@@ -62,7 +62,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFi
     do {
       iVar2 = 0;
       if (0 < iVar1) {
-        local_14 = &allocation_array->granules[local_24];
+        local_14 = &allocation_array->bit_allocations[local_24];
         puVar6 = scalefactor_array;
         do {
           if (*local_14 == 0) {

@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5820 (90.2%)
-With suspects: 634
-Total suspects: 3477
+Clean: 5826 (90.3%)
+With suspects: 628
+Total suspects: 3449
 
 ====================================================================================================
 core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0 (1 suspect)
@@ -958,15 +958,6 @@ core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0 (2 suspects)
 ====================================================================================================
   Line 93 [unrolled_memcpy]: (local_20->position).x = pCVar5->x;
   Line 104 [unrolled_memcpy]: (local_20->tangent).x = pCVar5->x;
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (4 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 390 [sign_compare_idiom]: bVar12 = SBORROW4(iVar1,iVar11);
-  Line 398 [sign_compare_idiom]: bVar12 = SBORROW4(iVar8,iVar11);
-  Line 510 [sign_compare_idiom]: bVar7 = SBORROW4(iVar1,iVar10);
-  Line 518 [sign_compare_idiom]: bVar7 = SBORROW4(iVar8,iVar10);
 
 ====================================================================================================
 core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
@@ -2602,30 +2593,6 @@ core_set.cpp_CDemonSet_load_FUN_00569410 (1 suspect)
   File: core/set.cpp
 ====================================================================================================
   Line 61 [static_invalid_pointer_cast]: &(this_ptr->scene_fog).density_multiplier,(float *)&local_48,(float *)&local_48);
-
-====================================================================================================
-core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (19 suspects)
-  File: core/set.cpp
-====================================================================================================
-  Line 49 [unrolled_memcpy]: for (; iVar5 != 0; iVar5 = iVar5 + -1) {
-  Line 50 [pointer_cast]: pSVar9 = (SMRGLHeaderPrimitive *)((int)pSVar9 + (uint)bVar10 * -8 + 4);
-  Line 51 [pointer_cast]: pSVar7 = (SMRGLHeaderPrimitive *)((int)pSVar7 + (uint)bVar10 * -8 + 4);
-  Line 61 [pointer_cast]: iVar3 = *(int *)((int)&SStack_f4.vertices[0].vertex_index + iVar8);
-  Line 68 [pointer_cast]: *(int *)((int)&local_6c + iVar4) = (int)ROUND(g_VertexNormalArray[iVar3].x) + 0x8000;
-  Line 69 [pointer_cast]: *(int *)((int)&local_ac + iVar4) = 0x8000 - (int)ROUND(fVar2);
-  Line 76 [pointer_cast]: if ((0x8000 < local_6c) && (*(int *)((int)&local_6c + iVar7) < -0x8000)) {
-  Line 77 [pointer_cast]: psVar1 = (short *)((int)&local_6c + iVar7 + 2);
-  Line 80 [pointer_cast]: if ((local_6c < -0x8000) && (0x8000 < *(int *)((int)&local_6c + iVar7))) {
-  Line 81 [pointer_cast]: *(int *)((int)&local_6c + iVar7) = *(int *)((int)&local_6c + iVar7) + -0x10000;
-  Line 83 [pointer_cast]: if ((0x8000 < local_ac) && (*(int *)((int)&local_ac + iVar7) < -0x8000)) {
-  Line 84 [pointer_cast]: psVar2 = (short *)((int)&local_ac + iVar7 + 2);
-  Line 87 [pointer_cast]: if ((local_ac < -0x8000) && (0x8000 < *(int *)((int)&local_ac + iVar7))) {
-  Line 88 [pointer_cast]: *(int *)((int)&local_ac + iVar7) = *(int *)((int)&local_ac + iVar7) + -0x10000;
-  Line 98 [pointer_cast]: *(int *)((int)&SStack_f4.vertices[0].texture_u + iVar6) =
-  Line 99 [pointer_cast]: *(int *)((int)&local_6c + iVar4) << 8;
-  Line 100 [pointer_cast]: *(int *)((int)&SStack_f4.vertices[0].texture_v + iVar6) =
-  Line 101 [pointer_cast]: *(int *)((int)&local_ac + iVar4) << 8;
-  Line 116 [pointer_cast]: prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);
 
 ====================================================================================================
 core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440 (2 suspects)
@@ -6630,28 +6597,3 @@ shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (4 suspects)
   Line 44 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);
   Line 45 [pointer_cast]: pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
   Line 76 [unrolled_memcpy]: // 005d6488: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50 (2 suspects)
-  File: sound/mp3.cpp
-====================================================================================================
-  Line 34 [primitive_walker_cast]: puVar3 = (uint *)&quantized_samples->codes.q[0][local_14];
-  Line 59 [primitive_walker_cast]: puVar4 = (uint *)&quantized_samples->codes.q[0][iVar5];
-
-====================================================================================================
-sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850 (1 suspect)
-  File: sound/mp3.cpp
-====================================================================================================
-  Line 25 [primitive_walker_cast]: puVar3 = (uint *)&scalefactors->codes.q[0][local_14];
-
-====================================================================================================
-sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (1 suspect)
-  File: sound/mp3.cpp
-====================================================================================================
-  Line 154 [primitive_walker_cast]: int *band_idx_s = (int *)&g_Layer3BandIndex[0].s;
-
-====================================================================================================
-sound_mp3.cpp_requantizeSamples_FUN_005301b0 (1 suspect)
-  File: sound/mp3.cpp
-====================================================================================================
-  Line 30 [primitive_walker_cast]: puVar9 = (uint *)&quantized_samples->codes.q[0][local_28];
