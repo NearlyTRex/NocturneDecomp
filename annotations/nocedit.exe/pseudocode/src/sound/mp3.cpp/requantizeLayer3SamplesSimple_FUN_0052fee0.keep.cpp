@@ -11,7 +11,7 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
 
 {
   byte bVar2;
-  uint *puVar3;
+  float *puVar3;
   int iVar4;
   int iVar2;
   int iVar5;
@@ -19,8 +19,8 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
   SMpegAllocationEntry *local_58;
   int local_54;
   int local_40;
-  uint *local_30;
-  int *local_28;
+  int *local_30;
+  uint *local_28;
   int local_1c;
   float *local_18;
   int iVar1;
@@ -36,8 +36,8 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
         local_1c = 0;
         if (0 < iVar1) {
           local_18 = &dequantized_output[local_54 + local_40];
-          local_30 = (uint *)&scalefactor_indices[local_54 + local_40];
-          local_28 = (int *)&quantized_samples[local_54];
+          local_30 = &scalefactor_indices[local_54 + local_40];
+          local_28 = &quantized_samples[local_54];
           do {
             if (*local_28 == 0) {
               *(uint *)local_18 = 0;
@@ -81,10 +81,10 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
       do {
         iVar5 = 0;
         if (0 < iVar1) {
-          puVar3 = (uint *)&dequantized_output[iVar6 + iVar2];
+          puVar3 = &dequantized_output[iVar6 + iVar2];
           do {
             iVar5 = iVar5 + 1;
-            *puVar3 = 0;
+            *puVar3 = 0.0f;
             puVar3 = puVar3 + 0x60;
           } while (iVar5 < iVar1);
         }

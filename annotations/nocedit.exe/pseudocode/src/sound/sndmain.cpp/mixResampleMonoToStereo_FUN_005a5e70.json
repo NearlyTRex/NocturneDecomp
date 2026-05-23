@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 66,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 51,
-    "suspect_count": 1,
-    "suspect_types": [
-      "sign_compare_idiom"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 166
   },
   "cross_references": [
@@ -172,6 +170,15 @@
       "severity": "mild",
       "text": "local_34._0_4_ =",
       "type": "unknown_field"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 45,
+      "match": "CARRY4(uVar8,(uint)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar11 = CARRY4(uVar8,(uint)local_34);",
+      "type": "carry_arith_idiom"
     }
   ],
   "stack_frame": {
@@ -232,14 +239,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
-      "line": 45,
-      "match": "CARRY4",
-      "severity": "moderate",
-      "text": "bVar11 = CARRY4(uVar8,(uint)local_34);",
-      "type": "sign_compare_idiom"
-    }
-  ]
+  "suspects": []
 }

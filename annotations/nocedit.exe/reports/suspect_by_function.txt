@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5799 (89.9%)
-With suspects: 655
-Total suspects: 3518
+Clean: 5820 (90.2%)
+With suspects: 634
+Total suspects: 3477
 
 ====================================================================================================
 core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0 (1 suspect)
@@ -77,25 +77,6 @@ core_chain.cpp_fastSqrt_FUN_00431350 (2 suspects)
 ====================================================================================================
   Line 13 [static_invalid_pointer_cast]: int bits = (*(int *)&value >> 1) + g_FastSqrtMagic;
   Line 14 [static_invalid_pointer_cast]: return *(float *)&bits;
-
-====================================================================================================
-core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (1 suspect)
-  File: core/charactr.cpp
-====================================================================================================
-  Line 86 [bit_int_float_compare]: (int)fVar6 < 0x44610001)) &&
-
-====================================================================================================
-core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 (1 suspect)
-  File: core/charactr.cpp
-====================================================================================================
-  Line 24 [shadow_pointer_walk]: pCVar3 = (CCharacter *)((pCVar3->base).actor_name + 0x18);
-
-====================================================================================================
-core_charactr.cpp_CCharacter_renderFlames_FUN_0042b110 (2 suspects)
-  File: core/charactr.cpp
-====================================================================================================
-  Line 20 [shadow_pointer_walk]: pCVar2 = (CCharacter *)((pCVar2->base).actor_name + 0x18);
-  Line 22 [shadow_pointer_walk]: this_ptr_00 = (CDemonActor *)&this_ptr_00[1].next_actor;
 
 ====================================================================================================
 core_cloth.cpp_CClothList_remove_FUN_0043c170 (1 suspect)
@@ -254,12 +235,6 @@ core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0 (2 suspects)
   Line 29 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_conveyor.cpp_CConveyor_processInEditor_FUN_004421c0 (1 suspect)
-  File: core/conveyor.cpp
-====================================================================================================
-  Line 33 [bit_int_float_compare]: if ((int)(this_ptr->size).x < 0x3f000000) {
-
-====================================================================================================
 core_conveyor.cpp_CConveyor_process_FUN_00441df0 (1 suspect)
   File: core/conveyor.cpp
 ====================================================================================================
@@ -345,12 +320,6 @@ core_curtain.cpp_CCurtain_ctor_FUN_004496a0 (2 suspects)
   Line 38 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_curtain.cpp_CCurtain_processInEditor_FUN_0044b7a0 (1 suspect)
-  File: core/curtain.cpp
-====================================================================================================
-  Line 27 [bit_int_float_compare]: if ((int)(this_ptr->curtain_size).x < 0x3f000000) {
-
-====================================================================================================
 core_curtain.cpp_CCurtain_process_FUN_0044a920 (4 suspects)
   File: core/curtain.cpp
 ====================================================================================================
@@ -411,18 +380,6 @@ core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 (8 suspects)
   Line 22 [decompiler_intrinsic]: g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
   Line 28 [decompiler_intrinsic]: corner_input.x = (int)ROUND(bbox_max->x * 256.0f);
   Line 29 [decompiler_intrinsic]: corner_input.y = (int)ROUND(bbox_min->y * 256.0f);
-
-====================================================================================================
-core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 (1 suspect)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 237 [sign_compare_idiom]: while (SBORROW4(local_28,iVar13) != iVar1 < 0) {
-
-====================================================================================================
-core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0 (1 suspect)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 83 [sign_compare_idiom]: while (bVar9 = SBORROW4(local_18,iVar1), bVar9 != iVar5 < 0) {
 
 ====================================================================================================
 core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (6 suspects)
@@ -1031,12 +988,6 @@ core_flies.cpp_CFlies_initFly_FUN_004cc760 (2 suspects)
   Line 32 [unrolled_memcpy]: pCVar4->x = pCVar3->x;
 
 ====================================================================================================
-core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0 (1 suspect)
-  File: core/flies.cpp
-====================================================================================================
-  Line 38 [bit_int_float_compare]: if ((int)(this_ptr->box_size).x < 0x3f000000) {
-
-====================================================================================================
 core_flies.cpp_CFlies_process_FUN_004cbf00 (6 suspects)
   File: core/flies.cpp
 ====================================================================================================
@@ -1310,12 +1261,6 @@ core_glass.cpp_CGlass_onLaserHit_FUN_004eb250 (2 suspects)
   Line 45 [pointer_cast]: if (*(char *)(local_18 + local_14 * g_CurrentTextureDimension + (int)g_CurrentTextureData) ==
 
 ====================================================================================================
-core_glass.cpp_CGlass_processInEditor_FUN_004eb490 (1 suspect)
-  File: core/glass.cpp
-====================================================================================================
-  Line 35 [bit_int_float_compare]: if ((int)(this_ptr->glass_size).x < 0x3f000000) {
-
-====================================================================================================
 core_glass.cpp_CGlass_renderBackground_FUN_004e9e90 (1 suspect)
   File: core/glass.cpp
 ====================================================================================================
@@ -1436,15 +1381,6 @@ core_gore.cpp_CGore_spawnFlies_FUN_004edf30 (2 suspects)
   Line 31 [unrolled_memcpy]: (this_ptr_01->box_size).x = box_size->x;
 
 ====================================================================================================
-core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880 (4 suspects)
-  File: core/ground.cpp
-====================================================================================================
-  Line 8 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[1]].u = 0xf80000;
-  Line 9 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[1]].v = 0xf80000;
-  Line 11 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[0]].v = 0xf80000;
-  Line 14 [raw_address_constant]: g_RenderVertexBuffer[this_ptr->vertex_indices[2]].u = 0xf80000;
-
-====================================================================================================
 core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 (2 suspects)
   File: core/hero.cpp
 ====================================================================================================
@@ -1553,12 +1489,6 @@ core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0 (1 suspect)
   File: core/lightgun.cpp
 ====================================================================================================
   Line 24 [static_invalid_pointer_cast]: if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].z) {
-
-====================================================================================================
-core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_0050adf0 (1 suspect)
-  File: core/manpuz.cpp
-====================================================================================================
-  Line 27 [shadow_pointer_walk]: int_ptr_00 = (CColor3i *)&int_ptr_00[8].g;
 
 ====================================================================================================
 core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920 (3 suspects)
@@ -2668,12 +2598,6 @@ core_script.cpp_trimLine_FUN_005592c0 (1 suspect)
   Line 38 [static_null_pointer]: ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
 
 ====================================================================================================
-core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0 (1 suspect)
-  File: core/set.cpp
-====================================================================================================
-  Line 27 [shadow_pointer_walk]: this_ptr_00 = (CMatrix3x3f *)&this_ptr_00[1].m[2].z;
-
-====================================================================================================
 core_set.cpp_CDemonSet_load_FUN_00569410 (1 suspect)
   File: core/set.cpp
 ====================================================================================================
@@ -2702,13 +2626,6 @@ core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (19 suspects)
   Line 100 [pointer_cast]: *(int *)((int)&SStack_f4.vertices[0].texture_v + iVar6) =
   Line 101 [pointer_cast]: *(int *)((int)&local_ac + iVar4) << 8;
   Line 116 [pointer_cast]: prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);
-
-====================================================================================================
-core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0 (2 suspects)
-  File: core/set.cpp
-====================================================================================================
-  Line 15 [shadow_pointer_walk]: primitive_array = (SMRGLHeaderPrimitive *)&primitive_array[1].surface_normal.C;
-  Line 27 [shadow_pointer_walk]: primitive_array = (SMRGLHeaderPrimitive *)&primitive_array[1].surface_normal.C;
 
 ====================================================================================================
 core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440 (2 suspects)
@@ -4022,12 +3939,6 @@ core_vehicle.cpp_CVehicle_setup_FUN_005e7b90 (10 suspects)
   Line 100 [shadow_pointer_walk]: pCVar10 = (CVector3f *)&pCVar10[0x24].y;
 
 ====================================================================================================
-core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70 (1 suspect)
-  File: core/water.cpp
-====================================================================================================
-  Line 73 [sign_compare_idiom]: if (SBORROW4(iVar7,iVar1) != iVar1 * -2 < 0) {
-
-====================================================================================================
 core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0 (2 suspects)
   File: core/wateract.cpp
 ====================================================================================================
@@ -4066,12 +3977,6 @@ core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0 (2 suspects)
 ====================================================================================================
   Line 176 [unrolled_memset]: this_ptr->vertices[iVar15].local_position.z = 0.0;
   Line 203 [shadow_pointer_walk]: pCVar15 = (CWaterActor *)&(pCVar15->base).location;
-
-====================================================================================================
-core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005eafa0 (1 suspect)
-  File: core/wateract.cpp
-====================================================================================================
-  Line 31 [shadow_pointer_walk]: pCVar2 = (CVector3f *)&pCVar2[2].z;
 
 ====================================================================================================
 core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 (1 suspect)
@@ -4117,38 +4022,6 @@ core_weather.cpp_CWeather_update_FUN_005eeaf0 (8 suspects)
   Line 68 [pointer_cast]: local_28.x = *(float *)((int)&g_WeatherParticlePositions[0].x + iVar4);
   Line 69 [pointer_cast]: local_28.z = *(float *)((int)&g_WeatherParticlePositions[0].z + iVar4);
   Line 70 [pointer_cast]: local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);
-
-====================================================================================================
-core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00 (3 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 29 [sign_compare_idiom]: iVar3 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
-  Line 39 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
-  Line 48 [sign_compare_idiom]: vertex_out->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + vertex_a->r;
-
-====================================================================================================
-core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80 (3 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 29 [sign_compare_idiom]: iVar3 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
-  Line 39 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
-  Line 48 [sign_compare_idiom]: vertex_out->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + vertex_a->r;
-
-====================================================================================================
-core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0 (3 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 30 [sign_compare_idiom]: iVar5 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 39 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 48 [sign_compare_idiom]: vertex_out->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + vertex_a->r;
-
-====================================================================================================
-core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40 (3 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 30 [sign_compare_idiom]: iVar5 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 39 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 48 [sign_compare_idiom]: vertex_out->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + vertex_a->r;
 
 ====================================================================================================
 core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 (1 suspect)
@@ -4554,109 +4427,109 @@ engine_clipper.c_clipPolygonToViewport_FUN_00438420 (2 suspects)
 engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490 (8 suspects)
   File: engine/clipper.c
 ====================================================================================================
-  Line 28 [sign_compare_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
-  Line 38 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + iVar2;
-  Line 41 [sign_compare_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->r;
-  Line 44 [sign_compare_idiom]: output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 47 [sign_compare_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 50 [sign_compare_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 53 [sign_compare_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 56 [sign_compare_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 28 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
+  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + iVar2;
+  Line 41 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->r;
+  Line 44 [carry_arith_idiom]: output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 47 [carry_arith_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 50 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 53 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 56 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
 
 ====================================================================================================
 engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00 (6 suspects)
   File: engine/clipper.c
 ====================================================================================================
-  Line 28 [sign_compare_idiom]: iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 36 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 40 [sign_compare_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
-  Line 43 [sign_compare_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
-  Line 46 [sign_compare_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
-  Line 51 [sign_compare_idiom]: output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
+  Line 28 [carry_arith_idiom]: iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 36 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 40 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
+  Line 43 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
+  Line 46 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
+  Line 51 [carry_arith_idiom]: output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
 
 ====================================================================================================
 engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230 (8 suspects)
   File: engine/clipper.c
 ====================================================================================================
-  Line 28 [sign_compare_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
-  Line 38 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + iVar2;
-  Line 41 [sign_compare_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->r;
-  Line 44 [sign_compare_idiom]: output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 47 [sign_compare_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 50 [sign_compare_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 53 [sign_compare_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 56 [sign_compare_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 28 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
+  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + iVar2;
+  Line 41 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->r;
+  Line 44 [carry_arith_idiom]: output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 47 [carry_arith_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 50 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 53 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
+  Line 56 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
 
 ====================================================================================================
 engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00 (6 suspects)
   File: engine/clipper.c
 ====================================================================================================
-  Line 28 [sign_compare_idiom]: iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 36 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 40 [sign_compare_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
-  Line 43 [sign_compare_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->v;
-  Line 46 [sign_compare_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
-  Line 51 [sign_compare_idiom]: output->a = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
+  Line 28 [carry_arith_idiom]: iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 36 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 40 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
+  Line 43 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->v;
+  Line 46 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
+  Line 51 [carry_arith_idiom]: output->a = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
 
 ====================================================================================================
 engine_clipper.c_interpolateVertexNearClip_FUN_00435e00 (7 suspects)
   File: engine/clipper.c
 ====================================================================================================
-  Line 26 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 32 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 38 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 42 [sign_compare_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
-  Line 45 [sign_compare_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
-  Line 48 [sign_compare_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
-  Line 53 [sign_compare_idiom]: output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
+  Line 26 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 32 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
+  Line 42 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
+  Line 45 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
+  Line 48 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
+  Line 53 [carry_arith_idiom]: output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
 
 ====================================================================================================
 engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360 (8 suspects)
   File: engine/clipper.c
 ====================================================================================================
-  Line 26 [sign_compare_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 37 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;
-  Line 40 [sign_compare_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
-  Line 43 [sign_compare_idiom]: output->g = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->g;
-  Line 46 [sign_compare_idiom]: output->b = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->b;
-  Line 49 [sign_compare_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 52 [sign_compare_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 55 [sign_compare_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
+  Line 37 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;
+  Line 40 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
+  Line 43 [carry_arith_idiom]: output->g = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->g;
+  Line 46 [carry_arith_idiom]: output->b = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->b;
+  Line 49 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  Line 52 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  Line 55 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
 
 ====================================================================================================
 engine_clipper.c_interpolateVertexRightClip_FUN_00435b00 (6 suspects)
   File: engine/clipper.c
 ====================================================================================================
-  Line 26 [sign_compare_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 35 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 39 [sign_compare_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
-  Line 42 [sign_compare_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->a;
-  Line 45 [sign_compare_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
-  Line 50 [sign_compare_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
+  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
+  Line 35 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
+  Line 39 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
+  Line 42 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->a;
+  Line 45 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
+  Line 50 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
 
 ====================================================================================================
 engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0 (8 suspects)
   File: engine/clipper.c
 ====================================================================================================
-  Line 26 [sign_compare_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 37 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;
-  Line 40 [sign_compare_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
-  Line 43 [sign_compare_idiom]: output->g = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->g;
-  Line 46 [sign_compare_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 49 [sign_compare_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 52 [sign_compare_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 55 [sign_compare_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
+  Line 37 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;
+  Line 40 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
+  Line 43 [carry_arith_idiom]: output->g = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->g;
+  Line 46 [carry_arith_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  Line 49 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  Line 52 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
+  Line 55 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
 
 ====================================================================================================
 engine_clipper.c_interpolateVertexTopClip_FUN_00435d00 (6 suspects)
   File: engine/clipper.c
 ====================================================================================================
-  Line 26 [sign_compare_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 35 [sign_compare_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 39 [sign_compare_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
-  Line 42 [sign_compare_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->a;
-  Line 45 [sign_compare_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
-  Line 50 [sign_compare_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
+  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
+  Line 35 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
+  Line 39 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
+  Line 42 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->a;
+  Line 45 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
+  Line 50 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
 
 ====================================================================================================
 engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (2 suspects)
@@ -6759,22 +6632,17 @@ shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (4 suspects)
   Line 76 [unrolled_memcpy]: // 005d6488: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50 (7 suspects)
+sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50 (2 suspects)
   File: sound/mp3.cpp
 ====================================================================================================
-  Line 59 [primitive_walker_cast]: } while (puVar9 != (uint *)&local_18[1].codes.q[0][local_48]);
-  Line 62 [primitive_walker_cast]: puVar4 = (uint *)&pSVar5[local_2c * 16 + *local_1c];
-  Line 72 [primitive_walker_cast]: } while (puVar10 != (uint *)&local_18[1].codes.q[0][local_48]);
-  Line 82 [primitive_walker_cast]: } while (puVar11 != (uint *)&local_18[1].codes.q[0][local_48]);
-  Line 91 [primitive_walker_cast]: } while (puVar8 != (uint *)&sample_array[1].codes.q[0][local_48]);
-  Line 108 [primitive_walker_cast]: puVar7 = (uint *)&sample_array[iVar9].codes.q[0][iVar11];
-  Line 113 [primitive_walker_cast]: } while (puVar7 != (uint *)&sample_array[iVar9 + 1].codes.q[0][iVar11]);
+  Line 34 [primitive_walker_cast]: puVar3 = (uint *)&quantized_samples->codes.q[0][local_14];
+  Line 59 [primitive_walker_cast]: puVar4 = (uint *)&quantized_samples->codes.q[0][iVar5];
 
 ====================================================================================================
-sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0 (1 suspect)
+sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850 (1 suspect)
   File: sound/mp3.cpp
 ====================================================================================================
-  Line 54 [primitive_walker_cast]: puVar4 = (uint *)&scfsi_array->scfsi[iVar2];
+  Line 25 [primitive_walker_cast]: puVar3 = (uint *)&scalefactors->codes.q[0][local_14];
 
 ====================================================================================================
 sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (1 suspect)
@@ -6783,21 +6651,7 @@ sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (1 suspect)
   Line 154 [primitive_walker_cast]: int *band_idx_s = (int *)&g_Layer3BandIndex[0].s;
 
 ====================================================================================================
-sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0 (3 suspects)
+sound_mp3.cpp_requantizeSamples_FUN_005301b0 (1 suspect)
   File: sound/mp3.cpp
 ====================================================================================================
-  Line 39 [primitive_walker_cast]: local_30 = (uint *)&scalefactor_indices[local_54 + local_40];
-  Line 40 [primitive_walker_cast]: local_28 = (int *)&quantized_samples[local_54];
-  Line 84 [primitive_walker_cast]: puVar3 = (uint *)&dequantized_output[iVar6 + iVar2];
-
-====================================================================================================
-sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70 (1 suspect)
-  File: sound/sndmain.cpp
-====================================================================================================
-  Line 45 [sign_compare_idiom]: bVar11 = CARRY4(uVar8,(uint)local_34);
-
-====================================================================================================
-sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0 (1 suspect)
-  File: sound/sndmain.cpp
-====================================================================================================
-  Line 45 [sign_compare_idiom]: bVar11 = CARRY4(uVar8,(uint)local_34);
+  Line 30 [primitive_walker_cast]: puVar9 = (uint *)&quantized_samples->codes.q[0][local_28];

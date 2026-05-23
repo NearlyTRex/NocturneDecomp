@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 137
-  Total diagnostics: 380
+  Functions with findings: 134
+  Total diagnostics: 376
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 137, raw .cpp files: 0
+  .keep.cpp files: 134, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -158,9 +158,9 @@ core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0  [.keep] [Cppcheck
   Line  127: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  130: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  142: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  219: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  222: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  225: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  218: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  221: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  224: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420  [.keep] [Cppcheck (quick)]
@@ -740,13 +740,6 @@ shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590  [.keep] [Cpp
   Line  239: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50  [.keep] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (2 diagnostics)
-
-  Line   90: [selfAssignment] Redundant assignment of 'puVar8' to itself.
-  Line  112: [selfAssignment] Redundant assignment of 'puVar7' to itself.
-
-----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40  [.keep] [Cppcheck (quick)]
   File: sound/snddx.cpp  (2 diagnostics)
 
@@ -922,12 +915,6 @@ core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270  [.keep] [Cppc
   Line  222: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
-core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70  [.keep] [Cppcheck (quick)]
-  File: core/water.cpp  (1 diagnostics)
-
-  Line   43: [selfAssignment] Redundant assignment of 'iVar2' to itself.
-
-----------------------------------------------------------------------------------------------------
 engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290  [.keep] [Cppcheck (quick)]
   File: engine/3d.c  (1 diagnostics)
 
@@ -1022,12 +1009,6 @@ shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0  [.keep] [Cppcheck (qui
   File: shape/superopt.cpp  (1 diagnostics)
 
   Line   65: [identicalInnerCondition] Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0  [.keep] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (1 diagnostics)
-
-  Line  127: [selfAssignment] Redundant assignment of 'puVar7' to itself.
 
 ----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680  [.keep] [Cppcheck (quick)]

@@ -13,9 +13,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
   uint uVar2;
   int iVar1;
   uint uVar3;
-  int iVar5;
   CVector3f *pCVar5;
-  bool bVar9;
   CVector3i local_60;
   char (*local_40) [320];
   int (*local_3c) [320];
@@ -65,8 +63,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
         local_20 = g_ZBufferScanlineArray[local_30 << (g_CameraDownscaleIterations.bytes[0] & 0x1f)]
                    + (local_18 << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
         pCVar5 = local_38 + local_18;
-        iVar5 = local_18 - iVar1;
-        while (bVar9 = SBORROW4(local_18,iVar1), bVar9 != iVar5 < 0) {
+        while (local_18 < iVar1) {
           if ((((*local_20 < (uint)*local_24) &&
                (0.0 <= pCVar5->z * (float)g_CoronaCameraRotationMatrix.m[2].z +
                        pCVar5->x * (float)g_CoronaCameraRotationMatrix.m[0].z +
@@ -96,7 +93,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
           local_18 = local_18 + 1;
           local_20 = local_20 + (1 << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
           local_14 = local_14 + 1;
-          iVar5 = local_18 - iVar1;
         }
       }
       local_38 = local_38 + 0x140;

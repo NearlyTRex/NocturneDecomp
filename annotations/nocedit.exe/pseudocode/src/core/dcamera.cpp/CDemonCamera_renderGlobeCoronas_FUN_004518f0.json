@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 685,
-    "complexity_score": 286,
+    "complexity_score": 271,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 41,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 271,
-    "suspect_count": 1,
-    "suspect_types": [
-      "sign_compare_idiom"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 956
   },
   "cross_references": [
@@ -458,6 +456,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 237,
+      "match": "SBORROW4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "while (SBORROW4(local_28,iVar13) != iVar1 < 0) {",
+      "type": "sign_compare_idiom"
+    },
+    {
       "description": "Raw hex literal 0x132220c matches address of g_CoronaLightCache (+4 bytes into) (type SCoronaLightCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 101,
       "match": "0x132220c",
@@ -763,21 +770,21 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 44,
-          "line": 219,
+          "line": 218,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 45,
-          "line": 222,
+          "line": 221,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 44,
-          "line": 225,
+          "line": 224,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -786,14 +793,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
-      "line": 237,
-      "match": "SBORROW4",
-      "severity": "moderate",
-      "text": "while (SBORROW4(local_28,iVar13) != iVar1 < 0) {",
-      "type": "sign_compare_idiom"
-    }
-  ]
+  "suspects": []
 }

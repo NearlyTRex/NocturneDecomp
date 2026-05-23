@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 137,
+    "complexity_score": 122,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 122,
-    "suspect_count": 1,
-    "suspect_types": [
-      "sign_compare_idiom"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 405
   },
   "cross_references": [
@@ -428,6 +426,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 83,
+      "match": "SBORROW4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "while (bVar9 = SBORROW4(local_18,iVar1), bVar9 != iVar5 < 0) {",
+      "type": "sign_compare_idiom"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 16,
       "match": "MOVSD.REP",
@@ -589,14 +596,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
-      "line": 83,
-      "match": "SBORROW4",
-      "severity": "moderate",
-      "text": "while (bVar9 = SBORROW4(local_18,iVar1), bVar9 != iVar5 < 0) {",
-      "type": "sign_compare_idiom"
-    }
-  ]
+  "suspects": []
 }

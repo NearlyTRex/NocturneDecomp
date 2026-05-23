@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 135,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 100,
-    "suspect_count": 3,
-    "suspect_types": [
-      "primitive_walker_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 345
   },
   "cross_references": [
@@ -317,33 +315,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 39,
-      "match": "(uint *)&scalefactor_indices[",
-      "severity": "moderate",
-      "text": "local_30 = (uint *)&scalefactor_indices[local_54 + local_40];",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 40,
-      "match": "(int *)&quantized_samples[",
-      "severity": "moderate",
-      "text": "local_28 = (int *)&quantized_samples[local_54];",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 84,
-      "match": "(uint *)&dequantized_output[",
-      "severity": "moderate",
-      "text": "puVar3 = (uint *)&dequantized_output[iVar6 + iVar2];",
-      "type": "primitive_walker_cast"
-    }
-  ]
+  "suspects": []
 }

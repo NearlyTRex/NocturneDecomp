@@ -16,10 +16,8 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFi
   int iVar3;
   int iVar4;
   int iVar5;
-  uint *puVar6;
-  uint *puVar7;
+  SMpegSubbandScalefactors *puVar6;
   int *piVar8;
-  uint *puVar4;
   int iVar6;
   int local_28;
   int local_24;
@@ -51,11 +49,9 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFi
     do {
       iVar5 = 0;
       if (0 < iVar1) {
-        puVar4 = (uint *)&scfsi_array->scfsi[iVar2];
         do {
+          scfsi_array[iVar5].scfsi[iVar2] = 0;
           iVar5 = iVar5 + 1;
-          *puVar4 = 0;
-          puVar4 = puVar4 + 0x20;
         } while (iVar5 < iVar1);
       }
       iVar2 = iVar2 + 1;
@@ -67,44 +63,44 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFi
       iVar2 = 0;
       if (0 < iVar1) {
         local_14 = &allocation_array->granules[local_24];
-        puVar6 = (uint *)&scalefactor_array->codes.q[0][local_24];
+        puVar6 = scalefactor_array;
         do {
           if (*local_14 == 0) {
-            puVar6[0x40] = 0x3f;
-            puVar6[0x20] = puVar6[0x40];
-            *puVar6 = puVar6[0x40];
+            puVar6->codes.q[2][local_24] = 0x3f;
+            puVar6->codes.q[1][local_24] = puVar6->codes.q[2][local_24];
+            puVar6->codes.q[0][local_24] = puVar6->codes.q[2][local_24];
             goto switchD_0052f9f0_default;
           }
           switch((uint)scfsi_array[iVar2].scfsi[local_24]) {
           case 0:
             uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,6);
-            *puVar6 = uVar3;
+            puVar6->codes.q[0][local_24] = uVar3;
             uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,6);
-            puVar6[0x20] = uVar3;
+            puVar6->codes.q[1][local_24] = uVar3;
             goto LAB_0052fa18;
           case 1:
             uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,6);
-            puVar6[0x20] = uVar3;
-            *puVar6 = uVar3;
+            puVar6->codes.q[1][local_24] = uVar3;
+            puVar6->codes.q[0][local_24] = uVar3;
 LAB_0052fa18:
             uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,6);
-            puVar6[0x40] = uVar3;
+            puVar6->codes.q[2][local_24] = uVar3;
             break;
           case 2:
             uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,6);
-            puVar6[0x40] = uVar3;
-            puVar6[0x20] = uVar3;
-            *puVar6 = uVar3;
+            puVar6->codes.q[2][local_24] = uVar3;
+            puVar6->codes.q[1][local_24] = uVar3;
+            puVar6->codes.q[0][local_24] = uVar3;
             break;
           case 3:
             uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,6);
-            *puVar6 = uVar3;
+            puVar6->codes.q[0][local_24] = uVar3;
             uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,6);
-            puVar6[0x40] = uVar3;
-            puVar6[0x20] = uVar3;
+            puVar6->codes.q[2][local_24] = uVar3;
+            puVar6->codes.q[1][local_24] = uVar3;
           }
 switchD_0052f9f0_default:
-          puVar6 = puVar6 + 0x60;
+          puVar6 = puVar6 + 1;
           local_14 = local_14 + 0x20;
           iVar2 = iVar2 + 1;
         } while (iVar2 < iVar1);
@@ -117,14 +113,11 @@ switchD_0052f9f0_default:
     do {
       iVar6 = 0;
       if (0 < iVar1) {
-        puVar7 = (uint *)&scalefactor_array->codes.q[0][iVar3];
         do {
-          puVar7 = puVar7 + 0x60;
-          puVar7[0x40] = 0x3f;
-          puVar7[0x20] = puVar7[0x40];
+          scalefactor_array[iVar6].codes.q[2][iVar3] = 0x3f;
+          scalefactor_array[iVar6].codes.q[1][iVar3] = scalefactor_array[iVar6].codes.q[2][iVar3];
+          scalefactor_array[iVar6].codes.q[0][iVar3] = scalefactor_array[iVar6].codes.q[2][iVar3];
           iVar6 = iVar6 + 1;
-          *puVar7 = puVar7[0x40];
-          puVar7 = puVar7;
         } while (iVar6 < iVar1);
       }
       iVar3 = iVar3 + 1;

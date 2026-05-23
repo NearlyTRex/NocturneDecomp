@@ -15,16 +15,12 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc
   SMpegAllocationEntry *pSVar5;
   uint uVar7;
   int iVar3;
-  uint *puVar4;
   uint uVar5;
   uint uVar6;
-  uint *puVar9;
-  uint *puVar7;
-  uint *puVar8;
   int iVar9;
-  uint *puVar10;
-  uint *puVar11;
   int iVar11;
+  int iVar_q;
+  SMpegAllocationEntry *pEntry;
   SMpegAllocationEntry *local_4c;
   int local_48;
   int local_2c;
@@ -52,43 +48,33 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc
         }
         if (iVar3 <= local_20) break;
         if (*local_1c == 0) {
-          puVar9 = (uint *)&local_18->codes.q[0][local_48];
-          do {
-            *puVar9 = 0;
-            puVar9 = puVar9 + 0x20;
-          } while (puVar9 != (uint *)&local_18[1].codes.q[0][local_48]);
+          for (iVar_q = 0; iVar_q < 3; iVar_q = iVar_q + 1) {
+            local_18->codes.q[iVar_q][local_48] = 0;
+          }
         }
         else {
-          puVar4 = (uint *)&pSVar5[local_2c * 16 + *local_1c];
-          if (puVar4[2] == 3) {
-            puVar11 = (uint *)&local_18->codes.q[0][local_48];
-            do {
-              puVar10 = puVar11 + 0x20;
+          pEntry = &pSVar5[local_2c * 16 + *local_1c];
+          if (pEntry->mode_flag == 3) {
+            for (iVar_q = 0; iVar_q < 3; iVar_q = iVar_q + 1) {
               uVar5 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40
                                 (this_ptr,
                                  local_4c[allocation_array[local_20].granules[local_48]].bit_count);
-              *puVar11 = uVar5;
-              puVar11 = puVar10;
-            } while (puVar10 != (uint *)&local_18[1].codes.q[0][local_48]);
+              local_18->codes.q[iVar_q][local_48] = uVar5;
+            }
           }
           else {
-            uVar7 = *puVar4;
-            uVar6 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,puVar4[1]);
-            puVar11 = (uint *)&local_18->codes.q[0][local_48];
-            do {
-              *puVar11 = uVar6 % uVar7;
+            uVar7 = pEntry->value_range;
+            uVar6 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,pEntry->bit_count);
+            for (iVar_q = 0; iVar_q < 3; iVar_q = iVar_q + 1) {
+              local_18->codes.q[iVar_q][local_48] = uVar6 % uVar7;
               uVar6 = uVar6 / uVar7;
-              puVar11 = puVar11 + 0x20;
-            } while (puVar11 != (uint *)&local_18[1].codes.q[0][local_48]);
+            }
           }
         }
         if ((iVar1 == 2) && (iVar4 <= local_2c)) {
-          puVar8 = (uint *)&sample_array->codes.q[0][local_48];
-          do {
-            puVar8 = puVar8 + 0x20;
-            puVar8[0x60] = *puVar8;
-            puVar8 = puVar8;
-          } while (puVar8 != (uint *)&sample_array[1].codes.q[0][local_48]);
+          for (iVar_q = 0; iVar_q < 3; iVar_q = iVar_q + 1) {
+            sample_array[1].codes.q[iVar_q][local_48] = sample_array->codes.q[iVar_q][local_48];
+          }
         }
         local_1c = local_1c + 0x20;
         local_20 = local_20 + 1;
@@ -105,12 +91,9 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc
       iVar9 = 0;
       if (0 < iVar1) {
         do {
-          puVar7 = (uint *)&sample_array[iVar9].codes.q[0][iVar11];
-          do {
-            puVar7 = puVar7 + 0x20;
-            *puVar7 = 0;
-            puVar7 = puVar7;
-          } while (puVar7 != (uint *)&sample_array[iVar9 + 1].codes.q[0][iVar11]);
+          for (iVar_q = 0; iVar_q < 3; iVar_q = iVar_q + 1) {
+            sample_array[iVar9].codes.q[iVar_q][iVar11] = 0;
+          }
           iVar9 = iVar9 + 1;
         } while (iVar9 < iVar1);
       }

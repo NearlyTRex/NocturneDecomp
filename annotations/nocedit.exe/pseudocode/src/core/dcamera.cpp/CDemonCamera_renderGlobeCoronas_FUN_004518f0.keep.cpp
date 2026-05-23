@@ -212,8 +212,7 @@ LAB_00451d8b:
           local_38 = g_ZBufferScanlineArray
                      [local_64 << (g_CameraDownscaleIterations.bytes[0] & 0x1f)] +
                      (local_28 << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
-          iVar1 = local_28 - iVar13;
-          while (SBORROW4(local_28,iVar13) != iVar1 < 0) {
+          while (local_28 < iVar13) {
             if ((((*local_38 < (uint)*local_34) &&
                  (uVar5 = pCVar10->x - (g_CurrentGlobe->position_scaled).x,
                  (int)((uVar5 ^ (int)uVar5 >> 0x1f) - ((int)uVar5 >> 0x1f)) <
@@ -238,7 +237,6 @@ LAB_00451d8b:
             local_34 = local_34 + 1;
             local_38 = local_38 + (1 << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
             local_28 = local_28 + 1;
-            iVar1 = local_28 - iVar13;
           }
         }
         local_78 = local_78 + 1;

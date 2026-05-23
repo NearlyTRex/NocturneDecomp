@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 43,
+    "complexity_score": 28,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 28,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 116
   },
   "cross_references": [
@@ -107,6 +105,17 @@
     },
     "pcode_op_count": 522
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr_00` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*this_ptr_00) + offsetof(subfield)` equals the real array stride. Replace `this_ptr_00->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 27,
+      "match": "this_ptr_00 = (T *)&this_ptr_00[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00 = (CMatrix3x3f *)&this_ptr_00[1].m[2].z;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 60,
     "local_size": 52,
@@ -168,14 +177,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `this_ptr_00` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*this_ptr_00) + offsetof(subfield)` equals the real array stride. Replace `this_ptr_00->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 27,
-      "match": "this_ptr_00 = (T *)&this_ptr_00[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "this_ptr_00 = (CMatrix3x3f *)&this_ptr_00[1].m[2].z;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

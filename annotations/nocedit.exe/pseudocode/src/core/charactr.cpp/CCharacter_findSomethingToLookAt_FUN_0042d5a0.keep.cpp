@@ -85,7 +85,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
           if ((((0.0 <= CStack_50.z) &&
                (fVar6 = CStack_50.z * CStack_50.z +
                         CStack_50.x * CStack_50.x + CStack_50.y * CStack_50.y, fStack_24 = fVar6,
-               (int)fVar6 < 0x44610001)) &&
+               fVar6 <= 900.0)) &&
               (core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                          (&CStack_44,&CStack_50), ABS(CStack_44.y) <= (float)1.3962634015555599)) &&
              (ABS(CStack_44.x) <= (float)0.78539816337500001)) {

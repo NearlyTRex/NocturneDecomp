@@ -10,8 +10,8 @@
     "pseudocode_lines": 35,
     "suspect_count": 22,
     "suspect_types": [
+      "carry_arith_idiom",
       "fpu_register_input",
-      "sign_compare_idiom",
       "unaffected_reg",
       "unnamed_param"
     ],
@@ -248,28 +248,28 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 29,
-      "match": "CARRY4",
+      "match": "CARRY4(uVar1,(uint)",
       "severity": "moderate",
       "text": "for (; -1 < (int)param_2; param_2 = param_2 * 2 + (uint)(bVar6 || CARRY4(uVar1,(uint)bVar5))) {",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     },
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 30,
-      "match": "CARRY4",
+      "match": "CARRY4(uVar4,uVar4)",
       "severity": "moderate",
       "text": "bVar5 = CARRY4(uVar4,uVar4);",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     },
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 32,
-      "match": "CARRY4",
+      "match": "CARRY4(uVar2,uVar2)",
       "severity": "moderate",
       "text": "bVar6 = CARRY4(uVar2,uVar2);",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     },
     {
       "description": "FPU register input (calling convention issue)",

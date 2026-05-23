@@ -15,7 +15,7 @@
     "pseudocode_lines": 50,
     "suspect_count": 6,
     "suspect_types": [
-      "sign_compare_idiom"
+      "carry_arith_idiom"
     ],
     "total_lines": 162
   },
@@ -135,52 +135,52 @@
   },
   "suspects": [
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 28,
-      "match": "CARRY4",
+      "match": "CARRY4(uVar2,uVar2)",
       "severity": "moderate",
       "text": "iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     },
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 36,
-      "match": "CARRY4",
+      "match": "CARRY4(uVar2,uVar2)",
       "severity": "moderate",
       "text": "(int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     },
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 40,
-      "match": "CARRY4",
+      "match": "CARRY4(uVar2,uVar2)",
       "severity": "moderate",
       "text": "output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     },
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 43,
-      "match": "CARRY4",
+      "match": "CARRY4(uVar2,uVar2)",
       "severity": "moderate",
       "text": "output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->v;",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     },
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 46,
-      "match": "CARRY4",
+      "match": "CARRY4(uVar2,uVar2)",
       "severity": "moderate",
       "text": "output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     },
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 51,
-      "match": "CARRY4",
+      "match": "CARRY4(uVar2,uVar2)",
       "severity": "moderate",
       "text": "output->a = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     }
   ]
 }

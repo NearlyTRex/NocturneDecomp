@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 60,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "primitive_walker_cast"
+    ],
     "total_lines": 173
   },
   "cross_references": [
@@ -177,5 +179,24 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "introduced_by": "keep",
+      "line": 34,
+      "match": "(uint *)&quantized_samples->codes.q[",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&quantized_samples->codes.q[0][local_14];",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "introduced_by": "keep",
+      "line": 59,
+      "match": "(uint *)&quantized_samples->codes.q[",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)&quantized_samples->codes.q[0][iVar5];",
+      "type": "primitive_walker_cast"
+    }
+  ]
 }

@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (380 diagnostics)
+Cppcheck (quick) (376 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -100,15 +100,15 @@ shiftTooManyBitsSigned (99)
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 219
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 218
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 222
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 221
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 225
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 224
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -409,254 +409,6 @@ shiftTooManyBitsSigned (99)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (61)
-----------------------------------------------------------------------------------------------------
-
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
-    File: cockpit/ckptutil.c
-    Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 223
-    File: cockpit/ckptutil.c
-    Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 236
-    File: core/dcamera.cpp
-    Redundant assignment of 'piVar27' to itself.
-
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 409
-    File: core/dcamera.cpp
-    Redundant assignment of 'iVar16' to itself.
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 462
-    File: core/dmodel.cpp
-    Redundant assignment of 'pCVar13' to itself.
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 467
-    File: core/dmodel.cpp
-    Redundant assignment of 'pCVar13' to itself.
-
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1564
-    File: core/game.cpp
-    Redundant assignment of 'pbVar21' to itself.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_00510c8 line 314
-    File: core/menu.cpp
-    Redundant assignment of 'pacVar11' to itself.
-
-  core_menu.cpp_configureGraphicsOptions_FUN_00510c8 line 319
-    File: core/menu.cpp
-    Redundant assignment of 'pacVar11' to itself.
-
-  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 102
-    File: core/mimic.cpp
-    Redundant assignment of 'pCVar9' to itself.
-
-  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 103
-    File: core/mimic.cpp
-    Redundant assignment of 'pCVar10' to itself.
-
-  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 45
-    File: core/mimic.cpp
-    Redundant assignment of 'piVar4' to itself.
-
-  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 46
-    File: core/mimic.cpp
-    Redundant assignment of 'pSVar5' to itself.
-
-  core_msnedit.cpp_CDemonMission_replicateActor_FUN_ line 142
-    File: core/msnedit.cpp
-    Redundant assignment of 'pCVar5' to itself.
-
-  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 45
-    File: core/script.cpp
-    Redundant assignment of 'pCVar6' to itself.
-
-  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 46
-    File: core/script.cpp
-    Redundant assignment of 'pCVar9' to itself.
-
-  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 237
-    File: core/setedit.cpp
-    Redundant assignment of 'pbVar16' to itself.
-
-  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 242
-    File: core/setedit.cpp
-    Redundant assignment of 'pbVar16' to itself.
-
-  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 371
-    File: core/setedit.cpp
-    Redundant assignment of 'pCVar18' to itself.
-
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 140
-    File: core/setedit.cpp
-    Redundant assignment of 'iVar2' to itself.
-
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 192
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar11' to itself.
-
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 193
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar14' to itself.
-
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 200
-    File: core/skeledit.cpp
-    Redundant assignment of 'puVar12' to itself.
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 1141
-    File: core/skeledit.cpp
-    Redundant assignment of 'piVar35' to itself.
-
-  core_water.cpp_CWater_calculateVisibleTiles_FUN_00 line 43
-    File: core/water.cpp
-    Redundant assignment of 'iVar2' to itself.
-
-  engine_3d.c_renderPolygonEngineAPIPremiumMultiStat line 104
-    File: engine/3d.c
-    Redundant assignment of 'ppSVar12' to itself.
-
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 94
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar8' to itself.
-
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 99
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar8' to itself.
-
-  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 line 52
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 173
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar10' to itself.
-
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 178
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar10' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 178
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar15' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 535
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar13' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 536
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar18' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 110
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar7' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 129
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 130
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar8' to itself.
-
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 93
-    File: engine/fileio.cpp
-    Redundant assignment of 'piVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 94
-    File: engine/fileio.cpp
-    Redundant assignment of 'piVar7' to itself.
-
-  shape_design.c_configureSinglePassPolygonReduction line 100
-    File: shape/design.c
-    Redundant assignment of 'pbVar4' to itself.
-
-  shape_design.c_configureSinglePassPolygonReduction line 105
-    File: shape/design.c
-    Redundant assignment of 'pbVar4' to itself.
-
-  shape_design.c_generateOctant_FUN_00469420         line 75
-    File: shape/design.c
-    Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 202
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 203
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 142
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 143
-    File: shape/design.c
-    Redundant assignment of 'pSVar8' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 156
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 157
-    File: shape/design.c
-    Redundant assignment of 'pSVar9' to itself.
-
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 571
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 572
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_vertexReducer_FUN_00467850          line 196
-    File: shape/design.c
-    Redundant assignment of 'pbVar5' to itself.
-
-  shape_design.c_vertexReducer_FUN_00467850          line 201
-    File: shape/design.c
-    Redundant assignment of 'pbVar5' to itself.
-
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEd line 66
-    File: shape/superopt.cpp
-    Redundant assignment of 'pdVar4' to itself.
-
-  shape_superopt.cpp_CComplexPolygon_findReflexVerte line 67
-    File: shape/superopt.cpp
-    Redundant assignment of 'pdVar4' to itself.
-
-  sound_mp3.cpp_CFileBitStream_readQuantizedSamplesG line 90
-    File: sound/mp3.cpp
-    Redundant assignment of 'puVar8' to itself.
-
-  sound_mp3.cpp_CFileBitStream_readQuantizedSamplesG line 112
-    File: sound/mp3.cpp
-    Redundant assignment of 'puVar7' to itself.
-
-  sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI line 127
-    File: sound/mp3.cpp
-    Redundant assignment of 'puVar7' to itself.
-
-  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 46
-    File: sound/mp3.cpp
-    Redundant assignment of 'piVar3' to itself.
-
-  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 55
-    File: sound/mp3.cpp
-    Redundant assignment of 'piVar4' to itself.
-
-  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 67
-    File: sound/mp3.cpp
-    Redundant assignment of 'piVar5' to itself.
-
-  sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_F line 120
-    File: sound/mp3.cpp
-    Redundant assignment of 'piVar3' to itself.
-
-----------------------------------------------------------------------------------------------------
 invalidscanf (59)
 ----------------------------------------------------------------------------------------------------
 
@@ -895,6 +647,238 @@ invalidscanf (59)
   engine_fileio.cpp_parseTimestampRecord_FUN_004b227 line 24
     File: engine/fileio.cpp
     sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+selfAssignment (57)
+----------------------------------------------------------------------------------------------------
+
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
+    File: cockpit/ckptutil.c
+    Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
+
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 223
+    File: cockpit/ckptutil.c
+    Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
+
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 236
+    File: core/dcamera.cpp
+    Redundant assignment of 'piVar27' to itself.
+
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 409
+    File: core/dcamera.cpp
+    Redundant assignment of 'iVar16' to itself.
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 462
+    File: core/dmodel.cpp
+    Redundant assignment of 'pCVar13' to itself.
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 467
+    File: core/dmodel.cpp
+    Redundant assignment of 'pCVar13' to itself.
+
+  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1564
+    File: core/game.cpp
+    Redundant assignment of 'pbVar21' to itself.
+
+  core_menu.cpp_configureGraphicsOptions_FUN_00510c8 line 314
+    File: core/menu.cpp
+    Redundant assignment of 'pacVar11' to itself.
+
+  core_menu.cpp_configureGraphicsOptions_FUN_00510c8 line 319
+    File: core/menu.cpp
+    Redundant assignment of 'pacVar11' to itself.
+
+  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 102
+    File: core/mimic.cpp
+    Redundant assignment of 'pCVar9' to itself.
+
+  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 103
+    File: core/mimic.cpp
+    Redundant assignment of 'pCVar10' to itself.
+
+  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 45
+    File: core/mimic.cpp
+    Redundant assignment of 'piVar4' to itself.
+
+  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 46
+    File: core/mimic.cpp
+    Redundant assignment of 'pSVar5' to itself.
+
+  core_msnedit.cpp_CDemonMission_replicateActor_FUN_ line 142
+    File: core/msnedit.cpp
+    Redundant assignment of 'pCVar5' to itself.
+
+  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 45
+    File: core/script.cpp
+    Redundant assignment of 'pCVar6' to itself.
+
+  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 46
+    File: core/script.cpp
+    Redundant assignment of 'pCVar9' to itself.
+
+  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 237
+    File: core/setedit.cpp
+    Redundant assignment of 'pbVar16' to itself.
+
+  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 242
+    File: core/setedit.cpp
+    Redundant assignment of 'pbVar16' to itself.
+
+  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 371
+    File: core/setedit.cpp
+    Redundant assignment of 'pCVar18' to itself.
+
+  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 140
+    File: core/setedit.cpp
+    Redundant assignment of 'iVar2' to itself.
+
+  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 192
+    File: core/skeledit.cpp
+    Redundant assignment of 'pSVar11' to itself.
+
+  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 193
+    File: core/skeledit.cpp
+    Redundant assignment of 'pSVar14' to itself.
+
+  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 200
+    File: core/skeledit.cpp
+    Redundant assignment of 'puVar12' to itself.
+
+  core_skeledit.cpp_CDeformableModel_determinePartsF line 1141
+    File: core/skeledit.cpp
+    Redundant assignment of 'piVar35' to itself.
+
+  engine_3d.c_renderPolygonEngineAPIPremiumMultiStat line 104
+    File: engine/3d.c
+    Redundant assignment of 'ppSVar12' to itself.
+
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 94
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar8' to itself.
+
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 99
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar8' to itself.
+
+  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 line 52
+    File: engine/fileio.cpp
+    Redundant assignment of 'pCVar5' to itself.
+
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 173
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar10' to itself.
+
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 178
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar10' to itself.
+
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 178
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar15' to itself.
+
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 535
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar13' to itself.
+
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 536
+    File: engine/fileio.cpp
+    Redundant assignment of 'pCVar18' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 110
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar7' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 129
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar5' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 130
+    File: engine/fileio.cpp
+    Redundant assignment of 'pCVar8' to itself.
+
+  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 93
+    File: engine/fileio.cpp
+    Redundant assignment of 'piVar5' to itself.
+
+  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 94
+    File: engine/fileio.cpp
+    Redundant assignment of 'piVar7' to itself.
+
+  shape_design.c_configureSinglePassPolygonReduction line 100
+    File: shape/design.c
+    Redundant assignment of 'pbVar4' to itself.
+
+  shape_design.c_configureSinglePassPolygonReduction line 105
+    File: shape/design.c
+    Redundant assignment of 'pbVar4' to itself.
+
+  shape_design.c_generateOctant_FUN_00469420         line 75
+    File: shape/design.c
+    Redundant assignment of 'pcVar4' to itself.
+
+  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 202
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 203
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 142
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 143
+    File: shape/design.c
+    Redundant assignment of 'pSVar8' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 156
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 157
+    File: shape/design.c
+    Redundant assignment of 'pSVar9' to itself.
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 571
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 572
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_vertexReducer_FUN_00467850          line 196
+    File: shape/design.c
+    Redundant assignment of 'pbVar5' to itself.
+
+  shape_design.c_vertexReducer_FUN_00467850          line 201
+    File: shape/design.c
+    Redundant assignment of 'pbVar5' to itself.
+
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEd line 66
+    File: shape/superopt.cpp
+    Redundant assignment of 'pdVar4' to itself.
+
+  shape_superopt.cpp_CComplexPolygon_findReflexVerte line 67
+    File: shape/superopt.cpp
+    Redundant assignment of 'pdVar4' to itself.
+
+  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 46
+    File: sound/mp3.cpp
+    Redundant assignment of 'piVar3' to itself.
+
+  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 55
+    File: sound/mp3.cpp
+    Redundant assignment of 'piVar4' to itself.
+
+  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 67
+    File: sound/mp3.cpp
+    Redundant assignment of 'piVar5' to itself.
+
+  sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_F line 120
+    File: sound/mp3.cpp
+    Redundant assignment of 'piVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
 uninitvar (54)

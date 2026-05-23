@@ -4,14 +4,14 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5816 functions
-  1 suspects: 101 functions
-  2 suspects: 134 functions
-  3 suspects: 84 functions
-  4 suspects: 79 functions
+  0 suspects: 5837 functions
+  1 suspects: 88 functions
+  2 suspects: 133 functions
+  3 suspects: 79 functions
+  4 suspects: 78 functions
   5 suspects: 40 functions
   6 suspects: 51 functions
-  7 suspects: 19 functions
+  7 suspects: 18 functions
   8 suspects: 30 functions
   9 suspects: 9 functions
   10 suspects: 16 functions
@@ -152,35 +152,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
 
-  [shadow_pointer_walk] (13 functions)
-  ------------------------------------------------------------
-    core_set.cpp_CDemonSet_getReverbPresetAtPosition_F ( 28 lines)
-      this_ptr_00 = (CMatrix3x3f *)&this_ptr_00[1].m[2].z;...
-    core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_0 ( 31 lines)
-      int_ptr_00 = (CColor3i *)&int_ptr_00[8].g;...
-    core_wateract.cpp_CWaterActor_updateWorldPositions ( 32 lines)
-      pCVar2 = (CVector3f *)&pCVar2[2].z;...
-    core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5 ( 33 lines)
-      pCVar3 = (CCharacter *)((pCVar3->base).actor_name + 0x18);...
-    engine_pod.cpp_CPod_getNextSearchResult_FUN_00550e ( 53 lines)
-      pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).f...
-    core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FU ( 53 lines)
-      pCVar4 = (CVector3f *)&pCVar4[0xf].y;...
-    core_glass.cpp_CGlass_renderBackground_FUN_004e9e9 ( 64 lines)
-      pCVar3 = (CGlass *)((pCVar3->base).orient_matrix.m + 1);...
-    core_glass.cpp_CGlass_renderTransparent_FUN_004e9a ( 64 lines)
-      pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
-    core_glass.cpp_CGlass_renderOpaque_FUN_004e9930    ( 66 lines)
-      pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
-    core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9c ( 71 lines)
-      pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);...
-    core_texlist.cpp_CTextureList_save_FUN_005dc0d0    ( 73 lines)
-      pCVar3 = (CTextureList *)pCVar3->texture_entries;...
-    shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_ ( 81 lines)
-      pCVar7 = (CLodVert *)&(pCVar7->position).y;...
-    core_dmodel.cpp_CKeyFramedModel_removeUnusedVertic (169 lines)
-      pSVar12 = (SMRGLPrimitiveQuad *)&(pSVar12->base).surface_nor...
-
   [unrolled_strcpy] (11 functions)
   ------------------------------------------------------------
     core_cloth.cpp_CClothList_remove_FUN_0043c170      ( 51 lines)
@@ -206,37 +177,26 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_setedit.cpp_CDemonSet_showEditorMenu_FUN_0058 (184 lines)
       do {...
 
-  [bit_int_float_compare] (8 functions)
+  [shadow_pointer_walk] (9 functions)
   ------------------------------------------------------------
-    core_curtain.cpp_CCurtain_processInEditor_FUN_0044 ( 37 lines)
-      if ((int)(this_ptr->curtain_size).x < 0x3f000000) {...
-    core_conveyor.cpp_CConveyor_processInEditor_FUN_00 ( 41 lines)
-      if ((int)(this_ptr->size).x < 0x3f000000) {...
-    core_glass.cpp_CGlass_processInEditor_FUN_004eb490 ( 45 lines)
-      if ((int)(this_ptr->glass_size).x < 0x3f000000) {...
-    core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0 ( 47 lines)
-      if ((int)(this_ptr->box_size).x < 0x3f000000) {...
-    core_trigger.cpp_CTrigger_processInEditor_FUN_005e ( 57 lines)
-      if ((int)(this_ptr->trigger_size).x < 0x3c23d70a) {...
-    core_charactr.cpp_CCharacter_findSomethingToLookAt (216 lines)
-      (int)fVar6 < 0x44610001)) &&...
-    core_stranger.cpp_CStranger_makeDrawDecision_FUN_0 (238 lines)
-      if ((int)local_1c < 0x3f800001) {...
-    core_stranger.cpp_CStranger_updateProceduralAnimat (516 lines)
-      if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {...
-
-  [sign_compare_idiom] (5 functions)
-  ------------------------------------------------------------
-    sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a ( 51 lines)
-      bVar11 = CARRY4(uVar8,(uint)local_34);...
-    sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00 ( 51 lines)
-      bVar11 = CARRY4(uVar8,(uint)local_34);...
-    core_dcamera.cpp_CDemonCamera_renderLightCoronas_F (122 lines)
-      while (bVar9 = SBORROW4(local_18,iVar1), bVar9 != iVar5 < 0)...
-    core_water.cpp_CWater_calculateVisibleTiles_FUN_00 (143 lines)
-      if (SBORROW4(iVar7,iVar1) != iVar1 * -2 < 0) {...
-    core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F (271 lines)
-      while (SBORROW4(local_28,iVar13) != iVar1 < 0) {...
+    engine_pod.cpp_CPod_getNextSearchResult_FUN_00550e ( 53 lines)
+      pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).f...
+    core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FU ( 53 lines)
+      pCVar4 = (CVector3f *)&pCVar4[0xf].y;...
+    core_glass.cpp_CGlass_renderBackground_FUN_004e9e9 ( 64 lines)
+      pCVar3 = (CGlass *)((pCVar3->base).orient_matrix.m + 1);...
+    core_glass.cpp_CGlass_renderTransparent_FUN_004e9a ( 64 lines)
+      pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
+    core_glass.cpp_CGlass_renderOpaque_FUN_004e9930    ( 66 lines)
+      pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
+    core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9c ( 71 lines)
+      pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);...
+    core_texlist.cpp_CTextureList_save_FUN_005dc0d0    ( 73 lines)
+      pCVar3 = (CTextureList *)pCVar3->texture_entries;...
+    shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_ ( 81 lines)
+      pCVar7 = (CLodVert *)&(pCVar7->position).y;...
+    core_dmodel.cpp_CKeyFramedModel_removeUnusedVertic (169 lines)
+      pSVar12 = (SMRGLPrimitiveQuad *)&(pSVar12->base).surface_nor...
 
   [unrolled_memset] (4 functions)
   ------------------------------------------------------------
@@ -249,6 +209,24 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN (113 lines)
       (pSVar11->light).b = 0.0;...
 
+  [primitive_walker_cast] (3 functions)
+  ------------------------------------------------------------
+    sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_ ( 32 lines)
+      puVar3 = (uint *)&scalefactors->codes.q[0][local_14];...
+    sound_mp3.cpp_requantizeSamples_FUN_005301b0       ( 52 lines)
+      puVar9 = (uint *)&quantized_samples->codes.q[0][local_28];...
+    sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (541 lines)
+      int *band_idx_s = (int *)&g_Layer3BandIndex[0].s;...
+
+  [bit_int_float_compare] (3 functions)
+  ------------------------------------------------------------
+    core_trigger.cpp_CTrigger_processInEditor_FUN_005e ( 57 lines)
+      if ((int)(this_ptr->trigger_size).x < 0x3c23d70a) {...
+    core_stranger.cpp_CStranger_makeDrawDecision_FUN_0 (238 lines)
+      if ((int)local_1c < 0x3f800001) {...
+    core_stranger.cpp_CStranger_updateProceduralAnimat (516 lines)
+      if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {...
+
   [decompiler_intrinsic] (3 functions)
   ------------------------------------------------------------
     shape_superopt.cpp_COptimize_findCoplanarPolygons_ ( 90 lines)
@@ -257,13 +235,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 *...
     core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  (290 lines)
       CStack_30.y = (int)ROUND(fStack_y * 256.0f);...
-
-  [primitive_walker_cast] (2 functions)
-  ------------------------------------------------------------
-    sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI (123 lines)
-      puVar4 = (uint *)&scfsi_array->scfsi[iVar2];...
-    sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (541 lines)
-      int *band_idx_s = (int *)&g_Layer3BandIndex[0].s;...
 
   [warning_inlined_function] (1 functions)
   ------------------------------------------------------------
@@ -313,8 +284,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 22, Types: ['pointer_cast']
   core_cloth.cpp_CClothList_render_FUN_0043c320
     File: core/cloth.cpp, Lines: 23, Types: ['shadow_pointer_walk']
-  core_charactr.cpp_CCharacter_renderFlames_FUN_0042b110
-    File: core/charactr.cpp, Lines: 23, Types: ['shadow_pointer_walk']
   core_netgame.cpp_purgeOldSimFrames_FUN_0053f650
     File: core/netgame.cpp, Lines: 26, Types: ['pointer_cast']
   core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630
@@ -331,8 +300,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/2d.c, Lines: 30, Types: ['pointer_cast']
   core_netgame.cpp_allocSimFrame_FUN_0053f5a0
     File: core/netgame.cpp, Lines: 30, Types: ['pointer_cast']
-  core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0
-    File: core/set.cpp, Lines: 30, Types: ['shadow_pointer_walk']
   shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_0051
     File: shape/meshlod.cpp, Lines: 30, Types: ['unrolled_memcpy']
   core_setedit.cpp_blitThumbnailToScreen16_FUN_00577200
@@ -427,6 +394,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/2d.c, Lines: 58, Types: ['pointer_cast']
   core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf4
     File: core/dmodel.cpp, Lines: 59, Types: ['pointer_cast']
+  sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb
+    File: sound/mp3.cpp, Lines: 60, Types: ['primitive_walker_cast']
   core_chain.cpp_CChain_getBoundingBox_FUN_00430eb0
     File: core/chain.cpp, Lines: 60, Types: ['unrolled_memcpy']
   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_0
@@ -597,14 +566,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/3d.c, Lines: 45, Types: ['pointer_cast', 'shadow_pointer_walk']
   shape_design.c_removeDegenerateTriangles_FUN_00463a20
     File: shape/design.c, Lines: 45, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
-  core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00
-    File: core/xform.cpp, Lines: 47, Types: ['sign_compare_idiom']
-  core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80
-    File: core/xform.cpp, Lines: 47, Types: ['sign_compare_idiom']
-  core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0
-    File: core/xform.cpp, Lines: 47, Types: ['sign_compare_idiom']
-  core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40
-    File: core/xform.cpp, Lines: 47, Types: ['sign_compare_idiom']
   core_setutil.cpp_readAndParseLine_FUN_00585290
     File: core/setutil.cpp, Lines: 48, Types: ['unrolled_strcpy', 'unrolled_strlen']
   core_dfilter.cpp_CDemonFilter_init_FUN_004705a0
@@ -671,8 +632,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/3d.c, Lines: 92, Types: ['pointer_cast', 'shadow_pointer_walk']
   shape_design.c_generateGlobe_FUN_00468910
     File: shape/design.c, Lines: 97, Types: ['unrolled_strlen']
-  sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0
-    File: sound/mp3.cpp, Lines: 100, Types: ['primitive_walker_cast']
   core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9
     File: core/skeledit.cpp, Lines: 102, Types: ['pointer_cast', 'warning_inlined_function']
   shape_design.c_generateOctant_FUN_00469420

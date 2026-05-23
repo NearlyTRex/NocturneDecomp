@@ -10,7 +10,7 @@
     "pseudocode_lines": 46,
     "suspect_count": 36,
     "suspect_types": [
-      "sign_compare_idiom",
+      "carry_arith_idiom",
       "stack_param",
       "unknown_type"
     ],
@@ -476,12 +476,12 @@
       "type": "stack_param"
     },
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 17,
-      "match": "CARRY4",
+      "match": "CARRY4(in_stack_00000008,in_stack_00000008)",
       "severity": "moderate",
       "text": "if (CARRY4(in_stack_00000008,in_stack_00000008)) break;",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     },
     {
       "description": "Unresolved stack parameter",
@@ -532,12 +532,12 @@
       "type": "stack_param"
     },
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 21,
-      "match": "CARRY4",
+      "match": "CARRY4(in_stack_00000014,in_stack_00000014)",
       "severity": "moderate",
       "text": "if (CARRY4(in_stack_00000014,in_stack_00000014)) goto LAB_00606a70;",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     },
     {
       "description": "Unresolved stack parameter",
@@ -564,12 +564,12 @@
       "type": "stack_param"
     },
     {
-      "description": "Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) \u2014 Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 24,
-      "match": "CARRY4",
+      "match": "CARRY4(in_stack_00000014,in_stack_00000014)",
       "severity": "moderate",
       "text": "(!CARRY4(in_stack_00000014,in_stack_00000014))) {",
-      "type": "sign_compare_idiom"
+      "type": "carry_arith_idiom"
     },
     {
       "description": "Unresolved stack parameter",

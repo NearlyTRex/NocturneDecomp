@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 231,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 216,
-    "suspect_count": 1,
-    "suspect_types": [
-      "bit_int_float_compare"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 798
   },
   "cross_references": [
@@ -369,6 +367,15 @@
       "severity": "moderate",
       "text": "CStack_d4.x = pCVar5->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44610001 is the IEEE 754 bit pattern of 900f. Rewrite in a .keep as a plain float compare against 900f.",
+      "line": 86,
+      "match": "(int)fVar6 < 0x44610001",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)fVar6 < 0x44610001)) &&",
+      "type": "bit_int_float_compare"
     }
   ],
   "stack_frame": {
@@ -418,14 +425,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44610001 is the IEEE 754 bit pattern of 900f. Rewrite in a .keep as a plain float compare against 900f.",
-      "line": 86,
-      "match": "(int)fVar6 < 0x44610001",
-      "severity": "moderate",
-      "text": "(int)fVar6 < 0x44610001)) &&",
-      "type": "bit_int_float_compare"
-    }
-  ]
+  "suspects": []
 }

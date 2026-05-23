@@ -40,7 +40,6 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *th
     iVar5 = iVar5 + 0x20;
     iVar6 = iVar6 + 0x400;
     g_WaterTileSamples[iVar2] = g_ColorCubeLookup[iVar1 + iVar2 + -1];
-    iVar2 = iVar2;
   } while (iVar2 < 0x20);
   this_ptr->visible_area_sqft = 0.0;
   if (ABS(this_ptr->water_level_y) == 0.0) {
@@ -67,7 +66,7 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *th
   iVar1 = (int)ROUND(ROUND(local_20 / this_ptr->tile_size + 1.0));
   g_VisibleWaterTileCount = 0;
   iVar7 = -iVar1;
-  if (SBORROW4(iVar7,iVar1) != iVar1 * -2 < 0) {
+  if (iVar7 < iVar1) {
     do {
       for (iVar8 = -iVar1; iVar8 < iVar1; iVar8 = iVar8 + 1) {
         local_50.x = (float)iVar7 * this_ptr->tile_size + FLOAT_03f875f0;

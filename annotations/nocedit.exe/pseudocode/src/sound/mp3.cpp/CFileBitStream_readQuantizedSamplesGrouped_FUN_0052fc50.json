@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 186,
+    "complexity_score": 111,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 111,
-    "suspect_count": 7,
-    "suspect_types": [
-      "primitive_walker_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 351
   },
   "cross_references": [
@@ -311,93 +309,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 20,
-          "line": 90,
-          "message": "Redundant assignment of 'puVar8' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 20,
-          "line": 112,
-          "message": "Redundant assignment of 'puVar7' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 59,
-      "match": "(uint *)&local_18[",
-      "severity": "moderate",
-      "text": "} while (puVar9 != (uint *)&local_18[1].codes.q[0][local_48]);",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 62,
-      "match": "(uint *)&pSVar5[",
-      "severity": "moderate",
-      "text": "puVar4 = (uint *)&pSVar5[local_2c * 16 + *local_1c];",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 72,
-      "match": "(uint *)&local_18[",
-      "severity": "moderate",
-      "text": "} while (puVar10 != (uint *)&local_18[1].codes.q[0][local_48]);",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 82,
-      "match": "(uint *)&local_18[",
-      "severity": "moderate",
-      "text": "} while (puVar11 != (uint *)&local_18[1].codes.q[0][local_48]);",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 91,
-      "match": "(uint *)&sample_array[",
-      "severity": "moderate",
-      "text": "} while (puVar8 != (uint *)&sample_array[1].codes.q[0][local_48]);",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 108,
-      "match": "(uint *)&sample_array[",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)&sample_array[iVar9].codes.q[0][iVar11];",
-      "type": "primitive_walker_cast"
-    },
-    {
-      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
-      "introduced_by": "keep",
-      "line": 113,
-      "match": "(uint *)&sample_array[",
-      "severity": "moderate",
-      "text": "} while (puVar7 != (uint *)&sample_array[iVar9 + 1].codes.q[0][iVar11]);",
-      "type": "primitive_walker_cast"
-    }
-  ]
+  "suspects": []
 }

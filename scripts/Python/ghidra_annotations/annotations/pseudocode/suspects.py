@@ -96,6 +96,7 @@ SUSPECT_SEVERITY = {
     'primitive_walker_cast': 'moderate',
     'subfield_vector_pun': 'moderate',
     'sign_compare_idiom': 'moderate',
+    'carry_arith_idiom': 'moderate',
 }
 
 
@@ -185,8 +186,11 @@ _SUSPECT_PATTERN_DEFS = [
     # Restricted to pointer-sized primitives (int/uint/SIZE_T/size_t/long);
     # `char *` / `byte *` / `uchar *` are excluded since they often
     # legitimately appear in serialization byte-stream code.
+    # The field-access group repeats zero-or-more times so multi-level walks
+    # like `(uint *)&array->codes.q[0][i]` are caught, not just single-level
+    # `(uint *)&array->field[i]`.
     (r'(?<!\*)\((?:int|uint|SIZE_T|size_t|long|unsigned\s+long|unsigned\s+int)\s*\*\s*\)\s*'
-     r'&\s*\w+(?:\s*(?:->|\.)\s*\w+)?\s*\[',
+     r'&\s*\w+(?:\s*(?:->|\.)\s*\w+)*\s*\[',
      'primitive_walker_cast',
      'Primitive-pointer cast hiding struct field walk — retype to element type'),
     # _._N_N_ field access patterns (mangled/unknown field names)
@@ -284,13 +288,22 @@ _SUSPECT_PATTERN_DEFS = [
     # WARNING: Unable to use type for symbol
     (r'WARNING:\s*Unable to use type for symbol', 'warning_unable_to_use_type',
      'Ghidra could not apply type to a symbol'),
-    # Borrow/carry compare idioms - Ghidra's spelling of a signed/unsigned
-    # comparison via CPU flag math, e.g. `SBORROW4(a,b) != (int)(a-b) < 0` is just
-    # signed `a < b` (how JL/JGE read SF^OF). Always reducible to a plain
-    # </<=/>/>= comparison in a .keep, so flag for cleanup (not omitted like the
-    # genuinely-needed intrinsics below).
-    (r'\b(SBORROW\d*|SCARRY\d*|CARRY\d*)\b', 'sign_compare_idiom',
-     'Borrow/carry compare idiom (SBORROW/SCARRY/CARRY) — Ghidra flag-math for a signed/unsigned comparison; replace with a plain comparison operator in a .keep.'),
+    # Signed borrow/overflow flag math - Ghidra's spelling of a SIGNED comparison,
+    # e.g. `SBORROW4(a,b) != (int)(a-b) < 0` is just signed `a < b` (how JL/JGE read
+    # SF^OF). Always reducible to a plain </<=/>/>= comparison in a .keep.
+    (r'\b(SBORROW\d*|SCARRY\d*)\b', 'sign_compare_idiom',
+     'Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.'),
+    # Unsigned CARRY in a comparison context (compared with != / ==) - Ghidra's
+    # spelling of an UNSIGNED comparison; reducible to a comparison operator.
+    (r'\bCARRY\d*\([^)]*\)\s*[!=]=', 'sign_compare_idiom',
+     'Unsigned-carry flag-math (CARRY in a != / == compare) for an unsigned comparison; replace with a comparison operator in a .keep.'),
+    # Any OTHER CARRY use is 64-bit arithmetic, NOT a comparison: either multiply-high
+    # (`(int)((ulonglong)L >> 0x20) * 2 + (uint)CARRY4(lo,lo)` == `(int)(L >> 0x1f)`)
+    # or add-carry (`b = CARRY4(a,d); a = a+d; hi += dhi + (uint)b;` == `b = a+d < a;`).
+    # Reducible, but NOT to a comparison - keep the negative-lookahead so compare-context
+    # CARRY (handled above) is not double-flagged.
+    (r'\bCARRY\d*\([^)]*\)(?!\s*[!=]=)', 'carry_arith_idiom',
+     'Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.'),
     # Decompiler intrinsics - pseudo-functions and artifacts (not real C)
     # Includes: ROUND(), SQRT(), CONCAT44, SUB84, NAN(), fsin, fcos, fptan, ADJ(), etc.
     (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CONCAT\d+|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs|ADJ)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),

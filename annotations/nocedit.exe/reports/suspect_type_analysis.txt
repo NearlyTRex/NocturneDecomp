@@ -4,34 +4,35 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1503 ( 42.7%)
-  unrolled_memcpy                  766 ( 21.8%)
-  unrolled_strcpy                  253 (  7.2%)
-  shadow_pointer_walk              134 (  3.8%)
+  pointer_cast                    1503 ( 43.2%)
+  unrolled_memcpy                  766 ( 22.0%)
+  unrolled_strcpy                  253 (  7.3%)
+  shadow_pointer_walk              126 (  3.6%)
   missing_cave_copy                111 (  3.2%)
-  sign_compare_idiom               101 (  2.9%)
-  raw_address_constant              91 (  2.6%)
+  raw_address_constant              87 (  2.5%)
   unrolled_strlen                   80 (  2.3%)
-  unrolled_memset                   65 (  1.8%)
-  static_uninitvar                  54 (  1.5%)
+  unrolled_memset                   65 (  1.9%)
+  carry_arith_idiom                 63 (  1.8%)
+  static_uninitvar                  54 (  1.6%)
   warning_inlined_function          45 (  1.3%)
   bitcast_double_pair               42 (  1.2%)
   unrolled_strchr                   41 (  1.2%)
-  bit_int_float_compare             38 (  1.1%)
+  bit_int_float_compare             33 (  0.9%)
   static_legacy_uninitvar           30 (  0.9%)
   decompiler_intrinsic              25 (  0.7%)
+  sign_compare_idiom                21 (  0.6%)
   static_invalid_pointer_cast       18 (  0.5%)
   warning_type_propagation          17 (  0.5%)
   stack_alignment_array             15 (  0.4%)
   negative_offset                   13 (  0.4%)
   warning_unreachable               12 (  0.3%)
-  primitive_walker_cast             12 (  0.3%)
   self_copy_guard                   11 (  0.3%)
   sub84_truncation                  10 (  0.3%)
   static_null_pointer                8 (  0.2%)
   stack_param                        8 (  0.2%)
   unrolled_strcat                    6 (  0.2%)
   unaffected_reg                     6 (  0.2%)
+  primitive_walker_cast              5 (  0.1%)
   static_array_oob_cond              3 (  0.1%)
 
 ====================================================================================================
@@ -755,7 +756,7 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (134 occurrences)
+TYPE: shadow_pointer_walk (126 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -769,20 +770,18 @@ Unique patterns:
      4x  pCVar10 = (T *)&(pCVar10->FIELD).SUBFIELD
      4x  local_18 = (T *)local_18->ARRAY
      3x  pCVar1 = (T *)pCVar1->ARRAY
-     3x  pCVar2 = (T *)&pCVar2[N].SUBFIELD
      3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
      2x  pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)
      2x  pCVar17 = (T *)((pCVar17->FIELD).SUBFIELD...ARRAY + CONST)
      2x  pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)
-     2x  pCVar2 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST)
+     2x  pCVar2 = (T *)&pCVar2[N].SUBFIELD
      2x  pCVar10 = (T *)pCVar10->ARRAY
      2x  pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)
-     2x  pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)
-     2x  primitive_array = (T *)&primitive_array[N].SUBFIELD
+     2x  pSVar13 = (T *)&(pSVar13->FIELD).SUBFIELD
+     2x  pCVar6 = (T *)((int)&(pCVar6->FIELD).SUBFIELD + CONST)
+     2x  this_ptr = (T *)((int)&(this_ptr->FIELD).SUBFIELD + CONST)
 
 Functions:
-  core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
-  core_charactr.cpp_CCharacter_renderFlames_FUN_0042b110
   core_cloth.cpp_CClothList_render_FUN_0043c320
   core_cloth.cpp_CClothList_setWindVelocity_FUN_0043c3e0
   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
@@ -803,7 +802,6 @@ Functions:
   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
   core_glass.cpp_CGlass_renderOpaque_FUN_004e9930
   core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0
-  core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_0050adf0
   core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
   core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_005097e0
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
@@ -815,8 +813,6 @@ Functions:
   core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
   core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0
   core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
-  core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0
-  core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0
   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0
   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
@@ -839,7 +835,6 @@ Functions:
   core_vehicle.cpp_CVehicle_setup_FUN_005e7b90
   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
-  core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005eafa0
   engine_3d.c_renderOverlayTextureEnable_FUN_00404020
   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720
   engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
@@ -920,49 +915,11 @@ Functions:
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
 
 ====================================================================================================
-TYPE: sign_compare_idiom (101 occurrences)
+TYPE: raw_address_constant (87 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    77x  CARRY4
-    24x  SBORROW4
-
-Functions:
-  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
-  core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
-  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
-  core_script.cpp_compareEventXRefs_FUN_005675a0
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
-  core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00
-  core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80
-  core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0
-  core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40
-  engine_3d.c_isVisiblePlane_FUN_00403950
-  engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
-  engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
-  engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
-  engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
-  engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
-  engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
-  engine_clipper.c_interpolateVertexRightClip_FUN_00435b00
-  engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
-  engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
-  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
-  engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
-  engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210
-  engine_prim.c_getTriangleWindingFromIndices2_FUN_00552300
-  engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
-  engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
-  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
-  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
-
-====================================================================================================
-TYPE: raw_address_constant (91 occurrences)
-====================================================================================================
-
-Unique patterns:
-    40x  0xf80000
+    36x  0xf80000
     12x  0xfeffff
      8x  0xfbffff
      8x  0xfe0000
@@ -985,7 +942,6 @@ Functions:
   core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40
   core_gore.cpp_CBloodSplat_setupRenderState_FUN_004ec470
   core_gore.cpp_CFootstep_render_FUN_004ed3c0
-  core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880
   core_menu.cpp_configureGraphicsOptions_FUN_00510c80
   core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
@@ -1078,6 +1034,26 @@ Functions:
   core_zombie.cpp_CZombie_process_FUN_005f9470
   shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+
+====================================================================================================
+TYPE: carry_arith_idiom (63 occurrences)
+====================================================================================================
+
+Unique patterns:
+    28x  CARRY4(uVar3,uVar3)
+    19x  CARRY4(uVar2,uVar2)
+    16x  CARRY4(uVar4,uVar4)
+
+Functions:
+  engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
+  engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
+  engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
+  engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
+  engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
+  engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
+  engine_clipper.c_interpolateVertexRightClip_FUN_00435b00
+  engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
+  engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
 
 ====================================================================================================
 TYPE: static_uninitvar (54 occurrences)
@@ -1203,39 +1179,34 @@ Functions:
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
-TYPE: bit_int_float_compare (38 occurrences)
+TYPE: bit_int_float_compare (33 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     2x  (int)(this_ptr->size).x < 0x3f000000
      2x  (int)local_20 < 0x40800000
      2x  0x437b0000 < (int)local_20)
      2x  (int)local_1c < 0x40800000
      2x  0x437b0000 < (int)local_1c)
      1x  0x40400000 < (int)local_24))
      1x  0x40a00000 < (int)local_2c))
-     1x  (int)(this_ptr->box_size).x < 0x3f000000
      1x  (int)(local_3c->extents).x < 0x3f800000
      1x  (int)(local_18->extents).x < 0x3f800000
      1x  (int)fVar2 < 0x41700001
-     1x  (int)(this_ptr->glass_size).x < 0x3f000000
      1x  0x3e999999 < (int)FLOAT_00680818))
      1x  (int)CStack_90.y < 0x42c60001
      1x  (int)local_30 < 0x41f00000
-     1x  (int)(this_ptr->curtain_size).x < 0x3f000000
      1x  (int)local_68.z < 0x40c00001
      1x  (int)this_ptr->turn_blend_weight < 0x3e19999a
      1x  (int)local_1c < 0x3f800001
      1x  0x3f199999 < (int)(this_ptr->base).base.layer_action_t))
+     1x  0x3ebd70a3 < (int)(this_ptr->base).base.layer_action_t))
+     1x  0x3f28f5c2 < (int)(this_ptr->base).base.layer_action_t))
+     1x  (int)(this_ptr->trigger_size).x < 0x3c23d70a
+     1x  0x44ac8000 < (int)fVar1)
 
 Functions:
-  core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
-  core_conveyor.cpp_CConveyor_processInEditor_FUN_004421c0
-  core_curtain.cpp_CCurtain_processInEditor_FUN_0044b7a0
-  core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0
   core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40
   core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70
-  core_glass.cpp_CGlass_processInEditor_FUN_004eb490
   core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
   core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
@@ -1289,6 +1260,25 @@ Functions:
   shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
   shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
   shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
+
+====================================================================================================
+TYPE: sign_compare_idiom (21 occurrences)
+====================================================================================================
+
+Unique patterns:
+    21x  SBORROW4
+
+Functions:
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
+  core_script.cpp_compareEventXRefs_FUN_005675a0
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  engine_3d.c_isVisiblePlane_FUN_00403950
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
+  engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
+  engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210
+  engine_prim.c_getTriangleWindingFromIndices2_FUN_00552300
+  engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
+  engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
 
 ====================================================================================================
 TYPE: static_invalid_pointer_cast (18 occurrences)
@@ -1414,26 +1404,6 @@ Functions:
   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
 
 ====================================================================================================
-TYPE: primitive_walker_cast (12 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  (uint *)&local_18[
-     3x  (uint *)&sample_array[
-     1x  (uint *)&scalefactor_indices[
-     1x  (int *)&quantized_samples[
-     1x  (uint *)&dequantized_output[
-     1x  (uint *)&pSVar5[
-     1x  (int *)&g_Layer3BandIndex[
-     1x  (uint *)&scfsi_array->scfsi[
-
-Functions:
-  sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50
-  sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
-  sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0
-
-====================================================================================================
 TYPE: self_copy_guard (11 occurrences)
 ====================================================================================================
 
@@ -1513,6 +1483,21 @@ Unique patterns:
 
 Functions:
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+
+====================================================================================================
+TYPE: primitive_walker_cast (5 occurrences)
+====================================================================================================
+
+Unique patterns:
+     3x  (uint *)&quantized_samples->codes.q[
+     1x  (uint *)&scalefactors->codes.q[
+     1x  (int *)&g_Layer3BandIndex[
+
+Functions:
+  sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50
+  sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
+  sound_mp3.cpp_requantizeSamples_FUN_005301b0
 
 ====================================================================================================
 TYPE: static_array_oob_cond (3 occurrences)

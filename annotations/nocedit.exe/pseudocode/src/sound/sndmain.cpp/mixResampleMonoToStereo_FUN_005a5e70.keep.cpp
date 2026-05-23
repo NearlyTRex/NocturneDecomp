@@ -36,7 +36,7 @@ double __cdecl sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70(short *sam
     do {
       sVar2 = sample_data[pos_int];
       psVar1 = sample_data + pos_int;
-      bVar11 = CARRY4(pos_frac,delta_frac);
+      bVar11 = pos_frac + delta_frac < pos_frac;
       pos_frac = pos_frac + delta_frac;
       pos_int = pos_int + delta_int + (uint)bVar11;
       pfVar6[iVar9] = (float)*psVar1 * fVar3 + pfVar6[iVar9];
