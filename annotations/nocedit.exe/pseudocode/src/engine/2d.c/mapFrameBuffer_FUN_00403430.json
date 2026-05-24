@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 81,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 32,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 66,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 237
   },
   "cross_references": [
@@ -297,6 +295,17 @@
     },
     "pcode_op_count": 676
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ScreenBufferArray + iVar1) = width;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 24,
     "local_size": 4,
@@ -341,14 +350,36 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_ScreenBufferArray + iVar1) = width;",
-      "type": "pointer_cast"
-    }
-  ]
+  "static_analysis": {
+    "analyzed_file": "mapFrameBuffer_FUN_00403430.keep.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 29,
+          "line": 21,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 27,
+          "line": 29,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 53,
+          "line": 30,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

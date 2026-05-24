@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 91,
+    "complexity_score": 56,
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 56,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 170
   },
   "cross_references": [
@@ -342,6 +340,35 @@
     },
     "pcode_op_count": 462
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(void *)(x1 + (int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((void *)(x1 + (int)g_ScreenBufferArray[y]),g_ActiveRenderColor,count);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(ushort *)(x1 * 2 + (int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar3 = (ushort *)(x1 * 2 + (int)g_ScreenBufferArray[y]);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)(x1 * 4 + (int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)(x1 * 4 + (int)g_ScreenBufferArray[y]);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -372,30 +399,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(void *)(x1 + (int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "((void *)(x1 + (int)g_ScreenBufferArray[y]),g_ActiveRenderColor,count);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(ushort *)(x1 * 2 + (int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "puVar3 = (ushort *)(x1 * 2 + (int)g_ScreenBufferArray[y]);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(uint *)(x1 * 4 + (int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "puVar4 = (uint *)(x1 * 4 + (int)g_ScreenBufferArray[y]);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

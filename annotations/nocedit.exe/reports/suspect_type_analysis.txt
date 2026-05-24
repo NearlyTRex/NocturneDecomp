@@ -4,25 +4,25 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1482 ( 44.0%)
-  unrolled_memcpy                  742 ( 22.0%)
-  unrolled_strcpy                  249 (  7.4%)
-  shadow_pointer_walk              126 (  3.7%)
-  missing_cave_copy                111 (  3.3%)
+  pointer_cast                    1446 ( 43.7%)
+  unrolled_memcpy                  738 ( 22.3%)
+  unrolled_strcpy                  249 (  7.5%)
+  shadow_pointer_walk              126 (  3.8%)
+  missing_cave_copy                111 (  3.4%)
   unrolled_strlen                   80 (  2.4%)
-  raw_address_constant              79 (  2.3%)
+  raw_address_constant              67 (  2.0%)
   carry_arith_idiom                 63 (  1.9%)
-  unrolled_memset                   58 (  1.7%)
+  unrolled_memset                   58 (  1.8%)
   static_uninitvar                  54 (  1.6%)
-  warning_inlined_function          43 (  1.3%)
-  bitcast_double_pair               42 (  1.2%)
+  warning_inlined_function          42 (  1.3%)
+  bitcast_double_pair               42 (  1.3%)
   unrolled_strchr                   41 (  1.2%)
   bit_int_float_compare             33 (  1.0%)
-  static_legacy_uninitvar           30 (  0.9%)
+  static_legacy_uninitvar           29 (  0.9%)
   static_invalid_pointer_cast       18 (  0.5%)
   sign_compare_idiom                17 (  0.5%)
-  warning_type_propagation          15 (  0.4%)
-  stack_alignment_array             15 (  0.4%)
+  warning_type_propagation          15 (  0.5%)
+  stack_alignment_array             14 (  0.4%)
   warning_unreachable               11 (  0.3%)
   sub84_truncation                  10 (  0.3%)
   self_copy_guard                    9 (  0.3%)
@@ -35,16 +35,16 @@ SUSPECT TYPE COUNTS
   fast_sqrt_inline                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1482 occurrences)
+TYPE: pointer_cast (1446 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   611x  (int)&NAME used in byte-offset arithmetic
+   607x  (int)&NAME used in byte-offset arithmetic
     39x  (int *)((int)this_ptr
     31x  (uint *)((int)this_ptr
-    30x  (int *)((int)g_ScreenBufferArray
     18x  (CDemonActor **)((int)g_CDemonSetPtr
     17x  (uint *)((int)g_ModelPolygonData
+    16x  (int *)((int)g_ScreenBufferArray
     16x  (byte *)((int)this_ptr
     14x  (int *)((int)g_ModelPolygonData
     14x  (uint *)((int)g_ThumbnailImageBuffer
@@ -109,8 +109,6 @@ Functions:
   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
   core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
-  core_gore.cpp_CFootstep_init_FUN_004ed240
-  core_gore.cpp_CGore_renderDecals_FUN_004ed830
   core_hero.cpp_CHero_dtor_FUN_004f2470
   core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0
   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0
@@ -222,17 +220,6 @@ Functions:
   core_weather.cpp_CWeather_renderParticles_FUN_005ef190
   core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940
   core_weather.cpp_CWeather_update_FUN_005eeaf0
-  engine_2d.c_buildColorLookupTable_FUN_00402870
-  engine_2d.c_drawCharacterHighlighted_FUN_00401b70
-  engine_2d.c_drawCharacterMaskedColor_FUN_00401a10
-  engine_2d.c_drawCharacterMasked_FUN_00401900
-  engine_2d.c_drawCharacter_FUN_00401610
-  engine_2d.c_drawHLine_FUN_00402ee0
-  engine_2d.c_drawVLine_FUN_00402ff0
-  engine_2d.c_mapFrameBuffer_FUN_00403430
-  engine_2d.c_plotPixelWithDepth_FUN_00401290
-  engine_2d.c_plotPixel_FUN_00401140
-  engine_2d.c_unmapFrameBuffer_FUN_00403670
   engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0
   engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0
   engine_3d.c_renderOverlayTextureEnable_FUN_00404020
@@ -380,11 +367,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (742 occurrences)
+TYPE: unrolled_memcpy (738 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   567x  field-by-field struct copy
+   563x  field-by-field struct copy
     89x  for (...; != 0; ... + -1)
     84x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -450,8 +437,6 @@ Functions:
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
   core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
   core_glass.cpp_CGlass_setup_FUN_004e9180
-  core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
-  core_gore.cpp_CGore_spawnFlies_FUN_004edf30
   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80
   core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0
   core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20
@@ -944,11 +929,11 @@ Functions:
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
 
 ====================================================================================================
-TYPE: raw_address_constant (79 occurrences)
+TYPE: raw_address_constant (67 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    28x  0xf80000
+    16x  0xf80000
     12x  0xfeffff
      8x  0xfbffff
      8x  0xfe0000
@@ -967,9 +952,6 @@ Unique patterns:
 
 Functions:
   core_glass.cpp_CGlass_shatter_FUN_004eaef0
-  core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40
-  core_gore.cpp_CBloodSplat_setupRenderState_FUN_004ec470
-  core_gore.cpp_CFootstep_render_FUN_004ed3c0
   core_menu.cpp_configureGraphicsOptions_FUN_00510c80
   core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
@@ -1065,11 +1047,11 @@ Functions:
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 
 ====================================================================================================
-TYPE: warning_inlined_function (43 occurrences)
+TYPE: warning_inlined_function (42 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    43x  WARNING: Inlined function:
+    42x  WARNING: Inlined function:
 
 Functions:
   core_curtain.cpp_CCurtain_setup_FUN_00449810
@@ -1087,7 +1069,6 @@ Functions:
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
   core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
   core_glass.cpp_CGlass_setup_FUN_004e9180
-  core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
   core_menu.cpp_configureSoundOptions_FUN_00511e50
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
   core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
@@ -1207,11 +1188,11 @@ Functions:
   shape_design.c_addQuadPolygonOctant_FUN_00469220
 
 ====================================================================================================
-TYPE: static_legacy_uninitvar (30 occurrences)
+TYPE: static_legacy_uninitvar (29 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    30x  Cppcheck: uninitialized variable (legacy detector)
+    29x  Cppcheck: uninitialized variable (legacy detector)
 
 Functions:
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
@@ -1219,7 +1200,6 @@ Functions:
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   core_sound.cpp_updateListeners_FUN_005b1870
   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
-  engine_2d.c_findBestPaletteMatch_FUN_00401460
   shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
   shape_design.c_loadModelBinary_FUN_00458170
 
@@ -1287,13 +1267,12 @@ Functions:
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
 
 ====================================================================================================
-TYPE: stack_alignment_array (15 occurrences)
+TYPE: stack_alignment_array (14 occurrences)
 ====================================================================================================
 
 Unique patterns:
      1x  aEStackY_208c
      1x  afStackY_180c
-     1x  aiStackY_1000
      1x  afStackY_185c
      1x  afStackY_17f8
      1x  afStackY_1938
@@ -1311,7 +1290,6 @@ Functions:
   core_conveyor.cpp_CConveyor_setup_FUN_00441d60
   core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
-  core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
   core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810
   core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
   core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0

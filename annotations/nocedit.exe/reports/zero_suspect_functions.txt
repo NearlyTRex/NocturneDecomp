@@ -2138,6 +2138,7 @@ annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodParticle_ctor_FUN_004
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodParticle_dtor_FUN_004ee410.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodParticle_onCollision_FUN_004ec290.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodParticle_render_FUN_004ebac0.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodParticle_setupRenderState_FUN_004eb9d0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodParticle_setup_FUN_004eb9a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodPool_arrdtor_FUN_004ee440.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodPool_ctor_FUN_004ee3b0.cpp
@@ -2147,6 +2148,7 @@ annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodPool_load_FUN_004ed16
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodPool_processAge_FUN_004ed0a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodPool_render_FUN_004ecce0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodPool_save_FUN_004ed1c0.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodPool_setupRenderState_FUN_004ecc40.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodSplat_arrdtor_FUN_004ee460.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodSplat_ctor_FUN_004ee3d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodSplat_dtor_FUN_004ee3e0.cpp
@@ -2156,9 +2158,12 @@ annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodSplat_load_FUN_004ecb
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodSplat_processAge_FUN_004ecad0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodSplat_render_FUN_004ec500.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodSplat_save_FUN_004ecb90.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodSplat_setupRenderState_FUN_004ec470.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CFootstep_arrdtor_FUN_004ee420.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CFootstep_ctor_FUN_004ee370.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CFootstep_dtor_FUN_004ee390.cpp
+annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CFootstep_init_FUN_004ed240.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CFootstep_render_FUN_004ed3c0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_allocateBloodPool_FUN_004edde0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_allocateBloodSplat_FUN_004edaf0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_createBloodPool_FUN_004ede30.cpp
@@ -2171,11 +2176,14 @@ annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_findBloodTypeAtPositi
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_loadAssets_FUN_004ede60.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_load_FUN_004ee1e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_process_FUN_004ed9e0.cpp
+annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_renderDecals_FUN_004ed830.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_renderParticles_FUN_004ed7b0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_reset_FUN_004ed760.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_save_FUN_004ee290.cpp
+annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_spawnBloodBurst_FUN_004edbb0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_spawnBloodParticles_FUN_004edaa0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_spawnFliesOnActor_FUN_004ee030.cpp
+annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_spawnFlies_FUN_004edf30.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/convertVecFloatToFixed_FUN_004ee340.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/getBloodColorParams_FUN_004eb950.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/staticInit_FUN_004eb8c0.cpp
@@ -4165,6 +4173,7 @@ annotations/nocedit.exe/pseudocode/src/core/zombie.cpp/getObjectGrabPointLocal_F
 annotations/nocedit.exe/pseudocode/src/core/zombie.cpp/getObjectGrabPointWorld_FUN_005f8da0.cpp
 annotations/nocedit.exe/pseudocode/src/core/zombie.cpp/getObjectHeightScale_FUN_005f8cc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/zombie.cpp/staticInit_FUN_005f8c90.cpp
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/buildColorLookupTable_FUN_00402870.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/cleanupGraphicsSystem_FUN_00401130.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/clearInputAndWait_FUN_00403260.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/clipAndDrawLine_FUN_00402ca0.c
@@ -4174,6 +4183,11 @@ annotations/nocedit.exe/pseudocode/src/engine/2d.c/disableTextWrap_FUN_00402820.
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/doNothing1_FUN_00401590.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/doNothing2_FUN_00402860.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/draw320x200SizeDot_FUN_00402a8e.c
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawCharacterHighlighted_FUN_00401b70.keep.c
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawCharacterMaskedColor_FUN_00401a10.keep.c
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawCharacterMasked_FUN_00401900.keep.c
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawCharacter_FUN_00401610.keep.c
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawHLine_FUN_00402ee0.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawLine3D_FUN_00401320.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawLine_FUN_004011b0.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawRect_FUN_00403120.c
@@ -4208,6 +4222,7 @@ annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawTextWrappedColor_FUN_0040
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawTextWrapped_FUN_00401c60.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawTextXY_FUN_00402130.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawText_FUN_00401fd0.c
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawVLine_FUN_00402ff0.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/enableTextWrap_FUN_00402810.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/fillRectColor_FUN_00403170.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/fillRectWithBorder_FUN_00403200.c
@@ -4220,7 +4235,10 @@ annotations/nocedit.exe/pseudocode/src/engine/2d.c/getTextWrapEnabled_FUN_004027
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/initGraphicsSystem_FUN_00401010.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/loadOrBuildColorMap_FUN_00402930.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/loadPaletteFile_FUN_004015a0.c
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/mapFrameBuffer_FUN_00403430.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/mapTextureFrameBuffer_FUN_00403650.c
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/plotPixelWithDepth_FUN_00401290.keep.c
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/plotPixel_FUN_00401140.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/project3DPointClipped_FUN_004017c0.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/project3DPointToScreen_FUN_00401770.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/reinitializeGraphicsSystem_FUN_00402a80.c
@@ -4229,6 +4247,7 @@ annotations/nocedit.exe/pseudocode/src/engine/2d.c/setSolidColor_FUN_004033a0.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/setTextColor_FUN_00402840.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/setTextWrapEnabled_FUN_00402800.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/setupViewportAndClipping_FUN_00401800.c
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/unmapFrameBuffer_FUN_00403670.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/wrapTextToWidth_FUN_00401d80.keep.c
 annotations/nocedit.exe/pseudocode/src/engine/3d.c/addFaceIfVisible_FUN_004079c0.c
 annotations/nocedit.exe/pseudocode/src/engine/3d.c/addPolygonEdge_FUN_004d11c0.c

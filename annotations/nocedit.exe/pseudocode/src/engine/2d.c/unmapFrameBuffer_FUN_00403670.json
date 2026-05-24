@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 55,
+    "complexity_score": 30,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 90
   },
   "cross_references": [],
@@ -210,19 +208,12 @@
     },
     "pcode_op_count": 149
   },
-  "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": []
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "description": "Complex pointer cast",
       "line": 26,
       "match": "(void **)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(void **)((int)g_ScreenBufferArray + iVar2) = pvVar3;",
       "type": "pointer_cast"
@@ -231,9 +222,19 @@
       "description": "Complex pointer cast",
       "line": 28,
       "match": "(void *)((int)pvVar3",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "pvVar3 = (void *)((int)pvVar3 + g_ScreenBufferStride);",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

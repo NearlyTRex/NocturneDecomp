@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 91,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 66,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 192
   },
   "cross_references": [
@@ -173,6 +171,26 @@
     },
     "pcode_op_count": 531
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar5 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar8) + x_pos);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar8) + x_pos * 2);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -203,22 +221,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "puVar5 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar8) + x_pos);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar8) + x_pos * 2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -37,9 +37,7 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CV
       fVar2 = SQRT(direction->z * direction->z +
                    direction->x * direction->x + direction->y * direction->y);
       if (&local_40 != direction) {
-        local_40.x = direction->x;
-        local_40.y = direction->y;
-        local_40.z = direction->z;
+        local_40 = *direction;
       }
       fVar1 = SQRT(local_40.z * local_40.z + local_40.x * local_40.x + local_40.y * local_40.y);
       if (fVar1 <= 0.0) {
@@ -75,11 +73,7 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CV
           local_4c.x = local_34.x * fVar2;
           local_4c.y = local_34.y * fVar2;
           local_4c.z = local_34.z * fVar2;
-          if (&local_34 != &local_4c) {
-            local_34.x = local_4c.x;
-            local_34.y = local_4c.y;
-            local_34.z = local_4c.z;
-          }
+          local_34 = local_4c;
           iVar6 = iVar6 + 1;
           core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0
                     (this_ptr,position,&local_34,blood_type);

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 103,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 58,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 197
   },
   "cross_references": [
@@ -144,6 +142,44 @@
     },
     "pcode_op_count": 659
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(float *)((int)g_FootstepCornerMultipliers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_40.x = (float)(fVar3 * (float10)*(float *)((int)g_FootstepCornerMultipliers[1] + iVar2) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(float *)((int)g_FootstepCornerMultipliers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "-fVar4 * (float10)*(float *)((int)g_FootstepCornerMultipliers[0] + iVar2) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(float *)((int)g_FootstepCornerMultipliers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_40.z = (float)(fVar4 * (float10)*(float *)((int)g_FootstepCornerMultipliers[1] + iVar2) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(float *)((int)g_FootstepCornerMultipliers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar3 * (float10)*(float *)((int)g_FootstepCornerMultipliers[0] + iVar2)) +",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 92,
     "local_size": 68,
@@ -233,38 +269,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(float *)((int)g_FootstepCornerMultipliers",
-      "severity": "moderate",
-      "text": "local_40.x = (float)(fVar3 * (float10)*(float *)((int)g_FootstepCornerMultipliers[1] + iVar2) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(float *)((int)g_FootstepCornerMultipliers",
-      "severity": "moderate",
-      "text": "-fVar4 * (float10)*(float *)((int)g_FootstepCornerMultipliers[0] + iVar2) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(float *)((int)g_FootstepCornerMultipliers",
-      "severity": "moderate",
-      "text": "local_40.z = (float)(fVar4 * (float10)*(float *)((int)g_FootstepCornerMultipliers[1] + iVar2) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(float *)((int)g_FootstepCornerMultipliers",
-      "severity": "moderate",
-      "text": "fVar3 * (float10)*(float *)((int)g_FootstepCornerMultipliers[0] + iVar2)) +",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

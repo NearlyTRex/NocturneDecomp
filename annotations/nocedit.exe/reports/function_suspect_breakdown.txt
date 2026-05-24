@@ -4,13 +4,13 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5862 functions
-  1 suspects: 78 functions
-  2 suspects: 131 functions
-  3 suspects: 76 functions
-  4 suspects: 75 functions
+  0 suspects: 5881 functions
+  1 suspects: 76 functions
+  2 suspects: 125 functions
+  3 suspects: 70 functions
+  4 suspects: 71 functions
   5 suspects: 38 functions
-  6 suspects: 52 functions
+  6 suspects: 51 functions
   7 suspects: 18 functions
   8 suspects: 27 functions
   9 suspects: 9 functions
@@ -97,10 +97,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [pointer_cast] (24 functions)
+  [pointer_cast] (22 functions)
   ------------------------------------------------------------
-    engine_2d.c_buildColorLookupTable_FUN_00402870     ( 51 lines)
-      *(float *)((int)g_PaletteLuminanceCache + iVar8) =...
     core_flies.cpp_drawFlyPixel_FUN_004cc230           ( 51 lines)
       puVar3 = (uint *)((int)g_ScreenBufferArray[screen_y] + scree...
     core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70 ( 53 lines)
@@ -119,8 +117,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       parent_class_00 = *(CDemonActorType **)((int)g_ActorClassReg...
     core_setedit.cpp_CDemonSet_drawCameraCoverageMap_F ( 60 lines)
       puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_...
-    engine_2d.c_mapFrameBuffer_FUN_00403430            ( 66 lines)
-      *(int *)((int)g_ScreenBufferArray + iVar1) = width;...
     core_conveyor.cpp_CConveyor_process_FUN_00441df0   ( 66 lines)
       actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->actors + ...
     core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d ( 66 lines)
@@ -267,8 +263,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 28, Types: ['pointer_cast']
   engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
     File: engine/prim.c, Lines: 29, Types: ['sign_compare_idiom']
-  engine_2d.c_unmapFrameBuffer_FUN_00403670
-    File: engine/2d.c, Lines: 30, Types: ['pointer_cast']
   core_netgame.cpp_allocSimFrame_FUN_0053f5a0
     File: core/netgame.cpp, Lines: 30, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_0051
@@ -287,16 +281,12 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/pendulum.cpp, Lines: 35, Types: ['unrolled_memcpy']
   engine_3d.c_renderOverlayTextureEnable_FUN_00404020
     File: engine/3d.c, Lines: 36, Types: ['pointer_cast', 'shadow_pointer_walk']
-  core_gore.cpp_CGore_spawnFlies_FUN_004edf30
-    File: core/gore.cpp, Lines: 37, Types: ['unrolled_memcpy']
   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742
     File: core/setcolid.cpp, Lines: 37, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_flies.cpp_CFlies_initFly_FUN_004cc760
     File: core/flies.cpp, Lines: 38, Types: ['unrolled_memcpy']
   core_setedit.cpp_blitThumbnailToScreen32_FUN_00577330
     File: core/setedit.cpp, Lines: 39, Types: ['pointer_cast']
-  core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
-    File: core/gore.cpp, Lines: 40, Types: ['stack_alignment_array', 'warning_inlined_function']
   core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FU
     File: core/manpuz.cpp, Lines: 40, Types: ['unrolled_memcpy']
   core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0
@@ -361,8 +351,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/curtain.cpp, Lines: 56, Types: ['unrolled_strcpy']
   core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0
     File: core/wateract.cpp, Lines: 56, Types: ['unrolled_strcpy']
-  engine_2d.c_drawCharacterHighlighted_FUN_00401b70
-    File: engine/2d.c, Lines: 58, Types: ['pointer_cast']
   shape_design.c_writePolygonModel_FUN_0045a320
     File: shape/design.c, Lines: 58, Types: ['unrolled_strcpy', 'warning_inlined_function']
   core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf4
@@ -375,8 +363,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mirror.cpp, Lines: 61, Types: ['unrolled_memcpy']
   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb74
     File: core/wateract.cpp, Lines: 64, Types: ['unrolled_memcpy']
-  engine_2d.c_drawCharacterMasked_FUN_00401900
-    File: engine/2d.c, Lines: 66, Types: ['pointer_cast']
   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80
     File: core/hero.cpp, Lines: 68, Types: ['unrolled_memcpy']
   shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600
@@ -399,8 +385,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/setutil.cpp, Lines: 83, Types: ['unrolled_memcpy']
   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
     File: shape/quantize.cpp, Lines: 85, Types: ['pointer_cast']
-  core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
-    File: core/gore.cpp, Lines: 86, Types: ['unrolled_memcpy']
   shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
     File: shape/design.c, Lines: 87, Types: ['unrolled_strlen']
   engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004
@@ -497,12 +481,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
   shape_superopt.cpp_CVec_copy1_FUN_005d8160
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
-  engine_2d.c_plotPixel_FUN_00401140
-    File: engine/2d.c, Lines: 13, Types: ['pointer_cast']
   core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260
     File: core/skeledit.cpp, Lines: 19, Types: ['pointer_cast']
-  engine_2d.c_plotPixelWithDepth_FUN_00401290
-    File: engine/2d.c, Lines: 21, Types: ['pointer_cast']
   core_course.cpp_CCourse_evaluate_FUN_00442710
     File: core/course.cpp, Lines: 24, Types: ['missing_cave_copy', 'unrolled_memcpy']
   core_path.cpp_CPathMap_dtor_FUN_005464d0
@@ -547,10 +527,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 53, Types: ['pointer_cast']
   core_script.cpp_CScript_checkSyntax_FUN_00566080
     File: core/script.cpp, Lines: 54, Types: ['pointer_cast', 'unrolled_strcpy']
-  engine_2d.c_drawVLine_FUN_00402ff0
-    File: engine/2d.c, Lines: 56, Types: ['pointer_cast']
-  engine_2d.c_drawHLine_FUN_00402ee0
-    File: engine/2d.c, Lines: 56, Types: ['pointer_cast']
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
     File: core/manpuz.cpp, Lines: 56, Types: ['pointer_cast', 'unrolled_memcpy']
   shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350
@@ -573,8 +549,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/hero.cpp, Lines: 70, Types: ['pointer_cast', 'unrolled_memcpy']
   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920
     File: shape/meshlod.cpp, Lines: 71, Types: ['pointer_cast']
-  engine_2d.c_drawCharacterMaskedColor_FUN_00401a10
-    File: engine/2d.c, Lines: 76, Types: ['pointer_cast']
   core_vehicle.cpp_CVehicle_ctor_FUN_005e7940
     File: core/vehicle.cpp, Lines: 76, Types: ['unrolled_memset']
   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_
@@ -589,8 +563,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/superopt.cpp, Lines: 85, Types: ['pointer_cast']
   engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0
     File: engine/3d.c, Lines: 88, Types: ['pointer_cast']
-  engine_2d.c_drawCharacter_FUN_00401610
-    File: engine/2d.c, Lines: 89, Types: ['pointer_cast']
   shape_design.c_generateShell_FUN_00468f20
     File: shape/design.c, Lines: 90, Types: ['unrolled_strlen']
   engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840
