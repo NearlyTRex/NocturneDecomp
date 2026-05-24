@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 54,
+    "complexity_score": 29,
     "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 29,
-    "suspect_count": 2,
-    "suspect_types": [
-      "sign_compare_idiom"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 99
   },
   "cross_references": [
@@ -270,6 +268,26 @@
     },
     "pcode_op_count": 270
   },
+  "resolved_suspects": [
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 31,
+      "match": "SBORROW4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 31,
+      "match": "SBORROW4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);",
+      "type": "sign_compare_idiom"
+    }
+  ],
   "stack_frame": {
     "frame_size": 52,
     "local_size": 40,
@@ -328,22 +346,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 31,
-      "match": "SBORROW4",
-      "severity": "moderate",
-      "text": "return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);",
-      "type": "sign_compare_idiom"
-    },
-    {
-      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 31,
-      "match": "SBORROW4",
-      "severity": "moderate",
-      "text": "return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);",
-      "type": "sign_compare_idiom"
-    }
-  ]
+  "suspects": []
 }

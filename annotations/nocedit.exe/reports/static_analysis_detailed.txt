@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (371 diagnostics)
+Cppcheck (quick) (369 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -661,7 +661,7 @@ invalidscanf (59)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (57)
+selfAssignment (56)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -759,10 +759,6 @@ selfAssignment (57)
   core_skeledit.cpp_CDeformableModel_determinePartsF line 1141
     File: core/skeledit.cpp
     Redundant assignment of 'piVar35' to itself.
-
-  engine_3d.c_renderPolygonEngineAPIPremiumMultiStat line 104
-    File: engine/3d.c
-    Redundant assignment of 'ppSVar12' to itself.
 
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 94
     File: engine/fileio.cpp
@@ -1381,7 +1377,7 @@ invalidPointerCast (18)
     Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
-nullPointerRedundantCheck (13)
+nullPointerRedundantCheck (12)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 64
@@ -1399,10 +1395,6 @@ nullPointerRedundantCheck (13)
   core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPos line 44
     File: core/dtrace.cpp
     Either the condition 'pCVar3!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar3.
-
-  engine_prim.c_renderScanlinePolygon_FUN_00553470   line 259
-    File: engine/prim.c
-    Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
   shape_design.c_findVertexListInModel_FUN_00468000  line 15
     File: shape/design.c

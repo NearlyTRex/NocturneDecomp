@@ -10,9 +10,8 @@
 void * __cdecl engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive *prim)
 
 {
-  uint uVar1;
-  SMRGLHeaderPrimitive *pSVar2;
-  int *piVar3;
+  int iVar1;
+  SMRGLVertex *pSVar2;
   int iVar4;
   
   if (g_MMXSupported == 0) {
@@ -32,16 +31,13 @@ void * __cdecl engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPr
   g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
   g_VertexPreprocessMode = PREPROCESS_NONE;
   engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
-  piVar3 = g_ProcessedVertexIndices;
-  pSVar2 = prim + 1;
-  for (iVar4 = 0; uVar1 = g_ProcessedVertexOffset, iVar4 < (prim->base).count * 3; iVar4 = iVar4 + 3
-      ) {
-    *piVar3 = (pSVar2->base).type + g_ProcessedVertexOffset;
-    g_RenderVertexBuffer[(pSVar2->base).type + uVar1].u = (pSVar2->base).count;
-    piVar3 = piVar3 + 1;
-    g_RenderVertexBuffer[(pSVar2->base).type + uVar1].v = (pSVar2->surface_normal).A.i;
-    pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
+  pSVar2 = (SMRGLVertex *)(prim + 1);
+  for (iVar4 = 0; iVar4 < (prim->base).count; iVar4 = iVar4 + 1) {
+    iVar1 = pSVar2[iVar4].vertex_index + g_ProcessedVertexOffset;
+    g_ProcessedVertexIndices[iVar4] = iVar1;
+    g_RenderVertexBuffer[iVar1].u = pSVar2[iVar4].texture_u;
+    g_RenderVertexBuffer[iVar1].v = pSVar2[iVar4].texture_v;
   }
   engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,g_ProcessedVertexIndices);
-  return (void *)((int)&prim[1].base + (prim->base).count * 0xc);
+  return (void *)((SMRGLVertex *)(prim + 1) + (prim->base).count);
 }

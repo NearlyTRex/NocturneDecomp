@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1607,
-    "complexity_score": 779,
+    "complexity_score": 804,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 77,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 674,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
+      "shadow_pointer_walk",
       "unrolled_memcpy",
       "unrolled_strchr"
     ],
@@ -1314,6 +1315,22 @@
       "severity": "moderate",
       "text": "pCVar10->move_filter = local_2478.move_filter;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar8->vertices[0].a`). Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 432,
+      "match": "pCVar8 = (T *)&pCVar8->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar8 = (CDemonSet *)&pCVar8->cameras[0xe].vdir_zone;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar7->vertices[0].a`). Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 662,
+      "match": "pCVar7 = (T *)&pCVar7->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",

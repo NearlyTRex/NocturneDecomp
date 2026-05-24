@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5889 (91.2%)
-With suspects: 565
-Total suspects: 3186
+Clean: 5898 (91.4%)
+With suspects: 556
+Total suspects: 3136
 
 ====================================================================================================
 core_chain.cpp_fastSqrt_FUN_00431350 (2 suspects)
@@ -1604,7 +1604,7 @@ core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370 (2 suspects)
   Line 33 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (22 suspects)
+core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (23 suspects)
   File: core/netgame.cpp
 ====================================================================================================
   Line 27 [stack_alignment_array]: EHeroType aEStackY_208c [1986];
@@ -1613,6 +1613,7 @@ core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (22 suspects)
   Line 112 [unrolled_strcpy]: do {
   Line 147 [pointer_cast]: *(int *)((int)local_44 + local_44[2]) = iVar6;
   Line 165 [unrolled_strcpy]: do {
+  Line 180 [shadow_pointer_walk]: local_28 = (CNetGame *)&local_28->players[0].player_input.action_state.fire;
   Line 194 [pointer_cast]: (this_ptr,(SNetworkAddr *)((int)aEStack_f3 + iVar3 + -8),local_10f + iVar3,
   Line 195 [pointer_cast]: *(int *)((int)aEStack_f3 + iVar3),*(int *)((int)aEStack_f3 + iVar3 + 4));
   Line 195 [pointer_cast]: *(int *)((int)aEStack_f3 + iVar3),*(int *)((int)aEStack_f3 + iVar3 + 4));
@@ -1636,6 +1637,12 @@ core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 (2 suspects)
 ====================================================================================================
   Line 57 [bit_int_float_compare]: if (((float)30 < local_24) || (0x40400000 < (int)local_24)) {
   Line 129 [bit_int_float_compare]: if (((float)30 < local_2c) || (0x40a00000 < (int)local_2c)) {
+
+====================================================================================================
+core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0 (1 suspect)
+  File: core/netgame.cpp
+====================================================================================================
+  Line 37 [shadow_pointer_walk]: pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.fire;
 
 ====================================================================================================
 core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (3 suspects)
@@ -1676,22 +1683,27 @@ core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 (15 suspects)
   Line 409 [shadow_pointer_walk]: local_18 = (UNetPacket *)((local_18->server_accept).mission_name + 0x13);
 
 ====================================================================================================
-core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (6 suspects)
+core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (10 suspects)
   File: core/netgame.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 68 [shadow_pointer_walk]: pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
   Line 76 [pointer_cast]: if (*(int *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc) < iVar1) {
   Line 79 [pointer_cast]: ((void *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc),pSVar4,
   Line 94 [pointer_cast]: if (iVar1 == *(int *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc)) {
   Line 96 [pointer_cast]: pSVar4 = (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc);
+  Line 143 [shadow_pointer_walk]: pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
+  Line 144 [shadow_pointer_walk]: pSVar6 = (SSimFrame *)&pSVar6->player_input[0].strafe_speed;
   Line 169 [pointer_cast]: if (local_20 == *(int *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc))
+  Line 213 [shadow_pointer_walk]: pSVar4 = (SSimFrame *)&pSVar4->player_input[0].strafe_speed;
 
 ====================================================================================================
-core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (2 suspects)
+core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (3 suspects)
   File: core/netgame.cpp
 ====================================================================================================
   Line 81 [unrolled_strcpy]: do {
   Line 96 [pointer_cast]: local_20 = (SChatOutMessage *)((int)&local_20->timestamp + 1);
+  Line 97 [shadow_pointer_walk]: local_24 = (CNetGame *)&local_24->players[0].player_input.action_state.fire;
 
 ====================================================================================================
 core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 (4 suspects)
@@ -1703,22 +1715,25 @@ core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 (4 suspects)
   Line 44 [pointer_cast]: dest_00 = (void *)((int)dest_00 + 0x114);
 
 ====================================================================================================
-core_netgame.cpp_CNetGame_runLobby_FUN_00541390 (4 suspects)
+core_netgame.cpp_CNetGame_runLobby_FUN_00541390 (6 suspects)
   File: core/netgame.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 72 [unrolled_strcpy]: do {
   Line 91 [unrolled_strcpy]: do {
   Line 117 [unrolled_strcpy]: do {
+  Line 158 [shadow_pointer_walk]: pCVar8 = (CNetGame *)&pCVar8->players[0].player_input.action_state.fire;
+  Line 187 [shadow_pointer_walk]: pCVar5 = (CNetGame *)&pCVar5->players[0].player_input.action_state.fire;
 
 ====================================================================================================
-core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (4 suspects)
+core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (5 suspects)
   File: core/netgame.cpp
 ====================================================================================================
   Line 38 [unrolled_strcpy]: do {
   Line 68 [pointer_cast]: *(int *)((int)local_53 + EVar2 + 0x10) = pCVar3->players[0].ready_flag;
   Line 69 [pointer_cast]: *(EHeroType *)((int)local_53 + EVar2 + HERO_TYPE_MOLOCH) = pCVar3->players[0].hero_number;
   Line 71 [pointer_cast]: *(int *)((int)local_53 + EVar2 + (HERO_TYPE_MOLOCH|HERO_TYPE_BARON)) =
+  Line 77 [shadow_pointer_walk]: pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
 
 ====================================================================================================
 core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0 (7 suspects)
@@ -1731,6 +1746,13 @@ core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0 (7 suspects)
   Line 77 [unrolled_memcpy]: // 00543c9f: MOVSD.REP ES:EDI,ESI
   Line 79 [unrolled_memcpy]: for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 82 [pointer_cast]: other = (SNetPlayer *)((int)other + (uint)bVar4 * -8 + 4);
+
+====================================================================================================
+core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 (2 suspects)
+  File: core/netgame.cpp
+====================================================================================================
+  Line 60 [shadow_pointer_walk]: pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
+  Line 89 [shadow_pointer_walk]: pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
 
 ====================================================================================================
 core_netgame.cpp_allocSimFrame_FUN_0053f5a0 (2 suspects)
@@ -2209,10 +2231,41 @@ core_script.cpp_trimLine_FUN_005592c0 (1 suspect)
   Line 38 [static_null_pointer]: ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
 
 ====================================================================================================
-core_set.cpp_CDemonSet_load_FUN_00569410 (1 suspect)
+core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230 (1 suspect)
+  File: core/set.cpp
+====================================================================================================
+  Line 33 [shadow_pointer_walk]: pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
+
+====================================================================================================
+core_set.cpp_CDemonSet_load_FUN_00569410 (2 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 61 [static_invalid_pointer_cast]: &(this_ptr->scene_fog).density_multiplier,(float *)&local_48,(float *)&local_48);
+  Line 423 [shadow_pointer_walk]: pCVar5 = (CDemonSet *)&pCVar5->cameras[0].enabled;
+
+====================================================================================================
+core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 (1 suspect)
+  File: core/set.cpp
+====================================================================================================
+  Line 154 [shadow_pointer_walk]: local_3c = (CDemonSet *)&local_3c->cameras[0].enabled;
+
+====================================================================================================
+core_set.cpp_CDemonSet_saveStateInfo_FUN_005711b0 (1 suspect)
+  File: core/set.cpp
+====================================================================================================
+  Line 18 [shadow_pointer_walk]: pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
+
+====================================================================================================
+core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60 (1 suspect)
+  File: core/set.cpp
+====================================================================================================
+  Line 16 [shadow_pointer_walk]: pCVar1 = (CDemonSet *)&pCVar1->cameras[0].enabled;
+
+====================================================================================================
+core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0 (1 suspect)
+  File: core/set.cpp
+====================================================================================================
+  Line 16 [shadow_pointer_walk]: pCVar1 = (CDemonSet *)&pCVar1->cameras[0].enabled;
 
 ====================================================================================================
 core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440 (2 suspects)
@@ -2349,6 +2402,12 @@ core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70 (8 suspects)
   Line 66 [pointer_cast]: iVar1 = *(int *)((int)g_VDCameraSortIndices + local_1c);
 
 ====================================================================================================
+core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40 (1 suspect)
+  File: core/setdir.cpp
+====================================================================================================
+  Line 38 [shadow_pointer_walk]: local_18 = (CDemonSet *)&local_18->cameras[0].enabled;
+
+====================================================================================================
 core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0 (2 suspects)
   File: core/setdir.cpp
 ====================================================================================================
@@ -2480,15 +2539,17 @@ core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70 (1 suspect)
   Line 27 [pointer_cast]: puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + local_18);
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (6 suspects)
+core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (8 suspects)
   File: core/setedit.cpp
 ====================================================================================================
+  Line 57 [shadow_pointer_walk]: pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
   Line 117 [pointer_cast]: puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar3);
   Line 121 [pointer_cast]: uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);
   Line 138 [pointer_cast]: (*(int *)((int)g_ScreenBufferArray + local_2c) + iVar3 * 2);
   Line 142 [pointer_cast]: uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar8);
   Line 157 [pointer_cast]: puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar3 * 4)
   Line 162 [pointer_cast]: uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar8);
+  Line 194 [shadow_pointer_walk]: local_88 = (CDemonSet *)&local_88->cameras[0].enabled;
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (8 suspects)
@@ -2510,7 +2571,7 @@ core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 (1 suspect)
   Line 31 [static_null_pointer]: master->light_enabled_flag = 1;
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (11 suspects)
+core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (13 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 202 [unrolled_strchr]: do {
@@ -2519,11 +2580,19 @@ core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (11 suspects)
   Line 246 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;
   Line 265 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;
   Line 377 [static_invalid_pointer_cast]: iVar6 = _fscanf(file_handle,"%f,%f,%f\n",(float *)(local_38 + iVar5 * 3),(float *)piVar16,(float *)piVar15);
+  Line 432 [shadow_pointer_walk]: pCVar8 = (CDemonSet *)&pCVar8->cameras[0xe].vdir_zone;
   Line 479 [unrolled_memcpy]: (pCVar10->pos).x = local_2478.pos.x;
   Line 484 [unrolled_memcpy]: (pCVar10->orient).x = local_2478.orient.x;
   Line 488 [unrolled_memcpy]: pCVar10->fov = local_2478.fov;
   Line 499 [unrolled_memcpy]: pCVar10->camera_light_bounds[0].x_min = local_2478.camera_light_bounds[0].x_min;
   Line 540 [unrolled_memcpy]: pCVar10->move_filter = local_2478.move_filter;
+  Line 662 [shadow_pointer_walk]: pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;
+
+====================================================================================================
+core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0 (1 suspect)
+  File: core/setedit.cpp
+====================================================================================================
+  Line 109 [shadow_pointer_walk]: local_18 = (CDemonSet *)&local_18->cameras[0].enabled;
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 (4 suspects)
@@ -2535,13 +2604,19 @@ core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 (4 suspects)
   Line 153 [unrolled_strcpy]: do {
 
 ====================================================================================================
+core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0 (1 suspect)
+  File: core/setedit.cpp
+====================================================================================================
+  Line 31 [shadow_pointer_walk]: pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
+
+====================================================================================================
 core_setedit.cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340 (1 suspect)
   File: core/setedit.cpp
 ====================================================================================================
   Line 85 [unrolled_memcpy]: local_bc.x = (camera->orientation).x;
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (14 suspects)
+core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (15 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 272 [unrolled_strlen]: do {
@@ -2556,6 +2631,7 @@ core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (14 suspects)
   Line 415 [unrolled_memcpy]: (pCVar11->box).min.x = (pCVar7->box).min.x;
   Line 422 [unrolled_memcpy]: pCVar3->x = pCVar2->x;
   Line 426 [unrolled_memcpy]: pCVar11->pvs_count = pCVar7->pvs_count;
+  Line 532 [shadow_pointer_walk]: pCVar12 = (CDemonSet *)&pCVar12->cameras[0].enabled;
   Line 639 [unrolled_strlen]: do {
   Line 757 [unrolled_memcpy]: // 0057efb0: MOVSD.REP ES:EDI,ESI
 
@@ -2566,10 +2642,11 @@ core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 (1 suspect)
   Line 82 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 (10 suspects)
+core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 (12 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 97 [pointer_cast]: *(int *)((int)g_CameraFogEnabledFlags + iVar6) = pCVar3->cameras[0].fog_enabled;
+  Line 100 [shadow_pointer_walk]: pCVar3 = (CDemonSet *)&pCVar3->cameras[0].enabled;
   Line 116 [unrolled_memcpy]: pCVar6->x = pCVar4->x;
   Line 146 [unrolled_memcpy]: pCVar6->x = pCVar4->x;
   Line 161 [unrolled_strlen]: do {
@@ -2577,11 +2654,12 @@ core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 (10 suspects)
   Line 195 [unrolled_strlen]: do {
   Line 212 [unrolled_strlen]: do {
   Line 236 [unrolled_memcpy]: pCVar5->x = pCVar4->x;
+  Line 241 [shadow_pointer_walk]: pCVar11 = (CDemonSet *)&pCVar11->cameras[0].enabled;
   Line 242 [unrolled_memcpy]: pSVar7->height_threshold = (this_ptr->scene_fog).height_threshold;
   Line 284 [unrolled_strlen]: do {
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (6 suspects)
+core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (7 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 57 [pointer_cast]: (*(CDemonLight **)((int)g_MasterLightList + local_18),iVar6,iVar5,iVar7);
@@ -2589,6 +2667,7 @@ core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (6 suspects)
   Line 90 [pointer_cast]: *(int *)((int)g_MasterLightList + local_20) + 0x40);
   Line 147 [pointer_cast]: piVar2 = (int *)((int)g_MasterLightList + iVar4);
   Line 168 [pointer_cast]: piVar2 = (int *)((int)g_MasterLightList + iVar4);
+  Line 211 [shadow_pointer_walk]: pCVar4 = (CDemonSet *)&pCVar4->cameras[0].enabled;
   Line 222 [pointer_cast]: piVar1 = (int *)((int)g_MasterLightList + iVar4);
 
 ====================================================================================================
@@ -2633,13 +2712,14 @@ core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (10 suspects)
   Line 1471 [shadow_pointer_walk]: local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 (4 suspects)
+core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 (5 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 25 [unrolled_strcpy]: do {
   Line 35 [unrolled_strchr]: do {
   Line 66 [unrolled_strcpy]: do {
   Line 79 [unrolled_strcpy]: do {
+  Line 110 [shadow_pointer_walk]: local_18 = (CDemonSet *)&local_18->cameras[0].enabled;
 
 ====================================================================================================
 core_setedit.cpp_blitThumbnailStripAndHitTest_FUN_00577730 (6 suspects)
@@ -2825,6 +2905,13 @@ core_skeledit.cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30 (4 suspects)
   Line 35 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar1 * -8 + 4);
 
 ====================================================================================================
+core_skeledit.cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200 (2 suspects)
+  File: core/skeledit.cpp
+====================================================================================================
+  Line 18 [shadow_pointer_walk]: other = (CBoneStructure *)&other->bones[0].world_matrix.m[2].z;
+  Line 20 [shadow_pointer_walk]: pCVar2 = (CBoneStructure *)&pCVar2->bones[0].world_matrix.m[2].z;
+
+====================================================================================================
 core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 (22 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
@@ -2852,7 +2939,7 @@ core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 (22 suspects)
   Line 62 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3) = bVar2 ^ 0x80;
 
 ====================================================================================================
-core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (13 suspects)
+core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (14 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 91 [unrolled_strcpy]: do {
@@ -2866,8 +2953,15 @@ core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (13 suspects)
   Line 184 [pointer_cast]: pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar8 * -8 + 4);
   Line 191 [unrolled_memcpy]: for (uVar3 = 0x21; uVar3 != 0; uVar3 = uVar3 + -1) {
   Line 195 [pointer_cast]: pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
+  Line 242 [shadow_pointer_walk]: pCVar9 = (CBoneStructure *)&pCVar9->bones[0].world_matrix.m[2].z;
   Line 293 [unrolled_memcpy]: // 0058a84a: MOVSD.REP ES:EDI,ESI
   Line 298 [unrolled_memcpy]: // 0058a866: MOVSD.REP ES:EDI,ESI
+
+====================================================================================================
+core_skeledit.cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0 (1 suspect)
+  File: core/skeledit.cpp
+====================================================================================================
+  Line 29 [shadow_pointer_walk]: pCVar6 = (CBoneStructure *)&pCVar6->bones[0].world_matrix.m[2].z;
 
 ====================================================================================================
 core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (32 suspects)
@@ -3202,6 +3296,12 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005
 ====================================================================================================
   Line 29 [static_invalid_pointer_cast]: (&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,
   Line 30 [static_invalid_pointer_cast]: (int *)local_24,&local_60);
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 43 [shadow_pointer_walk]: pCVar1 = (CDeformableModel *)&pCVar1->lod_info[0].shadow_only_flag;
 
 ====================================================================================================
 core_sound.cpp_updateListeners_FUN_005b1870 (5 suspects)
@@ -3582,107 +3682,9 @@ core_weather.cpp_CWeather_update_FUN_005eeaf0 (8 suspects)
   Line 70 [pointer_cast]: local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);
 
 ====================================================================================================
-engine_3d.c_clipAndDrawLine2D_FUN_00407d70 (10 suspects)
+engine_3d.c_renderPolygonLitDetailedClamped_FUN_00404220 (8 suspects)
   File: engine/3d.c
 ====================================================================================================
-  Line 18 [unrolled_memcpy]: vertex2.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 34 [unrolled_memcpy]: vertex2.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 49 [unrolled_memcpy]: vertex2.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 65 [unrolled_memcpy]: vertex2.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 80 [unrolled_memcpy]: vertex1.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 96 [unrolled_memcpy]: vertex1.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 111 [unrolled_memcpy]: vertex1.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 127 [unrolled_memcpy]: vertex1.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 162 [unrolled_memcpy]: g_RenderVertexBuffer[0x4e1e].projected_vertex.inv_z = vertex1.projected_vertex.inv_z;
-  Line 177 [unrolled_memcpy]: g_RenderVertexBuffer[19999].projected_vertex.inv_z = vertex2.projected_vertex.inv_z;
-
-====================================================================================================
-engine_3d.c_clipAndDrawLine3D_FUN_00408070 (10 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 18 [unrolled_memcpy]: vertex2.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 34 [unrolled_memcpy]: vertex2.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 49 [unrolled_memcpy]: vertex2.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 65 [unrolled_memcpy]: vertex2.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 80 [unrolled_memcpy]: vertex1.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 96 [unrolled_memcpy]: vertex1.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 111 [unrolled_memcpy]: vertex1.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 127 [unrolled_memcpy]: vertex1.projected_vertex.transformed_x = local_40.projected_vertex.transformed_x;
-  Line 162 [unrolled_memcpy]: g_RenderVertexBuffer[0x4e1e].projected_vertex.inv_z = vertex1.projected_vertex.inv_z;
-  Line 177 [unrolled_memcpy]: g_RenderVertexBuffer[19999].projected_vertex.inv_z = vertex2.projected_vertex.inv_z;
-
-====================================================================================================
-engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 (2 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 25 [pointer_cast]: puVar1 = (uint *)((int)g_RenderFaceArray + iVar3);
-  Line 73 [pointer_cast]: puVar2 = (uint *)((int)g_RenderFaceArray + iVar6);
-
-====================================================================================================
-engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0 (3 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 24 [pointer_cast]: *(SRenderBufferEntry **)((int)g_RenderBufferSortArray + iVar2) = pSVar5;
-  Line 52 [pointer_cast]: piVar1 = *(int **)((int)g_RenderBufferSortArray + local_10);
-  Line 72 [pointer_cast]: *(int *)((int)g_ProcessedVertexIndices + iVar1) = iVar3;
-
-====================================================================================================
-engine_3d.c_isVisiblePlane_FUN_00403950 (2 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 21 [sign_compare_idiom]: (SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) == (int)(iVar2 - uVar1) < 0)) {
-  Line 21 [sign_compare_idiom]: (SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) == (int)(iVar2 - uVar1) < 0)) {
-
-====================================================================================================
-engine_3d.c_renderOverlayTextureEnable_FUN_00404020 (2 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 35 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-  Line 38 [pointer_cast]: return (void *)((int)&prim[1].base + (prim->base).count * 0xc);
-
-====================================================================================================
-engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720 (2 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 48 [pointer_cast]: *(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;
-  Line 53 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
-
-====================================================================================================
-engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470 (6 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 66 [unrolled_memcpy]: pSVar3->vertices[0].u = g_RenderVertexBuffer[iVar3].u;
-  Line 78 [shadow_pointer_walk]: vertex_indices = (SMRGLHeaderPrimitive *)&(vertex_indices->base).count;
-  Line 84 [unrolled_memcpy]: for (iVar4 = 0x12; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 87 [pointer_cast]: pSVar4 = (SMRGLTextureBasic *)((int)pSVar4 + (uint)bVar10 * -8 + 4);
-  Line 92 [unrolled_memcpy]: // 0040758f: MOVSD.REP ES:EDI,ESI  ; g_RenderBufferPool[0].texture_data[0] | g_RenderBufferPool[0].texture_data[1]
-  Line 95 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);
-
-====================================================================================================
-engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290 (7 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 49 [shadow_pointer_walk]: pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
-  Line 64 [pointer_cast]: iVar1 = *(int *)((int)g_ProcessedVertexIndices + iVar4);
-  Line 77 [unrolled_memcpy]: pSVar5->vertices[0].u = g_RenderVertexBuffer[iVar1].u;
-  Line 95 [unrolled_memcpy]: for (iVar1 = 0x12; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 98 [pointer_cast]: pSVar6 = (SMRGLTextureBasic *)((int)pSVar6 + (uint)bVar13 * -8 + 4);
-  Line 106 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
-  Line 135 [unrolled_memcpy]: // 00407422: MOVSD.REP ES:EDI,ESI  ; g_RenderBufferPool[0].texture_data[0] | g_RenderBufferPool[0].texture_data[1]
-
-====================================================================================================
-engine_3d.c_renderPolygonLitDetailedAmbient_FUN_00406a20 (3 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 38 [pointer_cast]: *(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;
-  Line 43 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
-  Line 47 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
-
-====================================================================================================
-engine_3d.c_renderPolygonLitDetailedClamped_FUN_00404220 (11 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 51 [pointer_cast]: *(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;
   Line 61 [raw_address_constant]: if (0xfeffff < iVar3) {
   Line 62 [raw_address_constant]: iVar3 = 0xfeffff;
   Line 64 [raw_address_constant]: if (0xfeffff < iVar5) {
@@ -3691,14 +3693,11 @@ engine_3d.c_renderPolygonLitDetailedClamped_FUN_00404220 (11 suspects)
   Line 76 [raw_address_constant]: iVar3 = 0xfdffff;
   Line 78 [raw_address_constant]: if (0xfdffff < iVar5) {
   Line 79 [raw_address_constant]: iVar5 = 0xfdffff;
-  Line 86 [shadow_pointer_walk]: pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
-  Line 91 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 
 ====================================================================================================
-engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860 (11 suspects)
+engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860 (8 suspects)
   File: engine/3d.c
 ====================================================================================================
-  Line 39 [pointer_cast]: *(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;
   Line 49 [raw_address_constant]: if (0xfbffff < iVar3) {
   Line 50 [raw_address_constant]: iVar3 = 0xfbffff;
   Line 52 [raw_address_constant]: if (0xfbffff < iVar5) {
@@ -3707,29 +3706,11 @@ engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860 (11 suspects)
   Line 64 [raw_address_constant]: iVar3 = 0xfeffff;
   Line 66 [raw_address_constant]: if (0xfeffff < iVar5) {
   Line 67 [raw_address_constant]: iVar5 = 0xfeffff;
-  Line 74 [shadow_pointer_walk]: pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
-  Line 79 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 
 ====================================================================================================
-engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430 (2 suspects)
+engine_3d.c_renderPolygonTexturePerspectiveCorrectClamped_FUN_00406290 (8 suspects)
   File: engine/3d.c
 ====================================================================================================
-  Line 107 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-  Line 111 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
-
-====================================================================================================
-engine_3d.c_renderPolygonTextureNormalizedLit_FUN_00403f20 (3 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 35 [pointer_cast]: *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;
-  Line 40 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
-  Line 44 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
-
-====================================================================================================
-engine_3d.c_renderPolygonTexturePerspectiveCorrectClamped_FUN_00406290 (11 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 36 [pointer_cast]: *(int *)((int)g_ProcessedVertexIndices + iVar2) = (pSVar4->base).type;
   Line 46 [raw_address_constant]: if (0xfbffff < iVar3) {
   Line 47 [raw_address_constant]: iVar3 = 0xfbffff;
   Line 49 [raw_address_constant]: if (0xfbffff < iVar5) {
@@ -3738,47 +3719,6 @@ engine_3d.c_renderPolygonTexturePerspectiveCorrectClamped_FUN_00406290 (11 suspe
   Line 61 [raw_address_constant]: iVar3 = 0xfeffff;
   Line 63 [raw_address_constant]: if (0xfeffff < iVar5) {
   Line 64 [raw_address_constant]: iVar5 = 0xfeffff;
-  Line 71 [shadow_pointer_walk]: pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
-  Line 76 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
-
-====================================================================================================
-engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50 (2 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 54 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-  Line 58 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
-
-====================================================================================================
-engine_3d.c_renderPolygonUVTextureEnableVertexLit_FUN_00405170 (3 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 35 [pointer_cast]: *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;
-  Line 40 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
-  Line 44 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
-
-====================================================================================================
-engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840 (3 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 85 [pointer_cast]: *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;
-  Line 90 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
-  Line 94 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);
-
-====================================================================================================
-engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0 (2 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 48 [shadow_pointer_walk]: pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-  Line 52 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);
-
-====================================================================================================
-engine_3d.c_updateAnimatedTexture_FUN_004050c0 (4 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 22 [pointer_cast]: pcVar3 = (char *)((int)texture + texture->current_frame * 0x20 + 0x1c);
-  Line 23 [unrolled_strcpy]: do {
-  Line 34 [pointer_cast]: return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);
-  Line 37 [pointer_cast]: return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);
 
 ====================================================================================================
 engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 (4 suspects)
@@ -4275,41 +4215,6 @@ engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (3 suspects)
   Line 63 [pointer_cast]: for (local_18 = 0; iVar7 = *(int *)((int)pod_array + local_34 + 4),
   Line 68 [unrolled_strlen]: do {
   Line 76 [unrolled_strcpy]: do {
-
-====================================================================================================
-engine_prim.c_calculateTriangleWindingOrder_FUN_00552150 (2 suspects)
-  File: engine/prim.c
-====================================================================================================
-  Line 31 [sign_compare_idiom]: return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);
-  Line 31 [sign_compare_idiom]: return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);
-
-====================================================================================================
-engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210 (2 suspects)
-  File: engine/prim.c
-====================================================================================================
-  Line 43 [sign_compare_idiom]: return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar4 - iVar3,uVar2)) !=
-  Line 43 [sign_compare_idiom]: return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar4 - iVar3,uVar2)) !=
-
-====================================================================================================
-engine_prim.c_getTriangleWindingFromIndices2_FUN_00552300 (2 suspects)
-  File: engine/prim.c
-====================================================================================================
-  Line 43 [sign_compare_idiom]: return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar4 - iVar3,uVar2)) !=
-  Line 43 [sign_compare_idiom]: return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar4 - iVar3,uVar2)) !=
-
-====================================================================================================
-engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0 (2 suspects)
-  File: engine/prim.c
-====================================================================================================
-  Line 45 [sign_compare_idiom]: return (uint)((SBORROW4(iVar7,iVar6) != SBORROW4(iVar5,uVar4)) != (int)(iVar5 - uVar4) < 0);
-  Line 45 [sign_compare_idiom]: return (uint)((SBORROW4(iVar7,iVar6) != SBORROW4(iVar5,uVar4)) != (int)(iVar5 - uVar4) < 0);
-
-====================================================================================================
-engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40 (2 suspects)
-  File: engine/prim.c
-====================================================================================================
-  Line 187 [sign_compare_idiom]: bVar13 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);
-  Line 222 [sign_compare_idiom]: bVar13 = SBORROW4(local_1c,g_MaxViewportScanline);
 
 ====================================================================================================
 shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (16 suspects)

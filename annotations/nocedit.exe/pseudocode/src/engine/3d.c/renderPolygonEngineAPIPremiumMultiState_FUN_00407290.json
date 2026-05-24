@@ -7,18 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 189,
+    "complexity_score": 104,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 104,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 298
   },
   "cross_references": [
@@ -252,6 +248,80 @@
     },
     "pcode_op_count": 756
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)g_ProcessedVertexIndices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_ProcessedVertexIndices + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(SMRGLTextureBasic *)((int)pSVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar6 = (SMRGLTextureBasic *)((int)pSVar6 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 95,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x12; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 77,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5->vertices[0].u = g_RenderVertexBuffer[iVar1].u;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 49,
+      "match": "pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pSVar5->vertices[0].a`). Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 87,
+      "match": "pSVar5 = (T *)&pSVar5->FIELD[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SRenderBufferEntry *)&pSVar5->vertices[0].a;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 135,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 00407422: MOVSD.REP ES:EDI,ESI  ; g_RenderBufferPool[0].texture_data[0] | g_RenderBufferPool[0].texture_data[1]",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 28,
     "local_size": 24,
@@ -275,81 +345,7 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "renderPolygonEngineAPIPremiumMultiState_FUN_00407290.keep.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 18,
-          "line": 104,
-          "message": "Redundant assignment of 'ppSVar12' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)g_ProcessedVertexIndices",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)g_ProcessedVertexIndices + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 98,
-      "match": "(SMRGLTextureBasic *)((int)pSVar6",
-      "severity": "moderate",
-      "text": "pSVar6 = (SMRGLTextureBasic *)((int)pSVar6 + (uint)bVar13 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 95,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 0x12; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 77,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pSVar5->vertices[0].u = g_RenderVertexBuffer[iVar1].u;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 106,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 49,
-      "match": "pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 135,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 00407422: MOVSD.REP ES:EDI,ESI  ; g_RenderBufferPool[0].texture_data[0] | g_RenderBufferPool[0].texture_data[1]",
-      "type": "unrolled_memcpy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 85,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 35,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 114
   },
   "cross_references": [],
@@ -91,6 +88,44 @@
     },
     "pcode_op_count": 479
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(char *)((int)texture",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar3 = (char *)((int)texture + texture->current_frame * 0x20 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(SMRGLHeaderExtended *)((int)texture",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(SMRGLHeaderExtended *)((int)texture",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 23,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 44,
@@ -114,40 +149,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(char *)((int)texture",
-      "severity": "moderate",
-      "text": "pcVar3 = (char *)((int)texture + texture->current_frame * 0x20 + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(SMRGLHeaderExtended *)((int)texture",
-      "severity": "moderate",
-      "text": "return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(SMRGLHeaderExtended *)((int)texture",
-      "severity": "moderate",
-      "text": "return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 23,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -12,8 +12,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN
 {
   int iVar1;
   int iVar2;
-  SMRGLHeaderPrimitive *pSVar3;
-  int iVar4;
+  SMRGLVertex *pSVar3;
   int vertex_count;
   
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&primitive->surface_normal);
@@ -85,19 +84,14 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN
       g_VertexPreprocessMode = 0;
       g_RenderStateFlags.dword = 0;
     }
-    iVar2 = 0;
-    vertex_count = 0;
-    pSVar3 = primitive + 1;
-    for (iVar4 = 0; iVar4 < (primitive->base).count * 3; iVar4 = iVar4 + 3) {
-      iVar1 = (pSVar3->base).type;
-      *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;
-      g_RenderVertexBuffer[iVar1].u = (pSVar3->base).count;
-      iVar2 = iVar2 + 4;
-      vertex_count = vertex_count + 1;
-      g_RenderVertexBuffer[(pSVar3->base).type].v = (pSVar3->surface_normal).A.i;
-      pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
+    pSVar3 = (SMRGLVertex *)(primitive + 1);
+    for (vertex_count = 0; vertex_count < (primitive->base).count; vertex_count = vertex_count + 1) {
+      iVar1 = pSVar3[vertex_count].vertex_index;
+      g_ProcessedVertexIndices[vertex_count] = iVar1;
+      g_RenderVertexBuffer[iVar1].u = pSVar3[vertex_count].texture_u;
+      g_RenderVertexBuffer[iVar1].v = pSVar3[vertex_count].texture_v;
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);
   }
-  return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);
+  return (SMRGLHeaderExtended *)((SMRGLVertex *)(primitive + 1) + (primitive->base).count);
 }

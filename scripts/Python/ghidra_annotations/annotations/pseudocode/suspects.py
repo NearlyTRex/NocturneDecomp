@@ -2777,6 +2777,21 @@ _SHADOW_PTR_WALK_ADDR_RE = re.compile(
     r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'  # .SUBFIELD[N]?(.SUBFIELD[N]?)*
     r'\s*;\s*$'                                      # ;
 )
+# Unparenthesized arrow variant: `IDENT = (T *)&IDENT->FIELD[N].SUBFIELD(.SUBFIELD)*;`
+# Same antipattern as `_SHADOW_PTR_WALK_ADDR_RE` but the arrow-deref is NOT
+# wrapped in parens and the leading field may itself be array-indexed. Ghidra
+# emits this when the advanced pointer's element is reached via `&p->arr[0].sub`
+# — e.g. `pSVar5 = (SRenderBufferEntry *)&pSVar5->vertices[0].a;` where
+# `offsetof(vertices) + offsetof(a)` == `sizeof(SRenderVertex)` (the per-iteration
+# stride). At least one trailing `.SUBFIELD` is required so this stays distinct
+# from a plain element-address `&IDENT->field`. Self-update (`\1`) required.
+_SHADOW_PTR_WALK_ARROW_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'&\s*\1\s*->\s*\w+\s*(?:\[\s*' + _SPW_INT + r'\s*\])?'  # &IDENT->FIELD[N]?
+    r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'   # (.SUBFIELD[N]?)+
+    r'\s*;\s*$'                                      # ;
+)
 # Self-index address variant: `IDENT = (T *)&IDENT[N].SUBFIELD(.SUBFIELD)*;`
 # Watcom advances the shadow pointer by taking the address of a constant
 # index into the pointer itself plus a subfield path, where
@@ -2995,6 +3010,25 @@ def identify_shadow_pointer_walk(decompiled_code):
                     'with direct indexing on the original pointer; drop '
                     'the shadow init and self-update.' % (
                         m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
+            continue
+        m = _SHADOW_PTR_WALK_ARROW_RE.match(line)
+        if m:
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)&%s->FIELD[N].SUBFIELD' % (
+                    m.group(1), m.group(1)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates via the '
+                    'address of an array-indexed sibling field whose byte '
+                    'offset equals the per-iteration stride (e.g. '
+                    '`&%s->vertices[0].a`). Replace `%s->some_field[0]` reads '
+                    'with direct indexing on the original pointer; drop the '
+                    'shadow init and self-update.' % (
+                        m.group(1), m.group(1), m.group(1))),
                 'severity': 'moderate',
             })
             continue

@@ -12,8 +12,7 @@ void __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_0040772
 {
   int iVar1;
   int iVar2;
-  SMRGLHeaderPrimitive *pSVar3;
-  int iVar4;
+  SMRGLVertex *pSVar3;
   
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar2 != 0) {
@@ -49,16 +48,13 @@ void __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_0040772
     }
     iVar2 = 0;
     if (0 < (prim->base).count) {
-      iVar4 = 0;
-      pSVar3 = prim;
+      pSVar3 = (SMRGLVertex *)(prim + 1);
       do {
-        iVar1 = pSVar3[1].base.type;
-        *(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;
-        g_RenderVertexBuffer[iVar1].u = pSVar3[1].base.count;
-        iVar4 = iVar4 + 4;
-        g_RenderVertexBuffer[iVar1].v = pSVar3[1].surface_normal.A.i;
+        iVar1 = pSVar3[iVar2].vertex_index;
+        g_ProcessedVertexIndices[iVar2] = iVar1;
+        g_RenderVertexBuffer[iVar1].u = pSVar3[iVar2].texture_u;
+        g_RenderVertexBuffer[iVar1].v = pSVar3[iVar2].texture_v;
         iVar2 = iVar2 + 1;
-        pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
       } while (iVar2 < (prim->base).count);
     }
     if (g_AdvancedClippingEnabled == 0) {

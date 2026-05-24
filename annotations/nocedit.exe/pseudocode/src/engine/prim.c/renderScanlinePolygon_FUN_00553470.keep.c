@@ -263,9 +263,6 @@ LAB_005536b2:
               return;
             }
           }
-          if (local_14 == (SSoftwareEdge *)0x0) {
-            return;
-          }
         }
         wincore_windll_cpp_renderScanline_FUN_005b5710(local_14,right,iVar7);
         (right->base).x_current = (int)((longlong)(right->base).x_current + (longlong)(right->base).x_gradient);

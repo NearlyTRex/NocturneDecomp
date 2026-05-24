@@ -37,8 +37,8 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 31 (these need manual review)
-  Raw .cpp files with issues: 39
+  .keep files with issues: 32 (these need manual review)
+  Raw .cpp files with issues: 38
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -322,6 +322,14 @@ engine_3d.c_drawLineStrip3D_FUN_00404600  [.keep]  (1 suspicious globals)
 
   g_RenderVertexBuffer
     Used at lines: 19, 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470  [.keep]  (1 suspicious globals)
+  File: engine/3d.c
+
+  g_RenderVertexBuffer
+    Used at lines: 51
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -630,14 +638,6 @@ crt_watcom.c__mkdir_FUN_00600e10  [.cpp]  (1 suspicious globals)
 
   g_GetLastErrorFunc
     Used at lines: 20
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470  [.cpp]  (1 suspicious globals)
-  File: engine/3d.c
-
-  g_RenderVertexBuffer
-    Used at lines: 62, 64, 66, 68, 70, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

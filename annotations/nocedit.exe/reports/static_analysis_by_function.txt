@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 133
-  Total diagnostics: 371
+  Functions with findings: 131
+  Total diagnostics: 369
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 133, raw .cpp files: 0
+  .keep.cpp files: 131, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -905,12 +905,6 @@ core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270  [.keep] [Cppc
   Line  222: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
-engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290  [.keep] [Cppcheck (quick)]
-  File: engine/3d.c  (1 diagnostics)
-
-  Line  104: [selfAssignment] Redundant assignment of 'ppSVar12' to itself.
-
-----------------------------------------------------------------------------------------------------
 engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0  [.keep] [Cppcheck (quick)]
   File: engine/clipper.c  (1 diagnostics)
 
@@ -945,12 +939,6 @@ engine_model.c_getMRGLBounds_FUN_00528140  [.keep] [Cppcheck (quick)]
   File: engine/model.c  (1 diagnostics)
 
   Line  134: [uninitvar] Uninitialized variable: *puVar11
-
-----------------------------------------------------------------------------------------------------
-engine_prim.c_renderScanlinePolygon_FUN_00553470  [.keep] [Cppcheck (quick)]
-  File: engine/prim.c  (1 diagnostics)
-
-  Line  259: [nullPointerRedundantCheck] Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_findVertexListInModel_FUN_00468000  [.keep] [Cppcheck (quick)]

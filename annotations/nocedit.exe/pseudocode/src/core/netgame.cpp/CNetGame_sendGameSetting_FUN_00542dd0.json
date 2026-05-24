@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 140,
+    "complexity_score": 155,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
+      "shadow_pointer_walk",
       "unrolled_strcpy"
     ],
     "total_lines": 281
@@ -290,6 +291,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 77,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }
