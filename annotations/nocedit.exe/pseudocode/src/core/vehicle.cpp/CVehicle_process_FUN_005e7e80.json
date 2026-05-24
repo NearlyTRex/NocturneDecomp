@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 686,
-    "complexity_score": 361,
+    "complexity_score": 296,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 33,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 296,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 982
   },
   "cross_references": [],
@@ -407,6 +405,60 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 84,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4->x = g_ZeroVector.f.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 115,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->local_velocity).x = pCVar9->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 254,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr_01->base).base.base.location.position.x = (this_ptr->base).location.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 261,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pUVar3->vec).x = (pUVar1->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 265,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(actor->base).base.location.position.x = (this_ptr->base).location.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 272,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pUVar2->vec).x = (pUVar3->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 126,
       "match": "pCVar10 = (T *)((pCVar10->FIELD).SUBFIELD...ARRAY + CONST)",
@@ -631,56 +683,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 84,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar4->x = g_ZeroVector.f.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 115,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->local_velocity).x = pCVar9->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 254,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr_01->base).base.base.location.position.x = (this_ptr->base).location.position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 261,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pUVar3->vec).x = (pUVar1->vec).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 265,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(actor->base).base.location.position.x = (this_ptr->base).location.position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 272,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pUVar2->vec).x = (pUVar3->vec).x;",
-      "type": "unrolled_memcpy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -2791,6 +2791,23 @@ _SHADOW_PTR_WALK_SELF_INDEX_RE = re.compile(
     r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'  # .SUBFIELD[N]?(.SUBFIELD[N]?)*
     r'\s*;\s*$'                                      # ;
 )
+# Self-index array-decay-plus-const variant:
+#   `IDENT = (T *)(IDENT[N].FIELD + CONST);`
+# Watcom advances the shadow pointer by self-indexing a constant element step
+# (`IDENT[N]`), dereferencing a sibling array field (which decays to a pointer),
+# then adding a small constant — the sum `N*sizeof(*IDENT) + offsetof(FIELD) +
+# CONST*sizeof(elem)` equals the larger struct stride being walked. Same
+# antipattern as `_SHADOW_PTR_WALK_SELF_INDEX_RE` but with no `&` (array decay)
+# and a trailing `+ CONST`, e.g. the per-tire model walk
+# `this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);`.
+# Self-update (`\1`) required.
+_SHADOW_PTR_WALK_SELF_INDEX_DECAY_PLUS_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'\(\s*\1\s*\[\s*' + _SPW_INT + r'\s*\]'         # ( IDENT[N]
+    r'(?:\s*\.\s*\w+)+'                              # .FIELD(.SUBFIELD)*
+    r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
+)
 # Array-decay variant: `IDENT = (T *)IDENT->ARRAY_FIELD;` — Watcom advances
 # the pointer by the byte offset of a sibling array field whose offset
 # happens to equal the element stride (e.g. `lod_info` at offset 0x4 ==
@@ -3073,6 +3090,25 @@ def identify_shadow_pointer_walk(decompiled_code):
                     'the zero-index access) reads with direct indexing on the '
                     'original pointer; drop the shadow init and self-update.'
                     % (m.group(1), m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
+            continue
+        m = _SHADOW_PTR_WALK_SELF_INDEX_DECAY_PLUS_RE.match(line)
+        if m:
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)(%s[N].FIELD + CONST)' % (
+                    m.group(1), m.group(1)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates by '
+                    'self-indexing a constant element step, dereferencing a '
+                    'sibling array field (which decays to a pointer), then '
+                    'adding a constant; the sum equals the larger struct '
+                    'stride being walked. Replace `%s->field` reads with '
+                    'direct indexing on the original pointer; drop the shadow '
+                    'init and self-update.' % (m.group(1), m.group(1))),
                 'severity': 'moderate',
             })
             continue

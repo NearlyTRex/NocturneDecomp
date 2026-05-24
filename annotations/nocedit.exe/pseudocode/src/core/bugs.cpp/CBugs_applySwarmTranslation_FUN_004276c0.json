@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 76,
+    "complexity_score": 61,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 61,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 168
   },
   "cross_references": [
@@ -176,6 +174,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via element-arithmetic `(int)(pCVar8 + N) + M`, where `N*sizeof(*pCVar8) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar8->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 38,
+      "match": "pCVar8 = (T *)((int)(pCVar8 + N) + M)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 55,
       "match": "pCVar11 = (T *)&(pCVar11->FIELD).SUBFIELD",
@@ -208,14 +215,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via element-arithmetic `(int)(pCVar8 + N) + M`, where `N*sizeof(*pCVar8) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar8->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 38,
-      "match": "pCVar8 = (T *)((int)(pCVar8 + N) + M)",
-      "severity": "moderate",
-      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

@@ -132,8 +132,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
         dVar2 = SQRT(dVar3 * dVar3 + dVar4 * dVar4 + dVar1 * dVar1);
         if (dVar2 <= 0.0) {
           pCVar3->z = 0;
-          pCVar3->y = pCVar3->z;
-          pCVar3->x = pCVar3->z;
+          pCVar3->y = 0;
+          pCVar3->x = 0;
         }
         else {
           dVar5 = 65535 / dVar2;

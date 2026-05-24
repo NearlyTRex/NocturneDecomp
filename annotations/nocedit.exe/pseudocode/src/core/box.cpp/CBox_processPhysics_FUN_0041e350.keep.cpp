@@ -115,15 +115,10 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
            (local_344.position.y - local_344.scrape_points[7].previous_position.x) * fVar12 +
            local_344.scrape_points[7].previous_position.x;
     }
-    pCVar14 = &this_ptr->scrape_points[0].transformed_position;
-    pCVar16 = &this_ptr->scrape_points[0].previous_position;
-    do {
-      if (pCVar16 != pCVar14) {
-        *pCVar16 = *pCVar14;
-      }
-      pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);
-      pCVar16 = (CVector3f *)((int)(pCVar16 + 4) + 4);
-    } while (pCVar14 != (CVector3f *)&this_ptr[1].position.z);
+    for (iVar11 = 0; iVar11 < 8; iVar11 = iVar11 + 1) {
+      this_ptr->scrape_points[iVar11].previous_position =
+           this_ptr->scrape_points[iVar11].transformed_position;
+    }
     local_344.rotation_matrix.m[1].z = 0.0;
     local_344.rotation_matrix.m[1].x = 0.0;
     local_344.rotation_matrix.m[1].y = -this_ptr->mass * (float)32;

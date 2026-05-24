@@ -77,9 +77,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   pCVar4 = &this_ptr->world_velocity;
   if (delta_time <= 0.0) {
     if ((UVector3 *)pCVar4 != &g_ZeroVector) {
-      pCVar4->x = g_ZeroVector.f.x;
-      (this_ptr->world_velocity).y = g_ZeroVector.f.y;
-      (this_ptr->world_velocity).z = g_ZeroVector.f.z;
+      this_ptr->world_velocity = g_ZeroVector.f;
     }
   }
   else {
@@ -108,9 +106,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   pCVar9 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base,&local_4c,&this_ptr->world_velocity);
   if (&this_ptr->local_velocity != pCVar9) {
-    (this_ptr->local_velocity).x = pCVar9->x;
-    (this_ptr->local_velocity).y = pCVar9->y;
-    (this_ptr->local_velocity).z = pCVar9->z;
+    this_ptr->local_velocity = *pCVar9;
   }
   iVar16 = 0;
   if (0 < this_ptr->tire_count) {
@@ -241,27 +237,17 @@ joined_r0x005e8664:
             (g_CDemonMissionPtr,(CDemonActor *)this_ptr_01);
   core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
             (g_CDemonMissionPtr,(CDemonActor *)actor);
-  (this_ptr_01->base).base.base.location.position.x = (this_ptr->base).location.position.x;
-  (this_ptr_01->base).base.base.location.position.y = (this_ptr->base).location.position.y;
-  (this_ptr_01->base).base.base.location.position.z = (this_ptr->base).location.position.z;
-  (this_ptr_01->base).base.base.location.area_id = (this_ptr->base).location.area_id;
+  (this_ptr_01->base).base.base.location = (this_ptr->base).location;
   pUVar3 = &(this_ptr_01->base).base.base.orient;
   pUVar1 = &(this_ptr->base).orient;
   if (pUVar3 != pUVar1) {
-    (pUVar3->vec).x = (pUVar1->vec).x;
-    (this_ptr_01->base).base.base.orient.vec.y = (this_ptr->base).orient.vec.y;
-    (this_ptr_01->base).base.base.orient.vec.z = (this_ptr->base).orient.vec.z;
+    pUVar3->vec = pUVar1->vec;
   }
-  (actor->base).base.location.position.x = (this_ptr->base).location.position.x;
-  (actor->base).base.location.position.y = (this_ptr->base).location.position.y;
-  (actor->base).base.location.position.z = (this_ptr->base).location.position.z;
-  (actor->base).base.location.area_id = (this_ptr->base).location.area_id;
+  (actor->base).base.location = (this_ptr->base).location;
   pUVar2 = &(actor->base).base.orient;
   pUVar3 = &(this_ptr->base).orient;
   if (pUVar2 != pUVar3) {
-    (pUVar2->vec).x = (pUVar3->vec).x;
-    (actor->base).base.orient.vec.y = (this_ptr->base).orient.vec.y;
-    (actor->base).base.orient.vec.z = (this_ptr->base).orient.vec.z;
+    pUVar2->vec = pUVar3->vec;
   }
   (*((this_ptr_01->base).base.base.vtable._ub)->setup)((CDemonActor *)this_ptr_01);
   (*((actor->base).base.vtable._ub)->setup)((CDemonActor *)actor);

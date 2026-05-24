@@ -17,8 +17,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0(C
   uVar3 = g_BlueBitPosition.bytes[0];
   if ((int)((vertex->projected_vertex).screen_x & -0x80000000) != 0) {
     vertex->b = 0;
-    vertex->g = vertex->b;
-    vertex->r = vertex->b;
+    vertex->g = 0;
+    vertex->r = 0;
     return;
   }
   uVar1 = ((uint *)this_ptr->framebuffer_aligned)

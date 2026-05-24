@@ -10,82 +10,17 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  engine/winfont.cpp (1 remaining of 9)
-    - engine_winfont.cpp_CWinFont_reset_FUN_005f2a30
-      Suspects: unrolled_memset
-
-  core/dcamera.cpp (1 remaining of 86)
-    - core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0
-      Suspects: unrolled_memset
-
-  core/cloth.cpp (1 remaining of 55)
-    - core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0
-      Suspects: pointer_cast, shadow_pointer_walk
-
-  core/bugs.cpp (1 remaining of 44)
-    - core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0
-      Suspects: shadow_pointer_walk
-
-  core/box.cpp (1 remaining of 30)
-    - core_box.cpp_CBox_processPhysics_FUN_0041e350
-      Suspects: shadow_pointer_walk, shadow_pointer_walk
-
-  core/charactr.cpp (1 remaining of 109)
-    - core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
-      Suspects: unrolled_memset, unrolled_memset
-
-  core/bodypart.cpp (1 remaining of 45)
-    - core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
-      Suspects: unrolled_memset
-
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
-
-  [unrolled_memset] - 2 functions
-    engine_winfont.cpp_CWinFont_reset_FUN_005f2a30                         ( 15 lines)
-    core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0      ( 22 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  core/charactr.cpp (99.1% complete)
-    1 functions remaining:
-      core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 (292 lines)
-        Types: ['unrolled_memset']
-
-  core/dcamera.cpp (98.8% complete)
-    1 functions remaining:
-      core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0 (22 lines)
-        Types: ['unrolled_memset']
-
-  core/cloth.cpp (98.2% complete)
-    1 functions remaining:
-      core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0 (52 lines)
-        Types: ['pointer_cast', 'shadow_pointer_walk']
-
-  core/bodypart.cpp (97.8% complete)
-    1 functions remaining:
-      core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 (199 lines)
-        Types: ['unrolled_memset']
-
-  core/bugs.cpp (97.7% complete)
-    1 functions remaining:
-      core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0 (61 lines)
-        Types: ['shadow_pointer_walk']
-
-  core/box.cpp (96.7% complete)
-    1 functions remaining:
-      core_box.cpp_CBox_processPhysics_FUN_0041e350 (779 lines)
-        Types: ['shadow_pointer_walk']
-
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
-  core/pendulum.cpp                                             85.0%  (17/20 clean, 3 remaining)
-  core/vehicle.cpp                                              85.0%  (17/20 clean, 3 remaining)
-  core/curtain.cpp                                              84.6%  (22/26 clean, 4 remaining)
   core/msnedit.cpp                                              84.1%  (53/63 clean, 10 remaining)
   core/dracbrid.cpp                                             84.0%  (21/25 clean, 4 remaining)
   core/hero.cpp                                                 83.3%  (40/48 clean, 8 remaining)

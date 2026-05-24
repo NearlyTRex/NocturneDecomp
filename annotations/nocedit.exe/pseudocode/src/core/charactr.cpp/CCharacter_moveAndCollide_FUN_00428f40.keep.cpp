@@ -103,12 +103,12 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
     pCVar10 = local_44;
     do {
       pCVar7->z = 0.0;
-      pCVar7->y = pCVar7->z;
-      pCVar7->x = pCVar7->z;
+      pCVar7->y = 0.0;
+      pCVar7->x = 0.0;
       pCVar10->z = 0.0;
       pCVar7 = pCVar7 + 1;
-      pCVar10->y = pCVar10->z;
-      pCVar10->x = pCVar10->z;
+      pCVar10->y = 0.0;
+      pCVar10->x = 0.0;
       pCVar10 = pCVar10 + 1;
     } while (pCVar7 != local_48);
     iVar11 = iVar11 + 1;

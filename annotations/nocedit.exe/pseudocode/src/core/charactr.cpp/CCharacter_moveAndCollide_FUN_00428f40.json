@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 663,
-    "complexity_score": 317,
+    "complexity_score": 292,
     "cross_reference_count": 36,
     "function_call_count": 7,
     "global_count": 24,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 292,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_memset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 955
   },
   "cross_references": [
@@ -576,6 +574,24 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 74,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).platform_position_delta.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 84,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).platform_orientation_delta.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 94,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
@@ -891,22 +907,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 74,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).platform_position_delta.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 84,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).platform_orientation_delta.z = 0.0;",
-      "type": "unrolled_memset"
-    }
-  ]
+  "suspects": []
 }

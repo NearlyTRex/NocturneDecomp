@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5888 (91.2%)
-Files at 100%: 156
-Files at 90%+: 162
+Clean functions: 5905 (91.5%)
+Files at 100%: 166
+Files at 90%+: 166
 Files at 50%+: 214
 
 ====================================================================================================
@@ -32,15 +32,22 @@ FILES AT 100% (COMPLETE)
   core/battery.cpp: 17 functions, 155 lines
   core/beast.cpp: 14 functions, 164 lines
   core/biggs.cpp: 14 functions, 366 lines
+  core/bodypart.cpp: 45 functions, 1562 lines
   core/boneguy.cpp: 28 functions, 1348 lines
+  core/box.cpp: 30 functions, 2014 lines
   core/boxactor.cpp: 46 functions, 1100 lines
   core/bride.cpp: 14 functions, 771 lines
+  core/bugs.cpp: 44 functions, 1795 lines
   core/camview.cpp: 6 functions, 38 lines
   core/chain.cpp: 21 functions, 870 lines
+  core/charactr.cpp: 109 functions, 4701 lines
+  core/cloth.cpp: 55 functions, 3111 lines
   core/colonel.cpp: 18 functions, 614 lines
   core/cow.cpp: 14 functions, 520 lines
   core/crate.cpp: 20 functions, 309 lines
   core/crossbow.cpp: 12 functions, 312 lines
+  core/curtain.cpp: 26 functions, 1293 lines
+  core/dcamera.cpp: 86 functions, 4962 lines
   core/dest.cpp: 13 functions, 258 lines
   core/dfont.cpp: 3 functions, 279 lines
   core/dglobe.cpp: 6 functions, 237 lines
@@ -104,6 +111,7 @@ FILES AT 100% (COMPLETE)
   core/npc.cpp: 14 functions, 341 lines
   core/particle.cpp: 6 functions, 155 lines
   core/passngr.cpp: 11 functions, 348 lines
+  core/pendulum.cpp: 20 functions, 668 lines
   core/podmain.cpp: 4 functions, 64 lines
   core/procedur.cpp: 4 functions, 234 lines
   core/sentinel.cpp: 14 functions, 737 lines
@@ -130,6 +138,7 @@ FILES AT 100% (COMPLETE)
   core/tvbat.cpp: 20 functions, 727 lines
   core/vampboss.cpp: 23 functions, 1271 lines
   core/vecdir.cpp: 2 functions, 33 lines
+  core/vehicle.cpp: 20 functions, 751 lines
   core/vessel.cpp: 20 functions, 574 lines
   core/water.cpp: 8 functions, 326 lines
   core/waypoint.cpp: 19 functions, 519 lines
@@ -154,6 +163,7 @@ FILES AT 100% (COMPLETE)
   engine/palette.cpp: 10 functions, 392 lines
   engine/pcx.c: 4 functions, 331 lines
   engine/texture.cpp: 22 functions, 654 lines
+  engine/winfont.cpp: 9 functions, 330 lines
   shape/dsemodel.cpp: 10 functions, 329 lines
   shape/edittool.cpp: 151 functions, 6425 lines
   shape/memdbg.cpp: 26 functions, 605 lines
@@ -171,59 +181,16 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 156 files
+Total: 166 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   99.1% | core/charactr.cpp
-         108/109 clean, 1 remaining
-           - core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 (292 lines) [unrolled_memset]
-
-   98.8% | core/dcamera.cpp
-         85/86 clean, 1 remaining
-           - core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0 (22 lines) [unrolled_memset]
-
-   98.2% | core/cloth.cpp
-         54/55 clean, 1 remaining
-           - core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0 (52 lines) [pointer_cast, shadow_pointer_walk]
-
-   97.8% | core/bodypart.cpp
-         44/45 clean, 1 remaining
-           - core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 (199 lines) [unrolled_memset]
-
-   97.7% | core/bugs.cpp
-         43/44 clean, 1 remaining
-           - core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0 (61 lines) [shadow_pointer_walk]
-
-   96.7% | core/box.cpp
-         29/30 clean, 1 remaining
-           - core_box.cpp_CBox_processPhysics_FUN_0041e350 (779 lines) [shadow_pointer_walk]
-
-Total: 6 files
+Total: 0 files
 
 ====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
-   88.9% | engine/winfont.cpp
-         8/9 clean, 1 remaining
-           - engine_winfont.cpp_CWinFont_reset_FUN_005f2a30 (15 lines) [unrolled_memset]
-   85.0% | core/pendulum.cpp
-         17/20 clean, 3 remaining
-           - core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90 (164 lines) [unrolled_memcpy]
-           - core_pendulum.cpp_CPendulum_setup_FUN_005494a0 (35 lines) [unrolled_memcpy]
-           - core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_005495c0 (134 lines) [unrolled_memcpy]
-   85.0% | core/vehicle.cpp
-         17/20 clean, 3 remaining
-           - core_vehicle.cpp_CVehicle_process_FUN_005e7e80 (296 lines) [unrolled_memcpy]
-           - core_vehicle.cpp_CVehicle_ctor_FUN_005e7940 (76 lines) [unrolled_memset]
-           - core_vehicle.cpp_CVehicle_setup_FUN_005e7b90 (110 lines) [shadow_pointer_walk, unrolled_memcpy, unrolled_memset]
-   84.6% | core/curtain.cpp
-         22/26 clean, 4 remaining
-           - core_curtain.cpp_CCurtain_setup_FUN_00449810 (272 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_memset, warning_inlined_function]
-           - core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0 (204 lines) [pointer_cast, shadow_pointer_walk, unrolled_memset]
-           - core_curtain.cpp_CCurtain_process_FUN_0044a920 (285 lines) [pointer_cast, self_copy_guard, shadow_pointer_walk, unrolled_memcpy]
-           - core_curtain.cpp_CCurtain_ctor_FUN_004496a0 (56 lines) [unrolled_strcpy]
    84.1% | core/msnedit.cpp
          53/63 clean, 10 remaining
            - core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 (103 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
@@ -870,7 +837,7 @@ FILES AT 50-89%
            - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [shadow_pointer_walk, unrolled_memcpy]
 
-Total: 52 files
+Total: 48 files
 
 ====================================================================================================
 FILES BELOW 50%

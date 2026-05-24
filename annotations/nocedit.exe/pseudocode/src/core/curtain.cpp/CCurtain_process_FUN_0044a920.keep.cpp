@@ -11,12 +11,11 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,f
 
 {
   float fVar1;
-  int iVar2;
+  CDemonActor *iVar2;
   float fVar6;
   int iVar6;
   int iVar8;
   int iVar7;
-  CCurtain *pCVar8;
   SCurtainVertex *pSVar9;
   SCurtainVertex *pSVar10;
   int iVar10;
@@ -54,7 +53,6 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,f
   float fStack_44;
   SCurtainVertex *pSStack_30;
   SCurtainVertex *pSStack_2c;
-  int iStack_28;
   int iStack_24;
   int iStack_20;
   int iStack_1c;
@@ -113,33 +111,29 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,f
           pSVar10 = pSVar10 + 1;
         } while (iVar8 < this_ptr->vertex_count);
       }
-      iStack_28 = 0;
       INT_008879bc = 0;
       for (iStack_20 = 0; iVar8 = INT_008879bc, iStack_20 < g_CDemonSetPtr->character_count;
           iStack_20 = iStack_20 + 1) {
-        iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iStack_28);
+        iVar2 = (CDemonActor *)g_CDemonSetPtr->characters[iStack_20];
         pSVar11 = SCollisionInfo_ARRAY_00887e70 + INT_008879bc;
-        if (CVector3f_ARRAY_008879c0 + INT_008879bc != (CVector3f *)(iVar2 + 0x20)) {
-          CVector3f_ARRAY_008879c0[INT_008879bc].x = ((CVector3f *)(iVar2 + 0x20))->x;
-          CVector3f_ARRAY_008879c0[iVar8].y = *(float *)(iVar2 + 0x24);
-          CVector3f_ARRAY_008879c0[iVar8].z = *(float *)(iVar2 + 0x28);
+        if (CVector3f_ARRAY_008879c0 + INT_008879bc != &iVar2->location.position) {
+          CVector3f_ARRAY_008879c0[INT_008879bc] = iVar2->location.position;
         }
         pSVar11->ray_type = 0;
-        iVar7 = (*(((CDemonActor *)iVar2)->vtable._ub)->getCollisionType)((CDemonActor *)iVar2,pSVar11);
-        if (((iVar7 == 2) && (*(float *)(iVar2 + 0x24) <= local_78)) &&
+        iVar7 = (*(iVar2->vtable._ub)->getCollisionType)(iVar2,pSVar11);
+        if (((iVar7 == 2) && (iVar2->location.position.y <= local_78)) &&
            ((local_a8 <=
-             *(float *)(iVar2 + 0x24) + SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_top_y &&
+             iVar2->location.position.y + SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_top_y &&
             ((((local_ac <=
-                *(float *)(iVar2 + 0x20) + SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius &&
-               (*(float *)(iVar2 + 0x20) - SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius <=
+                iVar2->location.position.x + SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius &&
+               (iVar2->location.position.x - SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius <=
                 local_7c)) &&
               (local_a4 <=
-               *(float *)(iVar2 + 0x28) + SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius)) &&
-             (*(float *)(iVar2 + 0x28) - SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius <=
+               iVar2->location.position.z + SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius)) &&
+             (iVar2->location.position.z - SCollisionInfo_ARRAY_00887e70[iVar8].cylinder_radius <=
               local_74)))))) {
           INT_008879bc = INT_008879bc + 1;
         }
-        iStack_28 = iStack_28 + 4;
       }
       this_ptr->needs_update = 1;
       if ((iVar8 == 0) && (this_ptr->falling == 0)) {
@@ -175,12 +169,10 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,f
       }
 LAB_0044ac09:
       iVar8 = 0;
-      pCVar8 = this_ptr;
       if (0 < this_ptr->vertex_count) {
         do {
-          pCVar8->vertices[0].has_collision = 0;
+          this_ptr->vertices[iVar8].has_collision = 0;
           iVar8 = iVar8 + 1;
-          pCVar8 = (CCurtain *)&(pCVar8->base).create_prob;
         } while (iVar8 < this_ptr->vertex_count);
       }
       iStack_1c = 0;
@@ -215,11 +207,9 @@ LAB_0044ac09:
             fStack_68 = fStack_8c * 0.05f + 0.0;
             fStack_54 = fStack_6c * fVar1;
             fStack_50 = fStack_68 * fVar1;
-            if (&fStack_c4 != &fStack_58) {
-              fStack_c4 = fStack_58;
-              fStack_c0 = fStack_54;
-              fStack_bc = fStack_50;
-            }
+            fStack_c4 = fStack_58;
+            fStack_c0 = fStack_54;
+            fStack_bc = fStack_50;
             pCVar1 = &pSVar10->velocity;
             pCVar1->x = pCVar1->x + fStack_c4 * delta_time;
             (pSVar10->velocity).y = (pSVar10->velocity).y + fStack_c0 * delta_time;
@@ -264,9 +254,7 @@ LAB_0044ac09:
             (pSStack_2c->velocity).z = *pfVar2 * (pSStack_2c->velocity).z;
           }
           if (&pSStack_2c->last_world_position != &pSStack_2c->world_position) {
-            (pSStack_2c->last_world_position).x = (pSStack_2c->world_position).x;
-            (pSStack_2c->last_world_position).y = (pSStack_2c->world_position).y;
-            (pSStack_2c->last_world_position).z = (pSStack_2c->world_position).z;
+            pSStack_2c->last_world_position = pSStack_2c->world_position;
           }
           iVar8 = iVar8 + 1;
           pSVar10 = pSStack_2c + 1;

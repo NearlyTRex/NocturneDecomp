@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 30,
+    "complexity_score": 15,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 15,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 45
   },
   "cross_references": [
@@ -124,6 +122,17 @@
     },
     "pcode_op_count": 82
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 13,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr->bpp = 0;",
+      "type": "unrolled_memset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -140,14 +149,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 13,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "this_ptr->bpp = 0;",
-      "type": "unrolled_memset"
-    }
-  ]
+  "suspects": []
 }
