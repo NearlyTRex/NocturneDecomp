@@ -12,9 +12,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
 {
   int render_alpha;
   CDemonRenderer *pCVar3;
-  CCloth *pCVar4;
   int iVar5;
-  CCloth *pCVar2;
   int iVar4;
   SMRGLPrimitiveQuad *pSVar6;
   int iVar7;
@@ -43,17 +41,14 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,(this_ptr->model).vertex_count,(this_ptr->model).poly_count / 2,
                (this_ptr->model).poly_vert_list,(this_ptr->model).vertex_list,4,(CVector3i *)0x0);
-    if ((use_joined_light != 0) && (iVar4 = 0, pCVar4 = this_ptr, 0 < this_ptr->locked_vertex_count)
-       ) {
-      do {
+    if (use_joined_light != 0) {
+      for (iVar4 = 0; iVar4 < this_ptr->locked_vertex_count; iVar4 = iVar4 + 1) {
         pCVar1 = g_CDemonRendererPtr2;
-        iVar5 = pCVar4->locked_vertex_indices[0];
-        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar5].r = pCVar4->locked_vertex_indices[600];
-        pCVar1->vertex_buffer_ptr[iVar5].g = pCVar4->locked_vertex_indices[700];
-        pCVar1->vertex_buffer_ptr[iVar5].b = pCVar4->locked_vertex_indices[800];
-        iVar4 = iVar4 + 1;
-        pCVar4 = (CCloth *)((pCVar4->model).model_filename + 4);
-      } while (iVar4 < this_ptr->locked_vertex_count);
+        iVar5 = this_ptr->locked_vertex_indices[iVar4];
+        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar5].r = this_ptr->locked_vertex_indices[iVar4 + 600];
+        pCVar1->vertex_buffer_ptr[iVar5].g = this_ptr->locked_vertex_indices[iVar4 + 700];
+        pCVar1->vertex_buffer_ptr[iVar5].b = this_ptr->locked_vertex_indices[iVar4 + 800];
+      }
     }
     if (render_alpha < 63000) {
       iVar5 = (this_ptr->model).poly_count;
@@ -84,17 +79,14 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,(this_ptr->model).vertex_count,(this_ptr->model).poly_count,
                (this_ptr->model).poly_vert_list,(this_ptr->model).vertex_list,4,(CVector3i *)0x0);
-    if ((use_joined_light != 0) && (iVar5 = 0, pCVar2 = this_ptr, 0 < this_ptr->locked_vertex_count)
-       ) {
-      do {
+    if (use_joined_light != 0) {
+      for (iVar5 = 0; iVar5 < this_ptr->locked_vertex_count; iVar5 = iVar5 + 1) {
         pCVar3 = g_CDemonRendererPtr2;
-        iVar7 = pCVar2->locked_vertex_indices[0];
-        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar7].r = pCVar2->locked_vertex_indices[600];
-        pCVar3->vertex_buffer_ptr[iVar7].g = pCVar2->locked_vertex_indices[700];
-        pCVar3->vertex_buffer_ptr[iVar7].b = pCVar2->locked_vertex_indices[800];
-        iVar5 = iVar5 + 1;
-        pCVar2 = (CCloth *)((pCVar2->model).model_filename + 4);
-      } while (iVar5 < this_ptr->locked_vertex_count);
+        iVar7 = this_ptr->locked_vertex_indices[iVar5];
+        g_CDemonRendererPtr2->vertex_buffer_ptr[iVar7].r = this_ptr->locked_vertex_indices[iVar5 + 600];
+        pCVar3->vertex_buffer_ptr[iVar7].g = this_ptr->locked_vertex_indices[iVar5 + 700];
+        pCVar3->vertex_buffer_ptr[iVar7].b = this_ptr->locked_vertex_indices[iVar5 + 800];
+      }
     }
     if (render_alpha < 63000) {
       iVar7 = 0x267;

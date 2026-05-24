@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5881 (91.1%)
+Clean functions: 5890 (91.3%)
 Files at 100%: 162
-Files at 90%+: 162
+Files at 90%+: 163
 Files at 50%+: 214
 
 ====================================================================================================
@@ -182,7 +182,15 @@ Total: 162 files
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-Total: 0 files
+   90.9% | core/cloth.cpp
+         50/55 clean, 5 remaining
+           - core_cloth.cpp_CCloth_setup_FUN_00439710 (354 lines) [pointer_cast, unrolled_memcpy, unrolled_memset]
+           - core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (212 lines) [self_copy_guard, unrolled_memcpy]
+           - core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (299 lines) [pointer_cast, shadow_pointer_walk]
+           - core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (383 lines) [shadow_pointer_walk, unrolled_memcpy]
+           - core_cloth.cpp_CCloth_step_FUN_0043abb0 (402 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_memset]
+
+Total: 1 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -488,22 +496,6 @@ FILES AT 50-89%
            - core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (169 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
            - core_mimic.cpp_CMimic_setupCloth_FUN_00520500 (51 lines) [pointer_cast, unrolled_memcpy]
            - core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 (321 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
-   74.5% | core/cloth.cpp
-         41/55 clean, 14 remaining
-           - core_cloth.cpp_CClothList_render_FUN_0043c320 (23 lines) [shadow_pointer_walk]
-           - core_cloth.cpp_CClothList_setWindVelocity_FUN_0043c3e0 (27 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_cloth.cpp_CClothList_remove_FUN_0043c170 (51 lines) [unrolled_strcpy]
-           - core_cloth.cpp_CCloth_setup_FUN_00439710 (354 lines) [pointer_cast, unrolled_memcpy, unrolled_memset]
-           - core_cloth.cpp_CCloth_render_FUN_0043bae0 (148 lines) [shadow_pointer_walk]
-           - core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 (78 lines) [pointer_cast]
-           - core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (212 lines) [self_copy_guard, unrolled_memcpy]
-           - core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0 (45 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 (76 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_cloth.cpp_CCloth_initializeConnections_FUN_004394e0 (100 lines) [shadow_pointer_walk]
-           - core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (299 lines) [pointer_cast, shadow_pointer_walk]
-           - core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (383 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 (81 lines) [shadow_pointer_walk, unrolled_memset, unrolled_strcpy]
-           - core_cloth.cpp_CCloth_step_FUN_0043abb0 (402 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_memset]
    73.7% | core/gabriela.cpp
          28/38 clean, 10 remaining
            - core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890 (162 lines) [unrolled_memcpy]
@@ -865,7 +857,7 @@ FILES AT 50-89%
            - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [shadow_pointer_walk, unrolled_memcpy]
 
-Total: 52 files
+Total: 51 files
 
 ====================================================================================================
 FILES BELOW 50%

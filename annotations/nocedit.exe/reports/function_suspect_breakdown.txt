@@ -4,11 +4,11 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5881 functions
-  1 suspects: 76 functions
-  2 suspects: 125 functions
-  3 suspects: 70 functions
-  4 suspects: 71 functions
+  0 suspects: 5890 functions
+  1 suspects: 75 functions
+  2 suspects: 120 functions
+  3 suspects: 69 functions
+  4 suspects: 69 functions
   5 suspects: 38 functions
   6 suspects: 51 functions
   7 suspects: 18 functions
@@ -144,10 +144,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
 
-  [unrolled_strcpy] (11 functions)
+  [unrolled_strcpy] (10 functions)
   ------------------------------------------------------------
-    core_cloth.cpp_CClothList_remove_FUN_0043c170      ( 51 lines)
-      do {...
     core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0  ( 54 lines)
       do {...
     core_dfilter.cpp_CFilterCache_getFilter_FUN_004700 ( 56 lines)
@@ -249,8 +247,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/path.cpp, Lines: 22, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420
     File: shape/meshlod.cpp, Lines: 22, Types: ['pointer_cast']
-  core_cloth.cpp_CClothList_render_FUN_0043c320
-    File: core/cloth.cpp, Lines: 23, Types: ['shadow_pointer_walk']
   core_netgame.cpp_purgeOldSimFrames_FUN_0053f650
     File: core/netgame.cpp, Lines: 26, Types: ['pointer_cast']
   core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630
@@ -373,12 +369,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 74, Types: ['pointer_cast']
   shape_meshlod.cpp_crc32UpdateDword2_FUN_0051c540
     File: shape/meshlod.cpp, Lines: 74, Types: ['pointer_cast']
-  core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110
-    File: core/cloth.cpp, Lines: 76, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
     File: shape/design.c, Lines: 77, Types: ['unrolled_strlen']
-  core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0
-    File: core/cloth.cpp, Lines: 78, Types: ['pointer_cast']
   core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005
     File: core/manpuz.cpp, Lines: 79, Types: ['shadow_pointer_walk']
   core_setutil.cpp_C3DSCamera_load_FUN_00585420
@@ -393,8 +385,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/setedit.cpp, Lines: 91, Types: ['unrolled_strchr']
   core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457c
     File: core/dcube.cpp, Lines: 98, Types: ['self_copy_guard']
-  core_cloth.cpp_CCloth_initializeConnections_FUN_004394e0
-    File: core/cloth.cpp, Lines: 100, Types: ['shadow_pointer_walk']
   shape_design.c_renderSinglePolygon_FUN_0045ce20
     File: shape/design.c, Lines: 102, Types: ['unrolled_strcpy', 'warning_inlined_function']
   engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_
@@ -441,8 +431,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dcube.cpp, Lines: 144, Types: ['unrolled_memcpy']
   core_script.cpp_CScript_loadScript_FUN_00559f80
     File: core/script.cpp, Lines: 147, Types: ['pointer_cast']
-  core_cloth.cpp_CCloth_render_FUN_0043bae0
-    File: core/cloth.cpp, Lines: 148, Types: ['shadow_pointer_walk']
   shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d396
     File: shape/superopt.cpp, Lines: 157, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_turret.cpp_CTurret_fire_FUN_005e3750
@@ -491,8 +479,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/path.cpp, Lines: 24, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0
     File: shape/meshlod.cpp, Lines: 26, Types: ['pointer_cast']
-  core_cloth.cpp_CClothList_setWindVelocity_FUN_0043c3e0
-    File: core/cloth.cpp, Lines: 27, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_00486360
     File: core/dracbrid.cpp, Lines: 33, Types: ['unrolled_memcpy']
   engine_fileio.cpp_CFileManager_setVersionControlCredentials_

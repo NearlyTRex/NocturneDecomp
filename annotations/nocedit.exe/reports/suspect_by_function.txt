@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5865 (90.9%)
-With suspects: 589
-Total suspects: 3312
+Clean: 5874 (91.0%)
+With suspects: 580
+Total suspects: 3290
 
 ====================================================================================================
 core_chain.cpp_fastSqrt_FUN_00431350 (2 suspects)
@@ -15,36 +15,6 @@ core_chain.cpp_fastSqrt_FUN_00431350 (2 suspects)
 ====================================================================================================
   Line 13 [static_invalid_pointer_cast]: int bits = (*(int *)&value >> 1) + g_FastSqrtMagic;
   Line 14 [static_invalid_pointer_cast]: return *(float *)&bits;
-
-====================================================================================================
-core_cloth.cpp_CClothList_remove_FUN_0043c170 (1 suspect)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 33 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_cloth.cpp_CClothList_render_FUN_0043c320 (2 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 13 [shadow_pointer_walk]: pCVar1 = (CClothList *)pCVar1->filenames;
-  Line 22 [shadow_pointer_walk]: pCVar1 = (CClothList *)pCVar1->filenames;
-
-====================================================================================================
-core_cloth.cpp_CClothList_setWindVelocity_FUN_0043c3e0 (3 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 16 [unrolled_memcpy]: (pCVar1->wind_velocity).x = wind_velocity->x;
-  Line 20 [shadow_pointer_walk]: pCVar2 = (CClothList *)pCVar2->filenames;
-  Line 26 [shadow_pointer_walk]: pCVar2 = (CClothList *)pCVar2->filenames;
-
-====================================================================================================
-core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 (4 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 41 [shadow_pointer_walk]: pCVar3 = (CSkeleton *)((pCVar3->motion_list).state_names[1] + 2);
-  Line 53 [unrolled_strcpy]: do {
-  Line 69 [unrolled_memset]: this_ptr->collide_bones[iVar3].euler1.z = 0.0;
-  Line 73 [unrolled_memset]: this_ptr->collide_bones[iVar3].euler2.z = 0.0;
 
 ====================================================================================================
 core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (10 suspects)
@@ -62,15 +32,6 @@ core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (10 suspects)
   Line 197 [unrolled_memcpy]: (vertex->position).x = local_88.x;
 
 ====================================================================================================
-core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0 (4 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 19 [unrolled_memcpy]: (this_ptr->last_euler).x = euler->x;
-  Line 32 [unrolled_memcpy]: input->x = pCVar1->x;
-  Line 39 [unrolled_memcpy]: pCVar2->x = pCVar3->x;
-  Line 44 [shadow_pointer_walk]: pCVar2 = (CVector3f *)&pCVar2[0x17].z;
-
-====================================================================================================
 core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (5 suspects)
   File: core/cloth.cpp
 ====================================================================================================
@@ -79,13 +40,6 @@ core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (5 suspects)
   Line 297 [unrolled_memcpy]: CStack_a8.position.x = local_80.x;
   Line 302 [unrolled_memcpy]: CStack_a8.orientation.vec.x = (pSVar4->euler2).x;
   Line 317 [unrolled_memcpy]: (pSVar4->euler2).x = CStack_a8.orientation.vec.x;
-
-====================================================================================================
-core_cloth.cpp_CCloth_initializeConnections_FUN_004394e0 (2 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 63 [shadow_pointer_walk]: pSVar9 = (SClothVertex *)&(pSVar9->position).y;
-  Line 98 [shadow_pointer_walk]: local_28 = (CCloth *)&(local_28->model).env_map_opac_list;
 
 ====================================================================================================
 core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (10 suspects)
@@ -101,27 +55,6 @@ core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (10 suspects)
   Line 222 [shadow_pointer_walk]: pCVar6 = (CCloth *)&(pCVar6->model).env_map_opac_list;
   Line 240 [shadow_pointer_walk]: pCVar10 = (CCloth *)&(pCVar10->model).env_map_opac_list;
   Line 249 [shadow_pointer_walk]: pCVar10 = (CCloth *)((pCVar10->model).model_filename + 4);
-
-====================================================================================================
-core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 (2 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 40 [shadow_pointer_walk]: pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);
-  Line 60 [unrolled_memcpy]: (bone_name->world_matrix).m[0].w = local_64.m[0].w;
-
-====================================================================================================
-core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 (2 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 47 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
-  Line 54 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
-
-====================================================================================================
-core_cloth.cpp_CCloth_render_FUN_0043bae0 (2 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 54 [shadow_pointer_walk]: pCVar4 = (CCloth *)((pCVar4->model).model_filename + 4);
-  Line 95 [shadow_pointer_walk]: pCVar2 = (CCloth *)((pCVar2->model).model_filename + 4);
 
 ====================================================================================================
 core_cloth.cpp_CCloth_setup_FUN_00439710 (14 suspects)
