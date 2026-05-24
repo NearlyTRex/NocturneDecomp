@@ -2188,6 +2188,11 @@ _CASCADE_TEMP_SAVE_RE = re.compile(
 # Caller verifies `<tmp>` matches the armed bounce var.
 _CASCADE_TEMP_USE_RE = re.compile(
     r'^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(\w+)\s*;\s*$')
+# Leading tokens that disqualify a statement from being skipped as a benign
+# interleaved bookkeeping line inside a cascade run (control flow / calls).
+_CASCADE_INTERLEAVE_STOP = frozenset((
+    'if', 'else', 'for', 'while', 'do', 'switch', 'case', 'return',
+    'goto', 'break', 'continue'))
 
 
 def _join_wrapped_statements(lines):
@@ -2292,6 +2297,7 @@ def identify_cascade_constant_fill(decompiled_code):
         prev_field = anchor_field
         run_len = 1
         bounce_var = None
+        interleave_left = 2
         j = i + 1
         while j < n:
             _, stmt_text = stmts[j]
@@ -2334,6 +2340,27 @@ def identify_cascade_constant_fill(decompiled_code):
             # rhs_field == prev_field.
             m_chain = _CASCADE_CHAIN_RE.match(stmt_text)
             if not m_chain:
+                # Tolerate a few interleaved bookkeeping statements (register
+                # spills, loop-counter inits, unrelated scalar stores) that
+                # Watcom/Ghidra slipped between cascade steps — e.g.
+                # `local_1c = 1;` or `pSVar1 = this_ptr->vertices + i;`.
+                # Only skip a plain `;`-terminated assignment that doesn't
+                # touch the cascade's struct path or the armed bounce temp,
+                # so collapsing the run to N constant stores stays safe.
+                stripped = stmt_text.strip()
+                m_first = re.match(r'\s*[(*&]*\s*(\w+)', stripped)
+                first_tok = m_first.group(1) if m_first else ''
+                if (interleave_left > 0
+                        and stripped.endswith(';')
+                        and '=' in stripped
+                        and '{' not in stripped and '}' not in stripped
+                        and first_tok not in _CASCADE_INTERLEAVE_STOP
+                        and anchor_path not in normalize(stripped)
+                        and (bounce_var is None
+                             or bounce_var not in re.findall(r'\w+', stripped))):
+                    interleave_left -= 1
+                    j += 1
+                    continue
                 break
             lhs_path_raw = m_chain.group(1)
             lhs_field = m_chain.group(2)
@@ -3689,15 +3716,21 @@ def identify_loop_clobbered_constant(decompiled_code):
 # Detector also matches the bit-cast form some keeps end up with — both
 # should ultimately become `Y = fastSqrt(X);` / `Y = fastInvSqrt(X);`.
 
+# Operand between `(int)` and `>> 1`. Either bare tokens (`local_5c`,
+# `this_ptr->dist`) or a parenthesized sub-expression up to one nested
+# level (`(local_30 * local_30 + local_38 * local_38 + local_34 * local_34)`).
+# `[^()]+` alone missed the parenthesized arithmetic form Ghidra emits when
+# the sqrt argument is computed inline.
+_FS_OPERAND = r"(?:[^()]|\((?:[^()]|\([^()]*\))*\))+?"
 # Numeric-cast emit (default Ghidra output):
 #   (float)(((int)EXPR >> 1) + g_FastSqrtMagic)
 #   (float)(g_FastInvSqrtMagic - ((int)EXPR >> 1))
 _FAST_SQRT_NUM_RE = re.compile(
-    r"\(\s*float\s*\)\s*\(\s*\(\s*\(\s*int\s*\)[^()]+>>\s*1\s*\)\s*"
+    r"\(\s*float\s*\)\s*\(\s*\(\s*\(\s*int\s*\)" + _FS_OPERAND + r">>\s*1\s*\)\s*"
     r"\+\s*(g_FastSqrtMagic|INT_02d7a7b8)\s*\)")
 _FAST_INV_SQRT_NUM_RE = re.compile(
     r"\(\s*float\s*\)\s*\(\s*(g_FastInvSqrtMagic|g_LightAttenuationMax)\s*-\s*"
-    r"\(\s*\(\s*int\s*\)[^()]+>>\s*1\s*\)\s*\)")
+    r"\(\s*\(\s*int\s*\)" + _FS_OPERAND + r">>\s*1\s*\)\s*\)")
 # Bit-cast emit (after a manual keep fix that swaps numeric cast for
 # bit-cast — also wants to be replaced with the helper call):
 #   *(int *)&DST = (*(int *)&SRC >> 1) + g_FastSqrtMagic;
@@ -3743,8 +3776,11 @@ def identify_fast_sqrt_inline(decompiled_code):
     suspects = []
     if not decompiled_code:
         return suspects
-    lines = decompiled_code.split('\n')
-    for i, line in enumerate(lines):
+    raw_lines = decompiled_code.split('\n')
+    # Join wrapped statements: Ghidra wraps the inline sqrt across lines when
+    # the operand is long (`(float)(((int)(a*a+b*b+c*c) >> 1) +\n  g_FastSqrtMagic)`),
+    # which a line-by-line scan would miss.
+    for i, line in _join_wrapped_statements(raw_lines):
         for kind, regex, helper in (
                 ('fast_sqrt_inline', _FAST_SQRT_NUM_RE, 'fastSqrt'),
                 ('fast_inv_sqrt_inline', _FAST_INV_SQRT_NUM_RE, 'fastInvSqrt'),

@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5852 (90.7%)
-Functions with suspects: 602 (9.3%)
+Clean functions: 5851 (90.7%)
+Functions with suspects: 603 (9.3%)
 
-Total suspect patterns: 3422
+Total suspect patterns: 3408
 Average suspects per function: 0.53
 
-Virtual files: 214 total, 158 at 100%, 158 at 90%+
+Virtual files: 214 total, 153 at 100%, 159 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -29,13 +29,13 @@ Failed: 0
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   pointer_cast              1485
-  unrolled_memcpy           764
-  unrolled_strcpy           253
+  unrolled_memcpy           756
+  unrolled_strcpy           250
   shadow_pointer_walk       126
   missing_cave_copy         111
   raw_address_constant      87
   unrolled_strlen           80
-  unrolled_memset           65
+  unrolled_memset           67
   carry_arith_idiom         63
   static_uninitvar          54
   warning_inlined_function  44
@@ -47,15 +47,16 @@ SUSPECT PATTERN BREAKDOWN
   warning_type_propagation  17
   sign_compare_idiom        17
   stack_alignment_array     15
-  negative_offset           13
   warning_unreachable       12
-  self_copy_guard           11
+  self_copy_guard           10
   sub84_truncation          10
   static_null_pointer       8
   stack_param               8
+  negative_offset           7
   unrolled_strcat           6
   unaffected_reg            6
   static_array_oob_cond     3
+  fast_sqrt_inline          2
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -109,7 +110,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5802 more
+  ... and 5801 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -160,7 +161,7 @@ FUNCTIONS BY SUSPECT TYPE
     00401140: engine_2d.c_plotPixel_FUN_00401140
     ... and 308 more
 
-  unrolled_memcpy (247 functions):
+  unrolled_memcpy (244 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -171,9 +172,9 @@ FUNCTIONS BY SUSPECT TYPE
     00407470: engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
     00408070: engine_3d.c_clipAndDrawLine3D_FUN_00408070
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-    ... and 237 more
+    ... and 234 more
 
-  unrolled_strcpy (103 functions):
+  unrolled_strcpy (102 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
     004050c0: engine_3d.c_updateAnimatedTexture_FUN_004050c0
     004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
@@ -184,7 +185,7 @@ FUNCTIONS BY SUSPECT TYPE
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     004b23a0: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
     004ba740: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
-    ... and 93 more
+    ... and 92 more
 
   shadow_pointer_walk (82 functions):
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
@@ -238,9 +239,10 @@ FUNCTIONS BY SUSPECT TYPE
     00561690: core_script.cpp_parseCommandWithTemplates_FUN_00561690
     ... and 24 more
 
-  unrolled_memset (26 functions):
+  unrolled_memset (31 functions):
     00439710: core_cloth.cpp_CCloth_setup_FUN_00439710
     0043c430: core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
+    0043abb0: core_cloth.cpp_CCloth_step_FUN_0043abb0
     005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470
     004f80b0: core_icepick.cpp_CIcePick_process_FUN_004f80b0
     005e7940: core_vehicle.cpp_CVehicle_ctor_FUN_005e7940
@@ -248,8 +250,7 @@ FUNCTIONS BY SUSPECT TYPE
     00508920: core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
     0050a610: core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610
     00525840: core_mobster.cpp_CMobster_process_FUN_00525840
-    0053e220: core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
-    ... and 16 more
+    ... and 21 more
 
   carry_arith_idiom (9 functions):
     00437230: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
@@ -354,14 +355,6 @@ FUNCTIONS BY SUSPECT TYPE
     00547fc0: core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
     ... and 5 more
 
-  negative_offset (6 functions):
-    004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-    004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-    004f2470: core_hero.cpp_CHero_dtor_FUN_004f2470
-    0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
-    00477690: core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
-    004300d0: core_chain.cpp_CChain_process_FUN_004300d0
-
   warning_unreachable (7 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
     004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
@@ -371,14 +364,13 @@ FUNCTIONS BY SUSPECT TYPE
     004f80b0: core_icepick.cpp_CIcePick_process_FUN_004f80b0
     0047a820: core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
 
-  self_copy_guard (8 functions):
+  self_copy_guard (7 functions):
     00457cf0: core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
     0043a420: core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
     005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470
     0044a920: core_curtain.cpp_CCurtain_process_FUN_0044a920
     004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600
     005214c0: core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
-    004300d0: core_chain.cpp_CChain_process_FUN_004300d0
     00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
 
   sub84_truncation (7 functions):
@@ -395,6 +387,13 @@ FUNCTIONS BY SUSPECT TYPE
   stack_param (1 functions):
     005379e0: core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
 
+  negative_offset (5 functions):
+    004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+    004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+    004f2470: core_hero.cpp_CHero_dtor_FUN_004f2470
+    0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
+    00477690: core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
+
   unrolled_strcat (4 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
     004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
@@ -405,3 +404,7 @@ FUNCTIONS BY SUSPECT TYPE
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
 
   static_array_oob_cond (0 functions):
+
+  fast_sqrt_inline (2 functions):
+    0043e350: core_cloth.cpp_vectorLengthFast_FUN_0043e350
+    005dfac0: core_trigger.cpp_CTrigger_process_FUN_005dfac0

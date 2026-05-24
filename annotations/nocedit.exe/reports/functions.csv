@@ -2081,10 +2081,10 @@ core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430,0043c430,core/cloth.cpp,81,4
 core_cloth.cpp_CClothList_load_FUN_0043bfa0,0043bfa0,core/cloth.cpp,40,0,,40
 core_cloth.cpp_addVector_FUN_0043e2f0,0043e2f0,core/cloth.cpp,7,0,,7
 core_cloth.cpp_dotProduct1_FUN_0043e2c0,0043e2c0,core/cloth.cpp,4,0,,4
-core_cloth.cpp_CCloth_step_FUN_0043abb0,0043abb0,core/cloth.cpp,402,11,pointer_cast|shadow_pointer_walk|unrolled_memcpy,527
+core_cloth.cpp_CCloth_step_FUN_0043abb0,0043abb0,core/cloth.cpp,402,13,pointer_cast|shadow_pointer_walk|unrolled_memcpy|unrolled_memset,552
 core_cloth.cpp_CCloth_dtor_FUN_00438c00,00438c00,core/cloth.cpp,13,0,,13
 core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460,0043e460,core/cloth.cpp,6,0,,6
-core_cloth.cpp_vectorLengthFast_FUN_0043e350,0043e350,core/cloth.cpp,4,0,,4
+core_cloth.cpp_vectorLengthFast_FUN_0043e350,0043e350,core/cloth.cpp,4,1,fast_sqrt_inline,19
 core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0,0043ddf0,core/cloth.cpp,108,0,,108
 core_cloth.cpp_SClothBone_arrdtor_FUN_0043e4a0,0043e4a0,core/cloth.cpp,6,0,,6
 core_drone.cpp_factoryFunc_FUN_0048eb10,0048eb10,core/drone.cpp,10,0,,10
@@ -3099,7 +3099,7 @@ core_imp.cpp_factoryFunc_FUN_004f9860,004f9860,core/imp.cpp,10,0,,10
 core_imp.cpp_CImp_processDismemberment_FUN_004fab60,004fab60,core/imp.cpp,99,0,,99
 core_imp.cpp_CImp_addFilesToExtract_FUN_004fb150,004fb150,core/imp.cpp,7,0,,7
 core_imp.cpp_CImp_processDamage_FUN_004fae00,004fae00,core/imp.cpp,50,0,,50
-core_imp.cpp_CImp_process_FUN_004f9c30,004f9c30,core/imp.cpp,492,0,,492
+core_imp.cpp_CImp_process_FUN_004f9c30,004f9c30,core/imp.cpp,492,1,unrolled_memset,507
 core_imp.cpp_CImp_getCollisionType_FUN_004fb0f0,004fb0f0,core/imp.cpp,7,0,,7
 core_imp.cpp_CImp_getTargetPoints_FUN_004faf40,004faf40,core/imp.cpp,70,0,,70
 core_imp.cpp_CImp_dtor_FUN_004fb180,004fb180,core/imp.cpp,35,0,,35
@@ -4194,7 +4194,7 @@ core_hiram.cpp_CHiram_ctor_FUN_004f43f0,004f43f0,core/hiram.cpp,25,0,,25
 core_hiram.cpp_CHiram_getActorType_FUN_004f43e0,004f43e0,core/hiram.cpp,4,0,,4
 core_hiram.cpp_CHiram_getPropertyList_FUN_004f46a0,004f46a0,core/hiram.cpp,7,0,,7
 core_hiram.cpp_CHiram_addFilesToExtract_FUN_004f46e0,004f46e0,core/hiram.cpp,5,0,,5
-core_hiram.cpp_CHiram_process_FUN_004f4550,004f4550,core/hiram.cpp,59,0,,59
+core_hiram.cpp_CHiram_process_FUN_004f4550,004f4550,core/hiram.cpp,59,1,unrolled_memset,74
 core_hiram.cpp_staticInit_FUN_004f4380,004f4380,core/hiram.cpp,7,0,,7
 core_hiram.cpp_CHiram_dtor_FUN_004f4450,004f4450,core/hiram.cpp,38,0,,38
 core_hiram.cpp_CHiram_archive_FUN_004f4690,004f4690,core/hiram.cpp,5,0,,5
@@ -4202,7 +4202,7 @@ core_curtain.cpp_CCurtain_archive_FUN_0044b3e0,0044b3e0,core/curtain.cpp,45,0,,4
 core_curtain.cpp_CCurtain_updateWorldPositions_FUN_00449e40,00449e40,core/curtain.cpp,39,0,,39
 core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0,0044baf0,core/curtain.cpp,6,0,,6
 core_curtain.cpp_SCollisionInfo_dtor_FUN_0044bac0,0044bac0,core/curtain.cpp,4,0,,4
-core_curtain.cpp_CCurtain_setup_FUN_00449810,00449810,core/curtain.cpp,272,16,pointer_cast|shadow_pointer_walk|unrolled_memcpy|warning_inlined_function,452
+core_curtain.cpp_CCurtain_setup_FUN_00449810,00449810,core/curtain.cpp,272,17,pointer_cast|shadow_pointer_walk|unrolled_memcpy|unrolled_memset|warning_inlined_function,467
 core_curtain.cpp_CCurtain_dtor_FUN_0044ba30,0044ba30,core/curtain.cpp,19,0,,19
 core_curtain.cpp_CCurtain_renderTransparent_FUN_0044b360,0044b360,core/curtain.cpp,9,0,,9
 core_curtain.cpp_CCurtain_getBoundingBox_FUN_0044b380,0044b380,core/curtain.cpp,14,0,,14
@@ -4446,7 +4446,7 @@ core_larva.cpp_getSizeCategory_FUN_005039d0,005039d0,core/larva.cpp,10,0,,10
 core_larva.cpp_CLarva_ctor_FUN_00502f90,00502f90,core/larva.cpp,21,0,,21
 core_larva.cpp_CLarva_getTargetPoints_FUN_00503c00,00503c00,core/larva.cpp,14,0,,14
 core_larva.cpp_CLarva_archive_FUN_00503960,00503960,core/larva.cpp,14,0,,14
-core_larva.cpp_CLarva_process_FUN_00503080,00503080,core/larva.cpp,332,0,,332
+core_larva.cpp_CLarva_process_FUN_00503080,00503080,core/larva.cpp,332,1,unrolled_memset,347
 core_larva.cpp_CLarva_getPropertyList_FUN_00503c50,00503c50,core/larva.cpp,10,0,,10
 core_inivar.cpp_readIniData_FUN_004fbd90,004fbd90,core/inivar.cpp,146,0,,146
 core_inivar.cpp_writeIniData_FUN_004fc510,004fc510,core/inivar.cpp,130,0,,130
@@ -5002,7 +5002,7 @@ core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0,0042d3d0,core/charactr.cp
 core_charactr.cpp_staticInit_FUN_00427d80,00427d80,core/charactr.cpp,8,0,,8
 core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0,0042b9e0,core/charactr.cpp,74,0,,74
 core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0,0042bcc0,core/charactr.cpp,15,0,,15
-core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40,00428f40,core/charactr.cpp,292,0,,292
+core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40,00428f40,core/charactr.cpp,292,1,unrolled_memset,307
 core_charactr.cpp_CCharacter_initGesture_FUN_0042d390,0042d390,core/charactr.cpp,12,0,,12
 core_charactr.cpp_getGameDeltaTime_FUN_0042f9e0,0042f9e0,core/charactr.cpp,4,0,,4
 core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70,0042ca70,core/charactr.cpp,107,0,,107
@@ -5096,7 +5096,7 @@ core_trigger.cpp_CTrigger_getPropertyList_FUN_005e0f70,005e0f70,core/trigger.cpp
 core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00,005e0b00,core/trigger.cpp,16,0,,16
 core_trigger.cpp_staticInit_FUN_005df7d0,005df7d0,core/trigger.cpp,7,0,,7
 core_trigger.cpp_CTrigger_onLaserHit_FUN_005e0a50,005e0a50,core/trigger.cpp,11,0,,11
-core_trigger.cpp_CTrigger_process_FUN_005dfac0,005dfac0,core/trigger.cpp,226,5,pointer_cast|unrolled_memcpy,286
+core_trigger.cpp_CTrigger_process_FUN_005dfac0,005dfac0,core/trigger.cpp,226,6,fast_sqrt_inline|pointer_cast|unrolled_memcpy,301
 core_trigger.cpp_CTrigger_dtor_FUN_005e1660,005e1660,core/trigger.cpp,16,0,,16
 core_trigger.cpp_CTrigger_showEditorHelp_FUN_005e1350,005e1350,core/trigger.cpp,60,0,,60
 core_trigger.cpp_CTrigger_onProjectileHit_FUN_005e0aa0,005e0aa0,core/trigger.cpp,8,0,,8
@@ -5503,7 +5503,7 @@ core_crate.cpp_CCrate_dtor_FUN_00448bb0,00448bb0,core/crate.cpp,16,0,,16
 core_crate.cpp_CCrate_ctor_FUN_004484d0,004484d0,core/crate.cpp,13,0,,13
 core_crate.cpp_CCrate_getPropertyList_FUN_00448b20,00448b20,core/crate.cpp,7,0,,7
 core_crate.cpp_CCrate_renderOpaque_FUN_00448880,00448880,core/crate.cpp,18,0,,18
-core_crate.cpp_CCrate_process_FUN_00448660,00448660,core/crate.cpp,93,0,,93
+core_crate.cpp_CCrate_process_FUN_00448660,00448660,core/crate.cpp,93,1,unrolled_memset,108
 core_crate.cpp_CCrate_getCarrier_FUN_00448650,00448650,core/crate.cpp,4,0,,4
 core_crate.cpp_CCrate_canPickup_FUN_00448600,00448600,core/crate.cpp,11,0,,11
 core_crate.cpp_CCrate_explode_FUN_00448a70,00448a70,core/crate.cpp,24,0,,24
@@ -5548,13 +5548,13 @@ core_chain.cpp_SChainVertex_dtor_FUN_004313e0,004313e0,core/chain.cpp,4,0,,4
 core_chain.cpp_passthroughInt1_FUN_00431330,00431330,core/chain.cpp,4,0,,4
 core_chain.cpp_staticInit_FUN_0042fb10,0042fb10,core/chain.cpp,7,0,,7
 core_chain.cpp_CChain_archive_FUN_00430fe0,00430fe0,core/chain.cpp,25,0,,25
-core_chain.cpp_CChain_process_FUN_004300d0,004300d0,core/chain.cpp,274,17,negative_offset|self_copy_guard|unrolled_memcpy|unrolled_memset,464
+core_chain.cpp_CChain_process_FUN_004300d0,004300d0,core/chain.cpp,274,0,,274
 core_chain.cpp_factoryFunc_FUN_0042fb40,0042fb40,core/chain.cpp,10,0,,10
-core_chain.cpp_CChain_setup_FUN_0042fd20,0042fd20,core/chain.cpp,71,1,unrolled_memcpy,86
-core_chain.cpp_CChain_ctor_FUN_0042fb80,0042fb80,core/chain.cpp,59,3,unrolled_strcpy,94
+core_chain.cpp_CChain_setup_FUN_0042fd20,0042fd20,core/chain.cpp,71,0,,71
+core_chain.cpp_CChain_ctor_FUN_0042fb80,0042fb80,core/chain.cpp,59,0,,59
 core_chain.cpp_SChainVertex_ctor_FUN_004313d0,004313d0,core/chain.cpp,4,0,,4
-core_chain.cpp_CChain_getBoundingBox_FUN_00430eb0,00430eb0,core/chain.cpp,60,2,unrolled_memcpy,85
-core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0,0042fed0,core/chain.cpp,56,1,unrolled_memset,71
+core_chain.cpp_CChain_getBoundingBox_FUN_00430eb0,00430eb0,core/chain.cpp,60,0,,60
+core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0,0042fed0,core/chain.cpp,56,0,,56
 core_chain.cpp_CChain_addFilesToExtract_FUN_00431250,00431250,core/chain.cpp,46,0,,46
 core_chain.cpp_passthroughInt2_FUN_00431340,00431340,core/chain.cpp,4,0,,4
 core_chain.cpp_CChain_renderTransparent_FUN_004308f0,004308f0,core/chain.cpp,160,8,raw_address_constant,245

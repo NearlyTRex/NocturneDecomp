@@ -234,6 +234,15 @@
       "severity": "moderate",
       "text": "iVar1 = *(int *)((int)g_OmniLights + iVar5);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick. Replace with `fastSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_00431350).",
+      "line": 28,
+      "match": "fVar4 = (float)(((int)(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) >> 1) + g_",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar4 = (float)(((int)(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) >> 1) + g_FastSqrtMagic);",
+      "type": "fast_sqrt_inline"
     }
   ],
   "stack_frame": {

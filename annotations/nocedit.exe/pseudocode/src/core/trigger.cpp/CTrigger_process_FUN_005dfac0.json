@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 286,
+    "complexity_score": 301,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 226,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "fast_sqrt_inline",
       "pointer_cast",
       "unrolled_memcpy"
     ],
@@ -467,6 +468,14 @@
       "severity": "moderate",
       "text": "aCStack_58[0].x = pCVar8->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick. Replace with `fastSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_00431350).",
+      "line": 131,
+      "match": "local_34 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90 (g_CFireEff",
+      "severity": "moderate",
+      "text": "local_34 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90 (g_CFireEffectPtr,&pCVar2->position, (float)(((int)",
+      "type": "fast_sqrt_inline"
     }
   ],
   "vtable_info": {

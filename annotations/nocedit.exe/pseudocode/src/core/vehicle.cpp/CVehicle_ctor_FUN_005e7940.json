@@ -231,11 +231,10 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "introduced_by": "keep",
-      "line": 58,
+      "line": 59,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "(ADJ(pCVar4)->local_velocity).z = 0.0;",
+      "text": "ADJ(pCVar4)->unused_physics_vectors[2].z = 0.0;",
       "type": "unrolled_memset"
     }
   ],

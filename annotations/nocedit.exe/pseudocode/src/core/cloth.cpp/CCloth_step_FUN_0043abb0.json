@@ -7,17 +7,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 835,
-    "complexity_score": 527,
+    "complexity_score": 552,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 402,
-    "suspect_count": 11,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
-      "unrolled_memcpy"
+      "unrolled_memcpy",
+      "unrolled_memset"
     ],
     "total_lines": 1237
   },
@@ -915,6 +916,22 @@
       "severity": "moderate",
       "text": "pCVar12->x = euler->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 131,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(pSVar13->position).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 231,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->wind_velocity).z = 0.0;",
+      "type": "unrolled_memset"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_30->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

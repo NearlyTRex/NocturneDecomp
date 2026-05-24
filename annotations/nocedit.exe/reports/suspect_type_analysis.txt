@@ -4,14 +4,14 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1485 ( 43.4%)
-  unrolled_memcpy                  764 ( 22.3%)
-  unrolled_strcpy                  253 (  7.4%)
+  pointer_cast                    1485 ( 43.6%)
+  unrolled_memcpy                  756 ( 22.2%)
+  unrolled_strcpy                  250 (  7.3%)
   shadow_pointer_walk              126 (  3.7%)
-  missing_cave_copy                111 (  3.2%)
-  raw_address_constant              87 (  2.5%)
+  missing_cave_copy                111 (  3.3%)
+  raw_address_constant              87 (  2.6%)
   unrolled_strlen                   80 (  2.3%)
-  unrolled_memset                   65 (  1.9%)
+  unrolled_memset                   67 (  2.0%)
   carry_arith_idiom                 63 (  1.8%)
   static_uninitvar                  54 (  1.6%)
   warning_inlined_function          44 (  1.3%)
@@ -23,15 +23,16 @@ SUSPECT TYPE COUNTS
   warning_type_propagation          17 (  0.5%)
   sign_compare_idiom                17 (  0.5%)
   stack_alignment_array             15 (  0.4%)
-  negative_offset                   13 (  0.4%)
   warning_unreachable               12 (  0.4%)
-  self_copy_guard                   11 (  0.3%)
+  self_copy_guard                   10 (  0.3%)
   sub84_truncation                  10 (  0.3%)
   static_null_pointer                8 (  0.2%)
   stack_param                        8 (  0.2%)
+  negative_offset                    7 (  0.2%)
   unrolled_strcat                    6 (  0.2%)
   unaffected_reg                     6 (  0.2%)
   static_array_oob_cond              3 (  0.1%)
+  fast_sqrt_inline                   2 (  0.1%)
 
 ====================================================================================================
 TYPE: pointer_cast (1485 occurrences)
@@ -380,19 +381,16 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (764 occurrences)
+TYPE: unrolled_memcpy (756 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   589x  field-by-field struct copy
+   581x  field-by-field struct copy
     89x  for (...; != 0; ... + -1)
     84x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
-  core_chain.cpp_CChain_getBoundingBox_FUN_00430eb0
-  core_chain.cpp_CChain_process_FUN_004300d0
-  core_chain.cpp_CChain_setup_FUN_0042fd20
   core_cloth.cpp_CClothList_setWindVelocity_FUN_0043c3e0
   core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
   core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0
@@ -639,14 +637,13 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (253 occurrences)
+TYPE: unrolled_strcpy (250 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   253x  do {
+   250x  do {
 
 Functions:
-  core_chain.cpp_CChain_ctor_FUN_0042fb80
   core_cloth.cpp_CClothList_remove_FUN_0043c170
   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
   core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0
@@ -996,22 +993,27 @@ Functions:
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
 
 ====================================================================================================
-TYPE: unrolled_memset (65 occurrences)
+TYPE: unrolled_memset (67 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    65x  cascade_constant_fill
+    67x  cascade_constant_fill
 
 Functions:
-  core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0
-  core_chain.cpp_CChain_process_FUN_004300d0
+  core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
   core_cloth.cpp_CCloth_setup_FUN_00439710
+  core_cloth.cpp_CCloth_step_FUN_0043abb0
+  core_crate.cpp_CCrate_process_FUN_00448660
+  core_curtain.cpp_CCurtain_setup_FUN_00449810
   core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0
   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  core_hiram.cpp_CHiram_process_FUN_004f4550
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
+  core_imp.cpp_CImp_process_FUN_004f9c30
+  core_larva.cpp_CLarva_process_FUN_00503080
   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610
   core_mobster.cpp_CMobster_process_FUN_00525840
@@ -1339,28 +1341,6 @@ Functions:
   shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0
 
 ====================================================================================================
-TYPE: negative_offset (13 occurrences)
-====================================================================================================
-
-Unique patterns:
-     6x  pSVar18[-1].
-     1x  pSVar10[-1].
-     1x  pSVar8[-1].
-     1x  pCVar4[-2].
-     1x  pCVar8[-1].
-     1x  pCVar13[-1].
-     1x  frame_bounds[-1].
-     1x  collision_triangle_list[-1].
-
-Functions:
-  core_chain.cpp_CChain_process_FUN_004300d0
-  core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
-  core_hero.cpp_CHero_dtor_FUN_004f2470
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-
-====================================================================================================
 TYPE: warning_unreachable (12 occurrences)
 ====================================================================================================
 
@@ -1377,14 +1357,13 @@ Functions:
   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
 
 ====================================================================================================
-TYPE: self_copy_guard (11 occurrences)
+TYPE: self_copy_guard (10 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    11x  if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }
+    10x  if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }
 
 Functions:
-  core_chain.cpp_CChain_process_FUN_004300d0
   core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
   core_curtain.cpp_CCurtain_process_FUN_0044a920
   core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
@@ -1435,6 +1414,26 @@ Functions:
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
 
 ====================================================================================================
+TYPE: negative_offset (7 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  pSVar10[-1].
+     1x  pSVar8[-1].
+     1x  pCVar4[-2].
+     1x  pCVar8[-1].
+     1x  pCVar13[-1].
+     1x  frame_bounds[-1].
+     1x  collision_triangle_list[-1].
+
+Functions:
+  core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
+  core_hero.cpp_CHero_dtor_FUN_004f2470
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+
+====================================================================================================
 TYPE: unrolled_strcat (6 occurrences)
 ====================================================================================================
 
@@ -1467,3 +1466,15 @@ Unique patterns:
 Functions:
   core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870
   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
+
+====================================================================================================
+TYPE: fast_sqrt_inline (2 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_FastSqr
+     1x  local_34 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90 (g_CFireEff
+
+Functions:
+  core_cloth.cpp_vectorLengthFast_FUN_0043e350
+  core_trigger.cpp_CTrigger_process_FUN_005dfac0

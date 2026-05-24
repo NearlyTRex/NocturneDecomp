@@ -4,23 +4,23 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5852 functions
-  1 suspects: 80 functions
-  2 suspects: 132 functions
-  3 suspects: 77 functions
+  0 suspects: 5851 functions
+  1 suspects: 84 functions
+  2 suspects: 131 functions
+  3 suspects: 76 functions
   4 suspects: 76 functions
-  5 suspects: 40 functions
-  6 suspects: 51 functions
+  5 suspects: 39 functions
+  6 suspects: 52 functions
   7 suspects: 18 functions
   8 suspects: 29 functions
   9 suspects: 9 functions
   10 suspects: 16 functions
-  11 suspects: 10 functions
+  11 suspects: 9 functions
   12 suspects: 10 functions
-  13 suspects: 4 functions
+  13 suspects: 5 functions
   14 suspects: 6 functions
   15 suspects: 6 functions
-  16 suspects: 6 functions
+  16 suspects: 5 functions
   17 suspects: 4 functions
   18 suspects: 8 functions
   19 suspects: 1 functions
@@ -42,7 +42,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [unrolled_memcpy] (27 functions)
+  [unrolled_memcpy] (26 functions)
   ------------------------------------------------------------
     core_msnedit.cpp_CDemonMission_raycastPickActor_FU ( 52 lines)
       local_28.x = g_CDemonCameraInstance.base.position.f.x;...
@@ -60,8 +60,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       pCVar1->w = local_28.w;...
     core_turret.cpp_CTurret_updatePatrol_FUN_005e3560  ( 62 lines)
       target_pos->x = pCVar5->x;...
-    core_chain.cpp_CChain_setup_FUN_0042fd20           ( 71 lines)
-      pCVar11[1].x = (pSVar1->position).x;...
     shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0   ( 71 lines)
       this_ptr->active_attribute_count = source_mesh->active_attri...
     core_trigger.cpp_CTrigger_containsActor_FUN_005e0c ( 77 lines)
@@ -196,16 +194,24 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_dmodel.cpp_CKeyFramedModel_removeUnusedVertic (169 lines)
       pSVar12 = (SMRGLPrimitiveQuad *)&(pSVar12->base).surface_nor...
 
-  [unrolled_memset] (4 functions)
+  [unrolled_memset] (8 functions)
   ------------------------------------------------------------
-    core_chain.cpp_CChain_constrainSegmentDistance_FUN ( 56 lines)
-      (vertex_a->velocity).z = 0.0;...
+    core_hiram.cpp_CHiram_process_FUN_004f4550         ( 59 lines)
+      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;...
     core_stranger.cpp_CStranger_updateTurnBlending_FUN ( 91 lines)
       (this_ptr->pending_velocity).z = 0.0;...
+    core_crate.cpp_CCrate_process_FUN_00448660         ( 93 lines)
+      (this_ptr->base).platform_position_delta.z = 0.0;...
     core_stranger.cpp_CStranger_ctor_FUN_005bb120      (100 lines)
       (ADJ(pCVar6)->pending_velocity).z = 0.0;...
     core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN (113 lines)
       (pSVar11->light).b = 0.0;...
+    core_charactr.cpp_CCharacter_moveAndCollide_FUN_00 (292 lines)
+      (this_ptr->base).platform_position_delta.z = 0.0;...
+    core_larva.cpp_CLarva_process_FUN_00503080         (332 lines)
+      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;...
+    core_imp.cpp_CImp_process_FUN_004f9c30             (492 lines)
+      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;...
 
   [bit_int_float_compare] (3 functions)
   ------------------------------------------------------------
@@ -215,6 +221,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       if ((int)local_1c < 0x3f800001) {...
     core_stranger.cpp_CStranger_updateProceduralAnimat (516 lines)
       if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {...
+
+  [fast_sqrt_inline] (1 functions)
+  ------------------------------------------------------------
+    core_cloth.cpp_vectorLengthFast_FUN_0043e350       (  4 lines)
+      return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->...
 
   [stack_alignment_array] (1 functions)
   ------------------------------------------------------------
@@ -371,8 +382,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 58, Types: ['unrolled_strcpy', 'warning_inlined_function']
   core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf4
     File: core/dmodel.cpp, Lines: 59, Types: ['pointer_cast']
-  core_chain.cpp_CChain_getBoundingBox_FUN_00430eb0
-    File: core/chain.cpp, Lines: 60, Types: ['unrolled_memcpy']
   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_0
     File: core/gabriela.cpp, Lines: 60, Types: ['missing_cave_copy']
   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_
@@ -561,8 +570,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/manpuz.cpp, Lines: 56, Types: ['pointer_cast', 'unrolled_memcpy']
   shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350
     File: shape/superopt.cpp, Lines: 58, Types: ['pointer_cast']
-  core_chain.cpp_CChain_ctor_FUN_0042fb80
-    File: core/chain.cpp, Lines: 59, Types: ['unrolled_strcpy']
   shape_cramtex.cpp_placementCollisionCheck_FUN_00448260
     File: shape/cramtex.cpp, Lines: 59, Types: ['pointer_cast']
   core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40
