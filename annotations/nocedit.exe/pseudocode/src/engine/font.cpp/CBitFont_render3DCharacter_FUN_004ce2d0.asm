@@ -44,7 +44,7 @@
 ;   ... and 23 more
 ;
 ; Called Functions:
-;   engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620
+;   engine_3d.c_renderPolygonWithRenderFlags_FUN_00407620
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_matrix.c_projectCachedPoint_FUN_0050cda0
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
@@ -361,8 +361,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004ce731
         ;   Label: LAB_004ce731
     PUSH EAX                            ; 004ce735
-    CALL engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620 ; 004ce736
-        ;   XREF to: 00407620 (UNCONDITIONAL_CALL)  ; void engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRGLHeaderPrimitive * primitive, int render_flags, int render_state_flags)
+    CALL engine_3d.c_renderPolygonWithRenderFlags_FUN_00407620 ; 004ce736
+        ;   XREF to: 00407620 (UNCONDITIONAL_CALL)  ; void engine_3d.c_renderPolygonWithRenderFlags_FUN_00407620(SMRGLHeaderPrimitive * primitive, int render_flags, int render_state_flags)
     ADD ESP,0xc                         ; 004ce73b
     ADD ESP,0x44                        ; 004ce73e
     POP EBP                             ; 004ce741

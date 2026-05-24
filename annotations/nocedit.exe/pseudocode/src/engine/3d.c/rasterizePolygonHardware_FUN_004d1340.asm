@@ -13,8 +13,8 @@
 ; SHardwareEdge *  Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   engine_3d.c_renderPolygonUVTextureEnableHardware_FUN_00405a00 at 00405a49
-;   engine_3d.c_renderPolygonUVVertexLit_FUN_00405aa0 at 00405af6
+;   engine_3d.c_renderPolygonSolidTexturedHardwareOp53_FUN_00405aa0 at 00405af6
+;   engine_3d.c_renderPolygonTexturedHardwareOp40_FUN_00405a00 at 00405a49
 ;
 ; Referenced Globals:
 ;   int g_WindowHeight = 0xc8

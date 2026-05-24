@@ -1,0 +1,167 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 26,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 88
+  },
+  "cross_references": [
+    {
+      "addr": "005dc760",
+      "from_addr": "005dc975",
+      "name": "core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00403cc0",
+    "address_range": [
+      [
+        "00403cc0",
+        "00403d5c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonTexturedLitOp7_FUN_00403cc0",
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedLitOp7_FUN_00403cc0(SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403a00",
+      "is_variadic": false,
+      "name": "engine_3d.c_calculatePolygonLighting_FUN_00403a00"
+    },
+    {
+      "addr": "00403950",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "004371b0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d05248",
+      "name": "g_MMXSupported",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005dc975",
+        "call_type": "direct",
+        "caller": "core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.608695652173913,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BRANCH": 3,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 36,
+      "INT_ADD": 15,
+      "INT_AND": 34,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 13,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "LOAD": 8,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 212
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

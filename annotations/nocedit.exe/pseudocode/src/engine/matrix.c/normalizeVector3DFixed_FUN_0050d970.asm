@@ -12,9 +12,9 @@
 ; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0 at 004055da
-;   engine_3d.c_renderPolygonUVTextureEnableNormalized_FUN_00405350 at 0040537a
-;   engine_3d.c_renderPolygonUVTextureNormalizedLit_FUN_00405430 at 0040545a
+;   engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405430 at 0040545a
+;   engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_004055b0 at 004055da
+;   engine_3d.c_renderPolygonTexturedUVLit_FUN_00405350 at 0040537a
 ;
 ; Called Functions:
 ;   engine_matrix.c_integerSquareRoot_FUN_0050d890

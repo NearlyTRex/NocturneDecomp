@@ -39,21 +39,21 @@ SMRGLHeaderExtended * __cdecl processVertexLighting(SMRGLHeaderExtended *mrgl);
 // Address: 00403a80
 SMRGLHeaderExtended * __cdecl processTextureCoordinates(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0
+// Original: engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_00403ad0
 // Address: 00403ad0
-SMRGLHeaderExtended * __cdecl renderPolygonLastPixelMode(SMRGLHeaderPrimitive *primitive);
+SMRGLHeaderExtended * __cdecl renderPolygonGrayscaleLitOp5(SMRGLHeaderPrimitive *primitive);
 
-// Original: engine_3d.c_renderPolygon_FUN_00403ba0
+// Original: engine_3d.c_renderPolygonFogColorOp6_FUN_00403ba0
 // Address: 00403ba0
-SMRGLHeaderExtended * __cdecl renderPolygon(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonFogColorOp6(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonTextureEnable_FUN_00403cc0
+// Original: engine_3d.c_renderPolygonTexturedLitOp7_FUN_00403cc0
 // Address: 00403cc0
-SMRGLHeaderExtended * __cdecl renderPolygonTextureEnable(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedLitOp7(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPrimitiveUVWrappedSpecial_FUN_00403d60
+// Original: engine_3d.c_renderPolygonFogTexturedWrappedOp8_FUN_00403d60
 // Address: 00403d60
-SMRGLHeaderExtended * __cdecl renderPrimitiveUVWrappedSpecial(SMRGLHeaderPrimitive *primitive);
+SMRGLHeaderExtended * __cdecl renderPolygonFogTexturedWrappedOp8(SMRGLHeaderPrimitive *primitive);
 
 // Original: engine_3d.c_oldFunction2_FUN_00403e00
 // Address: 00403e00
@@ -71,25 +71,25 @@ SMRGLHeaderExtended * __cdecl oldFunction3(SMRGLHeaderExtended *primitive);
 // Address: 00403ef0
 SMRGLHeaderExtended * __cdecl oldFunction4(SMRGLHeaderExtended *primitive);
 
-// Original: engine_3d.c_renderPolygonTextureNormalizedLit_FUN_00403f20
+// Original: engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403f20
 // Address: 00403f20
-SMRGLHeaderExtended * __cdecl renderPolygonTextureNormalizedLit(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedUVLitOp14(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderOverlayTextureEnable_FUN_00404020
+// Original: engine_3d.c_renderPolygonTexturedUVLitPlaneMasked_FUN_00404020
 // Address: 00404020
-void * __cdecl renderOverlayTextureEnable(SMRGLHeaderPrimitive *prim);
+void * __cdecl renderPolygonTexturedUVLitPlaneMasked(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonVertexLit_FUN_00404120
+// Original: engine_3d.c_renderPolygonSolidTexturedOp15_FUN_00404120
 // Address: 00404120
-SMRGLHeaderExtended * __cdecl renderPolygonVertexLit(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonSolidTexturedOp15(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_oldFunction5_FUN_004041d0
 // Address: 004041d0
 SMRGLHeaderExtended * __cdecl oldFunction5(SMRGLHeaderExtended *primitive);
 
-// Original: engine_3d.c_renderPolygonLitDetailedClamped_FUN_00404220
+// Original: engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00404220
 // Address: 00404220
-SMRGLHeaderExtended * __cdecl renderPolygonLitDetailedClamped(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonSolidLitClampedOp17(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_oldFunction6_FUN_00404420
 // Address: 00404420
@@ -99,9 +99,9 @@ SMRGLHeaderExtended * __cdecl oldFunction6(SMRGLHeaderExtended *primitive);
 // Address: 00404450
 SMRGLHeaderExtended * __cdecl setRelativeCoord(SMRGLHeaderPrimitive *primitive);
 
-// Original: engine_3d.c_renderPolygonTextureNormalized_FUN_004044a0
+// Original: engine_3d.c_renderPolygonTexturedNormalizedOp21_FUN_004044a0
 // Address: 004044a0
-SMRGLHeaderExtended * __cdecl renderPolygonTextureNormalized(SMRGLHeaderPrimitive *primitive);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedOp21(SMRGLHeaderPrimitive *primitive);
 
 // Original: engine_3d.c_setActiveRenderColor_FUN_00404540
 // Address: 00404540
@@ -119,181 +119,181 @@ SMRGLHeaderExtended * __cdecl drawLineStrip3D(SLineStrip *line_strip);
 // Address: 00404690
 SMRGLHeaderExtended * __cdecl oldFunction7(SMRGLHeaderExtended *primitive);
 
-// Original: engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0
+// Original: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046c0
 // Address: 004046c0
-SMRGLHeaderExtended * __cdecl renderPrimitivePlaneMaskedComplex(SMRGLHeaderPrimitive *primitive);
+SMRGLHeaderExtended * __cdecl renderPolygonLitAlphaPlaneMaskedUVOp24(SMRGLHeaderPrimitive *primitive);
 
-// Original: engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840
+// Original: engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404840
 // Address: 00404840
-SMRGLHeaderExtended * __cdecl renderPrimitiveAdaptivePlaneMasked(SMRGLHeaderPrimitive *primitive);
+SMRGLHeaderExtended * __cdecl renderPolygonAdaptivePlaneMaskedUVOp34(SMRGLHeaderPrimitive *primitive);
 
-// Original: engine_3d.c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40
+// Original: engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_00404a40
 // Address: 00404a40
-SMRGLHeaderExtended * __cdecl renderPolygonPlaneMaskedNearPlane(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonLitNearPlaneOp35(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
+// Original: engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0
 // Address: 00404ae0
-SMRGLHeaderExtended * __cdecl renderPolygonAdaptiveDepthMode(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonAdaptiveDepthOp25(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonPlaneMaskedComplex_FUN_00404c60
+// Original: engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404c60
 // Address: 00404c60
-SMRGLHeaderExtended * __cdecl renderPolygonPlaneMaskedComplex(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonLitAlphaPlaneMaskedOp26(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonUVMappedComplex_FUN_00404d50
+// Original: engine_3d.c_renderPolygonFogColorDepthOp27_FUN_00404d50
 // Address: 00404d50
-SMRGLHeaderExtended * __cdecl renderPolygonUVMappedComplex(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonFogColorDepthOp27(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_oldFunction8_FUN_00404df0
 // Address: 00404df0
 SMRGLHeaderExtended * __cdecl oldFunction8(SMRGLHeaderExtended *primitive);
 
-// Original: engine_3d.c_renderPolygonVertexLitNearPlane_FUN_00404e40
+// Original: engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404e40
 // Address: 00404e40
-void * __cdecl renderPolygonVertexLitNearPlane(SMRGLHeaderPrimitive *prim);
+void * __cdecl renderPolygonAlphaTexturedNearPlane(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonTextureNearPlane_FUN_00404ee0
+// Original: engine_3d.c_renderPolygonTexturedNearPlane_FUN_00404ee0
 // Address: 00404ee0
-SMRGLHeaderExtended * __cdecl renderPolygonTextureNearPlane(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedNearPlane(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonVertexLitNormalized_FUN_00404f80
+// Original: engine_3d.c_renderPolygonAlphaTexturedNormalized_FUN_00404f80
 // Address: 00404f80
-void * __cdecl renderPolygonVertexLitNormalized(SMRGLHeaderPrimitive *prim);
+void * __cdecl renderPolygonAlphaTexturedNormalized(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonVertexLitNormalized2_FUN_00405020
+// Original: engine_3d.c_renderPolygonAlphaTexturedNormalized2_FUN_00405020
 // Address: 00405020
-void * __cdecl renderPolygonVertexLitNormalized2(SMRGLHeaderPrimitive *prim);
+void * __cdecl renderPolygonAlphaTexturedNormalized2(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_updateAnimatedTexture_FUN_004050c0
 // Address: 004050c0
 SMRGLHeaderExtended * __cdecl updateAnimatedTexture(SMRGLAnimatedTexture *texture);
 
-// Original: engine_3d.c_renderPolygonUVTextureEnableVertexLit_FUN_00405170
+// Original: engine_3d.c_renderPolygonTexturedUVLitOp30_FUN_00405170
 // Address: 00405170
-SMRGLHeaderExtended * __cdecl renderPolygonUVTextureEnableVertexLit(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedUVLitOp30(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_setVertexTextureU_FUN_00405270
 // Address: 00405270
 SMRGLHeaderExtended * __cdecl setVertexTextureU(SMRGLHeaderExtended *mrgl);
 
-// Original: engine_3d.c_renderPolygonLitComplexAlpha_FUN_004052b0
+// Original: engine_3d.c_renderPolygonDestReadBlendOp33_FUN_004052b0
 // Address: 004052b0
-SMRGLHeaderExtended * __cdecl renderPolygonLitComplexAlpha(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonDestReadBlendOp33(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonUVTextureEnableNormalized_FUN_00405350
+// Original: engine_3d.c_renderPolygonTexturedUVLit_FUN_00405350
 // Address: 00405350
-SMRGLHeaderExtended * __cdecl renderPolygonUVTextureEnableNormalized(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedUVLit(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonUVTextureNormalizedLit_FUN_00405430
+// Original: engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405430
 // Address: 00405430
-SMRGLHeaderExtended * __cdecl renderPolygonUVTextureNormalizedLit(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedUVLit2(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonUVVertexLitNormalized_FUN_00405510
+// Original: engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405510
 // Address: 00405510
-SMRGLHeaderExtended * __cdecl renderPolygonUVVertexLitNormalized(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonAlphaTexturedNormalizedLit(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0
+// Original: engine_3d.c_renderPolygonTexturedNormalizedUVLit_FUN_004055b0
 // Address: 004055b0
-SMRGLHeaderExtended * __cdecl renderPolygonPerspectiveNormalized(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedUVLit(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonEnginePlaneMaskedEffect_FUN_00405690
+// Original: engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00405690
 // Address: 00405690
-SMRGLHeaderExtended * __cdecl renderPolygonEnginePlaneMaskedEffect(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonAlphaBlendedPlaneMaskedOp36(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonEnginePlaneMaskedAdvanced_FUN_004057b0
+// Original: engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057b0
 // Address: 004057b0
-SMRGLHeaderExtended * __cdecl renderPolygonEnginePlaneMaskedAdvanced(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonAlphaBlendedPlaneMaskedPerspOp37(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonUVWrappedAdvanced_FUN_004058d0
+// Original: engine_3d.c_renderPolygonFogTexturedPerspOp39_FUN_004058d0
 // Address: 004058d0
-SMRGLHeaderExtended * __cdecl renderPolygonUVWrappedAdvanced(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonFogTexturedPerspOp39(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonDepthWriteTextured_FUN_00405960
+// Original: engine_3d.c_renderPolygonDepthWritePass_FUN_00405960
 // Address: 00405960
-SMRGLHeaderExtended * __cdecl renderPolygonDepthWriteTextured(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonDepthWritePass(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonUVTextureEnableHardware_FUN_00405a00
+// Original: engine_3d.c_renderPolygonTexturedHardwareOp40_FUN_00405a00
 // Address: 00405a00
-SMRGLHeaderExtended * __cdecl renderPolygonUVTextureEnableHardware(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedHardwareOp40(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonUVVertexLit_FUN_00405aa0
+// Original: engine_3d.c_renderPolygonSolidTexturedHardwareOp53_FUN_00405aa0
 // Address: 00405aa0
-SMRGLHeaderExtended * __cdecl renderPolygonUVVertexLit(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonSolidTexturedHardwareOp53(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50
+// Original: engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50
 // Address: 00405b50
-SMRGLHeaderExtended * __cdecl renderPolygonTextureWrappedPlaneMasked(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonFogTexturedPlaneMaskedOp41(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonTextureWrappedStandard_FUN_00405ce0
+// Original: engine_3d.c_renderPolygonFogTexturedDepthOp42_FUN_00405ce0
 // Address: 00405ce0
-SMRGLHeaderExtended * __cdecl renderPolygonTextureWrappedStandard(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonFogTexturedDepthOp42(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonDepthWriteTexturedLit_FUN_00405d80
+// Original: engine_3d.c_renderPolygonTexturedDepthWriteOp43_FUN_00405d80
 // Address: 00405d80
-SMRGLHeaderExtended * __cdecl renderPolygonDepthWriteTexturedLit(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedDepthWriteOp43(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonDepthWriteTexturedAdvanced_FUN_00405e20
+// Original: engine_3d.c_renderPolygonFogTexturedDepthWriteOp44_FUN_00405e20
 // Address: 00405e20
-SMRGLHeaderExtended * __cdecl renderPolygonDepthWriteTexturedAdvanced(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonFogTexturedDepthWriteOp44(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonTexturedBasic_FUN_00405ec0
+// Original: engine_3d.c_renderPolygonTexturedOp45_FUN_00405ec0
 // Address: 00405ec0
-SMRGLHeaderExtended * __cdecl renderPolygonTexturedBasic(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedOp45(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonOverlayTextured_FUN_00405f60
+// Original: engine_3d.c_renderPolygonTexturedOp46_FUN_00405f60
 // Address: 00405f60
-SMRGLHeaderExtended * __cdecl renderPolygonOverlayTextured(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedOp46(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonDepthWriteTexturedLit2_FUN_00406000
+// Original: engine_3d.c_renderPolygonTexturedDepthWriteOp47_FUN_00406000
 // Address: 00406000
-SMRGLHeaderExtended * __cdecl renderPolygonDepthWriteTexturedLit2(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedDepthWriteOp47(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_004060a0
+// Original: engine_3d.c_renderPolygonSolidTexturedLitOp48_FUN_004060a0
 // Address: 004060a0
-SMRGLHeaderExtended * __cdecl renderPolygonTexturePerspectiveCorrect(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonSolidTexturedLitOp48(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonTextureWrappedLit_FUN_00406150
+// Original: engine_3d.c_renderPolygonTexturedDepthLitOp49_FUN_00406150
 // Address: 00406150
-SMRGLHeaderExtended * __cdecl renderPolygonTextureWrappedLit(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedDepthLitOp49(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonUVTextureNormalized_FUN_004061f0
+// Original: engine_3d.c_renderPolygonTexturedNormalizedOp50_FUN_004061f0
 // Address: 004061f0
-SMRGLHeaderExtended * __cdecl renderPolygonUVTextureNormalized(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonTexturedNormalizedOp50(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonTexturePerspectiveCorrectClamped_FUN_00406290
+// Original: engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_00406290
 // Address: 00406290
-SMRGLHeaderExtended * __cdecl renderPolygonTexturePerspectiveCorrectClamped(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonSolidTexturedClampedOp51(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430
+// Original: engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406430
 // Address: 00406430
-SMRGLHeaderExtended * __cdecl renderPolygonTextureAdaptiveWrapped(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonAdaptiveFogTexturedOp52(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonLastPixelMode2_FUN_004066d0
+// Original: engine_3d.c_renderPolygonGrayscaleLitOp54_FUN_004066d0
 // Address: 004066d0
-SMRGLHeaderExtended * __cdecl renderPolygonLastPixelMode2(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonGrayscaleLitOp54(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonPerspectiveAlphaSpecial_FUN_004067a0
+// Original: engine_3d.c_renderPolygonDestReadBlendDepthLitOp55_FUN_004067a0
 // Address: 004067a0
-SMRGLHeaderExtended * __cdecl renderPolygonPerspectiveAlphaSpecial(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonDestReadBlendDepthLitOp55(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
+// Original: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406860
 // Address: 00406860
-SMRGLHeaderExtended * __cdecl renderPolygonPlaneMaskedDetailedComplex(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonLitAlphaPlaneMaskedUVOp56(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonLitDetailedAmbient_FUN_00406a20
+// Original: engine_3d.c_renderPolygonSolidLitOp62_FUN_00406a20
 // Address: 00406a20
-SMRGLHeaderExtended * __cdecl renderPolygonLitDetailedAmbient(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonSolidLitOp62(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonExtremeQualityMode_FUN_00406b40
+// Original: engine_3d.c_renderPolygonFullEffectsLitOp57_FUN_00406b40
 // Address: 00406b40
-SMRGLHeaderExtended * __cdecl renderPolygonExtremeQualityMode(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonFullEffectsLitOp57(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonEngineDepthLit_FUN_00406be0
+// Original: engine_3d.c_renderPolygonVertexAlphaLitOp60_FUN_00406be0
 // Address: 00406be0
-SMRGLHeaderExtended * __cdecl renderPolygonEngineDepthLit(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonVertexAlphaLitOp60(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80
+// Original: engine_3d.c_renderPolygonBlendedLitOp63_FUN_00406c80
 // Address: 00406c80
-SMRGLHeaderExtended * __cdecl renderPolygonEngineEnhancedDepthLit(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonBlendedLitOp63(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_setRenderAlphaFromBlock_FUN_00406d60
 // Address: 00406d60
@@ -307,13 +307,13 @@ int __cdecl setRenderAlpha(int alpha_color_value);
 // Address: 00406dd0
 void __cdecl setBlendMode(int blend_mode);
 
-// Original: engine_3d.c_renderPolygonSpecialEffectsPlaneMasked_FUN_00406de0
+// Original: engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406de0
 // Address: 00406de0
-SMRGLHeaderExtended * __cdecl renderPolygonSpecialEffectsPlaneMasked(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonSpecialEffectsAdvanced_FUN_00406f20
+// Original: engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406f20
 // Address: 00406f20
-SMRGLHeaderExtended * __cdecl renderPolygonSpecialEffectsAdvanced(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonAlphaBlendedDepthWritePerspOp59(SMRGLHeaderPrimitive *prim);
 
 // Original: engine_3d.c_resetRenderBuffer_FUN_00407060
 // Address: 00407060
@@ -327,21 +327,21 @@ int __cdecl qsortByRenderDepth(SRenderBufferEntry **entry1_ptr,SRenderBufferEntr
 // Address: 004070c0
 void __cdecl flushPremiumRenderBuffer(void);
 
-// Original: engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290
+// Original: engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407290
 // Address: 00407290
-SMRGLHeaderExtended * __cdecl renderPolygonEngineAPIPremiumMultiState(SMRGLHeaderPrimitive *prim);
+SMRGLHeaderExtended * __cdecl renderPolygonFullEffectsBufferedOp65(SMRGLHeaderPrimitive *prim);
 
-// Original: engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
+// Original: engine_3d.c_renderPolygonFullEffectsDirectOp66_FUN_00407470
 // Address: 00407470
-SMRGLHeaderExtended * __cdecl renderPolygonEngineAPIPremiumDirect(SMRGLHeaderPrimitive *primitive);
+SMRGLHeaderExtended * __cdecl renderPolygonFullEffectsDirectOp66(SMRGLHeaderPrimitive *primitive);
 
-// Original: engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620
+// Original: engine_3d.c_renderPolygonWithRenderFlags_FUN_00407620
 // Address: 00407620
-void __cdecl renderPolygonAPIAdaptivePreprocessing(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags);
+void __cdecl renderPolygonWithRenderFlags(SMRGLHeaderPrimitive *primitive,int render_flags,int render_state_flags);
 
-// Original: engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720
+// Original: engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00407720
 // Address: 00407720
-void __cdecl renderPolygonAPIAdaptivePreprocessingWithUV(SMRGLHeaderPrimitive *prim,int render_flags,int render_state_flags);
+void __cdecl renderPolygonWithRenderFlagsUV(SMRGLHeaderPrimitive *prim,int render_flags,int render_state_flags);
 
 // Original: engine_3d.c_setProcessorType_FUN_00407870
 // Address: 00407870

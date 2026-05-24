@@ -1,0 +1,224 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "keep.c",
+  "complexity": {
+    "assembly_lines": 144,
+    "complexity_score": 76,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 10,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 76,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 220
+  },
+  "cross_references": [
+    {
+      "addr": "0045ce20",
+      "from_addr": "0045d124",
+      "name": "shape_design.c_renderSinglePolygon_FUN_0045ce20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00404ae0",
+    "address_range": [
+      [
+        "00404ae0",
+        "00404c54"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0",
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0(SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403950",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "004039c0",
+      "is_variadic": false,
+      "name": "engine_3d.c_makeGrayscaleColor_FUN_004039c0"
+    },
+    {
+      "addr": "004371b0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0"
+    },
+    {
+      "addr": "00505780",
+      "is_variadic": false,
+      "name": "engine_light.cpp_calculateLighting_FUN_00505780"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0066df80",
+      "name": "INT_0066df80",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "00772a5c",
+      "name": "g_CurrentPolygonColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a74",
+      "name": "g_TexturesDisabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02574",
+      "name": "g_CurrentLightingValue",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d05248",
+      "name": "g_MMXSupported",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0045d124",
+        "call_type": "direct",
+        "caller": "shape_design.c_renderSinglePolygon_FUN_0045ce20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045d1af",
+        "call_type": "direct",
+        "caller": "shape_design.c_renderSinglePolygon_FUN_0045ce20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.76,
+    "instruction_count": 100,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BRANCH": 11,
+      "CALL": 4,
+      "CBRANCH": 12,
+      "COPY": 73,
+      "INT_ADD": 19,
+      "INT_AND": 54,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 43,
+      "INT_LEFT": 2,
+      "INT_LESS": 11,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 23,
+      "INT_SUB": 28,
+      "INT_XOR": 3,
+      "LOAD": 11,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 376
+  },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 7,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "code *pcVar3;",
+      "type": "unresolved_funcptr"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 100,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

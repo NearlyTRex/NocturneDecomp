@@ -13,7 +13,6 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *t
   uint uVar4;
   int iVar3;
   int iVar4;
-  int iVar5;
   int iVar6;
   int iVar8;
   int iVar11;
@@ -138,6 +137,6 @@ LAB_004ce397:
   else {
     iVar3 = 0x227;
   }
-  engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(&SStack_54.base,iVar3,0);
+  engine_3d_c_renderPolygonWithRenderFlags_FUN_00407620(&SStack_54.base,iVar3,0);
   return;
 }

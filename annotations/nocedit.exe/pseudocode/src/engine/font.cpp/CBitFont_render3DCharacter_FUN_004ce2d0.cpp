@@ -195,6 +195,6 @@ LAB_004ce397:
   else {
     iVar3 = 0x227;
   }
-  engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(&SStack_54.base,iVar3,0);
+  engine_3d_c_renderPolygonWithRenderFlags_FUN_00407620(&SStack_54.base,iVar3,0);
   return;
 }

@@ -10,13 +10,13 @@
 ;   core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0 at 00482935
 ;   engine_3d.c_addFaceIfVisible_FUN_004079c0 at 004079c8
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 at 00407be0
-;   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720 at 00407730
-;   engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620 at 0040762c
-;   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 at 00404af5
-;   engine_3d.c_renderPolygonDepthWriteTexturedAdvanced_FUN_00405e20 at 00405e2e
-;   engine_3d.c_renderPolygonDepthWriteTexturedLit2_FUN_00406000 at 0040600e
-;   engine_3d.c_renderPolygonDepthWriteTexturedLit_FUN_00405d80 at 00405d8e
-;   engine_3d.c_renderPolygonDepthWriteTextured_FUN_00405960 at 0040596e
+;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0 at 00404af5
+;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406430 at 00406444
+;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404840 at 0040484d
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406f20 at 00406f3a
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406de0 at 00406dfa
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00405690 at 0040569e
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057b0 at 004057be
 ;   ... and 75 more
 ;
 ; Referenced Globals:

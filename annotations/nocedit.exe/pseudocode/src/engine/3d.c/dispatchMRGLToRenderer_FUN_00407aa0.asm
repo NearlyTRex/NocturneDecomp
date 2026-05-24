@@ -28,9 +28,9 @@
 ;   engine_3d.c_dispatchMRGLBlockChain_FUN_00407890
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
 ;   engine_3d.c_processVertexLighting_FUN_00403a20
-;   engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290
-;   engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50
-;   engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0
+;   engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50
+;   engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407290
+;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046c0
 ;   engine_3d.c_transformAndBufferVertices_FUN_00403840
 ;   engine_model.c_getMRGLSize_FUN_00528700
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
@@ -166,8 +166,8 @@ section .text
     PUSH EBP                            ; 00407bc2
     ADD ESI,0x4                         ; 00407bc3
     INC EBX                             ; 00407bc6
-    CALL engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50 ; 00407bc7
-        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50 ; 00407bc7
+        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50(SMRGLHeaderPrimitive * prim)
     MOV EAX,[0x00820070]                ; 00407bcc | g_RenderFaceCount
     ADD ESP,0x4                         ; 00407bd1
     CMP EBX,EAX                         ; 00407bd4
@@ -205,15 +205,15 @@ section .text
         ;   XREF to: 00407aef (UNCONDITIONAL_JUMP)  ; LAB_00407aef
     PUSH EDI                            ; 00407c38
         ;   Label: LAB_00407c38
-    CALL engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0 ; 00407c39
-        ;   XREF to: 004046c0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0(SMRGLHeaderPrimitive * primitive)
+    CALL engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046c0 ; 00407c39
+        ;   XREF to: 004046c0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046c0(SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x4                         ; 00407c3e
     JMP 0x00407aef                      ; 00407c41
         ;   XREF to: 00407aef (UNCONDITIONAL_JUMP)  ; LAB_00407aef
     PUSH EDI                            ; 00407c46
         ;   Label: LAB_00407c46
-    CALL engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290 ; 00407c47
-        ;   XREF to: 00407290 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407290 ; 00407c47
+        ;   XREF to: 00407290 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407290(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00407c4c
     JMP 0x00407aef                      ; 00407c4f
         ;   XREF to: 00407aef (UNCONDITIONAL_JUMP)  ; LAB_00407aef
@@ -273,8 +273,8 @@ section .text
     PUSH EBP                            ; 00407ccf
     ADD EBX,0x4                         ; 00407cd0
     INC EDI                             ; 00407cd3
-    CALL engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50 ; 00407cd4
-        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50 ; 00407cd4
+        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50(SMRGLHeaderPrimitive * prim)
     MOV EAX,[0x00820070]                ; 00407cd9 | g_RenderFaceCount
     ADD ESP,0x4                         ; 00407cde
     CMP EDI,EAX                         ; 00407ce1

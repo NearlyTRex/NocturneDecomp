@@ -8,11 +8,11 @@
 ; int              Stack[0x8]:4   lighting_value
 ;
 ; XREF[5]:
-;   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 at 00404b5e
-;   engine_3d.c_renderPolygonLastPixelMode2_FUN_004066d0 at 0040673f
-;   engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0 at 00403b3f
-;   engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430 at 00406655
-;   engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840 at 004049d0
+;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0 at 00404b5e
+;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406430 at 00406655
+;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404840 at 004049d0
+;   engine_3d.c_renderPolygonGrayscaleLitOp54_FUN_004066d0 at 0040673f
+;   engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_00403ad0 at 00403b3f
 ;
 ; *****************************************************************************
 

@@ -28,7 +28,7 @@
 ;   ... and 25 more
 ;
 ; Called Functions:
-;   engine_3d.c_renderPolygonTextureEnable_FUN_00403cc0
+;   engine_3d.c_renderPolygonTexturedLitOp7_FUN_00403cc0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_light.cpp_setAmbientLightLevel_FUN_00505490
 ;   engine_light.cpp_setDirectionalLightVector_FUN_005054d0
@@ -192,8 +192,8 @@ section .text
     ADD ESP,0x8                         ; 005dc96f
     MOV EAX,ESP                         ; 005dc972
     PUSH EAX                            ; 005dc974
-    CALL engine_3d.c_renderPolygonTextureEnable_FUN_00403cc0 ; 005dc975
-        ;   XREF to: 00403cc0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureEnable_FUN_00403cc0(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonTexturedLitOp7_FUN_00403cc0 ; 005dc975
+        ;   XREF to: 00403cc0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTexturedLitOp7_FUN_00403cc0(SMRGLHeaderPrimitive * prim)
     MOV DL,byte ptr [0x02d03eb3]        ; 005dc97a | g_KeyboardState+0x1b
     ADD ESP,0x4                         ; 005dc980
     TEST DL,DL                          ; 005dc983

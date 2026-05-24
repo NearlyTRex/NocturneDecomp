@@ -1,0 +1,360 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "keep.c",
+  "complexity": {
+    "assembly_lines": 194,
+    "complexity_score": 104,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 22,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 104,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 298
+  },
+  "cross_references": [
+    {
+      "addr": "00407aa0",
+      "from_addr": "00407c47",
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00407290",
+    "address_range": [
+      [
+        "00407290",
+        "0040746d"
+      ],
+      [
+        "03fc3820",
+        "03fc387d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407290",
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_00407290(SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403950",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "004371b0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0"
+    },
+    {
+      "addr": "005dd9c0",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_getCurrentTexture_FUN_005dd9c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "006793b4",
+      "name": "g_CurrentAlphaValue",
+      "type": "int",
+      "value": "0xff"
+    },
+    {
+      "addr": "0068802c",
+      "name": "g_RenderVertexBuffer[0].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688030",
+      "name": "g_RenderVertexBuffer[0].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772a60",
+      "name": "g_ProcessedVertexOffset",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "00772a98",
+      "name": "g_ProcessedVertexIndices",
+      "type": "int[24]",
+      "value": null
+    },
+    {
+      "addr": "00772a9c",
+      "name": "g_ProcessedVertexIndices[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772af8",
+      "name": "g_RenderBufferEnabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772afc",
+      "name": "g_RenderBufferCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772b00",
+      "name": "g_RenderBufferPool",
+      "type": "SRenderBufferEntry[256]",
+      "value": null
+    },
+    {
+      "addr": "00772b0c",
+      "name": "g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772b3c",
+      "name": "g_RenderBufferPool[0].vertices[1].projected_vertex.transformed_z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772bc4",
+      "name": "g_RenderBufferPool[0].texture_data[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772bc8",
+      "name": "g_RenderBufferPool[0].texture_data[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772c0c",
+      "name": "g_RenderBufferPool[0].alpha_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772c10",
+      "name": "g_RenderBufferPool[0].blend_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772c14",
+      "name": "g_RenderBufferPool[0].min_z_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d05248",
+      "name": "g_MMXSupported",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d05298",
+      "name": "g_BlendMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00407c47",
+        "call_type": "direct",
+        "caller": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.754716981132075,
+    "instruction_count": 159,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 19,
+      "BOOL_OR": 1,
+      "BRANCH": 8,
+      "CALL": 3,
+      "CBRANCH": 12,
+      "COPY": 127,
+      "INT_ADD": 75,
+      "INT_AND": 115,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 88,
+      "INT_LEFT": 6,
+      "INT_LESS": 12,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 15,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 19,
+      "INT_SEXT": 9,
+      "INT_SLESS": 46,
+      "INT_SUB": 28,
+      "INT_XOR": 7,
+      "INT_ZEXT": 2,
+      "LOAD": 35,
+      "POPCOUNT": 40,
+      "RETURN": 1,
+      "STORE": 33,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 756
+  },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)g_ProcessedVertexIndices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_ProcessedVertexIndices + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(SMRGLTextureBasic *)((int)pSVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar6 = (SMRGLTextureBasic *)((int)pSVar6 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 95,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x12; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 77,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5->vertices[0].u = g_RenderVertexBuffer[iVar1].u;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 49,
+      "match": "pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pSVar5->vertices[0].a`). Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 87,
+      "match": "pSVar5 = (T *)&pSVar5->FIELD[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SRenderBufferEntry *)&pSVar5->vertices[0].a;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 135,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 00407422: MOVSD.REP ES:EDI,ESI  ; g_RenderBufferPool[0].texture_data[0] | g_RenderBufferPool[0].texture_data[1]",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 260,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

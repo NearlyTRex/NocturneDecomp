@@ -7,16 +7,16 @@
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; XREF[21]:
-;   engine_3d.c_renderOverlayTextureEnable_FUN_00404020 at 00404067
-;   engine_3d.c_renderPolygonEngineDepthLit_FUN_00406be0 at 00406c2e
-;   engine_3d.c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80 at 00406cd8
-;   engine_3d.c_renderPolygonExtremeQualityMode_FUN_00406b40 at 00406b8e
-;   engine_3d.c_renderPolygonLitDetailedAmbient_FUN_00406a20 at 00406a6f
-;   engine_3d.c_renderPolygonLitDetailedClamped_FUN_00404220 at 0040427d
-;   engine_3d.c_renderPolygonPerspectiveAlphaSpecial_FUN_004067a0 at 0040680a
-;   engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0 at 0040562f
-;   engine_3d.c_renderPolygonPlaneMaskedComplex_FUN_00404c60 at 00404cb9
-;   engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860 at 004068b7
+;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404840 at 00404944
+;   engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405510 at 0040555e
+;   engine_3d.c_renderPolygonBlendedLitOp63_FUN_00406c80 at 00406cd8
+;   engine_3d.c_renderPolygonDestReadBlendDepthLitOp55_FUN_004067a0 at 0040680a
+;   engine_3d.c_renderPolygonFullEffectsLitOp57_FUN_00406b40 at 00406b8e
+;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404c60 at 00404cb9
+;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046c0 at 00404703
+;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406860 at 004068b7
+;   engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_00404a40 at 00404a8e
+;   engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00404220 at 0040427d
 ;   ... and 11 more
 ;
 ; Referenced Globals:

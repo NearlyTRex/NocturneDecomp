@@ -83,7 +83,7 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
       pcVar4 = pcVar4 + 2;
     } while (cVar2 != '\0');
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&local_28);
-    engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0(&SStack_50.base);
+    engine_3d_c_renderPolygonTexturedLitOp7_FUN_00403cc0(&SStack_50.base);
     if (g_KeyboardState[0x1b] != '\0') {
       g_KeyboardState[0x1b] = '\0';
       iVar2 = this_ptr->current_master_selection + (uint)(byte)g_KeyboardState[0x2a] * 9 + 1;

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470 at 00407572
-;   engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290 at 00407405
+;   engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_00407290 at 00407405
+;   engine_3d.c_renderPolygonFullEffectsDirectOp66_FUN_00407470 at 00407572
 ;
 ; Referenced Globals:
 ;   int g_CurrentTextureIndex

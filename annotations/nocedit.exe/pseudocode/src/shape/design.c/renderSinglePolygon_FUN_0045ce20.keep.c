@@ -71,13 +71,13 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
                               (float)65536));
       }
       if (g_ZBufferEnabled == 0) {
-        engine_3d_c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40(&local_c4);
+        engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_00404a40(&local_c4);
       }
       else if (g_GouraudShadingEnabled == 0) {
-        engine_3d_c_renderPolygonPlaneMaskedComplex_FUN_00404c60(&local_c4);
+        engine_3d_c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404c60(&local_c4);
       }
       else {
-        engine_3d_c_renderPolygonTextureWrappedStandard_FUN_00405ce0(&local_c4);
+        engine_3d_c_renderPolygonFogTexturedDepthOp42_FUN_00405ce0(&local_c4);
       }
     }
     else if (local_1c == 0) {
@@ -86,17 +86,17 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
         engine_3d_c_processPolygonColor_FUN_00403e30(&local_color_prim);
         if (g_GouraudShadingEnabled == 0) {
           if (g_ZBufferEnabled == 0) {
-            engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad0(&local_c4);
+            engine_3d_c_renderPolygonGrayscaleLitOp5_FUN_00403ad0(&local_c4);
           }
           else {
-            engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(&local_c4);
+            engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0(&local_c4);
           }
         }
         else if (g_ZBufferEnabled == 0) {
-          engine_3d_c_renderPolygon_FUN_00403ba0(&local_c4);
+          engine_3d_c_renderPolygonFogColorOp6_FUN_00403ba0(&local_c4);
         }
         else {
-          engine_3d_c_renderPolygonUVMappedComplex_FUN_00404d50(&local_c4);
+          engine_3d_c_renderPolygonFogColorDepthOp27_FUN_00404d50(&local_c4);
         }
       }
     }
@@ -104,10 +104,10 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
       local_color_prim.base.count = -g_EditorColorMode;
       engine_3d_c_processPolygonColor_FUN_00403e30(&local_color_prim);
       if (g_ZBufferEnabled == 0) {
-        engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad0(&local_c4);
+        engine_3d_c_renderPolygonGrayscaleLitOp5_FUN_00403ad0(&local_c4);
       }
       else {
-        engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(&local_c4);
+        engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0(&local_c4);
       }
     }
   }

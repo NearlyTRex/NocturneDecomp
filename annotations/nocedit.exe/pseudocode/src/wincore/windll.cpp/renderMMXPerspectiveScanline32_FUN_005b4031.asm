@@ -6,15 +6,15 @@
 ;
 ; XREF[77]:
 ;   engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0 at 00407263
-;   engine_3d.c_renderOverlayTextureEnable_FUN_00404020 at 004040cc
-;   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720 at 00407817
-;   engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620 at 004076cb
-;   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 at 00404c47
-;   engine_3d.c_renderPolygonDepthWriteTexturedAdvanced_FUN_00405e20 at 00405e9f
-;   engine_3d.c_renderPolygonDepthWriteTexturedLit2_FUN_00406000 at 0040607f
-;   engine_3d.c_renderPolygonDepthWriteTexturedLit_FUN_00405d80 at 00405dff
-;   engine_3d.c_renderPolygonDepthWriteTextured_FUN_00405960 at 004059df
-;   engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470 at 004075e8
+;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0 at 00404c47
+;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406430 at 004065a3
+;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00404840 at 00404966
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406f20 at 0040702d
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406de0 at 00406eea
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00405690 at 00405790
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057b0 at 004058b3
+;   engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404e40 at 00404ebf
+;   engine_3d.c_renderPolygonAlphaTexturedNormalized2_FUN_00405020 at 0040509f
 ;   ... and 67 more
 ;
 ; Referenced Globals:

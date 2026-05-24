@@ -15,14 +15,14 @@
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[10]:
-;   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720 at 0040785d
-;   engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620 at 00407706
-;   engine_3d.c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80 at 00406d45
-;   engine_3d.c_renderPolygonEnginePlaneMaskedAdvanced_FUN_004057b0 at 00405887
-;   engine_3d.c_renderPolygonEnginePlaneMaskedEffect_FUN_00405690 at 00405764
-;   engine_3d.c_renderPolygonSpecialEffectsAdvanced_FUN_00406f20 at 00407002
-;   engine_3d.c_renderPolygonSpecialEffectsPlaneMasked_FUN_00406de0 at 00406ebf
-;   engine_3d.c_renderPolygon_FUN_00403ba0 at 00403c71
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406f20 at 00407002
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406de0 at 00406ebf
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00405690 at 00405764
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057b0 at 00405887
+;   engine_3d.c_renderPolygonBlendedLitOp63_FUN_00406c80 at 00406d45
+;   engine_3d.c_renderPolygonFogColorOp6_FUN_00403ba0 at 00403c71
+;   engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00407720 at 0040785d
+;   engine_3d.c_renderPolygonWithRenderFlags_FUN_00407620 at 00407706
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740 at 0048a7d4
 ;   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 at 0048d5ce
 ;

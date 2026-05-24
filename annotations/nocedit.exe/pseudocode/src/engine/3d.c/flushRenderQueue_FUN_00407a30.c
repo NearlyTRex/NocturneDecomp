@@ -28,7 +28,7 @@ void __cdecl engine_3d_c_flushRenderQueue_FUN_00407a30(void)
         puVar1 = (uint *)((int)g_RenderFaceArray + iVar2);
         iVar2 = iVar2 + 4;
         iVar3 = iVar3 + 1;
-        engine_3d_c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50
+        engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50
                   ((SMRGLHeaderPrimitive *)*puVar1);
       } while (iVar3 < g_RenderFaceCount);
     }

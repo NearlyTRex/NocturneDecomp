@@ -1,0 +1,170 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 112,
+    "complexity_score": 51,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 7,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 51,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 163
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00406f20",
+    "address_range": [
+      [
+        "00406f20",
+        "00407058"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406f20",
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406f20(SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403950",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "004057b0",
+      "is_variadic": false,
+      "name": "engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_004057b0"
+    },
+    {
+      "addr": "00405960",
+      "is_variadic": false,
+      "name": "engine_3d.c_renderPolygonDepthWritePass_FUN_00405960"
+    },
+    {
+      "addr": "004371b0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0"
+    },
+    {
+      "addr": "00438420",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipPolygonToViewport_FUN_00438420"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02d02578",
+      "name": "g_AdvancedClippingEnabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d05248",
+      "name": "g_MMXSupported",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4625,
+    "instruction_count": 80,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BRANCH": 6,
+      "CALL": 5,
+      "CBRANCH": 9,
+      "COPY": 56,
+      "INT_ADD": 24,
+      "INT_AND": 59,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 38,
+      "INT_LEFT": 4,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 22,
+      "INT_SUB": 24,
+      "INT_XOR": 2,
+      "LOAD": 13,
+      "POPCOUNT": 18,
+      "RETURN": 3,
+      "STORE": 14
+    },
+    "pcode_op_count": 357
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 236,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

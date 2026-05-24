@@ -12,7 +12,7 @@
 ;   int g_UseExternalRenderer
 ;
 ; Called Functions:
-;   engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50
+;   engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50
 ;   wincore_windll.cpp_drawPolyList_FUN_005b7640
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     PUSH EDI                            ; 00407a55
     ADD EBX,0x4                         ; 00407a56
     INC ESI                             ; 00407a59
-    CALL engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50 ; 00407a5a
-        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50 ; 00407a5a
+        ;   XREF to: 00405b50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b50(SMRGLHeaderPrimitive * prim)
     MOV EBP,dword ptr [0x00820070]      ; 00407a5f | g_RenderFaceCount
     ADD ESP,0x4                         ; 00407a65
     CMP ESI,EBP                         ; 00407a68

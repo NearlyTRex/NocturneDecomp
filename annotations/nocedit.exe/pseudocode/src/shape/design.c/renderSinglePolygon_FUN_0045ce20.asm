@@ -38,13 +38,13 @@
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_3d.c_processPolygonColor_FUN_00403e30
-;   engine_3d.c_renderPolygon_FUN_00403ba0
-;   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
-;   engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0
-;   engine_3d.c_renderPolygonPlaneMaskedComplex_FUN_00404c60
-;   engine_3d.c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40
-;   engine_3d.c_renderPolygonTextureWrappedStandard_FUN_00405ce0
-;   engine_3d.c_renderPolygonUVMappedComplex_FUN_00404d50
+;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0
+;   engine_3d.c_renderPolygonFogColorDepthOp27_FUN_00404d50
+;   engine_3d.c_renderPolygonFogColorOp6_FUN_00403ba0
+;   engine_3d.c_renderPolygonFogTexturedDepthOp42_FUN_00405ce0
+;   engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_00403ad0
+;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404c60
+;   engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_00404a40
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
 ;   shape_design.c_calculatePolygonNormal_FUN_0045caa0
 ;
@@ -270,16 +270,16 @@ section .text
         ;   XREF to: 0045d0d2 (CONDITIONAL_JUMP)  ; LAB_0045d0d2
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d0c1
     PUSH EAX                            ; 0045d0c7
-    CALL engine_3d.c_renderPolygonTextureWrappedStandard_FUN_00405ce0 ; 0045d0c8
-        ;   XREF to: 00405ce0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedStandard_FUN_00405ce0(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonFogTexturedDepthOp42_FUN_00405ce0 ; 0045d0c8
+        ;   XREF to: 00405ce0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedDepthOp42_FUN_00405ce0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d0cd
     JMP 0x0045d0e1                      ; 0045d0d0
         ;   XREF to: 0045d0e1 (UNCONDITIONAL_JUMP)  ; LAB_0045d0e1
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d0d2
         ;   Label: LAB_0045d0d2
     PUSH EAX                            ; 0045d0d8
-    CALL engine_3d.c_renderPolygonPlaneMaskedComplex_FUN_00404c60 ; 0045d0d9
-        ;   XREF to: 00404c60 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonPlaneMaskedComplex_FUN_00404c60(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404c60 ; 0045d0d9
+        ;   XREF to: 00404c60 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00404c60(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d0de
     JMP 0x0045d0f2                      ; 0045d0e1
         ;   XREF to: 0045d0f2 (UNCONDITIONAL_JUMP)  ; LAB_0045d0f2
@@ -287,8 +287,8 @@ section .text
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d0e3
         ;   Label: LAB_0045d0e3
     PUSH EAX                            ; 0045d0e9
-    CALL engine_3d.c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40 ; 0045d0ea
-        ;   XREF to: 00404a40 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_00404a40 ; 0045d0ea
+        ;   XREF to: 00404a40 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_00404a40(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d0ef
     JMP 0x0045d1c8                      ; 0045d0f2
         ;   XREF to: 0045d1c8 (UNCONDITIONAL_JUMP)  ; LAB_0045d1c8
@@ -310,16 +310,16 @@ section .text
         ;   XREF to: 0045d12e (CONDITIONAL_JUMP)  ; LAB_0045d12e
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d11d
     PUSH EAX                            ; 0045d123
-    CALL engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 ; 0045d124
-        ;   XREF to: 00404ae0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0 ; 0045d124
+        ;   XREF to: 00404ae0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d129
     JMP 0x0045d13d                      ; 0045d12c
         ;   XREF to: 0045d13d (UNCONDITIONAL_JUMP)  ; LAB_0045d13d
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d12e
         ;   Label: LAB_0045d12e
     PUSH EAX                            ; 0045d134
-    CALL engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0 ; 0045d135
-        ;   XREF to: 00403ad0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0(SMRGLHeaderPrimitive * primitive)
+    CALL engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_00403ad0 ; 0045d135
+        ;   XREF to: 00403ad0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_00403ad0(SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x4                         ; 0045d13a
     JMP 0x0045d1c8                      ; 0045d13d
         ;   XREF to: 0045d1c8 (UNCONDITIONAL_JUMP)  ; LAB_0045d1c8
@@ -344,16 +344,16 @@ section .text
         ;   XREF to: 0045d18e (CONDITIONAL_JUMP)  ; LAB_0045d18e
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d17d
     PUSH EAX                            ; 0045d183
-    CALL engine_3d.c_renderPolygonUVMappedComplex_FUN_00404d50 ; 0045d184
-        ;   XREF to: 00404d50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonUVMappedComplex_FUN_00404d50(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonFogColorDepthOp27_FUN_00404d50 ; 0045d184
+        ;   XREF to: 00404d50 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogColorDepthOp27_FUN_00404d50(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d189
     JMP 0x0045d19d                      ; 0045d18c
         ;   XREF to: 0045d19d (UNCONDITIONAL_JUMP)  ; LAB_0045d19d
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d18e
         ;   Label: LAB_0045d18e
     PUSH EAX                            ; 0045d194
-    CALL engine_3d.c_renderPolygon_FUN_00403ba0 ; 0045d195
-        ;   XREF to: 00403ba0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygon_FUN_00403ba0(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonFogColorOp6_FUN_00403ba0 ; 0045d195
+        ;   XREF to: 00403ba0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogColorOp6_FUN_00403ba0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d19a
     JMP 0x0045d1c8                      ; 0045d19d
         ;   XREF to: 0045d1c8 (UNCONDITIONAL_JUMP)  ; LAB_0045d1c8
@@ -364,16 +364,16 @@ section .text
         ;   XREF to: 0045d1b9 (CONDITIONAL_JUMP)  ; LAB_0045d1b9
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d1a8
     PUSH EAX                            ; 0045d1ae
-    CALL engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 ; 0045d1af
-        ;   XREF to: 00404ae0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0(SMRGLHeaderPrimitive * prim)
+    CALL engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0 ; 0045d1af
+        ;   XREF to: 00404ae0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404ae0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0045d1b4
     JMP 0x0045d1c8                      ; 0045d1b7
         ;   XREF to: 0045d1c8 (UNCONDITIONAL_JUMP)  ; LAB_0045d1c8
     LEA EAX,[EBP + 0xffffff4c]          ; 0045d1b9
         ;   Label: LAB_0045d1b9
     PUSH EAX                            ; 0045d1bf
-    CALL engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0 ; 0045d1c0
-        ;   XREF to: 00403ad0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0(SMRGLHeaderPrimitive * primitive)
+    CALL engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_00403ad0 ; 0045d1c0
+        ;   XREF to: 00403ad0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_00403ad0(SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x4                         ; 0045d1c5
     MOV ESP,EBP                         ; 0045d1c8
         ;   Label: LAB_0045d1c8

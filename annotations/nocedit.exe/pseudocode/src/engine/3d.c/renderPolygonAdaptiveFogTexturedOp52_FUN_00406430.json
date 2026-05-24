@@ -1,0 +1,242 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "keep.c",
+  "complexity": {
+    "assembly_lines": 211,
+    "complexity_score": 109,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 16,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 109,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 320
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00406430",
+    "address_range": [
+      [
+        "00406430",
+        "004066c3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406430",
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406430(SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403950",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "004039c0",
+      "is_variadic": false,
+      "name": "engine_3d.c_makeGrayscaleColor_FUN_004039c0"
+    },
+    {
+      "addr": "004371b0",
+      "is_variadic": false,
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0"
+    },
+    {
+      "addr": "00505780",
+      "is_variadic": false,
+      "name": "engine_light.cpp_calculateLighting_FUN_00505780"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0066df80",
+      "name": "INT_0066df80",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "0068802c",
+      "name": "g_RenderVertexBuffer[0].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688030",
+      "name": "g_RenderVertexBuffer[0].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772a5c",
+      "name": "g_CurrentPolygonColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a60",
+      "name": "g_ProcessedVertexOffset",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "00772a70",
+      "name": "INT_00772a70",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a74",
+      "name": "g_TexturesDisabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a98",
+      "name": "g_ProcessedVertexIndices",
+      "type": "int[24]",
+      "value": null
+    },
+    {
+      "addr": "00772a9c",
+      "name": "g_ProcessedVertexIndices[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02574",
+      "name": "g_CurrentLightingValue",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "MainScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d05248",
+      "name": "g_MMXSupported",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "_BIT_INTEGER32",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_VertexPreprocessMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8322147651006713,
+    "instruction_count": 149,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 19,
+      "BRANCH": 16,
+      "CALL": 4,
+      "CBRANCH": 17,
+      "COPY": 107,
+      "INT_ADD": 32,
+      "INT_AND": 81,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 70,
+      "INT_LEFT": 2,
+      "INT_LESS": 16,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 12,
+      "INT_SEXT": 6,
+      "INT_SLESS": 36,
+      "INT_SUB": 33,
+      "INT_XOR": 4,
+      "LOAD": 17,
+      "POPCOUNT": 34,
+      "RETURN": 1,
+      "STORE": 19,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 571
+  },
+  "resolved_suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 111,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 107,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 208,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}
