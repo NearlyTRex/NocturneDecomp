@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5851 (90.7%)
-Files at 100%: 153
-Files at 90%+: 159
+Clean functions: 5862 (90.8%)
+Files at 100%: 160
+Files at 90%+: 160
 Files at 50%+: 214
 
 ====================================================================================================
@@ -39,8 +39,11 @@ FILES AT 100% (COMPLETE)
   core/bride.cpp: 14 functions, 771 lines
   core/bugs.cpp: 44 functions, 1795 lines
   core/camview.cpp: 6 functions, 38 lines
+  core/chain.cpp: 21 functions, 870 lines
+  core/charactr.cpp: 109 functions, 4701 lines
   core/colonel.cpp: 18 functions, 614 lines
   core/cow.cpp: 14 functions, 520 lines
+  core/crate.cpp: 20 functions, 309 lines
   core/crossbow.cpp: 12 functions, 312 lines
   core/dcamera.cpp: 86 functions, 4962 lines
   core/dest.cpp: 13 functions, 258 lines
@@ -78,13 +81,16 @@ FILES AT 100% (COMPLETE)
   core/gun.cpp: 7 functions, 273 lines
   core/haystack.cpp: 18 functions, 718 lines
   core/health.cpp: 16 functions, 155 lines
+  core/hiram.cpp: 10 functions, 166 lines
   core/hostage.cpp: 18 functions, 1240 lines
   core/hotdemon.cpp: 14 functions, 599 lines
   core/hpriest.cpp: 9 functions, 118 lines
+  core/imp.cpp: 17 functions, 991 lines
   core/inivar.cpp: 2 functions, 276 lines
   core/inv.cpp: 43 functions, 3098 lines
   core/keyactor.cpp: 15 functions, 161 lines
   core/ladder.cpp: 19 functions, 576 lines
+  core/larva.cpp: 13 functions, 552 lines
   core/level.cpp: 6 functions, 281 lines
   core/lever.cpp: 22 functions, 476 lines
   core/lightgun.cpp: 14 functions, 579 lines
@@ -134,6 +140,7 @@ FILES AT 100% (COMPLETE)
   core/weapon.cpp: 27 functions, 449 lines
   core/werewolf.cpp: 21 functions, 1396 lines
   core/xform.cpp: 61 functions, 2831 lines
+  core/zombie.cpp: 32 functions, 2336 lines
   engine/boss.c: 5 functions, 64 lines
   engine/colquant.c: 9 functions, 592 lines
   engine/console.cpp: 8 functions, 201 lines
@@ -168,46 +175,16 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 153 files
+Total: 160 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   99.1% | core/charactr.cpp
-         108/109 clean, 1 remaining
-           - core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 (292 lines) [unrolled_memset]
-
-   95.2% | core/chain.cpp
-         20/21 clean, 1 remaining
-           - core_chain.cpp_CChain_renderTransparent_FUN_004308f0 (160 lines) [raw_address_constant]
-
-   95.0% | core/crate.cpp
-         19/20 clean, 1 remaining
-           - core_crate.cpp_CCrate_process_FUN_00448660 (93 lines) [unrolled_memset]
-
-   94.1% | core/imp.cpp
-         16/17 clean, 1 remaining
-           - core_imp.cpp_CImp_process_FUN_004f9c30 (492 lines) [unrolled_memset]
-
-   92.3% | core/larva.cpp
-         12/13 clean, 1 remaining
-           - core_larva.cpp_CLarva_process_FUN_00503080 (332 lines) [unrolled_memset]
-
-   90.0% | core/hiram.cpp
-         9/10 clean, 1 remaining
-           - core_hiram.cpp_CHiram_process_FUN_004f4550 (59 lines) [unrolled_memset]
-
-Total: 6 files
+Total: 0 files
 
 ====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
-   87.5% | core/zombie.cpp
-         28/32 clean, 4 remaining
-           - core_zombie.cpp_CZombie_process_FUN_005f9470 (1031 lines) [self_copy_guard, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_inlined_function, warning_type_propagation, warning_unreachable]
-           - core_zombie.cpp_CZombie_getTargetPoints_FUN_005fc720 (91 lines) [unrolled_memcpy]
-           - core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0 (135 lines) [unrolled_memcpy]
-           - core_zombie.cpp_CZombie_processPickup_FUN_005fb530 (262 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
    85.5% | engine/2d.c
          65/76 clean, 11 remaining
            - engine_2d.c_drawVLine_FUN_00402ff0 (56 lines) [pointer_cast]
@@ -532,6 +509,22 @@ FILES AT 50-89%
            - core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (169 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
            - core_mimic.cpp_CMimic_setupCloth_FUN_00520500 (51 lines) [pointer_cast, unrolled_memcpy]
            - core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 (321 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
+   74.5% | core/cloth.cpp
+         41/55 clean, 14 remaining
+           - core_cloth.cpp_CClothList_render_FUN_0043c320 (23 lines) [shadow_pointer_walk]
+           - core_cloth.cpp_CClothList_setWindVelocity_FUN_0043c3e0 (27 lines) [shadow_pointer_walk, unrolled_memcpy]
+           - core_cloth.cpp_CClothList_remove_FUN_0043c170 (51 lines) [unrolled_strcpy]
+           - core_cloth.cpp_CCloth_setup_FUN_00439710 (354 lines) [pointer_cast, unrolled_memcpy, unrolled_memset]
+           - core_cloth.cpp_CCloth_render_FUN_0043bae0 (148 lines) [shadow_pointer_walk]
+           - core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 (78 lines) [pointer_cast]
+           - core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (212 lines) [self_copy_guard, unrolled_memcpy]
+           - core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0 (45 lines) [shadow_pointer_walk, unrolled_memcpy]
+           - core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 (76 lines) [shadow_pointer_walk, unrolled_memcpy]
+           - core_cloth.cpp_CCloth_initializeConnections_FUN_004394e0 (100 lines) [shadow_pointer_walk]
+           - core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (299 lines) [pointer_cast, shadow_pointer_walk]
+           - core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (383 lines) [shadow_pointer_walk, unrolled_memcpy]
+           - core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 (81 lines) [shadow_pointer_walk, unrolled_memset, unrolled_strcpy]
+           - core_cloth.cpp_CCloth_step_FUN_0043abb0 (402 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_memset]
    73.7% | core/gabriela.cpp
          28/38 clean, 10 remaining
            - core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890 (162 lines) [unrolled_memcpy]
@@ -550,23 +543,6 @@ FILES AT 50-89%
            - core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40 (69 lines) [pointer_cast, warning_inlined_function]
            - core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0 (39 lines) [pointer_cast]
            - core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10 (118 lines) [pointer_cast, unrolled_memcpy, warning_inlined_function]
-   72.7% | core/cloth.cpp
-         40/55 clean, 15 remaining
-           - core_cloth.cpp_CClothList_render_FUN_0043c320 (23 lines) [shadow_pointer_walk]
-           - core_cloth.cpp_CClothList_setWindVelocity_FUN_0043c3e0 (27 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_cloth.cpp_CClothList_remove_FUN_0043c170 (51 lines) [unrolled_strcpy]
-           - core_cloth.cpp_CCloth_setup_FUN_00439710 (354 lines) [pointer_cast, unrolled_memcpy, unrolled_memset]
-           - core_cloth.cpp_CCloth_render_FUN_0043bae0 (148 lines) [shadow_pointer_walk]
-           - core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 (78 lines) [pointer_cast]
-           - core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (212 lines) [self_copy_guard, unrolled_memcpy]
-           - core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0 (45 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 (76 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_cloth.cpp_CCloth_initializeConnections_FUN_004394e0 (100 lines) [shadow_pointer_walk]
-           - core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (299 lines) [pointer_cast, shadow_pointer_walk]
-           - core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (383 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 (81 lines) [shadow_pointer_walk, unrolled_memset, unrolled_strcpy]
-           - core_cloth.cpp_CCloth_step_FUN_0043abb0 (402 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_memset]
-           - core_cloth.cpp_vectorLengthFast_FUN_0043e350 (4 lines) [fast_sqrt_inline]
    72.7% | core/menu.cpp
          16/22 clean, 6 remaining
            - core_menu.cpp_showCalibrationTestPattern_FUN_00510a50 (61 lines) [unrolled_strcpy]
@@ -910,7 +886,7 @@ FILES AT 50-89%
            - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [shadow_pointer_walk, unrolled_memcpy]
 
-Total: 55 files
+Total: 54 files
 
 ====================================================================================================
 FILES BELOW 50%

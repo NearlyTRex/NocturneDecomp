@@ -5,22 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5834 (90.4%)
-With suspects: 620
-Total suspects: 3408
-
-====================================================================================================
-core_chain.cpp_CChain_renderTransparent_FUN_004308f0 (8 suspects)
-  File: core/chain.cpp
-====================================================================================================
-  Line 87 [raw_address_constant]: pCVar2->vertex_buffer_ptr[1].v = 0xf80000;
-  Line 88 [raw_address_constant]: pCVar2->vertex_buffer_ptr[2].u = 0xf80000;
-  Line 89 [raw_address_constant]: pCVar2->vertex_buffer_ptr[2].v = 0xf80000;
-  Line 90 [raw_address_constant]: pCVar2->vertex_buffer_ptr[3].u = 0xf80000;
-  Line 140 [raw_address_constant]: pCVar3->vertex_buffer_ptr[1].v = 0xf80000;
-  Line 141 [raw_address_constant]: pCVar3->vertex_buffer_ptr[2].u = 0xf80000;
-  Line 142 [raw_address_constant]: pCVar3->vertex_buffer_ptr[2].v = 0xf80000;
-  Line 143 [raw_address_constant]: pCVar3->vertex_buffer_ptr[3].u = 0xf80000;
+Clean: 5845 (90.6%)
+With suspects: 609
+Total suspects: 3367
 
 ====================================================================================================
 core_chain.cpp_fastSqrt_FUN_00431350 (2 suspects)
@@ -28,12 +15,6 @@ core_chain.cpp_fastSqrt_FUN_00431350 (2 suspects)
 ====================================================================================================
   Line 13 [static_invalid_pointer_cast]: int bits = (*(int *)&value >> 1) + g_FastSqrtMagic;
   Line 14 [static_invalid_pointer_cast]: return *(float *)&bits;
-
-====================================================================================================
-core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 (1 suspect)
-  File: core/charactr.cpp
-====================================================================================================
-  Line 74 [unrolled_memset]: (this_ptr->base).platform_position_delta.z = 0.0;
 
 ====================================================================================================
 core_cloth.cpp_CClothList_remove_FUN_0043c170 (1 suspect)
@@ -187,12 +168,6 @@ core_cloth.cpp_fastInvSqrt_FUN_0043e2a0 (2 suspects)
   Line 14 [static_invalid_pointer_cast]: return *(float *)&bits;
 
 ====================================================================================================
-core_cloth.cpp_vectorLengthFast_FUN_0043e350 (1 suspect)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 5 [fast_sqrt_inline]: return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + g_FastSqrtMagic);
-
-====================================================================================================
 core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0 (2 suspects)
   File: core/conveyor.cpp
 ====================================================================================================
@@ -276,12 +251,6 @@ core_course.cpp_renderCourseGizmo_FUN_00443760 (2 suspects)
 ====================================================================================================
   Line 32 [unrolled_memcpy]: local_48.x = position->x;
   Line 127 [pointer_cast]: (*(char **)((int)g_CourseAxisLabels + iVar6),
-
-====================================================================================================
-core_crate.cpp_CCrate_process_FUN_00448660 (1 suspect)
-  File: core/crate.cpp
-====================================================================================================
-  Line 29 [unrolled_memset]: (this_ptr->base).platform_position_delta.z = 0.0;
 
 ====================================================================================================
 core_curtain.cpp_CCurtain_ctor_FUN_004496a0 (2 suspects)
@@ -1376,12 +1345,6 @@ core_hero.cpp_CHero_tryPushNearbyBox_FUN_004f3120 (1 suspect)
   Line 36 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
 
 ====================================================================================================
-core_hiram.cpp_CHiram_process_FUN_004f4550 (1 suspect)
-  File: core/hiram.cpp
-====================================================================================================
-  Line 40 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-
-====================================================================================================
 core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970 (1 suspect)
   File: core/icepick.cpp
 ====================================================================================================
@@ -1416,18 +1379,6 @@ core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810 (1 suspect)
   File: core/icepick.cpp
 ====================================================================================================
   Line 12 [stack_alignment_array]: float afStackY_180c [1519];
-
-====================================================================================================
-core_imp.cpp_CImp_process_FUN_004f9c30 (1 suspect)
-  File: core/imp.cpp
-====================================================================================================
-  Line 73 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-
-====================================================================================================
-core_larva.cpp_CLarva_process_FUN_00503080 (1 suspect)
-  File: core/larva.cpp
-====================================================================================================
-  Line 73 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0 (1 suspect)
@@ -3944,53 +3895,6 @@ core_weather.cpp_CWeather_update_FUN_005eeaf0 (8 suspects)
   Line 68 [pointer_cast]: local_28.x = *(float *)((int)&g_WeatherParticlePositions[0].x + iVar4);
   Line 69 [pointer_cast]: local_28.z = *(float *)((int)&g_WeatherParticlePositions[0].z + iVar4);
   Line 70 [pointer_cast]: local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);
-
-====================================================================================================
-core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0 (4 suspects)
-  File: core/zombie.cpp
-====================================================================================================
-  Line 52 [unrolled_memcpy]: local_64.x = local_4c.x;
-  Line 56 [unrolled_memcpy]: local_16c.m[0].w = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[0].w;
-  Line 94 [unrolled_memcpy]: local_64.x = local_7c.x;
-  Line 117 [unrolled_memcpy]: local_40.x = pCVar3->x;
-
-====================================================================================================
-core_zombie.cpp_CZombie_getTargetPoints_FUN_005fc720 (5 suspects)
-  File: core/zombie.cpp
-====================================================================================================
-  Line 24 [unrolled_memcpy]: out_points_array->x = local_30.x;
-  Line 41 [unrolled_memcpy]: local_48.x = pCVar3->x;
-  Line 49 [unrolled_memcpy]: pCVar3->x = local_48.x;
-  Line 70 [unrolled_memcpy]: pCVar2->x = pCVar3->x;
-  Line 83 [unrolled_memcpy]: pCVar3->x = pCVar1->x;
-
-====================================================================================================
-core_zombie.cpp_CZombie_processPickup_FUN_005fb530 (8 suspects)
-  File: core/zombie.cpp
-====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 82 [pointer_cast]: pCVar6 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20);
-  Line 106 [pointer_cast]: *(int *)((int)aiStack_138 + iVar10) = iStack_28;
-  Line 109 [pointer_cast]: *(CDemonActor **)((int)auStack_160 + iVar10) = pCVar6;
-  Line 170 [unrolled_memcpy]: CStack_a4.x = CStack_44.x;
-  Line 179 [unrolled_memcpy]: CStack_a4.x = (pCVar6->location).position.x;
-  Line 200 [unrolled_memcpy]: CStack_a4.x = CStack_50.x;
-  Line 205 [unrolled_memcpy]: CStack_c8.x = g_ZeroVector.f.x;
-
-====================================================================================================
-core_zombie.cpp_CZombie_process_FUN_005f9470 (10 suspects)
-  File: core/zombie.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 3 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005faea9) */
-  Line 4 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 357 [unrolled_memcpy]: local_23c.x = local_d4.x;
-  Line 401 [unrolled_strcpy]: do {
-  Line 534 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 799 [self_copy_guard]: if (&local_134 != &local_254) {
-  Line 893 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 933 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 936 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
 engine_2d.c_buildColorLookupTable_FUN_00402870 (1 suspect)

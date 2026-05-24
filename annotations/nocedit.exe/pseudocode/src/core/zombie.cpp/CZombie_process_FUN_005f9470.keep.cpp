@@ -7,10 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-/* WARNING: Removing unreachable block (ram,0x005faea9) */
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,float delta_time)
 
 {
@@ -360,11 +356,7 @@ LAB_005f9541:
             local_d4.x = pCVar11->x * local_d4.z;
             local_d4.y = pCVar11->y * local_d4.z;
             local_d4.z = local_d4.z * pCVar11->z;
-            if (&local_23c != &local_d4) {
-              local_23c.x = local_d4.x;
-              local_23c.y = local_d4.y;
-              local_23c.z = local_d4.z;
-            }
+            local_23c = local_d4;
           }
         }
         local_23c.x = local_23c.x * 27.0f;
@@ -405,15 +397,7 @@ LAB_005f9541:
           pcVar23 = "ghoul-eat-?.wav";
         }
         pcVar19 = local_334;
-        do {
-          cVar20 = *pcVar23;
-          *pcVar19 = cVar20;
-          if (cVar20 == '\0') break;
-          cVar20 = pcVar23[1];
-          pcVar23 = pcVar23 + 2;
-          pcVar19[1] = cVar20;
-          pcVar19 = pcVar19 + 2;
-        } while (cVar20 != '\0');
+        strcpy(pcVar19, pcVar23);
         (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,local_334);
       }
       else {
@@ -539,10 +523,8 @@ LAB_005fa85e:
             cVar20 = cVar20 + '\x01';
           }
           (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-          (this_ptr->base).base.model.accumulated_root_motion.y =
-               (this_ptr->base).base.model.accumulated_root_motion.z;
-          (this_ptr->base).base.model.accumulated_root_motion.x =
-               (this_ptr->base).base.model.accumulated_root_motion.y;
+          (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+          (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
           iVar6 = core_zombie_cpp_CZombie_processPickup_FUN_005fb530(this_ptr,delta_time);
           if (iVar6 == 0) {
             local_50 = 1.3f;
@@ -799,11 +781,9 @@ LAB_005fa279:
                       (pCVar3->base).location.position.y;
           local_24c = (this_ptr->base).base.base.location.position.z -
                       (pCVar3->base).location.position.z;
-          if (&local_134 != &local_254) {
-            local_134 = local_254;
-            local_130 = local_250;
-            local_12c = local_24c;
-          }
+          local_134 = local_254;
+          local_130 = local_250;
+          local_12c = local_24c;
           local_1c = local_12c * local_12c + local_134 * local_134 + local_130 * local_130;
           local_5c = core_chain_cpp_fastSqrt_FUN_00431350(local_1c);
           if (local_5c <= (float)8) {
@@ -892,10 +872,8 @@ LAB_005fa14f:
                 (g_CConsolePtr,"%s confused while walking to scriptDest!\n",(this_ptr->base).base.base.actor_name);
     }
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.model.accumulated_root_motion.x =
-         (this_ptr->base).base.model.accumulated_root_motion.y;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+    (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
   }
   if (0.0 < (this_ptr->base).attack_cooldown) {
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
@@ -932,12 +910,11 @@ LAB_005fa14f:
         local_284.y = local_10c + (this_ptr->base).base.model.accumulated_root_motion.y;
         local_284.z = local_108 + (this_ptr->base).base.model.accumulated_root_motion.z;
         (this_ptr->base).base.position_delta.z = 0.0;
-        (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-        pCVar11->x = (this_ptr->base).base.position_delta.y;
+        (this_ptr->base).base.position_delta.y = 0.0;
+        pCVar11->x = 0.0;
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-        fVar25 = (this_ptr->base).base.model.accumulated_root_motion.z;
-        (this_ptr->base).base.model.accumulated_root_motion.y = fVar25;
-        pCVar15->x = fVar25;
+        (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+        pCVar15->x = 0.0;
         core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_284);
         if ((iVar6 == 1) &&
            (this_ptr_00 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c790

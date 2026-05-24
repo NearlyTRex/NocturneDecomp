@@ -236,10 +236,8 @@ LAB_004f9c99:
           fVar17 = 0.17453292;
           (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
           fVar16 = 0.5;
-          (this_ptr->base).base.model.accumulated_root_motion.y =
-               (this_ptr->base).base.model.accumulated_root_motion.z;
-          (this_ptr->base).base.model.accumulated_root_motion.x =
-               (this_ptr->base).base.model.accumulated_root_motion.y;
+          (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+          (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
           local_98.z = fVar15;
           pCVar9 = &local_98;
           pCVar3 = (this_ptr->base).victim;

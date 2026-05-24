@@ -54,8 +54,8 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
     local_a8.z = local_a8.z + (this_ptr->base).platform_position_delta.z;
     (this_ptr->base).platform_position_delta.z = 0.0;
     pUVar2 = &(this_ptr->base).orient;
-    (this_ptr->base).platform_position_delta.y = (this_ptr->base).platform_position_delta.z;
-    (this_ptr->base).platform_position_delta.x = (this_ptr->base).platform_position_delta.y;
+    (this_ptr->base).platform_position_delta.y = 0.0;
+    (this_ptr->base).platform_position_delta.x = 0.0;
     pCVar16 = &(this_ptr->base).platform_orientation_delta;
     (pUVar2->vec).x = pCVar16->x + (pUVar2->vec).x;
     (this_ptr->base).orient.vec.y =

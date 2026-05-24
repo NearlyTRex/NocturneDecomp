@@ -4,17 +4,17 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5851 functions
-  1 suspects: 84 functions
+  0 suspects: 5862 functions
+  1 suspects: 78 functions
   2 suspects: 131 functions
   3 suspects: 76 functions
-  4 suspects: 76 functions
-  5 suspects: 39 functions
+  4 suspects: 75 functions
+  5 suspects: 38 functions
   6 suspects: 52 functions
   7 suspects: 18 functions
-  8 suspects: 29 functions
+  8 suspects: 27 functions
   9 suspects: 9 functions
-  10 suspects: 16 functions
+  10 suspects: 15 functions
   11 suspects: 9 functions
   12 suspects: 10 functions
   13 suspects: 5 functions
@@ -194,25 +194,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_dmodel.cpp_CKeyFramedModel_removeUnusedVertic (169 lines)
       pSVar12 = (SMRGLPrimitiveQuad *)&(pSVar12->base).surface_nor...
 
-  [unrolled_memset] (8 functions)
-  ------------------------------------------------------------
-    core_hiram.cpp_CHiram_process_FUN_004f4550         ( 59 lines)
-      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;...
-    core_stranger.cpp_CStranger_updateTurnBlending_FUN ( 91 lines)
-      (this_ptr->pending_velocity).z = 0.0;...
-    core_crate.cpp_CCrate_process_FUN_00448660         ( 93 lines)
-      (this_ptr->base).platform_position_delta.z = 0.0;...
-    core_stranger.cpp_CStranger_ctor_FUN_005bb120      (100 lines)
-      (ADJ(pCVar6)->pending_velocity).z = 0.0;...
-    core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN (113 lines)
-      (pSVar11->light).b = 0.0;...
-    core_charactr.cpp_CCharacter_moveAndCollide_FUN_00 (292 lines)
-      (this_ptr->base).platform_position_delta.z = 0.0;...
-    core_larva.cpp_CLarva_process_FUN_00503080         (332 lines)
-      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;...
-    core_imp.cpp_CImp_process_FUN_004f9c30             (492 lines)
-      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;...
-
   [bit_int_float_compare] (3 functions)
   ------------------------------------------------------------
     core_trigger.cpp_CTrigger_processInEditor_FUN_005e ( 57 lines)
@@ -222,10 +203,14 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_stranger.cpp_CStranger_updateProceduralAnimat (516 lines)
       if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {...
 
-  [fast_sqrt_inline] (1 functions)
+  [unrolled_memset] (3 functions)
   ------------------------------------------------------------
-    core_cloth.cpp_vectorLengthFast_FUN_0043e350       (  4 lines)
-      return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->...
+    core_stranger.cpp_CStranger_updateTurnBlending_FUN ( 91 lines)
+      (this_ptr->pending_velocity).z = 0.0;...
+    core_stranger.cpp_CStranger_ctor_FUN_005bb120      (100 lines)
+      (ADJ(pCVar6)->pending_velocity).z = 0.0;...
+    core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN (113 lines)
+      (pSVar11->light).b = 0.0;...
 
   [stack_alignment_array] (1 functions)
   ------------------------------------------------------------

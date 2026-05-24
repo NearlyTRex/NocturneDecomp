@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005fb530(CZombie *this_ptr,float delta_time)
 
 {
@@ -26,7 +24,7 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005fb530(CZombie *this_ptr
   CVector3f *pCVar12;
   float *pfVar13;
   float fStack_168;
-  uint auStack_160 [10];
+  CDemonActor *auStack_160 [10];
   int aiStack_138 [10];
   CBoundingBox3D CStack_110;
   CBoundingBox3D CStack_f8;
@@ -49,7 +47,6 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005fb530(CZombie *this_ptr
   float fStack_2c;
   int iStack_28;
   int local_24;
-  int local_20;
   CLocation *local_1c;
   int local_18;
   float local_14;
@@ -83,13 +80,10 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005fb530(CZombie *this_ptr
   pCVar1 = &(this_ptr->base).base.base.location;
   if (pCVar6 == (CDemonActor *)0x0) {
     local_24 = 0;
-    local_20 = 0;
-    iVar10 = 0;
     local_1c = pCVar1;
-    for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
-      pCVar6 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20);
+    for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count && local_24 < 10; local_18 = local_18 + 1) {
+      pCVar6 = g_CDemonSetPtr->actors[local_18];
       pCVar5 = (*((pCVar6->vtable)._ub)->getCarrier)(pCVar6);
-      iVar11 = iVar10;
       if ((pCVar5 == (CDemonActor *)0x0) &&
          (iVar8 = (*((pCVar6->vtable)._ub)->canPickup)(pCVar6,(CDemonActor *)this_ptr), iVar8 == 3))
       {
@@ -111,22 +105,18 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005fb530(CZombie *this_ptr
           fVar3 = SQRT(fStack_84 * fStack_84 + fStack_8c * fStack_8c + fStack_88 * fStack_88);
           if (((float)5 <= fVar3) &&
              (fVar3 <= this_ptr->pickup_range_factor * 15.0f)) {
-            *(int *)((int)aiStack_138 + iVar10) = iStack_28;
-            iVar11 = iVar10 + 4;
+            aiStack_138[local_24] = iStack_28;
+            auStack_160[local_24] = pCVar6;
             local_24 = local_24 + 1;
-            *(CDemonActor **)((int)auStack_160 + iVar10) = pCVar6;
-            if (0x27 < iVar11) break;
           }
         }
       }
-      local_20 = local_20 + 4;
-      iVar10 = iVar11;
     }
     if (local_24 < 1) {
       return 0;
     }
     iVar10 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,local_24 + -1);
-    this_ptr->pickup_target = (CDemonActor *)auStack_160[iVar10];
+    this_ptr->pickup_target = auStack_160[iVar10];
     iVar10 = aiStack_138[iVar10];
     this_ptr->pickup_approach_progress = -40.0;
     this_ptr->object_shape_class = iVar10;
@@ -174,19 +164,13 @@ LAB_005fb750:
         core_bodypart_cpp_scaleVector_FUN_0041b4e0(pCVar7,pCVar12,pfVar13);
         CStack_80.z = CStack_e0.min.z + (float)0.40000000000000002;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar6,&CStack_44,&CStack_80);
-        if (&CStack_a4 != &CStack_44) {
-          CStack_a4.x = CStack_44.x;
-          CStack_a4.y = CStack_44.y;
-          CStack_a4.z = CStack_44.z;
-        }
+        CStack_a4 = CStack_44;
       }
       else {
 LAB_005fba18:
         pCVar6 = this_ptr->pickup_target;
         if ((CLocation *)&CStack_a4 != &pCVar6->location) {
-          CStack_a4.x = (pCVar6->location).position.x;
-          CStack_a4.y = (pCVar6->location).position.y;
-          CStack_a4.z = (pCVar6->location).position.z;
+          CStack_a4 = (pCVar6->location).position;
         }
       }
     }
@@ -204,15 +188,9 @@ LAB_005fba18:
       core_bodypart_cpp_scaleVector_FUN_0041b4e0(pCVar7,pCVar12,pfVar13);
       CStack_bc.z = CStack_f8.min.z + (float)0.40000000000000002;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar6,&CStack_50,&CStack_bc);
-      if (&CStack_a4 != &CStack_50) {
-        CStack_a4.x = CStack_50.x;
-        CStack_a4.y = CStack_50.y;
-        CStack_a4.z = CStack_50.z;
-      }
+      CStack_a4 = CStack_50;
     }
-    CStack_c8.x = g_ZeroVector.f.x;
-    CStack_c8.y = g_ZeroVector.f.y;
-    CStack_c8.z = g_ZeroVector.f.z;
+    CStack_c8 = g_ZeroVector.f;
     if (iVar10 == 0) {
       CStack_74.x = -1.5;
       CStack_74.y = 0.0;

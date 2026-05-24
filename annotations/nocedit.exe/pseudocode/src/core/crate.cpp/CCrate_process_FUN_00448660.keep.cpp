@@ -34,8 +34,8 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
        (this_ptr->base).platform_position_delta.z + (this_ptr->base).location.position.z;
   (this_ptr->base).platform_position_delta.z = 0.0;
   pUVar2 = &(this_ptr->base).orient;
-  (this_ptr->base).platform_position_delta.y = (this_ptr->base).platform_position_delta.z;
-  pCVar3->x = (this_ptr->base).platform_position_delta.y;
+  (this_ptr->base).platform_position_delta.y = 0.0;
+  pCVar3->x = 0.0;
   pCVar5 = &(this_ptr->base).platform_orientation_delta;
   (pUVar2->vec).x = pCVar5->x + (pUVar2->vec).x;
   (this_ptr->base).orient.vec.y =
