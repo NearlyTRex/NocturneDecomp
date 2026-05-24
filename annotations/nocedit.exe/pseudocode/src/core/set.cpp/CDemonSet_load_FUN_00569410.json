@@ -789,6 +789,15 @@
       "type": "unrolled_strcpy"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr_03` self-updates via element-arithmetic `(int)(this_ptr_03 + N) + M`, where `N*sizeof(*this_ptr_03) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `this_ptr_03->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 227,
+      "match": "this_ptr_03 = (T *)((int)(this_ptr_03 + N) + M)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_03 = (CMatrix3x3f *)((int)(this_ptr_03 + 1) + 0x20);",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_18) + offsetof(subfield)` equals the real array stride. Replace `local_18->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 229,
       "match": "local_18 = (T *)&local_18[N].SUBFIELD",

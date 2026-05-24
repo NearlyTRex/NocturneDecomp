@@ -2366,9 +2366,15 @@ def identify_cascade_constant_fill(decompiled_code):
             lhs_field = m_chain.group(2)
             rhs_path_raw = m_chain.group(3)
             rhs_field = m_chain.group(4)
+            # The RHS must read a sibling field that already holds the
+            # forwarded constant. Watcom usually forwards the *immediately*
+            # prior field (`x = y` after `y = z`), but also emits chains that
+            # re-read an earlier one (`x = z` after `y = z`) — both leave the
+            # field holding the same constant, so accept any already-seen
+            # field, not just `prev_field`.
             if (not lhs_matches_anchor(lhs_path_raw, anchor_path, j)
                     or not lhs_matches_anchor(rhs_path_raw, anchor_path, j)
-                    or rhs_field != prev_field
+                    or rhs_field not in seen_fields
                     or lhs_field in seen_fields):
                 break
             seen_fields.add(lhs_field)
@@ -2669,10 +2675,15 @@ _INT_ADDR_ARITH_RE = re.compile(
     # the latter when the original source took the address of a sub-field
     # of a deep struct walk, e.g.
     #   `(int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0`.
-    r'\(int\)\s*&(?:\([^()]*\)\s*(?:->|\.)\s*\w+|\w+)'
+    # The parenthesized base tolerates one level of nesting
+    # (`(?:[^()]|\([^()]*\))*`) so doubly-parenthesized paths like
+    #   `(int)&((this_ptr->model).vertex_list)->x + iVar`
+    # — the ROUND-to-fixed-point store loops — are caught, not just flat
+    # single-paren bases.
+    r'\(int\)\s*&(?:\((?:[^()]|\([^()]*\))*\)\s*(?:->|\.)\s*\w+|\w+)'
     r'(?:\.\w+|->\w+|\[[^\]]*\])*\s*[\+\-]'
     r'|'
-    r'[\+\-]\s*\(int\)\s*&(?:\([^()]*\)\s*(?:->|\.)\s*\w+|\w+)'
+    r'[\+\-]\s*\(int\)\s*&(?:\((?:[^()]|\([^()]*\))*\)\s*(?:->|\.)\s*\w+|\w+)'
     r'(?:\.\w+|->\w+|\[[^\]]*\])*'
 )
 
@@ -2821,6 +2832,23 @@ _SHADOW_PTR_WALK_INT_ADDR_CONST_RE = re.compile(
     r'&\s*\(\s*\1\s*->\s*\w+\s*\)'                   # & ( IDENT->FIELD )
     r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)*'  # (.SUBFIELD[N]?)*
     r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
+)
+# Int-element-stride-plus-const variant:
+#   `IDENT = (T *)((int)(IDENT + N) + M);`
+# Watcom advances the shadow pointer by adding `N` *elements* (pointer
+# arithmetic on IDENT's own element type) then `M` raw bytes, all through
+# an `int` round-trip. The element type is smaller than the true stride,
+# so `N*sizeof(*IDENT) + M` equals the struct stride being walked — e.g. a
+# `CVector3f *` field-walker striding a 0x11c-byte `SClothVertex`:
+# `(int)(pCVar12 + 0x17) + 8` = 0x17*12 + 8 = 0x11c. Same antipattern as
+# `_SHADOW_PTR_WALK_INT_ADDR_CONST_RE`, shaped as element-arith on IDENT
+# itself rather than a field-address. Self-update (`\1`) required.
+_SHADOW_PTR_WALK_INT_ELEM_PLUS_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'\(\s*\(\s*int\s*\)\s*'                         # ( (int)
+    r'\(\s*\1\s*\+\s*' + _SPW_INT + r'\s*\)'         # ( IDENT + N )
+    r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + M );
 )
 # Two-step variants: same four shapes as above, but the LHS is a scratch
 # `TMP` instead of the rebound `IDENT`. The rebind happens on a later line
@@ -3007,6 +3035,25 @@ def identify_shadow_pointer_walk(decompiled_code):
                     'walked. Replace `%s->some_field[0]` reads with direct '
                     'indexing on the original pointer; drop the shadow '
                     'init and self-update.' % (m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
+            continue
+        m = _SHADOW_PTR_WALK_INT_ELEM_PLUS_RE.match(line)
+        if m:
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)((int)(%s + N) + M)' % (
+                    m.group(1), m.group(1)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates via '
+                    'element-arithmetic `(int)(%s + N) + M`, where '
+                    '`N*sizeof(*%s) + M` equals the larger struct stride '
+                    'being walked (the pointer is typed to a sub-element). '
+                    'Replace `%s->field` reads with direct indexing on the '
+                    'original pointer; drop the shadow init and self-update.'
+                    % (m.group(1), m.group(1), m.group(1), m.group(1))),
                 'severity': 'moderate',
             })
             continue

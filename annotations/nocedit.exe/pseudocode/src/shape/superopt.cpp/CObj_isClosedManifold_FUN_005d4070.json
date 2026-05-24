@@ -78,6 +78,15 @@
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*(int *)(iVar4 + 100) + 0x70))",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 22,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = (int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->parent_obj + iVar3;",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

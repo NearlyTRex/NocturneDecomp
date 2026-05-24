@@ -16,12 +16,8 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
   uint color;
   SMotion *string_data;
   SClothBone *pSVar4;
-  int *piVar5;
-  CCloth *pCVar6;
-  CVector3f *pCVar7;
   int iVar8;
   float delta_time;
-  float fStack_550;
   CPickList CStack_54c;
   char sprintf_buf[512];
   CSlew CStack_a8;
@@ -121,16 +117,11 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     else {
       iVar2 = 0;
       if (0 < (this_ptr->model).vertex_count) {
-        iVar8 = 0;
-        pCVar7 = &pSStack_5c->offset_pos;
         do {
-          piVar5 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar8);
+          (this_ptr->model).vertex_list[iVar2].x = (int)ROUND(pSStack_5c[iVar2].offset_pos.x * 256.0f);
+          (this_ptr->model).vertex_list[iVar2].y = (int)ROUND(pSStack_5c[iVar2].offset_pos.y * 256.0f);
+          (this_ptr->model).vertex_list[iVar2].z = (int)ROUND(pSStack_5c[iVar2].offset_pos.z * 256.0f);
           iVar2 = iVar2 + 1;
-          *piVar5 = (int)ROUND(pCVar7->x * 256.0f);
-          piVar5[1] = (int)ROUND(pCVar7->y * 256.0f);
-          piVar5[2] = (int)ROUND(pCVar7->z * 256.0f);
-          pCVar7 = (CVector3f *)((int)(pCVar7 + 0x17) + 8);
-          iVar8 = iVar8 + 0xc;
         } while (iVar2 < (this_ptr->model).vertex_count);
       }
       iVar2 = 0;
@@ -169,10 +160,9 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
       g_ActiveRenderColor =
            shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
       local_18 = 0;
-      pCVar6 = this_ptr;
       if (0 < this_ptr->locked_vertex_count) {
         do {
-          pSVar3 = local_34 + pCVar6->locked_vertex_indices[0];
+          pSVar3 = local_34 + this_ptr->locked_vertex_indices[local_18];
           CStack_74.x = (int)ROUND((pSVar3->position).x * 256.0f);
           CStack_74.y = (int)ROUND((pSVar3->position).y * 256.0f);
           CStack_74.z = (int)ROUND((pSVar3->position).z * 256.0f);
@@ -180,7 +170,6 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&CStack_74);
           core_cloth_cpp_drawVertexMarker_FUN_0043c6e0(19999);
           local_18 = local_18 + 1;
-          pCVar6 = (CCloth *)((pCVar6->model).model_filename + 4);
         } while (local_18 < this_ptr->locked_vertex_count);
       }
     }
@@ -239,7 +228,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     }
     _sprintf
               (sprintf_buf,"%f",
-               (double)(1.0 / fStack_550));
+               (double)(1.0 / delta_time));
     engine_2d_c_drawTextRightAligned_FUN_004021c0
               (sprintf_buf,g_WindowWidth + -2,g_WindowHeight + -0xd);
     engine_2d_c_drawText_FUN_00401fd0("1. Toggle bone drawing/editing",0,0x16);
@@ -306,14 +295,10 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
         local_80.z = 10.0f * (pSVar4->euler1).z;
         local_58 = 10.0;
         if (&CStack_a8 != (CSlew *)&local_80) {
-          CStack_a8.position.x = local_80.x;
-          CStack_a8.position.y = local_80.y;
-          CStack_a8.position.z = local_80.z;
+          CStack_a8.position = local_80;
         }
         if (&CStack_a8.orientation.vec != &pSVar4->euler2) {
-          CStack_a8.orientation.vec.x = (pSVar4->euler2).x;
-          CStack_a8.orientation.vec.y = (pSVar4->euler2).y;
-          CStack_a8.orientation.vec.z = (pSVar4->euler2).z;
+          CStack_a8.orientation.vec = pSVar4->euler2;
         }
         core_slew_cpp_CSlew_processInput_FUN_005a20b0(&CStack_a8);
         fStack_84 = 1.0 / local_58;
@@ -326,9 +311,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
           (pSVar4->euler1).z = fStack_84;
         }
         if (&pSVar4->euler2 != &CStack_a8.orientation.vec) {
-          (pSVar4->euler2).x = CStack_a8.orientation.vec.x;
-          (pSVar4->euler2).y = CStack_a8.orientation.vec.y;
-          (pSVar4->euler2).z = CStack_a8.orientation.vec.z;
+          pSVar4->euler2 = CStack_a8.orientation.vec;
         }
       }
       iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);

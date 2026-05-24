@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 189,
+    "complexity_score": 204,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 124,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
     "total_lines": 418
@@ -248,6 +249,14 @@
       "severity": "moderate",
       "text": "pSVar6->control_points[3].x = pCVar4->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via element-arithmetic `(int)(pCVar7 + N) + M`, where `N*sizeof(*pCVar7) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar7->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 64,
+      "match": "pCVar7 = (T *)((int)(pCVar7 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 4) + 4);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

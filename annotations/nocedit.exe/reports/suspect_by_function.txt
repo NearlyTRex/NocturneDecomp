@@ -5,9 +5,28 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5874 (91.0%)
-With suspects: 580
-Total suspects: 3290
+Clean: 5872 (91.0%)
+With suspects: 582
+Total suspects: 3258
+
+====================================================================================================
+core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 (1 suspect)
+  File: core/bodypart.cpp
+====================================================================================================
+  Line 134 [unrolled_memset]: pCVar3->z = 0;
+
+====================================================================================================
+core_box.cpp_CBox_processPhysics_FUN_0041e350 (2 suspects)
+  File: core/box.cpp
+====================================================================================================
+  Line 157 [shadow_pointer_walk]: pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);
+  Line 158 [shadow_pointer_walk]: pCVar16 = (CVector3f *)((int)(pCVar16 + 4) + 4);
+
+====================================================================================================
+core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0 (1 suspect)
+  File: core/bugs.cpp
+====================================================================================================
+  Line 38 [shadow_pointer_walk]: pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);
 
 ====================================================================================================
 core_chain.cpp_fastSqrt_FUN_00431350 (2 suspects)
@@ -17,81 +36,18 @@ core_chain.cpp_fastSqrt_FUN_00431350 (2 suspects)
   Line 14 [static_invalid_pointer_cast]: return *(float *)&bits;
 
 ====================================================================================================
-core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (10 suspects)
-  File: core/cloth.cpp
+core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 (2 suspects)
+  File: core/charactr.cpp
 ====================================================================================================
-  Line 90 [static_uninitvar]: local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
-  Line 90 [static_uninitvar]: local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
-  Line 90 [static_uninitvar]: local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
-  Line 100 [self_copy_guard]: if (&local_7c != &local_130) {
-  Line 147 [static_uninitvar]: local_a4 = local_b0 * local_38[local_20].local_matrix.m[2].z +
-  Line 148 [static_uninitvar]: local_b8 * local_38[local_20].local_matrix.m[0].z +
-  Line 149 [static_uninitvar]: local_b4 * local_38[local_20].local_matrix.m[1].z;
-  Line 158 [self_copy_guard]: if (&local_b8 != &local_70) {
-  Line 189 [unrolled_memcpy]: local_88.x = local_a0.x;
-  Line 197 [unrolled_memcpy]: (vertex->position).x = local_88.x;
+  Line 74 [unrolled_memset]: (this_ptr->base).platform_position_delta.z = 0.0;
+  Line 84 [unrolled_memset]: (this_ptr->base).platform_orientation_delta.z = 0.0;
 
 ====================================================================================================
-core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (5 suspects)
+core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0 (2 suspects)
   File: core/cloth.cpp
 ====================================================================================================
-  Line 174 [shadow_pointer_walk]: pCVar6 = (CCloth *)((pCVar6->model).model_filename + 4);
-  Line 242 [static_uninitvar]: (double)(1.0 / fStack_550));
-  Line 297 [unrolled_memcpy]: CStack_a8.position.x = local_80.x;
-  Line 302 [unrolled_memcpy]: CStack_a8.orientation.vec.x = (pSVar4->euler2).x;
-  Line 317 [unrolled_memcpy]: (pSVar4->euler2).x = CStack_a8.orientation.vec.x;
-
-====================================================================================================
-core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (10 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 69 [shadow_pointer_walk]: point = (CVector3f *)&point[0x17].z;
-  Line 160 [pointer_cast]: if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar12 + 3) & 0x80) == 0) {
-  Line 161 [pointer_cast]: iVar5 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar12) >> 0x10;
-  Line 162 [pointer_cast]: iVar9 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar12) >> 0x10;
-  Line 178 [shadow_pointer_walk]: pCVar10 = (CCloth *)&(pCVar10->model).env_map_opac_list;
-  Line 185 [pointer_cast]: iVar9 = *(int *)(iVar12 + (int)this_ptr->vertex_sort_buffer);
-  Line 207 [shadow_pointer_walk]: pCVar10 = (CCloth *)&(pCVar10->model).env_map_opac_list;
-  Line 222 [shadow_pointer_walk]: pCVar6 = (CCloth *)&(pCVar6->model).env_map_opac_list;
-  Line 240 [shadow_pointer_walk]: pCVar10 = (CCloth *)&(pCVar10->model).env_map_opac_list;
-  Line 249 [shadow_pointer_walk]: pCVar10 = (CCloth *)((pCVar10->model).model_filename + 4);
-
-====================================================================================================
-core_cloth.cpp_CCloth_setup_FUN_00439710 (14 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 103 [pointer_cast]: *(int *)((int)this_ptr->vertex_sort_buffer + iVar13) = iVar8;
-  Line 115 [pointer_cast]: iVar2 = *(int *)(iVar10 + (int)this_ptr->vertex_sort_buffer);
-  Line 119 [pointer_cast]: *(int *)(iVar10 + (int)this_ptr->vertex_sort_buffer) = iVar1;
-  Line 128 [pointer_cast]: *(int *)(iVar10 + (int)this_ptr->vertex_sort_buffer) = iVar1;
-  Line 136 [unrolled_memcpy]: (this_ptr->last_position).x = position->x;
-  Line 141 [unrolled_memcpy]: (this_ptr->last_euler).x = euler->x;
-  Line 153 [unrolled_memcpy]: (pSVar11->position).x = pCVar7->x;
-  Line 157 [unrolled_memset]: pCVar8->z = 0.0;
-  Line 264 [unrolled_memcpy]: pCVar7->x = pCVar8->x;
-  Line 301 [pointer_cast]: for (local_24 = 0; local_24 < *(int *)((int)this_ptr_00->vertex_count + local_40);
-  Line 303 [pointer_cast]: pfVar19 = (float *)(local_44 + *(int *)((int)this_ptr_00->vertex_data_ptr + local_40));
-  Line 315 [pointer_cast]: *(byte *)((int)pfVar17 + 1));
-  Line 316 [pointer_cast]: pfVar17 = (float *)((int)pfVar17 + 1);
-  Line 353 [unrolled_memset]: (this_ptr->wind_velocity).z = 0.0;
-
-====================================================================================================
-core_cloth.cpp_CCloth_step_FUN_0043abb0 (13 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 131 [unrolled_memset]: (pSVar13->position).z = 0.0;
-  Line 150 [shadow_pointer_walk]: local_30 = (SClothVertex *)&(local_30->position).y;
-  Line 158 [shadow_pointer_walk]: local_48 = (CCloth *)((local_48->model).model_filename + 4);
-  Line 192 [shadow_pointer_walk]: local_84 = (CCloth *)&(local_84->model).env_map_opac_list;
-  Line 231 [unrolled_memset]: (this_ptr->wind_velocity).z = 0.0;
-  Line 239 [unrolled_memcpy]: pCVar12->x = position->x;
-  Line 257 [unrolled_memcpy]: pCVar12->x = euler->x;
-  Line 279 [shadow_pointer_walk]: pCVar10 = (CCloth *)&(pCVar10->model).env_map_opac_list;
-  Line 282 [shadow_pointer_walk]: local_4c = (CVector3f *)&local_4c[0x17].z;
-  Line 297 [pointer_cast]: pSVar13 = this_ptr->vertices + *(int *)((int)this_ptr->vertex_sort_buffer + local_58);
-  Line 352 [pointer_cast]: if (this_ptr->vertices[*(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer)].locked == 0) {
-  Line 355 [pointer_cast]: *(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer));
-  Line 369 [pointer_cast]: iVar2 = *(int *)(iVar16 + (int)this_ptr->vertex_sort_buffer);
+  Line 45 [pointer_cast]: piVar8 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar11);
+  Line 50 [shadow_pointer_walk]: pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);
 
 ====================================================================================================
 core_cloth.cpp_fastInvSqrt_FUN_0043e2a0 (2 suspects)
@@ -241,6 +197,12 @@ core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0 (14 suspects)
   Line 94 [pointer_cast]: *(float *)((int)&CVector3f_ARRAY_008879c0[0].z + iVar11);
   Line 112 [pointer_cast]: fVar17 = *(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11);
   Line 203 [shadow_pointer_walk]: pSVar13 = (SCurtainVertex *)&(pSVar13->local_position).y;
+
+====================================================================================================
+core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0 (1 suspect)
+  File: core/dcamera.cpp
+====================================================================================================
+  Line 11 [unrolled_memset]: vertex->b = 0;
 
 ====================================================================================================
 core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (6 suspects)
@@ -704,7 +666,7 @@ core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0 (11 suspects)
   Line 35 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).D + iVar1) =
 
 ====================================================================================================
-core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10 (26 suspects)
+core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10 (27 suspects)
   File: core/dpart.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -730,6 +692,7 @@ core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10 (26 suspects)
   Line 96 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 4) = 0;
   Line 97 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_u + iVar4 + 8) = 0;
   Line 98 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 8) = 0;
+  Line 99 [shadow_pointer_walk]: pCVar5 = (CVector3f *)((int)(pCVar5 + 4) + 8);
   Line 100 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 0x40) = 0;
   Line 102 [pointer_cast]: *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4) = local_28;
   Line 103 [pointer_cast]: *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 4) = local_30;
@@ -830,10 +793,11 @@ core_flies.cpp_CFlies_initFly_FUN_004cc760 (2 suspects)
   Line 32 [unrolled_memcpy]: pCVar4->x = pCVar3->x;
 
 ====================================================================================================
-core_flies.cpp_CFlies_process_FUN_004cbf00 (6 suspects)
+core_flies.cpp_CFlies_process_FUN_004cbf00 (7 suspects)
   File: core/flies.cpp
 ====================================================================================================
   Line 38 [unrolled_memcpy]: local_38.x = local_44.x;
+  Line 64 [shadow_pointer_walk]: pCVar7 = (CVector3f *)((int)(pCVar7 + 4) + 4);
   Line 69 [unrolled_memcpy]: (this_ptr->base).location.position.x = (pCVar3->location).position.x;
   Line 99 [unrolled_memcpy]: pSVar6->control_points[0].x = pSVar6->control_points[1].x;
   Line 104 [unrolled_memcpy]: pSVar6->control_points[1].x = pSVar6->control_points[2].x;
@@ -1932,10 +1896,13 @@ core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60 (4 suspects)
   Line 48 [unrolled_memcpy]: (this_ptr->cached_voxel_coords).x = (this_ptr->voxel_coords).x;
 
 ====================================================================================================
-core_path.cpp_getOrCreatePathMap_FUN_00548390 (6 suspects)
+core_path.cpp_getOrCreatePathMap_FUN_00548390 (9 suspects)
   File: core/path.cpp
 ====================================================================================================
   Line 29 [pointer_cast]: *(int *)((int)g_PathMapLRUCounters + iVar7) = iVar6;
+  Line 42 [pointer_cast]: *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->x + iVar8)) &&
+  Line 44 [pointer_cast]: *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->y + iVar8))) &&
+  Line 47 [pointer_cast]: *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->z + iVar8)))
   Line 50 [pointer_cast]: if (g_PathMapLRUCounters[iVar7] < *(int *)((int)g_PathMapLRUCounters + iVar4)) {
   Line 60 [pointer_cast]: if (*(int *)((int)g_PathMapLRUCounters + iVar1) < g_PathMapLRUCounters[iVar5]) {
   Line 61 [pointer_cast]: *(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;
@@ -2768,17 +2735,19 @@ core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 (2 suspects)
   Line 91 [pointer_cast]: piVar1 = (int *)((int)visible_cameras + iVar11);
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (8 suspects)
+core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (10 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 143 [unrolled_memcpy]: g_CDemonCameraInstance.base.position.f.x = slew.position.x;
   Line 415 [unrolled_memcpy]: pSVar11->position.x = temp_slew.position.x;
   Line 484 [unrolled_memcpy]: (pSVar11->position).x = slew.position.x;
   Line 511 [unrolled_memcpy]: (pSVar11->position).x = (pSVar15->position).x;
+  Line 631 [shadow_pointer_walk]: pCVar5 = (CVector3f *)((int)(pCVar5 + 5) + 8);
   Line 1297 [bit_int_float_compare]: if ((int)(local_3c->extents).x < 0x3f800000) {
   Line 1358 [unrolled_memcpy]: (pSVar10->position).x = (pSVar14->position).x;
   Line 1363 [unrolled_memcpy]: (pSVar10->extents).x = (pSVar14->extents).x;
   Line 1367 [unrolled_memcpy]: (pSVar10->rotation_matrix).m[0].x = (pSVar14->rotation_matrix).m[0].x;
+  Line 1471 [shadow_pointer_walk]: local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 (4 suspects)
@@ -3292,7 +3261,7 @@ core_skeledit.cpp_CLodVert_copy_FUN_00599550 (5 suspects)
   Line 38 [unrolled_memcpy]: // 005995b6: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (27 suspects)
+core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (29 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -3313,7 +3282,9 @@ core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (27 suspects)
   Line 1382 [unrolled_memcpy]: local_198.x = local_1e0.x;
   Line 1398 [unrolled_memcpy]: pCVar10->x = local_1e0.x;
   Line 1412 [unrolled_memcpy]: pCVar20->w = local_214.w;
+  Line 1417 [shadow_pointer_walk]: local_48 = (CMatrix3x4f *)((int)(local_48 + 2) + 0x24);
   Line 1449 [unrolled_memcpy]: pCVar20->w = local_224.w;
+  Line 1454 [shadow_pointer_walk]: local_4c = (CMatrix3x4f *)((int)(local_4c + 2) + 0x24);
   Line 1487 [unrolled_memset]: pCVar10[iVar4].z = 0.0;
   Line 1495 [unrolled_memcpy]: pCVar10->x = pCVar15->x;
   Line 1598 [sign_compare_idiom]: while (bVar25 || SBORROW4(iVar4,local_94) != iVar16 < 0) {
@@ -4428,7 +4399,7 @@ engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0 (1 suspect)
   Line 45 [shadow_pointer_walk]: pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).found_path + 2);
 
 ====================================================================================================
-engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 (15 suspects)
+engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 (16 suspects)
   File: engine/pod.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -4445,6 +4416,7 @@ engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 (15 suspects)
   Line 153 [pointer_cast]: pCVar3 = *(CPodFile **)((int)local_ab0 + iVar6 + 4);
   Line 159 [pointer_cast]: if (pCVar7->pod_files[0] == *(CPodFile **)((int)local_ab0 + iVar6)) break;
   Line 161 [shadow_pointer_walk]: pCVar7 = (CPod *)pCVar7->pod_files;
+  Line 184 [shadow_pointer_walk]: pCVar7 = (CPod *)((int)(pCVar7 + 0xffffffff) + 0x194);
   Line 187 [shadow_pointer_walk]: local_50 = (CPod *)local_50->pod_files;
 
 ====================================================================================================
@@ -4489,6 +4461,12 @@ engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40 (2 suspects)
 ====================================================================================================
   Line 187 [sign_compare_idiom]: bVar13 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);
   Line 222 [sign_compare_idiom]: bVar13 = SBORROW4(local_1c,g_MaxViewportScanline);
+
+====================================================================================================
+engine_winfont.cpp_CWinFont_reset_FUN_005f2a30 (1 suspect)
+  File: engine/winfont.cpp
+====================================================================================================
+  Line 13 [unrolled_memset]: this_ptr->bpp = 0;
 
 ====================================================================================================
 shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (16 suspects)

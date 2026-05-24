@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1764,
-    "complexity_score": 779,
+    "complexity_score": 804,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 15,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 779,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 2543
   },
   "cross_references": [
@@ -386,6 +388,15 @@
       "severity": "moderate",
       "text": "(this_ptr->angular_velocity).z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar14` self-updates via element-arithmetic `(int)(pCVar14 + N) + M`, where `N*sizeof(*pCVar14) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar14->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 304,
+      "match": "pCVar14 = (T *)((int)(pCVar14 + N) + M)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar14` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar14) + offsetof(subfield)` equals the real array stride. Replace `pCVar14->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
@@ -1089,5 +1100,22 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar14` self-updates via element-arithmetic `(int)(pCVar14 + N) + M`, where `N*sizeof(*pCVar14) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar14->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 157,
+      "match": "pCVar14 = (T *)((int)(pCVar14 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar16` self-updates via element-arithmetic `(int)(pCVar16 + N) + M`, where `N*sizeof(*pCVar16) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar16->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 158,
+      "match": "pCVar16 = (T *)((int)(pCVar16 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar16 = (CVector3f *)((int)(pCVar16 + 4) + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

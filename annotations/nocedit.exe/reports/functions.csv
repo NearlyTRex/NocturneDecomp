@@ -524,7 +524,7 @@ crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0,006094c0,crt/heap.c,96,6,pointer
 crt_heap.c__heapwalk_FUN_006012c0,006012c0,crt/heap.c,6,0,,6
 crt_heap.c_AllocatorFallbackStub_FUN_00609780,00609780,crt/heap.c,4,0,,4
 crt_heap.c_heapWalk_FUN_006012d0,006012d0,crt/heap.c,47,4,pointer_cast|register_param,97
-crt_heap.c_ResizeBlockInPlace_FUN_006097b8,006097b8,crt/heap.c,99,32,negative_offset|pointer_cast|register_param|stack_param,439
+crt_heap.c_ResizeBlockInPlace_FUN_006097b8,006097b8,crt/heap.c,99,34,negative_offset|pointer_cast|register_param|stack_param,459
 crt_heap.c_SystemAllocWrapper_FUN_00609718,00609718,crt/heap.c,7,0,,7
 crt_heap.c_AllocateNewHeapBlock_FUN_00609668,00609668,crt/heap.c,39,0,,39
 crt_heap.c_InternalHeapAlloc_FUN_00601bc0,00601bc0,crt/heap.c,57,2,register_param,82
@@ -779,7 +779,7 @@ engine_pod.cpp_CPod_mount_FUN_00550a10,00550a10,engine/pod.cpp,34,0,,34
 engine_pod.cpp_CPod_verifyIntegrity_FUN_00551280,00551280,engine/pod.cpp,15,0,,15
 engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0,005506c0,engine/pod.cpp,42,3,pointer_cast|unrolled_memcpy,82
 engine_pod.cpp_CPodFile_cleanup_FUN_00550090,00550090,engine/pod.cpp,24,0,,24
-engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0,005513d0,engine/pod.cpp,188,15,pointer_cast|shadow_pointer_walk|unrolled_memcpy|warning_type_propagation,358
+engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0,005513d0,engine/pod.cpp,188,16,pointer_cast|shadow_pointer_walk|unrolled_memcpy|warning_type_propagation,368
 engine_pod.cpp_CPod_computeAndStoreCRC_FUN_00551000,00551000,engine/pod.cpp,84,0,,84
 engine_pod.cpp_CPod_dismount_FUN_00550b90,00550b90,engine/pod.cpp,36,0,,36
 engine_pod.cpp_findFileInPod_FUN_00551960,00551960,engine/pod.cpp,9,0,,9
@@ -923,7 +923,7 @@ engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440,005f2440,engine/win
 engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0,005f23f0,engine/winfont.cpp,12,0,,12
 engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860,005f2860,engine/winfont.cpp,60,0,,60
 engine_winfont.cpp_CWinFont_getStringHeight_FUN_005f2b00,005f2b00,engine/winfont.cpp,30,0,,30
-engine_winfont.cpp_CWinFont_reset_FUN_005f2a30,005f2a30,engine/winfont.cpp,15,0,,15
+engine_winfont.cpp_CWinFont_reset_FUN_005f2a30,005f2a30,engine/winfont.cpp,15,1,unrolled_memset,30
 engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0,005f22e0,engine/winfont.cpp,21,0,,21
 engine_console.cpp_CConsole_dtor_FUN_00441880,00441880,engine/console.cpp,4,0,,4
 engine_console.cpp_CConsole_writeChar_FUN_00441970,00441970,engine/console.cpp,34,0,,34
@@ -1881,7 +1881,7 @@ core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0,0044cdf0,core/dcam
 core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430,0044c430,core/dcamera.cpp,111,0,,111
 core_dcamera.cpp_updateFogScrollOffset_FUN_0044bfb0,0044bfb0,core/dcamera.cpp,24,0,,24
 core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180,00452180,core/dcamera.cpp,139,0,,139
-core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0,004538c0,core/dcamera.cpp,22,0,,22
+core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0,004538c0,core/dcamera.cpp,22,1,unrolled_memset,37
 core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0,0044f3e0,core/dcamera.cpp,486,0,,486
 core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0,004507a0,core/dcamera.cpp,56,0,,56
 core_dcamera.cpp_staticInit_FUN_0044bb10,0044bb10,core/dcamera.cpp,7,0,,7
@@ -2044,7 +2044,7 @@ core_cloth.cpp_SClothBone_dtor_FUN_0043e410,0043e410,core/cloth.cpp,4,0,,4
 core_cloth.cpp_CCloth_process_FUN_0043ab80,0043ab80,core/cloth.cpp,5,0,,5
 core_cloth.cpp_CClothList_remove_FUN_0043c170,0043c170,core/cloth.cpp,51,0,,51
 core_cloth.cpp_CClothList_dtor_FUN_0043bf80,0043bf80,core/cloth.cpp,5,0,,5
-core_cloth.cpp_CCloth_setup_FUN_00439710,00439710,core/cloth.cpp,354,14,pointer_cast|unrolled_memcpy|unrolled_memset,509
+core_cloth.cpp_CCloth_setup_FUN_00439710,00439710,core/cloth.cpp,354,0,,354
 core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0,0043a2b0,core/cloth.cpp,42,0,,42
 core_cloth.cpp_CClothList_applyRotation_FUN_0043c3a0,0043c3a0,core/cloth.cpp,15,0,,15
 core_cloth.cpp_CCloth_render_FUN_0043bae0,0043bae0,core/cloth.cpp,148,0,,148
@@ -2052,12 +2052,12 @@ core_cloth.cpp_CCloth_resetState_FUN_0043e170,0043e170,core/cloth.cpp,6,0,,6
 core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043b9f0,0043b9f0,core/cloth.cpp,38,0,,38
 core_cloth.cpp_SClothVertex_arrdtor_FUN_0043e480,0043e480,core/cloth.cpp,6,0,,6
 core_cloth.cpp_scaleVector_FUN_0043e3d0,0043e3d0,core/cloth.cpp,7,0,,7
-core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0,0043dcc0,core/cloth.cpp,52,0,,52
+core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0,0043dcc0,core/cloth.cpp,52,2,pointer_cast|shadow_pointer_walk,82
 core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0,0043b7e0,core/cloth.cpp,78,0,,78
 core_cloth.cpp_CCloth_addFilesToExtract_FUN_0043e0a0,0043e0a0,core/cloth.cpp,6,0,,6
 core_cloth.cpp_plotPixelSafe_FUN_0043c6b0,0043c6b0,core/cloth.cpp,8,0,,8
 core_cloth.cpp_CCloth_load_FUN_00438cf0,00438cf0,core/cloth.cpp,146,0,,146
-core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420,0043a420,core/cloth.cpp,212,4,self_copy_guard|unrolled_memcpy,262
+core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420,0043a420,core/cloth.cpp,212,0,,212
 core_cloth.cpp_CCloth_allocMemory_FUN_00438c50,00438c50,core/cloth.cpp,15,0,,15
 core_cloth.cpp_SClothVertex_ctor_FUN_0043e420,0043e420,core/cloth.cpp,6,0,,6
 core_cloth.cpp_CCloth_renderCollisionBones_FUN_0043b790,0043b790,core/cloth.cpp,13,0,,13
@@ -2071,9 +2071,9 @@ core_cloth.cpp_CClothList_process_FUN_0043c2d0,0043c2d0,core/cloth.cpp,16,0,,16
 core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110,0043a110,core/cloth.cpp,76,0,,76
 core_cloth.cpp_CClothList_add_FUN_0043c0f0,0043c0f0,core/cloth.cpp,23,0,,23
 core_cloth.cpp_CCloth_initializeConnections_FUN_004394e0,004394e0,core/cloth.cpp,100,0,,100
-core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590,0043d590,core/cloth.cpp,299,10,pointer_cast|shadow_pointer_walk,409
+core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590,0043d590,core/cloth.cpp,299,0,,299
 core_cloth.cpp_CCloth_save_FUN_00439260,00439260,core/cloth.cpp,52,0,,52
-core_cloth.cpp_CCloth_boneEditor_FUN_0043c880,0043c880,core/cloth.cpp,383,4,shadow_pointer_walk|unrolled_memcpy,433
+core_cloth.cpp_CCloth_boneEditor_FUN_0043c880,0043c880,core/cloth.cpp,383,0,,383
 core_cloth.cpp_CClothList_reset_FUN_0043c070,0043c070,core/cloth.cpp,24,0,,24
 core_cloth.cpp_dotProduct2_FUN_0043e320,0043e320,core/cloth.cpp,4,0,,4
 core_cloth.cpp_SClothBone_ctor_FUN_0043e400,0043e400,core/cloth.cpp,4,0,,4
@@ -2081,7 +2081,7 @@ core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430,0043c430,core/cloth.cpp,81,0
 core_cloth.cpp_CClothList_load_FUN_0043bfa0,0043bfa0,core/cloth.cpp,40,0,,40
 core_cloth.cpp_addVector_FUN_0043e2f0,0043e2f0,core/cloth.cpp,7,0,,7
 core_cloth.cpp_dotProduct1_FUN_0043e2c0,0043e2c0,core/cloth.cpp,4,0,,4
-core_cloth.cpp_CCloth_step_FUN_0043abb0,0043abb0,core/cloth.cpp,402,13,pointer_cast|shadow_pointer_walk|unrolled_memcpy|unrolled_memset,552
+core_cloth.cpp_CCloth_step_FUN_0043abb0,0043abb0,core/cloth.cpp,402,0,,402
 core_cloth.cpp_CCloth_dtor_FUN_00438c00,00438c00,core/cloth.cpp,13,0,,13
 core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460,0043e460,core/cloth.cpp,6,0,,6
 core_cloth.cpp_vectorLengthFast_FUN_0043e350,0043e350,core/cloth.cpp,4,0,,4
@@ -2219,7 +2219,7 @@ core_bugs.cpp_CBugs_getCollisionType_FUN_00425610,00425610,core/bugs.cpp,4,0,,4
 core_bugs.cpp_CBugs_setup_FUN_00424e50,00424e50,core/bugs.cpp,92,0,,92
 core_bugs.cpp_SBug_dtor_FUN_00427cb0,00427cb0,core/bugs.cpp,4,0,,4
 core_bugs.cpp_getBugVertex_FUN_00427b40,00427b40,core/bugs.cpp,4,0,,4
-core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0,004276c0,core/bugs.cpp,61,0,,61
+core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0,004276c0,core/bugs.cpp,61,1,shadow_pointer_walk,76
 core_bugs.cpp_getDeformableModelName_FUN_00427b70,00427b70,core/bugs.cpp,4,0,,4
 core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340,00425340,core/bugs.cpp,63,0,,63
 core_bugs.cpp_maxFloat_FUN_00427ba0,00427ba0,core/bugs.cpp,7,0,,7
@@ -2255,7 +2255,7 @@ core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40,00482e40,core/dpart.cp
 core_dpart.cpp_CDemonPart_save_FUN_004824c0,004824c0,core/dpart.cpp,7,0,,7
 core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0,004824f0,core/dpart.cpp,39,11,pointer_cast,154
 core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210,00483210,core/dpart.cpp,59,0,,59
-core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10,00482a10,core/dpart.cpp,118,26,pointer_cast|unrolled_memcpy|warning_inlined_function,393
+core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10,00482a10,core/dpart.cpp,118,27,pointer_cast|shadow_pointer_walk|unrolled_memcpy|warning_inlined_function,408
 core_dpart.cpp_CDemonPart_ctor_FUN_00482110,00482110,core/dpart.cpp,13,0,,13
 core_dpart.cpp_CDemonPart_write_FUN_00482330,00482330,core/dpart.cpp,41,0,,41
 core_dpart.cpp_findEdgeByYStart_FUN_00483330,00483330,core/dpart.cpp,17,0,,17
@@ -2322,7 +2322,7 @@ core_flies.cpp_CFlies_getPropertyList_FUN_004ccaa0,004ccaa0,core/flies.cpp,10,0,
 core_flies.cpp_SFly_dtor_FUN_004ccd40,004ccd40,core/flies.cpp,6,0,,6
 core_flies.cpp_drawFlyPixelClipped_FUN_004cc2c0,004cc2c0,core/flies.cpp,9,0,,9
 core_flies.cpp_CFlies_getBoundingBox_FUN_004cc700,004cc700,core/flies.cpp,14,0,,14
-core_flies.cpp_CFlies_process_FUN_004cbf00,004cbf00,core/flies.cpp,124,6,unrolled_memcpy,189
+core_flies.cpp_CFlies_process_FUN_004cbf00,004cbf00,core/flies.cpp,124,7,shadow_pointer_walk|unrolled_memcpy,204
 core_flies.cpp_CFlies_processInEditor_FUN_004ccaf0,004ccaf0,core/flies.cpp,47,0,,47
 core_flies.cpp_CFlies_archive_FUN_004cbe60,004cbe60,core/flies.cpp,20,0,,20
 core_flies.cpp_CFlies_renderOpaque_FUN_004cc300,004cc300,core/flies.cpp,178,5,pointer_cast|unrolled_memcpy,238
@@ -2626,7 +2626,7 @@ core_setedit.cpp_drawCameraFrustum_FUN_00582930,00582930,core/setedit.cpp,917,0,
 core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50,0057ae50,core/setedit.cpp,164,4,unrolled_memcpy|unrolled_strcpy|warning_inlined_function,219
 core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320,00581320,core/setedit.cpp,44,0,,44
 core_setedit.cpp_CDemonSet_importA3D_FUN_00578c60,00578c60,core/setedit.cpp,7,0,,7
-core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170,00583170,core/setedit.cpp,1474,8,bit_int_float_compare|unrolled_memcpy,1564
+core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170,00583170,core/setedit.cpp,1474,10,bit_int_float_compare|shadow_pointer_walk|unrolled_memcpy,1589
 core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70,00584e70,core/setedit.cpp,113,4,unrolled_strchr|unrolled_strcpy,163
 core_setedit.cpp_staticInit_FUN_00576930,00576930,core/setedit.cpp,6,0,,6
 core_setedit.cpp_promptYesNo_FUN_00578c90,00578c90,core/setedit.cpp,40,0,,40
@@ -4142,7 +4142,7 @@ core_box.cpp_CBoundingBox3D_reset_FUN_00420fb0,00420fb0,core/box.cpp,12,0,,12
 core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840,00420840,core/box.cpp,24,0,,24
 core_box.cpp_CBoundingBox3D_render_FUN_004210b0,004210b0,core/box.cpp,134,0,,134
 core_box.cpp_CBox_updateTransform_FUN_0041e0e0,0041e0e0,core/box.cpp,91,0,,91
-core_box.cpp_CBox_processPhysics_FUN_0041e350,0041e350,core/box.cpp,779,0,,779
+core_box.cpp_CBox_processPhysics_FUN_0041e350,0041e350,core/box.cpp,779,2,shadow_pointer_walk,804
 core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90,00420e90,core/box.cpp,54,0,,54
 core_box.cpp_CBoundingBox3D_isInverted_FUN_00420fe0,00420fe0,core/box.cpp,8,0,,8
 core_box.cpp_CBox_dtor_FUN_0041dd00,0041dd00,core/box.cpp,6,0,,6
@@ -4299,7 +4299,7 @@ core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80,0058ac80,core
 core_skeledit.cpp_CLodMeshPrecomputeEntry_reset_FUN_00589fc0,00589fc0,core/skeledit.cpp,5,0,,5
 core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0,0058b3a0,core/skeledit.cpp,101,6,pointer_cast,166
 core_skeledit.cpp_drawInfoRow_FUN_00596860,00596860,core/skeledit.cpp,8,0,,8
-core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690,00592690,core/skeledit.cpp,1852,27,missing_cave_copy|pointer_cast|sign_compare_idiom|unrolled_memcpy|unrolled_memset|unrolled_strcpy|unrolled_strlen|warning_inlined_function,2162
+core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690,00592690,core/skeledit.cpp,1852,29,missing_cave_copy|pointer_cast|shadow_pointer_walk|sign_compare_idiom|unrolled_memcpy|unrolled_memset|unrolled_strcpy|unrolled_strlen|warning_inlined_function,2187
 core_skeledit.cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260,0058a260,core/skeledit.cpp,8,0,,8
 core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0,0058a4a0,core/skeledit.cpp,243,13,pointer_cast|unrolled_memcpy|unrolled_strcpy,388
 core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0,0058adb0,core/skeledit.cpp,32,0,,32
@@ -5002,7 +5002,7 @@ core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0,0042d3d0,core/charactr.cp
 core_charactr.cpp_staticInit_FUN_00427d80,00427d80,core/charactr.cpp,8,0,,8
 core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0,0042b9e0,core/charactr.cpp,74,0,,74
 core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0,0042bcc0,core/charactr.cpp,15,0,,15
-core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40,00428f40,core/charactr.cpp,292,0,,292
+core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40,00428f40,core/charactr.cpp,292,2,unrolled_memset,317
 core_charactr.cpp_CCharacter_initGesture_FUN_0042d390,0042d390,core/charactr.cpp,12,0,,12
 core_charactr.cpp_getGameDeltaTime_FUN_0042f9e0,0042f9e0,core/charactr.cpp,4,0,,4
 core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70,0042ca70,core/charactr.cpp,107,0,,107
@@ -5479,7 +5479,7 @@ core_path.cpp_queuePop_FUN_005463d0,005463d0,core/path.cpp,18,0,,18
 core_path.cpp_CPathMap_searchGrid_FUN_005487a0,005487a0,core/path.cpp,117,0,,117
 core_path.cpp_CPathMap_previewPathfinding_FUN_00547c00,00547c00,core/path.cpp,39,0,,39
 core_path.cpp_isPathfindingQueueEmpty_FUN_00546330,00546330,core/path.cpp,4,0,,4
-core_path.cpp_getOrCreatePathMap_FUN_00548390,00548390,core/path.cpp,68,6,pointer_cast|unrolled_memcpy,138
+core_path.cpp_getOrCreatePathMap_FUN_00548390,00548390,core/path.cpp,68,9,pointer_cast|unrolled_memcpy,168
 core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00,00547d00,core/path.cpp,28,2,unrolled_memcpy,53
 core_path.cpp_getPathMap_FUN_00548500,00548500,core/path.cpp,6,0,,6
 core_melee.cpp_CMelee_canPickup_FUN_0050eab0,0050eab0,core/melee.cpp,11,0,,11
@@ -5983,7 +5983,7 @@ core_tbplayer.cpp_CDrummer_processDamage_FUN_005da510,005da510,core/tbplayer.cpp
 core_tbplayer.cpp_CDrummer_setup_FUN_005da2f0,005da2f0,core/tbplayer.cpp,17,0,,17
 core_tbplayer.cpp_factoryFuncBassPlayer_FUN_005da020,005da020,core/tbplayer.cpp,11,0,,11
 core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620,0041b620,core/bodypart.cpp,6,0,,6
-core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050,0041a050,core/bodypart.cpp,199,0,,199
+core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050,0041a050,core/bodypart.cpp,199,1,unrolled_memset,214
 core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0,0041add0,core/bodypart.cpp,25,0,,25
 core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0,004194b0,core/bodypart.cpp,46,0,,46
 core_bodypart.cpp_CBodyPart_setup_FUN_00419810,00419810,core/bodypart.cpp,20,0,,20

@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (378 diagnostics)
+Cppcheck (quick) (371 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -40,11 +40,11 @@ shiftTooManyBitsSigned (102)
     File: cockpit/pkbitmap.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_cloth.cpp_CCloth_setup_FUN_00439710           line 96
+  core_cloth.cpp_CCloth_setup_FUN_00439710           line 85
     File: core/cloth.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_cloth.cpp_CCloth_setup_FUN_00439710           line 97
+  core_cloth.cpp_CCloth_setup_FUN_00439710           line 86
     File: core/cloth.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -893,36 +893,8 @@ selfAssignment (57)
     Redundant assignment of 'piVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (54)
+uninitvar (47)
 ----------------------------------------------------------------------------------------------------
-
-  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 90
-    File: core/cloth.cpp
-    Uninitialized variable: local_74
-
-  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 90
-    File: core/cloth.cpp
-    Uninitialized variable: local_7c
-
-  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 90
-    File: core/cloth.cpp
-    Uninitialized variable: local_78
-
-  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 147
-    File: core/cloth.cpp
-    Uninitialized variable: local_b0
-
-  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 148
-    File: core/cloth.cpp
-    Uninitialized variable: local_b8
-
-  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 149
-    File: core/cloth.cpp
-    Uninitialized variable: local_b4
-
-  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880      line 242
-    File: core/cloth.cpp
-    Uninitialized variable: fStack_550
 
   core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 47
     File: core/dcube.cpp

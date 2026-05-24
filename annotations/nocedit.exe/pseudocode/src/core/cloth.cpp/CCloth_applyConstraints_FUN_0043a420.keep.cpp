@@ -82,11 +82,9 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
       local_130 = (vertex->position).x - (pSVar4->position).x;
       local_12c = (vertex->position).y - (pSVar4->position).y;
       local_128 = (vertex->position).z - (pSVar4->position).z;
-      if (&local_7c != &local_130) {
-        local_7c = local_130;
-        local_78 = local_12c;
-        local_74 = local_128;
-      }
+      local_7c = local_130;
+      local_78 = local_12c;
+      local_74 = local_128;
       local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
       local_24 = core_chain_cpp_fastSqrt_FUN_00431350(local_5c);
       local_1c = vertex->rest_lengths[iVar6];
@@ -139,11 +137,9 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
       local_70 = (vertex->position).x - local_14->x;
       local_6c = (vertex->position).y - local_14->y;
       local_68 = (vertex->position).z - local_14->z;
-      if (&local_b8 != &local_70) {
-        local_b8 = local_70;
-        local_b4 = local_6c;
-        local_b0 = local_68;
-      }
+      local_b8 = local_70;
+      local_b4 = local_6c;
+      local_b0 = local_68;
       local_a4 = local_b0 * local_38[local_20].local_matrix.m[2].z +
                  local_b8 * local_38[local_20].local_matrix.m[0].z +
                  local_b4 * local_38[local_20].local_matrix.m[1].z;
@@ -169,18 +165,12 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
           local_a0.x = pSVar3[iVar8].position_offset.x + pCVar5->x;
           local_a0.y = pSVar3[iVar8].position_offset.y + pCVar5->y;
           local_a0.z = pSVar3[iVar8].position_offset.z + pCVar5->z;
-          if (&local_88 != &local_a0) {
-            local_88.x = local_a0.x;
-            local_88.y = local_a0.y;
-            local_88.z = local_a0.z;
-          }
+          local_88 = local_a0;
           fVar3 = (vertex->position).x;
           fVar4 = (vertex->position).y;
           fVar5 = (vertex->position).z;
           if (vertex != (SClothVertex *)&local_88) {
-            (vertex->position).x = local_88.x;
-            (vertex->position).y = local_88.y;
-            (vertex->position).z = local_88.z;
+            vertex->position = local_88;
           }
           local_124 = (local_88.x - fVar3) * *local_30;
           local_120 = (local_88.y - fVar4) * *local_30;

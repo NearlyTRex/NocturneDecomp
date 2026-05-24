@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2745,
-    "complexity_score": 1564,
+    "complexity_score": 1589,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 52,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1474,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
       "bit_int_float_compare",
+      "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
     "total_lines": 4219
@@ -1673,6 +1674,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via element-arithmetic `(int)(pCVar4 + N) + M`, where `N*sizeof(*pCVar4) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar4->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1469,
+      "match": "pCVar4 = (T *)((int)(pCVar4 + N) + M)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 5) + 8);",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 1328,
       "match": "MOVSD.REP",
@@ -2837,6 +2847,14 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via element-arithmetic `(int)(local_1c + N) + M`, where `N*sizeof(*local_1c) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_1c->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1471,
+      "match": "local_1c = (T *)((int)(local_1c + N) + M)",
+      "severity": "moderate",
+      "text": "local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
       "line": 1297,
       "match": "(int)(local_3c->extents).x < 0x3f800000",
@@ -2879,6 +2897,15 @@
       "severity": "moderate",
       "text": "(pSVar11->position).x = (pSVar15->position).x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via element-arithmetic `(int)(pCVar5 + N) + M`, where `N*sizeof(*pCVar5) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar5->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "introduced_by": "keep",
+      "line": 631,
+      "match": "pCVar5 = (T *)((int)(pCVar5 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar5 = (CVector3f *)((int)(pCVar5 + 5) + 8);",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

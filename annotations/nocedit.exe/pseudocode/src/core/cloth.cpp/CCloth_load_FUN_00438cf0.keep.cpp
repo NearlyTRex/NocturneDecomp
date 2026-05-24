@@ -12,12 +12,10 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
 {
   _FILE *stream;
   SClothBone *pSVar9;
-  int *piVar1;
   CVector3f *pCVar10;
   int iVar11;
   int iVar2;
   float *pfVar12;
-  int iVar13;
   int *piVar14;
   float *pfVar15;
   int iVar16;
@@ -130,16 +128,13 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   iVar16 = 0;
   iVar2 = shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\core\\cloth.cpp",0x112);
   if (0 < (this_ptr->model).vertex_count) {
-    iVar13 = 0;
     do {
       pCVar10 = &this_ptr->vertices[iVar16].offset_pos;
-      piVar1 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar13);
-      iVar16 = iVar16 + 1;
-      pCVar10->x = (float)*piVar1 * 0.00390625f;
-      pCVar10->y = (float)piVar1[1] * 0.00390625f;
-      pCVar10->z = (float)piVar1[2] * 0.00390625f;
+      pCVar10->x = (float)(this_ptr->model).vertex_list[iVar16].x * 0.00390625f;
+      pCVar10->y = (float)(this_ptr->model).vertex_list[iVar16].y * 0.00390625f;
+      pCVar10->z = (float)(this_ptr->model).vertex_list[iVar16].z * 0.00390625f;
       iVar2 = (this_ptr->model).vertex_count;
-      iVar13 = iVar13 + 0xc;
+      iVar16 = iVar16 + 1;
     } while (iVar16 < iVar2);
   }
   return iVar2;

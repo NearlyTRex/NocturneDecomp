@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 135
-  Total diagnostics: 378
+  Functions with findings: 133
+  Total diagnostics: 371
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 135, raw .cpp files: 0
+  .keep.cpp files: 133, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -161,17 +161,6 @@ core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0  [.keep] [Cppcheck
   Line  218: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  221: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  224: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420  [.keep] [Cppcheck (quick)]
-  File: core/cloth.cpp  (6 diagnostics)
-
-  Line   90: [uninitvar] Uninitialized variable: local_74
-  Line   90: [uninitvar] Uninitialized variable: local_7c
-  Line   90: [uninitvar] Uninitialized variable: local_78
-  Line  147: [uninitvar] Uninitialized variable: local_b0
-  Line  148: [uninitvar] Uninitialized variable: local_b8
-  Line  149: [uninitvar] Uninitialized variable: local_b4
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0  [.keep] [Cppcheck (quick)]
@@ -540,8 +529,8 @@ core_chain.cpp_fastSqrt_FUN_00431350  [.keep] [Cppcheck (quick)]
 core_cloth.cpp_CCloth_setup_FUN_00439710  [.keep] [Cppcheck (quick)]
   File: core/cloth.cpp  (2 diagnostics)
 
-  Line   96: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   97: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   85: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   86: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_cloth.cpp_fastInvSqrt_FUN_0043e2a0  [.keep] [Cppcheck (quick)]
@@ -758,12 +747,6 @@ cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70  [.keep] [Cppcheck (q
   File: cockpit/pkbitmap.cpp  (1 diagnostics)
 
   Line   59: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_cloth.cpp_CCloth_boneEditor_FUN_0043c880  [.keep] [Cppcheck (quick)]
-  File: core/cloth.cpp  (1 diagnostics)
-
-  Line  242: [uninitvar] Uninitialized variable: fStack_550
 
 ----------------------------------------------------------------------------------------------------
 core_dcube.cpp_CDemonCube_save_FUN_00457430  [.keep] [Cppcheck (quick)]

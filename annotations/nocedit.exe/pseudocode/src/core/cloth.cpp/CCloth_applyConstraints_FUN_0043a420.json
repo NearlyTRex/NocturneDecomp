@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 480,
-    "complexity_score": 262,
+    "complexity_score": 212,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 212,
-    "suspect_count": 4,
-    "suspect_types": [
-      "self_copy_guard",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 692
   },
   "cross_references": [
@@ -145,6 +142,42 @@
     "pcode_op_count": 3193
   },
   "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 189,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_88.x = local_a0.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 197,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(vertex->position).x = local_88.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_7c != &local_130)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 100,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&local_7c != &local_130) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_b8 != &local_70)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 158,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&local_b8 != &local_70) {",
+      "type": "self_copy_guard"
+    },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 142,
@@ -665,138 +698,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CCloth_applyConstraints_FUN_0043a420.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 6,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 90,
-          "message": "Uninitialized variable: local_74",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 40,
-          "line": 90,
-          "message": "Uninitialized variable: local_7c",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 62,
-          "line": 90,
-          "message": "Uninitialized variable: local_78",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 147,
-          "message": "Uninitialized variable: local_b0",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 148,
-          "message": "Uninitialized variable: local_b8",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 149,
-          "message": "Uninitialized variable: local_b4",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 189,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_88.x = local_a0.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 197,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(vertex->position).x = local_88.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom dead self-copy guard: `if (&local_7c != &local_130)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 100,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
-      "severity": "moderate",
-      "text": "if (&local_7c != &local_130) {",
-      "type": "self_copy_guard"
-    },
-    {
-      "description": "Watcom dead self-copy guard: `if (&local_b8 != &local_70)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 158,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
-      "severity": "moderate",
-      "text": "if (&local_b8 != &local_70) {",
-      "type": "self_copy_guard"
-    },
-    {
-      "description": "Uninitialized variable: local_74",
-      "line": 90,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_7c",
-      "line": 90,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_78",
-      "line": 90,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b0",
-      "line": 147,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_a4 = local_b0 * local_38[local_20].local_matrix.m[2].z +",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b8",
-      "line": 148,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_b8 * local_38[local_20].local_matrix.m[0].z +",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b4",
-      "line": 149,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_b4 * local_38[local_20].local_matrix.m[1].z;",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

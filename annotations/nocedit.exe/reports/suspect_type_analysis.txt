@@ -4,43 +4,43 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1444 ( 43.9%)
-  unrolled_memcpy                  733 ( 22.3%)
-  unrolled_strcpy                  247 (  7.5%)
-  shadow_pointer_walk              115 (  3.5%)
+  pointer_cast                    1432 ( 44.0%)
+  unrolled_memcpy                  722 ( 22.2%)
+  unrolled_strcpy                  247 (  7.6%)
+  shadow_pointer_walk              114 (  3.5%)
   missing_cave_copy                111 (  3.4%)
-  unrolled_strlen                   80 (  2.4%)
-  raw_address_constant              67 (  2.0%)
+  unrolled_strlen                   80 (  2.5%)
+  raw_address_constant              67 (  2.1%)
   carry_arith_idiom                 63 (  1.9%)
-  unrolled_memset                   56 (  1.7%)
-  static_uninitvar                  54 (  1.6%)
+  unrolled_memset                   57 (  1.7%)
+  static_uninitvar                  47 (  1.4%)
   warning_inlined_function          42 (  1.3%)
   bitcast_double_pair               42 (  1.3%)
-  unrolled_strchr                   41 (  1.2%)
+  unrolled_strchr                   41 (  1.3%)
   bit_int_float_compare             33 (  1.0%)
   static_legacy_uninitvar           29 (  0.9%)
-  static_invalid_pointer_cast       18 (  0.5%)
+  static_invalid_pointer_cast       18 (  0.6%)
   sign_compare_idiom                17 (  0.5%)
   warning_type_propagation          15 (  0.5%)
   stack_alignment_array             14 (  0.4%)
   warning_unreachable               11 (  0.3%)
   sub84_truncation                  10 (  0.3%)
-  self_copy_guard                    9 (  0.3%)
   static_null_pointer                8 (  0.2%)
   stack_param                        8 (  0.2%)
   negative_offset                    7 (  0.2%)
+  self_copy_guard                    7 (  0.2%)
   unrolled_strcat                    6 (  0.2%)
   unaffected_reg                     6 (  0.2%)
   static_array_oob_cond              3 (  0.1%)
   fast_sqrt_inline                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1444 occurrences)
+TYPE: pointer_cast (1432 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   605x  (int)&NAME used in byte-offset arithmetic
-    39x  (int *)((int)this_ptr
+   606x  (int)&NAME used in byte-offset arithmetic
+    37x  (int *)((int)this_ptr
     31x  (uint *)((int)this_ptr
     18x  (CDemonActor **)((int)g_CDemonSetPtr
     17x  (uint *)((int)g_ModelPolygonData
@@ -61,9 +61,7 @@ Unique patterns:
      9x  (double *)((int)pdVar6
 
 Functions:
-  core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590
-  core_cloth.cpp_CCloth_setup_FUN_00439710
-  core_cloth.cpp_CCloth_step_FUN_0043abb0
+  core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0
   core_conveyor.cpp_CConveyor_process_FUN_00441df0
   core_course.cpp_CCourse_save_FUN_00442a90
   core_course.cpp_CCourse_showEditorMenu_FUN_00443040
@@ -366,20 +364,16 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (733 occurrences)
+TYPE: unrolled_memcpy (722 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   558x  field-by-field struct copy
+   547x  field-by-field struct copy
     89x  for (...; != 0; ... + -1)
     84x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
-  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
-  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
-  core_cloth.cpp_CCloth_setup_FUN_00439710
-  core_cloth.cpp_CCloth_step_FUN_0043abb0
   core_conveyor.cpp_CConveyor_setup_FUN_00441d60
   core_course.cpp_CCourse_evaluate_FUN_00442710
   core_course.cpp_CCourse_importMatrices_FUN_00442ea0
@@ -721,7 +715,7 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (115 occurrences)
+TYPE: shadow_pointer_walk (114 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -731,11 +725,11 @@ Unique patterns:
      6x  pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)
      4x  pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD
      4x  pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD
-     4x  pCVar10 = (T *)&(pCVar10->FIELD).SUBFIELD
      4x  local_18 = (T *)local_18->ARRAY
      3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
-     2x  pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)
+     2x  pCVar7 = (T *)((int)(pCVar7 + N) + M)
      2x  pCVar17 = (T *)((pCVar17->FIELD).SUBFIELD...ARRAY + CONST)
+     2x  pCVar5 = (T *)((int)(pCVar5 + N) + M)
      2x  pCVar10 = (T *)pCVar10->ARRAY
      2x  pCVar2 = (T *)pCVar2->ARRAY
      2x  pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)
@@ -747,14 +741,16 @@ Unique patterns:
      2x  pCVar5 = (T *)((int)&(pCVar5->FIELD).SUBFIELD + CONST)
 
 Functions:
-  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
-  core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590
-  core_cloth.cpp_CCloth_step_FUN_0043abb0
+  core_box.cpp_CBox_processPhysics_FUN_0041e350
+  core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0
+  core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0
   core_curtain.cpp_CCurtain_process_FUN_0044a920
   core_curtain.cpp_CCurtain_setup_FUN_00449810
   core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0
   core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
+  core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10
   core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
+  core_flies.cpp_CFlies_process_FUN_004cbf00
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
   core_glass.cpp_CGlass_renderBackground_FUN_004e9e90
   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
@@ -780,6 +776,7 @@ Functions:
   core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600
   core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910
   core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
   core_setutil.cpp_C3DSLight_create_FUN_00586a90
   core_setutil.cpp_C3DSLight_save_FUN_00587090
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
@@ -788,6 +785,7 @@ Functions:
   core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
   core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
   core_texlist.cpp_CTextureList_load_FUN_005dbe00
   core_texlist.cpp_CTextureList_save_FUN_005dc0d0
   core_vehicle.cpp_CVehicle_setup_FUN_005e7b90
@@ -975,17 +973,18 @@ Functions:
   engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
 
 ====================================================================================================
-TYPE: unrolled_memset (56 occurrences)
+TYPE: unrolled_memset (57 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    56x  cascade_constant_fill
+    57x  cascade_constant_fill
 
 Functions:
-  core_cloth.cpp_CCloth_setup_FUN_00439710
-  core_cloth.cpp_CCloth_step_FUN_0043abb0
+  core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
+  core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
   core_curtain.cpp_CCurtain_setup_FUN_00449810
   core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0
+  core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0
   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
@@ -1004,19 +1003,18 @@ Functions:
   core_vehicle.cpp_CVehicle_ctor_FUN_005e7940
   core_vehicle.cpp_CVehicle_setup_FUN_005e7b90
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
+  engine_winfont.cpp_CWinFont_reset_FUN_005f2a30
   shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 
 ====================================================================================================
-TYPE: static_uninitvar (54 occurrences)
+TYPE: static_uninitvar (47 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    54x  Cppcheck: uninitialized variable
+    47x  Cppcheck: uninitialized variable
 
 Functions:
-  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
-  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
   core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
   core_gabriela.cpp_CGabriella_processAI_FUN_004d4190
@@ -1320,21 +1318,6 @@ Functions:
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 
 ====================================================================================================
-TYPE: self_copy_guard (9 occurrences)
-====================================================================================================
-
-Unique patterns:
-     9x  if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }
-
-Functions:
-  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
-  core_curtain.cpp_CCurtain_process_FUN_0044a920
-  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600
-  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
-  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
-
-====================================================================================================
 TYPE: static_null_pointer (8 occurrences)
 ====================================================================================================
 
@@ -1378,6 +1361,20 @@ Functions:
   core_hero.cpp_CHero_dtor_FUN_004f2470
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+
+====================================================================================================
+TYPE: self_copy_guard (7 occurrences)
+====================================================================================================
+
+Unique patterns:
+     7x  if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }
+
+Functions:
+  core_curtain.cpp_CCurtain_process_FUN_0044a920
+  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
+  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
 
 ====================================================================================================
 TYPE: unrolled_strcat (6 occurrences)
