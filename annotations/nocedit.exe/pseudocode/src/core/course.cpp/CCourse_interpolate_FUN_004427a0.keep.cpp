@@ -72,9 +72,7 @@ LAB_004427da:
   if ((double)local_78 <= 0.001) {
     pCVar8 = this_ptr->frames + local_18;
     if ((CCourseFrame *)&local_3c != pCVar8) {
-      local_3c.x = (pCVar8->pos).x;
-      local_3c.y = (pCVar8->pos).y;
-      local_3c.z = (pCVar8->pos).z;
+      local_3c = pCVar8->pos;
     }
     pCVar6 = &this_ptr->frames[local_18].orient;
   }
@@ -85,11 +83,7 @@ LAB_004427da:
     local_30.x = pCVar8[local_18].pos.x * fVar1 + (pCVar5->pos).x * local_78;
     local_30.y = pCVar8[local_18].pos.y * fVar1 + (pCVar5->pos).y * local_78;
     local_30.z = pCVar8[local_18].pos.z * fVar1 + local_78 * (pCVar5->pos).z;
-    if (&local_3c != &local_30) {
-      local_3c.x = local_30.x;
-      local_3c.y = local_30.y;
-      local_3c.z = local_30.z;
-    }
+    local_3c = local_30;
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
               (&this_ptr->frames[local_18].orient,&this_ptr->frames[iVar7].orient,local_78,&local_64
               );
@@ -100,9 +94,7 @@ LAB_004427da:
   fVar3 = pCVar6->y;
   fVar4 = pCVar6->z;
   if (out_pos != &local_3c) {
-    out_pos->x = local_3c.x;
-    out_pos->y = local_3c.y;
-    out_pos->z = local_3c.z;
+    *out_pos = local_3c;
     out_orient->w = fVar1;
     out_orient->x = fVar2;
     out_orient->y = fVar3;

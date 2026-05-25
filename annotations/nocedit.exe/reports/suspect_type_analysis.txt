@@ -4,50 +4,50 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1374 ( 43.8%)
-  unrolled_memcpy                  681 ( 21.7%)
-  unrolled_strcpy                  244 (  7.8%)
-  shadow_pointer_walk              125 (  4.0%)
-  missing_cave_copy                111 (  3.5%)
-  unrolled_strlen                   80 (  2.6%)
-  raw_address_constant              67 (  2.1%)
-  carry_arith_idiom                 63 (  2.0%)
-  static_uninitvar                  47 (  1.5%)
-  bitcast_double_pair               42 (  1.3%)
-  unrolled_strchr                   41 (  1.3%)
-  warning_inlined_function          41 (  1.3%)
+  pointer_cast                    1334 ( 44.5%)
+  unrolled_memcpy                  624 ( 20.8%)
+  unrolled_strcpy                  244 (  8.1%)
+  shadow_pointer_walk              116 (  3.9%)
+  missing_cave_copy                109 (  3.6%)
+  unrolled_strlen                   80 (  2.7%)
+  carry_arith_idiom                 63 (  2.1%)
+  raw_address_constant              43 (  1.4%)
+  bitcast_double_pair               42 (  1.4%)
+  static_uninitvar                  41 (  1.4%)
+  unrolled_strchr                   41 (  1.4%)
+  warning_inlined_function          41 (  1.4%)
   unrolled_memset                   40 (  1.3%)
   bit_int_float_compare             33 (  1.1%)
-  static_legacy_uninitvar           29 (  0.9%)
-  static_invalid_pointer_cast       18 (  0.6%)
+  static_legacy_uninitvar           29 (  1.0%)
+  static_invalid_pointer_cast       17 (  0.6%)
   warning_type_propagation          15 (  0.5%)
-  stack_alignment_array             14 (  0.4%)
+  stack_alignment_array             14 (  0.5%)
   warning_unreachable               11 (  0.4%)
   sub84_truncation                  10 (  0.3%)
   static_null_pointer                8 (  0.3%)
   stack_param                        8 (  0.3%)
   negative_offset                    7 (  0.2%)
   unrolled_strcat                    6 (  0.2%)
-  self_copy_guard                    6 (  0.2%)
   unaffected_reg                     6 (  0.2%)
   sign_compare_idiom                 5 (  0.2%)
+  self_copy_guard                    4 (  0.1%)
   static_array_oob_cond              3 (  0.1%)
   fast_sqrt_inline                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1374 occurrences)
+TYPE: pointer_cast (1334 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   580x  (int)&NAME used in byte-offset arithmetic
+   556x  (int)&NAME used in byte-offset arithmetic
     37x  (int *)((int)this_ptr
     31x  (uint *)((int)this_ptr
     18x  (CDemonActor **)((int)g_CDemonSetPtr
     17x  (uint *)((int)g_ModelPolygonData
     16x  (int *)((int)g_ScreenBufferArray
-    16x  (byte *)((int)this_ptr
     14x  (int *)((int)g_ModelPolygonData
     14x  (uint *)((int)g_ThumbnailImageBuffer
+    13x  (byte *)((int)this_ptr
     13x  (int *)((int)pCVar1
     12x  (SScriptXRef *)((int)pSVar6
     12x  (double *)((int)pdVar2
@@ -62,16 +62,6 @@ Unique patterns:
 
 Functions:
   core_conveyor.cpp_CConveyor_process_FUN_00441df0
-  core_course.cpp_CCourse_save_FUN_00442a90
-  core_course.cpp_CCourse_showEditorMenu_FUN_00443040
-  core_course.cpp_renderCourseGizmo_FUN_00443760
-  core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
-  core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
-  core_dcube.cpp_CDemonCube_load_FUN_00457530
-  core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
-  core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_00457a90
-  core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60
   core_dfilter.cpp_CDemonFilter_init_FUN_004705a0
   core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
   core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730
@@ -343,38 +333,17 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (681 occurrences)
+TYPE: unrolled_memcpy (624 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   510x  field-by-field struct copy
-    87x  for (...; != 0; ... + -1)
-    82x  MOVSD.REP
+   456x  field-by-field struct copy
+    85x  for (...; != 0; ... + -1)
+    81x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
   core_conveyor.cpp_CConveyor_setup_FUN_00441d60
-  core_course.cpp_CCourse_evaluate_FUN_00442710
-  core_course.cpp_CCourse_importMatrices_FUN_00442ea0
-  core_course.cpp_CCourse_interpolate_FUN_004427a0
-  core_course.cpp_CCourse_preview_FUN_00443bc0
-  core_course.cpp_CCourse_showEditorMenu_FUN_00443040
-  core_course.cpp_renderCourseGizmo_FUN_00443760
-  core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
-  core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
-  core_dcube.cpp_CDemonCube_load_FUN_00457530
-  core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0
-  core_dcube.cpp_CDemonCube_setBounds_FUN_00456a90
-  core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_00457a90
-  core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60
-  core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40
-  core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00454970
-  core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455070
-  core_dcube.cpp_clipPolygonAgainstMinX_FUN_00454da0
-  core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0
-  core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00
-  core_dcube.cpp_clipTriangleToAABB_FUN_00456400
-  core_dcube.cpp_triangleCylinderCollision_FUN_00456040
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010
   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0
   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950
@@ -681,7 +650,7 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (125 occurrences)
+TYPE: shadow_pointer_walk (116 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -689,22 +658,22 @@ Unique patterns:
      6x  pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD
      6x  pCVar4 = (T *)pCVar4->ARRAY
      6x  pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)
-     5x  pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD
      4x  local_18 = (T *)local_18->ARRAY
-     3x  local_18 = (T *)&local_18->FIELD[N].SUBFIELD
-     3x  pCVar1 = (T *)&pCVar1->FIELD[N].SUBFIELD
+     3x  pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD
      3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
      2x  pCVar7 = (T *)((int)(pCVar7 + N) + M)
      2x  pCVar8 = (T *)&pCVar8->FIELD[N].SUBFIELD
-     2x  pCVar5 = (T *)&pCVar5->FIELD[N].SUBFIELD
-     2x  pCVar4 = (T *)&pCVar4->FIELD[N].SUBFIELD
      2x  pCVar17 = (T *)((pCVar17->FIELD).SUBFIELD...ARRAY + CONST)
      2x  pCVar5 = (T *)((int)(pCVar5 + N) + M)
+     2x  local_18 = (T *)&local_18->FIELD[N].SUBFIELD
      2x  pCVar10 = (T *)pCVar10->ARRAY
      2x  pCVar2 = (T *)pCVar2->ARRAY
      2x  pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)
      2x  pCVar6 = (T *)((int)&(pCVar6->FIELD).SUBFIELD + CONST)
      2x  this_ptr = (T *)((int)&(this_ptr->FIELD).SUBFIELD + CONST)
+     2x  pSVar3 = (T *)pSVar3->ARRAY
+     2x  pSVar4 = (T *)pSVar4->ARRAY
+     2x  pCVar5 = (T *)((int)&(pCVar5->FIELD).SUBFIELD + CONST)
 
 Functions:
   core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
@@ -723,7 +692,6 @@ Functions:
   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
-  core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0
   core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
   core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
@@ -734,19 +702,12 @@ Functions:
   core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
   core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0
   core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
-  core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230
-  core_set.cpp_CDemonSet_load_FUN_00569410
-  core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
-  core_set.cpp_CDemonSet_saveStateInfo_FUN_005711b0
-  core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60
-  core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0
   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0
   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
   core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10
   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
-  core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40
   core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600
   core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910
   core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
@@ -771,7 +732,6 @@ Functions:
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
   core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0
   core_texlist.cpp_CTextureList_load_FUN_005dbe00
   core_texlist.cpp_CTextureList_save_FUN_005dc0d0
   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280
@@ -793,7 +753,7 @@ Functions:
   shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
 
 ====================================================================================================
-TYPE: missing_cave_copy (111 occurrences)
+TYPE: missing_cave_copy (109 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -819,7 +779,6 @@ Unique patterns:
      1x  CQuaternion4f local_ec; ... f(&local_ec, ...);
 
 Functions:
-  core_course.cpp_CCourse_evaluate_FUN_00442710
   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550
@@ -885,45 +844,6 @@ Functions:
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
 
 ====================================================================================================
-TYPE: raw_address_constant (67 occurrences)
-====================================================================================================
-
-Unique patterns:
-    16x  0xf80000
-    12x  0xfeffff
-     8x  0xfbffff
-     8x  0xfe0000
-     4x  0xfdffff
-     4x  0x780000
-     3x  0x16e99c8
-     2x  0x16e9a08
-     2x  0x16e9a48
-     2x  0x766880
-     1x  0x3f95dfc
-     1x  0xb71b01
-     1x  0x16e3601
-     1x  0x16e99c4
-     1x  0x16e9a04
-     1x  0x16e9a44
-
-Functions:
-  core_glass.cpp_CGlass_shatter_FUN_004eaef0
-  core_menu.cpp_configureGraphicsOptions_FUN_00510c80
-  core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760
-  core_weather.cpp_CWeather_renderParticles_FUN_005ef190
-  engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406860
-  engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00404220
-  engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_00406290
-  shape_design.c_exportModelToBIN_FUN_0045aa80
-  shape_design.c_loadModelBinary_FUN_00458170
-  shape_design.c_loadS3DModelFile_FUN_004593a0
-  shape_design.c_tileTextureMaps_FUN_0046a180
-  shape_design.c_turnModelInsideOut_FUN_004671e0
-  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
-
-====================================================================================================
 TYPE: carry_arith_idiom (63 occurrences)
 ====================================================================================================
 
@@ -944,27 +864,37 @@ Functions:
   engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
 
 ====================================================================================================
-TYPE: static_uninitvar (47 occurrences)
+TYPE: raw_address_constant (43 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    47x  Cppcheck: uninitialized variable
+    16x  0xf80000
+     8x  0xfe0000
+     4x  0x780000
+     3x  0x16e99c8
+     2x  0x16e9a08
+     2x  0x16e9a48
+     2x  0x766880
+     1x  0x3f95dfc
+     1x  0xb71b01
+     1x  0x16e3601
+     1x  0x16e99c4
+     1x  0x16e9a04
+     1x  0x16e9a44
 
 Functions:
-  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
-  core_gabriela.cpp_CGabriella_processAI_FUN_004d4190
-  core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
-  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
-  core_sound.cpp_updateListeners_FUN_005b1870
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210
-  engine_model.c_getMRGLBounds_FUN_00528140
-  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
+  core_glass.cpp_CGlass_shatter_FUN_004eaef0
+  core_menu.cpp_configureGraphicsOptions_FUN_00510c80
+  core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760
+  core_weather.cpp_CWeather_renderParticles_FUN_005ef190
+  shape_design.c_exportModelToBIN_FUN_0045aa80
   shape_design.c_loadModelBinary_FUN_00458170
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
+  shape_design.c_loadS3DModelFile_FUN_004593a0
+  shape_design.c_tileTextureMaps_FUN_0046a180
+  shape_design.c_turnModelInsideOut_FUN_004671e0
+  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
 TYPE: bitcast_double_pair (42 occurrences)
@@ -982,6 +912,28 @@ Functions:
   shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
   shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
+
+====================================================================================================
+TYPE: static_uninitvar (41 occurrences)
+====================================================================================================
+
+Unique patterns:
+    41x  Cppcheck: uninitialized variable
+
+Functions:
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
+  core_gabriela.cpp_CGabriella_processAI_FUN_004d4190
+  core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
+  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
+  core_sound.cpp_updateListeners_FUN_005b1870
+  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210
+  engine_model.c_getMRGLBounds_FUN_00528140
+  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
+  shape_design.c_loadModelBinary_FUN_00458170
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 
 ====================================================================================================
 TYPE: unrolled_strchr (41 occurrences)
@@ -1150,11 +1102,11 @@ Functions:
   shape_design.c_loadModelBinary_FUN_00458170
 
 ====================================================================================================
-TYPE: static_invalid_pointer_cast (18 occurrences)
+TYPE: static_invalid_pointer_cast (17 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    18x  Cppcheck: invalid pointer cast
+    17x  Cppcheck: invalid pointer cast
 
 Functions:
   core_chain.cpp_fastSqrt_FUN_00431350
@@ -1162,7 +1114,6 @@ Functions:
   core_elephant.cpp_CElephantGun_process_FUN_004a7070
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0
-  core_set.cpp_CDemonSet_load_FUN_00569410
   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
   core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
@@ -1320,19 +1271,6 @@ Functions:
   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
 
 ====================================================================================================
-TYPE: self_copy_guard (6 occurrences)
-====================================================================================================
-
-Unique patterns:
-     6x  if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }
-
-Functions:
-  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600
-  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
-  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
-
-====================================================================================================
 TYPE: unaffected_reg (6 occurrences)
 ====================================================================================================
 
@@ -1353,6 +1291,18 @@ Functions:
   core_script.cpp_compareEventXRefs_FUN_005675a0
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
+
+====================================================================================================
+TYPE: self_copy_guard (4 occurrences)
+====================================================================================================
+
+Unique patterns:
+     4x  if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }
+
+Functions:
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
+  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
 
 ====================================================================================================
 TYPE: static_array_oob_cond (3 occurrences)

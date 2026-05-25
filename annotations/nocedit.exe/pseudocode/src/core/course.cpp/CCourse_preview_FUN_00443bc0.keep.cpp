@@ -58,12 +58,8 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
     local_18 = local_1c;
     core_course_cpp_CCourse_evaluate_FUN_00442710(this_ptr,local_1c,&local_80,&local_98);
     if (bVar2) {
-      local_cc.position.x = local_80.x;
-      local_cc.position.y = local_80.y;
-      local_cc.position.z = local_80.z;
-      local_cc.orientation.vec.x = local_98.x;
-      local_cc.orientation.vec.y = local_98.y;
-      local_cc.orientation.vec.z = local_98.z;
+      local_cc.position = local_80;
+      local_cc.orientation.vec = local_98;
     }
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
@@ -76,9 +72,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,100.0,0);
     }
     else {
-      local_50.x = local_b0.x;
-      local_50.y = local_b0.y;
-      local_50.z = local_b0.z;
+      local_50 = local_b0;
       core_course_cpp_renderCourseGizmo_FUN_00443760(&local_50);
     }
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -101,9 +95,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_74);
       pSVar9 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(pSVar9[0],pSVar9[1]);
-      local_8c.x = local_68.x;
-      local_8c.y = local_68.y;
-      local_8c.z = local_68.z;
+      local_8c = local_68;
       local_34 = local_34 + 1;
     }
     if (!bVar2) {

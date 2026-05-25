@@ -15,7 +15,6 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   int iVar2;
   char *pcVar4;
   _FILE *file_ptr;
-  CDemonSet *pCVar5;
   C3DSLight *this_ptr_01;
   C3DSCamera *this_ptr_02;
   C3DSCamera *pCVar6;
@@ -26,6 +25,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   CVector3f local_60;
   CVector3f local_54;
   int local_48;
+  float local_48f;
   float fVar1;
   CTerrain *this_ptr_00;
   int iVar10;
@@ -58,7 +58,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
     _fscanf(p_Var4,"%f,%f,%f\n",&(this_ptr->scene_fog).scroll.x,&(this_ptr->scene_fog).scroll.y
                ,&(this_ptr->scene_fog).scroll.z);
     _fscanf(p_Var4,"%f,%f,%f,%f\n",&(this_ptr->scene_fog).height_threshold,
-               &(this_ptr->scene_fog).density_multiplier,(float *)&local_48,(float *)&local_48);
+               &(this_ptr->scene_fog).density_multiplier,&local_48f,&local_48f);
     (this_ptr->scene_fog).temperature = 50.0;
   }
   else {
@@ -306,17 +306,11 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
     core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0
               (&g_CKeyFramedModelInstance,this_ptr->enviro_model_name);
   }
-  iVar2 = 0;
-  pCVar5 = this_ptr;
-  if (0 < this_ptr->camera_count) {
-    do {
-      fVar1 = this_ptr->min_ambient_value;
-      pCVar5->cameras[0].camera_group = 0;
-      pCVar5->cameras[0].enabled = 1;
-      iVar2 = iVar2 + 1;
-      pCVar5->cameras[0].ambient_value = fVar1;
-      pCVar5 = (CDemonSet *)&pCVar5->cameras[0].enabled;
-    } while (iVar2 < this_ptr->camera_count);
+  for (iVar2 = 0; iVar2 < this_ptr->camera_count; iVar2 = iVar2 + 1) {
+    fVar1 = this_ptr->min_ambient_value;
+    this_ptr->cameras[iVar2].camera_group = 0;
+    this_ptr->cameras[iVar2].enabled = 1;
+    this_ptr->cameras[iVar2].ambient_value = fVar1;
   }
   return;
 }

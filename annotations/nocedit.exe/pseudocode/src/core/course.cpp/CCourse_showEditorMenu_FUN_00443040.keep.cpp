@@ -10,12 +10,10 @@
 void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_ptr)
 
 {
-  float *pfVar1;
   CCourseFrame *pCVar3;
   char *pcVar4;
   uint uVar5;
   CKeyFramedModel *model_ptr;
-  CVector3f *point;
   int iVar6;
   char *pcVar7;
   int iVar8;
@@ -145,17 +143,10 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           local_44.z = local_2c.y;
           local_44.y = local_2c.z;
           core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_44,&local_84);
-          iVar6 = 0;
           for (local_14 = 0; local_14 < this_ptr->len; local_14 = local_14 + 1) {
             core_xform_cpp_multiplyQuaternion_FUN_005f7640
-                      (&local_74,(CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar6),
-                       &local_54);
-            pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);
-            *pfVar1 = local_54.w;
-            pfVar1[1] = local_54.x;
-            pfVar1[2] = local_54.y;
-            pfVar1[3] = local_54.z;
-            iVar6 = iVar6 + 0x1c;
+                      (&local_74,&this_ptr->frames[local_14].orient,&local_54);
+            this_ptr->frames[local_14].orient = local_54;
           }
         }
       }
@@ -172,20 +163,13 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         if (iVar6 != 0) {
           pCVar3 = this_ptr->frames;
           if ((CCourseFrame *)&local_9c != pCVar3) {
-            local_9c.min.x = (pCVar3->pos).x;
-            local_9c.min.y = (pCVar3->pos).y;
-            local_9c.min.z = (pCVar3->pos).z;
+            local_9c.min = pCVar3->pos;
           }
           if ((CCourseFrame *)&local_9c.max != pCVar3) {
-            local_9c.max.x = (pCVar3->pos).x;
-            local_9c.max.y = (pCVar3->pos).y;
-            local_9c.max.z = (pCVar3->pos).z;
+            local_9c.max = pCVar3->pos;
           }
-          iVar6 = 0x1c;
           for (iVar8 = 1; iVar8 < this_ptr->len; iVar8 = iVar8 + 1) {
-            point = (CVector3f *)((int)&(this_ptr->frames->pos).x + iVar6);
-            iVar6 = iVar6 + 0x1c;
-            core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_9c,point);
+            core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_9c,&this_ptr->frames[iVar8].pos);
           }
         }
       }
@@ -199,19 +183,12 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
         iVar6 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"Remove bank from course?");
         if ((iVar6 != 0) && (local_18 = 0, 0 < this_ptr->len)) {
-          iVar6 = 0;
           do {
             core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                      (&local_38,
-                       (CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar6));
+                      (&local_38,&this_ptr->frames[local_18].orient);
             local_38.z = 0.0;
             core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_38,&local_64);
-            pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);
-            iVar6 = iVar6 + 0x1c;
-            *pfVar1 = local_64.w;
-            pfVar1[1] = local_64.x;
-            pfVar1[2] = local_64.y;
-            pfVar1[3] = local_64.z;
+            this_ptr->frames[local_18].orient = local_64;
             local_18 = local_18 + 1;
           } while (local_18 < this_ptr->len);
         }

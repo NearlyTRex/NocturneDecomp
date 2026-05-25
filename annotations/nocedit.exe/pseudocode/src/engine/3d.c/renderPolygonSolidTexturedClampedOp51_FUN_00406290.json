@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 159,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 74,
-    "suspect_count": 8,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 215
   },
   "cross_references": [],
@@ -177,6 +175,78 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+3825143 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 46,
+      "match": "0xfbffff",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0xfbffff < iVar3) {",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+3825143 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 47,
+      "match": "0xfbffff",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = 0xfbffff;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+3825143 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 49,
+      "match": "0xfbffff",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0xfbffff < iVar5) {",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+3825143 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 50,
+      "match": "0xfbffff",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar5 = 0xfbffff;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4021751 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 60,
+      "match": "0xfeffff",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0xfeffff < iVar3) {",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4021751 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 61,
+      "match": "0xfeffff",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = 0xfeffff;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4021751 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 63,
+      "match": "0xfeffff",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0xfeffff < iVar5) {",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4021751 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 64,
+      "match": "0xfeffff",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar5 = 0xfeffff;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 76,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -211,72 +281,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+3825143 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 46,
-      "match": "0xfbffff",
-      "severity": "moderate",
-      "text": "if (0xfbffff < iVar3) {",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+3825143 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 47,
-      "match": "0xfbffff",
-      "severity": "moderate",
-      "text": "iVar3 = 0xfbffff;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+3825143 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 49,
-      "match": "0xfbffff",
-      "severity": "moderate",
-      "text": "if (0xfbffff < iVar5) {",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfbffff matches address of g_LightBufferPool (+3825143 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 50,
-      "match": "0xfbffff",
-      "severity": "moderate",
-      "text": "iVar5 = 0xfbffff;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4021751 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 60,
-      "match": "0xfeffff",
-      "severity": "moderate",
-      "text": "if (0xfeffff < iVar3) {",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4021751 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 61,
-      "match": "0xfeffff",
-      "severity": "moderate",
-      "text": "iVar3 = 0xfeffff;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4021751 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 63,
-      "match": "0xfeffff",
-      "severity": "moderate",
-      "text": "if (0xfeffff < iVar5) {",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfeffff matches address of g_LightBufferPool (+4021751 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 64,
-      "match": "0xfeffff",
-      "severity": "moderate",
-      "text": "iVar5 = 0xfeffff;",
-      "type": "raw_address_constant"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

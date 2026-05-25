@@ -1,0 +1,64 @@
+// Name: core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0
+// Address: 004578f0
+// MANUAL RECONSTRUCTION
+// Address Range: [[004578f0, 00457a8b]]
+// Convention: __cdecl
+// Signature: float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material)
+
+#include "nocturne.h"
+
+float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material)
+
+{
+  CVector3f *pCVar1;
+  float fVar3;
+  int iVar5;
+  CVector3f local_2c;
+  int local_20;
+  float local_1c;
+  CVector3f *pCVar4;
+  CDemonCubeTriangle *pCVar3;
+  float fVar2;
+  float fVar1;
+  
+  iVar5 = 0;
+  local_20 = -1;
+  local_1c = 1.0001;
+  if (0 < this_ptr->triangle_count) {
+    do {
+      fVar3 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460
+                        (&this_ptr->triangle_buffer[iVar5],ray_origin,
+                         ray_direction);
+      if (((0.0 <= fVar3) && (fVar3 < local_1c)) && (fVar3 <= 1.0)) {
+        local_20 = iVar5;
+        local_1c = fVar3;
+      }
+      iVar5 = iVar5 + 1;
+    } while (iVar5 < this_ptr->triangle_count);
+  }
+  if (-1 < local_20) {
+    pCVar3 = this_ptr->triangle_buffer;
+    fVar1 = pCVar3[local_20].triangle.normal.y;
+    fVar2 = pCVar3[local_20].triangle.normal.z;
+    if (&local_2c != hit_normal) {
+      hit_normal->x = -pCVar3[local_20].triangle.normal.x;
+      hit_normal->y = -fVar1;
+      hit_normal->z = -fVar2;
+    }
+    *hit_material = (uint)((uchar *)this_ptr->ground_type_memory)[local_20];
+    pCVar4 = this_ptr->triangle_buffer[local_20].triangle.vertices[0];
+    if (pCVar4 != &g_TempNormal0) {
+      g_TempNormal0 = *pCVar4;
+    }
+    pCVar1 = this_ptr->triangle_buffer[local_20].triangle.vertices[1];
+    if (pCVar1 != &g_TempNormal1) {
+      g_TempNormal1 = *pCVar1;
+    }
+    pCVar1 = this_ptr->triangle_buffer[local_20].triangle.vertices[2];
+    if (pCVar1 != &g_TempNormal2) {
+      g_TempNormal2 = *pCVar1;
+      return local_1c;
+    }
+  }
+  return local_1c;
+}

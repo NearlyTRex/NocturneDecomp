@@ -4,19 +4,19 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5913 functions
-  1 suspects: 86 functions
-  2 suspects: 107 functions
-  3 suspects: 63 functions
-  4 suspects: 62 functions
-  5 suspects: 40 functions
-  6 suspects: 45 functions
-  7 suspects: 19 functions
-  8 suspects: 30 functions
+  0 suspects: 5950 functions
+  1 suspects: 76 functions
+  2 suspects: 97 functions
+  3 suspects: 61 functions
+  4 suspects: 60 functions
+  5 suspects: 36 functions
+  6 suspects: 43 functions
+  7 suspects: 17 functions
+  8 suspects: 26 functions
   9 suspects: 9 functions
   10 suspects: 12 functions
   11 suspects: 7 functions
-  12 suspects: 11 functions
+  12 suspects: 10 functions
   13 suspects: 3 functions
   14 suspects: 4 functions
   15 suspects: 6 functions
@@ -41,7 +41,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [unrolled_memcpy] (25 functions)
+  [unrolled_memcpy] (24 functions)
   ------------------------------------------------------------
     core_msnedit.cpp_CDemonMission_raycastPickActor_FU ( 52 lines)
       local_28.x = g_CDemonCameraInstance.base.position.f.x;...
@@ -55,8 +55,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       out_matrix->m[0].w = local_a8.m[0].w;...
     core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004e82d0  ( 61 lines)
       out_attract_position->x = pCVar4->x;...
-    core_course.cpp_CCourse_importMatrices_FUN_00442ea ( 61 lines)
-      pCVar1->w = local_28.w;...
     core_turret.cpp_CTurret_updatePatrol_FUN_005e3560  ( 62 lines)
       target_pos->x = pCVar5->x;...
     shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0   ( 71 lines)
@@ -141,22 +139,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
 
-  [shadow_pointer_walk] (21 functions)
+  [shadow_pointer_walk] (12 functions)
   ------------------------------------------------------------
-    core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN ( 17 lines)
-      pCVar1 = (CDemonSet *)&pCVar1->cameras[0].enabled;...
-    core_set.cpp_CDemonSet_setCameraAmbientValueByGrou ( 17 lines)
-      pCVar1 = (CDemonSet *)&pCVar1->cameras[0].enabled;...
-    core_set.cpp_CDemonSet_saveStateInfo_FUN_005711b0  ( 19 lines)
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;...
-    core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230  ( 34 lines)
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;...
-    core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_ ( 39 lines)
-      pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action...
-    core_skeleton.cpp_CDeformableModel_allocMemory_FUN ( 44 lines)
-      pCVar1 = (CDeformableModel *)&pCVar1->lod_info[0].shadow_onl...
-    core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40 ( 46 lines)
-      local_18 = (CDemonSet *)&local_18->cameras[0].enabled;...
     engine_pod.cpp_CPod_getNextSearchResult_FUN_00550e ( 53 lines)
       pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).f...
     core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FU ( 53 lines)
@@ -177,14 +161,10 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       pCVar3 = (CTextureList *)pCVar3->texture_entries;...
     shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_ ( 81 lines)
       pCVar7 = (CLodVert *)&(pCVar7->position).y;...
-    core_set.cpp_CDemonSet_precomputeLightVisibility_F (162 lines)
-      local_3c = (CDemonSet *)&local_3c->cameras[0].enabled;...
     core_dmodel.cpp_CKeyFramedModel_removeUnusedVertic (169 lines)
       pSVar12 = (SMRGLPrimitiveQuad *)&(pSVar12->base).surface_nor...
     core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_F (175 lines)
       local_18 = (CDemonSet *)&local_18->cameras[0].enabled;...
-    core_set.cpp_CDemonSet_load_FUN_00569410           (424 lines)
-      pCVar5 = (CDemonSet *)&pCVar5->cameras[0].enabled;...
 
   [unrolled_strcpy] (10 functions)
   ------------------------------------------------------------
@@ -250,8 +230,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/path.cpp, Lines: 16, Types: ['unrolled_memset']
   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
     File: core/ghoul.cpp, Lines: 17, Types: ['missing_cave_copy']
-  core_dcube.cpp_CDemonCube_setBounds_FUN_00456a90
-    File: core/dcube.cpp, Lines: 19, Types: ['unrolled_memcpy']
   core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0
     File: core/dmodel.cpp, Lines: 19, Types: ['pointer_cast']
   core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0
@@ -328,24 +306,12 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/setutil.cpp, Lines: 51, Types: ['unrolled_memcpy']
   shape_design.c_detachFaces_FUN_0046eba0
     File: shape/design.c, Lines: 51, Types: ['unrolled_memcpy']
-  core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00454970
-    File: core/dcube.cpp, Lines: 53, Types: ['unrolled_memcpy']
-  core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0
-    File: core/dcube.cpp, Lines: 53, Types: ['unrolled_memcpy']
-  core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00
-    File: core/dcube.cpp, Lines: 53, Types: ['unrolled_memcpy']
   core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00572800
     File: core/setcolid.cpp, Lines: 53, Types: ['unrolled_memcpy']
   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0
     File: core/mimic.cpp, Lines: 53, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
     File: shape/meshlod.cpp, Lines: 54, Types: ['shadow_pointer_walk', 'unrolled_memset']
-  core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455070
-    File: core/dcube.cpp, Lines: 55, Types: ['unrolled_memcpy']
-  core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40
-    File: core/dcube.cpp, Lines: 55, Types: ['unrolled_memcpy']
-  core_dcube.cpp_clipPolygonAgainstMinX_FUN_00454da0
-    File: core/dcube.cpp, Lines: 55, Types: ['unrolled_memcpy']
   core_trigger.cpp_CTrigger_ctor_FUN_005df840
     File: core/trigger.cpp, Lines: 55, Types: ['unrolled_strcpy']
   core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0
@@ -384,8 +350,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/fileio.cpp, Lines: 91, Types: ['unrolled_strcpy']
   core_setedit.cpp_loadGroundTypes_FUN_00578420
     File: core/setedit.cpp, Lines: 91, Types: ['unrolled_strchr']
-  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457c
-    File: core/dcube.cpp, Lines: 98, Types: ['self_copy_guard']
   shape_design.c_renderSinglePolygon_FUN_0045ce20
     File: shape/design.c, Lines: 102, Types: ['unrolled_strcpy', 'warning_inlined_function']
   engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_
@@ -412,8 +376,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mobster.cpp, Lines: 129, Types: ['stack_alignment_array', 'warning_type_propagation']
   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
     File: core/setedit.cpp, Lines: 131, Types: ['pointer_cast', 'unrolled_memcpy']
-  core_course.cpp_renderCourseGizmo_FUN_00443760
-    File: core/course.cpp, Lines: 131, Types: ['pointer_cast', 'unrolled_memcpy']
   core_mimic.cpp_CMimic_setup_FUN_0051f3e0
     File: core/mimic.cpp, Lines: 134, Types: ['pointer_cast']
   core_script.cpp_CScript_findText_FUN_00566cc0
@@ -424,8 +386,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dmodel.cpp, Lines: 143, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     File: shape/meshlod.cpp, Lines: 143, Types: ['unrolled_memcpy']
-  core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_0
-    File: core/dcube.cpp, Lines: 144, Types: ['unrolled_memcpy']
   core_script.cpp_CScript_loadScript_FUN_00559f80
     File: core/script.cpp, Lines: 147, Types: ['pointer_cast']
   shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d396
@@ -466,8 +426,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
   core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260
     File: core/skeledit.cpp, Lines: 19, Types: ['pointer_cast']
-  core_course.cpp_CCourse_evaluate_FUN_00442710
-    File: core/course.cpp, Lines: 24, Types: ['missing_cave_copy', 'unrolled_memcpy']
   core_path.cpp_CPathMap_dtor_FUN_005464d0
     File: core/path.cpp, Lines: 24, Types: ['pointer_cast']
   core_path.cpp_renderAllPathMaps_FUN_005485f0
@@ -544,8 +502,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 103, Types: ['unrolled_strlen']
   engine_pod.cpp_findFilesByExtension_FUN_00550ce0
     File: engine/pod.cpp, Lines: 111, Types: ['pointer_cast', 'unrolled_strcpy', 'unrolled_strlen']
-  core_course.cpp_CCourse_interpolate_FUN_004427a0
-    File: core/course.cpp, Lines: 113, Types: ['unrolled_memcpy']
   core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60
     File: core/gabriela.cpp, Lines: 113, Types: ['pointer_cast', 'unrolled_memcpy']
   core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0

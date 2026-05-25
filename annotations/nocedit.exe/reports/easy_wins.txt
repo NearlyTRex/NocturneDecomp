@@ -10,55 +10,13 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  core/skeleton.cpp (1 remaining of 117)
-    - core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0
-      Suspects: shadow_pointer_walk
-
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [shadow_pointer_walk] - 7 functions
-    core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0            ( 17 lines)
-    core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60       ( 17 lines)
-    core_set.cpp_CDemonSet_saveStateInfo_FUN_005711b0                      ( 19 lines)
-    core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230                      ( 34 lines)
-    core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0             ( 39 lines)
-    core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0            ( 44 lines)
-    core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40                     ( 46 lines)
-
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
-
-  core/skeleton.cpp (99.1% complete)
-    1 functions remaining:
-      core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0 (44 lines)
-        Types: ['shadow_pointer_walk']
-
-  engine/3d.c (97.1% complete)
-    3 functions remaining:
-      engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406860 (77 lines)
-        Types: ['raw_address_constant']
-      engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00404220 (89 lines)
-        Types: ['raw_address_constant']
-      engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_00406290 (74 lines)
-        Types: ['raw_address_constant']
-
-  core/set.cpp (93.1% complete)
-    6 functions remaining:
-      core_set.cpp_CDemonSet_load_FUN_00569410 (424 lines)
-        Types: ['shadow_pointer_walk']
-      core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230 (34 lines)
-        Types: ['shadow_pointer_walk']
-      core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0 (17 lines)
-        Types: ['shadow_pointer_walk']
-      core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 (162 lines)
-        Types: ['shadow_pointer_walk']
-      core_set.cpp_CDemonSet_saveStateInfo_FUN_005711b0 (19 lines)
-        Types: ['shadow_pointer_walk']
-      core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60 (17 lines)
-        Types: ['shadow_pointer_walk']
 
 ====================================================================================================
 ALL REMAINING FILES
@@ -82,21 +40,21 @@ ALL REMAINING FILES
   core/trigger.cpp                                              78.3%  (18/23 clean, 5 remaining)
   core/wateract.cpp                                             78.3%  (18/23 clean, 5 remaining)
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
+  core/netgame.cpp                                              76.6%  (49/64 clean, 15 remaining)
   core/stranger.cpp                                             76.2%  (48/63 clean, 15 remaining)
   shape/superopt.cpp                                            75.8%  (141/186 clean, 45 remaining)
   core/setutil.cpp                                              75.6%  (31/41 clean, 10 remaining)
-  core/netgame.cpp                                              75.0%  (48/64 clean, 16 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
   core/gabriela.cpp                                             73.7%  (28/38 clean, 10 remaining)
   core/dpart.cpp                                                73.3%  (11/15 clean, 4 remaining)
   core/menu.cpp                                                 72.7%  (16/22 clean, 6 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)
+  core/setdir.cpp                                               71.9%  (23/32 clean, 9 remaining)
   core/texlist.cpp                                              71.4%  (10/14 clean, 4 remaining)
   shape/design.c                                                70.6%  (115/163 clean, 48 remaining)
   core/setcolid.cpp                                             70.0%  (28/40 clean, 12 remaining)
   core/platfrm.cpp                                              70.0%  (21/30 clean, 9 remaining)
   core/dmodel.cpp                                               69.7%  (46/66 clean, 20 remaining)
-  core/setdir.cpp                                               68.8%  (22/32 clean, 10 remaining)
   shape/meshlod.cpp                                             67.7%  (84/124 clean, 40 remaining)
   engine/fileio.cpp                                             67.1%  (49/73 clean, 24 remaining)
   core/ghoul.cpp                                                66.7%  (12/18 clean, 6 remaining)
@@ -106,6 +64,4 @@ ALL REMAINING FILES
   core/glass.cpp                                                58.3%  (14/24 clean, 10 remaining)
   engine/clipper.c                                              57.1%  (16/28 clean, 12 remaining)
   engine/alphabit.cpp                                           55.6%  (5/9 clean, 4 remaining)
-  core/dcube.cpp                                                53.8%  (21/39 clean, 18 remaining)
-  core/course.cpp                                               53.3%  (8/15 clean, 7 remaining)
   core/setedit.cpp                                              48.3%  (28/58 clean, 30 remaining)

@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (369 diagnostics)
+Cppcheck (quick) (361 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -48,23 +48,23 @@ shiftTooManyBitsSigned (102)
     File: core/cloth.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  core_course.cpp_renderCourseGizmo_FUN_00443760     line 35
+    File: core/course.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_course.cpp_renderCourseGizmo_FUN_00443760     line 36
+    File: core/course.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
   core_course.cpp_renderCourseGizmo_FUN_00443760     line 37
     File: core/course.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_course.cpp_renderCourseGizmo_FUN_00443760     line 38
+  core_course.cpp_renderCourseGizmo_FUN_00443760     line 65
     File: core/course.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_course.cpp_renderCourseGizmo_FUN_00443760     line 39
-    File: core/course.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_course.cpp_renderCourseGizmo_FUN_00443760     line 67
-    File: core/course.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_course.cpp_renderCourseGizmo_FUN_00443760     line 77
+  core_course.cpp_renderCourseGizmo_FUN_00443760     line 75
     File: core/course.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -889,32 +889,8 @@ selfAssignment (56)
     Redundant assignment of 'piVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (47)
+uninitvar (41)
 ----------------------------------------------------------------------------------------------------
-
-  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 47
-    File: core/dcube.cpp
-    Uninitialized variable: local_40
-
-  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 48
-    File: core/dcube.cpp
-    Uninitialized variable: local_3c
-
-  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 49
-    File: core/dcube.cpp
-    Uninitialized variable: local_38
-
-  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 59
-    File: core/dcube.cpp
-    Uninitialized variable: local_20
-
-  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 65
-    File: core/dcube.cpp
-    Uninitialized variable: local_24
-
-  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 70
-    File: core/dcube.cpp
-    Uninitialized variable: local_28
 
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 491
     File: core/dmodel.cpp
@@ -1201,12 +1177,8 @@ legacyUninitvar (29)
     Uninitialized variable: local_64
 
 ----------------------------------------------------------------------------------------------------
-identicalInnerCondition (24)
+identicalInnerCondition (23)
 ----------------------------------------------------------------------------------------------------
-
-  core_dcube.cpp_CDemonCube_save_FUN_00457430        line 27
-    File: core/dcube.cpp
-    Identical inner 'if' condition is always true.
 
   core_dmodel.cpp_CKeyFramedModel_buildCollisionTriL line 26
     File: core/dmodel.cpp
@@ -1301,7 +1273,7 @@ identicalInnerCondition (24)
     Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (18)
+invalidPointerCast (17)
 ----------------------------------------------------------------------------------------------------
 
   core_chain.cpp_fastSqrt_FUN_00431350               line 13
@@ -1335,10 +1307,6 @@ invalidPointerCast (18)
   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00 line 24
     File: core/lightgun.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_set.cpp_CDemonSet_load_FUN_00569410           line 61
-    File: core/set.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
 
   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 377
     File: core/setedit.cpp

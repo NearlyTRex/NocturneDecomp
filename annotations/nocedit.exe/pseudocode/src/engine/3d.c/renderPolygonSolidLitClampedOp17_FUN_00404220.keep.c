@@ -64,11 +64,11 @@ LAB_00404350:
       if (iVar5 < 0x10000) {
         iVar5 = 0x10000;
       }
-      if (0xfeffff < iVar3) {
-        iVar3 = 0xfeffff;
+      if ((0xff << 0x10) - 1 < iVar3) {
+        iVar3 = (0xff << 0x10) - 1;
       }
-      if (0xfeffff < iVar5) {
-        iVar5 = 0xfeffff;
+      if ((0xff << 0x10) - 1 < iVar5) {
+        iVar5 = (0xff << 0x10) - 1;
       }
     }
     else {
@@ -78,11 +78,11 @@ LAB_00404350:
       if (iVar5 < 0x20000) {
         iVar5 = 0x20000;
       }
-      if (0xfdffff < iVar3) {
-        iVar3 = 0xfdffff;
+      if ((0xfe << 0x10) - 1 < iVar3) {
+        iVar3 = (0xfe << 0x10) - 1;
       }
-      if (0xfdffff < iVar5) {
-        iVar5 = 0xfdffff;
+      if ((0xfe << 0x10) - 1 < iVar5) {
+        iVar5 = (0xfe << 0x10) - 1;
       }
     }
     g_RenderVertexBuffer[iVar1].u = iVar3;

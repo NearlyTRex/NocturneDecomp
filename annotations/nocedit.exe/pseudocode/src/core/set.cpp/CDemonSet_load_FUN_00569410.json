@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1172,
-    "complexity_score": 439,
+    "complexity_score": 424,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 78,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 424,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1596
   },
   "cross_references": [
@@ -827,6 +825,15 @@
       "type": "shadow_pointer_walk"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar5->vertices[0].a`). Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 423,
+      "match": "pCVar5 = (T *)&pCVar5->FIELD[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar5 = (CDemonSet *)&pCVar5->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
       "line": 376,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
@@ -992,39 +999,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_load_FUN_00569410.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 58,
-          "line": 61,
-          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar5->vertices[0].a`). Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 423,
-      "match": "pCVar5 = (T *)&pCVar5->FIELD[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar5 = (CDemonSet *)&pCVar5->cameras[0].enabled;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
-      "line": 61,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "&(this_ptr->scene_fog).density_multiplier,(float *)&local_48,(float *)&local_48);",
-      "type": "static_invalid_pointer_cast"
-    }
-  ]
+  "suspects": []
 }

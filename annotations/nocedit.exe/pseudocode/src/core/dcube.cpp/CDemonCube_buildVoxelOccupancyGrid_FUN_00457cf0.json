@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 123,
+    "complexity_score": 98,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 98,
-    "suspect_count": 2,
-    "suspect_types": [
-      "self_copy_guard"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 254
   },
   "cross_references": [
@@ -157,6 +155,24 @@
       "severity": "moderate",
       "text": "for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_40 != &local_64)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 39,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&local_40 != &local_64) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_28 != &local_34)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 47,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&local_28 != &local_34) {",
+      "type": "self_copy_guard"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -317,122 +333,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 6,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 47,
-          "message": "Uninitialized variable: local_40",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 48,
-          "message": "Uninitialized variable: local_3c",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 16,
-          "line": 49,
-          "message": "Uninitialized variable: local_38",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 38,
-          "line": 59,
-          "message": "Uninitialized variable: local_20",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 37,
-          "line": 65,
-          "message": "Uninitialized variable: local_24",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 39,
-          "line": 70,
-          "message": "Uninitialized variable: local_28",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Watcom dead self-copy guard: `if (&local_40 != &local_64)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 39,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
-      "severity": "moderate",
-      "text": "if (&local_40 != &local_64) {",
-      "type": "self_copy_guard"
-    },
-    {
-      "description": "Watcom dead self-copy guard: `if (&local_28 != &local_34)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 47,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
-      "severity": "moderate",
-      "text": "if (&local_28 != &local_34) {",
-      "type": "self_copy_guard"
-    },
-    {
-      "description": "Uninitialized variable: local_40",
-      "line": 47,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_34 = local_40 / 8.0f;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_3c",
-      "line": 48,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_30 = local_3c * 0.125f;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_38",
-      "line": 49,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_2c = local_38 * 0.125f;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_20",
-      "line": 59,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_4c.z = (float)local_18 * local_20 + (this_ptr->min_bounds).z;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_24",
-      "line": 65,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_4c.y = (float)iVar5 * local_24 + (this_ptr->min_bounds).y;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_28",
-      "line": 70,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_4c.x = (float)iVar4 * local_28 + (this_ptr->min_bounds).x;",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

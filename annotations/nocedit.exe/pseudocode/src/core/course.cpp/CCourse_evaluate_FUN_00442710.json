@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 64,
+    "complexity_score": 24,
     "cross_reference_count": 9,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 24,
-    "suspect_count": 3,
-    "suspect_types": [
-      "missing_cave_copy",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 109
   },
   "cross_references": [
@@ -256,6 +253,35 @@
     },
     "pcode_op_count": 276
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 23,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "out_euler->x = pCVar1->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Struct-type local `local_88` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 11,
+      "match": "CMatrix3x4f local_88; ... f(&local_88, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_88;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_58` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 12,
+      "match": "CMatrix3x4f local_58; ... f(&local_58, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_58;",
+      "type": "missing_cave_copy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 156,
     "local_size": 140,
@@ -321,30 +347,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 23,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "out_euler->x = pCVar1->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Struct-type local `local_88` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 11,
-      "match": "CMatrix3x4f local_88; ... f(&local_88, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f local_88;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_58` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 12,
-      "match": "CMatrix3x4f local_58; ... f(&local_58, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f local_58;",
-      "type": "missing_cave_copy"
-    }
-  ]
+  "suspects": []
 }

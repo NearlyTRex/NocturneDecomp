@@ -30,9 +30,7 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
   SRenderVertex *pSVar1;
   
   if (&local_48 != position) {
-    local_48.x = position->x;
-    local_48.y = position->y;
-    local_48.z = position->z;
+    local_48 = *position;
   }
   iVar2 = (int)ROUND(ROUND(position->x)) >> 0x1f;
   iVar6 = (int)ROUND(ROUND(position->y)) >> 0x1f;
@@ -125,7 +123,7 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
   do {
     if ((int)(pSVar2[1].projected_vertex.screen_x & -0x80000000) == 0) {
       engine_2d_c_drawText_FUN_00401fd0
-                (*(char **)((int)g_CourseAxisLabels + iVar6),
+                (g_CourseAxisLabels[iVar6 / 4],
                  pSVar2[1].projected_vertex.screen_x >> 0x10,
                  pSVar2[1].projected_vertex.screen_y >> 0x10);
     }

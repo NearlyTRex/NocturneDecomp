@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 351,
-    "complexity_score": 161,
+    "complexity_score": 131,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 131,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 482
   },
   "cross_references": [
@@ -208,6 +205,24 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(char **)((int)g_CourseAxisLabels",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(char **)((int)g_CourseAxisLabels + iVar6),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 32,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_48.x = position->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -325,35 +340,35 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 42,
+          "line": 35,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 36,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
           "line": 37,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
-          "column": 42,
-          "line": 38,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 42,
-          "line": 39,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
           "column": 25,
-          "line": 67,
+          "line": 65,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 45,
-          "line": 77,
+          "line": 75,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -362,22 +377,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(char **)((int)g_CourseAxisLabels",
-      "severity": "moderate",
-      "text": "(*(char **)((int)g_CourseAxisLabels + iVar6),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 32,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_48.x = position->x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

@@ -14,7 +14,6 @@ void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
   int iVar1;
   int iVar6;
   int iVar4;
-  int iVar5;
   int local_20;
   byte local_18;
   CVector3f *pCVar1;
@@ -32,21 +31,8 @@ void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
   }
   if ((this_ptr->triangle_count != 0) && (this_ptr->vertex_count != 0)) {
     core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00456840(this_ptr);
-    iVar6 = 0;
-    if (0 < this_ptr->vertex_count) {
-      iVar5 = 0;
-      iVar1 = 0;
-      do {
-        iVar6 = iVar6 + 1;
-        *(uint *)((int)&this_ptr->vertex_buffer->x + iVar1) =
-             *(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar5);
-        *(uint *)((int)&this_ptr->vertex_buffer->y + iVar1) =
-             *(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar5);
-        *(uint *)((int)&this_ptr->vertex_buffer->z + iVar1) =
-             *(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar5);
-        iVar5 = iVar5 + 0x14;
-        iVar1 = iVar1 + 0xc;
-      } while (iVar6 < this_ptr->vertex_count);
+    for (iVar6 = 0; iVar6 < this_ptr->vertex_count; iVar6 = iVar6 + 1) {
+      this_ptr->vertex_buffer[iVar6] = g_LoadedVertices[iVar6].vertex;
     }
     iVar6 = 0;
     for (local_20 = 0; local_20 < g_PolygonCount; local_20 = local_20 + 1) {

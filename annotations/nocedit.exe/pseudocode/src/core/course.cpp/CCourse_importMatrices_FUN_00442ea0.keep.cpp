@@ -62,10 +62,7 @@ LAB_00442f35:
     core_xform_cpp_matrixToQuaternion_FUN_005f7420(&local_58,&local_28);
     pCVar1 = &this_ptr->frames[iVar4].orient;
     iVar4 = iVar4 + 1;
-    pCVar1->w = local_28.w;
-    pCVar1->x = local_28.x;
-    pCVar1->y = local_28.y;
-    pCVar1->z = local_28.z;
+    *pCVar1 = local_28;
   } while (iVar4 < this_ptr->len);
   return;
 }

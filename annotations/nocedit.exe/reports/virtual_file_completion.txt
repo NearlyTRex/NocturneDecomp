@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5913 (91.6%)
-Files at 100%: 165
-Files at 90%+: 168
+Clean functions: 5950 (92.2%)
+Files at 100%: 170
+Files at 90%+: 170
 Files at 50%+: 213
 
 ====================================================================================================
@@ -43,11 +43,13 @@ FILES AT 100% (COMPLETE)
   core/charactr.cpp: 109 functions, 4701 lines
   core/cloth.cpp: 55 functions, 3111 lines
   core/colonel.cpp: 18 functions, 614 lines
+  core/course.cpp: 15 functions, 1118 lines
   core/cow.cpp: 14 functions, 520 lines
   core/crate.cpp: 20 functions, 309 lines
   core/crossbow.cpp: 12 functions, 312 lines
   core/curtain.cpp: 26 functions, 1293 lines
   core/dcamera.cpp: 86 functions, 4962 lines
+  core/dcube.cpp: 39 functions, 2198 lines
   core/dest.cpp: 13 functions, 258 lines
   core/dfont.cpp: 3 functions, 279 lines
   core/dglobe.cpp: 6 functions, 237 lines
@@ -115,9 +117,11 @@ FILES AT 100% (COMPLETE)
   core/podmain.cpp: 4 functions, 64 lines
   core/procedur.cpp: 4 functions, 234 lines
   core/sentinel.cpp: 14 functions, 737 lines
+  core/set.cpp: 87 functions, 5060 lines
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
   core/simbox.cpp: 15 functions, 319 lines
+  core/skeleton.cpp: 117 functions, 5234 lines
   core/slew.cpp: 4 functions, 125 lines
   core/smiley.cpp: 16 functions, 833 lines
   core/sound.cpp: 37 functions, 1364 lines
@@ -145,6 +149,7 @@ FILES AT 100% (COMPLETE)
   core/xform.cpp: 61 functions, 2831 lines
   core/zombie.cpp: 32 functions, 2336 lines
   engine/2d.c: 76 functions, 1818 lines
+  engine/3d.c: 104 functions, 4591 lines
   engine/boss.c: 5 functions, 64 lines
   engine/colquant.c: 9 functions, 592 lines
   engine/console.cpp: 8 functions, 201 lines
@@ -180,31 +185,12 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 165 files
+Total: 170 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   99.1% | core/skeleton.cpp
-         116/117 clean, 1 remaining
-           - core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0 (44 lines) [shadow_pointer_walk]
-
-   97.1% | engine/3d.c
-         101/104 clean, 3 remaining
-           - engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00406860 (77 lines) [raw_address_constant]
-           - engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00404220 (89 lines) [raw_address_constant]
-           - engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_00406290 (74 lines) [raw_address_constant]
-
-   93.1% | core/set.cpp
-         81/87 clean, 6 remaining
-           - core_set.cpp_CDemonSet_load_FUN_00569410 (424 lines) [shadow_pointer_walk]
-           - core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230 (34 lines) [shadow_pointer_walk]
-           - core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0 (17 lines) [shadow_pointer_walk]
-           - core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 (162 lines) [shadow_pointer_walk]
-           - core_set.cpp_CDemonSet_saveStateInfo_FUN_005711b0 (19 lines) [shadow_pointer_walk]
-           - core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60 (17 lines) [shadow_pointer_walk]
-
-Total: 3 files
+Total: 0 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -365,6 +351,23 @@ FILES AT 50-89%
            - core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50 (57 lines) [stack_alignment_array, unrolled_memcpy]
            - core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290 (61 lines) [unrolled_memcpy]
            - core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (73 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
+   76.6% | core/netgame.cpp
+         49/64 clean, 15 remaining
+           - core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (60 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 (94 lines) [pointer_cast]
+           - core_netgame.cpp_allocSimFrame_FUN_0053f5a0 (30 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (222 lines) [pointer_cast, shadow_pointer_walk, warning_type_propagation]
+           - core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 (120 lines) [shadow_pointer_walk]
+           - core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 (54 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370 (42 lines) [unrolled_strcpy]
+           - core_netgame.cpp_CNetGame_runLobby_FUN_00541390 (287 lines) [shadow_pointer_walk, unrolled_strcpy, warning_inlined_function]
+           - core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (26 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0 (82 lines) [pointer_cast, unrolled_memcpy]
+           - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (90 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
+           - core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 (183 lines) [bit_int_float_compare]
+           - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines) [pointer_cast, shadow_pointer_walk, stack_alignment_array, unrolled_memcpy, unrolled_strcpy]
+           - core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 (438 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy, warning_unreachable]
+           - core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (117 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
    76.2% | core/stranger.cpp
          48/63 clean, 15 remaining
            - core_stranger.cpp_CStranger_ctor_FUN_005bb120 (100 lines) [unrolled_memset]
@@ -449,24 +452,6 @@ FILES AT 50-89%
            - core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (169 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
            - core_mimic.cpp_CMimic_setupCloth_FUN_00520500 (51 lines) [pointer_cast, unrolled_memcpy]
            - core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 (321 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
-   75.0% | core/netgame.cpp
-         48/64 clean, 16 remaining
-           - core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (60 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 (94 lines) [pointer_cast]
-           - core_netgame.cpp_allocSimFrame_FUN_0053f5a0 (30 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (222 lines) [pointer_cast, shadow_pointer_walk, warning_type_propagation]
-           - core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 (120 lines) [shadow_pointer_walk]
-           - core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 (54 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370 (42 lines) [unrolled_strcpy]
-           - core_netgame.cpp_CNetGame_runLobby_FUN_00541390 (287 lines) [shadow_pointer_walk, unrolled_strcpy, warning_inlined_function]
-           - core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (26 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0 (39 lines) [shadow_pointer_walk]
-           - core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0 (82 lines) [pointer_cast, unrolled_memcpy]
-           - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (90 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
-           - core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 (183 lines) [bit_int_float_compare]
-           - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines) [pointer_cast, shadow_pointer_walk, stack_alignment_array, unrolled_memcpy, unrolled_strcpy]
-           - core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 (438 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy, warning_unreachable]
-           - core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (117 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
    73.7% | core/gabriela.cpp
          28/38 clean, 10 remaining
            - core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890 (162 lines) [unrolled_memcpy]
@@ -504,6 +489,17 @@ FILES AT 50-89%
            - shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (101 lines) [pointer_cast, warning_inlined_function]
            - shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (164 lines) [unaffected_reg]
            - shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70 (48 lines) [pointer_cast]
+   71.9% | core/setdir.cpp
+         23/32 clean, 9 remaining
+           - core_setdir.cpp_testOBBIntersection_FUN_005763a0 (140 lines) [unrolled_memcpy]
+           - core_setdir.cpp_CZThumb_render_FUN_00574f20 (52 lines) [pointer_cast]
+           - core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830 (21 lines) [pointer_cast]
+           - core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0 (20 lines) [pointer_cast]
+           - core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (303 lines) [pointer_cast, unrolled_memcpy]
+           - core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (112 lines) [pointer_cast]
+           - core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70 (98 lines) [pointer_cast]
+           - core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 (76 lines) [pointer_cast, unrolled_memcpy]
+           - core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30 (16 lines) [pointer_cast]
    71.4% | core/texlist.cpp
          10/14 clean, 4 remaining
            - core_texlist.cpp_CTextureList_load_FUN_005dbe00 (146 lines) [shadow_pointer_walk, unrolled_strchr, unrolled_strcpy, unrolled_strlen]
@@ -607,18 +603,6 @@ FILES AT 50-89%
            - core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0 (26 lines) [pointer_cast]
            - core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (59 lines) [pointer_cast]
            - core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110 (192 lines) [pointer_cast]
-   68.8% | core/setdir.cpp
-         22/32 clean, 10 remaining
-           - core_setdir.cpp_testOBBIntersection_FUN_005763a0 (140 lines) [unrolled_memcpy]
-           - core_setdir.cpp_CZThumb_render_FUN_00574f20 (52 lines) [pointer_cast]
-           - core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830 (21 lines) [pointer_cast]
-           - core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0 (20 lines) [pointer_cast]
-           - core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (303 lines) [pointer_cast, unrolled_memcpy]
-           - core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (112 lines) [pointer_cast]
-           - core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70 (98 lines) [pointer_cast]
-           - core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40 (46 lines) [shadow_pointer_walk]
-           - core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 (76 lines) [pointer_cast, unrolled_memcpy]
-           - core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30 (16 lines) [pointer_cast]
    67.7% | shape/meshlod.cpp
          84/124 clean, 40 remaining
            - shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (30 lines) [unrolled_memcpy]
@@ -771,37 +755,8 @@ FILES AT 50-89%
            - engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 (19 lines) [pointer_cast, unrolled_memcpy]
            - engine_alphabit.cpp_copyBytes_FUN_00410d20 (21 lines) [pointer_cast, unrolled_memcpy]
            - engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (44 lines) [pointer_cast]
-   53.8% | core/dcube.cpp
-         21/39 clean, 18 remaining
-           - core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455070 (55 lines) [unrolled_memcpy]
-           - core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (91 lines) [pointer_cast]
-           - core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0 (144 lines) [unrolled_memcpy]
-           - core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40 (55 lines) [unrolled_memcpy]
-           - core_dcube.cpp_clipTriangleToAABB_FUN_00456400 (111 lines) [unrolled_memcpy]
-           - core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60 (60 lines) [pointer_cast, unrolled_memcpy]
-           - core_dcube.cpp_CDemonCube_setBounds_FUN_00456a90 (19 lines) [unrolled_memcpy]
-           - core_dcube.cpp_CDemonCube_load_FUN_00457530 (48 lines) [pointer_cast, unrolled_memcpy]
-           - core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0 (155 lines) [pointer_cast, unrolled_memcpy]
-           - core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_00457a90 (45 lines) [pointer_cast, unrolled_memcpy]
-           - core_dcube.cpp_clipPolygonAgainstMinX_FUN_00454da0 (55 lines) [unrolled_memcpy]
-           - core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0 (64 lines) [pointer_cast, unrolled_memcpy]
-           - core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00454970 (53 lines) [unrolled_memcpy]
-           - core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0 (98 lines) [self_copy_guard]
-           - core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650 (108 lines) [pointer_cast]
-           - core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0 (53 lines) [unrolled_memcpy]
-           - core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00 (53 lines) [unrolled_memcpy]
-           - core_dcube.cpp_triangleCylinderCollision_FUN_00456040 (135 lines) [unrolled_memcpy]
-   53.3% | core/course.cpp
-         8/15 clean, 7 remaining
-           - core_course.cpp_CCourse_showEditorMenu_FUN_00443040 (278 lines) [pointer_cast, unrolled_memcpy]
-           - core_course.cpp_CCourse_importMatrices_FUN_00442ea0 (61 lines) [unrolled_memcpy]
-           - core_course.cpp_CCourse_evaluate_FUN_00442710 (24 lines) [missing_cave_copy, unrolled_memcpy]
-           - core_course.cpp_CCourse_save_FUN_00442a90 (45 lines) [pointer_cast]
-           - core_course.cpp_CCourse_interpolate_FUN_004427a0 (113 lines) [unrolled_memcpy]
-           - core_course.cpp_renderCourseGizmo_FUN_00443760 (131 lines) [pointer_cast, unrolled_memcpy]
-           - core_course.cpp_CCourse_preview_FUN_00443bc0 (255 lines) [unrolled_memcpy]
 
-Total: 45 files
+Total: 43 files
 
 ====================================================================================================
 FILES BELOW 50%

@@ -23,17 +23,9 @@ void __cdecl core_dcube_cpp_CDemonCube_save_FUN_00457430(CDemonCube *this_ptr,_F
     core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00455250
               (&this_ptr->triangle_buffer[iVar1],file_handle,this_ptr->vertex_buffer);
   }
-  if (this_ptr->triangle_count == 0) {
-    if (this_ptr->triangle_count == 0) {
-      return;
-    }
-  }
-  else {
+  if (this_ptr->triangle_count != 0) {
     _fwrite(this_ptr->ground_type_memory,1,this_ptr->triangle_count,file_handle);
-    if (this_ptr->triangle_count == 0) {
-      return;
-    }
+    _fwrite(this_ptr->voxel_buffer1,1,0x40,file_handle);
   }
-  _fwrite(this_ptr->voxel_buffer1,1,0x40,file_handle);
   return;
 }

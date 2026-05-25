@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 131
-  Total diagnostics: 369
+  Functions with findings: 128
+  Total diagnostics: 361
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 131, raw .cpp files: 0
+  .keep.cpp files: 128, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -174,17 +174,6 @@ core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0  [.keep] [Cppcheck (quick)]
   Line  409: [selfAssignment] Redundant assignment of 'iVar16' to itself.
 
 ----------------------------------------------------------------------------------------------------
-core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0  [.keep] [Cppcheck (quick)]
-  File: core/dcube.cpp  (6 diagnostics)
-
-  Line   47: [uninitvar] Uninitialized variable: local_40
-  Line   48: [uninitvar] Uninitialized variable: local_3c
-  Line   49: [uninitvar] Uninitialized variable: local_38
-  Line   59: [uninitvar] Uninitialized variable: local_20
-  Line   65: [uninitvar] Uninitialized variable: local_24
-  Line   70: [uninitvar] Uninitialized variable: local_28
-
-----------------------------------------------------------------------------------------------------
 shape_design.c_loadModelBinary_FUN_00458170  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (6 diagnostics)
 
@@ -210,11 +199,11 @@ shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50  [.keep] [Cp
 core_course.cpp_renderCourseGizmo_FUN_00443760  [.keep] [Cppcheck (quick)]
   File: core/course.cpp  (5 diagnostics)
 
+  Line   35: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   36: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   37: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   38: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   39: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   67: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   77: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   65: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   75: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_path.cpp_CPathMap_findPathToDestination_FUN_00547320  [.keep] [Cppcheck (quick)]
@@ -749,12 +738,6 @@ cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70  [.keep] [Cppcheck (q
   Line   59: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_dcube.cpp_CDemonCube_save_FUN_00457430  [.keep] [Cppcheck (quick)]
-  File: core/dcube.cpp  (1 diagnostics)
-
-  Line   27: [identicalInnerCondition] Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
 core_dlight.cpp_CDemonLight_init_FUN_004727c0  [.keep] [Cppcheck (quick)]
   File: core/dlight.cpp  (1 diagnostics)
 
@@ -843,12 +826,6 @@ core_script.cpp_trimLine_FUN_005592c0  [.keep] [Cppcheck (quick)]
   File: core/script.cpp  (1 diagnostics)
 
   Line   38: [nullPointer] Possible null pointer dereference: pcVar2
-
-----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_load_FUN_00569410  [.keep] [Cppcheck (quick)]
-  File: core/set.cpp  (1 diagnostics)
-
-  Line   61: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990  [.keep] [Cppcheck (quick)]

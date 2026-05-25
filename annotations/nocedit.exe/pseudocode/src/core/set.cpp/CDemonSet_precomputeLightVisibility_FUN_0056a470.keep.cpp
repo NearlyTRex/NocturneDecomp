@@ -18,7 +18,6 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
   char local_174 [256];
   CVector3f local_74 [2];
   CRect local_5c;
-  CDemonSet *local_3c;
   int local_24;
   int local_20;
   int local_1c;
@@ -35,9 +34,8 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
   local_20 = 0;
   g_SpotLightCount = 0;
   if (0 < this_ptr->camera_count) {
-    local_3c = this_ptr;
     do {
-      if (local_3c->cameras[0].is_panning == 0) {
+      if (this_ptr->cameras[local_20].is_panning == 0) {
         this_ptr_00 = this_ptr->cameras + local_20;
         core_setutil_cpp_C3DSCamera_apply_FUN_00585870(this_ptr_00,&g_CDemonCameraInstance);
         core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,0);
@@ -55,9 +53,9 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
         }
         _sprintf
                   (local_174,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)",
-                   (double)local_3c->cameras[0].box.min.x,(double)local_3c->cameras[0].box.min.y,
-                   (double)local_3c->cameras[0].box.min.z,(double)local_3c->cameras[0].box.max.x,
-                   (double)local_3c->cameras[0].box.max.y,(double)local_3c->cameras[0].box.max.z);
+                   (double)this_ptr->cameras[local_20].box.min.x,(double)this_ptr->cameras[local_20].box.min.y,
+                   (double)this_ptr->cameras[local_20].box.min.z,(double)this_ptr->cameras[local_20].box.max.x,
+                   (double)this_ptr->cameras[local_20].box.max.y,(double)this_ptr->cameras[local_20].box.max.z);
         engine_2d_c_drawText_FUN_00401fd0(local_174,0,0x16);
       }
       local_1c = 0x21;
@@ -81,7 +79,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
               core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::precomuputeLightVisibility - Unable to find light in master list");
             }
             light_source = g_MasterLightList[iVar4];
-            if (local_3c->cameras[0].is_panning == 0) {
+            if (this_ptr->cameras[local_20].is_panning == 0) {
               core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10
                         (&g_CDemonCameraInstance,light_source,(CRect *)0x0);
               iVar1 = core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450fc0
@@ -98,7 +96,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
               }
             }
           }
-          else if (local_3c->cameras[0].is_panning == 0) {
+          else if (this_ptr->cameras[local_20].is_panning == 0) {
             core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
             iVar1 = core_setutil_cpp_C3DSLight_isVisible_FUN_00587df0(this_ptr->lights + local_14);
             this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;
@@ -118,7 +116,6 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
       engine_2d_c_drawText_FUN_00401fd0(local_174,0,0);
       local_20 = local_20 + 1;
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-      local_3c = (CDemonSet *)&local_3c->cameras[0].enabled;
     } while (local_20 < this_ptr->camera_count);
   }
   if (bVar10) {

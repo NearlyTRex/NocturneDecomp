@@ -15,14 +15,10 @@ void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
   char local_120 [256];
 
   if (&this_ptr->min_bounds != min_bounds) {
-    (this_ptr->min_bounds).x = min_bounds->x;
-    (this_ptr->min_bounds).y = min_bounds->y;
-    (this_ptr->min_bounds).z = min_bounds->z;
+    this_ptr->min_bounds = *min_bounds;
   }
   if (&this_ptr->max_bounds != max_bounds) {
-    (this_ptr->max_bounds).x = max_bounds->x;
-    (this_ptr->max_bounds).y = max_bounds->y;
-    (this_ptr->max_bounds).z = max_bounds->z;
+    this_ptr->max_bounds = *max_bounds;
   }
   if (triangle_count != 0) {
     g_VertexCount = triangle_count * 3;

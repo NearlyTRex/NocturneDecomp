@@ -39,19 +39,15 @@ void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDem
     local_64 = (this_ptr->max_bounds).x - (this_ptr->min_bounds).x;
     local_60 = (this_ptr->max_bounds).y - (this_ptr->min_bounds).y;
     local_5c = (this_ptr->max_bounds).z - (this_ptr->min_bounds).z;
-    if (&local_40 != &local_64) {
-      local_40 = local_64;
-      local_3c = local_60;
-      local_38 = local_5c;
-    }
+    local_40 = local_64;
+    local_3c = local_60;
+    local_38 = local_5c;
     local_34 = local_40 / 8.0f;
     local_30 = local_3c * 0.125f;
     local_2c = local_38 * 0.125f;
-    if (&local_28 != &local_34) {
-      local_28 = local_34;
-      local_24 = local_30;
-      local_20 = local_2c;
-    }
+    local_28 = local_34;
+    local_24 = local_30;
+    local_20 = local_2c;
     local_1c = 0;
     local_18 = 0;
     do {
