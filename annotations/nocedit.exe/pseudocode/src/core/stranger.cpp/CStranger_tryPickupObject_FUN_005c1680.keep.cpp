@@ -157,15 +157,11 @@ LAB_005c17d2:
   }
   pCVar6 = (*((pCVar5->vtable)._ub)->getBoundingBox)(pCVar5,&local_16c);
   if (&this_ptr->carry_object_bbox != pCVar6) {
-    (this_ptr->carry_object_bbox).min.x = (pCVar6->min).x;
-    (this_ptr->carry_object_bbox).min.y = (pCVar6->min).y;
-    (this_ptr->carry_object_bbox).min.z = (pCVar6->min).z;
+    (this_ptr->carry_object_bbox).min = pCVar6->min;
   }
   pCVar12 = &(this_ptr->carry_object_bbox).max;
   if (pCVar12 != &pCVar6->max) {
-    pCVar12->x = (pCVar6->max).x;
-    (this_ptr->carry_object_bbox).max.y = (pCVar6->max).y;
-    (this_ptr->carry_object_bbox).max.z = (pCVar6->max).z;
+    (this_ptr->carry_object_bbox).max = pCVar6->max;
   }
   CStack_40.x = ((this_ptr->carry_object_bbox).min.x + (this_ptr->carry_object_bbox).max.x) *
                 0.5f;
@@ -178,9 +174,7 @@ LAB_005c17d2:
   pCVar12 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                       ((CDemonActor *)this_ptr,&CStack_dc,pCVar7);
   if (&this_ptr->carry_object_world_center != pCVar12) {
-    (this_ptr->carry_object_world_center).x = pCVar12->x;
-    (this_ptr->carry_object_world_center).y = pCVar12->y;
-    (this_ptr->carry_object_world_center).z = pCVar12->z;
+    this_ptr->carry_object_world_center = *pCVar12;
   }
   switch(iStack_30) {
   case 1:
@@ -242,9 +236,7 @@ LAB_005c17d2:
                             ((CDemonActor *)this_ptr,&CStack_118,
                              &(((this_ptr->base).object_to_pick_up)->location).position);
         if (&this_ptr->carry_object_world_center != pCVar12) {
-          (this_ptr->carry_object_world_center).x = pCVar12->x;
-          (this_ptr->carry_object_world_center).y = pCVar12->y;
-          (this_ptr->carry_object_world_center).z = pCVar12->z;
+          this_ptr->carry_object_world_center = *pCVar12;
         }
         pCVar8 = (this_ptr->base).object_to_pick_up;
         format = "Picking up heavy %s shelf\n";

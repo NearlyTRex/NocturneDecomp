@@ -86,7 +86,7 @@ LAB_005bfd02:
     fVar4 = (float)0.25 - fVar2;
     goto LAB_005bfd02;
   }
-  if ((int)local_1c < 0x3f800001) {
+  if (local_1c <= 1.0f) {
     if (local_1c < 0.0) {
       local_1c = 0.0;
     }

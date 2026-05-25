@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        43 ( 0.7%)
+  Functions with type issues:        42 ( 0.7%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      43
+    Undefined types in variables:      42
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   176 functions
+  Excluded (.keep / MMX / by-value):   177 functions
     Wrong calling convention:          1
-    Undefined types in variables:      174
+    Undefined types in variables:      175
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (43)
+Undefined types in variables (42)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -244,11 +244,6 @@ Undefined types in variables (43)
     Locals:  auStackY_180c (undefined4[1520])
     Suggested: Resolve undefined types to concrete types
 
-  CStranger_aimLeftPistol
-    Address: 0x005c4370  File: core/stranger.cpp
-    Locals:  local_9c (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
   modelStructNotSupported4
     Address: 0x0041dbe0  File: engine/boss.c
     Locals:  local_3c (undefined4[13])
@@ -352,7 +347,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (174)
+Undefined types - .keep overrides (175)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1088,6 +1083,11 @@ Undefined types - .keep overrides (174)
   CDeformableModelInstance_blendMotion
     Address: 0x0059eb50  File: core/skeleton.cpp
     Locals:  local_124 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CStranger_aimLeftPistol
+    Address: 0x005c4370  File: core/stranger.cpp
+    Locals:  local_9c (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   CStranger_makeDrawDecision

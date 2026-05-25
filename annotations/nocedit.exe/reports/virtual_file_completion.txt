@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5975 (92.6%)
-Files at 100%: 172
-Files at 90%+: 175
+Clean functions: 5990 (92.8%)
+Files at 100%: 173
+Files at 90%+: 176
 Files at 50%+: 213
 
 ====================================================================================================
@@ -131,6 +131,7 @@ FILES AT 100% (COMPLETE)
   core/spline.cpp: 7 functions, 149 lines
   core/stairs.cpp: 21 functions, 1047 lines
   core/stone.cpp: 8 functions, 80 lines
+  core/stranger.cpp: 63 functions, 6240 lines
   core/succubus.cpp: 14 functions, 614 lines
   core/svetlana.cpp: 19 functions, 958 lines
   core/tbplayer.cpp: 16 functions, 315 lines
@@ -187,7 +188,7 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 172 files
+Total: 173 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -354,23 +355,6 @@ FILES AT 50-89%
            - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines) [pointer_cast, shadow_pointer_walk, stack_alignment_array, unrolled_memcpy, unrolled_strcpy]
            - core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 (438 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy, warning_unreachable]
            - core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (117 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
-   76.2% | core/stranger.cpp
-         48/63 clean, 15 remaining
-           - core_stranger.cpp_CStranger_ctor_FUN_005bb120 (100 lines) [unrolled_memset]
-           - core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400 (135 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20 (147 lines) [bit_int_float_compare, unrolled_memcpy]
-           - core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 (128 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960 (270 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_setup_FUN_005bb4b0 (110 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (516 lines) [bit_int_float_compare]
-           - core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800 (91 lines) [unrolled_memset]
-           - core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0 (130 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 (238 lines) [bit_int_float_compare]
-           - core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (1140 lines) [unrolled_memcpy, unrolled_memset]
-           - core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20 (275 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 (379 lines) [bit_int_float_compare]
-           - core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680 (283 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 (260 lines) [unrolled_memcpy]
    75.8% | core/dmodel.cpp
          50/66 clean, 16 remaining
            - core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0 (54 lines) [unrolled_strcpy]
@@ -732,7 +716,7 @@ FILES AT 50-89%
            - engine_alphabit.cpp_copyBytes_FUN_00410d20 (21 lines) [pointer_cast, unrolled_memcpy]
            - engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (44 lines) [pointer_cast]
 
-Total: 38 files
+Total: 37 files
 
 ====================================================================================================
 FILES BELOW 50%

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1541,
-    "complexity_score": 531,
+    "complexity_score": 516,
     "cross_reference_count": 2,
     "function_call_count": 24,
     "global_count": 33,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 516,
-    "suspect_count": 1,
-    "suspect_types": [
-      "bit_int_float_compare"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2057
   },
   "cross_references": [
@@ -507,6 +505,15 @@
       "severity": "moderate",
       "text": "pCVar2->x = pCVar10->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e19999a is the IEEE 754 bit pattern of 0.15f. Rewrite in a .keep as a plain float compare against 0.15f.",
+      "line": 141,
+      "match": "(int)this_ptr->turn_blend_weight < 0x3e19999a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {",
+      "type": "bit_int_float_compare"
     },
     {
       "description": "Struct-type local `local_3f0` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
@@ -1422,14 +1429,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e19999a is the IEEE 754 bit pattern of 0.15f. Rewrite in a .keep as a plain float compare against 0.15f.",
-      "line": 141,
-      "match": "(int)this_ptr->turn_blend_weight < 0x3e19999a",
-      "severity": "moderate",
-      "text": "if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {",
-      "type": "bit_int_float_compare"
-    }
-  ]
+  "suspects": []
 }

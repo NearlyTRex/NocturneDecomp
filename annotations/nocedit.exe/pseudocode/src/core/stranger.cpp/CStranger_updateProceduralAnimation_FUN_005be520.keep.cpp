@@ -98,7 +98,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(
   
   local_1f08 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                          (&(this_ptr->base).base.model.motion_controller,0);
-  if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {
+  if (this_ptr->turn_blend_weight < 0.15f) {
     local_1f08 = (this_ptr->turn_blend_weight / 0.15f) * local_1f08;
   }
   if (0.85 < this_ptr->turn_blend_weight) {

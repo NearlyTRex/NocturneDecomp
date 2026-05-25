@@ -1,0 +1,56 @@
+// Name: core_stranger.cpp_calculateAimAnglesWithOffset_FUN_005c37e0
+// Address: 005c37e0
+// MANUAL RECONSTRUCTION
+// Address Range: [[005c37e0, 005c395c]]
+// Convention: __cdecl
+// Signature: CVector3f * __cdecl core_stranger_cpp_calculateAimAnglesWithOffset_FUN_005c37e0(CVector3f *out_angles,CVector3f *direction,float *offset_pair)
+
+#include "nocturne.h"
+
+CVector3f * __cdecl core_stranger_cpp_calculateAimAnglesWithOffset_FUN_005c37e0(CVector3f *out_angles,CVector3f *direction,float *offset_pair)
+
+{
+  float fVar1;
+  float fVar4;
+  float fVar2;
+  float fVar3;
+  double dVar4;
+  double dVar5;
+  float *pfVar1;
+  
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(out_angles,direction);
+  fVar1 = SQRT(direction->z * direction->z +
+               direction->x * direction->x + direction->y * direction->y);
+  if ((float)0.01 < fVar1) {
+    pfVar1 = &out_angles->y;
+    if ((((float)0.01 <= fVar1) &&
+        (dVar5 = (double)(SQRT(fVar1 * fVar1 - -*offset_pair * -*offset_pair) / fVar1), dVar5 < 1.0)
+        ) && (0.0 <= dVar5)) {
+      dVar5 = acos(dVar5);
+      if (0.0 <= -*offset_pair) {
+        fVar4 = *pfVar1 + (float)dVar5;
+      }
+      else {
+        fVar4 = *pfVar1 - (float)dVar5;
+      }
+      *pfVar1 = fVar4;
+      fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(*pfVar1);
+      *pfVar1 = fVar3;
+    }
+    if (((0.01 <= (double)fVar1) &&
+        (dVar5 = (double)(SQRT(fVar1 * fVar1 - offset_pair[1] * offset_pair[1]) / fVar1),
+        dVar5 < 1.0)) && (0.0 <= dVar5)) {
+      dVar4 = acos(dVar5);
+      if (0.0 <= offset_pair[1]) {
+        fVar1 = out_angles->x + (float)dVar4;
+      }
+      else {
+        fVar1 = out_angles->x - (float)dVar4;
+      }
+      out_angles->x = fVar1;
+      fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(out_angles->x);
+      out_angles->x = fVar2;
+    }
+  }
+  return out_angles;
+}

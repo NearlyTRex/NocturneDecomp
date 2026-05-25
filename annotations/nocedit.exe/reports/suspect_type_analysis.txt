@@ -4,24 +4,24 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1235 ( 43.5%)
-  unrolled_memcpy                  601 ( 21.2%)
-  unrolled_strcpy                  237 (  8.3%)
+  pointer_cast                    1235 ( 44.2%)
+  unrolled_memcpy                  574 ( 20.5%)
+  unrolled_strcpy                  237 (  8.5%)
   shadow_pointer_walk              113 (  4.0%)
-  missing_cave_copy                109 (  3.8%)
-  unrolled_strlen                   80 (  2.8%)
-  carry_arith_idiom                 63 (  2.2%)
+  missing_cave_copy                109 (  3.9%)
+  unrolled_strlen                   80 (  2.9%)
+  carry_arith_idiom                 63 (  2.3%)
   raw_address_constant              43 (  1.5%)
   bitcast_double_pair               42 (  1.5%)
-  static_uninitvar                  40 (  1.4%)
-  unrolled_memset                   40 (  1.4%)
-  unrolled_strchr                   38 (  1.3%)
+  unrolled_strchr                   38 (  1.4%)
+  static_uninitvar                  37 (  1.3%)
   warning_inlined_function          34 (  1.2%)
-  bit_int_float_compare             33 (  1.2%)
+  unrolled_memset                   33 (  1.2%)
+  bit_int_float_compare             27 (  1.0%)
   static_legacy_uninitvar           23 (  0.8%)
   warning_type_propagation          15 (  0.5%)
   stack_alignment_array             13 (  0.5%)
-  static_invalid_pointer_cast       13 (  0.5%)
+  static_invalid_pointer_cast       12 (  0.4%)
   warning_unreachable               11 (  0.4%)
   sub84_truncation                  10 (  0.4%)
   static_null_pointer                8 (  0.3%)
@@ -318,11 +318,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (601 occurrences)
+TYPE: unrolled_memcpy (574 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   433x  field-by-field struct copy
+   406x  field-by-field struct copy
     85x  for (...; != 0; ... + -1)
     81x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -437,16 +437,6 @@ Functions:
   core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
   core_skeledit.cpp_CLodVert_copy_FUN_00599550
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370
-  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-  core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
-  core_stranger.cpp_CStranger_setup_FUN_005bb4b0
-  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0
-  core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400
-  core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680
-  core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850
-  core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20
   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
   core_tentacle.cpp_CTentacle_process_FUN_005db050
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
@@ -884,54 +874,6 @@ Functions:
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 
 ====================================================================================================
-TYPE: static_uninitvar (40 occurrences)
-====================================================================================================
-
-Unique patterns:
-    40x  Cppcheck: uninitialized variable
-
-Functions:
-  core_gabriela.cpp_CGabriella_processAI_FUN_004d4190
-  core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
-  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
-  core_sound.cpp_updateListeners_FUN_005b1870
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210
-  engine_model.c_getMRGLBounds_FUN_00528140
-  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
-  shape_design.c_loadModelBinary_FUN_00458170
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
-
-====================================================================================================
-TYPE: unrolled_memset (40 occurrences)
-====================================================================================================
-
-Unique patterns:
-    40x  cascade_constant_fill
-
-Functions:
-  core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
-  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600
-  core_icepick.cpp_CIcePick_process_FUN_004f80b0
-  core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
-  core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610
-  core_mobster.cpp_CMobster_process_FUN_00525840
-  core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
-  core_path.cpp_CPathMap_reset_FUN_00548510
-  core_scat.cpp_CScat_process_FUN_005571f0
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  core_stranger.cpp_CStranger_ctor_FUN_005bb120
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-  core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800
-  core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
-  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
-  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
-
-====================================================================================================
 TYPE: unrolled_strchr (38 occurrences)
 ====================================================================================================
 
@@ -957,6 +899,26 @@ Functions:
   shape_design.c_tileTextureMaps_FUN_0046a180
   shape_design.c_validateModelTextures_FUN_00459a20
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
+
+====================================================================================================
+TYPE: static_uninitvar (37 occurrences)
+====================================================================================================
+
+Unique patterns:
+    37x  Cppcheck: uninitialized variable
+
+Functions:
+  core_gabriela.cpp_CGabriella_processAI_FUN_004d4190
+  core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
+  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
+  core_sound.cpp_updateListeners_FUN_005b1870
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210
+  engine_model.c_getMRGLBounds_FUN_00528140
+  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
+  shape_design.c_loadModelBinary_FUN_00458170
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 
 ====================================================================================================
 TYPE: warning_inlined_function (34 occurrences)
@@ -1001,7 +963,31 @@ Functions:
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
-TYPE: bit_int_float_compare (33 occurrences)
+TYPE: unrolled_memset (33 occurrences)
+====================================================================================================
+
+Unique patterns:
+    33x  cascade_constant_fill
+
+Functions:
+  core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
+  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  core_icepick.cpp_CIcePick_process_FUN_004f80b0
+  core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
+  core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610
+  core_mobster.cpp_CMobster_process_FUN_00525840
+  core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
+  core_path.cpp_CPathMap_reset_FUN_00548510
+  core_scat.cpp_CScat_process_FUN_005571f0
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
+  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
+  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+
+====================================================================================================
+TYPE: bit_int_float_compare (27 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1017,14 +1003,14 @@ Unique patterns:
      1x  0x3e999999 < (int)FLOAT_00680818))
      1x  (int)CStack_90.y < 0x42c60001
      1x  (int)local_30 < 0x41f00000
-     1x  (int)local_68.z < 0x40c00001
-     1x  (int)this_ptr->turn_blend_weight < 0x3e19999a
-     1x  (int)local_1c < 0x3f800001
-     1x  0x3f199999 < (int)(this_ptr->base).base.layer_action_t))
-     1x  0x3ebd70a3 < (int)(this_ptr->base).base.layer_action_t))
-     1x  0x3f28f5c2 < (int)(this_ptr->base).base.layer_action_t))
      1x  (int)(this_ptr->trigger_size).x < 0x3c23d70a
      1x  0x44ac8000 < (int)fVar1)
+     1x  (int)fVar1 < 0x44b90000
+     1x  0x44e10000 < (int)this_ptr->master_frame)
+     1x  (int)fVar1 < 0x4400c000
+     1x  (int)fVar1 < 0x44e10000
+     1x  (int)fVar1 < 0x44ed8000
+     1x  (int)fVar1 < 0x44fa0000
 
 Functions:
   core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40
@@ -1036,10 +1022,6 @@ Functions:
   core_scat.cpp_CScat_updateAI_FUN_005578e0
   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0
   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
-  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
-  core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20
-  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
-  core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270
   core_trigger.cpp_CTrigger_processInEditor_FUN_005e1180
   core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
   core_wateract.cpp_CWaterActor_processInEditor_FUN_005ebab0
@@ -1120,11 +1102,11 @@ Functions:
   shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0
 
 ====================================================================================================
-TYPE: static_invalid_pointer_cast (13 occurrences)
+TYPE: static_invalid_pointer_cast (12 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    13x  Cppcheck: invalid pointer cast
+    12x  Cppcheck: invalid pointer cast
 
 Functions:
   core_elephant.cpp_CElephantGun_process_FUN_004a7070
@@ -1135,7 +1117,6 @@ Functions:
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790
   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
-  core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270
 
 ====================================================================================================
 TYPE: warning_unreachable (11 occurrences)

@@ -16,7 +16,6 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
   int iVar1;
   CStranger *pCVar2;
   int iVar2;
-  CMatrix3x4f local_f4;
   CMatrix3x4f local_c4;
   CMatrix3x4f local_94;
   CBoundingBox3D local_64;
@@ -60,7 +59,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                     (&local_c4,
                      (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                     g_MimicIndices[0],&local_f4);
+                     g_MimicIndices[0],&local_94);
           core_xform_cpp_getTranslation_FUN_005f6110(&local_94,&local_4c);
           core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_94,&local_34);
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

@@ -292,6 +292,15 @@
       "severity": "moderate",
       "text": "local_dc.m[0].w = pCVar7->m[0].w;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Struct-type local `local_13c` (CMatrix3x4f) is only ever read (passed as the first arg of a matrix consumer) and is never produced, while a matching CMatrix3x4f cave-block copy exists in the `.asm` and the decompile has an orphaned `(... *)&stack0xXXXX` cave-copy source. Ghidra dropped the post-call memcpy and emitted its source as a lost stack slot, leaving `local_13c` uninitialised at runtime. See \u00a720 \u2014 fix by directing the producing call's output into `local_13c` (or restoring the `local_13c = <src>;` copy).",
+      "line": 18,
+      "match": "CMatrix3x4f local_13c; (read-only by consumer, never produced; orphan stack0x cave source)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_13c;",
+      "type": "missing_cave_copy"
     }
   ],
   "stack_frame": {

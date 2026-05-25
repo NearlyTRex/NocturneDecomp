@@ -19,7 +19,6 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
   CVector3f *input;
   CVector3f *start_pos;
   CMatrix3x4f *pCVar7;
-  CMatrix3x4f local_22c;
   CMatrix3x4f local_1fc;
   CMatrix3x4f local_1cc;
   CMatrix3x4f local_19c;
@@ -59,7 +58,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
               (&local_16c,
                (CMatrix3x4f *)
                (this_ptr->base).base.model.bone_transform.bone_world_matrices[g_StrangerIndices[0]].
-               m,&local_22c);
+               m,&local_13c);
     core_xform_cpp_getTranslation_FUN_005f6110(&local_13c,&local_ac);
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_13c,&local_94);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

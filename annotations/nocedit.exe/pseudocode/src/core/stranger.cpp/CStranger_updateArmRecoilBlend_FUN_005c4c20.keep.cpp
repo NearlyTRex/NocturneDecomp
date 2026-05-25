@@ -51,7 +51,7 @@ LAB_005c4c51:
       if (((ABS(local_68.x) <= (float)1.5) &&
           (ABS(local_68.y) <= (float)4)) &&
          ((0.0 <= local_68.z &&
-          ((((int)local_68.z < 0x40c00001 && (this_ptr_00 != this_ptr)) &&
+          (((local_68.z <= 6.0f && (this_ptr_00 != this_ptr)) &&
            (EVar2 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).getDeathState)
                               ((CCharacter *)this_ptr_00), EVar2 == DEATH_STATE_ALIVE)))))) {
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_e4);
@@ -98,27 +98,19 @@ LAB_005c4d62:
   pCVar4 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                      ((CDemonActor *)this_ptr,&local_b0,&local_a4);
   if (&local_8c != pCVar4) {
-    local_8c.x = pCVar4->x;
-    local_8c.y = pCVar4->y;
-    local_8c.z = pCVar4->z;
+    local_8c = *pCVar4;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                      (&(this_ptr->base).base.model,&local_bc,g_StrangerIndices[1]);
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)this_ptr,&local_80,pCVar1);
   if (&local_5c != pCVar1) {
-    local_5c.x = pCVar1->x;
-    local_5c.y = pCVar1->y;
-    local_5c.z = pCVar1->z;
+    local_5c = *pCVar1;
   }
   local_74.x = local_5c.x + local_8c.x;
   local_74.y = local_5c.y + local_8c.y;
   local_74.z = local_5c.z + local_8c.z;
-  if (&local_98 != &local_74) {
-    local_98.x = local_74.x;
-    local_98.y = local_74.y;
-    local_98.z = local_74.z;
-  }
+  local_98 = local_74;
   fVar2 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&local_5c,&local_98);
   if (((0.0 <= fVar2) && (fVar2 < 1.0)) &&
      (fVar1 = 1.0 - (fVar2 * 3.5 - 1.5) / 2.0, local_f8 < fVar1)) {
@@ -129,18 +121,12 @@ LAB_005c4d62:
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)this_ptr,&local_44,pCVar1);
   if (&local_5c != pCVar1) {
-    local_5c.x = pCVar1->x;
-    local_5c.y = pCVar1->y;
-    local_5c.z = pCVar1->z;
+    local_5c = *pCVar1;
   }
   local_38[0].x = local_5c.x + local_8c.x;
   local_38[0].y = local_5c.y + local_8c.y;
   local_38[0].z = local_5c.z + local_8c.z;
-  if (&local_98 != local_38) {
-    local_98.x = local_38[0].x;
-    local_98.y = local_38[0].y;
-    local_98.z = local_38[0].z;
-  }
+  local_98 = local_38[0];
   fVar2 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&local_5c,&local_98);
   if (((0.0 <= fVar2) && (fVar2 < 1.0)) &&
      (fVar2 = 1.0 - (fVar2 * 3.5 - 1.5) / 2.0, local_f8 < fVar2)) {

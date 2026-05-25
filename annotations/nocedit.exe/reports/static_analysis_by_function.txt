@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 127
-  Total diagnostics: 352
+  Functions with findings: 125
+  Total diagnostics: 348
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 127, raw .cpp files: 0
+  .keep.cpp files: 125, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -392,14 +392,6 @@ core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00  [.ke
   Line   55: [uninitvar] Uninitialized variable: local_10e
   Line   91: [uninitvar] Uninitialized variable: local_68
   Line  117: [uninitvar] Uninitialized variable: local_64
-
-----------------------------------------------------------------------------------------------------
-core_stranger.cpp_CStranger_processFrame_FUN_005bb960  [.keep] [Cppcheck (quick)]
-  File: core/stranger.cpp  (3 diagnostics)
-
-  Line  161: [uninitvar] Uninitialized variable: local_14
-  Line  591: [uninitvar] Uninitialized variable: local_25c
-  Line  594: [uninitvar] Uninitialized variable: local_260
 
 ----------------------------------------------------------------------------------------------------
 engine_2d.c_findBestPaletteMatch_FUN_00401460  [.keep] [Cppcheck (quick)]
@@ -860,12 +852,6 @@ core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0  [.kee
   File: core/skeleton.cpp  (1 diagnostics)
 
   Line   58: [identicalInnerCondition] Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270  [.keep] [Cppcheck (quick)]
-  File: core/stranger.cpp  (1 diagnostics)
-
-  Line  222: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0  [.keep] [Cppcheck (quick)]

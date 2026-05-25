@@ -185,9 +185,7 @@ LAB_005bde44:
           pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                              ((CDemonActor *)this_ptr_03,&local_50,local_38);
           if (&local_b0.impact_direction != pCVar4) {
-            local_b0.impact_direction.x = pCVar4->x;
-            local_b0.impact_direction.y = pCVar4->y;
-            local_b0.impact_direction.z = pCVar4->z;
+            local_b0.impact_direction = *pCVar4;
           }
           local_b0.attacker = (CDemonActor *)this_ptr;
           local_b0.wielder = (CDemonActor *)this_ptr;

@@ -37,7 +37,6 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(C
   int local_40;
   int local_34;
   CWeapon *local_1c;
-  char *pcVar4;
   float fVar3;
   CDemonActor *pCVar2;
   
@@ -217,11 +216,8 @@ joined_r0x005c57cf:
         if (pCVar13 != (CDynamite *)0x0) {
           pCVar14 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                               ((CDemonActor *)this_ptr,&local_60,&local_54);
-          pcVar4 = (char *)&pCVar13->toss_velocity;
-          if ((CVector3f *)pcVar4 != pCVar14) {
-            *(float *)pcVar4 = pCVar14->x;
-            (pCVar13->toss_velocity).y = pCVar14->y;
-            (pCVar13->toss_velocity).z = pCVar14->z;
+          if (&pCVar13->toss_velocity != pCVar14) {
+            pCVar13->toss_velocity = *pCVar14;
           }
           (*(((pCVar13->base).base.vtable._uw)->_uw).fire)((CWeapon *)pCVar13);
           this_ptr->weapon = (CWeapon *)0x0;
@@ -239,20 +235,20 @@ joined_r0x005c57cf:
       }
       break;
     case 8:
-      if ((((int)fVar9 < 0x3f19999a) && (0x3f199999 < (int)(this_ptr->base).base.layer_action_t)) &&
+      if (((fVar9 < 0.6f) && (0.6f <= (this_ptr->base).base.layer_action_t)) &&
          (iVar8 = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr->weapon->base,"CShotgun")
          , iVar8 != 0)) {
         (*(((this_ptr->weapon->base).vtable._uw)->_uw).onFired)(this_ptr->weapon);
       }
       break;
     case 0xc:
-      if ((((int)fVar9 < 0x3ebd70a4) && (0x3ebd70a3 < (int)(this_ptr->base).base.layer_action_t)) &&
+      if (((fVar9 < 0.37f) && (0.37f <= (this_ptr->base).base.layer_action_t)) &&
          (pCVar3 = this_ptr->weapon, pCVar3 != (CWeapon *)0x0)) {
         (*((pCVar3->base).vtable._ub)->processMeleeHit)(&pCVar3->base,1);
       }
       break;
     case 0xd:
-      if ((((int)fVar9 < 0x3f28f5c3) && (0x3f28f5c2 < (int)(this_ptr->base).base.layer_action_t)) &&
+      if (((fVar9 < 0.66f) && (0.66f <= (this_ptr->base).base.layer_action_t)) &&
          (pCVar3 = this_ptr->weapon, pCVar3 != (CWeapon *)0x0)) {
         (*((pCVar3->base).vtable._ub)->processMeleeHit)(&pCVar3->base,2);
       }

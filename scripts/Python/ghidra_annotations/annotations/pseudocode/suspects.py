@@ -4123,6 +4123,19 @@ _UNREF_DECL_RE = re.compile(
     r"^\s*([A-Z][A-Za-z0-9_]*)\s+([a-zA-Z_]\w*)\s*;\s*$")
 _CAVE_SRC_RE = re.compile(r"MOV\s+ECX,\s*dword ptr\s*\[ESI")
 _CAVE_DST_RE = re.compile(r"MOV\s+dword ptr\s*\[EDI(?:\s*\+\s*0x[0-9a-f]+)?\]\s*,\s*ECX")
+# Orphaned cave-copy source: Ghidra emits the source of a dropped struct copy
+# as a raw `(TYPE *)&stack0xXXXXXXXX` (a lost stack slot, §14) rather than a
+# declared local. Captures the struct TYPE so it can be matched against the
+# eligible (cave-block-sized) types.
+_CAVE_STACK0X_SRC_RE = re.compile(
+    r"\(([A-Z][A-Za-z0-9_]*)\s*\*\)\s*&\s*stack0x[0-9a-fA-F]+")
+# Matrix/struct CONSUMER functions whose struct-pointer FIRST argument is a
+# read-only input (they read the matrix and write a *separate* output arg).
+# Used by the secondary missing-cave-copy pass: a local passed only as
+# `CONSUMER(&local, ...)` is read, never produced. Extend as more read-only
+# matrix consumers surface — only add functions whose first pointer arg is
+# input-only (a producer/output-first function here would be the sole FP risk).
+_CAVE_DEST_CONSUMERS = ('getTranslation', 'matrixToEulerAngles')
 
 
 def _find_cave_copy_blocks(asm_code):
@@ -4229,28 +4242,93 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
                                     or '(' not in lines[use_line_idx - 1]):
             continue
         candidates.append((decl_line, type_name, var_name))
-    if len(candidates) < 2:
-        return suspects
     cave_blocks = sum(1 for s in _find_cave_copy_blocks(assembly_code) if s >= 48)
-    for decl_line, type_name, var_name in candidates:
-        suspects.append({
-            'line': decl_line + 1,
-            'type': 'missing_cave_copy',
-            'match': "{type} {var}; ... f(&{var}, ...);".format(
-                type=type_name, var=var_name),
-            'text': lines[decl_line].strip()[:120],
-            'description': (
-                "Struct-type local `{var}` ({type}) is declared and passed "
-                "once by address with no other reference; the `.asm` has "
-                "{blocks} cave-block struct copies that the decompile "
-                "doesn't reflect. Ghidra dropped a post-call memcpy "
-                "(`local_dst = local_src;`) leaving one local uninitialized "
-                "at runtime. See §20 — typical fix is to pass the real "
-                "source local directly instead of the uninitialized "
-                "scratch.").format(
-                    var=var_name, type=type_name, blocks=cave_blocks),
-            'severity': 'moderate',
-        })
+    # Primary pass: two-or-more declared struct locals, each passed once by
+    # address with no other reference — the classic dead-output / uninit-input
+    # pair. Requires ≥2 to avoid flagging an ordinary single output-param local.
+    if len(candidates) >= 2:
+        for decl_line, type_name, var_name in candidates:
+            suspects.append({
+                'line': decl_line + 1,
+                'type': 'missing_cave_copy',
+                'match': "{type} {var}; ... f(&{var}, ...);".format(
+                    type=type_name, var=var_name),
+                'text': lines[decl_line].strip()[:120],
+                'description': (
+                    "Struct-type local `{var}` ({type}) is declared and passed "
+                    "once by address with no other reference; the `.asm` has "
+                    "{blocks} cave-block struct copies that the decompile "
+                    "doesn't reflect. Ghidra dropped a post-call memcpy "
+                    "(`local_dst = local_src;`) leaving one local uninitialized "
+                    "at runtime. See §20 — typical fix is to pass the real "
+                    "source local directly instead of the uninitialized "
+                    "scratch.").format(
+                        var=var_name, type=type_name, blocks=cave_blocks),
+                'severity': 'moderate',
+            })
+    # Secondary pass: stack0x-orphaned cave source. Ghidra sometimes emits the
+    # cave-copy SOURCE as a raw `(TYPE *)&stack0xXXXXXXXX` (a lost stack slot,
+    # §14) instead of a declared local, so the pair logic above can't see it.
+    # The dropped copy then leaves a *declared* destination local of the same
+    # eligible type that is read but never produced. We can't tell a producer
+    # output-param write (`build(&local, ..)`, `multiply(.., &local)`) from a
+    # read just by seeing `&local`, so to stay FP-free we flag a destination
+    # ONLY when EVERY one of its uses is `CONSUMER(&local, ...)` — `local` as
+    # the read-only FIRST argument of a known matrix consumer. A local that is
+    # ever a producer output (or used any other way) is excluded. Gated by an
+    # orphan `(eligible TYPE *)&stack0x` source + matching cave block.
+    # Canonical: CStranger::renderOpaque hat transform —
+    #   multiply(.., (CMatrix3x4f *)&stack0x..); getTranslation(&local_13c, ..);
+    #   matrixToEulerAngles(&local_13c, ..)  — local_13c read, never produced.
+    orphan_types = {t for t in _CAVE_STACK0X_SRC_RE.findall(decompiled_code)
+                    if t in eligible_types}
+    if orphan_types:
+        flagged = {s['line'] for s in suspects}
+        consumer_alt = "|".join(_CAVE_DEST_CONSUMERS)
+        for decl_line, type_name, var_name in decls:
+            if type_name not in orphan_types or (decl_line + 1) in flagged:
+                continue
+            var_re = re.compile(r"\b" + re.escape(var_name) + r"\b")
+            consumer_re = re.compile(
+                r"(?:" + consumer_alt + r")\w*\s*\(\s*&\s*"
+                + re.escape(var_name) + r"\b")
+            uses = 0
+            all_consumer = True
+            for j, line in enumerate(lines):
+                if j == decl_line:
+                    continue
+                occ = len(var_re.findall(line))
+                if occ == 0:
+                    continue
+                uses += occ
+                # Every occurrence on this line must be a consumer-first-arg
+                # `&var`. If the count of consumer matches < total occurrences,
+                # `var` is used some other way (producer output, field access,
+                # bare use) → not a pure read-only destination.
+                if len(consumer_re.findall(line)) != occ:
+                    all_consumer = False
+                    break
+            if all_consumer and uses >= 1:
+                suspects.append({
+                    'line': decl_line + 1,
+                    'type': 'missing_cave_copy',
+                    'match': "{type} {var}; (read-only by consumer, never"
+                             " produced; orphan stack0x cave source)".format(
+                                 type=type_name, var=var_name),
+                    'text': lines[decl_line].strip()[:120],
+                    'description': (
+                        "Struct-type local `{var}` ({type}) is only ever read "
+                        "(passed as the first arg of a matrix consumer) and is "
+                        "never produced, while a matching {type} cave-block copy "
+                        "exists in the `.asm` and the decompile has an orphaned "
+                        "`(... *)&stack0xXXXX` cave-copy source. Ghidra dropped "
+                        "the post-call memcpy and emitted its source as a lost "
+                        "stack slot, leaving `{var}` uninitialised at runtime. "
+                        "See §20 — fix by directing the producing call's output "
+                        "into `{var}` (or restoring the `{var} = <src>;` "
+                        "copy).").format(var=var_name, type=type_name),
+                    'severity': 'moderate',
+                })
     return suspects
 
 

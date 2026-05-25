@@ -302,6 +302,15 @@
       "severity": "moderate",
       "text": "g_MimicIndices[0],(CMatrix3x4f *)&stack0xffffff0c);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Struct-type local `local_94` (CMatrix3x4f) is only ever read (passed as the first arg of a matrix consumer) and is never produced, while a matching CMatrix3x4f cave-block copy exists in the `.asm` and the decompile has an orphaned `(... *)&stack0xXXXX` cave-copy source. Ghidra dropped the post-call memcpy and emitted its source as a lost stack slot, leaving `local_94` uninitialised at runtime. See \u00a720 \u2014 fix by directing the producing call's output into `local_94` (or restoring the `local_94 = <src>;` copy).",
+      "line": 14,
+      "match": "CMatrix3x4f local_94; (read-only by consumer, never produced; orphan stack0x cave source)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_94;",
+      "type": "missing_cave_copy"
     }
   ],
   "stack_frame": {

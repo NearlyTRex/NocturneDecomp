@@ -4,17 +4,17 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5975 functions
-  1 suspects: 66 functions
-  2 suspects: 97 functions
-  3 suspects: 58 functions
-  4 suspects: 56 functions
-  5 suspects: 35 functions
-  6 suspects: 38 functions
+  0 suspects: 5990 functions
+  1 suspects: 58 functions
+  2 suspects: 95 functions
+  3 suspects: 57 functions
+  4 suspects: 55 functions
+  5 suspects: 34 functions
+  6 suspects: 37 functions
   7 suspects: 20 functions
   8 suspects: 26 functions
   9 suspects: 9 functions
-  10 suspects: 12 functions
+  10 suspects: 11 functions
   11 suspects: 6 functions
   12 suspects: 10 functions
   13 suspects: 3 functions
@@ -40,7 +40,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [unrolled_memcpy] (24 functions)
+  [unrolled_memcpy] (20 functions)
   ------------------------------------------------------------
     core_msnedit.cpp_CDemonMission_raycastPickActor_FU ( 52 lines)
       local_28.x = g_CDemonCameraInstance.base.position.f.x;...
@@ -76,18 +76,10 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       pCVar3->x = local_50.x;...
     shape_superopt.cpp_CObj_removeUnusedVertices_FUN_0 (115 lines)
       dst_vert->position = pCVar5->position;...
-    core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c (128 lines)
-      CStack_90.x = CStack_b4.x;...
-    core_stranger.cpp_CStranger_tryClimbLadder_FUN_005 (130 lines)
-      local_a4.x = pCVar1->x;...
-    core_stranger.cpp_CStranger_tryDescendLadder_FUN_0 (135 lines)
-      local_d0.x = pCVar3->x;...
     core_gabriela.cpp_CGabriella_processMotionEvents_F (162 lines)
       SStack_a0.impact_direction.x = pCVar5->x;...
     core_gabriela.cpp_CGabriella_processAI_FUN_004d419 (206 lines)
       CStack_48.x = CStack_a8.x;...
-    core_stranger.cpp_CStranger_processMotionEvents_FU (275 lines)
-      local_b0.impact_direction.x = pCVar4->x;...
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
@@ -168,28 +160,20 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_setedit.cpp_CDemonSet_showEditorMenu_FUN_0058 (184 lines)
       do {...
 
-  [bit_int_float_compare] (3 functions)
+  [bit_int_float_compare] (1 functions)
   ------------------------------------------------------------
     core_trigger.cpp_CTrigger_processInEditor_FUN_005e ( 57 lines)
       if ((int)(this_ptr->trigger_size).x < 0x3c23d70a) {...
-    core_stranger.cpp_CStranger_makeDrawDecision_FUN_0 (238 lines)
-      if ((int)local_1c < 0x3f800001) {...
-    core_stranger.cpp_CStranger_updateProceduralAnimat (516 lines)
-      if ((int)this_ptr->turn_blend_weight < 0x3e19999a) {...
-
-  [unrolled_memset] (3 functions)
-  ------------------------------------------------------------
-    core_stranger.cpp_CStranger_updateTurnBlending_FUN ( 91 lines)
-      (this_ptr->pending_velocity).z = 0.0;...
-    core_stranger.cpp_CStranger_ctor_FUN_005bb120      (100 lines)
-      (ADJ(pCVar6)->pending_velocity).z = 0.0;...
-    core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN (113 lines)
-      (pSVar11->light).b = 0.0;...
 
   [stack_alignment_array] (1 functions)
   ------------------------------------------------------------
     core_icepick.cpp_CIcePick_updateShootBlend_FUN_004 ( 58 lines)
       float afStackY_180c [1519];...
+
+  [unrolled_memset] (1 functions)
+  ------------------------------------------------------------
+    core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN (113 lines)
+      (pSVar11->light).b = 0.0;...
 
   [raw_address_constant] (1 functions)
   ------------------------------------------------------------
@@ -333,8 +317,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/fileio.cpp, Lines: 108, Types: ['pointer_cast', 'unrolled_strlen']
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
     File: engine/fileio.cpp, Lines: 110, Types: ['pointer_cast', 'unrolled_strlen']
-  core_stranger.cpp_CStranger_setup_FUN_005bb4b0
-    File: core/stranger.cpp, Lines: 110, Types: ['unrolled_memcpy']
   shape_design.c_createBoxPrimitive_FUN_0045e520
     File: shape/design.c, Lines: 116, Types: ['unrolled_strlen']
   shape_design.c_createKeyframeModel_FUN_00468320
@@ -385,8 +367,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/fileio.cpp, Lines: 244, Types: ['unrolled_strcpy']
   core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe
     File: core/setedit.cpp, Lines: 259, Types: ['shadow_pointer_walk', 'unrolled_strcpy']
-  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960
-    File: core/stranger.cpp, Lines: 270, Types: ['unrolled_memcpy']
   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
     File: core/morph.cpp, Lines: 415, Types: ['pointer_cast']
   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437c
@@ -507,5 +487,3 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/icepick.cpp, Lines: 243, Types: ['unrolled_memcpy']
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751
     File: core/setdir.cpp, Lines: 303, Types: ['pointer_cast', 'unrolled_memcpy']
-  core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005
-    File: core/stranger.cpp, Lines: 379, Types: ['bit_int_float_compare']

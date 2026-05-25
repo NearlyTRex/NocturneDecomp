@@ -96,16 +96,12 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *t
           pCVar13 = &(this_ptr->base).target_position;
           this_ptr->action_pending = 2;
           if ((CLocation *)pCVar13 != pCVar11) {
-            pCVar13->x = (pCVar11->position).x;
-            (this_ptr->base).target_position.y = (pCVar4->base).location.position.y;
-            (this_ptr->base).target_position.z = (pCVar4->base).location.position.z;
+            (this_ptr->base).target_position = pCVar11->position;
           }
           pUVar1 = &(this_ptr->base).target_orientation;
           pUVar15 = &(pCVar4->base).orient;
           if (pUVar1 != pUVar15) {
-            (pUVar1->vec).x = (pUVar15->vec).x;
-            (this_ptr->base).target_orientation.vec.y = (pCVar4->base).orient.vec.y;
-            (this_ptr->base).target_orientation.vec.z = (pCVar4->base).orient.vec.z;
+            (this_ptr->base).target_orientation.vec = pUVar15->vec;
           }
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0x16,1);
@@ -142,9 +138,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *t
           pCVar13 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                               ((CDemonActor *)this_ptr,&CStack_60,&pCVar12->position);
           if (&this_ptr->carry_object_world_center != pCVar13) {
-            (this_ptr->carry_object_world_center).x = pCVar13->x;
-            (this_ptr->carry_object_world_center).y = pCVar13->y;
-            (this_ptr->carry_object_world_center).z = pCVar13->z;
+            this_ptr->carry_object_world_center = *pCVar13;
           }
           fVar7 = (this_ptr->carry_object_bbox).max.y;
           fVar4 = (this_ptr->carry_object_bbox).min.y;
@@ -161,16 +155,12 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *t
           pCVar11 = &(this_ptr_00->base).location;
           this_ptr->action_pending = 2;
           if ((CLocation *)pCVar13 != pCVar11) {
-            pCVar13->x = (pCVar11->position).x;
-            (this_ptr->base).target_position.y = (this_ptr_00->base).location.position.y;
-            (this_ptr->base).target_position.z = (this_ptr_00->base).location.position.z;
+            (this_ptr->base).target_position = pCVar11->position;
           }
           pUVar11 = &(this_ptr->base).target_orientation;
           pUVar5 = &(this_ptr_00->base).orient;
           if (pUVar11 != pUVar5) {
-            (pUVar11->vec).x = (pUVar5->vec).x;
-            (this_ptr->base).target_orientation.vec.y = (this_ptr_00->base).orient.vec.y;
-            (this_ptr->base).target_orientation.vec.z = (this_ptr_00->base).orient.vec.z;
+            (this_ptr->base).target_orientation.vec = pUVar5->vec;
           }
           return 1;
         }

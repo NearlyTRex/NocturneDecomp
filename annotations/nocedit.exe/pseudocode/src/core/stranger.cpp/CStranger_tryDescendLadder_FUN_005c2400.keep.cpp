@@ -61,9 +61,7 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_005c2400(CStranger 
           pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                              ((CDemonActor *)this_ptr_00,&CStack_88,&local_d0);
           if (&local_d0 != pCVar3) {
-            local_d0.x = pCVar3->x;
-            local_d0.y = pCVar3->y;
-            local_d0.z = pCVar3->z;
+            local_d0 = *pCVar3;
           }
           local_d0.y = local_d0.y + (this_ptr_00->ladder_size).y;
           fVar4 = (float10)fcos((float10)0.261799387791667);

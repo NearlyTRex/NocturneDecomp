@@ -62,9 +62,7 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_005c1fe0(CStranger *t
           pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                              ((CDemonActor *)this_ptr_01,&CStack_8c,&local_a4);
           if (&local_a4 != pCVar1) {
-            local_a4.x = pCVar1->x;
-            local_a4.y = pCVar1->y;
-            local_a4.z = pCVar1->z;
+            local_a4 = *pCVar1;
           }
           fVar2 = (float10)fcos((float10)0.261799387791667);
           if (fVar2 <= ABS((float10)(this_ptr->base).base.base.orient_matrix.m[2].z *

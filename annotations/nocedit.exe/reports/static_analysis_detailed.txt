@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (352 diagnostics)
+Cppcheck (quick) (348 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -881,7 +881,7 @@ selfAssignment (54)
     Redundant assignment of 'piVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (40)
+uninitvar (37)
 ----------------------------------------------------------------------------------------------------
 
   core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
@@ -927,18 +927,6 @@ uninitvar (40)
   core_sound.cpp_updateListeners_FUN_005b1870        line 59
     File: core/sound.cpp
     Uninitialized variable: local_c8
-
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb line 161
-    File: core/stranger.cpp
-    Uninitialized variable: local_14
-
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb line 591
-    File: core/stranger.cpp
-    Uninitialized variable: local_25c
-
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb line 594
-    File: core/stranger.cpp
-    Uninitialized variable: local_260
 
   core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 139
     File: core/tvbat.cpp
@@ -1237,7 +1225,7 @@ legacyUninitvar (23)
     Uninitialized variable: local_64
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (17)
+invalidPointerCast (16)
 ----------------------------------------------------------------------------------------------------
 
   core_chain.cpp_fastSqrt_FUN_00431350               line 13
@@ -1303,10 +1291,6 @@ invalidPointerCast (17)
   core_skeleton.cpp_CDeformableModelInstance_compute line 30
     File: core/skeleton.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_stranger.cpp_CStranger_updateWeaponLayerActio line 222
-    File: core/stranger.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 nullPointerRedundantCheck (12)
