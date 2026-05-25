@@ -1048,7 +1048,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     }
     iVar18 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
     if (iVar18 != 0) {
-      g_KeyFrameModelPoolEnd = (CKeyFramedModel *)(g_KeyFrameModelPoolEnd->model_filename + 1);
+      g_KFMShowEditorScreenshotCounter = g_KFMShowEditorScreenshotCounter + 1;
       _sprintf(g_KFMShowEditorScreenshotFile,"noc%d.pcx");
       engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(g_KFMShowEditorScreenshotFile);
     }

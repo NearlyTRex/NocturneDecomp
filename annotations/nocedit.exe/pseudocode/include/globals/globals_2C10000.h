@@ -3,7 +3,6 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
-#include "types/classes/CKeyFramedModel.h"
 #include "types/funcdefs/FileSearchHandlerFunc.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 
@@ -15,9 +14,6 @@
 extern CDemonActorType g_CZombieDogClassInfo;
 extern CDemonActorType g_CDoorClassInfo;
 
-// CKeyFramedModel*
-extern CKeyFramedModel* g_KeyFrameModelPoolEnd;
-
 // FileSearchHandlerFunc*[5]
 extern FileSearchHandlerFunc* g_SearchHandlers[5];
 
@@ -28,6 +24,7 @@ extern SMRGLPrimitiveQuad g_FaceConversionBuffer[5000];
 extern char g_KFMShowEditorScreenshotFile[20];
 
 // int
+extern int g_KFMShowEditorScreenshotCounter;
 extern int g_NumSearchHandlers;
 
 // uint

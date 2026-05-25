@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 159,
+    "complexity_score": 114,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 114,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 476
   },
   "cross_references": [
@@ -269,6 +267,15 @@
       "type": "stack_alignment_array"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(uint *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)this_ptr->poly_texture_index_list + local_24),",
+      "type": "pointer_cast"
+    },
+    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 91,
       "match": "SUB84(",
@@ -312,6 +319,33 @@
       "severity": "moderate",
       "text": ",(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),(int)((ulonglong)dVar2 >> 0x20));",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar2 = (double)*(int *)((int)&pCVar1->z + iVar7) * 0.00390625;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 107,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar3 = (double)*(int *)((int)&pCVar1->y + iVar7) * 0.00390625;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 108,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar4 = (double)*(int *)((int)&pCVar1->x + iVar7) * 0.00390625;",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -435,38 +469,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr->poly_texture_index_list + local_24),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 106,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "dVar2 = (double)*(int *)((int)&pCVar1->z + iVar7) * 0.00390625;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 107,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "dVar3 = (double)*(int *)((int)&pCVar1->y + iVar7) * 0.00390625;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 108,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "dVar4 = (double)*(int *)((int)&pCVar1->x + iVar7) * 0.00390625;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

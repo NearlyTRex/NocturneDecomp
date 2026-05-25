@@ -15,7 +15,7 @@
 ;   int g_KeyframeModelCount
 ;   CKeyFramedModel[256] g_CKeyFramedModelPool
 ;   undefined4 g_CKeyFramedModelPool[1].model_filename[0]
-;   CKeyFramedModel* g_KeyFrameModelPoolEnd
+;   int g_KFMShowEditorScreenshotCounter
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
@@ -28,7 +28,7 @@ section .text
         ;   Label: core_dmodel.cpp_freeAllModels_FUN_00478cb0
     PUSH ESI                            ; 00478cb1
     MOV EBX,0x26a7484                   ; 00478cb2 | g_CKeyFramedModelPool
-    LEA ESI,[EBX + 0x56d800]            ; 00478cb7 | g_KeyFrameModelPoolEnd
+    LEA ESI,[EBX + 0x56d800]            ; 00478cb7 | g_KFMShowEditorScreenshotCounter
     PUSH EBX                            ; 00478cbd | g_CKeyFramedModelPool | g_CKeyFramedModelPool[1].model_filename[0]
         ;   Label: LAB_00478cbd
     CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 ; 00478cbe

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 584,
-    "complexity_score": 277,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 24,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 192,
-    "suspect_count": 8,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 776
   },
   "cross_references": [
@@ -270,6 +268,62 @@
     },
     "pcode_op_count": 1999
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 117,
+      "match": "(int *)((int)pSVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(int *)((int)pSVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (iVar5 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 99,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = (int)&this_ptr->vertex_list->x + iVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 118,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = (int)&pSVar1->vertices[0].texture_u + local_20;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 119,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar6 = (int)&pSVar1->vertices[0].texture_v + local_20;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 121,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_fscanf(file,\", %d,%d,%d\",(int)&pSVar1->vertices[iVar5].vertex_index + local_20,",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 84,
     "local_size": 76,
@@ -391,72 +445,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 117,
-      "match": "(int *)((int)pSVar1",
-      "severity": "moderate",
-      "text": "if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(int *)((int)pSVar1",
-      "severity": "moderate",
-      "text": "} while (iVar5 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 99,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "iVar4 = (int)&this_ptr->vertex_list->x + iVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 118,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "iVar2 = (int)&pSVar1->vertices[0].texture_u + local_20;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 119,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "iVar6 = (int)&pSVar1->vertices[0].texture_v + local_20;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 121,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "_fscanf(file,\", %d,%d,%d\",(int)&pSVar1->vertices[iVar5].vertex_index + local_20,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 119,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "_fscanf(file,\"%d,%d\",(int *)((int)this_ptr->poly_texture_index_list + local_24),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 120,
-      "match": "(int *)((int)pSVar1",
-      "severity": "moderate",
-      "text": "(int *)((int)pSVar1->vertices + local_20 + -0x14));",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

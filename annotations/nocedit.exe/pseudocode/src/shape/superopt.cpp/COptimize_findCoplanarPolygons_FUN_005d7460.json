@@ -165,6 +165,15 @@
       "severity": "moderate",
       "text": "pbVar1 = (byte *)((int)&polygon->flags + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 33,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar7 = (int)&((CPoly *)(((search_obj->base).poly_array)->uv_coords + -1))->parent_obj +",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

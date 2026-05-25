@@ -1018,12 +1018,12 @@ section .text
     TEST EAX,EAX                        ; 0047d556
     JZ 0x0047d587                       ; 0047d558
         ;   XREF to: 0047d587 (CONDITIONAL_JUMP)  ; LAB_0047d587
-    MOV ECX,dword ptr [0x02c14c84]      ; 0047d55a | g_KeyFrameModelPoolEnd
+    MOV ECX,dword ptr [0x02c14c84]      ; 0047d55a | g_KFMShowEditorScreenshotCounter
     INC ECX                             ; 0047d560
     PUSH ECX                            ; 0047d561
     PUSH 0x62090d                       ; 0047d562 | = "noc%d.pcx"
     PUSH 0x2c14c88                      ; 0047d567 | g_KFMShowEditorScreenshotFile
-    MOV dword ptr [0x02c14c84],ECX      ; 0047d56c | g_KeyFrameModelPoolEnd
+    MOV dword ptr [0x02c14c84],ECX      ; 0047d56c | g_KFMShowEditorScreenshotCounter
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047d572
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047d577

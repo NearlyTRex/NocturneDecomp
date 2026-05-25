@@ -5,45 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5941 (92.1%)
-With suspects: 513
-Total suspects: 2978
-
-====================================================================================================
-core_chain.cpp_fastSqrt_FUN_00431350 (2 suspects)
-  File: core/chain.cpp
-====================================================================================================
-  Line 13 [static_invalid_pointer_cast]: int bits = (*(int *)&value >> 1) + g_FastSqrtMagic;
-  Line 14 [static_invalid_pointer_cast]: return *(float *)&bits;
-
-====================================================================================================
-core_cloth.cpp_fastInvSqrt_FUN_0043e2a0 (2 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 13 [static_invalid_pointer_cast]: int bits = g_FastInvSqrtMagic - (*(int *)&dist_sq >> 1);
-  Line 14 [static_invalid_pointer_cast]: return *(float *)&bits;
-
-====================================================================================================
-core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 (1 suspect)
-  File: core/dfilter.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0 (2 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 17 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->y + iVar2) =
-  Line 18 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->y + iVar2) + (int)ROUND(ROUND(-dVar3));
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 (4 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 25 [unrolled_memcpy]: (this_ptr_00->min).x = local_28.min.x;
-  Line 30 [unrolled_memcpy]: (this_ptr_00->max).x = local_28.min.x;
-  Line 35 [unrolled_memcpy]: (this_ptr_00->min).x = temp_vertex.x;
-  Line 38 [unrolled_memcpy]: (this_ptr_00->max).x = temp_vertex.x;
+Clean: 5953 (92.2%)
+With suspects: 501
+Total suspects: 2834
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -68,15 +32,6 @@ core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
   Line 81 [pointer_cast]: } while (iVar11 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar10 + -0x14));
   Line 83 [pointer_cast]: pcVar9 = this_ptr->texture_list[*(int *)((int)this_ptr->poly_texture_index_list + local_20)].
   Line 88 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 (4 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 85 [pointer_cast]: *(uint *)((int)this_ptr->poly_texture_index_list + local_24),
-  Line 106 [pointer_cast]: dVar2 = (double)*(int *)((int)&pCVar1->z + iVar7) * 0.00390625;
-  Line 107 [pointer_cast]: dVar3 = (double)*(int *)((int)&pCVar1->y + iVar7) * 0.00390625;
-  Line 108 [pointer_cast]: dVar4 = (double)*(int *)((int)&pCVar1->x + iVar7) * 0.00390625;
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (6 suspects)
@@ -116,16 +71,6 @@ core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10 (16 suspects)
   Line 73 [pointer_cast]: (int)ROUND(ROUND((double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar3) * dVar2)
   Line 98 [unrolled_strcpy]: do {
   Line 111 [pointer_cast]: *(int *)((int)this_ptr->poly_texture_index_list + local_1c) = iVar3;
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 (5 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 70 [unrolled_strchr]: do {
-  Line 82 [unrolled_strchr]: do {
-  Line 195 [unrolled_strchr]: do {
-  Line 216 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (8 suspects)
@@ -173,68 +118,10 @@ core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (10 suspects)
   Line 97 [pointer_cast]: } while (iVar4 < *(int *)((int)pSVar4->vertices + local_24 + -0x14));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110 (8 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 99 [pointer_cast]: iVar4 = (int)&this_ptr->vertex_list->x + iVar2;
-  Line 117 [pointer_cast]: if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {
-  Line 118 [pointer_cast]: iVar2 = (int)&pSVar1->vertices[0].texture_u + local_20;
-  Line 119 [pointer_cast]: iVar6 = (int)&pSVar1->vertices[0].texture_v + local_20;
-  Line 119 [pointer_cast]: _fscanf(file,"%d,%d",(int *)((int)this_ptr->poly_texture_index_list + local_24),
-  Line 120 [pointer_cast]: (int *)((int)pSVar1->vertices + local_20 + -0x14));
-  Line 121 [pointer_cast]: _fscanf(file,", %d,%d,%d",(int)&pSVar1->vertices[iVar5].vertex_index + local_20,
-  Line 126 [pointer_cast]: } while (iVar5 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));
-
-====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (1 suspect)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 150 [shadow_pointer_walk]: pSVar12 = (SMRGLPrimitiveQuad *)&(pSVar12->base).surface_normal.B;
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0 (6 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 15 [pointer_cast]: ((double)((float)*(int *)((int)&this_ptr->vertex_list->x + iVar1) *
-  Line 17 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->x + iVar1) = (int)ROUND(ROUND(dVar3));
-  Line 19 [pointer_cast]: ((double)((float)*(int *)((int)&this_ptr->vertex_list->y + iVar1) *
-  Line 21 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->y + iVar1) = (int)ROUND(ROUND(dVar1));
-  Line 23 [pointer_cast]: ((double)((float)*(int *)((int)&this_ptr->vertex_list->z + iVar1) *
-  Line 25 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->z + iVar1) = (int)ROUND(ROUND(dVar1));
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (29 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 179 [unrolled_memcpy]: local_90.x = pCVar8->x;
-  Line 203 [pointer_cast]: if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar11 + 3) & 0x80) == 0) {
-  Line 204 [pointer_cast]: iVar12 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar11);
-  Line 205 [pointer_cast]: x = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar11) >> 0x10;
-  Line 366 [pointer_cast]: piVar1 = (int *)((int)&pCVar4->x + iVar18);
-  Line 368 [pointer_cast]: *(int *)((int)&pCVar4->y + iVar18) =
-  Line 369 [pointer_cast]: *(int *)((int)&pCVar4->y + iVar18) + (int)ROUND(fVar4);
-  Line 370 [pointer_cast]: *(int *)((int)&pCVar4->z + iVar18) =
-  Line 371 [pointer_cast]: *(int *)((int)&pCVar4->z + iVar18) + (int)ROUND(fVar6);
-  Line 481 [unrolled_strcpy]: do {
-  Line 491 [static_uninitvar]: if ((iVar18 == 0) || (local_ca8 == 0)) {
-  Line 505 [pointer_cast]: pCVar13 = (CKeyFramedModel *)((int)pCVar13 + (uint)bVar15 * -2 + 1);
-  Line 509 [negative_offset]: pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);
-  Line 509 [pointer_cast]: pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);
-  Line 510 [unrolled_strcpy]: do {
-  Line 645 [static_legacy_uninitvar]: (double)local_160,(double)local_16c,(double)local_15c.x,
-  Line 645 [static_legacy_uninitvar]: (double)local_160,(double)local_16c,(double)local_15c.x,
-  Line 646 [static_legacy_uninitvar]: (double)local_164,(double)local_170,(double)local_15c.y,
-  Line 646 [static_legacy_uninitvar]: (double)local_164,(double)local_170,(double)local_15c.y,
-  Line 647 [static_legacy_uninitvar]: (double)local_168,(double)local_174,(double)local_15c.z);
-  Line 647 [static_legacy_uninitvar]: (double)local_168,(double)local_174,(double)local_15c.z);
-  Line 705 [pointer_cast]: local_108.x = (float)*(int *)((int)&this_ptr->vertex_list->x + iVar18) * fVar3;
-  Line 706 [pointer_cast]: local_108.y = (float)*(int *)((int)&this_ptr->vertex_list->y + iVar18) * fVar3;
-  Line 707 [pointer_cast]: local_108.z = (float)*(int *)((int)&this_ptr->vertex_list->z + iVar18) * fVar3;
-  Line 711 [unrolled_memcpy]: local_108.x = pCVar17->x;
-  Line 716 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->x + iVar18) =
-  Line 718 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->y + iVar18) =
-  Line 720 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->z + iVar18) =
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (6 suspects)
@@ -273,136 +160,6 @@ core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 (2 susp
 ====================================================================================================
   Line 76 [pointer_cast]: piVar6 = (int *)((int)&this_ptr->vertex_list->x + local_1c);
   Line 78 [pointer_cast]: piVar4 = (int *)((int)&this_ptr->vertex_list->x + local_34);
-
-====================================================================================================
-core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0 (11 suspects)
-  File: core/dpart.cpp
-====================================================================================================
-  Line 15 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).A + iVar1);
-  Line 17 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).B + iVar1);
-  Line 19 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).C + iVar1);
-  Line 21 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).D + iVar1);
-  Line 23 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar1);
-  Line 25 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar1);
-  Line 27 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar1);
-  Line 29 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).A + iVar1) =
-  Line 31 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).B + iVar1) =
-  Line 33 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).C + iVar1) =
-  Line 35 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).D + iVar1) =
-
-====================================================================================================
-core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10 (27 suspects)
-  File: core/dpart.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 50 [pointer_cast]: *(int *)((int)&this_ptr->vertex_positions->x + local_24) =
-  Line 52 [pointer_cast]: *(int *)((int)&this_ptr->vertex_positions->y + local_24) =
-  Line 54 [pointer_cast]: *(int *)((int)&this_ptr->vertex_positions->z + local_24) =
-  Line 58 [pointer_cast]: *(int *)((int)&this_ptr->vertex_positions->x + local_1c) =
-  Line 60 [pointer_cast]: *(int *)((int)&this_ptr->vertex_positions->y + local_1c) =
-  Line 62 [pointer_cast]: *(int *)((int)&this_ptr->vertex_positions->z + local_1c) =
-  Line 72 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar7) = 0xffffffff;
-  Line 73 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar7) = local_28;
-  Line 74 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar7) = local_30;
-  Line 75 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar7) = local_2c;
-  Line 76 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.x + local_20) = (pCVar6->vertex1).x;
-  Line 77 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.y + local_20) = (pCVar6->vertex1).y;
-  Line 78 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.z + local_20) = (pCVar6->vertex1).z;
-  Line 79 [unrolled_memcpy]: g_LoadedVertices[local_30].vertex.x = pCVar5->x;
-  Line 91 [pointer_cast]: *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 8) = local_2c;
-  Line 92 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -0x14) = 3;
-  Line 93 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_u + iVar4) = 0;
-  Line 94 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4) = 0;
-  Line 95 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_u + iVar4 + 4) = 0;
-  Line 96 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 4) = 0;
-  Line 97 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_u + iVar4 + 8) = 0;
-  Line 98 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 8) = 0;
-  Line 99 [shadow_pointer_walk]: pCVar5 = (CVector3f *)((int)(pCVar5 + 4) + 8);
-  Line 100 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 0x40) = 0;
-  Line 102 [pointer_cast]: *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4) = local_28;
-  Line 103 [pointer_cast]: *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 4) = local_30;
-
-====================================================================================================
-core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0 (21 suspects)
-  File: core/dpart.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 55 [pointer_cast]: *(uint *)((int)&(this_ptr->face_data->plane).A + iVar8) =
-  Line 56 [pointer_cast]: *(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar9 + -0x10);
-  Line 57 [pointer_cast]: *(uint *)((int)&(this_ptr->face_data->plane).B + iVar8) =
-  Line 59 [pointer_cast]: *(uint *)((int)&(this_ptr->face_data->plane).C + iVar8) =
-  Line 60 [pointer_cast]: *(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar9 + -8);
-  Line 61 [pointer_cast]: *(uint *)((int)&(this_ptr->face_data->plane).D + iVar8) =
-  Line 62 [pointer_cast]: *(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar9 + -4);
-  Line 63 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar8) =
-  Line 64 [pointer_cast]: *(uint *)((int)&g_FaceConversionBuffer[0].vertices[0].vertex_index + iVar9);
-  Line 65 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar8) =
-  Line 66 [pointer_cast]: *(uint *)((int)&g_FaceConversionBuffer[0].vertices[1].vertex_index + iVar9);
-  Line 67 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar8) =
-  Line 68 [pointer_cast]: *(uint *)((int)&g_FaceConversionBuffer[0].vertices[2].vertex_index + iVar9);
-  Line 69 [pointer_cast]: if (*(int *)((int)g_FaceConversionBuffer[0].vertices + iVar9 + -0x14) == 3) {
-  Line 70 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar8) = 0xffffffff;
-  Line 73 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar8) =
-  Line 74 [pointer_cast]: *(uint *)((int)&g_FaceConversionBuffer[0].vertices[3].vertex_index + iVar9);
-  Line 90 [pointer_cast]: piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar6);
-  Line 92 [pointer_cast]: piVar2 = (int *)((int)&this_ptr->vertex_positions->y + iVar6);
-  Line 94 [pointer_cast]: piVar2 = (int *)((int)&this_ptr->vertex_positions->z + iVar6);
-
-====================================================================================================
-core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40 (17 suspects)
-  File: core/dpart.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 34 [pointer_cast]: *(int *)((int)&this_ptr->vertex_positions->x + iVar4) =
-  Line 35 [pointer_cast]: (int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar3) * dVar2))
-  Line 37 [pointer_cast]: *(int *)((int)&this_ptr->vertex_positions->y + iVar4) =
-  Line 38 [pointer_cast]: (int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar3) * dVar2))
-  Line 40 [pointer_cast]: pfVar1 = (float *)((int)&g_LoadedVertices[0].vertex.z + iVar3);
-  Line 42 [pointer_cast]: *(int *)((int)&this_ptr->vertex_positions->z + iVar4) =
-  Line 53 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar1) =
-  Line 54 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6);
-  Line 55 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar1) =
-  Line 56 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + 4);
-  Line 57 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar1) =
-  Line 58 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + 8);
-  Line 59 [pointer_cast]: if (*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + -0x14) == 4) {
-  Line 60 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar1) =
-  Line 61 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + 0xc);
-  Line 64 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar1) = 0xffffffff;
-
-====================================================================================================
-core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_00486360 (3 suspects)
-  File: core/dracbrid.cpp
-====================================================================================================
-  Line 17 [unrolled_memcpy]: out_points_array->x = pCVar1->x;
-  Line 24 [unrolled_memcpy]: out_points_array[1].x = pCVar2->x;
-  Line 31 [unrolled_memcpy]: out_points_array[2].x = pCVar2->x;
-
-====================================================================================================
-core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (6 suspects)
-  File: core/dracbrid.cpp
-====================================================================================================
-  Line 122 [shadow_pointer_walk]: pCVar17 = (CDraculaBride *)((pCVar17->base).base.base.actor_name + 4);
-  Line 136 [shadow_pointer_walk]: pCVar17 = (CDraculaBride *)((pCVar17->base).base.base.actor_name + 4);
-  Line 260 [unrolled_memcpy]: (this_ptr->new_pos).x = (pCVar16->position).x;
-  Line 392 [unrolled_memcpy]: local_7c.x = local_124.x;
-  Line 645 [unrolled_memcpy]: (pCVar1->position).x = (this_ptr->new_pos).x;
-  Line 660 [unrolled_memcpy]: (pUVar1->vec).x = (pUVar12->vec).x;
-
-====================================================================================================
-core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 (3 suspects)
-  File: core/dracbrid.cpp
-====================================================================================================
-  Line 59 [unrolled_memcpy]: pSVar5->control_points[1].x = pCVar4->x;
-  Line 118 [unrolled_memcpy]: (pSVar5->position).x = pCVar4->x;
-  Line 126 [unrolled_memcpy]: (pSVar5->tangent).x = pCVar4->x;
-
-====================================================================================================
-core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0 (2 suspects)
-  File: core/dracbrid.cpp
-====================================================================================================
-  Line 93 [unrolled_memcpy]: (local_20->position).x = pCVar5->x;
-  Line 104 [unrolled_memcpy]: (local_20->tangent).x = pCVar5->x;
 
 ====================================================================================================
 core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
@@ -1214,6 +971,12 @@ core_mobster.cpp_CMobster_process_FUN_00525840 (6 suspects)
   Line 532 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   Line 562 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
   Line 565 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+
+====================================================================================================
+core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160 (1 suspect)
+  File: core/morph.cpp
+====================================================================================================
+  Line 34 [pointer_cast]: ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.type +
 
 ====================================================================================================
 core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (7 suspects)
@@ -3348,6 +3111,12 @@ core_weather.cpp_CWeather_update_FUN_005eeaf0 (8 suspects)
   Line 70 [pointer_cast]: local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);
 
 ====================================================================================================
+engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 (1 suspect)
+  File: engine/3d.c
+====================================================================================================
+  Line 116 [pointer_cast]: mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);
+
+====================================================================================================
 engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 (4 suspects)
   File: engine/alphabit.cpp
 ====================================================================================================
@@ -3515,6 +3284,13 @@ engine_clipper.c_interpolateVertexTopClip_FUN_00435d00 (6 suspects)
   Line 42 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->a;
   Line 45 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
   Line 50 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
+
+====================================================================================================
+engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 (2 suspects)
+  File: engine/drender.cpp
+====================================================================================================
+  Line 49 [pointer_cast]: ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
+  Line 102 [pointer_cast]: ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
 
 ====================================================================================================
 engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (2 suspects)
@@ -3776,6 +3552,19 @@ engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650 (2 suspects)
 ====================================================================================================
   Line 40 [unrolled_strcpy]: do {
   Line 51 [unrolled_strcpy]: do {
+
+====================================================================================================
+engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30 (1 suspect)
+  File: engine/keyframe.c
+====================================================================================================
+  Line 149 [pointer_cast]: ((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +
+
+====================================================================================================
+engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320 (2 suspects)
+  File: engine/keyframe.c
+====================================================================================================
+  Line 22 [pointer_cast]: ((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +
+  Line 52 [pointer_cast]: ((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +
 
 ====================================================================================================
 engine_model.c_getMRGLBounds_FUN_00528140 (1 suspect)
@@ -5005,9 +4794,10 @@ shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60 (12 suspects)
   Line 48 [pointer_cast]: *(uint *)((int)&out_max->z + 4) = *(uint *)((int)&pCVar1[1].position.z + 4);
 
 ====================================================================================================
-shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960 (2 suspects)
+shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960 (3 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
+  Line 65 [pointer_cast]: pdStack_1c = (double *)((int)&(((CP3D *)(pCVar1->uv_coords + 3))->impl).x + local_64);
   Line 66 [pointer_cast]: piVar15 = (int *)((int)pCVar1->uv_coords + local_64 + -0xc);
   Line 150 [shadow_pointer_walk]: pCStack_60 = (CP3D *)&pCStack_60[4].impl.y;
 
@@ -5519,6 +5309,12 @@ shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710 (17 suspects)
   Line 28 [pointer_cast]: *(uint *)((int)this_ptr->end_uv + 4) = *(uint *)((int)other->end_uv + 4);
   Line 30 [pointer_cast]: *(uint *)((int)this_ptr->end_uv + 0xc) = *(uint *)((int)other->end_uv + 0xc);
   Line 30 [pointer_cast]: *(uint *)((int)this_ptr->end_uv + 0xc) = *(uint *)((int)other->end_uv + 0xc);
+
+====================================================================================================
+shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 65 [pointer_cast]: *(double *)((int)&((local_58.vertex_data)->position).x + iVar3) =
 
 ====================================================================================================
 shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60 (18 suspects)

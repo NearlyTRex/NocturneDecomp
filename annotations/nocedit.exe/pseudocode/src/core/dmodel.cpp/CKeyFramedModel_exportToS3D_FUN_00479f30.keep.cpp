@@ -22,7 +22,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
   int iVar10;
   char local_14c [256];
   int local_28;
-  int local_24;
   int local_20;
   CVector3i *pCVar1;
   double dVar2;
@@ -67,7 +66,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
   _fprintf(p_Var5,"// triList: materialIndex,vertices(index, texX, texY)\n");
   local_20 = 0;
   if (0 < this_ptr->poly_count) {
-    local_24 = 0;
     local_28 = 0;
     do {
       iVar10 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
@@ -79,7 +77,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
           dVar1 = (double)*(int *)(iVar7 + 0x38) * 1.52587890625e-05;
           dVar5 = (double)*(int *)(iVar7 + 0x34) * 1.52587890625e-05;
           _fprintf(p_Var5,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g\n",
-                     *(uint *)((int)this_ptr->poly_texture_index_list + local_24),
+                     this_ptr->poly_texture_index_list[local_20],
                      *(uint *)(iVar10 + 0x18),
                      (double)*(int *)(iVar10 + 0x1c) * 1.52587890625e-05,
                      (double)*(int *)(iVar10 + 0x20) * 1.52587890625e-05,*(uint *)(iVar7 + 0x24)
@@ -91,18 +89,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
         } while (iVar9 < *(int *)(iVar10 + 4));
       }
       local_28 = local_28 + 0x48;
-      local_24 = local_24 + 4;
       local_20 = local_20 + 1;
     } while (local_20 < this_ptr->poly_count);
   }
   _fprintf(p_Var5,"// vertList: x,y,z\n");
-  iVar7 = 0;
   for (iVar10 = 0; iVar10 < this_ptr->vertex_count * this_ptr->frame_count; iVar10 = iVar10 + 1) {
     pCVar1 = this_ptr->vertex_list;
-    dVar2 = (double)*(int *)((int)&pCVar1->z + iVar7) * 0.00390625;
-    dVar3 = (double)*(int *)((int)&pCVar1->y + iVar7) * 0.00390625;
-    dVar4 = (double)*(int *)((int)&pCVar1->x + iVar7) * 0.00390625;
-    iVar7 = iVar7 + 0xc;
+    dVar2 = (double)pCVar1[iVar10].z * 0.00390625;
+    dVar3 = (double)pCVar1[iVar10].y * 0.00390625;
+    dVar4 = (double)pCVar1[iVar10].x * 0.00390625;
     _fprintf(p_Var5,"%g,%g,%g\n",dVar4,dVar3,dVar2);
   }
   _fprintf(p_Var5,"// lightList: \"name\", type, x,y,z, r,g,b, (type-specific info)\n");

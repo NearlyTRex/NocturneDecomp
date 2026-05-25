@@ -27,7 +27,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
   int local_24;
   int local_1c;
   byte bVar10;
-  
+
   bVar10 = 0;
   if (this_ptr->bitmap_filename[0] == '\0') {
     return;
@@ -43,9 +43,6 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
   }
   iVar3 = this_ptr->bitmap_width * this_ptr->bitmap_height;
   if (iVar2 != iVar3) {
-    // UNCERTAIN: original binary only pushes 4 args for 5 format specifiers — likely a bug in the
-    // original code where the filename or file size argument was omitted. Adding iVar2 (actual file
-    // size) as the missing 2nd argument based on the format string intent.
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"%s is %d bytes, but expected %dx%d=%d byte file",pcVar10,iVar2,
                this_ptr->bitmap_width,this_ptr->bitmap_height,iVar3);

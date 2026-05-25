@@ -7,12 +7,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFramedModel *this_ptr)
 
 {
-  char cVar1;
   bool bVar2;
   float fVar3;
   float fVar4;
@@ -31,14 +28,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   int iVar9;
   int iVar18;
   char *pcVar10;
-  int iVar11;
-  char *pcVar12;
   int x;
   char *pcVar19;
-  CKeyFramedModel *pCVar13;
-  char *pcVar20;
-  byte bVar15;
-  int local_ca8;
   SFoundFileInfo found_file_info;
   char local_c9c [260];
   char local_b98 [256];
@@ -92,10 +83,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   float fVar5;
   CVector3i *pCVar4;
   SRenderVertex *pSVar3;
-  char cVar2;
-  int *piVar1;
-  
-  bVar15 = 0;
+
   local_84 = 0;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   local_78 = 0.0;
@@ -134,9 +122,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       pCVar8 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                          (&local_1e4,&local_b4,&local_90);
       if (&local_90 != pCVar8) {
-        local_90.x = pCVar8->x;
-        local_90.y = pCVar8->y;
-        local_90.z = pCVar8->z;
+        local_90 = *pCVar8;
       }
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
                 (g_CDemonRendererPtr2,(CVector3f *)&local_90);
@@ -155,19 +141,17 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 (this_ptr,(int)ROUND(ROUND(local_70)),(CKeyFramedModelInstance *)0x0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr1);
       if ((bVar7) && (iVar18 = 0, 0 < this_ptr->vertex_count)) {
-        iVar11 = 0;
         do {
           pSVar3 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-          if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar11 + 3) & 0x80) == 0) {
-            iVar12 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar11);
-            x = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar11) >> 0x10;
+          if (-1 < pSVar3[iVar18].projected_vertex.screen_x) {
+            iVar12 = pSVar3[iVar18].projected_vertex.screen_y;
+            x = pSVar3[iVar18].projected_vertex.screen_x >> 0x10;
             if (-1 < x) {
               _sprintf(local_2dc,"%d",iVar18);
               engine_2d_c_drawText_FUN_00401fd0(local_2dc,x,iVar12 >> 0x10);
             }
           }
           iVar18 = iVar18 + 1;
-          iVar11 = iVar11 + 0x30;
         } while (iVar18 < this_ptr->vertex_count);
       }
       if (bVar8) {
@@ -318,17 +302,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       fVar4 = local_188 * 256.0f;
       fVar6 = local_184 * 256.0f;
       if (((int)ROUND(fVar3) != 0 || (int)ROUND(fVar4) != 0) || (int)ROUND(fVar6) != 0) {
-        iVar18 = 0;
         for (iVar12 = 0; iVar12 < this_ptr->vertex_count * this_ptr->frame_count;
             iVar12 = iVar12 + 1) {
           pCVar4 = this_ptr->vertex_list;
-          piVar1 = (int *)((int)&pCVar4->x + iVar18);
-          *piVar1 = *piVar1 + (int)ROUND(fVar3);
-          *(int *)((int)&pCVar4->y + iVar18) =
-               *(int *)((int)&pCVar4->y + iVar18) + (int)ROUND(fVar4);
-          *(int *)((int)&pCVar4->z + iVar18) =
-               *(int *)((int)&pCVar4->z + iVar18) + (int)ROUND(fVar6);
-          iVar18 = iVar18 + 0xc;
+          pCVar4[iVar12].x = pCVar4[iVar12].x + (int)ROUND(fVar3);
+          pCVar4[iVar12].y = pCVar4[iVar12].y + (int)ROUND(fVar4);
+          pCVar4[iVar12].z = pCVar4[iVar12].z + (int)ROUND(fVar6);
         }
         core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);
       }
@@ -370,9 +349,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     }
     iVar18 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
     if (iVar18 != 0) {
-      g_KeyFrameModelPoolEnd = (CKeyFramedModel *)(g_KeyFrameModelPoolEnd->model_filename + 1);
-      // UNCERTAIN: asm pushes incremented g_KeyFrameModelPoolEnd as screenshot counter
-      _sprintf(g_KFMShowEditorScreenshotFile,"noc%d.pcx",(int)g_KeyFrameModelPoolEnd);
+      g_KFMShowEditorScreenshotCounter = g_KFMShowEditorScreenshotCounter + 1;
+      _sprintf(g_KFMShowEditorScreenshotFile,"noc%d.pcx",g_KFMShowEditorScreenshotCounter);
       engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(g_KFMShowEditorScreenshotFile);
     }
     iVar18 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD5);
@@ -436,17 +414,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               }
             }
             else if (local_84 < 0x34) {
-              pcVar12 = "models\\";
-              pcVar19 = local_408;
-              do {
-                cVar2 = *pcVar12;
-                *pcVar19 = cVar2;
-                if (cVar2 == '\0') break;
-                cVar1 = pcVar12[1];
-                pcVar12 = pcVar12 + 2;
-                pcVar19[1] = cVar1;
-                pcVar19 = pcVar19 + 2;
-              } while (cVar1 != '\0');
+              strcpy(local_408,"models\\");
               iVar18 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                                  (g_CEditorToolsPtr,"Import Keyframed model","*.s3d"
                                   ,local_408,1);
@@ -455,27 +423,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 bVar2 = false;
                 splitpath
                           (local_408,(char *)0x0,(char *)0x0,this_ptr->model_filename,(char *)0x0);
-                pcVar19 = ".kfm";
-                iVar18 = -1;
-                pCVar13 = this_ptr;
-                do {
-                  pCVar13 = pCVar13;
-                  if (iVar18 == 0) break;
-                  iVar18 = iVar18 + -1;
-                  pCVar13 = (CKeyFramedModel *)((int)pCVar13 + (uint)bVar15 * -2 + 1);
-                  pcVar20 = pCVar13->model_filename;
-                  pCVar13 = pCVar13;
-                } while (*pcVar20 != '\0');
-                pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);
-                do {
-                  cVar1 = *pcVar19;
-                  *pcVar20 = cVar1;
-                  if (cVar1 == '\0') break;
-                  cVar1 = pcVar19[1];
-                  pcVar19 = pcVar19 + 2;
-                  pcVar20[1] = cVar1;
-                  pcVar20 = pcVar20 + 2;
-                } while (cVar1 != '\0');
+                strcat(this_ptr->model_filename,".kfm");
               }
             }
             else {
@@ -488,7 +436,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 makepath
                           (found_file_info.found_path,(char *)0x0,"models",local_698,local_b98);
                 iVar18 = engine_dosio_cpp_findFile_FUN_00481760(&found_file_info);
-                if ((iVar18 == 0) || (local_ca8 == 0)) {
+                if ((iVar18 == 0) || (found_file_info.is_archive == 0)) {
                   iVar18 = core_dmodel_cpp_copyFile_FUN_0047c930("t:\\",found_file_info.found_path,1);
                   if (iVar18 != 0) {
                     makepath
@@ -512,9 +460,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                   }
                 }
                 else {
-                  // UNCERTAIN: args are path-related buffers from splitpath, exact locals not verified from asm
                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                            (g_CEditorToolsPtr,"%s is in mounted pod %s",local_c9c,local_b98);
+                            (g_CEditorToolsPtr,"%s is in mounted pod %s",
+                             found_file_info.found_path,found_file_info.target_path);
                 }
               }
             }
@@ -636,10 +584,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                       (g_CEditorToolsPtr,"Nothing to bias!");
           }
           else {
-            local_30[1] = 0.5;
-            local_30[2] = 0.5;
-            local_30[3] = 0.5;
-            // UNCERTAIN: bounding box arg ordering not verified from asm — types and count are correct
+            iVar18 = (int)ROUND(ROUND(local_70));
+            local_160 = this_ptr->frame_bounds[iVar18].min.x;
+            local_164 = this_ptr->frame_bounds[iVar18].min.y;
+            local_168 = this_ptr->frame_bounds[iVar18].min.z;
+            local_16c = this_ptr->frame_bounds[iVar18].max.x;
+            local_170 = this_ptr->frame_bounds[iVar18].max.y;
+            local_174 = this_ptr->frame_bounds[iVar18].max.z;
+            local_15c.x = (local_160 + local_16c) * 0.5f;
+            local_15c.y = (local_164 + local_170) * 0.5f;
+            local_15c.z = (local_168 + local_174) * 0.5f;
             _sprintf(local_598,"Current dimensions on frame %d\nX: (%6.2f ... %6.2f), center = %g\nY: (%6.2f ... %6.2f), center = %g\nZ: (%6.2f ... %6.2f), center = %g\n\nEnter x,y,z bias amount\n",
                      (int)ROUND(ROUND(local_70)),
                      (double)local_160,(double)local_16c,(double)local_15c.x,
@@ -663,27 +617,20 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               core_course_cpp_CCourse_evaluate_FUN_00442710(&local_f0,0.0,&local_fc,&local_9c);
               core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                         (&local_214,&local_fc,&local_9c);
-              iVar18 = 0;
               for (iVar12 = 0; iVar12 < this_ptr->vertex_count; iVar12 = iVar12 + 1) {
                 fVar3 = (float)0.00390625;
-                local_108.x = (float)*(int *)((int)&this_ptr->vertex_list->x + iVar18) * fVar3;
-                local_108.y = (float)*(int *)((int)&this_ptr->vertex_list->y + iVar18) * fVar3;
-                local_108.z = (float)*(int *)((int)&this_ptr->vertex_list->z + iVar18) * fVar3;
+                local_108.x = (float)this_ptr->vertex_list[iVar12].x * fVar3;
+                local_108.y = (float)this_ptr->vertex_list[iVar12].y * fVar3;
+                local_108.z = (float)this_ptr->vertex_list[iVar12].z * fVar3;
                 pCVar17 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                     (&local_15c,&local_108,&local_214);
                 if (&local_108 != pCVar17) {
-                  local_108.x = pCVar17->x;
-                  local_108.y = pCVar17->y;
-                  local_108.z = pCVar17->z;
+                  local_108 = *pCVar17;
                 }
                 fVar5 = (float)256;
-                *(int *)((int)&this_ptr->vertex_list->x + iVar18) =
-                     (int)ROUND(ROUND(local_108.x * fVar5));
-                *(int *)((int)&this_ptr->vertex_list->y + iVar18) =
-                     (int)ROUND(ROUND(local_108.y * fVar5));
-                *(int *)((int)&this_ptr->vertex_list->z + iVar18) =
-                     (int)ROUND(ROUND(fVar5 * local_108.z));
-                iVar18 = iVar18 + 0xc;
+                this_ptr->vertex_list[iVar12].x = (int)ROUND(ROUND(local_108.x * fVar5));
+                this_ptr->vertex_list[iVar12].y = (int)ROUND(ROUND(local_108.y * fVar5));
+                this_ptr->vertex_list[iVar12].z = (int)ROUND(ROUND(fVar5 * local_108.z));
               }
               core_course_cpp_CCourse_dtor_FUN_004424e0(&local_f0,0);
             }
@@ -750,7 +697,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                         (g_CEditorToolsPtr,"Nothing to scale!");
             }
             else {
-              // UNCERTAIN: bounding box arg ordering not verified from asm — types and count are correct
+              iVar18 = (int)ROUND(ROUND(local_70));
+              local_160 = this_ptr->frame_bounds[iVar18].min.x;
+              local_164 = this_ptr->frame_bounds[iVar18].min.y;
+              local_168 = this_ptr->frame_bounds[iVar18].min.z;
+              local_16c = this_ptr->frame_bounds[iVar18].max.x;
+              local_170 = this_ptr->frame_bounds[iVar18].max.y;
+              local_174 = this_ptr->frame_bounds[iVar18].max.z;
+              local_15c.x = local_16c - local_160;
+              local_15c.y = local_170 - local_164;
+              local_15c.z = local_174 - local_168;
               _sprintf(local_4d0,"Current dimensions on frame %d\nX: (%6.2f ... %6.2f), size = %g\nY: (%6.2f ... %6.2f), size = %g\nZ: (%6.2f ... %6.2f), size = %g\n\nEnter uniform scale factor, or x,y,z scale factor\n",
                        (int)ROUND(ROUND(local_70)),
                        (double)local_160,(double)local_16c,(double)local_15c.x,

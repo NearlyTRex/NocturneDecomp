@@ -102,9 +102,8 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
       iVar10 = 0;
       if (0 < this_ptr->part_count) {
         fVar20 = (float)65535;
-        pCVar17 = this_ptr;
         do {
-          pCVar7 = pCVar17->part_list[0];
+          pCVar7 = this_ptr->part_list[iVar10];
           pCVar7->is_transparent = 1;
           pCVar7[9].create_event[0x24] = '\x01';
           pCVar7[9].create_event[0x25] = '\0';
@@ -113,7 +112,6 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
           iVar10 = iVar10 + 1;
           *(int *)(pCVar7[9].create_event + 0x30) =
                (int)ROUND(ROUND((this_ptr->fade_timer * fVar20) / fVar22));
-          pCVar17 = (CDraculaBride *)((pCVar17->base).base.base.actor_name + 4);
         } while (iVar10 < this_ptr->part_count);
       }
     }
@@ -122,12 +120,10 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
       (this_ptr->base).base.base.lifecycle_state = ACTOR_DESTROYED;
       this_ptr->fade_timer = 0.0;
       iVar7 = 0;
-      pCVar17 = this_ptr;
       if (0 < this_ptr->part_count) {
         do {
-          pCVar17->part_list[0]->lifecycle_state = ACTOR_DESTROYED;
+          this_ptr->part_list[iVar7]->lifecycle_state = ACTOR_DESTROYED;
           iVar7 = iVar7 + 1;
-          pCVar17 = (CDraculaBride *)((pCVar17->base).base.base.actor_name + 4);
         } while (iVar7 < this_ptr->part_count);
       }
     }
@@ -246,9 +242,7 @@ LAB_004848f9:
         pCVar16 = &(pCVar8->base).location;
         this_ptr->mist_state = 1;
         if ((CLocation *)&this_ptr->new_pos != pCVar16) {
-          (this_ptr->new_pos).x = (pCVar16->position).x;
-          (this_ptr->new_pos).y = (pCVar8->base).location.position.y;
-          (this_ptr->new_pos).z = (pCVar8->base).location.position.z;
+          this_ptr->new_pos = pCVar16->position;
         }
         this_ptr->vanish_timer = 0.0;
         break;
@@ -378,11 +372,7 @@ LAB_004848f9:
                         (this_ptr->base).base.base.location.position.y;
           local_124.z = (pCVar8->base).location.position.z -
                         (this_ptr->base).base.base.location.position.z;
-          if (&local_7c != &local_124) {
-            local_7c.x = local_124.x;
-            local_7c.y = local_124.y;
-            local_7c.z = local_124.z;
-          }
+          local_7c = local_124;
           if ((float)10 <
               SQRT(local_7c.z * local_7c.z + local_7c.x * local_7c.x + local_7c.y * local_7c.y)) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_70,&local_7c);
@@ -630,9 +620,7 @@ LAB_004852f8:
         this_ptr->mist_state = 3;
         pCVar1 = &(this_ptr->base).base.base.location;
         this_ptr->vanish_timer = fVar20;
-        (pCVar1->position).x = (this_ptr->new_pos).x;
-        (this_ptr->base).base.base.location.position.y = (this_ptr->new_pos).y;
-        (this_ptr->base).base.base.location.position.z = (this_ptr->new_pos).z;
+        pCVar1->position = this_ptr->new_pos;
         pCVar8 = (this_ptr->base).victim;
         if (pCVar8 != (CCharacter *)0x0) {
           local_dc.x = (pCVar8->base).location.position.x - (pCVar1->position).x;
@@ -645,9 +633,7 @@ LAB_004852f8:
                     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                               (&local_190,&local_dc);
           if (pUVar1 != pUVar12) {
-            (pUVar1->vec).x = (pUVar12->vec).x;
-            (this_ptr->base).base.base.orient.vec.y = (pUVar12->vec).y;
-            (this_ptr->base).base.base.orient.vec.z = (pUVar12->vec).z;
+            pUVar1->vec = pUVar12->vec;
           }
           (this_ptr->base).base.base.orient.vec.z = 0.0;
           (this_ptr->base).base.base.orient.vec.x = 0.0;

@@ -149,8 +149,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
     }
   }
   else {
-    // UNCERTAIN: asm casts selected_weapon to CLightGun, multiplies charge_ratio by a constant, rounds to int
-    _sprintf(local_478,"%d%%",(int)ROUND(ROUND((double)((CLightGun *)this_ptr->selected_weapon)->charge_ratio * 100.0)));
+    _sprintf(local_478,"%d%%",(int)ROUND(ROUND((double)pCVar3->charge_ratio * 100.0)));
     iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
     iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_478);
     iVar3 = (g_WindowHeight - local_48) - iVar3;

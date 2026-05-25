@@ -18,7 +18,7 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059
   float local_2c;
   float local_28;
   float local_24;
-  
+
   pSVar1 = this_ptr->vertex_data_ptr[lod_index] + vertex_index;
   input_vector = &pSVar1->position;
   if (pSVar1->num_bone_influences == '\x01') {
@@ -26,14 +26,6 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059
               (output_pos,input_vector,bone_matrices + pSVar1->bone_indices[0]);
   }
   else {
-    // UNCERTAIN: multi-bone branch math does not match standard LBS. The
-    // `input_vector += 1` advance per iteration (12 bytes = sizeof(CVector3f))
-    // walks &position -> &normal -> &tangent of the SVert, applying each
-    // bone to a different vertex field rather than all bones to the same
-    // position. Asm at 0059aadf confirms this with `ADD EBP, 0xc`. Likely
-    // dead code (single-bone path above handles the common case); verify
-    // at runtime that num_bone_influences > 1 never reaches this function
-    // before treating the output as semantically meaningful.
     local_28 = 0.0;
     local_24 = 0.0;
     local_2c = 0.0;

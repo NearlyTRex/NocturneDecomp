@@ -7,14 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 150,
+    "complexity_score": 165,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 150,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 511
   },
   "cross_references": [],
@@ -291,7 +293,16 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 149,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +",
+      "type": "pointer_cast"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

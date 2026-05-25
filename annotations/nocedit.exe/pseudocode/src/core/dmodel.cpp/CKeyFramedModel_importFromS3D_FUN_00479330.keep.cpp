@@ -7,12 +7,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFramedModel *this_ptr,char *filename)
 
 {
-  char cVar2;
   bool bVar4;
   _FILE *p_Var5;
   int iVar6;
@@ -26,7 +23,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFram
   int iVar10;
   uint uVar11;
   char *pcVar12;
-  char *pcVar13;
   char *pcVar14;
   CPickList local_c84;
   uchar auStack_8dc [300];
@@ -60,36 +56,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFram
   int local_1c;
   char local_18 [4];
   int local_14;
-  char cVar1;
   float fVar4;
   double dVar5;
   SMRGLPrimitiveQuad *pSVar2;
   bool bVar3;
   _FILE *file;
   
-  pcVar13 = filename;
-  do {
-    pcVar12 = pcVar13;
-    if (*pcVar13 == ':') goto LAB_0047935f;
-    if (*pcVar13 == '\0') break;
-    pcVar12 = pcVar13 + 1;
-    if (*pcVar12 == ':') goto LAB_0047935f;
-    pcVar13 = pcVar13 + 2;
-  } while (*pcVar12 != '\0');
-  pcVar12 = (char *)0x0;
-LAB_0047935f:
-  pcVar10 = filename;
+  pcVar12 = strchr(filename, ':');
   if (pcVar12 == (char *)0x0) {
-    do {
-      pcVar14 = pcVar10;
-      if (*pcVar10 == '\\') goto LAB_00479383;
-      if (*pcVar10 == '\0') break;
-      pcVar14 = pcVar10 + 1;
-      if (*pcVar14 == '\\') goto LAB_00479383;
-      pcVar10 = pcVar10 + 2;
-    } while (*pcVar14 != '\0');
-    pcVar14 = (char *)0x0;
-LAB_00479383:
+    pcVar14 = strchr(filename, '\\');
     if (pcVar14 == (char *)0x0) {
       local_20 = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rt");
       goto LAB_004793ab;
@@ -192,17 +167,7 @@ LAB_00479719:
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_c84,0);
         goto LAB_00479417;
       }
-      pcVar10 = local_6ac;
-      do {
-        pcVar14 = pcVar10;
-        if (*pcVar10 == '\n') goto LAB_0047983f;
-        if (*pcVar10 == '\0') break;
-        pcVar14 = pcVar10 + 1;
-        if (*pcVar14 == '\n') goto LAB_0047983f;
-        pcVar10 = pcVar10 + 2;
-      } while (*pcVar14 != '\0');
-      pcVar14 = (char *)0x0;
-LAB_0047983f:
+      pcVar14 = strchr(local_6ac, '\n');
       if (pcVar14 != (char *)0x0) {
         *pcVar14 = '\0';
       }
@@ -212,17 +177,7 @@ LAB_0047983f:
           makepath(local_7b0,local_18,local_1a0,local_3a0,local_2a0);
         }
         else if (local_28 == 2) {
-          pcVar10 = local_6ac;
-          pcVar14 = local_7b0;
-          do {
-            cVar1 = *pcVar10;
-            *pcVar14 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar2 = pcVar10[1];
-            pcVar10 = pcVar10 + 2;
-            pcVar14[1] = cVar2;
-            pcVar14 = pcVar14 + 2;
-          } while (cVar2 != '\0');
+          strcpy(local_7b0, local_6ac);
         }
         else {
           g_CurrentFilename = "..\\core\\dmodel.cpp";

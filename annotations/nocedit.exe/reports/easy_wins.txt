@@ -10,37 +10,61 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  core/dfilter.cpp (1 remaining of 19)
-    - core_dfilter.cpp_CDemonFilter_init_FUN_004705a0
-      Suspects: warning_inlined_function
+  engine/3d.c (1 remaining of 104)
+    - engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0
+      Suspects: pointer_cast
+
+  engine/drender.cpp (1 remaining of 88)
+    - engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00
+      Suspects: pointer_cast, pointer_cast
+
+  core/morph.cpp (1 remaining of 49)
+    - core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160
+      Suspects: pointer_cast
+
+  engine/keyframe.c (2 remaining of 5)
+    - engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320
+      Suspects: pointer_cast, pointer_cast
+    - engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
+      Suspects: pointer_cast
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [warning_inlined_function] - 1 functions
-    core_dfilter.cpp_CDemonFilter_init_FUN_004705a0                        ( 47 lines)
+  [pointer_cast] - 1 functions
+    core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160                    ( 42 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  core/dfilter.cpp (94.7% complete)
+  engine/3d.c (99.0% complete)
     1 functions remaining:
-      core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 (47 lines)
-        Types: ['warning_inlined_function']
+      engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 (116 lines)
+        Types: ['pointer_cast']
+
+  engine/drender.cpp (98.9% complete)
+    1 functions remaining:
+      engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 (120 lines)
+        Types: ['pointer_cast']
+
+  core/morph.cpp (98.0% complete)
+    1 functions remaining:
+      core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160 (42 lines)
+        Types: ['pointer_cast']
 
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
   core/msnedit.cpp                                              84.1%  (53/63 clean, 10 remaining)
-  core/dracbrid.cpp                                             84.0%  (21/25 clean, 4 remaining)
   core/hero.cpp                                                 83.3%  (40/48 clean, 8 remaining)
   core/frankgen.cpp                                             83.3%  (20/24 clean, 4 remaining)
   engine/pod.cpp                                                82.4%  (28/34 clean, 6 remaining)
   core/flies.cpp                                                81.8%  (18/22 clean, 4 remaining)
   shape/cramtex.cpp                                             81.0%  (17/21 clean, 4 remaining)
   core/mobster.cpp                                              80.8%  (21/26 clean, 5 remaining)
+  core/dmodel.cpp                                               80.3%  (53/66 clean, 13 remaining)
   core/scat.cpp                                                 80.0%  (20/25 clean, 5 remaining)
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
   core/manpuz.cpp                                               79.4%  (50/63 clean, 13 remaining)
@@ -52,11 +76,10 @@ ALL REMAINING FILES
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
   core/netgame.cpp                                              76.6%  (49/64 clean, 15 remaining)
   core/stranger.cpp                                             76.2%  (48/63 clean, 15 remaining)
-  shape/superopt.cpp                                            75.8%  (141/186 clean, 45 remaining)
   core/setutil.cpp                                              75.6%  (31/41 clean, 10 remaining)
+  shape/superopt.cpp                                            75.3%  (140/186 clean, 46 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
   core/gabriela.cpp                                             73.7%  (28/38 clean, 10 remaining)
-  core/dpart.cpp                                                73.3%  (11/15 clean, 4 remaining)
   core/menu.cpp                                                 72.7%  (16/22 clean, 6 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)
   core/setdir.cpp                                               71.9%  (23/32 clean, 9 remaining)
@@ -64,7 +87,6 @@ ALL REMAINING FILES
   shape/design.c                                                70.6%  (115/163 clean, 48 remaining)
   core/setcolid.cpp                                             70.0%  (28/40 clean, 12 remaining)
   core/platfrm.cpp                                              70.0%  (21/30 clean, 9 remaining)
-  core/dmodel.cpp                                               69.7%  (46/66 clean, 20 remaining)
   shape/meshlod.cpp                                             67.7%  (84/124 clean, 40 remaining)
   engine/fileio.cpp                                             67.1%  (49/73 clean, 24 remaining)
   core/ghoul.cpp                                                66.7%  (12/18 clean, 6 remaining)

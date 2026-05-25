@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5956 (92.3%)
-Files at 100%: 171
-Files at 90%+: 172
+Clean functions: 5966 (92.4%)
+Files at 100%: 170
+Files at 90%+: 173
 Files at 50%+: 213
 
 ====================================================================================================
@@ -52,6 +52,7 @@ FILES AT 100% (COMPLETE)
   core/dcamera.cpp: 86 functions, 4962 lines
   core/dcube.cpp: 39 functions, 2198 lines
   core/dest.cpp: 13 functions, 258 lines
+  core/dfilter.cpp: 19 functions, 403 lines
   core/dfont.cpp: 3 functions, 279 lines
   core/dglobe.cpp: 6 functions, 237 lines
   core/dimage.cpp: 6 functions, 131 lines
@@ -59,6 +60,8 @@ FILES AT 100% (COMPLETE)
   core/dlight.cpp: 34 functions, 2234 lines
   core/dog.cpp: 13 functions, 455 lines
   core/door.cpp: 28 functions, 995 lines
+  core/dpart.cpp: 15 functions, 711 lines
+  core/dracbrid.cpp: 25 functions, 1699 lines
   core/drip.cpp: 17 functions, 414 lines
   core/drone.cpp: 13 functions, 472 lines
   core/dskybox.cpp: 4 functions, 245 lines
@@ -109,7 +112,6 @@ FILES AT 100% (COMPLETE)
   core/mmx.c: 4 functions, 106 lines
   core/moloch.cpp: 15 functions, 588 lines
   core/moon.cpp: 14 functions, 346 lines
-  core/morph.cpp: 49 functions, 1410 lines
   core/motion.cpp: 33 functions, 1092 lines
   core/npc.cpp: 14 functions, 341 lines
   core/particle.cpp: 6 functions, 155 lines
@@ -150,15 +152,12 @@ FILES AT 100% (COMPLETE)
   core/xform.cpp: 61 functions, 2831 lines
   core/zombie.cpp: 32 functions, 2336 lines
   engine/2d.c: 76 functions, 1818 lines
-  engine/3d.c: 104 functions, 4591 lines
   engine/boss.c: 5 functions, 64 lines
   engine/colquant.c: 9 functions, 592 lines
   engine/console.cpp: 8 functions, 201 lines
   engine/dosio.cpp: 26 functions, 477 lines
-  engine/drender.cpp: 88 functions, 3032 lines
   engine/font.cpp: 49 functions, 2198 lines
   engine/ini.cpp: 18 functions, 453 lines
-  engine/keyframe.c: 5 functions, 417 lines
   engine/keys.cpp: 9 functions, 56 lines
   engine/light.cpp: 10 functions, 185 lines
   engine/matrix.c: 30 functions, 1091 lines
@@ -186,16 +185,24 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 171 files
+Total: 170 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   94.7% | core/dfilter.cpp
-         18/19 clean, 1 remaining
-           - core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 (47 lines) [warning_inlined_function]
+   99.0% | engine/3d.c
+         103/104 clean, 1 remaining
+           - engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 (116 lines) [pointer_cast]
 
-Total: 1 files
+   98.9% | engine/drender.cpp
+         87/88 clean, 1 remaining
+           - engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 (120 lines) [pointer_cast]
+
+   98.0% | core/morph.cpp
+         48/49 clean, 1 remaining
+           - core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160 (42 lines) [pointer_cast]
+
+Total: 3 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -212,12 +219,6 @@ FILES AT 50-89%
            - core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330 (59 lines) [pointer_cast]
            - core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (997 lines) [bit_int_float_compare, pointer_cast, unrolled_memcpy]
            - core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 (223 lines) [unrolled_memcpy, unrolled_memset]
-   84.0% | core/dracbrid.cpp
-         21/25 clean, 4 remaining
-           - core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_00486360 (33 lines) [unrolled_memcpy]
-           - core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 (143 lines) [unrolled_memcpy]
-           - core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0 (110 lines) [unrolled_memcpy]
-           - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (756 lines) [shadow_pointer_walk, unrolled_memcpy]
    83.3% | core/frankgen.cpp
          20/24 clean, 4 remaining
            - core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40 (141 lines) [bit_int_float_compare, unrolled_memcpy]
@@ -261,6 +262,21 @@ FILES AT 50-89%
            - core_mobster.cpp_CMobster_getTargetPoints_FUN_005278d0 (41 lines) [unrolled_memcpy]
            - core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20 (97 lines) [unrolled_memcpy]
            - core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (129 lines) [stack_alignment_array, warning_type_propagation]
+   80.3% | core/dmodel.cpp
+         53/66 clean, 13 remaining
+           - core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0 (54 lines) [unrolled_strcpy]
+           - core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (152 lines) [pointer_cast, unrolled_strchr]
+           - core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (130 lines) [pointer_cast, unrolled_memcpy]
+           - core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (100 lines) [pointer_cast, unrolled_strcpy]
+           - core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (114 lines) [pointer_cast, stack_alignment_array, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10 (116 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines) [unrolled_memcpy, warning_unreachable]
+           - core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (175 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (104 lines) [pointer_cast, unrolled_memcpy]
+           - core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (169 lines) [shadow_pointer_walk]
+           - core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 (143 lines) [pointer_cast]
+           - core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 (44 lines) [negative_offset]
+           - core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (59 lines) [pointer_cast]
    80.0% | core/scat.cpp
          20/25 clean, 5 remaining
            - core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (48 lines) [missing_cave_copy, warning_type_propagation]
@@ -379,12 +395,25 @@ FILES AT 50-89%
            - core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 (379 lines) [bit_int_float_compare]
            - core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680 (283 lines) [unrolled_memcpy]
            - core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 (260 lines) [unrolled_memcpy]
-   75.8% | shape/superopt.cpp
-         141/186 clean, 45 remaining
+   75.6% | core/setutil.cpp
+         31/41 clean, 10 remaining
+           - core_setutil.cpp_readAndParseLine_FUN_00585290 (48 lines) [unrolled_strcpy, unrolled_strlen]
+           - core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50 (95 lines) [pointer_cast]
+           - core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0 (86 lines) [unrolled_strcpy, unrolled_strlen, warning_inlined_function]
+           - core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90 (153 lines) [unrolled_strcpy, unrolled_strlen, warning_inlined_function]
+           - core_setutil.cpp_C3DSCamera_load_FUN_00585420 (83 lines) [unrolled_memcpy]
+           - core_setutil.cpp_C3DSLight_save_FUN_00587090 (64 lines) [pointer_cast, shadow_pointer_walk]
+           - core_setutil.cpp_C3DSCamera_apply_FUN_00585870 (51 lines) [unrolled_memcpy]
+           - core_setutil.cpp_C3DSLight_create_FUN_00586a90 (69 lines) [shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
+           - core_setutil.cpp_C3DSLight_apply_FUN_00586bf0 (38 lines) [unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
+           - core_setutil.cpp_C3DSLight_load_FUN_00586310 (185 lines) [pointer_cast]
+   75.3% | shape/superopt.cpp
+         140/186 clean, 46 remaining
            - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
            - shape_superopt.cpp_CP3D_add1_FUN_005d8520 (20 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
            - shape_superopt.cpp_CP3D_multiply_FUN_005d85f0 (20 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
            - shape_superopt.cpp_CPoly_scale_FUN_005cc7c0 (229 lines) [bitcast_double_pair, pointer_cast]
+           - shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 (204 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_saveVertexPositions_FUN_005cd4b0 (37 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0 (214 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (51 lines) [pointer_cast]
@@ -426,18 +455,6 @@ FILES AT 50-89%
            - shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0 (44 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
            - shape_superopt.cpp_CVec_copy1_FUN_005d8160 (10 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_restoreVertexPositions_FUN_005cd640 (37 lines) [pointer_cast]
-   75.6% | core/setutil.cpp
-         31/41 clean, 10 remaining
-           - core_setutil.cpp_readAndParseLine_FUN_00585290 (48 lines) [unrolled_strcpy, unrolled_strlen]
-           - core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50 (95 lines) [pointer_cast]
-           - core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0 (86 lines) [unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90 (153 lines) [unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - core_setutil.cpp_C3DSCamera_load_FUN_00585420 (83 lines) [unrolled_memcpy]
-           - core_setutil.cpp_C3DSLight_save_FUN_00587090 (64 lines) [pointer_cast, shadow_pointer_walk]
-           - core_setutil.cpp_C3DSCamera_apply_FUN_00585870 (51 lines) [unrolled_memcpy]
-           - core_setutil.cpp_C3DSLight_create_FUN_00586a90 (69 lines) [shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
-           - core_setutil.cpp_C3DSLight_apply_FUN_00586bf0 (38 lines) [unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
-           - core_setutil.cpp_C3DSLight_load_FUN_00586310 (185 lines) [pointer_cast]
    75.0% | core/mimic.cpp
          18/24 clean, 6 remaining
            - core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (134 lines) [pointer_cast]
@@ -458,12 +475,6 @@ FILES AT 50-89%
            - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (148 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870 (142 lines) [pointer_cast, unrolled_memcpy]
            - core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80 (60 lines) [missing_cave_copy]
-   73.3% | core/dpart.cpp
-         11/15 clean, 4 remaining
-           - core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0 (111 lines) [pointer_cast, warning_inlined_function]
-           - core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40 (69 lines) [pointer_cast, warning_inlined_function]
-           - core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0 (39 lines) [pointer_cast]
-           - core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10 (118 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_inlined_function]
    72.7% | core/menu.cpp
          16/22 clean, 6 remaining
            - core_menu.cpp_showCalibrationTestPattern_FUN_00510a50 (61 lines) [unrolled_strcpy]
@@ -575,28 +586,6 @@ FILES AT 50-89%
            - core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00572800 (53 lines) [unrolled_memcpy]
            - core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10 (70 lines) [shadow_pointer_walk, unrolled_memcpy]
            - core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470 (254 lines) [shadow_pointer_walk, unrolled_memcpy]
-   69.7% | core/dmodel.cpp
-         46/66 clean, 20 remaining
-           - core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0 (54 lines) [unrolled_strcpy]
-           - core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (152 lines) [pointer_cast, unrolled_strchr]
-           - core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (130 lines) [pointer_cast, unrolled_memcpy]
-           - core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (100 lines) [pointer_cast, unrolled_strcpy]
-           - core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0 (19 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (857 lines) [negative_offset, pointer_cast, unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (114 lines) [pointer_cast, stack_alignment_array, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 (114 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 (426 lines) [unrolled_strchr, unrolled_strcpy, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10 (116 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines) [unrolled_memcpy, warning_unreachable]
-           - core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (175 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 (63 lines) [unrolled_memcpy]
-           - core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (104 lines) [pointer_cast, unrolled_memcpy]
-           - core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (169 lines) [shadow_pointer_walk]
-           - core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 (143 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 (44 lines) [negative_offset]
-           - core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0 (26 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (59 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110 (192 lines) [pointer_cast]
    67.7% | shape/meshlod.cpp
          84/124 clean, 40 remaining
            - shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (30 lines) [unrolled_memcpy]
@@ -717,6 +706,10 @@ FILES AT 50-89%
            - core_weather.cpp_CWeather_update_FUN_005eeaf0 (141 lines) [pointer_cast]
            - core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940 (69 lines) [pointer_cast, unrolled_memcpy]
            - core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 (83 lines) [unrolled_memcpy]
+   60.0% | engine/keyframe.c
+         3/5 clean, 2 remaining
+           - engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320 (55 lines) [pointer_cast]
+           - engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30 (150 lines) [pointer_cast]
    58.3% | core/glass.cpp
          14/24 clean, 10 remaining
            - core_glass.cpp_CGlass_ctor_FUN_004e9040 (61 lines) [unrolled_strcpy]
@@ -750,7 +743,7 @@ FILES AT 50-89%
            - engine_alphabit.cpp_copyBytes_FUN_00410d20 (21 lines) [pointer_cast, unrolled_memcpy]
            - engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (44 lines) [pointer_cast]
 
-Total: 41 files
+Total: 40 files
 
 ====================================================================================================
 FILES BELOW 50%

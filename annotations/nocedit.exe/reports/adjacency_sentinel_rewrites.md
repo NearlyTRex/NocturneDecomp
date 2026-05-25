@@ -21,8 +21,8 @@ globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.
 
 ### `core_dmodel.cpp_freeAllModels_FUN_00478cb0`
 
-- Pool `g_CKeyFramedModelPool` sentinel `g_KeyFrameModelPoolEnd` (count 256)
-  - Before: `while (this_ptr != (CKeyFramedModel *)&g_KeyFrameModelPoolEnd)`
+- Pool `g_CKeyFramedModelPool` sentinel `g_KFMShowEditorScreenshotCounter` (count 256)
+  - Before: `while (this_ptr != (CKeyFramedModel *)&g_KFMShowEditorScreenshotCounter)`
   - After:  `while (this_ptr != g_CKeyFramedModelPool + 256)`
 
 ### `core_fire.cpp_CFireEffect_init_FUN_004c6c80`

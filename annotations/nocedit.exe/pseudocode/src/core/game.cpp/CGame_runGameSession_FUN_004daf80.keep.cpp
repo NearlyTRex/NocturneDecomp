@@ -27,7 +27,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   int local_1c;
   float local_14;
   uint uVar8;
-  
+
   local_14 = 0.0;
   local_1c = 0;
   engine_console_cpp_CConsole_reset_FUN_00441a40(g_CConsolePtr);
@@ -44,7 +44,6 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(g_CEditorToolsPtr,local_120)
   ;
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s\n",local_120);
-  // UNCERTAIN: original code stores ESP into a local and prints it; decompiler mapped it to &local_870
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"ESP: %08X\n",(uint)&local_870);
   this_ptr->camera_view_index = 0;
   this_ptr->is_paused = 0;

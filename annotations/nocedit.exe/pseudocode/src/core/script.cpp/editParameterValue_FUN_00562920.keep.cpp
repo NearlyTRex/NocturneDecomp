@@ -547,8 +547,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
         for (iVar8 = 0; iVar4 = core_charactr_cpp_getDeformableModelPartCount_FUN_0042f9c0(local_20)
             , iVar8 < iVar4; iVar8 = iVar8 + 1) {
           pSVar5 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(local_20,iVar8);
-          // UNCERTAIN: asm selects "Yes"/"No" based on part visibility_flags[iVar8], decompiler lost the array reference
-          _sprintf(local_170,"%s\t%s",pSVar5->part_name,"Yes");
+          _sprintf(local_170,"%s\t%s",pSVar5->part_name,local_a8[iVar8] != 0 ? "Yes" : "No");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2c5c.base,local_170);
         }
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2c5c.base,"Done");

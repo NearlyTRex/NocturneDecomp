@@ -2664,27 +2664,38 @@ def identify_pointer_cast_multiline(decompiled_code):
 # and the decompiler re-expressed it as raw offset arithmetic. Restricted
 # to arithmetic context (followed/preceded by `+` or `-`) so legitimate
 # `(int)&local` conversions used as int arguments aren't flagged.
+# A balanced parenthesized group tolerating nested parens up to 4 levels
+# deep. `[^()]` and `\(` start on disjoint characters, so at any position
+# only one alternative can begin — no catastrophic backtracking despite the
+# nested `(?:...)*` quantifiers.
+_NESTED_PAREN = (
+    r'\((?:[^()]'
+    r'|\((?:[^()]'
+    r'|\((?:[^()]'
+    r'|\([^()]*\))*\))*\))*\)'
+)
+# Base of the address after `&`: either a parenthesized expression followed
+# by a struct access, or a bare identifier.
+_INT_ADDR_BASE = r'(?:' + _NESTED_PAREN + r'\s*(?:->|\.)\s*\w+|\w+)'
+# Address tail: struct fields, arrow chains, bracketed indices. Balanced
+# `[...]` is consumed as a unit so a `+`/`-` inside an array index
+# (e.g. `[i + 1]`) doesn't trigger the arithmetic-context match.
+_INT_ADDR_TAIL = r'(?:\.\w+|->\w+|\[[^\]]*\])*'
+
 _INT_ADDR_ARITH_RE = re.compile(
     # (int)&NAME(.field|->field|[...])* +/- ...
-    # Balanced [...] is consumed as a unit so a `+`/`-` inside an array
-    # index (e.g. `[i + 1]`) doesn't trigger the arithmetic-context match.
-    # The address tail accepts struct fields, arrow chains, and bracketed
-    # indices; outer arithmetic must come after the closing `]`.
-    # The base after `&` may be either a bare identifier (`&local_ec`) or
-    # a parenthesized expression followed by a struct access — Watcom emits
+    # The base after `&` may be a bare identifier (`&local_ec`) or a
+    # parenthesized expression followed by a struct access — Watcom emits
     # the latter when the original source took the address of a sub-field
-    # of a deep struct walk, e.g.
+    # reached through a struct walk, e.g.
     #   `(int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0`.
-    # The parenthesized base tolerates one level of nesting
-    # (`(?:[^()]|\([^()]*\))*`) so doubly-parenthesized paths like
-    #   `(int)&((this_ptr->model).vertex_list)->x + iVar`
-    # — the ROUND-to-fixed-point store loops — are caught, not just flat
-    # single-paren bases.
-    r'\(int\)\s*&(?:\((?:[^()]|\([^()]*\))*\)\s*(?:->|\.)\s*\w+|\w+)'
-    r'(?:\.\w+|->\w+|\[[^\]]*\])*\s*[\+\-]'
+    # _NESTED_PAREN tolerates up to 4 levels of paren nesting so multi-cast
+    # walks are caught too, not just flat single-paren bases:
+    #   `(int)&((this_ptr->model).vertex_list)->x + iVar`         (depth 2)
+    #   `(int)&(((SMRGLPrimitiveQuad *)(p->vertices + -2))->base).base.type + N`  (depth 3)
+    r'\(int\)\s*&' + _INT_ADDR_BASE + _INT_ADDR_TAIL + r'\s*[\+\-]'
     r'|'
-    r'[\+\-]\s*\(int\)\s*&(?:\((?:[^()]|\([^()]*\))*\)\s*(?:->|\.)\s*\w+|\w+)'
-    r'(?:\.\w+|->\w+|\[[^\]]*\])*'
+    r'[\+\-]\s*\(int\)\s*&' + _INT_ADDR_BASE + _INT_ADDR_TAIL
 )
 
 

@@ -89,6 +89,15 @@ WHITELIST = {
 }
 
 
+# Sanctioned float<->int bit-cast helpers: the fast (inverse-)sqrt magic-number
+# approximations (see fix_compilation.md §21). Their `*(int *)&x` / `*(float *)&b`
+# reinterpret casts are intentional and bit-exact, so cppcheck's invalidPointerCast
+# on them is a false positive and is NOT promoted to a suspect. These globals
+# uniquely identify the helper bodies (inline occurrences elsewhere are still
+# surfaced by the `fast_sqrt_inline` / `fast_inv_sqrt_inline` detectors).
+_SANCTIONED_BITCAST_GLOBALS = ('g_FastSqrtMagic', 'g_FastInvSqrtMagic')
+
+
 def _resolve_cpp_path(json_path, analyzed_file):
     """Resolve the analyzed source file's full path from the JSON's metadata.
 
@@ -113,6 +122,24 @@ def _read_line(cpp_path, line_no):
     if line_no > len(lines):
         return ''
     return lines[line_no - 1].rstrip('\n').strip()
+
+
+def _is_sanctioned_bitcast_helper(cpp_path):
+    """True if the analyzed source is a sanctioned fast-(inv-)sqrt bit-cast helper.
+
+    Identified by use of the fast-sqrt magic globals; their float<->int
+    reinterpret casts are intentional, so cppcheck's invalidPointerCast on
+    those lines should not be promoted to a suspect. Returns False if the
+    source can't be read.
+    """
+    if not cpp_path:
+        return False
+    try:
+        with open(cpp_path, 'r', errors='replace') as f:
+            src = f.read()
+    except OSError:
+        return False
+    return any(tok in src for tok in _SANCTIONED_BITCAST_GLOBALS)
 
 
 def _tool_from_key(sa_key):
@@ -181,6 +208,7 @@ def apply_to_json(json_path):
     ]
 
     # Synthesize fresh ones from current diagnostics.
+    suppress_bitcast = None  # lazily computed on first invalidPointerCast diag
     synthesized = []
     for sa_key, sa_val in sa.items():
         if not isinstance(sa_val, dict):
@@ -192,6 +220,13 @@ def apply_to_json(json_path):
         for diag in diags:
             if not isinstance(diag, dict):
                 continue
+            # Don't promote invalidPointerCast on the sanctioned fast-(inv-)sqrt
+            # bit-cast helpers — their reinterpret casts are intentional (§21).
+            if tool == 'cppcheck' and diag.get('check_id') == 'invalidPointerCast':
+                if suppress_bitcast is None:
+                    suppress_bitcast = _is_sanctioned_bitcast_helper(cpp_path)
+                if suppress_bitcast:
+                    continue
             suspect = synthesize_suspect(tool, diag, cpp_path)
             if suspect:
                 synthesized.append(suspect)

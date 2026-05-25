@@ -8,9 +8,6 @@
 CDemonActorType g_CZombieDogClassInfo = {};
 CDemonActorType g_CDoorClassInfo = {};
 
-// CKeyFramedModel*
-CKeyFramedModel* g_KeyFrameModelPoolEnd = {};
-
 // FileSearchHandlerFunc*[5]
 FileSearchHandlerFunc* g_SearchHandlers[5] = {};
 
@@ -21,6 +18,7 @@ SMRGLPrimitiveQuad g_FaceConversionBuffer[5000] = {};
 char g_KFMShowEditorScreenshotFile[20] = {};
 
 // int
+int g_KFMShowEditorScreenshotCounter = {};
 int g_NumSearchHandlers = {};
 
 // uint

@@ -18,7 +18,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
   int iVar5;
   char *pcVar4;
   int *piVar5;
-  int iVar6;
   int local_48;
   int local_44;
   int local_40;
@@ -28,8 +27,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
   int local_30;
   int local_2c;
   int local_28;
-  int local_24;
-  int local_20;
   int local_1c;
   
   iVar3 = 1;
@@ -99,10 +96,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
     iVar2 = _fgetc(file);
     if (iVar2 < 0) break;
   } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
-  iVar2 = 0;
   for (iVar5 = 0; iVar5 < this_ptr->vertex_count * this_ptr->frame_count; iVar5 = iVar5 + 1) {
-    CVector3i *vertex = (CVector3i *)((int)&this_ptr->vertex_list->x + iVar2);
-    iVar2 = iVar2 + 0xc;
+    CVector3i *vertex = &this_ptr->vertex_list[iVar5];
     _fscanf(file,"%d,%d,%d\n",&vertex->x,&vertex->y,&vertex->z);
   }
   iVar5 = 1;
@@ -112,27 +107,20 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
   } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   local_1c = 0;
   if (0 < this_ptr->poly_count) {
-    local_20 = 0;
-    local_24 = 0;
     do {
       pSVar1 = this_ptr->poly_vert_list;
-      _fscanf(file,"%d,%d",(int *)((int)this_ptr->poly_texture_index_list + local_24),
-                 (int *)((int)pSVar1->vertices + local_20 + -0x14));
+      _fscanf(file,"%d,%d",&this_ptr->poly_texture_index_list[local_1c],
+                 &pSVar1[local_1c].base.base.count);
       iVar5 = 0;
-      if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {
-        iVar2 = (int)&pSVar1->vertices[0].texture_u + local_20;
-        iVar6 = (int)&pSVar1->vertices[0].texture_v + local_20;
+      if (0 < pSVar1[local_1c].base.base.count) {
         do {
-          _fscanf(file,", %d,%d,%d",(int *)((int)&pSVar1->vertices[iVar5].vertex_index + local_20),
-                     (int *)iVar2,(int *)iVar6);
-          iVar6 = iVar6 + 0xc;
+          _fscanf(file,", %d,%d,%d",&pSVar1[local_1c].vertices[iVar5].vertex_index,
+                     &pSVar1[local_1c].vertices[iVar5].texture_u,
+                     &pSVar1[local_1c].vertices[iVar5].texture_v);
           iVar5 = iVar5 + 1;
-          iVar2 = iVar2 + 0xc;
-        } while (iVar5 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));
+        } while (iVar5 < pSVar1[local_1c].base.base.count);
       }
       _fscanf(file,"\n");
-      local_24 = local_24 + 4;
-      local_20 = local_20 + 0x48;
       local_1c = local_1c + 1;
     } while (local_1c < this_ptr->poly_count);
   }

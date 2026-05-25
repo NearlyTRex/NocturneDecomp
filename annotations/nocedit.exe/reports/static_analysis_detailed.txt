@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (361 diagnostics)
+Cppcheck (quick) (352 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -661,7 +661,7 @@ invalidscanf (59)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (56)
+selfAssignment (54)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -679,14 +679,6 @@ selfAssignment (56)
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 409
     File: core/dcamera.cpp
     Redundant assignment of 'iVar16' to itself.
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 462
-    File: core/dmodel.cpp
-    Redundant assignment of 'pCVar13' to itself.
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 467
-    File: core/dmodel.cpp
-    Redundant assignment of 'pCVar13' to itself.
 
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1564
     File: core/game.cpp
@@ -889,12 +881,8 @@ selfAssignment (56)
     Redundant assignment of 'piVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (41)
+uninitvar (40)
 ----------------------------------------------------------------------------------------------------
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 491
-    File: core/dmodel.cpp
-    Uninitialized variable: local_ca8
 
   core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
     File: core/gabriela.cpp
@@ -1057,126 +1045,6 @@ uninitvar (41)
     Uninitialized variable: local_288
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (29)
-----------------------------------------------------------------------------------------------------
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 647
-    File: core/dmodel.cpp
-    Uninitialized variable: local_174
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 646
-    File: core/dmodel.cpp
-    Uninitialized variable: local_170
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 645
-    File: core/dmodel.cpp
-    Uninitialized variable: local_16c
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 647
-    File: core/dmodel.cpp
-    Uninitialized variable: local_168
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 646
-    File: core/dmodel.cpp
-    Uninitialized variable: local_164
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 645
-    File: core/dmodel.cpp
-    Uninitialized variable: local_160
-
-  core_mission.cpp_CDemonMission_loadActor_FUN_00523 line 64
-    File: core/mission.cpp
-    Uninitialized variable: local_e1
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 740
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1cc
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 738
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 739
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c4
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 740
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c0
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 932
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 932
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b4
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 933
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b0
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 933
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1ac
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 933
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1a8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 550
-    File: core/skeledit.cpp
-    Uninitialized variable: local_38
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 96
-    File: core/sound.cpp
-    Uninitialized variable: local_c8
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 96
-    File: core/sound.cpp
-    Uninitialized variable: local_c4
-
-  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 198
-    File: core/vampboss.cpp
-    Uninitialized variable: local_b4
-
-  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 176
-    File: core/vampboss.cpp
-    Uninitialized variable: local_b0
-
-  shape_design.c_convertWorldToScreenCoordinates_FUN line 44
-    File: shape/design.c
-    Uninitialized variable: local_38
-
-  shape_design.c_convertWorldToScreenCoordinates_FUN line 45
-    File: shape/design.c
-    Uninitialized variable: local_34
-
-  shape_design.c_convertWorldToScreenCoordinates_FUN line 46
-    File: shape/design.c
-    Uninitialized variable: local_30
-
-  shape_design.c_loadModelBinary_FUN_00458170        line 97
-    File: shape/design.c
-    Uninitialized variable: local_a4
-
-  shape_design.c_loadModelBinary_FUN_00458170        line 75
-    File: shape/design.c
-    Uninitialized variable: local_74
-
-  shape_design.c_loadModelBinary_FUN_00458170        line 77
-    File: shape/design.c
-    Uninitialized variable: local_70
-
-  shape_design.c_loadModelBinary_FUN_00458170        line 115
-    File: shape/design.c
-    Uninitialized variable: local_68
-
-  shape_design.c_loadModelBinary_FUN_00458170        line 69
-    File: shape/design.c
-    Uninitialized variable: local_64
-
-----------------------------------------------------------------------------------------------------
 identicalInnerCondition (23)
 ----------------------------------------------------------------------------------------------------
 
@@ -1271,6 +1139,102 @@ identicalInnerCondition (23)
   sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 259
     File: sound/sndmain.cpp
     Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+legacyUninitvar (23)
+----------------------------------------------------------------------------------------------------
+
+  core_mission.cpp_CDemonMission_loadActor_FUN_00523 line 64
+    File: core/mission.cpp
+    Uninitialized variable: local_e1
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 740
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1cc
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 738
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1c8
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 739
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1c4
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 740
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1c0
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 932
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1b8
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 932
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1b4
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 933
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1b0
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 933
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1ac
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 933
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1a8
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 550
+    File: core/skeledit.cpp
+    Uninitialized variable: local_38
+
+  core_sound.cpp_updateListeners_FUN_005b1870        line 96
+    File: core/sound.cpp
+    Uninitialized variable: local_c8
+
+  core_sound.cpp_updateListeners_FUN_005b1870        line 96
+    File: core/sound.cpp
+    Uninitialized variable: local_c4
+
+  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 198
+    File: core/vampboss.cpp
+    Uninitialized variable: local_b4
+
+  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 176
+    File: core/vampboss.cpp
+    Uninitialized variable: local_b0
+
+  shape_design.c_convertWorldToScreenCoordinates_FUN line 44
+    File: shape/design.c
+    Uninitialized variable: local_38
+
+  shape_design.c_convertWorldToScreenCoordinates_FUN line 45
+    File: shape/design.c
+    Uninitialized variable: local_34
+
+  shape_design.c_convertWorldToScreenCoordinates_FUN line 46
+    File: shape/design.c
+    Uninitialized variable: local_30
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 97
+    File: shape/design.c
+    Uninitialized variable: local_a4
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 75
+    File: shape/design.c
+    Uninitialized variable: local_74
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 77
+    File: shape/design.c
+    Uninitialized variable: local_70
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 115
+    File: shape/design.c
+    Uninitialized variable: local_68
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 69
+    File: shape/design.c
+    Uninitialized variable: local_64
 
 ----------------------------------------------------------------------------------------------------
 invalidPointerCast (17)

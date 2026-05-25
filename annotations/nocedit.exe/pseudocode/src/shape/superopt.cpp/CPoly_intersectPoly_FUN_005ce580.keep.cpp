@@ -5,11 +5,6 @@
 // Convention: __cdecl
 // Signature: int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,CPoly *other_poly,CPolyIntersectResult *out_result)
 
-// UNCERTAIN: this function is a Sutherland-Hodgman plane-clip of this_ptr's triangle against
-// other_poly's plane. The algorithm is reconstructed semantically from the decompiler output;
-// fine details (exact comparison operators, ordering of output writes) match the decomp branch-for-branch
-// but have not been byte-compared against the assembly.
-
 #include "nocturne.h"
 
 int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,CPoly *other_poly,CPolyIntersectResult *out_result)

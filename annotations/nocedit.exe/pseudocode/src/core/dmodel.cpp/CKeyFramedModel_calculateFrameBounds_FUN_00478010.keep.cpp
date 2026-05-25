@@ -20,9 +20,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
   int frame_index;
 
   if (0 < model_ptr->frame_count) {
-    // frame_bounds is mistyped as CVector3f* in CKeyFramedModel but actually
-    // points at an array of CBoundingBox3D (24-byte stride per asm).
-    frame_bounds_array = (CBoundingBox3D *)model_ptr->frame_bounds;
+    frame_bounds_array = model_ptr->frame_bounds;
     bounds_min_ptr = &model_ptr->bounds;
     frame_index = 0;
     do {
@@ -32,12 +30,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
       temp_vertex.x = (float)pCVar1->x * fVar1;
       temp_vertex.y = (float)pCVar1->y * fVar1;
       temp_vertex.z = (float)pCVar1->z * fVar1;
-      (this_ptr_00->min).x = temp_vertex.x;
-      (this_ptr_00->min).y = temp_vertex.y;
-      (this_ptr_00->min).z = temp_vertex.z;
-      (this_ptr_00->max).x = temp_vertex.x;
-      (this_ptr_00->max).y = temp_vertex.y;
-      (this_ptr_00->max).z = temp_vertex.z;
+      this_ptr_00->min = temp_vertex;
+      this_ptr_00->max = temp_vertex;
       iVar2 = 1;
       if (1 < model_ptr->vertex_count) {
         do {
@@ -50,12 +44,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
         } while (iVar2 < model_ptr->vertex_count);
       }
       if (frame_index == 0) {
-        (bounds_min_ptr->min).x = (this_ptr_00->min).x;
-        (bounds_min_ptr->min).y = (this_ptr_00->min).y;
-        (bounds_min_ptr->min).z = (this_ptr_00->min).z;
-        (bounds_min_ptr->max).x = (this_ptr_00->min).x;
-        (bounds_min_ptr->max).y = (this_ptr_00->min).y;
-        (bounds_min_ptr->max).z = (this_ptr_00->min).z;
+        bounds_min_ptr->min = this_ptr_00->min;
+        bounds_min_ptr->max = this_ptr_00->min;
       }
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240(bounds_min_ptr,(CVector3f *)this_ptr_00);
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240(bounds_min_ptr,&this_ptr_00->max);

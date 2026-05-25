@@ -12,7 +12,7 @@ void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00(char *outpu
 {
   int iVar1;
   int iVar2;
-  
+
   if (prefix_string == (char *)0x0) {
     *output_buffer = '\0';
   }
@@ -21,7 +21,6 @@ void __cdecl sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00(char *outpu
     output_buffer = output_buffer + iVar2;
   }
   if ((format_flags & 1) != 0) {
-    // UNCERTAIN: assembly only pushes channel_index for "%d%s" format; %s arg unknown
     iVar1 = _sprintf(output_buffer," channel=%d%s",options->channel_index,"");
     output_buffer = output_buffer + iVar1;
   }

@@ -98,9 +98,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_004869a0(CDr
                            (local_88,&local_50,local_1c,p1,local_20->control_points + 2,
                             local_20->control_points + 3);
         if (&local_20->position != pCVar5) {
-          (local_20->position).x = pCVar5->x;
-          (local_20->position).y = pCVar5->y;
-          (local_20->position).z = pCVar5->z;
+          local_20->position = *pCVar5;
         }
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%5.2f %5.2f %5.2f\n",(double)(local_20->position).x,
@@ -109,9 +107,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_004869a0(CDr
                            (local_88,&local_5c,local_20->control_points,local_20->control_points + 1
                             ,local_20->control_points + 2,local_20->control_points + 3);
         if (&local_20->tangent != pCVar5) {
-          (local_20->tangent).x = pCVar5->x;
-          (local_20->tangent).y = pCVar5->y;
-          (local_20->tangent).z = pCVar5->z;
+          local_20->tangent = *pCVar5;
         }
       }
     }

@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        44 ( 0.7%)
+  Functions with type issues:        43 ( 0.7%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      44
+    Undefined types in variables:      43
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   175 functions
+  Excluded (.keep / MMX / by-value):   176 functions
     Wrong calling convention:          1
-    Undefined types in variables:      173
+    Undefined types in variables:      174
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (44)
+Undefined types in variables (43)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -92,11 +92,6 @@ Undefined types in variables (44)
   CPoly_scale
     Address: 0x005cc7c0  File: shape/superopt.cpp
     Locals:  local_1c8 (undefined4[4]), local_1b8 (undefined4), local_1b4 (undefined4), local_1b0 (undefined4), uStack_1ac (undefined4), local_1a8 (undefined4), uStack_1a4 (undefined4), local_1a0 (undefined4), uStack_19c (undefined4), local_180 (undefined4), uStack_17c (undefined4), local_178 (undefined4), uStack_174 (undefined4), local_170 (undefined4), uStack_16c (undefined4), local_150 (undefined4[4]), local_140 (undefined4), local_13c (undefined4), local_c0 (undefined4), uStack_bc (undefined4), local_b8 (undefined4), uStack_b4 (undefined4), local_b0 (undefined4), uStack_ac (undefined4), local_90 (undefined4[4]), local_80 (undefined4), local_7c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonPart_importTriangleMesh
-    Address: 0x00482a10  File: core/dpart.cpp
-    Locals:  local_134 (undefined), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CObj_scaleMasked
@@ -357,7 +352,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (173)
+Undefined types - .keep overrides (174)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -473,6 +468,11 @@ Undefined types - .keep overrides (173)
   CNetGame_swapPlayerData
     Address: 0x00543bb0  File: core/netgame.cpp
     Locals:  uStack_80 (undefined4), uStack_7c (undefined4), uStack_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_68 (undefined2), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_48 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonPart_importTriangleMesh
+    Address: 0x00482a10  File: core/dpart.cpp
+    Locals:  local_134 (undefined), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPlatform_process
