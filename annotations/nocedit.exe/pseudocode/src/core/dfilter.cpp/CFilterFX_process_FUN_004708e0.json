@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 38,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 37,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -162,16 +162,25 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(uint *)((int)pCVar1",
+      "line": 29,
+      "match": "(uint *)((int)puVar3",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)pCVar1->data_buffer + 0x1000);",
+      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 30,
+      "match": "(uint *)((int)puVar4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
       "match": "(uint *)((int)puVar4",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -180,7 +189,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 34,
       "match": "(uint *)((int)puVar3",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -189,7 +198,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 28,
+      "line": 27,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -198,21 +207,12 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 33,
+      "line": 32,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 24,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "puVar3 = (uint *)",
-      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

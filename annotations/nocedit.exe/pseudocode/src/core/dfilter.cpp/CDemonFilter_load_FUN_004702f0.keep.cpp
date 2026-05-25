@@ -1,5 +1,6 @@
 // Name: core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
 // Address: 004702f0
+// MANUAL RECONSTRUCTION
 // Address Range: [[004702f0, 00470500]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_ptr,char *filename)
@@ -9,14 +10,11 @@
 void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_ptr,char *filename)
 
 {
-  char cVar2;
   _FILE *p_Var2;
   int iVar3;
   _FILE *file;
   int iVar4;
-  char *pcVar4;
-  char cVar1;
-
+  
   p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb");
   if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
@@ -57,17 +55,6 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
   for (iVar4 = 0; iVar4 < this_ptr->size * this_ptr->count; iVar4 = iVar4 + 1) {
     this_ptr->data_buffer[iVar4] = (uchar)((int)(uint)this_ptr->data_buffer[iVar4] >> 2);
   }
-  pcVar4 = this_ptr->name;
-  do {
-    cVar1 = *filename;
-    *pcVar4 = cVar1;
-    if (cVar1 == '\0') {
-      return;
-    }
-    cVar2 = filename[1];
-    filename = filename + 2;
-    pcVar4[1] = cVar2;
-    pcVar4 = pcVar4 + 2;
-  } while (cVar2 != '\0');
+  strcpy(this_ptr->name, filename);
   return;
 }

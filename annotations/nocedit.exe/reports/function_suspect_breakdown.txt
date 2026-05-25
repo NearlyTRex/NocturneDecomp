@@ -4,12 +4,12 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5950 functions
-  1 suspects: 76 functions
-  2 suspects: 97 functions
-  3 suspects: 61 functions
-  4 suspects: 60 functions
-  5 suspects: 36 functions
+  0 suspects: 5956 functions
+  1 suspects: 75 functions
+  2 suspects: 95 functions
+  3 suspects: 60 functions
+  4 suspects: 59 functions
+  5 suspects: 35 functions
   6 suspects: 43 functions
   7 suspects: 17 functions
   8 suspects: 26 functions
@@ -92,7 +92,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [pointer_cast] (22 functions)
+  [pointer_cast] (21 functions)
   ------------------------------------------------------------
     core_flies.cpp_drawFlyPixel_FUN_004cc230           ( 51 lines)
       puVar3 = (uint *)((int)g_ScreenBufferArray[screen_y] + scree...
@@ -112,8 +112,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       parent_class_00 = *(CDemonActorType **)((int)g_ActorClassReg...
     core_setedit.cpp_CDemonSet_drawCameraCoverageMap_F ( 60 lines)
       puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_...
-    core_conveyor.cpp_CConveyor_process_FUN_00441df0   ( 66 lines)
-      actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->actors + ...
     core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d ( 66 lines)
       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c),...
     core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004 ( 67 lines)
@@ -166,11 +164,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_F (175 lines)
       local_18 = (CDemonSet *)&local_18->cameras[0].enabled;...
 
-  [unrolled_strcpy] (10 functions)
+  [unrolled_strcpy] (9 functions)
   ------------------------------------------------------------
     core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0  ( 54 lines)
-      do {...
-    core_dfilter.cpp_CFilterCache_getFilter_FUN_004700 ( 56 lines)
       do {...
     core_menu.cpp_showCalibrationTestPattern_FUN_00510 ( 61 lines)
       do {...
@@ -206,6 +202,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (ADJ(pCVar6)->pending_velocity).z = 0.0;...
     core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN (113 lines)
       (pSVar11->light).b = 0.0;...
+
+  [warning_inlined_function] (1 functions)
+  ------------------------------------------------------------
+    core_dfilter.cpp_CDemonFilter_init_FUN_004705a0    ( 47 lines)
+      /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 ...
 
   [stack_alignment_array] (1 functions)
   ------------------------------------------------------------
@@ -278,12 +279,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/setedit.cpp, Lines: 39, Types: ['pointer_cast']
   core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FU
     File: core/manpuz.cpp, Lines: 40, Types: ['unrolled_memcpy']
-  core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0
-    File: core/conveyor.cpp, Lines: 40, Types: ['unrolled_strcpy']
   core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370
     File: core/netgame.cpp, Lines: 42, Types: ['unrolled_strcpy']
-  core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730
-    File: core/dfilter.cpp, Lines: 43, Types: ['pointer_cast']
   core_wateract.cpp_CWaterActor_processInEditor_FUN_005ebab0
     File: core/wateract.cpp, Lines: 43, Types: ['bit_int_float_compare']
   core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
@@ -448,8 +445,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 45, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_setutil.cpp_readAndParseLine_FUN_00585290
     File: core/setutil.cpp, Lines: 48, Types: ['unrolled_strcpy', 'unrolled_strlen']
-  core_dfilter.cpp_CDemonFilter_init_FUN_004705a0
-    File: core/dfilter.cpp, Lines: 48, Types: ['pointer_cast', 'warning_inlined_function']
   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
     File: core/manpuz.cpp, Lines: 49, Types: ['unrolled_memset']
   core_setdir.cpp_CZThumb_render_FUN_00574f20

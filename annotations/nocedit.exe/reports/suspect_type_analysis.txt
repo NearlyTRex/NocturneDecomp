@@ -4,24 +4,24 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1334 ( 44.5%)
-  unrolled_memcpy                  624 ( 20.8%)
-  unrolled_strcpy                  244 (  8.1%)
+  pointer_cast                    1327 ( 44.6%)
+  unrolled_memcpy                  620 ( 20.8%)
+  unrolled_strcpy                  240 (  8.1%)
   shadow_pointer_walk              116 (  3.9%)
-  missing_cave_copy                109 (  3.6%)
+  missing_cave_copy                109 (  3.7%)
   unrolled_strlen                   80 (  2.7%)
   carry_arith_idiom                 63 (  2.1%)
   raw_address_constant              43 (  1.4%)
   bitcast_double_pair               42 (  1.4%)
   static_uninitvar                  41 (  1.4%)
   unrolled_strchr                   41 (  1.4%)
-  warning_inlined_function          41 (  1.4%)
+  warning_inlined_function          40 (  1.3%)
   unrolled_memset                   40 (  1.3%)
   bit_int_float_compare             33 (  1.1%)
   static_legacy_uninitvar           29 (  1.0%)
   static_invalid_pointer_cast       17 (  0.6%)
   warning_type_propagation          15 (  0.5%)
-  stack_alignment_array             14 (  0.5%)
+  stack_alignment_array             13 (  0.4%)
   warning_unreachable               11 (  0.4%)
   sub84_truncation                  10 (  0.3%)
   static_null_pointer                8 (  0.3%)
@@ -35,21 +35,21 @@ SUSPECT TYPE COUNTS
   fast_sqrt_inline                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1334 occurrences)
+TYPE: pointer_cast (1327 occurrences)
 ====================================================================================================
 
 Unique patterns:
    556x  (int)&NAME used in byte-offset arithmetic
     37x  (int *)((int)this_ptr
     31x  (uint *)((int)this_ptr
-    18x  (CDemonActor **)((int)g_CDemonSetPtr
+    17x  (CDemonActor **)((int)g_CDemonSetPtr
     17x  (uint *)((int)g_ModelPolygonData
     16x  (int *)((int)g_ScreenBufferArray
     14x  (int *)((int)g_ModelPolygonData
     14x  (uint *)((int)g_ThumbnailImageBuffer
-    13x  (byte *)((int)this_ptr
     13x  (int *)((int)pCVar1
     12x  (SScriptXRef *)((int)pSVar6
+    12x  (byte *)((int)this_ptr
     12x  (double *)((int)pdVar2
     12x  (double *)((int)pdVar4
     11x  (int *)((int)pvVar35
@@ -61,10 +61,6 @@ Unique patterns:
      8x  (int *)((int)g_SimFrameHistory
 
 Functions:
-  core_conveyor.cpp_CConveyor_process_FUN_00441df0
-  core_dfilter.cpp_CDemonFilter_init_FUN_004705a0
-  core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
-  core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730
   core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0
   core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810
   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
@@ -333,17 +329,16 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (624 occurrences)
+TYPE: unrolled_memcpy (620 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   456x  field-by-field struct copy
+   452x  field-by-field struct copy
     85x  for (...; != 0; ... + -1)
     81x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
-  core_conveyor.cpp_CConveyor_setup_FUN_00441d60
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010
   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0
   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950
@@ -544,16 +539,13 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (244 occurrences)
+TYPE: unrolled_strcpy (240 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   244x  do {
+   240x  do {
 
 Functions:
-  core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0
-  core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
-  core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060
   core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810
   core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10
   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330
@@ -964,15 +956,14 @@ Functions:
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
-TYPE: warning_inlined_function (41 occurrences)
+TYPE: warning_inlined_function (40 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    41x  WARNING: Inlined function:
+    40x  WARNING: Inlined function:
 
 Functions:
   core_dfilter.cpp_CDemonFilter_init_FUN_004705a0
-  core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
   core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10
   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330
   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
@@ -1146,14 +1137,13 @@ Functions:
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
 
 ====================================================================================================
-TYPE: stack_alignment_array (14 occurrences)
+TYPE: stack_alignment_array (13 occurrences)
 ====================================================================================================
 
 Unique patterns:
      1x  aEStackY_208c
      1x  afStackY_180c
      1x  afStackY_185c
-     1x  afStackY_17f8
      1x  afStackY_1938
      1x  aiStackY_1070
      1x  aiStackY_1014
@@ -1166,7 +1156,6 @@ Unique patterns:
      1x  acStackY_1406
 
 Functions:
-  core_conveyor.cpp_CConveyor_setup_FUN_00441d60
   core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
   core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810

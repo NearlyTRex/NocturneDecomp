@@ -10,7 +10,7 @@ typedef struct CDemonFilter {
     int size; // 0x0
     int count; // 0x4
     char name[64]; // 0x8
-    void* data_buffer; // 0x48
+    uchar* data_buffer; // 0x48
 } CDemonFilter;
 #pragma pack(pop)
 

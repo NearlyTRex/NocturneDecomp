@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 98,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 38,
-    "suspect_count": 5,
-    "suspect_types": [
-      "stack_alignment_array",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 123
   },
   "cross_references": [],
@@ -88,6 +85,53 @@
     },
     "pcode_op_count": 237
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "afStackY_17f8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "float afStackY_17f8 [1526];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 19,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2->x = (pCVar1->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 25,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3->x = pCVar2->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 30,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).end_orient.w = local_1c.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 34,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).orig_orient.w = (this_ptr->base).end_orient.w;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 6144,
     "local_size": 6140,
@@ -118,48 +162,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
-      "match": "afStackY_17f8",
-      "severity": "moderate",
-      "text": "float afStackY_17f8 [1526];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 19,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar2->x = (pCVar1->position).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 25,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar3->x = pCVar2->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 30,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->base).end_orient.w = local_1c.w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 34,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->base).orig_orient.w = (this_ptr->base).end_orient.w;",
-      "type": "unrolled_memcpy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

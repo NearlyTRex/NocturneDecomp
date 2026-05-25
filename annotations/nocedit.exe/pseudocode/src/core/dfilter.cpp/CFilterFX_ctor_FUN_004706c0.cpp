@@ -11,6 +11,6 @@ CFilterFx * __cdecl core_dfilter_cpp_CFilterFX_ctor_FUN_004706c0(CFilterFx *this
 {
   this_ptr->frame_count = 0;
   this_ptr->current_frame = 0;
-  this_ptr->movie_data = (void *)0x0;
+  this_ptr->movie_data = (uchar *)0x0;
   return this_ptr;
 }

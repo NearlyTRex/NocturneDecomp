@@ -30,7 +30,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_p
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\dfilter.cpp",0x15c);
     pvVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        (this_ptr->frame_count << 0xd,"..\\core\\dfilter.cpp",0x160);
-    this_ptr->movie_data = pvVar2;
+    this_ptr->movie_data = (uchar *)pvVar2;
     _sprintf(local_10c,"%s.mov",filename);
     file = engine_dosio_cpp_getFile_FUN_00481a50(filename,local_10c,"rb");
     if (file == (_FILE *)0x0) {
@@ -41,8 +41,8 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_p
     _fread(this_ptr->movie_data,0x2000,this_ptr->frame_count,file);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\dfilter.cpp",0x168);
     for (iVar3 = 0; iVar3 < this_ptr->frame_count * 0x2000; iVar3 = iVar3 + 1) {
-      *(char *)(iVar3 + (int)this_ptr->movie_data) =
-           (char)((uint)((int)(uint)*(byte *)(iVar3 + (int)this_ptr->movie_data) >> 2) / 2);
+      this_ptr->movie_data[iVar3] = (uchar)((uint)((int)(uint)this_ptr->movie_data[iVar3] >> 2) / 2)
+      ;
     }
     this_ptr->current_frame = 0;
     return;

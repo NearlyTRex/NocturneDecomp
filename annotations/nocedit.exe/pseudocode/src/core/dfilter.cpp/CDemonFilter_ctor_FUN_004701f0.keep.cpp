@@ -10,7 +10,7 @@
 CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_ctor_FUN_004701f0(CDemonFilter *this_ptr)
 
 {
-  this_ptr->data_buffer = (void *)0x0;
+  this_ptr->data_buffer = (uchar *)0x0;
   this_ptr->size = 0x40;
   this_ptr->count = 0x40;
   strcpy(this_ptr->name, "unnamed");

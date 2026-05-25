@@ -13,7 +13,7 @@ CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_ctor_FUN_004701f0(CDemonFil
   char *pcVar2;
   char *pcVar3;
   
-  this_ptr->data_buffer = (void *)0x0;
+  this_ptr->data_buffer = (uchar *)0x0;
   pcVar2 = "unnamed";
   this_ptr->size = 0x40;
   pcVar3 = this_ptr->name;

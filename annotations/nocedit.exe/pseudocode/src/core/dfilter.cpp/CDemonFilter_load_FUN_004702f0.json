@@ -4,22 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 120,
+    "complexity_score": 64,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_strcpy",
-      "warning_inlined_function"
-    ],
-    "total_lines": 268
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 64,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 267
   },
   "cross_references": [
     {
@@ -292,6 +288,26 @@
     },
     "pcode_op_count": 752
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 56,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -315,38 +331,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(char *)(iVar4 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "*(char *)(iVar4 + (int)this_ptr->data_buffer) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(byte *)(iVar4 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "(char)((int)(uint)*(byte *)(iVar4 + (int)this_ptr->data_buffer) >> 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 57,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ]
+  "suspects": []
 }

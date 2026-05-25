@@ -9,13 +9,13 @@
 void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00470260(CDemonFilter *this_ptr)
 
 {
-  void *pvVar1;
+  uchar *puVar1;
   
   core_dfilter_cpp_CDemonFilter_freeMemory_FUN_004702c0(this_ptr);
-  pvVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+  puVar1 = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      (this_ptr->size * this_ptr->count,"..\\core\\dfilter.cpp",0x8c);
-  this_ptr->data_buffer = pvVar1;
-  if (pvVar1 != (void *)0x0) {
+  this_ptr->data_buffer = puVar1;
+  if (puVar1 != (uchar *)0x0) {
     return;
   }
   g_CurrentFilename = "..\\core\\dfilter.cpp";

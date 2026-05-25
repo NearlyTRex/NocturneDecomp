@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5935 (92.0%)
-With suspects: 519
-Total suspects: 2995
+Clean: 5941 (92.1%)
+With suspects: 513
+Total suspects: 2978
 
 ====================================================================================================
 core_chain.cpp_fastSqrt_FUN_00431350 (2 suspects)
@@ -24,57 +24,10 @@ core_cloth.cpp_fastInvSqrt_FUN_0043e2a0 (2 suspects)
   Line 14 [static_invalid_pointer_cast]: return *(float *)&bits;
 
 ====================================================================================================
-core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0 (2 suspects)
-  File: core/conveyor.cpp
-====================================================================================================
-  Line 18 [unrolled_strcpy]: do {
-  Line 29 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_conveyor.cpp_CConveyor_process_FUN_00441df0 (1 suspect)
-  File: core/conveyor.cpp
-====================================================================================================
-  Line 31 [pointer_cast]: actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4);
-
-====================================================================================================
-core_conveyor.cpp_CConveyor_setup_FUN_00441d60 (5 suspects)
-  File: core/conveyor.cpp
-====================================================================================================
-  Line 10 [stack_alignment_array]: float afStackY_17f8 [1526];
-  Line 19 [unrolled_memcpy]: pCVar2->x = (pCVar1->position).x;
-  Line 25 [unrolled_memcpy]: pCVar3->x = pCVar2->x;
-  Line 30 [unrolled_memcpy]: (this_ptr->base).end_orient.w = local_1c.w;
-  Line 34 [unrolled_memcpy]: (this_ptr->base).orig_orient.w = (this_ptr->base).end_orient.w;
-
-====================================================================================================
-core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 (3 suspects)
+core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 (1 suspect)
   File: core/dfilter.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 37 [pointer_cast]: fVar3 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *
-  Line 44 [pointer_cast]: *(byte *)(this_ptr->size * iVar5 + iVar4 + (int)this_ptr->data_buffer) = local_1c;
-
-====================================================================================================
-core_dfilter.cpp_CDemonFilter_load_FUN_004702f0 (4 suspects)
-  File: core/dfilter.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 53 [pointer_cast]: *(char *)(iVar4 + (int)this_ptr->data_buffer) =
-  Line 54 [pointer_cast]: (char)((int)(uint)*(byte *)(iVar4 + (int)this_ptr->data_buffer) >> 2);
-  Line 57 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060 (1 suspect)
-  File: core/dfilter.cpp
-====================================================================================================
-  Line 33 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730 (2 suspects)
-  File: core/dfilter.cpp
-====================================================================================================
-  Line 36 [pointer_cast]: *(char *)(iVar3 + (int)this_ptr->movie_data) =
-  Line 37 [pointer_cast]: (char)((uint)((int)(uint)*(byte *)(iVar3 + (int)this_ptr->movie_data) >> 2) / 2);
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0 (2 suspects)

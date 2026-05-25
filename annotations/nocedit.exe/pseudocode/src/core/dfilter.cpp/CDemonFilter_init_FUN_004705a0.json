@@ -7,18 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 88,
+    "complexity_score": 62,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
-    "suspect_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 47,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 177
+    "total_lines": 176
   },
   "cross_references": [
     {
@@ -232,22 +231,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(byte *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "fVar3 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(byte *)(this_ptr->size * iVar5 + iVar4 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "*(byte *)(this_ptr->size * iVar5 + iVar4 + (int)this_ptr->data_buffer) = local_1c;",
-      "type": "pointer_cast"
     }
   ]
 }
