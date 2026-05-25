@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 114,
+    "complexity_score": 129,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 22,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 114,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 476
   },
   "cross_references": [
@@ -469,5 +471,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 76,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "iVar10 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.",
+      "type": "pointer_cast"
+    }
+  ]
 }

@@ -104,7 +104,7 @@ LAB_00407c82:
       }
     }
     iVar4 = engine_model_c_getMRGLSize_FUN_00528700(mrgl);
-    mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);
+    mrgl = (SMRGLHeaderExtended *)((char *)mrgl + iVar4);
     cVar2 = (char)(((SMRGLHeaderPrimitive *)mrgl)->base).type;
   } while( true );
 }

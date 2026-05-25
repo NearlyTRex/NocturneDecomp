@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 423,
-    "complexity_score": 222,
+    "complexity_score": 232,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 35,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 152,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strchr"
@@ -417,6 +417,14 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)&pCVar5->x + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 94,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.",
       "type": "pointer_cast"
     },
     {

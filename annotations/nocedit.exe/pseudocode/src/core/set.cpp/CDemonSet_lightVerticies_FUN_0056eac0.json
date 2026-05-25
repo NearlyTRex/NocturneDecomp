@@ -1068,6 +1068,87 @@
       "type": "pointer_cast"
     },
     {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 119,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_16c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 121,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_16c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 123,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_16c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 140,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_13c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 142,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_13c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 144,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_13c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 370,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_e8.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 372,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_e8.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 374,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_e8.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `vertex_normals` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `vertex_normals->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 451,
       "match": "vertex_normals = (T *)vertex_normals->ARRAY",

@@ -2744,6 +2744,85 @@ def identify_int_address_arithmetic(decompiled_code):
     return suspects
 
 
+# Multi-line variant of `_INT_ADDR_ARITH_RE`. The per-line pass in
+# `identify_int_address_arithmetic` misses byte-offset walks that Ghidra
+# wrapped across physical lines, e.g.
+#   (int)&(((SMRGLPrimitiveTriangle *)(p->vertices + -2))->base).base.
+#          type + primitive_stride
+# `_INT_ADDR_BASE` already tolerates whitespace (incl. newlines) after its
+# `.`/`->` separator, but `_INT_ADDR_TAIL` does not — so a separator that
+# falls right before the line break (`.base.\n type`) defeats even a
+# full-text match. This tail variant inserts `\s*` after each `.`/`->` so
+# the walk still matches when it spans a break. `\s` and `\w` start on
+# disjoint characters, so the added `\s*\w+` introduces no new ambiguity
+# (same no-catastrophic-backtracking property as the single-line regex).
+_INT_ADDR_TAIL_ML = r'(?:\.\s*\w+|->\s*\w+|\[[^\]]*\])*'
+
+_INT_ADDR_ARITH_MULTILINE_RE = re.compile(
+    r'\(int\)\s*&' + _INT_ADDR_BASE + _INT_ADDR_TAIL_ML + r'\s*[\+\-]'
+    r'|'
+    r'[\+\-]\s*\(int\)\s*&' + _INT_ADDR_BASE + _INT_ADDR_TAIL_ML
+)
+
+
+def identify_int_address_arithmetic_multiline(decompiled_code):
+    """Detect `(int)&NAME +/- N` byte-offset walks split across lines.
+
+    Companion to `identify_int_address_arithmetic` for the case where
+    Ghidra wrapped the walk onto the next physical line — the single-line
+    pass iterates `code.split('\\n')` and can't see across the break. We
+    re-scan the full text with a whitespace-tolerant tail and emit only
+    matches that actually span a newline; single-line matches are already
+    covered by the per-line pass, so emitting them here would double-flag.
+
+    Same suspect type and fix as the single-line variant (replace the
+    byte-offset address arithmetic with indexed or named field access in a
+    .keep).
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, located at the first line of each match.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    line_starts = [0]
+    for i, ch in enumerate(decompiled_code):
+        if ch == '\n':
+            line_starts.append(i + 1)
+    for m in _INT_ADDR_ARITH_MULTILINE_RE.finditer(decompiled_code):
+        # Single-line matches are already handled by the per-line pass.
+        if '\n' not in decompiled_code[m.start():m.end()]:
+            continue
+        # Map the match start to a 1-based line number.
+        line_no = bisect.bisect_right(line_starts, m.start())
+        line_start = line_starts[line_no - 1]
+        line_end = decompiled_code.find('\n', line_start)
+        if line_end == -1:
+            line_end = len(decompiled_code)
+        first_line = decompiled_code[line_start:line_end]
+        stripped = first_line.lstrip()
+        # Skip comment lines, mirroring the per-line pass.
+        if (stripped.startswith('//') or stripped.startswith('/*') or
+                stripped.startswith('* ')):
+            continue
+        suspects.append({
+            'line': line_no,
+            'type': 'pointer_cast',
+            'match': '(int)&NAME byte-offset arithmetic split across lines',
+            'text': first_line.strip()[:120],
+            'description': (
+                '(int)&NAME used in arithmetic, wrapped across lines — same '
+                'Watcom byte-offset trampolining as single-line pointer_cast, '
+                'just split by Ghidra. Replace with struct field or array '
+                'index access in a .keep.'),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
 # Watcom shadow-pointer walk. The compiler used a struct-field-array's
 # address as a base and advanced it by element size each iteration so that
 # `shadow->bone_list[0]` resolved to `original->bone_list[i]`. Ghidra
@@ -4491,6 +4570,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_sibling_array_undersized(code))
     found.extend(identify_pointer_cast_multiline(code))
     found.extend(identify_int_address_arithmetic(code))
+    found.extend(identify_int_address_arithmetic_multiline(code))
     found.extend(identify_shadow_pointer_walk(code))
     found.extend(identify_subfield_vector_pun(code))
     found.extend(identify_unrolled_strlen_loops(code))

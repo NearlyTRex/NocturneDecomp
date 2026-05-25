@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 256,
-    "complexity_score": 177,
+    "complexity_score": 187,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 112,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -372,6 +372,14 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if ((*(byte *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 86,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
       "type": "pointer_cast"
     }
   ]

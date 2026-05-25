@@ -10,7 +10,6 @@
 void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_0052b160(CMorphModel *this_ptr,float morph_t)
 
 {
-  int iVar3;
   int iVar4;
   SMRGLHeaderPrimitive *prim;
   int local_14;
@@ -27,20 +26,15 @@ void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_0052b160(CMorphModel *th
   local_14 = -1;
   iVar4 = 0;
   if (0 < this_ptr->num_faces) {
-    iVar3 = 0;
     do {
-      iVar1 = *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).
-                             base.type + iVar3);
+      iVar1 = this_ptr->faces[iVar4].base.base.type;
       if (iVar1 != local_14) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                   (g_CDemonRendererPtr2,this_ptr->textures[iVar1].textures);
         local_14 = iVar1;
       }
-      prim = (SMRGLHeaderPrimitive *)
-             ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.type +
-             iVar3);
+      prim = &this_ptr->faces[iVar4].base;
       iVar4 = iVar4 + 1;
-      iVar3 = iVar3 + 0x3c;
       engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
                 (g_CDemonRendererPtr2,(SMRGLPrimitivePoly *)prim,0x267);
     } while (iVar4 < this_ptr->num_faces);

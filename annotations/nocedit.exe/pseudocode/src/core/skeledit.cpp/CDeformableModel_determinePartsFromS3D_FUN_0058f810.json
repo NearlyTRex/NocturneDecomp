@@ -8,13 +8,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 2291,
+    "complexity_score": 2321,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1436,
-    "suspect_count": 83,
+    "suspect_count": 86,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
@@ -3149,6 +3149,30 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 1019,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "local_c8 = (short *)((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 1027,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "local_c0 = (short *)((int)&(this_ptr->tri_data_ptr[0]->",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 1091,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0",
       "type": "pointer_cast"
     },
     {

@@ -278,6 +278,15 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&local_94[0].z + iVar8) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 40,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar4 = uVar4 & *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

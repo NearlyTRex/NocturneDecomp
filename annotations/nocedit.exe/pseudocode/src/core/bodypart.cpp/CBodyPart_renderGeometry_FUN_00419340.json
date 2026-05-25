@@ -195,6 +195,15 @@
       "severity": "moderate",
       "text": "iVar1 = *(int *)((int)this_ptr->face_texture_indices + local_14);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 44,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

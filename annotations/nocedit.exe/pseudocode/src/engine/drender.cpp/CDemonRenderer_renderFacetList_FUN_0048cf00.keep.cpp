@@ -50,10 +50,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDem
           }
           engine_drender_cpp_renderTriangleTextured_FUN_00483370
                     (local_28,(primitive_array->base).base.count);
-          primitive_array =
-               (SMRGLPrimitiveQuad *)
-               ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
-               primitive_stride);
+          primitive_array = (SMRGLPrimitiveQuad *)((char *)primitive_array + primitive_stride);
         }
       }
       else {
@@ -74,10 +71,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDem
               }
             }
             local_14 = local_14 + 1;
-            primitive_array =
-                 (SMRGLPrimitiveQuad *)
-                 ((int)&(((SMRGLPrimitiveTriangle *)(primitive_array->vertices + -2))->base).base.
-                        type + primitive_stride);
+            primitive_array = (SMRGLPrimitiveQuad *)((char *)primitive_array + primitive_stride);
           } while (local_14 < primitive_count);
         }
         if (0 < polygon_count) {
@@ -100,10 +94,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDem
           local_28[3] = primitive_array->vertices[3].vertex_index;
         }
         pSVar1 = &(primitive_array->base).base;
-        primitive_array =
-             (SMRGLPrimitiveQuad *)
-             ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
-             primitive_stride);
+        primitive_array = (SMRGLPrimitiveQuad *)((char *)primitive_array + primitive_stride);
         engine_drender_cpp_renderTriangleSimple_FUN_004839f0((CVector3i *)local_28,pSVar1->count);
       }
     }
@@ -115,10 +106,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDem
         engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
                   (this_ptr,(SMRGLPrimitivePoly *)primitive_array,render_flags);
         iVar3 = iVar3 + 1;
-        primitive_array =
-             (SMRGLPrimitiveQuad *)
-             ((int)&(((SMRGLPrimitivePoly *)(((SMRGLPrimitivePoly *)primitive_array)->vertices + -2)
-                     )->base).base.type + primitive_stride);
+        primitive_array = (SMRGLPrimitiveQuad *)((char *)primitive_array + primitive_stride);
       } while (iVar3 < primitive_count);
     }
   }

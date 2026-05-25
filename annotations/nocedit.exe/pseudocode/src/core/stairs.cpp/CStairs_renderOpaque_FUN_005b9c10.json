@@ -1183,6 +1183,42 @@
       "type": "pointer_cast"
     },
     {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 125,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 133,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 142,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 151,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 211,
       "match": "MOVSD.REP",

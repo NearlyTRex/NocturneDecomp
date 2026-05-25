@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 6454
 Clean: 5962 (92.4%)
 With suspects: 492
-Total suspects: 2825
+Total suspects: 2840
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -34,7 +34,13 @@ core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
   Line 88 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (6 suspects)
+core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 (1 suspect)
+  File: core/dmodel.cpp
+====================================================================================================
+  Line 76 [pointer_cast]: iVar10 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
+
+====================================================================================================
+core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (7 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 27 [unrolled_strchr]: do {
@@ -42,6 +48,7 @@ core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (6 suspects)
   Line 82 [pointer_cast]: puVar2 = (uint *)((int)&pCVar5->z + iVar8);
   Line 83 [pointer_cast]: puVar3 = (uint *)((int)&pCVar5->y + iVar8);
   Line 84 [pointer_cast]: puVar1 = (uint *)((int)&pCVar5->x + iVar8);
+  Line 94 [pointer_cast]: iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
   Line 98 [pointer_cast]: *(uint *)((int)this_ptr->poly_texture_index_list + local_1c),
 
 ====================================================================================================
@@ -92,13 +99,15 @@ core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0 (1 suspect)
   Line 20 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (6 suspects)
+core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (8 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 56 [pointer_cast]: iVar3 = (int)&(((SMRGLPrimitiveQuad *)(model_ptr->poly_vert_list->vertices + -2))->base)
   Line 89 [unrolled_strcpy]: do {
   Line 112 [pointer_cast]: piVar4 = (int *)((int)model_ptr->poly_texture_index_list + iStack_2c);
   Line 118 [pointer_cast]: [*(int *)((int)model_ptr->poly_texture_index_list + iStack_2c)].textures[0]
+  Line 120 [pointer_cast]: iVar9 = (int)&(((SMRGLPrimitiveQuad *)(model_ptr->poly_vert_list->vertices + -2))->base).base.
   Line 150 [pointer_cast]: *(int *)((int)model_ptr->poly_texture_index_list + iStack_2c) = iVar5;
   Line 163 [unrolled_strcpy]: do {
 
@@ -118,9 +127,24 @@ core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (10 suspects)
   Line 97 [pointer_cast]: } while (iVar4 < *(int *)((int)pSVar4->vertices + local_24 + -0x14));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (1 suspect)
+core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 (2 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
+  Line 56 [pointer_cast]: ((void *)((int)&(((SMRGLPrimitiveQuad *)
+  Line 59 [pointer_cast]: (void *)((int)&(((SMRGLPrimitiveQuad *)
+
+====================================================================================================
+core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (2 suspects)
+  File: core/dmodel.cpp
+====================================================================================================
+  Line 72 [pointer_cast]: ((void *)((int)&(((SMRGLPrimitiveQuad *)
+  Line 75 [pointer_cast]: (void *)((int)&(((SMRGLPrimitiveQuad *)
+
+====================================================================================================
+core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (2 suspects)
+  File: core/dmodel.cpp
+====================================================================================================
+  Line 83 [pointer_cast]: iVar8 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).
   Line 150 [shadow_pointer_walk]: pSVar12 = (SMRGLPrimitiveQuad *)&(pSVar12->base).surface_normal.B;
 
 ====================================================================================================
@@ -861,11 +885,12 @@ core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0 (2 suspects
   Line 24 [unrolled_memcpy]: local_30.x = pCVar1->x;
 
 ====================================================================================================
-core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (4 suspects)
+core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (5 suspects)
   File: core/mirror.cpp
 ====================================================================================================
   Line 24 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->base).count;
   Line 48 [unrolled_memcpy]: (this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;
+  Line 57 [pointer_cast]: piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
   Line 63 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x + iVar1) =
   Line 70 [shadow_pointer_walk]: this_ptr = (CMirror *)&(this_ptr->reflection).corner1.y;
 
@@ -931,10 +956,11 @@ core_mobster.cpp_CMobster_process_FUN_00525840 (6 suspects)
   Line 565 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
-core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160 (1 suspect)
+core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (2 suspects)
   File: core/morph.cpp
 ====================================================================================================
-  Line 34 [pointer_cast]: ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.type +
+  Line 200 [pointer_cast]: iVar12 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
+  Line 203 [pointer_cast]: (iVar12 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex)
 
 ====================================================================================================
 core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (7 suspects)
@@ -1796,7 +1822,7 @@ core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0 (2 suspects)
   Line 18 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar2);
 
 ====================================================================================================
-core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (6 suspects)
+core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (7 suspects)
   File: core/setdir.cpp
 ====================================================================================================
   Line 37 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
@@ -1804,6 +1830,7 @@ core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (6 suspects)
   Line 55 [pointer_cast]: *(SMRGLHeaderPrimitive **)((int)aiStack_4c + iVar2) = primitives;
   Line 64 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2
   Line 83 [pointer_cast]: if ((*(byte *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
+  Line 86 [pointer_cast]: if (0 < *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
   Line 104 [pointer_cast]: puVar2 = (uint *)((int)aiStack_4c + iVar8);
 
 ====================================================================================================
@@ -2403,7 +2430,7 @@ core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70 (3 suspects)
   Line 67 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (83 suspects)
+core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (86 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -2462,6 +2489,9 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (83 suspec
   Line 930 [pointer_cast]: uStack_2d8 = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);
   Line 931 [pointer_cast]: uVar1 = *(ushort *)((int)puVar23 + 10);
   Line 987 [unrolled_strcpy]: do {
+  Line 1019 [pointer_cast]: local_c8 = (short *)((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).
+  Line 1027 [pointer_cast]: local_c0 = (short *)((int)&(this_ptr->tri_data_ptr[0]->
+  Line 1091 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0
   Line 1095 [pointer_cast]: uStack_2ec = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);
   Line 1096 [pointer_cast]: uVar1 = *(ushort *)((int)puVar23 + 10);
   Line 1147 [unrolled_memcpy]: for (uVar18 = uVar25 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
@@ -2553,11 +2583,14 @@ core_skeledit.cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0 (6 suspe
   Line 61 [pointer_cast]: local_28 = (float *)((int)local_28 + 1);
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (4 suspects)
+core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (7 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 38 [pointer_cast]: *(int *)(local_1c + (int)local_54->index_data_ptr[0])) {
+  Line 43 [pointer_cast]: psVar4 = (short *)((int)&(this_ptr->tri_data_ptr[local_50]->vertex_indices).
   Line 47 [pointer_cast]: *(short *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
+  Line 57 [pointer_cast]: ((void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).
+  Line 59 [pointer_cast]: (void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).
   Line 63 [pointer_cast]: (void *)(local_40 + (int)local_54->index_data_ptr[0]),
   Line 82 [shadow_pointer_walk]: local_54 = (CDeformableModel *)local_54->lod_info;
 
@@ -2677,6 +2710,13 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005
 ====================================================================================================
   Line 29 [static_invalid_pointer_cast]: (&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,
   Line 30 [static_invalid_pointer_cast]: (int *)local_24,&local_60);
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (2 suspects)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 131 [pointer_cast]: iVar10 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).
+  Line 165 [pointer_cast]: iVar10 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).
 
 ====================================================================================================
 core_sound.cpp_updateListeners_FUN_005b1870 (5 suspects)
@@ -3057,12 +3097,6 @@ core_weather.cpp_CWeather_update_FUN_005eeaf0 (8 suspects)
   Line 70 [pointer_cast]: local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);
 
 ====================================================================================================
-engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 (1 suspect)
-  File: engine/3d.c
-====================================================================================================
-  Line 116 [pointer_cast]: mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);
-
-====================================================================================================
 engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 (4 suspects)
   File: engine/alphabit.cpp
 ====================================================================================================
@@ -3230,13 +3264,6 @@ engine_clipper.c_interpolateVertexTopClip_FUN_00435d00 (6 suspects)
   Line 42 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->a;
   Line 45 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
   Line 50 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 (2 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 49 [pointer_cast]: ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
-  Line 102 [pointer_cast]: ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
 
 ====================================================================================================
 engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (2 suspects)
@@ -3498,19 +3525,6 @@ engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650 (2 suspects)
 ====================================================================================================
   Line 40 [unrolled_strcpy]: do {
   Line 51 [unrolled_strcpy]: do {
-
-====================================================================================================
-engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30 (1 suspect)
-  File: engine/keyframe.c
-====================================================================================================
-  Line 149 [pointer_cast]: ((int)&(((SMRGLPrimitiveTriangle *)(texture->vertices + -2))->base).base.type +
-
-====================================================================================================
-engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320 (2 suspects)
-  File: engine/keyframe.c
-====================================================================================================
-  Line 22 [pointer_cast]: ((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +
-  Line 52 [pointer_cast]: ((int)&(((SMRGLPrimitiveTriangle *)(primitive_list->vertices + -2))->base).base.type +
 
 ====================================================================================================
 engine_model.c_getMRGLBounds_FUN_00528140 (1 suspect)
@@ -4858,9 +4872,10 @@ shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00 (10 suspects)
   Line 142 [pointer_cast]: *(float *)((int)g_ModelPolygonData[0].uv_v + iVar7 + 4) =
 
 ====================================================================================================
-shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350 (3 suspects)
+shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350 (4 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
+  Line 38 [pointer_cast]: pCVar3 = (CPoly *)((int)&((CPoly *)(((this_ptr->base).poly_array)->uv_coords + -1))->
   Line 47 [pointer_cast]: bVar1 = *(byte *)((int)&pCVar3->flags + 1);
   Line 48 [pointer_cast]: *(byte *)((int)&pCVar3->flags + 1) = bVar1 | 0x80;
   Line 49 [pointer_cast]: *(byte *)((int)&pCVar3->flags + 1) = bVar1 & 0xdf | 0x80;

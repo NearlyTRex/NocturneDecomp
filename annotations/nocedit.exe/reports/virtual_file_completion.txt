@@ -7,8 +7,8 @@ SUMMARY
 Total virtual files: 214
 Total functions: 6454
 Clean functions: 5975 (92.6%)
-Files at 100%: 170
-Files at 90%+: 174
+Files at 100%: 172
+Files at 90%+: 175
 Files at 50%+: 213
 
 ====================================================================================================
@@ -124,7 +124,6 @@ FILES AT 100% (COMPLETE)
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
   core/simbox.cpp: 15 functions, 319 lines
-  core/skeleton.cpp: 117 functions, 5234 lines
   core/slew.cpp: 4 functions, 125 lines
   core/smiley.cpp: 16 functions, 833 lines
   core/sound.cpp: 37 functions, 1364 lines
@@ -152,12 +151,15 @@ FILES AT 100% (COMPLETE)
   core/xform.cpp: 61 functions, 2831 lines
   core/zombie.cpp: 32 functions, 2336 lines
   engine/2d.c: 76 functions, 1818 lines
+  engine/3d.c: 104 functions, 4591 lines
   engine/boss.c: 5 functions, 64 lines
   engine/colquant.c: 9 functions, 592 lines
   engine/console.cpp: 8 functions, 201 lines
   engine/dosio.cpp: 26 functions, 477 lines
+  engine/drender.cpp: 88 functions, 3032 lines
   engine/font.cpp: 49 functions, 2198 lines
   engine/ini.cpp: 18 functions, 453 lines
+  engine/keyframe.c: 5 functions, 417 lines
   engine/keys.cpp: 9 functions, 56 lines
   engine/light.cpp: 10 functions, 185 lines
   engine/matrix.c: 30 functions, 1091 lines
@@ -185,22 +187,18 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 170 files
+Total: 172 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   99.0% | engine/3d.c
-         103/104 clean, 1 remaining
-           - engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 (116 lines) [pointer_cast]
-
-   98.9% | engine/drender.cpp
-         87/88 clean, 1 remaining
-           - engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 (120 lines) [pointer_cast]
+   99.1% | core/skeleton.cpp
+         116/117 clean, 1 remaining
+           - core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (198 lines) [pointer_cast]
 
    98.0% | core/morph.cpp
          48/49 clean, 1 remaining
-           - core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160 (42 lines) [pointer_cast]
+           - core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (415 lines) [pointer_cast]
 
    91.7% | core/hero.cpp
          44/48 clean, 4 remaining
@@ -209,7 +207,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0 (70 lines) [pointer_cast, unrolled_memcpy]
            - core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 (68 lines) [unrolled_memcpy]
 
-Total: 4 files
+Total: 3 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -269,21 +267,6 @@ FILES AT 50-89%
            - core_mobster.cpp_CMobster_getTargetPoints_FUN_005278d0 (41 lines) [unrolled_memcpy]
            - core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20 (97 lines) [unrolled_memcpy]
            - core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (129 lines) [stack_alignment_array, warning_type_propagation]
-   80.3% | core/dmodel.cpp
-         53/66 clean, 13 remaining
-           - core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0 (54 lines) [unrolled_strcpy]
-           - core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (152 lines) [pointer_cast, unrolled_strchr]
-           - core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (130 lines) [pointer_cast, unrolled_memcpy]
-           - core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (100 lines) [pointer_cast, unrolled_strcpy]
-           - core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (114 lines) [pointer_cast, stack_alignment_array, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10 (116 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines) [unrolled_memcpy, warning_unreachable]
-           - core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (175 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (104 lines) [pointer_cast, unrolled_memcpy]
-           - core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (169 lines) [shadow_pointer_walk]
-           - core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 (143 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 (44 lines) [negative_offset]
-           - core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (59 lines) [pointer_cast]
    80.0% | core/tentacle.cpp
          12/15 clean, 3 remaining
            - core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 (45 lines) [missing_cave_copy, unrolled_memcpy]
@@ -388,6 +371,24 @@ FILES AT 50-89%
            - core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 (379 lines) [bit_int_float_compare]
            - core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680 (283 lines) [unrolled_memcpy]
            - core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 (260 lines) [unrolled_memcpy]
+   75.8% | core/dmodel.cpp
+         50/66 clean, 16 remaining
+           - core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0 (54 lines) [unrolled_strcpy]
+           - core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (152 lines) [pointer_cast, unrolled_strchr]
+           - core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (130 lines) [pointer_cast, unrolled_memcpy]
+           - core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (100 lines) [pointer_cast, unrolled_strcpy]
+           - core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (90 lines) [pointer_cast]
+           - core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (114 lines) [pointer_cast, stack_alignment_array, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 (114 lines) [pointer_cast]
+           - core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10 (116 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines) [unrolled_memcpy, warning_unreachable]
+           - core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (175 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (104 lines) [pointer_cast, unrolled_memcpy]
+           - core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 (74 lines) [pointer_cast]
+           - core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (169 lines) [pointer_cast, shadow_pointer_walk]
+           - core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 (143 lines) [pointer_cast]
+           - core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 (44 lines) [negative_offset]
+           - core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (59 lines) [pointer_cast]
    75.6% | core/setutil.cpp
          31/41 clean, 10 remaining
            - core_setutil.cpp_readAndParseLine_FUN_00585290 (48 lines) [unrolled_strcpy, unrolled_strlen]
@@ -698,10 +699,6 @@ FILES AT 50-89%
            - core_weather.cpp_CWeather_update_FUN_005eeaf0 (141 lines) [pointer_cast]
            - core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940 (69 lines) [pointer_cast, unrolled_memcpy]
            - core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 (83 lines) [unrolled_memcpy]
-   60.0% | engine/keyframe.c
-         3/5 clean, 2 remaining
-           - engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320 (55 lines) [pointer_cast]
-           - engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30 (150 lines) [pointer_cast]
    58.3% | core/glass.cpp
          14/24 clean, 10 remaining
            - core_glass.cpp_CGlass_ctor_FUN_004e9040 (61 lines) [unrolled_strcpy]
@@ -735,7 +732,7 @@ FILES AT 50-89%
            - engine_alphabit.cpp_copyBytes_FUN_00410d20 (21 lines) [pointer_cast, unrolled_memcpy]
            - engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (44 lines) [pointer_cast]
 
-Total: 39 files
+Total: 38 files
 
 ====================================================================================================
 FILES BELOW 50%

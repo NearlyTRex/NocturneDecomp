@@ -10,48 +10,30 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  engine/3d.c (1 remaining of 104)
-    - engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0
-      Suspects: pointer_cast
-
-  engine/drender.cpp (1 remaining of 88)
-    - engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00
-      Suspects: pointer_cast, pointer_cast
-
   core/morph.cpp (1 remaining of 49)
-    - core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160
-      Suspects: pointer_cast
-
-  engine/keyframe.c (2 remaining of 5)
-    - engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320
+    - core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
       Suspects: pointer_cast, pointer_cast
-    - engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
-      Suspects: pointer_cast
+
+  core/skeleton.cpp (1 remaining of 117)
+    - core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0
+      Suspects: pointer_cast, pointer_cast
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [pointer_cast] - 1 functions
-    core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160                    ( 42 lines)
-
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  engine/3d.c (99.0% complete)
+  core/skeleton.cpp (99.1% complete)
     1 functions remaining:
-      engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 (116 lines)
-        Types: ['pointer_cast']
-
-  engine/drender.cpp (98.9% complete)
-    1 functions remaining:
-      engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0048cf00 (120 lines)
+      core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (198 lines)
         Types: ['pointer_cast']
 
   core/morph.cpp (98.0% complete)
     1 functions remaining:
-      core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160 (42 lines)
+      core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (415 lines)
         Types: ['pointer_cast']
 
   core/hero.cpp (91.7% complete)
@@ -76,7 +58,6 @@ ALL REMAINING FILES
   engine/pod.cpp                                                82.4%  (28/34 clean, 6 remaining)
   shape/cramtex.cpp                                             81.0%  (17/21 clean, 4 remaining)
   core/mobster.cpp                                              80.8%  (21/26 clean, 5 remaining)
-  core/dmodel.cpp                                               80.3%  (53/66 clean, 13 remaining)
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
   core/manpuz.cpp                                               79.4%  (50/63 clean, 13 remaining)
   core/script.cpp                                               79.2%  (76/96 clean, 20 remaining)
@@ -86,6 +67,7 @@ ALL REMAINING FILES
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
   core/netgame.cpp                                              76.6%  (49/64 clean, 15 remaining)
   core/stranger.cpp                                             76.2%  (48/63 clean, 15 remaining)
+  core/dmodel.cpp                                               75.8%  (50/66 clean, 16 remaining)
   core/setutil.cpp                                              75.6%  (31/41 clean, 10 remaining)
   shape/superopt.cpp                                            75.3%  (140/186 clean, 46 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)

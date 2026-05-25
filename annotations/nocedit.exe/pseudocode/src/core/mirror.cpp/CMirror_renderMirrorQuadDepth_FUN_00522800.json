@@ -153,6 +153,33 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).inv_z + iVar2)",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 37,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 40,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_y",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_z",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

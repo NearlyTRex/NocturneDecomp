@@ -457,6 +457,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 98,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `point` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*point) + offsetof(subfield)` equals the real array stride. Replace `point->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 69,
       "match": "point = (T *)&point[N].SUBFIELD",

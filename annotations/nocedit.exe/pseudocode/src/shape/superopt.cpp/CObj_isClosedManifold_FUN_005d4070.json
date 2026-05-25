@@ -87,6 +87,15 @@
       "severity": "moderate",
       "text": "iVar4 = (int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->parent_obj + iVar3;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 24,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(iVar4,(int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
