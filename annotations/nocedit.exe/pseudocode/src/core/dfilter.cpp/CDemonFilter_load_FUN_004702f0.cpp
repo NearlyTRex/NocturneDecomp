@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
 void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_ptr,char *filename)
 
 {
@@ -16,7 +18,7 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
   int iVar4;
   char *pcVar4;
   char cVar1;
-
+  
   p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb");
   if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";

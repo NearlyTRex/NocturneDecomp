@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 537
+// Structs : 538
 
 #include "nocturne.h"
 
@@ -9131,6 +9131,12 @@ static_assert(__builtin_offsetof(SMotionTransition, tween_time) == 16,
               "offsetof(SMotionTransition, tween_time) != 16");
 static_assert(__builtin_offsetof(SMotionTransition, set_new_state_as_desired) == 20,
               "offsetof(SMotionTransition, set_new_state_as_desired) != 20");
+
+// ---- SMovieFrame (8192 bytes) ----
+static_assert(sizeof(SMovieFrame) == 8192,
+              "sizeof(SMovieFrame) != 8192");
+static_assert(__builtin_offsetof(SMovieFrame, pixels) == 0,
+              "offsetof(SMovieFrame, pixels) != 0");
 
 // ---- SMpegAllocationEntry (16 bytes) ----
 static_assert(sizeof(SMpegAllocationEntry) == 16,

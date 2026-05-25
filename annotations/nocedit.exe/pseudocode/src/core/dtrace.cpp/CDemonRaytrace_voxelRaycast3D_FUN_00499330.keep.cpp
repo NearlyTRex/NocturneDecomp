@@ -117,9 +117,10 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330(CDemonRay
     pCVar16 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
                         (this_ptr,local_30 / 8,local_2c / 8,local_24 / 8);
     if (pCVar16 != (CDemonCube *)0x0) {
-      if ((pCVar16->voxel_buffer1 != (SVoxelGrid *)0x0) &&
+      if (((0 <= local_24 && 0 <= local_2c) && 0 <= local_30) &&
+         ((pCVar16->voxel_buffer1 != (SVoxelGrid *)0x0) &&
          ((pCVar16->voxel_buffer1->voxels[local_24 % 8][local_2c % 8] &
-          g_VoxelYBitMasks[local_30 % 8]) != 0)) {
+          g_VoxelYBitMasks[local_30 % 8]) != 0))) {
         return 1;
       }
     }

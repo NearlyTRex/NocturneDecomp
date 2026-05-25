@@ -9,10 +9,10 @@
 void __cdecl core_dfilter_cpp_CFilterFX_free_FUN_00470700(CFilterFx *this_ptr)
 
 {
-  if (this_ptr->movie_data == (uchar *)0x0) {
+  if (this_ptr->movie_data == (SMovieFrame *)0x0) {
     return;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->movie_data,"..\\core\\dfilter.cpp",0x13f);
-  this_ptr->movie_data = (uchar *)0x0;
+  this_ptr->movie_data = (SMovieFrame *)0x0;
   return;
 }

@@ -11,20 +11,17 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr
 
 {
   CDemonFilter *pCVar1;
-  byte bVar5;
-  
-  bVar5 = 0;
+
   pCVar1 = core_dfilter_cpp_CFilterCache_findFilter_FUN_004701a0
                      (g_CFilterCachePtr,"movscrn.raw");
-  if ((pCVar1 != (CDemonFilter *)0x0) && (this_ptr->movie_data != (void *)0x0)) {
+  if ((pCVar1 != (CDemonFilter *)0x0) && (this_ptr->movie_data != (SMovieFrame *)0x0)) {
     this_ptr->current_frame =
-         (int)(g_CGamePtr->delta_time_float * (float)30 +
-              (float)this_ptr->current_frame);
-    if ((float)this_ptr->frame_count <= (float)this_ptr->current_frame) {
-      this_ptr->current_frame = 0;
+         g_CGamePtr->delta_time_float * (float)30 + this_ptr->current_frame;
+    if ((float)this_ptr->frame_count <= this_ptr->current_frame) {
+      this_ptr->current_frame = 0.0;
     }
     memcpy((char *)pCVar1->data_buffer + 0x1000,
-           (char *)this_ptr->movie_data + (int)ROUND(ROUND((float)this_ptr->current_frame)) * 0x2000,
+           &this_ptr->movie_data[(int)ROUND(ROUND(this_ptr->current_frame))],
            0x2000);
   }
   return;

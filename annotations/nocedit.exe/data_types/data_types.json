@@ -869,10 +869,6 @@
       "type":"struct"
     },
     {
-      "name":"CFilterFx",
-      "type":"struct"
-    },
-    {
       "name":"CFireEffect",
       "type":"struct"
     },
@@ -4155,6 +4151,14 @@
     {
       "name":"CSkeleton_ptr_169852",
       "type":"typedef"
+    },
+    {
+      "name":"SMovieFrame",
+      "type":"struct"
+    },
+    {
+      "name":"CFilterFx",
+      "type":"struct"
     },
     {
       "name":"SMpegAllocationEntry",
@@ -35545,13 +35549,13 @@
           "len":4,
           "name":"movie_data",
           "offset":4,
-          "type":"uchar*"
+          "type":"SMovieFrame*"
         },
         {
           "len":4,
           "name":"current_frame",
           "offset":8,
-          "type":"int"
+          "type":"float"
         }
       ],
       "importable":true,
@@ -57208,6 +57212,24 @@
       "importable":true,
       "len":24,
       "name":"SMotionTransition",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":8192,
+          "name":"pixels",
+          "offset":0,
+          "type":"uchar[8192]"
+        }
+      ],
+      "importable":true,
+      "len":8192,
+      "name":"SMovieFrame",
       "pack":false,
       "type":"struct"
     },

@@ -121,6 +121,7 @@
 #include "types/structs/SMotion.h"
 #include "types/structs/SMotionSignal.h"
 #include "types/structs/SMotionTransition.h"
+#include "types/structs/SMovieFrame.h"
 #include "types/structs/SMpegAllocationEntry.h"
 #include "types/structs/SMpegFrame.h"
 #include "types/structs/SMpegFrameDecodeContext.h"

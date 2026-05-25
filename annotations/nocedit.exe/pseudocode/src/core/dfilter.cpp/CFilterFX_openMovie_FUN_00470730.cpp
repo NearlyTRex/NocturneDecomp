@@ -40,10 +40,10 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_p
     _fread(this_ptr->movie_data,0x2000,this_ptr->frame_count,file);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\dfilter.cpp",0x168);
     for (iVar3 = 0; iVar3 < this_ptr->frame_count * 0x2000; iVar3 = iVar3 + 1) {
-      this_ptr->movie_data[iVar3] = (uchar)((uint)((int)(uint)this_ptr->movie_data[iVar3] >> 2) / 2)
-      ;
+      this_ptr->movie_data->pixels[iVar3] =
+           (uchar)((uint)((int)(uint)this_ptr->movie_data->pixels[iVar3] >> 2) / 2);
     }
-    this_ptr->current_frame = 0;
+    this_ptr->current_frame = 0.0;
     return;
   }
   this_ptr_00 = core_dfilter_cpp_CFilterCache_findFilter_FUN_004701a0
