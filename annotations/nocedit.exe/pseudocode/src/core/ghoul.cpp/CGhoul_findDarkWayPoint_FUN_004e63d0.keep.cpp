@@ -18,7 +18,6 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
   int iVar3;
   int iVar4;
   CVector3f CStack_30;
-  int local_1c;
   int local_18;
   float fVar1;
   
@@ -26,12 +25,11 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
      (fVar1 = this_ptr->heal_timer - delta_time, this_ptr->heal_timer = fVar1, fVar1 <= 0.0)) {
     fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(1.0,2.0);
     local_18 = 0;
-    local_1c = 0;
     this_ptr->heal_timer = fVar2 + this_ptr->heal_timer;
     for (; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
       this_ptr_00 = (CWayPoint *)
                     core_actor_cpp_castToClassHash_FUN_0040c790
-                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c),
+                              (g_CDemonSetPtr->actors[local_18],
                                g_CWayPointClassInfo.name_hash);
       if ((this_ptr_00 != (CWayPoint *)0x0) &&
          (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
@@ -65,7 +63,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
         }
       }
 LAB_004e646f:
-      local_1c = local_1c + 4;
+      ;
     }
   }
   return;

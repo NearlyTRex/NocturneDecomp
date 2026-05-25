@@ -4,11 +4,11 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1229 ( 43.4%)
-  unrolled_memcpy                  601 ( 21.2%)
+  pointer_cast                    1220 ( 43.2%)
+  unrolled_memcpy                  601 ( 21.3%)
   unrolled_strcpy                  237 (  8.4%)
   shadow_pointer_walk              113 (  4.0%)
-  missing_cave_copy                109 (  3.8%)
+  missing_cave_copy                109 (  3.9%)
   unrolled_strlen                   80 (  2.8%)
   carry_arith_idiom                 63 (  2.2%)
   raw_address_constant              43 (  1.5%)
@@ -35,14 +35,13 @@ SUSPECT TYPE COUNTS
   fast_sqrt_inline                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1229 occurrences)
+TYPE: pointer_cast (1220 occurrences)
 ====================================================================================================
 
 Unique patterns:
    484x  (int)&NAME used in byte-offset arithmetic
     36x  (int *)((int)this_ptr
     30x  (uint *)((int)this_ptr
-    17x  (CDemonActor **)((int)g_CDemonSetPtr
     16x  (int *)((int)g_ScreenBufferArray
     14x  (uint *)((int)g_ThumbnailImageBuffer
     13x  (int *)((int)pCVar1
@@ -52,6 +51,7 @@ Unique patterns:
     12x  (double *)((int)pdVar4
     11x  (int *)((int)pvVar35
     11x  (double *)((int)pdVar9
+    10x  (CDemonActor **)((int)g_CDemonSetPtr
     10x  (int *)((int)g_ModelPolygonData
     10x  (uint *)((int)pCVar1
      9x  (char *)((int)pSVar6
@@ -71,22 +71,15 @@ Functions:
   core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40
   core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0
   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
-  core_flies.cpp_drawFlyPixel_FUN_004cc230
   core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870
   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
   core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
-  core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
   core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
   core_hero.cpp_CHero_dtor_FUN_004f2470
   core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0
-  core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0
   core_hero.cpp_CHero_tryInteract_FUN_004f2af0
-  core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70
-  core_hero.cpp_CHero_tryPullLever_FUN_004f2f50
-  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004f3120
-  core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970
   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
@@ -102,7 +95,6 @@ Functions:
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0
-  core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330
   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
   core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40
   core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0
@@ -124,7 +116,6 @@ Functions:
   core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0
   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
   core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
-  core_scat.cpp_CScat_updateAiming_FUN_00558720
   core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090
   core_script.cpp_CCmdParse_bestParse_FUN_00561db0
   core_script.cpp_CScript_addEventXRef_FUN_00567510

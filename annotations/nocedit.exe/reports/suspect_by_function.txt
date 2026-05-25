@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5953 (92.2%)
-With suspects: 501
-Total suspects: 2834
+Clean: 5962 (92.4%)
+With suspects: 492
+Total suspects: 2825
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -197,12 +197,6 @@ core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 (5 suspects)
   Line 169 [pointer_cast]: *(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) +
 
 ====================================================================================================
-core_flies.cpp_drawFlyPixel_FUN_004cc230 (1 suspect)
-  File: core/flies.cpp
-====================================================================================================
-  Line 22 [pointer_cast]: puVar3 = (uint *)((int)g_ScreenBufferArray[screen_y] + screen_x * 4);
-
-====================================================================================================
 core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40 (5 suspects)
   File: core/frankgen.cpp
 ====================================================================================================
@@ -359,12 +353,6 @@ core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004e82d0 (1 suspect)
   File: core/ghoul.cpp
 ====================================================================================================
   Line 59 [unrolled_memcpy]: out_attract_position->x = pCVar4->x;
-
-====================================================================================================
-core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0 (1 suspect)
-  File: core/ghoul.cpp
-====================================================================================================
-  Line 29 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c),
 
 ====================================================================================================
 core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0 (2 suspects)
@@ -525,41 +513,11 @@ core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0 (3 suspects)
   Line 61 [unrolled_memcpy]: (this_ptr->target_orientation).vec.x = (pUVar4->vec).x;
 
 ====================================================================================================
-core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0 (1 suspect)
-  File: core/hero.cpp
-====================================================================================================
-  Line 33 [pointer_cast]: this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c);
-
-====================================================================================================
 core_hero.cpp_CHero_tryInteract_FUN_004f2af0 (2 suspects)
   File: core/hero.cpp
 ====================================================================================================
   Line 34 [pointer_cast]: iVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2);
   Line 38 [pointer_cast]: iVar4 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2);
-
-====================================================================================================
-core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70 (1 suspect)
-  File: core/hero.cpp
-====================================================================================================
-  Line 26 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_14),
-
-====================================================================================================
-core_hero.cpp_CHero_tryPullLever_FUN_004f2f50 (1 suspect)
-  File: core/hero.cpp
-====================================================================================================
-  Line 24 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
-
-====================================================================================================
-core_hero.cpp_CHero_tryPushNearbyBox_FUN_004f3120 (1 suspect)
-  File: core/hero.cpp
-====================================================================================================
-  Line 36 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
-
-====================================================================================================
-core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970 (1 suspect)
-  File: core/icepick.cpp
-====================================================================================================
-  Line 29 [pointer_cast]: this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
 
 ====================================================================================================
 core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20 (1 suspect)
@@ -1075,12 +1033,6 @@ core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220 (8 suspects)
   Line 95 [unrolled_strchr]: do {
 
 ====================================================================================================
-core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330 (1 suspect)
-  File: core/msnedit.cpp
-====================================================================================================
-  Line 22 [pointer_cast]: parent_class_00 = *(CDemonActorType **)((int)g_ActorClassRegistrations + iVar3);
-
-====================================================================================================
 core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370 (2 suspects)
   File: core/netgame.cpp
 ====================================================================================================
@@ -1475,12 +1427,6 @@ core_scat.cpp_CScat_updateAI_FUN_005578e0 (4 suspects)
   Line 69 [unrolled_memcpy]: local_3c.x = local_60.x;
   Line 135 [unrolled_memcpy]: local_3c.x = local_78.x;
   Line 141 [unrolled_memcpy]: local_3c.x = pCVar6->x;
-
-====================================================================================================
-core_scat.cpp_CScat_updateAiming_FUN_00558720 (1 suspect)
-  File: core/scat.cpp
-====================================================================================================
-  Line 69 [pointer_cast]: target = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4);
 
 ====================================================================================================
 core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (4 suspects)

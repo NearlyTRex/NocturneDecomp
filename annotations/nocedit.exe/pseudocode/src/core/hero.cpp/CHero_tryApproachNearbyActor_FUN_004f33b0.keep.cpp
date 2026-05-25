@@ -23,7 +23,6 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004f33b0(CHero *this_
   CVector3f local_3c;
   CVector3f local_30;
   int local_20;
-  int local_1c;
   CDemonActor *this_ptr_00;
   float fVar1;
   float fVar2;
@@ -34,9 +33,8 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004f33b0(CHero *this_
       return 1;
     }
     input_world_point_00 = &(this_ptr->base).base.location;
-    local_1c = 0;
     for (local_20 = 0; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
-      this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c);
+      this_ptr_00 = g_CDemonSetPtr->actors[local_20];
       local_60.x = (this_ptr_00->location).position.x - (input_world_point_00->position).x;
       local_60.z = (this_ptr_00->location).position.z - (this_ptr->base).base.location.position.z;
       if (((ABS((this_ptr_00->location).position.y - (this_ptr->base).base.location.position.y) <=
@@ -69,7 +67,6 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004f33b0(CHero *this_
           }
         }
       }
-      local_1c = local_1c + 4;
     }
   }
   return 0;

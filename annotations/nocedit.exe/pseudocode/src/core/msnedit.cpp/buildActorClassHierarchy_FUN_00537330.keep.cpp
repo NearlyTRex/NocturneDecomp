@@ -10,16 +10,14 @@
 void __cdecl core_msnedit_cpp_buildActorClassHierarchy_FUN_00537330(CStrList *class_list,CDemonActor *parent_class,int indent_level)
 
 {
-  int iVar3;
   char local_80 [100];
   int local_14;
   CDemonActorType *parent_class_00;
 
   local_14 = 0;
   if (0 < g_NumActorClassTypes) {
-    iVar3 = 0;
     do {
-      parent_class_00 = *(CDemonActorType **)((int)g_ActorClassRegistrations + iVar3);
+      parent_class_00 = g_ActorClassRegistrations[local_14];
       if (parent_class == (CDemonActor *)parent_class_00->parent_type) {
         memset(local_80,0x20,100);
         _sprintf
@@ -33,7 +31,6 @@ void __cdecl core_msnedit_cpp_buildActorClassHierarchy_FUN_00537330(CStrList *cl
                   (class_list,(CDemonActor *)parent_class_00,indent_level + 1);
       }
       local_14 = local_14 + 1;
-      iVar3 = iVar3 + 4;
     } while (local_14 < g_NumActorClassTypes);
   }
   return;

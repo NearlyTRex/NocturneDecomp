@@ -25,7 +25,7 @@ void __cdecl core_flies_cpp_drawFlyPixel_FUN_004cc230(int screen_x,int screen_y,
   int clamped;
 
   if ((g_ZBufferScanlineArray[screen_y][screen_x] < (uint)z_depth) && (g_BitsPerPixel == 0x20)) {
-    puVar3 = (uint *)((int)g_ScreenBufferArray[screen_y] + screen_x * 4);
+    puVar3 = (uint *)g_ScreenBufferArray[screen_y] + screen_x;
     dst = *puVar3;
     src = (uint)g_ActiveRenderColor;
     blend = g_FlyBlendColor;

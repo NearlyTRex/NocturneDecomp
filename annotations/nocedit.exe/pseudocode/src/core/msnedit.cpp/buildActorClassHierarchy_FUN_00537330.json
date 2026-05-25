@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 74,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 59,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 162
   },
   "cross_references": [
@@ -284,15 +282,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 22,
-      "match": "(CDemonActorType **)((int)g_ActorClassRegistrations",
-      "severity": "moderate",
-      "text": "parent_class_00 = *(CDemonActorType **)((int)g_ActorClassRegistrations + iVar3);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

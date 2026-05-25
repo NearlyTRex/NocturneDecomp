@@ -14,7 +14,6 @@ int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f8970(CIcePick *th
   CDemonActor *pCVar3;
   CTommyGun *pCVar4;
   int iVar4;
-  int iVar5;
   CVector3f local_34;
   CVector3f local_28;
   float local_1c;
@@ -29,9 +28,8 @@ int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f8970(CIcePick *th
   local_28.z = 2.0;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&local_34,&local_28);
-  iVar5 = 0;
   for (iVar4 = 0; iVar4 < g_CDemonSetPtr->actor_count; iVar4 = iVar4 + 1) {
-    this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
+    this_ptr_00 = g_CDemonSetPtr->actors[iVar4];
     pCVar3 = (*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
     if (pCVar3 == (CDemonActor *)0x0) {
       pCVar4 = (CTommyGun *)
@@ -47,7 +45,6 @@ int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f8970(CIcePick *th
         }
       }
     }
-    iVar5 = iVar5 + 4;
   }
   if (this_ptr->pending_pickup_target == (CDemonActor *)0x0) {
     return 0;
