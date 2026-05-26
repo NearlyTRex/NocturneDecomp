@@ -19,7 +19,7 @@ int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonA
   float fVar2;
   
   core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_6c);
-  local_6c.ray_type = 0;
+  local_6c.ray_query.ray_type = 0;
   EVar3 = (*((this_ptr->vtable)._ub)->getCollisionType)(this_ptr,&local_6c);
   if (EVar3 == COLLISION_TYPE_CYLINDER) {
     CStack_20.x = line_end->x - line_start->x;

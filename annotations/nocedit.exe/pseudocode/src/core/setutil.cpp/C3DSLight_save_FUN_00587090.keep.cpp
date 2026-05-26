@@ -10,8 +10,6 @@
 void __cdecl core_setutil_cpp_C3DSLight_save_FUN_00587090(C3DSLight *this_ptr,_FILE *file_ptr)
 
 {
-  C3DSLight *pCVar2;
-  C3DSLight *pCVar1;
   int iVar2;
   int iVar3;
   
@@ -41,14 +39,12 @@ void __cdecl core_setutil_cpp_C3DSLight_save_FUN_00587090(C3DSLight *this_ptr,_F
   _fprintf(file_ptr,"%d\n",this_ptr->filter_count);
   _fprintf(file_ptr,"blendFilter\n");
   _fprintf(file_ptr,"%d\n",this_ptr->blend_filter);
-  iVar2 = 0;
-  pCVar2 = this_ptr;
   if (0 < this_ptr->filter_count) {
+    iVar2 = 0;
     do {
-      _fprintf(file_ptr,"%f,%d,%s\n",(double)pCVar2->filter_durations[0],
-                 pCVar2->filter_indices[0],(char *)pCVar2->filter_names);
+      _fprintf(file_ptr,"%f,%d,%s\n",(double)this_ptr->filter_durations[iVar2],
+                 this_ptr->filter_indices[iVar2],(char *)this_ptr->filter_names[iVar2]);
       iVar2 = iVar2 + 1;
-      pCVar2 = (C3DSLight *)pCVar2->name;
     } while (iVar2 < this_ptr->filter_count);
   }
   _fprintf(file_ptr,"filterFrame\n");
@@ -60,23 +56,25 @@ void __cdecl core_setutil_cpp_C3DSLight_save_FUN_00587090(C3DSLight *this_ptr,_F
   _fprintf(file_ptr,"onTime, cycleTime\n");
   _fprintf(file_ptr,"%f,%f\n",(double)this_ptr->on_time,(double)this_ptr->cycle_time);
   _fprintf(file_ptr,"visible\n");
-  pCVar1 = this_ptr;
-  do {
-    pCVar1 = (C3DSLight *)((int)&pCVar1->light_type + 1);
-  } while (pCVar1 != (C3DSLight *)(this_ptr->name + 0xf6));
-  _fprintf(file_ptr,"%d\n",(int)(pCVar1 - this_ptr));
+  iVar2 = 0;
   iVar3 = 0;
   do {
-    if (this_ptr->visible_flags[0] != '\0') {
-      _fprintf(file_ptr,"%d,%d,%d,%d,%d\n",
-               (int)this_ptr->visible_flags[0],
-               this_ptr->camera_light_bounds[0].x_min,
-               this_ptr->camera_light_bounds[0].x_max,
-               this_ptr->camera_light_bounds[0].y_min,
-               this_ptr->camera_light_bounds[0].y_max);
+    if (this_ptr->visible_flags[iVar3] != '\0') {
+      iVar2 = iVar2 + 1;
     }
     iVar3 = iVar3 + 1;
-    this_ptr = (C3DSLight *)((int)&this_ptr->light_type + 1);
+  } while (iVar3 < 0xfa);
+  _fprintf(file_ptr,"%d\n",iVar2);
+  iVar3 = 0;
+  do {
+    if (this_ptr->visible_flags[iVar3] != '\0') {
+      _fprintf(file_ptr,"%d,%d,%d,%d,%d\n",iVar3,
+               this_ptr->camera_light_bounds[iVar3].x_min,
+               this_ptr->camera_light_bounds[iVar3].x_max,
+               this_ptr->camera_light_bounds[iVar3].y_min,
+               this_ptr->camera_light_bounds[iVar3].y_max);
+    }
+    iVar3 = iVar3 + 1;
   } while (iVar3 < 0xfa);
   return;
 }

@@ -35,9 +35,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CD
     local_20.x = pCVar3->x + position->x;
     local_20.y = pCVar3->y + position->y;
     local_20.z = pCVar3->z + position->z;
-    local_1e8[corner_index].x = local_20.x;
-    local_1e8[corner_index].y = local_20.y;
-    local_1e8[corner_index].z = local_20.z;
+    local_1e8[corner_index] = local_20;
     corner_index = corner_index + 1;
   } while ((int)corner_index < 8);
   fVar1 = cylinder->closest_t;

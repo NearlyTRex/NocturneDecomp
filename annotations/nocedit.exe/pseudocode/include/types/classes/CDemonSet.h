@@ -17,6 +17,7 @@ struct CMirror;
 #include "types/classes/CWayPoint.h"
 #include "types/enums/EWeatherType.h"
 #include "types/structs/SFog.h"
+#include "types/structs/SRayQueryState.h"
 #include "types/structs/SRoom.h"
 #include "types/structs/SVDBox.h"
 
@@ -91,9 +92,7 @@ typedef struct CDemonSet {
     int vdir_box_count; // 0x15b410
     SVDBox vdir_boxes[250]; // 0x15b414
     int default_ground_type; // 0x15f67c
-    int ray_type; // 0x15f680
-    int laser_type; // 0x15f684
-    CColor3i laser_color; // 0x15f688
+    SRayQueryState ray_query; // 0x15f680
     int ignore_list_count; // 0x15f694
     int collision_flag; // 0x15f698
     struct CDemonActor* ignore_list[10]; // 0x15f69c

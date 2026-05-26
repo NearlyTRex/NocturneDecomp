@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 305,
-    "complexity_score": 108,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 28,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 83,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 388
   },
   "cross_references": [
@@ -288,6 +286,26 @@
     },
     "pcode_op_count": 947
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 46,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3->x = pCVar2->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 50,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->fog).height_threshold = (pCVar1->scene_fog).height_threshold;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 284,
     "local_size": 276,
@@ -326,7 +344,7 @@
         {
           "check_id": "invalidscanf",
           "column": 3,
-          "line": 23,
+          "line": 20,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         }
@@ -335,22 +353,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 46,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar3->x = pCVar2->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 50,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->fog).height_threshold = (pCVar1->scene_fog).height_threshold;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

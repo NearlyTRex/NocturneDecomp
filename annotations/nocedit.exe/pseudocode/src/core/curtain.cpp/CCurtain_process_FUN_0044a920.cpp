@@ -123,7 +123,7 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,f
           CVector3f_ARRAY_008879c0[iVar8].y = *(float *)(iVar2 + 0x24);
           CVector3f_ARRAY_008879c0[iVar8].z = *(float *)(iVar2 + 0x28);
         }
-        pSVar11->ray_type = 0;
+        (pSVar11->ray_query).ray_type = 0;
         iVar7 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x34))(iVar2,pSVar11);
         if (((iVar7 == 2) && (*(float *)(iVar2 + 0x24) <= local_78)) &&
            ((local_a8 <=

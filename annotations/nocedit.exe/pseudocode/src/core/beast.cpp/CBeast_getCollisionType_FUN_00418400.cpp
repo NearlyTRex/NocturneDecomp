@@ -9,7 +9,7 @@
 ECollisionType __cdecl core_beast_cpp_CBeast_getCollisionType_FUN_00418400(CBeast *this_ptr,SCollisionInfo *collision_info)
 
 {
-  if (collision_info->ray_type != 1) {
+  if ((collision_info->ray_query).ray_type != 1) {
     return COLLISION_TYPE_NONE;
   }
   collision_info->deformable_model = &(this_ptr->base).base.model;

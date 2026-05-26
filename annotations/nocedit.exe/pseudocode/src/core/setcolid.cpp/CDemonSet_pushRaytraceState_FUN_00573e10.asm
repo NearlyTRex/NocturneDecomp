@@ -19,10 +19,10 @@
 ;   int g_CurrentLineNumber
 ;   int g_RaytraceStateStackDepth
 ;   SRaytraceState[5] g_RaytraceStateStack
-;   undefined4 g_RaytraceStateStack[0].laser_type
-;   undefined4 g_RaytraceStateStack[0].laser_color.r
-;   undefined4 g_RaytraceStateStack[0].laser_color.g
-;   undefined4 g_RaytraceStateStack[0].laser_color.b
+;   undefined4 g_RaytraceStateStack[0].ray_query.laser_type
+;   undefined4 g_RaytraceStateStack[0].ray_query.laser_color.r
+;   undefined4 g_RaytraceStateStack[0].ray_query.laser_color.g
+;   undefined4 g_RaytraceStateStack[0].ray_query.laser_color.b
 ;   undefined4 g_RaytraceStateStack[0].ignore_list_count
 ;   undefined4 g_RaytraceStateStack[0].collision_flag
 ;   undefined4 g_RaytraceStateStack[0].ignore_list[0]
@@ -56,14 +56,14 @@ section .text
     MOV EAX,dword ptr [EBX + 0x15f680]  ; 00573e3e
     MOV dword ptr [EDI],EAX             ; 00573e44 | g_RaytraceStateStack
     MOV EAX,dword ptr [EBX + 0x15f684]  ; 00573e46
-    MOV dword ptr [EDI + 0x4],EAX       ; 00573e4c | g_RaytraceStateStack[0].laser_type
+    MOV dword ptr [EDI + 0x4],EAX       ; 00573e4c | g_RaytraceStateStack[0].ray_query.laser_type
     MOV EAX,dword ptr [EBX + 0x15f688]  ; 00573e4f
-    MOV dword ptr [EDI + 0x8],EAX       ; 00573e55 | g_RaytraceStateStack[0].laser_color.r
+    MOV dword ptr [EDI + 0x8],EAX       ; 00573e55 | g_RaytraceStateStack[0].ray_query.laser_color.r
     MOV EAX,dword ptr [EBX + 0x15f68c]  ; 00573e58
-    MOV dword ptr [EDI + 0xc],EAX       ; 00573e5e | g_RaytraceStateStack[0].laser_color.g
+    MOV dword ptr [EDI + 0xc],EAX       ; 00573e5e | g_RaytraceStateStack[0].ray_query.laser_color.g
     MOV EAX,dword ptr [EBX + 0x15f690]  ; 00573e61
     XOR ECX,ECX                         ; 00573e67
-    MOV dword ptr [EDI + 0x10],EAX      ; 00573e69 | g_RaytraceStateStack[0].laser_color.b
+    MOV dword ptr [EDI + 0x10],EAX      ; 00573e69 | g_RaytraceStateStack[0].ray_query.laser_color.b
     LEA EBP,[EDX + 0x1]                 ; 00573e6c
     MOV EAX,dword ptr [EBX + 0x15f694]  ; 00573e6f
     MOV dword ptr [0x033469ec],EBP      ; 00573e75 | g_RaytraceStateStackDepth

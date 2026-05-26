@@ -36,7 +36,6 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDe
   CVector3f CStack_68;
   CVector3f CStack_5c;
   CVector3f aCStack_50 [4];
-  CDemonSet *local_18;
   int local_14;
   float fVar5;
   float fVar7;
@@ -78,16 +77,11 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDe
       local_98.max.z = local_98.max.z + local_14c.dir_z;
     }
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_f0);
-    local_f0.ray_type = this_ptr->ray_type;
-    local_f0.laser_type = this_ptr->laser_type;
-    local_f0.laser_color.r = (this_ptr->laser_color).r;
-    local_f0.laser_color.g = (this_ptr->laser_color).g;
-    local_f0.laser_color.b = (this_ptr->laser_color).b;
+    local_f0.ray_query = this_ptr->ray_query;
     local_14 = 0;
     if (0 < this_ptr->collidable_actor_count) {
-      local_18 = this_ptr;
       do {
-        actor = local_18->collidable_actors[0];
+        actor = this_ptr->collidable_actors[local_14];
         pCVar8 = (CDeformableModelInstance *)
                  core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,actor);
         if ((pCVar8 == (CDeformableModelInstance *)0x0) &&
@@ -197,9 +191,7 @@ LAB_00573d6f:
                   pCVar11 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                                       (actor,aCStack_50,&SStack_1a8.push_normal);
                   if (&local_14c.push_normal != pCVar11) {
-                    local_14c.push_normal.x = pCVar11->x;
-                    local_14c.push_normal.y = pCVar11->y;
-                    local_14c.push_normal.z = pCVar11->z;
+                    local_14c.push_normal = *pCVar11;
                   }
                   this_ptr->collision_actor = actor;
                 }
@@ -224,9 +216,7 @@ LAB_00573d6f:
                         (this_ptr_00,0,&SStack_204,&(actor->orient).vec);
               if (SStack_204.closest_t < local_14c.closest_t) {
                 if (&local_14c.push_normal != &SStack_204.push_normal) {
-                  local_14c.push_normal.x = SStack_204.push_normal.x;
-                  local_14c.push_normal.y = SStack_204.push_normal.y;
-                  local_14c.push_normal.z = SStack_204.push_normal.z;
+                  local_14c.push_normal = SStack_204.push_normal;
                 }
                 this_ptr->collision_actor = actor;
                 local_14c.closest_t = SStack_204.closest_t;
@@ -234,7 +224,6 @@ LAB_00573d6f:
             }
           }
         }
-        local_18 = (CDemonSet *)local_18->cameras;
         local_14 = local_14 + 1;
       } while (local_14 < this_ptr->collidable_actor_count);
     }
@@ -255,9 +244,7 @@ LAB_00573d6f:
       local_14c.push_normal.z = 0.0;
     }
     if (&this_ptr->collision_normal != &local_14c.push_normal) {
-      (this_ptr->collision_normal).x = local_14c.push_normal.x;
-      (this_ptr->collision_normal).y = local_14c.push_normal.y;
-      (this_ptr->collision_normal).z = local_14c.push_normal.z;
+      this_ptr->collision_normal = local_14c.push_normal;
       return local_14c.closest_t;
     }
   }

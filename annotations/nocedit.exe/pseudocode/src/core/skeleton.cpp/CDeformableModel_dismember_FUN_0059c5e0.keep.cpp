@@ -26,11 +26,12 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
   int iVar13;
   int local_30;
   int local_2c;
-  int local_1c;
   int local_18;
   int local_14;
   SInputFace *pSVar2;
   ushort *puVar1;
+  SMRGLPrimitiveTriangle *pFace;
+  SMRGLVertex *pVtx;
   
   if (body_part_ptr != (CBodyPart *)0x0) {
     if (this_ptr->lod_info[lod_index].shadow_only_flag != 0) {
@@ -109,23 +110,21 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::dismember - Hell froze 1!");
     }
     if (local_2c < iVar8) {
-      iVar13 = local_14 * 0x3c;
       iVar5 = local_2c;
       do {
-        iVar10 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).
-                       base.type + iVar13;
+        pFace = &body_part_ptr->faces[local_14];
         puVar11 = &this_ptr->tri_data_ptr[lod_index][iVar5].vertex_indices.vertex_index_0;
-        *(uint *)(iVar10 + 4) = 3;
+        pFace->base.base.count = 3;
         puVar10 = puVar11 + 3;
+        pVtx = pFace->vertices;
         do {
-          *(int *)(iVar10 + 0x18) = g_VertexRemapTable[*puVar11];
-          *(uint *)(iVar10 + 0x1c) = (uint)puVar11[3] << 8;
+          pVtx->vertex_index = g_VertexRemapTable[*puVar11];
+          pVtx->texture_u = (uint)puVar11[3] << 8;
           puVar1 = puVar11 + 6;
           puVar11 = puVar11 + 1;
-          *(uint *)(iVar10 + 0x20) = (uint)*puVar1 << 8;
-          iVar10 = iVar10 + 0xc;
+          pVtx->texture_v = (uint)*puVar1 << 8;
+          pVtx = pVtx + 1;
         } while (puVar11 != puVar10);
-        iVar13 = iVar13 + 0x3c;
         iVar10 = core_bodypart_cpp_CBodyPart_addTexture_FUN_0041af90
                            (body_part_ptr,
                             this_ptr->texture_sets[texture_set_index].textures
@@ -137,21 +136,20 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
       } while (iVar5 < iVar8);
     }
     if (local_30 < iVar12) {
-      local_1c = local_14 * 0x3c;
       iVar13 = local_30;
       do {
-        iVar10 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).
-                       base.type + local_1c;
+        pFace = &body_part_ptr->faces[local_14];
         puVar5 = &this_ptr->tri_data_ptr[lod_index][iVar13].vertex_indices.vertex_index_0;
-        *(uint *)(iVar10 + 4) = 3;
+        pFace->base.base.count = 3;
         puVar11 = puVar5 + 3;
+        pVtx = pFace->vertices;
         do {
-          *(int *)(iVar10 + 0x18) = g_VertexRemapTable[*puVar5];
-          *(uint *)(iVar10 + 0x1c) = (uint)puVar5[3] << 8;
+          pVtx->vertex_index = g_VertexRemapTable[*puVar5];
+          pVtx->texture_u = (uint)puVar5[3] << 8;
           puVar2 = puVar5 + 6;
           puVar5 = puVar5 + 1;
-          *(uint *)(iVar10 + 0x20) = (uint)*puVar2 << 8;
-          iVar10 = iVar10 + 0xc;
+          pVtx->texture_v = (uint)*puVar2 << 8;
+          pVtx = pVtx + 1;
         } while (puVar5 != puVar11);
         iVar10 = core_bodypart_cpp_CBodyPart_addTexture_FUN_0041af90
                            (body_part_ptr,
@@ -159,7 +157,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
                             [this_ptr->index_data_ptr[lod_index][iVar13]].textures[0].
                             texture_name);
         body_part_ptr->face_texture_indices[local_14] = iVar10;
-        local_1c = local_1c + 0x3c;
         iVar13 = iVar13 + 1;
         local_14 = local_14 + 1;
       } while (iVar13 < iVar12);

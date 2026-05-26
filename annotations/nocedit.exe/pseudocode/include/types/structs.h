@@ -174,6 +174,7 @@
 #include "types/structs/SRA4HQPoint.h"
 #include "types/structs/SRGBColor.h"
 #include "types/structs/SRGBColorPalette.h"
+#include "types/structs/SRayQueryState.h"
 #include "types/structs/SRaytraceState.h"
 #include "types/structs/SRecordingDeviceInfo.h"
 #include "types/structs/SReflector.h"

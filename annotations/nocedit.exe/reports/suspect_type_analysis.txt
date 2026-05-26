@@ -4,22 +4,22 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1239 ( 44.2%)
-  unrolled_memcpy                  576 ( 20.6%)
-  unrolled_strcpy                  237 (  8.5%)
-  shadow_pointer_walk              113 (  4.0%)
-  missing_cave_copy                109 (  3.9%)
-  unrolled_strlen                   80 (  2.9%)
-  carry_arith_idiom                 63 (  2.2%)
-  raw_address_constant              43 (  1.5%)
-  bitcast_double_pair               42 (  1.5%)
+  pointer_cast                    1220 ( 45.1%)
+  unrolled_memcpy                  523 ( 19.3%)
+  unrolled_strcpy                  232 (  8.6%)
+  missing_cave_copy                109 (  4.0%)
+  shadow_pointer_walk              105 (  3.9%)
+  unrolled_strlen                   74 (  2.7%)
+  carry_arith_idiom                 63 (  2.3%)
+  raw_address_constant              43 (  1.6%)
+  bitcast_double_pair               42 (  1.6%)
   unrolled_strchr                   38 (  1.4%)
-  static_uninitvar                  37 (  1.3%)
-  warning_inlined_function          34 (  1.2%)
+  static_uninitvar                  37 (  1.4%)
   unrolled_memset                   33 (  1.2%)
+  warning_inlined_function          30 (  1.1%)
   bit_int_float_compare             27 (  1.0%)
   static_legacy_uninitvar           23 (  0.8%)
-  warning_type_propagation          15 (  0.5%)
+  warning_type_propagation          15 (  0.6%)
   stack_alignment_array             13 (  0.5%)
   static_invalid_pointer_cast       12 (  0.4%)
   warning_unreachable               11 (  0.4%)
@@ -35,14 +35,14 @@ SUSPECT TYPE COUNTS
   fast_sqrt_inline                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1239 occurrences)
+TYPE: pointer_cast (1220 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   477x  (int)&NAME used in byte-offset arithmetic
+   463x  (int)&NAME used in byte-offset arithmetic
     36x  (int *)((int)this_ptr
-    28x  (uint *)((int)this_ptr
-    22x  (int)&NAME byte-offset arithmetic split across lines
+    27x  (uint *)((int)this_ptr
+    18x  (int)&NAME byte-offset arithmetic split across lines
     16x  (int *)((int)g_ScreenBufferArray
     14x  (uint *)((int)g_ThumbnailImageBuffer
     13x  (int *)((int)pCVar1
@@ -95,7 +95,6 @@ Functions:
   core_mimic.cpp_CMimic_updatePose_FUN_0051f930
   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
   core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
-  core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0
@@ -155,9 +154,6 @@ Functions:
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
   core_setedit.cpp_renderBackdropImage_FUN_0057ce80
   core_setedit.cpp_renderColoredBox_FUN_005817d0
-  core_setutil.cpp_C3DSLight_load_FUN_00586310
-  core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50
-  core_setutil.cpp_C3DSLight_save_FUN_00587090
   core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
   core_skeledit.cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30
   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
@@ -179,7 +175,6 @@ Functions:
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
   core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260
-  core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0
   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0
   core_trigger.cpp_CTrigger_process_FUN_005dfac0
   core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0
@@ -317,11 +312,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (576 occurrences)
+TYPE: unrolled_memcpy (523 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   406x  field-by-field struct copy
+   353x  field-by-field struct copy
     85x  for (...; != 0; ... + -1)
     83x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -394,18 +389,6 @@ Functions:
   core_script.cpp_CScript_extractCrossReferences_FUN_005671a0
   core_script.cpp_CScript_parseCommand_FUN_00567080
   core_script.cpp_parseCommandWithTemplates_FUN_00561690
-  core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440
-  core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00572800
-  core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
-  core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0
-  core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
-  core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10
-  core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340
-  core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
-  core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
-  core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
-  core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
-  core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005744d0
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910
   core_setdir.cpp_testOBBIntersection_FUN_005763a0
@@ -422,10 +405,6 @@ Functions:
   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0
   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
-  core_setutil.cpp_C3DSCamera_apply_FUN_00585870
-  core_setutil.cpp_C3DSCamera_load_FUN_00585420
-  core_setutil.cpp_C3DSLight_apply_FUN_00586bf0
-  core_setutil.cpp_C3DSLight_create_FUN_00586a90
   core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
   core_skeledit.cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
@@ -510,11 +489,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (237 occurrences)
+TYPE: unrolled_strcpy (232 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   237x  do {
+   232x  do {
 
 Functions:
   core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810
@@ -559,11 +538,6 @@ Functions:
   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940
   core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0
   core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
-  core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
-  core_setutil.cpp_C3DSLight_apply_FUN_00586bf0
-  core_setutil.cpp_C3DSLight_create_FUN_00586a90
-  core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
-  core_setutil.cpp_readAndParseLine_FUN_00585290
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70
@@ -609,107 +583,6 @@ Functions:
   shape_design.c_writePolygonModel_FUN_0045a320
   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
-
-====================================================================================================
-TYPE: shadow_pointer_walk (113 occurrences)
-====================================================================================================
-
-Unique patterns:
-     7x  pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)
-     6x  pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD
-     6x  pCVar4 = (T *)pCVar4->ARRAY
-     6x  pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)
-     4x  local_18 = (T *)local_18->ARRAY
-     3x  pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD
-     3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
-     2x  pCVar7 = (T *)((int)(pCVar7 + N) + M)
-     2x  pCVar8 = (T *)&pCVar8->FIELD[N].SUBFIELD
-     2x  local_18 = (T *)&local_18->FIELD[N].SUBFIELD
-     2x  pCVar10 = (T *)pCVar10->ARRAY
-     2x  pCVar2 = (T *)pCVar2->ARRAY
-     2x  pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)
-     2x  pCVar6 = (T *)((int)&(pCVar6->FIELD).SUBFIELD + CONST)
-     2x  this_ptr = (T *)((int)&(this_ptr->FIELD).SUBFIELD + CONST)
-     2x  pSVar3 = (T *)pSVar3->ARRAY
-     2x  pSVar4 = (T *)pSVar4->ARRAY
-     2x  pCVar5 = (T *)((int)&(pCVar5->FIELD).SUBFIELD + CONST)
-     1x  local_3c = (T *)local_3c->ARRAY
-     1x  pCVar1 = (T *)pCVar1->ARRAY
-
-Functions:
-  core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
-  core_flies.cpp_CFlies_process_FUN_004cbf00
-  core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
-  core_glass.cpp_CGlass_renderBackground_FUN_004e9e90
-  core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
-  core_glass.cpp_CGlass_renderOpaque_FUN_004e9930
-  core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0
-  core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
-  core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_005097e0
-  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
-  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
-  core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
-  core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
-  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
-  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
-  core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
-  core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
-  core_netgame.cpp_CNetGame_runLobby_FUN_00541390
-  core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-  core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0
-  core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
-  core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0
-  core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
-  core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
-  core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0
-  core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
-  core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10
-  core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
-  core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
-  core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600
-  core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910
-  core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
-  core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0
-  core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0
-  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0
-  core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
-  core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
-  core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0
-  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
-  core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
-  core_setutil.cpp_C3DSLight_create_FUN_00586a90
-  core_setutil.cpp_C3DSLight_save_FUN_00587090
-  core_skeledit.cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-  core_skeledit.cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-  core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0
-  core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60
-  core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
-  core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  core_texlist.cpp_CTextureList_load_FUN_005dbe00
-  core_texlist.cpp_CTextureList_save_FUN_005dc0d0
-  core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280
-  core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
-  engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0
-  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
-  shape_design.c_removeDegeneratePolygons_FUN_00465310
-  shape_design.c_removeDegenerateTriangles_FUN_00463a20
-  shape_design.c_removeDuplicatePolygons_FUN_004651b0
-  shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
-  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
-  shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
-  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
-  shape_superopt.cpp_CP3D_add1_FUN_005d8520
-  shape_superopt.cpp_CP3D_add2_FUN_005d85a0
-  shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
-  shape_superopt.cpp_CP3D_scale_FUN_005d8630
-  shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
-  shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
 
 ====================================================================================================
 TYPE: missing_cave_copy (109 occurrences)
@@ -760,11 +633,104 @@ Functions:
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
 
 ====================================================================================================
-TYPE: unrolled_strlen (80 occurrences)
+TYPE: shadow_pointer_walk (105 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    80x  do { if (v==0) break; v=v-1; ... }
+     7x  pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)
+     6x  pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD
+     6x  pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)
+     3x  pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD
+     3x  pCVar4 = (T *)pCVar4->ARRAY
+     3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
+     2x  pCVar7 = (T *)((int)(pCVar7 + N) + M)
+     2x  pCVar8 = (T *)&pCVar8->FIELD[N].SUBFIELD
+     2x  local_18 = (T *)&local_18->FIELD[N].SUBFIELD
+     2x  pCVar10 = (T *)pCVar10->ARRAY
+     2x  pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)
+     2x  local_18 = (T *)local_18->ARRAY
+     2x  pCVar6 = (T *)((int)&(pCVar6->FIELD).SUBFIELD + CONST)
+     2x  this_ptr = (T *)((int)&(this_ptr->FIELD).SUBFIELD + CONST)
+     2x  pSVar3 = (T *)pSVar3->ARRAY
+     2x  pSVar4 = (T *)pSVar4->ARRAY
+     2x  pCVar5 = (T *)((int)&(pCVar5->FIELD).SUBFIELD + CONST)
+     1x  local_3c = (T *)local_3c->ARRAY
+     1x  pCVar1 = (T *)pCVar1->ARRAY
+     1x  local_4c = (T *)local_4c->ARRAY
+
+Functions:
+  core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
+  core_flies.cpp_CFlies_process_FUN_004cbf00
+  core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
+  core_glass.cpp_CGlass_renderBackground_FUN_004e9e90
+  core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
+  core_glass.cpp_CGlass_renderOpaque_FUN_004e9930
+  core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0
+  core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
+  core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_005097e0
+  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
+  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
+  core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
+  core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
+  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
+  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
+  core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
+  core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
+  core_netgame.cpp_CNetGame_runLobby_FUN_00541390
+  core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
+  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
+  core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0
+  core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
+  core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0
+  core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
+  core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600
+  core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910
+  core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
+  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
+  core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0
+  core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0
+  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0
+  core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
+  core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
+  core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+  core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
+  core_skeledit.cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200
+  core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
+  core_skeledit.cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
+  core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0
+  core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60
+  core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
+  core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  core_texlist.cpp_CTextureList_load_FUN_005dbe00
+  core_texlist.cpp_CTextureList_save_FUN_005dc0d0
+  core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280
+  core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
+  engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0
+  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
+  shape_design.c_removeDegeneratePolygons_FUN_00465310
+  shape_design.c_removeDegenerateTriangles_FUN_00463a20
+  shape_design.c_removeDuplicatePolygons_FUN_004651b0
+  shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
+  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
+  shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
+  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
+  shape_superopt.cpp_CP3D_add1_FUN_005d8520
+  shape_superopt.cpp_CP3D_add2_FUN_005d85a0
+  shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
+  shape_superopt.cpp_CP3D_scale_FUN_005d8630
+  shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
+  shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
+
+====================================================================================================
+TYPE: unrolled_strlen (74 occurrences)
+====================================================================================================
+
+Unique patterns:
+    74x  do { if (v==0) break; v=v-1; ... }
 
 Functions:
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
@@ -775,9 +741,6 @@ Functions:
   core_script.cpp_parseConditionExpression_FUN_00561a30
   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0
   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
-  core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
-  core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
-  core_setutil.cpp_readAndParseLine_FUN_00585290
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
   core_texlist.cpp_CTextureList_load_FUN_005dbe00
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
@@ -920,48 +883,6 @@ Functions:
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 
 ====================================================================================================
-TYPE: warning_inlined_function (34 occurrences)
-====================================================================================================
-
-Unique patterns:
-    34x  WARNING: Inlined function:
-
-Functions:
-  core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10
-  core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
-  core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
-  core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600
-  core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
-  core_glass.cpp_CGlass_setup_FUN_004e9180
-  core_menu.cpp_configureSoundOptions_FUN_00511e50
-  core_netgame.cpp_CNetGame_runLobby_FUN_00541390
-  core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
-  core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50
-  core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
-  core_setutil.cpp_C3DSLight_apply_FUN_00586bf0
-  core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-  core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790
-  core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  shape_design.c_cramTextureList_FUN_0046bb80
-  shape_design.c_createKeyframeModel_FUN_00468320
-  shape_design.c_exportModelToBIN_FUN_0045aa80
-  shape_design.c_loadTextureData_FUN_0046b060
-  shape_design.c_renderSinglePolygon_FUN_0045ce20
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0
-  shape_design.c_tileTextureMaps_FUN_0046a180
-  shape_design.c_writePolygonModel_FUN_0045a320
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-  shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
-  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
-  shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
-  shape_quantize.cpp_displayProgressBar_FUN_005568f0
-
-====================================================================================================
 TYPE: unrolled_memset (33 occurrences)
 ====================================================================================================
 
@@ -984,6 +905,45 @@ Functions:
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
   shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+
+====================================================================================================
+TYPE: warning_inlined_function (30 occurrences)
+====================================================================================================
+
+Unique patterns:
+    30x  WARNING: Inlined function:
+
+Functions:
+  core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10
+  core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
+  core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
+  core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
+  core_glass.cpp_CGlass_setup_FUN_004e9180
+  core_menu.cpp_configureSoundOptions_FUN_00511e50
+  core_netgame.cpp_CNetGame_runLobby_FUN_00541390
+  core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
+  core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
+  core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790
+  core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  shape_design.c_cramTextureList_FUN_0046bb80
+  shape_design.c_createKeyframeModel_FUN_00468320
+  shape_design.c_exportModelToBIN_FUN_0045aa80
+  shape_design.c_loadTextureData_FUN_0046b060
+  shape_design.c_renderSinglePolygon_FUN_0045ce20
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0
+  shape_design.c_tileTextureMaps_FUN_0046a180
+  shape_design.c_writePolygonModel_FUN_0045a320
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+  shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
+  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
+  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
+  shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
+  shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
 TYPE: bit_int_float_compare (27 occurrences)

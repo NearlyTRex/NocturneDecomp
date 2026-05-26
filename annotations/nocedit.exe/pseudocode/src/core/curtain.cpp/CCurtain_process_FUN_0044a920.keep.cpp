@@ -119,7 +119,7 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0044a920(CCurtain *this_ptr,f
         if (CVector3f_ARRAY_008879c0 + INT_008879bc != &iVar2->location.position) {
           CVector3f_ARRAY_008879c0[INT_008879bc] = iVar2->location.position;
         }
-        pSVar11->ray_type = 0;
+        pSVar11->ray_query.ray_type = 0;
         iVar7 = (*(iVar2->vtable._ub)->getCollisionType)(iVar2,pSVar11);
         if (((iVar7 == 2) && (iVar2->location.position.y <= local_78)) &&
            ((local_a8 <=

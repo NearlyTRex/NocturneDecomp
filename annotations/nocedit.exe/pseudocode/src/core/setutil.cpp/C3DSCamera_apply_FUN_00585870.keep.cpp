@@ -19,19 +19,9 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr
   }
   pUVar1 = &(camera->base).position;
   if ((CVector3f *)pUVar1 != &this_ptr->position) {
-    (pUVar1->f).x = (this_ptr->position).x;
-    (camera->base).position.f.y = (this_ptr->position).y;
-    (camera->base).position.f.z = (this_ptr->position).z;
+    pUVar1->f = this_ptr->position;
   }
-  (camera->base).rotation_matrix.m[0].x = (this_ptr->rotation_matrix).m[0].x;
-  (camera->base).rotation_matrix.m[0].y = (this_ptr->rotation_matrix).m[0].y;
-  (camera->base).rotation_matrix.m[0].z = (this_ptr->rotation_matrix).m[0].z;
-  (camera->base).rotation_matrix.m[1].x = (this_ptr->rotation_matrix).m[1].x;
-  (camera->base).rotation_matrix.m[1].y = (this_ptr->rotation_matrix).m[1].y;
-  (camera->base).rotation_matrix.m[1].z = (this_ptr->rotation_matrix).m[1].z;
-  (camera->base).rotation_matrix.m[2].x = (this_ptr->rotation_matrix).m[2].x;
-  (camera->base).rotation_matrix.m[2].y = (this_ptr->rotation_matrix).m[2].y;
-  (camera->base).rotation_matrix.m[2].z = (this_ptr->rotation_matrix).m[2].z;
+  (camera->base).rotation_matrix = this_ptr->rotation_matrix;
   (camera->base).dead = this_ptr->dead;
   (camera->base).focal_length = this_ptr->projection_scale;
   strcpy(camera->camera_name,this_ptr->name);

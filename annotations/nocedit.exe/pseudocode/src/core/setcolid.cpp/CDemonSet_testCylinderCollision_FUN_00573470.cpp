@@ -77,11 +77,11 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDe
       local_98.max.z = local_98.max.z + local_14c.dir_z;
     }
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_f0);
-    local_f0.ray_type = this_ptr->ray_type;
-    local_f0.laser_type = this_ptr->laser_type;
-    local_f0.laser_color.r = (this_ptr->laser_color).r;
-    local_f0.laser_color.g = (this_ptr->laser_color).g;
-    local_f0.laser_color.b = (this_ptr->laser_color).b;
+    local_f0.ray_query.ray_type = (this_ptr->ray_query).ray_type;
+    local_f0.ray_query.laser_type = (this_ptr->ray_query).laser_type;
+    local_f0.ray_query.laser_color.r = (this_ptr->ray_query).laser_color.r;
+    local_f0.ray_query.laser_color.g = (this_ptr->ray_query).laser_color.g;
+    local_f0.ray_query.laser_color.b = (this_ptr->ray_query).laser_color.b;
     local_14 = 0;
     if (0 < this_ptr->collidable_actor_count) {
       local_18 = this_ptr;

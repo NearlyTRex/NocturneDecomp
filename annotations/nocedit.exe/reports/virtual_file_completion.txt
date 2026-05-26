@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5991 (92.8%)
-Files at 100%: 173
-Files at 90%+: 176
+Clean functions: 6015 (93.2%)
+Files at 100%: 177
+Files at 90%+: 178
 Files at 50%+: 213
 
 ====================================================================================================
@@ -40,7 +40,7 @@ FILES AT 100% (COMPLETE)
   core/bugs.cpp: 44 functions, 1795 lines
   core/camview.cpp: 6 functions, 38 lines
   core/chain.cpp: 21 functions, 870 lines
-  core/charactr.cpp: 109 functions, 4701 lines
+  core/charactr.cpp: 109 functions, 4703 lines
   core/cloth.cpp: 55 functions, 3111 lines
   core/colonel.cpp: 18 functions, 614 lines
   core/conveyor.cpp: 17 functions, 334 lines
@@ -112,6 +112,7 @@ FILES AT 100% (COMPLETE)
   core/mmx.c: 4 functions, 106 lines
   core/moloch.cpp: 15 functions, 588 lines
   core/moon.cpp: 14 functions, 346 lines
+  core/morph.cpp: 49 functions, 1410 lines
   core/motion.cpp: 33 functions, 1092 lines
   core/npc.cpp: 14 functions, 341 lines
   core/particle.cpp: 6 functions, 155 lines
@@ -121,9 +122,12 @@ FILES AT 100% (COMPLETE)
   core/procedur.cpp: 4 functions, 234 lines
   core/sentinel.cpp: 14 functions, 737 lines
   core/set.cpp: 87 functions, 5060 lines
+  core/setcolid.cpp: 40 functions, 1555 lines
+  core/setutil.cpp: 41 functions, 1409 lines
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
   core/simbox.cpp: 15 functions, 319 lines
+  core/skeleton.cpp: 117 functions, 5234 lines
   core/slew.cpp: 4 functions, 125 lines
   core/smiley.cpp: 16 functions, 833 lines
   core/sound.cpp: 37 functions, 1364 lines
@@ -141,7 +145,7 @@ FILES AT 100% (COMPLETE)
   core/trap.cpp: 17 functions, 202 lines
   core/trash.cpp: 15 functions, 441 lines
   core/tvbat.cpp: 20 functions, 727 lines
-  core/vampboss.cpp: 23 functions, 1271 lines
+  core/vampboss.cpp: 23 functions, 1272 lines
   core/vecdir.cpp: 2 functions, 33 lines
   core/vehicle.cpp: 20 functions, 751 lines
   core/vessel.cpp: 20 functions, 574 lines
@@ -188,19 +192,11 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 173 files
+Total: 177 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   99.1% | core/skeleton.cpp
-         116/117 clean, 1 remaining
-           - core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (198 lines) [pointer_cast]
-
-   98.0% | core/morph.cpp
-         48/49 clean, 1 remaining
-           - core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (415 lines) [pointer_cast]
-
    91.7% | core/hero.cpp
          44/48 clean, 4 remaining
            - core_hero.cpp_CHero_dtor_FUN_004f2470 (33 lines) [negative_offset, pointer_cast]
@@ -208,7 +204,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0 (70 lines) [pointer_cast, unrolled_memcpy]
            - core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 (68 lines) [unrolled_memcpy]
 
-Total: 3 files
+Total: 1 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -373,18 +369,6 @@ FILES AT 50-89%
            - core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 (143 lines) [pointer_cast]
            - core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 (44 lines) [negative_offset]
            - core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (59 lines) [pointer_cast]
-   75.6% | core/setutil.cpp
-         31/41 clean, 10 remaining
-           - core_setutil.cpp_readAndParseLine_FUN_00585290 (48 lines) [unrolled_strcpy, unrolled_strlen]
-           - core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50 (95 lines) [pointer_cast]
-           - core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0 (86 lines) [unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90 (153 lines) [unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - core_setutil.cpp_C3DSCamera_load_FUN_00585420 (83 lines) [unrolled_memcpy]
-           - core_setutil.cpp_C3DSLight_save_FUN_00587090 (64 lines) [pointer_cast, shadow_pointer_walk]
-           - core_setutil.cpp_C3DSCamera_apply_FUN_00585870 (51 lines) [unrolled_memcpy]
-           - core_setutil.cpp_C3DSLight_create_FUN_00586a90 (69 lines) [shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
-           - core_setutil.cpp_C3DSLight_apply_FUN_00586bf0 (38 lines) [unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
-           - core_setutil.cpp_C3DSLight_load_FUN_00586310 (185 lines) [pointer_cast]
    75.3% | shape/superopt.cpp
          140/186 clean, 46 remaining
            - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
@@ -557,20 +541,6 @@ FILES AT 50-89%
            - core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 (210 lines) [missing_cave_copy, unrolled_memcpy]
            - core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0 (113 lines) [pointer_cast, shadow_pointer_walk]
            - core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 (70 lines) [missing_cave_copy, stack_alignment_array, unrolled_memcpy]
-   70.0% | core/setcolid.cpp
-         28/40 clean, 12 remaining
-           - core_setcolid.cpp_CDemonSet_raycast_FUN_00572530 (62 lines) [unrolled_memcpy]
-           - core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0 (68 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440 (22 lines) [unrolled_memcpy]
-           - core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10 (127 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340 (32 lines) [unrolled_memcpy]
-           - core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0 (37 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140 (83 lines) [unrolled_memcpy]
-           - core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005744d0 (22 lines) [unrolled_memcpy]
-           - core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 (341 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00572800 (53 lines) [unrolled_memcpy]
-           - core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10 (70 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470 (254 lines) [shadow_pointer_walk, unrolled_memcpy]
    68.5% | shape/meshlod.cpp
          85/124 clean, 39 remaining
            - shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (30 lines) [unrolled_memcpy]
@@ -715,7 +685,7 @@ FILES AT 50-89%
            - engine_alphabit.cpp_copyBytes_FUN_00410d20 (21 lines) [pointer_cast, unrolled_memcpy]
            - engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (44 lines) [pointer_cast]
 
-Total: 37 files
+Total: 35 files
 
 ====================================================================================================
 FILES BELOW 50%

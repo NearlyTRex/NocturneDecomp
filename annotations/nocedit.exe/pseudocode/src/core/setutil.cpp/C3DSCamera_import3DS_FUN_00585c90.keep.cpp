@@ -9,21 +9,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
-
 void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
   float fVar1;
-  char cVar2;
   float fVar3;
-  uint uVar2;
   int iVar3;
-  char *pcVar4;
-  char *pcVar5;
-  C3DSCamera *pCVar5;
-  byte bVar6;
   float10 fVar7;
   float10 fVar6;
   float10 fVar8;
@@ -33,44 +24,15 @@ void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this
   float fStack_30;
   float fStack_2c;
   float fStack_28;
-  C3DSCamera *local_20;
   float fStack_1c;
   uint uStack_18;
-  char cVar1;
-  
-  bVar6 = 0;
-  local_20 = this_ptr;
+
   _fgets(local_23c,0xff,file_handle);
-  uVar2 = 0xffffffff;
-  pcVar5 = local_23c;
-  do {
-    if (uVar2 == 0) break;
-    uVar2 = uVar2 - 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
-  } while (cVar1 != '\0');
-  if (0 < (int)(~uVar2 - 1)) {
-    local_23c[~uVar2 - 2] = '\0';
+  iVar3 = strlen(local_23c);
+  if (0 < iVar3) {
+    local_23c[iVar3 - 1] = '\0';
   }
-  iVar3 = -1;
-  pcVar5 = local_23c;
-  do {
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    cVar2 = *pcVar5;
-    pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
-  } while (cVar2 != '\0');
-  pcVar4 = local_23c;
-  pCVar5 = local_20;
-  do {
-    cVar2 = *pcVar4;
-    pCVar5->name[0] = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pCVar5->name[1] = cVar2;
-    pCVar5 = (C3DSCamera *)(pCVar5->name + 2);
-  } while (cVar2 != '\0');
+  strcpy(this_ptr->name,local_23c);
   _fscanf(file_handle,"%f,%f,%f\n",&(this_ptr->position).x,&(this_ptr->position).y,
              &(this_ptr->position).z);
   _fscanf(file_handle,"%f,%f,%f\n",&fStack_30,&fStack_2c,&fStack_28);

@@ -67,11 +67,11 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
     local_4c.z = ray_origin->z + local_64.z;
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_88,&local_4c);
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_cc);
-    local_cc.ray_type = this_ptr->ray_type;
-    local_cc.laser_type = this_ptr->laser_type;
-    local_cc.laser_color.r = (this_ptr->laser_color).r;
-    local_cc.laser_color.g = (this_ptr->laser_color).g;
-    local_cc.laser_color.b = (this_ptr->laser_color).b;
+    local_cc.ray_query.ray_type = (this_ptr->ray_query).ray_type;
+    local_cc.ray_query.laser_type = (this_ptr->ray_query).laser_type;
+    local_cc.ray_query.laser_color.r = (this_ptr->ray_query).laser_color.r;
+    local_cc.ray_query.laser_color.g = (this_ptr->ray_query).laser_color.g;
+    local_cc.ray_query.laser_color.b = (this_ptr->ray_query).laser_color.b;
     local_1c = 0;
     if (0 < this_ptr->collidable_actor_count) {
       local_20 = this_ptr;

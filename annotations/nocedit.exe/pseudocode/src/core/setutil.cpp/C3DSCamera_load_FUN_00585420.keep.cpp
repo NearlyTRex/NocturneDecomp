@@ -10,10 +10,7 @@
 void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00585420(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
-  CVector3f *pCVar2;
-  CVector3f *pCVar3;
   char local_110 [256];
-  CDemonSet *pCVar1;
   
   core_setutil_cpp_C3DSCamera_reset_FUN_005853b0(this_ptr);
   if (10 < g_CDemonSetPtr->set_file_version) {
@@ -42,22 +39,9 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00585420(C3DSCamera *this_ptr,
              &(this_ptr->rotation_matrix).m[1].y,&(this_ptr->rotation_matrix).m[1].z);
   _fscanf(file_handle,"%f,%f,%f\n",&(this_ptr->rotation_matrix).m[2].x,
              &(this_ptr->rotation_matrix).m[2].y,&(this_ptr->rotation_matrix).m[2].z);
-  pCVar1 = g_CDemonSetPtr;
   if (g_CDemonSetPtr->set_file_version < 0x12) {
     this_ptr->fog_enabled = 1;
-    (this_ptr->fog).color_index.r = (pCVar1->scene_fog).color_index.r;
-    (this_ptr->fog).color_index.g = (pCVar1->scene_fog).color_index.g;
-    pCVar3 = &(this_ptr->fog).scroll;
-    pCVar2 = &(pCVar1->scene_fog).scroll;
-    (this_ptr->fog).color_index.b = (pCVar1->scene_fog).color_index.b;
-    if (pCVar3 != pCVar2) {
-      pCVar3->x = pCVar2->x;
-      (this_ptr->fog).scroll.y = (pCVar1->scene_fog).scroll.y;
-      (this_ptr->fog).scroll.z = (pCVar1->scene_fog).scroll.z;
-    }
-    (this_ptr->fog).height_threshold = (pCVar1->scene_fog).height_threshold;
-    (this_ptr->fog).density_multiplier = (pCVar1->scene_fog).density_multiplier;
-    (this_ptr->fog).temperature = (pCVar1->scene_fog).temperature;
+    this_ptr->fog = g_CDemonSetPtr->scene_fog;
   }
   else {
     _fscanf(file_handle,"%d\n",&this_ptr->fog_enabled);

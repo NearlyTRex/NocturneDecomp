@@ -19,10 +19,10 @@
 ;   int g_CurrentLineNumber
 ;   int g_RaytraceStateStackDepth
 ;   SRaytraceState[5] g_RaytraceStateStack
-;   undefined4 g_RaytraceStateStack[0].laser_type
-;   undefined4 g_RaytraceStateStack[0].laser_color.r
-;   undefined4 g_RaytraceStateStack[0].laser_color.g
-;   undefined4 g_RaytraceStateStack[0].laser_color.b
+;   undefined4 g_RaytraceStateStack[0].ray_query.laser_type
+;   undefined4 g_RaytraceStateStack[0].ray_query.laser_color.r
+;   undefined4 g_RaytraceStateStack[0].ray_query.laser_color.g
+;   undefined4 g_RaytraceStateStack[0].ray_query.laser_color.b
 ;   undefined4 g_RaytraceStateStack[0].ignore_list_count
 ;   undefined4 g_RaytraceStateStack[0].collision_flag
 ;   undefined4 g_RaytraceStateStack[0].ignore_list[0]
@@ -56,13 +56,13 @@ section .text
     ADD EDI,EAX                         ; 00573ff2
     MOV EAX,dword ptr [EDI]             ; 00573ff4 | g_RaytraceStateStack
     MOV dword ptr [EBX + 0x15f680],EAX  ; 00573ff6
-    MOV EAX,dword ptr [EDI + 0x4]       ; 00573ffc | g_RaytraceStateStack[0].laser_type
+    MOV EAX,dword ptr [EDI + 0x4]       ; 00573ffc | g_RaytraceStateStack[0].ray_query.laser_type
     MOV dword ptr [EBX + 0x15f684],EAX  ; 00573fff
-    MOV EAX,dword ptr [EDI + 0x8]       ; 00574005 | g_RaytraceStateStack[0].laser_color.r
+    MOV EAX,dword ptr [EDI + 0x8]       ; 00574005 | g_RaytraceStateStack[0].ray_query.laser_color.r
     MOV dword ptr [EBX + 0x15f688],EAX  ; 00574008
-    MOV EAX,dword ptr [EDI + 0xc]       ; 0057400e | g_RaytraceStateStack[0].laser_color.g
+    MOV EAX,dword ptr [EDI + 0xc]       ; 0057400e | g_RaytraceStateStack[0].ray_query.laser_color.g
     MOV dword ptr [EBX + 0x15f68c],EAX  ; 00574011
-    MOV EAX,dword ptr [EDI + 0x10]      ; 00574017 | g_RaytraceStateStack[0].laser_color.b
+    MOV EAX,dword ptr [EDI + 0x10]      ; 00574017 | g_RaytraceStateStack[0].ray_query.laser_color.b
     MOV dword ptr [EBX + 0x15f690],EAX  ; 0057401a
     MOV EAX,dword ptr [EDI + 0x14]      ; 00574020 | g_RaytraceStateStack[0].ignore_list_count
     XOR ECX,ECX                         ; 00574023

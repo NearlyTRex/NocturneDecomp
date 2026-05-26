@@ -292,7 +292,7 @@ LAB_0054d4f3:
     goto LAB_0054d4f3;
     fStack_3c = 0.0;
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_d4);
-    SStack_d4.ray_type = 0;
+    SStack_d4.ray_query.ray_type = 0;
     EVar7 = (*((this_ptr_00->base).vtable._ub)->getCollisionType)(&this_ptr_00->base,&SStack_d4);
     if ((((EVar7 != COLLISION_TYPE_CYLINDER) ||
          (local_ac.max.y < CStack_4c.y + SStack_d4.cylinder_bottom_y)) ||

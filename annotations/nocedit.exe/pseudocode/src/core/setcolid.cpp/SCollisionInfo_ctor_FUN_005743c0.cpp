@@ -11,6 +11,6 @@ SCollisionInfo * __cdecl core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(SCol
 {
   this_ptr->deformable_model = (CDeformableModelInstance *)0x0;
   this_ptr->keyframed_model = (CKeyFramedModelInstance *)0x0;
-  this_ptr->ray_type = 0;
+  (this_ptr->ray_query).ray_type = 0;
   return this_ptr;
 }

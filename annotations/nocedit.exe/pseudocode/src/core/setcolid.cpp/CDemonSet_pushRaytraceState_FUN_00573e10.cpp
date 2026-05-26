@@ -23,12 +23,16 @@ void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(CDemonSe
   }
   iVar3 = g_RaytraceStateStackDepth;
   pSVar6 = g_RaytraceStateStack + g_RaytraceStateStackDepth;
-  pSVar6->ray_type = this_ptr->ray_type;
-  g_RaytraceStateStack[g_RaytraceStateStackDepth].laser_type = this_ptr->laser_type;
-  g_RaytraceStateStack[g_RaytraceStateStackDepth].laser_color.r = (this_ptr->laser_color).r;
-  g_RaytraceStateStack[g_RaytraceStateStackDepth].laser_color.g = (this_ptr->laser_color).g;
+  (pSVar6->ray_query).ray_type = (this_ptr->ray_query).ray_type;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].ray_query.laser_type =
+       (this_ptr->ray_query).laser_type;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].ray_query.laser_color.r =
+       (this_ptr->ray_query).laser_color.r;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].ray_query.laser_color.g =
+       (this_ptr->ray_query).laser_color.g;
   iVar5 = 0;
-  g_RaytraceStateStack[g_RaytraceStateStackDepth].laser_color.b = (this_ptr->laser_color).b;
+  g_RaytraceStateStack[g_RaytraceStateStackDepth].ray_query.laser_color.b =
+       (this_ptr->ray_query).laser_color.b;
   iVar1 = this_ptr->ignore_list_count;
   pSVar2 = g_RaytraceStateStack + g_RaytraceStateStackDepth;
   g_RaytraceStateStackDepth = g_RaytraceStateStackDepth + 1;
@@ -39,7 +43,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(CDemonSe
       pSVar6->ignore_list[0] = pCVar4->ignore_list[0];
       iVar5 = iVar5 + 1;
       pCVar4 = (CDemonSet *)pCVar4->cameras;
-      pSVar6 = (SRaytraceState *)&pSVar6->laser_type;
+      pSVar6 = (SRaytraceState *)&(pSVar6->ray_query).laser_type;
     } while (iVar5 < this_ptr->ignore_list_count);
   }
   g_RaytraceStateStack[iVar3].collision_flag = this_ptr->collision_flag;

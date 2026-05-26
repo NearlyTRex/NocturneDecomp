@@ -9,7 +9,7 @@
 ECollisionType __cdecl core_stairs_cpp_CStairs_getCollisionType_FUN_005ba570(CStairs *this_ptr,SCollisionInfo *collision_info)
 
 {
-  if (collision_info->ray_type != 0) {
+  if ((collision_info->ray_query).ray_type != 0) {
     return COLLISION_TYPE_NONE;
   }
   return COLLISION_TYPE_CUSTOM;

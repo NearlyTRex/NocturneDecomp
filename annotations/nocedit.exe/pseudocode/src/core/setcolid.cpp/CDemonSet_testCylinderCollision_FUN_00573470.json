@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 670,
-    "complexity_score": 314,
+    "complexity_score": 254,
     "cross_reference_count": 5,
     "function_call_count": 13,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 254,
-    "suspect_count": 5,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 924
   },
   "cross_references": [
@@ -291,6 +288,53 @@
     },
     "pcode_op_count": 3638
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 73,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_f0.ray_query.ray_type = (this_ptr->ray_query).ray_type;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 192,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_14c.push_normal.x = pCVar11->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 219,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_14c.push_normal.x = SStack_204.push_normal.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 250,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->collision_normal).x = local_14c.push_normal.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 229,
+      "match": "local_18 = (T *)local_18->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 = (CDemonSet *)local_18->cameras;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 668,
     "local_size": 636,
@@ -478,46 +522,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 73,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_f0.ray_type = this_ptr->ray_type;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 192,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_14c.push_normal.x = pCVar11->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 219,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_14c.push_normal.x = SStack_204.push_normal.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 250,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->collision_normal).x = local_14c.push_normal.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 229,
-      "match": "local_18 = (T *)local_18->ARRAY",
-      "severity": "moderate",
-      "text": "local_18 = (CDemonSet *)local_18->cameras;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

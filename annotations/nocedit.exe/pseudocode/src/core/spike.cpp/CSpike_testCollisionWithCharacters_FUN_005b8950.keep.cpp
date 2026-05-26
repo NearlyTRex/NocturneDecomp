@@ -79,7 +79,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
     fVar2 = (this_ptr->base).location.position.z - (this_ptr_01->base).location.position.z;
     if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= fVar4 * fVar4) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_130);
-      SStack_130.ray_type = 0;
+      SStack_130.ray_query.ray_type = 0;
       bbox_type = (*((this_ptr_01->base).vtable._ub)->getCollisionType)
                             (&this_ptr_01->base,&SStack_130);
       if (bbox_type != COLLISION_TYPE_NONE) {

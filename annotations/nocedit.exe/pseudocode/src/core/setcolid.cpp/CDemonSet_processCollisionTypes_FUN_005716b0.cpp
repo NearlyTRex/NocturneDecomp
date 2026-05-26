@@ -115,7 +115,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
     }
     local_100.min.y = local_100.min.y + -10.0f;
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_158);
-    local_158.ray_type = 0;
+    local_158.ray_query.ray_type = 0;
     local_1c = 0;
     if (0 < this_ptr->collidable_actor_count) {
       pCVar1 = &this_ptr->collision_normal;

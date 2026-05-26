@@ -2,17 +2,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SRayQueryState.h"
 
 // Structure: SRaytraceState
 // Ghidra size: 0xa0 (160 bytes)
 #pragma pack(push, 1)
 typedef struct SRaytraceState {
-    int ray_type; // 0x0
-    int laser_type; // 0x4
-    CColor3i laser_color; // 0x8
+    SRayQueryState ray_query; // 0x0
     int ignore_list_count; // 0x14
     int collision_flag; // 0x18
     struct CDemonActor* ignore_list[10]; // 0x1c

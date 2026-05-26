@@ -23,11 +23,11 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet
   iVar5 = g_RaytraceStateStackDepth + -1;
   pSVar2 = g_RaytraceStateStack + iVar5;
   g_RaytraceStateStackDepth = iVar5;
-  this_ptr->ray_type = pSVar2->ray_type;
-  this_ptr->laser_type = g_RaytraceStateStack[iVar5].laser_type;
-  (this_ptr->laser_color).r = g_RaytraceStateStack[iVar5].laser_color.r;
-  (this_ptr->laser_color).g = g_RaytraceStateStack[iVar5].laser_color.g;
-  (this_ptr->laser_color).b = g_RaytraceStateStack[iVar5].laser_color.b;
+  (this_ptr->ray_query).ray_type = (pSVar2->ray_query).ray_type;
+  (this_ptr->ray_query).laser_type = g_RaytraceStateStack[iVar5].ray_query.laser_type;
+  (this_ptr->ray_query).laser_color.r = g_RaytraceStateStack[iVar5].ray_query.laser_color.r;
+  (this_ptr->ray_query).laser_color.g = g_RaytraceStateStack[iVar5].ray_query.laser_color.g;
+  (this_ptr->ray_query).laser_color.b = g_RaytraceStateStack[iVar5].ray_query.laser_color.b;
   iVar1 = g_RaytraceStateStack[iVar5].ignore_list_count;
   iVar3 = 0;
   this_ptr->ignore_list_count = iVar1;
@@ -36,7 +36,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet
     do {
       pCVar4->ignore_list[0] = pSVar2->ignore_list[0];
       iVar3 = iVar3 + 1;
-      pSVar2 = (SRaytraceState *)&pSVar2->laser_type;
+      pSVar2 = (SRaytraceState *)&(pSVar2->ray_query).laser_type;
       pCVar4 = (CDemonSet *)pCVar4->cameras;
     } while (iVar3 < this_ptr->ignore_list_count);
   }

@@ -15,7 +15,7 @@ ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_00520a00(CMimi
   
   collision_info->cylinder_top_y = (this_ptr->base).base.model.bounding_box.max.y;
   collision_info->cylinder_radius = 1.0;
-  if (collision_info->ray_type == 1) {
+  if (collision_info->ray_query.ray_type == 1) {
     collision_info->cylinder_bottom_y = -0.1;
     fVar1 = (float)1.3;
     collision_info->cylinder_top_y = collision_info->cylinder_top_y + 0.5f;

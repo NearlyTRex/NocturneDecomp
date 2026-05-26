@@ -7,19 +7,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
-
 void __cdecl core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,_FILE *file_handle)
 
 {
-  char cVar1;
   float fVar3;
-  uint uVar4;
   int iVar5;
-  char *pcVar6;
-  char *pcVar4;
-  char *pcVar7;
-  byte bVar8;
   float10 fVar9;
   float10 fVar10;
   float10 fVar5;
@@ -31,45 +23,15 @@ void __cdecl core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_p
   float afStack_30 [4];
   float afStack_20 [2];
   byte auStack_18 [4];
-  char *local_14;
-  char cVar3;
   float fVar2;
   float fVar1;
   
-  bVar8 = 0;
-  local_14 = this_ptr->name;
   _fgets(local_188,0xff,file_handle);
-  uVar4 = 0xffffffff;
-  pcVar4 = local_188;
-  do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    cVar3 = *pcVar4;
-    pcVar4 = pcVar4 + (uint)bVar8 * -2 + 1;
-  } while (cVar3 != '\0');
-  if (0 < (int)(~uVar4 - 1)) {
-    local_188[~uVar4 - 2] = '\0';
+  iVar5 = strlen(local_188);
+  if (0 < iVar5) {
+    local_188[iVar5 - 1] = '\0';
   }
-  iVar5 = -1;
-  pcVar4 = local_188;
-  do {
-    pcVar6 = local_188;
-    pcVar7 = local_14;
-    if (iVar5 == 0) break;
-    iVar5 = iVar5 + -1;
-    cVar1 = *pcVar4;
-    pcVar6 = local_188;
-    pcVar4 = pcVar4 + (uint)bVar8 * -2 + 1;
-  } while (cVar1 != '\0');
-  do {
-    cVar1 = *pcVar6;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
+  strcpy(this_ptr->name,local_188);
   _fscanf(file_handle,"%d\n",&this_ptr->light_type);
   _fscanf(file_handle,"%d,%d,%d\n",&(this_ptr->color).r,&(this_ptr->color).g,&(this_ptr->color).b);
   _fscanf(file_handle,"%f\n",&this_ptr->atten_start);

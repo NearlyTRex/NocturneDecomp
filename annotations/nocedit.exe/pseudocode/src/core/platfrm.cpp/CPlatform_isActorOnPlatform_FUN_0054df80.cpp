@@ -29,7 +29,7 @@ int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0054df80(CPlatform 
   
   if (actor != (CDemonActor *)0x0) {
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_88);
-    local_88.ray_type = 0;
+    local_88.ray_query.ray_type = 0;
     EVar1 = (*((actor->vtable)._ub)->getCollisionType)(actor,&local_88);
     if (EVar1 == COLLISION_TYPE_CYLINDER) {
       fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((this_ptr->base).orient.vec.x);

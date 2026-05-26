@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 148,
+    "complexity_score": 68,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 37,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 68,
-    "suspect_count": 7,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 211
   },
   "cross_references": [
@@ -104,25 +101,25 @@
     },
     {
       "addr": "033469f4",
-      "name": "g_RaytraceStateStack[0].laser_type",
+      "name": "g_RaytraceStateStack[0].ray_query.laser_type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "033469f8",
-      "name": "g_RaytraceStateStack[0].laser_color.r",
+      "name": "g_RaytraceStateStack[0].ray_query.laser_color.r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "033469fc",
-      "name": "g_RaytraceStateStack[0].laser_color.g",
+      "name": "g_RaytraceStateStack[0].ray_query.laser_color.g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03346a00",
-      "name": "g_RaytraceStateStack[0].laser_color.b",
+      "name": "g_RaytraceStateStack[0].ray_query.laser_color.b",
       "type": "undefined4",
       "value": null
     },
@@ -397,6 +394,80 @@
     },
     "pcode_op_count": 463
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 20,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->ray_query).laser_type = g_RaytraceStateStack[iVar5].ray_query.laser_type;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 38,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->ray_origin).x = g_RaytraceStateStack[iVar5].saved_ray_origin.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 43,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->ray_target).x = g_RaytraceStateStack[iVar5].saved_ray_target.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 50,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->voxel_hit_point).x = g_RaytraceStateStack[iVar5].voxel_hit_point.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 56,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->collision_normal).x = g_RaytraceStateStack[iVar5].saved_collision_normal.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 62,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->collision_impact_position).x = g_RaytraceStateStack[iVar5].saved_collision_point.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 32,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar2 = (SRaytraceState *)&(pSVar2->ray_query).laser_type;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 33,
+      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -413,62 +484,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 20,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "this_ptr->laser_type = g_RaytraceStateStack[iVar5].laser_type;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 38,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->ray_origin).x = g_RaytraceStateStack[iVar5].saved_ray_origin.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 43,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->ray_target).x = g_RaytraceStateStack[iVar5].saved_ray_target.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 50,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->voxel_hit_point).x = g_RaytraceStateStack[iVar5].voxel_hit_point.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 56,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->collision_normal).x = g_RaytraceStateStack[iVar5].saved_collision_normal.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 62,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->collision_impact_position).x = g_RaytraceStateStack[iVar5].saved_collision_point.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 33,
-      "match": "pCVar4 = (T *)pCVar4->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar4 = (CDemonSet *)pCVar4->cameras;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

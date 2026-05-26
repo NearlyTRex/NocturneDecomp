@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5978 (92.6%)
-With suspects: 476
-Total suspects: 2802
+Clean: 6002 (93.0%)
+With suspects: 452
+Total suspects: 2707
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -956,13 +956,6 @@ core_mobster.cpp_CMobster_process_FUN_00525840 (6 suspects)
   Line 565 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
-core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (2 suspects)
-  File: core/morph.cpp
-====================================================================================================
-  Line 200 [pointer_cast]: iVar12 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-  Line 203 [pointer_cast]: (iVar12 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex)
-
-====================================================================================================
 core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (7 suspects)
   File: core/msnedit.cpp
 ====================================================================================================
@@ -1681,119 +1674,6 @@ core_script.cpp_trimLine_FUN_005592c0 (1 suspect)
   Line 38 [static_null_pointer]: ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
 
 ====================================================================================================
-core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00574440 (2 suspects)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 11 [unrolled_memcpy]: CStack_1c.min.x = (pCVar1->min).x;
-  Line 16 [unrolled_memcpy]: CStack_1c.max.x = (pCVar1->max).x;
-
-====================================================================================================
-core_setcolid.cpp_CDemonSet_iterativeRaycast_FUN_00572800 (2 suspects)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 28 [unrolled_memcpy]: local_70.x = start_pos->x;
-  Line 45 [unrolled_memcpy]: local_70.x = local_28.x;
-
-====================================================================================================
-core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0 (2 suspects)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 18 [unrolled_memcpy]: local_5c.hit_part_index = damage_info->hit_part_index;
-  Line 36 [shadow_pointer_walk]: pCVar2 = (CDemonSet *)pCVar2->cameras;
-
-====================================================================================================
-core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0 (7 suspects)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 20 [unrolled_memcpy]: this_ptr->laser_type = g_RaytraceStateStack[iVar5].laser_type;
-  Line 33 [shadow_pointer_walk]: pCVar4 = (CDemonSet *)pCVar4->cameras;
-  Line 38 [unrolled_memcpy]: (this_ptr->ray_origin).x = g_RaytraceStateStack[iVar5].saved_ray_origin.x;
-  Line 43 [unrolled_memcpy]: (this_ptr->ray_target).x = g_RaytraceStateStack[iVar5].saved_ray_target.x;
-  Line 50 [unrolled_memcpy]: (this_ptr->voxel_hit_point).x = g_RaytraceStateStack[iVar5].voxel_hit_point.x;
-  Line 56 [unrolled_memcpy]: (this_ptr->collision_normal).x = g_RaytraceStateStack[iVar5].saved_collision_normal.x;
-  Line 62 [unrolled_memcpy]: (this_ptr->collision_impact_position).x = g_RaytraceStateStack[iVar5].saved_collision_point.x;
-
-====================================================================================================
-core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 (12 suspects)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 85 [unrolled_memcpy]: local_e8.x = position->x;
-  Line 96 [unrolled_memcpy]: local_100.max.x = local_e8.x;
-  Line 105 [unrolled_memcpy]: local_100.min.y = local_100.max.y;
-  Line 173 [unrolled_memcpy]: pCVar6->x = pCVar3->x;
-  Line 193 [unrolled_memcpy]: CStack_64.x = CStack_a0.x;
-  Line 211 [unrolled_memcpy]: CStack_64.x = CStack_40.x;
-  Line 229 [unrolled_memcpy]: CStack_64.x = CStack_34.x;
-  Line 247 [unrolled_memcpy]: CStack_64.x = CStack_dc.x;
-  Line 265 [unrolled_memcpy]: CStack_64.x = CStack_94.x;
-  Line 283 [unrolled_memcpy]: CStack_64.x = CStack_c4.x;
-  Line 295 [unrolled_memcpy]: pCVar1->x = pCVar17->x;
-  Line 332 [shadow_pointer_walk]: local_18 = (CDemonSet *)local_18->cameras;
-
-====================================================================================================
-core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10 (7 suspects)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 20 [unrolled_memcpy]: g_RaytraceStateStack[g_RaytraceStateStackDepth].laser_type = this_ptr->laser_type;
-  Line 34 [shadow_pointer_walk]: pCVar4 = (CDemonSet *)pCVar4->cameras;
-  Line 40 [unrolled_memcpy]: g_RaytraceStateStack[iVar3].saved_ray_origin.x = (this_ptr->ray_origin).x;
-  Line 45 [unrolled_memcpy]: g_RaytraceStateStack[iVar3].saved_ray_target.x = (this_ptr->ray_target).x;
-  Line 52 [unrolled_memcpy]: g_RaytraceStateStack[iVar3].voxel_hit_point.x = (this_ptr->voxel_hit_point).x;
-  Line 58 [unrolled_memcpy]: g_RaytraceStateStack[iVar3].saved_collision_normal.x = (this_ptr->collision_normal).x;
-  Line 64 [unrolled_memcpy]: g_RaytraceStateStack[iVar3].saved_collision_point.x = (this_ptr->collision_impact_position).x;
-
-====================================================================================================
-core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340 (2 suspects)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 12 [unrolled_memcpy]: local_20.x = position->x;
-  Line 17 [unrolled_memcpy]: local_2c.x = position->x;
-
-====================================================================================================
-core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10 (8 suspects)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 49 [unrolled_memcpy]: local_88.min.x = ray_origin->x;
-  Line 54 [unrolled_memcpy]: local_88.max.x = ray_origin->x;
-  Line 63 [unrolled_memcpy]: local_cc.ray_type = this_ptr->ray_type;
-  Line 85 [unrolled_memcpy]: (this_ptr->collision_normal).x = CStack_a4.normal.x;
-  Line 96 [unrolled_memcpy]: local_64.x = CStack_58.x;
-  Line 101 [unrolled_memcpy]: local_88.min.x = ray_origin->x;
-  Line 106 [unrolled_memcpy]: local_88.max.x = ray_origin->x;
-  Line 119 [shadow_pointer_walk]: local_20 = (CDemonSet *)local_20->cameras;
-
-====================================================================================================
-core_setcolid.cpp_CDemonSet_raycast_FUN_00572530 (3 suspects)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 20 [unrolled_memcpy]: (this_ptr->ray_origin).x = ray_origin->x;
-  Line 25 [unrolled_memcpy]: (this_ptr->ray_target).x = ray_target->x;
-  Line 35 [unrolled_memcpy]: (this_ptr->collision_normal).x = out_intersection_point->x;
-
-====================================================================================================
-core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470 (5 suspects)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 73 [unrolled_memcpy]: local_f0.ray_type = this_ptr->ray_type;
-  Line 192 [unrolled_memcpy]: local_14c.push_normal.x = pCVar11->x;
-  Line 219 [unrolled_memcpy]: local_14c.push_normal.x = SStack_204.push_normal.x;
-  Line 229 [shadow_pointer_walk]: local_18 = (CDemonSet *)local_18->cameras;
-  Line 250 [unrolled_memcpy]: (this_ptr->collision_normal).x = local_14c.push_normal.x;
-
-====================================================================================================
-core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140 (1 suspect)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 41 [unrolled_memcpy]: pCVar2->x = local_20.x;
-
-====================================================================================================
-core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005744d0 (2 suspects)
-  File: core/setcolid.cpp
-====================================================================================================
-  Line 11 [unrolled_memcpy]: CStack_1c.min.x = (pCVar1->min).x;
-  Line 16 [unrolled_memcpy]: CStack_1c.max.x = (pCVar1->max).x;
-
-====================================================================================================
 core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (3 suspects)
   File: core/setdir.cpp
 ====================================================================================================
@@ -2203,94 +2083,6 @@ core_setedit.cpp_renderColoredBox_FUN_005817d0 (7 suspects)
   Line 51 [pointer_cast]: *(int *)((int)&this_ptr->vertex_buffer_ptr->g + iVar2) = g << 8;
   Line 52 [pointer_cast]: *(int *)((int)&this_ptr->vertex_buffer_ptr->b + iVar2) = b << 8;
   Line 54 [pointer_cast]: *(int *)((int)&this_ptr->vertex_buffer_ptr->a + iVar2) = local_14;
-
-====================================================================================================
-core_setutil.cpp_C3DSCamera_apply_FUN_00585870 (2 suspects)
-  File: core/setutil.cpp
-====================================================================================================
-  Line 17 [unrolled_memcpy]: (pUVar1->f).x = (this_ptr->position).x;
-  Line 21 [unrolled_memcpy]: (camera->base).rotation_matrix.m[0].x = (this_ptr->rotation_matrix).m[0].x;
-
-====================================================================================================
-core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90 (5 suspects)
-  File: core/setutil.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 3 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
-  Line 39 [unrolled_strlen]: do {
-  Line 50 [unrolled_strlen]: do {
-  Line 58 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_setutil.cpp_C3DSCamera_load_FUN_00585420 (2 suspects)
-  File: core/setutil.cpp
-====================================================================================================
-  Line 46 [unrolled_memcpy]: pCVar3->x = pCVar2->x;
-  Line 50 [unrolled_memcpy]: (this_ptr->fog).height_threshold = (pCVar1->scene_fog).height_threshold;
-
-====================================================================================================
-core_setutil.cpp_C3DSLight_apply_FUN_00586bf0 (3 suspects)
-  File: core/setutil.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 14 [unrolled_memcpy]: (pUVar1->f).x = (this_ptr->pos).x;
-  Line 28 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_setutil.cpp_C3DSLight_create_FUN_00586a90 (3 suspects)
-  File: core/setutil.cpp
-====================================================================================================
-  Line 38 [unrolled_memcpy]: (pUVar3->f).x = (this_ptr->pos).x;
-  Line 55 [shadow_pointer_walk]: pCVar4 = (C3DSLight *)pCVar4->name;
-  Line 60 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0 (4 suspects)
-  File: core/setutil.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
-  Line 36 [unrolled_strlen]: do {
-  Line 47 [unrolled_strlen]: do {
-  Line 56 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_setutil.cpp_C3DSLight_load_FUN_00586310 (7 suspects)
-  File: core/setutil.cpp
-====================================================================================================
-  Line 93 [pointer_cast]: *(uint *)((int)this_ptr->filter_indices + local_1c) = 0;
-  Line 146 [pointer_cast]: *(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar5) = 1;
-  Line 147 [pointer_cast]: *(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar5) = 0x13e;
-  Line 148 [pointer_cast]: *(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar5) = 1;
-  Line 149 [pointer_cast]: *(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar5) = 0xee;
-  Line 152 [pointer_cast]: iVar2 = (int)&local_24->x_min + iVar5;
-  Line 158 [pointer_cast]: pCVar4 = (C3DSLight *)((int)&pCVar4->light_type + 1);
-
-====================================================================================================
-core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50 (6 suspects)
-  File: core/setutil.cpp
-====================================================================================================
-  Line 54 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
-  Line 57 [pointer_cast]: *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar1) = 0x800000;
-  Line 58 [pointer_cast]: *(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;
-  Line 59 [pointer_cast]: *(int *)((int)&this_ptr_00->vertex_buffer_ptr->r + iVar1) =
-  Line 61 [pointer_cast]: *(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) =
-  Line 64 [pointer_cast]: *(int *)((int)&this_ptr_00->vertex_buffer_ptr->b + iVar1) =
-
-====================================================================================================
-core_setutil.cpp_C3DSLight_save_FUN_00587090 (3 suspects)
-  File: core/setutil.cpp
-====================================================================================================
-  Line 43 [shadow_pointer_walk]: pCVar2 = (C3DSLight *)pCVar2->name;
-  Line 55 [pointer_cast]: pCVar1 = (C3DSLight *)((int)&pCVar1->light_type + 1);
-  Line 64 [pointer_cast]: this_ptr = (C3DSLight *)((int)&this_ptr->light_type + 1);
-
-====================================================================================================
-core_setutil.cpp_readAndParseLine_FUN_00585290 (3 suspects)
-  File: core/setutil.cpp
-====================================================================================================
-  Line 20 [unrolled_strlen]: do {
-  Line 31 [unrolled_strlen]: do {
-  Line 39 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80 (6 suspects)
@@ -2713,13 +2505,6 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005
 ====================================================================================================
   Line 29 [static_invalid_pointer_cast]: (&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,
   Line 30 [static_invalid_pointer_cast]: (int *)local_24,&local_60);
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (2 suspects)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 131 [pointer_cast]: iVar10 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).
-  Line 165 [pointer_cast]: iVar10 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).
 
 ====================================================================================================
 core_sound.cpp_updateListeners_FUN_005b1870 (5 suspects)

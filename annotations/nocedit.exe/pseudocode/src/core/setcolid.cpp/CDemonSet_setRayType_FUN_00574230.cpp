@@ -9,7 +9,7 @@
 void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(CDemonSet *this_ptr,int ray_type)
 
 {
-  this_ptr->ray_type = ray_type;
+  (this_ptr->ray_query).ray_type = ray_type;
   if (ray_type != 3) {
     return;
   }

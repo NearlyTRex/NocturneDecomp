@@ -31,7 +31,6 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
   int iVar11;
   int iVar12;
   float fVar13;
-  int iVar13;
   int iVar16;
   int iVar15;
   CMotionController *pCVar16;
@@ -135,20 +134,16 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                     (g_CDemonRendererPtr2,&g_ZeroVector.f);
           core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_40,0);
-          iVar13 = 0;
           iVar12 = 0;
           while (iVar11 = iVar12, iVar11 < local_8c[iVar16]->vertex_count[0]) {
-            iVar12 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-                                    screen_x + iVar13);
+            iVar12 = g_CDemonRendererPtr2->vertex_buffer_ptr[iVar11].projected_vertex.screen_x;
             if ((((iVar12 < (g_MouseX + -5) * 0x10000) || ((g_MouseX + 5) * 0x10000 < iVar12)) ||
-                (iVar12 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex)
-                                         .screen_y + iVar13), iVar12 < (g_MouseY + -5) * 0x10000))
+                (iVar12 = g_CDemonRendererPtr2->vertex_buffer_ptr[iVar11].projected_vertex.screen_y,
+                iVar12 < (g_MouseY + -5) * 0x10000))
                || ((g_MouseY + 5) * 0x10000 < iVar12)) {
-              iVar13 = iVar13 + 0x30;
               iVar12 = iVar11 + 1;
             }
             else {
-              iVar13 = iVar13 + 0x30;
               iVar12 = iVar11 + 1;
               iVar15 = iVar11;
               picked_side = iVar16;

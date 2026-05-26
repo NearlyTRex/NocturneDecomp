@@ -4417,6 +4417,10 @@
       "type":"struct"
     },
     {
+      "name":"SRayQueryState",
+      "type":"struct"
+    },
+    {
       "name":"SRecordingDeviceInfo",
       "type":"struct"
     },
@@ -33415,22 +33419,10 @@
           "type":"int"
         },
         {
-          "len":4,
-          "name":"ray_type",
+          "len":20,
+          "name":"ray_query",
           "offset":1439360,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"laser_type",
-          "offset":1439364,
-          "type":"int"
-        },
-        {
-          "len":12,
-          "name":"laser_color",
-          "offset":1439368,
-          "type":"CColor3i"
+          "type":"SRayQueryState"
         },
         {
           "len":4,
@@ -54119,22 +54111,10 @@
       "desc":"",
       "fields":[
         {
-          "len":4,
-          "name":"ray_type",
+          "len":20,
+          "name":"ray_query",
           "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"laser_type",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":12,
-          "name":"laser_color",
-          "offset":8,
-          "type":"CColor3i"
+          "type":"SRayQueryState"
         },
         {
           "len":4,
@@ -59937,6 +59917,24 @@
           "name":"laser_color",
           "offset":8,
           "type":"CColor3i"
+        }
+      ],
+      "importable":true,
+      "len":20,
+      "name":"SRayQueryState",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":20,
+          "name":"ray_query",
+          "offset":0,
+          "type":"SRayQueryState"
         },
         {
           "len":4,

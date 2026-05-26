@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 538
+// Structs : 539
 
 #include "nocturne.h"
 
@@ -2483,12 +2483,8 @@ static_assert(__builtin_offsetof(CDemonSet, vdir_boxes) == 1422356,
               "offsetof(CDemonSet, vdir_boxes) != 1422356");
 static_assert(__builtin_offsetof(CDemonSet, default_ground_type) == 1439356,
               "offsetof(CDemonSet, default_ground_type) != 1439356");
-static_assert(__builtin_offsetof(CDemonSet, ray_type) == 1439360,
-              "offsetof(CDemonSet, ray_type) != 1439360");
-static_assert(__builtin_offsetof(CDemonSet, laser_type) == 1439364,
-              "offsetof(CDemonSet, laser_type) != 1439364");
-static_assert(__builtin_offsetof(CDemonSet, laser_color) == 1439368,
-              "offsetof(CDemonSet, laser_color) != 1439368");
+static_assert(__builtin_offsetof(CDemonSet, ray_query) == 1439360,
+              "offsetof(CDemonSet, ray_query) != 1439360");
 static_assert(__builtin_offsetof(CDemonSet, ignore_list_count) == 1439380,
               "offsetof(CDemonSet, ignore_list_count) != 1439380");
 static_assert(__builtin_offsetof(CDemonSet, collision_flag) == 1439384,
@@ -7913,12 +7909,8 @@ static_assert(__builtin_offsetof(SClothVertex, bone_weights) == 272,
 // ---- SCollisionInfo (40 bytes) ----
 static_assert(sizeof(SCollisionInfo) == 40,
               "sizeof(SCollisionInfo) != 40");
-static_assert(__builtin_offsetof(SCollisionInfo, ray_type) == 0,
-              "offsetof(SCollisionInfo, ray_type) != 0");
-static_assert(__builtin_offsetof(SCollisionInfo, laser_type) == 4,
-              "offsetof(SCollisionInfo, laser_type) != 4");
-static_assert(__builtin_offsetof(SCollisionInfo, laser_color) == 8,
-              "offsetof(SCollisionInfo, laser_color) != 8");
+static_assert(__builtin_offsetof(SCollisionInfo, ray_query) == 0,
+              "offsetof(SCollisionInfo, ray_query) != 0");
 static_assert(__builtin_offsetof(SCollisionInfo, cylinder_bottom_y) == 20,
               "offsetof(SCollisionInfo, cylinder_bottom_y) != 20");
 static_assert(__builtin_offsetof(SCollisionInfo, cylinder_top_y) == 24,
@@ -9790,15 +9782,21 @@ static_assert(sizeof(SRGBColorPalette) == 768,
 static_assert(__builtin_offsetof(SRGBColorPalette, colors) == 0,
               "offsetof(SRGBColorPalette, colors) != 0");
 
+// ---- SRayQueryState (20 bytes) ----
+static_assert(sizeof(SRayQueryState) == 20,
+              "sizeof(SRayQueryState) != 20");
+static_assert(__builtin_offsetof(SRayQueryState, ray_type) == 0,
+              "offsetof(SRayQueryState, ray_type) != 0");
+static_assert(__builtin_offsetof(SRayQueryState, laser_type) == 4,
+              "offsetof(SRayQueryState, laser_type) != 4");
+static_assert(__builtin_offsetof(SRayQueryState, laser_color) == 8,
+              "offsetof(SRayQueryState, laser_color) != 8");
+
 // ---- SRaytraceState (160 bytes) ----
 static_assert(sizeof(SRaytraceState) == 160,
               "sizeof(SRaytraceState) != 160");
-static_assert(__builtin_offsetof(SRaytraceState, ray_type) == 0,
-              "offsetof(SRaytraceState, ray_type) != 0");
-static_assert(__builtin_offsetof(SRaytraceState, laser_type) == 4,
-              "offsetof(SRaytraceState, laser_type) != 4");
-static_assert(__builtin_offsetof(SRaytraceState, laser_color) == 8,
-              "offsetof(SRaytraceState, laser_color) != 8");
+static_assert(__builtin_offsetof(SRaytraceState, ray_query) == 0,
+              "offsetof(SRaytraceState, ray_query) != 0");
 static_assert(__builtin_offsetof(SRaytraceState, ignore_list_count) == 20,
               "offsetof(SRaytraceState, ignore_list_count) != 20");
 static_assert(__builtin_offsetof(SRaytraceState, collision_flag) == 24,

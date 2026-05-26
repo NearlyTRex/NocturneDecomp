@@ -14,7 +14,7 @@ float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemon
   SCollisionInfo local_34;
   
   core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_34);
-  local_34.ray_type = ray_type;
+  local_34.ray_query.ray_type = ray_type;
   bbox_type = (*((this_ptr->vtable)._ub)->getCollisionType)(this_ptr,&local_34);
   if (bbox_type == COLLISION_TYPE_NONE) {
     return 2.0;

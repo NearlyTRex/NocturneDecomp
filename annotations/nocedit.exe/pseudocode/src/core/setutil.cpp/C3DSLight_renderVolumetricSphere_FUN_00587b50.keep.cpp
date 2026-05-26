@@ -10,7 +10,6 @@
 void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DSLight *this_ptr)
 
 {
-  int iVar1;
   int iVar2;
   int iVar3;
   float10 fVar4;
@@ -27,7 +26,8 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
   int local_10;
   int local_c;
   CDemonRenderer *this_ptr_00;
-  
+  SRenderVertex *vtx;
+
   if (ABS(this_ptr->atten_end) == 0.0) {
     return;
   }
@@ -37,7 +37,7 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
   local_18 = 0;
   do {
     iVar3 = -4;
-    iVar1 = local_18 + -0xc0;
+    vtx = g_CDemonRendererPtr2->vertex_buffer_ptr + local_18 + -4;
     do {
       fVar4 = (float10)local_c * (float10)0.0625f * (float10)3.1415926535000001 *
               (float10)2;
@@ -51,24 +51,18 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
       local_50.x = (int)ROUND((float)(fVar5 * fVar6 * fVar8) * 256.0f);
       local_50.y = (int)ROUND((float)(fVar2 * fVar6) * 256.0f);
       local_50.z = (int)ROUND((float)(fVar1 * fVar6 * fVar8) * 256.0f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                ((SProjectedVertex *)
-                 ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
-                 iVar1),&local_50);
+      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&vtx->projected_vertex,&local_50);
       this_ptr_00 = g_CDemonRendererPtr2;
-      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar1) = 0x800000;
-      *(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;
-      *(int *)((int)&this_ptr_00->vertex_buffer_ptr->r + iVar1) =
-           (int)ROUND(ROUND((float)(this_ptr->color).r * 255.0f));
-      *(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) =
-           (int)ROUND(ROUND((float)(this_ptr->color).g * 255.0f));
+      vtx->u = 0x800000;
+      vtx->v = 0x800000;
+      vtx->r = (int)ROUND(ROUND((float)(this_ptr->color).r * 255.0f));
+      vtx->g = (int)ROUND(ROUND((float)(this_ptr->color).g * 255.0f));
       iVar3 = iVar3 + 1;
-      *(int *)((int)&this_ptr_00->vertex_buffer_ptr->b + iVar1) =
-           (int)ROUND(ROUND((float)(this_ptr->color).b * 255.0f));
-      iVar1 = iVar1 + 0x30;
+      vtx->b = (int)ROUND(ROUND((float)(this_ptr->color).b * 255.0f));
+      vtx = vtx + 1;
     } while (iVar3 < 5);
     local_c = local_c + 1;
-    local_18 = local_18 + 0x1e0;
+    local_18 = local_18 + 10;
   } while (local_c < 0x11);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (this_ptr_00,&SMRGLTextureBasic_006817fc);

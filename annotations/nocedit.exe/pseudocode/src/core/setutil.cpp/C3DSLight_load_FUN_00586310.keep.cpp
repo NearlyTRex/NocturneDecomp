@@ -10,10 +10,7 @@
 void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,_FILE *file_handle)
 
 {
-  char *pcVar1;
-  int iVar2;
   float *pfVar3;
-  C3DSLight *pCVar4;
   int iVar5;
   char local_148 [256];
   int local_48;
@@ -25,10 +22,7 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,_F
   int local_30;
   int local_2c;
   int *local_28;
-  CRect *local_24;
   int local_20;
-  int local_1c;
-  C3DSLight *local_18;
   char (*local_14) [40];
   
   if (10 < g_CDemonSetPtr->set_file_version) {
@@ -93,22 +87,18 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,_F
     local_28 = this_ptr->filter_indices;
     pfVar3 = this_ptr->filter_durations;
     local_14 = this_ptr->filter_names;
-    local_18 = this_ptr;
     do {
-      local_1c = iVar5 * 4;
       if (g_CDemonSetPtr->set_file_version < 0x10) {
         _fscanf(file_handle,"%f,%s\n",pfVar3,(char *)local_14);
-        *(uint *)((int)this_ptr->filter_indices + local_1c) = 0;
+        this_ptr->filter_indices[iVar5] = 0;
       }
       else {
         _fscanf(file_handle,"%f,%d,%s\n",pfVar3,local_28 + iVar5,(char *)local_14);
       }
+      this_ptr->filters[iVar5] = (CDemonFilter *)0x0;
       pfVar3 = pfVar3 + 1;
       iVar5 = iVar5 + 1;
       local_14 = local_14 + 1;
-      pcVar1 = local_18->name;
-      local_18->filters[0] = (CDemonFilter *)0x0;
-      local_18 = (C3DSLight *)pcVar1;
     } while (iVar5 < this_ptr->filter_count);
   }
   if (10 < g_CDemonSetPtr->set_file_version) {
@@ -143,27 +133,25 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,_F
       }
     }
     if (local_20 != 0) {
-      local_24 = this_ptr->camera_light_bounds;
-      local_20 = local_20 << 4;
       iVar5 = 0;
-      pCVar4 = this_ptr;
       do {
         if (g_CDemonSetPtr->set_file_version < 2) {
           _fscanf(file_handle,"%d\n",(int *)local_44);
-          pCVar4->visible_flags[0] = local_44[0];
-          *(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar5) = 1;
-          *(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar5) = 0x13e;
-          *(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar5) = 1;
-          *(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar5) = 0xee;
+          this_ptr->visible_flags[iVar5] = local_44[0];
+          this_ptr->camera_light_bounds[iVar5].x_min = 1;
+          this_ptr->camera_light_bounds[iVar5].x_max = 0x13e;
+          this_ptr->camera_light_bounds[iVar5].y_min = 1;
+          this_ptr->camera_light_bounds[iVar5].y_max = 0xee;
         }
         else {
-          iVar2 = (int)&local_24->x_min + iVar5;
-          _fscanf(file_handle,"%d,%d,%d,%d,%d\n",(int *)local_40,(int *)iVar2,(int *)(iVar2 + 4),
-                     (int *)(iVar2 + 8),(int *)(iVar2 + 0xc));
-          pCVar4->visible_flags[0] = local_40[0];
+          _fscanf(file_handle,"%d,%d,%d,%d,%d\n",(int *)local_40,
+                     &this_ptr->camera_light_bounds[iVar5].x_min,
+                     &this_ptr->camera_light_bounds[iVar5].x_max,
+                     &this_ptr->camera_light_bounds[iVar5].y_min,
+                     &this_ptr->camera_light_bounds[iVar5].y_max);
+          this_ptr->visible_flags[iVar5] = local_40[0];
         }
-        iVar5 = iVar5 + 0x10;
-        pCVar4 = (C3DSLight *)((int)&pCVar4->light_type + 1);
+        iVar5 = iVar5 + 1;
       } while (iVar5 < local_20);
     }
   }
