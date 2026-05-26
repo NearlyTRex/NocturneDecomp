@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5977 (92.6%)
-With suspects: 477
-Total suspects: 2796
+Clean: 5978 (92.6%)
+With suspects: 476
+Total suspects: 2802
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -2521,9 +2521,11 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (86 suspec
   Line 1353 [pointer_cast]: local_4c = (void *)((int)local_4c + 0x3c);
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (8 suspects)
+core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (10 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
+  Line 79 [pointer_cast]: puVar6 = (ushort *)((int)this_ptr->tri_data_ptr[lod_level] + local_24 + iVar2);
+  Line 96 [pointer_cast]: puVar6 = (ushort *)((int)this_ptr->tri_data_ptr[lod_level] + local_34 + iVar2);
   Line 122 [pointer_cast]: *(uint *)((int)aiStack_140 + local_78) = 0;
   Line 131 [pointer_cast]: *(int *)((int)aiStack_140 + local_78) = *(int *)((int)aiStack_140 + local_78) + 1;
   Line 131 [pointer_cast]: *(int *)((int)aiStack_140 + local_78) = *(int *)((int)aiStack_140 + local_78) + 1;
@@ -2543,9 +2545,9 @@ core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (13 suspects)
   Line 96 [pointer_cast]: *(uint *)(local_48 + (int)this_ptr->index_data_ptr[lod_index]) = *puVar21;
   Line 166 [pointer_cast]: *(uint *)((int)this_ptr->cap_index_ptr[lod_index] + iVar5) =
   Line 167 [pointer_cast]: *(uint *)((int)lod_mesh->tri_data->attribute_indices + iVar3 + 0xc);
-  Line 176 [static_invalid_pointer_cast]: local_534.x = *(float *)pcVar13;
-  Line 177 [static_invalid_pointer_cast]: local_534.y = *(float *)(pcVar13 + 4);
-  Line 178 [static_invalid_pointer_cast]: local_534.z = *(float *)(pcVar13 + 8);
+  Line 172 [static_invalid_pointer_cast]: local_534.x = *(float *)pcVar13;
+  Line 173 [static_invalid_pointer_cast]: local_534.y = *(float *)(pcVar13 + 4);
+  Line 174 [static_invalid_pointer_cast]: local_534.z = *(float *)(pcVar13 + 8);
   Line 208 [pointer_cast]: if (local_538 < *(float *)((int)local_528 + iVar11)) {
   Line 209 [pointer_cast]: local_538 = *(float *)((int)local_528 + iVar11);
   Line 217 [pointer_cast]: *(char *)((int)pfVar18 + *(byte *)pfVar18 + 1) = (char)iVar16;
@@ -2624,11 +2626,12 @@ core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (15 suspects)
   Line 134 [pointer_cast]: for (iVar2 = 0; iVar2 < *(int *)((int)this_ptr->cap_tri_count + local_34); iVar2 = iVar2 + 1)
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0 (2 suspects)
+core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0 (3 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 20 [pointer_cast]: for (iVar4 = 0; iVar4 < *(int *)((int)this_ptr->vertex_count + local_14); iVar4 = iVar4 + 1) {
   Line 21 [pointer_cast]: pbVar3 = (byte *)(*(int *)((int)this_ptr->vertex_data_ptr + local_14) + iVar7);
+  Line 22 [pointer_cast]: pfVar1 = (float *)(pbVar3 + 0x10);
 
 ====================================================================================================
 core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240 (6 suspects)
@@ -4098,17 +4101,19 @@ shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20 (8 suspects)
   Line 39 [pointer_cast]: *(int *)((int)pvVar1 + 0x34) = other->affected_by_edge_stamp;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (1 suspect)
+shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (2 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 19 [pointer_cast]: *(uint *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar3 + -4) = 0;
+  Line 30 [pointer_cast]: if (*(int *)(iVar7 + 0x40) == 0) {
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620 (3 suspects)
+shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620 (4 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 72 [pointer_cast]: *(int *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + local_28) = local_24;
   Line 87 [self_copy_guard]: if (&local_60 != &local_54) {
+  Line 94 [pointer_cast]: pCVar2 = this_ptr->vertex_data + *(int *)(iVar11 + 0x10);
   Line 132 [pointer_cast]: *(int *)((int)this_ptr->spatial_grid_data + local_18) = iVar12;
 
 ====================================================================================================
@@ -4298,9 +4303,10 @@ shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 (2 suspects)
   Line 23 [pointer_cast]: *(uint *)((int)pCVar1->edge_perpendiculars + iVar6 + -0x14) = 1;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 (3 suspects)
+shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 (4 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
+  Line 21 [pointer_cast]: if ((*(int *)(iVar3 + 0x40) == 0) && (local_1c = local_24 + 1, local_1c < this_ptr->tri_count)
   Line 26 [pointer_cast]: if (*(int *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) == 0) {
   Line 34 [pointer_cast]: *(int *)((int)pCVar1->attribute_indices + (iVar2 % 3) * 4 + local_20 + 0x10))
   Line 41 [pointer_cast]: *(uint *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) = 1;
@@ -4372,13 +4378,6 @@ shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (4 suspects)
   Line 50 [pointer_cast]: (this_ptr,*(int *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x28),
   Line 51 [pointer_cast]: *(int *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x24),
   Line 52 [pointer_cast]: *(float *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x18));
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30 (2 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 63 [pointer_cast]: puVar16 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_28);
-  Line 64 [pointer_cast]: puVar2 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_24);
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0 (4 suspects)
@@ -4568,9 +4567,10 @@ shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (1 suspect)
   Line 170 [pointer_cast]: puVar10 = (uint *)(iVar14 + (int)puVar9);
 
 ====================================================================================================
-shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 (12 suspects)
+shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 (13 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
+  Line 48 [unrolled_memcpy]: // 005c8eee: MOVSD.REP ES:EDI,ESI
   Line 57 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 70 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);
   Line 75 [bitcast_double_pair]: dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->z -
@@ -4585,9 +4585,10 @@ shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 (12 suspects)
   Line 111 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar8) {
 
 ====================================================================================================
-shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 (12 suspects)
+shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 (13 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
+  Line 49 [unrolled_memcpy]: // 005c8bd2: MOVSD.REP ES:EDI,ESI
   Line 58 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 71 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);
   Line 76 [bitcast_double_pair]: dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14->z -

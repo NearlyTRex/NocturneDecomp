@@ -235,6 +235,42 @@
       "severity": "moderate",
       "text": "for (iVar3 = 0x32; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 78,
+      "match": "(uint *)(iVar2 + 0x7178)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x7178) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 79,
+      "match": "(uint *)(iVar2 + 0x7164)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x7164) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 133,
+      "match": "(int *)(iVar2 + 0x7164)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = iVar3 + *(int *)(iVar2 + 0x7164);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 134,
+      "match": "(int *)(iVar2 + 0x7178)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar20 = iVar20 + *(int *)(iVar2 + 0x7178);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -460,21 +496,21 @@
         {
           "check_id": "invalidPointerCast",
           "column": 20,
-          "line": 176,
+          "line": 172,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
           "column": 20,
-          "line": 177,
+          "line": 173,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "invalidPointerCast",
           "column": 20,
-          "line": 178,
+          "line": 174,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         }
@@ -566,7 +602,7 @@
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 176,
+      "line": 172,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "local_534.x = *(float *)pcVar13;",
@@ -574,7 +610,7 @@
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 177,
+      "line": 173,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "local_534.y = *(float *)(pcVar13 + 4);",
@@ -582,7 +618,7 @@
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 178,
+      "line": 174,
       "match": "Cppcheck: invalid pointer cast",
       "severity": "moderate",
       "text": "local_534.z = *(float *)(pcVar13 + 8);",

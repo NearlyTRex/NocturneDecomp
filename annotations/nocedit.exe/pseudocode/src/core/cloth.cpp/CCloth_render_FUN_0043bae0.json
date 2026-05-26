@@ -377,6 +377,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 129,
+      "match": "(SMRGLPrimitiveQuad *)(iVar7 + 0xc)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar3 = (SMRGLPrimitiveQuad *)(iVar7 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 54,
       "match": "pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)",

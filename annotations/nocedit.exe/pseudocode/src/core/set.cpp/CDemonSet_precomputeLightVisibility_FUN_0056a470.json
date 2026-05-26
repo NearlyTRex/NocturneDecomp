@@ -423,6 +423,60 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 114,
+      "match": "(char *)(local_18 + 0x19b58)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char *)(local_18 + 0x19b58) = (char)iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 117,
+      "match": "(int *)(iVar5 + 0x19c54)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(iVar5 + 0x19c54) = local_5c.x_min;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 118,
+      "match": "(int *)(iVar5 + 0x19c58)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(iVar5 + 0x19c58) = local_5c.x_max;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 119,
+      "match": "(int *)(iVar5 + 0x19c5c)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(iVar5 + 0x19c5c) = local_5c.y_min;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 120,
+      "match": "(int *)(iVar5 + 0x19c60)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(iVar5 + 0x19c60) = local_5c.y_max;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 121,
+      "match": "(char *)(local_18 + 0x19b58)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(char *)(local_18 + 0x19b58) != '\\0') {",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `local_3c` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_3c->vertices[0].a`). Replace `local_3c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 154,
       "match": "local_3c = (T *)&local_3c->FIELD[N].SUBFIELD",

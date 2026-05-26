@@ -49,11 +49,11 @@ int __cdecl CComplexPolygon::splitToConvex(CComplexPolygon *this_ptr);
 
 // Original: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
 // Address: 005c8b50
-int __cdecl CComplexPolygon::findReflexVertex(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b);
+SExpandedEdge * __cdecl CComplexPolygon::findReflexVertex(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b);
 
 // Original: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
 // Address: 005c8e70
-int __cdecl CComplexPolygon::findBestSplitEdge(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b);
+SExpandedEdge * __cdecl CComplexPolygon::findBestSplitEdge(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b);
 
 // Original: shape_superopt.cpp_CComplexPolygon_computeArea_FUN_005c9100
 // Address: 005c9100

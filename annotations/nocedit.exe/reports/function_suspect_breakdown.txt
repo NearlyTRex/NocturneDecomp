@@ -4,20 +4,20 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5990 functions
-  1 suspects: 58 functions
-  2 suspects: 95 functions
-  3 suspects: 57 functions
-  4 suspects: 55 functions
+  0 suspects: 5991 functions
+  1 suspects: 57 functions
+  2 suspects: 94 functions
+  3 suspects: 56 functions
+  4 suspects: 57 functions
   5 suspects: 34 functions
   6 suspects: 37 functions
   7 suspects: 20 functions
-  8 suspects: 26 functions
+  8 suspects: 25 functions
   9 suspects: 9 functions
-  10 suspects: 11 functions
+  10 suspects: 12 functions
   11 suspects: 6 functions
-  12 suspects: 10 functions
-  13 suspects: 3 functions
+  12 suspects: 8 functions
+  13 suspects: 5 functions
   14 suspects: 4 functions
   15 suspects: 6 functions
   16 suspects: 6 functions
@@ -83,10 +83,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [pointer_cast] (14 functions)
+  [pointer_cast] (13 functions)
   ------------------------------------------------------------
-    shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 ( 53 lines)
-      *(uint *)((int)this_ptr->vertex_data->adjacent_edge_indices ...
     engine_fileio.cpp_CFileManager_buildPodFromRespons ( 57 lines)
       pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);...
     engine_fileio.cpp_CFileManager_processMRGLNode_FUN ( 58 lines)
@@ -247,8 +245,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mimic.cpp, Lines: 43, Types: ['unrolled_strcpy', 'warning_type_propagation']
   engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00
     File: engine/alphabit.cpp, Lines: 44, Types: ['pointer_cast']
-  core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058
-    File: core/skeledit.cpp, Lines: 44, Types: ['pointer_cast']
   core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
     File: core/dmodel.cpp, Lines: 44, Types: ['negative_offset']
   core_script.cpp_compareEventXRefs_FUN_005675a0
@@ -267,6 +263,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/setcolid.cpp, Lines: 53, Types: ['unrolled_memcpy']
   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0
     File: core/mimic.cpp, Lines: 53, Types: ['pointer_cast']
+  shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0
+    File: shape/meshlod.cpp, Lines: 53, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
     File: shape/meshlod.cpp, Lines: 54, Types: ['shadow_pointer_walk', 'unrolled_memset']
   core_trigger.cpp_CTrigger_ctor_FUN_005df840
@@ -349,8 +347,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/turret.cpp, Lines: 159, Types: ['unrolled_memcpy']
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
     File: core/gabriela.cpp, Lines: 160, Types: ['pointer_cast', 'unrolled_memset']
-  shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
-    File: shape/meshlod.cpp, Lines: 163, Types: ['pointer_cast']
   core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_004
     File: core/dmodel.cpp, Lines: 169, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
@@ -401,6 +397,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/pod.cpp, Lines: 42, Types: ['pointer_cast', 'unrolled_memcpy']
   core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0
     File: core/script.cpp, Lines: 43, Types: ['pointer_cast']
+  core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058
+    File: core/skeledit.cpp, Lines: 44, Types: ['pointer_cast']
   shape_design.c_removeDegenerateTriangles_FUN_00463a20
     File: shape/design.c, Lines: 45, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_setutil.cpp_readAndParseLine_FUN_00585290
@@ -411,8 +409,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/setdir.cpp, Lines: 52, Types: ['pointer_cast']
   shape_design.c_removeDuplicatePolygons_FUN_004651b0
     File: shape/design.c, Lines: 52, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
-  shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40
-    File: shape/meshlod.cpp, Lines: 53, Types: ['pointer_cast']
   core_script.cpp_CScript_checkSyntax_FUN_00566080
     File: core/script.cpp, Lines: 54, Types: ['pointer_cast', 'unrolled_strcpy']
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
@@ -473,8 +469,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mobster.cpp, Lines: 148, Types: ['bit_int_float_compare', 'pointer_cast']
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
     File: core/ghoul.cpp, Lines: 149, Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy']
-  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
-    File: shape/meshlod.cpp, Lines: 157, Types: ['pointer_cast', 'self_copy_guard']
   shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d396
     File: shape/superopt.cpp, Lines: 157, Types: ['pointer_cast', 'shadow_pointer_walk']
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_F

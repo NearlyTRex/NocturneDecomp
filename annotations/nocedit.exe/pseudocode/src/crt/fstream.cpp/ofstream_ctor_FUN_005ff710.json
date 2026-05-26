@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 110,
+    "complexity_score": 130,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
       "extra_output",
       "negative_offset",
@@ -249,6 +249,22 @@
       "severity": "mild",
       "text": "p_Var2[-1]._ios.cleanup_vtable = &g_OFStream_FStreamBaseDestructor;",
       "type": "negative_offset"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 14,
+      "match": "(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44)",
+      "severity": "moderate",
+      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) = &g_OFStream_OStreamSubobjectLayout;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 15,
+      "match": "(ios *)((int)this_ptr + 0x50)",
+      "severity": "moderate",
+      "text": "piVar4 = crt_iostream_cpp_ios_ctor_FUN_006061fc((ios *)((int)this_ptr + 0x50));",
+      "type": "pointer_cast"
     }
   ]
 }

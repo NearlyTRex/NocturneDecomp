@@ -105,6 +105,17 @@
     },
     "pcode_op_count": 749
   },
+  "resolved_suspects": [
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 48,
+      "match": "(int *)(local_28 + 0x7164)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar8 = local_20 + *(int *)(local_28 + 0x7164);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8228,
     "local_size": 8224,
@@ -265,7 +276,7 @@
         {
           "check_id": "identicalInnerCondition",
           "column": 26,
-          "line": 47,
+          "line": 43,
           "message": "Identical inner 'if' condition is always true.",
           "severity": "warning"
         }

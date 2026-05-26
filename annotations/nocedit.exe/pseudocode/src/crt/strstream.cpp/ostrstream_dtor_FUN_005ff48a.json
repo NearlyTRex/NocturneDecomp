@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 109,
+    "complexity_score": 139,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
@@ -268,6 +268,30 @@
       "severity": "mild",
       "text": "this_ptr = &piVar2[-2].__tied_stream;",
       "type": "negative_offset"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 11,
+      "match": "(void ***)((int)this_ptr + 0x44)",
+      "severity": "moderate",
+      "text": "*(void ***)((int)this_ptr + 0x44) = &PTR_FUN_00665b7c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 12,
+      "match": "(void ***)((int)this_ptr + 0x4c)",
+      "severity": "moderate",
+      "text": "*(void ***)((int)this_ptr + 0x4c) = &PTR_LAB_00665b84;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 14,
+      "match": "(_ostream *)((int)this_ptr + 0x48)",
+      "severity": "moderate",
+      "text": "p_Var1 = crt_iostream_cpp_ostream_dtor_FUN_00606231((_ostream *)((int)this_ptr + 0x48),1);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

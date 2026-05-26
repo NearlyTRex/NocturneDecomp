@@ -68,13 +68,11 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
       shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(lod_mesh,1);
       shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(lod_mesh,2);
       iVar3 = 0;
-      iVar2 = (int)this_ptr->lod_info + lod_index * 4 + -4;
       if (0 < this_ptr->num_parts) {
         do {
-          *(uint *)(iVar2 + 0x7178) = 0;
-          *(uint *)(iVar2 + 0x7164) = 0;
+          this_ptr->parts[iVar3].cap_tri_counts[lod_index] = 0;
+          this_ptr->parts[iVar3].tri_counts[lod_index] = 0;
           iVar3 = iVar3 + 1;
-          iVar2 = iVar2 + 0x60;
         } while (iVar3 < this_ptr->num_parts);
       }
       this_ptr->tri_count[lod_index] = 0;
@@ -123,13 +121,11 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
       iVar20 = 0;
       iVar4 = 0;
       iVar3 = 0;
-      iVar2 = (int)this_ptr->lod_info + lod_index * 4 + -4;
       if (0 < this_ptr->num_parts) {
         do {
-          iVar3 = iVar3 + *(int *)(iVar2 + 0x7164);
-          iVar20 = iVar20 + *(int *)(iVar2 + 0x7178);
+          iVar3 = iVar3 + this_ptr->parts[iVar4].tri_counts[lod_index];
+          iVar20 = iVar20 + this_ptr->parts[iVar4].cap_tri_counts[lod_index];
           iVar4 = iVar4 + 1;
-          iVar2 = iVar2 + 0x60;
         } while (iVar4 < this_ptr->num_parts);
       }
       if ((iVar3 != this_ptr->tri_count[lod_index]) ||

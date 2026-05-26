@@ -17,8 +17,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   int iVar5;
   ushort *puVar2;
   ushort *puVar6;
-  int iVar3;
-  int iVar4;
   int *piVar5;
   int iVar6;
   char local_340 [512];
@@ -30,9 +28,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   int local_88;
   int local_84;
   CDeformableModel *local_80;
-  int local_7c;
   int local_78;
-  int local_74;
   int local_48;
   int local_44;
   int local_40;
@@ -65,56 +61,52 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
                     (g_CEditorToolsPtr,"Export capped faces?");
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_b8);
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_c8);
-  iVar4 = lod_level * 4;
   local_3c = 0;
-  iVar5 = (int)this_ptr->lod_info + iVar4 + -4;
-  local_40 = *(int *)(iVar5 + 0x54);
+  local_40 = this_ptr->tri_count[lod_level];
   local_84 = 0;
   if (0 < this_ptr->num_parts) {
     local_80 = this_ptr;
     local_78 = 0;
-    local_7c = iVar5;
-    local_74 = iVar5;
     do {
-      memset(dest,0,*(int *)(iVar5 + 0x2c) << 2);
+      memset(dest,0,this_ptr->vertex_count[lod_level] << 2);
       local_44 = local_3c;
       local_24 = local_3c * 0x12;
       local_30 = 0;
-      if (0 < *(int *)(local_7c + 0x7164)) {
+      if (0 < this_ptr->parts[local_84].tri_counts[lod_level]) {
         do {
           iVar2 = 0;
           do {
-            puVar6 = (ushort *)(*(int *)(iVar5 + 0x7c) + local_24 + iVar2);
+            puVar6 = (ushort *)((int)this_ptr->tri_data_ptr[lod_level] + local_24 + iVar2);
             iVar2 = iVar2 + 2;
             dest[*puVar6] = 1;
           } while (iVar2 != 6);
           local_44 = local_44 + 1;
           local_30 = local_30 + 1;
           local_24 = local_24 + 0x12;
-        } while (local_30 < *(int *)(local_7c + 0x7164));
+        } while (local_30 < this_ptr->parts[local_84].tri_counts[lod_level]);
       }
       local_48 = local_40;
       if (iVar1 != 0) {
         local_20 = 0;
         local_34 = local_40 * 0x12;
-        if (0 < *(int *)(local_74 + 0x7178)) {
+        if (0 < this_ptr->parts[local_84].cap_tri_counts[lod_level]) {
           do {
             iVar2 = 0;
             do {
-              puVar6 = (ushort *)(*(int *)(iVar5 + 0x7c) + local_34 + iVar2);
+              puVar6 = (ushort *)((int)this_ptr->tri_data_ptr[lod_level] + local_34 + iVar2);
               iVar2 = iVar2 + 2;
               dest[*puVar6] = 1;
             } while (iVar2 != 6);
             local_48 = local_48 + 1;
             local_20 = local_20 + 1;
             local_34 = local_34 + 0x12;
-          } while (local_20 < *(int *)(local_74 + 0x7178));
+          } while (local_20 < this_ptr->parts[local_84].cap_tri_counts[lod_level]);
         }
       }
       *(uint *)((int)aiStack_140 + local_78) = 0;
       local_1c = 0;
       piVar5 = dest;
-      if (0 < *(int *)(iVar5 + 0x2c)) {
+      if (0 < this_ptr->vertex_count[lod_level]) {
         do {
           if (*piVar5 == 0) {
             *piVar5 = -1;
@@ -131,7 +123,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
           }
           local_1c = local_1c + 1;
           piVar5 = piVar5 + 1;
-        } while (local_1c < *(int *)(iVar5 + 0x2c));
+        } while (local_1c < this_ptr->vertex_count[lod_level]);
       }
       local_28 = local_3c << 2;
       local_2c = local_3c * 0x12;
@@ -180,8 +172,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze");
         }
       }
-      local_7c = local_7c + 0x60;
-      local_74 = local_74 + 0x60;
       local_78 = local_78 + 4;
       local_80 = (CDeformableModel *)(local_80->tri_count + 3);
       local_84 = local_84 + 1;
@@ -200,11 +190,10 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   local_8c = 0;
   iVar6 = 0;
   if (0 < this_ptr->num_parts) {
-    iVar3 = (int)this_ptr->lod_info + lod_level * 4 + -4;
     iVar1 = 0;
     do {
-      iVar5 = *(int *)(iVar3 + 0x7164) + *(int *)(iVar3 + 0x7178);
-      iVar3 = iVar3 + 0x60;
+      iVar5 = this_ptr->parts[iVar6].tri_counts[lod_level] +
+              this_ptr->parts[iVar6].cap_tri_counts[lod_level];
       iVar6 = iVar6 + 1;
       _fprintf(file,"%d,%d,%d,%d,\"%s\"\n",local_88,*(uint *)((int)aiStack_140 + iVar1),
                  local_8c,iVar5,this_ptr->parts[iVar6].part_name);

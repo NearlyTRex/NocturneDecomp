@@ -27,8 +27,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
   CVector3f local_7c;
   CVector3f local_70;
   int *local_58;
-  int local_54;
-  int local_50;
   byte *local_4c;
   byte *local_48;
   int local_44;
@@ -68,12 +66,11 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
   iVar3 = 0;
   local_44 = 0;
   if (0 < this_ptr->num_parts) {
-    local_54 = (int)this_ptr->lod_info + lod_index * 4 + -4;
     local_4c = (byte *)part_visibility_flags;
     local_58 = texture_set_indices;
     iVar11 = iVar3;
     do {
-      iVar3 = *(int *)(local_54 + 0x7164) + iVar11;
+      iVar3 = this_ptr->parts[local_44].tri_counts[lod_index] + iVar11;
       iVar2 = *local_58;
       if (((*local_4c & 1) != 0) && (iVar11 < iVar3)) {
         do {
@@ -105,7 +102,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
         } while (iVar11 < iVar3);
       }
       local_4c = local_4c + 4;
-      local_54 = local_54 + 0x60;
       local_44 = local_44 + 1;
       local_58 = local_58 + 1;
       iVar11 = iVar3;
@@ -113,10 +109,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
   }
   local_3c = 0;
   if (0 < this_ptr->num_parts) {
-    local_50 = (int)this_ptr->lod_info + lod_index * 4 + -4;
     local_48 = (byte *)part_visibility_flags;
     do {
-      iVar11 = *(int *)(local_50 + 0x7178) + iVar3;
+      iVar11 = this_ptr->parts[local_3c].cap_tri_counts[lod_index] + iVar3;
       if (((*local_48 & 1) != 0) && (iVar2 = texture_set_indices[local_3c], iVar3 < iVar11)) {
         do {
           puVar4 = &this_ptr->tri_data_ptr[lod_index][iVar3].vertex_indices.vertex_index_0;
@@ -151,7 +146,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
           iVar3 = iVar3 + 1;
         } while (iVar3 < iVar11);
       }
-      local_50 = local_50 + 0x60;
       local_48 = local_48 + 4;
       local_3c = local_3c + 1;
       iVar3 = iVar11;

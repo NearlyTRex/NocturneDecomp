@@ -109,6 +109,7 @@ def run_detectors(susp, code):
     found.extend(susp.identify_pointer_cast_multiline(code))
     found.extend(susp.identify_int_address_arithmetic(code))
     found.extend(susp.identify_int_address_arithmetic_multiline(code))
+    found.extend(susp.identify_pointer_int_offset_access(code))
     found.extend(susp.identify_shadow_pointer_walk(code))
     found.extend(susp.identify_unrolled_strlen_loops(code))
     found.extend(susp.identify_unrolled_strcat_loops(code))

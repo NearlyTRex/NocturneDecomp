@@ -167,6 +167,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 48,
+      "match": "(int *)(iVar3 + 0x40)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)(iVar3 + 0x40) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 41,
       "match": "MOVSD.REP",

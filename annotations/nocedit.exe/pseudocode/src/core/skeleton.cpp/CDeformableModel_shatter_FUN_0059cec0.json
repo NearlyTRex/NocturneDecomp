@@ -313,6 +313,24 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&local_88.x + iVar7) = (uint)*puVar5 << 8;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 90,
+      "match": "(int *)(local_54 + 0x7164)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)(local_54 + 0x7164) + iVar11;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 136,
+      "match": "(int *)(local_50 + 0x7178)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)(local_50 + 0x7178) + iVar3;",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

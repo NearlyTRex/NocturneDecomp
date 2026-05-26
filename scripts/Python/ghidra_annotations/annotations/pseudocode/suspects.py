@@ -2823,6 +2823,85 @@ def identify_int_address_arithmetic_multiline(decompiled_code):
     return suspects
 
 
+# Pointer-variable cast to int + hex byte offset, dereferenced — raw struct
+# access that should be a named field / array index. Ghidra casts a `this`/
+# param pointer to int, does byte arithmetic, and derefs with a hex offset:
+#     iVar1 = alpha_index * 0xc + (int)this_ptr;
+#     *(int *)(iVar1 + 0x11ec) = ...;            // -> this_ptr->field[i]
+#   or inline:  *(int *)((int)this_ptr + 0x11ec)
+# This is the smell that left CDemonCamera::saveAlphaTransform illegible.
+# Distinct from `(int)&NAME` arithmetic (identify_int_address_arithmetic): here
+# the base is a pointer VARIABLE. Gated on the base local being assigned from an
+# `(int)<pointer>` expression (or the inline `(int)<pointer>` form), so it does
+# NOT fire on the thousands of ordinary `*(T*)(intvar + off)` buffer/loop/string
+# accesses whose base isn't a pointer.
+_PTRISH = r"(?:this_ptr|param_\d+|p[A-Z]\w*|[A-Za-z_]\w*_ptr)"
+# LHS local assigned from an RHS that contains `(int)<ptrish>` → the local holds
+# a raw `pointer + offset` struct address.
+_PTR_INT_ASSIGN_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*[^;]*\(int\)\s*" + _PTRISH + r"\b")
+# `(TYPE *)(BASE +/- 0xNNN)` where BASE is an identifier or `(int)<ident>`.
+_PTR_OFFSET_CAST_RE = re.compile(
+    r"\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*\(\s*"
+    r"(?P<base>(?:\(int\)\s*)?[A-Za-z_]\w*)\s*[-+]\s*0x[0-9a-fA-F]+\s*\)")
+# Inline pointer-cast base: `(int)<ptrish>`.
+_INLINE_PTR_BASE_RE = re.compile(r"^\(int\)\s*" + _PTRISH + r"\Z")
+
+
+def identify_pointer_int_offset_access(decompiled_code):
+    """Detect `*(TYPE *)((int)ptr + 0xNNN)` raw-byte struct access.
+
+    Ghidra casts a pointer (a `this` receiver or param) to int and dereferences
+    `ptr + hex_offset`, either inline or via an intermediate int local. The hex
+    offset is a struct-field offset that should be expressed as a named field or
+    array index (search the struct first — see §12). Gated on the dereferenced
+    base provably deriving from an `(int)<pointer>` cast, so the thousands of
+    ordinary `*(T*)(intvar + off)` accesses (whose base is a genuine int, not a
+    pointer) are not flagged.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts (type `pointer_cast`).
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    # Pass 1: locals assigned from `(int)<ptrish>` arithmetic hold raw addresses.
+    addr_locals = set()
+    for line in lines:
+        m = _PTR_INT_ASSIGN_RE.match(line)
+        if m:
+            addr_locals.add(m.group(1))
+    # Pass 2: flag `(TYPE *)(BASE +/- 0xHEX)` where BASE is such a local or the
+    # inline `(int)<ptrish>` form.
+    for line_no, line in enumerate(lines, 1):
+        stripped = line.lstrip()
+        if (stripped.startswith('//') or stripped.startswith('/*') or
+                stripped.startswith('* ')):
+            continue
+        for m in _PTR_OFFSET_CAST_RE.finditer(line):
+            base = m.group('base').strip()
+            if _INLINE_PTR_BASE_RE.match(base) or base in addr_locals:
+                suspects.append({
+                    'line': line_no,
+                    'type': 'pointer_cast',
+                    'match': m.group()[:80],
+                    'text': line.strip()[:120],
+                    'description': (
+                        'Byte-offset struct access via a pointer cast to int '
+                        '(`(int)ptr + 0xNNN`) — Ghidra lost the struct type for '
+                        'the pointer. Replace with the named struct field / '
+                        'array index in a .keep (search the struct for the '
+                        'member at that offset first).'),
+                    'severity': 'moderate',
+                })
+                break  # one flag per line is enough
+    return suspects
+
+
 # Watcom shadow-pointer walk. The compiler used a struct-field-array's
 # address as a base and advanced it by element size each iteration so that
 # `shadow->bone_list[0]` resolved to `original->bone_list[i]`. Ghidra
@@ -4649,6 +4728,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_pointer_cast_multiline(code))
     found.extend(identify_int_address_arithmetic(code))
     found.extend(identify_int_address_arithmetic_multiline(code))
+    found.extend(identify_pointer_int_offset_access(code))
     found.extend(identify_shadow_pointer_walk(code))
     found.extend(identify_subfield_vector_pun(code))
     found.extend(identify_unrolled_strlen_loops(code))

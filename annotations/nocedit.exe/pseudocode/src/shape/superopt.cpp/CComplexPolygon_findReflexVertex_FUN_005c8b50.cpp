@@ -2,11 +2,11 @@
 // Address: 005c8b50
 // Address Range: [[005c8b50, 005c8e6a]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)
+// Signature: SExpandedEdge * __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)
 
 #include "nocturne.h"
 
-int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)
+SExpandedEdge * __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)
 
 {
   double dVar1;
@@ -100,7 +100,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CCo
         iVar4 = shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
                           (this_ptr,buf_b,&local_28,1);
         if ((iVar5 == 0) && (iVar4 == 0)) {
-          return 0;
+          return (SExpandedEdge *)0x0;
         }
         if (iVar5 == 0) {
           iVar5 = 0;
@@ -116,7 +116,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CCo
         }
         if ((iVar5 != 0) || (iVar4 != 0)) {
           if ((iVar5 != 0) && (iVar4 != 0)) {
-            return local_18;
+            return (SExpandedEdge *)local_18;
           }
           if (iVar5 == 0) {
             dVar8 = shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100
@@ -146,5 +146,5 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CCo
       local_24 = local_24 + 0x60;
     } while (local_20 < (uint)this_ptr->expanded_edge_count);
   }
-  return local_1c;
+  return (SExpandedEdge *)local_1c;
 }

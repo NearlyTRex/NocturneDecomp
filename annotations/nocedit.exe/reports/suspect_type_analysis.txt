@@ -4,13 +4,13 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1235 ( 44.2%)
-  unrolled_memcpy                  574 ( 20.5%)
+  pointer_cast                    1239 ( 44.2%)
+  unrolled_memcpy                  576 ( 20.6%)
   unrolled_strcpy                  237 (  8.5%)
   shadow_pointer_walk              113 (  4.0%)
   missing_cave_copy                109 (  3.9%)
   unrolled_strlen                   80 (  2.9%)
-  carry_arith_idiom                 63 (  2.3%)
+  carry_arith_idiom                 63 (  2.2%)
   raw_address_constant              43 (  1.5%)
   bitcast_double_pair               42 (  1.5%)
   unrolled_strchr                   38 (  1.4%)
@@ -35,13 +35,13 @@ SUSPECT TYPE COUNTS
   fast_sqrt_inline                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1235 occurrences)
+TYPE: pointer_cast (1239 occurrences)
 ====================================================================================================
 
 Unique patterns:
    477x  (int)&NAME used in byte-offset arithmetic
     36x  (int *)((int)this_ptr
-    30x  (uint *)((int)this_ptr
+    28x  (uint *)((int)this_ptr
     22x  (int)&NAME byte-offset arithmetic split across lines
     16x  (int *)((int)g_ScreenBufferArray
     14x  (uint *)((int)g_ThumbnailImageBuffer
@@ -258,7 +258,6 @@ Functions:
   shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
   shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0
-  shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
   shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
   shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
   shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
@@ -318,13 +317,13 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (574 occurrences)
+TYPE: unrolled_memcpy (576 occurrences)
 ====================================================================================================
 
 Unique patterns:
    406x  field-by-field struct copy
     85x  for (...; != 0; ... + -1)
-    81x  MOVSD.REP
+    83x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:

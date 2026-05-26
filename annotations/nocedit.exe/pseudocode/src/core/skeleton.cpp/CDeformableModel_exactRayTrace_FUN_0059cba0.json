@@ -274,6 +274,15 @@
       "severity": "moderate",
       "text": "*(ushort *)((int)&(pSVar1->vertex_indices).vertex_index_2 + iVar5));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 52,
+      "match": "(int *)(local_24 + 0x7164)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(local_24 + 0x7164) + iVar3;",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

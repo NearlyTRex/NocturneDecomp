@@ -31,9 +31,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
   float local_130;
   SMRGLPrimitiveTriangle local_12c;
   byte *local_cc;
-  int local_c8;
   byte *local_c4;
-  int local_c0;
   int local_bc;
   int *local_b8;
   int local_b4;
@@ -54,11 +52,10 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
   local_b0 = 0;
   local_bc = 0;
   if (0 < this_ptr->num_parts) {
-    local_c8 = (int)this_ptr->lod_info + lod_index * 4 + -4;
     local_b8 = texture_set_indices;
     local_c4 = (byte *)part_visibility_flags;
     do {
-      iVar9 = local_b0 + *(int *)(local_c8 + 0x7164);
+      iVar9 = local_b0 + this_ptr->parts[local_bc].tri_counts[lod_index];
       if ((*local_c4 & 1) != 0) {
         if ((iVar12 == 0) && (iVar1 != 0)) {
           engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
@@ -172,7 +169,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
         }
       }
       local_c4 = local_c4 + 4;
-      local_c8 = local_c8 + 0x60;
       local_b8 = local_b8 + 1;
       local_bc = local_bc + 1;
       local_b0 = iVar9;
@@ -180,10 +176,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
   }
   local_b4 = 0;
   if (0 < this_ptr->num_parts) {
-    local_c0 = (int)this_ptr->lod_info + lod_index * 4 + -4;
     local_cc = (byte *)part_visibility_flags;
     do {
-      iVar13 = local_b0 + *(int *)(local_c0 + 0x7178);
+      iVar13 = local_b0 + this_ptr->parts[local_b4].cap_tri_counts[lod_index];
       local_64 = -1;
       if (((*local_cc & 1) != 0) && (local_b0 < iVar13)) {
         do {
@@ -208,7 +203,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeform
         } while (local_b0 < iVar13);
       }
       local_cc = local_cc + 4;
-      local_c0 = local_c0 + 0x60;
       local_b4 = local_b4 + 1;
       local_b0 = iVar13;
     } while (local_b4 < this_ptr->num_parts);

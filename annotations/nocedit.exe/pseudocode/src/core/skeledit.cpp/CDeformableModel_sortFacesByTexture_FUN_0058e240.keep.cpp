@@ -25,8 +25,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
   ushort uStack_44;
   CDeformableModel *local_38;
   int local_34;
-  int local_30;
-  int local_28;
   int local_24;
   int local_20;
   int *piVar1;
@@ -35,14 +33,12 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
   local_34 = 0;
   if (0 < this_ptr->num_lods) {
     local_38 = this_ptr;
-    local_30 = 0;
     do {
       local_24 = 0;
       local_20 = 0;
       if (0 < this_ptr->num_parts) {
-        local_28 = (int)this_ptr->lod_info + local_30 + -4;
         do {
-          iVar8 = local_20 + *(int *)(local_28 + 0x7164);
+          iVar8 = local_20 + this_ptr->parts[local_24].tri_counts[local_34];
           for (iVar9 = iVar8 + -2; local_20 <= iVar9; iVar9 = iVar9 + -1) {
             if (local_20 <= iVar9) {
               iVar7 = local_20 * 4;
@@ -80,12 +76,10 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
               } while (iVar7 <= iVar9 << 2);
             }
           }
-          local_28 = local_28 + 0x60;
           local_24 = local_24 + 1;
           local_20 = iVar8;
         } while (local_24 < this_ptr->num_parts);
       }
-      local_30 = local_30 + 4;
       local_38 = (CDeformableModel *)local_38->lod_info;
       local_34 = local_34 + 1;
     } while (local_34 < this_ptr->num_lods);

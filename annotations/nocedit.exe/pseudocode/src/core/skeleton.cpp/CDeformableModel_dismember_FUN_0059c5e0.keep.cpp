@@ -38,16 +38,14 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
       g_CurrentLineNumber = 0x63d;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::dismember - can't dismember shadow LOD.");
     }
-    iVar12 = (int)this_ptr->lod_info + lod_index * 4 + -4;
-    local_30 = *(int *)(iVar12 + 0x54);
+    local_30 = this_ptr->tri_count[lod_index];
     local_2c = 0;
     iVar7 = 0;
     if (0 < part_index) {
       do {
         iVar7 = iVar7 + 1;
-        local_2c = local_2c + *(int *)(iVar12 + 0x7164);
-        local_30 = local_30 + *(int *)(iVar12 + 0x7178);
-        iVar12 = iVar12 + 0x60;
+        local_2c = local_2c + this_ptr->parts[iVar7 - 1].tri_counts[lod_index];
+        local_30 = local_30 + this_ptr->parts[iVar7 - 1].cap_tri_counts[lod_index];
       } while (iVar7 < part_index);
     }
     iVar8 = local_2c + this_ptr->parts[part_index].tri_counts[lod_index];

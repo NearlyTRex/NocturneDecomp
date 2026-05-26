@@ -51,10 +51,9 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_splitToConvex_FUN_005c84c0(CCompl
       local_1c = &this_ptr->normal;
       while( true ) {
         pSVar11 = local_24;
-        iVar6 = shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
+        reflex_edge = shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
                           (this_ptr,local_20,local_24);
-        if (iVar6 == 0) break;
-        reflex_edge = (SExpandedEdge *)(iVar6);
+        if (reflex_edge == (SExpandedEdge *)0x0) break;
         plane_point = reflex_edge->start_pos;
         edge_dir.x = reflex_edge->end_pos.x - reflex_edge->start_pos.x;
         edge_dir.y = reflex_edge->end_pos.y - reflex_edge->start_pos.y;
@@ -107,14 +106,13 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_splitToConvex_FUN_005c84c0(CCompl
           this_ptr->expanded_edge_count = local_18;
         }
       }
-      iVar6 = shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+      split_edge = shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
                         (this_ptr,local_20,pSVar11);
-      if (iVar6 == 0) {
+      if (split_edge == (SExpandedEdge *)0x0) {
         shape_memdbg_cpp_free_FUN_005fe659(local_20);
         shape_memdbg_cpp_free_FUN_005fe659(pSVar11);
         return 0;
       }
-      split_edge = (SExpandedEdge *)(iVar6);
       plane_point = split_edge->start_pos;
       edge_dir.x = split_edge->end_pos.x - split_edge->start_pos.x;
       edge_dir.y = split_edge->end_pos.y - split_edge->start_pos.y;

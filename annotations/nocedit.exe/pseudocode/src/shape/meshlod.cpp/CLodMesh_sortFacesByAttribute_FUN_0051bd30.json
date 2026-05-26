@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 423,
-    "complexity_score": 188,
+    "complexity_score": 163,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 163,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 586
   },
   "cross_references": [
@@ -180,6 +178,24 @@
       "type": "stack_alignment_array"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(uint *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar16 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(uint *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_24);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 75,
       "match": "for (...; != 0; ... + -1)",
@@ -196,6 +212,51 @@
       "severity": "moderate",
       "text": "for (iVar15 = 6; iVar15 != 0; iVar15 = iVar15 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 84,
+      "match": "(float *)(puVar2 + 0x11)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "src_ptr = (float *)(puVar2 + 0x11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 86,
+      "match": "(float *)(puVar2 + 0x12)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "shape_meshlod_cpp_copyFloat2_FUN_0051f0a0(&local_78,(float *)(puVar2 + 0x12));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 87,
+      "match": "(float *)(puVar2 + 0x13)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "shape_meshlod_cpp_copyFloat1_FUN_0051f090(&local_74,(float *)(puVar2 + 0x13));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 115,
+      "match": "(float *)(puVar16 + 0x11)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((float *)(puVar16 + 0x11) != src_ptr) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 145,
+      "match": "(float *)(puVar16 + 0x11)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((float *)(puVar16 + 0x11) != &local_7c) {",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -394,22 +455,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "puVar16 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_24);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

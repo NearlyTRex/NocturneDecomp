@@ -741,6 +741,195 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&buf_a[iVar5].start_pos.z + 4) = local_e4;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 108,
+      "match": "(double *)(piVar5 + 0xc)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_d8 = plane_point->y * *(double *)(piVar5 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 109,
+      "match": "(double *)(piVar5 + 0xe)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_d0 = plane_point->z * *(double *)(piVar5 + 0xe);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 150,
+      "match": "(double *)(piVar5 + 0xc)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c8 = *(double *)(piVar5 + 6) - *(double *)(piVar5 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 151,
+      "match": "(double *)(piVar5 + 0xe)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c0 = *(double *)(piVar5 + 8) - *(double *)(piVar5 + 0xe);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 179,
+      "match": "(double *)(piVar5 + 0x14)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_40 = (double *)(piVar5 + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 180,
+      "match": "(double *)(piVar5 + 0x10)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_90 = *(double *)(piVar5 + 0x10) - *local_40;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 181,
+      "match": "(double *)(piVar5 + 0x12)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_88 = *(double *)(piVar5 + 0x12) - *(double *)(piVar5 + 0x16);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 196,
+      "match": "(double *)(piVar5 + 0x14)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34 = (double *)(piVar5 + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 197,
+      "match": "(double *)(piVar5 + 0x10)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_38 = (double *)(piVar5 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 210,
+      "match": "(double *)(piVar5 + 0xc)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pSVar4->end_pos).y = *(double *)(piVar5 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 211,
+      "match": "(double *)(piVar5 + 0xe)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pSVar4->end_pos).z = *(double *)(piVar5 + 0xe);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 213,
+      "match": "(double *)(piVar5 + 0x12)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4->start_uv[1] = *(double *)(piVar5 + 0x12);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 215,
+      "match": "(double *)(piVar5 + 0x16)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4->end_uv[1] = *(double *)(piVar5 + 0x16);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 279,
+      "match": "(double *)(piVar5 + 0xc)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pSVar4->end_pos).y = *(double *)(piVar5 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 280,
+      "match": "(double *)(piVar5 + 0xe)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pSVar4->end_pos).z = *(double *)(piVar5 + 0xe);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 282,
+      "match": "(double *)(piVar5 + 0x12)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4->start_uv[1] = *(double *)(piVar5 + 0x12);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 284,
+      "match": "(double *)(piVar5 + 0x16)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4->end_uv[1] = *(double *)(piVar5 + 0x16);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 349,
+      "match": "(double *)(piVar5 + 0xc)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pSVar4->end_pos).y = *(double *)(piVar5 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 350,
+      "match": "(double *)(piVar5 + 0xe)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pSVar4->end_pos).z = *(double *)(piVar5 + 0xe);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 351,
+      "match": "(double *)(piVar5 + 0x10)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4->start_uv[0] = *(double *)(piVar5 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 352,
+      "match": "(double *)(piVar5 + 0x12)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4->start_uv[1] = *(double *)(piVar5 + 0x12);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

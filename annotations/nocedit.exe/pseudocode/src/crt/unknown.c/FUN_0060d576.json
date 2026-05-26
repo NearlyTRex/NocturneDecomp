@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 172,
+    "complexity_score": 212,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 12,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -189,6 +189,38 @@
       "severity": "mild",
       "text": "param_1[1] = 0;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 16,
+      "match": "(uint *)(iVar2 + 0x10)",
+      "severity": "moderate",
+      "text": "if (*(uint *)(iVar2 + 0x10) <= *(uint *)(iVar2 + 0x14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 17,
+      "match": "(int *)(iVar2 + 0x28)",
+      "severity": "moderate",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar2 + 0x28) + 0x10))(iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 23,
+      "match": "(byte **)(iVar2 + 0x14)",
+      "severity": "moderate",
+      "text": "pbVar1 = *(byte **)(iVar2 + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 24,
+      "match": "(byte **)(iVar2 + 0x14)",
+      "severity": "moderate",
+      "text": "*(byte **)(iVar2 + 0x14) = pbVar1 + 1;",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

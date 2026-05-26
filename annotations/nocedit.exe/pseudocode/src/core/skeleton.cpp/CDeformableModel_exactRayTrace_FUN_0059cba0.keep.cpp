@@ -19,7 +19,6 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDef
   int iVar6;
   CDemonTriangle local_6c;
   byte *local_28;
-  int local_24;
   float local_18;
   
   if ((g_FloatVertexArrayInitialized & 1) == 0) {
@@ -46,11 +45,10 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDef
   local_18 = 1.01;
   iVar6 = 0;
   if (0 < this_ptr->num_parts) {
-    local_24 = (int)this_ptr->lod_info + lod_index * 4 + -4;
     local_28 = part_visibility_flags;
     iVar3 = 0;
     do {
-      iVar2 = *(int *)(local_24 + 0x7164) + iVar3;
+      iVar2 = this_ptr->parts[iVar6].tri_counts[lod_index] + iVar3;
       if (((*local_28 & 1) != 0) && (iVar3 < iVar2)) {
         do {
           pSVar1 = this_ptr->tri_data_ptr[lod_index];
@@ -75,7 +73,6 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDef
       }
       iVar6 = iVar6 + 1;
       local_28 = local_28 + 4;
-      local_24 = local_24 + 0x60;
       iVar3 = iVar2;
     } while (iVar6 < this_ptr->num_parts);
   }

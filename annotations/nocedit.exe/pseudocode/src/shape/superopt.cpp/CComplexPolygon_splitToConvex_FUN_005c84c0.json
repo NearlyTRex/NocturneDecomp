@@ -141,6 +141,15 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(CVector3d *)((int)pCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar9 = (CVector3d *)((int)pCVar9 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 86,
       "match": "(CVector3d *)((int)pCVar12",
       "resolution_source": "keep",
@@ -223,10 +232,10 @@
     {
       "description": "Complex pointer cast",
       "line": 146,
-      "match": "(SExpandedEdge *)((int)pSVar13",
+      "match": "(SExpandedEdge *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
+      "text": "pSVar6 = (SExpandedEdge *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -241,10 +250,10 @@
     {
       "description": "Complex pointer cast",
       "line": 151,
-      "match": "(SExpandedEdge *)((int)pSVar13",
+      "match": "(SExpandedEdge *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
+      "text": "pSVar6 = (SExpandedEdge *)((int)pSVar6 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -259,10 +268,10 @@
     {
       "description": "Complex pointer cast",
       "line": 161,
-      "match": "(SExpandedEdge *)((int)pSVar13",
+      "match": "(SExpandedEdge *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
+      "text": "pSVar6 = (SExpandedEdge *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -277,10 +286,10 @@
     {
       "description": "Complex pointer cast",
       "line": 166,
-      "match": "(SExpandedEdge *)((int)pSVar13",
+      "match": "(SExpandedEdge *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
+      "text": "pSVar6 = (SExpandedEdge *)((int)pSVar6 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -367,10 +376,10 @@
     {
       "description": "Complex pointer cast",
       "line": 231,
-      "match": "(SExpandedEdge *)((int)pSVar13",
+      "match": "(SExpandedEdge *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
+      "text": "pSVar6 = (SExpandedEdge *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -385,10 +394,10 @@
     {
       "description": "Complex pointer cast",
       "line": 236,
-      "match": "(SExpandedEdge *)((int)pSVar13",
+      "match": "(SExpandedEdge *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
+      "text": "pSVar6 = (SExpandedEdge *)((int)pSVar6 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -442,7 +451,7 @@
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -460,7 +469,7 @@
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -478,7 +487,7 @@
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -496,7 +505,7 @@
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -514,7 +523,7 @@
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -532,7 +541,7 @@
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {",
       "type": "unrolled_memcpy"
     },
     {

@@ -122,7 +122,7 @@ section .text
     PUSH EAX                            ; 005c8552
     PUSH EBX                            ; 005c8553
     CALL shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 ; 005c8554
-        ;   XREF to: 005c8b50 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CComplexPolygon * this_ptr, SExpandedEdge * buf_a, SExpandedEdge * buf_b)
+        ;   XREF to: 005c8b50 (UNCONDITIONAL_CALL)  ; SExpandedEdge * shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CComplexPolygon * this_ptr, SExpandedEdge * buf_a, SExpandedEdge * buf_b)
     ADD ESP,0xc                         ; 005c8559
     TEST EAX,EAX                        ; 005c855c
     JZ 0x005c8795                       ; 005c855e
@@ -336,7 +336,7 @@ section .text
     PUSH ECX                            ; 005c8799
     PUSH EBX                            ; 005c879a
     CALL shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 ; 005c879b
-        ;   XREF to: 005c8e70 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CComplexPolygon * this_ptr, SExpandedEdge * buf_a, SExpandedEdge * buf_b)
+        ;   XREF to: 005c8e70 (UNCONDITIONAL_CALL)  ; SExpandedEdge * shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CComplexPolygon * this_ptr, SExpandedEdge * buf_a, SExpandedEdge * buf_b)
     ADD ESP,0xc                         ; 005c87a0
     TEST EAX,EAX                        ; 005c87a3
     JZ 0x005c8a0b                       ; 005c87a5

@@ -2,11 +2,11 @@
 // Address: 005c8e70
 // Address Range: [[005c8e70, 005c90fe]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)
+// Signature: SExpandedEdge * __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)
 
 #include "nocturne.h"
 
-int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)
+SExpandedEdge * __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)
 
 {
   double dVar1;
@@ -100,7 +100,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CC
         iVar4 = shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
                           (this_ptr,buf_b,&local_14,1);
         if ((iVar5 == 0) && (iVar4 == 0)) {
-          return 0;
+          return (SExpandedEdge *)0x0;
         }
         dVar7 = shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(this_ptr,buf_a,local_2c)
         ;
@@ -125,5 +125,5 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CC
       local_28 = local_28 + 0x60;
     } while (local_24 < (uint)this_ptr->expanded_edge_count);
   }
-  return local_18;
+  return (SExpandedEdge *)local_18;
 }

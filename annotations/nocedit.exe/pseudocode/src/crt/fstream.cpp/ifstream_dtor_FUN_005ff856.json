@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 108,
+    "complexity_score": 138,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
@@ -340,6 +340,30 @@
       "severity": "mild",
       "text": "this_ptr = &piVar2[-2].__tied_stream;",
       "type": "negative_offset"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 11,
+      "match": "(void ***)((int)this_ptr + 0x40)",
+      "severity": "moderate",
+      "text": "*(void ***)((int)this_ptr + 0x40) = &g_IFStream_FStreamBaseDestructor;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 12,
+      "match": "(void ***)((int)this_ptr + 0x4c)",
+      "severity": "moderate",
+      "text": "*(void ***)((int)this_ptr + 0x4c) = &g_IFStream_IStreamDestructor;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 14,
+      "match": "(_istream *)((int)this_ptr + 0x44)",
+      "severity": "moderate",
+      "text": "p_Var1 = crt_iostream_cpp_istream_dtor_FUN_006063e1((_istream *)((int)this_ptr + 0x44),1);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {
