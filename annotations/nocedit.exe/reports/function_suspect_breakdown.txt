@@ -4,16 +4,16 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6015 functions
-  1 suspects: 56 functions
-  2 suspects: 85 functions
-  3 suspects: 51 functions
-  4 suspects: 56 functions
-  5 suspects: 32 functions
-  6 suspects: 36 functions
+  0 suspects: 6034 functions
+  1 suspects: 53 functions
+  2 suspects: 80 functions
+  3 suspects: 48 functions
+  4 suspects: 54 functions
+  5 suspects: 30 functions
+  6 suspects: 35 functions
   7 suspects: 17 functions
   8 suspects: 24 functions
-  9 suspects: 9 functions
+  9 suspects: 8 functions
   10 suspects: 12 functions
   11 suspects: 6 functions
   12 suspects: 7 functions
@@ -21,7 +21,7 @@ SUSPECT COUNT DISTRIBUTION
   14 suspects: 4 functions
   15 suspects: 6 functions
   16 suspects: 6 functions
-  17 suspects: 2 functions
+  17 suspects: 1 functions
   18 suspects: 8 functions
   19 suspects: 1 functions
   20 suspects: 1 functions
@@ -30,7 +30,7 @@ SUSPECT COUNT DISTRIBUTION
   23 suspects: 2 functions
   24 suspects: 1 functions
   28 suspects: 1 functions
-  29 suspects: 3 functions
+  29 suspects: 2 functions
   30 suspects: 1 functions
   36 suspects: 1 functions
   37 suspects: 1 functions
@@ -81,7 +81,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [pointer_cast] (13 functions)
+  [pointer_cast] (12 functions)
   ------------------------------------------------------------
     engine_fileio.cpp_CFileManager_buildPodFromRespons ( 57 lines)
       pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);...
@@ -89,8 +89,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).ty...
     core_setedit.cpp_CDemonSet_drawCameraCoverageMap_F ( 60 lines)
       puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_...
-    core_script.cpp_CCmdParse_bestParse_FUN_00561db0   ( 75 lines)
-      piVar1 = (int *)((int)aiStack_bc + iVar7);...
     shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051 ( 79 lines)
       piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices ...
     engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 (100 lines)
@@ -135,7 +133,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_F (175 lines)
       local_18 = (CDemonSet *)&local_18->cameras[0].enabled;...
 
-  [unrolled_strcpy] (9 functions)
+  [unrolled_strcpy] (7 functions)
   ------------------------------------------------------------
     core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0  ( 54 lines)
       do {...
@@ -143,11 +141,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     engine_fileio.cpp_establishUserIdentity_FUN_004b1c ( 62 lines)
       do {...
-    core_script.cpp_CScript_showSyntaxHelp_FUN_00565e7 ( 66 lines)
-      do {...
     shape_design.c_exportModelToMDL_FUN_00459e80       ( 68 lines)
-      do {...
-    core_script.cpp_getActor_FUN_005594e0              ( 69 lines)
       do {...
     core_msnedit.cpp_CDemonMission_editActorProperties ( 73 lines)
       do {...
@@ -201,8 +195,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 22, Types: ['pointer_cast']
   core_netgame.cpp_purgeOldSimFrames_FUN_0053f650
     File: core/netgame.cpp, Lines: 26, Types: ['pointer_cast']
-  core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630
-    File: core/script.cpp, Lines: 26, Types: ['pointer_cast']
   core_setedit.cpp_blitThumbnailToScreen8_FUN_00577120
     File: core/setedit.cpp, Lines: 28, Types: ['pointer_cast']
   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
@@ -237,8 +229,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/alphabit.cpp, Lines: 44, Types: ['pointer_cast']
   core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
     File: core/dmodel.cpp, Lines: 44, Types: ['negative_offset']
-  core_script.cpp_compareEventXRefs_FUN_005675a0
-    File: core/script.cpp, Lines: 48, Types: ['sign_compare_idiom']
   core_hero.cpp_CHero_tryInteract_FUN_004f2af0
     File: core/hero.cpp, Lines: 48, Types: ['pointer_cast']
   core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
@@ -317,24 +307,18 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/setedit.cpp, Lines: 131, Types: ['pointer_cast', 'unrolled_memcpy']
   core_mimic.cpp_CMimic_setup_FUN_0051f3e0
     File: core/mimic.cpp, Lines: 134, Types: ['pointer_cast']
-  core_script.cpp_CScript_findText_FUN_00566cc0
-    File: core/script.cpp, Lines: 139, Types: ['unrolled_strlen']
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
     File: core/setedit.cpp, Lines: 140, Types: ['pointer_cast']
   core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_
     File: core/dmodel.cpp, Lines: 143, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     File: shape/meshlod.cpp, Lines: 143, Types: ['unrolled_memcpy']
-  core_script.cpp_CScript_loadScript_FUN_00559f80
-    File: core/script.cpp, Lines: 147, Types: ['pointer_cast']
   core_turret.cpp_CTurret_fire_FUN_005e3750
     File: core/turret.cpp, Lines: 159, Types: ['unrolled_memcpy']
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
     File: core/gabriela.cpp, Lines: 160, Types: ['pointer_cast', 'unrolled_memset']
   core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_004
     File: core/dmodel.cpp, Lines: 169, Types: ['pointer_cast', 'shadow_pointer_walk']
-  core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
-    File: core/script.cpp, Lines: 172, Types: ['unrolled_strcpy']
   core_turret.cpp_CTurret_process_FUN_005e2430
     File: core/turret.cpp, Lines: 179, Types: ['unrolled_memcpy']
   core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
@@ -373,8 +357,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mobster.cpp, Lines: 41, Types: ['unrolled_memcpy']
   engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     File: engine/pod.cpp, Lines: 42, Types: ['pointer_cast', 'unrolled_memcpy']
-  core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0
-    File: core/script.cpp, Lines: 43, Types: ['pointer_cast']
   core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058
     File: core/skeledit.cpp, Lines: 44, Types: ['pointer_cast']
   shape_design.c_removeDegenerateTriangles_FUN_00463a20
@@ -385,8 +367,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/setdir.cpp, Lines: 52, Types: ['pointer_cast']
   shape_design.c_removeDuplicatePolygons_FUN_004651b0
     File: shape/design.c, Lines: 52, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
-  core_script.cpp_CScript_checkSyntax_FUN_00566080
-    File: core/script.cpp, Lines: 54, Types: ['pointer_cast', 'unrolled_strcpy']
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
     File: core/manpuz.cpp, Lines: 56, Types: ['pointer_cast', 'unrolled_memcpy']
   shape_cramtex.cpp_placementCollisionCheck_FUN_00448260
@@ -427,8 +407,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/netgame.cpp, Lines: 117, Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_strcpy']
   engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
     File: engine/pod.cpp, Lines: 120, Types: ['pointer_cast']
-  core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0
-    File: core/script.cpp, Lines: 125, Types: ['unrolled_strcpy', 'unrolled_strlen']
   shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_0051987
     File: shape/meshlod.cpp, Lines: 125, Types: ['unrolled_memcpy']
   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_0

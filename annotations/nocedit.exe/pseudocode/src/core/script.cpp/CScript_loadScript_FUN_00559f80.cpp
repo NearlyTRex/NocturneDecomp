@@ -119,7 +119,7 @@ LAB_0055a34a:
       core_script_cpp_CScript_initRuntime_FUN_0055a540(this_ptr);
       return 1;
     }
-    piVar8 = core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(this_ptr,&local_1c);
+    piVar8 = (int *)core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(this_ptr,&local_1c);
     shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_ScriptPickList);
     if (piVar8 == (int *)0x0) goto LAB_0055a34a;
     while( true ) {

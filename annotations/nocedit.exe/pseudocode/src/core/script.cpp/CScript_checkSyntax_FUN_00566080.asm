@@ -53,7 +53,7 @@ section .text
     PUSH EAX                            ; 00566095
     PUSH EBX                            ; 00566096
     CALL core_script.cpp_CScript_validateSyntax_FUN_0055a4b0 ; 00566097
-        ;   XREF to: 0055a4b0 (UNCONDITIONAL_CALL)  ; int * core_script.cpp_CScript_validateSyntax_FUN_0055a4b0(CScript * this_ptr, int * error_line_out)
+        ;   XREF to: 0055a4b0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_CScript_validateSyntax_FUN_0055a4b0(CScript * this_ptr, int * error_line_out)
     MOV ESI,EAX                         ; 0056609c
     ADD ESP,0x8                         ; 0056609e
     TEST EAX,EAX                        ; 005660a1

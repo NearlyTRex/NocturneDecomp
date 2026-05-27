@@ -164,7 +164,7 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_
 void __cdecl core_script_cpp_CScript_renderEditor_FUN_00559d80(CScript *this_ptr,int left,int top,int right,int bottom);
 int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,char *filename,int skip_validation);
 void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_0055a370(CScript *this_ptr);
-int * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this_ptr,int *error_line_out);
+char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this_ptr,int *error_line_out);
 void __cdecl core_script_cpp_CScript_initRuntime_FUN_0055a540(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_executeInitSection_FUN_0055a6c0(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *time_remaining);

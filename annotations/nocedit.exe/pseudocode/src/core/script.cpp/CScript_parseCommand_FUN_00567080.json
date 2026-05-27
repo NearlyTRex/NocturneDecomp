@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 115,
+    "complexity_score": 65,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 65,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 187
   },
   "cross_references": [
@@ -161,6 +158,44 @@
     },
     "pcode_op_count": 442
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(char **)((int)g_CommandTemplates",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&local_2374,text,*(char **)((int)g_CommandTemplates + iVar3));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(SScriptXRef *)((int)xref_data",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "xref_data = (SScriptXRef *)((int)xref_data + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(SScriptXRef *)((int)pSVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 49,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0x45; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 9092,
     "local_size": 9080,
@@ -212,38 +247,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(char **)((int)g_CommandTemplates",
-      "severity": "moderate",
-      "text": "(&local_2374,text,*(char **)((int)g_CommandTemplates + iVar3));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(SScriptXRef *)((int)xref_data",
-      "severity": "moderate",
-      "text": "xref_data = (SScriptXRef *)((int)xref_data + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(SScriptXRef *)((int)pSVar6",
-      "severity": "moderate",
-      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 49,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar4 = 0x45; iVar4 != 0; iVar4 = iVar4 + -1) {",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

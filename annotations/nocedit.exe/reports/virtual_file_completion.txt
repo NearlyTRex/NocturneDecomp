@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6015 (93.2%)
+Clean functions: 6034 (93.5%)
 Files at 100%: 177
-Files at 90%+: 178
+Files at 90%+: 179
 Files at 50%+: 213
 
 ====================================================================================================
@@ -197,6 +197,10 @@ Total: 177 files
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
+   99.0% | core/script.cpp
+         95/96 clean, 1 remaining
+           - core_script.cpp_CCmdParse_parse_FUN_00561fd0 (266 lines) [unrolled_strcat, unrolled_strcpy, unrolled_strlen]
+
    91.7% | core/hero.cpp
          44/48 clean, 4 remaining
            - core_hero.cpp_CHero_dtor_FUN_004f2470 (33 lines) [negative_offset, pointer_cast]
@@ -204,7 +208,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0 (70 lines) [pointer_cast, unrolled_memcpy]
            - core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 (68 lines) [unrolled_memcpy]
 
-Total: 1 files
+Total: 2 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -284,28 +288,6 @@ FILES AT 50-89%
            - core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 (144 lines) [unrolled_memcpy]
            - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines) [pointer_cast, unrolled_memcpy]
            - core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20 (40 lines) [unrolled_memcpy]
-   79.2% | core/script.cpp
-         76/96 clean, 20 remaining
-           - core_script.cpp_getActor_FUN_005594e0 (69 lines) [unrolled_strcpy]
-           - core_script.cpp_CScript_loadScript_FUN_00559f80 (147 lines) [pointer_cast]
-           - core_script.cpp_CScript_checkSyntax_FUN_00566080 (54 lines) [pointer_cast, unrolled_strcpy]
-           - core_script.cpp_CScript_extractCrossReferences_FUN_005671a0 (80 lines) [pointer_cast, unrolled_memcpy, unrolled_strchr, unrolled_strcpy]
-           - core_script.cpp_CScript_parseCommand_FUN_00567080 (65 lines) [pointer_cast, unrolled_memcpy]
-           - core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090 (192 lines) [pointer_cast, unrolled_strcpy]
-           - core_script.cpp_compareEventXRefs_FUN_005675a0 (48 lines) [sign_compare_idiom]
-           - core_script.cpp_parseConditionExpression_FUN_00561a30 (162 lines) [unrolled_strcat, unrolled_strchr, unrolled_strcpy, unrolled_strlen]
-           - core_script.cpp_parseCommandWithTemplates_FUN_00561690 (284 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy, unrolled_strlen]
-           - core_script.cpp_CCmdParse_toString_FUN_005624f0 (121 lines) [unrolled_strcpy]
-           - core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 (125 lines) [unrolled_strcpy, unrolled_strlen]
-           - core_script.cpp_CCmdParse_bestParse_FUN_00561db0 (75 lines) [pointer_cast]
-           - core_script.cpp_CScript_findText_FUN_00566cc0 (139 lines) [unrolled_strlen]
-           - core_script.cpp_CCmdParse_parse_FUN_00561fd0 (266 lines) [unrolled_strcat, unrolled_strcpy, unrolled_strlen]
-           - core_script.cpp_CScript_step_FUN_0055a810 (3337 lines) [bitcast_double_pair, pointer_cast, warning_type_propagation]
-           - core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 (26 lines) [pointer_cast]
-           - core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 (172 lines) [unrolled_strcpy]
-           - core_script.cpp_CScript_addEventXRef_FUN_00567510 (24 lines) [pointer_cast, unrolled_memcpy]
-           - core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0 (43 lines) [pointer_cast]
-           - core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70 (66 lines) [unrolled_strcpy]
    79.2% | core/turret.cpp
          19/24 clean, 5 remaining
            - core_turret.cpp_CTurret_ctor_FUN_005e20f0 (54 lines) [unrolled_memcpy]
@@ -685,7 +667,7 @@ FILES AT 50-89%
            - engine_alphabit.cpp_copyBytes_FUN_00410d20 (21 lines) [pointer_cast, unrolled_memcpy]
            - engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (44 lines) [pointer_cast]
 
-Total: 35 files
+Total: 34 files
 
 ====================================================================================================
 FILES BELOW 50%

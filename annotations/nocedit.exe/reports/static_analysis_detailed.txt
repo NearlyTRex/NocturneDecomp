@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (348 diagnostics)
+Cppcheck (quick) (344 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -568,11 +568,11 @@ invalidscanf (59)
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1689
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1680
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1762
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1753
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
@@ -661,7 +661,7 @@ invalidscanf (59)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (54)
+selfAssignment (52)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -711,14 +711,6 @@ selfAssignment (54)
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_ line 142
     File: core/msnedit.cpp
     Redundant assignment of 'pCVar5' to itself.
-
-  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 45
-    File: core/script.cpp
-    Redundant assignment of 'pCVar6' to itself.
-
-  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 46
-    File: core/script.cpp
-    Redundant assignment of 'pCVar9' to itself.
 
   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 237
     File: core/setedit.cpp
@@ -1345,7 +1337,7 @@ nullPointerRedundantCheck (12)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (8)
+nullPointer (7)
 ----------------------------------------------------------------------------------------------------
 
   core_mission.cpp_CDemonMission_ensureHeroPlacehold line 49
@@ -1359,10 +1351,6 @@ nullPointer (8)
   core_mission.cpp_CDemonMission_ensureHeroPlacehold line 52
     File: core/mission.cpp
     Possible null pointer dereference: actor
-
-  core_script.cpp_trimLine_FUN_005592c0              line 38
-    File: core/script.cpp
-    Possible null pointer dereference: pcVar2
 
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_ line 325
     File: core/setedit.cpp
@@ -1439,14 +1427,6 @@ invalidFunctionArgStr (2)
   shape_edittool.cpp_CEditorTools_showDirectoryBrows line 129
     File: shape/edittool.cpp
     Invalid strlen() argument nr 1. A nul-terminated string is required.
-
-----------------------------------------------------------------------------------------------------
-oppositeInnerCondition (1)
-----------------------------------------------------------------------------------------------------
-
-  core_script.cpp_CScript_parseActionTemplate_FUN_00 line 21
-    File: core/script.cpp
-    Opposite inner 'if' condition leads to a dead code block.
 
 ----------------------------------------------------------------------------------------------------
 nullPointerArithmeticRedundantCheck (1)

@@ -10,27 +10,13 @@
 CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class)
 
 {
-  char cVar1;
   int iVar2;
   CHero *actor_ptr;
   char *pcVar3;
-  char *pcVar4;
   
   g_ActorLookedUpByVariable = 0;
   if ((actor_specifier == (char *)0x0) || (*actor_specifier == '\0')) {
-    pcVar3 = "Must specify actor name";
-    pcVar4 = g_ScriptErrorBuffer;
-    do {
-      cVar1 = *pcVar3;
-      *pcVar4 = cVar1;
-      if (cVar1 == '\0') {
-        return (CDemonActor *)0x0;
-      }
-      cVar1 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar4[1] = cVar1;
-      pcVar4 = pcVar4 + 2;
-    } while (cVar1 != '\0');
+    strcpy(g_ScriptErrorBuffer,"Must specify actor name");
     return (CDemonActor *)0x0;
   }
   if (*actor_specifier == '@') {

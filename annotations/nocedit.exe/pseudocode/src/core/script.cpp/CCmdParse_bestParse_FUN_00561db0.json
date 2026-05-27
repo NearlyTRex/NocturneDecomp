@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 90,
+    "complexity_score": 75,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 75,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 266
   },
   "cross_references": [
@@ -211,6 +209,17 @@
     },
     "pcode_op_count": 751
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(int *)((int)aiStack_bc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)aiStack_bc + iVar7);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1148,
     "local_size": 1128,
@@ -297,14 +306,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(int *)((int)aiStack_bc",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)aiStack_bc + iVar7);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

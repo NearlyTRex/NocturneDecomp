@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6002 (93.0%)
-With suspects: 452
-Total suspects: 2707
+Clean: 6022 (93.3%)
+With suspects: 432
+Total suspects: 2605
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -1457,46 +1457,6 @@ core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (4 suspects)
   Line 19 [missing_cave_copy]: CMatrix3x4f local_70;
 
 ====================================================================================================
-core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090 (29 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 20 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + 4);
-  Line 30 [unrolled_strcpy]: do {
-  Line 36 [pointer_cast]: *(char *)((int)pSVar6 + 1) = cVar2;
-  Line 37 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
-  Line 54 [unrolled_strcpy]: do {
-  Line 60 [pointer_cast]: *(char *)((int)pSVar6 + 1) = cVar2;
-  Line 61 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
-  Line 69 [unrolled_strcpy]: do {
-  Line 75 [pointer_cast]: *(char *)((int)pSVar6 + 1) = cVar2;
-  Line 76 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
-  Line 84 [unrolled_strcpy]: do {
-  Line 90 [pointer_cast]: *(char *)((int)pSVar6 + 1) = cVar2;
-  Line 91 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
-  Line 99 [unrolled_strcpy]: do {
-  Line 105 [pointer_cast]: *(char *)((int)pSVar6 + 1) = cVar2;
-  Line 106 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
-  Line 114 [unrolled_strcpy]: do {
-  Line 120 [pointer_cast]: *(char *)((int)pSVar6 + 1) = cVar2;
-  Line 121 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
-  Line 133 [unrolled_strcpy]: do {
-  Line 139 [pointer_cast]: *(char *)((int)pSVar6 + 1) = cVar2;
-  Line 140 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
-  Line 148 [unrolled_strcpy]: do {
-  Line 154 [pointer_cast]: *(char *)((int)pSVar6 + 1) = cVar2;
-  Line 155 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
-  Line 163 [unrolled_strcpy]: do {
-  Line 169 [pointer_cast]: *(char *)((int)pSVar6 + 1) = cVar2;
-  Line 170 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);
-  Line 178 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_script.cpp_CCmdParse_bestParse_FUN_00561db0 (1 suspect)
-  File: core/script.cpp
-====================================================================================================
-  Line 62 [pointer_cast]: piVar1 = (int *)((int)aiStack_bc + iVar7);
-
-====================================================================================================
 core_script.cpp_CCmdParse_parse_FUN_00561fd0 (10 suspects)
   File: core/script.cpp
 ====================================================================================================
@@ -1510,168 +1470,6 @@ core_script.cpp_CCmdParse_parse_FUN_00561fd0 (10 suspects)
   Line 225 [unrolled_strlen]: do {
   Line 234 [unrolled_strcpy]: do {
   Line 257 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_script.cpp_CCmdParse_toString_FUN_005624f0 (5 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 21 [unrolled_strcpy]: do {
-  Line 42 [unrolled_strcpy]: do {
-  Line 67 [unrolled_strcpy]: do {
-  Line 88 [unrolled_strcpy]: do {
-  Line 112 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_script.cpp_CScript_addEventXRef_FUN_00567510 (4 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 20 [unrolled_memcpy]: for (iVar2 = 0x45; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 22 [pointer_cast]: xref_data = (SScriptXRef *)((int)xref_data + (uint)bVar3 * -8 + 4);
-  Line 23 [pointer_cast]: pSVar1 = (SScriptXRef *)((int)pSVar1 + (uint)bVar3 * -8 + 4);
-  Line 38 [unrolled_memcpy]: // 00567568: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 (2 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 83 [unrolled_strcpy]: do {
-  Line 157 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_script.cpp_CScript_checkSyntax_FUN_00566080 (3 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 27 [pointer_cast]: cVar1 = *(char *)((int)piVar2 + 1);
-  Line 28 [pointer_cast]: piVar2 = (int *)((int)piVar2 + 2);
-  Line 38 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0 (3 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 24 [pointer_cast]: (&local_2274,*(char **)((int)&this_ptr->parsed_lines->text + local_1c),
-  Line 25 [pointer_cast]: *(char **)((int)g_CommandTemplates + local_14));
-  Line 32 [pointer_cast]: *(uint *)((int)&this_ptr->parsed_lines->line_number + local_1c));
-
-====================================================================================================
-core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 (3 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 47 [unrolled_strcpy]: do {
-  Line 59 [unrolled_strlen]: do {
-  Line 80 [unrolled_strlen]: do {
-
-====================================================================================================
-core_script.cpp_CScript_extractCrossReferences_FUN_005671a0 (5 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 26 [unrolled_memcpy]: for (iVar2 = 0x45; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 28 [pointer_cast]: xref_data = (SScriptXRef *)((int)xref_data + (uint)bVar6 * -8 + 4);
-  Line 29 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + (uint)bVar6 * -8 + 4);
-  Line 39 [unrolled_strchr]: do {
-  Line 63 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_script.cpp_CScript_findText_FUN_00566cc0 (2 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 73 [unrolled_strlen]: do {
-  Line 113 [unrolled_strlen]: do {
-
-====================================================================================================
-core_script.cpp_CScript_loadScript_FUN_00559f80 (2 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 102 [pointer_cast]: puVar2 = (uint *)((int)&this_ptr->parsed_lines->text + iVar2);
-  Line 103 [pointer_cast]: puVar1 = (uint *)((int)&this_ptr->parsed_lines->line_number + iVar2);
-
-====================================================================================================
-core_script.cpp_CScript_parseCommand_FUN_00567080 (4 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 23 [pointer_cast]: (&local_2374,text,*(char **)((int)g_CommandTemplates + iVar3));
-  Line 49 [unrolled_memcpy]: for (iVar4 = 0x45; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 51 [pointer_cast]: xref_data = (SScriptXRef *)((int)xref_data + (uint)bVar6 * -8 + 4);
-  Line 52 [pointer_cast]: pSVar6 = (SScriptXRef *)((int)pSVar6 + (uint)bVar6 * -8 + 4);
-
-====================================================================================================
-core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 (2 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 17 [pointer_cast]: SStack_124.line_number = *(int *)((int)&this_ptr->parsed_lines->line_number + iVar2);
-  Line 18 [pointer_cast]: puVar1 = (uint *)((int)&this_ptr->parsed_lines->text + iVar2);
-
-====================================================================================================
-core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70 (1 suspect)
-  File: core/script.cpp
-====================================================================================================
-  Line 49 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_script.cpp_CScript_step_FUN_0055a810 (6 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 247 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(pcVar7,iVar4));
-  Line 257 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
-  Line 624 [pointer_cast]: (*(CDemonActor **)
-  Line 1378 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
-  Line 1417 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
-
-====================================================================================================
-core_script.cpp_compareEventXRefs_FUN_005675a0 (2 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 26 [sign_compare_idiom]: bVar6 = SBORROW4(iVar2,iVar4);
-  Line 36 [sign_compare_idiom]: bVar6 = SBORROW4(iVar2,iVar4);
-
-====================================================================================================
-core_script.cpp_getActor_FUN_005594e0 (1 suspect)
-  File: core/script.cpp
-====================================================================================================
-  Line 15 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_script.cpp_parseCommandWithTemplates_FUN_00561690 (17 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 33 [unrolled_memcpy]: // 005616f8: MOVSD.REP ES:EDI,ESI
-  Line 40 [unrolled_memcpy]: for (iVar2 = 0x84a; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 41 [pointer_cast]: pCVar9 = (CCmdParse *)((int)pCVar9 + (uint)bVar12 * -8 + 4);
-  Line 42 [pointer_cast]: pCVar6 = (CCmdParse *)((int)pCVar6 + (uint)bVar12 * -8 + 4);
-  Line 50 [unrolled_strcpy]: do {
-  Line 62 [unrolled_strlen]: do {
-  Line 71 [unrolled_strcpy]: do {
-  Line 87 [unrolled_strlen]: do {
-  Line 96 [unrolled_strcpy]: do {
-  Line 167 [unrolled_memcpy]: for (; iVar5 != 0; iVar5 = iVar5 + -1) {
-  Line 169 [pointer_cast]: pCVar10 = (CCmdParm *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);
-  Line 170 [pointer_cast]: parm_out = (CCmdParm *)((int)parm_out + (uint)bVar12 * -8 + 4);
-  Line 202 [unrolled_memcpy]: // 00561891: MOVSD.REP ES:EDI,ESI
-  Line 207 [unrolled_memcpy]: for (iVar5 = 0xca; iVar5 != 0; iVar5 = iVar5 + -1) {
-  Line 209 [pointer_cast]: pCVar10 = (CCmdParm *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);
-  Line 210 [pointer_cast]: parm_out = (CCmdParm *)((int)parm_out + (uint)bVar12 * -8 + 4);
-  Line 370 [unrolled_memcpy]: // 00561a17: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_script.cpp_parseConditionExpression_FUN_00561a30 (9 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 38 [unrolled_strlen]: do {
-  Line 47 [unrolled_strlen]: do {
-  Line 70 [unrolled_strcpy]: do {
-  Line 97 [unrolled_strchr]: do {
-  Line 121 [unrolled_strcpy]: do {
-  Line 137 [unrolled_strlen]: do {
-  Line 145 [unrolled_strlen]: do {
-  Line 145 [unrolled_strcat]: do {
-  Line 154 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_script.cpp_trimLine_FUN_005592c0 (1 suspect)
-  File: core/script.cpp
-====================================================================================================
-  Line 38 [static_null_pointer]: ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
 
 ====================================================================================================
 core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (3 suspects)

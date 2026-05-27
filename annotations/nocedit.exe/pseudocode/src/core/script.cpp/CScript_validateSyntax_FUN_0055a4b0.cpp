@@ -2,11 +2,11 @@
 // Address: 0055a4b0
 // Address Range: [[0055a4b0, 0055a537]]
 // Convention: __cdecl
-// Signature: int * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this_ptr,int *error_line_out)
+// Signature: char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this_ptr,int *error_line_out)
 
 #include "nocturne.h"
 
-int * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this_ptr,int *error_line_out)
+char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this_ptr,int *error_line_out)
 
 {
   int iVar3;
@@ -24,12 +24,12 @@ int * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this_
       iVar1 = core_script_cpp_CScript_step_FUN_0055a810(this_ptr,&local_10);
       if (iVar1 < 0) {
         *error_line_out = this_ptr->parsed_lines[iVar3].line_number + -1;
-        return (int *)g_ScriptErrorBuffer;
+        return g_ScriptErrorBuffer;
       }
       iVar2 = iVar3 + 1;
       this_ptr->next_cmd = iVar2;
     } while (iVar2 < this_ptr->parsed_line_count);
   }
   g_ScriptEventsEnabled = 0;
-  return (int *)0x0;
+  return (char *)0x0;
 }

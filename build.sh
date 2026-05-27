@@ -22,6 +22,11 @@
 # added .keep.cpp files don't enter the ninja graph unless cmake reconfigures.
 # `touch`ing a CMAKE_CONFIGURE_DEPENDS file makes the next `cmake --build`
 # reconfigure first; reconfigure is a no-op (~0.2s) when nothing else changed.
+#
+# Before building, every scripts/Bash/regen_*.sh runs to refresh committed
+# test/check artifacts (struct-layout checks, etc.). Skip with SKIP_REGEN=1:
+#
+#   SKIP_REGEN=1 ./build.sh        # rebuild without regenerating checks
 
 set -u
 
@@ -32,6 +37,20 @@ PRESET="${1:-${BUILD_PRESET:-exe-linux-asan}}"
 [ $# -ge 1 ] && shift
 
 BUILD_DIR="${SCRIPT_DIR}/build/${PRESET}"
+
+# Regenerate committed test/check artifacts before the build globs them in.
+# Every scripts/Bash/regen_*.sh is run in turn (currently the struct-layout
+# checks; future regen scripts are picked up automatically). These derive their
+# output from the annotations (e.g. data_types.json), so they're idempotent — a
+# no-op git diff when nothing upstream changed. Set SKIP_REGEN=1 to bypass for
+# fast inner-loop rebuilds.
+if [[ "${SKIP_REGEN:-0}" != "1" ]]; then
+    for regen in "${SCRIPT_DIR}"/scripts/Bash/regen_*.sh; do
+        [[ -e "${regen}" ]] || continue   # no matches → glob stays literal; skip
+        echo "build.sh: regenerating via $(basename "${regen}")"
+        "${regen}" || exit $?
+    done
+fi
 
 # First-time configure — skipped if the build tree already exists.
 if [[ ! -d "${BUILD_DIR}" ]]; then

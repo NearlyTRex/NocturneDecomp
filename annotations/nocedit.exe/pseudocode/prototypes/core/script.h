@@ -85,7 +85,7 @@ void __cdecl CScript::buildParsedLines(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_validateSyntax_FUN_0055a4b0
 // Address: 0055a4b0
-int * __cdecl CScript::validateSyntax(CScript *this_ptr,int *error_line_out);
+char * __cdecl CScript::validateSyntax(CScript *this_ptr,int *error_line_out);
 
 // Original: core_script.cpp_CScript_initRuntime_FUN_0055a540
 // Address: 0055a540

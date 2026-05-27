@@ -1,5 +1,6 @@
 // Name: core_script.cpp_CScript_checkSyntax_FUN_00566080
 // Address: 00566080
+// MANUAL RECONSTRUCTION
 // Address Range: [[00566080, 0056617a]]
 // Convention: __cdecl
 // Signature: void __cdecl core_script_cpp_CScript_checkSyntax_FUN_00566080(CScript *this_ptr)
@@ -9,49 +10,24 @@
 void __cdecl core_script_cpp_CScript_checkSyntax_FUN_00566080(CScript *this_ptr)
 
 {
-  char cVar1;
-  char *pcVar2;
+  char *piVar2;
   int iVar3;
-  char *pcVar4;
   int iStack_10;
-  
+
   core_script_cpp_CScript_buildParsedLines_FUN_0055a370(this_ptr);
-  pcVar2 = core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(this_ptr,&iStack_10);
-  if (pcVar2 != (char *)0x0) {
+  piVar2 = core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(this_ptr,&iStack_10);
+  if (piVar2 != (char *)0x0) {
     core_script_cpp_clearSelections_FUN_005644e0();
     g_CurrentEditingLine = iStack_10;
     g_CurrentEditingColumn = 0;
     core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
     core_script_cpp_CScript_updateScrollPosition_FUN_005669a0(this_ptr);
-    pcVar4 = g_ScriptEditorStatusText;
-    do {
-      cVar1 = *pcVar2;
-      *pcVar4 = cVar1;
-      if (cVar1 == '\0') {
-        return;
-      }
-      cVar1 = pcVar2[1];
-      pcVar2 = pcVar2 + 2;
-      pcVar4[1] = cVar1;
-      pcVar4 = pcVar4 + 2;
-    } while (cVar1 != '\0');
+    strcpy(g_ScriptEditorStatusText,piVar2);
     return;
   }
   iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&g_ScriptPickList.base);
   if (iVar3 < 1) {
-    pcVar2 = "Syntax check OK.";
-    pcVar4 = g_ScriptEditorStatusText;
-    do {
-      cVar1 = *pcVar2;
-      *pcVar4 = cVar1;
-      if (cVar1 == '\0') {
-        return;
-      }
-      cVar1 = pcVar2[1];
-      pcVar2 = pcVar2 + 2;
-      pcVar4[1] = cVar1;
-      pcVar4 = pcVar4 + 2;
-    } while (cVar1 != '\0');
+    strcpy(g_ScriptEditorStatusText,"Syntax check OK.");
     return;
   }
   iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&g_ScriptPickList.base);

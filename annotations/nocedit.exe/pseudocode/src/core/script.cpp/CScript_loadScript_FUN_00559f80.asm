@@ -230,7 +230,7 @@ section .text
     PUSH EAX                            ; 0055a144
     PUSH EBP                            ; 0055a145
     CALL core_script.cpp_CScript_validateSyntax_FUN_0055a4b0 ; 0055a146
-        ;   XREF to: 0055a4b0 (UNCONDITIONAL_CALL)  ; int * core_script.cpp_CScript_validateSyntax_FUN_0055a4b0(CScript * this_ptr, int * error_line_out)
+        ;   XREF to: 0055a4b0 (UNCONDITIONAL_CALL)  ; char * core_script.cpp_CScript_validateSyntax_FUN_0055a4b0(CScript * this_ptr, int * error_line_out)
     ADD ESP,0x8                         ; 0055a14b
     PUSH 0x310f4b0                      ; 0055a14e | g_ScriptPickList
     MOV ESI,EAX                         ; 0055a153

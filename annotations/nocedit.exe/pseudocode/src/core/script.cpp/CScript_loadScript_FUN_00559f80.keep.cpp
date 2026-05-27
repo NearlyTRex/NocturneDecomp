@@ -17,7 +17,6 @@ int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,ch
   _FILE *file;
   char *piVar8;
   int iVar9;
-  int iVar2;
   int iVar5;
   CPickList local_790;
   char local_3e8 [512];
@@ -26,8 +25,6 @@ int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,ch
   int local_1c;
   CStrList *local_18;
   int local_14;
-  char **puVar2;
-  uint *puVar1;
   byte bVar14;
   
   bVar14 = 0;
@@ -78,13 +75,10 @@ LAB_0055a085:
                      ("script.txt",(char *)0x0,"wt","..\\core\\script.cpp",
                       0x336);
     if (0 < this_ptr->parsed_line_count) {
-      iVar2 = 0;
       do {
-        puVar2 = (char **)((int)&this_ptr->parsed_lines->text + iVar2);
-        puVar1 = (uint *)((int)&this_ptr->parsed_lines->line_number + iVar2);
-        iVar2 = iVar2 + 8;
+        _fprintf(file,"%4d | %s\n",this_ptr->parsed_lines[iVar5].line_number,
+                 this_ptr->parsed_lines[iVar5].text);
         iVar5 = iVar5 + 1;
-        _fprintf(file,"%4d | %s\n",*puVar1,*puVar2);
       } while (iVar5 < this_ptr->parsed_line_count);
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\script.cpp",0x33a);

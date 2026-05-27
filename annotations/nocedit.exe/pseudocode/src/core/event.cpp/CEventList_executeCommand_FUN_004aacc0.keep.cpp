@@ -58,7 +58,7 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
   char local_59d [200];
   char local_4d5 [200];
   char local_40d [201];
-  char local_344 [99];
+  char local_344 [100];
   char local_2e1 [101];
   char local_27c [99];
   char local_219 [101];
@@ -1675,16 +1675,7 @@ LAB_004aaf38:
                                                         pbVar12 = pbVar12 + 1;
                                                       }
                                                       local_1c = -1;
-                                                      pcVar18 = g_DefaultCommandArg;
-                                                      pcVar17 = local_344;
-                                                      for (iVar2 = 0x19; iVar2 != 0;
-                                                          iVar2 = iVar2 + -1) {
-                                                        *(uint *)pcVar17 =
-                                                             *(uint *)pcVar18;
-                                                        pcVar18 = pcVar18 + ((uint)bVar20 * -2 + 1)
-                                                                            * 4;
-                                                        pcVar17 = pcVar17 + (uint)bVar20 * -8 + 4;
-                                                      }
+                                                      memcpy(local_344,g_DefaultCommandArg,100);
                                                       local_ec = pbVar12;
                                                       sscanf
                                                                 ((char *)pbVar12," ( %[^ ,)]%n",

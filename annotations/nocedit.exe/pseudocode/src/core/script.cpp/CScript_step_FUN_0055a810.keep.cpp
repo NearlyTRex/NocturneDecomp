@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *time_remaining)
 
 {
@@ -235,7 +233,6 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
   strcpy(g_ScriptErrorBuffer,"(no error message provided)");
   pcVar7 = this_ptr->parsed_lines[this_ptr->next_cmd].text;
   iVar4 = this_ptr->parsed_lines[this_ptr->next_cmd].line_number;
-  dVar1 = __BITCAST_DOUBLE(CONCAT44(pcVar7,iVar4));
   local_110 = this_ptr->next_cmd;
   local_114 = 1;
   this_ptr->next_cmd = local_110 + 1;
@@ -245,7 +242,6 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
   }
   else if (cVar3 == ':') {
     local_11c = core_script_cpp_skipWhitespace_FUN_005593d0(pcVar7 + 1);
-    dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
     if (g_ScriptEventsEnabled != 0) {
       cVar3 = *local_11c;
       for (pcVar7 = local_11c;
@@ -592,19 +588,16 @@ LAB_0055bb9d:
                                                   (local_2334,"all");
                                 if (iVar8 == 0) {
                                   if (g_ScriptEventsEnabled == 0) {
-                                    iVar30 = 0;
                                     for (iVar8 = 0; iVar8 < g_CDemonSetPtr->actor_count;
                                         iVar8 = iVar8 + 1) {
                                       pCVar17 = (CCharacter *)
                                                 core_actor_cpp_castToClassHash_FUN_0040c790
-                                                          (*(CDemonActor **)
-                                                            ((int)g_CDemonSetPtr->actors + iVar30),
+                                                          (g_CDemonSetPtr->actors[iVar8],
                                                            g_CCharacterClassInfo.name_hash);
                                       if (pCVar17 != (CCharacter *)0x0) {
                                         (*(((pCVar17->base).vtable._uc)->_uc).setWalkTarget)
                                                   (pCVar17,(CDemonActor *)0x0,0.0,0.0);
                                       }
-                                      iVar30 = iVar30 + 4;
                                     }
                                   }
                                 }
@@ -1301,10 +1294,9 @@ LAB_0055cd52:
                                                   core_script_cpp_CScript_findLabelIndex_FUN_00560160
                                                             (this_ptr,local_11c);
                                                   if (iVar8 < 0) {
-                                                    dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
                                                     pcVar7 = "Undefined label %s used in gosub statement on line %d";
 LAB_0055a97f:
-                                                    _sprintf(g_ScriptErrorBuffer,pcVar7,dVar1);
+                                                    _sprintf(g_ScriptErrorBuffer,pcVar7,local_11c,iVar4);
                                                     return -1;
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
@@ -1339,7 +1331,6 @@ LAB_0055a97f:
                                                   core_script_cpp_CScript_findLabelIndex_FUN_00560160
                                                             (this_ptr,local_11c);
                                                   if (iVar8 < 0) {
-                                                    dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
                                                     pcVar7 = "Undefined label %s used in goto statement on line %d";
                                                     goto LAB_0055a97f;
                                                   }

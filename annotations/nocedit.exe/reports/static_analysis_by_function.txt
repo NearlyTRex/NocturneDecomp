@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 125
-  Total diagnostics: 348
+  Functions with findings: 122
+  Total diagnostics: 344
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 125, raw .cpp files: 0
+  .keep.cpp files: 122, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -42,8 +42,8 @@ core_event.cpp_CEventList_executeCommand_FUN_004aacc0  [.keep] [Cppcheck (quick)
   Line 1406: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 1469: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 1576: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1689: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1762: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1680: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1753: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_event.cpp_CEventList_evaluateAtom_FUN_004ae140  [.keep] [Cppcheck (quick)]
@@ -584,13 +584,6 @@ core_mimic.cpp_CMimic_setupCloth_FUN_00520500  [.keep] [Cppcheck (quick)]
   Line   46: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
-core_script.cpp_parseCommandWithTemplates_FUN_00561690  [.keep] [Cppcheck (quick)]
-  File: core/script.cpp  (2 diagnostics)
-
-  Line   45: [selfAssignment] Redundant assignment of 'pCVar6' to itself.
-  Line   46: [selfAssignment] Redundant assignment of 'pCVar9' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  [.keep] [Cppcheck (quick)]
   File: core/setedit.cpp  (2 diagnostics)
 
@@ -788,22 +781,10 @@ core_script.cpp_CScript_collectLabels_FUN_00566fa0  [.keep] [Cppcheck (quick)]
   Line   19: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-core_script.cpp_CScript_parseActionTemplate_FUN_00567490  [.keep] [Cppcheck (quick)]
-  File: core/script.cpp  (1 diagnostics)
-
-  Line   21: [oppositeInnerCondition] Opposite inner 'if' condition leads to a dead code block.
-
-----------------------------------------------------------------------------------------------------
 core_script.cpp_parseBodyPartMask_FUN_00559730  [.keep] [Cppcheck (quick)]
   File: core/script.cpp  (1 diagnostics)
 
   Line   30: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-core_script.cpp_trimLine_FUN_005592c0  [.keep] [Cppcheck (quick)]
-  File: core/script.cpp  (1 diagnostics)
-
-  Line   38: [nullPointer] Possible null pointer dereference: pcVar2
 
 ----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990  [.keep] [Cppcheck (quick)]

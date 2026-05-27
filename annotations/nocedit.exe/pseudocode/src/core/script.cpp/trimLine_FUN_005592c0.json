@@ -141,31 +141,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "trimLine_FUN_005592c0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 50,
-          "line": 38,
-          "message": "Possible null pointer dereference: pcVar2",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Possible null pointer dereference: pcVar2",
-      "line": 38,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {",
-      "type": "static_null_pointer"
-    }
-  ]
+  "suspects": []
 }

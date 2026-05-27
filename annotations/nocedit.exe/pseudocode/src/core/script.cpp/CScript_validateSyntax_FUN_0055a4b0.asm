@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this_ptr,int *error_line_out)
+; char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this_ptr,int *error_line_out)
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr

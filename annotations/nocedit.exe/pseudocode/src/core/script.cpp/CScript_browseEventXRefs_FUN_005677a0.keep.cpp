@@ -10,7 +10,6 @@
 int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_ptr,char *dialog_title,char *selected_name)
 
 {
-  char cVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -18,7 +17,6 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
   char *pcVar8;
   int iVar9;
   char *pcVar6;
-  char *pcVar7;
   CActorPropertyList CStack_2c4c;
   CPickList local_748;
   char local_3a0 [500];
@@ -27,7 +25,6 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
   int local_1c;
   int local_18;
   int iVar2;
-  char cVar1;
   uint window_flags;
   CDemonActor *actor;
   
@@ -86,16 +83,7 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
       default:
         pcVar6 = "????";
       }
-      pcVar7 = local_1ac;
-      do {
-        cVar1 = *pcVar6;
-        *pcVar7 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = pcVar6[1];
-        pcVar6 = pcVar6 + 2;
-        pcVar7[1] = cVar2;
-        pcVar7 = pcVar7 + 2;
-      } while (cVar2 != '\0');
+      strcpy(local_1ac,pcVar6);
       if (*(CDemonActor **)(pcVar8 + 0x104) == (CDemonActor *)0x0) {
         _sprintf(local_e4,"Script\tLn %d",*(int *)(pcVar8 + 0x10c));
       }
@@ -162,15 +150,7 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
         } while (iVar9 < this_ptr->xref_count);
       }
       pcVar8 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_748.base,iVar5);
-      do {
-        cVar2 = *pcVar8;
-        *selected_name = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar8[1];
-        pcVar8 = pcVar8 + 2;
-        selected_name[1] = cVar2;
-        selected_name = selected_name + 2;
-      } while (cVar2 != '\0');
+      strcpy(selected_name,pcVar8);
       iVar5 = 1;
       goto LAB_00567a01;
     }
