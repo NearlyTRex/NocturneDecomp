@@ -1,5 +1,6 @@
 // Name: core_hero.cpp_CHero_dtor_FUN_004f2470
 // Address: 004f2470
+// MANUAL RECONSTRUCTION
 // Address Range: [[004f2470, 004f2535]]
 // Convention: __cdecl
 // Signature: CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags)
@@ -21,13 +22,11 @@ CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags
   CHero *pCVar9;
   
   (this_ptr->base).base.vtable._ub = &g_CHeroVTable._ub;
-  iVar1 = 0;
-  do {
-    if (this_ptr == *(CHero **)((int)g_HeroActors + iVar1)) {
-      *(uint *)((int)g_HeroActors + iVar1) = 0;
+  for (iVar1 = 0; iVar1 < 4; iVar1 = iVar1 + 1) {
+    if (this_ptr == g_HeroActors[iVar1]) {
+      g_HeroActors[iVar1] = (CHero *)0x0;
     }
-    iVar1 = iVar1 + 4;
-  } while (iVar1 != 0x10);
+  }
   pCVar2 = core_inv_cpp_CInventory_dtor_FUN_004fd0c0(&this_ptr->inventory,0);
   pCVar3 = core_path_cpp_CPathMap_dtor_FUN_005464d0(&ADJ(pCVar2)->path_map,0);
   pCVar4 = (CHero_ptr_13260)core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar3)->base.flames,0);

@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6031 (93.4%)
-With suspects: 423
-Total suspects: 2551
+Clean: 6036 (93.5%)
+With suspects: 418
+Total suspects: 2530
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -511,37 +511,6 @@ core_glass.cpp_CGlass_shatter_FUN_004eaef0 (9 suspects)
   Line 112 [raw_address_constant]: local_9c.z = 0xfe0000;
   Line 114 [raw_address_constant]: local_9c.w = 0xfe0000;
   Line 115 [raw_address_constant]: local_8c.w = 0xfe0000;
-
-====================================================================================================
-core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 (2 suspects)
-  File: core/hero.cpp
-====================================================================================================
-  Line 58 [unrolled_memcpy]: (pCVar2->base).base.location.position.x = (this_ptr->base).location.position.x;
-  Line 65 [unrolled_memcpy]: (pUVar1->vec).x = (pUVar2->vec).x;
-
-====================================================================================================
-core_hero.cpp_CHero_dtor_FUN_004f2470 (4 suspects)
-  File: core/hero.cpp
-====================================================================================================
-  Line 18 [pointer_cast]: if (this_ptr == *(CHero **)((int)g_HeroActors + iVar1)) {
-  Line 19 [pointer_cast]: *(uint *)((int)g_HeroActors + iVar1) = 0;
-  Line 27 [negative_offset]: ((SFire *)(pCVar4[-2].base.create_event + 0x20),0);
-  Line 34 [negative_offset]: ((CDemonActor *)(pCVar8[-1].part_data.visibility_flags + 7),1);
-
-====================================================================================================
-core_hero.cpp_CHero_findItemUseTarget_FUN_004f35b0 (3 suspects)
-  File: core/hero.cpp
-====================================================================================================
-  Line 36 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5),
-  Line 55 [unrolled_memcpy]: (this_ptr->target_position).x = (input_world_point->position).x;
-  Line 61 [unrolled_memcpy]: (this_ptr->target_orientation).vec.x = (pUVar4->vec).x;
-
-====================================================================================================
-core_hero.cpp_CHero_tryInteract_FUN_004f2af0 (2 suspects)
-  File: core/hero.cpp
-====================================================================================================
-  Line 34 [pointer_cast]: iVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2);
-  Line 38 [pointer_cast]: iVar4 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2);
 
 ====================================================================================================
 core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20 (1 suspect)
@@ -1356,21 +1325,6 @@ core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (4 suspects)
   Line 16 [missing_cave_copy]: CMatrix3x4f local_100;
   Line 17 [missing_cave_copy]: CMatrix3x4f local_d0;
   Line 19 [missing_cave_copy]: CMatrix3x4f local_70;
-
-====================================================================================================
-core_script.cpp_CCmdParse_parse_FUN_00561fd0 (10 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 109 [unrolled_strcpy]: do {
-  Line 144 [unrolled_strcpy]: do {
-  Line 155 [unrolled_strlen]: do {
-  Line 164 [unrolled_strcpy]: do {
-  Line 189 [unrolled_strlen]: do {
-  Line 189 [unrolled_strcat]: do {
-  Line 198 [unrolled_strcpy]: do {
-  Line 225 [unrolled_strlen]: do {
-  Line 234 [unrolled_strcpy]: do {
-  Line 257 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (3 suspects)

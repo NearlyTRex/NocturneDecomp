@@ -4,21 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 83,
+    "complexity_score": 34,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 4,
-    "suspect_types": [
-      "negative_offset",
-      "pointer_cast"
-    ],
-    "total_lines": 108
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 109
   },
   "cross_references": [
     {
@@ -285,6 +282,26 @@
     },
     "pcode_op_count": 308
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(CHero **)((int)g_HeroActors",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (this_ptr == *(CHero **)((int)g_HeroActors + iVar1)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(uint *)((int)g_HeroActors",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_HeroActors + iVar1) = 0;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -308,40 +325,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(CHero **)((int)g_HeroActors",
-      "severity": "moderate",
-      "text": "if (this_ptr == *(CHero **)((int)g_HeroActors + iVar1)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(uint *)((int)g_HeroActors",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_HeroActors + iVar1) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 27,
-      "match": "pCVar4[-2].",
-      "severity": "mild",
-      "text": "((SFire *)(pCVar4[-2].base.create_event + 0x20),0);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 34,
-      "match": "pCVar8[-1].",
-      "severity": "mild",
-      "text": "((CDemonActor *)(pCVar8[-1].part_data.visibility_flags + 7),1);",
-      "type": "negative_offset"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
