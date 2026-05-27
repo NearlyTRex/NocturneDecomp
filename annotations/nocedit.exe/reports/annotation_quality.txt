@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        42 ( 0.7%)
+  Functions with type issues:        41 ( 0.6%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      42
+    Undefined types in variables:      41
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   177 functions
+  Excluded (.keep / MMX / by-value):   178 functions
     Wrong calling convention:          1
-    Undefined types in variables:      175
+    Undefined types in variables:      176
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (42)
+Undefined types in variables (41)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -224,11 +224,6 @@ Undefined types in variables (42)
     Locals:  local_10 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CPlatform_renderOpaque
-    Address: 0x0054d720  File: core/platfrm.cpp
-    Locals:  auStack_30 (undefined1[24])
-    Suggested: Resolve undefined types to concrete types
-
   CDeformableModel_extractBoneScales
     Address: 0x0058dde0  File: core/skeledit.cpp
     Locals:  local_24 (undefined4[6])
@@ -347,7 +342,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (175)
+Undefined types - .keep overrides (176)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1033,6 +1028,11 @@ Undefined types - .keep overrides (175)
   CPlatform_processInEditor
     Address: 0x0054ea00  File: core/platfrm.cpp
     Locals:  auStack_40 (undefined1[32])
+    Suggested: Resolve undefined types to concrete types
+
+  CPlatform_renderOpaque
+    Address: 0x0054d720  File: core/platfrm.cpp
+    Locals:  auStack_30 (undefined1[24])
     Suggested: Resolve undefined types to concrete types
 
   CScript_getDialogDuration

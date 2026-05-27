@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6034 (93.5%)
-Functions with suspects: 420 (6.5%)
+Clean functions: 6043 (93.6%)
+Functions with suspects: 411 (6.4%)
 
-Total suspect patterns: 2605
+Total suspect patterns: 2551
 Average suspects per function: 0.40
 
-Virtual files: 214 total, 177 at 100%, 179 at 90%+
+Virtual files: 214 total, 178 at 100%, 180 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 52.3
+Average complexity score: 52.2
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,11 +28,11 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1177
-  unrolled_memcpy           513
+  pointer_cast              1167
+  unrolled_memcpy           489
   unrolled_strcpy           204
-  missing_cave_copy         109
-  shadow_pointer_walk       105
+  missing_cave_copy         100
+  shadow_pointer_walk       96
   unrolled_strlen           64
   carry_arith_idiom         63
   raw_address_constant      43
@@ -43,8 +43,8 @@ SUSPECT PATTERN BREAKDOWN
   warning_inlined_function  30
   bit_int_float_compare     27
   static_legacy_uninitvar   23
-  warning_type_propagation  14
-  stack_alignment_array     13
+  warning_type_propagation  13
+  stack_alignment_array     12
   static_invalid_pointer_cast 12
   warning_unreachable       11
   sub84_truncation          10
@@ -110,7 +110,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5984 more
+  ... and 5993 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -148,7 +148,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (238 functions):
+  pointer_cast (233 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
@@ -159,9 +159,9 @@ FUNCTIONS BY SUSPECT TYPE
     004105d0: engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
     00410cf0: engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0
     00410d20: engine_alphabit.cpp_copyBytes_FUN_00410d20
-    ... and 228 more
+    ... and 223 more
 
-  unrolled_memcpy (161 functions):
+  unrolled_memcpy (156 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -172,7 +172,7 @@ FUNCTIONS BY SUSPECT TYPE
     004b2d00: engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
     004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
     004bd190: engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-    ... and 151 more
+    ... and 146 more
 
   unrolled_strcpy (77 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
@@ -187,7 +187,7 @@ FUNCTIONS BY SUSPECT TYPE
     004b1c00: engine_fileio.cpp_establishUserIdentity_FUN_004b1c00
     ... and 67 more
 
-  missing_cave_copy (20 functions):
+  missing_cave_copy (17 functions):
     004f80b0: core_icepick.cpp_CIcePick_process_FUN_004f80b0
     00558fd0: core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
     005571f0: core_scat.cpp_CScat_process_FUN_005571f0
@@ -198,9 +198,9 @@ FUNCTIONS BY SUSPECT TYPE
     0058bd00: core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
     005db9d0: core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
     005dbb70: core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
-    ... and 10 more
+    ... and 7 more
 
-  shadow_pointer_walk (65 functions):
+  shadow_pointer_walk (61 functions):
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00550ef0: engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0
     00543150: core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
@@ -211,7 +211,7 @@ FUNCTIONS BY SUSPECT TYPE
     005406a0: core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
     00541ff0: core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
     004cbf00: core_flies.cpp_CFlies_process_FUN_004cbf00
-    ... and 55 more
+    ... and 51 more
 
   unrolled_strlen (27 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
@@ -315,7 +315,7 @@ FUNCTIONS BY SUSPECT TYPE
 
   static_legacy_uninitvar (0 functions):
 
-  warning_type_propagation (14 functions):
+  warning_type_propagation (13 functions):
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00543150: core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
     005267a0: core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
@@ -323,12 +323,12 @@ FUNCTIONS BY SUSPECT TYPE
     005584a0: core_scat.cpp_CScat_blendAimBones_FUN_005584a0
     005dbb70: core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
     005db050: core_tentacle.cpp_CTentacle_process_FUN_005db050
-    0054cc30: core_platfrm.cpp_CPlatform_process_FUN_0054cc30
     0051f1d0: core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
     0051f930: core_mimic.cpp_CMimic_updatePose_FUN_0051f930
-    ... and 4 more
+    0051fcc0: core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
+    ... and 3 more
 
-  stack_alignment_array (13 functions):
+  stack_alignment_array (12 functions):
     00542470: core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
     004f8810: core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810
     005267a0: core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
@@ -339,7 +339,7 @@ FUNCTIONS BY SUSPECT TYPE
     00547fc0: core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
     00548680: core_path.cpp_renderPathMapsAtPosition_FUN_00548680
     005229b0: core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
-    ... and 3 more
+    ... and 2 more
 
   static_invalid_pointer_cast (0 functions):
 

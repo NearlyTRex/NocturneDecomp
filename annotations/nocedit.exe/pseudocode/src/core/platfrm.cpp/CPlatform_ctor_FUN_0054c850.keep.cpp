@@ -38,24 +38,14 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this
   ADJ(pCVar5)->course_filename[0] = '\0';
   pCVar1 = &ADJ(pCVar5)->base.location;
   if ((CLocation *)pCVar2 != pCVar1) {
-    pCVar2->x = (pCVar1->position).x;
-    (ADJ(pCVar5)->end_pos).y = ADJ(pCVar5)->base.location.position.y;
-    (ADJ(pCVar5)->end_pos).z = ADJ(pCVar5)->base.location.position.z;
+    *pCVar2 = pCVar1->position;
   }
   if (&ADJ(pCVar5)->start_pos != pCVar2) {
-    (ADJ(pCVar5)->start_pos).x = pCVar2->x;
-    (ADJ(pCVar5)->start_pos).y = (ADJ(pCVar5)->end_pos).y;
-    (ADJ(pCVar5)->start_pos).z = (ADJ(pCVar5)->end_pos).z;
+    ADJ(pCVar5)->start_pos = *pCVar2;
   }
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&ADJ(pCVar5)->base.orient.vec,&local_14);
-  (ADJ(pCVar5)->end_orient).w = local_14.w;
-  (ADJ(pCVar5)->end_orient).x = local_14.x;
-  (ADJ(pCVar5)->end_orient).y = local_14.y;
-  (ADJ(pCVar5)->end_orient).z = local_14.z;
-  (ADJ(pCVar5)->orig_orient).w = (ADJ(pCVar5)->end_orient).w;
-  (ADJ(pCVar5)->orig_orient).x = (ADJ(pCVar5)->end_orient).x;
-  (ADJ(pCVar5)->orig_orient).y = (ADJ(pCVar5)->end_orient).y;
-  (ADJ(pCVar5)->orig_orient).z = (ADJ(pCVar5)->end_orient).z;
+  ADJ(pCVar5)->end_orient = local_14;
+  ADJ(pCVar5)->orig_orient = ADJ(pCVar5)->end_orient;
   ADJ(pCVar5)->platform_type = PLATFORM_TYPE_DISABLED;
   ADJ(pCVar5)->one_shot = 0;
   ADJ(pCVar5)->block_virtual_director_flag = 0;

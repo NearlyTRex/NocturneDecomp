@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 709,
-    "complexity_score": 400,
+    "complexity_score": 210,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 210,
-    "suspect_count": 18,
-    "suspect_types": [
-      "missing_cave_copy",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 919
   },
   "cross_references": [
@@ -220,6 +217,186 @@
       "severity": "moderate",
       "text": "if ((CVector3f *)&stack0xffffffa8 != pCStack_1c) {",
       "type": "stack_ref"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 71,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4->x = (pCVar1->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 76,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->start_pos).x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 81,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->end_orient).w = CStack_9c.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 85,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->orig_orient).w = (this_ptr->end_orient).w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 97,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "auStack_104.position.x = (this_ptr->start_pos).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 104,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "auStack_104.orientation.vec.x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 110,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->start_pos).x = auStack_104.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 115,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->orig_orient).w = CStack_bc.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 122,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "auStack_e8.position.x = (this_ptr->end_pos).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 129,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "auStack_e8.orientation.vec.x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 135,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->end_pos).x = auStack_e8.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 140,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->end_orient).w = CStack_ac.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 171,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->orig_orient).w = CStack_8c.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 182,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->end_orient).w = CStack_cc.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Struct-type local `CStack_2e4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 19,
+      "match": "CMatrix3x4f CStack_2e4; ... f(&CStack_2e4, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f CStack_2e4;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_254` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 22,
+      "match": "CMatrix3x4f CStack_254; ... f(&CStack_254, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f CStack_254;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_164` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 27,
+      "match": "CMatrix3x4f CStack_164; ... f(&CStack_164, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f CStack_164;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_134` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 28,
+      "match": "CMatrix3x4f CStack_134; ... f(&CStack_134, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f CStack_134;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Orientation consumer reads matrix `CStack_2b4` but the adjacent multiply output `CStack_284` \u2014 already decomposed for position (`CStack_284.m[..]`) just above \u2014 is the matrix that should feed it. Watcom copied `CStack_284` into `CStack_2b4` after the multiply (a 48-byte cave block in the `.asm`); Ghidra dropped that copy, so `CStack_2b4` holds a stale pre-transform value. Taking position from `CStack_284` and orientation from a different matrix is geometrically inconsistent. See \u00a720 \u2014 fix by passing `&CStack_284` to the consumer (or restoring the `CStack_2b4 = CStack_284;` copy).",
+      "line": 170,
+      "match": "matrixTo...(&CStack_2b4) reads stale matrix; cave copy `CStack_2b4 = CStack_284` (multiply output) was dropped",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "core_xform_cpp_matrixToQuaternion_FUN_005f7420((CMatrix3x3f *)&CStack_2b4,&CStack_8c);",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Orientation consumer reads matrix `CStack_1f4` but the adjacent multiply output `CStack_1c4` \u2014 already decomposed for position (`CStack_1c4.m[..]`) just above \u2014 is the matrix that should feed it. Watcom copied `CStack_1c4` into `CStack_1f4` after the multiply (a 48-byte cave block in the `.asm`); Ghidra dropped that copy, so `CStack_1f4` holds a stale pre-transform value. Taking position from `CStack_1c4` and orientation from a different matrix is geometrically inconsistent. See \u00a720 \u2014 fix by passing `&CStack_1c4` to the consumer (or restoring the `CStack_1f4 = CStack_1c4;` copy).",
+      "line": 181,
+      "match": "matrixTo...(&CStack_1f4) reads stale matrix; cave copy `CStack_1f4 = CStack_1c4` (multiply output) was dropped",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "core_xform_cpp_matrixToQuaternion_FUN_005f7420((CMatrix3x3f *)&CStack_1f4,&CStack_cc);",
+      "type": "missing_cave_copy"
     }
   ],
   "stack_frame": {
@@ -479,152 +656,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 71,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar4->x = (pCVar1->position).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 76,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->start_pos).x = pCVar4->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 81,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->end_orient).w = CStack_9c.w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 85,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->orig_orient).w = (this_ptr->end_orient).w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 97,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "auStack_104.position.x = (this_ptr->start_pos).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 104,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "auStack_104.orientation.vec.x = pCVar4->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 110,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->start_pos).x = auStack_104.position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 115,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->orig_orient).w = CStack_bc.w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 122,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "auStack_e8.position.x = (this_ptr->end_pos).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 129,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "auStack_e8.orientation.vec.x = pCVar4->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 135,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->end_pos).x = auStack_e8.position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 140,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->end_orient).w = CStack_ac.w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 171,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->orig_orient).w = CStack_8c.w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 182,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->end_orient).w = CStack_cc.w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Struct-type local `CStack_2e4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 19,
-      "match": "CMatrix3x4f CStack_2e4; ... f(&CStack_2e4, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f CStack_2e4;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `CStack_254` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 22,
-      "match": "CMatrix3x4f CStack_254; ... f(&CStack_254, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f CStack_254;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `CStack_164` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 27,
-      "match": "CMatrix3x4f CStack_164; ... f(&CStack_164, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f CStack_164;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `CStack_134` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 28,
-      "match": "CMatrix3x4f CStack_134; ... f(&CStack_134, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f CStack_134;",
-      "type": "missing_cave_copy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

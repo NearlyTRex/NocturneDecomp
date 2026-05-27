@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6022 (93.3%)
-With suspects: 432
-Total suspects: 2605
+Clean: 6031 (93.4%)
+With suspects: 423
+Total suspects: 2551
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -1307,105 +1307,6 @@ core_path.cpp_resetAllPathMaps_FUN_00548590 (2 suspects)
 ====================================================================================================
   Line 13 [pointer_cast]: if (*(int *)((int)g_PathMapList + iVar2) == 0) {
   Line 18 [pointer_cast]: puVar1 = (uint *)((int)g_PathMapList + iVar2);
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0 (6 suspects)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 78 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
-  Line 78 [shadow_pointer_walk]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
-  Line 89 [pointer_cast]: pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
-  Line 89 [shadow_pointer_walk]: pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
-  Line 100 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
-  Line 100 [shadow_pointer_walk]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 (5 suspects)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 36 [unrolled_memcpy]: pCVar6->attach_actors[0].matrix.m[0].w = local_70.m[0].w;
-  Line 53 [pointer_cast]: pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);
-  Line 53 [shadow_pointer_walk]: pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);
-  Line 61 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
-  Line 61 [shadow_pointer_walk]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_ctor_FUN_0054c850 (4 suspects)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 41 [unrolled_memcpy]: pCVar2->x = (pCVar1->position).x;
-  Line 46 [unrolled_memcpy]: (ADJ(pCVar5)->start_pos).x = pCVar2->x;
-  Line 51 [unrolled_memcpy]: (ADJ(pCVar5)->end_orient).w = local_14.w;
-  Line 55 [unrolled_memcpy]: (ADJ(pCVar5)->orig_orient).w = (ADJ(pCVar5)->end_orient).w;
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 (4 suspects)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 18 [stack_alignment_array]: float afStackY_1844 [1523];
-  Line 19 [missing_cave_copy]: CQuaternion4f local_68;
-  Line 20 [missing_cave_copy]: CQuaternion4f local_58;
-  Line 61 [unrolled_memcpy]: (out_euler_00->vec).x = pCVar2->x;
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0 (4 suspects)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 11 [pointer_cast]: this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
-  Line 11 [shadow_pointer_walk]: this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
-  Line 16 [pointer_cast]: this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
-  Line 16 [shadow_pointer_walk]: this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 (18 suspects)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 19 [missing_cave_copy]: CMatrix3x4f CStack_2e4;
-  Line 22 [missing_cave_copy]: CMatrix3x4f CStack_254;
-  Line 27 [missing_cave_copy]: CMatrix3x4f CStack_164;
-  Line 28 [missing_cave_copy]: CMatrix3x4f CStack_134;
-  Line 71 [unrolled_memcpy]: pCVar4->x = (pCVar1->position).x;
-  Line 76 [unrolled_memcpy]: (this_ptr->start_pos).x = pCVar4->x;
-  Line 81 [unrolled_memcpy]: (this_ptr->end_orient).w = CStack_9c.w;
-  Line 85 [unrolled_memcpy]: (this_ptr->orig_orient).w = (this_ptr->end_orient).w;
-  Line 97 [unrolled_memcpy]: auStack_104.position.x = (this_ptr->start_pos).x;
-  Line 104 [unrolled_memcpy]: auStack_104.orientation.vec.x = pCVar4->x;
-  Line 110 [unrolled_memcpy]: (this_ptr->start_pos).x = auStack_104.position.x;
-  Line 115 [unrolled_memcpy]: (this_ptr->orig_orient).w = CStack_bc.w;
-  Line 122 [unrolled_memcpy]: auStack_e8.position.x = (this_ptr->end_pos).x;
-  Line 129 [unrolled_memcpy]: auStack_e8.orientation.vec.x = pCVar4->x;
-  Line 135 [unrolled_memcpy]: (this_ptr->end_pos).x = auStack_e8.position.x;
-  Line 140 [unrolled_memcpy]: (this_ptr->end_orient).w = CStack_ac.w;
-  Line 171 [unrolled_memcpy]: (this_ptr->orig_orient).w = CStack_8c.w;
-  Line 182 [unrolled_memcpy]: (this_ptr->end_orient).w = CStack_cc.w;
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_process_FUN_0054cc30 (5 suspects)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 25 [missing_cave_copy]: CMatrix3x4f CStack_1f4;
-  Line 28 [missing_cave_copy]: CMatrix3x4f CStack_164;
-  Line 29 [missing_cave_copy]: CMatrix3x4f CStack_134;
-  Line 228 [pointer_cast]: iVar3 = *(int *)((int)g_CDemonSetPtr->actors + iStack_24);
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_renderOpaque_FUN_0054d720 (4 suspects)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 75 [unrolled_memcpy]: (pCVar1->position).x = (this_ptr->start_pos).x;
-  Line 81 [unrolled_memcpy]: (pUVar7->vec).x = pCVar6->x;
-  Line 86 [unrolled_memcpy]: (this_ptr->base).location.position.x = (this_ptr->end_pos).x;
-  Line 92 [unrolled_memcpy]: (pUVar4->vec).x = pCVar3->x;
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_setup_FUN_0054ca20 (4 suspects)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 22 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
-  Line 22 [shadow_pointer_walk]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
-  Line 27 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
-  Line 27 [shadow_pointer_walk]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
 
 ====================================================================================================
 core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (15 suspects)

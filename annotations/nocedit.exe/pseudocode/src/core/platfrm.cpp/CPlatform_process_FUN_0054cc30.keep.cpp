@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr,float delta_time)
 
 {
@@ -30,10 +28,8 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   bool bVar12;
   char local_324 [256];
   CMatrix3x4f local_224;
-  CMatrix3x4f CStack_1f4;
   CMatrix3x4f CStack_1c4;
   CMatrix3x4f CStack_194;
-  CMatrix3x4f CStack_164;
   CMatrix3x4f CStack_134;
   CMatrix3x4f local_104;
   SCollisionInfo SStack_d4;
@@ -56,7 +52,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   int local_30;
   int local_2c;
   float local_28;
-  int iStack_24;
+  CDemonActor *pActor;
   int iStack_20;
   float fStack_1c;
   CVector3f *pCStack_18;
@@ -230,34 +226,32 @@ LAB_0054cd70:
   do {
     while( true ) {
       if (g_CDemonSetPtr->character_count <= iVar11) {
-        iStack_24 = 0;
         for (iStack_20 = 0; iStack_20 < g_CDemonSetPtr->actor_count; iStack_20 = iStack_20 + 1) {
-          iVar3 = *(int *)((int)g_CDemonSetPtr->actors + iStack_24);
-          if (this_ptr == *(CPlatform **)(iVar3 + 0xdc)) {
-            pCStack_18 = (CVector3f *)(iVar3 + 0x20);
+          pActor = g_CDemonSetPtr->actors[iStack_20];
+          if (this_ptr == pActor->standing_platform) {
+            pCStack_18 = &pActor->location.position;
             core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                      (&CStack_1c4,pCStack_18,(CVector3f *)(iVar3 + 0x30));
+                      (&CStack_1c4,pCStack_18,&pActor->orient.vec);
             core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_1c4,&local_224,&CStack_134);
-            core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_164,&local_104,&CStack_194);
+            core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_134,&local_104,&CStack_194);
             fStack_7c = CStack_194.m[0].z;
             fStack_78 = CStack_194.m[1].z;
             fStack_74 = CStack_194.m[2].z;
-            core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&CStack_1f4,&CStack_94);
+            core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&CStack_194,&CStack_94);
             fStack_88 = fStack_7c - pCStack_18->x;
             fStack_84 = fStack_78 - pCStack_18->y;
             fStack_80 = fStack_74 - pCStack_18->z;
-            if ((float *)(iVar3 + 0xe0) != &fStack_88) {
-              *(float *)(iVar3 + 0xe0) = fStack_88;
-              *(float *)(iVar3 + 0xe4) = fStack_84;
-              *(float *)(iVar3 + 0xe8) = fStack_80;
+            if (&pActor->platform_position_delta.x != &fStack_88) {
+              pActor->platform_position_delta.x = fStack_88;
+              pActor->platform_position_delta.y = fStack_84;
+              pActor->platform_position_delta.z = fStack_80;
             }
-            *(uint *)(iVar3 + 0xec) = 0;
-            *(uint *)(iVar3 + 0xf4) = 0;
-            *(float *)(iVar3 + 0xf0) =
+            pActor->platform_orientation_delta.x = 0.0f;
+            pActor->platform_orientation_delta.z = 0.0f;
+            pActor->platform_orientation_delta.y =
                          core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                                   (CStack_94.y - *(float *)(iVar3 + 0x34));
+                                   (CStack_94.y - pActor->orient.vec.y);
           }
-          iStack_24 = iStack_24 + 4;
         }
         core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0054e320(this_ptr);
         return;

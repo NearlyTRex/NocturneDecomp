@@ -4216,6 +4216,35 @@ _CAVE_STACK0X_SRC_RE = re.compile(
 # input-only (a producer/output-first function here would be the sole FP risk).
 _CAVE_DEST_CONSUMERS = ('getTranslation', 'matrixToEulerAngles')
 
+# Tertiary missing-cave-copy pass ("stale matrix" read). Unlike passes 1/2 the
+# victim local here is fully *initialised* — it just holds an older value than
+# it should because the dropped cave copy would have refreshed it. The shape:
+#   multiplyMatrix3x4(&a, &b, &OUT);   // OUT = fresh world matrix
+#   pos->x = OUT.m[0].z; ...           // OUT decomposed for position
+#   matrixToQuaternion(&STALE, &q);    // orientation taken from a DIFFERENT,
+#                                      //   earlier-built matrix (STALE != OUT)
+# The dropped copy was `STALE = OUT`, so orientation is read pre-transform.
+# Since OUT supplies the position and STALE the orientation of the *same*
+# object, taking them from different matrices is geometrically inconsistent —
+# the tell of an overwrite-dropped cave copy. (CPlatform::processInEditor C/D.)
+_MULT_OUT_RE = re.compile(
+    r"multiplyMatrix3x4\w*\s*\(\s*&\s*\w+\s*,\s*&\s*\w+\s*,\s*&\s*(\w+)\s*\)")
+_ORIENT_CONSUMER_RE = re.compile(
+    r"matrixTo(?:Quaternion|Euler)\w*\s*\(\s*(?:\([^)]*\)\s*)?&\s*(\w+)")
+
+
+def _matrix_is_produced(code, name):
+    """True when `name` is written as a matrix-producer output: the first arg
+    of a buildMatrix* call or the third (output) arg of multiplyMatrix3x4.
+    Distinguishes a *stale* read (produced earlier — flagged by the tertiary
+    pass) from an *uninitialised* read (never produced — already covered by the
+    primary/secondary passes). `\\s` spans newlines so wrapped calls match."""
+    n = re.escape(name)
+    return bool(
+        re.search(r"buildMatrix\w*\s*\(\s*&\s*" + n + r"\b", code)
+        or re.search(r"multiplyMatrix3x4\w*\([^;\n]*,\s*&\s*" + n + r"\s*\)",
+                     code))
+
 
 def _find_cave_copy_blocks(asm_code):
     """Scan assembly for runs of `MOV ECX, [ESI+N] / MOV [EDI+N], ECX` pairs
@@ -4408,6 +4437,63 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
                         "copy).").format(var=var_name, type=type_name),
                     'severity': 'moderate',
                 })
+    # Tertiary pass: "stale matrix" read by an orientation consumer (an
+    # overwrite-dropped cave copy whose destination was pre-written). See the
+    # comment on `_MULT_OUT_RE` above. Gated on a 48-byte (CMatrix3x4f) cave
+    # block so it only fires where Watcom emitted a matrix copy.
+    if 48 in cave_sizes:
+        flagged_lines = {s['line'] for s in suspects}
+        consumers = []  # (line_idx, stale_matrix_name)
+        for j, line in enumerate(lines):
+            mc = _ORIENT_CONSUMER_RE.search(line)
+            if mc:
+                consumers.append((j, mc.group(1)))
+        for i, line in enumerate(lines):
+            mm = _MULT_OUT_RE.search(line)
+            if not mm:
+                continue
+            out = mm.group(1)
+            # OUT must be decomposed element-wise (its translation extracted).
+            if not re.search(r"\b" + re.escape(out) + r"\.m\[", decompiled_code):
+                continue
+            # OUT must never itself feed an orientation consumer — otherwise the
+            # fresh matrix's orientation IS taken and there is no stale read.
+            if any(stale == out for _, stale in consumers):
+                continue
+            # First orientation consumer shortly after the multiply.
+            stale, cons_idx = None, None
+            for j, st in consumers:
+                if i < j <= i + 25:
+                    stale, cons_idx = st, j
+                    break
+            if stale is None or stale == out:
+                continue
+            if (cons_idx + 1) in flagged_lines:
+                continue
+            # STALE must be a real, earlier-produced matrix (stale, not uninit;
+            # the uninit case is the primary/secondary passes' job).
+            if not _matrix_is_produced(decompiled_code, stale):
+                continue
+            suspects.append({
+                'line': cons_idx + 1,
+                'type': 'missing_cave_copy',
+                'match': "matrixTo...(&{stale}) reads stale matrix; cave copy "
+                         "`{stale} = {out}` (multiply output) was dropped".format(
+                             stale=stale, out=out),
+                'text': lines[cons_idx].strip()[:120],
+                'description': (
+                    "Orientation consumer reads matrix `{stale}` but the "
+                    "adjacent multiply output `{out}` — already decomposed for "
+                    "position (`{out}.m[..]`) just above — is the matrix that "
+                    "should feed it. Watcom copied `{out}` into `{stale}` after "
+                    "the multiply (a 48-byte cave block in the `.asm`); Ghidra "
+                    "dropped that copy, so `{stale}` holds a stale pre-transform "
+                    "value. Taking position from `{out}` and orientation from a "
+                    "different matrix is geometrically inconsistent. See §20 — "
+                    "fix by passing `&{out}` to the consumer (or restoring the "
+                    "`{stale} = {out};` copy).").format(stale=stale, out=out),
+                'severity': 'moderate',
+            })
     return suspects
 
 

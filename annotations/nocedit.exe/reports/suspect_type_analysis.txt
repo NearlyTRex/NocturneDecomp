@@ -4,23 +4,23 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1177 ( 45.2%)
-  unrolled_memcpy                  513 ( 19.7%)
-  unrolled_strcpy                  204 (  7.8%)
-  missing_cave_copy                109 (  4.2%)
-  shadow_pointer_walk              105 (  4.0%)
+  pointer_cast                    1167 ( 45.7%)
+  unrolled_memcpy                  489 ( 19.2%)
+  unrolled_strcpy                  204 (  8.0%)
+  missing_cave_copy                100 (  3.9%)
+  shadow_pointer_walk               96 (  3.8%)
   unrolled_strlen                   64 (  2.5%)
-  carry_arith_idiom                 63 (  2.4%)
+  carry_arith_idiom                 63 (  2.5%)
   raw_address_constant              43 (  1.7%)
   bitcast_double_pair               38 (  1.5%)
-  static_uninitvar                  37 (  1.4%)
+  static_uninitvar                  37 (  1.5%)
   unrolled_strchr                   36 (  1.4%)
   unrolled_memset                   33 (  1.3%)
   warning_inlined_function          30 (  1.2%)
-  bit_int_float_compare             27 (  1.0%)
+  bit_int_float_compare             27 (  1.1%)
   static_legacy_uninitvar           23 (  0.9%)
-  warning_type_propagation          14 (  0.5%)
-  stack_alignment_array             13 (  0.5%)
+  warning_type_propagation          13 (  0.5%)
+  stack_alignment_array             12 (  0.5%)
   static_invalid_pointer_cast       12 (  0.5%)
   warning_unreachable               11 (  0.4%)
   sub84_truncation                  10 (  0.4%)
@@ -35,11 +35,11 @@ SUSPECT TYPE COUNTS
   fast_sqrt_inline                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1177 occurrences)
+TYPE: pointer_cast (1167 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   457x  (int)&NAME used in byte-offset arithmetic
+   448x  (int)&NAME used in byte-offset arithmetic
     36x  (int *)((int)this_ptr
     27x  (uint *)((int)this_ptr
     18x  (int)&NAME byte-offset arithmetic split across lines
@@ -114,11 +114,6 @@ Functions:
   core_path.cpp_renderAllPathMaps_FUN_005485f0
   core_path.cpp_renderPathMapsAtPosition_FUN_00548680
   core_path.cpp_resetAllPathMaps_FUN_00548590
-  core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0
-  core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
-  core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0
-  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
-  core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
   core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70
   core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0
@@ -301,11 +296,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (513 occurrences)
+TYPE: unrolled_memcpy (489 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   353x  field-by-field struct copy
+   329x  field-by-field struct copy
     79x  for (...; != 0; ... + -1)
     79x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -367,11 +362,6 @@ Functions:
   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
   core_path.cpp_getOrCreatePathMap_FUN_00548390
-  core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
-  core_platfrm.cpp_CPlatform_ctor_FUN_0054c850
-  core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
-  core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
-  core_platfrm.cpp_CPlatform_renderOpaque_FUN_0054d720
   core_scat.cpp_CScat_blendAimBones_FUN_005584a0
   core_scat.cpp_CScat_updateAI_FUN_005578e0
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
@@ -560,7 +550,7 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: missing_cave_copy (109 occurrences)
+TYPE: missing_cave_copy (100 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -572,8 +562,6 @@ Unique patterns:
      2x  CMatrix3x4f local_16c; ... f(&local_16c, ...);
      2x  CMatrix3x4f local_ac; ... f(&local_ac, ...);
      2x  CMatrix3x4f local_4c; ... f(&local_4c, ...);
-     2x  CMatrix3x4f CStack_164; ... f(&CStack_164, ...);
-     2x  CMatrix3x4f CStack_134; ... f(&CStack_134, ...);
      1x  CQuaternion4f CStack_94; ... f(&CStack_94, ...);
      1x  CMatrix3x4f local_100; ... f(&local_100, ...);
      1x  CMatrix3x4f local_d0; ... f(&local_d0, ...);
@@ -584,6 +572,8 @@ Unique patterns:
      1x  CQuaternion4f local_11c; ... f(&local_11c, ...);
      1x  CQuaternion4f local_10c; ... f(&local_10c, ...);
      1x  CQuaternion4f local_ec; ... f(&local_ec, ...);
+     1x  CQuaternion4f local_dc; ... f(&local_dc, ...);
+     1x  CQuaternion4f local_cc; ... f(&local_cc, ...);
 
 Functions:
   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
@@ -593,9 +583,6 @@ Functions:
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
   core_mimic.cpp_CMimic_updatePose_FUN_0051f930
   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
-  core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
-  core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
-  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
   core_scat.cpp_CScat_blendAimBones_FUN_005584a0
   core_scat.cpp_CScat_process_FUN_005571f0
   core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
@@ -608,13 +595,12 @@ Functions:
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (105 occurrences)
+TYPE: shadow_pointer_walk (96 occurrences)
 ====================================================================================================
 
 Unique patterns:
      7x  pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)
      6x  pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD
-     6x  pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)
      3x  pCVar2 = (T *)&pCVar2->FIELD[N].SUBFIELD
      3x  pCVar4 = (T *)pCVar4->ARRAY
      3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
@@ -624,14 +610,15 @@ Unique patterns:
      2x  pCVar10 = (T *)pCVar10->ARRAY
      2x  pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)
      2x  local_18 = (T *)local_18->ARRAY
-     2x  pCVar6 = (T *)((int)&(pCVar6->FIELD).SUBFIELD + CONST)
-     2x  this_ptr = (T *)((int)&(this_ptr->FIELD).SUBFIELD + CONST)
      2x  pSVar3 = (T *)pSVar3->ARRAY
      2x  pSVar4 = (T *)pSVar4->ARRAY
      2x  pCVar5 = (T *)((int)&(pCVar5->FIELD).SUBFIELD + CONST)
      1x  local_3c = (T *)local_3c->ARRAY
      1x  pCVar1 = (T *)pCVar1->ARRAY
      1x  local_4c = (T *)local_4c->ARRAY
+     1x  pCVar7 = (T *)pCVar7->ARRAY
+     1x  local_50 = (T *)local_50->ARRAY
+     1x  pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)
 
 Functions:
   core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
@@ -654,10 +641,6 @@ Functions:
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
   core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
   core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-  core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0
-  core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
-  core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0
-  core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
   core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600
   core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910
   core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
@@ -971,11 +954,11 @@ Functions:
   shape_design.c_loadModelBinary_FUN_00458170
 
 ====================================================================================================
-TYPE: warning_type_propagation (14 occurrences)
+TYPE: warning_type_propagation (13 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    14x  WARNING: Type propagation algorithm not settling
+    13x  WARNING: Type propagation algorithm not settling
 
 Functions:
   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
@@ -986,7 +969,6 @@ Functions:
   core_mimic.cpp_CMimic_updatePose_FUN_0051f930
   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
   core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
-  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
   core_scat.cpp_CScat_blendAimBones_FUN_005584a0
   core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
@@ -994,7 +976,7 @@ Functions:
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
 
 ====================================================================================================
-TYPE: stack_alignment_array (13 occurrences)
+TYPE: stack_alignment_array (12 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1009,7 +991,6 @@ Unique patterns:
      1x  aiStackY_1010
      1x  afStackY_100c
      1x  aiStackY_1024
-     1x  afStackY_1844
      1x  acStackY_1406
 
 Functions:
@@ -1023,7 +1004,6 @@ Functions:
   core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
   core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
   core_path.cpp_renderPathMapsAtPosition_FUN_00548680
-  core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
   core_scat.cpp_CScat_blendAimBones_FUN_005584a0
   shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0
 

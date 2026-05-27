@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6034 (93.5%)
-Files at 100%: 177
-Files at 90%+: 179
+Clean functions: 6043 (93.6%)
+Files at 100%: 178
+Files at 90%+: 180
 Files at 50%+: 213
 
 ====================================================================================================
@@ -118,6 +118,7 @@ FILES AT 100% (COMPLETE)
   core/particle.cpp: 6 functions, 155 lines
   core/passngr.cpp: 11 functions, 348 lines
   core/pendulum.cpp: 20 functions, 668 lines
+  core/platfrm.cpp: 30 functions, 1576 lines
   core/podmain.cpp: 4 functions, 64 lines
   core/procedur.cpp: 4 functions, 234 lines
   core/sentinel.cpp: 14 functions, 737 lines
@@ -192,7 +193,7 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 177 files
+Total: 178 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -512,17 +513,6 @@ FILES AT 50-89%
            - shape_design.c_samplePixelAndAccumulate_FUN_0046ad00 (16 lines) [pointer_cast]
            - shape_design.c_turnModelInsideOut_FUN_004671e0 (25 lines) [raw_address_constant]
            - shape_design.c_cramTextureList_FUN_0046bb80 (1047 lines) [unrolled_strchr, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-   70.0% | core/platfrm.cpp
-         21/30 clean, 9 remaining
-           - core_platfrm.cpp_CPlatform_ctor_FUN_0054c850 (76 lines) [unrolled_memcpy]
-           - core_platfrm.cpp_CPlatform_process_FUN_0054cc30 (307 lines) [missing_cave_copy, pointer_cast, warning_type_propagation]
-           - core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 (62 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-           - core_platfrm.cpp_CPlatform_renderOpaque_FUN_0054d720 (105 lines) [unrolled_memcpy]
-           - core_platfrm.cpp_CPlatform_setup_FUN_0054ca20 (27 lines) [pointer_cast, shadow_pointer_walk]
-           - core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0 (16 lines) [pointer_cast, shadow_pointer_walk]
-           - core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 (210 lines) [missing_cave_copy, unrolled_memcpy]
-           - core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0 (113 lines) [pointer_cast, shadow_pointer_walk]
-           - core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 (70 lines) [missing_cave_copy, stack_alignment_array, unrolled_memcpy]
    68.5% | shape/meshlod.cpp
          85/124 clean, 39 remaining
            - shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (30 lines) [unrolled_memcpy]
@@ -667,7 +657,7 @@ FILES AT 50-89%
            - engine_alphabit.cpp_copyBytes_FUN_00410d20 (21 lines) [pointer_cast, unrolled_memcpy]
            - engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (44 lines) [pointer_cast]
 
-Total: 34 files
+Total: 33 files
 
 ====================================================================================================
 FILES BELOW 50%
