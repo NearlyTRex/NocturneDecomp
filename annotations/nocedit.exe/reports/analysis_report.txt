@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6065 (94.0%)
-Functions with suspects: 389 (6.0%)
+Clean functions: 6068 (94.0%)
+Functions with suspects: 386 (6.0%)
 
-Total suspect patterns: 2434
-Average suspects per function: 0.38
+Total suspect patterns: 2419
+Average suspects per function: 0.37
 
-Virtual files: 214 total, 177 at 100%, 180 at 90%+
+Virtual files: 214 total, 180 at 100%, 180 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 52.0
+Average complexity score: 51.9
 
 COMPILATION STATUS
 ----------------------------------------
@@ -31,7 +31,7 @@ SUSPECT PATTERN BREAKDOWN
   pointer_cast              1129
   unrolled_memcpy           437
   unrolled_strcpy           192
-  missing_cave_copy         115
+  missing_cave_copy         100
   shadow_pointer_walk       82
   carry_arith_idiom         63
   unrolled_strlen           56
@@ -110,13 +110,13 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6015 more
+  ... and 6018 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
   0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3337, suspects: 0, lines: 3337)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2321, suspects: 86, lines: 1436)
-  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2197, suspects: 30, lines: 1852)
+  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2187, suspects: 29, lines: 1852)
   004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2138, suspects: 0, lines: 2138)
   004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1728, suspects: 0, lines: 1728)
   004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1591, suspects: 0, lines: 1591)
@@ -187,18 +187,18 @@ FUNCTIONS BY SUSPECT TYPE
     004b1c00: engine_fileio.cpp_establishUserIdentity_FUN_004b1c00
     ... and 63 more
 
-  missing_cave_copy (21 functions):
+  missing_cave_copy (17 functions):
     004f80b0: core_icepick.cpp_CIcePick_process_FUN_004f80b0
-    005267a0: core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
-    0056ae50: core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
     00558fd0: core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
     005571f0: core_scat.cpp_CScat_process_FUN_005571f0
     005584a0: core_scat.cpp_CScat_blendAimBones_FUN_005584a0
-    005be520: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
     0058ac80: core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
     00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
     005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    ... and 11 more
+    0058bd00: core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
+    005db9d0: core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
+    005dbb70: core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
+    ... and 7 more
 
   shadow_pointer_walk (53 functions):
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0

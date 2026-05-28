@@ -4,10 +4,10 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1129 ( 46.4%)
-  unrolled_memcpy                  437 ( 18.0%)
+  pointer_cast                    1129 ( 46.7%)
+  unrolled_memcpy                  437 ( 18.1%)
   unrolled_strcpy                  192 (  7.9%)
-  missing_cave_copy                115 (  4.7%)
+  missing_cave_copy                100 (  4.1%)
   shadow_pointer_walk               82 (  3.4%)
   carry_arith_idiom                 63 (  2.6%)
   unrolled_strlen                   56 (  2.3%)
@@ -18,7 +18,7 @@ SUSPECT TYPE COUNTS
   unrolled_memset                   33 (  1.4%)
   warning_inlined_function          29 (  1.2%)
   bit_int_float_compare             26 (  1.1%)
-  static_legacy_uninitvar           23 (  0.9%)
+  static_legacy_uninitvar           23 (  1.0%)
   warning_type_propagation          13 (  0.5%)
   stack_alignment_array             12 (  0.5%)
   static_invalid_pointer_cast       12 (  0.5%)
@@ -524,7 +524,7 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: missing_cave_copy (115 occurrences)
+TYPE: missing_cave_copy (100 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -537,10 +537,6 @@ Unique patterns:
      2x  CMatrix3x4f local_ac; ... f(&local_ac, ...);
      2x  CMatrix3x4f local_4c; ... f(&local_4c, ...);
      1x  CQuaternion4f CStack_94; ... f(&CStack_94, ...);
-     1x  CVector3f local_50; ... f(&local_50, ...);
-     1x  CVector3f local_44; ... f(&local_44, ...);
-     1x  CVector3f CStack_6c; ... f(&CStack_6c, ...);
-     1x  CVector3f local_60; ... f(&local_60, ...);
      1x  CMatrix3x4f local_100; ... f(&local_100, ...);
      1x  CMatrix3x4f local_d0; ... f(&local_d0, ...);
      1x  CMatrix3x4f local_70; ... f(&local_70, ...);
@@ -548,6 +544,10 @@ Unique patterns:
      1x  CQuaternion4f local_15c; ... f(&local_15c, ...);
      1x  CQuaternion4f local_14c; ... f(&local_14c, ...);
      1x  CQuaternion4f local_11c; ... f(&local_11c, ...);
+     1x  CQuaternion4f local_10c; ... f(&local_10c, ...);
+     1x  CQuaternion4f local_ec; ... f(&local_ec, ...);
+     1x  CQuaternion4f local_dc; ... f(&local_dc, ...);
+     1x  CQuaternion4f local_cc; ... f(&local_cc, ...);
 
 Functions:
   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
@@ -557,17 +557,13 @@ Functions:
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
   core_mimic.cpp_CMimic_updatePose_FUN_0051f930
   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
-  core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
-  core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
   core_scat.cpp_CScat_blendAimBones_FUN_005584a0
   core_scat.cpp_CScat_process_FUN_005571f0
   core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
-  core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
   core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
   core_tentacle.cpp_CTentacle_process_FUN_005db050
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0

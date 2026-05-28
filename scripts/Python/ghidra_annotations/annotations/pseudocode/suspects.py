@@ -4422,6 +4422,119 @@ def _count_cave_copy_blocks(asm_code):
     return sum(1 for s in _find_cave_copy_blocks(asm_code) if s >= 48)
 
 
+_OUT_PARAM_NAME_RE = re.compile(r"(?:^|_)(out|dst|dest|result)",
+                                re.IGNORECASE)
+_CALLEE_SIG_RE = re.compile(
+    r";\s*([A-Za-z_][\w:]*(?:\s*\*)?)\s+([\w.]*_FUN_[0-9a-fA-F]+)\s*\((.*)\)\s*$")
+
+
+def _split_top_level(s):
+    """Split `s` on top-level commas (ignoring commas inside parens)."""
+    out, depth, cur = [], 0, []
+    for ch in s:
+        if ch in "([":
+            depth += 1
+        elif ch in ")]":
+            depth -= 1
+        if ch == "," and depth == 0:
+            out.append("".join(cur))
+            cur = []
+        else:
+            cur.append(ch)
+    if cur:
+        out.append("".join(cur))
+    return out
+
+
+def _parse_callee_signatures(assembly_code):
+    """Build {fun_addr: returned_output_arg_index} from asm XREF comments.
+
+    Each XREF line carries the callee signature, e.g.
+    `; CVector3f * ..._FUN_005f7ac0(CVector3f * out_euler, CQuaternion4f * quat_in)`.
+    A callee that returns `T *` hands back one of its `T *` parameters — the
+    OUTPUT buffer. We record which argument position that is so the caller can
+    tell an output buffer (written + returned) from a read-only input. If the
+    output param can't be uniquely identified the callee is omitted.
+    """
+    sigs = {}
+    for line in assembly_code.split("\n"):
+        if "XREF" not in line or "_FUN_" not in line or "(" not in line:
+            continue
+        m = _CALLEE_SIG_RE.search(line)
+        if not m:
+            continue
+        rettype, name, params = m.group(1), m.group(2), m.group(3)
+        ret_base = rettype.replace(" ", "")
+        if "*" not in ret_base:
+            continue
+        am = re.search(r"_FUN_([0-9a-fA-F]+)", name)
+        if not am:
+            continue
+        parsed = []  # (base_type, name)
+        for p in _split_top_level(params):
+            toks = p.split()
+            if len(toks) < 2:
+                parsed.append(("", ""))
+                continue
+            parsed.append(("".join(toks[:-1]), toks[-1]))
+        ptr_idx = [i for i, (t, _n) in enumerate(parsed) if t == ret_base]
+        if len(ptr_idx) == 1:
+            sigs[am.group(1)] = ptr_idx[0]
+        elif len(ptr_idx) > 1:
+            named = [i for i in ptr_idx if _OUT_PARAM_NAME_RE.search(parsed[i][1])]
+            if len(named) == 1:
+                sigs[am.group(1)] = named[0]
+    return sigs
+
+
+def _is_returned_output_buffer(lines, use_idx, var_name, callee_out_arg):
+    """True when `var_name`'s single use is `LHS = callee(... &var_name ...)`,
+    `&var_name` sits at the callee's returned-output argument position, and the
+    captured return `LHS` is read elsewhere.
+
+    Such a local is an output buffer the callee fills and returns; the result
+    is read via the `LHS` alias, so the local only LOOKS unreferenced — it is
+    not a dropped cave copy. A genuine §20 victim is either a read-only INPUT
+    arg (a different, non-output position → not excluded here) or a dead OUTPUT
+    whose return is never captured/used (no live `LHS` → not excluded here), so
+    this exclusion leaves both halves of a real bug flagged.
+    """
+    start, end = use_idx, use_idx
+    # Reconstruct the whole statement: walk back to its start and forward to
+    # the terminating `;` so a call whose args wrap across lines is complete.
+    while start > 0:
+        prev = lines[start - 1].rstrip()
+        if (not prev or prev.endswith((';', '{', '}', ':'))):
+            break
+        start -= 1
+    while end < len(lines) - 1 and ';' not in lines[end]:
+        end += 1
+    stmt = " ".join(lines[k].strip() for k in range(start, end + 1))
+    m = re.match(r"\s*([A-Za-z_]\w*)\s*=\s*([\w:]*_FUN_[0-9a-fA-F]+)\s*\(",
+                 stmt)
+    if not m:
+        return False
+    lhs, callee = m.group(1), m.group(2)
+    am = re.search(r"_FUN_([0-9a-fA-F]+)", callee)
+    out_arg = callee_out_arg.get(am.group(1)) if am else None
+    if out_arg is None:
+        return False
+    # Locate `&var_name`'s argument position in the call.
+    open_paren = stmt.find("(", m.end() - 1)
+    close_paren = stmt.rfind(")")
+    if open_paren < 0 or close_paren < open_paren:
+        return False
+    args = _split_top_level(stmt[open_paren + 1:close_paren])
+    var_re = re.compile(r"&\s*" + re.escape(var_name) + r"\b")
+    arg_idx = next((i for i, a in enumerate(args) if var_re.search(a)), None)
+    if arg_idx != out_arg:
+        return False
+    lhs_re = re.compile(r"\b" + re.escape(lhs) + r"\b")
+    stmt_idx = set(range(start, end + 1))
+    return any(lhs_re.search(line) for j, line in enumerate(lines)
+               if j not in stmt_idx)
+
+
 def identify_missing_cave_copy(decompiled_code, assembly_code):
     """Detect Watcom post-call struct-memcpy blocks ("cave copies") that
     Ghidra failed to translate, leaving struct-type locals uninitialized.
@@ -4458,6 +4571,7 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
                       if sz in cave_sizes}
     if not eligible_types:
         return suspects
+    callee_out_arg = _parse_callee_signatures(assembly_code)
     lines = decompiled_code.split('\n')
     decls = []
     for i, line in enumerate(lines):
@@ -4484,6 +4598,11 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
             continue
         if '(' not in use_line and (use_line_idx == 0
                                     or '(' not in lines[use_line_idx - 1]):
+            continue
+        # Skip output buffers the callee fills and returns (result read via the
+        # captured-return alias, not a dropped cave copy). See helper docstring.
+        if _is_returned_output_buffer(lines, use_line_idx, var_name,
+                                      callee_out_arg):
             continue
         candidates.append((decl_line, type_name, var_name))
     cave_blocks = sum(1 for s in _find_cave_copy_blocks(assembly_code) if s >= 48)

@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 414,
+    "complexity_score": 404,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 169,
-    "suspect_count": 22,
+    "suspect_count": 21,
     "suspect_types": [
       "missing_cave_copy",
       "pointer_cast",
@@ -472,14 +472,6 @@
       "match": "CMatrix3x4f local_90; ... f(&local_90, ...);",
       "severity": "moderate",
       "text": "CMatrix3x4f local_90;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_24` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 7 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 51,
-      "match": "CVector3f local_24; ... f(&local_24, ...);",
-      "severity": "moderate",
-      "text": "CVector3f local_24;",
       "type": "missing_cave_copy"
     },
     {

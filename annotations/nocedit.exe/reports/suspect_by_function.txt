@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6053 (93.8%)
-With suspects: 401
-Total suspects: 2434
+Clean: 6056 (93.8%)
+With suspects: 398
+Total suspects: 2419
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -779,7 +779,7 @@ core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (2 suspects)
   Line 99 [pointer_cast]: -*(float *)((int)&(pSVar4->position).x + iVar10);
 
 ====================================================================================================
-core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (22 suspects)
+core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (21 suspects)
   File: core/mimic.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -792,7 +792,6 @@ core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (22 suspects)
   Line 40 [missing_cave_copy]: CMatrix3x4f local_1b0;
   Line 41 [missing_cave_copy]: CMatrix3x4f local_180;
   Line 46 [missing_cave_copy]: CMatrix3x4f local_90;
-  Line 51 [missing_cave_copy]: CVector3f local_24;
   Line 57 [unrolled_memcpy]: // 0051fa0d: MOVSD.REP ES:EDI,ESI
   Line 107 [unrolled_memcpy]: pCVar7->x = pCVar12->x;
   Line 111 [shadow_pointer_walk]: pCVar15 = (CMimic *)((pCVar15->base).base.base.actor_name + 0x10);
@@ -886,13 +885,11 @@ core_mission.cpp_CDemonMission_loadActor_FUN_00523990 (1 suspect)
   Line 64 [static_legacy_uninitvar]: pCVar1 = local_e1;
 
 ====================================================================================================
-core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (4 suspects)
+core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (2 suspects)
   File: core/mobster.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 18 [stack_alignment_array]: float afStackY_185c [1519];
-  Line 25 [missing_cave_copy]: CVector3f local_50;
-  Line 26 [missing_cave_copy]: CVector3f local_44;
 
 ====================================================================================================
 core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20 (1 suspect)
@@ -1281,15 +1278,6 @@ core_path.cpp_resetAllPathMaps_FUN_00548590 (2 suspects)
   Line 18 [pointer_cast]: puVar1 = (uint *)((int)g_PathMapList + iVar2);
 
 ====================================================================================================
-core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 (4 suspects)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 36 [missing_cave_copy]: CVector3f CStack_7c;
-  Line 40 [missing_cave_copy]: CVector3f CStack_64;
-  Line 46 [missing_cave_copy]: CVector3f auStack_40;
-  Line 47 [missing_cave_copy]: CVector3f CStack_34;
-
-====================================================================================================
 core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (15 suspects)
   File: core/scat.cpp
 ====================================================================================================
@@ -1337,13 +1325,6 @@ core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (4 suspects)
   Line 16 [missing_cave_copy]: CMatrix3x4f local_100;
   Line 17 [missing_cave_copy]: CMatrix3x4f local_d0;
   Line 19 [missing_cave_copy]: CMatrix3x4f local_70;
-
-====================================================================================================
-core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 (2 suspects)
-  File: core/set.cpp
-====================================================================================================
-  Line 32 [missing_cave_copy]: CVector3f CStack_6c;
-  Line 33 [missing_cave_copy]: CVector3f local_60;
 
 ====================================================================================================
 core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (3 suspects)
@@ -1908,7 +1889,7 @@ core_skeledit.cpp_CLodVert_copy_FUN_00599550 (5 suspects)
   Line 38 [unrolled_memcpy]: // 005995b6: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (30 suspects)
+core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (29 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -1917,7 +1898,6 @@ core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (30 suspects)
   Line 92 [missing_cave_copy]: CMatrix3x4f local_374;
   Line 93 [missing_cave_copy]: CMatrix3x4f local_344;
   Line 94 [missing_cave_copy]: CMatrix3x4f local_314;
-  Line 119 [missing_cave_copy]: CVector3f local_1b0;
   Line 265 [unrolled_memcpy]: for (iVar16 = 0x41; iVar16 != 0; iVar16 = iVar16 + -1) {
   Line 410 [unrolled_strcpy]: do {
   Line 485 [pointer_cast]: pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar26 * -2 + 1) * 4);
@@ -1977,16 +1957,6 @@ core_sound.cpp_updateListeners_FUN_005b1870 (5 suspects)
   Line 59 [static_uninitvar]: (local_c8 - g_SoundListenerPrev.y) * (local_c8 - g_SoundListenerPrev.y)) <
   Line 96 [static_legacy_uninitvar]: ((double)local_cc,(double)local_c8,(double)local_c4);
   Line 96 [static_legacy_uninitvar]: ((double)local_cc,(double)local_c8,(double)local_c4);
-
-====================================================================================================
-core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (5 suspects)
-  File: core/stranger.cpp
-====================================================================================================
-  Line 97 [missing_cave_copy]: CVector3f local_154;
-  Line 105 [missing_cave_copy]: CVector3f local_10c;
-  Line 120 [missing_cave_copy]: CVector3f local_a0;
-  Line 125 [missing_cave_copy]: CVector3f local_64;
-  Line 126 [missing_cave_copy]: CVector3f local_58;
 
 ====================================================================================================
 core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (6 suspects)
