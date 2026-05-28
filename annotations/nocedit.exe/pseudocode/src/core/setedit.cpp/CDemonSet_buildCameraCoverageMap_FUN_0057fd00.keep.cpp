@@ -46,9 +46,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
       if (local_38.z < 0x40000000) {
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
                   (&g_CDemonCameraInstance,&local_44,&local_50);
-        pCVar3->x = local_50.x;
-        pCVar3->y = local_50.y;
-        pCVar3->z = local_50.z;
+        *pCVar3 = local_50;
       }
       else {
         pCVar3->x = 0x7fffffff;

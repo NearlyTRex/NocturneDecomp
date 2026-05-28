@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 122
-  Total diagnostics: 344
+  Functions with findings: 123
+  Total diagnostics: 345
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 122, raw .cpp files: 0
+  .keep.cpp files: 123, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -566,8 +566,8 @@ core_keyactor.cpp_CKeyActor_process_FUN_00501710  [.keep] [Cppcheck (quick)]
 core_menu.cpp_configureGraphicsOptions_FUN_00510c80  [.keep] [Cppcheck (quick)]
   File: core/menu.cpp  (2 diagnostics)
 
-  Line  314: [selfAssignment] Redundant assignment of 'pacVar11' to itself.
   Line  319: [selfAssignment] Redundant assignment of 'pacVar11' to itself.
+  Line  324: [selfAssignment] Redundant assignment of 'pacVar11' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0  [.keep] [Cppcheck (quick)]
@@ -809,6 +809,12 @@ core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0  [.keep] [Cppcheck
   File: core/setedit.cpp  (1 diagnostics)
 
   Line  175: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_loadGroundTypes_FUN_00578420  [.keep] [Cppcheck (quick)]
+  File: core/setedit.cpp  (1 diagnostics)
+
+  Line   47: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_setutil.cpp_C3DSCamera_load_FUN_00585420  [.keep] [Cppcheck (quick)]

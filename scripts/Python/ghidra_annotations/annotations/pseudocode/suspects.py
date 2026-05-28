@@ -2138,6 +2138,139 @@ def identify_unrolled_field_copy(decompiled_code):
     return suspects
 
 
+# Raw-offset unrolled struct copy. Where `identify_unrolled_field_copy`
+# catches named-field copies (`dst.field = src.field`), Ghidra sometimes
+# loses the struct type entirely and emits a run of pointer-cast writes
+# through hard-coded byte offsets off one or two base pointers:
+#     *(uint *)(p + 0x224) = *(uint *)(p + 0x234);
+#     *(uint *)(p + 0x228) = *(uint *)(p + 0x238);
+#     *(uint *)(p + 0x22c) = *(uint *)(p + 0x23c);
+# Each line copies one machine word; together they shift/copy a fixed-size
+# contiguous block. Same shape whether the two bases differ (a struct-to-
+# struct copy, delta == 0) or are identical (an in-place array-element shift
+# during a delete, delta == element stride — the CDemonSet::deleteCamera
+# per-light loop). Collapse the run to a single struct assignment or
+# `memcpy(...)` in a .keep (find/create the matching struct type).
+_OFFSET_COPY_RE = re.compile(
+    r'^\s*\*\s*\(\s*(\w+)\s*\*\s*\)\s*'                  # *(TYPE *)
+    r'\(\s*(\w+)\s*\+\s*(0[xX][0-9a-fA-F]+|\d+)\s*\)'    # (BASE + OFF)
+    r'\s*=\s*'
+    r'\*\s*\(\s*(\w+)\s*\*\s*\)\s*'                      # = *(TYPE *)
+    r'\(\s*(\w+)\s*\+\s*(0[xX][0-9a-fA-F]+|\d+)\s*\)'    # (BASE2 + OFF2)
+    r'\s*;\s*$')
+# Cast type -> byte width. Used to require the copied words be contiguous
+# (stride == width) so a run of unrelated scattered pointer writes that
+# happen to share a base isn't mistaken for a block copy.
+_OFFSET_COPY_WIDTH = {
+    'char': 1, 'uchar': 1, 'byte': 1, 'undefined1': 1, 'bool': 1,
+    'short': 2, 'ushort': 2, 'undefined2': 2, 'wchar_t': 2,
+    'int': 4, 'uint': 4, 'undefined4': 4, 'float': 4,
+    'long': 4, 'ulong': 4, 'dword': 4,
+    'longlong': 8, 'ulonglong': 8, 'double': 8, 'undefined8': 8, 'qword': 8,
+}
+
+
+def identify_unrolled_offset_copy(decompiled_code):
+    """Detect Watcom raw-offset unrolled struct copies / array shifts.
+
+    Catches runs of 3+ consecutive `*(T *)(BASE + OFF) = *(T *)(BASE2 + OFF2);`
+    lines that together copy one contiguous block (see `_OFFSET_COPY_RE`).
+    The companion `identify_unrolled_field_copy` only handles the case where
+    Ghidra recovered named struct fields; this covers the case where it fell
+    back to typed pointer-offset writes (e.g. CDemonSet::deleteCamera shifting
+    the per-light camera arrays after a delete).
+
+    For lines to form one run:
+    - Same cast type on both sides of every line, and across the whole run.
+    - Constant LHS base across the run; constant RHS base across the run.
+    - Constant (OFF2 - OFF) delta across the run — every dest word maps to a
+      source word a fixed distance away (a parallel block copy).
+    - LHS offsets strictly increasing by exactly the type width (contiguous
+      destination block).
+    - When the two bases are identical, delta != 0 (`*p = *p` is a no-op run,
+      not a copy). delta may be 0 when the bases differ (struct-to-struct).
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts (type `unrolled_memcpy`), one per run, located
+        at the first line of the run.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    MIN_RUN = 3
+
+    def parse(idx):
+        m = _OFFSET_COPY_RE.match(lines[idx])
+        if not m:
+            return None
+        ltype, lbase, loff, rtype, rbase, roff = m.groups()
+        if ltype != rtype:
+            return None
+        width = _OFFSET_COPY_WIDTH.get(ltype)
+        if width is None:
+            return None
+        return {
+            'type': ltype, 'width': width,
+            'lbase': lbase, 'loff': int(loff, 0),
+            'rbase': rbase, 'roff': int(roff, 0),
+        }
+
+    i = 0
+    while i < n:
+        first = parse(i)
+        if not first:
+            i += 1
+            continue
+        delta = first['roff'] - first['loff']
+        # A same-base, zero-delta "copy" is `*p = *p` — not real.
+        if first['lbase'] == first['rbase'] and delta == 0:
+            i += 1
+            continue
+        width = first['width']
+        prev = first
+        j = i + 1
+        while j < n:
+            cur = parse(j)
+            if not cur:
+                break
+            if (cur['type'] != first['type'] or
+                    cur['lbase'] != first['lbase'] or
+                    cur['rbase'] != first['rbase']):
+                break
+            # Contiguous destination block, constant source delta.
+            if cur['loff'] != prev['loff'] + width:
+                break
+            if cur['roff'] - cur['loff'] != delta:
+                break
+            prev = cur
+            j += 1
+        run_len = j - i
+        if run_len >= MIN_RUN:
+            suspects.append({
+                'line': i + 1,
+                'type': 'unrolled_memcpy',
+                'match': 'raw-offset struct copy',
+                'text': lines[i].strip()[:120],
+                'description': (
+                    'Watcom raw-offset struct copy (%d consecutive '
+                    '`*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines '
+                    'copying a contiguous block). Ghidra lost the struct '
+                    'type; replace the run with a struct assignment or '
+                    '`memcpy(...)` in a .keep (find/create the matching '
+                    'struct type for the block).' % run_len),
+                'severity': 'moderate',
+            })
+            i = j
+        else:
+            i += 1
+    return suspects
+
+
 # Cascade constant fill: a Watcom optimization that sets multiple sibling
 # fields of one struct/array to the same constant by storing the constant
 # once and forwarding it through prior slots:
@@ -4252,8 +4385,11 @@ def _find_cave_copy_blocks(asm_code):
 
     Returns a list of byte-sizes of detected blocks. A run of N consecutive
     matching MOV lines (where N is even — pairs) corresponds to N/2 dword
-    moves = N*2 bytes copied. We only return runs with 4+ pairs (≥ 16
-    bytes) since shorter runs are typically scalar moves, not struct copies.
+    moves = N*2 bytes copied. We return runs with 3+ pairs (≥ 12 bytes):
+    12-byte CVector3i/CVector3f copies are a common dropped-cave shape (a
+    2-pair / 8-byte run is left out as too scalar-move-prone). False positives
+    are guarded downstream by identify_missing_cave_copy's ≥2 dead-local +
+    size-match cross-check, so a stray short run alone can't flag a function.
 
     Args:
         asm_code: The function's assembly listing.
@@ -4270,10 +4406,10 @@ def _find_cave_copy_blocks(asm_code):
         if _CAVE_SRC_RE.search(line) or _CAVE_DST_RE.search(line):
             consec += 1
         else:
-            if consec >= 8:  # 4 MOV-pairs = 16 bytes minimum struct
+            if consec >= 6:  # 3 MOV-pairs = 12 bytes minimum (CVector3i/CVector3f)
                 sizes.append((consec // 2) * 4)
             consec = 0
-    if consec >= 8:
+    if consec >= 6:
         sizes.append((consec // 2) * 4)
     return sizes
 
@@ -4808,6 +4944,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_unrolled_memcpy_dword_byte_split(code))
     found.extend(identify_unrolled_memcpy_index_form(code))
     found.extend(identify_unrolled_field_copy(code))
+    found.extend(identify_unrolled_offset_copy(code))
     found.extend(identify_cascade_constant_fill(code))
     found.extend(identify_self_copy_guard(code))
     found.extend(identify_sibling_array_undersized(code))

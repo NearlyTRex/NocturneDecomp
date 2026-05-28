@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6036 (93.5%)
-With suspects: 418
-Total suspects: 2530
+Clean: 6053 (93.8%)
+With suspects: 401
+Total suspects: 2434
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -779,7 +779,7 @@ core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (2 suspects)
   Line 99 [pointer_cast]: -*(float *)((int)&(pSVar4->position).x + iVar10);
 
 ====================================================================================================
-core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (21 suspects)
+core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (22 suspects)
   File: core/mimic.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -792,6 +792,7 @@ core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (21 suspects)
   Line 40 [missing_cave_copy]: CMatrix3x4f local_1b0;
   Line 41 [missing_cave_copy]: CMatrix3x4f local_180;
   Line 46 [missing_cave_copy]: CMatrix3x4f local_90;
+  Line 51 [missing_cave_copy]: CVector3f local_24;
   Line 57 [unrolled_memcpy]: // 0051fa0d: MOVSD.REP ES:EDI,ESI
   Line 107 [unrolled_memcpy]: pCVar7->x = pCVar12->x;
   Line 111 [shadow_pointer_walk]: pCVar15 = (CMimic *)((pCVar15->base).base.base.actor_name + 0x10);
@@ -885,11 +886,13 @@ core_mission.cpp_CDemonMission_loadActor_FUN_00523990 (1 suspect)
   Line 64 [static_legacy_uninitvar]: pCVar1 = local_e1;
 
 ====================================================================================================
-core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (2 suspects)
+core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (4 suspects)
   File: core/mobster.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 18 [stack_alignment_array]: float afStackY_185c [1519];
+  Line 25 [missing_cave_copy]: CVector3f local_50;
+  Line 26 [missing_cave_copy]: CVector3f local_44;
 
 ====================================================================================================
 core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20 (1 suspect)
@@ -1278,6 +1281,15 @@ core_path.cpp_resetAllPathMaps_FUN_00548590 (2 suspects)
   Line 18 [pointer_cast]: puVar1 = (uint *)((int)g_PathMapList + iVar2);
 
 ====================================================================================================
+core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 (4 suspects)
+  File: core/platfrm.cpp
+====================================================================================================
+  Line 36 [missing_cave_copy]: CVector3f CStack_7c;
+  Line 40 [missing_cave_copy]: CVector3f CStack_64;
+  Line 46 [missing_cave_copy]: CVector3f auStack_40;
+  Line 47 [missing_cave_copy]: CVector3f CStack_34;
+
+====================================================================================================
 core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (15 suspects)
   File: core/scat.cpp
 ====================================================================================================
@@ -1325,6 +1337,13 @@ core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (4 suspects)
   Line 16 [missing_cave_copy]: CMatrix3x4f local_100;
   Line 17 [missing_cave_copy]: CMatrix3x4f local_d0;
   Line 19 [missing_cave_copy]: CMatrix3x4f local_70;
+
+====================================================================================================
+core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 (2 suspects)
+  File: core/set.cpp
+====================================================================================================
+  Line 32 [missing_cave_copy]: CVector3f CStack_6c;
+  Line 33 [missing_cave_copy]: CVector3f local_60;
 
 ====================================================================================================
 core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (3 suspects)
@@ -1410,87 +1429,16 @@ core_setdir.cpp_testOBBIntersection_FUN_005763a0 (5 suspects)
   Line 96 [unrolled_memcpy]: pCVar6->x = local_74.max.x;
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 (1 suspect)
+core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (1 suspect)
   File: core/setedit.cpp
 ====================================================================================================
-  Line 49 [unrolled_memcpy]: pCVar3->x = local_50.x;
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (16 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 25 [unrolled_memcpy]: // 0057b652: MOVSD.REP ES:EDI,ESI
-  Line 31 [shadow_pointer_walk]: pCVar10 = (C3DSLight *)pCVar10->name;
-  Line 32 [shadow_pointer_walk]: pCVar4 = (C3DSLight *)pCVar4->name;
-  Line 38 [unrolled_memcpy]: (pCVar3->pos).x = (pCVar2->pos).x;
-  Line 43 [unrolled_memcpy]: (pCVar3->orient).x = (pCVar2->orient).x;
-  Line 47 [unrolled_memcpy]: pCVar3->fov = pCVar2->fov;
-  Line 48 [unrolled_memcpy]: // 0057b6b3: MOVSD.REP ES:EDI,ESI
-  Line 58 [unrolled_memcpy]: pCVar3->camera_light_bounds[0].x_min = pCVar2->camera_light_bounds[0].x_min;
-  Line 81 [unrolled_memcpy]: // 0057b768: MOVSD.REP ES:EDI,ESI
-  Line 83 [unrolled_memcpy]: for (iVar3 = 0x20; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 85 [unrolled_memcpy]: // 0057b77b: MOVSD.REP ES:EDI,ESI
-  Line 89 [unrolled_memcpy]: // 0057b78e: MOVSD.REP ES:EDI,ESI
-  Line 90 [unrolled_memcpy]: for (iVar3 = 0x20; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 95 [unrolled_memcpy]: pCVar3->move_filter = pCVar2->move_filter;
-  Line 104 [unrolled_memcpy]: for (iVar3 = 0x20; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 107 [unrolled_memcpy]: // 0057b7f5: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_deleteCamera_FUN_0057e430 (9 suspects)
+core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (1 suspect)
   File: core/setedit.cpp
 ====================================================================================================
-  Line 42 [unrolled_memcpy]: local_18->x = local_1c->x;
-  Line 45 [unrolled_memcpy]: // 0057e4b9: MOVSD.REP ES:EDI,ESI
-  Line 47 [unrolled_memcpy]: (local_20->orientation).x = (local_c->orientation).x;
-  Line 51 [unrolled_memcpy]: (local_20->rotation_matrix).m[0].x = (local_c->rotation_matrix).m[0].x;
-  Line 72 [unrolled_memcpy]: pCVar2->x = pCVar1->x;
-  Line 76 [unrolled_memcpy]: (local_20->fog).height_threshold = (local_c->fog).height_threshold;
-  Line 81 [unrolled_memcpy]: (local_20->box).min.x = (local_c->box).min.x;
-  Line 88 [unrolled_memcpy]: pCVar4->x = pCVar3->x;
-  Line 92 [unrolled_memcpy]: local_20->pvs_count = local_c->pvs_count;
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (18 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 39 [shadow_pointer_walk]: pCVar10 = (C3DSLight *)pCVar10->name;
-  Line 40 [shadow_pointer_walk]: pCVar4 = (C3DSLight *)pCVar4->name;
-  Line 40 [unrolled_memcpy]: // 0057b987: MOVSD.REP ES:EDI,ESI
-  Line 46 [unrolled_memcpy]: pCVar2->x = pCVar3->x;
-  Line 51 [unrolled_memcpy]: (local_c->orient).x = (local_8->orient).x;
-  Line 55 [unrolled_memcpy]: local_c->fov = local_8->fov;
-  Line 66 [unrolled_memcpy]: local_c->camera_light_bounds[0].x_min = local_8->camera_light_bounds[0].x_min;
-  Line 66 [unrolled_memcpy]: // 0057b9e6: MOVSD.REP ES:EDI,ESI
-  Line 91 [unrolled_memcpy]: for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 98 [unrolled_memcpy]: for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 99 [unrolled_memcpy]: // 0057ba9b: MOVSD.REP ES:EDI,ESI
-  Line 103 [unrolled_memcpy]: local_c->move_filter = local_8->move_filter;
-  Line 103 [unrolled_memcpy]: // 0057baae: MOVSD.REP ES:EDI,ESI
-  Line 107 [unrolled_memcpy]: // 0057bac1: MOVSD.REP ES:EDI,ESI
-  Line 110 [shadow_pointer_walk]: pCVar3 = (CVector3f *)&pCVar3[0x20c].z;
-  Line 113 [unrolled_memcpy]: for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 118 [shadow_pointer_walk]: pCVar2 = (CVector3f *)&pCVar2[0x20c].z;
   Line 126 [unrolled_memcpy]: // 0057bb2e: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70 (1 suspect)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 27 [pointer_cast]: puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + local_18);
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (8 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 57 [shadow_pointer_walk]: pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
-  Line 117 [pointer_cast]: puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar3);
-  Line 121 [pointer_cast]: uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);
-  Line 138 [pointer_cast]: (*(int *)((int)g_ScreenBufferArray + local_2c) + iVar3 * 2);
-  Line 142 [pointer_cast]: uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar8);
-  Line 157 [pointer_cast]: puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar3 * 4)
-  Line 162 [pointer_cast]: uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar8);
-  Line 194 [shadow_pointer_walk]: local_88 = (CDemonSet *)&local_88->cameras[0].enabled;
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (8 suspects)
@@ -1530,33 +1478,6 @@ core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (13 suspects)
   Line 662 [shadow_pointer_walk]: pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0 (1 suspect)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 109 [shadow_pointer_walk]: local_18 = (CDemonSet *)&local_18->cameras[0].enabled;
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 (4 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 45 [unrolled_strcpy]: do {
-  Line 65 [unrolled_memcpy]: g_CDemonLightInstance.base.base.position.f.x = (g_CSlewPtr->position).x;
-  Line 153 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0 (1 suspect)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 31 [shadow_pointer_walk]: pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340 (1 suspect)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 85 [unrolled_memcpy]: local_bc.x = (camera->orientation).x;
-
-====================================================================================================
 core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (15 suspects)
   File: core/setedit.cpp
 ====================================================================================================
@@ -1577,65 +1498,12 @@ core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (15 suspects)
   Line 757 [unrolled_memcpy]: // 0057efb0: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 (1 suspect)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 82 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 (12 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 97 [pointer_cast]: *(int *)((int)g_CameraFogEnabledFlags + iVar6) = pCVar3->cameras[0].fog_enabled;
-  Line 100 [shadow_pointer_walk]: pCVar3 = (CDemonSet *)&pCVar3->cameras[0].enabled;
-  Line 116 [unrolled_memcpy]: pCVar6->x = pCVar4->x;
-  Line 146 [unrolled_memcpy]: pCVar6->x = pCVar4->x;
-  Line 161 [unrolled_strlen]: do {
-  Line 179 [unrolled_strlen]: do {
-  Line 195 [unrolled_strlen]: do {
-  Line 212 [unrolled_strlen]: do {
-  Line 236 [unrolled_memcpy]: pCVar5->x = pCVar4->x;
-  Line 241 [shadow_pointer_walk]: pCVar11 = (CDemonSet *)&pCVar11->cameras[0].enabled;
-  Line 242 [unrolled_memcpy]: pSVar7->height_threshold = (this_ptr->scene_fog).height_threshold;
-  Line 284 [unrolled_strlen]: do {
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (7 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 57 [pointer_cast]: (*(CDemonLight **)((int)g_MasterLightList + local_18),iVar6,iVar5,iVar7);
-  Line 71 [pointer_cast]: ((char *)(*(int *)((int)g_MasterLightList + local_18) + 0x40),iVar6,iVar5);
-  Line 90 [pointer_cast]: *(int *)((int)g_MasterLightList + local_20) + 0x40);
-  Line 147 [pointer_cast]: piVar2 = (int *)((int)g_MasterLightList + iVar4);
-  Line 168 [pointer_cast]: piVar2 = (int *)((int)g_MasterLightList + iVar4);
-  Line 211 [shadow_pointer_walk]: pCVar4 = (CDemonSet *)&pCVar4->cameras[0].enabled;
-  Line 222 [pointer_cast]: piVar1 = (int *)((int)g_MasterLightList + iVar4);
-
-====================================================================================================
 core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0 (3 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 98 [shadow_pointer_walk]: pCVar4 = (C3DSLight *)pCVar4->name;
   Line 163 [unrolled_strcpy]: do {
   Line 175 [static_invalid_pointer_cast]: *(float *)(pcVar8 + 0x16f4) = *(float *)(pcVar8 + 0x16f8);
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 (6 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 109 [unrolled_memcpy]: g_CDemonCameraInstance.base.position.f.x = local_108.position.x;
-  Line 248 [unrolled_memcpy]: local_ec.position.x = (pSVar3->position).x;
-  Line 256 [unrolled_memcpy]: local_ec.orientation.vec.x = pCVar4->x;
-  Line 262 [unrolled_memcpy]: (pSVar3->position).x = local_ec.position.x;
-  Line 300 [bit_int_float_compare]: if ((int)(local_18->extents).x < 0x3f800000) {
-  Line 364 [unrolled_memcpy]: (local_18->position).x = local_108.position.x;
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 (2 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 59 [unrolled_memcpy]: g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;
-  Line 91 [pointer_cast]: piVar1 = (int *)((int)visible_cameras + iVar11);
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (10 suspects)
@@ -1653,71 +1521,11 @@ core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (10 suspects)
   Line 1471 [shadow_pointer_walk]: local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 (5 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 25 [unrolled_strcpy]: do {
-  Line 35 [unrolled_strchr]: do {
-  Line 66 [unrolled_strcpy]: do {
-  Line 79 [unrolled_strcpy]: do {
-  Line 110 [shadow_pointer_walk]: local_18 = (CDemonSet *)&local_18->cameras[0].enabled;
-
-====================================================================================================
-core_setedit.cpp_blitThumbnailStripAndHitTest_FUN_00577730 (6 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 38 [pointer_cast]: puVar2 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_38) + iVar5);
-  Line 42 [pointer_cast]: uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar6);
-  Line 56 [pointer_cast]: local_14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_64) + iVar5 * 2);
-  Line 60 [pointer_cast]: uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);
-  Line 78 [pointer_cast]: puVar3 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_28) + iVar5 * 4);
-  Line 82 [pointer_cast]: uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);
-
-====================================================================================================
-core_setedit.cpp_blitThumbnailToScreen16_FUN_00577200 (2 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 17 [pointer_cast]: local_24 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_1c) + screen_x * 2);
-  Line 21 [pointer_cast]: uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);
-
-====================================================================================================
-core_setedit.cpp_blitThumbnailToScreen32_FUN_00577330 (2 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 20 [pointer_cast]: puVar1 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + screen_x * 4);
-  Line 24 [pointer_cast]: uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);
-
-====================================================================================================
-core_setedit.cpp_blitThumbnailToScreen8_FUN_00577120 (2 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 17 [pointer_cast]: puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_1c) + screen_x);
-  Line 21 [pointer_cast]: uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);
-
-====================================================================================================
-core_setedit.cpp_blitThumbnailToScreen_FUN_00577430 (6 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 34 [pointer_cast]: puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_30) + screen_x);
-  Line 38 [pointer_cast]: uVar2 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar1);
-  Line 53 [pointer_cast]: local_14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_50) + screen_x * 2);
-  Line 57 [pointer_cast]: uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);
-  Line 76 [pointer_cast]: puVar4 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_28) + screen_x * 4);
-  Line 80 [pointer_cast]: uVar2 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar1);
-
-====================================================================================================
 core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (2 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 85 [pointer_cast]: *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar3) =
   Line 137 [pointer_cast]: *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2) = 0xff00ff;
-
-====================================================================================================
-core_setedit.cpp_loadGroundTypes_FUN_00578420 (2 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 28 [unrolled_strchr]: do {
-  Line 41 [unrolled_strchr]: do {
 
 ====================================================================================================
 core_setedit.cpp_renderBackdropImage_FUN_0057ce80 (1 suspect)
@@ -2100,7 +1908,7 @@ core_skeledit.cpp_CLodVert_copy_FUN_00599550 (5 suspects)
   Line 38 [unrolled_memcpy]: // 005995b6: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (29 suspects)
+core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (30 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -2109,6 +1917,7 @@ core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (29 suspects)
   Line 92 [missing_cave_copy]: CMatrix3x4f local_374;
   Line 93 [missing_cave_copy]: CMatrix3x4f local_344;
   Line 94 [missing_cave_copy]: CMatrix3x4f local_314;
+  Line 119 [missing_cave_copy]: CVector3f local_1b0;
   Line 265 [unrolled_memcpy]: for (iVar16 = 0x41; iVar16 != 0; iVar16 = iVar16 + -1) {
   Line 410 [unrolled_strcpy]: do {
   Line 485 [pointer_cast]: pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar26 * -2 + 1) * 4);
@@ -2168,6 +1977,16 @@ core_sound.cpp_updateListeners_FUN_005b1870 (5 suspects)
   Line 59 [static_uninitvar]: (local_c8 - g_SoundListenerPrev.y) * (local_c8 - g_SoundListenerPrev.y)) <
   Line 96 [static_legacy_uninitvar]: ((double)local_cc,(double)local_c8,(double)local_c4);
   Line 96 [static_legacy_uninitvar]: ((double)local_cc,(double)local_c8,(double)local_c4);
+
+====================================================================================================
+core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (5 suspects)
+  File: core/stranger.cpp
+====================================================================================================
+  Line 97 [missing_cave_copy]: CVector3f local_154;
+  Line 105 [missing_cave_copy]: CVector3f local_10c;
+  Line 120 [missing_cave_copy]: CVector3f local_a0;
+  Line 125 [missing_cave_copy]: CVector3f local_64;
+  Line 126 [missing_cave_copy]: CVector3f local_58;
 
 ====================================================================================================
 core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (6 suspects)

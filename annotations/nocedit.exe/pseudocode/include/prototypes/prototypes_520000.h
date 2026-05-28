@@ -98,7 +98,7 @@ int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_005225a0(CMirro
 void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_005225e0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_00522670(CMirror *this_ptr);
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror *this_ptr);
-CVector3f * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0(CMirrorReflection *this_ptr,CVector3f *input_vertex,CVector3f *output_vertex);
+CVector3i * __stack2_esi core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0(CMirrorReflection *this_ptr,CVector3i *input_vertex,CVector3i *output_vertex);
 CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50(CMirrorReflection *this_ptr,CVector3i *point_a,CVector3i *point_b,CVector3i *output);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_ctor_FUN_00522bf0(SClipPlane *this_ptr);
 SClipPlane * __cdecl core_mirror_cpp_SClipPlane_dtor_FUN_00522c00(SClipPlane *this_ptr,uint flags);

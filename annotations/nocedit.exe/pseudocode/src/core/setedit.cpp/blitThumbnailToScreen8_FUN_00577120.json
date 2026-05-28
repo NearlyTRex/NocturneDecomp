@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 53,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 28,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 99
   },
   "cross_references": [],
@@ -103,6 +101,26 @@
     },
     "pcode_op_count": 645
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_1c) + screen_x);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(uint *)((int)g_ThumbnailImageBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 44,
     "local_size": 32,
@@ -154,22 +172,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_1c) + screen_x);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(uint *)((int)g_ThumbnailImageBuffer",
-      "severity": "moderate",
-      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

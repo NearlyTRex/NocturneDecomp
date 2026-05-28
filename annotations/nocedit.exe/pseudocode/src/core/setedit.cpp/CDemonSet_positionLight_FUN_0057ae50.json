@@ -7,18 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 593,
-    "complexity_score": 219,
+    "complexity_score": 164,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 35,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 164,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unrolled_memcpy",
-      "unrolled_strcpy",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 757
   },
   "cross_references": [
@@ -463,6 +459,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 102,
       "match": "&stack0xfffffe90",
@@ -497,6 +502,33 @@
       "severity": "moderate",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,0x16);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 45,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 153,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 65,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CDemonLightInstance.base.base.position.f.x = (g_CSlewPtr->position).x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -557,38 +589,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 45,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 153,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 65,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_CDemonLightInstance.base.base.position.f.x = (g_CSlewPtr->position).x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

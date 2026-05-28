@@ -91,13 +91,13 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,g_MenuVersionText,0x206,99,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-#if !NOCTURNE_AUTHENTIC_EDITOR
+#if NOCTURNE_AUTHENTIC_DEV_TOOLS
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,"NON-RELEASE EDITOR BUILD",0,0,0xf8,0);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,"Press CTRL+D to access the editor menu",0,0x14,0xf8,0);
 #endif
-#if !NOCTURNE_AUTHENTIC_NETPLAY
+#if NOCTURNE_AUTHENTIC_DEV_TOOLS && !NOCTURNE_AUTHENTIC_NETPLAY
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,"Press CTRL+H to host a multiplayer session",0,0x28,0xf8,0);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80

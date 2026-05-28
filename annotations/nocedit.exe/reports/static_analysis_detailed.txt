@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (344 diagnostics)
+Cppcheck (quick) (345 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -421,7 +421,7 @@ shiftTooManyBitsSigned (102)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-invalidscanf (59)
+invalidscanf (60)
 ----------------------------------------------------------------------------------------------------
 
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 181
@@ -592,6 +592,10 @@ invalidscanf (59)
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
+  core_setedit.cpp_loadGroundTypes_FUN_00578420      line 47
+    File: core/setedit.cpp
+    sscanf() without field width limits can crash with huge input data.
+
   core_setutil.cpp_C3DSCamera_load_FUN_00585420      line 20
     File: core/setutil.cpp
     sscanf() without field width limits can crash with huge input data.
@@ -684,11 +688,11 @@ selfAssignment (52)
     File: core/game.cpp
     Redundant assignment of 'pbVar21' to itself.
 
-  core_menu.cpp_configureGraphicsOptions_FUN_00510c8 line 314
+  core_menu.cpp_configureGraphicsOptions_FUN_00510c8 line 319
     File: core/menu.cpp
     Redundant assignment of 'pacVar11' to itself.
 
-  core_menu.cpp_configureGraphicsOptions_FUN_00510c8 line 319
+  core_menu.cpp_configureGraphicsOptions_FUN_00510c8 line 324
     File: core/menu.cpp
     Redundant assignment of 'pacVar11' to itself.
 

@@ -10,35 +10,23 @@
 void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *this_ptr)
 
 {
-  char cVar2;
   SFog *pSVar3;
-  CVector3f *pCVar4;
-  CDemonSet *pCVar3;
   int iVar5;
-  CVector3f *pCVar6;
   char *pcVar4;
   char *pcVar7;
   uint uVar8;
-  CVector3f *pCVar5;
-  int iVar6;
-  SFog *pSVar7;
   SFog *pSVar9;
   int iVar9;
   int iVar10;
-  CDemonSet *pCVar11;
-  byte bVar11;
   double dVar12;
   CPickList local_5e8;
   char local_240 [256];
   char local_140 [256];
   uint window_flags;
-  char cVar1;
   
-  bVar11 = 0;
   core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,0);
   this_ptr->selected_camera_index = 0;
   pSVar3 = &this_ptr->scene_fog;
-  pCVar4 = &(this_ptr->scene_fog).scroll;
   do {
     do {
       pSVar9 = pSVar3;
@@ -93,13 +81,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       engine_2d_c_drawText_FUN_00401fd0("V.  Test reverb",0,0xb0);
       iVar9 = 0;
       if (0 < this_ptr->camera_count) {
-        iVar6 = 0;
-        pCVar3 = this_ptr;
         do {
-          *(int *)((int)g_CameraFogEnabledFlags + iVar6) = pCVar3->cameras[0].fog_enabled;
-          iVar6 = iVar6 + 4;
+          g_CameraFogEnabledFlags[iVar9] = this_ptr->cameras[iVar9].fog_enabled;
           iVar9 = iVar9 + 1;
-          pCVar3 = (CDemonSet *)&pCVar3->cameras[0].enabled;
         } while (iVar9 < this_ptr->camera_count);
       }
       iVar5 = core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
@@ -110,19 +94,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
           this_ptr->cameras[iVar10].fog_enabled = (uint)(this_ptr->cameras[iVar10].fog_enabled == 0)
           ;
           iVar5 = this_ptr->selected_camera_index;
-          this_ptr->cameras[iVar5].fog.color_index.r = (pSVar3->color_index).r;
-          this_ptr->cameras[iVar5].fog.color_index.g = (this_ptr->scene_fog).color_index.g;
-          pCVar6 = &this_ptr->cameras[iVar5].fog.scroll;
-          this_ptr->cameras[iVar5].fog.color_index.b = (this_ptr->scene_fog).color_index.b;
-          if (pCVar6 != pCVar4) {
-            pCVar6->x = pCVar4->x;
-            this_ptr->cameras[iVar5].fog.scroll.y = (this_ptr->scene_fog).scroll.y;
-            this_ptr->cameras[iVar5].fog.scroll.z = (this_ptr->scene_fog).scroll.z;
-          }
-          this_ptr->cameras[iVar5].fog.height_threshold = (this_ptr->scene_fog).height_threshold;
-          this_ptr->cameras[iVar5].fog.density_multiplier = (this_ptr->scene_fog).density_multiplier
-          ;
-          this_ptr->cameras[iVar5].fog.temperature = (this_ptr->scene_fog).temperature;
+          this_ptr->cameras[iVar5].fog = this_ptr->scene_fog;
         }
         else {
           this_ptr->selected_camera_index = iVar5;
@@ -140,33 +112,13 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
             this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled =
                  (uint)(this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled == 0);
             iVar5 = this_ptr->selected_camera_index;
-            this_ptr->cameras[iVar5].fog.color_index.r = (pSVar3->color_index).r;
-            this_ptr->cameras[iVar5].fog.color_index.g = (this_ptr->scene_fog).color_index.g;
-            pCVar6 = &this_ptr->cameras[iVar5].fog.scroll;
-            this_ptr->cameras[iVar5].fog.color_index.b = (this_ptr->scene_fog).color_index.b;
-            if (pCVar6 != pCVar4) {
-              pCVar6->x = pCVar4->x;
-              this_ptr->cameras[iVar5].fog.scroll.y = (this_ptr->scene_fog).scroll.y;
-              this_ptr->cameras[iVar5].fog.scroll.z = (this_ptr->scene_fog).scroll.z;
-            }
-            this_ptr->cameras[iVar5].fog.height_threshold = (this_ptr->scene_fog).height_threshold;
-            this_ptr->cameras[iVar5].fog.density_multiplier =
-                 (this_ptr->scene_fog).density_multiplier;
-            this_ptr->cameras[iVar5].fog.temperature = (this_ptr->scene_fog).temperature;
+            this_ptr->cameras[iVar5].fog = this_ptr->scene_fog;
           }
           else {
             wincore_windll_cpp_clearScreen_FUN_005b3e70();
             engine_2d_c_getInputWithPrompt_FUN_004032c0
                       (local_140,0x1e,0,0,"Enter fog color r,g,b : ");
-            iVar5 = -1;
-            pcVar7 = local_140;
-            do {
-              if (iVar5 == 0) break;
-              iVar5 = iVar5 + -1;
-              cVar1 = *pcVar7;
-              pcVar7 = pcVar7 + (uint)bVar11 * -2 + 1;
-            } while (cVar1 != '\0');
-            if (iVar5 != -2) {
+            if (local_140[0] != '\0') {
               sscanf(local_140,"%d,%d,%d",
                      &pSVar9->color_index.r,&pSVar9->color_index.g,&pSVar9->color_index.b);
             }
@@ -177,15 +129,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_getInputWithPrompt_FUN_004032c0
                   (local_140,0x1e,0,0,"Enter fog velocity x,y,z : ");
-        iVar5 = -1;
-        pcVar7 = local_140;
-        do {
-          if (iVar5 == 0) break;
-          iVar5 = iVar5 + -1;
-          cVar2 = *pcVar7;
-          pcVar7 = pcVar7 + (uint)bVar11 * -2 + 1;
-        } while (cVar2 != '\0');
-        if (iVar5 != -2) {
+        if (local_140[0] != '\0') {
           sscanf(local_140,"%f,%f,%f",
                  &(pSVar9->scroll).x,&(pSVar9->scroll).y,&(pSVar9->scroll).z);
         }
@@ -194,15 +138,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_getInputWithPrompt_FUN_004032c0
                   (local_140,0x1e,0,0,"Enter in fog taper : ");
-        iVar5 = -1;
-        pcVar7 = local_140;
-        do {
-          if (iVar5 == 0) break;
-          iVar5 = iVar5 + -1;
-          cVar2 = *pcVar7;
-          pcVar7 = pcVar7 + (uint)bVar11 * -2 + 1;
-        } while (cVar2 != '\0');
-        if (iVar5 != -2) {
+        if (local_140[0] != '\0') {
           dVar12 = _strtod(local_140);
           pSVar9->height_threshold = (float)dVar12;
         }
@@ -211,15 +147,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_getInputWithPrompt_FUN_004032c0
                   (local_140,0x1e,0,0,"Enter in fog density : ");
-        iVar5 = -1;
-        pcVar7 = local_140;
-        do {
-          if (iVar5 == 0) break;
-          iVar5 = iVar5 + -1;
-          cVar2 = *pcVar7;
-          pcVar7 = pcVar7 + (uint)bVar11 * -2 + 1;
-        } while (cVar2 != '\0');
-        if (iVar5 != -2) {
+        if (local_140[0] != '\0') {
           dVar12 = _strtod(local_140);
           pSVar9->density_multiplier = (float)dVar12;
         }
@@ -228,25 +156,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         iVar5 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"Reset all cameras to master fog setting?");
         if (iVar5 != 0) {
-          pCVar5 = &this_ptr->cameras[0].fog.scroll;
-          pCVar11 = this_ptr;
-          do {
-            pSVar7 = &pCVar11->cameras[0].fog;
-            pCVar11->cameras[0].fog_enabled = 1;
-            (pSVar7->color_index).r = (pSVar3->color_index).r;
-            (pSVar7->color_index).g = (this_ptr->scene_fog).color_index.g;
-            (pSVar7->color_index).b = (this_ptr->scene_fog).color_index.b;
-            if (pCVar5 != pCVar4) {
-              pCVar5->x = pCVar4->x;
-              pCVar5->y = (this_ptr->scene_fog).scroll.y;
-              pCVar5->z = (this_ptr->scene_fog).scroll.z;
-            }
-            pCVar5 = pCVar5 + 0x23;
-            pCVar11 = (CDemonSet *)&pCVar11->cameras[0].enabled;
-            pSVar7->height_threshold = (this_ptr->scene_fog).height_threshold;
-            pSVar7->density_multiplier = (this_ptr->scene_fog).density_multiplier;
-            pSVar7->temperature = (this_ptr->scene_fog).temperature;
-          } while (pCVar11 != (CDemonSet *)&this_ptr->cameras[0xf9].enabled);
+          for (iVar9 = 0; iVar9 < 0xfa; iVar9 = iVar9 + 1) {
+            this_ptr->cameras[iVar9].fog_enabled = 1;
+            this_ptr->cameras[iVar9].fog = this_ptr->scene_fog;
+          }
         }
       }
     }
@@ -296,15 +209,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_getInputWithPrompt_FUN_004032c0
                 (local_140,0x14,0,0,"Enter in temperature : ");
-      iVar5 = -1;
-      pcVar7 = local_140;
-      do {
-        if (iVar5 == 0) break;
-        iVar5 = iVar5 + -1;
-        cVar2 = *pcVar7;
-        pcVar7 = pcVar7 + (uint)bVar11 * -2 + 1;
-      } while (cVar2 != '\0');
-      if (iVar5 != -2) {
+      if (local_140[0] != '\0') {
         dVar12 = _strtod(local_140);
         pSVar9->temperature = (float)dVar12;
       }

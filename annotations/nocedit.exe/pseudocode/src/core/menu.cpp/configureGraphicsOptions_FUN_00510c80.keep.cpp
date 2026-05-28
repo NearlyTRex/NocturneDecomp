@@ -36,7 +36,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   char cVar1;
   CGame *pCVar2;
   int iVar3;
-  
+
   bVar13 = 0;
   local_20 = 0;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
@@ -57,6 +57,9 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   local_1c[1] = 0;
   local_1c[2] = 0;
   wincore_windll_cpp_getVideoMemory_FUN_005b7d60(local_1c,local_1c + 1,local_1c + 2);
+#if !NOCTURNE_AUTHENTIC_D3D_OPTIONS
+  local_1c[0] = 0x10000000;
+#endif
   do {
     pcVar9 = local_140;
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
@@ -142,10 +145,12 @@ LAB_00510e1f:
       }
     }
     pCVar4 = g_CGamePtr;
+#if NOCTURNE_AUTHENTIC_D3D_OPTIONS
     if ((g_UseDirect3D == 0) && (0x1e0 < g_CGamePtr->game_pixy)) {
       g_CGamePtr->game_pixy = 0x1e0;
       pCVar4->game_pixx = 0x280;
     }
+#endif
     iVar7 = g_CGamePtr->game_pixy;
     if (iVar7 == 0xf0) {
       pcVar14 = "Resolution : 320x240";

@@ -58,6 +58,8 @@ Technical research documentation. See **[research/README.md](research/README.md)
 | `05-badspacebase_investigation/` | Ghidra decompiler fixes for Watcom code |
 | `06-per_function_decompiler_helpers/` | Per-function decompiler control system |
 | `07-mmx_functions/` | MMX/SIMD function inventory and portable rewrites |
+| `08-developer_mode_and_cheats/` | Dev/debug flags, cheat codes, ini schema, retail-vs-editor & cut-content mysteries |
+| `09-flashlight_lighting_investigation/` | Flashlight/set spot-light geometry-lighting bug (open) — pipeline map, fixes, next steps |
 
 ### `/scripts`
 Python automation scripts for Ghidra (PyGhidra headless):

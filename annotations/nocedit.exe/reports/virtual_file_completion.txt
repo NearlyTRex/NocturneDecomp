@@ -6,10 +6,10 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6048 (93.7%)
-Files at 100%: 180
+Clean functions: 6065 (94.0%)
+Files at 100%: 177
 Files at 90%+: 180
-Files at 50%+: 213
+Files at 50%+: 214
 
 ====================================================================================================
 FILES AT 100% (COMPLETE)
@@ -119,12 +119,10 @@ FILES AT 100% (COMPLETE)
   core/particle.cpp: 6 functions, 155 lines
   core/passngr.cpp: 11 functions, 348 lines
   core/pendulum.cpp: 20 functions, 668 lines
-  core/platfrm.cpp: 30 functions, 1576 lines
   core/podmain.cpp: 4 functions, 64 lines
   core/procedur.cpp: 4 functions, 234 lines
   core/script.cpp: 96 functions, 10011 lines
   core/sentinel.cpp: 14 functions, 737 lines
-  core/set.cpp: 87 functions, 5060 lines
   core/setcolid.cpp: 40 functions, 1555 lines
   core/setutil.cpp: 41 functions, 1409 lines
   core/shotgun.cpp: 10 functions, 414 lines
@@ -138,7 +136,6 @@ FILES AT 100% (COMPLETE)
   core/spline.cpp: 7 functions, 149 lines
   core/stairs.cpp: 21 functions, 1047 lines
   core/stone.cpp: 8 functions, 80 lines
-  core/stranger.cpp: 63 functions, 6240 lines
   core/succubus.cpp: 14 functions, 614 lines
   core/svetlana.cpp: 19 functions, 958 lines
   core/tbplayer.cpp: 16 functions, 315 lines
@@ -195,12 +192,24 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 180 files
+Total: 177 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-Total: 0 files
+   98.9% | core/set.cpp
+         86/87 clean, 1 remaining
+           - core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 (297 lines) [missing_cave_copy]
+
+   98.4% | core/stranger.cpp
+         62/63 clean, 1 remaining
+           - core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (516 lines) [missing_cave_copy]
+
+   96.7% | core/platfrm.cpp
+         29/30 clean, 1 remaining
+           - core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 (210 lines) [missing_cave_copy]
+
+Total: 3 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -233,6 +242,18 @@ FILES AT 50-89%
            - core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70 (55 lines) [bit_int_float_compare]
            - core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004d17b0 (104 lines) [unrolled_strcpy]
            - core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190 (76 lines) [stack_alignment_array, unrolled_memcpy, warning_inlined_function]
+   82.8% | core/setedit.cpp
+         48/58 clean, 10 remaining
+           - core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (674 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strchr]
+           - core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (127 lines) [unrolled_memcpy]
+           - core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (140 lines) [pointer_cast]
+           - core_setedit.cpp_renderColoredBox_FUN_005817d0 (102 lines) [pointer_cast]
+           - core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0 (259 lines) [shadow_pointer_walk, unrolled_strcpy]
+           - core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (702 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strlen]
+           - core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (1474 lines) [bit_int_float_compare, shadow_pointer_walk, unrolled_memcpy]
+           - core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (412 lines) [pointer_cast, unrolled_memcpy, unrolled_strchr, unrolled_strcpy]
+           - core_setedit.cpp_renderBackdropImage_FUN_0057ce80 (134 lines) [pointer_cast]
+           - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [unrolled_memcpy]
    82.6% | core/icepick.cpp
          19/23 clean, 4 remaining
            - core_icepick.cpp_CIcePick_process_FUN_004f80b0 (313 lines) [missing_cave_copy, unrolled_memset, warning_unreachable]
@@ -259,7 +280,7 @@ FILES AT 50-89%
            - core_mobster.cpp_CMobster_process_FUN_00525840 (594 lines) [unrolled_memset]
            - core_mobster.cpp_CMobster_getTargetPoints_FUN_005278d0 (41 lines) [unrolled_memcpy]
            - core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20 (97 lines) [unrolled_memcpy]
-           - core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (129 lines) [stack_alignment_array, warning_type_propagation]
+           - core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (129 lines) [missing_cave_copy, stack_alignment_array, warning_type_propagation]
    80.0% | core/tentacle.cpp
          12/15 clean, 3 remaining
            - core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 (45 lines) [missing_cave_copy, unrolled_memcpy]
@@ -648,42 +669,10 @@ FILES AT 50-89%
            - engine_alphabit.cpp_copyBytes_FUN_00410d20 (21 lines) [pointer_cast, unrolled_memcpy]
            - engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (44 lines) [pointer_cast]
 
-Total: 33 files
+Total: 34 files
 
 ====================================================================================================
 FILES BELOW 50%
 ====================================================================================================
-   48.3% | core/setedit.cpp
-         28/58 clean, 30 remaining
-           - core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0 (60 lines) [shadow_pointer_walk]
-           - core_setedit.cpp_CDemonSet_deleteCamera_FUN_0057e430 (119 lines) [unrolled_memcpy]
-           - core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0 (175 lines) [shadow_pointer_walk]
-           - core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (674 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strchr]
-           - core_setedit.cpp_loadGroundTypes_FUN_00578420 (91 lines) [unrolled_strchr]
-           - core_setedit.cpp_blitThumbnailToScreen_FUN_00577430 (98 lines) [pointer_cast]
-           - core_setedit.cpp_blitThumbnailStripAndHitTest_FUN_00577730 (108 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (127 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 (184 lines) [unrolled_strcpy]
-           - core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (140 lines) [pointer_cast]
-           - core_setedit.cpp_blitThumbnailToScreen8_FUN_00577120 (28 lines) [pointer_cast]
-           - core_setedit.cpp_renderColoredBox_FUN_005817d0 (102 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0 (259 lines) [shadow_pointer_walk, unrolled_strcpy]
-           - core_setedit.cpp_blitThumbnailToScreen32_FUN_00577330 (39 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (702 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strlen]
-           - core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 (164 lines) [unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
-           - core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (1474 lines) [bit_int_float_compare, shadow_pointer_walk, unrolled_memcpy]
-           - core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 (113 lines) [shadow_pointer_walk, unrolled_strchr, unrolled_strcpy]
-           - core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (303 lines) [pointer_cast, shadow_pointer_walk]
-           - core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 (442 lines) [bit_int_float_compare, unrolled_memcpy]
-           - core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 (376 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strlen]
-           - core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (412 lines) [pointer_cast, unrolled_memcpy, unrolled_strchr, unrolled_strcpy]
-           - core_setedit.cpp_blitThumbnailToScreen16_FUN_00577200 (31 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70 (60 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 (131 lines) [pointer_cast, unrolled_memcpy]
-           - core_setedit.cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340 (92 lines) [unrolled_memcpy]
-           - core_setedit.cpp_renderBackdropImage_FUN_0057ce80 (134 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 (102 lines) [unrolled_memcpy]
-           - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast, shadow_pointer_walk]
-           - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [shadow_pointer_walk, unrolled_memcpy]
 
-Total: 1 files
+Total: 0 files

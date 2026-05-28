@@ -279,6 +279,15 @@
       "severity": "moderate",
       "text": "CQuaternion4f local_60;",
       "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_30` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 25,
+      "match": "CVector3f local_30; ... f(&local_30, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CVector3f local_30;",
+      "type": "missing_cave_copy"
     }
   ],
   "stack_frame": {

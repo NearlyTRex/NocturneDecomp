@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 107,
+    "complexity_score": 92,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 92,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 351
   },
   "cross_references": [
@@ -171,6 +169,17 @@
     },
     "pcode_op_count": 828
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 85,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_bc.x = (camera->orientation).x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 300,
     "local_size": 292,
@@ -306,14 +315,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 85,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_bc.x = (camera->orientation).x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

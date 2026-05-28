@@ -7,17 +7,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 int __cdecl core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(CDemonSet *this_ptr,C3DSLight *light)
 
 {
-  char cVar1;
   float fVar2;
   CSlew *pCVar3;
   int iVar4;
-  char *pcVar5;
-  char *pcVar6;
   char acStack_170 [256];
   char local_84 [100];
   int local_1c;
@@ -48,18 +43,8 @@ int __cdecl core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(CDemonSet *thi
     pCVar3->orientation.vec.y = (light->orient).y;
     pCVar3->orientation.vec.z = (light->orient).z;
   }
-  pcVar6 = local_84;
-  pcVar5 = light->name;
   g_CSlewPtr->slew_rate = light->fov;
-  do {
-    cVar1 = *pcVar5;
-    *pcVar6 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
-  } while (cVar1 != '\0');
+  strcpy(local_84,light->name);
   if (0x1df < g_WindowHeight) {
     core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(this_ptr,0,0,0xf0);
   }
@@ -71,9 +56,7 @@ LAB_0057af67:
   core_slew_cpp_CSlew_processInput_FUN_005a20b0(g_CSlewPtr);
   if (local_18 != 0) {
     if (g_CSlewPtr != (CSlew *)&g_CDemonLightInstance.base.base.position) {
-      g_CDemonLightInstance.base.base.position.f.x = (g_CSlewPtr->position).x;
-      g_CDemonLightInstance.base.base.position.f.z = (g_CSlewPtr->position).z;
-      g_CDemonLightInstance.base.base.position.f.y = (g_CSlewPtr->position).y;
+      g_CDemonLightInstance.base.base.position.f = g_CSlewPtr->position;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonLightInstance.base.base.rotation_matrix,&g_CSlewPtr->orientation.vec);
@@ -157,19 +140,9 @@ LAB_0057b341:
     (light->orient).y = pCVar3->orientation.vec.y;
     (light->orient).z = pCVar3->orientation.vec.z;
   }
-  pcVar6 = local_84;
   local_1c = 1;
-  pcVar5 = light->name;
   light->fov = g_CSlewPtr->slew_rate;
-  do {
-    cVar1 = *pcVar6;
-    *pcVar5 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
-  } while (cVar1 != '\0');
+  strcpy(light->name,local_84);
 LAB_0057b3c9:
   core_slew_cpp_CSlew_free_FUN_005a20a0(g_CSlewPtr);
   engine_2d_c_clearInputAndWait_FUN_00403260();

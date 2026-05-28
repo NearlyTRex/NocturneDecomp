@@ -222,6 +222,27 @@ if(NOCTURNE_BUILD_EXE)
                 ${NOCTURNE_SANITIZE_FLAGS})
             target_compile_features(nocturne_${_module} PRIVATE cxx_std_17)
 
+            # Performance: the per-pixel software span rasterizers
+            # (render{MMXPerspective,PerspectiveCorrect}Scanline{16,32}) are the
+            # renderer's hot inner loops. At the Debug build's -O0 they dominate
+            # framerate — e.g. the flashlight volumetric halo blends ~19 near
+            # screen-filling additive quads/frame here. Build just these files at
+            # -O2 so the rest of the tree stays -O0/debuggable. Output is
+            # bit-identical: -fwrapv (global) preserves signed-overflow wrap, and
+            # -fno-strict-aliasing keeps the decompiler's pervasive pointer
+            # type-punning (framebuffer/z reads, packed-channel casts) valid that
+            # -O2 would otherwise miscompile. -g and ASan still apply.
+            foreach(_src IN LISTS _sources)
+                if(_src MATCHES "Scanline(16|32)_FUN_")
+                    # SKIP_PRECOMPILE_HEADERS: the shared PCH is built at -O0, so a
+                    # file at -O2 can't REUSE_FROM it (__OPTIMIZE__ mismatch). These
+                    # few files just re-include nocturne.h directly.
+                    set_source_files_properties("${_src}" PROPERTIES
+                        COMPILE_OPTIONS "-O2;-fno-strict-aliasing"
+                        SKIP_PRECOMPILE_HEADERS ON)
+                endif()
+            endforeach()
+
             if(_pch_source STREQUAL "")
                 target_precompile_headers(nocturne_${_module} PRIVATE
                     "${NOCTURNE_INCLUDE_DIR}/nocturne.h")

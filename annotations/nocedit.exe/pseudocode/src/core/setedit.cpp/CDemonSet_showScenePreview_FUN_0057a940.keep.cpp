@@ -55,9 +55,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
     fVar7 = g_CSlewPtr->slew_rate;
     core_slew_cpp_CSlew_processInput_FUN_005a20b0(g_CSlewPtr);
     if (g_CSlewPtr != (CSlew *)&g_CDemonCameraInstance.base.position) {
-      g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;
-      g_CDemonCameraInstance.base.position.f.z = (g_CSlewPtr->position).z;
-      g_CDemonCameraInstance.base.position.f.y = (g_CSlewPtr->position).y;
+      g_CDemonCameraInstance.base.position.f = g_CSlewPtr->position;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonCameraInstance.base.rotation_matrix,&g_CSlewPtr->orientation.vec);
@@ -88,7 +86,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
         y = 0x21;
         iVar11 = 0;
         do {
-          piVar1 = (int *)((int)visible_cameras + iVar11);
+          piVar1 = visible_cameras + iVar11 / 4;
           iVar11 = iVar11 + 4;
           engine_2d_c_drawTextXY_FUN_00402130(0,y,this_ptr->cameras[*piVar1].name);
           y = y + 0xb;

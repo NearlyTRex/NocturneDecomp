@@ -38,6 +38,8 @@ Press CTRL+D to access the editor menu        (top-left, line 0x14)
 
 These show up on the main menu, options menu, load/save screens — anywhere `renderMenuAndGetChoice` is the active menu renderer. Both strings are hardcoded literals — there's no `developer_mode_enabled` check around them, because as far as Terminal Reality was concerned, this binary is *always* the editor build. The retail Nocturne shipped a different player executable (not in this decompilation).
 
+**In this decompilation** the "unconditional" behavior above is the *original* binary's, preserved in the raw `.cpp`. The `.keep` files gate the banner *and* the `Ctrl+D` / `Ctrl+L` hotkeys behind `NOCTURNE_AUTHENTIC_DEV_TOOLS` (`shims/shim_config.h`), which defaults to `0` — so a default build **hides** them and behaves like a retail player. Build with `-DNOCTURNE_AUTHENTIC_DEV_TOOLS=1` to restore the original always-on editor banner + dev-tools access. Affected keeps: `renderMenuAndGetChoice_FUN_00510000.keep.cpp`, `showMainGameMenu_FUN_00512f40.keep.cpp`, `enterMainGameMenu_FUN_00507a50.keep.c`.
+
 ## License-agreement gate
 
 First-run only. Before showing the menu, the function checks `[Editor] AcceptedLicenseAgreement` in `nocturne.ini`. If unset, it decrypts and displays `g_LicenseAgreement` (a 14616-byte encrypted blob) in a scrollable view with two buttons:

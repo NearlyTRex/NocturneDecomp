@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 541,
-    "complexity_score": 161,
+    "complexity_score": 131,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 41,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 131,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 672
   },
   "cross_references": [
@@ -534,6 +531,15 @@
       "severity": "moderate",
       "text": "piVar1 = (int *)(&stack0xfffffae0 + iVar11);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 59,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -629,23 +635,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 59,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 91,
-      "match": "(int *)((int)visible_cameras",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)visible_cameras + iVar11);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

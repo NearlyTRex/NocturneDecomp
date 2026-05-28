@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 241,
-    "complexity_score": 121,
+    "complexity_score": 120,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 19,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 121,
+    "pseudocode_lines": 120,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 362
+    "total_lines": 361
   },
   "cross_references": [
     {
@@ -317,7 +317,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 104,
       "match": "(CDemonLight **)((int)g_DynamicLights",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -326,7 +326,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 109,
       "match": "(CDemonLight **)((int)g_DynamicLights",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -335,12 +335,39 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 119,
+      "line": 118,
       "match": "local_14 = (T *)local_14->ARRAY",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "local_14 = (CDemonSet *)local_14->cameras;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Struct-type local `local_48` (CVector3i) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 15,
+      "match": "CVector3i local_48; ... f(&local_48, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CVector3i local_48;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_3c` (CVector3i) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 16,
+      "match": "CVector3i local_3c; ... f(&local_3c, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CVector3i local_3c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_30` (CVector3i) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 17,
+      "match": "CVector3i local_30; ... f(&local_30, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CVector3i local_30;",
+      "type": "missing_cave_copy"
     }
   ],
   "stack_frame": {
@@ -369,7 +396,7 @@
         "name": "local_3c",
         "offset": -60,
         "size": 12,
-        "type": "CVector3f"
+        "type": "CVector3i"
       },
       {
         "is_param": false,

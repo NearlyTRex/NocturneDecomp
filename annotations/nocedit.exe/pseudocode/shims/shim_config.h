@@ -81,19 +81,31 @@
 #define NOCTURNE_AUTHENTIC_CONSOLE 0
 #endif
 
-// NOCTURNE_AUTHENTIC_EDITOR
-//   1: try to act like the non-editor retail build — hide the "NON-RELEASE
-//      EDITOR BUILD" / "Press CTRL+D to access the editor menu" banner on
-//      every menu screen, and disable the Ctrl+D / Ctrl+L hotkeys that
-//      open the developer-tools menu. (We don't have the retail binary, so
-//      this is a best-effort approximation: only the visible editor-build
-//      surfaces are suppressed; deeper differences may remain.)
-//   0: dev-friendly mode. Editor banner + dev-tools menu access remain
-//      visible — the actual nocedit.exe behavior of this binary.
+// NOCTURNE_AUTHENTIC_DEV_TOOLS
+//   Controls the editor's developer-tools surface: the "NON-RELEASE EDITOR
+//   BUILD" / "Press CTRL+D to access the editor menu" banner shown on menu
+//   screens, plus the Ctrl+D / Ctrl+L hotkeys that open the developer-tools
+//   menu (showDeveloperToolsMenu).
+//   1: show the banner and enable the Ctrl+D / Ctrl+L hotkeys — authentic
+//      nocedit.exe editor behavior.
+//   0: hide them; the build looks like a retail player (default).
 //
-//   Override with -DNOCTURNE_AUTHENTIC_EDITOR=1.
-#ifndef NOCTURNE_AUTHENTIC_EDITOR
-#define NOCTURNE_AUTHENTIC_EDITOR 0
+//   Override with -DNOCTURNE_AUTHENTIC_DEV_TOOLS=1.
+#ifndef NOCTURNE_AUTHENTIC_DEV_TOOLS
+#define NOCTURNE_AUTHENTIC_DEV_TOOLS 0
+#endif
+
+// NOCTURNE_AUTHENTIC_BATTERY
+//   Controls the flashlight/goggles battery in CInventory::updateInventory.
+//   1: authentic — the battery discharges while the flashlight or goggles are
+//      on (and recharges while both are off), exactly like nocedit.exe.
+//   0: dev-friendly default — the battery never drains (the discharge is still
+//      computed but discarded, so it can't empty). Recharge-while-off is
+//      unaffected.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_BATTERY=1.
+#ifndef NOCTURNE_AUTHENTIC_BATTERY
+#define NOCTURNE_AUTHENTIC_BATTERY 0
 #endif
 
 // NOCTURNE_WINDOW_SCALE

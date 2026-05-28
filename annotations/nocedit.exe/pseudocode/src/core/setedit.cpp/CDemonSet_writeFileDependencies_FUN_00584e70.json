@@ -7,18 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 309,
-    "complexity_score": 178,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 37,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 113,
-    "suspect_count": 5,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "unrolled_strchr",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 422
   },
   "cross_references": [
@@ -351,6 +347,53 @@
     },
     "pcode_op_count": 1033
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 25,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 66,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 79,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_18->vertices[0].a`). Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 110,
+      "match": "local_18 = (T *)&local_18->FIELD[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 = (CDemonSet *)&local_18->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 35,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ],
   "stack_frame": {
     "frame_size": 548,
     "local_size": 540,
@@ -426,46 +469,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 25,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 66,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 79,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_18->vertices[0].a`). Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 110,
-      "match": "local_18 = (T *)&local_18->FIELD[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "local_18 = (CDemonSet *)&local_18->cameras[0].enabled;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 35,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    }
-  ]
+  "suspects": []
 }

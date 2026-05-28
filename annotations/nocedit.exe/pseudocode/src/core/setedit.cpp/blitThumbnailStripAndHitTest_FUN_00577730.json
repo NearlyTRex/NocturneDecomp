@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 306,
-    "complexity_score": 173,
+    "complexity_score": 108,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 17,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 108,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 414
   },
   "cross_references": [],
@@ -190,6 +188,62 @@
     },
     "pcode_op_count": 1862
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar2 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_38) + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)g_ThumbnailImageBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_64) + iVar5 * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(uint *)((int)g_ThumbnailImageBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_28) + iVar5 * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(uint *)((int)g_ThumbnailImageBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 120,
     "local_size": 104,
@@ -297,54 +351,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "puVar2 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_38) + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(uint *)((int)g_ThumbnailImageBuffer",
-      "severity": "moderate",
-      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "local_14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_64) + iVar5 * 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(uint *)((int)g_ThumbnailImageBuffer",
-      "severity": "moderate",
-      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "puVar3 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_28) + iVar5 * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(uint *)((int)g_ThumbnailImageBuffer",
-      "severity": "moderate",
-      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

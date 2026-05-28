@@ -16,6 +16,7 @@
 #include "system/crt.h"
 #include "debug_log.h"
 #include <cerrno>
+#include <dlfcn.h>          // dlsym / RTLD_NEXT for remove()/rename() interposition
 // Full struct layouts for Watcom types that crt.h only forward-declares.
 // The shims bridge these to libc equivalents field-by-field.
 #include "system/stdio.h"   // _FILE  (for _FILE_to_FILE)
@@ -411,6 +412,28 @@ static FILE* fopen_text_aware(const char* path, const char* mode) {
 
 _FILE* _fopen(const char* filename, const char* mode) {
     return make_file_wrapper(fopen_text_aware(normalize_path(filename).c_str(), mode));
+}
+
+// The game calls plain remove()/rename() with hard-coded Windows paths — e.g.
+// CIni::writeProfileString's temp-file swap of ".\\system\\nocturne.ini", which
+// is how every nocturne.ini setting is persisted. libc's remove/rename would
+// get the literal backslash names (not path separators on Linux) and fail
+// silently, so ini writes never landed (settings appeared not to save).
+// Interpose normalizing wrappers that run the path(s) through normalize_path
+// (\ -> /, case-insensitive component match) before delegating to the real
+// libc implementation found via RTLD_NEXT. _fopen already normalizes, so the
+// temp file is created at the same resolved path these then operate on.
+extern "C" int remove(const char* path) {
+    using remove_fn = int (*)(const char*);
+    static remove_fn real_remove = reinterpret_cast<remove_fn>(dlsym(RTLD_NEXT, "remove"));
+    return real_remove(normalize_path(path).c_str());
+}
+
+extern "C" int rename(const char* oldpath, const char* newpath) {
+    using rename_fn = int (*)(const char*, const char*);
+    static rename_fn real_rename = reinterpret_cast<rename_fn>(dlsym(RTLD_NEXT, "rename"));
+    return real_rename(normalize_path(oldpath).c_str(),
+                       normalize_path(newpath).c_str());
 }
 
 int _fclose(_FILE* f) {

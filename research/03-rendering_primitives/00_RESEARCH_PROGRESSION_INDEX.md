@@ -119,6 +119,46 @@ This directory documents the investigation into Nocturne's rendering primitive s
 
 ---
 
+### Phase 9: Keyframe Formats & Model Bounds (Docs 33-38)
+**Goal**: Pin down the keyframe file format and the model-bounds structure
+
+- `33_SMRGLModelBounds_CORRECTED.h` - Corrected `SMRGLModelBounds` (13-dword copy from `getMRGLBounds_FUN_00528140`; min/max order fixed)
+- `34_keyframe_structure_findings.md` - Definitive `SMRGLKeyframe` findings — the supposed "vertex data" is actually a type 2/3 MRGL block size
+- `35_KEYFRAME_COMPLETE_DATAFLOW.md` - Complete keyframe data flow; triangles reference vertices by index
+- `36_SMRGLKeyframeStructs_CORRECTED.h` - Corrected keyframe structs (`.kfm` = type 0x20 `SMRGLKeyframeModel`, 344 bytes; per-frame type-2 vertex + surface blocks)
+- `37_KEYFRAME_FORMATS_RECONCILED.md` - Reconciles the competing keyframe format theories
+- `38_MODEL_FILE_FORMATS_COMPLETE.md` - Complete model file format table (223 KFM files, etc.)
+
+**Key Finding**: Keyframe files are type 0x20 containers of per-frame type-2 vertex blocks + surface blocks, not a flat vertex stream
+
+---
+
+### Phase 10: Primitive Type Replacement & SPrimitive Resolution (Docs 39-44)
+**Goal**: Decide which generic `SMRGLHeaderPrimitive*` params can be upgraded to specific MRGL types, and resolve what `SPrimitiveLit`/`SPrimitiveGeometry` actually are
+
+- `39_PRIMITIVE_REPLACEMENT_PLAN.md` - Plan for replacing generic primitive types in `CDemonRenderer_renderLitObject`
+- `40_SPRIMITIVE_ANALYSIS.md` - Investigate whether `SPrimitiveLit`/`SPrimitiveGeometry` are MRGL types that should be replaced
+- `41_SPRIMITIVE_SOLUTION.md` - ✅ `SPrimitiveLit` is an *adapter* struct that unpacks MRGL primitive data for rendering (per `FUN_00570770`)
+- `42_RENDERLITOBJECT_ANALYSIS.md` - What `renderLitObject` does; "lit" = custom pixel processing, not pre-lit geometry
+- `43_MRGL_PARAMETER_ANALYSIS.md` - Which functions taking `SMRGLHeaderPrimitive*` could use more specific MRGL types
+- `44_CDEMONRENDERER_TYPE_ANALYSIS.md` - Which `CDemonRenderer` methods can be upgraded to `SMRGLPrimitiveTriangle*`/`Quad*`
+
+**Key Finding**: `SPrimitiveLit` is a runtime adapter, not a file format; generic header params must stay generic where the renderer dispatches on multiple primitive types
+
+---
+
+### Phase 11: Globe / Corona Rendering (Docs 45-48)
+**Goal**: Explain the globe (light corona) primitives that look like MRGL type 0x03 but aren't
+
+- `45_GLOBE_LIGHT_VERTEX_MYSTERY_SOLVED.md` - ✅ Solves the globe light vertex layout (type 0x03 triangle rings)
+- `46_MRGL_TYPE_03_RUNTIME_TRANSFORM.md` - Type 0x03/0x04 runtime transform via `renderCustomScanline` → `isVisiblePlane`
+- `47_GLOBE_PRIMITIVES_NOT_TRUE_MRGL.md` - `g_GlobeTrianglePrimitives` is a specialized embedded structure, NOT a standard MRGL stream
+- `48_GLOBE_RENDERING_FINALIZED.md` - ✅ Finalized globe/corona rendering analysis (`CDemonGlobe::render_FUN_00471400`)
+
+**Key Finding**: Globe primitives reuse type values 0x03/0x04 but bypass standard MRGL rules — an MRGL lookalike, not the real format
+
+---
+
 ## Final Structure Taxonomy
 
 ### MRGL Primitives (Variable Size)
@@ -227,7 +267,10 @@ SPrimitive_FireQuad (40 bytes) - Fire particle quads
 
 ### Header Files (Use These)
 - `29_SMRGLPrimitive_Structs.h` - ✅ FINAL MRGL primitives
+- `29_CKeyFramedModelInstance.h` - ✅ Keyframed model instance class (0x17c / 380 bytes)
 - `32_SPrimitive_Structs_NEEDS_UPDATE.h` - ⚠️ Needs light volume removal
+- `33_SMRGLModelBounds_CORRECTED.h` - ✅ Corrected model bounds
+- `36_SMRGLKeyframeStructs_CORRECTED.h` - ✅ Corrected keyframe structs
 - `03_MRGL_FixedSizeStructs.h` - ✅ MRGL texture/model types
 - `04_CKeyFramedModel.h` - ✅ Model structure
 - `06_SupportingStructs.h` - ✅ Supporting types
@@ -236,6 +279,14 @@ SPrimitive_FireQuad (40 bytes) - Fire particle quads
 - `31_SOLVED_LightVolume_Actually_MRGL_Quad.md` - ✅ The solution!
 - `27_PRIMITIVE_STRUCTURE_SUMMARY.md` - ✅ Complete summary
 - `28_RECOMMENDED_TYPE_STRUCTURE.md` - ✅ Type organization
+- `37_KEYFRAME_FORMATS_RECONCILED.md` - ✅ Keyframe file format reconciled
+- `38_MODEL_FILE_FORMATS_COMPLETE.md` - ✅ Full model file format table
+- `41_SPRIMITIVE_SOLUTION.md` - ✅ `SPrimitiveLit` is a runtime adapter
+- `48_GLOBE_RENDERING_FINALIZED.md` - ✅ Globe/corona rendering finalized
+
+### Supporting Analysis Dumps (`.txt`)
+- Bounds: `bounds_usage_analysis.txt`, `final_bounds_analysis.txt`, `mrglbounds_complete_analysis.txt`, `mrglbounds_definitive_layout.txt`, `mrglbounds_field_mapping.txt`, `corrected_register_mapping.txt`
+- Keyframe: `keyframe_structure_analysis.txt`, `smrgl_keyframe_analysis.txt`
 
 ### Obsolete (Historical Only)
 - `30_RESEARCH_LightVolume_Primitive_OBSOLETE.md` - ❌ Wrong assumptions
@@ -256,11 +307,12 @@ SPrimitive_FireQuad (40 bytes) - Fire particle quads
 ## Statistics
 
 - **Total Investigation Time**: ~2 days
-- **Documents Created**: 32
-- **Major Breakthroughs**: 3
+- **Documents Created**: 48 (plus supporting `.h` type headers and `.txt` analysis dumps)
+- **Major Breakthroughs**: 4
   1. MRGL composition pattern (Doc 03)
   2. Vertex index array interpretation (Doc 23)
   3. Light volume = MRGL quad with large UVs (Doc 31)
+  4. Globe/corona primitives are an MRGL lookalike, not a true MRGL stream (Docs 45-48)
 - **Dead Ends**: 1 (light volume as special struct)
 - **Final Struct Count**: 5 (2 MRGL, 2 simple, 1 header)
 

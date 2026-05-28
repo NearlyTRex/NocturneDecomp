@@ -69,7 +69,7 @@ void __cdecl CMirror::renderMirrorQuadDepth(CMirror *this_ptr);
 
 // Original: core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
 // Address: 005229b0
-CVector3f * __stack2_esi CMirrorReflection::transformMirrorVertex(CMirrorReflection *this_ptr,CVector3f *input_vertex,CVector3f *output_vertex);
+CVector3i * __stack2_esi CMirrorReflection::transformMirrorVertex(CMirrorReflection *this_ptr,CVector3i *input_vertex,CVector3i *output_vertex);
 
 // Original: core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
 // Address: 00522a50

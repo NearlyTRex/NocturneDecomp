@@ -133,6 +133,71 @@ Removing `pod.ini` from `nocedit.exe`'s working directory restores the curated c
 
 This isn't a "kill" the editor build hardcoded — it's a runtime decision driven by an external file. Users who want the curated chapter UI just delete (or rename) `pod.ini`.
 
+## 4. Why is video resolution capped at 640×480, and why don't graphics-options changes (e.g. flashlight halo) persist?
+
+**Question:** In the editor binary's Graphics Options screen you can never pick a resolution above 640×480, and tweaks made there (flashlight halo, etc.) appear not to survive a relaunch. Two separate causes, so two answers.
+
+**Answer (resolution): definitive — a consequence of §1 (hardware acceleration is force-disabled).**
+**Answer (persistence): the save path is correct and works on Windows; on the Linux port it silently fails because of an un-normalized `remove`/`rename` in the shim layer.**
+
+### Part A — Resolution is capped at 640×480 (definitive)
+
+The cap is downstream of §1: because the editor build forces `g_UseDirect3D = 0`, the software-render path applies *three* independent clamps to 640×480 (`0x280`×`0x1e0`):
+
+1. **Per-frame menu clamp.** `core/menu.cpp:configureGraphicsOptions_FUN_00510c80` (lines 144–148) runs at the top of every menu frame:
+
+   ```c
+   if ((g_UseDirect3D == 0) && (0x1e0 < g_CGamePtr->game_pixy)) {
+     g_CGamePtr->game_pixy = 0x1e0;   // 480
+     g_CGamePtr->game_pixx = 0x280;   // 640
+   }
+   ```
+
+   So even if some other code (or a hand-edited ini) sets a taller mode, the first frame of the Graphics Options screen knocks it back to 640×480 while acceleration is off.
+
+2. **High-res modes are gated behind the external D3D renderer.** In the resolution-cycle handler (`case 0`, lines 397–492) the 800×600 / 1024×768 / 1280×1024 branches are all guarded by `bVar12` (`_stricmp(g_RendererDllPath,"trid3d.dll") != 0`, i.e. an *external hardware* renderer DLL is loaded) **and** video-memory thresholds (`local_1c[0]` from `getVideoMemory`, e.g. `> 12 MB`, `> 24 MB`). The software path satisfies neither, so the cycle only ever exposes 320×240 … 640×480.
+
+3. **Mode-set fallback.** `core/game.cpp:CGame_setGameRes_FUN_004dade0` calls `setScreenResolution(pixx,pixy,bpp)`; if it returns 0 (failure) it overwrites the fields with 640×480 and retries, only hard-erroring if *that* also fails. So any mode the backend can't actually set silently degrades to 640×480.
+
+The same per-frame clamp is re-applied on entry to the main menu (`core/main.c:enterMainGameMenu_FUN_00507a50` lines 24–27; `core/menu.cpp:showMainGameMenu_FUN_00512f40` lines 26–29) and the one-time `firstTimeFlag` calibration path forces 640×480×32 outright (`core/main.c:initializeGameSystems_FUN_00507a60` lines 124–131).
+
+**Resolution doesn't persist either — and that's the clamp, not a save bug.** Because clamp #1 *writes* 640×480 into `g_CGamePtr->game_pixx/pixy` in memory, the next `writeIniData` (on Options exit) serializes the clamped 640×480 back to `gamePIXY`/`gamePIXX`. So a hand-edited `gamePIXY=600` is overwritten the first time you open and close the Options screen with acceleration off.
+
+### Part B — Why other settings (flashlight halo) don't seem to persist
+
+The persistence machinery itself is **correct**:
+
+- **Write.** `core/inivar.cpp:writeIniData_FUN_004fc510` writes `haloMode` (and ~60 other keys) via `CIniFile::setInteger` → `setString` → `writeProfileString` → `engine/ini.cpp:CIni_writeProfileString_FUN_004fb660`, which rewrites `nocturne.ini` through a temp file (`fopen` original "rt" + temp "wt", copy/replace the one key, then `remove` + `rename`).
+- **Read.** `core/inivar.cpp:readIniData_FUN_004fbd90` reads `haloMode` straight back into `g_CGamePtr->halo_mode` (lines 38–39). `CIniFile::getInteger` seeds the destination with its current value before parsing, so a *missing* key never clobbers the default.
+- **No false skip.** The `CIni::initialized` flag tested in `writeProfileString` (line 29) is **not** an init guard — `findLineNumberOfVariable_FUN_004fb470` sets it to `1` on entry and only to `0` when the on-disk value already equals the new value (a "skip rewrite if unchanged" optimization). Changing the halo (different value) always proceeds to the rewrite.
+
+So on the **original Windows `nocedit.exe`**, changing the halo in Graphics Options and backing all the way out of the Options screen *does* persist. (The catch worth knowing: `writeIniData` has exactly two callers — `core/menu.cpp:showOptionsScreen_FUN_00512d30` (lines 73/76) and `core/msnedit.cpp:CDemonMission_showOptionsMenu_FUN_00537680` (line 126) — both on the **Esc-exit of an Options menu**. There is *no* save-on-quit. Change a setting and then close the window or jump straight into a mission, and nothing is written.)
+
+**On the decompiled Linux build, every ini write silently fails — this is the real "halo doesn't save" cause here.** `CIni_writeProfileString` finishes with bare CRT calls on the hard-coded Windows path:
+
+```c
+remove(filename);                 // filename == ".\\system\\nocturne.ini"
+rename(acStack_216 + 2, filename); // temp == ".\\system\\nocturne.inx"
+```
+
+The shim layer's `normalize_path()` (`shims/crt.cpp:298`, translates `\`→`/` + case-insensitive component match) is wired into `fopen` (413), `freopen` (539), `stat` (678) and `utime` (697) — **but not `remove` or `rename`**, which fall through to libc unchanged. So:
+
+- The temp file is *created* via `fopen("wt")` → normalized → written correctly to `system/nocturne.inx`.
+- `remove(".\\system\\nocturne.ini")` and `rename("...nocturne.inx", "...nocturne.ini")` receive literal backslash names that don't exist on Linux, fail, and return non-zero — which the game ignores.
+- `nocturne.ini` is therefore never replaced; the updated copy is stranded in an orphaned `system/nocturne.inx`.
+
+Net effect: on Linux *no* `nocturne.ini` setting persists (halo, subtitles, controls, sound — all of it), which reads as "the editor doesn't save settings." (The temp name also has an off-by-one in the keep reconstruction — `acStack_216[strlen(filename)+1]='x'` overwrites the final `i` to make `…inx` instead of appending `…inix` — but that's harmless next to the missing path normalization.)
+
+### What remains uncertain
+
+- **Did the user's Windows-side "halo didn't save" impression conflate with resolution?** On Windows the halo round-trip is sound, so the most likely explanation for a Windows-only non-persist is either resolution (definitely non-persistent, Part A) generalized to "settings," or exiting without Esc-ing back through the Options screen. A clean Windows repro (change only halo, Esc fully out, relaunch, diff `nocturne.ini`) would confirm.
+- **`firstTimeFlag` re-runs.** If something resets `firstTimeFlag` to 1 between runs, every launch forces 640×480×32 *and* re-runs calibration — worth checking whether the save path ever leaves it at 1.
+
+### Restoration / fix plan
+
+- **Persistence (Linux port) — the actionable fix.** Add `remove`/`rename` (and siblings like `_unlink`/`unlink`) shims in `shims/crt.cpp` that route the path(s) through `normalize_path()`, mirroring the existing `fopen`/`freopen` wrappers. That makes `CIni::writeProfileString`'s temp-swap land on the real `nocturne.ini` and fixes persistence for **all** ini-backed settings at once. (Optionally also fix the temp-name off-by-one so the intermediate file is `nocturne.inix`.) This is a substrate fix, so it follows the runnable-binary goal rather than the `NOCTURNE_AUTHENTIC_*` convention.
+- **Resolution.** There is nothing to "restore" independently — the cap is the documented §1 consequence. Anything that lets `g_UseDirect3D` stay non-zero (e.g. the `NOCTURNE_AUTHENTIC_D3D_OPTIONS=0` default, which already removes §1's per-frame clobber) plus an external renderer path would let clamps #1/#2 relax; clamp #3 still requires the backend to actually accept the larger mode.
+
 ## How to add a new mystery
 
 When you find another retail-vs-editor difference worth investigating, follow the per-section template:

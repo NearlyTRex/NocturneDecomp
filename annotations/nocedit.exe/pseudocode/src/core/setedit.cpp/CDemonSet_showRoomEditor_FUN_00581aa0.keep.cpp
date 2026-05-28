@@ -54,7 +54,6 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
   CMatrix3x3f *local_14;
   SRoom *pSVar2;
   float local_44;
-  uint local_2c;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing set.");
@@ -109,9 +108,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
       }
     }
     local_108.slew_rate = 28.0;
-    g_CDemonCameraInstance.base.position.f.x = local_108.position.x;
-    g_CDemonCameraInstance.base.position.f.y = local_108.position.y;
-    g_CDemonCameraInstance.base.position.f.z = local_108.position.z;
+    g_CDemonCameraInstance.base.position.f = local_108.position;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonCameraInstance.base.rotation_matrix,&local_108.orientation.vec);
     g_CDemonCameraInstance.base.focal_length = local_108.slew_rate;
@@ -235,23 +232,17 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
       if (iVar5 == 0) {
         core_slew_cpp_CSlew_init_FUN_005a2060(&local_ec);
         if ((SRoom *)&local_ec != pSVar3) {
-          local_ec.position.x = (pSVar3->position).x;
-          local_ec.position.y = (pSVar3->position).y;
-          local_ec.position.z = (pSVar3->position).z;
+          local_ec.position = pSVar3->position;
         }
         pCVar4 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
                            (&local_18->rotation_matrix,&local_70);
         pSVar3 = local_18;
         if (&local_ec.orientation.vec != pCVar4) {
-          local_ec.orientation.vec.x = pCVar4->x;
-          local_ec.orientation.vec.y = pCVar4->y;
-          local_ec.orientation.vec.z = pCVar4->z;
+          local_ec.orientation.vec = *pCVar4;
         }
         core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_ec);
         if ((SRoom *)&local_ec != pSVar3) {
-          (pSVar3->position).x = local_ec.position.x;
-          (pSVar3->position).y = local_ec.position.y;
-          (pSVar3->position).z = local_ec.position.z;
+          pSVar3->position = local_ec.position;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&local_18->rotation_matrix,&local_ec.orientation.vec);
@@ -286,8 +277,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
         if (iVar5 != 0) {
           (local_18->extents).z = (local_18->extents).z + local_24;
         }
-        local_2c = 0x3f800000;
-        if ((int)(local_18->extents).x < 0x3f800000) {
+        if ((local_18->extents).x < 1.0) {
           (local_18->extents).x = 1.0;
         }
         if ((local_18->extents).y < 1.0) {
@@ -351,9 +341,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
           local_1c = this_ptr->room_count;
           local_18 = local_20 + local_1c;
           if ((SRoom *)&local_108 != local_18) {
-            (local_18->position).x = local_108.position.x;
-            (local_18->position).y = local_108.position.y;
-            (local_18->position).z = local_108.position.z;
+            local_18->position = local_108.position;
           }
           local_b8.y = local_108.orientation.vec.y;
           local_b8.x = 0.0;

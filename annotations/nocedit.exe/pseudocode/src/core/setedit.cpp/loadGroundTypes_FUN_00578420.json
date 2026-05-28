@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 116,
+    "complexity_score": 91,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 91,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_strchr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 314
   },
   "cross_references": [
@@ -243,6 +241,26 @@
     },
     "pcode_op_count": 707
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
+      "line": 28,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
+      "line": 41,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ],
   "stack_frame": {
     "frame_size": 420,
     "local_size": 416,
@@ -287,22 +305,22 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
-      "line": 28,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
+  "static_analysis": {
+    "analyzed_file": "loadGroundTypes_FUN_00578420.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "invalidscanf",
+          "column": 17,
+          "line": 47,
+          "message": "sscanf() without field width limits can crash with huge input data.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
     },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
-      "line": 41,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    }
-  ]
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

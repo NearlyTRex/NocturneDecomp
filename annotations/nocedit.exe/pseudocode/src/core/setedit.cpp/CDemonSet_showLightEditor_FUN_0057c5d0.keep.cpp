@@ -10,12 +10,11 @@
 void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *this_ptr)
 
 {
-  int *piVar2;
+  CDemonLight *piVar2;
   int iVar4;
   int y1;
   int iVar3;
   int iVar6;
-  CDemonSet *pCVar4;
   int iVar5;
   int iVar7;
   int iVar8;
@@ -30,7 +29,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
   int local_20;
   int local_1c;
   int local_18;
-  int *piVar1;
+  CDemonLight *piVar1;
   byte bVar11;
   
   bVar11 = 0;
@@ -53,7 +52,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
         iVar6 = 0;
         do {
           core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390
-                    (*(CDemonLight **)((int)g_MasterLightList + local_18),iVar6,iVar5,iVar7);
+                    (g_MasterLightList[local_18 / 4],iVar6,iVar5,iVar7);
           if ((((iVar6 <= g_MouseX) && (g_MouseX < iVar6 + iVar7)) && (iVar5 <= g_MouseY)) &&
              (g_MouseY < iVar5 + iVar7)) {
             local_24 = local_1c;
@@ -67,7 +66,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
           }
           iVar3 = iVar6 + iVar7;
           engine_2d_c_drawText_FUN_00401fd0
-                    ((char *)(*(int *)((int)g_MasterLightList + local_18) + 0x40),iVar6,iVar5);
+                    (g_MasterLightList[local_18 / 4]->base.camera_name,iVar6,iVar5);
           if (g_WindowWidth < iVar3 + iVar7) {
             iVar5 = iVar5 + iVar7;
             iVar3 = 0;
@@ -144,10 +143,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
           if (0 < g_MasterLightCount) {
             iVar4 = 0;
             do {
-              piVar2 = (int *)((int)g_MasterLightList + iVar4);
+              piVar2 = g_MasterLightList[iVar4 / 4];
               iVar4 = iVar4 + 4;
               iVar6 = iVar6 + 1;
-              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4dc.base,(char *)(*piVar2 + 0x40))
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4dc.base,piVar2->base.camera_name)
               ;
             } while (iVar6 < g_MasterLightCount);
           }
@@ -165,10 +164,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
           if (0 < g_MasterLightCount) {
             iVar4 = 0;
             do {
-              piVar2 = (int *)((int)g_MasterLightList + iVar4);
+              piVar2 = g_MasterLightList[iVar4 / 4];
               iVar4 = iVar4 + 4;
               iVar6 = iVar6 + 1;
-              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_884.base,(char *)(*piVar2 + 0x40))
+              shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_884.base,piVar2->base.camera_name)
               ;
             } while (iVar6 < g_MasterLightCount);
           }
@@ -203,12 +202,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
         if (iVar6 != 0) {
           this_ptr->min_ambient_value = local_fd8 * (float)0.01;
           iVar6 = 0;
-          pCVar4 = this_ptr;
           if (0 < this_ptr->camera_count) {
             do {
               iVar6 = iVar6 + 1;
-              pCVar4->cameras[0].ambient_value = this_ptr->min_ambient_value;
-              pCVar4 = (CDemonSet *)&pCVar4->cameras[0].enabled;
+              this_ptr->cameras[iVar6 + -1].ambient_value = this_ptr->min_ambient_value;
             } while (iVar6 < this_ptr->camera_count);
           }
         }
@@ -219,10 +216,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
         if (0 < g_MasterLightCount) {
           iVar4 = 0;
           do {
-            piVar1 = (int *)((int)g_MasterLightList + iVar4);
+            piVar1 = g_MasterLightList[iVar4 / 4];
             iVar4 = iVar4 + 4;
             iVar6 = iVar6 + 1;
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c2c.base,(char *)(*piVar1 + 0x40));
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c2c.base,piVar1->base.camera_name);
           } while (iVar6 < g_MasterLightCount);
         }
         iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -239,10 +236,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
         if (0 < g_MasterLightCount) {
           iVar4 = 0;
           do {
-            piVar2 = (int *)((int)g_MasterLightList + iVar4);
+            piVar2 = g_MasterLightList[iVar4 / 4];
             iVar4 = iVar4 + 4;
             iVar6 = iVar6 + 1;
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_fd4.base,(char *)(*piVar2 + 0x40));
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_fd4.base,piVar2->base.camera_name);
           } while (iVar6 < g_MasterLightCount);
         }
         iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20

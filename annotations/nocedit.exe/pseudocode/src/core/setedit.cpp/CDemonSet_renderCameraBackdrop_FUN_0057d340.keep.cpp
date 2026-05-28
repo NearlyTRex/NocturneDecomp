@@ -89,9 +89,7 @@ void __cdecl core_setedit_cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340(CDemon
               (&local_44,&local_20,local_120,0x1fc,0x1fc,0x1fe,0x1fe,1.0);
     return;
   }
-  local_bc.x = (camera->orientation).x;
-  local_bc.y = (camera->orientation).y;
-  local_bc.z = (camera->orientation).z;
+  local_bc = camera->orientation;
   local_2c.x = (int)pCVar1->x;
   local_2c.y = (int)*pfVar2;
   local_2c.z = (int)*pfVar1;

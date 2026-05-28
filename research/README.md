@@ -38,10 +38,12 @@ Investigation into Nocturne's MRGL (Model/Rendering Graphics Library) 3D renderi
 | `3d-rendering-system-analysis.md` | Overview of rendering architecture |
 | `MRGL-file-format.md` | MRGL file format specification |
 | `MRGL_DISPATCH_TABLE_ANALYSIS.md` | Vtable and dispatch analysis |
+| `NEW_RENDER_FUNCTIONS_ANALYSIS.md` | Analysis of additional render functions found after the initial sweep |
 | `FUNCTION_RENAMING_GUIDE.md` | Naming conventions for render functions |
 | `VERTEX_PREPROCESS_MODE_VERIFIED.md` | Ground-truth dispatch for `g_VertexPreprocessMode` (renamed from `g_RenderStateFlag2`; supersedes the inferred equate names) |
 | `RENDER_STATE_FLAGS_VERIFIED.md` | Bit-by-bit semantics for `g_RenderStateFlags`; 3 bits need renames, all combo `#define`s should be deleted |
-| `*.py` | Analysis scripts |
+| `*.h` | Render-flag equate headers (`NOCTURNE_RENDER_FLAGS_EQUATES.h`, `nocturne-render-flags-ghidra.h`) |
+| `*.py` / `*.json` / `*.txt` | Analysis scripts and their extracted render-function reports |
 
 **Status:** Complete - Rendering system documented
 
@@ -121,6 +123,7 @@ modifying the program database. Builds on solutions from the BADSPACEBASE invest
 | `01_OVERVIEW_AND_OPPORTUNITIES.md` | Complete list of opportunities by difficulty tier |
 | `02_GHIDRA_SOURCE_REFERENCE.md` | Source code paths and line numbers |
 | `03_QUICK_IMPLEMENTATION_GUIDE.md` | Copy-paste implementation code |
+| `04_PCODE_OVERRIDE_VALIDITY.md` | P-code override stability/validity across Ghidra versions |
 
 **Already Implemented:**
 1. **Call Fixups** - Replace function calls with custom P-code
@@ -172,12 +175,32 @@ camera, geometry, collision, profile, single-step), all 44 encrypted typed-cheat
 | `runtime_debug_flags.md` | `CGame` debug flags + hotkey table + `g_ModalDialogActive` (input-suppression gate during pick-list pop-up dialogs) |
 | `cheats.md` | All 45 cheats by category (cleartext recovered via `decrypt_cheats.py`) |
 | `developer_tools_menu.md` | The `Ctrl+D` main-menu shortcut into the editor menu (mission play, shape/set/skeletal/mission editors, POD file manager, etc.) — gated by a one-shot license agreement |
-| `retail_vs_editor_mysteries.md` | Open mysteries about retail-vs-editor build differences (D3D disabled in options, missing cutscene voice) — investigation notes with definitive vs partial labels |
+| `retail_vs_editor_mysteries.md` | Open mysteries about retail-vs-editor build differences (D3D disabled in options, missing cutscene voice, flat `.msn` picker vs curated chapter list, 640×480 resolution cap + non-persisting graphics options) — investigation notes with definitive vs partial labels |
 | `cut_content.md` | Features whose code exists in the binary but were never UI-exposed in *any* shipped Nocturne build (cut, not editor-gated). |
 | `ini_settings.md` | Full `nocturne.ini` (5 sections), plus `RENDER.INI`, `pod.ini`, and `skeledit.ini` formats |
 
 **Status:** Reference - All 45 cheat cleartext strings recovered via
 `scripts/Python/decrypt_cheats.py`; in-game effect of `debug_toggle_flag` not yet mapped.
+
+---
+
+### [09-flashlight_lighting_investigation/](09-flashlight_lighting_investigation/)
+
+Open investigation into the flashlight / set spot-light failing to illuminate world geometry
+(and the volumetric cone rendering as discrete circles instead of the original's smooth colorful
+glow). Ground-truthed against the original `nocedit.exe` run under Wine.
+
+| File | Description |
+|------|-------------|
+| `01_INVESTIGATION_STATE.md` | Resumable state: symptom + Wine reference shots, full lighting pipeline map (FUN addresses/files), confirmed fixes, open root cause, next steps, and gdb/capstone probe recipes |
+
+**Key outcomes so far:**
+- Rasterizer `-O2` per-file build fix (the Debug `-O0` was the framerate stutter)
+- §20 missing-cave-copy fix in `calculateSpatialLighting` (uninit reflected pos/normal)
+- Ghidra fix: `transformMirrorVertex` signature → `CVector3i*` (FISTP-proven)
+- `missing_cave_copy` detector widened 16→12 bytes (now catches `CVector3i`/`CVector3f` caves)
+
+**Status:** OPEN - root cause (garbage/stale vertex normals; whether the flashlight is gathered) not yet nailed
 
 ---
 
@@ -247,6 +270,14 @@ Ghidra source location: `~/Repositories/Ghidra/`
 ---
 
 ## Changelog
+
+### 2026-05-27
+- Added `09-flashlight_lighting_investigation/` (open): flashlight/set spot-light not lighting world geometry + volumetric cone as discrete circles, ground-truthed vs the original under Wine. Along the way: rasterizer `-O2` per-file build fix (Debug `-O0` was the stutter), §20 cave-copy fix in `calculateSpatialLighting`, `transformMirrorVertex`→`CVector3i*` Ghidra retype, and widened the `missing_cave_copy` detector 16→12 bytes (280→300 flags, regression-gated)
+- Added retail-vs-editor mystery §4: 640×480 resolution cap (definitive, downstream of §1's forced-software path — three clamps in `configureGraphicsOptions`/`setGameRes`) and non-persisting graphics options (save path is correct on Windows; the Linux port silently drops all ini writes because `remove`/`rename` skip the shim's `normalize_path`). Updated `08-.../README.md` (§3 + §4) and this index's retail-vs-editor blurb
+- Synced indexes with the current tree: added `08-developer_mode_and_cheats/` to the repo-root `README.md` research table; listed `06-.../04_PCODE_OVERRIDE_VALIDITY.md` and the `02-...` render-flag headers + `NEW_RENDER_FUNCTIONS_ANALYSIS.md`; extended `03-rendering_primitives/00_RESEARCH_PROGRESSION_INDEX.md` to cover docs 33–48 (keyframe formats, SPrimitive resolution, globe rendering)
+
+### 2026-05-03
+- Added `08-developer_mode_and_cheats/` section (env-var gates, runtime debug flags, 45 cheats, dev-tools menu, ini schema, retail-vs-editor + cut-content mysteries)
 
 ### 2026-04-14
 - Drafted recommended MMX blend-family renames (`RECOMMENDED_MMX_RENAMES.md`)

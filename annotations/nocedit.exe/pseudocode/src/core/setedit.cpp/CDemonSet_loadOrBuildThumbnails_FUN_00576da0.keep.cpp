@@ -19,7 +19,6 @@ void __cdecl core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(CDemo
   int thumbnail_index_00;
   C3DSCamera *prefix;
   char local_118 [256];
-  CDemonSet *local_18;
 
   core_setedit_cpp_CDemonSet_clearCameraDepthData_FUN_00580560(this_ptr);
   strcpy(local_118, this_ptr->geometry_filename);
@@ -43,10 +42,9 @@ void __cdecl core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(CDemo
   iVar3 = 0;
   if (0 < this_ptr->camera_count) {
     prefix = this_ptr->cameras;
-    local_18 = this_ptr;
     do {
       thumbnail_index_00 = thumbnail_index + 1;
-      if (local_18->cameras[0].is_panning == 0) {
+      if (prefix->is_panning == 0) {
         direction = s_b_s_p_d_p_p_d_p_00646726;
       }
       else {
@@ -57,12 +55,9 @@ void __cdecl core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(CDemo
         thumbnail_index_00 = thumbnail_index + 4;
         thumbnail_index = thumbnail_index + 3;
       }
-      // loadCameraThumbnail's `name` param is only read — a cast to char* is
-      // needed until the Ghidra signature is retyped to `const char *`.
       core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(prefix->name,(char *)direction,thumbnail_index);
       shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                 (g_CEditorToolsPtr,(float)iVar3,(float)this_ptr->camera_count);
-      local_18 = (CDemonSet *)&local_18->cameras[0].enabled;
       iVar3 = iVar3 + 1;
       prefix = prefix + 1;
       thumbnail_index = thumbnail_index_00;

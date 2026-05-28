@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 818,
-    "complexity_score": 383,
+    "complexity_score": 303,
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 41,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 303,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1121
   },
   "cross_references": [
@@ -516,6 +513,60 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(CDemonLight **)((int)g_MasterLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonLight **)((int)g_MasterLightList + local_18),iVar6,iVar5,iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(int *)((int)g_MasterLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((char *)(*(int *)((int)g_MasterLightList + local_18) + 0x40),iVar6,iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(int *)((int)g_MasterLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_MasterLightList + local_20) + 0x40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(int *)((int)g_MasterLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)g_MasterLightList + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 168,
+      "match": "(int *)((int)g_MasterLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)g_MasterLightList + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 222,
+      "match": "(int *)((int)g_MasterLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_MasterLightList + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 242,
       "match": "(int *)((int)g_MasterLightList",
       "resolution_source": "keep",
@@ -531,6 +582,15 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar4->vertices[0].a`). Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 211,
+      "match": "pCVar4 = (T *)&pCVar4->FIELD[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonSet *)&pCVar4->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
@@ -682,62 +742,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(CDemonLight **)((int)g_MasterLightList",
-      "severity": "moderate",
-      "text": "(*(CDemonLight **)((int)g_MasterLightList + local_18),iVar6,iVar5,iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(int *)((int)g_MasterLightList",
-      "severity": "moderate",
-      "text": "((char *)(*(int *)((int)g_MasterLightList + local_18) + 0x40),iVar6,iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(int *)((int)g_MasterLightList",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_MasterLightList + local_20) + 0x40);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 147,
-      "match": "(int *)((int)g_MasterLightList",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)g_MasterLightList + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 168,
-      "match": "(int *)((int)g_MasterLightList",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)g_MasterLightList + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 222,
-      "match": "(int *)((int)g_MasterLightList",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_MasterLightList + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar4->vertices[0].a`). Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 211,
-      "match": "pCVar4 = (T *)&pCVar4->FIELD[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar4 = (CDemonSet *)&pCVar4->cameras[0].enabled;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

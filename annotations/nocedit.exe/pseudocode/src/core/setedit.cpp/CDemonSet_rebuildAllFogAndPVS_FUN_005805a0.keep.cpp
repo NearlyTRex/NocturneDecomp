@@ -12,7 +12,6 @@ void __cdecl core_setedit_cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0(CDemonS
 {
   int iVar1;
   int iVar2;
-  CDemonSet *pCVar2;
   int index;
   int iVar3;
   C3DSCamera *pCVar4;
@@ -24,19 +23,17 @@ void __cdecl core_setedit_cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0(CDemonS
   g_CDemonLightInstance.light_enabled_flag = 0;
   if (0 < this_ptr->camera_count) {
     pCVar4 = this_ptr->cameras;
-    pCVar2 = this_ptr;
     do {
       _sprintf(local_174,"backdrop\\%s.fog",pCVar4->name);
       remove(local_174);
       _sprintf(local_174,"backdrop\\%s.pvs",pCVar4->name);
       remove(local_174);
-      ptr = pCVar2->cameras[0].pvs_list;
-      pCVar2->cameras[0].pvs_count = 0;
+      ptr = pCVar4->pvs_list;
+      pCVar4->pvs_count = 0;
       if (ptr != (int *)0x0) {
         shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",0x1059);
-        pCVar2->cameras[0].pvs_list = (int *)0x0;
+        pCVar4->pvs_list = (int *)0x0;
       }
-      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;
       iVar3 = iVar3 + 1;
       pCVar4 = pCVar4 + 1;
     } while (iVar3 < this_ptr->camera_count);

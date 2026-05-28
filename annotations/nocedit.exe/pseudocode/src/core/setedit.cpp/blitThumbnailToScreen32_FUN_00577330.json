@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 64,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 39,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 125
   },
   "cross_references": [],
@@ -122,6 +120,26 @@
     },
     "pcode_op_count": 713
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + screen_x * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(uint *)((int)g_ThumbnailImageBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 44,
     "local_size": 32,
@@ -173,22 +191,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + screen_x * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(uint *)((int)g_ThumbnailImageBuffer",
-      "severity": "moderate",
-      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -10,7 +10,7 @@
 ; Local Variables:
 ; float[1012]      Stack[-0x1030]:4048  afStackY_1030
 ; CVector3i        Stack[-0x48]:12  local_48
-; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3i        Stack[-0x3c]:12  local_3c
 ; CVector3i        Stack[-0x30]:12  local_30
 ; CVector3i        Stack[-0x24]:12  local_24
 ; int              Stack[-0x18]:4  local_18
@@ -176,7 +176,7 @@ section .text
     LEA ESI,[ESP + 0x14]                ; 0056dcb1
     LEA EDI,[ESP + 0x8]                 ; 0056dcb5
     CALL core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0 ; 0056dcb9
-        ;   XREF to: 005229b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0(CMirrorReflection * this_ptr, CVector3f * input_vertex, CVector3f * output_vertex)
+        ;   XREF to: 005229b0 (UNCONDITIONAL_CALL)  ; CVector3i * core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0(CMirrorReflection * this_ptr, CVector3i * input_vertex, CVector3i * output_vertex)
     LEA ESI,[ESP + 0x14]                ; 0056dcbe
     ADD ESP,0x8                         ; 0056dcc2
     JMP 0x0060ca61                      ; 0056dcc5

@@ -122,7 +122,7 @@ LAB_005131d5:
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar8 == 0));
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-#if !NOCTURNE_AUTHENTIC_EDITOR
+#if NOCTURNE_AUTHENTIC_DEV_TOOLS
     iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
     if ((iVar8 != 0) &&
        ((iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D), iVar8 != 0 ||

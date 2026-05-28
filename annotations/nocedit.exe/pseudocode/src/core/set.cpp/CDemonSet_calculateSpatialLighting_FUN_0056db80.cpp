@@ -20,7 +20,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
   byte bVar6;
   float afStackY_1030 [1012];
   CVector3i local_48;
-  CVector3f local_3c;
+  CVector3i local_3c;
   CVector3i local_30;
   CVector3i local_24;
   int local_18;
@@ -97,8 +97,7 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
     local_14 = this_ptr;
     do {
       core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
-                (&(local_14->mirror_glass_actors[0]->mirror).reflection,(CVector3f *)world_position,
-                 &local_3c);
+                (&(local_14->mirror_glass_actors[0]->mirror).reflection,world_position,&local_3c);
       if (surface_normal != (CVector3i *)0x0) {
         core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
                   (&(local_14->mirror_glass_actors[0]->mirror).reflection,world_position,

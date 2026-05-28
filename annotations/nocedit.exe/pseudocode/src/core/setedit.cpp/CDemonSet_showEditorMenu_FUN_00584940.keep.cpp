@@ -10,13 +10,11 @@
 void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *this_ptr)
 
 {
-  char cVar2;
   char *pcVar2;
   uint uVar3;
   int iVar3;
   EWeatherType EVar4;
   EGroundType type;
-  char *pcVar4;
   char *pcVar5;
   CPickList local_714;
   char local_36c [260];
@@ -137,17 +135,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
       }
     }
     else if (uVar3 == 0x49) {
-      pcVar4 = g_GroundTypesBuffer;
-      pcVar5 = local_36c;
-      do {
-        cVar2 = *pcVar4;
-        *pcVar5 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar4[1];
-        pcVar4 = pcVar4 + 2;
-        pcVar5[1] = cVar2;
-        pcVar5 = pcVar5 + 2;
-      } while (cVar2 != '\0');
+      strcpy(local_36c,g_GroundTypesBuffer);
       if (this_ptr->geometry_filename[0] != '\0') {
         engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_GroundTypesBuffer,local_14,local_168);
         engine_dosio_cpp_splitPath_FUN_00481f20
