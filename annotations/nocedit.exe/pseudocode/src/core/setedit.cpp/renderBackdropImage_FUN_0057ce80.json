@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 149,
+    "complexity_score": 134,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 36,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 134,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 484
   },
   "cross_references": [
@@ -540,6 +538,15 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(uint **)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar4 = *(uint **)((int)g_ScreenBufferArray + local_18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 124,
       "match": "(uint *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
@@ -717,14 +724,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(uint **)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "puVar4 = *(uint **)((int)g_ScreenBufferArray + local_18);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

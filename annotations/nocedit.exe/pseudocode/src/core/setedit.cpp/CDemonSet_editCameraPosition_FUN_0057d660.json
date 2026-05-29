@@ -7,19 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1112,
-    "complexity_score": 502,
+    "complexity_score": 412,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 412,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy",
-      "unrolled_strchr",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1524
   },
   "cross_references": [
@@ -809,6 +804,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(uint *)((int)auStack_d80",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_d80 + iVar21) = uVar17 | uVar13;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 152,
       "match": "&stack0xffffee80",
@@ -816,6 +820,15 @@
       "severity": "moderate",
       "text": "*(int *)(&stack0xffffee80 + iVar21) = (int)uVar12 / 3 + (int)fStack_50 + iStack_4c;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 285,
+      "match": "(int *)((int)auStack_96c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)auStack_96c + iVar14);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
@@ -827,6 +840,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 297,
+      "match": "(int *)((int)pvStack_1c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)pvStack_1c + 0x144) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 328,
       "match": "&stack0xffffee8c",
@@ -834,6 +856,33 @@
       "severity": "moderate",
       "text": "uStack_38 = *(uint *)(&stack0xffffee8c + (uint)*pbVar19 * 4);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 75,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 186,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 85,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
     }
   ],
   "stack_frame": {
@@ -1107,88 +1156,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_editCameraPosition_FUN_0057d660.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 27,
-          "line": 325,
-          "message": "Possible null pointer dereference: p_Stack_20",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 150,
-      "match": "(uint *)((int)auStack_d80",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_d80 + iVar21) = uVar17 | uVar13;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 285,
-      "match": "(int *)((int)auStack_96c",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)auStack_96c + iVar14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 297,
-      "match": "(int *)((int)pvStack_1c",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)pvStack_1c + 0x144) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 75,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 186,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 85,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 152,
-      "match": "(int *)((int)auStack_1180",
-      "severity": "moderate",
-      "text": "*(int *)((int)auStack_1180 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Possible null pointer dereference: p_Stack_20",
-      "line": 325,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "puVar14 = (uint *)p_Stack_20[0x19b185]._handle;",
-      "type": "static_null_pointer"
-    }
-  ]
+  "suspects": []
 }

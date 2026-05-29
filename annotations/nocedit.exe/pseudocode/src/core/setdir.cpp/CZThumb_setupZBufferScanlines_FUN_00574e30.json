@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 41,
+    "complexity_score": 16,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 43
   },
   "cross_references": [
@@ -123,6 +121,26 @@
     },
     "pcode_op_count": 147
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(void **)((int)g_ZBufferScanlineArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ZBufferScanlineArray + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(void *)(this_ptr->width * iVar1 * 4 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(void *)(this_ptr->width * iVar1 * 4 + (int)this_ptr->zbuffer_data);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -139,22 +157,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 12,
-      "match": "(void **)((int)g_ZBufferScanlineArray",
-      "severity": "moderate",
-      "text": "*(void **)((int)g_ZBufferScanlineArray + iVar2) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 13,
-      "match": "(void *)(this_ptr->width * iVar1 * 4 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "(void *)(this_ptr->width * iVar1 * 4 + (int)this_ptr->zbuffer_data);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

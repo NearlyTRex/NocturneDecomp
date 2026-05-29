@@ -65,7 +65,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
   float fVar8;
   float fVar11;
   float fVar9;
-  
+
   if (20000 < vertex_count) {
     g_CurrentFilename = "..\\core\\set.cpp";
     g_CurrentLineNumber = 0xde8;
@@ -356,8 +356,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                        (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)iVar21) >>
                             0x20) << 0x10));
                   iVar19 = iVar24 + 1;
-                  g_VertexNormalArray[iVar24].x =
-                       (float)(((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar17) >> 0x10
+                  *(int *)&g_VertexNormalArray[iVar24].x =
+                       ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar17) >> 0x10
                                | (int)((ulonglong)
                                        ((longlong)g_InverseMatrix.m[0].x * (longlong)iVar17) >> 0x20
                                       ) << 0x10) +
@@ -367,15 +367,15 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                                       ) << 0x10) +
                               ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)iVar21) >> 0x10 |
                               (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)iVar21)
-                                   >> 0x20) << 0x10));
-                  g_VertexNormalArray[iVar24].y =
-                       (float)(((uint)(lVar2 * iVar17) >> 0x10 |
+                                   >> 0x20) << 0x10);
+                  *(int *)&g_VertexNormalArray[iVar24].y =
+                       ((uint)(lVar2 * iVar17) >> 0x10 |
                                (int)((ulonglong)(lVar2 * iVar17) >> 0x20) << 0x10) +
                                ((uint)(lVar3 * iVar20) >> 0x10 |
                                (int)((ulonglong)(lVar3 * iVar20) >> 0x20) << 0x10) +
                               ((uint)(lVar4 * iVar21) >> 0x10 |
-                              (int)((ulonglong)(lVar4 * iVar21) >> 0x20) << 0x10));
-                  g_VertexNormalArray[iVar24].z = (float)iVarZ;
+                              (int)((ulonglong)(lVar4 * iVar21) >> 0x20) << 0x10);
+                  *(int *)&g_VertexNormalArray[iVar24].z = iVarZ;
                   iVar24 = iVar19;
                 } while (iVar19 < vertex_count);
               }

@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6068 (94.0%)
-Files at 100%: 180
-Files at 90%+: 180
+Clean functions: 6084 (94.3%)
+Files at 100%: 181
+Files at 90%+: 182
 Files at 50%+: 214
 
 ====================================================================================================
@@ -126,6 +126,7 @@ FILES AT 100% (COMPLETE)
   core/sentinel.cpp: 14 functions, 737 lines
   core/set.cpp: 87 functions, 5059 lines
   core/setcolid.cpp: 40 functions, 1555 lines
+  core/setdir.cpp: 32 functions, 1296 lines
   core/setutil.cpp: 41 functions, 1409 lines
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
@@ -195,12 +196,18 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 180 files
+Total: 181 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-Total: 0 files
+   94.8% | core/setedit.cpp
+         55/58 clean, 3 remaining
+           - core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (127 lines) [unrolled_memcpy]
+           - core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (702 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strlen]
+           - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [unrolled_memcpy]
+
+Total: 1 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -233,18 +240,6 @@ FILES AT 50-89%
            - core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70 (55 lines) [bit_int_float_compare]
            - core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004d17b0 (104 lines) [unrolled_strcpy]
            - core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190 (76 lines) [stack_alignment_array, unrolled_memcpy, warning_inlined_function]
-   82.8% | core/setedit.cpp
-         48/58 clean, 10 remaining
-           - core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (674 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strchr]
-           - core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (127 lines) [unrolled_memcpy]
-           - core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (140 lines) [pointer_cast]
-           - core_setedit.cpp_renderColoredBox_FUN_005817d0 (102 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0 (259 lines) [shadow_pointer_walk, unrolled_strcpy]
-           - core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (702 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strlen]
-           - core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (1474 lines) [bit_int_float_compare, shadow_pointer_walk, unrolled_memcpy]
-           - core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (412 lines) [pointer_cast, unrolled_memcpy, unrolled_strchr, unrolled_strcpy]
-           - core_setedit.cpp_renderBackdropImage_FUN_0057ce80 (134 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [unrolled_memcpy]
    82.6% | core/icepick.cpp
          19/23 clean, 4 remaining
            - core_icepick.cpp_CIcePick_process_FUN_004f80b0 (313 lines) [missing_cave_copy, unrolled_memset, warning_unreachable]
@@ -449,17 +444,6 @@ FILES AT 50-89%
            - core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0 (91 lines) [unrolled_memcpy]
            - core_ghoul.cpp_CGhoul_process_FUN_004e6600 (1052 lines) [self_copy_guard, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_inlined_function]
            - core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0 (149 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-   71.9% | core/setdir.cpp
-         23/32 clean, 9 remaining
-           - core_setdir.cpp_testOBBIntersection_FUN_005763a0 (140 lines) [unrolled_memcpy]
-           - core_setdir.cpp_CZThumb_render_FUN_00574f20 (52 lines) [pointer_cast]
-           - core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830 (21 lines) [pointer_cast]
-           - core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0 (20 lines) [pointer_cast]
-           - core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (303 lines) [pointer_cast, unrolled_memcpy]
-           - core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (112 lines) [pointer_cast]
-           - core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70 (98 lines) [pointer_cast]
-           - core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 (76 lines) [pointer_cast, unrolled_memcpy]
-           - core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30 (16 lines) [pointer_cast]
    71.4% | core/texlist.cpp
          10/14 clean, 4 remaining
            - core_texlist.cpp_CTextureList_load_FUN_005dbe00 (146 lines) [shadow_pointer_walk, unrolled_strchr, unrolled_strcpy, unrolled_strlen]
@@ -660,7 +644,7 @@ FILES AT 50-89%
            - engine_alphabit.cpp_copyBytes_FUN_00410d20 (21 lines) [pointer_cast, unrolled_memcpy]
            - engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (44 lines) [pointer_cast]
 
-Total: 34 files
+Total: 32 files
 
 ====================================================================================================
 FILES BELOW 50%

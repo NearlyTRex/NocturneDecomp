@@ -77,7 +77,7 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
     local_18 = 0;
     do {
       iVar7 = 0;
-      puVar4 = *(uint **)((int)g_ScreenBufferArray + local_18);
+      puVar4 = (uint *)g_ScreenBufferArray[local_18 / 4];
       if (0 < output_width) {
         do {
           if ((iVar7 < render_width) && (iVar6 < render_height)) {

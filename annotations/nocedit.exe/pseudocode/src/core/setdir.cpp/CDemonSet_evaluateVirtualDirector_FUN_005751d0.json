@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 745,
-    "complexity_score": 343,
+    "complexity_score": 303,
     "cross_reference_count": 8,
     "function_call_count": 11,
     "global_count": 53,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 303,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1048
   },
   "cross_references": [
@@ -665,6 +662,15 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 272,
       "match": "(uint *)((int)g_ZBufferScanlineArray",
       "resolution_source": "keep",
@@ -698,6 +704,24 @@
       "severity": "moderate",
       "text": "fStack_15c = *(float *)((int)g_VDCameraScores + iVar7);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 184,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_VDNearbyActorBoundingBoxes[g_VDNearbyActorCount].min.x = (pCVar8->min).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 189,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_VDNearbyActorBoundingBoxes[iVar10].max.x = (pCVar8->max).x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -978,30 +1002,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 172,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 184,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_VDNearbyActorBoundingBoxes[g_VDNearbyActorCount].min.x = (pCVar8->min).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 189,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_VDNearbyActorBoundingBoxes[iVar10].max.x = (pCVar8->max).x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 87,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 52,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 208
   },
   "cross_references": [
@@ -198,6 +196,35 @@
     },
     "pcode_op_count": 841
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)((int)this_ptr->zbuffer_data +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(*(int *)((int)g_ScreenBufferArray + iVar5 + 4) + iVar1) = uVar2 * 0x10101;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)((int)this_ptr->zbuffer_data +",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 36,
@@ -249,30 +276,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "(*(int *)((int)this_ptr->zbuffer_data +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "*(uint *)(*(int *)((int)g_ScreenBufferArray + iVar5 + 4) + iVar1) = uVar2 * 0x10101;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "(*(int *)((int)this_ptr->zbuffer_data +",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

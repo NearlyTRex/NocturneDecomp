@@ -215,31 +215,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_editSpotLight_FUN_0057b500.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 7,
-          "line": 31,
-          "message": "Possible null pointer dereference: master",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Possible null pointer dereference: master",
-      "line": 31,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "master->light_enabled_flag = 1;",
-      "type": "static_null_pointer"
-    }
-  ]
+  "suspects": []
 }

@@ -11,13 +11,11 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(CDemo
 
 {
   char (*pacVar1) [40];
-  char cVar2;
   int iVar3;
   int iVar4;
   char (*pacVar2) [40];
   C3DSLight *pCVar5;
   char (*pacVar3) [40];
-  C3DSLight *pCVar4;
   char (*pacVar7) [40];
   char *pcVar8;
   int iVar5;
@@ -30,13 +28,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(CDemo
   CPickList local_8a4;
   CPickList local_4fc;
   char local_154 [256];
-  char (*local_4c) [40];
-  char (*local_34) [40];
-  char (*local_28) [40];
   int local_24;
   char (*local_20) [40];
   int local_1c;
-  char cVar1;
   char *pcVar9;
   float *result_ptr;
   ulonglong uVar10;
@@ -89,13 +83,11 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(CDemo
     if (0 < pCVar5->filter_count) {
       iVar5 = 0x41;
       local_24 = 0x6e;
-      pCVar4 = pCVar5;
       local_20 = pacVar1;
       do {
         _sprintf
                   (local_154,"%c.  %s for %1.3f seconds",iVar5,(char *)local_20,
-                   (double)pCVar4->filter_durations[0]);
-        pCVar4 = (C3DSLight *)pCVar4->name;
+                   (double)pCVar5->filter_durations[iVar7]);
         iVar7 = iVar7 + 1;
         engine_2d_c_drawText_FUN_00401fd0(local_154,0,local_24);
         iVar5 = iVar5 + 1;
@@ -156,24 +148,14 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(CDemo
         if (-1 < local_1c) {
           pacVar3 = pacVar1 + local_1c;
           pacVar2 = pacVar1 + local_1c + 1;
-          pcVar8 = pCVar5->name + local_1c * 4 + -4;
           while (iVar10 = pCVar5->filter_count + -1, local_1c < iVar10) {
             pacVar6 = pacVar2;
             pacVar8 = pacVar3;
-            do {
-              cVar1 = (*pacVar6)[0];
-              (*pacVar8)[0] = cVar1;
-              if (cVar1 == '\0') break;
-              cVar2 = (*pacVar6)[1];
-              pacVar6 = (char (*) [40])(*pacVar6 + 2);
-              (*pacVar8)[1] = cVar2;
-              pacVar8 = (char (*) [40])(*pacVar8 + 2);
-            } while (cVar2 != '\0');
+            strcpy(*pacVar8,*pacVar6);
             pacVar3 = pacVar3 + 1;
             pacVar2 = pacVar2 + 1;
+            pCVar5->filter_durations[local_1c] = pCVar5->filter_durations[local_1c + 1];
             local_1c = local_1c + 1;
-            *(float *)(pcVar8 + 0x16f4) = *(float *)(pcVar8 + 0x16f8);
-            pcVar8 = pcVar8 + 4;
           }
           pCVar5->filter_count = iVar10;
         }

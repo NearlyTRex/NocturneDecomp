@@ -4,18 +4,18 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6068 functions
-  1 suspects: 49 functions
-  2 suspects: 73 functions
-  3 suspects: 47 functions
+  0 suspects: 6084 functions
+  1 suspects: 48 functions
+  2 suspects: 68 functions
+  3 suspects: 45 functions
   4 suspects: 47 functions
-  5 suspects: 27 functions
-  6 suspects: 31 functions
-  7 suspects: 16 functions
-  8 suspects: 23 functions
+  5 suspects: 26 functions
+  6 suspects: 30 functions
+  7 suspects: 13 functions
+  8 suspects: 22 functions
   9 suspects: 7 functions
-  10 suspects: 11 functions
-  11 suspects: 6 functions
+  10 suspects: 10 functions
+  11 suspects: 5 functions
   12 suspects: 6 functions
   13 suspects: 5 functions
   14 suspects: 4 functions
@@ -81,7 +81,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [pointer_cast] (11 functions)
+  [pointer_cast] (10 functions)
   ------------------------------------------------------------
     engine_fileio.cpp_CFileManager_buildPodFromRespons ( 57 lines)
       pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);...
@@ -97,8 +97,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       *(int *)((int)this_ptr->edges_ptr[iVar1].adjacent_tri_indice...
     engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (134 lines)
       iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_ve...
-    core_setedit.cpp_renderBackdropImage_FUN_0057ce80  (134 lines)
-      puVar4 = *(uint **)((int)g_ScreenBufferArray + local_18);...
     shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_00 (149 lines)
       *(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)...
     shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a (204 lines)
@@ -169,18 +167,12 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 4, Types: ['pointer_cast']
   shape_superopt.cpp_CP2D_copy_FUN_005d8330
     File: shape/superopt.cpp, Lines: 8, Types: ['pointer_cast']
-  core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30
-    File: core/setdir.cpp, Lines: 16, Types: ['pointer_cast']
   core_path.cpp_CPathMap_reset_FUN_00548510
     File: core/path.cpp, Lines: 16, Types: ['unrolled_memset']
   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
     File: core/ghoul.cpp, Lines: 17, Types: ['missing_cave_copy']
-  core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0
-    File: core/setdir.cpp, Lines: 20, Types: ['pointer_cast']
   core_skeledit.cpp_CBoneStructure_doesHierarchyMatch_FUN_0058
     File: core/skeledit.cpp, Lines: 21, Types: ['shadow_pointer_walk']
-  core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830
-    File: core/setdir.cpp, Lines: 21, Types: ['pointer_cast']
   core_path.cpp_resetAllPathMaps_FUN_00548590
     File: core/path.cpp, Lines: 22, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420
@@ -285,8 +277,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mobster.cpp, Lines: 129, Types: ['stack_alignment_array', 'warning_type_propagation']
   core_mimic.cpp_CMimic_setup_FUN_0051f3e0
     File: core/mimic.cpp, Lines: 134, Types: ['pointer_cast']
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
-    File: core/setedit.cpp, Lines: 140, Types: ['pointer_cast']
   core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_
     File: core/dmodel.cpp, Lines: 143, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
@@ -305,8 +295,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/wateract.cpp, Lines: 210, Types: ['shadow_pointer_walk', 'unrolled_memset']
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_F
     File: engine/fileio.cpp, Lines: 244, Types: ['unrolled_strcpy']
-  core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe
-    File: core/setedit.cpp, Lines: 259, Types: ['shadow_pointer_walk', 'unrolled_strcpy']
   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437c
     File: engine/clipper.c, Lines: 446, Types: ['pointer_cast']
   engine_clipper.c_clipPolygonToViewport_FUN_00438420
@@ -341,8 +329,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 45, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
     File: core/manpuz.cpp, Lines: 49, Types: ['unrolled_memset']
-  core_setdir.cpp_CZThumb_render_FUN_00574f20
-    File: core/setdir.cpp, Lines: 52, Types: ['pointer_cast']
   shape_design.c_removeDuplicatePolygons_FUN_004651b0
     File: shape/design.c, Lines: 52, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
@@ -403,5 +389,3 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/fileio.cpp, Lines: 193, Types: ['pointer_cast', 'unrolled_strcpy']
   core_icepick.cpp_CIcePick_processAI_FUN_004f8c70
     File: core/icepick.cpp, Lines: 243, Types: ['unrolled_memcpy']
-  core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751
-    File: core/setdir.cpp, Lines: 303, Types: ['pointer_cast', 'unrolled_memcpy']

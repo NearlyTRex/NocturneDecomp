@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 183,
+    "complexity_score": 98,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 98,
-    "suspect_count": 8,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 321
   },
   "cross_references": [
@@ -190,6 +188,80 @@
     },
     "pcode_op_count": 954
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)g_VDCameraSortIndices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_VDCameraSortIndices + iVar5) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(int *)((int)g_VDCameraSortIndices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + local_28)] <",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(int *)((int)g_VDCameraSortIndices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + iVar4)]) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(uint *)((int)g_VDCameraSortIndices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)((int)g_VDCameraSortIndices + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(uint *)((int)g_VDCameraSortIndices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_VDCameraSortIndices + local_28) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)((int)g_VDCameraSortIndices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_VDCameraSortIndices + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)g_VDCameraSortIndices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_VDCameraSortIndices + iVar4) = uVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(int *)((int)g_VDCameraSortIndices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_VDCameraSortIndices + local_1c);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 160,
     "local_size": 156,
@@ -276,70 +348,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(int *)((int)g_VDCameraSortIndices",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_VDCameraSortIndices + iVar5) = iVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(int *)((int)g_VDCameraSortIndices",
-      "severity": "moderate",
-      "text": "if (g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + local_28)] <",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(int *)((int)g_VDCameraSortIndices",
-      "severity": "moderate",
-      "text": "g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + iVar4)]) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(uint *)((int)g_VDCameraSortIndices",
-      "severity": "moderate",
-      "text": "uVar1 = *(uint *)((int)g_VDCameraSortIndices + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(uint *)((int)g_VDCameraSortIndices",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_VDCameraSortIndices + local_28) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(uint *)((int)g_VDCameraSortIndices",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_VDCameraSortIndices + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(uint *)((int)g_VDCameraSortIndices",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_VDCameraSortIndices + iVar4) = uVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(int *)((int)g_VDCameraSortIndices",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)g_VDCameraSortIndices + local_1c);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

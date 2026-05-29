@@ -44,17 +44,15 @@ void __cdecl core_setedit_cpp_renderColoredBox_FUN_005817d0(CVector3f *corner_a,
       }
       local_2c.z = (int)ROUND(ROUND(pCVar1->z * (float)256));
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                ((SProjectedVertex *)
-                 ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
-                 iVar2),&local_2c);
+                (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2 / 0x30].projected_vertex,&local_2c);
       this_ptr = g_CDemonRendererPtr2;
-      *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar2) = 0x80000;
-      *(uint *)((int)&this_ptr->vertex_buffer_ptr->v + iVar2) = 0x80000;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->r + iVar2) = r << 8;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->g + iVar2) = g << 8;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->b + iVar2) = b << 8;
+      g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2 / 0x30].u = 0x80000;
+      this_ptr->vertex_buffer_ptr[iVar2 / 0x30].v = 0x80000;
+      this_ptr->vertex_buffer_ptr[iVar2 / 0x30].r = r << 8;
+      this_ptr->vertex_buffer_ptr[iVar2 / 0x30].g = g << 8;
+      this_ptr->vertex_buffer_ptr[iVar2 / 0x30].b = b << 8;
       uVar3 = uVar3 + 1;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->a + iVar2) = local_14;
+      this_ptr->vertex_buffer_ptr[iVar2 / 0x30].a = local_14;
       if (7 < (int)uVar3) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&g_SolidWhiteTexture)
         ;

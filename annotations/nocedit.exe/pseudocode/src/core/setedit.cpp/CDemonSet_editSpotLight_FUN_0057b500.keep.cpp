@@ -28,7 +28,9 @@ void __cdecl core_setedit_cpp_CDemonSet_editSpotLight_FUN_0057b500(CDemonSet *th
         }
       }
       iVar3 = core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(this_ptr,light);
-      master->light_enabled_flag = 1;
+      if (master != (CDemonLight *)0x0) {
+        master->light_enabled_flag = 1;
+      }
       if (iVar3 != 0) {
         core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
         iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0

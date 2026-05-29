@@ -7,19 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1607,
-    "complexity_score": 804,
+    "complexity_score": 674,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 77,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 674,
-    "suspect_count": 11,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "unrolled_memcpy",
-      "unrolled_strchr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2281
   },
   "cross_references": [
@@ -782,6 +777,24 @@
       "type": "stack_alignment_array"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 246,
+      "match": "(uint *)((int)g_S3DTextureGroundTypes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 265,
+      "match": "(uint *)((int)g_S3DTextureGroundTypes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 473,
       "match": "for (...; != 0; ... + -1)",
@@ -834,6 +847,87 @@
       "severity": "moderate",
       "text": "for (iVar5 = 0x20; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 479,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar10->pos).x = local_2478.pos.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 484,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar10->orient).x = local_2478.orient.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 488,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10->fov = local_2478.fov;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (16 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 499,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10->camera_light_bounds[0].x_min = local_2478.camera_light_bounds[0].x_min;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (7 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 540,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10->move_filter = local_2478.move_filter;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar8->vertices[0].a`). Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 432,
+      "match": "pCVar8 = (T *)&pCVar8->FIELD[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar8 = (CDemonSet *)&pCVar8->cameras[0xe].vdir_zone;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar7->vertices[0].a`). Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 662,
+      "match": "pCVar7 = (T *)&pCVar7->FIELD[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
+      "line": 202,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
+      "line": 214,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -1235,134 +1329,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonSet_importS3D_FUN_00578d80.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 14,
-          "line": 220,
-          "message": "Possible null pointer dereference: pcVar12",
-          "severity": "warning"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 50,
-          "line": 377,
-          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 246,
-      "match": "(uint *)((int)g_S3DTextureGroundTypes",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 265,
-      "match": "(uint *)((int)g_S3DTextureGroundTypes",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 479,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pCVar10->pos).x = local_2478.pos.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 484,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pCVar10->orient).x = local_2478.orient.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 488,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar10->fov = local_2478.fov;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (16 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 499,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar10->camera_light_bounds[0].x_min = local_2478.camera_light_bounds[0].x_min;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (7 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 540,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar10->move_filter = local_2478.move_filter;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar8->vertices[0].a`). Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 432,
-      "match": "pCVar8 = (T *)&pCVar8->FIELD[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar8 = (CDemonSet *)&pCVar8->cameras[0xe].vdir_zone;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar7->vertices[0].a`). Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 662,
-      "match": "pCVar7 = (T *)&pCVar7->FIELD[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
-      "line": 202,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
-      "line": 214,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Possible null pointer dereference: pcVar12",
-      "line": 220,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "*pcVar12 = '\\0';",
-      "type": "static_null_pointer"
-    },
-    {
-      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
-      "line": 377,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "iVar6 = _fscanf(file_handle,\"%f,%f,%f\\n\",(float *)(local_38 + iVar5 * 3),(float *)piVar16,(float *)piVar15);",
-      "type": "static_invalid_pointer_cast"
-    }
-  ]
+  "suspects": []
 }

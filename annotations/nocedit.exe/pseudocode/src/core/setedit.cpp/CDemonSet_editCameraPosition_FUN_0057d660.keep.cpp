@@ -11,7 +11,6 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
 
 {
   int *piVar1;
-  char cVar2;
   float fVar3;
   float fVar4;
   float fVar5;
@@ -60,7 +59,6 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
   void *pvStack_24;
   _FILE *p_Stack_20;
   void *pvStack_1c;
-  byte *pbStack_18;
   void *local_r1;
   uint local_40;
   uint local_3c;
@@ -71,28 +69,12 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
   local_40 = 0;
   local_5c = 0.0;
   local_3c = 0;
+  iStack_44 = 0;
+  local_e1 = (CKeyFramedModel *)0x0;
   pcVar15 = this_ptr->geometry_filename;
   local_54 = 0.0;
-  do {
-    cVar2 = *pcVar15;
-    *pcVar19 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pcVar15[1];
-    pcVar15 = pcVar15 + 2;
-    pcVar19[1] = cVar2;
-    pcVar19 = pcVar19 + 2;
-  } while (cVar2 != '\0');
-  pcVar19 = CStack_574.cancel_button.button_text + 0xa8;
-  do {
-    pcVar15 = pcVar19;
-    if (*pcVar19 == '.') goto LAB_0057d6df;
-    if (*pcVar19 == '\0') break;
-    pcVar15 = pcVar19 + 1;
-    if (*pcVar15 == '.') goto LAB_0057d6df;
-    pcVar19 = pcVar19 + 2;
-  } while (*pcVar15 != '\0');
-  pcVar15 = (char *)0x0;
-LAB_0057d6df:
+  strcpy(pcVar19,pcVar15);
+  pcVar15 = strchr(pcVar19,'.');
   if (pcVar15 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0xc3b;
@@ -147,9 +129,9 @@ LAB_0057d6df:
           uVar16 = iStack_48 << 8 | (int)fVar10 << 0x10;
           uVar12 = uVar11;
         }
-        *(uint *)((int)auStack_d80 + iVar20) = uVar16 | uVar12;
+        auStack_d80[iVar20 / 4] = uVar16 | uVar12;
         iVar13 = iVar20 + 4;
-        *(int *)((int)auStack_1180 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;
+        auStack_1180[iVar20 / 4] = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;
         iVar20 = iVar13;
       } while (iVar13 != 0x400);
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_20,"..\\core\\setedit.cpp",0xc73);
@@ -165,7 +147,6 @@ LAB_0057d6df:
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
   fStack_58 = 0.0;
-  pbStack_18 = (byte *)0x0;
   core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(&g_CDemonCameraInstance,0x1e0);
   piStack_30 = &this_ptr->cameras[camera_index + -1].enabled;
   pCStack_34 = this_ptr->cameras;
@@ -176,16 +157,16 @@ LAB_0057d6df:
     if ((p_Stack_20 == (_FILE *)0x0) ||
        (((fStack_58 == 0.0 || (bVar21 == 0)) &&
         (iVar20 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_O), iVar20 == 0)))) {
-      fVar10 = (g_CSlewPtr->position).z;
-      fVar3 = g_CSlewPtr->orientation.vec.x;
-      fVar4 = g_CSlewPtr->orientation.vec.y;
-      fVar5 = g_CSlewPtr->orientation.vec.z;
-      fVar6 = g_CSlewPtr->slew_rate;
+      fVar10 = (g_CSlewPtr->position).x;
+      fVar3 = (g_CSlewPtr->position).y;
+      fVar4 = (g_CSlewPtr->position).z;
+      fVar5 = g_CSlewPtr->orientation.vec.x;
+      fVar6 = g_CSlewPtr->orientation.vec.y;
+      fStack_78 = g_CSlewPtr->orientation.vec.z;
+      fStack_74 = g_CSlewPtr->slew_rate;
       core_slew_cpp_CSlew_processInput_FUN_005a20b0(g_CSlewPtr);
       if (g_CSlewPtr != (CSlew *)&g_CDemonCameraInstance.base.position) {
-        g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;
-        g_CDemonCameraInstance.base.position.f.z = (g_CSlewPtr->position).z;
-        g_CDemonCameraInstance.base.position.f.y = (g_CSlewPtr->position).y;
+        g_CDemonCameraInstance.base.position.f = g_CSlewPtr->position;
       }
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                 (&g_CDemonCameraInstance.base.rotation_matrix,&g_CSlewPtr->orientation.vec);
@@ -281,7 +262,7 @@ LAB_0057db4e:
           y = 0x21;
           iVar13 = 0;
           do {
-            piVar1 = (int *)((int)auStack_96c + iVar13);
+            piVar1 = (int *)auStack_96c + iVar13 / 4;
             iVar13 = iVar13 + 4;
             engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(p_Stack_20 + *piVar1 * 0xf));
             y = y + 0xb;
@@ -294,7 +275,7 @@ LAB_0057db4e:
                (double)(1.0f / g_CGamePtr->delta_time_float));
       engine_2d_c_drawText_FUN_00401fd0
                 (CStack_574.cancel_button.button_text + 0xbc,0,g_WindowHeight + -0xb);
-      if (*(int *)((int)pvStack_1c + 0x144) == 0) {
+      if (this_ptr->cameras[camera_index].is_panning == 0) {
         _sprintf
                   (CStack_574.cancel_button.button_text + 0xbc,"FIXED CAMERA: x: %f, y: %f, z: %f, p : %f, h : %f, fov : %f",
                    (double)(g_CSlewPtr->position).x,(double)(g_CSlewPtr->position).y,
@@ -317,12 +298,11 @@ LAB_0057db4e:
         g_CurrentLineNumber = 0xc92;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Screen must be 640x480!");
       }
-      p_Stack_20 = (_FILE *)0x0;
-      pbVar17 = pbStack_18;
-      do {
+      pbVar17 = (byte *)pvStack_24;
+      for (iVar13 = 0; iVar13 != 0x780; iVar13 = iVar13 + 4) {
         uVar11 = 0;
         iVar20 = 0;
-        puVar14 = (uint *)p_Stack_20[0x19b185]._handle;
+        puVar14 = (uint *)g_ScreenBufferArray[iVar13 / 4 + 1];
         pbVar18 = pbVar17;
         do {
           pbVar17 = pbVar18 + 1;
@@ -353,8 +333,7 @@ LAB_0057db4e:
           iVar20 = iVar20 + 1;
           pbVar18 = pbVar17;
         } while (iVar20 < 0x280);
-        p_Stack_20 = (_FILE *)&p_Stack_20->_cnt;
-      } while (p_Stack_20 != (_FILE *)0x780);
+      }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
@@ -390,7 +369,7 @@ LAB_0057db4e:
         }
       }
       else if (uVar11 < 0x47) {
-        if (*(int *)local_e1->texture_list[0].textures[1].texture_name == 0) {
+        if (this_ptr->cameras[camera_index].is_panning == 0) {
           shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                     (g_CEditorToolsPtr,"Enter FOV",&g_CSlewPtr->slew_rate,0,0.0,0.0,1);
         }

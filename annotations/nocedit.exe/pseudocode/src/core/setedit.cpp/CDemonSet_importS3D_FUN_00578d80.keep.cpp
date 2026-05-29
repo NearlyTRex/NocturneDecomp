@@ -21,19 +21,14 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   _FILE *file;
   int *piVar5;
   C3DSCamera *pCVar6;
-  CDemonSet *pCVar7;
   int iVar8;
-  CDemonSet *pCVar8;
   C3DSLight *pCVar9;
   C3DSLight *pCVar10;
   C3DSCamera *pCVar11;
   char *pcVar10;
-  char *pcVar11;
-  char *pcVar12;
   char *pcVar13;
   char (*pacVar12) [40];
   int *piVar15;
-  int *piVar16;
   C3DSLight *dest;
   C3DSLight local_2478;
   CPickList local_be0;
@@ -70,7 +65,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   int local_44;
   int local_40;
   long local_3c;
-  int *local_38;
+  CVector3f *local_38;
   long local_34;
   int local_30;
   int local_2c;
@@ -194,30 +189,9 @@ LAB_00578fc0:
         iVar6 = 0;
         do {
           _fgets(local_5a4,0x104,file_handle);
-          pcVar11 = local_5a4;
-          do {
-            pcVar10 = pcVar11;
-            if (*pcVar11 == '\n') goto LAB_0057979a;
-            if (*pcVar11 == '\0') break;
-            pcVar10 = pcVar11 + 1;
-            if (*pcVar10 == '\n') goto LAB_0057979a;
-            pcVar11 = pcVar11 + 2;
-          } while (*pcVar10 != '\0');
-          pcVar10 = (char *)0x0;
-LAB_0057979a:
+          pcVar10 = strchr(local_5a4,'\n');
           if (pcVar10 != (char *)0x0) {
-            pcVar13 = local_5a4;
-            do {
-              pcVar12 = pcVar13;
-              if (*pcVar13 == '\n') goto LAB_005797bd;
-              if (*pcVar13 == '\0') break;
-              pcVar12 = pcVar13 + 1;
-              if (*pcVar12 == '\n') goto LAB_005797bd;
-              pcVar13 = pcVar13 + 2;
-            } while (*pcVar12 != '\0');
-            pcVar12 = (char *)0x0;
-LAB_005797bd:
-            *pcVar12 = '\0';
+            *pcVar10 = '\0';
           }
           iVar8 = 0;
           engine_dosio_cpp_splitPath_FUN_00481f20
@@ -239,7 +213,7 @@ LAB_005797bd:
           }
           uVar4 = 0xffffffff;
 LAB_0057981a:
-          *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;
+          g_S3DTextureGroundTypes[iVar6 / 4] = uVar4;
           if ((int)uVar4 < 0) {
             file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                              (local_6a8,(char *)0x0,"a+t","..\\core\\setedit.cpp",0x4e1
@@ -258,7 +232,7 @@ LAB_0057981a:
               _fprintf(file,"%s, %s\n",local_3a0,pcVar13);
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x4eb);
             }
-            *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;
+            g_S3DTextureGroundTypes[iVar6 / 4] = 0;
             core_setedit_cpp_addGroundType_FUN_00578290(local_5a4,0);
             local_30 = 1;
           }
@@ -326,7 +300,7 @@ LAB_005790a3:
       iVar5 = iVar5 + 1;
     } while (iVar5 < local_54);
   }
-  local_38 = (int *)0x0;
+  local_38 = (CVector3f *)0x0;
   if (local_78 == 0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Locating lights");
@@ -355,12 +329,12 @@ LAB_0057911a:
               (this_ptr_00,"Reading vertices");
     piVar5 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                        (local_50 * 0xc + 4,"..\\core\\setedit.cpp",0x547);
-    local_38 = piVar5;
+    local_38 = (CVector3f *)0x0;
     if (piVar5 != (int *)0x0) {
-      local_38 = piVar5 + 1;
+      local_38 = (CVector3f *)(piVar5 + 1);
       *piVar5 = local_50;
     }
-    if (local_38 == (int *)0x0) {
+    if (local_38 == (CVector3f *)0x0) {
       g_CurrentFilename = "..\\core\\setedit.cpp";
       g_CurrentLineNumber = 0x548;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't allocate memory for %d vertices",local_50);
@@ -371,19 +345,16 @@ LAB_0057911a:
     } while (iVar5 != 10);
     iVar5 = 0;
     if (0 < local_50) {
-      piVar15 = local_38 + 2;
-      piVar16 = local_38 + 1;
       do {
-        iVar6 = _fscanf(file_handle,"%f,%f,%f\n",(float *)(local_38 + iVar5 * 3),(float *)piVar16,(float *)piVar15);
+        iVar6 = _fscanf(file_handle,"%f,%f,%f\n",&local_38[iVar5].x,&local_38[iVar5].y,
+                        &local_38[iVar5].z);
         if (iVar6 != 3) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0x54f;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("File is corrupt on vertex %d of %d",iVar5,local_50);
         }
-        piVar16 = piVar16 + 3;
         iVar5 = iVar5 + 1;
-        piVar15 = piVar15 + 3;
       } while (iVar5 < local_50);
     }
   }
@@ -409,15 +380,14 @@ LAB_00579173:
     if (0 < this_ptr->light_count) {
       dest = this_ptr->lights;
       pCVar9 = this_ptr->lights + 1;
-      pCVar8 = this_ptr;
       do {
-        iVar6 = pCVar8->lights[0].light_type;
+        iVar6 = this_ptr->lights[iVar5].light_type;
         iVar4 = local_70;
         if ((iVar6 != 0) && (iVar4 = local_74, iVar6 != 1)) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0x56b;
           core_main_c_displayErrorAndQuit_FUN_00506f10
-                    ("unknown light type: %d",pCVar8->lights[0].light_type);
+                    ("unknown light type: %d",this_ptr->lights[iVar5].light_type);
           iVar4 = local_24;
         }
         local_24 = iVar4;
@@ -425,7 +395,6 @@ LAB_00579173:
           dest = dest + 1;
           pCVar9 = pCVar9 + 1;
           iVar5 = iVar5 + 1;
-          pCVar8 = (CDemonSet *)&pCVar8->cameras[0xe].vdir_zone;
         }
         else {
           iVar6 = this_ptr->light_count + -1;
@@ -466,45 +435,20 @@ LAB_00579173:
           pCVar10->light_type = local_2478.light_type;
           memcpy(pCVar10->name,local_2478.name,0x100);
           if (&pCVar10->pos != &local_2478.pos) {
-            (pCVar10->pos).x = local_2478.pos.x;
-            (pCVar10->pos).y = local_2478.pos.y;
-            (pCVar10->pos).z = local_2478.pos.z;
+            pCVar10->pos = local_2478.pos;
           }
           if (&pCVar10->orient != &local_2478.orient) {
-            (pCVar10->orient).x = local_2478.orient.x;
-            (pCVar10->orient).y = local_2478.orient.y;
-            (pCVar10->orient).z = local_2478.orient.z;
+            pCVar10->orient = local_2478.orient;
           }
-          pCVar10->fov = local_2478.fov;
-          pCVar10->aspect = local_2478.aspect;
-          pCVar10->intensity = local_2478.intensity;
+          memcpy(&pCVar10->fov,&local_2478.fov,0xc);
           memcpy(pCVar10->visible_flags,local_2478.visible_flags,0xfa);
-          pCVar10->camera_light_bounds[0].x_min = local_2478.camera_light_bounds[0].x_min;
-          pCVar10->camera_light_bounds[0].x_max = local_2478.camera_light_bounds[0].x_max;
-          pCVar10->camera_light_bounds[0].y_min = local_2478.camera_light_bounds[0].y_min;
-          pCVar10->camera_light_bounds[0].y_max = local_2478.camera_light_bounds[0].y_max;
-          (pCVar10->color).r = local_2478.color.r;
-          (pCVar10->color).g = local_2478.color.g;
-          (pCVar10->color).b = local_2478.color.b;
-          pCVar10->atten_start = local_2478.atten_start;
-          pCVar10->atten_end = local_2478.atten_end;
-          pCVar10->atten_end_squared = local_2478.atten_end_squared;
-          pCVar10->atten_end_reciprocal = local_2478.atten_end_reciprocal;
-          pCVar10->on_time = local_2478.on_time;
-          pCVar10->cycle_time = local_2478.cycle_time;
-          pCVar10->cycle_elapsed = local_2478.cycle_elapsed;
-          pCVar10->filter_count = local_2478.filter_count;
-          pCVar10->blend_filter = local_2478.blend_filter;
+          pCVar10->camera_light_bounds[0] = local_2478.camera_light_bounds[0];
+          pCVar10->color = local_2478.color;
+          memcpy(&pCVar10->atten_start,&local_2478.atten_start,0x24);
           memcpy(pCVar10->filter_names,local_2478.filter_names,0x500);
           memcpy(pCVar10->filter_durations,local_2478.filter_durations,0x80);
           memcpy(pCVar10->filter_indices,local_2478.filter_indices,0x80);
-          pCVar10->move_filter = local_2478.move_filter;
-          (pCVar10->filter_vel).x = local_2478.filter_vel.x;
-          (pCVar10->filter_vel).y = local_2478.filter_vel.y;
-          (pCVar10->filter_pos).x = local_2478.filter_pos.x;
-          (pCVar10->filter_pos).y = local_2478.filter_pos.y;
-          (pCVar10->size).x = local_2478.size.x;
-          (pCVar10->size).y = local_2478.size.y;
+          memcpy(&pCVar10->move_filter,&local_2478.move_filter,0x1c);
           memcpy(pCVar10->filters,local_2478.filters,0x80);
           pCVar10->current_filter_frame = local_2478.current_filter_frame;
           pCVar10->filter_frame_elapsed = local_2478.filter_frame_elapsed;
@@ -571,16 +515,16 @@ LAB_0057a07e:
           triangle_flags = (uchar)g_S3DTextureGroundTypes[local_18];
         }
         core_dtrace_cpp_CDemonRaytrace_addTriangle_FUN_00495100
-                  (&g_CDemonRaytraceInstance,(CVector3f *)(local_38 + local_88 * 3),
-                   (CVector3f *)(local_38 + local_84 * 3),(CVector3f *)(local_38 + local_80 * 3),
+                  (&g_CDemonRaytraceInstance,local_38 + local_88,
+                   local_38 + local_84,local_38 + local_80,
                    triangle_flags);
         iVar5 = iVar5 + 1;
       } while (iVar5 < local_54);
     }
     g_CurrentDebugLine = 0x601;
     g_CurrentDebugFilename = "..\\core\\setedit.cpp";
-    if (local_38 != (int *)0x0) {
-      shape_memdbg_cpp_free_FUN_005fe659(local_38 + -1);
+    if (local_38 != (CVector3f *)0x0) {
+      shape_memdbg_cpp_free_FUN_005fe659(piVar5);
     }
     core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(&g_CDemonRaytraceInstance,10.0);
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -602,19 +546,17 @@ LAB_0057a07e:
     iVar5 = 0;
     if (0 < this_ptr->camera_count) {
       pCVar11 = this_ptr->cameras;
-      pCVar7 = this_ptr;
       do {
         _sprintf(local_2a0,"backdrop\\%s.fog",pCVar11->name);
         remove(local_2a0);
         _sprintf(local_2a0,"backdrop\\%s.pvs",pCVar11->name);
         remove(local_2a0);
-        piVar15 = pCVar7->cameras[0].pvs_list;
-        pCVar7->cameras[0].pvs_count = 0;
+        piVar15 = pCVar11->pvs_list;
+        pCVar11->pvs_count = 0;
         if (piVar15 != (int *)0x0) {
           shape_memdbg_cpp_debugFree_FUN_0050f460(piVar15,"..\\core\\setedit.cpp",0x634);
-          pCVar7->cameras[0].pvs_list = (int *)0x0;
+          pCVar11->pvs_list = (int *)0x0;
         }
-        pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;
         iVar5 = iVar5 + 1;
         pCVar11 = pCVar11 + 1;
       } while (iVar5 < this_ptr->camera_count);

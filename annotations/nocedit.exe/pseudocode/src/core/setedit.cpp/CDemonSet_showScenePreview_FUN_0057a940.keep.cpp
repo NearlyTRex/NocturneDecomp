@@ -24,7 +24,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
   int iVar10;
   int iVar11;
   int y;
-  char acStack_13c [4];
+  char acStack_13c [256];
   int visible_cameras[250];
   float saved_pos_x;
   

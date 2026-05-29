@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 123
-  Total diagnostics: 345
+  Functions with findings: 119
+  Total diagnostics: 339
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 123, raw .cpp files: 0
+  .keep.cpp files: 119, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -362,14 +362,6 @@ core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0  [.keep] [Cppcheck (qui
   Line  371: [selfAssignment] Redundant assignment of 'pCVar18' to itself.
 
 ----------------------------------------------------------------------------------------------------
-core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  [.keep] [Cppcheck (quick)]
-  File: core/setedit.cpp  (3 diagnostics)
-
-  Line   89: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   90: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  140: [selfAssignment] Redundant assignment of 'iVar2' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0  [.keep] [Cppcheck (quick)]
   File: core/skeledit.cpp  (3 diagnostics)
 
@@ -584,11 +576,11 @@ core_mimic.cpp_CMimic_setupCloth_FUN_00520500  [.keep] [Cppcheck (quick)]
   Line   46: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
-core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  [.keep] [Cppcheck (quick)]
+core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  [.keep] [Cppcheck (quick)]
   File: core/setedit.cpp  (2 diagnostics)
 
-  Line  220: [nullPointer] Possible null pointer dereference: pcVar12
-  Line  377: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+  Line   89: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   90: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppcheck (quick)]
@@ -791,24 +783,6 @@ core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990  [.keep] [Cppcheck (q
   File: core/set.cpp  (1 diagnostics)
 
   Line   95: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660  [.keep] [Cppcheck (quick)]
-  File: core/setedit.cpp  (1 diagnostics)
-
-  Line  325: [nullPointer] Possible null pointer dereference: p_Stack_20
-
-----------------------------------------------------------------------------------------------------
-core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500  [.keep] [Cppcheck (quick)]
-  File: core/setedit.cpp  (1 diagnostics)
-
-  Line   31: [nullPointer] Possible null pointer dereference: master
-
-----------------------------------------------------------------------------------------------------
-core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0  [.keep] [Cppcheck (quick)]
-  File: core/setedit.cpp  (1 diagnostics)
-
-  Line  175: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_setedit.cpp_loadGroundTypes_FUN_00578420  [.keep] [Cppcheck (quick)]

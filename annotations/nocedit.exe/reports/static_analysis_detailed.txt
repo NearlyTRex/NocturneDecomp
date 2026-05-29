@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (345 diagnostics)
+Cppcheck (quick) (339 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -665,7 +665,7 @@ invalidscanf (60)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (52)
+selfAssignment (51)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -727,10 +727,6 @@ selfAssignment (52)
   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 371
     File: core/setedit.cpp
     Redundant assignment of 'pCVar18' to itself.
-
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 140
-    File: core/setedit.cpp
-    Redundant assignment of 'iVar2' to itself.
 
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 192
     File: core/skeledit.cpp
@@ -1221,7 +1217,7 @@ legacyUninitvar (23)
     Uninitialized variable: local_64
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (16)
+invalidPointerCast (14)
 ----------------------------------------------------------------------------------------------------
 
   core_chain.cpp_fastSqrt_FUN_00431350               line 13
@@ -1254,14 +1250,6 @@ invalidPointerCast (16)
 
   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00 line 24
     File: core/lightgun.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 377
-    File: core/setedit.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_setedit.cpp_CDemonSet_showLightFilterEditor_F line 175
-    File: core/setedit.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
   core_skeledit.cpp_CDeformableModelInstance_viewMod line 790
@@ -1341,7 +1329,7 @@ nullPointerRedundantCheck (12)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (7)
+nullPointer (4)
 ----------------------------------------------------------------------------------------------------
 
   core_mission.cpp_CDemonMission_ensureHeroPlacehold line 49
@@ -1355,18 +1343,6 @@ nullPointer (7)
   core_mission.cpp_CDemonMission_ensureHeroPlacehold line 52
     File: core/mission.cpp
     Possible null pointer dereference: actor
-
-  core_setedit.cpp_CDemonSet_editCameraPosition_FUN_ line 325
-    File: core/setedit.cpp
-    Possible null pointer dereference: p_Stack_20
-
-  core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b line 31
-    File: core/setedit.cpp
-    Possible null pointer dereference: master
-
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 220
-    File: core/setedit.cpp
-    Possible null pointer dereference: pcVar12
 
   shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
     File: shape/quantize.cpp

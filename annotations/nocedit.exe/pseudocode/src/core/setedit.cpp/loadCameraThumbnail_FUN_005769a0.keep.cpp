@@ -84,7 +84,7 @@ LAB_00576b4f:
           iVar3 = thumbnail_index * 0x3000 + local_20 * 0x100;
           do {
             iVar6 = iVar3 + 4;
-            *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar3) =
+            ((uint *)g_ThumbnailImageBuffer)[iVar3 / 4] =
                  *(uint *)(g_ThumbnailPalette +
                                  (uint)*(byte *)(((int)((iVar1 + (iVar1 >> 0x1f) * -0x40) -
                                                        (uint)((iVar1 >> 0x1f) << 5 < 0)) >> 6) +
@@ -136,8 +136,7 @@ LAB_00576a3d:
     iVar2 = iVar5 * 0x100 + thumbnail_index * 0x3000;
     do {
       iVar2 = iVar2 + 4;
-      *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2) = 0xff00ff;
-      iVar2 = iVar2;
+      ((uint *)g_ThumbnailImageBuffer)[iVar2 / 4] = 0xff00ff;
     } while (iVar2 != iVar4);
     iVar5 = iVar5 + 1;
   } while (iVar5 < 0x30);

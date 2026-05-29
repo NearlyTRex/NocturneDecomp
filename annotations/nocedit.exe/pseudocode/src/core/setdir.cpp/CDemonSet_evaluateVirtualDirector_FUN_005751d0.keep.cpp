@@ -160,7 +160,7 @@ LAB_0057523f:
   g_VDNearbyActorCount = 0;
   iStack_1c = 0;
   for (iVar12 = 0; iVar12 < g_CDemonSetPtr->actor_count; iVar12 = iVar12 + 1) {
-    this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_1c);
+    this_ptr_00 = g_CDemonSetPtr->actors[iStack_1c / 4];
     iVar10 = (*((this_ptr_00->vtable)._ub)->getBlockVirtualDirectorFlag)(this_ptr_00);
     if (((iVar10 != 0) && (this_ptr_00 != actor)) &&
        (fVar6 = (this_ptr_00->location).position.x - (actor->location).position.x,
@@ -172,14 +172,10 @@ LAB_0057523f:
                          (this_ptr_00,&CStack_c4);
       iVar10 = g_VDNearbyActorCount;
       if (g_VDNearbyActorBoundingBoxes + g_VDNearbyActorCount != pCVar8) {
-        g_VDNearbyActorBoundingBoxes[g_VDNearbyActorCount].min.x = (pCVar8->min).x;
-        g_VDNearbyActorBoundingBoxes[iVar10].min.y = (pCVar8->min).y;
-        g_VDNearbyActorBoundingBoxes[iVar10].min.z = (pCVar8->min).z;
+        g_VDNearbyActorBoundingBoxes[iVar10].min = pCVar8->min;
       }
       if (&g_VDNearbyActorBoundingBoxes[iVar10].max != &pCVar8->max) {
-        g_VDNearbyActorBoundingBoxes[iVar10].max.x = (pCVar8->max).x;
-        g_VDNearbyActorBoundingBoxes[iVar10].max.y = (pCVar8->max).y;
-        g_VDNearbyActorBoundingBoxes[iVar10].max.z = (pCVar8->max).z;
+        g_VDNearbyActorBoundingBoxes[iVar10].max = pCVar8->max;
       }
       g_VDNearbyActorCount = g_VDNearbyActorCount + 1;
     }

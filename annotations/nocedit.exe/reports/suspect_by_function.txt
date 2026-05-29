@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6056 (93.8%)
-With suspects: 398
-Total suspects: 2419
+Clean: 6073 (94.1%)
+With suspects: 381
+Total suspects: 2336
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -1327,89 +1327,6 @@ core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (4 suspects)
   Line 19 [missing_cave_copy]: CMatrix3x4f local_70;
 
 ====================================================================================================
-core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (3 suspects)
-  File: core/setdir.cpp
-====================================================================================================
-  Line 172 [pointer_cast]: this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_1c);
-  Line 184 [unrolled_memcpy]: g_VDNearbyActorBoundingBoxes[g_VDNearbyActorCount].min.x = (pCVar8->min).x;
-  Line 189 [unrolled_memcpy]: g_VDNearbyActorBoundingBoxes[iVar10].max.x = (pCVar8->max).x;
-
-====================================================================================================
-core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70 (8 suspects)
-  File: core/setdir.cpp
-====================================================================================================
-  Line 31 [pointer_cast]: *(int *)((int)g_VDCameraSortIndices + iVar5) = iVar3;
-  Line 42 [pointer_cast]: if (g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + local_28)] <
-  Line 43 [pointer_cast]: g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + iVar4)]) {
-  Line 44 [pointer_cast]: uVar1 = *(uint *)((int)g_VDCameraSortIndices + local_28);
-  Line 45 [pointer_cast]: *(uint *)((int)g_VDCameraSortIndices + local_28) =
-  Line 46 [pointer_cast]: *(uint *)((int)g_VDCameraSortIndices + iVar4);
-  Line 47 [pointer_cast]: *(uint *)((int)g_VDCameraSortIndices + iVar4) = uVar1;
-  Line 66 [pointer_cast]: iVar1 = *(int *)((int)g_VDCameraSortIndices + local_1c);
-
-====================================================================================================
-core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0 (2 suspects)
-  File: core/setdir.cpp
-====================================================================================================
-  Line 17 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar2) =
-  Line 18 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar2);
-
-====================================================================================================
-core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (7 suspects)
-  File: core/setdir.cpp
-====================================================================================================
-  Line 37 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
-  Line 40 [pointer_cast]: uVar3 = *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
-  Line 55 [pointer_cast]: *(SMRGLHeaderPrimitive **)((int)aiStack_4c + iVar2) = primitives;
-  Line 64 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2
-  Line 83 [pointer_cast]: if ((*(byte *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
-  Line 86 [pointer_cast]: if (0 < *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-  Line 104 [pointer_cast]: puVar2 = (uint *)((int)aiStack_4c + iVar8);
-
-====================================================================================================
-core_setdir.cpp_CZThumb_render_FUN_00574f20 (3 suspects)
-  File: core/setdir.cpp
-====================================================================================================
-  Line 26 [pointer_cast]: (*(int *)((int)this_ptr->zbuffer_data +
-  Line 31 [pointer_cast]: *(uint *)(*(int *)((int)g_ScreenBufferArray + iVar5 + 4) + iVar1) = uVar2 * 0x10101;
-  Line 42 [pointer_cast]: (*(int *)((int)this_ptr->zbuffer_data +
-
-====================================================================================================
-core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830 (2 suspects)
-  File: core/setdir.cpp
-====================================================================================================
-  Line 17 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar2) =
-  Line 18 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar2);
-
-====================================================================================================
-core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 (6 suspects)
-  File: core/setdir.cpp
-====================================================================================================
-  Line 13 [unrolled_memcpy]: (this_ptr->camera_position).x = camera_pos->x;
-  Line 18 [unrolled_memcpy]: (this_ptr->look_at_position).x = look_at_pos->x;
-  Line 49 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4) =
-  Line 50 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar4);
-  Line 71 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar4) =
-  Line 72 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4);
-
-====================================================================================================
-core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30 (2 suspects)
-  File: core/setdir.cpp
-====================================================================================================
-  Line 12 [pointer_cast]: *(void **)((int)g_ZBufferScanlineArray + iVar2) =
-  Line 13 [pointer_cast]: (void *)(this_ptr->width * iVar1 * 4 + (int)this_ptr->zbuffer_data);
-
-====================================================================================================
-core_setdir.cpp_testOBBIntersection_FUN_005763a0 (5 suspects)
-  File: core/setdir.cpp
-====================================================================================================
-  Line 39 [unrolled_memcpy]: local_c8.min.x = local_74.min.x;
-  Line 44 [unrolled_memcpy]: local_c8.max.x = (obb_b->extents).x;
-  Line 75 [unrolled_memcpy]: local_74.max.x = local_8c.x;
-  Line 85 [unrolled_memcpy]: local_74.max.x = pCVar2->x;
-  Line 96 [unrolled_memcpy]: pCVar6->x = local_74.max.x;
-
-====================================================================================================
 core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (1 suspect)
   File: core/setedit.cpp
 ====================================================================================================
@@ -1420,43 +1337,6 @@ core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (1 suspect)
   File: core/setedit.cpp
 ====================================================================================================
   Line 126 [unrolled_memcpy]: // 0057bb2e: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (8 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 75 [unrolled_strcpy]: do {
-  Line 85 [unrolled_strchr]: do {
-  Line 150 [pointer_cast]: *(uint *)((int)auStack_d80 + iVar21) = uVar17 | uVar13;
-  Line 152 [pointer_cast]: *(int *)((int)auStack_1180 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;
-  Line 186 [unrolled_memcpy]: g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;
-  Line 285 [pointer_cast]: piVar2 = (int *)((int)auStack_96c + iVar14);
-  Line 297 [pointer_cast]: if (*(int *)((int)pvStack_1c + 0x144) == 0) {
-  Line 325 [static_null_pointer]: puVar14 = (uint *)p_Stack_20[0x19b185]._handle;
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 (1 suspect)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 31 [static_null_pointer]: master->light_enabled_flag = 1;
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (13 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 202 [unrolled_strchr]: do {
-  Line 214 [unrolled_strchr]: do {
-  Line 220 [static_null_pointer]: *pcVar12 = '\0';
-  Line 246 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;
-  Line 265 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;
-  Line 377 [static_invalid_pointer_cast]: iVar6 = _fscanf(file_handle,"%f,%f,%f\n",(float *)(local_38 + iVar5 * 3),(float *)piVar16,(float *)piVar15);
-  Line 432 [shadow_pointer_walk]: pCVar8 = (CDemonSet *)&pCVar8->cameras[0xe].vdir_zone;
-  Line 479 [unrolled_memcpy]: (pCVar10->pos).x = local_2478.pos.x;
-  Line 484 [unrolled_memcpy]: (pCVar10->orient).x = local_2478.orient.x;
-  Line 488 [unrolled_memcpy]: pCVar10->fov = local_2478.fov;
-  Line 499 [unrolled_memcpy]: pCVar10->camera_light_bounds[0].x_min = local_2478.camera_light_bounds[0].x_min;
-  Line 540 [unrolled_memcpy]: pCVar10->move_filter = local_2478.move_filter;
-  Line 662 [shadow_pointer_walk]: pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (15 suspects)
@@ -1477,54 +1357,6 @@ core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (15 suspects)
   Line 532 [shadow_pointer_walk]: pCVar12 = (CDemonSet *)&pCVar12->cameras[0].enabled;
   Line 639 [unrolled_strlen]: do {
   Line 757 [unrolled_memcpy]: // 0057efb0: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0 (3 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 98 [shadow_pointer_walk]: pCVar4 = (C3DSLight *)pCVar4->name;
-  Line 163 [unrolled_strcpy]: do {
-  Line 175 [static_invalid_pointer_cast]: *(float *)(pcVar8 + 0x16f4) = *(float *)(pcVar8 + 0x16f8);
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (10 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 143 [unrolled_memcpy]: g_CDemonCameraInstance.base.position.f.x = slew.position.x;
-  Line 415 [unrolled_memcpy]: pSVar11->position.x = temp_slew.position.x;
-  Line 484 [unrolled_memcpy]: (pSVar11->position).x = slew.position.x;
-  Line 511 [unrolled_memcpy]: (pSVar11->position).x = (pSVar15->position).x;
-  Line 631 [shadow_pointer_walk]: pCVar5 = (CVector3f *)((int)(pCVar5 + 5) + 8);
-  Line 1297 [bit_int_float_compare]: if ((int)(local_3c->extents).x < 0x3f800000) {
-  Line 1358 [unrolled_memcpy]: (pSVar10->position).x = (pSVar14->position).x;
-  Line 1363 [unrolled_memcpy]: (pSVar10->extents).x = (pSVar14->extents).x;
-  Line 1367 [unrolled_memcpy]: (pSVar10->rotation_matrix).m[0].x = (pSVar14->rotation_matrix).m[0].x;
-  Line 1471 [shadow_pointer_walk]: local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);
-
-====================================================================================================
-core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (2 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 85 [pointer_cast]: *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar3) =
-  Line 137 [pointer_cast]: *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2) = 0xff00ff;
-
-====================================================================================================
-core_setedit.cpp_renderBackdropImage_FUN_0057ce80 (1 suspect)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 86 [pointer_cast]: puVar4 = *(uint **)((int)g_ScreenBufferArray + local_18);
-
-====================================================================================================
-core_setedit.cpp_renderColoredBox_FUN_005817d0 (7 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 45 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
-  Line 48 [pointer_cast]: *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar2) = 0x80000;
-  Line 49 [pointer_cast]: *(uint *)((int)&this_ptr->vertex_buffer_ptr->v + iVar2) = 0x80000;
-  Line 50 [pointer_cast]: *(int *)((int)&this_ptr->vertex_buffer_ptr->r + iVar2) = r << 8;
-  Line 51 [pointer_cast]: *(int *)((int)&this_ptr->vertex_buffer_ptr->g + iVar2) = g << 8;
-  Line 52 [pointer_cast]: *(int *)((int)&this_ptr->vertex_buffer_ptr->b + iVar2) = b << 8;
-  Line 54 [pointer_cast]: *(int *)((int)&this_ptr->vertex_buffer_ptr->a + iVar2) = local_14;
 
 ====================================================================================================
 core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80 (6 suspects)

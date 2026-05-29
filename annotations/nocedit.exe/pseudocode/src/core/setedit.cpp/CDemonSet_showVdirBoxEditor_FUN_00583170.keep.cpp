@@ -83,7 +83,6 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   int local_28;
   float local_24;
   CVector3f *local_20;
-  CMatrix3x3f *local_1c;
   int local_18;
   uint local_c0;
   uint local_54;
@@ -140,9 +139,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
       slew.position.y = local_1c0;
       slew.position.z = local_1bc;
     }
-    g_CDemonCameraInstance.base.position.f.x = slew.position.x;
-    g_CDemonCameraInstance.base.position.f.y = slew.position.y;
-    g_CDemonCameraInstance.base.position.f.z = slew.position.z;
+    g_CDemonCameraInstance.base.position.f = slew.position;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonCameraInstance.base.rotation_matrix,&slew.orientation.vec);
     g_CDemonCameraInstance.base.focal_length = 28.0;
@@ -412,9 +409,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
                   (&local_3c->rotation_matrix,&local_17c);
         pSVar11 = local_3c;
         core_slew_cpp_CSlew_processInput_FUN_005a20b0(&temp_slew);
-        pSVar11->position.x = temp_slew.position.x;
-        pSVar11->position.y = temp_slew.position.y;
-        pSVar11->position.z = temp_slew.position.z;
+        pSVar11->position = temp_slew.position;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&local_3c->rotation_matrix,&temp_slew.orientation.vec);
       }
@@ -449,7 +444,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
           (local_3c->extents).z = (local_3c->extents).z + local_48;
         }
         local_54 = 0x3f800000;
-        if ((int)(local_3c->extents).x < 0x3f800000) {
+        if ((local_3c->extents).x < 1.0) {
           (local_3c->extents).x = 1.0;
         }
         if ((local_3c->extents).y < 1.0) {
@@ -481,9 +476,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
       iVar12 = this_ptr->vdir_box_count;
       if (iVar12 < 0xfa) {
         pSVar11 = local_40 + iVar12;
-        (pSVar11->position).x = slew.position.x;
-        (pSVar11->position).y = slew.position.y;
-        (pSVar11->position).z = slew.position.z;
+        pSVar11->position = slew.position;
         local_bc.z = 0.0;
         local_bc.x = 0.0;
         local_bc.y = slew.orientation.vec.y;
@@ -507,27 +500,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         if ((-1 < local_18) && (local_18 < iVar12)) {
           pSVar11 = local_40 + iVar12;
           pSVar15 = local_40 + local_18;
-          if (pSVar11 != pSVar15) {
-            (pSVar11->position).x = (pSVar15->position).x;
-            (pSVar11->position).y = (pSVar15->position).y;
-            (pSVar11->position).z = (pSVar15->position).z;
-          }
-          if (&pSVar11->extents != &pSVar15->extents) {
-            (pSVar11->extents).x = (pSVar15->extents).x;
-            (pSVar11->extents).y = (pSVar15->extents).y;
-            (pSVar11->extents).z = (pSVar15->extents).z;
-          }
-          (pSVar11->rotation_matrix).m[0].x = (pSVar15->rotation_matrix).m[0].x;
-          (pSVar11->rotation_matrix).m[0].y = (pSVar15->rotation_matrix).m[0].y;
-          (pSVar11->rotation_matrix).m[0].z = (pSVar15->rotation_matrix).m[0].z;
-          (pSVar11->rotation_matrix).m[1].x = (pSVar15->rotation_matrix).m[1].x;
-          (pSVar11->rotation_matrix).m[1].y = (pSVar15->rotation_matrix).m[1].y;
-          (pSVar11->rotation_matrix).m[1].z = (pSVar15->rotation_matrix).m[1].z;
-          (pSVar11->rotation_matrix).m[2].x = (pSVar15->rotation_matrix).m[2].x;
-          (pSVar11->rotation_matrix).m[2].y = (pSVar15->rotation_matrix).m[2].y;
-          (pSVar11->rotation_matrix).m[2].z = (pSVar15->rotation_matrix).m[2].z;
-          pSVar11->dead = pSVar15->dead;
-          pSVar11->parent_index = pSVar15->parent_index;
+          *pSVar11 = *pSVar15;
           local_18 = this_ptr->vdir_box_count;
           pSVar11 = local_40 + local_18;
           this_ptr->vdir_box_count = local_18 + 1;
@@ -592,9 +565,7 @@ LAB_00583c6f:
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
     if (((local_68.dword & 1) != 0) && ((g_MouseButtonFlags.dword & 1) == 0)) {
-      local_camera_pos.x = g_CDemonCameraInstance.base.position.f.x;
-      local_camera_pos.y = g_CDemonCameraInstance.base.position.f.y;
-      local_camera_pos.z = g_CDemonCameraInstance.base.position.f.z;
+      local_camera_pos = g_CDemonCameraInstance.base.position.f;
       core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
                 (&g_CDemonCameraInstance,&local_d4,g_MouseX,g_MouseY);
       local_vec_e18.x = local_d4.x * FLOAT_00648e2d;
@@ -603,23 +574,21 @@ LAB_00583c6f:
       iVar12 = 0;
       local_38 = 1e+30;
       if (0 < this_ptr->vdir_box_count) {
-        local_1c = &local_40->rotation_matrix;
-        pCVar5 = &local_40->extents;
         do {
           local_vec_e0c.x = local_camera_pos.x - local_40[iVar12].position.x;
           local_vec_e0c.y = local_camera_pos.y - local_40[iVar12].position.y;
           local_vec_e0c.z = local_camera_pos.z - local_40[iVar12].position.z;
           core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                    (local_1c,&local_110,&local_vec_e0c);
+                    (&local_40[iVar12].rotation_matrix,&local_110,&local_vec_e0c);
           core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                    (local_1c,&local_98,&local_vec_e18);
-          local_11c = -pCVar5->x;
-          local_118 = -pCVar5->y;
-          local_114 = -pCVar5->z;
+                    (&local_40[iVar12].rotation_matrix,&local_98,&local_vec_e18);
+          local_11c = -local_40[iVar12].extents.x;
+          local_118 = -local_40[iVar12].extents.y;
+          local_114 = -local_40[iVar12].extents.z;
           local_bbox_at_df4.min.x = local_11c;
           local_bbox_at_df4.min.y = local_118;
           local_bbox_at_df4.min.z = local_114;
-          local_bbox_at_df4.max = *pCVar5;
+          local_bbox_at_df4.max = local_40[iVar12].extents;
           local_24 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
                                (&local_bbox_at_df4,&local_110,&local_98,
                                 (CVector3f *)0x0);
@@ -628,9 +597,7 @@ LAB_00583c6f:
             local_38 = local_24;
             local_18 = iVar12;
           }
-          pCVar5 = (CVector3f *)((int)(pCVar5 + 5) + 8);
           iVar12 = iVar12 + 1;
-          local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);
           local_14 = local_24;
         } while (iVar12 < this_ptr->vdir_box_count);
       }

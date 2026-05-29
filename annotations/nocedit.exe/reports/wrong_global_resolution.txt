@@ -37,8 +37,8 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 32 (these need manual review)
-  Raw .cpp files with issues: 38
+  .keep files with issues: 33 (these need manual review)
+  Raw .cpp files with issues: 37
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -290,6 +290,14 @@ core_set.cpp_CDemonSet_initScene_FUN_0056aa10  [.keep]  (1 suspicious globals)
 
   g_VisibleCoronaGlobeCount
     Used at lines: 67
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_setdir.cpp_CZThumb_render_FUN_00574f20  [.keep]  (1 suspicious globals)
+  File: core/setdir.cpp
+
+  g_ColorCubeLookup
+    Used at lines: 53
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -574,14 +582,6 @@ core_script.cpp_CScript_drawEditor_FUN_005645d0  [.cpp]  (1 suspicious globals)
 
   g_CursorBlinkTimer
     Used at lines: 37
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_setdir.cpp_CZThumb_render_FUN_00574f20  [.cpp]  (1 suspicious globals)
-  File: core/setdir.cpp
-
-  g_ColorCubeLookup
-    Used at lines: 54
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
