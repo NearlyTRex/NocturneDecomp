@@ -10,23 +10,14 @@
 void __cdecl engine_2d_c_drawStringHighlighted_FUN_004020e0(char *text,int x_pos,int y_pos)
 
 {
-  char cVar1;
   uint bVar2;
   int iVar3;
-  uint uVar4;
   int iVar5;
-  char *pcVar6;
-  
-  uVar4 = 0xffffffff;
-  pcVar6 = text;
-  do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar6 + 1;
-  } while (cVar1 != '\0');
+  int len;
+
+  len = (int)strlen(text);
   iVar5 = 0;
-  if (0 < (int)(~uVar4 - 1)) {
+  if (0 < len) {
     do {
       bVar2 = *text;
       if ((0x1f < bVar2) && (bVar2 < 0x100)) {
@@ -35,7 +26,7 @@ void __cdecl engine_2d_c_drawStringHighlighted_FUN_004020e0(char *text,int x_pos
       }
       iVar5 = iVar5 + 1;
       text = text + 1;
-    } while (iVar5 < (int)(~uVar4 - 1));
+    } while (iVar5 < len);
   }
   return;
 }

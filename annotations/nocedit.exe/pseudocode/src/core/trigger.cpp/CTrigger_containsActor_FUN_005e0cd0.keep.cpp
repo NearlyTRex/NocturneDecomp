@@ -46,9 +46,7 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_
       pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          (&this_ptr->base,aCStack_28,&CStack_40);
       if (&CStack_40 != pCVar5) {
-        CStack_40.x = pCVar5->x;
-        CStack_40.y = pCVar5->y;
-        CStack_40.z = pCVar5->z;
+        CStack_40 = *pCVar5;
       }
       if (this_ptr->shape == 0) {
         pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_64);

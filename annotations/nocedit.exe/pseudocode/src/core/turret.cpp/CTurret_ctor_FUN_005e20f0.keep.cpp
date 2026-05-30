@@ -40,9 +40,7 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)ADJ(this_ptr_00),&local_24,&local_18);
   if (&ADJ(this_ptr_00)->patrol_target != pCVar3) {
-    (ADJ(this_ptr_00)->patrol_target).x = pCVar3->x;
-    (ADJ(this_ptr_00)->patrol_target).y = pCVar3->y;
-    (ADJ(this_ptr_00)->patrol_target).z = pCVar3->z;
+    ADJ(this_ptr_00)->patrol_target = *pCVar3;
   }
   ADJ(this_ptr_00)->user = (CDemonActor *)0x0;
   ADJ(this_ptr_00)->fire_sound_timer = 0.0;

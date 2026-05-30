@@ -10,26 +10,15 @@
 void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools *this_ptr,char *text_data)
 
 {
-  char cVar1;
   BOOL BVar2;
   HGLOBAL hMem;
   char *pcVar3;
   uint uVar4;
-  byte bVar7;
-  
-  bVar7 = 0;
+
   if (text_data == (char *)0x0) {
     text_data = &s_EmptyChar_00623594;
   }
-  uVar4 = 0xffffffff;
-  pcVar3 = text_data;
-  do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    cVar1 = *pcVar3;
-    pcVar3 = pcVar3 + 1;
-  } while (cVar1 != '\0');
-  uVar4 = ~uVar4;
+  uVar4 = (uint)strlen(text_data) + 1;
   BVar2 = (*g_OpenClipboardFunc)(g_MainWindowHandle);
   if (BVar2 != 0) {
     hMem = (*g_GlobalAllocFunc)(0x2002,uVar4);

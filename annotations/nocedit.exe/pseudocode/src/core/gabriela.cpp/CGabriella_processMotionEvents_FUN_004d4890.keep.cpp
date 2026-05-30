@@ -117,9 +117,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
         pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                            ((CDemonActor *)this_ptr_02,&local_34,&local_64);
         if (&SStack_a0.impact_direction != pCVar5) {
-          SStack_a0.impact_direction.x = pCVar5->x;
-          SStack_a0.impact_direction.y = pCVar5->y;
-          SStack_a0.impact_direction.z = pCVar5->z;
+          SStack_a0.impact_direction = *pCVar5;
         }
         SStack_a0.attacker = (CDemonActor *)this_ptr;
         SStack_a0.wielder = (CDemonActor *)this_ptr;

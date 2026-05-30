@@ -17,7 +17,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0(CBo
   int iVar4;
   SBoneData *pSVar5;
   char *buffer;
-  CBoneStructure *pCVar6;
   CPickList local_484;
   char local_dc [200];
   
@@ -25,15 +24,13 @@ void __cdecl core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0(CBo
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_484);
   if (0 < this_ptr->bone_count) {
     pSVar5 = this_ptr->bones;
-    pCVar6 = this_ptr;
     do {
-      iVar1 = pCVar6->bones[0].parent_index;
+      iVar1 = pSVar5->parent_index;
       pcVar2 = "(no parent)";
       if (-1 < iVar1) {
         pcVar2 = this_ptr->bones[iVar1].name;
       }
       _sprintf(local_dc,"%2d. %s\t%d. %s",iVar3,pSVar5->name,iVar1,pcVar2);
-      pCVar6 = (CBoneStructure *)&pCVar6->bones[0].world_matrix.m[2].z;
       pSVar5 = pSVar5 + 1;
       iVar3 = iVar3 + 1;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_484.base,local_dc);
