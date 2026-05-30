@@ -2,11 +2,11 @@
 // Address: 006021f0
 // Address Range: [[006021f0, 00602260]]
 // Convention: __cdecl
-// Signature: HANDLE __cdecl crt_io_c__findfirst_FUN_006021f0(char *filespec,LPWIN32_FIND_DATAA find_data)
+// Signature: HANDLE __cdecl crt_io_c__findfirst_FUN_006021f0(char *filespec,_find_t *find_data)
 
 #include "nocturne.h"
 
-HANDLE __cdecl _findfirst(char *filespec,LPWIN32_FIND_DATAA find_data)
+HANDLE __cdecl _findfirst(char *filespec,_find_t *find_data)
 
 {
   HANDLE hFindFile;
@@ -25,7 +25,7 @@ HANDLE __cdecl _findfirst(char *filespec,LPWIN32_FIND_DATAA find_data)
       hFindFile = (HANDLE)0xffffffff;
     }
     else {
-      convertFileInfo(&_Stack_144,(_find_t *)find_data);
+      convertFileInfo(&_Stack_144,find_data);
     }
   }
   return hFindFile;

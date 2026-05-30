@@ -794,6 +794,25 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
                 countdown_delta
                 - max(0, cpp_loop_memcpy_count - keep_loop_memcpy_count))
 
+            # Also credit the `while ( true ) { ...; if (N == 0) break;
+            # N = N + -1; ... }` form. This is Watcom's REP MOVSD lowering with
+            # a pre-test countdown (the struct-copy `name`-field walk in
+            # CDemonSet_deleteLight / cloneLight), which the countdown-`for`
+            # regex above does not match. When a keep collapses it to a
+            # `*dst = *src;` struct assignment the asm still has the REP MOVSD,
+            # so without this the copy went uncredited and left an asm-anchored
+            # `unrolled_memcpy` suspect on an already-correct keep. The `[^{}]*?`
+            # gap keeps the match inside the loop body, so the do/while strlen
+            # idiom (`do { if (V==0) break; V=V+-1; ...} while`) can't match.
+            _WHILE_TRUE_COUNTDOWN_RE = re.compile(
+                r'while\s*\(\s*true\s*\)\s*\{[^{}]*?'
+                r'\bif\s*\(\s*(\w+)\s*==\s*0\s*\)\s*break\s*;'
+                r'\s*\1\s*=\s*\1\s*\+\s*-1\s*;')
+            added_memcpys += max(
+                0,
+                len(_WHILE_TRUE_COUNTDOWN_RE.findall(decompiled_code))
+                - len(_WHILE_TRUE_COUNTDOWN_RE.findall(keep_source)))
+
             if added_memcpys or added_memsets:
                 new_still = []
                 for s in still:

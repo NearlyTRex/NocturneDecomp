@@ -1016,6 +1016,12 @@ _UNROLLED_TERMINAL_RE = re.compile(
 _UNROLLED_DO_RE = re.compile(r"^\s*do\s*\{?\s*$")
 _UNROLLED_WHILE_RE = re.compile(
     r"^\s*\}\s*while\s*\(\s*\w+\s*!=\s*'\\0'\s*\)\s*;\s*$")
+# A loop-invariant capture (`tmp = ident;`) that Watcom sometimes hoists
+# between the byte store and the null-break inside an unrolled strcpy, e.g.
+# `pacVar6 = pacVar3;` (buildMasterTextureList sort) or `pcVar4 = local_12c;`
+# (CTextureList::load). LHS and RHS are both bare identifiers — NOT a byte
+# store (`*dst`/`dst[1]`), pointer advance (`p = p + 2`), or comparison.
+_UNROLLED_INTERLEAVED_ASSIGN_RE = re.compile(r"^\s*\w+\s*=\s*\w+\s*;\s*$")
 
 
 def identify_unrolled_strcpy_loops(decompiled_code):
@@ -1068,14 +1074,27 @@ def identify_unrolled_strcpy_loops(decompiled_code):
                 if not store_m:
                     continue
                 byte_var = store_m.group(1)
-        null_m = (_UNROLLED_NULL_BREAK_RE.match(lines[i + 1]) or
-                  _UNROLLED_NULL_RETURN_RE.match(lines[i + 1]) or
-                  _UNROLLED_NULL_BLOCK_RE.match(lines[i + 1]))
+        # The null-break normally sits immediately after the byte store, but
+        # Watcom sometimes hoists a loop-invariant capture (`tmp = ident;`)
+        # between them. Tolerate one such intervening simple assignment.
+        null_idx = i + 1
+        if (null_idx < n
+                and not _UNROLLED_NULL_BREAK_RE.match(lines[null_idx])
+                and not _UNROLLED_NULL_RETURN_RE.match(lines[null_idx])
+                and not _UNROLLED_NULL_BLOCK_RE.match(lines[null_idx])
+                and _UNROLLED_INTERLEAVED_ASSIGN_RE.match(lines[null_idx])):
+            null_idx = i + 2
+        if null_idx >= n:
+            continue
+        null_m = (_UNROLLED_NULL_BREAK_RE.match(lines[null_idx]) or
+                  _UNROLLED_NULL_RETURN_RE.match(lines[null_idx]) or
+                  _UNROLLED_NULL_BLOCK_RE.match(lines[null_idx]))
         if not null_m or byte_var != null_m.group(1):
             continue
         # For the block form, require a terminal statement inside the block.
-        if _UNROLLED_NULL_BLOCK_RE.match(lines[i + 1]):
-            if i + 2 >= n or not _UNROLLED_TERMINAL_RE.match(lines[i + 2]):
+        if _UNROLLED_NULL_BLOCK_RE.match(lines[null_idx]):
+            if null_idx + 1 >= n or not _UNROLLED_TERMINAL_RE.match(
+                    lines[null_idx + 1]):
                 continue
         # Look upward for the `do {` header
         loop_start = None
@@ -3150,6 +3169,23 @@ _SHADOW_PTR_WALK_ARRAY_DECAY_PLUS_RE = re.compile(
     r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)+
     r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
+# Arrow-indexed array-decay-plus-const variant:
+#   `IDENT = (T *)(IDENT->FIELD[N].SUBFIELD + CONST);`
+# Same antipattern as `_SHADOW_PTR_WALK_ARRAY_DECAY_PLUS_RE` but the arrow
+# deref is NOT parenthesized and the leading field is itself array-indexed
+# (`->FIELD[N]`), then a sibling subfield array decays to a pointer and a
+# small constant is added — the sum equals the outer array stride. Seen in
+# CTextureList::load walking `texture_entries[]` via
+# `local_24 = (CTextureList *)(local_24->texture_entries[0].texture_name + 0xc);`
+# (offsetof(texture_entries) + 0 + offsetof(texture_name) + 0xc == sizeof(entry)
+# = 0x18). Self-update (`\1`) required.
+_SHADOW_PTR_WALK_ARROW_INDEX_DECAY_PLUS_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'\(\s*\1\s*->\s*\w+\s*\[\s*' + _SPW_INT + r'\s*\]'  # ( IDENT->FIELD[N]
+    r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)*
+    r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
+)
 # Int-address-plus-const variant:
 #   `IDENT = (T *)((int)&(IDENT->FIELD).SUBFIELD + CONST);`
 # Watcom advances the shadow pointer by taking the address of a sibling
@@ -3372,6 +3408,26 @@ def identify_shadow_pointer_walk(decompiled_code):
                 'severity': 'moderate',
             })
             continue
+        m = _SHADOW_PTR_WALK_ARROW_INDEX_DECAY_PLUS_RE.match(line)
+        if m:
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)(%s->FIELD[N].SUBFIELD + CONST)' % (
+                    m.group(1), m.group(1)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates via '
+                    'pointer arithmetic on an array-indexed field reached by '
+                    'an (unparenthesized) arrow deref; the inner sibling array '
+                    'decays to a pointer and `+ CONST` adds `CONST * '
+                    'sizeof(element)` bytes, matching the outer array stride. '
+                    'Replace `%s->some_field[0]` reads with direct indexing on '
+                    'the original pointer; drop the shadow init and '
+                    'self-update.' % (m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
+            continue
         m = _SHADOW_PTR_WALK_INT_ADDR_CONST_RE.match(line)
         if m:
             suspects.append({
@@ -3584,6 +3640,16 @@ _UNROLLED_STRLEN_LOAD_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\*\s*(\w+)\s*;\s*$")
 _UNROLLED_STRLEN_STEP_RE = re.compile(
     r"^\s*\w+\s*=\s*\w+\s*\+\s*\(\s*uint\s*\)\s*\w+\s*\*\s*-?\d+\s*\+\s*\d+\s*;\s*$")
+# Scan-for-null variant: instead of loading the byte into a temp and testing
+# `cVar != '\0'`, the loop keeps a "current position" pointer and tests the
+# byte at it directly: `} while (*pVar != '\0');`. The walk advance varies
+# (bare `(uint)bool` step, casted `(T *)((int)p + ...)`, or field-decay
+# `(T *)(p->name + 1)`), so rather than match the step shape we just require
+# the body to reassign the tested pointer. Same SCASB lowering; length is
+# still recovered downstream as `~uVar - 1`. Seen in trimActorName,
+# CPodFile::mountFromFile, the menu builders, etc.
+_UNROLLED_STRLEN_WHILE_DEREF_RE = re.compile(
+    r"^\s*\}\s*while\s*\(\s*\*\s*(\w+)\s*!=\s*'\\0'\s*\)\s*;\s*$")
 
 
 def identify_unrolled_strlen_loops(decompiled_code):
@@ -3638,28 +3704,48 @@ def identify_unrolled_strlen_loops(decompiled_code):
                 break
         if loop_start is None:
             continue
-        # Walk downward for `} while (cVar != '\0');` closer.
+        # Walk downward for the `} while (...)` closer — either the byte-temp
+        # form `} while (cVar != '\0');` or the scan-for-null form
+        # `} while (*pVar != '\0');`.
         loop_end = None
+        deref_ptr = None
         for fwd in range(2, 14):
             if i + fwd >= n:
                 break
             if _UNROLLED_WHILE_RE.match(lines[i + fwd]):
                 loop_end = i + fwd
                 break
+            dm = _UNROLLED_STRLEN_WHILE_DEREF_RE.match(lines[i + fwd])
+            if dm:
+                loop_end = i + fwd
+                deref_ptr = dm.group(1)
+                break
         if loop_end is None:
             continue
-        # Body must contain both the byte load and the direction-stepped
-        # pointer walk. Order varies (load may come before or after step,
-        # and the decompile sometimes inserts no-op `p = p;` lines).
-        has_load = False
-        has_step = False
-        for idx in range(loop_start + 1, loop_end):
-            if _UNROLLED_STRLEN_LOAD_RE.match(lines[idx]):
-                has_load = True
-            if _UNROLLED_STRLEN_STEP_RE.match(lines[idx]):
-                has_step = True
-        if not (has_load and has_step):
-            continue
+        if deref_ptr is not None:
+            # Scan-for-null form: require the body to reassign the pointer
+            # whose byte the `while (*pVar ...)` tests — that reassignment is
+            # the per-iteration walk advance. The counter anchor above
+            # (`if (v==0) break; v=v-1;`) is already SCASB-specific, so this
+            # one extra tie is enough without matching the (varied) step shape.
+            ptr_assign = re.compile(
+                r'^\s*' + re.escape(deref_ptr) + r'\s*=\s*\S.*;\s*$')
+            if not any(ptr_assign.match(lines[idx])
+                       for idx in range(loop_start + 1, loop_end)):
+                continue
+        else:
+            # Body must contain both the byte load and the direction-stepped
+            # pointer walk. Order varies (load may come before or after step,
+            # and the decompile sometimes inserts no-op `p = p;` lines).
+            has_load = False
+            has_step = False
+            for idx in range(loop_start + 1, loop_end):
+                if _UNROLLED_STRLEN_LOAD_RE.match(lines[idx]):
+                    has_load = True
+                if _UNROLLED_STRLEN_STEP_RE.match(lines[idx]):
+                    has_step = True
+            if not (has_load and has_step):
+                continue
         suspects.append({
             'line': loop_start + 1,
             'type': 'unrolled_strlen',

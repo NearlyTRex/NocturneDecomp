@@ -2,11 +2,11 @@
 // Address: 00602300
 // Address Range: [[00602300, 00602377]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_io_c__findnext_FUN_00602300(HANDLE find_handle,LPWIN32_FIND_DATAA find_data)
+// Signature: int __cdecl crt_io_c__findnext_FUN_00602300(HANDLE find_handle,_find_t *find_data)
 
 #include "nocturne.h"
 
-int __cdecl _findnext(HANDLE find_handle,LPWIN32_FIND_DATAA find_data)
+int __cdecl _findnext(HANDLE find_handle,_find_t *find_data)
 
 {
   BOOL BVar1;
@@ -24,7 +24,7 @@ int __cdecl _findnext(HANDLE find_handle,LPWIN32_FIND_DATAA find_data)
       convertWindowsErrorToErrno(2);
       return -1;
     }
-    convertFileInfo(&_Stack_144,(_find_t *)find_data);
+    convertFileInfo(&_Stack_144,find_data);
     iVar2 = 0;
   }
   return iVar2;

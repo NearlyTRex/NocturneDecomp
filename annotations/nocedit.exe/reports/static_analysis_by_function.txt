@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 119
-  Total diagnostics: 339
+  Functions with findings: 117
+  Total diagnostics: 334
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 119, raw .cpp files: 0
+  .keep.cpp files: 117, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -354,14 +354,6 @@ core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20  [.keep] [Cppc
   Line   52: [nullPointer] Possible null pointer dereference: actor
 
 ----------------------------------------------------------------------------------------------------
-core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0  [.keep] [Cppcheck (quick)]
-  File: core/setedit.cpp  (3 diagnostics)
-
-  Line  237: [selfAssignment] Redundant assignment of 'pbVar16' to itself.
-  Line  242: [selfAssignment] Redundant assignment of 'pbVar16' to itself.
-  Line  371: [selfAssignment] Redundant assignment of 'pCVar18' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0  [.keep] [Cppcheck (quick)]
   File: core/skeledit.cpp  (3 diagnostics)
 
@@ -553,13 +545,6 @@ core_keyactor.cpp_CKeyActor_process_FUN_00501710  [.keep] [Cppcheck (quick)]
 
   Line   27: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_menu.cpp_configureGraphicsOptions_FUN_00510c80  [.keep] [Cppcheck (quick)]
-  File: core/menu.cpp  (2 diagnostics)
-
-  Line  319: [selfAssignment] Redundant assignment of 'pacVar11' to itself.
-  Line  324: [selfAssignment] Redundant assignment of 'pacVar11' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0  [.keep] [Cppcheck (quick)]

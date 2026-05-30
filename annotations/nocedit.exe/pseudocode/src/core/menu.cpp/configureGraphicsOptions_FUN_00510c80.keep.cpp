@@ -10,7 +10,6 @@
 void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
 
 {
-  char cVar2;
   uint uVar3;
   CGame *pCVar4;
   int iVar4;
@@ -19,25 +18,15 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   int iVar7;
   char (*pacVar6) [256];
   uint uVar7;
-  char *pcVar8;
-  char *pcVar9;
-  char *pcVar10;
-  char *pcVar11;
-  char (*pacVar11) [256];
-  char (*pacVar12) [256];
-  char (*pacVar13) [256];
   bool bVar12;
-  byte bVar13;
   char *pcVar14;
   char local_140 [256];
   char local_40 [32];
   int local_20;
   int local_1c [3];
-  char cVar1;
   CGame *pCVar2;
   int iVar3;
 
-  bVar13 = 0;
   local_20 = 0;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   pacVar6 = g_GraphicsMenuTextBuffers;
@@ -61,7 +50,6 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   local_1c[0] = 0x10000000;
 #endif
   do {
-    pcVar9 = local_140;
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
@@ -75,17 +63,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
         iVar5 = _stricmp(g_RendererDllPath,"tri3dfx.dll");
         iVar7 = g_GraphicsCardCount;
         if (iVar5 != 0) {
-          pcVar8 = "tri3dfx.dll";
-          pcVar10 = g_RendererDllPath;
-          do {
-            cVar1 = *pcVar8;
-            *pcVar10 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar2 = pcVar8[1];
-            pcVar8 = pcVar8 + 2;
-            pcVar10[1] = cVar2;
-            pcVar10 = pcVar10 + 2;
-          } while (cVar2 != '\0');
+          strcpy(g_RendererDllPath,"tri3dfx.dll");
           wincore_windll_cpp_kill_FUN_005b71e0();
           wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
           iVar7 = g_UseDirect3D;
@@ -103,17 +81,7 @@ LAB_00510e1f:
         iVar6 = _stricmp(g_RendererDllPath,"tri3dfx.dll");
         iVar7 = g_GraphicsCardCount;
         if (iVar6 == 0) {
-          pcVar14 = "tridx6.dll";
-          pcVar11 = g_RendererDllPath;
-          do {
-            cVar2 = *pcVar14;
-            *pcVar11 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar14[1];
-            pcVar14 = pcVar14 + 2;
-            pcVar11[1] = cVar2;
-            pcVar11 = pcVar11 + 2;
-          } while (cVar2 != '\0');
+          strcpy(g_RendererDllPath,"tridx6.dll");
           wincore_windll_cpp_kill_FUN_005b71e0();
           wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
           if (g_UseDirect3D != 0) goto LAB_00510e1f;
@@ -247,92 +215,15 @@ LAB_00510f71:
     }
     else {
       pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("3D Card : ");
-      pcVar11 = g_GraphicsMenuTextBuffers[4];
-      do {
-        cVar2 = *pcVar14;
-        *pcVar11 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar14[1];
-        pcVar14 = pcVar14 + 2;
-        pcVar11[1] = cVar2;
-        pcVar11 = pcVar11 + 2;
-      } while (cVar2 != '\0');
-      pcVar14 = g_GraphicsCardNames[g_CurrentGraphicsBoard];
-      iVar7 = -1;
-      pacVar13 = g_GraphicsMenuTextBuffers + 4;
-      do {
-        pacVar12 = pacVar13;
-        if (iVar7 == 0) break;
-        iVar7 = iVar7 + -1;
-        pacVar12 = (char (*) [256])((int)pacVar13 + (uint)bVar13 * -2 + 1);
-        pcVar11 = *pacVar13;
-        pacVar13 = pacVar12;
-      } while (*pcVar11 != '\0');
-      pcVar11 = pacVar12[-1] + 0xff;
-      do {
-        cVar2 = *pcVar14;
-        *pcVar11 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar14[1];
-        pcVar14 = pcVar14 + 2;
-        pcVar11[1] = cVar2;
-        pcVar11 = pcVar11 + 2;
-      } while (cVar2 != '\0');
+      strcpy(g_GraphicsMenuTextBuffers[4],pcVar14);
+      strcat(g_GraphicsMenuTextBuffers[4],g_GraphicsCardNames[g_CurrentGraphicsBoard]);
       _sprintf(local_40," (%d)",g_CurrentGraphicsBoard);
-      pcVar14 = local_40;
-      iVar7 = -1;
-      pacVar13 = g_GraphicsMenuTextBuffers + 4;
-      do {
-        pacVar12 = pacVar13;
-        if (iVar7 == 0) break;
-        iVar7 = iVar7 + -1;
-        pacVar12 = (char (*) [256])((int)pacVar13 + (uint)bVar13 * -2 + 1);
-        pcVar11 = *pacVar13;
-        pacVar13 = pacVar12;
-      } while (*pcVar11 != '\0');
-      pcVar11 = pacVar12[-1] + 0xff;
-      do {
-        cVar2 = *pcVar14;
-        *pcVar11 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar14[1];
-        pcVar14 = pcVar14 + 2;
-        pcVar11[1] = cVar2;
-        pcVar11 = pcVar11 + 2;
-      } while (cVar2 != '\0');
+      strcat(g_GraphicsMenuTextBuffers[4],local_40);
     }
     pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Bits per pixel : ");
-    pcVar11 = g_GraphicsMenuTextBuffers[5];
-    do {
-      cVar2 = *pcVar14;
-      *pcVar11 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar14[1];
-      pcVar14 = pcVar14 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
-    } while (cVar2 != '\0');
+    strcpy(g_GraphicsMenuTextBuffers[5],pcVar14);
     _sprintf(local_140,"%d",g_CGamePtr->game_bpp);
-    iVar7 = -1;
-    pacVar11 = g_GraphicsMenuTextBuffers + 5;
-    do {
-      pacVar11 = pacVar11;
-      if (iVar7 == 0) break;
-      iVar7 = iVar7 + -1;
-      pacVar11 = (char (*) [256])((int)pacVar11 + (uint)bVar13 * -2 + 1);
-      pcVar14 = *pacVar11;
-      pacVar11 = pacVar11;
-    } while (*pcVar14 != '\0');
-    pcVar14 = pacVar11[-1] + 0xff;
-    do {
-      cVar2 = *pcVar9;
-      *pcVar14 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      pcVar14[1] = cVar2;
-      pcVar14 = pcVar14 + 2;
-    } while (cVar2 != '\0');
+    strcat(g_GraphicsMenuTextBuffers[5],local_140);
     pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Monitor calibration");
     _sprintf(g_GraphicsMenuTextBuffers[6],pcVar14);
     if (g_CGamePtr->subtitle_mode == 0) {
@@ -342,42 +233,15 @@ LAB_00510f71:
       pcVar14 = "Subtitles : On";
     }
     pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar14);
-    pcVar11 = g_GraphicsMenuTextBuffers[7];
-    do {
-      cVar2 = *pcVar14;
-      *pcVar11 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar14[1];
-      pcVar14 = pcVar14 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
-    } while (cVar2 != '\0');
+    strcpy(g_GraphicsMenuTextBuffers[7],pcVar14);
     if (g_CGamePtr->quimby_flag == 0) {
       if (g_CGamePtr->nudity_flag == 0) {
         pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Rating: Teen");
-        pcVar11 = g_GraphicsMenuTextBuffers[8];
-        do {
-          cVar2 = *pcVar14;
-          *pcVar11 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar14[1];
-          pcVar14 = pcVar14 + 2;
-          pcVar11[1] = cVar2;
-          pcVar11 = pcVar11 + 2;
-        } while (cVar2 != '\0');
+        strcpy(g_GraphicsMenuTextBuffers[8],pcVar14);
       }
       else {
         pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Rating: Mature");
-        pcVar11 = g_GraphicsMenuTextBuffers[8];
-        do {
-          cVar2 = *pcVar14;
-          *pcVar11 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar14[1];
-          pcVar14 = pcVar14 + 2;
-          pcVar11[1] = cVar2;
-          pcVar11 = pcVar11 + 2;
-        } while (cVar2 != '\0');
+        strcpy(g_GraphicsMenuTextBuffers[8],pcVar14);
       }
     }
     iVar7 = 9;
@@ -472,10 +336,10 @@ LAB_005114dd:
           iVar6 = g_CurrentGraphicsBoard;
           iVar3 = g_GraphicsCardCount;
         }
-        else if (((local_1c[0] < 0xb71b01) || (g_CGamePtr->game_pixy != 0x1e0)) || (!bVar12)) {
+        else if (((local_1c[0] < 12000001) || (g_CGamePtr->game_pixy != 0x1e0)) || (!bVar12)) {
           if (((12000000 < local_1c[0]) && (g_CGamePtr->game_pixy == 600)) && (bVar12))
           goto LAB_005114a9;
-          if (((local_1c[0] < 0x16e3601) || (g_CGamePtr->game_pixy != 0x300)) || (!bVar12)) {
+          if (((local_1c[0] < 24000001) || (g_CGamePtr->game_pixy != 0x300)) || (!bVar12)) {
             g_CGamePtr->game_pixx = 0x140;
             pCVar4->game_pixy = 0xf0;
             iVar6 = g_CurrentGraphicsBoard;
@@ -538,16 +402,7 @@ LAB_0051164c:
         if (iVar7 == 0) {
           pcVar14 = "tridx6.dll";
 LAB_005116c3:
-          pcVar11 = g_RendererDllPath;
-          do {
-            cVar2 = *pcVar14;
-            *pcVar11 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar14[1];
-            pcVar14 = pcVar14 + 2;
-            pcVar11[1] = cVar2;
-            pcVar11 = pcVar11 + 2;
-          } while (cVar2 != '\0');
+          strcpy(g_RendererDllPath,pcVar14);
         }
         else {
           iVar7 = _stricmp(g_RendererDllPath,"tridx6.dll");

@@ -11,12 +11,9 @@ void __cdecl core_texlist_cpp_CTextureList_save_FUN_005dc0d0(CTextureList *this_
 
 {
   _FILE *file;
-  CTextureList *pCVar3;
   char *pcVar2;
-  char *pcVar3;
   int iVar6;
   char local_114 [256];
-  int *piVar1;
 
   strcpy(local_114,filename);
   pcVar2 = strchr(local_114,'.');
@@ -35,14 +32,10 @@ void __cdecl core_texlist_cpp_CTextureList_save_FUN_005dc0d0(CTextureList *this_
   iVar6 = 0;
   _fprintf(file,"%d\n",this_ptr->texture_count);
   if (0 < this_ptr->texture_count) {
-    pCVar3 = this_ptr;
-    pcVar3 = this_ptr->texture_entries[0].texture_name;
     do {
-      piVar1 = pCVar3->texture_values;
-      pCVar3 = (CTextureList *)pCVar3->texture_entries;
+      _fprintf(file,"%s,%d\n",this_ptr->texture_entries[iVar6].texture_name,
+               this_ptr->texture_values[iVar6]);
       iVar6 = iVar6 + 1;
-      _fprintf(file,"%s,%d\n",pcVar3,*piVar1);
-      pcVar3 = pcVar3 + 0x18;
     } while (iVar6 < this_ptr->texture_count);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\texlist.cpp",0xc3);

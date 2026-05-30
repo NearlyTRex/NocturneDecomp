@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 146,
+    "complexity_score": 166,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 96,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
       "unrolled_strchr",
       "unrolled_strcpy"
@@ -279,7 +279,23 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 19,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 46,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 61,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

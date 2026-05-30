@@ -21,7 +21,7 @@ void __watcallStack ::tempnam(char *buffer,int file_handle);
 
 // Original: crt_io.c__findfirst_FUN_006021f0
 // Address: 006021f0
-HANDLE __cdecl ::findfirst(char *filespec,LPWIN32_FIND_DATAA find_data);
+HANDLE __cdecl ::findfirst(char *filespec,_find_t *find_data);
 
 // Original: crt_io.c_convertFileInfo_FUN_00602264
 // Address: 00602264
@@ -29,7 +29,7 @@ void __watcallStack convertFileInfo(LPWIN32_FIND_DATAA win32_data,_find_t *dos_i
 
 // Original: crt_io.c__findnext_FUN_00602300
 // Address: 00602300
-int __cdecl ::findnext(HANDLE find_handle,LPWIN32_FIND_DATAA find_data);
+int __cdecl ::findnext(HANDLE find_handle,_find_t *find_data);
 
 // Original: crt_io.c__findclose_FUN_00602380
 // Address: 00602380

@@ -102,9 +102,9 @@ double __crtmath crt_math_c_modf_FUN_00602102(double value,double *integer_part)
 int __watcallStack crt_stdlib_c_system_FUN_00602130(char *command);
 void __cdecl crt_stdio_c_fprintf_FUN_006021c0(_FILE *stream,char *format,...) __attribute__((format(printf, 2, 3)));
 void * __cdecl shape_memdbg_cpp_malloc_FUN_006021da(SIZE_T size);
-HANDLE __cdecl crt_io_c__findfirst_FUN_006021f0(char *filespec,LPWIN32_FIND_DATAA find_data);
+HANDLE __cdecl crt_io_c__findfirst_FUN_006021f0(char *filespec,_find_t *find_data);
 void __watcallStack crt_io_c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data,_find_t *dos_info);
-int __cdecl crt_io_c__findnext_FUN_00602300(HANDLE find_handle,LPWIN32_FIND_DATAA find_data);
+int __cdecl crt_io_c__findnext_FUN_00602300(HANDLE find_handle,_find_t *find_data);
 int __cdecl crt_io_c__findclose_FUN_00602380(HANDLE find_handle);
 void __watcallRegister entry(void);
 ThreadData * __cdecl crt_thread_c_GetTLS_FUN_0060242c(void);

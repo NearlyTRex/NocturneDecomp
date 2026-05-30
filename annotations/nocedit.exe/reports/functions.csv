@@ -447,7 +447,7 @@ crt_time.c_gmtime_r_FUN_00607690,00607690,crt/time.c,47,10,unnamed_param,152
 crt_time.c__localtime_FUN_00600288,00600288,crt/time.c,8,0,,8
 crt_time.c_parse_dst_rule_FUN_00607464,00607464,crt/time.c,51,0,,51
 crt_time.c_is_leap_year_FUN_00607820,00607820,crt/time.c,12,0,,12
-crt_time.c__strftime_FUN_006002d4,006002d4,crt/time.c,238,3,unrolled_memcpy,273
+crt_time.c__strftime_FUN_006002d4,006002d4,crt/time.c,238,4,unrolled_memcpy|unrolled_strlen,288
 crt_time.c_localtime_r_FUN_00600230,00600230,crt/time.c,13,0,,13
 crt_time.c_determine_dst_status_FUN_006079b4,006079b4,crt/time.c,125,5,pointer_cast|suspicious_cast,185
 crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0,0060c1e0,crt/time.c,14,0,,14
@@ -1298,7 +1298,7 @@ engine_fileio.cpp_CFileManager_searchMountedPods_FUN_004bcb70,004bcb70,engine/fi
 engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70,004b2d70,engine/fileio.cpp,23,0,,23
 engine_fileio.cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0,004b7ac0,engine/fileio.cpp,57,1,pointer_cast,72
 engine_fileio.cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0,004ba4f0,engine/fileio.cpp,49,0,,49
-engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00,004baf00,engine/fileio.cpp,634,13,negative_offset|pointer_cast|unrolled_strcat|unrolled_strcpy|unrolled_strlen|warning_unreachable,794
+engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00,004baf00,engine/fileio.cpp,634,14,negative_offset|pointer_cast|unrolled_strcat|unrolled_strcpy|unrolled_strlen|warning_unreachable,804
 engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50,004b3f50,engine/fileio.cpp,91,2,unrolled_strcpy,116
 engine_fileio.cpp_CFileManager_extractTexture_FUN_004b53e0,004b53e0,engine/fileio.cpp,56,0,,56
 engine_fileio.cpp_CFileManager_findPodInList_FUN_004ba6c0,004ba6c0,engine/fileio.cpp,21,0,,21
@@ -1329,7 +1329,7 @@ engine_fileio.cpp_parseTimestampRecord_FUN_004b2270,004b2270,engine/fileio.cpp,4
 engine_fileio.cpp_writeArtFileEntries_FUN_004bc9f0,004bc9f0,engine/fileio.cpp,9,0,,9
 engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860,004b2860,engine/fileio.cpp,10,0,,10
 engine_fileio.cpp_logOnAsVersionControlUserThunk_FUN_004bcea0,004bcea0,engine/fileio.cpp,6,0,,6
-engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220,004b4220,engine/fileio.cpp,484,11,negative_offset|pointer_cast|unrolled_strcat|unrolled_strcpy|unrolled_strlen|warning_unreachable,624
+engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220,004b4220,engine/fileio.cpp,484,12,negative_offset|pointer_cast|unrolled_strcat|unrolled_strcpy|unrolled_strlen|warning_unreachable,634
 engine_fileio.cpp_safeCloseFile_FUN_004b1db0,004b1db0,engine/fileio.cpp,9,0,,9
 engine_fileio.cpp_CFileManager_setVersionControlCredentials_FUN_004bc5d0,004bc5d0,engine/fileio.cpp,38,3,unrolled_strcpy,73
 engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0,004b54e0,engine/fileio.cpp,58,1,pointer_cast,73
@@ -1357,7 +1357,7 @@ engine_fileio.cpp_trimWhitespace_FUN_004b1d40,004b1d40,engine/fileio.cpp,30,0,,3
 engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030,004b5030,engine/fileio.cpp,100,0,,100
 engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0,004b35a0,engine/fileio.cpp,134,0,,134
 engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0,004bccf0,engine/fileio.cpp,39,0,,39
-engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50,004b5a50,engine/fileio.cpp,643,37,pointer_cast|unrolled_memcpy|unrolled_strcpy,1028
+engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50,004b5a50,engine/fileio.cpp,643,39,pointer_cast|unrolled_memcpy|unrolled_strcpy|unrolled_strlen,1053
 engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920,004b3920,engine/fileio.cpp,244,2,unrolled_strcpy,269
 engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190,004bd190,engine/fileio.cpp,223,10,pointer_cast|unrolled_memcpy|unrolled_strcpy,338
 engine_dosio.cpp_changeFileExtension_FUN_00482050,00482050,engine/dosio.cpp,9,0,,9
@@ -2609,7 +2609,7 @@ core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0,005800d0
 core_setedit.cpp_loadGroundTypes_FUN_00578420,00578420,core/setedit.cpp,91,0,,91
 core_setedit.cpp_blitThumbnailToScreen_FUN_00577430,00577430,core/setedit.cpp,98,0,,98
 core_setedit.cpp_blitThumbnailStripAndHitTest_FUN_00577730,00577730,core/setedit.cpp,108,0,,108
-core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910,0057b910,core/setedit.cpp,127,1,unrolled_memcpy,142
+core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910,0057b910,core/setedit.cpp,127,0,,127
 core_setedit.cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550,0057c550,core/setedit.cpp,23,0,,23
 core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940,00584940,core/setedit.cpp,184,0,,184
 core_setedit.cpp_loadCameraThumbnail_FUN_005769a0,005769a0,core/setedit.cpp,140,0,,140
@@ -2621,7 +2621,7 @@ core_setedit.cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0,0057a0c0,core/set
 core_setedit.cpp_CDemonSet_writeIni_FUN_00584920,00584920,core/setedit.cpp,6,0,,6
 core_setedit.cpp_showRoomEditorHelp_FUN_00581590,00581590,core/setedit.cpp,25,0,,25
 core_setedit.cpp_blitThumbnailToScreen32_FUN_00577330,00577330,core/setedit.cpp,39,0,,39
-core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0,0057e7c0,core/setedit.cpp,702,15,pointer_cast|shadow_pointer_walk|unrolled_memcpy|unrolled_strlen,872
+core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0,0057e7c0,core/setedit.cpp,702,0,,702
 core_setedit.cpp_drawCameraFrustum_FUN_00582930,00582930,core/setedit.cpp,917,0,,917
 core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50,0057ae50,core/setedit.cpp,164,0,,164
 core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320,00581320,core/setedit.cpp,44,0,,44
@@ -2653,7 +2653,7 @@ core_setedit.cpp_pickRoomSize_FUN_00581450,00581450,core/setedit.cpp,20,0,,20
 core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00,0057fd00,core/setedit.cpp,102,0,,102
 core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0,00577af0,core/setedit.cpp,211,0,,211
 core_setedit.cpp_findGroundTextureIndex_FUN_005781a0,005781a0,core/setedit.cpp,21,0,,21
-core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600,0057b600,core/setedit.cpp,136,1,unrolled_memcpy,151
+core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600,0057b600,core/setedit.cpp,136,0,,136
 core_script.cpp_CScript_initEditorLayout_FUN_00566660,00566660,core/script.cpp,47,0,,47
 core_script.cpp_getActor_FUN_005594e0,005594e0,core/script.cpp,69,0,,69
 core_script.cpp_CScript_findLabelIndex_FUN_00560160,00560160,core/script.cpp,26,0,,26
@@ -2666,7 +2666,7 @@ core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0,00559ac0,core/script.cpp
 core_script.cpp_trimLine_FUN_005592c0,005592c0,core/script.cpp,41,0,,41
 core_script.cpp_CScript_processEditorInput_FUN_00565130,00565130,core/script.cpp,348,0,,348
 core_script.cpp_CScript_process_FUN_00559960,00559960,core/script.cpp,57,0,,57
-core_script.cpp_CCmdParse_getParamTextLength_FUN_005626d0,005626d0,core/script.cpp,61,0,,61
+core_script.cpp_CCmdParse_getParamTextLength_FUN_005626d0,005626d0,core/script.cpp,61,1,unrolled_strlen,76
 core_script.cpp_CScript_collectLabels_FUN_00566fa0,00566fa0,core/script.cpp,23,0,,23
 core_script.cpp_CScript_insertText_FUN_00566390,00566390,core/script.cpp,67,0,,67
 core_script.cpp_CScript_dbLoad_FUN_005603c0,005603c0,core/script.cpp,123,0,,123
@@ -2677,7 +2677,7 @@ core_script.cpp_CScript_extractCrossReferences_FUN_005671a0,005671a0,core/script
 core_script.cpp_CScript_parseCommand_FUN_00567080,00567080,core/script.cpp,65,0,,65
 core_script.cpp_CScript_removeEventXRef_FUN_005676e0,005676e0,core/script.cpp,15,0,,15
 core_script.cpp_clearSelections_FUN_005644e0,005644e0,core/script.cpp,18,0,,18
-core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760,00562760,core/script.cpp,61,0,,61
+core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760,00562760,core/script.cpp,61,1,unrolled_strlen,76
 core_script.cpp_getActionState_FUN_00559660,00559660,core/script.cpp,37,0,,37
 core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090,00564090,core/script.cpp,192,0,,192
 core_script.cpp_validateActorVariableName_FUN_00559220,00559220,core/script.cpp,35,0,,35
@@ -2689,7 +2689,7 @@ core_script.cpp_CScript_editorIndex2X_FUN_00566b30,00566b30,core/script.cpp,41,0
 core_script.cpp_CScript_computeChecksum_FUN_00560d80,00560d80,core/script.cpp,27,0,,27
 core_script.cpp_CScript_processTimer_FUN_005600c0,005600c0,core/script.cpp,19,0,,19
 core_script.cpp_CScript_saveToFile_FUN_00566180,00566180,core/script.cpp,31,0,,31
-core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620,00562620,core/script.cpp,66,0,,66
+core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620,00562620,core/script.cpp,66,1,unrolled_strlen,81
 core_script.cpp_parseConditionExpr_FUN_005594a0,005594a0,core/script.cpp,10,0,,10
 core_script.cpp_CScript_renderSubtitles_FUN_00559b20,00559b20,core/script.cpp,74,0,,74
 core_script.cpp_CCmdParm_getCharacterByContext_FUN_005627f0,005627f0,core/script.cpp,15,0,,15
@@ -2749,7 +2749,7 @@ core_script.cpp_skipWhitespace_FUN_005593d0,005593d0,core/script.cpp,7,0,,7
 core_script.cpp_CScript_loadState_FUN_00560820,00560820,core/script.cpp,73,0,,73
 core_script.cpp_CScript_skipCinematic_FUN_005602e0,005602e0,core/script.cpp,33,0,,33
 core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70,00565e70,core/script.cpp,66,0,,66
-core_script.cpp_CCmdParm_parseValue_FUN_00561cb0,00561cb0,core/script.cpp,58,0,,58
+core_script.cpp_CCmdParm_parseValue_FUN_00561cb0,00561cb0,core/script.cpp,58,1,unrolled_strlen,73
 core_setutil.cpp_readAndParseLine_FUN_00585290,00585290,core/setutil.cpp,48,0,,48
 core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50,00587b50,core/setutil.cpp,95,0,,95
 core_setutil.cpp_C3DSLight_scalePosition_FUN_00587950,00587950,core/setutil.cpp,15,0,,15
@@ -3067,7 +3067,7 @@ core_glass.cpp_CVector3f_arrdtor_FUN_004eb8a0,004eb8a0,core/glass.cpp,6,0,,6
 core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0,004e9af0,core/glass.cpp,64,1,shadow_pointer_walk,79
 core_glass.cpp_CGlass_onLaserHit_FUN_004eb250,004eb250,core/glass.cpp,48,2,pointer_cast|warning_inlined_function,78
 core_glass.cpp_CGlass_dtor_FUN_004eb820,004eb820,core/glass.cpp,21,0,,21
-core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690,004eb690,core/glass.cpp,96,4,unrolled_strchr|unrolled_strcpy,146
+core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690,004eb690,core/glass.cpp,96,6,unrolled_strchr|unrolled_strcpy,166
 core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90,005dda90,core/tommygun.cpp,21,0,,21
 core_tommygun.cpp_CTommyGun_getActorType_FUN_005dda80,005dda80,core/tommygun.cpp,4,0,,4
 core_tommygun.cpp_CTommyGun_process_FUN_005de360,005de360,core/tommygun.cpp,61,0,,61
@@ -3317,7 +3317,7 @@ core_actor.cpp_copyFloat2_FUN_004104e0,004104e0,core/actor.cpp,5,0,,5
 core_actor.cpp_archiveClothList_FUN_0040be60,0040be60,core/actor.cpp,58,0,,58
 core_actor.cpp_archiveActor_FUN_0040b870,0040b870,core/actor.cpp,16,0,,16
 core_actor.cpp_CDemonActor_playSound_FUN_00408f60,00408f60,core/actor.cpp,7,0,,7
-core_actor.cpp_trimActorName_FUN_004087b0,004087b0,core/actor.cpp,30,0,,30
+core_actor.cpp_trimActorName_FUN_004087b0,004087b0,core/actor.cpp,30,1,unrolled_strlen,45
 core_actor.cpp_createActorByName_FUN_0040c430,0040c430,core/actor.cpp,24,0,,24
 core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0,0040e3b0,core/actor.cpp,10,0,,10
 core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0,00409fb0,core/actor.cpp,15,0,,15
@@ -4540,12 +4540,12 @@ core_stone.cpp_CTempleStone_ctor_FUN_005bad10,005bad10,core/stone.cpp,8,0,,8
 core_stone.cpp_factoryFunc_FUN_005bacd0,005bacd0,core/stone.cpp,10,0,,10
 core_stone.cpp_CTempleStone_archive_FUN_005bad40,005bad40,core/stone.cpp,6,0,,6
 core_stone.cpp_CTempleStone_getActorType_FUN_005bad00,005bad00,core/stone.cpp,4,0,,4
-core_texlist.cpp_CTextureList_load_FUN_005dbe00,005dbe00,core/texlist.cpp,146,6,shadow_pointer_walk|unrolled_strchr|unrolled_strcpy|unrolled_strlen,226
+core_texlist.cpp_CTextureList_load_FUN_005dbe00,005dbe00,core/texlist.cpp,146,0,,146
 core_texlist.cpp_staticInit_FUN_005dbdb0,005dbdb0,core/texlist.cpp,6,0,,6
 core_texlist.cpp_CTextureList_setCurrentMasterIndex_FUN_005dc6a0,005dc6a0,core/texlist.cpp,5,0,,5
-core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0,005dc2a0,core/texlist.cpp,137,6,pointer_cast|unrolled_strcpy,207
-core_texlist.cpp_CTextureList_save_FUN_005dc0d0,005dc0d0,core/texlist.cpp,73,1,shadow_pointer_walk,88
-core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760,005dc760,core/texlist.cpp,99,5,raw_address_constant|unrolled_strcpy,159
+core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0,005dc2a0,core/texlist.cpp,135,0,,135
+core_texlist.cpp_CTextureList_save_FUN_005dc0d0,005dc0d0,core/texlist.cpp,73,0,,73
+core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760,005dc760,core/texlist.cpp,99,0,,99
 core_texlist.cpp_CTextureList_dtor_FUN_005dbdf0,005dbdf0,core/texlist.cpp,4,0,,4
 core_texlist.cpp_CTextureList_addTextureSelection_FUN_005dc5e0,005dc5e0,core/texlist.cpp,37,0,,37
 core_texlist.cpp_CTextureList_ctor_FUN_005dbdd0,005dbdd0,core/texlist.cpp,6,0,,6
@@ -4808,7 +4808,7 @@ core_event.cpp_parseDamageType_FUN_004aa960,004aa960,core/event.cpp,40,0,,40
 core_event.cpp_CEventList_evaluateLogicalExpr_FUN_004b0270,004b0270,core/event.cpp,52,0,,52
 core_event.cpp_CEventList_getSfxHandle_FUN_004b0c40,004b0c40,core/event.cpp,10,0,,10
 core_event.cpp_CEventList_findTimer_FUN_004b0900,004b0900,core/event.cpp,19,0,,19
-core_event.cpp_CEventList_executeCommand_FUN_004aacc0,004aacc0,core/event.cpp,2138,0,,2138
+core_event.cpp_CEventList_executeCommand_FUN_004aacc0,004aacc0,core/event.cpp,2138,1,unrolled_strcpy,2153
 core_event.cpp_CRuleList_remove_FUN_004b17c0,004b17c0,core/event.cpp,17,0,,17
 core_event.cpp_isCharacterSpeaking_FUN_004b1980,004b1980,core/event.cpp,7,0,,7
 core_event.cpp_parseIntOrCounter_FUN_004aa3c0,004aa3c0,core/event.cpp,12,0,,12
@@ -5419,13 +5419,13 @@ core_frankgen.cpp_CFrankenstienMachine_getBoundingBox_FUN_004d20f0,004d20f0,core
 core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840,00511840,core/menu.cpp,87,0,,87
 core_menu.cpp_staticInit_FUN_0050fdb0,0050fdb0,core/menu.cpp,16,0,,16
 core_menu.cpp_CAlphaBitmap_arrdtor_FUN_00514f50,00514f50,core/menu.cpp,6,0,,6
-core_menu.cpp_showCalibrationTestPattern_FUN_00510a50,00510a50,core/menu.cpp,61,1,unrolled_strcpy,76
+core_menu.cpp_showCalibrationTestPattern_FUN_00510a50,00510a50,core/menu.cpp,61,0,,61
 core_menu.cpp_adjustMouseSensitivity_FUN_005107c0,005107c0,core/menu.cpp,88,0,,88
-core_menu.cpp_configureSoundOptions_FUN_00511e50,00511e50,core/menu.cpp,743,12,bitcast_double_pair|pointer_cast|sub84_truncation|unrolled_strcpy|warning_inlined_function,888
+core_menu.cpp_configureSoundOptions_FUN_00511e50,00511e50,core/menu.cpp,743,0,,743
 core_menu.cpp_renderAudioSpectrumBarByBounds_FUN_00511e00,00511e00,core/menu.cpp,5,0,,5
 core_menu.cpp_renderMenuAndGetChoice_FUN_00510000,00510000,core/menu.cpp,133,0,,133
-core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70,0050fe70,core/menu.cpp,53,4,raw_address_constant,98
-core_menu.cpp_getKeyDisplayName_FUN_005134e0,005134e0,core/menu.cpp,86,1,unrolled_strcpy,101
+core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70,0050fe70,core/menu.cpp,53,0,,53
+core_menu.cpp_getKeyDisplayName_FUN_005134e0,005134e0,core/menu.cpp,86,0,,86
 core_menu.cpp_calibrateGamepad_FUN_005104d0,005104d0,core/menu.cpp,85,0,,85
 core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410,00510410,core/menu.cpp,13,0,,13
 core_menu.cpp_getSinglePressedKey_FUN_00513860,00513860,core/menu.cpp,30,0,,30
@@ -5436,8 +5436,8 @@ core_menu.cpp_isKeyCodeValidForMode_FUN_00513720,00513720,core/menu.cpp,78,0,,78
 core_menu.cpp_cleanupMenuTransition_FUN_0050fe60,0050fe60,core/menu.cpp,6,0,,6
 core_menu.cpp_showOptionsScreen_FUN_00512d30,00512d30,core/menu.cpp,68,0,,68
 core_menu.cpp_showMainGameMenu_FUN_00512f40,00512f40,core/menu.cpp,200,0,,200
-core_menu.cpp_configureGraphicsOptions_FUN_00510c80,00510c80,core/menu.cpp,607,13,raw_address_constant|unrolled_strcpy,747
-core_menu.cpp_configureCustomKeys_FUN_00511890,00511890,core/menu.cpp,248,4,unrolled_strcpy,293
+core_menu.cpp_configureGraphicsOptions_FUN_00510c80,00510c80,core/menu.cpp,607,0,,607
+core_menu.cpp_configureCustomKeys_FUN_00511890,00511890,core/menu.cpp,248,0,,248
 core_svetlana.cpp_CSvetlana_setup_FUN_005d88e0,005d88e0,core/svetlana.cpp,80,0,,80
 core_svetlana.cpp_staticInit_FUN_005d87e0,005d87e0,core/svetlana.cpp,7,0,,7
 core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0,005d8ba0,core/svetlana.cpp,296,0,,296
@@ -5682,7 +5682,7 @@ core_platfrm.cpp_CPlatform_getGroundType_FUN_0054e1c0,0054e1c0,core/platfrm.cpp,
 core_platfrm.cpp_CPlatform_propertyActionStateCallback_FUN_0054e760,0054e760,core/platfrm.cpp,17,0,,17
 core_platfrm.cpp_CPlatform_ctor_FUN_0054c850,0054c850,core/platfrm.cpp,76,0,,76
 core_platfrm.cpp_CPlatform_getPropertyList_FUN_0054e7d0,0054e7d0,core/platfrm.cpp,68,0,,68
-core_platfrm.cpp_CPlatform_process_FUN_0054cc30,0054cc30,core/platfrm.cpp,307,0,,307
+core_platfrm.cpp_CPlatform_process_FUN_0054cc30,0054cc30,core/platfrm.cpp,307,1,unrolled_strcpy,322
 core_platfrm.cpp_CPlatform_getBoundingBox_FUN_0054db70,0054db70,core/platfrm.cpp,14,0,,14
 core_platfrm.cpp_staticInit_FUN_0054c7e0,0054c7e0,core/platfrm.cpp,7,0,,7
 core_platfrm.cpp_CPlatform_renderBackground_FUN_0054d9b0,0054d9b0,core/platfrm.cpp,68,0,,68

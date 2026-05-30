@@ -6,7 +6,7 @@
 ; Parameters:
 ; CTextureList *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; _WIN32_FIND_DATAA Stack[-0x1e0]:320  _Stack_1e0
+; _find_t          Stack[-0x1e0]:280  _Stack_1e0
 ; char[80]         Stack[-0x78]:80  local_78
 ; int              Stack[-0x28]:4  local_28
 ; HANDLE           Stack[-0x24]:4  local_24
@@ -67,7 +67,7 @@ section .text
     PUSH EAX                            ; 005dc2ce
     PUSH 0x654ff3                       ; 005dc2cf | = "art\\*.raw"
     CALL crt_io.c__findfirst_FUN_006021f0 ; 005dc2d4
-        ;   XREF to: 006021f0 (UNCONDITIONAL_CALL)  ; HANDLE crt_io.c__findfirst_FUN_006021f0(char * filespec, LPWIN32_FIND_DATAA find_data)
+        ;   XREF to: 006021f0 (UNCONDITIONAL_CALL)  ; HANDLE crt_io.c__findfirst_FUN_006021f0(char * filespec, _find_t * find_data)
     ADD ESP,0x8                         ; 005dc2d9
     MOV dword ptr [ESP + 0x1bc],EAX     ; 005dc2dc
     CMP EAX,-0x1                        ; 005dc2e3
@@ -185,7 +185,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c0]     ; 005dc41e
     PUSH EDX                            ; 005dc425
     CALL crt_io.c__findnext_FUN_00602300 ; 005dc426
-        ;   XREF to: 00602300 (UNCONDITIONAL_CALL)  ; int crt_io.c__findnext_FUN_00602300(HANDLE find_handle, LPWIN32_FIND_DATAA find_data)
+        ;   XREF to: 00602300 (UNCONDITIONAL_CALL)  ; int crt_io.c__findnext_FUN_00602300(HANDLE find_handle, _find_t * find_data)
     ADD ESP,0x8                         ; 005dc42b
     TEST EAX,EAX                        ; 005dc42e
     JZ 0x005dc30d                       ; 005dc430

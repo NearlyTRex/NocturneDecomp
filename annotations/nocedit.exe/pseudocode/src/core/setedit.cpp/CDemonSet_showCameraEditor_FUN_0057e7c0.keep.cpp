@@ -10,8 +10,6 @@
 void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet *this_ptr)
 
 {
-  CVector3f *pCVar2;
-  char cVar3;
   byte bVar4;
   float fVar5;
   float fVar6;
@@ -32,14 +30,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
   C3DSCamera *pCVar15;
   C3DSCamera *pCVar10;
   C3DSCamera *pCVar11;
-  CDemonSet *pCVar12;
   int iVar13;
-  char *pcVar14;
   int iVar15;
-  byte *pbVar16;
   byte *pbVar17;
-  C3DSCamera *pCVar18;
-  char *pcVar16;
   byte bVar19;
   _FILE *p_Var17;
   C3DSLight local_4788;
@@ -85,8 +78,6 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
   int local_14;
   _FILE *p_Var20;
   CEditorTools *this_ptr_00;
-  char cVar2;
-  CVector3f *pCVar1;
   int *ptr;
   byte bVar3;
   
@@ -230,27 +221,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
         engine_dosio_cpp_splitPath_FUN_00481f20
                   (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,(char *)(abStack_4be + 2),
                    (char *)0x0);
-        pcVar14 = ".set";
-        iVar11 = -1;
-        pbVar16 = abStack_4be + 2;
-        do {
-          pbVar16 = pbVar16;
-          if (iVar11 == 0) break;
-          iVar11 = iVar11 + -1;
-          pbVar16 = pbVar16 + (uint)bVar19 * -2 + 1;
-          bVar4 = *pbVar16;
-          pbVar16 = pbVar16;
-        } while (bVar4 != 0);
-        pbVar12 = pbVar16 + -1;
-        do {
-          bVar4 = *pcVar14;
-          *pbVar12 = bVar4;
-          if (bVar4 == 0) break;
-          bVar4 = pcVar14[1];
-          pcVar14 = pcVar14 + 2;
-          pbVar12[1] = bVar4;
-          pbVar12 = pbVar12 + 2;
-        } while (bVar4 != 0);
+        strcat((char *)(abStack_4be + 2),".set");
         strupr((char *)(abStack_4be + 2));
       }
       iVar11 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
@@ -263,15 +234,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
     case 0x35:
       local_bc[0] = '\0';
       engine_2d_c_getInputWithPrompt_FUN_004032c0(local_bc,5,0,0,"Enter new base name : ");
-      iVar11 = -1;
-      pcVar16 = local_bc;
-      do {
-        if (iVar11 == 0) break;
-        iVar11 = iVar11 + -1;
-        cVar3 = *pcVar16;
-        pcVar16 = pcVar16 + (uint)bVar19 * -2 + 1;
-      } while (cVar3 != '\0');
-      if (iVar11 != -2) {
+      if (strlen(local_bc) != 0) {
         iVar11 = 0;
         pCVar10 = pCVar9;
         if (0 < this_ptr->camera_count) {
@@ -362,67 +325,7 @@ LAB_0057eb3b:
           if (iVar11 != 0) {
             pCVar7 = local_44 + local_1c;
             pCVar11 = local_44 + this_ptr->camera_count;
-            pCVar15 = pCVar7;
-            pCVar18 = pCVar11;
-            for (iVar11 = 0x40; iVar11 != 0; iVar11 = iVar11 + -1) {
-              pCVar18 = (C3DSCamera *)((int)pCVar18 + (uint)bVar19 * -8 + 4);
-              *(uint *)pCVar18->name = *(uint *)pCVar15->name;
-              pCVar15 = (C3DSCamera *)((int)pCVar15 + (uint)bVar19 * -8 + 4);
-              pCVar18 = pCVar18;
-            }
-            if (&pCVar11->position != &pCVar7->position) {
-              (pCVar11->position).x = (pCVar7->position).x;
-              (pCVar11->position).y = (pCVar7->position).y;
-              (pCVar11->position).z = (pCVar7->position).z;
-            }
-            if (&pCVar11->orientation != &pCVar7->orientation) {
-              (pCVar11->orientation).x = (pCVar7->orientation).x;
-              (pCVar11->orientation).y = (pCVar7->orientation).y;
-              (pCVar11->orientation).z = (pCVar7->orientation).z;
-            }
-            (pCVar11->rotation_matrix).m[0].x = (pCVar7->rotation_matrix).m[0].x;
-            (pCVar11->rotation_matrix).m[0].y = (pCVar7->rotation_matrix).m[0].y;
-            (pCVar11->rotation_matrix).m[0].z = (pCVar7->rotation_matrix).m[0].z;
-            (pCVar11->rotation_matrix).m[1].x = (pCVar7->rotation_matrix).m[1].x;
-            (pCVar11->rotation_matrix).m[1].y = (pCVar7->rotation_matrix).m[1].y;
-            (pCVar11->rotation_matrix).m[1].z = (pCVar7->rotation_matrix).m[1].z;
-            (pCVar11->rotation_matrix).m[2].x = (pCVar7->rotation_matrix).m[2].x;
-            (pCVar11->rotation_matrix).m[2].y = (pCVar7->rotation_matrix).m[2].y;
-            (pCVar11->rotation_matrix).m[2].z = (pCVar7->rotation_matrix).m[2].z;
-            pCVar11->dead = pCVar7->dead;
-            pCVar11->is_panning = pCVar7->is_panning;
-            pCVar11->projection_scale = pCVar7->projection_scale;
-            pCVar11->ambient_value = pCVar7->ambient_value;
-            pCVar11->camera_group = pCVar7->camera_group;
-            pCVar11->fog_enabled = pCVar7->fog_enabled;
-            (pCVar11->fog).color_index.r = (pCVar7->fog).color_index.r;
-            (pCVar11->fog).color_index.g = (pCVar7->fog).color_index.g;
-            pCVar2 = &(pCVar11->fog).scroll;
-            pCVar1 = &(pCVar7->fog).scroll;
-            (pCVar11->fog).color_index.b = (pCVar7->fog).color_index.b;
-            if (pCVar2 != pCVar1) {
-              pCVar2->x = pCVar1->x;
-              (pCVar11->fog).scroll.y = (pCVar7->fog).scroll.y;
-              (pCVar11->fog).scroll.z = (pCVar7->fog).scroll.z;
-            }
-            (pCVar11->fog).height_threshold = (pCVar7->fog).height_threshold;
-            (pCVar11->fog).density_multiplier = (pCVar7->fog).density_multiplier;
-            (pCVar11->fog).temperature = (pCVar7->fog).temperature;
-            pCVar11->reverb_preset = pCVar7->reverb_preset;
-            if (&pCVar11->box.min != &pCVar7->box.min) {
-              (pCVar11->box.min).x = (pCVar7->box.min).x;
-              (pCVar11->box.min).y = (pCVar7->box.min).y;
-              (pCVar11->box.min).z = (pCVar7->box.min).z;
-            }
-            if (&pCVar11->box.max != &pCVar7->box.max) {
-              (pCVar11->box.max).x = (pCVar7->box.max).x;
-              (pCVar11->box.max).y = (pCVar7->box.max).y;
-              (pCVar11->box.max).z = (pCVar7->box.max).z;
-            }
-            pCVar11->pvs_count = pCVar7->pvs_count;
-            pCVar11->pvs_list = pCVar7->pvs_list;
-            pCVar11->vdir_zone = pCVar7->vdir_zone;
-            pCVar11->enabled = pCVar7->enabled;
+            *pCVar11 = *pCVar7;
             this_ptr->cameras[this_ptr->camera_count].pvs_count = 0;
             this_ptr->cameras[this_ptr->camera_count].pvs_list = (int *)0x0;
             pbVar12 = abStack_4be;
@@ -511,22 +414,20 @@ LAB_0057eb3b:
       iVar11 = 0;
       if (0 < this_ptr->camera_count) {
         local_2c = local_5c;
-        pCVar12 = this_ptr;
         do {
           _sprintf(local_3bc,"backdrop\\%s.pvs",local_2c->name);
           remove(local_3bc);
-          ptr = pCVar12->cameras[0].pvs_list;
-          pCVar12->cameras[0].pvs_count = 0;
+          ptr = this_ptr->cameras[iVar11].pvs_list;
+          this_ptr->cameras[iVar11].pvs_count = 0;
           if (ptr != (int *)0x0) {
             shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",0xe97);
-            pCVar12->cameras[0].pvs_list = (int *)0x0;
+            this_ptr->cameras[iVar11].pvs_list = (int *)0x0;
           }
           core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,iVar11);
           iVar11 = iVar11 + 1;
           local_14 = iVar11;
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                     (g_CEditorToolsPtr,(float)iVar11,(float)this_ptr->camera_count);
-          pCVar12 = (CDemonSet *)&pCVar12->cameras[0].enabled;
           local_2c = local_2c + 1;
         } while (iVar11 < this_ptr->camera_count);
       }
@@ -631,15 +532,7 @@ LAB_0057fa1d:
       local_ac[0] = '\0';
       engine_2d_c_getInputWithPrompt_FUN_004032c0
                 (local_ac,5,0,0,"Enter new unique base name : ");
-      iVar11 = -1;
-      pcVar16 = local_ac;
-      do {
-        if (iVar11 == 0) break;
-        iVar11 = iVar11 + -1;
-        cVar2 = *pcVar16;
-        pcVar16 = pcVar16 + (uint)bVar19 * -2 + 1;
-      } while (cVar2 != '\0');
-      if (iVar11 != -2) {
+      if (strlen(local_ac) != 0) {
         local_18 = 0;
         if (0 < this_ptr->camera_count) {
           local_28 = local_40;

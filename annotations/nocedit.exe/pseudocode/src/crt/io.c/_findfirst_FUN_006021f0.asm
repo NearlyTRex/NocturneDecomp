@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; HANDLE __cdecl crt_io_c__findfirst_FUN_006021f0(char *filespec,LPWIN32_FIND_DATAA find_data)
+; HANDLE __cdecl crt_io_c__findfirst_FUN_006021f0(char *filespec,_find_t *find_data)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filespec
-; LPWIN32_FIND_DATAA Stack[0x8]:4   find_data
+; _find_t *        Stack[0x8]:4   find_data
 ;
 ; XREF[1]:
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc2d4

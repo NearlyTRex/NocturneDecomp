@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1287,
-    "complexity_score": 624,
+    "complexity_score": 634,
     "cross_reference_count": 0,
     "function_call_count": 43,
     "global_count": 63,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 484,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
@@ -1030,6 +1030,14 @@
       "severity": "moderate",
       "text": "pcVar10 = (char *)((int)&pSVar8[-1].container_timestamp + 3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 87,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",

@@ -5,9 +5,15 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6073 (94.1%)
-With suspects: 381
-Total suspects: 2336
+Clean: 6079 (94.2%)
+With suspects: 375
+Total suspects: 2279
+
+====================================================================================================
+core_actor.cpp_trimActorName_FUN_004087b0 (1 suspect)
+  File: core/actor.cpp
+====================================================================================================
+  Line 12 [unrolled_strlen]: do {
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -190,6 +196,12 @@ core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
   File: core/elephant.cpp
 ====================================================================================================
   Line 25 [static_invalid_pointer_cast]: if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {
+
+====================================================================================================
+core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (1 suspect)
+  File: core/event.cpp
+====================================================================================================
+  Line 176 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_flies.cpp_CFlies_initFly_FUN_004cc760 (2 suspects)
@@ -421,11 +433,13 @@ core_ghoul.cpp_CGhoul_process_FUN_004e6600 (12 suspects)
   Line 1052 [unrolled_memcpy]: (this_ptr->prev_position).x = (pCVar16->position).x;
 
 ====================================================================================================
-core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690 (4 suspects)
+core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690 (6 suspects)
   File: core/glass.cpp
 ====================================================================================================
+  Line 19 [unrolled_strcpy]: do {
   Line 30 [unrolled_strchr]: do {
   Line 46 [unrolled_strcpy]: do {
+  Line 61 [unrolled_strcpy]: do {
   Line 72 [unrolled_strchr]: do {
   Line 88 [unrolled_strcpy]: do {
 
@@ -670,71 +684,6 @@ core_manpuz.cpp_copyPanel_FUN_0050b9a0 (5 suspects)
   Line 14 [unrolled_memcpy]: (dest->rotation).x = (src->rotation).x;
   Line 18 [unrolled_memcpy]: (dest->rotation_matrix).m[0].x = (src->rotation_matrix).m[0].x;
   Line 34 [unrolled_memcpy]: (dest->world_position).x = (src->world_position).x;
-
-====================================================================================================
-core_menu.cpp_configureCustomKeys_FUN_00511890 (4 suspects)
-  File: core/menu.cpp
-====================================================================================================
-  Line 95 [unrolled_strcpy]: do {
-  Line 117 [unrolled_strcpy]: do {
-  Line 128 [unrolled_strcpy]: do {
-  Line 151 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_menu.cpp_configureGraphicsOptions_FUN_00510c80 (13 suspects)
-  File: core/menu.cpp
-====================================================================================================
-  Line 69 [unrolled_strcpy]: do {
-  Line 97 [unrolled_strcpy]: do {
-  Line 229 [unrolled_strcpy]: do {
-  Line 250 [unrolled_strcpy]: do {
-  Line 272 [unrolled_strcpy]: do {
-  Line 284 [unrolled_strcpy]: do {
-  Line 305 [unrolled_strcpy]: do {
-  Line 324 [unrolled_strcpy]: do {
-  Line 337 [unrolled_strcpy]: do {
-  Line 350 [unrolled_strcpy]: do {
-  Line 453 [raw_address_constant]: else if (((local_1c[0] < 0xb71b01) || (g_CGamePtr->game_pixy != 0x1e0)) || (!bVar12)) {
-  Line 456 [raw_address_constant]: if (((local_1c[0] < 0x16e3601) || (g_CGamePtr->game_pixy != 0x300)) || (!bVar12)) {
-  Line 520 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_menu.cpp_configureSoundOptions_FUN_00511e50 (12 suspects)
-  File: core/menu.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 82 [unrolled_strcpy]: do {
-  Line 88 [pointer_cast]: *(char *)((int)pacVar11 + 1) = cVar2;
-  Line 110 [unrolled_strcpy]: do {
-  Line 143 [unrolled_strcpy]: do {
-  Line 164 [unrolled_strcpy]: do {
-  Line 183 [unrolled_strcpy]: do {
-  Line 208 [unrolled_strcpy]: do {
-  Line 228 [unrolled_strcpy]: do {
-  Line 507 [bitcast_double_pair]: fVar18 = (float10)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)) * (float10)dVar17;
-  Line 510 [bitcast_double_pair]: (iVar8,(float)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)),(float)fVar18);
-  Line 516 [sub84_truncation]: uStack_4c = SUB84(__BITCAST_UINT64(dVar1),0);
-
-====================================================================================================
-core_menu.cpp_getKeyDisplayName_FUN_005134e0 (1 suspect)
-  File: core/menu.cpp
-====================================================================================================
-  Line 77 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 (4 suspects)
-  File: core/menu.cpp
-====================================================================================================
-  Line 25 [raw_address_constant]: this_ptr->vertex_buffer_ptr->v = 0xf80000;
-  Line 26 [raw_address_constant]: this_ptr->vertex_buffer_ptr[1].u = 0xf80000;
-  Line 27 [raw_address_constant]: this_ptr->vertex_buffer_ptr[1].v = 0xf80000;
-  Line 28 [raw_address_constant]: this_ptr->vertex_buffer_ptr[2].u = 0xf80000;
-
-====================================================================================================
-core_menu.cpp_showCalibrationTestPattern_FUN_00510a50 (1 suspect)
-  File: core/menu.cpp
-====================================================================================================
-  Line 20 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_mimic.cpp_CMimic_ctor_FUN_0051f1d0 (2 suspects)
@@ -1278,6 +1227,12 @@ core_path.cpp_resetAllPathMaps_FUN_00548590 (2 suspects)
   Line 18 [pointer_cast]: puVar1 = (uint *)((int)g_PathMapList + iVar2);
 
 ====================================================================================================
+core_platfrm.cpp_CPlatform_process_FUN_0054cc30 (1 suspect)
+  File: core/platfrm.cpp
+====================================================================================================
+  Line 157 [unrolled_strcpy]: do {
+
+====================================================================================================
 core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (15 suspects)
   File: core/scat.cpp
 ====================================================================================================
@@ -1327,36 +1282,28 @@ core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (4 suspects)
   Line 19 [missing_cave_copy]: CMatrix3x4f local_70;
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (1 suspect)
-  File: core/setedit.cpp
+core_script.cpp_CCmdParm_parseValue_FUN_00561cb0 (1 suspect)
+  File: core/script.cpp
 ====================================================================================================
-  Line 107 [unrolled_memcpy]: // 0057b7f5: MOVSD.REP ES:EDI,ESI
+  Line 17 [unrolled_strlen]: do {
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (1 suspect)
-  File: core/setedit.cpp
+core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620 (1 suspect)
+  File: core/script.cpp
 ====================================================================================================
-  Line 126 [unrolled_memcpy]: // 0057bb2e: MOVSD.REP ES:EDI,ESI
+  Line 37 [unrolled_strlen]: do {
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (15 suspects)
-  File: core/setedit.cpp
+core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760 (1 suspect)
+  File: core/script.cpp
 ====================================================================================================
-  Line 272 [unrolled_strlen]: do {
-  Line 369 [unrolled_memcpy]: for (iVar11 = 0x40; iVar11 != 0; iVar11 = iVar11 + -1) {
-  Line 370 [pointer_cast]: pCVar18 = (C3DSCamera *)((int)pCVar18 + (uint)bVar19 * -8 + 4);
-  Line 372 [pointer_cast]: pCVar15 = (C3DSCamera *)((int)pCVar15 + (uint)bVar19 * -8 + 4);
-  Line 376 [unrolled_memcpy]: (pCVar11->position).x = (pCVar7->position).x;
-  Line 381 [unrolled_memcpy]: (pCVar11->orientation).x = (pCVar7->orientation).x;
-  Line 385 [unrolled_memcpy]: (pCVar11->rotation_matrix).m[0].x = (pCVar7->rotation_matrix).m[0].x;
-  Line 406 [unrolled_memcpy]: pCVar2->x = pCVar1->x;
-  Line 410 [unrolled_memcpy]: (pCVar11->fog).height_threshold = (pCVar7->fog).height_threshold;
-  Line 415 [unrolled_memcpy]: (pCVar11->box).min.x = (pCVar7->box).min.x;
-  Line 422 [unrolled_memcpy]: pCVar3->x = pCVar2->x;
-  Line 426 [unrolled_memcpy]: pCVar11->pvs_count = pCVar7->pvs_count;
-  Line 532 [shadow_pointer_walk]: pCVar12 = (CDemonSet *)&pCVar12->cameras[0].enabled;
-  Line 639 [unrolled_strlen]: do {
-  Line 757 [unrolled_memcpy]: // 0057efb0: MOVSD.REP ES:EDI,ESI
+  Line 44 [unrolled_strlen]: do {
+
+====================================================================================================
+core_script.cpp_CCmdParse_getParamTextLength_FUN_005626d0 (1 suspect)
+  File: core/script.cpp
+====================================================================================================
+  Line 44 [unrolled_strlen]: do {
 
 ====================================================================================================
 core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80 (6 suspects)
@@ -1828,44 +1775,6 @@ core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 (8 suspects)
   Line 41 [unrolled_memcpy]: (pCVar1->base).location.position.x = pCVar2->x;
 
 ====================================================================================================
-core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 (6 suspects)
-  File: core/texlist.cpp
-====================================================================================================
-  Line 43 [unrolled_strcpy]: do {
-  Line 47 [pointer_cast]: cVar1 = *(char *)((int)&pFVar4->dwLowDateTime + 1);
-  Line 48 [pointer_cast]: pFVar4 = (FILETIME *)((int)&pFVar4->dwLowDateTime + 2);
-  Line 56 [unrolled_strcpy]: do {
-  Line 111 [unrolled_strcpy]: do {
-  Line 122 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_texlist.cpp_CTextureList_load_FUN_005dbe00 (6 suspects)
-  File: core/texlist.cpp
-====================================================================================================
-  Line 40 [unrolled_strchr]: do {
-  Line 56 [unrolled_strcpy]: do {
-  Line 94 [unrolled_strchr]: do {
-  Line 115 [unrolled_strcpy]: do {
-  Line 129 [unrolled_strlen]: do {
-  Line 142 [shadow_pointer_walk]: local_18 = (CTextureList *)local_18->texture_entries;
-
-====================================================================================================
-core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760 (5 suspects)
-  File: core/texlist.cpp
-====================================================================================================
-  Line 34 [raw_address_constant]: g_RenderVertexBuffer[0].u = 0xf80000;
-  Line 37 [raw_address_constant]: g_RenderVertexBuffer[2].v = 0xf80000;
-  Line 39 [raw_address_constant]: g_RenderVertexBuffer[3].u = 0xf80000;
-  Line 68 [raw_address_constant]: g_RenderVertexBuffer[3].v = 0xf80000;
-  Line 69 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_texlist.cpp_CTextureList_save_FUN_005dc0d0 (1 suspect)
-  File: core/texlist.cpp
-====================================================================================================
-  Line 68 [shadow_pointer_walk]: pCVar3 = (CTextureList *)pCVar3->texture_entries;
-
-====================================================================================================
 core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0 (1 suspect)
   File: core/trigger.cpp
 ====================================================================================================
@@ -2216,10 +2125,11 @@ engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (2 suspe
   Line 152 [unrolled_strcpy]: do {
 
 ====================================================================================================
-engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 (11 suspects)
+engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 (12 suspects)
   File: engine/fileio.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004b4aea) */
+  Line 87 [unrolled_strlen]: do {
   Line 91 [pointer_cast]: pSVar8 = (SFoundFileInfo *)((int)pSVar8 + (uint)bVar12 * -2 + 1);
   Line 95 [negative_offset]: pcVar10 = (char *)((int)&pSVar8[-1].container_timestamp + 3);
   Line 95 [pointer_cast]: pcVar10 = (char *)((int)&pSVar8[-1].container_timestamp + 3);
@@ -2271,12 +2181,13 @@ engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460 (5 suspects)
   Line 77 [pointer_cast]: *(uint *)((int)&(local_d00.directory_entries)->size + iVar4),local_2c);
 
 ====================================================================================================
-engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (13 suspects)
+engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (14 suspects)
   File: engine/fileio.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004bbc51) */
   Line 95 [pointer_cast]: puVar7 = (uint *)((int)&(local_2600.directory_entries)->name + local_2c);
   Line 98 [unrolled_strcpy]: do {
+  Line 172 [unrolled_strlen]: do {
   Line 176 [pointer_cast]: pSVar10 = (SFoundFileInfo *)((int)pSVar10 + (uint)bVar13 * -2 + 1);
   Line 180 [negative_offset]: pcVar9 = (char *)((int)&pSVar10[-1].container_timestamp + 3);
   Line 180 [pointer_cast]: pcVar9 = (char *)((int)&pSVar10[-1].container_timestamp + 3);
@@ -2364,7 +2275,7 @@ engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0 (1 suspect)
   Line 40 [pointer_cast]: local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).type + (uVar1 & 0xfffffffc))) {
 
 ====================================================================================================
-engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (37 suspects)
+engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (39 suspects)
   File: engine/fileio.cpp
 ====================================================================================================
   Line 109 [unrolled_strcpy]: do {
@@ -2387,9 +2298,11 @@ engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (37 suspects)
   Line 284 [unrolled_memcpy]: for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 287 [pointer_cast]: pCVar15 = (CPodAuditRecord *)((int)pCVar15 + (uint)bVar19 * -8 + 4);
   Line 293 [unrolled_strcpy]: do {
+  Line 322 [unrolled_strlen]: do {
   Line 353 [unrolled_strcpy]: do {
   Line 371 [pointer_cast]: pcVar11 = (char *)((int)ptr_00 + local_30);
   Line 373 [unrolled_strcpy]: do {
+  Line 385 [unrolled_strlen]: do {
   Line 416 [unrolled_memcpy]: // 004b5f17: MOVSD.REP ES:EDI,ESI
   Line 450 [unrolled_strcpy]: do {
   Line 469 [unrolled_memcpy]: for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {

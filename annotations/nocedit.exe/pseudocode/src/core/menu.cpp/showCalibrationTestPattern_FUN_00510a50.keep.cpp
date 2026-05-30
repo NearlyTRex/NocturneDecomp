@@ -10,28 +10,14 @@
 void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_00510a50(char *message_text)
 
 {
-  char cVar2;
   char *pcVar2;
   int iVar5;
   int iVar3;
   int iVar6;
-  char *pcVar5;
   char *pcVar7;
   char local_110 [256];
-  char cVar1;
-  byte bVar7;
-  
-  bVar7 = 0;
-  pcVar5 = local_110;
-  do {
-    cVar1 = *message_text;
-    *pcVar5 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = message_text[1];
-    message_text = message_text + 2;
-    pcVar5[1] = cVar2;
-    pcVar5 = pcVar5 + 2;
-  } while (cVar2 != '\0');
+
+  strcpy(local_110,message_text);
   pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("  Press any key to continue.");
   strcat(local_110,pcVar2);
   iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_SmallEditorFont,0x58);
