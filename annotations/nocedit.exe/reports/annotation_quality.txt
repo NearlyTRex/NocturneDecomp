@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        41 ( 0.6%)
+  Functions with type issues:        40 ( 0.6%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      41
+    Undefined types in variables:      40
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   178 functions
+  Excluded (.keep / MMX / by-value):   179 functions
     Wrong calling convention:          1
-    Undefined types in variables:      176
+    Undefined types in variables:      177
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (41)
+Undefined types in variables (40)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -122,11 +122,6 @@ Undefined types in variables (41)
   CLodMesh_computeMeshCRC32
     Address: 0x0051c6f0  File: shape/meshlod.cpp
     Locals:  local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDeformableModel_calcRootOffsetScale
-    Address: 0x0058e690  File: core/skeledit.cpp
-    Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPoly_rayIntersect
@@ -342,7 +337,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (176)
+Undefined types - .keep overrides (177)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -695,6 +690,11 @@ Undefined types - .keep overrides (176)
     Locals:  local_a228 (undefined4), local_6d04 (undefined1[18404]), local_20 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
+  CDeformableModel_calcRootOffsetScale
+    Address: 0x0058e690  File: core/skeledit.cpp
+    Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CDeformableModel_importGeometryS3D
     Address: 0x0058b660  File: core/skeledit.cpp
     Locals:  local_30 (undefined1[4]), local_2c (undefined1[4]), local_28 (undefined1[4])
@@ -763,11 +763,6 @@ Undefined types - .keep overrides (176)
   renderBackdropImage
     Address: 0x0057ce80  File: core/setedit.cpp
     Locals:  local_2670 (undefined4[1200]), auStack_13b0 (undefined4[1200])
-    Suggested: Resolve undefined types to concrete types
-
-  CDeformableModel_importVertexAssignmentsVPH
-    Address: 0x0058bd00  File: core/skeledit.cpp
-    Locals:  local_110 (undefined1[2]), local_40 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
   CStranger_processFrame
@@ -1078,6 +1073,11 @@ Undefined types - .keep overrides (176)
   CBoneStructure_readBONheader
     Address: 0x0058a4a0  File: core/skeledit.cpp
     Locals:  local_b8 (undefined4[8])
+    Suggested: Resolve undefined types to concrete types
+
+  CDeformableModel_importVertexAssignmentsVPH
+    Address: 0x0058bd00  File: core/skeledit.cpp
+    Locals:  local_40 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModelInstance_blendMotion

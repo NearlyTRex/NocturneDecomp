@@ -21,13 +21,10 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   CMatrix3x4f *pCVar9;
   byte bVar10;
   int aiStack_430 [200];
-  byte local_110 [2];
-  int local_10e;
+  SVPHHeader local_110;
   CMatrix3x4f local_d8;
   CMatrix3x4f local_a8;
-  int local_78 [4];
-  int local_68;
-  float local_64;
+  SVPHVertexLink local_78;
   CVector3f local_58;
   CVector3f local_4c;
   byte local_40 [4];
@@ -55,15 +52,15 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
     g_CurrentLineNumber = 0x594;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::importVertexAssignmentsVPH can't open %s",filename);
   }
-  _fread(local_110,0x36,1,local_28);
-  if (200 < local_10e) {
+  _fread(&local_110,0x36,1,local_28);
+  if (200 < local_110.bone_count) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x59b;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Too many links in %s: %d, max is %d",filename,local_10e,200);
+              ("Too many links in %s: %d, max is %d",filename,local_110.bone_count,200);
   }
   iVar6 = 0;
-  if (0 < local_10e) {
+  if (0 < local_110.bone_count) {
     bone_name = g_SkeletonBoneNames;
     iVar8 = 0;
     do {
@@ -77,7 +74,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
       _fseek(local_28,0x102,1);
       iVar6 = iVar6 + 1;
       bone_name = bone_name + 1;
-    } while (iVar6 < local_10e);
+    } while (iVar6 < local_110.bone_count);
   }
   _fread(local_40,4,1,local_28);
   file = local_28;
@@ -91,14 +88,14 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
     local_30 = 0;
     do {
       local_20 = this_ptr->vertex_data_ptr[0]->bone_indices + local_30 + -1;
-      _fread(local_78,0x20,1,local_28);
-      if (local_68 == 0) {
+      _fread(&local_78,0x20,1,local_28);
+      if (local_78.bone_index == 0) {
         iVar2 = 0;
       }
       else {
-        iVar1 = local_68;
-        if (local_68 < 0) {
-          iVar1 = local_78[0];
+        iVar1 = local_78.bone_index;
+        if (local_78.bone_index < 0) {
+          iVar1 = local_78.bone_slots[0];
         }
         iVar2 = aiStack_430[iVar1];
         if (iVar2 < 0) {
@@ -108,7 +105,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
                     ("vertex %d is influenced by bone %s, but this bone isn't in the .BON file!",local_2c,g_SkeletonBoneNames + iVar1);
         }
       }
-      if ((bone_structure->bones[iVar2].parent_index < 1) || (local_68 < 1)) {
+      if ((bone_structure->bones[iVar2].parent_index < 1) || (local_78.bone_index < 1)) {
         local_20[4] = '\0';
         local_20[5] = '\0';
         local_20[6] = 0x80;
@@ -118,7 +115,8 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
       }
       else {
         *local_20 = '\x02';
-        fVar2 = local_64 * local_64 * local_64;
+        local_34 = local_78.weight;
+        fVar2 = local_78.weight * local_78.weight * local_78.weight;
         local_20[1] = (uchar)iVar2;
         *(float *)(local_20 + 4) = fVar2;
         local_20[2] = (uchar)bone_structure->bones[iVar2].parent_index;

@@ -65,26 +65,18 @@ void __cdecl core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this
   _fprintf(file_handle,"// root offset list: x,y,z\n");
   local_1c = 0;
   if (0 < this_ptr->frame_count) {
-    iVar10 = 0;
     do {
-      pCVar8 = this_ptr->frame_positions_1;
-      _fprintf(file_handle,"%g,%g,%g\n",(double)*(float *)((int)&pCVar8->x + iVar10),
-                 (double)*(float *)((int)&pCVar8->y + iVar10),
-                 (double)*(float *)((int)&pCVar8->z + iVar10));
-      iVar10 = iVar10 + 0xc;
+      pCVar8 = &this_ptr->frame_positions_1[local_1c];
+      _fprintf(file_handle,"%g,%g,%g\n",(double)pCVar8->x,(double)pCVar8->y,(double)pCVar8->z);
       local_1c = local_1c + 1;
     } while (local_1c < this_ptr->frame_count);
   }
   _fprintf(file_handle,"// canceled movement list: x,y,z\n");
   local_14 = 0;
   if (0 < this_ptr->frame_count) {
-    iVar10 = 0;
     do {
-      pCVar8 = this_ptr->frame_positions_2;
-      _fprintf(file_handle,"%g,%g,%g\n",(double)*(float *)((int)&pCVar8->x + iVar10),
-                 (double)*(float *)((int)&pCVar8->y + iVar10),
-                 (double)*(float *)((int)&pCVar8->z + iVar10));
-      iVar10 = iVar10 + 0xc;
+      pCVar8 = &this_ptr->frame_positions_2[local_14];
+      _fprintf(file_handle,"%g,%g,%g\n",(double)pCVar8->x,(double)pCVar8->y,(double)pCVar8->z);
       local_14 = local_14 + 1;
     } while (local_14 < this_ptr->frame_count);
   }

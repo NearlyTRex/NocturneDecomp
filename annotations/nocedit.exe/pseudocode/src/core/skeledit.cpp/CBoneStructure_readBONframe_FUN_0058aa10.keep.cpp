@@ -11,8 +11,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStr
 
 {
   CMatrix3x4f *matrix;
-  byte bVar1;
-  byte bVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -44,31 +42,20 @@ LAB_0058aa88:
                          &this_ptr->bones[iVar3].world_matrix.m[2].z);
     } while (iVar4 != 3);
     if (mirror_flag != 0) {
-      bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3);
-      *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) =
-           *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) ^ 0x80;
-      bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].w + 3);
-      *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3) = bVar1 ^ 0x80;
-      bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3);
-      *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].w + 3) = bVar2 ^ 0x80;
-      bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].z + 3);
-      *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3) = bVar1 ^ 0x80;
-      bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].y + 3);
-      *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].z + 3) = bVar2 ^ 0x80;
-      bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].x + 3);
-      *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].y + 3) = bVar1 ^ 0x80;
-      bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].z + 3);
-      *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].x + 3) = bVar2 ^ 0x80;
-      *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].z + 3) = bVar1 ^ 0x80;
+      matrix->m[0].w = -matrix->m[0].w;
+      matrix->m[0].x = -matrix->m[0].x;
+      matrix->m[0].y = -matrix->m[0].y;
+      matrix->m[0].z = -matrix->m[0].z;
+      matrix->m[2].w = -matrix->m[2].w;
+      matrix->m[2].x = -matrix->m[2].x;
+      matrix->m[2].y = -matrix->m[2].y;
+      matrix->m[2].z = -matrix->m[2].z;
     }
     iVar4 = core_xform_cpp_hasNegativeDeterminant_FUN_005f6be0(matrix);
     if (iVar4 != 0) {
-      bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3);
-      *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) =
-           *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) ^ 0x80;
-      bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3);
-      *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3) = bVar1 ^ 0x80;
-      *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3) = bVar2 ^ 0x80;
+      matrix->m[0].w = -matrix->m[0].w;
+      matrix->m[0].x = -matrix->m[0].x;
+      matrix->m[0].y = -matrix->m[0].y;
     }
     core_xform_cpp_orthonormalizeMatrix3x3_FUN_005f6690((CMatrix3x3f *)matrix,1);
   }

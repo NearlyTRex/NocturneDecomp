@@ -7,18 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 694,
-    "complexity_score": 378,
+    "complexity_score": 313,
     "cross_reference_count": 0,
     "function_call_count": 30,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 313,
-    "suspect_count": 5,
-    "suspect_types": [
-      "missing_cave_copy",
-      "unrolled_memset",
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1007
   },
   "cross_references": [],
@@ -331,6 +327,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004f86be) */",
+      "type": "warning_unreachable"
+    },
+    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 28,
       "match": "afStackY_1870",
@@ -338,6 +343,42 @@
       "severity": "moderate",
       "text": "float afStackY_1870 [1521];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 76,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 206,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Struct-type local `CStack_94` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 31,
+      "match": "CQuaternion4f CStack_94; ... f(&CStack_94, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CQuaternion4f CStack_94;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_84` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 32,
+      "match": "CQuaternion4f CStack_84; ... f(&CStack_84, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CQuaternion4f CStack_84;",
+      "type": "missing_cave_copy"
     }
   ],
   "stack_frame": {
@@ -513,48 +554,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x004f86be) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 76,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 206,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Struct-type local `CStack_94` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 31,
-      "match": "CQuaternion4f CStack_94; ... f(&CStack_94, ...);",
-      "severity": "moderate",
-      "text": "CQuaternion4f CStack_94;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `CStack_84` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 32,
-      "match": "CQuaternion4f CStack_84; ... f(&CStack_84, ...);",
-      "severity": "moderate",
-      "text": "CQuaternion4f CStack_84;",
-      "type": "missing_cave_copy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

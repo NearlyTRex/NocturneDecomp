@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 119,
+    "complexity_score": 44,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 44,
-    "suspect_count": 6,
-    "suspect_types": [
-      "missing_cave_copy",
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 150
   },
   "cross_references": [
@@ -178,6 +174,62 @@
     },
     "pcode_op_count": 338
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(CMatrix3x4f *)((int)pCVar4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(CMatrix3x4f *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar1 = (CMatrix3x4f *)((int)pCVar1 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 36,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Struct-type local `local_74` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 14,
+      "match": "CMatrix3x4f local_74; ... f(&local_74, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_74;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_44` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 15,
+      "match": "CMatrix3x4f local_44; ... f(&local_44, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_44;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 33,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0058acbf: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 172,
     "local_size": 168,
@@ -222,54 +274,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(CMatrix3x4f *)((int)pCVar4",
-      "severity": "moderate",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar2 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(CMatrix3x4f *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "pCVar1 = (CMatrix3x4f *)((int)pCVar1 + (uint)bVar2 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 36,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Struct-type local `local_74` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 14,
-      "match": "CMatrix3x4f local_74; ... f(&local_74, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f local_74;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_44` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 15,
-      "match": "CMatrix3x4f local_44; ... f(&local_44, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f local_44;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 33,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0058acbf: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

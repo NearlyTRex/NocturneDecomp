@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 125,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 85,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 291
   },
   "cross_references": [
@@ -137,6 +134,35 @@
     },
     "pcode_op_count": 904
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (local_20 == *(int *)((int)this_ptr->index_data_ptr[0] + local_14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 67,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 36,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = (int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_18;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 180,
     "local_size": 156,
@@ -230,30 +256,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "if (local_20 == *(int *)((int)this_ptr->index_data_ptr[0] + local_14)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 67,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 36,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "iVar2 = (int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_18;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

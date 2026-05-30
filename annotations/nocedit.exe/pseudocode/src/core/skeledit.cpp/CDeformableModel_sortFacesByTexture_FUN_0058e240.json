@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 211,
-    "complexity_score": 164,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 94,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 305
   },
   "cross_references": [
@@ -107,6 +104,51 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(int *)((int)local_38",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)local_38->index_data_ptr[0] + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)local_38",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)((int)local_38->index_data_ptr[0] + iVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(uint *)((int)puVar13",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_44 = (ushort)((uint)*(uint *)((int)puVar13 + 6) >> 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(ushort *)((int)puVar13",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(ushort *)((int)puVar13 + 10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 61,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(local_38->tri_data_ptr[0]->vertex_indices).vertex_index_0 +",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
       "line": 48,
       "match": "(int *)(local_28 + 0x7164)",
@@ -114,6 +156,15 @@
       "severity": "moderate",
       "text": "iVar8 = local_20 + *(int *)(local_28 + 0x7164);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_38` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_38->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 92,
+      "match": "local_38 = (T *)local_38->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_38 = (CDeformableModel *)local_38->lod_info;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -268,71 +319,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDeformableModel_sortFacesByTexture_FUN_0058e240.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 26,
-          "line": 43,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(int *)((int)local_38",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)local_38->index_data_ptr[0] + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(int *)((int)local_38",
-      "severity": "moderate",
-      "text": "piVar6 = (int *)((int)local_38->index_data_ptr[0] + iVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(uint *)((int)puVar13",
-      "severity": "moderate",
-      "text": "uStack_44 = (ushort)((uint)*(uint *)((int)puVar13 + 6) >> 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(ushort *)((int)puVar13",
-      "severity": "moderate",
-      "text": "uVar1 = *(ushort *)((int)puVar13 + 10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 61,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((int)&(local_38->tri_data_ptr[0]->vertex_indices).vertex_index_0 +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_38` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_38->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 92,
-      "match": "local_38 = (T *)local_38->ARRAY",
-      "severity": "moderate",
-      "text": "local_38 = (CDeformableModel *)local_38->lod_info;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

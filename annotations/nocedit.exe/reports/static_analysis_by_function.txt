@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 117
-  Total diagnostics: 332
+  Functions with findings: 114
+  Total diagnostics: 325
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 117, raw .cpp files: 0
+  .keep.cpp files: 114, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -352,28 +352,12 @@ core_path.cpp_CPathMap_findPathToDestination_FUN_00547320  [.keep] [Cppcheck (qu
   Line  177: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0  [.keep] [Cppcheck (quick)]
-  File: core/skeledit.cpp  (3 diagnostics)
-
-  Line  192: [selfAssignment] Redundant assignment of 'pSVar11' to itself.
-  Line  193: [selfAssignment] Redundant assignment of 'pSVar14' to itself.
-  Line  200: [selfAssignment] Redundant assignment of 'puVar12' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790  [.keep] [Cppcheck (quick)]
   File: core/skeledit.cpp  (3 diagnostics)
 
   Line  172: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
   Line  173: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
   Line  174: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00  [.keep] [Cppcheck (quick)]
-  File: core/skeledit.cpp  (3 diagnostics)
-
-  Line   55: [uninitvar] Uninitialized variable: local_10e
-  Line   91: [uninitvar] Uninitialized variable: local_68
-  Line  117: [uninitvar] Uninitialized variable: local_64
 
 ----------------------------------------------------------------------------------------------------
 engine_2d.c_findBestPaletteMatch_FUN_00401460  [.keep] [Cppcheck (quick)]
@@ -784,12 +768,6 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810  [.keep] [
   File: core/skeledit.cpp  (1 diagnostics)
 
   Line 1141: [selfAssignment] Redundant assignment of 'piVar35' to itself.
-
-----------------------------------------------------------------------------------------------------
-core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240  [.keep] [Cppcheck (quick)]
-  File: core/skeledit.cpp  (1 diagnostics)
-
-  Line   43: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0  [.keep] [Cppcheck (quick)]

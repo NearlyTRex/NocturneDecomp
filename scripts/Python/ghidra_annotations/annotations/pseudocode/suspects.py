@@ -3264,6 +3264,30 @@ _SHADOW_PTR_WALK_TWOSTEP_ARRAY_DECAY_PLUS_RE = re.compile(
 # bodies that emit this pattern are typically ≤20 lines; longer ones are
 # rare and a missed hit is better than scanning the rest of the function.
 _SHADOW_PTR_WALK_TWOSTEP_WINDOW = 20
+# Plain arrow-decay-plus-const variant:
+#   `IDENT = (T *)(IDENT->FIELD + CONST);`
+# Watcom advances the shadow pointer by dereferencing a sibling array field
+# directly off the arrow (which decays to a pointer) and adding a constant.
+# This bare form (no inner `( )`, no `.SUBFIELD`, no `[N]`) is shared with the
+# Watcom unrolled string/buffer-copy cursor, where the struct/`this` pointer
+# itself is reused as the copy walker — e.g.
+# `this_ptr = (CMP3Decoder *)(this_ptr->filename + 2);`. Those are already
+# caught by `unrolled_strcpy`/`unrolled_memcpy`, so to avoid double-flagging
+# the handler only treats this as a shadow walk when the surrounding loop
+# *also reads a different field* through IDENT (the array-stride case, e.g.
+# `pSVar4 = (SMotion *)(pSVar4->motion_name + 8);` advancing while reading
+# `pSVar4->signals[0]`). The string-copy cursors only ever touch the same
+# field they advance through, so they fall through. FIELD is captured (group 2)
+# for that same-field test. Self-update (`\1`) required.
+_SHADOW_PTR_WALK_ARROW_DECAY_PLUS_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'\(\s*\1\s*->\s*(\w+)'                          # ( IDENT->FIELD  (FIELD = grp 2)
+    r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
+)
+# Window (lines each direction) to scan for a differing-field access when
+# disambiguating the bare arrow-decay-plus form from a string-copy cursor.
+_SHADOW_PTR_WALK_OTHER_FIELD_WINDOW = 25
 
 
 def identify_shadow_pointer_walk(decompiled_code):
@@ -3308,6 +3332,28 @@ def identify_shadow_pointer_walk(decompiled_code):
         for i in range(start_idx + 1, end):
             if rebind_re.match(lines[i]):
                 return True
+        return False
+
+    def walks_other_field(start_idx, ident, advance_field):
+        """True if the loop around `start_idx` reads `ident->FIELD` for some
+        FIELD != advance_field.
+
+        Distinguishes an array-stride shadow walk (advances through one field
+        while reading another) from an unrolled string/buffer-copy cursor
+        (only ever touches the field it advances through — already flagged by
+        unrolled_strcpy/unrolled_memcpy). Scans a window each direction since
+        the access may sit above (do/while) or below (while) the advance line.
+        """
+        access_re = re.compile(
+            r'\b' + re.escape(ident) + r'\s*->\s*(\w+)')
+        lo = max(0, start_idx - _SHADOW_PTR_WALK_OTHER_FIELD_WINDOW)
+        hi = min(len(lines), start_idx + _SHADOW_PTR_WALK_OTHER_FIELD_WINDOW + 1)
+        for i in range(lo, hi):
+            if i == start_idx:
+                continue
+            for fld in access_re.findall(lines[i]):
+                if fld != advance_field:
+                    return True
         return False
 
     for line_no, line in enumerate(lines, 1):
@@ -3425,6 +3471,29 @@ def identify_shadow_pointer_walk(decompiled_code):
                     'Replace `%s->some_field[0]` reads with direct indexing on '
                     'the original pointer; drop the shadow init and '
                     'self-update.' % (m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
+            continue
+        m = _SHADOW_PTR_WALK_ARROW_DECAY_PLUS_RE.match(line)
+        if m and walks_other_field(line_no - 1, m.group(1), m.group(2)):
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)(%s->%s + CONST)' % (
+                    m.group(1), m.group(1), m.group(2)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates via '
+                    'pointer arithmetic on its own `%s` field (which decays to '
+                    'a pointer), `+ CONST`; `offsetof(%s) + CONST*sizeof(elem)` '
+                    'equals the stride of a *different* array the loop reads '
+                    'through `%s`. Replace those `%s->other_field[0]` reads '
+                    'with direct indexing on the original pointer; drop the '
+                    'shadow init and self-update. (String/buffer-copy cursors '
+                    'that only touch the advanced field are excluded here — '
+                    'those are unrolled_strcpy/unrolled_memcpy.)' % (
+                        m.group(1), m.group(2), m.group(2),
+                        m.group(1), m.group(1))),
                 'severity': 'moderate',
             })
             continue

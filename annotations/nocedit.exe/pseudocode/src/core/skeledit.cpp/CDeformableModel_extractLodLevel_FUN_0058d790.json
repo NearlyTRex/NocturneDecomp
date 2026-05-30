@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 512,
-    "complexity_score": 357,
+    "complexity_score": 372,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 242,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
+      "shadow_pointer_walk",
       "unrolled_memcpy",
       "warning_inlined_function"
     ],
@@ -599,6 +600,14 @@
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_44` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_44`. Replace those `local_44->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 172,
+      "match": "local_44 = (T *)(local_44->tri_count + CONST)",
+      "severity": "moderate",
+      "text": "local_44 = (CDeformableModel *)(local_44->tri_count + 3);",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Casting between signed char * and float * which have an incompatible binary data representation.",

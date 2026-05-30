@@ -4,21 +4,21 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6121 functions
-  1 suspects: 29 functions
-  2 suspects: 64 functions
-  3 suspects: 42 functions
-  4 suspects: 43 functions
-  5 suspects: 25 functions
-  6 suspects: 29 functions
-  7 suspects: 13 functions
+  0 suspects: 6129 functions
+  1 suspects: 38 functions
+  2 suspects: 63 functions
+  3 suspects: 40 functions
+  4 suspects: 40 functions
+  5 suspects: 23 functions
+  6 suspects: 25 functions
+  7 suspects: 10 functions
   8 suspects: 21 functions
-  9 suspects: 6 functions
-  10 suspects: 10 functions
-  11 suspects: 4 functions
+  9 suspects: 7 functions
+  10 suspects: 8 functions
+  11 suspects: 5 functions
   12 suspects: 6 functions
   13 suspects: 3 functions
-  14 suspects: 5 functions
+  14 suspects: 4 functions
   15 suspects: 5 functions
   16 suspects: 5 functions
   17 suspects: 1 functions
@@ -26,40 +26,55 @@ SUSPECT COUNT DISTRIBUTION
   19 suspects: 1 functions
   20 suspects: 1 functions
   21 suspects: 3 functions
-  22 suspects: 1 functions
-  23 suspects: 2 functions
+  23 suspects: 1 functions
   24 suspects: 1 functions
-  28 suspects: 1 functions
-  29 suspects: 2 functions
-  30 suspects: 1 functions
+  28 suspects: 2 functions
+  29 suspects: 1 functions
+  30 suspects: 2 functions
   36 suspects: 1 functions
   39 suspects: 1 functions
-  86 suspects: 1 functions
+  88 suspects: 1 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [pointer_cast] (9 functions)
+  [shadow_pointer_walk] (17 functions)
   ------------------------------------------------------------
-    engine_fileio.cpp_CFileManager_buildPodFromRespons ( 57 lines)
-      pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);...
-    engine_fileio.cpp_CFileManager_processMRGLNode_FUN ( 58 lines)
-      local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).ty...
-    shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051 ( 79 lines)
-      piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices ...
-    core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00 (114 lines)
-      iVar10 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_...
-    shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FU (123 lines)
-      *(int *)((int)this_ptr->edges_ptr[iVar1].adjacent_tri_indice...
-    engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (134 lines)
-      iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_ve...
-    shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_00 (149 lines)
-      *(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)...
-    shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a (204 lines)
-      *(double *)((int)&((local_58.vertex_data)->position).x + iVa...
-    shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
-      puVar10 = (uint *)(iVar14 + (int)puVar9);...
+    core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_0 ( 10 lines)
+      this_ptr = (CKeyFramedModelInstance *)(this_ptr->part_visibi...
+    shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_ ( 29 lines)
+      pCVar2 = (CLodFace *)(pCVar2->attribute_indices + 1);...
+    core_motion.cpp_CMotionController_advanceTween_FUN ( 32 lines)
+      pSVar4 = (SMotion *)(pSVar4->motion_name + 8);...
+    engine_texture.cpp_CTextureCache_freeTextures_FUN_ ( 36 lines)
+      pCVar2 = (CTextureCache *)(pCVar2->texture_dimensions + 0xe)...
+    core_motion.cpp_CMotionController_frameToMarkerPos ( 36 lines)
+      pSVar2 = (SMotion *)(pSVar2->motion_name + 4);...
+    engine_pod.cpp_CPod_getNextSearchResult_FUN_00550e ( 53 lines)
+      pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).f...
+    core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FU ( 53 lines)
+      pCVar4 = (CVector3f *)&pCVar4[0xf].y;...
+    core_motion.cpp_CMotionController_findAndStartTran ( 54 lines)
+      pSVar3 = (SMotion *)(pSVar3->motion_name + 0x18);...
+    core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0  ( 54 lines)
+      pCVar3 = (CKeyFramedModel *)(pCVar3->model_filename + 2);...
+    core_motion.cpp_CMotionController_advanceFrameAndC ( 56 lines)
+      pSVar3 = (SMotion *)(pSVar3->motion_name + 8);...
+    core_glass.cpp_CGlass_renderBackground_FUN_004e9e9 ( 64 lines)
+      pCVar3 = (CGlass *)((pCVar3->base).orient_matrix.m + 1);...
+    core_glass.cpp_CGlass_renderTransparent_FUN_004e9a ( 64 lines)
+      pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
+    core_motion.cpp_CMotionController_advanceFrameToEx ( 64 lines)
+      pSVar3 = (SMotion *)(pSVar3->motion_name + 8);...
+    core_glass.cpp_CGlass_renderOpaque_FUN_004e9930    ( 66 lines)
+      pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
+    core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9c ( 71 lines)
+      pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);...
+    shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_ ( 81 lines)
+      pCVar7 = (CLodVert *)&(pCVar7->position).y;...
+    core_skeleton.cpp_CDeformableModel_computeBoneDomi (124 lines)
+      local_3c = (CDeformableModel *)(local_3c->tri_count + 3);...
 
   [unrolled_memcpy] (8 functions)
   ------------------------------------------------------------
@@ -80,22 +95,24 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [shadow_pointer_walk] (7 functions)
+  [pointer_cast] (8 functions)
   ------------------------------------------------------------
-    engine_pod.cpp_CPod_getNextSearchResult_FUN_00550e ( 53 lines)
-      pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).f...
-    core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FU ( 53 lines)
-      pCVar4 = (CVector3f *)&pCVar4[0xf].y;...
-    core_glass.cpp_CGlass_renderBackground_FUN_004e9e9 ( 64 lines)
-      pCVar3 = (CGlass *)((pCVar3->base).orient_matrix.m + 1);...
-    core_glass.cpp_CGlass_renderTransparent_FUN_004e9a ( 64 lines)
-      pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
-    core_glass.cpp_CGlass_renderOpaque_FUN_004e9930    ( 66 lines)
-      pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
-    core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9c ( 71 lines)
-      pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);...
-    shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_ ( 81 lines)
-      pCVar7 = (CLodVert *)&(pCVar7->position).y;...
+    engine_fileio.cpp_CFileManager_buildPodFromRespons ( 57 lines)
+      pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);...
+    engine_fileio.cpp_CFileManager_processMRGLNode_FUN ( 58 lines)
+      local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).ty...
+    shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051 ( 79 lines)
+      piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices ...
+    core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00 (114 lines)
+      iVar10 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_...
+    engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (134 lines)
+      iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_ve...
+    shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_00 (149 lines)
+      *(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)...
+    shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a (204 lines)
+      *(double *)((int)&((local_58.vertex_data)->position).x + iVa...
+    shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
+      puVar10 = (uint *)(iVar14 + (int)puVar9);...
 
   [unrolled_strcpy] (2 functions)
   ------------------------------------------------------------
@@ -128,8 +145,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/superopt.cpp, Lines: 8, Types: ['pointer_cast']
   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
     File: core/ghoul.cpp, Lines: 17, Types: ['missing_cave_copy']
-  core_skeledit.cpp_CBoneStructure_doesHierarchyMatch_FUN_0058
-    File: core/skeledit.cpp, Lines: 21, Types: ['shadow_pointer_walk']
   shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420
     File: shape/meshlod.cpp, Lines: 22, Types: ['pointer_cast']
   core_netgame.cpp_purgeOldSimFrames_FUN_0053f650
@@ -178,8 +193,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/wateract.cpp, Lines: 56, Types: ['unrolled_strcpy']
   shape_design.c_writePolygonModel_FUN_0045a320
     File: shape/design.c, Lines: 58, Types: ['unrolled_strcpy', 'warning_inlined_function']
-  core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf4
-    File: core/dmodel.cpp, Lines: 59, Types: ['pointer_cast']
   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_0
     File: core/gabriela.cpp, Lines: 60, Types: ['missing_cave_copy']
   core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290
@@ -190,8 +203,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 72, Types: ['pointer_cast']
   shape_design.c_createCenterVertex_FUN_00469690
     File: shape/design.c, Lines: 72, Types: ['unrolled_strlen']
-  core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN
-    File: core/dmodel.cpp, Lines: 74, Types: ['pointer_cast']
   shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480
     File: shape/meshlod.cpp, Lines: 74, Types: ['pointer_cast']
   shape_meshlod.cpp_crc32UpdateDword2_FUN_0051c540
@@ -204,10 +215,10 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/quantize.cpp, Lines: 85, Types: ['pointer_cast']
   shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
     File: shape/design.c, Lines: 87, Types: ['unrolled_strlen']
-  core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_
-    File: core/dmodel.cpp, Lines: 90, Types: ['pointer_cast']
   engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004
     File: engine/fileio.cpp, Lines: 91, Types: ['unrolled_strcpy']
+  core_motion.cpp_CMotionList_save_FUN_0052d170
+    File: core/motion.cpp, Lines: 96, Types: ['shadow_pointer_walk']
   shape_design.c_renderSinglePolygon_FUN_0045ce20
     File: shape/design.c, Lines: 102, Types: ['unrolled_strcpy', 'warning_inlined_function']
   engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_
@@ -224,10 +235,14 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/fileio.cpp, Lines: 122, Types: ['unrolled_strcpy']
   core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
     File: core/turret.cpp, Lines: 123, Types: ['bit_int_float_compare', 'unrolled_memcpy']
+  shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
+    File: shape/meshlod.cpp, Lines: 123, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
     File: core/mobster.cpp, Lines: 129, Types: ['stack_alignment_array', 'warning_type_propagation']
   core_mimic.cpp_CMimic_setup_FUN_0051f3e0
     File: core/mimic.cpp, Lines: 134, Types: ['pointer_cast']
+  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVP
+    File: core/skeledit.cpp, Lines: 139, Types: ['missing_cave_copy']
   core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_
     File: core/dmodel.cpp, Lines: 143, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
@@ -260,8 +275,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
   shape_superopt.cpp_CVec_copy1_FUN_005d8160
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
-  core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260
-    File: core/skeledit.cpp, Lines: 19, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0
     File: shape/meshlod.cpp, Lines: 26, Types: ['pointer_cast']
   engine_fileio.cpp_CFileManager_setVersionControlCredentials_
@@ -270,8 +283,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mobster.cpp, Lines: 41, Types: ['unrolled_memcpy']
   engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     File: engine/pod.cpp, Lines: 42, Types: ['pointer_cast', 'unrolled_memcpy']
-  core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058
-    File: core/skeledit.cpp, Lines: 44, Types: ['pointer_cast']
   shape_design.c_removeDegenerateTriangles_FUN_00463a20
     File: shape/design.c, Lines: 45, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
@@ -280,6 +291,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 52, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
     File: core/manpuz.cpp, Lines: 56, Types: ['pointer_cast', 'unrolled_memcpy']
+  core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf4
+    File: core/dmodel.cpp, Lines: 59, Types: ['pointer_cast', 'shadow_pointer_walk']
   shape_cramtex.cpp_placementCollisionCheck_FUN_00448260
     File: shape/cramtex.cpp, Lines: 59, Types: ['pointer_cast']
   core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40
@@ -290,22 +303,22 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/glass.cpp, Lines: 61, Types: ['unrolled_strcpy']
   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920
     File: shape/meshlod.cpp, Lines: 71, Types: ['pointer_cast']
+  core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN
+    File: core/dmodel.cpp, Lines: 74, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_
     File: core/frankgen.cpp, Lines: 76, Types: ['stack_alignment_array', 'unrolled_memcpy', 'warning_inlined_function']
   shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN
     File: shape/meshlod.cpp, Lines: 78, Types: ['unrolled_memcpy']
   shape_superopt.cpp_CObj_transform_FUN_005d2c40
     File: shape/superopt.cpp, Lines: 83, Types: ['pointer_cast']
-  core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058
-    File: core/skeledit.cpp, Lines: 85, Types: ['pointer_cast', 'unrolled_strcpy']
   shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
     File: shape/superopt.cpp, Lines: 85, Types: ['pointer_cast']
+  core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_
+    File: core/dmodel.cpp, Lines: 90, Types: ['pointer_cast', 'shadow_pointer_walk']
   shape_design.c_generateShell_FUN_00468f20
     File: shape/design.c, Lines: 90, Types: ['unrolled_strlen']
   shape_design.c_generateGlobe_FUN_00468910
     File: shape/design.c, Lines: 97, Types: ['unrolled_strlen']
-  core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9
-    File: core/skeledit.cpp, Lines: 102, Types: ['pointer_cast', 'warning_inlined_function']
   shape_design.c_generateOctant_FUN_00469420
     File: shape/design.c, Lines: 103, Types: ['unrolled_strlen']
   core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60
@@ -332,5 +345,3 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 180, Types: ['unrolled_strcpy']
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     File: engine/fileio.cpp, Lines: 193, Types: ['pointer_cast', 'unrolled_strcpy']
-  core_icepick.cpp_CIcePick_processAI_FUN_004f8c70
-    File: core/icepick.cpp, Lines: 243, Types: ['unrolled_memcpy']

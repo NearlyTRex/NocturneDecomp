@@ -10,26 +10,53 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  core/icepick.cpp (2 remaining of 23)
-    - core_icepick.cpp_CIcePick_process_FUN_004f80b0
-      Suspects: warning_unreachable, unrolled_memset, unrolled_memset, missing_cave_copy, missing_cave_copy
-    - core_icepick.cpp_CIcePick_processAI_FUN_004f8c70
-      Suspects: unrolled_memcpy, unrolled_memcpy, unrolled_memcpy
+  engine/texture.cpp (1 remaining of 22)
+    - engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30
+      Suspects: shadow_pointer_walk
+
+  core/skeleton.cpp (1 remaining of 117)
+    - core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
+      Suspects: shadow_pointer_walk
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
+  [shadow_pointer_walk] - 5 functions
+    core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00              ( 10 lines)
+    shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0             ( 29 lines)
+    core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0            ( 32 lines)
+    engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30             ( 36 lines)
+    core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0   ( 36 lines)
+
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  core/icepick.cpp (91.3% complete)
-    2 functions remaining:
-      core_icepick.cpp_CIcePick_process_FUN_004f80b0 (313 lines)
-        Types: ['missing_cave_copy', 'unrolled_memset', 'warning_unreachable']
-      core_icepick.cpp_CIcePick_processAI_FUN_004f8c70 (243 lines)
-        Types: ['unrolled_memcpy']
+  core/skeleton.cpp (99.1% complete)
+    1 functions remaining:
+      core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (124 lines)
+        Types: ['shadow_pointer_walk']
+
+  engine/texture.cpp (95.5% complete)
+    1 functions remaining:
+      engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30 (36 lines)
+        Types: ['shadow_pointer_walk']
+
+  core/skeledit.cpp (91.4% complete)
+    6 functions remaining:
+      core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (1852 lines)
+        Types: ['missing_cave_copy', 'pointer_cast', 'shadow_pointer_walk', 'sign_compare_idiom', 'unrolled_memcpy', 'unrolled_memset', 'unrolled_strcpy', 'unrolled_strlen', 'warning_inlined_function']
+      core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (242 lines)
+        Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy', 'warning_inlined_function']
+      core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines)
+        Types: ['missing_cave_copy', 'pointer_cast', 'raw_address_constant', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_memset', 'unrolled_strcpy', 'warning_inlined_function']
+      core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1436 lines)
+        Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_strcpy', 'warning_inlined_function']
+      core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines)
+        Types: ['missing_cave_copy']
+      core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (187 lines)
+        Types: ['pointer_cast', 'shadow_pointer_walk']
 
 ====================================================================================================
 ALL REMAINING FILES
@@ -42,23 +69,23 @@ ALL REMAINING FILES
   core/scat.cpp                                                 84.0%  (21/25 clean, 4 remaining)
   core/frankgen.cpp                                             83.3%  (20/24 clean, 4 remaining)
   engine/pod.cpp                                                82.4%  (28/34 clean, 6 remaining)
+  core/motion.cpp                                               81.8%  (27/33 clean, 6 remaining)
   shape/cramtex.cpp                                             81.0%  (17/21 clean, 4 remaining)
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
   core/manpuz.cpp                                               79.4%  (50/63 clean, 13 remaining)
   core/wateract.cpp                                             78.3%  (18/23 clean, 5 remaining)
   core/ghoul.cpp                                                77.8%  (14/18 clean, 4 remaining)
-  core/dmodel.cpp                                               77.3%  (51/66 clean, 15 remaining)
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
   core/netgame.cpp                                              76.6%  (49/64 clean, 15 remaining)
   core/gabriela.cpp                                             76.3%  (29/38 clean, 9 remaining)
   shape/superopt.cpp                                            75.3%  (140/186 clean, 46 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
+  core/dmodel.cpp                                               74.2%  (49/66 clean, 17 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)
   core/weather.cpp                                              70.0%  (7/10 clean, 3 remaining)
   shape/design.c                                                69.9%  (114/163 clean, 49 remaining)
-  shape/meshlod.cpp                                             68.5%  (85/124 clean, 39 remaining)
   engine/fileio.cpp                                             68.5%  (50/73 clean, 23 remaining)
-  core/skeledit.cpp                                             67.1%  (47/70 clean, 23 remaining)
+  shape/meshlod.cpp                                             67.7%  (84/124 clean, 40 remaining)
   engine/alphabit.cpp                                           66.7%  (6/9 clean, 3 remaining)
   core/glass.cpp                                                58.3%  (14/24 clean, 10 remaining)
   engine/clipper.c                                              57.1%  (16/28 clean, 12 remaining)

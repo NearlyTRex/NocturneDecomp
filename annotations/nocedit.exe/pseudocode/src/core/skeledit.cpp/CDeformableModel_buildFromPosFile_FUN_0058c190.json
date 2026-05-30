@@ -1103,6 +1103,33 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `local_54` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_54`. Replace those `local_54->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 450,
+      "match": "local_54 = (T *)(local_54->tri_count + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_54 = (CDeformableModel *)(local_54->tri_count + 3);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_44` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_44`. Replace those `local_44->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 492,
+      "match": "local_44 = (T *)(local_44->tri_count + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_44 = (CDeformableModel *)(local_44->tri_count + 3);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar15` self-updates via pointer arithmetic on its own `vertex_data_ptr` field (which decays to a pointer), `+ CONST`; `offsetof(vertex_data_ptr) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar15`. Replace those `pCVar15->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 517,
+      "match": "pCVar15 = (T *)(pCVar15->vertex_data_ptr + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar15 = (CDeformableModel *)(pCVar15->vertex_data_ptr + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar8->vertices[0].a`). Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 589,
       "match": "pCVar8 = (T *)&pCVar8->FIELD[N].SUBFIELD",

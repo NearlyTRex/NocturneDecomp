@@ -4,18 +4,18 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              539
+Total structs:              541
 Fully clean structs:        530
-Structs with issues:        9
+Structs with issues:        11
 Unreferenced structs:       17
 
-Total fields:               4151
-Clean fields:               4138
-Unknown (unk*) fields:      5
+Total fields:               4158
+Clean fields:               4142
+Unknown (unk*) fields:      8
 Padding (pad*) fields:      4
 Reserved (reserved*) fields:4
 Default (field_*) fields:   0
-Overall field quality:      99.7%
+Overall field quality:      99.6%
 
 ======================================================================
 UNREFERENCED STRUCTS (17)
@@ -41,8 +41,12 @@ These structs are not referenced in any source or header file.
   SNetPacket_ServerAccept                   /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (9)
+STRUCTS WITH PROBLEMATIC FIELDS (11)
 ----------------------------------------------------------------------
+
+SVPHHeader                                 33.3% complete  (1/3 fields clean)
+  Issues: 2 unknown
+  Fields: unk1, unk2
 
 SMRGLSkyTexture                            66.7% complete  (2/3 fields clean)
   Issues: 1 reserved
@@ -59,6 +63,10 @@ SPBMFileHeader                             71.4% complete  (5/7 fields clean)
 SEpdHeader                                 75.0% complete  (3/4 fields clean)
   Issues: 1 unknown
   Fields: unk1
+
+SVPHVertexLink                             75.0% complete  (3/4 fields clean)
+  Issues: 1 unknown
+  Fields: unk
 
 SPod3Header                                76.9% complete  (10/13 fields clean)
   Issues: 3 unknown

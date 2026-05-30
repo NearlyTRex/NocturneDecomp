@@ -4609,6 +4609,14 @@
       "type":"struct"
     },
     {
+      "name":"SVPHHeader",
+      "type":"struct"
+    },
+    {
+      "name":"SVPHVertexLink",
+      "type":"struct"
+    },
+    {
       "name":"SVersionControlSession",
       "type":"struct"
     },
@@ -62241,6 +62249,72 @@
       "importable":true,
       "len":64,
       "name":"SVoxelGrid",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":2,
+          "name":"unk1",
+          "offset":0,
+          "type":"short"
+        },
+        {
+          "len":4,
+          "name":"bone_count",
+          "offset":2,
+          "type":"int"
+        },
+        {
+          "len":48,
+          "name":"unk2",
+          "offset":6,
+          "type":"char[48]"
+        }
+      ],
+      "importable":true,
+      "len":54,
+      "name":"SVPHHeader",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":16,
+          "name":"bone_slots",
+          "offset":0,
+          "type":"int[4]"
+        },
+        {
+          "len":4,
+          "name":"bone_index",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"weight",
+          "offset":20,
+          "type":"float"
+        },
+        {
+          "len":8,
+          "name":"unk",
+          "offset":24,
+          "type":"char[8]"
+        }
+      ],
+      "importable":true,
+      "len":32,
+      "name":"SVPHVertexLink",
       "pack":false,
       "type":"struct"
     },

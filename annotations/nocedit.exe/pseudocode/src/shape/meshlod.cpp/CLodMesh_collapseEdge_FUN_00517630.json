@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1009,
-    "complexity_score": 684,
+    "complexity_score": 739,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 449,
-    "suspect_count": 23,
+    "suspect_count": 28,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
     "total_lines": 1458
   },
@@ -915,6 +916,46 @@
       "severity": "moderate",
       "text": "*(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx +",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar8`. Replace those `pCVar8->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 145,
+      "match": "pCVar8 = (T *)(pCVar8->attribute_indices + CONST)",
+      "severity": "moderate",
+      "text": "pCVar8 = (CLodFace *)(pCVar8->attribute_indices + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_50` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_50`. Replace those `local_50->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 146,
+      "match": "local_50 = (T *)(local_50->attribute_indices + CONST)",
+      "severity": "moderate",
+      "text": "local_50 = (CLodFace *)(local_50->attribute_indices + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar4`. Replace those `pCVar4->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 193,
+      "match": "pCVar4 = (T *)(pCVar4->attribute_indices + CONST)",
+      "severity": "moderate",
+      "text": "pCVar4 = (CLodFace *)(pCVar4->attribute_indices + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar4`. Replace those `pCVar4->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 254,
+      "match": "pCVar4 = (T *)(pCVar4->attribute_indices + CONST)",
+      "severity": "moderate",
+      "text": "pCVar4 = (CLodFace *)(pCVar4->attribute_indices + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar8`. Replace those `pCVar8->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 318,
+      "match": "pCVar8 = (T *)(pCVar8->attribute_indices + CONST)",
+      "severity": "moderate",
+      "text": "pCVar8 = (CLodFace *)(pCVar8->attribute_indices + 1);",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

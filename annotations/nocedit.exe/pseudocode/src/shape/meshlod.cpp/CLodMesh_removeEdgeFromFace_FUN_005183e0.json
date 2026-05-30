@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 29,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 103
   },
   "cross_references": [
@@ -144,5 +146,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar2`. Replace those `pCVar2->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 28,
+      "match": "pCVar2 = (T *)(pCVar2->attribute_indices + CONST)",
+      "severity": "moderate",
+      "text": "pCVar2 = (CLodFace *)(pCVar2->attribute_indices + 1);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

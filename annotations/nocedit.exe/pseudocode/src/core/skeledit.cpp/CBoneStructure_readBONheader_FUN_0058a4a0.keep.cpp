@@ -10,65 +10,20 @@
 void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneStructure *this_ptr,_FILE *file,int *frame_count_out)
 
 {
-  char cVar2;
   int iVar5;
   int iVar3;
   int iVar6;
-  char (*pacVar4) [30];
-  char *pcVar7;
-  CMatrix3x4f *pCVar8;
-  CBoneStructure *pCVar9;
-  uint *puVar10;
   SBoneData *pSVar6;
-  SBoneData *pSVar11;
-  uint *puVar12;
   char (*bone_name) [30];
-  char *pcVar13;
-  uint *puVar7;
-  SBoneData *pSVar14;
-  byte bVar8;
   int local_248 [100];
-  uint local_b8 [8];
+  SBoneData local_b8;
   SBoneData *local_34;
-  SBoneData *local_30;
   int *local_2c;
-  SBoneData *local_28;
   int local_24;
-  SBoneData *local_20;
-  SBoneData *local_1c;
-  SBoneData *local_18;
   int local_14;
-  char cVar1;
   int iVar2;
-  int *piVar4;
   int uVar3;
-  int local_98;
-  float local_94;
-  float local_90;
-  float local_8c;
-  float local_88;
-  float local_84;
-  float local_80;
-  float local_7c;
-  float local_78;
-  float local_74;
-  float local_70;
-  float local_6c;
-  float local_68;
-  float local_64;
-  float local_60;
-  float local_5c;
-  float local_58;
-  float local_54;
-  float local_50;
-  float local_4c;
-  float local_48;
-  float local_44;
-  float local_40;
-  float local_3c;
-  float local_38;
-  
-  bVar8 = 0;
+
   iVar6 = 1;
   do {
     iVar5 = _fgetc(file);
@@ -89,24 +44,12 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   if (0 < this_ptr->bone_count) {
     local_34 = this_ptr->bones;
     local_2c = &this_ptr->bones[0].parent_index;
-    pacVar4 = g_BoneNameBuffer;
     do {
       pSVar6 = local_34 + uVar3;
       _fscanf(file,"\"%[^\"]\",%d\n",pSVar6->name,local_2c);
-      pcVar7 = pacVar4[1];
-      do {
-        cVar1 = pSVar6->name[0];
-        (*pacVar4)[0] = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = pSVar6->name[1];
-        pSVar6 = (SBoneData *)(pSVar6->name + 2);
-        (*pacVar4)[1] = cVar2;
-        pcVar13 = *pacVar4 + 2;
-        pacVar4 = (char (*) [30])pcVar13;
-      } while (cVar2 != '\0');
+      strcpy(g_BoneNameBuffer[uVar3],pSVar6->name);
       uVar3 = uVar3 + 1;
       local_2c = local_2c + 0x21;
-      pacVar4 = (char (*) [30])pcVar7;
     } while (uVar3 < this_ptr->bone_count);
   }
   uVar3 = 1;
@@ -121,95 +64,30 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   }
   uVar3 = 0;
   if (0 < this_ptr->bone_count) {
-    iVar3 = 0;
     do {
-      *(uint *)((int)local_248 + iVar3) = 0;
+      local_248[uVar3] = 0;
       for (iVar2 = uVar3; -1 < iVar2; iVar2 = this_ptr->bones[iVar2].parent_index) {
-        *(int *)((int)local_248 + iVar3) = *(int *)((int)local_248 + iVar3) + 1;
+        local_248[uVar3] = local_248[uVar3] + 1;
       }
       uVar3 = uVar3 + 1;
-      iVar3 = iVar3 + 4;
     } while (uVar3 < this_ptr->bone_count);
   }
   local_24 = this_ptr->bone_count + -1;
   if (-1 < local_24) {
-    local_30 = this_ptr->bones;
-    local_28 = this_ptr->bones;
     do {
-      local_14 = 0;
-      if (0 < local_24) {
-        local_20 = local_30;
-        local_1c = local_30 + 1;
-        local_18 = local_28 + 1;
-        piVar4 = local_248;
-        do {
-          pCVar8 = &local_28[local_14].local_matrix;
-          puVar10 = (uint *)(piVar4 + 1);
-          uVar3 = local_248[local_14] - local_248[local_14 + 1];
-          if (uVar3 == 0) {
-            uVar3 = _stricmp(local_20->name,local_1c->name);
-          }
-          if (0 < uVar3) {
-            pSVar14 = local_28 + local_14;
-            pSVar6 = pSVar14;
-            puVar7 = local_b8;
-            for (uVar3 = 7; uVar3 != 0; uVar3 = uVar3 + -1) {
-              *puVar7 = *(uint *)pSVar6->name;
-              pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
-              puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
-            }
-            *(ushort *)puVar7 = *(ushort *)pSVar6->name;
-            local_98 = pSVar14->parent_index;
-            local_94 = pCVar8->m[0].w;
-            local_90 = pCVar8->m[0].x;
-            local_8c = pCVar8->m[0].y;
-            local_88 = pCVar8->m[0].z;
-            local_84 = pCVar8->m[1].w;
-            local_80 = pCVar8->m[1].x;
-            local_7c = pCVar8->m[1].y;
-            local_78 = pCVar8->m[1].z;
-            local_74 = pCVar8->m[2].w;
-            local_70 = pCVar8->m[2].x;
-            local_6c = pCVar8->m[2].y;
-            local_68 = pCVar8->m[2].z;
-            local_64 = pCVar8[1].m[0].w;
-            local_60 = pCVar8[1].m[0].x;
-            local_5c = pCVar8[1].m[0].y;
-            local_58 = pCVar8[1].m[0].z;
-            local_54 = pCVar8[1].m[1].w;
-            local_50 = pCVar8[1].m[1].x;
-            local_4c = pCVar8[1].m[1].y;
-            local_48 = pCVar8[1].m[1].z;
-            local_44 = pCVar8[1].m[2].w;
-            local_40 = pCVar8[1].m[2].x;
-            local_3c = pCVar8[1].m[2].y;
-            local_38 = pCVar8[1].m[2].z;
-            pSVar11 = local_18;
-            for (uVar3 = 0x21; uVar3 != 0; uVar3 = uVar3 + -1) {
-              pSVar14 = (SBoneData *)((int)pSVar14 + (uint)bVar8 * -8 + 4);
-              pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar8 * -8 + 4);
-              *(uint *)pSVar14->name = *(uint *)pSVar11->name;
-              pSVar11 = pSVar11;
-              pSVar14 = pSVar14;
-            }
-            puVar12 = local_b8;
-            pSVar6 = local_18;
-            for (uVar3 = 0x21; uVar3 != 0; uVar3 = uVar3 + -1) {
-              puVar12 = puVar12 + (uint)bVar8 * -2 + 1;
-              *(uint *)pSVar6->name = *puVar12;
-              puVar12 = puVar12;
-              pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
-            }
-            uVar3 = *piVar4;
-            *piVar4 = *puVar10;
-            *puVar10 = uVar3;
-          }
-          local_14 = local_14 + 1;
-          local_20 = local_20 + 1;
-          local_1c = local_1c + 1;
-          local_18 = local_18 + 1;
-          piVar4 = (int *)puVar10;
-        } while (local_14 < local_24);
+      for (local_14 = 0; local_14 < local_24; local_14 = local_14 + 1) {
+        uVar3 = local_248[local_14] - local_248[local_14 + 1];
+        if (uVar3 == 0) {
+          uVar3 = _stricmp(this_ptr->bones[local_14].name,this_ptr->bones[local_14 + 1].name);
+        }
+        if (0 < uVar3) {
+          local_b8 = this_ptr->bones[local_14];
+          this_ptr->bones[local_14] = this_ptr->bones[local_14 + 1];
+          this_ptr->bones[local_14 + 1] = local_b8;
+          uVar3 = local_248[local_14];
+          local_248[local_14] = local_248[local_14 + 1];
+          local_248[local_14 + 1] = uVar3;
+        }
       }
       local_24 = local_24 + -1;
     } while (-1 < local_24);
@@ -230,19 +108,17 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
     } while (uVar3 < this_ptr->bone_count);
   }
   uVar3 = 0;
-  pCVar9 = this_ptr;
   if (0 < this_ptr->bone_count) {
     do {
-      iVar3 = pCVar9->bones[0].parent_index;
+      iVar3 = this_ptr->bones[uVar3].parent_index;
       if ((-1 < iVar3) &&
-         (iVar3 = this_ptr->shuffled_bone_indices[iVar3], pCVar9->bones[0].parent_index = iVar3,
+         (iVar3 = this_ptr->shuffled_bone_indices[iVar3], this_ptr->bones[uVar3].parent_index = iVar3,
          uVar3 <= iVar3)) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         g_CurrentLineNumber = 0x2f0;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze while shuffling parent bones...");
       }
       uVar3 = uVar3 + 1;
-      pCVar9 = (CBoneStructure *)&pCVar9->bones[0].world_matrix.m[2].z;
     } while (uVar3 < this_ptr->bone_count);
   }
   return;

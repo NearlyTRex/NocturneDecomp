@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 123,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 73,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 242
   },
   "cross_references": [
@@ -130,6 +127,44 @@
     },
     "pcode_op_count": 611
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(int *)(iVar2 + (int)local_18",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (iVar4 == *(int *)(iVar2 + (int)local_18->index_data_ptr[0])) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(int *)((int)pCVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)pCVar6->index_data_ptr[0] + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 44,
+      "match": "local_18 = (T *)local_18->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 = (CDeformableModel *)local_18->lod_info;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 68,
+      "match": "pCVar6 = (T *)pCVar6->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDeformableModel *)pCVar6->lod_info;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 40,
     "local_size": 36,
@@ -174,38 +209,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(int *)(iVar2 + (int)local_18",
-      "severity": "moderate",
-      "text": "if (iVar4 == *(int *)(iVar2 + (int)local_18->index_data_ptr[0])) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(int *)((int)pCVar6",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)pCVar6->index_data_ptr[0] + iVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 44,
-      "match": "local_18 = (T *)local_18->ARRAY",
-      "severity": "moderate",
-      "text": "local_18 = (CDeformableModel *)local_18->lod_info;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 68,
-      "match": "pCVar6 = (T *)pCVar6->ARRAY",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDeformableModel *)pCVar6->lod_info;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

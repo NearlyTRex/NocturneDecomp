@@ -5,9 +5,15 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6110 (94.7%)
-With suspects: 344
-Total suspects: 2218
+Clean: 6118 (94.8%)
+With suspects: 336
+Total suspects: 2121
+
+====================================================================================================
+core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00 (1 suspect)
+  File: core/dmodel.cpp
+====================================================================================================
+  Line 10 [shadow_pointer_walk]: this_ptr = (CKeyFramedModelInstance *)(this_ptr->part_visibility_flags + 1);
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -40,7 +46,7 @@ core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 (1 suspect)
   Line 76 [pointer_cast]: iVar10 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (7 suspects)
+core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (8 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 27 [unrolled_strchr]: do {
@@ -50,6 +56,7 @@ core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (7 suspects)
   Line 84 [pointer_cast]: puVar1 = (uint *)((int)&pCVar5->x + iVar8);
   Line 94 [pointer_cast]: iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
   Line 98 [pointer_cast]: *(uint *)((int)this_ptr->poly_texture_index_list + local_1c),
+  Line 144 [shadow_pointer_walk]: pCVar7 = (CKeyFramedModel *)(pCVar7->model_filename + 8);
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 (2 suspects)
@@ -93,6 +100,12 @@ core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (8 suspects)
   Line 120 [unrolled_memcpy]: output_normal->x = pCVar2->x;
 
 ====================================================================================================
+core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0 (1 suspect)
+  File: core/dmodel.cpp
+====================================================================================================
+  Line 27 [shadow_pointer_walk]: pCVar3 = (CKeyFramedModel *)(pCVar3->model_filename + 2);
+
+====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (8 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
@@ -121,18 +134,20 @@ core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (10 suspects)
   Line 97 [pointer_cast]: } while (iVar4 < *(int *)((int)pSVar4->vertices + local_24 + -0x14));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 (2 suspects)
+core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 (3 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 56 [pointer_cast]: ((void *)((int)&(((SMRGLPrimitiveQuad *)
   Line 59 [pointer_cast]: (void *)((int)&(((SMRGLPrimitiveQuad *)
+  Line 71 [shadow_pointer_walk]: local_30 = (CKeyFramedModel *)(local_30->model_filename + 8);
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (2 suspects)
+core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (3 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 72 [pointer_cast]: ((void *)((int)&(((SMRGLPrimitiveQuad *)
   Line 75 [pointer_cast]: (void *)((int)&(((SMRGLPrimitiveQuad *)
+  Line 87 [shadow_pointer_walk]: local_38 = (CKeyFramedModel *)(local_38->model_filename + 8);
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (2 suspects)
@@ -153,7 +168,7 @@ core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (6 suspects)
   Line 114 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->z + iVar2) = (int)ROUND(ROUND(dVar20));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (8 suspects)
+core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (9 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0047a8bc) */
@@ -162,15 +177,17 @@ core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (8 suspects)
   Line 5 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0047a936) */
   Line 6 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0047a938) */
   Line 7 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0047a965) */
+  Line 31 [shadow_pointer_walk]: local_2c = (CKeyFramedModel *)(local_2c->model_filename + 8);
   Line 83 [unrolled_memcpy]: // 0047a929: MOVSD.REP ES:EDI,ESI
   Line 87 [unrolled_memcpy]: // 0047a936: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (2 suspects)
+core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (3 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 31 [pointer_cast]: while (iVar3 < *(int *)((int)this_ptr->poly_vert_list->vertices + local_18 + -0x14)) {
   Line 32 [pointer_cast]: iVar1 = *(int *)((int)&this_ptr->poly_vert_list->vertices[0].vertex_index +
+  Line 49 [shadow_pointer_walk]: local_20 = (CKeyFramedModel *)(local_20->model_filename + 8);
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 (2 suspects)
@@ -497,24 +514,6 @@ core_glass.cpp_CGlass_shatter_FUN_004eaef0 (9 suspects)
   Line 115 [raw_address_constant]: local_8c.w = 0xfe0000;
 
 ====================================================================================================
-core_icepick.cpp_CIcePick_processAI_FUN_004f8c70 (3 suspects)
-  File: core/icepick.cpp
-====================================================================================================
-  Line 89 [unrolled_memcpy]: local_6c.x = CStack_78.x;
-  Line 219 [unrolled_memcpy]: local_6c.x = CStack_60.x;
-  Line 225 [unrolled_memcpy]: local_6c.x = pCVar4->x;
-
-====================================================================================================
-core_icepick.cpp_CIcePick_process_FUN_004f80b0 (5 suspects)
-  File: core/icepick.cpp
-====================================================================================================
-  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004f86be) */
-  Line 31 [missing_cave_copy]: CQuaternion4f CStack_94;
-  Line 32 [missing_cave_copy]: CQuaternion4f CStack_84;
-  Line 76 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 206 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-
-====================================================================================================
 core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0 (1 suspect)
   File: core/lightgun.cpp
 ====================================================================================================
@@ -826,7 +825,44 @@ core_mobster.cpp_CMobster_process_FUN_00525840 (6 suspects)
   Line 565 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
-core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (7 suspects)
+core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70 (1 suspect)
+  File: core/motion.cpp
+====================================================================================================
+  Line 28 [shadow_pointer_walk]: pSVar3 = (SMotion *)(pSVar3->motion_name + 8);
+
+====================================================================================================
+core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020 (1 suspect)
+  File: core/motion.cpp
+====================================================================================================
+  Line 32 [shadow_pointer_walk]: pSVar3 = (SMotion *)(pSVar3->motion_name + 8);
+
+====================================================================================================
+core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0 (1 suspect)
+  File: core/motion.cpp
+====================================================================================================
+  Line 24 [shadow_pointer_walk]: pSVar4 = (SMotion *)(pSVar4->motion_name + 8);
+
+====================================================================================================
+core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950 (1 suspect)
+  File: core/motion.cpp
+====================================================================================================
+  Line 28 [shadow_pointer_walk]: pSVar3 = (SMotion *)(pSVar3->motion_name + 0x18);
+
+====================================================================================================
+core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0 (1 suspect)
+  File: core/motion.cpp
+====================================================================================================
+  Line 31 [shadow_pointer_walk]: pSVar2 = (SMotion *)(pSVar2->motion_name + 4);
+
+====================================================================================================
+core_motion.cpp_CMotionList_save_FUN_0052d170 (2 suspects)
+  File: core/motion.cpp
+====================================================================================================
+  Line 78 [shadow_pointer_walk]: pSVar3 = (SMotion *)(pSVar3->motion_name + 8);
+  Line 88 [shadow_pointer_walk]: pSVar9 = (SMotion *)(pSVar9->motion_name + 4);
+
+====================================================================================================
+core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (8 suspects)
   File: core/msnedit.cpp
 ====================================================================================================
   Line 40 [pointer_cast]: if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 0x2c) != 0) {
@@ -834,6 +870,7 @@ core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (7 suspects)
   Line 47 [pointer_cast]: (&local_624.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 1))
   Line 108 [unrolled_strcpy]: do {
   Line 143 [unrolled_strcpy]: do {
+  Line 148 [shadow_pointer_walk]: pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
   Line 153 [unrolled_memcpy]: (pCVar7->location).position.x = (pCVar5->location).position.x;
   Line 159 [unrolled_memcpy]: (pCVar7->orient).vec.x = (pCVar5->orient).vec.x;
 
@@ -1131,79 +1168,6 @@ core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (4 suspects)
   Line 19 [missing_cave_copy]: CMatrix3x4f local_70;
 
 ====================================================================================================
-core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80 (6 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 14 [missing_cave_copy]: CMatrix3x4f local_74;
-  Line 15 [missing_cave_copy]: CMatrix3x4f local_44;
-  Line 33 [unrolled_memcpy]: // 0058acbf: MOVSD.REP ES:EDI,ESI
-  Line 36 [unrolled_memcpy]: for (; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 37 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar2 * -8 + 4);
-  Line 40 [pointer_cast]: pCVar1 = (CMatrix3x4f *)((int)pCVar1 + (uint)bVar2 * -8 + 4);
-
-====================================================================================================
-core_skeledit.cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30 (4 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 33 [unrolled_memcpy]: for (; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 33 [unrolled_memcpy]: // 0058ad66: MOVSD.REP ES:EDI,ESI
-  Line 34 [pointer_cast]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar1 * -8 + 4);
-  Line 35 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar1 * -8 + 4);
-
-====================================================================================================
-core_skeledit.cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200 (2 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 18 [shadow_pointer_walk]: other = (CBoneStructure *)&other->bones[0].world_matrix.m[2].z;
-  Line 20 [shadow_pointer_walk]: pCVar2 = (CBoneStructure *)&pCVar2->bones[0].world_matrix.m[2].z;
-
-====================================================================================================
-core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 (22 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 38 [pointer_cast]: bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3);
-  Line 39 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) =
-  Line 40 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) ^ 0x80;
-  Line 41 [pointer_cast]: bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].w + 3);
-  Line 42 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3) = bVar1 ^ 0x80;
-  Line 43 [pointer_cast]: bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3);
-  Line 44 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].w + 3) = bVar2 ^ 0x80;
-  Line 45 [pointer_cast]: bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].z + 3);
-  Line 46 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3) = bVar1 ^ 0x80;
-  Line 47 [pointer_cast]: bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].y + 3);
-  Line 48 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].z + 3) = bVar2 ^ 0x80;
-  Line 49 [pointer_cast]: bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].x + 3);
-  Line 50 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].y + 3) = bVar1 ^ 0x80;
-  Line 51 [pointer_cast]: bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].z + 3);
-  Line 52 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].x + 3) = bVar2 ^ 0x80;
-  Line 53 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].z + 3) = bVar1 ^ 0x80;
-  Line 57 [pointer_cast]: bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3);
-  Line 58 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) =
-  Line 59 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) ^ 0x80;
-  Line 60 [pointer_cast]: bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3);
-  Line 61 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3) = bVar1 ^ 0x80;
-  Line 62 [pointer_cast]: *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3) = bVar2 ^ 0x80;
-
-====================================================================================================
-core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (14 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 91 [unrolled_strcpy]: do {
-  Line 120 [pointer_cast]: *(uint *)((int)local_248 + iVar3) = 0;
-  Line 122 [pointer_cast]: *(int *)((int)local_248 + iVar3) = *(int *)((int)local_248 + iVar3) + 1;
-  Line 122 [pointer_cast]: *(int *)((int)local_248 + iVar3) = *(int *)((int)local_248 + iVar3) + 1;
-  Line 150 [unrolled_memcpy]: for (uVar3 = 7; uVar3 != 0; uVar3 = uVar3 + -1) {
-  Line 152 [pointer_cast]: pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
-  Line 182 [unrolled_memcpy]: for (uVar3 = 0x21; uVar3 != 0; uVar3 = uVar3 + -1) {
-  Line 183 [pointer_cast]: pSVar14 = (SBoneData *)((int)pSVar14 + (uint)bVar8 * -8 + 4);
-  Line 184 [pointer_cast]: pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar8 * -8 + 4);
-  Line 191 [unrolled_memcpy]: for (uVar3 = 0x21; uVar3 != 0; uVar3 = uVar3 + -1) {
-  Line 195 [pointer_cast]: pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
-  Line 242 [shadow_pointer_walk]: pCVar9 = (CBoneStructure *)&pCVar9->bones[0].world_matrix.m[2].z;
-  Line 293 [unrolled_memcpy]: // 0058a84a: MOVSD.REP ES:EDI,ESI
-  Line 298 [unrolled_memcpy]: // 0058a866: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
 core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (32 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
@@ -1241,28 +1205,7 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (32 suspects)
   Line 1061 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (8 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 59 [unrolled_memcpy]: pCVar2->x = pCVar8->x;
-  Line 75 [unrolled_memcpy]: local_5c.min.x = local_38.x;
-  Line 80 [unrolled_memcpy]: local_5c.max.x = local_38.x;
-  Line 88 [pointer_cast]: piVar3 = (int *)((int)&this_ptr_01->skinned_vertices_buffer->x + iVar6);
-  Line 114 [unrolled_memcpy]: pCVar8->x = pCVar4->x;
-  Line 130 [unrolled_memcpy]: local_5c.min.x = local_38.x;
-  Line 135 [unrolled_memcpy]: local_5c.max.x = local_38.x;
-  Line 143 [pointer_cast]: piVar7 = (int *)((int)&this_ptr_01->skinned_vertices_buffer->x + iVar9);
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70 (3 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 36 [pointer_cast]: iVar2 = (int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_18;
-  Line 37 [pointer_cast]: if (local_20 == *(int *)((int)this_ptr->index_data_ptr[0] + local_14)) {
-  Line 67 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (86 suspects)
+core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (88 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -1313,6 +1256,7 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (86 suspec
   Line 814 [pointer_cast]: local_7c = (void *)((int)local_7c + 0x3c);
   Line 820 [pointer_cast]: iVar31 = *(int *)((int)local_184 + local_11c * 0x3c + 0xc);
   Line 821 [pointer_cast]: *(int *)((int)local_184 + local_11c * 0x3c + 0xc) = local_124;
+  Line 852 [shadow_pointer_walk]: pCVar12 = (CDeformableModel *)(pCVar12->tri_count + 3);
   Line 882 [pointer_cast]: if (*(int *)((int)pvVar35 + 4) == 3) {
   Line 883 [pointer_cast]: iVar20 = *(int *)((int)pvVar35 + 8);
   Line 884 [pointer_cast]: iVar24 = *(int *)((int)pvVar35 + 0xc);
@@ -1351,24 +1295,10 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (86 suspec
   Line 1334 [pointer_cast]: local_ac = *(int *)((int)local_50 + 8);
   Line 1341 [pointer_cast]: local_50 = (void *)((int)local_50 + 0x3c);
   Line 1353 [pointer_cast]: local_4c = (void *)((int)local_4c + 0x3c);
+  Line 1373 [shadow_pointer_walk]: pCVar27 = (CDeformableModel *)(pCVar27->tri_count + 3);
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (10 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 79 [pointer_cast]: puVar6 = (ushort *)((int)this_ptr->tri_data_ptr[lod_level] + local_24 + iVar2);
-  Line 96 [pointer_cast]: puVar6 = (ushort *)((int)this_ptr->tri_data_ptr[lod_level] + local_34 + iVar2);
-  Line 122 [pointer_cast]: *(uint *)((int)aiStack_140 + local_78) = 0;
-  Line 131 [pointer_cast]: *(int *)((int)aiStack_140 + local_78) = *(int *)((int)aiStack_140 + local_78) + 1;
-  Line 131 [pointer_cast]: *(int *)((int)aiStack_140 + local_78) = *(int *)((int)aiStack_140 + local_78) + 1;
-  Line 148 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[lod_level]->vertex_indices).vertex_index_0 +
-  Line 151 [pointer_cast]: *(uint *)((int)this_ptr->index_data_ptr[lod_level] + local_28),
-  Line 171 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[lod_level]->vertex_indices).vertex_index_0 +
-  Line 216 [pointer_cast]: _fprintf(file,"%d,%d,%d,%d,\"%s\"\n",local_88,*(uint *)((int)aiStack_140 + iVar1),
-  Line 218 [pointer_cast]: local_88 = local_88 + *(int *)((int)aiStack_140 + iVar1);
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (13 suspects)
+core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (14 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -1377,6 +1307,7 @@ core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (13 suspects)
   Line 96 [pointer_cast]: *(uint *)(local_48 + (int)this_ptr->index_data_ptr[lod_index]) = *puVar21;
   Line 166 [pointer_cast]: *(uint *)((int)this_ptr->cap_index_ptr[lod_index] + iVar5) =
   Line 167 [pointer_cast]: *(uint *)((int)lod_mesh->tri_data->attribute_indices + iVar3 + 0xc);
+  Line 172 [shadow_pointer_walk]: local_44 = (CDeformableModel *)(local_44->tri_count + 3);
   Line 172 [static_invalid_pointer_cast]: local_534.x = *(float *)pcVar13;
   Line 173 [static_invalid_pointer_cast]: local_534.y = *(float *)(pcVar13 + 4);
   Line 174 [static_invalid_pointer_cast]: local_534.z = *(float *)(pcVar13 + 8);
@@ -1386,56 +1317,11 @@ core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (13 suspects)
   Line 223 [unrolled_memcpy]: pCVar14->x = pCVar6->x;
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0 (3 suspects)
+core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (2 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 73 [pointer_cast]: *(int *)((int)this_ptr->index_data_ptr[0] + iVar4) = local_28;
-  Line 75 [pointer_cast]: puVar4 = (ushort *)((int)&(pSVar1->vertex_indices).vertex_index_0 + iVar6);
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (7 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 19 [missing_cave_copy]: CMatrix3x4f local_d8;
-  Line 20 [missing_cave_copy]: CMatrix3x4f local_a8;
-  Line 55 [static_uninitvar]: if (200 < local_10e) {
-  Line 68 [pointer_cast]: *(int *)((int)aiStack_430 + iVar8) = iVar3;
-  Line 91 [static_uninitvar]: if (local_68 == 0) {
-  Line 117 [static_uninitvar]: fVar2 = local_64 * local_64 * local_64;
-  Line 129 [unrolled_memcpy]: pCVar5->x = pCVar4->x;
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0 (6 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 30 [pointer_cast]: for (local_34 = 0; local_34 < *(int *)((int)this_ptr->vertex_count + local_40);
-  Line 32 [pointer_cast]: pfVar1 = (float *)(local_14 + *(int *)((int)this_ptr->vertex_data_ptr + local_40));
-  Line 46 [pointer_cast]: *(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);
-  Line 46 [pointer_cast]: *(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);
-  Line 56 [pointer_cast]: local_2c = (float *)((int)local_2c + 1);
-  Line 61 [pointer_cast]: local_28 = (float *)((int)local_28 + 1);
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (7 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 38 [pointer_cast]: *(int *)(local_1c + (int)local_54->index_data_ptr[0])) {
-  Line 43 [pointer_cast]: psVar4 = (short *)((int)&(this_ptr->tri_data_ptr[local_50]->vertex_indices).
-  Line 47 [pointer_cast]: *(short *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
-  Line 57 [pointer_cast]: ((void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).
-  Line 59 [pointer_cast]: (void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).
-  Line 63 [pointer_cast]: (void *)(local_40 + (int)local_54->index_data_ptr[0]),
-  Line 82 [shadow_pointer_walk]: local_54 = (CDeformableModel *)local_54->lod_info;
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60 (4 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 35 [pointer_cast]: if (iVar4 == *(int *)(iVar2 + (int)local_18->index_data_ptr[0])) {
-  Line 44 [shadow_pointer_walk]: local_18 = (CDeformableModel *)local_18->lod_info;
-  Line 57 [pointer_cast]: piVar1 = (int *)((int)pCVar6->index_data_ptr[0] + iVar1);
-  Line 68 [shadow_pointer_walk]: pCVar6 = (CDeformableModel *)pCVar6->lod_info;
+  Line 18 [missing_cave_copy]: CMatrix3x4f local_d8;
+  Line 19 [missing_cave_copy]: CMatrix3x4f local_a8;
 
 ====================================================================================================
 core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (15 suspects)
@@ -1458,36 +1344,7 @@ core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (15 suspects)
   Line 134 [pointer_cast]: for (iVar2 = 0; iVar2 < *(int *)((int)this_ptr->cap_tri_count + local_34); iVar2 = iVar2 + 1)
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0 (3 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 20 [pointer_cast]: for (iVar4 = 0; iVar4 < *(int *)((int)this_ptr->vertex_count + local_14); iVar4 = iVar4 + 1) {
-  Line 21 [pointer_cast]: pbVar3 = (byte *)(*(int *)((int)this_ptr->vertex_data_ptr + local_14) + iVar7);
-  Line 22 [pointer_cast]: pfVar1 = (float *)(pbVar3 + 0x10);
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240 (6 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 54 [pointer_cast]: piVar1 = (int *)((int)local_38->index_data_ptr[0] + iVar7);
-  Line 56 [pointer_cast]: piVar6 = (int *)((int)local_38->index_data_ptr[0] + iVar7 + 4);
-  Line 61 [pointer_cast]: ((int)&(local_38->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
-  Line 65 [pointer_cast]: uStack_44 = (ushort)((uint)*(uint *)((int)puVar13 + 6) >> 0x10);
-  Line 66 [pointer_cast]: uVar1 = *(ushort *)((int)puVar13 + 10);
-  Line 92 [shadow_pointer_walk]: local_38 = (CDeformableModel *)local_38->lod_info;
-
-====================================================================================================
-core_skeledit.cpp_CLodVert_copy_FUN_00599550 (5 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 9 [unrolled_memcpy]: (this_ptr->position).x = (other->position).x;
-  Line 14 [unrolled_memcpy]: for (iVar1 = 0xfa; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 23 [unrolled_memcpy]: for (iVar1 = 0x32; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 28 [unrolled_memcpy]: // 00599585: MOVSD.REP ES:EDI,ESI
-  Line 38 [unrolled_memcpy]: // 005995b6: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (29 suspects)
+core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (30 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -1501,6 +1358,7 @@ core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (29 suspects)
   Line 485 [pointer_cast]: pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar26 * -2 + 1) * 4);
   Line 486 [pointer_cast]: pCVar24 = (CMatrix3x4f *)((int)pCVar24 + ((uint)bVar26 * -2 + 1) * 4);
   Line 490 [pointer_cast]: if (0 < *(int *)((int)aiStack_2720 + iVar16)) {
+  Line 555 [shadow_pointer_walk]: pSVar17 = (SMotion *)(pSVar17->motion_name + 0x18);
   Line 1286 [pointer_cast]: } while (local_f0 < *(int *)((int)aiStack_2720 + local_ac));
   Line 1309 [pointer_cast]: if (0 < *(int *)((int)aiStack_2900 + iVar16)) {
   Line 1314 [pointer_cast]: } while (iVar4 < *(int *)((int)aiStack_2900 + iVar16));
@@ -1521,30 +1379,17 @@ core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (29 suspects)
   Line 1828 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0 (6 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 63 [pointer_cast]: _fprintf(file_handle,"%g,%g,%g\n",(double)*(float *)((int)&pCVar8->x + iVar10),
-  Line 64 [pointer_cast]: (double)*(float *)((int)&pCVar8->y + iVar10),
-  Line 65 [pointer_cast]: (double)*(float *)((int)&pCVar8->z + iVar10));
-  Line 76 [pointer_cast]: _fprintf(file_handle,"%g,%g,%g\n",(double)*(float *)((int)&pCVar8->x + iVar10),
-  Line 77 [pointer_cast]: (double)*(float *)((int)&pCVar8->y + iVar10),
-  Line 78 [pointer_cast]: (double)*(float *)((int)&pCVar8->z + iVar10));
-
-====================================================================================================
-core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260 (3 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 15 [pointer_cast]: *(float *)((int)&pCVar1->x + iVar2) = *(float *)((int)&pCVar1->x + iVar2) * scale;
-  Line 16 [pointer_cast]: *(float *)((int)&pCVar1->y + iVar2) = *(float *)((int)&pCVar1->y + iVar2) * scale;
-  Line 17 [pointer_cast]: *(float *)((int)&pCVar1->z + iVar2) = *(float *)((int)&pCVar1->z + iVar2) * scale;
-
-====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (2 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 29 [static_invalid_pointer_cast]: (&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,
   Line 30 [static_invalid_pointer_cast]: (int *)local_24,&local_60);
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 115 [shadow_pointer_walk]: local_3c = (CDeformableModel *)(local_3c->tri_count + 3);
 
 ====================================================================================================
 core_sound.cpp_updateListeners_FUN_005b1870 (5 suspects)
@@ -2227,6 +2072,12 @@ engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (4 suspects)
   Line 76 [unrolled_strcpy]: do {
 
 ====================================================================================================
+engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30 (1 suspect)
+  File: engine/texture.cpp
+====================================================================================================
+  Line 34 [shadow_pointer_walk]: pCVar2 = (CTextureCache *)(pCVar2->texture_dimensions + 0xe);
+
+====================================================================================================
 shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (16 suspects)
   File: shape/cramtex.cpp
 ====================================================================================================
@@ -2897,10 +2748,12 @@ shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (3 suspects)
   Line 20 [pointer_cast]: *(uint *)((int)this_ptr->tri_data->uv_coords[0] + iVar3 + iVar1 + 4) = 0;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (23 suspects)
+shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (28 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 116 [pointer_cast]: if (*(int *)((int)aiStack_4e8 + iVar5) == local_ac->attribute_indices[0]) break;
+  Line 145 [shadow_pointer_walk]: pCVar8 = (CLodFace *)(pCVar8->attribute_indices + 1);
+  Line 146 [shadow_pointer_walk]: local_50 = (CLodFace *)(local_50->attribute_indices + 2);
   Line 158 [pointer_cast]: iVar7 = *(int *)((int)aiStack_4e8 + iVar9 + 4);
   Line 159 [pointer_cast]: fVar2 = *(float *)((int)afStack_4e0 + iVar9);
   Line 160 [pointer_cast]: iVar1 = *(int *)((int)aiStack_4e8 + iVar9 + 4);
@@ -2910,13 +2763,16 @@ shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (23 suspects)
   Line 165 [pointer_cast]: *(float *)((int)afStack_4e0 + iVar9 + 4) / (float)iVar1;
   Line 174 [pointer_cast]: local_14 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_5c + -4);
   Line 177 [pointer_cast]: *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_3c + local_5c);
+  Line 193 [shadow_pointer_walk]: pCVar4 = (CLodFace *)(pCVar4->attribute_indices + 1);
   Line 200 [pointer_cast]: if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;
   Line 235 [pointer_cast]: local_18 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_58 + -4);
   Line 238 [pointer_cast]: *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_30 + local_58);
+  Line 254 [shadow_pointer_walk]: pCVar4 = (CLodFace *)(pCVar4->attribute_indices + 1);
   Line 261 [pointer_cast]: if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;
   Line 295 [pointer_cast]: *(uint *)((int)aiStack_1c8 + iVar5) =
   Line 296 [pointer_cast]: *(uint *)((int)this_ptr->vertex_data[vertex_idx_2].adjacent_edge_indices + iVar5);
   Line 305 [pointer_cast]: local_88 = *(int *)((int)aiStack_1c8 + local_28);
+  Line 318 [shadow_pointer_walk]: pCVar8 = (CLodFace *)(pCVar8->attribute_indices + 1);
   Line 366 [pointer_cast]: ((CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_7c + -0x28)
   Line 401 [pointer_cast]: local_1c < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_60 + -4);
   Line 409 [pointer_cast]: piVar12 = (int *)((int)pCVar10[iVar9].adjacent_edge_indices + iVar7);
@@ -3094,6 +2950,12 @@ shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0 (4 suspects)
   Line 37 [unrolled_memcpy]: // 0051d4f3: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
+shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0 (1 suspect)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 28 [shadow_pointer_walk]: pCVar2 = (CLodFace *)(pCVar2->attribute_indices + 1);
+
+====================================================================================================
 shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (8 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
@@ -3145,10 +3007,11 @@ shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0 (4 suspects)
   Line 30 [pointer_cast]: *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar3) = 0xffff;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (1 suspect)
+shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (2 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 46 [pointer_cast]: *(int *)((int)this_ptr->edges_ptr[iVar1].adjacent_tri_indices + iVar8),
+  Line 75 [shadow_pointer_walk]: pCVar1 = (CLodFace *)(pCVar1->attribute_indices + 1);
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (7 suspects)

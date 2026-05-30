@@ -6,8 +6,8 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6121 (94.8%)
-Files at 100%: 185
+Clean functions: 6129 (95.0%)
+Files at 100%: 183
 Files at 90%+: 186
 Files at 50%+: 214
 
@@ -95,6 +95,7 @@ FILES AT 100% (COMPLETE)
   core/hostage.cpp: 18 functions, 1240 lines
   core/hotdemon.cpp: 14 functions, 599 lines
   core/hpriest.cpp: 9 functions, 118 lines
+  core/icepick.cpp: 23 functions, 1053 lines
   core/imp.cpp: 17 functions, 991 lines
   core/inivar.cpp: 2 functions, 276 lines
   core/inv.cpp: 43 functions, 3098 lines
@@ -115,7 +116,6 @@ FILES AT 100% (COMPLETE)
   core/moloch.cpp: 15 functions, 588 lines
   core/moon.cpp: 14 functions, 346 lines
   core/morph.cpp: 49 functions, 1410 lines
-  core/motion.cpp: 33 functions, 1092 lines
   core/npc.cpp: 14 functions, 341 lines
   core/particle.cpp: 6 functions, 155 lines
   core/passngr.cpp: 11 functions, 348 lines
@@ -134,7 +134,6 @@ FILES AT 100% (COMPLETE)
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
   core/simbox.cpp: 15 functions, 319 lines
-  core/skeleton.cpp: 117 functions, 5234 lines
   core/slew.cpp: 4 functions, 125 lines
   core/smiley.cpp: 16 functions, 833 lines
   core/sound.cpp: 37 functions, 1364 lines
@@ -181,7 +180,6 @@ FILES AT 100% (COMPLETE)
   engine/palette.cpp: 10 functions, 392 lines
   engine/pcx.c: 4 functions, 331 lines
   engine/prim.c: 21 functions, 1870 lines
-  engine/texture.cpp: 22 functions, 654 lines
   engine/winfont.cpp: 9 functions, 330 lines
   shape/dsemodel.cpp: 10 functions, 329 lines
   shape/edittool.cpp: 151 functions, 6425 lines
@@ -200,17 +198,29 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 185 files
+Total: 183 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   91.3% | core/icepick.cpp
-         21/23 clean, 2 remaining
-           - core_icepick.cpp_CIcePick_process_FUN_004f80b0 (313 lines) [missing_cave_copy, unrolled_memset, warning_unreachable]
-           - core_icepick.cpp_CIcePick_processAI_FUN_004f8c70 (243 lines) [unrolled_memcpy]
+   99.1% | core/skeleton.cpp
+         116/117 clean, 1 remaining
+           - core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (124 lines) [shadow_pointer_walk]
 
-Total: 1 files
+   95.5% | engine/texture.cpp
+         21/22 clean, 1 remaining
+           - engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30 (36 lines) [shadow_pointer_walk]
+
+   91.4% | core/skeledit.cpp
+         64/70 clean, 6 remaining
+           - core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (1852 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, sign_compare_idiom, unrolled_memcpy, unrolled_memset, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
+           - core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (242 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_inlined_function]
+           - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines) [missing_cave_copy, pointer_cast, raw_address_constant, shadow_pointer_walk, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_inlined_function]
+           - core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1436 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
+           - core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines) [missing_cave_copy]
+           - core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (187 lines) [pointer_cast, shadow_pointer_walk]
+
+Total: 3 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -227,7 +237,7 @@ FILES AT 50-89%
            - core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 (142 lines) [shadow_pointer_walk, unrolled_strcpy, unrolled_strlen]
            - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (139 lines) [stack_param]
            - core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 (73 lines) [unrolled_strcpy]
-           - core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (171 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
+           - core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (171 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
            - core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (997 lines) [bit_int_float_compare, pointer_cast, unrolled_memcpy]
            - core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 (223 lines) [unrolled_memcpy, unrolled_memset]
    87.0% | core/trigger.cpp
@@ -266,6 +276,14 @@ FILES AT 50-89%
            - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines) [sign_compare_idiom, unrolled_memcpy]
            - engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (111 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen]
            - engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0 (53 lines) [shadow_pointer_walk]
+   81.8% | core/motion.cpp
+         27/33 clean, 6 remaining
+           - core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020 (64 lines) [shadow_pointer_walk]
+           - core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950 (54 lines) [shadow_pointer_walk]
+           - core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0 (36 lines) [shadow_pointer_walk]
+           - core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70 (56 lines) [shadow_pointer_walk]
+           - core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0 (32 lines) [shadow_pointer_walk]
+           - core_motion.cpp_CMotionList_save_FUN_0052d170 (96 lines) [shadow_pointer_walk]
    81.0% | shape/cramtex.cpp
          17/21 clean, 4 remaining
            - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (832 lines) [pointer_cast]
@@ -305,23 +323,6 @@ FILES AT 50-89%
            - core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0 (91 lines) [unrolled_memcpy]
            - core_ghoul.cpp_CGhoul_process_FUN_004e6600 (1052 lines) [self_copy_guard, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_inlined_function]
            - core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0 (149 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-   77.3% | core/dmodel.cpp
-         51/66 clean, 15 remaining
-           - core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (152 lines) [pointer_cast, unrolled_strchr]
-           - core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (130 lines) [pointer_cast, unrolled_memcpy]
-           - core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (100 lines) [pointer_cast, unrolled_strcpy]
-           - core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (90 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (114 lines) [pointer_cast, stack_alignment_array, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 (114 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10 (116 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines) [unrolled_memcpy, warning_unreachable]
-           - core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (175 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (104 lines) [pointer_cast, unrolled_memcpy]
-           - core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 (74 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (169 lines) [pointer_cast, shadow_pointer_walk]
-           - core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 (143 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 (44 lines) [negative_offset]
-           - core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (59 lines) [pointer_cast]
    77.3% | core/mirror.cpp
          17/22 clean, 5 remaining
            - core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 (340 lines) [missing_cave_copy, self_copy_guard, unrolled_memcpy]
@@ -413,6 +414,25 @@ FILES AT 50-89%
            - core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (169 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
            - core_mimic.cpp_CMimic_setupCloth_FUN_00520500 (51 lines) [pointer_cast, unrolled_memcpy]
            - core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 (321 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
+   74.2% | core/dmodel.cpp
+         49/66 clean, 17 remaining
+           - core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0 (54 lines) [shadow_pointer_walk]
+           - core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (152 lines) [pointer_cast, shadow_pointer_walk, unrolled_strchr]
+           - core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (130 lines) [pointer_cast, unrolled_memcpy]
+           - core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (100 lines) [pointer_cast, unrolled_strcpy]
+           - core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (90 lines) [pointer_cast, shadow_pointer_walk]
+           - core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (114 lines) [pointer_cast, stack_alignment_array, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 (114 lines) [pointer_cast]
+           - core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10 (116 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00 (10 lines) [shadow_pointer_walk]
+           - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines) [shadow_pointer_walk, unrolled_memcpy, warning_unreachable]
+           - core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (175 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (104 lines) [pointer_cast, unrolled_memcpy]
+           - core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 (74 lines) [pointer_cast, shadow_pointer_walk]
+           - core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (169 lines) [pointer_cast, shadow_pointer_walk]
+           - core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 (143 lines) [pointer_cast]
+           - core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 (44 lines) [negative_offset]
+           - core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (59 lines) [pointer_cast, shadow_pointer_walk]
    72.7% | shape/quantize.cpp
          24/33 clean, 9 remaining
            - shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 (85 lines) [pointer_cast]
@@ -480,47 +500,6 @@ FILES AT 50-89%
            - shape_design.c_samplePixelAndAccumulate_FUN_0046ad00 (16 lines) [pointer_cast]
            - shape_design.c_turnModelInsideOut_FUN_004671e0 (25 lines) [raw_address_constant]
            - shape_design.c_cramTextureList_FUN_0046bb80 (1047 lines) [unrolled_strchr, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-   68.5% | shape/meshlod.cpp
-         85/124 clean, 39 remaining
-           - shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (30 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (384 lines) [bitcast_double_pair, pointer_cast, sub84_truncation, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (108 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480 (74 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 (53 lines) [pointer_cast]
-           - shape_meshlod.cpp_crc32UpdateDword2_FUN_0051c540 (74 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (192 lines) [pointer_cast, unrolled_memcpy, warning_inlined_function]
-           - shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 (90 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 (125 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (53 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (143 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (123 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 (71 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (449 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (60 lines) [pointer_cast, stack_alignment_array]
-           - shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (377 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (100 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
-           - shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (131 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620 (157 lines) [pointer_cast, self_copy_guard]
-           - shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0 (34 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0 (39 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300 (41 lines) [pointer_cast, sub84_truncation]
-           - shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480 (81 lines) [shadow_pointer_walk]
-           - shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0 (71 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420 (22 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0 (78 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70 (17 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-           - shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600 (72 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0 (54 lines) [shadow_pointer_walk, unrolled_memset]
-           - shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0 (178 lines) [unrolled_memcpy, unrolled_memset]
-           - shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0 (24 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 (28 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (79 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (49 lines) [pointer_cast, warning_inlined_function]
-           - shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20 (38 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (82 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (47 lines) [pointer_cast, sub84_truncation]
-           - shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (89 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (26 lines) [pointer_cast]
    68.5% | engine/fileio.cpp
          50/73 clean, 23 remaining
            - engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0 (135 lines) [pointer_cast, unrolled_strcpy]
@@ -546,31 +525,48 @@ FILES AT 50-89%
            - engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (643 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy, unrolled_strlen]
            - engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (244 lines) [unrolled_strcpy]
            - engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (223 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
-   67.1% | core/skeledit.cpp
-         47/70 clean, 23 remaining
-           - core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60 (73 lines) [pointer_cast, shadow_pointer_walk]
-           - core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (252 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (156 lines) [pointer_cast, unrolled_memcpy]
-           - core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80 (44 lines) [missing_cave_copy, pointer_cast, unrolled_memcpy]
-           - core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0 (101 lines) [pointer_cast]
-           - core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (1852 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, sign_compare_idiom, unrolled_memcpy, unrolled_memset, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (243 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
-           - core_skeledit.cpp_CLodVert_copy_FUN_00599550 (26 lines) [unrolled_memcpy]
-           - core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (85 lines) [pointer_cast, shadow_pointer_walk]
-           - core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (242 lines) [pointer_cast, unrolled_memcpy, warning_inlined_function]
-           - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines) [missing_cave_copy, pointer_cast, raw_address_constant, shadow_pointer_walk, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_inlined_function]
-           - core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0 (44 lines) [pointer_cast]
-           - core_skeledit.cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200 (21 lines) [shadow_pointer_walk]
-           - core_skeledit.cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30 (42 lines) [pointer_cast, unrolled_memcpy]
-           - core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0 (102 lines) [pointer_cast, warning_inlined_function]
-           - core_skeledit.cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0 (86 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240 (94 lines) [pointer_cast, shadow_pointer_walk]
-           - core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260 (19 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1436 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
-           - core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (141 lines) [missing_cave_copy, pointer_cast, unrolled_memcpy]
-           - core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (187 lines) [pointer_cast, shadow_pointer_walk]
-           - core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70 (85 lines) [pointer_cast, unrolled_strcpy]
-           - core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 (71 lines) [pointer_cast]
+   67.7% | shape/meshlod.cpp
+         84/124 clean, 40 remaining
+           - shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (30 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (384 lines) [bitcast_double_pair, pointer_cast, sub84_truncation, unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (108 lines) [pointer_cast, unrolled_memcpy]
+           - shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480 (74 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 (53 lines) [pointer_cast]
+           - shape_meshlod.cpp_crc32UpdateDword2_FUN_0051c540 (74 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (192 lines) [pointer_cast, unrolled_memcpy, warning_inlined_function]
+           - shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 (90 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 (125 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (53 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (143 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (123 lines) [pointer_cast, shadow_pointer_walk]
+           - shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 (71 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (449 lines) [pointer_cast, shadow_pointer_walk]
+           - shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0 (29 lines) [shadow_pointer_walk]
+           - shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (60 lines) [pointer_cast, stack_alignment_array]
+           - shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (377 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (100 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
+           - shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (131 lines) [pointer_cast, unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620 (157 lines) [pointer_cast, self_copy_guard]
+           - shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0 (34 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0 (39 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300 (41 lines) [pointer_cast, sub84_truncation]
+           - shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480 (81 lines) [shadow_pointer_walk]
+           - shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0 (71 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420 (22 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0 (78 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70 (17 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
+           - shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600 (72 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0 (54 lines) [shadow_pointer_walk, unrolled_memset]
+           - shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0 (178 lines) [unrolled_memcpy, unrolled_memset]
+           - shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0 (24 lines) [pointer_cast, unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 (28 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (79 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (49 lines) [pointer_cast, warning_inlined_function]
+           - shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20 (38 lines) [pointer_cast, unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (82 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (47 lines) [pointer_cast, sub84_truncation]
+           - shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (89 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (26 lines) [pointer_cast]
    66.7% | engine/alphabit.cpp
          6/9 clean, 3 remaining
            - engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 (19 lines) [pointer_cast, unrolled_memcpy]

@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 539
+// Structs : 541
 
 #include "nocturne.h"
 
@@ -10303,6 +10303,28 @@ static_assert(__builtin_offsetof(SVDBox, dead) == 60,
               "offsetof(SVDBox, dead) != 60");
 static_assert(__builtin_offsetof(SVDBox, parent_index) == 64,
               "offsetof(SVDBox, parent_index) != 64");
+
+// ---- SVPHHeader (54 bytes) ----
+static_assert(sizeof(SVPHHeader) == 54,
+              "sizeof(SVPHHeader) != 54");
+static_assert(__builtin_offsetof(SVPHHeader, unk1) == 0,
+              "offsetof(SVPHHeader, unk1) != 0");
+static_assert(__builtin_offsetof(SVPHHeader, bone_count) == 2,
+              "offsetof(SVPHHeader, bone_count) != 2");
+static_assert(__builtin_offsetof(SVPHHeader, unk2) == 6,
+              "offsetof(SVPHHeader, unk2) != 6");
+
+// ---- SVPHVertexLink (32 bytes) ----
+static_assert(sizeof(SVPHVertexLink) == 32,
+              "sizeof(SVPHVertexLink) != 32");
+static_assert(__builtin_offsetof(SVPHVertexLink, bone_slots) == 0,
+              "offsetof(SVPHVertexLink, bone_slots) != 0");
+static_assert(__builtin_offsetof(SVPHVertexLink, bone_index) == 16,
+              "offsetof(SVPHVertexLink, bone_index) != 16");
+static_assert(__builtin_offsetof(SVPHVertexLink, weight) == 20,
+              "offsetof(SVPHVertexLink, weight) != 20");
+static_assert(__builtin_offsetof(SVPHVertexLink, unk) == 24,
+              "offsetof(SVPHVertexLink, unk) != 24");
 
 // ---- SVersionControlSession (352 bytes) ----
 static_assert(sizeof(SVersionControlSession) == 352,

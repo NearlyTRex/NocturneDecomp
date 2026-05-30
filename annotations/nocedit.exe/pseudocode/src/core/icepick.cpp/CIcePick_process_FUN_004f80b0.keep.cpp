@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x004f86be) */
-
 void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,float delta_time)
 
 {
@@ -65,9 +63,8 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
   }
   pCVar7 = &(this_ptr->base).base.model.accumulated_root_motion;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  pCVar7->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+  pCVar7->x = 0.0;
   core_icepick_cpp_CIcePick_processMotionEvents_FUN_004f93a0(this_ptr,delta_time);
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
@@ -195,9 +192,8 @@ switchD_004f8665_default:
   }
   else {
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    pCVar7->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+    pCVar7->x = 0.0;
     uVar9 = (this_ptr->base).base.is_walking;
     if (uVar9 < 2) {
       if (uVar9 == 1) {
@@ -298,6 +294,7 @@ LAB_004f82f8:
     fVar12 = this_ptr->head_look_blend_weight;
     iVar6 = g_IcePickIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_look_euler,&CStack_94);
+    CStack_84 = CStack_94;
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (pCVar1,&CStack_84,fVar12,iVar6,
                (CDeformableModel_MotionBlendWeightFunc *)blend_callback);

@@ -211,6 +211,8 @@
 #include "types/structs/STriangleRef.h"
 #include "types/structs/STriangleVertices.h"
 #include "types/structs/SVDBox.h"
+#include "types/structs/SVPHHeader.h"
+#include "types/structs/SVPHVertexLink.h"
 #include "types/structs/SVersionControlSession.h"
 #include "types/structs/SVert.h"
 #include "types/structs/SVertexData.h"

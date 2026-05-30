@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 64,
+    "complexity_score": 79,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 240
   },
   "cross_references": [
@@ -196,5 +198,14 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via pointer arithmetic on its own `motion_name` field (which decays to a pointer), `+ CONST`; `offsetof(motion_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar3`. Replace those `pSVar3->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 32,
+      "match": "pSVar3 = (T *)(pSVar3->motion_name + CONST)",
+      "severity": "moderate",
+      "text": "pSVar3 = (SMotion *)(pSVar3->motion_name + 8);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

@@ -122,6 +122,24 @@
       "severity": "moderate",
       "text": "*(int *)((int)scalefactor_dest + iVar10) = *piVar1;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on its own `filename` field (which decays to a pointer), `+ CONST`; `offsetof(filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar6`. Replace those `pCVar6->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 32,
+      "match": "pCVar6 = (T *)(pCVar6->filename + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar6 = (CMP3Decoder *)(pCVar6->filename + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via pointer arithmetic on its own `filename` field (which decays to a pointer), `+ CONST`; `offsetof(filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `this_ptr`. Replace those `this_ptr->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 89,
+      "match": "this_ptr = (T *)(this_ptr->filename + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr = (CMP3Decoder *)(this_ptr->filename + 4);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

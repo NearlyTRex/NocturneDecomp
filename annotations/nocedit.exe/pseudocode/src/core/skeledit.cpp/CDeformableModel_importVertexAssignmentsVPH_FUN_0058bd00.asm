@@ -9,13 +9,10 @@
 ; CBoneStructure * Stack[0xc]:4   bone_structure
 ; Local Variables:
 ; int[200]         Stack[-0x430]:800  aiStack_430
-; undefined1[2]    Stack[-0x110]:2  local_110
-; int              Stack[-0x10e]:4  local_10e
+; SVPHHeader       Stack[-0x110]:54  local_110
 ; CMatrix3x4f      Stack[-0xd8]:48  local_d8
 ; CMatrix3x4f      Stack[-0xa8]:48  local_a8
-; int[4]           Stack[-0x78]:16  local_78
-; int              Stack[-0x68]:4  local_68
-; float            Stack[-0x64]:4  local_64
+; SVPHVertexLink   Stack[-0x78]:32  local_78
 ; CVector3f        Stack[-0x58]:12  local_58
 ; CVector3f        Stack[-0x4c]:12  local_4c
 ; undefined1[4]    Stack[-0x40]:4  local_40

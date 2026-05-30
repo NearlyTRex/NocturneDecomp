@@ -15,8 +15,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   int iVar1;
   int iVar2;
   int iVar5;
-  ushort *puVar2;
-  ushort *puVar6;
+  SInputFace *pSVar1;
   int *piVar5;
   int iVar6;
   char local_340 [512];
@@ -27,18 +26,11 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   int local_8c;
   int local_88;
   int local_84;
-  CDeformableModel *local_80;
-  int local_78;
   int local_48;
   int local_44;
   int local_40;
   int local_3c;
-  int local_38;
-  int local_34;
   int local_30;
-  int local_2c;
-  int local_28;
-  int local_24;
   int local_20;
   int local_1c;
   char *pcVar3;
@@ -65,45 +57,35 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   local_40 = this_ptr->tri_count[lod_level];
   local_84 = 0;
   if (0 < this_ptr->num_parts) {
-    local_80 = this_ptr;
-    local_78 = 0;
     do {
       memset(dest,0,this_ptr->vertex_count[lod_level] << 2);
       local_44 = local_3c;
-      local_24 = local_3c * 0x12;
       local_30 = 0;
       if (0 < this_ptr->parts[local_84].tri_counts[lod_level]) {
         do {
-          iVar2 = 0;
-          do {
-            puVar6 = (ushort *)((int)this_ptr->tri_data_ptr[lod_level] + local_24 + iVar2);
-            iVar2 = iVar2 + 2;
-            dest[*puVar6] = 1;
-          } while (iVar2 != 6);
+          pSVar1 = &this_ptr->tri_data_ptr[lod_level][local_44];
+          for (iVar2 = 0; iVar2 < 3; iVar2 = iVar2 + 1) {
+            dest[(&pSVar1->vertex_indices.vertex_index_0)[iVar2]] = 1;
+          }
           local_44 = local_44 + 1;
           local_30 = local_30 + 1;
-          local_24 = local_24 + 0x12;
         } while (local_30 < this_ptr->parts[local_84].tri_counts[lod_level]);
       }
       local_48 = local_40;
       if (iVar1 != 0) {
         local_20 = 0;
-        local_34 = local_40 * 0x12;
         if (0 < this_ptr->parts[local_84].cap_tri_counts[lod_level]) {
           do {
-            iVar2 = 0;
-            do {
-              puVar6 = (ushort *)((int)this_ptr->tri_data_ptr[lod_level] + local_34 + iVar2);
-              iVar2 = iVar2 + 2;
-              dest[*puVar6] = 1;
-            } while (iVar2 != 6);
+            pSVar1 = &this_ptr->tri_data_ptr[lod_level][local_48];
+            for (iVar2 = 0; iVar2 < 3; iVar2 = iVar2 + 1) {
+              dest[(&pSVar1->vertex_indices.vertex_index_0)[iVar2]] = 1;
+            }
             local_48 = local_48 + 1;
             local_20 = local_20 + 1;
-            local_34 = local_34 + 0x12;
           } while (local_20 < this_ptr->parts[local_84].cap_tri_counts[lod_level]);
         }
       }
-      *(uint *)((int)aiStack_140 + local_78) = 0;
+      aiStack_140[local_84] = 0;
       local_1c = 0;
       piVar5 = dest;
       if (0 < this_ptr->vertex_count[lod_level]) {
@@ -112,7 +94,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
             *piVar5 = -1;
           }
           else {
-            *(int *)((int)aiStack_140 + local_78) = *(int *)((int)aiStack_140 + local_78) + 1;
+            aiStack_140[local_84] = aiStack_140[local_84] + 1;
             *piVar5 = local_b8.item_count;
             core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
                       (this_ptr,&local_a8,lod_level,local_1c,bone_matrices);
@@ -125,23 +107,18 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
           piVar5 = piVar5 + 1;
         } while (local_1c < this_ptr->vertex_count[lod_level]);
       }
-      local_28 = local_3c << 2;
-      local_2c = local_3c * 0x12;
-      for (iVar2 = 0; iVar2 < local_80->parts[0].tri_counts[lod_level]; iVar2 = iVar2 + 1) {
-        puVar2 = (ushort *)
-                 ((int)&(this_ptr->tri_data_ptr[lod_level]->vertex_indices).vertex_index_0 +
-                 local_2c);
+      for (iVar2 = 0; iVar2 < this_ptr->parts[local_84].tri_counts[lod_level]; iVar2 = iVar2 + 1) {
+        pSVar1 = &this_ptr->tri_data_ptr[lod_level][local_3c];
         _sprintf
                   (local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
-                   *(uint *)((int)this_ptr->index_data_ptr[lod_level] + local_28),
-                   dest[*puVar2],(double)puVar2[3] * 0.00390625,
-                   (double)puVar2[6] * 0.00390625,dest[puVar2[1]],
-                   (double)puVar2[4] * 0.00390625,(double)puVar2[7] * 0.00390625,
-                   dest[puVar2[2]],
-                   (double)puVar2[5] * 0.00390625,(double)puVar2[8] * 0.00390625);
+                   this_ptr->index_data_ptr[lod_level][local_3c],
+                   dest[pSVar1->vertex_indices.vertex_index_0],
+                   (double)pSVar1->u_coord_0 * 0.00390625,(double)pSVar1->v_coord_0 * 0.00390625,
+                   dest[pSVar1->vertex_indices.vertex_index_1],
+                   (double)pSVar1->u_coord_1 * 0.00390625,(double)pSVar1->v_coord_1 * 0.00390625,
+                   dest[pSVar1->vertex_indices.vertex_index_2],
+                   (double)pSVar1->u_coord_2 * 0.00390625,(double)pSVar1->v_coord_2 * 0.00390625);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8,local_340);
-        local_28 = local_28 + 4;
-        local_2c = local_2c + 0x12;
         local_3c = local_3c + 1;
       }
       if (local_3c != local_44) {
@@ -150,20 +127,18 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze");
       }
       if (iVar1 != 0) {
-        local_38 = local_40 * 0x12;
-        for (iVar2 = 0; iVar2 < local_80->parts[0].cap_tri_counts[lod_level]; iVar2 = iVar2 + 1) {
-          puVar6 = (ushort *)
-                   ((int)&(this_ptr->tri_data_ptr[lod_level]->vertex_indices).vertex_index_0 +
-                   local_38);
+        for (iVar2 = 0; iVar2 < this_ptr->parts[local_84].cap_tri_counts[lod_level]; iVar2 = iVar2 + 1) {
+          pSVar1 = &this_ptr->tri_data_ptr[lod_level][local_40];
           _sprintf
                     (local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
-                     this_ptr->index_data_ptr[lod_level][local_3c],dest[*puVar6],
-                     (double)puVar6[3] * 0.00390625,(double)puVar6[6] * 0.00390625,
-                     dest[puVar6[1]],(double)puVar6[4] * 0.00390625,
-                     (double)puVar6[7] * 0.00390625,dest[puVar6[2]],
-                     (double)puVar6[5] * 0.00390625,(double)puVar6[8] * 0.00390625);
+                     this_ptr->index_data_ptr[lod_level][local_3c],
+                     dest[pSVar1->vertex_indices.vertex_index_0],
+                     (double)pSVar1->u_coord_0 * 0.00390625,(double)pSVar1->v_coord_0 * 0.00390625,
+                     dest[pSVar1->vertex_indices.vertex_index_1],
+                     (double)pSVar1->u_coord_1 * 0.00390625,(double)pSVar1->v_coord_1 * 0.00390625,
+                     dest[pSVar1->vertex_indices.vertex_index_2],
+                     (double)pSVar1->u_coord_2 * 0.00390625,(double)pSVar1->v_coord_2 * 0.00390625);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8,local_340);
-          local_38 = local_38 + 0x12;
           local_40 = local_40 + 1;
         }
         if (local_40 != local_48) {
@@ -172,8 +147,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze");
         }
       }
-      local_78 = local_78 + 4;
-      local_80 = (CDeformableModel *)(local_80->tri_count + 3);
       local_84 = local_84 + 1;
     } while (local_84 < this_ptr->num_parts);
   }
@@ -195,11 +168,11 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
       iVar5 = this_ptr->parts[iVar6].tri_counts[lod_level] +
               this_ptr->parts[iVar6].cap_tri_counts[lod_level];
       iVar6 = iVar6 + 1;
-      _fprintf(file,"%d,%d,%d,%d,\"%s\"\n",local_88,*(uint *)((int)aiStack_140 + iVar1),
+      _fprintf(file,"%d,%d,%d,%d,\"%s\"\n",local_88,aiStack_140[iVar1],
                  local_8c,iVar5,this_ptr->parts[iVar6].part_name);
-      local_88 = local_88 + *(int *)((int)aiStack_140 + iVar1);
+      local_88 = local_88 + aiStack_140[iVar1];
       local_8c = local_8c + iVar5;
-      iVar1 = iVar1 + 4;
+      iVar1 = iVar1 + 1;
     } while (iVar6 < this_ptr->num_parts);
   }
   _fprintf(file,"// texture list: name\n");

@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (332 diagnostics)
+Cppcheck (quick) (325 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -665,7 +665,7 @@ invalidscanf (60)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (46)
+selfAssignment (43)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -707,18 +707,6 @@ selfAssignment (46)
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_ line 142
     File: core/msnedit.cpp
     Redundant assignment of 'pCVar5' to itself.
-
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 192
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar11' to itself.
-
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 193
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar14' to itself.
-
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 200
-    File: core/skeledit.cpp
-    Redundant assignment of 'puVar12' to itself.
 
   core_skeledit.cpp_CDeformableModel_determinePartsF line 1141
     File: core/skeledit.cpp
@@ -853,7 +841,7 @@ selfAssignment (46)
     Redundant assignment of 'piVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (35)
+uninitvar (32)
 ----------------------------------------------------------------------------------------------------
 
   core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
@@ -867,18 +855,6 @@ uninitvar (35)
   core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
     File: core/gabriela.cpp
     Uninitialized variable: local_98
-
-  core_skeledit.cpp_CDeformableModel_importVertexAss line 55
-    File: core/skeledit.cpp
-    Uninitialized variable: local_10e
-
-  core_skeledit.cpp_CDeformableModel_importVertexAss line 91
-    File: core/skeledit.cpp
-    Uninitialized variable: local_68
-
-  core_skeledit.cpp_CDeformableModel_importVertexAss line 117
-    File: core/skeledit.cpp
-    Uninitialized variable: local_64
 
   core_sound.cpp_updateListeners_FUN_005b1870        line 57
     File: core/sound.cpp
@@ -997,102 +973,6 @@ uninitvar (35)
     Uninitialized variable: local_288
 
 ----------------------------------------------------------------------------------------------------
-identicalInnerCondition (23)
-----------------------------------------------------------------------------------------------------
-
-  core_dmodel.cpp_CKeyFramedModel_buildCollisionTriL line 26
-    File: core/dmodel.cpp
-    Identical inner 'if' condition is always true.
-
-  core_skeledit.cpp_CDeformableModel_sortFacesByText line 43
-    File: core/skeledit.cpp
-    Identical inner 'if' condition is always true.
-
-  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 58
-    File: core/skeleton.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 315
-    File: shape/meshlod.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 239
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 48
-    File: sound/snddx.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 40
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 53
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 68
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 83
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 99
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 111
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 126
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 140
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 157
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 169
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 184
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 199
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 219
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 231
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 245
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 259
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
 legacyUninitvar (23)
 ----------------------------------------------------------------------------------------------------
 
@@ -1187,6 +1067,98 @@ legacyUninitvar (23)
   shape_design.c_loadModelBinary_FUN_00458170        line 69
     File: shape/design.c
     Uninitialized variable: local_64
+
+----------------------------------------------------------------------------------------------------
+identicalInnerCondition (22)
+----------------------------------------------------------------------------------------------------
+
+  core_dmodel.cpp_CKeyFramedModel_buildCollisionTriL line 26
+    File: core/dmodel.cpp
+    Identical inner 'if' condition is always true.
+
+  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 58
+    File: core/skeleton.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 315
+    File: shape/meshlod.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 239
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 48
+    File: sound/snddx.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 40
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 53
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 68
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 83
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 99
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 111
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 126
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 140
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 157
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 169
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 184
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 199
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 219
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 231
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 245
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 259
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 invalidPointerCast (14)

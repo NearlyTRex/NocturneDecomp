@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 151,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 86,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 281
   },
   "cross_references": [],
@@ -117,6 +115,62 @@
     },
     "pcode_op_count": 752
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (local_34 = 0; local_34 < *(int *)((int)this_ptr->vertex_count + local_40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar1 = (float *)(local_14 + *(int *)((int)this_ptr->vertex_data_ptr + local_40));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(byte *)((int)local_2c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(byte *)((int)local_28",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(float *)((int)local_2c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_2c = (float *)((int)local_2c + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(float *)((int)local_28",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_28 = (float *)((int)local_28 + 1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 72,
     "local_size": 68,
@@ -213,54 +267,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "for (local_34 = 0; local_34 < *(int *)((int)this_ptr->vertex_count + local_40);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "pfVar1 = (float *)(local_14 + *(int *)((int)this_ptr->vertex_data_ptr + local_40));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(byte *)((int)local_2c",
-      "severity": "moderate",
-      "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(byte *)((int)local_28",
-      "severity": "moderate",
-      "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(float *)((int)local_2c",
-      "severity": "moderate",
-      "text": "local_2c = (float *)((int)local_2c + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(float *)((int)local_28",
-      "severity": "moderate",
-      "text": "local_28 = (float *)((int)local_28 + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

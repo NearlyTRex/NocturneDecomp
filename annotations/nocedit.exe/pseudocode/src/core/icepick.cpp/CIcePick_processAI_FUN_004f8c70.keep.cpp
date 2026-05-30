@@ -90,11 +90,7 @@ void __cdecl core_icepick_cpp_CIcePick_processAI_FUN_004f8c70(CIcePick *this_ptr
                   (this_ptr->base).base.base.location.position.y;
     CStack_78.z = (pCVar10->base).base.location.position.z -
                   (this_ptr->base).base.base.location.position.z;
-    if (&local_6c != &CStack_78) {
-      local_6c.x = CStack_78.x;
-      local_6c.y = CStack_78.y;
-      local_6c.z = CStack_78.z;
-    }
+    local_6c = CStack_78;
     fVar2 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);
     (this_ptr->base).base.turn_angle_accumulator = 0.0;
     fStack_18 = fVar2;
@@ -220,16 +216,10 @@ void __cdecl core_icepick_cpp_CIcePick_processAI_FUN_004f8c70(CIcePick *this_ptr
                   (this_ptr->base).base.base.location.position.y;
     CStack_60.z = (pCVar10->base).base.location.position.z -
                   (this_ptr->base).base.base.location.position.z;
-    if (&local_6c != &CStack_60) {
-      local_6c.x = CStack_60.x;
-      local_6c.y = CStack_60.y;
-      local_6c.z = CStack_60.z;
-    }
+    local_6c = CStack_60;
     pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_84,&local_6c);
     if (&local_6c != pCVar4) {
-      local_6c.x = pCVar4->x;
-      local_6c.y = pCVar4->y;
-      local_6c.z = pCVar4->z;
+      local_6c = *pCVar4;
     }
     fStack_8c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (local_6c.y - (this_ptr->base).base.base.orient.vec.y);
