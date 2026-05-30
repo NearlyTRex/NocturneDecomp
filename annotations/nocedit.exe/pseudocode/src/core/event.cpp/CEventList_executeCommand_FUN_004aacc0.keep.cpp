@@ -11,7 +11,6 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
 
 {
   CDeformableModelInstance *this_ptr_00;
-  char cVar1;
   CHero *this_ptr_01;
   int iVar2;
   int iVar3;
@@ -161,17 +160,8 @@ LAB_004aad41:
       }
       pcVar17 = (this_ptr->events).names[(this_ptr->events).count];
       local_14 = 0;
-      pcVar18 = pcVar17;
-      do {
-        cVar1 = *command_buffer;
-        *pcVar18 = cVar1;
-        pcVar19 = pcVar17;
-        if (cVar1 == '\0') break;
-        cVar1 = command_buffer[1];
-        command_buffer = command_buffer + 2;
-        pcVar18[1] = cVar1;
-        pcVar18 = pcVar18 + 2;
-      } while (cVar1 != '\0');
+      pcVar19 = pcVar17;
+      strcpy(pcVar17,command_buffer);
       do {
         uVar14 = local_14;
         if (strlen(pcVar17) <= local_14) {

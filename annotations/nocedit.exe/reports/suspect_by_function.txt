@@ -5,15 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6079 (94.2%)
-With suspects: 375
-Total suspects: 2279
-
-====================================================================================================
-core_actor.cpp_trimActorName_FUN_004087b0 (1 suspect)
-  File: core/actor.cpp
-====================================================================================================
-  Line 12 [unrolled_strlen]: do {
+Clean: 6076 (94.1%)
+With suspects: 378
+Total suspects: 2252
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -198,10 +192,16 @@ core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
   Line 25 [static_invalid_pointer_cast]: if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {
 
 ====================================================================================================
-core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (1 suspect)
+core_event.cpp_trimWhitespace_FUN_004aa650 (1 suspect)
   File: core/event.cpp
 ====================================================================================================
-  Line 176 [unrolled_strcpy]: do {
+  Line 12 [unrolled_strlen]: do {
+
+====================================================================================================
+core_fileman.cpp_trimWhitespace_FUN_004bd9b0 (1 suspect)
+  File: core/fileman.cpp
+====================================================================================================
+  Line 12 [unrolled_strlen]: do {
 
 ====================================================================================================
 core_flies.cpp_CFlies_initFly_FUN_004cc760 (2 suspects)
@@ -383,6 +383,18 @@ core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (15 suspects)
   Line 90 [unrolled_memcpy]: local_31c.m[0].w = pCVar8->m[0].w;
   Line 104 [unrolled_memcpy]: (pCVar4->base).location.position.x = pCVar3->x;
   Line 112 [unrolled_memcpy]: (pUVar5->vec).x = (pUVar6->vec).x;
+
+====================================================================================================
+core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0 (1 suspect)
+  File: core/game.cpp
+====================================================================================================
+  Line 15 [unrolled_strlen]: do {
+
+====================================================================================================
+core_game.cpp_checkCheatCode_FUN_004dd7f0 (1 suspect)
+  File: core/game.cpp
+====================================================================================================
+  Line 15 [unrolled_strlen]: do {
 
 ====================================================================================================
 core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004e82d0 (1 suspect)
@@ -828,6 +840,12 @@ core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20 (3 suspects)
   Line 52 [static_null_pointer]: (actor->base).location.area_id = (pCVar3->location).area_id;
 
 ====================================================================================================
+core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_00524660 (1 suspect)
+  File: core/mission.cpp
+====================================================================================================
+  Line 18 [unrolled_strlen]: do {
+
+====================================================================================================
 core_mission.cpp_CDemonMission_loadActor_FUN_00523990 (1 suspect)
   File: core/mission.cpp
 ====================================================================================================
@@ -1136,103 +1154,6 @@ core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (2 suspects)
   Line 17 [pointer_cast]: ((void *)((int)g_SimFrameHistory[0].player_input + iVar2 + -0xc),src,
 
 ====================================================================================================
-core_path.cpp_CPathMap_dtor_FUN_005464d0 (3 suspects)
-  File: core/path.cpp
-====================================================================================================
-  Line 14 [pointer_cast]: if (this_ptr == *(CPathMap **)((int)g_PathMapList + iVar2)) {
-  Line 17 [pointer_cast]: ((void *)((int)g_PathMapList + iVar2),(void *)((int)g_PathMapList + iVar2 + 4),
-  Line 17 [pointer_cast]: ((void *)((int)g_PathMapList + iVar2),(void *)((int)g_PathMapList + iVar2 + 4),
-
-====================================================================================================
-core_path.cpp_CPathMap_findPathToDestination_FUN_00547320 (10 suspects)
-  File: core/path.cpp
-====================================================================================================
-  Line 48 [unrolled_memcpy]: (this_ptr->dest_voxel_coords).x = local_58.x;
-  Line 94 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
-  Line 109 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
-  Line 127 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
-  Line 138 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
-  Line 169 [static_uninitvar]: local_7c = (float)local_a0 * g_CDemonRaytraceInstance.adjusted_size.x + local_7c;
-  Line 170 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
-  Line 170 [static_uninitvar]: local_74 = (float)local_98 * g_CDemonRaytraceInstance.adjusted_size.z + local_74;
-  Line 195 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
-  Line 217 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
-
-====================================================================================================
-core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00 (2 suspects)
-  File: core/path.cpp
-====================================================================================================
-  Line 11 [unrolled_memcpy]: (this_ptr->cached_world_position).x = dest_position->x;
-  Line 25 [unrolled_memcpy]: out_euler_angles->x = (this_ptr->path_heading).x;
-
-====================================================================================================
-core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0 (2 suspects)
-  File: core/path.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 15 [stack_alignment_array]: int aiStackY_1040 [1010];
-
-====================================================================================================
-core_path.cpp_CPathMap_reset_FUN_00548510 (2 suspects)
-  File: core/path.cpp
-====================================================================================================
-  Line 9 [unrolled_memset]: (this_ptr->cached_world_position).z = 0.0;
-  Line 13 [unrolled_memset]: (this_ptr->path_heading).z = 0.0;
-
-====================================================================================================
-core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60 (4 suspects)
-  File: core/path.cpp
-====================================================================================================
-  Line 11 [stack_alignment_array]: int aiStackY_1004 [1013];
-  Line 34 [unrolled_memcpy]: (this_ptr->current_position).x = source_position->x;
-  Line 40 [unrolled_memcpy]: (this_ptr->voxel_coords).x = local_1c.x;
-  Line 48 [unrolled_memcpy]: (this_ptr->cached_voxel_coords).x = (this_ptr->voxel_coords).x;
-
-====================================================================================================
-core_path.cpp_getOrCreatePathMap_FUN_00548390 (9 suspects)
-  File: core/path.cpp
-====================================================================================================
-  Line 29 [pointer_cast]: *(int *)((int)g_PathMapLRUCounters + iVar7) = iVar6;
-  Line 42 [pointer_cast]: *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->x + iVar8)) &&
-  Line 44 [pointer_cast]: *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->y + iVar8))) &&
-  Line 47 [pointer_cast]: *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->z + iVar8)))
-  Line 50 [pointer_cast]: if (g_PathMapLRUCounters[iVar7] < *(int *)((int)g_PathMapLRUCounters + iVar4)) {
-  Line 60 [pointer_cast]: if (*(int *)((int)g_PathMapLRUCounters + iVar1) < g_PathMapLRUCounters[iVar5]) {
-  Line 61 [pointer_cast]: *(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;
-  Line 61 [pointer_cast]: *(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;
-  Line 66 [unrolled_memcpy]: local_28.x = (location->position).x;
-
-====================================================================================================
-core_path.cpp_renderAllPathMaps_FUN_005485f0 (3 suspects)
-  File: core/path.cpp
-====================================================================================================
-  Line 12 [pointer_cast]: if (*(int *)((int)g_PathMapList + iVar1) == 0) {
-  Line 17 [pointer_cast]: if ((int)((*(CPathMap **)((int)g_PathMapList + iVar1))->cached_world_position).x < 0x461c3c01)
-  Line 20 [pointer_cast]: (*(CPathMap **)((int)g_PathMapList + iVar1),depth,red,green,fog);
-
-====================================================================================================
-core_path.cpp_renderPathMapsAtPosition_FUN_00548680 (4 suspects)
-  File: core/path.cpp
-====================================================================================================
-  Line 8 [stack_alignment_array]: int aiStackY_1010 [1013];
-  Line 21 [pointer_cast]: if (*(int *)((int)g_PathMapList + iVar1) == 0) {
-  Line 26 [pointer_cast]: this_ptr = *(CPathMap **)((int)g_PathMapList + iVar1);
-  Line 27 [bit_int_float_compare]: if (((((int)(this_ptr->cached_world_position).x < 0x461c3c01) &&
-
-====================================================================================================
-core_path.cpp_resetAllPathMaps_FUN_00548590 (2 suspects)
-  File: core/path.cpp
-====================================================================================================
-  Line 13 [pointer_cast]: if (*(int *)((int)g_PathMapList + iVar2) == 0) {
-  Line 18 [pointer_cast]: puVar1 = (uint *)((int)g_PathMapList + iVar2);
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_process_FUN_0054cc30 (1 suspect)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 157 [unrolled_strcpy]: do {
-
-====================================================================================================
 core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (15 suspects)
   File: core/scat.cpp
 ====================================================================================================
@@ -1282,28 +1203,22 @@ core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (4 suspects)
   Line 19 [missing_cave_copy]: CMatrix3x4f local_70;
 
 ====================================================================================================
-core_script.cpp_CCmdParm_parseValue_FUN_00561cb0 (1 suspect)
+core_script.cpp_trimString_FUN_00559360 (1 suspect)
   File: core/script.cpp
 ====================================================================================================
-  Line 17 [unrolled_strlen]: do {
+  Line 12 [unrolled_strlen]: do {
 
 ====================================================================================================
-core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620 (1 suspect)
+core_script.cpp_validateActorVariableName_FUN_00559220 (1 suspect)
   File: core/script.cpp
 ====================================================================================================
-  Line 37 [unrolled_strlen]: do {
+  Line 13 [unrolled_strlen]: do {
 
 ====================================================================================================
-core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760 (1 suspect)
-  File: core/script.cpp
+core_setedit.cpp_incrementTrailingNumber_FUN_00576950 (1 suspect)
+  File: core/setedit.cpp
 ====================================================================================================
-  Line 44 [unrolled_strlen]: do {
-
-====================================================================================================
-core_script.cpp_CCmdParse_getParamTextLength_FUN_005626d0 (1 suspect)
-  File: core/script.cpp
-====================================================================================================
-  Line 44 [unrolled_strlen]: do {
+  Line 14 [unrolled_strlen]: do {
 
 ====================================================================================================
 core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80 (6 suspects)
@@ -1721,6 +1636,12 @@ core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260 (3 suspects)
   Line 17 [pointer_cast]: *(float *)((int)&pCVar1->z + iVar2) = *(float *)((int)&pCVar1->z + iVar2) * scale;
 
 ====================================================================================================
+core_skeledit.cpp_trimWhitespace_FUN_00589450 (1 suspect)
+  File: core/skeledit.cpp
+====================================================================================================
+  Line 12 [unrolled_strlen]: do {
+
+====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (2 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
@@ -1947,6 +1868,54 @@ core_weather.cpp_CWeather_update_FUN_005eeaf0 (8 suspects)
   Line 68 [pointer_cast]: local_28.x = *(float *)((int)&g_WeatherParticlePositions[0].x + iVar4);
   Line 69 [pointer_cast]: local_28.z = *(float *)((int)&g_WeatherParticlePositions[0].z + iVar4);
   Line 70 [pointer_cast]: local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);
+
+====================================================================================================
+engine_2d.c_drawStringHighlighted_FUN_004020e0 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 14 [unrolled_strlen]: do {
+
+====================================================================================================
+engine_2d.c_drawStringMasked_FUN_00402030 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 14 [unrolled_strlen]: do {
+
+====================================================================================================
+engine_2d.c_drawString_FUN_00402080 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 14 [unrolled_strlen]: do {
+
+====================================================================================================
+engine_2d.c_drawTextMultilineColor_FUN_00401f40 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 14 [unrolled_strlen]: do {
+
+====================================================================================================
+engine_2d.c_drawTextMultiline_FUN_00401cf0 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 14 [unrolled_strlen]: do {
+
+====================================================================================================
+engine_2d.c_drawTextWrappedColor_FUN_00401eb0 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 16 [unrolled_strlen]: do {
+
+====================================================================================================
+engine_2d.c_drawTextWrapped_FUN_00401c60 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 16 [unrolled_strlen]: do {
+
+====================================================================================================
+engine_2d.c_getStringWidth_FUN_004018a0 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 19 [unrolled_strlen]: do {
 
 ====================================================================================================
 engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 (4 suspects)
@@ -2383,6 +2352,12 @@ engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650 (2 suspects)
   Line 51 [unrolled_strcpy]: do {
 
 ====================================================================================================
+engine_fileio.cpp_trimWhitespace_FUN_004b1d40 (1 suspect)
+  File: engine/fileio.cpp
+====================================================================================================
+  Line 12 [unrolled_strlen]: do {
+
+====================================================================================================
 engine_model.c_getMRGLBounds_FUN_00528140 (1 suspect)
   File: engine/model.c
 ====================================================================================================
@@ -2441,9 +2416,10 @@ engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 (16 suspects)
   Line 187 [shadow_pointer_walk]: local_50 = (CPod *)local_50->pod_files;
 
 ====================================================================================================
-engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (3 suspects)
+engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (4 suspects)
   File: engine/pod.cpp
 ====================================================================================================
+  Line 38 [unrolled_strlen]: do {
   Line 63 [pointer_cast]: for (local_18 = 0; iVar7 = *(int *)((int)pod_array + local_34 + 4),
   Line 68 [unrolled_strlen]: do {
   Line 76 [unrolled_strcpy]: do {
@@ -2852,6 +2828,12 @@ shape_design.c_qsortCompareByField4_FUN_004661d0 (2 suspects)
   Line 5 [pointer_cast]: return *(int *)((int)element_b + 4) - *(int *)((int)element_a + 4);
 
 ====================================================================================================
+shape_design.c_quantizePaletteColors_FUN_0046b770 (1 suspect)
+  File: shape/design.c
+====================================================================================================
+  Line 25 [unrolled_strlen]: do {
+
+====================================================================================================
 shape_design.c_removeDegeneratePolygons_FUN_00465310 (3 suspects)
   File: shape/design.c
 ====================================================================================================
@@ -3041,6 +3023,12 @@ shape_design.c_writePolygonModel_FUN_0045a320 (2 suspects)
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 40 [unrolled_strcpy]: do {
+
+====================================================================================================
+shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 20 [unrolled_strlen]: do {
 
 ====================================================================================================
 shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 (3 suspects)

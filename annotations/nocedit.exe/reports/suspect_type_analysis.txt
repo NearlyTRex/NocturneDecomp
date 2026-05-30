@@ -4,25 +4,25 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1079 ( 47.3%)
-  unrolled_memcpy                  403 ( 17.7%)
-  unrolled_strcpy                  163 (  7.2%)
+  pointer_cast                    1061 ( 47.1%)
+  unrolled_memcpy                  389 ( 17.3%)
+  unrolled_strcpy                  161 (  7.1%)
   missing_cave_copy                100 (  4.4%)
-  shadow_pointer_walk               74 (  3.2%)
+  unrolled_strlen                   78 (  3.5%)
+  shadow_pointer_walk               74 (  3.3%)
   carry_arith_idiom                 63 (  2.8%)
-  unrolled_strlen                   62 (  2.7%)
-  static_uninitvar                  37 (  1.6%)
   bitcast_double_pair               36 (  1.6%)
-  unrolled_memset                   33 (  1.4%)
-  raw_address_constant              33 (  1.4%)
+  static_uninitvar                  35 (  1.6%)
+  raw_address_constant              33 (  1.5%)
+  unrolled_memset                   31 (  1.4%)
   unrolled_strchr                   28 (  1.2%)
-  warning_inlined_function          28 (  1.2%)
-  bit_int_float_compare             25 (  1.1%)
+  warning_inlined_function          27 (  1.2%)
+  bit_int_float_compare             24 (  1.1%)
   static_legacy_uninitvar           23 (  1.0%)
   warning_type_propagation          13 (  0.6%)
-  stack_alignment_array             12 (  0.5%)
   warning_unreachable               11 (  0.5%)
   static_invalid_pointer_cast       10 (  0.4%)
+  stack_alignment_array              9 (  0.4%)
   sub84_truncation                   9 (  0.4%)
   stack_param                        8 (  0.4%)
   unaffected_reg                     6 (  0.3%)
@@ -35,11 +35,11 @@ SUSPECT TYPE COUNTS
   fast_sqrt_inline                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1079 occurrences)
+TYPE: pointer_cast (1061 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   435x  (int)&NAME used in byte-offset arithmetic
+   432x  (int)&NAME used in byte-offset arithmetic
     34x  (int *)((int)this_ptr
     27x  (uint *)((int)this_ptr
     17x  (int)&NAME byte-offset arithmetic split across lines
@@ -105,11 +105,6 @@ Functions:
   core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0
   core_netgame.cpp_allocSimFrame_FUN_0053f5a0
   core_netgame.cpp_purgeOldSimFrames_FUN_0053f650
-  core_path.cpp_CPathMap_dtor_FUN_005464d0
-  core_path.cpp_getOrCreatePathMap_FUN_00548390
-  core_path.cpp_renderAllPathMaps_FUN_005485f0
-  core_path.cpp_renderPathMapsAtPosition_FUN_00548680
-  core_path.cpp_resetAllPathMaps_FUN_00548590
   core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
   core_skeledit.cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30
   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
@@ -267,11 +262,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (403 occurrences)
+TYPE: unrolled_memcpy (389 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   264x  field-by-field struct copy
+   250x  field-by-field struct copy
     72x  for (...; != 0; ... + -1)
     65x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -327,10 +322,6 @@ Functions:
   core_msnedit.cpp_CDemonMission_raycastPickActor_FUN_0053c340
   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
   core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0
-  core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
-  core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
-  core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
-  core_path.cpp_getOrCreatePathMap_FUN_00548390
   core_scat.cpp_CScat_blendAimBones_FUN_005584a0
   core_scat.cpp_CScat_updateAI_FUN_005578e0
   core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
@@ -417,18 +408,17 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (163 occurrences)
+TYPE: unrolled_strcpy (161 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   163x  do {
+   161x  do {
 
 Functions:
   core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810
   core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10
   core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0
   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
-  core_event.cpp_CEventList_executeCommand_FUN_004aacc0
   core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004d17b0
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
   core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690
@@ -446,7 +436,6 @@ Functions:
   core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
   core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
-  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70
@@ -534,6 +523,59 @@ Functions:
   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
   core_tentacle.cpp_CTentacle_process_FUN_005db050
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
+
+====================================================================================================
+TYPE: unrolled_strlen (78 occurrences)
+====================================================================================================
+
+Unique patterns:
+    78x  do { if (v==0) break; v=v-1; ... }
+
+Functions:
+  core_event.cpp_trimWhitespace_FUN_004aa650
+  core_fileman.cpp_trimWhitespace_FUN_004bd9b0
+  core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0
+  core_game.cpp_checkCheatCode_FUN_004dd7f0
+  core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_00524660
+  core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
+  core_script.cpp_trimString_FUN_00559360
+  core_script.cpp_validateActorVariableName_FUN_00559220
+  core_setedit.cpp_incrementTrailingNumber_FUN_00576950
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  core_skeledit.cpp_trimWhitespace_FUN_00589450
+  engine_2d.c_drawStringHighlighted_FUN_004020e0
+  engine_2d.c_drawStringMasked_FUN_00402030
+  engine_2d.c_drawString_FUN_00402080
+  engine_2d.c_drawTextMultilineColor_FUN_00401f40
+  engine_2d.c_drawTextMultiline_FUN_00401cf0
+  engine_2d.c_drawTextWrappedColor_FUN_00401eb0
+  engine_2d.c_drawTextWrapped_FUN_00401c60
+  engine_2d.c_getStringWidth_FUN_004018a0
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
+  engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+  engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
+  engine_fileio.cpp_trimWhitespace_FUN_004b1d40
+  engine_pod.cpp_findFilesByExtension_FUN_00550ce0
+  shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
+  shape_design.c_cramTextureList_FUN_0046bb80
+  shape_design.c_createBoxPrimitive_FUN_0045e520
+  shape_design.c_createCenterVertex_FUN_00469690
+  shape_design.c_createKeyframeModel_FUN_00468320
+  shape_design.c_deletePolygonRange_FUN_0045dd70
+  shape_design.c_deleteSinglePolygon_FUN_0045dcc0
+  shape_design.c_generateGlobe_FUN_00468910
+  shape_design.c_generateOctant_FUN_00469420
+  shape_design.c_generateShell_FUN_00468f20
+  shape_design.c_loadPalette_FUN_0046e810
+  shape_design.c_modelExportWizard_FUN_0045a7b0
+  shape_design.c_quantizePaletteColors_FUN_0046b770
+  shape_design.c_sizeForStadium_FUN_00469c70
+  shape_design.c_tileTextureMaps_FUN_0046a180
+  shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
+  shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
 
 ====================================================================================================
 TYPE: shadow_pointer_walk (74 occurrences)
@@ -631,64 +673,6 @@ Functions:
   engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
 
 ====================================================================================================
-TYPE: unrolled_strlen (62 occurrences)
-====================================================================================================
-
-Unique patterns:
-    62x  do { if (v==0) break; v=v-1; ... }
-
-Functions:
-  core_actor.cpp_trimActorName_FUN_004087b0
-  core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
-  core_script.cpp_CCmdParm_parseValue_FUN_00561cb0
-  core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620
-  core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760
-  core_script.cpp_CCmdParse_getParamTextLength_FUN_005626d0
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
-  engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-  engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-  engine_pod.cpp_findFilesByExtension_FUN_00550ce0
-  shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
-  shape_design.c_cramTextureList_FUN_0046bb80
-  shape_design.c_createBoxPrimitive_FUN_0045e520
-  shape_design.c_createCenterVertex_FUN_00469690
-  shape_design.c_createKeyframeModel_FUN_00468320
-  shape_design.c_deletePolygonRange_FUN_0045dd70
-  shape_design.c_deleteSinglePolygon_FUN_0045dcc0
-  shape_design.c_generateGlobe_FUN_00468910
-  shape_design.c_generateOctant_FUN_00469420
-  shape_design.c_generateShell_FUN_00468f20
-  shape_design.c_loadPalette_FUN_0046e810
-  shape_design.c_modelExportWizard_FUN_0045a7b0
-  shape_design.c_sizeForStadium_FUN_00469c70
-  shape_design.c_tileTextureMaps_FUN_0046a180
-  shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
-
-====================================================================================================
-TYPE: static_uninitvar (37 occurrences)
-====================================================================================================
-
-Unique patterns:
-    37x  Cppcheck: uninitialized variable
-
-Functions:
-  core_gabriela.cpp_CGabriella_processAI_FUN_004d4190
-  core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
-  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
-  core_sound.cpp_updateListeners_FUN_005b1870
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210
-  engine_model.c_getMRGLBounds_FUN_00528140
-  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
-  shape_design.c_loadModelBinary_FUN_00458170
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
-
-====================================================================================================
 TYPE: bitcast_double_pair (36 occurrences)
 ====================================================================================================
 
@@ -704,28 +688,23 @@ Functions:
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 
 ====================================================================================================
-TYPE: unrolled_memset (33 occurrences)
+TYPE: static_uninitvar (35 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    33x  cascade_constant_fill
+    35x  Cppcheck: uninitialized variable
 
 Functions:
-  core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
-  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600
-  core_icepick.cpp_CIcePick_process_FUN_004f80b0
-  core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
-  core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610
-  core_mobster.cpp_CMobster_process_FUN_00525840
-  core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
-  core_path.cpp_CPathMap_reset_FUN_00548510
-  core_scat.cpp_CScat_process_FUN_005571f0
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
-  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
-  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+  core_gabriela.cpp_CGabriella_processAI_FUN_004d4190
+  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
+  core_sound.cpp_updateListeners_FUN_005b1870
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210
+  engine_model.c_getMRGLBounds_FUN_00528140
+  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
+  shape_design.c_loadModelBinary_FUN_00458170
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 
 ====================================================================================================
 TYPE: raw_address_constant (33 occurrences)
@@ -756,6 +735,29 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
+TYPE: unrolled_memset (31 occurrences)
+====================================================================================================
+
+Unique patterns:
+    31x  cascade_constant_fill
+
+Functions:
+  core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
+  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  core_icepick.cpp_CIcePick_process_FUN_004f80b0
+  core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
+  core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610
+  core_mobster.cpp_CMobster_process_FUN_00525840
+  core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
+  core_scat.cpp_CScat_process_FUN_005571f0
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
+  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
+  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+
+====================================================================================================
 TYPE: unrolled_strchr (28 occurrences)
 ====================================================================================================
 
@@ -776,11 +778,11 @@ Functions:
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
-TYPE: warning_inlined_function (28 occurrences)
+TYPE: warning_inlined_function (27 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    28x  WARNING: Inlined function:
+    27x  WARNING: Inlined function:
 
 Functions:
   core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10
@@ -791,7 +793,6 @@ Functions:
   core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
   core_glass.cpp_CGlass_setup_FUN_004e9180
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
-  core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
   core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790
@@ -813,7 +814,7 @@ Functions:
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
-TYPE: bit_int_float_compare (25 occurrences)
+TYPE: bit_int_float_compare (24 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -835,8 +836,8 @@ Unique patterns:
      1x  (int)fVar1 < 0x44e10000
      1x  (int)fVar1 < 0x44ed8000
      1x  (int)fVar1 < 0x44fa0000
-     1x  (int)(this_ptr->cached_world_position).x < 0x461c3c01
      1x  (int)(this_ptr->size).x < 0x3f000000
+     1x  0x42c80000 < (int)(this_ptr->size).x)
 
 Functions:
   core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40
@@ -844,7 +845,6 @@ Functions:
   core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
   core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
-  core_path.cpp_renderPathMapsAtPosition_FUN_00548680
   core_scat.cpp_CScat_updateAI_FUN_005578e0
   core_trigger.cpp_CTrigger_processInEditor_FUN_005e1180
   core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
@@ -890,38 +890,6 @@ Functions:
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
 
 ====================================================================================================
-TYPE: stack_alignment_array (12 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  aEStackY_208c
-     1x  afStackY_180c
-     1x  afStackY_185c
-     1x  afStackY_1938
-     1x  aiStackY_1070
-     1x  aiStackY_1014
-     1x  aiStackY_1004
-     1x  aiStackY_1040
-     1x  aiStackY_1010
-     1x  afStackY_100c
-     1x  aiStackY_1024
-     1x  acStackY_1406
-
-Functions:
-  core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
-  core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
-  core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810
-  core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
-  core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
-  core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
-  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
-  core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
-  core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60
-  core_path.cpp_renderPathMapsAtPosition_FUN_00548680
-  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
-  shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0
-
-====================================================================================================
 TYPE: warning_unreachable (11 occurrences)
 ====================================================================================================
 
@@ -950,6 +918,32 @@ Functions:
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790
   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
+
+====================================================================================================
+TYPE: stack_alignment_array (9 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  aEStackY_208c
+     1x  afStackY_180c
+     1x  afStackY_185c
+     1x  afStackY_1938
+     1x  aiStackY_1070
+     1x  aiStackY_1014
+     1x  afStackY_100c
+     1x  aiStackY_1024
+     1x  acStackY_1406
+
+Functions:
+  core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
+  core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
+  core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810
+  core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
+  core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
+  core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
+  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
+  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
+  shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0
 
 ====================================================================================================
 TYPE: sub84_truncation (9 occurrences)

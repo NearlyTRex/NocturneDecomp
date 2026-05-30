@@ -4,16 +4,16 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6090 functions
-  1 suspects: 50 functions
-  2 suspects: 68 functions
-  3 suspects: 45 functions
-  4 suspects: 44 functions
+  0 suspects: 6087 functions
+  1 suspects: 63 functions
+  2 suspects: 64 functions
+  3 suspects: 42 functions
+  4 suspects: 43 functions
   5 suspects: 25 functions
   6 suspects: 29 functions
   7 suspects: 13 functions
-  8 suspects: 22 functions
-  9 suspects: 7 functions
+  8 suspects: 21 functions
+  9 suspects: 6 functions
   10 suspects: 10 functions
   11 suspects: 4 functions
   12 suspects: 6 functions
@@ -39,6 +39,49 @@ SUSPECT COUNT DISTRIBUTION
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
+
+  [unrolled_strlen] (20 functions)
+  ------------------------------------------------------------
+    core_setedit.cpp_incrementTrailingNumber_FUN_00576 ( 29 lines)
+      do {...
+    engine_2d.c_drawStringMasked_FUN_00402030          ( 30 lines)
+      do {...
+    engine_2d.c_drawString_FUN_00402080                ( 30 lines)
+      do {...
+    engine_2d.c_drawStringHighlighted_FUN_004020e0     ( 30 lines)
+      do {...
+    engine_fileio.cpp_trimWhitespace_FUN_004b1d40      ( 30 lines)
+      do {...
+    core_fileman.cpp_trimWhitespace_FUN_004bd9b0       ( 30 lines)
+      do {...
+    core_script.cpp_trimString_FUN_00559360            ( 30 lines)
+      do {...
+    core_skeledit.cpp_trimWhitespace_FUN_00589450      ( 30 lines)
+      do {...
+    core_event.cpp_trimWhitespace_FUN_004aa650         ( 30 lines)
+      do {...
+    engine_2d.c_getStringWidth_FUN_004018a0            ( 32 lines)
+      do {...
+    core_game.cpp_checkCheatCode_FUN_004dd7f0          ( 32 lines)
+      do {...
+    engine_2d.c_drawTextMultilineColor_FUN_00401f40    ( 34 lines)
+      do {...
+    engine_2d.c_drawTextMultiline_FUN_00401cf0         ( 34 lines)
+      do {...
+    core_script.cpp_validateActorVariableName_FUN_0055 ( 35 lines)
+      do {...
+    core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0 ( 35 lines)
+      do {...
+    core_mission.cpp_CDemonMission_generateUniqueActor ( 36 lines)
+      do {...
+    engine_2d.c_drawTextWrapped_FUN_00401c60           ( 41 lines)
+      do {...
+    engine_2d.c_drawTextWrappedColor_FUN_00401eb0      ( 41 lines)
+      do {...
+    shape_design.c_quantizePaletteColors_FUN_0046b770  ( 65 lines)
+      do {...
+    shape_edittool.cpp_CEditorTools_setClipboardText_F ( 68 lines)
+      do {...
 
   [unrolled_memcpy] (17 functions)
   ------------------------------------------------------------
@@ -119,7 +162,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_ ( 81 lines)
       pCVar7 = (CLodVert *)&(pCVar7->position).y;...
 
-  [unrolled_strcpy] (6 functions)
+  [unrolled_strcpy] (4 functions)
   ------------------------------------------------------------
     core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0  ( 54 lines)
       do {...
@@ -128,23 +171,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_design.c_exportModelToMDL_FUN_00459e80       ( 68 lines)
       do {...
     core_msnedit.cpp_CDemonMission_editActorProperties ( 73 lines)
-      do {...
-    core_platfrm.cpp_CPlatform_process_FUN_0054cc30    (307 lines)
-      do {...
-    core_event.cpp_CEventList_executeCommand_FUN_004aa (2138 lines)
-      do {...
-
-  [unrolled_strlen] (5 functions)
-  ------------------------------------------------------------
-    core_actor.cpp_trimActorName_FUN_004087b0          ( 30 lines)
-      do {...
-    core_script.cpp_CCmdParm_parseValue_FUN_00561cb0   ( 58 lines)
-      do {...
-    core_script.cpp_CCmdParse_getParamTextLength_FUN_0 ( 61 lines)
-      do {...
-    core_script.cpp_CCmdParse_getParamTextLengthAt_FUN ( 61 lines)
-      do {...
-    core_script.cpp_CCmdParse_getParamIndexAtCursor_FU ( 66 lines)
       do {...
 
   [bit_int_float_compare] (1 functions)
@@ -174,20 +200,14 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 4, Types: ['pointer_cast']
   shape_superopt.cpp_CP2D_copy_FUN_005d8330
     File: shape/superopt.cpp, Lines: 8, Types: ['pointer_cast']
-  core_path.cpp_CPathMap_reset_FUN_00548510
-    File: core/path.cpp, Lines: 16, Types: ['unrolled_memset']
   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
     File: core/ghoul.cpp, Lines: 17, Types: ['missing_cave_copy']
   core_skeledit.cpp_CBoneStructure_doesHierarchyMatch_FUN_0058
     File: core/skeledit.cpp, Lines: 21, Types: ['shadow_pointer_walk']
-  core_path.cpp_resetAllPathMaps_FUN_00548590
-    File: core/path.cpp, Lines: 22, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420
     File: shape/meshlod.cpp, Lines: 22, Types: ['pointer_cast']
   core_netgame.cpp_purgeOldSimFrames_FUN_0053f650
     File: core/netgame.cpp, Lines: 26, Types: ['pointer_cast']
-  core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
-    File: core/path.cpp, Lines: 28, Types: ['unrolled_memcpy']
   shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40
     File: shape/meshlod.cpp, Lines: 28, Types: ['pointer_cast']
   core_netgame.cpp_allocSimFrame_FUN_0053f5a0
@@ -272,8 +292,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 116, Types: ['unrolled_strlen']
   shape_design.c_createKeyframeModel_FUN_00468320
     File: shape/design.c, Lines: 117, Types: ['unrolled_strlen', 'warning_inlined_function']
-  core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
-    File: core/path.cpp, Lines: 118, Types: ['stack_alignment_array', 'warning_inlined_function']
   core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
     File: core/netgame.cpp, Lines: 120, Types: ['shadow_pointer_walk']
   engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
@@ -318,10 +336,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
   core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260
     File: core/skeledit.cpp, Lines: 19, Types: ['pointer_cast']
-  core_path.cpp_CPathMap_dtor_FUN_005464d0
-    File: core/path.cpp, Lines: 24, Types: ['pointer_cast']
-  core_path.cpp_renderAllPathMaps_FUN_005485f0
-    File: core/path.cpp, Lines: 24, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0
     File: shape/meshlod.cpp, Lines: 26, Types: ['pointer_cast']
   engine_fileio.cpp_CFileManager_setVersionControlCredentials_
@@ -368,8 +382,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/skeledit.cpp, Lines: 102, Types: ['pointer_cast', 'warning_inlined_function']
   shape_design.c_generateOctant_FUN_00469420
     File: shape/design.c, Lines: 103, Types: ['unrolled_strlen']
-  engine_pod.cpp_findFilesByExtension_FUN_00550ce0
-    File: engine/pod.cpp, Lines: 111, Types: ['pointer_cast', 'unrolled_strcpy', 'unrolled_strlen']
   core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60
     File: core/gabriela.cpp, Lines: 113, Types: ['pointer_cast', 'unrolled_memcpy']
   core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0

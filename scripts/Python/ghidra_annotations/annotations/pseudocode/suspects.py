@@ -3640,6 +3640,12 @@ _UNROLLED_STRLEN_LOAD_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\*\s*(\w+)\s*;\s*$")
 _UNROLLED_STRLEN_STEP_RE = re.compile(
     r"^\s*\w+\s*=\s*\w+\s*\+\s*\(\s*uint\s*\)\s*\w+\s*\*\s*-?\d+\s*\+\s*\d+\s*;\s*$")
+# Plain unit-advance step: `pVar = pVar + 1;`. Watcom emits this (instead of
+# the `(uint)bool * -2 + 1` direction idiom) when the walk direction is known
+# at compile time. Same SCASB strlen — gated by the counter anchor — just a
+# bare increment. Self-advance (`\1`) required so it ties to the walked ptr.
+_UNROLLED_STRLEN_STEP_PLUS1_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*\1\s*\+\s*1\s*;\s*$")
 # Scan-for-null variant: instead of loading the byte into a temp and testing
 # `cVar != '\0'`, the loop keeps a "current position" pointer and tests the
 # byte at it directly: `} while (*pVar != '\0');`. The walk advance varies
@@ -3742,7 +3748,8 @@ def identify_unrolled_strlen_loops(decompiled_code):
             for idx in range(loop_start + 1, loop_end):
                 if _UNROLLED_STRLEN_LOAD_RE.match(lines[idx]):
                     has_load = True
-                if _UNROLLED_STRLEN_STEP_RE.match(lines[idx]):
+                if (_UNROLLED_STRLEN_STEP_RE.match(lines[idx]) or
+                        _UNROLLED_STRLEN_STEP_PLUS1_RE.match(lines[idx])):
                     has_step = True
             if not (has_load and has_step):
                 continue
@@ -3767,6 +3774,17 @@ def identify_unrolled_strlen_loops(decompiled_code):
 # standard 2-byte-at-a-time strcpy loop writing onto that position.
 _UNROLLED_STRCAT_ADJUST_RE = re.compile(
     r"^\s*(\w+)\s*=\s*(\w+)\s*\+\s*-\s*1\s*;\s*$")
+# Negative-index adjust variant: `<pcat> = <pwalker>[-1] + CONST;`. When the
+# strlen find-end loop walked an array-of-arrays pointer (`char (*)[N]`),
+# Ghidra positions at the null via `walker[-1] + offset` (e.g.
+# `pcVar3 = pacVar12[-1] + 0xff;` = walker - N + (N-1) = walker - 1). Same
+# role as `<pcat> = <pend> + -1;` — points at the null terminator before the
+# appending strcpy. Gated identically by the strlen→adjust→strcpy sandwich,
+# so the bare regex needs no further qualification (verified 0 unsandwiched
+# matches codebase-wide). Seen in the menu builders (configureCustomKeys,
+# configureGraphicsOptions, configureSoundOptions).
+_UNROLLED_STRCAT_ADJUST_NEGIDX_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*(\w+)\s*\[\s*-1\s*\]\s*\+\s*(?:0x[0-9a-fA-F]+|\d+)\s*;\s*$")
 
 
 def identify_unrolled_strcat_loops(decompiled_code):
@@ -3820,12 +3838,14 @@ def identify_unrolled_strcat_loops(decompiled_code):
                 break
         if close_idx is None:
             continue
-        # Scan a few lines after the close for `pcat = pend + -1;`
+        # Scan a few lines after the close for the null-positioning adjust:
+        # either `pcat = pend + -1;` or `pcat = pwalker[-1] + CONST;`.
         adjust_idx = None
         for fwd in range(1, 6):
             if close_idx + fwd >= n:
                 break
-            if _UNROLLED_STRCAT_ADJUST_RE.match(lines[close_idx + fwd]):
+            if (_UNROLLED_STRCAT_ADJUST_RE.match(lines[close_idx + fwd]) or
+                    _UNROLLED_STRCAT_ADJUST_NEGIDX_RE.match(lines[close_idx + fwd])):
                 adjust_idx = close_idx + fwd
                 break
         if adjust_idx is None:

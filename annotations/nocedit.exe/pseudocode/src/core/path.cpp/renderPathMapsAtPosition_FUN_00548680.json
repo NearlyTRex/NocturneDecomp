@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 89,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 34,
-    "suspect_count": 4,
-    "suspect_types": [
-      "bit_int_float_compare",
-      "pointer_cast",
-      "stack_alignment_array"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 130
   },
   "cross_references": [],
@@ -142,6 +138,44 @@
     },
     "pcode_op_count": 314
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 8,
+      "match": "aiStackY_1010",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_1010 [1013];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(int *)((int)g_PathMapList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(CPathMap **)((int)g_PathMapList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr = *(CPathMap **)((int)g_PathMapList + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x461c3c01 is the IEEE 754 bit pattern of 9999f. Rewrite in a .keep as a plain float compare against 9999f.",
+      "line": 27,
+      "match": "(int)(this_ptr->cached_world_position).x < 0x461c3c01",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((((int)(this_ptr->cached_world_position).x < 0x461c3c01) &&",
+      "type": "bit_int_float_compare"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4136,
     "local_size": 4116,
@@ -221,38 +255,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 8,
-      "match": "aiStackY_1010",
-      "severity": "moderate",
-      "text": "int aiStackY_1010 [1013];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(int *)((int)g_PathMapList",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(CPathMap **)((int)g_PathMapList",
-      "severity": "moderate",
-      "text": "this_ptr = *(CPathMap **)((int)g_PathMapList + iVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x461c3c01 is the IEEE 754 bit pattern of 9999f. Rewrite in a .keep as a plain float compare against 9999f.",
-      "line": 27,
-      "match": "(int)(this_ptr->cached_world_position).x < 0x461c3c01",
-      "severity": "moderate",
-      "text": "if (((((int)(this_ptr->cached_world_position).x < 0x461c3c01) &&",
-      "type": "bit_int_float_compare"
-    }
-  ]
+  "suspects": []
 }

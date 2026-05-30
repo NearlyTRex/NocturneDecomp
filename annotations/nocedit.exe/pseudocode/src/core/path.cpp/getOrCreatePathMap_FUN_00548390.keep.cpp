@@ -13,8 +13,6 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00548390(CLocation *loca
   int iVar1;
   int iVar6;
   int iVar7;
-  int iVar8;
-  int iVar4;
   int iVar5;
   CVector3i local_34;
   CVector3f local_28;
@@ -25,49 +23,35 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00548390(CLocation *loca
     _atexit(&g_PathMapCacheDestructorNode);
   }
   if (g_PathMapLRUCounters[0] < 0) {
-    iVar7 = 0;
-    iVar6 = 0;
-    do {
-      *(int *)((int)g_PathMapLRUCounters + iVar7) = iVar6;
-      iVar6 = iVar6 + 1;
-      iVar7 = iVar7 + 4;
-    } while (iVar6 < 0xc);
+    for (iVar6 = 0; iVar6 < 0xc; iVar6 = iVar6 + 1) {
+      g_PathMapLRUCounters[iVar6] = iVar6;
+    }
   }
-  iVar4 = 0;
   core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
             (&g_CDemonRaytraceInstance,&location->position,&local_34);
-  iVar8 = 0;
   iVar6 = 0;
   iVar7 = 0;
   do {
-    if (((local_34.x ==
-          *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->x + iVar8)) &&
-        (local_34.y ==
-         *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->y + iVar8))) &&
-       (iVar5 = iVar6,
-       local_34.z ==
-       *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->z + iVar8)))
+    if (((local_34.x == g_PathMapCache[iVar6].cached_voxel_coords.x) &&
+        (local_34.y == g_PathMapCache[iVar6].cached_voxel_coords.y)) &&
+       (iVar5 = iVar6, local_34.z == g_PathMapCache[iVar6].cached_voxel_coords.z))
     break;
     iVar5 = iVar7;
-    if (g_PathMapLRUCounters[iVar7] < *(int *)((int)g_PathMapLRUCounters + iVar4)) {
+    if (g_PathMapLRUCounters[iVar7] < g_PathMapLRUCounters[iVar6]) {
       iVar5 = iVar6;
     }
-    iVar4 = iVar4 + 4;
     iVar6 = iVar6 + 1;
-    iVar8 = iVar8 + 0x138dc;
     iVar7 = iVar5;
   } while (iVar6 < 0xc);
   iVar1 = 0;
   do {
-    if (*(int *)((int)g_PathMapLRUCounters + iVar1) < g_PathMapLRUCounters[iVar5]) {
-      *(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;
+    if (g_PathMapLRUCounters[iVar1] < g_PathMapLRUCounters[iVar5]) {
+      g_PathMapLRUCounters[iVar1] = g_PathMapLRUCounters[iVar1] + 1;
     }
-    iVar1 = iVar1 + 4;
-  } while (iVar1 != 0x30);
+    iVar1 = iVar1 + 1;
+  } while (iVar1 != 0xc);
   g_PathMapLRUCounters[iVar5] = 0;
-  local_28.x = (location->position).x;
-  local_28.y = (location->position).y;
-  local_28.z = (location->position).z;
+  local_28 = location->position;
   core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(g_PathMapCache + iVar5,&local_28,1);
   return g_PathMapCache + iVar5;
 }

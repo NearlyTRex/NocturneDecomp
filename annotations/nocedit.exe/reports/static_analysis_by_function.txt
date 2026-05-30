@@ -10,7 +10,7 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions with findings: 117
-  Total diagnostics: 334
+  Total diagnostics: 332
   Functions flagged by multiple tools: 0
   .keep.cpp files: 117, raw .cpp files: 0
 
@@ -22,28 +22,28 @@ DETAILED FINDINGS
 core_event.cpp_CEventList_executeCommand_FUN_004aacc0  [.keep] [Cppcheck (quick)]
   File: core/event.cpp  (22 diagnostics)
 
-  Line  238: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  345: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  402: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  519: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  597: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  644: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  651: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  657: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  744: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  782: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  886: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  916: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1004: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1064: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1168: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1220: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1312: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1406: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1469: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1576: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1680: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line 1753: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  228: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  335: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  392: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  509: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  587: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  634: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  641: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  647: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  734: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  772: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  876: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  906: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  994: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1054: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1158: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1210: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1302: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1396: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1459: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1566: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1670: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1743: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_event.cpp_CEventList_evaluateAtom_FUN_004ae140  [.keep] [Cppcheck (quick)]
@@ -190,16 +190,6 @@ core_course.cpp_renderCourseGizmo_FUN_00443760  [.keep] [Cppcheck (quick)]
   Line   37: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   65: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   75: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_path.cpp_CPathMap_findPathToDestination_FUN_00547320  [.keep] [Cppcheck (quick)]
-  File: core/path.cpp  (5 diagnostics)
-
-  Line   90: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  107: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  169: [uninitvar] Uninitialized variable: local_7c
-  Line  170: [uninitvar] Uninitialized variable: local_74
-  Line  191: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_sound.cpp_updateListeners_FUN_005b1870  [.keep] [Cppcheck (quick)]
@@ -352,6 +342,14 @@ core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20  [.keep] [Cppc
   Line   49: [nullPointer] Possible null pointer dereference: actor
   Line   50: [nullPointer] Possible null pointer dereference: actor
   Line   52: [nullPointer] Possible null pointer dereference: actor
+
+----------------------------------------------------------------------------------------------------
+core_path.cpp_CPathMap_findPathToDestination_FUN_00547320  [.keep] [Cppcheck (quick)]
+  File: core/path.cpp  (3 diagnostics)
+
+  Line   88: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  103: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  177: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0  [.keep] [Cppcheck (quick)]

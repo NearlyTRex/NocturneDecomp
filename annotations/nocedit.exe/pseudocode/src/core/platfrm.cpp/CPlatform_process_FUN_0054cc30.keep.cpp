@@ -10,7 +10,6 @@
 void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr,float delta_time)
 
 {
-  char cVar1;
   CCharacter *this_ptr_00;
   float fVar2;
   char *name;
@@ -21,9 +20,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   ECollisionType EVar7;
   UOrientationVector *euler_angles;
   char *pcVar8;
-  char *pcVar9;
   CLocation *position;
-  char *pcVar10;
   int iVar11;
   bool bVar12;
   char local_324 [256];
@@ -155,19 +152,9 @@ LAB_0054d090:
   }
   if (this_ptr->render_in_background_when_not_moving_flag != 0) {
     if (bVar12) {
-      pcVar10 = local_324;
-      pcVar9 = this_ptr->camera_while_moving;
       pcVar8 = local_324;
-      do {
-        cVar1 = *pcVar9;
-        *pcVar10 = cVar1;
-        name = pcVar8;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar9[1];
-        pcVar9 = pcVar9 + 2;
-        pcVar10[1] = cVar1;
-        pcVar10 = pcVar10 + 2;
-      } while (cVar1 != '\0');
+      name = pcVar8;
+      strcpy(local_324,this_ptr->camera_while_moving);
 joined_r0x0054cd19:
       if (local_324[0] != '\0') {
         if (*pcVar8 == ';') {

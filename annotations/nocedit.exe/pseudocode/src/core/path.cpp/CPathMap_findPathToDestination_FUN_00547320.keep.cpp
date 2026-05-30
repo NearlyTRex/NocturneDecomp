@@ -51,9 +51,7 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *
 
   core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
             (&g_CDemonRaytraceInstance,dest_position,&local_58);
-  (this_ptr->dest_voxel_coords).x = local_58.x;
-  (this_ptr->dest_voxel_coords).y = local_58.y;
-  (this_ptr->dest_voxel_coords).z = local_58.z;
+  this_ptr->dest_voxel_coords = local_58;
   local_a0 = 0;
   local_9c = 0;
   local_98 = 0;
@@ -97,9 +95,7 @@ LAB_005473e0:
     pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                        (pCVar1,in_direction_vector);
     if (pCVar1 != out_euler_angles) {
-      out_euler_angles->x = pCVar1->x;
-      out_euler_angles->y = pCVar1->y;
-      out_euler_angles->z = pCVar1->z;
+      *out_euler_angles = *pCVar1;
     }
     return 2;
   }
@@ -112,9 +108,7 @@ LAB_005473e0:
     if (pCVar1 == out_euler_angles) {
       return 2;
     }
-    out_euler_angles->x = pCVar1->x;
-    out_euler_angles->y = pCVar1->y;
-    out_euler_angles->z = pCVar1->z;
+    *out_euler_angles = *pCVar1;
     return 2;
   }
   g_PathfindingCurrentX = (this_ptr->dest_voxel_coords).x - (this_ptr->grid_origin).x;
@@ -130,9 +124,7 @@ LAB_005473e0:
     if (pCVar1 == out_euler_angles) {
       return 2;
     }
-    out_euler_angles->x = pCVar1->x;
-    out_euler_angles->y = pCVar1->y;
-    out_euler_angles->z = pCVar1->z;
+    *out_euler_angles = *pCVar1;
     return 2;
   }
   if ((g_PathfindingCurrentX == 0x32) && (g_PathfindingCurrentZ == 0x32)) {
@@ -141,9 +133,7 @@ LAB_005473e0:
     local_40.z = (this_ptr->current_position).z - dest_position->z;
     pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_70,&local_40);
     if (pCVar1 != out_euler_angles) {
-      out_euler_angles->x = pCVar1->x;
-      out_euler_angles->y = pCVar1->y;
-      out_euler_angles->z = pCVar1->z;
+      *out_euler_angles = *pCVar1;
     }
     return 1;
   }
@@ -160,11 +150,9 @@ LAB_005473e0:
     local_34 = g_CDemonRaytraceInstance.adjusted_size.x;
     local_30 = g_CDemonRaytraceInstance.adjusted_size.y;
     local_2c = g_CDemonRaytraceInstance.adjusted_size.z;
-    if ((CPathMap *)&local_7c != this_ptr) {
-      local_7c = (this_ptr->current_position).x;
-      local_78 = (this_ptr->current_position).y;
-      local_74 = (this_ptr->current_position).z;
-    }
+    local_7c = (this_ptr->current_position).x;
+    local_78 = (this_ptr->current_position).y;
+    local_74 = (this_ptr->current_position).z;
     local_14 = local_98;
     local_7c = (float)local_a0 * g_CDemonRaytraceInstance.adjusted_size.x + local_7c;
     local_74 = (float)local_98 * g_CDemonRaytraceInstance.adjusted_size.z + local_74;
@@ -173,9 +161,7 @@ LAB_005473e0:
     local_b8.z = (this_ptr->current_position).z - dest_position->z;
     pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_28,&local_b8);
     if (pCVar1 != out_euler_angles) {
-      out_euler_angles->x = pCVar1->x;
-      out_euler_angles->y = pCVar1->y;
-      out_euler_angles->z = pCVar1->z;
+      *out_euler_angles = *pCVar1;
     }
     return 1;
   }
@@ -198,9 +184,7 @@ LAB_005473e0:
         if (pCVar1 == out_euler_angles) {
           return 2;
         }
-        out_euler_angles->x = pCVar1->x;
-        out_euler_angles->y = pCVar1->y;
-        out_euler_angles->z = pCVar1->z;
+        *out_euler_angles = *pCVar1;
         return 2;
       }
       local_18 = 0xffffffff;
@@ -220,9 +204,7 @@ LAB_005473e0:
           if (pCVar1 == out_euler_angles) {
             return 2;
           }
-          out_euler_angles->x = pCVar1->x;
-          out_euler_angles->y = pCVar1->y;
-          out_euler_angles->z = pCVar1->z;
+          *out_euler_angles = *pCVar1;
           return 2;
         }
         iVar2 = iVar2 - g_PathfindingDeltaX[uVar6];

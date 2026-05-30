@@ -10,58 +10,109 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  core/actor.cpp (1 remaining of 183)
-    - core_actor.cpp_trimActorName_FUN_004087b0
+  core/fileman.cpp (1 remaining of 12)
+    - core_fileman.cpp_trimWhitespace_FUN_004bd9b0
+      Suspects: unrolled_strlen
+
+  core/setedit.cpp (1 remaining of 58)
+    - core_setedit.cpp_incrementTrailingNumber_FUN_00576950
       Suspects: unrolled_strlen
 
   core/event.cpp (1 remaining of 56)
-    - core_event.cpp_CEventList_executeCommand_FUN_004aacc0
-      Suspects: unrolled_strcpy
+    - core_event.cpp_trimWhitespace_FUN_004aa650
+      Suspects: unrolled_strlen
 
-  core/platfrm.cpp (1 remaining of 30)
-    - core_platfrm.cpp_CPlatform_process_FUN_0054cc30
-      Suspects: unrolled_strcpy
+  core/mission.cpp (1 remaining of 41)
+    - core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_00524660
+      Suspects: unrolled_strlen
+
+  shape/edittool.cpp (1 remaining of 151)
+    - shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
+      Suspects: unrolled_strlen
+
+  core/script.cpp (2 remaining of 96)
+    - core_script.cpp_validateActorVariableName_FUN_00559220
+      Suspects: unrolled_strlen
+    - core_script.cpp_trimString_FUN_00559360
+      Suspects: unrolled_strlen
+
+  core/game.cpp (2 remaining of 66)
+    - core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0
+      Suspects: unrolled_strlen
+    - core_game.cpp_checkCheatCode_FUN_004dd7f0
+      Suspects: unrolled_strlen
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [unrolled_strlen] - 1 functions
-    core_actor.cpp_trimActorName_FUN_004087b0                              ( 30 lines)
+  [unrolled_strlen] - 18 functions
+    core_setedit.cpp_incrementTrailingNumber_FUN_00576950                  ( 29 lines)
+    engine_2d.c_drawStringMasked_FUN_00402030                              ( 30 lines)
+    engine_2d.c_drawString_FUN_00402080                                    ( 30 lines)
+    engine_2d.c_drawStringHighlighted_FUN_004020e0                         ( 30 lines)
+    engine_fileio.cpp_trimWhitespace_FUN_004b1d40                          ( 30 lines)
+    core_fileman.cpp_trimWhitespace_FUN_004bd9b0                           ( 30 lines)
+    core_script.cpp_trimString_FUN_00559360                                ( 30 lines)
+    core_skeledit.cpp_trimWhitespace_FUN_00589450                          ( 30 lines)
+    core_event.cpp_trimWhitespace_FUN_004aa650                             ( 30 lines)
+    engine_2d.c_getStringWidth_FUN_004018a0                                ( 32 lines)
+    core_game.cpp_checkCheatCode_FUN_004dd7f0                              ( 32 lines)
+    engine_2d.c_drawTextMultilineColor_FUN_00401f40                        ( 34 lines)
+    engine_2d.c_drawTextMultiline_FUN_00401cf0                             ( 34 lines)
+    core_script.cpp_validateActorVariableName_FUN_00559220                 ( 35 lines)
+    core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0                     ( 35 lines)
+    core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_00524660    ( 36 lines)
+    engine_2d.c_drawTextWrapped_FUN_00401c60                               ( 41 lines)
+    engine_2d.c_drawTextWrappedColor_FUN_00401eb0                          ( 41 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  core/actor.cpp (99.5% complete)
+  shape/edittool.cpp (99.3% complete)
     1 functions remaining:
-      core_actor.cpp_trimActorName_FUN_004087b0 (30 lines)
+      shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 (68 lines)
+        Types: ['unrolled_strlen']
+
+  core/setedit.cpp (98.3% complete)
+    1 functions remaining:
+      core_setedit.cpp_incrementTrailingNumber_FUN_00576950 (29 lines)
         Types: ['unrolled_strlen']
 
   core/event.cpp (98.2% complete)
     1 functions remaining:
-      core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (2138 lines)
-        Types: ['unrolled_strcpy']
+      core_event.cpp_trimWhitespace_FUN_004aa650 (30 lines)
+        Types: ['unrolled_strlen']
 
-  core/platfrm.cpp (96.7% complete)
+  core/script.cpp (97.9% complete)
+    2 functions remaining:
+      core_script.cpp_validateActorVariableName_FUN_00559220 (35 lines)
+        Types: ['unrolled_strlen']
+      core_script.cpp_trimString_FUN_00559360 (30 lines)
+        Types: ['unrolled_strlen']
+
+  core/mission.cpp (97.6% complete)
     1 functions remaining:
-      core_platfrm.cpp_CPlatform_process_FUN_0054cc30 (307 lines)
-        Types: ['unrolled_strcpy']
+      core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_00524660 (36 lines)
+        Types: ['unrolled_strlen']
 
-  core/script.cpp (95.8% complete)
-    4 functions remaining:
-      core_script.cpp_CCmdParse_getParamTextLength_FUN_005626d0 (61 lines)
+  core/game.cpp (97.0% complete)
+    2 functions remaining:
+      core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0 (35 lines)
         Types: ['unrolled_strlen']
-      core_script.cpp_CCmdParse_getParamTextLengthAt_FUN_00562760 (61 lines)
+      core_game.cpp_checkCheatCode_FUN_004dd7f0 (32 lines)
         Types: ['unrolled_strlen']
-      core_script.cpp_CCmdParse_getParamIndexAtCursor_FUN_00562620 (66 lines)
-        Types: ['unrolled_strlen']
-      core_script.cpp_CCmdParm_parseValue_FUN_00561cb0 (58 lines)
+
+  core/fileman.cpp (91.7% complete)
+    1 functions remaining:
+      core_fileman.cpp_trimWhitespace_FUN_004bd9b0 (30 lines)
         Types: ['unrolled_strlen']
 
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
+  engine/2d.c                                                   89.5%  (68/76 clean, 8 remaining)
   core/flies.cpp                                                86.4%  (19/22 clean, 3 remaining)
   core/msnedit.cpp                                              85.7%  (54/63 clean, 9 remaining)
   core/scat.cpp                                                 84.0%  (21/25 clean, 4 remaining)
@@ -83,12 +134,11 @@ ALL REMAINING FILES
   core/gabriela.cpp                                             73.7%  (28/38 clean, 10 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)
   core/ghoul.cpp                                                72.2%  (13/18 clean, 5 remaining)
-  shape/design.c                                                70.6%  (115/163 clean, 48 remaining)
+  shape/design.c                                                69.9%  (114/163 clean, 49 remaining)
   shape/meshlod.cpp                                             68.5%  (85/124 clean, 39 remaining)
-  engine/fileio.cpp                                             67.1%  (49/73 clean, 24 remaining)
-  core/skeledit.cpp                                             65.7%  (46/70 clean, 24 remaining)
+  engine/fileio.cpp                                             65.8%  (48/73 clean, 25 remaining)
+  core/skeledit.cpp                                             64.3%  (45/70 clean, 25 remaining)
   core/weather.cpp                                              60.0%  (6/10 clean, 4 remaining)
-  core/path.cpp                                                 60.0%  (15/25 clean, 10 remaining)
   core/glass.cpp                                                58.3%  (14/24 clean, 10 remaining)
   engine/clipper.c                                              57.1%  (16/28 clean, 12 remaining)
   engine/alphabit.cpp                                           55.6%  (5/9 clean, 4 remaining)

@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 466,
+    "complexity_score": 476,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 206,
-    "suspect_count": 24,
+    "suspect_count": 25,
     "suspect_types": [
       "unknown_field",
       "unrolled_strcat",
@@ -377,6 +377,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 29,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
