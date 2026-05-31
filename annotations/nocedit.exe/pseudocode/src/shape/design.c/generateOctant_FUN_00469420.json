@@ -393,6 +393,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
+    },
+    {
+      "description": "Redundant assignment of 'pcVar4' to itself.",
+      "line": 75,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pcVar4 = pcVar4;",
+      "type": "static_self_assignment"
     }
   ]
 }

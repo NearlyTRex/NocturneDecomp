@@ -1353,6 +1353,22 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar10' to itself.",
+      "line": 173,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar10 = pSVar10;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar10' to itself.",
+      "line": 178,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar10 = pSVar10;",
+      "type": "static_self_assignment"
     }
   ]
 }

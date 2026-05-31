@@ -256,5 +256,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Identical inner 'if' condition is always true.",
+      "line": 26,
+      "match": "Cppcheck: inner condition identical to outer",
+      "severity": "mild",
+      "text": "if (0 < this_ptr->poly_count) {",
+      "type": "static_identical_inner_condition"
+    }
+  ]
 }

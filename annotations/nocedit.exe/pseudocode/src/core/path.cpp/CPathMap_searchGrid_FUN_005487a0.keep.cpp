@@ -17,8 +17,6 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_005487a0(CPathMap *this_ptr,i
   int iVar3;
   int iVar4;
   int iVar5;
-  uint uVar6;
-  uint uVar7;
   int iVar7;
   int iVar8;
   int current_height;
@@ -65,8 +63,7 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_005487a0(CPathMap *this_ptr,i
          (current_height - iVar2 < g_PathfindingMaxClimbHeight)) &&
         (current_height - iVar4 < g_PathfindingMaxClimbHeight)))) {
       if (((grid_z < 99) && (g_PathfindingVisited[grid_z + 1][grid_x] == '\0')) &&
-         (uVar6 = iVar6 - current_height >> 0x1f,
-         (int)((iVar6 - current_height ^ uVar6) - uVar6) < g_PathfindingMaxClimbHeight)) {
+         (ABS(iVar6 - current_height) < g_PathfindingMaxClimbHeight)) {
         g_PathfindingVisited[grid_z + 1][grid_x] = '\x01';
         g_PathfindingQueue[g_PathfindingQueueTail].x = grid_x;
         iVar7 = g_PathfindingQueueTail + 1;
@@ -80,8 +77,7 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_005487a0(CPathMap *this_ptr,i
         }
       }
       if (((grid_x < 99) && (g_PathfindingVisited[grid_z][grid_x + 1] == '\0')) &&
-         (uVar7 = iVar2 - current_height >> 0x1f,
-         (int)((iVar2 - current_height ^ uVar7) - uVar7) < g_PathfindingMaxClimbHeight)) {
+         (ABS(iVar2 - current_height) < g_PathfindingMaxClimbHeight)) {
         g_PathfindingVisited[grid_z][grid_x + 1] = '\x03';
         g_PathfindingQueue[g_PathfindingQueueTail].x = grid_x + 1;
         iVar6 = g_PathfindingQueueTail + 1;
@@ -94,8 +90,7 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_005487a0(CPathMap *this_ptr,i
         }
       }
       if (((0 < grid_z) && (g_PathfindingVisited[grid_z + -1][grid_x] == '\0')) &&
-         (uVar7 = iVar3 - current_height >> 0x1f,
-         (int)((iVar3 - current_height ^ uVar7) - uVar7) < g_PathfindingMaxClimbHeight)) {
+         (ABS(iVar3 - current_height) < g_PathfindingMaxClimbHeight)) {
         g_PathfindingVisited[grid_z + -1][grid_x] = '\x02';
         g_PathfindingQueue[g_PathfindingQueueTail].x = grid_x;
         iVar6 = g_PathfindingQueueTail + 1;
@@ -108,8 +103,7 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_005487a0(CPathMap *this_ptr,i
         }
       }
       if (((0 < grid_x) && (g_PathfindingVisited[grid_z][grid_x + -1] == '\0')) &&
-         (uVar7 = iVar4 - current_height >> 0x1f,
-         (int)((iVar4 - current_height ^ uVar7) - uVar7) < g_PathfindingMaxClimbHeight)) {
+         (ABS(iVar4 - current_height) < g_PathfindingMaxClimbHeight)) {
         g_PathfindingVisited[grid_z][grid_x + -1] = '\x04';
         g_PathfindingNodesExpanded = g_PathfindingNodesExpanded + 1;
         g_PathfindingQueue[g_PathfindingQueueTail].x = grid_x + -1;

@@ -86,6 +86,41 @@ WHITELIST = {
         'match': 'Cppcheck: invalid pointer cast',
         'severity': 'moderate',
     },
+
+    # Signed shift-by-(bit-width-1) — Watcom's signed-divide-by-power-of-2
+    # (`(x + (x>>0x1f)*-N) ... >> M`) and branchless-abs (`(x ^ x>>0x1f) - x>>0x1f`)
+    # idioms. Faithful but UB-flagged; the eligible rewrite is `x / N` and
+    # `ABS(x)` respectively (see fix_compilation.md).
+    ('cppcheck', 'shiftTooManyBitsSigned'): {
+        'type': 'static_shift_too_many_bits',
+        'match': 'Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)',
+        'severity': 'moderate',
+    },
+
+    # Redundant self-assignment (`pX = pX;`, `iVar = iVar;`) — pre-increment /
+    # shadow-walk decompiler residue; the fix is to delete the dead store.
+    ('cppcheck', 'selfAssignment'): {
+        'type': 'static_self_assignment',
+        'match': 'Cppcheck: redundant self-assignment',
+        'severity': 'mild',
+    },
+
+    # Integer assigned to a pointer (non-portable) — raw-address / pointer-as-int
+    # writes (e.g. rule-array byte-offset stores); often a mistyped local or a
+    # hardcoded address for a known global (fix_compilation.md §11).
+    ('cppcheck', 'AssignmentIntegerToAddress'): {
+        'type': 'static_int_to_address',
+        'match': 'Cppcheck: integer assigned to pointer (non-portable)',
+        'severity': 'moderate',
+    },
+
+    # Inner `if` whose condition duplicates the enclosing one — decompiler-
+    # redundant guard; drop the inner test.
+    ('cppcheck', 'identicalInnerCondition'): {
+        'type': 'static_identical_inner_condition',
+        'match': 'Cppcheck: inner condition identical to outer',
+        'severity': 'mild',
+    },
 }
 
 

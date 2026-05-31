@@ -959,5 +959,22 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 85,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "(uVar6 = pCVar15->x, uVar16 = (int)uVar6 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 86,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar7 = (this_ptr->model).vertex_list[iVar2].x, uVar17 = (int)uVar7 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    }
+  ]
 }

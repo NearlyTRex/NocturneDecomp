@@ -46,7 +46,7 @@ void __cdecl engine_pod_cpp_CPod_remount_FUN_00550af0(CPod *this_ptr);
 void __cdecl engine_pod_cpp_CPod_dismount_FUN_00550b90(CPod *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPod_init_FUN_00550c30(CPod *this_ptr);
 void __cdecl engine_pod_cpp_CPod_cleanup_FUN_00550c80(CPod *this_ptr);
-int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,char *extension,char *output_buffer,int max_results,int result_string_length);
+int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod *pod,char *extension,char *output_buffer,int max_results,int result_string_length);
 void __cdecl engine_pod_cpp_CPod_initSearch_FUN_00550ea0(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context);
 int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0(CPod *this_ptr,CPodSearchContext *search_context);
 void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,char *pod_filename);

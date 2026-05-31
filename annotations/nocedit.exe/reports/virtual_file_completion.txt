@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6179 (95.7%)
+Clean functions: 6183 (95.8%)
 Files at 100%: 188
-Files at 90%+: 190
+Files at 90%+: 191
 Files at 50%+: 214
 
 ====================================================================================================
@@ -208,6 +208,10 @@ Total: 188 files
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
+   97.1% | engine/pod.cpp
+         33/34 clean, 1 remaining
+           - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines) [unrolled_memcpy]
+
    95.5% | core/mirror.cpp
          21/22 clean, 1 remaining
            - core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 (340 lines) [missing_cave_copy]
@@ -219,7 +223,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1436 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
            - core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines) [missing_cave_copy]
 
-Total: 2 files
+Total: 3 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -260,13 +264,6 @@ FILES AT 50-89%
            - core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (56 lines) [unrolled_memcpy]
            - core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 (144 lines) [unrolled_memcpy]
            - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines) [pointer_cast, unrolled_memcpy]
-   85.3% | engine/pod.cpp
-         29/34 clean, 5 remaining
-           - engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0 (42 lines) [pointer_cast, unrolled_memcpy]
-           - engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 (188 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
-           - engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230 (120 lines) [pointer_cast]
-           - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines) [sign_compare_idiom, unrolled_memcpy]
-           - engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (111 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen]
    84.8% | core/dmodel.cpp
          56/66 clean, 10 remaining
            - core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (152 lines) [pointer_cast, shadow_pointer_walk, unrolled_strchr]
@@ -543,7 +540,7 @@ FILES AT 50-89%
            - engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (244 lines) [unrolled_strcpy]
            - engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (223 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
 
-Total: 24 files
+Total: 23 files
 
 ====================================================================================================
 FILES BELOW 50%

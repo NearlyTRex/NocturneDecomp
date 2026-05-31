@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        38 ( 0.6%)
+  Functions with type issues:        37 ( 0.6%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      38
+    Undefined types in variables:      37
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   181 functions
+  Excluded (.keep / MMX / by-value):   182 functions
     Wrong calling convention:          1
-    Undefined types in variables:      179
+    Undefined types in variables:      180
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (38)
+Undefined types in variables (37)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -239,11 +239,6 @@ Undefined types in variables (38)
     Locals:  local_20c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CPodFile_getDependencyRecord
-    Address: 0x005506c0  File: engine/pod.cpp
-    Locals:  local_114 (undefined4[66])
-    Suggested: Resolve undefined types to concrete types
-
   visualizeTextureAtlas
     Address: 0x00447f20  File: shape/cramtex.cpp
     Locals:  local_110 (undefined8)
@@ -327,7 +322,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (179)
+Undefined types - .keep overrides (180)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1143,6 +1138,11 @@ Undefined types - .keep overrides (179)
   CPodFile_getAuditRecord
     Address: 0x00550590  File: engine/pod.cpp
     Locals:  local_144 (undefined4[78])
+    Suggested: Resolve undefined types to concrete types
+
+  CPodFile_getDependencyRecord
+    Address: 0x005506c0  File: engine/pod.cpp
+    Locals:  local_114 (undefined4[66])
     Suggested: Resolve undefined types to concrete types
 
   parseSpatialTreeFromFile

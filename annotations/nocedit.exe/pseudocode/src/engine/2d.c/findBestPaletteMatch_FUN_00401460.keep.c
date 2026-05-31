@@ -12,8 +12,6 @@ int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401460(int red,int green,int 
 {
   float fVar5;
   byte *pbVar5;
-  uint uVar6;
-  uint uVar7;
   int best_index;
   float local_20;
   float fVar1;
@@ -26,16 +24,13 @@ int __cdecl engine_2d_c_findBestPaletteMatch_FUN_00401460(int red,int green,int 
   local_20 = 1e+30;
   if (start_index <= end_index) {
     do {
-      uVar6 = (int)(red - (uint)*pbVar5) >> 0x1f;
-      fVar1 = (float)(int)((red - (uint)*pbVar5 ^ uVar6) - uVar6);
-      uVar7 = (int)(green - (uint)pbVar5[1]) >> 0x1f;
-      fVar2 = (float)(int)((green - (uint)pbVar5[1] ^ uVar7) - uVar7);
-      uVar7 = (int)(blue - (uint)pbVar5[2]) >> 0x1f;
+      fVar1 = (float)ABS((int)(red - (uint)*pbVar5));
+      fVar2 = (float)ABS((int)(green - (uint)pbVar5[1]));
       fVar3 = ABS(SQRT((float)blue * (float)blue +
                        (float)green * (float)green + (float)red * (float)red) *
                   (float)0.57735027000000005 -
                   g_PaletteLuminanceCache[start_index]);
-      fVar4 = (float)(int)((blue - (uint)pbVar5[2] ^ uVar7) - uVar7);
+      fVar4 = (float)ABS((int)(blue - (uint)pbVar5[2]));
       fVar5 = fVar3 * fVar3 * (float)0.14999999999999999 +
               fVar4 * fVar4 * (float)0.11 +
               fVar2 * fVar2 * (float)0.58999999999999997 +

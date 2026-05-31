@@ -399,6 +399,22 @@
       "severity": "moderate",
       "text": "for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Redundant assignment of 'piVar5' to itself.",
+      "line": 93,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "piVar5 = piVar5;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'piVar7' to itself.",
+      "line": 94,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "piVar7 = piVar7;",
+      "type": "static_self_assignment"
     }
   ]
 }

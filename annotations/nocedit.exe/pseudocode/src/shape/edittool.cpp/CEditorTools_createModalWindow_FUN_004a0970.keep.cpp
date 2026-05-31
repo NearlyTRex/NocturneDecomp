@@ -18,7 +18,6 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
   uint uVar7;
   void *pvVar8;
   int iVar7;
-  int iVar8;
   SWindow *pSVar10;
   char *buffer;
   int iVar11;
@@ -46,8 +45,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
   }
   iVar2 = g_WindowStackCount;
   pSVar10 = g_WindowStack + g_WindowStackCount;
-  iVar3 = (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x80) -
-               (uint)((g_WindowWidth >> 0x1f) << 6 < 0)) >> 7;
+  iVar3 = g_WindowWidth / 0x80;
   iVar4 = g_WindowHeight / 0x60;
   left = left - iVar3;
   top = top - iVar4;
@@ -105,8 +103,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
     g_WindowStack[iVar2].backup_width = g_WindowWidth;
     iVar1 = g_WindowStack[iVar2].backup_width * g_BitsPerPixel;
     g_WindowStack[iVar2].backup_height = g_WindowHeight;
-    iVar7 = iVar1 >> 0x1f;
-    uVar7 = (int)((iVar1 + iVar7 * -8) - (uint)(iVar7 << 2 < 0)) >> 3;
+    uVar7 = iVar1 / 8;
     iVar1 = g_WindowStack[iVar2].backup_height;
     g_WindowStack[iVar2].backup_x_offset = 0;
     g_WindowStack[iVar2].backup_y_offset = 0;
@@ -123,10 +120,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
     if (0 < g_WindowStack[iVar2].backup_height) {
       do {
         iVar7 = g_WindowStack[iVar2].backup_x_offset * g_BitsPerPixel;
-        iVar8 = iVar7 >> 0x1f;
         puVar12 = (uint *)
                   ((char *)g_ScreenBufferArray[g_WindowStack[iVar2].backup_y_offset + iVar1] +
-                  ((int)((iVar7 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3));
+                  iVar7 / 8);
         memcpy(local_14,puVar12,uVar7);
         local_14 = (uint *)((char *)local_14 + uVar7);
         iVar1 = iVar1 + 1;

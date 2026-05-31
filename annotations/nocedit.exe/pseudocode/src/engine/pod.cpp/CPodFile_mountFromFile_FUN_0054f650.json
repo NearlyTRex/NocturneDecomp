@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 834,
-    "complexity_score": 418,
+    "complexity_score": 393,
     "cross_reference_count": 15,
     "function_call_count": 14,
     "global_count": 27,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 368,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "sign_compare_idiom",
       "unrolled_memcpy"
     ],
     "total_lines": 1202
@@ -527,6 +526,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 147,
+      "match": "SBORROW4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar11 = SBORROW4(size,local_2c);",
+      "type": "sign_compare_idiom"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 156,
       "match": "._1_1_",
@@ -588,6 +596,15 @@
       "severity": "moderate",
       "text": "pSVar12 = (SPod1DirEntry *)((int)pSVar12 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 338,
+      "match": "SBORROW4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar11 = SBORROW4(size,local_1c);",
+      "type": "sign_compare_idiom"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -950,22 +967,6 @@
   },
   "suspects": [
     {
-      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 147,
-      "match": "SBORROW4",
-      "severity": "moderate",
-      "text": "bVar11 = SBORROW4(size,local_2c);",
-      "type": "sign_compare_idiom"
-    },
-    {
-      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 338,
-      "match": "SBORROW4",
-      "severity": "moderate",
-      "text": "bVar11 = SBORROW4(size,local_1c);",
-      "type": "sign_compare_idiom"
-    },
-    {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 193,
       "match": "field-by-field struct copy",
@@ -976,7 +977,7 @@
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "introduced_by": "keep",
-      "line": 94,
+      "line": 93,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "this_ptr->directory_entries[local_28].size = local_ac.size;",

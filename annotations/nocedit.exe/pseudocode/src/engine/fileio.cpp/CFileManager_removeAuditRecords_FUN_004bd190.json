@@ -591,6 +591,30 @@
       "severity": "moderate",
       "text": "// 004bd59f: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Redundant assignment of 'puVar7' to itself.",
+      "line": 110,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "puVar7 = puVar7;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'puVar5' to itself.",
+      "line": 129,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "puVar5 = puVar5;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pCVar8' to itself.",
+      "line": 130,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pCVar8 = pCVar8;",
+      "type": "static_self_assignment"
     }
   ]
 }

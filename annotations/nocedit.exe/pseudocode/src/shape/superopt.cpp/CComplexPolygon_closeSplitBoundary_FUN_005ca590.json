@@ -2020,6 +2020,14 @@
       "severity": "moderate",
       "text": "puVar10 = (uint *)(iVar14 + (int)puVar9);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Identical inner 'if' condition is always true.",
+      "line": 239,
+      "match": "Cppcheck: inner condition identical to outer",
+      "severity": "mild",
+      "text": "if (local_20 != 0) {",
+      "type": "static_identical_inner_condition"
     }
   ]
 }

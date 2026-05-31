@@ -11,24 +11,21 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(int width,int height,int bit
 
 {
   int iVar1;
-  
+
   if (g_StoredWindowWidth != 0) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 0x99a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("mapFrameBuffer - already mapped!");
   }
   if (frame_buffer == (void *)0x0) {
-    iVar1 = height * stride >> 0x1f;
-    frame_buffer = (void *)((int)((height * stride + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3);
+    frame_buffer = (void *)(height * stride / 8);
   }
   if (((stride != 8) && (stride != 0x10)) && (stride != 0x20)) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 0x9a2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("mapFrameBuffer - invalid bits/pixel");
   }
-  iVar1 = height * stride >> 0x1f;
-  if ((int)(((uint)frame_buffer ^ (int)frame_buffer >> 0x1f) - ((int)frame_buffer >> 0x1f)) <
-      (int)((height * stride + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3) {
+  if (ABS((int)frame_buffer) < height * stride / 8) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 0x9a3;
     core_main_c_displayErrorAndQuit_FUN_00506f10("mapFrameBuffer - invalid stride");

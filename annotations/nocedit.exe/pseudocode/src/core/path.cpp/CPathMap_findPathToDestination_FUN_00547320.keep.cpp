@@ -85,7 +85,7 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *
     local_a0 = 4;
   }
   local_ac = (this_ptr->voxel_coords).x - (this_ptr->dest_voxel_coords).x;
-  if (0x31 < (int)((local_ac ^ (int)local_ac >> 0x1f) - ((int)local_ac >> 0x1f))) {
+  if (0x31 < ABS((int)local_ac)) {
     local_4c.x = (this_ptr->current_position).x - dest_position->x;
     local_4c.y = (this_ptr->current_position).y - dest_position->y;
     local_4c.z = (this_ptr->current_position).z - dest_position->z;
@@ -100,7 +100,7 @@ LAB_005473e0:
     return 2;
   }
   local_a4 = (this_ptr->voxel_coords).z - (this_ptr->dest_voxel_coords).z;
-  if (0x31 < (int)((local_a4 ^ (int)local_a4 >> 0x1f) - ((int)local_a4 >> 0x1f))) {
+  if (0x31 < ABS((int)local_a4)) {
     local_64.x = (this_ptr->current_position).x - dest_position->x;
     local_64.y = (this_ptr->current_position).y - dest_position->y;
     local_64.z = (this_ptr->current_position).z - dest_position->z;
@@ -174,8 +174,7 @@ LAB_005473e0:
     if (uVar5 != 0) {
       uVar5 = this_ptr->height_cache[g_PathfindingDestZ][g_PathfindingDestX] -
               (this_ptr->voxel_coords).y;
-      uVar6 = (int)uVar5 >> 0x1f;
-      if (3 < (int)((uVar5 ^ uVar6) - uVar6)) {
+      if (3 < ABS((int)uVar5)) {
         local_94.x = (this_ptr->current_position).x - dest_position->x;
         local_94.y = (this_ptr->current_position).y - dest_position->y;
         local_94.z = (this_ptr->current_position).z - dest_position->z;

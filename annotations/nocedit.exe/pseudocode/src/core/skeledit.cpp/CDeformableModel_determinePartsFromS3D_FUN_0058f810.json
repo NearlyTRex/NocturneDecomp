@@ -3216,6 +3216,14 @@
       "severity": "moderate",
       "text": "*(uint *)((int)pvVar35 + 4) = 3;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Redundant assignment of 'piVar35' to itself.",
+      "line": 1141,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "piVar35 = piVar35;",
+      "type": "static_self_assignment"
     }
   ]
 }

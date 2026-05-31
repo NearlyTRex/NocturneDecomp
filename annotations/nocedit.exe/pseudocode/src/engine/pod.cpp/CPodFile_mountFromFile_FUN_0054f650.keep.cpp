@@ -21,7 +21,6 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_pt
   uint uVar7;
   SIZE_T size;
   char *pcVar13;
-  bool bVar11;
   SFoundFileInfo local_6a4;
   SPod3Header local_490;
   SEpdHeader local_370;
@@ -98,8 +97,7 @@ LAB_0054f6fe:
         local_28 = local_28 + 1;
       } while (local_28 < this_ptr->file_count);
     }
-    bVar11 = SBORROW4(size,local_2c);
-    iVar4 = size - local_2c;
+    bVar3 = (int)size < local_2c;
   }
   else {
     iVar4 = _stricmp(local_260,".epd");
@@ -217,11 +215,7 @@ LAB_0054f6fe:
         local_24 = local_24 + 1;
       } while (local_24 < this_ptr->file_count);
     }
-    bVar11 = SBORROW4(size,local_1c);
-    iVar4 = size - local_1c;
-  }
-  if (bVar11 != iVar4 < 0) {
-    bVar3 = true;
+    bVar3 = (int)size < local_1c;
   }
 LAB_0054f9a8:
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\pod.cpp",0x22d);

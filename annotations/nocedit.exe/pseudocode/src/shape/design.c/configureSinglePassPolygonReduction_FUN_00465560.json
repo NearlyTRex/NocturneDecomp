@@ -340,5 +340,22 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Redundant assignment of 'pbVar4' to itself.",
+      "line": 100,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pbVar4 = pbVar4;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pbVar4' to itself.",
+      "line": 105,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pbVar4 = pbVar4;",
+      "type": "static_self_assignment"
+    }
+  ]
 }

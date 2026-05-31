@@ -1552,6 +1552,22 @@
       "severity": "moderate",
       "text": "// 004608b8: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar5' to itself.",
+      "line": 571,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar5 = pSVar5;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar6' to itself.",
+      "line": 572,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar6 = pSVar6;",
+      "type": "static_self_assignment"
     }
   ]
 }

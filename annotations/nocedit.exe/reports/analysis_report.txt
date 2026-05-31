@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6179 (95.7%)
-Functions with suspects: 275 (4.3%)
+Clean functions: 6183 (95.8%)
+Functions with suspects: 271 (4.2%)
 
-Total suspect patterns: 1942
-Average suspects per function: 0.30
+Total suspect patterns: 2046
+Average suspects per function: 0.32
 
-Virtual files: 214 total, 188 at 100%, 190 at 90%+
+Virtual files: 214 total, 188 at 100%, 191 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 51.1
+Average complexity score: 51.0
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,21 +28,24 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              936
-  unrolled_memcpy           321
-  unrolled_strcpy           157
+  pointer_cast              924
+  unrolled_memcpy           317
+  unrolled_strcpy           156
   missing_cave_copy         96
-  shadow_pointer_walk       71
-  unrolled_strlen           59
+  static_shift_too_many_bits 68
+  shadow_pointer_walk       65
+  unrolled_strlen           57
+  static_self_assignment    41
   bitcast_double_pair       36
   raw_address_constant      33
   static_uninitvar          32
   unrolled_strchr           28
   unrolled_memset           28
   warning_inlined_function  24
+  static_legacy_uninitvar   24
   bit_int_float_compare     23
-  static_legacy_uninitvar   23
-  warning_type_propagation  13
+  static_identical_inner_condition 22
+  warning_type_propagation  12
   warning_unreachable       10
   sub84_truncation          9
   stack_param               8
@@ -51,9 +54,9 @@ SUSPECT PATTERN BREAKDOWN
   unaffected_reg            6
   unrolled_strcat           4
   static_null_pointer       4
-  sign_compare_idiom        3
   negative_offset           2
   self_copy_guard           2
+  sign_compare_idiom        1
   fast_sqrt_inline          1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
@@ -108,7 +111,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6129 more
+  ... and 6133 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -146,22 +149,20 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (167 functions):
-    005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
-    005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
-    00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
-    00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
+  pointer_cast (163 functions):
     004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
     004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     004b7ac0: engine_fileio.cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
     004b2a60: engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
     004b7460: engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
-    ... and 157 more
+    004b7d50: engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
+    004b23a0: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
+    004ba740: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
+    004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
+    ... and 153 more
 
-  unrolled_memcpy (106 functions):
-    005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
-    005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
+  unrolled_memcpy (104 functions):
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     004b23a0: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
@@ -170,10 +171,11 @@ FUNCTIONS BY SUSPECT TYPE
     004bd190: engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
     00543bb0: core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0
     00542470: core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
-    ... and 96 more
+    004cbf00: core_flies.cpp_CFlies_process_FUN_004cbf00
+    004cc300: core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
+    ... and 94 more
 
-  unrolled_strcpy (59 functions):
-    00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
+  unrolled_strcpy (58 functions):
     004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
     004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
@@ -183,7 +185,8 @@ FUNCTIONS BY SUSPECT TYPE
     004b23a0: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
     004ba740: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     004bc650: engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
-    ... and 49 more
+    004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
+    ... and 48 more
 
   missing_cave_copy (15 functions):
     00558fd0: core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
@@ -198,8 +201,9 @@ FUNCTIONS BY SUSPECT TYPE
     004e84a0: core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
     ... and 5 more
 
-  shadow_pointer_walk (39 functions):
-    005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
+  static_shift_too_many_bits (0 functions):
+
+  shadow_pointer_walk (38 functions):
     00543150: core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
     005401e0: core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
     00541390: core_netgame.cpp_CNetGame_runLobby_FUN_00541390
@@ -209,10 +213,10 @@ FUNCTIONS BY SUSPECT TYPE
     005406a0: core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
     00541ff0: core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
     004cbf00: core_flies.cpp_CFlies_process_FUN_004cbf00
-    ... and 29 more
+    005098f0: core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
+    ... and 28 more
 
-  unrolled_strlen (25 functions):
-    00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
+  unrolled_strlen (24 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
     004b2a60: engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
     004b7460: engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
@@ -222,7 +226,10 @@ FUNCTIONS BY SUSPECT TYPE
     0053bd80: core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
     00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
     0045a7b0: shape_design.c_modelExportWizard_FUN_0045a7b0
-    ... and 15 more
+    00468320: shape_design.c_createKeyframeModel_FUN_00468320
+    ... and 14 more
+
+  static_self_assignment (0 functions):
 
   bitcast_double_pair (6 functions):
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
@@ -284,6 +291,8 @@ FUNCTIONS BY SUSPECT TYPE
     004d2190: core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
     ... and 14 more
 
+  static_legacy_uninitvar (0 functions):
+
   bit_int_float_compare (10 functions):
     0053fd00: core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
     00526d90: core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
@@ -296,10 +305,9 @@ FUNCTIONS BY SUSPECT TYPE
     00469220: shape_design.c_addQuadPolygonOctant_FUN_00469220
     00468d20: shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20
 
-  static_legacy_uninitvar (0 functions):
+  static_identical_inner_condition (0 functions):
 
-  warning_type_propagation (13 functions):
-    005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
+  warning_type_propagation (12 functions):
     00543150: core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
     005267a0: core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
     00558fd0: core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
@@ -309,7 +317,8 @@ FUNCTIONS BY SUSPECT TYPE
     0051f1d0: core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
     0051f930: core_mimic.cpp_CMimic_updatePose_FUN_0051f930
     0051fcc0: core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
-    ... and 3 more
+    004d4d80: core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
+    ... and 2 more
 
   warning_unreachable (5 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
@@ -348,10 +357,6 @@ FUNCTIONS BY SUSPECT TYPE
 
   static_null_pointer (0 functions):
 
-  sign_compare_idiom (2 functions):
-    0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
-    00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-
   negative_offset (2 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
     004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
@@ -359,6 +364,9 @@ FUNCTIONS BY SUSPECT TYPE
   self_copy_guard (2 functions):
     004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600
     00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
+
+  sign_compare_idiom (1 functions):
+    00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
 
   fast_sqrt_inline (1 functions):
     005dfac0: core_trigger.cpp_CTrigger_process_FUN_005dfac0

@@ -29,7 +29,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
   uint *puVar13;
   int iVar14;
   int iVar9;
-  int iVar15;
   int iVar16;
   uint uVar17;
   int iVar18;
@@ -233,7 +232,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
                        ((g_CameraConvertedPalette[pbVar7[0x280]] & 0xfcfcfc) >> 2) +
                        ((g_CameraConvertedPalette[pbVar7[0x281]] & 0xfcfcfc) >> 2);
             pbVar7 = pbVar7 + 2;
-            piVar27 = piVar27;
           } while (local_94 < 0x140);
           local_20 = local_20 + 0x500;
         } while (local_20 != 0x4b000);
@@ -253,9 +251,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
       else if (iVar2 < 0x1e1) {
         local_88 = (uint *)this_ptr->framebuffer_aligned;
         uVar3 = 0x9600000 / (longlong)this_ptr->framebuffer_width;
-        local_84 = (uint)((longlong)
-                          ((ulonglong)(uint)((int)uVar3 >> 0x1f) << 0x20 | uVar3 & 0xffffffff) /
-                         (longlong)this_ptr->framebuffer_height);
+        local_84 = (uint)((longlong)(int)uVar3 / (longlong)this_ptr->framebuffer_height);
         local_7c = 0;
         if (0 < this_ptr->framebuffer_height) {
           local_28 = 0;
@@ -353,14 +349,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
         iVar12 = 0;
         iVar9 = iVar2;
         do {
-          iVar15 = iVar12 >> 0x1f;
-          iVar8 = iVar12 + iVar15 * -0x100;
+          iVar8 = iVar12 / 0x100;
           iVar12 = iVar12 + 0x280;
           ((char *)g_CameraTextureWorkBuffer)[iVar9] =
-               g_CameraIndexedImageData
-               [((int)(iVar8 - (uint)(iVar15 << 7 < 0)) >> 8) +
-                ((int)((iVar4 + (iVar4 >> 0x1f) * -0x100) - (uint)((iVar4 >> 0x1f) << 7 < 0)) >> 8)
-                * 0x280];
+               g_CameraIndexedImageData[iVar8 + iVar4 / 0x100 * 0x280];
           iVar9 = iVar9 + 1;
         } while (iVar12 != 0x28000);
         iVar2 = iVar2 + 0x100;
@@ -397,8 +389,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
           do {
             iVar9 = 0;
             if (0 < g_ImageBytesPerPixel) {
-              iVar8 = ((int)((iVar2 + (iVar2 >> 0x1f) * -0x100) - (uint)((iVar2 >> 0x1f) << 7 < 0))
-                      >> 8) + (iStack_18 / 0xc0) * 0x140;
+              iVar8 = iVar2 / 0x100 + (iStack_18 / 0xc0) * 0x140;
               iVar16 = iStack_1c + iVar4;
               do {
                 iVar16 = iVar16 + 0x12c00;
@@ -406,7 +397,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
                 ((char *)g_CameraImageDecompressBuffer)[iVar16] =
                      ((char *)g_CameraImageDecompressBuffer)[iVar8];
                 iVar8 = iVar8 + 0x12c00;
-                iVar16 = iVar16;
               } while (iVar9 < g_ImageBytesPerPixel);
             }
             iVar4 = iVar4 + 1;

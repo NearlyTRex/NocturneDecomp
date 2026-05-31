@@ -475,6 +475,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
+    },
+    {
+      "description": "Redundant assignment of 'pCVar5' to itself.",
+      "line": 142,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pCVar5 = pCVar5;",
+      "type": "static_self_assignment"
     }
   ]
 }

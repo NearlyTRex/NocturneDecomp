@@ -1000,6 +1000,14 @@
       "severity": "moderate",
       "text": "((int)&(this_ptr->sample_points_ptr->position).x + local_4c);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Identical inner 'if' condition is always true.",
+      "line": 315,
+      "match": "Cppcheck: inner condition identical to outer",
+      "severity": "mild",
+      "text": "if (0 < this_ptr->sample_point_count) {",
+      "type": "static_identical_inner_condition"
     }
   ]
 }

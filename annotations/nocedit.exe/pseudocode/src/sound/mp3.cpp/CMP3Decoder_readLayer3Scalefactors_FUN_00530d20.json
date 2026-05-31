@@ -389,5 +389,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Redundant assignment of 'piVar3' to itself.",
+      "line": 120,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "piVar3 = piVar3;",
+      "type": "static_self_assignment"
+    }
+  ]
 }

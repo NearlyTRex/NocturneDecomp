@@ -972,5 +972,22 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.",
+      "line": 116,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.",
+      "line": 223,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1;",
+      "type": "static_self_assignment"
+    }
+  ]
 }

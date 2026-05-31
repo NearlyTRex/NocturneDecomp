@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 111
-  Total diagnostics: 319
+  Functions with findings: 100
+  Total diagnostics: 284
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 111, raw .cpp files: 0
+  .keep.cpp files: 100, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -137,29 +137,6 @@ shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0  [.keep] [Cppcheck (quick)]
   Line  197: [uninitvar] Uninitialized variable: local_288
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0  [.keep] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (7 diagnostics)
-
-  Line  124: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  127: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  130: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  142: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  218: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  221: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  224: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0  [.keep] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (6 diagnostics)
-
-  Line  236: [selfAssignment] Redundant assignment of 'piVar27' to itself.
-  Line  257: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  356: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  362: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  400: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  409: [selfAssignment] Redundant assignment of 'iVar16' to itself.
-
-----------------------------------------------------------------------------------------------------
 shape_design.c_loadModelBinary_FUN_00458170  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (6 diagnostics)
 
@@ -228,15 +205,6 @@ core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0  [.keep] [Cppcheck (quick)]
   Line   48: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   50: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   51: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_path.cpp_CPathMap_searchGrid_FUN_005487a0  [.keep] [Cppcheck (quick)]
-  File: core/path.cpp  (4 diagnostics)
-
-  Line   68: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   83: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   97: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  111: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_tvbat.cpp_CTVBat_process_FUN_005e4210  [.keep] [Cppcheck (quick)]
@@ -344,30 +312,6 @@ core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20  [.keep] [Cppc
   Line   52: [nullPointer] Possible null pointer dereference: actor
 
 ----------------------------------------------------------------------------------------------------
-core_path.cpp_CPathMap_findPathToDestination_FUN_00547320  [.keep] [Cppcheck (quick)]
-  File: core/path.cpp  (3 diagnostics)
-
-  Line   88: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  103: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  177: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-engine_2d.c_findBestPaletteMatch_FUN_00401460  [.keep] [Cppcheck (quick)]
-  File: engine/2d.c  (3 diagnostics)
-
-  Line   29: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   31: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   33: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-engine_2d.c_mapFrameBuffer_FUN_00403430  [.keep] [Cppcheck (quick)]
-  File: engine/2d.c  (3 diagnostics)
-
-  Line   21: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   29: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   30: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (3 diagnostics)
 
@@ -463,20 +407,6 @@ core_cloth.cpp_fastInvSqrt_FUN_0043e2a0  [.keep] [Cppcheck (quick)]
 
   Line   13: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
   Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310  [.keep] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (2 diagnostics)
-
-  Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   34: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440  [.keep] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (2 diagnostics)
-
-  Line   54: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   58: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dskybox.cpp_renderSkyDome_FUN_004901f0  [.keep] [Cppcheck (quick)]
@@ -605,25 +535,11 @@ shape_design.c_vertexReducer_FUN_00467850  [.keep] [Cppcheck (quick)]
   Line  201: [selfAssignment] Redundant assignment of 'pbVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970  [.keep] [Cppcheck (quick)]
-  File: shape/edittool.cpp  (2 diagnostics)
-
-  Line  108: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  126: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420  [.keep] [Cppcheck (quick)]
   File: shape/edittool.cpp  (2 diagnostics)
 
   Line   85: [invalidFunctionArgStr] Invalid strlen() argument nr 1. A nul-terminated string is required.
   Line  129: [invalidFunctionArgStr] Invalid strlen() argument nr 1. A nul-terminated string is required.
-
-----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_paintWindowBackground_FUN_0049e590  [.keep] [Cppcheck (quick)]
-  File: shape/edittool.cpp  (2 diagnostics)
-
-  Line   34: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   40: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 shape_quantize.cpp_quantizeRawPixelData_FUN_00556490  [.keep] [Cppcheck (quick)]
@@ -651,12 +567,6 @@ cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70  [.keep] [Cppcheck (q
   File: cockpit/pkbitmap.cpp  (1 diagnostics)
 
   Line   59: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_dlight.cpp_CDemonLight_init_FUN_004727c0  [.keep] [Cppcheck (quick)]
-  File: core/dlight.cpp  (1 diagnostics)
-
-  Line   31: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830  [.keep] [Cppcheck (quick)]
@@ -719,6 +629,12 @@ core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80  [.keep] [Cppcheck (q
   Line  142: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
+core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40  [.keep] [Cppcheck (quick)]
+  File: core/path.cpp  (1 diagnostics)
+
+  Line  109: [legacyUninitvar] Uninitialized variable: local_38
+
+----------------------------------------------------------------------------------------------------
 core_script.cpp_CScript_collectLabels_FUN_00566fa0  [.keep] [Cppcheck (quick)]
   File: core/script.cpp  (1 diagnostics)
 
@@ -777,12 +693,6 @@ engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30  [.keep] [Cppcheck (qui
   File: engine/keyframe.c  (1 diagnostics)
 
   Line   49: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-engine_light.cpp_calculatePhongLighting_FUN_00505530  [.keep] [Cppcheck (quick)]
-  File: engine/light.cpp  (1 diagnostics)
-
-  Line  103: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 engine_model.c_getMRGLBounds_FUN_00528140  [.keep] [Cppcheck (quick)]

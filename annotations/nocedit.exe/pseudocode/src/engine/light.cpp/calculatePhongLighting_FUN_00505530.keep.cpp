@@ -100,6 +100,5 @@ LAB_005056ad:
                   (int)((ulonglong)((longlong)g_SpecularLightMultiplier * (longlong)(int)uVar7) >>
                        0x20) << 0x10);
 LAB_005056f8:
-  return ((int)((uVar5 + ((int)uVar5 >> 0x1f) * -0x10) - (uint)(((int)uVar5 >> 0x1f) << 3 < 0)) >> 4
-         ) + 0x100;
+  return (int)uVar5 / 0x10 + 0x100;
 }

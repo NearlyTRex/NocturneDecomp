@@ -252,6 +252,22 @@
       "severity": "moderate",
       "text": "// 005205d9: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Redundant assignment of 'piVar4' to itself.",
+      "line": 45,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "piVar4 = piVar4;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar5' to itself.",
+      "line": 46,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar5 = pSVar5;",
+      "type": "static_self_assignment"
     }
   ]
 }

@@ -2,11 +2,11 @@
 // Address: 00550ce0
 // Address Range: [[00550ce0, 00550e98]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,char *extension,char *output_buffer,int max_results,int result_string_length)
+// Signature: int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod *pod,char *extension,char *output_buffer,int max_results,int result_string_length)
 
 #include "nocturne.h"
 
-int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,char *extension,char *output_buffer,int max_results,int result_string_length)
+int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod *pod,char *extension,char *output_buffer,int max_results,int result_string_length)
 
 {
   char cVar2;
@@ -62,12 +62,12 @@ int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,ch
   }
   local_50[~uVar5 + 0xb] = '\0';
   local_38 = 0;
-  if (0 < (int)*pod_array) {
+  if (0 < pod->pod_file_count) {
     local_34 = 0;
     do {
       local_20 = 0;
       local_1c = output_buffer + local_14 * result_string_length;
-      for (local_18 = 0; iVar7 = *(int *)((int)pod_array + local_34 + 4),
+      for (local_18 = 0; iVar7 = *(int *)((int)pod->pod_files + local_34),
           local_18 < *(int *)(iVar7 + 0x410); local_18 = local_18 + 1) {
         filename = *(char **)(*(int *)(iVar7 + 0x414) + local_20);
         uVar6 = 0xffffffff;
@@ -92,7 +92,7 @@ int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,ch
         iVar3 = _strcmp(local_50,local_44);
         if (iVar3 == 0) {
           iVar7 = 0;
-          ppCVar8 = pod_array;
+          ppCVar8 = (CPod **)pod;
           if (0 < local_38) {
             do {
               iVar4 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140
@@ -115,7 +115,7 @@ int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,ch
       }
       local_34 = local_34 + 4;
       local_38 = local_38 + 1;
-    } while (local_38 < (int)*pod_array);
+    } while (local_38 < pod->pod_file_count);
   }
   return local_14;
 }

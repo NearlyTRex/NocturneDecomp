@@ -2821,5 +2821,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Redundant assignment of 'pbVar21' to itself.",
+      "line": 1564,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pbVar21 = pbVar21;",
+      "type": "static_self_assignment"
+    }
+  ]
 }

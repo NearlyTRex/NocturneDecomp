@@ -23,9 +23,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemo
   int iVar6;
   SCoronaLightEntry *source_buffer_offset;
   CVector3i *pCVar16;
-  uint uVar17;
   int iVar7;
-  int iVar8;
   int iVar18;
   int iVar9;
   CVector3i *pCVar10;
@@ -121,13 +119,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemo
                 local_14 = '\0';
                 if (((*puVar19 < (uint)*piVar20) &&
                     (uVar3 = pCVar16->x - (g_CurrentGlobe->position_scaled).x,
-                    uVar17 = (int)uVar3 >> 0x1f, iVar5 = (uVar3 ^ uVar17) - uVar17,
+                    iVar5 = ABS((int)uVar3),
                     iVar5 < g_CurrentGlobe->linear_radius_scaled)) &&
                    ((uVar3 = pCVar16->y - (g_CurrentGlobe->position_scaled).y,
-                    uVar17 = (int)uVar3 >> 0x1f, iVar10 = (uVar3 ^ uVar17) - uVar17,
+                    iVar10 = ABS((int)uVar3),
                     iVar10 < g_CurrentGlobe->linear_radius_scaled &&
                     ((uVar3 = pCVar16->z - (g_CurrentGlobe->position_scaled).z,
-                     uVar17 = (int)uVar3 >> 0x1f, iVar11 = (uVar3 ^ uVar17) - uVar17,
+                     iVar11 = ABS((int)uVar3),
                      iVar11 < g_CurrentGlobe->linear_radius_scaled &&
                      (iVar5 = iVar10 * iVar10 + iVar5 * iVar5 + iVar11 * iVar11,
                      iVar5 < g_CurrentGlobe->quadratic_radius_scaled)))))) {
@@ -139,7 +137,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemo
                       iVar10 = (int)(0x7fffffff / (longlong)(int)*puVar19);
                     }
                     iVar7 = g_CoronaTargetDepth - iVar10;
-                    iVar8 = iVar7 >> 0x1f;
                     iVar9 = iVar13 << 8;
                     iVar15 = local_54 << 8;
                     iVar11 = 0x10;
@@ -147,8 +144,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemo
                       if (g_PrecomputedDepthBuffer[(iVar15 >> 8) * 0x140 + (iVar9 >> 8)] <
                           iVar10 + -0x80) break;
                       iVar11 = iVar11 + -1;
-                      iVar10 = iVar10 + ((int)((iVar7 + iVar8 * -0x10) - (uint)(iVar8 << 3 < 0)) >>
-                                        4);
+                      iVar10 = iVar10 + iVar7 / 0x10;
                       iVar9 = iVar9 + (g_CoronaTargetX - iVar13) * 0x10;
                       iVar15 = iVar15 + (g_CoronaTargetY - local_54) * 0x10;
                     } while (0 < iVar11);
@@ -215,14 +211,11 @@ LAB_00451d8b:
           while (local_28 < iVar13) {
             if ((((*local_38 < (uint)*local_34) &&
                  (uVar5 = pCVar10->x - (g_CurrentGlobe->position_scaled).x,
-                 (int)((uVar5 ^ (int)uVar5 >> 0x1f) - ((int)uVar5 >> 0x1f)) <
-                 g_CurrentGlobe->linear_radius_scaled)) &&
+                 ABS((int)uVar5) < g_CurrentGlobe->linear_radius_scaled)) &&
                 (uVar13 = pCVar10->y - (g_CurrentGlobe->position_scaled).y,
-                (int)((uVar13 ^ (int)uVar13 >> 0x1f) - ((int)uVar13 >> 0x1f)) <
-                g_CurrentGlobe->linear_radius_scaled)) &&
+                ABS((int)uVar13) < g_CurrentGlobe->linear_radius_scaled)) &&
                (uVar14 = pCVar10->z - (g_CurrentGlobe->position_scaled).z,
-               (int)((uVar14 ^ (int)uVar14 >> 0x1f) - ((int)uVar14 >> 0x1f)) <
-               g_CurrentGlobe->linear_radius_scaled)) {
+               ABS((int)uVar14) < g_CurrentGlobe->linear_radius_scaled)) {
               iVar1 = uVar14 * uVar14 + uVar5 * uVar5 + uVar13 * uVar13;
               if (iVar1 < g_CurrentGlobe->quadratic_radius_scaled) {
                 *pcVar11 = *pcVar11 +

@@ -513,6 +513,14 @@
       "severity": "moderate",
       "text": "// 005c8bd2: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Redundant assignment of 'pdVar4' to itself.",
+      "line": 65,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pdVar4 = pdVar4;",
+      "type": "static_self_assignment"
     }
   ]
 }

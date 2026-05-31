@@ -617,6 +617,22 @@
       "severity": "moderate",
       "text": "*(uint *)((int)base + g_ModelPolygonData[local_34].vertex_indices[local_30] * 8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Redundant assignment of 'pbVar5' to itself.",
+      "line": 196,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pbVar5 = pbVar5;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pbVar5' to itself.",
+      "line": 201,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pbVar5 = pbVar5;",
+      "type": "static_self_assignment"
     }
   ]
 }

@@ -224,5 +224,30 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Redundant assignment of 'piVar3' to itself.",
+      "line": 46,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "piVar3 = piVar3;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'piVar4' to itself.",
+      "line": 55,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "piVar4 = piVar4;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'piVar5' to itself.",
+      "line": 67,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "piVar5 = piVar5;",
+      "type": "static_self_assignment"
+    }
+  ]
 }
