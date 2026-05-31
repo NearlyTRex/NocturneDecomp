@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 114
-  Total diagnostics: 325
+  Functions with findings: 113
+  Total diagnostics: 322
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 114, raw .cpp files: 0
+  .keep.cpp files: 113, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -350,14 +350,6 @@ core_path.cpp_CPathMap_findPathToDestination_FUN_00547320  [.keep] [Cppcheck (qu
   Line   88: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  103: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  177: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790  [.keep] [Cppcheck (quick)]
-  File: core/skeledit.cpp  (3 diagnostics)
-
-  Line  172: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line  173: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line  174: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 engine_2d.c_findBestPaletteMatch_FUN_00401460  [.keep] [Cppcheck (quick)]

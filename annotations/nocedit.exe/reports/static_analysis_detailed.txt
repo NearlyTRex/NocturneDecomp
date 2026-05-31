@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (325 diagnostics)
+Cppcheck (quick) (322 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -1161,66 +1161,6 @@ identicalInnerCondition (22)
     Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (14)
-----------------------------------------------------------------------------------------------------
-
-  core_chain.cpp_fastSqrt_FUN_00431350               line 13
-    File: core/chain.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_chain.cpp_fastSqrt_FUN_00431350               line 14
-    File: core/chain.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 13
-    File: core/cloth.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 14
-    File: core/cloth.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_elephant.cpp_CElephantGun_process_FUN_004a707 line 25
-    File: core/elephant.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 680
-    File: core/ghoul.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 681
-    File: core/ghoul.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00 line 24
-    File: core/lightgun.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 790
-    File: core/skeledit.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_skeledit.cpp_CDeformableModel_extractLodLevel line 172
-    File: core/skeledit.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_skeledit.cpp_CDeformableModel_extractLodLevel line 173
-    File: core/skeledit.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_skeledit.cpp_CDeformableModel_extractLodLevel line 174
-    File: core/skeledit.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 29
-    File: core/skeleton.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 30
-    File: core/skeleton.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-----------------------------------------------------------------------------------------------------
 nullPointerRedundantCheck (12)
 ----------------------------------------------------------------------------------------------------
 
@@ -1271,6 +1211,54 @@ nullPointerRedundantCheck (12)
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 71
     File: sound/snddx.cpp
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
+
+----------------------------------------------------------------------------------------------------
+invalidPointerCast (11)
+----------------------------------------------------------------------------------------------------
+
+  core_chain.cpp_fastSqrt_FUN_00431350               line 13
+    File: core/chain.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_chain.cpp_fastSqrt_FUN_00431350               line 14
+    File: core/chain.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 13
+    File: core/cloth.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 14
+    File: core/cloth.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_elephant.cpp_CElephantGun_process_FUN_004a707 line 25
+    File: core/elephant.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 680
+    File: core/ghoul.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 681
+    File: core/ghoul.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00 line 24
+    File: core/lightgun.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 790
+    File: core/skeledit.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_skeleton.cpp_CDeformableModelInstance_compute line 29
+    File: core/skeleton.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_skeleton.cpp_CDeformableModelInstance_compute line 30
+    File: core/skeleton.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
 ----------------------------------------------------------------------------------------------------
 nullPointer (4)

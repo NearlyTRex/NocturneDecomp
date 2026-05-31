@@ -10,33 +10,33 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
+  core/mirror.cpp (1 remaining of 22)
+    - core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
+      Suspects: missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy
+
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
-
-  [shadow_pointer_walk] - 1 functions
-    core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00541260                ( 17 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  core/skeledit.cpp (90.0% complete)
-    7 functions remaining:
+  core/mirror.cpp (95.5% complete)
+    1 functions remaining:
+      core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 (340 lines)
+        Types: ['missing_cave_copy']
+
+  core/skeledit.cpp (94.3% complete)
+    4 functions remaining:
       core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (1852 lines)
         Types: ['missing_cave_copy', 'pointer_cast', 'shadow_pointer_walk', 'sign_compare_idiom', 'unrolled_memcpy', 'unrolled_memset', 'unrolled_strcpy', 'unrolled_strlen', 'warning_inlined_function']
-      core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (243 lines)
-        Types: ['shadow_pointer_walk']
-      core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (242 lines)
-        Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy', 'warning_inlined_function']
       core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines)
         Types: ['missing_cave_copy', 'pointer_cast', 'raw_address_constant', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_memset', 'unrolled_strcpy', 'warning_inlined_function']
       core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1436 lines)
         Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_strcpy', 'warning_inlined_function']
       core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines)
         Types: ['missing_cave_copy']
-      core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (187 lines)
-        Types: ['pointer_cast', 'shadow_pointer_walk']
 
 ====================================================================================================
 ALL REMAINING FILES
@@ -46,6 +46,7 @@ ALL REMAINING FILES
   core/trigger.cpp                                              87.0%  (20/23 clean, 3 remaining)
   core/flies.cpp                                                86.4%  (19/22 clean, 3 remaining)
   engine/pod.cpp                                                85.3%  (29/34 clean, 5 remaining)
+  core/dmodel.cpp                                               84.8%  (56/66 clean, 10 remaining)
   core/mobster.cpp                                              84.6%  (22/26 clean, 4 remaining)
   core/scat.cpp                                                 84.0%  (21/25 clean, 4 remaining)
   core/frankgen.cpp                                             83.3%  (20/24 clean, 4 remaining)
@@ -54,11 +55,9 @@ ALL REMAINING FILES
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
   core/wateract.cpp                                             78.3%  (18/23 clean, 5 remaining)
   core/ghoul.cpp                                                77.8%  (14/18 clean, 4 remaining)
-  core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
+  core/netgame.cpp                                              76.6%  (49/64 clean, 15 remaining)
   core/gabriela.cpp                                             76.3%  (29/38 clean, 9 remaining)
-  core/dmodel.cpp                                               75.8%  (50/66 clean, 16 remaining)
   shape/superopt.cpp                                            75.3%  (140/186 clean, 46 remaining)
-  core/netgame.cpp                                              75.0%  (48/64 clean, 16 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)
   core/glass.cpp                                                70.8%  (17/24 clean, 7 remaining)

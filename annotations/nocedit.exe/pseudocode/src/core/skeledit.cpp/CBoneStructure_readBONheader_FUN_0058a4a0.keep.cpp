@@ -18,7 +18,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   int local_248 [100];
   SBoneData local_b8;
   SBoneData *local_34;
-  int *local_2c;
   int local_24;
   int local_14;
   int iVar2;
@@ -43,13 +42,11 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   uVar3 = 0;
   if (0 < this_ptr->bone_count) {
     local_34 = this_ptr->bones;
-    local_2c = &this_ptr->bones[0].parent_index;
     do {
       pSVar6 = local_34 + uVar3;
-      _fscanf(file,"\"%[^\"]\",%d\n",pSVar6->name,local_2c);
+      _fscanf(file,"\"%[^\"]\",%d\n",pSVar6->name,&pSVar6->parent_index);
       strcpy(g_BoneNameBuffer[uVar3],pSVar6->name);
       uVar3 = uVar3 + 1;
-      local_2c = local_2c + 0x21;
     } while (uVar3 < this_ptr->bone_count);
   }
   uVar3 = 1;

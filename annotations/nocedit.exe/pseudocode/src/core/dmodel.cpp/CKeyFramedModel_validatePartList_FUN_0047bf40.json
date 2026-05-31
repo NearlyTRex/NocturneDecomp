@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 99,
+    "complexity_score": 59,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 59,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 181
   },
   "cross_references": [
@@ -272,6 +269,35 @@
     },
     "pcode_op_count": 457
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "while (iVar3 < *(int *)((int)this_ptr->poly_vert_list->vertices + local_18 + -0x14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 32,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)&this_ptr->poly_vert_list->vertices[0].vertex_index +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_20` self-updates via pointer arithmetic on its own `model_filename` field (which decays to a pointer), `+ CONST`; `offsetof(model_filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_20`. Replace those `local_20->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 49,
+      "match": "local_20 = (T *)(local_20->model_filename + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_20 = (CKeyFramedModel *)(local_20->model_filename + 8);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 44,
@@ -309,30 +335,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "while (iVar3 < *(int *)((int)this_ptr->poly_vert_list->vertices + local_18 + -0x14)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 32,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)&this_ptr->poly_vert_list->vertices[0].vertex_index +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_20` self-updates via pointer arithmetic on its own `model_filename` field (which decays to a pointer), `+ CONST`; `offsetof(model_filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_20`. Replace those `local_20->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 49,
-      "match": "local_20 = (T *)(local_20->model_filename + CONST)",
-      "severity": "moderate",
-      "text": "local_20 = (CKeyFramedModel *)(local_20->model_filename + 8);",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

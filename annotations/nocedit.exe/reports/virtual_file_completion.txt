@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6143 (95.2%)
+Clean functions: 6157 (95.4%)
 Files at 100%: 186
-Files at 90%+: 187
+Files at 90%+: 188
 Files at 50%+: 214
 
 ====================================================================================================
@@ -206,17 +206,18 @@ Total: 186 files
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   90.0% | core/skeledit.cpp
-         63/70 clean, 7 remaining
+   95.5% | core/mirror.cpp
+         21/22 clean, 1 remaining
+           - core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 (340 lines) [missing_cave_copy]
+
+   94.3% | core/skeledit.cpp
+         66/70 clean, 4 remaining
            - core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (1852 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, sign_compare_idiom, unrolled_memcpy, unrolled_memset, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (243 lines) [shadow_pointer_walk]
-           - core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (242 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_inlined_function]
            - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines) [missing_cave_copy, pointer_cast, raw_address_constant, shadow_pointer_walk, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_inlined_function]
            - core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1436 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
            - core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines) [missing_cave_copy]
-           - core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (187 lines) [pointer_cast, shadow_pointer_walk]
 
-Total: 1 files
+Total: 2 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -253,6 +254,18 @@ FILES AT 50-89%
            - engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230 (120 lines) [pointer_cast]
            - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines) [sign_compare_idiom, unrolled_memcpy]
            - engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (111 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen]
+   84.8% | core/dmodel.cpp
+         56/66 clean, 10 remaining
+           - core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (152 lines) [pointer_cast, shadow_pointer_walk, unrolled_strchr]
+           - core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (130 lines) [pointer_cast, unrolled_memcpy]
+           - core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (100 lines) [pointer_cast, unrolled_strcpy]
+           - core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (90 lines) [pointer_cast, shadow_pointer_walk]
+           - core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (114 lines) [pointer_cast, stack_alignment_array, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10 (116 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines) [shadow_pointer_walk, unrolled_memcpy, warning_unreachable]
+           - core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (175 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
+           - core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (104 lines) [pointer_cast, unrolled_memcpy]
+           - core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 (74 lines) [pointer_cast, shadow_pointer_walk]
    84.6% | core/mobster.cpp
          22/26 clean, 4 remaining
            - core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90 (148 lines) [bit_int_float_compare, pointer_cast]
@@ -309,13 +322,23 @@ FILES AT 50-89%
            - core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0 (91 lines) [unrolled_memcpy]
            - core_ghoul.cpp_CGhoul_process_FUN_004e6600 (1052 lines) [self_copy_guard, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_inlined_function]
            - core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0 (149 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-   77.3% | core/mirror.cpp
-         17/22 clean, 5 remaining
-           - core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 (340 lines) [missing_cave_copy, self_copy_guard, unrolled_memcpy]
-           - core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0 (31 lines) [stack_alignment_array, unrolled_memcpy]
-           - core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50 (57 lines) [stack_alignment_array, unrolled_memcpy]
-           - core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290 (61 lines) [unrolled_memcpy]
-           - core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (73 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
+   76.6% | core/netgame.cpp
+         49/64 clean, 15 remaining
+           - core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (60 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 (94 lines) [pointer_cast]
+           - core_netgame.cpp_allocSimFrame_FUN_0053f5a0 (30 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (222 lines) [pointer_cast, shadow_pointer_walk, warning_type_propagation]
+           - core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 (120 lines) [shadow_pointer_walk]
+           - core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 (54 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370 (42 lines) [unrolled_strcpy]
+           - core_netgame.cpp_CNetGame_runLobby_FUN_00541390 (287 lines) [shadow_pointer_walk, unrolled_strcpy, warning_inlined_function]
+           - core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (26 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0 (82 lines) [pointer_cast, unrolled_memcpy]
+           - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (90 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
+           - core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 (183 lines) [bit_int_float_compare, shadow_pointer_walk]
+           - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines) [pointer_cast, shadow_pointer_walk, stack_alignment_array, unrolled_memcpy, unrolled_strcpy]
+           - core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 (438 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy, warning_unreachable]
+           - core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (117 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
    76.3% | core/gabriela.cpp
          29/38 clean, 9 remaining
            - core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 (206 lines) [unrolled_memcpy]
@@ -327,24 +350,6 @@ FILES AT 50-89%
            - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (148 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870 (142 lines) [pointer_cast, unrolled_memcpy]
            - core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80 (60 lines) [missing_cave_copy]
-   75.8% | core/dmodel.cpp
-         50/66 clean, 16 remaining
-           - core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (152 lines) [pointer_cast, shadow_pointer_walk, unrolled_strchr]
-           - core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (130 lines) [pointer_cast, unrolled_memcpy]
-           - core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (100 lines) [pointer_cast, unrolled_strcpy]
-           - core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (90 lines) [pointer_cast, shadow_pointer_walk]
-           - core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (114 lines) [pointer_cast, stack_alignment_array, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 (114 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10 (116 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines) [shadow_pointer_walk, unrolled_memcpy, warning_unreachable]
-           - core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (175 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
-           - core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (104 lines) [pointer_cast, unrolled_memcpy]
-           - core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 (74 lines) [pointer_cast, shadow_pointer_walk]
-           - core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (169 lines) [pointer_cast, shadow_pointer_walk]
-           - core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 (143 lines) [pointer_cast]
-           - core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 (44 lines) [negative_offset]
-           - core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (59 lines) [pointer_cast, shadow_pointer_walk]
-           - core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110 (192 lines) [shadow_pointer_walk]
    75.3% | shape/superopt.cpp
          140/186 clean, 46 remaining
            - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
@@ -401,24 +406,6 @@ FILES AT 50-89%
            - core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (169 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
            - core_mimic.cpp_CMimic_setupCloth_FUN_00520500 (51 lines) [pointer_cast, unrolled_memcpy]
            - core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 (321 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
-   75.0% | core/netgame.cpp
-         48/64 clean, 16 remaining
-           - core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (60 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 (94 lines) [pointer_cast]
-           - core_netgame.cpp_allocSimFrame_FUN_0053f5a0 (30 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00541260 (17 lines) [shadow_pointer_walk]
-           - core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (222 lines) [pointer_cast, shadow_pointer_walk, warning_type_propagation]
-           - core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 (120 lines) [shadow_pointer_walk]
-           - core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 (54 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370 (42 lines) [unrolled_strcpy]
-           - core_netgame.cpp_CNetGame_runLobby_FUN_00541390 (287 lines) [shadow_pointer_walk, unrolled_strcpy, warning_inlined_function]
-           - core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (26 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0 (82 lines) [pointer_cast, unrolled_memcpy]
-           - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (90 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
-           - core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 (183 lines) [bit_int_float_compare, shadow_pointer_walk]
-           - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines) [pointer_cast, shadow_pointer_walk, stack_alignment_array, unrolled_memcpy, unrolled_strcpy]
-           - core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 (438 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy, warning_unreachable]
-           - core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (117 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
    72.7% | shape/quantize.cpp
          24/33 clean, 9 remaining
            - shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 (85 lines) [pointer_cast]
@@ -580,7 +567,7 @@ FILES AT 50-89%
            - engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0 (54 lines) [carry_arith_idiom]
            - engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (134 lines) [pointer_cast]
 
-Total: 27 files
+Total: 26 files
 
 ====================================================================================================
 FILES BELOW 50%

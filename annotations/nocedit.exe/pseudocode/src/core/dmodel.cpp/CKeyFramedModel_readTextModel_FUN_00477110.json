@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 584,
-    "complexity_score": 207,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 24,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 192,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 776
   },
   "cross_references": [
@@ -324,6 +322,15 @@
       "severity": "moderate",
       "text": "_fscanf(file,\", %d,%d,%d\",(int)&pSVar1->vertices[iVar5].vertex_index + local_20,",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `piVar5` was initialized to the address of an array element's subfield (`piVar5 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*piVar5)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `piVar5->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 182,
+      "match": "piVar5 = piVar5 + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar5 = piVar5 + 2;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -447,14 +454,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `piVar5` was initialized to the address of an array element's subfield (`piVar5 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*piVar5)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `piVar5->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 182,
-      "match": "piVar5 = piVar5 + N",
-      "severity": "moderate",
-      "text": "piVar5 = piVar5 + 2;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

@@ -12,15 +12,15 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 70
-  Total suspicious global references: 117
+  Functions with suspicious globals: 71
+  Total suspicious global references: 118
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
+    g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_CDemonCameraInstance                             4 functions
-    g_RenderVertexBuffer                               4 functions
     g_WindowHeight                                     3 functions
     g_GetLastErrorFunc                                 3 functions
     g_TextureCacheInstance                             2 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 34 (these need manual review)
+  .keep files with issues: 35 (these need manual review)
   Raw .cpp files with issues: 36
 
 ====================================================================================================
@@ -250,6 +250,14 @@ core_main.c_initializeGameSystems_FUN_00507a60  [.keep]  (1 suspicious globals)
 
   g_NumSearchHandlers
     Used at lines: 55, 58
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310  [.keep]  (1 suspicious globals)
+  File: core/mirror.cpp
+
+  g_RenderVertexBuffer
+    Used at lines: 57
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

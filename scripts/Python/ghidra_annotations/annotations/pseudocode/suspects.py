@@ -2902,13 +2902,17 @@ def identify_int_address_arithmetic(decompiled_code):
 #   (int)&(((SMRGLPrimitiveTriangle *)(p->vertices + -2))->base).base.
 #          type + primitive_stride
 # `_INT_ADDR_BASE` already tolerates whitespace (incl. newlines) after its
-# `.`/`->` separator, but `_INT_ADDR_TAIL` does not — so a separator that
-# falls right before the line break (`.base.\n type`) defeats even a
-# full-text match. This tail variant inserts `\s*` after each `.`/`->` so
-# the walk still matches when it spans a break. `\s` and `\w` start on
-# disjoint characters, so the added `\s*\w+` introduces no new ambiguity
-# (same no-catastrophic-backtracking property as the single-line regex).
-_INT_ADDR_TAIL_ML = r'(?:\.\s*\w+|->\s*\w+|\[[^\]]*\])*'
+# `.`/`->` separator, but `_INT_ADDR_TAIL` does not — so a break around a
+# separator defeats even a full-text match. There are two wrap points:
+#   `...->base).\n base.type`   — break AFTER the `.` (`\.\s*\w+` handles it)
+#   `...->base).base \n .type`  — break BEFORE the `.` (whitespace precedes it)
+# This tail variant inserts `\s*` on BOTH sides of each `.`/`->`/`[` so the
+# walk still matches whichever side Ghidra wrapped on. `\s` and `\w` start on
+# disjoint characters and each branch is anchored by a required non-space
+# delimiter (`.`/`->`/`[`), so the surrounding `\s*` introduces no new
+# ambiguity (same no-catastrophic-backtracking property as the single-line
+# regex).
+_INT_ADDR_TAIL_ML = r'(?:\s*\.\s*\w+|\s*->\s*\w+|\s*\[[^\]]*\])*'
 
 _INT_ADDR_ARITH_MULTILINE_RE = re.compile(
     r'\(int\)\s*&' + _INT_ADDR_BASE + _INT_ADDR_TAIL_ML + r'\s*[\+\-]'

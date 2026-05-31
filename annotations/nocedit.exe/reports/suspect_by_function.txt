@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6132 (95.0%)
-With suspects: 322
-Total suspects: 2109
+Clean: 6146 (95.2%)
+With suspects: 308
+Total suspects: 2039
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -34,12 +34,6 @@ core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
   Line 88 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30 (1 suspect)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 76 [pointer_cast]: iVar10 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
-
-====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (8 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
@@ -51,13 +45,6 @@ core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (8 suspects)
   Line 94 [pointer_cast]: iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
   Line 98 [pointer_cast]: *(uint *)((int)this_ptr->poly_texture_index_list + local_1c),
   Line 144 [shadow_pointer_walk]: pCVar7 = (CKeyFramedModel *)(pCVar7->model_filename + 8);
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 (2 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 28 [negative_offset]: shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frame_bounds[-1].max.z);
-  Line 34 [negative_offset]: shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].dominant_axis);
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10 (16 suspects)
@@ -122,33 +109,22 @@ core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (10 suspects)
   Line 97 [pointer_cast]: } while (iVar4 < *(int *)((int)pSVar4->vertices + local_24 + -0x14));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110 (1 suspect)
+core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 (4 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
-  Line 182 [shadow_pointer_walk]: piVar5 = piVar5 + 2;
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 (3 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
+  Line 30 [pointer_cast]: iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
   Line 56 [pointer_cast]: ((void *)((int)&(((SMRGLPrimitiveQuad *)
   Line 59 [pointer_cast]: (void *)((int)&(((SMRGLPrimitiveQuad *)
   Line 71 [shadow_pointer_walk]: local_30 = (CKeyFramedModel *)(local_30->model_filename + 8);
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (3 suspects)
+core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (4 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
+  Line 34 [pointer_cast]: iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
   Line 72 [pointer_cast]: ((void *)((int)&(((SMRGLPrimitiveQuad *)
   Line 75 [pointer_cast]: (void *)((int)&(((SMRGLPrimitiveQuad *)
   Line 87 [shadow_pointer_walk]: local_38 = (CKeyFramedModel *)(local_38->model_filename + 8);
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (2 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 83 [pointer_cast]: iVar8 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).
-  Line 150 [shadow_pointer_walk]: pSVar12 = (SMRGLPrimitiveQuad *)&(pSVar12->base).surface_normal.B;
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (6 suspects)
@@ -174,21 +150,6 @@ core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (9 suspects)
   Line 31 [shadow_pointer_walk]: local_2c = (CKeyFramedModel *)(local_2c->model_filename + 8);
   Line 83 [unrolled_memcpy]: // 0047a929: MOVSD.REP ES:EDI,ESI
   Line 87 [unrolled_memcpy]: // 0047a936: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (3 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 31 [pointer_cast]: while (iVar3 < *(int *)((int)this_ptr->poly_vert_list->vertices + local_18 + -0x14)) {
-  Line 32 [pointer_cast]: iVar1 = *(int *)((int)&this_ptr->poly_vert_list->vertices[0].vertex_index +
-  Line 49 [shadow_pointer_walk]: local_20 = (CKeyFramedModel *)(local_20->model_filename + 8);
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 (2 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 76 [pointer_cast]: piVar6 = (int *)((int)&this_ptr->vertex_list->x + local_1c);
-  Line 78 [pointer_cast]: piVar4 = (int *)((int)&this_ptr->vertex_list->x + local_34);
 
 ====================================================================================================
 core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
@@ -683,7 +644,7 @@ core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (21 suspects)
   Line 166 [unrolled_memcpy]: (pUVar14->vec).x = pCVar9->x;
 
 ====================================================================================================
-core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 (28 suspects)
+core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 (11 suspects)
   File: core/mirror.cpp
 ====================================================================================================
   Line 18 [missing_cave_copy]: CMatrix3x4f local_4a4;
@@ -697,56 +658,6 @@ core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 (28 suspect
   Line 31 [missing_cave_copy]: CMatrix3x4f local_234;
   Line 32 [missing_cave_copy]: CMatrix3x4f local_204;
   Line 33 [missing_cave_copy]: CMatrix3x4f local_1d4;
-  Line 108 [self_copy_guard]: if (&local_194 != &local_b0) {
-  Line 128 [self_copy_guard]: if (&local_164 != &local_158) {
-  Line 172 [unrolled_memcpy]: (this_ptr->mirror_transform_matrix).m[0].w = local_294.m[0].w;
-  Line 206 [unrolled_memcpy]: local_128.x = local_104.x;
-  Line 214 [unrolled_memcpy]: local_e0.x = local_c8.x;
-  Line 222 [unrolled_memcpy]: local_5c.x = local_ec.x;
-  Line 229 [unrolled_memcpy]: local_128.x = pCVar3->x;
-  Line 236 [unrolled_memcpy]: local_e0.x = pCVar3->x;
-  Line 243 [unrolled_memcpy]: local_5c.x = pCVar3->x;
-  Line 251 [unrolled_memcpy]: local_128.x = local_f8.x;
-  Line 259 [unrolled_memcpy]: local_e0.x = local_44.x;
-  Line 267 [unrolled_memcpy]: local_5c.x = local_134.x;
-  Line 299 [unrolled_memcpy]: local_170.x = pCVar3->x;
-  Line 305 [unrolled_memcpy]: local_d4.x = pCVar3->x;
-  Line 311 [unrolled_memcpy]: local_a4.x = pCVar3->x;
-  Line 317 [unrolled_memcpy]: local_bc.x = pCVar3->x;
-  Line 326 [unrolled_memcpy]: local_98.x = pCVar3->x;
-
-====================================================================================================
-core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50 (4 suspects)
-  File: core/mirror.cpp
-====================================================================================================
-  Line 11 [stack_alignment_array]: int aiStackY_1024 [1006];
-  Line 31 [unrolled_memcpy]: local_54.x = local_60.x;
-  Line 38 [unrolled_memcpy]: local_24.x = pCVar1->x;
-  Line 45 [unrolled_memcpy]: local_54.x = pCVar3->x;
-
-====================================================================================================
-core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0 (2 suspects)
-  File: core/mirror.cpp
-====================================================================================================
-  Line 10 [stack_alignment_array]: float afStackY_100c [1009];
-  Line 24 [unrolled_memcpy]: local_30.x = pCVar1->x;
-
-====================================================================================================
-core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (5 suspects)
-  File: core/mirror.cpp
-====================================================================================================
-  Line 24 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->base).count;
-  Line 48 [unrolled_memcpy]: (this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;
-  Line 57 [pointer_cast]: piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-  Line 63 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x + iVar1) =
-  Line 70 [shadow_pointer_walk]: this_ptr = (CMirror *)&(this_ptr->reflection).corner1.y;
-
-====================================================================================================
-core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290 (2 suspects)
-  File: core/mirror.cpp
-====================================================================================================
-  Line 35 [unrolled_memcpy]: pCVar1->x = vertex_a->x;
-  Line 49 [unrolled_memcpy]: pCVar4->x = vertex_a->x;
 
 ====================================================================================================
 core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20 (3 suspects)
@@ -931,12 +842,6 @@ core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 (3 suspects)
   Line 164 [shadow_pointer_walk]: dest_addr = dest_addr + 0xf;
 
 ====================================================================================================
-core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00541260 (1 suspect)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 16 [shadow_pointer_walk]: pSVar1 = pSVar1 + 0xf;
-
-====================================================================================================
 core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (3 suspects)
   File: core/netgame.cpp
 ====================================================================================================
@@ -1110,12 +1015,6 @@ core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (4 suspects)
   Line 19 [missing_cave_copy]: CMatrix3x4f local_70;
 
 ====================================================================================================
-core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (1 suspect)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 102 [shadow_pointer_walk]: local_2c = local_2c + 0x21;
-
-====================================================================================================
 core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (32 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
@@ -1246,50 +1145,11 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (88 suspec
   Line 1373 [shadow_pointer_walk]: pCVar27 = (CDeformableModel *)(pCVar27->tri_count + 3);
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (14 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 92 [pointer_cast]: puVar21 = (uint *)((int)lod_mesh->tri_data->attribute_indices + local_50);
-  Line 94 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +
-  Line 96 [pointer_cast]: *(uint *)(local_48 + (int)this_ptr->index_data_ptr[lod_index]) = *puVar21;
-  Line 166 [pointer_cast]: *(uint *)((int)this_ptr->cap_index_ptr[lod_index] + iVar5) =
-  Line 167 [pointer_cast]: *(uint *)((int)lod_mesh->tri_data->attribute_indices + iVar3 + 0xc);
-  Line 172 [shadow_pointer_walk]: local_44 = (CDeformableModel *)(local_44->tri_count + 3);
-  Line 172 [static_invalid_pointer_cast]: local_534.x = *(float *)pcVar13;
-  Line 173 [static_invalid_pointer_cast]: local_534.y = *(float *)(pcVar13 + 4);
-  Line 174 [static_invalid_pointer_cast]: local_534.z = *(float *)(pcVar13 + 8);
-  Line 208 [pointer_cast]: if (local_538 < *(float *)((int)local_528 + iVar11)) {
-  Line 209 [pointer_cast]: local_538 = *(float *)((int)local_528 + iVar11);
-  Line 217 [pointer_cast]: *(char *)((int)pfVar18 + *(byte *)pfVar18 + 1) = (char)iVar16;
-  Line 223 [unrolled_memcpy]: pCVar14->x = pCVar6->x;
-
-====================================================================================================
 core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (2 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 18 [missing_cave_copy]: CMatrix3x4f local_d8;
   Line 19 [missing_cave_copy]: CMatrix3x4f local_a8;
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (15 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 71 [shadow_pointer_walk]: pCVar18 = (CDeformableModel *)pCVar18->lod_info;
-  Line 84 [pointer_cast]: for (local_18 = 0; local_18 < *(int *)((int)this_ptr->vertex_count + local_38);
-  Line 86 [pointer_cast]: pbVar17 = (byte *)(local_1c + *(int *)((int)this_ptr->vertex_data_ptr + local_38));
-  Line 110 [pointer_cast]: puVar6 = (ushort *)((int)&pSVar14->u_coord_2 + iVar21);
-  Line 111 [pointer_cast]: puVar7 = (ushort *)((int)&(pSVar14->vertex_indices).vertex_index_2 + iVar21);
-  Line 112 [pointer_cast]: puVar8 = (ushort *)((int)&pSVar14->v_coord_1 + iVar21);
-  Line 113 [pointer_cast]: puVar9 = (ushort *)((int)&pSVar14->u_coord_1 + iVar21);
-  Line 114 [pointer_cast]: puVar10 = (ushort *)((int)&(pSVar14->vertex_indices).vertex_index_1 + iVar21);
-  Line 115 [pointer_cast]: puVar11 = (ushort *)((int)&pSVar14->v_coord_0 + iVar21);
-  Line 116 [pointer_cast]: puVar12 = (ushort *)((int)&pSVar14->u_coord_0 + iVar21);
-  Line 117 [pointer_cast]: puVar4 = (ushort *)((int)&(pSVar14->vertex_indices).vertex_index_0 + iVar21);
-  Line 118 [pointer_cast]: puVar5 = (uint *)((int)local_30->index_data_ptr[0] + iVar1);
-  Line 122 [pointer_cast]: puVar6 = (ushort *)((int)&pSVar14->u_coord_2 + iVar21);
-  Line 125 [shadow_pointer_walk]: local_30 = (CDeformableModel *)local_30->lod_info;
-  Line 134 [pointer_cast]: for (iVar2 = 0; iVar2 < *(int *)((int)this_ptr->cap_tri_count + local_34); iVar2 = iVar2 + 1)
 
 ====================================================================================================
 core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (30 suspects)

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 69,
+    "complexity_score": 44,
     "cross_reference_count": 11,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 44,
-    "suspect_count": 2,
-    "suspect_types": [
-      "negative_offset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 149
   },
   "cross_references": [
@@ -307,6 +305,26 @@
     },
     "pcode_op_count": 275
   },
+  "resolved_suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 28,
+      "match": "frame_bounds[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frame_bounds[-1].max.z);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 34,
+      "match": "collision_triangle_list[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].dominant_axis);",
+      "type": "negative_offset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -323,22 +341,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 28,
-      "match": "frame_bounds[-1].",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frame_bounds[-1].max.z);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 34,
-      "match": "collision_triangle_list[-1].",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].dominant_axis);",
-      "type": "negative_offset"
-    }
-  ]
+  "suspects": []
 }

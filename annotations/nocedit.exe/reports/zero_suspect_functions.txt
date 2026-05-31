@@ -1362,6 +1362,8 @@ annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_captureTe
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_createSinglePart_FUN_0047a3b0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_ctor_FUN_00476cf0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_dtor_FUN_00476d90.cpp
+annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_exportToS3D_FUN_00479f30.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_free_FUN_00477690.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_getFloorHeight_FUN_00478740.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_getFrameVertices_FUN_00477890.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_importFromS3D_FUN_00479330.keep.cpp
@@ -1370,14 +1372,18 @@ annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_load_FUN_
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_prepareForRender_FUN_00477850.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_readBinaryModel_FUN_00476f20.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_readTextModel_FUN_00477110.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_recenter_FUN_0047c220.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_reducePolygons_FUN_0047aa00.cpp
+annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_removeUnusedVertices_FUN_0047aa30.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_rotateAndLightVertices_FUN_004778d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_scaleToHeight_FUN_0047c470.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_scaleUniform_FUN_0047c4a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_scale_FUN_0047c4d0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_showEditorMenu_FUN_0047cbc0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_submitToRenderer_FUN_00477980.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_validatePartList_FUN_0047bf40.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/SRA4HQPoint_copy_FUN_0047ef60.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/clampTextureCoordinate_FUN_00476cb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/copyFile_FUN_0047c930.cpp
@@ -2762,9 +2768,12 @@ annotations/nocedit.exe/pseudocode/src/core/minecar.cpp/factoryFunc_FUN_00520e50
 annotations/nocedit.exe/pseudocode/src/core/minecar.cpp/staticInit_FUN_00520e20.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirrorReflection_applyMirrorTransform_FUN_005222f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirrorReflection_setupMirrorCamera_FUN_00521480.cpp
+annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirrorReflection_transformMirrorVertex_FUN_005229b0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirror_clipAndRenderReflectedPrimitive_FUN_00522560.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirror_ctor_FUN_005213c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirror_dtor_FUN_005213e0.cpp
+annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirror_reflectAndClipPrimitive_FUN_00522310.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirror_renderMirrorQuadDepth_FUN_00522800.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirror_renderMirrorQuad_FUN_00522670.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirror_renderMirroredPrimitive_FUN_005225e0.keep.cpp
@@ -2774,6 +2783,7 @@ annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CVector3f_arrdtor_FUN_005
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/SClipPlane_arrdtor_FUN_00522c10.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/SClipPlane_ctor_FUN_00522bf0.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/SClipPlane_dtor_FUN_00522c00.cpp
+annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/clipPolygonAgainstPlane_FUN_00521290.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/computePlaneFromTriangle_FUN_00520fe0.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/computePlaneIntersection_FUN_00521160.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/staticInit_FUN_00520fb0.cpp
@@ -3014,6 +3024,7 @@ annotations/nocedit.exe/pseudocode/src/core/netgame.cpp/CNetGame_addPlayer_FUN_0
 annotations/nocedit.exe/pseudocode/src/core/netgame.cpp/CNetGame_applySimFrameHistory_FUN_00543800.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/netgame.cpp/CNetGame_ctor_FUN_0053f6d0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/netgame.cpp/CNetGame_dtor_FUN_0053f760.cpp
+annotations/nocedit.exe/pseudocode/src/core/netgame.cpp/CNetGame_findPlayerByAddr_FUN_00541260.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/netgame.cpp/CNetGame_flushIncomingPackets_FUN_00540550.cpp
 annotations/nocedit.exe/pseudocode/src/core/netgame.cpp/CNetGame_gameSettingsChanged_FUN_00542cf0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/netgame.cpp/CNetGame_getMyControls_FUN_005438c0.cpp
@@ -3604,6 +3615,7 @@ annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CBoneStructure_findBone
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CBoneStructure_fixupMatrices_FUN_0058adb0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CBoneStructure_importBON_FUN_0058a3d0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CBoneStructure_readBONframe_FUN_0058aa10.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CBoneStructure_readBONheader_FUN_0058a4a0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CBoneStructure_showBoneHierarchy_FUN_0058afe0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CBoneStructure_skipBONframe_FUN_0058abb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModelInstance_addFilesToExtract_FUN_0058a260.cpp
@@ -3615,6 +3627,7 @@ annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_calcRo
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_cramModelTexture_FUN_0058de70.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_exportModelToS3D_FUN_00595fc0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_extractBoneScales_FUN_0058dde0.cpp
+annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_extractLodLevel_FUN_0058d790.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_groundBias_FUN_0058e4e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_importFacesS3D_FUN_0058b9b0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_importGeometryS3D_FUN_0058b660.keep.cpp
@@ -3625,6 +3638,7 @@ annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_offset
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_removeDuplicateFaces_FUN_0058ede0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_removeUnusedTextures_FUN_0058ec60.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_saveStream_FUN_0058f120.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_save_FUN_0058f040.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_scaleAllVertices_FUN_0058e3e0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CDeformableModel_sortFacesByTexture_FUN_0058e240.keep.cpp

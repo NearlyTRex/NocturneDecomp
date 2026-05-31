@@ -10,11 +10,10 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramedModel *this_ptr,char *filename)
 
 {
-  double dVar1;
-  double dVar5;
   _FILE *p_Var5;
   int iVar6;
   SMRGLPrimitiveQuad *pSVar7;
+  SMRGLPrimitiveQuad *quad;
   int iVar7;
   int iVar8;
   char *pcVar9;
@@ -68,27 +67,20 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
   if (0 < this_ptr->poly_count) {
     local_28 = 0;
     do {
-      iVar10 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
-                     type + local_28;
-      iVar9 = 2;
-      iVar7 = iVar10;
-      if (2 < *(int *)(iVar10 + 4)) {
-        do {
-          dVar1 = (double)*(int *)(iVar7 + 0x38) * 1.52587890625e-05;
-          dVar5 = (double)*(int *)(iVar7 + 0x34) * 1.52587890625e-05;
-          _fprintf(p_Var5,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g\n",
-                     this_ptr->poly_texture_index_list[local_20],
-                     *(uint *)(iVar10 + 0x18),
-                     (double)*(int *)(iVar10 + 0x1c) * 1.52587890625e-05,
-                     (double)*(int *)(iVar10 + 0x20) * 1.52587890625e-05,*(uint *)(iVar7 + 0x24)
-                     ,(double)*(int *)(iVar7 + 0x28) * 1.52587890625e-05,
-                     (double)*(int *)(iVar7 + 0x2c) * 1.52587890625e-05,*(uint *)(iVar7 + 0x30),
-                     dVar5,dVar1);
-          iVar9 = iVar9 + 1;
-          iVar7 = iVar7 + 0xc;
-        } while (iVar9 < *(int *)(iVar10 + 4));
+      quad = this_ptr->poly_vert_list + local_20;
+      for (iVar9 = 2; iVar9 < quad->base.base.count; iVar9 = iVar9 + 1) {
+        _fprintf(p_Var5,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g\n",
+                   this_ptr->poly_texture_index_list[local_20],
+                   quad->vertices[0].vertex_index,
+                   (double)quad->vertices[0].texture_u * 1.52587890625e-05,
+                   (double)quad->vertices[0].texture_v * 1.52587890625e-05,
+                   quad->vertices[iVar9 + -1].vertex_index,
+                   (double)quad->vertices[iVar9 + -1].texture_u * 1.52587890625e-05,
+                   (double)quad->vertices[iVar9 + -1].texture_v * 1.52587890625e-05,
+                   quad->vertices[iVar9].vertex_index,
+                   (double)quad->vertices[iVar9].texture_u * 1.52587890625e-05,
+                   (double)quad->vertices[iVar9].texture_v * 1.52587890625e-05);
       }
-      local_28 = local_28 + 0x48;
       local_20 = local_20 + 1;
     } while (local_20 < this_ptr->poly_count);
   }

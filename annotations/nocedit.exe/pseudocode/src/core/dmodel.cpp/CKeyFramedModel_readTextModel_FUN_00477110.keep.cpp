@@ -17,7 +17,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
   int iVar3;
   int iVar5;
   char *pcVar4;
-  int *piVar5;
   int local_48;
   int local_44;
   int local_40;
@@ -168,11 +167,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
   } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   iVar5 = 0;
   if (0 < this_ptr->part_count) {
-    piVar5 = &this_ptr->part_list[0].poly_count;
     do {
-      _fscanf(file,"%d,%d\n",&this_ptr->part_list[iVar5].vertex_count,piVar5);
+      _fscanf(file,"%d,%d\n",&this_ptr->part_list[iVar5].vertex_count,
+              &this_ptr->part_list[iVar5].poly_count);
       iVar5 = iVar5 + 1;
-      piVar5 = piVar5 + 2;
     } while (iVar5 < this_ptr->part_count);
   }
   if ((file->_flag & 0x20) != 0) {

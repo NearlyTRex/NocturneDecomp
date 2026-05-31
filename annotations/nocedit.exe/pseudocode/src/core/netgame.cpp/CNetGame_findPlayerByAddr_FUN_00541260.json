@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 32,
+    "complexity_score": 17,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 60
   },
   "cross_references": [
@@ -88,6 +86,17 @@
     },
     "pcode_op_count": 147
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` was initialized to the address of an array element's subfield (`pSVar1 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pSVar1)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pSVar1->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 16,
+      "match": "pSVar1 = pSVar1 + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar1 = pSVar1 + 0xf;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -111,14 +120,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` was initialized to the address of an array element's subfield (`pSVar1 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pSVar1)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pSVar1->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 16,
-      "match": "pSVar1 = pSVar1 + N",
-      "severity": "moderate",
-      "text": "pSVar1 = pSVar1 + 0xf;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }
