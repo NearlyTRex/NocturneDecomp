@@ -89,6 +89,7 @@ SUSPECT_SEVERITY = {
     'bitcast_double': 'moderate',
     'sibling_array_undersized': 'moderate',
     'self_copy_guard': 'moderate',
+    'dropped_self_copy': 'moderate',
     'shadow_pointer_walk': 'moderate',
     'memcpy_oversized_source': 'moderate',
     'dropped_loop_counter': 'moderate',
@@ -974,6 +975,136 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
                 'description': desc,
                 'severity': SUSPECT_SEVERITY.get('raw_address_constant', 'moderate'),
             })
+
+    return suspects
+
+
+def _looks_like_pointer_address(addr):
+    """Heuristic: does this integer look like a baked-in symbol address?
+
+    Mirrors the numeric-constant exclusions in
+    identify_raw_address_constant_suspects so the two detectors agree on what
+    counts as a pointer-shaped literal vs. a coincidental numeric constant
+    (powers of two, channel masks, MB-aligned size thresholds, etc.). Used by
+    identify_raw_address_in_local, which has NO global interval map and so must
+    decide pointer-ness from the bit pattern alone.
+    """
+    if addr < 0x400000 or addr >= 0x10000000:
+        return False
+    # Powers of two (single bit set) — fixed-point UV scalars / shift bases.
+    if (addr & (addr - 1)) == 0:
+        return False
+    n = addr
+    while n & 1:
+        n >>= 1
+    if n == 0:
+        return False
+    # Near-power-of-two thresholds (2^N - K) — bit-width rollover limits.
+    if any(((addr + k) & (addr + k - 1)) == 0 for k in (1, 2, 3, 4)):
+        return False
+    b0 = addr & 0xff
+    b1 = (addr >> 8) & 0xff
+    b2 = (addr >> 16) & 0xff
+    b3 = (addr >> 24) & 0xff
+    # Channel-replicated byte patterns (0xfcfcfc, 0x010101) — per-channel masks.
+    if b3 == 0 and b0 == b1 == b2 and b0 != 0:
+        return False
+    if b0 == b1 == b2 == b3 and b0 != 0:
+        return False
+    # MB-aligned values (low 20 bits zero) — memory-size thresholds.
+    if (addr & 0xfffff) == 0:
+        return False
+    # Saturated-channel colors (every byte 0x00 or 0xff) — chroma keys.
+    if all(b in (0x00, 0xff) for b in (b0, b1, b2, b3)):
+        return False
+    # Low 16 bits all set (0xNNffff) — 16.16 fixed-point max/clamp limits
+    # (0xfeffff ≈ 254.998 used as a UV ceiling) and low-word saturation masks.
+    # Real symbol addresses don't sit one byte below a 64K boundary.
+    if (addr & 0xffff) == 0xffff:
+        return False
+    return True
+
+
+# A bare local assigned a raw hex literal: `iVar5 = 0x3f95dfc;`. LHS is a plain
+# identifier (no `->`, `.`, `[`, `*`) so struct-field / global-array stores
+# don't match. The constant has >= 6 hex digits (>= 0x100000) to skip small
+# numeric literals before the value-range filter even runs.
+_INT_ADDR_ASSIGN_RE = re.compile(
+    r"^\s*([A-Za-z_]\w*)\s*=\s*0x([0-9a-fA-F]{6,})\s*;\s*$")
+
+
+def identify_raw_address_in_local(decompiled_code):
+    """Detect a raw pointer-range address assigned to a bare local.
+
+    The companion identify_raw_address_constant_suspects only catches a raw
+    address baked *inline* into a pointer expression (e.g.
+    `*(float *)((int)g_Global + off)` or a call argument), and it needs the
+    Ghidra global interval map to confirm the literal hits a known symbol.
+
+    This detector catches the complementary shape that needs NO global map:
+    Watcom/Ghidra hoists an address into a bare local as its own statement.
+
+        iVar5 = 0x3f95dfc;       // data: &g_WeatherParticlePositions[0].y, later
+                                 //   dereferenced via *(float *)(iVar5 + 4)  (§11)
+        iVar4 = 0x5b9c61;        // code: a return-address tracking dead store
+                                 //   (an address inside .text, never read)   (§14)
+
+    A bare local assigned a pointer-range hex constant is never legitimate
+    source — real code uses symbolic globals/pointers, not magic addresses.
+    The pointer-ness is decided from the bit pattern alone (via
+    _looks_like_pointer_address), so the detector is source-text-only and fires
+    in test_suspects.sh as well as the full export. Two remediation paths:
+      - Data address (in a global/string range), usually dereferenced or passed
+        as a pointer: recover the symbol from the .asm and replace with
+        symbolic global/array indexing (§11).
+      - Code address (inside .text), a dead store left by return-address
+        tracking: delete the assignment (§14).
+    The LHS is a bare identifier (no `->`, `.`, `[`, `*`), so struct-field /
+    global-array stores never match. The numeric filter drops powers of two,
+    channel/color masks, MB-aligned size thresholds, and 16.16 clamp limits
+    (0xNNffff) that fall in the address range by coincidence.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts (type raw_address_constant), located at the
+        constant-assignment line.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+
+    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+        stripped = line.strip()
+        if (stripped.startswith('//') or stripped.startswith('#') or
+                stripped.startswith('/*') or stripped.startswith('*')):
+            continue
+        m = _INT_ADDR_ASSIGN_RE.match(line)
+        if not m:
+            continue
+        try:
+            addr = int(m.group(2), 16)
+        except ValueError:
+            continue
+        if not _looks_like_pointer_address(addr):
+            continue
+        ident = m.group(1)
+        suspects.append({
+            'line': line_no,
+            'type': 'raw_address_constant',
+            'match': '0x%x' % addr,
+            'text': stripped[:200],
+            'description': (
+                'Raw hex address 0x%x assigned to bare local `%s`. The '
+                'decompiler dropped a symbolic reference — either a data-symbol '
+                'pointer (recover the symbol from the .asm and replace `%s` '
+                'with symbolic global/array indexing, §11) or a dead '
+                'code-address store from return-address tracking (delete it, '
+                '§14). Magic addresses do not survive the relink.' % (
+                    addr, ident, ident)),
+            'severity': SUSPECT_SEVERITY.get('raw_address_constant', 'moderate'),
+        })
 
     return suspects
 
@@ -2628,6 +2759,88 @@ def identify_self_copy_guard(decompiled_code):
                 'unconditional struct copy. Both addresses are stack '
                 'locals — always different — so the guard never skips. '
                 'Drop the if-wrapper in a .keep.' % (a, b)),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
+# Inverted self-copy guard: an `if (&LOCAL_A == &LOCAL_B) goto LABEL;`
+# single-statement line where both sides are bare addresses of stack locals
+# (A != B). This is the inverted mirror of `self_copy_guard`. The original
+# source wrote `if (&dst != &src) { dst = src; ... }` to guard a small struct
+# copy; Ghidra inverted the condition (so the *taken* branch skips the copy)
+# and emitted the jump but not a recognizable `dst = src;` copy in the
+# fall-through. Two outcomes, both decompiler artifacts worth clearing:
+#   1. The copy was DROPPED entirely and the jump target equals the
+#      fall-through — `dst` is left uninitialized at runtime (latent bug).
+#      Canonical: CTurret::updateTargeting, `if (&CStack_3c == &CStack_54)`.
+#   2. The guarded copy folded into stores that ARE present after the merge
+#      (e.g. the source was a just-zeroed local, so `dst = src` became a
+#      direct `dst = {0,0,0}`) — `dst` is set, and the guard is simply dead
+#      code. Canonical: CDrummer::getCarryObjToBodyXForm.
+# Resolve by checking the asm: restore the dropped copy (case 1) or drop the
+# dead guard line (case 2).
+#
+# Comparing the addresses of two distinct named locals with `==` is
+# always-false dead code, so this shape is never legitimate — zero false
+# positives by construction. Anchored to the bare-`&NAME == &NAME` form on
+# both sides plus a trailing `goto`/`break`/`continue`. Cast-wrapped or
+# pointer-parameter operands are left alone for the same reason as
+# self_copy_guard (they can be real alias defenses).
+_DROPPED_SELF_COPY_RE = re.compile(
+    r"^\s*if\s*\(\s*&(\w+)\s*==\s*&(\w+)\s*\)\s*(?:\{\s*)?"
+    r"(?:goto\s+\w+|break|continue)\s*;\s*\}?\s*$")
+
+
+def identify_dropped_self_copy(decompiled_code):
+    """Detect inverted (always-false) self-copy guards.
+
+    Canonical shape (from CTurret::updateTargeting):
+        if (&CStack_3c == &CStack_54) goto LAB_005e2ed6;
+
+    Both operands are bare `&NAME` of stack locals and the comparison is `==`
+    (the inverse of self_copy_guard's `!=`), so the test is always false —
+    dead code the decompiler emitted while inverting a `if (&dst != &src) {
+    dst = src; }` copy guard. The body is a single jump, never the copy. The
+    guarded `dst = src` is either dropped (leaving `dst` uninitialized) or
+    folded into stores after the merge point; cross-check the asm to decide
+    whether to restore the copy or drop the dead guard in a .keep.
+
+    Detection requires:
+    - The line matches `if (&NAME_A == &NAME_B) goto/break/continue;`.
+    - NAME_A != NAME_B (distinct locals — the compare is always false).
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, located at the `if` line.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    for i, line in enumerate(lines):
+        m = _DROPPED_SELF_COPY_RE.match(line)
+        if not m:
+            continue
+        a, b = m.group(1), m.group(2)
+        if a == b:
+            continue
+        suspects.append({
+            'line': i + 1,
+            'type': 'dropped_self_copy',
+            'match': 'if (&NAME_A == &NAME_B) goto LABEL;',
+            'text': line.strip()[:120],
+            'description': (
+                'Inverted (always-false) self-copy guard: `if (&%s == &%s)` '
+                'compares two distinct stack-local addresses, so it never '
+                'fires — dead code from a decompiler-inverted `if (&%s != &%s) '
+                '{ %s = %s; }` copy guard. Cross-check the asm: if the `%s = '
+                '%s;` copy was dropped, restore it in a .keep (else %s is '
+                'uninitialized); if the copy folded into stores that survive '
+                'after the merge, drop the dead guard line.'
+                % (a, b, a, b, a, b, a, b, a)),
             'severity': 'moderate',
         })
     return suspects
@@ -5306,6 +5519,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
         code, global_interval_map))
     found.extend(identify_raw_address_constant_suspects(
         code, address_interval_map))
+    found.extend(identify_raw_address_in_local(code))
     found.extend(identify_format_string_mismatch(
         code, func_calls))
     found.extend(identify_unrolled_strcpy_loops(code))
@@ -5318,6 +5532,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_unrolled_offset_copy(code))
     found.extend(identify_cascade_constant_fill(code))
     found.extend(identify_self_copy_guard(code))
+    found.extend(identify_dropped_self_copy(code))
     found.extend(identify_sibling_array_undersized(code))
     found.extend(identify_pointer_cast_multiline(code))
     found.extend(identify_int_address_arithmetic(code))

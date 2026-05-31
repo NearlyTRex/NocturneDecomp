@@ -809,6 +809,15 @@
       "type": "raw_address_constant"
     },
     {
+      "description": "Raw hex address 0x2d82d88 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 298,
+      "match": "0x2d82d88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = 0x2d82d88;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 54,
       "match": "do {",

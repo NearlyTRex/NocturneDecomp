@@ -33,7 +33,6 @@ void __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370
     local_30.z = 0.0;
     local_30.y = 0.0;
     local_30.x = 0.0;
-    if (&local_3c == &local_30) goto LAB_005da42c;
   }
   else {
     local_24.y = -0.111;
@@ -47,12 +46,10 @@ void __stack2_esi core_tbplayer_cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370
     local_48.z = 0.0;
     local_48.y = 0.0;
     local_48.x = 0.0;
-    if (&local_3c == &local_48) goto LAB_005da42c;
   }
   local_3c.y = 0.0;
   local_3c.z = 0.0;
   local_3c.x = 0.0;
-LAB_005da42c:
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&local_90,&local_18,&local_3c);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             (&local_90,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,

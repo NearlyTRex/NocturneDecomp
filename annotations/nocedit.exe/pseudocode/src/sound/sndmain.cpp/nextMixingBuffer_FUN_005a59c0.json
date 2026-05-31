@@ -437,6 +437,24 @@
       "type": "unknown_field"
     },
     {
+      "description": "Raw hex address 0x5a5a66 assigned to bare local `in_stack_ffffffb0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `in_stack_ffffffb0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 49,
+      "match": "0x5a5a66",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_ffffffb0 = 0x5a5a66;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x5a5ae7 assigned to bare local `uVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 69,
+      "match": "0x5a5ae7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar8 = 0x5a5ae7;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 79,
       "match": "for (...; != 0; ... + -1)",

@@ -131,43 +131,13 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
             *(ushort *)&(vertices_00->projected_vertex).screen_x = 0;
             *(ushort *)&(vertices_00->projected_vertex).screen_y = 0;
             pSVar1 = this_ptr_01->vertex_buffer_ptr;
-            pSVar1[1].projected_vertex.transformed_x = (vertices_00->projected_vertex).transformed_x
-            ;
-            pSVar1[1].projected_vertex.transformed_y = (vertices_00->projected_vertex).transformed_y
-            ;
-            pSVar1[1].projected_vertex.transformed_z = (vertices_00->projected_vertex).transformed_z
-            ;
-            pSVar1[1].projected_vertex.inv_z = (vertices_00->projected_vertex).inv_z;
-            pSVar1[1].projected_vertex.screen_x = (vertices_00->projected_vertex).screen_x;
-            pSVar1[1].projected_vertex.screen_y = (vertices_00->projected_vertex).screen_y;
-            pSVar1[1].u = vertices_00->u;
-            pSVar1[1].v = vertices_00->v;
-            pSVar1[1].r = vertices_00->r;
-            pSVar1[1].g = vertices_00->g;
-            pSVar1[1].b = vertices_00->b;
-            pSVar1[1].a = vertices_00->a;
+            pSVar1[1] = *vertices_00;
             pSVar1 = this_ptr_01->vertex_buffer_ptr;
-            pSVar1[2].projected_vertex.transformed_x = (vertices_00->projected_vertex).transformed_x
-            ;
-            pSVar1[2].projected_vertex.transformed_y = (vertices_00->projected_vertex).transformed_y
-            ;
-            pSVar1[2].projected_vertex.transformed_z = (vertices_00->projected_vertex).transformed_z
-            ;
-            pSVar1[2].projected_vertex.inv_z = (vertices_00->projected_vertex).inv_z;
-            pSVar1[2].projected_vertex.screen_x = (vertices_00->projected_vertex).screen_x;
-            pSVar1[2].projected_vertex.screen_y = (vertices_00->projected_vertex).screen_y;
-            pSVar1[2].u = vertices_00->u;
-            pSVar1[2].v = vertices_00->v;
-            pSVar1[2].r = vertices_00->r;
-            pSVar1[2].g = vertices_00->g;
-            pSVar1[2].b = vertices_00->b;
-            pSVar1[2].a = vertices_00->a;
-            psVar1 = (short *)((int)&this_ptr_01->vertex_buffer_ptr[1].projected_vertex.screen_x + 2
-                              );
+            pSVar1[2] = *vertices_00;
+            psVar1 = (short *)&this_ptr_01->vertex_buffer_ptr[1].projected_vertex.screen_x + 1;
             *psVar1 = *psVar1 + 1;
-            *(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =
-                 *(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) +
-                 1;
+            *((short *)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 1) =
+                 *((short *)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 1) + 1;
             engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
                       (this_ptr_01,(SMRGLPrimitivePoly *)&SStack_a0,999);
           }

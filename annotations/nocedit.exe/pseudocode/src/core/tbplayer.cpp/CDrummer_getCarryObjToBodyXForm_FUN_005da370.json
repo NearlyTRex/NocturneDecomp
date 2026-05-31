@@ -104,6 +104,24 @@
       "severity": "moderate",
       "text": "out_matrix->m[0].w = local_c0.m[0].w;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Inverted (always-false) self-copy guard: `if (&local_3c == &local_30)` compares two distinct stack-local addresses, so it never fires \u2014 dead code from a decompiler-inverted `if (&local_3c != &local_30) { local_3c = local_30; }` copy guard. Cross-check the asm: if the `local_3c = local_30;` copy was dropped, restore it in a .keep (else local_3c is uninitialized); if the copy folded into stores that survive after the merge, drop the dead guard line.",
+      "line": 33,
+      "match": "if (&NAME_A == &NAME_B) goto LABEL;",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&local_3c == &local_30) goto LAB_005da42c;",
+      "type": "dropped_self_copy"
+    },
+    {
+      "description": "Inverted (always-false) self-copy guard: `if (&local_3c == &local_48)` compares two distinct stack-local addresses, so it never fires \u2014 dead code from a decompiler-inverted `if (&local_3c != &local_48) { local_3c = local_48; }` copy guard. Cross-check the asm: if the `local_3c = local_48;` copy was dropped, restore it in a .keep (else local_3c is uninitialized); if the copy folded into stores that survive after the merge, drop the dead guard line.",
+      "line": 47,
+      "match": "if (&NAME_A == &NAME_B) goto LABEL;",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&local_3c == &local_48) goto LAB_005da42c;",
+      "type": "dropped_self_copy"
     }
   ],
   "stack_frame": {

@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 301,
+    "complexity_score": 241,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 241,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 776
   },
   "cross_references": [],
@@ -247,6 +244,51 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 140,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar1[1].projected_vertex.transformed_x = (pSVar1->projected_vertex).transformed_x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 169,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar8 = (int *)((int)&(pSVar1->projected_vertex).transformed_x + iStack_20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 187,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(pCVar3->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_20),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 191,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar8 = (int *)((int)&(pSVar1->projected_vertex).transformed_x + iStack_1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 209,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(pCVar3->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c),",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -401,48 +443,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 140,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pSVar1[1].projected_vertex.transformed_x = (pSVar1->projected_vertex).transformed_x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 169,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)((int)&(pSVar1->projected_vertex).transformed_x + iStack_20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 187,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((int)&(pCVar3->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_20),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 191,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)((int)&(pSVar1->projected_vertex).transformed_x + iStack_1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 209,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((int)&(pCVar3->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c),",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

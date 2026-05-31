@@ -850,6 +850,33 @@
       "type": "stack_param"
     },
     {
+      "description": "Raw hex address 0x5b9c61 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 100,
+      "match": "0x5b9c61",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = 0x5b9c61;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x5b9c8f assigned to bare local `iVar39`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar39` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 107,
+      "match": "0x5b9c8f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar39 = 0x5b9c8f;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x5b9e6a assigned to bare local `iVar39`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar39` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 153,
+      "match": "0x5b9e6a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar39 = 0x5b9e6a;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 189,
       "match": "for (...; != 0; ... + -1)",

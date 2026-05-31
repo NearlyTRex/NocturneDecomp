@@ -14,6 +14,10 @@ PRIORITY 1: Files with 1-2 functions remaining
     - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
       Suspects: unrolled_memcpy, unrolled_memcpy
 
+  core/weather.cpp (1 remaining of 10)
+    - core_weather.cpp_CWeather_renderParticles_FUN_005ef190
+      Suspects: raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant
+
   core/mirror.cpp (1 remaining of 22)
     - core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
       Suspects: missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy
@@ -47,13 +51,15 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines)
         Types: ['missing_cave_copy']
 
+  core/weather.cpp (90.0% complete)
+    1 functions remaining:
+      core_weather.cpp_CWeather_renderParticles_FUN_005ef190 (209 lines)
+        Types: ['raw_address_constant']
+
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
-  core/turret.cpp                                               87.5%  (21/24 clean, 3 remaining)
   core/msnedit.cpp                                              87.3%  (55/63 clean, 8 remaining)
-  core/trigger.cpp                                              87.0%  (20/23 clean, 3 remaining)
-  core/flies.cpp                                                86.4%  (19/22 clean, 3 remaining)
   core/manpuz.cpp                                               85.7%  (54/63 clean, 9 remaining)
   core/dmodel.cpp                                               84.8%  (56/66 clean, 10 remaining)
   core/mobster.cpp                                              84.6%  (22/26 clean, 4 remaining)
@@ -70,6 +76,5 @@ ALL REMAINING FILES
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)
   shape/meshlod.cpp                                             70.2%  (87/124 clean, 37 remaining)
-  core/weather.cpp                                              70.0%  (7/10 clean, 3 remaining)
   shape/design.c                                                69.9%  (114/163 clean, 49 remaining)
   engine/fileio.cpp                                             68.5%  (50/73 clean, 23 remaining)

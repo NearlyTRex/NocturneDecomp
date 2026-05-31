@@ -41,9 +41,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   case TURRET_STATE_IDLE:
     pUVar1 = &(this_ptr->base).base.orient;
     if (pUVar1 != &this_ptr->home_orient) {
-      (pUVar1->vec).x = (this_ptr->home_orient).vec.x;
-      (this_ptr->base).base.orient.vec.y = (this_ptr->home_orient).vec.y;
-      (this_ptr->base).base.orient.vec.z = (this_ptr->home_orient).vec.z;
+      pUVar1->vec = (this_ptr->home_orient).vec;
     }
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->activate_event);
@@ -126,9 +124,7 @@ LAB_005e24c7:
       pCVar5 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                          (&local_30,&local_80);
       if (pCVar5 != local_18) {
-        local_18->x = pCVar5->x;
-        local_18->y = pCVar5->y;
-        local_18->z = pCVar5->z;
+        *local_18 = *pCVar5;
       }
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     }
@@ -136,9 +132,7 @@ LAB_005e24c7:
       this_ptr->state = TURRET_STATE_IDLE;
       this_ptr->timer = 0.0;
       if (local_18 != local_1c) {
-        local_18->x = local_1c->x;
-        (this_ptr->base).base.orient.vec.y = (this_ptr->home_orient).vec.y;
-        (this_ptr->base).base.orient.vec.z = (this_ptr->home_orient).vec.z;
+        *local_18 = *local_1c;
       }
     }
     break;

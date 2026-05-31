@@ -64,7 +64,7 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_005e2d50(CTurret *this_
   do {
     while( true ) {
       if (g_CDemonSetPtr->actor_count <= iVar6) {
-        if ((int)CStack_90.y < 0x42c60001) {
+        if (CStack_90.y <= 99.0f) {
           core_turret_cpp_CTurret_aimAtTarget_FUN_005e3280(this_ptr,&CStack_3c,delta_time);
           if ((this_ptr->base).fire_cooldown_timer <= 0.0) {
             (*(((this_ptr->base).base.vtable._uw)->_uw).fire)(&this_ptr->base);
@@ -115,12 +115,8 @@ LAB_005e2ed6:
        (SQRT(CStack_90.z * CStack_90.z + CStack_90.x * CStack_90.x + CStack_90.y * CStack_90.y) <
         SQRT(CStack_48.z * CStack_48.z + CStack_48.x * CStack_48.x + CStack_48.y * CStack_48.y)))
     goto LAB_005e2ed6;
-    if (&CStack_90 != &CStack_48) {
-      CStack_90.x = CStack_48.x;
-      CStack_90.y = CStack_48.y;
-      CStack_90.z = CStack_48.z;
-    }
-    if (&CStack_3c == &CStack_54) goto LAB_005e2ed6;
+    CStack_90 = CStack_48;
+    CStack_3c = CStack_54;
     iVar6 = iVar6 + 1;
   } while( true );
 }

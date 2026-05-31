@@ -4,18 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 525,
-    "complexity_score": 319,
+    "complexity_score": 294,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 209,
-    "suspect_count": 10,
+    "suspect_count": 8,
     "suspect_types": [
-      "pointer_cast",
       "raw_address_constant"
     ],
     "total_lines": 734
@@ -282,6 +281,35 @@
     },
     "pcode_op_count": 2346
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 176,
+      "match": "(float *)((int)g_WeatherParticleGroundHeights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_2c.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex literal 0x3f95dfc matches address of g_WeatherParticlePositions (+4 bytes into) (type CVector3f[200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 170,
+      "match": "0x3f95dfc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar5 = 0x3f95dfc;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x3f95dfc assigned to bare local `iVar5`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar5` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 170,
+      "match": "0x3f95dfc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar5 = 0x3f95dfc;",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 248,
     "local_size": 244,
@@ -468,14 +496,6 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 176,
-      "match": "(float *)((int)g_WeatherParticleGroundHeights",
-      "severity": "moderate",
-      "text": "local_2c.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Raw hex literal 0x780000 matches address of g_RenderBufferPool (+54528 bytes into) (type SRenderBufferEntry[256]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 58,
       "match": "0x780000",
@@ -529,14 +549,6 @@
       "match": "0xf80000",
       "severity": "moderate",
       "text": "pCVar2->vertex_buffer_ptr[2].v = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x3f95dfc matches address of g_WeatherParticlePositions (+4 bytes into) (type CVector3f[200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 170,
-      "match": "0x3f95dfc",
-      "severity": "moderate",
-      "text": "iVar5 = 0x3f95dfc;",
       "type": "raw_address_constant"
     },
     {

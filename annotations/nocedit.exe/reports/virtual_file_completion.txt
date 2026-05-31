@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6183 (95.8%)
-Files at 100%: 188
-Files at 90%+: 191
+Clean functions: 6194 (96.0%)
+Files at 100%: 191
+Files at 90%+: 195
 Files at 50%+: 214
 
 ====================================================================================================
@@ -81,6 +81,7 @@ FILES AT 100% (COMPLETE)
   core/flamegun.cpp: 10 functions, 143 lines
   core/flashlit.cpp: 7 functions, 66 lines
   core/flattn.cpp: 2 functions, 11 lines
+  core/flies.cpp: 22 functions, 681 lines
   core/game.cpp: 66 functions, 6745 lines
   core/gargoyle.cpp: 16 functions, 941 lines
   core/gasmask.cpp: 14 functions, 131 lines
@@ -153,6 +154,8 @@ FILES AT 100% (COMPLETE)
   core/tommygun.cpp: 9 functions, 365 lines
   core/trap.cpp: 17 functions, 202 lines
   core/trash.cpp: 15 functions, 441 lines
+  core/trigger.cpp: 23 functions, 1067 lines
+  core/turret.cpp: 24 functions, 987 lines
   core/tvbat.cpp: 20 functions, 727 lines
   core/vampboss.cpp: 23 functions, 1272 lines
   core/vecdir.cpp: 2 functions, 33 lines
@@ -203,7 +206,7 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 188 files
+Total: 191 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -223,16 +226,15 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1436 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
            - core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines) [missing_cave_copy]
 
-Total: 3 files
+   90.0% | core/weather.cpp
+         9/10 clean, 1 remaining
+           - core_weather.cpp_CWeather_renderParticles_FUN_005ef190 (209 lines) [raw_address_constant]
+
+Total: 4 files
 
 ====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
-   87.5% | core/turret.cpp
-         21/24 clean, 3 remaining
-           - core_turret.cpp_CTurret_fire_FUN_005e3750 (159 lines) [unrolled_memcpy]
-           - core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50 (123 lines) [bit_int_float_compare, unrolled_memcpy]
-           - core_turret.cpp_CTurret_process_FUN_005e2430 (179 lines) [unrolled_memcpy]
    87.3% | core/msnedit.cpp
          55/63 clean, 8 remaining
            - core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 (103 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
@@ -243,16 +245,6 @@ FILES AT 50-89%
            - core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (171 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
            - core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (997 lines) [bit_int_float_compare, pointer_cast, unrolled_memcpy]
            - core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 (223 lines) [unrolled_memcpy, unrolled_memset]
-   87.0% | core/trigger.cpp
-         20/23 clean, 3 remaining
-           - core_trigger.cpp_CTrigger_process_FUN_005dfac0 (226 lines) [fast_sqrt_inline, pointer_cast, unrolled_memcpy]
-           - core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0 (241 lines) [pointer_cast, unrolled_memcpy]
-           - core_trigger.cpp_CTrigger_ctor_FUN_005df840 (55 lines) [unrolled_strcpy]
-   86.4% | core/flies.cpp
-         19/22 clean, 3 remaining
-           - core_flies.cpp_CFlies_process_FUN_004cbf00 (124 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 (178 lines) [pointer_cast, unrolled_memcpy]
-           - core_flies.cpp_CFlies_initFly_FUN_004cc760 (38 lines) [unrolled_memcpy]
    85.7% | core/manpuz.cpp
          54/63 clean, 9 remaining
            - core_manpuz.cpp_copyPanel_FUN_0050b9a0 (36 lines) [unrolled_memcpy]
@@ -396,7 +388,7 @@ FILES AT 50-89%
            - shape_superopt.cpp_CPoly_flipNormal_FUN_005cdfe0 (33 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_scale_FUN_005d2940 (93 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0 (115 lines) [unrolled_memcpy]
-           - shape_superopt.cpp_COptimize_cleanup_FUN_005d7000 (34 lines) [pointer_cast]
+           - shape_superopt.cpp_COptimize_cleanup_FUN_005d7000 (34 lines) [pointer_cast, raw_address_constant]
            - shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0 (44 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
            - shape_superopt.cpp_CVec_copy1_FUN_005d8160 (10 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_restoreVertexPositions_FUN_005cd640 (37 lines) [pointer_cast]
@@ -458,11 +450,6 @@ FILES AT 50-89%
            - shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (47 lines) [pointer_cast, sub84_truncation]
            - shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (89 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (26 lines) [pointer_cast]
-   70.0% | core/weather.cpp
-         7/10 clean, 3 remaining
-           - core_weather.cpp_CWeather_renderParticles_FUN_005ef190 (209 lines) [pointer_cast, raw_address_constant]
-           - core_weather.cpp_CWeather_update_FUN_005eeaf0 (141 lines) [pointer_cast]
-           - core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940 (69 lines) [pointer_cast, unrolled_memcpy]
    69.9% | shape/design.c
          114/163 clean, 49 remaining
            - shape_design.c_modelExportWizard_FUN_0045a7b0 (146 lines) [unrolled_strchr, unrolled_strlen]
@@ -540,7 +527,7 @@ FILES AT 50-89%
            - engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (244 lines) [unrolled_strcpy]
            - engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (223 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
 
-Total: 23 files
+Total: 19 files
 
 ====================================================================================================
 FILES BELOW 50%

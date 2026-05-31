@@ -298,6 +298,15 @@
       "severity": "moderate",
       "text": "_fprintf(p_Var2,\"%s in %s, opened %s line %d\\n\",iVar4 * 0x328 + 0x2f0da50,",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x2f0db68 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 22,
+      "match": "0x2f0db68",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = 0x2f0db68;",
+      "type": "raw_address_constant"
     }
   ],
   "stack_frame": {

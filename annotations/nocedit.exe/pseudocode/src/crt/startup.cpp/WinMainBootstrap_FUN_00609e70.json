@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 351,
+    "complexity_score": 366,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 76,
-    "suspect_count": 26,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
+      "raw_address_constant",
       "stack_ref",
       "warning_spacebase"
     ],
@@ -382,6 +383,14 @@
       "severity": "moderate",
       "text": "ExitApplication(*(int *)((int)puVar1 + -4));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex address 0x609e81 assigned to bare local `uStack_14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 23,
+      "match": "0x609e81",
+      "severity": "moderate",
+      "text": "uStack_14 = 0x609e81;",
+      "type": "raw_address_constant"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 139,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 69,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 246
   },
   "cross_references": [
@@ -171,6 +168,62 @@
     },
     "pcode_op_count": 763
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(float *)((int)g_WeatherParticleGroundHeights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_WeatherParticleGroundHeights + iVar3) = fVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 20,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->direction).x = direction->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 25,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->rotation).x = rotation->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 42,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_50.x = local_38.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 47,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_44.x = local_38.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 61,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2->x = local_38.x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 96,
     "local_size": 84,
@@ -260,54 +313,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(float *)((int)g_WeatherParticleGroundHeights",
-      "severity": "moderate",
-      "text": "*(float *)((int)g_WeatherParticleGroundHeights + iVar3) = fVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 20,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->direction).x = direction->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 25,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->rotation).x = rotation->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 42,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_50.x = local_38.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 47,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_44.x = local_38.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 61,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar2->x = local_38.x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

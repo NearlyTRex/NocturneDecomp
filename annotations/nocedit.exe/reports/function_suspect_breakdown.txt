@@ -4,17 +4,17 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6183 functions
+  0 suspects: 6194 functions
   1 suspects: 16 functions
-  2 suspects: 51 functions
-  3 suspects: 36 functions
+  2 suspects: 45 functions
+  3 suspects: 37 functions
   4 suspects: 38 functions
-  5 suspects: 22 functions
-  6 suspects: 21 functions
-  7 suspects: 9 functions
+  5 suspects: 20 functions
+  6 suspects: 19 functions
+  7 suspects: 8 functions
   8 suspects: 16 functions
   9 suspects: 7 functions
-  10 suspects: 8 functions
+  10 suspects: 7 functions
   11 suspects: 5 functions
   12 suspects: 6 functions
   13 suspects: 3 functions
@@ -107,10 +107,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 30, Types: ['unrolled_memcpy']
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
     File: shape/quantize.cpp, Lines: 34, Types: ['unrolled_strchr', 'warning_inlined_function']
-  shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
-    File: shape/superopt.cpp, Lines: 34, Types: ['pointer_cast']
-  core_flies.cpp_CFlies_initFly_FUN_004cc760
-    File: core/flies.cpp, Lines: 38, Types: ['unrolled_memcpy']
   core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370
     File: core/netgame.cpp, Lines: 42, Types: ['unrolled_strcpy']
   core_wateract.cpp_CWaterActor_processInEditor_FUN_005ebab0
@@ -127,8 +123,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 53, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
     File: shape/meshlod.cpp, Lines: 54, Types: ['shadow_pointer_walk', 'unrolled_memset']
-  core_trigger.cpp_CTrigger_ctor_FUN_005df840
-    File: core/trigger.cpp, Lines: 55, Types: ['unrolled_strcpy']
   core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0
     File: core/wateract.cpp, Lines: 56, Types: ['unrolled_strcpy']
   shape_design.c_writePolygonModel_FUN_0045a320
@@ -167,8 +161,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/netgame.cpp, Lines: 120, Types: ['shadow_pointer_walk']
   engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
     File: engine/fileio.cpp, Lines: 122, Types: ['unrolled_strcpy']
-  core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
-    File: core/turret.cpp, Lines: 123, Types: ['bit_int_float_compare', 'unrolled_memcpy']
   shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
     File: shape/meshlod.cpp, Lines: 123, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
@@ -179,12 +171,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/skeledit.cpp, Lines: 139, Types: ['missing_cave_copy']
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     File: shape/meshlod.cpp, Lines: 143, Types: ['unrolled_memcpy']
-  core_turret.cpp_CTurret_fire_FUN_005e3750
-    File: core/turret.cpp, Lines: 159, Types: ['unrolled_memcpy']
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
     File: core/gabriela.cpp, Lines: 160, Types: ['pointer_cast', 'unrolled_memset']
-  core_turret.cpp_CTurret_process_FUN_005e2430
-    File: core/turret.cpp, Lines: 179, Types: ['unrolled_memcpy']
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
     File: core/wateract.cpp, Lines: 210, Types: ['shadow_pointer_walk', 'unrolled_memset']
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_F
@@ -203,6 +191,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0
     File: shape/meshlod.cpp, Lines: 26, Types: ['pointer_cast']
+  shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
+    File: shape/superopt.cpp, Lines: 34, Types: ['pointer_cast', 'raw_address_constant']
   engine_fileio.cpp_CFileManager_setVersionControlCredentials_
     File: engine/fileio.cpp, Lines: 38, Types: ['unrolled_strcpy']
   core_mobster.cpp_CMobster_getTargetPoints_FUN_005278d0

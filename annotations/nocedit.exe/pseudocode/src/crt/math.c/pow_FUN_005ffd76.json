@@ -2,16 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 295,
+    "complexity_score": 330,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 90,
-    "suspect_count": 18,
+    "suspect_count": 21,
     "suspect_types": [
       "bitcast_double_pair",
       "nan_function_artifact",
+      "raw_address_constant",
       "stack_param",
       "sub84_truncation",
       "warning_unreachable"
@@ -325,6 +326,30 @@
       "severity": "moderate",
       "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar6 >> 0x20))),",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "Raw hex address 0x5ffe31 assigned to bare local `in_stack_ffffffe0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `in_stack_ffffffe0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 51,
+      "match": "0x5ffe31",
+      "severity": "moderate",
+      "text": "in_stack_ffffffe0 = 0x5ffe31;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x5ffe45 assigned to bare local `in_stack_ffffffe0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `in_stack_ffffffe0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 60,
+      "match": "0x5ffe45",
+      "severity": "moderate",
+      "text": "in_stack_ffffffe0 = 0x5ffe45;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x5ffe99 assigned to bare local `in_stack_ffffffe0`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `in_stack_ffffffe0` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 83,
+      "match": "0x5ffe99",
+      "severity": "moderate",
+      "text": "in_stack_ffffffe0 = 0x5ffe99;",
+      "type": "raw_address_constant"
     }
   ]
 }

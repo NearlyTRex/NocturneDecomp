@@ -254,6 +254,15 @@
       "type": "raw_address_constant"
     },
     {
+      "description": "Raw hex address 0x2f7a030 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 37,
+      "match": "0x2f7a030",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = 0x2f7a030;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 25,
       "match": "for (...; != 0; ... + -1)",
