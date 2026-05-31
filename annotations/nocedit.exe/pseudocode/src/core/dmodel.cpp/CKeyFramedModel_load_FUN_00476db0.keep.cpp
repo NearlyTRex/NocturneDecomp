@@ -12,7 +12,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(CKeyFramedModel *
 {
   _FILE *file;
   int iVar2;
-  CKeyFramedModel *pCVar3;
 
   core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);
   file = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rb");
@@ -40,12 +39,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(CKeyFramedModel *
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\dmodel.cpp",0xcd);
   core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);
   iVar2 = 0;
-  pCVar3 = this_ptr;
   if (0 < this_ptr->texture_count) {
     do {
-      pCVar3->texture_list[0].textures[0].base.count = 0;
+      this_ptr->texture_list[iVar2].textures[0].base.count = 0;
       iVar2 = iVar2 + 1;
-      pCVar3 = (CKeyFramedModel *)(pCVar3->model_filename + 0x48);
     } while (iVar2 < this_ptr->texture_count);
   }
   core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(this_ptr);

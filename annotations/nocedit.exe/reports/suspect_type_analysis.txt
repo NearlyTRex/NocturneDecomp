@@ -4,15 +4,15 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     979 ( 46.2%)
-  unrolled_memcpy                  356 ( 16.8%)
-  unrolled_strcpy                  157 (  7.4%)
+  pointer_cast                     979 ( 45.8%)
+  unrolled_memcpy                  356 ( 16.7%)
+  unrolled_strcpy                  157 (  7.3%)
+  shadow_pointer_walk              111 (  5.2%)
   missing_cave_copy                 96 (  4.5%)
-  shadow_pointer_walk               94 (  4.4%)
-  carry_arith_idiom                 63 (  3.0%)
+  carry_arith_idiom                 63 (  2.9%)
   unrolled_strlen                   59 (  2.8%)
   bitcast_double_pair               36 (  1.7%)
-  raw_address_constant              33 (  1.6%)
+  raw_address_constant              33 (  1.5%)
   static_uninitvar                  32 (  1.5%)
   unrolled_memset                   29 (  1.4%)
   unrolled_strchr                   28 (  1.3%)
@@ -443,6 +443,94 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
+TYPE: shadow_pointer_walk (111 occurrences)
+====================================================================================================
+
+Unique patterns:
+     7x  pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)
+     5x  pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD
+     3x  local_14 = local_14 + N
+     3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
+     2x  pCVar7 = (T *)((int)(pCVar7 + N) + M)
+     2x  local_1c = local_1c + N
+     2x  local_2c = local_2c + N
+     2x  pfVar3 = pfVar3 + N
+     2x  piVar2 = piVar2 + N
+     2x  pCVar8 = (T *)(pCVar8->attribute_indices + CONST)
+     2x  pCVar4 = (T *)(pCVar4->attribute_indices + CONST)
+     2x  pSVar3 = (T *)pSVar3->ARRAY
+     2x  pSVar4 = (T *)pSVar4->ARRAY
+     2x  pCVar5 = (T *)((int)&(pCVar5->FIELD).SUBFIELD + CONST)
+     1x  local_3c = (T *)local_3c->ARRAY
+     1x  pCVar1 = (T *)pCVar1->ARRAY
+     1x  local_4c = (T *)local_4c->ARRAY
+     1x  pCVar7 = (T *)pCVar7->ARRAY
+     1x  local_50 = (T *)local_50->ARRAY
+     1x  pSVar1 = pSVar1 + N
+
+Functions:
+  core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
+  core_bodypart.cpp_CBodyPart_processFires_FUN_00419e10
+  core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270
+  core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680
+  core_chain.cpp_CChain_process_FUN_004300d0
+  core_chain.cpp_CChain_setup_FUN_0042fd20
+  core_cloth.cpp_CCloth_load_FUN_00438cf0
+  core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10
+  core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110
+  core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0
+  core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0
+  core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
+  core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
+  core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40
+  core_fire.cpp_CCrater_load_FUN_004c4880
+  core_flies.cpp_CFlies_process_FUN_004cbf00
+  core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
+  core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
+  core_gore.cpp_CFootstep_init_FUN_004ed240
+  core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
+  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
+  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
+  core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
+  core_motion.cpp_CMotionList_load_FUN_0052cd70
+  core_motion.cpp_CMotionList_save_FUN_0052d170
+  core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
+  core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
+  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
+  core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
+  core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00541260
+  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
+  core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
+  core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
+  core_netgame.cpp_CNetGame_runLobby_FUN_00541390
+  core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
+  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
+  core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
+  core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790
+  core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0
+  core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280
+  core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
+  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
+  shape_design.c_removeDegeneratePolygons_FUN_00465310
+  shape_design.c_removeDegenerateTriangles_FUN_00463a20
+  shape_design.c_removeDuplicatePolygons_FUN_004651b0
+  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
+  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
+  shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
+  shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
+  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
+  shape_superopt.cpp_CP3D_add1_FUN_005d8520
+  shape_superopt.cpp_CP3D_add2_FUN_005d85a0
+  shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
+  shape_superopt.cpp_CP3D_scale_FUN_005d8630
+  shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
+  shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
+
+====================================================================================================
 TYPE: missing_cave_copy (96 occurrences)
 ====================================================================================================
 
@@ -484,95 +572,6 @@ Functions:
   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
   core_tentacle.cpp_CTentacle_process_FUN_005db050
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
-
-====================================================================================================
-TYPE: shadow_pointer_walk (94 occurrences)
-====================================================================================================
-
-Unique patterns:
-     7x  pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)
-     5x  pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD
-     4x  pSVar3 = (T *)(pSVar3->motion_name + CONST)
-     3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
-     2x  pCVar7 = (T *)((int)(pCVar7 + N) + M)
-     2x  pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)
-     2x  pCVar8 = (T *)(pCVar8->attribute_indices + CONST)
-     2x  pCVar4 = (T *)(pCVar4->attribute_indices + CONST)
-     2x  pSVar3 = (T *)pSVar3->ARRAY
-     2x  pSVar4 = (T *)pSVar4->ARRAY
-     2x  pCVar5 = (T *)((int)&(pCVar5->FIELD).SUBFIELD + CONST)
-     1x  local_3c = (T *)local_3c->ARRAY
-     1x  pCVar1 = (T *)pCVar1->ARRAY
-     1x  local_4c = (T *)local_4c->ARRAY
-     1x  pCVar7 = (T *)pCVar7->ARRAY
-     1x  local_50 = (T *)local_50->ARRAY
-     1x  pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)
-     1x  pCVar2 = (T *)(pCVar2->texture_dimensions + CONST)
-     1x  pSVar6 = (T *)&pSVar6->FIELD[N].SUBFIELD
-     1x  pSVar4 = (T *)&pSVar4->FIELD[N].SUBFIELD
-
-Functions:
-  core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00
-  core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10
-  core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0
-  core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0
-  core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0
-  core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
-  core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
-  core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40
-  core_flies.cpp_CFlies_process_FUN_004cbf00
-  core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
-  core_glass.cpp_CGlass_renderBackground_FUN_004e9e90
-  core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
-  core_glass.cpp_CGlass_renderOpaque_FUN_004e9930
-  core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0
-  core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
-  core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_005097e0
-  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
-  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
-  core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
-  core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70
-  core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020
-  core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0
-  core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950
-  core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
-  core_motion.cpp_CMotionList_save_FUN_0052d170
-  core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
-  core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
-  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
-  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
-  core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
-  core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
-  core_netgame.cpp_CNetGame_runLobby_FUN_00541390
-  core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-  core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790
-  core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
-  core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280
-  core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
-  engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0
-  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
-  engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30
-  shape_design.c_removeDegeneratePolygons_FUN_00465310
-  shape_design.c_removeDegenerateTriangles_FUN_00463a20
-  shape_design.c_removeDuplicatePolygons_FUN_004651b0
-  shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
-  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
-  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
-  shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0
-  shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
-  shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
-  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
-  shape_superopt.cpp_CP3D_add1_FUN_005d8520
-  shape_superopt.cpp_CP3D_add2_FUN_005d85a0
-  shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
-  shape_superopt.cpp_CP3D_scale_FUN_005d8630
-  shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
-  shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
 
 ====================================================================================================
 TYPE: carry_arith_idiom (63 occurrences)

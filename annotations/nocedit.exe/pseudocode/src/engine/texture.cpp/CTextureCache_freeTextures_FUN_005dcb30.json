@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 51,
+    "complexity_score": 36,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 106
   },
   "cross_references": [
@@ -166,6 +164,17 @@
     },
     "pcode_op_count": 225
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via pointer arithmetic on its own `texture_dimensions` field (which decays to a pointer), `+ CONST`; `offsetof(texture_dimensions) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar2`. Replace those `pCVar2->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 34,
+      "match": "pCVar2 = (T *)(pCVar2->texture_dimensions + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2 = (CTextureCache *)(pCVar2->texture_dimensions + 0xe);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -182,14 +191,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via pointer arithmetic on its own `texture_dimensions` field (which decays to a pointer), `+ CONST`; `offsetof(texture_dimensions) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar2`. Replace those `pCVar2->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 34,
-      "match": "pCVar2 = (T *)(pCVar2->texture_dimensions + CONST)",
-      "severity": "moderate",
-      "text": "pCVar2 = (CTextureCache *)(pCVar2->texture_dimensions + 0xe);",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

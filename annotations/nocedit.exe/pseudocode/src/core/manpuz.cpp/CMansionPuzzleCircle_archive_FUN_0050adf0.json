@@ -149,6 +149,24 @@
       "severity": "moderate",
       "text": "int_ptr_00 = (CColor3i *)&int_ptr_00[8].g;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `int_ptr_01` was initialized to the address of element [0]'s subfield of an array (`int_ptr_01 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*int_ptr_01)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `int_ptr_01->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 28,
+      "match": "int_ptr_01 = int_ptr_01 + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int_ptr_01 = int_ptr_01 + 0x19;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `int_ptr` was initialized to the address of element [0]'s subfield of an array (`int_ptr = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*int_ptr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `int_ptr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 30,
+      "match": "int_ptr = int_ptr + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int_ptr = int_ptr + 0x19;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

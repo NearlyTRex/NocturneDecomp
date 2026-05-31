@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 30,
+    "complexity_score": 55,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 155
   },
   "cross_references": [
@@ -160,5 +162,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pfVar3` was initialized to the address of element [0]'s subfield of an array (`pfVar3 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar3)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar3->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 21,
+      "match": "pfVar3 = pfVar3 + N",
+      "severity": "moderate",
+      "text": "pfVar3 = pfVar3 + 3;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pfVar4` was initialized to the address of element [0]'s subfield of an array (`pfVar4 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 22,
+      "match": "pfVar4 = pfVar4 + N",
+      "severity": "moderate",
+      "text": "pfVar4 = pfVar4 + 3;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

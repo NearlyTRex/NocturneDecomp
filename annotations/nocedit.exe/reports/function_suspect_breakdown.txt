@@ -4,14 +4,14 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6129 functions
-  1 suspects: 38 functions
+  0 suspects: 6131 functions
+  1 suspects: 30 functions
   2 suspects: 63 functions
-  3 suspects: 40 functions
-  4 suspects: 40 functions
-  5 suspects: 23 functions
+  3 suspects: 43 functions
+  4 suspects: 41 functions
+  5 suspects: 24 functions
   6 suspects: 25 functions
-  7 suspects: 10 functions
+  7 suspects: 11 functions
   8 suspects: 21 functions
   9 suspects: 7 functions
   10 suspects: 8 functions
@@ -39,42 +39,26 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [shadow_pointer_walk] (17 functions)
+  [shadow_pointer_walk] (9 functions)
   ------------------------------------------------------------
-    core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_0 ( 10 lines)
-      this_ptr = (CKeyFramedModelInstance *)(this_ptr->part_visibi...
-    shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_ ( 29 lines)
-      pCVar2 = (CLodFace *)(pCVar2->attribute_indices + 1);...
-    core_motion.cpp_CMotionController_advanceTween_FUN ( 32 lines)
-      pSVar4 = (SMotion *)(pSVar4->motion_name + 8);...
-    engine_texture.cpp_CTextureCache_freeTextures_FUN_ ( 36 lines)
-      pCVar2 = (CTextureCache *)(pCVar2->texture_dimensions + 0xe)...
-    core_motion.cpp_CMotionController_frameToMarkerPos ( 36 lines)
-      pSVar2 = (SMotion *)(pSVar2->motion_name + 4);...
-    engine_pod.cpp_CPod_getNextSearchResult_FUN_00550e ( 53 lines)
-      pCVar6 = (CPodSearchContext *)((pCVar6->current_file_info).f...
-    core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FU ( 53 lines)
-      pCVar4 = (CVector3f *)&pCVar4[0xf].y;...
-    core_motion.cpp_CMotionController_findAndStartTran ( 54 lines)
-      pSVar3 = (SMotion *)(pSVar3->motion_name + 0x18);...
-    core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0  ( 54 lines)
-      pCVar3 = (CKeyFramedModel *)(pCVar3->model_filename + 2);...
-    core_motion.cpp_CMotionController_advanceFrameAndC ( 56 lines)
-      pSVar3 = (SMotion *)(pSVar3->motion_name + 8);...
-    core_glass.cpp_CGlass_renderBackground_FUN_004e9e9 ( 64 lines)
-      pCVar3 = (CGlass *)((pCVar3->base).orient_matrix.m + 1);...
-    core_glass.cpp_CGlass_renderTransparent_FUN_004e9a ( 64 lines)
-      pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
-    core_motion.cpp_CMotionController_advanceFrameToEx ( 64 lines)
-      pSVar3 = (SMotion *)(pSVar3->motion_name + 8);...
-    core_glass.cpp_CGlass_renderOpaque_FUN_004e9930    ( 66 lines)
-      pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);...
+    core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_005 ( 17 lines)
+      pSVar1 = pSVar1 + 0xf;...
+    core_bodypart.cpp_CBodyPart_processFires_FUN_00419 ( 48 lines)
+      pCVar3 = pCVar3 + 0x2b;...
+    core_gore.cpp_CFootstep_init_FUN_004ed240          ( 58 lines)
+      pfVar3 = pfVar3 + 3;...
     core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9c ( 71 lines)
-      pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);...
-    shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_ ( 81 lines)
-      pCVar7 = (CLodVert *)&(pCVar7->position).y;...
-    core_skeleton.cpp_CDeformableModel_computeBoneDomi (124 lines)
-      local_3c = (CDeformableModel *)(local_3c->tri_count + 3);...
+      prim = prim + 3;...
+    core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680     ( 86 lines)
+      pCVar6 = pCVar6 + 6;...
+    core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_ (192 lines)
+      piVar5 = piVar5 + 2;...
+    core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0 (199 lines)
+      pCVar15 = pCVar15 + 0x2b;...
+    core_skeledit.cpp_CBoneStructure_readBONheader_FUN (243 lines)
+      local_2c = local_2c + 0x21;...
+    core_chain.cpp_CChain_process_FUN_004300d0         (274 lines)
+      pCVar20 = pCVar20 + 3;...
 
   [unrolled_memcpy] (8 functions)
   ------------------------------------------------------------
@@ -153,6 +137,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 28, Types: ['pointer_cast']
   core_netgame.cpp_allocSimFrame_FUN_0053f5a0
     File: core/netgame.cpp, Lines: 30, Types: ['pointer_cast']
+  core_fire.cpp_CCrater_load_FUN_004c4880
+    File: core/fire.cpp, Lines: 30, Types: ['shadow_pointer_walk']
   shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_0051
     File: shape/meshlod.cpp, Lines: 30, Types: ['unrolled_memcpy']
   core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_
@@ -199,6 +185,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mirror.cpp, Lines: 61, Types: ['unrolled_memcpy']
   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb74
     File: core/wateract.cpp, Lines: 64, Types: ['unrolled_memcpy']
+  core_chain.cpp_CChain_setup_FUN_0042fd20
+    File: core/chain.cpp, Lines: 71, Types: ['shadow_pointer_walk']
   shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600
     File: shape/meshlod.cpp, Lines: 72, Types: ['pointer_cast']
   shape_design.c_createCenterVertex_FUN_00469690
@@ -209,8 +197,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 74, Types: ['pointer_cast']
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
     File: shape/design.c, Lines: 77, Types: ['unrolled_strlen']
-  core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005
-    File: core/manpuz.cpp, Lines: 79, Types: ['shadow_pointer_walk']
   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
     File: shape/quantize.cpp, Lines: 85, Types: ['pointer_cast']
   shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
@@ -255,8 +241,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dmodel.cpp, Lines: 169, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_turret.cpp_CTurret_process_FUN_005e2430
     File: core/turret.cpp, Lines: 179, Types: ['unrolled_memcpy']
-  core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
-    File: core/netgame.cpp, Lines: 183, Types: ['bit_int_float_compare']
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
     File: core/wateract.cpp, Lines: 210, Types: ['shadow_pointer_walk', 'unrolled_memset']
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_F
@@ -291,6 +275,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 52, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
     File: core/manpuz.cpp, Lines: 56, Types: ['pointer_cast', 'unrolled_memcpy']
+  core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270
+    File: core/boneguy.cpp, Lines: 58, Types: ['shadow_pointer_walk']
   core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf4
     File: core/dmodel.cpp, Lines: 59, Types: ['pointer_cast', 'shadow_pointer_walk']
   shape_cramtex.cpp_placementCollisionCheck_FUN_00448260
@@ -335,6 +321,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 146, Types: ['unrolled_strchr', 'unrolled_strlen']
   core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
     File: core/mobster.cpp, Lines: 148, Types: ['bit_int_float_compare', 'pointer_cast']
+  core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0
+    File: core/skeleton.cpp, Lines: 148, Types: ['shadow_pointer_walk']
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
     File: core/ghoul.cpp, Lines: 149, Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy']
   shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d396
@@ -343,5 +331,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/fileio.cpp, Lines: 173, Types: ['pointer_cast', 'unrolled_strcpy']
   shape_design.c_polygonToolModeManager_FUN_00464c90
     File: shape/design.c, Lines: 180, Types: ['unrolled_strcpy']
+  core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
+    File: core/netgame.cpp, Lines: 183, Types: ['bit_int_float_compare', 'shadow_pointer_walk']
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     File: engine/fileio.cpp, Lines: 193, Types: ['pointer_cast', 'unrolled_strcpy']

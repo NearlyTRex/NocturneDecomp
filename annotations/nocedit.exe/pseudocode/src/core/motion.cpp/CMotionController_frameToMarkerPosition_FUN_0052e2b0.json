@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 51,
+    "complexity_score": 36,
     "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 134
   },
   "cross_references": [
@@ -244,6 +242,17 @@
     },
     "pcode_op_count": 589
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via pointer arithmetic on its own `motion_name` field (which decays to a pointer), `+ CONST`; `offsetof(motion_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar2`. Replace those `pSVar2->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 31,
+      "match": "pSVar2 = (T *)(pSVar2->motion_name + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMotion *)(pSVar2->motion_name + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 32,
@@ -267,14 +276,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via pointer arithmetic on its own `motion_name` field (which decays to a pointer), `+ CONST`; `offsetof(motion_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar2`. Replace those `pSVar2->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 31,
-      "match": "pSVar2 = (T *)(pSVar2->motion_name + CONST)",
-      "severity": "moderate",
-      "text": "pSVar2 = (SMotion *)(pSVar2->motion_name + 4);",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

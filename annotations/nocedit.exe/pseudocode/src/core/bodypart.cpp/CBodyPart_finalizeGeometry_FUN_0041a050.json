@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 478,
-    "complexity_score": 199,
+    "complexity_score": 214,
     "cross_reference_count": 17,
     "function_call_count": 10,
     "global_count": 5,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 199,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 677
   },
   "cross_references": [
@@ -606,5 +608,14 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar15` was initialized to the address of element [0]'s subfield of an array (`pCVar15 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCVar15)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCVar15->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 112,
+      "match": "pCVar15 = pCVar15 + N",
+      "severity": "moderate",
+      "text": "pCVar15 = pCVar15 + 0x2b;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

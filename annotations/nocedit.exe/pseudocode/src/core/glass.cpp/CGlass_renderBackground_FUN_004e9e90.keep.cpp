@@ -1,0 +1,72 @@
+// Name: core_glass.cpp_CGlass_renderBackground_FUN_004e9e90
+// Address: 004e9e90
+// MANUAL RECONSTRUCTION
+// Address Range: [[004e9e90, 004ea027]]
+// Convention: __cdecl
+// Signature: void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_ptr,int layer_flag)
+
+#include "nocturne.h"
+
+void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_ptr,int layer_flag)
+
+{
+  CDemonRenderer *this_ptr_00;
+  CBoundingBox3D *this_ptr_01;
+  CVector3f *pCVar1;
+  CVector3i *pCVar2;
+  int iVar4;
+  SMRGLPrimitivePoly *poly;
+  SMRGLTextureBasic *texture;
+  CBoundingBox3D CStack_20;
+  
+  if (this_ptr->background_flag == 0) {
+    if (((layer_flag != 0) && (this_ptr->shattered != 0)) && (this_ptr->mirror_flag != 0)) {
+      core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(this_ptr);
+      return;
+    }
+  }
+  else if ((layer_flag != 0) || (this_ptr->pending_background_render != 0)) {
+    this_ptr->pending_background_render = 0;
+    core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
+    this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_20);
+    core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
+    if (this_ptr->shattered == 0) {
+      texture = &this_ptr->glass_texture;
+    }
+    else {
+      texture = &this_ptr->broken_texture;
+    }
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
+    pCVar1 = this_ptr->broken_vertices;
+    iVar4 = 0;
+    pCVar2 = this_ptr->render_vertices;
+    if (0 < this_ptr->broken_vertex_count) {
+      do {
+        pCVar2->x = (int)ROUND(pCVar1->x * 256.0f);
+        pCVar2->y = (int)ROUND(pCVar1->y * 256.0f);
+        pCVar2->z = (int)ROUND(pCVar1->z * 256.0f);
+        iVar4 = iVar4 + 1;
+        pCVar1 = pCVar1 + 1;
+        pCVar2 = pCVar2 + 1;
+      } while (iVar4 < this_ptr->broken_vertex_count);
+    }
+    iVar4 = 0;
+    core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
+              (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->render_vertices);
+    if (0 < this_ptr->broken_polygon_count) {
+      poly = (SMRGLPrimitivePoly *)this_ptr->broken_quads;
+      do {
+        this_ptr->broken_quads[iVar4].base.surface_normal.A.i = 0;
+        this_ptr_00 = g_CDemonRendererPtr2;
+        this_ptr->broken_quads[iVar4].base.surface_normal.B.i = 0;
+        this_ptr->broken_quads[iVar4].base.surface_normal.C.i = 0;
+        this_ptr->broken_quads[iVar4].base.surface_normal.D.i = 0;
+        iVar4 = iVar4 + 1;
+        engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0(this_ptr_00,poly,0xc1);
+        poly = (SMRGLPrimitivePoly *)(poly->vertices + 4);
+      } while (iVar4 < this_ptr->broken_polygon_count);
+    }
+    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
+  }
+  return;
+}

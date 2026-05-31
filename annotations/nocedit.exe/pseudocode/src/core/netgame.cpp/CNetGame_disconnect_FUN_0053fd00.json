@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 456,
-    "complexity_score": 208,
+    "complexity_score": 223,
     "cross_reference_count": 9,
     "function_call_count": 7,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 183,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "bit_int_float_compare"
+      "bit_int_float_compare",
+      "shadow_pointer_walk"
     ],
     "total_lines": 639
   },
@@ -336,6 +337,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `dest_addr` was initialized to the address of element [0]'s subfield of an array (`dest_addr = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*dest_addr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `dest_addr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 164,
+      "match": "dest_addr = dest_addr + N",
+      "severity": "moderate",
+      "text": "dest_addr = dest_addr + 0xf;",
+      "type": "shadow_pointer_walk"
+    },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40400000 is the IEEE 754 bit pattern of 3f. Rewrite in a .keep as a plain float compare against 3f.",
       "line": 57,

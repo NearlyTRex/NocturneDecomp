@@ -672,6 +672,15 @@
       "type": "shadow_pointer_walk"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` was initialized to the address of element [0]'s subfield of an array (`pCVar5 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCVar5)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCVar5->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 240,
+      "match": "pCVar5 = pCVar5 + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar5 = pCVar5 + 0x23;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar11->vertices[0].a`). Replace `pCVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 241,
       "match": "pCVar11 = (T *)&pCVar11->FIELD[N].SUBFIELD",
