@@ -132,7 +132,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `out_b` was initialized to the address of element [0]'s subfield of an array (`out_b = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*out_b)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `out_b->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `out_b` was initialized to the address of an array element's subfield (`out_b = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*out_b)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `out_b->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 74,
       "match": "out_b = out_b + N",
       "severity": "moderate",
@@ -140,7 +140,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `out_g` was initialized to the address of element [0]'s subfield of an array (`out_g = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*out_g)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `out_g->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `out_g` was initialized to the address of an array element's subfield (`out_g = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*out_g)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `out_g->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 75,
       "match": "out_g = out_g + N",
       "severity": "moderate",

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 93,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 18,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 58,
-    "suspect_count": 3,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 252
   },
   "cross_references": [],
@@ -235,12 +233,39 @@
   },
   "resolved_suspects": [
     {
+      "description": "Watcom shadow-pointer walk \u2014 `vector_ptr` was initialized to the address of an array element's subfield (`vector_ptr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*vector_ptr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `vector_ptr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 46,
+      "match": "vector_ptr = vector_ptr + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "vector_ptr = vector_ptr + 6;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `quat_ptr` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*quat_ptr) + offsetof(subfield)` equals the real array stride. Replace `quat_ptr->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 47,
       "match": "quat_ptr = (T *)&quat_ptr[N].SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "quat_ptr = (CQuaternion4f *)&quat_ptr[4].y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `vector_ptr_00` was initialized to the address of an array element's subfield (`vector_ptr_00 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*vector_ptr_00)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `vector_ptr_00->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 49,
+      "match": "vector_ptr_00 = vector_ptr_00 + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "vector_ptr_00 = vector_ptr_00 + 6;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` was initialized to the address of an array element's subfield (`local_14 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_14)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_14->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 50,
+      "match": "local_14 = local_14 + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_14 = local_14 + 0x12;",
       "type": "shadow_pointer_walk"
     },
     {
@@ -283,32 +308,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `vector_ptr` was initialized to the address of element [0]'s subfield of an array (`vector_ptr = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*vector_ptr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `vector_ptr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 46,
-      "match": "vector_ptr = vector_ptr + N",
-      "severity": "moderate",
-      "text": "vector_ptr = vector_ptr + 6;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `vector_ptr_00` was initialized to the address of element [0]'s subfield of an array (`vector_ptr_00 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*vector_ptr_00)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `vector_ptr_00->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 49,
-      "match": "vector_ptr_00 = vector_ptr_00 + N",
-      "severity": "moderate",
-      "text": "vector_ptr_00 = vector_ptr_00 + 6;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_14` was initialized to the address of element [0]'s subfield of an array (`local_14 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_14)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_14->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 50,
-      "match": "local_14 = local_14 + N",
-      "severity": "moderate",
-      "text": "local_14 = local_14 + 0x12;",
-      "type": "shadow_pointer_walk"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

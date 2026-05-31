@@ -14,7 +14,6 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
   CBodyPart *body_part;
   SBoneGuyBox *pSVar3;
   CLocation *pCVar5;
-  CVector3f *pCVar6;
   CQuaternion4f local_48;
   CVector3f local_38;
   int local_18;
@@ -35,7 +34,6 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
   }
   local_18 = 0;
   if (0 < pCVar1->num_parts) {
-    pCVar6 = &this_ptr->boxes[0].orient;
     do {
       local_38.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
       local_38.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,10.0);
@@ -55,10 +53,9 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
         pSVar3->pos = (body_part->base).location.position;
       }
       pUVar1 = &(body_part->base).orient;
-      if (pCVar6 != (CVector3f *)pUVar1) {
-        *pCVar6 = (body_part->base).orient.vec;
+      if (&this_ptr->boxes[local_18].orient != (CVector3f *)pUVar1) {
+        this_ptr->boxes[local_18].orient = (body_part->base).orient.vec;
       }
-      pCVar6 = pCVar6 + 6;
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&(body_part->base).orient.vec,&local_48);
       this_ptr->boxes[local_18].start_orient = local_48;
       local_18 = local_18 + 1;

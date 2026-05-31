@@ -798,7 +798,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_40` was initialized to the address of element [0]'s subfield of an array (`local_40 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_40)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_40->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `local_40` was initialized to the address of an array element's subfield (`local_40 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_40)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_40->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 228,
       "match": "local_40 = local_40 + N",
       "resolution_source": "keep",
@@ -816,7 +816,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_2c` was initialized to the address of element [0]'s subfield of an array (`local_2c = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_2c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_2c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `local_2c` was initialized to the address of an array element's subfield (`local_2c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_2c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_2c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 230,
       "match": "local_2c = local_2c + N",
       "resolution_source": "keep",
@@ -825,7 +825,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_28` was initialized to the address of element [0]'s subfield of an array (`local_28 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_28)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_28->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `local_28` was initialized to the address of an array element's subfield (`local_28 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_28)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_28->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 231,
       "match": "local_28 = local_28 + N",
       "resolution_source": "keep",
@@ -834,7 +834,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_20` was initialized to the address of element [0]'s subfield of an array (`local_20 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_20)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_20->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `local_20` was initialized to the address of an array element's subfield (`local_20 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_20)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_20->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 232,
       "match": "local_20 = local_20 + N",
       "resolution_source": "keep",
@@ -843,7 +843,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_44` was initialized to the address of element [0]'s subfield of an array (`local_44 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_44)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_44->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `local_44` was initialized to the address of an array element's subfield (`local_44 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_44)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_44->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 233,
       "match": "local_44 = local_44 + N",
       "resolution_source": "keep",
@@ -870,7 +870,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_3c` was initialized to the address of element [0]'s subfield of an array (`local_3c = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_3c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_3c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `local_3c` was initialized to the address of an array element's subfield (`local_3c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_3c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_3c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 301,
       "match": "local_3c = local_3c + N",
       "resolution_source": "keep",
@@ -879,7 +879,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_30` was initialized to the address of element [0]'s subfield of an array (`local_30 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_30)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_30->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `local_30` was initialized to the address of an array element's subfield (`local_30 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_30)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_30->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 302,
       "match": "local_30 = local_30 + N",
       "resolution_source": "keep",
@@ -888,7 +888,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_24` was initialized to the address of element [0]'s subfield of an array (`local_24 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_24)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_24->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `local_24` was initialized to the address of an array element's subfield (`local_24 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_24)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_24->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 303,
       "match": "local_24 = local_24 + N",
       "resolution_source": "keep",
@@ -897,7 +897,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_14` was initialized to the address of element [0]'s subfield of an array (`local_14 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_14)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_14->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` was initialized to the address of an array element's subfield (`local_14 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_14)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_14->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 304,
       "match": "local_14 = local_14 + N",
       "resolution_source": "keep",

@@ -12,9 +12,6 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_0041d270(CBoneGuy *this_ptr)
 {
   CDeformableModelInstance *model_ptr;
   int iVar1;
-  CVector3f *vector_ptr;
-  CVector3f *vector_ptr_00;
-  CBodyPart **local_14;
   
   core_enemy_cpp_CEnemy_archive_FUN_004a9660(&this_ptr->base);
   core_actor_cpp_archiveFloat_FUN_0040b770(&(this_ptr->base).speed,"speed");
@@ -36,21 +33,15 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_0041d270(CBoneGuy *this_ptr)
     core_actor_cpp_archivePartStatus_FUN_0040bae0(model_ptr,"partStatus");
     iVar1 = 0;
     if (0 < this_ptr->box_count) {
-      local_14 = &this_ptr->boxes[0].body_part;
-      vector_ptr_00 = &this_ptr->boxes[0].source_pos;
-      vector_ptr = &this_ptr->boxes[0].orient;
       do {
         core_actor_cpp_archiveVector_FUN_0040b340(&this_ptr->boxes[iVar1].pos,"boxListPos")
         ;
-        core_actor_cpp_archiveVector_FUN_0040b340(vector_ptr,"boxListOrient");
+        core_actor_cpp_archiveVector_FUN_0040b340(&this_ptr->boxes[iVar1].orient,"boxListOrient");
         core_actor_cpp_archiveQuaternion_FUN_0040b520(&this_ptr->boxes[iVar1].dest_orient,"boxListDestOrient");
         core_actor_cpp_archiveQuaternion_FUN_0040b520(&this_ptr->boxes[iVar1].start_orient,"boxListStartOrient");
-        core_actor_cpp_archiveVector_FUN_0040b340(vector_ptr_00,"sourcePos");
+        core_actor_cpp_archiveVector_FUN_0040b340(&this_ptr->boxes[iVar1].source_pos,"sourcePos");
+        core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor **)&this_ptr->boxes[iVar1].body_part,"boxListPart");
         iVar1 = iVar1 + 1;
-        vector_ptr = vector_ptr + 6;
-        core_actor_cpp_archiveActor_FUN_0040b870((CDemonActor **)local_14,"boxListPart");
-        vector_ptr_00 = vector_ptr_00 + 6;
-        local_14 = local_14 + 0x12;
       } while (iVar1 < this_ptr->box_count);
     }
   }

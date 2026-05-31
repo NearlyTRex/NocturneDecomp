@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6131 (95.0%)
-Functions with suspects: 323 (5.0%)
+Clean functions: 6143 (95.2%)
+Functions with suspects: 311 (4.8%)
 
-Total suspect patterns: 2138
+Total suspect patterns: 2109
 Average suspects per function: 0.33
 
-Virtual files: 214 total, 178 at 100%, 187 at 90%+
+Virtual files: 214 total, 186 at 100%, 187 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -31,8 +31,8 @@ SUSPECT PATTERN BREAKDOWN
   pointer_cast              979
   unrolled_memcpy           356
   unrolled_strcpy           157
-  shadow_pointer_walk       111
   missing_cave_copy         96
+  shadow_pointer_walk       82
   carry_arith_idiom         63
   unrolled_strlen           59
   bitcast_double_pair       36
@@ -110,7 +110,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6081 more
+  ... and 6093 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -187,19 +187,6 @@ FUNCTIONS BY SUSPECT TYPE
     004bc650: engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
     ... and 49 more
 
-  shadow_pointer_walk (60 functions):
-    005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
-    00541260: core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00541260
-    00543150: core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
-    005401e0: core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    00541390: core_netgame.cpp_CNetGame_runLobby_FUN_00541390
-    00542dd0: core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
-    0053fd00: core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
-    00542470: core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
-    005406a0: core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
-    00541ff0: core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
-    ... and 50 more
-
   missing_cave_copy (15 functions):
     00558fd0: core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
     005571f0: core_scat.cpp_CScat_process_FUN_005571f0
@@ -212,6 +199,19 @@ FUNCTIONS BY SUSPECT TYPE
     005db050: core_tentacle.cpp_CTentacle_process_FUN_005db050
     004e84a0: core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
     ... and 5 more
+
+  shadow_pointer_walk (48 functions):
+    005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
+    00541260: core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00541260
+    00543150: core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
+    005401e0: core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
+    00541390: core_netgame.cpp_CNetGame_runLobby_FUN_00541390
+    00542dd0: core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
+    0053fd00: core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
+    00542470: core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
+    005406a0: core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
+    00541ff0: core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
+    ... and 38 more
 
   carry_arith_idiom (9 functions):
     00437230: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230

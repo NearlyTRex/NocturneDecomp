@@ -338,7 +338,7 @@
   },
   "suspects": [
     {
-      "description": "Watcom shadow-pointer walk \u2014 `dest_addr` was initialized to the address of element [0]'s subfield of an array (`dest_addr = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*dest_addr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `dest_addr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `dest_addr` was initialized to the address of an array element's subfield (`dest_addr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*dest_addr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `dest_addr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 164,
       "match": "dest_addr = dest_addr + N",
       "severity": "moderate",

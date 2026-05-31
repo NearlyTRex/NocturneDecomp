@@ -13,9 +13,7 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
   CVector3f *pCVar9;
   SChainVertex *pSVar1;
   int iVar10;
-  CVector3f *pCVar11;
   SChainVertex *pSVar12;
-  CVector3f *pCVar2;
   CVector3f CStack_3c;
   float local_30;
   float local_2c;
@@ -45,8 +43,6 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
     fVar8 = 1.0 / (float)(this_ptr->vertex_count + -1);
     iVar10 = 0;
     if (0 < this_ptr->vertex_count) {
-      pCVar2 = &this_ptr->vertices[0].prev_position;
-      pCVar11 = &this_ptr->vertices[0].velocity;
       do {
         pSVar12 = this_ptr->vertices + iVar10;
         if (pSVar12 != (SChainVertex *)&local_30) {
@@ -57,16 +53,14 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
         local_30 = local_30 + (fVar2 - fVar3) * fVar8;
         local_2c = local_2c + (fVar4 - fVar5) * fVar8;
         local_28 = local_28 + (fVar6 - fVar7) * fVar8;
-        pCVar11->z = 0.0;
-        pCVar11->y = 0.0;
+        this_ptr->vertices[iVar10].velocity.z = 0.0;
+        this_ptr->vertices[iVar10].velocity.y = 0.0;
         pSVar1 = this_ptr->vertices + iVar10;
-        pCVar11->x = 0.0;
-        if ((SChainVertex *)pCVar2 != pSVar1) {
-          pCVar11[1] = pSVar1->position;
+        this_ptr->vertices[iVar10].velocity.x = 0.0;
+        if ((SChainVertex *)&this_ptr->vertices[iVar10].prev_position != pSVar1) {
+          this_ptr->vertices[iVar10].prev_position = pSVar1->position;
         }
-        pCVar2 = pCVar2 + 3;
         iVar10 = iVar10 + 1;
-        pCVar11 = pCVar11 + 3;
       } while (iVar10 < this_ptr->vertex_count);
     }
   }

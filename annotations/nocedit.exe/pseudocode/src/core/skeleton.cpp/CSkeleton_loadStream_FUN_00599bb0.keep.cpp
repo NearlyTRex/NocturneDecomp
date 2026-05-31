@@ -13,11 +13,8 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this
   int iVar1;
   int iVar3;
   CQuaternion4f *pCVar3;
-  int *piVar4;
   float *pfVar5;
-  float *pfVar6;
   float *pfVar8;
-  float *pfVar7;
   int local_24;
   int local_20;
   int local_1c;
@@ -59,11 +56,10 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this
   } while (iVar3 != 10);
   iVar3 = 0;
   if (0 < this_ptr->bone_count) {
-    piVar4 = &this_ptr->bone_list[0].parent_index;
     do {
-      _fscanf(file_handle,"\"%[^\"]\",%d\n",this_ptr->bone_list[iVar3].bone_name,piVar4);
+      _fscanf(file_handle,"\"%[^\"]\",%d\n",this_ptr->bone_list[iVar3].bone_name,
+              &this_ptr->bone_list[iVar3].parent_index);
       iVar3 = iVar3 + 1;
-      piVar4 = piVar4 + 9;
     } while (iVar3 < this_ptr->bone_count);
   }
   do {
@@ -135,13 +131,10 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this
     } while (iVar3 != 10);
     iVar3 = 0;
     if (0 < this_ptr->bone_count) {
-      pfVar6 = &this_ptr->bone_scales[0].y;
-      pfVar7 = &this_ptr->bone_scales[0].z;
       do {
-        _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->bone_scales[iVar3].x,pfVar6,pfVar7);
-        pfVar7 = pfVar7 + 3;
+        _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->bone_scales[iVar3].x,
+                &this_ptr->bone_scales[iVar3].y,&this_ptr->bone_scales[iVar3].z);
         iVar3 = iVar3 + 1;
-        pfVar6 = pfVar6 + 3;
       } while (iVar3 < this_ptr->bone_count);
     }
   }

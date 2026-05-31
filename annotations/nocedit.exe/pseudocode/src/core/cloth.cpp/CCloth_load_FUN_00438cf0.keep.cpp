@@ -15,17 +15,10 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   CVector3f *pCVar10;
   int iVar11;
   int iVar2;
-  float *pfVar12;
   int *piVar14;
-  float *pfVar15;
   int iVar16;
   char acStack_238 [256];
   char local_138 [256];
-  float *local_2c;
-  float *local_28;
-  float *local_20;
-  float *local_1c;
-  float *local_14;
   float fVar1;
   float fVar3;
   float fVar6;
@@ -104,25 +97,13 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   _fscanf(stream,"%d\n",&this_ptr->collide_bone_count);
   iVar2 = 0;
   if (0 < this_ptr->collide_bone_count) {
-    pfVar12 = &this_ptr->collide_bones[0].radius1;
-    local_14 = &this_ptr->collide_bones[0].radius2;
-    local_20 = &this_ptr->collide_bones[0].euler1.y;
-    local_1c = &this_ptr->collide_bones[0].euler1.z;
-    local_2c = &this_ptr->collide_bones[0].euler2.z;
-    local_28 = &this_ptr->collide_bones[0].length;
-    pfVar15 = &this_ptr->collide_bones[0].euler2.y;
     do {
       pSVar9 = this_ptr->collide_bones + iVar2;
       iVar2 = iVar2 + 1;
-      _fscanf(stream,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",pSVar9->name,pfVar12,local_14,&pSVar9->euler1.x,local_20,
-                 local_1c,&pSVar9->euler2.x,local_2c,pfVar15,local_28);
-      pfVar12 = pfVar12 + 0x2b;
-      local_14 = local_14 + 0x2b;
-      local_20 = local_20 + 0x2b;
-      local_1c = local_1c + 0x2b;
-      local_2c = local_2c + 0x2b;
-      local_28 = local_28 + 0x2b;
-      pfVar15 = pfVar15 + 0x2b;
+      _fscanf(stream,"\"%[^\"]\",%f,%f, %f,%f,%f, %f,%f,%f, %f\n",pSVar9->name,
+                 &pSVar9->radius1,&pSVar9->radius2,&pSVar9->euler1.x,&pSVar9->euler1.y,
+                 &pSVar9->euler1.z,&pSVar9->euler2.x,&pSVar9->euler2.z,&pSVar9->euler2.y,
+                 &pSVar9->length);
     } while (iVar2 < this_ptr->collide_bone_count);
   }
   iVar16 = 0;

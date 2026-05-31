@@ -22,7 +22,6 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
   float fVar9;
   int iVar10;
   int iVar14;
-  CLocation *pCVar15;
   SMRGLPrimitiveTriangle *texture;
   int iVar9;
   int iVar16;
@@ -89,17 +88,15 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
     }
     iVar9 = 0;
     if (0 < this_ptr->fire_count) {
-      pCVar15 = &this_ptr->fires[0].flame.base.location;
       do {
         pCVar6 = &this_ptr->fires[iVar9].local_position;
         pCVar6->x = pCVar6->x + local_6c.x;
         pCVar6->y = pCVar6->y + local_6c.y;
         pCVar6->z = pCVar6->z + local_6c.z;
-        iVar9 = iVar9 + 1;
         pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            (&this_ptr->base,&local_3c,pCVar6);
-        pCVar15->position = *pCVar6;
-        pCVar15 = pCVar15 + 0x2b;
+        this_ptr->fires[iVar9].flame.base.location.position = *pCVar6;
+        iVar9 = iVar9 + 1;
       } while (iVar9 < this_ptr->fire_count);
     }
     memset(this_ptr->normals,0,this_ptr->vertex_count * 0xc);

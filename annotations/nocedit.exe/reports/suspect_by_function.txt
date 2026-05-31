@@ -5,60 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6120 (94.8%)
-With suspects: 334
-Total suspects: 2138
-
-====================================================================================================
-core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 (1 suspect)
-  File: core/bodypart.cpp
-====================================================================================================
-  Line 112 [shadow_pointer_walk]: pCVar15 = pCVar15 + 0x2b;
-
-====================================================================================================
-core_bodypart.cpp_CBodyPart_processFires_FUN_00419e10 (1 suspect)
-  File: core/bodypart.cpp
-====================================================================================================
-  Line 46 [shadow_pointer_walk]: pCVar3 = pCVar3 + 0x2b;
-
-====================================================================================================
-core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270 (3 suspects)
-  File: core/boneguy.cpp
-====================================================================================================
-  Line 46 [shadow_pointer_walk]: vector_ptr = vector_ptr + 6;
-  Line 49 [shadow_pointer_walk]: vector_ptr_00 = vector_ptr_00 + 6;
-  Line 50 [shadow_pointer_walk]: local_14 = local_14 + 0x12;
-
-====================================================================================================
-core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680 (1 suspect)
-  File: core/boneguy.cpp
-====================================================================================================
-  Line 61 [shadow_pointer_walk]: pCVar6 = pCVar6 + 6;
-
-====================================================================================================
-core_chain.cpp_CChain_process_FUN_004300d0 (1 suspect)
-  File: core/chain.cpp
-====================================================================================================
-  Line 217 [shadow_pointer_walk]: pCVar20 = pCVar20 + 3;
-
-====================================================================================================
-core_chain.cpp_CChain_setup_FUN_0042fd20 (2 suspects)
-  File: core/chain.cpp
-====================================================================================================
-  Line 61 [shadow_pointer_walk]: pCVar2 = pCVar2 + 3;
-  Line 63 [shadow_pointer_walk]: pCVar11 = pCVar11 + 3;
-
-====================================================================================================
-core_cloth.cpp_CCloth_load_FUN_00438cf0 (7 suspects)
-  File: core/cloth.cpp
-====================================================================================================
-  Line 121 [shadow_pointer_walk]: pfVar12 = pfVar12 + 0x2b;
-  Line 122 [shadow_pointer_walk]: local_14 = local_14 + 0x2b;
-  Line 124 [shadow_pointer_walk]: local_20 = local_20 + 0x2b;
-  Line 125 [shadow_pointer_walk]: local_1c = local_1c + 0x2b;
-  Line 127 [shadow_pointer_walk]: local_2c = local_2c + 0x2b;
-  Line 128 [shadow_pointer_walk]: local_28 = local_28 + 0x2b;
-  Line 129 [shadow_pointer_walk]: pfVar15 = pfVar15 + 0x2b;
+Clean: 6132 (95.0%)
+With suspects: 322
+Total suspects: 2109
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -246,13 +195,6 @@ core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
   File: core/elephant.cpp
 ====================================================================================================
   Line 25 [static_invalid_pointer_cast]: if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {
-
-====================================================================================================
-core_fire.cpp_CCrater_load_FUN_004c4880 (2 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 21 [shadow_pointer_walk]: pfVar3 = pfVar3 + 3;
-  Line 22 [shadow_pointer_walk]: pfVar4 = pfVar4 + 3;
 
 ====================================================================================================
 core_flies.cpp_CFlies_initFly_FUN_004cc760 (2 suspects)
@@ -546,12 +488,6 @@ core_glass.cpp_CGlass_shatter_FUN_004eaef0 (9 suspects)
   Line 112 [raw_address_constant]: local_9c.z = 0xfe0000;
   Line 114 [raw_address_constant]: local_9c.w = 0xfe0000;
   Line 115 [raw_address_constant]: local_8c.w = 0xfe0000;
-
-====================================================================================================
-core_gore.cpp_CFootstep_init_FUN_004ed240 (1 suspect)
-  File: core/gore.cpp
-====================================================================================================
-  Line 54 [shadow_pointer_walk]: pfVar3 = pfVar3 + 3;
 
 ====================================================================================================
 core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0 (1 suspect)
@@ -859,23 +795,6 @@ core_mobster.cpp_CMobster_process_FUN_00525840 (6 suspects)
   Line 532 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   Line 562 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
   Line 565 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-
-====================================================================================================
-core_motion.cpp_CMotionList_load_FUN_0052cd70 (5 suspects)
-  File: core/motion.cpp
-====================================================================================================
-  Line 106 [shadow_pointer_walk]: local_14 = local_14 + 6;
-  Line 108 [shadow_pointer_walk]: local_1c = local_1c + 6;
-  Line 109 [shadow_pointer_walk]: local_18 = local_18 + 6;
-  Line 110 [shadow_pointer_walk]: piVar2 = piVar2 + 6;
-  Line 126 [shadow_pointer_walk]: piVar2 = piVar2 + 2;
-
-====================================================================================================
-core_motion.cpp_CMotionList_save_FUN_0052d170 (2 suspects)
-  File: core/motion.cpp
-====================================================================================================
-  Line 78 [shadow_pointer_walk]: pSVar3 = (SMotion *)(pSVar3->motion_name + 8);
-  Line 88 [shadow_pointer_walk]: pSVar9 = (SMotion *)(pSVar9->motion_name + 4);
 
 ====================================================================================================
 core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (8 suspects)
@@ -1413,14 +1332,6 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005
 ====================================================================================================
   Line 29 [static_invalid_pointer_cast]: (&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,
   Line 30 [static_invalid_pointer_cast]: (int *)local_24,&local_60);
-
-====================================================================================================
-core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0 (3 suspects)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 62 [shadow_pointer_walk]: piVar4 = piVar4 + 9;
-  Line 138 [shadow_pointer_walk]: pfVar7 = pfVar7 + 3;
-  Line 140 [shadow_pointer_walk]: pfVar6 = pfVar6 + 3;
 
 ====================================================================================================
 core_sound.cpp_updateListeners_FUN_005b1870 (5 suspects)

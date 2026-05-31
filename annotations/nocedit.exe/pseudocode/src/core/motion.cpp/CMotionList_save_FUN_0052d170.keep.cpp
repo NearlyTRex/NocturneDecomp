@@ -10,11 +10,8 @@
 void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr,_FILE *file_handle)
 
 {
-  int *piVar2;
   int iVar7;
   SMotionTransition *pSVar8;
-  SMotion *pSVar3;
-  SMotion *pSVar9;
   int iVar4;
   char (*pacVar10) [30];
   int local_18;
@@ -78,25 +75,20 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr
       _fprintf(file_handle,"// motion %d signal count, list: frameNumber, value\n",local_18);
       iVar4 = 0;
       _fprintf(file_handle,"%d\n",local_14->signal_count);
-      pSVar3 = local_14;
       if (0 < local_14->signal_count) {
         do {
+          _fprintf(file_handle,"%d,%d\n",local_14->signals[iVar4].frame_number,
+                     local_14->signals[iVar4].value);
           iVar4 = iVar4 + 1;
-          _fprintf(file_handle,"%d,%d\n",pSVar3->signals[0].frame_number,
-                     pSVar3->signals[0].value);
-          pSVar3 = (SMotion *)(pSVar3->motion_name + 8);
         } while (iVar4 < local_14->signal_count);
       }
       _fprintf(file_handle,"// motion %d marker count, list\n",local_18);
       iVar4 = 0;
       _fprintf(file_handle,"%d",local_14->marker_count);
-      pSVar9 = local_14;
       if (0 < local_14->marker_count) {
         do {
-          piVar2 = pSVar9->markers;
-          pSVar9 = (SMotion *)(pSVar9->motion_name + 4);
+          _fprintf(file_handle," %d",local_14->markers[iVar4]);
           iVar4 = iVar4 + 1;
-          _fprintf(file_handle," %d",*piVar2);
         } while (iVar4 < local_14->marker_count);
       }
       _fprintf(file_handle,"\n");

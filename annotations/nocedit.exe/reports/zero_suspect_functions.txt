@@ -614,6 +614,7 @@ annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_canPickup_FUN
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_ctor_FUN_00419010.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_dtor_FUN_00419130.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_fillAttackDamageInfo_FUN_0041b210.cpp
+annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_finalizeGeometry_FUN_0041a050.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_getActorType_FUN_00419000.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_getAllowedMeleeAttackTypes_FUN_0041b1f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_getBoundingBox_FUN_00419f60.keep.cpp
@@ -623,6 +624,7 @@ annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_initializeInE
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_onDropped_FUN_00419fd0.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_pickup_FUN_00419fc0.cpp
+annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_processFires_FUN_00419e10.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_processInEditor_FUN_0041b260.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_process_FUN_00419be0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_renderBackground_FUN_00419610.keep.cpp
@@ -649,9 +651,11 @@ annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/scaleVector_FUN_0041b4e
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/staticInit_FUN_00418de0.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/subtractVector_FUN_0041b510.cpp
 annotations/nocedit.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_addFilesToExtract_FUN_0041da10.cpp
+annotations/nocedit.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_archive_FUN_0041d270.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_beginRecombine_FUN_0041d8a0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_ctor_FUN_0041bbc0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_dtor_FUN_0041da40.cpp
+annotations/nocedit.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_explode_FUN_0041d680.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_getActorType_FUN_0041b850.cpp
 annotations/nocedit.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_getCollisionType_FUN_0041d970.cpp
@@ -824,7 +828,9 @@ annotations/nocedit.exe/pseudocode/src/core/chain.cpp/CChain_getBoundingBox_FUN_
 annotations/nocedit.exe/pseudocode/src/core/chain.cpp/CChain_getCollisionType_FUN_00431110.cpp
 annotations/nocedit.exe/pseudocode/src/core/chain.cpp/CChain_getPropertyList_FUN_00431120.cpp
 annotations/nocedit.exe/pseudocode/src/core/chain.cpp/CChain_getTargetBoneWorldPosition_FUN_0042fcc0.cpp
+annotations/nocedit.exe/pseudocode/src/core/chain.cpp/CChain_process_FUN_004300d0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/chain.cpp/CChain_renderTransparent_FUN_004308f0.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/chain.cpp/CChain_setup_FUN_0042fd20.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/chain.cpp/SChainVertex_arrdtor_FUN_004313f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/chain.cpp/SChainVertex_ctor_FUN_004313d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/chain.cpp/SChainVertex_dtor_FUN_004313e0.cpp
@@ -966,6 +972,7 @@ annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_dtor_FUN_00438c00.c
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_free_FUN_00438cb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_grabCloth_FUN_0043e0d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_initializeConnections_FUN_004394e0.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_load_FUN_00438cf0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_lockedVertexEditor_FUN_0043d590.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_orientBoneToChild_FUN_0043a110.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_process_FUN_0043ab80.cpp
@@ -1782,6 +1789,7 @@ annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CCrater_activate_FUN_004c42
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CCrater_arrdtor_FUN_004c9890.cpp
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CCrater_ctor_FUN_004c9580.cpp
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CCrater_dtor_FUN_004c95a0.cpp
+annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CCrater_load_FUN_004c4880.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CCrater_process_FUN_004c4550.cpp
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CCrater_render_FUN_004c4620.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CCrater_reset_FUN_004c41e0.cpp
@@ -2223,6 +2231,7 @@ annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CBloodSplat_setupRenderStat
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CFootstep_arrdtor_FUN_004ee420.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CFootstep_ctor_FUN_004ee370.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CFootstep_dtor_FUN_004ee390.cpp
+annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CFootstep_init_FUN_004ed240.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CFootstep_render_FUN_004ed3c0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_allocateBloodPool_FUN_004edde0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gore.cpp/CGore_allocateBloodSplat_FUN_004edaf0.cpp
@@ -2944,6 +2953,8 @@ annotations/nocedit.exe/pseudocode/src/core/motion.cpp/CMotionController_startTr
 annotations/nocedit.exe/pseudocode/src/core/motion.cpp/CMotionList_ctor_FUN_0052cd50.cpp
 annotations/nocedit.exe/pseudocode/src/core/motion.cpp/CMotionList_findMotionIndex_FUN_0052d460.cpp
 annotations/nocedit.exe/pseudocode/src/core/motion.cpp/CMotionList_findStateIndex_FUN_0052d4f0.cpp
+annotations/nocedit.exe/pseudocode/src/core/motion.cpp/CMotionList_load_FUN_0052cd70.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/motion.cpp/CMotionList_save_FUN_0052d170.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_addSet_FUN_00538d60.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_buildFilteredActorList_FUN_0053cc30.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_buildScriptCrossReferences_FUN_0053ea30.cpp
@@ -3745,6 +3756,7 @@ annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_free_FUN_0059
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_getBoneAngleAtFrame_FUN_0059a050.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_getBoneAngleInterpolated_FUN_0059a070.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_getHierarchyDistance_FUN_0059a100.cpp
+annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_loadStream_FUN_00599bb0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CSkeleton_load_FUN_00599b10.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CVector3f_arrdtor1_FUN_005a1ff0.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CVector3f_arrdtor2_FUN_005a2010.cpp

@@ -92,16 +92,15 @@ void __cdecl core_chain_cpp_CChain_process_FUN_004300d0(CChain *this_ptr,float d
   this_ptr->vertices[0].velocity.x = 0.0;
   pfVar5 = &this_ptr->dampen;
   local_34 = this_ptr->vertices + 2;
-  pCVar20 = &this_ptr->vertices[1].velocity;
   local_38 = this_ptr->vertices;
   for (local_30 = 1; local_30 < this_ptr->vertex_count + -1; local_30 = local_30 + 1) {
-    pCVar20->x = *pfVar5 * pCVar20->x;
-    pCVar20->y = *pfVar5 * pCVar20->y;
-    pCVar20->z = *pfVar5 * pCVar20->z;
+    pSVar18 = this_ptr->vertices + local_30;
+    (pSVar18->velocity).x = *pfVar5 * (pSVar18->velocity).x;
+    (pSVar18->velocity).y = *pfVar5 * (pSVar18->velocity).y;
+    (pSVar18->velocity).z = *pfVar5 * (pSVar18->velocity).z;
     fVar6 = 1.0 / (this_ptr->weight * (float)0.03125);
     local_b8 = fVar6 * 0.0;
     local_b4 = (0.0 - this_ptr->weight) * fVar6;
-    pSVar18 = this_ptr->vertices + local_30;
     local_d0 = local_b8;
     local_cc = local_b4;
     local_c8 = local_b8;
@@ -117,7 +116,6 @@ void __cdecl core_chain_cpp_CChain_process_FUN_004300d0(CChain *this_ptr,float d
     local_b0 = local_b8;
     core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042fed0(this_ptr,pSVar18,local_38);
     core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042fed0(this_ptr,pSVar18,local_34);
-    pCVar20 = pCVar20 + 3;
     local_34 = local_34 + 1;
     local_38 = local_38 + 1;
   }
@@ -171,14 +169,12 @@ void __cdecl core_chain_cpp_CChain_process_FUN_004300d0(CChain *this_ptr,float d
   } while (local_3c < 3);
   iVar14 = 0;
   if (0 < this_ptr->vertex_count) {
-    pCVar20 = &this_ptr->vertices[0].prev_position;
     do {
       pSVar18 = this_ptr->vertices + iVar14;
-      if ((SChainVertex *)pCVar20 != pSVar18) {
-        *pCVar20 = pSVar18->position;
+      if ((SChainVertex *)&this_ptr->vertices[iVar14].prev_position != pSVar18) {
+        this_ptr->vertices[iVar14].prev_position = pSVar18->position;
       }
       iVar14 = iVar14 + 1;
-      pCVar20 = pCVar20 + 3;
     } while (iVar14 < this_ptr->vertex_count);
   }
   bVar12 = false;

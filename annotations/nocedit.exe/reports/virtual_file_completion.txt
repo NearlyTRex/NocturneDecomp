@@ -6,8 +6,8 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6131 (95.0%)
-Files at 100%: 178
+Clean functions: 6143 (95.2%)
+Files at 100%: 186
 Files at 90%+: 187
 Files at 50%+: 214
 
@@ -32,12 +32,16 @@ FILES AT 100% (COMPLETE)
   core/battery.cpp: 17 functions, 155 lines
   core/beast.cpp: 14 functions, 164 lines
   core/biggs.cpp: 14 functions, 366 lines
+  core/bodypart.cpp: 45 functions, 1562 lines
+  core/boneguy.cpp: 28 functions, 1348 lines
   core/box.cpp: 30 functions, 2014 lines
   core/boxactor.cpp: 46 functions, 1100 lines
   core/bride.cpp: 14 functions, 771 lines
   core/bugs.cpp: 44 functions, 1795 lines
   core/camview.cpp: 6 functions, 38 lines
+  core/chain.cpp: 21 functions, 870 lines
   core/charactr.cpp: 109 functions, 4703 lines
+  core/cloth.cpp: 55 functions, 3111 lines
   core/colonel.cpp: 18 functions, 614 lines
   core/conveyor.cpp: 17 functions, 334 lines
   core/course.cpp: 15 functions, 1118 lines
@@ -71,6 +75,7 @@ FILES AT 100% (COMPLETE)
   core/event.cpp: 56 functions, 5437 lines
   core/fileman.cpp: 12 functions, 577 lines
   core/filmreel.cpp: 28 functions, 382 lines
+  core/fire.cpp: 185 functions, 5789 lines
   core/flame.cpp: 17 functions, 681 lines
   core/flamecan.cpp: 16 functions, 261 lines
   core/flamegun.cpp: 10 functions, 143 lines
@@ -79,6 +84,7 @@ FILES AT 100% (COMPLETE)
   core/game.cpp: 66 functions, 6745 lines
   core/gargoyle.cpp: 16 functions, 941 lines
   core/gasmask.cpp: 14 functions, 131 lines
+  core/gore.cpp: 54 functions, 1547 lines
   core/grave.cpp: 17 functions, 268 lines
   core/ground.cpp: 20 functions, 892 lines
   core/gun.cpp: 7 functions, 273 lines
@@ -110,6 +116,7 @@ FILES AT 100% (COMPLETE)
   core/moloch.cpp: 15 functions, 588 lines
   core/moon.cpp: 14 functions, 346 lines
   core/morph.cpp: 49 functions, 1410 lines
+  core/motion.cpp: 33 functions, 1092 lines
   core/npc.cpp: 14 functions, 341 lines
   core/particle.cpp: 6 functions, 155 lines
   core/passngr.cpp: 11 functions, 348 lines
@@ -128,6 +135,7 @@ FILES AT 100% (COMPLETE)
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
   core/simbox.cpp: 15 functions, 319 lines
+  core/skeleton.cpp: 117 functions, 5234 lines
   core/slew.cpp: 4 functions, 125 lines
   core/smiley.cpp: 16 functions, 833 lines
   core/sound.cpp: 37 functions, 1364 lines
@@ -193,47 +201,11 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 178 files
+Total: 186 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   99.5% | core/fire.cpp
-         184/185 clean, 1 remaining
-           - core_fire.cpp_CCrater_load_FUN_004c4880 (30 lines) [shadow_pointer_walk]
-
-   99.1% | core/skeleton.cpp
-         116/117 clean, 1 remaining
-           - core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0 (148 lines) [shadow_pointer_walk]
-
-   98.2% | core/cloth.cpp
-         54/55 clean, 1 remaining
-           - core_cloth.cpp_CCloth_load_FUN_00438cf0 (146 lines) [shadow_pointer_walk]
-
-   98.1% | core/gore.cpp
-         53/54 clean, 1 remaining
-           - core_gore.cpp_CFootstep_init_FUN_004ed240 (58 lines) [shadow_pointer_walk]
-
-   95.6% | core/bodypart.cpp
-         43/45 clean, 2 remaining
-           - core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 (199 lines) [shadow_pointer_walk]
-           - core_bodypart.cpp_CBodyPart_processFires_FUN_00419e10 (48 lines) [shadow_pointer_walk]
-
-   93.9% | core/motion.cpp
-         31/33 clean, 2 remaining
-           - core_motion.cpp_CMotionList_load_FUN_0052cd70 (155 lines) [shadow_pointer_walk]
-           - core_motion.cpp_CMotionList_save_FUN_0052d170 (96 lines) [shadow_pointer_walk]
-
-   92.9% | core/boneguy.cpp
-         26/28 clean, 2 remaining
-           - core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270 (58 lines) [shadow_pointer_walk]
-           - core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680 (86 lines) [shadow_pointer_walk]
-
-   90.5% | core/chain.cpp
-         19/21 clean, 2 remaining
-           - core_chain.cpp_CChain_process_FUN_004300d0 (274 lines) [shadow_pointer_walk]
-           - core_chain.cpp_CChain_setup_FUN_0042fd20 (71 lines) [shadow_pointer_walk]
-
    90.0% | core/skeledit.cpp
          63/70 clean, 7 remaining
            - core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (1852 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, sign_compare_idiom, unrolled_memcpy, unrolled_memset, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
@@ -244,7 +216,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines) [missing_cave_copy]
            - core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (187 lines) [pointer_cast, shadow_pointer_walk]
 
-Total: 9 files
+Total: 1 files
 
 ====================================================================================================
 FILES AT 50-89%

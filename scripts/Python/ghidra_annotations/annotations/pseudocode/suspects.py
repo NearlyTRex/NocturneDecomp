@@ -3289,26 +3289,38 @@ _SHADOW_PTR_WALK_ARROW_DECAY_PLUS_RE = re.compile(
 # disambiguating the bare arrow-decay-plus form from a string-copy cursor.
 _SHADOW_PTR_WALK_OTHER_FIELD_WINDOW = 25
 
+# Backward window (lines) to scan from a bare `IDENT = IDENT + N;` advance for the
+# matching `IDENT = &BASE->ARR[K].SUBFIELD;` init. Larger than OTHER_FIELD_WINDOW
+# because the init sits at the top of the loop and a physics/IO loop body
+# (per-vertex integration, per-record scanf) can run 30+ lines before the advance
+# at the bottom — e.g. CChain::process strides `&vertices[1].velocity` 27 lines
+# above its `pCVar20 = pCVar20 + 3`. The init regex's `&ARR[K].SUBFIELD` shape is
+# specific enough that the wider span does not introduce false pairings.
+_SHADOW_PTR_WALK_ELEM_INIT_WINDOW = 40
+
 # Bare element-stride advance variant: `IDENT = IDENT + N;` (no cast, N >= 2).
 # Unlike every other form above, the advance line itself carries no signal — a
 # plain pointer increment is ordinary iteration. The shadow-walk tell lives in
-# the *init*: the pointer was set to the address of element [0]'s *subfield* of
-# a differently-typed array (`IDENT = &BASE->ARR[0].SUBFIELD;`), so the pointee
-# is smaller than the array's element and `N * sizeof(*IDENT)` equals the array
-# stride. Watcom emits this when a `CVector3f *` (or other small-field pointer)
-# walks a large struct array one element per iteration — e.g.
+# the *init*: the pointer was set to the address of an array element's *subfield*
+# (`IDENT = &BASE->ARR[K].SUBFIELD;`), so the pointee is smaller than the array's
+# element and `N * sizeof(*IDENT)` equals the array stride. Watcom emits this
+# when a `CVector3f *` (or other small-field pointer) walks a large struct array
+# one element per iteration — e.g.
 # `pCVar7 = &this_ptr->reflectors[0].position;` ... `pCVar7 = pCVar7 + 8;`
-# (8 * sizeof(CVector3f) == sizeof(SReflector)). Flagged only when both the
-# advance AND a matching subfield-of-element-zero init for the same IDENT are
-# present (init scanned backward within _SHADOW_PTR_WALK_OTHER_FIELD_WINDOW),
-# which keeps plain `p = &arr[0]; p = p + 1;` array iteration (no `.SUBFIELD`)
-# from matching. N >= 2 is enforced in the handler. Self-update (`\1`) required.
+# (8 * sizeof(CVector3f) == sizeof(SReflector)). The element index K is usually 0
+# but need not be — a walk that skips a pinned root starts at [1], e.g.
+# `pCVar20 = &this_ptr->vertices[1].velocity;` ... `pCVar20 = pCVar20 + 3;`.
+# Flagged only when both the advance AND a matching subfield-of-element init for
+# the same IDENT are present (init scanned backward within
+# _SHADOW_PTR_WALK_OTHER_FIELD_WINDOW), which keeps plain `p = &arr[0]; p = p + 1;`
+# array iteration (no `.SUBFIELD`) from matching. N >= 2 is enforced in the
+# handler. Self-update (`\1`) required.
 _SHADOW_PTR_WALK_ELEM_ADVANCE_RE = re.compile(
     r'^\s*(\w+)\s*=\s*\1\s*\+\s*(' + _SPW_INT + r')\s*;\s*$'  # IDENT = IDENT + N;
 )
 _SHADOW_PTR_WALK_ELEM_INIT_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # LHS identifier
-    r'&\s*\w+\s*(?:->|\.)\s*\w+\s*\[\s*0\s*\]'       # &BASE->ARR[0]  (or BASE.ARR)
+    r'&\s*\w+\s*(?:->|\.)\s*\w+\s*\[\s*' + _SPW_INT + r'\s*\]'  # &BASE->ARR[K] (or BASE.ARR)
     r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)*
     r'\s*;\s*$'                                      # ;
 )
@@ -3388,7 +3400,7 @@ def identify_shadow_pointer_walk(decompiled_code):
         iteration — the pointer lands *inside* an array element, so advancing by
         N pointees strides one whole (larger) element.
         """
-        lo = max(0, start_idx - _SHADOW_PTR_WALK_OTHER_FIELD_WINDOW)
+        lo = max(0, start_idx - _SHADOW_PTR_WALK_ELEM_INIT_WINDOW)
         for i in range(lo, start_idx):
             m = _SHADOW_PTR_WALK_ELEM_INIT_RE.match(lines[i])
             if m and m.group(1) == ident:
@@ -3546,8 +3558,8 @@ def identify_shadow_pointer_walk(decompiled_code):
                 'text': line.strip()[:120],
                 'description': (
                     'Watcom shadow-pointer walk — `%s` was initialized to the '
-                    'address of element [0]\'s subfield of an array '
-                    '(`%s = &BASE->ARR[0].SUBFIELD;`) and is advanced here by '
+                    'address of an array element\'s subfield '
+                    '(`%s = &BASE->ARR[K].SUBFIELD;`) and is advanced here by '
                     '`+ N` whole pointees, where `N * sizeof(*%s)` equals the '
                     'array\'s element stride. The pointer is a smaller-typed '
                     'walker striding a larger struct array. Replace the '

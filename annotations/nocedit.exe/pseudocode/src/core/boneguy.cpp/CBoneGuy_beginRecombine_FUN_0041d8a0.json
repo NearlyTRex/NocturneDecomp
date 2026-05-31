@@ -143,7 +143,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` was initialized to the address of element [0]'s subfield of an array (`pCVar4 = &BASE->ARR[0].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` was initialized to the address of an array element's subfield (`pCVar4 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 39,
       "match": "pCVar4 = pCVar4 + N",
       "resolution_source": "keep",

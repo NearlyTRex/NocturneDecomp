@@ -10,105 +10,16 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  core/cloth.cpp (1 remaining of 55)
-    - core_cloth.cpp_CCloth_load_FUN_00438cf0
-      Suspects: shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk
-
-  core/gore.cpp (1 remaining of 54)
-    - core_gore.cpp_CFootstep_init_FUN_004ed240
-      Suspects: shadow_pointer_walk
-
-  core/fire.cpp (1 remaining of 185)
-    - core_fire.cpp_CCrater_load_FUN_004c4880
-      Suspects: shadow_pointer_walk, shadow_pointer_walk
-
-  core/skeleton.cpp (1 remaining of 117)
-    - core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0
-      Suspects: shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk
-
-  core/motion.cpp (2 remaining of 33)
-    - core_motion.cpp_CMotionList_load_FUN_0052cd70
-      Suspects: shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk
-    - core_motion.cpp_CMotionList_save_FUN_0052d170
-      Suspects: shadow_pointer_walk, shadow_pointer_walk
-
-  core/boneguy.cpp (2 remaining of 28)
-    - core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270
-      Suspects: shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk
-    - core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680
-      Suspects: shadow_pointer_walk
-
-  core/chain.cpp (2 remaining of 21)
-    - core_chain.cpp_CChain_process_FUN_004300d0
-      Suspects: shadow_pointer_walk
-    - core_chain.cpp_CChain_setup_FUN_0042fd20
-      Suspects: shadow_pointer_walk, shadow_pointer_walk
-
-  core/bodypart.cpp (2 remaining of 45)
-    - core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
-      Suspects: shadow_pointer_walk
-    - core_bodypart.cpp_CBodyPart_processFires_FUN_00419e10
-      Suspects: shadow_pointer_walk
-
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [shadow_pointer_walk] - 2 functions
+  [shadow_pointer_walk] - 1 functions
     core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00541260                ( 17 lines)
-    core_bodypart.cpp_CBodyPart_processFires_FUN_00419e10                  ( 48 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
-
-  core/fire.cpp (99.5% complete)
-    1 functions remaining:
-      core_fire.cpp_CCrater_load_FUN_004c4880 (30 lines)
-        Types: ['shadow_pointer_walk']
-
-  core/skeleton.cpp (99.1% complete)
-    1 functions remaining:
-      core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0 (148 lines)
-        Types: ['shadow_pointer_walk']
-
-  core/cloth.cpp (98.2% complete)
-    1 functions remaining:
-      core_cloth.cpp_CCloth_load_FUN_00438cf0 (146 lines)
-        Types: ['shadow_pointer_walk']
-
-  core/gore.cpp (98.1% complete)
-    1 functions remaining:
-      core_gore.cpp_CFootstep_init_FUN_004ed240 (58 lines)
-        Types: ['shadow_pointer_walk']
-
-  core/bodypart.cpp (95.6% complete)
-    2 functions remaining:
-      core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 (199 lines)
-        Types: ['shadow_pointer_walk']
-      core_bodypart.cpp_CBodyPart_processFires_FUN_00419e10 (48 lines)
-        Types: ['shadow_pointer_walk']
-
-  core/motion.cpp (93.9% complete)
-    2 functions remaining:
-      core_motion.cpp_CMotionList_load_FUN_0052cd70 (155 lines)
-        Types: ['shadow_pointer_walk']
-      core_motion.cpp_CMotionList_save_FUN_0052d170 (96 lines)
-        Types: ['shadow_pointer_walk']
-
-  core/boneguy.cpp (92.9% complete)
-    2 functions remaining:
-      core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270 (58 lines)
-        Types: ['shadow_pointer_walk']
-      core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680 (86 lines)
-        Types: ['shadow_pointer_walk']
-
-  core/chain.cpp (90.5% complete)
-    2 functions remaining:
-      core_chain.cpp_CChain_process_FUN_004300d0 (274 lines)
-        Types: ['shadow_pointer_walk']
-      core_chain.cpp_CChain_setup_FUN_0042fd20 (71 lines)
-        Types: ['shadow_pointer_walk']
 
   core/skeledit.cpp (90.0% complete)
     7 functions remaining:

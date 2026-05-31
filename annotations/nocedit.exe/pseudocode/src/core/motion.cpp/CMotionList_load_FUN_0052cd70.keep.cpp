@@ -14,7 +14,6 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_0052cd70(CMotionList *this_ptr
   int iVar1;
   SMotionSignal *pSVar3;
   char (*pacVar4) [30];
-  int *piVar2;
   int *piVar5;
   EMotionTransitionCmd local_38;
   int local_34;
@@ -23,9 +22,6 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_0052cd70(CMotionList *this_ptr
   int local_28;
   SMotionTransition *local_24;
   SMotionSignal *local_20;
-  int *local_1c;
-  float *local_18;
-  float *local_14;
   SMotion *pSVar1;
   
   local_34 = -1;
@@ -102,20 +98,13 @@ LAB_0052ce73:
       _fscanf(file_handle,"%d\n",&pSVar1->transition_count);
       if (0 < pSVar1->transition_count) {
         local_24 = pSVar1->transitions;
-        local_1c = &pSVar1->transitions[0].to_motion_number;
-        local_14 = &pSVar1->transitions[0].to_frame_number;
-        local_18 = &pSVar1->transitions[0].tween_time;
-        piVar2 = &pSVar1->transitions[0].set_new_state_as_desired;
         do {
           local_30 = local_24 + iVar1;
-          _fscanf(file_handle,"%d,%d,%d,%f,%f,%d\n",&local_30->desired_state,&local_38,local_1c,local_14,
-                     local_18,piVar2);
+          _fscanf(file_handle,"%d,%d,%d,%f,%f,%d\n",&local_30->desired_state,&local_38,
+                     &local_30->to_motion_number,&local_30->to_frame_number,
+                     &local_30->tween_time,&local_30->set_new_state_as_desired);
           iVar1 = iVar1 + 1;
-          local_14 = local_14 + 6;
           local_30->cmd = local_38;
-          local_1c = local_1c + 6;
-          local_18 = local_18 + 6;
-          piVar2 = piVar2 + 6;
         } while (iVar1 < pSVar1->transition_count);
       }
       do {
@@ -126,12 +115,10 @@ LAB_0052ce73:
       _fscanf(file_handle,"%d\n",&pSVar1->signal_count);
       if (0 < pSVar1->signal_count) {
         local_20 = pSVar1->signals;
-        piVar2 = &pSVar1->signals[0].value;
         do {
           pSVar3 = local_20 + iVar1;
           iVar1 = iVar1 + 1;
-          _fscanf(file_handle,"%d,%d\n",&pSVar3->frame_number,piVar2);
-          piVar2 = piVar2 + 2;
+          _fscanf(file_handle,"%d,%d\n",&pSVar3->frame_number,&pSVar3->value);
         } while (iVar1 < pSVar1->signal_count);
       }
       if (local_34 < 2) {

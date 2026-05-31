@@ -12,7 +12,6 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004ed240(CFootstep *this_ptr,CVect
 {
   float fVar2;
   int iVar2;
-  float *pfVar3;
   CVector3f *pCVar4;
   float10 fVar5;
   float10 fVar6;
@@ -53,13 +52,11 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004ed240(CFootstep *this_ptr,CVect
     iVar2 = iVar2 + 4;
     pCVar4 = pCVar4 + 1;
   } while (iVar2 != 0x10);
-  pfVar3 = &this_ptr->corners[0].y;
-  do {
-    if ((float)0.5 < ABS(this_ptr->corners[0].y - pfVar3[3])) {
-      pfVar3[3] = this_ptr->corners[0].y;
+  for (iVar2 = 1; iVar2 < 4; iVar2 = iVar2 + 1) {
+    if ((float)0.5 < ABS(this_ptr->corners[0].y - this_ptr->corners[iVar2].y)) {
+      this_ptr->corners[iVar2].y = this_ptr->corners[0].y;
     }
-    pfVar3 = pfVar3 + 3;
-  } while (pfVar3 != &this_ptr->corners[3].y);
+  }
   this_ptr->expired = 0;
   this_ptr->alpha = alpha;
   this_ptr->is_bloody = is_bloody;
