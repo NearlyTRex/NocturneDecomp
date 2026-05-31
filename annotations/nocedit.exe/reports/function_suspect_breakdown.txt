@@ -4,15 +4,15 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6157 functions
-  1 suspects: 21 functions
-  2 suspects: 55 functions
+  0 suspects: 6179 functions
+  1 suspects: 16 functions
+  2 suspects: 50 functions
   3 suspects: 38 functions
-  4 suspects: 42 functions
+  4 suspects: 40 functions
   5 suspects: 22 functions
-  6 suspects: 25 functions
-  7 suspects: 10 functions
-  8 suspects: 21 functions
+  6 suspects: 21 functions
+  7 suspects: 9 functions
+  8 suspects: 16 functions
   9 suspects: 7 functions
   10 suspects: 8 functions
   11 suspects: 5 functions
@@ -39,16 +39,12 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [unrolled_memcpy] (8 functions)
+  [unrolled_memcpy] (6 functions)
   ------------------------------------------------------------
     shape_design.c_selectVertexToDelete_FUN_0045c5b0   ( 52 lines)
       g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1...
     shape_design.c_duplicateSharedVertices_FUN_00465d5 ( 54 lines)
       g_LoadedVertices[g_VertexCount].vertex.x = g_LoadedVertices[...
-    shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0   ( 71 lines)
-      this_ptr->active_attribute_count = source_mesh->active_attri...
-    core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_F ( 94 lines)
-      local_c0.local_origin.y = local_114.local_origin.y;...
     shape_quantize.cpp_CColorQuantizer_generateSortedP ( 94 lines)
       pCVar11->palette[0].r = pCVar11->palette[1].r;...
     shape_superopt.cpp_CObj_removeUnusedVertices_FUN_0 (115 lines)
@@ -58,7 +54,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [pointer_cast] (7 functions)
+  [pointer_cast] (6 functions)
   ------------------------------------------------------------
     engine_fileio.cpp_CFileManager_buildPodFromRespons ( 57 lines)
       pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);...
@@ -66,8 +62,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).ty...
     shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051 ( 79 lines)
       piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices ...
-    engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (134 lines)
-      iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_ve...
     shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_00 (149 lines)
       *(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)...
     shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a (204 lines)
@@ -86,16 +80,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
   ------------------------------------------------------------
     shape_design.c_quantizePaletteColors_FUN_0046b770  ( 65 lines)
       do {...
-
-  [shadow_pointer_walk] (1 functions)
-  ------------------------------------------------------------
-    core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9c ( 71 lines)
-      prim = prim + 3;...
-
-  [unrolled_memset] (1 functions)
-  ------------------------------------------------------------
-    core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN (113 lines)
-      (pSVar11->light).b = 0.0;...
 
   [raw_address_constant] (1 functions)
   ------------------------------------------------------------
@@ -127,18 +111,12 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/superopt.cpp, Lines: 34, Types: ['pointer_cast']
   core_flies.cpp_CFlies_initFly_FUN_004cc760
     File: core/flies.cpp, Lines: 38, Types: ['unrolled_memcpy']
-  core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FU
-    File: core/manpuz.cpp, Lines: 40, Types: ['unrolled_memcpy']
   core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370
     File: core/netgame.cpp, Lines: 42, Types: ['unrolled_strcpy']
   core_wateract.cpp_CWaterActor_processInEditor_FUN_005ebab0
     File: core/wateract.cpp, Lines: 43, Types: ['bit_int_float_compare']
   core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
     File: core/mimic.cpp, Lines: 43, Types: ['unrolled_strcpy', 'warning_type_propagation']
-  engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00
-    File: engine/alphabit.cpp, Lines: 44, Types: ['pointer_cast']
-  core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
-    File: core/glass.cpp, Lines: 48, Types: ['pointer_cast', 'warning_inlined_function']
   shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70
     File: shape/quantize.cpp, Lines: 48, Types: ['pointer_cast']
   shape_design.c_detachFaces_FUN_0046eba0
@@ -211,10 +189,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/wateract.cpp, Lines: 210, Types: ['shadow_pointer_walk', 'unrolled_memset']
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_F
     File: engine/fileio.cpp, Lines: 244, Types: ['unrolled_strcpy']
-  engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437c
-    File: engine/clipper.c, Lines: 446, Types: ['pointer_cast']
-  engine_clipper.c_clipPolygonToViewport_FUN_00438420
-    File: engine/clipper.c, Lines: 464, Types: ['pointer_cast']
   shape_superopt.cpp_CP3D_copy2_FUN_005d84a0
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
   shape_superopt.cpp_CVec_copy3_FUN_005d82b0

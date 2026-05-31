@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 69,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 44,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 160
   },
   "cross_references": [
@@ -129,6 +127,26 @@
     },
     "pcode_op_count": 548
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + dest_x * 4),srcIndices,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((ushort *)(*(int *)((int)g_ScreenBufferArray + local_14) + dest_x * 2),srcIndices,",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 60,
     "local_size": 28,
@@ -208,22 +226,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + dest_x * 4),srcIndices,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "((ushort *)(*(int *)((int)g_ScreenBufferArray + local_14) + dest_x * 2),srcIndices,",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

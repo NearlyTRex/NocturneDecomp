@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6157 (95.4%)
-Files at 100%: 186
-Files at 90%+: 188
+Clean functions: 6179 (95.7%)
+Files at 100%: 188
+Files at 90%+: 190
 Files at 50%+: 214
 
 ====================================================================================================
@@ -166,7 +166,9 @@ FILES AT 100% (COMPLETE)
   core/zombie.cpp: 32 functions, 2336 lines
   engine/2d.c: 76 functions, 1818 lines
   engine/3d.c: 104 functions, 4591 lines
+  engine/alphabit.cpp: 9 functions, 330 lines
   engine/boss.c: 5 functions, 64 lines
+  engine/clipper.c: 28 functions, 2806 lines
   engine/colquant.c: 9 functions, 592 lines
   engine/console.cpp: 8 functions, 201 lines
   engine/dosio.cpp: 26 functions, 477 lines
@@ -201,7 +203,7 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 186 files
+Total: 188 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -247,6 +249,17 @@ FILES AT 50-89%
            - core_flies.cpp_CFlies_process_FUN_004cbf00 (124 lines) [shadow_pointer_walk, unrolled_memcpy]
            - core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 (178 lines) [pointer_cast, unrolled_memcpy]
            - core_flies.cpp_CFlies_initFly_FUN_004cc760 (38 lines) [unrolled_memcpy]
+   85.7% | core/manpuz.cpp
+         54/63 clean, 9 remaining
+           - core_manpuz.cpp_copyPanel_FUN_0050b9a0 (36 lines) [unrolled_memcpy]
+           - core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0 (79 lines) [shadow_pointer_walk]
+           - core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330 (124 lines) [pointer_cast, unrolled_memcpy]
+           - core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290 (68 lines) [unrolled_memcpy]
+           - core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70 (247 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
+           - core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920 (49 lines) [unrolled_memset]
+           - core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (56 lines) [unrolled_memcpy]
+           - core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 (144 lines) [unrolled_memcpy]
+           - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines) [pointer_cast, unrolled_memcpy]
    85.3% | engine/pod.cpp
          29/34 clean, 5 remaining
            - engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0 (42 lines) [pointer_cast, unrolled_memcpy]
@@ -284,20 +297,6 @@ FILES AT 50-89%
            - core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70 (55 lines) [bit_int_float_compare]
            - core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004d17b0 (104 lines) [unrolled_strcpy]
            - core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190 (76 lines) [stack_alignment_array, unrolled_memcpy, warning_inlined_function]
-   81.0% | core/manpuz.cpp
-         51/63 clean, 12 remaining
-           - core_manpuz.cpp_copyPanel_FUN_0050b9a0 (36 lines) [unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0 (79 lines) [shadow_pointer_walk]
-           - core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330 (124 lines) [pointer_cast, unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290 (68 lines) [unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70 (247 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920 (49 lines) [unrolled_memset]
-           - core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0 (94 lines) [unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610 (113 lines) [unrolled_memset]
-           - core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (56 lines) [unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 (144 lines) [unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines) [pointer_cast, unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20 (40 lines) [unrolled_memcpy]
    81.0% | shape/cramtex.cpp
          17/21 clean, 4 remaining
            - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (832 lines) [pointer_cast]
@@ -309,6 +308,23 @@ FILES AT 50-89%
            - core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 (45 lines) [missing_cave_copy, unrolled_memcpy]
            - core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (35 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
            - core_tentacle.cpp_CTentacle_process_FUN_005db050 (258 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
+   79.2% | core/glass.cpp
+         19/24 clean, 5 remaining
+           - core_glass.cpp_CGlass_ctor_FUN_004e9040 (61 lines) [unrolled_strcpy]
+           - core_glass.cpp_CGlass_shatter_FUN_004eaef0 (124 lines) [raw_address_constant, unrolled_strcpy]
+           - core_glass.cpp_CGlass_setup_FUN_004e9180 (268 lines) [unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
+           - core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (387 lines) [unrolled_memcpy]
+           - core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690 (96 lines) [unrolled_strchr, unrolled_strcpy]
+   78.9% | core/gabriela.cpp
+         30/38 clean, 8 remaining
+           - core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 (206 lines) [unrolled_memcpy]
+           - core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (252 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60 (113 lines) [pointer_cast, unrolled_memcpy]
+           - core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 (691 lines) [unrolled_memcpy, unrolled_memset]
+           - core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540 (160 lines) [pointer_cast, unrolled_memset]
+           - core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (115 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (148 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80 (60 lines) [missing_cave_copy]
    78.3% | core/wateract.cpp
          18/23 clean, 5 remaining
            - core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0 (210 lines) [shadow_pointer_walk, unrolled_memset]
@@ -339,17 +355,6 @@ FILES AT 50-89%
            - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines) [pointer_cast, shadow_pointer_walk, stack_alignment_array, unrolled_memcpy, unrolled_strcpy]
            - core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 (438 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy, warning_unreachable]
            - core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (117 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
-   76.3% | core/gabriela.cpp
-         29/38 clean, 9 remaining
-           - core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 (206 lines) [unrolled_memcpy]
-           - core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (252 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60 (113 lines) [pointer_cast, unrolled_memcpy]
-           - core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 (691 lines) [unrolled_memcpy, unrolled_memset]
-           - core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540 (160 lines) [pointer_cast, unrolled_memset]
-           - core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (115 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (148 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870 (142 lines) [pointer_cast, unrolled_memcpy]
-           - core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80 (60 lines) [missing_cave_copy]
    75.3% | shape/superopt.cpp
          140/186 clean, 46 remaining
            - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
@@ -417,15 +422,45 @@ FILES AT 50-89%
            - shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (101 lines) [pointer_cast, warning_inlined_function]
            - shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (164 lines) [unaffected_reg]
            - shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70 (48 lines) [pointer_cast]
-   70.8% | core/glass.cpp
-         17/24 clean, 7 remaining
-           - core_glass.cpp_CGlass_ctor_FUN_004e9040 (61 lines) [unrolled_strcpy]
-           - core_glass.cpp_CGlass_shatter_FUN_004eaef0 (124 lines) [raw_address_constant, unrolled_strcpy]
-           - core_glass.cpp_CGlass_setup_FUN_004e9180 (268 lines) [unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
-           - core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0 (71 lines) [shadow_pointer_walk]
-           - core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (387 lines) [unrolled_memcpy]
-           - core_glass.cpp_CGlass_onLaserHit_FUN_004eb250 (48 lines) [pointer_cast, warning_inlined_function]
-           - core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690 (96 lines) [unrolled_strchr, unrolled_strcpy]
+   70.2% | shape/meshlod.cpp
+         87/124 clean, 37 remaining
+           - shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (30 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (384 lines) [bitcast_double_pair, pointer_cast, sub84_truncation, unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (108 lines) [pointer_cast, unrolled_memcpy]
+           - shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480 (74 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 (53 lines) [pointer_cast]
+           - shape_meshlod.cpp_crc32UpdateDword2_FUN_0051c540 (74 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (192 lines) [pointer_cast, unrolled_memcpy, warning_inlined_function]
+           - shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 (90 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 (125 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (53 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (143 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (123 lines) [pointer_cast, shadow_pointer_walk]
+           - shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 (71 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (449 lines) [pointer_cast, shadow_pointer_walk]
+           - shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (60 lines) [pointer_cast, stack_alignment_array]
+           - shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (377 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (100 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
+           - shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (131 lines) [pointer_cast, unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620 (157 lines) [pointer_cast, self_copy_guard]
+           - shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0 (34 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0 (39 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300 (41 lines) [pointer_cast, sub84_truncation]
+           - shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420 (22 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0 (78 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70 (17 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
+           - shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600 (72 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0 (54 lines) [shadow_pointer_walk, unrolled_memset]
+           - shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0 (178 lines) [unrolled_memcpy, unrolled_memset]
+           - shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0 (24 lines) [pointer_cast, unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 (28 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (79 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (49 lines) [pointer_cast, warning_inlined_function]
+           - shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20 (38 lines) [pointer_cast, unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (82 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (47 lines) [pointer_cast, sub84_truncation]
+           - shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (89 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (26 lines) [pointer_cast]
    70.0% | core/weather.cpp
          7/10 clean, 3 remaining
            - core_weather.cpp_CWeather_renderParticles_FUN_005ef190 (209 lines) [pointer_cast, raw_address_constant]
@@ -482,46 +517,6 @@ FILES AT 50-89%
            - shape_design.c_samplePixelAndAccumulate_FUN_0046ad00 (16 lines) [pointer_cast]
            - shape_design.c_turnModelInsideOut_FUN_004671e0 (25 lines) [raw_address_constant]
            - shape_design.c_cramTextureList_FUN_0046bb80 (1047 lines) [unrolled_strchr, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-   69.4% | shape/meshlod.cpp
-         86/124 clean, 38 remaining
-           - shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (30 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (384 lines) [bitcast_double_pair, pointer_cast, sub84_truncation, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (108 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480 (74 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 (53 lines) [pointer_cast]
-           - shape_meshlod.cpp_crc32UpdateDword2_FUN_0051c540 (74 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (192 lines) [pointer_cast, unrolled_memcpy, warning_inlined_function]
-           - shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 (90 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 (125 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (53 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (143 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (123 lines) [pointer_cast, shadow_pointer_walk]
-           - shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 (71 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (449 lines) [pointer_cast, shadow_pointer_walk]
-           - shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (60 lines) [pointer_cast, stack_alignment_array]
-           - shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (377 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (100 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
-           - shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (131 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620 (157 lines) [pointer_cast, self_copy_guard]
-           - shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0 (34 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0 (39 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300 (41 lines) [pointer_cast, sub84_truncation]
-           - shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0 (71 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420 (22 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0 (78 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70 (17 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-           - shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600 (72 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0 (54 lines) [shadow_pointer_walk, unrolled_memset]
-           - shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0 (178 lines) [unrolled_memcpy, unrolled_memset]
-           - shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0 (24 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 (28 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (79 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (49 lines) [pointer_cast, warning_inlined_function]
-           - shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20 (38 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (82 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (47 lines) [pointer_cast, sub84_truncation]
-           - shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (89 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (26 lines) [pointer_cast]
    68.5% | engine/fileio.cpp
          50/73 clean, 23 remaining
            - engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0 (135 lines) [pointer_cast, unrolled_strcpy]
@@ -547,27 +542,8 @@ FILES AT 50-89%
            - engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (643 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy, unrolled_strlen]
            - engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (244 lines) [unrolled_strcpy]
            - engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (223 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
-   66.7% | engine/alphabit.cpp
-         6/9 clean, 3 remaining
-           - engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 (19 lines) [pointer_cast, unrolled_memcpy]
-           - engine_alphabit.cpp_copyBytes_FUN_00410d20 (21 lines) [pointer_cast, unrolled_memcpy]
-           - engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (44 lines) [pointer_cast]
-   57.1% | engine/clipper.c
-         16/28 clean, 12 remaining
-           - engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230 (55 lines) [carry_arith_idiom]
-           - engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360 (54 lines) [carry_arith_idiom]
-           - engine_clipper.c_interpolateVertexTopClip_FUN_00435d00 (49 lines) [carry_arith_idiom]
-           - engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00 (50 lines) [carry_arith_idiom]
-           - engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0 (446 lines) [pointer_cast]
-           - engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00 (50 lines) [carry_arith_idiom]
-           - engine_clipper.c_interpolateVertexNearClip_FUN_00435e00 (52 lines) [carry_arith_idiom]
-           - engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490 (55 lines) [carry_arith_idiom]
-           - engine_clipper.c_clipPolygonToViewport_FUN_00438420 (464 lines) [pointer_cast]
-           - engine_clipper.c_interpolateVertexRightClip_FUN_00435b00 (49 lines) [carry_arith_idiom]
-           - engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0 (54 lines) [carry_arith_idiom]
-           - engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (134 lines) [pointer_cast]
 
-Total: 26 files
+Total: 24 files
 
 ====================================================================================================
 FILES BELOW 50%

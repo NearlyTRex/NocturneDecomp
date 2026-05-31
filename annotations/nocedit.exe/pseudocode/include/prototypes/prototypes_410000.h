@@ -77,7 +77,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap 
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *this_ptr,int dest_x,int dest_y,int left_x,int top_y,int right_x,int bottom_y,int global_alpha);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20(CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBitmap *this_ptr);
-void __cdecl engine_alphabit_cpp_copyBytes_FUN_00410d20(void *src,void *dest,int width,int height);
+void __cdecl engine_alphabit_cpp_CAlphaBitmap_copyRawToOpa_FUN_00410d20(CAlphaBitmap *this_ptr);
 void __cdecl core_ammo_cpp_staticInit_FUN_00410d50(void);
 CAmmo * __cdecl core_ammo_cpp_factoryFunc_FUN_00410d80(void);
 CDemonActorType * __cdecl core_ammo_cpp_CAmmo_getActorType_FUN_00410db0(CAmmo *this_ptr);

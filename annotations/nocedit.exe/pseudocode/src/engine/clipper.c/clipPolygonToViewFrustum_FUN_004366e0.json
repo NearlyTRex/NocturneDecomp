@@ -1030,31 +1030,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "clipPolygonToViewFrustum_FUN_004366e0.keep.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "arrayIndexOutOfBoundsCond",
-          "column": 45,
-          "line": 158,
-          "message": "Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.",
-      "line": 158,
-      "match": "Cppcheck: array index OOB depending on condition",
-      "severity": "moderate",
-      "text": "pSVar11 = (SRenderVertex *)auStack_150[vertex_count];",
-      "type": "static_array_oob_cond"
-    }
-  ]
+  "suspects": []
 }

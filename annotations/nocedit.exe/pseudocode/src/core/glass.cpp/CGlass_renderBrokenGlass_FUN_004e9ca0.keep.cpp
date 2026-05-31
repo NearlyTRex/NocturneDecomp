@@ -14,7 +14,6 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
   CBoundingBox3D *this_ptr_00;
   int iVar2;
   CVector3f *pCVar5;
-  SMRGLHeaderPrimitive *prim;
   CBoundingBox3D CStack_28;
   CVector3i CStack_10;
   
@@ -57,16 +56,15 @@ void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e9ca0(CGlass *this_p
             (g_CDemonRendererPtr2,this_ptr->opacity);
   iVar2 = 0;
   if (0 < this_ptr->broken_polygon_count) {
-    prim = &this_ptr->broken_quads[0].base;
     do {
       this_ptr->broken_quads[iVar2].base.surface_normal.A.i = 0;
       this_ptr->broken_quads[iVar2].base.surface_normal.B.i = 0;
       pCVar1 = g_CDemonRendererPtr2;
       this_ptr->broken_quads[iVar2].base.surface_normal.C.i = 0;
       this_ptr->broken_quads[iVar2].base.surface_normal.D.i = 0;
-      engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550(pCVar1,(SMRGLPrimitivePoly *)prim);
+      engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0048b550
+                (pCVar1,(SMRGLPrimitivePoly *)&this_ptr->broken_quads[iVar2]);
       iVar2 = iVar2 + 1;
-      prim = prim + 3;
     } while (iVar2 < this_ptr->broken_polygon_count);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);

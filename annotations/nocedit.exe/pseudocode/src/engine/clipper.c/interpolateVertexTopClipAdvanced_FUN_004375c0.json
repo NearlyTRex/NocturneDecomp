@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 139,
+    "complexity_score": 54,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 54,
-    "suspect_count": 8,
-    "suspect_types": [
-      "carry_arith_idiom"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 188
   },
   "cross_references": [
@@ -167,6 +165,80 @@
     },
     "pcode_op_count": 705
   },
+  "resolved_suspects": [
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 26,
+      "match": "CARRY4(uVar3,uVar3)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 37,
+      "match": "CARRY4(uVar3,uVar3)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 40,
+      "match": "CARRY4(uVar3,uVar3)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 43,
+      "match": "CARRY4(uVar3,uVar3)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output->g = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->g;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 46,
+      "match": "CARRY4(uVar3,uVar3)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 49,
+      "match": "CARRY4(uVar3,uVar3)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 52,
+      "match": "CARRY4(uVar3,uVar3)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 55,
+      "match": "CARRY4(uVar3,uVar3)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);",
+      "type": "carry_arith_idiom"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -197,70 +269,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 26,
-      "match": "CARRY4(uVar3,uVar3)",
-      "severity": "moderate",
-      "text": "iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +",
-      "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 37,
-      "match": "CARRY4(uVar3,uVar3)",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;",
-      "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 40,
-      "match": "CARRY4(uVar3,uVar3)",
-      "severity": "moderate",
-      "text": "output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;",
-      "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 43,
-      "match": "CARRY4(uVar3,uVar3)",
-      "severity": "moderate",
-      "text": "output->g = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->g;",
-      "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 46,
-      "match": "CARRY4(uVar3,uVar3)",
-      "severity": "moderate",
-      "text": "output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);",
-      "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 49,
-      "match": "CARRY4(uVar3,uVar3)",
-      "severity": "moderate",
-      "text": "output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);",
-      "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 52,
-      "match": "CARRY4(uVar3,uVar3)",
-      "severity": "moderate",
-      "text": "output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);",
-      "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 55,
-      "match": "CARRY4(uVar3,uVar3)",
-      "severity": "moderate",
-      "text": "output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);",
-      "type": "carry_arith_idiom"
-    }
-  ]
+  "suspects": []
 }

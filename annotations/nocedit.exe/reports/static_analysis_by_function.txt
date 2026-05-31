@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 113
-  Total diagnostics: 322
+  Functions with findings: 111
+  Total diagnostics: 319
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 113, raw .cpp files: 0
+  .keep.cpp files: 111, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -500,13 +500,6 @@ core_flame.cpp_CFlame_updateGlobe_FUN_004cad90  [.keep] [Cppcheck (quick)]
   Line   29: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870  [.keep] [Cppcheck (quick)]
-  File: core/gabriela.cpp  (2 diagnostics)
-
-  Line  121: [arrayIndexOutOfBoundsCond] Either the condition 'local_28!=3' is redundant or the array 'local_bc[3]' is accessed at index 9, which is out of bounds.
-  Line  124: [arrayIndexOutOfBoundsCond] Either the condition 'local_28!=3' is redundant or the array 'local_bc[3]' is accessed at index 11, which is out of bounds.
-
-----------------------------------------------------------------------------------------------------
 core_ghoul.cpp_CGhoul_process_FUN_004e6600  [.keep] [Cppcheck (quick)]
   File: core/ghoul.cpp  (2 diagnostics)
 
@@ -766,12 +759,6 @@ core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0  [.kee
   File: core/skeleton.cpp  (1 diagnostics)
 
   Line   58: [identicalInnerCondition] Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0  [.keep] [Cppcheck (quick)]
-  File: engine/clipper.c  (1 diagnostics)
-
-  Line  158: [arrayIndexOutOfBoundsCond] Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60  [.keep] [Cppcheck (quick)]

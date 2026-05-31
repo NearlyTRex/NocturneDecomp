@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (322 diagnostics)
+Cppcheck (quick) (319 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -1295,22 +1295,6 @@ shiftNegativeLHS (3)
   support_codec.cpp_readBitsFromStream_FUN_0043e530  line 61
     File: support/codec.cpp
     Shifting a negative value is technically undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-arrayIndexOutOfBoundsCond (3)
-----------------------------------------------------------------------------------------------------
-
-  core_gabriela.cpp_CGabriella_findAndPickupNearbyOb line 121
-    File: core/gabriela.cpp
-    Either the condition 'local_28!=3' is redundant or the array 'local_bc[3]' is accessed at index 9, which is out of bounds.
-
-  core_gabriela.cpp_CGabriella_findAndPickupNearbyOb line 124
-    File: core/gabriela.cpp
-    Either the condition 'local_28!=3' is redundant or the array 'local_bc[3]' is accessed at index 11, which is out of bounds.
-
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 158
-    File: engine/clipper.c
-    Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 invalidScanfArgType_int (3)

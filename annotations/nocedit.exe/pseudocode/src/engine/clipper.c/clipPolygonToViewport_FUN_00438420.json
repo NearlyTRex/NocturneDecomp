@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 735,
-    "complexity_score": 489,
+    "complexity_score": 464,
     "cross_reference_count": 10,
     "function_call_count": 8,
     "global_count": 54,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 464,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1199
   },
   "cross_references": [
@@ -501,6 +499,15 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 185,
       "match": "(SRenderVertex *)((int)pSVar12",
       "resolution_source": "keep",
@@ -932,6 +939,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 93,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": ",*(SRenderVertex **)",
+      "type": "pointer_cast"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 126,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -1195,22 +1211,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
-      "severity": "moderate",
-      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 4)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 93,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
-      "severity": "moderate",
-      "text": ",*(SRenderVertex **)",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

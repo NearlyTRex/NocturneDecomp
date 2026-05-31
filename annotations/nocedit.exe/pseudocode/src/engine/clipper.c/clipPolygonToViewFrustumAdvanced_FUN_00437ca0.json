@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 729,
-    "complexity_score": 471,
+    "complexity_score": 446,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 53,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 446,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1175
   },
   "cross_references": [],
@@ -720,6 +718,24 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 407,
+      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar7 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 408,
+      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar7 + 8));",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 106,
       "match": "for (...; != 0; ... + -1)",
@@ -1127,22 +1143,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 407,
-      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
-      "severity": "moderate",
-      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar7 + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 408,
-      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
-      "severity": "moderate",
-      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar7 + 8));",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

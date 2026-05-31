@@ -70,7 +70,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_coun
               iVar1 = *vertex_indices;
               iVar6 = iVar6 + 1;
               vertex_indices = vertex_indices + 1;
-              *(SRenderVertex **)(iVar6 * 4 + 0x825424) = g_RenderVertexBuffer + iVar1;
+              g_ClipperCullingPointers[iVar6 + -1] = g_RenderVertexBuffer + iVar1;
             } while (iVar6 < vertex_count);
           }
           if (g_CullingMode != 0) {
@@ -84,20 +84,18 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_coun
             }
             else {
               iVar10 = 0;
-              iVar6 = (vertex_count + -2) * 4;
               iVar12 = 0;
-              if (0 < iVar6) {
+              if (0 < vertex_count + -2) {
                 do {
                   iVar5 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
                                     (g_ClipperCullingPointers[0],
-                                     *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 4)
-                                     ,*(SRenderVertex **)
-                                       ((int)g_ClipperCullingPointers + iVar10 + 8));
+                                     g_ClipperCullingPointers[iVar10 + 1],
+                                     g_ClipperCullingPointers[iVar10 + 2]);
                   if (iVar5 == 0) {
                     iVar12 = iVar12 + 1;
                   }
-                  iVar10 = iVar10 + 4;
-                } while (iVar10 < iVar6);
+                  iVar10 = iVar10 + 1;
+                } while (iVar10 < vertex_count + -2);
               }
               if (iVar12 == vertex_count + -2) {
                 return;

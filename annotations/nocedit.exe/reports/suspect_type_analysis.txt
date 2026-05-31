@@ -4,42 +4,40 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     952 ( 46.7%)
-  unrolled_memcpy                  333 ( 16.3%)
-  unrolled_strcpy                  157 (  7.7%)
-  missing_cave_copy                 96 (  4.7%)
-  shadow_pointer_walk               72 (  3.5%)
-  carry_arith_idiom                 63 (  3.1%)
-  unrolled_strlen                   59 (  2.9%)
-  bitcast_double_pair               36 (  1.8%)
-  raw_address_constant              33 (  1.6%)
+  pointer_cast                     936 ( 48.2%)
+  unrolled_memcpy                  321 ( 16.5%)
+  unrolled_strcpy                  157 (  8.1%)
+  missing_cave_copy                 96 (  4.9%)
+  shadow_pointer_walk               71 (  3.7%)
+  unrolled_strlen                   59 (  3.0%)
+  bitcast_double_pair               36 (  1.9%)
+  raw_address_constant              33 (  1.7%)
   static_uninitvar                  32 (  1.6%)
-  unrolled_memset                   29 (  1.4%)
   unrolled_strchr                   28 (  1.4%)
-  warning_inlined_function          25 (  1.2%)
-  bit_int_float_compare             23 (  1.1%)
-  static_legacy_uninitvar           23 (  1.1%)
-  warning_type_propagation          13 (  0.6%)
+  unrolled_memset                   28 (  1.4%)
+  warning_inlined_function          24 (  1.2%)
+  bit_int_float_compare             23 (  1.2%)
+  static_legacy_uninitvar           23 (  1.2%)
+  warning_type_propagation          13 (  0.7%)
   warning_unreachable               10 (  0.5%)
-  sub84_truncation                   9 (  0.4%)
+  sub84_truncation                   9 (  0.5%)
   stack_param                        8 (  0.4%)
-  static_invalid_pointer_cast        7 (  0.3%)
+  static_invalid_pointer_cast        7 (  0.4%)
   stack_alignment_array              6 (  0.3%)
   unaffected_reg                     6 (  0.3%)
   unrolled_strcat                    4 (  0.2%)
   static_null_pointer                4 (  0.2%)
-  sign_compare_idiom                 3 (  0.1%)
-  static_array_oob_cond              3 (  0.1%)
+  sign_compare_idiom                 3 (  0.2%)
   negative_offset                    2 (  0.1%)
   self_copy_guard                    2 (  0.1%)
-  fast_sqrt_inline                   1 (  0.0%)
+  fast_sqrt_inline                   1 (  0.1%)
 
 ====================================================================================================
-TYPE: pointer_cast (952 occurrences)
+TYPE: pointer_cast (936 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   379x  (int)&NAME used in byte-offset arithmetic
+   378x  (int)&NAME used in byte-offset arithmetic
     25x  (uint *)((int)this_ptr
     24x  (int *)((int)this_ptr
     13x  (int)&NAME byte-offset arithmetic split across lines
@@ -57,8 +55,8 @@ Unique patterns:
      8x  (float *)((int)g_ModelPolygonData
      7x  (CPodAuditRecord *)((int)pCVar15
      7x  (void *)((int)pvVar35
-     6x  (CDemonActor **)((int)g_CDemonSetPtr
      6x  (uint *)((int)pvVar35
+     6x  (SShapeEditorPolygon *)((int)pSVar6
 
 Functions:
   core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810
@@ -71,12 +69,10 @@ Functions:
   core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0
   core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
-  core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870
   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
   core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
-  core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
@@ -109,12 +105,6 @@ Functions:
   core_weather.cpp_CWeather_renderParticles_FUN_005ef190
   core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940
   core_weather.cpp_CWeather_update_FUN_005eeaf0
-  engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0
-  engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00
-  engine_alphabit.cpp_copyBytes_FUN_00410d20
-  engine_clipper.c_clipPolygonNearPlane_FUN_00436420
-  engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0
-  engine_clipper.c_clipPolygonToViewport_FUN_00438420
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
@@ -238,14 +228,14 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (333 occurrences)
+TYPE: unrolled_memcpy (321 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   207x  field-by-field struct copy
-    65x  for (...; != 0; ... + -1)
-    59x  MOVSD.REP
-     2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
+   200x  field-by-field struct copy
+    63x  for (...; != 0; ... + -1)
+    57x  MOVSD.REP
+     1x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0
@@ -256,7 +246,6 @@ Functions:
   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
   core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40
   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
-  core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870
   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
   core_gabriela.cpp_CGabriella_processAI_FUN_004d4190
   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
@@ -274,8 +263,6 @@ Functions:
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0
-  core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0
-  core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20
   core_manpuz.cpp_copyPanel_FUN_0050b9a0
   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
   core_mimic.cpp_CMimic_setupCloth_FUN_00520500
@@ -302,8 +289,6 @@ Functions:
   core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740
   core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940
-  engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0
-  engine_alphabit.cpp_copyBytes_FUN_00410d20
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
@@ -338,7 +323,6 @@ Functions:
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
   shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
   shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
-  shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0
   shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
   shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0
@@ -473,7 +457,7 @@ Functions:
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (72 occurrences)
+TYPE: shadow_pointer_walk (71 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -505,7 +489,6 @@ Functions:
   core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
   core_flies.cpp_CFlies_process_FUN_004cbf00
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
-  core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0
   core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
   core_mimic.cpp_CMimic_updatePose_FUN_0051f930
@@ -539,26 +522,6 @@ Functions:
   shape_superopt.cpp_CP3D_scale_FUN_005d8630
   shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
   shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
-
-====================================================================================================
-TYPE: carry_arith_idiom (63 occurrences)
-====================================================================================================
-
-Unique patterns:
-    28x  CARRY4(uVar3,uVar3)
-    19x  CARRY4(uVar2,uVar2)
-    16x  CARRY4(uVar4,uVar4)
-
-Functions:
-  engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
-  engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
-  engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
-  engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
-  engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
-  engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
-  engine_clipper.c_interpolateVertexRightClip_FUN_00435b00
-  engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
-  engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
 
 ====================================================================================================
 TYPE: unrolled_strlen (59 occurrences)
@@ -656,28 +619,6 @@ Functions:
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 
 ====================================================================================================
-TYPE: unrolled_memset (29 occurrences)
-====================================================================================================
-
-Unique patterns:
-    29x  cascade_constant_fill
-
-Functions:
-  core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
-  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600
-  core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
-  core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610
-  core_mobster.cpp_CMobster_process_FUN_00525840
-  core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
-  core_scat.cpp_CScat_process_FUN_005571f0
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-  core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
-  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
-  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
-
-====================================================================================================
 TYPE: unrolled_strchr (28 occurrences)
 ====================================================================================================
 
@@ -698,11 +639,32 @@ Functions:
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
-TYPE: warning_inlined_function (25 occurrences)
+TYPE: unrolled_memset (28 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    25x  WARNING: Inlined function:
+    28x  cascade_constant_fill
+
+Functions:
+  core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
+  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
+  core_mobster.cpp_CMobster_process_FUN_00525840
+  core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
+  core_scat.cpp_CScat_process_FUN_005571f0
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
+  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
+  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+
+====================================================================================================
+TYPE: warning_inlined_function (24 occurrences)
+====================================================================================================
+
+Unique patterns:
+    24x  WARNING: Inlined function:
 
 Functions:
   core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10
@@ -710,7 +672,6 @@ Functions:
   core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
-  core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
   core_glass.cpp_CGlass_setup_FUN_004e9180
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
@@ -920,17 +881,6 @@ Unique patterns:
 Functions:
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
-
-====================================================================================================
-TYPE: static_array_oob_cond (3 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  Cppcheck: array index OOB depending on condition
-
-Functions:
-  core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
 
 ====================================================================================================
 TYPE: negative_offset (2 occurrences)

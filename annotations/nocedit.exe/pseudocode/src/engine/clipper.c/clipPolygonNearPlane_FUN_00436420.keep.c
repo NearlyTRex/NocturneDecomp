@@ -23,12 +23,12 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
     if (0 < g_ClippedVertexCount) {
       iVar5 = 0;
       do {
-        iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z + iVar5);
+        iVar3 = g_ClippedVertexBuffer[iVar5].projected_vertex.transformed_z;
         if (iVar7 < iVar3) {
           iVar7 = iVar3;
         }
-        iVar5 = iVar5 + 0x30;
-      } while (iVar5 < g_ClippedVertexCount * 0x30);
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < g_ClippedVertexCount);
     }
     if (g_NearPlaneDistance <= iVar7) {
       g_SecondaryClipVertexCount = g_ClippedVertexCount;

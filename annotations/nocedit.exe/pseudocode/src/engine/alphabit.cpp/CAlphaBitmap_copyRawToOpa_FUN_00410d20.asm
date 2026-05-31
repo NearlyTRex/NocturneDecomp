@@ -1,20 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_alphabit_cpp_copyBytes_FUN_00410d20(void *src,void *dest,int width,int height)
+; void __cdecl engine_alphabit_cpp_CAlphaBitmap_copyRawToOpa_FUN_00410d20(CAlphaBitmap *this_ptr)
 ;
 ; Parameters:
-; void *           Stack[0x4]:4   src
-; void *           Stack[0x8]:4   dest
-; int              Stack[0xc]:4   width
-; int              Stack[0x10]:4   height
+; CAlphaBitmap *   Stack[0x4]:4   this_ptr
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH ESI                            ; 00410d20
-        ;   Label: engine_alphabit.cpp_copyBytes_FUN_00410d20
+        ;   Label: engine_alphabit.cpp_CAlphaBitmap_copyRawToOpa_FUN_00410d20
     PUSH EDI                            ; 00410d21
     MOV EDI,dword ptr [ESP + 0xc]       ; 00410d22
     MOV ECX,dword ptr [EDI + 0xc]       ; 00410d26

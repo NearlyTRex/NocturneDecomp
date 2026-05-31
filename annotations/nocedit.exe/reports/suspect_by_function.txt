@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6146 (95.2%)
-With suspects: 308
-Total suspects: 2039
+Clean: 6169 (95.6%)
+With suspects: 285
+Total suspects: 1942
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -230,17 +230,6 @@ core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80 (2 suspects)
   Line 17 [missing_cave_copy]: CMatrix3x4f local_78;
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870 (6 suspects)
-  File: core/gabriela.cpp
-====================================================================================================
-  Line 48 [unrolled_memcpy]: local_b0.x = pCVar3->x;
-  Line 58 [unrolled_memcpy]: local_a4.x = pCVar8->x;
-  Line 68 [unrolled_memcpy]: local_98.x = pCVar8->x;
-  Line 75 [pointer_cast]: pCVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
-  Line 121 [static_array_oob_cond]: ((pCVar2->location).position.x - local_bc[local_28 * 3]) +
-  Line 124 [static_array_oob_cond]: ((pCVar5->location).position.z - local_bc[local_28 * 3 + 2]) +
-
-====================================================================================================
 core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (8 suspects)
   File: core/gabriela.cpp
 ====================================================================================================
@@ -410,19 +399,6 @@ core_glass.cpp_CGlass_ctor_FUN_004e9040 (3 suspects)
   Line 51 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_glass.cpp_CGlass_onLaserHit_FUN_004eb250 (2 suspects)
-  File: core/glass.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 45 [pointer_cast]: if (*(char *)(local_18 + local_14 * g_CurrentTextureDimension + (int)g_CurrentTextureData) ==
-
-====================================================================================================
-core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0 (1 suspect)
-  File: core/glass.cpp
-====================================================================================================
-  Line 69 [shadow_pointer_walk]: prim = prim + 3;
-
-====================================================================================================
 core_glass.cpp_CGlass_setup_FUN_004e9180 (9 suspects)
   File: core/glass.cpp
 ====================================================================================================
@@ -545,25 +521,6 @@ core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (5 suspects)
   Line 28 [unrolled_memcpy]: (pSVar2->rotation).x = (pSVar1->rotation).x;
   Line 32 [unrolled_memcpy]: (pSVar2->rotation_matrix).m[0].x = (pSVar1->rotation_matrix).m[0].x;
   Line 46 [unrolled_memcpy]: (pSVar2->world_position).x = (pSVar1->world_position).x;
-
-====================================================================================================
-core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610 (1 suspect)
-  File: core/manpuz.cpp
-====================================================================================================
-  Line 43 [unrolled_memset]: (pSVar11->light).b = 0.0;
-
-====================================================================================================
-core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0 (1 suspect)
-  File: core/manpuz.cpp
-====================================================================================================
-  Line 74 [unrolled_memcpy]: local_c0.local_origin.y = local_114.local_origin.y;
-
-====================================================================================================
-core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20 (2 suspects)
-  File: core/manpuz.cpp
-====================================================================================================
-  Line 29 [unrolled_memcpy]: pCVar1->x = pCVar2->x;
-  Line 39 [unrolled_memcpy]: pCVar1->x = pCVar3->x;
 
 ====================================================================================================
 core_manpuz.cpp_copyPanel_FUN_0050b9a0 (5 suspects)
@@ -1383,169 +1340,6 @@ core_weather.cpp_CWeather_update_FUN_005eeaf0 (8 suspects)
   Line 68 [pointer_cast]: local_28.x = *(float *)((int)&g_WeatherParticlePositions[0].x + iVar4);
   Line 69 [pointer_cast]: local_28.z = *(float *)((int)&g_WeatherParticlePositions[0].z + iVar4);
   Line 70 [pointer_cast]: local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);
-
-====================================================================================================
-engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 (4 suspects)
-  File: engine/alphabit.cpp
-====================================================================================================
-  Line 11 [unrolled_memcpy]: for (iVar1 = 0x100; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 11 [unrolled_memcpy]: // 00410d09: MOVSD.REP ES:EDI,ESI  ; g_Hardware32BitPalette | g_GlobalPalette[1]
-  Line 18 [pointer_cast]: puVar2 = (uint *)((int)puVar2 + 1);
-  Line 19 [pointer_cast]: puVar3 = (uint *)((int)puVar3 + 1);
-
-====================================================================================================
-engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (2 suspects)
-  File: engine/alphabit.cpp
-====================================================================================================
-  Line 26 [pointer_cast]: ((uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + dest_x * 4),srcIndices,
-  Line 38 [pointer_cast]: ((ushort *)(*(int *)((int)g_ScreenBufferArray + local_14) + dest_x * 2),srcIndices,
-
-====================================================================================================
-engine_alphabit.cpp_copyBytes_FUN_00410d20 (8 suspects)
-  File: engine/alphabit.cpp
-====================================================================================================
-  Line 10 [pointer_cast]: uVar1 = *(int *)((int)src + 0xc) * *(int *)((int)src + 0x10);
-  Line 10 [pointer_cast]: uVar1 = *(int *)((int)src + 0xc) * *(int *)((int)src + 0x10);
-  Line 12 [pointer_cast]: puVar4 = *(uint **)((int)src + 4);
-  Line 12 [unrolled_memcpy]: // 00410d38: MOVSD.REP ES:EDI,ESI
-  Line 13 [unrolled_memcpy]: for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
-  Line 13 [unrolled_memcpy]: for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
-  Line 20 [pointer_cast]: puVar3 = (uint *)((int)puVar3 + 1);
-  Line 21 [pointer_cast]: puVar4 = (uint *)((int)puVar4 + 1);
-
-====================================================================================================
-engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (1 suspect)
-  File: engine/clipper.c
-====================================================================================================
-  Line 32 [pointer_cast]: iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z + iVar5);
-
-====================================================================================================
-engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0 (2 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 407 [pointer_cast]: *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar7 + 4),
-  Line 408 [pointer_cast]: *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar7 + 8));
-
-====================================================================================================
-engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0 (1 suspect)
-  File: engine/clipper.c
-====================================================================================================
-  Line 158 [static_array_oob_cond]: pSVar11 = (SRenderVertex *)auStack_150[vertex_count];
-
-====================================================================================================
-engine_clipper.c_clipPolygonToViewport_FUN_00438420 (2 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 92 [pointer_cast]: *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 4)
-  Line 93 [pointer_cast]: ,*(SRenderVertex **)
-
-====================================================================================================
-engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490 (8 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 28 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
-  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + iVar2;
-  Line 41 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->r;
-  Line 44 [carry_arith_idiom]: output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 47 [carry_arith_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 50 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 53 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 56 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00 (6 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 28 [carry_arith_idiom]: iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 36 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 40 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
-  Line 43 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
-  Line 46 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
-  Line 51 [carry_arith_idiom]: output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230 (8 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 28 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) +
-  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + iVar2;
-  Line 41 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + v1->r;
-  Line 44 [carry_arith_idiom]: output->g = v1->g + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 47 [carry_arith_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 50 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 53 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-  Line 56 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00 (6 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 28 [carry_arith_idiom]: iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 36 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 40 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
-  Line 43 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->v;
-  Line 46 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
-  Line 51 [carry_arith_idiom]: output->a = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexNearClip_FUN_00435e00 (7 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 26 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 32 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 38 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +
-  Line 42 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;
-  Line 45 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;
-  Line 48 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;
-  Line 53 [carry_arith_idiom]: output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360 (8 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 37 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;
-  Line 40 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
-  Line 43 [carry_arith_idiom]: output->g = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->g;
-  Line 46 [carry_arith_idiom]: output->b = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->b;
-  Line 49 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 52 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 55 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexRightClip_FUN_00435b00 (6 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 35 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 39 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
-  Line 42 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->a;
-  Line 45 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
-  Line 50 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
-
-====================================================================================================
-engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0 (8 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 37 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar2;
-  Line 40 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
-  Line 43 [carry_arith_idiom]: output->g = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->g;
-  Line 46 [carry_arith_idiom]: output->b = v1->b + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 49 [carry_arith_idiom]: output->u = v1->u + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 52 [carry_arith_idiom]: output->v = v1->v + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-  Line 55 [carry_arith_idiom]: output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexTopClip_FUN_00435d00 (6 suspects)
-  File: engine/clipper.c
-====================================================================================================
-  Line 26 [carry_arith_idiom]: iVar2 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 35 [carry_arith_idiom]: (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) +
-  Line 39 [carry_arith_idiom]: output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->r;
-  Line 42 [carry_arith_idiom]: output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->a;
-  Line 45 [carry_arith_idiom]: output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + v1->u;
-  Line 50 [carry_arith_idiom]: output->v = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3) + iVar4;
 
 ====================================================================================================
 engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (2 suspects)
@@ -2627,12 +2421,6 @@ shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0 (2 suspects)
 ====================================================================================================
   Line 40 [shadow_pointer_walk]: local_1c = (CLodVert *)&(local_1c->position).y;
   Line 47 [unrolled_memset]: out_normal->z = 0.0;
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0 (1 suspect)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 58 [unrolled_memcpy]: this_ptr->active_attribute_count = source_mesh->active_attribute_count;
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (6 suspects)

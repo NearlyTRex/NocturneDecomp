@@ -144,7 +144,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
         iVar10 = *vertex_indices;
         iVar7 = iVar7 + 1;
         vertex_indices = vertex_indices + 1;
-        auStack_150[iVar7] = g_RenderVertexBuffer + iVar10;
+        pSVar11 = g_RenderVertexBuffer + iVar10;
+        auStack_150[iVar7] = pSVar11;
       } while (iVar7 < vertex_count);
     }
     g_ClippedVertexCount = vertex_count;
@@ -155,7 +156,6 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
     local_44 = 0;
     if (0 < vertex_count) {
       puVar14 = auStack_150;
-      pSVar11 = (SRenderVertex *)auStack_150[vertex_count];
       do {
         iVar10 = g_ClipperTempCount;
         puVar14 = puVar14 + 1;

@@ -270,7 +270,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0(int v
         iVar7 = *vertex_indices;
         iVar3 = iVar3 + 1;
         vertex_indices = vertex_indices + 1;
-        *(SRenderVertex **)(iVar3 * 4 + 0x825424) = g_RenderVertexBuffer + iVar7;
+        g_ClipperCullingPointers[iVar3 + -1] = g_RenderVertexBuffer + iVar7;
       } while (iVar3 < vertex_count);
     }
     if (g_CullingMode != 0) {
@@ -284,19 +284,18 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0(int v
       }
       else {
         iVar7 = 0;
-        iVar3 = (vertex_count + -2) * 4;
         iVar11 = 0;
-        if (0 < iVar3) {
+        if (0 < vertex_count + -2) {
           do {
             iVar5 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
                               (g_ClipperCullingPointers[0],
-                               *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar7 + 4),
-                               *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar7 + 8));
+                               g_ClipperCullingPointers[iVar7 + 1],
+                               g_ClipperCullingPointers[iVar7 + 2]);
             if (iVar5 == 0) {
               iVar11 = iVar11 + 1;
             }
-            iVar7 = iVar7 + 4;
-          } while (iVar7 < iVar3);
+            iVar7 = iVar7 + 1;
+          } while (iVar7 < vertex_count + -2);
         }
         if (iVar11 == vertex_count + -2) {
           return 1;
