@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6152 (95.3%)
-With suspects: 302
-Total suspects: 1949
+Clean: 6155 (95.4%)
+With suspects: 299
+Total suspects: 1933
 
 ====================================================================================================
 cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0 (2 suspects)
@@ -59,12 +59,6 @@ core_course.cpp_renderCourseGizmo_FUN_00443760 (5 suspects)
   Line 37 [static_shift_too_many_bits]: iVar7 = (int)ROUND(ROUND(position->z)) >> 0x1f;
   Line 65 [static_shift_too_many_bits]: iVar3 = iVar6 >> 0x1f;
   Line 75 [static_shift_too_many_bits]: [((int)((iVar4 + (iVar4 >> 0x1f) * -8) - (uint)((iVar4 >> 0x1f) << 2 < 0)) >> 3)
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830 (1 suspect)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 26 [static_identical_inner_condition]: if (0 < this_ptr->poly_count) {
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -166,24 +160,6 @@ core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (10 suspects)
   Line 97 [pointer_cast]: } while (iVar4 < *(int *)((int)pSVar4->vertices + local_24 + -0x14));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 (4 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 30 [pointer_cast]: iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
-  Line 56 [pointer_cast]: ((void *)((int)&(((SMRGLPrimitiveQuad *)
-  Line 59 [pointer_cast]: (void *)((int)&(((SMRGLPrimitiveQuad *)
-  Line 71 [shadow_pointer_walk]: local_30 = (CKeyFramedModel *)(local_30->model_filename + 8);
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (4 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 34 [pointer_cast]: iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
-  Line 72 [pointer_cast]: ((void *)((int)&(((SMRGLPrimitiveQuad *)
-  Line 75 [pointer_cast]: (void *)((int)&(((SMRGLPrimitiveQuad *)
-  Line 87 [shadow_pointer_walk]: local_38 = (CKeyFramedModel *)(local_38->model_filename + 8);
-
-====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (6 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
@@ -195,16 +171,9 @@ core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (6 suspects)
   Line 114 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->z + iVar2) = (int)ROUND(ROUND(dVar20));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (9 suspects)
+core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
-  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0047a8bc) */
-  Line 3 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0047a929) */
-  Line 4 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0047a92b) */
-  Line 5 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0047a936) */
-  Line 6 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0047a938) */
-  Line 7 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0047a965) */
-  Line 31 [shadow_pointer_walk]: local_2c = (CKeyFramedModel *)(local_2c->model_filename + 8);
   Line 83 [unrolled_memcpy]: // 0047a929: MOVSD.REP ES:EDI,ESI
   Line 87 [unrolled_memcpy]: // 0047a936: MOVSD.REP ES:EDI,ESI
 

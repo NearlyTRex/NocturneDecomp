@@ -205,13 +205,17 @@ static void translateSdlEvent(const SDL_Event& ev) {
         msg.lParam = (LPARAM)((uint32_t)sc << 16)
                    | (LPARAM)winExtendedKeyFlag(ev.key.keysym.scancode);
         s_msgQueue.push(msg);
-        // Generate WM_CHAR for printable characters
-        if (ev.key.keysym.sym >= 0x20 && ev.key.keysym.sym < 0x7F) {
+        SDL_Keycode keysym = ev.key.keysym.sym;
+        if (ev.key.keysym.scancode == SDL_SCANCODE_KP_ENTER) keysym = 0x0D;
+        bool isPrintable = (keysym >= 0x20 && keysym < 0x7F);
+        bool isWinControlChar = (keysym == 0x08 || keysym == 0x09 ||
+                                 keysym == 0x0D || keysym == 0x1B);
+        if (isPrintable || isWinControlChar) {
             MSG charMsg;
             memset(&charMsg, 0, sizeof(charMsg));
             charMsg.hwnd = msg.hwnd;
             charMsg.message = 0x0102; // WM_CHAR
-            char ch = (char)(ev.key.keysym.sym & 0xFF);
+            char ch = (char)(keysym & 0xFF);
             if (ev.key.keysym.mod & KMOD_SHIFT) {
                 if (ch >= 'a' && ch <= 'z') ch -= 32;
             }

@@ -4,20 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 139,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 9,
+    "suspect_count": 2,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unrolled_memcpy",
-      "warning_unreachable"
+      "unrolled_memcpy"
     ],
     "total_lines": 186
   },
@@ -115,6 +113,71 @@
     },
     "pcode_op_count": 585
   },
+  "resolved_suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0047a8bc) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0047a929) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0047a92b) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0047a936) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0047a938) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0047a965) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via pointer arithmetic on its own `model_filename` field (which decays to a pointer), `+ CONST`; `offsetof(model_filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_2c`. Replace those `local_2c->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 31,
+      "match": "local_2c = (T *)(local_2c->model_filename + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_2c = (CKeyFramedModel *)(local_2c->model_filename + 8);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 52,
     "local_size": 48,
@@ -170,62 +233,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0047a8bc) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0047a929) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 4,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0047a92b) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 5,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0047a936) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 6,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0047a938) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 7,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0047a965) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via pointer arithmetic on its own `model_filename` field (which decays to a pointer), `+ CONST`; `offsetof(model_filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_2c`. Replace those `local_2c->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 31,
-      "match": "local_2c = (T *)(local_2c->model_filename + CONST)",
-      "severity": "moderate",
-      "text": "local_2c = (CKeyFramedModel *)(local_2c->model_filename + 8);",
-      "type": "shadow_pointer_walk"
-    },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 83,

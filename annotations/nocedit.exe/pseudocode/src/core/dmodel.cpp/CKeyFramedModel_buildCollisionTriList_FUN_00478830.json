@@ -239,31 +239,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CKeyFramedModel_buildCollisionTriList_FUN_00478830.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 11,
-          "line": 26,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 26,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (0 < this_ptr->poly_count) {",
-      "type": "static_identical_inner_condition"
-    }
-  ]
+  "suspects": []
 }

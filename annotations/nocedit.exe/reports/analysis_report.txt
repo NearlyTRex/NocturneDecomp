@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6197 (96.0%)
-Functions with suspects: 257 (4.0%)
+Clean functions: 6199 (96.0%)
+Functions with suspects: 255 (4.0%)
 
-Total suspect patterns: 1949
+Total suspect patterns: 1933
 Average suspects per function: 0.30
 
 Virtual files: 214 total, 193 at 100%, 195 at 90%+
@@ -18,7 +18,7 @@ Virtual files: 214 total, 193 at 100%, 195 at 90%+
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 50.9
+Average complexity score: 50.8
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,12 +28,12 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              894
+  pointer_cast              888
   unrolled_memcpy           288
   unrolled_strcpy           152
   missing_cave_copy         80
   static_shift_too_many_bits 68
-  shadow_pointer_walk       61
+  shadow_pointer_walk       58
   unrolled_strlen           56
   static_self_assignment    41
   bitcast_double_pair       36
@@ -43,15 +43,15 @@ SUSPECT PATTERN BREAKDOWN
   raw_address_constant      25
   static_legacy_uninitvar   24
   warning_inlined_function  23
-  static_identical_inner_condition 22
   bit_int_float_compare     22
+  static_identical_inner_condition 21
   warning_type_propagation  12
-  warning_unreachable       10
   sub84_truncation          9
   stack_param               8
   static_invalid_pointer_cast 7
   stack_alignment_array     6
   unaffected_reg            6
+  warning_unreachable       4
   unrolled_strcat           4
   static_null_pointer       4
   negative_offset           2
@@ -109,7 +109,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6147 more
+  ... and 6149 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -147,7 +147,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (156 functions):
+  pointer_cast (154 functions):
     004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
     004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     004b7ac0: engine_fileio.cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0
@@ -158,7 +158,7 @@ FUNCTIONS BY SUSPECT TYPE
     004b23a0: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
     004ba740: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
-    ... and 146 more
+    ... and 144 more
 
   unrolled_memcpy (94 functions):
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -201,7 +201,7 @@ FUNCTIONS BY SUSPECT TYPE
 
   static_shift_too_many_bits (0 functions):
 
-  shadow_pointer_walk (36 functions):
+  shadow_pointer_walk (33 functions):
     00543150: core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
     005401e0: core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
     00541390: core_netgame.cpp_CNetGame_runLobby_FUN_00541390
@@ -212,7 +212,7 @@ FUNCTIONS BY SUSPECT TYPE
     00541ff0: core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
     005098f0: core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
     00508a70: core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
-    ... and 26 more
+    ... and 23 more
 
   unrolled_strlen (23 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
@@ -291,8 +291,6 @@ FUNCTIONS BY SUSPECT TYPE
     005568f0: shape_quantize.cpp_displayProgressBar_FUN_005568f0
     ... and 13 more
 
-  static_identical_inner_condition (0 functions):
-
   bit_int_float_compare (9 functions):
     0053fd00: core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
     00526d90: core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
@@ -303,6 +301,8 @@ FUNCTIONS BY SUSPECT TYPE
     005ebab0: core_wateract.cpp_CWaterActor_processInEditor_FUN_005ebab0
     00469220: shape_design.c_addQuadPolygonOctant_FUN_00469220
     00468d20: shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20
+
+  static_identical_inner_condition (0 functions):
 
   warning_type_propagation (12 functions):
     00543150: core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
@@ -316,13 +316,6 @@ FUNCTIONS BY SUSPECT TYPE
     0051fcc0: core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
     004d4d80: core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
     ... and 2 more
-
-  warning_unreachable (5 functions):
-    004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-    004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
-    004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-    005406a0: core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
-    0047a820: core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
 
   sub84_truncation (6 functions):
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
@@ -347,6 +340,12 @@ FUNCTIONS BY SUSPECT TYPE
 
   unaffected_reg (1 functions):
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+
+  warning_unreachable (4 functions):
+    004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+    004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
+    004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+    005406a0: core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
 
   unrolled_strcat (2 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00

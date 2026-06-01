@@ -4,44 +4,43 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     894 ( 45.9%)
-  unrolled_memcpy                  288 ( 14.8%)
-  unrolled_strcpy                  152 (  7.8%)
+  pointer_cast                     888 ( 45.9%)
+  unrolled_memcpy                  288 ( 14.9%)
+  unrolled_strcpy                  152 (  7.9%)
   missing_cave_copy                 80 (  4.1%)
   static_shift_too_many_bits        68 (  3.5%)
-  shadow_pointer_walk               61 (  3.1%)
+  shadow_pointer_walk               58 (  3.0%)
   unrolled_strlen                   56 (  2.9%)
   static_self_assignment            41 (  2.1%)
-  bitcast_double_pair               36 (  1.8%)
-  static_uninitvar                  32 (  1.6%)
+  bitcast_double_pair               36 (  1.9%)
+  static_uninitvar                  32 (  1.7%)
   unrolled_strchr                   28 (  1.4%)
   unrolled_memset                   27 (  1.4%)
   raw_address_constant              25 (  1.3%)
   static_legacy_uninitvar           24 (  1.2%)
   warning_inlined_function          23 (  1.2%)
-  static_identical_inner_condition    22 (  1.1%)
   bit_int_float_compare             22 (  1.1%)
+  static_identical_inner_condition    21 (  1.1%)
   warning_type_propagation          12 (  0.6%)
-  warning_unreachable               10 (  0.5%)
   sub84_truncation                   9 (  0.5%)
   stack_param                        8 (  0.4%)
   static_invalid_pointer_cast        7 (  0.4%)
   stack_alignment_array              6 (  0.3%)
   unaffected_reg                     6 (  0.3%)
+  warning_unreachable                4 (  0.2%)
   unrolled_strcat                    4 (  0.2%)
   static_null_pointer                4 (  0.2%)
   negative_offset                    2 (  0.1%)
   self_copy_guard                    2 (  0.1%)
 
 ====================================================================================================
-TYPE: pointer_cast (894 occurrences)
+TYPE: pointer_cast (888 occurrences)
 ====================================================================================================
 
 Unique patterns:
    359x  (int)&NAME used in byte-offset arithmetic
     25x  (uint *)((int)this_ptr
     24x  (int *)((int)this_ptr
-    13x  (int)&NAME byte-offset arithmetic split across lines
     13x  (int *)((int)pCVar1
     12x  (byte *)((int)this_ptr
     12x  (double *)((int)pdVar2
@@ -56,6 +55,7 @@ Unique patterns:
      8x  (float *)((int)g_ModelPolygonData
      7x  (CPodAuditRecord *)((int)pCVar15
      7x  (void *)((int)pvVar35
+     7x  (int)&NAME byte-offset arithmetic split across lines
      6x  (uint *)((int)pvVar35
      6x  (SShapeEditorPolygon *)((int)pSVar6
 
@@ -66,8 +66,6 @@ Functions:
   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0
   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950
-  core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0
-  core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0
   core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
   core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60
@@ -465,7 +463,7 @@ Functions:
   wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (61 occurrences)
+TYPE: shadow_pointer_walk (58 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -492,9 +490,6 @@ Unique patterns:
 
 Functions:
   core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10
-  core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0
-  core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0
-  core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
   core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
@@ -740,22 +735,6 @@ Functions:
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
-TYPE: static_identical_inner_condition (22 occurrences)
-====================================================================================================
-
-Unique patterns:
-    22x  Cppcheck: inner condition identical to outer
-
-Functions:
-  core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830
-  core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0
-
-====================================================================================================
 TYPE: bit_int_float_compare (22 occurrences)
 ====================================================================================================
 
@@ -791,6 +770,21 @@ Functions:
   shape_design.c_addQuadPolygonOctant_FUN_00469220
 
 ====================================================================================================
+TYPE: static_identical_inner_condition (21 occurrences)
+====================================================================================================
+
+Unique patterns:
+    21x  Cppcheck: inner condition identical to outer
+
+Functions:
+  core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+  shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
+  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0
+
+====================================================================================================
 TYPE: warning_type_propagation (12 occurrences)
 ====================================================================================================
 
@@ -810,20 +804,6 @@ Functions:
   core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
   core_tentacle.cpp_CTentacle_process_FUN_005db050
-
-====================================================================================================
-TYPE: warning_unreachable (10 occurrences)
-====================================================================================================
-
-Unique patterns:
-    10x  WARNING: Removing unreachable block
-
-Functions:
-  core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
-  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
 
 ====================================================================================================
 TYPE: sub84_truncation (9 occurrences)
@@ -893,6 +873,19 @@ Unique patterns:
 
 Functions:
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+
+====================================================================================================
+TYPE: warning_unreachable (4 occurrences)
+====================================================================================================
+
+Unique patterns:
+     4x  WARNING: Removing unreachable block
+
+Functions:
+  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
 
 ====================================================================================================
 TYPE: unrolled_strcat (4 occurrences)

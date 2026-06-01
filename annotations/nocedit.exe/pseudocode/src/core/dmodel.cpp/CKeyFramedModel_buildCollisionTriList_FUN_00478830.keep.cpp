@@ -23,14 +23,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830(
   this_ptr->collision_triangle_list = (CDemonTriangle *)0x0;
   if ((0 < this_ptr->poly_count) && (0 < this_ptr->frame_count)) {
     iVar4 = 0;
-    if (0 < this_ptr->poly_count) {
-      do {
-        this_ptr->collision_triangle_count =
-             this_ptr->collision_triangle_count +
-             this_ptr->poly_vert_list[iVar4].base.base.count + -2;
-        iVar4 = iVar4 + 1;
-      } while (iVar4 < this_ptr->poly_count);
-    }
+    do {
+      this_ptr->collision_triangle_count =
+           this_ptr->collision_triangle_count +
+           this_ptr->poly_vert_list[iVar4].base.base.count + -2;
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < this_ptr->poly_count);
     iVar4 = this_ptr->frame_count * this_ptr->collision_triangle_count;
     piVar2 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                        (iVar4 * 0x38 + 4,"..\\core\\dmodel.cpp",0x46f);

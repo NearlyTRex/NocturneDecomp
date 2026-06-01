@@ -130,7 +130,7 @@ LAB_004e14f5:
         std::ifstream ifs;
         std::ofstream ofs;
         _sprintf(local_534,"%s\\%s","save",local_638);
-        ifs.open(local_534, std::ios::in | std::ios::binary);
+        watcom_stream_open(ifs, local_534, std::ios::in | std::ios::binary);
         ifs.seekg(4);
         if (ifs.fail()) {
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
@@ -138,7 +138,7 @@ LAB_004e14f5:
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7);
           return;
         }
-        ofs.open("save\\$$SAVE$$.TMP", std::ios::out | std::ios::binary | std::ios::trunc);
+        watcom_stream_open(ofs, "save\\$$SAVE$$.TMP", std::ios::out | std::ios::binary | std::ios::trunc);
         if (ofs.fail()) {
           pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("Can't create temp file to load saved game file.");

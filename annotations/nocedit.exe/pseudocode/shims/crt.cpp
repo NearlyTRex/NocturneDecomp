@@ -305,6 +305,16 @@ static std::string normalize_path(const char* path) {
     return resolve_case_insensitive(slashed);
 }
 
+// Exposed for the reconstructed std:: file-stream keeps. std::ifstream/ofstream
+// bypass _fopen (and thus this normalization), so opening a Watcom-style
+// "save\\SAVE1.NOC" path fails on Linux on TWO counts: the backslash and the
+// case (real file is save/SAVE1.noc). stream_compat.h's watcom_stream_open()
+// calls this to apply the exact same '\\'->'/' + case-insensitive resolution
+// _fopen uses, so C++ streams resolve paths identically to getFile/_fopen.
+std::string watcom_resolve_fs_path(const char* path) {
+    return normalize_path(path);
+}
+
 // ---------------------------------------------------------------------------
 // File Manipulation
 // ---------------------------------------------------------------------------

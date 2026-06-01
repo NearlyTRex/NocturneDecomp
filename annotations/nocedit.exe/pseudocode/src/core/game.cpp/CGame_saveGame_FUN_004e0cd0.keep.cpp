@@ -119,13 +119,13 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
       std::ofstream ofs;
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Warning!  Your game didn't save.")
       ;
-      ifs.open("save\\$$SAVE$$.TMP", std::ios::in | std::ios::binary);
+      watcom_stream_open(ifs, "save\\$$SAVE$$.TMP", std::ios::in | std::ios::binary);
       if (ifs.fail()) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar5);
         return;
       }
       _sprintf(local_350,"%s\\%s","save",local_558);
-      ofs.open(local_350, std::ios::out | std::ios::binary | std::ios::trunc);
+      watcom_stream_open(ofs, local_350, std::ios::out | std::ios::binary | std::ios::trunc);
       if (ofs.fail()) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar5);
         return;

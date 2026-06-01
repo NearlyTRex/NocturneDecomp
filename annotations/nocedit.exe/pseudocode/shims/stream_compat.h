@@ -22,6 +22,7 @@
 
 #include <fstream>
 #include <strstream>
+#include <string>
 #include "system/iostream.h"
 
 inline _istream *watcom_istream_from(std::istream &is) {
@@ -57,6 +58,27 @@ inline std::ifstream &std_ifstream_from(ifstream *fs) {
 
 inline std::ofstream &std_ofstream_from(ofstream *fs) {
     return *reinterpret_cast<std::ofstream *>(fs);
+}
+
+// Path resolution for the reconstructed std:: file streams.
+// The original Watcom code builds paths with '\\' separators and uppercased
+// DOS-style names (e.g. "save\\SAVE1.NOC"); the CRT _fopen shim resolves those
+// against the real filesystem ('\\' -> '/' AND case-insensitive component
+// matching), which is why getFile/_fopen work. Real std::ifstream/ofstream
+// bypass _fopen and are case-sensitive on Linux, so opening "save\\SAVE1.NOC"
+// fails when the file is save/SAVE1.noc (-> "Can't open saved game file.").
+// watcom_resolve_fs_path() (defined in shims/crt.cpp) applies the exact same
+// resolution _fopen uses. Keeps call watcom_stream_open(fs, path, mode) instead
+// of fs.open(path, mode) for any raw std:: file-stream open.
+std::string watcom_resolve_fs_path(const char *path);
+
+inline void watcom_stream_open(std::ifstream &fs, const char *path,
+                               std::ios::openmode mode) {
+    fs.open(watcom_resolve_fs_path(path).c_str(), mode);
+}
+inline void watcom_stream_open(std::ofstream &fs, const char *path,
+                               std::ios::openmode mode) {
+    fs.open(watcom_resolve_fs_path(path).c_str(), mode);
 }
 
 // RAII wrappers for the codec keeps' "stream over a fixed buffer" pattern. They
