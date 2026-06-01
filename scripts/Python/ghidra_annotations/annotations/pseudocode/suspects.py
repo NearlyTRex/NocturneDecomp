@@ -5034,6 +5034,14 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
         return suspects
     eligible_types = {t for t, sz in _UNREF_STRUCT_SIZES.items()
                       if sz in cave_sizes}
+    # A 48-byte CMatrix3x4f cave block also satisfies a CMatrix3x3f-typed
+    # destination: matrixToQuaternion/matrixToEulerAngles take a CMatrix3x3f*
+    # but are routinely passed the rotation part of a 3x4 multiply output, so
+    # Ghidra types the dropped-copy destination as the smaller 3x3 and its
+    # 36-byte size never matches the 48-byte cave. (skeledit::importSkeletonFile
+    # local_2e4 = local_314, fed to matrixToQuaternion.)
+    if 48 in cave_sizes:
+        eligible_types.add('CMatrix3x3f')
     if not eligible_types:
         return suspects
     callee_out_arg = _parse_callee_signatures(assembly_code)

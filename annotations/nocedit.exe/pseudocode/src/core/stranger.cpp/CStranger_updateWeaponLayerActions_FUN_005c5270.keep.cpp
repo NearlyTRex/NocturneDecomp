@@ -197,7 +197,7 @@ joined_r0x005c57cf:
     case 6:
       this_ptr_02 = (CDynamite *)
                     core_actor_cpp_castToClassHash_FUN_0040c790
-                              (&this_ptr->weapon->base,g_CDynamiteClassInfo.name_hash);
+                              ((CDemonActor *)this_ptr->weapon,g_CDynamiteClassInfo.name_hash);
       if (((this_ptr_02 != (CDynamite *)0x0) &&
           (iVar6 = core_dynamite_cpp_CDynamite_isFuseLit_FUN_0049cf70(this_ptr_02), iVar6 == 0)) &&
          ((float)(int)(0xb / (longlong)pCVar6->motions[iVar8].frame_count) <=
@@ -212,7 +212,7 @@ joined_r0x005c57cf:
         core_stranger_cpp_CStranger_getThrowDirection_FUN_005c51c0(this_ptr,&local_54);
         pCVar13 = (CDynamite *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
-                            (&this_ptr->weapon->base,g_CDynamiteClassInfo.name_hash);
+                            ((CDemonActor *)this_ptr->weapon,g_CDynamiteClassInfo.name_hash);
         if (pCVar13 != (CDynamite *)0x0) {
           pCVar14 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                               ((CDemonActor *)this_ptr,&local_60,&local_54);
@@ -236,7 +236,7 @@ joined_r0x005c57cf:
       break;
     case 8:
       if (((fVar9 < 0.6f) && (0.6f <= (this_ptr->base).base.layer_action_t)) &&
-         (iVar8 = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr->weapon->base,"CShotgun")
+         (iVar8 = core_actor_cpp_isOfClass_FUN_0040c6d0((CDemonActor *)this_ptr->weapon,"CShotgun")
          , iVar8 != 0)) {
         (*(((this_ptr->weapon->base).vtable._uw)->_uw).onFired)(this_ptr->weapon);
       }

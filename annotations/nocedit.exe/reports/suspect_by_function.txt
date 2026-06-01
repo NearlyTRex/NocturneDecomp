@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6149 (95.3%)
-With suspects: 305
-Total suspects: 1998
+Clean: 6152 (95.3%)
+With suspects: 302
+Total suspects: 1949
 
 ====================================================================================================
 cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0 (2 suspects)
@@ -691,22 +691,6 @@ core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (21 suspects)
   Line 166 [unrolled_memcpy]: (pUVar14->vec).x = pCVar9->x;
 
 ====================================================================================================
-core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 (11 suspects)
-  File: core/mirror.cpp
-====================================================================================================
-  Line 18 [missing_cave_copy]: CMatrix3x4f local_4a4;
-  Line 19 [missing_cave_copy]: CMatrix3x4f local_474;
-  Line 20 [missing_cave_copy]: CMatrix3x4f local_444;
-  Line 21 [missing_cave_copy]: CMatrix3x4f local_414;
-  Line 23 [missing_cave_copy]: CMatrix3x4f local_3b4;
-  Line 24 [missing_cave_copy]: CMatrix3x4f local_384;
-  Line 27 [missing_cave_copy]: CMatrix3x4f local_2f4;
-  Line 30 [missing_cave_copy]: CMatrix3x4f local_264;
-  Line 31 [missing_cave_copy]: CMatrix3x4f local_234;
-  Line 32 [missing_cave_copy]: CMatrix3x4f local_204;
-  Line 33 [missing_cave_copy]: CMatrix3x4f local_1d4;
-
-====================================================================================================
 core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20 (3 suspects)
   File: core/mission.cpp
 ====================================================================================================
@@ -1220,41 +1204,6 @@ core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (2 su
   Line 19 [missing_cave_copy]: CMatrix3x4f local_a8;
 
 ====================================================================================================
-core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (30 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 89 [missing_cave_copy]: CMatrix3x4f local_404;
-  Line 90 [missing_cave_copy]: CMatrix3x4f local_3d4;
-  Line 92 [missing_cave_copy]: CMatrix3x4f local_374;
-  Line 93 [missing_cave_copy]: CMatrix3x4f local_344;
-  Line 94 [missing_cave_copy]: CMatrix3x4f local_314;
-  Line 265 [unrolled_memcpy]: for (iVar16 = 0x41; iVar16 != 0; iVar16 = iVar16 + -1) {
-  Line 410 [unrolled_strcpy]: do {
-  Line 485 [pointer_cast]: pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar26 * -2 + 1) * 4);
-  Line 486 [pointer_cast]: pCVar24 = (CMatrix3x4f *)((int)pCVar24 + ((uint)bVar26 * -2 + 1) * 4);
-  Line 490 [pointer_cast]: if (0 < *(int *)((int)aiStack_2720 + iVar16)) {
-  Line 555 [shadow_pointer_walk]: pSVar17 = (SMotion *)(pSVar17->motion_name + 0x18);
-  Line 1286 [pointer_cast]: } while (local_f0 < *(int *)((int)aiStack_2720 + local_ac));
-  Line 1309 [pointer_cast]: if (0 < *(int *)((int)aiStack_2900 + iVar16)) {
-  Line 1314 [pointer_cast]: } while (iVar4 < *(int *)((int)aiStack_2900 + iVar16));
-  Line 1364 [unrolled_memcpy]: local_1bc.x = pCVar10->x;
-  Line 1382 [unrolled_memcpy]: local_198.x = local_1e0.x;
-  Line 1398 [unrolled_memcpy]: pCVar10->x = local_1e0.x;
-  Line 1412 [unrolled_memcpy]: pCVar20->w = local_214.w;
-  Line 1417 [shadow_pointer_walk]: local_48 = (CMatrix3x4f *)((int)(local_48 + 2) + 0x24);
-  Line 1449 [unrolled_memcpy]: pCVar20->w = local_224.w;
-  Line 1454 [shadow_pointer_walk]: local_4c = (CMatrix3x4f *)((int)(local_4c + 2) + 0x24);
-  Line 1487 [unrolled_memset]: pCVar10[iVar4].z = 0.0;
-  Line 1495 [unrolled_memcpy]: pCVar10->x = pCVar15->x;
-  Line 1598 [sign_compare_idiom]: while (bVar25 || SBORROW4(iVar4,local_94) != iVar16 < 0) {
-  Line 1625 [pointer_cast]: piVar1 = (int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar16);
-  Line 1643 [pointer_cast]: if ((-1 < *(int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar5)) &&
-  Line 1644 [pointer_cast]: (local_2540[*(int *)((int)&g_SkeleditBiasEntries[0].ref_motion_index + iVar5)] == 0
-  Line 1687 [unrolled_strlen]: do {
-  Line 1828 [unrolled_strcpy]: do {
-
-====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (2 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
@@ -1369,19 +1318,6 @@ core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0 (2 suspects)
 ====================================================================================================
   Line 176 [unrolled_memset]: this_ptr->vertices[iVar15].local_position.z = 0.0;
   Line 203 [shadow_pointer_walk]: pCVar15 = (CWaterActor *)&(pCVar15->base).location;
-
-====================================================================================================
-core_weather.cpp_CWeather_renderParticles_FUN_005ef190 (8 suspects)
-  File: core/weather.cpp
-====================================================================================================
-  Line 58 [raw_address_constant]: pCVar1->vertex_buffer_ptr[1].u = 0x780000;
-  Line 60 [raw_address_constant]: pCVar1->vertex_buffer_ptr[2].u = 0x780000;
-  Line 61 [raw_address_constant]: pCVar1->vertex_buffer_ptr[2].v = 0xf80000;
-  Line 63 [raw_address_constant]: pCVar1->vertex_buffer_ptr[3].v = 0xf80000;
-  Line 163 [raw_address_constant]: pCVar2->vertex_buffer_ptr[1].u = 0x780000;
-  Line 165 [raw_address_constant]: pCVar2->vertex_buffer_ptr[2].u = 0x780000;
-  Line 166 [raw_address_constant]: pCVar2->vertex_buffer_ptr[2].v = 0xf80000;
-  Line 171 [raw_address_constant]: pCVar2->vertex_buffer_ptr[3].v = 0xf80000;
 
 ====================================================================================================
 engine_colquant.c_computeBoxStatistics_FUN_00441260 (4 suspects)

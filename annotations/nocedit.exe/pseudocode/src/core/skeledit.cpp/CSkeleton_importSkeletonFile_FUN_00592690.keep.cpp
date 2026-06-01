@@ -7,12 +7,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleton *this_ptr,char *filename)
 
 {
-  int *piVar1;
   char cVar2;
   CEditorTools *this_ptr_00;
   _FILE *file;
@@ -36,12 +33,9 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   byte *str;
   CMatrix3x4f *pCVar19;
   CQuaternion4f *pCVar20;
-  SBoneData *pSVar21;
   char (*pacVar22) [260];
   SSkeleditBiasEntry *pSVar23;
-  CMatrix3x4f *pCVar24;
   SMotionTransition *dest;
-  bool bVar25;
   byte bVar26;
   CBoneStructure CStack_113f8;
   CBoneStructure local_ded4;
@@ -94,13 +88,10 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   char local_4cc [100];
   char local_468 [52];
   CMatrix3x4f local_434;
-  CMatrix3x4f local_404;
-  CMatrix3x4f local_3d4;
   CMatrix3x4f local_3a4;
   CMatrix3x4f local_374;
   CMatrix3x4f local_344;
   CMatrix3x4f local_314;
-  CMatrix3x3f local_2e4;
   char local_2b4 [40];
   char local_28c [40];
   char local_264 [32];
@@ -190,8 +181,6 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   int local_5c;
   int local_58;
   float local_54;
-  CMatrix3x4f *local_4c;
-  CMatrix3x4f *local_48;
   char (*local_44) [260];
   SMotion *local_40;
   int local_3c;
@@ -406,16 +395,7 @@ LAB_00592a67:
             pSVar13 = pSVar12 + 1;
             this_ptr->bone_list[iVar16].parent_index = local_ded4.bones[iVar16].parent_index;
             iVar16 = iVar16 + 1;
-            pSVar21 = pSVar14;
-            do {
-              cVar2 = pSVar21->name[0];
-              pSVar12->bone_name[0] = cVar2;
-              if (cVar2 == '\0') break;
-              cVar2 = pSVar21->name[1];
-              pSVar21 = (SBoneData *)(pSVar21->name + 2);
-              pSVar12->bone_name[1] = cVar2;
-              pSVar12 = (SBone *)(pSVar12->bone_name + 2);
-            } while (cVar2 != '\0');
+            strcpy(pSVar12->bone_name,pSVar14->name);
             pSVar14 = pSVar14 + 1;
             pSVar12 = pSVar13;
           } while (iVar16 < this_ptr->bone_count);
@@ -477,16 +457,10 @@ LAB_00592a67:
             local_144 = 0.0;
             local_140 = 0.0;
             local_a8 = &local_ec->fps;
-            pCVar19 = &CMatrix3x4f_00665968;
-            pCVar24 = &local_434;
-            for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-              pCVar24->m[0].w = pCVar19->m[0].w;
-              pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar26 * -2 + 1) * 4);
-              pCVar24 = (CMatrix3x4f *)((int)pCVar24 + ((uint)bVar26 * -2 + 1) * 4);
-            }
+            local_434 = CMatrix3x4f_00665968;
             local_13c = 0.0;
             local_ac = iVar16;
-            if (0 < *(int *)((int)aiStack_2720 + iVar16)) {
+            if (0 < aiStack_2720[iVar16 / 4]) {
               do {
                 core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_20a4,local_11c,1);
                 iVar16 = _strnicmp(local_20a4,"fps",3);
@@ -540,10 +514,9 @@ LAB_00592a67:
                       goto LAB_005927ee;
                     }
                     iVar16 = 0;
-                    pSVar17 = local_ec;
                     if (0 < local_ec->transition_count) {
                       do {
-                        if (dest->desired_state == pSVar17->transitions[0].desired_state) {
+                        if (dest->desired_state == local_ec->transitions[iVar16].desired_state) {
                           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                     (g_CEditorToolsPtr,"Duplicate if %s's for animation %s in %s",local_468
                                      ,local_ec->motion_name,filename);
@@ -551,7 +524,6 @@ LAB_00592a67:
                           goto LAB_005927ee;
                         }
                         iVar16 = iVar16 + 1;
-                        pSVar17 = (SMotion *)(pSVar17->motion_name + 0x18);
                       } while (iVar16 < local_ec->transition_count);
                     }
                     EVar6 = core_skeledit_cpp_parseTransitionType_FUN_005925c0(local_28c);
@@ -1282,7 +1254,7 @@ LAB_0059518b:
                   }
                 }
                 local_f0 = local_f0 + 1;
-              } while (local_f0 < *(int *)((int)aiStack_2720 + local_ac));
+              } while (local_f0 < aiStack_2720[local_ac / 4]);
             }
             pacVar22 = local_e8;
             p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -1305,12 +1277,12 @@ LAB_0059518b:
             iVar16 = local_3c;
             core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(&local_748c,file,&local_b8);
             iVar4 = 0;
-            if (0 < *(int *)((int)aiStack_2900 + iVar16)) {
+            if (0 < aiStack_2900[iVar16 / 4]) {
               do {
                 iVar4 = iVar4 + 1;
                 core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(&local_748c,local_c0);
                 local_b8 = local_b8 + -1;
-              } while (iVar4 < *(int *)((int)aiStack_2900 + iVar16));
+              } while (iVar4 < aiStack_2900[iVar16 / 4]);
             }
             local_b0 = 0;
             local_34 = 0;
@@ -1359,9 +1331,7 @@ LAB_0059518b:
                   pCVar10 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
                                       (&local_748c.bones[0].world_matrix,&local_1b0);
                   if (&local_1bc != pCVar10) {
-                    local_1bc.x = pCVar10->x;
-                    local_1bc.y = pCVar10->y;
-                    local_1bc.z = pCVar10->z;
+                    local_1bc = *pCVar10;
                   }
                   local_b4 = 0;
                 }
@@ -1376,11 +1346,7 @@ LAB_0059518b:
                 local_19c = local_748c.bones[0].world_matrix.m[2].z;
                 if (local_ec->frame_count <= local_34) {
                   if (local_e4 == 0) {
-                    if (&local_198 != &local_1e0) {
-                      local_198.x = local_1e0.x;
-                      local_198.y = local_1e0.y;
-                      local_198.z = local_1e0.z;
-                    }
+                    local_198 = local_1e0;
                     local_b0 = 1;
                   }
                   break;
@@ -1393,26 +1359,19 @@ LAB_0059518b:
                 }
                 pCVar10 = this_ptr->frame_positions_1 + iVar16;
                 if (pCVar10 != &local_1e0) {
-                  pCVar10->x = local_1e0.x;
-                  pCVar10->y = local_1e0.y;
-                  pCVar10->z = local_1e0.z;
+                  *pCVar10 = local_1e0;
                 }
                 iVar4 = this_ptr->bone_count;
                 pCVar20 = this_ptr->bone_angle_frames;
                 if (local_dc == 0) {
                   local_60 = local_dc;
                   if (0 < this_ptr->bone_count) {
-                    local_48 = &local_748c.bones[0].world_matrix;
                     pCVar20 = pCVar20 + iVar4 * iVar16;
                     do {
                       core_xform_cpp_matrixToQuaternion_FUN_005f7420
-                                ((CMatrix3x3f *)local_48,&local_214);
-                      pCVar20->w = local_214.w;
-                      pCVar20->x = local_214.x;
-                      pCVar20->y = local_214.y;
-                      pCVar20->z = local_214.z;
+                                ((CMatrix3x3f *)&local_748c.bones[local_60].world_matrix,&local_214);
+                      *pCVar20 = local_214;
                       local_60 = local_60 + 1;
-                      local_48 = (CMatrix3x4f *)((int)(local_48 + 2) + 0x24);
                       pCVar20 = pCVar20 + 1;
                     } while ((int)local_60 < this_ptr->bone_count);
                   }
@@ -1436,20 +1395,17 @@ LAB_0059518b:
                             (&local_3a4,&local_150,&local_180);
                   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                             (&local_748c.bones[0].world_matrix,&local_3a4,&local_344);
-                  core_xform_cpp_inverse_FUN_005f6210(&local_3d4,&local_374);
+                  core_xform_cpp_inverse_FUN_005f6210(&local_344,&local_374);
                   local_5c = 0;
                   if (0 < this_ptr->bone_count) {
-                    local_4c = &local_748c.bones[0].world_matrix;
                     pCVar20 = pCVar20 + iVar4 * iVar16;
                     do {
-                      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(local_4c,&local_404,&local_314);
-                      core_xform_cpp_matrixToQuaternion_FUN_005f7420(&local_2e4,&local_224);
-                      pCVar20->w = local_224.w;
-                      pCVar20->x = local_224.x;
-                      pCVar20->y = local_224.y;
-                      pCVar20->z = local_224.z;
+                      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
+                                (&local_748c.bones[local_5c].world_matrix,&local_374,&local_314);
+                      core_xform_cpp_matrixToQuaternion_FUN_005f7420
+                                ((CMatrix3x3f *)&local_314,&local_224);
+                      *pCVar20 = local_224;
                       local_5c = local_5c + 1;
-                      local_4c = (CMatrix3x4f *)((int)(local_4c + 2) + 0x24);
                       pCVar20 = pCVar20 + 1;
                     } while (local_5c < this_ptr->bone_count);
                   }
@@ -1482,17 +1438,15 @@ LAB_00595723:
                 }
                 else if (iVar16 < 1) {
                   pCVar10 = this_ptr->frame_positions_2;
+                  pCVar10[iVar4].x = 0.0;
+                  pCVar10[iVar4].y = 0.0;
                   pCVar10[iVar4].z = 0.0;
-                  pCVar10[iVar4].y = pCVar10[iVar4].z;
-                  pCVar10[iVar4].x = pCVar10[iVar4].y;
                 }
                 else if (local_b0 == 0) {
                   pCVar10 = this_ptr->frame_positions_2 + iVar4;
                   pCVar15 = this_ptr->frame_positions_2 + iVar4 + -1;
                   if (pCVar10 != pCVar15) {
-                    pCVar10->x = pCVar15->x;
-                    pCVar10->y = pCVar15->y;
-                    pCVar10->z = pCVar15->z;
+                    *pCVar10 = *pCVar15;
                   }
                 }
                 else {
@@ -1590,18 +1544,14 @@ LAB_00595723:
               local_1ec = local_1ec * fVar11;
               local_1e8 = local_1e8 * fVar11;
               local_1e4 = local_1e4 * fVar11;
-              iVar16 = local_cc - local_94;
-              bVar25 = local_cc == local_94;
               iVar4 = local_cc;
-              while (bVar25 || SBORROW4(iVar4,local_94) != iVar16 < 0) {
+              while (iVar4 <= local_94) {
                 iVar16 = local_ec->frame_start + iVar4;
                 pCVar10 = this_ptr->frame_positions_2;
                 pCVar10[iVar16].x = pCVar10[iVar16].x + local_1ec;
                 pCVar10[iVar16].y = pCVar10[iVar16].y + local_1e8;
                 iVar4 = iVar4 + 1;
                 pCVar10[iVar16].z = pCVar10[iVar16].z + local_1e4;
-                iVar16 = iVar4 - local_94;
-                bVar25 = iVar16 == 0;
               }
             }
             local_44 = local_44 + 1;
@@ -1618,12 +1568,9 @@ LAB_00595723:
         local_11c = (_FILE *)0x0;
         memset(local_2540,0,0x1e0);
         if (0 < g_SkeleditBiasEntryCount) {
-          iVar16 = 0;
-          do {
-            piVar1 = (int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar16);
-            iVar16 = iVar16 + 0x10;
-            local_2540[*piVar1] = 1;
-          } while (iVar16 < g_SkeleditBiasEntryCount * 0x10);
+          for (iVar16 = 0; iVar16 < g_SkeleditBiasEntryCount; iVar16 = iVar16 + 1) {
+            local_2540[g_SkeleditBiasEntries[iVar16].motion_index] = 1;
+          }
         }
         iVar16 = 0;
         if (g_SkeleditBiasEntryCount < 1) {
@@ -1636,14 +1583,11 @@ LAB_00595eb8:
         do {
           iVar4 = 0;
           if (0 < g_SkeleditBiasEntryCount) {
-            iVar5 = 0;
             do {
-              if ((-1 < *(int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar5)) &&
-                 (local_2540[*(int *)((int)&g_SkeleditBiasEntries[0].ref_motion_index + iVar5)] == 0
-                 )) break;
-              iVar5 = iVar5 + 0x10;
+              if ((-1 < g_SkeleditBiasEntries[iVar4].motion_index) &&
+                 (local_2540[g_SkeleditBiasEntries[iVar4].ref_motion_index] == 0)) break;
               iVar4 = iVar4 + 1;
-            } while (iVar5 < g_SkeleditBiasEntryCount * 0x10);
+            } while (iVar4 < g_SkeleditBiasEntryCount);
           }
           if (g_SkeleditBiasEntryCount <= iVar4) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -1680,17 +1624,9 @@ LAB_00595eb8:
         iVar16 = _strnicmp(local_21d0,"checkout",8);
         if (iVar16 == 0) {
           sscanf(local_21ca + 2,"%s",acStack_851 + 1);
-          uVar9 = 0xffffffff;
-          pcVar18 = acStack_851 + 1;
-          do {
-            if (uVar9 == 0) break;
-            uVar9 = uVar9 - 1;
-            cVar2 = *pcVar18;
-            pcVar18 = pcVar18 + (uint)bVar26 * -2 + 1;
-          } while (cVar2 != '\0');
-          n = ~uVar9 - 1;
+          n = strlen(acStack_851 + 1);
           if (0 < (int)n) {
-            pcVar18 = acStack_851 + ~uVar9;
+            pcVar18 = acStack_851 + 1 + n;
             do {
               if ((g_CharacterClassificationTable[(byte)(pcVar18[-1] + 1)] & 2) == 0) break;
               n = n - 1;
@@ -1821,17 +1757,7 @@ LAB_00595eb8:
         goto LAB_005927ee;
       }
       aiStack_2720[(this_ptr->motion_list).motion_count] = 0;
-      pcVar18 = local_1f78;
-      pcVar7 = g_MotionFilenames[(this_ptr->motion_list).motion_count];
-      do {
-        cVar2 = *pcVar18;
-        *pcVar7 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar18[1];
-        pcVar18 = pcVar18 + 2;
-        pcVar7[1] = cVar2;
-        pcVar7 = pcVar7 + 2;
-      } while (cVar2 != '\0');
+      strcpy(g_MotionFilenames[(this_ptr->motion_list).motion_count],local_1f78);
       local_108 = 1;
     } while( true );
   }

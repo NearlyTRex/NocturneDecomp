@@ -8,24 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5207,
-    "complexity_score": 2197,
+    "complexity_score": 1852,
     "cross_reference_count": 0,
     "function_call_count": 57,
     "global_count": 186,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 1852,
-    "suspect_count": 30,
-    "suspect_types": [
-      "missing_cave_copy",
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "sign_compare_idiom",
-      "unrolled_memcpy",
-      "unrolled_memset",
-      "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 7059
   },
   "cross_references": [],
@@ -1514,6 +1504,78 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 485,
+      "match": "(CMatrix3x4f *)((int)pCVar19",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar26 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 486,
+      "match": "(CMatrix3x4f *)((int)pCVar24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar24 = (CMatrix3x4f *)((int)pCVar24 + ((uint)bVar26 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 490,
+      "match": "(int *)((int)aiStack_2720",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)aiStack_2720 + iVar16)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1286,
+      "match": "(int *)((int)aiStack_2720",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (local_f0 < *(int *)((int)aiStack_2720 + local_ac));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1309,
+      "match": "(int *)((int)aiStack_2900",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)aiStack_2900 + iVar16)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1314,
+      "match": "(int *)((int)aiStack_2900",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (iVar4 < *(int *)((int)aiStack_2900 + iVar16));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 1598,
+      "match": "SBORROW4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "while (bVar25 || SBORROW4(iVar4,local_94) != iVar16 < 0) {",
+      "type": "sign_compare_idiom"
+    },
+    {
       "actual_args": 0,
       "description": "Format \"No motions defined in %s\" has 1 specifiers but 0 arguments after it",
       "expected_args": 1,
@@ -1526,6 +1588,33 @@
       "type": "format_string_mismatch"
     },
     {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 410,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 1828,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 265,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar16 = 0x41; iVar16 != 0; iVar16 = iVar16 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 483,
       "match": "for (...; != 0; ... + -1)",
@@ -1533,6 +1622,96 @@
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 1364,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1bc.x = pCVar10->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 1382,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_198.x = local_1e0.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 1398,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10->x = local_1e0.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 1412,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar20->w = local_214.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 1449,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar20->w = local_224.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 1495,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10->x = pCVar15->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 1487,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10[iVar4].z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1625,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar16);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1643,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((-1 < *(int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar5)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1644,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_2540[*(int *)((int)&g_SkeleditBiasEntries[0].ref_motion_index + iVar5)] == 0",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_50` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `local_50->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
@@ -1544,6 +1723,15 @@
       "type": "shadow_pointer_walk"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar17` self-updates via pointer arithmetic on its own `motion_name` field (which decays to a pointer), `+ CONST`; `offsetof(motion_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar17`. Replace those `pSVar17->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 555,
+      "match": "pSVar17 = (T *)(pSVar17->motion_name + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar17 = (SMotion *)(pSVar17->motion_name + 0x18);",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar19` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar19) + offsetof(subfield)` equals the real array stride. Replace `pCVar19->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 1345,
       "match": "pCVar19 = (T *)&pCVar19[N].SUBFIELD",
@@ -1551,6 +1739,87 @@
       "severity": "moderate",
       "text": "pCVar19 = (CMatrix3x4f *)&pCVar19[2].m[2].x;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_48` self-updates via element-arithmetic `(int)(local_48 + N) + M`, where `N*sizeof(*local_48) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_48->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1417,
+      "match": "local_48 = (T *)((int)(local_48 + N) + M)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_48 = (CMatrix3x4f *)((int)(local_48 + 2) + 0x24);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_4c` self-updates via element-arithmetic `(int)(local_4c + N) + M`, where `N*sizeof(*local_4c) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_4c->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1454,
+      "match": "local_4c = (T *)((int)(local_4c + N) + M)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_4c = (CMatrix3x4f *)((int)(local_4c + 2) + 0x24);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1687,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Struct-type local `local_404` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 89,
+      "match": "CMatrix3x4f local_404; ... f(&local_404, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_404;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_3d4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 90,
+      "match": "CMatrix3x4f local_3d4; ... f(&local_3d4, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_3d4;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_374` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 92,
+      "match": "CMatrix3x4f local_374; ... f(&local_374, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_374;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_344` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 93,
+      "match": "CMatrix3x4f local_344; ... f(&local_344, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_344;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_314` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 94,
+      "match": "CMatrix3x4f local_314; ... f(&local_314, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_314;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_2e4` (CMatrix3x3f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 95,
+      "match": "CMatrix3x3f local_2e4; ... f(&local_2e4, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x3f local_2e4;",
+      "type": "missing_cave_copy"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -3044,91 +3313,91 @@
         {
           "check_id": "invalidscanf",
           "column": 21,
-          "line": 522,
+          "line": 496,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 21,
-          "line": 571,
+          "line": 543,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 23,
-          "line": 597,
+          "line": 569,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 27,
-          "line": 708,
+          "line": 680,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 29,
-          "line": 734,
+          "line": 706,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 29,
-          "line": 765,
+          "line": 737,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 34,
-          "line": 874,
+          "line": 846,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 33,
-          "line": 972,
+          "line": 944,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 45,
-          "line": 1172,
+          "line": 1144,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 11,
-          "line": 1682,
+          "line": 1626,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 22,
-          "line": 1733,
+          "line": 1669,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 15,
-          "line": 1770,
+          "line": 1706,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 16,
-          "line": 1794,
+          "line": 1730,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         }
@@ -3137,246 +3406,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 485,
-      "match": "(CMatrix3x4f *)((int)pCVar19",
-      "severity": "moderate",
-      "text": "pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar26 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 486,
-      "match": "(CMatrix3x4f *)((int)pCVar24",
-      "severity": "moderate",
-      "text": "pCVar24 = (CMatrix3x4f *)((int)pCVar24 + ((uint)bVar26 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 490,
-      "match": "(int *)((int)aiStack_2720",
-      "severity": "moderate",
-      "text": "if (0 < *(int *)((int)aiStack_2720 + iVar16)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1286,
-      "match": "(int *)((int)aiStack_2720",
-      "severity": "moderate",
-      "text": "} while (local_f0 < *(int *)((int)aiStack_2720 + local_ac));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1309,
-      "match": "(int *)((int)aiStack_2900",
-      "severity": "moderate",
-      "text": "if (0 < *(int *)((int)aiStack_2900 + iVar16)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1314,
-      "match": "(int *)((int)aiStack_2900",
-      "severity": "moderate",
-      "text": "} while (iVar4 < *(int *)((int)aiStack_2900 + iVar16));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 1598,
-      "match": "SBORROW4",
-      "severity": "moderate",
-      "text": "while (bVar25 || SBORROW4(iVar4,local_94) != iVar16 < 0) {",
-      "type": "sign_compare_idiom"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 410,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 1828,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 265,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar16 = 0x41; iVar16 != 0; iVar16 = iVar16 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 1364,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_1bc.x = pCVar10->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 1382,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_198.x = local_1e0.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 1398,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar10->x = local_1e0.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 1412,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar20->w = local_214.w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 1449,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar20->w = local_224.w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 1495,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar10->x = pCVar15->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 1487,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "pCVar10[iVar4].z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1625,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar16);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1643,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "if ((-1 < *(int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar5)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 1644,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "(local_2540[*(int *)((int)&g_SkeleditBiasEntries[0].ref_motion_index + iVar5)] == 0",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar17` self-updates via pointer arithmetic on its own `motion_name` field (which decays to a pointer), `+ CONST`; `offsetof(motion_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar17`. Replace those `pSVar17->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 555,
-      "match": "pSVar17 = (T *)(pSVar17->motion_name + CONST)",
-      "severity": "moderate",
-      "text": "pSVar17 = (SMotion *)(pSVar17->motion_name + 0x18);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_48` self-updates via element-arithmetic `(int)(local_48 + N) + M`, where `N*sizeof(*local_48) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_48->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1417,
-      "match": "local_48 = (T *)((int)(local_48 + N) + M)",
-      "severity": "moderate",
-      "text": "local_48 = (CMatrix3x4f *)((int)(local_48 + 2) + 0x24);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_4c` self-updates via element-arithmetic `(int)(local_4c + N) + M`, where `N*sizeof(*local_4c) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_4c->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1454,
-      "match": "local_4c = (T *)((int)(local_4c + N) + M)",
-      "severity": "moderate",
-      "text": "local_4c = (CMatrix3x4f *)((int)(local_4c + 2) + 0x24);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1687,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Struct-type local `local_404` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 89,
-      "match": "CMatrix3x4f local_404; ... f(&local_404, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f local_404;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_3d4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 90,
-      "match": "CMatrix3x4f local_3d4; ... f(&local_3d4, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f local_3d4;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_374` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 92,
-      "match": "CMatrix3x4f local_374; ... f(&local_374, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f local_374;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_344` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 93,
-      "match": "CMatrix3x4f local_344; ... f(&local_344, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f local_344;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_314` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 94,
-      "match": "CMatrix3x4f local_314; ... f(&local_314, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f local_314;",
-      "type": "missing_cave_copy"
-    }
-  ]
+  "suspects": []
 }

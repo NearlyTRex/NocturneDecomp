@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 71
-  Total suspicious global references: 118
+  Functions with suspicious globals: 72
+  Total suspicious global references: 120
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -21,10 +21,10 @@ SUMMARY
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_CDemonCameraInstance                             4 functions
-    g_WindowHeight                                     3 functions
+    g_WindowHeight                                     4 functions
+    g_WindowWidth                                      3 functions
     g_GetLastErrorFunc                                 3 functions
     g_TextureCacheInstance                             2 functions
-    g_WindowWidth                                      2 functions
     g_UseDirect3D                                      2 functions
     g_CMoonInstance                                    2 functions
     g_CKeysPtr                                         2 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 35 (these need manual review)
+  .keep files with issues: 36 (these need manual review)
   Raw .cpp files with issues: 36
 
 ====================================================================================================
@@ -190,6 +190,18 @@ core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep]  (2 suspicious globals)
 
   g_CScriptPtr
     Used at lines: 30, 40
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50  [.keep]  (2 suspicious globals)
+  File: engine/drender.cpp
+
+  g_WindowHeight
+    Used at lines: 30
+    NOT found in function reference list
+
+  g_WindowWidth
+    Used at lines: 29
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

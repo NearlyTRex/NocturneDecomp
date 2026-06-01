@@ -83,7 +83,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
       core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->weapon->base);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr->weapon);
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                 (g_CDemonSetPtr,(this_ptr->base).base.carry_hands[1].carry_actor);
       input = core_stranger_cpp_CStranger_getThrowDirection_FUN_005c51c0(this_ptr,&local_70);

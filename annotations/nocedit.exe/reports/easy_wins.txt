@@ -14,14 +14,6 @@ PRIORITY 1: Files with 1-2 functions remaining
     - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
       Suspects: unrolled_memcpy, unrolled_memcpy
 
-  core/weather.cpp (1 remaining of 10)
-    - core_weather.cpp_CWeather_renderParticles_FUN_005ef190
-      Suspects: raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant
-
-  core/mirror.cpp (1 remaining of 22)
-    - core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
-      Suspects: missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy
-
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
@@ -35,26 +27,14 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines)
         Types: ['unrolled_memcpy']
 
-  core/mirror.cpp (95.5% complete)
-    1 functions remaining:
-      core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 (340 lines)
-        Types: ['missing_cave_copy']
-
-  core/skeledit.cpp (94.3% complete)
-    4 functions remaining:
-      core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (1852 lines)
-        Types: ['missing_cave_copy', 'pointer_cast', 'shadow_pointer_walk', 'sign_compare_idiom', 'unrolled_memcpy', 'unrolled_memset', 'unrolled_strcpy', 'unrolled_strlen', 'warning_inlined_function']
+  core/skeledit.cpp (95.7% complete)
+    3 functions remaining:
       core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines)
         Types: ['missing_cave_copy', 'pointer_cast', 'raw_address_constant', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_memset', 'unrolled_strcpy', 'warning_inlined_function']
       core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1436 lines)
         Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_strcpy', 'warning_inlined_function']
       core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines)
         Types: ['missing_cave_copy']
-
-  core/weather.cpp (90.0% complete)
-    1 functions remaining:
-      core_weather.cpp_CWeather_renderParticles_FUN_005ef190 (209 lines)
-        Types: ['raw_address_constant']
 
 ====================================================================================================
 ALL REMAINING FILES

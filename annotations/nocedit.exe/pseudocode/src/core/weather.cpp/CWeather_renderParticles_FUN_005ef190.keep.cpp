@@ -52,14 +52,14 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&g_RainDropTexture);
     pCVar1 = g_CDemonRendererPtr2;
-    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0x80000;
-    pCVar1->vertex_buffer_ptr->v = 0x80000;
-    pCVar1->vertex_buffer_ptr[1].u = 0x780000;
-    pCVar1->vertex_buffer_ptr[1].v = 0x80000;
-    pCVar1->vertex_buffer_ptr[2].u = 0x780000;
-    pCVar1->vertex_buffer_ptr[2].v = 0xf80000;
-    pCVar1->vertex_buffer_ptr[3].u = 0x80000;
-    pCVar1->vertex_buffer_ptr[3].v = 0xf80000;
+    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0x8 << 16;
+    pCVar1->vertex_buffer_ptr->v = 0x8 << 16;
+    pCVar1->vertex_buffer_ptr[1].u = 0x78 << 16;
+    pCVar1->vertex_buffer_ptr[1].v = 0x8 << 16;
+    pCVar1->vertex_buffer_ptr[2].u = 0x78 << 16;
+    pCVar1->vertex_buffer_ptr[2].v = 0xf8 << 16;
+    pCVar1->vertex_buffer_ptr[3].u = 0x8 << 16;
+    pCVar1->vertex_buffer_ptr[3].v = 0xf8 << 16;
   }
   else {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -157,15 +157,15 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&g_RainSplashTexture);
     pCVar2 = g_CDemonRendererPtr2;
-    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0x80000;
-    pCVar2->vertex_buffer_ptr->v = 0x80000;
-    pCVar2->vertex_buffer_ptr[1].u = 0x780000;
-    pCVar2->vertex_buffer_ptr[1].v = 0x80000;
-    pCVar2->vertex_buffer_ptr[2].u = 0x780000;
-    pCVar2->vertex_buffer_ptr[2].v = 0xf80000;
+    g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0x8 << 16;
+    pCVar2->vertex_buffer_ptr->v = 0x8 << 16;
+    pCVar2->vertex_buffer_ptr[1].u = 0x78 << 16;
+    pCVar2->vertex_buffer_ptr[1].v = 0x8 << 16;
+    pCVar2->vertex_buffer_ptr[2].u = 0x78 << 16;
+    pCVar2->vertex_buffer_ptr[2].v = 0xf8 << 16;
     iVar3 = 0;
-    pCVar2->vertex_buffer_ptr[3].u = 0x80000;
-    pCVar2->vertex_buffer_ptr[3].v = 0xf80000;
+    pCVar2->vertex_buffer_ptr[3].u = 0x8 << 16;
+    pCVar2->vertex_buffer_ptr[3].v = 0xf8 << 16;
     do {
       if (g_WeatherParticleHitGround[iVar3] != '\0') {
         local_2c.x = g_WeatherParticlePositions[iVar3].x;
