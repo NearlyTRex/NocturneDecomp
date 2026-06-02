@@ -12,7 +12,6 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
 {
   int iVar1;
   int iVar2;
-  CNetGame *pCVar3;
   float local_198;
   char local_194 [256];
   char local_94 [100];
@@ -52,19 +51,17 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
       local_1c = 1;
       local_18 = 0x21;
       iVar1 = 0;
-      pCVar3 = this_ptr;
       if (0 < this_ptr->player_count) {
         do {
-          if (pCVar3->players[0].local_sync_stage < sync_stage) {
+          if (this_ptr->players[iVar1].local_sync_stage < sync_stage) {
             local_1c = 0;
             engine_2d_c_drawText_FUN_00401fd0(this_ptr->players[iVar1].name,0,local_18);
             _sprintf
-                      (local_194,"%d",pCVar3->players[0].local_sync_stage);
+                      (local_194,"%d",this_ptr->players[iVar1].local_sync_stage);
             engine_2d_c_drawText_FUN_00401fd0(local_194,200,local_18);
             local_18 = local_18 + 0xb;
           }
           iVar1 = iVar1 + 1;
-          pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
         } while (iVar1 < this_ptr->player_count);
       }
       if (local_1c != 0) break;
@@ -83,17 +80,15 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
         local_30.header.size = 9;
         local_30.value = sync_stage;
         iVar1 = 0;
-        pCVar3 = this_ptr;
         if (0 < this_ptr->player_count) {
           do {
-            if (pCVar3->players[0].local_sync_stage < sync_stage) {
+            if (this_ptr->players[iVar1].local_sync_stage < sync_stage) {
               core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,iVar1,&local_30.header);
             }
             else {
               core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(this_ptr,iVar1,2.0);
             }
             iVar1 = iVar1 + 1;
-            pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
           } while (iVar1 < this_ptr->player_count);
         }
       }

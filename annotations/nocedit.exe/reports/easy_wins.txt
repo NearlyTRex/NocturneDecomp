@@ -14,6 +14,34 @@ PRIORITY 1: Files with 1-2 functions remaining
     - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
       Suspects: unrolled_memcpy, unrolled_memcpy
 
+  engine/keyframe.c (1 remaining of 5)
+    - engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
+      Suspects: pointer_cast, pointer_cast, static_shift_too_many_bits
+
+  core/dracbrid.cpp (1 remaining of 25)
+    - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
+      Suspects: pointer_cast
+
+  core/inv.cpp (1 remaining of 43)
+    - core_inv.cpp_CInventory_addItem_FUN_004fd600
+      Suspects: pointer_cast, pointer_cast
+
+  core/dlight.cpp (1 remaining of 34)
+    - core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90
+      Suspects: pointer_cast, pointer_cast
+
+  core/netgame.cpp (2 remaining of 64)
+    - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
+      Suspects: unrolled_memcpy
+    - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
+      Suspects: unrolled_memcpy
+
+  core/glass.cpp (2 remaining of 24)
+    - core_glass.cpp_CGlass_shatter_FUN_004eaef0
+      Suspects: raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant
+    - core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
+      Suspects: unrolled_memcpy, unrolled_memcpy
+
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
@@ -22,10 +50,32 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
+  core/inv.cpp (97.7% complete)
+    1 functions remaining:
+      core_inv.cpp_CInventory_addItem_FUN_004fd600 (1153 lines)
+        Types: ['pointer_cast']
+
   engine/pod.cpp (97.1% complete)
     1 functions remaining:
       engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines)
         Types: ['unrolled_memcpy']
+
+  core/dlight.cpp (97.1% complete)
+    1 functions remaining:
+      core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90 (191 lines)
+        Types: ['pointer_cast']
+
+  core/netgame.cpp (96.9% complete)
+    2 functions remaining:
+      core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (90 lines)
+        Types: ['unrolled_memcpy']
+      core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines)
+        Types: ['unrolled_memcpy']
+
+  core/dracbrid.cpp (96.0% complete)
+    1 functions remaining:
+      core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (756 lines)
+        Types: ['pointer_cast']
 
   core/skeledit.cpp (95.7% complete)
     3 functions remaining:
@@ -36,22 +86,26 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines)
         Types: ['missing_cave_copy']
 
+  core/glass.cpp (91.7% complete)
+    2 functions remaining:
+      core_glass.cpp_CGlass_shatter_FUN_004eaef0 (124 lines)
+        Types: ['raw_address_constant']
+      core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (387 lines)
+        Types: ['unrolled_memcpy']
+
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
   core/dmodel.cpp                                               87.9%  (58/66 clean, 8 remaining)
   core/msnedit.cpp                                              87.3%  (55/63 clean, 8 remaining)
   core/manpuz.cpp                                               85.7%  (54/63 clean, 9 remaining)
-  core/mobster.cpp                                              84.6%  (22/26 clean, 4 remaining)
   core/scat.cpp                                                 84.0%  (21/25 clean, 4 remaining)
   core/frankgen.cpp                                             83.3%  (20/24 clean, 4 remaining)
   shape/cramtex.cpp                                             81.0%  (17/21 clean, 4 remaining)
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
-  core/glass.cpp                                                79.2%  (19/24 clean, 5 remaining)
   core/gabriela.cpp                                             78.9%  (30/38 clean, 8 remaining)
   core/wateract.cpp                                             78.3%  (18/23 clean, 5 remaining)
   core/ghoul.cpp                                                77.8%  (14/18 clean, 4 remaining)
-  core/netgame.cpp                                              76.6%  (49/64 clean, 15 remaining)
   shape/superopt.cpp                                            75.3%  (140/186 clean, 46 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)

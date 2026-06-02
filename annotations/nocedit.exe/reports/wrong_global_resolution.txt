@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 72
-  Total suspicious global references: 120
+  Functions with suspicious globals: 73
+  Total suspicious global references: 121
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 36 (these need manual review)
+  .keep files with issues: 37 (these need manual review)
   Raw .cpp files with issues: 36
 
 ====================================================================================================
@@ -230,6 +230,14 @@ core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0  [.keep]  (1 suspicio
 
   g_RenderStateFlags
     Used at lines: 107
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00  [.keep]  (1 suspicious globals)
+  File: core/enemy.cpp
+
+  g_ScriptSentinelActor
+    Used at lines: 130
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

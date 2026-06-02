@@ -233,7 +233,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 004b1b79: MOV EDI,ESP
 
   engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
-    File: engine/keyframe.c, Suspects: 0
+    File: engine/keyframe.c, Suspects: 2
     - [stack_alignment] at 00501f39: AND ESP,0xfffffff8
 
   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
@@ -277,5 +277,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 1.0 suspects/function
+  With stack patterns:    avg 0.9 suspects/function
   Without stack patterns: avg 0.4 suspects/function

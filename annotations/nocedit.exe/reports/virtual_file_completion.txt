@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6199 (96.0%)
-Files at 100%: 193
-Files at 90%+: 195
+Clean functions: 6215 (96.3%)
+Files at 100%: 190
+Files at 90%+: 197
 Files at 50%+: 214
 
 ====================================================================================================
@@ -57,11 +57,9 @@ FILES AT 100% (COMPLETE)
   core/dglobe.cpp: 6 functions, 237 lines
   core/dimage.cpp: 6 functions, 131 lines
   core/dirmat.cpp: 7 functions, 336 lines
-  core/dlight.cpp: 34 functions, 2234 lines
   core/dog.cpp: 13 functions, 455 lines
   core/door.cpp: 28 functions, 995 lines
   core/dpart.cpp: 15 functions, 711 lines
-  core/dracbrid.cpp: 25 functions, 1699 lines
   core/drip.cpp: 17 functions, 414 lines
   core/drone.cpp: 13 functions, 472 lines
   core/dskybox.cpp: 4 functions, 245 lines
@@ -99,7 +97,6 @@ FILES AT 100% (COMPLETE)
   core/icepick.cpp: 23 functions, 1053 lines
   core/imp.cpp: 17 functions, 991 lines
   core/inivar.cpp: 2 functions, 276 lines
-  core/inv.cpp: 43 functions, 3098 lines
   core/keyactor.cpp: 15 functions, 161 lines
   core/ladder.cpp: 19 functions, 576 lines
   core/larva.cpp: 13 functions, 552 lines
@@ -115,6 +112,7 @@ FILES AT 100% (COMPLETE)
   core/mirror.cpp: 22 functions, 875 lines
   core/mission.cpp: 41 functions, 1366 lines
   core/mmx.c: 4 functions, 106 lines
+  core/mobster.cpp: 26 functions, 1679 lines
   core/moloch.cpp: 15 functions, 588 lines
   core/moon.cpp: 14 functions, 346 lines
   core/morph.cpp: 49 functions, 1410 lines
@@ -180,7 +178,6 @@ FILES AT 100% (COMPLETE)
   engine/drender.cpp: 88 functions, 3032 lines
   engine/font.cpp: 49 functions, 2198 lines
   engine/ini.cpp: 18 functions, 453 lines
-  engine/keyframe.c: 5 functions, 417 lines
   engine/keys.cpp: 9 functions, 56 lines
   engine/light.cpp: 10 functions, 185 lines
   engine/matrix.c: 30 functions, 1091 lines
@@ -208,14 +205,31 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 193 files
+Total: 190 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
+   97.7% | core/inv.cpp
+         42/43 clean, 1 remaining
+           - core_inv.cpp_CInventory_addItem_FUN_004fd600 (1153 lines) [pointer_cast]
+
+   97.1% | core/dlight.cpp
+         33/34 clean, 1 remaining
+           - core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90 (191 lines) [pointer_cast]
+
    97.1% | engine/pod.cpp
          33/34 clean, 1 remaining
            - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines) [unrolled_memcpy]
+
+   96.9% | core/netgame.cpp
+         62/64 clean, 2 remaining
+           - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (90 lines) [unrolled_memcpy]
+           - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines) [unrolled_memcpy]
+
+   96.0% | core/dracbrid.cpp
+         24/25 clean, 1 remaining
+           - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (756 lines) [pointer_cast]
 
    95.7% | core/skeledit.cpp
          67/70 clean, 3 remaining
@@ -223,7 +237,12 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1436 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
            - core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines) [missing_cave_copy]
 
-Total: 2 files
+   91.7% | core/glass.cpp
+         22/24 clean, 2 remaining
+           - core_glass.cpp_CGlass_shatter_FUN_004eaef0 (124 lines) [raw_address_constant]
+           - core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (387 lines) [unrolled_memcpy]
+
+Total: 7 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -259,12 +278,6 @@ FILES AT 50-89%
            - core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (56 lines) [unrolled_memcpy]
            - core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 (144 lines) [unrolled_memcpy]
            - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines) [pointer_cast, unrolled_memcpy]
-   84.6% | core/mobster.cpp
-         22/26 clean, 4 remaining
-           - core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90 (148 lines) [bit_int_float_compare, pointer_cast]
-           - core_mobster.cpp_CMobster_process_FUN_00525840 (594 lines) [unrolled_memset]
-           - core_mobster.cpp_CMobster_getTargetPoints_FUN_005278d0 (41 lines) [unrolled_memcpy]
-           - core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (129 lines) [stack_alignment_array, warning_type_propagation]
    84.0% | core/scat.cpp
          21/25 clean, 4 remaining
            - core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (48 lines) [missing_cave_copy, warning_type_propagation]
@@ -288,13 +301,9 @@ FILES AT 50-89%
            - core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 (45 lines) [missing_cave_copy, unrolled_memcpy]
            - core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (35 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
            - core_tentacle.cpp_CTentacle_process_FUN_005db050 (258 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
-   79.2% | core/glass.cpp
-         19/24 clean, 5 remaining
-           - core_glass.cpp_CGlass_ctor_FUN_004e9040 (61 lines) [unrolled_strcpy]
-           - core_glass.cpp_CGlass_shatter_FUN_004eaef0 (124 lines) [raw_address_constant, unrolled_strcpy]
-           - core_glass.cpp_CGlass_setup_FUN_004e9180 (268 lines) [unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
-           - core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (387 lines) [unrolled_memcpy]
-           - core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690 (96 lines) [unrolled_strchr, unrolled_strcpy]
+   80.0% | engine/keyframe.c
+         4/5 clean, 1 remaining
+           - engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30 (150 lines) [pointer_cast]
    78.9% | core/gabriela.cpp
          30/38 clean, 8 remaining
            - core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 (206 lines) [unrolled_memcpy]
@@ -318,23 +327,6 @@ FILES AT 50-89%
            - core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0 (91 lines) [unrolled_memcpy]
            - core_ghoul.cpp_CGhoul_process_FUN_004e6600 (1052 lines) [self_copy_guard, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_inlined_function]
            - core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0 (149 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-   76.6% | core/netgame.cpp
-         49/64 clean, 15 remaining
-           - core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (60 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 (94 lines) [pointer_cast]
-           - core_netgame.cpp_allocSimFrame_FUN_0053f5a0 (30 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (222 lines) [pointer_cast, shadow_pointer_walk, warning_type_propagation]
-           - core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 (120 lines) [shadow_pointer_walk]
-           - core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 (54 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370 (42 lines) [unrolled_strcpy]
-           - core_netgame.cpp_CNetGame_runLobby_FUN_00541390 (287 lines) [shadow_pointer_walk, unrolled_strcpy, warning_inlined_function]
-           - core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (26 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0 (82 lines) [pointer_cast, unrolled_memcpy]
-           - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (90 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
-           - core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 (183 lines) [bit_int_float_compare, shadow_pointer_walk]
-           - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines) [pointer_cast, shadow_pointer_walk, stack_alignment_array, unrolled_memcpy, unrolled_strcpy]
-           - core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 (438 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy, warning_unreachable]
-           - core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (117 lines) [pointer_cast, shadow_pointer_walk, unrolled_strcpy]
    75.3% | shape/superopt.cpp
          140/186 clean, 46 remaining
            - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
@@ -518,7 +510,7 @@ FILES AT 50-89%
            - engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (244 lines) [unrolled_strcpy]
            - engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (223 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
 
-Total: 19 files
+Total: 17 files
 
 ====================================================================================================
 FILES BELOW 50%

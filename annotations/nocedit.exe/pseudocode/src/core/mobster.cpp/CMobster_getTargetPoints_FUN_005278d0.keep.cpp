@@ -22,17 +22,13 @@ int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_005278d0(CMobster *thi
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                      (&(this_ptr->base).base.model,&local_1c,g_MobsterIndices[0]);
   if (out_points_array != pCVar1) {
-    out_points_array->x = pCVar1->x;
-    out_points_array->y = pCVar1->y;
-    out_points_array->z = pCVar1->z;
+    *out_points_array = *pCVar1;
   }
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] != 0) {
     pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        (&(this_ptr->base).base.model,&local_28,g_MobsterIndices[9]);
     if (out_points_array + 1 != pCVar2) {
-      out_points_array[1].x = pCVar2->x;
-      out_points_array[1].y = pCVar2->y;
-      out_points_array[1].z = pCVar2->z;
+      out_points_array[1] = *pCVar2;
     }
     iVar2 = 2;
   }
@@ -43,9 +39,7 @@ int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_005278d0(CMobster *thi
                      (&(this_ptr->base).base.model,&local_34,g_MobsterIndices[0xb]);
   pCVar3 = out_points_array + iVar2;
   if (pCVar3 != pCVar2) {
-    pCVar3->x = pCVar2->x;
-    pCVar3->y = pCVar2->y;
-    pCVar3->z = pCVar2->z;
+    *pCVar3 = *pCVar2;
   }
   return iVar2 + 1;
 }

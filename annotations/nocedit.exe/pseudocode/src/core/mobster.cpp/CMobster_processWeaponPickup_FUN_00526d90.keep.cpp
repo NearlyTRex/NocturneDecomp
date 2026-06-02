@@ -23,7 +23,7 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_00526d90(CMobster 
   CVector3f *dst;
   float *scalar;
   float fStack_b0;
-  uint auStack_a8 [10];
+  CDemonActor *auStack_a8 [10];
   CBoundingBox3D CStack_80;
   CVector3f CStack_68;
   float fStack_5c;
@@ -61,12 +61,10 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_00526d90(CMobster 
         pCVar5 = this_ptr->target_weapon;
         pCVar1 = &(this_ptr->base).base.base.location;
         if (pCVar5 == (CDemonActor *)0x0) {
-          iVar7 = 0;
-          iVar8 = 0;
           local_24 = 0;
           local_20 = pCVar1;
           for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
-            pCVar5 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar8);
+            pCVar5 = g_CDemonSetPtr->actors[local_1c];
             pCVar4 = (*((pCVar5->vtable)._ub)->getCarrier)(pCVar5);
             if ((pCVar4 == (CDemonActor *)0x0) &&
                (iVar6 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar5,"CTommyGun"),
@@ -77,18 +75,16 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_00526d90(CMobster 
               fStack_54 = (pCVar5->location).position.z - (local_20->position).z;
               fStack_58 = fStack_58 * fStack_58;
               fVar2 = SQRT(fStack_54 * fStack_54 + fStack_5c * fStack_5c + fStack_58 * fStack_58);
-              if (((float)5 <= fVar2) && ((int)fVar2 < 0x41700001)) {
-                *(CDemonActor **)((int)auStack_a8 + iVar7) = pCVar5;
+              if (((float)5 <= fVar2) && (fVar2 <= (float)15)) {
+                auStack_a8[local_24] = pCVar5;
                 local_24 = local_24 + 1;
-                iVar7 = iVar7 + 4;
-                if (0x27 < iVar7) break;
+                if (9 < local_24) break;
               }
             }
-            iVar8 = iVar8 + 4;
           }
           if (0 < local_24) {
             iVar8 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,local_24 + -1);
-            pCVar5 = (CDemonActor *)auStack_a8[iVar8];
+            pCVar5 = auStack_a8[iVar8];
             this_ptr->weapon_approach_timer = -40.0;
             this_ptr->target_weapon = pCVar5;
             this_ptr->ai_idle_counter = this_ptr->ai_idle_counter + 1;

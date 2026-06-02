@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 51,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 26,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 81
   },
   "cross_references": [],
@@ -105,6 +103,26 @@
     },
     "pcode_op_count": 221
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)g_SimFrameHistory",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "while (*(int *)((int)g_SimFrameHistory[0].player_input + iVar2 + -0xc) < min_sequence) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(void *)((int)g_SimFrameHistory",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((void *)((int)g_SimFrameHistory[0].player_input + iVar2 + -0xc),src,",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -121,22 +139,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(int *)((int)g_SimFrameHistory",
-      "severity": "moderate",
-      "text": "while (*(int *)((int)g_SimFrameHistory[0].player_input + iVar2 + -0xc) < min_sequence) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(void *)((int)g_SimFrameHistory",
-      "severity": "moderate",
-      "text": "((void *)((int)g_SimFrameHistory[0].player_input + iVar2 + -0xc),src,",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -4,20 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 155,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "unrolled_strcpy"
+      "unrolled_memcpy"
     ],
     "total_lines": 281
   },
@@ -187,6 +185,53 @@
     },
     "pcode_op_count": 741
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(int *)((int)local_53",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_53 + EVar2 + 0x10) = pCVar3->players[0].ready_flag;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(EHeroType *)((int)local_53",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(EHeroType *)((int)local_53 + EVar2 + HERO_TYPE_MOLOCH) = pCVar3->players[0].hero_number;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(int *)((int)local_53",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_53 + EVar2 + (HERO_TYPE_MOLOCH|HERO_TYPE_BARON)) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 38,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 77,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 212,
     "local_size": 204,
@@ -261,44 +306,13 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(int *)((int)local_53",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_53 + EVar2 + 0x10) = pCVar3->players[0].ready_flag;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(EHeroType *)((int)local_53",
-      "severity": "moderate",
-      "text": "*(EHeroType *)((int)local_53 + EVar2 + HERO_TYPE_MOLOCH) = pCVar3->players[0].hero_number;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(int *)((int)local_53",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_53 + EVar2 + (HERO_TYPE_MOLOCH|HERO_TYPE_BARON)) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "introduced_by": "keep",
       "line": 38,
-      "match": "do {",
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 77,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;",
-      "type": "shadow_pointer_walk"
+      "text": "packet.players[iVar5].addr = this_ptr->players[iVar5].addr;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

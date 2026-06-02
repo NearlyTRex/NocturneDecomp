@@ -956,7 +956,15 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None, use_des
                     if math.isinf(float_val):
                         formatted = "INFINITY" if float_val > 0 else "(-INFINITY)"
                     elif math.isnan(float_val):
-                        formatted = "NAN"
+                        # The NAN macro is always canonical 0x7fc00000, so a
+                        # non-canonical NaN would silently lose its exact bits
+                        # (e.g. a 0xFFFFFFFF sentinel that code compares as an
+                        # integer). Struct initializers land in C++ globals, where
+                        # __BITCAST_FLOAT (a memcpy call) is a valid dynamic
+                        # initializer. Keep NAN for the canonical pattern to avoid
+                        # churn; emit exact bits otherwise.
+                        bits = struct.unpack('<I', bytes(field_bytes))[0]
+                        formatted = "NAN" if bits == 0x7fc00000 else "__BITCAST_FLOAT(0x%08Xu)" % bits
                     else:
                         formatted = "%.8g" % float_val
                         if '.' not in formatted and 'e' not in formatted and 'E' not in formatted:
@@ -974,7 +982,11 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None, use_des
                     if math.isinf(double_val):
                         formatted = "INFINITY" if double_val > 0 else "(-INFINITY)"
                     elif math.isnan(double_val):
-                        formatted = "NAN"
+                        # See the float case above: preserve non-canonical NaN bits
+                        # via __BITCAST_DOUBLE (valid in C++ globals); keep NAN for
+                        # the canonical 0x7ff8000000000000 pattern.
+                        bits = struct.unpack('<Q', bytes(field_bytes))[0]
+                        formatted = "NAN" if bits == 0x7ff8000000000000 else "__BITCAST_DOUBLE(0x%016XULL)" % bits
                     else:
                         formatted = "%.17g" % double_val
                     append_field(formatted)

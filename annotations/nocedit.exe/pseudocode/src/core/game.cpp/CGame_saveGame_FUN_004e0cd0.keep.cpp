@@ -27,7 +27,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   CLZWCompress local_50;
   int local_18;
   int local_14;
-  
+
   if (this_ptr->letterbox_mode != 0) {
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Unable to save during cinematic")
     ;
@@ -65,8 +65,13 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     strcpy(local_558, save_filename);
   }
   _mkdir("save");
+#if NOCTURNE_AUTHENTIC_SAVE
+  local_14 = 1;
+  file = engine_dosio_cpp_getFile_FUN_00481a50("save","$$SAVE$$.TMP","wt");
+#else
   local_14 = 0;
   file = engine_dosio_cpp_getFile_FUN_00481a50("save",local_558,"wt");
+#endif
   if (file == (_FILE *)0x0) {
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Warning!  Your game didn't save.")
     ;

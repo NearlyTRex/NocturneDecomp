@@ -10,10 +10,6 @@
 void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *this_ptr,SNetPlayer *other)
 
 {
-  int iVar1;
-  SNetPlayer *pSVar2;
-  EConnectionType *pEVar3;
-  byte bVar4;
   EConnectionType EStack_88;
   int local_6c;
   ENetworkMode EStack_84;
@@ -45,7 +41,6 @@ void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *thi
   int local_18;
   int local_14;
   
-  bVar4 = 0;
   EStack_88 = this_ptr->connection_type;
   EStack_84 = this_ptr->network_mode;
   uStack_80 = *(uint *)this_ptr->player_name;
@@ -76,17 +71,7 @@ void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *thi
   local_1c = this_ptr->players[0].player_input.action_state.walk;
   local_18 = this_ptr->players[0].player_input.action_state.backup;
   local_14 = this_ptr->players[0].player_input.action_state.run;
-  pSVar2 = other;
-  for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
-    this_ptr->connection_type = *(EConnectionType *)pSVar2->name;
-    pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);
-    this_ptr = (CNetGame *)((int)this_ptr + (uint)bVar4 * -8 + 4);
-  }
-  pEVar3 = &EStack_88;
-  for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(EConnectionType *)other->name = *pEVar3;
-    pEVar3 = pEVar3 + (uint)bVar4 * -2 + 1;
-    other = (SNetPlayer *)((int)other + (uint)bVar4 * -8 + 4);
-  }
+  memcpy(&this_ptr->connection_type, other, 0x78);
+  memcpy(other, &EStack_88, 0x78);
   return;
 }

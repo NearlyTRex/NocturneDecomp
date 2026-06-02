@@ -7,14 +7,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
 
 {
   float fVar1;
   float fVar2;
-  char cVar3;
   int iVar4;
   int iVar5;
   CVector3f *pCVar5;
@@ -22,10 +19,7 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
   SMRGLPrimitiveQuad *pSVar6;
   int iVar8;
   int iVar7;
-  char *pcVar8;
-  char *pcVar10;
   int iVar11;
-  char *pcVar9;
   char *pcVar12;
   float local_d8;
   float local_d4;
@@ -62,44 +56,28 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
     local_78.x = (this_ptr->base).location.position.x + pCVar5->x;
     local_78.y = (this_ptr->base).location.position.y + pCVar5->y;
     local_78.z = (this_ptr->base).location.position.z + pCVar5->z;
-    if (&local_48 != &local_78) {
-      local_48.x = local_78.x;
-      local_48.y = local_78.y;
-      local_48.z = local_78.z;
-    }
+    local_48 = local_78;
     local_84.x = -local_84.x;
     pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&(this_ptr->base).orient_matrix,&local_54,&local_84);
     local_3c.x = (this_ptr->base).location.position.x + pCVar6->x;
     local_3c.y = (this_ptr->base).location.position.y + pCVar6->y;
     local_3c.z = (this_ptr->base).location.position.z + pCVar6->z;
-    if (&local_60 != &local_3c) {
-      local_60.x = local_3c.x;
-      local_60.y = local_3c.y;
-      local_60.z = local_3c.z;
-    }
+    local_60 = local_3c;
     local_84.y = (this_ptr->glass_size).y;
     pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&(this_ptr->base).orient_matrix,&local_6c,&local_84);
     local_cc.x = (this_ptr->base).location.position.x + pCVar6->x;
     local_cc.y = (this_ptr->base).location.position.y + pCVar6->y;
     local_cc.z = (this_ptr->base).location.position.z + pCVar6->z;
-    if (&local_c0 != &local_cc) {
-      local_c0.x = local_cc.x;
-      local_c0.y = local_cc.y;
-      local_c0.z = local_cc.z;
-    }
+    local_c0 = local_cc;
     local_84.x = -local_84.x;
     pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&(this_ptr->base).orient_matrix,&local_9c,&local_84);
     local_90.x = (this_ptr->base).location.position.x + pCVar6->x;
     local_90.y = (this_ptr->base).location.position.y + pCVar6->y;
     local_90.z = (this_ptr->base).location.position.z + pCVar6->z;
-    if (&local_b4 != &local_90) {
-      local_b4.x = local_90.x;
-      local_b4.y = local_90.y;
-      local_b4.z = local_90.z;
-    }
+    local_b4 = local_90;
     core_mirror_cpp_CMirror_setupCorners_FUN_00521400
               (&this_ptr->mirror,&local_48,&local_60,&local_c0,&local_b4);
   }
@@ -207,63 +185,22 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
       iVar5 = _stricmp
                         ((this_ptr->glass_texture).texture_name,"factwin.raw");
       if (iVar5 == 0) {
-        pcVar10 = "factwinx.raw";
-        do {
-          cVar3 = *pcVar10;
-          *pcVar12 = cVar3;
-          if (cVar3 == '\0') break;
-          cVar3 = pcVar10[1];
-          pcVar10 = pcVar10 + 2;
-          pcVar12[1] = cVar3;
-          pcVar12 = pcVar12 + 2;
-        } while (cVar3 != '\0');
+        strcpy((this_ptr->broken_texture).texture_name, "factwinx.raw");
       }
       iVar5 = _stricmp
                         ((this_ptr->glass_texture).texture_name,"dockwin.raw");
       if (iVar5 == 0) {
-        pcVar8 = "dockwinx.raw";
-        pcVar9 = (this_ptr->broken_texture).texture_name;
-        do {
-          cVar3 = *pcVar8;
-          *pcVar9 = cVar3;
-          if (cVar3 == '\0') break;
-          cVar3 = pcVar8[1];
-          pcVar8 = pcVar8 + 2;
-          pcVar9[1] = cVar3;
-          pcVar9 = pcVar9 + 2;
-        } while (cVar3 != '\0');
+        strcpy((this_ptr->broken_texture).texture_name, "dockwinx.raw");
       }
       iVar5 = _stricmp
                         ((this_ptr->glass_texture).texture_name,"windo10.raw");
       if (iVar5 == 0) {
-        pcVar10 = "windo10x.raw";
-        pcVar12 = (this_ptr->broken_texture).texture_name;
-        do {
-          cVar3 = *pcVar10;
-          *pcVar12 = cVar3;
-          if (cVar3 == '\0') break;
-          cVar3 = pcVar10[1];
-          pcVar10 = pcVar10 + 2;
-          pcVar12[1] = cVar3;
-          pcVar12 = pcVar12 + 2;
-        } while (cVar3 != '\0');
+        strcpy((this_ptr->broken_texture).texture_name, "windo10x.raw");
       }
       iVar5 = _stricmp
                         ((this_ptr->glass_texture).texture_name,"windo11.raw");
       if (iVar5 == 0) {
-        pcVar10 = "windo11x.raw";
-        pcVar12 = (this_ptr->broken_texture).texture_name;
-        do {
-          cVar3 = *pcVar10;
-          *pcVar12 = cVar3;
-          if (cVar3 == '\0') {
-            return;
-          }
-          cVar3 = pcVar10[1];
-          pcVar10 = pcVar10 + 2;
-          pcVar12[1] = cVar3;
-          pcVar12 = pcVar12 + 2;
-        } while (cVar3 != '\0');
+        strcpy((this_ptr->broken_texture).texture_name, "windo11x.raw");
         return;
       }
     }

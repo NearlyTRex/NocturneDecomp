@@ -4,29 +4,28 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6199 functions
-  1 suspects: 16 functions
-  2 suspects: 46 functions
-  3 suspects: 37 functions
-  4 suspects: 36 functions
-  5 suspects: 20 functions
-  6 suspects: 19 functions
-  7 suspects: 8 functions
-  8 suspects: 15 functions
-  9 suspects: 6 functions
-  10 suspects: 7 functions
-  11 suspects: 4 functions
+  0 suspects: 6215 functions
+  1 suspects: 19 functions
+  2 suspects: 45 functions
+  3 suspects: 31 functions
+  4 suspects: 35 functions
+  5 suspects: 18 functions
+  6 suspects: 16 functions
+  7 suspects: 7 functions
+  8 suspects: 16 functions
+  9 suspects: 4 functions
+  10 suspects: 6 functions
+  11 suspects: 3 functions
   12 suspects: 6 functions
   13 suspects: 3 functions
   14 suspects: 4 functions
-  15 suspects: 4 functions
+  15 suspects: 3 functions
   16 suspects: 4 functions
   17 suspects: 1 functions
   18 suspects: 6 functions
   19 suspects: 1 functions
   20 suspects: 1 functions
   21 suspects: 3 functions
-  23 suspects: 1 functions
   24 suspects: 1 functions
   28 suspects: 1 functions
   29 suspects: 1 functions
@@ -39,22 +38,26 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [unrolled_memcpy] (6 functions)
+  [unrolled_memcpy] (8 functions)
   ------------------------------------------------------------
     shape_design.c_selectVertexToDelete_FUN_0045c5b0   ( 52 lines)
       g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1...
     shape_design.c_duplicateSharedVertices_FUN_00465d5 ( 54 lines)
       g_LoadedVertices[g_VertexCount].vertex.x = g_LoadedVertices[...
+    core_netgame.cpp_CNetGame_sendGameSetting_FUN_0054 ( 90 lines)
+      packet.players[iVar5].addr = this_ptr->players[iVar5].addr;...
     shape_quantize.cpp_CColorQuantizer_generateSortedP ( 94 lines)
       pCVar11->palette[0].r = pCVar11->palette[1].r;...
     shape_superopt.cpp_CObj_removeUnusedVertices_FUN_0 (115 lines)
       dst_vert->position = pCVar5->position;...
     core_gabriela.cpp_CGabriella_processAI_FUN_004d419 (206 lines)
       CStack_48.x = CStack_a8.x;...
+    core_netgame.cpp_CNetGame_applyNewGameSettings_FUN (272 lines)
+      this_ptr->players[local_44[3]].ready_flag = localPkt.players...
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [pointer_cast] (6 functions)
+  [pointer_cast] (7 functions)
   ------------------------------------------------------------
     engine_fileio.cpp_CFileManager_buildPodFromRespons ( 57 lines)
       pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);...
@@ -68,6 +71,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       *(double *)((int)&((local_58.vertex_data)->position).x + iVa...
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
+    core_dracbrid.cpp_CDraculaBride_process_FUN_004844 (756 lines)
+      *(int *)(pCVar7[9].create_event + 0x30) =...
 
   [unrolled_strcpy] (2 functions)
   ------------------------------------------------------------
@@ -97,20 +102,14 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/ghoul.cpp, Lines: 17, Types: ['missing_cave_copy']
   shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420
     File: shape/meshlod.cpp, Lines: 22, Types: ['pointer_cast']
-  core_netgame.cpp_purgeOldSimFrames_FUN_0053f650
-    File: core/netgame.cpp, Lines: 26, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40
     File: shape/meshlod.cpp, Lines: 28, Types: ['pointer_cast']
-  core_netgame.cpp_allocSimFrame_FUN_0053f5a0
-    File: core/netgame.cpp, Lines: 30, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_0051
     File: shape/meshlod.cpp, Lines: 30, Types: ['unrolled_memcpy']
   core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_00
     File: core/dmodel.cpp, Lines: 34, Types: ['unrolled_memcpy']
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
     File: shape/quantize.cpp, Lines: 34, Types: ['unrolled_strchr', 'warning_inlined_function']
-  core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370
-    File: core/netgame.cpp, Lines: 42, Types: ['unrolled_strcpy']
   core_wateract.cpp_CWaterActor_processInEditor_FUN_005ebab0
     File: core/wateract.cpp, Lines: 43, Types: ['bit_int_float_compare']
   core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
@@ -159,28 +158,32 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 116, Types: ['unrolled_strlen']
   shape_design.c_createKeyframeModel_FUN_00468320
     File: shape/design.c, Lines: 117, Types: ['unrolled_strlen', 'warning_inlined_function']
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    File: core/netgame.cpp, Lines: 120, Types: ['shadow_pointer_walk']
   engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
     File: engine/fileio.cpp, Lines: 122, Types: ['unrolled_strcpy']
   shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
     File: shape/meshlod.cpp, Lines: 123, Types: ['pointer_cast', 'shadow_pointer_walk']
-  core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
-    File: core/mobster.cpp, Lines: 129, Types: ['stack_alignment_array', 'warning_type_propagation']
   core_mimic.cpp_CMimic_setup_FUN_0051f3e0
     File: core/mimic.cpp, Lines: 134, Types: ['pointer_cast']
   core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVP
     File: core/skeledit.cpp, Lines: 139, Types: ['missing_cave_copy']
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     File: shape/meshlod.cpp, Lines: 143, Types: ['unrolled_memcpy']
+  engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
+    File: engine/keyframe.c, Lines: 150, Types: ['pointer_cast']
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
     File: core/gabriela.cpp, Lines: 160, Types: ['pointer_cast', 'unrolled_memset']
+  core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473
+    File: core/dlight.cpp, Lines: 191, Types: ['pointer_cast']
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
     File: core/wateract.cpp, Lines: 210, Types: ['shadow_pointer_walk', 'unrolled_memset']
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_F
     File: engine/fileio.cpp, Lines: 244, Types: ['unrolled_strcpy']
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
     File: engine/pod.cpp, Lines: 368, Types: ['unrolled_memcpy']
+  core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
+    File: core/glass.cpp, Lines: 387, Types: ['unrolled_memcpy']
+  core_inv.cpp_CInventory_addItem_FUN_004fd600
+    File: core/inv.cpp, Lines: 1153, Types: ['pointer_cast']
   shape_superopt.cpp_CP3D_copy2_FUN_005d84a0
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
   shape_superopt.cpp_CVec_copy3_FUN_005d82b0
@@ -197,8 +200,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/superopt.cpp, Lines: 34, Types: ['pointer_cast', 'raw_address_constant']
   engine_fileio.cpp_CFileManager_setVersionControlCredentials_
     File: engine/fileio.cpp, Lines: 38, Types: ['unrolled_strcpy']
-  core_mobster.cpp_CMobster_getTargetPoints_FUN_005278d0
-    File: core/mobster.cpp, Lines: 41, Types: ['unrolled_memcpy']
   shape_design.c_removeDegenerateTriangles_FUN_00463a20
     File: shape/design.c, Lines: 45, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
@@ -209,12 +210,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/manpuz.cpp, Lines: 56, Types: ['pointer_cast', 'unrolled_memcpy']
   shape_cramtex.cpp_placementCollisionCheck_FUN_00448260
     File: shape/cramtex.cpp, Lines: 59, Types: ['pointer_cast']
-  core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40
-    File: core/netgame.cpp, Lines: 60, Types: ['pointer_cast']
   shape_design.c_removeDegeneratePolygons_FUN_00465310
     File: shape/design.c, Lines: 60, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
-  core_glass.cpp_CGlass_ctor_FUN_004e9040
-    File: core/glass.cpp, Lines: 61, Types: ['unrolled_strcpy']
   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920
     File: shape/meshlod.cpp, Lines: 71, Types: ['pointer_cast']
   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_
@@ -233,16 +230,12 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 103, Types: ['unrolled_strlen']
   core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60
     File: core/gabriela.cpp, Lines: 113, Types: ['pointer_cast', 'unrolled_memcpy']
-  core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
-    File: core/netgame.cpp, Lines: 117, Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_strcpy']
   shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_0051987
     File: shape/meshlod.cpp, Lines: 125, Types: ['unrolled_memcpy']
   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_0
     File: engine/fileio.cpp, Lines: 137, Types: ['pointer_cast', 'unrolled_strcpy']
   shape_design.c_modelExportWizard_FUN_0045a7b0
     File: shape/design.c, Lines: 146, Types: ['unrolled_strchr', 'unrolled_strlen']
-  core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
-    File: core/mobster.cpp, Lines: 148, Types: ['bit_int_float_compare', 'pointer_cast']
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
     File: core/ghoul.cpp, Lines: 149, Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy']
   shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d396
@@ -251,7 +244,5 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/fileio.cpp, Lines: 173, Types: ['pointer_cast', 'unrolled_strcpy']
   shape_design.c_polygonToolModeManager_FUN_00464c90
     File: shape/design.c, Lines: 180, Types: ['unrolled_strcpy']
-  core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00
-    File: core/netgame.cpp, Lines: 183, Types: ['bit_int_float_compare', 'shadow_pointer_walk']
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     File: engine/fileio.cpp, Lines: 193, Types: ['pointer_cast', 'unrolled_strcpy']

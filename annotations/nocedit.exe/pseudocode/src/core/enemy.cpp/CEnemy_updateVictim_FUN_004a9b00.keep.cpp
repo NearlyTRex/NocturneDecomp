@@ -127,7 +127,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
     }
   }
   else {
-    if (pCVar2 == (CCharacter *)0x7fc00000) {
+    if (pCVar2 == (CCharacter *)g_ScriptSentinelActor) {
       this_ptr->victim = (CCharacter *)0x0;
     }
     else {

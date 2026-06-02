@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 334,
-    "complexity_score": 159,
+    "complexity_score": 129,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 129,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_alignment_array",
-      "warning_type_propagation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 463
   },
   "cross_references": [
@@ -244,6 +241,26 @@
     },
     "pcode_op_count": 1530
   },
+  "resolved_suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 18,
+      "match": "afStackY_185c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "float afStackY_185c [1519];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 6248,
     "local_size": 6240,
@@ -375,22 +392,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
-      "match": "afStackY_185c",
-      "severity": "moderate",
-      "text": "float afStackY_185c [1519];",
-      "type": "stack_alignment_array"
-    }
-  ]
+  "suspects": []
 }

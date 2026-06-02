@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 456,
-    "complexity_score": 223,
+    "complexity_score": 183,
     "cross_reference_count": 9,
     "function_call_count": 7,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 183,
-    "suspect_count": 3,
-    "suspect_types": [
-      "bit_int_float_compare",
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 639
   },
   "cross_references": [
@@ -268,6 +265,35 @@
     },
     "pcode_op_count": 2043
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `dest_addr` was initialized to the address of an array element's subfield (`dest_addr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*dest_addr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `dest_addr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 164,
+      "match": "dest_addr = dest_addr + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dest_addr = dest_addr + 0xf;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40400000 is the IEEE 754 bit pattern of 3f. Rewrite in a .keep as a plain float compare against 3f.",
+      "line": 57,
+      "match": "0x40400000 < (int)local_24))",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((float)30 < local_24) || (0x40400000 < (int)local_24)) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40a00000 is the IEEE 754 bit pattern of 5f. Rewrite in a .keep as a plain float compare against 5f.",
+      "line": 129,
+      "match": "0x40a00000 < (int)local_2c))",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((float)30 < local_2c) || (0x40a00000 < (int)local_2c)) {",
+      "type": "bit_int_float_compare"
+    }
+  ],
   "stack_frame": {
     "frame_size": 60,
     "local_size": 52,
@@ -336,30 +362,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `dest_addr` was initialized to the address of an array element's subfield (`dest_addr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*dest_addr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `dest_addr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 164,
-      "match": "dest_addr = dest_addr + N",
-      "severity": "moderate",
-      "text": "dest_addr = dest_addr + 0xf;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40400000 is the IEEE 754 bit pattern of 3f. Rewrite in a .keep as a plain float compare against 3f.",
-      "line": 57,
-      "match": "0x40400000 < (int)local_24))",
-      "severity": "moderate",
-      "text": "if (((float)30 < local_24) || (0x40400000 < (int)local_24)) {",
-      "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40a00000 is the IEEE 754 bit pattern of 5f. Rewrite in a .keep as a plain float compare against 5f.",
-      "line": 129,
-      "match": "0x40a00000 < (int)local_2c))",
-      "severity": "moderate",
-      "text": "if (((float)30 < local_2c) || (0x40a00000 < (int)local_2c)) {",
-      "type": "bit_int_float_compare"
-    }
-  ]
+  "suspects": []
 }

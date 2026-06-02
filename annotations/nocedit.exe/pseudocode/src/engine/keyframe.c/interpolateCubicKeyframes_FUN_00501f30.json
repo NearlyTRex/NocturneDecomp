@@ -7,14 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 150,
+    "complexity_score": 175,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 150,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 511
   },
   "cross_references": [],
@@ -301,6 +303,22 @@
     "file_variant": "keep"
   },
   "suspects": [
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 77,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "piVar12 = (int *)(header[1].child_count + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 135,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "vertex_data = (CVector3i *)(header[1].child_count + 0x14);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
       "line": 49,

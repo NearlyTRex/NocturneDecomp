@@ -3192,6 +3192,78 @@ def identify_int_address_arithmetic_multiline(decompiled_code):
     return suspects
 
 
+# Subobject-reach byte-offset cast: `(T *)(IDENT[N].FIELD + 0xOFF)`.
+# Watcom/Ghidra computes the address of an EMBEDDED member through a phantom
+# array index one element past the base, a sibling field whose array decays
+# to a pointer, and a byte offset — together landing on the member's real
+# offset. Canonical case (CGlass::ctor):
+#     (CMirror *)(pCVar2[1].create_event + 0x1c)   -> &this_ptr->mirror
+# where pCVar2 = &this->base (a CDemonActor), so [1] steps sizeof(CDemonActor),
+# create_event is at 0x78, +0x1c lands on the CMirror member at 0x1ec.
+# Distinct from the `(int)&NAME` / pointer-VARIABLE byte-offset detectors: the
+# base here is `IDENT[N]` (an indexed object) and the immediate operand is a
+# FIELD address (the array decays) plus a small hex offset, all wrapped in a
+# pointer cast. Restricting the index to 0-9 (a phantom near-base step) and
+# requiring the trailing `.FIELD + 0xHEX )` keeps it off ordinary buffer
+# arithmetic like `(int *)(records[12].data + i)`.
+_SUBOBJ_BYTE_OFFSET_CAST_RE = re.compile(
+    r'\(\s*\w+\s*\*\s*\)\s*'          # (Type *)
+    r'\(\s*'                          # (
+    r'(?:\(\s*int\s*\)\s*)?'          # optional (int)
+    r'\w+\s*\[\s*[0-9]\s*\]'          # IDENT[N]   (single-digit phantom index)
+    r'\s*(?:\.|->)\s*\w+'             # .field / ->field   (decays to pointer)
+    r'\s*\+\s*0x[0-9a-fA-F]+'         # + 0xHEX   (byte offset)
+    r'\s*\)')                         # )
+
+
+def identify_subobject_byte_offset_cast(decompiled_code):
+    """Detect `(T *)(IDENT[N].FIELD + 0xOFF)` — a pointer cast of byte-offset
+    arithmetic that reaches an embedded subobject through a phantom array
+    index plus a sibling field.
+
+    Ghidra computes the address of an embedded member (e.g. a CMirror inside
+    a CGlass) as `(CMirror *)(pCVar2[1].create_event + 0x1c)` instead of
+    `&this_ptr->mirror`: the `[1]` steps one element past the base object, the
+    sibling array field decays to a pointer, and the byte offset lands on the
+    member's real offset. Common in ctors that embed a subobject and pass its
+    address to the parent ctor (the byte-offset form is invisible to the
+    `(int)&NAME` and pointer-variable detectors).
+
+    Same `pointer_cast` suspect type — replace with the named `&dst->member`
+    access in a .keep (compute the offset from the struct layout to confirm
+    which member it lands on).
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+        stripped = line.lstrip()
+        if (stripped.startswith('//') or stripped.startswith('/*') or
+                stripped.startswith('* ')):
+            continue
+        if _SUBOBJ_BYTE_OFFSET_CAST_RE.search(line):
+            suspects.append({
+                'line': line_no,
+                'type': 'pointer_cast',
+                'match': '(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach',
+                'text': line.strip()[:120],
+                'description': (
+                    'Pointer cast of byte-offset arithmetic reaching a struct '
+                    'member via an array-indexed element + sibling field + '
+                    'offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> '
+                    '`&this->mirror`). Replace with the named field/array '
+                    'access in a .keep.'),
+                'severity': 'moderate',
+            })
+    return suspects
+
+
 # Pointer-variable cast to int + hex byte offset, dereferenced — raw struct
 # access that should be a named field / array index. Ghidra casts a `this`/
 # param pointer to int, does byte arithmetic, and derefs with a hex offset:
@@ -5545,6 +5617,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_pointer_cast_multiline(code))
     found.extend(identify_int_address_arithmetic(code))
     found.extend(identify_int_address_arithmetic_multiline(code))
+    found.extend(identify_subobject_byte_offset_cast(code))
     found.extend(identify_pointer_int_offset_access(code))
     found.extend(identify_shadow_pointer_walk(code))
     found.extend(identify_subfield_vector_pun(code))

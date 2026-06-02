@@ -108,6 +108,25 @@
 #define NOCTURNE_AUTHENTIC_BATTERY 0
 #endif
 
+// NOCTURNE_AUTHENTIC_SAVE
+//   Controls the on-disk save-game format written by CGame::saveGame.
+//   1: authentic — matches the original retail nocturne.exe. The plain-text
+//      save is written to a temp file (save\$$SAVE$$.TMP) and then
+//      LZW-compressed into the real .noc with an "EFD" magic header, via the
+//      CLZWCompress codec.
+//   0: dev-friendly default — write the save uncompressed as plain text
+//      directly to the .noc. Human-readable saves, easy to diff/inspect while
+//      debugging.
+//
+//   loadGame reads either format transparently: it sniffs the leading 4 bytes
+//   for the "EFD"/"LZW" magic and decompresses, otherwise parses plain text.
+//   So a save written in one mode still loads in the other.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_SAVE=1.
+#ifndef NOCTURNE_AUTHENTIC_SAVE
+#define NOCTURNE_AUTHENTIC_SAVE 1
+#endif
+
 // NOCTURNE_WINDOW_SCALE
 //   Integer scale factor applied to the SDL window only. The game still
 //   renders internally at its native resolution (640x480) and SDL stretches

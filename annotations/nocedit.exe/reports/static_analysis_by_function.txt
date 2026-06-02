@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 99
-  Total diagnostics: 283
+  Functions with findings: 98
+  Total diagnostics: 280
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 99, raw .cpp files: 0
+  .keep.cpp files: 98, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -350,14 +350,6 @@ sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480  [.keep] [Cppch
   Line   46: [selfAssignment] Redundant assignment of 'piVar3' to itself.
   Line   55: [selfAssignment] Redundant assignment of 'piVar4' to itself.
   Line   67: [selfAssignment] Redundant assignment of 'piVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
-support_codec.cpp_readBitsFromStream_FUN_0043e530  [.keep] [Cppcheck (quick)]
-  File: support/codec.cpp  (3 diagnostics)
-
-  Line   26: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
-  Line   41: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
-  Line   61: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0  [.keep] [Cppcheck (quick)]

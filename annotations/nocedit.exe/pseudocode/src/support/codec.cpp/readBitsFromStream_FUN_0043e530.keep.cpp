@@ -23,7 +23,7 @@ int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_bu
   if (bit_count < bit_buffer->bits_available) {
     uVar1 = bit_buffer->accumulated_bits;
     bit_buffer->accumulated_bits = uVar1 >> ((byte)bit_count & 0x1f);
-    uVar1 = ~(-1 << ((byte)bit_count & 0x1f)) & uVar1;
+    uVar1 = ~(0xffffffffU << ((byte)bit_count & 0x1f)) & uVar1;
     bit_buffer->bits_available = bit_buffer->bits_available - bit_count;
   }
   else if (bit_count == bit_buffer->bits_available) {
@@ -38,7 +38,7 @@ int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_bu
     bit_buffer->bits_available = 0;
     bit_buffer->accumulated_bits = 0;
     iVar3 = bit_count - iVar4;
-    uVar5 = ~(-1 << ((byte)iVar1 & 0x1f)) & uVar1;
+    uVar5 = ~(0xffffffffU << ((byte)iVar1 & 0x1f)) & uVar1;
     while( true ) {
       if (iVar3 < 8) {
         if (0 < iVar3) {
@@ -58,7 +58,7 @@ int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_bu
             return -1;
           }
           bit_count = iVar3;
-          uVar5 = uVar5 | (~(-1 << ((byte)bit_count & 0x1f)) & bit_buffer->accumulated_bits) <<
+          uVar5 = uVar5 | (~(0xffffffffU << ((byte)bit_count & 0x1f)) & bit_buffer->accumulated_bits) <<
                           ((byte)iVar4 & 0x1f);
           bit_buffer->accumulated_bits = bit_buffer->accumulated_bits >> ((byte)bit_count & 0x1f);
           bit_buffer->bits_available = 8 - iVar3;

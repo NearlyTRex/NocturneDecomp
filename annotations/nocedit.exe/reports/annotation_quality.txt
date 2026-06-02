@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        37 ( 0.6%)
+  Functions with type issues:        35 ( 0.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      37
+    Undefined types in variables:      35
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   182 functions
+  Excluded (.keep / MMX / by-value):   184 functions
     Wrong calling convention:          1
-    Undefined types in variables:      180
+    Undefined types in variables:      182
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (37)
+Undefined types in variables (35)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -187,16 +187,6 @@ Undefined types in variables (37)
   drawClickableButton
     Address: 0x00536cd0  File: core/msnedit.cpp
     Locals:  local_1c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CNetGame_applyNewGameSettings
-    Address: 0x00542470  File: core/netgame.cpp
-    Locals:  local_bc (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CNetGame_processPacket
-    Address: 0x005406a0  File: core/netgame.cpp
-    Locals:  uStack_77 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   computeTimeDelta
@@ -322,7 +312,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (180)
+Undefined types - .keep overrides (182)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1005,9 +995,19 @@ Undefined types - .keep overrides (180)
     Locals:  auStack_94 (undefined1[16])
     Suggested: Resolve undefined types to concrete types
 
+  CNetGame_applyNewGameSettings
+    Address: 0x00542470  File: core/netgame.cpp
+    Locals:  local_bc (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CNetGame_initializeNetworkToJoin
     Address: 0x0053f900  File: core/netgame.cpp
     Locals:  uStack_53 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CNetGame_processPacket
+    Address: 0x005406a0  File: core/netgame.cpp
+    Locals:  uStack_77 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CParticle_process

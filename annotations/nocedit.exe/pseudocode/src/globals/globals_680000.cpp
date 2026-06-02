@@ -43,9 +43,9 @@ CTerrain* g_CTerrainPtr = (CTerrain*)&g_CTerrainInstance;
 
 // CVector3f
 CVector3f CVector3f_006819fc = {
-    .x = NAN,
+    .x = __BITCAST_FLOAT(0xFFFFF100u),
     .y = 0.0f,
-    .z = NAN
+    .z = __BITCAST_FLOAT(0xFFFFF100u)
 };
 
 // CVector3i

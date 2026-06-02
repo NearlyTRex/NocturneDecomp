@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6155 (95.4%)
-With suspects: 299
-Total suspects: 1933
+Clean: 6172 (95.6%)
+With suspects: 282
+Total suspects: 1808
 
 ====================================================================================================
 cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0 (2 suspects)
@@ -59,6 +59,13 @@ core_course.cpp_renderCourseGizmo_FUN_00443760 (5 suspects)
   Line 37 [static_shift_too_many_bits]: iVar7 = (int)ROUND(ROUND(position->z)) >> 0x1f;
   Line 65 [static_shift_too_many_bits]: iVar3 = iVar6 >> 0x1f;
   Line 75 [static_shift_too_many_bits]: [((int)((iVar4 + (iVar4 >> 0x1f) * -8) - (uint)((iVar4 >> 0x1f) << 2 < 0)) >> 3)
+
+====================================================================================================
+core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90 (2 suspects)
+  File: core/dlight.cpp
+====================================================================================================
+  Line 173 [pointer_cast]: this_ptr_00->vertex_buffer_ptr[2].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
+  Line 180 [pointer_cast]: this_ptr_00->vertex_buffer_ptr[3].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -176,6 +183,12 @@ core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
 ====================================================================================================
   Line 83 [unrolled_memcpy]: // 0047a929: MOVSD.REP ES:EDI,ESI
   Line 87 [unrolled_memcpy]: // 0047a936: MOVSD.REP ES:EDI,ESI
+
+====================================================================================================
+core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (1 suspect)
+  File: core/dracbrid.cpp
+====================================================================================================
+  Line 120 [pointer_cast]: *(int *)(pCVar7[9].create_event + 0x30) =
 
 ====================================================================================================
 core_dskybox.cpp_renderSkyDome_FUN_004901f0 (2 suspects)
@@ -412,59 +425,16 @@ core_ghoul.cpp_CGhoul_process_FUN_004e6600 (12 suspects)
   Line 1052 [unrolled_memcpy]: (this_ptr->prev_position).x = (pCVar16->position).x;
 
 ====================================================================================================
-core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690 (6 suspects)
-  File: core/glass.cpp
-====================================================================================================
-  Line 19 [unrolled_strcpy]: do {
-  Line 30 [unrolled_strchr]: do {
-  Line 46 [unrolled_strcpy]: do {
-  Line 61 [unrolled_strcpy]: do {
-  Line 72 [unrolled_strchr]: do {
-  Line 88 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (11 suspects)
+core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (2 suspects)
   File: core/glass.cpp
 ====================================================================================================
   Line 115 [unrolled_memcpy]: local_1e4.vertices[0].x = quad_vertices->vertices[0].x;
   Line 184 [unrolled_memcpy]: local_1e4.vertices[1].x = quad_vertices->vertices[1].x;
-  Line 259 [unrolled_memcpy]: local_1e4.vertices[2].x = quad_vertices->vertices[2].x;
-  Line 328 [unrolled_memcpy]: local_1e4.vertices[3].x = quad_vertices->vertices[3].x;
-  Line 349 [unrolled_memcpy]: local_1e4.vertices[0].x = quad_vertices->vertices[0].x;
-  Line 354 [unrolled_memcpy]: local_1e4.vertices[1].x = quad_vertices->vertices[1].x;
-  Line 359 [unrolled_memcpy]: local_1e4.vertices[2].x = quad_vertices->vertices[2].x;
-  Line 363 [unrolled_memcpy]: local_1b4.x = quad_uv_u->x;
-  Line 366 [unrolled_memcpy]: local_1a4.x = quad_uv_v->x;
-  Line 373 [unrolled_memcpy]: local_1e4.vertices[1].x = quad_vertices->vertices[2].x;
-  Line 378 [unrolled_memcpy]: local_1e4.vertices[2].x = quad_vertices->vertices[3].x;
 
 ====================================================================================================
-core_glass.cpp_CGlass_ctor_FUN_004e9040 (3 suspects)
+core_glass.cpp_CGlass_shatter_FUN_004eaef0 (8 suspects)
   File: core/glass.cpp
 ====================================================================================================
-  Line 22 [unrolled_strcpy]: do {
-  Line 39 [unrolled_strcpy]: do {
-  Line 51 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_glass.cpp_CGlass_setup_FUN_004e9180 (9 suspects)
-  File: core/glass.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 64 [unrolled_memcpy]: local_48.x = local_78.x;
-  Line 75 [unrolled_memcpy]: local_60.x = local_3c.x;
-  Line 86 [unrolled_memcpy]: local_c0.x = local_cc.x;
-  Line 97 [unrolled_memcpy]: local_b4.x = local_90.x;
-  Line 211 [unrolled_strcpy]: do {
-  Line 226 [unrolled_strcpy]: do {
-  Line 241 [unrolled_strcpy]: do {
-  Line 256 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_glass.cpp_CGlass_shatter_FUN_004eaef0 (9 suspects)
-  File: core/glass.cpp
-====================================================================================================
-  Line 38 [unrolled_strcpy]: do {
   Line 99 [raw_address_constant]: local_8c.x = 0xf80000;
   Line 102 [raw_address_constant]: local_9c.z = 0xf80000;
   Line 104 [raw_address_constant]: local_9c.w = 0xf80000;
@@ -473,6 +443,13 @@ core_glass.cpp_CGlass_shatter_FUN_004eaef0 (9 suspects)
   Line 112 [raw_address_constant]: local_9c.z = 0xfe0000;
   Line 114 [raw_address_constant]: local_9c.w = 0xfe0000;
   Line 115 [raw_address_constant]: local_8c.w = 0xfe0000;
+
+====================================================================================================
+core_inv.cpp_CInventory_addItem_FUN_004fd600 (2 suspects)
+  File: core/inv.cpp
+====================================================================================================
+  Line 1035 [pointer_cast]: *(EAmmoType *)(pCVar5_02[4].actor_name + 0xc) = pCStack_24->ammo_type;
+  Line 1125 [pointer_cast]: *(EAmmoType *)(pCVar5_02[4].actor_name + 0xc) = pCVar10->ammo_type;
 
 ====================================================================================================
 core_keyactor.cpp_CKeyActor_process_FUN_00501710 (2 suspects)
@@ -674,40 +651,6 @@ core_mission.cpp_CDemonMission_loadActor_FUN_00523990 (1 suspect)
   Line 64 [static_legacy_uninitvar]: pCVar1 = local_e1;
 
 ====================================================================================================
-core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 (2 suspects)
-  File: core/mobster.cpp
-====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 18 [stack_alignment_array]: float afStackY_185c [1519];
-
-====================================================================================================
-core_mobster.cpp_CMobster_getTargetPoints_FUN_005278d0 (3 suspects)
-  File: core/mobster.cpp
-====================================================================================================
-  Line 19 [unrolled_memcpy]: out_points_array->x = pCVar1->x;
-  Line 27 [unrolled_memcpy]: out_points_array[1].x = pCVar2->x;
-  Line 40 [unrolled_memcpy]: pCVar3->x = pCVar2->x;
-
-====================================================================================================
-core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90 (3 suspects)
-  File: core/mobster.cpp
-====================================================================================================
-  Line 63 [pointer_cast]: pCVar5 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar8);
-  Line 74 [bit_int_float_compare]: if (((float)5 <= fVar2) && ((int)fVar2 < 0x41700001)) {
-  Line 75 [pointer_cast]: *(CDemonActor **)((int)auStack_a8 + iVar7) = pCVar5;
-
-====================================================================================================
-core_mobster.cpp_CMobster_process_FUN_00525840 (6 suspects)
-  File: core/mobster.cpp
-====================================================================================================
-  Line 139 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 281 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 377 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 532 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 562 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-  Line 565 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-
-====================================================================================================
 core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (8 suspects)
   File: core/msnedit.cpp
 ====================================================================================================
@@ -800,171 +743,16 @@ core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220 (8 suspects)
   Line 95 [unrolled_strchr]: do {
 
 ====================================================================================================
-core_netgame.cpp_CNetGame_addChatHistory_FUN_00542370 (2 suspects)
+core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (1 suspect)
   File: core/netgame.cpp
 ====================================================================================================
-  Line 22 [unrolled_strcpy]: do {
-  Line 33 [unrolled_strcpy]: do {
+  Line 96 [unrolled_memcpy]: this_ptr->players[local_44[3]].ready_flag = localPkt.players[iVar6].ready_flag;
 
 ====================================================================================================
-core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (23 suspects)
+core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (1 suspect)
   File: core/netgame.cpp
 ====================================================================================================
-  Line 27 [stack_alignment_array]: EHeroType aEStackY_208c [1986];
-  Line 81 [unrolled_memcpy]: for (iVar5 = 0x2c; iVar5 != 0; iVar5 = iVar5 + -1) {
-  Line 84 [pointer_cast]: packet = (UNetPacket *)((int)packet + (uint)bVar17 * -8 + 4);
-  Line 112 [unrolled_strcpy]: do {
-  Line 147 [pointer_cast]: *(int *)((int)local_44 + local_44[2]) = iVar6;
-  Line 165 [unrolled_strcpy]: do {
-  Line 180 [shadow_pointer_walk]: local_28 = (CNetGame *)&local_28->players[0].player_input.action_state.fire;
-  Line 194 [pointer_cast]: (this_ptr,(SNetworkAddr *)((int)aEStack_f3 + iVar3 + -8),local_10f + iVar3,
-  Line 195 [pointer_cast]: *(int *)((int)aEStack_f3 + iVar3),*(int *)((int)aEStack_f3 + iVar3 + 4));
-  Line 195 [pointer_cast]: *(int *)((int)aEStack_f3 + iVar3),*(int *)((int)aEStack_f3 + iVar3 + 4));
-  Line 196 [pointer_cast]: this_ptr->players[iVar4].ready_flag = *(int *)((int)aEStack_f3 + iVar3 + 8);
-  Line 214 [pointer_cast]: if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {
-  Line 214 [pointer_cast]: if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {
-  Line 215 [pointer_cast]: puVar7 = (uint *)((int)local_44 + local_44[4] + 4);
-  Line 216 [pointer_cast]: uVar2 = *(uint *)((int)local_44 + local_44[4]);
-  Line 217 [pointer_cast]: *(uint *)((int)local_44 + local_44[4]) = *puVar7;
-  Line 249 [unrolled_memcpy]: for (iVar6 = 0x1e; iVar6 != 0; iVar6 = iVar6 + -1) {
-  Line 250 [pointer_cast]: pSVar16 = (SNetPlayer *)((int)pSVar16 + (uint)bVar17 * -8 + 4);
-  Line 251 [pointer_cast]: pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar17 * -8 + 4);
-  Line 258 [unrolled_memcpy]: for (iVar6 = 0x1e; iVar6 != 0; iVar6 = iVar6 + -1) {
-  Line 262 [pointer_cast]: pSVar9 = (SNetPlayer *)((int)pSVar9 + (uint)bVar17 * -8 + 4);
-  Line 304 [unrolled_memcpy]: // 005428b9: MOVSD.REP ES:EDI,ESI
-  Line 308 [unrolled_memcpy]: // 005428c9: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 (3 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 57 [bit_int_float_compare]: if (((float)30 < local_24) || (0x40400000 < (int)local_24)) {
-  Line 129 [bit_int_float_compare]: if (((float)30 < local_2c) || (0x40a00000 < (int)local_2c)) {
-  Line 164 [shadow_pointer_walk]: dest_addr = dest_addr + 0xf;
-
-====================================================================================================
-core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (3 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 47 [pointer_cast]: pSVar6 = (SChatOutMessage *)((int)&pSVar6->timestamp + 1);
-  Line 52 [pointer_cast]: *(byte *)((int)pSVar7->player_timestamps + target_player + -4) = 0;
-  Line 56 [pointer_cast]: *(byte *)((int)pSVar7->player_timestamps + this_ptr->local_player_index + -4) = 1;
-
-====================================================================================================
-core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 (5 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 29 [pointer_cast]: *(int *)((int)g_SimFrameHistory[0].player_input + iVar1 + -0xc)) {
-  Line 32 [pointer_cast]: (this_ptr,(SSimFrame *)
-  Line 41 [pointer_cast]: if (*(int *)((int)g_SimFrameHistory[0].player_input + iVar3 + -0xc) < iVar4) {
-  Line 44 [pointer_cast]: ((void *)((int)g_SimFrameHistory[0].player_input + iVar3 + -0xc),
-  Line 61 [pointer_cast]: *(int *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc)) {
-
-====================================================================================================
-core_netgame.cpp_CNetGame_processPacket_FUN_005406a0 (15 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0054104d) */
-  Line 79 [unrolled_strcpy]: do {
-  Line 97 [unrolled_strcpy]: do {
-  Line 108 [unrolled_strcpy]: do {
-  Line 120 [pointer_cast]: uVar4 = ((SNetworkAddr *)((int)packet + 5))->other;
-  Line 121 [pointer_cast]: this_ptr->players[iVar5].addr.port = ((SNetworkAddr *)((int)packet + 5))->port;
-  Line 134 [unrolled_strcpy]: do {
-  Line 145 [pointer_cast]: uVar4 = ((SNetworkAddr *)((int)packet + 0x69))->other;
-  Line 146 [pointer_cast]: this_ptr->players[iVar5].addr.port = ((SNetworkAddr *)((int)packet + 0x69))->port;
-  Line 227 [pointer_cast]: while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar5 + -8) ==
-  Line 229 [pointer_cast]: *(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar5 + uVar2 + -4) = 1;
-  Line 289 [unrolled_strcpy]: do {
-  Line 357 [pointer_cast]: if (uVar3 == *(uint *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc)) {
-  Line 359 [pointer_cast]: dest = (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc);
-  Line 409 [shadow_pointer_walk]: local_18 = (UNetPacket *)((local_18->server_accept).mission_name + 0x13);
-
-====================================================================================================
-core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (10 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 68 [shadow_pointer_walk]: pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
-  Line 76 [pointer_cast]: if (*(int *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc) < iVar1) {
-  Line 79 [pointer_cast]: ((void *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc),pSVar4,
-  Line 94 [pointer_cast]: if (iVar1 == *(int *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc)) {
-  Line 96 [pointer_cast]: pSVar4 = (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc);
-  Line 143 [shadow_pointer_walk]: pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
-  Line 144 [shadow_pointer_walk]: pSVar6 = (SSimFrame *)&pSVar6->player_input[0].strafe_speed;
-  Line 169 [pointer_cast]: if (local_20 == *(int *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc))
-  Line 213 [shadow_pointer_walk]: pSVar4 = (SSimFrame *)&pSVar4->player_input[0].strafe_speed;
-
-====================================================================================================
-core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0 (3 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 81 [unrolled_strcpy]: do {
-  Line 96 [pointer_cast]: local_20 = (SChatOutMessage *)((int)&local_20->timestamp + 1);
-  Line 97 [shadow_pointer_walk]: local_24 = (CNetGame *)&local_24->players[0].player_input.action_state.fire;
-
-====================================================================================================
-core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 (4 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 35 [pointer_cast]: dest_00 = (void *)((int)g_ChatOutMessages[0].player_timestamps + player_index + -4);
-  Line 36 [pointer_cast]: src = (void *)((int)g_ChatOutMessages[0].player_timestamps + player_index + -3);
-  Line 42 [pointer_cast]: src = (void *)((int)src + 0x114);
-  Line 44 [pointer_cast]: dest_00 = (void *)((int)dest_00 + 0x114);
-
-====================================================================================================
-core_netgame.cpp_CNetGame_runLobby_FUN_00541390 (6 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 72 [unrolled_strcpy]: do {
-  Line 91 [unrolled_strcpy]: do {
-  Line 117 [unrolled_strcpy]: do {
-  Line 158 [shadow_pointer_walk]: pCVar8 = (CNetGame *)&pCVar8->players[0].player_input.action_state.fire;
-  Line 187 [shadow_pointer_walk]: pCVar5 = (CNetGame *)&pCVar5->players[0].player_input.action_state.fire;
-
-====================================================================================================
-core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (5 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 38 [unrolled_strcpy]: do {
-  Line 68 [pointer_cast]: *(int *)((int)local_53 + EVar2 + 0x10) = pCVar3->players[0].ready_flag;
-  Line 69 [pointer_cast]: *(EHeroType *)((int)local_53 + EVar2 + HERO_TYPE_MOLOCH) = pCVar3->players[0].hero_number;
-  Line 71 [pointer_cast]: *(int *)((int)local_53 + EVar2 + (HERO_TYPE_MOLOCH|HERO_TYPE_BARON)) =
-  Line 77 [shadow_pointer_walk]: pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
-
-====================================================================================================
-core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0 (7 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 73 [unrolled_memcpy]: for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 73 [unrolled_memcpy]: // 00543c94: MOVSD.REP ES:EDI,ESI
-  Line 75 [pointer_cast]: pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);
-  Line 76 [pointer_cast]: this_ptr = (CNetGame *)((int)this_ptr + (uint)bVar4 * -8 + 4);
-  Line 77 [unrolled_memcpy]: // 00543c9f: MOVSD.REP ES:EDI,ESI
-  Line 79 [unrolled_memcpy]: for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 82 [pointer_cast]: other = (SNetPlayer *)((int)other + (uint)bVar4 * -8 + 4);
-
-====================================================================================================
-core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 (2 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 60 [shadow_pointer_walk]: pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
-  Line 89 [shadow_pointer_walk]: pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
-
-====================================================================================================
-core_netgame.cpp_allocSimFrame_FUN_0053f5a0 (2 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 13 [pointer_cast]: if (sequence_number == *(int *)((int)g_SimFrameHistory[0].player_input + iVar1 + -0xc)) {
-  Line 15 [pointer_cast]: return (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar1 + -0xc);
-
-====================================================================================================
-core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (2 suspects)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 14 [pointer_cast]: while (*(int *)((int)g_SimFrameHistory[0].player_input + iVar2 + -0xc) < min_sequence) {
-  Line 17 [pointer_cast]: ((void *)((int)g_SimFrameHistory[0].player_input + iVar2 + -0xc),src,
+  Line 38 [unrolled_memcpy]: packet.players[iVar5].addr = this_ptr->players[iVar5].addr;
 
 ====================================================================================================
 core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40 (1 suspect)
@@ -1579,10 +1367,12 @@ engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0 (4 suspects)
   Line 413 [static_shift_too_many_bits]: iVar4 = iVar1 >> 0x1f;
 
 ====================================================================================================
-engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30 (1 suspect)
+engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30 (3 suspects)
   File: engine/keyframe.c
 ====================================================================================================
   Line 49 [static_shift_too_many_bits]: uVar14 = (int)uVar12 >> 0x1f;
+  Line 77 [pointer_cast]: piVar12 = (int *)(header[1].child_count + 0x14);
+  Line 135 [pointer_cast]: vertex_data = (CVector3i *)(header[1].child_count + 0x14);
 
 ====================================================================================================
 engine_model.c_getMRGLBounds_FUN_00528140 (1 suspect)

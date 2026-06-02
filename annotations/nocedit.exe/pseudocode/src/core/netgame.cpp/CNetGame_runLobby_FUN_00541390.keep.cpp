@@ -7,25 +7,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
 
 {
-  uchar uVar2;
-  char cVar3;
   char *mission_filename;
   uint uVar3;
   int iVar5;
   int iVar4;
   int iVar6;
-  CNetGame *pCVar5;
-  char *pcVar6;
   char *pcVar7;
   int iVar7;
-  CNetGame *pCVar8;
-  uchar *puVar8;
-  char *pcVar9;
   char *pcVar10;
   float local_138;
   float local_134;
@@ -34,8 +25,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
   int local_24;
   int local_20;
   bool bVar2;
-  uchar uVar1;
-  
+
   iVar5 = g_ForceMessagePump;
   if (this_ptr->connection_type != CONNECTION_NONE) {
     this_ptr->players[this_ptr->local_player_index].local_sync_stage = 1;
@@ -71,17 +61,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
         SNetPlayer *player = (SNetPlayer *)((char *)g_CNetGamePtr->players + local_24);
         engine_2d_c_drawText_FUN_00401fd0(player->name,0,iVar4);
         if (player->addr.ip_address == *(uint *)g_AnyAddressIP) {
-          pcVar6 = "(Local)";
-          puVar8 = (uchar *)local_130;
-          do {
-            uVar1 = *pcVar6;
-            *puVar8 = uVar1;
-            if (uVar1 == '\0') break;
-            uVar2 = pcVar6[1];
-            pcVar6 = pcVar6 + 2;
-            puVar8[1] = uVar2;
-            puVar8 = puVar8 + 2;
-          } while (uVar2 != '\0');
+          strcpy(local_130, "(Local)");
         }
         else {
           support_trisock_cpp_formatIPAddress_FUN_005e17c0
@@ -91,16 +71,7 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
         if (local_20 == g_CNetGamePtr->local_player_index) {
           pcVar7 = "(Local)";
 LAB_005415cb:
-          pcVar9 = local_130;
-          do {
-            cVar3 = *pcVar7;
-            *pcVar9 = cVar3;
-            if (cVar3 == '\0') break;
-            cVar3 = pcVar7[1];
-            pcVar7 = pcVar7 + 2;
-            pcVar9[1] = cVar3;
-            pcVar9 = pcVar9 + 2;
-          } while (cVar3 != '\0');
+          strcpy(local_130, pcVar7);
         }
         else {
           if (player->ping_quality < 0.0) {
@@ -118,16 +89,7 @@ LAB_005415cb:
         else {
           pcVar7 = "Ready";
         }
-        pcVar9 = local_130;
-        do {
-          cVar3 = *pcVar7;
-          *pcVar9 = cVar3;
-          if (cVar3 == '\0') break;
-          cVar3 = pcVar7[1];
-          pcVar7 = pcVar7 + 2;
-          pcVar9[1] = cVar3;
-          pcVar9 = pcVar9 + 2;
-        } while (cVar3 != '\0');
+        strcpy(local_130, pcVar7);
         engine_2d_c_drawText_FUN_00401fd0(local_130,300,iVar4);
         _sprintf(local_130,"%d",player->hero_number);
         engine_2d_c_drawText_FUN_00401fd0(local_130,400,iVar4);
@@ -155,12 +117,10 @@ LAB_005415cb:
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
       iVar6 = 0;
-      pCVar8 = this_ptr;
       if (0 < this_ptr->player_count) {
         do {
-          pCVar8->players[0].sim_frame_index = 0;
+          this_ptr->players[iVar6].sim_frame_index = 0;
           iVar6 = iVar6 + 1;
-          pCVar8 = (CNetGame *)&pCVar8->players[0].player_input.action_state.fire;
         } while (iVar6 < this_ptr->player_count);
       }
       this_ptr->has_pending_sim_frame = 0;
@@ -168,14 +128,13 @@ LAB_005415cb:
         this_ptr->players[this_ptr->local_player_index].player_id = INT_02f7c8c4;
         iVar6 = 0;
         bVar2 = true;
-        pCVar5 = this_ptr;
         if (0 < this_ptr->player_count) {
           do {
-            if (pCVar5->players[0].ready_flag == 0) {
+            if (this_ptr->players[iVar6].ready_flag == 0) {
               bVar2 = false;
             }
-            if (INT_02f7c8c4 != pCVar5->players[0].player_id) {
-              local_138 = (float)(int)(g_CurrentGameTime - pCVar5->players[0].last_update_time) *
+            if (INT_02f7c8c4 != this_ptr->players[iVar6].player_id) {
+              local_138 = (float)(int)(g_CurrentGameTime - this_ptr->players[iVar6].last_update_time) *
                           (float)1.52587890625e-05;
               if (local_138 < 0.0) {
                 local_138 = 0.0;
@@ -189,7 +148,6 @@ LAB_005415cb:
               bVar2 = false;
             }
             iVar6 = iVar6 + 1;
-            pCVar5 = (CNetGame *)&pCVar5->players[0].player_input.action_state.fire;
           } while (iVar6 < this_ptr->player_count);
         }
         if ((bVar2) && (1 < this_ptr->player_count)) {

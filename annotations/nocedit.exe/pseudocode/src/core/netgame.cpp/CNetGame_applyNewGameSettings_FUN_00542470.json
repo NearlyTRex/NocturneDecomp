@@ -4,22 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 502,
-    "complexity_score": 527,
+    "complexity_score": 287,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 272,
-    "suspect_count": 23,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "stack_alignment_array",
-      "unrolled_memcpy",
-      "unrolled_strcpy"
+      "unrolled_memcpy"
     ],
     "total_lines": 774
   },
@@ -182,6 +178,215 @@
     },
     "pcode_op_count": 2143
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 27,
+      "match": "aEStackY_208c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "EHeroType aEStackY_208c [1986];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(UNetPacket *)((int)packet",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "packet = (UNetPacket *)((int)packet + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(int *)((int)local_44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_44 + local_44[2]) = iVar6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 194,
+      "match": "(SNetworkAddr *)((int)aEStack_f3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,(SNetworkAddr *)((int)aEStack_f3 + iVar3 + -8),local_10f + iVar3,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 195,
+      "match": "(int *)((int)aEStack_f3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)aEStack_f3 + iVar3),*(int *)((int)aEStack_f3 + iVar3 + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 195,
+      "match": "(int *)((int)aEStack_f3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)aEStack_f3 + iVar3),*(int *)((int)aEStack_f3 + iVar3 + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 196,
+      "match": "(int *)((int)aEStack_f3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr->players[iVar4].ready_flag = *(int *)((int)aEStack_f3 + iVar3 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 214,
+      "match": "(int *)((int)local_44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 214,
+      "match": "(int *)((int)local_44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 215,
+      "match": "(uint *)((int)local_44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)local_44 + local_44[4] + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 216,
+      "match": "(uint *)((int)local_44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)local_44 + local_44[4]);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 217,
+      "match": "(uint *)((int)local_44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_44 + local_44[4]) = *puVar7;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 250,
+      "match": "(SNetPlayer *)((int)pSVar16",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar16 = (SNetPlayer *)((int)pSVar16 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 251,
+      "match": "(SNetPlayer *)((int)pSVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 262,
+      "match": "(SNetPlayer *)((int)pSVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar9 = (SNetPlayer *)((int)pSVar9 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 112,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 165,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 81,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0x2c; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 249,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0x1e; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 258,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0x1e; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_28->vertices[0].a`). Replace `local_28->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 180,
+      "match": "local_28 = (T *)&local_28->FIELD[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_28 = (CNetGame *)&local_28->players[0].player_input.action_state.fire;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 304,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 005428b9: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 308,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 005428c9: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8344,
     "local_size": 8336,
@@ -518,187 +723,12 @@
   },
   "suspects": [
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 27,
-      "match": "aEStackY_208c",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "introduced_by": "keep",
+      "line": 96,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "EHeroType aEStackY_208c [1986];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(UNetPacket *)((int)packet",
-      "severity": "moderate",
-      "text": "packet = (UNetPacket *)((int)packet + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 147,
-      "match": "(int *)((int)local_44",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_44 + local_44[2]) = iVar6;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 194,
-      "match": "(SNetworkAddr *)((int)aEStack_f3",
-      "severity": "moderate",
-      "text": "(this_ptr,(SNetworkAddr *)((int)aEStack_f3 + iVar3 + -8),local_10f + iVar3,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 195,
-      "match": "(int *)((int)aEStack_f3",
-      "severity": "moderate",
-      "text": "*(int *)((int)aEStack_f3 + iVar3),*(int *)((int)aEStack_f3 + iVar3 + 4));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 195,
-      "match": "(int *)((int)aEStack_f3",
-      "severity": "moderate",
-      "text": "*(int *)((int)aEStack_f3 + iVar3),*(int *)((int)aEStack_f3 + iVar3 + 4));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 196,
-      "match": "(int *)((int)aEStack_f3",
-      "severity": "moderate",
-      "text": "this_ptr->players[iVar4].ready_flag = *(int *)((int)aEStack_f3 + iVar3 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 214,
-      "match": "(int *)((int)local_44",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 214,
-      "match": "(int *)((int)local_44",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 215,
-      "match": "(uint *)((int)local_44",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)local_44 + local_44[4] + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 216,
-      "match": "(uint *)((int)local_44",
-      "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)local_44 + local_44[4]);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 217,
-      "match": "(uint *)((int)local_44",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_44 + local_44[4]) = *puVar7;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 250,
-      "match": "(SNetPlayer *)((int)pSVar16",
-      "severity": "moderate",
-      "text": "pSVar16 = (SNetPlayer *)((int)pSVar16 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 251,
-      "match": "(SNetPlayer *)((int)pSVar10",
-      "severity": "moderate",
-      "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 262,
-      "match": "(SNetPlayer *)((int)pSVar9",
-      "severity": "moderate",
-      "text": "pSVar9 = (SNetPlayer *)((int)pSVar9 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 112,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 165,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 81,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar5 = 0x2c; iVar5 != 0; iVar5 = iVar5 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 249,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar6 = 0x1e; iVar6 != 0; iVar6 = iVar6 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 258,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar6 = 0x1e; iVar6 != 0; iVar6 = iVar6 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_28->vertices[0].a`). Replace `local_28->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 180,
-      "match": "local_28 = (T *)&local_28->FIELD[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "local_28 = (CNetGame *)&local_28->players[0].player_input.action_state.fire;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 304,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 005428b9: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 308,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 005428c9: MOVSD.REP ES:EDI,ESI",
+      "text": "this_ptr->players[local_44[3]].ready_flag = localPkt.players[iVar6].ready_flag;",
       "type": "unrolled_memcpy"
     }
   ]
