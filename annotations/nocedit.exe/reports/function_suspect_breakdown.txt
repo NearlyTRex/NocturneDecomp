@@ -4,41 +4,87 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6215 functions
-  1 suspects: 19 functions
-  2 suspects: 45 functions
-  3 suspects: 31 functions
-  4 suspects: 35 functions
-  5 suspects: 18 functions
-  6 suspects: 16 functions
+  0 suspects: 6191 functions
+  1 suspects: 39 functions
+  2 suspects: 43 functions
+  3 suspects: 36 functions
+  4 suspects: 36 functions
+  5 suspects: 17 functions
+  6 suspects: 18 functions
   7 suspects: 7 functions
-  8 suspects: 16 functions
+  8 suspects: 15 functions
   9 suspects: 4 functions
   10 suspects: 6 functions
   11 suspects: 3 functions
   12 suspects: 6 functions
-  13 suspects: 3 functions
-  14 suspects: 4 functions
+  13 suspects: 2 functions
+  14 suspects: 5 functions
   15 suspects: 3 functions
   16 suspects: 4 functions
   17 suspects: 1 functions
   18 suspects: 6 functions
   19 suspects: 1 functions
-  20 suspects: 1 functions
-  21 suspects: 3 functions
+  21 suspects: 4 functions
   24 suspects: 1 functions
-  28 suspects: 1 functions
   29 suspects: 1 functions
   30 suspects: 1 functions
+  33 suspects: 1 functions
   36 suspects: 1 functions
   39 suspects: 1 functions
-  88 suspects: 1 functions
+  90 suspects: 1 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [unrolled_memcpy] (8 functions)
+  [shadow_pointer_walk] (22 functions)
+  ------------------------------------------------------------
+    core_inv.cpp_CInventory_loadItems_FUN_004ff740     ( 17 lines)
+      pCVar2 = (CInventory *)&pCVar2->owner;...
+    shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60   ( 17 lines)
+      pCVar2 = (CLodEdge *)&pCVar2->vertex_idx_2;...
+    core_inv.cpp_CInventory_findItemByName_FUN_004fe9d ( 19 lines)
+      pCVar2 = (CInventory *)&pCVar2->owner;...
+    core_inv.cpp_CInventory_hasItemOfClass_FUN_004fea2 ( 19 lines)
+      pCVar3 = (CInventory *)&pCVar3->owner;...
+    core_inv.cpp_CInventory_saveItems_FUN_004ff3b0     ( 19 lines)
+      pCVar2 = (CInventory *)&pCVar2->owner;...
+    core_inv.cpp_CInventory_setupItems_FUN_004ff780    ( 22 lines)
+      pCVar1 = (CInventory *)&pCVar1->owner;...
+    core_inv.cpp_CInventory_calculateTotalBatteryCharg ( 23 lines)
+      pCVar3 = (CInventory *)&pCVar3->owner;...
+    core_inv.cpp_CInventory_removeMatchingKeys_FUN_005 ( 24 lines)
+      pCVar2 = (CInventory *)&pCVar2->owner;...
+    core_fire.cpp_CCrater_save_FUN_004c49c0            ( 28 lines)
+      pCVar4 = (CCrater *)&pCVar4->center_position;...
+    core_inv.cpp_CInventory_removeItem_FUN_004fea70    ( 34 lines)
+      pCVar2 = (CInventory *)&pCVar2->owner;...
+    core_inv.cpp_CInventory_autoUseHealthItem_FUN_0050 ( 37 lines)
+      pCVar2 = (CInventory *)&pCVar2->owner;...
+    core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740 ( 42 lines)
+      pSVar4 = (SSwarmVertex *)&pSVar4->first_edge_data;...
+    core_inv.cpp_CInventory_checkHasMatchingKey_FUN_00 ( 43 lines)
+      pCVar2 = (CInventory *)&pCVar2->owner;...
+    core_mission.cpp_CDemonMission_process_FUN_0052425 ( 46 lines)
+      pCVar2 = (CDemonMission *)&pCVar2->is_in_editor;...
+    core_game.cpp_CGame_updateStatusDisplays_FUN_004d8 ( 49 lines)
+      pCVar4 = (CGame *)&pCVar4->game_pixy;...
+    engine_texture.cpp_CTextureCache_getTextureCacheSt ( 51 lines)
+      pCVar1 = (CTextureCache *)&pCVar1->max_texture_count;...
+    core_inv.cpp_CInventory_selectWeapon_FUN_004feb10  ( 59 lines)
+      pCVar4 = (CInventory *)&pCVar4->owner;...
+    core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN ( 60 lines)
+      pCVar4 = (CInventory *)&pCVar4->owner;...
+    core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270 ( 83 lines)
+      pSVar6 = (SSwarmVertex *)&pSVar6->first_edge_data;...
+    core_mission.cpp_CDemonMission_writeFile_FUN_00523 (103 lines)
+      pCVar6 = (CInventory *)&pCVar6->owner;...
+    core_game.cpp_CGame_renderOverlay_FUN_004d8040     (138 lines)
+      local_18 = (CGame *)&local_18->game_pixy;...
+    shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_00 (404 lines)
+      local_1c = (CLodMesh *)&local_1c->vertex_data;...
+
+  [unrolled_memcpy] (7 functions)
   ------------------------------------------------------------
     shape_design.c_selectVertexToDelete_FUN_0045c5b0   ( 52 lines)
       g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1...
@@ -46,8 +92,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       g_LoadedVertices[g_VertexCount].vertex.x = g_LoadedVertices[...
     core_netgame.cpp_CNetGame_sendGameSetting_FUN_0054 ( 90 lines)
       packet.players[iVar5].addr = this_ptr->players[iVar5].addr;...
-    shape_quantize.cpp_CColorQuantizer_generateSortedP ( 94 lines)
-      pCVar11->palette[0].r = pCVar11->palette[1].r;...
     shape_superopt.cpp_CObj_removeUnusedVertices_FUN_0 (115 lines)
       dst_vert->position = pCVar5->position;...
     core_gabriela.cpp_CGabriella_processAI_FUN_004d419 (206 lines)
@@ -57,7 +101,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [pointer_cast] (7 functions)
+  [pointer_cast] (6 functions)
   ------------------------------------------------------------
     engine_fileio.cpp_CFileManager_buildPodFromRespons ( 57 lines)
       pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);...
@@ -71,8 +115,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       *(double *)((int)&((local_58.vertex_data)->position).x + iVa...
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
-    core_dracbrid.cpp_CDraculaBride_process_FUN_004844 (756 lines)
-      *(int *)(pCVar7[9].create_event + 0x30) =...
 
   [unrolled_strcpy] (2 functions)
   ------------------------------------------------------------
@@ -110,6 +152,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dmodel.cpp, Lines: 34, Types: ['unrolled_memcpy']
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
     File: shape/quantize.cpp, Lines: 34, Types: ['unrolled_strchr', 'warning_inlined_function']
+  core_inv.cpp_CInventory_save_FUN_004ff210
+    File: core/inv.cpp, Lines: 42, Types: ['shadow_pointer_walk']
   core_wateract.cpp_CWaterActor_processInEditor_FUN_005ebab0
     File: core/wateract.cpp, Lines: 43, Types: ['bit_int_float_compare']
   core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
@@ -122,10 +166,10 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mimic.cpp, Lines: 53, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0
     File: shape/meshlod.cpp, Lines: 53, Types: ['pointer_cast']
-  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
-    File: shape/meshlod.cpp, Lines: 54, Types: ['shadow_pointer_walk', 'unrolled_memset']
   core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0
     File: core/wateract.cpp, Lines: 56, Types: ['unrolled_strcpy']
+  core_inv.cpp_CInventory_selectItem_FUN_004fec10
+    File: core/inv.cpp, Lines: 58, Types: ['shadow_pointer_walk']
   shape_design.c_writePolygonModel_FUN_0045a320
     File: shape/design.c, Lines: 58, Types: ['unrolled_strcpy', 'warning_inlined_function']
   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_0
@@ -154,26 +198,22 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/fileio.cpp, Lines: 108, Types: ['pointer_cast', 'unrolled_strlen']
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
     File: engine/fileio.cpp, Lines: 110, Types: ['pointer_cast', 'unrolled_strlen']
+  core_inv.cpp_CInventory_load_FUN_004ff400
+    File: core/inv.cpp, Lines: 111, Types: ['shadow_pointer_walk']
   shape_design.c_createBoxPrimitive_FUN_0045e520
     File: shape/design.c, Lines: 116, Types: ['unrolled_strlen']
   shape_design.c_createKeyframeModel_FUN_00468320
     File: shape/design.c, Lines: 117, Types: ['unrolled_strlen', 'warning_inlined_function']
   engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
     File: engine/fileio.cpp, Lines: 122, Types: ['unrolled_strcpy']
-  shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
-    File: shape/meshlod.cpp, Lines: 123, Types: ['pointer_cast', 'shadow_pointer_walk']
   core_mimic.cpp_CMimic_setup_FUN_0051f3e0
     File: core/mimic.cpp, Lines: 134, Types: ['pointer_cast']
   core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVP
     File: core/skeledit.cpp, Lines: 139, Types: ['missing_cave_copy']
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     File: shape/meshlod.cpp, Lines: 143, Types: ['unrolled_memcpy']
-  engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
-    File: engine/keyframe.c, Lines: 150, Types: ['pointer_cast']
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
     File: core/gabriela.cpp, Lines: 160, Types: ['pointer_cast', 'unrolled_memset']
-  core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473
-    File: core/dlight.cpp, Lines: 191, Types: ['pointer_cast']
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
     File: core/wateract.cpp, Lines: 210, Types: ['shadow_pointer_walk', 'unrolled_memset']
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_F
@@ -182,8 +222,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/pod.cpp, Lines: 368, Types: ['unrolled_memcpy']
   core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
     File: core/glass.cpp, Lines: 387, Types: ['unrolled_memcpy']
-  core_inv.cpp_CInventory_addItem_FUN_004fd600
-    File: core/inv.cpp, Lines: 1153, Types: ['pointer_cast']
   shape_superopt.cpp_CP3D_copy2_FUN_005d84a0
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
   shape_superopt.cpp_CVec_copy3_FUN_005d82b0
@@ -206,6 +244,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/manpuz.cpp, Lines: 49, Types: ['unrolled_memset']
   shape_design.c_removeDuplicatePolygons_FUN_004651b0
     File: shape/design.c, Lines: 52, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
+  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
+    File: shape/meshlod.cpp, Lines: 54, Types: ['shadow_pointer_walk', 'unrolled_memset']
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
     File: core/manpuz.cpp, Lines: 56, Types: ['pointer_cast', 'unrolled_memcpy']
   shape_cramtex.cpp_placementCollisionCheck_FUN_00448260
@@ -228,12 +268,20 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 97, Types: ['unrolled_strlen']
   shape_design.c_generateOctant_FUN_00469420
     File: shape/design.c, Lines: 103, Types: ['unrolled_strlen']
+  shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
+    File: shape/superopt.cpp, Lines: 112, Types: ['shadow_pointer_walk']
   core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60
     File: core/gabriela.cpp, Lines: 113, Types: ['pointer_cast', 'unrolled_memcpy']
+  core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
+    File: core/inv.cpp, Lines: 115, Types: ['shadow_pointer_walk']
+  shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
+    File: shape/meshlod.cpp, Lines: 123, Types: ['pointer_cast', 'shadow_pointer_walk']
   shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_0051987
     File: shape/meshlod.cpp, Lines: 125, Types: ['unrolled_memcpy']
   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_0
     File: engine/fileio.cpp, Lines: 137, Types: ['pointer_cast', 'unrolled_strcpy']
+  shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
+    File: shape/meshlod.cpp, Lines: 143, Types: ['shadow_pointer_walk']
   shape_design.c_modelExportWizard_FUN_0045a7b0
     File: shape/design.c, Lines: 146, Types: ['unrolled_strchr', 'unrolled_strlen']
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0

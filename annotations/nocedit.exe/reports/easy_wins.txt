@@ -14,21 +14,21 @@ PRIORITY 1: Files with 1-2 functions remaining
     - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
       Suspects: unrolled_memcpy, unrolled_memcpy
 
-  engine/keyframe.c (1 remaining of 5)
-    - engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
-      Suspects: pointer_cast, pointer_cast, static_shift_too_many_bits
+  engine/texture.cpp (1 remaining of 22)
+    - engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_005dd690
+      Suspects: shadow_pointer_walk
 
-  core/dracbrid.cpp (1 remaining of 25)
-    - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
-      Suspects: pointer_cast
+  engine/drender.cpp (1 remaining of 88)
+    - engine_drender.cpp_renderTriangleSimple_FUN_004839f0
+      Suspects: shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk, shadow_pointer_walk
 
-  core/inv.cpp (1 remaining of 43)
-    - core_inv.cpp_CInventory_addItem_FUN_004fd600
-      Suspects: pointer_cast, pointer_cast
+  core/glass.cpp (1 remaining of 24)
+    - core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
+      Suspects: unrolled_memcpy, unrolled_memcpy
 
-  core/dlight.cpp (1 remaining of 34)
-    - core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90
-      Suspects: pointer_cast, pointer_cast
+  core/fire.cpp (1 remaining of 185)
+    - core_fire.cpp_CCrater_save_FUN_004c49c0
+      Suspects: shadow_pointer_walk
 
   core/netgame.cpp (2 remaining of 64)
     - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
@@ -36,34 +36,70 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
       Suspects: unrolled_memcpy
 
-  core/glass.cpp (2 remaining of 24)
-    - core_glass.cpp_CGlass_shatter_FUN_004eaef0
-      Suspects: raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant
-    - core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
-      Suspects: unrolled_memcpy, unrolled_memcpy
+  core/bugs.cpp (2 remaining of 44)
+    - core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0
+      Suspects: shadow_pointer_walk
+    - core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740
+      Suspects: shadow_pointer_walk
+
+  core/mission.cpp (2 remaining of 41)
+    - core_mission.cpp_CDemonMission_writeFile_FUN_00523600
+      Suspects: shadow_pointer_walk
+    - core_mission.cpp_CDemonMission_process_FUN_00524250
+      Suspects: shadow_pointer_walk
+
+  core/game.cpp (2 remaining of 66)
+    - core_game.cpp_CGame_renderOverlay_FUN_004d8040
+      Suspects: shadow_pointer_walk, static_shift_too_many_bits
+    - core_game.cpp_CGame_updateStatusDisplays_FUN_004d85a0
+      Suspects: shadow_pointer_walk
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
+  [shadow_pointer_walk] - 15 functions
+    core_inv.cpp_CInventory_loadItems_FUN_004ff740                         ( 17 lines)
+    shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60                       ( 17 lines)
+    core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0                    ( 19 lines)
+    core_inv.cpp_CInventory_hasItemOfClass_FUN_004fea20                    ( 19 lines)
+    core_inv.cpp_CInventory_saveItems_FUN_004ff3b0                         ( 19 lines)
+    core_inv.cpp_CInventory_setupItems_FUN_004ff780                        ( 22 lines)
+    core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0       ( 23 lines)
+    core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0                ( 24 lines)
+    core_fire.cpp_CCrater_save_FUN_004c49c0                                ( 28 lines)
+    core_inv.cpp_CInventory_removeItem_FUN_004fea70                        ( 34 lines)
+    core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570                 ( 37 lines)
+    core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740                     ( 42 lines)
+    core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0               ( 43 lines)
+    core_mission.cpp_CDemonMission_process_FUN_00524250                    ( 46 lines)
+    core_game.cpp_CGame_updateStatusDisplays_FUN_004d85a0                  ( 49 lines)
+
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  core/inv.cpp (97.7% complete)
+  core/fire.cpp (99.5% complete)
     1 functions remaining:
-      core_inv.cpp_CInventory_addItem_FUN_004fd600 (1153 lines)
-        Types: ['pointer_cast']
+      core_fire.cpp_CCrater_save_FUN_004c49c0 (28 lines)
+        Types: ['shadow_pointer_walk']
+
+  engine/drender.cpp (98.9% complete)
+    1 functions remaining:
+      engine_drender.cpp_renderTriangleSimple_FUN_004839f0 (229 lines)
+        Types: ['shadow_pointer_walk']
 
   engine/pod.cpp (97.1% complete)
     1 functions remaining:
       engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines)
         Types: ['unrolled_memcpy']
 
-  core/dlight.cpp (97.1% complete)
-    1 functions remaining:
-      core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90 (191 lines)
-        Types: ['pointer_cast']
+  core/game.cpp (97.0% complete)
+    2 functions remaining:
+      core_game.cpp_CGame_renderOverlay_FUN_004d8040 (138 lines)
+        Types: ['shadow_pointer_walk']
+      core_game.cpp_CGame_updateStatusDisplays_FUN_004d85a0 (49 lines)
+        Types: ['shadow_pointer_walk']
 
   core/netgame.cpp (96.9% complete)
     2 functions remaining:
@@ -72,10 +108,10 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines)
         Types: ['unrolled_memcpy']
 
-  core/dracbrid.cpp (96.0% complete)
+  core/glass.cpp (95.8% complete)
     1 functions remaining:
-      core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (756 lines)
-        Types: ['pointer_cast']
+      core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (387 lines)
+        Types: ['unrolled_memcpy']
 
   core/skeledit.cpp (95.7% complete)
     3 functions remaining:
@@ -86,12 +122,24 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines)
         Types: ['missing_cave_copy']
 
-  core/glass.cpp (91.7% complete)
+  engine/texture.cpp (95.5% complete)
+    1 functions remaining:
+      engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_005dd690 (51 lines)
+        Types: ['shadow_pointer_walk']
+
+  core/bugs.cpp (95.5% complete)
     2 functions remaining:
-      core_glass.cpp_CGlass_shatter_FUN_004eaef0 (124 lines)
-        Types: ['raw_address_constant']
-      core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (387 lines)
-        Types: ['unrolled_memcpy']
+      core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0 (83 lines)
+        Types: ['shadow_pointer_walk']
+      core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740 (42 lines)
+        Types: ['shadow_pointer_walk']
+
+  core/mission.cpp (95.1% complete)
+    2 functions remaining:
+      core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (103 lines)
+        Types: ['shadow_pointer_walk']
+      core_mission.cpp_CDemonMission_process_FUN_00524250 (46 lines)
+        Types: ['shadow_pointer_walk']
 
 ====================================================================================================
 ALL REMAINING FILES
@@ -106,9 +154,10 @@ ALL REMAINING FILES
   core/gabriela.cpp                                             78.9%  (30/38 clean, 8 remaining)
   core/wateract.cpp                                             78.3%  (18/23 clean, 5 remaining)
   core/ghoul.cpp                                                77.8%  (14/18 clean, 4 remaining)
-  shape/superopt.cpp                                            75.3%  (140/186 clean, 46 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
+  shape/superopt.cpp                                            74.7%  (139/186 clean, 47 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)
-  shape/meshlod.cpp                                             70.2%  (87/124 clean, 37 remaining)
   shape/design.c                                                69.9%  (114/163 clean, 49 remaining)
   engine/fileio.cpp                                             68.5%  (50/73 clean, 23 remaining)
+  shape/meshlod.cpp                                             67.7%  (84/124 clean, 40 remaining)
+  core/inv.cpp                                                  62.8%  (27/43 clean, 16 remaining)

@@ -83,45 +83,45 @@ Manual inspection is needed to determine the expected class.
   core/inv.cpp/CInventory_addItem_FUN_004fd600.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 260: castToClassHash()
-    258:               pCVar5->ammo_count = pCVar5->ammo_count + pCStack_24->ammo_count;
-    259:               pCVar5_00 = (CTommyGun *)
-    260:                           core_actor_cpp_castToClassHash_FUN_0040c790((CDemonActor *)pCVar5,uVar4);
-    261:               if ((pCVar5_00 != (CTommyGun *)0x0) && (200 < (pCVar5_00->base).ammo_count)) {
-    262:                 (pCVar5_00->base).ammo_count = 200;
-    263:               }
+  Line 252: castToClassHash()
+    250:               pCVar5->ammo_count = pCVar5->ammo_count + pCStack_24->ammo_count;
+    251:               pCVar5_00 = (CTommyGun *)
+    252:                           core_actor_cpp_castToClassHash_FUN_0040c790((CDemonActor *)pCVar5,uVar4);
+    253:               if ((pCVar5_00 != (CTommyGun *)0x0) && (200 < (pCVar5_00->base).ammo_count)) {
+    254:                 (pCVar5_00->base).ammo_count = 200;
+    255:               }
 
-  Line 335: castToClassHash()
-    333:             pCVar9->ammo_count = pCVar9->ammo_count + pCVar8->ammo_count;
-    334:             pCVar6 = (CTommyGun *)
-    335:                      core_actor_cpp_castToClassHash_FUN_0040c790((CDemonActor *)pCVar9,uVar4);
-    336:             if ((pCVar6 != (CTommyGun *)0x0) && (200 < (pCVar6->base).ammo_count)) {
-    337:               (pCVar6->base).ammo_count = 200;
-    338:             }
+  Line 325: castToClassHash()
+    323:             pCVar9->ammo_count = pCVar9->ammo_count + pCVar8->ammo_count;
+    324:             pCVar6 = (CTommyGun *)
+    325:                      core_actor_cpp_castToClassHash_FUN_0040c790((CDemonActor *)pCVar9,uVar4);
+    326:             if ((pCVar6 != (CTommyGun *)0x0) && (200 < (pCVar6->base).ammo_count)) {
+    327:               (pCVar6->base).ammo_count = 200;
+    328:             }
 
-  Line 143: createActorByName()
-    141:       pCVar15 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c790
-    142:                                    (item_actor,g_CAmmoClassInfo.name_hash);
-    143:       pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pCVar15->weapon_class_name);
-    144:       pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("This ammo is for your ")
-    145:       ;
-    146:       strcpy(acStack_234, pcVar16);
+  Line 140: createActorByName()
+    138:       pCVar15 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c790
+    139:                                    (item_actor,g_CAmmoClassInfo.name_hash);
+    140:       pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pCVar15->weapon_class_name);
+    141:       pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("This ammo is for your ")
+    142:       ;
+    143:       strcpy(acStack_234, pcVar16);
 
-  Line 275: createActorByName()
-    273:         } while (iVar18 < this_ptr->item_count);
-    274:       }
-    275:       pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pcStack_28);
-    276:       core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,pCVar5_02);
-    277:       (*((pCVar5_02->vtable)._ub)->setup)(pCVar5_02);
-    278:       *(int *)(pCVar5_02[4].actor_name + 8) = pCStack_24->ammo_count;
+  Line 266: createActorByName()
+    264:         } while (iVar18 < this_ptr->item_count);
+    265:       }
+    266:       pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pcStack_28);
+    267:       core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,pCVar5_02);
+    268:       (*((pCVar5_02->vtable)._ub)->setup)(pCVar5_02);
+    269:       ((CWeapon *)pCVar5_02)->ammo_count = pCStack_24->ammo_count;
 
-  Line 364: createActorByName()
-    362:             pcVar20 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
-    363:                                 ((CDemonActor *)pCVar8);
-    364:             pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pcVar20);
-    365:             core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
-    366:                       (g_CDemonMissionPtr,pCVar5_02);
-    367:             (*((pCVar5_02->vtable)._ub)->setup)(pCVar5_02);
+  Line 352: createActorByName()
+    350:             pcVar20 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
+    351:                                 ((CDemonActor *)pCVar8);
+    352:             pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pcVar20);
+    353:             core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
+    354:                       (g_CDemonMissionPtr,pCVar5_02);
+    355:             (*((pCVar5_02->vtable)._ub)->setup)(pCVar5_02);
 
 --------------------------------------------------------------------------------
   core/inv.cpp/CInventory_load_FUN_004ff400.keep.cpp

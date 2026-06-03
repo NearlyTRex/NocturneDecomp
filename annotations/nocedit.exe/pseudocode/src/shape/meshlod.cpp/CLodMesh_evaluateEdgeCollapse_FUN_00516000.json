@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 143,
+    "complexity_score": 178,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 143,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 534
   },
   "cross_references": [
@@ -368,5 +370,30 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 70,
+      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CLodMesh *)&pCVar6->vertex_data;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 74,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CLodEdge *)&pCVar3->vertex_idx_2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_4c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_4c->owner`). Replace `local_4c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 141,
+      "match": "local_4c = (T *)&local_4c->FIELD",
+      "severity": "moderate",
+      "text": "local_4c = (CLodEdge *)&local_4c->vertex_idx_2;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

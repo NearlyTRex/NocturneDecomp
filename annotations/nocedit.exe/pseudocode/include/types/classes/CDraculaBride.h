@@ -2,7 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CDemonActor.h"
+#include "types/classes/CBodyPart.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CVector3f.h"
 
@@ -21,7 +21,7 @@ typedef struct CDraculaBride {
     CVector3f new_pos; // 0xbf58
     int attack_landed; // 0xbf64
     int part_count; // 0xbf68
-    struct CDemonActor* part_list[30]; // 0xbf6c
+    struct CBodyPart* part_list[30]; // 0xbf6c
     int exploded; // 0xbfe4
     float fade_timer; // 0xbfe8
 } CDraculaBride;

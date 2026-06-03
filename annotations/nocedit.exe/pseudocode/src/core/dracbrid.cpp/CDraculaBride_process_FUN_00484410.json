@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1793,
-    "complexity_score": 771,
+    "complexity_score": 752,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 54,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 756,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 2549
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 752,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 2545
   },
   "cross_references": [],
   "function": {
@@ -629,7 +627,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 243,
+      "line": 239,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -638,7 +636,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 630,
+      "line": 626,
       "match": "(CDraculaBride **)((int)g_CDemonSetPtr",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -647,7 +645,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 260,
+      "line": 256,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -656,7 +654,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 392,
+      "line": 388,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -665,7 +663,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 645,
+      "line": 641,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -674,7 +672,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 660,
+      "line": 656,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -683,7 +681,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 149,
+      "line": 145,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -692,7 +690,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 216,
+      "line": 212,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -701,7 +699,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 463,
+      "line": 459,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -710,7 +708,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 740,
+      "line": 736,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -719,7 +717,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 743,
+      "line": 739,
       "match": "cascade_constant_fill",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -728,7 +726,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar17` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar17->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 122,
+      "line": 118,
       "match": "pCVar17 = (T *)((pCVar17->FIELD).SUBFIELD...ARRAY + CONST)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -737,7 +735,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar17` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar17->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 136,
+      "line": 132,
       "match": "pCVar17 = (T *)((pCVar17->FIELD).SUBFIELD...ARRAY + CONST)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1181,16 +1179,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 120,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "*(int *)(pCVar7[9].create_event + 0x30) =",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

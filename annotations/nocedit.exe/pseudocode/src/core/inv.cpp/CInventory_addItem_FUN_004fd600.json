@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1998,
-    "complexity_score": 1178,
+    "complexity_score": 1153,
     "cross_reference_count": 10,
     "function_call_count": 20,
     "global_count": 63,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 1153,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 3151
   },
   "cross_references": [
@@ -1007,6 +1005,69 @@
       "type": "unrolled_strcpy"
     },
     {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 1035,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(EAmmoType *)(pCVar5_02[4].actor_name + 0xc) = pCStack_24->ammo_type;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 1125,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(EAmmoType *)(pCVar5_02[4].actor_name + 0xc) = pCVar10->ammo_type;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar19` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar19->owner`). Replace `pCVar19->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 975,
+      "match": "pCVar19 = (T *)&pCVar19->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar19 = (CInventory *)&pCVar19->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar19` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar19->owner`). Replace `pCVar19->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 995,
+      "match": "pCVar19 = (T *)&pCVar19->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar19 = (CInventory *)&pCVar19->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar19` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar19->owner`). Replace `pCVar19->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1028,
+      "match": "pCVar19 = (T *)&pCVar19->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar19 = (CInventory *)&pCVar19->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_20` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_20->owner`). Replace `pCStack_20->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1103,
+      "match": "pCStack_20 = (T *)&pCStack_20->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCStack_20 = (CInventory *)&pCStack_20->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCStack_18->owner`). Replace `pCStack_18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1137,
+      "match": "pCStack_18 = (T *)&pCStack_18->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCStack_18 = (CInventory *)&pCStack_18->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 77,
       "match": "do { if (v==0) break; v=v-1; ... }",
@@ -1716,22 +1777,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 1035,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "*(EAmmoType *)(pCVar5_02[4].actor_name + 0xc) = pCStack_24->ammo_type;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 1125,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "*(EAmmoType *)(pCVar5_02[4].actor_name + 0xc) = pCVar10->ammo_type;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

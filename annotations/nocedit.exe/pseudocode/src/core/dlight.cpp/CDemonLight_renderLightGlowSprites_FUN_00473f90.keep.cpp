@@ -17,7 +17,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
   CVector3f *pCVar3;
   int iVar7;
   CVector3f *pCVar8;
-  SMRGLTextureBasic *texture;
+  SMRGLTextureBasic *glowTexture;
+  int *uv;
   float fVar9;
   int iSpriteIndex;
   SMRGLPrimitiveQuadIndex local_138;
@@ -75,13 +76,13 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
                     1.525902e-05f) {
             iVar7 = (int)ROUND(ROUND(fVar9 * (float)65535));
             engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-            texture = g_LightTextures;
+            glowTexture = g_LightTextures;
             iSpriteIndex = 0;
             do {
-              texture = texture + 2;
+              glowTexture = glowTexture + 2;
               fVar9 = (float)iSpriteIndex * 0.1111111f * (this_ptr->base).max_distance;
               fVar3 = fVar9 * (float)0.25;
-              fVar9 = (float)texture[1].base.count * (float)0.5 *
+              fVar9 = (float)glowTexture[1].base.count * (float)0.5 *
                       ((fVar9 * (float)18) / (this_ptr->base).base.focal_length) *
                       (float)2;
               local_68.x = (this_ptr->base).base.position.f.x +
@@ -121,7 +122,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_bc);
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                        (g_CDemonRendererPtr2,texture);
+                        (g_CDemonRendererPtr2,glowTexture);
               this_ptr_00 = g_CDemonRendererPtr2;
               local_138.base.base.count = 4;
               local_138.base.surface_normal.D.i = 0;
@@ -129,29 +130,30 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               local_138.base.surface_normal.B.i = 0;
               local_138.base.surface_normal.A.i = 0;
               local_138.vertices[0] = 0;
-              g_CDemonRendererPtr2->vertex_buffer_ptr->u = *(int *)texture[1].texture_name << 0x10;
-              this_ptr_00->vertex_buffer_ptr->v = *(int *)(texture[1].texture_name + 4) << 0x10;
+              uv = (int *)glowTexture[1].texture_name;
+              g_CDemonRendererPtr2->vertex_buffer_ptr->u = uv[0] << 0x10;
+              this_ptr_00->vertex_buffer_ptr->v = uv[1] << 0x10;
               this_ptr_00->vertex_buffer_ptr->a = iVar7;
               this_ptr_00->vertex_buffer_ptr->r = 0xffff;
               this_ptr_00->vertex_buffer_ptr->g = 0xffff;
               this_ptr_00->vertex_buffer_ptr->b = 0xffff;
               local_138.vertices[1] = 1;
-              this_ptr_00->vertex_buffer_ptr[1].u = *(int *)(texture[1].texture_name + 8) << 0x10;
-              this_ptr_00->vertex_buffer_ptr[1].v = *(int *)(texture[1].texture_name + 4) << 0x10;
+              this_ptr_00->vertex_buffer_ptr[1].u = uv[2] << 0x10;
+              this_ptr_00->vertex_buffer_ptr[1].v = uv[1] << 0x10;
               this_ptr_00->vertex_buffer_ptr[1].a = iVar7;
               this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
               this_ptr_00->vertex_buffer_ptr[1].g = 0xffff;
               this_ptr_00->vertex_buffer_ptr[1].b = 0xffff;
               local_138.vertices[2] = 2;
-              this_ptr_00->vertex_buffer_ptr[2].u = *(int *)(texture[1].texture_name + 8) << 0x10;
-              this_ptr_00->vertex_buffer_ptr[2].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
+              this_ptr_00->vertex_buffer_ptr[2].u = uv[2] << 0x10;
+              this_ptr_00->vertex_buffer_ptr[2].v = uv[3] << 0x10;
               this_ptr_00->vertex_buffer_ptr[2].a = iVar7;
               this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
               this_ptr_00->vertex_buffer_ptr[2].g = 0xffff;
               this_ptr_00->vertex_buffer_ptr[2].b = 0xffff;
               local_138.vertices[3] = 3;
-              this_ptr_00->vertex_buffer_ptr[3].u = *(int *)texture[1].texture_name << 0x10;
-              this_ptr_00->vertex_buffer_ptr[3].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
+              this_ptr_00->vertex_buffer_ptr[3].u = uv[0] << 0x10;
+              this_ptr_00->vertex_buffer_ptr[3].v = uv[3] << 0x10;
               this_ptr_00->vertex_buffer_ptr[3].a = iVar7;
               this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
               this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;

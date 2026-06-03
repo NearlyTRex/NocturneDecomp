@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended *header)
+; SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLKeyframeModel *keyframe_model)
 ;
 ; Parameters:
-; SMRGLHeaderExtended * Stack[0x4]:4   header
+; SMRGLKeyframeModel * Stack[0x4]:4   keyframe_model
 ; Local Variables:
 ; int              Stack[-0x1c]:4  local_1c
 ; int *            Stack[-0x18]:4  local_18

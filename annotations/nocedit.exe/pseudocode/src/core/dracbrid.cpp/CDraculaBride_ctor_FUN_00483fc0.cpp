@@ -37,7 +37,7 @@ CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00483fc0(CDracu
   pCVar4 = pCVar3;
   do {
     pCVar5 = (CDraculaBride *)((pCVar4->base).base.base.actor_name + 4);
-    pCVar4->part_list[0] = (CDemonActor *)0x0;
+    pCVar4->part_list[0] = (CBodyPart *)0x0;
     pCVar4 = pCVar5;
   } while (pCVar5 != (CDraculaBride *)(pCVar3->base).base.base.create_event);
   pCVar3->part_count = 0;

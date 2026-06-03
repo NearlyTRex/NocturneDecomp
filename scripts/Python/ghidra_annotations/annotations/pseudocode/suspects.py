@@ -3402,6 +3402,23 @@ _SHADOW_PTR_WALK_ARROW_RE = re.compile(
     r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'   # (.SUBFIELD[N]?)+
     r'\s*;\s*$'                                      # ;
 )
+# Single-field address variant: `IDENT = (T *)&IDENT->FIELD;` (optionally
+# `&(IDENT->FIELD)`) — Watcom advances the shadow pointer by the byte offset
+# of ONE sibling scalar field whose offset equals the array element stride
+# (e.g. `pCVar19 = (CInventory *)&pCVar19->owner;` where `offsetof(owner)` == 4
+# == `sizeof(items[0])`, so `shadow->items[0]` resolves to `orig->items[i]`).
+# The `_ADDR_`/`_ARROW_` variants deliberately require a trailing `.SUBFIELD`
+# to stay distinct from a plain element-address `&p->field`; this fills the
+# single-field gap. The self-update (`\1` on both sides) IS the false-positive
+# guard: reassigning a pointer to the address of its OWN scalar field is only
+# ever a stride advance, never a real traversal (a list walk uses the field
+# VALUE `p = p->next`, not its address `&p->next`). No subfield/index/`+CONST`.
+_SHADOW_PTR_WALK_ARROW_SINGLE_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'&\s*(?:\(\s*\1\s*->\s*\w+\s*\)|\1\s*->\s*\w+)'  # &(IDENT->FIELD) | &IDENT->FIELD
+    r'\s*;\s*$'                                      # ;
+)
 # Self-index address variant: `IDENT = (T *)&IDENT[N].SUBFIELD(.SUBFIELD)*;`
 # Watcom advances the shadow pointer by taking the address of a constant
 # index into the pointer itself plus a subfield path, where
@@ -3753,6 +3770,24 @@ def identify_shadow_pointer_walk(decompiled_code):
                     'with direct indexing on the original pointer; drop the '
                     'shadow init and self-update.' % (
                         m.group(1), m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
+            continue
+        m = _SHADOW_PTR_WALK_ARROW_SINGLE_RE.match(line)
+        if m:
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)&%s->FIELD' % (
+                    m.group(1), m.group(1)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates via the '
+                    'address of ONE sibling scalar field whose byte offset '
+                    'equals the array element stride (e.g. `(T *)&%s->owner`). '
+                    'Replace `%s->some_array[0]` reads with direct indexing on '
+                    'the original pointer; drop the shadow init and '
+                    'self-update.' % (m.group(1), m.group(1), m.group(1))),
                 'severity': 'moderate',
             })
             continue

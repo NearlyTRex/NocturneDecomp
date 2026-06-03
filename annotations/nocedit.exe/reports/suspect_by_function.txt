@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6172 (95.6%)
-With suspects: 282
-Total suspects: 1808
+Clean: 6149 (95.3%)
+With suspects: 305
+Total suspects: 1850
 
 ====================================================================================================
 cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0 (2 suspects)
@@ -44,6 +44,18 @@ cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20 (2 suspects
   Line 38 [static_shift_too_many_bits]: iVar8 = (int)((uint)*puVar9 * g_BitsPerPixel) >> 0x1f;
 
 ====================================================================================================
+core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740 (1 suspect)
+  File: core/bugs.cpp
+====================================================================================================
+  Line 35 [shadow_pointer_walk]: pSVar4 = (SSwarmVertex *)&pSVar4->first_edge_data;
+
+====================================================================================================
+core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0 (1 suspect)
+  File: core/bugs.cpp
+====================================================================================================
+  Line 60 [shadow_pointer_walk]: pSVar6 = (SSwarmVertex *)&pSVar6->first_edge_data;
+
+====================================================================================================
 core_cloth.cpp_CCloth_setup_FUN_00439710 (2 suspects)
   File: core/cloth.cpp
 ====================================================================================================
@@ -59,13 +71,6 @@ core_course.cpp_renderCourseGizmo_FUN_00443760 (5 suspects)
   Line 37 [static_shift_too_many_bits]: iVar7 = (int)ROUND(ROUND(position->z)) >> 0x1f;
   Line 65 [static_shift_too_many_bits]: iVar3 = iVar6 >> 0x1f;
   Line 75 [static_shift_too_many_bits]: [((int)((iVar4 + (iVar4 >> 0x1f) * -8) - (uint)((iVar4 >> 0x1f) << 2 < 0)) >> 3)
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90 (2 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 173 [pointer_cast]: this_ptr_00->vertex_buffer_ptr[2].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
-  Line 180 [pointer_cast]: this_ptr_00->vertex_buffer_ptr[3].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -185,12 +190,6 @@ core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
   Line 87 [unrolled_memcpy]: // 0047a936: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (1 suspect)
-  File: core/dracbrid.cpp
-====================================================================================================
-  Line 120 [pointer_cast]: *(int *)(pCVar7[9].create_event + 0x30) =
-
-====================================================================================================
 core_dskybox.cpp_renderSkyDome_FUN_004901f0 (2 suspects)
   File: core/dskybox.cpp
 ====================================================================================================
@@ -202,6 +201,12 @@ core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
   File: core/elephant.cpp
 ====================================================================================================
   Line 25 [static_invalid_pointer_cast]: if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {
+
+====================================================================================================
+core_fire.cpp_CCrater_save_FUN_004c49c0 (1 suspect)
+  File: core/fire.cpp
+====================================================================================================
+  Line 19 [shadow_pointer_walk]: pCVar4 = (CCrater *)&pCVar4->center_position;
 
 ====================================================================================================
 core_fire.cpp_CFireball_process_FUN_004c0b30 (2 suspects)
@@ -368,10 +373,17 @@ core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1 suspect)
   Line 1564 [static_self_assignment]: pbVar21 = pbVar21;
 
 ====================================================================================================
-core_game.cpp_CGame_renderOverlay_FUN_004d8040 (1 suspect)
+core_game.cpp_CGame_renderOverlay_FUN_004d8040 (2 suspects)
   File: core/game.cpp
 ====================================================================================================
   Line 103 [static_shift_too_many_bits]: iVar1 = iVar8 + ((int)((iVar1 + (iVar1 >> 0x1f) * -4) - (uint)((iVar1 >> 0x1f) << 1 < 0)) >> 2);
+  Line 135 [shadow_pointer_walk]: local_18 = (CGame *)&local_18->game_pixy;
+
+====================================================================================================
+core_game.cpp_CGame_updateStatusDisplays_FUN_004d85a0 (1 suspect)
+  File: core/game.cpp
+====================================================================================================
+  Line 46 [shadow_pointer_walk]: pCVar4 = (CGame *)&pCVar4->game_pixy;
 
 ====================================================================================================
 core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 (4 suspects)
@@ -432,24 +444,105 @@ core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (2 suspects)
   Line 184 [unrolled_memcpy]: local_1e4.vertices[1].x = quad_vertices->vertices[1].x;
 
 ====================================================================================================
-core_glass.cpp_CGlass_shatter_FUN_004eaef0 (8 suspects)
-  File: core/glass.cpp
-====================================================================================================
-  Line 99 [raw_address_constant]: local_8c.x = 0xf80000;
-  Line 102 [raw_address_constant]: local_9c.z = 0xf80000;
-  Line 104 [raw_address_constant]: local_9c.w = 0xf80000;
-  Line 105 [raw_address_constant]: local_8c.w = 0xf80000;
-  Line 109 [raw_address_constant]: local_8c.x = 0xfe0000;
-  Line 112 [raw_address_constant]: local_9c.z = 0xfe0000;
-  Line 114 [raw_address_constant]: local_9c.w = 0xfe0000;
-  Line 115 [raw_address_constant]: local_8c.w = 0xfe0000;
-
-====================================================================================================
-core_inv.cpp_CInventory_addItem_FUN_004fd600 (2 suspects)
+core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570 (1 suspect)
   File: core/inv.cpp
 ====================================================================================================
-  Line 1035 [pointer_cast]: *(EAmmoType *)(pCVar5_02[4].actor_name + 0xc) = pCStack_24->ammo_type;
-  Line 1125 [pointer_cast]: *(EAmmoType *)(pCVar5_02[4].actor_name + 0xc) = pCVar10->ammo_type;
+  Line 28 [shadow_pointer_walk]: pCVar2 = (CInventory *)&pCVar2->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 22 [shadow_pointer_walk]: pCVar3 = (CInventory *)&pCVar3->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 37 [shadow_pointer_walk]: pCVar2 = (CInventory *)&pCVar2->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 23 [shadow_pointer_walk]: pCVar4 = (CInventory *)&pCVar4->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 18 [shadow_pointer_walk]: pCVar2 = (CInventory *)&pCVar2->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_hasItemOfClass_FUN_004fea20 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 18 [shadow_pointer_walk]: pCVar3 = (CInventory *)&pCVar3->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_loadItems_FUN_004ff740 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 15 [shadow_pointer_walk]: pCVar2 = (CInventory *)&pCVar2->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_load_FUN_004ff400 (2 suspects)
+  File: core/inv.cpp
+====================================================================================================
+  Line 82 [shadow_pointer_walk]: pCVar6 = (CInventory *)&pCVar6->owner;
+  Line 92 [shadow_pointer_walk]: pCVar5 = (CInventory *)&pCVar5->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_removeItem_FUN_004fea70 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 33 [shadow_pointer_walk]: pCVar2 = (CInventory *)&pCVar2->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 18 [shadow_pointer_walk]: pCVar2 = (CInventory *)&pCVar2->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_saveItems_FUN_004ff3b0 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 18 [shadow_pointer_walk]: pCVar2 = (CInventory *)&pCVar2->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_save_FUN_004ff210 (2 suspects)
+  File: core/inv.cpp
+====================================================================================================
+  Line 23 [shadow_pointer_walk]: pCVar2 = (CInventory *)&pCVar2->owner;
+  Line 39 [shadow_pointer_walk]: pCVar1 = (CInventory *)&pCVar1->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_selectItem_FUN_004fec10 (2 suspects)
+  File: core/inv.cpp
+====================================================================================================
+  Line 24 [shadow_pointer_walk]: pCVar3 = (CInventory *)&pCVar3->owner;
+  Line 37 [shadow_pointer_walk]: pCVar3 = (CInventory *)&pCVar3->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_selectWeapon_FUN_004feb10 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 24 [shadow_pointer_walk]: pCVar4 = (CInventory *)&pCVar4->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_setupItems_FUN_004ff780 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 21 [shadow_pointer_walk]: pCVar1 = (CInventory *)&pCVar1->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_updateInventory_FUN_004ffad0 (3 suspects)
+  File: core/inv.cpp
+====================================================================================================
+  Line 45 [shadow_pointer_walk]: pCVar5 = (CInventory *)&pCVar5->owner;
+  Line 68 [shadow_pointer_walk]: pCVar7 = (CInventory *)&pCVar7->owner;
+  Line 90 [shadow_pointer_walk]: pCVar7 = (CInventory *)&pCVar7->owner;
 
 ====================================================================================================
 core_keyactor.cpp_CKeyActor_process_FUN_00501710 (2 suspects)
@@ -649,6 +742,18 @@ core_mission.cpp_CDemonMission_loadActor_FUN_00523990 (1 suspect)
   File: core/mission.cpp
 ====================================================================================================
   Line 64 [static_legacy_uninitvar]: pCVar1 = local_e1;
+
+====================================================================================================
+core_mission.cpp_CDemonMission_process_FUN_00524250 (1 suspect)
+  File: core/mission.cpp
+====================================================================================================
+  Line 21 [shadow_pointer_walk]: pCVar2 = (CDemonMission *)&pCVar2->is_in_editor;
+
+====================================================================================================
+core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (1 suspect)
+  File: core/mission.cpp
+====================================================================================================
+  Line 93 [shadow_pointer_walk]: pCVar6 = (CInventory *)&pCVar6->owner;
 
 ====================================================================================================
 core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (8 suspects)
@@ -860,7 +965,7 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (32 suspects)
   Line 1061 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (89 suspects)
+core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (91 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -887,9 +992,11 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (89 suspec
   Line 543 [pointer_cast]: local_84 = (void *)((int)local_84 + 0x3c);
   Line 549 [unrolled_memcpy]: local_30c.min.x = (local_188->min).x;
   Line 554 [unrolled_memcpy]: local_30c.max.x = (local_188->min).x;
+  Line 564 [shadow_pointer_walk]: pCVar13 = (CBoundingBox3D *)&pCVar13->max;
   Line 570 [unrolled_memcpy]: local_324.min.x = pCVar28->x;
   Line 575 [unrolled_memcpy]: local_324.max.x = pCVar28->x;
   Line 585 [pointer_cast]: (CVector3f *)((int)this_ptr->vertex_data_ptr[0]->bone_weights + iVar20 + 0xc)
+  Line 608 [shadow_pointer_walk]: pCVar11 = (CBoundingBox3D *)&pCVar11->max;
   Line 644 [pointer_cast]: if (*(int *)((int)pvVar35 + 4) == 3) {
   Line 645 [pointer_cast]: pCVar26 = &local_188->min + *(int *)((int)pvVar35 + 0x18);
   Line 646 [pointer_cast]: pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x24);
@@ -1084,6 +1191,15 @@ engine_colquant.c_computeBoxStatistics_FUN_00441260 (4 suspects)
   Line 82 [static_shift_too_many_bits]: uVar5 = (int)uVar4 >> 0x1f;
   Line 85 [static_shift_too_many_bits]: uVar5 = (int)uVar4 >> 0x1f;
   Line 88 [static_shift_too_many_bits]: uVar5 = (int)uVar4 >> 0x1f;
+
+====================================================================================================
+engine_drender.cpp_renderTriangleSimple_FUN_004839f0 (4 suspects)
+  File: engine/drender.cpp
+====================================================================================================
+  Line 51 [shadow_pointer_walk]: pCVar8 = (CVector3i *)&pCVar8->y;
+  Line 59 [shadow_pointer_walk]: pCVar9 = (CVector3i *)&pCVar9->y;
+  Line 133 [shadow_pointer_walk]: local_30 = (CVector3i *)&local_30->y;
+  Line 224 [shadow_pointer_walk]: vertex_indices = (CVector3i *)&vertex_indices->y;
 
 ====================================================================================================
 engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (2 suspects)
@@ -1367,14 +1483,6 @@ engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0 (4 suspects)
   Line 413 [static_shift_too_many_bits]: iVar4 = iVar1 >> 0x1f;
 
 ====================================================================================================
-engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30 (3 suspects)
-  File: engine/keyframe.c
-====================================================================================================
-  Line 49 [static_shift_too_many_bits]: uVar14 = (int)uVar12 >> 0x1f;
-  Line 77 [pointer_cast]: piVar12 = (int *)(header[1].child_count + 0x14);
-  Line 135 [pointer_cast]: vertex_data = (CVector3i *)(header[1].child_count + 0x14);
-
-====================================================================================================
 engine_model.c_getMRGLBounds_FUN_00528140 (1 suspect)
   File: engine/model.c
 ====================================================================================================
@@ -1386,6 +1494,12 @@ engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (2 suspects)
 ====================================================================================================
   Line 93 [unrolled_memcpy]: this_ptr->directory_entries[local_28].size = local_ac.size;
   Line 193 [unrolled_memcpy]: this_ptr->file_count = local_490.file_count;
+
+====================================================================================================
+engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_005dd690 (1 suspect)
+  File: engine/texture.cpp
+====================================================================================================
+  Line 45 [shadow_pointer_walk]: pCVar1 = (CTextureCache *)&pCVar1->max_texture_count;
 
 ====================================================================================================
 shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (16 suspects)
@@ -2014,6 +2128,12 @@ shape_design.c_writePolygonModel_FUN_0045a320 (2 suspects)
   Line 40 [unrolled_strcpy]: do {
 
 ====================================================================================================
+shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60 (1 suspect)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 16 [shadow_pointer_walk]: pCVar2 = (CLodEdge *)&pCVar2->vertex_idx_2;
+
+====================================================================================================
 shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 (3 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
@@ -2078,12 +2198,13 @@ shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (3 suspects)
   Line 20 [pointer_cast]: *(uint *)((int)this_ptr->tri_data->uv_coords[0] + iVar3 + iVar1 + 4) = 0;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (28 suspects)
+shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (33 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 116 [pointer_cast]: if (*(int *)((int)aiStack_4e8 + iVar5) == local_ac->attribute_indices[0]) break;
   Line 145 [shadow_pointer_walk]: pCVar8 = (CLodFace *)(pCVar8->attribute_indices + 1);
   Line 146 [shadow_pointer_walk]: local_50 = (CLodFace *)(local_50->attribute_indices + 2);
+  Line 150 [shadow_pointer_walk]: local_48 = (CLodEdge *)&local_48->vertex_idx_2;
   Line 158 [pointer_cast]: iVar7 = *(int *)((int)aiStack_4e8 + iVar9 + 4);
   Line 159 [pointer_cast]: fVar2 = *(float *)((int)afStack_4e0 + iVar9);
   Line 160 [pointer_cast]: iVar1 = *(int *)((int)aiStack_4e8 + iVar9 + 4);
@@ -2095,18 +2216,22 @@ shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (28 suspects)
   Line 177 [pointer_cast]: *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_3c + local_5c);
   Line 193 [shadow_pointer_walk]: pCVar4 = (CLodFace *)(pCVar4->attribute_indices + 1);
   Line 200 [pointer_cast]: if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;
+  Line 224 [shadow_pointer_walk]: local_40 = (CLodEdge *)&local_40->vertex_idx_2;
   Line 235 [pointer_cast]: local_18 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_58 + -4);
   Line 238 [pointer_cast]: *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_30 + local_58);
   Line 254 [shadow_pointer_walk]: pCVar4 = (CLodFace *)(pCVar4->attribute_indices + 1);
   Line 261 [pointer_cast]: if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;
+  Line 284 [shadow_pointer_walk]: local_34 = (CLodEdge *)&local_34->vertex_idx_2;
   Line 295 [pointer_cast]: *(uint *)((int)aiStack_1c8 + iVar5) =
   Line 296 [pointer_cast]: *(uint *)((int)this_ptr->vertex_data[vertex_idx_2].adjacent_edge_indices + iVar5);
   Line 305 [pointer_cast]: local_88 = *(int *)((int)aiStack_1c8 + local_28);
   Line 318 [shadow_pointer_walk]: pCVar8 = (CLodFace *)(pCVar8->attribute_indices + 1);
+  Line 321 [shadow_pointer_walk]: local_2c = (CLodEdge *)&local_2c->vertex_idx_2;
   Line 366 [pointer_cast]: ((CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_7c + -0x28)
   Line 401 [pointer_cast]: local_1c < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_60 + -4);
   Line 409 [pointer_cast]: piVar12 = (int *)((int)pCVar10[iVar9].adjacent_edge_indices + iVar7);
   Line 413 [pointer_cast]: local_68 = *(int *)((int)pCVar10->adjacent_edge_indices + local_20 + local_60);
+  Line 425 [shadow_pointer_walk]: pCVar11 = (CLodEdge *)&pCVar11->vertex_idx_2;
   Line 436 [pointer_cast]: [*(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx + iVar5)].
   Line 440 [pointer_cast]: *(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx +
 
@@ -2130,12 +2255,13 @@ shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0 (3 suspect
   Line 70 [unrolled_memcpy]: output_point->x = (pCVar5->position).x;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (14 suspects)
+shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (15 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 119 [pointer_cast]: iVar16 = *(int *)((int)pCVar15[local_1c].adjacent_edge_indices + local_48);
   Line 135 [pointer_cast]: *(int *)((int)g_MaxNeighborVerts + local_38) = iVar16;
   Line 188 [pointer_cast]: *(int *)((int)g_TempNeighborFaces[0].edge_dot_products + iVar16 + 0xc) = iVar14;
+  Line 191 [shadow_pointer_walk]: local_24 = (CLodEdge *)&local_24->vertex_idx_2;
   Line 228 [unrolled_memcpy]: g_SamplePointArray[0].x = (pCVar15->position).x;
   Line 236 [pointer_cast]: pCVar8 = this_ptr->vertex_data + *(int *)((int)g_MaxNeighborVerts + iVar10);
   Line 283 [pointer_cast]: pfVar12 = (float *)((int)&g_SamplePointArray[0].x + iVar14);
@@ -2147,6 +2273,12 @@ shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (14 suspects)
   Line 344 [bitcast_double_pair]: if (dVar20 < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {
   Line 345 [sub84_truncation]: local_108 = SUB84(__BITCAST_UINT64(dVar20),0);
   Line 355 [bitcast_double_pair]: fVar2 = sample_point->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) +
+
+====================================================================================================
+shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0 (1 suspect)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 109 [shadow_pointer_walk]: local_1c = (CLodMesh *)&local_1c->vertex_data;
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (14 suspects)
@@ -2175,9 +2307,10 @@ shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (2 suspects)
   Line 17 [unrolled_memcpy]: (out_bbox->max).x = (pCVar1->position).x;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0 (2 suspects)
+shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0 (3 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
+  Line 37 [shadow_pointer_walk]: pCVar6 = (CLodEdge *)&pCVar6->vertex_idx_2;
   Line 40 [shadow_pointer_walk]: local_1c = (CLodVert *)&(local_1c->position).y;
   Line 47 [unrolled_memset]: out_normal->z = 0.0;
 
@@ -2191,6 +2324,14 @@ shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (6 suspects)
   Line 110 [pointer_cast]: pCVar9 = (CVector3f *)((int)&(this_ptr->sample_points_ptr->position).x + iVar4);
   Line 113 [pointer_cast]: (CLodFace *)((int)pCVar2->tri_data->attribute_indices + iVar5));
   Line 115 [unrolled_memcpy]: pCVar9->x = pCVar4->x;
+
+====================================================================================================
+shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000 (3 suspects)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 70 [shadow_pointer_walk]: pCVar6 = (CLodMesh *)&pCVar6->vertex_data;
+  Line 74 [shadow_pointer_walk]: pCVar3 = (CLodEdge *)&pCVar3->vertex_idx_2;
+  Line 141 [shadow_pointer_walk]: local_4c = (CLodEdge *)&local_4c->vertex_idx_2;
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300 (4 suspects)
@@ -2262,7 +2403,7 @@ shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (2 suspects)
   Line 90 [unrolled_memcpy]: local_58.max.x = pCVar3->x;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (5 suspects)
+shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (6 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 22 [pointer_cast]: iVar2 = *(int *)(iVar6 + (int)this_ptr->spatial_grid_data);
@@ -2270,6 +2411,7 @@ shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (5 suspects)
   Line 36 [sub84_truncation]: local_38 = SUB84(__BITCAST_UINT64(dVar7),0);
   Line 37 [pointer_cast]: *(uint *)((int)g_SampleDistances + iVar5) = local_38;
   Line 39 [pointer_cast]: *(uint *)((int)g_SampleDistances + iVar5 + 4) = uStack_34;
+  Line 42 [shadow_pointer_walk]: local_1c = (SLodSamplePoint *)&local_1c->closest_triangle_idx;
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0 (4 suspects)
@@ -2332,11 +2474,12 @@ shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0 (4 suspects)
   Line 30 [pointer_cast]: *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar3) = 0xffff;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (2 suspects)
+shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (3 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 46 [pointer_cast]: *(int *)((int)this_ptr->edges_ptr[iVar1].adjacent_tri_indices + iVar8),
   Line 75 [shadow_pointer_walk]: pCVar1 = (CLodFace *)(pCVar1->attribute_indices + 1);
+  Line 101 [shadow_pointer_walk]: pCVar9 = (CLodEdge *)&pCVar9->vertex_idx_2;
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (7 suspects)
@@ -2428,10 +2571,15 @@ shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 (10 suspect
   Line 97 [static_shift_too_many_bits]: uVar14 = (int)uVar13 >> 0x1f;
 
 ====================================================================================================
-shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0 (1 suspect)
+shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0 (6 suspects)
   File: shape/quantize.cpp
 ====================================================================================================
+  Line 46 [shadow_pointer_walk]: pCVar10 = (CColorQuantizer *)&pCVar10->current_b;
+  Line 47 [shadow_pointer_walk]: pCVar7 = (CColorQuantizer *)&pCVar7->error_buffer_r;
   Line 61 [unrolled_memcpy]: pCVar11->palette[0].r = pCVar11->palette[1].r;
+  Line 70 [shadow_pointer_walk]: pCVar11 = (CColorQuantizer *)&pCVar11->error_buffer_r;
+  Line 74 [shadow_pointer_walk]: pCVar11 = (CColorQuantizer *)&pCVar11->error_buffer_r;
+  Line 94 [shadow_pointer_walk]: pCVar11 = (CColorQuantizer *)&pCVar11->error_buffer_r;
 
 ====================================================================================================
 shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (9 suspects)
@@ -2448,9 +2596,10 @@ shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (9 suspects)
   Line 86 [pointer_cast]: *(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) =
 
 ====================================================================================================
-shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 (20 suspects)
+shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 (21 suspects)
   File: shape/quantize.cpp
 ====================================================================================================
+  Line 54 [shadow_pointer_walk]: pCVar2 = (CColorQuantizer *)&pCVar2->current_b;
   Line 68 [pointer_cast]: if (iVar9 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_44)) {
   Line 71 [pointer_cast]: (iVar9 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar1)));
   Line 75 [pointer_cast]: puVar2 = (uint *)(local_44 + (int)this_ptr->pixel_data);
@@ -2889,6 +3038,14 @@ shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (4 suspects)
   Line 51 [pointer_cast]: pdVar10 = (double *)((int)pdVar10 + 4);
   Line 66 [pointer_cast]: pdVar8 = (double *)((int)pdVar8 + 4);
   Line 67 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
+
+====================================================================================================
+shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0 (3 suspects)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 75 [shadow_pointer_walk]: this_ptr = (CPoly *)&this_ptr->vertex_idx_0;
+  Line 92 [shadow_pointer_walk]: this_ptr = (CPoly *)&this_ptr->vertex_idx_0;
+  Line 109 [shadow_pointer_walk]: this_ptr = (CPoly *)&this_ptr->vertex_idx_0;
 
 ====================================================================================================
 shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 (8 suspects)

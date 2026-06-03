@@ -17,7 +17,7 @@ void __cdecl loadAndInterpolateKeyframes(SMRGLKeyframeModel *keyframe_model);
 
 // Original: engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
 // Address: 00501f30
-SMRGLHeaderExtended * __cdecl interpolateCubicKeyframes(SMRGLHeaderExtended *header);
+SMRGLHeaderExtended * __cdecl interpolateCubicKeyframes(SMRGLKeyframeModel *keyframe_model);
 
 // Original: engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320
 // Address: 00502320

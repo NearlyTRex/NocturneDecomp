@@ -8810,13 +8810,15 @@ static_assert(__builtin_offsetof(SMRGLIndexBlock, base) == 0,
 static_assert(__builtin_offsetof(SMRGLIndexBlock, indices) == 12,
               "offsetof(SMRGLIndexBlock, indices) != 12");
 
-// ---- SMRGLKeyframe (12 bytes) ----
-static_assert(sizeof(SMRGLKeyframe) == 12,
-              "sizeof(SMRGLKeyframe) != 12");
+// ---- SMRGLKeyframe (20 bytes) ----
+static_assert(sizeof(SMRGLKeyframe) == 20,
+              "sizeof(SMRGLKeyframe) != 20");
 static_assert(__builtin_offsetof(SMRGLKeyframe, header) == 0,
               "offsetof(SMRGLKeyframe, header) != 0");
-static_assert(__builtin_offsetof(SMRGLKeyframe, vertices) == 12,
-              "offsetof(SMRGLKeyframe, vertices) != 12");
+static_assert(__builtin_offsetof(SMRGLKeyframe, vertex_header) == 12,
+              "offsetof(SMRGLKeyframe, vertex_header) != 12");
+static_assert(__builtin_offsetof(SMRGLKeyframe, vertices) == 20,
+              "offsetof(SMRGLKeyframe, vertices) != 20");
 
 // ---- SMRGLKeyframeModel (344 bytes) ----
 static_assert(sizeof(SMRGLKeyframeModel) == 344,

@@ -14,7 +14,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
 {
   CLocation *pCVar1;
   CDeformableModelInstance *pCVar5;
-  CDemonActor *pCVar7;
+  CBodyPart *pCVar7;
   CCharacter *pCVar8;
   float fVar9;
   int iVar7;
@@ -118,14 +118,10 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
         pCVar17 = this_ptr;
         do {
           pCVar7 = pCVar17->part_list[0];
-          pCVar7->is_transparent = 1;
-          pCVar7[9].create_event[0x24] = '\x01';
-          pCVar7[9].create_event[0x25] = '\0';
-          pCVar7[9].create_event[0x26] = '\0';
-          pCVar7[9].create_event[0x27] = '\0';
+          (pCVar7->base).is_transparent = 1;
+          pCVar7->transparent_geometry_flag = 1;
           iVar10 = iVar10 + 1;
-          *(int *)(pCVar7[9].create_event + 0x30) =
-               (int)ROUND(ROUND((this_ptr->fade_timer * fVar20) / fVar22));
+          pCVar7->render_alpha = (int)ROUND(ROUND((this_ptr->fade_timer * fVar20) / fVar22));
           pCVar17 = (CDraculaBride *)((pCVar17->base).base.base.actor_name + 4);
         } while (iVar10 < this_ptr->part_count);
       }
@@ -138,7 +134,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
       pCVar17 = this_ptr;
       if (0 < this_ptr->part_count) {
         do {
-          pCVar17->part_list[0]->lifecycle_state = ACTOR_DESTROYED;
+          (pCVar17->part_list[0]->base).lifecycle_state = ACTOR_DESTROYED;
           iVar7 = iVar7 + 1;
           pCVar17 = (CDraculaBride *)((pCVar17->base).base.base.actor_name + 4);
         } while (iVar7 < this_ptr->part_count);

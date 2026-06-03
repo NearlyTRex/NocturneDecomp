@@ -90,24 +90,24 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&this_ptr->glass_texture);
     if (g_CurrentTextureDimension == 0x40) {
-      local_8c.x = 0xf80000;
-      local_9c.y = 0x80000;
-      local_8c.y = 0x80000;
-      local_9c.z = 0xf80000;
-      local_8c.z = 0x80000;
-      local_9c.w = 0xf80000;
-      local_8c.w = 0xf80000;
-      local_9c.x = 0x80000;
+      local_8c.x = 0xf8 << 16;
+      local_9c.y = 0x8 << 16;
+      local_8c.y = 0x8 << 16;
+      local_9c.z = 0xf8 << 16;
+      local_8c.z = 0x8 << 16;
+      local_9c.w = 0xf8 << 16;
+      local_8c.w = 0xf8 << 16;
+      local_9c.x = 0x8 << 16;
     }
     else {
-      local_8c.x = 0xfe0000;
-      local_9c.y = 0x20000;
-      local_8c.y = 0x20000;
-      local_9c.z = 0xfe0000;
-      local_8c.z = 0x20000;
-      local_9c.w = 0xfe0000;
-      local_8c.w = 0xfe0000;
-      local_9c.x = 0x20000;
+      local_8c.x = 0xfe << 16;
+      local_9c.y = 0x2 << 16;
+      local_8c.y = 0x2 << 16;
+      local_9c.z = 0xfe << 16;
+      local_8c.z = 0x2 << 16;
+      local_9c.w = 0xfe << 16;
+      local_8c.w = 0xfe << 16;
+      local_9c.x = 0x2 << 16;
     }
     core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
               (this_ptr,&local_cc,&local_9c,&local_8c,0);

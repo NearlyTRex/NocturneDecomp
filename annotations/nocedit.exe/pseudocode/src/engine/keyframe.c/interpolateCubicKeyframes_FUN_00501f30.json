@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 175,
+    "complexity_score": 150,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 150,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 511
   },
   "cross_references": [],
@@ -31,7 +29,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended *header)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLKeyframeModel *keyframe_model)"
   },
   "function_calls": [
     {
@@ -261,10 +259,10 @@
       },
       {
         "is_param": true,
-        "name": "header",
+        "name": "keyframe_model",
         "offset": 4,
         "size": 4,
-        "type": "SMRGLHeaderExtended *"
+        "type": "SMRGLKeyframeModel *"
       }
     ]
   },
@@ -285,49 +283,7 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "interpolateCubicKeyframes_FUN_00501f30.keep.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 24,
-          "line": 49,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 77,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "piVar12 = (int *)(header[1].child_count + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 135,
-      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
-      "severity": "moderate",
-      "text": "vertex_data = (CVector3i *)(header[1].child_count + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 49,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar14 = (int)uVar12 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

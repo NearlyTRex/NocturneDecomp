@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 98
-  Total diagnostics: 280
+  Functions with findings: 97
+  Total diagnostics: 279
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 98, raw .cpp files: 0
+  .keep.cpp files: 97, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -673,12 +673,6 @@ engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (1 diagnostics)
 
   Line   24: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30  [.keep] [Cppcheck (quick)]
-  File: engine/keyframe.c  (1 diagnostics)
-
-  Line   49: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 engine_model.c_getMRGLBounds_FUN_00528140  [.keep] [Cppcheck (quick)]

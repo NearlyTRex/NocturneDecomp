@@ -34,7 +34,7 @@ CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00483fc0(CDracu
   pCVar3->attack_landed = 0;
   pCVar3->freaky_voice_number = 1;
   for (int i = 0; i < 30; i = i + 1) {
-    pCVar3->part_list[i] = (CDemonActor *)0x0;
+    pCVar3->part_list[i] = (CBodyPart *)0x0;
   }
   pCVar3->part_count = 0;
   pCVar3->fade_timer = 0.0;

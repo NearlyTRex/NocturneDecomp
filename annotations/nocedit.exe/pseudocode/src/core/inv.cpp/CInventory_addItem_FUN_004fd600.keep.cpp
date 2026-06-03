@@ -31,7 +31,6 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CD
   CAmmo *pCVar10;
   CTommyGun *pCVar6;
   int iVar18;
-  CInventory *pCVar19;
   char *pcVar20;
   char acStack_334 [256];
   char acStack_234 [256];
@@ -41,9 +40,7 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CD
   char *pcStack_2c;
   char *pcStack_28;
   CAmmo *pCStack_24;
-  CInventory *pCStack_20;
   int iStack_1c;
-  CInventory *pCStack_18;
   int iStack_14;
 
   if (99 < this_ptr->item_count) {
@@ -198,12 +195,11 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CD
     pcVar20 = pCStack_24->weapon_class_name;
     iVar18 = 0;
     core_ammo_cpp_CAmmo_setWeaponClass_FUN_00410fd0(pCStack_24,pcVar20);
-    pCVar19 = this_ptr;
     if (0 < this_ptr->item_count) {
       do {
         pcStack_2c = pcVar20;
         pCVar7 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                    (pCVar19->items[0],g_CAmmoClassInfo.name_hash);
+                                    (this_ptr->items[iVar18],g_CAmmoClassInfo.name_hash);
         if (((pCVar7 != (CAmmo *)0x0) &&
             (iVar17 = _strcmp(pcStack_2c,pCVar7->weapon_class_name),
             this_ptr_00 = g_CConsolePtr, iVar17 == 0)) &&
@@ -216,19 +212,17 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CD
           return 1;
         }
         iVar18 = iVar18 + 1;
-        pCVar19 = (CInventory *)&pCVar19->owner;
         pcVar20 = pcStack_2c;
       } while (iVar18 < this_ptr->item_count);
     }
     iVar18 = 0;
     pcVar20 = pCStack_24->weapon_class_name;
     iStack_30 = 0;
-    pCVar19 = this_ptr;
     if (0 < this_ptr->item_count) {
       do {
         pCVar14 = (CWeapon *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
-                            (pCVar19->items[0],g_CWeaponClassInfo.name_hash);
+                            (this_ptr->items[iVar18],g_CWeaponClassInfo.name_hash);
         if (pCVar14 != (CWeapon *)0x0) {
           pcVar16 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
                               ((CDemonActor *)pCVar14);
@@ -236,19 +230,17 @@ int __cdecl core_inv_cpp_CInventory_addItem_FUN_004fd600(CInventory *this_ptr,CD
           if (iVar17 == 0) goto LAB_004fe2af;
         }
         iVar18 = iVar18 + 1;
-        pCVar19 = (CInventory *)&pCVar19->owner;
       } while (iVar18 < this_ptr->item_count);
     }
     if (iStack_30 != 0) {
 LAB_004fe2af:
       pcStack_28 = pCStack_24->weapon_class_name;
       iVar18 = 0;
-      pCVar19 = this_ptr;
       if (0 < this_ptr->item_count) {
         do {
           pCVar5 = (CWeapon *)
                    core_actor_cpp_castToClassHash_FUN_0040c790
-                             (pCVar19->items[0],g_CWeaponClassInfo.name_hash);
+                             (this_ptr->items[iVar18],g_CWeaponClassInfo.name_hash);
           if (pCVar5 != (CWeapon *)0x0) {
             pcVar20 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
                                 ((CDemonActor *)pCVar5);
@@ -269,14 +261,13 @@ LAB_004fe2af:
             }
           }
           iVar18 = iVar18 + 1;
-          pCVar19 = (CInventory *)&pCVar19->owner;
         } while (iVar18 < this_ptr->item_count);
       }
       pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pcStack_28);
       core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,pCVar5_02);
       (*((pCVar5_02->vtable)._ub)->setup)(pCVar5_02);
-      *(int *)(pCVar5_02[4].actor_name + 8) = pCStack_24->ammo_count;
-      *(EAmmoType *)(pCVar5_02[4].actor_name + 0xc) = pCStack_24->ammo_type;
+      ((CWeapon *)pCVar5_02)->ammo_count = pCStack_24->ammo_count;
+      ((CWeapon *)pCVar5_02)->ammo_type = pCStack_24->ammo_type;
       (*((pCVar5_02->vtable)._ub)->pickup)(pCVar5_02,this_ptr->owner);
       this_ptr->items[this_ptr->item_count] = pCVar5_02;
       pCVar3 = g_CDemonMissionPtr;
@@ -317,11 +308,10 @@ LAB_004fe2af:
     }
     iVar18 = 0;
     if (0 < this_ptr->item_count) {
-      pCStack_20 = this_ptr;
       do {
         pCVar9 = (CWeapon *)
                  core_actor_cpp_castToClassHash_FUN_0040c790
-                           (pCStack_20->items[0],g_CWeaponClassInfo.name_hash);
+                           (this_ptr->items[iVar18],g_CWeaponClassInfo.name_hash);
         if (pCVar9 != (CWeapon *)0x0) {
           pcVar20 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)pCVar9)
           ;
@@ -344,16 +334,14 @@ LAB_004fe2af:
           }
         }
         iVar18 = iVar18 + 1;
-        pCStack_20 = (CInventory *)&pCStack_20->owner;
       } while (iVar18 < this_ptr->item_count);
     }
     bVar2 = false;
     iStack_1c = 0;
     if (0 < this_ptr->item_count) {
-      pCStack_18 = this_ptr;
       do {
         pCVar10 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                     (pCStack_18->items[0],g_CAmmoClassInfo.name_hash);
+                                     (this_ptr->items[iStack_1c],g_CAmmoClassInfo.name_hash);
         if (pCVar10 != (CAmmo *)0x0) {
           pcVar20 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)pCVar8)
           ;
@@ -365,12 +353,12 @@ LAB_004fe2af:
             core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
                       (g_CDemonMissionPtr,pCVar5_02);
             (*((pCVar5_02->vtable)._ub)->setup)(pCVar5_02);
-            *(int *)(pCVar5_02[4].actor_name + 8) = pCVar10->ammo_count;
-            *(EAmmoType *)(pCVar5_02[4].actor_name + 0xc) = pCVar10->ammo_type;
+            ((CWeapon *)pCVar5_02)->ammo_count = pCVar10->ammo_count;
+            ((CWeapon *)pCVar5_02)->ammo_type = pCVar10->ammo_type;
             (*((pCVar5_02->vtable)._ub)->pickup)(pCVar5_02,this_ptr->owner);
             (*((pCVar5_02->vtable)._ub)->onPickup)(pCVar5_02,(CDemonActor *)this_ptr);
-            core_actor_cpp_deleteActor_FUN_00408820(pCStack_18->items[0]);
-            pCStack_18->items[0] = pCVar5_02;
+            core_actor_cpp_deleteActor_FUN_00408820(this_ptr->items[iStack_1c]);
+            this_ptr->items[iStack_1c] = pCVar5_02;
             pcVar20 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
                                 ((CDemonActor *)pCVar8);
             bVar2 = true;
@@ -378,7 +366,6 @@ LAB_004fe2af:
                       (g_CConsolePtr,"Converting existing ammo for %s to weapon\n",pcVar20);
           }
         }
-        pCStack_18 = (CInventory *)&pCStack_18->owner;
         iStack_1c = iStack_1c + 1;
       } while (iStack_1c < this_ptr->item_count);
     }

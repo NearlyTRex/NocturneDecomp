@@ -302,6 +302,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar5->owner`). Replace `pSVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 95,
+      "match": "pSVar5 = (T *)&pSVar5->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SChatOutMessage *)&pSVar5->sequence_number;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_24->vertices[0].a`). Replace `local_24->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 97,
       "match": "local_24 = (T *)&local_24->FIELD[N].SUBFIELD",

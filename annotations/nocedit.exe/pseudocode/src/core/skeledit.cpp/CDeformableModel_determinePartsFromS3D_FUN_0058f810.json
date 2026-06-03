@@ -8,13 +8,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 2341,
+    "complexity_score": 2361,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1436,
-    "suspect_count": 88,
+    "suspect_count": 90,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
@@ -3174,6 +3174,22 @@
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar13->owner`). Replace `pCVar13->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 564,
+      "match": "pCVar13 = (T *)&pCVar13->FIELD",
+      "severity": "moderate",
+      "text": "pCVar13 = (CBoundingBox3D *)&pCVar13->max;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 608,
+      "match": "pCVar11 = (T *)&pCVar11->FIELD",
+      "severity": "moderate",
+      "text": "pCVar11 = (CBoundingBox3D *)&pCVar11->max;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar12`. Replace those `pCVar12->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",

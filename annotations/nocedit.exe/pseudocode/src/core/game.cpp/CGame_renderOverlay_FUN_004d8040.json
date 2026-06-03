@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 138,
+    "complexity_score": 153,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 18,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 138,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 543
   },
   "cross_references": [
@@ -489,6 +491,14 @@
     "file_variant": "keep"
   },
   "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_18->owner`). Replace `local_18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 135,
+      "match": "local_18 = (T *)&local_18->FIELD",
+      "severity": "moderate",
+      "text": "local_18 = (CGame *)&local_18->game_pixy;",
+      "type": "shadow_pointer_walk"
+    },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
       "line": 103,

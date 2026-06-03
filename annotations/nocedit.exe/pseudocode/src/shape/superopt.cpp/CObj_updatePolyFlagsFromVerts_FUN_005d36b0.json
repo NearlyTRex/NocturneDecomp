@@ -98,6 +98,17 @@
     ],
     "vtable_offset": 140
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 22,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2 = (CPoly *)&pCVar2->vertex_idx_0;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 40,
     "local_size": 32,

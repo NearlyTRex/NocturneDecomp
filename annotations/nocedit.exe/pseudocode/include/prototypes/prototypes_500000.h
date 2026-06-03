@@ -77,7 +77,7 @@ CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_dtor_FUN_005019b0(CKeyActor *thi
 void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture);
 void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(CVector3i *vertex_data,SMRGLPrimitiveTriangle *texture);
 void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKeyframeModel *keyframe_model);
-SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended *header);
+SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00501f30(SMRGLKeyframeModel *keyframe_model);
 void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(SMRGLPrimitiveTriangle *primitive_list);
 void __cdecl engine_keys_cpp_staticInit_FUN_00502410(void);
 int __cdecl engine_keys_cpp_CKeys_getKeyState_FUN_00502420(CKeys *this_ptr,EInputCodeType key_code);

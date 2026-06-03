@@ -21,7 +21,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_00485b20(CDracula
     core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
               ((CCharacter *)this_ptr,body_part,part_index,render_in_background);
     core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(body_part);
-    this_ptr->part_list[this_ptr->part_count] = &body_part->base;
+    this_ptr->part_list[this_ptr->part_count] = body_part;
     this_ptr->part_count = this_ptr->part_count + 1;
     (body_part->base).is_transparent = 1;
     body_part->transparent_geometry_flag = 1;
