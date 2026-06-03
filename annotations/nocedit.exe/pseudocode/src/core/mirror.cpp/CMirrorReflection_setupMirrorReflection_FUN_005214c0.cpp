@@ -190,10 +190,10 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   (this_ptr->mirror_transform_matrix).m[2].z = local_294.m[2].z;
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                      (&local_8c,camera_position,&this_ptr->mirror_transform_matrix);
-  if ((CVector3f *)&this_ptr->camera_origin != pCVar2) {
-    (this_ptr->camera_origin).x = (int)pCVar2->x;
-    (this_ptr->camera_origin).y = (int)pCVar2->y;
-    (this_ptr->camera_origin).z = (int)pCVar2->z;
+  if (&this_ptr->camera_origin != pCVar2) {
+    (this_ptr->camera_origin).x = pCVar2->x;
+    (this_ptr->camera_origin).y = pCVar2->y;
+    (this_ptr->camera_origin).z = pCVar2->z;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             (&this_ptr->reflection_matrix,camera_rotation);
@@ -251,25 +251,25 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
     local_5c.y = pCVar3->y;
     local_5c.z = pCVar3->z;
   }
-  local_f8.x = local_128.x - (float)(this_ptr->camera_origin).x;
-  local_f8.y = local_128.y - (float)(this_ptr->camera_origin).y;
-  local_f8.z = local_128.z - (float)(this_ptr->camera_origin).z;
+  local_f8.x = local_128.x - (this_ptr->camera_origin).x;
+  local_f8.y = local_128.y - (this_ptr->camera_origin).y;
+  local_f8.z = local_128.z - (this_ptr->camera_origin).z;
   if (&local_128 != &local_f8) {
     local_128.x = local_f8.x;
     local_128.y = local_f8.y;
     local_128.z = local_f8.z;
   }
-  local_44.x = local_e0.x - (float)(this_ptr->camera_origin).x;
-  local_44.y = local_e0.y - (float)(this_ptr->camera_origin).y;
-  local_44.z = local_e0.z - (float)(this_ptr->camera_origin).z;
+  local_44.x = local_e0.x - (this_ptr->camera_origin).x;
+  local_44.y = local_e0.y - (this_ptr->camera_origin).y;
+  local_44.z = local_e0.z - (this_ptr->camera_origin).z;
   if (&local_e0 != &local_44) {
     local_e0.x = local_44.x;
     local_e0.y = local_44.y;
     local_e0.z = local_44.z;
   }
-  local_134.x = local_5c.x - (float)(this_ptr->camera_origin).x;
-  local_134.y = local_5c.y - (float)(this_ptr->camera_origin).y;
-  local_134.z = local_5c.z - (float)(this_ptr->camera_origin).z;
+  local_134.x = local_5c.x - (this_ptr->camera_origin).x;
+  local_134.y = local_5c.y - (this_ptr->camera_origin).y;
+  local_134.z = local_5c.z - (this_ptr->camera_origin).z;
   if (&local_5c != &local_134) {
     local_5c.x = local_134.x;
     local_5c.y = local_134.y;
@@ -287,9 +287,9 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   this_ptr->projection_scale = projection_scale;
   core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_00521480(this_ptr);
   core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100(&local_3e4);
-  local_3e4.m[0].z = -(float)(this_ptr->camera_origin).x;
-  local_3e4.m[1].z = -(float)(this_ptr->camera_origin).y;
-  local_3e4.m[2].z = -(float)(this_ptr->camera_origin).z;
+  local_3e4.m[0].z = -(this_ptr->camera_origin).x;
+  local_3e4.m[1].z = -(this_ptr->camera_origin).y;
+  local_3e4.m[2].z = -(this_ptr->camera_origin).z;
   core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100(&local_2c4);
   local_2c4.m[0].w = (float)g_TransformMatrix.m[0].x * (float)1.52587890625e-05;
   local_2c4.m[1].w = (float)g_TransformMatrix.m[0].y * (float)1.52587890625e-05;
