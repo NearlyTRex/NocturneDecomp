@@ -327,6 +327,37 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CLodFace_computeNormalAndPlane_FUN_00519870.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "objectIndex",
+          "column": 29,
+          "line": 108,
+          "message": "The address of local variable 'local_84' might be accessed at non-zero index.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 29,
+          "line": 109,
+          "message": "The address of local variable 'local_84' might be accessed at non-zero index.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 29,
+          "line": 110,
+          "message": "The address of local variable 'local_84' might be accessed at non-zero index.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
@@ -351,6 +382,30 @@
       "severity": "moderate",
       "text": "local_6c.x = vertex2_pos->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "The address of local variable 'local_84' might be accessed at non-zero index.",
+      "line": 108,
+      "match": "Cppcheck: pointer-to-object indexed past bounds",
+      "severity": "moderate",
+      "text": "local_54 = (&local_84)[iVar11].x - local_18->x;",
+      "type": "static_object_index"
+    },
+    {
+      "description": "The address of local variable 'local_84' might be accessed at non-zero index.",
+      "line": 109,
+      "match": "Cppcheck: pointer-to-object indexed past bounds",
+      "severity": "moderate",
+      "text": "local_50 = (&local_84)[iVar11].y - local_18->y;",
+      "type": "static_object_index"
+    },
+    {
+      "description": "The address of local variable 'local_84' might be accessed at non-zero index.",
+      "line": 110,
+      "match": "Cppcheck: pointer-to-object indexed past bounds",
+      "severity": "moderate",
+      "text": "local_4c = (&local_84)[iVar11].z - local_18->z;",
+      "type": "static_object_index"
     }
   ]
 }

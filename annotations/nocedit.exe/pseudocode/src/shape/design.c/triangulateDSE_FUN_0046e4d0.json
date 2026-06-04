@@ -215,6 +215,30 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "triangulateDSE_FUN_0046e4d0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 18,
+          "line": 45,
+          "message": "Redundant assignment of 'pSVar6' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 18,
+          "line": 46,
+          "message": "Redundant assignment of 'pSVar7' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -247,6 +271,22 @@
       "severity": "moderate",
       "text": "// 0046e58d: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar6' to itself.",
+      "line": 45,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar6 = pSVar6;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar7' to itself.",
+      "line": 46,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar7 = pSVar7;",
+      "type": "static_self_assignment"
     }
   ]
 }

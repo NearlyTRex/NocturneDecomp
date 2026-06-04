@@ -260,6 +260,44 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CPoly_getCentroid_FUN_005d0d30.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 53,
+          "message": "Uninitialized variable: local_50",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 54,
+          "message": "Uninitialized variable: local_48",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 63,
+          "message": "Uninitialized variable: local_20",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 64,
+          "message": "Uninitialized variable: local_18",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -316,6 +354,38 @@
       "severity": "moderate",
       "text": "// 005d0e15: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Uninitialized variable: local_50",
+      "line": 53,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_80 = local_50 + (local_10->position).y;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_48",
+      "line": 54,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_78 = local_48 + (local_10->position).z;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_20",
+      "line": 63,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_68 = local_20 * 0.33333333333333298;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_18",
+      "line": 64,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_60 = local_18 * 0.33333333333333298;",
+      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

@@ -236,48 +236,7 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDirectSoundDevice_allocateSample_FUN_005aef40.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 57,
-          "line": 36,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 44,
-          "line": 37,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 36,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar2 = (int)((bits_per_sample + (bits_per_sample >> 0x1f) * -8) -",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 37,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "(uint)((bits_per_sample >> 0x1f) << 2 < 0)) >> 3;",
-      "type": "static_shift_too_many_bits"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

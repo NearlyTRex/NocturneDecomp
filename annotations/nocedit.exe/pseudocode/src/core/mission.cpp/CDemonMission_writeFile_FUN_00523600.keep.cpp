@@ -16,7 +16,6 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
   CHero *pCVar4;
   int iVar5;
   int iVar2;
-  CInventory *pCVar6;
   char (*pacVar7) [256];
   CDemonActor *pCVar5;
   CDemonActor *pCVar2;
@@ -85,15 +84,14 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
     pCVar4 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,g_CHeroClassInfo.name_hash)
     ;
     if (pCVar4 != (CHero *)0x0) {
-      pCVar6 = &pCVar4->inventory;
       for (iVar2 = 0; iVar2 < (pCVar4->inventory).item_count; iVar2 = iVar2 + 1) {
         if (1999 < this_ptr->actor_lookup_count) {
           g_CurrentFilename = "..\\core\\mission.cpp";
           g_CurrentLineNumber = 500;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many actors");
         }
-        this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] = pCVar6->items[0];
-        pCVar6 = (CInventory *)&pCVar6->owner;
+        this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] =
+             (pCVar4->inventory).items[iVar2];
         this_ptr->actor_lookup_count = this_ptr->actor_lookup_count + 1;
       }
       core_inv_cpp_CInventory_saveItems_FUN_004ff3b0(&pCVar4->inventory,file_handle);

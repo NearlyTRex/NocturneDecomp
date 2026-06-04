@@ -11,7 +11,6 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
 
 {
   longlong lVar1;
-  int *piVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -21,18 +20,13 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
   uint uVar4;
   int iVar8;
   int iVar7;
-  CVector3i *pCVar8;
-  CVector3i *pCVar9;
-  int iVar10;
   SRenderVertex *pSVar11;
   SRenderVertex *local_74 [16];
-  CVector3i *local_30;
   int local_2c;
   SRenderVertex *local_28;
   SRenderVertex *local_20;
   SSoftwareEdge *local_18;
   SSoftwareEdge *local_14;
-  int *piVar3;
   int iVar1;
   longlong lVar2;
   
@@ -48,22 +42,20 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
     if (g_VertexPreprocessMode != 0) {
       if ((uint)g_VertexPreprocessMode < 2) {
         iVar7 = 0;
-        pCVar8 = vertex_indices;
         if (0 < vertex_count) {
           do {
+            engine_prim_c_prepareDepthBuffer_FUN_00551fb0
+                      (g_RenderVertexBuffer + (&vertex_indices->x)[iVar7],1);
             iVar7 = iVar7 + 1;
-            engine_prim_c_prepareDepthBuffer_FUN_00551fb0(g_RenderVertexBuffer + pCVar8->x,1);
-            pCVar8 = (CVector3i *)&pCVar8->y;
           } while (iVar7 < vertex_count);
         }
       }
       else if ((g_VertexPreprocessMode == PREPROCESS_W_DEPTH_REPLACEMENT) &&
-              (iVar7 = 0, pCVar9 = vertex_indices, 0 < vertex_count)) {
+              (iVar7 = 0, 0 < vertex_count)) {
         do {
-          piVar2 = &pCVar9->x;
-          pCVar9 = (CVector3i *)&pCVar9->y;
+          engine_prim_c_replaceWWithDepth_FUN_00552110
+                    (g_RenderVertexBuffer + (&vertex_indices->x)[iVar7],1);
           iVar7 = iVar7 + 1;
-          engine_prim_c_replaceWWithDepth_FUN_00552110(g_RenderVertexBuffer + *piVar2,1);
         } while (iVar7 < vertex_count);
       }
     }
@@ -72,7 +64,6 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
     local_2c = 0;
     g_RenderTriangleMinScanlineY = 0x4b0;
     if (0 < vertex_count) {
-      local_30 = vertex_indices;
       iVar7 = g_RenderTriangleEdgeCount;
       do {
         iVar3 = local_2c + 1;
@@ -81,7 +72,7 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
         }
         iVar3 = (&vertex_indices->x)[iVar3];
         local_20 = g_RenderVertexBuffer + iVar3;
-        iVar1 = local_30->x;
+        iVar1 = (&vertex_indices->x)[local_2c];
         iVar4 = g_RenderVertexBuffer[iVar1].projected_vertex.screen_y >> 0x10;
         iVar8 = g_RenderVertexBuffer[iVar3].projected_vertex.screen_y >> 0x10;
         g_RenderTriangleEdgeCount = iVar7;
@@ -135,7 +126,6 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
                ((pSVar11->projected_vertex).transformed_z * 0x100 - g_RasterizerDepthBias) +
                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         }
-        local_30 = (CVector3i *)&local_30->y;
         local_2c = local_2c + 1;
         iVar7 = g_RenderTriangleEdgeCount;
       } while (local_2c < vertex_count);
@@ -226,12 +216,9 @@ LAB_00483cc8:
     if (0 < vertex_count) {
       iVar7 = 0;
       do {
-        piVar3 = &vertex_indices->x;
-        iVar10 = iVar7 + 1;
-        vertex_indices = (CVector3i *)&vertex_indices->y;
-        local_74[iVar7] = g_RenderVertexBuffer + *piVar3;
-        iVar7 = iVar10;
-      } while (iVar10 < vertex_count);
+        local_74[iVar7] = g_RenderVertexBuffer + (&vertex_indices->x)[iVar7];
+        iVar7 = iVar7 + 1;
+      } while (iVar7 < vertex_count);
     }
     wincore_windll_cpp_drawPolygon2_FUN_005b7610(local_74,vertex_count,g_RenderStateFlags.dword);
   }

@@ -482,6 +482,23 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "COptimize_exportOptimizeGeometry_FUN_005d7e00.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 21,
+          "line": 151,
+          "message": "Redundant assignment of 'iVar7' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -562,6 +579,14 @@
       "severity": "moderate",
       "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar5) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Redundant assignment of 'iVar7' to itself.",
+      "line": 151,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "iVar7 = iVar7;",
+      "type": "static_self_assignment"
     }
   ]
 }

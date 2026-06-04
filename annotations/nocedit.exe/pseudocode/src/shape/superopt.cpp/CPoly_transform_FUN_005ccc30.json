@@ -532,6 +532,100 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CPoly_transform_FUN_005ccc30.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 12,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 31,
+          "line": 90,
+          "message": "Uninitialized variable: local_148",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 89,
+          "line": 90,
+          "message": "Uninitialized variable: local_150",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 101,
+          "message": "Uninitialized variable: local_138",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 102,
+          "message": "Uninitialized variable: local_130",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 32,
+          "line": 127,
+          "message": "Uninitialized variable: local_a0",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 88,
+          "line": 127,
+          "message": "Uninitialized variable: local_a8",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 138,
+          "message": "Uninitialized variable: local_108",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 139,
+          "message": "Uninitialized variable: local_100",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 31,
+          "line": 164,
+          "message": "Uninitialized variable: local_70",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 87,
+          "line": 164,
+          "message": "Uninitialized variable: local_78",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 175,
+          "message": "Uninitialized variable: local_180",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 176,
+          "message": "Uninitialized variable: local_178",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -724,6 +818,102 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&(local_1c->position).z + 4) = local_18c;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Uninitialized variable: local_148",
+      "line": 90,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_98 = matrix->m[0].z * local_148 + matrix->m[0].x * local_158 + matrix->m[0].y * local_150;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_150",
+      "line": 90,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_98 = matrix->m[0].z * local_148 + matrix->m[0].x * local_158 + matrix->m[0].y * local_150;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_138",
+      "line": 101,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_48 = local_138 + pivot->y;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_130",
+      "line": 102,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_40 = local_130 + pivot->z;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_a0",
+      "line": 127,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_1d0 = matrix->m[0].z * local_a0 + matrix->m[0].x * local_b0 + matrix->m[0].y * local_a8;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_a8",
+      "line": 127,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_1d0 = matrix->m[0].z * local_a0 + matrix->m[0].x * local_b0 + matrix->m[0].y * local_a8;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_108",
+      "line": 138,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_c0 = local_108 + pivot->y;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_100",
+      "line": 139,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_b8 = local_100 + pivot->z;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_70",
+      "line": 164,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_f8 = matrix->m[0].z * local_70 + matrix->m[0].x * local_80 + matrix->m[0].y * local_78;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_78",
+      "line": 164,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_f8 = matrix->m[0].z * local_70 + matrix->m[0].x * local_80 + matrix->m[0].y * local_78;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_180",
+      "line": 175,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_30 = local_180 + pivot->y;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_178",
+      "line": 176,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_28 = local_178 + pivot->z;",
+      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

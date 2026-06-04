@@ -212,5 +212,31 @@
       }
     ]
   },
-  "suspects": []
+  "static_analysis": {
+    "analyzed_file": "CDemonRaytrace_setPVS_FUN_00498e50.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 28,
+          "line": 41,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 41,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar9 = (int)uVar8 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    }
+  ]
 }

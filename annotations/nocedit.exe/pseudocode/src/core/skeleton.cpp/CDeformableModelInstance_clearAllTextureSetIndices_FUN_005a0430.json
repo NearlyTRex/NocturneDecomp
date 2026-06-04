@@ -133,5 +133,31 @@
       }
     ]
   },
-  "suspects": []
+  "static_analysis": {
+    "analyzed_file": "CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "invalidPointerCast",
+          "column": 12,
+          "line": 20,
+          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
+      "line": 20,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "} while ((float *)piVar2 != &this_ptr->transformed_vertices[2].z);",
+      "type": "static_invalid_pointer_cast"
+    }
+  ]
 }

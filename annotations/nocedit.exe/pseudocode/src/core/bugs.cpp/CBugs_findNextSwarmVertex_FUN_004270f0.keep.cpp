@@ -44,7 +44,7 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_pt
     if (0 < pSVar6->edge_count) {
       iVar3 = 0;
       do {
-        iVar2 = pSVar6->neighbors[0];
+        iVar2 = local_24->neighbors[iVar5];
         local_1c = this_ptr->deformable_model_ptr->skinned_vertices_buffer[iVar2].y;
         local_18 = 1;
         if ((local_20 != 0) ||
@@ -55,7 +55,6 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_pt
           iVar3 = iVar4;
         }
         iVar5 = iVar5 + 1;
-        pSVar6 = (SSwarmVertex *)&pSVar6->first_edge_data;
       } while (iVar5 < local_24->edge_count);
     }
   } while ((iVar7 < 1) && (local_20 = local_20 + 1, local_20 < 2));

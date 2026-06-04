@@ -344,6 +344,23 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "cramTextures_FUN_0046a970.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "nullPointer",
+          "column": 6,
+          "line": 62,
+          "message": "Possible null pointer dereference: local_18",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -384,6 +401,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
+    },
+    {
+      "description": "Possible null pointer dereference: local_18",
+      "line": 62,
+      "match": "Cppcheck: null pointer dereference",
+      "severity": "major",
+      "text": "*local_18 = cVar2;",
+      "type": "static_null_pointer"
     }
   ]
 }

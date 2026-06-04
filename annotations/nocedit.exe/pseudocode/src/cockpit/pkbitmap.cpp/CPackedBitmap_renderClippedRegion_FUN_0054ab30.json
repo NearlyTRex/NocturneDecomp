@@ -230,46 +230,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CPackedBitmap_renderClippedRegion_FUN_0054ab30.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 19,
-          "line": 30,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 52,
-          "line": 54,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 30,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar5 = iVar4 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 54,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "while (iVar8 = (int)(g_BitsPerPixel * uVar3) >> 0x1f,",
-      "type": "static_shift_too_many_bits"
-    }
-  ]
+  "suspects": []
 }

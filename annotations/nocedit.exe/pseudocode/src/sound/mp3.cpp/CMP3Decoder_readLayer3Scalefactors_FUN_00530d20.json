@@ -235,6 +235,15 @@
       "severity": "moderate",
       "text": "} while (iVar4 < *(int *)((int)g_Layer3LongBandGroupCounts + local_38 + 4));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `piVar3` (struct-field or pointer-arithmetic advance + constant index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 112,
+      "match": "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     }
   ],
   "stack_frame": {
@@ -372,31 +381,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CMP3Decoder_readLayer3Scalefactors_FUN_00530d20.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 14,
-          "line": 120,
-          "message": "Redundant assignment of 'piVar3' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Redundant assignment of 'piVar3' to itself.",
-      "line": 120,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "piVar3 = piVar3;",
-      "type": "static_self_assignment"
-    }
-  ]
+  "suspects": []
 }

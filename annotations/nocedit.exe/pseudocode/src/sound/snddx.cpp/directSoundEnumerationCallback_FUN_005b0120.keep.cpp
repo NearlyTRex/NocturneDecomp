@@ -45,9 +45,7 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID d
                  pcVar6);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_390);
     }
-    if (local_10 != (LPDIRECTSOUND)0x0) {
-      (*local_10->vtable->Release)((IUnknown *)local_10);
-    }
+    (*local_10->vtable->Release)((IUnknown *)local_10);
     iVar5 = g_DirectSoundDeviceCount;
     if (error_code == 0) {
       if (device_guid == (LPGUID)0x0) {

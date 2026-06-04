@@ -113,7 +113,6 @@ SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *e
               g_TracedEdgeBuffer[iVar11].y1 = uVar10;
               g_TracedEdgeBuffer[iVar11].y1 = uVar10 | uVar4 & 0x7fff;
               g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1 & 0x7fff;
-              g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1;
             }
             else {
 LAB_00434f60:
@@ -220,7 +219,6 @@ LAB_00434df6:
               g_TracedEdgeBuffer[iVar11].y1 = uVar9 | uVar4 & 0x7fff;
               g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1 & 0x7fff;
               iVar12 = iVar11 + 1;
-              g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1;
             }
             iVar11 = iVar12;
           }

@@ -163,6 +163,58 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CLodMesh_weldVertices_FUN_0051a150.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "check_id": "invalidPointerCast",
+          "column": 26,
+          "line": 41,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 16,
+          "line": 43,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 16,
+          "line": 44,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 16,
+          "line": 45,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 16,
+          "line": 46,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 16,
+          "line": 47,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -219,6 +271,54 @@
       "severity": "moderate",
       "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x24)].",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 41,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "if ((fVar3 == *(float *)(pcVar1 + 0x3f4)) &&",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 43,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "(*(float *)(pcVar4 + 8) - *(float *)(pcVar1 + 8)) *",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 44,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "(*(float *)(pcVar4 + 8) - *(float *)(pcVar1 + 8)) +",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 45,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "(*(float *)pcVar4 - *(float *)pcVar1) * (*(float *)pcVar4 - *(float *)pcVar1) +",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 46,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "(*(float *)(pcVar4 + 4) - *(float *)(pcVar1 + 4)) *",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 47,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "(*(float *)(pcVar4 + 4) - *(float *)(pcVar1 + 4)) <= weld_threshold * weld_threshold))",
+      "type": "static_invalid_pointer_cast"
     }
   ]
 }

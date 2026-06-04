@@ -116,8 +116,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20(CMP3D
     piVar3 = scalefactor_dest + granule_index * 0x3e + 0xc;
     do {
       piVar3 = piVar3 + 0xd;
-      piVar3[0x17] = 0;
-      piVar3 = piVar3;
+      piVar3[0xa] = 0;
     } while (piVar3 != scalefactor_dest + granule_index * 0x3e + 0x33);
     return;
   }

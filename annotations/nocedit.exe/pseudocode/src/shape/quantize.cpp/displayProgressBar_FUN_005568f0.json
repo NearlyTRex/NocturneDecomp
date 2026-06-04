@@ -188,6 +188,23 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "displayProgressBar_FUN_005568f0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "nullPointerArithmetic",
+          "column": 17,
+          "line": 35,
+          "message": "Pointer addition with NULL pointer.",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Decompiler inlined a function call",
@@ -204,6 +221,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
+    },
+    {
+      "description": "Pointer addition with NULL pointer.",
+      "line": 35,
+      "match": "Cppcheck: null pointer arithmetic",
+      "severity": "major",
+      "text": "memset(pcVar1 + 1,0x2e,(int)ROUND(ROUND(dVar1)));",
+      "type": "static_null_pointer_arithmetic"
     }
   ]
 }

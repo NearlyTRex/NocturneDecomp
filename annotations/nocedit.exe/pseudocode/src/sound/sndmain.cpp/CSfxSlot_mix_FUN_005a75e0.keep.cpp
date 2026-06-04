@@ -23,7 +23,6 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
   int iVar7;
   int iVar12;
   int iVar9;
-  uint uVar10;
   int iVar14;
   uint uVar15;
   int iVar11;
@@ -75,8 +74,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
              mix_buffer.channel_buffers[iVar16] + this_ptr->channel_current_buffer_offsets[iVar16];
         uVar6 = this_ptr->channel_current_buffer_offsets[iVar16] -
                 this_ptr->channel_target_buffer_offsets[iVar16];
-        uVar10 = (int)uVar6 >> 0x1f;
-        if ((int)((uVar6 ^ uVar10) - uVar10) < 2) {
+        if (ABS((int)uVar6) < 2) {
           aiStack_a4[iVar16] = 0;
         }
         else {

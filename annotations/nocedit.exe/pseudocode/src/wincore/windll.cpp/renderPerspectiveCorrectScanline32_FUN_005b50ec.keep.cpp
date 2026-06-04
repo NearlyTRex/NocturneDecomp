@@ -59,24 +59,24 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005
     if (g_VertexPreprocessMode == PREPROCESS_PERSPECTIVE_TEXTURE) {
       uVar10 = (pSVar7->base).u_current;
       g_StartTextureU =
-           (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
+           (int)(((longlong)(int)uVar10 << 0x18) /
                 (longlong)(pSVar7->base).depth_current);
       uVar10 = (left_vertex->base).u_current;
       g_HardwareDeltaTextureU =
            (int)((ulonglong)
                  ((longlong)
-                  ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
+                  ((int)(((longlong)(int)uVar10 << 0x18) /
                         (longlong)(left_vertex->base).depth_current) - g_StartTextureU) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
       uVar10 = (pSVar7->base).v_current;
       g_StartTextureV =
-           (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
+           (int)(((longlong)(int)uVar10 << 0x18) /
                 (longlong)(pSVar7->base).depth_current);
       uVar10 = (left_vertex->base).v_current;
       g_HardwareDeltaTextureV =
            (int)((ulonglong)
                  ((longlong)
-                  ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
+                  ((int)(((longlong)(int)uVar10 << 0x18) /
                         (longlong)(left_vertex->base).depth_current) - g_StartTextureV) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     }

@@ -140,6 +140,51 @@
       "severity": "moderate",
       "text": "this_ptr = (CMP3Decoder *)(this_ptr->filename + 4);",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `piVar3` (struct-field or pointer-arithmetic advance + constant index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 39,
+      "match": "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `piVar3` (struct-field or pointer-arithmetic advance + constant index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 42,
+      "match": "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `piVar4` (struct-field or pointer-arithmetic advance + constant index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 54,
+      "match": "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `piVar5` (struct-field or pointer-arithmetic advance + constant index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 63,
+      "match": "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `piVar5` (struct-field or pointer-arithmetic advance + constant index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 66,
+      "match": "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     }
   ],
   "stack_frame": {
@@ -193,61 +238,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 18,
-          "line": 46,
-          "message": "Redundant assignment of 'piVar3' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 16,
-          "line": 55,
-          "message": "Redundant assignment of 'piVar4' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 16,
-          "line": 67,
-          "message": "Redundant assignment of 'piVar5' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Redundant assignment of 'piVar3' to itself.",
-      "line": 46,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "piVar3 = piVar3;",
-      "type": "static_self_assignment"
-    },
-    {
-      "description": "Redundant assignment of 'piVar4' to itself.",
-      "line": 55,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "piVar4 = piVar4;",
-      "type": "static_self_assignment"
-    },
-    {
-      "description": "Redundant assignment of 'piVar5' to itself.",
-      "line": 67,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "piVar5 = piVar5;",
-      "type": "static_self_assignment"
-    }
-  ]
+  "suspects": []
 }

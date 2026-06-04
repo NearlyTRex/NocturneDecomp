@@ -909,7 +909,7 @@ def update_function_json_with_analysis(json_path, analysis_data, mode):
 # =============================================================================
 
 def run_static_analysis_after_export(pseudocode_dir, tools=None, num_threads=8,
-                                     reports_dir=None, keep_only=True, repo_dir=None,
+                                     reports_dir=None, keep_only=False, repo_dir=None,
                                      deep=False):
     """Main entry point for static analysis after export.
 

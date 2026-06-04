@@ -268,6 +268,23 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CFileManager_extractFileWithTimestamp_FUN_004b7d50.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 14,
+          "line": 48,
+          "message": "Redundant assignment of 'pcVar8' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
@@ -284,6 +301,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
+    },
+    {
+      "description": "Redundant assignment of 'pcVar8' to itself.",
+      "line": 48,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pcVar8 = pcVar8;",
+      "type": "static_self_assignment"
     }
   ]
 }

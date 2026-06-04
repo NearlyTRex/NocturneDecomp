@@ -5,40 +5,668 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (279 diagnostics)
+Cppcheck (quick) (367 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (67)
+uninitvar (93)
 ----------------------------------------------------------------------------------------------------
 
-  cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
-    File: cockpit/drawsurf.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0 line 33
+    File: core/fire.cpp
+    Uninitialized variable: local_40
 
-  cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 86
-    File: cockpit/drawsurf.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0 line 33
+    File: core/fire.cpp
+    Uninitialized variable: local_48
 
-  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 59
-    File: cockpit/pkbitmap.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0 line 33
+    File: core/fire.cpp
+    Uninitialized variable: local_44
 
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRe line 30
-    File: cockpit/pkbitmap.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
+    File: core/gabriela.cpp
+    Uninitialized variable: local_94
 
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRe line 54
-    File: cockpit/pkbitmap.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
+    File: core/gabriela.cpp
+    Uninitialized variable: local_9c
 
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenB line 27
-    File: cockpit/pkbitmap.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
+    File: core/gabriela.cpp
+    Uninitialized variable: local_98
 
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenB line 38
-    File: cockpit/pkbitmap.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  core_sound.cpp_updateListeners_FUN_005b1870        line 57
+    File: core/sound.cpp
+    Uninitialized variable: local_c4
+
+  core_sound.cpp_updateListeners_FUN_005b1870        line 58
+    File: core/sound.cpp
+    Uninitialized variable: local_cc
+
+  core_sound.cpp_updateListeners_FUN_005b1870        line 59
+    File: core/sound.cpp
+    Uninitialized variable: local_c8
+
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 139
+    File: core/tvbat.cpp
+    Uninitialized variable: local_80
+
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 139
+    File: core/tvbat.cpp
+    Uninitialized variable: local_88
+
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 139
+    File: core/tvbat.cpp
+    Uninitialized variable: local_84
+
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 160
+    File: core/tvbat.cpp
+    Uninitialized variable: local_54
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 32
+    File: engine/boss.c
+    Uninitialized variable: local_3c
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 33
+    File: engine/boss.c
+    Uninitialized variable: iStack_38
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 34
+    File: engine/boss.c
+    Uninitialized variable: iStack_34
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 35
+    File: engine/boss.c
+    Uninitialized variable: iStack_30
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 36
+    File: engine/boss.c
+    Uninitialized variable: iStack_2c
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 37
+    File: engine/boss.c
+    Uninitialized variable: iStack_28
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 38
+    File: engine/boss.c
+    Uninitialized variable: iStack_24
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 39
+    File: engine/boss.c
+    Uninitialized variable: iStack_20
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 40
+    File: engine/boss.c
+    Uninitialized variable: iStack_1c
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 41
+    File: engine/boss.c
+    Uninitialized variable: iStack_18
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 42
+    File: engine/boss.c
+    Uninitialized variable: iStack_14
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 43
+    File: engine/boss.c
+    Uninitialized variable: iStack_10
+
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 44
+    File: engine/boss.c
+    Uninitialized variable: iStack_c
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 134
+    File: engine/model.c
+    Uninitialized variable: *puVar11
+
+  shape_design.c_convertWorldToScreenCoordinates_FUN line 47
+    File: shape/design.c
+    Uninitialized variable: fStack_2c
+
+  shape_design.c_convertWorldToScreenCoordinates_FUN line 48
+    File: shape/design.c
+    Uninitialized variable: fStack_28
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 146
+    File: shape/design.c
+    Uninitialized variable: local_44
+
+  shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 112
+    File: shape/design.c
+    Uninitialized variable: local_20
+
+  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0   line 70
+    File: shape/superopt.cpp
+    Uninitialized variable: local_a0
+
+  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0   line 71
+    File: shape/superopt.cpp
+    Uninitialized variable: local_98
+
+  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0   line 80
+    File: shape/superopt.cpp
+    Uninitialized variable: local_70
+
+  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0   line 81
+    File: shape/superopt.cpp
+    Uninitialized variable: local_68
+
+  shape_superopt.cpp_CObj_scale_FUN_005d2940         line 73
+    File: shape/superopt.cpp
+    Uninitialized variable: local_58
+
+  shape_superopt.cpp_CObj_scale_FUN_005d2940         line 74
+    File: shape/superopt.cpp
+    Uninitialized variable: local_50
+
+  shape_superopt.cpp_CObj_scale_FUN_005d2940         line 83
+    File: shape/superopt.cpp
+    Uninitialized variable: local_b8
+
+  shape_superopt.cpp_CObj_scale_FUN_005d2940         line 84
+    File: shape/superopt.cpp
+    Uninitialized variable: local_b0
+
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 51
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_98
+
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 52
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_a0
+
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 59
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_58
+
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 60
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_50
+
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 50
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_38
+
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 51
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_40
+
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 58
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_a0
+
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 59
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_98
+
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 115
+    File: shape/superopt.cpp
+    Uninitialized variable: local_178
+
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 115
+    File: shape/superopt.cpp
+    Uninitialized variable: local_180
+
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 142
+    File: shape/superopt.cpp
+    Uninitialized variable: local_160
+
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 142
+    File: shape/superopt.cpp
+    Uninitialized variable: local_168
+
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 156
+    File: shape/superopt.cpp
+    Uninitialized variable: local_1f0
+
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 156
+    File: shape/superopt.cpp
+    Uninitialized variable: local_1f8
+
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 183
+    File: shape/superopt.cpp
+    Uninitialized variable: local_220
+
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 183
+    File: shape/superopt.cpp
+    Uninitialized variable: local_228
+
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 197
+    File: shape/superopt.cpp
+    Uninitialized variable: local_280
+
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 197
+    File: shape/superopt.cpp
+    Uninitialized variable: local_288
+
+  shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30  line 53
+    File: shape/superopt.cpp
+    Uninitialized variable: local_50
+
+  shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30  line 54
+    File: shape/superopt.cpp
+    Uninitialized variable: local_48
+
+  shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30  line 63
+    File: shape/superopt.cpp
+    Uninitialized variable: local_20
+
+  shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30  line 64
+    File: shape/superopt.cpp
+    Uninitialized variable: local_18
+
+  shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0      line 60
+    File: shape/superopt.cpp
+    Uninitialized variable: local_40
+
+  shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0      line 60
+    File: shape/superopt.cpp
+    Uninitialized variable: local_48
+
+  shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0      line 76
+    File: shape/superopt.cpp
+    Uninitialized variable: local_70
+
+  shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0      line 76
+    File: shape/superopt.cpp
+    Uninitialized variable: local_78
+
+  shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 line 95
+    File: shape/superopt.cpp
+    Uninitialized variable: local_90
+
+  shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 line 96
+    File: shape/superopt.cpp
+    Uninitialized variable: local_88
+
+  shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 line 105
+    File: shape/superopt.cpp
+    Uninitialized variable: local_78
+
+  shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 line 106
+    File: shape/superopt.cpp
+    Uninitialized variable: local_70
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 121
+    File: shape/superopt.cpp
+    Uninitialized variable: local_208
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 122
+    File: shape/superopt.cpp
+    Uninitialized variable: local_200
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 131
+    File: shape/superopt.cpp
+    Uninitialized variable: local_a0
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 132
+    File: shape/superopt.cpp
+    Uninitialized variable: local_98
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 167
+    File: shape/superopt.cpp
+    Uninitialized variable: local_70
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 168
+    File: shape/superopt.cpp
+    Uninitialized variable: local_68
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 177
+    File: shape/superopt.cpp
+    Uninitialized variable: local_d0
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 178
+    File: shape/superopt.cpp
+    Uninitialized variable: local_c8
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 213
+    File: shape/superopt.cpp
+    Uninitialized variable: local_28
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 214
+    File: shape/superopt.cpp
+    Uninitialized variable: local_20
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 223
+    File: shape/superopt.cpp
+    Uninitialized variable: local_118
+
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0        line 224
+    File: shape/superopt.cpp
+    Uninitialized variable: local_110
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 90
+    File: shape/superopt.cpp
+    Uninitialized variable: local_148
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 90
+    File: shape/superopt.cpp
+    Uninitialized variable: local_150
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 101
+    File: shape/superopt.cpp
+    Uninitialized variable: local_138
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 102
+    File: shape/superopt.cpp
+    Uninitialized variable: local_130
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 127
+    File: shape/superopt.cpp
+    Uninitialized variable: local_a0
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 127
+    File: shape/superopt.cpp
+    Uninitialized variable: local_a8
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 138
+    File: shape/superopt.cpp
+    Uninitialized variable: local_108
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 139
+    File: shape/superopt.cpp
+    Uninitialized variable: local_100
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 164
+    File: shape/superopt.cpp
+    Uninitialized variable: local_70
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 164
+    File: shape/superopt.cpp
+    Uninitialized variable: local_78
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 175
+    File: shape/superopt.cpp
+    Uninitialized variable: local_180
+
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30    line 176
+    File: shape/superopt.cpp
+    Uninitialized variable: local_178
+
+----------------------------------------------------------------------------------------------------
+selfAssignment (69)
+----------------------------------------------------------------------------------------------------
+
+  core_dcamera.cpp_renderFlatColorScanline_FUN_00450 line 70
+    File: core/dcamera.cpp
+    Redundant assignment of 'iVar4' to itself.
+
+  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1564
+    File: core/game.cpp
+    Redundant assignment of 'pbVar21' to itself.
+
+  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_005 line 158
+    File: core/manpuz.cpp
+    Redundant assignment of 'pCVar13' to itself.
+
+  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_005 line 159
+    File: core/manpuz.cpp
+    Redundant assignment of 'pCVar15' to itself.
+
+  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 102
+    File: core/mimic.cpp
+    Redundant assignment of 'pCVar9' to itself.
+
+  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 103
+    File: core/mimic.cpp
+    Redundant assignment of 'pCVar10' to itself.
+
+  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 45
+    File: core/mimic.cpp
+    Redundant assignment of 'piVar4' to itself.
+
+  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 46
+    File: core/mimic.cpp
+    Redundant assignment of 'pSVar5' to itself.
+
+  core_mimic.cpp_CMimic_updatePose_FUN_0051f930      line 145
+    File: core/mimic.cpp
+    Redundant assignment of 'pCVar16' to itself.
+
+  core_mimic.cpp_CMimic_updatePose_FUN_0051f930      line 146
+    File: core/mimic.cpp
+    Redundant assignment of 'pCVar22' to itself.
+
+  core_msnedit.cpp_CDemonMission_replicateActor_FUN_ line 142
+    File: core/msnedit.cpp
+    Redundant assignment of 'pCVar5' to itself.
+
+  core_skeledit.cpp_CDeformableModel_determinePartsF line 1141
+    File: core/skeledit.cpp
+    Redundant assignment of 'piVar35' to itself.
+
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 94
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar8' to itself.
+
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 99
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar8' to itself.
+
+  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 line 52
+    File: engine/fileio.cpp
+    Redundant assignment of 'pCVar5' to itself.
+
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 173
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar10' to itself.
+
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 178
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar10' to itself.
+
+  engine_fileio.cpp_CFileManager_extractFileWithTime line 48
+    File: engine/fileio.cpp
+    Redundant assignment of 'pcVar8' to itself.
+
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 178
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar15' to itself.
+
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 535
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar13' to itself.
+
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 536
+    File: engine/fileio.cpp
+    Redundant assignment of 'pCVar18' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 110
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar7' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 129
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar5' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 130
+    File: engine/fileio.cpp
+    Redundant assignment of 'pCVar8' to itself.
+
+  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 93
+    File: engine/fileio.cpp
+    Redundant assignment of 'piVar5' to itself.
+
+  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 94
+    File: engine/fileio.cpp
+    Redundant assignment of 'piVar7' to itself.
+
+  engine_fileio.cpp_readTimestampFile_FUN_004b23a0   line 99
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_bisectMesh_FUN_0046ed50             line 81
+    File: shape/design.c
+    Redundant assignment of 'pSVar16' to itself.
+
+  shape_design.c_bisectMesh_FUN_0046ed50             line 82
+    File: shape/design.c
+    Redundant assignment of 'pSVar17' to itself.
+
+  shape_design.c_centerVerticesAroundPoint_FUN_0045e line 58
+    File: shape/design.c
+    Redundant assignment of 'pcVar4' to itself.
+
+  shape_design.c_complexPolygonReduction_FUN_00463b3 line 291
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_complexPolygonReduction_FUN_00463b3 line 292
+    File: shape/design.c
+    Redundant assignment of 'pSVar8' to itself.
+
+  shape_design.c_configureFullPassPolygonReduction_F line 41
+    File: shape/design.c
+    Redundant assignment of 'pbVar3' to itself.
+
+  shape_design.c_configureSinglePassPolygonReduction line 100
+    File: shape/design.c
+    Redundant assignment of 'pbVar4' to itself.
+
+  shape_design.c_configureSinglePassPolygonReduction line 105
+    File: shape/design.c
+    Redundant assignment of 'pbVar4' to itself.
+
+  shape_design.c_createBoxPrimitive_FUN_0045e520     line 59
+    File: shape/design.c
+    Redundant assignment of 'pcVar4' to itself.
+
+  shape_design.c_createCenterVertex_FUN_00469690     line 55
+    File: shape/design.c
+    Redundant assignment of 'pcVar3' to itself.
+
+  shape_design.c_createKeyframeModel_FUN_00468320    line 46
+    File: shape/design.c
+    Redundant assignment of 'pcVar5' to itself.
+
+  shape_design.c_deletePolygonRange_FUN_0045dd70     line 36
+    File: shape/design.c
+    Redundant assignment of 'pcVar4' to itself.
+
+  shape_design.c_deletePolygonRange_FUN_0045dd70     line 55
+    File: shape/design.c
+    Redundant assignment of 'pSVar3' to itself.
+
+  shape_design.c_deletePolygonRange_FUN_0045dd70     line 56
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_deleteSinglePolygon_FUN_0045dcc0    line 33
+    File: shape/design.c
+    Redundant assignment of 'pcVar4' to itself.
+
+  shape_design.c_deleteSinglePolygon_FUN_0045dcc0    line 44
+    File: shape/design.c
+    Redundant assignment of 'pSVar3' to itself.
+
+  shape_design.c_deleteSinglePolygon_FUN_0045dcc0    line 45
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_generateGlobe_FUN_00468910          line 75
+    File: shape/design.c
+    Redundant assignment of 'pcVar3' to itself.
+
+  shape_design.c_generateOctant_FUN_00469420         line 75
+    File: shape/design.c
+    Redundant assignment of 'pcVar4' to itself.
+
+  shape_design.c_generateShell_FUN_00468f20          line 75
+    File: shape/design.c
+    Redundant assignment of 'pcVar3' to itself.
+
+  shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 210
+    File: shape/design.c
+    Redundant assignment of 'pSVar3' to itself.
+
+  shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 211
+    File: shape/design.c
+    Redundant assignment of 'pSVar4' to itself.
+
+  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 202
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 203
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 142
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 143
+    File: shape/design.c
+    Redundant assignment of 'pSVar8' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 156
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 157
+    File: shape/design.c
+    Redundant assignment of 'pSVar9' to itself.
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 571
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 572
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_sizeForStadium_FUN_00469c70         line 81
+    File: shape/design.c
+    Redundant assignment of 'pcVar5' to itself.
+
+  shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  line 44
+    File: shape/design.c
+    Redundant assignment of 'pSVar2' to itself.
+
+  shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  line 45
+    File: shape/design.c
+    Redundant assignment of 'pSVar4' to itself.
+
+  shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  line 52
+    File: shape/design.c
+    Redundant assignment of 'puVar3' to itself.
+
+  shape_design.c_translateAllVerticesAlongAxis_FUN_0 line 51
+    File: shape/design.c
+    Redundant assignment of 'pcVar4' to itself.
+
+  shape_design.c_triangulateDSE_FUN_0046e4d0         line 45
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_triangulateDSE_FUN_0046e4d0         line 46
+    File: shape/design.c
+    Redundant assignment of 'pSVar7' to itself.
+
+  shape_design.c_vertexReducer_FUN_00467850          line 196
+    File: shape/design.c
+    Redundant assignment of 'pbVar5' to itself.
+
+  shape_design.c_vertexReducer_FUN_00467850          line 201
+    File: shape/design.c
+    Redundant assignment of 'pbVar5' to itself.
+
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEd line 64
+    File: shape/superopt.cpp
+    Redundant assignment of 'pdVar4' to itself.
+
+  shape_superopt.cpp_CComplexPolygon_findReflexVerte line 65
+    File: shape/superopt.cpp
+    Redundant assignment of 'pdVar4' to itself.
+
+  shape_superopt.cpp_COptimize_exportOptimizeGeometr line 151
+    File: shape/superopt.cpp
+    Redundant assignment of 'iVar7' to itself.
+
+----------------------------------------------------------------------------------------------------
+shiftTooManyBitsSigned (62)
+----------------------------------------------------------------------------------------------------
 
   core_cloth.cpp_CCloth_setup_FUN_00439710           line 85
     File: core/cloth.cpp
@@ -68,12 +696,28 @@ shiftTooManyBitsSigned (67)
     File: core/course.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  core_course.cpp_renderCoursePoint_FUN_004436d0     line 19
+    File: core/course.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_course.cpp_renderCoursePoint_FUN_004436d0     line 29
+    File: core/course.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
   core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 140
     File: core/dskybox.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 145
     File: core/dskybox.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50 line 41
+    File: core/dtrace.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_F line 20
+    File: core/dtrace.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_fire.cpp_CFireball_process_FUN_004c0b30       line 50
@@ -108,10 +752,6 @@ shiftTooManyBitsSigned (67)
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_game.cpp_CGame_renderOverlay_FUN_004d8040     line 103
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
   core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 47
     File: core/game.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -134,6 +774,38 @@ shiftTooManyBitsSigned (67)
 
   core_keyactor.cpp_CKeyActor_process_FUN_00501710   line 28
     File: core/keyactor.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_mission.cpp_CDemonMission_prepareAllActors_FU line 34
+    File: core/mission.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_mission.cpp_CDemonMission_prepareAllActors_FU line 40
+    File: core/mission.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 129
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 135
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 136
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 142
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 143
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 149
+    File: core/set.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 95
@@ -180,6 +852,10 @@ shiftTooManyBitsSigned (67)
     File: engine/font.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGene line 739
+    File: shape/cramtex.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
   shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 21
     File: shape/design.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -189,6 +865,14 @@ shiftTooManyBitsSigned (67)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 28
+    File: shape/design.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_design.c_quantizePaletteColors_FUN_0046b770  line 42
+    File: shape/design.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_design.c_quantizePaletteColors_FUN_0046b770  line 43
     File: shape/design.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -230,54 +914,6 @@ shiftTooManyBitsSigned (67)
 
   shape_quantize.cpp_CColorQuantizer_computeBoxStati line 97
     File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50 line 132
-    File: sound/mp3.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  sound_snddx.cpp_CDirectSoundDevice_allocateSample_ line 36
-    File: sound/snddx.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  sound_snddx.cpp_CDirectSoundDevice_allocateSample_ line 37
-    File: sound/snddx.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0        line 78
-    File: sound/sndmain.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 62
-    File: wincore/windll.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 68
-    File: wincore/windll.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 73
-    File: wincore/windll.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 79
-    File: wincore/windll.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 62
-    File: wincore/windll.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 68
-    File: wincore/windll.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 73
-    File: wincore/windll.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 79
-    File: wincore/windll.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
@@ -525,307 +1161,7 @@ invalidscanf (60)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (41)
-----------------------------------------------------------------------------------------------------
-
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
-    File: cockpit/ckptutil.c
-    Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 223
-    File: cockpit/ckptutil.c
-    Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1564
-    File: core/game.cpp
-    Redundant assignment of 'pbVar21' to itself.
-
-  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 102
-    File: core/mimic.cpp
-    Redundant assignment of 'pCVar9' to itself.
-
-  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 103
-    File: core/mimic.cpp
-    Redundant assignment of 'pCVar10' to itself.
-
-  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 45
-    File: core/mimic.cpp
-    Redundant assignment of 'piVar4' to itself.
-
-  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 46
-    File: core/mimic.cpp
-    Redundant assignment of 'pSVar5' to itself.
-
-  core_msnedit.cpp_CDemonMission_replicateActor_FUN_ line 142
-    File: core/msnedit.cpp
-    Redundant assignment of 'pCVar5' to itself.
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 1141
-    File: core/skeledit.cpp
-    Redundant assignment of 'piVar35' to itself.
-
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 94
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar8' to itself.
-
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 99
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar8' to itself.
-
-  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 line 52
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 173
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar10' to itself.
-
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 178
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar10' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 178
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar15' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 535
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar13' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 536
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar18' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 110
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar7' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 129
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 130
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar8' to itself.
-
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 93
-    File: engine/fileio.cpp
-    Redundant assignment of 'piVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 94
-    File: engine/fileio.cpp
-    Redundant assignment of 'piVar7' to itself.
-
-  shape_design.c_configureSinglePassPolygonReduction line 100
-    File: shape/design.c
-    Redundant assignment of 'pbVar4' to itself.
-
-  shape_design.c_configureSinglePassPolygonReduction line 105
-    File: shape/design.c
-    Redundant assignment of 'pbVar4' to itself.
-
-  shape_design.c_generateOctant_FUN_00469420         line 75
-    File: shape/design.c
-    Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 202
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 203
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 142
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 143
-    File: shape/design.c
-    Redundant assignment of 'pSVar8' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 156
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 157
-    File: shape/design.c
-    Redundant assignment of 'pSVar9' to itself.
-
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 571
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 572
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_vertexReducer_FUN_00467850          line 196
-    File: shape/design.c
-    Redundant assignment of 'pbVar5' to itself.
-
-  shape_design.c_vertexReducer_FUN_00467850          line 201
-    File: shape/design.c
-    Redundant assignment of 'pbVar5' to itself.
-
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEd line 64
-    File: shape/superopt.cpp
-    Redundant assignment of 'pdVar4' to itself.
-
-  shape_superopt.cpp_CComplexPolygon_findReflexVerte line 65
-    File: shape/superopt.cpp
-    Redundant assignment of 'pdVar4' to itself.
-
-  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 46
-    File: sound/mp3.cpp
-    Redundant assignment of 'piVar3' to itself.
-
-  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 55
-    File: sound/mp3.cpp
-    Redundant assignment of 'piVar4' to itself.
-
-  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 67
-    File: sound/mp3.cpp
-    Redundant assignment of 'piVar5' to itself.
-
-  sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_F line 120
-    File: sound/mp3.cpp
-    Redundant assignment of 'piVar3' to itself.
-
-----------------------------------------------------------------------------------------------------
-uninitvar (32)
-----------------------------------------------------------------------------------------------------
-
-  core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
-    File: core/gabriela.cpp
-    Uninitialized variable: local_94
-
-  core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
-    File: core/gabriela.cpp
-    Uninitialized variable: local_9c
-
-  core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
-    File: core/gabriela.cpp
-    Uninitialized variable: local_98
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 57
-    File: core/sound.cpp
-    Uninitialized variable: local_c4
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 58
-    File: core/sound.cpp
-    Uninitialized variable: local_cc
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 59
-    File: core/sound.cpp
-    Uninitialized variable: local_c8
-
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 139
-    File: core/tvbat.cpp
-    Uninitialized variable: local_80
-
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 139
-    File: core/tvbat.cpp
-    Uninitialized variable: local_88
-
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 139
-    File: core/tvbat.cpp
-    Uninitialized variable: local_84
-
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 160
-    File: core/tvbat.cpp
-    Uninitialized variable: local_54
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 134
-    File: engine/model.c
-    Uninitialized variable: *puVar11
-
-  shape_design.c_convertWorldToScreenCoordinates_FUN line 47
-    File: shape/design.c
-    Uninitialized variable: fStack_2c
-
-  shape_design.c_convertWorldToScreenCoordinates_FUN line 48
-    File: shape/design.c
-    Uninitialized variable: fStack_28
-
-  shape_design.c_loadModelBinary_FUN_00458170        line 146
-    File: shape/design.c
-    Uninitialized variable: local_44
-
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 51
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_98
-
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 52
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_a0
-
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 59
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_58
-
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 60
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_50
-
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 50
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_38
-
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 51
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_40
-
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 58
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_a0
-
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 59
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_98
-
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 115
-    File: shape/superopt.cpp
-    Uninitialized variable: local_178
-
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 115
-    File: shape/superopt.cpp
-    Uninitialized variable: local_180
-
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 142
-    File: shape/superopt.cpp
-    Uninitialized variable: local_160
-
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 142
-    File: shape/superopt.cpp
-    Uninitialized variable: local_168
-
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 156
-    File: shape/superopt.cpp
-    Uninitialized variable: local_1f0
-
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 156
-    File: shape/superopt.cpp
-    Uninitialized variable: local_1f8
-
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 183
-    File: shape/superopt.cpp
-    Uninitialized variable: local_220
-
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 183
-    File: shape/superopt.cpp
-    Uninitialized variable: local_228
-
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 197
-    File: shape/superopt.cpp
-    Uninitialized variable: local_280
-
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 197
-    File: shape/superopt.cpp
-    Uninitialized variable: local_288
-
-----------------------------------------------------------------------------------------------------
-legacyUninitvar (24)
+legacyUninitvar (25)
 ----------------------------------------------------------------------------------------------------
 
   core_mission.cpp_CDemonMission_loadActor_FUN_00523 line 64
@@ -924,93 +1260,89 @@ legacyUninitvar (24)
     File: shape/design.c
     Uninitialized variable: local_64
 
-----------------------------------------------------------------------------------------------------
-identicalInnerCondition (21)
-----------------------------------------------------------------------------------------------------
-
-  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 58
-    File: core/skeleton.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 315
+  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_005176 line 360
     File: shape/meshlod.cpp
-    Identical inner 'if' condition is always true.
+    Uninitialized variable: local_7c
 
-  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 239
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
+----------------------------------------------------------------------------------------------------
+invalidPointerCast (19)
+----------------------------------------------------------------------------------------------------
 
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
+  core_chain.cpp_fastSqrt_FUN_00431350               line 13
+    File: core/chain.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 48
-    File: sound/snddx.cpp
-    Identical inner 'if' condition is always true.
+  core_chain.cpp_fastSqrt_FUN_00431350               line 14
+    File: core/chain.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 40
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 13
+    File: core/cloth.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 53
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 14
+    File: core/cloth.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 68
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  core_elephant.cpp_CElephantGun_process_FUN_004a707 line 25
+    File: core/elephant.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 83
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 680
+    File: core/ghoul.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 99
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 681
+    File: core/ghoul.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 111
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00 line 24
+    File: core/lightgun.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 126
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 790
+    File: core/skeledit.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 140
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  core_skeleton.cpp_CDeformableModelInstance_clearAl line 20
+    File: core/skeleton.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 157
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  core_skeleton.cpp_CDeformableModelInstance_compute line 29
+    File: core/skeleton.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 169
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  core_skeleton.cpp_CDeformableModelInstance_compute line 30
+    File: core/skeleton.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 184
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  core_skeleton.cpp_CDeformableModelInstance_showAll line 20
+    File: core/skeleton.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 199
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 41
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 219
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 43
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 231
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 44
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 245
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 45
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
 
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 259
-    File: sound/sndmain.cpp
-    Identical inner 'if' condition is always true.
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 46
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 47
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 nullPointerRedundantCheck (12)
@@ -1065,56 +1397,44 @@ nullPointerRedundantCheck (12)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (11)
+identicalInnerCondition (7)
 ----------------------------------------------------------------------------------------------------
 
-  core_chain.cpp_fastSqrt_FUN_00431350               line 13
-    File: core/chain.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  core_menu.cpp_adjustMouseSensitivity_FUN_005107c0  line 40
+    File: core/menu.cpp
+    Identical inner 'if' condition is always true.
 
-  core_chain.cpp_fastSqrt_FUN_00431350               line 14
-    File: core/chain.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 13
-    File: core/cloth.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 14
-    File: core/cloth.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_elephant.cpp_CElephantGun_process_FUN_004a707 line 25
-    File: core/elephant.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 680
-    File: core/ghoul.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 681
-    File: core/ghoul.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00 line 24
-    File: core/lightgun.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 790
-    File: core/skeledit.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 29
+  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 58
     File: core/skeleton.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+    Identical inner 'if' condition is always true.
 
-  core_skeleton.cpp_CDeformableModelInstance_compute line 30
-    File: core/skeleton.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  engine_fileio.cpp_CFileManager_crossReferencePodDu line 134
+    File: engine/fileio.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGene line 141
+    File: shape/cramtex.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 315
+    File: shape/meshlod.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 239
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (4)
+nullPointer (6)
 ----------------------------------------------------------------------------------------------------
+
+  core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044d line 19
+    File: core/dcamera.cpp
+    Possible null pointer dereference: pacVar1
 
   core_mission.cpp_CDemonMission_ensureHeroPlacehold line 49
     File: core/mission.cpp
@@ -1127,6 +1447,10 @@ nullPointer (4)
   core_mission.cpp_CDemonMission_ensureHeroPlacehold line 52
     File: core/mission.cpp
     Possible null pointer dereference: actor
+
+  shape_design.c_cramTextures_FUN_0046a970           line 62
+    File: shape/design.c
+    Possible null pointer dereference: local_18
 
   shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
     File: shape/quantize.cpp
@@ -1149,6 +1473,34 @@ invalidScanfArgType_int (3)
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
+objectIndex (3)
+----------------------------------------------------------------------------------------------------
+
+  shape_meshlod.cpp_CLodFace_computeNormalAndPlane_F line 108
+    File: shape/meshlod.cpp
+    The address of local variable 'local_84' might be accessed at non-zero index.
+
+  shape_meshlod.cpp_CLodFace_computeNormalAndPlane_F line 109
+    File: shape/meshlod.cpp
+    The address of local variable 'local_84' might be accessed at non-zero index.
+
+  shape_meshlod.cpp_CLodFace_computeNormalAndPlane_F line 110
+    File: shape/meshlod.cpp
+    The address of local variable 'local_84' might be accessed at non-zero index.
+
+----------------------------------------------------------------------------------------------------
+arrayIndexOutOfBoundsCond (2)
+----------------------------------------------------------------------------------------------------
+
+  shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 112
+    File: shape/design.c
+    Either the condition 'bVar5' is redundant or the array 'local_58[2]' is accessed at index 2, which is out of bounds.
+
+  shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 116
+    File: shape/design.c
+    Either the condition 'bVar5' is redundant or the array 'local_58[2]' is accessed at index 3, which is out of bounds.
+
+----------------------------------------------------------------------------------------------------
 invalidFunctionArgStr (2)
 ----------------------------------------------------------------------------------------------------
 
@@ -1159,6 +1511,14 @@ invalidFunctionArgStr (2)
   shape_edittool.cpp_CEditorTools_showDirectoryBrows line 129
     File: shape/edittool.cpp
     Invalid strlen() argument nr 1. A nul-terminated string is required.
+
+----------------------------------------------------------------------------------------------------
+nullPointerArithmetic (1)
+----------------------------------------------------------------------------------------------------
+
+  shape_quantize.cpp_displayProgressBar_FUN_005568f0 line 35
+    File: shape/quantize.cpp
+    Pointer addition with NULL pointer.
 
 ----------------------------------------------------------------------------------------------------
 nullPointerArithmeticRedundantCheck (1)
@@ -1175,3 +1535,11 @@ invalidTestForOverflow (1)
   shape_superopt.cpp_CComplexPolygon_closeSplitBound line 156
     File: shape/superopt.cpp
     Invalid test for overflow 'local_1c<local_1c+local_28'; pointer overflow is undefined behavior. Some mainstream compilers removes handling of overflows when optimising the code and change the code to 'local_28>0'.
+
+----------------------------------------------------------------------------------------------------
+memleak (1)
+----------------------------------------------------------------------------------------------------
+
+  shape_superopt.cpp_COptimize_addComplexPolygon_FUN line 27
+    File: shape/superopt.cpp
+    Memory leak: ppCVar2

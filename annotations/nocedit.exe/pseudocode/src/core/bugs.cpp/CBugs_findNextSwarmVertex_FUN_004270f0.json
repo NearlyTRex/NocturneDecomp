@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 205,
-    "complexity_score": 98,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 83,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 288
   },
   "cross_references": [
@@ -157,6 +155,15 @@
       "severity": "moderate",
       "text": "*(int *)((int)local_68 + iVar3) = iVar2;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar6->owner`). Replace `pSVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 60,
+      "match": "pSVar6 = (T *)&pSVar6->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar6 = (SSwarmVertex *)&pSVar6->first_edge_data;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -287,14 +294,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar6->owner`). Replace `pSVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 60,
-      "match": "pSVar6 = (T *)&pSVar6->FIELD",
-      "severity": "moderate",
-      "text": "pSVar6 = (SSwarmVertex *)&pSVar6->first_edge_data;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

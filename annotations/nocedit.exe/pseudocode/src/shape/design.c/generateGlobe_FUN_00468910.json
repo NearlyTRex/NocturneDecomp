@@ -270,6 +270,23 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "generateGlobe_FUN_00468910.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 16,
+          "line": 75,
+          "message": "Redundant assignment of 'pcVar3' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
@@ -294,6 +311,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
+    },
+    {
+      "description": "Redundant assignment of 'pcVar3' to itself.",
+      "line": 75,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pcVar3 = pcVar3;",
+      "type": "static_self_assignment"
     }
   ]
 }

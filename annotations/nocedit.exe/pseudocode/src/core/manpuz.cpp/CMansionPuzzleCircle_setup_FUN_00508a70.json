@@ -510,6 +510,30 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CMansionPuzzleCircle_setup_FUN_00508a70.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 15,
+          "line": 158,
+          "message": "Redundant assignment of 'pCVar13' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 15,
+          "line": 159,
+          "message": "Redundant assignment of 'pCVar15' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -582,6 +606,22 @@
       "severity": "moderate",
       "text": "// 00508dbb: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Redundant assignment of 'pCVar13' to itself.",
+      "line": 158,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pCVar13 = pCVar13;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pCVar15' to itself.",
+      "line": 159,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pCVar15 = pCVar15;",
+      "type": "static_self_assignment"
     }
   ],
   "vtable_info": {

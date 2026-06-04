@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 64,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 49,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 183
   },
   "cross_references": [
@@ -114,6 +112,17 @@
     },
     "pcode_op_count": 757
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 46,
+      "match": "pCVar4 = (T *)&pCVar4->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CGame *)&pCVar4->game_pixy;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 32,
@@ -161,14 +170,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 46,
-      "match": "pCVar4 = (T *)&pCVar4->FIELD",
-      "severity": "moderate",
-      "text": "pCVar4 = (CGame *)&pCVar4->game_pixy;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

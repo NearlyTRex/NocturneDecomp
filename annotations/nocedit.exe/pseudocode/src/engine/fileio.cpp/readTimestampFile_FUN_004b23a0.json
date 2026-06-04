@@ -253,6 +253,23 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "readTimestampFile_FUN_004b23a0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 14,
+          "line": 99,
+          "message": "Redundant assignment of 'pSVar5' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -285,6 +302,14 @@
       "severity": "moderate",
       "text": "// 004b25f6: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar5' to itself.",
+      "line": 99,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar5 = pSVar5;",
+      "type": "static_self_assignment"
     }
   ]
 }

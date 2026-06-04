@@ -10,7 +10,6 @@
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70(CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride)
 
 {
-  int iVar4;
   ushort *puVar5;
   int local_18;
   OptimizedMemcpyFunc *local_14;
@@ -56,10 +55,8 @@ LAB_0054aec0:
     iVar3 = (int)this_ptr->row_pointers[local_18 + 1];
     for (; (char *)puVar5 < pcVar2 + iVar3;
         puVar5 = (ushort *)((uVar1 + 3 & 0xfffffffc) + (int)(puVar5 + 2))) {
-      iVar4 = (int)((uint)*puVar5 * row_stride) >> 0x1f;
       uVar1 = puVar5[1];
-      (*local_14)(dest_buffer +
-                  ((int)(((uint)*puVar5 * row_stride + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3),
+      (*local_14)(dest_buffer + (int)((uint)*puVar5 * row_stride) / 8,
                   puVar5 + 2,(uint)uVar1);
     }
     local_18 = local_18 + 1;

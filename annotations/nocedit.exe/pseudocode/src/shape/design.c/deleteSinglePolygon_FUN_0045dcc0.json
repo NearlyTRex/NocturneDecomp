@@ -148,6 +148,37 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "deleteSinglePolygon_FUN_0045dcc0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 12,
+          "line": 33,
+          "message": "Redundant assignment of 'pcVar4' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 16,
+          "line": 44,
+          "message": "Redundant assignment of 'pSVar3' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 16,
+          "line": 45,
+          "message": "Redundant assignment of 'pSVar5' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -188,6 +219,30 @@
       "severity": "moderate",
       "text": "// 0045dd57: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Redundant assignment of 'pcVar4' to itself.",
+      "line": 33,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pcVar4 = pcVar4;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar3' to itself.",
+      "line": 44,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar3 = pSVar3;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar5' to itself.",
+      "line": 45,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar5 = pSVar5;",
+      "type": "static_self_assignment"
     }
   ]
 }

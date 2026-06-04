@@ -313,6 +313,30 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CMimic_updatePose_FUN_0051f930.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 13,
+          "line": 145,
+          "message": "Redundant assignment of 'pCVar16' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 13,
+          "line": 146,
+          "message": "Redundant assignment of 'pCVar22' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -481,6 +505,22 @@
       "severity": "moderate",
       "text": "// 0051fa0d: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Redundant assignment of 'pCVar16' to itself.",
+      "line": 145,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pCVar16 = pCVar16;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pCVar22' to itself.",
+      "line": 146,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pCVar22 = pCVar22;",
+      "type": "static_self_assignment"
     }
   ]
 }

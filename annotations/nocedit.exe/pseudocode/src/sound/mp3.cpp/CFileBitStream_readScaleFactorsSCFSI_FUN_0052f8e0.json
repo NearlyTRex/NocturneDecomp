@@ -168,6 +168,24 @@
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)&scalefactor_array->codes + iVar3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `puVar7` (struct-field or pointer-arithmetic advance + constant index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 109,
+      "match": "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `puVar7` (struct-field or pointer-arithmetic advance + constant index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 113,
+      "match": "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     }
   ],
   "stack_frame": {

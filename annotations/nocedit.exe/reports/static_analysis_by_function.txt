@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 97
-  Total diagnostics: 279
+  Functions with findings: 131
+  Total diagnostics: 367
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 97, raw .cpp files: 0
+  .keep.cpp files: 82, raw .cpp files: 49
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -67,27 +67,6 @@ core_event.cpp_CEventList_evaluateAtom_FUN_004ae140  [.keep] [Cppcheck (quick)]
   Line  904: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0  [.keep] [Cppcheck (quick)]
-  File: sound/sndmain.cpp  (16 diagnostics)
-
-  Line   40: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line   53: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line   68: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line   83: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line   99: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  111: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  126: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  140: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  157: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  169: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  184: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  199: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  219: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  231: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  245: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  259: [identicalInnerCondition] Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690  [.keep] [Cppcheck (quick)]
   File: core/skeledit.cpp  (13 diagnostics)
 
@@ -104,6 +83,58 @@ core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690  [.keep] [Cppcheck (
   Line 1669: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 1706: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 1730: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+engine_boss.c_modelStructNotSupported4_FUN_0041dbe0  [.cpp] [Cppcheck (quick)]
+  File: engine/boss.c  (13 diagnostics)
+
+  Line   32: [uninitvar] Uninitialized variable: local_3c
+  Line   33: [uninitvar] Uninitialized variable: iStack_38
+  Line   34: [uninitvar] Uninitialized variable: iStack_34
+  Line   35: [uninitvar] Uninitialized variable: iStack_30
+  Line   36: [uninitvar] Uninitialized variable: iStack_2c
+  Line   37: [uninitvar] Uninitialized variable: iStack_28
+  Line   38: [uninitvar] Uninitialized variable: iStack_24
+  Line   39: [uninitvar] Uninitialized variable: iStack_20
+  Line   40: [uninitvar] Uninitialized variable: iStack_1c
+  Line   41: [uninitvar] Uninitialized variable: iStack_18
+  Line   42: [uninitvar] Uninitialized variable: iStack_14
+  Line   43: [uninitvar] Uninitialized variable: iStack_10
+  Line   44: [uninitvar] Uninitialized variable: iStack_c
+
+----------------------------------------------------------------------------------------------------
+shape_superopt.cpp_CPoly_scale_FUN_005cc7c0  [.cpp] [Cppcheck (quick)]
+  File: shape/superopt.cpp  (12 diagnostics)
+
+  Line  121: [uninitvar] Uninitialized variable: local_208
+  Line  122: [uninitvar] Uninitialized variable: local_200
+  Line  131: [uninitvar] Uninitialized variable: local_a0
+  Line  132: [uninitvar] Uninitialized variable: local_98
+  Line  167: [uninitvar] Uninitialized variable: local_70
+  Line  168: [uninitvar] Uninitialized variable: local_68
+  Line  177: [uninitvar] Uninitialized variable: local_d0
+  Line  178: [uninitvar] Uninitialized variable: local_c8
+  Line  213: [uninitvar] Uninitialized variable: local_28
+  Line  214: [uninitvar] Uninitialized variable: local_20
+  Line  223: [uninitvar] Uninitialized variable: local_118
+  Line  224: [uninitvar] Uninitialized variable: local_110
+
+----------------------------------------------------------------------------------------------------
+shape_superopt.cpp_CPoly_transform_FUN_005ccc30  [.cpp] [Cppcheck (quick)]
+  File: shape/superopt.cpp  (12 diagnostics)
+
+  Line   90: [uninitvar] Uninitialized variable: local_148
+  Line   90: [uninitvar] Uninitialized variable: local_150
+  Line  101: [uninitvar] Uninitialized variable: local_138
+  Line  102: [uninitvar] Uninitialized variable: local_130
+  Line  127: [uninitvar] Uninitialized variable: local_a0
+  Line  127: [uninitvar] Uninitialized variable: local_a8
+  Line  138: [uninitvar] Uninitialized variable: local_108
+  Line  139: [uninitvar] Uninitialized variable: local_100
+  Line  164: [uninitvar] Uninitialized variable: local_70
+  Line  164: [uninitvar] Uninitialized variable: local_78
+  Line  175: [uninitvar] Uninitialized variable: local_180
+  Line  176: [uninitvar] Uninitialized variable: local_178
 
 ----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep] [Cppcheck (quick)]
@@ -137,6 +168,17 @@ shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0  [.keep] [Cppcheck (quick)]
   Line  197: [uninitvar] Uninitialized variable: local_288
 
 ----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0  [.cpp] [Cppcheck (quick)]
+  File: core/set.cpp  (6 diagnostics)
+
+  Line  129: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  135: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  136: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  142: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  143: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  149: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
 shape_design.c_loadModelBinary_FUN_00458170  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (6 diagnostics)
 
@@ -157,6 +199,17 @@ shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50  [.keep] [Cp
   Line  159: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  166: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  173: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150  [.cpp] [Cppcheck (quick)]
+  File: shape/meshlod.cpp  (6 diagnostics)
+
+  Line   41: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line   43: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line   44: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line   45: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line   46: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line   47: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_course.cpp_renderCourseGizmo_FUN_00443760  [.keep] [Cppcheck (quick)]
@@ -187,6 +240,16 @@ shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10  [.keep] [Cppcheck (
   Line   46: [legacyUninitvar] Uninitialized variable: local_30
   Line   47: [uninitvar] Uninitialized variable: fStack_2c
   Line   48: [uninitvar] Uninitialized variable: fStack_28
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_mergeAdjacentPolygons_FUN_00462b70  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (5 diagnostics)
+
+  Line  112: [arrayIndexOutOfBoundsCond] Either the condition 'bVar5' is redundant or the array 'local_58[2]' is accessed at index 2, which is out of bounds.
+  Line  112: [uninitvar] Uninitialized variable: local_20
+  Line  116: [arrayIndexOutOfBoundsCond] Either the condition 'bVar5' is redundant or the array 'local_58[2]' is accessed at index 3, which is out of bounds.
+  Line  210: [selfAssignment] Redundant assignment of 'pSVar3' to itself.
+  Line  211: [selfAssignment] Redundant assignment of 'pSVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep] [Cppcheck (quick)]
@@ -252,6 +315,24 @@ shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090  [.keep] [C
   Line   97: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
+shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0  [.cpp] [Cppcheck (quick)]
+  File: shape/superopt.cpp  (4 diagnostics)
+
+  Line   70: [uninitvar] Uninitialized variable: local_a0
+  Line   71: [uninitvar] Uninitialized variable: local_98
+  Line   80: [uninitvar] Uninitialized variable: local_70
+  Line   81: [uninitvar] Uninitialized variable: local_68
+
+----------------------------------------------------------------------------------------------------
+shape_superopt.cpp_CObj_scale_FUN_005d2940  [.cpp] [Cppcheck (quick)]
+  File: shape/superopt.cpp  (4 diagnostics)
+
+  Line   73: [uninitvar] Uninitialized variable: local_58
+  Line   74: [uninitvar] Uninitialized variable: local_50
+  Line   83: [uninitvar] Uninitialized variable: local_b8
+  Line   84: [uninitvar] Uninitialized variable: local_b0
+
+----------------------------------------------------------------------------------------------------
 shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0  [.keep] [Cppcheck (quick)]
   File: shape/superopt.cpp  (4 diagnostics)
 
@@ -270,22 +351,31 @@ shape_superopt.cpp_CObj_transform_FUN_005d2c40  [.keep] [Cppcheck (quick)]
   Line   59: [uninitvar] Uninitialized variable: dStack_98
 
 ----------------------------------------------------------------------------------------------------
-wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322  [.keep] [Cppcheck (quick)]
-  File: wincore/windll.cpp  (4 diagnostics)
+shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30  [.cpp] [Cppcheck (quick)]
+  File: shape/superopt.cpp  (4 diagnostics)
 
-  Line   62: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   68: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   73: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   79: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   53: [uninitvar] Uninitialized variable: local_50
+  Line   54: [uninitvar] Uninitialized variable: local_48
+  Line   63: [uninitvar] Uninitialized variable: local_20
+  Line   64: [uninitvar] Uninitialized variable: local_18
 
 ----------------------------------------------------------------------------------------------------
-wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec  [.keep] [Cppcheck (quick)]
-  File: wincore/windll.cpp  (4 diagnostics)
+shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0  [.cpp] [Cppcheck (quick)]
+  File: shape/superopt.cpp  (4 diagnostics)
 
-  Line   62: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   68: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   73: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   79: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   60: [uninitvar] Uninitialized variable: local_40
+  Line   60: [uninitvar] Uninitialized variable: local_48
+  Line   76: [uninitvar] Uninitialized variable: local_70
+  Line   76: [uninitvar] Uninitialized variable: local_78
+
+----------------------------------------------------------------------------------------------------
+shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010  [.cpp] [Cppcheck (quick)]
+  File: shape/superopt.cpp  (4 diagnostics)
+
+  Line   95: [uninitvar] Uninitialized variable: local_90
+  Line   96: [uninitvar] Uninitialized variable: local_88
+  Line  105: [uninitvar] Uninitialized variable: local_78
+  Line  106: [uninitvar] Uninitialized variable: local_70
 
 ----------------------------------------------------------------------------------------------------
 core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppcheck (quick)]
@@ -294,6 +384,14 @@ core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppc
   Line   64: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
   Line   65: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
   Line   66: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+----------------------------------------------------------------------------------------------------
+core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004c8c90  [.cpp] [Cppcheck (quick)]
+  File: core/fire.cpp  (3 diagnostics)
+
+  Line   33: [uninitvar] Uninitialized variable: local_40
+  Line   33: [uninitvar] Uninitialized variable: local_48
+  Line   33: [uninitvar] Uninitialized variable: local_44
 
 ----------------------------------------------------------------------------------------------------
 core_gabriela.cpp_CGabriella_processAI_FUN_004d4190  [.keep] [Cppcheck (quick)]
@@ -336,48 +434,44 @@ shape_design.c_arePolygonsCoplanar_FUN_00461b70  [.keep] [Cppcheck (quick)]
   Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
+shape_design.c_deletePolygonRange_FUN_0045dd70  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (3 diagnostics)
+
+  Line   36: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
+  Line   55: [selfAssignment] Redundant assignment of 'pSVar3' to itself.
+  Line   56: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_deleteSinglePolygon_FUN_0045dcc0  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (3 diagnostics)
+
+  Line   33: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
+  Line   44: [selfAssignment] Redundant assignment of 'pSVar3' to itself.
+  Line   45: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (3 diagnostics)
+
+  Line   44: [selfAssignment] Redundant assignment of 'pSVar2' to itself.
+  Line   45: [selfAssignment] Redundant assignment of 'pSVar4' to itself.
+  Line   52: [selfAssignment] Redundant assignment of 'puVar3' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870  [.cpp] [Cppcheck (quick)]
+  File: shape/meshlod.cpp  (3 diagnostics)
+
+  Line  108: [objectIndex] The address of local variable 'local_84' might be accessed at non-zero index.
+  Line  109: [objectIndex] The address of local variable 'local_84' might be accessed at non-zero index.
+  Line  110: [objectIndex] The address of local variable 'local_84' might be accessed at non-zero index.
+
+----------------------------------------------------------------------------------------------------
 shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180  [.keep] [Cppcheck (quick)]
   File: shape/quantize.cpp  (3 diagnostics)
 
   Line   42: [nullPointer] Possible null pointer dereference: local_20
   Line   45: [nullPointerRedundantCheck] Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
   Line   47: [nullPointerRedundantCheck] Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
-
-----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480  [.keep] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (3 diagnostics)
-
-  Line   46: [selfAssignment] Redundant assignment of 'piVar3' to itself.
-  Line   55: [selfAssignment] Redundant assignment of 'piVar4' to itself.
-  Line   67: [selfAssignment] Redundant assignment of 'piVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
-cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0  [.keep] [Cppcheck (quick)]
-  File: cockpit/ckptutil.c  (2 diagnostics)
-
-  Line  116: [selfAssignment] Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-  Line  223: [selfAssignment] Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-
-----------------------------------------------------------------------------------------------------
-cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0  [.keep] [Cppcheck (quick)]
-  File: cockpit/drawsurf.cpp  (2 diagnostics)
-
-  Line   66: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   86: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30  [.keep] [Cppcheck (quick)]
-  File: cockpit/pkbitmap.cpp  (2 diagnostics)
-
-  Line   30: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   54: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20  [.keep] [Cppcheck (quick)]
-  File: cockpit/pkbitmap.cpp  (2 diagnostics)
-
-  Line   27: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   38: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_chain.cpp_fastSqrt_FUN_00431350  [.keep] [Cppcheck (quick)]
@@ -399,6 +493,13 @@ core_cloth.cpp_fastInvSqrt_FUN_0043e2a0  [.keep] [Cppcheck (quick)]
 
   Line   13: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
   Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
+core_course.cpp_renderCoursePoint_FUN_004436d0  [.cpp] [Cppcheck (quick)]
+  File: core/course.cpp  (2 diagnostics)
+
+  Line   19: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   29: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dskybox.cpp_renderSkyDome_FUN_004901f0  [.keep] [Cppcheck (quick)]
@@ -436,6 +537,13 @@ core_keyactor.cpp_CKeyActor_process_FUN_00501710  [.keep] [Cppcheck (quick)]
   Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
+core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70  [.cpp] [Cppcheck (quick)]
+  File: core/manpuz.cpp  (2 diagnostics)
+
+  Line  158: [selfAssignment] Redundant assignment of 'pCVar13' to itself.
+  Line  159: [selfAssignment] Redundant assignment of 'pCVar15' to itself.
+
+----------------------------------------------------------------------------------------------------
 core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0  [.keep] [Cppcheck (quick)]
   File: core/mimic.cpp  (2 diagnostics)
 
@@ -448,6 +556,20 @@ core_mimic.cpp_CMimic_setupCloth_FUN_00520500  [.keep] [Cppcheck (quick)]
 
   Line   45: [selfAssignment] Redundant assignment of 'piVar4' to itself.
   Line   46: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_mimic.cpp_CMimic_updatePose_FUN_0051f930  [.cpp] [Cppcheck (quick)]
+  File: core/mimic.cpp  (2 diagnostics)
+
+  Line  145: [selfAssignment] Redundant assignment of 'pCVar16' to itself.
+  Line  146: [selfAssignment] Redundant assignment of 'pCVar22' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0  [.cpp] [Cppcheck (quick)]
+  File: core/mission.cpp  (2 diagnostics)
+
+  Line   34: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   40: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  [.keep] [Cppcheck (quick)]
@@ -499,6 +621,27 @@ engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50  [.keep] [Cppcheck
   Line   94: [selfAssignment] Redundant assignment of 'piVar7' to itself.
 
 ----------------------------------------------------------------------------------------------------
+shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160  [.cpp] [Cppcheck (quick)]
+  File: shape/cramtex.cpp  (2 diagnostics)
+
+  Line  141: [identicalInnerCondition] Identical inner 'if' condition is always true.
+  Line  739: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_bisectMesh_FUN_0046ed50  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (2 diagnostics)
+
+  Line   81: [selfAssignment] Redundant assignment of 'pSVar16' to itself.
+  Line   82: [selfAssignment] Redundant assignment of 'pSVar17' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_complexPolygonReduction_FUN_00463b30  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (2 diagnostics)
+
+  Line  291: [selfAssignment] Redundant assignment of 'pSVar6' to itself.
+  Line  292: [selfAssignment] Redundant assignment of 'pSVar8' to itself.
+
+----------------------------------------------------------------------------------------------------
 shape_design.c_configureSinglePassPolygonReduction_FUN_00465560  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (2 diagnostics)
 
@@ -513,11 +656,25 @@ shape_design.c_mergeTrianglesIntoQuad_FUN_00462190  [.keep] [Cppcheck (quick)]
   Line  203: [selfAssignment] Redundant assignment of 'pSVar6' to itself.
 
 ----------------------------------------------------------------------------------------------------
+shape_design.c_quantizePaletteColors_FUN_0046b770  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (2 diagnostics)
+
+  Line   42: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   43: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
 shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (2 diagnostics)
 
   Line  571: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
   Line  572: [selfAssignment] Redundant assignment of 'pSVar6' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_triangulateDSE_FUN_0046e4d0  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (2 diagnostics)
+
+  Line   45: [selfAssignment] Redundant assignment of 'pSVar6' to itself.
+  Line   46: [selfAssignment] Redundant assignment of 'pSVar7' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_vertexReducer_FUN_00467850  [.keep] [Cppcheck (quick)]
@@ -548,23 +705,34 @@ shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590  [.keep] [Cpp
   Line  239: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40  [.keep] [Cppcheck (quick)]
-  File: sound/snddx.cpp  (2 diagnostics)
+core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044dde0  [.cpp] [Cppcheck (quick)]
+  File: core/dcamera.cpp  (1 diagnostics)
 
-  Line   36: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   37: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   19: [nullPointer] Possible null pointer dereference: pacVar1
 
 ----------------------------------------------------------------------------------------------------
-cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70  [.keep] [Cppcheck (quick)]
-  File: cockpit/pkbitmap.cpp  (1 diagnostics)
+core_dcamera.cpp_renderFlatColorScanline_FUN_004505e0  [.cpp] [Cppcheck (quick)]
+  File: core/dcamera.cpp  (1 diagnostics)
 
-  Line   59: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   70: [selfAssignment] Redundant assignment of 'iVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170  [.keep] [Cppcheck (quick)]
   File: core/dtrace.cpp  (1 diagnostics)
 
   Line   44: [nullPointerRedundantCheck] Either the condition 'pCVar3!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar3.
+
+----------------------------------------------------------------------------------------------------
+core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50  [.cpp] [Cppcheck (quick)]
+  File: core/dtrace.cpp  (1 diagnostics)
+
+  Line   41: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970  [.cpp] [Cppcheck (quick)]
+  File: core/dtrace.cpp  (1 diagnostics)
+
+  Line   20: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_elephant.cpp_CElephantGun_process_FUN_004a7070  [.keep] [Cppcheck (quick)]
@@ -591,16 +759,16 @@ core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0  [.keep] [Cppcheck (quick)]
   Line 1564: [selfAssignment] Redundant assignment of 'pbVar21' to itself.
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.keep] [Cppcheck (quick)]
-  File: core/game.cpp  (1 diagnostics)
-
-  Line  103: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0  [.keep] [Cppcheck (quick)]
   File: core/lightgun.cpp  (1 diagnostics)
 
   Line   24: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
+core_menu.cpp_adjustMouseSensitivity_FUN_005107c0  [.cpp] [Cppcheck (quick)]
+  File: core/menu.cpp  (1 diagnostics)
+
+  Line   40: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 core_mission.cpp_CDemonMission_loadActor_FUN_00523990  [.keep] [Cppcheck (quick)]
@@ -657,6 +825,18 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810  [.keep] [
   Line 1141: [selfAssignment] Redundant assignment of 'piVar35' to itself.
 
 ----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430  [.cpp] [Cppcheck (quick)]
+  File: core/skeleton.cpp  (1 diagnostics)
+
+  Line   20: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_005a0410  [.cpp] [Cppcheck (quick)]
+  File: core/skeleton.cpp  (1 diagnostics)
+
+  Line   20: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0  [.keep] [Cppcheck (quick)]
   File: core/skeleton.cpp  (1 diagnostics)
 
@@ -669,10 +849,28 @@ engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60  [.keep] [Cppcheck (quick)]
   Line   52: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40  [.cpp] [Cppcheck (quick)]
+  File: engine/fileio.cpp  (1 diagnostics)
+
+  Line  134: [identicalInnerCondition] Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50  [.cpp] [Cppcheck (quick)]
+  File: engine/fileio.cpp  (1 diagnostics)
+
+  Line   48: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
+
+----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (1 diagnostics)
 
   Line   24: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_readTimestampFile_FUN_004b23a0  [.cpp] [Cppcheck (quick)]
+  File: engine/fileio.cpp  (1 diagnostics)
+
+  Line   99: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 engine_model.c_getMRGLBounds_FUN_00528140  [.keep] [Cppcheck (quick)]
@@ -681,10 +879,52 @@ engine_model.c_getMRGLBounds_FUN_00528140  [.keep] [Cppcheck (quick)]
   Line  134: [uninitvar] Uninitialized variable: *puVar11
 
 ----------------------------------------------------------------------------------------------------
+shape_design.c_centerVerticesAroundPoint_FUN_0045ea90  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   58: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_configureFullPassPolygonReduction_FUN_00465810  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   41: [selfAssignment] Redundant assignment of 'pbVar3' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_cramTextures_FUN_0046a970  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   62: [nullPointer] Possible null pointer dereference: local_18
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_createBoxPrimitive_FUN_0045e520  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   59: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_createCenterVertex_FUN_00469690  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   55: [selfAssignment] Redundant assignment of 'pcVar3' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_createKeyframeModel_FUN_00468320  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   46: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
 shape_design.c_findVertexListInModel_FUN_00468000  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (1 diagnostics)
 
   Line   15: [nullPointerRedundantCheck] Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_generateGlobe_FUN_00468910  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   75: [selfAssignment] Redundant assignment of 'pcVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_generateOctant_FUN_00469420  [.keep] [Cppcheck (quick)]
@@ -693,10 +933,28 @@ shape_design.c_generateOctant_FUN_00469420  [.keep] [Cppcheck (quick)]
   Line   75: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
+shape_design.c_generateShell_FUN_00468f20  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   75: [selfAssignment] Redundant assignment of 'pcVar3' to itself.
+
+----------------------------------------------------------------------------------------------------
 shape_design.c_getVertexCountFromModel_FUN_00468080  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (1 diagnostics)
 
   Line   15: [nullPointerRedundantCheck] Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_sizeForStadium_FUN_00469c70  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   81: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90  [.cpp] [Cppcheck (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   51: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0  [.keep] [Cppcheck (quick)]
@@ -705,10 +963,22 @@ shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0  [.keep] [Cppcheck (quick)]
   Line   19: [nullPointerArithmeticRedundantCheck] Either the condition 'user_ptr!=(void*)0x0' is redundant or there is overflow in pointer subtraction.
 
 ----------------------------------------------------------------------------------------------------
+shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630  [.cpp] [Cppcheck (quick)]
+  File: shape/meshlod.cpp  (1 diagnostics)
+
+  Line  360: [legacyUninitvar] Uninitialized variable: local_7c
+
+----------------------------------------------------------------------------------------------------
 shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910  [.keep] [Cppcheck (quick)]
   File: shape/meshlod.cpp  (1 diagnostics)
 
   Line  315: [identicalInnerCondition] Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+shape_quantize.cpp_displayProgressBar_FUN_005568f0  [.cpp] [Cppcheck (quick)]
+  File: shape/quantize.cpp  (1 diagnostics)
+
+  Line   35: [nullPointerArithmetic] Pointer addition with NULL pointer.
 
 ----------------------------------------------------------------------------------------------------
 shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70  [.keep] [Cppcheck (quick)]
@@ -729,16 +999,22 @@ shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0  [.keep] [Cppcheck (qui
   Line   65: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
+shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0  [.cpp] [Cppcheck (quick)]
+  File: shape/superopt.cpp  (1 diagnostics)
+
+  Line   27: [memleak] Memory leak: ppCVar2
+
+----------------------------------------------------------------------------------------------------
+shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00  [.cpp] [Cppcheck (quick)]
+  File: shape/superopt.cpp  (1 diagnostics)
+
+  Line  151: [selfAssignment] Redundant assignment of 'iVar7' to itself.
+
+----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
   Line   46: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
-
-----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20  [.keep] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (1 diagnostics)
-
-  Line  120: [selfAssignment] Redundant assignment of 'piVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_00533f80  [.keep] [Cppcheck (quick)]
@@ -753,12 +1029,6 @@ sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30  [.keep] [Cppcheck (quick)]
   Line   29: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50  [.keep] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (1 diagnostics)
-
-  Line  132: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660  [.keep] [Cppcheck (quick)]
   File: sound/snddx.cpp  (1 diagnostics)
 
@@ -769,15 +1039,3 @@ sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830  [.keep] [Cppcheck (quic
   File: sound/snddx.cpp  (1 diagnostics)
 
   Line   71: [nullPointerRedundantCheck] Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
-
-----------------------------------------------------------------------------------------------------
-sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120  [.keep] [Cppcheck (quick)]
-  File: sound/snddx.cpp  (1 diagnostics)
-
-  Line   48: [identicalInnerCondition] Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0  [.keep] [Cppcheck (quick)]
-  File: sound/sndmain.cpp  (1 diagnostics)
-
-  Line   78: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour

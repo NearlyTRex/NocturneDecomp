@@ -31,8 +31,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CM
     if (side_info->channels[granule].granules[channel].mixed_block_flag != 0) {
       piVar2 = piVar1;
       do {
-        piVar2 = piVar2 + 1;
         *piVar2 = this_ptr->layer3_scalefactors[iVar8];
+        piVar2 = piVar2 + 1;
         iVar8 = iVar8 + 1;
       } while (piVar2 != piVar1 + 8);
       iVar10 = 0x2a;
@@ -41,9 +41,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CM
         piVar3 = scalefactor_dest + granule * 0x3e + iVar9;
         do {
           piVar3 = piVar3 + 0xd;
-          piVar3[0x17] = this_ptr->layer3_scalefactors[iVar8];
+          piVar3[0xa] = this_ptr->layer3_scalefactors[iVar8];
           iVar8 = iVar8 + 1;
-          piVar3 = piVar3;
         } while (piVar3 != &scalefactor_dest[granule * 0x3e + iVar10]);
         iVar9 = iVar9 + 1;
         iVar10 = iVar10 + 1;
@@ -51,8 +50,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CM
       piVar4 = scalefactor_dest + granule * 0x3e + 0xc;
       do {
         piVar4 = piVar4 + 0xd;
-        piVar4[0x17] = 0;
-        piVar4 = piVar4;
+        piVar4[0xa] = 0;
       } while (piVar4 != scalefactor_dest + granule * 0x3e + 0x33);
       return;
     }
@@ -62,9 +60,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CM
       piVar5 = piVar1 + iVar11;
       do {
         piVar5 = piVar5 + 0xd;
-        piVar5[0x17] = this_ptr->layer3_scalefactors[iVar8];
+        piVar5[0xa] = this_ptr->layer3_scalefactors[iVar8];
         iVar8 = iVar8 + 1;
-        piVar5 = piVar5;
       } while (piVar5 != &piVar1[iVar10]);
       iVar11 = iVar11 + 1;
       iVar10 = iVar10 + 1;

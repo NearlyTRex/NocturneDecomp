@@ -305,6 +305,44 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CObj_scale_FUN_005d2940.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 18,
+          "line": 73,
+          "message": "Uninitialized variable: local_58",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 18,
+          "line": 74,
+          "message": "Uninitialized variable: local_50",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 18,
+          "line": 83,
+          "message": "Uninitialized variable: local_b8",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 18,
+          "line": 84,
+          "message": "Uninitialized variable: local_b0",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -393,6 +431,38 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_1c;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Uninitialized variable: local_58",
+      "line": 73,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_40 = local_58 * dVar2;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_50",
+      "line": 74,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_38 = local_50 * dVar3;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_b8",
+      "line": 83,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_a0 = local_b8 + pivot->y;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_b0",
+      "line": 84,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_98 = local_b0 + pivot->z;",
+      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

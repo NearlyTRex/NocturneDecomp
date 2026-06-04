@@ -272,6 +272,30 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "bisectMesh_FUN_0046ed50.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 19,
+          "line": 81,
+          "message": "Redundant assignment of 'pSVar16' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 19,
+          "line": 82,
+          "message": "Redundant assignment of 'pSVar17' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -368,6 +392,22 @@
       "severity": "moderate",
       "text": "// 0046f224: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar16' to itself.",
+      "line": 81,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar16 = pSVar16;",
+      "type": "static_self_assignment"
+    },
+    {
+      "description": "Redundant assignment of 'pSVar17' to itself.",
+      "line": 82,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pSVar17 = pSVar17;",
+      "type": "static_self_assignment"
     }
   ]
 }

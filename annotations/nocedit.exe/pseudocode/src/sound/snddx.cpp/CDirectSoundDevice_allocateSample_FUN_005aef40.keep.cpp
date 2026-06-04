@@ -33,8 +33,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDire
       local_24.wFormatTag = 1;
       local_24.nChannels = (WORD)channel_count;
       local_24.nSamplesPerSec = sample_rate;
-      iVar2 = (int)((bits_per_sample + (bits_per_sample >> 0x1f) * -8) -
-                   (uint)((bits_per_sample >> 0x1f) << 2 < 0)) >> 3;
+      iVar2 = bits_per_sample / 8;
       local_24.nBlockAlign = (short)iVar2 * local_24.nChannels;
       local_24.nAvgBytesPerSec = sample_rate * (uint)local_24.nBlockAlign;
       local_24.wBitsPerSample = (WORD)bits_per_sample;

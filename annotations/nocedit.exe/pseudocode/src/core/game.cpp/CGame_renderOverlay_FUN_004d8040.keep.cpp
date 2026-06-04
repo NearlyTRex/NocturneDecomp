@@ -29,8 +29,6 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
   CBitFont *local_38;
   int local_20;
   char (*local_1c) [256];
-  CGame *local_18;
-  char (*pacVar2) [256];
   float fVar1;
   
   iVar9 = g_WindowHeight;
@@ -100,16 +98,15 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
       local_44 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_40,0x58);
     }
     iVar8 = iVar1 / 0x50;
-    iVar1 = iVar8 + ((int)((iVar1 + (iVar1 >> 0x1f) * -4) - (uint)((iVar1 >> 0x1f) << 1 < 0)) >> 2);
+    iVar1 = iVar8 + iVar1 / 4;
     iVar9 = iVar9 - iVar9 / 0x50;
     local_20 = 0;
     if (0 < this_ptr->status_display_count) {
       local_1c = this_ptr->status_bar_names;
-      local_18 = this_ptr;
       do {
         iVar2 = iVar9 - local_44;
         iVar10 = 2;
-        fVar1 = local_18->status_bar_values[0];
+        fVar1 = this_ptr->status_bar_values[local_20];
         if (fVar1 < (float)0.59999999999999998) {
           iVar10 = 0xfb;
         }
@@ -123,7 +120,6 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
         }
         engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_40,*local_1c,iVar8,iVar2,0xf8,0);
         local_1c = local_1c + 1;
-        local_18 = (CGame *)&local_18->game_pixy;
         iVar9 = iVar9 - (local_44 * 3) / 2;
         local_20 = local_20 + 1;
       } while (local_20 < this_ptr->status_display_count);

@@ -275,31 +275,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "directSoundEnumerationCallback_FUN_005b0120.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 18,
-          "line": 48,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 48,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (local_10 != (LPDIRECTSOUND)0x0) {",
-      "type": "static_identical_inner_condition"
-    }
-  ]
+  "suspects": []
 }

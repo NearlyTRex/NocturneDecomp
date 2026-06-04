@@ -4463,16 +4463,26 @@ def identify_unrolled_strchr_loops(decompiled_code):
 
 _PREINC_ADVANCE_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\([A-Za-z_]\w*\s*\*\)\s*[^;]*?&[^;]*?\b\1->[^;]*?;\s*$")
+# Primitive-pointer advance form: `pX = pX + N;` (plain pointer arithmetic on an
+# int*/uint* walker), the counterpart to the struct-field advance above. Seen in
+# the mp3 scalefactor readers, where the walker is a flat `int *` so Ghidra emits
+# `piVar3 = piVar3 + 0xd;` instead of `piVar3 = (T *)&piVar3->field;`.
+_PREINC_ADVANCE_PTRARITH_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*\1\s*\+\s*(?:0x[0-9a-fA-F]+|\d+)\s*;\s*$")
 _PREINC_SELFASSIGN_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\1\s*;\s*$")
 _PREINC_ARRAY0_RE = re.compile(
     r"\b(\w+)->\w+\[0\]")
+# Constant-index store on the advanced primitive walker: `pX[K] = ...;`. The flat
+# `int *` counterpart of the `pX->arr[0]` struct-field store.
+_PREINC_INDEX_STORE_RE = re.compile(
+    r"^\s*(\w+)\s*\[\s*(?:0x[0-9a-fA-F]+|\d+)\s*\]\s*=")
 
 
 def identify_preinc_loop_idiom(decompiled_code):
     """Detect Ghidra's pre-increment-array-walk loop decompile artifact.
 
-    Canonical shape:
+    Canonical shapes (struct-walker and flat-primitive-walker variants):
         pX = start;
         do {
             pX = (T *)&(pX->field)...;      // advance via struct-field pointer arithmetic
@@ -4480,6 +4490,18 @@ def identify_preinc_loop_idiom(decompiled_code):
             ...
             pX = pX;                         // self-assignment no-op
         } while (pX != end_marker);
+
+        pX = start;                          // pX is a flat int*/uint* walker
+        do {
+            pX = pX + N;                     // advance via plain pointer arithmetic
+            pX[K] = value;                   // constant-index store on advanced pointer
+            ...
+            pX = pX;                         // self-assignment no-op
+        } while (pX != end_marker);
+
+    The flat-walker variant is the one behind the mp3 scalefactor skip-row bugs:
+    the store offset Ghidra emits already folds in the per-iteration advance, so
+    the loop writes one element too far (skipping element 0, overrunning the end).
 
     This pattern is always a Ghidra loop decode artifact. The underlying asm
     varies (compensated offsets with pre-increment, same-address repeated
@@ -4513,7 +4535,7 @@ def identify_preinc_loop_idiom(decompiled_code):
         # Must contain all three markers referring to the same variable.
         advance_match = None
         for bl in body_lines:
-            m = _PREINC_ADVANCE_RE.match(bl)
+            m = _PREINC_ADVANCE_RE.match(bl) or _PREINC_ADVANCE_PTRARITH_RE.match(bl)
             if m:
                 advance_match = m
                 break
@@ -4523,22 +4545,27 @@ def identify_preinc_loop_idiom(decompiled_code):
         has_array0 = any(
             m.group(1) == var
             for m in _PREINC_ARRAY0_RE.finditer(body_text))
+        has_index_store = any(
+            _PREINC_INDEX_STORE_RE.match(bl)
+            and _PREINC_INDEX_STORE_RE.match(bl).group(1) == var
+            for bl in body_lines)
         has_selfassign = any(
             _PREINC_SELFASSIGN_RE.match(bl)
             and _PREINC_SELFASSIGN_RE.match(bl).group(1) == var
             for bl in body_lines)
-        if not (has_array0 and has_selfassign):
+        if not ((has_array0 or has_index_store) and has_selfassign):
             continue
         suspects.append({
             'line': i + 1,
             'type': 'preinc_loop_idiom',
-            'match': "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",
+            'match': "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",
             'text': lines[i].strip()[:120],
             'description': (
                 "Ghidra pre-increment-array-walk loop artifact on `{var}` "
-                "(struct-field advance + constant `[0]` index + self-assign "
-                "no-op). Always wrong as-decoded; cross-reference .asm and "
-                "rewrite as a straightforward for-loop in a .keep.").format(
+                "(struct-field or pointer-arithmetic advance + constant index + "
+                "self-assign no-op). Always wrong as-decoded; cross-reference "
+                ".asm and rewrite as a straightforward for-loop in a .keep "
+                "(watch for the skip-row store-offset bug).").format(
                     var=var),
             'severity': 'moderate',
         })

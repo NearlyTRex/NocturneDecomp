@@ -182,5 +182,31 @@
       }
     ]
   },
-  "suspects": []
+  "static_analysis": {
+    "analyzed_file": "configureFullPassPolygonReduction_FUN_00465810.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 12,
+          "line": 41,
+          "message": "Redundant assignment of 'pbVar3' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Redundant assignment of 'pbVar3' to itself.",
+      "line": 41,
+      "match": "Cppcheck: redundant self-assignment",
+      "severity": "mild",
+      "text": "pbVar3 = pbVar3;",
+      "type": "static_self_assignment"
+    }
+  ]
 }

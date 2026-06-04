@@ -13,7 +13,6 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuan
   int iVar2;
   int iVar3;
   int iVar4;
-  uint uVar4;
   int iVar5;
   int iVar7;
   int iVar8;
@@ -129,8 +128,7 @@ LAB_00531ee0:
           fVar9 = pow((float10)2,(float10)iVar3 * (float10)0.25);
         }
         *local_18 = (float)fVar9;
-        uVar4 = *local_30 >> 0x1f;
-        iVar3 = (*local_30 ^ uVar4) - uVar4;
+        iVar3 = ABS(*local_30);
         if (iVar3 < 200) {
           *local_18 = *local_18 * (float)g_MpegRequantPowerTable[iVar3];
         }

@@ -16,14 +16,16 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(SMRGLPrimit
   SMRGLPrimitiveTriangle *pSVar3;
   
   vertex_data = (CVector3i *)0x0;
+  pSVar3 = (SMRGLPrimitiveTriangle *)0x0;
   iVar1 = (primitive_list->base).base.type;
-  while (pSVar3 = (SMRGLPrimitiveTriangle *)0x0, iVar1 != 0) {
-    if ((primitive_list->base).base.type == 2) {
+  while (iVar1 != 0) {
+    if (iVar1 == 2) {
       vertex_data = (CVector3i *)&(primitive_list->base).surface_normal.B;
     }
-    iVar1 = (primitive_list->base).base.type;
-    pSVar3 = primitive_list;
-    if (((iVar1 == 0x18) || (iVar1 == 0x29)) || (iVar1 == 0x19)) break;
+    if ((iVar1 == 0x18) || (iVar1 == 0x29) || (iVar1 == 0x19)) {
+      pSVar3 = primitive_list;
+      break;
+    }
     uVar2 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)primitive_list);
     primitive_list = (SMRGLPrimitiveTriangle *)((char *)primitive_list + (uVar2 & 0xfffffffc));
     iVar1 = (primitive_list->base).base.type;

@@ -63,8 +63,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(CDraw
     iVar5 = iVar1 * 2 - iVar3;
     if (-1 < iVar3) {
       do {
-        if ((int)((local_18 ^ (int)local_18 >> 0x1f) - ((int)local_18 >> 0x1f)) % (g_DashLength * 2)
-            < g_DashLength) {
+        if (ABS((int)local_18) % (g_DashLength * 2) < g_DashLength) {
           cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr,x,y);
         }
         if (0 < iVar5) {
@@ -83,8 +82,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(CDraw
     iVar5 = iVar3 * 2 - iVar1;
     if (-1 < iVar1) {
       do {
-        if ((int)((local_18 ^ (int)local_18 >> 0x1f) - ((int)local_18 >> 0x1f)) % (g_DashLength * 2)
-            < g_DashLength) {
+        if (ABS((int)local_18) % (g_DashLength * 2) < g_DashLength) {
           cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr,x,y);
         }
         if (0 < iVar5) {

@@ -11,20 +11,17 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
 
 {
   CHero *pCVar1;
-  CDemonMission *pCVar2;
   int iVar3;
   
   if (this_ptr->delete_queue_count != 0) {
     iVar3 = 0;
-    pCVar2 = this_ptr;
     if (0 < this_ptr->delete_queue_count) {
       do {
         core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                  (pCVar2->delete_queue_actors[0],"..\\core\\mission.cpp",0x46b);
-        iVar3 = iVar3 + 1;
+                  (this_ptr->delete_queue_actors[iVar3],"..\\core\\mission.cpp",0x46b);
         core_mission_cpp_CDemonMission_removeActor_FUN_00523f20
-                  (this_ptr,pCVar2->delete_queue_actors[0],pCVar2->delete_queue_flags[0]);
-        pCVar2 = (CDemonMission *)&pCVar2->is_in_editor;
+                  (this_ptr,this_ptr->delete_queue_actors[iVar3],this_ptr->delete_queue_flags[iVar3]);
+        iVar3 = iVar3 + 1;
       } while (iVar3 < this_ptr->delete_queue_count);
     }
     this_ptr->delete_queue_count = 0;
