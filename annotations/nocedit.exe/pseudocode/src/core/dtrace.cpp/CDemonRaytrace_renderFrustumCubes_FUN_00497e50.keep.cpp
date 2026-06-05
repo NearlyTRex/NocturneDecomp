@@ -243,12 +243,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
   if ((4 < this_ptr->rendering_mode) || (this_ptr->rendering_mode < 0)) {
     this_ptr->rendering_mode = 1;
   }
-  iVar7 = (g_InverseMatrix.m[2].x ^ g_InverseMatrix.m[2].x >> 0x1f) -
-          (g_InverseMatrix.m[2].x >> 0x1f);
-  iVar1 = (g_InverseMatrix.m[2].y ^ g_InverseMatrix.m[2].y >> 0x1f) -
-          (g_InverseMatrix.m[2].y >> 0x1f);
-  iVar6 = (g_InverseMatrix.m[2].z ^ g_InverseMatrix.m[2].z >> 0x1f) -
-          (g_InverseMatrix.m[2].z >> 0x1f);
+  iVar7 = ABS(g_InverseMatrix.m[2].x);
+  iVar1 = ABS(g_InverseMatrix.m[2].y);
+  iVar6 = ABS(g_InverseMatrix.m[2].z);
   if ((iVar7 < iVar1) || (iVar7 < iVar6)) {
     if ((iVar1 < iVar7) || (iVar1 < iVar6)) {
       if (iVar11 <= (this_ptr->grid_bounds_max).z) {

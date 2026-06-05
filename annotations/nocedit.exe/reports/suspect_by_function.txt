@@ -5,132 +5,15 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6148 (95.3%)
-With suspects: 306
-Total suspects: 1979
+Clean: 6154 (95.4%)
+With suspects: 300
+Total suspects: 1912
 
 ====================================================================================================
-core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0 (2 suspects)
-  File: core/actor.cpp
+core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400 (1 suspect)
+  File: core/bugs.cpp
 ====================================================================================================
-  Line 8 [signed_shift_global_idiom]: ((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -8) -
-  Line 9 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 2 < 0)) >> 3) + g_ClipLeft,*y_position);
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (1 suspect)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 38 [signed_shift_global_idiom]: iVar5 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 37 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.x + iVar6) =
-  Line 38 [pointer_cast]: (float)*(int *)((int)&this_ptr->vertex_list->x + iVar5) * fVar3;
-  Line 39 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.y + iVar6) =
-  Line 40 [pointer_cast]: (float)*(int *)((int)&this_ptr->vertex_list->y + iVar5) * fVar3;
-  Line 41 [pointer_cast]: piVar1 = (int *)((int)&this_ptr->vertex_list->z + iVar5);
-  Line 43 [pointer_cast]: *(float *)((int)&g_LoadedVertices[0].vertex.z + iVar6) = (float)*piVar1 * fVar3;
-  Line 55 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar10 + 0x40) = 0;
-  Line 61 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar10 + -0x14) =
-  Line 62 [pointer_cast]: *(uint *)((int)this_ptr->poly_vert_list->vertices + local_18 + -0x14);
-  Line 64 [pointer_cast]: if (0 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar10 + -0x14)) {
-  Line 68 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar7) =
-  Line 70 [pointer_cast]: ((int)&this_ptr->poly_vert_list->vertices[0].vertex_index + iVar9 + local_18);
-  Line 71 [pointer_cast]: *(float *)((int)g_ModelPolygonData[0].uv_u + iVar7) =
-  Line 72 [pointer_cast]: (float)*(int *)((int)&this_ptr->poly_vert_list->vertices[0].texture_u +
-  Line 77 [pointer_cast]: *(float *)((int)g_ModelPolygonData[0].uv_v + iVar7) =
-  Line 78 [pointer_cast]: (float)*(int *)((int)&this_ptr->poly_vert_list->vertices[0].texture_v + iVar4) *
-  Line 81 [pointer_cast]: } while (iVar11 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar10 + -0x14));
-  Line 83 [pointer_cast]: pcVar9 = this_ptr->texture_list[*(int *)((int)this_ptr->poly_texture_index_list + local_20)].
-  Line 88 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (8 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 27 [unrolled_strchr]: do {
-  Line 39 [unrolled_strchr]: do {
-  Line 82 [pointer_cast]: puVar2 = (uint *)((int)&pCVar5->z + iVar8);
-  Line 83 [pointer_cast]: puVar3 = (uint *)((int)&pCVar5->y + iVar8);
-  Line 84 [pointer_cast]: puVar1 = (uint *)((int)&pCVar5->x + iVar8);
-  Line 94 [pointer_cast]: iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
-  Line 98 [pointer_cast]: *(uint *)((int)this_ptr->poly_texture_index_list + local_1c),
-  Line 144 [shadow_pointer_walk]: pCVar7 = (CKeyFramedModel *)(pCVar7->model_filename + 8);
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10 (16 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 38 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->x + iVar5) =
-  Line 39 [pointer_cast]: (int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4) * dVar3))
-  Line 41 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->y + iVar5) =
-  Line 42 [pointer_cast]: (int)ROUND(ROUND((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar4) * dVar3))
-  Line 44 [pointer_cast]: pfVar1 = (float *)((int)&g_LoadedVertices[0].vertex.z + iVar4);
-  Line 46 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->z + iVar5) = (int)ROUND(ROUND((double)*pfVar1 * dVar3));
-  Line 60 [pointer_cast]: *(uint *)((int)this_ptr->poly_vert_list->vertices + local_14 + -0x14) =
-  Line 67 [pointer_cast]: ((int)&this_ptr->poly_vert_list->vertices[0].vertex_index + iVar7 + local_14) =
-  Line 68 [pointer_cast]: *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar3);
-  Line 69 [pointer_cast]: *(int *)((int)&this_ptr->poly_vert_list->vertices[0].texture_u + iVar7 + local_14) =
-  Line 70 [pointer_cast]: (int)ROUND(ROUND((double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar3) * dVar2)
-  Line 72 [pointer_cast]: *(int *)((int)&this_ptr->poly_vert_list->vertices[0].texture_v + iVar7 + local_14) =
-  Line 73 [pointer_cast]: (int)ROUND(ROUND((double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar3) * dVar2)
-  Line 98 [unrolled_strcpy]: do {
-  Line 111 [pointer_cast]: *(int *)((int)this_ptr->poly_texture_index_list + local_1c) = iVar3;
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (8 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 55 [pointer_cast]: pCVar1 = pCVar3 + *(int *)((int)&pSVar1->vertices[0].vertex_index + local_28);
-  Line 59 [pointer_cast]: pCVar4 = pCVar3 + *(int *)((int)&pSVar1->vertices[1].vertex_index + local_28);
-  Line 64 [pointer_cast]: if (2 < *(int *)((int)pSVar1->vertices + local_28 + -0x14)) {
-  Line 65 [pointer_cast]: local_1c = (int)&pSVar1->vertices[0].vertex_index + local_28;
-  Line 74 [unrolled_memcpy]: local_5c.x = local_44.x;
-  Line 86 [unrolled_memcpy]: output_normal->x = local_98.x;
-  Line 93 [pointer_cast]: } while (iVar3 < *(int *)((int)pSVar1->vertices + local_28 + -0x14));
-  Line 120 [unrolled_memcpy]: output_normal->x = pCVar2->x;
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (8 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 56 [pointer_cast]: iVar3 = (int)&(((SMRGLPrimitiveQuad *)(model_ptr->poly_vert_list->vertices + -2))->base)
-  Line 89 [unrolled_strcpy]: do {
-  Line 112 [pointer_cast]: piVar4 = (int *)((int)model_ptr->poly_texture_index_list + iStack_2c);
-  Line 118 [pointer_cast]: [*(int *)((int)model_ptr->poly_texture_index_list + iStack_2c)].textures[0]
-  Line 120 [pointer_cast]: iVar9 = (int)&(((SMRGLPrimitiveQuad *)(model_ptr->poly_vert_list->vertices + -2))->base).base.
-  Line 150 [pointer_cast]: *(int *)((int)model_ptr->poly_texture_index_list + iStack_2c) = iVar5;
-  Line 163 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (10 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 32 [unrolled_memcpy]: (this_ptr->transform_vector).x = transform_vector->x;
-  Line 50 [pointer_cast]: pCVar1 = pCVar3 + iVar5 + *(int *)((int)&pSVar4->vertices[0].vertex_index + local_24);
-  Line 54 [pointer_cast]: pCVar6 = pCVar3 + iVar5 + *(int *)((int)&pSVar4->vertices[1].vertex_index + local_24);
-  Line 61 [unrolled_memcpy]: local_48.x = pCVar2->x;
-  Line 68 [unrolled_memcpy]: local_54.x = pCVar7->x;
-  Line 73 [pointer_cast]: if (2 < *(int *)((int)pSVar4->vertices + local_24 + -0x14)) {
-  Line 74 [pointer_cast]: iVar3 = (int)&pSVar4->vertices[0].vertex_index + local_24;
-  Line 83 [unrolled_memcpy]: local_60.x = pCVar7->x;
-  Line 91 [unrolled_memcpy]: local_54.x = local_60.x;
-  Line 97 [pointer_cast]: } while (iVar4 < *(int *)((int)pSVar4->vertices + local_24 + -0x14));
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 (6 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 32 [stack_alignment_array]: int aiStackY_1070 [1015];
-  Line 89 [pointer_cast]: piVar3 = (int *)((int)&this_ptr->vertex_list->x + iVar2);
-  Line 102 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->x + iVar2) = (int)ROUND(ROUND(dVar20));
-  Line 109 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->y + iVar2) = (int)ROUND(ROUND(dVar20));
-  Line 114 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->z + iVar2) = (int)ROUND(ROUND(dVar20));
+  Line 92 [concat_reconstruction]: (0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
@@ -140,120 +23,47 @@ core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
   Line 87 [unrolled_memcpy]: // 0047a936: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_dskybox.cpp_renderSkyDome_FUN_004901f0 (2 suspects)
-  File: core/dskybox.cpp
+core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0 (32 suspects)
+  File: core/dstrender.cpp
 ====================================================================================================
-  Line 140 [static_shift_too_many_bits]: iVar3 = iVar6 >> 0x1f;
-  Line 145 [static_shift_too_many_bits]: (int)((iVar5 + (iVar5 >> 0x1f) * -4) - (uint)((iVar5 >> 0x1f) << 1 < 0)) >> 2 ^ 0xffffff;
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (6 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 306 [signed_shift_global_idiom]: iVar7 = (g_InverseMatrix.m[2].x ^ g_InverseMatrix.m[2].x >> 0x1f) -
-  Line 307 [signed_shift_global_idiom]: (g_InverseMatrix.m[2].x >> 0x1f);
-  Line 308 [signed_shift_global_idiom]: iVar1 = (g_InverseMatrix.m[2].y ^ g_InverseMatrix.m[2].y >> 0x1f) -
-  Line 309 [signed_shift_global_idiom]: (g_InverseMatrix.m[2].y >> 0x1f);
-  Line 310 [signed_shift_global_idiom]: iVar6 = (g_InverseMatrix.m[2].z ^ g_InverseMatrix.m[2].z >> 0x1f) -
-  Line 311 [signed_shift_global_idiom]: (g_InverseMatrix.m[2].z >> 0x1f);
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50 (1 suspect)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 41 [static_shift_too_many_bits]: uVar9 = (int)uVar8 >> 0x1f;
-
-====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970 (1 suspect)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 20 [static_shift_too_many_bits]: ((iVar2 = (int)((iVar2 + (iVar2 >> 0x1f) * -8) - (uint)((iVar2 >> 0x1f) << 2 < 0)) >> 3,
-
-====================================================================================================
-core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
-  File: core/elephant.cpp
-====================================================================================================
-  Line 25 [static_invalid_pointer_cast]: if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {
-
-====================================================================================================
-core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004c8c90 (3 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 33 [static_uninitvar]: fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
-  Line 33 [static_uninitvar]: fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
-  Line 33 [static_uninitvar]: fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
-
-====================================================================================================
-core_fire.cpp_CFireball_process_FUN_004c0b30 (4 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 35 [signed_shift_global_idiom]: ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
-  Line 36 [signed_shift_global_idiom]: (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
-  Line 50 [static_shift_too_many_bits]: iVar2 = (iVar2 + (iVar2 >> 0x1f) * -0x100) - (uint)((iVar2 >> 0x1f) << 7 < 0);
-  Line 51 [static_shift_too_many_bits]: iVar4 = iVar2 >> 0x1f;
-
-====================================================================================================
-core_fire.cpp_CRock_process_FUN_004c17f0 (2 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 24 [signed_shift_global_idiom]: ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
-  Line 25 [signed_shift_global_idiom]: (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2) * (longlong)iVar2;
+  Line 81 [concat_reconstruction]: [*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];
+  Line 85 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
+  Line 90 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
+  Line 95 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
+  Line 100 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
+  Line 105 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
+  Line 110 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
+  Line 115 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
+  Line 120 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
+  Line 125 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
+  Line 130 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
+  Line 135 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
+  Line 140 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
+  Line 145 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
+  Line 148 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
+  Line 151 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)(iVar8 + iVar11) >> 8),
+  Line 177 [concat_reconstruction]: [*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];
+  Line 182 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8)) +
+  Line 188 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))
+  Line 194 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8)
+  Line 200 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
+  Line 207 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
+  Line 214 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
+  Line 221 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
+  Line 228 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
+  Line 235 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
+  Line 242 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
+  Line 249 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
+  Line 256 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
+  Line 263 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
+  Line 268 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
+  Line 273 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)(iVar8 +
 
 ====================================================================================================
 core_fire.cpp_updateTextureAnimCounts_FUN_004c3870 (1 suspect)
   File: core/fire.cpp
 ====================================================================================================
   Line 7 [signed_shift_global_idiom]: iVar1 = g_GlobalDeltaTimeInt >> 0x1f;
-
-====================================================================================================
-core_flame.cpp_CFlame_updateGlobe_FUN_004cad90 (2 suspects)
-  File: core/flame.cpp
-====================================================================================================
-  Line 28 [static_shift_too_many_bits]: iVar2 = (iVar1 + (iVar1 >> 0x1f) * -0x100) - (uint)((iVar1 >> 0x1f) << 7 < 0);
-  Line 29 [static_shift_too_many_bits]: iVar3 = iVar2 >> 0x1f;
-
-====================================================================================================
-core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40 (5 suspects)
-  File: core/frankgen.cpp
-====================================================================================================
-  Line 41 [bit_int_float_compare]: if ((0x44ac8000 < (int)fVar1) && ((int)fVar1 < 0x44c58000)) {
-  Line 42 [bit_int_float_compare]: if ((int)fVar1 < 0x44b90000) {
-  Line 65 [unrolled_memcpy]: CStack_2c.x = pCVar4->x;
-  Line 78 [bit_int_float_compare]: if ((0x44e10000 < (int)this_ptr->master_frame) && ((int)this_ptr->master_frame < 0x44ed8000)) {
-  Line 88 [unrolled_memcpy]: CStack_38.x = pCVar3->x;
-
-====================================================================================================
-core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70 (4 suspects)
-  File: core/frankgen.cpp
-====================================================================================================
-  Line 28 [bit_int_float_compare]: if ((int)fVar1 < 0x4400c000) {
-  Line 31 [bit_int_float_compare]: else if ((int)fVar1 < 0x44e10000) {
-  Line 34 [bit_int_float_compare]: else if ((int)fVar1 < 0x44ed8000) {
-  Line 37 [bit_int_float_compare]: else if ((int)fVar1 < 0x44fa0000) {
-
-====================================================================================================
-core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004d17b0 (4 suspects)
-  File: core/frankgen.cpp
-====================================================================================================
-  Line 18 [unrolled_strcpy]: do {
-  Line 59 [unrolled_strcpy]: do {
-  Line 74 [unrolled_strcpy]: do {
-  Line 89 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190 (3 suspects)
-  File: core/frankgen.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 13 [stack_alignment_array]: int aiStackY_1014 [1012];
-  Line 74 [unrolled_memcpy]: (this_ptr->anchor_world_position).x = pCVar3->x;
-
-====================================================================================================
-core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80 (2 suspects)
-  File: core/gabriela.cpp
-====================================================================================================
-  Line 16 [missing_cave_copy]: CMatrix3x4f local_a8;
-  Line 17 [missing_cave_copy]: CMatrix3x4f local_78;
 
 ====================================================================================================
 core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (8 suspects)
@@ -432,6 +242,13 @@ core_inv.cpp_CInventory_load_FUN_004ff400 (2 suspects)
 ====================================================================================================
   Line 82 [shadow_pointer_walk]: pCVar6 = (CInventory *)&pCVar6->owner;
   Line 92 [shadow_pointer_walk]: pCVar5 = (CInventory *)&pCVar5->owner;
+
+====================================================================================================
+core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (2 suspects)
+  File: core/inv.cpp
+====================================================================================================
+  Line 186 [concat_reconstruction]: uVar13 = CONCAT44(pcVar13,pcVar7);
+  Line 192 [concat_reconstruction]: uVar13 = CONCAT44(pcVar13,pcVar7);
 
 ====================================================================================================
 core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 (2 suspects)
@@ -816,6 +633,12 @@ core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40 (1 suspect)
   Line 109 [static_legacy_uninitvar]: if (local_38 != end_height) {
 
 ====================================================================================================
+core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0 (1 suspect)
+  File: core/procedur.cpp
+====================================================================================================
+  Line 111 [concat_reconstruction]: *piVar8 = (uint)bVar3 * 0x10000 + (uint)CONCAT11(bVar3,bVar3);
+
+====================================================================================================
 core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (15 suspects)
   File: core/scat.cpp
 ====================================================================================================
@@ -948,7 +771,7 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (32 suspects)
   Line 1061 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (91 suspects)
+core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (93 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -1009,12 +832,14 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (91 suspec
   Line 926 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
   Line 930 [pointer_cast]: uStack_2d8 = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);
   Line 931 [pointer_cast]: uVar1 = *(ushort *)((int)puVar23 + 10);
+  Line 942 [concat_reconstruction]: puVar34[2] = CONCAT22(uVar1,uStack_2d8);
   Line 987 [unrolled_strcpy]: do {
   Line 1019 [pointer_cast]: local_c8 = (short *)((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).
   Line 1027 [pointer_cast]: local_c0 = (short *)((int)&(this_ptr->tri_data_ptr[0]->
   Line 1091 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0
   Line 1095 [pointer_cast]: uStack_2ec = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);
   Line 1096 [pointer_cast]: uVar1 = *(ushort *)((int)puVar23 + 10);
+  Line 1107 [concat_reconstruction]: puVar34[2] = CONCAT22(uVar1,uStack_2ec);
   Line 1141 [static_self_assignment]: piVar35 = piVar35;
   Line 1147 [unrolled_memcpy]: for (uVar18 = uVar25 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
   Line 1174 [pointer_cast]: piVar35 = (int *)((int)piVar35 + (uint)bVar39 * -2 + 1);
@@ -1179,6 +1004,30 @@ core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0 (2 suspects)
   Line 203 [shadow_pointer_walk]: pCVar15 = (CWaterActor *)&(pCVar15->base).location;
 
 ====================================================================================================
+core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00 (1 suspect)
+  File: core/xform.cpp
+====================================================================================================
+  Line 16 [concat_reconstruction]: iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar5);
+
+====================================================================================================
+core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80 (1 suspect)
+  File: core/xform.cpp
+====================================================================================================
+  Line 16 [concat_reconstruction]: iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar5);
+
+====================================================================================================
+core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0 (1 suspect)
+  File: core/xform.cpp
+====================================================================================================
+  Line 17 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar5);
+
+====================================================================================================
+core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40 (1 suspect)
+  File: core/xform.cpp
+====================================================================================================
+  Line 17 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar5);
+
+====================================================================================================
 engine_boss.c_modelStructNotSupported4_FUN_0041dbe0 (13 suspects)
   File: engine/boss.c
 ====================================================================================================
@@ -1195,6 +1044,60 @@ engine_boss.c_modelStructNotSupported4_FUN_0041dbe0 (13 suspects)
   Line 42 [static_uninitvar]: (out_bounds->extent).x = iStack_14;
   Line 43 [static_uninitvar]: (out_bounds->extent).y = iStack_10;
   Line 44 [static_uninitvar]: (out_bounds->extent).z = iStack_c;
+
+====================================================================================================
+engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490 (1 suspect)
+  File: engine/clipper.c
+====================================================================================================
+  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00 (1 suspect)
+  File: engine/clipper.c
+====================================================================================================
+  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230 (1 suspect)
+  File: engine/clipper.c
+====================================================================================================
+  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00 (1 suspect)
+  File: engine/clipper.c
+====================================================================================================
+  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexNearClip_FUN_00435e00 (1 suspect)
+  File: engine/clipper.c
+====================================================================================================
+  Line 13 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar3);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360 (1 suspect)
+  File: engine/clipper.c
+====================================================================================================
+  Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexRightClip_FUN_00435b00 (1 suspect)
+  File: engine/clipper.c
+====================================================================================================
+  Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0 (1 suspect)
+  File: engine/clipper.c
+====================================================================================================
+  Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
+
+====================================================================================================
+engine_clipper.c_interpolateVertexTopClip_FUN_00435d00 (1 suspect)
+  File: engine/clipper.c
+====================================================================================================
+  Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
 
 ====================================================================================================
 engine_colquant.c_computeBoxStatistics_FUN_00441260 (4 suspects)

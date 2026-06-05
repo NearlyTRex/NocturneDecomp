@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 533,
-    "complexity_score": 652,
+    "complexity_score": 697,
     "cross_reference_count": 10,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 282,
-    "suspect_count": 35,
+    "suspect_count": 39,
     "suspect_types": [
+      "concat_reconstruction",
       "dropped_loop_counter",
       "extra_output",
       "pointer_cast",
@@ -714,6 +715,38 @@
       "severity": "moderate",
       "text": "} while( true );",
       "type": "dropped_loop_counter"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 93,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "_iVar12 = CONCAT44(local_30,num);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 113,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "_iVar12 = CONCAT44(pvVar7,pvVar4);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 134,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "_iVar12 = CONCAT44(pvVar4,pvVar7);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 154,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "_iVar12 = CONCAT44(pvVar7,local_24);",
+      "type": "concat_reconstruction"
     }
   ]
 }

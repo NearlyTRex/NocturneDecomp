@@ -5,24 +5,12 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (356 diagnostics)
+Cppcheck (quick) (344 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (93)
+uninitvar (90)
 ----------------------------------------------------------------------------------------------------
-
-  core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0 line 33
-    File: core/fire.cpp
-    Uninitialized variable: local_40
-
-  core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0 line 33
-    File: core/fire.cpp
-    Uninitialized variable: local_48
-
-  core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0 line 33
-    File: core/fire.cpp
-    Uninitialized variable: local_44
 
   core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
     File: core/gabriela.cpp
@@ -905,40 +893,8 @@ invalidscanf (60)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (53)
+shiftTooManyBitsSigned (45)
 ----------------------------------------------------------------------------------------------------
-
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 140
-    File: core/dskybox.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 145
-    File: core/dskybox.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50 line 41
-    File: core/dtrace.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_F line 20
-    File: core/dtrace.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_fire.cpp_CFireball_process_FUN_004c0b30       line 50
-    File: core/fire.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_fire.cpp_CFireball_process_FUN_004c0b30       line 51
-    File: core/fire.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_flame.cpp_CFlame_updateGlobe_FUN_004cad90     line 28
-    File: core/flame.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_flame.cpp_CFlame_updateGlobe_FUN_004cad90     line 29
-    File: core/flame.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_game.cpp_CGame_beginFadeOut_FUN_004e0960      line 51
     File: core/game.cpp
@@ -1225,7 +1181,7 @@ legacyUninitvar (25)
     Uninitialized variable: local_7c
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (19)
+invalidPointerCast (18)
 ----------------------------------------------------------------------------------------------------
 
   core_chain.cpp_fastSqrt_FUN_00431350               line 13
@@ -1243,10 +1199,6 @@ invalidPointerCast (19)
   core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 14
     File: core/cloth.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_elephant.cpp_CElephantGun_process_FUN_004a707 line 25
-    File: core/elephant.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
 
   core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 680
     File: core/ghoul.cpp

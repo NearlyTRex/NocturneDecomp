@@ -11,7 +11,6 @@ void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *t
 
 {
   CVector3f *input_local_point;
-  char local_res0;
   CVector3f local_20;
   CVector3f local_14;
 
@@ -22,9 +21,7 @@ void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *t
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_20,input_local_point);
     g_CDemonLightInstance.volumetric_enabled = 0;
-    if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {
-      g_CDemonLightInstance.base.base.position.f = local_20;
-    }
+    g_CDemonLightInstance.base.base.position.f = local_20;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
               (&g_CDemonLightInstance.base.base.rotation_matrix,&(this_ptr->base).base.orient.vec);
     g_CDemonLightInstance.base.max_distance = this_ptr->projectile_distance;

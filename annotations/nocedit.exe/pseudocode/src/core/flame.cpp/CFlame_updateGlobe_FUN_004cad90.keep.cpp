@@ -12,8 +12,6 @@ void __cdecl core_flame_cpp_CFlame_updateGlobe_FUN_004cad90(CFlame *this_ptr)
 {
   int iVar1;
   float fVar1;
-  int iVar2;
-  int iVar3;
   CVector3f local_28;
   
   local_28.x = (this_ptr->base).location.position.x;
@@ -25,10 +23,7 @@ void __cdecl core_flame_cpp_CFlame_updateGlobe_FUN_004cad90(CFlame *this_ptr)
                     (-this_ptr->randomness,this_ptr->randomness);
   iVar1 = (int)ROUND(ROUND((fVar1 + this_ptr->intensity) * (float)65535));
   (this_ptr->globe).intensity_multiplier = iVar1;
-  iVar2 = (iVar1 + (iVar1 >> 0x1f) * -0x100) - (uint)((iVar1 >> 0x1f) << 7 < 0);
-  iVar3 = iVar2 >> 0x1f;
-  (this_ptr->globe).intensity.bytes[0] =
-       (uchar)((int)(((iVar2 >> 8) + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2);
+  (this_ptr->globe).intensity.bytes[0] = (uchar)(iVar1 / 256 / 4);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360
             (&this_ptr->globe,
              (this_ptr->flame_size).y * this_ptr->globe_scalar * (float)2);

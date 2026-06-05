@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 153,
+    "complexity_score": 168,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
+      "concat_reconstruction",
       "fpu_register_input",
       "stack_param",
       "undefined_type",
@@ -178,6 +179,14 @@
       "severity": "moderate",
       "text": "return (float10)CONCAT64(uStack00000020,in_stack_0000001c);",
       "type": "stack_param"
+    },
+    {
+      "description": "Ghidra CONCAT64 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 15,
+      "match": "CONCAT64",
+      "severity": "moderate",
+      "text": "return (float10)CONCAT64(uStack00000020,in_stack_0000001c);",
+      "type": "concat_reconstruction"
     }
   ],
   "vtable_info": {

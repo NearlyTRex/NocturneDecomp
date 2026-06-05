@@ -42,6 +42,7 @@ SUSPECT_SEVERITY = {
     'decompilation_failed': 'severe',
     # Moderate: significant artifacts, partially readable
     'double_reconstruction': 'moderate',
+    'concat_reconstruction': 'moderate',
     'sub84_truncation': 'moderate',
     'bare_stack_ref': 'moderate',
     'stack_alignment_array': 'moderate',
@@ -307,8 +308,11 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\bCARRY\d*\([^)]*\)(?!\s*[!=]=)', 'carry_arith_idiom',
      'Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.'),
     # Decompiler intrinsics - pseudo-functions and artifacts (not real C)
-    # Includes: ROUND(), SQRT(), CONCAT44, SUB84, NAN(), fsin, fcos, fptan, ADJ(), etc.
-    (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CONCAT\d+|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs|ADJ)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),
+    # Includes: ROUND(), SQRT(), SUB84, NAN(), fsin, fcos, fptan, ADJ(), etc.
+    # NOTE: CONCAT\d+ is intentionally NOT here — it's a counted suspect via
+    # identify_concat_reconstruction() (a CONCAT is always a wide-value
+    # reconstruction artifact, never legitimate C), not a safe intrinsic.
+    (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs|ADJ)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),
     # CPUID intrinsics - Ghidra's representation of CPUID instruction
     (r'\bcpuid_\w+\b', 'cpuid_intrinsic', 'CPUID intrinsic (CPU detection)'),
     # builtin_* - Ghidra builtin functions
@@ -2860,6 +2864,64 @@ def identify_dropped_self_copy(decompiled_code):
 _SIGNED_SHIFT_GLOBAL_RE = re.compile(
     r'(?:\(int\)\s*)?\bg_\w+(?:(?:->|\.)\w+|\[[^\]\n]*\])*\s*>>\s*(?:0x1f|31)\b'
 )
+
+
+# Ghidra's CONCAT{N}(hi, lo) intrinsic stitches narrow values into a wider one
+# (e.g. two uint halves into a 64-bit value, a sign word + value for a 64-bit
+# sign-extend). It is always a Watcom wide-value artifact, never legitimate C.
+# The common forms have precise types — `(double)CONCAT44(...)` →
+# double_reconstruction, `__BITCAST_DOUBLE(CONCAT44(...))` → bitcast_double_pair,
+# `CONCAT22(...>>0x10)` → fnstsw_flag_artifact — so this generic detector skips
+# those and counts every *other* CONCAT, which previously fell only into the
+# omitted `decompiler_intrinsic` bucket and went unreported.
+_CONCAT_RE = re.compile(r'\bCONCAT(\d+)\s*\(')
+_CONCAT_DOUBLE_RE = re.compile(r'\(double\)\s*CONCAT44\s*\(')
+_CONCAT_BITCAST_RE = re.compile(r'__BITCAST_DOUBLE\s*\(\s*CONCAT44\s*\(')
+_CONCAT_FNSTSW_RE = re.compile(r'CONCAT22\s*\(.*>>\s*0x10')
+
+
+def identify_concat_reconstruction(decompiled_code):
+    """Flag generic CONCAT{N}() wide-value reconstructions as suspects.
+
+    A CONCAT is never real C — it's how Ghidra renders a Watcom value
+    stitched from narrower pieces. Reduce to the proper form in a .keep
+    (sign-extend `(longlong)(int)x`, 64-bit math, a typed field, etc.).
+    Skips lines already covered by the precise double/bitcast/FNSTSW
+    detectors so they aren't double-counted. One suspect per line.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts of type 'concat_reconstruction'.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    for i, line in enumerate(decompiled_code.split('\n')):
+        stripped = line.strip()
+        if stripped.startswith('//') or stripped.startswith('/*'):
+            continue
+        m = _CONCAT_RE.search(line)
+        if not m:
+            continue
+        if (_CONCAT_DOUBLE_RE.search(line) or _CONCAT_BITCAST_RE.search(line)
+                or _CONCAT_FNSTSW_RE.search(line)):
+            continue
+        suspects.append({
+            'line': i + 1,
+            'type': 'concat_reconstruction',
+            'match': m.group(0).rstrip('(').rstrip(),
+            'text': stripped[:120],
+            'description': (
+                'Ghidra CONCAT%s reconstruction (stitches narrow values into '
+                'a wider one) — a Watcom wide-value artifact, not real C. '
+                'Reduce to the proper form (e.g. sign-extend '
+                '`(longlong)(int)x`, 64-bit math, or a typed field) in a '
+                '.keep.' % m.group(1)),
+            'severity': 'moderate',
+        })
+    return suspects
 
 
 def identify_signed_shift_global_idiom(decompiled_code):
@@ -5489,7 +5551,41 @@ def _suppress_byte_tails(sites, lines, max_intervening=5):
     return paired
 
 
-def identify_unrolled_memset_blocks(assembly_code):
+# Ghidra emits `/* WARNING: Removing unreachable block (ram,0xADDR) */` for
+# each basic block it proved dead (e.g. a swap guarded by `CMP EAX,EAX; JLE`
+# that always skips it — the faithful no-op sort in sortPolygonsByTexture).
+# A `REP MOVS/STOS` is a hardware loop, so Ghidra always models it as its own
+# basic block — meaning an unreachable REP's instruction address is itself the
+# block-start address listed here. Suppressing asm-side memcpy/memset suspects
+# at these addresses keeps the dead-code copies from being flagged on a keep
+# that correctly omits them.
+_UNREACHABLE_BLOCK_RE = re.compile(
+    r'WARNING:\s*Removing unreachable block\s*\(ram,0x([0-9a-fA-F]+)\)',
+    re.IGNORECASE)
+
+
+def _normalize_addr(addr):
+    """Lowercase, strip an optional 0x prefix and leading zeros (keep one)."""
+    a = addr.lower()
+    if a.startswith('0x'):
+        a = a[2:]
+    return a.lstrip('0') or '0'
+
+
+def extract_unreachable_block_addrs(decompiled_code):
+    """Return the set of normalized addresses Ghidra removed as unreachable.
+
+    Parsed from the `WARNING: Removing unreachable block (ram,0xADDR)`
+    comments at the top of the decompile. Used to suppress asm-side
+    memcpy/memset suspects that live in provably-dead blocks.
+    """
+    if not decompiled_code:
+        return set()
+    return {_normalize_addr(m.group(1))
+            for m in _UNREACHABLE_BLOCK_RE.finditer(decompiled_code)}
+
+
+def identify_unrolled_memset_blocks(assembly_code, unreachable_addrs=None):
     """Detect Watcom `REP STOS{B,W,D}` (inline memset) instructions.
 
     Each `.REP`-suffixed STOS in the asm corresponds to a countdown
@@ -5513,6 +5609,7 @@ def identify_unrolled_memset_blocks(assembly_code):
     suspects = []
     if not assembly_code:
         return suspects
+    unreachable_addrs = unreachable_addrs or set()
     lines = assembly_code.split('\n')
     sites = _collect_rep_sites(assembly_code, _REP_STOS_RE)
     paired = _suppress_byte_tails(sites, lines)
@@ -5522,6 +5619,8 @@ def identify_unrolled_memset_blocks(assembly_code):
         stride = {'B': 1, 'W': 2, 'D': 4}[size_letter]
         addr_m = _ASM_LINE_ADDR_RE.search(line)
         addr = addr_m.group(1) if addr_m else '????????'
+        if addr_m and _normalize_addr(addr_m.group(1)) in unreachable_addrs:
+            continue
         suspects.append({
             'line': line_idx + 1,
             'type': 'unrolled_memset',
@@ -5639,7 +5738,7 @@ def _is_call_abi_pass_by_value(rep_line_idx, lines, max_instrs=24,
     return False
 
 
-def identify_unrolled_memcpy_blocks(assembly_code):
+def identify_unrolled_memcpy_blocks(assembly_code, unreachable_addrs=None):
     """Detect Watcom `REP MOVS{B,W,D}` (inline memcpy/memmove) instructions.
 
     Complements the source-side `identify_unrolled_memcpy_loops` — that
@@ -5671,6 +5770,7 @@ def identify_unrolled_memcpy_blocks(assembly_code):
     suspects = []
     if not assembly_code:
         return suspects
+    unreachable_addrs = unreachable_addrs or set()
     lines = assembly_code.split('\n')
     sites = _collect_rep_sites(assembly_code, _REP_MOVS_RE)
     paired = _suppress_byte_tails(sites, lines)
@@ -5682,6 +5782,8 @@ def identify_unrolled_memcpy_blocks(assembly_code):
         stride = {'B': 1, 'W': 2, 'D': 4}[size_letter]
         addr_m = _ASM_LINE_ADDR_RE.search(line)
         addr = addr_m.group(1) if addr_m else '????????'
+        if addr_m and _normalize_addr(addr_m.group(1)) in unreachable_addrs:
+            continue
         suspects.append({
             'line': line_idx + 1,
             'type': 'unrolled_memcpy',
@@ -5742,6 +5844,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_self_copy_guard(code))
     found.extend(identify_dropped_self_copy(code))
     found.extend(identify_signed_shift_global_idiom(code))
+    found.extend(identify_concat_reconstruction(code))
     found.extend(identify_sibling_array_undersized(code))
     found.extend(identify_pointer_cast_multiline(code))
     found.extend(identify_int_address_arithmetic(code))

@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 108,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 108,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "concat_reconstruction"
+    ],
     "total_lines": 346
   },
   "cross_references": [
@@ -275,5 +277,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 92,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "(0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,",
+      "type": "concat_reconstruction"
+    }
+  ]
 }

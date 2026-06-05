@@ -1490,6 +1490,15 @@
       "severity": "mild",
       "text": "fVar9 = 3.57331e-43;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 554,
+      "match": "CONCAT22",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CEditorTools *)CONCAT22(uVar20,uVar19),2.0,(int)fVar9);",
+      "type": "concat_reconstruction"
     }
   ],
   "stack_frame": {

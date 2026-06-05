@@ -34,16 +34,16 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFr
               (&this_ptr->bed_model,this_ptr->part_frame,-1);
     if ((this_ptr->body_model).model_name[0] != '\0') {
       fVar1 = this_ptr->master_frame;
-      if ((int)fVar1 < 0x4400c000) {
+      if (fVar1 < 515.0f) {
         fStack_30 = 201.0;
       }
-      else if ((int)fVar1 < 0x44e10000) {
+      else if (fVar1 < 1800.0f) {
         fStack_30 = 0.0;
       }
-      else if ((int)fVar1 < 0x44ed8000) {
+      else if (fVar1 < 1900.0f) {
         fStack_30 = this_ptr->master_frame + -1800.0f;
       }
-      else if ((int)fVar1 < 0x44fa0000) {
+      else if (fVar1 < 2000.0f) {
         fStack_30 = 100.0;
       }
       else {

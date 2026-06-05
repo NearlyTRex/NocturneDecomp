@@ -140,6 +140,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 77,
+      "match": "CONCAT22",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar3[2] = CONCAT22(uVar1,uStack_44);",
+      "type": "concat_reconstruction"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 61,
       "match": "(int)&NAME used in byte-offset arithmetic",

@@ -14,29 +14,37 @@ PRIORITY 1: Files with 1-2 functions remaining
     - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
       Suspects: unrolled_memcpy, unrolled_memcpy
 
+  core/bugs.cpp (1 remaining of 44)
+    - core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
+      Suspects: concat_reconstruction
+
   core/glass.cpp (1 remaining of 24)
     - core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
       Suspects: unrolled_memcpy, unrolled_memcpy
 
-  core/dlight.cpp (1 remaining of 34)
-    - core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670
-      Suspects: signed_shift_global_idiom
+  core/procedur.cpp (1 remaining of 4)
+    - core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
+      Suspects: concat_reconstruction
 
-  core/actor.cpp (1 remaining of 183)
-    - core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
-      Suspects: signed_shift_global_idiom, signed_shift_global_idiom
+  core/fire.cpp (1 remaining of 185)
+    - core_fire.cpp_updateTextureAnimCounts_FUN_004c3870
+      Suspects: signed_shift_global_idiom
 
   core/morph.cpp (1 remaining of 49)
     - core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
       Suspects: signed_shift_global_idiom, signed_shift_global_idiom
 
+  core/dstrender.cpp (1 remaining of 31)
+    - core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0
+      Suspects: concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction
+
+  core/dmodel.cpp (1 remaining of 66)
+    - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
+      Suspects: unrolled_memcpy, unrolled_memcpy
+
   core/menu.cpp (1 remaining of 22)
     - core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
       Suspects: signed_shift_global_idiom, signed_shift_global_idiom
-
-  core/dtrace.cpp (1 remaining of 51)
-    - core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
-      Suspects: signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom
 
   sound/snddx.cpp (2 remaining of 32)
     - sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340
@@ -60,6 +68,14 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
+  [concat_reconstruction] - 6 functions
+    core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00                 ( 47 lines)
+    core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80                   ( 47 lines)
+    core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0                  ( 47 lines)
+    core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40                    ( 47 lines)
+    engine_clipper.c_interpolateVertexTopClip_FUN_00435d00                 ( 49 lines)
+    engine_clipper.c_interpolateVertexRightClip_FUN_00435b00               ( 49 lines)
+
   [signed_shift_global_idiom] - 3 functions
     core_fire.cpp_updateTextureAnimCounts_FUN_004c3870                     ( 12 lines)
     shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0             ( 48 lines)
@@ -69,39 +85,30 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  core/actor.cpp (99.5% complete)
+  core/fire.cpp (99.5% complete)
     1 functions remaining:
-      core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0 (10 lines)
-        Types: ['signed_shift_global_idiom']
-
-  core/fire.cpp (98.4% complete)
-    3 functions remaining:
-      core_fire.cpp_CFireball_process_FUN_004c0b30 (90 lines)
-        Types: ['signed_shift_global_idiom']
-      core_fire.cpp_CRock_process_FUN_004c17f0 (28 lines)
-        Types: ['signed_shift_global_idiom']
       core_fire.cpp_updateTextureAnimCounts_FUN_004c3870 (12 lines)
         Types: ['signed_shift_global_idiom']
 
-  core/dtrace.cpp (98.0% complete)
+  core/dmodel.cpp (98.5% complete)
     1 functions remaining:
-      core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (668 lines)
-        Types: ['signed_shift_global_idiom']
+      core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines)
+        Types: ['unrolled_memcpy']
 
   core/morph.cpp (98.0% complete)
     1 functions remaining:
       core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (415 lines)
         Types: ['signed_shift_global_idiom']
 
+  core/bugs.cpp (97.7% complete)
+    1 functions remaining:
+      core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400 (108 lines)
+        Types: ['concat_reconstruction']
+
   engine/pod.cpp (97.1% complete)
     1 functions remaining:
       engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines)
         Types: ['unrolled_memcpy']
-
-  core/dlight.cpp (97.1% complete)
-    1 functions remaining:
-      core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (165 lines)
-        Types: ['signed_shift_global_idiom']
 
   core/netgame.cpp (96.9% complete)
     2 functions remaining:
@@ -109,6 +116,11 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['unrolled_memcpy']
       core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines)
         Types: ['unrolled_memcpy']
+
+  core/dstrender.cpp (96.8% complete)
+    1 functions remaining:
+      core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0 (357 lines)
+        Types: ['concat_reconstruction']
 
   core/setedit.cpp (96.6% complete)
     2 functions remaining:
@@ -142,7 +154,7 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines)
         Types: ['missing_cave_copy', 'pointer_cast', 'raw_address_constant', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_memset', 'unrolled_strcpy', 'warning_inlined_function']
       core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1436 lines)
-        Types: ['pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_strcpy', 'warning_inlined_function']
+        Types: ['concat_reconstruction', 'pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_strcpy', 'warning_inlined_function']
       core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines)
         Types: ['missing_cave_copy']
 
@@ -158,20 +170,29 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       sound_snddx.cpp_fillStreamBuffer_FUN_005adff0 (60 lines)
         Types: ['signed_shift_global_idiom']
 
+  core/xform.cpp (93.4% complete)
+    4 functions remaining:
+      core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00 (47 lines)
+        Types: ['concat_reconstruction']
+      core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80 (47 lines)
+        Types: ['concat_reconstruction']
+      core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0 (47 lines)
+        Types: ['concat_reconstruction']
+      core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40 (47 lines)
+        Types: ['concat_reconstruction']
+
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
   wincore/wddvmem.cpp                                           89.3%  (25/28 clean, 3 remaining)
   sound/sndwav.cpp                                              88.6%  (31/35 clean, 4 remaining)
-  core/dmodel.cpp                                               87.9%  (58/66 clean, 8 remaining)
   core/manpuz.cpp                                               85.7%  (54/63 clean, 9 remaining)
   core/msnedit.cpp                                              85.7%  (54/63 clean, 9 remaining)
   core/scat.cpp                                                 84.0%  (21/25 clean, 4 remaining)
-  core/inv.cpp                                                  83.7%  (36/43 clean, 7 remaining)
-  core/frankgen.cpp                                             83.3%  (20/24 clean, 4 remaining)
+  core/gabriela.cpp                                             81.6%  (31/38 clean, 7 remaining)
+  core/inv.cpp                                                  81.4%  (35/43 clean, 8 remaining)
   shape/cramtex.cpp                                             81.0%  (17/21 clean, 4 remaining)
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
-  core/gabriela.cpp                                             78.9%  (30/38 clean, 8 remaining)
   core/wateract.cpp                                             78.3%  (18/23 clean, 5 remaining)
   core/ghoul.cpp                                                77.8%  (14/18 clean, 4 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
@@ -180,3 +201,4 @@ ALL REMAINING FILES
   shape/design.c                                                69.3%  (113/163 clean, 50 remaining)
   shape/meshlod.cpp                                             68.5%  (85/124 clean, 39 remaining)
   engine/fileio.cpp                                             68.5%  (50/73 clean, 23 remaining)
+  engine/clipper.c                                              67.9%  (19/28 clean, 9 remaining)

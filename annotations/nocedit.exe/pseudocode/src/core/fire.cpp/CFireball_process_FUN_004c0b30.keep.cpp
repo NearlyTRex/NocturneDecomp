@@ -12,7 +12,6 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
 {
   int iVar3;
   int iVar2;
-  int iVar4;
   SDamageInfo SStack_54;
   float local_18;
   float local_14;
@@ -37,20 +36,14 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
   }
   core_particle_cpp_CParticle_process_FUN_00545760(&this_ptr->base);
   iVar3 = g_GlobalDeltaTimeInt / 2;
-  this_ptr->rotation_angle1 =
-       this_ptr->rotation_angle1 +
-       ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
-             (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
+  this_ptr->rotation_angle1 = this_ptr->rotation_angle1 + g_GlobalDeltaTimeInt / 4;
   this_ptr->rotation_angle2 = this_ptr->rotation_angle2 + iVar3;
   if (this_ptr->lighting_active == 0) {
     this_ptr_00 = &this_ptr->light_globe;
     core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310(this_ptr_00,(CVector3f *)this_ptr);
     iVar2 = this_ptr->timer;
     (this_ptr->light_globe).intensity_multiplier = iVar2;
-    iVar2 = (iVar2 + (iVar2 >> 0x1f) * -0x100) - (uint)((iVar2 >> 0x1f) << 7 < 0);
-    iVar4 = iVar2 >> 0x1f;
-    (this_ptr->light_globe).intensity.bytes[0] =
-         (uchar)((int)(((iVar2 >> 8) + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2);
+    (this_ptr->light_globe).intensity.bytes[0] = (uchar)(iVar2 / 256 / 4);
     core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(this_ptr_00,8.0);
     this_ptr_02 = g_CDemonSetPtr;
     (this_ptr->light_globe).corona_mode = 0;

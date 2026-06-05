@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 78,
+    "complexity_score": 103,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 18,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
+      "concat_reconstruction",
       "nan_function_artifact",
       "unknown_field"
     ],
@@ -114,6 +115,22 @@
       "severity": "mild",
       "text": "uVar1 = CONCAT11(uVar1._1_1_,3);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 14,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "uVar1 = CONCAT11(uVar1._1_1_,2);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 16,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "uVar1 = CONCAT11(uVar1._1_1_,3);",
+      "type": "concat_reconstruction"
     }
   ]
 }

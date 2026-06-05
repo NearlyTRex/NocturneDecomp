@@ -223,33 +223,7 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CElephantGun_process_FUN_004a7070.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 9,
-          "line": 25,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 25,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {",
-      "type": "static_invalid_pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

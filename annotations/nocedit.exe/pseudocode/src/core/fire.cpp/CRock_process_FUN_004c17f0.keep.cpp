@@ -26,9 +26,7 @@ void __cdecl core_fire_cpp_CRock_process_FUN_004c17f0(CRock *this_ptr)
   fVar5 = (this_ptr->base).velocity.z;
   iVar2 = (int)ROUND(ROUND(SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3) *
                            (float)32767.700000000001));
-  lVar6 = (longlong)
-          ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
-                (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2) * (longlong)iVar2;
+  lVar6 = (longlong)(g_GlobalDeltaTimeInt / 4) * (longlong)iVar2;
   (this_ptr->rotation).x =
        (this_ptr->rotation).x + ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
   lVar1 = (longlong)(iVar7 / 2) * (longlong)iVar2;

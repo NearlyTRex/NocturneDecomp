@@ -77,7 +77,7 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_special_functions, identify_displaced_global_access,
     detect_content_suspects, build_global_interval_map,
     identify_missing_cave_copy, identify_unrolled_memset_blocks,
-    identify_unrolled_memcpy_blocks
+    identify_unrolled_memcpy_blocks, extract_unreachable_block_addrs
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -498,14 +498,21 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
         decompiled_code, result.assembly_code)
     suspects.extend(cave_copy_suspects_cpp)
 
+    # Addresses Ghidra proved dead (`WARNING: Removing unreachable block`).
+    # A REP MOVS/STOS inside such a block is dead code a keep correctly omits,
+    # so suppress asm-side memcpy/memset suspects at those addresses.
+    unreachable_addrs = extract_unreachable_block_addrs(decompiled_code)
+
     # Detect inline `REP STOS{B,W,D}` (Watcom inline memset) — Ghidra unrolls
     # these to countdown for-loops that the source-text detectors miss.
-    suspects.extend(identify_unrolled_memset_blocks(result.assembly_code))
+    suspects.extend(identify_unrolled_memset_blocks(
+        result.assembly_code, unreachable_addrs))
 
     # Same for `REP MOVS{B,W,D}` (Watcom inline memcpy). The source-side
     # detector catches the typed-pointer-deref shape but misses arrow/index
     # store forms; the asm fingerprint catches all of them.
-    suspects.extend(identify_unrolled_memcpy_blocks(result.assembly_code))
+    suspects.extend(identify_unrolled_memcpy_blocks(
+        result.assembly_code, unreachable_addrs))
 
     # Identify P-code based suspects (fixable patterns like CALLIND+ESP)
     # Pass existing overrides to separate unfixed from resolved suspects

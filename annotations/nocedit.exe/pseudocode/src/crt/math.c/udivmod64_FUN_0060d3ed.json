@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 244,
+    "complexity_score": 309,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 94,
-    "suspect_count": 14,
+    "suspect_count": 20,
     "suspect_types": [
       "carry_arith_idiom",
+      "concat_reconstruction",
       "warning_unreachable"
     ],
     "total_lines": 201
@@ -218,6 +219,54 @@
       "severity": "moderate",
       "text": "} while (!bVar13 && !CARRY4(uVar8,uVar3));",
       "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 31,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "dividend = CONCAT44(uVar1,(int)(CONCAT44(uVar5,(uint)dividend) / (divisor & 0xffffffff)));",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 49,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "divisor = CONCAT44(uVar4,uVar9);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 53,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "} while (CONCAT44(uVar4,uVar9) <= dividend);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 73,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "dividend = CONCAT44(uVar7,uVar2);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 92,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "dividend = CONCAT44(uVar7,uVar2);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 97,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "return CONCAT44(uVar5,uVar11);",
+      "type": "concat_reconstruction"
     }
   ]
 }

@@ -12,7 +12,6 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_te
 {
   float fVar3;
   uint uVar4;
-  int iVar3;
   int iVar4;
   int iVar6;
   int iVar9;
@@ -137,13 +136,10 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_te
       local_b4.vertices[1].vertex_index = local_b4.vertices[0].vertex_index + 1;
       local_b4.vertices[2].vertex_index = local_b4.vertices[0].vertex_index + 5;
       local_b4.vertices[3].vertex_index = local_b4.vertices[0].vertex_index + 4;
-      iVar3 = iVar6 >> 0x1f;
-      iVar9 = iVar6 + iVar3 * -4;
       iVar8 = iVar8 + 1;
+      local_b4.vertices[1].texture_v = (iVar5 / 4) ^ 0xffffff;
+      local_b4.vertices[0].texture_v = (iVar6 / 4) ^ 0xffffff;
       iVar6 = iVar6 + 0x1000000;
-      local_b4.vertices[1].texture_v =
-           (int)((iVar5 + (iVar5 >> 0x1f) * -4) - (uint)((iVar5 >> 0x1f) << 1 < 0)) >> 2 ^ 0xffffff;
-      local_b4.vertices[0].texture_v = (int)(iVar9 - (uint)(iVar3 << 1 < 0)) >> 2 ^ 0xffffff;
       iVar5 = iVar5 + 0x1000000;
       local_b4.vertices[0].texture_u = uVar4;
       local_b4.vertices[1].texture_u = uVar4;

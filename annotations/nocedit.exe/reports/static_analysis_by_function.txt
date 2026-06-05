@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 126
-  Total diagnostics: 356
+  Functions with findings: 119
+  Total diagnostics: 344
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 80, raw .cpp files: 46
+  .keep.cpp files: 76, raw .cpp files: 43
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -376,14 +376,6 @@ core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppc
   Line   66: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
 ----------------------------------------------------------------------------------------------------
-core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004c8c90  [.cpp] [Cppcheck (quick)]
-  File: core/fire.cpp  (3 diagnostics)
-
-  Line   33: [uninitvar] Uninitialized variable: local_40
-  Line   33: [uninitvar] Uninitialized variable: local_48
-  Line   33: [uninitvar] Uninitialized variable: local_44
-
-----------------------------------------------------------------------------------------------------
 core_gabriela.cpp_CGabriella_processAI_FUN_004d4190  [.keep] [Cppcheck (quick)]
   File: core/gabriela.cpp  (3 diagnostics)
 
@@ -476,27 +468,6 @@ core_cloth.cpp_fastInvSqrt_FUN_0043e2a0  [.keep] [Cppcheck (quick)]
 
   Line   13: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
   Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-core_dskybox.cpp_renderSkyDome_FUN_004901f0  [.keep] [Cppcheck (quick)]
-  File: core/dskybox.cpp  (2 diagnostics)
-
-  Line  140: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  145: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_fire.cpp_CFireball_process_FUN_004c0b30  [.keep] [Cppcheck (quick)]
-  File: core/fire.cpp  (2 diagnostics)
-
-  Line   50: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   51: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_flame.cpp_CFlame_updateGlobe_FUN_004cad90  [.keep] [Cppcheck (quick)]
-  File: core/flame.cpp  (2 diagnostics)
-
-  Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   29: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_ghoul.cpp_CGhoul_process_FUN_004e6600  [.keep] [Cppcheck (quick)]
@@ -685,24 +656,6 @@ core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170  [.keep] [C
   File: core/dtrace.cpp  (1 diagnostics)
 
   Line   44: [nullPointerRedundantCheck] Either the condition 'pCVar3!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar3.
-
-----------------------------------------------------------------------------------------------------
-core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50  [.cpp] [Cppcheck (quick)]
-  File: core/dtrace.cpp  (1 diagnostics)
-
-  Line   41: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970  [.cpp] [Cppcheck (quick)]
-  File: core/dtrace.cpp  (1 diagnostics)
-
-  Line   20: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_elephant.cpp_CElephantGun_process_FUN_004a7070  [.keep] [Cppcheck (quick)]
-  File: core/elephant.cpp  (1 diagnostics)
-
-  Line   25: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_event.cpp_parseVectorLocation_FUN_004aa530  [.keep] [Cppcheck (quick)]

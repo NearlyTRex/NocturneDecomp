@@ -5,38 +5,71 @@ FUNCTION SUSPECT BREAKDOWN
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
   0 suspects: 6183 functions
-  1 suspects: 26 functions
-  2 suspects: 61 functions
-  3 suspects: 35 functions
-  4 suspects: 36 functions
-  5 suspects: 18 functions
-  6 suspects: 20 functions
+  1 suspects: 40 functions
+  2 suspects: 58 functions
+  3 suspects: 34 functions
+  4 suspects: 34 functions
+  5 suspects: 17 functions
+  6 suspects: 18 functions
   7 suspects: 7 functions
-  8 suspects: 16 functions
+  8 suspects: 13 functions
   9 suspects: 4 functions
-  10 suspects: 6 functions
+  10 suspects: 5 functions
   11 suspects: 3 functions
   12 suspects: 5 functions
   13 suspects: 2 functions
   14 suspects: 5 functions
   15 suspects: 3 functions
-  16 suspects: 4 functions
+  16 suspects: 3 functions
   17 suspects: 1 functions
   18 suspects: 6 functions
-  19 suspects: 1 functions
   20 suspects: 1 functions
   21 suspects: 4 functions
   24 suspects: 1 functions
   29 suspects: 1 functions
   30 suspects: 1 functions
+  32 suspects: 1 functions
   33 suspects: 1 functions
   36 suspects: 1 functions
   39 suspects: 1 functions
-  90 suspects: 1 functions
+  92 suspects: 1 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
+
+  [concat_reconstruction] (15 functions)
+  ------------------------------------------------------------
+    core_xform.cpp_clipInterpolateBottomPlane_FUN_005f ( 47 lines)
+      iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) !=...
+    core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c ( 47 lines)
+      iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) !=...
+    core_xform.cpp_clipInterpolateRightPlane_FUN_005f7 ( 47 lines)
+      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
+    core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d4 ( 47 lines)
+      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
+    engine_clipper.c_interpolateVertexTopClip_FUN_0043 ( 49 lines)
+      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
+    engine_clipper.c_interpolateVertexRightClip_FUN_00 ( 49 lines)
+      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
+    engine_clipper.c_interpolateVertexBottomClip_FUN_0 ( 50 lines)
+      iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) !=...
+    engine_clipper.c_interpolateVertexLeftClip_FUN_004 ( 50 lines)
+      iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) !=...
+    engine_clipper.c_interpolateVertexNearClip_FUN_004 ( 52 lines)
+      iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) !=...
+    engine_clipper.c_interpolateVertexRightClipAdvance ( 54 lines)
+      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
+    engine_clipper.c_interpolateVertexTopClipAdvanced_ ( 54 lines)
+      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
+    engine_clipper.c_interpolateVertexLeftClipAdvanced ( 55 lines)
+      iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) !=...
+    engine_clipper.c_interpolateVertexBottomClipAdvanc ( 55 lines)
+      iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) !=...
+    core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400    (108 lines)
+      (0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,...
+    core_procedur.cpp_CProceduralTexture_createWaterFr (119 lines)
+      *piVar8 = (uint)bVar3 * 0x10000 + (uint)CONCAT11(bVar3,bVar3...
 
   [unrolled_memcpy] (7 functions)
   ------------------------------------------------------------
@@ -55,21 +88,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [signed_shift_global_idiom] (6 functions)
-  ------------------------------------------------------------
-    core_fire.cpp_updateTextureAnimCounts_FUN_004c3870 ( 12 lines)
-      iVar1 = g_GlobalDeltaTimeInt >> 0x1f;...
-    shape_edittool.cpp_CEditorTools_restoreScreen_FUN_ ( 48 lines)
-      iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;...
-    shape_edittool.cpp_CEditorTools_backupScreen_FUN_0 ( 48 lines)
-      iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;...
-    shape_edittool.cpp_CEditorTools_restoreWindowAndCl ( 50 lines)
-      iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;...
-    core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_ (165 lines)
-      iVar5 = g_WindowWidth * g_BitsPerPixel >> 0x1f;...
-    shape_edittool.cpp_CPickList_calculateLayoutAndCre (225 lines)
-      iVar11 = g_WindowWidth >> 0x1f;...
-
   [pointer_cast] (6 functions)
   ------------------------------------------------------------
     engine_fileio.cpp_CFileManager_buildPodFromRespons ( 57 lines)
@@ -84,6 +102,19 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       *(double *)((int)&((local_58.vertex_data)->position).x + iVa...
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
+
+  [signed_shift_global_idiom] (5 functions)
+  ------------------------------------------------------------
+    core_fire.cpp_updateTextureAnimCounts_FUN_004c3870 ( 12 lines)
+      iVar1 = g_GlobalDeltaTimeInt >> 0x1f;...
+    shape_edittool.cpp_CEditorTools_restoreScreen_FUN_ ( 48 lines)
+      iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;...
+    shape_edittool.cpp_CEditorTools_backupScreen_FUN_0 ( 48 lines)
+      iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;...
+    shape_edittool.cpp_CEditorTools_restoreWindowAndCl ( 50 lines)
+      iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;...
+    shape_edittool.cpp_CPickList_calculateLayoutAndCre (225 lines)
+      iVar11 = g_WindowWidth >> 0x1f;...
 
   [shadow_pointer_walk] (3 functions)
   ------------------------------------------------------------
@@ -124,8 +155,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/superopt.cpp, Lines: 8, Types: ['pointer_cast']
   core_msnedit.cpp_drawPropertyRow_FUN_00535e10
     File: core/msnedit.cpp, Lines: 9, Types: ['signed_shift_global_idiom']
-  core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
-    File: core/actor.cpp, Lines: 10, Types: ['signed_shift_global_idiom']
   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
     File: core/ghoul.cpp, Lines: 17, Types: ['missing_cave_copy']
   shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420
@@ -134,8 +163,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: sound/sndwav.cpp, Lines: 23, Types: ['signed_shift_global_idiom']
   wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0
     File: wincore/wddvmem.cpp, Lines: 24, Types: ['signed_shift_global_idiom']
-  core_fire.cpp_CRock_process_FUN_004c17f0
-    File: core/fire.cpp, Lines: 28, Types: ['signed_shift_global_idiom']
   shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40
     File: shape/meshlod.cpp, Lines: 28, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_0051
@@ -172,8 +199,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 58, Types: ['unrolled_strcpy', 'warning_inlined_function']
   sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
     File: sound/snddx.cpp, Lines: 60, Types: ['signed_shift_global_idiom']
-  core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_0
-    File: core/gabriela.cpp, Lines: 60, Types: ['missing_cave_copy']
   sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340
     File: sound/snddx.cpp, Lines: 61, Types: ['signed_shift_global_idiom']
   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb74
@@ -192,8 +217,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/quantize.cpp, Lines: 85, Types: ['pointer_cast']
   shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
     File: shape/design.c, Lines: 87, Types: ['unrolled_strlen']
-  core_fire.cpp_CFireball_process_FUN_004c0b30
-    File: core/fire.cpp, Lines: 90, Types: ['signed_shift_global_idiom']
   engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004
     File: engine/fileio.cpp, Lines: 91, Types: ['unrolled_strcpy']
   shape_design.c_renderSinglePolygon_FUN_0045ce20
@@ -230,6 +253,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/fileio.cpp, Lines: 244, Types: ['unrolled_strcpy']
   shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
     File: shape/edittool.cpp, Lines: 253, Types: ['signed_shift_global_idiom']
+  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
+    File: core/inv.cpp, Lines: 366, Types: ['concat_reconstruction']
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
     File: engine/pod.cpp, Lines: 368, Types: ['unrolled_memcpy']
   core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
@@ -268,8 +293,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 60, Types: ['shadow_pointer_walk', 'unrolled_memcpy']
   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920
     File: shape/meshlod.cpp, Lines: 71, Types: ['pointer_cast']
-  core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_
-    File: core/frankgen.cpp, Lines: 76, Types: ['stack_alignment_array', 'unrolled_memcpy', 'warning_inlined_function']
   shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN
     File: shape/meshlod.cpp, Lines: 78, Types: ['unrolled_memcpy']
   shape_superopt.cpp_CObj_transform_FUN_005d2c40

@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 330,
+    "complexity_score": 355,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 90,
-    "suspect_count": 21,
+    "suspect_count": 23,
     "suspect_types": [
       "bitcast_double_pair",
+      "concat_reconstruction",
       "nan_function_artifact",
       "raw_address_constant",
       "stack_param",
@@ -350,6 +351,22 @@
       "severity": "moderate",
       "text": "in_stack_ffffffe0 = 0x5ffe99;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Ghidra CONCAT19 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 53,
+      "match": "CONCAT19",
+      "severity": "moderate",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT19 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 62,
+      "match": "CONCAT19",
+      "severity": "moderate",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
+      "type": "concat_reconstruction"
     }
   ]
 }

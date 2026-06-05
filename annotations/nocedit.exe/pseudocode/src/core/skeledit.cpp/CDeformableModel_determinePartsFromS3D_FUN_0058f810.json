@@ -8,14 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 2361,
+    "complexity_score": 2386,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1436,
-    "suspect_count": 90,
+    "suspect_count": 92,
     "suspect_types": [
+      "concat_reconstruction",
       "pointer_cast",
       "shadow_pointer_walk",
       "unrolled_memcpy",
@@ -3134,6 +3135,22 @@
       "severity": "moderate",
       "text": "local_324.max.x = pCVar28->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 942,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "puVar34[2] = CONCAT22(uVar1,uStack_2d8);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 1107,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "puVar34[2] = CONCAT22(uVar1,uStack_2ec);",
+      "type": "concat_reconstruction"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

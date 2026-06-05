@@ -109,6 +109,7 @@ def run_detectors(susp, code):
     found.extend(susp.identify_self_copy_guard(code))
     found.extend(susp.identify_dropped_self_copy(code))
     found.extend(susp.identify_signed_shift_global_idiom(code))
+    found.extend(susp.identify_concat_reconstruction(code))
     found.extend(susp.identify_pointer_cast_multiline(code))
     found.extend(susp.identify_int_address_arithmetic(code))
     found.extend(susp.identify_int_address_arithmetic_multiline(code))

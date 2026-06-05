@@ -13,7 +13,6 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDem
   int *piVar1;
   ushort uVar3;
   uint uVar4;
-  int iVar5;
   int iVar7;
   uint uVar2;
   int iVar3;
@@ -39,9 +38,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDem
   iVar7 = 0;
   if (0 < g_WindowHeight) {
     do {
-      iVar5 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
-      memset(g_ScreenBufferArray[iVar7],0,
-             (int)((g_WindowWidth * g_BitsPerPixel + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3);
+      memset(g_ScreenBufferArray[iVar7],0,g_WindowWidth * g_BitsPerPixel / 8);
       iVar7 = iVar7 + 1;
     } while (iVar7 < g_WindowHeight);
   }

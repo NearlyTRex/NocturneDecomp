@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 121,
+    "complexity_score": 76,
     "cross_reference_count": 4,
     "function_call_count": 8,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 76,
-    "suspect_count": 3,
-    "suspect_types": [
-      "stack_alignment_array",
-      "unrolled_memcpy",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 242
   },
   "cross_references": [
@@ -186,6 +182,35 @@
     },
     "pcode_op_count": 545
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "aiStackY_1014",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_1014 [1012];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 74,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->anchor_world_position).x = pCVar3->x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4124,
     "local_size": 4120,
@@ -244,30 +269,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
-      "match": "aiStackY_1014",
-      "severity": "moderate",
-      "text": "int aiStackY_1014 [1012];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 74,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->anchor_world_position).x = pCVar3->x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

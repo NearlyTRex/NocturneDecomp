@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 201,
+    "complexity_score": 141,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 29,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 141,
-    "suspect_count": 5,
-    "suspect_types": [
-      "bit_int_float_compare",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 507
   },
   "cross_references": [],
@@ -307,6 +304,53 @@
     },
     "pcode_op_count": 1500
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 65,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CStack_2c.x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 88,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CStack_38.x = pCVar3->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44ac8000 is the IEEE 754 bit pattern of 1380f. Rewrite in a .keep as a plain float compare against 1380f.",
+      "line": 41,
+      "match": "0x44ac8000 < (int)fVar1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((0x44ac8000 < (int)fVar1) && ((int)fVar1 < 0x44c58000)) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44b90000 is the IEEE 754 bit pattern of 1480f. Rewrite in a .keep as a plain float compare against 1480f.",
+      "line": 42,
+      "match": "(int)fVar1 < 0x44b90000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int)fVar1 < 0x44b90000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44e10000 is the IEEE 754 bit pattern of 1800f. Rewrite in a .keep as a plain float compare against 1800f.",
+      "line": 78,
+      "match": "0x44e10000 < (int)this_ptr->master_frame)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((0x44e10000 < (int)this_ptr->master_frame) && ((int)this_ptr->master_frame < 0x44ed8000)) {",
+      "type": "bit_int_float_compare"
+    }
+  ],
   "stack_frame": {
     "frame_size": 140,
     "local_size": 132,
@@ -386,48 +430,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 65,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "CStack_2c.x = pCVar4->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 88,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "CStack_38.x = pCVar3->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44ac8000 is the IEEE 754 bit pattern of 1380f. Rewrite in a .keep as a plain float compare against 1380f.",
-      "line": 41,
-      "match": "0x44ac8000 < (int)fVar1)",
-      "severity": "moderate",
-      "text": "if ((0x44ac8000 < (int)fVar1) && ((int)fVar1 < 0x44c58000)) {",
-      "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44b90000 is the IEEE 754 bit pattern of 1480f. Rewrite in a .keep as a plain float compare against 1480f.",
-      "line": 42,
-      "match": "(int)fVar1 < 0x44b90000",
-      "severity": "moderate",
-      "text": "if ((int)fVar1 < 0x44b90000) {",
-      "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x44e10000 is the IEEE 754 bit pattern of 1800f. Rewrite in a .keep as a plain float compare against 1800f.",
-      "line": 78,
-      "match": "0x44e10000 < (int)this_ptr->master_frame)",
-      "severity": "moderate",
-      "text": "if ((0x44e10000 < (int)this_ptr->master_frame) && ((int)this_ptr->master_frame < 0x44ed8000)) {",
-      "type": "bit_int_float_compare"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

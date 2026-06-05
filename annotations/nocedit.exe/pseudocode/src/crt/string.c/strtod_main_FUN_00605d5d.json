@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 200,
+    "complexity_score": 235,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 13,
+    "suspect_count": 16,
     "suspect_types": [
       "bitcast_double_pair",
+      "concat_reconstruction",
       "unknown_field"
     ],
     "total_lines": 167
@@ -280,6 +281,30 @@
       "severity": "moderate",
       "text": "dVar3 = __BITCAST_DOUBLE(CONCAT44(local_20._4_4_,(uint)local_20));",
       "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 26,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "uVar6._0_2_ = CONCAT11(bStack_2b,uStack_2c) & 0x7fff;",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT19 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 42,
+      "match": "CONCAT19",
+      "severity": "moderate",
+      "text": "local_28 = (double)(float10)CONCAT19(bStack_2b,CONCAT18(uStack_2c,local_34));",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT19 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 50,
+      "match": "CONCAT19",
+      "severity": "moderate",
+      "text": "local_28 = (double)(float10)CONCAT19(bStack_2b,CONCAT18(uStack_2c,local_34));",
+      "type": "concat_reconstruction"
     }
   ]
 }

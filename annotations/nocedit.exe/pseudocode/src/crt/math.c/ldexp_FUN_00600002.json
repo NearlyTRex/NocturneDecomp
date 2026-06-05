@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 140,
+    "complexity_score": 155,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "bitcast_double_pair",
+      "concat_reconstruction",
       "unknown_field"
     ],
     "total_lines": 140
@@ -235,6 +236,14 @@
       "severity": "moderate",
       "text": "return __BITCAST_DOUBLE(CONCAT44(uStack_18,CONCAT22(uStack_1a,local_1c)));",
       "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 50,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "uStack_18 = CONCAT22(uStack_1e,local_20);",
+      "type": "concat_reconstruction"
     }
   ]
 }
