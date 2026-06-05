@@ -5,45 +5,22 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6170 (95.6%)
-With suspects: 284
-Total suspects: 1914
+Clean: 6148 (95.3%)
+With suspects: 306
+Total suspects: 1979
 
 ====================================================================================================
-core_cloth.cpp_CCloth_setup_FUN_00439710 (2 suspects)
-  File: core/cloth.cpp
+core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0 (2 suspects)
+  File: core/actor.cpp
 ====================================================================================================
-  Line 85 [static_shift_too_many_bits]: (uVar6 = pCVar15->x, uVar16 = (int)uVar6 >> 0x1f,
-  Line 86 [static_shift_too_many_bits]: uVar7 = (this_ptr->model).vertex_list[iVar2].x, uVar17 = (int)uVar7 >> 0x1f,
+  Line 8 [signed_shift_global_idiom]: ((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -8) -
+  Line 9 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 2 < 0)) >> 3) + g_ClipLeft,*y_position);
 
 ====================================================================================================
-core_course.cpp_renderCourseGizmo_FUN_00443760 (5 suspects)
-  File: core/course.cpp
+core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (1 suspect)
+  File: core/dlight.cpp
 ====================================================================================================
-  Line 35 [static_shift_too_many_bits]: iVar2 = (int)ROUND(ROUND(position->x)) >> 0x1f;
-  Line 36 [static_shift_too_many_bits]: iVar6 = (int)ROUND(ROUND(position->y)) >> 0x1f;
-  Line 37 [static_shift_too_many_bits]: iVar7 = (int)ROUND(ROUND(position->z)) >> 0x1f;
-  Line 65 [static_shift_too_many_bits]: iVar3 = iVar6 >> 0x1f;
-  Line 75 [static_shift_too_many_bits]: [((int)((iVar4 + (iVar4 >> 0x1f) * -8) - (uint)((iVar4 >> 0x1f) << 2 < 0)) >> 3)
-
-====================================================================================================
-core_course.cpp_renderCoursePoint_FUN_004436d0 (2 suspects)
-  File: core/course.cpp
-====================================================================================================
-  Line 19 [static_shift_too_many_bits]: iVar1 = iVar2 >> 0x1f;
-  Line 29 [static_shift_too_many_bits]: [((int)((iVar2 + (iVar2 >> 0x1f) * -8) - (uint)((iVar2 >> 0x1f) << 2 < 0)) >> 3) *
-
-====================================================================================================
-core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044dde0 (1 suspect)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 19 [static_null_pointer]: return *pacVar1;
-
-====================================================================================================
-core_dcamera.cpp_renderFlatColorScanline_FUN_004505e0 (1 suspect)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 70 [static_self_assignment]: iVar4 = iVar4;
+  Line 38 [signed_shift_global_idiom]: iVar5 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810 (19 suspects)
@@ -170,6 +147,17 @@ core_dskybox.cpp_renderSkyDome_FUN_004901f0 (2 suspects)
   Line 145 [static_shift_too_many_bits]: (int)((iVar5 + (iVar5 >> 0x1f) * -4) - (uint)((iVar5 >> 0x1f) << 1 < 0)) >> 2 ^ 0xffffff;
 
 ====================================================================================================
+core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (6 suspects)
+  File: core/dtrace.cpp
+====================================================================================================
+  Line 306 [signed_shift_global_idiom]: iVar7 = (g_InverseMatrix.m[2].x ^ g_InverseMatrix.m[2].x >> 0x1f) -
+  Line 307 [signed_shift_global_idiom]: (g_InverseMatrix.m[2].x >> 0x1f);
+  Line 308 [signed_shift_global_idiom]: iVar1 = (g_InverseMatrix.m[2].y ^ g_InverseMatrix.m[2].y >> 0x1f) -
+  Line 309 [signed_shift_global_idiom]: (g_InverseMatrix.m[2].y >> 0x1f);
+  Line 310 [signed_shift_global_idiom]: iVar6 = (g_InverseMatrix.m[2].z ^ g_InverseMatrix.m[2].z >> 0x1f) -
+  Line 311 [signed_shift_global_idiom]: (g_InverseMatrix.m[2].z >> 0x1f);
+
+====================================================================================================
 core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50 (1 suspect)
   File: core/dtrace.cpp
 ====================================================================================================
@@ -196,11 +184,26 @@ core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004c8c90 (3 suspects)
   Line 33 [static_uninitvar]: fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
 
 ====================================================================================================
-core_fire.cpp_CFireball_process_FUN_004c0b30 (2 suspects)
+core_fire.cpp_CFireball_process_FUN_004c0b30 (4 suspects)
   File: core/fire.cpp
 ====================================================================================================
+  Line 35 [signed_shift_global_idiom]: ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
+  Line 36 [signed_shift_global_idiom]: (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
   Line 50 [static_shift_too_many_bits]: iVar2 = (iVar2 + (iVar2 >> 0x1f) * -0x100) - (uint)((iVar2 >> 0x1f) << 7 < 0);
   Line 51 [static_shift_too_many_bits]: iVar4 = iVar2 >> 0x1f;
+
+====================================================================================================
+core_fire.cpp_CRock_process_FUN_004c17f0 (2 suspects)
+  File: core/fire.cpp
+====================================================================================================
+  Line 24 [signed_shift_global_idiom]: ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
+  Line 25 [signed_shift_global_idiom]: (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2) * (longlong)iVar2;
+
+====================================================================================================
+core_fire.cpp_updateTextureAnimCounts_FUN_004c3870 (1 suspect)
+  File: core/fire.cpp
+====================================================================================================
+  Line 7 [signed_shift_global_idiom]: iVar1 = g_GlobalDeltaTimeInt >> 0x1f;
 
 ====================================================================================================
 core_flame.cpp_CFlame_updateGlobe_FUN_004cad90 (2 suspects)
@@ -431,6 +434,13 @@ core_inv.cpp_CInventory_load_FUN_004ff400 (2 suspects)
   Line 92 [shadow_pointer_walk]: pCVar5 = (CInventory *)&pCVar5->owner;
 
 ====================================================================================================
+core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 (2 suspects)
+  File: core/inv.cpp
+====================================================================================================
+  Line 40 [signed_shift_global_idiom]: ((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -
+  Line 41 [signed_shift_global_idiom]: (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);
+
+====================================================================================================
 core_inv.cpp_CInventory_save_FUN_004ff210 (2 suspects)
   File: core/inv.cpp
 ====================================================================================================
@@ -580,6 +590,13 @@ core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 (1 suspect)
   Line 40 [static_identical_inner_condition]: if (iVar8 < 0x40001) goto LAB_00510823;
 
 ====================================================================================================
+core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 (2 suspects)
+  File: core/menu.cpp
+====================================================================================================
+  Line 47 [signed_shift_global_idiom]: (g_AudioVisualizationCounter >> 0x1f) * -0x10000) -
+  Line 48 [signed_shift_global_idiom]: (uint)((g_AudioVisualizationCounter >> 0x1f) << 0xf < 0)) >> 0x10) + x_center
+
+====================================================================================================
 core_mimic.cpp_CMimic_ctor_FUN_0051f1d0 (2 suspects)
   File: core/mimic.cpp
 ====================================================================================================
@@ -675,6 +692,13 @@ core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 (2 suspects)
   Line 40 [static_shift_too_many_bits]: if (iVar3 == (int)((iVar4 + (iVar4 >> 0x1f) * -4) - (uint)((iVar4 >> 0x1f) << 1 < 0)) >> 2) {
 
 ====================================================================================================
+core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (2 suspects)
+  File: core/morph.cpp
+====================================================================================================
+  Line 183 [signed_shift_global_idiom]: iVar5 = (int)((g_WindowHeight + (g_WindowHeight >> 0x1f) * -4) -
+  Line 184 [signed_shift_global_idiom]: (uint)((g_WindowHeight >> 0x1f) << 1 < 0)) >> 2;
+
+====================================================================================================
 core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (8 suspects)
   File: core/msnedit.cpp
 ====================================================================================================
@@ -767,6 +791,13 @@ core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220 (8 suspects)
   Line 95 [unrolled_strchr]: do {
 
 ====================================================================================================
+core_msnedit.cpp_drawPropertyRow_FUN_00535e10 (2 suspects)
+  File: core/msnedit.cpp
+====================================================================================================
+  Line 7 [signed_shift_global_idiom]: (value,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -8) -
+  Line 8 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 2 < 0)) >> 3) + g_ClipLeft,*y_pos);
+
+====================================================================================================
 core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (1 suspect)
   File: core/netgame.cpp
 ====================================================================================================
@@ -849,6 +880,28 @@ core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 (1 suspect)
   File: core/set.cpp
 ====================================================================================================
   Line 95 [static_shift_too_many_bits]: ((int)((iVar5 + (iVar5 >> 0x1f) * -0x80) - (uint)((iVar5 >> 0x1f) << 6 < 0)) >> 7) +
+
+====================================================================================================
+core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (4 suspects)
+  File: core/setedit.cpp
+====================================================================================================
+  Line 68 [signed_shift_global_idiom]: (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
+  Line 69 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 5 < 0)) >> 6;
+  Line 94 [signed_shift_global_idiom]: (iVar2 < (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
+  Line 95 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 5 < 0)) >> 6)) {
+
+====================================================================================================
+core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (8 suspects)
+  File: core/setedit.cpp
+====================================================================================================
+  Line 110 [signed_shift_global_idiom]: (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
+  Line 111 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2,iVar6);
+  Line 115 [signed_shift_global_idiom]: (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
+  Line 116 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2,iVar4);
+  Line 121 [signed_shift_global_idiom]: ((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
+  Line 122 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + g_WindowWidth / 2,iVar6);
+  Line 125 [signed_shift_global_idiom]: ((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
+  Line 126 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + g_WindowWidth / 2,iVar4);
 
 ====================================================================================================
 core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (2 suspects)
@@ -1286,12 +1339,14 @@ engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0 (3 suspects)
   Line 102 [unrolled_strcpy]: do {
 
 ====================================================================================================
-engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10 (3 suspects)
+engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10 (5 suspects)
   File: engine/fileio.cpp
 ====================================================================================================
   Line 54 [unrolled_strcpy]: do {
   Line 103 [pointer_cast]: puVar7 = (uint *)((int)&(CStack_e84.directory_entries)->name + local_1c);
   Line 111 [unrolled_strcpy]: do {
+  Line 154 [signed_shift_global_idiom]: ((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
+  Line 155 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + g_WindowWidth / 2,iVar3);
 
 ====================================================================================================
 engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (12 suspects)
@@ -1980,10 +2035,29 @@ shape_design.c_selectVertexToDelete_FUN_0045c5b0 (1 suspect)
   Line 37 [unrolled_memcpy]: g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1].vertex.x;
 
 ====================================================================================================
-shape_design.c_showFacetPartEditor_FUN_0045f1d0 (14 suspects)
+shape_design.c_setupViewMatrix_FUN_0045ba60 (6 suspects)
+  File: shape/design.c
+====================================================================================================
+  Line 37 [signed_shift_global_idiom]: (int)((g_TransformMatrix.m[0].z + (g_TransformMatrix.m[0].z >> 0x1f) * -0x10) -
+  Line 38 [signed_shift_global_idiom]: (uint)((g_TransformMatrix.m[0].z >> 0x1f) << 3 < 0)) >> 4;
+  Line 40 [signed_shift_global_idiom]: (int)((g_TransformMatrix.m[1].z + (g_TransformMatrix.m[1].z >> 0x1f) * -0x10) -
+  Line 41 [signed_shift_global_idiom]: (uint)((g_TransformMatrix.m[1].z >> 0x1f) << 3 < 0)) >> 4;
+  Line 43 [signed_shift_global_idiom]: (int)((g_TransformMatrix.m[2].z + (g_TransformMatrix.m[2].z >> 0x1f) * -0x10) -
+  Line 44 [signed_shift_global_idiom]: (uint)((g_TransformMatrix.m[2].z >> 0x1f) << 3 < 0)) >> 4;
+
+====================================================================================================
+shape_design.c_showFacetPartEditor_FUN_0045f1d0 (22 suspects)
   File: shape/design.c
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 251 [signed_shift_global_idiom]: (local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
+  Line 252 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,
+  Line 257 [signed_shift_global_idiom]: (local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
+  Line 258 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,
+  Line 260 [signed_shift_global_idiom]: iVar12 = g_WindowWidth >> 0x1f;
+  Line 274 [signed_shift_global_idiom]: iVar13 = g_WindowWidth >> 0x1f;
+  Line 388 [signed_shift_global_idiom]: (local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
+  Line 389 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,
   Line 477 [unrolled_memcpy]: for (iVar12 = 0x61; iVar12 != 0; iVar12 = iVar12 + -1) {
   Line 479 [pointer_cast]: pSVar14 = (SShapeEditorPolygon *)((int)pSVar14 + ((uint)bVar7 * -2 + 1) * 4);
   Line 480 [pointer_cast]: pSVar15 = (SShapeEditorPolygon *)((int)pSVar15 + ((uint)bVar7 * -2 + 1) * 4);
@@ -2113,6 +2187,44 @@ shape_design.c_writePolygonModel_FUN_0045a320 (2 suspects)
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 40 [unrolled_strcpy]: do {
+
+====================================================================================================
+shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 26 [signed_shift_global_idiom]: iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
+
+====================================================================================================
+shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 26 [signed_shift_global_idiom]: iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
+
+====================================================================================================
+shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 27 [signed_shift_global_idiom]: iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
+
+====================================================================================================
+shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 139 [signed_shift_global_idiom]: iVar11 = g_WindowWidth >> 0x1f;
+
+====================================================================================================
+shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 (2 suspects)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 120 [signed_shift_global_idiom]: iVar3 = (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x80) -
+  Line 121 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 6 < 0)) >> 7;
+
+====================================================================================================
+shape_edittool.cpp_showTextInputDialog_FUN_0049db10 (2 suspects)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 37 [signed_shift_global_idiom]: iVar2 = (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x80) -
+  Line 38 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 6 < 0)) >> 7;
 
 ====================================================================================================
 shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 (6 suspects)
@@ -3342,3 +3454,66 @@ shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (4 suspects)
   Line 44 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);
   Line 45 [pointer_cast]: pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
   Line 76 [unrolled_memcpy]: // 005d6488: MOVSD.REP ES:EDI,ESI
+
+====================================================================================================
+sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340 (2 suspects)
+  File: sound/snddx.cpp
+====================================================================================================
+  Line 21 [signed_shift_global_idiom]: ((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -
+  Line 22 [signed_shift_global_idiom]: (uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamSamplesPerBlock *
+
+====================================================================================================
+sound_snddx.cpp_fillStreamBuffer_FUN_005adff0 (2 suspects)
+  File: sound/snddx.cpp
+====================================================================================================
+  Line 32 [signed_shift_global_idiom]: iVar2 = (int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -
+  Line 33 [signed_shift_global_idiom]: (uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3;
+
+====================================================================================================
+sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0 (2 suspects)
+  File: sound/sndwav.cpp
+====================================================================================================
+  Line 13 [signed_shift_global_idiom]: ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
+  Line 14 [signed_shift_global_idiom]: (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3);
+
+====================================================================================================
+sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90 (2 suspects)
+  File: sound/sndwav.cpp
+====================================================================================================
+  Line 5 [signed_shift_global_idiom]: return ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
+  Line 6 [signed_shift_global_idiom]: (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveInBufferSizeSamples *
+
+====================================================================================================
+sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690 (2 suspects)
+  File: sound/sndwav.cpp
+====================================================================================================
+  Line 5 [signed_shift_global_idiom]: return ((int)((g_WaveOutBitsPerSample + (g_WaveOutBitsPerSample >> 0x1f) * -8) -
+  Line 6 [signed_shift_global_idiom]: (uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveOutBufferSize *
+
+====================================================================================================
+sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0 (2 suspects)
+  File: sound/sndwav.cpp
+====================================================================================================
+  Line 13 [signed_shift_global_idiom]: ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
+  Line 14 [signed_shift_global_idiom]: (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveInBufferSizeSamples;
+
+====================================================================================================
+wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0 (2 suspects)
+  File: wincore/wddvmem.cpp
+====================================================================================================
+  Line 6 [signed_shift_global_idiom]: (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
+  Line 7 [signed_shift_global_idiom]: (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *
+
+====================================================================================================
+wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10 (2 suspects)
+  File: wincore/wddvmem.cpp
+====================================================================================================
+  Line 8 [signed_shift_global_idiom]: (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
+  Line 9 [signed_shift_global_idiom]: (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *
+
+====================================================================================================
+wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0 (2 suspects)
+  File: wincore/wddvmem.cpp
+====================================================================================================
+  Line 46 [signed_shift_global_idiom]: (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
+  Line 47 [signed_shift_global_idiom]: (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *

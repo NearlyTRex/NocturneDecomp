@@ -98,6 +98,7 @@ SUSPECT_SEVERITY = {
     'subfield_vector_pun': 'moderate',
     'sign_compare_idiom': 'moderate',
     'carry_arith_idiom': 'moderate',
+    'signed_shift_global_idiom': 'moderate',
 }
 
 
@@ -2841,6 +2842,71 @@ def identify_dropped_self_copy(decompiled_code):
                 'uninitialized); if the copy folded into stores that survive '
                 'after the merge, drop the dead guard line.'
                 % (a, b, a, b, a, b, a, b, a)),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
+# Signed shift-right-by-31 of a global operand (`g_Foo >> 0x1f`, optionally
+# `(int)`-cast, with member/index access). This is the same Watcom signed-
+# divide-by-power-of-2 / branchless-abs sign-mask idiom that cppcheck flags as
+# `shiftTooManyBitsSigned` (elevated to `static_shift_too_many_bits`) — but
+# cppcheck runs without `-I`, so it cannot resolve the type of a global declared
+# in a separate header and silently skips it. This regex closes that gap for
+# global operands, which are always `g_`-prefixed here. Scoped to globals on
+# purpose: cppcheck already covers local / cast operands, so this adds no
+# overlap, and a global longlong (the only legitimate `>> 0x1f`, the multiply-
+# high reduction) never appears here — that reduction operates on local temps.
+_SIGNED_SHIFT_GLOBAL_RE = re.compile(
+    r'(?:\(int\)\s*)?\bg_\w+(?:(?:->|\.)\w+|\[[^\]\n]*\])*\s*>>\s*(?:0x1f|31)\b'
+)
+
+
+def identify_signed_shift_global_idiom(decompiled_code):
+    """Detect the signed `>> 0x1f` sign-mask idiom applied to a global.
+
+    Canonical shape (from renderFlatColorScanline):
+        cVar2 = (char)((g_FlatShadingLightLevel
+                        + (g_FlatShadingLightLevel >> 0x1f) * -0x100)
+                       - (uint)((g_FlatShadingLightLevel >> 0x1f) << 7 < 0) >> 8);
+
+    A signed 32-bit value shifted right by 31 is UB; Watcom emits it as the
+    sign mask for a divide-by-power-of-2 (`x / N`) or branchless-abs
+    (`ABS(x)`). cppcheck's `shiftTooManyBitsSigned` catches this for locals and
+    cast operands but misses globals (their type isn't resolvable without
+    `-I`). The eligible rewrite is identical to `static_shift_too_many_bits`:
+    `x / N` or `ABS(x)` (see the `static_shift_too_many_bits` entry in
+    fix_compilation.md).
+
+    One suspect per line (deduped), located at the shift line.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts of type 'signed_shift_global_idiom'.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    for i, line in enumerate(decompiled_code.split('\n')):
+        stripped = line.strip()
+        if stripped.startswith('//') or stripped.startswith('/*'):
+            continue
+        if not _SIGNED_SHIFT_GLOBAL_RE.search(line):
+            continue
+        suspects.append({
+            'line': i + 1,
+            'type': 'signed_shift_global_idiom',
+            'match': 'g_Global >> 0x1f',
+            'text': stripped[:120],
+            'description': (
+                'Signed `>> 0x1f` sign-mask on a global operand — the Watcom '
+                'signed-divide-by-power-of-2 / branchless-abs idiom that '
+                'cppcheck misses on globals (unresolved type without -I). '
+                'Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl '
+                'INT_MIN); see the static_shift_too_many_bits notes in '
+                'fix_compilation.md.'),
             'severity': 'moderate',
         })
     return suspects
@@ -5675,6 +5741,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_cascade_constant_fill(code))
     found.extend(identify_self_copy_guard(code))
     found.extend(identify_dropped_self_copy(code))
+    found.extend(identify_signed_shift_global_idiom(code))
     found.extend(identify_sibling_array_undersized(code))
     found.extend(identify_pointer_cast_multiline(code))
     found.extend(identify_int_address_arithmetic(code))

@@ -7,14 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 42,
+    "complexity_score": 107,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 6,
+    "suspect_types": [
+      "signed_shift_global_idiom"
+    ],
     "total_lines": 145
   },
   "cross_references": [
@@ -191,5 +193,54 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 37,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(int)((g_TransformMatrix.m[0].z + (g_TransformMatrix.m[0].z >> 0x1f) * -0x10) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 38,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_TransformMatrix.m[0].z >> 0x1f) << 3 < 0)) >> 4;",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 40,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(int)((g_TransformMatrix.m[1].z + (g_TransformMatrix.m[1].z >> 0x1f) * -0x10) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 41,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_TransformMatrix.m[1].z >> 0x1f) << 3 < 0)) >> 4;",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 43,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(int)((g_TransformMatrix.m[2].z + (g_TransformMatrix.m[2].z >> 0x1f) * -0x10) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 44,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_TransformMatrix.m[2].z >> 0x1f) << 3 < 0)) >> 4;",
+      "type": "signed_shift_global_idiom"
+    }
+  ]
 }

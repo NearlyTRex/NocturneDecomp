@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1406,
-    "complexity_score": 668,
+    "complexity_score": 733,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 22,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 668,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 6,
+    "suspect_types": [
+      "signed_shift_global_idiom"
+    ],
     "total_lines": 2074
   },
   "cross_references": [
@@ -1048,5 +1050,54 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 306,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar7 = (g_InverseMatrix.m[2].x ^ g_InverseMatrix.m[2].x >> 0x1f) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 307,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(g_InverseMatrix.m[2].x >> 0x1f);",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 308,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar1 = (g_InverseMatrix.m[2].y ^ g_InverseMatrix.m[2].y >> 0x1f) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 309,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(g_InverseMatrix.m[2].y >> 0x1f);",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 310,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar6 = (g_InverseMatrix.m[2].z ^ g_InverseMatrix.m[2].z >> 0x1f) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 311,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(g_InverseMatrix.m[2].z >> 0x1f);",
+      "type": "signed_shift_global_idiom"
+    }
+  ]
 }

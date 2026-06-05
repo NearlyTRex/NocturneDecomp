@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 90,
+    "complexity_score": 115,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "signed_shift_global_idiom"
+    ],
     "total_lines": 298
   },
   "cross_references": [],
@@ -231,6 +233,22 @@
     "file_variant": "keep"
   },
   "suspects": [
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 35,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "((int)((g_GlobalDeltaTimeInt + (g_GlobalDeltaTimeInt >> 0x1f) * -4) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 36,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);",
+      "type": "signed_shift_global_idiom"
+    },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
       "line": 50,

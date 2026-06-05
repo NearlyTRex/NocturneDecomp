@@ -24,8 +24,6 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
   CVector3f *pCVar12;
   int *piVar14;
   CVector3i *pCVar15;
-  uint uVar16;
-  uint uVar17;
   CVector3f *pCVar8;
   SClothVertex *pSVar18;
   SVert *pSVar20;
@@ -56,8 +54,6 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
   int local_18;
   float local_14;
   float fVar1;
-  uint uVar6;
-  uint uVar7;
   byte bVar2;
   
   iVar8 = 0;
@@ -82,9 +78,7 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
         pCVar3 = (this_ptr->model).vertex_list;
         pCVar15 = pCVar3 + iVar1;
         if ((pCVar15->y == pCVar3[iVar2].y) &&
-           (uVar6 = pCVar15->x, uVar16 = (int)uVar6 >> 0x1f,
-           uVar7 = (this_ptr->model).vertex_list[iVar2].x, uVar17 = (int)uVar7 >> 0x1f,
-           (int)((uVar7 ^ uVar17) - uVar17) < (int)((uVar6 ^ uVar16) - uVar16))) {
+           (ABS((this_ptr->model).vertex_list[iVar2].x) < ABS(pCVar15->x))) {
           this_ptr->vertex_sort_buffer[local_28] = iVar2;
           this_ptr->vertex_sort_buffer[iVar14] = iVar1;
         }

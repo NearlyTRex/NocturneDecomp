@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6211 (96.2%)
-Functions with suspects: 243 (3.8%)
+Clean functions: 6183 (95.8%)
+Functions with suspects: 271 (4.2%)
 
-Total suspect patterns: 1914
-Average suspects per function: 0.30
+Total suspect patterns: 1979
+Average suspects per function: 0.31
 
-Virtual files: 214 total, 193 at 100%, 197 at 90%+
+Virtual files: 214 total, 182 at 100%, 195 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 50.7
+Average complexity score: 50.8
 
 COMPILATION STATUS
 ----------------------------------------
@@ -34,9 +34,10 @@ SUSPECT PATTERN BREAKDOWN
   static_uninitvar          93
   shadow_pointer_walk       80
   missing_cave_copy         80
-  static_self_assignment    69
-  static_shift_too_many_bits 62
+  signed_shift_global_idiom 76
+  static_self_assignment    68
   unrolled_strlen           56
+  static_shift_too_many_bits 53
   bitcast_double_pair       36
   unrolled_strchr           26
   static_legacy_uninitvar   25
@@ -49,8 +50,8 @@ SUSPECT PATTERN BREAKDOWN
   sub84_truncation          9
   stack_param               8
   static_identical_inner_condition 7
-  static_null_pointer       6
   unaffected_reg            6
+  static_null_pointer       5
   unrolled_strcat           4
   stack_alignment_array     4
   warning_unreachable       3
@@ -112,7 +113,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6161 more
+  ... and 6133 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -136,6 +137,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 917, suspects: 0, lines: 917)
   005138e0: core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (score: 917, suspects: 0, lines: 917)
   0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 857, suspects: 0, lines: 857)
+  0045f1d0: shape_design.c_showFacetPartEditor_FUN_0045f1d0 (score: 817, suspects: 20, lines: 597)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 809, suspects: 0, lines: 809)
   004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (score: 804, suspects: 14, lines: 634)
   00517630: shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (score: 789, suspects: 33, lines: 449)
@@ -145,7 +147,6 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00562920: core_script.cpp_editParameterValue_FUN_00562920 (score: 751, suspects: 0, lines: 751)
   00511e50: core_menu.cpp_configureSoundOptions_FUN_00511e50 (score: 743, suspects: 0, lines: 743)
   004d2ea0: core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 (score: 741, suspects: 4, lines: 691)
-  0045f1d0: shape_design.c_showFacetPartEditor_FUN_0045f1d0 (score: 732, suspects: 12, lines: 597)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
@@ -217,9 +218,20 @@ FUNCTIONS BY SUSPECT TYPE
     0051f930: core_mimic.cpp_CMimic_updatePose_FUN_0051f930
     ... and 3 more
 
-  static_self_assignment (0 functions):
+  signed_shift_global_idiom (30 functions):
+    004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
+    005ae340: sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340
+    005adff0: sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
+    005b0cc0: sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0
+    005b0690: sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690
+    005b12e0: sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0
+    005b0c90: sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90
+    004fee00: core_inv.cpp_CInventory_renderItemModel_FUN_004fee00
+    0057c5d0: core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
+    00577af0: core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
+    ... and 20 more
 
-  static_shift_too_many_bits (0 functions):
+  static_self_assignment (0 functions):
 
   unrolled_strlen (23 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
@@ -233,6 +245,8 @@ FUNCTIONS BY SUSPECT TYPE
     00468320: shape_design.c_createKeyframeModel_FUN_00468320
     00468910: shape_design.c_generateGlobe_FUN_00468910
     ... and 13 more
+
+  static_shift_too_many_bits (0 functions):
 
   bitcast_double_pair (6 functions):
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
@@ -327,10 +341,10 @@ FUNCTIONS BY SUSPECT TYPE
 
   static_identical_inner_condition (0 functions):
 
-  static_null_pointer (0 functions):
-
   unaffected_reg (1 functions):
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+
+  static_null_pointer (0 functions):
 
   unrolled_strcat (2 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00

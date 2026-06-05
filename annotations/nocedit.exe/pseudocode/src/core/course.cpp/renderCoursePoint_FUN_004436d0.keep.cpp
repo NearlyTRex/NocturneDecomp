@@ -1,0 +1,35 @@
+// Name: core_course.cpp_renderCoursePoint_FUN_004436d0
+// Address: 004436d0
+// MANUAL RECONSTRUCTION
+// Address Range: [[004436d0, 00443759]]
+// Convention: __cdecl
+// Signature: void __cdecl core_course_cpp_renderCoursePoint_FUN_004436d0(void)
+
+#include "nocturne.h"
+
+void __cdecl core_course_cpp_renderCoursePoint_FUN_004436d0(void)
+
+{
+  SRenderVertex *vertices;
+  int iVar2;
+
+  vertices = g_CDemonRendererPtr1->vertex_buffer_ptr;
+  if ((int)((vertices->projected_vertex).screen_x & -0x80000000) == 0) {
+    iVar2 = (vertices->projected_vertex).transformed_z;
+    iVar2 = 0xff - (iVar2 / 0x80);
+    if (iVar2 < 0) {
+      iVar2 = 0;
+    }
+    else if (0xff < iVar2) {
+      iVar2 = 0xff;
+    }
+    g_ActiveRenderColor =
+         (int)g_ColorCubeLookup[(iVar2 / 8) * 0x421];
+    engine_prim_c_replaceWWithDepth_FUN_00552110(vertices,1);
+    engine_2d_c_plotPixelWithDepth_FUN_00401290
+              ((vertices->projected_vertex).screen_x >> 0x10,
+               (vertices->projected_vertex).screen_y >> 0x10,
+               (vertices->projected_vertex).transformed_z);
+  }
+  return;
+}

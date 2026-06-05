@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 60,
     "complexity_score": 28,
@@ -118,46 +118,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "static_analysis": {
-    "analyzed_file": "renderCoursePoint_FUN_004436d0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 19,
-          "line": 19,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 39,
-          "line": 29,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 19,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "iVar1 = iVar2 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 29,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "[((int)((iVar2 + (iVar2 >> 0x1f) * -8) - (uint)((iVar2 >> 0x1f) << 2 < 0)) >> 3) *",
-      "type": "static_shift_too_many_bits"
-    }
-  ]
+  "suspects": []
 }

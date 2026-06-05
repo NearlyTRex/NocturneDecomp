@@ -431,6 +431,60 @@
       "severity": "moderate",
       "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 56,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftU >> 0x1f) << 0x18 | g_PerspectiveLeftU >> 8,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 59,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftV >> 0x1f) << 0x18 | g_PerspectiveLeftV >> 8,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 70,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveLeftW >> 0x1f) << 0x18 | g_PerspectiveLeftW >> 8,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 73,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveInterpolatedW >> 0x1f) << 0x18 |",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 164,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveRightU >> 0x1f) << 0x18 | g_PerspectiveRightU >> 8,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 167,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)(CONCAT44(((int)g_PerspectiveRightV >> 0x1f) << 0x18 | g_PerspectiveRightV >> 8,",
+      "type": "signed_shift_global_idiom"
     }
   ],
   "stack_frame": {

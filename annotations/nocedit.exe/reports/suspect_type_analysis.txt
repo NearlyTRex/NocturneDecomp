@@ -4,17 +4,18 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     836 ( 43.7%)
-  unrolled_memcpy                  265 ( 13.8%)
-  unrolled_strcpy                  126 (  6.6%)
-  static_uninitvar                  93 (  4.9%)
-  shadow_pointer_walk               80 (  4.2%)
-  missing_cave_copy                 80 (  4.2%)
-  static_self_assignment            69 (  3.6%)
-  static_shift_too_many_bits        62 (  3.2%)
-  unrolled_strlen                   56 (  2.9%)
-  bitcast_double_pair               36 (  1.9%)
-  unrolled_strchr                   26 (  1.4%)
+  pointer_cast                     836 ( 42.2%)
+  unrolled_memcpy                  265 ( 13.4%)
+  unrolled_strcpy                  126 (  6.4%)
+  static_uninitvar                  93 (  4.7%)
+  shadow_pointer_walk               80 (  4.0%)
+  missing_cave_copy                 80 (  4.0%)
+  signed_shift_global_idiom         76 (  3.8%)
+  static_self_assignment            68 (  3.4%)
+  unrolled_strlen                   56 (  2.8%)
+  static_shift_too_many_bits        53 (  2.7%)
+  bitcast_double_pair               36 (  1.8%)
+  unrolled_strchr                   26 (  1.3%)
   static_legacy_uninitvar           25 (  1.3%)
   unrolled_memset                   21 (  1.1%)
   warning_inlined_function          21 (  1.1%)
@@ -25,8 +26,8 @@ SUSPECT TYPE COUNTS
   sub84_truncation                   9 (  0.5%)
   stack_param                        8 (  0.4%)
   static_identical_inner_condition     7 (  0.4%)
-  static_null_pointer                6 (  0.3%)
   unaffected_reg                     6 (  0.3%)
+  static_null_pointer                5 (  0.3%)
   unrolled_strcat                    4 (  0.2%)
   stack_alignment_array              4 (  0.2%)
   warning_unreachable                3 (  0.2%)
@@ -501,14 +502,52 @@ Functions:
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
 
 ====================================================================================================
-TYPE: static_self_assignment (69 occurrences)
+TYPE: signed_shift_global_idiom (76 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    69x  Cppcheck: redundant self-assignment
+    76x  g_Global >> 0x1f
 
 Functions:
-  core_dcamera.cpp_renderFlatColorScanline_FUN_004505e0
+  core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
+  core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
+  core_fire.cpp_CFireball_process_FUN_004c0b30
+  core_fire.cpp_CRock_process_FUN_004c17f0
+  core_fire.cpp_updateTextureAnimCounts_FUN_004c3870
+  core_inv.cpp_CInventory_renderItemModel_FUN_004fee00
+  core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
+  core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
+  core_msnedit.cpp_drawPropertyRow_FUN_00535e10
+  core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
+  core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
+  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
+  shape_design.c_setupViewMatrix_FUN_0045ba60
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0
+  shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410
+  shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0
+  shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
+  shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
+  shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
+  shape_edittool.cpp_showTextInputDialog_FUN_0049db10
+  sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340
+  sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
+  sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0
+  sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90
+  sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690
+  sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0
+  wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0
+  wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10
+  wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0
+
+====================================================================================================
+TYPE: static_self_assignment (68 occurrences)
+====================================================================================================
+
+Unique patterns:
+    68x  Cppcheck: redundant self-assignment
+
+Functions:
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
@@ -551,37 +590,6 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: static_shift_too_many_bits (62 occurrences)
-====================================================================================================
-
-Unique patterns:
-    62x  Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)
-
-Functions:
-  core_cloth.cpp_CCloth_setup_FUN_00439710
-  core_course.cpp_renderCourseGizmo_FUN_00443760
-  core_course.cpp_renderCoursePoint_FUN_004436d0
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0
-  core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50
-  core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970
-  core_fire.cpp_CFireball_process_FUN_004c0b30
-  core_flame.cpp_CFlame_updateGlobe_FUN_004cad90
-  core_game.cpp_CGame_beginFadeOut_FUN_004e0960
-  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0
-  core_keyactor.cpp_CKeyActor_process_FUN_00501710
-  core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
-  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
-  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
-  engine_colquant.c_computeBoxStatistics_FUN_00441260
-  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0
-  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
-  shape_design.c_arePolygonsCoplanar_FUN_00461b70
-  shape_design.c_quantizePaletteColors_FUN_0046b770
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
-
-====================================================================================================
 TYPE: unrolled_strlen (56 occurrences)
 ====================================================================================================
 
@@ -612,6 +620,34 @@ Functions:
   shape_design.c_sizeForStadium_FUN_00469c70
   shape_design.c_tileTextureMaps_FUN_0046a180
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
+
+====================================================================================================
+TYPE: static_shift_too_many_bits (53 occurrences)
+====================================================================================================
+
+Unique patterns:
+    53x  Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)
+
+Functions:
+  core_dskybox.cpp_renderSkyDome_FUN_004901f0
+  core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50
+  core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970
+  core_fire.cpp_CFireball_process_FUN_004c0b30
+  core_flame.cpp_CFlame_updateGlobe_FUN_004cad90
+  core_game.cpp_CGame_beginFadeOut_FUN_004e0960
+  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0
+  core_keyactor.cpp_CKeyActor_process_FUN_00501710
+  core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
+  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990
+  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
+  engine_colquant.c_computeBoxStatistics_FUN_00441260
+  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0
+  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
+  shape_design.c_arePolygonsCoplanar_FUN_00461b70
+  shape_design.c_quantizePaletteColors_FUN_0046b770
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
 
 ====================================================================================================
 TYPE: bitcast_double_pair (36 occurrences)
@@ -846,19 +882,6 @@ Functions:
   shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
 
 ====================================================================================================
-TYPE: static_null_pointer (6 occurrences)
-====================================================================================================
-
-Unique patterns:
-     6x  Cppcheck: null pointer dereference
-
-Functions:
-  core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044dde0
-  core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20
-  shape_design.c_cramTextures_FUN_0046a970
-  shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
-
-====================================================================================================
 TYPE: unaffected_reg (6 occurrences)
 ====================================================================================================
 
@@ -867,6 +890,18 @@ Unique patterns:
 
 Functions:
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+
+====================================================================================================
+TYPE: static_null_pointer (5 occurrences)
+====================================================================================================
+
+Unique patterns:
+     5x  Cppcheck: null pointer dereference
+
+Functions:
+  core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20
+  shape_design.c_cramTextures_FUN_0046a970
+  shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
 
 ====================================================================================================
 TYPE: unrolled_strcat (4 occurrences)

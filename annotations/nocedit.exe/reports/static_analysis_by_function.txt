@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 131
-  Total diagnostics: 367
+  Functions with findings: 126
+  Total diagnostics: 356
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 82, raw .cpp files: 49
+  .keep.cpp files: 80, raw .cpp files: 46
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -210,16 +210,6 @@ shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150  [.cpp] [Cppcheck (quick)]
   Line   45: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
   Line   46: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
   Line   47: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-core_course.cpp_renderCourseGizmo_FUN_00443760  [.keep] [Cppcheck (quick)]
-  File: core/course.cpp  (5 diagnostics)
-
-  Line   35: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   36: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   37: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   65: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   75: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_sound.cpp_updateListeners_FUN_005b1870  [.keep] [Cppcheck (quick)]
@@ -481,25 +471,11 @@ core_chain.cpp_fastSqrt_FUN_00431350  [.keep] [Cppcheck (quick)]
   Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
-core_cloth.cpp_CCloth_setup_FUN_00439710  [.keep] [Cppcheck (quick)]
-  File: core/cloth.cpp  (2 diagnostics)
-
-  Line   85: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   86: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 core_cloth.cpp_fastInvSqrt_FUN_0043e2a0  [.keep] [Cppcheck (quick)]
   File: core/cloth.cpp  (2 diagnostics)
 
   Line   13: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
   Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-core_course.cpp_renderCoursePoint_FUN_004436d0  [.cpp] [Cppcheck (quick)]
-  File: core/course.cpp  (2 diagnostics)
-
-  Line   19: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   29: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dskybox.cpp_renderSkyDome_FUN_004901f0  [.keep] [Cppcheck (quick)]
@@ -703,18 +679,6 @@ shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590  [.keep] [Cpp
 
   Line  156: [invalidTestForOverflow] Invalid test for overflow 'local_1c<local_1c+local_28'; pointer overflow is undefined behavior. Some mainstream compilers removes handling of overflows when optimising the code and change the code to 'local_28>0'.
   Line  239: [identicalInnerCondition] Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044dde0  [.cpp] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (1 diagnostics)
-
-  Line   19: [nullPointer] Possible null pointer dereference: pacVar1
-
-----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_renderFlatColorScanline_FUN_004505e0  [.cpp] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (1 diagnostics)
-
-  Line   70: [selfAssignment] Redundant assignment of 'iVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170  [.keep] [Cppcheck (quick)]

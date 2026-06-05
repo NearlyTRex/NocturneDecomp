@@ -266,6 +266,24 @@
       "severity": "moderate",
       "text": "(**(code **)(*piStack_1c + 8))(piStack_1c);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 110,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 111,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamChannelCount;",
+      "type": "signed_shift_global_idiom"
     }
   ],
   "stack_frame": {

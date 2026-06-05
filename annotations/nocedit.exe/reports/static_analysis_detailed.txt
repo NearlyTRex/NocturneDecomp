@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (367 diagnostics)
+Cppcheck (quick) (356 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -385,12 +385,8 @@ uninitvar (93)
     Uninitialized variable: local_178
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (69)
+selfAssignment (68)
 ----------------------------------------------------------------------------------------------------
-
-  core_dcamera.cpp_renderFlatColorScanline_FUN_00450 line 70
-    File: core/dcamera.cpp
-    Redundant assignment of 'iVar4' to itself.
 
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1564
     File: core/game.cpp
@@ -665,258 +661,6 @@ selfAssignment (69)
     Redundant assignment of 'iVar7' to itself.
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (62)
-----------------------------------------------------------------------------------------------------
-
-  core_cloth.cpp_CCloth_setup_FUN_00439710           line 85
-    File: core/cloth.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_cloth.cpp_CCloth_setup_FUN_00439710           line 86
-    File: core/cloth.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_course.cpp_renderCourseGizmo_FUN_00443760     line 35
-    File: core/course.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_course.cpp_renderCourseGizmo_FUN_00443760     line 36
-    File: core/course.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_course.cpp_renderCourseGizmo_FUN_00443760     line 37
-    File: core/course.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_course.cpp_renderCourseGizmo_FUN_00443760     line 65
-    File: core/course.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_course.cpp_renderCourseGizmo_FUN_00443760     line 75
-    File: core/course.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_course.cpp_renderCoursePoint_FUN_004436d0     line 19
-    File: core/course.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_course.cpp_renderCoursePoint_FUN_004436d0     line 29
-    File: core/course.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 140
-    File: core/dskybox.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 145
-    File: core/dskybox.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50 line 41
-    File: core/dtrace.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_F line 20
-    File: core/dtrace.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_fire.cpp_CFireball_process_FUN_004c0b30       line 50
-    File: core/fire.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_fire.cpp_CFireball_process_FUN_004c0b30       line 51
-    File: core/fire.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_flame.cpp_CFlame_updateGlobe_FUN_004cad90     line 28
-    File: core/flame.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_flame.cpp_CFlame_updateGlobe_FUN_004cad90     line 29
-    File: core/flame.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_game.cpp_CGame_beginFadeOut_FUN_004e0960      line 51
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_game.cpp_CGame_beginFadeOut_FUN_004e0960      line 52
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_game.cpp_CGame_beginFadeOut_FUN_004e0960      line 54
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_game.cpp_CGame_beginFadeOut_FUN_004e0960      line 55
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 47
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 48
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 50
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 51
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_keyactor.cpp_CKeyActor_process_FUN_00501710   line 27
-    File: core/keyactor.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_keyactor.cpp_CKeyActor_process_FUN_00501710   line 28
-    File: core/keyactor.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_mission.cpp_CDemonMission_prepareAllActors_FU line 34
-    File: core/mission.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_mission.cpp_CDemonMission_prepareAllActors_FU line 40
-    File: core/mission.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 129
-    File: core/set.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 135
-    File: core/set.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 136
-    File: core/set.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 142
-    File: core/set.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 143
-    File: core/set.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 149
-    File: core/set.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 95
-    File: core/set.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 89
-    File: core/setedit.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 90
-    File: core/setedit.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 79
-    File: engine/colquant.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 82
-    File: engine/colquant.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 85
-    File: engine/colquant.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 88
-    File: engine/colquant.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a line 212
-    File: engine/font.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a line 281
-    File: engine/font.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a line 349
-    File: engine/font.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a line 413
-    File: engine/font.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGene line 739
-    File: shape/cramtex.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 21
-    File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 25
-    File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 28
-    File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_design.c_quantizePaletteColors_FUN_0046b770  line 42
-    File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_design.c_quantizePaletteColors_FUN_0046b770  line 43
-    File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 137
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 145
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 152
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 159
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 166
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 173
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 85
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 89
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 93
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 97
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 invalidscanf (60)
 ----------------------------------------------------------------------------------------------------
 
@@ -1159,6 +903,222 @@ invalidscanf (60)
   engine_fileio.cpp_parseTimestampRecord_FUN_004b227 line 24
     File: engine/fileio.cpp
     sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+shiftTooManyBitsSigned (53)
+----------------------------------------------------------------------------------------------------
+
+  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 140
+    File: core/dskybox.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 145
+    File: core/dskybox.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50 line 41
+    File: core/dtrace.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_F line 20
+    File: core/dtrace.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_fire.cpp_CFireball_process_FUN_004c0b30       line 50
+    File: core/fire.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_fire.cpp_CFireball_process_FUN_004c0b30       line 51
+    File: core/fire.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_flame.cpp_CFlame_updateGlobe_FUN_004cad90     line 28
+    File: core/flame.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_flame.cpp_CFlame_updateGlobe_FUN_004cad90     line 29
+    File: core/flame.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_game.cpp_CGame_beginFadeOut_FUN_004e0960      line 51
+    File: core/game.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_game.cpp_CGame_beginFadeOut_FUN_004e0960      line 52
+    File: core/game.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_game.cpp_CGame_beginFadeOut_FUN_004e0960      line 54
+    File: core/game.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_game.cpp_CGame_beginFadeOut_FUN_004e0960      line 55
+    File: core/game.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 47
+    File: core/game.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 48
+    File: core/game.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 50
+    File: core/game.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 51
+    File: core/game.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_keyactor.cpp_CKeyActor_process_FUN_00501710   line 27
+    File: core/keyactor.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_keyactor.cpp_CKeyActor_process_FUN_00501710   line 28
+    File: core/keyactor.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_mission.cpp_CDemonMission_prepareAllActors_FU line 34
+    File: core/mission.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_mission.cpp_CDemonMission_prepareAllActors_FU line 40
+    File: core/mission.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 129
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 135
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 136
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 142
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 143
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 149
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 95
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 89
+    File: core/setedit.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 90
+    File: core/setedit.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 79
+    File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 82
+    File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 85
+    File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 88
+    File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a line 212
+    File: engine/font.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a line 281
+    File: engine/font.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a line 349
+    File: engine/font.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a line 413
+    File: engine/font.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGene line 739
+    File: shape/cramtex.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 21
+    File: shape/design.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 25
+    File: shape/design.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 28
+    File: shape/design.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_design.c_quantizePaletteColors_FUN_0046b770  line 42
+    File: shape/design.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_design.c_quantizePaletteColors_FUN_0046b770  line 43
+    File: shape/design.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 137
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 145
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 152
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 159
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 166
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 173
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 85
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 89
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 93
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 97
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 legacyUninitvar (25)
@@ -1429,12 +1389,8 @@ identicalInnerCondition (7)
     Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (6)
+nullPointer (5)
 ----------------------------------------------------------------------------------------------------
-
-  core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044d line 19
-    File: core/dcamera.cpp
-    Possible null pointer dereference: pacVar1
 
   core_mission.cpp_CDemonMission_ensureHeroPlacehold line 49
     File: core/mission.cpp

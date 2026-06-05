@@ -7,15 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1920,
-    "complexity_score": 732,
+    "complexity_score": 817,
     "cross_reference_count": 1,
     "function_call_count": 60,
     "global_count": 143,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 597,
-    "suspect_count": 12,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
+      "signed_shift_global_idiom",
       "unrolled_memcpy",
       "warning_inlined_function"
     ],
@@ -1536,6 +1537,70 @@
       "severity": "moderate",
       "text": "for (iVar12 = 0x61; iVar12 != 0; iVar12 = iVar12 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 251,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 252,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 257,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 258,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 260,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar12 = g_WindowWidth >> 0x1f;",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 274,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "iVar13 = g_WindowWidth >> 0x1f;",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 388,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 389,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,",
+      "type": "signed_shift_global_idiom"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

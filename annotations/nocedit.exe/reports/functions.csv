@@ -1293,7 +1293,7 @@ engine_fileio.cpp_logOffVersionControl_FUN_004b2830,004b2830,engine/fileio.cpp,1
 engine_fileio.cpp_CCheckOutList_dtor_FUN_004bd730,004bd730,engine/fileio.cpp,5,0,,5
 engine_fileio.cpp_logOnAsVersionControlUser_FUN_004b2770,004b2770,engine/fileio.cpp,27,0,,27
 engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0,004b82a0,engine/fileio.cpp,135,6,pointer_cast|unrolled_strcpy,205
-engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10,004b6e10,engine/fileio.cpp,193,3,pointer_cast|unrolled_strcpy,233
+engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10,004b6e10,engine/fileio.cpp,193,5,pointer_cast|signed_shift_global_idiom|unrolled_strcpy,258
 engine_fileio.cpp_CFileManager_searchMountedPods_FUN_004bcb70,004bcb70,engine/fileio.cpp,47,0,,47
 engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70,004b2d70,engine/fileio.cpp,23,0,,23
 engine_fileio.cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0,004b7ac0,engine/fileio.cpp,57,1,pointer_cast,72
@@ -1402,7 +1402,7 @@ sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750,005af750,sound/snddx.c
 sound_snddx.cpp_isValidSfxHandle_FUN_005af720,005af720,sound/snddx.cpp,9,0,,9
 sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_005ae1c0,005ae1c0,sound/snddx.cpp,29,0,,29
 sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_005af320,005af320,sound/snddx.cpp,29,0,,29
-sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340,005ae340,sound/snddx.cpp,61,0,,61
+sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340,005ae340,sound/snddx.cpp,61,2,signed_shift_global_idiom,86
 sound_snddx.cpp_CDirectSoundDevice_set3DListenerPos_FUN_005aee30,005aee30,sound/snddx.cpp,9,0,,9
 sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70,005ade70,sound/snddx.cpp,73,0,,73
 sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_005afcc0,005afcc0,sound/snddx.cpp,26,0,,26
@@ -1422,7 +1422,7 @@ sound_snddx.cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_005aef10,005a
 sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830,005ae830,sound/snddx.cpp,148,0,,148
 sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120,005b0120,sound/snddx.cpp,85,0,,85
 sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50,005aed50,sound/snddx.cpp,44,0,,44
-sound_snddx.cpp_fillStreamBuffer_FUN_005adff0,005adff0,sound/snddx.cpp,60,0,,60
+sound_snddx.cpp_fillStreamBuffer_FUN_005adff0,005adff0,sound/snddx.cpp,60,2,signed_shift_global_idiom,85
 sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60,005afd60,sound/snddx.cpp,29,0,,29
 sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70,005aee70,sound/snddx.cpp,10,0,,10
 sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_005b0030,005b0030,sound/snddx.cpp,41,0,,41
@@ -1488,7 +1488,7 @@ sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60,00534a60,sound/mp3.cpp,73,0,,73
 sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0,0052f5b0,sound/mp3.cpp,31,0,,31
 sound_sndwav.cpp_CWavOutDevice_freeSample_FUN_005b16c0,005b16c0,sound/sndwav.cpp,4,0,,4
 sound_sndwav.cpp_staticInit_FUN_005b0670,005b0670,sound/sndwav.cpp,6,0,,6
-sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0,005b0cc0,sound/sndwav.cpp,23,0,,23
+sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0,005b0cc0,sound/sndwav.cpp,23,2,signed_shift_global_idiom,48
 sound_sndwav.cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1670,005b1670,sound/sndwav.cpp,4,0,,4
 sound_sndwav.cpp_CWavOutDevice_setSfxPos_FUN_005b1700,005b1700,sound/sndwav.cpp,4,0,,4
 sound_sndwav.cpp_CWavInDevice_reset_FUN_005b0f10,005b0f10,sound/sndwav.cpp,23,0,,23
@@ -1496,7 +1496,7 @@ sound_sndwav.cpp_CWavOutDevice_getSfxPlaybackPos_FUN_005b1710,005b1710,sound/snd
 sound_sndwav.cpp_CWavOutDevice_reset_FUN_005b09c0,005b09c0,sound/sndwav.cpp,27,0,,27
 sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740,005b1740,sound/sndwav.cpp,4,0,,4
 sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560,005b1560,sound/sndwav.cpp,56,0,,56
-sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690,005b0690,sound/sndwav.cpp,6,0,,6
+sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690,005b0690,sound/sndwav.cpp,6,2,signed_shift_global_idiom,31
 sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70,005b0f70,sound/sndwav.cpp,121,0,,121
 sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470,005b1470,sound/sndwav.cpp,58,0,,58
 sound_sndwav.cpp_CWavInDevice_start_FUN_005b0e20,005b0e20,sound/sndwav.cpp,37,0,,37
@@ -1504,7 +1504,7 @@ sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0,005b16d0,sound/sndwav.cpp
 sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690,005b1690,sound/sndwav.cpp,4,0,,4
 sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680,005b1680,sound/sndwav.cpp,4,0,,4
 sound_sndwav.cpp_getWavInDevice_FUN_005b1600,005b1600,sound/sndwav.cpp,16,0,,16
-sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0,005b12e0,sound/sndwav.cpp,56,0,,56
+sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0,005b12e0,sound/sndwav.cpp,56,2,signed_shift_global_idiom,81
 sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30,005b0a30,sound/sndwav.cpp,68,0,,68
 sound_sndwav.cpp_CWavInDevice_close_FUN_005b0d70,005b0d70,sound/sndwav.cpp,34,0,,34
 sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10,005b0c10,sound/sndwav.cpp,25,0,,25
@@ -1513,7 +1513,7 @@ sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660,005b1660,sound/sndw
 sound_sndwav.cpp_CWavOutDevice_unlockSample_FUN_005b16e0,005b16e0,sound/sndwav.cpp,4,0,,4
 sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0,005b06c0,sound/sndwav.cpp,56,0,,56
 sound_sndwav.cpp_CWavOutDevice_allocateSample_FUN_005b16b0,005b16b0,sound/sndwav.cpp,4,0,,4
-sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90,005b0c90,sound/sndwav.cpp,6,0,,6
+sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90,005b0c90,sound/sndwav.cpp,6,2,signed_shift_global_idiom,31
 sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0,005b08f0,sound/sndwav.cpp,33,0,,33
 sound_sndwav.cpp_CWavOutDevice_commitDeferredSettings_FUN_005b16a0,005b16a0,sound/sndwav.cpp,4,0,,4
 sound_sndwav.cpp_CWavOutDevice_isSfxPlaying_FUN_005b1750,005b1750,sound/sndwav.cpp,4,0,,4
@@ -2107,7 +2107,7 @@ core_inv.cpp_getItemModel_FUN_004fcda0,004fcda0,core/inv.cpp,32,0,,32
 core_inv.cpp_CInventory_selectWeapon_FUN_004feb10,004feb10,core/inv.cpp,59,1,shadow_pointer_walk,74
 core_inv.cpp_CInventory_clear_FUN_004fd0e0,004fd0e0,core/inv.cpp,24,0,,24
 core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0,004fffa0,core/inv.cpp,12,0,,12
-core_inv.cpp_CInventory_renderItemModel_FUN_004fee00,004fee00,core/inv.cpp,127,0,,127
+core_inv.cpp_CInventory_renderItemModel_FUN_004fee00,004fee00,core/inv.cpp,127,2,signed_shift_global_idiom,152
 core_inv.cpp_CInventory_loadItems_FUN_004ff740,004ff740,core/inv.cpp,17,0,,17
 core_inv.cpp_drawWeaponIconBackground_FUN_00500050,00500050,core/inv.cpp,45,0,,45
 core_inv.cpp_CInventory_ctor_FUN_004fd020,004fd020,core/inv.cpp,20,0,,20
@@ -2633,7 +2633,7 @@ core_setedit.cpp_promptYesNo_FUN_00578c90,00578c90,core/setedit.cpp,40,0,,40
 core_setedit.cpp_drawHelpEntry_FUN_00581520,00581520,core/setedit.cpp,8,0,,8
 core_setedit.cpp_CDemonSet_readIni_FUN_00584900,00584900,core/setedit.cpp,6,0,,6
 core_setedit.cpp_CDemonSet_addSpotLight_FUN_0057b410,0057b410,core/setedit.cpp,37,0,,37
-core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0,0057c5d0,core/setedit.cpp,303,0,,303
+core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0,0057c5d0,core/setedit.cpp,303,8,signed_shift_global_idiom,388
 core_setedit.cpp_skipLine_FUN_00578a00,00578a00,core/setedit.cpp,11,0,,11
 core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0,00581aa0,core/setedit.cpp,442,0,,442
 core_setedit.cpp_incrementTrailingNumber_FUN_00576950,00576950,core/setedit.cpp,29,0,,29
@@ -2651,7 +2651,7 @@ core_setedit.cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340,0057d340,core/seted
 core_setedit.cpp_renderBackdropImage_FUN_0057ce80,0057ce80,core/setedit.cpp,134,0,,134
 core_setedit.cpp_pickRoomSize_FUN_00581450,00581450,core/setedit.cpp,20,0,,20
 core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00,0057fd00,core/setedit.cpp,102,0,,102
-core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0,00577af0,core/setedit.cpp,211,0,,211
+core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0,00577af0,core/setedit.cpp,211,4,signed_shift_global_idiom,256
 core_setedit.cpp_findGroundTextureIndex_FUN_005781a0,005781a0,core/setedit.cpp,21,0,,21
 core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600,0057b600,core/setedit.cpp,136,0,,136
 core_script.cpp_CScript_initEditorLayout_FUN_00566660,00566660,core/script.cpp,47,0,,47
@@ -3182,7 +3182,7 @@ core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720,00474720,core/dlight.cpp
 core_dlight.cpp_CDemonLight_clearCircularShadowMapEdges_FUN_004735c0,004735c0,core/dlight.cpp,31,0,,31
 core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_00472a50,00472a50,core/dlight.cpp,9,0,,9
 core_dlight.cpp_CDemonLight_endScene_FUN_00472d30,00472d30,core/dlight.cpp,41,0,,41
-core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670,00476670,core/dlight.cpp,165,0,,165
+core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670,00476670,core/dlight.cpp,165,1,signed_shift_global_idiom,180
 core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70,00472c70,core/dlight.cpp,25,0,,25
 core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270,00473270,core/dlight.cpp,47,0,,47
 core_dlight.cpp_CDemonLight_dtor_FUN_00472760,00472760,core/dlight.cpp,18,0,,18
@@ -3295,7 +3295,7 @@ core_actor.cpp_staticInit_FUN_00408320,00408320,core/actor.cpp,7,0,,7
 core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220,0040e220,core/actor.cpp,11,0,,11
 core_actor.cpp_CDemonActor_pickup_FUN_00409020,00409020,core/actor.cpp,6,0,,6
 core_actor.cpp_CActorPropertyList_addGroundType_FUN_0040e300,0040e300,core/actor.cpp,9,0,,9
-core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0,0040d1e0,core/actor.cpp,10,0,,10
+core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0,0040d1e0,core/actor.cpp,10,2,signed_shift_global_idiom,35
 core_actor.cpp_randomChance_FUN_0040cd10,0040cd10,core/actor.cpp,15,0,,15
 core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270,00409270,core/actor.cpp,66,0,,66
 core_actor.cpp_CActorPropertyList_calculateLayout_FUN_0040e770,0040e770,core/actor.cpp,38,0,,38
@@ -3616,7 +3616,7 @@ core_fire.cpp_CRock_arrdtor_FUN_004c9910,004c9910,core/fire.cpp,6,0,,6
 core_fire.cpp_CCrater_save_FUN_004c49c0,004c49c0,core/fire.cpp,28,0,,28
 core_fire.cpp_CExplosion_activate_FUN_004c3970,004c3970,core/fire.cpp,50,0,,50
 core_fire.cpp_CToss_reset_FUN_004c3ed0,004c3ed0,core/fire.cpp,5,0,,5
-core_fire.cpp_CFireball_process_FUN_004c0b30,004c0b30,core/fire.cpp,90,0,,90
+core_fire.cpp_CFireball_process_FUN_004c0b30,004c0b30,core/fire.cpp,90,2,signed_shift_global_idiom,115
 core_fire.cpp_CToss_arrdtor_FUN_004c98b0,004c98b0,core/fire.cpp,6,0,,6
 core_fire.cpp_CBulletHole_dtor_FUN_004c9790,004c9790,core/fire.cpp,4,0,,4
 core_fire.cpp_CShell_ctor_FUN_004c94f0,004c94f0,core/fire.cpp,7,0,,7
@@ -3647,7 +3647,7 @@ core_fire.cpp_CStake_render_FUN_004c0140,004c0140,core/fire.cpp,30,0,,30
 core_fire.cpp_allocateBulletHole_FUN_004c6c10,004c6c10,core/fire.cpp,16,0,,16
 core_fire.cpp_CShell_dtor_FUN_004c9510,004c9510,core/fire.cpp,6,0,,6
 core_fire.cpp_CBulletTrail_init_FUN_004c2170,004c2170,core/fire.cpp,17,0,,17
-core_fire.cpp_CRock_process_FUN_004c17f0,004c17f0,core/fire.cpp,28,0,,28
+core_fire.cpp_CRock_process_FUN_004c17f0,004c17f0,core/fire.cpp,28,2,signed_shift_global_idiom,53
 core_fire.cpp_CBulletTrail_render_FUN_004c21f0,004c21f0,core/fire.cpp,83,0,,83
 core_fire.cpp_transformWorldToScreen_FUN_004c9400,004c9400,core/fire.cpp,9,0,,9
 core_fire.cpp_CToss_ctor_FUN_004c3ea0,004c3ea0,core/fire.cpp,9,0,,9
@@ -3658,7 +3658,7 @@ core_fire.cpp_CRainDrop_arrdtor_FUN_004c97d0,004c97d0,core/fire.cpp,6,0,,6
 core_fire.cpp_CFireEffect_createFireball_FUN_004c7db0,004c7db0,core/fire.cpp,29,0,,29
 core_fire.cpp_CStake_ctor_FUN_004c9740,004c9740,core/fire.cpp,6,0,,6
 core_fire.cpp_CFireEffect_createShell_FUN_004c91e0,004c91e0,core/fire.cpp,11,0,,11
-core_fire.cpp_updateTextureAnimCounts_FUN_004c3870,004c3870,core/fire.cpp,12,0,,12
+core_fire.cpp_updateTextureAnimCounts_FUN_004c3870,004c3870,core/fire.cpp,12,1,signed_shift_global_idiom,27
 core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0,004bf1f0,core/fire.cpp,40,0,,40
 core_morph.cpp_CMorph_setupModelFromQuadPolygons_FUN_0052b3d0,0052b3d0,core/morph.cpp,8,0,,8
 core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_0052b370,0052b370,core/morph.cpp,8,0,,8
@@ -3691,7 +3691,7 @@ core_morph.cpp_CMorphModel_arrdtor_FUN_0052cd10,0052cd10,core/morph.cpp,6,0,,6
 core_morph.cpp_addInts_FUN_0052cc40,0052cc40,core/morph.cpp,4,0,,4
 core_morph.cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0,0052ccd0,core/morph.cpp,6,0,,6
 core_morph.cpp_SMorphControlPoint_ctor_FUN_0052cc50,0052cc50,core/morph.cpp,6,0,,6
-core_morph.cpp_CMorph_editMorph_FUN_0052bcb0,0052bcb0,core/morph.cpp,415,0,,415
+core_morph.cpp_CMorph_editMorph_FUN_0052bcb0,0052bcb0,core/morph.cpp,415,2,signed_shift_global_idiom,440
 core_morph.cpp_CMorph_dtor_FUN_0052b330,0052b330,core/morph.cpp,7,0,,7
 core_morph.cpp_skipLine_FUN_0052cd30,0052cd30,core/morph.cpp,11,0,,11
 core_morph.cpp_CMorph_setupModelFromDeformable_FUN_0052b430,0052b430,core/morph.cpp,7,0,,7
@@ -3766,7 +3766,7 @@ core_msnedit.cpp_getOnOffString_FUN_00535df0,00535df0,core/msnedit.cpp,7,0,,7
 core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220,0053d220,core/msnedit.cpp,123,8,unrolled_strchr,208
 core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60,00538d60,core/msnedit.cpp,29,0,,29
 core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80,0053bd80,core/msnedit.cpp,142,5,shadow_pointer_walk|unrolled_strcpy|unrolled_strlen,207
-core_msnedit.cpp_drawPropertyRow_FUN_00535e10,00535e10,core/msnedit.cpp,9,0,,9
+core_msnedit.cpp_drawPropertyRow_FUN_00535e10,00535e10,core/msnedit.cpp,9,2,signed_shift_global_idiom,34
 core_msnedit.cpp_CDemonMission_findSetByName_FUN_00538f40,00538f40,core/msnedit.cpp,19,0,,19
 core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40,0053eb40,core/msnedit.cpp,41,0,,41
 core_msnedit.cpp_convertAllMissionFiles_FUN_00537230,00537230,core/msnedit.cpp,26,0,,26
@@ -5424,7 +5424,7 @@ core_menu.cpp_adjustMouseSensitivity_FUN_005107c0,005107c0,core/menu.cpp,88,0,,8
 core_menu.cpp_configureSoundOptions_FUN_00511e50,00511e50,core/menu.cpp,743,0,,743
 core_menu.cpp_renderAudioSpectrumBarByBounds_FUN_00511e00,00511e00,core/menu.cpp,5,0,,5
 core_menu.cpp_renderMenuAndGetChoice_FUN_00510000,00510000,core/menu.cpp,133,0,,133
-core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70,0050fe70,core/menu.cpp,53,0,,53
+core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70,0050fe70,core/menu.cpp,53,2,signed_shift_global_idiom,78
 core_menu.cpp_getKeyDisplayName_FUN_005134e0,005134e0,core/menu.cpp,86,0,,86
 core_menu.cpp_calibrateGamepad_FUN_005104d0,005104d0,core/menu.cpp,85,0,,85
 core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410,00510410,core/menu.cpp,13,0,,13
@@ -5658,7 +5658,7 @@ core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40,00499b40,core/dtrace.cpp,
 core_dtrace.cpp_CVector3f_arrdtor_FUN_0049a410,0049a410,core/dtrace.cpp,6,0,,6
 core_dtrace.cpp_staticInit_FUN_004941e0,004941e0,core/dtrace.cpp,5,0,,5
 core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160,0049a160,core/dtrace.cpp,35,0,,35
-core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50,00497e50,core/dtrace.cpp,668,0,,668
+core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50,00497e50,core/dtrace.cpp,668,6,signed_shift_global_idiom,733
 core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50,00498e50,core/dtrace.cpp,53,0,,53
 core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_00499e70,00499e70,core/dtrace.cpp,51,0,,51
 core_dtrace.cpp_CDemonRaytrace_ctor_FUN_00494200,00494200,core/dtrace.cpp,12,0,,12
@@ -6291,7 +6291,7 @@ shape_design.c_loadModelFile_FUN_00458ac0,00458ac0,shape/design.c,295,7,pointer_
 shape_design.c_writeSpatialTree_FUN_0045a200,0045a200,shape/design.c,22,0,,22
 shape_design.c_swapDWords_FUN_00462130,00462130,shape/design.c,8,0,,8
 shape_design.c_sizeModelToYFeet_FUN_00467010,00467010,shape/design.c,71,0,,71
-shape_design.c_showFacetPartEditor_FUN_0045f1d0,0045f1d0,shape/design.c,597,12,pointer_cast|unrolled_memcpy|warning_inlined_function,732
+shape_design.c_showFacetPartEditor_FUN_0045f1d0,0045f1d0,shape/design.c,597,20,pointer_cast|signed_shift_global_idiom|unrolled_memcpy|warning_inlined_function,817
 shape_design.c_createCenterVertex_FUN_00469690,00469690,shape/design.c,72,2,unrolled_strlen,97
 shape_design.c_generateOctant_FUN_00469420,00469420,shape/design.c,103,3,unrolled_strlen,138
 shape_design.c_sortPolygonsByTexture_FUN_0045b8b0,0045b8b0,shape/design.c,49,10,pointer_cast|unrolled_memcpy,159
@@ -6409,7 +6409,7 @@ shape_design.c_cramTextureList_FUN_0046bb80,0046bb80,shape/design.c,1047,30,unro
 shape_design.c_createRotationalSweepGeometry_FUN_0045e070,0045e070,shape/design.c,120,0,,120
 shape_design.c_showModelEditor_FUN_00461aa0,00461aa0,shape/design.c,8,0,,8
 shape_design.c_getLastTextureProcessIndex_FUN_0046a860,0046a860,shape/design.c,4,0,,4
-shape_design.c_setupViewMatrix_FUN_0045ba60,0045ba60,shape/design.c,42,0,,42
+shape_design.c_setupViewMatrix_FUN_0045ba60,0045ba60,shape/design.c,42,6,signed_shift_global_idiom,107
 shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20,005b9a20,shape/spotview.cpp,29,0,,29
 shape_spotview.cpp_staticInit_FUN_005b95b0,005b95b0,shape/spotview.cpp,5,0,,5
 shape_spotview.cpp_CSpotView_clampValues_FUN_005b9950,005b9950,shape/spotview.cpp,29,0,,29
@@ -6459,7 +6459,7 @@ shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270,0049f270,sh
 shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0,004a2ec0,shape/edittool.cpp,5,0,,5
 shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590,004a2590,shape/edittool.cpp,52,0,,52
 shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20,004a6e20,shape/edittool.cpp,47,0,,47
-shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0,0049e9d0,shape/edittool.cpp,253,0,,253
+shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0,0049e9d0,shape/edittool.cpp,253,2,signed_shift_global_idiom,278
 shape_edittool.cpp_CEdCheck_dtor_FUN_004a6a40,004a6a40,shape/edittool.cpp,5,0,,5
 shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0,004a28a0,shape/edittool.cpp,15,0,,15
 shape_edittool.cpp_CEdCheck_render_FUN_004a6c00,004a6c00,shape/edittool.cpp,50,0,,50
@@ -6535,23 +6535,23 @@ shape_edittool.cpp_CStrList_swap_FUN_004a31f0,004a31f0,shape/edittool.cpp,22,0,,
 shape_edittool.cpp_CStrList_ctor_FUN_004a2a20,004a2a20,shape/edittool.cpp,8,0,,8
 shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_004a6590,004a6590,shape/edittool.cpp,20,0,,20
 shape_edittool.cpp_CPickList_clear_FUN_004a5770,004a5770,shape/edittool.cpp,17,0,,17
-shape_edittool.cpp_showTextInputDialog_FUN_0049db10,0049db10,shape/edittool.cpp,139,0,,139
+shape_edittool.cpp_showTextInputDialog_FUN_0049db10,0049db10,shape/edittool.cpp,139,2,signed_shift_global_idiom,164
 shape_edittool.cpp_CPickList_setOkButtonText_FUN_004a3d20,004a3d20,shape/edittool.cpp,36,0,,36
 shape_edittool.cpp_CEdButton_paint_FUN_004a65e0,004a65e0,shape/edittool.cpp,111,0,,111
 shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380,004a1380,shape/edittool.cpp,167,0,,167
-shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0,0049e4d0,shape/edittool.cpp,48,0,,48
-shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0,004a0dd0,shape/edittool.cpp,50,0,,50
+shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0,0049e4d0,shape/edittool.cpp,48,1,signed_shift_global_idiom,63
+shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0,004a0dd0,shape/edittool.cpp,50,1,signed_shift_global_idiom,65
 shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_004a0400,004a0400,shape/edittool.cpp,7,0,,7
 shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0,004a59a0,shape/edittool.cpp,75,0,,75
 shape_edittool.cpp_draw3DBorder_FUN_004a58f0,004a58f0,shape/edittool.cpp,17,0,,17
-shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0,004a45d0,shape/edittool.cpp,225,0,,225
+shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0,004a45d0,shape/edittool.cpp,225,1,signed_shift_global_idiom,240
 shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0,004a1bc0,shape/edittool.cpp,68,0,,68
 shape_edittool.cpp_CEdCheck_ctor_FUN_004a6a00,004a6a00,shape/edittool.cpp,16,0,,16
 shape_edittool.cpp_CInputString_calcX_FUN_0049d8f0,0049d8f0,shape/edittool.cpp,34,0,,34
 shape_edittool.cpp_CStrList_appendRange_FUN_004a2ba0,004a2ba0,shape/edittool.cpp,5,0,,5
 shape_edittool.cpp_CPickList_swap_FUN_004a5870,004a5870,shape/edittool.cpp,15,0,,15
 shape_edittool.cpp_staticInit_FUN_0049d170,0049d170,shape/edittool.cpp,6,0,,6
-shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410,0049e410,shape/edittool.cpp,48,0,,48
+shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410,0049e410,shape/edittool.cpp,48,1,signed_shift_global_idiom,63
 shape_edittool.cpp_CEdScrollBar_updateWithSelection_FUN_004a6450,004a6450,shape/edittool.cpp,8,0,,8
 shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70,004a2f70,shape/edittool.cpp,4,0,,4
 shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530,004a0530,shape/edittool.cpp,86,0,,86
@@ -6849,7 +6849,7 @@ wincore_wddvmem.cpp_swapBuffers_FUN_005eda20,005eda20,wincore/wddvmem.cpp,121,0,
 wincore_wddvmem.cpp_loadLibrary_FUN_005ede10,005ede10,wincore/wddvmem.cpp,6,0,,6
 wincore_wddvmem.cpp_cleanupDirectDrawSurfaces_FUN_005ec920,005ec920,wincore/wddvmem.cpp,17,0,,17
 wincore_wddvmem.cpp_getProcAddress_FUN_005ede20,005ede20,wincore/wddvmem.cpp,6,0,,6
-wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10,005ecc10,wincore/wddvmem.cpp,45,0,,45
+wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10,005ecc10,wincore/wddvmem.cpp,45,2,signed_shift_global_idiom,70
 wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005ed4b0,005ed4b0,wincore/wddvmem.cpp,32,0,,32
 wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ed2a0,005ed2a0,wincore/wddvmem.cpp,68,0,,68
 wincore_wddvmem.cpp_freeRenderBuffers_FUN_005ecba0,005ecba0,wincore/wddvmem.cpp,19,0,,19
@@ -6867,9 +6867,9 @@ wincore_wddvmem.cpp_findMostSignificantBit_FUN_005ed710,005ed710,wincore/wddvmem
 wincore_wddvmem.cpp_initializeScanlinePointers_FUN_005ece60,005ece60,wincore/wddvmem.cpp,27,0,,27
 wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0,004f41c0,wincore/wddvmem.cpp,65,0,,65
 wincore_wddvmem.cpp_stubFunction_FUN_005edd80,005edd80,wincore/wddvmem.cpp,4,0,,4
-wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0,005ecac0,wincore/wddvmem.cpp,24,0,,24
+wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0,005ecac0,wincore/wddvmem.cpp,24,2,signed_shift_global_idiom,49
 wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_005ecd90,005ecd90,wincore/wddvmem.cpp,32,0,,32
-wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0,005ecef0,wincore/wddvmem.cpp,130,0,,130
+wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0,005ecef0,wincore/wddvmem.cpp,130,2,signed_shift_global_idiom,155
 wincore_winvideo.cpp_openMovie_FUN_005f4700,005f4700,wincore/winvideo.cpp,67,0,,67
 wincore_winvideo.cpp_positionMovieWindow_FUN_005f4500,005f4500,wincore/winvideo.cpp,46,0,,46
 wincore_winvideo.cpp_closeMovie_FUN_005f46b0,005f46b0,wincore/winvideo.cpp,12,0,,12

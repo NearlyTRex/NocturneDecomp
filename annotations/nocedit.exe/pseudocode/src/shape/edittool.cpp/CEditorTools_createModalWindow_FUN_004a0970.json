@@ -488,6 +488,24 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 44,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x80) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 45,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)((g_WindowWidth >> 0x1f) << 6 < 0)) >> 7;",
+      "type": "signed_shift_global_idiom"
+    },
+    {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
       "line": 122,
       "match": "(TYPE *) ((int)NAME ...) split across lines",

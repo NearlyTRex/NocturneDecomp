@@ -407,6 +407,24 @@
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 84,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_WaveInBitsPerSample >> 0x1f) * -8) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 85,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) *",
+      "type": "signed_shift_global_idiom"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 36,
       "match": "(int)&NAME used in byte-offset arithmetic",

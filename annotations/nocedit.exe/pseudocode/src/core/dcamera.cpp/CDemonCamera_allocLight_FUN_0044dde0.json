@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 17,
     "complexity_score": 10,
@@ -98,31 +98,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonCamera_allocLight_FUN_0044dde0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 11,
-          "line": 19,
-          "message": "Possible null pointer dereference: pacVar1",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Possible null pointer dereference: pacVar1",
-      "line": 19,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "return *pacVar1;",
-      "type": "static_null_pointer"
-    }
-  ]
+  "suspects": []
 }

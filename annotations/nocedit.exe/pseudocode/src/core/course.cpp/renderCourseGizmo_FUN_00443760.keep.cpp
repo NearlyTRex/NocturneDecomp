@@ -12,10 +12,7 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
 {
   SRenderVertex *pSVar2;
   UIntegerFloat UVar3;
-  int iVar2;
   int iVar6;
-  int iVar7;
-  int iVar3;
   int iVar4;
   int iVar5;
   SLineStrip2Index SStack_a0;
@@ -32,16 +29,10 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
   if (&local_48 != position) {
     local_48 = *position;
   }
-  iVar2 = (int)ROUND(ROUND(position->x)) >> 0x1f;
-  iVar6 = (int)ROUND(ROUND(position->y)) >> 0x1f;
-  iVar7 = (int)ROUND(ROUND(position->z)) >> 0x1f;
-  position->x = (float)(((int)(((int)ROUND(ROUND(position->x)) + iVar2 * -0x10) -
-                              (uint)(iVar2 << 3 < 0)) >> 4) << 4);
-  position->y = (float)(((int)(((int)ROUND(ROUND(position->y)) + iVar6 * -0x10) -
-                              (uint)(iVar6 << 3 < 0)) >> 4) << 4);
+  position->x = (float)(((int)ROUND(ROUND(position->x)) / 0x10) << 4);
+  position->y = (float)(((int)ROUND(ROUND(position->y)) / 0x10) << 4);
   this_ptr = g_CDemonRendererPtr1;
-  local_30.surface_normal.D.i =
-       ((int)(((int)ROUND(ROUND(position->z)) + iVar7 * -0x10) - (uint)(iVar7 << 3 < 0)) >> 4) << 4;
+  local_30.surface_normal.D.i = ((int)ROUND(ROUND(position->z)) / 0x10) << 4;
   position->z = (float)local_30.surface_normal.D.i;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(this_ptr,position);
   local_30.surface_normal.A.i = -0x80;
@@ -62,8 +53,7 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
         pSVar1 = g_CDemonRendererPtr1->vertex_buffer_ptr;
         if ((int)((pSVar1->projected_vertex).screen_x & -0x80000000) == 0) {
           iVar6 = (pSVar1->projected_vertex).transformed_z;
-          iVar3 = iVar6 >> 0x1f;
-          iVar4 = 0xff - ((int)((iVar6 + iVar3 * -0x80) - (uint)(iVar3 << 6 < 0)) >> 7);
+          iVar4 = 0xff - (iVar6 / 0x80);
           if (iVar4 < 0) {
             iVar4 = 0;
           }
@@ -71,9 +61,7 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
             iVar4 = 0xff;
           }
           g_ActiveRenderColor =
-               (int)g_ColorCubeLookup
-                    [((int)((iVar4 + (iVar4 >> 0x1f) * -8) - (uint)((iVar4 >> 0x1f) << 2 < 0)) >> 3)
-                     * 0x421];
+               (int)g_ColorCubeLookup[(iVar4 / 8) * 0x421];
           engine_prim_c_replaceWWithDepth_FUN_00552110(pSVar1,1);
           engine_2d_c_plotPixelWithDepth_FUN_00401290
                     ((pSVar1->projected_vertex).screen_x >> 0x10,
