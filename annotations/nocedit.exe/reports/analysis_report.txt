@@ -10,8 +10,8 @@ Total functions: 6454
 Clean functions: 6183 (95.8%)
 Functions with suspects: 271 (4.2%)
 
-Total suspect patterns: 1912
-Average suspects per function: 0.30
+Total suspect patterns: 1881
+Average suspects per function: 0.29
 
 Virtual files: 214 total, 181 at 100%, 195 at 90%+
 
@@ -37,12 +37,12 @@ SUSPECT PATTERN BREAKDOWN
   static_self_assignment    68
   signed_shift_global_idiom 63
   unrolled_strlen           56
-  concat_reconstruction     51
   static_shift_too_many_bits 45
   bitcast_double_pair       36
   static_legacy_uninitvar   25
   unrolled_strchr           24
   unrolled_memset           21
+  concat_reconstruction     19
   warning_inlined_function  17
   raw_address_constant      17
   static_invalid_pointer_cast 14
@@ -60,6 +60,7 @@ SUSPECT PATTERN BREAKDOWN
   stack_alignment_array     2
   self_copy_guard           2
   static_array_oob_cond     2
+  struct_field_overrun      1
   static_null_pointer_arithmetic 1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
@@ -247,19 +248,6 @@ FUNCTIONS BY SUSPECT TYPE
     00468910: shape_design.c_generateGlobe_FUN_00468910
     ... and 13 more
 
-  concat_reconstruction (18 functions):
-    00437230: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
-    00437360: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
-    00435d00: engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
-    00435c00: engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
-    00435a00: engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
-    00435e00: engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
-    00437490: engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
-    00435b00: engine_clipper.c_interpolateVertexRightClip_FUN_00435b00
-    004375c0: engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
-    00500690: core_inv.cpp_CInventory_renderAllItems_FUN_00500690
-    ... and 8 more
-
   static_shift_too_many_bits (0 functions):
 
   bitcast_double_pair (6 functions):
@@ -294,6 +282,19 @@ FUNCTIONS BY SUSPECT TYPE
     004d6540: core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
     005172c0: shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
     005151e0: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+
+  concat_reconstruction (17 functions):
+    00437230: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
+    00437360: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
+    00435d00: engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
+    00435c00: engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
+    00435a00: engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
+    00435e00: engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
+    00437490: engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
+    00435b00: engine_clipper.c_interpolateVertexRightClip_FUN_00435b00
+    004375c0: engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
+    00500690: core_inv.cpp_CInventory_renderAllItems_FUN_00500690
+    ... and 7 more
 
   warning_inlined_function (17 functions):
     005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
@@ -381,5 +382,8 @@ FUNCTIONS BY SUSPECT TYPE
     00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
 
   static_array_oob_cond (0 functions):
+
+  struct_field_overrun (1 functions):
+    0052f670: sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670
 
   static_null_pointer_arithmetic (0 functions):

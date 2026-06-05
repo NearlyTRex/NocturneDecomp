@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 6454
 Clean: 6154 (95.4%)
 With suspects: 300
-Total suspects: 1912
+Total suspects: 1881
 
 ====================================================================================================
 core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400 (1 suspect)
@@ -21,43 +21,6 @@ core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
 ====================================================================================================
   Line 83 [unrolled_memcpy]: // 0047a929: MOVSD.REP ES:EDI,ESI
   Line 87 [unrolled_memcpy]: // 0047a936: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0 (32 suspects)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 81 [concat_reconstruction]: [*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];
-  Line 85 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-  Line 90 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-  Line 95 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-  Line 100 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-  Line 105 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-  Line 110 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-  Line 115 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-  Line 120 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-  Line 125 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-  Line 130 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-  Line 135 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-  Line 140 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-  Line 145 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-  Line 148 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-  Line 151 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)(iVar8 + iVar11) >> 8),
-  Line 177 [concat_reconstruction]: [*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];
-  Line 182 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8)) +
-  Line 188 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))
-  Line 194 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8)
-  Line 200 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-  Line 207 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
-  Line 214 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-  Line 221 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
-  Line 228 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-  Line 235 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
-  Line 242 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-  Line 249 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
-  Line 256 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-  Line 263 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
-  Line 268 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-  Line 273 [concat_reconstruction]: [*(byte *)((uint)CONCAT11((char)((uint)(iVar8 +
 
 ====================================================================================================
 core_fire.cpp_updateTextureAnimCounts_FUN_004c3870 (1 suspect)
@@ -3357,6 +3320,12 @@ shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (4 suspects)
   Line 44 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);
   Line 45 [pointer_cast]: pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
   Line 76 [unrolled_memcpy]: // 005d6488: MOVSD.REP ES:EDI,ESI
+
+====================================================================================================
+sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670 (1 suspect)
+  File: sound/mp3.cpp
+====================================================================================================
+  Line 51 [struct_field_overrun]: output_allocation->bit_allocations[iVar6 + 0x20] = uVar3 & 0xff;
 
 ====================================================================================================
 sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340 (2 suspects)

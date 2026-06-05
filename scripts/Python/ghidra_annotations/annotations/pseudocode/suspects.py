@@ -2,6 +2,8 @@
 # Identifies problematic patterns in decompiled code that may need manual review
 
 import bisect
+import json
+import os
 import re
 from collections import defaultdict
 
@@ -100,6 +102,7 @@ SUSPECT_SEVERITY = {
     'sign_compare_idiom': 'moderate',
     'carry_arith_idiom': 'moderate',
     'signed_shift_global_idiom': 'moderate',
+    'struct_field_overrun': 'moderate',
 }
 
 
@@ -5800,8 +5803,268 @@ def identify_unrolled_memcpy_blocks(assembly_code, unreachable_addrs=None):
     return suspects
 
 
+# =============================================================================
+# Struct-field array overrun (#15 adjacent-field artifact, struct-member form)
+# =============================================================================
+#
+# Watcom 1-based indexing emits `[base + index]` where `base` is the address of
+# the field BEFORE the real target and the index compensates by overrunning into
+# the next field. The global form (`(&g_Scalar)[idx]`) is caught by
+# identify_wrong_global_suspects; this catches the STRUCT-MEMBER form
+# (`obj->earlier_field[const + var]`) that lands in the following field — e.g.
+# `pick->cancel_button_text[uVar4 + 99]` where cancel_button_text is char[100]
+# and the real target is the adjacent search_text_buffer.
+#
+# Type-aware: needs a struct layout map (field offsets/lengths/array bounds), so
+# it is inert without one and only fires at export time / when test_suspects
+# builds the map from data_types.json.
+
+_struct_layout_cache = None
+
+_SFO_ACCESS_RE = re.compile(r'\b([A-Za-z_]\w*)\s*(?:->|\.)\s*([A-Za-z_]\w*)\s*\[')
+_SFO_SIG_RE = re.compile(r'//\s*Signature:.*?\((.*)\)')
+_SFO_DECL_RE = re.compile(
+    r'^\s*([A-Za-z_]\w*)\s*\*+\s*([A-Za-z_]\w*)\s*;\s*$')
+_SFO_VALDECL_RE = re.compile(
+    r'^\s*([A-Za-z_]\w*)\s+([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;\s*$')
+_SFO_PTR_PARAM_RE = re.compile(r'^([A-Za-z_]\w*)\s*\*+\s*([A-Za-z_]\w*)$')
+_SFO_VAL_PARAM_RE = re.compile(r'^([A-Za-z_]\w*)\s+([A-Za-z_]\w*)$')
+_SFO_INT_RE = re.compile(r'^(0x[0-9a-fA-F]+|\d+)$')
+_SFO_IDENT_RE = re.compile(r'[A-Za-z_]\w*')
+
+
+def build_struct_layout_map(data_types_path):
+    """Parse data_types.json into a per-struct field layout.
+
+    Returns dict: struct_name -> list of field dicts sorted by offset, each
+    {'name', 'offset', 'len', 'n'} where 'n' is the first array-dimension
+    element count (None for non-array fields). Returns {} if the file is
+    missing or unreadable.
+    """
+    try:
+        with open(data_types_path) as f:
+            data = json.load(f)
+    except (IOError, ValueError):
+        return {}
+    layout = {}
+    for section in ('structs', 'unions'):
+        for entry in data.get(section, []):
+            name = entry.get('name')
+            fields = entry.get('fields')
+            if not name or not fields:
+                continue
+            parsed = []
+            for fld in fields:
+                fname = fld.get('name')
+                offset = fld.get('offset')
+                flen = fld.get('len')
+                if fname is None or offset is None or flen is None:
+                    continue
+                dim = re.search(r'\[(\d+)\]', fld.get('type', ''))
+                parsed.append({
+                    'name': fname,
+                    'offset': offset,
+                    'len': flen,
+                    'n': int(dim.group(1)) if dim else None,
+                })
+            parsed.sort(key=lambda fl: fl['offset'])
+            layout[name] = parsed
+    return layout
+
+
+def get_struct_layout_map(pseudocode_src_dir):
+    """Cached struct layout map, located relative to pseudocode_src_dir.
+
+    Mirrors dat_report.build_struct_size_cache's path derivation:
+    pseudocode_src_dir is .../<exe>/pseudocode/src, data_types.json is at
+    .../<exe>/data_types/data_types.json.
+    """
+    global _struct_layout_cache
+    if _struct_layout_cache is not None:
+        return _struct_layout_cache
+    base = pseudocode_src_dir
+    while base and os.path.basename(base) != 'pseudocode':
+        base = os.path.dirname(base)
+    layout = {}
+    if base:
+        path = os.path.join(os.path.dirname(base), 'data_types', 'data_types.json')
+        layout = build_struct_layout_map(path)
+    _struct_layout_cache = layout
+    return layout
+
+
+def _sfo_resolve_var_types(code):
+    """Map identifier -> declared struct type name (pointer/value, deref'd)."""
+    var_types = {}
+    lines = code.split('\n')
+    for line in lines:
+        m = _SFO_SIG_RE.search(line)
+        if not m:
+            continue
+        for part in m.group(1).split(','):
+            part = part.strip()
+            pm = _SFO_PTR_PARAM_RE.match(part) or _SFO_VAL_PARAM_RE.match(part)
+            if pm:
+                var_types[pm.group(2)] = pm.group(1)
+        break
+    for line in lines:
+        m = _SFO_DECL_RE.match(line) or _SFO_VALDECL_RE.match(line)
+        if m:
+            var_types[m.group(2)] = m.group(1)
+    return var_types
+
+
+def _sfo_index_const(idx_expr):
+    """Return (const_sum, has_var) for the top-level additive index expr.
+
+    Only pure integer-literal terms joined by top-level '+' count toward the
+    constant; any term containing an identifier marks has_var. Terms with '*'
+    or nested arithmetic are treated as variable, not added to the constant.
+    """
+    const = 0
+    has_var = False
+    depth = 0
+    term = ''
+    terms = []
+    for ch in idx_expr:
+        if ch in '([':
+            depth += 1
+            term += ch
+        elif ch in ')]':
+            depth -= 1
+            term += ch
+        elif ch == '+' and depth == 0:
+            terms.append(term)
+            term = ''
+        else:
+            term += ch
+    terms.append(term)
+    for t in terms:
+        t = t.strip()
+        if not t:
+            continue
+        if _SFO_INT_RE.match(t):
+            const += int(t, 0)
+        elif _SFO_IDENT_RE.search(t):
+            has_var = True
+    return const, has_var
+
+
+def identify_struct_field_overrun(code, struct_layout_map=None):
+    """Detect `obj->arrayfield[const (+ var)]` accesses that overrun the
+    array into the next struct field (Watcom 1-based base-shift, #15).
+
+    Args:
+        code: Source text to analyze.
+        struct_layout_map: dict struct_name -> sorted field list from
+            build_struct_layout_map(). Detector is inert without it.
+
+    Returns:
+        List of suspect dicts (type struct_field_overrun).
+    """
+    suspects = []
+    if not code or not struct_layout_map:
+        return suspects
+    var_types = _sfo_resolve_var_types(code)
+    if not var_types:
+        return suspects
+
+    # Pass 1: collect every resolvable array-field access with its constant
+    # addend, struct/field metadata, and the following field (for the overrun
+    # target). Pass 2 classifies each.
+    accesses = []
+    for line_no, line in enumerate(code.split('\n'), 1):
+        stripped = line.strip()
+        if stripped.startswith('//') or stripped.startswith('*') or \
+                stripped.startswith('/*'):
+            continue
+        for m in _SFO_ACCESS_RE.finditer(line):
+            ident, field = m.group(1), m.group(2)
+            struct_name = var_types.get(ident)
+            if not struct_name:
+                continue
+            fields = struct_layout_map.get(struct_name)
+            if not fields:
+                continue
+            fld = None
+            fidx = None
+            for i, fl in enumerate(fields):
+                if fl['name'] == field:
+                    fld = fl
+                    fidx = i
+                    break
+            if fld is None or not fld['n'] or fld['n'] <= 0:
+                continue
+            # Extract balanced bracket contents starting right after '['.
+            start = m.end()
+            depth = 1
+            j = start
+            while j < len(line) and depth > 0:
+                if line[j] == '[':
+                    depth += 1
+                elif line[j] == ']':
+                    depth -= 1
+                    if depth == 0:
+                        break
+                j += 1
+            if depth != 0:
+                continue  # index spans lines — skip
+            idx_expr = line[start:j].strip()
+            const, has_var = _sfo_index_const(idx_expr)
+            nxt = fields[fidx + 1] if fidx + 1 < len(fields) else None
+            accesses.append((line_no, stripped, ident, struct_name, field,
+                             fld, nxt, idx_expr, const, has_var))
+
+    # Pass 2: classify.
+    seen = set()
+    for (line_no, stripped, ident, struct_name, field, fld, nxt, idx_expr,
+         const, has_var) in accesses:
+        n = fld['n']
+        # Trailing single-element array = flexible-array-member idiom (struct
+        # ends with `T arr[1]` used as a variable-length array). Never #15.
+        if nxt is None and n <= 1:
+            continue
+        definite = const >= n          # constant index past the array — hard OOB
+        # Base-shift: index reaches the array's last element via a large constant
+        # addend plus a variable, landing in the next field. Require a sizeable
+        # array (n >= 16) so the large shift can't be ordinary neighbor access —
+        # `arr[i + 1]` on a [2] array (bubble-sort swap) is not a base-shift,
+        # but `buf[i + 99]` on a char[100] unmistakably is.
+        baseshift = (const == n - 1 and has_var and nxt is not None and n >= 16)
+        if not (definite or baseshift):
+            continue
+        key = (line_no, ident, field, idx_expr)
+        if key in seen:
+            continue
+        seen.add(key)
+        if nxt is not None:
+            tgt = 'overruns into %s (offset 0x%x)' % (nxt['name'], nxt['offset'])
+        else:
+            tgt = ('overruns past the end of %s (likely an undersized array)'
+                   % struct_name)
+        if definite:
+            why = 'constant index %d >= array length %d' % (const, n)
+        else:
+            why = ('index reaches last element (%d) with a variable addend '
+                   '— Watcom 1-based base-shift' % const)
+        desc = ('%s->%s[%s]: %s; %s.%s is [%d]. %s. Likely the #15 '
+                'adjacent-field artifact — the real target is the next '
+                'field.' % (ident, field, idx_expr, why, struct_name,
+                            field, n, tgt))
+        suspects.append({
+            'line': line_no,
+            'type': 'struct_field_overrun',
+            'match': '%s->%s[%s]' % (ident, field, idx_expr),
+            'text': stripped[:120],
+            'description': desc,
+            'severity': SUSPECT_SEVERITY.get('struct_field_overrun', 'moderate'),
+        })
+    return suspects
+
+
 def detect_content_suspects(code, func_globals=None, global_interval_map=None,
-                            address_interval_map=None, func_calls=None):
+                            address_interval_map=None, func_calls=None,
+                            struct_layout_map=None):
     """Run all content-based (source-text) suspect detectors on a code blob.
 
     Used to re-evaluate a .keep file against the original .cpp to determine
@@ -5815,6 +6078,8 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
         global_interval_map: Global interval map (for wrong_global / suspicious_cast).
         address_interval_map: Combined globals+constants map (for raw_address_constant).
         func_calls: Function-call metadata (for format_string_mismatch).
+        struct_layout_map: Per-struct field layout (for struct_field_overrun);
+            from get_struct_layout_map() / build_struct_layout_map().
 
     Returns:
         Flat list of suspect dicts, all of CONTENT_SUSPECT_TYPES.
@@ -5860,6 +6125,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_loop_clobbered_constant(code))
     found.extend(identify_fast_sqrt_inline(code))
     found.extend(identify_bit_int_float_compare(code))
+    found.extend(identify_struct_field_overrun(code, struct_layout_map))
     return found
 
 

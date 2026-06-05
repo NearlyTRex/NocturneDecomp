@@ -81,79 +81,63 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
       iVar4 = ((int)g_PerspectiveCurrentU >> 8) + iVar13;
       iVar7 = ((int)g_PerspectiveCurrentV >> 8) + iVar11;
       *puVar15 = g_Hardware32BitPalette
-                 [*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];
+                 [((byte *)g_CurrentTextureData)[((uint)uVar9 << 8 | uVar6)]];
       iVar5 = iVar4 + iVar13;
       iVar8 = iVar7 + iVar11;
       puVar15[1] = g_Hardware32BitPalette
-                   [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-                             (int)g_CurrentTextureData)];
+                   [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar7 >> 8) << 8 | (byte)((uint)iVar4 >> 8))]];
       iVar4 = iVar5 + iVar13;
       iVar7 = iVar8 + iVar11;
       puVar15[2] = g_Hardware32BitPalette
-                   [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-                             (int)g_CurrentTextureData)];
+                   [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar5 >> 8))]];
       iVar5 = iVar4 + iVar13;
       iVar8 = iVar7 + iVar11;
       puVar15[3] = g_Hardware32BitPalette
-                   [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-                             (int)g_CurrentTextureData)];
+                   [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar7 >> 8) << 8 | (byte)((uint)iVar4 >> 8))]];
       iVar4 = iVar5 + iVar13;
       iVar7 = iVar8 + iVar11;
       puVar15[4] = g_Hardware32BitPalette
-                   [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-                             (int)g_CurrentTextureData)];
+                   [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar5 >> 8))]];
       iVar5 = iVar4 + iVar13;
       iVar8 = iVar7 + iVar11;
       puVar15[5] = g_Hardware32BitPalette
-                   [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-                             (int)g_CurrentTextureData)];
+                   [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar7 >> 8) << 8 | (byte)((uint)iVar4 >> 8))]];
       iVar4 = iVar5 + iVar13;
       iVar7 = iVar8 + iVar11;
       puVar15[6] = g_Hardware32BitPalette
-                   [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-                             (int)g_CurrentTextureData)];
+                   [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar5 >> 8))]];
       iVar5 = iVar4 + iVar13;
       iVar8 = iVar7 + iVar11;
       puVar15[7] = g_Hardware32BitPalette
-                   [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-                             (int)g_CurrentTextureData)];
+                   [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar7 >> 8) << 8 | (byte)((uint)iVar4 >> 8))]];
       iVar4 = iVar5 + iVar13;
       iVar7 = iVar8 + iVar11;
       puVar15[8] = g_Hardware32BitPalette
-                   [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-                             (int)g_CurrentTextureData)];
+                   [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar5 >> 8))]];
       iVar5 = iVar4 + iVar13;
       iVar8 = iVar7 + iVar11;
       puVar15[9] = g_Hardware32BitPalette
-                   [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-                             (int)g_CurrentTextureData)];
+                   [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar7 >> 8) << 8 | (byte)((uint)iVar4 >> 8))]];
       iVar4 = iVar5 + iVar13;
       iVar7 = iVar8 + iVar11;
       puVar15[10] = g_Hardware32BitPalette
-                    [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-                              (int)g_CurrentTextureData)];
+                    [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar5 >> 8))]];
       iVar5 = iVar4 + iVar13;
       iVar8 = iVar7 + iVar11;
       puVar15[0xb] = g_Hardware32BitPalette
-                     [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-                               (int)g_CurrentTextureData)];
+                     [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar7 >> 8) << 8 | (byte)((uint)iVar4 >> 8))]];
       iVar4 = iVar5 + iVar13;
       iVar7 = iVar8 + iVar11;
       puVar15[0xc] = g_Hardware32BitPalette
-                     [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-                               (int)g_CurrentTextureData)];
+                     [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar5 >> 8))]];
       iVar5 = iVar4 + iVar13;
       iVar8 = iVar7 + iVar11;
       puVar15[0xd] = g_Hardware32BitPalette
-                     [*(byte *)((uint)CONCAT11((char)((uint)iVar7 >> 8),(char)((uint)iVar4 >> 8)) +
-                               (int)g_CurrentTextureData)];
+                     [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar7 >> 8) << 8 | (byte)((uint)iVar4 >> 8))]];
       puVar15[0xe] = g_Hardware32BitPalette
-                     [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar5 >> 8)) +
-                               (int)g_CurrentTextureData)];
+                     [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar5 >> 8))]];
       puVar15[0xf] = g_Hardware32BitPalette
-                     [*(byte *)((uint)CONCAT11((char)((uint)(iVar8 + iVar11) >> 8),
-                                               (char)((uint)(iVar5 + iVar13) >> 8)) +
-                               (int)g_CurrentTextureData)];
+                     [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)(iVar8 + iVar11) >> 8) << 8 | (byte)((uint)(iVar5 + iVar13) >> 8))]];
       puVar15 = puVar15 + 0x10;
       g_PerspectiveLeftU = g_PerspectiveLeftW;
       g_PerspectiveLeftV = g_PerspectiveInterpolatedW;
@@ -175,106 +159,80 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
       iVar3 = ((int)g_PerspectiveCurrentU >> 8) + uVar14;
       iVar5 = ((int)g_PerspectiveCurrentV >> 8) + iVar4;
       *puVar15 = g_Hardware32BitPalette
-                 [*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];
+                 [((byte *)g_CurrentTextureData)[((uint)uVar9 << 8 | uVar6)]];
       if (-1 < (int)(uVar14 - 0x10000)) {
         iVar7 = iVar3 + (uVar14 - 0x10000);
         iVar8 = iVar5 + iVar4;
         puVar15[1] = g_Hardware32BitPalette
-                     [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8)) +
-                               (int)g_CurrentTextureData)];
+                     [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar5 >> 8) << 8 | (byte)((uint)iVar3 >> 8))]];
         if (-1 < (int)(uVar14 - 0x20000)) {
           iVar3 = iVar7 + (uVar14 - 0x20000);
           iVar5 = iVar8 + iVar4;
           puVar15[2] = g_Hardware32BitPalette
-                       [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),(char)((uint)iVar7 >> 8))
-                                 + (int)g_CurrentTextureData)];
+                       [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar7 >> 8))
+                                ]];
           if (-1 < (int)(uVar14 - 0x30000)) {
             iVar7 = iVar3 + (uVar14 - 0x30000);
             iVar8 = iVar5 + iVar4;
             puVar15[3] = g_Hardware32BitPalette
-                         [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),(char)((uint)iVar3 >> 8)
-                                                  ) + (int)g_CurrentTextureData)];
+                         [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar5 >> 8) << 8 | (byte)((uint)iVar3 >> 8))]];
             if (-1 < (int)(uVar14 - 0x40000)) {
               iVar3 = iVar7 + (uVar14 - 0x40000);
               iVar5 = iVar8 + iVar4;
               puVar15[4] = g_Hardware32BitPalette
-                           [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-                                                     (char)((uint)iVar7 >> 8)) +
-                                     (int)g_CurrentTextureData)];
+                           [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar7 >> 8))]];
               if (-1 < (int)(uVar14 - 0x50000)) {
                 iVar7 = iVar3 + (uVar14 - 0x50000);
                 iVar8 = iVar5 + iVar4;
                 puVar15[5] = g_Hardware32BitPalette
-                             [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
-                                                       (char)((uint)iVar3 >> 8)) +
-                                       (int)g_CurrentTextureData)];
+                             [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar5 >> 8) << 8 | (byte)((uint)iVar3 >> 8))]];
                 if (-1 < (int)(uVar14 - 0x60000)) {
                   iVar3 = iVar7 + (uVar14 - 0x60000);
                   iVar5 = iVar8 + iVar4;
                   puVar15[6] = g_Hardware32BitPalette
-                               [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-                                                         (char)((uint)iVar7 >> 8)) +
-                                         (int)g_CurrentTextureData)];
+                               [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar7 >> 8))]];
                   if (-1 < (int)(uVar14 - 0x70000)) {
                     iVar7 = iVar3 + (uVar14 - 0x70000);
                     iVar8 = iVar5 + iVar4;
                     puVar15[7] = g_Hardware32BitPalette
-                                 [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
-                                                           (char)((uint)iVar3 >> 8)) +
-                                           (int)g_CurrentTextureData)];
+                                 [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar5 >> 8) << 8 | (byte)((uint)iVar3 >> 8))]];
                     if (-1 < (int)(uVar14 - 0x80000)) {
                       iVar3 = iVar7 + (uVar14 - 0x80000);
                       iVar5 = iVar8 + iVar4;
                       puVar15[8] = g_Hardware32BitPalette
-                                   [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-                                                             (char)((uint)iVar7 >> 8)) +
-                                             (int)g_CurrentTextureData)];
+                                   [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar7 >> 8))]];
                       if (-1 < (int)(uVar14 - 0x90000)) {
                         iVar7 = iVar3 + (uVar14 - 0x90000);
                         iVar8 = iVar5 + iVar4;
                         puVar15[9] = g_Hardware32BitPalette
-                                     [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
-                                                               (char)((uint)iVar3 >> 8)) +
-                                               (int)g_CurrentTextureData)];
+                                     [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar5 >> 8) << 8 | (byte)((uint)iVar3 >> 8))]];
                         if (-1 < (int)(uVar14 - 0xa0000)) {
                           iVar3 = iVar7 + (uVar14 - 0xa0000);
                           iVar5 = iVar8 + iVar4;
                           puVar15[10] = g_Hardware32BitPalette
-                                        [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-                                                                  (char)((uint)iVar7 >> 8)) +
-                                                  (int)g_CurrentTextureData)];
+                                        [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar7 >> 8))]];
                           if (-1 < (int)(uVar14 - 0xb0000)) {
                             iVar7 = iVar3 + (uVar14 - 0xb0000);
                             iVar8 = iVar5 + iVar4;
                             puVar15[0xb] = g_Hardware32BitPalette
-                                           [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
-                                                                     (char)((uint)iVar3 >> 8)) +
-                                                     (int)g_CurrentTextureData)];
+                                           [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar5 >> 8) << 8 | (byte)((uint)iVar3 >> 8))]];
                             if (-1 < (int)(uVar14 - 0xc0000)) {
                               iVar3 = iVar7 + (uVar14 - 0xc0000);
                               iVar5 = iVar8 + iVar4;
                               puVar15[0xc] = g_Hardware32BitPalette
-                                             [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-                                                                       (char)((uint)iVar7 >> 8)) +
-                                                       (int)g_CurrentTextureData)];
+                                             [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar7 >> 8))]];
                               if (-1 < (int)(uVar14 - 0xd0000)) {
                                 iVar7 = iVar3 + (uVar14 - 0xd0000);
                                 iVar8 = iVar5 + iVar4;
                                 puVar15[0xd] = g_Hardware32BitPalette
-                                               [*(byte *)((uint)CONCAT11((char)((uint)iVar5 >> 8),
-                                                                         (char)((uint)iVar3 >> 8)) +
-                                                         (int)g_CurrentTextureData)];
+                                               [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar5 >> 8) << 8 | (byte)((uint)iVar3 >> 8))]];
                                 if (-1 < (int)(uVar14 - 0xe0000)) {
                                   puVar15[0xe] = g_Hardware32BitPalette
-                                                 [*(byte *)((uint)CONCAT11((char)((uint)iVar8 >> 8),
-                                                                           (char)((uint)iVar7 >> 8))
-                                                           + (int)g_CurrentTextureData)];
+                                                 [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)iVar8 >> 8) << 8 | (byte)((uint)iVar7 >> 8))
+                                                          ]];
                                   if (-1 < (int)(uVar14 - 0xf0000)) {
                                     puVar15[0xf] = g_Hardware32BitPalette
-                                                   [*(byte *)((uint)CONCAT11((char)((uint)(iVar8 + 
-                                                  iVar4) >> 8),
-                                                  (char)(iVar7 + (uVar14 - 0xe0000) >> 8)) +
-                                                  (int)g_CurrentTextureData)];
+                                                   [((byte *)g_CurrentTextureData)[((uint)(byte)((uint)(iVar8 + iVar4) >> 8) << 8 | (byte)(iVar7 + (uVar14 - 0xe0000) >> 8))]];
                                   }
                                 }
                               }

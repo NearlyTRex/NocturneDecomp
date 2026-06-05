@@ -5,7 +5,7 @@ FUNCTION SUSPECT BREAKDOWN
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
   0 suspects: 6183 functions
-  1 suspects: 40 functions
+  1 suspects: 41 functions
   2 suspects: 58 functions
   3 suspects: 34 functions
   4 suspects: 34 functions
@@ -28,7 +28,6 @@ SUSPECT COUNT DISTRIBUTION
   24 suspects: 1 functions
   29 suspects: 1 functions
   30 suspects: 1 functions
-  32 suspects: 1 functions
   33 suspects: 1 functions
   36 suspects: 1 functions
   39 suspects: 1 functions
@@ -136,6 +135,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
   ------------------------------------------------------------
     shape_design.c_quantizePaletteColors_FUN_0046b770  ( 65 lines)
       do {...
+
+  [struct_field_overrun] (1 functions)
+  ------------------------------------------------------------
+    sound_mp3.cpp_CFileBitStream_readAllocationValues_ ( 69 lines)
+      output_allocation->bit_allocations[iVar6 + 0x20] = uVar3 & 0...
 
   [raw_address_constant] (1 functions)
   ------------------------------------------------------------

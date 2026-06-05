@@ -4,21 +4,21 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     780 ( 40.8%)
-  unrolled_memcpy                  254 ( 13.3%)
-  unrolled_strcpy                  118 (  6.2%)
-  static_uninitvar                  90 (  4.7%)
-  shadow_pointer_walk               79 (  4.1%)
+  pointer_cast                     780 ( 41.5%)
+  unrolled_memcpy                  254 ( 13.5%)
+  unrolled_strcpy                  118 (  6.3%)
+  static_uninitvar                  90 (  4.8%)
+  shadow_pointer_walk               79 (  4.2%)
   missing_cave_copy                 78 (  4.1%)
   static_self_assignment            68 (  3.6%)
   signed_shift_global_idiom         63 (  3.3%)
-  unrolled_strlen                   56 (  2.9%)
-  concat_reconstruction             51 (  2.7%)
+  unrolled_strlen                   56 (  3.0%)
   static_shift_too_many_bits        45 (  2.4%)
   bitcast_double_pair               36 (  1.9%)
   static_legacy_uninitvar           25 (  1.3%)
   unrolled_strchr                   24 (  1.3%)
   unrolled_memset                   21 (  1.1%)
+  concat_reconstruction             19 (  1.0%)
   warning_inlined_function          17 (  0.9%)
   raw_address_constant              17 (  0.9%)
   static_invalid_pointer_cast       14 (  0.7%)
@@ -36,6 +36,7 @@ SUSPECT TYPE COUNTS
   stack_alignment_array              2 (  0.1%)
   self_copy_guard                    2 (  0.1%)
   static_array_oob_cond              2 (  0.1%)
+  struct_field_overrun               1 (  0.1%)
   static_null_pointer_arithmetic     1 (  0.1%)
 
 ====================================================================================================
@@ -600,35 +601,6 @@ Functions:
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
 
 ====================================================================================================
-TYPE: concat_reconstruction (51 occurrences)
-====================================================================================================
-
-Unique patterns:
-    33x  CONCAT11
-    16x  CONCAT44
-     2x  CONCAT22
-
-Functions:
-  core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
-  core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0
-  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
-  core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
-  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-  core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00
-  core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80
-  core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0
-  core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40
-  engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
-  engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
-  engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
-  engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
-  engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
-  engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
-  engine_clipper.c_interpolateVertexRightClip_FUN_00435b00
-  engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
-  engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
-
-====================================================================================================
 TYPE: static_shift_too_many_bits (45 occurrences)
 ====================================================================================================
 
@@ -719,6 +691,34 @@ Functions:
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
   shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+
+====================================================================================================
+TYPE: concat_reconstruction (19 occurrences)
+====================================================================================================
+
+Unique patterns:
+    16x  CONCAT44
+     2x  CONCAT22
+     1x  CONCAT11
+
+Functions:
+  core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
+  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
+  core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
+  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
+  core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00
+  core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80
+  core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0
+  core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40
+  engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
+  engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
+  engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
+  engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
+  engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
+  engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
+  engine_clipper.c_interpolateVertexRightClip_FUN_00435b00
+  engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
+  engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
 
 ====================================================================================================
 TYPE: warning_inlined_function (17 occurrences)
@@ -967,6 +967,16 @@ Unique patterns:
 
 Functions:
   shape_design.c_mergeAdjacentPolygons_FUN_00462b70
+
+====================================================================================================
+TYPE: struct_field_overrun (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  output_allocation->bit_allocations[iVar6 + 0x20]
+
+Functions:
+  sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670
 
 ====================================================================================================
 TYPE: static_null_pointer_arithmetic (1 occurrences)

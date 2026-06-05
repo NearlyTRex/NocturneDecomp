@@ -64,6 +64,7 @@ FILES AT 100% (COMPLETE)
   core/drip.cpp: 17 functions, 414 lines
   core/drone.cpp: 13 functions, 472 lines
   core/dskybox.cpp: 4 functions, 245 lines
+  core/dstrender.cpp: 31 functions, 3122 lines
   core/dtrace.cpp: 51 functions, 3537 lines
   core/dtri.cpp: 28 functions, 1494 lines
   core/dynamite.cpp: 12 functions, 163 lines
@@ -187,7 +188,6 @@ FILES AT 100% (COMPLETE)
   shape/memdbg.cpp: 26 functions, 605 lines
   shape/multicrm.cpp: 6 functions, 115 lines
   shape/spotview.cpp: 6 functions, 215 lines
-  sound/mp3.cpp: 57 functions, 4680 lines
   sound/sndmain.cpp: 193 functions, 6577 lines
   support/codec.cpp: 40 functions, 821 lines
   support/newmsg.cpp: 4 functions, 210 lines
@@ -209,6 +209,10 @@ FILES AT 90-99% (ALMOST COMPLETE)
          65/66 clean, 1 remaining
            - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines) [unrolled_memcpy]
 
+   98.2% | sound/mp3.cpp
+         56/57 clean, 1 remaining
+           - sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670 (69 lines) [struct_field_overrun]
+
    98.0% | core/morph.cpp
          48/49 clean, 1 remaining
            - core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (415 lines) [signed_shift_global_idiom]
@@ -225,10 +229,6 @@ FILES AT 90-99% (ALMOST COMPLETE)
          62/64 clean, 2 remaining
            - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (90 lines) [unrolled_memcpy]
            - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines) [unrolled_memcpy]
-
-   96.8% | core/dstrender.cpp
-         30/31 clean, 1 remaining
-           - core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0 (357 lines) [concat_reconstruction]
 
    96.6% | core/setedit.cpp
          56/58 clean, 2 remaining

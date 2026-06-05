@@ -14,6 +14,10 @@ PRIORITY 1: Files with 1-2 functions remaining
     - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
       Suspects: unrolled_memcpy, unrolled_memcpy
 
+  sound/mp3.cpp (1 remaining of 57)
+    - sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670
+      Suspects: struct_field_overrun
+
   core/bugs.cpp (1 remaining of 44)
     - core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
       Suspects: concat_reconstruction
@@ -33,10 +37,6 @@ PRIORITY 1: Files with 1-2 functions remaining
   core/morph.cpp (1 remaining of 49)
     - core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
       Suspects: signed_shift_global_idiom, signed_shift_global_idiom
-
-  core/dstrender.cpp (1 remaining of 31)
-    - core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0
-      Suspects: concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction, concat_reconstruction
 
   core/dmodel.cpp (1 remaining of 66)
     - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
@@ -95,6 +95,11 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines)
         Types: ['unrolled_memcpy']
 
+  sound/mp3.cpp (98.2% complete)
+    1 functions remaining:
+      sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670 (69 lines)
+        Types: ['struct_field_overrun']
+
   core/morph.cpp (98.0% complete)
     1 functions remaining:
       core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (415 lines)
@@ -116,11 +121,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['unrolled_memcpy']
       core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines)
         Types: ['unrolled_memcpy']
-
-  core/dstrender.cpp (96.8% complete)
-    1 functions remaining:
-      core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0 (357 lines)
-        Types: ['concat_reconstruction']
 
   core/setedit.cpp (96.6% complete)
     2 functions remaining:

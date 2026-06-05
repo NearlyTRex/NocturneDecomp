@@ -145,7 +145,7 @@ LAB_004a402a:
           if ((g_CharacterClassificationTable[(byte)((char)iVar2 + 1)] & 0xe0) != 0) {
             uVar4 = strlen(str1) + 1;
             if (uVar4 - 1 < 99) {
-              this_ptr->cancel_button_text[uVar4 + 99] = (char)iVar2;
+              this_ptr->search_text_buffer[uVar4 - 1] = (char)iVar2;
               this_ptr->search_text_buffer[uVar4] = '\0';
             }
           }

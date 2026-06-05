@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 69,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 69,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "struct_field_overrun"
+    ],
     "total_lines": 192
   },
   "cross_references": [
@@ -196,5 +198,15 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "output_allocation->bit_allocations[iVar6 + 0x20]: constant index 32 >= array length 32; SMpegSubbandAllocation.bit_allocations is [32]. overruns past the end of SMpegSubbandAllocation (likely an undersized array). Likely the #15 adjacent-field artifact \u2014 the real target is the next field.",
+      "introduced_by": "keep",
+      "line": 51,
+      "match": "output_allocation->bit_allocations[iVar6 + 0x20]",
+      "severity": "moderate",
+      "text": "output_allocation->bit_allocations[iVar6 + 0x20] = uVar3 & 0xff;",
+      "type": "struct_field_overrun"
+    }
+  ]
 }

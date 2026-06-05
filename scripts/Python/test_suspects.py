@@ -82,7 +82,7 @@ OMIT_SUSPECT_TYPES = {
 }
 
 
-def run_detectors(susp, code):
+def run_detectors(susp, code, struct_layout_map=None):
     """Run the source-text-only content detectors on `code`.
 
     Mirrors detect_content_suspects() but with no func_globals / interval
@@ -123,6 +123,7 @@ def run_detectors(susp, code):
     found.extend(susp.identify_loop_clobbered_constant(code))
     found.extend(susp.identify_fast_sqrt_inline(code))
     found.extend(susp.identify_bit_int_float_compare(code))
+    found.extend(susp.identify_struct_field_overrun(code, struct_layout_map))
     return found
 
 
@@ -240,6 +241,16 @@ def main(argv=None):
 
     susp = _load_suspects_module()
 
+    # Build the struct layout map (for the type-aware struct_field_overrun
+    # detector) from data_types.json under annotations/<exe>/.
+    struct_layout_map = {}
+    import glob as _glob
+    for _dt in _glob.glob(os.path.join(
+            REPO_ROOT, 'annotations', '*', 'data_types', 'data_types.json')):
+        struct_layout_map = susp.build_struct_layout_map(_dt)
+        if struct_layout_map:
+            break
+
     cppcheck_warned_missing = False
     total_visible = 0
     for path in args.files:
@@ -248,7 +259,7 @@ def main(argv=None):
             continue
         with open(path, 'r') as f:
             code = f.read()
-        suspects = run_detectors(susp, code)
+        suspects = run_detectors(susp, code, struct_layout_map)
 
         cppcheck_diags = []
         if not args.no_cppcheck:
