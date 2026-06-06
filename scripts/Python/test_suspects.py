@@ -104,7 +104,7 @@ def run_detectors(susp, code, struct_layout_map=None):
     found.extend(susp.identify_dropped_loop_counter(code))
     found.extend(susp.identify_unrolled_memcpy_dword_byte_split(code))
     found.extend(susp.identify_unrolled_memcpy_index_form(code))
-    found.extend(susp.identify_unrolled_field_copy(code))
+    found.extend(susp.identify_unrolled_field_copy(code, struct_layout_map))
     found.extend(susp.identify_cascade_constant_fill(code))
     found.extend(susp.identify_self_copy_guard(code))
     found.extend(susp.identify_dropped_self_copy(code))

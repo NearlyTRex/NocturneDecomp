@@ -2055,7 +2055,7 @@ def _resolve_scalar_index_aliases(decompiled_code):
     return '\n'.join(out)
 
 
-def identify_unrolled_field_copy(decompiled_code):
+def identify_unrolled_field_copy(decompiled_code, struct_layout_map=None):
     """Detect Watcom-emitted field-by-field struct copies.
 
     Canonical shapes:
@@ -2107,6 +2107,9 @@ def identify_unrolled_field_copy(decompiled_code):
     lines = _resolve_scalar_index_aliases(
         _resolve_pointer_aliases(decompiled_code)).split('\n')
     n = len(lines)
+    # Identifier -> declared struct type, for the type-aware suppression at
+    # the end (only consulted when a struct layout map is available).
+    var_types = _sfo_resolve_var_types(decompiled_code) if struct_layout_map else {}
     # 3 catches `x/y/z` vector copies; the same-root grouping below keeps
     # false positives from unrelated 3-line runs in check.
     MIN_RUN = 3
@@ -2278,6 +2281,26 @@ def identify_unrolled_field_copy(decompiled_code):
             if lhs_subscripts is None:
                 i = j
                 continue
+            # Type-aware suppression (flat runs only). A field-copy run can only
+            # collapse to `dst = src;` when both copied objects are the SAME
+            # struct type. Suppress cross-struct copies — field names coincide
+            # but the types differ (e.g. SEpdDirEntry -> CPodDirectoryEntry,
+            # CVector4f -> CVector3i), so `dst = src;` would be a type error and
+            # the run is a deliberate field-subset extraction, not a memcpy.
+            # Only fires when BOTH sides' types resolve and genuinely differ, so
+            # unknown-type runs keep flagging. We do NOT suppress same-type
+            # partial copies: a full struct copy is often split across several
+            # runs (e.g. copyPanel), and a per-run "partial" view would wrongly
+            # drop those true positives. "Flat" = one LHS object path across the
+            # run; nested/matrix runs (multiple prefixes) keep the old logic.
+            if struct_layout_map and len(prefix_map_lhs_to_rhs) == 1:
+                lhs_t = resolve_access_path_type(
+                    first_lhs_prefix, var_types, struct_layout_map)
+                rhs_t = resolve_access_path_type(
+                    first_rhs_prefix, var_types, struct_layout_map)
+                if lhs_t and rhs_t and lhs_t != rhs_t:
+                    i = j
+                    continue
             suspects.append({
                 'line': i + 1,
                 'type': 'unrolled_memcpy',
@@ -5831,6 +5854,13 @@ _SFO_PTR_PARAM_RE = re.compile(r'^([A-Za-z_]\w*)\s*\*+\s*([A-Za-z_]\w*)$')
 _SFO_VAL_PARAM_RE = re.compile(r'^([A-Za-z_]\w*)\s+([A-Za-z_]\w*)$')
 _SFO_INT_RE = re.compile(r'^(0x[0-9a-fA-F]+|\d+)$')
 _SFO_IDENT_RE = re.compile(r'[A-Za-z_]\w*')
+# Statement keywords that the value-declaration regex would otherwise treat
+# as a "type" — e.g. `return this_ptr;` parses as type=`return`, var=`this_ptr`
+# and clobbers the variable's real (param/decl) type. Guard against that.
+_SFO_NON_TYPE_KEYWORDS = frozenset((
+    'return', 'goto', 'break', 'continue', 'delete', 'case', 'do', 'else',
+    'sizeof', 'new', 'throw',
+))
 
 
 def build_struct_layout_map(data_types_path):
@@ -5860,12 +5890,21 @@ def build_struct_layout_map(data_types_path):
                 flen = fld.get('len')
                 if fname is None or offset is None or flen is None:
                     continue
-                dim = re.search(r'\[(\d+)\]', fld.get('type', ''))
+                ftype = fld.get('type', '') or ''
+                dim = re.search(r'\[(\d+)\]', ftype)
+                # Base type name: strip array dims, pointer stars, and a
+                # leading struct/union/enum keyword, leaving e.g.
+                # 'CPodDirectoryEntry' from 'CPodDirectoryEntry *' /
+                # 'SNetworkAddr' from 'SNetworkAddr' / 'char' from 'char[20]'.
+                base = re.sub(r'\[.*$', '', ftype)
+                base = base.replace('*', '').strip()
+                base = re.sub(r'^(?:struct|union|enum)\s+', '', base)
                 parsed.append({
                     'name': fname,
                     'offset': offset,
                     'len': flen,
                     'n': int(dim.group(1)) if dim else None,
+                    'type': base,
                 })
             parsed.sort(key=lambda fl: fl['offset'])
             layout[name] = parsed
@@ -5909,9 +5948,72 @@ def _sfo_resolve_var_types(code):
         break
     for line in lines:
         m = _SFO_DECL_RE.match(line) or _SFO_VALDECL_RE.match(line)
-        if m:
+        if m and m.group(1) not in _SFO_NON_TYPE_KEYWORDS:
             var_types[m.group(2)] = m.group(1)
     return var_types
+
+
+def resolve_access_path_type(path, var_types, layout):
+    """Resolve a pure access-path expression to the struct type at its end.
+
+    Walks `root[->|.]field[idx]...` using `var_types` (identifier -> declared
+    type) for the root and `layout` (struct -> [{name, type, ...}]) for each
+    field step. Array subscripts `[..]` leave the type unchanged (an element
+    of a `T[]` / `T *` field is a `T`, which is what the field's base type
+    already names). Returns the final type name, or None if any step can't be
+    resolved (unknown root, paren-wrapped sub-path, missing field, etc.).
+    Conservative by design: None means "don't know", so callers should not
+    suppress on a None result.
+    """
+    if not path or not layout:
+        return None
+    p = re.sub(r'\s+', '', path)
+    if p[:1] == '&':
+        p = p[1:]
+    m = re.match(r'[A-Za-z_]\w*', p)
+    if not m:
+        return None
+    cur = var_types.get(m.group(0))
+    if not cur:
+        return None
+    pos = m.end()
+    while pos < len(p):
+        ch = p[pos]
+        if ch == '[':
+            depth = 0
+            j = pos
+            while j < len(p):
+                if p[j] == '[':
+                    depth += 1
+                elif p[j] == ']':
+                    depth -= 1
+                    if depth == 0:
+                        break
+                j += 1
+            if j >= len(p):
+                return None
+            pos = j + 1
+        elif p[pos:pos + 2] == '->' or ch == '.':
+            pos += 2 if p[pos:pos + 2] == '->' else 1
+            fm = re.match(r'[A-Za-z_]\w*', p[pos:])
+            if not fm:
+                return None
+            flds = layout.get(cur)
+            if not flds:
+                return None
+            ftype = None
+            for fl in flds:
+                if fl.get('name') == fm.group(0):
+                    ftype = fl.get('type')
+                    break
+            if not ftype:
+                return None
+            cur = ftype
+            pos += fm.end()
+        else:
+            # Leading '(', '*', or any other token -> give up (conservative).
+            return None
+    return cur
 
 
 def _sfo_index_const(idx_expr):
@@ -6103,7 +6205,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_dropped_loop_counter(code))
     found.extend(identify_unrolled_memcpy_dword_byte_split(code))
     found.extend(identify_unrolled_memcpy_index_form(code))
-    found.extend(identify_unrolled_field_copy(code))
+    found.extend(identify_unrolled_field_copy(code, struct_layout_map))
     found.extend(identify_unrolled_offset_copy(code))
     found.extend(identify_cascade_constant_fill(code))
     found.extend(identify_self_copy_guard(code))

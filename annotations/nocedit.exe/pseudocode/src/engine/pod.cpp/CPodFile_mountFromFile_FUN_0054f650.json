@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 834,
-    "complexity_score": 393,
+    "complexity_score": 368,
     "cross_reference_count": 15,
     "function_call_count": 14,
     "global_count": 27,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 368,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1202
   },
   "cross_references": [
@@ -688,6 +686,15 @@
       "type": "unrolled_strcpy"
     },
     {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 193,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr->file_count = local_490.file_count;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 106,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -965,23 +972,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 193,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "this_ptr->file_count = local_490.file_count;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "introduced_by": "keep",
-      "line": 93,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "this_ptr->directory_entries[local_28].size = local_ac.size;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

@@ -4,9 +4,9 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6210 functions
-  1 suspects: 26 functions
-  2 suspects: 51 functions
+  0 suspects: 6213 functions
+  1 suspects: 24 functions
+  2 suspects: 50 functions
   3 suspects: 33 functions
   4 suspects: 32 functions
   5 suspects: 17 functions
@@ -54,21 +54,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     engine_clipper.c_interpolateVertexBottomClipAdvanc ( 55 lines)
       iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) !=...
 
-  [unrolled_memcpy] (6 functions)
-  ------------------------------------------------------------
-    shape_design.c_selectVertexToDelete_FUN_0045c5b0   ( 52 lines)
-      g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1...
-    shape_design.c_duplicateSharedVertices_FUN_00465d5 ( 54 lines)
-      g_LoadedVertices[g_VertexCount].vertex.x = g_LoadedVertices[...
-    core_netgame.cpp_CNetGame_sendGameSetting_FUN_0054 ( 90 lines)
-      packet.players[iVar5].addr = this_ptr->players[iVar5].addr;...
-    shape_superopt.cpp_CObj_removeUnusedVertices_FUN_0 (115 lines)
-      dst_vert->position = pCVar5->position;...
-    core_netgame.cpp_CNetGame_applyNewGameSettings_FUN (272 lines)
-      this_ptr->players[local_44[3]].ready_flag = localPkt.players...
-    shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
-      new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
-
   [pointer_cast] (6 functions)
   ------------------------------------------------------------
     engine_fileio.cpp_CFileManager_buildPodFromRespons ( 57 lines)
@@ -83,6 +68,17 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       *(double *)((int)&((local_58.vertex_data)->position).x + iVa...
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
+
+  [unrolled_memcpy] (4 functions)
+  ------------------------------------------------------------
+    shape_design.c_selectVertexToDelete_FUN_0045c5b0   ( 52 lines)
+      g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1...
+    shape_design.c_duplicateSharedVertices_FUN_00465d5 ( 54 lines)
+      g_LoadedVertices[g_VertexCount].vertex.x = g_LoadedVertices[...
+    shape_superopt.cpp_CObj_removeUnusedVertices_FUN_0 (115 lines)
+      dst_vert->position = pCVar5->position;...
+    shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
+      new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
   [shadow_pointer_walk] (3 functions)
   ------------------------------------------------------------
@@ -211,8 +207,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/fileio.cpp, Lines: 244, Types: ['unrolled_strcpy']
   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
     File: core/inv.cpp, Lines: 366, Types: ['concat_reconstruction']
-  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
-    File: engine/pod.cpp, Lines: 368, Types: ['unrolled_memcpy']
   core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
     File: core/glass.cpp, Lines: 387, Types: ['unrolled_memcpy']
   shape_superopt.cpp_CP3D_copy2_FUN_005d84a0

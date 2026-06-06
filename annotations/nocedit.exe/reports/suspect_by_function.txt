@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6183 (95.8%)
-With suspects: 271
-Total suspects: 1816
+Clean: 6186 (95.8%)
+With suspects: 268
+Total suspects: 1812
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
@@ -495,18 +495,6 @@ core_msnedit.cpp_drawPropertyRow_FUN_00535e10 (2 suspects)
 ====================================================================================================
   Line 7 [signed_shift_global_idiom]: (value,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -8) -
   Line 8 [signed_shift_global_idiom]: (uint)((g_WindowWidth >> 0x1f) << 2 < 0)) >> 3) + g_ClipLeft,*y_pos);
-
-====================================================================================================
-core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (1 suspect)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 96 [unrolled_memcpy]: this_ptr->players[local_44[3]].ready_flag = localPkt.players[iVar6].ready_flag;
-
-====================================================================================================
-core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (1 suspect)
-  File: core/netgame.cpp
-====================================================================================================
-  Line 38 [unrolled_memcpy]: packet.players[iVar5].addr = this_ptr->players[iVar5].addr;
 
 ====================================================================================================
 core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40 (1 suspect)
@@ -1210,13 +1198,6 @@ engine_model.c_getMRGLBounds_FUN_00528140 (1 suspect)
   File: engine/model.c
 ====================================================================================================
   Line 134 [static_uninitvar]: *output_bounds = *puVar11;
-
-====================================================================================================
-engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (2 suspects)
-  File: engine/pod.cpp
-====================================================================================================
-  Line 93 [unrolled_memcpy]: this_ptr->directory_entries[local_28].size = local_ac.size;
-  Line 193 [unrolled_memcpy]: this_ptr->file_count = local_490.file_count;
 
 ====================================================================================================
 shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (18 suspects)

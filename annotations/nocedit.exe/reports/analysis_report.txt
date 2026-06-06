@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6210 (96.2%)
-Functions with suspects: 244 (3.8%)
+Clean functions: 6213 (96.3%)
+Functions with suspects: 241 (3.7%)
 
-Total suspect patterns: 1816
+Total suspect patterns: 1812
 Average suspects per function: 0.28
 
-Virtual files: 214 total, 191 at 100%, 197 at 90%+
+Virtual files: 214 total, 193 at 100%, 197 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -29,7 +29,7 @@ Failed: 0
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   pointer_cast              776
-  unrolled_memcpy           244
+  unrolled_memcpy           240
   unrolled_strcpy           118
   static_uninitvar          87
   shadow_pointer_walk       79
@@ -114,7 +114,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6160 more
+  ... and 6163 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -165,18 +165,18 @@ FUNCTIONS BY SUSPECT TYPE
     004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
     ... and 122 more
 
-  unrolled_memcpy (84 functions):
-    0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
+  unrolled_memcpy (81 functions):
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     004b23a0: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
     004b2d00: engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
     004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
     004bd190: engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-    00542dd0: core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
-    00542470: core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
     0050b9a0: core_manpuz.cpp_copyPanel_FUN_0050b9a0
     00509330: core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330
-    ... and 74 more
+    0050a290: core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290
+    00508a70: core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
+    0050aba0: core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0
+    ... and 71 more
 
   unrolled_strcpy (42 functions):
     004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0

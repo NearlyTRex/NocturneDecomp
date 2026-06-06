@@ -4,15 +4,15 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     776 ( 42.7%)
-  unrolled_memcpy                  244 ( 13.4%)
+  pointer_cast                     776 ( 42.8%)
+  unrolled_memcpy                  240 ( 13.2%)
   unrolled_strcpy                  118 (  6.5%)
   static_uninitvar                  87 (  4.8%)
   shadow_pointer_walk               79 (  4.4%)
   missing_cave_copy                 78 (  4.3%)
-  static_self_assignment            68 (  3.7%)
+  static_self_assignment            68 (  3.8%)
   unrolled_strlen                   56 (  3.1%)
-  static_shift_too_many_bits        39 (  2.1%)
+  static_shift_too_many_bits        39 (  2.2%)
   bitcast_double_pair               36 (  2.0%)
   signed_shift_global_idiom         34 (  1.9%)
   static_legacy_uninitvar           25 (  1.4%)
@@ -199,11 +199,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (244 occurrences)
+TYPE: unrolled_memcpy (240 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   139x  field-by-field struct copy
+   135x  field-by-field struct copy
     53x  for (...; != 0; ... + -1)
     51x  MOVSD.REP
      1x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -230,8 +230,6 @@ Functions:
   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0
-  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
-  core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
   core_scat.cpp_CScat_blendAimBones_FUN_005584a0
   core_scat.cpp_CScat_updateAI_FUN_005578e0
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
@@ -245,7 +243,6 @@ Functions:
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
   engine_fileio.cpp_readTimestampFile_FUN_004b23a0
-  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
   shape_design.c_bisectMesh_FUN_0046ed50
   shape_design.c_complexPolygonReduction_FUN_00463b30
   shape_design.c_deletePolygonRange_FUN_0045dd70
