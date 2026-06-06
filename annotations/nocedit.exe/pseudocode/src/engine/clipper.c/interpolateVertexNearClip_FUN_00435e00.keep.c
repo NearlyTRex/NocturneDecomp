@@ -18,7 +18,7 @@ void __cdecl engine_clipper_c_interpolateVertexNearClip_FUN_00435e00(SRenderVert
   uVar2 = g_NearPlaneDistance - (v1->projected_vertex).transformed_z;
   if ((int)uVar2 < iVar3) {
     if (-iVar3 < (int)uVar2) {
-      iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar3);
+      iVar3 = (int)(((longlong)(int)uVar2 << 0x1f) / (longlong)iVar3);
     }
     else {
       iVar3 = -0x80000000;

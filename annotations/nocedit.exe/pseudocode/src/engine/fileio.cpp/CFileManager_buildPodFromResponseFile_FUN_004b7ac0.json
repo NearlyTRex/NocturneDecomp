@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 72,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 57,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 213
   },
   "cross_references": [
@@ -180,6 +178,17 @@
     },
     "pcode_op_count": 532
   },
+  "resolved_suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 100,
     "local_size": 96,
@@ -203,14 +212,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 41,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

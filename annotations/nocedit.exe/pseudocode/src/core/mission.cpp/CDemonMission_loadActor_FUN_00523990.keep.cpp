@@ -61,7 +61,6 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDem
     g_CurrentLineNumber = 0x22d;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Error reading actor pointer.\nOwner: %s\nDescription: %s\n",current_actor->actor_name,property_description);
-    pCVar1 = local_e1;
 LAB_00523a18:
     while (local_e1 = pCVar1, iVar1 = _fgetc(file), iVar1 != -1) {
       pCVar1 = local_e1;

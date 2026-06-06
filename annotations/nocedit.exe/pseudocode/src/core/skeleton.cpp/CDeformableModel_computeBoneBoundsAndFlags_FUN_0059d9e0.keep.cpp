@@ -55,13 +55,11 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
       if (this_ptr->bone_flags[local_18] == 1) {
         if (-1 < pCVar3->bone_list[local_18].parent_index) {
           iVar1 = 0;
-          if (0 < iVar2) {
-            do {
-              if ((local_18 == pCVar3->bone_list[iVar1].parent_index) &&
-                  (this_ptr->bone_flags[iVar1] != 0)) break;
-              iVar1 = iVar1 + 1;
-            } while (iVar1 < iVar2);
-          }
+          do {
+            if ((local_18 == pCVar3->bone_list[iVar1].parent_index) &&
+                (this_ptr->bone_flags[iVar1] != 0)) break;
+            iVar1 = iVar1 + 1;
+          } while (iVar1 < iVar2);
           if (iVar1 < iVar2) {
             iVar9 = 0;
             iVar1 = local_18;

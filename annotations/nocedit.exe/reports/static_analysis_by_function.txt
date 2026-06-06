@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 115
-  Total diagnostics: 334
+  Functions with findings: 105
+  Total diagnostics: 321
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 72, raw .cpp files: 43
+  .keep.cpp files: 65, raw .cpp files: 40
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -240,15 +240,6 @@ shape_design.c_mergeAdjacentPolygons_FUN_00462b70  [.cpp] [Cppcheck (quick)]
   Line  116: [arrayIndexOutOfBoundsCond] Either the condition 'bVar5' is redundant or the array 'local_58[2]' is accessed at index 3, which is out of bounds.
   Line  210: [selfAssignment] Redundant assignment of 'pSVar3' to itself.
   Line  211: [selfAssignment] Redundant assignment of 'pSVar4' to itself.
-
-----------------------------------------------------------------------------------------------------
-core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0  [.keep] [Cppcheck (quick)]
-  File: core/game.cpp  (4 diagnostics)
-
-  Line   47: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   48: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   50: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   51: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_tvbat.cpp_CTVBat_process_FUN_005e4210  [.keep] [Cppcheck (quick)]
@@ -646,30 +637,6 @@ core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20  [.keep] 
   Line   75: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0  [.keep] [Cppcheck (quick)]
-  File: core/game.cpp  (1 diagnostics)
-
-  Line 1564: [selfAssignment] Redundant assignment of 'pbVar21' to itself.
-
-----------------------------------------------------------------------------------------------------
-core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0  [.keep] [Cppcheck (quick)]
-  File: core/lightgun.cpp  (1 diagnostics)
-
-  Line   24: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-core_menu.cpp_adjustMouseSensitivity_FUN_005107c0  [.cpp] [Cppcheck (quick)]
-  File: core/menu.cpp  (1 diagnostics)
-
-  Line   40: [identicalInnerCondition] Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-core_mission.cpp_CDemonMission_loadActor_FUN_00523990  [.keep] [Cppcheck (quick)]
-  File: core/mission.cpp  (1 diagnostics)
-
-  Line   64: [legacyUninitvar] Uninitialized variable: local_e1
-
-----------------------------------------------------------------------------------------------------
 core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80  [.keep] [Cppcheck (quick)]
   File: core/msnedit.cpp  (1 diagnostics)
 
@@ -694,12 +661,6 @@ core_script.cpp_parseBodyPartMask_FUN_00559730  [.keep] [Cppcheck (quick)]
   Line   30: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990  [.keep] [Cppcheck (quick)]
-  File: core/set.cpp  (1 diagnostics)
-
-  Line   95: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 core_setedit.cpp_loadGroundTypes_FUN_00578420  [.keep] [Cppcheck (quick)]
   File: core/setedit.cpp  (1 diagnostics)
 
@@ -710,24 +671,6 @@ core_setutil.cpp_C3DSCamera_load_FUN_00585420  [.keep] [Cppcheck (quick)]
   File: core/setutil.cpp  (1 diagnostics)
 
   Line   20: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430  [.cpp] [Cppcheck (quick)]
-  File: core/skeleton.cpp  (1 diagnostics)
-
-  Line   20: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_005a0410  [.cpp] [Cppcheck (quick)]
-  File: core/skeleton.cpp  (1 diagnostics)
-
-  Line   20: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0  [.keep] [Cppcheck (quick)]
-  File: core/skeleton.cpp  (1 diagnostics)
-
-  Line   58: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60  [.keep] [Cppcheck (quick)]
@@ -758,12 +701,6 @@ engine_fileio.cpp_readTimestampFile_FUN_004b23a0  [.cpp] [Cppcheck (quick)]
   File: engine/fileio.cpp  (1 diagnostics)
 
   Line   99: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
-engine_model.c_getMRGLBounds_FUN_00528140  [.keep] [Cppcheck (quick)]
-  File: engine/model.c  (1 diagnostics)
-
-  Line  134: [uninitvar] Uninitialized variable: *puVar11
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_centerVerticesAroundPoint_FUN_0045ea90  [.cpp] [Cppcheck (quick)]

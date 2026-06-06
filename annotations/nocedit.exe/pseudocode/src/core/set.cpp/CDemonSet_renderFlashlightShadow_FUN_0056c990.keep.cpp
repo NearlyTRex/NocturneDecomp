@@ -92,7 +92,7 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
     }
     core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670
               (&g_CDemonLightInstance,(g_WindowWidth + iVar1) / 2,(g_WindowHeight + iVar2) / 2,
-               ((int)((iVar5 + (iVar5 >> 0x1f) * -0x80) - (uint)((iVar5 >> 0x1f) << 6 < 0)) >> 7) +
+               iVar5 / 0x80 +
                iVar4 * 0x80 + g_CWeatherPtr->lightning_active * 0x8000);
     return;
   }

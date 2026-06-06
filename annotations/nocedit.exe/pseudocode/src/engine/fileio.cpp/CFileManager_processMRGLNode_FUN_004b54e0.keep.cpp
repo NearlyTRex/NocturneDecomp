@@ -44,7 +44,7 @@ void __cdecl engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0(CFileMa
       } while (iVar1 < mrgl_node[2].base.type);
     }
     for (; iVar1 = (local_14->base).type, iVar1 != 0;
-        local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).type + (uVar1 & 0xfffffffc))) {
+        local_14 = (SMRGLHeaderExtended *)((char *)local_14 + (uVar1 & 0xfffffffc))) {
       if ((iVar1 == 0xd) || (iVar1 == 0x40)) {
         engine_fileio_cpp_CFileManager_extractTexture_FUN_004b53e0
                   (this_ptr,(char *)&local_14->child_count);

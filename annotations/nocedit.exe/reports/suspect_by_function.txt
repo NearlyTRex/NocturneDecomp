@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6187 (95.9%)
-With suspects: 267
-Total suspects: 1719
+Clean: 6209 (96.2%)
+With suspects: 245
+Total suspects: 1694
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
@@ -63,21 +63,6 @@ core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (15 suspects)
   Line 112 [unrolled_memcpy]: (pUVar5->vec).x = (pUVar6->vec).x;
 
 ====================================================================================================
-core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1 suspect)
-  File: core/game.cpp
-====================================================================================================
-  Line 1564 [static_self_assignment]: pbVar21 = pbVar21;
-
-====================================================================================================
-core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 (4 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 47 [static_shift_too_many_bits]: (int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -
-  Line 48 [static_shift_too_many_bits]: (uint)((iStack_30 >> 0x1f) << 0xf < 0)) >> 0x10;
-  Line 50 [static_shift_too_many_bits]: (int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -
-  Line 51 [static_shift_too_many_bits]: (uint)((aiStack_2c[0] >> 0x1f) << 0xf < 0)) >> 0x10;
-
-====================================================================================================
 core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0 (2 suspects)
   File: core/ghoul.cpp
 ====================================================================================================
@@ -127,12 +112,6 @@ core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (2 suspects)
   Line 184 [unrolled_memcpy]: local_1e4.vertices[1].x = quad_vertices->vertices[1].x;
 
 ====================================================================================================
-core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10 (1 suspect)
-  File: core/inv.cpp
-====================================================================================================
-  Line 23 [shadow_pointer_walk]: pCVar4 = (CInventory *)&pCVar4->owner;
-
-====================================================================================================
 core_inv.cpp_CInventory_load_FUN_004ff400 (2 suspects)
   File: core/inv.cpp
 ====================================================================================================
@@ -168,12 +147,6 @@ core_inv.cpp_CInventory_selectItem_FUN_004fec10 (2 suspects)
   Line 37 [shadow_pointer_walk]: pCVar3 = (CInventory *)&pCVar3->owner;
 
 ====================================================================================================
-core_inv.cpp_CInventory_selectWeapon_FUN_004feb10 (1 suspect)
-  File: core/inv.cpp
-====================================================================================================
-  Line 24 [shadow_pointer_walk]: pCVar4 = (CInventory *)&pCVar4->owner;
-
-====================================================================================================
 core_inv.cpp_CInventory_updateInventory_FUN_004ffad0 (3 suspects)
   File: core/inv.cpp
 ====================================================================================================
@@ -187,12 +160,6 @@ core_keyactor.cpp_CKeyActor_process_FUN_00501710 (2 suspects)
 ====================================================================================================
   Line 27 [static_shift_too_many_bits]: iVar1 = (iVar3 + (iVar3 >> 0x1f) * -0x100) - (uint)((iVar3 >> 0x1f) << 7 < 0);
   Line 28 [static_shift_too_many_bits]: iVar2 = iVar1 >> 0x1f;
-
-====================================================================================================
-core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0 (1 suspect)
-  File: core/lightgun.cpp
-====================================================================================================
-  Line 24 [static_invalid_pointer_cast]: if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].z) {
 
 ====================================================================================================
 core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920 (3 suspects)
@@ -297,12 +264,6 @@ core_manpuz.cpp_copyPanel_FUN_0050b9a0 (5 suspects)
   Line 34 [unrolled_memcpy]: (dest->world_position).x = (src->world_position).x;
 
 ====================================================================================================
-core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 (1 suspect)
-  File: core/menu.cpp
-====================================================================================================
-  Line 40 [static_identical_inner_condition]: if (iVar8 < 0x40001) goto LAB_00510823;
-
-====================================================================================================
 core_mimic.cpp_CMimic_ctor_FUN_0051f1d0 (2 suspects)
   File: core/mimic.cpp
 ====================================================================================================
@@ -385,12 +346,6 @@ core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20 (3 suspects)
   Line 52 [static_null_pointer]: (actor->base).location.area_id = (pCVar3->location).area_id;
 
 ====================================================================================================
-core_mission.cpp_CDemonMission_loadActor_FUN_00523990 (1 suspect)
-  File: core/mission.cpp
-====================================================================================================
-  Line 64 [static_legacy_uninitvar]: pCVar1 = local_e1;
-
-====================================================================================================
 core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 (2 suspects)
   File: core/mission.cpp
 ====================================================================================================
@@ -409,12 +364,6 @@ core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (8 suspects)
   Line 148 [shadow_pointer_walk]: pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
   Line 153 [unrolled_memcpy]: (pCVar7->location).position.x = (pCVar5->location).position.x;
   Line 159 [unrolled_memcpy]: (pCVar7->orient).vec.x = (pCVar5->orient).vec.x;
-
-====================================================================================================
-core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 (1 suspect)
-  File: core/msnedit.cpp
-====================================================================================================
-  Line 58 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (9 suspects)
@@ -563,12 +512,6 @@ core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 (6 suspects)
   Line 149 [static_shift_too_many_bits]: uVar10 << 0x10) ^ (int)uVar5 >> 0x1f;
 
 ====================================================================================================
-core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 (1 suspect)
-  File: core/set.cpp
-====================================================================================================
-  Line 95 [static_shift_too_many_bits]: ((int)((iVar5 + (iVar5 >> 0x1f) * -0x80) - (uint)((iVar5 >> 0x1f) << 6 < 0)) >> 7) +
-
-====================================================================================================
 core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (32 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
@@ -613,29 +556,11 @@ core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (2 su
   Line 19 [missing_cave_copy]: CMatrix3x4f local_a8;
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430 (1 suspect)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 20 [static_invalid_pointer_cast]: } while ((float *)piVar2 != &this_ptr->transformed_vertices[2].z);
-
-====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (2 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 29 [static_invalid_pointer_cast]: (&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,
   Line 30 [static_invalid_pointer_cast]: (int *)local_24,&local_60);
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_005a0410 (1 suspect)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 20 [static_invalid_pointer_cast]: } while ((float *)piVar2 != &this_ptr->transformed_vertices[2].z);
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0 (1 suspect)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 58 [static_identical_inner_condition]: if (0 < iVar2) {
 
 ====================================================================================================
 core_sound.cpp_updateListeners_FUN_005b1870 (5 suspects)
@@ -759,48 +684,6 @@ engine_boss.c_modelStructNotSupported4_FUN_0041dbe0 (13 suspects)
   Line 44 [static_uninitvar]: (out_bounds->extent).z = iStack_c;
 
 ====================================================================================================
-engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490 (1 suspect)
-  File: engine/clipper.c
-====================================================================================================
-  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00 (1 suspect)
-  File: engine/clipper.c
-====================================================================================================
-  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230 (1 suspect)
-  File: engine/clipper.c
-====================================================================================================
-  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00 (1 suspect)
-  File: engine/clipper.c
-====================================================================================================
-  Line 16 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexNearClip_FUN_00435e00 (1 suspect)
-  File: engine/clipper.c
-====================================================================================================
-  Line 13 [concat_reconstruction]: iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar3);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360 (1 suspect)
-  File: engine/clipper.c
-====================================================================================================
-  Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
-
-====================================================================================================
-engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0 (1 suspect)
-  File: engine/clipper.c
-====================================================================================================
-  Line 14 [concat_reconstruction]: iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
-
-====================================================================================================
 engine_colquant.c_computeBoxStatistics_FUN_00441260 (4 suspects)
   File: engine/colquant.c
 ====================================================================================================
@@ -858,12 +741,6 @@ engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 (3 suspects)
   Line 42 [pointer_cast]: pCVar5 = (CCheckOutItem *)((int)pCVar5 + (uint)bVar6 * -2 + 1);
   Line 52 [static_self_assignment]: pCVar5 = pCVar5;
   Line 62 [unrolled_strlen]: do {
-
-====================================================================================================
-engine_fileio.cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0 (1 suspect)
-  File: engine/fileio.cpp
-====================================================================================================
-  Line 41 [pointer_cast]: pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);
 
 ====================================================================================================
 engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460 (5 suspects)
@@ -968,12 +845,6 @@ engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (12 suspects)
   Line 378 [unrolled_strcpy]: do {
   Line 776 [unrolled_strcpy]: do {
   Line 802 [pointer_cast]: pcVar12 = *(char **)((int)g_PodFileActionNames + iVar4);
-
-====================================================================================================
-engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0 (1 suspect)
-  File: engine/fileio.cpp
-====================================================================================================
-  Line 40 [pointer_cast]: local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).type + (uVar1 & 0xfffffffc))) {
 
 ====================================================================================================
 engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (42 suspects)
@@ -1094,12 +965,6 @@ engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0 (4 suspects)
   Line 281 [static_shift_too_many_bits]: iVar4 = iVar1 >> 0x1f;
   Line 349 [static_shift_too_many_bits]: iVar4 = iVar1 >> 0x1f;
   Line 413 [static_shift_too_many_bits]: iVar4 = iVar1 >> 0x1f;
-
-====================================================================================================
-engine_model.c_getMRGLBounds_FUN_00528140 (1 suspect)
-  File: engine/model.c
-====================================================================================================
-  Line 134 [static_uninitvar]: *output_bounds = *puVar11;
 
 ====================================================================================================
 shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (18 suspects)

@@ -21,7 +21,7 @@ void __cdecl engine_clipper_c_interpolateVertexBottomClip_FUN_00435c00(SRenderVe
   uVar2 = iVar3 - (v1->projected_vertex).transformed_y;
   if ((int)uVar2 < iVar4) {
     if (-iVar4 < (int)uVar2) {
-      iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);
+      iVar3 = (int)(((longlong)(int)uVar2 << 0x1f) / (longlong)iVar4);
     }
     else {
       iVar3 = -0x80000000;

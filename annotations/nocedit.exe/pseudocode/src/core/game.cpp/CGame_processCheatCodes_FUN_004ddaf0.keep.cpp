@@ -1561,7 +1561,6 @@ LAB_004df408:
           uVar10 = uVar10 - 1;
           pbVar21 = pbVar21 + (uint)bVar22 * -2 + 1;
           bVar1 = *pbVar21;
-          pbVar21 = pbVar21;
         } while (bVar1 != 0);
         for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
           bVar1 = g_InputHistory[iVar6];

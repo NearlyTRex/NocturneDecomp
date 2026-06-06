@@ -25,7 +25,6 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
   char local_160 [80];
   SMRGLModelBounds local_dc;
   SMRGLModelBounds local_a8;
-  SMRGLModelBounds local_74;
   int local_24;
   int local_20;
   float local_1c;
@@ -37,7 +36,7 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
   iVar4 = mrgl_data->type;
   if (iVar4 == 0x20) {
     mrgl_data_00 = engine_model_c_loadModelFile_FUN_00527ec0(((SMRGLKeyframeModel *)mrgl_data)->filenames[0]);
-    engine_model_c_getMRGLBounds_FUN_00528140(&mrgl_data_00->base,&local_74);
+    engine_model_c_getMRGLBounds_FUN_00528140(&mrgl_data_00->base,&local_a8);
     engine_model_c_freeMRGLData_FUN_005280b0(mrgl_data_00);
     puVar11 = &local_a8;
   }

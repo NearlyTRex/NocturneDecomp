@@ -367,31 +367,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "getMRGLBounds_FUN_00528140.keep.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 134,
-          "message": "Uninitialized variable: *puVar11",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Uninitialized variable: *puVar11",
-      "line": 134,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "*output_bounds = *puVar11;",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

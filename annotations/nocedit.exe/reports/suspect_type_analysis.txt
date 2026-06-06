@@ -4,46 +4,46 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     699 ( 40.7%)
-  unrolled_memcpy                  234 ( 13.6%)
-  unrolled_strcpy                  117 (  6.8%)
-  static_uninitvar                  87 (  5.1%)
-  missing_cave_copy                 78 (  4.5%)
-  shadow_pointer_walk               74 (  4.3%)
-  static_self_assignment            67 (  3.9%)
+  pointer_cast                     697 ( 41.1%)
+  unrolled_memcpy                  234 ( 13.8%)
+  unrolled_strcpy                  116 (  6.8%)
+  static_uninitvar                  86 (  5.1%)
+  missing_cave_copy                 78 (  4.6%)
+  shadow_pointer_walk               72 (  4.3%)
+  static_self_assignment            66 (  3.9%)
   unrolled_strlen                   56 (  3.3%)
-  static_shift_too_many_bits        39 (  2.3%)
   bitcast_double_pair               36 (  2.1%)
+  static_shift_too_many_bits        34 (  2.0%)
   signed_shift_global_idiom         34 (  2.0%)
-  static_legacy_uninitvar           25 (  1.5%)
   unrolled_strchr                   24 (  1.4%)
-  unrolled_memset                   18 (  1.0%)
+  static_legacy_uninitvar           24 (  1.4%)
+  unrolled_memset                   18 (  1.1%)
   raw_address_constant              17 (  1.0%)
   warning_inlined_function          16 (  0.9%)
-  static_invalid_pointer_cast       14 (  0.8%)
   bit_int_float_compare             12 (  0.7%)
-  concat_reconstruction              9 (  0.5%)
+  static_invalid_pointer_cast       11 (  0.6%)
   warning_type_propagation           9 (  0.5%)
   sub84_truncation                   9 (  0.5%)
   stack_param                        8 (  0.5%)
-  static_identical_inner_condition     7 (  0.4%)
-  unaffected_reg                     6 (  0.3%)
+  unaffected_reg                     6 (  0.4%)
+  static_identical_inner_condition     5 (  0.3%)
   static_null_pointer                5 (  0.3%)
   unrolled_strcat                    4 (  0.2%)
   warning_unreachable                3 (  0.2%)
   static_object_index                3 (  0.2%)
   negative_offset                    2 (  0.1%)
+  concat_reconstruction              2 (  0.1%)
   stack_alignment_array              2 (  0.1%)
   self_copy_guard                    2 (  0.1%)
   static_array_oob_cond              2 (  0.1%)
   static_null_pointer_arithmetic     1 (  0.1%)
 
 ====================================================================================================
-TYPE: pointer_cast (699 occurrences)
+TYPE: pointer_cast (697 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   324x  (int)&NAME used in byte-offset arithmetic
+   322x  (int)&NAME used in byte-offset arithmetic
     22x  (uint *)((int)this_ptr
     20x  (int *)((int)this_ptr
     13x  (int *)((int)pCVar1
@@ -82,7 +82,6 @@ Functions:
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
-  engine_fileio.cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0
   engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
@@ -92,7 +91,6 @@ Functions:
   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
-  engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
   engine_fileio.cpp_readTimestampFile_FUN_004b23a0
@@ -290,17 +288,16 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (117 occurrences)
+TYPE: unrolled_strcpy (116 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   117x  do {
+   116x  do {
 
 Functions:
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
   core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
-  core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730
   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
@@ -340,17 +337,16 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: static_uninitvar (87 occurrences)
+TYPE: static_uninitvar (86 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    87x  Cppcheck: uninitialized variable
+    86x  Cppcheck: uninitialized variable
 
 Functions:
   core_sound.cpp_updateListeners_FUN_005b1870
   core_tvbat.cpp_CTVBat_process_FUN_005e4210
   engine_boss.c_modelStructNotSupported4_FUN_0041dbe0
-  engine_model.c_getMRGLBounds_FUN_00528140
   shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
   shape_design.c_loadModelBinary_FUN_00458170
   shape_design.c_mergeAdjacentPolygons_FUN_00462b70
@@ -406,7 +402,7 @@ Functions:
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (74 occurrences)
+TYPE: shadow_pointer_walk (72 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -417,7 +413,6 @@ Unique patterns:
      3x  pCVar3 = (T *)&pCVar3->FIELD
      3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
      3x  this_ptr = (T *)&this_ptr->FIELD
-     2x  pCVar4 = (T *)&pCVar4->FIELD
      2x  pCVar5 = (T *)&pCVar5->FIELD
      2x  pCVar2 = (T *)&pCVar2->FIELD
      2x  local_1c = (T *)&local_1c->FIELD
@@ -430,14 +425,13 @@ Unique patterns:
      1x  pCVar3 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar2 = pCVar3
      1x  pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD
      1x  out_b = out_b + N
+     1x  out_g = out_g + N
 
 Functions:
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
-  core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10
   core_inv.cpp_CInventory_load_FUN_004ff400
   core_inv.cpp_CInventory_save_FUN_004ff210
   core_inv.cpp_CInventory_selectItem_FUN_004fec10
-  core_inv.cpp_CInventory_selectWeapon_FUN_004feb10
   core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
   core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
@@ -470,14 +464,13 @@ Functions:
   shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
 
 ====================================================================================================
-TYPE: static_self_assignment (67 occurrences)
+TYPE: static_self_assignment (66 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    67x  Cppcheck: redundant self-assignment
+    66x  Cppcheck: redundant self-assignment
 
 Functions:
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
   core_mimic.cpp_CMimic_setupCloth_FUN_00520500
@@ -550,27 +543,6 @@ Functions:
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
 
 ====================================================================================================
-TYPE: static_shift_too_many_bits (39 occurrences)
-====================================================================================================
-
-Unique patterns:
-    39x  Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)
-
-Functions:
-  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0
-  core_keyactor.cpp_CKeyActor_process_FUN_00501710
-  core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
-  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
-  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990
-  engine_colquant.c_computeBoxStatistics_FUN_00441260
-  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0
-  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
-  shape_design.c_arePolygonsCoplanar_FUN_00461b70
-  shape_design.c_quantizePaletteColors_FUN_0046b770
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
-
-====================================================================================================
 TYPE: bitcast_double_pair (36 occurrences)
 ====================================================================================================
 
@@ -584,6 +556,25 @@ Functions:
   shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
   shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
+
+====================================================================================================
+TYPE: static_shift_too_many_bits (34 occurrences)
+====================================================================================================
+
+Unique patterns:
+    34x  Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)
+
+Functions:
+  core_keyactor.cpp_CKeyActor_process_FUN_00501710
+  core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
+  core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
+  engine_colquant.c_computeBoxStatistics_FUN_00441260
+  engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0
+  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
+  shape_design.c_arePolygonsCoplanar_FUN_00461b70
+  shape_design.c_quantizePaletteColors_FUN_0046b770
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
 
 ====================================================================================================
 TYPE: signed_shift_global_idiom (34 occurrences)
@@ -607,23 +598,6 @@ Functions:
   wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0
 
 ====================================================================================================
-TYPE: static_legacy_uninitvar (25 occurrences)
-====================================================================================================
-
-Unique patterns:
-    25x  Cppcheck: uninitialized variable (legacy detector)
-
-Functions:
-  core_mission.cpp_CDemonMission_loadActor_FUN_00523990
-  core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_sound.cpp_updateListeners_FUN_005b1870
-  core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
-  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
-  shape_design.c_loadModelBinary_FUN_00458170
-  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
-
-====================================================================================================
 TYPE: unrolled_strchr (24 occurrences)
 ====================================================================================================
 
@@ -640,6 +614,22 @@ Functions:
   shape_design.c_tileTextureMaps_FUN_0046a180
   shape_design.c_validateModelTextures_FUN_00459a20
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
+
+====================================================================================================
+TYPE: static_legacy_uninitvar (24 occurrences)
+====================================================================================================
+
+Unique patterns:
+    24x  Cppcheck: uninitialized variable (legacy detector)
+
+Functions:
+  core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_sound.cpp_updateListeners_FUN_005b1870
+  core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
+  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
+  shape_design.c_loadModelBinary_FUN_00458170
+  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
 
 ====================================================================================================
 TYPE: unrolled_memset (18 occurrences)
@@ -709,22 +699,6 @@ Functions:
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
-TYPE: static_invalid_pointer_cast (14 occurrences)
-====================================================================================================
-
-Unique patterns:
-    14x  Cppcheck: invalid pointer cast
-
-Functions:
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600
-  core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430
-  core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
-  core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_005a0410
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
-
-====================================================================================================
 TYPE: bit_int_float_compare (12 occurrences)
 ====================================================================================================
 
@@ -746,21 +720,17 @@ Functions:
   shape_design.c_addQuadPolygonOctant_FUN_00469220
 
 ====================================================================================================
-TYPE: concat_reconstruction (9 occurrences)
+TYPE: static_invalid_pointer_cast (11 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     9x  CONCAT44
+    11x  Cppcheck: invalid pointer cast
 
 Functions:
-  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
-  engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
-  engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
-  engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
-  engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
-  engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
-  engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
-  engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
 
 ====================================================================================================
 TYPE: warning_type_propagation (9 occurrences)
@@ -806,22 +776,6 @@ Functions:
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
 
 ====================================================================================================
-TYPE: static_identical_inner_condition (7 occurrences)
-====================================================================================================
-
-Unique patterns:
-     7x  Cppcheck: inner condition identical to outer
-
-Functions:
-  core_menu.cpp_adjustMouseSensitivity_FUN_005107c0
-  core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0
-  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
-  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
-
-====================================================================================================
 TYPE: unaffected_reg (6 occurrences)
 ====================================================================================================
 
@@ -830,6 +784,20 @@ Unique patterns:
 
 Functions:
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+
+====================================================================================================
+TYPE: static_identical_inner_condition (5 occurrences)
+====================================================================================================
+
+Unique patterns:
+     5x  Cppcheck: inner condition identical to outer
+
+Functions:
+  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
+  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+  shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
+  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
 
 ====================================================================================================
 TYPE: static_null_pointer (5 occurrences)
@@ -887,6 +855,16 @@ Unique patterns:
 Functions:
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+
+====================================================================================================
+TYPE: concat_reconstruction (2 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  CONCAT44
+
+Functions:
+  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
 
 ====================================================================================================
 TYPE: stack_alignment_array (2 occurrences)

@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (334 diagnostics)
+Cppcheck (quick) (321 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (87)
+uninitvar (86)
 ----------------------------------------------------------------------------------------------------
 
   core_sound.cpp_updateListeners_FUN_005b1870        line 57
@@ -91,10 +91,6 @@ uninitvar (87)
   engine_boss.c_modelStructNotSupported4_FUN_0041dbe line 44
     File: engine/boss.c
     Uninitialized variable: iStack_c
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 134
-    File: engine/model.c
-    Uninitialized variable: *puVar11
 
   shape_design.c_convertWorldToScreenCoordinates_FUN line 47
     File: shape/design.c
@@ -361,12 +357,8 @@ uninitvar (87)
     Uninitialized variable: local_178
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (67)
+selfAssignment (66)
 ----------------------------------------------------------------------------------------------------
-
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1564
-    File: core/game.cpp
-    Redundant assignment of 'pbVar21' to itself.
 
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_005 line 158
     File: core/manpuz.cpp
@@ -877,24 +869,8 @@ invalidscanf (60)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (39)
+shiftTooManyBitsSigned (34)
 ----------------------------------------------------------------------------------------------------
-
-  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 47
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 48
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 50
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 line 51
-    File: core/game.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_keyactor.cpp_CKeyActor_process_FUN_00501710   line 27
     File: core/keyactor.cpp
@@ -933,10 +909,6 @@ shiftTooManyBitsSigned (39)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_set.cpp_CDemonSet_lightVertexColor_FUN_0056dd line 149
-    File: core/set.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 95
     File: core/set.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -1037,12 +1009,8 @@ shiftTooManyBitsSigned (39)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (25)
+legacyUninitvar (24)
 ----------------------------------------------------------------------------------------------------
-
-  core_mission.cpp_CDemonMission_loadActor_FUN_00523 line 64
-    File: core/mission.cpp
-    Uninitialized variable: local_e1
 
   core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40 line 109
     File: core/path.cpp
@@ -1141,7 +1109,7 @@ legacyUninitvar (25)
     Uninitialized variable: local_7c
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (18)
+invalidPointerCast (15)
 ----------------------------------------------------------------------------------------------------
 
   core_chain.cpp_fastSqrt_FUN_00431350               line 13
@@ -1168,17 +1136,9 @@ invalidPointerCast (18)
     File: core/ghoul.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
-  core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00 line 24
-    File: core/lightgun.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
   core_skeledit.cpp_CDeformableModelInstance_viewMod line 790
     File: core/skeledit.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_skeleton.cpp_CDeformableModelInstance_clearAl line 20
-    File: core/skeleton.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
 
   core_skeleton.cpp_CDeformableModelInstance_compute line 29
     File: core/skeleton.cpp
@@ -1187,10 +1147,6 @@ invalidPointerCast (18)
   core_skeleton.cpp_CDeformableModelInstance_compute line 30
     File: core/skeleton.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_skeleton.cpp_CDeformableModelInstance_showAll line 20
-    File: core/skeleton.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
 
   shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 41
     File: shape/meshlod.cpp
@@ -1269,16 +1225,8 @@ nullPointerRedundantCheck (12)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-identicalInnerCondition (7)
+identicalInnerCondition (5)
 ----------------------------------------------------------------------------------------------------
-
-  core_menu.cpp_adjustMouseSensitivity_FUN_005107c0  line 40
-    File: core/menu.cpp
-    Identical inner 'if' condition is always true.
-
-  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 58
-    File: core/skeleton.cpp
-    Identical inner 'if' condition is always true.
 
   engine_fileio.cpp_CFileManager_crossReferencePodDu line 134
     File: engine/fileio.cpp

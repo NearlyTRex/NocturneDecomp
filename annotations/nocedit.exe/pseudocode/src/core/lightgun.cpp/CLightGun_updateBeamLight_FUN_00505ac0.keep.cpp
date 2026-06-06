@@ -12,7 +12,6 @@ void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_00505ac0(CLightGun 
 {
   CVector3f *input_local_point;
   CVector3f local_e1;
-  char local_res0;
   CVector3f CStack_14;
 
   input_local_point =
@@ -21,9 +20,7 @@ void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_00505ac0(CLightGun 
             ((CDemonActor *)this_ptr,&CStack_14,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;
   g_CDemonLightInstance.volumetric_enabled = 0;
-  if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].z) {
-    g_CDemonLightInstance.base.base.position.f = CStack_14;
-  }
+  g_CDemonLightInstance.base.base.position.f = CStack_14;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             (&g_CDemonLightInstance.base.base.rotation_matrix,&(this_ptr->base).base.orient.vec);
   g_CDemonLightInstance.base.max_distance = 32.0;

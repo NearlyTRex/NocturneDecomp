@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6214 (96.3%)
-Files at 100%: 193
-Files at 90%+: 197
+Clean functions: 6226 (96.5%)
+Files at 100%: 194
+Files at 90%+: 198
 Files at 50%+: 214
 
 ====================================================================================================
@@ -175,6 +175,7 @@ FILES AT 100% (COMPLETE)
   engine/3d.c: 104 functions, 4591 lines
   engine/alphabit.cpp: 9 functions, 330 lines
   engine/boss.c: 5 functions, 64 lines
+  engine/clipper.c: 28 functions, 2806 lines
   engine/colquant.c: 9 functions, 592 lines
   engine/console.cpp: 8 functions, 201 lines
   engine/dosio.cpp: 26 functions, 477 lines
@@ -208,7 +209,7 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 193 files
+Total: 194 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -247,6 +248,24 @@ FILES AT 50-89%
            - sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690 (6 lines) [signed_shift_global_idiom]
            - sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0 (56 lines) [signed_shift_global_idiom]
            - sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90 (6 lines) [signed_shift_global_idiom]
+   87.3% | core/msnedit.cpp
+         55/63 clean, 8 remaining
+           - core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 (103 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
+           - core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220 (123 lines) [unrolled_strchr]
+           - core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 (142 lines) [shadow_pointer_walk, unrolled_strcpy, unrolled_strlen]
+           - core_msnedit.cpp_drawPropertyRow_FUN_00535e10 (9 lines) [signed_shift_global_idiom]
+           - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (139 lines) [stack_param]
+           - core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (171 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
+           - core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (997 lines) [bit_int_float_compare, pointer_cast, unrolled_memcpy]
+           - core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 (223 lines) [unrolled_memcpy, unrolled_memset]
+   86.0% | core/inv.cpp
+         37/43 clean, 6 remaining
+           - core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 (127 lines) [signed_shift_global_idiom]
+           - core_inv.cpp_CInventory_updateInventory_FUN_004ffad0 (115 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_load_FUN_004ff400 (111 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_selectItem_FUN_004fec10 (58 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_save_FUN_004ff210 (42 lines) [shadow_pointer_walk]
+           - core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (366 lines) [concat_reconstruction]
    85.7% | core/manpuz.cpp
          54/63 clean, 9 remaining
            - core_manpuz.cpp_copyPanel_FUN_0050b9a0 (36 lines) [unrolled_memcpy]
@@ -258,33 +277,12 @@ FILES AT 50-89%
            - core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (56 lines) [unrolled_memcpy]
            - core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 (144 lines) [unrolled_memcpy]
            - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines) [pointer_cast, unrolled_memcpy]
-   85.7% | core/msnedit.cpp
-         54/63 clean, 9 remaining
-           - core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 (103 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
-           - core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220 (123 lines) [unrolled_strchr]
-           - core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 (142 lines) [shadow_pointer_walk, unrolled_strcpy, unrolled_strlen]
-           - core_msnedit.cpp_drawPropertyRow_FUN_00535e10 (9 lines) [signed_shift_global_idiom]
-           - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (139 lines) [stack_param]
-           - core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 (73 lines) [unrolled_strcpy]
-           - core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (171 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
-           - core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (997 lines) [bit_int_float_compare, pointer_cast, unrolled_memcpy]
-           - core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 (223 lines) [unrolled_memcpy, unrolled_memset]
    84.0% | core/scat.cpp
          21/25 clean, 4 remaining
            - core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (48 lines) [missing_cave_copy, warning_type_propagation]
            - core_scat.cpp_CScat_process_FUN_005571f0 (311 lines) [missing_cave_copy, unrolled_memset]
            - core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (80 lines) [missing_cave_copy, stack_alignment_array, unrolled_memcpy, warning_type_propagation]
            - core_scat.cpp_CScat_updateAI_FUN_005578e0 (158 lines) [bit_int_float_compare, unrolled_memcpy]
-   81.4% | core/inv.cpp
-         35/43 clean, 8 remaining
-           - core_inv.cpp_CInventory_selectWeapon_FUN_004feb10 (59 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 (127 lines) [signed_shift_global_idiom]
-           - core_inv.cpp_CInventory_updateInventory_FUN_004ffad0 (115 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_load_FUN_004ff400 (111 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_selectItem_FUN_004fec10 (58 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_save_FUN_004ff210 (42 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10 (60 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (366 lines) [concat_reconstruction]
    81.0% | shape/cramtex.cpp
          17/21 clean, 4 remaining
            - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (832 lines) [pointer_cast]
@@ -317,15 +315,6 @@ FILES AT 50-89%
            - core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (169 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
            - core_mimic.cpp_CMimic_setupCloth_FUN_00520500 (51 lines) [pointer_cast, unrolled_memcpy]
            - core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 (321 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
-   75.0% | engine/clipper.c
-         21/28 clean, 7 remaining
-           - engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230 (55 lines) [concat_reconstruction]
-           - engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360 (54 lines) [concat_reconstruction]
-           - engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00 (50 lines) [concat_reconstruction]
-           - engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00 (50 lines) [concat_reconstruction]
-           - engine_clipper.c_interpolateVertexNearClip_FUN_00435e00 (52 lines) [concat_reconstruction]
-           - engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490 (55 lines) [concat_reconstruction]
-           - engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0 (54 lines) [concat_reconstruction]
    74.7% | shape/superopt.cpp
          139/186 clean, 47 remaining
            - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
@@ -386,6 +375,29 @@ FILES AT 50-89%
            - shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (101 lines) [pointer_cast, warning_inlined_function]
            - shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (164 lines) [unaffected_reg]
            - shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70 (48 lines) [pointer_cast]
+   71.2% | engine/fileio.cpp
+         52/73 clean, 21 remaining
+           - engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0 (135 lines) [pointer_cast, unrolled_strcpy]
+           - engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10 (193 lines) [pointer_cast, signed_shift_global_idiom, unrolled_strcpy]
+           - engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (634 lines) [negative_offset, pointer_cast, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_unreachable]
+           - engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 (91 lines) [unrolled_strcpy]
+           - engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 (110 lines) [pointer_cast, unrolled_strlen]
+           - engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460 (87 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen]
+           - engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50 (127 lines) [unrolled_memcpy, unrolled_strcpy]
+           - engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 (108 lines) [pointer_cast, unrolled_strlen]
+           - engine_fileio.cpp_readTimestampFile_FUN_004b23a0 (95 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
+           - engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 (307 lines) [pointer_cast, unrolled_strcpy]
+           - engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650 (122 lines) [unrolled_strcpy]
+           - engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (810 lines) [pointer_cast, unrolled_strcpy, warning_unreachable]
+           - engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 (484 lines) [negative_offset, pointer_cast, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_unreachable]
+           - engine_fileio.cpp_CFileManager_setVersionControlCredentials_FUN_004bc5d0 (38 lines) [unrolled_strcpy]
+           - engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0 (137 lines) [pointer_cast, unrolled_strcpy]
+           - engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00 (22 lines) [pointer_cast, unrolled_memcpy]
+           - engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640 (128 lines) [unrolled_strchr, unrolled_strcpy]
+           - engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40 (173 lines) [pointer_cast, unrolled_strcpy]
+           - engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (643 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy, unrolled_strlen]
+           - engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (244 lines) [unrolled_strcpy]
+           - engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (223 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
    69.3% | shape/design.c
          113/163 clean, 50 remaining
            - shape_design.c_modelExportWizard_FUN_0045a7b0 (146 lines) [unrolled_strchr, unrolled_strlen]
@@ -479,33 +491,8 @@ FILES AT 50-89%
            - shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (47 lines) [pointer_cast, shadow_pointer_walk, sub84_truncation]
            - shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (89 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (26 lines) [pointer_cast]
-   68.5% | engine/fileio.cpp
-         50/73 clean, 23 remaining
-           - engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0 (135 lines) [pointer_cast, unrolled_strcpy]
-           - engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10 (193 lines) [pointer_cast, signed_shift_global_idiom, unrolled_strcpy]
-           - engine_fileio.cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0 (57 lines) [pointer_cast]
-           - engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (634 lines) [negative_offset, pointer_cast, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_unreachable]
-           - engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 (91 lines) [unrolled_strcpy]
-           - engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 (110 lines) [pointer_cast, unrolled_strlen]
-           - engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460 (87 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen]
-           - engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50 (127 lines) [unrolled_memcpy, unrolled_strcpy]
-           - engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 (108 lines) [pointer_cast, unrolled_strlen]
-           - engine_fileio.cpp_readTimestampFile_FUN_004b23a0 (95 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
-           - engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 (307 lines) [pointer_cast, unrolled_strcpy]
-           - engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650 (122 lines) [unrolled_strcpy]
-           - engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (810 lines) [pointer_cast, unrolled_strcpy, warning_unreachable]
-           - engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 (484 lines) [negative_offset, pointer_cast, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_unreachable]
-           - engine_fileio.cpp_CFileManager_setVersionControlCredentials_FUN_004bc5d0 (38 lines) [unrolled_strcpy]
-           - engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0 (58 lines) [pointer_cast]
-           - engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0 (137 lines) [pointer_cast, unrolled_strcpy]
-           - engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00 (22 lines) [pointer_cast, unrolled_memcpy]
-           - engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640 (128 lines) [unrolled_strchr, unrolled_strcpy]
-           - engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40 (173 lines) [pointer_cast, unrolled_strcpy]
-           - engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (643 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy, unrolled_strlen]
-           - engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 (244 lines) [unrolled_strcpy]
-           - engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (223 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
 
-Total: 17 files
+Total: 16 files
 
 ====================================================================================================
 FILES BELOW 50%

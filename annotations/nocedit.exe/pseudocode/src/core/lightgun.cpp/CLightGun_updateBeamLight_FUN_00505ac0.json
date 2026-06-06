@@ -220,31 +220,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CLightGun_updateBeamLight_FUN_00505ac0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 7,
-          "line": 24,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 24,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].z) {",
-      "type": "static_invalid_pointer_cast"
-    }
-  ]
+  "suspects": []
 }

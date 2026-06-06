@@ -4,8 +4,8 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6214 functions
-  1 suspects: 24 functions
+  0 suspects: 6226 functions
+  1 suspects: 12 functions
   2 suspects: 50 functions
   3 suspects: 33 functions
   4 suspects: 32 functions
@@ -36,38 +36,6 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [concat_reconstruction] (7 functions)
-  ------------------------------------------------------------
-    engine_clipper.c_interpolateVertexBottomClip_FUN_0 ( 50 lines)
-      iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) !=...
-    engine_clipper.c_interpolateVertexLeftClip_FUN_004 ( 50 lines)
-      iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) !=...
-    engine_clipper.c_interpolateVertexNearClip_FUN_004 ( 52 lines)
-      iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) !=...
-    engine_clipper.c_interpolateVertexRightClipAdvance ( 54 lines)
-      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
-    engine_clipper.c_interpolateVertexTopClipAdvanced_ ( 54 lines)
-      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
-    engine_clipper.c_interpolateVertexLeftClipAdvanced ( 55 lines)
-      iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) !=...
-    engine_clipper.c_interpolateVertexBottomClipAdvanc ( 55 lines)
-      iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) !=...
-
-  [pointer_cast] (6 functions)
-  ------------------------------------------------------------
-    engine_fileio.cpp_CFileManager_buildPodFromRespons ( 57 lines)
-      pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);...
-    engine_fileio.cpp_CFileManager_processMRGLNode_FUN ( 58 lines)
-      local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).ty...
-    shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051 ( 79 lines)
-      piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices ...
-    shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_00 (149 lines)
-      *(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)...
-    shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a (204 lines)
-      *(double *)((int)&((local_58.vertex_data)->position).x + iVa...
-    shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
-      puVar10 = (uint *)(iVar14 + (int)puVar9);...
-
   [unrolled_memcpy] (4 functions)
   ------------------------------------------------------------
     shape_design.c_selectVertexToDelete_FUN_0045c5b0   ( 52 lines)
@@ -79,31 +47,36 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
       new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_re...
 
-  [shadow_pointer_walk] (3 functions)
+  [pointer_cast] (4 functions)
   ------------------------------------------------------------
-    core_inv.cpp_CInventory_selectWeapon_FUN_004feb10  ( 59 lines)
-      pCVar4 = (CInventory *)&pCVar4->owner;...
-    core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN ( 60 lines)
-      pCVar4 = (CInventory *)&pCVar4->owner;...
-    shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_00 (404 lines)
-      local_1c = (CLodMesh *)&local_1c->vertex_data;...
-
-  [unrolled_strcpy] (2 functions)
-  ------------------------------------------------------------
-    shape_design.c_exportModelToMDL_FUN_00459e80       ( 68 lines)
-      do {...
-    core_msnedit.cpp_CDemonMission_editActorProperties ( 73 lines)
-      do {...
+    shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051 ( 79 lines)
+      piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices ...
+    shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_00 (149 lines)
+      *(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)...
+    shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a (204 lines)
+      *(double *)((int)&((local_58.vertex_data)->position).x + iVa...
+    shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
+      puVar10 = (uint *)(iVar14 + (int)puVar9);...
 
   [unrolled_strlen] (1 functions)
   ------------------------------------------------------------
     shape_design.c_quantizePaletteColors_FUN_0046b770  ( 65 lines)
       do {...
 
+  [unrolled_strcpy] (1 functions)
+  ------------------------------------------------------------
+    shape_design.c_exportModelToMDL_FUN_00459e80       ( 68 lines)
+      do {...
+
   [raw_address_constant] (1 functions)
   ------------------------------------------------------------
     shape_design.c_loadS3DModelFile_FUN_004593a0       (232 lines)
       memset(g_ModelPolygonData,0,0x766880);...
+
+  [shadow_pointer_walk] (1 functions)
+  ------------------------------------------------------------
+    shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_00 (404 lines)
+      local_1c = (CLodMesh *)&local_1c->vertex_data;...
 
 ========================================================================================================================
 FUNCTIONS WITH 2-3 SUSPECTS
