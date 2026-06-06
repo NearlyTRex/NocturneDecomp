@@ -19,20 +19,21 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
   SVert *pSVar9;
   uint uVar10;
   uint *puVar11;
-  CBoundingBox3D *pCVar13;
+  float fVar12;
+  float fVar13;
   float fVar14;
-  float fVar15;
-  float fVar16;
-  uint uVar17;
-  _FILE *p_Var18;
-  short *psVar19;
+  uint uVar15;
+  _FILE *p_Var16;
+  short *psVar17;
   int iVar9;
-  int iVar20;
+  int iVar18;
   float *pfVar10;
   CBoundingBox3D *pCVar11;
-  float *pfVar21;
+  CVector3f *pCVar19;
+  float *pfVar20;
   CDeformableModel *pCVar12;
   uint *puVar13;
+  SS3DFaceMatch *pSVar21;
   int *piVar22;
   uint *puVar23;
   SInputFace *pSVar14;
@@ -47,12 +48,12 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
   short *psVar20;
   int iVar21;
   CVector3f *pCVar28;
-  CVector3f *pCVar29;
-  int *piVar30;
+  int *piVar29;
   int iVar22;
-  int iVar31;
+  int iVar30;
   char *pcVar23;
   ushort *puVar24;
+  CVector3f *pCVar31;
   uint *puVar34;
   void *pvVar35;
   CVector3f *pCVar25;
@@ -167,11 +168,11 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
   float local_194;
   byte local_190 [4];
   byte local_18c [4];
-  CBoundingBox3D *local_188;
-  void *local_184;
+  CVector3f *local_188;
+  SS3DFaceMatch *local_184;
   _FILE *local_180;
-  float *local_17c;
-  float *local_178;
+  CVector3f *local_17c;
+  CVector3f *local_178;
   void *local_174;
   uint *local_170;
   float local_16c;
@@ -186,7 +187,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
   SPart *local_148;
   int local_144;
   SPart *local_140;
-  uint local_13c [2];
+  int local_13c [2];
   void *local_134;
   uint local_130;
   int local_12c;
@@ -277,11 +278,11 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Opening %s");
-  local_188 = (CBoundingBox3D *)0x0;
-  local_184 = (void *)0x0;
+  local_188 = (CVector3f *)0x0;
+  local_184 = (SS3DFaceMatch *)0x0;
   local_180 = (_FILE *)0x0;
-  local_17c = (float *)0x0;
-  local_178 = (float *)0x0;
+  local_17c = (CVector3f *)0x0;
+  local_178 = (CVector3f *)0x0;
   local_174 = (void *)0x0;
   local_170 = (uint *)0x0;
   local_f0 = (int *)0x0;
@@ -301,10 +302,10 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create log file!");
     }
     _fprintf(local_180,"Matching skeleton parts for %s\n");
-    p_Var18 = local_ec;
+    p_Var16 = local_ec;
     iVar22 = 1;
     do {
-      iVar9 = _fgetc(p_Var18);
+      iVar9 = _fgetc(p_Var16);
       file = local_ec;
       if (iVar9 < 0) break;
     } while ((iVar9 != 10) || (iVar22 = iVar22 + -1, 0 < iVar22));
@@ -313,75 +314,75 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
       _sprintf(g_SkeleditStatusMessage,"%s has incorrect S3D version %d",entry->s3d_filename);
       goto LAB_0058f8e7;
     }
-    iVar31 = 1;
+    iVar30 = 1;
     do {
-      iVar20 = _fgetc(file);
-      if (iVar20 < 0) break;
-    } while ((iVar20 != 10) || (iVar31 = iVar31 + -1, 0 < iVar31));
-    iVar31 = _fscanf(local_ec,"%d,%d,%d,%d,%d,%d,%d\n",&local_e4,&local_16c,&local_168,&local_e0,
+      iVar18 = _fgetc(file);
+      if (iVar18 < 0) break;
+    } while ((iVar18 != 10) || (iVar30 = iVar30 + -1, 0 < iVar30));
+    iVar30 = _fscanf(local_ec,"%d,%d,%d,%d,%d,%d,%d\n",&local_e4,&local_16c,&local_168,&local_e0,
                         local_164,local_dc);
     this_ptr_00 = g_CEditorToolsPtr;
-    if (iVar31 == 7) {
+    if (iVar30 == 7) {
       if (local_e0 < 0x1f) {
         this_ptr->num_parts = local_e0;
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (this_ptr_00,"Reading part list from %s");
         _fprintf(local_180,"Reading part list from %s\n");
-        p_Var18 = local_ec;
-        iVar31 = 1;
+        p_Var16 = local_ec;
+        iVar30 = 1;
         do {
-          iVar20 = _fgetc(p_Var18);
-          if (iVar20 < 0) break;
-        } while ((iVar20 != 10) || (iVar31 = iVar31 + -1, 0 < iVar31));
-        iVar31 = 0;
+          iVar18 = _fgetc(p_Var16);
+          if (iVar18 < 0) break;
+        } while ((iVar18 != 10) || (iVar30 = iVar30 + -1, 0 < iVar30));
+        iVar30 = 0;
         if (0 < this_ptr->num_parts) {
           local_148 = this_ptr->parts;
           local_94 = local_478;
           local_90 = local_400;
-          piVar30 = this_ptr->parts[0].tri_counts;
+          piVar29 = this_ptr->parts[0].tri_counts;
           do {
-            local_140 = local_148 + iVar31;
-            local_144 = iVar31 * 4;
-            iVar20 = _fscanf(local_ec,"%d,%d,%*d,%d,\"%[^\"]\"\n",local_94,local_90,piVar30);
-            if (iVar20 != 4) goto LAB_00590a70;
-            this_ptr->parts[iVar31].adj_part_count = 0;
-            piVar30 = piVar30 + 0x18;
-            _fprintf(local_180,"\t%2d: %s, verts=%d, tris=%d\n",iVar31,local_140,
+            local_140 = local_148 + iVar30;
+            local_144 = iVar30 * 4;
+            iVar18 = _fscanf(local_ec,"%d,%d,%*d,%d,\"%[^\"]\"\n",local_94,local_90,piVar29);
+            if (iVar18 != 4) goto LAB_00590a70;
+            this_ptr->parts[iVar30].adj_part_count = 0;
+            piVar29 = piVar29 + 0x18;
+            _fprintf(local_180,"\t%2d: %s, verts=%d, tris=%d\n",iVar30,local_140,
                        *(uint *)((int)local_400 + local_144));
-            iVar31 = iVar31 + 1;
+            iVar30 = iVar30 + 1;
             local_94 = local_94 + 4;
             local_90 = local_90 + 1;
-          } while (iVar31 < this_ptr->num_parts);
+          } while (iVar30 < this_ptr->num_parts);
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Reading texture list from %s");
         _fprintf(local_180,"Reading texture list from %s\n");
-        p_Var18 = local_ec;
-        iVar31 = 1;
+        p_Var16 = local_ec;
+        iVar30 = 1;
         do {
-          iVar20 = _fgetc(p_Var18);
-          if (iVar20 < 0) break;
-        } while ((iVar20 != 10) || (iVar31 = iVar31 + -1, 0 < iVar31));
+          iVar18 = _fgetc(p_Var16);
+          if (iVar18 < 0) break;
+        } while ((iVar18 != 10) || (iVar30 = iVar30 + -1, 0 < iVar30));
         if (0x96 < local_e4) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0xc24;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many textures in parts .S3D!");
         }
-        iVar31 = 0;
+        iVar30 = 0;
         if (0 < local_e4) {
           pcVar23 = local_a1ec;
           do {
-            iVar20 = _fscanf(local_ec,"%[^\n]\n");
-            if (iVar20 != 1) goto LAB_00590a70;
+            iVar18 = _fscanf(local_ec,"%[^\n]\n");
+            if (iVar18 != 1) goto LAB_00590a70;
             splitpath
                       (local_844,(char *)0x0,(char *)0x0,pcVar23,(char *)0x0);
-            iVar31 = iVar31 + 1;
+            iVar30 = iVar30 + 1;
             pcVar23 = pcVar23 + 0x100;
-          } while (iVar31 < local_e4);
+          } while (iVar30 < local_e4);
         }
         pcVar38 = g_GoreBuffer;
         pcVar30 = local_388;
-        for (iVar31 = 0x19; iVar31 != 0; iVar31 = iVar31 + -1) {
+        for (iVar30 = 0x19; iVar30 != 0; iVar30 = iVar30 + -1) {
           pcVar30 = pcVar30 + (uint)bVar39 * -8 + 4;
           *(uint *)pcVar30 = *(uint *)pcVar38;
           pcVar38 = pcVar38 + ((uint)bVar39 * -2 + 1) * 4;
@@ -393,19 +394,19 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         }
         local_160 = -1;
         if (local_388[0] != '\0') {
-          iVar31 = 0;
+          iVar30 = 0;
           if (0 < this_ptr->num_textures) {
             pcVar38 = this_ptr->texture_sets[0].textures[0].textures[0].texture_name;
             do {
               splitpath
                         (pcVar38,(char *)0x0,(char *)0x0,local_640,(char *)0x0);
-              iVar20 = _stricmp(local_388,local_640);
-              if (iVar20 == 0) break;
-              iVar31 = iVar31 + 1;
+              iVar18 = _stricmp(local_388,local_640);
+              if (iVar18 == 0) break;
+              iVar30 = iVar30 + 1;
               pcVar38 = pcVar38 + 0x48;
-            } while (iVar31 < this_ptr->num_textures);
+            } while (iVar30 < this_ptr->num_textures);
           }
-          if (this_ptr->num_textures <= iVar31) {
+          if (this_ptr->num_textures <= iVar30) {
             if (0x4f < this_ptr->num_textures) {
               _sprintf(g_SkeleditStatusMessage,"Texture list full determining parts");
               goto LAB_0058f8e7;
@@ -414,12 +415,12 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
                        texture_name,"%s.raw");
             this_ptr->num_textures = this_ptr->num_textures + 1;
           }
-          local_160 = iVar31;
+          local_160 = iVar30;
           _fprintf(local_180,"Automap capped faces is active\n");
         }
-        local_184 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
+        local_184 = (SS3DFaceMatch *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                               ((int)local_16c * 0x3c,"..\\core\\skeledit.cpp",0xc4e);
-        if (local_184 == (void *)0x0) {
+        if (local_184 == (SS3DFaceMatch *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0xc4f;
           core_main_c_displayErrorAndQuit_FUN_00506f10("out of memory in CDeformableModel::determinePartsFromS3D");
@@ -427,48 +428,48 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Reading faces from %s");
         _fprintf(local_180,"Reading faces from %s\n");
-        p_Var18 = local_ec;
-        iVar31 = 1;
+        p_Var16 = local_ec;
+        iVar30 = 1;
         do {
-          iVar20 = _fgetc(p_Var18);
-          if (iVar20 < 0) break;
-        } while ((iVar20 != 10) || (iVar31 = iVar31 + -1, 0 < iVar31));
-        iVar31 = 0;
-        pvVar35 = local_184;
+          iVar18 = _fgetc(p_Var16);
+          if (iVar18 < 0) break;
+        } while ((iVar18 != 10) || (iVar30 = iVar30 + -1, 0 < iVar30));
+        iVar30 = 0;
+        pSVar21 = local_184;
         if (0 < (int)local_16c) {
           do {
-            iVar20 = _fscanf(local_ec,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",local_13c,&local_278,
+            iVar18 = _fscanf(local_ec,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",local_13c,&local_278,
                                 &local_194,&local_200,local_274,local_190,local_1fc,local_270,
                                 local_18c);
-            if (iVar20 != 10) goto LAB_00590a70;
-            *(uint *)((int)pvVar35 + 4) = 3;
-            iVar20 = 0;
-            *(uint *)((int)pvVar35 + 0x14) = local_13c[0];
+            if (iVar18 != 10) goto LAB_00590a70;
+            pSVar21->edge_count = 3;
+            iVar18 = 0;
+            pSVar21->texture_index = local_13c[0];
             dVar7 = 65536;
-            pvVar17 = pvVar35;
+            pvVar17 = pSVar21;
             do {
-              *(uint *)((int)pvVar17 + 0x18) = *(uint *)(local_274 + iVar20 + -4);
-              local_18 = (int)ROUND(ROUND((double)*(float *)(local_190 + iVar20 + -4) * dVar7));
+              *(uint *)((int)pvVar17 + 0x18) = *(uint *)(local_274 + iVar18 + -4);
+              local_18 = (int)ROUND(ROUND((double)*(float *)(local_190 + iVar18 + -4) * dVar7));
               *(int *)((int)pvVar17 + 0x1c) = local_18;
-              local_18 = (int)ROUND(ROUND((double)*(float *)(local_1fc + iVar20 + -4) * dVar7));
-              iVar20 = iVar20 + 4;
+              local_18 = (int)ROUND(ROUND((double)*(float *)(local_1fc + iVar18 + -4) * dVar7));
+              iVar18 = iVar18 + 4;
               *(int *)((int)pvVar17 + 0x20) = local_18;
               pvVar17 = (void *)((int)pvVar17 + 0xc);
-            } while (iVar20 != 0xc);
-            _fprintf(local_180,"\t%4d: %4d %4d %4d\n",iVar31,
-                       *(uint *)((int)pvVar35 + 0x18),*(uint *)((int)pvVar35 + 0x24));
-            iVar31 = iVar31 + 1;
-            pvVar35 = (void *)((int)pvVar35 + 0x3c);
-          } while (iVar31 < (int)local_16c);
+            } while (iVar18 != 0xc);
+            _fprintf(local_180,"\t%4d: %4d %4d %4d\n",iVar30,pSVar21->vertices[0].vertex_index,
+                       pSVar21->vertices[1].vertex_index);
+            iVar30 = iVar30 + 1;
+            pSVar21 = pSVar21 + 1;
+          } while (iVar30 < (int)local_16c);
         }
         pfVar10 = (float *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                             ((int)local_168 * 0xc + 4,"..\\core\\skeledit.cpp",0xc7c);
-        local_188 = (CBoundingBox3D *)pfVar10;
+        local_188 = (CVector3f *)pfVar10;
         if (pfVar10 != (float *)0x0) {
-          local_188 = (CBoundingBox3D *)(pfVar10 + 1);
+          local_188 = (CVector3f *)(pfVar10 + 1);
           *pfVar10 = local_168;
         }
-        if (local_188 == (CBoundingBox3D *)0x0) {
+        if (local_188 == (CVector3f *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0xc7d;
           core_main_c_displayErrorAndQuit_FUN_00506f10("out of memory in CDeformableModel::determinePartsFromS3D");
@@ -476,24 +477,24 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Reading vertices from %s");
         _fprintf(local_180,"Reading vertices from %s\n");
-        p_Var18 = local_ec;
-        iVar31 = 1;
+        p_Var16 = local_ec;
+        iVar30 = 1;
         do {
-          iVar20 = _fgetc(p_Var18);
-          if (iVar20 < 0) break;
-        } while ((iVar20 != 10) || (iVar31 = iVar31 + -1, 0 < iVar31));
-        iVar31 = 0;
+          iVar18 = _fgetc(p_Var16);
+          if (iVar18 < 0) break;
+        } while ((iVar18 != 10) || (iVar30 = iVar30 + -1, 0 < iVar30));
+        iVar30 = 0;
         if (0 < (int)local_168) {
-          local_8c = &(local_188->min).z;
+          local_8c = &local_188->z;
           do {
-            pCVar25 = &local_188->min + iVar31;
-            iVar20 = _fscanf(local_ec,"%f,%f,%f\n");
-            if (iVar20 != 3) goto LAB_00590a70;
-            _fprintf(local_180,"\t%4d: %7.3f %7.3f %7.3f\n",iVar31,(double)pCVar25->x,
+            pCVar25 = local_188 + iVar30;
+            iVar18 = _fscanf(local_ec,"%f,%f,%f\n");
+            if (iVar18 != 3) goto LAB_00590a70;
+            _fprintf(local_180,"\t%4d: %7.3f %7.3f %7.3f\n",iVar30,(double)pCVar25->x,
                        (double)pCVar25->y,(double)pCVar25->z);
-            iVar31 = iVar31 + 1;
+            iVar30 = iVar30 + 1;
             local_8c = local_8c + 3;
-          } while (iVar31 < (int)local_168);
+          } while (iVar30 < (int)local_168);
         }
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_ec,"..\\core\\skeledit.cpp",0xc8c);
         local_ec = (_FILE *)0x0;
@@ -512,28 +513,27 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
                    (*(int *)((int)local_88 + 0x14) == *(int *)((int)local_84 + 0x14))) {
                   local_128 = 0;
                   do {
-                    iVar20 = 0;
-                    iVar31 = local_128;
+                    iVar18 = 0;
+                    iVar30 = local_128;
                     pvVar35 = local_84;
                     do {
-                      pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);
+                      pCVar19 = local_188 + *(int *)((int)pvVar35 + 0x18);
                       local_18 = 3;
-                      pCVar29 = &local_188->min +
-                                *(int *)((iVar31 % 3) * 0xc + 0x18 + (int)local_88);
-                      local_1f4 = pCVar29->x;
-                      local_1f0 = pCVar29->y;
-                      local_224 = pCVar28->x - local_1f4;
-                      local_1ec = pCVar29->z;
-                      local_220 = pCVar28->y - local_1f0;
-                      local_21c = pCVar28->z - local_1ec;
+                      pCVar28 = local_188 + *(int *)((iVar30 % 3) * 0xc + 0x18 + (int)local_88);
+                      local_1f4 = pCVar28->x;
+                      local_1f0 = pCVar28->y;
+                      local_224 = pCVar19->x - local_1f4;
+                      local_1ec = pCVar28->z;
+                      local_220 = pCVar19->y - local_1f0;
+                      local_21c = pCVar19->z - local_1ec;
                       if ((((float)0.02 < ABS(local_224)) ||
                           ((float)0.02 < ABS(local_220))) ||
                          ((float)0.02 < ABS(local_21c))) break;
                       pvVar35 = (void *)((int)pvVar35 + 0xc);
-                      iVar20 = iVar20 + 1;
-                      iVar31 = iVar31 + 1;
-                    } while (iVar20 < 3);
-                    if (iVar20 == 3) {
+                      iVar18 = iVar18 + 1;
+                      iVar30 = iVar30 + 1;
+                    } while (iVar18 < 3);
+                    if (iVar18 == 3) {
                       _fprintf(local_180,"Removing face %d, it is dup with face %d\n",local_28);
                       *(uint *)((int)local_134 + 4) = 0;
                       goto LAB_005902c8;
@@ -552,48 +552,48 @@ LAB_005902c8:
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Biasing %s");
-        if (&local_30c != local_188) {
-          local_30c.min.x = (local_188->min).x;
-          local_30c.min.y = (local_188->min).y;
-          local_30c.min.z = (local_188->min).z;
+        if (&local_30c != (CBoundingBox3D *)local_188) {
+          local_30c.min.x = local_188->x;
+          local_30c.min.y = local_188->y;
+          local_30c.min.z = local_188->z;
         }
-        if ((CBoundingBox3D *)&local_30c.max != local_188) {
-          local_30c.max.x = (local_188->min).x;
-          local_30c.max.y = (local_188->min).y;
-          local_30c.max.z = (local_188->min).z;
+        if (&local_30c.max != local_188) {
+          local_30c.max.x = local_188->x;
+          local_30c.max.y = local_188->y;
+          local_30c.max.z = local_188->z;
         }
-        iVar31 = 1;
-        pCVar13 = local_188;
+        iVar30 = 1;
+        pCVar19 = local_188;
         if (1 < (int)local_168) {
           do {
-            core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_30c,&pCVar13->max);
-            iVar31 = iVar31 + 1;
-            pCVar13 = (CBoundingBox3D *)&pCVar13->max;
-          } while (iVar31 < (int)local_168);
+            core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_30c,pCVar19 + 1);
+            iVar30 = iVar30 + 1;
+            pCVar19 = pCVar19 + 1;
+          } while (iVar30 < (int)local_168);
         }
         pSVar5 = this_ptr->vertex_data_ptr[0];
-        pCVar28 = &pSVar5->position;
-        if (&local_324 != (CBoundingBox3D *)pCVar28) {
-          local_324.min.x = pCVar28->x;
+        pCVar19 = &pSVar5->position;
+        if (&local_324 != (CBoundingBox3D *)pCVar19) {
+          local_324.min.x = pCVar19->x;
           local_324.min.y = (pSVar5->position).y;
           local_324.min.z = (pSVar5->position).z;
         }
-        if (&local_324.max != pCVar28) {
-          local_324.max.x = pCVar28->x;
+        if (&local_324.max != pCVar19) {
+          local_324.max.x = pCVar19->x;
           local_324.max.y = (pSVar5->position).y;
           local_324.max.z = (pSVar5->position).z;
         }
-        iVar31 = 1;
+        iVar30 = 1;
         if (1 < this_ptr->vertex_count[0]) {
-          iVar20 = 0x34;
+          iVar18 = 0x34;
           do {
             core_box_cpp_CBoundingBox3D_expand_FUN_00420240
                       (&local_324,
-                       (CVector3f *)((int)this_ptr->vertex_data_ptr[0]->bone_weights + iVar20 + 0xc)
+                       (CVector3f *)((int)this_ptr->vertex_data_ptr[0]->bone_weights + iVar18 + 0xc)
                       );
-            iVar31 = iVar31 + 1;
-            iVar20 = iVar20 + 0x34;
-          } while (iVar31 < this_ptr->vertex_count[0]);
+            iVar30 = iVar30 + 1;
+            iVar18 = iVar18 + 0x34;
+          } while (iVar30 < this_ptr->vertex_count[0]);
         }
         local_26c = local_324.max.x - local_324.min.x;
         local_1e8 = local_30c.max.x - local_30c.min.x;
@@ -604,16 +604,16 @@ LAB_005902c8:
         local_264 = local_324.max.z - local_324.min.z;
         local_1e0 = local_30c.max.z - local_30c.min.z;
         local_1d4 = local_264 / local_1e0;
-        iVar31 = 0;
-        pCVar11 = local_188;
+        iVar30 = 0;
+        pCVar11 = (CBoundingBox3D *)local_188;
         if (0 < (int)local_168) {
           do {
             (pCVar11->min).x = ((pCVar11->min).x - local_30c.min.x) * local_1dc + local_324.min.x;
             (pCVar11->min).y = ((pCVar11->min).y - local_30c.min.y) * local_1d8 + local_324.min.y;
-            iVar31 = iVar31 + 1;
+            iVar30 = iVar30 + 1;
             (pCVar11->min).z = ((pCVar11->min).z - local_30c.min.z) * local_1d4 + local_324.min.z;
             pCVar11 = (CBoundingBox3D *)&pCVar11->max;
-          } while (iVar31 < (int)local_168);
+          } while (iVar30 < (int)local_168);
         }
         local_230 = local_26c;
         local_22c = local_268;
@@ -623,71 +623,71 @@ LAB_005902c8:
         local_1b0 = local_264;
         _fprintf(local_180,"Scale = %7.3f %7.3f %7.3f\n",(double)local_1dc,(double)local_1d8,
                    (double)local_1d4);
-        pfVar21 = (float *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
+        pCVar19 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                             ((int)local_16c * 0xc + 4,"..\\core\\skeledit.cpp",0xd0f);
-        local_17c = pfVar21;
-        if (pfVar21 != (float *)0x0) {
-          local_17c = pfVar21 + 1;
-          *pfVar21 = local_16c;
+        local_17c = pCVar19;
+        if (pCVar19 != (CVector3f *)0x0) {
+          local_17c = (CVector3f *)&pCVar19->y;
+          pCVar19->x = local_16c;
         }
         fVar8 = (float)this_ptr->tri_count[0];
-        pfVar21 = (float *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
+        pCVar19 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                             ((int)fVar8 * 0xc + 4,"..\\core\\skeledit.cpp",0xd10);
-        local_178 = pfVar21;
-        if (pfVar21 != (float *)0x0) {
-          local_178 = pfVar21 + 1;
-          *pfVar21 = fVar8;
+        local_178 = pCVar19;
+        if (pCVar19 != (CVector3f *)0x0) {
+          local_178 = (CVector3f *)&pCVar19->y;
+          pCVar19->x = fVar8;
         }
-        if ((local_17c == (float *)0x0) || (local_178 == (float *)0x0)) {
+        if ((local_17c == (CVector3f *)0x0) || (local_178 == (CVector3f *)0x0)) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0xd11;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
         }
-        iVar31 = 0;
-        pvVar35 = local_184;
-        pfVar21 = local_17c;
+        iVar30 = 0;
+        pSVar21 = local_184;
+        pCVar19 = local_17c;
         if (0 < (int)local_16c) {
           do {
-            if (*(int *)((int)pvVar35 + 4) == 3) {
-              pCVar26 = &local_188->min + *(int *)((int)pvVar35 + 0x18);
-              pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x24);
+            if (pSVar21->edge_count == 3) {
+              pCVar26 = local_188 + pSVar21->vertices[0].vertex_index;
+              pCVar28 = local_188 + pSVar21->vertices[1].vertex_index;
               fVar8 = pCVar28->x - pCVar26->x;
-              fVar14 = pCVar28->y - pCVar26->y;
-              fVar15 = pCVar28->z - pCVar26->z;
-              pCVar29 = &local_188->min + *(int *)((int)pvVar35 + 0x30);
-              local_254 = pCVar29->x - pCVar28->x;
-              local_250 = pCVar29->y - pCVar28->y;
-              local_24c = pCVar29->z - pCVar28->z;
-              fVar16 = fVar15 * local_254 - fVar8 * local_24c;
-              fVar15 = fVar14 * local_24c - fVar15 * local_250;
-              fVar8 = fVar8 * local_250 - fVar14 * local_254;
-              fVar14 = SQRT(fVar8 * fVar8 + fVar15 * fVar15 + fVar16 * fVar16);
-              if (fVar14 <= 0.0) {
+              fVar12 = pCVar28->y - pCVar26->y;
+              fVar13 = pCVar28->z - pCVar26->z;
+              pCVar31 = local_188 + pSVar21->vertices[2].vertex_index;
+              local_254 = pCVar31->x - pCVar28->x;
+              local_250 = pCVar31->y - pCVar28->y;
+              local_24c = pCVar31->z - pCVar28->z;
+              fVar14 = fVar13 * local_254 - fVar8 * local_24c;
+              fVar13 = fVar12 * local_24c - fVar13 * local_250;
+              fVar8 = fVar8 * local_250 - fVar12 * local_254;
+              fVar12 = SQRT(fVar8 * fVar8 + fVar13 * fVar13 + fVar14 * fVar14);
+              if (fVar12 <= 0.0) {
                 local_19c = 0.0;
                 local_1a0 = 0.0;
                 local_198 = 0.0;
               }
               else {
-                fVar14 = 1.0 / fVar14;
-                local_1a0 = fVar15 * fVar14;
-                local_19c = fVar16 * fVar14;
-                local_198 = fVar8 * fVar14;
+                fVar12 = 1.0 / fVar12;
+                local_1a0 = fVar13 * fVar12;
+                local_19c = fVar14 * fVar12;
+                local_198 = fVar8 * fVar12;
               }
-              if (pfVar21 != &local_1a0) {
-                *pfVar21 = local_1a0;
-                pfVar21[1] = local_19c;
-                pfVar21[2] = local_198;
+              if (pCVar19 != (CVector3f *)&local_1a0) {
+                pCVar19->x = local_1a0;
+                pCVar19->y = local_19c;
+                pCVar19->z = local_198;
               }
             }
-            iVar31 = iVar31 + 1;
-            pvVar35 = (void *)((int)pvVar35 + 0x3c);
-            pfVar21 = pfVar21 + 3;
-          } while (iVar31 < (int)local_16c);
+            iVar30 = iVar30 + 1;
+            pSVar21 = pSVar21 + 1;
+            pCVar19 = pCVar19 + 1;
+          } while (iVar30 < (int)local_16c);
         }
-        iVar31 = 0;
+        iVar30 = 0;
         if (0 < this_ptr->tri_count[0]) {
           local_80 = 0;
-          pfVar21 = local_178;
+          pCVar19 = local_178;
           do {
             puVar24 = (ushort *)
                       ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_80);
@@ -696,35 +696,35 @@ LAB_005902c8:
             pSVar9 = this_ptr->vertex_data_ptr[0];
             uVar4 = puVar24[2];
             fVar8 = pSVar9[uVar2].position.x - pSVar9[uVar3].position.x;
-            fVar14 = pSVar9[uVar2].position.y - pSVar9[uVar3].position.y;
-            fVar15 = pSVar9[uVar2].position.z - pSVar9[uVar3].position.z;
+            fVar12 = pSVar9[uVar2].position.y - pSVar9[uVar3].position.y;
+            fVar13 = pSVar9[uVar2].position.z - pSVar9[uVar3].position.z;
             local_260 = pSVar9[uVar4].position.x - pSVar9[uVar2].position.x;
             local_25c = pSVar9[uVar4].position.y - pSVar9[uVar2].position.y;
             local_258 = pSVar9[uVar4].position.z - pSVar9[uVar2].position.z;
-            fVar16 = fVar15 * local_260 - fVar8 * local_258;
-            fVar15 = fVar14 * local_258 - fVar15 * local_25c;
-            fVar8 = fVar8 * local_25c - fVar14 * local_260;
-            fVar6 = SQRT(fVar8 * fVar8 + fVar15 * fVar15 + fVar16 * fVar16);
+            fVar14 = fVar13 * local_260 - fVar8 * local_258;
+            fVar13 = fVar12 * local_258 - fVar13 * local_25c;
+            fVar8 = fVar8 * local_25c - fVar12 * local_260;
+            fVar6 = SQRT(fVar8 * fVar8 + fVar13 * fVar13 + fVar14 * fVar14);
             if (fVar6 <= 0.0) {
               local_238 = 0.0;
               local_23c = 0.0;
               local_234 = 0.0;
             }
             else {
-              fVar14 = 1.0 / fVar6;
-              local_23c = fVar15 * fVar14;
-              local_238 = fVar16 * fVar14;
-              local_234 = fVar8 * fVar14;
+              fVar12 = 1.0 / fVar6;
+              local_23c = fVar13 * fVar12;
+              local_238 = fVar14 * fVar12;
+              local_234 = fVar8 * fVar12;
             }
-            if (pfVar21 != &local_23c) {
-              *pfVar21 = local_23c;
-              pfVar21[1] = local_238;
-              pfVar21[2] = local_234;
+            if (pCVar19 != (CVector3f *)&local_23c) {
+              pCVar19->x = local_23c;
+              pCVar19->y = local_238;
+              pCVar19->z = local_234;
             }
-            pfVar21 = pfVar21 + 3;
-            iVar31 = iVar31 + 1;
+            pCVar19 = pCVar19 + 1;
+            iVar30 = iVar30 + 1;
             local_80 = local_80 + 0x12;
-          } while (iVar31 < this_ptr->tri_count[0]);
+          } while (iVar30 < this_ptr->tri_count[0]);
         }
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
@@ -739,22 +739,22 @@ LAB_005902c8:
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
           }
           local_15c = local_184;
-          iVar31 = 0;
+          iVar30 = 0;
           if (0 < this_ptr->num_parts) {
-            iVar20 = 0;
+            iVar18 = 0;
             do {
               pvVar35 = local_15c;
-              for (iVar21 = 0; iVar21 < *(int *)((int)this_ptr->parts[0].tri_counts + iVar20);
+              for (iVar21 = 0; iVar21 < *(int *)((int)this_ptr->parts[0].tri_counts + iVar18);
                   iVar21 = iVar21 + 1) {
                 *(uint *)((int)pvVar35 + 0xc) = 0xffffffff;
-                *(int *)((int)pvVar35 + 8) = iVar31;
+                *(int *)((int)pvVar35 + 8) = iVar30;
                 pvVar35 = (void *)((int)pvVar35 + 0x3c);
               }
               local_15c = (void *)((int)local_15c +
-                                  *(int *)((int)this_ptr->parts[0].tri_counts + iVar20) * 0x3c);
-              iVar20 = iVar20 + 0x60;
-              iVar31 = iVar31 + 1;
-            } while (iVar31 < this_ptr->num_parts);
+                                  *(int *)((int)this_ptr->parts[0].tri_counts + iVar18) * 0x3c);
+              iVar18 = iVar18 + 0x60;
+              iVar30 = iVar30 + 1;
+            } while (iVar30 < this_ptr->num_parts);
           }
           local_2c = 0;
           if (0 < this_ptr->tri_count[0]) {
@@ -765,53 +765,54 @@ LAB_005902c8:
               local_124 = local_2c;
               while (-1 < local_124) {
                 local_120 = this_ptr->tri_data_ptr[0] + local_124;
-                pfVar21 = (float *)(local_124 * 4 + (int)local_174);
-                *pfVar21 = 1e+30;
+                pfVar20 = (float *)(local_124 * 4 + (int)local_174);
+                *pfVar20 = 1e+30;
                 local_11c = -1;
                 local_118 = 0;
                 if (0 < (int)local_16c) {
                   local_7c = local_184;
-                  local_108 = local_178 + local_124 * 3;
-                  local_78 = local_17c;
+                  local_108 = &local_178[local_124].x;
+                  local_78 = &local_17c->x;
                   do {
                     local_114 = local_7c;
                     if (*(int *)((int)local_7c + 4) == 3) {
                       local_110 = (float)4 -
-                                  (local_108[2] * local_78[2] +
-                                  *local_108 * *local_78 + local_108[1] * local_78[1]);
+                                  (((CVector3f *)local_108)->z * local_78[2] +
+                                  ((CVector3f *)local_108)->x * *local_78 +
+                                  ((CVector3f *)local_108)->y * local_78[1]);
                       local_10c = 0;
                       do {
-                        iVar20 = 0;
+                        iVar18 = 0;
                         local_104 = 0.0;
-                        iVar31 = local_10c;
+                        iVar30 = local_10c;
                         pvVar35 = local_7c;
                         do {
-                          pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);
-                          uVar7 = (&(local_120->vertex_indices).vertex_index_0)[iVar31 % 3];
+                          pCVar19 = local_188 + *(int *)((int)pvVar35 + 0x18);
+                          uVar7 = (&(local_120->vertex_indices).vertex_index_0)[iVar30 % 3];
                           pSVar9 = this_ptr->vertex_data_ptr[0];
                           local_1d0 = pSVar9[uVar7].position.x;
                           local_1cc = pSVar9[uVar7].position.y;
-                          local_20c = local_1d0 - pCVar28->x;
+                          local_20c = local_1d0 - pCVar19->x;
                           local_1c8 = pSVar9[uVar7].position.z;
-                          local_208 = local_1cc - pCVar28->y;
-                          local_204 = local_1c8 - pCVar28->z;
+                          local_208 = local_1cc - pCVar19->y;
+                          local_204 = local_1c8 - pCVar19->z;
                           if ((((float)0.20000000000000001 < ABS(local_20c)) ||
                               ((float)0.20000000000000001 < ABS(local_208))) ||
                              ((float)0.20000000000000001 < ABS(local_204))) break;
                           fVar8 = local_204 * local_204 +
                                   local_20c * local_20c + local_208 * local_208;
-                          iVar31 = iVar31 + 1;
+                          iVar30 = iVar30 + 1;
                           pvVar35 = (void *)((int)pvVar35 + 0xc);
                           local_104 = fVar8 * fVar8 * fVar8 + local_104;
-                          iVar20 = iVar20 + 1;
-                        } while (iVar20 < 3);
-                        if (((2 < iVar20) &&
-                            (local_104 = local_104 * local_110, local_104 <= *pfVar21)) &&
+                          iVar18 = iVar18 + 1;
+                        } while (iVar18 < 3);
+                        if (((2 < iVar18) &&
+                            (local_104 = local_104 * local_110, local_104 <= *pfVar20)) &&
                            ((*(int *)((int)local_7c + 0xc) < 0 ||
                             (local_104 <
                              *(float *)(*(int *)((int)local_7c + 0xc) * 4 + (int)local_174))))) {
                           local_11c = local_118;
-                          *pfVar21 = local_104;
+                          *pfVar20 = local_104;
                         }
                         local_10c = local_10c + 1;
                       } while (local_10c < 3);
@@ -819,14 +820,14 @@ LAB_005902c8:
                     local_78 = local_78 + 3;
                     local_118 = local_118 + 1;
                     local_7c = (void *)((int)local_7c + 0x3c);
-                    local_fc = pfVar21;
-                    local_f8 = pfVar21;
+                    local_fc = pfVar20;
+                    local_f8 = pfVar20;
                   } while (local_118 < (int)local_16c);
                 }
                 if (local_11c == -1) break;
-                iVar31 = *(int *)((int)local_184 + local_11c * 0x3c + 0xc);
-                *(int *)((int)local_184 + local_11c * 0x3c + 0xc) = local_124;
-                local_124 = iVar31;
+                iVar30 = local_184[local_11c].match_index;
+                local_184[local_11c].match_index = local_124;
+                local_124 = iVar30;
               }
               local_2c = local_2c + 1;
             } while (local_2c < this_ptr->tri_count[0]);
@@ -834,20 +835,20 @@ LAB_005902c8:
           shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xdd1;
-          if (local_17c != (float *)0x0) {
-            shape_memdbg_cpp_free_FUN_005fe659(local_17c + -1);
+          if (local_17c != (CVector3f *)0x0) {
+            shape_memdbg_cpp_free_FUN_005fe659(&local_17c[-1].z);
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xdd2;
-          local_17c = (float *)0x0;
-          if (local_178 != (float *)0x0) {
-            shape_memdbg_cpp_free_FUN_005fe659(local_178 + -1);
+          local_17c = (CVector3f *)0x0;
+          if (local_178 != (CVector3f *)0x0) {
+            shape_memdbg_cpp_free_FUN_005fe659(&local_178[-1].z);
           }
-          local_178 = (float *)0x0;
+          local_178 = (CVector3f *)0x0;
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xdd3;
           shape_memdbg_cpp_free_FUN_005fe659(local_174);
-          iVar31 = 0;
+          iVar30 = 0;
           local_174 = (void *)0x0;
           local_158 = 0;
           pCVar12 = this_ptr;
@@ -855,9 +856,9 @@ LAB_005902c8:
             do {
               pCVar12->parts[0].cap_tri_counts[0] = 0;
               pCVar12->parts[0].tri_counts[0] = 0;
-              iVar31 = iVar31 + 1;
+              iVar30 = iVar30 + 1;
               pCVar12 = (CDeformableModel *)(pCVar12->tri_count + 3);
-            } while (iVar31 < this_ptr->num_parts);
+            } while (iVar30 < this_ptr->num_parts);
           }
           puVar13 = (uint *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                               (this_ptr->tri_count[0] << 2,"..\\core\\skeledit.cpp",0xe56);
@@ -869,30 +870,30 @@ LAB_005902c8:
             g_CurrentLineNumber = 0xe58;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
           }
-          iVar31 = 0;
-          piVar30 = local_f0;
+          iVar30 = 0;
+          piVar29 = local_f0;
           puVar34 = local_170;
           if (0 < this_ptr->tri_count[0]) {
             do {
-              *piVar30 = 999999;
-              iVar31 = iVar31 + 1;
+              *piVar29 = 999999;
+              iVar30 = iVar30 + 1;
               *puVar34 = 0xffffffff;
-              piVar30 = piVar30 + 1;
+              piVar29 = piVar29 + 1;
               puVar34 = puVar34 + 1;
-            } while (iVar31 < this_ptr->tri_count[0]);
+            } while (iVar30 < this_ptr->tri_count[0]);
           }
-          iVar31 = 0;
+          iVar30 = 0;
           local_154 = 0;
-          pvVar35 = local_184;
+          pSVar21 = local_184;
           if (0 < (int)local_16c) {
             do {
-              if (*(int *)((int)pvVar35 + 4) == 3) {
-                iVar20 = *(int *)((int)pvVar35 + 8);
-                iVar24 = *(int *)((int)pvVar35 + 0xc);
+              if (pSVar21->edge_count == 3) {
+                iVar18 = pSVar21->part_index;
+                iVar24 = pSVar21->match_index;
                 if (iVar24 < 0) {
                   local_158 = local_158 + 1;
-                  this_ptr->parts[iVar20].cap_tri_counts[0] =
-                       this_ptr->parts[iVar20].cap_tri_counts[0] + 1;
+                  this_ptr->parts[iVar18].cap_tri_counts[0] =
+                       this_ptr->parts[iVar18].cap_tri_counts[0] + 1;
                 }
                 else {
                   local_f4 = iVar24 * 4;
@@ -900,15 +901,15 @@ LAB_005902c8:
                     pcVar38 = "Unable to generate one-to-one polygon matching from %s";
                     goto LAB_0058f8da;
                   }
-                  local_f0[iVar24] = iVar20;
-                  local_170[iVar24] = iVar31;
+                  local_f0[iVar24] = iVar18;
+                  local_170[iVar24] = iVar30;
                   local_154 = local_154 + 1;
-                  this_ptr->parts[iVar20].tri_counts[0] = this_ptr->parts[iVar20].tri_counts[0] + 1;
+                  this_ptr->parts[iVar18].tri_counts[0] = this_ptr->parts[iVar18].tri_counts[0] + 1;
                 }
               }
-              iVar31 = iVar31 + 1;
-              pvVar35 = (void *)((int)pvVar35 + 0x3c);
-            } while (iVar31 < (int)local_16c);
+              iVar30 = iVar30 + 1;
+              pSVar21 = pSVar21 + 1;
+            } while (iVar30 < (int)local_16c);
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xe86;
@@ -916,24 +917,24 @@ LAB_005902c8:
           local_30 = this_ptr->tri_count[0];
           local_170 = (uint *)0x0;
           while (local_30 = local_30 + -1, -1 < local_30) {
-            iVar31 = 0;
+            iVar30 = 0;
             if (0 < local_30) {
               local_74 = 0;
               local_70 = 0x12;
-              piVar30 = local_f0;
+              piVar29 = local_f0;
               do {
-                if (piVar30[1] < *piVar30) {
-                  local_18 = iVar31 * 4 + 4;
-                  piVar27 = this_ptr->index_data_ptr[0] + iVar31 + 1;
-                  piVar22 = this_ptr->index_data_ptr[0] + iVar31;
-                  iVar20 = *piVar22;
+                if (piVar29[1] < *piVar29) {
+                  local_18 = iVar30 * 4 + 4;
+                  piVar27 = this_ptr->index_data_ptr[0] + iVar30 + 1;
+                  piVar22 = this_ptr->index_data_ptr[0] + iVar30;
+                  iVar18 = *piVar22;
                   *piVar22 = *piVar27;
-                  *piVar27 = iVar20;
+                  *piVar27 = iVar18;
                   puVar23 = (uint *)
                             ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
                             local_74);
                   uVar10 = *puVar23;
-                  uVar17 = puVar23[1];
+                  uVar15 = puVar23[1];
                   uStack_2d8 = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);
                   uVar1 = *(ushort *)((int)puVar23 + 10);
                   puVar11 = (uint *)puVar23[3];
@@ -945,22 +946,22 @@ LAB_005902c8:
                   puVar23[3] = puVar34;
                   *(ushort *)(puVar23 + 4) = *(ushort *)(puVar11 + 4);
                   *puVar34 = uVar10;
-                  puVar34[1] = uVar17;
+                  puVar34[1] = uVar15;
                   puVar34[2] = CONCAT22(uVar1,uStack_2d8);
                   puVar34[3] = puVar11;
                   *(ushort *)(puVar34 + 4) = uVar5;
-                  iVar20 = *piVar30;
-                  *piVar30 = local_f0[iVar31 + 1];
-                  local_f0[iVar31 + 1] = iVar20;
+                  iVar18 = *piVar29;
+                  *piVar29 = local_f0[iVar30 + 1];
+                  local_f0[iVar30 + 1] = iVar18;
                 }
-                iVar31 = iVar31 + 1;
-                piVar30 = piVar30 + 1;
+                iVar30 = iVar30 + 1;
+                piVar29 = piVar29 + 1;
                 local_74 = local_74 + 0x12;
                 local_70 = local_70 + 0x12;
-              } while (iVar31 < local_30);
+              } while (iVar30 < local_30);
             }
           }
-          iVar31 = 2;
+          iVar30 = 2;
           if (local_154 != this_ptr->tri_count[0]) {
             local_d8 = this_ptr->parts;
             do {
@@ -974,16 +975,16 @@ LAB_005902c8:
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
                           (&local_bec.base,"Try best guess");
                 do {
-                  iVar31 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                                     (&local_bec,local_540,iVar31,0);
-                } while (iVar31 < 0);
+                  iVar30 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                                     (&local_bec,local_540,iVar30,0);
+                } while (iVar30 < 0);
                 shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_bec,0);
               }
-              iVar20 = local_154;
-              if (iVar31 == 0) {
+              iVar18 = local_154;
+              if (iVar30 == 0) {
                 this_ptr->tri_count[0] = local_154;
               }
-              else if (iVar31 == 1) {
+              else if (iVar30 == 1) {
                 if (0x1d < this_ptr->num_parts) {
                   g_CurrentFilename = "..\\core\\skeledit.cpp";
                   g_CurrentLineNumber = 0xeaf;
@@ -1007,7 +1008,7 @@ LAB_005902c8:
                 local_154 = this_ptr->tri_count[0];
                 this_ptr->num_parts = this_ptr->num_parts + 1;
               }
-              else if (iVar31 == 2) {
+              else if (iVar30 == 2) {
                 local_d4 = 1;
                 local_d0 = local_154;
                 local_cc = 0;
@@ -1017,9 +1018,9 @@ LAB_005902c8:
                   do {
                     if (local_d4 == 0) break;
                     local_d4 = 0;
-                    local_34 = iVar20;
-                    if (iVar20 < this_ptr->tri_count[0]) {
-                      local_5c = local_f0 + iVar20;
+                    local_34 = iVar18;
+                    if (iVar18 < this_ptr->tri_count[0]) {
+                      local_5c = local_f0 + iVar18;
                       local_60 = local_44;
                       do {
                         if (0xf423e < *local_5c) {
@@ -1035,10 +1036,10 @@ LAB_005902c8:
                                                            vertex_indices).vertex_index_0 + local_64
                                                     );
                                 local_6c = local_c8 + 3;
-                                iVar31 = 0;
-                                psVar19 = local_c8;
+                                iVar30 = 0;
+                                psVar17 = local_c8;
                                 do {
-                                  psVar16 = psVar19;
+                                  psVar16 = psVar17;
                                   iVar24 = 0;
                                   psVar20 = local_c0;
                                   if (*psVar16 != *local_c0) {
@@ -1048,15 +1049,15 @@ LAB_005902c8:
                                       if (2 < iVar24) goto LAB_00591f48;
                                     } while (*psVar20 != *psVar16);
                                   }
-                                  iVar31 = iVar31 + 1;
+                                  iVar30 = iVar30 + 1;
 LAB_00591f48:
-                                  psVar19 = psVar16 + 1;
+                                  psVar17 = psVar16 + 1;
                                 } while (psVar16 + 1 != local_6c);
                                 local_bc = psVar16;
-                                if (1 < iVar31) {
-                                  iVar31 = local_f0[local_c4];
-                                  this_ptr->parts[iVar31].tri_counts[0] =
-                                       this_ptr->parts[iVar31].tri_counts[0] + 1;
+                                if (1 < iVar30) {
+                                  iVar30 = local_f0[local_c4];
+                                  this_ptr->parts[iVar30].tri_counts[0] =
+                                       this_ptr->parts[iVar30].tri_counts[0] + 1;
                                   local_154 = local_154 + 1;
                                   *local_5c = local_f0[local_c4];
                                   break;
@@ -1081,24 +1082,24 @@ LAB_00591f48:
                 }
                 local_38 = this_ptr->tri_count[0];
                 while (local_38 = local_38 + -1, -1 < local_38) {
-                  iVar31 = 0;
+                  iVar30 = 0;
                   if (0 < local_38) {
                     local_58 = 0;
                     local_54 = 0x12;
-                    piVar30 = local_f0;
+                    piVar29 = local_f0;
                     do {
-                      if (piVar30[1] < *piVar30) {
-                        local_18 = iVar31 * 4 + 4;
-                        piVar36 = this_ptr->index_data_ptr[0] + iVar31 + 1;
-                        piVar22 = this_ptr->index_data_ptr[0] + iVar31;
-                        iVar20 = *piVar22;
+                      if (piVar29[1] < *piVar29) {
+                        local_18 = iVar30 * 4 + 4;
+                        piVar36 = this_ptr->index_data_ptr[0] + iVar30 + 1;
+                        piVar22 = this_ptr->index_data_ptr[0] + iVar30;
+                        iVar18 = *piVar22;
                         *piVar22 = *piVar36;
-                        *piVar36 = iVar20;
+                        *piVar36 = iVar18;
                         puVar23 = (uint *)
                                   ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0
                                   + local_58);
                         uVar10 = *puVar23;
-                        uVar17 = puVar23[1];
+                        uVar15 = puVar23[1];
                         uStack_2ec = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);
                         uVar1 = *(ushort *)((int)puVar23 + 10);
                         puVar11 = (uint *)puVar23[3];
@@ -1110,22 +1111,22 @@ LAB_00591f48:
                         puVar23[3] = puVar34;
                         *(ushort *)(puVar23 + 4) = *(ushort *)(puVar11 + 4);
                         *puVar34 = uVar10;
-                        puVar34[1] = uVar17;
+                        puVar34[1] = uVar15;
                         puVar34[2] = CONCAT22(uVar1,uStack_2ec);
                         puVar34[3] = puVar11;
                         *(ushort *)(puVar34 + 4) = uVar5;
-                        iVar20 = *piVar30;
-                        *piVar30 = local_f0[iVar31 + 1];
-                        local_f0[iVar31 + 1] = iVar20;
+                        iVar18 = *piVar29;
+                        *piVar29 = local_f0[iVar30 + 1];
+                        local_f0[iVar30 + 1] = iVar18;
                       }
-                      iVar31 = iVar31 + 1;
-                      piVar30 = piVar30 + 1;
+                      iVar30 = iVar30 + 1;
+                      piVar29 = piVar29 + 1;
                       local_58 = local_58 + 0x12;
                       local_54 = local_54 + 0x12;
-                    } while (iVar31 < local_38);
+                    } while (iVar30 < local_38);
                   }
                 }
-                iVar31 = 1;
+                iVar30 = 1;
               }
             } while (local_154 != this_ptr->tri_count[0]);
           }
@@ -1170,17 +1171,17 @@ LAB_00591f48:
           g_CurrentDebugLine = 0xf1f;
           shape_memdbg_cpp_free_FUN_005fe659(this_ptr->tri_data_ptr[0]);
           this_ptr->tri_data_ptr[0] = pSVar37;
-          piVar30 = this_ptr->index_data_ptr[0];
+          piVar29 = this_ptr->index_data_ptr[0];
           piVar35 = local_14c;
           for (uVar25 = this_ptr->tri_count[0] & 0x3fffffff; uVar25 != 0; uVar25 = uVar25 - 1) {
-            *piVar35 = *piVar30;
-            piVar30 = piVar30 + (uint)bVar39 * -2 + 1;
+            *piVar35 = *piVar29;
+            piVar29 = piVar29 + (uint)bVar39 * -2 + 1;
             piVar35 = piVar35 + (uint)bVar39 * -2 + 1;
           }
-          for (iVar31 = 0; iVar31 != 0; iVar31 = iVar31 + -1) {
+          for (iVar30 = 0; iVar30 != 0; iVar30 = iVar30 + -1) {
             piVar35 = (int *)((int)piVar35 + (uint)bVar39 * -2 + 1);
-            *(char *)piVar35 = (char)*piVar30;
-            piVar30 = (int *)((int)piVar30 + (uint)bVar39 * -2 + 1);
+            *(char *)piVar35 = (char)*piVar29;
+            piVar29 = (int *)((int)piVar29 + (uint)bVar39 * -2 + 1);
             piVar35 = piVar35;
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
@@ -1216,25 +1217,25 @@ LAB_00591f48:
                   if (((*(int *)((int)local_4c + 4) == 3) &&
                       (local_3c == *(int *)((int)local_4c + 8))) &&
                      (*(int *)((int)local_4c + 0xc) < 0)) {
-                    iVar31 = this_ptr->tri_count[0] + this_ptr->cap_tri_count[0];
-                    local_b0 = this_ptr->tri_data_ptr[0] + iVar31;
+                    iVar30 = this_ptr->tri_count[0] + this_ptr->cap_tri_count[0];
+                    local_b0 = this_ptr->tri_data_ptr[0] + iVar30;
                     if (local_160 < 0) {
-                      iVar31 = *(int *)((int)local_4c + 0x14);
-                      if (iVar31 < 0) goto LAB_00591835;
-                      iVar20 = 0;
+                      iVar30 = *(int *)((int)local_4c + 0x14);
+                      if (iVar30 < 0) goto LAB_00591835;
+                      iVar18 = 0;
                       if (0 < this_ptr->num_textures) {
                         pcVar38 = local_a8->textures[0].textures[0].texture_name;
                         do {
                           splitpath
                                     (pcVar38,(char *)0x0,(char *)0x0,local_740,(char *)0x0);
                           iVar24 = _stricmp
-                                             (local_a1ec + iVar31 * 0x100,local_740);
+                                             (local_a1ec + iVar30 * 0x100,local_740);
                           if (iVar24 == 0) break;
-                          iVar20 = iVar20 + 1;
+                          iVar18 = iVar18 + 1;
                           pcVar38 = pcVar38 + 0x48;
-                        } while (iVar20 < this_ptr->num_textures);
+                        } while (iVar18 < this_ptr->num_textures);
                       }
-                      if (this_ptr->num_textures <= iVar20) {
+                      if (this_ptr->num_textures <= iVar18) {
                         if (0x4f < this_ptr->num_textures) {
                           g_CurrentFilename = "..\\core\\skeledit.cpp";
                           g_CurrentLineNumber = 0xf5d;
@@ -1246,63 +1247,63 @@ LAB_00591f48:
                         this_ptr->num_textures = this_ptr->num_textures + 1;
                       }
                       this_ptr->index_data_ptr[0]
-                      [this_ptr->tri_count[0] + this_ptr->cap_tri_count[0]] = iVar20;
+                      [this_ptr->tri_count[0] + this_ptr->cap_tri_count[0]] = iVar18;
                     }
                     else {
-                      this_ptr->index_data_ptr[0][iVar31] = local_160;
+                      this_ptr->index_data_ptr[0][iVar30] = local_160;
                     }
                     local_20 = 0;
                     pSVar37 = local_b0;
                     pvVar37 = local_b4;
                     do {
-                      pCVar28 = &local_188->min + *(int *)((int)pvVar37 + 0x18);
-                      local_1c4 = pCVar28->x;
-                      local_1c0 = pCVar28->y;
-                      local_1bc = pCVar28->z;
+                      pCVar19 = local_188 + *(int *)((int)pvVar37 + 0x18);
+                      local_1c4 = pCVar19->x;
+                      local_1c0 = pCVar19->y;
+                      local_1bc = pCVar19->z;
                       local_a1f0 = 1e+20;
-                      iVar31 = 0;
+                      iVar30 = 0;
                       if (0 < this_ptr->vertex_count[0]) {
-                        iVar20 = 0;
+                        iVar18 = 0;
                         do {
                           pSVar9 = this_ptr->vertex_data_ptr[0];
-                          local_218 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0xc) -
+                          local_218 = *(float *)((int)pSVar9->bone_weights + iVar18 + 0xc) -
                                       local_1c4;
-                          local_214 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0x10) -
+                          local_214 = *(float *)((int)pSVar9->bone_weights + iVar18 + 0x10) -
                                       local_1c0;
-                          local_210 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0x14) -
+                          local_210 = *(float *)((int)pSVar9->bone_weights + iVar18 + 0x14) -
                                       local_1bc;
                           local_a0 = local_210 * local_210 +
                                      local_218 * local_218 + local_214 * local_214;
                           if (local_a0 < local_a1f0) {
-                            (pSVar37->vertex_indices).vertex_index_0 = (ushort)iVar31;
+                            (pSVar37->vertex_indices).vertex_index_0 = (ushort)iVar30;
                             local_a1f0 = local_a0;
                           }
-                          iVar31 = iVar31 + 1;
-                          iVar20 = iVar20 + 0x34;
-                        } while (iVar31 < this_ptr->vertex_count[0]);
+                          iVar30 = iVar30 + 1;
+                          iVar18 = iVar18 + 0x34;
+                        } while (iVar30 < this_ptr->vertex_count[0]);
                       }
                       if ((float)0.20000000000000001 < local_a1f0) {
                         _sprintf(g_SkeleditStatusMessage,"Can't find good match for capped face vertex, probably because there was a new vertex created only for a capped face");
                         goto LAB_0058f8e7;
                       }
-                      iVar31 = *(int *)((int)pvVar37 + 0x1c) >> 8;
-                      iVar20 = *(int *)((int)pvVar37 + 0x20) >> 8;
-                      if (iVar31 < 0) {
-                        iVar31 = 0;
+                      iVar30 = *(int *)((int)pvVar37 + 0x1c) >> 8;
+                      iVar18 = *(int *)((int)pvVar37 + 0x20) >> 8;
+                      if (iVar30 < 0) {
+                        iVar30 = 0;
                       }
-                      else if (0xffff < iVar31) {
-                        iVar31 = 0xffff;
+                      else if (0xffff < iVar30) {
+                        iVar30 = 0xffff;
                       }
-                      if (iVar20 < 0) {
-                        iVar20 = 0;
+                      if (iVar18 < 0) {
+                        iVar18 = 0;
                       }
-                      else if (0xffff < iVar20) {
-                        iVar20 = 0xffff;
+                      else if (0xffff < iVar18) {
+                        iVar18 = 0xffff;
                       }
                       pvVar37 = (void *)((int)pvVar37 + 0xc);
-                      pSVar37->v_coord_0 = (ushort)iVar20;
+                      pSVar37->v_coord_0 = (ushort)iVar18;
                       local_20 = local_20 + 1;
-                      pSVar37->u_coord_0 = (ushort)iVar31;
+                      pSVar37->u_coord_0 = (ushort)iVar30;
                       pSVar37 = (SInputFace *)&(pSVar37->vertex_indices).vertex_index_1;
                     } while (local_20 < 3);
                     local_ac = -1;
@@ -1316,22 +1317,22 @@ LAB_00591f48:
                            (*(int *)((int)local_50 + 0xc) < 0)) {
                           local_9c = 0;
                           do {
-                            iVar31 = local_9c + 6;
+                            iVar30 = local_9c + 6;
                             local_98 = 0.0;
                             pvVar35 = local_b4;
                             do {
-                              pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);
-                              local_248 = pCVar28->x;
-                              local_244 = pCVar28->y;
+                              pCVar19 = local_188 + *(int *)((int)pvVar35 + 0x18);
+                              local_248 = pCVar19->x;
+                              local_244 = pCVar19->y;
                               local_18 = 3;
-                              local_240 = pCVar28->z;
-                              pCVar28 = &local_188->min +
-                                        *(int *)((int)local_50 + (iVar31 % 3) * 0xc + 0x18);
-                              local_1ac = pCVar28->x;
-                              local_1a8 = pCVar28->y;
-                              local_1a4 = pCVar28->z;
+                              local_240 = pCVar19->z;
+                              pCVar19 = local_188 +
+                                        *(int *)((int)local_50 + (iVar30 % 3) * 0xc + 0x18);
+                              local_1ac = pCVar19->x;
+                              local_1a8 = pCVar19->y;
+                              local_1a4 = pCVar19->z;
                               pvVar35 = (void *)((int)pvVar35 + 0xc);
-                              iVar31 = iVar31 + -1;
+                              iVar30 = iVar30 + -1;
                               local_98 = (local_240 - local_1a4) * (local_240 - local_1a4) +
                                          (local_248 - local_1ac) * (local_248 - local_1ac) +
                                          (local_244 - local_1a8) * (local_244 - local_1a8) +
@@ -1371,19 +1372,19 @@ LAB_00591835:
           }
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Determining adjacent parts from %s");
-          iVar31 = 0;
+          iVar30 = 0;
           pCVar27 = this_ptr;
           if (0 < this_ptr->num_parts) {
             do {
               pCVar27->parts[0].adj_part_count = 0;
-              iVar31 = iVar31 + 1;
+              iVar30 = iVar30 + 1;
               pCVar27 = (CDeformableModel *)(pCVar27->tri_count + 3);
-            } while (iVar31 < this_ptr->num_parts);
+            } while (iVar30 < this_ptr->num_parts);
           }
           g_CurrentDebugLine = 0xff5;
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
-          if (local_188 != (CBoundingBox3D *)0x0) {
-            shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);
+          if (local_188 != (CVector3f *)0x0) {
+            shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].z);
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xff6;
@@ -1418,21 +1419,21 @@ LAB_0058f8e7:
   }
   g_CurrentDebugLine = 0xbe4;
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
-  if (local_188 != (CBoundingBox3D *)0x0) {
-    shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);
+  if (local_188 != (CVector3f *)0x0) {
+    shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].z);
   }
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe5;
   shape_memdbg_cpp_free_FUN_005fe659(local_184);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe6;
-  if (local_17c != (float *)0x0) {
-    shape_memdbg_cpp_free_FUN_005fe659(local_17c + -1);
+  if (local_17c != (CVector3f *)0x0) {
+    shape_memdbg_cpp_free_FUN_005fe659(&local_17c[-1].z);
   }
   g_CurrentDebugLine = 0xbe7;
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
-  if (local_178 != (float *)0x0) {
-    shape_memdbg_cpp_free_FUN_005fe659(local_178 + -1);
+  if (local_178 != (CVector3f *)0x0) {
+    shape_memdbg_cpp_free_FUN_005fe659(&local_178[-1].z);
   }
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe8;

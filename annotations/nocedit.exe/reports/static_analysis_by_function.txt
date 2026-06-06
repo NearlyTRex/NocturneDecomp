@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 116
-  Total diagnostics: 335
+  Functions with findings: 115
+  Total diagnostics: 334
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 73, raw .cpp files: 43
+  .keep.cpp files: 72, raw .cpp files: 43
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -710,12 +710,6 @@ core_setutil.cpp_C3DSCamera_load_FUN_00585420  [.keep] [Cppcheck (quick)]
   File: core/setutil.cpp  (1 diagnostics)
 
   Line   20: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810  [.keep] [Cppcheck (quick)]
-  File: core/skeledit.cpp  (1 diagnostics)
-
-  Line 1141: [selfAssignment] Redundant assignment of 'piVar35' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430  [.cpp] [Cppcheck (quick)]

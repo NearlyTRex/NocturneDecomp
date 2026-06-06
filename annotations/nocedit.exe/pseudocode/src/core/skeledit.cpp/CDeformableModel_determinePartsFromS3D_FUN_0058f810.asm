@@ -110,11 +110,11 @@
 ; float            Stack[-0x194]:4  local_194
 ; undefined1[4]    Stack[-0x190]:4  local_190
 ; undefined1[4]    Stack[-0x18c]:4  local_18c
-; CBoundingBox3D * Stack[-0x188]:4  local_188
-; void *           Stack[-0x184]:4  local_184
+; CVector3f *      Stack[-0x188]:4  local_188
+; SS3DFaceMatch *  Stack[-0x184]:4  local_184
 ; _FILE *          Stack[-0x180]:4  local_180
-; float *          Stack[-0x17c]:4  local_17c
-; float *          Stack[-0x178]:4  local_178
+; CVector3f *      Stack[-0x17c]:4  local_17c
+; CVector3f *      Stack[-0x178]:4  local_178
 ; void *           Stack[-0x174]:4  local_174
 ; undefined4 *     Stack[-0x170]:4  local_170
 ; float            Stack[-0x16c]:4  local_16c

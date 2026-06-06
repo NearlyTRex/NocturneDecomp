@@ -18,6 +18,12 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
       Suspects: unrolled_memcpy, unrolled_memcpy
 
+  core/skeledit.cpp (2 remaining of 70)
+    - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+      Suspects: warning_inlined_function, raw_address_constant, raw_address_constant, raw_address_constant, raw_address_constant, unrolled_strcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, unrolled_memset, pointer_cast, pointer_cast, pointer_cast, shadow_pointer_walk, shadow_pointer_walk, missing_cave_copy, missing_cave_copy, static_invalid_pointer_cast, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar, static_legacy_uninitvar
+    - core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
+      Suspects: missing_cave_copy, missing_cave_copy
+
   core/gabriela.cpp (2 remaining of 38)
     - core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
       Suspects: warning_type_propagation, unrolled_memcpy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy
@@ -37,19 +43,17 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines)
         Types: ['unrolled_memcpy']
 
+  core/skeledit.cpp (97.1% complete)
+    2 functions remaining:
+      core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines)
+        Types: ['missing_cave_copy', 'pointer_cast', 'raw_address_constant', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_memset', 'unrolled_strcpy', 'warning_inlined_function']
+      core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines)
+        Types: ['missing_cave_copy']
+
   core/glass.cpp (95.8% complete)
     1 functions remaining:
       core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (387 lines)
         Types: ['unrolled_memcpy']
-
-  core/skeledit.cpp (95.7% complete)
-    3 functions remaining:
-      core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines)
-        Types: ['missing_cave_copy', 'pointer_cast', 'raw_address_constant', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_memset', 'unrolled_strcpy', 'warning_inlined_function']
-      core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1436 lines)
-        Types: ['concat_reconstruction', 'pointer_cast', 'shadow_pointer_walk', 'unrolled_memcpy', 'unrolled_strcpy', 'warning_inlined_function']
-      core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines)
-        Types: ['missing_cave_copy']
 
   core/gabriela.cpp (94.7% complete)
     2 functions remaining:

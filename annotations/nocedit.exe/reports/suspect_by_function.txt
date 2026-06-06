@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6186 (95.8%)
-With suspects: 268
-Total suspects: 1812
+Clean: 6187 (95.9%)
+With suspects: 267
+Total suspects: 1719
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
@@ -604,104 +604,6 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (32 suspects)
   Line 933 [static_legacy_uninitvar]: (double)local_1b0,(double)local_1ac,(double)local_1a8);
   Line 933 [static_legacy_uninitvar]: (double)local_1b0,(double)local_1ac,(double)local_1a8);
   Line 1061 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (93 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 324 [pointer_cast]: *(uint *)((int)local_478 + local_144),
-  Line 343 [pointer_cast]: *(uint *)((int)local_400 + local_144));
-  Line 377 [unrolled_memcpy]: for (iVar31 = 0x19; iVar31 != 0; iVar31 = iVar31 + -1) {
-  Line 414 [pointer_cast]: *(uint *)((int)pvVar35 + 4) = 3;
-  Line 437 [pointer_cast]: *(uint *)((int)pvVar35 + 4) = 3;
-  Line 439 [pointer_cast]: *(uint *)((int)pvVar35 + 0x14) = local_13c[0];
-  Line 443 [pointer_cast]: *(uint *)((int)pvVar17 + 0x18) = *(uint *)(local_274 + iVar20 + -4);
-  Line 445 [pointer_cast]: *(int *)((int)pvVar17 + 0x1c) = local_18;
-  Line 448 [pointer_cast]: *(int *)((int)pvVar17 + 0x20) = local_18;
-  Line 449 [pointer_cast]: pvVar17 = (void *)((int)pvVar17 + 0xc);
-  Line 452 [pointer_cast]: *(uint *)((int)pvVar35 + 0x18),*(uint *)((int)pvVar35 + 0x24));
-  Line 452 [pointer_cast]: *(uint *)((int)pvVar35 + 0x18),*(uint *)((int)pvVar35 + 0x24));
-  Line 454 [pointer_cast]: pvVar35 = (void *)((int)pvVar35 + 0x3c);
-  Line 504 [pointer_cast]: if ((*(int *)((int)local_88 + 4) == 3) &&
-  Line 505 [pointer_cast]: (*(int *)((int)local_88 + 0x14) == *(int *)((int)local_84 + 0x14))) {
-  Line 505 [pointer_cast]: (*(int *)((int)local_88 + 0x14) == *(int *)((int)local_84 + 0x14))) {
-  Line 512 [pointer_cast]: pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);
-  Line 525 [pointer_cast]: pvVar35 = (void *)((int)pvVar35 + 0xc);
-  Line 531 [pointer_cast]: *(uint *)((int)local_134 + 4) = 0;
-  Line 538 [pointer_cast]: local_88 = (void *)((int)local_88 + 0x3c);
-  Line 543 [pointer_cast]: local_84 = (void *)((int)local_84 + 0x3c);
-  Line 549 [unrolled_memcpy]: local_30c.min.x = (local_188->min).x;
-  Line 554 [unrolled_memcpy]: local_30c.max.x = (local_188->min).x;
-  Line 564 [shadow_pointer_walk]: pCVar13 = (CBoundingBox3D *)&pCVar13->max;
-  Line 570 [unrolled_memcpy]: local_324.min.x = pCVar28->x;
-  Line 575 [unrolled_memcpy]: local_324.max.x = pCVar28->x;
-  Line 585 [pointer_cast]: (CVector3f *)((int)this_ptr->vertex_data_ptr[0]->bone_weights + iVar20 + 0xc)
-  Line 608 [shadow_pointer_walk]: pCVar11 = (CBoundingBox3D *)&pCVar11->max;
-  Line 644 [pointer_cast]: if (*(int *)((int)pvVar35 + 4) == 3) {
-  Line 645 [pointer_cast]: pCVar26 = &local_188->min + *(int *)((int)pvVar35 + 0x18);
-  Line 646 [pointer_cast]: pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x24);
-  Line 650 [pointer_cast]: pCVar29 = &local_188->min + *(int *)((int)pvVar35 + 0x30);
-  Line 676 [pointer_cast]: pvVar35 = (void *)((int)pvVar35 + 0x3c);
-  Line 686 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_80);
-  Line 740 [pointer_cast]: for (iVar21 = 0; iVar21 < *(int *)((int)this_ptr->parts[0].tri_counts + iVar20);
-  Line 742 [pointer_cast]: *(uint *)((int)pvVar35 + 0xc) = 0xffffffff;
-  Line 743 [pointer_cast]: *(int *)((int)pvVar35 + 8) = iVar31;
-  Line 744 [pointer_cast]: pvVar35 = (void *)((int)pvVar35 + 0x3c);
-  Line 746 [pointer_cast]: local_15c = (void *)((int)local_15c +
-  Line 747 [pointer_cast]: *(int *)((int)this_ptr->parts[0].tri_counts + iVar20) * 0x3c);
-  Line 761 [pointer_cast]: pfVar21 = (float *)(local_124 * 4 + (int)local_174);
-  Line 771 [pointer_cast]: if (*(int *)((int)local_7c + 4) == 3) {
-  Line 782 [pointer_cast]: pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);
-  Line 797 [pointer_cast]: pvVar35 = (void *)((int)pvVar35 + 0xc);
-  Line 803 [pointer_cast]: ((*(int *)((int)local_7c + 0xc) < 0 ||
-  Line 805 [pointer_cast]: *(float *)(*(int *)((int)local_7c + 0xc) * 4 + (int)local_174))))) {
-  Line 814 [pointer_cast]: local_7c = (void *)((int)local_7c + 0x3c);
-  Line 820 [pointer_cast]: iVar31 = *(int *)((int)local_184 + local_11c * 0x3c + 0xc);
-  Line 821 [pointer_cast]: *(int *)((int)local_184 + local_11c * 0x3c + 0xc) = local_124;
-  Line 852 [shadow_pointer_walk]: pCVar12 = (CDeformableModel *)(pCVar12->tri_count + 3);
-  Line 882 [pointer_cast]: if (*(int *)((int)pvVar35 + 4) == 3) {
-  Line 883 [pointer_cast]: iVar20 = *(int *)((int)pvVar35 + 8);
-  Line 884 [pointer_cast]: iVar24 = *(int *)((int)pvVar35 + 0xc);
-  Line 903 [pointer_cast]: pvVar35 = (void *)((int)pvVar35 + 0x3c);
-  Line 926 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
-  Line 930 [pointer_cast]: uStack_2d8 = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);
-  Line 931 [pointer_cast]: uVar1 = *(ushort *)((int)puVar23 + 10);
-  Line 942 [concat_reconstruction]: puVar34[2] = CONCAT22(uVar1,uStack_2d8);
-  Line 987 [unrolled_strcpy]: do {
-  Line 1019 [pointer_cast]: local_c8 = (short *)((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).
-  Line 1027 [pointer_cast]: local_c0 = (short *)((int)&(this_ptr->tri_data_ptr[0]->
-  Line 1091 [pointer_cast]: ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0
-  Line 1095 [pointer_cast]: uStack_2ec = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);
-  Line 1096 [pointer_cast]: uVar1 = *(ushort *)((int)puVar23 + 10);
-  Line 1107 [concat_reconstruction]: puVar34[2] = CONCAT22(uVar1,uStack_2ec);
-  Line 1141 [static_self_assignment]: piVar35 = piVar35;
-  Line 1147 [unrolled_memcpy]: for (uVar18 = uVar25 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-  Line 1174 [pointer_cast]: piVar35 = (int *)((int)piVar35 + (uint)bVar39 * -2 + 1);
-  Line 1176 [pointer_cast]: piVar30 = (int *)((int)piVar30 + (uint)bVar39 * -2 + 1);
-  Line 1209 [pointer_cast]: if (((*(int *)((int)local_4c + 4) == 3) &&
-  Line 1210 [pointer_cast]: (local_3c == *(int *)((int)local_4c + 8))) &&
-  Line 1211 [pointer_cast]: (*(int *)((int)local_4c + 0xc) < 0)) {
-  Line 1215 [pointer_cast]: iVar31 = *(int *)((int)local_4c + 0x14);
-  Line 1251 [pointer_cast]: pCVar28 = &local_188->min + *(int *)((int)pvVar37 + 0x18);
-  Line 1261 [pointer_cast]: local_218 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0xc) -
-  Line 1263 [pointer_cast]: local_214 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0x10) -
-  Line 1265 [pointer_cast]: local_210 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0x14) -
-  Line 1281 [pointer_cast]: iVar31 = *(int *)((int)pvVar37 + 0x1c) >> 8;
-  Line 1282 [pointer_cast]: iVar20 = *(int *)((int)pvVar37 + 0x20) >> 8;
-  Line 1295 [pointer_cast]: pvVar37 = (void *)((int)pvVar37 + 0xc);
-  Line 1299 [shadow_pointer_walk]: pSVar37 = (SInputFace *)&(pSVar37->vertex_indices).vertex_index_1;
-  Line 1307 [pointer_cast]: if (((*(int *)((int)local_50 + 4) == 3) &&
-  Line 1308 [pointer_cast]: (local_3c != *(int *)((int)local_50 + 8))) &&
-  Line 1309 [pointer_cast]: (*(int *)((int)local_50 + 0xc) < 0)) {
-  Line 1316 [pointer_cast]: pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);
-  Line 1322 [pointer_cast]: *(int *)((int)local_50 + (iVar31 % 3) * 0xc + 0x18);
-  Line 1326 [pointer_cast]: pvVar35 = (void *)((int)pvVar35 + 0xc);
-  Line 1332 [pointer_cast]: } while (pvVar35 != (void *)((int)local_b4 + 0x24));
-  Line 1334 [pointer_cast]: local_ac = *(int *)((int)local_50 + 8);
-  Line 1341 [pointer_cast]: local_50 = (void *)((int)local_50 + 0x3c);
-  Line 1353 [pointer_cast]: local_4c = (void *)((int)local_4c + 0x3c);
-  Line 1373 [shadow_pointer_walk]: pCVar27 = (CDeformableModel *)(pCVar27->tri_count + 3);
 
 ====================================================================================================
 core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (2 suspects)

@@ -8,22 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 2386,
+    "complexity_score": 1437,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1436,
-    "suspect_count": 92,
-    "suspect_types": [
-      "concat_reconstruction",
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "unrolled_memcpy",
-      "unrolled_strcpy",
-      "warning_inlined_function"
-    ],
-    "total_lines": 4836
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 1437,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 4837
   },
   "cross_references": [
     {
@@ -997,8 +990,314 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 1151,
+      "line": 344,
+      "match": "(uint *)((int)local_400",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_400 + local_144));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 444,
+      "match": "(uint *)((int)pvVar17",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pvVar17 + 0x18) = *(uint *)(local_274 + iVar18 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 446,
+      "match": "(int *)((int)pvVar17",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar17 + 0x1c) = local_18;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 449,
+      "match": "(int *)((int)pvVar17",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar17 + 0x20) = local_18;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 450,
+      "match": "(void *)((int)pvVar17",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar17 = (void *)((int)pvVar17 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 505,
+      "match": "(int *)((int)local_88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)local_88 + 4) == 3) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 506,
+      "match": "(int *)((int)local_88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)((int)local_88 + 0x14) == *(int *)((int)local_84 + 0x14))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 506,
+      "match": "(int *)((int)local_84",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)((int)local_88 + 0x14) == *(int *)((int)local_84 + 0x14))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 513,
+      "match": "(int *)((int)pvVar35",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar19 = local_188 + *(int *)((int)pvVar35 + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 525,
+      "match": "(void *)((int)pvVar35",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar35 = (void *)((int)pvVar35 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 531,
+      "match": "(uint *)((int)local_134",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_134 + 4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 538,
+      "match": "(void *)((int)local_88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_88 = (void *)((int)local_88 + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 543,
+      "match": "(void *)((int)local_84",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_84 = (void *)((int)local_84 + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 585,
+      "match": "(CVector3f *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3f *)((int)this_ptr->vertex_data_ptr[0]->bone_weights + iVar18 + 0xc)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 740,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar21 = 0; iVar21 < *(int *)((int)this_ptr->parts[0].tri_counts + iVar18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 742,
+      "match": "(uint *)((int)pvVar35",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pvVar35 + 0xc) = 0xffffffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 743,
+      "match": "(int *)((int)pvVar35",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar35 + 8) = iVar30;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 744,
+      "match": "(void *)((int)pvVar35",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar35 = (void *)((int)pvVar35 + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 746,
+      "match": "(void *)((int)local_15c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_15c = (void *)((int)local_15c +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 747,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->parts[0].tri_counts + iVar18) * 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 761,
+      "match": "(float *)(local_124 * 4 + (int)local_174",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar20 = (float *)(local_124 * 4 + (int)local_174);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 771,
+      "match": "(int *)((int)local_7c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)local_7c + 4) == 3) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 783,
+      "match": "(int *)((int)pvVar35",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar19 = local_188 + *(int *)((int)pvVar35 + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 798,
+      "match": "(void *)((int)pvVar35",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar35 = (void *)((int)pvVar35 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 804,
+      "match": "(int *)((int)local_7c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((*(int *)((int)local_7c + 0xc) < 0 ||",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 806,
+      "match": "(int *)((int)local_7c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)(*(int *)((int)local_7c + 0xc) * 4 + (int)local_174))))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 815,
+      "match": "(void *)((int)local_7c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_7c = (void *)((int)local_7c + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 832,
+      "match": "local_17c[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_17c[-1].z);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 838,
+      "match": "local_178[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_178[-1].z);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 931,
+      "match": "(uint *)((int)puVar23",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_2d8 = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 932,
+      "match": "(ushort *)((int)puVar23",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(ushort *)((int)puVar23 + 10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1096,
+      "match": "(uint *)((int)puVar23",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_2ec = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1097,
+      "match": "(ushort *)((int)puVar23",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(ushort *)((int)puVar23 + 10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1152,
       "match": "(SInputFace *)((int)pSVar29",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1007,7 +1306,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1152,
+      "line": 1153,
       "match": "(SInputFace *)((int)pSVar34",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1016,7 +1315,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1155,
+      "line": 1156,
       "match": "(SInputFace *)((int)pSVar34",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1025,7 +1324,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1156,
+      "line": 1157,
       "match": "(SInputFace *)((int)pSVar29",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1033,26 +1332,278 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 1175,
+      "match": "(int *)((int)piVar35",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar35 = (int *)((int)piVar35 + (uint)bVar39 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1177,
+      "match": "(int *)((int)piVar29",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar29 = (int *)((int)piVar29 + (uint)bVar39 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1210,
+      "match": "(int *)((int)local_4c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((*(int *)((int)local_4c + 4) == 3) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1211,
+      "match": "(int *)((int)local_4c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_3c == *(int *)((int)local_4c + 8))) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1212,
+      "match": "(int *)((int)local_4c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)((int)local_4c + 0xc) < 0)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1216,
+      "match": "(int *)((int)local_4c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar30 = *(int *)((int)local_4c + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1252,
+      "match": "(int *)((int)pvVar37",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar19 = local_188 + *(int *)((int)pvVar37 + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1262,
+      "match": "(float *)((int)pSVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_218 = *(float *)((int)pSVar9->bone_weights + iVar18 + 0xc) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1264,
+      "match": "(float *)((int)pSVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_214 = *(float *)((int)pSVar9->bone_weights + iVar18 + 0x10) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1266,
+      "match": "(float *)((int)pSVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_210 = *(float *)((int)pSVar9->bone_weights + iVar18 + 0x14) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1282,
+      "match": "(int *)((int)pvVar37",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar30 = *(int *)((int)pvVar37 + 0x1c) >> 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1283,
+      "match": "(int *)((int)pvVar37",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar18 = *(int *)((int)pvVar37 + 0x20) >> 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1296,
+      "match": "(void *)((int)pvVar37",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar37 = (void *)((int)pvVar37 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1308,
+      "match": "(int *)((int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((*(int *)((int)local_50 + 4) == 3) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1309,
+      "match": "(int *)((int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_3c != *(int *)((int)local_50 + 8))) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1310,
+      "match": "(int *)((int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)((int)local_50 + 0xc) < 0)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1317,
+      "match": "(int *)((int)pvVar35",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar19 = local_188 + *(int *)((int)pvVar35 + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1323,
+      "match": "(int *)((int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_50 + (iVar30 % 3) * 0xc + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1327,
+      "match": "(void *)((int)pvVar35",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar35 = (void *)((int)pvVar35 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1333,
+      "match": "(void *)((int)local_b4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (pvVar35 != (void *)((int)local_b4 + 0x24));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1335,
+      "match": "(int *)((int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_ac = *(int *)((int)local_50 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1342,
+      "match": "(void *)((int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_50 = (void *)((int)local_50 + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1354,
+      "match": "(void *)((int)local_4c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_4c = (void *)((int)local_4c + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 1379,
+      "line": 1380,
       "match": "local_188[-1].",
       "resolution_source": "keep",
       "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].z);",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 1415,
+      "line": 1416,
       "match": "local_188[-1].",
       "resolution_source": "keep",
       "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].z);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 1424,
+      "match": "local_17c[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_17c[-1].z);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 1429,
+      "match": "local_178[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_178[-1].z);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 988,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 1154,
+      "line": 378,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar30 = 0x19; iVar30 != 0; iVar30 = iVar30 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 1148,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar18 = uVar25 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 1155,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1061,7 +1612,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 1168,
+      "line": 1169,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1070,12 +1621,147 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 1173,
+      "line": 1174,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "for (iVar31 = 0; iVar31 != 0; iVar31 = iVar31 + -1) {",
+      "text": "for (iVar30 = 0; iVar30 != 0; iVar30 = iVar30 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 549,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30c.min.x = local_188->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 554,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30c.max.x = local_188->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 570,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_324.min.x = pCVar19->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 575,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_324.max.x = pCVar19->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 943,
+      "match": "CONCAT22",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar34[2] = CONCAT22(uVar1,uStack_2d8);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 1108,
+      "match": "CONCAT22",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar34[2] = CONCAT22(uVar1,uStack_2ec);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 686,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_80);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 927,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 1020,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_c8 = (short *)((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 1028,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_c0 = (short *)((int)&(this_ptr->tri_data_ptr[0]->",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 1092,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 608,
+      "match": "pCVar11 = (T *)&pCVar11->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar11 = (CBoundingBox3D *)&pCVar11->max;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar12`. Replace those `pCVar12->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 853,
+      "match": "pCVar12 = (T *)(pCVar12->tri_count + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar12 = (CDeformableModel *)(pCVar12->tri_count + 3);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar37` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar37->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1300,
+      "match": "pSVar37 = (T *)&(pSVar37->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar37 = (SInputFace *)&(pSVar37->vertex_indices).vertex_index_1;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar27` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar27`. Replace those `pCVar27->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 1374,
+      "match": "pCVar27 = (T *)(pCVar27->tri_count + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar27 = (CDeformableModel *)(pCVar27->tri_count + 3);",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -1829,14 +2515,14 @@
         "name": "local_188",
         "offset": -392,
         "size": 4,
-        "type": "CBoundingBox3D *"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_184",
         "offset": -388,
         "size": 4,
-        "type": "void *"
+        "type": "SS3DFaceMatch *"
       },
       {
         "is_param": false,
@@ -1850,14 +2536,14 @@
         "name": "local_17c",
         "offset": -380,
         "size": 4,
-        "type": "float *"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_178",
         "offset": -376,
         "size": 4,
-        "type": "float *"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
@@ -2494,769 +3180,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDeformableModel_determinePartsFromS3D_FUN_0058f810.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 21,
-          "line": 1141,
-          "message": "Redundant assignment of 'piVar35' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 343,
-      "match": "(uint *)((int)local_400",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_400 + local_144));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 437,
-      "match": "(uint *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pvVar35 + 4) = 3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 439,
-      "match": "(uint *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pvVar35 + 0x14) = local_13c[0];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 443,
-      "match": "(uint *)((int)pvVar17",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pvVar17 + 0x18) = *(uint *)(local_274 + iVar20 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 445,
-      "match": "(int *)((int)pvVar17",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar17 + 0x1c) = local_18;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 448,
-      "match": "(int *)((int)pvVar17",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar17 + 0x20) = local_18;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 449,
-      "match": "(void *)((int)pvVar17",
-      "severity": "moderate",
-      "text": "pvVar17 = (void *)((int)pvVar17 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 452,
-      "match": "(uint *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pvVar35 + 0x18),*(uint *)((int)pvVar35 + 0x24));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 452,
-      "match": "(uint *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pvVar35 + 0x18),*(uint *)((int)pvVar35 + 0x24));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 454,
-      "match": "(void *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pvVar35 = (void *)((int)pvVar35 + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 504,
-      "match": "(int *)((int)local_88",
-      "severity": "moderate",
-      "text": "if ((*(int *)((int)local_88 + 4) == 3) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 505,
-      "match": "(int *)((int)local_88",
-      "severity": "moderate",
-      "text": "(*(int *)((int)local_88 + 0x14) == *(int *)((int)local_84 + 0x14))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 505,
-      "match": "(int *)((int)local_84",
-      "severity": "moderate",
-      "text": "(*(int *)((int)local_88 + 0x14) == *(int *)((int)local_84 + 0x14))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 512,
-      "match": "(int *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 525,
-      "match": "(void *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pvVar35 = (void *)((int)pvVar35 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 531,
-      "match": "(uint *)((int)local_134",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_134 + 4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 538,
-      "match": "(void *)((int)local_88",
-      "severity": "moderate",
-      "text": "local_88 = (void *)((int)local_88 + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 543,
-      "match": "(void *)((int)local_84",
-      "severity": "moderate",
-      "text": "local_84 = (void *)((int)local_84 + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 585,
-      "match": "(CVector3f *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "(CVector3f *)((int)this_ptr->vertex_data_ptr[0]->bone_weights + iVar20 + 0xc)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 644,
-      "match": "(int *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)pvVar35 + 4) == 3) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 645,
-      "match": "(int *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pCVar26 = &local_188->min + *(int *)((int)pvVar35 + 0x18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 646,
-      "match": "(int *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 650,
-      "match": "(int *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pCVar29 = &local_188->min + *(int *)((int)pvVar35 + 0x30);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 676,
-      "match": "(void *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pvVar35 = (void *)((int)pvVar35 + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 740,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "for (iVar21 = 0; iVar21 < *(int *)((int)this_ptr->parts[0].tri_counts + iVar20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 742,
-      "match": "(uint *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pvVar35 + 0xc) = 0xffffffff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 743,
-      "match": "(int *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar35 + 8) = iVar31;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 744,
-      "match": "(void *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pvVar35 = (void *)((int)pvVar35 + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 746,
-      "match": "(void *)((int)local_15c",
-      "severity": "moderate",
-      "text": "local_15c = (void *)((int)local_15c +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 747,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->parts[0].tri_counts + iVar20) * 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 761,
-      "match": "(float *)(local_124 * 4 + (int)local_174",
-      "severity": "moderate",
-      "text": "pfVar21 = (float *)(local_124 * 4 + (int)local_174);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 771,
-      "match": "(int *)((int)local_7c",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)local_7c + 4) == 3) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 782,
-      "match": "(int *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 797,
-      "match": "(void *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pvVar35 = (void *)((int)pvVar35 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 803,
-      "match": "(int *)((int)local_7c",
-      "severity": "moderate",
-      "text": "((*(int *)((int)local_7c + 0xc) < 0 ||",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 805,
-      "match": "(int *)((int)local_7c",
-      "severity": "moderate",
-      "text": "*(float *)(*(int *)((int)local_7c + 0xc) * 4 + (int)local_174))))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 814,
-      "match": "(void *)((int)local_7c",
-      "severity": "moderate",
-      "text": "local_7c = (void *)((int)local_7c + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 820,
-      "match": "(int *)((int)local_184",
-      "severity": "moderate",
-      "text": "iVar31 = *(int *)((int)local_184 + local_11c * 0x3c + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 821,
-      "match": "(int *)((int)local_184",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_184 + local_11c * 0x3c + 0xc) = local_124;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 882,
-      "match": "(int *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)pvVar35 + 4) == 3) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 883,
-      "match": "(int *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "iVar20 = *(int *)((int)pvVar35 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 884,
-      "match": "(int *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "iVar24 = *(int *)((int)pvVar35 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 903,
-      "match": "(void *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pvVar35 = (void *)((int)pvVar35 + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 930,
-      "match": "(uint *)((int)puVar23",
-      "severity": "moderate",
-      "text": "uStack_2d8 = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 931,
-      "match": "(ushort *)((int)puVar23",
-      "severity": "moderate",
-      "text": "uVar1 = *(ushort *)((int)puVar23 + 10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1095,
-      "match": "(uint *)((int)puVar23",
-      "severity": "moderate",
-      "text": "uStack_2ec = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1096,
-      "match": "(ushort *)((int)puVar23",
-      "severity": "moderate",
-      "text": "uVar1 = *(ushort *)((int)puVar23 + 10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1174,
-      "match": "(int *)((int)piVar35",
-      "severity": "moderate",
-      "text": "piVar35 = (int *)((int)piVar35 + (uint)bVar39 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1176,
-      "match": "(int *)((int)piVar30",
-      "severity": "moderate",
-      "text": "piVar30 = (int *)((int)piVar30 + (uint)bVar39 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1209,
-      "match": "(int *)((int)local_4c",
-      "severity": "moderate",
-      "text": "if (((*(int *)((int)local_4c + 4) == 3) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1210,
-      "match": "(int *)((int)local_4c",
-      "severity": "moderate",
-      "text": "(local_3c == *(int *)((int)local_4c + 8))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1211,
-      "match": "(int *)((int)local_4c",
-      "severity": "moderate",
-      "text": "(*(int *)((int)local_4c + 0xc) < 0)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1215,
-      "match": "(int *)((int)local_4c",
-      "severity": "moderate",
-      "text": "iVar31 = *(int *)((int)local_4c + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1251,
-      "match": "(int *)((int)pvVar37",
-      "severity": "moderate",
-      "text": "pCVar28 = &local_188->min + *(int *)((int)pvVar37 + 0x18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1261,
-      "match": "(float *)((int)pSVar9",
-      "severity": "moderate",
-      "text": "local_218 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0xc) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1263,
-      "match": "(float *)((int)pSVar9",
-      "severity": "moderate",
-      "text": "local_214 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0x10) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1265,
-      "match": "(float *)((int)pSVar9",
-      "severity": "moderate",
-      "text": "local_210 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0x14) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1281,
-      "match": "(int *)((int)pvVar37",
-      "severity": "moderate",
-      "text": "iVar31 = *(int *)((int)pvVar37 + 0x1c) >> 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1282,
-      "match": "(int *)((int)pvVar37",
-      "severity": "moderate",
-      "text": "iVar20 = *(int *)((int)pvVar37 + 0x20) >> 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1295,
-      "match": "(void *)((int)pvVar37",
-      "severity": "moderate",
-      "text": "pvVar37 = (void *)((int)pvVar37 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1307,
-      "match": "(int *)((int)local_50",
-      "severity": "moderate",
-      "text": "if (((*(int *)((int)local_50 + 4) == 3) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1308,
-      "match": "(int *)((int)local_50",
-      "severity": "moderate",
-      "text": "(local_3c != *(int *)((int)local_50 + 8))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1309,
-      "match": "(int *)((int)local_50",
-      "severity": "moderate",
-      "text": "(*(int *)((int)local_50 + 0xc) < 0)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1316,
-      "match": "(int *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1322,
-      "match": "(int *)((int)local_50",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_50 + (iVar31 % 3) * 0xc + 0x18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1326,
-      "match": "(void *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "pvVar35 = (void *)((int)pvVar35 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1332,
-      "match": "(void *)((int)local_b4",
-      "severity": "moderate",
-      "text": "} while (pvVar35 != (void *)((int)local_b4 + 0x24));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1334,
-      "match": "(int *)((int)local_50",
-      "severity": "moderate",
-      "text": "local_ac = *(int *)((int)local_50 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1341,
-      "match": "(void *)((int)local_50",
-      "severity": "moderate",
-      "text": "local_50 = (void *)((int)local_50 + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1353,
-      "match": "(void *)((int)local_4c",
-      "severity": "moderate",
-      "text": "local_4c = (void *)((int)local_4c + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 987,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 377,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar31 = 0x19; iVar31 != 0; iVar31 = iVar31 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 1147,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (uVar18 = uVar25 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 549,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_30c.min.x = (local_188->min).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 554,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_30c.max.x = (local_188->min).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 570,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_324.min.x = pCVar28->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 575,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_324.max.x = pCVar28->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 942,
-      "match": "CONCAT22",
-      "severity": "moderate",
-      "text": "puVar34[2] = CONCAT22(uVar1,uStack_2d8);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 1107,
-      "match": "CONCAT22",
-      "severity": "moderate",
-      "text": "puVar34[2] = CONCAT22(uVar1,uStack_2ec);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 686,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_80);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 926,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 1019,
-      "match": "(int)&NAME byte-offset arithmetic split across lines",
-      "severity": "moderate",
-      "text": "local_c8 = (short *)((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 1027,
-      "match": "(int)&NAME byte-offset arithmetic split across lines",
-      "severity": "moderate",
-      "text": "local_c0 = (short *)((int)&(this_ptr->tri_data_ptr[0]->",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 1091,
-      "match": "(int)&NAME byte-offset arithmetic split across lines",
-      "severity": "moderate",
-      "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar13->owner`). Replace `pCVar13->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 564,
-      "match": "pCVar13 = (T *)&pCVar13->FIELD",
-      "severity": "moderate",
-      "text": "pCVar13 = (CBoundingBox3D *)&pCVar13->max;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 608,
-      "match": "pCVar11 = (T *)&pCVar11->FIELD",
-      "severity": "moderate",
-      "text": "pCVar11 = (CBoundingBox3D *)&pCVar11->max;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar12`. Replace those `pCVar12->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 852,
-      "match": "pCVar12 = (T *)(pCVar12->tri_count + CONST)",
-      "severity": "moderate",
-      "text": "pCVar12 = (CDeformableModel *)(pCVar12->tri_count + 3);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar37` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar37->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 1299,
-      "match": "pSVar37 = (T *)&(pSVar37->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pSVar37 = (SInputFace *)&(pSVar37->vertex_indices).vertex_index_1;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar27` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar27`. Replace those `pCVar27->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 1373,
-      "match": "pCVar27 = (T *)(pCVar27->tri_count + CONST)",
-      "severity": "moderate",
-      "text": "pCVar27 = (CDeformableModel *)(pCVar27->tri_count + 3);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 324,
-      "match": "(uint *)((int)local_478",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_478 + local_144),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 414,
-      "match": "(uint *)((int)pvVar35",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pvVar35 + 4) = 3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Redundant assignment of 'piVar35' to itself.",
-      "line": 1141,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "piVar35 = piVar35;",
-      "type": "static_self_assignment"
-    }
-  ]
+  "suspects": []
 }
