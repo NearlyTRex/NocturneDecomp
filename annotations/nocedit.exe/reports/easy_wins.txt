@@ -14,43 +14,13 @@ PRIORITY 1: Files with 1-2 functions remaining
     - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
       Suspects: unrolled_memcpy, unrolled_memcpy
 
-  sound/mp3.cpp (1 remaining of 57)
-    - sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670
-      Suspects: struct_field_overrun
-
-  core/bugs.cpp (1 remaining of 44)
-    - core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
-      Suspects: concat_reconstruction
-
   core/glass.cpp (1 remaining of 24)
     - core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
       Suspects: unrolled_memcpy, unrolled_memcpy
 
-  core/procedur.cpp (1 remaining of 4)
-    - core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
-      Suspects: concat_reconstruction
-
-  core/fire.cpp (1 remaining of 185)
-    - core_fire.cpp_updateTextureAnimCounts_FUN_004c3870
-      Suspects: signed_shift_global_idiom
-
-  core/morph.cpp (1 remaining of 49)
-    - core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
-      Suspects: signed_shift_global_idiom, signed_shift_global_idiom
-
   core/dmodel.cpp (1 remaining of 66)
     - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
       Suspects: unrolled_memcpy, unrolled_memcpy
-
-  core/menu.cpp (1 remaining of 22)
-    - core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
-      Suspects: signed_shift_global_idiom, signed_shift_global_idiom
-
-  sound/snddx.cpp (2 remaining of 32)
-    - sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340
-      Suspects: signed_shift_global_idiom, signed_shift_global_idiom
-    - sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
-      Suspects: signed_shift_global_idiom, signed_shift_global_idiom
 
   core/netgame.cpp (2 remaining of 64)
     - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
@@ -58,57 +28,24 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
       Suspects: unrolled_memcpy
 
-  core/setedit.cpp (2 remaining of 58)
-    - core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
-      Suspects: signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom
-    - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
-      Suspects: signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom, signed_shift_global_idiom
+  core/gabriela.cpp (2 remaining of 38)
+    - core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
+      Suspects: warning_type_propagation, unrolled_memcpy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy
+    - core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550
+      Suspects: warning_type_propagation, unrolled_memcpy, unrolled_memcpy, unrolled_memcpy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy, missing_cave_copy
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [concat_reconstruction] - 6 functions
-    core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00                 ( 47 lines)
-    core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80                   ( 47 lines)
-    core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0                  ( 47 lines)
-    core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40                    ( 47 lines)
-    engine_clipper.c_interpolateVertexTopClip_FUN_00435d00                 ( 49 lines)
-    engine_clipper.c_interpolateVertexRightClip_FUN_00435b00               ( 49 lines)
-
-  [signed_shift_global_idiom] - 3 functions
-    core_fire.cpp_updateTextureAnimCounts_FUN_004c3870                     ( 12 lines)
-    shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0             ( 48 lines)
-    shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410              ( 48 lines)
-
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
-
-  core/fire.cpp (99.5% complete)
-    1 functions remaining:
-      core_fire.cpp_updateTextureAnimCounts_FUN_004c3870 (12 lines)
-        Types: ['signed_shift_global_idiom']
 
   core/dmodel.cpp (98.5% complete)
     1 functions remaining:
       core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines)
         Types: ['unrolled_memcpy']
-
-  sound/mp3.cpp (98.2% complete)
-    1 functions remaining:
-      sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670 (69 lines)
-        Types: ['struct_field_overrun']
-
-  core/morph.cpp (98.0% complete)
-    1 functions remaining:
-      core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (415 lines)
-        Types: ['signed_shift_global_idiom']
-
-  core/bugs.cpp (97.7% complete)
-    1 functions remaining:
-      core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400 (108 lines)
-        Types: ['concat_reconstruction']
 
   engine/pod.cpp (97.1% complete)
     1 functions remaining:
@@ -121,28 +58,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['unrolled_memcpy']
       core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines)
         Types: ['unrolled_memcpy']
-
-  core/setedit.cpp (96.6% complete)
-    2 functions remaining:
-      core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (303 lines)
-        Types: ['signed_shift_global_idiom']
-      core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines)
-        Types: ['signed_shift_global_idiom']
-
-  shape/edittool.cpp (96.0% complete)
-    6 functions remaining:
-      shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 (253 lines)
-        Types: ['signed_shift_global_idiom']
-      shape_edittool.cpp_showTextInputDialog_FUN_0049db10 (139 lines)
-        Types: ['signed_shift_global_idiom']
-      shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0 (48 lines)
-        Types: ['signed_shift_global_idiom']
-      shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 (50 lines)
-        Types: ['signed_shift_global_idiom']
-      shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 (225 lines)
-        Types: ['signed_shift_global_idiom']
-      shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410 (48 lines)
-        Types: ['signed_shift_global_idiom']
 
   core/glass.cpp (95.8% complete)
     1 functions remaining:
@@ -158,28 +73,12 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines)
         Types: ['missing_cave_copy']
 
-  core/menu.cpp (95.5% complete)
-    1 functions remaining:
-      core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 (53 lines)
-        Types: ['signed_shift_global_idiom']
-
-  sound/snddx.cpp (93.8% complete)
+  core/gabriela.cpp (94.7% complete)
     2 functions remaining:
-      sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340 (61 lines)
-        Types: ['signed_shift_global_idiom']
-      sound_snddx.cpp_fillStreamBuffer_FUN_005adff0 (60 lines)
-        Types: ['signed_shift_global_idiom']
-
-  core/xform.cpp (93.4% complete)
-    4 functions remaining:
-      core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00 (47 lines)
-        Types: ['concat_reconstruction']
-      core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80 (47 lines)
-        Types: ['concat_reconstruction']
-      core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0 (47 lines)
-        Types: ['concat_reconstruction']
-      core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40 (47 lines)
-        Types: ['concat_reconstruction']
+      core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (252 lines)
+        Types: ['missing_cave_copy', 'unrolled_memcpy', 'warning_type_propagation']
+      core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (115 lines)
+        Types: ['missing_cave_copy', 'unrolled_memcpy', 'warning_type_propagation']
 
 ====================================================================================================
 ALL REMAINING FILES
@@ -189,16 +88,15 @@ ALL REMAINING FILES
   core/manpuz.cpp                                               85.7%  (54/63 clean, 9 remaining)
   core/msnedit.cpp                                              85.7%  (54/63 clean, 9 remaining)
   core/scat.cpp                                                 84.0%  (21/25 clean, 4 remaining)
-  core/gabriela.cpp                                             81.6%  (31/38 clean, 7 remaining)
   core/inv.cpp                                                  81.4%  (35/43 clean, 8 remaining)
   shape/cramtex.cpp                                             81.0%  (17/21 clean, 4 remaining)
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
   core/wateract.cpp                                             78.3%  (18/23 clean, 5 remaining)
   core/ghoul.cpp                                                77.8%  (14/18 clean, 4 remaining)
+  engine/clipper.c                                              75.0%  (21/28 clean, 7 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
   shape/superopt.cpp                                            74.7%  (139/186 clean, 47 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)
   shape/design.c                                                69.3%  (113/163 clean, 50 remaining)
   shape/meshlod.cpp                                             68.5%  (85/124 clean, 39 remaining)
   engine/fileio.cpp                                             68.5%  (50/73 clean, 23 remaining)
-  engine/clipper.c                                              67.9%  (19/28 clean, 9 remaining)

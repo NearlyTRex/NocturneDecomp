@@ -87,8 +87,7 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00427400(CBugs *this_ptr,CDe
           this_ptr->bugs[iVar4].current_vertex = -1;
           this_ptr->bugs[iVar4].dest_vertex = g_BugsSortedVertexIndices[iVar10];
           iVar7 = core_actor_cpp_getRandomInt_FUN_0040cc70
-                            (0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,
-                                              this_ptr->swarm_vertex_count) / 0xf));
+                            (0,this_ptr->swarm_vertex_count / 0xf);
           this_ptr->bugs[iVar4].downward_bias = iVar7;
           iVar10 = iVar10 + 1;
           if ((this_ptr->swarm_vertex_count <= iVar10) ||

@@ -19,7 +19,6 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   int iVar5;
   int iVar8;
   char *pcVar8;
-  int iVar11;
   int bottom_pos;
   int top_pos;
   int iVar9;
@@ -130,8 +129,6 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   else if (this_ptr->dialog_result == 2) {
     iVar13 = iVar13 + iVar2;
   }
-  iVar11 = g_WindowWidth >> 0x1f;
-  iVar8 = g_WindowWidth + iVar11 * -0x80;
   iVar3 = g_WindowHeight / 0x60;
   iVar9 = 0;
   iVar15 = 0;
@@ -156,7 +153,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     }
     local_1c = shape_edittool_cpp_calculateButtonHeight_FUN_004a6970((char *)0x0);
     iVar9 = iVar3 + local_1c;
-    local_20 = local_18 * iVar15 + (local_18 - 1) * ((int)(iVar8 - (uint)(iVar11 << 6 < 0)) >> 7);
+    local_20 = local_18 * iVar15 + (local_18 - 1) * (g_WindowWidth / 0x80);
     if (this_ptr->dialog_result == 2) {
       iVar9 = iVar9 + iVar3;
     }

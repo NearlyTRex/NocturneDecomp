@@ -86,8 +86,7 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_
   if (local_48 < iVar3) {
     local_48 = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0("Cancel");
   }
-  iVar3 = (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x80) -
-               (uint)((g_WindowWidth >> 0x1f) << 6 < 0)) >> 7;
+  iVar3 = g_WindowWidth / 0x80;
   iVar4 = g_WindowHeight / 0x60;
   if (dialog_mode == 0) {
     iVar8 = local_48 * iVar2;

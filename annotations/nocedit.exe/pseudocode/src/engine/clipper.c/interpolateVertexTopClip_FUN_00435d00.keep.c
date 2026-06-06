@@ -19,7 +19,7 @@ void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_00435d00(SRenderVerte
   iVar4 = uVar3 - ((v2->projected_vertex).transformed_y + (v2->projected_vertex).transformed_z);
   if ((int)uVar3 < iVar4) {
     if (-iVar4 < (int)uVar3) {
-      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);
+      iVar4 = (int)(((longlong)(int)uVar3 << 0x1f) / (longlong)iVar4);
     }
     else {
       iVar4 = -0x80000000;

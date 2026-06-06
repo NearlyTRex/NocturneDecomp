@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 62,
+    "complexity_score": 47,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 47,
-    "suspect_count": 1,
-    "suspect_types": [
-      "concat_reconstruction"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 136
   },
   "cross_references": [
@@ -174,6 +172,15 @@
       "severity": "moderate",
       "text": "vertex_out->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar4,uVar4) + vertex_a->r;",
       "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 16,
+      "match": "CONCAT44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar5);",
+      "type": "concat_reconstruction"
     }
   ],
   "stack_frame": {
@@ -206,14 +213,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 16,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar5);",
-      "type": "concat_reconstruction"
-    }
-  ]
+  "suspects": []
 }

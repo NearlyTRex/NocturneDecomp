@@ -4,15 +4,15 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6183 functions
-  1 suspects: 41 functions
-  2 suspects: 58 functions
-  3 suspects: 34 functions
-  4 suspects: 34 functions
+  0 suspects: 6210 functions
+  1 suspects: 26 functions
+  2 suspects: 51 functions
+  3 suspects: 33 functions
+  4 suspects: 32 functions
   5 suspects: 17 functions
   6 suspects: 18 functions
   7 suspects: 7 functions
-  8 suspects: 13 functions
+  8 suspects: 11 functions
   9 suspects: 4 functions
   10 suspects: 5 functions
   11 suspects: 3 functions
@@ -37,20 +37,8 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [concat_reconstruction] (15 functions)
+  [concat_reconstruction] (7 functions)
   ------------------------------------------------------------
-    core_xform.cpp_clipInterpolateBottomPlane_FUN_005f ( 47 lines)
-      iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) !=...
-    core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c ( 47 lines)
-      iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) !=...
-    core_xform.cpp_clipInterpolateRightPlane_FUN_005f7 ( 47 lines)
-      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
-    core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d4 ( 47 lines)
-      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
-    engine_clipper.c_interpolateVertexTopClip_FUN_0043 ( 49 lines)
-      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
-    engine_clipper.c_interpolateVertexRightClip_FUN_00 ( 49 lines)
-      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) !=...
     engine_clipper.c_interpolateVertexBottomClip_FUN_0 ( 50 lines)
       iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) !=...
     engine_clipper.c_interpolateVertexLeftClip_FUN_004 ( 50 lines)
@@ -65,12 +53,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) !=...
     engine_clipper.c_interpolateVertexBottomClipAdvanc ( 55 lines)
       iVar3 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) !=...
-    core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400    (108 lines)
-      (0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,...
-    core_procedur.cpp_CProceduralTexture_createWaterFr (119 lines)
-      *piVar8 = (uint)bVar3 * 0x10000 + (uint)CONCAT11(bVar3,bVar3...
 
-  [unrolled_memcpy] (7 functions)
+  [unrolled_memcpy] (6 functions)
   ------------------------------------------------------------
     shape_design.c_selectVertexToDelete_FUN_0045c5b0   ( 52 lines)
       g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1...
@@ -80,8 +64,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       packet.players[iVar5].addr = this_ptr->players[iVar5].addr;...
     shape_superopt.cpp_CObj_removeUnusedVertices_FUN_0 (115 lines)
       dst_vert->position = pCVar5->position;...
-    core_gabriela.cpp_CGabriella_processAI_FUN_004d419 (206 lines)
-      CStack_48.x = CStack_a8.x;...
     core_netgame.cpp_CNetGame_applyNewGameSettings_FUN (272 lines)
       this_ptr->players[local_44[3]].ready_flag = localPkt.players...
     shape_superopt.cpp_CObj_removeTJunctions_FUN_005d4 (447 lines)
@@ -101,19 +83,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       *(double *)((int)&((local_58.vertex_data)->position).x + iVa...
     shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
       puVar10 = (uint *)(iVar14 + (int)puVar9);...
-
-  [signed_shift_global_idiom] (5 functions)
-  ------------------------------------------------------------
-    core_fire.cpp_updateTextureAnimCounts_FUN_004c3870 ( 12 lines)
-      iVar1 = g_GlobalDeltaTimeInt >> 0x1f;...
-    shape_edittool.cpp_CEditorTools_restoreScreen_FUN_ ( 48 lines)
-      iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;...
-    shape_edittool.cpp_CEditorTools_backupScreen_FUN_0 ( 48 lines)
-      iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;...
-    shape_edittool.cpp_CEditorTools_restoreWindowAndCl ( 50 lines)
-      iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;...
-    shape_edittool.cpp_CPickList_calculateLayoutAndCre (225 lines)
-      iVar11 = g_WindowWidth >> 0x1f;...
 
   [shadow_pointer_walk] (3 functions)
   ------------------------------------------------------------
@@ -135,11 +104,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
   ------------------------------------------------------------
     shape_design.c_quantizePaletteColors_FUN_0046b770  ( 65 lines)
       do {...
-
-  [struct_field_overrun] (1 functions)
-  ------------------------------------------------------------
-    sound_mp3.cpp_CFileBitStream_readAllocationValues_ ( 69 lines)
-      output_allocation->bit_allocations[iVar6 + 0x20] = uVar3 & 0...
 
   [raw_address_constant] (1 functions)
   ------------------------------------------------------------
@@ -187,8 +151,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/quantize.cpp, Lines: 48, Types: ['pointer_cast']
   shape_design.c_detachFaces_FUN_0046eba0
     File: shape/design.c, Lines: 51, Types: ['unrolled_memcpy']
-  core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
-    File: core/menu.cpp, Lines: 53, Types: ['signed_shift_global_idiom']
   core_mimic.cpp_CMimic_processMorph_FUN_00520ba0
     File: core/mimic.cpp, Lines: 53, Types: ['pointer_cast']
   shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0
@@ -201,10 +163,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/inv.cpp, Lines: 58, Types: ['shadow_pointer_walk']
   shape_design.c_writePolygonModel_FUN_0045a320
     File: shape/design.c, Lines: 58, Types: ['unrolled_strcpy', 'warning_inlined_function']
-  sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
-    File: sound/snddx.cpp, Lines: 60, Types: ['signed_shift_global_idiom']
-  sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340
-    File: sound/snddx.cpp, Lines: 61, Types: ['signed_shift_global_idiom']
   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb74
     File: core/wateract.cpp, Lines: 64, Types: ['unrolled_memcpy']
   shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600
@@ -245,26 +203,18 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mimic.cpp, Lines: 134, Types: ['pointer_cast']
   core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVP
     File: core/skeledit.cpp, Lines: 139, Types: ['missing_cave_copy']
-  shape_edittool.cpp_showTextInputDialog_FUN_0049db10
-    File: shape/edittool.cpp, Lines: 139, Types: ['signed_shift_global_idiom']
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     File: shape/meshlod.cpp, Lines: 143, Types: ['unrolled_memcpy']
-  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
-    File: core/gabriela.cpp, Lines: 160, Types: ['pointer_cast', 'unrolled_memset']
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
     File: core/wateract.cpp, Lines: 210, Types: ['shadow_pointer_walk', 'unrolled_memset']
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_F
     File: engine/fileio.cpp, Lines: 244, Types: ['unrolled_strcpy']
-  shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
-    File: shape/edittool.cpp, Lines: 253, Types: ['signed_shift_global_idiom']
   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
     File: core/inv.cpp, Lines: 366, Types: ['concat_reconstruction']
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
     File: engine/pod.cpp, Lines: 368, Types: ['unrolled_memcpy']
   core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0
     File: core/glass.cpp, Lines: 387, Types: ['unrolled_memcpy']
-  core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
-    File: core/morph.cpp, Lines: 415, Types: ['signed_shift_global_idiom']
   shape_superopt.cpp_CP3D_copy2_FUN_005d84a0
     File: shape/superopt.cpp, Lines: 10, Types: ['pointer_cast']
   shape_superopt.cpp_CVec_copy3_FUN_005d82b0
@@ -311,8 +261,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 103, Types: ['unrolled_strlen']
   shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
     File: shape/superopt.cpp, Lines: 112, Types: ['shadow_pointer_walk']
-  core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60
-    File: core/gabriela.cpp, Lines: 113, Types: ['pointer_cast', 'unrolled_memcpy']
   core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
     File: core/inv.cpp, Lines: 115, Types: ['shadow_pointer_walk']
   shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490

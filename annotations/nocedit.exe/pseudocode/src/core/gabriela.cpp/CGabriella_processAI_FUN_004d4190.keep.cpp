@@ -34,7 +34,6 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
   float fStack_c8;
   float fStack_c4;
   CVector3f local_c0;
-  float local_b4 [3];
   CVector3f CStack_a8;
   float local_9c;
   float local_98;
@@ -81,14 +80,12 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
         iVar7 = g_LocalHeroIndex;
         (this_ptr->base).player_input.action_state.walk = 1;
         pCVar2 = g_HeroActors[iVar7];
-        if (&local_9c != local_b4) {
-          local_9c = (this_ptr->base).base.base.location.position.x -
-                     (pCVar2->base).base.location.position.x;
-          local_98 = (this_ptr->base).base.base.location.position.y -
-                     (pCVar2->base).base.location.position.y;
-          local_94 = (this_ptr->base).base.base.location.position.z -
-                     (pCVar2->base).base.location.position.z;
-        }
+        local_9c = (this_ptr->base).base.base.location.position.x -
+                   (pCVar2->base).base.location.position.x;
+        local_98 = (this_ptr->base).base.base.location.position.y -
+                   (pCVar2->base).base.location.position.y;
+        local_94 = (this_ptr->base).base.base.location.position.z -
+                   (pCVar2->base).base.location.position.z;
         if ((float)10 <
             SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {
           (this_ptr->base).player_input.action_state.run = 1;
@@ -175,11 +172,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
           CStack_a8.x = CStack_48.x + fStack_cc * 3.0f;
           CStack_a8.y = CStack_48.y + fStack_c8 * 3.0f;
           CStack_a8.z = CStack_48.z + fStack_c4 * 3.0f;
-          if (&CStack_48 != &CStack_a8) {
-            CStack_48.x = CStack_a8.x;
-            CStack_48.y = CStack_a8.y;
-            CStack_48.z = CStack_a8.z;
-          }
+          CStack_48 = CStack_a8;
           core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
           core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
           this_ptr_00 = g_CDemonSetPtr;

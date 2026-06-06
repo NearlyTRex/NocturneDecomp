@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 221,
+    "complexity_score": 206,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 206,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 694
   },
   "cross_references": [
@@ -246,6 +244,15 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 191,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CStack_48.x = CStack_a8.x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -561,69 +568,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CGabriella_processAI_FUN_004d4190.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 93,
-          "message": "Uninitialized variable: local_94",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 40,
-          "line": 93,
-          "message": "Uninitialized variable: local_9c",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 62,
-          "line": 93,
-          "message": "Uninitialized variable: local_98",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 191,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "CStack_48.x = CStack_a8.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Uninitialized variable: local_94",
-      "line": 93,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_9c",
-      "line": 93,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_98",
-      "line": 93,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

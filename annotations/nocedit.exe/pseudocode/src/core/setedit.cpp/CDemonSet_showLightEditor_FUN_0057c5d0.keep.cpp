@@ -106,23 +106,19 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
     }
     engine_2d_c_drawText_FUN_00401fd0
               ("3.  Delete light",
-               (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
-                    (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2,iVar6);
+               g_WindowWidth / 4,iVar6);
     iVar4 = iVar6 + 0xb;
     engine_2d_c_drawText_FUN_00401fd0
               ("4.  Precompute visiblity",
-               (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
-                    (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2,iVar4);
+               g_WindowWidth / 4,iVar4);
     engine_2d_c_drawText_FUN_00401fd0("5.  Set ambient light",g_WindowWidth / 2,iVar6);
     engine_2d_c_drawText_FUN_00401fd0("6.  Edit properties",g_WindowWidth / 2,iVar4);
     engine_2d_c_drawText_FUN_00401fd0
               ("7.  Clone a light",
-               ((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
-                     (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + g_WindowWidth / 2,iVar6);
+               g_WindowWidth / 4 + g_WindowWidth / 2,iVar6);
     engine_2d_c_drawText_FUN_00401fd0
               ("S.  Save set",
-               ((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
-                     (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + g_WindowWidth / 2,iVar4);
+               g_WindowWidth / 4 + g_WindowWidth / 2,iVar4);
     wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();

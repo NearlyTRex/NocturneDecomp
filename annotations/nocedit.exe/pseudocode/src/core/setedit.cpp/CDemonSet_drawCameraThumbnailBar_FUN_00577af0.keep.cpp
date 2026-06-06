@@ -68,9 +68,7 @@ int __cdecl core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(CDemo
     }
     shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
               (&g_ThumbnailScrollBar,0,g_WindowHeight + -10,g_WindowWidth + -1,g_WindowHeight + -1);
-    g_ThumbnailScrollBar.max_value =
-         (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
-              (uint)((g_WindowWidth >> 0x1f) << 5 < 0)) >> 6;
+    g_ThumbnailScrollBar.max_value = g_WindowWidth / 0x40;
     g_ThumbnailScrollBar.current_value = (iVar9 + 3) / 4 + ((iVar6 + 3) / 4) * 4;
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&g_ThumbnailScrollBar);
     shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&g_ThumbnailScrollBar);
@@ -94,8 +92,7 @@ int __cdecl core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(CDemo
 LAB_00577d41:
               iVar2 = local_7c - g_ThumbnailScrollBar.scroll_position;
               if ((0 < iVar2 + local_68) &&
-                 (iVar2 < (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
-                               (uint)((g_WindowWidth >> 0x1f) << 5 < 0)) >> 6)) {
+                 (iVar2 < g_WindowWidth / 0x40)) {
                 iVar2 = iVar2 * 0x40;
                 g_ActiveRenderColor = 0;
                 y1 = g_WindowHeight + -10 + (4 - local_6c) * -0x30;

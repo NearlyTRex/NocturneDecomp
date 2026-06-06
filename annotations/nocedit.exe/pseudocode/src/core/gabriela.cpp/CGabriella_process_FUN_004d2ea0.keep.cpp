@@ -87,10 +87,8 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&local_184,pCVar11);
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
   core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(this_ptr,delta_time);
   is_holstering = (uint)((this_ptr->base).base.hit_points <= 0.0);
   if ((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) {
@@ -354,9 +352,7 @@ LAB_004d321d:
                              (&(this_ptr->base).base.model.motion_controller),
         pSVar18->state_index == 0xd)) ||
        ((this_ptr->base).base.base.standing_platform != (CPlatform *)0x0)) {
-      local_178.x = (this_ptr->base).base.position_delta.x;
-      local_178.y = (this_ptr->base).base.position_delta.y;
-      local_178.z = (this_ptr->base).base.position_delta.z;
+      local_178 = (this_ptr->base).base.position_delta;
       pSVar18 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&(this_ptr->base).base.model.motion_controller);
       uVar8 = pSVar18->state_index;
@@ -404,9 +400,8 @@ LAB_004d3cb4:
     (this_ptr->base).base.base.location.position.z =
          pCVar12->z + (this_ptr->base).base.base.location.position.z;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    pCVar16->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+    pCVar16->x = 0.0;
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   if (((is_holstering == 0) && ((this_ptr->base).player_input.action_state.draw != 0)) &&
@@ -629,9 +624,7 @@ LAB_004d344b:
       pCVar16 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                           ((CDemonActor *)this_ptr,&local_94,pCVar16);
       if (&pCVar15->toss_velocity != pCVar16) {
-        (pCVar15->toss_velocity).x = pCVar16->x;
-        (pCVar15->toss_velocity).y = pCVar16->y;
-        (pCVar15->toss_velocity).z = pCVar16->z;
+        pCVar15->toss_velocity = *pCVar16;
       }
       goto LAB_004d4145;
     }

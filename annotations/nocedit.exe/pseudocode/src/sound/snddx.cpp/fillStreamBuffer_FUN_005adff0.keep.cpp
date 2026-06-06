@@ -37,8 +37,7 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_005adff0(void)
       return 0;
     }
     if ((local_20 == (LPVOID)0x0) && (local_18 == g_StreamBlockSizeBytes)) {
-      iVar2 = (int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -
-                   (uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3;
+      iVar2 = g_StreamBitsPerSample / 8;
       pvVar5 = local_1c;
       if (0 < g_StreamChannelCount) {
         iVar3 = 0;

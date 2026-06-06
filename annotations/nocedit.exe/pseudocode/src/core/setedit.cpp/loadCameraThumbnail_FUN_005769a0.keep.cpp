@@ -29,6 +29,8 @@ void __cdecl core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(char *prefix,char
   int local_20;
   char *directory;
   char *mode;
+  byte *src_pixel;
+  byte *palette_entry;
   
   if (0xf9 < thumbnail_index) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
@@ -84,11 +86,10 @@ LAB_00576b4f:
           iVar3 = thumbnail_index * 0x3000 + local_20 * 0x100;
           do {
             iVar6 = iVar3 + 4;
+            src_pixel = (byte *)buffer + local_2c * (local_24 / 0x30) + iVar1 / 0x40;
+            palette_entry = (byte *)(g_ThumbnailPalette + (uint)*src_pixel * 3);
             ((uint *)g_ThumbnailImageBuffer)[iVar3 / 4] =
-                 *(uint *)(g_ThumbnailPalette +
-                                 (uint)*(byte *)(((int)((iVar1 + (iVar1 >> 0x1f) * -0x40) -
-                                                       (uint)((iVar1 >> 0x1f) << 5 < 0)) >> 6) +
-                                                 local_2c * (local_24 / 0x30) + (int)buffer) * 3) & 0xFFFFFF;
+                 palette_entry[0] | palette_entry[1] << 8 | palette_entry[2] << 0x10;
             iVar1 = iVar1 + local_2c;
             iVar3 = iVar6;
           } while (iVar6 != local_28);

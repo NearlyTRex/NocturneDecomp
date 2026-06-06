@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 420,
-    "complexity_score": 190,
+    "complexity_score": 160,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 160,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 580
   },
   "cross_references": [
@@ -227,6 +224,26 @@
     },
     "pcode_op_count": 2151
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "target_actor = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom cascade constant fill (4 sibling fields chained through prior store of `0.0`). Replace with 4 direct stores of the constant in a .keep.",
+      "line": 63,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr->aim_yaw = 0.0;",
+      "type": "unrolled_memset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 324,
     "local_size": 312,
@@ -400,22 +417,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "target_actor = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom cascade constant fill (4 sibling fields chained through prior store of `0.0`). Replace with 4 direct stores of the constant in a .keep.",
-      "line": 63,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "this_ptr->aim_yaw = 0.0;",
-      "type": "unrolled_memset"
-    }
-  ]
+  "suspects": []
 }

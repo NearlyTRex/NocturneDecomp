@@ -51,10 +51,7 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int 
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,
                g_AudioSpectrumTextures +
-               (((int)((g_AudioVisualizationCounter +
-                       (g_AudioVisualizationCounter >> 0x1f) * -0x10000) -
-                      (uint)((g_AudioVisualizationCounter >> 0x1f) << 0xf < 0)) >> 0x10) + x_center
-               & 7));
+               ((g_AudioVisualizationCounter / 0x10000 + x_center) & 7));
     engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10
               (g_CDemonRendererPtr2,&local_2c.base,0x23);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);

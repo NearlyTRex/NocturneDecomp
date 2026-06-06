@@ -77,7 +77,7 @@ void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
       piVar8 = (int *)g_ScreenBufferArray[iVar14];
       for (iCol = 0; iCol < 0x100; iCol = iCol + 1) {
         bVar3 = this_ptr->texture[iVar14 * 0x100 + iCol];
-        piVar8[iCol] = (uint)bVar3 * 0x10000 + (uint)CONCAT11(bVar3,bVar3);
+        piVar8[iCol] = (uint)bVar3 << 0x10 | (uint)bVar3 << 8 | (uint)bVar3;
       }
     }
     local_1c = local_1c + 1;

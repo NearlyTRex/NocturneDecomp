@@ -22,7 +22,7 @@ void __cdecl core_xform_cpp_clipInterpolateRightPlane_FUN_005f7bc0(SRenderVertex
   uVar3 = iVar4 - (vertex_a->projected_vertex).transformed_x;
   if ((int)uVar3 < iVar5) {
     if (-iVar5 < (int)uVar3) {
-      iVar4 = (int)(CONCAT44((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar5);
+      iVar4 = (int)(((longlong)(int)uVar3 << 0x1f) / (longlong)iVar5);
     }
     else {
       iVar4 = -0x80000000;

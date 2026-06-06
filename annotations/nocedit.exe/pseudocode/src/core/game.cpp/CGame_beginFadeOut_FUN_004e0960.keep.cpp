@@ -47,12 +47,8 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
     aiStack_2c[0] = CStack_24.y;
     aiStack_2c[1] = CStack_24.z;
     if (aiStack_2c[1] != 0) {
-      g_IrisFadeCenterX =
-           (int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -
-                (uint)((iStack_30 >> 0x1f) << 0xf < 0)) >> 0x10;
-      g_IrisFadeCenterY =
-           (int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -
-                (uint)((aiStack_2c[0] >> 0x1f) << 0xf < 0)) >> 0x10;
+      g_IrisFadeCenterX = iStack_30 / 0x10000;
+      g_IrisFadeCenterY = aiStack_2c[0] / 0x10000;
       if (0x1e0 < g_WindowHeight) {
         g_IrisFadeCenterX = (g_IrisFadeCenterX * g_WindowWidth) / 0x280;
         g_IrisFadeCenterY = (g_IrisFadeCenterY * g_WindowHeight) / 0x1e0;

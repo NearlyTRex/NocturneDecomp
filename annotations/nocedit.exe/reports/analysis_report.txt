@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6183 (95.8%)
-Functions with suspects: 271 (4.2%)
+Clean functions: 6210 (96.2%)
+Functions with suspects: 244 (3.8%)
 
-Total suspect patterns: 1881
-Average suspects per function: 0.29
+Total suspect patterns: 1816
+Average suspects per function: 0.28
 
-Virtual files: 214 total, 181 at 100%, 195 at 90%+
+Virtual files: 214 total, 191 at 100%, 197 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 50.7
+Average complexity score: 50.5
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,26 +28,26 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              780
-  unrolled_memcpy           254
+  pointer_cast              776
+  unrolled_memcpy           244
   unrolled_strcpy           118
-  static_uninitvar          90
+  static_uninitvar          87
   shadow_pointer_walk       79
   missing_cave_copy         78
   static_self_assignment    68
-  signed_shift_global_idiom 63
   unrolled_strlen           56
-  static_shift_too_many_bits 45
+  static_shift_too_many_bits 39
   bitcast_double_pair       36
+  signed_shift_global_idiom 34
   static_legacy_uninitvar   25
   unrolled_strchr           24
-  unrolled_memset           21
-  concat_reconstruction     19
+  unrolled_memset           18
   warning_inlined_function  17
   raw_address_constant      17
   static_invalid_pointer_cast 14
   bit_int_float_compare     12
-  warning_type_propagation  10
+  concat_reconstruction     11
+  warning_type_propagation  9
   sub84_truncation          9
   stack_param               8
   static_identical_inner_condition 7
@@ -60,7 +60,6 @@ SUSPECT PATTERN BREAKDOWN
   stack_alignment_array     2
   self_copy_guard           2
   static_array_oob_cond     2
-  struct_field_overrun      1
   static_null_pointer_arithmetic 1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
@@ -115,7 +114,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6133 more
+  ... and 6160 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -148,12 +147,12 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 752, suspects: 0, lines: 752)
   00562920: core_script.cpp_editParameterValue_FUN_00562920 (score: 751, suspects: 0, lines: 751)
   00511e50: core_menu.cpp_configureSoundOptions_FUN_00511e50 (score: 743, suspects: 0, lines: 743)
-  004d2ea0: core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 (score: 741, suspects: 4, lines: 691)
+  005b9c10: core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (score: 716, suspects: 0, lines: 716)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (135 functions):
+  pointer_cast (132 functions):
     004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
     004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     004b7ac0: engine_fileio.cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0
@@ -164,9 +163,9 @@ FUNCTIONS BY SUSPECT TYPE
     004b23a0: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
     004ba740: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
-    ... and 125 more
+    ... and 122 more
 
-  unrolled_memcpy (88 functions):
+  unrolled_memcpy (84 functions):
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     004b23a0: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
@@ -177,7 +176,7 @@ FUNCTIONS BY SUSPECT TYPE
     00542470: core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
     0050b9a0: core_manpuz.cpp_copyPanel_FUN_0050b9a0
     00509330: core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330
-    ... and 78 more
+    ... and 74 more
 
   unrolled_strcpy (42 functions):
     004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
@@ -222,19 +221,6 @@ FUNCTIONS BY SUSPECT TYPE
 
   static_self_assignment (0 functions):
 
-  signed_shift_global_idiom (25 functions):
-    004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-    005ae340: sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340
-    005adff0: sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
-    005b0cc0: sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0
-    005b0690: sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690
-    005b12e0: sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0
-    005b0c90: sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90
-    004fee00: core_inv.cpp_CInventory_renderItemModel_FUN_004fee00
-    0057c5d0: core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
-    00577af0: core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
-    ... and 15 more
-
   unrolled_strlen (23 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
     004b2a60: engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
@@ -258,6 +244,19 @@ FUNCTIONS BY SUSPECT TYPE
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
     005d2ac0: shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
 
+  signed_shift_global_idiom (12 functions):
+    004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
+    005b0cc0: sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0
+    005b0690: sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690
+    005b12e0: sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0
+    005b0c90: sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90
+    004fee00: core_inv.cpp_CInventory_renderItemModel_FUN_004fee00
+    00535e10: core_msnedit.cpp_drawPropertyRow_FUN_00535e10
+    0045f1d0: shape_design.c_showFacetPartEditor_FUN_0045f1d0
+    0045ba60: shape_design.c_setupViewMatrix_FUN_0045ba60
+    005ecc10: wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10
+    ... and 2 more
+
   static_legacy_uninitvar (0 functions):
 
   unrolled_strchr (9 functions):
@@ -271,30 +270,15 @@ FUNCTIONS BY SUSPECT TYPE
     0046a970: shape_design.c_cramTextures_FUN_0046a970
     0046bb80: shape_design.c_cramTextureList_FUN_0046bb80
 
-  unrolled_memset (10 functions):
+  unrolled_memset (8 functions):
     00508920: core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
     0053e220: core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
     005571f0: core_scat.cpp_CScat_process_FUN_005571f0
     005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600
     005ea9f0: core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
-    004d2ea0: core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
-    004d6540: core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
     005172c0: shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
     005151e0: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
-
-  concat_reconstruction (17 functions):
-    00437230: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
-    00437360: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
-    00435d00: engine_clipper.c_interpolateVertexTopClip_FUN_00435d00
-    00435c00: engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
-    00435a00: engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
-    00435e00: engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
-    00437490: engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
-    00435b00: engine_clipper.c_interpolateVertexRightClip_FUN_00435b00
-    004375c0: engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
-    00500690: core_inv.cpp_CInventory_renderAllItems_FUN_00500690
-    ... and 7 more
 
   warning_inlined_function (17 functions):
     005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
@@ -328,7 +312,18 @@ FUNCTIONS BY SUSPECT TYPE
     00469220: shape_design.c_addQuadPolygonOctant_FUN_00469220
     00468d20: shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20
 
-  warning_type_propagation (10 functions):
+  concat_reconstruction (9 functions):
+    00437230: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230
+    00437360: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360
+    00435c00: engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00
+    00435a00: engine_clipper.c_interpolateVertexLeftClip_FUN_00435a00
+    00435e00: engine_clipper.c_interpolateVertexNearClip_FUN_00435e00
+    00437490: engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490
+    004375c0: engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0
+    00500690: core_inv.cpp_CInventory_renderAllItems_FUN_00500690
+    0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
+
+  warning_type_propagation (9 functions):
     00558fd0: core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
     005584a0: core_scat.cpp_CScat_blendAimBones_FUN_005584a0
     005dbb70: core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
@@ -338,7 +333,6 @@ FUNCTIONS BY SUSPECT TYPE
     0051fcc0: core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
     004d4d80: core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
     004d5550: core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550
-    004d7120: core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
 
   sub84_truncation (6 functions):
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
@@ -382,8 +376,5 @@ FUNCTIONS BY SUSPECT TYPE
     00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
 
   static_array_oob_cond (0 functions):
-
-  struct_field_overrun (1 functions):
-    0052f670: sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670
 
   static_null_pointer_arithmetic (0 functions):

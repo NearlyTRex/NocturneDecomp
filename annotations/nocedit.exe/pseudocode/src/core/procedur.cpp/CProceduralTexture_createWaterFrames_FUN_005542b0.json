@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 134,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 119,
-    "suspect_count": 1,
-    "suspect_types": [
-      "concat_reconstruction"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 378
   },
   "cross_references": [
@@ -277,6 +275,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 111,
+      "match": "CONCAT11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*piVar8 = (uint)bVar3 * 0x10000 + (uint)CONCAT11(bVar3,bVar3);",
+      "type": "concat_reconstruction"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 68,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -392,14 +399,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 111,
-      "match": "CONCAT11",
-      "severity": "moderate",
-      "text": "*piVar8 = (uint)bVar3 * 0x10000 + (uint)CONCAT11(bVar3,bVar3);",
-      "type": "concat_reconstruction"
-    }
-  ]
+  "suspects": []
 }

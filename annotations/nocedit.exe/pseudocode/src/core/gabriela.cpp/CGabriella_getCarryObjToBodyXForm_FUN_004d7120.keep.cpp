@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
@@ -16,9 +14,7 @@ void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d71
   CLightActor *pCVar1;
   CVector3f *pCVar2;
   CVector3f *pCVar3;
-  int iVar3;
   CMatrix3x4f *pCVar6;
-  byte bVar6;
   CMatrix3x4f CStack_190;
   CMatrix3x4f local_160;
   CMatrix3x4f CStack_130;
@@ -36,7 +32,6 @@ void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d71
   ELightActorType EVar1;
   CDemonActor *actor_ptr;
   
-  bVar6 = 0;
   actor_ptr = (this_ptr->base).base.carry_hands[hand_index].carry_actor;
   iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   local_58.z = 0.0;
@@ -52,11 +47,7 @@ void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d71
   CStack_88.x = (local_a0.min.x + local_a0.max.x) * 0.5f;
   CStack_88.y = (local_a0.min.y + local_a0.max.y) * 0.5f;
   CStack_88.z = (local_a0.min.z + local_a0.max.z) * 0.5f;
-  if (&local_1c != &CStack_88) {
-    local_1c.x = CStack_88.x;
-    local_1c.y = CStack_88.y;
-    local_1c.z = CStack_88.z;
-  }
+  local_1c = CStack_88;
   EVar1 = pCVar1->light_actor_type;
   if (EVar1 == LIGHT_TYPE_LANTERN) {
     local_1c.y = local_a0.max.y;
@@ -77,18 +68,7 @@ void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d71
     core_xform_cpp_buildRotationY_FUN_005f6cc0(-1.5707964,&CStack_190);
     pCVar6 = &CStack_190;
 LAB_004d73e5:
-    CStack_d0.m[0].w = pCVar6->m[0].w;
-    CStack_d0.m[0].x = pCVar6->m[0].x;
-    CStack_d0.m[0].y = pCVar6->m[0].y;
-    CStack_d0.m[0].z = pCVar6->m[0].z;
-    CStack_d0.m[1].w = pCVar6->m[1].w;
-    CStack_d0.m[1].x = pCVar6->m[1].x;
-    CStack_d0.m[1].y = pCVar6->m[1].y;
-    CStack_d0.m[1].z = pCVar6->m[1].z;
-    CStack_d0.m[2].w = pCVar6->m[2].w;
-    CStack_d0.m[2].x = pCVar6->m[2].x;
-    CStack_d0.m[2].y = pCVar6->m[2].y;
-    CStack_d0.m[2].z = pCVar6->m[2].z;
+    CStack_d0 = *pCVar6;
   }
   else {
     if (hand_index == 1) {
@@ -102,11 +82,7 @@ LAB_004d73e5:
             (&CStack_d0,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar1,
              &CStack_130);
   pCVar3 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&CStack_d0,&CStack_4c);
-  if (&local_58 != pCVar3) {
-    local_58.x = pCVar3->x;
-    local_58.y = pCVar3->y;
-    local_58.z = pCVar3->z;
-  }
+  local_58 = *pCVar3;
   local_1c.z = local_a0.max.z * (float)0.29999999999999999 + local_a0.min.z * (float)0.69999999999999996;
 LAB_004d719a:
   if (hand_index == 0) {
@@ -141,11 +117,6 @@ LAB_004d719a:
   local_160.m[0].z = local_160.m[0].z + (local_34.x - pCVar2->x);
   local_160.m[1].z = local_160.m[1].z + (local_34.y - pCVar2->y);
   local_160.m[2].z = local_160.m[2].z + (local_34.z - pCVar2->z);
-  pCVar6 = &local_160;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    out_matrix->m[0].w = pCVar6->m[0].w;
-    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar6 * -2 + 1) * 4);
-    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar6 * -2 + 1) * 4);
-  }
+  *out_matrix = local_160;
   return;
 }

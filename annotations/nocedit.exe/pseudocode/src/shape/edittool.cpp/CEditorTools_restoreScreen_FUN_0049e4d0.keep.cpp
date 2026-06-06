@@ -29,8 +29,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreScreen_FUN_0049e4d0(CEditorT
       } while (iVar1 < g_WindowHeight * 4);
     }
     wincore_windll_cpp_lockFrame_FUN_005b7210();
-    iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;
-    uVar2 = (int)((g_WindowWidth * g_BitsPerPixel + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
+    uVar2 = g_WindowWidth * g_BitsPerPixel / 8;
     iVar4 = 0;
     if (0 < g_WindowHeight) {
       iVar1 = 0;

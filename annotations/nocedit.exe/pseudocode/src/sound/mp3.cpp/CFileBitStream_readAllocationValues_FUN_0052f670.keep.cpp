@@ -35,7 +35,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFil
         do {
           uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40
                             (this_ptr,local_18->bit_count);
-          output_allocation->bit_allocations[local_14 + iVar7 * 0x20] = uVar2 & 0xff;
+          output_allocation[iVar7].bit_allocations[local_14] = uVar2 & 0xff;
           iVar7 = iVar7 + 1;
         } while (iVar7 < iVar1);
       }
@@ -48,8 +48,8 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFil
     do {
       uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,pvVar8->bit_count);
       pvVar8 = pvVar8 + 16;
-      output_allocation->bit_allocations[iVar6 + 0x20] = uVar3 & 0xff;
-      output_allocation->bit_allocations[iVar6] = uVar3 & 0xff;
+      output_allocation[1].bit_allocations[iVar6] = uVar3 & 0xff;
+      output_allocation[0].bit_allocations[iVar6] = uVar3 & 0xff;
       iVar6 = iVar6 + 1;
     } while (iVar6 < iVar4);
   }
@@ -59,7 +59,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFil
       iVar4 = 0;
       if (0 < iVar1) {
         do {
-          output_allocation->bit_allocations[iVar9 + iVar4 * 0x20] = 0;
+          output_allocation[iVar4].bit_allocations[iVar9] = 0;
           iVar4 = iVar4 + 1;
         } while (iVar4 < iVar1);
       }

@@ -119,8 +119,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
         } while (local_30 < 2);
         engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,4);
         wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
-        iVar5 = (int)((g_WindowHeight + (g_WindowHeight >> 0x1f) * -4) -
-                     (uint)((g_WindowHeight >> 0x1f) << 1 < 0)) >> 2;
+        iVar5 = g_WindowHeight / 4;
         iVar15 = -1;
         iVar16 = 0;
         picked_side = 0;

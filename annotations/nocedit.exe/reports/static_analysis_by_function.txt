@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 119
-  Total diagnostics: 344
+  Functions with findings: 116
+  Total diagnostics: 335
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 76, raw .cpp files: 43
+  .keep.cpp files: 73, raw .cpp files: 43
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -242,15 +242,6 @@ shape_design.c_mergeAdjacentPolygons_FUN_00462b70  [.cpp] [Cppcheck (quick)]
   Line  211: [selfAssignment] Redundant assignment of 'pSVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep] [Cppcheck (quick)]
-  File: core/game.cpp  (4 diagnostics)
-
-  Line   51: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   52: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   54: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   55: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0  [.keep] [Cppcheck (quick)]
   File: core/game.cpp  (4 diagnostics)
 
@@ -374,14 +365,6 @@ core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppc
   Line   64: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
   Line   65: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
   Line   66: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-----------------------------------------------------------------------------------------------------
-core_gabriela.cpp_CGabriella_processAI_FUN_004d4190  [.keep] [Cppcheck (quick)]
-  File: core/gabriela.cpp  (3 diagnostics)
-
-  Line   93: [uninitvar] Uninitialized variable: local_94
-  Line   93: [uninitvar] Uninitialized variable: local_9c
-  Line   93: [uninitvar] Uninitialized variable: local_98
 
 ----------------------------------------------------------------------------------------------------
 core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20  [.keep] [Cppcheck (quick)]
@@ -517,13 +500,6 @@ core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0  [.cpp] [Cppcheck (
 
   Line   34: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   40: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  [.keep] [Cppcheck (quick)]
-  File: core/setedit.cpp  (2 diagnostics)
-
-  Line   89: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   90: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppcheck (quick)]

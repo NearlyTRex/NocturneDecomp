@@ -21,7 +21,7 @@ void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_005f7e00(SRenderVerte
                   (vertex_b->projected_vertex).transformed_z);
   if ((int)uVar4 < iVar5) {
     if (-iVar5 < (int)uVar4) {
-      iVar5 = (int)(CONCAT44((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar5);
+      iVar5 = (int)(((longlong)(int)uVar4 << 0x1f) / (longlong)iVar5);
     }
     else {
       iVar5 = -0x80000000;
