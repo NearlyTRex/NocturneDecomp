@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_ptr,float delta_time)
 
 {
@@ -25,10 +23,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
   float fVar7;
   int iVar8;
   SMotion *pSVar9;
-  CMatrix3x4f *pCVar9;
-  CMatrix3x4f *pCVar10;
   bool bVar11;
-  byte bVar12;
   SDamageInfo local_1e4;
   CMatrix3x4f local_1a8;
   CMatrix3x4f local_178;
@@ -59,8 +54,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
   float fVar2;
   float fVar1;
   float fVar3;
-  
-  bVar12 = 0;
+
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                      (&(g_HeroActors[g_LocalHeroIndex]->base).model,&local_10c,0);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -93,15 +87,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
           core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
                     (pCVar1,g_MimicIndices[0],&local_1a8);
           local_4c.y = 0.7;
-          pCVar9 = &local_1a8;
-          pCVar10 = &local_178;
-          for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
-            pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar12 * -8 + 4);
-            pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar12 * -8 + 4);
-            pCVar10->m[0].w = pCVar9->m[0].w;
-            pCVar9 = pCVar9;
-            pCVar10 = pCVar10;
-          }
+          local_178 = local_1a8;
           local_4c.z = 0.3;
           local_4c.x = 0.0;
           pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_b8,&local_4c,&local_178);

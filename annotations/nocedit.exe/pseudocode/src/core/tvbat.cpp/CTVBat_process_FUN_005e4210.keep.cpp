@@ -38,7 +38,6 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
   float fStack_e4;
   float fStack_e0;
   CVector3f local_dc;
-  float local_d0 [3];
   float local_b8;
   float local_b4;
   float local_b0;
@@ -130,11 +129,9 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
       (this_ptr->velocity).y = 0.0f;
       (this_ptr->velocity).z = 0.0f;
     }
-    if (&local_88 != local_d0) {
-      local_88 = local_dc.x - (this_ptr->base).base.base.location.position.x;
-      local_84 = local_dc.y - (this_ptr->base).base.base.location.position.y;
-      local_80 = local_dc.z - (this_ptr->base).base.base.location.position.z;
-    }
+    local_88 = local_dc.x - (this_ptr->base).base.base.location.position.x;
+    local_84 = local_dc.y - (this_ptr->base).base.base.location.position.y;
+    local_80 = local_dc.z - (this_ptr->base).base.base.location.position.z;
     if ((float)0.10000000000000001 <=
         SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {
       return;
@@ -150,11 +147,9 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
     (this_ptr->base).victim = &pCVar14->base;
     if (pCVar14 != (CHero *)0x0) {
       pCVar1 = &(pCVar14->base).base.location;
-      if ((CLocation *)&local_58 != pCVar1) {
-        local_58 = (pCVar1->position).x;
-        local_54 = (pCVar14->base).base.location.position.y;
-        local_50 = (pCVar14->base).base.location.position.z;
-      }
+      local_58 = (pCVar1->position).x;
+      local_54 = (pCVar14->base).base.location.position.y;
+      local_50 = (pCVar14->base).base.location.position.z;
       local_18 = (float)((this_ptr->base).base.base.direction_hint % 8 + -4);
       local_54 = (float)(int)local_18 * (float)0.5 +
                  this_ptr->height_offset + (float)4 + local_54;

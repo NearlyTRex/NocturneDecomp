@@ -158,11 +158,9 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     }
     pCVar12 = g_HeroActors[g_LocalHeroIndex];
     pCVar15 = &(pCVar12->base).base.location;
-    if ((CLocation *)&local_b8 != pCVar15) {
-      local_b8 = (pCVar15->position).x;
-      local_b4 = (pCVar12->base).base.location.position.y;
-      local_b0 = (pCVar12->base).base.location.position.z;
-    }
+    local_b8 = (pCVar15->position).x;
+    local_b4 = (pCVar12->base).base.location.position.y;
+    local_b0 = (pCVar12->base).base.location.position.z;
     if (this_ptr->bat_ai_state == 2) {
       this_ptr->flee_timer = this_ptr->flee_timer - delta_time;
       iVar18 = (int)(&this_ptr->way_point_0)[3 - this_ptr->waypoint_index];

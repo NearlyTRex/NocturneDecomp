@@ -704,78 +704,7 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CTVBat_process_FUN_005e4210.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 14,
-          "line": 139,
-          "message": "Uninitialized variable: local_80",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 36,
-          "line": 139,
-          "message": "Uninitialized variable: local_88",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 58,
-          "line": 139,
-          "message": "Uninitialized variable: local_84",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 55,
-          "line": 160,
-          "message": "Uninitialized variable: local_54",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Uninitialized variable: local_80",
-      "line": 139,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_88",
-      "line": 139,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_84",
-      "line": 139,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_54",
-      "line": 160,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "this_ptr->height_offset + (float)4 + local_54;",
-      "type": "static_uninitvar"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

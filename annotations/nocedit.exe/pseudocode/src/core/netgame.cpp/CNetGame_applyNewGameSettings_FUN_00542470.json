@@ -367,6 +367,24 @@
       "type": "shadow_pointer_walk"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `local_2c` was initialized to the address of an array element's subfield (`local_2c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_2c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_2c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 183,
+      "match": "local_2c = local_2c + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_2c = local_2c + 0xf;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` was initialized to the address of an array element's subfield (`local_18 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_18)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_18->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 265,
+      "match": "local_18 = local_18 + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 = local_18 + 0xf;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 005428b9, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 304,
       "match": "MOVSD.REP",

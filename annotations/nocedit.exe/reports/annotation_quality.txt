@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        35 ( 0.5%)
+  Functions with type issues:        34 ( 0.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      35
+    Undefined types in variables:      34
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   183 functions
+  Excluded (.keep / MMX / by-value):   184 functions
     Wrong calling convention:          1
-    Undefined types in variables:      182
+    Undefined types in variables:      183
     Unresolved stack params:           0
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (35)
+Undefined types in variables (34)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -214,11 +214,6 @@ Undefined types in variables (35)
     Locals:  auStackY_180c (undefined4[1520])
     Suggested: Resolve undefined types to concrete types
 
-  modelStructNotSupported4
-    Address: 0x0041dbe0  File: engine/boss.c
-    Locals:  local_3c (undefined4[13])
-    Suggested: Resolve undefined types to concrete types
-
   CFileManager_catalogPodFile
     Address: 0x004b7460  File: engine/fileio.cpp
     Locals:  local_32b (undefined1[255])
@@ -290,7 +285,7 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (182)
+Undefined types - .keep overrides (183)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1101,6 +1096,11 @@ Undefined types - .keep overrides (182)
   matrixToEulerAngles
     Address: 0x005f5690  File: core/xform.cpp
     Locals:  local_b0 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  modelStructNotSupported4
+    Address: 0x0041dbe0  File: engine/boss.c
+    Locals:  local_3c (undefined4[13])
     Suggested: Resolve undefined types to concrete types
 
   computeBoxStatistics

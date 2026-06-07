@@ -11,8 +11,6 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,_FIL
 
 {
   int iVar1;
-  CInventory *pCVar2;
-  CInventory *pCVar1;
   int iVar2;
   
   _fprintf(file_handle,"%s{ // Inventory\n",g_PropertyNamePrefix);
@@ -23,12 +21,10 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,_FIL
   _fprintf(file_handle,"%s// itemCount\n",g_PropertyNamePrefix);
   _fprintf(file_handle,"%s%d\n",g_PropertyNamePrefix,this_ptr->item_count);
   iVar1 = 0;
-  pCVar2 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      if (this_ptr->selected_weapon == (CWeapon *)pCVar2->items[0]) break;
+      if (this_ptr->selected_weapon == (CWeapon *)this_ptr->items[iVar1]) break;
       iVar1 = iVar1 + 1;
-      pCVar2 = (CInventory *)&pCVar2->owner;
     } while (iVar1 < this_ptr->item_count);
   }
   _fprintf(file_handle,"%s// currentWeapon\n",g_PropertyNamePrefix);
@@ -39,12 +35,10 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,_FIL
   core_inv_cpp_CInventory_saveItems_FUN_004ff3b0(this_ptr,file_handle);
   iVar2 = 0;
   _fprintf(file_handle,"%s// actor data list\n",g_PropertyNamePrefix);
-  pCVar1 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
+      core_actor_cpp_CDemonActor_save_FUN_0040af30(this_ptr->items[iVar2],file_handle);
       iVar2 = iVar2 + 1;
-      core_actor_cpp_CDemonActor_save_FUN_0040af30(pCVar1->items[0],file_handle);
-      pCVar1 = (CInventory *)&pCVar1->owner;
     } while (iVar2 < this_ptr->item_count);
   }
   core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 78,
+    "complexity_score": 53,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 53,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 200
   },
   "cross_references": [
@@ -194,6 +192,26 @@
     },
     "pcode_op_count": 623
   },
+  "resolved_suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 48,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&(pSVar1->position).x + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 49,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "-*(float *)((int)&(pSVar1->position).x + iVar4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 28,
@@ -241,22 +259,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 48,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&(pSVar1->position).x + iVar4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 49,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "-*(float *)((int)&(pSVar1->position).x + iVar4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

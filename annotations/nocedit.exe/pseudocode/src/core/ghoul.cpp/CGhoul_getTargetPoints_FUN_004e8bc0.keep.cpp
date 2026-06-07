@@ -27,9 +27,7 @@ int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e8bc0(CGhoul *this_ptr,
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
             (&(this_ptr->base).base.model,&local_30,g_GhoulIndices[9]);
   if (&local_30 != out_points_array) {
-    out_points_array->x = local_30.x;
-    out_points_array->y = local_30.y;
-    out_points_array->z = local_30.z;
+    *out_points_array = local_30;
   }
   iVar3 = 1;
   local_18 = 0;
@@ -44,17 +42,13 @@ LAB_004e8c4c:
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                            (this_ptr_00,pCVar3,bone_index);
         if (&local_48 != pCVar3) {
-          local_48.x = pCVar3->x;
-          local_48.y = pCVar3->y;
-          local_48.z = pCVar3->z;
+          local_48 = *pCVar3;
         }
         local_48.y = local_30.y * (float)0.29999999999999999 + local_48.y * (float)0.69999999999999996;
         local_48.x = local_30.x * (float)0.5 + local_48.x * (float)0.5;
         pCVar3 = out_points_array + iVar3;
         if (pCVar3 != &local_48) {
-          pCVar3->x = local_48.x;
-          pCVar3->y = local_48.y;
-          pCVar3->z = local_48.z;
+          *pCVar3 = local_48;
         }
 LAB_004e8cce:
         iVar3 = iVar3 + 1;
@@ -73,9 +67,7 @@ LAB_004e8cce:
                            (this_ptr_00,&local_3c,g_GhoulIndices[0]);
         pCVar2 = out_points_array + iVar3;
         if (pCVar2 != pCVar3) {
-          pCVar2->x = pCVar3->x;
-          pCVar2->y = pCVar3->y;
-          pCVar2->z = pCVar3->z;
+          *pCVar2 = *pCVar3;
         }
         goto LAB_004e8cce;
       }
@@ -86,9 +78,7 @@ LAB_004e8cce:
                            (this_ptr_00,&local_60,g_GhoulIndices[10]);
         pCVar3 = out_points_array + iVar3;
         if (pCVar3 != pCVar1) {
-          pCVar3->x = pCVar1->x;
-          pCVar3->y = pCVar1->y;
-          pCVar3->z = pCVar1->z;
+          *pCVar3 = *pCVar1;
         }
         goto LAB_004e8cce;
       }

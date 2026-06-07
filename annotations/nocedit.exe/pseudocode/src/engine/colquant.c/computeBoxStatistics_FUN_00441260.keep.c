@@ -15,9 +15,7 @@ void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapp
   double b_02;
   int iVar8;
   uint uVar9;
-  uint uVar10;
   uint uVar4;
-  uint uVar5;
   int iVar11;
   byte *pbVar12;
   int iVar6;
@@ -76,20 +74,16 @@ void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapp
   for (iVar6 = iVar6 * 4; iVar6 < iVar8 * 4; iVar6 = iVar6 + 4) {
     uVar9 = (uint)workspace->boxes[box_index].avg_red -
             (uint)(byte)workspace->color_data[iVar6];
-    uVar10 = (int)uVar9 >> 0x1f;
-    dVar6 = (double)(int)((uVar9 ^ uVar10) - uVar10);
+    dVar6 = (double)ABS((int)uVar9);
     uVar4 = (uint)workspace->boxes[box_index].avg_green - (uint)(byte)workspace->color_data[iVar6 + 1];
-    uVar5 = (int)uVar4 >> 0x1f;
-    b = (double)(int)((uVar4 ^ uVar5) - uVar5);
+    b = (double)ABS((int)uVar4);
     uVar4 = (uint)workspace->boxes[box_index].avg_blue - (uint)(byte)workspace->color_data[iVar6 + 2];
-    uVar5 = (int)uVar4 >> 0x1f;
-    b_00 = (double)(int)((uVar4 ^ uVar5) - uVar5);
+    b_00 = (double)ABS((int)uVar4);
     uVar4 = (uint)workspace->boxes[box_index].avg_intensity - (uint)(byte)workspace->color_data[iVar6 + 3];
-    uVar5 = (int)uVar4 >> 0x1f;
     dVar2 = workspace->boxes[box_index].spread_green;
     dVar7 = workspace->boxes[box_index].spread_blue;
     dVar1 = workspace->boxes[box_index].spread_intensity;
-    b_01 = (double)(int)((uVar4 ^ uVar5) - uVar5);
+    b_01 = (double)ABS((int)uVar4);
     workspace->boxes[box_index].spread_red = workspace->boxes[box_index].spread_red + dVar6;
     workspace->boxes[box_index].spread_green = dVar2 + b;
     workspace->boxes[box_index].spread_blue = dVar7 + b_00;

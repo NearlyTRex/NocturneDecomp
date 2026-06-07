@@ -3835,9 +3835,19 @@ _SHADOW_PTR_WALK_OTHER_FIELD_WINDOW = 25
 # because the init sits at the top of the loop and a physics/IO loop body
 # (per-vertex integration, per-record scanf) can run 30+ lines before the advance
 # at the bottom — e.g. CChain::process strides `&vertices[1].velocity` 27 lines
-# above its `pCVar20 = pCVar20 + 3`. The init regex's `&ARR[K].SUBFIELD` shape is
-# specific enough that the wider span does not introduce false pairings.
-_SHADOW_PTR_WALK_ELEM_INIT_WINDOW = 40
+# above its `pCVar20 = pCVar20 + 3`. Widened from 40 to 120 because the init is
+# frequently hoisted *above* the loop entirely (not just to its top): a function
+# that sets up several element-subfield walkers, then advances them at the foot of
+# a long body, leaves an 80+ line span — e.g. CMansionPuzzleCircle::setup inits
+# `&gems[0].color.g` ~80 lines above its `local_2c = local_2c + 0x2e`, and
+# CDemonSet::buildCameraDepthData inits `&cameras[0].orientation` ~47 lines above
+# its advance. The init regex's `&ARR[K].SUBFIELD` shape (same-identifier match
+# required) is the real signal — a pointer that points *into* an element and is
+# advanced by N>=2 pointees is a shadow walk by construction — so the wider span
+# only adds true positives and cannot lose existing hits (window growth is
+# monotonic). Regression over core/: +6 TP (setup x2, netgame x3, setedit x1),
+# 0 lost.
+_SHADOW_PTR_WALK_ELEM_INIT_WINDOW = 120
 
 # Bare element-stride advance variant: `IDENT = IDENT + N;` (no cast, N >= 2).
 # Unlike every other form above, the advance line itself carries no signal — a

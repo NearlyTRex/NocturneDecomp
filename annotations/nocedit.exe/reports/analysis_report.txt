@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6254 (96.9%)
-Functions with suspects: 200 (3.1%)
+Clean functions: 6282 (97.3%)
+Functions with suspects: 172 (2.7%)
 
-Total suspect patterns: 1502
-Average suspects per function: 0.23
+Total suspect patterns: 1314
+Average suspects per function: 0.20
 
-Virtual files: 214 total, 203 at 100%, 203 at 90%+
+Virtual files: 214 total, 206 at 100%, 208 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 50.0
+Average complexity score: 49.8
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,38 +28,36 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              688
-  unrolled_memcpy           196
-  unrolled_strcpy           108
-  static_uninitvar          86
-  shadow_pointer_walk       68
-  static_self_assignment    65
+  pointer_cast              662
+  unrolled_memcpy           135
+  unrolled_strcpy           104
+  static_uninitvar          66
+  static_self_assignment    57
   unrolled_strlen           55
+  shadow_pointer_walk       49
   bitcast_double_pair       36
-  static_shift_too_many_bits 34
-  signed_shift_global_idiom 18
+  signed_shift_global_idiom 16
   unrolled_strchr           16
-  warning_inlined_function  15
-  static_legacy_uninitvar   14
+  static_shift_too_many_bits 16
+  warning_inlined_function  14
   raw_address_constant      13
-  unrolled_memset           11
   missing_cave_copy         11
-  static_invalid_pointer_cast 10
-  bit_int_float_compare     10
   sub84_truncation          9
+  static_legacy_uninitvar   9
+  bit_int_float_compare     8
   unaffected_reg            6
+  static_invalid_pointer_cast 6
   static_identical_inner_condition 5
-  static_null_pointer       5
   unrolled_strcat           4
   warning_unreachable       3
-  warning_type_propagation  3
   static_object_index       3
   negative_offset           2
-  concat_reconstruction     2
-  self_copy_guard           2
+  static_null_pointer       2
+  unrolled_memset           2
   static_array_oob_cond     2
   static_null_pointer_arithmetic 1
   stack_alignment_array     1
+  self_copy_guard           1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -113,7 +111,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6204 more
+  ... and 6232 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -125,11 +123,11 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 1474, suspects: 0, lines: 1474)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 1437, suspects: 0, lines: 1437)
   0046bb80: shape_design.c_cramTextureList_FUN_0046bb80 (score: 1367, suspects: 30, lines: 1047)
-  004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 1177, suspects: 10, lines: 1052)
   004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 1153, suspects: 0, lines: 1153)
   005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1140, suspects: 0, lines: 1140)
   005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1076, suspects: 0, lines: 1076)
   004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (score: 1053, suspects: 39, lines: 643)
+  004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 1052, suspects: 0, lines: 1052)
   005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470 (score: 1031, suspects: 0, lines: 1031)
   005390f0: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (score: 997, suspects: 0, lines: 997)
   00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (score: 997, suspects: 16, lines: 832)
@@ -151,7 +149,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (125 functions):
+  pointer_cast (115 functions):
     004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
     004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
@@ -162,22 +160,22 @@ FUNCTIONS BY SUSPECT TYPE
     004ba740: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
     004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-    ... and 115 more
+    ... and 105 more
 
-  unrolled_memcpy (66 functions):
+  unrolled_memcpy (52 functions):
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     004b23a0: engine_fileio.cpp_readTimestampFile_FUN_004b23a0
     004b2d00: engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
     004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
     004bd190: engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-    0050b9a0: core_manpuz.cpp_copyPanel_FUN_0050b9a0
-    00509330: core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330
-    0050a290: core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290
-    00508a70: core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
-    0050aba0: core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0
-    ... and 56 more
+    00555ff0: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
+    00556180: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
+    00516500: shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
+    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    0051b3e0: shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0
+    ... and 42 more
 
-  unrolled_strcpy (36 functions):
+  unrolled_strcpy (33 functions):
     004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
     004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
@@ -188,22 +186,9 @@ FUNCTIONS BY SUSPECT TYPE
     004ba740: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     004bc650: engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
     004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
-    ... and 26 more
+    ... and 23 more
 
   static_uninitvar (0 functions):
-
-  shadow_pointer_walk (31 functions):
-    004ffad0: core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
-    004ff400: core_inv.cpp_CInventory_load_FUN_004ff400
-    004fec10: core_inv.cpp_CInventory_selectItem_FUN_004fec10
-    004ff210: core_inv.cpp_CInventory_save_FUN_004ff210
-    005098f0: core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
-    00508a70: core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
-    004e87e0: core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
-    005ea9f0: core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
-    005eb280: core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280
-    0051f930: core_mimic.cpp_CMimic_updatePose_FUN_0051f930
-    ... and 21 more
 
   static_self_assignment (0 functions):
 
@@ -220,6 +205,19 @@ FUNCTIONS BY SUSPECT TYPE
     0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
     ... and 12 more
 
+  shadow_pointer_walk (21 functions):
+    00555ff0: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
+    00555a40: shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
+    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    0051c6f0: shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0
+    00518490: shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
+    00517630: shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
+    0051ee70: shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
+    005172c0: shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
+    00516000: shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
+    0051a030: shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
+    ... and 11 more
+
   bitcast_double_pair (6 functions):
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
     005cc7c0: shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
@@ -228,11 +226,8 @@ FUNCTIONS BY SUSPECT TYPE
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
     005d2ac0: shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
 
-  static_shift_too_many_bits (0 functions):
-
-  signed_shift_global_idiom (4 functions):
+  signed_shift_global_idiom (3 functions):
     004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-    004fee00: core_inv.cpp_CInventory_renderItemModel_FUN_004fee00
     0045f1d0: shape_design.c_showFacetPartEditor_FUN_0045f1d0
     0045ba60: shape_design.c_setupViewMatrix_FUN_0045ba60
 
@@ -246,8 +241,9 @@ FUNCTIONS BY SUSPECT TYPE
     0046a970: shape_design.c_cramTextures_FUN_0046a970
     0046bb80: shape_design.c_cramTextureList_FUN_0046bb80
 
-  warning_inlined_function (15 functions):
-    004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  static_shift_too_many_bits (0 functions):
+
+  warning_inlined_function (14 functions):
     005568f0: shape_quantize.cpp_displayProgressBar_FUN_005568f0
     00555090: shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
     00554a50: shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
@@ -257,9 +253,8 @@ FUNCTIONS BY SUSPECT TYPE
     00468320: shape_design.c_createKeyframeModel_FUN_00468320
     0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
     0045ce20: shape_design.c_renderSinglePolygon_FUN_0045ce20
-    ... and 5 more
-
-  static_legacy_uninitvar (0 functions):
+    0045a320: shape_design.c_writePolygonModel_FUN_0045a320
+    ... and 4 more
 
   raw_address_constant (7 functions):
     0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
@@ -270,23 +265,9 @@ FUNCTIONS BY SUSPECT TYPE
     005d7e00: shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
     005d7000: shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
 
-  unrolled_memset (5 functions):
-    00508920: core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
-    004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600
-    005ea9f0: core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
-    005172c0: shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
-    005151e0: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
-
   missing_cave_copy (2 functions):
     004e84a0: core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
     0051f930: core_mimic.cpp_CMimic_updatePose_FUN_0051f930
-
-  static_invalid_pointer_cast (0 functions):
-
-  bit_int_float_compare (3 functions):
-    005ebab0: core_wateract.cpp_CWaterActor_processInEditor_FUN_005ebab0
-    00469220: shape_design.c_addQuadPolygonOctant_FUN_00469220
-    00468d20: shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20
 
   sub84_truncation (6 functions):
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
@@ -296,12 +277,18 @@ FUNCTIONS BY SUSPECT TYPE
     005d5e60: shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
 
+  static_legacy_uninitvar (0 functions):
+
+  bit_int_float_compare (2 functions):
+    00469220: shape_design.c_addQuadPolygonOctant_FUN_00469220
+    00468d20: shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20
+
   unaffected_reg (1 functions):
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
 
-  static_identical_inner_condition (0 functions):
+  static_invalid_pointer_cast (0 functions):
 
-  static_null_pointer (0 functions):
+  static_identical_inner_condition (0 functions):
 
   unrolled_strcat (2 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
@@ -312,23 +299,17 @@ FUNCTIONS BY SUSPECT TYPE
     004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
     004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
 
-  warning_type_propagation (3 functions):
-    0051f1d0: core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
-    0051f930: core_mimic.cpp_CMimic_updatePose_FUN_0051f930
-    0051fcc0: core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
-
   static_object_index (0 functions):
 
   negative_offset (2 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
     004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
 
-  concat_reconstruction (1 functions):
-    00500690: core_inv.cpp_CInventory_renderAllItems_FUN_00500690
+  static_null_pointer (0 functions):
 
-  self_copy_guard (2 functions):
-    004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600
-    00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
+  unrolled_memset (2 functions):
+    005172c0: shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
+    005151e0: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 
   static_array_oob_cond (0 functions):
 
@@ -336,3 +317,6 @@ FUNCTIONS BY SUSPECT TYPE
 
   stack_alignment_array (1 functions):
     005173f0: shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0
+
+  self_copy_guard (1 functions):
+    00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620

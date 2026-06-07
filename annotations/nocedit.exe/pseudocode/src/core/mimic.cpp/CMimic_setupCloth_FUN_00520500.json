@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 121,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 51,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 133
   },
   "cross_references": [
@@ -164,6 +161,62 @@
     },
     "pcode_op_count": 380
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)piVar4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(SClothVertex *)((int)pSVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(SClothVertex *)((int)pSVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(int *)((int)piVar4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 34,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005205d9, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 75,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 005205d9: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -180,94 +233,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CMimic_setupCloth_FUN_00520500.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 14,
-          "line": 45,
-          "message": "Redundant assignment of 'piVar4' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 14,
-          "line": 46,
-          "message": "Redundant assignment of 'pSVar5' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(int *)((int)piVar4",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(SClothVertex *)((int)pSVar5",
-      "severity": "moderate",
-      "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(SClothVertex *)((int)pSVar5",
-      "severity": "moderate",
-      "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(int *)((int)piVar4",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 34,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 005205d9, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 75,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 005205d9: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Redundant assignment of 'piVar4' to itself.",
-      "line": 45,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "piVar4 = piVar4;",
-      "type": "static_self_assignment"
-    },
-    {
-      "description": "Redundant assignment of 'pSVar5' to itself.",
-      "line": 46,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pSVar5 = pSVar5;",
-      "type": "static_self_assignment"
-    }
-  ]
+  "suspects": []
 }

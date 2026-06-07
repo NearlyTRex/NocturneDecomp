@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6254 (96.9%)
-Files at 100%: 203
-Files at 90%+: 203
+Clean functions: 6282 (97.3%)
+Files at 100%: 206
+Files at 90%+: 208
 Files at 50%+: 214
 
 ====================================================================================================
@@ -103,6 +103,7 @@ FILES AT 100% (COMPLETE)
   core/icepick.cpp: 23 functions, 1053 lines
   core/imp.cpp: 17 functions, 991 lines
   core/inivar.cpp: 2 functions, 276 lines
+  core/inv.cpp: 43 functions, 3098 lines
   core/keyactor.cpp: 15 functions, 161 lines
   core/ladder.cpp: 19 functions, 576 lines
   core/larva.cpp: 13 functions, 552 lines
@@ -111,6 +112,7 @@ FILES AT 100% (COMPLETE)
   core/lightgun.cpp: 14 functions, 579 lines
   core/litecone.cpp: 12 functions, 170 lines
   core/main.c: 10 functions, 1308 lines
+  core/manpuz.cpp: 63 functions, 1911 lines
   core/marquee.cpp: 16 functions, 426 lines
   core/melee.cpp: 17 functions, 268 lines
   core/menu.cpp: 22 functions, 3575 lines
@@ -172,6 +174,7 @@ FILES AT 100% (COMPLETE)
   core/vehicle.cpp: 20 functions, 751 lines
   core/vessel.cpp: 20 functions, 574 lines
   core/water.cpp: 8 functions, 326 lines
+  core/wateract.cpp: 23 functions, 769 lines
   core/waypoint.cpp: 19 functions, 519 lines
   core/weapon.cpp: 27 functions, 449 lines
   core/weather.cpp: 10 functions, 555 lines
@@ -218,62 +221,30 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 203 files
+Total: 206 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-Total: 0 files
+   95.8% | core/mimic.cpp
+         23/24 clean, 1 remaining
+           - core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (169 lines) [missing_cave_copy]
+
+   94.4% | core/ghoul.cpp
+         17/18 clean, 1 remaining
+           - core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0 (17 lines) [missing_cave_copy]
+
+Total: 2 files
 
 ====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
-   86.0% | core/inv.cpp
-         37/43 clean, 6 remaining
-           - core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 (127 lines) [signed_shift_global_idiom]
-           - core_inv.cpp_CInventory_updateInventory_FUN_004ffad0 (115 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_load_FUN_004ff400 (111 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_selectItem_FUN_004fec10 (58 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_save_FUN_004ff210 (42 lines) [shadow_pointer_walk]
-           - core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (366 lines) [concat_reconstruction]
-   85.7% | core/manpuz.cpp
-         54/63 clean, 9 remaining
-           - core_manpuz.cpp_copyPanel_FUN_0050b9a0 (36 lines) [unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0 (79 lines) [shadow_pointer_walk]
-           - core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330 (124 lines) [pointer_cast, unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290 (68 lines) [unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70 (247 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920 (49 lines) [unrolled_memset]
-           - core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (56 lines) [unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 (144 lines) [unrolled_memcpy]
-           - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines) [pointer_cast, unrolled_memcpy]
    81.0% | shape/cramtex.cpp
          17/21 clean, 4 remaining
            - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (832 lines) [pointer_cast]
            - shape_cramtex.cpp_generateTextureAtlas_FUN_00445820 (353 lines) [pointer_cast]
            - shape_cramtex.cpp_placementCollisionCheck_FUN_00448260 (59 lines) [pointer_cast]
            - shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90 (406 lines) [pointer_cast]
-   78.3% | core/wateract.cpp
-         18/23 clean, 5 remaining
-           - core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0 (210 lines) [shadow_pointer_walk, unrolled_memset]
-           - core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740 (64 lines) [unrolled_memcpy]
-           - core_wateract.cpp_CWaterActor_processInEditor_FUN_005ebab0 (43 lines) [bit_int_float_compare]
-           - core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0 (56 lines) [unrolled_strcpy]
-           - core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280 (87 lines) [pointer_cast, shadow_pointer_walk]
-   77.8% | core/ghoul.cpp
-         14/18 clean, 4 remaining
-           - core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0 (17 lines) [missing_cave_copy]
-           - core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0 (91 lines) [unrolled_memcpy]
-           - core_ghoul.cpp_CGhoul_process_FUN_004e6600 (1052 lines) [self_copy_guard, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_inlined_function]
-           - core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0 (149 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-   75.0% | core/mimic.cpp
-         18/24 clean, 6 remaining
-           - core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (134 lines) [pointer_cast]
-           - core_mimic.cpp_CMimic_ctor_FUN_0051f1d0 (43 lines) [unrolled_strcpy, warning_type_propagation]
-           - core_mimic.cpp_CMimic_processMorph_FUN_00520ba0 (53 lines) [pointer_cast]
-           - core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (169 lines) [missing_cave_copy, pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
-           - core_mimic.cpp_CMimic_setupCloth_FUN_00520500 (51 lines) [pointer_cast, unrolled_memcpy]
-           - core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 (321 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
    74.7% | shape/superopt.cpp
          139/186 clean, 47 remaining
            - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
@@ -451,7 +422,7 @@ FILES AT 50-89%
            - shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (89 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (26 lines) [pointer_cast]
 
-Total: 11 files
+Total: 6 files
 
 ====================================================================================================
 FILES BELOW 50%

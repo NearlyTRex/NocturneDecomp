@@ -11,8 +11,6 @@ void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_00501710(CKeyActor *this_pt
 
 {
   int iVar3;
-  int iVar1;
-  int iVar2;
   float10 fVar3;
   CDemonSet *this_ptr_01;
   CDemonGlobe *this_ptr_00;
@@ -24,10 +22,7 @@ void __cdecl core_keyactor_cpp_CKeyActor_process_FUN_00501710(CKeyActor *this_pt
   fVar3 = (float10)fsin((float10)this_ptr->rotation_angle);
   iVar3 = (int)ROUND(ROUND(fVar3 * (float10)8192 + (float10)16384));
   (this_ptr->globe).intensity_multiplier = iVar3;
-  iVar1 = (iVar3 + (iVar3 >> 0x1f) * -0x100) - (uint)((iVar3 >> 0x1f) << 7 < 0);
-  iVar2 = iVar1 >> 0x1f;
-  (this_ptr->globe).intensity.bytes[0] =
-       (uchar)((int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2);
+  (this_ptr->globe).intensity.bytes[0] = (uchar)(iVar3 / 256 / 4);
   core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(this_ptr_00,1.0);
   this_ptr_01 = g_CDemonSetPtr;
   (this_ptr->globe).corona_mode = 0;

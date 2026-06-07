@@ -318,6 +318,15 @@
       "severity": "moderate",
       "text": "local_24 = (CNetGame *)&local_24->players[0].player_input.action_state.fire;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_1c` was initialized to the address of an array element's subfield (`local_1c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_1c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_1c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 98,
+      "match": "local_1c = local_1c + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c = local_1c + 0xf;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

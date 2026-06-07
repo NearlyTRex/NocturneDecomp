@@ -23,7 +23,8 @@ int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40(CPathMap *this_pt
   int local_1c;
   int local_18;
   int local_14;
-  
+
+  local_38 = start_height;
   iVar2 = start_height;
   local_34 = 1;
   grid_z = start_z;

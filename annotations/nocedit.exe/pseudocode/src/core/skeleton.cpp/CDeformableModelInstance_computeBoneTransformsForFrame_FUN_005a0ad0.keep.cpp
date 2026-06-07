@@ -14,8 +14,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
   int bone_index;
   float local_60;
   CQuaternion4f local_5c;
-  float local_28;
-  float local_24 [2];
+  int local_28;
+  int local_24 [2];
   float fVar3;
   float fVar2;
   CVector3f *pCVar5;
@@ -26,13 +26,13 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
   
   pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
-            (&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,
-             (int *)local_24,&local_60);
+            (&this_ptr->motion_controller,motion_index,animation_time,&local_28,
+             local_24,&local_60);
   bone_index = 0;
   if (0 < pCVar8->bone_count) {
     do {
       core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
-                (pCVar8,bone_index,(int)local_28,(int)local_24[0],local_60,
+                (pCVar8,bone_index,local_28,local_24[0],local_60,
                  &local_5c);
       (output_bone_data->pose_data).bone_rotations[bone_index] = local_5c;
       output_bone_data->bone_scales[bone_index] = 1.0;
@@ -40,14 +40,14 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
     } while (bone_index < pCVar8->bone_count);
   }
   pCVar5 = pCVar8->frame_positions_1;
-  fVar1 = pCVar5[(int)local_24[0]].y;
-  fVar2 = pCVar5[(int)local_24[0]].z;
+  fVar1 = pCVar5[local_24[0]].y;
+  fVar2 = pCVar5[local_24[0]].z;
   fVar7 = 1.0 - local_60;
   pCVar6 = pCVar8->frame_positions_1;
-  fVar3 = pCVar6[(int)local_28].y;
-  fVar4 = pCVar6[(int)local_28].z;
+  fVar3 = pCVar6[local_28].y;
+  fVar4 = pCVar6[local_28].z;
   (output_bone_data->pose_data).root_position.x =
-       pCVar6[(int)local_28].x * fVar7 + pCVar5[(int)local_24[0]].x * local_60;
+       pCVar6[local_28].x * fVar7 + pCVar5[local_24[0]].x * local_60;
   (output_bone_data->pose_data).root_position.y = fVar3 * fVar7 + fVar1 * local_60;
   (output_bone_data->pose_data).root_position.z = fVar4 * fVar7 + fVar2 * local_60;
   (output_bone_data->pose_data).root_position.x =

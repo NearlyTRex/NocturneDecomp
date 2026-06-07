@@ -36,14 +36,14 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_005
   pcVar3 = (ADJ(pvVar4)->light_texture).textures[0].texture_name;
   strcpy(pcVar3,"headlite.raw");
   (ADJ(pvVar4)->gem_pos).z = 0.0;
-  (ADJ(pvVar4)->gem_pos).y = (ADJ(pvVar4)->gem_pos).z;
-  (ADJ(pvVar4)->gem_pos).x = (ADJ(pvVar4)->gem_pos).y;
+  (ADJ(pvVar4)->gem_pos).y = 0.0;
+  (ADJ(pvVar4)->gem_pos).x = 0.0;
   (ADJ(pvVar4)->gem_orient).vec.z = 0.0;
-  (ADJ(pvVar4)->gem_orient).vec.y = (ADJ(pvVar4)->gem_orient).vec.z;
-  (ADJ(pvVar4)->gem_orient).vec.x = (ADJ(pvVar4)->gem_orient).vec.y;
+  (ADJ(pvVar4)->gem_orient).vec.y = 0.0;
+  (ADJ(pvVar4)->gem_orient).vec.x = 0.0;
   (ADJ(pvVar4)->emitter_pos).f.z = 0.0;
-  (ADJ(pvVar4)->emitter_pos).f.y = (ADJ(pvVar4)->emitter_pos).f.z;
-  (ADJ(pvVar4)->emitter_pos).f.x = (ADJ(pvVar4)->emitter_pos).f.y;
+  (ADJ(pvVar4)->emitter_pos).f.y = 0.0;
+  (ADJ(pvVar4)->emitter_pos).f.x = 0.0;
   core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0(ADJ(pvVar4));
   return ADJ(pvVar4);
 }

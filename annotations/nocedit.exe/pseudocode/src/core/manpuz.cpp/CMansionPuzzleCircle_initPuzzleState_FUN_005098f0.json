@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 124,
+    "complexity_score": 79,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 79,
-    "suspect_count": 4,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 178
   },
   "cross_references": [
@@ -98,6 +96,44 @@
     },
     "pcode_op_count": 371
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar2` is advanced into scratch `pCVar3`, then rebound via a later `pCVar2 = pCVar3;`. Functionally identical to the single-line self-update; replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
+      "line": 23,
+      "match": "pCVar3 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar2 = pCVar3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMansionPuzzleCircle *)((pCVar2->base).actor_name + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 28,
+      "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMansionPuzzleCircle *)&(pCVar4->base).health;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `out_b` was initialized to the address of an array element's subfield (`out_b = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*out_b)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `out_b->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 74,
+      "match": "out_b = out_b + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "out_b = out_b + 0x2e;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `out_g` was initialized to the address of an array element's subfield (`out_g = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*out_g)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `out_g->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 75,
+      "match": "out_g = out_g + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "out_g = out_g + 0x2e;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -114,38 +150,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar2` is advanced into scratch `pCVar3`, then rebound via a later `pCVar2 = pCVar3;`. Functionally identical to the single-line self-update; replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
-      "line": 23,
-      "match": "pCVar3 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar2 = pCVar3",
-      "severity": "moderate",
-      "text": "pCVar3 = (CMansionPuzzleCircle *)((pCVar2->base).actor_name + 4);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 28,
-      "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar4 = (CMansionPuzzleCircle *)&(pCVar4->base).health;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `out_b` was initialized to the address of an array element's subfield (`out_b = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*out_b)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `out_b->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 74,
-      "match": "out_b = out_b + N",
-      "severity": "moderate",
-      "text": "out_b = out_b + 0x2e;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `out_g` was initialized to the address of an array element's subfield (`out_g = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*out_g)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `out_g->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 75,
-      "match": "out_g = out_g + N",
-      "severity": "moderate",
-      "text": "out_g = out_g + 0x2e;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

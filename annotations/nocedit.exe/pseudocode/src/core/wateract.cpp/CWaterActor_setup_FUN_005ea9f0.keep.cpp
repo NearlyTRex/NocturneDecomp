@@ -27,7 +27,6 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005ea9f0(CWaterActor *this_
   int iVar14;
   int iVar17;
   int iVar18;
-  CWaterActor *pCVar15;
   int iVar16;
   float10 fVar17;
   float10 fVar18;
@@ -180,13 +179,12 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005ea9f0(CWaterActor *this_
     }
     iVar15 = this_ptr->vertex_count;
     this_ptr->vertices[iVar15].local_position.z = 0.0;
-    this_ptr->vertices[iVar15].local_position.y = this_ptr->vertices[iVar15].local_position.z;
-    this_ptr->vertices[iVar15].local_position.x = this_ptr->vertices[iVar15].local_position.y;
+    this_ptr->vertices[iVar15].local_position.y = 0.0;
+    this_ptr->vertices[iVar15].local_position.x = 0.0;
     local_1c = 0;
     this_ptr->vertex_count = this_ptr->vertex_count + 1;
     if (0 < this_ptr->primitive_count) {
       pSVar12 = this_ptr->primitives;
-      pCVar15 = this_ptr;
       do {
         (pSVar12->base).base.count = 3;
         (pSVar12->base).surface_normal.D.i = 0;
@@ -201,12 +199,11 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005ea9f0(CWaterActor *this_
         pSVar12->vertices[0].vertex_index = iVar15;
         iVar18 = iVar17 % this_ptr->primitive_count;
         pSVar12->vertices[1].vertex_index = local_1c;
-        pSVar12->vertices[1].texture_u = pCVar15->vertices[0].u;
-        iVar15 = pCVar15->vertices[0].v;
+        pSVar12->vertices[1].texture_u = this_ptr->vertices[local_1c].u;
+        iVar15 = this_ptr->vertices[local_1c].v;
         pSVar12->vertices[2].vertex_index = iVar18;
         pSVar12->vertices[1].texture_v = iVar15;
         pSVar12->vertices[2].texture_u = this_ptr->vertices[iVar18].u;
-        pCVar15 = (CWaterActor *)&(pCVar15->base).location;
         pSVar12->vertices[2].texture_v = this_ptr->vertices[iVar18].v;
         pSVar12 = pSVar12 + 1;
         local_1c = iVar17;

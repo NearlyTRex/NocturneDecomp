@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 517,
-    "complexity_score": 352,
+    "complexity_score": 247,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 247,
-    "suspect_count": 9,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 764
   },
   "cross_references": [],
@@ -228,6 +224,107 @@
     },
     "pcode_op_count": 2316
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 148,
+      "match": "(CMatrix3x4f *)((int)pCVar15",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar15 = (CMatrix3x4f *)((int)pCVar15 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(CMatrix3x4f *)((int)pCVar13",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 147,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar11 = 0xc; iVar11 != 0; iVar11 = iVar11 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 156,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_28->x = pCVar16->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 162,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pSVar12->rotation).x = pCVar10->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 181,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar16->x = pCVar17->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 211,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr->reflectors[0].start_position.x = pCVar16->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_30` was initialized to the address of an array element's subfield (`local_30 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_30)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_30->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 190,
+      "match": "local_30 = local_30 + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30 = local_30 + 0x2e;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_28) + offsetof(subfield)` equals the real array stride. Replace `local_28->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 194,
+      "match": "local_28 = (T *)&local_28[N].SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_28 = (CVector3f *)&local_28[0xf].y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_2c` was initialized to the address of an array element's subfield (`local_2c = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*local_2c)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `local_2c->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 195,
+      "match": "local_2c = local_2c + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_2c = local_2c + 0x2e;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00508dbb, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 257,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 00508dbb: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 484,
     "local_size": 480,
@@ -510,120 +607,7 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CMansionPuzzleCircle_setup_FUN_00508a70.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 15,
-          "line": 158,
-          "message": "Redundant assignment of 'pCVar13' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 15,
-          "line": 159,
-          "message": "Redundant assignment of 'pCVar15' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 148,
-      "match": "(CMatrix3x4f *)((int)pCVar15",
-      "severity": "moderate",
-      "text": "pCVar15 = (CMatrix3x4f *)((int)pCVar15 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 149,
-      "match": "(CMatrix3x4f *)((int)pCVar13",
-      "severity": "moderate",
-      "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 147,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar11 = 0xc; iVar11 != 0; iVar11 = iVar11 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 156,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_28->x = pCVar16->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 162,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pSVar12->rotation).x = pCVar10->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 181,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar16->x = pCVar17->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 211,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "this_ptr->reflectors[0].start_position.x = pCVar16->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_28) + offsetof(subfield)` equals the real array stride. Replace `local_28->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 194,
-      "match": "local_28 = (T *)&local_28[N].SUBFIELD",
-      "severity": "moderate",
-      "text": "local_28 = (CVector3f *)&local_28[0xf].y;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 00508dbb, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 257,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 00508dbb: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Redundant assignment of 'pCVar13' to itself.",
-      "line": 158,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pCVar13 = pCVar13;",
-      "type": "static_self_assignment"
-    },
-    {
-      "description": "Redundant assignment of 'pCVar15' to itself.",
-      "line": 159,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pCVar15 = pCVar15;",
-      "type": "static_self_assignment"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -21,7 +21,6 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
   SMotion *pSVar3;
   uint uVar4;
   CMotionList *this_ptr_01;
-  CGhoul *pCVar6;
   int iVar9;
   int force_immediate;
   char local_78 [100];
@@ -42,9 +41,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
     pCVar1 = &(this_ptr->base).base.base.location;
     this_ptr->stuck_timer = 1.0;
     if ((CLocation *)&this_ptr->prev_position != pCVar1) {
-      (this_ptr->prev_position).x = (pCVar1->position).x;
-      (this_ptr->prev_position).y = (this_ptr->base).base.base.location.position.y;
-      (this_ptr->prev_position).z = (this_ptr->base).base.base.location.position.z;
+      this_ptr->prev_position = pCVar1->position;
     }
     engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"go berzerk\n");
   }
@@ -91,15 +88,13 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
       }
       else {
         iVar7 = 0;
-        pCVar6 = this_ptr;
         if (0 < (this_ptr->base).base.damage_decal_count) {
           do {
-            if ((pCVar6->base).base.damage_decals[0].part_index == this_ptr->part_indices[9]) {
+            if ((this_ptr->base).base.damage_decals[iVar7].part_index == this_ptr->part_indices[9]) {
               iVar9 = 8;
               break;
             }
             iVar7 = iVar7 + 1;
-            pCVar6 = (CGhoul *)((int)&(pCVar6->base).base.base.orient + 8);
           } while (iVar7 < (this_ptr->base).base.damage_decal_count);
         }
       }

@@ -16,7 +16,6 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
   CSkeleton *this_ptr_00;
   CDemonActor *actor_ptr;
   CEnemy *pCVar10;
-  int iVar10;
   int iVar11;
   uint class_name_hash;
   char *model_name;
@@ -91,16 +90,9 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar1);
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(&this_ptr->morph,0,pCVar1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(pCVar1);
-  iVar11 = 0;
-  if (0 < (this_ptr->morph).models[0].num_points) {
-    iVar10 = 0;
-    do {
-      pSVar4 = (this_ptr->morph).models[0].points;
-      iVar11 = iVar11 + 1;
-      *(float *)((int)&(pSVar4->position).x + iVar10) =
-           -*(float *)((int)&(pSVar4->position).x + iVar10);
-      iVar10 = iVar10 + 0x10;
-    } while (iVar11 < (this_ptr->morph).models[0].num_points);
+  for (iVar11 = 0; iVar11 < (this_ptr->morph).models[0].num_points; iVar11 = iVar11 + 1) {
+    pSVar4 = (this_ptr->morph).models[0].points;
+    pSVar4[iVar11].position.x = -pSVar4[iVar11].position.x;
   }
   for (iVar11 = 0; iVar11 < (this_ptr->morph).models[0].num_faces; iVar11 = iVar11 + 1) {
     pSVar5 = (this_ptr->morph).models[0].faces + iVar11;

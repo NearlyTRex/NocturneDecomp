@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float delta_time)
 
 {
@@ -30,7 +28,6 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   uint uVar15;
   CLocation *pCVar16;
   char *pcVar17;
-  char *pcVar18;
   char cVar19;
   float10 fVar20;
   float10 fVar21;
@@ -88,7 +85,7 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   double local_8c;
   float local_84;
   float local_7c;
-  int local_78;
+  float local_78;
   CMotionList *local_70;
   float local_6c;
   float local_68;
@@ -119,10 +116,8 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
     return;
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
   local_64 = delta_time * (this_ptr->base).speed;
   local_18 = (CPathMap *)&(this_ptr->base).base.model;
 switchD_004e6f9a_caseD_e:
@@ -198,9 +193,7 @@ LAB_004e6a5f:
             pCVar12 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                                 (&((this_ptr->base).victim)->base,&local_f0,&local_168.vec);
             if (&local_29c.impact_direction != pCVar12) {
-              local_29c.impact_direction.x = pCVar12->x;
-              local_29c.impact_direction.y = pCVar12->y;
-              local_29c.impact_direction.z = pCVar12->z;
+              local_29c.impact_direction = *pCVar12;
             }
             local_29c.attacker = (CDemonActor *)this_ptr;
             local_29c.wielder = (CDemonActor *)this_ptr;
@@ -291,16 +284,7 @@ LAB_004e6a5f:
       else {
         pcVar17 = "ghoul-eat-?.wav @1.3";
       }
-      pcVar18 = local_260;
-      do {
-        cVar19 = *pcVar17;
-        *pcVar18 = cVar19;
-        if (cVar19 == '\0') break;
-        cVar19 = pcVar17[1];
-        pcVar17 = pcVar17 + 2;
-        pcVar18[1] = cVar19;
-        pcVar18 = pcVar18 + 2;
-      } while (cVar19 != '\0');
+      strcpy(local_260,pcVar17);
       (*((this_ptr->base).base.base.vtable._ub)->playSound)((CDemonActor *)this_ptr,local_260);
     }
     goto switchD_004e6f9a_caseD_e;
@@ -391,10 +375,8 @@ LAB_004e6a5f:
       }
       else {
         (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-        (this_ptr->base).base.model.accumulated_root_motion.y =
-             (this_ptr->base).base.model.accumulated_root_motion.z;
-        (this_ptr->base).base.model.accumulated_root_motion.x =
-             (this_ptr->base).base.model.accumulated_root_motion.y;
+        (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+        (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
         cVar19 = (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]]
                  != 0;
         if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] != 0)
@@ -670,15 +652,13 @@ LAB_004e7576:
                           (pCVar3->base).location.position.y;
               local_118 = (this_ptr->base).base.base.location.position.z -
                           (pCVar3->base).location.position.z;
-              if (&local_c0 != &local_120) {
-                local_c0 = local_120;
-                local_bc = local_11c;
-                local_b8 = local_118;
-              }
+              local_c0 = local_120;
+              local_bc = local_11c;
+              local_b8 = local_118;
               local_7c = local_b8 * local_b8 +
                          local_c0 * local_c0 + local_bc * local_bc;
-              *(float *)&local_78 = core_chain_cpp_fastSqrt_FUN_00431350(local_7c);
-              if (*(float *)&local_78 < (float)8) goto LAB_004e7243;
+              local_78 = core_chain_cpp_fastSqrt_FUN_00431350(local_7c);
+              if (local_78 < (float)8) goto LAB_004e7243;
             }
           }
           else {
@@ -867,10 +847,8 @@ LAB_004e672d:
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",(this_ptr->base).base.base.actor_name);
   }
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
 LAB_004e6754:
   if (0.0 < (this_ptr->base).attack_cooldown) {
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
@@ -899,12 +877,11 @@ LAB_004e6754:
     local_18c.y = local_d4 + (this_ptr->base).base.model.accumulated_root_motion.y;
     local_18c.z = local_d0 + (this_ptr->base).base.model.accumulated_root_motion.z;
     (this_ptr->base).base.position_delta.z = 0.0;
-    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-    pCVar12->x = (this_ptr->base).base.position_delta.y;
+    (this_ptr->base).base.position_delta.y = 0.0;
+    pCVar12->x = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    pCVar22->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+    pCVar22->x = 0.0;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_18c);
   }
   this_ptr_00 = &(this_ptr->base).base.model;
@@ -990,8 +967,6 @@ LAB_004e6754:
   if ((CLocation *)&this_ptr->prev_position == pCVar16) {
     return;
   }
-  (this_ptr->prev_position).x = (pCVar16->position).x;
-  (this_ptr->prev_position).y = (this_ptr->base).base.base.location.position.y;
-  (this_ptr->prev_position).z = (this_ptr->base).base.base.location.position.z;
+  this_ptr->prev_position = pCVar16->position;
   return;
 }

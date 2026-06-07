@@ -8,20 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2368,
-    "complexity_score": 1177,
+    "complexity_score": 1052,
     "cross_reference_count": 0,
     "function_call_count": 40,
     "global_count": 71,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 1052,
-    "suspect_count": 10,
-    "suspect_types": [
-      "self_copy_guard",
-      "unrolled_memcpy",
-      "unrolled_memset",
-      "unrolled_strcpy",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 3420
   },
   "cross_references": [],
@@ -730,6 +724,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 32,
       "match": "in_stack_fffffc88",
@@ -1358,6 +1361,87 @@
       "severity": "moderate",
       "text": "((CDemonActor *)this_ptr,&stack0xfffffc88);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 320,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 217,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_29c.impact_direction.x = pCVar12->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 1052,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->prev_position).x = (pCVar16->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 128,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 421,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 929,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 961,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.position_delta.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 964,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_c0 != &local_120)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 722,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&local_c0 != &local_120) {",
+      "type": "self_copy_guard"
     }
   ],
   "stack_frame": {
@@ -2181,128 +2265,7 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CGhoul_process_FUN_004e6600.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 16,
-          "line": 680,
-          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 20,
-          "line": 681,
-          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 320,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 217,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_29c.impact_direction.x = pCVar12->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 1052,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->prev_position).x = (pCVar16->position).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 128,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 421,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 929,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 961,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.position_delta.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 964,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom dead self-copy guard: `if (&local_c0 != &local_120)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 722,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
-      "severity": "moderate",
-      "text": "if (&local_c0 != &local_120) {",
-      "type": "self_copy_guard"
-    },
-    {
-      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
-      "line": 680,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "*(float *)&local_78 = core_chain_cpp_fastSqrt_FUN_00431350(local_7c);",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
-      "line": 681,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "if (*(float *)&local_78 < (float)8) goto LAB_004e7243;",
-      "type": "static_invalid_pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

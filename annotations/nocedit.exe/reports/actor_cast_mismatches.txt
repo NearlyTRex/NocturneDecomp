@@ -127,13 +127,13 @@ Manual inspection is needed to determine the expected class.
   core/inv.cpp/CInventory_load_FUN_004ff400.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 49: createActorByName()
-    47:       _fscanf(file_handle," %s \"%[^\"]\"\n",local_dc,local_78);
-    48:       if (g_CDemonMissionPtr->has_inventory_actors == 0) {
-    49:         pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
-    50:         strcpy(pCVar3->actor_name,local_78);
-    51:         pCVar6->items[0] = pCVar3;
-    52:       }
+  Line 46: createActorByName()
+    44:       _fscanf(file_handle," %s \"%[^\"]\"\n",local_dc,local_78);
+    45:       if (g_CDemonMissionPtr->has_inventory_actors == 0) {
+    46:         pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
+    47:         strcpy(pCVar3->actor_name,local_78);
+    48:         this_ptr->items[iVar7] = pCVar3;
+    49:       }
 
 --------------------------------------------------------------------------------
   core/inv.cpp/getItemModel_FUN_004fcda0.keep.cpp
@@ -151,13 +151,13 @@ Manual inspection is needed to determine the expected class.
   core/mimic.cpp/CMimic_setup_FUN_0051f3e0.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 80: createActorByName()
-    78:              &(this_ptr->base).base.base.orient.vec,pCVar1);
-    79:   class_name_hash = g_CEnemyClassInfo.name_hash;
-    80:   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430(this_ptr->morph_actor_type);
-    81:   pCVar10 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash);
-    82:   this_ptr->morph_target_actor = (CDemonActor *)pCVar10;
-    83:   if (pCVar10 == (CEnemy *)0x0) {
+  Line 79: createActorByName()
+    77:              &(this_ptr->base).base.base.orient.vec,pCVar1);
+    78:   class_name_hash = g_CEnemyClassInfo.name_hash;
+    79:   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430(this_ptr->morph_actor_type);
+    80:   pCVar10 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash);
+    81:   this_ptr->morph_target_actor = (CDemonActor *)pCVar10;
+    82:   if (pCVar10 == (CEnemy *)0x0) {
 
 --------------------------------------------------------------------------------
   core/mission.cpp/CDemonMission_readMissionFile_FUN_00522eb0.keep.cpp

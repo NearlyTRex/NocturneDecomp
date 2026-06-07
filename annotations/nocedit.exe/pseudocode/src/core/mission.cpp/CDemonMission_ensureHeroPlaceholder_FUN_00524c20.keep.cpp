@@ -20,7 +20,7 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20(C
   CHeroPlaceholder *actor;
   UOrientationVector *pUVar4;
   CPickList local_3b4;
-  
+
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3b4);
   actor_ptr = this_ptr->first_actor;
   while( true ) {
@@ -46,18 +46,20 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20(C
           if (this_ptr_00 != (CHeroPlaceholder *)0x0) {
             actor = core_hero_cpp_CHeroPlaceholder_ctor_FUN_004f3c00(this_ptr_00);
           }
-          actor->index = 0;
-          (actor->base).location.position = (pCVar3->location).position;
-          pUVar4 = &(actor->base).orient;
-          (actor->base).location.area_id = (pCVar3->location).area_id;
-          if (pUVar4 != &pCVar3->orient) {
-            pUVar4->vec = (pCVar3->orient).vec;
+          if (actor != (CHeroPlaceholder *)0x0) {
+            actor->index = 0;
+            (actor->base).location.position = (pCVar3->location).position;
+            pUVar4 = &(actor->base).orient;
+            (actor->base).location.area_id = (pCVar3->location).area_id;
+            if (pUVar4 != &pCVar3->orient) {
+              pUVar4->vec = (pCVar3->orient).vec;
+            }
+            core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,&actor->base);
+            core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,pCVar3,1);
+            core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,&actor->base);
+            shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
+                      (g_CEditorToolsPtr,"Replaced hero OK.  You will need to save the mission for changes to be perminent.");
           }
-          core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,&actor->base);
-          core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,pCVar3,1);
-          core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,&actor->base);
-          shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
-                    (g_CEditorToolsPtr,"Replaced hero OK.  You will need to save the mission for changes to be perminent.");
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b4,0);
           return;
         }

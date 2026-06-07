@@ -14,8 +14,6 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FIL
   CDemonActor *pCVar3;
   CWeapon *pCVar4;
   int iVar3;
-  CInventory *pCVar6;
-  CInventory *pCVar5;
   int iVar7;
   char local_1dc [256];
   char local_dc [100];
@@ -39,7 +37,6 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FIL
   }
   _fgets(local_1dc,0xff,file_handle);
   iVar7 = 0;
-  pCVar6 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
       memcpy(local_dc,g_DefaultInventoryKey,100);
@@ -48,25 +45,22 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FIL
       if (g_CDemonMissionPtr->has_inventory_actors == 0) {
         pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
         strcpy(pCVar3->actor_name,local_78);
-        pCVar6->items[0] = pCVar3;
+        this_ptr->items[iVar7] = pCVar3;
       }
       else {
         pCVar2 = core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520
                            (g_CDemonMissionPtr,local_78);
-        pCVar6->items[0] = pCVar2;
+        this_ptr->items[iVar7] = pCVar2;
       }
       iVar7 = iVar7 + 1;
-      pCVar6 = (CInventory *)&pCVar6->owner;
     } while (iVar7 < this_ptr->item_count);
   }
   _fgets(local_1dc,0xff,file_handle);
   iVar3 = 0;
-  pCVar5 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      core_actor_cpp_CDemonActor_load_FUN_0040b050(pCVar5->items[0],file_handle);
+      core_actor_cpp_CDemonActor_load_FUN_0040b050(this_ptr->items[iVar3],file_handle);
       iVar3 = iVar3 + 1;
-      pCVar5 = (CInventory *)&pCVar5->owner;
     } while (iVar3 < this_ptr->item_count);
   }
   if (1 < this_ptr->save_version) {

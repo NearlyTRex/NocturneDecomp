@@ -21,7 +21,6 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont *this_p
   int iVar7;
   uchar *puVar8;
   byte *puVar9;
-  int iVar10;
   uint uVar11;
   int iVar4;
   uint uVar5;
@@ -209,8 +208,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont *this_p
                 uVar4 = (uint)*local_d4;
                 iVar1 = g_CurrentAlphaValue *
                         (uint)(byte)this_ptr->palette_data[uVar4 * 3 + local_c8 * 0x300];
-                iVar10 = iVar1 >> 0x1f;
-                iVar1 = (int)((iVar1 + iVar10 * -0x100) - (uint)(iVar10 << 7 < 0)) >> 8;
+                iVar1 = iVar1 / 256;
                 if (iVar1 != 0) {
                   uVar11 = (uint)*puVar13;
                   iVar4 = 0xff - iVar1;
@@ -278,8 +276,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont *this_p
               for (iVar11 = x; iVar11 <= local_d0; iVar11 = iVar11 + 1) {
                 iVar1 = g_CurrentAlphaValue *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
-                iVar4 = iVar1 >> 0x1f;
-                iVar1 = (int)((iVar1 + iVar4 * -0x100) - (uint)(iVar4 << 7 < 0)) >> 8;
+                iVar1 = iVar1 / 256;
                 if (iVar1 != 0) {
                   uVar5 = (uint)g_ShadowColor16;
                   uVar6 = (uint)*puVar10;
@@ -346,8 +343,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont *this_p
               for (iVar11 = x; iVar11 <= local_d0; iVar11 = iVar11 + 1) {
                 iVar1 = g_CurrentAlphaValue *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
-                iVar4 = iVar1 >> 0x1f;
-                iVar1 = (int)((iVar1 + iVar4 * -0x100) - (uint)(iVar4 << 7 < 0)) >> 8;
+                iVar1 = iVar1 / 256;
                 if (iVar1 != 0) {
                   uVar5 = (uint)*puVar10;
                   iVar4 = 0xff - iVar1;
@@ -410,8 +406,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont *this_p
               for (iVar11 = x; iVar11 <= local_d0; iVar11 = iVar11 + 1) {
                 iVar1 = g_CurrentAlphaValue *
                         (uint)(byte)this_ptr->palette_data[(uint)*local_d4 * 3 + local_c8 * 0x300];
-                iVar4 = iVar1 >> 0x1f;
-                iVar1 = (int)((iVar1 + iVar4 * -0x100) - (uint)(iVar4 << 7 < 0)) >> 8;
+                iVar1 = iVar1 / 256;
                 if (iVar1 != 0) {
                   uVar5 = (uint)uVar1;
                   uVar6 = (uint)*puVar10;

@@ -15,7 +15,6 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   int iVar3;
   int iVar4;
   char *pcVar5;
-  char *pcVar6;
   int iVar5;
   CHealthItem *pCVar7;
   int iVar7;
@@ -49,7 +48,6 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   int local_44;
   CBitFont *local_18;
   double dVar1;
-  ulonglong uVar13;
   byte bVar11;
   
   bVar11 = 0;
@@ -168,9 +166,8 @@ LAB_00500870:
     if ((iVar3 == 0) &&
        (iVar3 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
                           (this_ptr,&this_ptr->selected_weapon->base,1), iVar3 == 0)) {
-      pcVar13 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
+      pcVar5 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
       pcVar7 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
-      uVar13 = CONCAT44(pcVar13,pcVar7);
       pcVar13 = "%s\n\n%s";
       goto LAB_005008cd;
     }
@@ -184,11 +181,10 @@ LAB_00500870:
   }
   else {
     pcVar5 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
-    pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
-    uVar13 = CONCAT44(pcVar5,pcVar6);
+    pcVar7 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
     pcVar13 = "%s\n\n%s";
 LAB_005008cd:
-    _sprintf(local_178,pcVar13,uVar13);
+    _sprintf(local_178,pcVar13,pcVar7,pcVar5);
   }
   iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
                     ((CBitFont *)local_44,local_178,g_InventoryWrappedTextLines[0],10,0x100,

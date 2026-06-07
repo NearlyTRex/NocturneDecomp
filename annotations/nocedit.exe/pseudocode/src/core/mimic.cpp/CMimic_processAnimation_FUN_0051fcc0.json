@@ -7,18 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 749,
-    "complexity_score": 386,
+    "complexity_score": 321,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 26,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 321,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy",
-      "warning_type_propagation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1070
   },
   "cross_references": [
@@ -395,6 +391,33 @@
   },
   "resolved_suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 102,
+      "match": "(CMatrix3x4f *)((int)pCVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar12 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(CMatrix3x4f *)((int)pCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar12 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 195,
       "match": "._3_1_",
@@ -447,6 +470,24 @@
       "severity": "mild",
       "text": "local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 101,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0051ff8e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 249,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0051ff8e: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -710,86 +751,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CMimic_processAnimation_FUN_0051fcc0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 20,
-          "line": 102,
-          "message": "Redundant assignment of 'pCVar9' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 21,
-          "line": 103,
-          "message": "Redundant assignment of 'pCVar10' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(CMatrix3x4f *)((int)pCVar10",
-      "severity": "moderate",
-      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar12 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(CMatrix3x4f *)((int)pCVar9",
-      "severity": "moderate",
-      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar12 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 101,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 0051ff8e, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 249,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0051ff8e: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Redundant assignment of 'pCVar9' to itself.",
-      "line": 102,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pCVar9 = pCVar9;",
-      "type": "static_self_assignment"
-    },
-    {
-      "description": "Redundant assignment of 'pCVar10' to itself.",
-      "line": 103,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pCVar10 = pCVar10;",
-      "type": "static_self_assignment"
-    }
-  ]
+  "suspects": []
 }
