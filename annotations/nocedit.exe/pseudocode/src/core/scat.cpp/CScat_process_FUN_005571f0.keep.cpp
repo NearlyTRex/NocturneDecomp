@@ -28,7 +28,6 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
   uint uVar15;
   int desired_state_index;
   float local_88;
-  CQuaternion4f CStack_84;
   CQuaternion4f CStack_74;
   CVector3f local_58;
   CVector3f local_4c;
@@ -294,7 +293,7 @@ LAB_00557408:
     iVar7 = g_ScatIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_euler_angles,&CStack_74);
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-              (pCVar2,&CStack_84,fVar9,iVar7,
+              (pCVar2,&CStack_74,fVar9,iVar7,
                (CDeformableModel_MotionBlendWeightFunc *)blend_callback);
   }
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);

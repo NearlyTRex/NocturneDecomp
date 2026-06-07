@@ -57,6 +57,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   local_78.z = 0.0;
   local_78.y = this_ptr->aim_yaw;
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_78,&local_124);
+  local_1a4 = local_124;
   if (0.0 < this_ptr->draw_blend) {
     local_28 = this_ptr->draw_blend / 0.2f;
     if (1.0 < local_28) {
@@ -108,7 +109,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
             local_6c.z = FLOAT_02d7b840 * 3.141593f * 0.005555556f;
             pCVar5 = &local_1a4;
             core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_6c,&local_184);
+            local_174 = local_184;
             core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_174,pCVar5,&local_f4);
+            local_104 = local_f4;
             core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
                       (pCVar1,&local_104,local_2c,g_GabriellaIndices[0x13],
                        core_gabriela_cpp_aimRotationBlendWeightCallback_FUN_004d2a80);
@@ -174,13 +177,16 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
           if ((g_GabriellaWeaponAimRotationInitFlag & 1) == 0) {
             g_GabriellaWeaponAimRotationInitFlag = g_GabriellaWeaponAimRotationInitFlag | 1;
             core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30(-1.5707964,&local_e4);
+            local_a4 = local_e4;
             pCVar5 = &local_a4;
             core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(-1.5707964,&local_1f4);
+            local_b4 = local_1f4;
             core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_b4,pCVar5,&local_1e4);
             g_GabriellaWeaponAimRotation = local_1e4;
           }
           core_xform_cpp_multiplyQuaternion_FUN_005f7640
                     (&g_GabriellaWeaponAimRotation,&local_1a4,&local_1d4);
+          local_114 = local_1d4;
           core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
                     (&(this_ptr->base).base.model,&local_114,fVar3,g_GabriellaIndices[4],
                      core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004d29f0);
@@ -215,6 +221,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   fVar3 = this_ptr->aim_blend * this_ptr->aim_weight;
   iVar6 = g_GabriellaIndices[0];
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_78,&local_c4);
+  local_194 = local_c4;
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
             (&(this_ptr->base).base.model,&local_194,fVar3,iVar6,
              pcVar12);
@@ -229,9 +236,12 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   fVar3 = this_ptr->light_aim_blend;
   iVar6 = g_GabriellaIndices[1];
   core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(this_ptr->flashlight_angle,&local_d4);
+  local_154 = local_d4;
   pCVar5 = &local_154;
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(1.5707964,&local_134);
+  local_164 = local_134;
   core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_164,pCVar5,&local_94);
+  local_144 = local_94;
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
             (&(this_ptr->base).base.model,&local_144,fVar3,iVar6,blend_callback);
   return;

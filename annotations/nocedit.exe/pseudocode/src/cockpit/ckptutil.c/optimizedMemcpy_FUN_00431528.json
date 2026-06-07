@@ -248,7 +248,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "description": "Watcom inline memcpy (REP MOVSB at 0043155c, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
       "line": 33,
       "match": "MOVSB.REP",
       "resolution_source": "keep",
@@ -257,7 +257,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "description": "Watcom inline memcpy (REP MOVSD at 00431565, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 39,
       "match": "MOVSD.REP",
       "resolution_source": "keep",
@@ -266,7 +266,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "description": "Watcom inline memcpy (REP MOVSD at 0043160d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 107,
       "match": "MOVSD.REP",
       "resolution_source": "keep",
@@ -275,7 +275,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "description": "Watcom inline memcpy (REP MOVSB at 00431618, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
       "line": 114,
       "match": "MOVSB.REP",
       "resolution_source": "keep",

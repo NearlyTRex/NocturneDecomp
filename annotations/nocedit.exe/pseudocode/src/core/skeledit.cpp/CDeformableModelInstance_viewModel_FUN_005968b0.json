@@ -8,17 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3423,
-    "complexity_score": 1146,
+    "complexity_score": 1076,
     "cross_reference_count": 2,
     "function_call_count": 90,
     "global_count": 144,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 1076,
-    "suspect_count": 6,
-    "suspect_types": [
-      "missing_cave_copy",
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 4499
   },
   "cross_references": [
@@ -1495,6 +1492,42 @@
       "type": "suspect_float"
     },
     {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 504,
+      "match": "0xfe0000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_3a4.vertices[1].texture_u = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 505,
+      "match": "0xfe0000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_3a4.vertices[2].texture_u = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 506,
+      "match": "0xfe0000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_3a4.vertices[2].texture_v = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 507,
+      "match": "0xfe0000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_3a4.vertices[3].texture_v = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 1061,
       "match": "do {",
@@ -1628,6 +1661,24 @@
       "severity": "moderate",
       "text": "pCVar15 = (CDeformableModelInstance *)&(pCVar15->motion_controller).current_motion_index;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Struct-type local `local_320` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 48,
+      "match": "CMatrix3x4f local_320; ... f(&local_320, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_320;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_290` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 51,
+      "match": "CMatrix3x4f local_290; ... f(&local_290, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_290;",
+      "type": "missing_cave_copy"
     }
   ],
   "stack_frame": {
@@ -2423,54 +2474,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 504,
-      "match": "0xfe0000",
-      "severity": "moderate",
-      "text": "local_3a4.vertices[1].texture_u = 0xfe0000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 505,
-      "match": "0xfe0000",
-      "severity": "moderate",
-      "text": "local_3a4.vertices[2].texture_u = 0xfe0000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 506,
-      "match": "0xfe0000",
-      "severity": "moderate",
-      "text": "local_3a4.vertices[2].texture_v = 0xfe0000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 507,
-      "match": "0xfe0000",
-      "severity": "moderate",
-      "text": "local_3a4.vertices[3].texture_v = 0xfe0000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Struct-type local `local_320` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 48,
-      "match": "CMatrix3x4f local_320; ... f(&local_320, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f local_320;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_290` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 2 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 51,
-      "match": "CMatrix3x4f local_290; ... f(&local_290, ...);",
-      "severity": "moderate",
-      "text": "CMatrix3x4f local_290;",
-      "type": "missing_cave_copy"
-    }
-  ]
+  "suspects": []
 }

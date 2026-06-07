@@ -130,7 +130,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom inline memset (REP STOSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "description": "Watcom inline memset (REP STOSD at 005b3fa1, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
       "line": 42,
       "match": "STOSD.REP",
       "resolution_source": "keep",
@@ -139,7 +139,7 @@
       "type": "unrolled_memset"
     },
     {
-      "description": "Watcom inline memset (REP STOSW at ????????, 2-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 2) in a .keep.",
+      "description": "Watcom inline memset (REP STOSW at 005b3fab, 2-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 2) in a .keep.",
       "line": 47,
       "match": "STOSW.REP",
       "resolution_source": "keep",

@@ -405,60 +405,6 @@
       "severity": "moderate",
       "text": "for (iVar2 = g_RenderVertexBuffer[0].a; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 121,
-      "match": "MOVSD.REP",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "// 004a222d: MOVSD.REP ES:EDI,ESI  ; g_RenderVertexBuffer[1].projected_vertex.transformed_x | g_RenderVertexBuffer[1].pr",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 125,
-      "match": "MOVSD.REP",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "// 004a223e: MOVSD.REP ES:EDI,ESI  ; g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 200,
-      "match": "MOVSD.REP",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "// 004a236d: MOVSD.REP ES:EDI,ESI  ; g_RenderVertexBuffer[1].projected_vertex.transformed_x | g_RenderVertexBuffer[1].pr",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 204,
-      "match": "MOVSD.REP",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "// 004a237e: MOVSD.REP ES:EDI,ESI  ; g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 279,
-      "match": "MOVSD.REP",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "// 004a24a4: MOVSD.REP ES:EDI,ESI  ; g_RenderVertexBuffer[1].projected_vertex.transformed_x | g_RenderVertexBuffer[1].pr",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 283,
-      "match": "MOVSD.REP",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "// 004a24b5: MOVSD.REP ES:EDI,ESI  ; g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y",
-      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {

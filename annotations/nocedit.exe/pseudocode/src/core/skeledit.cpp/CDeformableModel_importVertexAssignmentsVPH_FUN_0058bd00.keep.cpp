@@ -121,6 +121,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
       local_1c = local_20;
       for (local_18 = 0; local_18 < (int)(uint)*local_20; local_18 = local_18 + 1) {
         core_xform_cpp_inverse_FUN_005f6210(&local_24[local_1c[1]].world_matrix,&local_d8);
+        local_a8 = local_d8;
         pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_4c,&local_58,&local_a8);
         if (pCVar5 != pCVar4) {
           *pCVar5 = *pCVar4;

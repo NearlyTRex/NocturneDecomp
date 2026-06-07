@@ -5,40 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6221 (96.4%)
-With suspects: 233
-Total suspects: 1608
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 83 [unrolled_memcpy]: // 0047a929: MOVSD.REP ES:EDI,ESI
-  Line 87 [unrolled_memcpy]: // 0047a936: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (19 suspects)
-  File: core/gabriela.cpp
-====================================================================================================
-  Line 19 [missing_cave_copy]: CQuaternion4f local_1f4;
-  Line 21 [missing_cave_copy]: CQuaternion4f local_1d4;
-  Line 25 [missing_cave_copy]: CQuaternion4f local_194;
-  Line 26 [missing_cave_copy]: CQuaternion4f local_184;
-  Line 27 [missing_cave_copy]: CQuaternion4f local_174;
-  Line 28 [missing_cave_copy]: CQuaternion4f local_164;
-  Line 29 [missing_cave_copy]: CQuaternion4f local_154;
-  Line 30 [missing_cave_copy]: CQuaternion4f local_144;
-  Line 31 [missing_cave_copy]: CQuaternion4f local_134;
-  Line 32 [missing_cave_copy]: CQuaternion4f local_124;
-  Line 33 [missing_cave_copy]: CQuaternion4f local_114;
-  Line 34 [missing_cave_copy]: CQuaternion4f local_104;
-  Line 35 [missing_cave_copy]: CQuaternion4f local_f4;
-  Line 36 [missing_cave_copy]: CQuaternion4f local_e4;
-  Line 37 [missing_cave_copy]: CQuaternion4f local_d4;
-  Line 38 [missing_cave_copy]: CQuaternion4f local_c4;
-  Line 39 [missing_cave_copy]: CQuaternion4f local_b4;
-  Line 40 [missing_cave_copy]: CQuaternion4f local_a4;
-  Line 41 [missing_cave_copy]: CQuaternion4f local_94;
+Clean: 6226 (96.5%)
+With suspects: 228
+Total suspects: 1577
 
 ====================================================================================================
 core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0 (2 suspects)
@@ -423,13 +392,6 @@ core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40 (1 suspect)
   Line 109 [static_legacy_uninitvar]: if (local_38 != end_height) {
 
 ====================================================================================================
-core_scat.cpp_CScat_process_FUN_005571f0 (2 suspects)
-  File: core/scat.cpp
-====================================================================================================
-  Line 27 [missing_cave_copy]: CQuaternion4f CStack_84;
-  Line 28 [missing_cave_copy]: CQuaternion4f CStack_74;
-
-====================================================================================================
 core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 (6 suspects)
   File: core/set.cpp
 ====================================================================================================
@@ -439,24 +401,6 @@ core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 (6 suspects)
   Line 142 [static_shift_too_many_bits]: uVar10 << 0x10) ^ (int)uVar4 >> 0x1f;
   Line 143 [static_shift_too_many_bits]: uVar8 = uVar5 ^ (int)uVar5 >> 0x1f;
   Line 149 [static_shift_too_many_bits]: uVar10 << 0x10) ^ (int)uVar5 >> 0x1f;
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (6 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 48 [missing_cave_copy]: CMatrix3x4f local_320;
-  Line 51 [missing_cave_copy]: CMatrix3x4f local_290;
-  Line 504 [raw_address_constant]: local_3a4.vertices[1].texture_u = 0xfe0000;
-  Line 505 [raw_address_constant]: local_3a4.vertices[2].texture_u = 0xfe0000;
-  Line 506 [raw_address_constant]: local_3a4.vertices[2].texture_v = 0xfe0000;
-  Line 507 [raw_address_constant]: local_3a4.vertices[3].texture_v = 0xfe0000;
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (2 suspects)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 18 [missing_cave_copy]: CMatrix3x4f local_d8;
-  Line 19 [missing_cave_copy]: CMatrix3x4f local_a8;
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (2 suspects)

@@ -5523,7 +5523,16 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
 # `.REP` is a single store and not flagged.
 _REP_STOS_RE = re.compile(r'\bSTOS([BWD])\.REP\b', re.IGNORECASE)
 # Ghidra asm format: `    INSTRUCTION    ; ADDRESS [| optional comment]`
-_ASM_LINE_ADDR_RE = re.compile(r';\s*([0-9a-fA-F]{6,8})\b')
+# Matches the instruction address in either assembly representation:
+#   * raw `generate_assembly_code_rich` form `// 0047a929: MOVSD.REP ...`
+#     (address prefix) — this is what the asm-side detectors actually run
+#     on at export time (`result.assembly_code`).
+#   * reformatted on-disk `.asm` form `MOVSD.REP ... ; 0047a929`
+#     (address suffix) — used by ad-hoc tooling reading the file.
+# `search` returns the leftmost match, so the `// ADDR:` prefix is preferred
+# over any hex that appears inside a trailing `; comment` (e.g. a CALL line
+# whose signature comment contains a `0x...` target address).
+_ASM_LINE_ADDR_RE = re.compile(r'(?:^\s*//\s*|;\s*)([0-9a-fA-F]{6,8})\b')
 
 
 def _collect_rep_sites(assembly_code, rep_re):

@@ -406,6 +406,7 @@ LAB_0059722b:
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_2c0,&local_184,&local_19c);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2c0,local_54 + iVar7,&local_320);
+      local_2f0 = local_320;
       pCVar10 = (CSlew *)core_xform_cpp_getTranslation_FUN_005f6110(&local_2f0,&local_16c);
       if (&local_200 != pCVar10) {
         local_200.position = pCVar10->position;
@@ -461,10 +462,10 @@ LAB_0059722b:
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_154);
       local_3a4.base.base.count = 4;
-      local_3a4.vertices[1].texture_u = 0xfe0000;
-      local_3a4.vertices[2].texture_u = 0xfe0000;
-      local_3a4.vertices[2].texture_v = 0xfe0000;
-      local_3a4.vertices[3].texture_v = 0xfe0000;
+      local_3a4.vertices[1].texture_u = 0xfe << 16;
+      local_3a4.vertices[2].texture_u = 0xfe << 16;
+      local_3a4.vertices[2].texture_v = 0xfe << 16;
+      local_3a4.vertices[3].texture_v = 0xfe << 16;
       local_3a4.base.surface_normal.D.i = 0;
       local_3a4.base.surface_normal.C.i = 0;
       local_3a4.base.surface_normal.B.i = 0;
@@ -620,6 +621,7 @@ LAB_0059722b:
       core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                 (&local_230,&local_200.position,&local_200.orientation.vec);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(local_54 + local_64,&local_230,&local_290);
+      local_260 = local_290;
       pCVar13 = core_xform_cpp_invertAndGetTranslation_FUN_005f6140(&local_260,&local_10c);
       if (&local_184 != pCVar13) {
         local_184 = *pCVar13;

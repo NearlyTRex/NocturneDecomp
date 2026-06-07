@@ -4,22 +4,22 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     694 ( 43.2%)
-  unrolled_memcpy                  217 ( 13.5%)
-  unrolled_strcpy                  115 (  7.2%)
-  static_uninitvar                  86 (  5.3%)
+  pointer_cast                     694 ( 44.0%)
+  unrolled_memcpy                  215 ( 13.6%)
+  unrolled_strcpy                  115 (  7.3%)
+  static_uninitvar                  86 (  5.5%)
   shadow_pointer_walk               70 (  4.4%)
-  static_self_assignment            66 (  4.1%)
-  unrolled_strlen                   56 (  3.5%)
-  missing_cave_copy                 52 (  3.2%)
-  bitcast_double_pair               36 (  2.2%)
-  static_shift_too_many_bits        34 (  2.1%)
+  static_self_assignment            66 (  4.2%)
+  unrolled_strlen                   56 (  3.6%)
+  bitcast_double_pair               36 (  2.3%)
+  static_shift_too_many_bits        34 (  2.2%)
+  missing_cave_copy                 27 (  1.7%)
   unrolled_strchr                   24 (  1.5%)
-  signed_shift_global_idiom         20 (  1.2%)
-  raw_address_constant              17 (  1.1%)
-  warning_inlined_function          15 (  0.9%)
+  signed_shift_global_idiom         20 (  1.3%)
+  warning_inlined_function          15 (  1.0%)
   static_legacy_uninitvar           14 (  0.9%)
   unrolled_memset                   13 (  0.8%)
+  raw_address_constant              13 (  0.8%)
   bit_int_float_compare             11 (  0.7%)
   static_invalid_pointer_cast       10 (  0.6%)
   sub84_truncation                   9 (  0.6%)
@@ -28,7 +28,7 @@ SUSPECT TYPE COUNTS
   static_identical_inner_condition     5 (  0.3%)
   warning_type_propagation           5 (  0.3%)
   static_null_pointer                5 (  0.3%)
-  unrolled_strcat                    4 (  0.2%)
+  unrolled_strcat                    4 (  0.3%)
   warning_unreachable                3 (  0.2%)
   static_object_index                3 (  0.2%)
   negative_offset                    2 (  0.1%)
@@ -195,17 +195,16 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (217 occurrences)
+TYPE: unrolled_memcpy (215 occurrences)
 ====================================================================================================
 
 Unique patterns:
    114x  field-by-field struct copy
     51x  for (...; != 0; ... + -1)
-    51x  MOVSD.REP
+    49x  MOVSD.REP
      1x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
-  core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
   core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
@@ -494,43 +493,6 @@ Functions:
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
 
 ====================================================================================================
-TYPE: missing_cave_copy (52 occurrences)
-====================================================================================================
-
-Unique patterns:
-     2x  CMatrix3x4f local_7c; ... f(&local_7c, ...);
-     2x  CMatrix3x4f local_4c; ... f(&local_4c, ...);
-     1x  CQuaternion4f CStack_84; ... f(&CStack_84, ...);
-     1x  CQuaternion4f CStack_74; ... f(&CStack_74, ...);
-     1x  CMatrix3x4f local_320; ... f(&local_320, ...);
-     1x  CMatrix3x4f local_290; ... f(&local_290, ...);
-     1x  CMatrix3x4f local_d8; ... f(&local_d8, ...);
-     1x  CMatrix3x4f local_a8; ... f(&local_a8, ...);
-     1x  CMatrix3x4f local_1cc; ... f(&local_1cc, ...);
-     1x  CMatrix3x4f local_19c; ... f(&local_19c, ...);
-     1x  CMatrix3x4f local_16c; ... f(&local_16c, ...);
-     1x  CMatrix3x4f local_dc; ... f(&local_dc, ...);
-     1x  CMatrix3x4f local_ac; ... f(&local_ac, ...);
-     1x  CMatrix3x4f local_fc; ... f(&local_fc, ...);
-     1x  CMatrix3x4f local_cc; ... f(&local_cc, ...);
-     1x  CMatrix3x4f local_9c; ... f(&local_9c, ...);
-     1x  CMatrix3x4f local_6c; ... f(&local_6c, ...);
-     1x  CMatrix3x4f CStack_250; ... f(&CStack_250, ...);
-     1x  CMatrix3x4f CStack_220; ... f(&CStack_220, ...);
-     1x  CMatrix3x4f CStack_1c0; ... f(&CStack_1c0, ...);
-
-Functions:
-  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
-  core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
-  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
-  core_scat.cpp_CScat_process_FUN_005571f0
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
-  core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
-  core_tentacle.cpp_CTentacle_process_FUN_005db050
-  core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
-
-====================================================================================================
 TYPE: bitcast_double_pair (36 occurrences)
 ====================================================================================================
 
@@ -565,6 +527,39 @@ Functions:
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
 
 ====================================================================================================
+TYPE: missing_cave_copy (27 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  CMatrix3x4f local_7c; ... f(&local_7c, ...);
+     2x  CMatrix3x4f local_4c; ... f(&local_4c, ...);
+     1x  CMatrix3x4f local_1cc; ... f(&local_1cc, ...);
+     1x  CMatrix3x4f local_19c; ... f(&local_19c, ...);
+     1x  CMatrix3x4f local_16c; ... f(&local_16c, ...);
+     1x  CMatrix3x4f local_dc; ... f(&local_dc, ...);
+     1x  CMatrix3x4f local_ac; ... f(&local_ac, ...);
+     1x  CMatrix3x4f local_fc; ... f(&local_fc, ...);
+     1x  CMatrix3x4f local_cc; ... f(&local_cc, ...);
+     1x  CMatrix3x4f local_9c; ... f(&local_9c, ...);
+     1x  CMatrix3x4f local_6c; ... f(&local_6c, ...);
+     1x  CMatrix3x4f CStack_250; ... f(&CStack_250, ...);
+     1x  CMatrix3x4f CStack_220; ... f(&CStack_220, ...);
+     1x  CMatrix3x4f CStack_1c0; ... f(&CStack_1c0, ...);
+     1x  CMatrix3x4f CStack_130; ... f(&CStack_130, ...);
+     1x  CMatrix3x4f CStack_d0; ... f(&CStack_d0, ...);
+     1x  CMatrix3x4f local_2d0; ... f(&local_2d0, ...);
+     1x  CMatrix3x4f local_2a0; ... f(&local_2a0, ...);
+     1x  CMatrix3x4f local_270; ... f(&local_270, ...);
+     1x  CMatrix3x4f local_240; ... f(&local_240, ...);
+
+Functions:
+  core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
+  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
+  core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
+  core_tentacle.cpp_CTentacle_process_FUN_005db050
+  core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
+
+====================================================================================================
 TYPE: unrolled_strchr (24 occurrences)
 ====================================================================================================
 
@@ -595,31 +590,6 @@ Functions:
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
   shape_design.c_setupViewMatrix_FUN_0045ba60
   shape_design.c_showFacetPartEditor_FUN_0045f1d0
-
-====================================================================================================
-TYPE: raw_address_constant (17 occurrences)
-====================================================================================================
-
-Unique patterns:
-     4x  0xfe0000
-     3x  0x16e99c8
-     2x  0x16e9a08
-     2x  0x16e9a48
-     2x  0x766880
-     1x  0x16e99c4
-     1x  0x16e9a04
-     1x  0x16e9a44
-     1x  0x5d709a
-
-Functions:
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  shape_design.c_exportModelToBIN_FUN_0045aa80
-  shape_design.c_loadModelBinary_FUN_00458170
-  shape_design.c_loadS3DModelFile_FUN_004593a0
-  shape_design.c_tileTextureMaps_FUN_0046a180
-  shape_design.c_turnModelInsideOut_FUN_004671e0
-  shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
-  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
 TYPE: warning_inlined_function (15 occurrences)
@@ -674,6 +644,29 @@ Functions:
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
   shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+
+====================================================================================================
+TYPE: raw_address_constant (13 occurrences)
+====================================================================================================
+
+Unique patterns:
+     3x  0x16e99c8
+     2x  0x16e9a08
+     2x  0x16e9a48
+     2x  0x766880
+     1x  0x16e99c4
+     1x  0x16e9a04
+     1x  0x16e9a44
+     1x  0x5d709a
+
+Functions:
+  shape_design.c_exportModelToBIN_FUN_0045aa80
+  shape_design.c_loadModelBinary_FUN_00458170
+  shape_design.c_loadS3DModelFile_FUN_004593a0
+  shape_design.c_tileTextureMaps_FUN_0046a180
+  shape_design.c_turnModelInsideOut_FUN_004671e0
+  shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
+  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
 TYPE: bit_int_float_compare (11 occurrences)
