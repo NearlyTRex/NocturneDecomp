@@ -12,17 +12,17 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 73
-  Total suspicious global references: 121
+  Functions with suspicious globals: 74
+  Total suspicious global references: 123
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
+    g_WindowHeight                                     5 functions
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_CDemonCameraInstance                             4 functions
-    g_WindowHeight                                     4 functions
-    g_WindowWidth                                      3 functions
+    g_WindowWidth                                      4 functions
     g_GetLastErrorFunc                                 3 functions
     g_TextureCacheInstance                             2 functions
     g_UseDirect3D                                      2 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 37 (these need manual review)
+  .keep files with issues: 38 (these need manual review)
   Raw .cpp files with issues: 36
 
 ====================================================================================================
@@ -193,6 +193,18 @@ core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.keep]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+engine_2d.c_plotPixel_FUN_00401140  [.keep]  (2 suspicious globals)
+  File: engine/2d.c
+
+  g_WindowHeight
+    Used at lines: 13
+    NOT found in function reference list
+
+  g_WindowWidth
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50  [.keep]  (2 suspicious globals)
   File: engine/drender.cpp
 
@@ -333,7 +345,7 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep]  (1 s
   File: core/skeledit.cpp
 
   g_ColorCubeLookup
-    Used at lines: 522
+    Used at lines: 494
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

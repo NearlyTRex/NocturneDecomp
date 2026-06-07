@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 541
+// Structs : 542
 
 #include "nocturne.h"
 
@@ -9917,6 +9917,24 @@ static_assert(__builtin_offsetof(SRoom, dead) == 60,
               "offsetof(SRoom, dead) != 60");
 static_assert(__builtin_offsetof(SRoom, reverb_size) == 64,
               "offsetof(SRoom, reverb_size) != 64");
+
+// ---- SS3DFaceMatch (60 bytes) ----
+static_assert(sizeof(SS3DFaceMatch) == 60,
+              "sizeof(SS3DFaceMatch) != 60");
+static_assert(__builtin_offsetof(SS3DFaceMatch, unk1) == 0,
+              "offsetof(SS3DFaceMatch, unk1) != 0");
+static_assert(__builtin_offsetof(SS3DFaceMatch, edge_count) == 4,
+              "offsetof(SS3DFaceMatch, edge_count) != 4");
+static_assert(__builtin_offsetof(SS3DFaceMatch, part_index) == 8,
+              "offsetof(SS3DFaceMatch, part_index) != 8");
+static_assert(__builtin_offsetof(SS3DFaceMatch, match_index) == 12,
+              "offsetof(SS3DFaceMatch, match_index) != 12");
+static_assert(__builtin_offsetof(SS3DFaceMatch, unk2) == 16,
+              "offsetof(SS3DFaceMatch, unk2) != 16");
+static_assert(__builtin_offsetof(SS3DFaceMatch, texture_index) == 20,
+              "offsetof(SS3DFaceMatch, texture_index) != 20");
+static_assert(__builtin_offsetof(SS3DFaceMatch, vertices) == 24,
+              "offsetof(SS3DFaceMatch, vertices) != 24");
 
 // ---- SScrape (52 bytes) ----
 static_assert(sizeof(SScrape) == 52,

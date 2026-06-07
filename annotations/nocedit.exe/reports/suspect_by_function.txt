@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6209 (96.2%)
-With suspects: 245
-Total suspects: 1694
+Clean: 6221 (96.4%)
+With suspects: 233
+Total suspects: 1608
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
@@ -17,10 +17,9 @@ core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (2 suspects)
   Line 87 [unrolled_memcpy]: // 0047a936: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (21 suspects)
+core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (19 suspects)
   File: core/gabriela.cpp
 ====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 19 [missing_cave_copy]: CQuaternion4f local_1f4;
   Line 21 [missing_cave_copy]: CQuaternion4f local_1d4;
   Line 25 [missing_cave_copy]: CQuaternion4f local_194;
@@ -40,27 +39,6 @@ core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (21 suspec
   Line 39 [missing_cave_copy]: CQuaternion4f local_b4;
   Line 40 [missing_cave_copy]: CQuaternion4f local_a4;
   Line 41 [missing_cave_copy]: CQuaternion4f local_94;
-  Line 195 [unrolled_memcpy]: g_GabriellaWeaponAimRotation.w = local_1e4.w;
-
-====================================================================================================
-core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (15 suspects)
-  File: core/gabriela.cpp
-====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 20 [missing_cave_copy]: CMatrix3x4f local_3ac;
-  Line 21 [missing_cave_copy]: CMatrix3x4f local_37c;
-  Line 25 [missing_cave_copy]: CMatrix3x4f local_2bc;
-  Line 26 [missing_cave_copy]: CMatrix3x4f local_28c;
-  Line 27 [missing_cave_copy]: CMatrix3x4f local_25c;
-  Line 29 [missing_cave_copy]: CMatrix3x4f local_1fc;
-  Line 30 [missing_cave_copy]: CMatrix3x4f local_1cc;
-  Line 31 [missing_cave_copy]: CMatrix3x4f local_19c;
-  Line 32 [missing_cave_copy]: CMatrix3x4f local_16c;
-  Line 36 [missing_cave_copy]: CMatrix3x4f local_ac;
-  Line 37 [missing_cave_copy]: CMatrix3x4f local_7c;
-  Line 90 [unrolled_memcpy]: local_31c.m[0].w = pCVar8->m[0].w;
-  Line 104 [unrolled_memcpy]: (pCVar4->base).location.position.x = pCVar3->x;
-  Line 112 [unrolled_memcpy]: (pUVar5->vec).x = (pUVar6->vec).x;
 
 ====================================================================================================
 core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0 (2 suspects)
@@ -103,13 +81,6 @@ core_ghoul.cpp_CGhoul_process_FUN_004e6600 (12 suspects)
   Line 961 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
   Line 964 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   Line 1052 [unrolled_memcpy]: (this_ptr->prev_position).x = (pCVar16->position).x;
-
-====================================================================================================
-core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (2 suspects)
-  File: core/glass.cpp
-====================================================================================================
-  Line 115 [unrolled_memcpy]: local_1e4.vertices[0].x = quad_vertices->vertices[0].x;
-  Line 184 [unrolled_memcpy]: local_1e4.vertices[1].x = quad_vertices->vertices[1].x;
 
 ====================================================================================================
 core_inv.cpp_CInventory_load_FUN_004ff400 (2 suspects)
@@ -452,53 +423,11 @@ core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40 (1 suspect)
   Line 109 [static_legacy_uninitvar]: if (local_38 != end_height) {
 
 ====================================================================================================
-core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (15 suspects)
-  File: core/scat.cpp
-====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 14 [stack_alignment_array]: float afStackY_1938 [1521];
-  Line 17 [missing_cave_copy]: CQuaternion4f local_15c;
-  Line 18 [missing_cave_copy]: CQuaternion4f local_14c;
-  Line 21 [missing_cave_copy]: CQuaternion4f local_11c;
-  Line 22 [missing_cave_copy]: CQuaternion4f local_10c;
-  Line 24 [missing_cave_copy]: CQuaternion4f local_ec;
-  Line 25 [missing_cave_copy]: CQuaternion4f local_dc;
-  Line 26 [missing_cave_copy]: CQuaternion4f local_cc;
-  Line 28 [missing_cave_copy]: CQuaternion4f local_ac;
-  Line 31 [missing_cave_copy]: CQuaternion4f local_7c;
-  Line 33 [missing_cave_copy]: CQuaternion4f local_5c;
-  Line 34 [missing_cave_copy]: CQuaternion4f local_4c;
-  Line 35 [missing_cave_copy]: CQuaternion4f local_3c;
-  Line 54 [unrolled_memcpy]: local_13c.w = pCVar2->w;
-
-====================================================================================================
-core_scat.cpp_CScat_process_FUN_005571f0 (6 suspects)
+core_scat.cpp_CScat_process_FUN_005571f0 (2 suspects)
   File: core/scat.cpp
 ====================================================================================================
   Line 27 [missing_cave_copy]: CQuaternion4f CStack_84;
   Line 28 [missing_cave_copy]: CQuaternion4f CStack_74;
-  Line 69 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 152 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 210 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  Line 214 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
-
-====================================================================================================
-core_scat.cpp_CScat_updateAI_FUN_005578e0 (4 suspects)
-  File: core/scat.cpp
-====================================================================================================
-  Line 54 [bit_int_float_compare]: if ((pCVar4 != (CHero *)0x0) && ((int)local_30 < 0x41f00000)) {
-  Line 69 [unrolled_memcpy]: local_3c.x = local_60.x;
-  Line 135 [unrolled_memcpy]: local_3c.x = local_78.x;
-  Line 141 [unrolled_memcpy]: local_3c.x = pCVar6->x;
-
-====================================================================================================
-core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (4 suspects)
-  File: core/scat.cpp
-====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 16 [missing_cave_copy]: CMatrix3x4f local_100;
-  Line 17 [missing_cave_copy]: CMatrix3x4f local_d0;
-  Line 19 [missing_cave_copy]: CMatrix3x4f local_70;
 
 ====================================================================================================
 core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 (6 suspects)
@@ -512,41 +441,15 @@ core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 (6 suspects)
   Line 149 [static_shift_too_many_bits]: uVar10 << 0x10) ^ (int)uVar5 >> 0x1f;
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (32 suspects)
+core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (6 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 48 [missing_cave_copy]: CMatrix3x4f local_320;
   Line 51 [missing_cave_copy]: CMatrix3x4f local_290;
-  Line 189 [unrolled_memcpy]: local_184.x = g_ZeroVector.f.x;
-  Line 192 [unrolled_memcpy]: local_19c.x = g_ZeroVector.f.x;
-  Line 253 [unrolled_memset]: local_6c->z = 0.0;
-  Line 394 [shadow_pointer_walk]: pCVar15 = (CDeformableModelInstance *)&(pCVar15->motion_controller).current_motion_index;
-  Line 404 [shadow_pointer_walk]: pCVar15 = (CDeformableModelInstance *)&(pCVar15->motion_controller).current_motion_index;
-  Line 425 [pointer_cast]: if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar16 + 3) & 0x80) == 0) {
-  Line 426 [pointer_cast]: local_68 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar16) >> 0x10;
-  Line 427 [pointer_cast]: x = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar16) >> 0x10;
-  Line 448 [unrolled_memcpy]: local_200.position.x = (pCVar10->position).x;
-  Line 454 [unrolled_memcpy]: local_200.orientation.vec.x = pCVar13->x;
   Line 504 [raw_address_constant]: local_3a4.vertices[1].texture_u = 0xfe0000;
   Line 505 [raw_address_constant]: local_3a4.vertices[2].texture_u = 0xfe0000;
   Line 506 [raw_address_constant]: local_3a4.vertices[2].texture_v = 0xfe0000;
   Line 507 [raw_address_constant]: local_3a4.vertices[3].texture_v = 0xfe0000;
-  Line 550 [static_legacy_uninitvar]: _sprintf(local_46c," [C] Use canceled: %s ",local_38 != 0.0f ? "ON" : "OFF");
-  Line 598 [unrolled_memcpy]: pCVar14->x = pCVar13->x;
-  Line 666 [unrolled_memcpy]: local_184.x = pCVar13->x;
-  Line 672 [unrolled_memcpy]: local_19c.x = pCVar13->x;
-  Line 738 [static_legacy_uninitvar]: (double)local_1e4.max.y,(double)local_1c8,(double)(local_1c8 - local_1e4.max.y),
-  Line 739 [static_legacy_uninitvar]: (double)local_1e4.max.z,(double)local_1c4,(double)(local_1c4 - local_1e4.max.z),
-  Line 740 [static_legacy_uninitvar]: (double)local_1cc,(double)local_1c0,(double)(local_1c0 - local_1cc));
-  Line 740 [static_legacy_uninitvar]: (double)local_1cc,(double)local_1c0,(double)(local_1c0 - local_1cc));
-  Line 790 [static_invalid_pointer_cast]: (g_CEditorToolsPtr,"Enter exit forward to frame number",(int *)&local_38,1,0,
-  Line 932 [static_legacy_uninitvar]: (double)local_1bc,(double)local_1b8,(double)local_1b4,
-  Line 932 [static_legacy_uninitvar]: (double)local_1bc,(double)local_1b8,(double)local_1b4,
-  Line 933 [static_legacy_uninitvar]: (double)local_1b0,(double)local_1ac,(double)local_1a8);
-  Line 933 [static_legacy_uninitvar]: (double)local_1b0,(double)local_1ac,(double)local_1a8);
-  Line 933 [static_legacy_uninitvar]: (double)local_1b0,(double)local_1ac,(double)local_1a8);
-  Line 1061 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (2 suspects)
@@ -2878,52 +2781,3 @@ shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (4 suspects)
   Line 44 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);
   Line 45 [pointer_cast]: pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
   Line 76 [unrolled_memcpy]: // 005d6488: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0 (2 suspects)
-  File: sound/sndwav.cpp
-====================================================================================================
-  Line 13 [signed_shift_global_idiom]: ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
-  Line 14 [signed_shift_global_idiom]: (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3);
-
-====================================================================================================
-sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90 (2 suspects)
-  File: sound/sndwav.cpp
-====================================================================================================
-  Line 5 [signed_shift_global_idiom]: return ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
-  Line 6 [signed_shift_global_idiom]: (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveInBufferSizeSamples *
-
-====================================================================================================
-sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690 (2 suspects)
-  File: sound/sndwav.cpp
-====================================================================================================
-  Line 5 [signed_shift_global_idiom]: return ((int)((g_WaveOutBitsPerSample + (g_WaveOutBitsPerSample >> 0x1f) * -8) -
-  Line 6 [signed_shift_global_idiom]: (uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveOutBufferSize *
-
-====================================================================================================
-sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0 (2 suspects)
-  File: sound/sndwav.cpp
-====================================================================================================
-  Line 13 [signed_shift_global_idiom]: ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
-  Line 14 [signed_shift_global_idiom]: (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveInBufferSizeSamples;
-
-====================================================================================================
-wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0 (2 suspects)
-  File: wincore/wddvmem.cpp
-====================================================================================================
-  Line 6 [signed_shift_global_idiom]: (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
-  Line 7 [signed_shift_global_idiom]: (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *
-
-====================================================================================================
-wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10 (2 suspects)
-  File: wincore/wddvmem.cpp
-====================================================================================================
-  Line 8 [signed_shift_global_idiom]: (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
-  Line 9 [signed_shift_global_idiom]: (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *
-
-====================================================================================================
-wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0 (2 suspects)
-  File: wincore/wddvmem.cpp
-====================================================================================================
-  Line 46 [signed_shift_global_idiom]: (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
-  Line 47 [signed_shift_global_idiom]: (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *

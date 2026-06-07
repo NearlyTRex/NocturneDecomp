@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 841,
-    "complexity_score": 477,
+    "complexity_score": 447,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 27,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 252,
-    "suspect_count": 21,
+    "suspect_count": 19,
     "suspect_types": [
-      "missing_cave_copy",
-      "unrolled_memcpy",
-      "warning_type_propagation"
+      "missing_cave_copy"
     ],
     "total_lines": 1093
   },
@@ -354,6 +352,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 16,
       "match": "afStackY_19d0",
@@ -361,6 +368,15 @@
       "severity": "moderate",
       "text": "float afStackY_19d0 [1521];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 195,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_GabriellaWeaponAimRotation.w = local_1e4.w;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -681,22 +697,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 195,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_GabriellaWeaponAimRotation.w = local_1e4.w;",
-      "type": "unrolled_memcpy"
-    },
     {
       "description": "Struct-type local `local_1f4` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 19,

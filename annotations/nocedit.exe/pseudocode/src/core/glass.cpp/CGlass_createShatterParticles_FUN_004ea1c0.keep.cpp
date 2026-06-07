@@ -321,12 +321,8 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *t
   local_1e4.vertices[0] = quad_vertices->vertices[0];
   local_1e4.vertices[1] = quad_vertices->vertices[1];
   local_1e4.vertices[2] = quad_vertices->vertices[2];
-  local_1b4.x = quad_uv_u->x;
-  local_1b4.y = quad_uv_u->y;
-  local_1b4.z = quad_uv_u->z;
-  local_1a4.x = quad_uv_v->x;
-  local_1a4.y = quad_uv_v->y;
-  local_1a4.z = quad_uv_v->z;
+  memcpy(&local_1b4,quad_uv_u,sizeof(CVector3i));
+  memcpy(&local_1a4,quad_uv_v,sizeof(CVector3i));
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00
             (g_CFireEffectPtr,(STriangleVertices *)&local_1e4,(CVector3i *)&local_1b4,
              (CVector3i *)&local_1a4,&this_ptr->glass_texture,this_ptr->opacity);

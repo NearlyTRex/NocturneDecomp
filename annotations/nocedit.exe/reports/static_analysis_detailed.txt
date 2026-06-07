@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (321 diagnostics)
+Cppcheck (quick) (310 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -1009,51 +1009,71 @@ shiftTooManyBitsSigned (34)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (24)
+invalidPointerCast (14)
+----------------------------------------------------------------------------------------------------
+
+  core_chain.cpp_fastSqrt_FUN_00431350               line 13
+    File: core/chain.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_chain.cpp_fastSqrt_FUN_00431350               line 14
+    File: core/chain.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 13
+    File: core/cloth.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 14
+    File: core/cloth.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 680
+    File: core/ghoul.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 681
+    File: core/ghoul.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_skeleton.cpp_CDeformableModelInstance_compute line 29
+    File: core/skeleton.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_skeleton.cpp_CDeformableModelInstance_compute line 30
+    File: core/skeleton.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 41
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 43
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 44
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 45
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 46
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 47
+    File: shape/meshlod.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
+legacyUninitvar (14)
 ----------------------------------------------------------------------------------------------------
 
   core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40 line 109
     File: core/path.cpp
-    Uninitialized variable: local_38
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 740
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1cc
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 738
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 739
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c4
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 740
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c0
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 932
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 932
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b4
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 933
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b0
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 933
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1ac
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 933
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1a8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 550
-    File: core/skeledit.cpp
     Uninitialized variable: local_38
 
   core_sound.cpp_updateListeners_FUN_005b1870        line 96
@@ -1107,70 +1127,6 @@ legacyUninitvar (24)
   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_005176 line 360
     File: shape/meshlod.cpp
     Uninitialized variable: local_7c
-
-----------------------------------------------------------------------------------------------------
-invalidPointerCast (15)
-----------------------------------------------------------------------------------------------------
-
-  core_chain.cpp_fastSqrt_FUN_00431350               line 13
-    File: core/chain.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_chain.cpp_fastSqrt_FUN_00431350               line 14
-    File: core/chain.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 13
-    File: core/cloth.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 14
-    File: core/cloth.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 680
-    File: core/ghoul.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 681
-    File: core/ghoul.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 790
-    File: core/skeledit.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 29
-    File: core/skeleton.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 30
-    File: core/skeleton.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 41
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 43
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 44
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 45
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 46
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 47
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 nullPointerRedundantCheck (12)

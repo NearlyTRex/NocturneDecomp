@@ -11,8 +11,7 @@ void __cdecl wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005ecac0(void)
 
 {
   g_BackBuffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                           (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
-                                  (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *
+                           (g_BitsPerPixel / 8 *
                             g_WindowWidth * g_WindowHeight,"..\\wincore\\wddvmem.cpp",0xe9);
   if (g_BackBuffer == (void *)0x0) {
     g_CurrentFilename = "..\\wincore\\wddvmem.cpp";

@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6226 (96.5%)
-Files at 100%: 194
-Files at 90%+: 198
+Clean functions: 6238 (96.7%)
+Files at 100%: 197
+Files at 90%+: 201
 Files at 50%+: 214
 
 ====================================================================================================
@@ -86,6 +86,7 @@ FILES AT 100% (COMPLETE)
   core/game.cpp: 66 functions, 6745 lines
   core/gargoyle.cpp: 16 functions, 941 lines
   core/gasmask.cpp: 14 functions, 131 lines
+  core/glass.cpp: 24 functions, 1468 lines
   core/gore.cpp: 54 functions, 1547 lines
   core/grave.cpp: 17 functions, 268 lines
   core/ground.cpp: 20 functions, 892 lines
@@ -202,14 +203,16 @@ FILES AT 100% (COMPLETE)
   sound/mp3.cpp: 57 functions, 4680 lines
   sound/snddx.cpp: 32 functions, 1433 lines
   sound/sndmain.cpp: 193 functions, 6577 lines
+  sound/sndwav.cpp: 35 functions, 765 lines
   support/codec.cpp: 40 functions, 821 lines
   support/newmsg.cpp: 4 functions, 210 lines
   support/trisock.cpp: 32 functions, 355 lines
+  wincore/wddvmem.cpp: 28 functions, 1016 lines
   wincore/windll.cpp: 72 functions, 3544 lines
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 194 files
+Total: 197 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -218,36 +221,24 @@ FILES AT 90-99% (ALMOST COMPLETE)
          65/66 clean, 1 remaining
            - core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 (34 lines) [unrolled_memcpy]
 
+   97.4% | core/gabriela.cpp
+         37/38 clean, 1 remaining
+           - core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (252 lines) [missing_cave_copy]
+
    97.1% | core/skeledit.cpp
          68/70 clean, 2 remaining
-           - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines) [missing_cave_copy, pointer_cast, raw_address_constant, shadow_pointer_walk, unrolled_memcpy, unrolled_memset, unrolled_strcpy, warning_inlined_function]
+           - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines) [missing_cave_copy, raw_address_constant]
            - core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (139 lines) [missing_cave_copy]
 
-   95.8% | core/glass.cpp
-         23/24 clean, 1 remaining
-           - core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 (387 lines) [unrolled_memcpy]
-
-   94.7% | core/gabriela.cpp
-         36/38 clean, 2 remaining
-           - core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (252 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (115 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
+   96.0% | core/scat.cpp
+         24/25 clean, 1 remaining
+           - core_scat.cpp_CScat_process_FUN_005571f0 (311 lines) [missing_cave_copy]
 
 Total: 4 files
 
 ====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
-   89.3% | wincore/wddvmem.cpp
-         25/28 clean, 3 remaining
-           - wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10 (45 lines) [signed_shift_global_idiom]
-           - wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0 (24 lines) [signed_shift_global_idiom]
-           - wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0 (130 lines) [signed_shift_global_idiom]
-   88.6% | sound/sndwav.cpp
-         31/35 clean, 4 remaining
-           - sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0 (23 lines) [signed_shift_global_idiom]
-           - sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690 (6 lines) [signed_shift_global_idiom]
-           - sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0 (56 lines) [signed_shift_global_idiom]
-           - sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_005b0c90 (6 lines) [signed_shift_global_idiom]
    87.3% | core/msnedit.cpp
          55/63 clean, 8 remaining
            - core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 (103 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
@@ -277,12 +268,6 @@ FILES AT 50-89%
            - core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 (56 lines) [unrolled_memcpy]
            - core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 (144 lines) [unrolled_memcpy]
            - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines) [pointer_cast, unrolled_memcpy]
-   84.0% | core/scat.cpp
-         21/25 clean, 4 remaining
-           - core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (48 lines) [missing_cave_copy, warning_type_propagation]
-           - core_scat.cpp_CScat_process_FUN_005571f0 (311 lines) [missing_cave_copy, unrolled_memset]
-           - core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (80 lines) [missing_cave_copy, stack_alignment_array, unrolled_memcpy, warning_type_propagation]
-           - core_scat.cpp_CScat_updateAI_FUN_005578e0 (158 lines) [bit_int_float_compare, unrolled_memcpy]
    81.0% | shape/cramtex.cpp
          17/21 clean, 4 remaining
            - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (832 lines) [pointer_cast]
@@ -492,7 +477,7 @@ FILES AT 50-89%
            - shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (89 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (26 lines) [pointer_cast]
 
-Total: 16 files
+Total: 13 files
 
 ====================================================================================================
 FILES BELOW 50%

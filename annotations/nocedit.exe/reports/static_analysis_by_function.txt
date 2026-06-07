@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 105
-  Total diagnostics: 321
+  Functions with findings: 104
+  Total diagnostics: 310
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 65, raw .cpp files: 40
+  .keep.cpp files: 64, raw .cpp files: 40
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -135,22 +135,6 @@ shape_superopt.cpp_CPoly_transform_FUN_005ccc30  [.cpp] [Cppcheck (quick)]
   Line  164: [uninitvar] Uninitialized variable: local_78
   Line  175: [uninitvar] Uninitialized variable: local_180
   Line  176: [uninitvar] Uninitialized variable: local_178
-
-----------------------------------------------------------------------------------------------------
-core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep] [Cppcheck (quick)]
-  File: core/skeledit.cpp  (11 diagnostics)
-
-  Line  550: [legacyUninitvar] Uninitialized variable: local_38
-  Line  738: [legacyUninitvar] Uninitialized variable: local_1c8
-  Line  739: [legacyUninitvar] Uninitialized variable: local_1c4
-  Line  740: [legacyUninitvar] Uninitialized variable: local_1cc
-  Line  740: [legacyUninitvar] Uninitialized variable: local_1c0
-  Line  790: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-  Line  932: [legacyUninitvar] Uninitialized variable: local_1b8
-  Line  932: [legacyUninitvar] Uninitialized variable: local_1b4
-  Line  933: [legacyUninitvar] Uninitialized variable: local_1b0
-  Line  933: [legacyUninitvar] Uninitialized variable: local_1ac
-  Line  933: [legacyUninitvar] Uninitialized variable: local_1a8
 
 ----------------------------------------------------------------------------------------------------
 shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0  [.keep] [Cppcheck (quick)]

@@ -2098,6 +2098,7 @@ annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/CGabriella_tryFireWeapo
 annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/CGabriella_tryThrowObject_FUN_004d6050.cpp
 annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/CGabriella_updateAimTracking_FUN_004d6540.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/CGabriella_updateClavicleCollisionAvoidance_FUN_004d6d40.cpp
+annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/CGabriella_updateWeaponPosition_FUN_004d5550.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/aimRotationBlendWeightCallback_FUN_004d2a80.cpp
 annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/factoryFunc_FUN_004d2ae0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/flashlightBlendWeightCallback_FUN_004d2a30.cpp
@@ -2217,6 +2218,7 @@ annotations/nocedit.exe/pseudocode/src/core/ghoul.cpp/staticInit_FUN_004e5f90.cp
 annotations/nocedit.exe/pseudocode/src/core/glass.cpp/CGlass_addFilesToExtract_FUN_004eb690.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/glass.cpp/CGlass_archive_FUN_004ea090.cpp
 annotations/nocedit.exe/pseudocode/src/core/glass.cpp/CGlass_checkBreakableCondition_FUN_004eb3a0.cpp
+annotations/nocedit.exe/pseudocode/src/core/glass.cpp/CGlass_createShatterParticles_FUN_004ea1c0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/glass.cpp/CGlass_ctor_FUN_004e9040.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/glass.cpp/CGlass_dtor_FUN_004eb820.cpp
 annotations/nocedit.exe/pseudocode/src/core/glass.cpp/CGlass_getActorType_FUN_004e9030.cpp
@@ -3232,6 +3234,7 @@ annotations/nocedit.exe/pseudocode/src/core/procedur.cpp/CProceduralTexture_show
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CSCat_archive_FUN_00557db0.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_addFilesToExtract_FUN_00559140.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_advanceMotionWithGrabDamage_FUN_00557d20.cpp
+annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_blendAimBones_FUN_005584a0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_blendLayerAction_FUN_005582c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_createDefaultWeapon_FUN_00557150.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_ctor_FUN_00556ed0.keep.cpp
@@ -3246,7 +3249,9 @@ annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_processDamage_FUN_005
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_renderOpaque_FUN_00557df0.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_scoreAimTarget_FUN_00558cf0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_setup_FUN_00556f90.cpp
+annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_updateAI_FUN_005578e0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_updateAiming_FUN_00558720.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_updateWeaponAttachment_FUN_00558fd0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_updateWeaponState_FUN_00558060.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/factoryFunc_FUN_00556e90.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/staticInit_FUN_00556e00.cpp
@@ -5983,6 +5988,7 @@ annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/trimLineAndRemoveCommen
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/unlockSound_FUN_005abdc0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndmain.cpp/writeIni_FUN_005ac220.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavInDevice_close_FUN_005b0d70.keep.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavInDevice_poll_FUN_005b12e0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavInDevice_reset_FUN_005b0f10.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavInDevice_setMode_FUN_005b0f70.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavInDevice_start_FUN_005b0e20.keep.cpp
@@ -6009,9 +6015,12 @@ annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_start_FUN_
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/CWavOutDevice_unlockSample_FUN_005b16e0.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/enumerateWavInDevice_FUN_005b1560.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/enumerateWavOutDevice_FUN_005b1470.keep.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/getWavInBufferSizeBytes_FUN_005b0c90.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/getWavInDevice_FUN_005b1600.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/getWavOutBufferSizeBytes_FUN_005b0690.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/getWavOutDevice_FUN_005b1510.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/staticInit_FUN_005b0670.keep.cpp
+annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/writeWavInBuffer_FUN_005b0cc0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/sound/sndwav.cpp/writeWavOutBuffer_FUN_005b06c0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/support/codec.cpp/CCodec_ctor_FUN_0043e9a0.cpp
 annotations/nocedit.exe/pseudocode/src/support/codec.cpp/CCodec_dtor_FUN_0043e9b0.cpp
@@ -6089,6 +6098,7 @@ annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/shouldNeverBeCalled1_
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/shouldNeverBeCalled2_FUN_005e1ab0.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/startupWinsock_FUN_005e1ec0.cpp
 annotations/nocedit.exe/pseudocode/src/support/trisock.cpp/staticInit_FUN_005e16b0.cpp
+annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/allocateRenderBuffers_FUN_005ecac0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/analyzePixelFormat_FUN_005ed730.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/cleanupDirectDrawSurfaces_FUN_005ec920.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/cleanupGraphicsSystem_FUN_005ecd90.cpp
@@ -6101,6 +6111,7 @@ annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/freeTextureCache_FUN_
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/getProcAddress_FUN_005ede20.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/initTextureCache_FUN_00403790.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/initializeColorMasks_FUN_004f3ff0.keep.cpp
+annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/initializeGraphicsSystem_FUN_005ecc10.keep.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/initializeScanlinePointers_FUN_005ece60.keep.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/loadLibrary_FUN_005ede10.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/openScreenDevice_FUN_005ed580.keep.cpp
@@ -6109,6 +6120,7 @@ annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/reinitializeDirectDra
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/reinitializeGraphicsSystem_FUN_005ed4b0.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/resetGraphicsSystem_FUN_005ed2a0.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/restoreVideoAndMinimizeWindow_FUN_005edc50.cpp
+annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/setScreenResolution_FUN_005ecef0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/setupColorPalette_FUN_005ed8f0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/shutdownDirectDraw_FUN_005eca30.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/wddvmem.cpp/stubFunction_FUN_005edd80.cpp

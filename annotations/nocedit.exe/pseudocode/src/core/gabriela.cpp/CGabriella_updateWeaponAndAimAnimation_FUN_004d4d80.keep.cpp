@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80(CGabriella *this_ptr)
 
 {
@@ -179,10 +177,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
             pCVar5 = &local_a4;
             core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(-1.5707964,&local_1f4);
             core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_b4,pCVar5,&local_1e4);
-            g_GabriellaWeaponAimRotation.w = local_1e4.w;
-            g_GabriellaWeaponAimRotation.x = local_1e4.x;
-            g_GabriellaWeaponAimRotation.y = local_1e4.y;
-            g_GabriellaWeaponAimRotation.z = local_1e4.z;
+            g_GabriellaWeaponAimRotation = local_1e4;
           }
           core_xform_cpp_multiplyQuaternion_FUN_005f7640
                     (&g_GabriellaWeaponAimRotation,&local_1a4,&local_1d4);

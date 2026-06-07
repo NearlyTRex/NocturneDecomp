@@ -60,9 +60,8 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
   }
   pCVar8 = &(this_ptr->base).base.model.accumulated_root_motion;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  pCVar8->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+  pCVar8->x = 0.0;
   core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_00557d20(this_ptr,delta_time);
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   iVar7 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
@@ -143,9 +142,8 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
   }
   else {
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    pCVar8->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+    pCVar8->x = 0.0;
     uVar3 = (this_ptr->base).base.is_walking;
     if (uVar3 < 2) {
       if (uVar3 == 1) {
@@ -201,12 +199,11 @@ LAB_00557637:
     fVar6 = (this_ptr->base).base.position_delta.z;
     fVar8 = (float)32;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    pCVar8->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
+    pCVar8->x = 0.0;
     (this_ptr->base).base.position_delta.z = 0.0;
-    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-    pCVar1->x = (this_ptr->base).base.position_delta.y;
+    (this_ptr->base).base.position_delta.y = 0.0;
+    pCVar1->x = 0.0;
     (this_ptr->base).base.velocity.y = (this_ptr->base).base.velocity.y - delta_time * fVar8;
     local_4c.x = fVar9 + fVar2 + (this_ptr->base).base.velocity.x * delta_time;
     local_4c.y = fVar3 + fVar4 + (this_ptr->base).base.velocity.y * delta_time;

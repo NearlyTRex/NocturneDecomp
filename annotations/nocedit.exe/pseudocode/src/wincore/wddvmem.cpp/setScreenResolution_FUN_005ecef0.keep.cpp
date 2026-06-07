@@ -48,8 +48,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int h
     g_SoftwareZBuffer = (void *)0x0;
   }
   g_BackBuffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                           (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
-                                  (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *
+                           (g_BitsPerPixel / 8 *
                             g_WindowHeight * g_WindowWidth,"..\\wincore\\wddvmem.cpp",0xe9);
   if (g_BackBuffer == (void *)0x0) {
     g_CurrentFilename = "..\\wincore\\wddvmem.cpp";

@@ -17,9 +17,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
   int iVar4;
   bool bVar5;
   
-  iVar3 = g_WaveInChannels *
-          ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
-                (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3);
+  iVar3 = g_WaveInChannels * (g_WaveInBitsPerSample / 8);
   iVar4 = 0;
   bVar5 = g_WaveInBitsPerSample == 0x10;
   while( true ) {

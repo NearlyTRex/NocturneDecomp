@@ -57,7 +57,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
      (0 < pCVar2->ammo_count)) {
     local_30 = 9999.9;
     pCVar4 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004f3960(&this_ptr->base,&local_30);
-    if ((pCVar4 != (CHero *)0x0) && ((int)local_30 < 0x41f00000)) {
+    if ((pCVar4 != (CHero *)0x0) && (local_30 < 30.0f)) {
       iVar7 = 1;
       this_ptr_01 = pCVar4;
     }
@@ -71,11 +71,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
                (this_ptr->base).base.base.location.position.y;
   local_60.z = (this_ptr_01->base).base.location.position.z -
                (this_ptr->base).base.base.location.position.z;
-  if (&local_3c != &local_60) {
-    local_3c.x = local_60.x;
-    local_3c.y = local_60.y;
-    local_3c.z = local_60.z;
-  }
+  local_3c = local_60;
   local_7c = SQRT(local_3c.z * local_3c.z + local_3c.x * local_3c.x + local_3c.y * local_3c.y);
   if ((this_ptr->base).ai_task == HERO_TASK_GUARD) {
     local_7c = 0.0;
@@ -137,16 +133,10 @@ LAB_00557b63:
                (this_ptr->base).base.base.location.position.y;
   local_78.z = (this_ptr_01->base).base.location.position.z -
                (this_ptr->base).base.base.location.position.z;
-  if (&local_3c != &local_78) {
-    local_3c.x = local_78.x;
-    local_3c.y = local_78.y;
-    local_3c.z = local_78.z;
-  }
+  local_3c = local_78;
   pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_6c,&local_3c);
   if (&local_3c != pCVar6) {
-    local_3c.x = pCVar6->x;
-    local_3c.y = pCVar6->y;
-    local_3c.z = pCVar6->z;
+    local_3c = *pCVar6;
   }
   fStack_44 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                         (local_3c.y - (this_ptr->base).base.base.orient.vec.y);
