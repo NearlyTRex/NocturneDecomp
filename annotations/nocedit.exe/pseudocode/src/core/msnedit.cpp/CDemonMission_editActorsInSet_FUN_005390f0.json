@@ -1359,6 +1359,42 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&g_CDemonCameraInstance.camera_origin.z` is always TRUE (the address of `g_CDemonCameraInstance.camera_origin.z` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
+      "line": 223,
+      "match": "if ((T *)0x0 != &g_CDemonCameraInstance.camera_origin.z)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
+      "type": "tautological_addr_guard"
+    },
+    {
+      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&g_CDemonCameraInstance.camera_origin.z` is always TRUE (the address of `g_CDemonCameraInstance.camera_origin.z` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
+      "line": 234,
+      "match": "if ((T *)0x0 != &g_CDemonCameraInstance.camera_origin.z)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
+      "type": "tautological_addr_guard"
+    },
+    {
+      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&g_CDemonCameraInstance.camera_origin.z` is always TRUE (the address of `g_CDemonCameraInstance.camera_origin.z` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
+      "line": 271,
+      "match": "if ((T *)0x0 != &g_CDemonCameraInstance.camera_origin.z)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
+      "type": "tautological_addr_guard"
+    },
+    {
+      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&g_CDemonCameraInstance.camera_origin.z` is always TRUE (the address of `g_CDemonCameraInstance.camera_origin.z` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
+      "line": 317,
+      "match": "if ((T *)0x0 != &g_CDemonCameraInstance.camera_origin.z)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
+      "type": "tautological_addr_guard"
+    },
+    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
       "line": 928,
       "match": "0x3e999999 < (int)FLOAT_00680818))",

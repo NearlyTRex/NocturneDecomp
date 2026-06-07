@@ -93,6 +93,7 @@ SUSPECT_SEVERITY = {
     'sibling_array_undersized': 'moderate',
     'self_copy_guard': 'moderate',
     'dropped_self_copy': 'moderate',
+    'tautological_addr_guard': 'moderate',
     'shadow_pointer_walk': 'moderate',
     'memcpy_oversized_source': 'moderate',
     'dropped_loop_counter': 'moderate',
@@ -2872,6 +2873,86 @@ def identify_dropped_self_copy(decompiled_code):
                 'uninitialized); if the copy folded into stores that survive '
                 'after the merge, drop the dead guard line.'
                 % (a, b, a, b, a, b, a, b, a)),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
+# Tautological address-of guard. Watcom self-copy / defensive guards
+# (`if (&dst != &src) dst = src;`) sometimes survive decompilation with one
+# operand resolved to a non-object SENTINEL and the other to the address of a
+# named object. Two sentinel forms appear:
+#   * a `stack0xNNNNNNNN` phantom (§14, an unmapped stack slot) — the raw
+#     decompiler output, e.g.
+#     `if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z)`
+#   * a plain null literal `(T *)0x0` — the same guard after a .keep author
+#     resolves the phantom to zero.
+# Taking the address of a named object or one of its sub-objects is NEVER equal
+# to a null literal or a distinct stack phantom (C semantics: a `.field` access
+# requires a non-pointer object base; `&local`/`&g_global` is the address of
+# real storage; a global lives in a different region than any stack slot), so:
+#   sentinel != &OBJ.field  → always TRUE  (dead guard wrapping an
+#                             unconditional body — drop the if-wrapper)
+#   sentinel == &OBJ.field  → always FALSE (dead branch — never executes)
+# This is the sibling of `self_copy_guard` (both-addresses form), which the
+# existing detector misses because it requires `&NAME != &NAME`.
+#
+# Zero false positives by construction: the object operand is restricted to
+# `IDENT(.IDENT)*` and an explicit skip drops any `stack0x...` capture — so no
+# `->` (would be `&ptr->field`, a real null-ish check via a possibly-null
+# pointer + offset), no `[` (`&arr[i]`, base may be a pointer), no leading `*`
+# (`&*p` IS `p`, a genuine null check), and no stack-phantom-vs-stack-phantom
+# comparison. Those forms are deliberately left alone.
+_TAUT_SENTINEL = r"(?:\([A-Za-z_]\w*\s*\*\)\s*)?(?:0x0|&stack0x[0-9a-fA-F]+)"
+_TAUT_ADDR_GUARD_RE = re.compile(
+    r"^\s*if\s*\(\s*"
+    r"(?:" + _TAUT_SENTINEL + r"\s*(?P<op_a>!=|==)\s*&(?P<addr_a>\w+(?:\.\w+)*)"
+    r"|&(?P<addr_b>\w+(?:\.\w+)*)\s*(?P<op_b>!=|==)\s*" + _TAUT_SENTINEL + r")"
+    r"\s*\)")
+
+
+def identify_tautological_addr_guard(decompiled_code):
+    """Detect always-true/always-false address-of-vs-sentinel guards.
+
+    See `_TAUT_ADDR_GUARD_RE` above for the shape and the FP-safety argument.
+    The `!=` form wraps an unconditional body (drop the if-wrapper in a .keep);
+    the `==` form is a dead branch that never runs.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, located at the `if` line.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    for i, line in enumerate(decompiled_code.split('\n')):
+        m = _TAUT_ADDR_GUARD_RE.match(line)
+        if not m:
+            continue
+        op = m.group('op_a') or m.group('op_b')
+        addr = m.group('addr_a') or m.group('addr_b')
+        # Skip stack-phantom-vs-stack-phantom (object side is itself a phantom).
+        if addr.startswith('stack0x'):
+            continue
+        if op == '!=':
+            detail = ('always TRUE (the address of `%s` is never null), so the '
+                      'guard never skips its body. Drop the if-wrapper in a '
+                      '.keep, leaving the body unconditional.' % addr)
+        else:
+            detail = ('always FALSE (the address of `%s` is never null), so the '
+                      'guarded statement is dead and never executes. Resolve in '
+                      'a .keep per the asm (drop the dead branch, or restore a '
+                      'dropped copy if one was folded away).' % addr)
+        suspects.append({
+            'line': i + 1,
+            'type': 'tautological_addr_guard',
+            'match': 'if ((T *)0x0 %s &%s)' % (op, addr),
+            'text': line.strip()[:120],
+            'description': (
+                'Tautological address-of guard: `if (... %s ...)` comparing a '
+                'null literal against `&%s` is %s' % (op, addr, detail)),
             'severity': 'moderate',
         })
     return suspects
@@ -6219,6 +6300,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_cascade_constant_fill(code))
     found.extend(identify_self_copy_guard(code))
     found.extend(identify_dropped_self_copy(code))
+    found.extend(identify_tautological_addr_guard(code))
     found.extend(identify_signed_shift_global_idiom(code))
     found.extend(identify_concat_reconstruction(code))
     found.extend(identify_sibling_array_undersized(code))

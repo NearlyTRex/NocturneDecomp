@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 360,
-    "complexity_score": 224,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 21,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 139,
-    "suspect_count": 8,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 499
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 141,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 501
   },
   "cross_references": [
     {
@@ -281,6 +279,69 @@
   },
   "resolved_suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_fffff2fc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "ulonglong in_stack_fffff2fc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_fffff2fc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "string_data = (CEnemy *)(in_stack_fffff2fc >> 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_fffff2fc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_fffff2fc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_fffff2fc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 77,
+      "match": "in_stack_fffff2fc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_fffff2fc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 99,
       "match": "&stack0xfffff300",
@@ -306,19 +367,28 @@
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 138,
+      "match": "in_stack_fffff2fc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffff2fc = uVar5 & 0xffffffff00000000;",
+      "type": "stack_param"
     }
   ],
   "stack_frame": {
-    "frame_size": 2400,
-    "local_size": 2396,
+    "frame_size": 3332,
+    "local_size": 3328,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_958",
-        "offset": -2392,
+        "name": "aCStack_cfc",
+        "offset": -3324,
         "size": 936,
         "type": "CPickList"
       },
@@ -366,70 +436,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "ulonglong in_stack_fffff2fc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "string_data = (CEnemy *)(in_stack_fffff2fc >> 0x20);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 136,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = uVar5 & 0xffffffff00000000;",
-      "type": "stack_param"
-    }
-  ]
+  "suspects": []
 }

@@ -124,6 +124,15 @@
       "severity": "moderate",
       "text": "if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {",
       "type": "stack_ref"
+    },
+    {
+      "description": "Tautological address-of guard: `if (... == ...)` comparing a null literal against `&g_TrainNoiseCooldown` is always FALSE (the address of `g_TrainNoiseCooldown` is never null), so the guarded statement is dead and never executes. Resolve in a .keep per the asm (drop the dead branch, or restore a dropped copy if one was folded away).",
+      "line": 5,
+      "match": "if ((T *)0x0 == &g_TrainNoiseCooldown)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {",
+      "type": "tautological_addr_guard"
     }
   ],
   "stack_frame": {

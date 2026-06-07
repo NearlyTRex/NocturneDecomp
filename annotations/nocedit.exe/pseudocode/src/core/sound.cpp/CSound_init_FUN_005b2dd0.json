@@ -388,6 +388,15 @@
       "severity": "moderate",
       "text": "if ((uint *)&stack0x00000000 != &g_TrainRailNoiseHandle) {",
       "type": "stack_ref"
+    },
+    {
+      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&g_TrainRailNoiseHandle` is always TRUE (the address of `g_TrainRailNoiseHandle` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
+      "line": 44,
+      "match": "if ((T *)0x0 != &g_TrainRailNoiseHandle)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((uint *)&stack0x00000000 != &g_TrainRailNoiseHandle) {",
+      "type": "tautological_addr_guard"
     }
   ],
   "stack_frame": {

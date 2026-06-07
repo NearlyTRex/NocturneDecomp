@@ -1679,6 +1679,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&local_c8` is always TRUE (the address of `local_c8` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
+      "line": 174,
+      "match": "if ((T *)0x0 != &local_c8)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((float *)&stack0xfffffdc8 != &local_c8) {",
+      "type": "tautological_addr_guard"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 157,
       "match": "(int)&NAME used in byte-offset arithmetic",

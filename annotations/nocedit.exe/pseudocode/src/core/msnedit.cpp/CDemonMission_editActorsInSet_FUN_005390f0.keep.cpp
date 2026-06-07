@@ -195,18 +195,14 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         break;
       case 1:
         _sprintf(local_2b0,"Custom cam (camera fixed, slew the actor)");
-        if ((int *)0x0 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.f = local_170.position;
-        }
+        g_CDemonCameraInstance.base.position.f = local_170.position;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
         g_CDemonCameraInstance.base.focal_length = local_170.slew_rate;
         break;
       case 2:
         _sprintf(local_2b0,"Slew cam (actor fixed, slew the camera)");
-        if ((int *)0x0 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.f = local_170.position;
-        }
+        g_CDemonCameraInstance.base.position.f = local_170.position;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
         g_CDemonCameraInstance.base.focal_length = local_170.slew_rate;
@@ -237,9 +233,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           }
           local_170.slew_rate = 28.0;
         }
-        if ((int *)0x0 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.f = local_170.position;
-        }
+        g_CDemonCameraInstance.base.position.f = local_170.position;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
         g_CDemonCameraInstance.base.focal_length = local_170.slew_rate;
@@ -280,9 +274,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           }
           local_170.slew_rate = 28.0;
         }
-        if ((int *)0x0 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.f = local_170.position;
-        }
+        g_CDemonCameraInstance.base.position.f = local_170.position;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
         g_CDemonCameraInstance.base.focal_length = local_170.slew_rate;

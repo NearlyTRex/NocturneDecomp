@@ -108,6 +108,7 @@ def run_detectors(susp, code, struct_layout_map=None):
     found.extend(susp.identify_cascade_constant_fill(code))
     found.extend(susp.identify_self_copy_guard(code))
     found.extend(susp.identify_dropped_self_copy(code))
+    found.extend(susp.identify_tautological_addr_guard(code))
     found.extend(susp.identify_signed_shift_global_idiom(code))
     found.extend(susp.identify_concat_reconstruction(code))
     found.extend(susp.identify_pointer_cast_multiline(code))

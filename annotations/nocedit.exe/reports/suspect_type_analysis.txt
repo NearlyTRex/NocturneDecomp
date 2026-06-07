@@ -4,13 +4,13 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     688 ( 45.6%)
+  pointer_cast                     688 ( 45.8%)
   unrolled_memcpy                  196 ( 13.0%)
   unrolled_strcpy                  108 (  7.2%)
   static_uninitvar                  86 (  5.7%)
   shadow_pointer_walk               68 (  4.5%)
   static_self_assignment            65 (  4.3%)
-  unrolled_strlen                   55 (  3.6%)
+  unrolled_strlen                   55 (  3.7%)
   bitcast_double_pair               36 (  2.4%)
   static_shift_too_many_bits        34 (  2.3%)
   signed_shift_global_idiom         18 (  1.2%)
@@ -23,7 +23,6 @@ SUSPECT TYPE COUNTS
   static_invalid_pointer_cast       10 (  0.7%)
   bit_int_float_compare             10 (  0.7%)
   sub84_truncation                   9 (  0.6%)
-  stack_param                        8 (  0.5%)
   unaffected_reg                     6 (  0.4%)
   static_identical_inner_condition     5 (  0.3%)
   static_null_pointer                5 (  0.3%)
@@ -679,16 +678,6 @@ Functions:
   shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
   shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
-
-====================================================================================================
-TYPE: stack_param (8 occurrences)
-====================================================================================================
-
-Unique patterns:
-     8x  in_stack_fffff2fc
-
-Functions:
-  core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
 
 ====================================================================================================
 TYPE: unaffected_reg (6 occurrences)

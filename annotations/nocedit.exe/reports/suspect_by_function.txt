@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6236 (96.6%)
-With suspects: 218
-Total suspects: 1510
+Clean: 6237 (96.6%)
+With suspects: 217
+Total suspects: 1502
 
 ====================================================================================================
 core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0 (2 suspects)
@@ -291,19 +291,6 @@ core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0 (2 suspects)
 ====================================================================================================
   Line 34 [static_shift_too_many_bits]: iVar2 = iVar4 * 3 >> 0x1f;
   Line 40 [static_shift_too_many_bits]: if (iVar3 == (int)((iVar4 + (iVar4 >> 0x1f) * -4) - (uint)((iVar4 >> 0x1f) << 1 < 0)) >> 2) {
-
-====================================================================================================
-core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (8 suspects)
-  File: core/msnedit.cpp
-====================================================================================================
-  Line 12 [stack_param]: ulonglong in_stack_fffff2fc;
-  Line 27 [stack_param]: string_data = (CEnemy *)(in_stack_fffff2fc >> 0x20);
-  Line 55 [stack_param]: in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
-  Line 62 [stack_param]: in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
-  Line 70 [stack_param]: in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
-  Line 78 [stack_param]: in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
-  Line 86 [stack_param]: in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
-  Line 136 [stack_param]: in_stack_fffff2fc = uVar5 & 0xffffffff00000000;
 
 ====================================================================================================
 core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40 (1 suspect)

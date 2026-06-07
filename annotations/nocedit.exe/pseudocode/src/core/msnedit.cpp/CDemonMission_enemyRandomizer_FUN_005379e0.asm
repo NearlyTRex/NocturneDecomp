@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; Local Variables:
-; CPickList        Stack[-0x958]:936  local_958
+; CPickList        Stack[-0xcfc]:936  aCStack_cfc
 ; CPickList        Stack[-0x5b0]:936  local_5b0
 ; char[296]        Stack[-0x208]:296  local_208
 ; char[200]        Stack[-0xe0]:200  local_e0

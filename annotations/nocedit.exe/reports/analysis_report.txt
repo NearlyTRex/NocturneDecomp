@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6253 (96.9%)
-Functions with suspects: 201 (3.1%)
+Clean functions: 6254 (96.9%)
+Functions with suspects: 200 (3.1%)
 
-Total suspect patterns: 1510
+Total suspect patterns: 1502
 Average suspects per function: 0.23
 
-Virtual files: 214 total, 202 at 100%, 203 at 90%+
+Virtual files: 214 total, 203 at 100%, 203 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -47,7 +47,6 @@ SUSPECT PATTERN BREAKDOWN
   static_invalid_pointer_cast 10
   bit_int_float_compare     10
   sub84_truncation          9
-  stack_param               8
   unaffected_reg            6
   static_identical_inner_condition 5
   static_null_pointer       5
@@ -114,7 +113,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6203 more
+  ... and 6204 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -296,9 +295,6 @@ FUNCTIONS BY SUSPECT TYPE
     005c8e70: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
     005d5e60: shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
-
-  stack_param (1 functions):
-    005379e0: core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
 
   unaffected_reg (1 functions):
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490

@@ -19,8 +19,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonM
   ulonglong in_stack_fffff2fc;
   CEnemy *string_data;
   ulonglong uVar5;
-  CStrList aCStack_cfc [58];
-  CPickList local_958;
+  CPickList aCStack_cfc;
   CPickList local_5b0;
   char local_208 [296];
   char local_e0 [200];
@@ -94,13 +93,14 @@ LAB_00537aa5:
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
         }
         else {
-          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_958);
+          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&aCStack_cfc.selection_state);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&local_958.base,"Randomize speed for specified enemies with randomizeMe flag set");
+                    ((CStrList *)&aCStack_cfc.selection_state,"Randomize speed for specified enemies with randomizeMe flag set");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    (&local_958.base,"Randomize speed for all specified enemies");
+                    ((CStrList *)&aCStack_cfc.selection_state,"Randomize speed for all specified enemies");
           iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            (&local_958,"Randomize speeds",INT_02f797e0,0);
+                            ((CPickList *)&aCStack_cfc.selection_state,"Randomize speeds",
+                             INT_02f797e0,0);
           if (-1 < iVar3) {
             INT_02f797e0 = iVar3;
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff300);
@@ -122,7 +122,7 @@ LAB_00537aa5:
                 (*pCVar2->setup)((CDemonActor *)actor_ptr);
                 _sprintf(local_208 + 4,"%s\n%7.3f",actor_ptr,(double)actor_ptr->speed);
                 string_data = (CEnemy *)(local_208 + 4);
-                shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_cfc,(char *)string_data);
+                shape_edittool_cpp_CStrList_add_FUN_004a2b80(&aCStack_cfc.base,(char *)string_data);
               }
             }
             if ((int)string_data < 1) {
@@ -135,11 +135,13 @@ LAB_00537aa5:
                         ((CPickList *)&stack0xfffff300,local_e0 + 4,-1,0);
             }
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);
-            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_958,0);
+            shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
+                      ((CPickList *)&aCStack_cfc.selection_state,0);
             goto LAB_00537aa5;
           }
           uVar5 = ZEXT48(string_data) << 0x20;
-          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_958,0);
+          shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
+                    ((CPickList *)&aCStack_cfc.selection_state,0);
           in_stack_fffff2fc = uVar5 & 0xffffffff00000000;
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
         }
