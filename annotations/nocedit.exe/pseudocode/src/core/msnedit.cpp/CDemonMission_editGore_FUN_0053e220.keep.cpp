@@ -30,7 +30,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
   CVector3i CStack_4c;
   CVector3i CStack_34;
   CGame *this_ptr_00;
-  float fVar1;
   CDemonSet *pCVar2;
   
   this_ptr_00 = g_CGamePtr;
@@ -75,26 +74,21 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&actor_00->model,"stranger-hat.kfm");
   core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,&actor_00->base);
+  (actor_00->base).location.position.x = 0.0;
+  (actor_00->base).location.position.y = 0.0;
   (actor_00->base).location.position.z = 0.0;
-  fVar1 = (actor_00->base).location.position.z;
-  (actor_00->base).location.position.y = fVar1;
-  (actor_00->base).location.position.x = fVar1;
+  (actor_00->base).orient.vec.x = 0.0;
+  (actor_00->base).orient.vec.y = 0.0;
   (actor_00->base).orient.vec.z = 0.0;
-  (actor_00->base).orient.vec.y = (actor_00->base).orient.vec.z;
-  (actor_00->base).orient.vec.x = (actor_00->base).orient.vec.y;
   (*((actor_00->base).vtable._ub)->setup)(&actor_00->base);
   core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,&actor_00->base);
   pUVar5 = &(actor_00->base).orient;
   while( true ) {
     wincore_winrun_cpp_doNothing1_FUN_005f2f80();
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(g_CEditorToolsPtr,0,0,0);
-    (actor_00->base).location.position.x = local_bc.position.x;
-    (actor_00->base).location.position.y = local_bc.position.y;
-    (actor_00->base).location.position.z = local_bc.position.z;
+    (actor_00->base).location.position = local_bc.position;
     if (&local_bc.orientation != pUVar5) {
-      (pUVar5->vec).x = local_bc.orientation.vec.x;
-      (actor_00->base).orient.vec.y = local_bc.orientation.vec.y;
-      (actor_00->base).orient.vec.z = local_bc.orientation.vec.z;
+      (actor_00->base).orient.vec = local_bc.orientation.vec;
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&actor_00->base);
     core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(g_CDemonSetPtr,&actor_00->base,0)
@@ -132,16 +126,12 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
                   (&g_CDemonCameraInstance,g_MouseX,g_MouseY,&CStack_4c);
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
                   (&g_CDemonCameraInstance,&CStack_34,&CStack_58);
-        CStack_34.x = CStack_58.x;
-        CStack_34.y = CStack_58.y;
-        CStack_34.z = CStack_58.z;
+        CStack_34 = CStack_58;
         local_click_pos.x = (float)CStack_58.x * 0.00390625f;
         local_click_pos.y = (float)CStack_58.y * 0.00390625f;
         local_click_pos.z = (float)CStack_58.z * 0.00390625f;
         if (&local_bc != (CSlew *)&local_click_pos) {
-          local_bc.position.x = local_click_pos.x;
-          local_bc.position.y = local_click_pos.y;
-          local_bc.position.z = local_click_pos.z;
+          local_bc.position = local_click_pos;
         }
       }
       g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
@@ -176,9 +166,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
     }
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_P);
     if (iVar3 != 0) {
-      CStack_7c.x = local_bc.position.x;
-      CStack_7c.y = local_bc.position.y;
-      CStack_7c.z = local_bc.position.z;
+      CStack_7c = local_bc.position;
       CStack_a0.x = local_bc.position.x;
       CStack_a0.y = local_bc.position.y + -100.0f;
       CStack_a0.z = local_bc.position.z;

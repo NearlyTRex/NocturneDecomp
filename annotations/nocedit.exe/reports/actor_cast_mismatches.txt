@@ -175,37 +175,37 @@ Manual inspection is needed to determine the expected class.
   core/msnedit.cpp/CDemonMission_changeActorType_FUN_0053d8b0.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 69: createActorByName()
-    67:     pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_624.base,iVar4);
-    68:     _sprintf(local_88,"C%s",pcVar3);
-    69:     pCVar7 = core_actor_cpp_createActorByName_FUN_0040c430(local_88);
-    70:     (*((pCVar7->vtable)._ub)->setup)(pCVar7);
-    71:     iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-    72:                       (g_CEditorToolsPtr,"Attempt to transfer properties?");
+  Line 59: createActorByName()
+    57:     pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_624.base,iVar4);
+    58:     _sprintf(local_88,"C%s",pcVar3);
+    59:     pCVar7 = core_actor_cpp_createActorByName_FUN_0040c430(local_88);
+    60:     (*((pCVar7->vtable)._ub)->setup)(pCVar7);
+    61:     iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+    62:                       (g_CEditorToolsPtr,"Attempt to transfer properties?");
 
 --------------------------------------------------------------------------------
-  core/msnedit.cpp/CDemonMission_importActorsFrom_FUN_0053b9f0.cpp
+  core/msnedit.cpp/CDemonMission_importActorsFrom_FUN_0053b9f0.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 48: createActorByName()
-    46:     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_448.base,iVar3);
-    47:     _sprintf(local_a0,"C%s",pcVar2);
-    48:     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_a0);
-    49:     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,actor);
-    50:     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
-    51:     (actor->location).area_id = this_ptr->current_set_index;
+  Line 41: createActorByName()
+    39:     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_448.base,iVar3);
+    40:     _sprintf(local_a0,"C%s",pcVar2);
+    41:     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_a0);
+    42:     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,actor);
+    43:     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
+    44:     (actor->location).area_id = this_ptr->current_set_index;
 
 --------------------------------------------------------------------------------
   core/msnedit.cpp/CDemonMission_replicateActor_FUN_0053bd80.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 50: createActorByName()
-    48:   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\msnedit.cpp",0x96b);
-    49:   class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor);
-    50:   this_ptr_00 = core_actor_cpp_createActorByName_FUN_0040c430(class_name);
-    51:   file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
-    52:                           (local_20,(char *)0x0,"rt","..\\core\\msnedit.cpp",0x973);
-    53:   if (file_handle == (_FILE *)0x0) {
+  Line 40: createActorByName()
+    38:   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\msnedit.cpp",0x96b);
+    39:   class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor);
+    40:   this_ptr_00 = core_actor_cpp_createActorByName_FUN_0040c430(class_name);
+    41:   file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
+    42:                           (local_20,(char *)0x0,"rt","..\\core\\msnedit.cpp",0x973);
+    43:   if (file_handle == (_FILE *)0x0) {
 
 --------------------------------------------------------------------------------
   core/set.cpp/CDemonSet_buildActorTypeLists_FUN_00570fc0.keep.cpp

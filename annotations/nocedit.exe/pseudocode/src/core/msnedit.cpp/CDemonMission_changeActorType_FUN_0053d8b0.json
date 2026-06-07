@@ -7,19 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 271,
+    "complexity_score": 171,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 171,
-    "suspect_count": 8,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "unrolled_memcpy",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 564
   },
   "cross_references": [
@@ -247,6 +242,80 @@
     },
     "pcode_op_count": 1309
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)((int)g_ActorClassRegistrations",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 0x2c) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(char **)((int)g_ActorClassRegistrations",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(char **)((int)g_ActorClassRegistrations + iVar8),pcVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(int *)((int)g_ActorClassRegistrations",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&local_624.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 1))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 108,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 143,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 153,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar7->location).position.x = (pCVar5->location).position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 159,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar7->orient).vec.x = (pCVar5->orient).vec.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on its own `actor_name` field (which decays to a pointer), `+ CONST`; `offsetof(actor_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar5`. Replace those `pCVar5->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 148,
+      "match": "pCVar5 = (T *)(pCVar5->actor_name + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 20532,
     "local_size": 20528,
@@ -333,70 +402,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(int *)((int)g_ActorClassRegistrations",
-      "severity": "moderate",
-      "text": "if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 0x2c) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(char **)((int)g_ActorClassRegistrations",
-      "severity": "moderate",
-      "text": "(*(char **)((int)g_ActorClassRegistrations + iVar8),pcVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(int *)((int)g_ActorClassRegistrations",
-      "severity": "moderate",
-      "text": "(&local_624.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 1))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 108,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 143,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 153,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pCVar7->location).position.x = (pCVar5->location).position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 159,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pCVar7->orient).vec.x = (pCVar5->orient).vec.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on its own `actor_name` field (which decays to a pointer), `+ CONST`; `offsetof(actor_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar5`. Replace those `pCVar5->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 148,
-      "match": "pCVar5 = (T *)(pCVar5->actor_name + CONST)",
-      "severity": "moderate",
-      "text": "pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

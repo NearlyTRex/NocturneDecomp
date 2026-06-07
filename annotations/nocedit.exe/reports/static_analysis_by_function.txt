@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 104
-  Total diagnostics: 310
+  Functions with findings: 103
+  Total diagnostics: 309
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 64, raw .cpp files: 40
+  .keep.cpp files: 63, raw .cpp files: 40
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -619,12 +619,6 @@ core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20  [.keep] 
   File: core/fileman.cpp  (1 diagnostics)
 
   Line   75: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80  [.keep] [Cppcheck (quick)]
-  File: core/msnedit.cpp  (1 diagnostics)
-
-  Line  142: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40  [.keep] [Cppcheck (quick)]

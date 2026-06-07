@@ -29,7 +29,6 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   int iVar14;
   int iVar7;
   CActorProperty *this_ptr_01;
-  int iVar8;
   int iVar11;
   int iVar15;
   bool bVar13;
@@ -135,17 +134,15 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   if (0 < g_CDemonSetPtr->actor_count) {
     iVar11 = 999999;
     local_50 = g_CDemonSetPtr->actors[0];
-    iVar8 = 0;
     for (iVar7 = 0; iVar7 < g_CDemonSetPtr->actor_count; iVar7 = iVar7 + 1) {
       pCVar14 = (CHeroPlaceholder *)
                 core_actor_cpp_castToClassHash_FUN_0040c790
-                          (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar8),
+                          (g_CDemonSetPtr->actors[iVar7],
                            g_CHeroPlaceholderClassInfo.name_hash);
       if ((pCVar14 != (CHeroPlaceholder *)0x0) && (pCVar14->index < iVar11)) {
         iVar11 = pCVar14->index;
         local_50 = (CDemonActor *)pCVar14;
       }
-      iVar8 = iVar8 + 4;
     }
   }
   core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(this_ptr,local_50);
@@ -189,29 +186,17 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           local_170.position.y = local_108;
           local_170.position.z = local_104;
         }
-        local_1c0.m[0].x = g_CDemonCameraInstance.base.rotation_matrix.m[0].x;
-        local_1c0.m[0].y = g_CDemonCameraInstance.base.rotation_matrix.m[0].y;
-        local_1c0.m[0].z = g_CDemonCameraInstance.base.rotation_matrix.m[0].z;
-        local_1c0.m[1].x = g_CDemonCameraInstance.base.rotation_matrix.m[1].x;
-        local_1c0.m[1].y = g_CDemonCameraInstance.base.rotation_matrix.m[1].y;
-        local_1c0.m[1].z = g_CDemonCameraInstance.base.rotation_matrix.m[1].z;
-        local_1c0.m[2].x = g_CDemonCameraInstance.base.rotation_matrix.m[2].x;
-        local_1c0.m[2].y = g_CDemonCameraInstance.base.rotation_matrix.m[2].y;
-        local_1c0.m[2].z = g_CDemonCameraInstance.base.rotation_matrix.m[2].z;
+        local_1c0 = g_CDemonCameraInstance.base.rotation_matrix;
         pCVar8 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(&local_1c0,&local_dc);
         if (&local_170.orientation.vec != pCVar8) {
-          local_170.orientation.vec.x = pCVar8->x;
-          local_170.orientation.vec.y = pCVar8->y;
-          local_170.orientation.vec.z = pCVar8->z;
+          local_170.orientation.vec = *pCVar8;
         }
         local_170.slew_rate = g_CDemonCameraInstance.base.focal_length;
         break;
       case 1:
         _sprintf(local_2b0,"Custom cam (camera fixed, slew the actor)");
         if ((int *)0x0 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.f.x = local_170.position.x;
-          g_CDemonCameraInstance.base.position.f.y = local_170.position.y;
-          g_CDemonCameraInstance.base.position.f.z = local_170.position.z;
+          g_CDemonCameraInstance.base.position.f = local_170.position;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
@@ -220,9 +205,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
       case 2:
         _sprintf(local_2b0,"Slew cam (actor fixed, slew the camera)");
         if ((int *)0x0 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.f.x = local_170.position.x;
-          g_CDemonCameraInstance.base.position.f.y = local_170.position.y;
-          g_CDemonCameraInstance.base.position.f.z = local_170.position.z;
+          g_CDemonCameraInstance.base.position.f = local_170.position;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
@@ -250,16 +233,12 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           }
           pCVar11 = this_ptr->selected_actor;
           if (&local_170.orientation != &pCVar11->orient) {
-            local_170.orientation.vec.x = (pCVar11->orient).vec.x;
-            local_170.orientation.vec.y = (pCVar11->orient).vec.y;
-            local_170.orientation.vec.z = (pCVar11->orient).vec.z;
+            local_170.orientation.vec = (pCVar11->orient).vec;
           }
           local_170.slew_rate = 28.0;
         }
         if ((int *)0x0 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.f.x = local_170.position.x;
-          g_CDemonCameraInstance.base.position.f.y = local_170.position.y;
-          g_CDemonCameraInstance.base.position.f.z = local_170.position.z;
+          g_CDemonCameraInstance.base.position.f = local_170.position;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
@@ -302,9 +281,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           local_170.slew_rate = 28.0;
         }
         if ((int *)0x0 != &g_CDemonCameraInstance.camera_origin.z) {
-          g_CDemonCameraInstance.base.position.f.x = local_170.position.x;
-          g_CDemonCameraInstance.base.position.f.y = local_170.position.y;
-          g_CDemonCameraInstance.base.position.f.z = local_170.position.z;
+          g_CDemonCameraInstance.base.position.f = local_170.position;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
@@ -912,7 +889,7 @@ LAB_0053a88c:
           iVar14 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
           if (iVar14 == 0) {
             if (this_ptr->hovered_actor == this_ptr->selected_actor) {
-              if ((local_30.dword != 0) || (0x3e999999 < (int)FLOAT_00680818)) goto LAB_0053aea7;
+              if ((local_30.dword != 0) || (0.3f < FLOAT_00680818)) goto LAB_0053aea7;
               core_msnedit_cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730(this_ptr);
               engine_2d_c_clearInputAndWait_FUN_00403260();
               FLOAT_00680818 = 0.0;

@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6243 (96.7%)
-Files at 100%: 201
-Files at 90%+: 201
+Clean functions: 6253 (96.9%)
+Files at 100%: 202
+Files at 90%+: 203
 Files at 50%+: 214
 
 ====================================================================================================
@@ -157,6 +157,7 @@ FILES AT 100% (COMPLETE)
   core/svetlana.cpp: 19 functions, 958 lines
   core/tbplayer.cpp: 16 functions, 315 lines
   core/teleport.cpp: 23 functions, 324 lines
+  core/tentacle.cpp: 15 functions, 529 lines
   core/terrain.cpp: 4 functions, 54 lines
   core/texlist.cpp: 14 functions, 586 lines
   core/tommygun.cpp: 9 functions, 365 lines
@@ -216,26 +217,20 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 201 files
+Total: 202 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-Total: 0 files
+   98.4% | core/msnedit.cpp
+         62/63 clean, 1 remaining
+           - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (139 lines) [stack_param]
+
+Total: 1 files
 
 ====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
-   87.3% | core/msnedit.cpp
-         55/63 clean, 8 remaining
-           - core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 (103 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
-           - core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220 (123 lines) [unrolled_strchr]
-           - core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 (142 lines) [shadow_pointer_walk, unrolled_strcpy, unrolled_strlen]
-           - core_msnedit.cpp_drawPropertyRow_FUN_00535e10 (9 lines) [signed_shift_global_idiom]
-           - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (139 lines) [stack_param]
-           - core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (171 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, unrolled_strcpy]
-           - core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (997 lines) [bit_int_float_compare, pointer_cast, unrolled_memcpy]
-           - core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 (223 lines) [unrolled_memcpy, unrolled_memset]
    86.0% | core/inv.cpp
          37/43 clean, 6 remaining
            - core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 (127 lines) [signed_shift_global_idiom]
@@ -261,11 +256,6 @@ FILES AT 50-89%
            - shape_cramtex.cpp_generateTextureAtlas_FUN_00445820 (353 lines) [pointer_cast]
            - shape_cramtex.cpp_placementCollisionCheck_FUN_00448260 (59 lines) [pointer_cast]
            - shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90 (406 lines) [pointer_cast]
-   80.0% | core/tentacle.cpp
-         12/15 clean, 3 remaining
-           - core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 (45 lines) [missing_cave_copy, unrolled_memcpy]
-           - core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (35 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
-           - core_tentacle.cpp_CTentacle_process_FUN_005db050 (258 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
    78.3% | core/wateract.cpp
          18/23 clean, 5 remaining
            - core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0 (210 lines) [shadow_pointer_walk, unrolled_memset]
@@ -464,7 +454,7 @@ FILES AT 50-89%
            - shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (89 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (26 lines) [pointer_cast]
 
-Total: 13 files
+Total: 11 files
 
 ====================================================================================================
 FILES BELOW 50%

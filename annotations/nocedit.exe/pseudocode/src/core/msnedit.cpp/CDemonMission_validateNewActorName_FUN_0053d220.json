@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 208,
+    "complexity_score": 123,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 123,
-    "suspect_count": 8,
-    "suspect_types": [
-      "unrolled_strchr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 373
   },
   "cross_references": [
@@ -179,6 +177,80 @@
     },
     "pcode_op_count": 845
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ' ' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ' ') in a .keep.",
+      "line": 11,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\t' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\t') in a .keep.",
+      "line": 23,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\r' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\r') in a .keep.",
+      "line": 35,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
+      "line": 47,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\\"' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\\"') in a .keep.",
+      "line": 59,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\'' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\'') in a .keep.",
+      "line": 71,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '{' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '{') in a .keep.",
+      "line": 83,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '}' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '}') in a .keep.",
+      "line": 95,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -209,70 +281,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ' ' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ' ') in a .keep.",
-      "line": 11,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\t' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\t') in a .keep.",
-      "line": 23,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\r' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\r') in a .keep.",
-      "line": 35,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
-      "line": 47,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\\"' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\\"') in a .keep.",
-      "line": 59,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\'' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\'') in a .keep.",
-      "line": 71,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '{' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '{') in a .keep.",
-      "line": 83,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '}' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '}') in a .keep.",
-      "line": 95,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    }
-  ]
+  "suspects": []
 }

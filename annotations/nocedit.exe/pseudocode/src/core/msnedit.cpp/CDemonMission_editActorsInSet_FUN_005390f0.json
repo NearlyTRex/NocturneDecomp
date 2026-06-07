@@ -8,18 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2766,
-    "complexity_score": 1102,
+    "complexity_score": 997,
     "cross_reference_count": 1,
     "function_call_count": 96,
     "global_count": 106,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 997,
-    "suspect_count": 9,
-    "suspect_types": [
-      "bit_int_float_compare",
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 3763
   },
   "cross_references": [
@@ -1237,6 +1233,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar8),",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 223,
       "match": "&stack0x00000000",
@@ -1289,6 +1294,78 @@
       "severity": "moderate",
       "text": "for (iVar14 = 0x32; iVar14 != 0; iVar14 = iVar14 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 204,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c0.m[0].x = g_CDemonCameraInstance.base.rotation_matrix.m[0].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 215,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_170.orientation.vec.x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 224,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CDemonCameraInstance.base.position.f.x = local_170.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 235,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CDemonCameraInstance.base.position.f.x = local_170.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 265,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_170.orientation.vec.x = (pCVar11->orient).vec.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 272,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CDemonCameraInstance.base.position.f.x = local_170.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 318,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CDemonCameraInstance.base.position.f.x = local_170.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
+      "line": 928,
+      "match": "0x3e999999 < (int)FLOAT_00680818))",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((local_30.dword != 0) || (0x3e999999 < (int)FLOAT_00680818)) goto LAB_0053aea7;",
+      "type": "bit_int_float_compare"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 00539390, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -1792,78 +1869,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 147,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar8),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 204,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_1c0.m[0].x = g_CDemonCameraInstance.base.rotation_matrix.m[0].x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 215,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_170.orientation.vec.x = pCVar8->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 224,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_CDemonCameraInstance.base.position.f.x = local_170.position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 235,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_CDemonCameraInstance.base.position.f.x = local_170.position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 265,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_170.orientation.vec.x = (pCVar11->orient).vec.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 272,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_CDemonCameraInstance.base.position.f.x = local_170.position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 318,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_CDemonCameraInstance.base.position.f.x = local_170.position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e999999 is the IEEE 754 bit pattern of 0.3f. Rewrite in a .keep as a plain float compare against 0.3f.",
-      "line": 928,
-      "match": "0x3e999999 < (int)FLOAT_00680818))",
-      "severity": "moderate",
-      "text": "if ((local_30.dword != 0) || (0x3e999999 < (int)FLOAT_00680818)) goto LAB_0053aea7;",
-      "type": "bit_int_float_compare"
-    }
-  ]
+  "suspects": []
 }
