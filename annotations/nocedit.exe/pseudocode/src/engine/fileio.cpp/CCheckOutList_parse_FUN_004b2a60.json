@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 140,
+    "complexity_score": 110,
     "cross_reference_count": 6,
     "function_call_count": 8,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 110,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_strlen"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 387
   },
   "cross_references": [
@@ -284,6 +281,26 @@
     },
     "pcode_op_count": 1026
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(CCheckOutItem *)((int)pCVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar5 = (CCheckOutItem *)((int)pCVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 62,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ],
   "stack_frame": {
     "frame_size": 388,
     "local_size": 380,
@@ -331,47 +348,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CCheckOutList_parse_FUN_004b2a60.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 16,
-          "line": 52,
-          "message": "Redundant assignment of 'pCVar5' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(CCheckOutItem *)((int)pCVar5",
-      "severity": "moderate",
-      "text": "pCVar5 = (CCheckOutItem *)((int)pCVar5 + (uint)bVar6 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 62,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Redundant assignment of 'pCVar5' to itself.",
-      "line": 52,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pCVar5 = pCVar5;",
-      "type": "static_self_assignment"
-    }
-  ]
+  "suspects": []
 }

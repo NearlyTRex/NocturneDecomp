@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        34 ( 0.5%)
+  Functions with type issues:        33 ( 0.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      34
+    Undefined types in variables:      33
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   184 functions
+  Excluded (.keep / MMX / by-value):   185 functions
     Wrong calling convention:          1
-    Undefined types in variables:      183
+    Undefined types in variables:      184
     Unresolved stack params:           0
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (34)
+Undefined types in variables (33)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -214,11 +214,6 @@ Undefined types in variables (34)
     Locals:  auStackY_180c (undefined4[1520])
     Suggested: Resolve undefined types to concrete types
 
-  CFileManager_catalogPodFile
-    Address: 0x004b7460  File: engine/fileio.cpp
-    Locals:  local_32b (undefined1[255])
-    Suggested: Resolve undefined types to concrete types
-
   copyFileWithProgress
     Address: 0x004b2030  File: engine/fileio.cpp
     Locals:  local_20c (undefined4)
@@ -285,7 +280,7 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (183)
+Undefined types - .keep overrides (184)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1106,6 +1101,11 @@ Undefined types - .keep overrides (183)
   computeBoxStatistics
     Address: 0x00441260  File: engine/colquant.c
     Locals:  local_30 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  CFileManager_catalogPodFile
+    Address: 0x004b7460  File: engine/fileio.cpp
+    Locals:  local_32b (undefined1[255])
     Suggested: Resolve undefined types to concrete types
 
   CFileManager_checkOutAndExtractPod

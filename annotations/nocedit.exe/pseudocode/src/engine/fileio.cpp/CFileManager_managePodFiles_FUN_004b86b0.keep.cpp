@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x004b9ea1) */
-
 void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileManager *this_ptr,char *pod_directory_path)
 
 {
@@ -22,10 +20,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   int *piVar8;
   SPodManageRecord *filename;
   char *dest;
-  uint *puVar11;
-  char *pcVar1;
   char *pcVar12;
-  SFoundFileInfo *pSVar14;
   int iVar3;
   char local_2338 [2048];
   CPodFile local_1b38;
@@ -44,7 +39,6 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   CStrList local_94;
   CStrList local_84;
   CCheckOutList local_74;
-  int local_68;
   int local_64;
   int local_60;
   int local_5c;
@@ -62,7 +56,6 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   int local_20;
   int local_1c;
   char local_14 [4];
-  char cVar1;
   byte bVar15;
   
   bVar15 = 0;
@@ -74,16 +67,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   if (iVar2 != 0) {
     memcpy(local_598,g_DefaultPodDirectoryPath,0x104);
     if (pod_directory_path != (char *)0x0) {
-      pcVar12 = local_598;
-      do {
-        cVar1 = *pod_directory_path;
-        *pcVar12 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pod_directory_path[1];
-        pod_directory_path = pod_directory_path + 2;
-        pcVar12[1] = cVar1;
-        pcVar12 = pcVar12 + 2;
-      } while (cVar1 != '\0');
+      strcpy(local_598,pod_directory_path);
     }
     iVar2 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                       (g_CEditorToolsPtr,"Enter path to update PODs from",local_598,0x104,1);
@@ -125,31 +109,12 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
                     (g_CEditorToolsPtr,(float)local_64,(float)local_94.item_count);
           filename = local_44 + local_64;
           pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_94,local_64);
-          pcVar12 = local_30;
-          do {
-            cVar1 = *pcVar3;
-            *pcVar12 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar3[1];
-            pcVar3 = pcVar3 + 2;
-            pcVar12[1] = cVar1;
-            pcVar12 = pcVar12 + 2;
-          } while (cVar1 != '\0');
+          strcpy(local_30,pcVar3);
           engine_dosio_cpp_splitPath_FUN_00481f20
                     (local_30,(char *)0x0,(char *)0x0,filename->base_name,(char *)0x0);
           engine_dosio_cpp_makePath_FUN_00481f50
                     (local_34,(char *)0x0,(char *)0x0,filename->base_name,"pod");
-          pSVar14 = &local_fbc;
-          pcVar12 = local_30;
-          do {
-            cVar1 = *pcVar12;
-            pSVar14->found_path[0] = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar12[1];
-            pcVar12 = pcVar12 + 2;
-            pSVar14->found_path[1] = cVar1;
-            pSVar14 = (SFoundFileInfo *)(pSVar14->found_path + 2);
-          } while (cVar1 != '\0');
+          strcpy(local_fbc.found_path,local_30);
           iVar2 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_fbc);
           if (iVar2 == 0) {
             g_CurrentLineNumber = 0xc25;
@@ -158,18 +123,8 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
                       ("Can't querry for pod file info: %s",local_fbc.found_path);
           }
           filename->timestamp = local_fbc.timestamp;
-          pSVar14 = &local_b94;
-          pcVar12 = filename->pod_name;
           filename->file_size = local_fbc.file_size;
-          do {
-            cVar1 = *pcVar12;
-            pSVar14->found_path[0] = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar12[1];
-            pcVar12 = pcVar12 + 2;
-            pSVar14->found_path[1] = cVar1;
-            pSVar14 = (SFoundFileInfo *)(pSVar14->found_path + 2);
-          } while (cVar1 != '\0');
+          strcpy(local_b94.found_path,filename->pod_name);
           iVar2 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_b94);
           if (iVar2 == 0) {
             filename->comparison_result = 4;
@@ -207,37 +162,25 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
           filename->total_file_count = local_1b38.file_count;
           local_40 = 0;
           if (0 < local_1b38.file_count) {
-            local_68 = 0;
             do {
-              puVar11 = (uint *)((int)&(local_1b38.directory_entries)->name + local_68);
-              pSVar14 = &local_da8;
-              pcVar12 = (char *)*puVar11;
-              do {
-                cVar1 = *pcVar12;
-                pSVar14->found_path[0] = cVar1;
-                if (cVar1 == '\0') break;
-                cVar1 = pcVar12[1];
-                pcVar12 = pcVar12 + 2;
-                pSVar14->found_path[1] = cVar1;
-                pSVar14 = (SFoundFileInfo *)(pSVar14->found_path + 2);
-              } while (cVar1 != '\0');
+              pcVar12 = local_1b38.directory_entries[local_40].name;
+              strcpy(local_da8.found_path,pcVar12);
               iVar2 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_da8);
               if (iVar2 == 0) {
                 filename->count_missing_local = filename->count_missing_local + 1;
               }
-              else if (puVar11[3] + 2 < local_da8.timestamp) {
+              else if (local_1b38.directory_entries[local_40].timestamp + 2 < local_da8.timestamp) {
                 filename->count_newer_local = filename->count_newer_local + 1;
               }
-              else if (local_da8.timestamp < puVar11[3] - 2) {
+              else if (local_da8.timestamp < local_1b38.directory_entries[local_40].timestamp - 2) {
                 filename->count_older_local = filename->count_older_local + 1;
               }
-              else if (local_da8.file_size == puVar11[1]) {
+              else if (local_da8.file_size == local_1b38.directory_entries[local_40].size) {
                 filename->count_in_sync = filename->count_in_sync + 1;
               }
               else {
                 filename->count_different = filename->count_different + 1;
               }
-              local_68 = local_68 + 0x14;
               local_40 = local_40 + 1;
             } while (local_40 < local_1b38.file_count);
           }
@@ -247,17 +190,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
             filename->checked_out_by[0] = '\0';
           }
           else {
-            pcVar12 = filename->checked_out_by;
-            pcVar3 = local_74.items[iVar2].value;
-            do {
-              cVar1 = *pcVar3;
-              *pcVar12 = cVar1;
-              if (cVar1 == '\0') break;
-              cVar1 = pcVar3[1];
-              pcVar3 = pcVar3 + 2;
-              pcVar12[1] = cVar1;
-              pcVar12 = pcVar12 + 2;
-            } while (cVar1 != '\0');
+            strcpy(filename->checked_out_by,local_74.items[iVar2].value);
           }
           filename->action_index = 0;
           filename->status_description = "(Cannot recommend action)";
@@ -351,17 +284,7 @@ LAB_004b8c1d:
             }
             dest = local_44[1].base_name + local_28;
             memset(dest,0,0x39c);
-            pcVar3 = dest + 0x100;
-            pcVar1 = pcVar12;
-            do {
-              cVar1 = *pcVar1;
-              *pcVar3 = cVar1;
-              if (cVar1 == '\0') break;
-              cVar1 = pcVar1[1];
-              pcVar1 = pcVar1 + 2;
-              pcVar3[1] = cVar1;
-              pcVar3 = pcVar3 + 2;
-            } while (cVar1 != '\0');
+            strcpy(dest + 0x100,pcVar12);
             engine_dosio_cpp_splitPath_FUN_00481f20(local_598,local_14,local_394,local_194,local_294);
             engine_dosio_cpp_makePath_FUN_00481f50
                       (local_494,(char *)0x0,local_394,local_194,local_294);
@@ -369,17 +292,7 @@ LAB_004b8c1d:
                       (pcVar12,(char *)0x0,(char *)0x0,local_194,local_294);
             engine_dosio_cpp_makePath_FUN_00481f50
                       (dest + 0x204,local_14,local_494,local_194,local_294);
-            pcVar12 = local_194;
-            pcVar3 = dest;
-            do {
-              cVar1 = *pcVar12;
-              *pcVar3 = cVar1;
-              if (cVar1 == '\0') break;
-              cVar1 = pcVar12[1];
-              pcVar12 = pcVar12 + 2;
-              pcVar3[1] = cVar1;
-              pcVar3 = pcVar3 + 2;
-            } while (cVar1 != '\0');
+            strcpy(dest,local_194);
             dest[0x308] = '\0';
             *(int *)(dest + 0x370) = 5;
             *(char **)(dest + 0x36c) = "POD not under version control";
@@ -788,15 +701,7 @@ LAB_004b8f32:
           pcVar3 = "To apply these changes, you should restart the application.";
         }
       }
-      do {
-        cVar1 = *pcVar3;
-        *pcVar12 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar3[1];
-        pcVar3 = pcVar3 + 2;
-        pcVar12[1] = cVar1;
-        pcVar12 = pcVar12 + 2;
-      } while (cVar1 != '\0');
+      strcpy(pcVar12,pcVar3);
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0(g_CEditorToolsPtr,local_598);
 LAB_004b901b:
       if (local_44 != (SPodManageRecord *)0x0) {
@@ -814,7 +719,7 @@ LAB_004b901b:
     iVar3 = iVar3 + 1;
     if (0x17 < iVar4) break;
 LAB_004b994d:
-    pcVar12 = *(char **)((int)g_PodFileActionNames + iVar4);
+    pcVar12 = g_PodFileActionNames[iVar3];
     pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_1364.base,iVar2);
     iVar7 = _stricmp(pcVar3,pcVar12);
     if (iVar7 == 0) {

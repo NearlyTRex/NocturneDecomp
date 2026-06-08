@@ -10,29 +10,14 @@
 void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path,time_t cutoff_timestamp)
 
 {
-  char cVar2;
   int iVar2;
   int iVar3;
   CPodAuditRecord *pCVar3;
-  int iVar4;
-  int iVar5;
   int record_index;
   _FILE *file;
-  CPodAuditRecord *pCVar6;
-  uint *puVar5;
-  char *pcVar6;
-  char *pcVar7;
-  char *pcVar8;
-  uint *puVar9;
-  uint *puVar7;
-  CPodAuditRecord *pCVar8;
-  char *pcVar9;
-  byte bVar10;
   CPodFile local_9d8;
-  uint local_5ac [8];
-  uint local_58c;
-  uint local_474 [10];
-  char local_44c [272];
+  CPodAuditRecord local_5ac;
+  CPodAuditRecord local_474;
   CPodAuditRecord local_33c;
   char local_204 [256];
   char local_104 [100];
@@ -41,10 +26,8 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
   int local_1c;
   int local_18;
   int local_14;
-  char cVar1;
   int local_44;
-  
-  bVar10 = 0;
+
   if (pod_file_path == (char *)0x0) {
     iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                       (g_CEditorToolsPtr,"Select POD file to remove audit records","*.pod",
@@ -54,16 +37,7 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
     }
   }
   else {
-    pcVar7 = local_204;
-    do {
-      cVar2 = *pod_file_path;
-      *pcVar7 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pod_file_path[1];
-      pod_file_path = pod_file_path + 2;
-      pcVar7[1] = cVar2;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar2 != '\0');
+    strcpy(local_204,pod_file_path);
   }
   engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0(&local_9d8);
   iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(&local_9d8,local_204);
@@ -89,26 +63,12 @@ LAB_004bd3c3:
     record_index = 0;
     if (0 < local_9d8.audit_count) {
       do {
-        engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(&local_9d8,record_index,&local_33c);
-        pCVar6 = &local_33c;
-        puVar9 = local_5ac;
-        for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar9 = *(uint *)pCVar6->user_path;
-          pCVar6 = (CPodAuditRecord *)((int)pCVar6 + ((uint)bVar10 * -2 + 1) * 4);
-          puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
-        }
-        if (local_58c < (uint)cutoff_timestamp) {
+        local_5ac = local_33c;
+        if ((uint)local_5ac.timestamp < (uint)cutoff_timestamp) {
           iVar3 = iVar3 + 1;
         }
         else {
-          pCVar6 = &local_33c;
-          puVar7 = local_474;
-          for (iVar5 = 0x4e; iVar5 != 0; iVar5 = iVar5 + -1) {
-            puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-            *puVar7 = *(uint *)pCVar6->user_path;
-            pCVar6 = (CPodAuditRecord *)((int)pCVar6 + ((uint)bVar10 * -2 + 1) * 4);
-            puVar7 = puVar7;
-          }
+          local_474 = local_33c;
           g_AuditRecordCount = g_AuditRecordCount + 1;
           g_AuditRecordsArray =
                (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
@@ -120,27 +80,9 @@ LAB_004bd3c3:
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
           }
           pCVar3 = g_AuditRecordsArray + g_AuditRecordCount + -1;
-          puVar5 = local_474;
-          pCVar8 = pCVar3;
-          for (iVar5 = 0x4e; iVar5 != 0; iVar5 = iVar5 + -1) {
-            pCVar8 = (CPodAuditRecord *)((int)pCVar8 + (uint)bVar10 * -8 + 4);
-            puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
-            *(uint *)pCVar8->user_path = *puVar5;
-            puVar5 = puVar5;
-            pCVar8 = pCVar8;
-          }
+          *pCVar3 = local_474;
           memset(pCVar3->filename,0,0x100);
-          pcVar6 = local_44c;
-          pcVar9 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename;
-          do {
-            cVar1 = *pcVar6;
-            *pcVar9 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar2 = pcVar6[1];
-            pcVar6 = pcVar6 + 2;
-            pcVar9[1] = cVar2;
-            pcVar9 = pcVar9 + 2;
-          } while (cVar2 != '\0');
+          strcpy(g_AuditRecordsArray[g_AuditRecordCount + -1].filename,local_474.filename);
         }
         record_index = record_index + 1;
       } while (record_index < local_9d8.audit_count);
@@ -194,13 +136,7 @@ LAB_004bd3c3:
     engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8,0);
     return;
   }
-  pcVar7 = g_DefaultAuditRecordPath;
-  pcVar8 = local_104;
-  for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(uint *)pcVar8 = *(uint *)pcVar7;
-    pcVar7 = pcVar7 + ((uint)bVar10 * -2 + 1) * 4;
-    pcVar8 = pcVar8 + (uint)bVar10 * -8 + 4;
-  }
+  memcpy(local_104,g_DefaultAuditRecordPath,sizeof(local_104));
   do {
     iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                       (g_CEditorToolsPtr,"Remove audit records earlier than this date (MM/DD/YYYY)",local_104,100,1);

@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (251 diagnostics)
+Cppcheck (quick) (235 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -521,68 +521,8 @@ invalidscanf (60)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (57)
+selfAssignment (42)
 ----------------------------------------------------------------------------------------------------
-
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 94
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar8' to itself.
-
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 99
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar8' to itself.
-
-  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 line 52
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 173
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar10' to itself.
-
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 178
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar10' to itself.
-
-  engine_fileio.cpp_CFileManager_extractFileWithTime line 48
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar8' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 178
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar15' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 535
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar13' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 536
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar18' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 110
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar7' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 129
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 130
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar8' to itself.
-
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 93
-    File: engine/fileio.cpp
-    Redundant assignment of 'piVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 94
-    File: engine/fileio.cpp
-    Redundant assignment of 'piVar7' to itself.
-
-  engine_fileio.cpp_readTimestampFile_FUN_004b23a0   line 99
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar5' to itself.
 
   shape_design.c_bisectMesh_FUN_0046ed50             line 81
     File: shape/design.c
@@ -957,12 +897,8 @@ legacyUninitvar (9)
     Uninitialized variable: local_7c
 
 ----------------------------------------------------------------------------------------------------
-identicalInnerCondition (5)
+identicalInnerCondition (4)
 ----------------------------------------------------------------------------------------------------
-
-  engine_fileio.cpp_CFileManager_crossReferencePodDu line 134
-    File: engine/fileio.cpp
-    Identical inner 'if' condition is always true.
 
   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGene line 141
     File: shape/cramtex.cpp

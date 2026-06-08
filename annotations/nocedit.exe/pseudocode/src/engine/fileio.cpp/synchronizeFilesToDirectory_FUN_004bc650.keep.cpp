@@ -10,16 +10,11 @@
 void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
 
 {
-  char cVar2;
   char *full_path;
   int iVar3;
   int iVar4;
   _FILE *file;
   _FILE *file_ptr;
-  char *pcVar4;
-  char *pcVar5;
-  SFoundFileInfo *pSVar6;
-  SFoundFileInfo *pSVar5;
   SFoundFileInfo local_750;
   SFoundFileInfo local_53c;
   char local_328 [260];
@@ -28,8 +23,7 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
   CStrList local_24;
   int local_14;
   bool bVar2;
-  char cVar1;
-  
+
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_24);
   shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_004a39e0
             (&local_24,source_directory,file_pattern);
@@ -42,28 +36,8 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
       engine_dosio_cpp_makePath_FUN_00481f50(local_328,(char *)0x0,dest_directory,local_224,local_124)
       ;
       _fprintf((_FILE *)file_list_output->_ptr,"%s\n",local_328);
-      pSVar6 = &local_53c;
-      pcVar4 = full_path;
-      do {
-        cVar1 = *pcVar4;
-        pSVar6->found_path[0] = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = pcVar4[1];
-        pcVar4 = pcVar4 + 2;
-        pSVar6->found_path[1] = cVar2;
-        pSVar6 = (SFoundFileInfo *)(pSVar6->found_path + 2);
-      } while (cVar2 != '\0');
-      pcVar5 = local_328;
-      pSVar5 = &local_750;
-      do {
-        cVar2 = *pcVar5;
-        pSVar5->found_path[0] = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pSVar5->found_path[1] = cVar2;
-        pSVar5 = (SFoundFileInfo *)(pSVar5->found_path + 2);
-      } while (cVar2 != '\0');
+      strcpy(local_53c.found_path,full_path);
+      strcpy(local_750.found_path,local_328);
       iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_53c);
       if (iVar3 == 0) {
         g_CurrentFilename = "..\\engine\\fileio.cpp";

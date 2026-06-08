@@ -7,12 +7,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x004bbc51) */
-
 int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileManager *this_ptr,char *checkout_item_name,char *timestamp_file,char *pod_filename)
 
 {
-  char cVar2;
   int iVar2;
   int iVar3;
   _FILE *p_Var3;
@@ -22,15 +19,8 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
   int *piVar4;
   _tm *p_Var5;
   int iVar6;
-  uint *puVar7;
   char *pcVar8;
-  SFoundFileInfo *pSVar9;
-  SFoundFileInfo *pSVar8;
-  SFoundFileInfo *pSVar10;
   char *pcVar9;
-  char *pcVar10;
-  char *pcVar11;
-  byte bVar13;
   CPodFile local_2600;
   CPickList local_21d4;
   CPickList local_1e2c;
@@ -65,16 +55,13 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
   _FILE *local_38;
   _FILE *local_34;
   int local_30;
-  int local_2c;
   char local_24 [4];
   char local_20 [4];
   char local_1c [4];
   char local_18 [8];
-  char cVar1;
   char *pcVar14;
   int local_28;
-  
-  bVar13 = 0;
+
   iVar2 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(this_ptr);
   if (iVar2 == 0) {
     return 0;
@@ -96,24 +83,13 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
   }
   local_30 = 0;
   if (0 < local_2600.file_count) {
-    local_2c = 0;
     do {
-      puVar7 = (uint *)((int)&(local_2600.directory_entries)->name + local_2c);
-      pSVar8 = &local_14c8;
-      pcVar8 = (char *)*puVar7;
-      do {
-        cVar1 = *pcVar8;
-        pSVar8->found_path[0] = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = pcVar8[1];
-        pcVar8 = pcVar8 + 2;
-        pSVar8->found_path[1] = cVar2;
-        pSVar8 = (SFoundFileInfo *)(pSVar8->found_path + 2);
-      } while (cVar2 != '\0');
+      pcVar8 = local_2600.directory_entries[local_30].name;
+      strcpy(local_14c8.found_path,pcVar8);
       iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_14c8);
-      if ((((iVar3 == 0) || (puVar7[3] + 2 < local_14c8.timestamp)) ||
-          (local_14c8.timestamp < puVar7[3] - 2)) || (local_14c8.file_size != puVar7[1])) break;
-      local_2c = local_2c + 0x14;
+      if ((((iVar3 == 0) || (local_2600.directory_entries[local_30].timestamp + 2 < local_14c8.timestamp)) ||
+          (local_14c8.timestamp < local_2600.directory_entries[local_30].timestamp - 2)) ||
+          (local_14c8.file_size != local_2600.directory_entries[local_30].size)) break;
       local_30 = local_30 + 1;
     } while (local_30 < local_2600.file_count);
   }
@@ -166,27 +142,7 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
   engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(checkout_item_name,local_20,local_370);
   engine_dosio_cpp_makePath_FUN_00481f50
             (local_16dc.found_path,local_20,local_370,(char *)0x0,(char *)0x0);
-  pSVar9 = &local_12b4;
-  iVar3 = -1;
-  pSVar10 = &local_16dc;
-  do {
-    pSVar10 = pSVar10;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    pSVar10 = (SFoundFileInfo *)((int)pSVar10 + (uint)bVar13 * -2 + 1);
-    pcVar9 = pSVar10->found_path;
-    pSVar10 = pSVar10;
-  } while (*pcVar9 != '\0');
-  pcVar9 = (char *)((int)&pSVar10[-1].container_timestamp + 3);
-  do {
-    cVar2 = pSVar9->found_path[0];
-    *pcVar9 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pSVar9->found_path[1];
-    pSVar9 = (SFoundFileInfo *)(pSVar9->found_path + 2);
-    pcVar9[1] = cVar2;
-    pcVar9 = pcVar9 + 2;
-  } while (cVar2 != '\0');
+  strcat(local_16dc.found_path,local_12b4.found_path);
   iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_16dc);
   if (iVar3 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -265,27 +221,7 @@ LAB_004bb723:
   _sprintf(local_574,"$$$.%s.$$$",local_12b4.found_path);
   engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(local_50,local_1c,local_270);
   engine_dosio_cpp_makePath_FUN_00481f50(local_880,local_1c,local_270,(char *)0x0,(char *)0x0);
-  pcVar9 = local_574;
-  iVar3 = -1;
-  pcVar10 = local_880;
-  do {
-    pcVar11 = pcVar10;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    pcVar11 = pcVar10 + (uint)bVar13 * -2 + 1;
-    cVar2 = *pcVar10;
-    pcVar10 = pcVar11;
-  } while (cVar2 != '\0');
-  pcVar11 = pcVar11 + -1;
-  do {
-    cVar2 = *pcVar9;
-    *pcVar11 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pcVar9[1];
-    pcVar9 = pcVar9 + 2;
-    pcVar11[1] = cVar2;
-    pcVar11 = pcVar11 + 2;
-  } while (cVar2 != '\0');
+  strcat(local_880,local_574);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Creating temporary network file %s...",local_880);
   engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_880,0);
@@ -324,27 +260,7 @@ LAB_004bb83f:
     }
     engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_18,local_470);
     engine_dosio_cpp_makePath_FUN_00481f50(local_678,local_18,local_470,(char *)0x0,(char *)0x0);
-    pcVar10 = "checkout.txt";
-    iVar3 = -1;
-    pcVar9 = local_678;
-    do {
-      pcVar11 = pcVar9;
-      if (iVar3 == 0) break;
-      iVar3 = iVar3 + -1;
-      pcVar11 = pcVar9 + (uint)bVar13 * -2 + 1;
-      cVar2 = *pcVar9;
-      pcVar9 = pcVar11;
-    } while (cVar2 != '\0');
-    pcVar11 = pcVar11 + -1;
-    do {
-      cVar2 = *pcVar10;
-      *pcVar11 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      pcVar11[1] = cVar2;
-      pcVar11 = pcVar11 + 2;
-    } while (cVar2 != '\0');
+    strcat(local_678,"checkout.txt");
     iVar3 = 0;
     local_60.count = 0;
     local_60.items = (CCheckOutItem *)0x0;

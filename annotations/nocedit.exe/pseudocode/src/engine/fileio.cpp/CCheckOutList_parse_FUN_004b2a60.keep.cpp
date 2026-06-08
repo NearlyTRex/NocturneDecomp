@@ -10,21 +10,14 @@
 int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *this_ptr,_FILE **file)
 
 {
-  char cVar2;
   int iVar2;
   int iVar3;
   char *pcVar4;
-  uint uVar3;
   SIZE_T SVar4;
-  uint uVar5;
   SIZE_T n;
-  CCheckOutItem *pCVar5;
-  byte bVar6;
   CCheckOutItem local_178;
   char *pcVar7;
-  char cVar1;
-  
-  bVar6 = 0;
+
   engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(this_ptr);
   iVar2 = _fseek(*file,0,0);
   if (iVar2 == 0) {
@@ -42,18 +35,9 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
         pcVar7 = "Checkout file is corrupt, or file I/O error.\nGet Fletch, this is a serious situation.";
         goto LAB_004b2acd;
       }
-      uVar3 = 0xffffffff;
-      pCVar5 = &local_178;
-      do {
-        if (uVar3 == 0) break;
-        uVar3 = uVar3 - 1;
-        pCVar5 = (CCheckOutItem *)((int)pCVar5 + (uint)bVar6 * -2 + 1);
-        cVar1 = pCVar5->name[0];
-        pCVar5 = pCVar5;
-      } while (cVar1 != '\0');
-      SVar4 = ~uVar3 - 1;
+      SVar4 = strlen(local_178.name);
       if (0 < (int)SVar4) {
-        pcVar4 = local_178.name + (~uVar3 - 1);
+        pcVar4 = local_178.name + SVar4;
         do {
           if ((g_CharacterClassificationTable[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;
           SVar4 = SVar4 - 1;
@@ -65,17 +49,9 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
         memmove(&local_178,local_178.name + 1,SVar4);
         SVar4 = SVar4 - 1;
       }
-      uVar5 = 0xffffffff;
-      pcVar4 = local_178.value;
-      do {
-        if (uVar5 == 0) break;
-        uVar5 = uVar5 - 1;
-        cVar2 = *pcVar4;
-        pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
-      } while (cVar2 != '\0');
-      n = ~uVar5 - 1;
+      n = strlen(local_178.value);
       if (0 < (int)n) {
-        pcVar4 = local_178.name + ~uVar5 + 0x103;
+        pcVar4 = local_178.value + n;
         do {
           if ((g_CharacterClassificationTable[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;
           n = n - 1;

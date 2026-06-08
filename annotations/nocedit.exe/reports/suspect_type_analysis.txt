@@ -4,30 +4,27 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     662 ( 50.4%)
-  unrolled_memcpy                  135 ( 10.3%)
-  unrolled_strcpy                  104 (  7.9%)
-  static_uninitvar                  66 (  5.0%)
-  static_self_assignment            57 (  4.3%)
-  unrolled_strlen                   55 (  4.2%)
-  shadow_pointer_walk               49 (  3.7%)
-  bitcast_double_pair               36 (  2.7%)
-  signed_shift_global_idiom         16 (  1.2%)
-  unrolled_strchr                   16 (  1.2%)
-  static_shift_too_many_bits        16 (  1.2%)
-  warning_inlined_function          14 (  1.1%)
-  raw_address_constant              13 (  1.0%)
-  missing_cave_copy                 11 (  0.8%)
-  sub84_truncation                   9 (  0.7%)
-  static_legacy_uninitvar            9 (  0.7%)
-  bit_int_float_compare              8 (  0.6%)
+  pointer_cast                     619 ( 53.6%)
+  unrolled_memcpy                  112 (  9.7%)
+  static_uninitvar                  66 (  5.7%)
+  unrolled_strcpy                   50 (  4.3%)
+  shadow_pointer_walk               49 (  4.2%)
+  unrolled_strlen                   44 (  3.8%)
+  static_self_assignment            42 (  3.6%)
+  bitcast_double_pair               36 (  3.1%)
+  static_shift_too_many_bits        16 (  1.4%)
+  warning_inlined_function          14 (  1.2%)
+  unrolled_strchr                   14 (  1.2%)
+  signed_shift_global_idiom         14 (  1.2%)
+  raw_address_constant              13 (  1.1%)
+  missing_cave_copy                 11 (  1.0%)
+  sub84_truncation                   9 (  0.8%)
+  static_legacy_uninitvar            9 (  0.8%)
+  bit_int_float_compare              8 (  0.7%)
   unaffected_reg                     6 (  0.5%)
   static_invalid_pointer_cast        6 (  0.5%)
-  static_identical_inner_condition     5 (  0.4%)
-  unrolled_strcat                    4 (  0.3%)
-  warning_unreachable                3 (  0.2%)
-  static_object_index                3 (  0.2%)
-  negative_offset                    2 (  0.2%)
+  static_identical_inner_condition     4 (  0.3%)
+  static_object_index                3 (  0.3%)
   static_null_pointer                2 (  0.2%)
   unrolled_memset                    2 (  0.2%)
   static_array_oob_cond              2 (  0.2%)
@@ -36,11 +33,11 @@ SUSPECT TYPE COUNTS
   self_copy_guard                    1 (  0.1%)
 
 ====================================================================================================
-TYPE: pointer_cast (662 occurrences)
+TYPE: pointer_cast (619 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   306x  (int)&NAME used in byte-offset arithmetic
+   282x  (int)&NAME used in byte-offset arithmetic
     22x  (uint *)((int)this_ptr
     20x  (int *)((int)this_ptr
     13x  (int *)((int)pCVar1
@@ -52,7 +49,6 @@ Unique patterns:
      9x  (double *)((int)pdVar11
      9x  (double *)((int)pdVar6
      8x  (int *)((int)g_ModelPolygonData
-     7x  (CPodAuditRecord *)((int)pCVar15
      6x  (SShapeEditorPolygon *)((int)pSVar6
      6x  (int *)((int)base
      5x  (int *)((int)aiStack_4e8
@@ -60,23 +56,9 @@ Unique patterns:
      5x  (double *)((int)pdVar10
      4x  (uint *)((int)puVar1
      4x  (uint *)((int)g_SampleDistances
+     4x  (float *)((int)pCVar1
 
 Functions:
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-  engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
-  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
-  engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-  engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
-  engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
-  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
-  engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
-  engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
-  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-  engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-  engine_fileio.cpp_readTimestampFile_FUN_004b23a0
   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
   shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90
   shape_cramtex.cpp_generateTextureAtlas_FUN_00445820
@@ -179,21 +161,16 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (135 occurrences)
+TYPE: unrolled_memcpy (112 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    46x  for (...; != 0; ... + -1)
-    45x  MOVSD.REP
     43x  field-by-field struct copy
+    38x  MOVSD.REP
+    30x  for (...; != 0; ... + -1)
      1x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
-  engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-  engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-  engine_fileio.cpp_readTimestampFile_FUN_004b23a0
   shape_design.c_bisectMesh_FUN_0046ed50
   shape_design.c_complexPolygonReduction_FUN_00463b30
   shape_design.c_deletePolygonRange_FUN_0045dd70
@@ -243,48 +220,6 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (104 occurrences)
-====================================================================================================
-
-Unique patterns:
-   104x  do {
-
-Functions:
-  engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-  engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
-  engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-  engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
-  engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
-  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
-  engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
-  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-  engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640
-  engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-  engine_fileio.cpp_CFileManager_setVersionControlCredentials_FUN_004bc5d0
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-  engine_fileio.cpp_readTimestampFile_FUN_004b23a0
-  engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
-  shape_design.c_cramTextureList_FUN_0046bb80
-  shape_design.c_cramTextures_FUN_0046a970
-  shape_design.c_exportModelToBIN_FUN_0045aa80
-  shape_design.c_exportModelToMDL_FUN_00459e80
-  shape_design.c_loadModelBinary_FUN_00458170
-  shape_design.c_loadModelFile_FUN_00458ac0
-  shape_design.c_loadPalette_FUN_0046e810
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
-  shape_design.c_polygonToolModeManager_FUN_00464c90
-  shape_design.c_renderSinglePolygon_FUN_0045ce20
-  shape_design.c_tileTextureMaps_FUN_0046a180
-  shape_design.c_validateModelTextures_FUN_00459a20
-  shape_design.c_writePolygonModel_FUN_0045a320
-  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
-
-====================================================================================================
 TYPE: static_uninitvar (66 occurrences)
 ====================================================================================================
 
@@ -307,77 +242,28 @@ Functions:
   shape_superopt.cpp_CPoly_transform_FUN_005ccc30
 
 ====================================================================================================
-TYPE: static_self_assignment (57 occurrences)
+TYPE: unrolled_strcpy (50 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    57x  Cppcheck: redundant self-assignment
+    50x  do {
 
 Functions:
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-  engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-  engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-  engine_fileio.cpp_readTimestampFile_FUN_004b23a0
-  shape_design.c_bisectMesh_FUN_0046ed50
-  shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
-  shape_design.c_complexPolygonReduction_FUN_00463b30
-  shape_design.c_configureFullPassPolygonReduction_FUN_00465810
-  shape_design.c_configureSinglePassPolygonReduction_FUN_00465560
-  shape_design.c_createBoxPrimitive_FUN_0045e520
-  shape_design.c_createCenterVertex_FUN_00469690
-  shape_design.c_createKeyframeModel_FUN_00468320
-  shape_design.c_deletePolygonRange_FUN_0045dd70
-  shape_design.c_deleteSinglePolygon_FUN_0045dcc0
-  shape_design.c_generateGlobe_FUN_00468910
-  shape_design.c_generateOctant_FUN_00469420
-  shape_design.c_generateShell_FUN_00468f20
-  shape_design.c_mergeAdjacentPolygons_FUN_00462b70
-  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0
-  shape_design.c_sizeForStadium_FUN_00469c70
-  shape_design.c_sortPolygonsByTexture_FUN_0045b8b0
-  shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
-  shape_design.c_triangulateDSE_FUN_0046e4d0
-  shape_design.c_vertexReducer_FUN_00467850
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
-  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
-  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
-
-====================================================================================================
-TYPE: unrolled_strlen (55 occurrences)
-====================================================================================================
-
-Unique patterns:
-    55x  do { if (v==0) break; v=v-1; ... }
-
-Functions:
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
-  engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-  engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-  shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
   shape_design.c_cramTextureList_FUN_0046bb80
-  shape_design.c_createBoxPrimitive_FUN_0045e520
-  shape_design.c_createCenterVertex_FUN_00469690
-  shape_design.c_createKeyframeModel_FUN_00468320
-  shape_design.c_deletePolygonRange_FUN_0045dd70
-  shape_design.c_deleteSinglePolygon_FUN_0045dcc0
-  shape_design.c_generateGlobe_FUN_00468910
-  shape_design.c_generateOctant_FUN_00469420
-  shape_design.c_generateShell_FUN_00468f20
+  shape_design.c_cramTextures_FUN_0046a970
+  shape_design.c_exportModelToBIN_FUN_0045aa80
+  shape_design.c_exportModelToMDL_FUN_00459e80
+  shape_design.c_loadModelBinary_FUN_00458170
+  shape_design.c_loadModelFile_FUN_00458ac0
   shape_design.c_loadPalette_FUN_0046e810
-  shape_design.c_modelExportWizard_FUN_0045a7b0
-  shape_design.c_quantizePaletteColors_FUN_0046b770
-  shape_design.c_sizeForStadium_FUN_00469c70
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
+  shape_design.c_polygonToolModeManager_FUN_00464c90
+  shape_design.c_renderSinglePolygon_FUN_0045ce20
   shape_design.c_tileTextureMaps_FUN_0046a180
-  shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
+  shape_design.c_validateModelTextures_FUN_00459a20
+  shape_design.c_writePolygonModel_FUN_0045a320
+  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
+  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
 TYPE: shadow_pointer_walk (49 occurrences)
@@ -429,6 +315,65 @@ Functions:
   shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
 
 ====================================================================================================
+TYPE: unrolled_strlen (44 occurrences)
+====================================================================================================
+
+Unique patterns:
+    44x  do { if (v==0) break; v=v-1; ... }
+
+Functions:
+  shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
+  shape_design.c_cramTextureList_FUN_0046bb80
+  shape_design.c_createBoxPrimitive_FUN_0045e520
+  shape_design.c_createCenterVertex_FUN_00469690
+  shape_design.c_createKeyframeModel_FUN_00468320
+  shape_design.c_deletePolygonRange_FUN_0045dd70
+  shape_design.c_deleteSinglePolygon_FUN_0045dcc0
+  shape_design.c_generateGlobe_FUN_00468910
+  shape_design.c_generateOctant_FUN_00469420
+  shape_design.c_generateShell_FUN_00468f20
+  shape_design.c_loadPalette_FUN_0046e810
+  shape_design.c_modelExportWizard_FUN_0045a7b0
+  shape_design.c_quantizePaletteColors_FUN_0046b770
+  shape_design.c_sizeForStadium_FUN_00469c70
+  shape_design.c_tileTextureMaps_FUN_0046a180
+  shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
+
+====================================================================================================
+TYPE: static_self_assignment (42 occurrences)
+====================================================================================================
+
+Unique patterns:
+    42x  Cppcheck: redundant self-assignment
+
+Functions:
+  shape_design.c_bisectMesh_FUN_0046ed50
+  shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
+  shape_design.c_complexPolygonReduction_FUN_00463b30
+  shape_design.c_configureFullPassPolygonReduction_FUN_00465810
+  shape_design.c_configureSinglePassPolygonReduction_FUN_00465560
+  shape_design.c_createBoxPrimitive_FUN_0045e520
+  shape_design.c_createCenterVertex_FUN_00469690
+  shape_design.c_createKeyframeModel_FUN_00468320
+  shape_design.c_deletePolygonRange_FUN_0045dd70
+  shape_design.c_deleteSinglePolygon_FUN_0045dcc0
+  shape_design.c_generateGlobe_FUN_00468910
+  shape_design.c_generateOctant_FUN_00469420
+  shape_design.c_generateShell_FUN_00468f20
+  shape_design.c_mergeAdjacentPolygons_FUN_00462b70
+  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0
+  shape_design.c_sizeForStadium_FUN_00469c70
+  shape_design.c_sortPolygonsByTexture_FUN_0045b8b0
+  shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
+  shape_design.c_triangulateDSE_FUN_0046e4d0
+  shape_design.c_vertexReducer_FUN_00467850
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
+  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
+
+====================================================================================================
 TYPE: bitcast_double_pair (36 occurrences)
 ====================================================================================================
 
@@ -442,35 +387,6 @@ Functions:
   shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
   shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
-
-====================================================================================================
-TYPE: signed_shift_global_idiom (16 occurrences)
-====================================================================================================
-
-Unique patterns:
-    16x  g_Global >> 0x1f
-
-Functions:
-  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-  shape_design.c_setupViewMatrix_FUN_0045ba60
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0
-
-====================================================================================================
-TYPE: unrolled_strchr (16 occurrences)
-====================================================================================================
-
-Unique patterns:
-    16x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
-
-Functions:
-  engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640
-  shape_design.c_cramTextureList_FUN_0046bb80
-  shape_design.c_cramTextures_FUN_0046a970
-  shape_design.c_loadPalette_FUN_0046e810
-  shape_design.c_modelExportWizard_FUN_0045a7b0
-  shape_design.c_tileTextureMaps_FUN_0046a180
-  shape_design.c_validateModelTextures_FUN_00459a20
-  shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
 TYPE: static_shift_too_many_bits (16 occurrences)
@@ -508,6 +424,33 @@ Functions:
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
   shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
+
+====================================================================================================
+TYPE: unrolled_strchr (14 occurrences)
+====================================================================================================
+
+Unique patterns:
+    14x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
+
+Functions:
+  shape_design.c_cramTextureList_FUN_0046bb80
+  shape_design.c_cramTextures_FUN_0046a970
+  shape_design.c_loadPalette_FUN_0046e810
+  shape_design.c_modelExportWizard_FUN_0045a7b0
+  shape_design.c_tileTextureMaps_FUN_0046a180
+  shape_design.c_validateModelTextures_FUN_00459a20
+  shape_quantize.cpp_displayProgressBar_FUN_005568f0
+
+====================================================================================================
+TYPE: signed_shift_global_idiom (14 occurrences)
+====================================================================================================
+
+Unique patterns:
+    14x  g_Global >> 0x1f
+
+Functions:
+  shape_design.c_setupViewMatrix_FUN_0045ba60
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0
 
 ====================================================================================================
 TYPE: raw_address_constant (13 occurrences)
@@ -615,41 +558,17 @@ Functions:
   shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
 
 ====================================================================================================
-TYPE: static_identical_inner_condition (5 occurrences)
+TYPE: static_identical_inner_condition (4 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     5x  Cppcheck: inner condition identical to outer
+     4x  Cppcheck: inner condition identical to outer
 
 Functions:
-  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
   shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
   shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
-
-====================================================================================================
-TYPE: unrolled_strcat (4 occurrences)
-====================================================================================================
-
-Unique patterns:
-     4x  strlen + <p> + -1 + strcpy
-
-Functions:
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-
-====================================================================================================
-TYPE: warning_unreachable (3 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  WARNING: Removing unreachable block
-
-Functions:
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
 
 ====================================================================================================
 TYPE: static_object_index (3 occurrences)
@@ -660,18 +579,6 @@ Unique patterns:
 
 Functions:
   shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870
-
-====================================================================================================
-TYPE: negative_offset (2 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  pSVar10[-1].
-     1x  pSVar8[-1].
-
-Functions:
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
 
 ====================================================================================================
 TYPE: static_null_pointer (2 occurrences)

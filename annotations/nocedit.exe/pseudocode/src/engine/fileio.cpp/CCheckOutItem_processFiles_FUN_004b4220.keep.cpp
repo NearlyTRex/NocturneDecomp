@@ -7,12 +7,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x004b4aea) */
-
 int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutItem *this_ptr,char *filename)
 
 {
-  char cVar2;
   int iVar4;
   _FILE *p_Var2;
   int iVar3;
@@ -22,13 +19,8 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   _tm *p_Var5;
   int iVar7;
   int iVar6;
-  SFoundFileInfo *pSVar7;
   char *pcVar8;
-  SFoundFileInfo *pSVar8;
-  char *pcVar10;
   char *pcVar9;
-  char *pcVar12;
-  byte bVar12;
   CPickList local_13c8;
   SFoundFileInfo local_1020;
   SFoundFileInfo local_e0c;
@@ -57,11 +49,9 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   char local_1c [4];
   char local_18 [4];
   char local_14 [4];
-  char cVar1;
   char *pcVar13;
   int local_30;
-  
-  bVar12 = 0;
+
   pcVar8 = g_DefaultCheckOutPath;
   pcVar9 = local_a68;
   for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -87,27 +77,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(this_ptr->name,local_20,local_250);
   engine_dosio_cpp_makePath_FUN_00481f50
             (local_1020.found_path,local_20,local_250,(char *)0x0,(char *)0x0);
-  pSVar7 = &local_e0c;
-  iVar4 = -1;
-  pSVar8 = &local_1020;
-  do {
-    pSVar8 = pSVar8;
-    if (iVar4 == 0) break;
-    iVar4 = iVar4 + -1;
-    pSVar8 = (SFoundFileInfo *)((int)pSVar8 + (uint)bVar12 * -2 + 1);
-    pcVar8 = pSVar8->found_path;
-    pSVar8 = pSVar8;
-  } while (*pcVar8 != '\0');
-  pcVar10 = (char *)((int)&pSVar8[-1].container_timestamp + 3);
-  do {
-    cVar1 = pSVar7->found_path[0];
-    *pcVar10 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = pSVar7->found_path[1];
-    pSVar7 = (SFoundFileInfo *)(pSVar7->found_path + 2);
-    pcVar10[1] = cVar2;
-    pcVar10 = pcVar10 + 2;
-  } while (cVar2 != '\0');
+  strcat(local_1020.found_path,local_e0c.found_path);
   iVar4 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_1020);
   if (iVar4 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -184,27 +154,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   _sprintf(local_554,"$$$.%s.$$$",local_e0c.found_path);
   engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(this_ptr->name,local_14,local_450);
   engine_dosio_cpp_makePath_FUN_00481f50(local_a68,local_14,local_450,(char *)0x0,(char *)0x0);
-  pcVar8 = local_554;
-  iVar4 = -1;
-  pcVar9 = local_a68;
-  do {
-    pcVar12 = pcVar9;
-    if (iVar4 == 0) break;
-    iVar4 = iVar4 + -1;
-    pcVar12 = pcVar9 + (uint)bVar12 * -2 + 1;
-    cVar2 = *pcVar9;
-    pcVar9 = pcVar12;
-  } while (cVar2 != '\0');
-  pcVar12 = pcVar12 + -1;
-  do {
-    cVar2 = *pcVar8;
-    *pcVar12 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pcVar8[1];
-    pcVar8 = pcVar8 + 2;
-    pcVar12[1] = cVar2;
-    pcVar12 = pcVar12 + 2;
-  } while (cVar2 != '\0');
+  strcat(local_a68,local_554);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Creating temporary network file %s...",local_a68);
   engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_a68,0);
@@ -238,27 +188,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
       }
       engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_18,local_350);
       engine_dosio_cpp_makePath_FUN_00481f50(local_860,local_18,local_350,(char *)0x0,(char *)0x0);
-      pcVar9 = "checkout.txt";
-      iVar4 = -1;
-      pcVar8 = local_860;
-      do {
-        pcVar12 = pcVar8;
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        pcVar12 = pcVar8 + (uint)bVar12 * -2 + 1;
-        cVar2 = *pcVar8;
-        pcVar8 = pcVar12;
-      } while (cVar2 != '\0');
-      pcVar12 = pcVar12 + -1;
-      do {
-        cVar2 = *pcVar9;
-        *pcVar12 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar9[1];
-        pcVar9 = pcVar9 + 2;
-        pcVar12[1] = cVar2;
-        pcVar12 = pcVar12 + 2;
-      } while (cVar2 != '\0');
+      strcat(local_860,"checkout.txt");
       iVar4 = 0;
       local_50.count = 0;
       local_50.items = (CCheckOutItem *)0x0;

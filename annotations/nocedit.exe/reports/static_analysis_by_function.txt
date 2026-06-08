@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 86
-  Total diagnostics: 251
+  Functions with findings: 77
+  Total diagnostics: 235
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 51, raw .cpp files: 35
+  .keep.cpp files: 45, raw .cpp files: 32
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -276,22 +276,6 @@ core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppc
   Line   66: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
 ----------------------------------------------------------------------------------------------------
-engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50  [.keep] [Cppcheck (quick)]
-  File: engine/fileio.cpp  (3 diagnostics)
-
-  Line  178: [selfAssignment] Redundant assignment of 'puVar15' to itself.
-  Line  535: [selfAssignment] Redundant assignment of 'puVar13' to itself.
-  Line  536: [selfAssignment] Redundant assignment of 'pCVar18' to itself.
-
-----------------------------------------------------------------------------------------------------
-engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190  [.keep] [Cppcheck (quick)]
-  File: engine/fileio.cpp  (3 diagnostics)
-
-  Line  110: [selfAssignment] Redundant assignment of 'puVar7' to itself.
-  Line  129: [selfAssignment] Redundant assignment of 'puVar5' to itself.
-  Line  130: [selfAssignment] Redundant assignment of 'pCVar8' to itself.
-
-----------------------------------------------------------------------------------------------------
 shape_design.c_arePolygonsCoplanar_FUN_00461b70  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (3 diagnostics)
 
@@ -359,27 +343,6 @@ core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppch
 
   Line   16: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line   19: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220  [.keep] [Cppcheck (quick)]
-  File: engine/fileio.cpp  (2 diagnostics)
-
-  Line   94: [selfAssignment] Redundant assignment of 'pSVar8' to itself.
-  Line   99: [selfAssignment] Redundant assignment of 'pSVar8' to itself.
-
-----------------------------------------------------------------------------------------------------
-engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00  [.keep] [Cppcheck (quick)]
-  File: engine/fileio.cpp  (2 diagnostics)
-
-  Line  173: [selfAssignment] Redundant assignment of 'pSVar10' to itself.
-  Line  178: [selfAssignment] Redundant assignment of 'pSVar10' to itself.
-
-----------------------------------------------------------------------------------------------------
-engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50  [.keep] [Cppcheck (quick)]
-  File: engine/fileio.cpp  (2 diagnostics)
-
-  Line   93: [selfAssignment] Redundant assignment of 'piVar5' to itself.
-  Line   94: [selfAssignment] Redundant assignment of 'piVar7' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160  [.cpp] [Cppcheck (quick)]
@@ -508,34 +471,10 @@ core_setutil.cpp_C3DSCamera_load_FUN_00585420  [.keep] [Cppcheck (quick)]
   Line   20: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60  [.keep] [Cppcheck (quick)]
-  File: engine/fileio.cpp  (1 diagnostics)
-
-  Line   52: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
-engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40  [.cpp] [Cppcheck (quick)]
-  File: engine/fileio.cpp  (1 diagnostics)
-
-  Line  134: [identicalInnerCondition] Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50  [.cpp] [Cppcheck (quick)]
-  File: engine/fileio.cpp  (1 diagnostics)
-
-  Line   48: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
-
-----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (1 diagnostics)
 
   Line   24: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-engine_fileio.cpp_readTimestampFile_FUN_004b23a0  [.cpp] [Cppcheck (quick)]
-  File: engine/fileio.cpp  (1 diagnostics)
-
-  Line   99: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_centerVerticesAroundPoint_FUN_0045ea90  [.cpp] [Cppcheck (quick)]

@@ -10,7 +10,6 @@
 void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileManager *this_ptr,char *pod_filename,int offer_dismount)
 
 {
-  char cVar2;
   int iVar2;
   int iVar3;
   _tm *p_Var3;
@@ -18,10 +17,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
   _tm *p_Var4;
   int iVar5;
   char *pcVar6;
-  char *pcVar8;
-  uint *puVar7;
   char *pcVar9;
-  SFoundFileInfo *pSVar10;
   CPodFile CStack_e84;
   char acStack_a58 [1024];
   SFoundFileInfo local_658;
@@ -32,11 +28,9 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
   time_t local_40 [4];
   CStrList local_30;
   _FILE *local_20;
-  int local_1c;
   int local_18;
   int local_14;
-  char cVar1;
-  
+
   if (pod_filename == (char *)0x0) {
     iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                       (g_CEditorToolsPtr,"Select POD file to extract","*.pod",
@@ -46,16 +40,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
     }
   }
   else {
-    pcVar9 = local_244;
-    do {
-      cVar2 = *pod_filename;
-      *pcVar9 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pod_filename[1];
-      pod_filename = pod_filename + 2;
-      pcVar9[1] = cVar2;
-      pcVar9 = pcVar9 + 2;
-    } while (cVar2 != '\0');
+    strcpy(local_244,pod_filename);
   }
   engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0(&CStack_e84);
   iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(&CStack_e84,local_244);
@@ -94,25 +79,13 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
   }
   local_18 = 0;
   if (0 < CStack_e84.file_count) {
-    local_1c = 0;
     do {
-      puVar7 = (uint *)((int)&(CStack_e84.directory_entries)->name + local_1c);
-      pcVar9 = (char *)*puVar7;
-      local_40[0] = puVar7[1];
-      local_40[1] = puVar7[2];
-      local_40[2] = puVar7[3];
-      local_40[3] = puVar7[4];
-      pSVar10 = &local_658;
-      pcVar8 = pcVar9;
-      do {
-        cVar1 = *pcVar8;
-        pSVar10->found_path[0] = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = pcVar8[1];
-        pcVar8 = pcVar8 + 2;
-        pSVar10->found_path[1] = cVar2;
-        pSVar10 = (SFoundFileInfo *)(pSVar10->found_path + 2);
-      } while (cVar2 != '\0');
+      pcVar9 = CStack_e84.directory_entries[local_18].name;
+      local_40[0] = CStack_e84.directory_entries[local_18].size;
+      local_40[1] = CStack_e84.directory_entries[local_18].offset;
+      local_40[2] = CStack_e84.directory_entries[local_18].timestamp;
+      local_40[3] = CStack_e84.directory_entries[local_18].checksum;
+      strcpy(local_658.found_path,pcVar9);
       iVar4 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_658);
       if ((this_ptr->operation_mode != 0) && (((local_14 == 0 || (local_14 == 1)) && (iVar4 != 0))))
       {
@@ -148,8 +121,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
       _sprintf(acStack_a58,"%d",(int)local_40[1]);
       engine_2d_c_drawText_FUN_00401fd0
                 (acStack_a58,
-                 ((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
-                       (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + g_WindowWidth / 2,iVar3);
+                 g_WindowWidth / 4 + g_WindowWidth / 2,iVar3);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       iVar3 = iVar3 + 0xb;
       if (g_WindowHeight + -0x21 <= iVar3) {
@@ -158,7 +130,6 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
       }
-      local_1c = local_1c + 0x14;
       local_18 = local_18 + 1;
     } while (local_18 < CStack_e84.file_count);
   }

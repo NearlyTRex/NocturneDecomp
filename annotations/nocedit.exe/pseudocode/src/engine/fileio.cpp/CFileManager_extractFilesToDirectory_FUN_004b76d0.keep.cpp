@@ -10,7 +10,6 @@
 void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager *this_ptr)
 
 {
-  char cVar2;
   char *dest_filename;
   int iVar2;
   int iVar4;
@@ -19,10 +18,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
   _tm *p_Var4;
   _tm *time_ptr;
   char *output_buffer;
-  char *pcVar7;
   CPodDirectoryEntry *pCVar5;
-  int iVar6;
-  SFoundFileInfo *pSVar9;
   CPodFile local_1108;
   SFoundFileInfo local_cdc;
   CPickList local_8dc;
@@ -31,8 +27,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
   char local_220 [256];
   char local_120 [256];
   time_t local_1c [4];
-  char cVar1;
-  
+
   iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                     (g_CEditorToolsPtr,"Select POD file to extract","*.pod",local_120,
                      0);
@@ -59,15 +54,13 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_8dc);
   iVar4 = 0;
   if (0 < local_1108.file_count) {
-    iVar6 = 0;
     do {
       _sprintf
                 (local_120,"%s\t%d",
-                 (char *)((int)&(local_1108.directory_entries)->name + iVar6),
-                 *(uint *)((int)&(local_1108.directory_entries)->size + iVar6));
+                 local_1108.directory_entries[iVar4].name,
+                 local_1108.directory_entries[iVar4].size);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8dc.base,local_120);
       iVar4 = iVar4 + 1;
-      iVar6 = iVar6 + 0x14;
     } while (iVar4 < local_1108.file_count);
   }
   output_buffer = (char *)0xffffffff;
@@ -93,17 +86,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
     local_1c[1] = pCVar5->offset;
     local_1c[2] = pCVar5->timestamp;
     local_1c[3] = pCVar5->checksum;
-    pSVar9 = &local_534;
-    pcVar7 = dest_filename;
-    do {
-      cVar1 = *pcVar7;
-      pSVar9->found_path[0] = cVar1;
-      if (cVar1 == '\0') break;
-      cVar2 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
-      pSVar9->found_path[1] = cVar2;
-      pSVar9 = (SFoundFileInfo *)(pSVar9->found_path + 2);
-    } while (cVar2 != '\0');
+    strcpy(local_534.found_path,dest_filename);
     iVar4 = 1;
     if ((this_ptr->operation_mode != 0) &&
        (iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_534), iVar3 != 0)) {

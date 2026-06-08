@@ -10,7 +10,6 @@
 int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920(CCheckOutItem *this_ptr,char *filename)
 
 {
-  char cVar2;
   int iVar2;
   int iVar3;
   uint uVar3;
@@ -20,9 +19,6 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3
   int *piVar4;
   int iVar5;
   uint uVar6;
-  SVersionControlSession *pSVar7;
-  char *pcVar7;
-  CCheckOutItem *pCVar9;
   char local_584 [500];
   CCheckOutItem local_390;
   char local_228 [260];
@@ -132,28 +128,8 @@ LAB_004b3ae9:
     else {
       iVar3 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_24,filename);
       if (iVar3 < 0) {
-        pCVar9 = &local_390;
-        pcVar7 = filename;
-        do {
-          cVar2 = *pcVar7;
-          pCVar9->name[0] = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar7[1];
-          pcVar7 = pcVar7 + 2;
-          pCVar9->name[1] = cVar2;
-          pCVar9 = (CCheckOutItem *)(pCVar9->name + 2);
-        } while (cVar2 != '\0');
-        pSVar7 = &g_VersionControlSession;
-        pcVar7 = local_390.value;
-        do {
-          cVar2 = pSVar7->primary_username[0];
-          *pcVar7 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pSVar7->primary_username[1];
-          pSVar7 = (SVersionControlSession *)(pSVar7->primary_username + 2);
-          pcVar7[1] = cVar2;
-          pcVar7 = pcVar7 + 2;
-        } while (cVar2 != '\0');
+        strcpy(local_390.name,filename);
+        strcpy(local_390.value,g_VersionControlSession.primary_username);
         iVar3 = engine_fileio_cpp_CCheckOutList_add_FUN_004b2d00(&local_24,&local_390);
         if (iVar3 == 0) {
           if (local_1c != (_FILE *)0x0) {
