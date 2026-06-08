@@ -44,8 +44,6 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
   int local_90;
   int local_64;
   float local_60;
-  char *local_3c;
-  int local_38;
   int local_30;
   int local_2c;
   int local_28;
@@ -206,11 +204,9 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
     }
     local_90 = 0;
     if (0 < this_ptr->locked_vertex_count) {
-      local_38 = 0;
       do {
         local_30 = 0;
         pSVar11 = this_ptr->vertices + this_ptr->locked_vertex_indices[local_90];
-        local_3c = (this_ptr->model).model_filename + local_38;
         while (local_30 < this_ptr_00->num_lods) {
           local_60 = 1e+30;
           for (local_24 = 0; local_24 < this_ptr_00->vertex_count[local_30];
@@ -241,10 +237,8 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_00439710(CCloth *this_ptr,CVector3f
             }
           }
           local_30 = local_30 + 1;
-          *(int *)(local_3c + 0x3f1bc) = local_64;
-          local_3c = local_3c + 400;
+          this_ptr->locked_vertex_indices[100 * local_30 + local_90] = local_64;
         }
-        local_38 = local_38 + 4;
         local_90 = local_90 + 1;
       } while (local_90 < this_ptr->locked_vertex_count);
     }

@@ -136,7 +136,18 @@ void splitpath(const char* path, char* drive, char* dir, char* fname, char* ext)
 void makepath(char* path, const char* drive, const char* dir, const char* fname, const char* ext) {
     path[0] = 0;
     if (drive && drive[0]) { strcat(path, drive); strcat(path, ":"); }
-    if (dir && dir[0]) strcat(path, dir);
+    if (dir && dir[0]) {
+        strcat(path, dir);
+        // Watcom's _makepath guarantees a separator between the directory and
+        // the filename: if `dir` doesn't already end with one it inserts a
+        // backslash. The game relies on this — it routinely passes directory
+        // components without a trailing slash (e.g. a getcwd() result), and
+        // without the inserted separator `dir` and `fname` fuse into one bogus
+        // name. Use '\\' to match Watcom byte for byte; normalize_path()
+        // rewrites it to '/' at open time.
+        size_t n = strlen(path);
+        if (n && path[n - 1] != '\\' && path[n - 1] != '/') strcat(path, "\\");
+    }
     if (fname && fname[0]) strcat(path, fname);
     if (ext && ext[0]) { strcat(path, "."); strcat(path, ext); }
 }

@@ -127,6 +127,23 @@
 #define NOCTURNE_AUTHENTIC_SAVE 1
 #endif
 
+// NOCTURNE_AUTHENTIC_UI_CURSOR_WARP
+//   Controls whether the editor UI controls warp the OS cursor. The original
+//   Windows build clamps the cursor to a CEdScrollBar during a drag and pins it
+//   to the click point while a scroll/repeat button is held (via SetCursorPos).
+//   Under DirectDraw exclusive mode on Windows this felt seamless; under SDL on
+//   Linux SDL_WarpMouseInWindow physically yanks the visible cursor every frame
+//   so it "jumps to a weird place and won't move until you release."
+//   1: authentic — the scrollbar warps/clamps the cursor like nocedit.exe.
+//   0: dev-friendly default — the scrollbar never warps the cursor; the thumb
+//      still tracks the mouse (the scroll position is clamped internally), the
+//      cursor just moves freely. Mouse-look cursor recentering is unaffected.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_UI_CURSOR_WARP=1.
+#ifndef NOCTURNE_AUTHENTIC_UI_CURSOR_WARP
+#define NOCTURNE_AUTHENTIC_UI_CURSOR_WARP 0
+#endif
+
 // NOCTURNE_WINDOW_SCALE
 //   Integer scale factor applied to the SDL window only. The game still
 //   renders internally at its native resolution (640x480) and SDL stretches

@@ -5961,6 +5961,14 @@ _SFO_NON_TYPE_KEYWORDS = frozenset((
     'return', 'goto', 'break', 'continue', 'delete', 'case', 'do', 'else',
     'sizeof', 'new', 'throw',
 ))
+# A cast-deref whose inner expression is a pointer plus a byte offset:
+# `*(int *)(p + 0x3f1bc)`. We balanced-extract the inner expr after the final
+# '(' the regex stops on, then resolve the pointer to a struct field.
+_SFO_DEREF_START_RE = re.compile(
+    r'\*\s*\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*\(')
+# A simple `LOCAL = <rhs>;` assignment, used to map a local back to the struct
+# field its pointer was derived from (the two-step base-shift form).
+_SFO_LOCAL_ASSIGN_RE = re.compile(r'^([A-Za-z_]\w*)\s*=\s*(.+?);\s*$')
 
 
 def build_struct_layout_map(data_types_path):
@@ -6152,6 +6160,242 @@ def _sfo_index_const(idx_expr):
     return const, has_var
 
 
+def _sfo_strip_cast(expr):
+    """Strip one leading C pointer cast (`(char *)`, `(int *)`) from expr."""
+    return re.sub(r'^\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*', '', expr.strip()).strip()
+
+
+def _sfo_top_terms(expr):
+    """Split an expression into its top-level '+'/'-' separated terms."""
+    depth, term, terms = 0, '', []
+    for ch in expr:
+        if ch in '([':
+            depth += 1
+            term += ch
+        elif ch in ')]':
+            depth -= 1
+            term += ch
+        elif ch in '+-' and depth == 0:
+            terms.append(term)
+            term = ''
+        else:
+            term += ch
+    terms.append(term)
+    return [t.strip() for t in terms if t.strip()]
+
+
+def _sfo_split_ptr_const(expr):
+    """Split a top-level '+'-joined pointer expression into (base, const_sum).
+
+    const_sum sums the pure integer-literal terms; base is the single remaining
+    non-literal term (the pointer). Returns None unless exactly one non-literal
+    term remains. Only '+' is treated as the join — a '-' would be a negative
+    offset (a different artifact class), so it stays glued to its term and the
+    term fails to resolve as a field (no false flag).
+    """
+    depth, term, terms = 0, '', []
+    for ch in expr:
+        if ch in '([':
+            depth += 1
+            term += ch
+        elif ch in ')]':
+            depth -= 1
+            term += ch
+        elif ch == '+' and depth == 0:
+            terms.append(term)
+            term = ''
+        else:
+            term += ch
+    terms.append(term)
+    const, base_terms = 0, []
+    for t in terms:
+        t = t.strip()
+        if not t:
+            continue
+        if _SFO_INT_RE.match(t):
+            const += int(t, 0)
+        else:
+            base_terms.append(t)
+    if len(base_terms) != 1:
+        return None
+    return (base_terms[0], const)
+
+
+def _sfo_field_extent(path, var_types, layout):
+    """Resolve a field-access path to (root_struct, byte_offset, length, addr).
+
+    `byte_offset` is the position of the path's final field relative to the
+    root variable's struct; `length` is that field's size; `addr` is True when
+    the expression genuinely denotes the field's *address* — either it had a
+    leading '&' or the final field is an array (which decays to its address).
+    `addr` is False for a bare scalar/pointer field, where `field + N` is value
+    arithmetic / a walk of the *pointed-to* buffer, NOT a struct base-shift —
+    callers must not flag those. Handles a leading pointer cast and parens that
+    merely group a sub-path (`(a->b).c`). Returns None on any unresolved
+    root/field, a subscript, or an unexpected token (None = "don't know").
+    """
+    if not path or not layout:
+        return None
+    p = _sfo_strip_cast(path)
+    had_amp = p[:1] == '&'
+    if had_amp:
+        p = p[1:].strip()
+    if '(' in p:
+        # Grouping parens around a sub-path are safe to drop ('(a->b).c' ==
+        # 'a->b.c'); bail if real arithmetic (not the '-' of '->') leaks in.
+        bare = p.replace('(', '').replace(')', '')
+        if re.search(r'[+\-*/%]', bare.replace('->', '')):
+            return None
+        p = bare
+    p = re.sub(r'\s+', '', p)
+    m = re.match(r'[A-Za-z_]\w*', p)
+    if not m:
+        return None
+    root_struct = var_types.get(m.group(0))
+    if not root_struct:
+        return None
+    cur = root_struct
+    offset, final_len, final_is_array, pos = 0, None, False, m.end()
+    while pos < len(p):
+        if p[pos:pos + 2] == '->' or p[pos] == '.':
+            pos += 2 if p[pos:pos + 2] == '->' else 1
+            fm = re.match(r'[A-Za-z_]\w*', p[pos:])
+            if not fm:
+                return None
+            flds = layout.get(cur)
+            if not flds:
+                return None
+            fld = next((fl for fl in flds if fl['name'] == fm.group(0)), None)
+            if fld is None:
+                return None
+            offset += fld['offset']
+            final_len = fld['len']
+            final_is_array = fld.get('n') is not None
+            cur = fld.get('type')
+            pos += fm.end()
+        else:
+            # A subscript or any other token: bail (conservative).
+            return None
+    if final_len is None:
+        return None
+    return (root_struct, offset, final_len, had_amp or final_is_array)
+
+
+def _sfo_field_at_offset(layout, struct_name, off):
+    """Return the field of `struct_name` whose [offset, offset+len) contains
+    `off` (innermost/smallest when several overlap, e.g. unions), or None."""
+    flds = layout.get(struct_name)
+    if not flds:
+        return None
+    best = None
+    for fl in flds:
+        if fl['offset'] <= off < fl['offset'] + fl['len']:
+            if best is None or fl['len'] < best['len']:
+                best = fl
+    return best
+
+
+def _sfo_field_base_deref_overruns(code, var_types, layout, seen):
+    """Detect `*(T *)(p + CONST)` where `p` is derived from a struct field and
+    `field_offset + CONST` lands in a *different* field of the same struct.
+
+    This is the raw-deref sibling of the array-index #15 case: Ghidra anchored
+    the pointer on the wrong field (typically a leading `char[N]` at a small
+    offset) and reaches a far field via a large byte constant. It compiles and
+    runs but forms an out-of-array pointer (UBSan `index N out of bounds`).
+
+    Both the direct form `*(int *)((char *)obj->field + 0xN)` and the two-step
+    form `p = obj.field + var; *(int *)(p + 0xN);` are covered — for the latter
+    we first map each `LOCAL = <field-path> + ...` to that field.
+
+    Low false-positive by construction: the base must resolve to a real struct
+    field, CONST must exceed that field's length (so it isn't ordinary in-field
+    access), and CONST must land inside a *named sibling field* of the same
+    struct (so it isn't arbitrary pointer math or a past-the-struct write).
+    """
+    out = []
+    if not layout:
+        return out
+    # Map locals to the field their pointer was derived from.
+    local_field_base = {}
+    for line in code.split('\n'):
+        s = line.strip()
+        if s.startswith('//') or s.startswith('/*') or s.startswith('*'):
+            continue
+        am = _SFO_LOCAL_ASSIGN_RE.match(s)
+        if not am:
+            continue
+        for term in _sfo_top_terms(am.group(2)):
+            ext = _sfo_field_extent(term, var_types, layout)
+            if ext:
+                local_field_base[am.group(1)] = ext
+                break
+    # Scan cast-derefs.
+    for line_no, line in enumerate(code.split('\n'), 1):
+        s = line.strip()
+        if s.startswith('//') or s.startswith('/*'):
+            continue
+        for dm in _SFO_DEREF_START_RE.finditer(line):
+            start, depth, j = dm.end(), 1, dm.end()
+            while j < len(line):
+                if line[j] == '(':
+                    depth += 1
+                elif line[j] == ')':
+                    depth -= 1
+                    if depth == 0:
+                        break
+                j += 1
+            if depth != 0:
+                continue
+            split = _sfo_split_ptr_const(line[start:j])
+            if not split:
+                continue
+            base_expr, const = split
+            if const <= 0:
+                continue
+            ext = None
+            bm = re.match(r'^([A-Za-z_]\w*)$', base_expr.strip())
+            if bm and bm.group(1) in local_field_base:
+                ext = local_field_base[bm.group(1)]
+            if ext is None:
+                ext = _sfo_field_extent(base_expr, var_types, layout)
+            if ext is None:
+                continue
+            root_struct, foff, flen, addr = ext
+            # Only an array (decays to its address) or an explicit `&field`
+            # forms a struct-base pointer. A scalar/pointer field's value plus
+            # an offset walks elsewhere (the pointed-to buffer, or a mistyped
+            # handle), not the struct — never a base-shift.
+            if not addr:
+                continue
+            if const < flen:
+                continue  # stays within the base field — ordinary access
+            sib = _sfo_field_at_offset(layout, root_struct, foff + const)
+            if sib is None or sib['offset'] == foff:
+                continue
+            key = ('sfo_deref', line_no, base_expr.strip(), const)
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append({
+                'line': line_no,
+                'type': 'struct_field_overrun',
+                'match': '*(...)(%s + 0x%x)' % (base_expr.strip(), const),
+                'text': s[:120],
+                'description': (
+                    '*(...)(%s + 0x%x): the pointer is based on a field at '
+                    'offset 0x%x (size %d in %s) but the +0x%x byte offset '
+                    'lands in field %s (offset 0x%x). Ghidra anchored on the '
+                    'wrong field — rewrite as direct access to %s (#15 '
+                    'base-shift; forms an out-of-array pointer, trips UBSan).'
+                    % (base_expr.strip(), const, foff, flen, root_struct,
+                       const, sib['name'], sib['offset'], sib['name'])),
+                'severity': SUSPECT_SEVERITY.get('struct_field_overrun',
+                                                 'moderate'),
+            })
+    return out
+
+
 def identify_struct_field_overrun(code, struct_layout_map=None):
     """Detect `obj->arrayfield[const (+ var)]` accesses that overrun the
     array into the next struct field (Watcom 1-based base-shift, #15).
@@ -6261,6 +6505,11 @@ def identify_struct_field_overrun(code, struct_layout_map=None):
             'description': desc,
             'severity': SUSPECT_SEVERITY.get('struct_field_overrun', 'moderate'),
         })
+
+    # Pass 3: raw cast-deref through a field-derived pointer that reaches a far
+    # sibling field via a large byte constant (`*(int *)(p + 0x3f1bc)`).
+    suspects.extend(
+        _sfo_field_base_deref_overruns(code, var_types, struct_layout_map, seen))
     return suspects
 
 

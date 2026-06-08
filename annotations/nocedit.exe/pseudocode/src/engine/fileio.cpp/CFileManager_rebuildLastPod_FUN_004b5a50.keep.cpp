@@ -40,8 +40,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
   CPodAuditRecord local_3c8;
   char local_290 [256];
   char local_190 [200];
-  byte local_c8;
-  char local_c0 [80];
+  SPod2Header local_c8;
   char (*local_5c) [128];
   int local_50;
   int local_4c;
@@ -55,16 +54,13 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
   SIZE_T *local_28;
   _FILE *local_20;
   _FILE *local_18;
-  byte local_c7;
-  byte local_c6;
-  byte local_c5;
 
   local_20 = (_FILE *)0x0;
   local_18 = (_FILE *)0x0;
   local_50 = 0;
   local_4c = 0;
   local_48 = 0;
-  memset(&local_c8,0,0x60);
+  memset(&local_c8,0,sizeof(SPod2Header));
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Sorting file list...");
   engine_fileio_cpp_CFileManager_load_FUN_004b6c00(this_ptr);
@@ -91,13 +87,13 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
     }
     if (volume_name == (char *)0x0) {
       iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                        (g_CEditorToolsPtr,"Enter volume name",local_c0,0x50,0);
+                        (g_CEditorToolsPtr,"Enter volume name",local_c8.description,0x50,0);
       if (iVar3 == 0) {
         return;
       }
     }
     else {
-      strcpy(local_c0,volume_name);
+      strcpy(local_c8.description,volume_name);
     }
     g_AuditRecordCount = 0;
     if (g_AuditRecordsArray != (CPodAuditRecord *)0x0) {
@@ -351,12 +347,12 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
           shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
           _fwrite(g_AuditRecordsArray,0x138,g_AuditRecordCount,local_20);
           lVar7 = _ftell(local_20);
-          local_c7 = 0x4f;
-          local_c5 = 0x32;
-          local_c8 = 0x50;
-          local_c6 = 0x44;
+          local_c8.header_data[1] = 0x4f;
+          local_c8.header_data[3] = 0x32;
+          local_c8.header_data[0] = 0x50;
+          local_c8.header_data[2] = 0x44;
           _fseek(local_20,0,0);
-          _fwrite(&local_c8,0x60,1,local_20);
+          _fwrite(&local_c8,sizeof(SPod2Header),1,local_20);
           _fwrite(ptr,0x14,this_ptr->tracked_file_count,local_20);
           _fwrite(ptr_00,1,local_44,local_20);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\fileio.cpp",0x8c3);

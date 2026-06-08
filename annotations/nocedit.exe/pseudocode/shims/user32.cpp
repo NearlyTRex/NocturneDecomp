@@ -148,6 +148,39 @@ static bool handleDebugHotkey(const SDL_Event& ev) {
     }
 }
 
+// Apply the SHIFT modifier to a base ASCII character the way a US keyboard
+// would. The shim synthesizes WM_CHAR from SDL_KEYDOWN (it never enables
+// SDL_TEXTINPUT), and SDL's keysym.sym is the *unshifted* symbol, so without
+// this map Shift+8 stays '8' instead of becoming '*', etc. Letters uppercase;
+// the number row and punctuation map to their US-layout shifted glyphs.
+static char winShiftChar(char ch) {
+    if (ch >= 'a' && ch <= 'z') return (char)(ch - 32);
+    switch (ch) {
+        case '1': return '!';
+        case '2': return '@';
+        case '3': return '#';
+        case '4': return '$';
+        case '5': return '%';
+        case '6': return '^';
+        case '7': return '&';
+        case '8': return '*';
+        case '9': return '(';
+        case '0': return ')';
+        case '-': return '_';
+        case '=': return '+';
+        case '[': return '{';
+        case ']': return '}';
+        case '\\': return '|';
+        case ';': return ':';
+        case '\'': return '"';
+        case ',': return '<';
+        case '.': return '>';
+        case '/': return '?';
+        case '`': return '~';
+        default:  return ch;
+    }
+}
+
 static void translateSdlEvent(const SDL_Event& ev) {
     if (handleDebugHotkey(ev)) return;
     // Suppress the matching KEYUP too so the game never sees half a press
@@ -217,7 +250,7 @@ static void translateSdlEvent(const SDL_Event& ev) {
             charMsg.message = 0x0102; // WM_CHAR
             char ch = (char)(keysym & 0xFF);
             if (ev.key.keysym.mod & KMOD_SHIFT) {
-                if (ch >= 'a' && ch <= 'z') ch -= 32;
+                ch = winShiftChar(ch);
             }
             charMsg.wParam = (WPARAM)(unsigned char)ch;
             s_msgQueue.push(charMsg);

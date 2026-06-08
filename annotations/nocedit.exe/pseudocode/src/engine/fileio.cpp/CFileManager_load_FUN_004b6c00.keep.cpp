@@ -18,9 +18,7 @@ void __cdecl engine_fileio_cpp_CFileManager_load_FUN_004b6c00(CFileManager *this
   char (*str2) [128];
   char *str1;
   byte local_224 [512];
-  int local_24;
   int local_20;
-  char (*local_18) [128];
   int local_14;
 
   this_ptr->tracked_file_count = 0;
@@ -50,7 +48,6 @@ LAB_004b6cb3:
   if (iVar2 == -1) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x914);
     local_20 = 0;
-    local_24 = 0;
     do {
       if (this_ptr->tracked_file_count + -1 <= local_20) {
         return;
@@ -59,7 +56,7 @@ LAB_004b6cb3:
       if (local_14 < this_ptr->tracked_file_count) {
         str2 = this_ptr->file_entries + local_20 + 1;
         do {
-          str1 = this_ptr->file_entries[0] + local_24;
+          str1 = this_ptr->file_entries[local_20];
           iVar4 = _stricmp(str1,*str2);
           if (0 < iVar4) {
             strcpy((char *)local_224,str1);
@@ -71,7 +68,6 @@ LAB_004b6cb3:
         } while (local_14 < this_ptr->tracked_file_count);
       }
       local_20 = local_20 + 1;
-      local_24 = local_24 + 0x80;
     } while( true );
   }
   goto LAB_004b6c3c;

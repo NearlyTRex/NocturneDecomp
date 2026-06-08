@@ -36,11 +36,9 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CE
   char local_9c4 [256];
   char local_8c4 [256];
   char local_7c4 [256];
-  char local_6c4;
-  byte local_6c3 [255];
+  char local_6c4 [256];
   char local_5c4 [256];
-  char local_4c4;
-  byte local_4c3 [255];
+  char local_4c4 [256];
   char local_3c4 [256];
   char local_2c4 [256];
   char local_1c4 [200];
@@ -80,13 +78,13 @@ LAB_0049f47a:
     while (local_18f0.filename[0] != '\0') {
       if (((byte)local_18f0.file_size & 4) == 0) {
         engine_dosio_cpp_splitPath_FUN_00481f20
-                  (local_18f0.filename,(char *)0x0,(char *)0x0,local_dc4,&local_4c4);
-        if (local_4c4 == '.') {
-          memmove(&local_4c4,local_4c3,strlen(&local_4c4));
+                  (local_18f0.filename,(char *)0x0,(char *)0x0,local_dc4,local_4c4);
+        if (local_4c4[0] == '.') {
+          memmove(local_4c4,local_4c4 + 1,strlen(local_4c4));
         }
         time_ptr = _localtime((time_t *)&local_18f0.attributes);
         _strftime(local_34,0x1e,"\t%m/%d/%y %I:%M:%S %p",time_ptr);
-        _sprintf(local_fc,"%s\t%s\t%d%s",local_dc4,&local_4c4,local_18f0.timestamp,local_34);
+        _sprintf(local_fc,"%s\t%s\t%d%s",local_dc4,local_4c4,local_18f0.timestamp,local_34);
         strupr(local_fc);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1ec8.base,local_fc);
       }
@@ -124,11 +122,11 @@ LAB_0049f47a:
           iVar5 = _strcmp(local_18f0.filename,".");
           if (iVar5 == 0) goto LAB_0049f64e;
           engine_dosio_cpp_splitPath_FUN_00481f20
-                    (local_18f0.filename,(char *)0x0,(char *)0x0,local_ac4,&local_6c4);
-          if (local_6c4 == '.') {
-            memmove(&local_6c4,local_6c3,strlen(&local_6c4));
+                    (local_18f0.filename,(char *)0x0,(char *)0x0,local_ac4,local_6c4);
+          if (local_6c4[0] == '.') {
+            memmove(local_6c4,local_6c4 + 1,strlen(local_6c4));
           }
-          _sprintf(local_1c4,"%s\t%s\t(DIR)",local_ac4,&local_6c4);
+          _sprintf(local_1c4,"%s\t%s\t(DIR)",local_ac4,local_6c4);
           strupr(local_1c4);
           pcVar7 = local_1c4;
         }

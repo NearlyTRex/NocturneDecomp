@@ -21,7 +21,7 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
   CPodAuditRecord local_33c;
   char local_204 [256];
   char local_104 [100];
-  byte local_a0 [92];
+  SPod2Header local_a0;
   _tm local_40;
   int local_1c;
   int local_18;
@@ -101,10 +101,10 @@ LAB_004bd3c3:
                   (g_CEditorToolsPtr,"Can't open %s to remove audit records",local_9d8.filename); // NOTE: original binary is missing this argument (bug)
       }
       else {
-        _fread(local_a0,0x60,1,file);
+        _fread(&local_a0,sizeof(SPod2Header),1,file);
         local_44 = g_AuditRecordCount;
         _fseek(file,0,0);
-        _fwrite(local_a0,0x60,1,file);
+        _fwrite(&local_a0,sizeof(SPod2Header),1,file);
         _fseek(file,local_9d8.total_file_size,0);
         _fwrite(g_AuditRecordsArray,0x138,g_AuditRecordCount,file);
         g_AuditRecordCount = 0;
