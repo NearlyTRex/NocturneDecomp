@@ -7,15 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 361,
+    "complexity_score": 396,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 216,
-    "suspect_count": 14,
+    "suspect_count": 17,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_strlen"
     ],
     "total_lines": 841
   },
@@ -617,6 +618,30 @@
       "severity": "moderate",
       "text": "*(uint *)((int)base + g_ModelPolygonData[local_34].vertex_indices[local_30] * 8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 51,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 77,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 191,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
     },
     {
       "description": "Redundant assignment of 'pbVar5' to itself.",

@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1138,
-    "complexity_score": 495,
+    "complexity_score": 325,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 26,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 325,
-    "suspect_count": 16,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1463
   },
   "cross_references": [
@@ -327,6 +324,152 @@
     },
     "pcode_op_count": 8180
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 257,
+      "match": "(int *)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_20 + local_18 * 4) = local_14[local_1c * 3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 265,
+      "match": "(int *)(local_1c * 4 + (int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int *)(local_1c * 4 + (int)local_20),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 266,
+      "match": "(int *)(local_1c * 4 + 4 + (int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int *)(local_1c * 4 + 4 + (int)local_20));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 268,
+      "match": "(uint *)(local_1c * 4 + (int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)(local_1c * 4 + (int)local_20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 269,
+      "match": "(uint *)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_20 + local_1c * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 270,
+      "match": "(uint *)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_20 + local_1c * 4 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 271,
+      "match": "(uint *)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_20 + local_1c * 4 + 4) = uVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 276,
+      "match": "(int *)(local_4c * 4 + (int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (local_1c = *(int *)(local_4c * 4 + (int)local_20); local_1c < g_PolygonCount + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 281,
+      "match": "(SShapeEditorPolygon *)((int)pSVar8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar8 = (SShapeEditorPolygon *)((int)pSVar8 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 282,
+      "match": "(SShapeEditorPolygon *)((int)pSVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 289,
+      "match": "(int *)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)local_20 + local_3c * 4 + -8) < selected_polygon_index) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 290,
+      "match": "(int *)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "selected_polygon_index = *(int *)((int)local_20 + local_3c * 4 + -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0x14; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 280,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar3 = 0x61; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00463b5a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 13,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 00463b5a: MOVSD.REP ES:EDI,ESI  ; g_PolygonReductionParams | g_PolygonReductionParams[1]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004647f2, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1083,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 004647f2: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 748,
     "local_size": 744,
@@ -483,174 +626,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "complexPolygonReduction_FUN_00463b30.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 24,
-          "line": 291,
-          "message": "Redundant assignment of 'pSVar6' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 24,
-          "line": 292,
-          "message": "Redundant assignment of 'pSVar8' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 257,
-      "match": "(int *)((int)local_20",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_20 + local_18 * 4) = local_14[local_1c * 3];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 265,
-      "match": "(int *)(local_1c * 4 + (int)local_20",
-      "severity": "moderate",
-      "text": "((int *)(local_1c * 4 + (int)local_20),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 266,
-      "match": "(int *)(local_1c * 4 + 4 + (int)local_20",
-      "severity": "moderate",
-      "text": "(int *)(local_1c * 4 + 4 + (int)local_20));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 268,
-      "match": "(uint *)(local_1c * 4 + (int)local_20",
-      "severity": "moderate",
-      "text": "uVar1 = *(uint *)(local_1c * 4 + (int)local_20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 269,
-      "match": "(uint *)((int)local_20",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_20 + local_1c * 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 270,
-      "match": "(uint *)((int)local_20",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_20 + local_1c * 4 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 271,
-      "match": "(uint *)((int)local_20",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_20 + local_1c * 4 + 4) = uVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 276,
-      "match": "(int *)(local_4c * 4 + (int)local_20",
-      "severity": "moderate",
-      "text": "for (local_1c = *(int *)(local_4c * 4 + (int)local_20); local_1c < g_PolygonCount + -1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 281,
-      "match": "(SShapeEditorPolygon *)((int)pSVar8",
-      "severity": "moderate",
-      "text": "pSVar8 = (SShapeEditorPolygon *)((int)pSVar8 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 282,
-      "match": "(SShapeEditorPolygon *)((int)pSVar6",
-      "severity": "moderate",
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 289,
-      "match": "(int *)((int)local_20",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)local_20 + local_3c * 4 + -8) < selected_polygon_index) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 290,
-      "match": "(int *)((int)local_20",
-      "severity": "moderate",
-      "text": "selected_polygon_index = *(int *)((int)local_20 + local_3c * 4 + -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 43,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar4 = 0x14; iVar4 != 0; iVar4 = iVar4 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 280,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar3 = 0x61; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 00463b5a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 13,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 00463b5a: MOVSD.REP ES:EDI,ESI  ; g_PolygonReductionParams | g_PolygonReductionParams[1]",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 004647f2, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 1083,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 004647f2: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Redundant assignment of 'pSVar6' to itself.",
-      "line": 291,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pSVar6 = pSVar6;",
-      "type": "static_self_assignment"
-    },
-    {
-      "description": "Redundant assignment of 'pSVar8' to itself.",
-      "line": 292,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pSVar8 = pSVar8;",
-      "type": "static_self_assignment"
-    }
-  ]
+  "suspects": []
 }

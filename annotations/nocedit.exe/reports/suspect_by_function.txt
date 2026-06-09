@@ -5,181 +5,72 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6298 (97.6%)
-With suspects: 156
-Total suspects: 1154
+Clean: 6309 (97.8%)
+With suspects: 145
+Total suspects: 1107
 
 ====================================================================================================
-core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0 (2 suspects)
-  File: core/ghoul.cpp
+core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (45 suspects)
+  File: core/game.cpp
 ====================================================================================================
-  Line 9 [missing_cave_copy]: CMatrix3x4f local_7c;
-  Line 10 [missing_cave_copy]: CMatrix3x4f local_4c;
+  Line 268 [unrolled_strlen]: do {
+  Line 299 [unrolled_strlen]: do {
+  Line 337 [unrolled_strlen]: do {
+  Line 365 [unrolled_strlen]: do {
+  Line 400 [unrolled_strlen]: do {
+  Line 446 [unrolled_strlen]: do {
+  Line 482 [unrolled_strlen]: do {
+  Line 510 [unrolled_strlen]: do {
+  Line 539 [unrolled_strlen]: do {
+  Line 581 [unrolled_strlen]: do {
+  Line 604 [unrolled_strlen]: do {
+  Line 652 [unrolled_strlen]: do {
+  Line 688 [unrolled_strlen]: do {
+  Line 724 [unrolled_strlen]: do {
+  Line 750 [unrolled_strlen]: do {
+  Line 778 [unrolled_strlen]: do {
+  Line 804 [unrolled_strlen]: do {
+  Line 830 [unrolled_strlen]: do {
+  Line 858 [unrolled_strlen]: do {
+  Line 885 [unrolled_strlen]: do {
+  Line 911 [unrolled_strlen]: do {
+  Line 937 [unrolled_strlen]: do {
+  Line 980 [unrolled_strlen]: do {
+  Line 1014 [unrolled_strlen]: do {
+  Line 1056 [unrolled_strlen]: do {
+  Line 1094 [unrolled_strlen]: do {
+  Line 1130 [unrolled_strlen]: do {
+  Line 1157 [unrolled_strlen]: do {
+  Line 1181 [unrolled_strlen]: do {
+  Line 1205 [unrolled_strlen]: do {
+  Line 1255 [unrolled_strlen]: do {
+  Line 1283 [unrolled_strlen]: do {
+  Line 1308 [unrolled_strlen]: do {
+  Line 1341 [unrolled_strlen]: do {
+  Line 1370 [unrolled_strlen]: do {
+  Line 1392 [unrolled_strlen]: do {
+  Line 1413 [unrolled_strlen]: do {
+  Line 1523 [unrolled_strlen]: do {
+  Line 1546 [unrolled_strlen]: do {
+  Line 1582 [unrolled_strlen]: do {
+  Line 1607 [unrolled_strlen]: do {
+  Line 1639 [unrolled_strlen]: do {
+  Line 1660 [unrolled_strlen]: do {
+  Line 1683 [unrolled_strlen]: do {
+  Line 1708 [unrolled_strlen]: do {
 
 ====================================================================================================
-core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (9 suspects)
-  File: core/mimic.cpp
+core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (2 suspects)
+  File: core/setedit.cpp
 ====================================================================================================
-  Line 34 [missing_cave_copy]: CMatrix3x4f local_2d0;
-  Line 35 [missing_cave_copy]: CMatrix3x4f local_2a0;
-  Line 36 [missing_cave_copy]: CMatrix3x4f local_270;
-  Line 37 [missing_cave_copy]: CMatrix3x4f local_240;
-  Line 38 [missing_cave_copy]: CMatrix3x4f local_210;
-  Line 39 [missing_cave_copy]: CMatrix3x4f local_1e0;
-  Line 40 [missing_cave_copy]: CMatrix3x4f local_1b0;
-  Line 41 [missing_cave_copy]: CMatrix3x4f local_180;
-  Line 46 [missing_cave_copy]: CMatrix3x4f local_90;
+  Line 176 [unrolled_strlen]: do {
+  Line 240 [unrolled_strlen]: do {
 
 ====================================================================================================
-shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (18 suspects)
-  File: shape/cramtex.cpp
-====================================================================================================
-  Line 141 [static_identical_inner_condition]: if (0 < (int)local_a8) {
-  Line 232 [pointer_cast]: if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar13)) &&
-  Line 233 [pointer_cast]: (iVar23 == *(int *)((int)&g_CramRectangles[0].start_x + iVar13))) &&
-  Line 234 [pointer_cast]: (iVar22 == *(int *)((int)&g_CramRectangles[0].start_y + iVar13)))
-  Line 286 [pointer_cast]: if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar23)) &&
-  Line 287 [pointer_cast]: (local_80 == *(int *)((int)&g_CramRectangles[0].start_x + iVar23))) &&
-  Line 288 [pointer_cast]: (iVar22 == *(int *)((int)&g_CramRectangles[0].start_y + iVar23)))
-  Line 364 [pointer_cast]: if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar25)) &&
-  Line 365 [pointer_cast]: (iVar22 == *(int *)((int)&g_CramRectangles[0].start_x + iVar25))) &&
-  Line 366 [pointer_cast]: (iVar23 == *(int *)((int)&g_CramRectangles[0].start_y + iVar25)))
-  Line 418 [pointer_cast]: if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar23)) &&
-  Line 419 [pointer_cast]: (iVar22 == *(int *)((int)&g_CramRectangles[0].start_x + iVar23))) &&
-  Line 420 [pointer_cast]: (local_6c == *(int *)((int)&g_CramRectangles[0].start_y + iVar23)))
-  Line 476 [pointer_cast]: if (this_ptr == *(CCramTex **)((int)&g_CramRectangles[0].occupant + iVar22)) {
-  Line 477 [pointer_cast]: *(uint *)((int)&g_CramRectangles[0].occupant + iVar22) = 0;
-  Line 739 [static_shift_too_many_bits]: iVar32 = iVar29 >> 0x1f;
-  Line 763 [pointer_cast]: *(int *)((int)&g_CramSortedTextureEntries[0].working_top + iVar32)) ||
-  Line 765 [pointer_cast]: *(int *)((int)&g_CramSortedTextureEntries[0].working_width + iVar32))) {
-
-====================================================================================================
-shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90 (12 suspects)
-  File: shape/cramtex.cpp
-====================================================================================================
-  Line 52 [pointer_cast]: *(STextureAtlasEntry **)((int)&g_CramSortedTextureEntries[0].source_entry_ptr + iVar11) =
-  Line 54 [pointer_cast]: *(int *)((int)&g_CramSortedTextureEntries[0].width + iVar11) =
-  Line 59 [pointer_cast]: *(int *)((int)&g_CramSortedTextureEntries[0].height + iVar11) = *piVar6;
-  Line 176 [pointer_cast]: if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar12) == 0) &&
-  Line 177 [pointer_cast]: (*(int *)((int)&g_CramRectangles[0].start_x + iVar12) == 0)) &&
-  Line 179 [pointer_cast]: *(int *)((int)&g_CramRectangles[0].start_y + iVar12))) goto LAB_004451a8;
-  Line 224 [pointer_cast]: if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar17) == 0) &&
-  Line 226 [pointer_cast]: *(int *)((int)&g_CramRectangles[0].start_x + iVar17))) &&
-  Line 228 [pointer_cast]: *(int *)((int)&g_CramRectangles[0].start_y + iVar17))) goto LAB_004451f7;
-  Line 274 [pointer_cast]: if (((local_14 == *(int *)((int)&g_CramRectangles[0].map_id + iVar11)) &&
-  Line 275 [pointer_cast]: (*(int *)((int)&g_CramRectangles[0].start_x + iVar11) == 0)) &&
-  Line 276 [pointer_cast]: (*(int *)((int)&g_CramRectangles[0].start_y + iVar11) == 0)) goto LAB_00445252;
-
-====================================================================================================
-shape_cramtex.cpp_generateTextureAtlas_FUN_00445820 (9 suspects)
-  File: shape/cramtex.cpp
-====================================================================================================
-  Line 151 [pointer_cast]: if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar16) == 0) &&
-  Line 152 [pointer_cast]: (*(int *)((int)&g_CramRectangles[0].start_x + iVar16) == 0)) &&
-  Line 154 [pointer_cast]: *(int *)((int)&g_CramRectangles[0].start_y + iVar16))) goto LAB_00445b8a;
-  Line 199 [pointer_cast]: if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar17) == 0) &&
-  Line 201 [pointer_cast]: *(int *)((int)&g_CramRectangles[0].start_x + iVar17))) &&
-  Line 203 [pointer_cast]: *(int *)((int)&g_CramRectangles[0].start_y + iVar17))) goto LAB_00445bd9;
-  Line 249 [pointer_cast]: if (((local_14 == *(int *)((int)&g_CramRectangles[0].map_id + iVar11)) &&
-  Line 250 [pointer_cast]: (*(int *)((int)&g_CramRectangles[0].start_x + iVar11) == 0)) &&
-  Line 251 [pointer_cast]: (*(int *)((int)&g_CramRectangles[0].start_y + iVar11) == 0)) goto LAB_00445c34;
-
-====================================================================================================
-shape_cramtex.cpp_placementCollisionCheck_FUN_00448260 (3 suspects)
-  File: shape/cramtex.cpp
-====================================================================================================
-  Line 16 [pointer_cast]: if (((layer_id == *(int *)((int)&g_CramRectangles[0].map_id + iVar1)) &&
-  Line 17 [pointer_cast]: (start_x == *(int *)((int)&g_CramRectangles[0].start_x + iVar1))) &&
-  Line 18 [pointer_cast]: (start_y == *(int *)((int)&g_CramRectangles[0].start_y + iVar1))) {
-
-====================================================================================================
-shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20 (4 suspects)
+shape_design.c_configureSpatialSplittingPlane_FUN_004617c0 (1 suspect)
   File: shape/design.c
 ====================================================================================================
-  Line 32 [bit_int_float_compare]: if ((int)local_20 < 0x40800000) {
-  Line 35 [bit_int_float_compare]: if (0x437b0000 < (int)local_20) {
-  Line 38 [bit_int_float_compare]: if ((int)local_1c < 0x40800000) {
-  Line 41 [bit_int_float_compare]: if (0x437b0000 < (int)local_1c) {
-
-====================================================================================================
-shape_design.c_addQuadPolygonOctant_FUN_00469220 (4 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 40 [bit_int_float_compare]: if ((int)local_20 < 0x40800000) {
-  Line 43 [bit_int_float_compare]: if (0x437b0000 < (int)local_20) {
-  Line 46 [bit_int_float_compare]: if ((int)local_1c < 0x40800000) {
-  Line 49 [bit_int_float_compare]: if (0x437b0000 < (int)local_1c) {
-
-====================================================================================================
-shape_design.c_arePolygonsCoplanar_FUN_00461b70 (3 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 21 [static_shift_too_many_bits]: uVar2 = (int)uVar1 >> 0x1f;
-  Line 25 [static_shift_too_many_bits]: uVar4 = (int)uVar3 >> 0x1f, (int)((uVar3 ^ uVar4) - uVar4) < tolerance)) &&
-  Line 28 [static_shift_too_many_bits]: uVar4 = (int)uVar3 >> 0x1f, (int)((uVar3 ^ uVar4) - uVar4) < tolerance)) {
-
-====================================================================================================
-shape_design.c_bisectMesh_FUN_0046ed50 (14 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 70 [unrolled_memcpy]: for (iVar4 = 0x61; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 71 [pointer_cast]: pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + (uint)bVar18 * -8 + 4);
-  Line 72 [pointer_cast]: pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + (uint)bVar18 * -8 + 4);
-  Line 81 [static_self_assignment]: pSVar16 = pSVar16;
-  Line 82 [static_self_assignment]: pSVar17 = pSVar17;
-  Line 100 [unrolled_memcpy]: for (iVar15 = 0x61; iVar15 != 0; iVar15 = iVar15 + -1) {
-  Line 102 [pointer_cast]: pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + (uint)bVar18 * -8 + 4);
-  Line 103 [pointer_cast]: pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + (uint)bVar18 * -8 + 4);
-  Line 129 [unrolled_memcpy]: for (iVar4 = 0x61; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 131 [pointer_cast]: pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + (uint)bVar18 * -8 + 4);
-  Line 132 [pointer_cast]: pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + (uint)bVar18 * -8 + 4);
-  Line 177 [unrolled_memcpy]: // 0046efe7: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
-  Line 243 [unrolled_memcpy]: // 0046f10d: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
-  Line 303 [unrolled_memcpy]: // 0046f224: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
-
-====================================================================================================
-shape_design.c_centerVerticesAroundPoint_FUN_0045ea90 (3 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 28 [unrolled_strlen]: do {
-  Line 46 [unrolled_strlen]: do {
-  Line 58 [static_self_assignment]: pcVar4 = pcVar4;
-
-====================================================================================================
-shape_design.c_complexPolygonReduction_FUN_00463b30 (18 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 13 [unrolled_memcpy]: // 00463b5a: MOVSD.REP ES:EDI,ESI  ; g_PolygonReductionParams | g_PolygonReductionParams[1]
-  Line 43 [unrolled_memcpy]: for (iVar4 = 0x14; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 257 [pointer_cast]: *(int *)((int)local_20 + local_18 * 4) = local_14[local_1c * 3];
-  Line 265 [pointer_cast]: ((int *)(local_1c * 4 + (int)local_20),
-  Line 266 [pointer_cast]: (int *)(local_1c * 4 + 4 + (int)local_20));
-  Line 268 [pointer_cast]: uVar1 = *(uint *)(local_1c * 4 + (int)local_20);
-  Line 269 [pointer_cast]: *(uint *)((int)local_20 + local_1c * 4) =
-  Line 270 [pointer_cast]: *(uint *)((int)local_20 + local_1c * 4 + 4);
-  Line 271 [pointer_cast]: *(uint *)((int)local_20 + local_1c * 4 + 4) = uVar1;
-  Line 276 [pointer_cast]: for (local_1c = *(int *)(local_4c * 4 + (int)local_20); local_1c < g_PolygonCount + -1;
-  Line 280 [unrolled_memcpy]: for (iVar3 = 0x61; iVar3 != 0; iVar3 = iVar3 + -1) {
-  Line 281 [pointer_cast]: pSVar8 = (SShapeEditorPolygon *)((int)pSVar8 + (uint)bVar9 * -8 + 4);
-  Line 282 [pointer_cast]: pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar9 * -8 + 4);
-  Line 289 [pointer_cast]: if (*(int *)((int)local_20 + local_3c * 4 + -8) < selected_polygon_index) {
-  Line 290 [pointer_cast]: selected_polygon_index = *(int *)((int)local_20 + local_3c * 4 + -8);
-  Line 291 [static_self_assignment]: pSVar6 = pSVar6;
-  Line 292 [static_self_assignment]: pSVar8 = pSVar8;
-  Line 1083 [unrolled_memcpy]: // 004647f2: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
-
-====================================================================================================
-shape_design.c_configureFullPassPolygonReduction_FUN_00465810 (1 suspect)
-  File: shape/design.c
-====================================================================================================
-  Line 41 [static_self_assignment]: pbVar3 = pbVar3;
-
-====================================================================================================
-shape_design.c_configureSinglePassPolygonReduction_FUN_00465560 (2 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 100 [static_self_assignment]: pbVar4 = pbVar4;
-  Line 105 [static_self_assignment]: pbVar4 = pbVar4;
+  Line 34 [unrolled_strlen]: do {
 
 ====================================================================================================
 shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10 (5 suspects)
@@ -254,12 +145,15 @@ shape_design.c_createCenterVertex_FUN_00469690 (3 suspects)
   Line 55 [static_self_assignment]: pcVar3 = pcVar3;
 
 ====================================================================================================
-shape_design.c_createKeyframeModel_FUN_00468320 (3 suspects)
+shape_design.c_createKeyframeModel_FUN_00468320 (6 suspects)
   File: shape/design.c
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 34 [unrolled_strlen]: do {
+  Line 46 [unrolled_strlen]: do {
   Line 46 [static_self_assignment]: pcVar5 = pcVar5;
+  Line 61 [unrolled_strlen]: do {
+  Line 87 [unrolled_strlen]: do {
 
 ====================================================================================================
 shape_design.c_deletePolygonRange_FUN_0045dd70 (8 suspects)
@@ -358,9 +252,10 @@ shape_design.c_loadModelBinary_FUN_00458170 (10 suspects)
   Line 201 [raw_address_constant]: _fread((void *)(local_28 * 4 + g_PolygonCount * 0x184 + 0x16e99c8),1,4,local_38);
 
 ====================================================================================================
-shape_design.c_loadModelFile_FUN_00458ac0 (7 suspects)
+shape_design.c_loadModelFile_FUN_00458ac0 (8 suspects)
   File: shape/design.c
 ====================================================================================================
+  Line 51 [unrolled_strlen]: do {
   Line 165 [unrolled_strcpy]: do {
   Line 180 [unrolled_strcpy]: do {
   Line 228 [unrolled_strcpy]: do {
@@ -687,9 +582,11 @@ shape_design.c_validateModelTextures_FUN_00459a20 (4 suspects)
   Line 107 [unrolled_strcpy]: do {
 
 ====================================================================================================
-shape_design.c_vertexReducer_FUN_00467850 (16 suspects)
+shape_design.c_vertexReducer_FUN_00467850 (19 suspects)
   File: shape/design.c
 ====================================================================================================
+  Line 51 [unrolled_strlen]: do {
+  Line 77 [unrolled_strlen]: do {
   Line 106 [pointer_cast]: *(int *)((int)base + local_34 * 8) = local_34;
   Line 107 [pointer_cast]: *(int *)((int)base + local_34 * 8 + 4) = local_34;
   Line 125 [pointer_cast]: *(int *)((int)local_14 + g_ModelPolygonData[local_34].vertex_indices[local_30] * 4) =
@@ -704,6 +601,7 @@ shape_design.c_vertexReducer_FUN_00467850 (16 suspects)
   Line 159 [pointer_cast]: *(uint *)((int)base + local_30 * 8 + 4) =
   Line 160 [pointer_cast]: *(uint *)((int)base + local_34 * 8);
   Line 174 [pointer_cast]: *(uint *)((int)base + g_ModelPolygonData[local_34].vertex_indices[local_30] * 8 + 4);
+  Line 191 [unrolled_strlen]: do {
   Line 196 [static_self_assignment]: pbVar5 = pbVar5;
   Line 201 [static_self_assignment]: pbVar5 = pbVar5;
 

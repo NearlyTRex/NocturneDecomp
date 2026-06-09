@@ -4367,6 +4367,14 @@ _UNROLLED_STRLEN_STEP_PLUS1_RE = re.compile(
 # CPodFile::mountFromFile, the menu builders, etc.
 _UNROLLED_STRLEN_WHILE_DEREF_RE = re.compile(
     r"^\s*\}\s*while\s*\(\s*\*\s*(\w+)\s*!=\s*'\\0'\s*\)\s*;\s*$")
+# Byte-temp loop close. Ghidra renders the null test as `!= '\0'` when the
+# loaded temp is `char` but as `!= 0` when it is `byte` (unsigned char) — the
+# latter slips past the shared _UNROLLED_WHILE_RE (which only matches '\0').
+# Accept both here; the SCASB counter anchor (`if (v==0) break; v=v-1;`) plus
+# the byte-load+step body gate keep this from matching plain countdown loops.
+# Seen in configureFullPassPolygonReduction / configureSinglePassPolygonReduction.
+_UNROLLED_STRLEN_WHILE_RE = re.compile(
+    r"^\s*\}\s*while\s*\(\s*\w+\s*!=\s*(?:'\\0'|0)\s*\)\s*;\s*$")
 
 
 def identify_unrolled_strlen_loops(decompiled_code):
@@ -4429,7 +4437,7 @@ def identify_unrolled_strlen_loops(decompiled_code):
         for fwd in range(2, 14):
             if i + fwd >= n:
                 break
-            if _UNROLLED_WHILE_RE.match(lines[i + fwd]):
+            if _UNROLLED_STRLEN_WHILE_RE.match(lines[i + fwd]):
                 loop_end = i + fwd
                 break
             dm = _UNROLLED_STRLEN_WHILE_DEREF_RE.match(lines[i + fwd])

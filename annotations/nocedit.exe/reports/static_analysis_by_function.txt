@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 76
-  Total diagnostics: 233
+  Functions with findings: 69
+  Total diagnostics: 220
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 44, raw .cpp files: 32
+  .keep.cpp files: 42, raw .cpp files: 27
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -276,14 +276,6 @@ core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppc
   Line   66: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
 ----------------------------------------------------------------------------------------------------
-shape_design.c_arePolygonsCoplanar_FUN_00461b70  [.keep] [Cppcheck (quick)]
-  File: shape/design.c  (3 diagnostics)
-
-  Line   21: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   25: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 shape_design.c_deletePolygonRange_FUN_0045dd70  [.cpp] [Cppcheck (quick)]
   File: shape/design.c  (3 diagnostics)
 
@@ -343,34 +335,6 @@ core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppch
 
   Line   16: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line   19: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160  [.cpp] [Cppcheck (quick)]
-  File: shape/cramtex.cpp  (2 diagnostics)
-
-  Line  141: [identicalInnerCondition] Identical inner 'if' condition is always true.
-  Line  739: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_bisectMesh_FUN_0046ed50  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (2 diagnostics)
-
-  Line   81: [selfAssignment] Redundant assignment of 'pSVar16' to itself.
-  Line   82: [selfAssignment] Redundant assignment of 'pSVar17' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_complexPolygonReduction_FUN_00463b30  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (2 diagnostics)
-
-  Line  291: [selfAssignment] Redundant assignment of 'pSVar6' to itself.
-  Line  292: [selfAssignment] Redundant assignment of 'pSVar8' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_configureSinglePassPolygonReduction_FUN_00465560  [.keep] [Cppcheck (quick)]
-  File: shape/design.c  (2 diagnostics)
-
-  Line  100: [selfAssignment] Redundant assignment of 'pbVar4' to itself.
-  Line  105: [selfAssignment] Redundant assignment of 'pbVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_mergeTrianglesIntoQuad_FUN_00462190  [.keep] [Cppcheck (quick)]
@@ -468,18 +432,6 @@ engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (1 diagnostics)
 
   Line   24: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_centerVerticesAroundPoint_FUN_0045ea90  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   58: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_configureFullPassPolygonReduction_FUN_00465810  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   41: [selfAssignment] Redundant assignment of 'pbVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_cramTextures_FUN_0046a970  [.cpp] [Cppcheck (quick)]

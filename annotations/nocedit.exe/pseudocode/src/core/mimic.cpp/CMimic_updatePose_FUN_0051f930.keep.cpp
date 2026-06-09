@@ -18,12 +18,6 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
   int iVar6;
   SPose *pSVar13;
   UOrientationVector *pUVar14;
-  CMatrix3x4f *pCVar8;
-  CMatrix3x4f *matrix_b;
-  CMatrix3x4f local_2d0;
-  CMatrix3x4f local_2a0;
-  CMatrix3x4f local_270;
-  CMatrix3x4f local_240;
   CMatrix3x4f local_210;
   CMatrix3x4f local_1e0;
   CMatrix3x4f local_1b0;
@@ -33,7 +27,6 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
   CMatrix3x4f local_f0;
   CMatrix3x4f local_c0;
   CMatrix3x4f local_90;
-  CMatrix3x4f local_60;
   CVector3f local_24;
   CCloth *pCVar3;
   CDemonActor *pCVar4;
@@ -75,19 +68,16 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_f0,&(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
                &(g_HeroActors[g_LocalHeroIndex]->base).base.orient.vec);
-    matrix_b = &local_c0;
     core_xform_cpp_buildZFlipMatrix_FUN_005f6fa0(0.0,&local_90);
-    pCVar8 = &local_2a0;
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_f0,&local_120,&local_210);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2d0,pCVar8,&local_1e0);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_270,matrix_b,&local_1b0);
-    pCVar8 = &local_60;
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_210,&local_90,&local_1e0);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_1e0,&local_c0,&local_1b0);
     core_xform_cpp_buildXFlipMatrix_FUN_005f6ee0(0.0,&local_180);
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_240,pCVar8,&local_150);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_180,&local_1b0,&local_150);
     (this_ptr->base).base.base.location.position.x = local_150.m[0].z;
     (this_ptr->base).base.base.location.position.y = local_150.m[1].z;
     (this_ptr->base).base.base.location.position.z = local_150.m[2].z;
-    pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_60,&local_24);
+    pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_150,&local_24);
     pUVar14 = &(this_ptr->base).base.base.orient;
     if (pUVar14 != (UOrientationVector *)pCVar9) {
       pUVar14->vec = *pCVar9;

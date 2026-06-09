@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 98,
+    "complexity_score": 53,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 53,
-    "suspect_count": 4,
-    "suspect_types": [
-      "bit_int_float_compare"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 190
   },
   "cross_references": [
@@ -219,6 +217,44 @@
     },
     "pcode_op_count": 810
   },
+  "resolved_suspects": [
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40800000 is the IEEE 754 bit pattern of 4f. Rewrite in a .keep as a plain float compare against 4f.",
+      "line": 40,
+      "match": "(int)local_20 < 0x40800000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int)local_20 < 0x40800000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x437b0000 is the IEEE 754 bit pattern of 251f. Rewrite in a .keep as a plain float compare against 251f.",
+      "line": 43,
+      "match": "0x437b0000 < (int)local_20)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0x437b0000 < (int)local_20) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40800000 is the IEEE 754 bit pattern of 4f. Rewrite in a .keep as a plain float compare against 4f.",
+      "line": 46,
+      "match": "(int)local_1c < 0x40800000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int)local_1c < 0x40800000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x437b0000 is the IEEE 754 bit pattern of 251f. Rewrite in a .keep as a plain float compare against 251f.",
+      "line": 49,
+      "match": "0x437b0000 < (int)local_1c)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0x437b0000 < (int)local_1c) {",
+      "type": "bit_int_float_compare"
+    }
+  ],
   "stack_frame": {
     "frame_size": 52,
     "local_size": 36,
@@ -277,38 +313,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40800000 is the IEEE 754 bit pattern of 4f. Rewrite in a .keep as a plain float compare against 4f.",
-      "line": 40,
-      "match": "(int)local_20 < 0x40800000",
-      "severity": "moderate",
-      "text": "if ((int)local_20 < 0x40800000) {",
-      "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x437b0000 is the IEEE 754 bit pattern of 251f. Rewrite in a .keep as a plain float compare against 251f.",
-      "line": 43,
-      "match": "0x437b0000 < (int)local_20)",
-      "severity": "moderate",
-      "text": "if (0x437b0000 < (int)local_20) {",
-      "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40800000 is the IEEE 754 bit pattern of 4f. Rewrite in a .keep as a plain float compare against 4f.",
-      "line": 46,
-      "match": "(int)local_1c < 0x40800000",
-      "severity": "moderate",
-      "text": "if ((int)local_1c < 0x40800000) {",
-      "type": "bit_int_float_compare"
-    },
-    {
-      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x437b0000 is the IEEE 754 bit pattern of 251f. Rewrite in a .keep as a plain float compare against 251f.",
-      "line": 49,
-      "match": "0x437b0000 < (int)local_1c)",
-      "severity": "moderate",
-      "text": "if (0x437b0000 < (int)local_1c) {",
-      "type": "bit_int_float_compare"
-    }
-  ]
+  "suspects": []
 }

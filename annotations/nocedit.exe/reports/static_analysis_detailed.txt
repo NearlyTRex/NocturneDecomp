@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (233 diagnostics)
+Cppcheck (quick) (220 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -521,40 +521,8 @@ invalidscanf (60)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (42)
+selfAssignment (34)
 ----------------------------------------------------------------------------------------------------
-
-  shape_design.c_bisectMesh_FUN_0046ed50             line 81
-    File: shape/design.c
-    Redundant assignment of 'pSVar16' to itself.
-
-  shape_design.c_bisectMesh_FUN_0046ed50             line 82
-    File: shape/design.c
-    Redundant assignment of 'pSVar17' to itself.
-
-  shape_design.c_centerVerticesAroundPoint_FUN_0045e line 58
-    File: shape/design.c
-    Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_complexPolygonReduction_FUN_00463b3 line 291
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_complexPolygonReduction_FUN_00463b3 line 292
-    File: shape/design.c
-    Redundant assignment of 'pSVar8' to itself.
-
-  shape_design.c_configureFullPassPolygonReduction_F line 41
-    File: shape/design.c
-    Redundant assignment of 'pbVar3' to itself.
-
-  shape_design.c_configureSinglePassPolygonReduction line 100
-    File: shape/design.c
-    Redundant assignment of 'pbVar4' to itself.
-
-  shape_design.c_configureSinglePassPolygonReduction line 105
-    File: shape/design.c
-    Redundant assignment of 'pbVar4' to itself.
 
   shape_design.c_createBoxPrimitive_FUN_0045e520     line 59
     File: shape/design.c
@@ -693,74 +661,6 @@ selfAssignment (42)
     Redundant assignment of 'iVar7' to itself.
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (16)
-----------------------------------------------------------------------------------------------------
-
-  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGene line 739
-    File: shape/cramtex.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 21
-    File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 25
-    File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 28
-    File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_design.c_quantizePaletteColors_FUN_0046b770  line 42
-    File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_design.c_quantizePaletteColors_FUN_0046b770  line 43
-    File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 137
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 145
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 152
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 159
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 166
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 173
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 85
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 89
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 93
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 97
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 nullPointerRedundantCheck (12)
 ----------------------------------------------------------------------------------------------------
 
@@ -811,6 +711,58 @@ nullPointerRedundantCheck (12)
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 71
     File: sound/snddx.cpp
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
+
+----------------------------------------------------------------------------------------------------
+shiftTooManyBitsSigned (12)
+----------------------------------------------------------------------------------------------------
+
+  shape_design.c_quantizePaletteColors_FUN_0046b770  line 42
+    File: shape/design.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_design.c_quantizePaletteColors_FUN_0046b770  line 43
+    File: shape/design.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 137
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 145
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 152
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 159
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 166
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 173
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 85
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 89
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 93
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 97
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 invalidPointerCast (10)
@@ -897,26 +849,6 @@ legacyUninitvar (9)
     Uninitialized variable: local_7c
 
 ----------------------------------------------------------------------------------------------------
-identicalInnerCondition (4)
-----------------------------------------------------------------------------------------------------
-
-  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGene line 141
-    File: shape/cramtex.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 315
-    File: shape/meshlod.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 239
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
 invalidScanfArgType_int (3)
 ----------------------------------------------------------------------------------------------------
 
@@ -931,6 +863,22 @@ invalidScanfArgType_int (3)
   sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 line 29
     File: sound/mp3.cpp
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+----------------------------------------------------------------------------------------------------
+identicalInnerCondition (3)
+----------------------------------------------------------------------------------------------------
+
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 315
+    File: shape/meshlod.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 239
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 objectIndex (3)

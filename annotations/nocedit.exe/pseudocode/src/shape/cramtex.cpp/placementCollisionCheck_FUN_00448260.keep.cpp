@@ -1,0 +1,70 @@
+// Name: shape_cramtex.cpp_placementCollisionCheck_FUN_00448260
+// Address: 00448260
+// MANUAL RECONSTRUCTION
+// Address Range: [[00448260, 00448381]]
+// Convention: __cdecl
+// Signature: void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id,int start_x,int start_y,int width,int height)
+
+#include "nocturne.h"
+
+void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id,int start_x,int start_y,int width,int height)
+
+{
+  int iVar1;
+  CCramTex *pCVar2;
+  int iVar3;
+  int iVar2;
+  int iVar4;
+  int local_18;
+  SCramRectangle *local_14;
+  
+  if (0 < g_CramRectangleCount) {
+    iVar1 = 0;
+    do {
+      if (((layer_id == g_CramRectangles[iVar1].map_id) &&
+          (start_x == g_CramRectangles[iVar1].start_x)) &&
+         (start_y == g_CramRectangles[iVar1].start_y)) {
+        return;
+      }
+      iVar1 = iVar1 + 1;
+    } while (iVar1 < g_CramRectangleCount);
+  }
+  local_14 = g_CramRectangles + g_CramRectangleCount;
+  local_18 = 0;
+  do {
+    iVar2 = g_CramMinPlacementY;
+    iVar4 = g_CramMinPlacementX;
+    if (local_18 != 0) {
+      iVar2 = g_CramMinPlacementX;
+      iVar4 = g_CramMinPlacementY;
+    }
+    iVar3 = g_CramPlacedTextureCount + -1;
+    if (-1 < iVar3) {
+      pCVar2 = g_CramSortedTextureEntries + iVar3;
+      do {
+        if (((pCVar2->assigned_map_number == layer_id) && (start_x < pCVar2->working_top)) &&
+           ((start_y < pCVar2->working_width &&
+            ((pCVar2->placement_bottom < iVar4 + start_x &&
+             (pCVar2->working_right < iVar2 + start_y)))))) break;
+        iVar3 = iVar3 + -1;
+        pCVar2 = pCVar2 + -1;
+      } while (-1 < iVar3);
+    }
+    if (iVar3 < 0) {
+      local_14->occupant = 0;
+      local_14->active_flag = 1;
+      local_14->map_id = layer_id;
+      local_14->start_x = start_x;
+      local_14->start_y = start_y;
+      local_14->end_x = iVar4 + start_x;
+      local_14->orientation = local_18;
+      local_14->end_y = iVar2 + start_y;
+      g_CramRectangleCount = g_CramRectangleCount + 1;
+      local_14 = local_14 + 1;
+    }
+    local_18 = local_18 + 1;
+    if (1 < local_18) {
+      return;
+    }
+  } while( true );
+}

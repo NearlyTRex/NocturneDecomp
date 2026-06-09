@@ -12,20 +12,17 @@ int __cdecl shape_design_c_arePolygonsCoplanar_FUN_00461b70(SShapeEditorPolygon 
 {
   uint uVar1;
   uint uVar3;
-  uint uVar2;
-  uint uVar4;
   int local_2c;
-  
+
   uVar1 = ROUND((float)scale_factor * (polygon1_ptr->normal).x) -
           ROUND((float)scale_factor * (polygon2_ptr->normal).x);
-  uVar2 = (int)uVar1 >> 0x1f;
-  if ((((int)((uVar1 ^ uVar2) - uVar2) < tolerance) &&
+  if (((ABS((int)uVar1) < tolerance) &&
       (uVar3 = ROUND((float)scale_factor * (polygon1_ptr->normal).y) -
                ROUND((float)scale_factor * (polygon2_ptr->normal).y),
-      uVar4 = (int)uVar3 >> 0x1f, (int)((uVar3 ^ uVar4) - uVar4) < tolerance)) &&
+      ABS((int)uVar3) < tolerance)) &&
      (uVar3 = ROUND((float)scale_factor * (polygon1_ptr->normal).z) -
               ROUND((float)scale_factor * (polygon2_ptr->normal).z),
-     uVar4 = (int)uVar3 >> 0x1f, (int)((uVar3 ^ uVar4) - uVar4) < tolerance)) {
+     ABS((int)uVar3) < tolerance)) {
     local_2c = 1;
   }
   else {

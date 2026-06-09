@@ -10,25 +10,17 @@
 void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int ui_mode)
 
 {
-  byte bVar2;
   int iVar3;
   int iVar4;
-  int iVar2;
   int iVar5;
-  char *pcVar3;
-  byte *pbVar4;
-  byte *pbVar6;
-  byte bVar6;
   float10 fVar7;
   double dVar8;
   byte local_74 [80];
   int local_1c;
   int local_18;
   float local_14;
-  byte bVar1;
   
   iVar5 = g_PolygonCount;
-  bVar6 = 0;
   local_1c = 0;
   if (ui_mode < 1) {
     local_74[0] = 0;
@@ -39,15 +31,7 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
               ((char *)local_74,0x14,0,0,"Enter tolerance angle [8.5] : ");
   }
   local_14 = 8.5;
-  iVar2 = -1;
-  pbVar6 = local_74;
-  do {
-    if (iVar2 == 0) break;
-    iVar2 = iVar2 + -1;
-    bVar1 = *pbVar6;
-    pbVar6 = pbVar6 + (uint)bVar6 * -2 + 1;
-  } while (bVar1 != 0);
-  if (iVar2 != -2) {
+  if (strlen((char *)local_74) != 0) {
     dVar8 = _strtod((char *)local_74);
     local_14 = (float)dVar8;
   }
@@ -93,27 +77,7 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
   _sprintf
             ((char *)local_74,"Original polygons: %d    New total: %d\n\nTotal passes: %d",iVar5,g_PolygonCount,g_PolygonOptimizationPasses);
   if (0 < ui_mode) {
-    pcVar3 = "\n\nHit a key...";
-    iVar5 = -1;
-    pbVar4 = local_74;
-    do {
-      pbVar4 = pbVar4;
-      if (iVar5 == 0) break;
-      iVar5 = iVar5 + -1;
-      pbVar4 = pbVar4 + (uint)bVar6 * -2 + 1;
-      bVar2 = *pbVar4;
-      pbVar4 = pbVar4;
-    } while (bVar2 != 0);
-    pbVar6 = pbVar4 + -1;
-    do {
-      bVar2 = *pcVar3;
-      *pbVar6 = bVar2;
-      if (bVar2 == 0) break;
-      bVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pbVar6[1] = bVar2;
-      pbVar6 = pbVar6 + 2;
-    } while (bVar2 != 0);
+    strcat((char *)local_74,"\n\nHit a key...");
   }
   if (-1 < ui_mode) {
     engine_2d_c_drawText_FUN_00401fd0((char *)local_74,0,0);

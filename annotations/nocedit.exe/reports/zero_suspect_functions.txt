@@ -2121,7 +2121,6 @@ annotations/nocedit.exe/pseudocode/src/core/game.cpp/CGame_finishAct_FUN_004e3b9
 annotations/nocedit.exe/pseudocode/src/core/game.cpp/CGame_loadAssets_FUN_004e07a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/game.cpp/CGame_loadGame_FUN_004e12b0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/game.cpp/CGame_playerControls_FUN_004dbd80.keep.cpp
-annotations/nocedit.exe/pseudocode/src/core/game.cpp/CGame_processCheatCodes_FUN_004ddaf0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/game.cpp/CGame_processFrame_FUN_004da100.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/game.cpp/CGame_processFudge_FUN_004d8750.cpp
 annotations/nocedit.exe/pseudocode/src/core/game.cpp/CGame_processHotkeys_FUN_004dcee0.keep.cpp
@@ -2211,6 +2210,7 @@ annotations/nocedit.exe/pseudocode/src/core/ghoul.cpp/CGhoul_dtor_FUN_004e8f10.c
 annotations/nocedit.exe/pseudocode/src/core/ghoul.cpp/CGhoul_findDarkWayPoint_FUN_004e63d0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/ghoul.cpp/CGhoul_getActorType_FUN_004e6020.cpp
 annotations/nocedit.exe/pseudocode/src/core/ghoul.cpp/CGhoul_getPropertyList_FUN_004e8dc0.cpp
+annotations/nocedit.exe/pseudocode/src/core/ghoul.cpp/CGhoul_getTargetPoint_FUN_004e84a0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/ghoul.cpp/CGhoul_getTargetPoints_FUN_004e8bc0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/ghoul.cpp/CGhoul_processDamage_FUN_004e87e0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/ghoul.cpp/CGhoul_processDismemberment_FUN_004e8520.keep.cpp
@@ -2808,6 +2808,7 @@ annotations/nocedit.exe/pseudocode/src/core/mimic.cpp/CMimic_renderOpaque_FUN_00
 annotations/nocedit.exe/pseudocode/src/core/mimic.cpp/CMimic_renderTransparent_FUN_00520890.cpp
 annotations/nocedit.exe/pseudocode/src/core/mimic.cpp/CMimic_setupCloth_FUN_00520500.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/mimic.cpp/CMimic_setup_FUN_0051f3e0.keep.cpp
+annotations/nocedit.exe/pseudocode/src/core/mimic.cpp/CMimic_updatePose_FUN_0051f930.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/mimic.cpp/copyQuaternion_FUN_00520e00.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/mimic.cpp/factoryFunc_FUN_0051f190.cpp
 annotations/nocedit.exe/pseudocode/src/core/mimic.cpp/mirrorXTransform_FUN_0051f130.cpp
@@ -3584,7 +3585,6 @@ annotations/nocedit.exe/pseudocode/src/core/setedit.cpp/CDemonSet_readIni_FUN_00
 annotations/nocedit.exe/pseudocode/src/core/setedit.cpp/CDemonSet_rebuildAllFogAndPVS_FUN_005805a0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/setedit.cpp/CDemonSet_renderCameraBackdrop_FUN_0057d340.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/setedit.cpp/CDemonSet_save_FUN_0057a2a0.keep.cpp
-annotations/nocedit.exe/pseudocode/src/core/setedit.cpp/CDemonSet_showCameraEditor_FUN_0057e7c0.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/setedit.cpp/CDemonSet_showEditorMenu_FUN_00584940.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/setedit.cpp/CDemonSet_showFogEditor_FUN_00580730.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/setedit.cpp/CDemonSet_showLightEditor_FUN_0057c5d0.keep.cpp
@@ -5201,15 +5201,21 @@ annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/CCramTex_findLowestOver
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/CCramTex_findRightmostOverlappingX_FUN_004479a0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/CCramTex_renderTextureEntry_FUN_00447c20.cpp
+annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/CCramTex_runInteractiveAtlasGeneration_FUN_00446160.keep.cpp
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/CCramTex_setupTextureForPlacement_FUN_004483e0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/calculateAtlasEfficiency_FUN_00447e80.cpp
+annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/generateTextureAtlasLayout_FUN_00444d90.keep.cpp
+annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/generateTextureAtlas_FUN_00445820.keep.cpp
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/mapCoordinateToAtlas_FUN_00447a80.cpp
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/maxInt_FUN_00448440.cpp
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/performGapFillingOptimization_FUN_00447590.cpp
+annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/placementCollisionCheck_FUN_00448260.keep.cpp
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/printAtlasLayoutReport_FUN_004481d0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/qsortByLargestDimension_FUN_004457f0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/qsortRectanglesByActiveFlag_FUN_00446140.cpp
 annotations/nocedit.exe/pseudocode/src/shape/cramtex.cpp/visualizeTextureAtlas_FUN_00447f20.cpp
+annotations/nocedit.exe/pseudocode/src/shape/design.c/addQuadPolygonHalfSphere_FUN_00468d20.keep.c
+annotations/nocedit.exe/pseudocode/src/shape/design.c/addQuadPolygonOctant_FUN_00469220.keep.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/addQuadPolygon_FUN_004687c0.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/addVertexFromSphericalCoordsHalfSphere_FUN_00468c40.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/addVertexFromSphericalCoordsOctant_FUN_00469140.c
@@ -5217,6 +5223,7 @@ annotations/nocedit.exe/pseudocode/src/shape/design.c/addVertexFromSphericalCoor
 annotations/nocedit.exe/pseudocode/src/shape/design.c/allocateSpatialTreeNode_FUN_00457ed0.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/applyVertexCentering_FUN_004680f0.keep.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/arePolygonsCoplanar_FUN_00461b70.keep.c
+annotations/nocedit.exe/pseudocode/src/shape/design.c/bisectMesh_FUN_0046ed50.keep.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/calculateAngleBetweenPolygonNormals_FUN_00461cb0.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/calculatePolygonAngularArea_FUN_00461ee0.keep.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/calculatePolygonNormal_FUN_0045caa0.keep.c
@@ -5226,6 +5233,7 @@ annotations/nocedit.exe/pseudocode/src/shape/design.c/calculateVertexAngle_FUN_0
 annotations/nocedit.exe/pseudocode/src/shape/design.c/calculateVertexNormals_FUN_0045be40.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/centerKeyframeModels_FUN_004681a0.keep.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/centerObject_FUN_00466610.c
+annotations/nocedit.exe/pseudocode/src/shape/design.c/centerVerticesAroundPoint_FUN_0045ea90.keep.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/checkNonFFBytes_FUN_0046ac70.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/checkVertexCountLimit_FUN_00460a10.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/clampAndTransformUVCoordinates_FUN_0045f080.c
@@ -5233,9 +5241,9 @@ annotations/nocedit.exe/pseudocode/src/shape/design.c/clampedArccos_FUN_00461c50
 annotations/nocedit.exe/pseudocode/src/shape/design.c/clearAllTextureNames_FUN_0046e6b0.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/combineTextureMaps_FUN_00469ee0.keep.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/comparePolygonIndices_FUN_00463800.c
-annotations/nocedit.exe/pseudocode/src/shape/design.c/configureFullPassPolygonReduction_FUN_00465810.c
+annotations/nocedit.exe/pseudocode/src/shape/design.c/complexPolygonReduction_FUN_00463b30.keep.c
+annotations/nocedit.exe/pseudocode/src/shape/design.c/configureFullPassPolygonReduction_FUN_00465810.keep.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/configureSinglePassPolygonReduction_FUN_00465560.keep.c
-annotations/nocedit.exe/pseudocode/src/shape/design.c/configureSpatialSplittingPlane_FUN_004617c0.keep.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/convertWorldToScreenCoordinates_FUN_0045bd10.keep.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/createPolygonFromVertexList_FUN_0045cc80.keep.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/createQuadPolygon_FUN_0045df60.c

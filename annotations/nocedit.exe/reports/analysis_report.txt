@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6303 (97.7%)
-Functions with suspects: 151 (2.3%)
+Clean functions: 6311 (97.8%)
+Functions with suspects: 143 (2.2%)
 
-Total suspect patterns: 1154
-Average suspects per function: 0.18
+Total suspect patterns: 1107
+Average suspects per function: 0.17
 
-Virtual files: 214 total, 207 at 100%, 209 at 90%+
+Virtual files: 214 total, 208 at 100%, 210 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -28,26 +28,24 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              619
-  unrolled_memcpy           112
+  pointer_cast              561
+  unrolled_memcpy           102
+  unrolled_strlen           97
   static_uninitvar          66
   unrolled_strcpy           50
   shadow_pointer_walk       49
-  unrolled_strlen           44
-  static_self_assignment    42
   bitcast_double_pair       36
-  static_shift_too_many_bits 16
+  static_self_assignment    34
   warning_inlined_function  14
   unrolled_strchr           14
   signed_shift_global_idiom 14
   raw_address_constant      13
-  missing_cave_copy         11
+  static_shift_too_many_bits 12
   sub84_truncation          9
   static_legacy_uninitvar   9
-  bit_int_float_compare     8
   unaffected_reg            6
   static_invalid_pointer_cast 6
-  static_identical_inner_condition 4
+  static_identical_inner_condition 3
   static_object_index       3
   static_null_pointer       2
   unrolled_memset           2
@@ -108,14 +106,14 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6253 more
+  ... and 6261 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
   0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3337, suspects: 0, lines: 3337)
+  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 2183, suspects: 45, lines: 1728)
   004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2138, suspects: 0, lines: 2138)
   00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 1852, suspects: 0, lines: 1852)
-  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1728, suspects: 0, lines: 1728)
   004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1591, suspects: 0, lines: 1591)
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 1474, suspects: 0, lines: 1474)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 1437, suspects: 0, lines: 1437)
@@ -126,10 +124,10 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 1052, suspects: 0, lines: 1052)
   005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470 (score: 1031, suspects: 0, lines: 1031)
   005390f0: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (score: 997, suspects: 0, lines: 997)
-  00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (score: 997, suspects: 16, lines: 832)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 917, suspects: 0, lines: 917)
   005138e0: core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (score: 917, suspects: 0, lines: 917)
   0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 857, suspects: 0, lines: 857)
+  00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (score: 832, suspects: 0, lines: 832)
   0045f1d0: shape_design.c_showFacetPartEditor_FUN_0045f1d0 (score: 817, suspects: 20, lines: 597)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 810, suspects: 0, lines: 810)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 809, suspects: 0, lines: 809)
@@ -139,27 +137,27 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 752, suspects: 0, lines: 752)
   00562920: core_script.cpp_editParameterValue_FUN_00562920 (score: 751, suspects: 0, lines: 751)
   00511e50: core_menu.cpp_configureSoundOptions_FUN_00511e50 (score: 743, suspects: 0, lines: 743)
+  0057e7c0: core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (score: 727, suspects: 2, lines: 702)
   005b9c10: core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (score: 716, suspects: 0, lines: 716)
   0058c190: core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (score: 715, suspects: 0, lines: 715)
-  005efde0: core_werewolf.cpp_CWerewolf_process_FUN_005efde0 (score: 714, suspects: 0, lines: 714)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (100 functions):
+  pointer_cast (94 functions):
     00556a00: shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
     00556180: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     00555a40: shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
     00555090: shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
     00554a50: shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
     00554e70: shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70
-    00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
-    00445820: shape_cramtex.cpp_generateTextureAtlas_FUN_00445820
-    00448260: shape_cramtex.cpp_placementCollisionCheck_FUN_00448260
-    00444d90: shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90
-    ... and 90 more
+    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    0051b3e0: shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0
+    0051c480: shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480
+    00516a40: shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40
+    ... and 84 more
 
-  unrolled_memcpy (47 functions):
+  unrolled_memcpy (45 functions):
     00555ff0: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
     00556180: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     00516500: shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
@@ -170,7 +168,20 @@ FUNCTIONS BY SUSPECT TYPE
     0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
     00517000: shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000
-    ... and 37 more
+    ... and 35 more
+
+  unrolled_strlen (20 functions):
+    0057e7c0: core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0
+    004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
+    0045a7b0: shape_design.c_modelExportWizard_FUN_0045a7b0
+    00468320: shape_design.c_createKeyframeModel_FUN_00468320
+    00468910: shape_design.c_generateGlobe_FUN_00468910
+    0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
+    0046b770: shape_design.c_quantizePaletteColors_FUN_0046b770
+    00458ac0: shape_design.c_loadModelFile_FUN_00458ac0
+    00469690: shape_design.c_createCenterVertex_FUN_00469690
+    00469420: shape_design.c_generateOctant_FUN_00469420
+    ... and 10 more
 
   static_uninitvar (0 functions):
 
@@ -200,21 +211,6 @@ FUNCTIONS BY SUSPECT TYPE
     0051a030: shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
     ... and 11 more
 
-  unrolled_strlen (16 functions):
-    0045a7b0: shape_design.c_modelExportWizard_FUN_0045a7b0
-    00468320: shape_design.c_createKeyframeModel_FUN_00468320
-    00468910: shape_design.c_generateGlobe_FUN_00468910
-    0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
-    0046b770: shape_design.c_quantizePaletteColors_FUN_0046b770
-    00469690: shape_design.c_createCenterVertex_FUN_00469690
-    00469420: shape_design.c_generateOctant_FUN_00469420
-    00468f20: shape_design.c_generateShell_FUN_00468f20
-    0045e520: shape_design.c_createBoxPrimitive_FUN_0045e520
-    0045dcc0: shape_design.c_deleteSinglePolygon_FUN_0045dcc0
-    ... and 6 more
-
-  static_self_assignment (0 functions):
-
   bitcast_double_pair (6 functions):
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
     005cc7c0: shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
@@ -223,7 +219,7 @@ FUNCTIONS BY SUSPECT TYPE
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
     005d2ac0: shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
 
-  static_shift_too_many_bits (0 functions):
+  static_self_assignment (0 functions):
 
   warning_inlined_function (14 functions):
     005568f0: shape_quantize.cpp_displayProgressBar_FUN_005568f0
@@ -260,9 +256,7 @@ FUNCTIONS BY SUSPECT TYPE
     005d7e00: shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
     005d7000: shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
 
-  missing_cave_copy (2 functions):
-    004e84a0: core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0
-    0051f930: core_mimic.cpp_CMimic_updatePose_FUN_0051f930
+  static_shift_too_many_bits (0 functions):
 
   sub84_truncation (6 functions):
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
@@ -273,10 +267,6 @@ FUNCTIONS BY SUSPECT TYPE
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
 
   static_legacy_uninitvar (0 functions):
-
-  bit_int_float_compare (2 functions):
-    00469220: shape_design.c_addQuadPolygonOctant_FUN_00469220
-    00468d20: shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20
 
   unaffected_reg (1 functions):
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
