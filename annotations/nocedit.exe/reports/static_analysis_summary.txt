@@ -9,30 +9,30 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 60
+  Functions with static analysis data: 53
   Functions flagged by multiple tools: 0
 
   Cppcheck (quick):
-    Files analyzed:      60
-    Files with findings: 60
-    Total diagnostics:   209
+    Files analyzed:      53
+    Files with findings: 53
+    Total diagnostics:   191
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                  66  [likely decompiler artifact]
+  uninitvar                                                  65  [likely decompiler artifact]
   invalidscanf                                               60  [likely decompiler artifact]
-  selfAssignment                                             23
   nullPointerRedundantCheck                                  12
-  shiftTooManyBitsSigned                                     12
+  selfAssignment                                             11
   invalidPointerCast                                         10
+  shiftTooManyBitsSigned                                     10
   legacyUninitvar                                             9
   invalidScanfArgType_int                                     3
   identicalInnerCondition                                     3
   objectIndex                                                 3
-  nullPointer                                                 2
-  arrayIndexOutOfBoundsCond                                   2
   nullPointerArithmetic                                       1
+  nullPointer                                                 1
   nullPointerArithmeticRedundantCheck                         1
   invalidTestForOverflow                                      1
+  memleak                                                     1

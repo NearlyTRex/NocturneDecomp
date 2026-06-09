@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 61,
+    "complexity_score": 16,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 93
   },
   "cross_references": [
@@ -100,6 +98,44 @@
     },
     "pcode_op_count": 395
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(byte *)((int)rgb_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*red_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3 + 2) * weight + *red_accumulator;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(byte *)((int)rgb_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*green_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3 + 1) * weight + *green_accumulator;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(byte *)((int)rgb_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*blue_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3) * weight + *blue_accumulator;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(byte *)((int)alpha_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*alpha_accumulator = (double)*(byte *)((int)alpha_buffer + iVar4) * weight + *alpha_accumulator;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 52,
     "local_size": 4,
@@ -186,38 +222,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(byte *)((int)rgb_buffer",
-      "severity": "moderate",
-      "text": "*red_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3 + 2) * weight + *red_accumulator;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(byte *)((int)rgb_buffer",
-      "severity": "moderate",
-      "text": "*green_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3 + 1) * weight + *green_accumulator;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(byte *)((int)rgb_buffer",
-      "severity": "moderate",
-      "text": "*blue_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3) * weight + *blue_accumulator;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(byte *)((int)alpha_buffer",
-      "severity": "moderate",
-      "text": "*alpha_accumulator = (double)*(byte *)((int)alpha_buffer + iVar4) * weight + *alpha_accumulator;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

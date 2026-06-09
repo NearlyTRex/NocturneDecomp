@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 120,
+    "complexity_score": 55,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 55,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy",
-      "unrolled_strlen"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 185
   },
   "cross_references": [
@@ -167,6 +163,53 @@
     },
     "pcode_op_count": 446
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(SShapeEditorPolygon *)((int)pSVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(SShapeEditorPolygon *)((int)pSVar3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 44,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x61; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 24,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0045de66, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 114,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0045de66: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 116,
     "local_size": 116,
@@ -211,101 +254,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "deletePolygonRange_FUN_0045dd70.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 12,
-          "line": 36,
-          "message": "Redundant assignment of 'pcVar4' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 20,
-          "line": 55,
-          "message": "Redundant assignment of 'pSVar3' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 20,
-          "line": 56,
-          "message": "Redundant assignment of 'pSVar5' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(SShapeEditorPolygon *)((int)pSVar5",
-      "severity": "moderate",
-      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(SShapeEditorPolygon *)((int)pSVar3",
-      "severity": "moderate",
-      "text": "pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 44,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 0x61; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 24,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 0045de66, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 114,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0045de66: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Redundant assignment of 'pcVar4' to itself.",
-      "line": 36,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pcVar4 = pcVar4;",
-      "type": "static_self_assignment"
-    },
-    {
-      "description": "Redundant assignment of 'pSVar3' to itself.",
-      "line": 55,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pSVar3 = pSVar3;",
-      "type": "static_self_assignment"
-    },
-    {
-      "description": "Redundant assignment of 'pSVar5' to itself.",
-      "line": 56,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pSVar5 = pSVar5;",
-      "type": "static_self_assignment"
-    }
-  ]
+  "suspects": []
 }

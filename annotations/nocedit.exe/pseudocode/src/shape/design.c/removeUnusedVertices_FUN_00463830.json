@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 211,
-    "complexity_score": 131,
+    "complexity_score": 61,
     "cross_reference_count": 8,
     "function_call_count": 7,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 61,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 272
   },
   "cross_references": [
@@ -319,6 +316,62 @@
     },
     "pcode_op_count": 1034
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)(g_ModelPolygonData[local_1c].vertex_indices[local_24] * 4 + (int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(g_ModelPolygonData[local_1c].vertex_indices[local_24] * 4 + (int)dest) = 1",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(int *)(local_1c * 4 + (int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)(local_1c * 4 + (int)dest) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)(local_1c * 4 + (int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(local_1c * 4 + (int)dest) = 0xffffffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(int *)((int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)dest + local_1c * 4) = g_VertexCount;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(uint *)((int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)dest + g_ModelPolygonData[local_1c].vertex_indices[local_2c] * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 44,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_LoadedVertices[iVar2].vertex.y = g_LoadedVertices[local_1c].vertex.y;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 48,
@@ -349,54 +402,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(uint *)(g_ModelPolygonData[local_1c].vertex_indices[local_24] * 4 + (int)dest",
-      "severity": "moderate",
-      "text": "*(uint *)(g_ModelPolygonData[local_1c].vertex_indices[local_24] * 4 + (int)dest) = 1",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(int *)(local_1c * 4 + (int)dest",
-      "severity": "moderate",
-      "text": "if (*(int *)(local_1c * 4 + (int)dest) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(uint *)(local_1c * 4 + (int)dest",
-      "severity": "moderate",
-      "text": "*(uint *)(local_1c * 4 + (int)dest) = 0xffffffff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(int *)((int)dest",
-      "severity": "moderate",
-      "text": "*(int *)((int)dest + local_1c * 4) = g_VertexCount;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(uint *)((int)dest",
-      "severity": "moderate",
-      "text": "*(uint *)((int)dest + g_ModelPolygonData[local_1c].vertex_indices[local_2c] * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 44,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_LoadedVertices[iVar2].vertex.y = g_LoadedVertices[local_1c].vertex.y;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

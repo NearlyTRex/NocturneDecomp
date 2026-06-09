@@ -243,7 +243,7 @@
   },
   "resolved_suspects": [
     {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal 0xa with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, 0xa) in a .keep.",
       "line": 28,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "resolution_source": "keep",
@@ -252,7 +252,7 @@
       "type": "unrolled_strchr"
     },
     {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal 0xa with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, 0xa) in a .keep.",
       "line": 41,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "resolution_source": "keep",

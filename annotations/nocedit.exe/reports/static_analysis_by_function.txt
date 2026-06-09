@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 60
-  Total diagnostics: 209
+  Functions with findings: 53
+  Total diagnostics: 191
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 40, raw .cpp files: 20
+  .keep.cpp files: 40, raw .cpp files: 13
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -177,16 +177,6 @@ shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10  [.keep] [Cppcheck (
   Line   48: [uninitvar] Uninitialized variable: fStack_28
 
 ----------------------------------------------------------------------------------------------------
-shape_design.c_mergeAdjacentPolygons_FUN_00462b70  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (5 diagnostics)
-
-  Line  112: [arrayIndexOutOfBoundsCond] Either the condition 'bVar5' is redundant or the array 'local_58[2]' is accessed at index 2, which is out of bounds.
-  Line  112: [uninitvar] Uninitialized variable: local_20
-  Line  116: [arrayIndexOutOfBoundsCond] Either the condition 'bVar5' is redundant or the array 'local_58[2]' is accessed at index 3, which is out of bounds.
-  Line  210: [selfAssignment] Redundant assignment of 'pSVar3' to itself.
-  Line  211: [selfAssignment] Redundant assignment of 'pSVar4' to itself.
-
-----------------------------------------------------------------------------------------------------
 shape_design.c_mouseWheelPolygonReducer_FUN_004648e0  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (4 diagnostics)
 
@@ -276,30 +266,6 @@ core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppc
   Line   66: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
 ----------------------------------------------------------------------------------------------------
-shape_design.c_deletePolygonRange_FUN_0045dd70  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (3 diagnostics)
-
-  Line   36: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
-  Line   55: [selfAssignment] Redundant assignment of 'pSVar3' to itself.
-  Line   56: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_deleteSinglePolygon_FUN_0045dcc0  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (3 diagnostics)
-
-  Line   33: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
-  Line   44: [selfAssignment] Redundant assignment of 'pSVar3' to itself.
-  Line   45: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (3 diagnostics)
-
-  Line   44: [selfAssignment] Redundant assignment of 'pSVar2' to itself.
-  Line   45: [selfAssignment] Redundant assignment of 'pSVar4' to itself.
-  Line   52: [selfAssignment] Redundant assignment of 'puVar3' to itself.
-
-----------------------------------------------------------------------------------------------------
 shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870  [.cpp] [Cppcheck (quick)]
   File: shape/meshlod.cpp  (3 diagnostics)
 
@@ -335,13 +301,6 @@ core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppch
 
   Line   16: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line   19: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_quantizePaletteColors_FUN_0046b770  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (2 diagnostics)
-
-  Line   42: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   43: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep] [Cppcheck (quick)]
@@ -418,18 +377,6 @@ engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (1 diagnostics)
 
   Line   24: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_cramTextures_FUN_0046a970  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   62: [nullPointer] Possible null pointer dereference: local_18
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_createKeyframeModel_FUN_00468320  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   46: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_findVertexListInModel_FUN_00468000  [.keep] [Cppcheck (quick)]

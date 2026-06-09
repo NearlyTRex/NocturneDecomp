@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6335 (98.2%)
-With suspects: 119
-Total suspects: 985
+Clean: 6350 (98.4%)
+With suspects: 104
+Total suspects: 879
 
 ====================================================================================================
 shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10 (5 suspects)
@@ -55,63 +55,6 @@ shape_design.c_cramTextureList_FUN_0046bb80 (30 suspects)
   Line 973 [unrolled_strchr]: do {
 
 ====================================================================================================
-shape_design.c_cramTextures_FUN_0046a970 (6 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 19 [unrolled_strcpy]: do {
-  Line 29 [unrolled_strchr]: do {
-  Line 53 [unrolled_strcpy]: do {
-  Line 62 [static_null_pointer]: *local_18 = cVar2;
-  Line 90 [unrolled_strcpy]: do {
-  Line 100 [unrolled_strcpy]: do {
-
-====================================================================================================
-shape_design.c_createKeyframeModel_FUN_00468320 (6 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 34 [unrolled_strlen]: do {
-  Line 46 [unrolled_strlen]: do {
-  Line 46 [static_self_assignment]: pcVar5 = pcVar5;
-  Line 61 [unrolled_strlen]: do {
-  Line 87 [unrolled_strlen]: do {
-
-====================================================================================================
-shape_design.c_deletePolygonRange_FUN_0045dd70 (8 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 24 [unrolled_strlen]: do {
-  Line 36 [static_self_assignment]: pcVar4 = pcVar4;
-  Line 44 [unrolled_memcpy]: for (iVar1 = 0x61; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 45 [pointer_cast]: pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar6 * -8 + 4);
-  Line 46 [pointer_cast]: pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + (uint)bVar6 * -8 + 4);
-  Line 55 [static_self_assignment]: pSVar3 = pSVar3;
-  Line 56 [static_self_assignment]: pSVar5 = pSVar5;
-  Line 114 [unrolled_memcpy]: // 0045de66: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
-
-====================================================================================================
-shape_design.c_deleteSinglePolygon_FUN_0045dcc0 (8 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 21 [unrolled_strlen]: do {
-  Line 33 [unrolled_memcpy]: for (iVar1 = 0x61; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 33 [static_self_assignment]: pcVar4 = pcVar4;
-  Line 34 [pointer_cast]: pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar6 * -8 + 4);
-  Line 35 [pointer_cast]: pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + (uint)bVar6 * -8 + 4);
-  Line 44 [static_self_assignment]: pSVar3 = pSVar3;
-  Line 45 [static_self_assignment]: pSVar5 = pSVar5;
-  Line 67 [unrolled_memcpy]: // 0045dd57: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
-
-====================================================================================================
-shape_design.c_exportModelToBIN_FUN_0045aa80 (4 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 242 [unrolled_strcpy]: do {
-  Line 253 [unrolled_strcpy]: do {
-  Line 364 [raw_address_constant]: _fwrite((void *)(local_28 * 0x184 + 0x16e99c8 + local_24 * 4),1,4,local_1c);
-
-====================================================================================================
 shape_design.c_loadModelBinary_FUN_00458170 (10 suspects)
   File: shape/design.c
 ====================================================================================================
@@ -127,32 +70,6 @@ shape_design.c_loadModelBinary_FUN_00458170 (10 suspects)
   Line 201 [raw_address_constant]: _fread((void *)(local_28 * 4 + g_PolygonCount * 0x184 + 0x16e99c8),1,4,local_38);
 
 ====================================================================================================
-shape_design.c_loadModelFile_FUN_00458ac0 (8 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 51 [unrolled_strlen]: do {
-  Line 165 [unrolled_strcpy]: do {
-  Line 180 [unrolled_strcpy]: do {
-  Line 228 [unrolled_strcpy]: do {
-  Line 234 [pointer_cast]: *(char *)((int)pSVar8 + 1) = cVar3;
-  Line 235 [pointer_cast]: pSVar8 = (SModelPartName *)((int)pSVar8 + 2);
-  Line 256 [unrolled_strcpy]: do {
-  Line 280 [unrolled_strcpy]: do {
-
-====================================================================================================
-shape_design.c_loadPalette_FUN_0046e810 (8 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 36 [unrolled_strlen]: do {
-  Line 55 [unrolled_strcpy]: do {
-  Line 65 [unrolled_strchr]: do {
-  Line 78 [unrolled_strlen]: do {
-  Line 88 [unrolled_strlen]: do {
-  Line 97 [unrolled_strcpy]: do {
-  Line 110 [unrolled_strcpy]: do {
-  Line 136 [unrolled_strchr]: do {
-
-====================================================================================================
 shape_design.c_loadTextureData_FUN_0046b060 (6 suspects)
   File: shape/design.c
 ====================================================================================================
@@ -162,28 +79,6 @@ shape_design.c_loadTextureData_FUN_0046b060 (6 suspects)
   Line 80 [pointer_cast]: (local_1c,(uchar *)(local_3c * iVar5 + (int)ptr),
   Line 81 [pointer_cast]: (uchar *)(local_3c * entry->original_width + (int)dest),entry->original_width,
   Line 95 [pointer_cast]: iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)dest + local_44) == '\0'));
-
-====================================================================================================
-shape_design.c_mergeAdjacentPolygons_FUN_00462b70 (9 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 112 [static_array_oob_cond]: local_58[iVar1] = (float)g_ModelPolygonData[polygon1_index].vertex_indices[local_20];
-  Line 112 [static_uninitvar]: local_58[iVar1] = (float)g_ModelPolygonData[polygon1_index].vertex_indices[local_20];
-  Line 116 [static_array_oob_cond]: local_58[uVar2] = (float)g_ModelPolygonData[polygon2_index].vertex_indices[local_18];
-  Line 199 [unrolled_memcpy]: for (iVar2 = 0x61; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 200 [pointer_cast]: pSVar4 = (SShapeEditorPolygon *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
-  Line 201 [pointer_cast]: pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + (uint)bVar6 * -8 + 4);
-  Line 210 [static_self_assignment]: pSVar3 = pSVar3;
-  Line 211 [static_self_assignment]: pSVar4 = pSVar4;
-  Line 856 [unrolled_memcpy]: // 00463592: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
-
-====================================================================================================
-shape_design.c_modelExportWizard_FUN_0045a7b0 (3 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 32 [unrolled_strlen]: do {
-  Line 42 [unrolled_strchr]: do {
-  Line 55 [unrolled_strlen]: do {
 
 ====================================================================================================
 shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 (33 suspects)
@@ -224,25 +119,6 @@ shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 (33 suspects)
   Line 287 [unrolled_memcpy]: // 00464c52: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
 
 ====================================================================================================
-shape_design.c_quantizePaletteColors_FUN_0046b770 (3 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 25 [unrolled_strlen]: do {
-  Line 42 [static_shift_too_many_bits]: (((uint)(byte)bit_mask[(int)((local_14 + (local_14 >> 0x1f) * -8) -
-  Line 43 [static_shift_too_many_bits]: (uint)((local_14 >> 0x1f) << 2 < 0)) >> 3] &
-
-====================================================================================================
-shape_design.c_removeUnusedVertices_FUN_00463830 (6 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 32 [pointer_cast]: *(uint *)(g_ModelPolygonData[local_1c].vertex_indices[local_24] * 4 + (int)dest) = 1
-  Line 38 [pointer_cast]: if (*(int *)(local_1c * 4 + (int)dest) == 0) {
-  Line 39 [pointer_cast]: *(uint *)(local_1c * 4 + (int)dest) = 0xffffffff;
-  Line 44 [unrolled_memcpy]: g_LoadedVertices[iVar2].vertex.y = g_LoadedVertices[local_1c].vertex.y;
-  Line 49 [pointer_cast]: *(int *)((int)dest + local_1c * 4) = g_VertexCount;
-  Line 57 [pointer_cast]: *(uint *)((int)dest + g_ModelPolygonData[local_1c].vertex_indices[local_2c] * 4);
-
-====================================================================================================
 shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470 (5 suspects)
   File: shape/design.c
 ====================================================================================================
@@ -251,15 +127,6 @@ shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470 (5 suspects)
   Line 64 [pointer_cast]: iVar1 = *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);
   Line 77 [unrolled_memcpy]: g_RenderVertexBuffer[0x7fe].u = g_RenderVertexBuffer[iVar1].u;
   Line 96 [unrolled_memcpy]: g_RenderVertexBuffer[0x7ff].u = g_RenderVertexBuffer[iVar1].u;
-
-====================================================================================================
-shape_design.c_samplePixelAndAccumulate_FUN_0046ad00 (4 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 14 [pointer_cast]: *red_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3 + 2) * weight + *red_accumulator;
-  Line 15 [pointer_cast]: *green_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3 + 1) * weight + *green_accumulator;
-  Line 16 [pointer_cast]: *blue_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3) * weight + *blue_accumulator;
-  Line 17 [pointer_cast]: *alpha_accumulator = (double)*(byte *)((int)alpha_buffer + iVar4) * weight + *alpha_accumulator;
 
 ====================================================================================================
 shape_design.c_showFacetPartEditor_FUN_0045f1d0 (22 suspects)
@@ -287,54 +154,6 @@ shape_design.c_showFacetPartEditor_FUN_0045f1d0 (22 suspects)
   Line 572 [static_self_assignment]: pSVar6 = pSVar6;
   Line 1549 [unrolled_memcpy]: // 00460623: MOVSD.REP ES:EDI,ESI  ; g_VertexNormals[19980].v | g_ModelPolygonData | g_VertexNormals[19981].vertex.x
   Line 1780 [unrolled_memcpy]: // 004608b8: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
-
-====================================================================================================
-shape_design.c_sortPolygonsByTexture_FUN_0045b8b0 (13 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 26 [unrolled_memcpy]: for (iVar2 = 0x61; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 28 [pointer_cast]: pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 33 [unrolled_memcpy]: for (iVar2 = 0x61; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 34 [pointer_cast]: pSVar4 = (SShapeEditorPolygon *)((int)pSVar4 + (uint)bVar5 * -8 + 4);
-  Line 35 [pointer_cast]: pSVar2 = (SShapeEditorPolygon *)((int)pSVar2 + (uint)bVar5 * -8 + 4);
-  Line 42 [unrolled_memcpy]: for (iVar2 = 0x61; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 44 [static_self_assignment]: pSVar2 = pSVar2;
-  Line 45 [static_self_assignment]: pSVar4 = pSVar4;
-  Line 46 [pointer_cast]: pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
-  Line 49 [unrolled_memcpy]: // 0045b932: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
-  Line 52 [static_self_assignment]: puVar3 = puVar3;
-  Line 57 [unrolled_memcpy]: // 0045b956: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
-  Line 64 [unrolled_memcpy]: // 0045b973: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
-
-====================================================================================================
-shape_design.c_tileTextureMaps_FUN_0046a180 (16 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 34 [unrolled_strcpy]: do {
-  Line 114 [raw_address_constant]: (iVar3,(float *)(local_14 * 0x184 + 0x16e9a08 + local_1c * 4),
-  Line 115 [raw_address_constant]: (float *)(local_14 * 0x184 + 0x16e9a48 + local_1c * 4));
-  Line 119 [unrolled_strcpy]: do {
-  Line 131 [unrolled_strcpy]: do {
-  Line 146 [unrolled_strcpy]: do {
-  Line 156 [unrolled_strchr]: do {
-  Line 174 [unrolled_strcpy]: do {
-  Line 184 [unrolled_strchr]: do {
-  Line 197 [unrolled_strlen]: do {
-  Line 207 [unrolled_strlen]: do {
-  Line 216 [unrolled_strcpy]: do {
-  Line 231 [unrolled_strlen]: do {
-  Line 240 [unrolled_strcpy]: do {
-  Line 251 [unrolled_strchr]: do {
-
-====================================================================================================
-shape_design.c_validateModelTextures_FUN_00459a20 (4 suspects)
-  File: shape/design.c
-====================================================================================================
-  Line 40 [unrolled_strcpy]: do {
-  Line 52 [unrolled_strchr]: do {
-  Line 64 [unrolled_strcpy]: do {
-  Line 107 [unrolled_strcpy]: do {
 
 ====================================================================================================
 shape_design.c_vertexReducer_FUN_00467850 (19 suspects)

@@ -10,22 +10,13 @@
 void __cdecl shape_design_c_loadPalette_FUN_0046e810(void)
 
 {
-  char cVar2;
   int iVar2;
   int iVar3;
-  uint uVar3;
-  uint uVar4;
-  char *pcVar4;
   char *pcVar7;
-  char *pcVar8;
-  char *pcVar5;
-  byte bVar7;
   char local_b8 [80];
   char local_68 [80];
   int local_14;
-  char cVar1;
-  
-  bVar7 = 0;
+
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("  1) Load model palette",0,0x16);
   engine_2d_c_drawText_FUN_00401fd0("  2) Load .ACT file palette",0,0x21);
@@ -36,15 +27,7 @@ void __cdecl shape_design_c_loadPalette_FUN_0046e810(void)
     return;
   }
   local_14 = 1;
-  iVar3 = -1;
-  pcVar8 = local_b8;
-  do {
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    cVar1 = *pcVar8;
-    pcVar8 = pcVar8 + (uint)bVar7 * -2 + 1;
-  } while (cVar1 != '\0');
-  if (iVar3 != -2) {
+  if (strlen(local_b8) != 0) {
     local_14 = atoi(local_b8);
   }
   if (local_14 == 1) {
@@ -55,52 +38,15 @@ void __cdecl shape_design_c_loadPalette_FUN_0046e810(void)
       engine_2d_c_clearInputAndWait_FUN_00403260();
       return;
     }
-    pcVar4 = g_LoadedModelName;
-    pcVar5 = local_68;
-    do {
-      cVar2 = *pcVar4;
-      *pcVar5 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar4[1];
-      pcVar4 = pcVar4 + 2;
-      pcVar5[1] = cVar2;
-      pcVar5 = pcVar5 + 2;
-    } while (cVar2 != '\0');
-    pcVar8 = local_68;
-    do {
-      pcVar7 = pcVar8;
-      if (*pcVar8 == '.') goto LAB_0046e929;
-      if (*pcVar8 == '\0') break;
-      pcVar7 = pcVar8 + 1;
-      if (*pcVar7 == '.') goto LAB_0046e929;
-      pcVar8 = pcVar8 + 2;
-    } while (*pcVar7 != '\0');
-    pcVar7 = (char *)0x0;
-LAB_0046e929:
+    strcpy(local_68,g_LoadedModelName);
+    pcVar7 = strchr(local_68,'.');
     if (pcVar7 == (char *)0x0) {
-      uVar3 = 0xffffffff;
-      pcVar8 = local_68;
-      do {
-        if (uVar3 == 0) break;
-        uVar3 = uVar3 - 1;
-        cVar2 = *pcVar8;
-        pcVar8 = pcVar8 + (uint)bVar7 * -2 + 1;
-      } while (cVar2 != '\0');
-      if (~uVar3 - 1 < 9) {
+      if (strlen(local_68) < 9) {
         strcat(local_68,".ACT");
       }
     }
     else {
-      pcVar8 = ".ACT";
-      do {
-        cVar2 = *pcVar8;
-        *pcVar7 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar8[1];
-        pcVar8 = pcVar8 + 2;
-        pcVar7[1] = cVar2;
-        pcVar7 = pcVar7 + 2;
-      } while (cVar2 != '\0');
+      strcpy(pcVar7,".ACT");
     }
     iVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("art",local_68);
     if (iVar3 == -1) {
@@ -117,41 +63,14 @@ LAB_0046e929:
   }
   else if (local_14 == 2) {
     engine_2d_c_getInputWithPrompt_FUN_004032c0(local_68,0x4f,0,0x42,"Enter .ACT filename : ");
-    pcVar8 = local_68;
-    do {
-      pcVar7 = pcVar8;
-      if (*pcVar8 == '.') goto LAB_0046ea46;
-      if (*pcVar8 == '\0') break;
-      pcVar7 = pcVar8 + 1;
-      if (*pcVar7 == '.') goto LAB_0046ea46;
-      pcVar8 = pcVar8 + 2;
-    } while (*pcVar7 != '\0');
-    pcVar7 = (char *)0x0;
-LAB_0046ea46:
+    pcVar7 = strchr(local_68,'.');
     if (pcVar7 == (char *)0x0) {
-      uVar4 = 0xffffffff;
-      pcVar8 = local_68;
-      do {
-        if (uVar4 == 0) break;
-        uVar4 = uVar4 - 1;
-        cVar2 = *pcVar8;
-        pcVar8 = pcVar8 + (uint)bVar7 * -2 + 1;
-      } while (cVar2 != '\0');
-      if (~uVar4 - 1 < 9) {
+      if (strlen(local_68) < 9) {
         strcat(local_68,".ACT");
       }
     }
     else {
-      pcVar8 = ".ACT";
-      do {
-        cVar2 = *pcVar8;
-        *pcVar7 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar8[1];
-        pcVar8 = pcVar8 + 2;
-        pcVar7[1] = cVar2;
-        pcVar7 = pcVar7 + 2;
-      } while (cVar2 != '\0');
+      strcpy(pcVar7,".ACT");
     }
     iVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("art",local_68);
     if (iVar3 == -1) {

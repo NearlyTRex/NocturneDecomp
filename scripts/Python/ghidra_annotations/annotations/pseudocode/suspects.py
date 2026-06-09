@@ -4612,16 +4612,47 @@ def identify_unrolled_strcat_loops(decompiled_code):
 # `pA = pB;` at the top preserves the hit position when goto-ing out.
 _UNROLLED_STRCHR_SNAPSHOT_RE = re.compile(
     r"^\s*(\w+)\s*=\s*(\w+)\s*;\s*$")
+# The hit target may be a C char literal ('.', '\\x2e') OR a raw byte
+# constant (0x2e, 46) — Ghidra renders byte-typed scans with the numeric
+# form, which the char-literal-only pattern used to miss (e.g.
+# loadModelFile's `if (*pbVar6 == 0x2e) goto ...`).
 _UNROLLED_STRCHR_CHAR_HIT_RE = re.compile(
-    r"^\s*if\s*\(\s*\*\s*(\w+)\s*==\s*'((?:\\.|[^'\\])+)'\s*\)\s*goto\s+\w+\s*;\s*$")
+    r"^\s*if\s*\(\s*\*\s*(\w+)\s*==\s*"
+    r"('(?:\\.|[^'\\])+'|0x[0-9a-fA-F]+|\d+)\s*\)\s*goto\s+\w+\s*;\s*$")
+# Null terminator likewise appears as '\\0' or as a bare 0 / 0x0 byte.
 _UNROLLED_STRCHR_NULL_BREAK_RE = re.compile(
-    r"^\s*if\s*\(\s*\*\s*(\w+)\s*==\s*'\\0'\s*\)\s*break\s*;\s*$")
+    r"^\s*if\s*\(\s*\*\s*(\w+)\s*==\s*('\\0'|0x0+|0)\s*\)\s*break\s*;\s*$")
 _UNROLLED_STRCHR_STEP1_RE = re.compile(
     r"^\s*(\w+)\s*=\s*(\w+)\s*\+\s*1\s*;\s*$")
 _UNROLLED_STRCHR_STEP2_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\1\s*\+\s*2\s*;\s*$")
 _UNROLLED_STRCHR_WHILE_RE = re.compile(
-    r"^\s*\}\s*while\s*\(\s*\*\s*\w+\s*!=\s*'\\0'\s*\)\s*;\s*$")
+    r"^\s*\}\s*while\s*\(\s*\*\s*\w+\s*!=\s*('\\0'|0x0+|0)\s*\)\s*;\s*$")
+
+
+def _strchr_literal_value(tok):
+    """Parse a strchr hit-target token to its byte value.
+
+    Accepts a C char literal ('X', '\\n', '\\x2e') or a numeric byte
+    constant (0x2e, 46). Returns the int value, or None if unparseable.
+    """
+    if tok.startswith("'") and tok.endswith("'"):
+        inner = tok[1:-1]
+        if inner[:2] in ('\\x', '\\X'):
+            try:
+                return int(inner[2:], 16)
+            except ValueError:
+                return None
+        if len(inner) == 2 and inner[0] == '\\':
+            return {'n': 10, 't': 9, 'r': 13, '0': 0, 'b': 8, 'f': 12,
+                    'v': 11, '\\': 92, "'": 39, '"': 34}.get(inner[1])
+        if len(inner) == 1:
+            return ord(inner)
+        return None
+    try:
+        return int(tok, 0)
+    except ValueError:
+        return None
 
 
 def identify_unrolled_strchr_loops(decompiled_code):
@@ -4666,10 +4697,10 @@ def identify_unrolled_strchr_loops(decompiled_code):
         hit1_m = _UNROLLED_STRCHR_CHAR_HIT_RE.match(lines[i + 2])
         if not hit1_m or hit1_m.group(1) != pB:
             continue
-        lit = hit1_m.group(2)
+        lit_val = _strchr_literal_value(hit1_m.group(2))
         # Reject null-termination as the "char hit" — that's a different
         # idiom (the scan-for-null loop we see in CDemonSet_save).
-        if lit == '\\0':
+        if lit_val is None or lit_val == 0:
             continue
         # Body line 3: `if (*pB == '\0') break;`
         null_m = _UNROLLED_STRCHR_NULL_BREAK_RE.match(lines[i + 3])
@@ -4683,7 +4714,7 @@ def identify_unrolled_strchr_loops(decompiled_code):
         # Body line 5: `if (*pA == '<same_lit>') goto LAB_...;`
         hit2_m = _UNROLLED_STRCHR_CHAR_HIT_RE.match(lines[i + 5])
         if (not hit2_m or hit2_m.group(1) != pA
-                or hit2_m.group(2) != lit):
+                or _strchr_literal_value(hit2_m.group(2)) != lit_val):
             continue
         # Body line 6: `pB = pB + 2;`
         step2_m = _UNROLLED_STRCHR_STEP2_RE.match(lines[i + 6])
@@ -4699,6 +4730,8 @@ def identify_unrolled_strchr_loops(decompiled_code):
                 break
         if close_idx is None:
             continue
+        lit_disp = (repr(chr(lit_val)) if 32 <= lit_val < 127
+                    else hex(lit_val))
         suspects.append({
             'line': i + 1,
             'type': 'unrolled_strchr',
@@ -4706,9 +4739,9 @@ def identify_unrolled_strchr_loops(decompiled_code):
             'text': lines[i].strip()[:120],
             'description': (
                 "Watcom loop-unrolled strchr (2-byte-at-a-time scan for "
-                "literal '{lit}' with null-terminator break). Replace the "
-                "whole loop + fallback `= NULL` with strchr(ptr, '{lit}') "
-                "in a .keep.").format(lit=lit),
+                "literal {lit} with null-terminator break). Replace the "
+                "whole loop + fallback `= NULL` with strchr(ptr, {lit}) "
+                "in a .keep.").format(lit=lit_disp),
             'severity': 'moderate',
         })
     return suspects

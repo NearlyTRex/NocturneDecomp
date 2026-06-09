@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (209 diagnostics)
+Cppcheck (quick) (191 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (66)
+uninitvar (65)
 ----------------------------------------------------------------------------------------------------
 
   shape_design.c_convertWorldToScreenCoordinates_FUN line 47
@@ -23,10 +23,6 @@ uninitvar (66)
   shape_design.c_loadModelBinary_FUN_00458170        line 146
     File: shape/design.c
     Uninitialized variable: local_44
-
-  shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 112
-    File: shape/design.c
-    Uninitialized variable: local_20
 
   shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0   line 70
     File: shape/superopt.cpp
@@ -521,102 +517,6 @@ invalidscanf (60)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (23)
-----------------------------------------------------------------------------------------------------
-
-  shape_design.c_createKeyframeModel_FUN_00468320    line 46
-    File: shape/design.c
-    Redundant assignment of 'pcVar5' to itself.
-
-  shape_design.c_deletePolygonRange_FUN_0045dd70     line 36
-    File: shape/design.c
-    Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_deletePolygonRange_FUN_0045dd70     line 55
-    File: shape/design.c
-    Redundant assignment of 'pSVar3' to itself.
-
-  shape_design.c_deletePolygonRange_FUN_0045dd70     line 56
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_deleteSinglePolygon_FUN_0045dcc0    line 33
-    File: shape/design.c
-    Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_deleteSinglePolygon_FUN_0045dcc0    line 44
-    File: shape/design.c
-    Redundant assignment of 'pSVar3' to itself.
-
-  shape_design.c_deleteSinglePolygon_FUN_0045dcc0    line 45
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 210
-    File: shape/design.c
-    Redundant assignment of 'pSVar3' to itself.
-
-  shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 211
-    File: shape/design.c
-    Redundant assignment of 'pSVar4' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 142
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 143
-    File: shape/design.c
-    Redundant assignment of 'pSVar8' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 156
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 157
-    File: shape/design.c
-    Redundant assignment of 'pSVar9' to itself.
-
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 571
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 572
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  line 44
-    File: shape/design.c
-    Redundant assignment of 'pSVar2' to itself.
-
-  shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  line 45
-    File: shape/design.c
-    Redundant assignment of 'pSVar4' to itself.
-
-  shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  line 52
-    File: shape/design.c
-    Redundant assignment of 'puVar3' to itself.
-
-  shape_design.c_vertexReducer_FUN_00467850          line 196
-    File: shape/design.c
-    Redundant assignment of 'pbVar5' to itself.
-
-  shape_design.c_vertexReducer_FUN_00467850          line 201
-    File: shape/design.c
-    Redundant assignment of 'pbVar5' to itself.
-
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEd line 64
-    File: shape/superopt.cpp
-    Redundant assignment of 'pdVar4' to itself.
-
-  shape_superopt.cpp_CComplexPolygon_findReflexVerte line 65
-    File: shape/superopt.cpp
-    Redundant assignment of 'pdVar4' to itself.
-
-  shape_superopt.cpp_COptimize_exportOptimizeGeometr line 151
-    File: shape/superopt.cpp
-    Redundant assignment of 'iVar7' to itself.
-
-----------------------------------------------------------------------------------------------------
 nullPointerRedundantCheck (12)
 ----------------------------------------------------------------------------------------------------
 
@@ -669,56 +569,52 @@ nullPointerRedundantCheck (12)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (12)
+selfAssignment (11)
 ----------------------------------------------------------------------------------------------------
 
-  shape_design.c_quantizePaletteColors_FUN_0046b770  line 42
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 142
     File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+    Redundant assignment of 'pSVar5' to itself.
 
-  shape_design.c_quantizePaletteColors_FUN_0046b770  line 43
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 143
     File: shape/design.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+    Redundant assignment of 'pSVar8' to itself.
 
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 137
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 156
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
 
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 145
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 157
+    File: shape/design.c
+    Redundant assignment of 'pSVar9' to itself.
 
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 152
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 571
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
 
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 159
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 572
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
 
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 166
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  shape_design.c_vertexReducer_FUN_00467850          line 196
+    File: shape/design.c
+    Redundant assignment of 'pbVar5' to itself.
 
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 173
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  shape_design.c_vertexReducer_FUN_00467850          line 201
+    File: shape/design.c
+    Redundant assignment of 'pbVar5' to itself.
 
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 85
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEd line 64
+    File: shape/superopt.cpp
+    Redundant assignment of 'pdVar4' to itself.
 
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 89
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  shape_superopt.cpp_CComplexPolygon_findReflexVerte line 65
+    File: shape/superopt.cpp
+    Redundant assignment of 'pdVar4' to itself.
 
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 93
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 97
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
+  shape_superopt.cpp_COptimize_exportOptimizeGeometr line 151
+    File: shape/superopt.cpp
+    Redundant assignment of 'iVar7' to itself.
 
 ----------------------------------------------------------------------------------------------------
 invalidPointerCast (10)
@@ -763,6 +659,50 @@ invalidPointerCast (10)
   shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 47
     File: shape/meshlod.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
+shiftTooManyBitsSigned (10)
+----------------------------------------------------------------------------------------------------
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 137
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 145
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 152
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 159
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 166
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 173
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 85
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 89
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 93
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 97
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 legacyUninitvar (9)
@@ -853,36 +793,20 @@ objectIndex (3)
     The address of local variable 'local_84' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (2)
-----------------------------------------------------------------------------------------------------
-
-  shape_design.c_cramTextures_FUN_0046a970           line 62
-    File: shape/design.c
-    Possible null pointer dereference: local_18
-
-  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
-    File: shape/quantize.cpp
-    Possible null pointer dereference: local_20
-
-----------------------------------------------------------------------------------------------------
-arrayIndexOutOfBoundsCond (2)
-----------------------------------------------------------------------------------------------------
-
-  shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 112
-    File: shape/design.c
-    Either the condition 'bVar5' is redundant or the array 'local_58[2]' is accessed at index 2, which is out of bounds.
-
-  shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 116
-    File: shape/design.c
-    Either the condition 'bVar5' is redundant or the array 'local_58[2]' is accessed at index 3, which is out of bounds.
-
-----------------------------------------------------------------------------------------------------
 nullPointerArithmetic (1)
 ----------------------------------------------------------------------------------------------------
 
   shape_quantize.cpp_displayProgressBar_FUN_005568f0 line 35
     File: shape/quantize.cpp
     Pointer addition with NULL pointer.
+
+----------------------------------------------------------------------------------------------------
+nullPointer (1)
+----------------------------------------------------------------------------------------------------
+
+  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
+    File: shape/quantize.cpp
+    Possible null pointer dereference: local_20
 
 ----------------------------------------------------------------------------------------------------
 nullPointerArithmeticRedundantCheck (1)

@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        33 ( 0.5%)
+  Functions with type issues:        32 ( 0.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      33
+    Undefined types in variables:      32
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   185 functions
+  Excluded (.keep / MMX / by-value):   186 functions
     Wrong calling convention:          1
-    Undefined types in variables:      184
+    Undefined types in variables:      185
     Unresolved stack params:           0
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (33)
+Undefined types in variables (32)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -107,11 +107,6 @@ Undefined types in variables (33)
   CPoly_transform
     Address: 0x005ccc30  File: shape/superopt.cpp
     Locals:  local_1a0 (undefined4[4]), local_190 (undefined4), local_18c (undefined4), local_128 (undefined4[4]), local_118 (undefined4), local_114 (undefined4), local_e0 (undefined4[4]), local_d0 (undefined4), local_cc (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  exportModelToBIN
-    Address: 0x0045aa80  File: shape/design.c
-    Locals:  local_98 (undefined4), local_94 (undefined4), local_5c (undefined4), local_58 (undefined4), local_44 (undefined4), local_40 (undefined4), local_38 (undefined4), local_30 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   pointInPolygon2D
@@ -280,7 +275,7 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (184)
+Undefined types - .keep overrides (185)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -436,6 +431,11 @@ Undefined types - .keep overrides (184)
   saveScreenshotGeneral
     Address: 0x005490c0  File: engine/pcx.c
     Locals:  local_88 (undefined1), local_87 (undefined1), local_86 (undefined1), local_85 (undefined1), local_84 (undefined2), local_82 (undefined2), local_47 (undefined1), local_44 (undefined2)
+    Suggested: Resolve undefined types to concrete types
+
+  exportModelToBIN
+    Address: 0x0045aa80  File: shape/design.c
+    Locals:  local_98 (undefined4), local_94 (undefined4), local_5c (undefined4), local_58 (undefined4), local_44 (undefined4), local_40 (undefined4), local_38 (undefined4), local_30 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CLodMesh_sortFacesByAttribute

@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6337 (98.2%)
-Functions with suspects: 117 (1.8%)
+Clean functions: 6352 (98.4%)
+Functions with suspects: 102 (1.6%)
 
-Total suspect patterns: 985
-Average suspects per function: 0.15
+Total suspect patterns: 879
+Average suspects per function: 0.14
 
-Virtual files: 214 total, 210 at 100%, 210 at 90%+
+Virtual files: 214 total, 210 at 100%, 211 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 49.3
+Average complexity score: 49.1
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,29 +28,28 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              555
-  unrolled_memcpy           91
-  static_uninitvar          66
-  unrolled_strcpy           44
+  pointer_cast              534
+  unrolled_memcpy           78
+  static_uninitvar          65
   shadow_pointer_walk       43
   bitcast_double_pair       36
-  unrolled_strlen           30
-  static_self_assignment    23
-  unrolled_strchr           14
-  warning_inlined_function  12
-  static_shift_too_many_bits 12
+  unrolled_strcpy           20
+  unrolled_strlen           14
+  static_self_assignment    11
+  static_shift_too_many_bits 10
+  warning_inlined_function  9
   sub84_truncation          9
   static_legacy_uninitvar   9
   signed_shift_global_idiom 8
+  unrolled_strchr           6
   unaffected_reg            6
   static_invalid_pointer_cast 6
-  raw_address_constant      6
   static_identical_inner_condition 3
   static_object_index       3
-  static_null_pointer       2
+  raw_address_constant      3
   unrolled_memset           2
-  static_array_oob_cond     2
   static_null_pointer_arithmetic 1
+  static_null_pointer       1
   stack_alignment_array     1
   self_copy_guard           1
 
@@ -106,7 +105,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6287 more
+  ... and 6302 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -144,7 +143,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (91 functions):
+  pointer_cast (84 functions):
     00556a00: shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
     00556180: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     00555a40: shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
@@ -155,9 +154,9 @@ FUNCTIONS BY SUSPECT TYPE
     0051b3e0: shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0
     0051c480: shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480
     00516a40: shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40
-    ... and 81 more
+    ... and 74 more
 
-  unrolled_memcpy (37 functions):
+  unrolled_memcpy (32 functions):
     00555ff0: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
     00556180: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     00516500: shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
@@ -168,22 +167,9 @@ FUNCTIONS BY SUSPECT TYPE
     0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
     00517000: shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000
-    ... and 27 more
+    ... and 22 more
 
   static_uninitvar (0 functions):
-
-  unrolled_strcpy (11 functions):
-    0051ead0: shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-    0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
-    00459a20: shape_design.c_validateModelTextures_FUN_00459a20
-    00458ac0: shape_design.c_loadModelFile_FUN_00458ac0
-    00458170: shape_design.c_loadModelBinary_FUN_00458170
-    0045aa80: shape_design.c_exportModelToBIN_FUN_0045aa80
-    0046e810: shape_design.c_loadPalette_FUN_0046e810
-    004648e0: shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
-    0046a970: shape_design.c_cramTextures_FUN_0046a970
-    0046bb80: shape_design.c_cramTextureList_FUN_0046bb80
-    ... and 1 more
 
   shadow_pointer_walk (18 functions):
     00555ff0: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
@@ -206,43 +192,31 @@ FUNCTIONS BY SUSPECT TYPE
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
     005d2ac0: shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
 
-  unrolled_strlen (10 functions):
-    0045a7b0: shape_design.c_modelExportWizard_FUN_0045a7b0
-    00468320: shape_design.c_createKeyframeModel_FUN_00468320
-    0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
-    0046b770: shape_design.c_quantizePaletteColors_FUN_0046b770
-    00458ac0: shape_design.c_loadModelFile_FUN_00458ac0
-    0045dcc0: shape_design.c_deleteSinglePolygon_FUN_0045dcc0
-    0045dd70: shape_design.c_deletePolygonRange_FUN_0045dd70
-    0046e810: shape_design.c_loadPalette_FUN_0046e810
+  unrolled_strcpy (5 functions):
+    0051ead0: shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
+    00458170: shape_design.c_loadModelBinary_FUN_00458170
+    004648e0: shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
+    0046bb80: shape_design.c_cramTextureList_FUN_0046bb80
+    005d7e00: shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
+
+  unrolled_strlen (2 functions):
     00467850: shape_design.c_vertexReducer_FUN_00467850
     0046bb80: shape_design.c_cramTextureList_FUN_0046bb80
 
   static_self_assignment (0 functions):
 
-  unrolled_strchr (7 functions):
-    005568f0: shape_quantize.cpp_displayProgressBar_FUN_005568f0
-    0045a7b0: shape_design.c_modelExportWizard_FUN_0045a7b0
-    0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
-    00459a20: shape_design.c_validateModelTextures_FUN_00459a20
-    0046e810: shape_design.c_loadPalette_FUN_0046e810
-    0046a970: shape_design.c_cramTextures_FUN_0046a970
-    0046bb80: shape_design.c_cramTextureList_FUN_0046bb80
+  static_shift_too_many_bits (0 functions):
 
-  warning_inlined_function (12 functions):
+  warning_inlined_function (9 functions):
     005568f0: shape_quantize.cpp_displayProgressBar_FUN_005568f0
     00555090: shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
     00554a50: shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
     00519b50: shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     0051ead0: shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
     0051e990: shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
-    00468320: shape_design.c_createKeyframeModel_FUN_00468320
-    0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
     0045f1d0: shape_design.c_showFacetPartEditor_FUN_0045f1d0
-    0045aa80: shape_design.c_exportModelToBIN_FUN_0045aa80
-    ... and 2 more
-
-  static_shift_too_many_bits (0 functions):
+    0046b060: shape_design.c_loadTextureData_FUN_0046b060
+    0046bb80: shape_design.c_cramTextureList_FUN_0046bb80
 
   sub84_truncation (6 functions):
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
@@ -257,31 +231,31 @@ FUNCTIONS BY SUSPECT TYPE
   signed_shift_global_idiom (1 functions):
     0045f1d0: shape_design.c_showFacetPartEditor_FUN_0045f1d0
 
+  unrolled_strchr (2 functions):
+    005568f0: shape_quantize.cpp_displayProgressBar_FUN_005568f0
+    0046bb80: shape_design.c_cramTextureList_FUN_0046bb80
+
   unaffected_reg (1 functions):
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
 
   static_invalid_pointer_cast (0 functions):
 
-  raw_address_constant (5 functions):
-    0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
-    00458170: shape_design.c_loadModelBinary_FUN_00458170
-    0045aa80: shape_design.c_exportModelToBIN_FUN_0045aa80
-    005d7e00: shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
-    005d7000: shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
-
   static_identical_inner_condition (0 functions):
 
   static_object_index (0 functions):
 
-  static_null_pointer (0 functions):
+  raw_address_constant (3 functions):
+    00458170: shape_design.c_loadModelBinary_FUN_00458170
+    005d7e00: shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
+    005d7000: shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
 
   unrolled_memset (2 functions):
     005172c0: shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
     005151e0: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 
-  static_array_oob_cond (0 functions):
-
   static_null_pointer_arithmetic (0 functions):
+
+  static_null_pointer (0 functions):
 
   stack_alignment_array (1 functions):
     005173f0: shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0
