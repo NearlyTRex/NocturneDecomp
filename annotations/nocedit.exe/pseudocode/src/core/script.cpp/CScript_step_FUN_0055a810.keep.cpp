@@ -2687,7 +2687,7 @@ LAB_0055f0a8:
                                                   local_11c = local_11c + 1;
                                                   if (g_ScriptEventsEnabled == 0) {
                                                     core_enemy_cpp_CEnemy_setVictim_FUN_004a9ef0
-                                                              (this_ptr_02,&pCVar24->base);
+                                                              (this_ptr_02,(CDemonActor *)pCVar24);
                                                   }
                                                   }
                                                   else {

@@ -7,19 +7,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl shape_design_c_writePolygonModel_FUN_0045a320(int polygon_index,_FILE *output_file,float scale_factor)
 
 {
-  char cVar1;
   int iVar5;
-  char *pcVar6;
-  char *pcVar7;
   int local_14;
   int iVar3;
   int iVar4;
-  char cVar4;
   int iVar1;
   int iVar2;
 
@@ -45,17 +39,7 @@ void __cdecl shape_design_c_writePolygonModel_FUN_0045a320(int polygon_index,_FI
     iVar5 = _strcmp
                       (g_TempTextureName,g_ModelPolygonData[polygon_index].texture_name);
     if (iVar5 != 0) {
-      pcVar6 = g_ModelPolygonData[polygon_index].texture_name;
-      pcVar7 = g_TempTextureName;
-      do {
-        cVar4 = *pcVar6;
-        *pcVar7 = cVar4;
-        if (cVar4 == '\0') break;
-        cVar1 = pcVar6[1];
-        pcVar6 = pcVar6 + 2;
-        pcVar7[1] = cVar1;
-        pcVar7 = pcVar7 + 2;
-      } while (cVar1 != '\0');
+      strcpy(g_TempTextureName,g_ModelPolygonData[polygon_index].texture_name);
       _fprintf(output_file,"\tTEXTURE\t'%s'\n",g_TempTextureName);
     }
     _fprintf(output_file,"\tFACET%dTMAP\t%d,%d,%d,%d",

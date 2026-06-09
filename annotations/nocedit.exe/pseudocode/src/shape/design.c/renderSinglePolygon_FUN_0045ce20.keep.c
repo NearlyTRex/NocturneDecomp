@@ -7,14 +7,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
 
 {
-  char cVar2;
-  char *pcVar2;
-  char *pcVar3;
   SMRGLHeaderPrimitive local_c4;
   uint auStack_ac [16];
   SMRGLTextureBasic local_6c [3];
@@ -22,7 +17,6 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
   uint local_1c;
   int local_18;
   uint local_14;
-  char cVar1;
   
   if (((g_SelectionBlinkTimer == 0) ||
       ((polygon_index != g_SelectedPolygonIndex && (polygon_index != g_SecondaryPolygonIndex)))) &&
@@ -48,17 +42,7 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
     if ((g_ModelPolygonData[polygon_index].polygon_type == 2) &&
        (((g_EditorTextureMode == 0 || (g_EditorTextureMode == 1)) && (local_1c == 0)))) {
       local_6c[0].base.count = 0;
-      pcVar2 = g_ModelPolygonData[polygon_index].texture_name;
-      pcVar3 = local_6c[0].texture_name;
-      do {
-        cVar1 = *pcVar2;
-        *pcVar3 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = pcVar2[1];
-        pcVar2 = pcVar2 + 2;
-        pcVar3[1] = cVar2;
-        pcVar3 = pcVar3 + 2;
-      } while (cVar2 != '\0');
+      strcpy(local_6c[0].texture_name,g_ModelPolygonData[polygon_index].texture_name);
       engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(local_6c);
       for (local_18 = 0; local_18 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
           local_18 = local_18 + 1) {

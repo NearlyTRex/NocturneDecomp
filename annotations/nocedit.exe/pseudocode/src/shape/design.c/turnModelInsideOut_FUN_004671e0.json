@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 90,
+    "complexity_score": 25,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 25,
-    "suspect_count": 6,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 149
   },
   "cross_references": [
@@ -153,6 +151,62 @@
     },
     "pcode_op_count": 696
   },
+  "resolved_suspects": [
+    {
+      "description": "Raw hex literal 0x16e99c8 matches address of g_ModelPolygonData (+184 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 13,
+      "match": "0x16e99c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((uint *)(local_1c * 0x184 + 0x16e99c8 + local_18 * 4),",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x16e99c4 matches address of g_ModelPolygonData (+180 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 14,
+      "match": "0x16e99c4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint *)(local_1c * 0x184 + (uVar1 - local_18) * 4 + 0x16e99c4));",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x16e9a08 matches address of g_ModelPolygonData (+248 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 16,
+      "match": "0x16e9a08",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((float *)(local_1c * 0x184 + 0x16e9a08 + local_18 * 4),",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x16e9a04 matches address of g_ModelPolygonData (+244 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 17,
+      "match": "0x16e9a04",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(float *)(local_1c * 0x184 + (uVar1 - local_18) * 4 + 0x16e9a04));",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x16e9a48 matches address of g_ModelPolygonData (+312 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 19,
+      "match": "0x16e9a48",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((float *)(local_1c * 0x184 + 0x16e9a48 + local_18 * 4),",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x16e9a44 matches address of g_ModelPolygonData (+308 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 20,
+      "match": "0x16e9a44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(float *)(local_1c * 0x184 + (uVar1 - local_18) * 4 + 0x16e9a44));",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 32,
     "local_size": 32,
@@ -176,54 +230,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex literal 0x16e99c8 matches address of g_ModelPolygonData (+184 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 13,
-      "match": "0x16e99c8",
-      "severity": "moderate",
-      "text": "((uint *)(local_1c * 0x184 + 0x16e99c8 + local_18 * 4),",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x16e99c4 matches address of g_ModelPolygonData (+180 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 14,
-      "match": "0x16e99c4",
-      "severity": "moderate",
-      "text": "(uint *)(local_1c * 0x184 + (uVar1 - local_18) * 4 + 0x16e99c4));",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x16e9a08 matches address of g_ModelPolygonData (+248 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 16,
-      "match": "0x16e9a08",
-      "severity": "moderate",
-      "text": "((float *)(local_1c * 0x184 + 0x16e9a08 + local_18 * 4),",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x16e9a04 matches address of g_ModelPolygonData (+244 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 17,
-      "match": "0x16e9a04",
-      "severity": "moderate",
-      "text": "(float *)(local_1c * 0x184 + (uVar1 - local_18) * 4 + 0x16e9a04));",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x16e9a48 matches address of g_ModelPolygonData (+312 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 19,
-      "match": "0x16e9a48",
-      "severity": "moderate",
-      "text": "((float *)(local_1c * 0x184 + 0x16e9a48 + local_18 * 4),",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x16e9a44 matches address of g_ModelPolygonData (+308 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 20,
-      "match": "0x16e9a44",
-      "severity": "moderate",
-      "text": "(float *)(local_1c * 0x184 + (uVar1 - local_18) * 4 + 0x16e9a44));",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

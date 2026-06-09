@@ -10,25 +10,13 @@
 void __cdecl shape_design_c_exportModelToMDL_FUN_00459e80(char *mdl_filename)
 
 {
-  char cVar2;
   _FILE *file;
-  char *pcVar2;
   char local_6c [80];
   int local_1c;
   int local_18;
-  char cVar1;
-  
+
   shape_design_c_sortPolygonsByTexture_FUN_0045b8b0();
-  pcVar2 = local_6c;
-  do {
-    cVar1 = *mdl_filename;
-    *pcVar2 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = mdl_filename[1];
-    mdl_filename = mdl_filename + 2;
-    pcVar2[1] = cVar2;
-    pcVar2 = pcVar2 + 2;
-  } while (cVar2 != '\0');
+  strcpy(local_6c, mdl_filename);
   file = engine_dosio_cpp_getFile_FUN_00481a50("models",local_6c,"wt");
   if (file == (_FILE *)0x0) {
     engine_2d_c_drawText_FUN_00401fd0("FILE ERROR! Nothing changed!",0,0x16);

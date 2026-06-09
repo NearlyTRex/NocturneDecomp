@@ -158,15 +158,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
           pCVar15->name[1] = bVar4;
           pCVar15 = (C3DSCamera *)(pCVar15->name + 2);
         } while (bVar4 != 0);
-        iVar11 = -1;
-        pbVar12 = abStack_4be + 2;
-        do {
-          if (iVar11 == 0) break;
-          iVar11 = iVar11 + -1;
-          bVar4 = *pbVar12;
-          pbVar12 = pbVar12 + (uint)bVar19 * -2 + 1;
-        } while (bVar4 != 0);
-        if ((iVar11 != -2) &&
+        iVar11 = strlen((char *)(abStack_4be + 2));
+        if ((iVar11 != 0) &&
            (iVar11 = core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660
                                (this_ptr,this_ptr->camera_count), iVar11 != 0)) {
           this_ptr->camera_count = this_ptr->camera_count + 1;
@@ -275,17 +268,10 @@ LAB_0057eb3b:
             pCVar15 = (C3DSCamera *)(pCVar15->name + 2);
             pbVar12[1] = bVar4;
           } while (bVar4 != 0);
-          uVar6 = 0xffffffff;
-          pbVar12 = abStack_4be + 2;
-          do {
-            if (uVar6 == 0) break;
-            uVar6 = uVar6 - 1;
-            bVar4 = *pbVar12;
-            pbVar12 = pbVar12 + (uint)bVar19 * -2 + 1;
-          } while (bVar4 != 0);
-          iVar11 = ~uVar6 - 2;
+          uVar6 = strlen((char *)(abStack_4be + 2));
+          iVar11 = uVar6 - 1;
           if (0 < iVar11) {
-            pbVar12 = abStack_4be + ~uVar6;
+            pbVar12 = abStack_4be + uVar6 + 1;
             do {
               if ((*pbVar12 < 0x30) || (0x39 < *pbVar12)) break;
               iVar11 = iVar11 + -1;

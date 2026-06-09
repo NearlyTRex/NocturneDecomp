@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 656,
-    "complexity_score": 247,
+    "complexity_score": 232,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 64,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 232,
-    "suspect_count": 1,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 888
   },
   "cross_references": [
@@ -596,6 +594,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Raw hex literal 0x766880 matches address of g_RenderVertexBuffer (+911468 bytes into) (type SRenderVertex[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 149,
+      "match": "0x766880",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(g_ModelPolygonData,0,0x766880);",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Raw hex literal 0x1626410 matches address of g_LoadedVertices (+4 bytes into) (type SVertexData[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 203,
       "match": "0x1626410",
@@ -809,14 +816,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex literal 0x766880 matches address of g_RenderVertexBuffer (+911468 bytes into) (type SRenderVertex[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 149,
-      "match": "0x766880",
-      "severity": "moderate",
-      "text": "memset(g_ModelPolygonData,0,0x766880);",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

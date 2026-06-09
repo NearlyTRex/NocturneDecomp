@@ -24,11 +24,7 @@ void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void)
   if ((-1 < local_18) && (local_18 < g_VertexCount)) {
     for (local_14 = local_18; local_14 < g_VertexCount + -1; local_14 = local_14 + 1) {
       iVar1 = local_14 + 1;
-      g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1].vertex.x;
-      g_LoadedVertices[local_14].vertex.y = g_LoadedVertices[iVar1].vertex.y;
-      g_LoadedVertices[local_14].vertex.z = g_LoadedVertices[iVar1].vertex.z;
-      g_LoadedVertices[local_14].u = g_LoadedVertices[iVar1].u;
-      g_LoadedVertices[local_14].v = g_LoadedVertices[iVar1].v;
+      g_LoadedVertices[local_14] = g_LoadedVertices[iVar1];
     }
     g_VertexCount = g_VertexCount + -1;
   }

@@ -6,8 +6,8 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6311 (97.8%)
-Files at 100%: 208
+Clean functions: 6337 (98.2%)
+Files at 100%: 210
 Files at 90%+: 210
 Files at 50%+: 214
 
@@ -85,6 +85,7 @@ FILES AT 100% (COMPLETE)
   core/flies.cpp: 22 functions, 681 lines
   core/frankgen.cpp: 24 functions, 662 lines
   core/gabriela.cpp: 38 functions, 2677 lines
+  core/game.cpp: 66 functions, 6745 lines
   core/gargoyle.cpp: 16 functions, 941 lines
   core/gasmask.cpp: 14 functions, 131 lines
   core/ghoul.cpp: 18 functions, 1799 lines
@@ -142,6 +143,7 @@ FILES AT 100% (COMPLETE)
   core/set.cpp: 87 functions, 5059 lines
   core/setcolid.cpp: 40 functions, 1555 lines
   core/setdir.cpp: 32 functions, 1296 lines
+  core/setedit.cpp: 58 functions, 9067 lines
   core/setutil.cpp: 41 functions, 1409 lines
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
@@ -223,24 +225,40 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 208 files
+Total: 210 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   98.5% | core/game.cpp
-         65/66 clean, 1 remaining
-           - core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1728 lines) [unrolled_strlen]
-
-   98.3% | core/setedit.cpp
-         57/58 clean, 1 remaining
-           - core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (702 lines) [unrolled_strlen]
-
-Total: 2 files
+Total: 0 files
 
 ====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
+   86.5% | shape/design.c
+         141/163 clean, 22 remaining
+           - shape_design.c_modelExportWizard_FUN_0045a7b0 (146 lines) [unrolled_strchr, unrolled_strlen]
+           - shape_design.c_createKeyframeModel_FUN_00468320 (117 lines) [unrolled_strlen, warning_inlined_function]
+           - shape_design.c_tileTextureMaps_FUN_0046a180 (330 lines) [raw_address_constant, unrolled_strchr, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
+           - shape_design.c_validateModelTextures_FUN_00459a20 (150 lines) [unrolled_strchr, unrolled_strcpy]
+           - shape_design.c_quantizePaletteColors_FUN_0046b770 (65 lines) [unrolled_strlen]
+           - shape_design.c_loadModelFile_FUN_00458ac0 (295 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen]
+           - shape_design.c_showFacetPartEditor_FUN_0045f1d0 (597 lines) [pointer_cast, signed_shift_global_idiom, unrolled_memcpy, warning_inlined_function]
+           - shape_design.c_sortPolygonsByTexture_FUN_0045b8b0 (49 lines) [pointer_cast, unrolled_memcpy]
+           - shape_design.c_loadModelBinary_FUN_00458170 (240 lines) [raw_address_constant, unrolled_strcpy]
+           - shape_design.c_removeUnusedVertices_FUN_00463830 (61 lines) [pointer_cast, unrolled_memcpy]
+           - shape_design.c_mergeAdjacentPolygons_FUN_00462b70 (227 lines) [pointer_cast, unrolled_memcpy]
+           - shape_design.c_deleteSinglePolygon_FUN_0045dcc0 (42 lines) [pointer_cast, unrolled_memcpy, unrolled_strlen]
+           - shape_design.c_exportModelToBIN_FUN_0045aa80 (383 lines) [raw_address_constant, unrolled_strcpy, warning_inlined_function]
+           - shape_design.c_loadTextureData_FUN_0046b060 (154 lines) [pointer_cast, warning_inlined_function]
+           - shape_design.c_deletePolygonRange_FUN_0045dd70 (55 lines) [pointer_cast, unrolled_memcpy, unrolled_strlen]
+           - shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470 (109 lines) [pointer_cast, unrolled_memcpy]
+           - shape_design.c_loadPalette_FUN_0046e810 (216 lines) [unrolled_strchr, unrolled_strcpy, unrolled_strlen]
+           - shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 (168 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
+           - shape_design.c_cramTextures_FUN_0046a970 (112 lines) [unrolled_strchr, unrolled_strcpy]
+           - shape_design.c_vertexReducer_FUN_00467850 (216 lines) [pointer_cast, unrolled_strlen]
+           - shape_design.c_samplePixelAndAccumulate_FUN_0046ad00 (16 lines) [pointer_cast]
+           - shape_design.c_cramTextureList_FUN_0046bb80 (1047 lines) [unrolled_strchr, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
    74.7% | shape/superopt.cpp
          139/186 clean, 47 remaining
            - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
@@ -301,54 +319,6 @@ FILES AT 50-89%
            - shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (101 lines) [pointer_cast, warning_inlined_function]
            - shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (164 lines) [unaffected_reg]
            - shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70 (48 lines) [pointer_cast]
-   71.8% | shape/design.c
-         117/163 clean, 46 remaining
-           - shape_design.c_modelExportWizard_FUN_0045a7b0 (146 lines) [unrolled_strchr, unrolled_strlen]
-           - shape_design.c_triangulateDSE_FUN_0046e4d0 (58 lines) [pointer_cast, unrolled_memcpy]
-           - shape_design.c_removeDuplicatePolygons_FUN_004651b0 (52 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - shape_design.c_createKeyframeModel_FUN_00468320 (117 lines) [unrolled_strlen, warning_inlined_function]
-           - shape_design.c_generateGlobe_FUN_00468910 (97 lines) [unrolled_strlen]
-           - shape_design.c_qsortCompareByField4_FUN_004661d0 (4 lines) [pointer_cast]
-           - shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 (216 lines) [pointer_cast, unrolled_memcpy]
-           - shape_design.c_tileTextureMaps_FUN_0046a180 (330 lines) [raw_address_constant, unrolled_strchr, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - shape_design.c_validateModelTextures_FUN_00459a20 (150 lines) [unrolled_strchr, unrolled_strcpy]
-           - shape_design.c_renderSinglePolygon_FUN_0045ce20 (102 lines) [unrolled_strcpy, warning_inlined_function]
-           - shape_design.c_removeDegenerateTriangles_FUN_00463a20 (45 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - shape_design.c_quantizePaletteColors_FUN_0046b770 (65 lines) [unrolled_strlen]
-           - shape_design.c_writePolygonModel_FUN_0045a320 (58 lines) [unrolled_strcpy, warning_inlined_function]
-           - shape_design.c_detachFaces_FUN_0046eba0 (51 lines) [unrolled_memcpy]
-           - shape_design.c_loadModelFile_FUN_00458ac0 (295 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen]
-           - shape_design.c_showFacetPartEditor_FUN_0045f1d0 (597 lines) [pointer_cast, signed_shift_global_idiom, unrolled_memcpy, warning_inlined_function]
-           - shape_design.c_createCenterVertex_FUN_00469690 (72 lines) [unrolled_strlen]
-           - shape_design.c_generateOctant_FUN_00469420 (103 lines) [unrolled_strlen]
-           - shape_design.c_sortPolygonsByTexture_FUN_0045b8b0 (49 lines) [pointer_cast, unrolled_memcpy]
-           - shape_design.c_generateShell_FUN_00468f20 (90 lines) [unrolled_strlen]
-           - shape_design.c_polygonToolModeManager_FUN_00464c90 (180 lines) [unrolled_strcpy]
-           - shape_design.c_createBoxPrimitive_FUN_0045e520 (116 lines) [unrolled_strlen]
-           - shape_design.c_loadModelBinary_FUN_00458170 (240 lines) [raw_address_constant, unrolled_strcpy]
-           - shape_design.c_exportModelToMDL_FUN_00459e80 (68 lines) [unrolled_strcpy]
-           - shape_design.c_duplicateSharedVertices_FUN_00465d50 (54 lines) [unrolled_memcpy]
-           - shape_design.c_removeUnusedVertices_FUN_00463830 (61 lines) [pointer_cast, unrolled_memcpy]
-           - shape_design.c_mergeAdjacentPolygons_FUN_00462b70 (227 lines) [pointer_cast, unrolled_memcpy]
-           - shape_design.c_deleteSinglePolygon_FUN_0045dcc0 (42 lines) [pointer_cast, unrolled_memcpy, unrolled_strlen]
-           - shape_design.c_exportModelToBIN_FUN_0045aa80 (383 lines) [raw_address_constant, unrolled_strcpy, warning_inlined_function]
-           - shape_design.c_loadTextureData_FUN_0046b060 (154 lines) [pointer_cast, warning_inlined_function]
-           - shape_design.c_deletePolygonRange_FUN_0045dd70 (55 lines) [pointer_cast, unrolled_memcpy, unrolled_strlen]
-           - shape_design.c_selectVertexToDelete_FUN_0045c5b0 (52 lines) [unrolled_memcpy]
-           - shape_design.c_sizeForStadium_FUN_00469c70 (109 lines) [unrolled_strlen]
-           - shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470 (109 lines) [pointer_cast, unrolled_memcpy]
-           - shape_design.c_configureSpatialSplittingPlane_FUN_004617c0 (119 lines) [unrolled_strlen]
-           - shape_design.c_loadPalette_FUN_0046e810 (216 lines) [unrolled_strchr, unrolled_strcpy, unrolled_strlen]
-           - shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 (168 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
-           - shape_design.c_cramTextures_FUN_0046a970 (112 lines) [unrolled_strchr, unrolled_strcpy]
-           - shape_design.c_vertexReducer_FUN_00467850 (216 lines) [pointer_cast, unrolled_strlen]
-           - shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90 (77 lines) [unrolled_strlen]
-           - shape_design.c_removeDegeneratePolygons_FUN_00465310 (60 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - shape_design.c_loadS3DModelFile_FUN_004593a0 (232 lines) [raw_address_constant]
-           - shape_design.c_samplePixelAndAccumulate_FUN_0046ad00 (16 lines) [pointer_cast]
-           - shape_design.c_turnModelInsideOut_FUN_004671e0 (25 lines) [raw_address_constant]
-           - shape_design.c_cramTextureList_FUN_0046bb80 (1047 lines) [unrolled_strchr, unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - shape_design.c_setupViewMatrix_FUN_0045ba60 (42 lines) [signed_shift_global_idiom]
    68.5% | shape/meshlod.cpp
          85/124 clean, 39 remaining
            - shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (30 lines) [unrolled_memcpy]

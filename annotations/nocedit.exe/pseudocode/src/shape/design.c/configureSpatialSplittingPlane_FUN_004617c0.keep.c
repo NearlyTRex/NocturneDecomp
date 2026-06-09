@@ -16,7 +16,6 @@ void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNod
   STreeNode *pSVar4;
   STreeNode *pSVar3;
   uint uVar4;
-  byte *pbVar5;
   byte bVar6;
   SShapeEditorPolygon local_214;
   byte local_90 [80];
@@ -30,21 +29,13 @@ void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNod
   uint local_1c;
   int local_18;
   int local_14;
-  byte bVar1;
   
   bVar6 = 0;
   engine_2d_c_getInputWithPrompt_FUN_004032c0((char *)local_90,0x13,0,0,"Connecting part : ");
   local_28 = 0.0;
   do {
-    uVar4 = 0xffffffff;
-    pbVar5 = local_90;
-    do {
-      if (uVar4 == 0) break;
-      uVar4 = uVar4 - 1;
-      pbVar5 = pbVar5 + (uint)bVar6 * -2 + 1;
-      bVar1 = *pbVar5;
-    } while (bVar1 != 0);
-    if (~uVar4 - 1 <= (uint)local_28) break;
+    uVar4 = strlen((char *)local_90);
+    if (uVar4 <= (uint)local_28) break;
     iVar2 = toupper((uint)local_90[(int)local_28]);
     local_90[(int)local_28] = (byte)iVar2;
     local_28 = (float)((int)local_28 + 1);

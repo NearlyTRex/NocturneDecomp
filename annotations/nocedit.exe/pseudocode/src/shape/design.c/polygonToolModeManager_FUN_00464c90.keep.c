@@ -10,20 +10,14 @@
 int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_parameter)
 
 {
-  char cVar2;
   int iVar2;
   int iVar4;
   int iVar3;
-  char *pcVar4;
-  char *pcVar7;
-  char *pcVar5;
-  char *pcVar8;
   double dVar8;
   char local_b8 [80];
   char local_68 [80];
   int local_18;
   float local_14;
-  char cVar1;
   byte bVar7;
   
   bVar7 = 0;
@@ -42,17 +36,7 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
       }
       g_SavedVertexCount = g_VertexCount;
       g_SavedPolygonCount = g_PolygonCount;
-      pcVar8 = g_LoadedModelName;
-      pcVar7 = g_SavedModelName;
-      do {
-        cVar2 = *pcVar8;
-        *pcVar7 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar8[1];
-        pcVar8 = pcVar8 + 2;
-        pcVar7[1] = cVar2;
-        pcVar7 = pcVar7 + 2;
-      } while (cVar2 != '\0');
+      strcpy(g_SavedModelName,g_LoadedModelName);
     }
     if ((g_ToolModeEnabled == 0) ||
        (((iVar4 = _strcmp(g_SavedModelName,g_LoadedModelName), iVar4 == 0
@@ -111,28 +95,8 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
             wincore_windll_cpp_lockFrame_FUN_005b7210();
           }
         }
-        pcVar4 = "Mouse polygon selection on";
-        pcVar5 = local_b8;
-        do {
-          cVar1 = *pcVar4;
-          *pcVar5 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar2 = pcVar4[1];
-          pcVar4 = pcVar4 + 2;
-          pcVar5[1] = cVar2;
-          pcVar5 = pcVar5 + 2;
-        } while (cVar2 != '\0');
-        pcVar7 = &s_EmptyChar_0061c3fe;
-        pcVar8 = local_68;
-        do {
-          cVar2 = *pcVar7;
-          *pcVar8 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar7[1];
-          pcVar7 = pcVar7 + 2;
-          pcVar8[1] = cVar2;
-          pcVar8 = pcVar8 + 2;
-        } while (cVar2 != '\0');
+        strcpy(local_b8,"Mouse polygon selection on");
+        strcpy(local_68,&s_EmptyChar_0061c3fe);
         switch(g_PolygonToolMode) {
         case 1:
           _sprintf(local_68," - Polygon merger (tol = %4.2f degs)",(double)local_14);

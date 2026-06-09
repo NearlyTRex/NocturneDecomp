@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (220 diagnostics)
+Cppcheck (quick) (209 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -521,16 +521,8 @@ invalidscanf (60)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (34)
+selfAssignment (23)
 ----------------------------------------------------------------------------------------------------
-
-  shape_design.c_createBoxPrimitive_FUN_0045e520     line 59
-    File: shape/design.c
-    Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_createCenterVertex_FUN_00469690     line 55
-    File: shape/design.c
-    Redundant assignment of 'pcVar3' to itself.
 
   shape_design.c_createKeyframeModel_FUN_00468320    line 46
     File: shape/design.c
@@ -560,18 +552,6 @@ selfAssignment (34)
     File: shape/design.c
     Redundant assignment of 'pSVar5' to itself.
 
-  shape_design.c_generateGlobe_FUN_00468910          line 75
-    File: shape/design.c
-    Redundant assignment of 'pcVar3' to itself.
-
-  shape_design.c_generateOctant_FUN_00469420         line 75
-    File: shape/design.c
-    Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_generateShell_FUN_00468f20          line 75
-    File: shape/design.c
-    Redundant assignment of 'pcVar3' to itself.
-
   shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 210
     File: shape/design.c
     Redundant assignment of 'pSVar3' to itself.
@@ -579,14 +559,6 @@ selfAssignment (34)
   shape_design.c_mergeAdjacentPolygons_FUN_00462b70  line 211
     File: shape/design.c
     Redundant assignment of 'pSVar4' to itself.
-
-  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 202
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 203
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
 
   shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 142
     File: shape/design.c
@@ -612,10 +584,6 @@ selfAssignment (34)
     File: shape/design.c
     Redundant assignment of 'pSVar6' to itself.
 
-  shape_design.c_sizeForStadium_FUN_00469c70         line 81
-    File: shape/design.c
-    Redundant assignment of 'pcVar5' to itself.
-
   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  line 44
     File: shape/design.c
     Redundant assignment of 'pSVar2' to itself.
@@ -627,18 +595,6 @@ selfAssignment (34)
   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  line 52
     File: shape/design.c
     Redundant assignment of 'puVar3' to itself.
-
-  shape_design.c_translateAllVerticesAlongAxis_FUN_0 line 51
-    File: shape/design.c
-    Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_triangulateDSE_FUN_0046e4d0         line 45
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_triangulateDSE_FUN_0046e4d0         line 46
-    File: shape/design.c
-    Redundant assignment of 'pSVar7' to itself.
 
   shape_design.c_vertexReducer_FUN_00467850          line 196
     File: shape/design.c

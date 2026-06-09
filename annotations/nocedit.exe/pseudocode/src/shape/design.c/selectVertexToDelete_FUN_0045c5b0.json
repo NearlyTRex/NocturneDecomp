@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 67,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 52,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 188
   },
   "cross_references": [
@@ -145,6 +143,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 37,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1].vertex.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 24,
       "match": "do { if (v==0) break; v=v-1; ... }",
@@ -191,14 +198,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 37,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1].vertex.x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

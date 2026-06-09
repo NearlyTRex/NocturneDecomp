@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 100,
+    "complexity_score": 60,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 60,
-    "suspect_count": 3,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 231
   },
   "cross_references": [
@@ -190,6 +187,35 @@
     },
     "pcode_op_count": 860
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 56,
+      "match": "pSVar4 = (T *)pSVar4->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4 = (SShapeEditorPolygon *)pSVar4->texture_name;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 57,
+      "match": "pSVar5 = (T *)pSVar5->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SShapeEditorPolygon *)pSVar5->texture_name;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004654b6, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 151,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 004654b6: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 40,
     "local_size": 40,
@@ -227,30 +253,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 56,
-      "match": "pSVar4 = (T *)pSVar4->ARRAY",
-      "severity": "moderate",
-      "text": "pSVar4 = (SShapeEditorPolygon *)pSVar4->texture_name;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 57,
-      "match": "pSVar5 = (T *)pSVar5->ARRAY",
-      "severity": "moderate",
-      "text": "pSVar5 = (SShapeEditorPolygon *)pSVar5->texture_name;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 004654b6, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 151,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 004654b6: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

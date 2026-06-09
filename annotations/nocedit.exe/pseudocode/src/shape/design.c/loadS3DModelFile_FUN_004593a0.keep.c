@@ -100,7 +100,7 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
         }
       }
       shape_design_c_skipLines_FUN_00459360(file,1);
-      memset(g_ModelPolygonData,0,0x766880);
+      memset(g_ModelPolygonData,0,sizeof(g_ModelPolygonData));
       local_14 = g_ModelPolygonData;
       for (local_40 = 0; (int)local_40 < g_PartsCount; local_40 = local_40 + 1) {
         for (local_18 = 0; local_18 < local_8d8[local_40]; local_18 = local_18 + 1) {

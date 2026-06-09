@@ -13,9 +13,6 @@ uint __cdecl shape_design_c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygo
   uint uVar1;
   int iVar3;
   uint uVar4;
-  int iVar2;
-  SShapeEditorPolygon *pSVar5;
-  SShapeEditorPolygon *pSVar6;
   byte bVar7;
   float10 fVar8;
   double dVar9;
@@ -193,15 +190,7 @@ LAB_004623f2:
         }
         for (local_28[3] = second_polygon_index; uVar4 = g_PolygonCount - 1,
             (int)local_28[3] < (int)uVar4; local_28[3] = local_28[3] + 1) {
-          pSVar5 = g_ModelPolygonData + local_28[3] + 1;
-          pSVar6 = g_ModelPolygonData + local_28[3];
-          for (iVar2 = 0x61; iVar2 != 0; iVar2 = iVar2 + -1) {
-            pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar7 * -8 + 4);
-            pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
-            pSVar6->polygon_type = pSVar5->polygon_type;
-            pSVar5 = pSVar5;
-            pSVar6 = pSVar6;
-          }
+          g_ModelPolygonData[local_28[3]] = g_ModelPolygonData[local_28[3] + 1];
         }
         g_PolygonCount = g_PolygonCount + -1;
       }

@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 69
-  Total diagnostics: 220
+  Functions with findings: 60
+  Total diagnostics: 209
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 42, raw .cpp files: 27
+  .keep.cpp files: 40, raw .cpp files: 20
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -337,13 +337,6 @@ core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppch
   Line   19: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-shape_design.c_mergeTrianglesIntoQuad_FUN_00462190  [.keep] [Cppcheck (quick)]
-  File: shape/design.c  (2 diagnostics)
-
-  Line  202: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
-  Line  203: [selfAssignment] Redundant assignment of 'pSVar6' to itself.
-
-----------------------------------------------------------------------------------------------------
 shape_design.c_quantizePaletteColors_FUN_0046b770  [.cpp] [Cppcheck (quick)]
   File: shape/design.c  (2 diagnostics)
 
@@ -356,13 +349,6 @@ shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep] [Cppcheck (quick)]
 
   Line  571: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
   Line  572: [selfAssignment] Redundant assignment of 'pSVar6' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_triangulateDSE_FUN_0046e4d0  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (2 diagnostics)
-
-  Line   45: [selfAssignment] Redundant assignment of 'pSVar6' to itself.
-  Line   46: [selfAssignment] Redundant assignment of 'pSVar7' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_vertexReducer_FUN_00467850  [.keep] [Cppcheck (quick)]
@@ -440,18 +426,6 @@ shape_design.c_cramTextures_FUN_0046a970  [.cpp] [Cppcheck (quick)]
   Line   62: [nullPointer] Possible null pointer dereference: local_18
 
 ----------------------------------------------------------------------------------------------------
-shape_design.c_createBoxPrimitive_FUN_0045e520  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   59: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_createCenterVertex_FUN_00469690  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   55: [selfAssignment] Redundant assignment of 'pcVar3' to itself.
-
-----------------------------------------------------------------------------------------------------
 shape_design.c_createKeyframeModel_FUN_00468320  [.cpp] [Cppcheck (quick)]
   File: shape/design.c  (1 diagnostics)
 
@@ -464,40 +438,10 @@ shape_design.c_findVertexListInModel_FUN_00468000  [.keep] [Cppcheck (quick)]
   Line   15: [nullPointerRedundantCheck] Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.
 
 ----------------------------------------------------------------------------------------------------
-shape_design.c_generateGlobe_FUN_00468910  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   75: [selfAssignment] Redundant assignment of 'pcVar3' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_generateOctant_FUN_00469420  [.keep] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   75: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_generateShell_FUN_00468f20  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   75: [selfAssignment] Redundant assignment of 'pcVar3' to itself.
-
-----------------------------------------------------------------------------------------------------
 shape_design.c_getVertexCountFromModel_FUN_00468080  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (1 diagnostics)
 
   Line   15: [nullPointerRedundantCheck] Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_sizeForStadium_FUN_00469c70  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   81: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90  [.cpp] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   51: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0  [.keep] [Cppcheck (quick)]
