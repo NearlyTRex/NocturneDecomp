@@ -7,16 +7,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int pixel_depth,int atlas_total_width,int atlas_total_height)
 
 {
   int iVar2;
   int iVar3;
   uint uVar4;
-  void *ptr;
-  void *dest;
+  uchar *ptr;
+  uchar *dest;
   int iVar1;
   int iVar5;
   uchar local_184 [4];
@@ -48,13 +46,13 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
   }
   _fseek(local_1c,0x11,0);
   uVar4 = _fgetc(local_1c);
-  ptr = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+  ptr = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                   (entry->original_width * entry->original_height * 3,"..\\shape\\design.c",
                    0x27ad);
-  dest = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+  dest = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                    (entry->original_width * entry->original_height,"..\\shape\\design.c",0x27ae)
   ;
-  if ((ptr == (void *)0x0) || (dest == (void *)0x0)) {
+  if ((ptr == (uchar *)0x0) || (dest == (uchar *)0x0)) {
     g_CurrentFilename = "..\\shape\\design.c";
     g_CurrentLineNumber = 0x27af;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of mem!");
@@ -64,16 +62,16 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
     local_3c = entry->original_height;
     while (local_3c = local_3c - 1, -1 < (int)local_3c) {
       shape_design_c_readPixelRowFromFile_FUN_0046abf0
-                (local_1c,(uchar *)(local_3c * iVar5 + (int)ptr),
-                 (uchar *)(local_3c * entry->original_width + (int)dest),entry->original_width,
+                (local_1c,ptr + local_3c * iVar5,
+                 dest + local_3c * entry->original_width,entry->original_width,
                  pixel_depth);
     }
   }
   else {
     for (local_3c = 0; (int)local_3c < (int)entry->original_height; local_3c = local_3c + 1) {
       shape_design_c_readPixelRowFromFile_FUN_0046abf0
-                (local_1c,(uchar *)(local_3c * iVar5 + (int)ptr),
-                 (uchar *)(local_3c * entry->original_width + (int)dest),entry->original_width,
+                (local_1c,ptr + local_3c * iVar5,
+                 dest + local_3c * entry->original_width,entry->original_width,
                  pixel_depth);
     }
   }
@@ -87,7 +85,7 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\shape\\design.c",0x27c5);
   for (local_44 = 0;
       (iVar1 = entry->original_width * entry->original_height,
-      iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)dest + local_44) == '\0'));
+      iVar1 - local_44 != 0 && local_44 <= iVar1 && (dest[local_44] == '\0'));
       local_44 = local_44 + 1) {
   }
   iVar5 = entry->original_width * entry->original_height;

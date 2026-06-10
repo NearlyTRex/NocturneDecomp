@@ -7,12 +7,9 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram)
 
 {
-  char cVar2;
   SIZE_T SVar3;
   SIZE_T SVar4;
   int iVar4;
@@ -21,15 +18,7 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram)
   int iVar5;
   int iVar8;
   _FILE *p_Var9;
-  uint uVar6;
-  uint uVar10;
-  char *pcVar7;
-  SCram *pSVar8;
-  char *pcVar11;
-  char *pcVar9;
-  char *pcVar12;
   char *pcVar13;
-  byte bVar11;
   char local_b58 [260];
   int local_a48;
   int local_a44;
@@ -47,8 +36,7 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram)
   char local_35c [260];
   char local_258 [260];
   char local_154 [200];
-  char local_8c [4];
-  char acStack_84 [4];
+  char local_8c [12];
   int local_78;
   uint local_74;
   int local_70;
@@ -75,10 +63,8 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram)
   int local_1c;
   int local_18;
   int local_14;
-  char cVar1;
   bool bVar2;
-  
-  bVar11 = 0;
+
   local_2c = (uchar *)0x0;
   local_28 = (uchar *)0x0;
   local_24 = (uchar *)0x0;
@@ -190,15 +176,7 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram)
       engine_2d_c_getInputWithPrompt_FUN_004032c0
                 (local_154,0x4f,0,local_5c * 0xb,"Enter number of maps [1] : ");
       local_58 = 1;
-      iVar6 = -1;
-      pcVar12 = local_154;
-      do {
-        if (iVar6 == 0) break;
-        iVar6 = iVar6 + -1;
-        cVar2 = *pcVar12;
-        pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
-      } while (cVar2 != '\0');
-      if (iVar6 != -2) {
+      if (strlen(local_154) != 0) {
         local_58 = atoi(local_154);
       }
       if (9 < local_58) {
@@ -233,15 +211,7 @@ LAB_0046c2ae:
   engine_2d_c_getInputWithPrompt_FUN_004032c0
             (local_154,0x14,0,local_5c * 0xb,"Enter padding size [5] : ");
   local_64 = 5;
-  iVar6 = -1;
-  pcVar12 = local_154;
-  do {
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
-    cVar2 = *pcVar12;
-    pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
-  } while (cVar2 != '\0');
-  if (iVar6 != -2) {
+  if (strlen(local_154) != 0) {
     local_64 = atoi(local_154);
   }
   local_5c = local_5c + 2;
@@ -259,15 +229,7 @@ LAB_0046c2ae:
     engine_2d_c_getInputWithPrompt_FUN_004032c0
               (local_154,0x4f,0,local_5c * 0xb,"Enter output texture map width [256] : ");
     g_TextureAtlasDimension = 0x100;
-    iVar6 = -1;
-    pcVar12 = local_154;
-    do {
-      if (iVar6 == 0) break;
-      iVar6 = iVar6 + -1;
-      cVar2 = *pcVar12;
-      pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
-    } while (cVar2 != '\0');
-    if (iVar6 != -2) {
+    if (strlen(local_154) != 0) {
       g_TextureAtlasDimension = atoi(local_154);
     }
     if ((((g_TextureAtlasDimension == 0x200) || (g_TextureAtlasDimension == 0x100)) ||
@@ -284,15 +246,7 @@ LAB_0046c428:
   local_5c = local_5c + 2;
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_154,0x4f,0,local_5c * 0xb,local_9d0);
   local_68 = g_TextureAtlasDimension;
-  iVar6 = -1;
-  pcVar12 = local_154;
-  do {
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
-    cVar2 = *pcVar12;
-    pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
-  } while (cVar2 != '\0');
-  if (iVar6 != -2) {
+  if (strlen(local_154) != 0) {
     local_68 = atoi(local_154);
   }
   if (((local_68 == 0x200) || (local_68 == 0x100)) ||
@@ -304,26 +258,8 @@ LAB_0046c428:
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   goto LAB_0046c428;
 LAB_0046cea5:
-  iVar6 = -1;
-  pcVar12 = local_258;
-  do {
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
-    cVar2 = *pcVar12;
-    pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
-  } while (cVar2 != '\0');
-  if (iVar6 == -2) {
-    pcVar13 = g_LoadedModelName;
-    pcVar12 = local_258;
-    do {
-      cVar2 = *pcVar13;
-      *pcVar12 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar13[1];
-      pcVar13 = pcVar13 + 2;
-      pcVar12[1] = cVar2;
-      pcVar12 = pcVar12 + 2;
-    } while (cVar2 != '\0');
+  if (strlen(local_258) == 0) {
+    strcpy(local_258,g_LoadedModelName);
   }
   goto LAB_0046cede;
 LAB_0046c50b:
@@ -331,30 +267,14 @@ LAB_0046c50b:
   engine_2d_c_getInputWithPrompt_FUN_004032c0
             (local_154,0x14,0,local_5c * 0xb,"Enter acceptable coverage [99] : ");
   local_1c = 99;
-  iVar6 = -1;
-  pcVar12 = local_154;
-  do {
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
-    cVar2 = *pcVar12;
-    pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
-  } while (cVar2 != '\0');
-  if (iVar6 != -2) {
+  if (strlen(local_154) != 0) {
     local_1c = atoi(local_154);
   }
   local_5c = local_5c + 2;
   engine_2d_c_getInputWithPrompt_FUN_004032c0
             (local_154,0x14,0,local_5c * 0xb,"Enter acceptable size [1] : ");
   local_18 = 1;
-  iVar6 = -1;
-  pcVar12 = local_154;
-  do {
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
-    cVar2 = *pcVar12;
-    pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
-  } while (cVar2 != '\0');
-  if (iVar6 != -2) {
+  if (strlen(local_154) != 0) {
     local_18 = atoi(local_154);
   }
   local_50 = 1;
@@ -371,13 +291,7 @@ LAB_0046c5b7:
       local_78 = 0;
     }
     else {
-      local_8c[0] = "CramTex II"[0];
-      local_8c[1] = "CramTex II"[1];
-      local_8c[2] = "CramTex II"[2];
-      local_8c[3] = "CramTex II"[3];
-      acStack_84[0] = "CramTex II"[8];
-      acStack_84[1] = "CramTex II"[9];
-      acStack_84[(uint)bVar11 * -4 + 2] = "CramTex II"[(uint)bVar11 * -4 + 10];
+      strcpy(local_8c,"CramTex II");
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       _sprintf(local_154,"%s in progress...",local_8c);
       engine_2d_c_drawText_FUN_00401fd0(local_154,0,0);
@@ -495,30 +409,10 @@ LAB_0046ca24:
           engine_2d_c_drawText_FUN_00401fd0(local_154,0,local_5c * 0xb);
         }
         if (local_58 == 1) {
-          pcVar7 = "Is this map acceptable? [y] : ";
-          pcVar9 = local_a24;
-          do {
-            cVar1 = *pcVar7;
-            *pcVar9 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar2 = pcVar7[1];
-            pcVar7 = pcVar7 + 2;
-            pcVar9[1] = cVar2;
-            pcVar9 = pcVar9 + 2;
-          } while (cVar2 != '\0');
+          strcpy(local_a24,"Is this map acceptable? [y] : ");
         }
         else {
-          pcVar13 = "Are these maps acceptable? [y] : ";
-          pcVar12 = local_a24;
-          do {
-            cVar2 = *pcVar13;
-            *pcVar12 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar13[1];
-            pcVar13 = pcVar13 + 2;
-            pcVar12[1] = cVar2;
-            pcVar12 = pcVar12 + 2;
-          } while (cVar2 != '\0');
+          strcpy(local_a24,"Are these maps acceptable? [y] : ");
         }
         iVar6 = engine_2d_c_getInputWithPrompt_FUN_004032c0
                           (local_154,0x14,0,(local_5c + 3) * 0xb,local_a24);
@@ -543,28 +437,8 @@ LAB_0046ca24:
       if (cram == (SCram *)0x0) {
         do {
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
-          pcVar13 = g_LoadedModelName;
-          pcVar12 = local_258;
-          do {
-            cVar2 = *pcVar13;
-            *pcVar12 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar13[1];
-            pcVar13 = pcVar13 + 2;
-            pcVar12[1] = cVar2;
-            pcVar12 = pcVar12 + 2;
-          } while (cVar2 != '\0');
-          pcVar12 = local_258;
-          do {
-            local_6c = pcVar12;
-            if (*pcVar12 == '.') goto LAB_0046cdc6;
-            if (*pcVar12 == '\0') break;
-            local_6c = pcVar12 + 1;
-            if (*local_6c == '.') goto LAB_0046cdc6;
-            pcVar12 = pcVar12 + 2;
-          } while (*local_6c != '\0');
-          local_6c = (char *)0x0;
-LAB_0046cdc6:
+          strcpy(local_258,g_LoadedModelName);
+          local_6c = strchr(local_258,'.');
           if (local_6c != (char *)0x0) {
             *local_6c = '\0';
           }
@@ -574,71 +448,23 @@ LAB_0046cdc6:
             shape_design_c_clearAllTextureNames_FUN_0046e6b0();
             return 0;
           }
-          pcVar12 = local_258;
-          do {
-            local_6c = pcVar12;
-            if (*pcVar12 == '.') goto LAB_0046ce46;
-            if (*pcVar12 == '\0') break;
-            local_6c = pcVar12 + 1;
-            if (*local_6c == '.') goto LAB_0046ce46;
-            pcVar12 = pcVar12 + 2;
-          } while (*local_6c != '\0');
-          local_6c = (char *)0x0;
-LAB_0046ce46:
+          local_6c = strchr(local_258,'.');
           if (local_6c != (char *)0x0) {
             *local_6c = '\0';
           }
           if (local_58 == 1) goto LAB_0046cea5;
-          uVar7 = 0xffffffff;
-          pcVar12 = local_258;
-          do {
-            if (uVar7 == 0) break;
-            uVar7 = uVar7 - 1;
-            cVar2 = *pcVar12;
-            pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
-          } while (cVar2 != '\0');
-          if (~uVar7 - 1 < 8) goto LAB_0046cea5;
+          if (strlen(local_258) < 8) goto LAB_0046cea5;
           engine_2d_c_drawText_FUN_00401fd0("File name must be no more than 7 characters.",0,0x16);
           engine_2d_c_drawText_FUN_00401fd0("Hit a key...",0,0x2c);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
           wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
         } while( true );
       }
-      pcVar12 = local_258;
-      pSVar8 = cram;
-      do {
-        cVar2 = pSVar8->filename[0];
-        *pcVar12 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pSVar8->filename[1];
-        pSVar8 = (SCram *)(pSVar8->filename + 2);
-        pcVar12[1] = cVar2;
-        pcVar12 = pcVar12 + 2;
-      } while (cVar2 != '\0');
+      strcpy(local_258,cram->filename);
 LAB_0046cede:
-      pcVar12 = local_258;
-      pcVar13 = g_CurrentModelFilename;
-      do {
-        cVar2 = *pcVar12;
-        *pcVar13 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar12[1];
-        pcVar12 = pcVar12 + 2;
-        pcVar13[1] = cVar2;
-        pcVar13 = pcVar13 + 2;
-      } while (cVar2 != '\0');
+      strcpy(g_CurrentModelFilename,local_258);
       strupr(g_CurrentModelFilename);
-      pcVar12 = g_CurrentModelFilename;
-      do {
-        local_6c = pcVar12;
-        if (*pcVar12 == '.') goto LAB_0046cf33;
-        if (*pcVar12 == '\0') break;
-        local_6c = pcVar12 + 1;
-        if (*local_6c == '.') goto LAB_0046cf33;
-        pcVar12 = pcVar12 + 2;
-      } while (*local_6c != '\0');
-      local_6c = (char *)0x0;
-LAB_0046cf33:
+      local_6c = strchr(g_CurrentModelFilename,'.');
       if (local_6c != (char *)0x0) {
         *local_6c = '\0';
       }
@@ -657,63 +483,19 @@ LAB_0046cf33:
       memset(g_TextureNameArray,0,0x2d0);
       for (local_30 = 0; local_30 < local_58; local_30 = local_30 + 1) {
         local_14 = local_14 + 1;
-        pcVar13 = g_CurrentModelFilename;
-        pcVar12 = local_258;
-        do {
-          cVar2 = *pcVar13;
-          *pcVar12 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar13[1];
-          pcVar13 = pcVar13 + 2;
-          pcVar12[1] = cVar2;
-          pcVar12 = pcVar12 + 2;
-        } while (cVar2 != '\0');
+        strcpy(local_258,g_CurrentModelFilename);
         uVar7 = shape_design_c_calculateTextureQualityLevel_FUN_0046a930(local_58);
         if (local_58 == 1) {
-          uVar6 = 0xffffffff;
-          pcVar12 = g_CurrentModelFilename;
-          do {
-            if (uVar6 == 0) break;
-            uVar6 = uVar6 - 1;
-            cVar2 = *pcVar12;
-            pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
-          } while (cVar2 != '\0');
-          if (uVar7 < ~uVar6 - 1) {
-            pcVar12 = ".RAW";
-            pcVar13 = local_258 + uVar7;
-            do {
-              cVar2 = *pcVar12;
-              *pcVar13 = cVar2;
-              if (cVar2 == '\0') break;
-              cVar2 = pcVar12[1];
-              pcVar12 = pcVar12 + 2;
-              pcVar13[1] = cVar2;
-              pcVar13 = pcVar13 + 2;
-            } while (cVar2 != '\0');
+          if (uVar7 < strlen(g_CurrentModelFilename)) {
+            strcpy(local_258 + uVar7,".RAW");
           }
           else {
             strcat(local_258,".RAW");
           }
         }
         else {
-          uVar10 = 0xffffffff;
-          pcVar12 = g_CurrentModelFilename;
-          do {
-            if (uVar10 == 0) break;
-            uVar10 = uVar10 - 1;
-            cVar2 = *pcVar12;
-            pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
-          } while (cVar2 != '\0');
-          if (uVar7 - 1 < ~uVar10 - 1) {
-            uVar10 = 0xffffffff;
-            pcVar12 = g_CurrentModelFilename;
-            do {
-              if (uVar10 == 0) break;
-              uVar10 = uVar10 - 1;
-              cVar2 = *pcVar12;
-              pcVar12 = pcVar12 + (uint)bVar11 * -2 + 1;
-            } while (cVar2 != '\0');
-            if (uVar7 < ~uVar10 - 1) {
+          if (uVar7 - 1 < strlen(g_CurrentModelFilename)) {
+            if (uVar7 < strlen(g_CurrentModelFilename)) {
               _sprintf(local_258 + uVar7,"%X.RAW",local_14);
             }
             else {
@@ -725,17 +507,7 @@ LAB_0046cf33:
             _sprintf(local_258,"%s_%X.RAW",g_CurrentModelFilename,local_14);
           }
         }
-        pcVar12 = local_258;
-        pcVar13 = g_TextureNameArray[local_30];
-        do {
-          cVar2 = *pcVar12;
-          *pcVar13 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar12[1];
-          pcVar12 = pcVar12 + 2;
-          pcVar13[1] = cVar2;
-          pcVar13 = pcVar13 + 2;
-        } while (cVar2 != '\0');
+        strcpy(g_TextureNameArray[local_30],local_258);
         local_2c = (uchar *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
                              (g_TextureAtlasDimension * g_TextureAtlasDimension * 3,1,
                               "..\\shape\\design.c",0x2aed);
@@ -888,40 +660,10 @@ LAB_0046cf33:
         _sprintf(local_154,"Saved %s                    ",local_258);
         engine_2d_c_drawText_FUN_00401fd0(local_154,0,0x4d);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-        pcVar12 = local_258;
-        pcVar13 = local_460;
-        do {
-          cVar2 = *pcVar12;
-          *pcVar13 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar12[1];
-          pcVar12 = pcVar12 + 2;
-          pcVar13[1] = cVar2;
-          pcVar13 = pcVar13 + 2;
-        } while (cVar2 != '\0');
-        pcVar12 = local_460;
-        do {
-          pcVar13 = pcVar12;
-          if (*pcVar12 == '.') goto LAB_0046dbbf;
-          if (*pcVar12 == '\0') break;
-          pcVar13 = pcVar12 + 1;
-          if (*pcVar13 == '.') goto LAB_0046dbbf;
-          pcVar12 = pcVar12 + 2;
-        } while (*pcVar13 != '\0');
-        pcVar13 = (char *)0x0;
-LAB_0046dbbf:
+        strcpy(local_460,local_258);
+        pcVar13 = strchr(local_460,'.');
         if (pcVar13 != (char *)0x0) {
-          pcVar11 = ".ACT";
-          pcVar12 = pcVar13;
-          do {
-            cVar2 = *pcVar11;
-            *pcVar12 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar11[1];
-            pcVar11 = pcVar11 + 2;
-            pcVar12[1] = cVar2;
-            pcVar12 = pcVar12 + 2;
-          } while (cVar2 != '\0');
+          strcpy(pcVar13,".ACT");
         }
         local_6c = pcVar13;
         p_Var9 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_460,"wb");
@@ -939,40 +681,10 @@ LAB_0046dbbf:
         _sprintf(local_154,"Saved %s                    ",local_460);
         engine_2d_c_drawText_FUN_00401fd0(local_154,0,0x58);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-        pcVar12 = local_258;
-        pcVar13 = local_35c;
-        do {
-          cVar2 = *pcVar12;
-          *pcVar13 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar12[1];
-          pcVar12 = pcVar12 + 2;
-          pcVar13[1] = cVar2;
-          pcVar13 = pcVar13 + 2;
-        } while (cVar2 != '\0');
-        pcVar12 = local_35c;
-        do {
-          pcVar13 = pcVar12;
-          if (*pcVar12 == '.') goto LAB_0046dd49;
-          if (*pcVar12 == '\0') break;
-          pcVar13 = pcVar12 + 1;
-          if (*pcVar13 == '.') goto LAB_0046dd49;
-          pcVar12 = pcVar12 + 2;
-        } while (*pcVar13 != '\0');
-        pcVar13 = (char *)0x0;
-LAB_0046dd49:
+        strcpy(local_35c,local_258);
+        pcVar13 = strchr(local_35c,'.');
         if (pcVar13 != (char *)0x0) {
-          pcVar11 = ".OPA";
-          pcVar12 = pcVar13;
-          do {
-            cVar2 = *pcVar11;
-            *pcVar12 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar11[1];
-            pcVar11 = pcVar11 + 2;
-            pcVar12[1] = cVar2;
-            pcVar12 = pcVar12 + 2;
-          } while (cVar2 != '\0');
+          strcpy(pcVar13,".OPA");
         }
         local_6c = pcVar13;
         iVar6 = shape_design_c_checkNonFFBytes_FUN_0046ac70

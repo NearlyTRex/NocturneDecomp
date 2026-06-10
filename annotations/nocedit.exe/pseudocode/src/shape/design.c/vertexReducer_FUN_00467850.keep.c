@@ -10,19 +10,14 @@
 void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float angle_tolerance,int ui_mode)
 
 {
-  byte bVar2;
   int iVar4;
   int iVar5;
   int iVar2;
-  void *base;
+  int *base;
   int iVar3;
   int iVar6;
   int iVar7;
-  char *pcVar4;
-  byte *pbVar5;
-  byte *pbVar8;
   bool bVar9;
-  byte bVar7;
   float10 fVar8;
   double dVar9;
   double dVar10;
@@ -30,11 +25,9 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
   int local_34;
   int local_30;
   int local_1c;
-  void *local_14;
-  byte bVar1;
-  
+  int *local_14;
+
   iVar7 = g_VertexCount;
-  bVar7 = 0;
   bVar9 = false;
   local_1c = g_PolygonCount;
   if (0 < g_VertexCount) {
@@ -49,15 +42,7 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
         return;
       }
     }
-    iVar6 = -1;
-    pbVar8 = local_134;
-    do {
-      if (iVar6 == 0) break;
-      iVar6 = iVar6 + -1;
-      bVar1 = *pbVar8;
-      pbVar8 = pbVar8 + (uint)bVar7 * -2 + 1;
-    } while (bVar1 != 0);
-    if (iVar6 != -2) {
+    if (strlen((char *)local_134) != 0) {
       dVar9 = _strtod((char *)local_134);
       tolerance = (float)dVar9;
     }
@@ -75,15 +60,7 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
         engine_2d_c_getInputWithPrompt_FUN_004032c0
                   ((char *)local_134,0x14,0,0x2c,"Enter angle tolerance [90.0] : ");
         angle_tolerance = 90.0;
-        iVar6 = -1;
-        pbVar8 = local_134;
-        do {
-          if (iVar6 == 0) break;
-          iVar6 = iVar6 + -1;
-          bVar2 = *pbVar8;
-          pbVar8 = pbVar8 + (uint)bVar7 * -2 + 1;
-        } while (bVar2 != 0);
-        if (iVar6 != -2) {
+        if (strlen((char *)local_134) != 0) {
           dVar10 = _strtod((char *)local_134);
           angle_tolerance = (float)dVar10;
         }
@@ -96,9 +73,9 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
     }
     do {
       iVar6 = g_VertexCount;
-      base = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+      base = (int *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        (g_VertexCount << 3,"..\\shape\\design.c",0x20b8);
-      if (base == (void *)0x0) {
+      if (base == (int *)0x0) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("ERROR: Can't allocate memory for vertex reducer array.",0,0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -106,15 +83,15 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
         return;
       }
       for (local_34 = 0; local_34 < g_VertexCount; local_34 = local_34 + 1) {
-        *(int *)((int)base + local_34 * 8) = local_34;
-        *(int *)((int)base + local_34 * 8 + 4) = local_34;
+        base[local_34 * 2] = local_34;
+        base[local_34 * 2 + 1] = local_34;
       }
       _qsort
                 (base,g_VertexCount,8,shape_design_c_qsortByVertexX_FUN_004676f0);
       if (bVar9) {
-        local_14 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+        local_14 = (int *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                              (g_VertexCount << 2,"..\\shape\\design.c",0x20dc);
-        if (local_14 == (void *)0x0) {
+        if (local_14 == (int *)0x0) {
           shape_memdbg_cpp_debugFree_FUN_0050f460(base,"..\\shape\\design.c",0x20de);
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
           engine_2d_c_drawText_FUN_00401fd0("ERROR: Can't allocate memory for vertex reducer array.",0,0);
@@ -125,20 +102,19 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
         for (local_34 = 0; local_34 < g_PolygonCount; local_34 = local_34 + 1) {
           for (local_30 = 0; local_30 < (int)g_ModelPolygonData[local_34].vertex_indices_count;
               local_30 = local_30 + 1) {
-            *(int *)((int)local_14 + g_ModelPolygonData[local_34].vertex_indices[local_30] * 4) =
-                 local_34;
+            local_14[g_ModelPolygonData[local_34].vertex_indices[local_30]] = local_34;
           }
         }
       }
       for (local_34 = 0; local_34 < g_VertexCount + -1; local_34 = local_34 + 1) {
-        if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {
-          iVar4 = *(int *)(local_34 * 8 + (int)base);
+        if (base[local_34 * 2 + 1] == base[local_34 * 2]) {
+          iVar4 = base[local_34 * 2];
           local_30 = local_34;
 LAB_00467ba8:
           local_30 = local_30 + 1;
           if (local_30 < g_VertexCount) {
-            if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {
-              iVar5 = *(int *)(local_30 * 8 + (int)base);
+            if (base[local_30 * 2 + 1] == base[local_30 * 2]) {
+              iVar5 = base[local_30 * 2];
               if (g_LoadedVertices[iVar4].vertex.x + tolerance < g_LoadedVertices[iVar5].vertex.x)
               goto LAB_00467b49;
               if (((ABS(g_LoadedVertices[iVar4].vertex.x - g_LoadedVertices[iVar5].vertex.x) <
@@ -151,16 +127,12 @@ LAB_00467ba8:
                   fVar8 = (float10)fcos((float10)angle_tolerance *
                                         (float10)0.01745329252);
                   iVar3 = shape_design_c_validatePolygonNormals_FUN_00461d80
-                                    (g_ModelPolygonData +
-                                     *(int *)(*(int *)(local_34 * 8 + (int)base) * 4 + (int)local_14
-                                             ),
-                                     g_ModelPolygonData +
-                                     *(int *)(*(int *)(local_30 * 8 + (int)base) * 4 + (int)local_14
-                                             ),(double)fVar8);
+                                    (g_ModelPolygonData + local_14[base[local_34 * 2]],
+                                     g_ModelPolygonData + local_14[base[local_30 * 2]],
+                                     (double)fVar8);
                   if (iVar3 == 0) goto LAB_00467ba8;
                 }
-                *(uint *)((int)base + local_30 * 8 + 4) =
-                     *(uint *)((int)base + local_34 * 8);
+                base[local_30 * 2 + 1] = base[local_34 * 2];
               }
             }
             goto LAB_00467ba8;
@@ -174,7 +146,7 @@ LAB_00467b49:
         for (local_30 = 0; local_30 < (int)g_ModelPolygonData[local_34].vertex_indices_count;
             local_30 = local_30 + 1) {
           g_ModelPolygonData[local_34].vertex_indices[local_30] =
-               *(uint *)((int)base + g_ModelPolygonData[local_34].vertex_indices[local_30] * 8 + 4);
+               base[g_ModelPolygonData[local_34].vertex_indices[local_30] * 2 + 1];
         }
       }
       if (bVar9) {
@@ -189,27 +161,7 @@ LAB_00467b49:
               ((char *)local_134,"Original vertices: %d    New total: %d\n\nTotal passes: %d\n\nPolys removed: %d",iVar7,g_VertexCount,
                g_VertexOptimizationPasses,local_1c - g_PolygonCount);
     if (0 < ui_mode) {
-      pcVar4 = "\n\nHit a key...";
-      iVar7 = -1;
-      pbVar5 = local_134;
-      do {
-        pbVar5 = pbVar5;
-        if (iVar7 == 0) break;
-        iVar7 = iVar7 + -1;
-        pbVar5 = pbVar5 + (uint)bVar7 * -2 + 1;
-        bVar2 = *pbVar5;
-        pbVar5 = pbVar5;
-      } while (bVar2 != 0);
-      pbVar8 = pbVar5 + -1;
-      do {
-        bVar2 = *pcVar4;
-        *pbVar8 = bVar2;
-        if (bVar2 == 0) break;
-        bVar2 = pcVar4[1];
-        pcVar4 = pcVar4 + 2;
-        pbVar8[1] = bVar2;
-        pbVar8 = pbVar8 + 2;
-      } while (bVar2 != 0);
+      strcat((char *)local_134,"\n\nHit a key...");
     }
     if (-1 < ui_mode) {
       engine_2d_c_drawText_FUN_00401fd0((char *)local_134,0,0);

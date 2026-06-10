@@ -7,17 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 224,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 154,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 689
   },
   "cross_references": [
@@ -301,6 +298,62 @@
     },
     "pcode_op_count": 2492
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uchar *)(local_3c * iVar5 + (int)ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_1c,(uchar *)(local_3c * iVar5 + (int)ptr),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uchar *)(local_3c * entry->original_width + (int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uchar *)(local_3c * entry->original_width + (int)dest),entry->original_width,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(uchar *)(local_3c * iVar5 + (int)ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_1c,(uchar *)(local_3c * iVar5 + (int)ptr),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(uchar *)(local_3c * entry->original_width + (int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uchar *)(local_3c * entry->original_width + (int)dest),entry->original_width,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(char *)((int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)dest + local_44) == '\\0'));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 416,
     "local_size": 392,
@@ -527,54 +580,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(uchar *)(local_3c * iVar5 + (int)ptr",
-      "severity": "moderate",
-      "text": "(local_1c,(uchar *)(local_3c * iVar5 + (int)ptr),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(uchar *)(local_3c * entry->original_width + (int)dest",
-      "severity": "moderate",
-      "text": "(uchar *)(local_3c * entry->original_width + (int)dest),entry->original_width,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(uchar *)(local_3c * iVar5 + (int)ptr",
-      "severity": "moderate",
-      "text": "(local_1c,(uchar *)(local_3c * iVar5 + (int)ptr),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(uchar *)(local_3c * entry->original_width + (int)dest",
-      "severity": "moderate",
-      "text": "(uchar *)(local_3c * entry->original_width + (int)dest),entry->original_width,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(char *)((int)dest",
-      "severity": "moderate",
-      "text": "iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)dest + local_44) == '\\0'));",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

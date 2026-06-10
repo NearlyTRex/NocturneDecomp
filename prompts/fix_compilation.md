@@ -479,6 +479,20 @@ for (; iVar2 != 0; iVar2 = iVar2 + -1) {
 memset(puVar5, 0, count * 4);
 ```
 
+**Prefer `sizeof` over a magic byte count.** When you emit a `memcpy`/`memset` whose size is a raw constant (or `count * 0xNN`), check whether that constant is the `Ghidra size:` of a struct in play — the element type of the dest/src array, or a struct declared/used nearby. If it matches, write `sizeof(T)` (or `count * sizeof(T)`) instead of the hex. The asm-anchored REP MOVS/STOS detectors hand you the byte count verbatim, so this comes up constantly:
+
+```cpp
+// BROKEN (Watcom REP MOVSD lowering, byte count rendered as `count * size`):
+memcpy(g_BackupVertices, g_LoadedVertices, g_VertexCount * 0x14);     // SVertexData is 0x14
+memcpy(g_BackupPolygons, g_ModelPolygonData, g_PolygonCount * 0x184); // SShapeEditorPolygon is 0x184
+
+// FIXED (the stride is the element size — make it self-documenting):
+memcpy(g_BackupVertices, g_LoadedVertices, g_VertexCount * sizeof(SVertexData));
+memcpy(g_BackupPolygons, g_ModelPolygonData, g_PolygonCount * sizeof(SShapeEditorPolygon));
+```
+
+Confirm the match the same way as §18: the struct's `Ghidra size: 0x<N>` annotation must equal the constant exactly. If the dest/src is a typed array (`SVertexData g_BackupVertices[...]`), the element type is the `sizeof` to use. If the constant is *not* a clean struct size (a packed sub-range, a hardcoded buffer length, a fixed-point scale), leave the hex — a forced `sizeof` that doesn't actually equal the type size silently changes the copy length. This applies to any size argument, not just collapsed copies (e.g. a `debugMalloc(count * 0x14, ...)` for an `SVertexData` array is `count * sizeof(SVertexData)`).
+
 **When to suggest:** Only when the pattern is unambiguous — the copy is complete (all bytes/fields), contiguous, and the source/destination types are compatible. Don't collapse partial copies or copies with interleaved logic.
 
 ### 18. Magic numbers with obvious symbolic equivalents

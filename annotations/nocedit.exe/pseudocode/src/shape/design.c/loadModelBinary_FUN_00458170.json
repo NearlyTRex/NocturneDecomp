@@ -7,17 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 803,
-    "complexity_score": 290,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 38,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 240,
-    "suspect_count": 4,
-    "suspect_types": [
-      "raw_address_constant",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1043
   },
   "cross_references": [
@@ -419,6 +416,44 @@
     },
     "pcode_op_count": 2970
   },
+  "resolved_suspects": [
+    {
+      "description": "Raw hex literal 0x16e99c8 matches address of g_ModelPolygonData (+184 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 201,
+      "match": "0x16e99c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_fread((void *)(local_28 * 4 + g_PolygonCount * 0x184 + 0x16e99c8),1,4,local_38);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 106,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 138,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 190,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 416,
     "local_size": 412,
@@ -680,138 +715,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "loadModelBinary_FUN_00458170.keep.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 6,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 27,
-          "line": 146,
-          "message": "Uninitialized variable: local_44",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 69,
-          "line": 97,
-          "message": "Uninitialized variable: local_a4",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 28,
-          "line": 75,
-          "message": "Uninitialized variable: local_74",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 28,
-          "line": 77,
-          "message": "Uninitialized variable: local_70",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 73,
-          "line": 115,
-          "message": "Uninitialized variable: local_68",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 29,
-          "line": 69,
-          "message": "Uninitialized variable: local_64",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Raw hex literal 0x16e99c8 matches address of g_ModelPolygonData (+184 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 201,
-      "match": "0x16e99c8",
-      "severity": "moderate",
-      "text": "_fread((void *)(local_28 * 4 + g_PolygonCount * 0x184 + 0x16e99c8),1,4,local_38);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 106,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 138,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 190,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Uninitialized variable: local_44",
-      "line": 146,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_20 = (float)local_44 * (float)1.52587890625e-05;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_a4",
-      "line": 97,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "g_ModelPolygonData[g_PolygonCount].vertex_indices_count = local_a4;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_74",
-      "line": 75,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "((float)local_74 * (float)0.00390625) / local_20;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_70",
-      "line": 77,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "((float)local_70 * (float)0.00390625) / local_20;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_68",
-      "line": 115,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "g_ModelPolygonData[g_PolygonCount].vertex_indices[0] - local_68;",
-      "type": "static_legacy_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_64",
-      "line": 69,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "g_VertexCount = local_64;",
-      "type": "static_legacy_uninitvar"
-    }
-  ]
+  "suspects": []
 }

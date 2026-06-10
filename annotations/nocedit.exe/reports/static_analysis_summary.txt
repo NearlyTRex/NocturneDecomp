@@ -9,30 +9,30 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 53
+  Functions with static analysis data: 48
   Functions flagged by multiple tools: 0
 
   Cppcheck (quick):
-    Files analyzed:      53
-    Files with findings: 53
-    Total diagnostics:   191
+    Files analyzed:      48
+    Files with findings: 48
+    Total diagnostics:   172
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                  65  [likely decompiler artifact]
+  uninitvar                                                  62  [likely decompiler artifact]
   invalidscanf                                               60  [likely decompiler artifact]
   nullPointerRedundantCheck                                  12
-  selfAssignment                                             11
   invalidPointerCast                                         10
   shiftTooManyBitsSigned                                     10
-  legacyUninitvar                                             9
   invalidScanfArgType_int                                     3
   identicalInnerCondition                                     3
   objectIndex                                                 3
+  selfAssignment                                              3
   nullPointerArithmetic                                       1
   nullPointer                                                 1
   nullPointerArithmeticRedundantCheck                         1
+  legacyUninitvar                                             1
   invalidTestForOverflow                                      1
   memleak                                                     1

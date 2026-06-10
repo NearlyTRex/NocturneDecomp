@@ -4,33 +4,31 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     534 ( 60.8%)
-  unrolled_memcpy                   78 (  8.9%)
-  static_uninitvar                  65 (  7.4%)
-  shadow_pointer_walk               43 (  4.9%)
-  bitcast_double_pair               36 (  4.1%)
-  unrolled_strcpy                   20 (  2.3%)
-  unrolled_strlen                   14 (  1.6%)
-  static_self_assignment            11 (  1.3%)
-  static_shift_too_many_bits        10 (  1.1%)
-  warning_inlined_function           9 (  1.0%)
-  sub84_truncation                   9 (  1.0%)
-  static_legacy_uninitvar            9 (  1.0%)
-  signed_shift_global_idiom          8 (  0.9%)
-  unrolled_strchr                    6 (  0.7%)
-  unaffected_reg                     6 (  0.7%)
-  static_invalid_pointer_cast        6 (  0.7%)
-  static_identical_inner_condition     3 (  0.3%)
-  static_object_index                3 (  0.3%)
-  raw_address_constant               3 (  0.3%)
-  unrolled_memset                    2 (  0.2%)
+  pointer_cast                     491 ( 65.6%)
+  static_uninitvar                  62 (  8.3%)
+  unrolled_memcpy                   58 (  7.7%)
+  shadow_pointer_walk               43 (  5.7%)
+  bitcast_double_pair               36 (  4.8%)
+  static_shift_too_many_bits        10 (  1.3%)
+  sub84_truncation                   9 (  1.2%)
+  warning_inlined_function           6 (  0.8%)
+  unaffected_reg                     6 (  0.8%)
+  static_invalid_pointer_cast        6 (  0.8%)
+  static_identical_inner_condition     3 (  0.4%)
+  static_object_index                3 (  0.4%)
+  unrolled_strcpy                    3 (  0.4%)
+  static_self_assignment             3 (  0.4%)
+  unrolled_memset                    2 (  0.3%)
+  raw_address_constant               2 (  0.3%)
+  unrolled_strchr                    1 (  0.1%)
   static_null_pointer_arithmetic     1 (  0.1%)
   static_null_pointer                1 (  0.1%)
+  static_legacy_uninitvar            1 (  0.1%)
   stack_alignment_array              1 (  0.1%)
   self_copy_guard                    1 (  0.1%)
 
 ====================================================================================================
-TYPE: pointer_cast (534 occurrences)
+TYPE: pointer_cast (491 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -46,21 +44,16 @@ Unique patterns:
      9x  (double *)((int)pdVar11
      9x  (double *)((int)pdVar6
      8x  (int *)((int)g_ModelPolygonData
-     6x  (int *)((int)base
      5x  (int *)((int)aiStack_4e8
      5x  (double *)((int)pdVar10
      4x  (uint *)((int)puVar1
      4x  (uint *)((int)g_SampleDistances
      4x  (float *)((int)pCVar1
      4x  (float *)((int)afStack_4e0
-     4x  (float *)((int)g_ModelPolygonData
+     4x  (double *)((int)pdVar7
+     4x  (double *)((int)pdVar8
 
 Functions:
-  shape_design.c_loadTextureData_FUN_0046b060
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
-  shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0
-  shape_design.c_vertexReducer_FUN_00467850
   shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20
   shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0
   shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
@@ -142,19 +135,35 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (78 occurrences)
+TYPE: static_uninitvar (62 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    38x  field-by-field struct copy
-    22x  MOVSD.REP
-    17x  for (...; != 0; ... + -1)
+    62x  Cppcheck: uninitialized variable
+
+Functions:
+  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
+  shape_superopt.cpp_CObj_scale_FUN_005d2940
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40
+  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
+  shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
+  shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0
+  shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
+  shape_superopt.cpp_CPoly_transform_FUN_005ccc30
+
+====================================================================================================
+TYPE: unrolled_memcpy (58 occurrences)
+====================================================================================================
+
+Unique patterns:
+    34x  field-by-field struct copy
+    16x  MOVSD.REP
+     7x  for (...; != 0; ... + -1)
      1x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
-  shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0
   shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870
   shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0
   shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20
@@ -184,27 +193,6 @@ Functions:
   shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
   shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
-
-====================================================================================================
-TYPE: static_uninitvar (65 occurrences)
-====================================================================================================
-
-Unique patterns:
-    65x  Cppcheck: uninitialized variable
-
-Functions:
-  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
-  shape_design.c_loadModelBinary_FUN_00458170
-  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
-  shape_superopt.cpp_CObj_scale_FUN_005d2940
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
-  shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
-  shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0
-  shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010
-  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
-  shape_superopt.cpp_CPoly_transform_FUN_005ccc30
 
 ====================================================================================================
 TYPE: shadow_pointer_walk (43 occurrences)
@@ -268,46 +256,6 @@ Functions:
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 
 ====================================================================================================
-TYPE: unrolled_strcpy (20 occurrences)
-====================================================================================================
-
-Unique patterns:
-    20x  do {
-
-Functions:
-  shape_design.c_cramTextureList_FUN_0046bb80
-  shape_design.c_loadModelBinary_FUN_00458170
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
-  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
-
-====================================================================================================
-TYPE: unrolled_strlen (14 occurrences)
-====================================================================================================
-
-Unique patterns:
-    14x  do { if (v==0) break; v=v-1; ... }
-
-Functions:
-  shape_design.c_cramTextureList_FUN_0046bb80
-  shape_design.c_vertexReducer_FUN_00467850
-
-====================================================================================================
-TYPE: static_self_assignment (11 occurrences)
-====================================================================================================
-
-Unique patterns:
-    11x  Cppcheck: redundant self-assignment
-
-Functions:
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0
-  shape_design.c_vertexReducer_FUN_00467850
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
-  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
-  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
-
-====================================================================================================
 TYPE: static_shift_too_many_bits (10 occurrences)
 ====================================================================================================
 
@@ -317,24 +265,6 @@ Unique patterns:
 Functions:
   shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
-
-====================================================================================================
-TYPE: warning_inlined_function (9 occurrences)
-====================================================================================================
-
-Unique patterns:
-     9x  WARNING: Inlined function:
-
-Functions:
-  shape_design.c_cramTextureList_FUN_0046bb80
-  shape_design.c_loadTextureData_FUN_0046b060
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-  shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
-  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
-  shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
-  shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
 TYPE: sub84_truncation (9 occurrences)
@@ -352,36 +282,18 @@ Functions:
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 
 ====================================================================================================
-TYPE: static_legacy_uninitvar (9 occurrences)
+TYPE: warning_inlined_function (6 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     9x  Cppcheck: uninitialized variable (legacy detector)
+     6x  WARNING: Inlined function:
 
 Functions:
-  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
-  shape_design.c_loadModelBinary_FUN_00458170
-  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
-
-====================================================================================================
-TYPE: signed_shift_global_idiom (8 occurrences)
-====================================================================================================
-
-Unique patterns:
-     8x  g_Global >> 0x1f
-
-Functions:
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0
-
-====================================================================================================
-TYPE: unrolled_strchr (6 occurrences)
-====================================================================================================
-
-Unique patterns:
-     6x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
-
-Functions:
-  shape_design.c_cramTextureList_FUN_0046bb80
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+  shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
+  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
+  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
+  shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
@@ -427,17 +339,26 @@ Functions:
   shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870
 
 ====================================================================================================
-TYPE: raw_address_constant (3 occurrences)
+TYPE: unrolled_strcpy (3 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     1x  0x16e99c8
-     1x  0x766880
-     1x  0x5d709a
+     3x  do {
 
 Functions:
-  shape_design.c_loadModelBinary_FUN_00458170
-  shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
+  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
+  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
+
+====================================================================================================
+TYPE: static_self_assignment (3 occurrences)
+====================================================================================================
+
+Unique patterns:
+     3x  Cppcheck: redundant self-assignment
+
+Functions:
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
@@ -450,6 +371,28 @@ Unique patterns:
 Functions:
   shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+
+====================================================================================================
+TYPE: raw_address_constant (2 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  0x766880
+     1x  0x5d709a
+
+Functions:
+  shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
+  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
+
+====================================================================================================
+TYPE: unrolled_strchr (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
+
+Functions:
+  shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
 TYPE: static_null_pointer_arithmetic (1 occurrences)
@@ -470,6 +413,16 @@ Unique patterns:
 
 Functions:
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
+
+====================================================================================================
+TYPE: static_legacy_uninitvar (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  Cppcheck: uninitialized variable (legacy detector)
+
+Functions:
+  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
 
 ====================================================================================================
 TYPE: stack_alignment_array (1 occurrences)

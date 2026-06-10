@@ -7,17 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 396,
+    "complexity_score": 216,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 25,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 216,
-    "suspect_count": 17,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_strlen"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 841
   },
   "cross_references": [
@@ -382,6 +379,161 @@
     },
     "pcode_op_count": 3118
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(int *)((int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)base + local_34 * 8) = local_34;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(int *)((int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)base + local_34 * 8 + 4) = local_34;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(int *)((int)local_14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_14 + g_ModelPolygonData[local_34].vertex_indices[local_30] * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(int *)((int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(int *)((int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(int *)(local_34 * 8 + (int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)(local_34 * 8 + (int)base);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(int *)((int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(int *)((int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
+      "match": "(int *)(local_30 * 8 + (int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)(local_30 * 8 + (int)base);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 152,
+      "match": "(int *)(local_34 * 8 + (int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)(local_34 * 8 + (int)base) * 4 + (int)local_14",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(int *)(local_30 * 8 + (int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)(local_30 * 8 + (int)base) * 4 + (int)local_14",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 159,
+      "match": "(uint *)((int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)base + local_30 * 8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(uint *)((int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)base + local_34 * 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 174,
+      "match": "(uint *)((int)base",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)base + g_ModelPolygonData[local_34].vertex_indices[local_30] * 8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 51,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 77,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 191,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ],
   "stack_frame": {
     "frame_size": 324,
     "local_size": 312,
@@ -482,182 +634,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "vertexReducer_FUN_00467850.keep.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 16,
-          "line": 196,
-          "message": "Redundant assignment of 'pbVar5' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 16,
-          "line": 201,
-          "message": "Redundant assignment of 'pbVar5' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 106,
-      "match": "(int *)((int)base",
-      "severity": "moderate",
-      "text": "*(int *)((int)base + local_34 * 8) = local_34;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 107,
-      "match": "(int *)((int)base",
-      "severity": "moderate",
-      "text": "*(int *)((int)base + local_34 * 8 + 4) = local_34;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(int *)((int)local_14",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_14 + g_ModelPolygonData[local_34].vertex_indices[local_30] * 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 131,
-      "match": "(int *)((int)base",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 131,
-      "match": "(int *)((int)base",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 132,
-      "match": "(int *)(local_34 * 8 + (int)base",
-      "severity": "moderate",
-      "text": "iVar4 = *(int *)(local_34 * 8 + (int)base);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 137,
-      "match": "(int *)((int)base",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 137,
-      "match": "(int *)((int)base",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 138,
-      "match": "(int *)(local_30 * 8 + (int)base",
-      "severity": "moderate",
-      "text": "iVar5 = *(int *)(local_30 * 8 + (int)base);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 152,
-      "match": "(int *)(local_34 * 8 + (int)base",
-      "severity": "moderate",
-      "text": "*(int *)(*(int *)(local_34 * 8 + (int)base) * 4 + (int)local_14",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 155,
-      "match": "(int *)(local_30 * 8 + (int)base",
-      "severity": "moderate",
-      "text": "*(int *)(*(int *)(local_30 * 8 + (int)base) * 4 + (int)local_14",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 159,
-      "match": "(uint *)((int)base",
-      "severity": "moderate",
-      "text": "*(uint *)((int)base + local_30 * 8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 160,
-      "match": "(uint *)((int)base",
-      "severity": "moderate",
-      "text": "*(uint *)((int)base + local_34 * 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 174,
-      "match": "(uint *)((int)base",
-      "severity": "moderate",
-      "text": "*(uint *)((int)base + g_ModelPolygonData[local_34].vertex_indices[local_30] * 8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 51,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 77,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 191,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Redundant assignment of 'pbVar5' to itself.",
-      "line": 196,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pbVar5 = pbVar5;",
-      "type": "static_self_assignment"
-    },
-    {
-      "description": "Redundant assignment of 'pbVar5' to itself.",
-      "line": 201,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pbVar5 = pbVar5;",
-      "type": "static_self_assignment"
-    }
-  ]
+  "suspects": []
 }

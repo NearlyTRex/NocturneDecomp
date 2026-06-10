@@ -7,19 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1920,
-    "complexity_score": 817,
+    "complexity_score": 597,
     "cross_reference_count": 1,
     "function_call_count": 60,
     "global_count": 143,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 597,
-    "suspect_count": 20,
-    "suspect_types": [
-      "pointer_cast",
-      "signed_shift_global_idiom",
-      "unrolled_memcpy",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2517
   },
   "cross_references": [
@@ -1275,6 +1270,78 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 479,
+      "match": "(SShapeEditorPolygon *)((int)pSVar14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar14 = (SShapeEditorPolygon *)((int)pSVar14 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 480,
+      "match": "(SShapeEditorPolygon *)((int)pSVar15",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar15 = (SShapeEditorPolygon *)((int)pSVar15 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 485,
+      "match": "(uint *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ModelPolygonData +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 488,
+      "match": "(float *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_ModelPolygonData +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 491,
+      "match": "(float *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_ModelPolygonData +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 549,
+      "match": "(SShapeEditorPolygon *)((int)pSVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 550,
+      "match": "(SShapeEditorPolygon *)((int)pSVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Raw hex literal 0x16e9964 matches address of g_ModelPolygonData (+84 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 434,
       "match": "0x16e9964",
@@ -1282,6 +1349,114 @@
       "severity": "moderate",
       "text": "_sprintf(local_b8,\"Texture : %s (%s)\",g_SelectedPolygonIndex * 0x184 + 0x16e9964);",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 477,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar12 = 0x61; iVar12 != 0; iVar12 = iVar12 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 548,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar12 = 0x61; iVar12 != 0; iVar12 = iVar12 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 251,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 252,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 257,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 258,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 260,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar12 = g_WindowWidth >> 0x1f;",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 274,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar13 = g_WindowWidth >> 0x1f;",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 388,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
+      "line": 389,
+      "match": "g_Global >> 0x1f",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00460623, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1549,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 00460623: MOVSD.REP ES:EDI,ESI  ; g_VertexNormals[19980].v | g_ModelPolygonData | g_VertexNormals[19981].vertex.x",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004608b8, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1780,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 004608b8: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -1433,206 +1608,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "showFacetPartEditor_FUN_0045f1d0.keep.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 22,
-          "line": 571,
-          "message": "Redundant assignment of 'pSVar5' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 22,
-          "line": 572,
-          "message": "Redundant assignment of 'pSVar6' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 479,
-      "match": "(SShapeEditorPolygon *)((int)pSVar14",
-      "severity": "moderate",
-      "text": "pSVar14 = (SShapeEditorPolygon *)((int)pSVar14 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 480,
-      "match": "(SShapeEditorPolygon *)((int)pSVar15",
-      "severity": "moderate",
-      "text": "pSVar15 = (SShapeEditorPolygon *)((int)pSVar15 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 485,
-      "match": "(uint *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ModelPolygonData +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 488,
-      "match": "(float *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(float *)((int)g_ModelPolygonData +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 491,
-      "match": "(float *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(float *)((int)g_ModelPolygonData +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 549,
-      "match": "(SShapeEditorPolygon *)((int)pSVar6",
-      "severity": "moderate",
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 550,
-      "match": "(SShapeEditorPolygon *)((int)pSVar5",
-      "severity": "moderate",
-      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 477,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar12 = 0x61; iVar12 != 0; iVar12 = iVar12 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 548,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar12 = 0x61; iVar12 != 0; iVar12 = iVar12 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 251,
-      "match": "g_Global >> 0x1f",
-      "severity": "moderate",
-      "text": "(local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -",
-      "type": "signed_shift_global_idiom"
-    },
-    {
-      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 252,
-      "match": "g_Global >> 0x1f",
-      "severity": "moderate",
-      "text": "(uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,",
-      "type": "signed_shift_global_idiom"
-    },
-    {
-      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 257,
-      "match": "g_Global >> 0x1f",
-      "severity": "moderate",
-      "text": "(local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -",
-      "type": "signed_shift_global_idiom"
-    },
-    {
-      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 258,
-      "match": "g_Global >> 0x1f",
-      "severity": "moderate",
-      "text": "(uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,",
-      "type": "signed_shift_global_idiom"
-    },
-    {
-      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 260,
-      "match": "g_Global >> 0x1f",
-      "severity": "moderate",
-      "text": "iVar12 = g_WindowWidth >> 0x1f;",
-      "type": "signed_shift_global_idiom"
-    },
-    {
-      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 274,
-      "match": "g_Global >> 0x1f",
-      "severity": "moderate",
-      "text": "iVar13 = g_WindowWidth >> 0x1f;",
-      "type": "signed_shift_global_idiom"
-    },
-    {
-      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 388,
-      "match": "g_Global >> 0x1f",
-      "severity": "moderate",
-      "text": "(local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -",
-      "type": "signed_shift_global_idiom"
-    },
-    {
-      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
-      "line": 389,
-      "match": "g_Global >> 0x1f",
-      "severity": "moderate",
-      "text": "(uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,",
-      "type": "signed_shift_global_idiom"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 00460623, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 1549,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 00460623: MOVSD.REP ES:EDI,ESI  ; g_VertexNormals[19980].v | g_ModelPolygonData | g_VertexNormals[19981].vertex.x",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 004608b8, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 1780,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 004608b8: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Redundant assignment of 'pSVar5' to itself.",
-      "line": 571,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pSVar5 = pSVar5;",
-      "type": "static_self_assignment"
-    },
-    {
-      "description": "Redundant assignment of 'pSVar6' to itself.",
-      "line": 572,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pSVar6 = pSVar6;",
-      "type": "static_self_assignment"
-    }
-  ]
+  "suspects": []
 }
