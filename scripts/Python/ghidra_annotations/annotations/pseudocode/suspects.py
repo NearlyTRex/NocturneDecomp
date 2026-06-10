@@ -2056,6 +2056,37 @@ def _resolve_scalar_index_aliases(decompiled_code):
     return '\n'.join(out)
 
 
+def _field_copy_run_is_contiguous(struct_name, field_names, layout):
+    """Return True if `field_names` occupy a single contiguous byte span in
+    `struct_name` (sorted by offset, no gaps), False if they don't, or None
+    if any field can't be resolved.
+
+    A genuine unrolled struct copy always covers a contiguous range of bytes
+    (it lowered from one REP MOVSD / inline block move), so its named fields
+    form an uninterrupted span. A run of same-named `dst.f = src.f;` lines
+    over *non-adjacent* fields (e.g. CPoly_copyFrom's
+    `material_id`(0x5c)/`flags`(0x60)/`normal`(0x40) — `normal` sits before
+    the other two with a gap) is coincidental, not a collapsible
+    `memcpy`/`dst = src;`. None ("don't know") so the caller stays
+    conservative and does not suppress on unresolved fields.
+    """
+    flds = layout.get(struct_name) if layout else None
+    if not flds:
+        return None
+    by_name = {fl['name']: fl for fl in flds}
+    extents = []
+    for nm in field_names:
+        fl = by_name.get(nm)
+        if fl is None or 'offset' not in fl or 'len' not in fl:
+            return None
+        extents.append((fl['offset'], fl['offset'] + fl['len']))
+    extents.sort()
+    for k in range(1, len(extents)):
+        if extents[k][0] != extents[k - 1][1]:
+            return False
+    return True
+
+
 def identify_unrolled_field_copy(decompiled_code, struct_layout_map=None):
     """Detect Watcom-emitted field-by-field struct copies.
 
@@ -2201,6 +2232,9 @@ def identify_unrolled_field_copy(decompiled_code, struct_layout_map=None):
             continue
         seen_lhs_pairs = {(normalize(m.group(1)), m.group(2))}
         seen_rhs_pairs = {(normalize(m.group(3)), m.group(2))}
+        # Trailing field names copied by the run, in source order. Used by
+        # the flat-run contiguity suppression below.
+        run_fields = [m.group(2)]
         # For a real struct copy, each LHS prefix corresponds to exactly one
         # RHS prefix (and vice-versa) — `dst.m[0]` always pairs with `src.m[0]`,
         # `dst.m[1]` with `src.m[1]`, etc. If two lines share an LHS prefix
@@ -2234,6 +2268,7 @@ def identify_unrolled_field_copy(decompiled_code, struct_layout_map=None):
                 break
             seen_lhs_pairs.add(lhs_pair)
             seen_rhs_pairs.add(rhs_pair)
+            run_fields.append(mj.group(2))
             prefix_map_lhs_to_rhs.setdefault(lhs_prefix, rhs_prefix)
             prefix_map_rhs_to_lhs.setdefault(rhs_prefix, lhs_prefix)
             j += 1
@@ -2300,6 +2335,16 @@ def identify_unrolled_field_copy(decompiled_code, struct_layout_map=None):
                 rhs_t = resolve_access_path_type(
                     first_rhs_prefix, var_types, struct_layout_map)
                 if lhs_t and rhs_t and lhs_t != rhs_t:
+                    i = j
+                    continue
+                # Contiguity suppression: a real unrolled struct copy spans a
+                # contiguous field range. A flat same-name run over
+                # non-adjacent fields (gaps / out-of-order offsets) can't
+                # collapse to one `memcpy`/`dst = src;` — it's coincidental
+                # field-name overlap, not a block move. Only suppress when the
+                # field offsets resolve and prove non-contiguity (None = keep).
+                if lhs_t and _field_copy_run_is_contiguous(
+                        lhs_t, run_fields, struct_layout_map) is False:
                     i = j
                     continue
             suspects.append({

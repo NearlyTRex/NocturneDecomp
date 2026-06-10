@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 208,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 93,
-    "suspect_count": 11,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 209
   },
   "cross_references": [],
@@ -75,6 +73,107 @@
     },
     "pcode_op_count": 583
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(double *)((int)pdVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(double *)((int)pdVar3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar3 = (double *)((int)pdVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(double *)((int)pdVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(double *)((int)pdVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(double *)((int)pdVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 48,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_8c = *(uint *)((int)&scale->x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 51,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_84 = *(uint *)((int)&scale->y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 56,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_7c = *(uint *)((int)&scale->z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 86,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_30[1];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 88,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_30[3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 90,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_1c;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 208,
     "local_size": 196,
@@ -305,166 +404,7 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CObj_scale_FUN_005d2940.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 73,
-          "message": "Uninitialized variable: local_58",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 74,
-          "message": "Uninitialized variable: local_50",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 83,
-          "message": "Uninitialized variable: local_b8",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 18,
-          "line": 84,
-          "message": "Uninitialized variable: local_b0",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(double *)((int)pdVar2",
-      "severity": "moderate",
-      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(double *)((int)pdVar3",
-      "severity": "moderate",
-      "text": "pdVar3 = (double *)((int)pdVar3 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(double *)((int)pdVar2",
-      "severity": "moderate",
-      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(double *)((int)pdVar7",
-      "severity": "moderate",
-      "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(double *)((int)pdVar6",
-      "severity": "moderate",
-      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 48,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "uStack_8c = *(uint *)((int)&scale->x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 51,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "uStack_84 = *(uint *)((int)&scale->y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 56,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "uStack_7c = *(uint *)((int)&scale->z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 86,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_30[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 88,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_30[3];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 90,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_1c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: local_58",
-      "line": 73,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_40 = local_58 * dVar2;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_50",
-      "line": 74,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_38 = local_50 * dVar3;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b8",
-      "line": 83,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_a0 = local_b8 + pivot->y;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_b0",
-      "line": 84,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_98 = local_b0 + pivot->z;",
-      "type": "static_uninitvar"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

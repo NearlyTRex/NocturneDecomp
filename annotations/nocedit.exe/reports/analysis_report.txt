@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6396 (99.1%)
-Functions with suspects: 58 (0.9%)
+Clean functions: 6420 (99.5%)
+Functions with suspects: 34 (0.5%)
 
-Total suspect patterns: 580
-Average suspects per function: 0.09
+Total suspect patterns: 299
+Average suspects per function: 0.05
 
 Virtual files: 214 total, 211 at 100%, 212 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 48.6
+Average complexity score: 48.2
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,13 +28,13 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              396
-  static_uninitvar          62
-  bitcast_double_pair       36
-  shadow_pointer_walk       30
-  unrolled_memcpy           22
-  sub84_truncation          7
+  pointer_cast              186
+  static_uninitvar          30
+  shadow_pointer_walk       21
+  bitcast_double_pair       18
+  unrolled_memcpy           12
   unaffected_reg            6
+  sub84_truncation          5
   static_shift_too_many_bits 4
   warning_inlined_function  3
   static_identical_inner_condition 3
@@ -98,7 +98,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6346 more
+  ... and 6370 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -136,7 +136,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (52 functions):
+  pointer_cast (30 functions):
     00556a00: shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
     00556180: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     00555a40: shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
@@ -146,53 +146,40 @@ FUNCTIONS BY SUSPECT TYPE
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
     00517630: shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
     005d1ff0: shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0
-    005d8520: shape_superopt.cpp_CP3D_add1_FUN_005d8520
-    ... and 42 more
+    005d77a0: shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
+    ... and 20 more
 
   static_uninitvar (0 functions):
 
-  bitcast_double_pair (6 functions):
-    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    005cc7c0: shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
-    005c8e70: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
-    005d5e60: shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
-    005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
-    005d2ac0: shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
-
-  shadow_pointer_walk (12 functions):
+  shadow_pointer_walk (6 functions):
     00555ff0: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
     00555a40: shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
     00517630: shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
-    005d8520: shape_superopt.cpp_CP3D_add1_FUN_005d8520
-    005d85f0: shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
-    005d84d0: shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
-    005d85a0: shape_superopt.cpp_CP3D_add2_FUN_005d85a0
-    005d8630: shape_superopt.cpp_CP3D_scale_FUN_005d8630
     005d3960: shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
-    ... and 2 more
+    005ce0a0: shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
 
-  unrolled_memcpy (16 functions):
+  bitcast_double_pair (3 functions):
+    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    005c8e70: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+    005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
+
+  unrolled_memcpy (7 functions):
     00555ff0: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
     00556180: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    005d8520: shape_superopt.cpp_CP3D_add1_FUN_005d8520
-    005d85f0: shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
     005c8e70: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
     005d63d0: shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
-    005d84d0: shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
-    005d85a0: shape_superopt.cpp_CP3D_add2_FUN_005d85a0
-    005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
-    ... and 6 more
-
-  sub84_truncation (4 functions):
-    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    005c8e70: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
-    005d5e60: shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
+    005d0d30: shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
 
   unaffected_reg (1 functions):
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+
+  sub84_truncation (3 functions):
+    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    005c8e70: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+    005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
 
   static_shift_too_many_bits (0 functions):
 

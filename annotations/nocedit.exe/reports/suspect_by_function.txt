@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6395 (99.1%)
-With suspects: 59
-Total suspects: 580
+Clean: 6419 (99.5%)
+With suspects: 35
+Total suspects: 299
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (34 suspects)
@@ -289,18 +289,6 @@ shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800 (1 suspect)
   Line 41 [pointer_cast]: *(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;
 
 ====================================================================================================
-shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (1 suspect)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 153 [unrolled_memcpy]: new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_replace].impl.x;
-
-====================================================================================================
-shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0 (1 suspect)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 80 [unrolled_memcpy]: dst_vert->position = pCVar5->position;
-
-====================================================================================================
 shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (6 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
@@ -310,49 +298,6 @@ shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (6 suspects)
   Line 37 [pointer_cast]: *(uint *)((int)pCVar1->uv_coords + iVar4 + -8) = uVar2 - 1;
   Line 39 [pointer_cast]: uVar2 = *(uint *)((int)pCVar1->uv_coords + iVar4 + -4);
   Line 41 [pointer_cast]: *(uint *)((int)pCVar1->uv_coords + iVar4 + -4) = uVar2 - 1;
-
-====================================================================================================
-shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0 (18 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 46 [pointer_cast]: uStack_5c = *(uint *)((int)&scale->x + 4);
-  Line 48 [pointer_cast]: uStack_54 = *(uint *)((int)&scale->y + 4);
-  Line 53 [pointer_cast]: uVar1 = *(uint *)((int)&scale->z + 4);
-  Line 58 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
-  Line 59 [pointer_cast]: pdVar3 = (double *)((int)pdVar3 + 4);
-  Line 62 [bitcast_double_pair]: local_90 = local_a8 * __BITCAST_DOUBLE(CONCAT44(uStack_5c,local_60));
-  Line 63 [bitcast_double_pair]: local_88 = local_a0 * __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));
-  Line 64 [bitcast_double_pair]: local_80 = local_98 * __BITCAST_DOUBLE(CONCAT44(uVar1,local_50));
-  Line 69 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
-  Line 70 [pointer_cast]: pdVar5 = (double *)((int)pdVar5 + 4);
-  Line 70 [static_uninitvar]: local_88 = local_a0 * __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));
-  Line 71 [static_uninitvar]: local_80 = local_98 * __BITCAST_DOUBLE(CONCAT44(uVar1,local_50));
-  Line 79 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + 4);
-  Line 80 [static_uninitvar]: local_28 = local_70 + pivot->y;
-  Line 81 [static_uninitvar]: local_20 = local_68 + pivot->z;
-  Line 83 [pointer_cast]: *(uint *)((int)&(pCVar3->position).x + 4) = local_48[1];
-  Line 85 [pointer_cast]: *(uint *)((int)&(pCVar3->position).y + 4) = local_48[3];
-  Line 87 [pointer_cast]: *(uint *)((int)&(pCVar3->position).z + 4) = local_34;
-
-====================================================================================================
-shape_superopt.cpp_CObj_scale_FUN_005d2940 (15 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 48 [pointer_cast]: uStack_8c = *(uint *)((int)&scale->x + 4);
-  Line 51 [pointer_cast]: uStack_84 = *(uint *)((int)&scale->y + 4);
-  Line 56 [pointer_cast]: uStack_7c = *(uint *)((int)&scale->z + 4);
-  Line 62 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
-  Line 63 [pointer_cast]: pdVar3 = (double *)((int)pdVar3 + 4);
-  Line 72 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
-  Line 73 [pointer_cast]: pdVar7 = (double *)((int)pdVar7 + 4);
-  Line 73 [static_uninitvar]: local_40 = local_58 * dVar2;
-  Line 74 [static_uninitvar]: local_38 = local_50 * dVar3;
-  Line 82 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + 4);
-  Line 83 [static_uninitvar]: local_a0 = local_b8 + pivot->y;
-  Line 84 [static_uninitvar]: local_98 = local_b0 + pivot->z;
-  Line 86 [pointer_cast]: *(uint *)((int)&(pCVar5->position).x + 4) = local_30[1];
-  Line 88 [pointer_cast]: *(uint *)((int)&(pCVar5->position).y + 4) = local_30[3];
-  Line 90 [pointer_cast]: *(uint *)((int)&(pCVar5->position).z + 4) = local_1c;
 
 ====================================================================================================
 shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0 (7 suspects)
@@ -412,74 +357,6 @@ shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350 (4 suspects)
   Line 49 [pointer_cast]: *(byte *)((int)&pCVar3->flags + 1) = bVar1 & 0xdf | 0x80;
 
 ====================================================================================================
-shape_superopt.cpp_CP2D_copy_FUN_005d8330 (2 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 6 [pointer_cast]: *(uint *)((int)&(dst->impl).x + 4) = *(uint *)((int)&(src->impl).x + 4);
-  Line 8 [pointer_cast]: *(uint *)((int)&(dst->impl).y + 4) = *(uint *)((int)&(src->impl).y + 4);
-
-====================================================================================================
-shape_superopt.cpp_CP3D_add1_FUN_005d8520 (4 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 19 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
-  Line 20 [pointer_cast]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
-  Line 20 [shadow_pointer_walk]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
-  Line 25 [unrolled_memcpy]: // 005d855c: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-shape_superopt.cpp_CP3D_add2_FUN_005d85a0 (4 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 19 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
-  Line 20 [pointer_cast]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
-  Line 20 [shadow_pointer_walk]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
-  Line 25 [unrolled_memcpy]: // 005d85dc: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-shape_superopt.cpp_CP3D_copy1_FUN_005d8470 (3 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 6 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).x + 4) = *(uint *)((int)&(other->impl).x + 4);
-  Line 8 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).y + 4) = *(uint *)((int)&(other->impl).y + 4);
-  Line 10 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).z + 4) = *(uint *)((int)&(other->impl).z + 4);
-
-====================================================================================================
-shape_superopt.cpp_CP3D_copy2_FUN_005d84a0 (3 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 6 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).x + 4) = *(uint *)((int)&(other->impl).x + 4);
-  Line 8 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).y + 4) = *(uint *)((int)&(other->impl).y + 4);
-  Line 10 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).z + 4) = *(uint *)((int)&(other->impl).z + 4);
-
-====================================================================================================
-shape_superopt.cpp_CP3D_multiply_FUN_005d85f0 (4 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 19 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
-  Line 20 [pointer_cast]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
-  Line 20 [shadow_pointer_walk]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
-  Line 23 [unrolled_memcpy]: // 005d8628: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-shape_superopt.cpp_CP3D_scale_FUN_005d8630 (4 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 19 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
-  Line 20 [pointer_cast]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
-  Line 20 [shadow_pointer_walk]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
-  Line 23 [unrolled_memcpy]: // 005d8666: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-shape_superopt.cpp_CP3D_subtract_FUN_005d84d0 (4 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 19 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
-  Line 20 [pointer_cast]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
-  Line 20 [shadow_pointer_walk]: pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);
-  Line 25 [unrolled_memcpy]: // 005d850c: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
 shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0 (20 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
@@ -503,29 +380,6 @@ shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0 (20 suspects)
   Line 192 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
   Line 197 [static_uninitvar]: dVar6 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);
   Line 197 [static_uninitvar]: dVar6 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);
-
-====================================================================================================
-shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0 (18 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 15 [unrolled_memcpy]: // 005cc6c2: MOVSD.REP ES:EDI,ESI
-  Line 20 [pointer_cast]: pCVar2 = (CPoly *)((int)pCVar2 + 1);
-  Line 21 [pointer_cast]: pCVar4 = (CPoly *)((int)pCVar4 + 1);
-  Line 26 [unrolled_memcpy]: // 005cc6dd: MOVSD.REP ES:EDI,ESI
-  Line 27 [pointer_cast]: pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 4);
-  Line 27 [shadow_pointer_walk]: pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 4);
-  Line 28 [pointer_cast]: pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 4);
-  Line 28 [shadow_pointer_walk]: pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 4);
-  Line 32 [pointer_cast]: pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 1);
-  Line 32 [shadow_pointer_walk]: pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 1);
-  Line 33 [pointer_cast]: pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 1);
-  Line 33 [shadow_pointer_walk]: pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 1);
-  Line 38 [pointer_cast]: *(uint *)((int)&(this_ptr->normal).impl.x + 4) =
-  Line 39 [pointer_cast]: *(uint *)((int)&(source->normal).impl.x + 4);
-  Line 41 [pointer_cast]: *(uint *)((int)&(this_ptr->normal).impl.y + 4) =
-  Line 42 [pointer_cast]: *(uint *)((int)&(source->normal).impl.y + 4);
-  Line 44 [pointer_cast]: *(uint *)((int)&(this_ptr->normal).impl.z + 4) =
-  Line 45 [pointer_cast]: *(uint *)((int)&(source->normal).impl.z + 4);
 
 ====================================================================================================
 shape_superopt.cpp_CPoly_flipNormal_FUN_005cdfe0 (8 suspects)
@@ -615,265 +469,10 @@ shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 (12 suspects)
   Line 112 [pointer_cast]: *(uint *)((int)&out_hit_point->z + 4) = local_b4;
 
 ====================================================================================================
-shape_superopt.cpp_CPoly_restoreVertexPositionsWithFlag_FUN_005cd6f0 (18 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 12 [pointer_cast]: *(uint *)((int)&(pCVar1->position).x + 4) =
-  Line 13 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).x + 4);
-  Line 15 [pointer_cast]: *(uint *)((int)&(pCVar1->position).y + 4) =
-  Line 16 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).y + 4);
-  Line 18 [pointer_cast]: *(uint *)((int)&(pCVar1->position).z + 4) =
-  Line 19 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).z + 4);
-  Line 24 [pointer_cast]: *(uint *)((int)&(pCVar1->position).x + 4) =
-  Line 25 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).x + 4);
-  Line 27 [pointer_cast]: *(uint *)((int)&(pCVar1->position).y + 4) =
-  Line 28 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).y + 4);
-  Line 30 [pointer_cast]: *(uint *)((int)&(pCVar1->position).z + 4) =
-  Line 31 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).z + 4);
-  Line 38 [pointer_cast]: *(uint *)((int)&(pCVar2->position).x + 4) =
-  Line 39 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).x + 4);
-  Line 41 [pointer_cast]: *(uint *)((int)&(pCVar2->position).y + 4) =
-  Line 42 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).y + 4);
-  Line 44 [pointer_cast]: *(uint *)((int)&(pCVar2->position).z + 4) =
-  Line 45 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).z + 4);
-
-====================================================================================================
-shape_superopt.cpp_CPoly_restoreVertexPositions_FUN_005cd640 (18 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 11 [pointer_cast]: *(uint *)((int)&(pCVar1->position).x + 4) =
-  Line 12 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).x + 4);
-  Line 14 [pointer_cast]: *(uint *)((int)&(pCVar1->position).y + 4) =
-  Line 15 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).y + 4);
-  Line 17 [pointer_cast]: *(uint *)((int)&(pCVar1->position).z + 4) =
-  Line 18 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).z + 4);
-  Line 21 [pointer_cast]: *(uint *)((int)&(pCVar1->position).x + 4) =
-  Line 22 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).x + 4);
-  Line 24 [pointer_cast]: *(uint *)((int)&(pCVar1->position).y + 4) =
-  Line 25 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).y + 4);
-  Line 27 [pointer_cast]: *(uint *)((int)&(pCVar1->position).z + 4) =
-  Line 28 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).z + 4);
-  Line 31 [pointer_cast]: *(uint *)((int)&(pCVar2->position).x + 4) =
-  Line 32 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).x + 4);
-  Line 34 [pointer_cast]: *(uint *)((int)&(pCVar2->position).y + 4) =
-  Line 35 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).y + 4);
-  Line 37 [pointer_cast]: *(uint *)((int)&(pCVar2->position).z + 4) =
-  Line 38 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).z + 4);
-
-====================================================================================================
-shape_superopt.cpp_CPoly_saveVertexPositionsWithFlag_FUN_005cd560 (18 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 12 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).x + 4) =
-  Line 13 [pointer_cast]: *(uint *)((int)&(pCVar1->position).x + 4);
-  Line 15 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).y + 4) =
-  Line 16 [pointer_cast]: *(uint *)((int)&(pCVar1->position).y + 4);
-  Line 18 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).z + 4) =
-  Line 19 [pointer_cast]: *(uint *)((int)&(pCVar1->position).z + 4);
-  Line 24 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).x + 4) =
-  Line 25 [pointer_cast]: *(uint *)((int)&(pCVar1->position).x + 4);
-  Line 27 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).y + 4) =
-  Line 28 [pointer_cast]: *(uint *)((int)&(pCVar1->position).y + 4);
-  Line 30 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).z + 4) =
-  Line 31 [pointer_cast]: *(uint *)((int)&(pCVar1->position).z + 4);
-  Line 38 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).x + 4) =
-  Line 39 [pointer_cast]: *(uint *)((int)&(pCVar2->position).x + 4);
-  Line 41 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).y + 4) =
-  Line 42 [pointer_cast]: *(uint *)((int)&(pCVar2->position).y + 4);
-  Line 44 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).z + 4) =
-  Line 45 [pointer_cast]: *(uint *)((int)&(pCVar2->position).z + 4);
-
-====================================================================================================
-shape_superopt.cpp_CPoly_saveVertexPositions_FUN_005cd4b0 (18 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 11 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).x + 4) =
-  Line 12 [pointer_cast]: *(uint *)((int)&(pCVar1->position).x + 4);
-  Line 14 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).y + 4) =
-  Line 15 [pointer_cast]: *(uint *)((int)&(pCVar1->position).y + 4);
-  Line 17 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).z + 4) =
-  Line 18 [pointer_cast]: *(uint *)((int)&(pCVar1->position).z + 4);
-  Line 21 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).x + 4) =
-  Line 22 [pointer_cast]: *(uint *)((int)&(pCVar1->position).x + 4);
-  Line 24 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).y + 4) =
-  Line 25 [pointer_cast]: *(uint *)((int)&(pCVar1->position).y + 4);
-  Line 27 [pointer_cast]: *(uint *)((int)&(pCVar1->orig_position).z + 4) =
-  Line 28 [pointer_cast]: *(uint *)((int)&(pCVar1->position).z + 4);
-  Line 31 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).x + 4) =
-  Line 32 [pointer_cast]: *(uint *)((int)&(pCVar2->position).x + 4);
-  Line 34 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).y + 4) =
-  Line 35 [pointer_cast]: *(uint *)((int)&(pCVar2->position).y + 4);
-  Line 37 [pointer_cast]: *(uint *)((int)&(pCVar2->orig_position).z + 4) =
-  Line 38 [pointer_cast]: *(uint *)((int)&(pCVar2->position).z + 4);
-
-====================================================================================================
-shape_superopt.cpp_CPoly_scale_FUN_005cc7c0 (48 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 97 [pointer_cast]: uStack_bc = *(uint *)((int)&scale->x + 4);
-  Line 99 [pointer_cast]: uStack_b4 = *(uint *)((int)&scale->y + 4);
-  Line 101 [pointer_cast]: uStack_ac = *(uint *)((int)&scale->z + 4);
-  Line 110 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
-  Line 111 [pointer_cast]: pdVar11 = (double *)((int)pdVar11 + 4);
-  Line 113 [bitcast_double_pair]: local_60 = local_210 * __BITCAST_DOUBLE(CONCAT44(uStack_bc,local_c0));
-  Line 114 [bitcast_double_pair]: local_58 = local_208 * __BITCAST_DOUBLE(CONCAT44(uStack_b4,local_b8));
-  Line 115 [bitcast_double_pair]: local_50 = local_200 * __BITCAST_DOUBLE(CONCAT44(uStack_ac,local_b0));
-  Line 120 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
-  Line 121 [pointer_cast]: pdVar11 = (double *)((int)pdVar11 + 4);
-  Line 121 [static_uninitvar]: local_58 = local_208 * __BITCAST_DOUBLE(CONCAT44(uStack_b4,local_b8));
-  Line 122 [static_uninitvar]: local_50 = local_200 * __BITCAST_DOUBLE(CONCAT44(uStack_ac,local_b0));
-  Line 130 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
-  Line 131 [static_uninitvar]: local_e8 = local_a0 + pivot->y;
-  Line 132 [static_uninitvar]: local_e0 = local_98 + pivot->z;
-  Line 134 [pointer_cast]: *(uint *)((int)&(pCVar5->position).x + 4) = local_90[1];
-  Line 136 [pointer_cast]: *(uint *)((int)&(pCVar5->position).y + 4) = local_90[3];
-  Line 138 [pointer_cast]: *(uint *)((int)&(pCVar5->position).z + 4) = local_7c;
-  Line 141 [pointer_cast]: uStack_17c = *(uint *)((int)&scale->x + 4);
-  Line 144 [pointer_cast]: uStack_174 = *(uint *)((int)&scale->y + 4);
-  Line 147 [pointer_cast]: uStack_16c = *(uint *)((int)&scale->z + 4);
-  Line 156 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
-  Line 157 [pointer_cast]: pdVar11 = (double *)((int)pdVar11 + 4);
-  Line 166 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
-  Line 167 [pointer_cast]: pdVar11 = (double *)((int)pdVar11 + 4);
-  Line 167 [static_uninitvar]: local_130 = local_70 * dVar2;
-  Line 168 [static_uninitvar]: local_128 = local_68 * dVar3;
-  Line 176 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
-  Line 177 [static_uninitvar]: local_40 = local_d0 + pivot->y;
-  Line 178 [static_uninitvar]: local_38 = local_c8 + pivot->z;
-  Line 180 [pointer_cast]: *(uint *)((int)&(pCVar8->position).x + 4) = local_150[1];
-  Line 182 [pointer_cast]: *(uint *)((int)&(pCVar8->position).y + 4) = local_150[3];
-  Line 184 [pointer_cast]: *(uint *)((int)&(pCVar8->position).z + 4) = local_13c;
-  Line 187 [pointer_cast]: uStack_1ac = *(uint *)((int)&scale->x + 4);
-  Line 190 [pointer_cast]: uStack_1a4 = *(uint *)((int)&scale->y + 4);
-  Line 193 [pointer_cast]: uStack_19c = *(uint *)((int)&scale->z + 4);
-  Line 202 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
-  Line 203 [pointer_cast]: pdVar11 = (double *)((int)pdVar11 + 4);
-  Line 212 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
-  Line 213 [pointer_cast]: pdVar7 = (double *)((int)pdVar7 + 4);
-  Line 213 [static_uninitvar]: local_1d8 = local_28 * dVar5;
-  Line 214 [static_uninitvar]: local_1d0 = local_20 * dVar6;
-  Line 222 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + 4);
-  Line 223 [static_uninitvar]: local_190 = local_118 + pivot->y;
-  Line 224 [static_uninitvar]: local_188 = local_110 + pivot->z;
-  Line 226 [pointer_cast]: *(uint *)((int)&(pCVar8->position).x + 4) = local_1c8[1];
-  Line 228 [pointer_cast]: *(uint *)((int)&(pCVar8->position).y + 4) = local_1c8[3];
-  Line 230 [pointer_cast]: *(uint *)((int)&(pCVar8->position).z + 4) = local_1b4;
-
-====================================================================================================
-shape_superopt.cpp_CPoly_transform_FUN_005ccc30 (36 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 80 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + 4);
-  Line 81 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + 4);
-  Line 90 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + 4);
-  Line 90 [static_uninitvar]: local_98 = matrix->m[0].z * local_148 + matrix->m[0].x * local_158 + matrix->m[0].y * local_150;
-  Line 90 [static_uninitvar]: local_98 = matrix->m[0].z * local_148 + matrix->m[0].x * local_158 + matrix->m[0].y * local_150;
-  Line 91 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + 4);
-  Line 100 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + 4);
-  Line 101 [static_uninitvar]: local_48 = local_138 + pivot->y;
-  Line 102 [static_uninitvar]: local_40 = local_130 + pivot->z;
-  Line 104 [pointer_cast]: *(uint *)((int)&(local_18->position).x + 4) = local_128[1];
-  Line 106 [pointer_cast]: *(uint *)((int)&(local_18->position).y + 4) = local_128[3];
-  Line 108 [pointer_cast]: *(uint *)((int)&(local_18->position).z + 4) = local_114;
-  Line 117 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + 4);
-  Line 118 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + 4);
-  Line 127 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + 4);
-  Line 127 [static_uninitvar]: local_1d0 = matrix->m[0].z * local_a0 + matrix->m[0].x * local_b0 + matrix->m[0].y * local_a8;
-  Line 127 [static_uninitvar]: local_1d0 = matrix->m[0].z * local_a0 + matrix->m[0].x * local_b0 + matrix->m[0].y * local_a8;
-  Line 128 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + 4);
-  Line 137 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + 4);
-  Line 138 [static_uninitvar]: local_c0 = local_108 + pivot->y;
-  Line 139 [static_uninitvar]: local_b8 = local_100 + pivot->z;
-  Line 141 [pointer_cast]: *(uint *)((int)&(local_18->position).x + 4) = local_e0[1];
-  Line 143 [pointer_cast]: *(uint *)((int)&(local_18->position).y + 4) = local_e0[3];
-  Line 145 [pointer_cast]: *(uint *)((int)&(local_18->position).z + 4) = local_cc;
-  Line 154 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + 4);
-  Line 155 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + 4);
-  Line 164 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + 4);
-  Line 164 [static_uninitvar]: local_f8 = matrix->m[0].z * local_70 + matrix->m[0].x * local_80 + matrix->m[0].y * local_78;
-  Line 164 [static_uninitvar]: local_f8 = matrix->m[0].z * local_70 + matrix->m[0].x * local_80 + matrix->m[0].y * local_78;
-  Line 165 [pointer_cast]: pdVar3 = (double *)((int)pdVar3 + 4);
-  Line 174 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
-  Line 175 [static_uninitvar]: local_30 = local_180 + pivot->y;
-  Line 176 [static_uninitvar]: local_28 = local_178 + pivot->z;
-  Line 178 [pointer_cast]: *(uint *)((int)&(local_1c->position).x + 4) = local_1a0[1];
-  Line 180 [pointer_cast]: *(uint *)((int)&(local_1c->position).y + 4) = local_1a0[3];
-  Line 182 [pointer_cast]: *(uint *)((int)&(local_1c->position).z + 4) = local_18c;
-
-====================================================================================================
-shape_superopt.cpp_CVec_copy1_FUN_005d8160 (3 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 6 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).x + 4) = *(uint *)((int)&(other->impl).x + 4);
-  Line 8 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).y + 4) = *(uint *)((int)&(other->impl).y + 4);
-  Line 10 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).z + 4) = *(uint *)((int)&(other->impl).z + 4);
-
-====================================================================================================
-shape_superopt.cpp_CVec_copy2_FUN_005d8190 (3 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 6 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).x + 4) = *(uint *)((int)&(other->impl).x + 4);
-  Line 8 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).y + 4) = *(uint *)((int)&(other->impl).y + 4);
-  Line 10 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).z + 4) = *(uint *)((int)&(other->impl).z + 4);
-
-====================================================================================================
-shape_superopt.cpp_CVec_copy3_FUN_005d82b0 (3 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 6 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).x + 4) = *(uint *)((int)&(other->impl).x + 4);
-  Line 8 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).y + 4) = *(uint *)((int)&(other->impl).y + 4);
-  Line 10 [pointer_cast]: *(uint *)((int)&(this_ptr->impl).z + 4) = *(uint *)((int)&(other->impl).z + 4);
-
-====================================================================================================
-shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710 (17 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 5 [unrolled_memcpy]: this_ptr->start_vertex_index = other->start_vertex_index;
-  Line 10 [pointer_cast]: *(uint *)((int)&(this_ptr->start_pos).x + 4) =
-  Line 11 [pointer_cast]: *(uint *)((int)&(other->start_pos).x + 4);
-  Line 13 [pointer_cast]: *(uint *)((int)&(this_ptr->start_pos).y + 4) =
-  Line 14 [pointer_cast]: *(uint *)((int)&(other->start_pos).y + 4);
-  Line 16 [pointer_cast]: *(uint *)((int)&(this_ptr->start_pos).z + 4) =
-  Line 17 [pointer_cast]: *(uint *)((int)&(other->start_pos).z + 4);
-  Line 19 [pointer_cast]: *(uint *)((int)&(this_ptr->end_pos).x + 4) = *(uint *)((int)&(other->end_pos).x + 4);
-  Line 21 [pointer_cast]: *(uint *)((int)&(this_ptr->end_pos).y + 4) = *(uint *)((int)&(other->end_pos).y + 4);
-  Line 24 [pointer_cast]: *(uint *)((int)this_ptr->start_uv + 4) = *(uint *)((int)other->start_uv + 4);
-  Line 24 [pointer_cast]: *(uint *)((int)this_ptr->start_uv + 4) = *(uint *)((int)other->start_uv + 4);
-  Line 26 [pointer_cast]: *(uint *)((int)this_ptr->start_uv + 0xc) = *(uint *)((int)other->start_uv + 0xc);
-  Line 26 [pointer_cast]: *(uint *)((int)this_ptr->start_uv + 0xc) = *(uint *)((int)other->start_uv + 0xc);
-  Line 28 [pointer_cast]: *(uint *)((int)this_ptr->end_uv + 4) = *(uint *)((int)other->end_uv + 4);
-  Line 28 [pointer_cast]: *(uint *)((int)this_ptr->end_uv + 4) = *(uint *)((int)other->end_uv + 4);
-  Line 30 [pointer_cast]: *(uint *)((int)this_ptr->end_uv + 0xc) = *(uint *)((int)other->end_uv + 0xc);
-  Line 30 [pointer_cast]: *(uint *)((int)this_ptr->end_uv + 0xc) = *(uint *)((int)other->end_uv + 0xc);
-
-====================================================================================================
 shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 (1 suspect)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 65 [pointer_cast]: *(double *)((int)&((local_58.vertex_data)->position).x + iVar3) =
-
-====================================================================================================
-shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60 (18 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 37 [pointer_cast]: uVar2 = *(uint *)((int)&pCVar8->x + 4);
-  Line 40 [pointer_cast]: pCVar4 = *(CVector2d **)((int)&pCVar8->y + 4);
-  Line 41 [pointer_cast]: uStack_44 = *(uint *)((int)&pCVar4->x + 4);
-  Line 43 [pointer_cast]: pCVar8 = *(CVector2d **)((int)&pCVar4->y + 4);
-  Line 60 [bitcast_double_pair]: if (((__BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50)) <= test_point->y) &&
-  Line 61 [bitcast_double_pair]: (test_point->y <= __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)))) &&
-  Line 62 [bitcast_double_pair]: ((test_point->y != __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50)) ||
-  Line 63 [bitcast_double_pair]: (test_point->y != __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)))))) {
-  Line 64 [bitcast_double_pair]: if ((test_point->x < __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58))) ||
-  Line 65 [bitcast_double_pair]: (test_point->x < __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)))) {
-  Line 66 [bitcast_double_pair]: dVar6 = __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)) - __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));
-  Line 66 [bitcast_double_pair]: dVar6 = __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)) - __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));
-  Line 67 [bitcast_double_pair]: dVar7 = __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)) - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50));
-  Line 67 [bitcast_double_pair]: dVar7 = __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)) - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50));
-  Line 68 [sub84_truncation]: local_38 = SUB84(__BITCAST_UINT64(dVar6),0);
-  Line 69 [sub84_truncation]: local_30 = SUB84(__BITCAST_UINT64(dVar7),0);
-  Line 77 [bitcast_double_pair]: (test_point->y - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50))) * local_60 +
-  Line 78 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58))) goto LAB_005d5ef4;
 
 ====================================================================================================
 shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (4 suspects)

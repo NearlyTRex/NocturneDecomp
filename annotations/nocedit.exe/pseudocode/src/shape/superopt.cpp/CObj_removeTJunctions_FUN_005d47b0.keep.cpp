@@ -150,10 +150,8 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
               new_triangle.vertex_idx_2 = (&source->vertex_idx_0)[slot_keep];
               new_triangle.uv_coords[0].impl.x = new_u;
               new_triangle.uv_coords[0].impl.y = new_v;
-              new_triangle.uv_coords[1].impl.x = source->uv_coords[slot_replace].impl.x;
-              new_triangle.uv_coords[1].impl.y = source->uv_coords[slot_replace].impl.y;
-              new_triangle.uv_coords[2].impl.x = source->uv_coords[slot_keep].impl.x;
-              new_triangle.uv_coords[2].impl.y = source->uv_coords[slot_keep].impl.y;
+              new_triangle.uv_coords[1] = source->uv_coords[slot_replace];
+              new_triangle.uv_coords[2] = source->uv_coords[slot_keep];
 
               (&source->vertex_idx_0)[slot_replace] = candidate_idx;
               source->uv_coords[slot_replace].impl.x = new_u;

@@ -555,15 +555,6 @@
       "severity": "moderate",
       "text": "local_10c.loat_at.x = local_d0.loat_at.x;",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 113,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_10c.yaw = local_d0.yaw;",
-      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {

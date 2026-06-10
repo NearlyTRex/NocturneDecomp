@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 241,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 91,
-    "suspect_count": 14,
-    "suspect_types": [
-      "bitcast_double_pair",
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 216
   },
   "cross_references": [],
@@ -76,6 +73,134 @@
     },
     "pcode_op_count": 608
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(double *)((int)pdVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(double *)((int)pdVar3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar3 = (double *)((int)pdVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 62,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_90 = local_a8 * __BITCAST_DOUBLE(CONCAT44(uStack_5c,local_60));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 63,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_88 = local_a0 * __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 64,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_80 = local_98 * __BITCAST_DOUBLE(CONCAT44(uVar1,local_50));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(double *)((int)pdVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(double *)((int)pdVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar5 = (double *)((int)pdVar5 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(double *)((int)pdVar4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar4 = (double *)((int)pdVar4 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 46,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_5c = *(uint *)((int)&scale->x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 48,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_54 = *(uint *)((int)&scale->y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 53,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)((int)&scale->z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 83,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar3->position).x + 4) = local_48[1];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 85,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar3->position).y + 4) = local_48[3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 87,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar3->position).z + 4) = local_34;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 212,
     "local_size": 196,
@@ -313,190 +438,7 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CObj_scaleMasked_FUN_005d2ac0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 70,
-          "message": "Uninitialized variable: local_a0",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 71,
-          "message": "Uninitialized variable: local_98",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 80,
-          "message": "Uninitialized variable: local_70",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 81,
-          "message": "Uninitialized variable: local_68",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(double *)((int)pdVar2",
-      "severity": "moderate",
-      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(double *)((int)pdVar3",
-      "severity": "moderate",
-      "text": "pdVar3 = (double *)((int)pdVar3 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 62,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "local_90 = local_a8 * __BITCAST_DOUBLE(CONCAT44(uStack_5c,local_60));",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 63,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "local_88 = local_a0 * __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 64,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "local_80 = local_98 * __BITCAST_DOUBLE(CONCAT44(uVar1,local_50));",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(double *)((int)pdVar2",
-      "severity": "moderate",
-      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(double *)((int)pdVar5",
-      "severity": "moderate",
-      "text": "pdVar5 = (double *)((int)pdVar5 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(double *)((int)pdVar4",
-      "severity": "moderate",
-      "text": "pdVar4 = (double *)((int)pdVar4 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 46,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "uStack_5c = *(uint *)((int)&scale->x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 48,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "uStack_54 = *(uint *)((int)&scale->y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 53,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "uVar1 = *(uint *)((int)&scale->z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 83,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(pCVar3->position).x + 4) = local_48[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 85,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(pCVar3->position).y + 4) = local_48[3];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 87,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(pCVar3->position).z + 4) = local_34;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: local_a0",
-      "line": 70,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_88 = local_a0 * __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_98",
-      "line": 71,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_80 = local_98 * __BITCAST_DOUBLE(CONCAT44(uVar1,local_50));",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_70",
-      "line": 80,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_28 = local_70 + pivot->y;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_68",
-      "line": 81,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "local_20 = local_68 + pivot->z;",
-      "type": "static_uninitvar"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

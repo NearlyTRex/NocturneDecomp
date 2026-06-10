@@ -4,49 +4,49 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     396 ( 68.3%)
-  static_uninitvar                  62 ( 10.7%)
-  bitcast_double_pair               36 (  6.2%)
-  shadow_pointer_walk               30 (  5.2%)
-  unrolled_memcpy                   22 (  3.8%)
-  sub84_truncation                   7 (  1.2%)
-  unaffected_reg                     6 (  1.0%)
-  static_shift_too_many_bits         4 (  0.7%)
-  warning_inlined_function           3 (  0.5%)
-  static_identical_inner_condition     3 (  0.5%)
-  static_self_assignment             3 (  0.5%)
-  raw_address_constant               2 (  0.3%)
-  unrolled_strcpy                    2 (  0.3%)
-  unrolled_strchr                    1 (  0.2%)
-  static_null_pointer_arithmetic     1 (  0.2%)
-  static_null_pointer                1 (  0.2%)
-  static_legacy_uninitvar            1 (  0.2%)
+  pointer_cast                     186 ( 62.2%)
+  static_uninitvar                  30 ( 10.0%)
+  shadow_pointer_walk               21 (  7.0%)
+  bitcast_double_pair               18 (  6.0%)
+  unrolled_memcpy                   12 (  4.0%)
+  unaffected_reg                     6 (  2.0%)
+  sub84_truncation                   5 (  1.7%)
+  static_shift_too_many_bits         4 (  1.3%)
+  warning_inlined_function           3 (  1.0%)
+  static_identical_inner_condition     3 (  1.0%)
+  static_self_assignment             3 (  1.0%)
+  raw_address_constant               2 (  0.7%)
+  unrolled_strcpy                    2 (  0.7%)
+  unrolled_strchr                    1 (  0.3%)
+  static_null_pointer_arithmetic     1 (  0.3%)
+  static_null_pointer                1 (  0.3%)
+  static_legacy_uninitvar            1 (  0.3%)
 
 ====================================================================================================
-TYPE: pointer_cast (396 occurrences)
+TYPE: pointer_cast (186 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   223x  (int)&NAME used in byte-offset arithmetic
-    13x  (uint *)((int)this_ptr
+    68x  (int)&NAME used in byte-offset arithmetic
     12x  (byte *)((int)this_ptr
-    12x  (double *)((int)pdVar2
-    12x  (double *)((int)pdVar4
-    11x  (double *)((int)pdVar9
-     9x  (double *)((int)pdVar11
-     9x  (double *)((int)pdVar6
+     9x  (uint *)((int)this_ptr
      6x  (uint *)((int)pCVar1
      5x  (int *)((int)aiStack_4e8
      5x  (int *)((int)this_ptr
      5x  (double *)((int)pdVar10
      4x  (float *)((int)afStack_4e0
-     4x  (double *)((int)pdVar7
      4x  (double *)((int)pdVar8
-     4x  (uint *)((int)other
-     4x  (double *)((int)pdVar3
+     4x  (double *)((int)pdVar11
+     3x  (double *)((int)pdVar9
+     3x  (double *)((int)pdVar4
      2x  (uchar *)((int)this_ptr
      2x  (int *)((int)g_MaxNeighborVerts
      2x  (int *)((int)pCVar10
+     2x  (double *)((int)pdVar7
+     2x  (double *)((int)pdVar6
+     2x  (uint *)((int)pvVar1
+     2x  (SExpandedEdge *)((int)pvVar1
+     2x  (uint *)((int)edge_b
 
 Functions:
   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
@@ -66,87 +66,44 @@ Functions:
   shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
   shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
   shape_superopt.cpp_CObj_removeVertex_FUN_005d3140
-  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
-  shape_superopt.cpp_CObj_scale_FUN_005d2940
   shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
   shape_superopt.cpp_CObj_transform_FUN_005d2c40
   shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
   shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350
-  shape_superopt.cpp_CP2D_copy_FUN_005d8330
-  shape_superopt.cpp_CP3D_add1_FUN_005d8520
-  shape_superopt.cpp_CP3D_add2_FUN_005d85a0
-  shape_superopt.cpp_CP3D_copy1_FUN_005d8470
-  shape_superopt.cpp_CP3D_copy2_FUN_005d84a0
-  shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
-  shape_superopt.cpp_CP3D_scale_FUN_005d8630
-  shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
-  shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
   shape_superopt.cpp_CPoly_flipNormal_FUN_005cdfe0
   shape_superopt.cpp_CPoly_getBounds_FUN_005ce3e0
   shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
   shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0
   shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010
-  shape_superopt.cpp_CPoly_restoreVertexPositionsWithFlag_FUN_005cd6f0
-  shape_superopt.cpp_CPoly_restoreVertexPositions_FUN_005cd640
-  shape_superopt.cpp_CPoly_saveVertexPositionsWithFlag_FUN_005cd560
-  shape_superopt.cpp_CPoly_saveVertexPositions_FUN_005cd4b0
-  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
-  shape_superopt.cpp_CPoly_transform_FUN_005ccc30
-  shape_superopt.cpp_CVec_copy1_FUN_005d8160
-  shape_superopt.cpp_CVec_copy2_FUN_005d8190
-  shape_superopt.cpp_CVec_copy3_FUN_005d82b0
-  shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
-  shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: static_uninitvar (62 occurrences)
+TYPE: static_uninitvar (30 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    62x  Cppcheck: uninitialized variable
+    30x  Cppcheck: uninitialized variable
 
 Functions:
-  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
-  shape_superopt.cpp_CObj_scale_FUN_005d2940
   shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
   shape_superopt.cpp_CObj_transform_FUN_005d2c40
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
   shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
   shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0
   shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010
-  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
-  shape_superopt.cpp_CPoly_transform_FUN_005ccc30
 
 ====================================================================================================
-TYPE: bitcast_double_pair (36 occurrences)
+TYPE: shadow_pointer_walk (21 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    36x  __BITCAST_DOUBLE(CONCAT44(
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
-  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
-  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
-  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
-  shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
-
-====================================================================================================
-TYPE: shadow_pointer_walk (30 occurrences)
-====================================================================================================
-
-Unique patterns:
-     7x  pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)
      4x  pCVar11 = (T *)&pCVar11->FIELD
      3x  this_ptr = (T *)&this_ptr->FIELD
      2x  pCVar8 = (T *)(pCVar8->attribute_indices + CONST)
      2x  pCVar4 = (T *)(pCVar4->attribute_indices + CONST)
-     2x  pCVar5 = (T *)((int)&(pCVar5->FIELD).SUBFIELD + CONST)
      1x  pCVar10 = (T *)&pCVar10->FIELD
      1x  pCVar7 = (T *)&pCVar7->FIELD
      1x  pCVar2 = (T *)&pCVar2->FIELD
@@ -164,22 +121,28 @@ Functions:
   shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
   shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
-  shape_superopt.cpp_CP3D_add1_FUN_005d8520
-  shape_superopt.cpp_CP3D_add2_FUN_005d85a0
-  shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
-  shape_superopt.cpp_CP3D_scale_FUN_005d8630
-  shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
-  shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
   shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (22 occurrences)
+TYPE: bitcast_double_pair (18 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    11x  MOVSD.REP
-     5x  field-by-field struct copy
+    18x  __BITCAST_DOUBLE(CONCAT44(
+
+Functions:
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
+
+====================================================================================================
+TYPE: unrolled_memcpy (12 occurrences)
+====================================================================================================
+
+Unique patterns:
      5x  for (...; != 0; ... + -1)
+     4x  MOVSD.REP
+     2x  field-by-field struct copy
      1x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
@@ -188,30 +151,8 @@ Functions:
   shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
   shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
   shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
-  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
-  shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
-  shape_superopt.cpp_CP3D_add1_FUN_005d8520
-  shape_superopt.cpp_CP3D_add2_FUN_005d85a0
-  shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
-  shape_superopt.cpp_CP3D_scale_FUN_005d8630
-  shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
-  shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
   shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
-  shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
-
-====================================================================================================
-TYPE: sub84_truncation (7 occurrences)
-====================================================================================================
-
-Unique patterns:
-     7x  SUB84(
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
-  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
-  shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 
 ====================================================================================================
 TYPE: unaffected_reg (6 occurrences)
@@ -222,6 +163,18 @@ Unique patterns:
 
 Functions:
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+
+====================================================================================================
+TYPE: sub84_truncation (5 occurrences)
+====================================================================================================
+
+Unique patterns:
+     5x  SUB84(
+
+Functions:
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
 
 ====================================================================================================
 TYPE: static_shift_too_many_bits (4 occurrences)

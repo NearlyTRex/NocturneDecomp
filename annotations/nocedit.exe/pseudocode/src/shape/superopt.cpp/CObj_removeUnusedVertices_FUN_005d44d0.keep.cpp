@@ -77,10 +77,7 @@ int __cdecl shape_superopt_cpp_CObj_removeUnusedVertices_FUN_005d44d0(CObj *this
         }
         pCVar5 = this_ptr->vertex_data + src_idx;
         dst_vert = this_ptr->vertex_data + local_14;
-        dst_vert->position = pCVar5->position;
-        dst_vert->orig_position = pCVar5->orig_position;
-        dst_vert->attrib_flags = pCVar5->attrib_flags;
-        dst_vert->state_flags = pCVar5->state_flags;
+        *dst_vert = *pCVar5;
         src_idx = src_idx + 1;
         local_14 = local_14 + 1;
       } while (local_14 < uVar6);
