@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6421 (99.5%)
-Functions with suspects: 33 (0.5%)
+Clean functions: 6431 (99.6%)
+Functions with suspects: 23 (0.4%)
 
-Total suspect patterns: 265
+Total suspect patterns: 240
 Average suspects per function: 0.04
 
-Virtual files: 214 total, 211 at 100%, 212 at 90%+
+Virtual files: 214 total, 211 at 100%, 213 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 48.2
+Average complexity score: 48.1
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,22 +28,20 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              163
+  pointer_cast              150
   static_uninitvar          30
   bitcast_double_pair       18
-  unrolled_memcpy           12
-  shadow_pointer_walk       11
+  unrolled_memcpy           10
+  shadow_pointer_walk       7
   unaffected_reg            6
   sub84_truncation          5
   static_shift_too_many_bits 4
-  warning_inlined_function  3
-  static_identical_inner_condition 3
   static_self_assignment    3
-  raw_address_constant      2
+  warning_inlined_function  2
   unrolled_strcpy           2
-  unrolled_strchr           1
-  static_null_pointer_arithmetic 1
   static_null_pointer       1
+  static_identical_inner_condition 1
+  raw_address_constant      1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -97,7 +95,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6371 more
+  ... and 6381 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -135,18 +133,18 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (29 functions):
-    00556a00: shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
+  pointer_cast (21 functions):
     00556180: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     00555a40: shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
     00555090: shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
     00554a50: shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
-    00554e70: shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
     005d1ff0: shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0
-    005d77a0: shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
     005cd7d0: shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
-    ... and 19 more
+    005d3140: shape_superopt.cpp_CObj_removeVertex_FUN_005d3140
+    005d2dd0: shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
+    005c8e70: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+    ... and 11 more
 
   static_uninitvar (0 functions):
 
@@ -155,21 +153,18 @@ FUNCTIONS BY SUSPECT TYPE
     005c8e70: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
 
-  unrolled_memcpy (7 functions):
+  unrolled_memcpy (6 functions):
     00555ff0: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
     00556180: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
     005c8e70: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
-    005d63d0: shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
     005d0d30: shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
 
-  shadow_pointer_walk (5 functions):
+  shadow_pointer_walk (3 functions):
     00555ff0: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
     00555a40: shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    005d3960: shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
-    005ce0a0: shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
 
   unaffected_reg (1 functions):
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
@@ -181,25 +176,18 @@ FUNCTIONS BY SUSPECT TYPE
 
   static_shift_too_many_bits (0 functions):
 
-  warning_inlined_function (3 functions):
-    005568f0: shape_quantize.cpp_displayProgressBar_FUN_005568f0
-    00555090: shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
-    00554a50: shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
-
-  static_identical_inner_condition (0 functions):
-
   static_self_assignment (0 functions):
 
-  raw_address_constant (2 functions):
-    005d7e00: shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
-    005d7000: shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
+  warning_inlined_function (2 functions):
+    00555090: shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
+    00554a50: shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
 
   unrolled_strcpy (1 functions):
     005d7e00: shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
-  unrolled_strchr (1 functions):
-    005568f0: shape_quantize.cpp_displayProgressBar_FUN_005568f0
-
-  static_null_pointer_arithmetic (0 functions):
-
   static_null_pointer (0 functions):
+
+  static_identical_inner_condition (0 functions):
+
+  raw_address_constant (1 functions):
+    005d7e00: shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00

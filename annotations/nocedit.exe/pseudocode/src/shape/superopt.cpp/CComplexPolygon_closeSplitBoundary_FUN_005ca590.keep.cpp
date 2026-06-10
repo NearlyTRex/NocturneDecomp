@@ -23,7 +23,6 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590(C
   uint uVar12;
   CVector3d *pCVar13;
   uint *puVar16;
-  int iVar14;
   int local_28;
   uint *local_24;
   uint local_20;
@@ -54,7 +53,6 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590(C
   min_edge_length = 0.0;
   max_edge_length = 0.0;
   if (*edge_count_ptr != 0) {
-    iVar14 = 0;
     pCVar13 = &edges->start_pos;
     do {
       if ((edges[uVar12].start_side == 0) || (edges[uVar12].end_side == 0)) {
@@ -74,8 +72,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590(C
             max_edge_length = dVar12;
           }
         }
-        *(uint *)(iVar14 + (int)puVar9) = uVar12;
-        iVar14 = iVar14 + 4;
+        puVar9[local_20] = uVar12;
         local_20 = local_20 + 1;
       }
       uVar12 = uVar12 + 1;
@@ -153,7 +150,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590(C
     do {
       local_14 = 0;
       puVar16 = local_1c;
-      if (local_1c < local_1c + local_28) {
+      if (0 < local_28) {
         do {
           uVar2 = *puVar16;
           uVar3 = puVar16[1];
@@ -236,15 +233,13 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590(C
             uVar2 = uVar3 + 1;
             memmove
                       (edges + uVar3 + 2,edges + uVar2,(*edge_count_ptr - uVar2) * 0x60);
-            if (local_20 != 0) {
-              puVar14 = local_1c;
-              do {
-                if (uVar2 <= *puVar14) {
-                  *puVar14 = *puVar14 + 1;
-                }
-                puVar14 = puVar14 + 1;
-              } while (puVar14 < local_1c + local_20);
-            }
+            puVar14 = local_1c;
+            do {
+              if (uVar2 <= *puVar14) {
+                *puVar14 = *puVar14 + 1;
+              }
+              puVar14 = puVar14 + 1;
+            } while (puVar14 < local_1c + local_20);
             edges[uVar2].start_pos = edges[uVar3].end_pos;
             edges[uVar2].start_uv[0] = edges[uVar3].end_uv[0];
             edges[uVar2].start_uv[1] = edges[uVar3].end_uv[1];

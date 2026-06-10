@@ -4,29 +4,27 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     163 ( 61.5%)
-  static_uninitvar                  30 ( 11.3%)
-  bitcast_double_pair               18 (  6.8%)
-  unrolled_memcpy                   12 (  4.5%)
-  shadow_pointer_walk               11 (  4.2%)
-  unaffected_reg                     6 (  2.3%)
-  sub84_truncation                   5 (  1.9%)
-  static_shift_too_many_bits         4 (  1.5%)
-  warning_inlined_function           3 (  1.1%)
-  static_identical_inner_condition     3 (  1.1%)
-  static_self_assignment             3 (  1.1%)
-  raw_address_constant               2 (  0.8%)
+  pointer_cast                     150 ( 62.5%)
+  static_uninitvar                  30 ( 12.5%)
+  bitcast_double_pair               18 (  7.5%)
+  unrolled_memcpy                   10 (  4.2%)
+  shadow_pointer_walk                7 (  2.9%)
+  unaffected_reg                     6 (  2.5%)
+  sub84_truncation                   5 (  2.1%)
+  static_shift_too_many_bits         4 (  1.7%)
+  static_self_assignment             3 (  1.2%)
+  warning_inlined_function           2 (  0.8%)
   unrolled_strcpy                    2 (  0.8%)
-  unrolled_strchr                    1 (  0.4%)
-  static_null_pointer_arithmetic     1 (  0.4%)
   static_null_pointer                1 (  0.4%)
+  static_identical_inner_condition     1 (  0.4%)
+  raw_address_constant               1 (  0.4%)
 
 ====================================================================================================
-TYPE: pointer_cast (163 occurrences)
+TYPE: pointer_cast (150 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    66x  (int)&NAME used in byte-offset arithmetic
+    63x  (int)&NAME used in byte-offset arithmetic
     12x  (byte *)((int)this_ptr
      8x  (uint *)((int)this_ptr
      6x  (uint *)((int)pCVar1
@@ -35,38 +33,32 @@ Unique patterns:
      4x  (double *)((int)pdVar11
      3x  (double *)((int)pdVar9
      3x  (double *)((int)pdVar4
-     2x  (uchar *)((int)this_ptr
      2x  (int *)((int)g_MaxNeighborVerts
      2x  (double *)((int)pdVar7
-     2x  (double *)((int)pdVar6
      2x  (uint *)((int)pvVar1
      2x  (SExpandedEdge *)((int)pvVar1
      2x  (uint *)((int)edge_b
      2x  (double *)((int)pdVar2
      2x  (float *)((int)g_ModelPolygonData
-     2x  (CComplexPolygon **)(iVar2 + (int)this_ptr
-     1x  (void **)((int)this_ptr
+     1x  (uint **)((int)(*bitmap_ptr)->row_table
+     1x  (uint *)((int)puVar10
+     1x  (uint *)((int)puVar13
+     1x  (uint *)(local_44 + (int)this_ptr
 
 Functions:
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
   shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
-  shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70
   shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90
-  shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
   shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
   shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
   shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0
   shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60
-  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
-  shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
   shape_superopt.cpp_CObj_removeVertex_FUN_005d3140
   shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
   shape_superopt.cpp_CObj_transform_FUN_005d2c40
-  shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
   shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
@@ -75,8 +67,6 @@ Functions:
   shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
   shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0
   shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010
-  shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
-  shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
 TYPE: static_uninitvar (30 occurrences)
@@ -106,12 +96,12 @@ Functions:
   shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
 
 ====================================================================================================
-TYPE: unrolled_memcpy (12 occurrences)
+TYPE: unrolled_memcpy (10 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     5x  for (...; != 0; ... + -1)
-     4x  MOVSD.REP
+     4x  for (...; != 0; ... + -1)
+     3x  MOVSD.REP
      2x  field-by-field struct copy
      1x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
@@ -122,27 +112,22 @@ Functions:
   shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
   shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
   shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
-  shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (11 occurrences)
+TYPE: shadow_pointer_walk (7 occurrences)
 ====================================================================================================
 
 Unique patterns:
      3x  pCVar11 = (T *)&pCVar11->FIELD
-     3x  this_ptr = (T *)&this_ptr->FIELD
      1x  pCVar10 = (T *)&pCVar10->FIELD
      1x  pCVar7 = (T *)&pCVar7->FIELD
      1x  pCVar2 = (T *)&pCVar2->FIELD
      1x  local_24 = (T *)&local_24->FIELD
-     1x  pCStack_60 = (T *)&pCStack_60[N].SUBFIELD
 
 Functions:
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
   shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
-  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
-  shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
 
 ====================================================================================================
 TYPE: unaffected_reg (6 occurrences)
@@ -177,30 +162,6 @@ Functions:
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
 
 ====================================================================================================
-TYPE: warning_inlined_function (3 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  WARNING: Inlined function:
-
-Functions:
-  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
-  shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
-  shape_quantize.cpp_displayProgressBar_FUN_005568f0
-
-====================================================================================================
-TYPE: static_identical_inner_condition (3 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  Cppcheck: inner condition identical to outer
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
-
-====================================================================================================
 TYPE: static_self_assignment (3 occurrences)
 ====================================================================================================
 
@@ -213,16 +174,15 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: raw_address_constant (2 occurrences)
+TYPE: warning_inlined_function (2 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     1x  0x766880
-     1x  0x5d709a
+     2x  WARNING: Inlined function:
 
 Functions:
-  shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
-  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
+  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
+  shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
 
 ====================================================================================================
 TYPE: unrolled_strcpy (2 occurrences)
@@ -235,26 +195,6 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: unrolled_strchr (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
-
-Functions:
-  shape_quantize.cpp_displayProgressBar_FUN_005568f0
-
-====================================================================================================
-TYPE: static_null_pointer_arithmetic (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  Cppcheck: null pointer arithmetic
-
-Functions:
-  shape_quantize.cpp_displayProgressBar_FUN_005568f0
-
-====================================================================================================
 TYPE: static_null_pointer (1 occurrences)
 ====================================================================================================
 
@@ -263,3 +203,23 @@ Unique patterns:
 
 Functions:
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
+
+====================================================================================================
+TYPE: static_identical_inner_condition (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  Cppcheck: inner condition identical to outer
+
+Functions:
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+
+====================================================================================================
+TYPE: raw_address_constant (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  0x766880
+
+Functions:
+  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00

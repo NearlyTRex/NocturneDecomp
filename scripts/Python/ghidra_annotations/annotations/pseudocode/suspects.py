@@ -90,6 +90,7 @@ SUSPECT_SEVERITY = {
     'bit_int_float_compare': 'moderate',
     'bitcast_double_pair': 'moderate',
     'bitcast_double': 'moderate',
+    'bitcast_double_numeric': 'moderate',
     'sibling_array_undersized': 'moderate',
     'self_copy_guard': 'moderate',
     'dropped_self_copy': 'moderate',
@@ -271,6 +272,15 @@ _SUSPECT_PATTERN_DEFS = [
     # round-trip the hex bits to a decimal literal and drop the bitcast.
     (r'__BITCAST_DOUBLE\s*\((?!\s*CONCAT44\s*\()', 'bitcast_double',
      '__BITCAST_DOUBLE intrinsic — preprocessor hack to bridge split-double representations. Replace with a typed double or plain decimal literal in a .keep.'),
+    # Numeric (double) cast of a value shifted into the high 32 bits:
+    # `(double)((ulonglong)X << 0x20)`. Ghidra mis-rendered an x87 bit-cast (FLD
+    # of a double whose high dword is X and low dword 0) as a NUMERIC conversion.
+    # As decompiled this computes a garbage ~10^18 value at runtime instead of the
+    # intended double. Decode `X << 0x20` as the IEEE-754 double (low dword 0) —
+    # 0x3ff00000 -> 1.0, 0xbff00000 -> -1.0 — and replace with that literal in a
+    # .keep; when X is a runtime-selected sign value, make X itself a +/-1.0 double.
+    (r'\(double\)\s*\(\s*\(ulonglong\)[^;<]*<<\s*0x20', 'bitcast_double_numeric',
+     'Numeric (double) cast of `(ulonglong)X << 0x20` — Ghidra mis-rendered a bit-cast (double from high dword X, low 0) as a numeric conversion; produces a garbage ~10^18 value at runtime. Decode X<<0x20 as the IEEE-754 double in a .keep (0x3ff00000->1.0, 0xbff00000->-1.0).'),
     # SUB84(): extracting 32-bit value from 64-bit (truncation artifact)
     (r'\bSUB84\s*\(', 'sub84_truncation',
      'SUB84 truncation (extracting 32-bit from 64-bit value)'),

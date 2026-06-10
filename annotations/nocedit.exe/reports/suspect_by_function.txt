@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6420 (99.5%)
-With suspects: 34
-Total suspects: 265
+Clean: 6431 (99.6%)
+With suspects: 23
+Total suspects: 240
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (15 suspects)
@@ -28,13 +28,6 @@ shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (15 suspects)
   Line 344 [bitcast_double_pair]: if (dVar20 < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {
   Line 345 [sub84_truncation]: local_108 = SUB84(__BITCAST_UINT64(dVar20),0);
   Line 355 [bitcast_double_pair]: fVar2 = sample_point->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) +
-
-====================================================================================================
-shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 (2 suspects)
-  File: shape/quantize.cpp
-====================================================================================================
-  Line 72 [pointer_cast]: *(void **)((int)this_ptr->row_table + iVar4) =
-  Line 73 [pointer_cast]: (void *)((int)this_ptr->pixel_data + (uint)(ushort)this_ptr->bytes_per_row * iVar3);
 
 ====================================================================================================
 shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (7 suspects)
@@ -115,21 +108,6 @@ shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 (21 suspects)
   Line 180 [pointer_cast]: *(uint *)((int)this_ptr->pixel_data + iVar7 * 4) = uVar1;
 
 ====================================================================================================
-shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70 (2 suspects)
-  File: shape/quantize.cpp
-====================================================================================================
-  Line 17 [pointer_cast]: local_20 = (uchar *)((int)this_ptr->pixel_data + iVar4 * 4);
-  Line 18 [pointer_cast]: pixel_ptr = (uchar *)((int)this_ptr->pixel_data + iVar5 * 4);
-
-====================================================================================================
-shape_quantize.cpp_displayProgressBar_FUN_005568f0 (3 suspects)
-  File: shape/quantize.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 18 [unrolled_strchr]: do {
-  Line 35 [static_null_pointer_arithmetic]: memset(pcVar1 + 1,0x2e,(int)ROUND(ROUND(dVar1)));
-
-====================================================================================================
 shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (6 suspects)
   File: shape/quantize.cpp
 ====================================================================================================
@@ -150,13 +128,6 @@ shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90 (6 suspects)
   Line 18 [pointer_cast]: *(uint *)((int)&(poly->normal).impl.y + 4);
   Line 20 [pointer_cast]: *(uint *)((int)&(this_ptr->normal).z + 4) =
   Line 21 [pointer_cast]: *(uint *)((int)&(poly->normal).impl.z + 4);
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (2 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 170 [pointer_cast]: puVar10 = (uint *)(iVar14 + (int)puVar9);
-  Line 239 [static_identical_inner_condition]: if (local_20 != 0) {
 
 ====================================================================================================
 shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 (14 suspects)
@@ -197,12 +168,6 @@ shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 (14 suspects)
   Line 130 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < dVar7) {
 
 ====================================================================================================
-shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0 (1 suspect)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 65 [static_identical_inner_condition]: if (edge_count != 0) {
-
-====================================================================================================
 shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0 (11 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
@@ -234,20 +199,6 @@ shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60 (12 suspects)
   Line 40 [pointer_cast]: *(uint *)((int)&out_max->x + 4) = *(uint *)((int)&pCVar1[1].position.x + 4);
   Line 44 [pointer_cast]: *(uint *)((int)&out_max->y + 4) = *(uint *)((int)&pCVar1[1].position.y + 4);
   Line 48 [pointer_cast]: *(uint *)((int)&out_max->z + 4) = *(uint *)((int)&pCVar1[1].position.z + 4);
-
-====================================================================================================
-shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960 (3 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 65 [pointer_cast]: pdStack_1c = (double *)((int)&(((CP3D *)(pCVar1->uv_coords + 3))->impl).x + local_64);
-  Line 66 [pointer_cast]: piVar15 = (int *)((int)pCVar1->uv_coords + local_64 + -0xc);
-  Line 150 [shadow_pointer_walk]: pCStack_60 = (CP3D *)&pCStack_60[4].impl.y;
-
-====================================================================================================
-shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800 (1 suspect)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 41 [pointer_cast]: *(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;
 
 ====================================================================================================
 shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (6 suspects)
@@ -283,14 +234,6 @@ shape_superopt.cpp_CObj_transform_FUN_005d2c40 (7 suspects)
   Line 75 [pointer_cast]: *(uint *)((int)&(pCVar2->position).x + 4) = uStack_74;
   Line 77 [pointer_cast]: *(uint *)((int)&(pCVar2->position).y + 4) = uStack_6c;
   Line 79 [pointer_cast]: *(uint *)((int)&(pCVar2->position).z + 4) = uStack_64;
-
-====================================================================================================
-shape_superopt.cpp_COptimize_cleanup_FUN_005d7000 (3 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 16 [pointer_cast]: (*(CComplexPolygon **)(iVar2 + (int)this_ptr->complex_polygons));
-  Line 17 [pointer_cast]: pCVar1 = *(CComplexPolygon **)(iVar2 + (int)this_ptr->complex_polygons);
-  Line 34 [raw_address_constant]: uStack00000008 = 0x5d709a;
 
 ====================================================================================================
 shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00 (11 suspects)
@@ -405,14 +348,6 @@ shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (8 suspects)
   Line 76 [static_uninitvar]: dVar5 = 1.0 / SQRT(local_70 * local_70 + local_80 * local_80 + local_78 * local_78);
 
 ====================================================================================================
-shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0 (3 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 75 [shadow_pointer_walk]: this_ptr = (CPoly *)&this_ptr->vertex_idx_0;
-  Line 92 [shadow_pointer_walk]: this_ptr = (CPoly *)&this_ptr->vertex_idx_0;
-  Line 109 [shadow_pointer_walk]: this_ptr = (CPoly *)&this_ptr->vertex_idx_0;
-
-====================================================================================================
 shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 (12 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
@@ -428,18 +363,3 @@ shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 (12 suspects)
   Line 108 [pointer_cast]: *(uint *)((int)&out_hit_point->x + 4) = local_c8[1];
   Line 110 [pointer_cast]: *(uint *)((int)&out_hit_point->y + 4) = local_c8[3];
   Line 112 [pointer_cast]: *(uint *)((int)&out_hit_point->z + 4) = local_b4;
-
-====================================================================================================
-shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 (1 suspect)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 65 [pointer_cast]: *(double *)((int)&((local_58.vertex_data)->position).x + iVar3) =
-
-====================================================================================================
-shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (4 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 42 [unrolled_memcpy]: for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-  Line 44 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);
-  Line 45 [pointer_cast]: pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
-  Line 76 [unrolled_memcpy]: // 005d6488: MOVSD.REP ES:EDI,ESI

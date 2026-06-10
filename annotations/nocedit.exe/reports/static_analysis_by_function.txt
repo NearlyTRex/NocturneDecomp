@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 40
-  Total diagnostics: 124
+  Functions with findings: 37
+  Total diagnostics: 120
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 34, raw .cpp files: 6
+  .keep.cpp files: 32, raw .cpp files: 5
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -198,13 +198,6 @@ shape_quantize.cpp_quantizeRawPixelData_FUN_00556490  [.keep] [Cppcheck (quick)]
   Line  124: [nullPointerRedundantCheck] Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
 ----------------------------------------------------------------------------------------------------
-shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590  [.keep] [Cppcheck (quick)]
-  File: shape/superopt.cpp  (2 diagnostics)
-
-  Line  156: [invalidTestForOverflow] Invalid test for overflow 'local_1c<local_1c+local_28'; pointer overflow is undefined behavior. Some mainstream compilers removes handling of overflows when optimising the code and change the code to 'local_28>0'.
-  Line  239: [identicalInnerCondition] Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170  [.keep] [Cppcheck (quick)]
   File: core/dtrace.cpp  (1 diagnostics)
 
@@ -277,12 +270,6 @@ shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910  [.keep] [Cppche
   Line  315: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-shape_quantize.cpp_displayProgressBar_FUN_005568f0  [.cpp] [Cppcheck (quick)]
-  File: shape/quantize.cpp  (1 diagnostics)
-
-  Line   35: [nullPointerArithmetic] Pointer addition with NULL pointer.
-
-----------------------------------------------------------------------------------------------------
 shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70  [.keep] [Cppcheck (quick)]
   File: shape/superopt.cpp  (1 diagnostics)
 
@@ -293,12 +280,6 @@ shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50  [.keep] [Cppch
   File: shape/superopt.cpp  (1 diagnostics)
 
   Line   65: [selfAssignment] Redundant assignment of 'pdVar4' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0  [.keep] [Cppcheck (quick)]
-  File: shape/superopt.cpp  (1 diagnostics)
-
-  Line   65: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0  [.cpp] [Cppcheck (quick)]

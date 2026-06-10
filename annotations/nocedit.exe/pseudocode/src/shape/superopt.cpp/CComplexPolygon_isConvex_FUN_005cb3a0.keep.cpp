@@ -62,40 +62,38 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_isConvex_FUN_005cb3a0(CComplexPol
       }
       uVar2 = 0;
       pSVar1 = edges;
-      if (edge_count != 0) {
-        do {
-          if (uVar2 != uVar3) {
-            if (x_dominant) {
-              test_start_2d.x = (pSVar1->start_pos).y;
-              test_start_2d.y = (pSVar1->start_pos).z;
-              test_end_2d.x = (pSVar1->end_pos).y;
-              test_end_2d.y = (pSVar1->end_pos).z;
-            }
-            else if (y_dominant) {
-              test_start_2d.x = (pSVar1->start_pos).x;
-              test_start_2d.y = (pSVar1->start_pos).z;
-              test_end_2d.x = (pSVar1->end_pos).x;
-              test_end_2d.y = (pSVar1->end_pos).z;
-            }
-            else {
-              test_start_2d.x = (pSVar1->start_pos).x;
-              test_start_2d.y = (pSVar1->start_pos).y;
-              test_end_2d.x = (pSVar1->end_pos).x;
-              test_end_2d.y = (pSVar1->end_pos).y;
-            }
-            dVar4 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
-                              (&edge_start_2d,&edge_end_2d,&test_start_2d);
-            dVar3 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
-                              (&edge_start_2d,&edge_end_2d,&test_end_2d);
-            if ((dVar4 == 0.0 && dVar3 == 0.0) ||
-               ((dVar4 < 0.0 && 0.0 < dVar3) || (0.0 < dVar4 && dVar3 < 0.0))) {
-              return 0;
-            }
+      do {
+        if (uVar2 != uVar3) {
+          if (x_dominant) {
+            test_start_2d.x = (pSVar1->start_pos).y;
+            test_start_2d.y = (pSVar1->start_pos).z;
+            test_end_2d.x = (pSVar1->end_pos).y;
+            test_end_2d.y = (pSVar1->end_pos).z;
           }
-          uVar2 = uVar2 + 1;
-          pSVar1 = pSVar1 + 1;
-        } while (uVar2 < (uint)edge_count);
-      }
+          else if (y_dominant) {
+            test_start_2d.x = (pSVar1->start_pos).x;
+            test_start_2d.y = (pSVar1->start_pos).z;
+            test_end_2d.x = (pSVar1->end_pos).x;
+            test_end_2d.y = (pSVar1->end_pos).z;
+          }
+          else {
+            test_start_2d.x = (pSVar1->start_pos).x;
+            test_start_2d.y = (pSVar1->start_pos).y;
+            test_end_2d.x = (pSVar1->end_pos).x;
+            test_end_2d.y = (pSVar1->end_pos).y;
+          }
+          dVar4 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
+                            (&edge_start_2d,&edge_end_2d,&test_start_2d);
+          dVar3 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
+                            (&edge_start_2d,&edge_end_2d,&test_end_2d);
+          if ((dVar4 == 0.0 && dVar3 == 0.0) ||
+             ((dVar4 < 0.0 && 0.0 < dVar3) || (0.0 < dVar4 && dVar3 < 0.0))) {
+            return 0;
+          }
+        }
+        uVar2 = uVar2 + 1;
+        pSVar1 = pSVar1 + 1;
+      } while (uVar2 < (uint)edge_count);
       local_20 = local_20 + 1;
       uVar3 = uVar3 + 1;
     } while (uVar3 < (uint)edge_count);

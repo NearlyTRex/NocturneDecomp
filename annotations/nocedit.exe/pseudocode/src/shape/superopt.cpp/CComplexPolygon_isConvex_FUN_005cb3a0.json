@@ -952,31 +952,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CComplexPolygon_isConvex_FUN_005cb3a0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 22,
-          "line": 65,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 65,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (edge_count != 0) {",
-      "type": "static_identical_inner_condition"
-    }
-  ]
+  "suspects": []
 }

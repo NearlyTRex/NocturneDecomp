@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (124 diagnostics)
+Cppcheck (quick) (120 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -485,22 +485,6 @@ invalidScanfArgType_int (3)
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
-identicalInnerCondition (3)
-----------------------------------------------------------------------------------------------------
-
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 315
-    File: shape/meshlod.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 239
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
 selfAssignment (3)
 ----------------------------------------------------------------------------------------------------
 
@@ -515,14 +499,6 @@ selfAssignment (3)
   shape_superopt.cpp_COptimize_exportOptimizeGeometr line 151
     File: shape/superopt.cpp
     Redundant assignment of 'iVar7' to itself.
-
-----------------------------------------------------------------------------------------------------
-nullPointerArithmetic (1)
-----------------------------------------------------------------------------------------------------
-
-  shape_quantize.cpp_displayProgressBar_FUN_005568f0 line 35
-    File: shape/quantize.cpp
-    Pointer addition with NULL pointer.
 
 ----------------------------------------------------------------------------------------------------
 nullPointer (1)
@@ -541,12 +517,12 @@ nullPointerArithmeticRedundantCheck (1)
     Either the condition 'user_ptr!=(void*)0x0' is redundant or there is overflow in pointer subtraction.
 
 ----------------------------------------------------------------------------------------------------
-invalidTestForOverflow (1)
+identicalInnerCondition (1)
 ----------------------------------------------------------------------------------------------------
 
-  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 156
-    File: shape/superopt.cpp
-    Invalid test for overflow 'local_1c<local_1c+local_28'; pointer overflow is undefined behavior. Some mainstream compilers removes handling of overflows when optimising the code and change the code to 'local_28>0'.
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 315
+    File: shape/meshlod.cpp
+    Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 memleak (1)

@@ -40,7 +40,7 @@ int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_
     }
     return iVar1;
   }
-  *(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;
+  search_polygon->flags = search_polygon->flags | 0x2000;
   local_18 = this_ptr->poly_array;
   local_20 = 0;
   if (this_ptr->poly_count != 0) {

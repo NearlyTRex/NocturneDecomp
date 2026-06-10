@@ -12,7 +12,7 @@ void __cdecl shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0(void)
 {
   _FILE *file;
   int iVar2;
-  uint *puVar3;
+  CPoly *out_poly;
   int iVar4;
   char (*str1) [80];
   int iVar5;
@@ -26,8 +26,7 @@ void __cdecl shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0(void)
   char *local_2c;
   int local_20;
   int local_18;
-  int local_14;
-  
+
   shape_design_c_removeDegeneratePolygons_FUN_00465310();
   if ((g_PolygonCount < 1) || (g_VertexCount < 1)) {
     return;
@@ -105,7 +104,6 @@ LAB_005d7a1a:
         g_TriListTextureCount = g_TriListTextureCount + 1;
       }
       local_18 = 2;
-      local_14 = local_20 * 0x68;
       local_168.material_id = iVar6;
       if (2 < (int)g_ModelPolygonData[local_30].vertex_indices_count) {
         do {
@@ -123,25 +121,10 @@ LAB_005d7a1a:
             _fprintf(file,"%d %d %d\n",local_168.vertex_idx_0,local_168.vertex_idx_1,local_168.vertex_idx_2);
           }
           shape_superopt_cpp_CPoly_computeNormal_FUN_005cd7d0(&local_168);
-          puVar3 = (uint *)
-                   ((int)&((CPoly *)((local_58.poly_array)->uv_coords + -1))->parent_obj + local_14)
-          ;
-          *puVar3 = (uint)local_168.parent_obj;
-          puVar3[1] = local_168.vertex_idx_0;
-          puVar3[2] = local_168.vertex_idx_1;
-          puVar3[3] = local_168.vertex_idx_2;
-          __arr_op
-                    (puVar3 + 4,local_168.uv_coords,3,0x10,shape_superopt_cpp_CP2D_copy_FUN_005d8330
-                    );
-          *(double *)(puVar3 + 0x10) = local_168.normal.impl.x;
-          *(double *)(puVar3 + 0x12) = local_168.normal.impl.y;
-          *(double *)(puVar3 + 0x14) = local_168.normal.impl.z;
-          puVar3[0x16] = local_168.adjacency_flags;
-          puVar3[0x17] = local_168.material_id;
-          puVar3[0x18] = local_168.flags;
+          out_poly = &local_58.poly_array[local_20];
+          *out_poly = local_168;
           local_20 = local_20 + 1;
           local_18 = local_18 + 1;
-          local_14 = local_14 + 0x68;
         } while (local_18 < (int)g_ModelPolygonData[local_30].vertex_indices_count);
       }
       shape_superopt_cpp_CPoly_dtor_FUN_005cc660(&local_168,0);

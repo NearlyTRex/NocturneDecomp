@@ -4,11 +4,9 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6421 functions
-  1 suspects: 3 functions
-  2 suspects: 3 functions
-  3 suspects: 5 functions
-  4 suspects: 3 functions
+  0 suspects: 6431 functions
+  3 suspects: 2 functions
+  4 suspects: 2 functions
   6 suspects: 6 functions
   7 suspects: 1 functions
   8 suspects: 2 functions
@@ -25,31 +23,10 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [pointer_cast] (3 functions)
-  ------------------------------------------------------------
-    shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_00 (149 lines)
-      *(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)...
-    shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a (204 lines)
-      *(double *)((int)&((local_58.vertex_data)->position).x + iVa...
-    shape_superopt.cpp_CComplexPolygon_closeSplitBound (506 lines)
-      puVar10 = (uint *)(iVar14 + (int)puVar9);...
-
 ========================================================================================================================
 FUNCTIONS WITH 2-3 SUSPECTS
 ========================================================================================================================
-  shape_quantize.cpp_displayProgressBar_FUN_005568f0
-    File: shape/quantize.cpp, Lines: 34, Types: ['unrolled_strchr', 'warning_inlined_function']
-  shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70
-    File: shape/quantize.cpp, Lines: 48, Types: ['pointer_cast']
-  shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
-    File: shape/quantize.cpp, Lines: 85, Types: ['pointer_cast']
-  shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
-    File: shape/superopt.cpp, Lines: 34, Types: ['pointer_cast', 'raw_address_constant']
   shape_superopt.cpp_CObj_transform_FUN_005d2c40
     File: shape/superopt.cpp, Lines: 83, Types: ['pointer_cast']
   shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
     File: shape/superopt.cpp, Lines: 85, Types: ['pointer_cast']
-  shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
-    File: shape/superopt.cpp, Lines: 112, Types: ['shadow_pointer_walk']
-  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d396
-    File: shape/superopt.cpp, Lines: 157, Types: ['pointer_cast', 'shadow_pointer_walk']
