@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr)
 
 {
@@ -17,10 +15,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
   float fVar3;
   int grid_z_00;
   int iVar4;
-  uint uVar3;
-  uint uVar5;
-  uint uVar4;
-  uint uVar6;
   int iVar8;
   CVector3f *pCVar5;
   CVector3f *point;
@@ -44,22 +38,15 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     g_CurrentLineNumber = 0xd78;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many sample points!");
   }
-  local_90.min.x = g_SamplePointArray[0].x;
-  local_90.min.y = g_SamplePointArray[0].y;
-  local_90.min.z = g_SamplePointArray[0].z;
-  local_90.max.x = g_SamplePointArray[0].x;
-  local_90.max.y = g_SamplePointArray[0].y;
-  local_90.max.z = g_SamplePointArray[0].z;
+  local_90.min = g_SamplePointArray[0];
+  local_90.max = g_SamplePointArray[0];
   iVar7 = 0;
   if (0 < g_SamplePointCount) {
-    iVar8 = 0;
     point = g_SamplePointArray;
     do {
-      *(uint *)((int)g_SampleDistances + iVar8) = 0;
+      g_SampleDistances[iVar7] = 1.0;
       iVar7 = iVar7 + 1;
-      *(uint *)((int)g_SampleDistances + iVar8 + 4) = 0x3ff00000;
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_90,point);
-      iVar8 = iVar8 + 8;
       point = point + 1;
     } while (iVar7 < g_SamplePointCount);
   }
@@ -107,19 +94,15 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
         }
       }
     }
-    local_90.min.x = g_SamplePointArray[0].x;
-    local_90.min.y = g_SamplePointArray[0].y;
-    local_90.min.z = g_SamplePointArray[0].z;
-    local_90.max.x = g_SamplePointArray[0].x;
-    local_90.max.y = g_SamplePointArray[0].y;
-    local_90.max.z = g_SamplePointArray[0].z;
+    local_90.min = g_SamplePointArray[0];
+    local_90.max = g_SamplePointArray[0];
     iVar4 = 0;
     if (0 < g_SamplePointCount) {
       iVar6 = 0;
       pCVar5 = g_SamplePointArray;
       do {
-        fVar3 = SQRT((float)*(double *)((int)g_SampleDistances + iVar6));
-        iVar6 = iVar6 + 8;
+        fVar3 = SQRT((float)g_SampleDistances[iVar6]);
+        iVar6 = iVar6 + 1;
         iVar4 = iVar4 + 1;
         local_48.x = pCVar5->x - fVar3;
         local_48.y = pCVar5->y - fVar3;
@@ -132,46 +115,28 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
         pCVar5 = pCVar5 + 1;
       } while (iVar4 < g_SamplePointCount);
     }
-    uVar3 = iVar8 - (int)ROUND(ROUND((local_90.min.x + (float)0.5) *
-                                     (float)16));
-    uVar4 = (int)uVar3 >> 0x1f;
-    iVar9 = (uVar3 ^ uVar4) - uVar4;
+    iVar9 = ABS(iVar8 - (int)ROUND(ROUND((local_90.min.x + (float)0.5) * (float)16)));
     iVar4 = -1;
     if (-1 < iVar9) {
       iVar4 = iVar9;
     }
-    uVar5 = grid_y_00 -
-            (int)ROUND(ROUND((local_90.min.y + (float)0.5) * (float)16));
-    uVar6 = (int)uVar5 >> 0x1f;
-    iVar9 = (uVar5 ^ uVar6) - uVar6;
+    iVar9 = ABS(grid_y_00 - (int)ROUND(ROUND((local_90.min.y + (float)0.5) * (float)16)));
     if (iVar4 < iVar9) {
       iVar4 = iVar9;
     }
-    uVar5 = grid_z - (int)ROUND(ROUND((local_90.min.z + (float)0.5) *
-                                      (float)16));
-    uVar6 = (int)uVar5 >> 0x1f;
-    iVar9 = (uVar5 ^ uVar6) - uVar6;
+    iVar9 = ABS(grid_z - (int)ROUND(ROUND((local_90.min.z + (float)0.5) * (float)16)));
     if (iVar4 < iVar9) {
       iVar4 = iVar9;
     }
-    uVar5 = iVar8 - (int)ROUND(ROUND((local_90.max.x + (float)0.5) *
-                                     (float)16));
-    uVar6 = (int)uVar5 >> 0x1f;
-    iVar9 = (uVar5 ^ uVar6) - uVar6;
+    iVar9 = ABS(iVar8 - (int)ROUND(ROUND((local_90.max.x + (float)0.5) * (float)16)));
     if (iVar4 < iVar9) {
       iVar4 = iVar9;
     }
-    uVar5 = grid_y_00 -
-            (int)ROUND(ROUND((local_90.max.y + (float)0.5) * (float)16));
-    uVar6 = (int)uVar5 >> 0x1f;
-    iVar9 = (uVar5 ^ uVar6) - uVar6;
+    iVar9 = ABS(grid_y_00 - (int)ROUND(ROUND((local_90.max.y + (float)0.5) * (float)16)));
     if (iVar4 < iVar9) {
       iVar4 = iVar9;
     }
-    uVar5 = grid_z - (int)ROUND(ROUND((local_90.max.z + (float)0.5) *
-                                      (float)16));
-    uVar6 = (int)uVar5 >> 0x1f;
-    iVar9 = (uVar5 ^ uVar6) - uVar6;
+    iVar9 = ABS(grid_z - (int)ROUND(ROUND((local_90.max.z + (float)0.5) * (float)16)));
     if (iVar4 < iVar9) {
       iVar4 = iVar9;
     }

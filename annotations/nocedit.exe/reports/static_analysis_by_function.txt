@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 47
-  Total diagnostics: 169
+  Functions with findings: 45
+  Total diagnostics: 157
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 35, raw .cpp files: 12
+  .keep.cpp files: 34, raw .cpp files: 11
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -132,28 +132,6 @@ shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0  [.keep] [Cppcheck (quick)]
   Line  183: [uninitvar] Uninitialized variable: local_228
   Line  197: [uninitvar] Uninitialized variable: local_280
   Line  197: [uninitvar] Uninitialized variable: local_288
-
-----------------------------------------------------------------------------------------------------
-shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50  [.keep] [Cppcheck (quick)]
-  File: shape/meshlod.cpp  (6 diagnostics)
-
-  Line  137: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  145: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  152: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  159: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  166: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  173: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150  [.cpp] [Cppcheck (quick)]
-  File: shape/meshlod.cpp  (6 diagnostics)
-
-  Line   41: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   43: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   44: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   45: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   46: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
-  Line   47: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090  [.keep] [Cppcheck (quick)]

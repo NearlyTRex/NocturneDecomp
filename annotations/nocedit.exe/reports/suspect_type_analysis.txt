@@ -4,16 +4,15 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     438 ( 67.0%)
-  static_uninitvar                  62 (  9.5%)
-  unrolled_memcpy                   38 (  5.8%)
-  bitcast_double_pair               36 (  5.5%)
-  shadow_pointer_walk               31 (  4.7%)
-  static_shift_too_many_bits        10 (  1.5%)
-  sub84_truncation                   8 (  1.2%)
-  unaffected_reg                     6 (  0.9%)
-  static_invalid_pointer_cast        6 (  0.9%)
-  warning_inlined_function           4 (  0.6%)
+  pointer_cast                     396 ( 68.3%)
+  static_uninitvar                  62 ( 10.7%)
+  bitcast_double_pair               36 (  6.2%)
+  shadow_pointer_walk               30 (  5.2%)
+  unrolled_memcpy                   22 (  3.8%)
+  sub84_truncation                   7 (  1.2%)
+  unaffected_reg                     6 (  1.0%)
+  static_shift_too_many_bits         4 (  0.7%)
+  warning_inlined_function           3 (  0.5%)
   static_identical_inner_condition     3 (  0.5%)
   static_self_assignment             3 (  0.5%)
   raw_address_constant               2 (  0.3%)
@@ -22,44 +21,36 @@ SUSPECT TYPE COUNTS
   static_null_pointer_arithmetic     1 (  0.2%)
   static_null_pointer                1 (  0.2%)
   static_legacy_uninitvar            1 (  0.2%)
-  unrolled_memset                    1 (  0.2%)
 
 ====================================================================================================
-TYPE: pointer_cast (438 occurrences)
+TYPE: pointer_cast (396 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   229x  (int)&NAME used in byte-offset arithmetic
-    17x  (uint *)((int)this_ptr
-    15x  (int *)((int)this_ptr
+   223x  (int)&NAME used in byte-offset arithmetic
+    13x  (uint *)((int)this_ptr
     12x  (byte *)((int)this_ptr
     12x  (double *)((int)pdVar2
     12x  (double *)((int)pdVar4
     11x  (double *)((int)pdVar9
      9x  (double *)((int)pdVar11
      9x  (double *)((int)pdVar6
-     8x  (uint *)((int)pCVar1
-     8x  (int *)((int)g_ModelPolygonData
-     5x  (int *)((int)pCVar1
+     6x  (uint *)((int)pCVar1
      5x  (int *)((int)aiStack_4e8
+     5x  (int *)((int)this_ptr
      5x  (double *)((int)pdVar10
-     4x  (uint *)((int)g_SampleDistances
      4x  (float *)((int)afStack_4e0
      4x  (double *)((int)pdVar7
      4x  (double *)((int)pdVar8
      4x  (uint *)((int)other
      4x  (double *)((int)pdVar3
+     2x  (uchar *)((int)this_ptr
+     2x  (int *)((int)g_MaxNeighborVerts
+     2x  (int *)((int)pCVar10
 
 Functions:
   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
-  shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-  shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000
-  shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080
-  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
-  shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
@@ -131,39 +122,6 @@ Functions:
   shape_superopt.cpp_CPoly_transform_FUN_005ccc30
 
 ====================================================================================================
-TYPE: unrolled_memcpy (38 occurrences)
-====================================================================================================
-
-Unique patterns:
-    19x  field-by-field struct copy
-    12x  MOVSD.REP
-     6x  for (...; != 0; ... + -1)
-     1x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-  shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000
-  shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0
-  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
-  shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
-  shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
-  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
-  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
-  shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
-  shape_superopt.cpp_CP3D_add1_FUN_005d8520
-  shape_superopt.cpp_CP3D_add2_FUN_005d85a0
-  shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
-  shape_superopt.cpp_CP3D_scale_FUN_005d8630
-  shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
-  shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
-  shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
-  shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710
-  shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
-
-====================================================================================================
 TYPE: bitcast_double_pair (36 occurrences)
 ====================================================================================================
 
@@ -179,7 +137,7 @@ Functions:
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (31 occurrences)
+TYPE: shadow_pointer_walk (30 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -198,13 +156,11 @@ Unique patterns:
      1x  local_40 = (T *)&local_40->FIELD
      1x  local_34 = (T *)&local_34->FIELD
      1x  local_2c = (T *)&local_2c->FIELD
-     1x  local_1c = (T *)&local_1c->FIELD
      1x  pCStack_60 = (T *)&pCStack_60[N].SUBFIELD
 
 Functions:
   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
   shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
   shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
@@ -217,26 +173,42 @@ Functions:
   shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
 
 ====================================================================================================
-TYPE: static_shift_too_many_bits (10 occurrences)
+TYPE: unrolled_memcpy (22 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    10x  Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
-
-====================================================================================================
-TYPE: sub84_truncation (8 occurrences)
-====================================================================================================
-
-Unique patterns:
-     8x  SUB84(
+    11x  MOVSD.REP
+     5x  field-by-field struct copy
+     5x  for (...; != 0; ... + -1)
+     1x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
+  shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
+  shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
+  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+  shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
+  shape_superopt.cpp_CP3D_add1_FUN_005d8520
+  shape_superopt.cpp_CP3D_add2_FUN_005d85a0
+  shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
+  shape_superopt.cpp_CP3D_scale_FUN_005d8630
+  shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
+  shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
+  shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
+  shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710
+  shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
+
+====================================================================================================
+TYPE: sub84_truncation (7 occurrences)
+====================================================================================================
+
+Unique patterns:
+     7x  SUB84(
+
+Functions:
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
   shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
   shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
@@ -252,24 +224,23 @@ Functions:
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
 
 ====================================================================================================
-TYPE: static_invalid_pointer_cast (6 occurrences)
+TYPE: static_shift_too_many_bits (4 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     6x  Cppcheck: invalid pointer cast
+     4x  Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)
 
 Functions:
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
+  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
 
 ====================================================================================================
-TYPE: warning_inlined_function (4 occurrences)
+TYPE: warning_inlined_function (3 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     4x  WARNING: Inlined function:
+     3x  WARNING: Inlined function:
 
 Functions:
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
   shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
@@ -359,13 +330,3 @@ Unique patterns:
 
 Functions:
   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
-
-====================================================================================================
-TYPE: unrolled_memset (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  cascade_constant_fill
-
-Functions:
-  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0

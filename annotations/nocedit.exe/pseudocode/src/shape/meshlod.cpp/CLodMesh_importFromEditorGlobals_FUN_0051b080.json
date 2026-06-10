@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 205,
+    "complexity_score": 90,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 24,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 90,
-    "suspect_count": 11,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 272
   },
   "cross_references": [
@@ -260,6 +258,107 @@
     },
     "pcode_op_count": 734
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = iVar4 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar1 + -0x14) + -2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)this_ptr->tri_data->attribute_indices + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2[5] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2[9] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2[10] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar2 + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2[6] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2[0xb] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2[0xc] = *(int *)((int)g_ModelPolygonData[0].uv_v + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 39,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar2);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 32,
@@ -297,94 +396,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "iVar4 = iVar4 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar1 + -0x14) + -2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)this_ptr->tri_data->attribute_indices + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "piVar2[5] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "piVar2[9] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "piVar2[10] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar2 + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "piVar2[6] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "piVar2[0xb] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "piVar2[0xc] = *(int *)((int)g_ModelPolygonData[0].uv_v + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 39,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 41,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

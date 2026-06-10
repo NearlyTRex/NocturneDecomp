@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (169 diagnostics)
+Cppcheck (quick) (157 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -557,7 +557,7 @@ nullPointerRedundantCheck (12)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (10)
+invalidPointerCast (4)
 ----------------------------------------------------------------------------------------------------
 
   core_chain.cpp_fastSqrt_FUN_00431350               line 13
@@ -576,57 +576,9 @@ invalidPointerCast (10)
     File: core/cloth.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 41
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 43
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 44
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 45
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 46
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a1 line 47
-    File: shape/meshlod.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (10)
+shiftTooManyBitsSigned (4)
 ----------------------------------------------------------------------------------------------------
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 137
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 145
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 152
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 159
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 166
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 173
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   shape_quantize.cpp_CColorQuantizer_computeBoxStati line 85
     File: shape/quantize.cpp

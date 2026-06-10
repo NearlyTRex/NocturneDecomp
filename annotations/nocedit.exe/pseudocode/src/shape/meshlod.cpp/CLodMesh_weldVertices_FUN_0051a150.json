@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 157,
+    "complexity_score": 82,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 82,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 248
   },
   "cross_references": [
@@ -119,6 +117,71 @@
     },
     "pcode_op_count": 774
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar2 + -8) = iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_1c + -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar1 + -8) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x28) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x28)].",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x24) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x24)].",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 40,
@@ -163,162 +226,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CLodMesh_weldVertices_FUN_0051a150.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 6,
-      "diagnostics": [
-        {
-          "check_id": "invalidPointerCast",
-          "column": 26,
-          "line": 41,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 16,
-          "line": 43,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 16,
-          "line": 44,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 16,
-          "line": 45,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 16,
-          "line": 46,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
-          "check_id": "invalidPointerCast",
-          "column": 16,
-          "line": 47,
-          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar2 + -8) = iVar5;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_1c + -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar1 + -8) = iVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x28) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x28)].",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x24) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x24)].",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 41,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "if ((fVar3 == *(float *)(pcVar1 + 0x3f4)) &&",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 43,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(*(float *)(pcVar4 + 8) - *(float *)(pcVar1 + 8)) *",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 44,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(*(float *)(pcVar4 + 8) - *(float *)(pcVar1 + 8)) +",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 45,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(*(float *)pcVar4 - *(float *)pcVar1) * (*(float *)pcVar4 - *(float *)pcVar1) +",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 46,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(*(float *)(pcVar4 + 4) - *(float *)(pcVar1 + 4)) *",
-      "type": "static_invalid_pointer_cast"
-    },
-    {
-      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
-      "line": 47,
-      "match": "Cppcheck: invalid pointer cast",
-      "severity": "moderate",
-      "text": "(*(float *)(pcVar4 + 4) - *(float *)(pcVar1 + 4)) <= weld_threshold * weld_threshold))",
-      "type": "static_invalid_pointer_cast"
-    }
-  ]
+  "suspects": []
 }

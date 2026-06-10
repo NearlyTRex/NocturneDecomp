@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 201,
+    "complexity_score": 131,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 131,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 386
   },
   "cross_references": [
@@ -204,6 +201,62 @@
     },
     "pcode_op_count": 1106
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(int *)((int)pCVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar3 = (int *)((int)pCVar2->edges_ptr->adjacent_tri_indices + local_28 + -0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 113,
+      "match": "(CLodFace *)((int)pCVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CLodFace *)((int)pCVar2->tri_data->attribute_indices + iVar5));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 115,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar9->x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 62,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)&(this_ptr->sample_points_ptr->position).x + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 82,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar11 = (float *)((int)&(this_ptr->sample_points_ptr->position).x + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 110,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar9 = (CVector3f *)((int)&(this_ptr->sample_points_ptr->position).x + iVar4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 88,
     "local_size": 84,
@@ -318,54 +371,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(int *)((int)pCVar2",
-      "severity": "moderate",
-      "text": "piVar3 = (int *)((int)pCVar2->edges_ptr->adjacent_tri_indices + local_28 + -0x28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 113,
-      "match": "(CLodFace *)((int)pCVar2",
-      "severity": "moderate",
-      "text": "(CLodFace *)((int)pCVar2->tri_data->attribute_indices + iVar5));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 115,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar9->x = pCVar4->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 62,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)&(this_ptr->sample_points_ptr->position).x + local_24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 82,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pfVar11 = (float *)((int)&(this_ptr->sample_points_ptr->position).x + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 110,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pCVar9 = (CVector3f *)((int)&(this_ptr->sample_points_ptr->position).x + iVar4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

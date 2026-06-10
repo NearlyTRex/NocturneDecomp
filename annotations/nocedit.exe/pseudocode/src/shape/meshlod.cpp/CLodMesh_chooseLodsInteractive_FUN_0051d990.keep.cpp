@@ -60,18 +60,10 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   pCVar4 = (CBoundingBox3D *)
            shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
                      (this_ptr,&local_70,&local_94.min);
-  if (&local_94 != pCVar4) {
-    local_94.min.x = (pCVar4->min).x;
-    local_94.min.y = (pCVar4->min).y;
-    local_94.min.z = (pCVar4->min).z;
-  }
+  local_94.min = pCVar4->min;
   pCVar5 = shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
                      (this_ptr,&local_58,&local_94.max);
-  if (&local_94.max != pCVar5) {
-    local_94.max.x = pCVar5->x;
-    local_94.max.y = pCVar5->y;
-    local_94.max.z = pCVar5->z;
-  }
+  local_94.max = *pCVar5;
   local_7c = (local_94.min.x + local_94.max.x) * 0.5f;
   local_78 = (local_94.min.y + local_94.max.y) * 0.5f;
   local_74 = (local_94.min.z + local_94.max.z) * 0.5f;
@@ -91,20 +83,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
       local_d0.distance = local_3d8[0];
     }
     shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0(&local_10c);
-    local_10c.default_distance = local_d0.default_distance;
-    local_10c.default_zoom = local_d0.default_zoom;
-    local_10c.default_pitch = local_d0.default_pitch;
-    local_10c.default_yaw = local_d0.default_yaw;
-    local_10c.default_pan_x = local_d0.default_pan_x;
-    local_10c.default_pan_y = local_d0.default_pan_y;
-    if (&local_10c.loat_at != &local_d0.loat_at) {
-      local_10c.loat_at.x = local_d0.loat_at.x;
-      local_10c.loat_at.y = local_d0.loat_at.y;
-      local_10c.loat_at.z = local_d0.loat_at.z;
-    }
-    local_10c.yaw = local_d0.yaw;
-    local_10c.distance = local_d0.distance;
-    local_10c.zoom = local_d0.zoom;
+    local_10c = local_d0;
     local_10c.pitch = 0.0;
     local_10c.pan_x = 0.0;
     local_10c.pan_y = 0.0;

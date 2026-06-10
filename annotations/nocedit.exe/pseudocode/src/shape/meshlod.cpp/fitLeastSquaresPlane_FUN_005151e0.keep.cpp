@@ -70,22 +70,14 @@ void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count
   local_58.x = normal->y * local_70.z - normal->z * local_70.y;
   local_58.y = normal->z * local_70.x - normal->x * local_70.z;
   local_58.z = normal->x * local_70.y - normal->y * local_70.x;
-  if (&local_70 != &local_58) {
-    local_70.x = local_58.x;
-    local_70.y = local_58.y;
-    local_70.z = local_58.z;
-  }
+  local_70 = local_58;
   local_98.m[0].x = local_70.x;
   local_98.m[1].x = local_70.y;
   local_98.m[2].x = local_70.z;
   local_64.x = normal->y * local_70.z - normal->z * local_70.y;
   local_64.y = normal->z * local_70.x - normal->x * local_70.z;
   local_64.z = normal->x * local_70.y - normal->y * local_70.x;
-  if (&local_70 != &local_64) {
-    local_70.x = local_64.x;
-    local_70.y = local_64.y;
-    local_70.z = local_64.z;
-  }
+  local_70 = local_64;
   iVar7 = 0;
   local_98.m[0].y = local_70.x;
   local_e0 = 0.0;
@@ -103,11 +95,7 @@ void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count
     do {
       pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                          (&local_98,&local_4c,positions);
-      if (&local_70 != pCVar5) {
-        local_70.x = pCVar5->x;
-        local_70.y = pCVar5->y;
-        local_70.z = pCVar5->z;
-      }
+      local_70 = *pCVar5;
       fVar4 = *pfVar6;
       fVar5 = *pfVar6;
       local_e0 = (double)(local_70.x + (float)local_e0);
@@ -130,9 +118,9 @@ void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count
            local_e8 * 2 * local_e0 * local_f0) -
           local_d0 * (double)point_count * local_c0);
   if (dVar4 == 0.0) {
-    out_gradient->z = 0.0;
-    out_gradient->y = out_gradient->z;
-    out_gradient->x = out_gradient->y;
+    out_gradient->x = 0.0f;
+    out_gradient->y = 0.0f;
+    out_gradient->z = 0.0f;
     iVar14 = 0;
     *out_offset = 0.0;
     if (0 < point_count) {
@@ -163,11 +151,7 @@ void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count
                        (float10)fVar12 * (float10)point_count * (float10)local_c0)) *
                       ((float10)1 / (float10)dVar4));
   pCVar13 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_98,&local_40,&local_70);
-  if (pCVar13 != out_gradient) {
-    out_gradient->x = pCVar13->x;
-    out_gradient->y = pCVar13->y;
-    out_gradient->z = pCVar13->z;
-  }
+  *out_gradient = *pCVar13;
   fVar15 = (float10)local_e8;
   *out_offset = (float)(-((float10)fVar3 * (float10)local_d0 * (float10)local_c0 +
                          ((((float10)local_f0 * fVar15 * (float10)fVar7 +
