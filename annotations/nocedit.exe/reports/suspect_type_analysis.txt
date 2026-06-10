@@ -4,52 +4,50 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     186 ( 62.2%)
-  static_uninitvar                  30 ( 10.0%)
-  shadow_pointer_walk               21 (  7.0%)
-  bitcast_double_pair               18 (  6.0%)
-  unrolled_memcpy                   12 (  4.0%)
-  unaffected_reg                     6 (  2.0%)
-  sub84_truncation                   5 (  1.7%)
-  static_shift_too_many_bits         4 (  1.3%)
-  warning_inlined_function           3 (  1.0%)
-  static_identical_inner_condition     3 (  1.0%)
-  static_self_assignment             3 (  1.0%)
-  raw_address_constant               2 (  0.7%)
-  unrolled_strcpy                    2 (  0.7%)
-  unrolled_strchr                    1 (  0.3%)
-  static_null_pointer_arithmetic     1 (  0.3%)
-  static_null_pointer                1 (  0.3%)
-  static_legacy_uninitvar            1 (  0.3%)
+  pointer_cast                     163 ( 61.5%)
+  static_uninitvar                  30 ( 11.3%)
+  bitcast_double_pair               18 (  6.8%)
+  unrolled_memcpy                   12 (  4.5%)
+  shadow_pointer_walk               11 (  4.2%)
+  unaffected_reg                     6 (  2.3%)
+  sub84_truncation                   5 (  1.9%)
+  static_shift_too_many_bits         4 (  1.5%)
+  warning_inlined_function           3 (  1.1%)
+  static_identical_inner_condition     3 (  1.1%)
+  static_self_assignment             3 (  1.1%)
+  raw_address_constant               2 (  0.8%)
+  unrolled_strcpy                    2 (  0.8%)
+  unrolled_strchr                    1 (  0.4%)
+  static_null_pointer_arithmetic     1 (  0.4%)
+  static_null_pointer                1 (  0.4%)
 
 ====================================================================================================
-TYPE: pointer_cast (186 occurrences)
+TYPE: pointer_cast (163 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    68x  (int)&NAME used in byte-offset arithmetic
+    66x  (int)&NAME used in byte-offset arithmetic
     12x  (byte *)((int)this_ptr
-     9x  (uint *)((int)this_ptr
+     8x  (uint *)((int)this_ptr
      6x  (uint *)((int)pCVar1
-     5x  (int *)((int)aiStack_4e8
-     5x  (int *)((int)this_ptr
      5x  (double *)((int)pdVar10
-     4x  (float *)((int)afStack_4e0
      4x  (double *)((int)pdVar8
      4x  (double *)((int)pdVar11
      3x  (double *)((int)pdVar9
      3x  (double *)((int)pdVar4
      2x  (uchar *)((int)this_ptr
      2x  (int *)((int)g_MaxNeighborVerts
-     2x  (int *)((int)pCVar10
      2x  (double *)((int)pdVar7
      2x  (double *)((int)pdVar6
      2x  (uint *)((int)pvVar1
      2x  (SExpandedEdge *)((int)pvVar1
      2x  (uint *)((int)edge_b
+     2x  (double *)((int)pdVar2
+     2x  (float *)((int)g_ModelPolygonData
+     2x  (CComplexPolygon **)(iVar2 + (int)this_ptr
+     1x  (void **)((int)this_ptr
 
 Functions:
-  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
@@ -96,34 +94,6 @@ Functions:
   shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (21 occurrences)
-====================================================================================================
-
-Unique patterns:
-     4x  pCVar11 = (T *)&pCVar11->FIELD
-     3x  this_ptr = (T *)&this_ptr->FIELD
-     2x  pCVar8 = (T *)(pCVar8->attribute_indices + CONST)
-     2x  pCVar4 = (T *)(pCVar4->attribute_indices + CONST)
-     1x  pCVar10 = (T *)&pCVar10->FIELD
-     1x  pCVar7 = (T *)&pCVar7->FIELD
-     1x  pCVar2 = (T *)&pCVar2->FIELD
-     1x  local_24 = (T *)&local_24->FIELD
-     1x  local_50 = (T *)(local_50->attribute_indices + CONST)
-     1x  local_48 = (T *)&local_48->FIELD
-     1x  local_40 = (T *)&local_40->FIELD
-     1x  local_34 = (T *)&local_34->FIELD
-     1x  local_2c = (T *)&local_2c->FIELD
-     1x  pCStack_60 = (T *)&pCStack_60[N].SUBFIELD
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
-  shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
-  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
-  shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
-
-====================================================================================================
 TYPE: bitcast_double_pair (18 occurrences)
 ====================================================================================================
 
@@ -153,6 +123,26 @@ Functions:
   shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
   shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
+
+====================================================================================================
+TYPE: shadow_pointer_walk (11 occurrences)
+====================================================================================================
+
+Unique patterns:
+     3x  pCVar11 = (T *)&pCVar11->FIELD
+     3x  this_ptr = (T *)&this_ptr->FIELD
+     1x  pCVar10 = (T *)&pCVar10->FIELD
+     1x  pCVar7 = (T *)&pCVar7->FIELD
+     1x  pCVar2 = (T *)&pCVar2->FIELD
+     1x  local_24 = (T *)&local_24->FIELD
+     1x  pCStack_60 = (T *)&pCStack_60[N].SUBFIELD
+
+Functions:
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+  shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
+  shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
+  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
+  shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
 
 ====================================================================================================
 TYPE: unaffected_reg (6 occurrences)
@@ -273,13 +263,3 @@ Unique patterns:
 
 Functions:
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
-
-====================================================================================================
-TYPE: static_legacy_uninitvar (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  Cppcheck: uninitialized variable (legacy detector)
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630

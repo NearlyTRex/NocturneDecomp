@@ -86,6 +86,7 @@
 #include "types/structs/SLineStrip3Index.h"
 #include "types/structs/SLod.h"
 #include "types/structs/SLodSamplePoint.h"
+#include "types/structs/SLodUvAccum.h"
 #include "types/structs/SMRGLAnimatedTexture.h"
 #include "types/structs/SMRGLHeaderBasic.h"
 #include "types/structs/SMRGLHeaderBasicCountOnly.h"

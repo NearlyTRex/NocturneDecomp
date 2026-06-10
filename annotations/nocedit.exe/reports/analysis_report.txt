@@ -7,11 +7,11 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6420 (99.5%)
-Functions with suspects: 34 (0.5%)
+Clean functions: 6421 (99.5%)
+Functions with suspects: 33 (0.5%)
 
-Total suspect patterns: 299
-Average suspects per function: 0.05
+Total suspect patterns: 265
+Average suspects per function: 0.04
 
 Virtual files: 214 total, 211 at 100%, 212 at 90%+
 
@@ -28,11 +28,11 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              186
+  pointer_cast              163
   static_uninitvar          30
-  shadow_pointer_walk       21
   bitcast_double_pair       18
   unrolled_memcpy           12
+  shadow_pointer_walk       11
   unaffected_reg            6
   sub84_truncation          5
   static_shift_too_many_bits 4
@@ -44,7 +44,6 @@ SUSPECT PATTERN BREAKDOWN
   unrolled_strchr           1
   static_null_pointer_arithmetic 1
   static_null_pointer       1
-  static_legacy_uninitvar   1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -98,7 +97,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 6370 more
+  ... and 6371 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -122,7 +121,6 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (score: 832, suspects: 0, lines: 832)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 810, suspects: 0, lines: 810)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 809, suspects: 0, lines: 809)
-  00517630: shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (score: 789, suspects: 33, lines: 449)
   0041e350: core_box.cpp_CBox_processPhysics_FUN_0041e350 (score: 779, suspects: 0, lines: 779)
   00484410: core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (score: 752, suspects: 0, lines: 752)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 752, suspects: 0, lines: 752)
@@ -132,11 +130,12 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   0058c190: core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (score: 715, suspects: 0, lines: 715)
   005efde0: core_werewolf.cpp_CWerewolf_process_FUN_005efde0 (score: 714, suspects: 0, lines: 714)
   0057e7c0: core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (score: 702, suspects: 0, lines: 702)
+  004d2ea0: core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 (score: 691, suspects: 0, lines: 691)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (30 functions):
+  pointer_cast (29 functions):
     00556a00: shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
     00556180: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     00555a40: shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
@@ -144,20 +143,12 @@ FUNCTIONS BY SUSPECT TYPE
     00554a50: shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
     00554e70: shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    00517630: shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
     005d1ff0: shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0
     005d77a0: shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
-    ... and 20 more
+    005cd7d0: shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
+    ... and 19 more
 
   static_uninitvar (0 functions):
-
-  shadow_pointer_walk (6 functions):
-    00555ff0: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
-    00555a40: shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
-    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    00517630: shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
-    005d3960: shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
-    005ce0a0: shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
 
   bitcast_double_pair (3 functions):
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
@@ -172,6 +163,13 @@ FUNCTIONS BY SUSPECT TYPE
     005d63d0: shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
     005c8b50: shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
     005d0d30: shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30
+
+  shadow_pointer_walk (5 functions):
+    00555ff0: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
+    00555a40: shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
+    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    005d3960: shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
+    005ce0a0: shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
 
   unaffected_reg (1 functions):
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
@@ -205,5 +203,3 @@ FUNCTIONS BY SUSPECT TYPE
   static_null_pointer_arithmetic (0 functions):
 
   static_null_pointer (0 functions):
-
-  static_legacy_uninitvar (0 functions):

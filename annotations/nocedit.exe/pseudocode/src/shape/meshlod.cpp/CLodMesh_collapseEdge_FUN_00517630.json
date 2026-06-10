@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1009,
-    "complexity_score": 789,
+    "complexity_score": 449,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 449,
-    "suspect_count": 33,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1458
   },
   "cross_references": [
@@ -258,6 +255,305 @@
     },
     "pcode_op_count": 4813
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 116,
+      "match": "(int *)((int)aiStack_4e8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)aiStack_4e8 + iVar5) == local_ac->attribute_indices[0]) break;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 158,
+      "match": "(int *)((int)aiStack_4e8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar7 = *(int *)((int)aiStack_4e8 + iVar9 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 159,
+      "match": "(float *)((int)afStack_4e0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar2 = *(float *)((int)afStack_4e0 + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(int *)((int)aiStack_4e8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)aiStack_4e8 + iVar9 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 162,
+      "match": "(uint *)((int)aiStack_4e8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aiStack_4e8 + iVar9 + 4) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(float *)((int)afStack_4e0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_4e0 + iVar9) = fVar2 / (float)iVar7;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(float *)((int)afStack_4e0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_4e0 + iVar9 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 165,
+      "match": "(float *)((int)afStack_4e0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_4e0 + iVar9 + 4) / (float)iVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 174,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_14 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_5c + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 177,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_3c + local_5c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 200,
+      "match": "(int *)((int)aiStack_4e8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 235,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_58 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 238,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_30 + local_58);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 261,
+      "match": "(int *)((int)aiStack_4e8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 295,
+      "match": "(uint *)((int)aiStack_1c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)aiStack_1c8 + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 296,
+      "match": "(uint *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)this_ptr->vertex_data[vertex_idx_2].adjacent_edge_indices + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 305,
+      "match": "(int *)((int)aiStack_1c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_88 = *(int *)((int)aiStack_1c8 + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 366,
+      "match": "(CLodEdge *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_7c + -0x28)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 401,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_60 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 409,
+      "match": "(int *)((int)pCVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar12 = (int *)((int)pCVar10[iVar9].adjacent_edge_indices + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 413,
+      "match": "(int *)((int)pCVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_68 = *(int *)((int)pCVar10->adjacent_edge_indices + local_20 + local_60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 436,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[*(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx + iVar5)].",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 440,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar8`. Replace those `pCVar8->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 145,
+      "match": "pCVar8 = (T *)(pCVar8->attribute_indices + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar8 = (CLodFace *)(pCVar8->attribute_indices + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_50` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_50`. Replace those `local_50->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 146,
+      "match": "local_50 = (T *)(local_50->attribute_indices + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_50 = (CLodFace *)(local_50->attribute_indices + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_48` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_48->owner`). Replace `local_48->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 150,
+      "match": "local_48 = (T *)&local_48->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_48 = (CLodEdge *)&local_48->vertex_idx_2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar4`. Replace those `pCVar4->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 193,
+      "match": "pCVar4 = (T *)(pCVar4->attribute_indices + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CLodFace *)(pCVar4->attribute_indices + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_40` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_40->owner`). Replace `local_40->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 224,
+      "match": "local_40 = (T *)&local_40->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_40 = (CLodEdge *)&local_40->vertex_idx_2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar4`. Replace those `pCVar4->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 254,
+      "match": "pCVar4 = (T *)(pCVar4->attribute_indices + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CLodFace *)(pCVar4->attribute_indices + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_34` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_34->owner`). Replace `local_34->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 284,
+      "match": "local_34 = (T *)&local_34->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34 = (CLodEdge *)&local_34->vertex_idx_2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar8`. Replace those `pCVar8->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 318,
+      "match": "pCVar8 = (T *)(pCVar8->attribute_indices + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar8 = (CLodFace *)(pCVar8->attribute_indices + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_2c->owner`). Replace `local_2c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 321,
+      "match": "local_2c = (T *)&local_2c->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_2c = (CLodEdge *)&local_2c->vertex_idx_2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 425,
+      "match": "pCVar11 = (T *)&pCVar11->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar11 = (CLodEdge *)&pCVar11->vertex_idx_2;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 276,
     "local_size": 260,
@@ -732,295 +1028,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CLodMesh_collapseEdge_FUN_00517630.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "legacyUninitvar",
-          "column": 17,
-          "line": 360,
-          "message": "Uninitialized variable: local_7c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 116,
-      "match": "(int *)((int)aiStack_4e8",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)aiStack_4e8 + iVar5) == local_ac->attribute_indices[0]) break;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 158,
-      "match": "(int *)((int)aiStack_4e8",
-      "severity": "moderate",
-      "text": "iVar7 = *(int *)((int)aiStack_4e8 + iVar9 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 159,
-      "match": "(float *)((int)afStack_4e0",
-      "severity": "moderate",
-      "text": "fVar2 = *(float *)((int)afStack_4e0 + iVar9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 160,
-      "match": "(int *)((int)aiStack_4e8",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)aiStack_4e8 + iVar9 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 162,
-      "match": "(uint *)((int)aiStack_4e8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)aiStack_4e8 + iVar9 + 4) = 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 163,
-      "match": "(float *)((int)afStack_4e0",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_4e0 + iVar9) = fVar2 / (float)iVar7;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 164,
-      "match": "(float *)((int)afStack_4e0",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_4e0 + iVar9 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 165,
-      "match": "(float *)((int)afStack_4e0",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_4e0 + iVar9 + 4) / (float)iVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 174,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "local_14 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_5c + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 177,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_3c + local_5c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 200,
-      "match": "(int *)((int)aiStack_4e8",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 235,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "local_18 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_58 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 238,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_30 + local_58);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 261,
-      "match": "(int *)((int)aiStack_4e8",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 295,
-      "match": "(uint *)((int)aiStack_1c8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)aiStack_1c8 + iVar5) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 296,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr->vertex_data[vertex_idx_2].adjacent_edge_indices + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 305,
-      "match": "(int *)((int)aiStack_1c8",
-      "severity": "moderate",
-      "text": "local_88 = *(int *)((int)aiStack_1c8 + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 366,
-      "match": "(CLodEdge *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "((CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_7c + -0x28)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 401,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "local_1c < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_60 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 409,
-      "match": "(int *)((int)pCVar10",
-      "severity": "moderate",
-      "text": "piVar12 = (int *)((int)pCVar10[iVar9].adjacent_edge_indices + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 413,
-      "match": "(int *)((int)pCVar10",
-      "severity": "moderate",
-      "text": "local_68 = *(int *)((int)pCVar10->adjacent_edge_indices + local_20 + local_60);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 436,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "[*(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx + iVar5)].",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 440,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar8`. Replace those `pCVar8->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 145,
-      "match": "pCVar8 = (T *)(pCVar8->attribute_indices + CONST)",
-      "severity": "moderate",
-      "text": "pCVar8 = (CLodFace *)(pCVar8->attribute_indices + 1);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_50` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_50`. Replace those `local_50->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 146,
-      "match": "local_50 = (T *)(local_50->attribute_indices + CONST)",
-      "severity": "moderate",
-      "text": "local_50 = (CLodFace *)(local_50->attribute_indices + 2);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_48` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_48->owner`). Replace `local_48->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 150,
-      "match": "local_48 = (T *)&local_48->FIELD",
-      "severity": "moderate",
-      "text": "local_48 = (CLodEdge *)&local_48->vertex_idx_2;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar4`. Replace those `pCVar4->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 193,
-      "match": "pCVar4 = (T *)(pCVar4->attribute_indices + CONST)",
-      "severity": "moderate",
-      "text": "pCVar4 = (CLodFace *)(pCVar4->attribute_indices + 1);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_40` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_40->owner`). Replace `local_40->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 224,
-      "match": "local_40 = (T *)&local_40->FIELD",
-      "severity": "moderate",
-      "text": "local_40 = (CLodEdge *)&local_40->vertex_idx_2;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar4`. Replace those `pCVar4->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 254,
-      "match": "pCVar4 = (T *)(pCVar4->attribute_indices + CONST)",
-      "severity": "moderate",
-      "text": "pCVar4 = (CLodFace *)(pCVar4->attribute_indices + 1);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_34` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_34->owner`). Replace `local_34->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 284,
-      "match": "local_34 = (T *)&local_34->FIELD",
-      "severity": "moderate",
-      "text": "local_34 = (CLodEdge *)&local_34->vertex_idx_2;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on its own `attribute_indices` field (which decays to a pointer), `+ CONST`; `offsetof(attribute_indices) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar8`. Replace those `pCVar8->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 318,
-      "match": "pCVar8 = (T *)(pCVar8->attribute_indices + CONST)",
-      "severity": "moderate",
-      "text": "pCVar8 = (CLodFace *)(pCVar8->attribute_indices + 1);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_2c->owner`). Replace `local_2c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 321,
-      "match": "local_2c = (T *)&local_2c->FIELD",
-      "severity": "moderate",
-      "text": "local_2c = (CLodEdge *)&local_2c->vertex_idx_2;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar11->owner`). Replace `pCVar11->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 425,
-      "match": "pCVar11 = (T *)&pCVar11->FIELD",
-      "severity": "moderate",
-      "text": "pCVar11 = (CLodEdge *)&pCVar11->vertex_idx_2;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Uninitialized variable: local_7c",
-      "line": 360,
-      "match": "Cppcheck: uninitialized variable (legacy detector)",
-      "severity": "major",
-      "text": "iVar9 = local_7c;",
-      "type": "static_legacy_uninitvar"
-    }
-  ]
+  "suspects": []
 }

@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        23 ( 0.4%)
+  Functions with type issues:        22 ( 0.3%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      23
+    Undefined types in variables:      22
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   195 functions
+  Excluded (.keep / MMX / by-value):   196 functions
     Wrong calling convention:          1
-    Undefined types in variables:      194
+    Undefined types in variables:      195
     Unresolved stack params:           0
 
 ====================================================================================================
@@ -81,13 +81,8 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (23)
+Undefined types in variables (22)
 --------------------------------------------------------------------------------
-
-  CLodMesh_collapseEdge
-    Address: 0x00517630  File: shape/meshlod.cpp
-    Locals:  local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
 
   CPoly_rayIntersect
     Address: 0x005d0010  File: shape/superopt.cpp
@@ -230,7 +225,7 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (194)
+Undefined types - .keep overrides (195)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -256,6 +251,11 @@ Undefined types - .keep overrides (194)
   CPoly_intersectPoly
     Address: 0x005ce580  File: shape/superopt.cpp
     Locals:  uStack_5e0 (undefined8), uStack_5d8 (undefined8), uStack_5d0 (undefined8), uStack_5c8 (undefined4), uStack_5c4 (undefined4), uStack_5c0 (undefined4), uStack_5bc (undefined4), uStack_5b8 (undefined4), uStack_5b4 (undefined4), uStack_5b0 (undefined4), uStack_5ac (undefined4), uStack_5a8 (undefined4), uStack_5a4 (undefined4), uStack_5a0 (undefined4), uStack_59c (undefined4), uStack_568 (undefined8), uStack_560 (undefined8), uStack_558 (undefined4), uStack_554 (undefined4), uStack_550 (undefined4), uStack_54c (undefined4), uStack_548 (undefined4), uStack_544 (undefined4), uStack_540 (undefined4), uStack_53c (undefined4), uStack_440 (undefined4), uStack_43c (undefined4), uStack_438 (undefined4), uStack_434 (undefined4), uStack_430 (undefined4), uStack_42c (undefined4), uStack_3e0 (undefined4), uStack_3dc (undefined4), uStack_3d8 (undefined4), uStack_3d4 (undefined4), uStack_3d0 (undefined4), uStack_3cc (undefined4), uStack_350 (undefined4), uStack_34c (undefined4), uStack_348 (undefined4), uStack_344 (undefined4), uStack_340 (undefined4), uStack_33c (undefined4), uStack_218 (undefined4), uStack_214 (undefined4), uStack_210 (undefined4), uStack_20c (undefined4), uStack_208 (undefined4), uStack_204 (undefined4), uStack_1e8 (undefined8), uStack_1d8 (undefined8), uStack_1c8 (undefined4), uStack_1c4 (undefined4), uStack_1b8 (undefined4), uStack_1b4 (undefined4), uStack_1a8 (undefined4), uStack_1a4 (undefined4), uStack_198 (undefined4), uStack_194 (undefined4), uStack_188 (undefined8), uStack_178 (undefined4), uStack_174 (undefined4), uStack_168 (undefined8), uStack_158 (undefined8), uStack_148 (undefined8), uStack_138 (undefined4), auStack_134 (undefined4[4]), uStack_124 (undefined4), uStack_120 (undefined4), uStack_11c (undefined4), uStack_118 (undefined8), uStack_108 (undefined4), uStack_104 (undefined4), uStack_f8 (undefined8), uStack_e8 (undefined8), uStack_d8 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CLodMesh_collapseEdge
+    Address: 0x00517630  File: shape/meshlod.cpp
+    Locals:  local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CComplexPolygon_closeSplitBoundary
