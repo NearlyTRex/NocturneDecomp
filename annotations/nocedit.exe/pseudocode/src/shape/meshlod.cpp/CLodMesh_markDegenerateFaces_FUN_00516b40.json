@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 53,
+    "complexity_score": 28,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 28,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 79
   },
   "cross_references": [
@@ -117,6 +115,26 @@
     },
     "pcode_op_count": 172
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(int *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar6 + -0x14) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pCVar1->edge_perpendiculars + iVar6 + -0x14) = 1;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -133,22 +151,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(int *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar6 + -0x14) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(uint *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pCVar1->edge_perpendiculars + iVar6 + -0x14) = 1;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

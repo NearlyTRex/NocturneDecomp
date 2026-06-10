@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 78,
+    "complexity_score": 53,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 53,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 166
   },
   "cross_references": [
@@ -163,6 +161,26 @@
     },
     "pcode_op_count": 490
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(uint *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar3 + -4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 30,
+      "match": "(int *)(iVar7 + 0x40)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)(iVar7 + 0x40) == 0) {",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 32,
@@ -193,22 +211,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar3 + -4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 30,
-      "match": "(int *)(iVar7 + 0x40)",
-      "severity": "moderate",
-      "text": "if (*(int *)(iVar7 + 0x40) == 0) {",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

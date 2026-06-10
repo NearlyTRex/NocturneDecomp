@@ -5,58 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6358 (98.5%)
-With suspects: 96
-Total suspects: 749
-
-====================================================================================================
-shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 (6 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 76 [unrolled_memcpy]: local_84.x = vertex0_pos->x;
-  Line 81 [unrolled_memcpy]: local_78.x = vertex1_pos->x;
-  Line 86 [unrolled_memcpy]: local_6c.x = vertex2_pos->x;
-  Line 108 [static_object_index]: local_54 = (&local_84)[iVar11].x - local_18->x;
-  Line 109 [static_object_index]: local_50 = (&local_84)[iVar11].y - local_18->y;
-  Line 110 [static_object_index]: local_4c = (&local_84)[iVar11].z - local_18->z;
-
-====================================================================================================
-shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0 (4 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 12 [unrolled_memcpy]: destination->submesh_id = source->submesh_id;
-  Line 19 [unrolled_memcpy]: // 0051f008: MOVSD.REP ES:EDI,ESI
-  Line 23 [unrolled_memcpy]: destination->edge_idx_0 = source->edge_idx_0;
-  Line 28 [unrolled_memcpy]: (destination->normal).x = (source->normal).x;
-
-====================================================================================================
-shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20 (8 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 13 [unrolled_memcpy]: this_ptr->submesh_id = other->submesh_id;
-  Line 18 [unrolled_memcpy]: // 0051ef47: MOVSD.REP ES:EDI,ESI
-  Line 24 [unrolled_memcpy]: this_ptr->edge_idx_0 = other->edge_idx_0;
-  Line 35 [pointer_cast]: *(float *)((int)pvVar1 + 0x24) = other->edge_dot_products[0];
-  Line 36 [pointer_cast]: *(float *)((int)pvVar1 + 0x28) = other->edge_dot_products[1];
-  Line 37 [pointer_cast]: *(float *)((int)pvVar1 + 0x2c) = other->edge_dot_products[2];
-  Line 38 [pointer_cast]: *(int *)((int)pvVar1 + 0x30) = other->visited_stamp;
-  Line 39 [pointer_cast]: *(int *)((int)pvVar1 + 0x34) = other->affected_by_edge_stamp;
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (2 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 19 [pointer_cast]: *(uint *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar3 + -4) = 0;
-  Line 30 [pointer_cast]: if (*(int *)(iVar7 + 0x40) == 0) {
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620 (4 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 72 [pointer_cast]: *(int *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + local_28) = local_24;
-  Line 87 [self_copy_guard]: if (&local_60 != &local_54) {
-  Line 94 [pointer_cast]: pCVar2 = this_ptr->vertex_data + *(int *)(iVar11 + 0x10);
-  Line 132 [pointer_cast]: *(int *)((int)this_ptr->spatial_grid_data + local_18) = iVar12;
+Clean: 6386 (98.9%)
+With suspects: 68
+Total suspects: 654
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (5 suspects)
@@ -67,14 +18,6 @@ shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (5 suspects)
   Line 102 [unrolled_memcpy]: local_10c.default_distance = local_d0.default_distance;
   Line 109 [unrolled_memcpy]: local_10c.loat_at.x = local_d0.loat_at.x;
   Line 113 [unrolled_memcpy]: local_10c.yaw = local_d0.yaw;
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (3 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 15 [pointer_cast]: *(uint *)((int)this_ptr->tri_data->attribute_indices + iVar3) = 0xffffffff;
-  Line 18 [pointer_cast]: *(uint *)((int)this_ptr->tri_data->uv_coords[0] + iVar1 + iVar3) = 0;
-  Line 20 [pointer_cast]: *(uint *)((int)this_ptr->tri_data->uv_coords[0] + iVar3 + iVar1 + 4) = 0;
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (34 suspects)
@@ -127,14 +70,6 @@ shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (6 suspects)
   Line 83 [pointer_cast]: *(uint *)((int)this_ptr->tri_data->edge_perpendiculars + local_18 + -0x14) = 0;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0 (3 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 56 [unrolled_memcpy]: output_point->x = (edge_vertex_0_00->position).x;
-  Line 65 [unrolled_memcpy]: output_point->x = (edge_vertex_1->position).x;
-  Line 70 [unrolled_memcpy]: output_point->x = (pCVar5->position).x;
-
-====================================================================================================
 shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (15 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
@@ -153,12 +88,6 @@ shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (15 suspects)
   Line 344 [bitcast_double_pair]: if (dVar20 < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {
   Line 345 [sub84_truncation]: local_108 = SUB84(__BITCAST_UINT64(dVar20),0);
   Line 355 [bitcast_double_pair]: fVar2 = sample_point->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) +
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0 (1 suspect)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 109 [shadow_pointer_walk]: local_1c = (CLodMesh *)&local_1c->vertex_data;
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (14 suspects)
@@ -180,21 +109,6 @@ shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (14 suspects
   Line 173 [static_shift_too_many_bits]: uVar6 = (int)uVar5 >> 0x1f;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (2 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 12 [unrolled_memcpy]: (out_bbox->min).x = (pCVar1->position).x;
-  Line 17 [unrolled_memcpy]: (out_bbox->max).x = (pCVar1->position).x;
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0 (3 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 37 [shadow_pointer_walk]: pCVar6 = (CLodEdge *)&pCVar6->vertex_idx_2;
-  Line 40 [shadow_pointer_walk]: local_1c = (CLodVert *)&(local_1c->position).y;
-  Line 47 [unrolled_memset]: out_normal->z = 0.0;
-
-====================================================================================================
 shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (6 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
@@ -204,44 +118,6 @@ shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (6 suspects)
   Line 110 [pointer_cast]: pCVar9 = (CVector3f *)((int)&(this_ptr->sample_points_ptr->position).x + iVar4);
   Line 113 [pointer_cast]: (CLodFace *)((int)pCVar2->tri_data->attribute_indices + iVar5));
   Line 115 [unrolled_memcpy]: pCVar9->x = pCVar4->x;
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000 (3 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 70 [shadow_pointer_walk]: pCVar6 = (CLodMesh *)&pCVar6->vertex_data;
-  Line 74 [shadow_pointer_walk]: pCVar3 = (CLodEdge *)&pCVar3->vertex_idx_2;
-  Line 141 [shadow_pointer_walk]: local_4c = (CLodEdge *)&local_4c->vertex_idx_2;
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300 (4 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 15 [pointer_cast]: *(uint *)((int)&sample_point->distance_to_triangle + 4) = 0x46293e59;
-  Line 21 [pointer_cast]: face = (CLodFace *)((int)this_ptr->tri_data->attribute_indices + local_18);
-  Line 26 [sub84_truncation]: local_28 = SUB84(__BITCAST_UINT64(dVar2),0);
-  Line 30 [pointer_cast]: *(uint *)((int)&sample_point->distance_to_triangle + 4) = uStack_24;
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (1 suspect)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 27 [pointer_cast]: piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 (3 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 47 [pointer_cast]: (output_mesh,*(int *)((int)pCVar1->adjacent_tri_indices + iVar3),
-  Line 48 [pointer_cast]: *(int *)((int)pCVar1->adjacent_tri_indices + iVar5),
-  Line 49 [pointer_cast]: *(float *)((int)pCVar1->adjacent_tri_indices + iVar2));
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420 (2 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 13 [pointer_cast]: puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + iVar2);
-  Line 19 [pointer_cast]: puVar1 = (uint *)(iVar3 + (int)this_ptr->spatial_grid_data);
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 (11 suspects)
@@ -260,29 +136,6 @@ shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 (11 suspects)
   Line 81 [pointer_cast]: piVar2[0xc] = *(int *)((int)g_ModelPolygonData[0].uv_v + iVar2);
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 (2 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 17 [pointer_cast]: if (*(int *)((int)pCVar1->edge_perpendiculars + iVar6 + -0x14) == 0) {
-  Line 23 [pointer_cast]: *(uint *)((int)pCVar1->edge_perpendiculars + iVar6 + -0x14) = 1;
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 (4 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 21 [pointer_cast]: if ((*(int *)(iVar3 + 0x40) == 0) && (local_1c = local_24 + 1, local_1c < this_ptr->tri_count)
-  Line 26 [pointer_cast]: if (*(int *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) == 0) {
-  Line 34 [pointer_cast]: *(int *)((int)pCVar1->attribute_indices + (iVar2 % 3) * 4 + local_20 + 0x10))
-  Line 41 [pointer_cast]: *(uint *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) = 1;
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (2 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 83 [unrolled_memcpy]: local_58.min.x = (pCVar2->min).x;
-  Line 90 [unrolled_memcpy]: local_58.max.x = pCVar3->x;
-
-====================================================================================================
 shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (6 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
@@ -292,15 +145,6 @@ shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (6 suspects)
   Line 37 [pointer_cast]: *(uint *)((int)g_SampleDistances + iVar5) = local_38;
   Line 39 [pointer_cast]: *(uint *)((int)g_SampleDistances + iVar5 + 4) = uStack_34;
   Line 42 [shadow_pointer_walk]: local_1c = (SLodSamplePoint *)&local_1c->closest_triangle_idx;
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0 (4 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 21 [unrolled_memcpy]: for (iVar2 = 0x3c; iVar2 != 0; iVar2 = iVar2 + -1) {
-  Line 23 [pointer_cast]: edge_data = (CLodEdge *)((int)edge_data + (uint)bVar3 * -8 + 4);
-  Line 24 [pointer_cast]: pCVar1 = (CLodEdge *)((int)pCVar1 + (uint)bVar3 * -8 + 4);
-  Line 37 [unrolled_memcpy]: // 0051d4f3: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (8 suspects)
@@ -314,52 +158,6 @@ shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (8 suspects)
   Line 66 [pointer_cast]: if (*(int *)((int)this_ptr->tri_data->edge_perpendiculars + iVar6 + -0x14) == 0) {
   Line 96 [unrolled_memcpy]: for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
   Line 167 [unrolled_memcpy]: // 0051b55d: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (4 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 26 [pointer_cast]: if (*(int *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x14) == 0) {
-  Line 33 [pointer_cast]: (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) *
-  Line 37 [pointer_cast]: (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -8) *
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (6 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 38 [pointer_cast]: local_18 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);
-  Line 51 [pointer_cast]: *(int *)((int)&SStack_78.vertices[0].vertex_index + iVar4) = piVar5[4];
-  Line 60 [pointer_cast]: *(int *)((int)&SStack_78.vertices[0].texture_u + iVar4) =
-  Line 63 [pointer_cast]: *(int *)((int)&SStack_78.vertices[0].texture_v + iVar4) = local_28;
-  Line 81 [unrolled_strcpy]: do {
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (4 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 10 [stack_alignment_array]: char acStackY_1406 [1018];
-  Line 50 [pointer_cast]: (this_ptr,*(int *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x28),
-  Line 51 [pointer_cast]: *(int *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x24),
-  Line 52 [pointer_cast]: *(float *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x18));
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0 (4 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 25 [pointer_cast]: ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
-  Line 28 [pointer_cast]: *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar3) = 0xffff;
-  Line 29 [pointer_cast]: *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = 0xffff;
-  Line 30 [pointer_cast]: *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar3) = 0xffff;
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (3 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 46 [pointer_cast]: *(int *)((int)this_ptr->edges_ptr[iVar1].adjacent_tri_indices + iVar8),
-  Line 75 [shadow_pointer_walk]: pCVar1 = (CLodFace *)(pCVar1->attribute_indices + 1);
-  Line 101 [shadow_pointer_walk]: pCVar9 = (CLodEdge *)&pCVar9->vertex_idx_2;
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (13 suspects)
@@ -378,39 +176,6 @@ shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (13 suspects)
   Line 74 [pointer_cast]: [*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x28)].
   Line 76 [pointer_cast]: *(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x24) =
   Line 78 [pointer_cast]: [*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar1 + -0x24)].
-
-====================================================================================================
-shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70 (7 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 11 [shadow_pointer_walk]: source = (CLodVert *)&(source->position).y;
-  Line 11 [unrolled_memcpy]: // 0051ee87: MOVSD.REP ES:EDI,ESI
-  Line 12 [shadow_pointer_walk]: pCVar2 = (CLodVert *)&(pCVar2->position).y;
-  Line 16 [pointer_cast]: source = (CLodVert *)((int)&(source->position).x + 1);
-  Line 16 [shadow_pointer_walk]: source = (CLodVert *)((int)&(source->position).x + 1);
-  Line 17 [pointer_cast]: pCVar2 = (CLodVert *)((int)&(pCVar2->position).x + 1);
-  Line 17 [shadow_pointer_walk]: pCVar2 = (CLodVert *)((int)&(pCVar2->position).x + 1);
-
-====================================================================================================
-shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480 (2 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 65 [pointer_cast]: puVar1 = (uint *)((int)puVar1 + 1);
-  Line 72 [pointer_cast]: puVar1 = (uint *)((int)puVar1 + 1);
-
-====================================================================================================
-shape_meshlod.cpp_crc32UpdateDword2_FUN_0051c540 (2 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 65 [pointer_cast]: puVar1 = (uint *)((int)puVar1 + 1);
-  Line 72 [pointer_cast]: puVar1 = (uint *)((int)puVar1 + 1);
-
-====================================================================================================
-shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600 (2 suspects)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 63 [pointer_cast]: vector_ptr = (CVector3f *)((int)&vector_ptr->x + 1);
-  Line 70 [pointer_cast]: vector_ptr = (CVector3f *)((int)&vector_ptr->x + 1);
 
 ====================================================================================================
 shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0 (5 suspects)

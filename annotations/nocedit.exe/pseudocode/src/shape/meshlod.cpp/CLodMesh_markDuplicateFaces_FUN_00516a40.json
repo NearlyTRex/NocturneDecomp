@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 98,
+    "complexity_score": 53,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 53,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 164
   },
   "cross_references": [
@@ -115,6 +113,44 @@
     },
     "pcode_op_count": 446
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(int *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(int *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)pCVar1->attribute_indices + (iVar2 % 3) * 4 + local_20 + 0x10))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 21,
+      "match": "(int *)(iVar3 + 0x40)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((*(int *)(iVar3 + 0x40) == 0) && (local_1c = local_24 + 1, local_1c < this_ptr->tri_count)",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 44,
@@ -159,38 +195,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(int *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(int *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "*(int *)((int)pCVar1->attribute_indices + (iVar2 % 3) * 4 + local_20 + 0x10))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(uint *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) = 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 21,
-      "match": "(int *)(iVar3 + 0x40)",
-      "severity": "moderate",
-      "text": "if ((*(int *)(iVar3 + 0x40) == 0) && (local_1c = local_24 + 1, local_1c < this_ptr->tri_count)",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

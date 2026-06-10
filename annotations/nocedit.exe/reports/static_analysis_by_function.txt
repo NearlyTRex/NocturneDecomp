@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 48
-  Total diagnostics: 172
+  Functions with findings: 47
+  Total diagnostics: 169
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 35, raw .cpp files: 13
+  .keep.cpp files: 35, raw .cpp files: 12
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -234,14 +234,6 @@ core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppc
   Line   64: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
   Line   65: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
   Line   66: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-----------------------------------------------------------------------------------------------------
-shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870  [.cpp] [Cppcheck (quick)]
-  File: shape/meshlod.cpp  (3 diagnostics)
-
-  Line  108: [objectIndex] The address of local variable 'local_84' might be accessed at non-zero index.
-  Line  109: [objectIndex] The address of local variable 'local_84' might be accessed at non-zero index.
-  Line  110: [objectIndex] The address of local variable 'local_84' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
 shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180  [.keep] [Cppcheck (quick)]

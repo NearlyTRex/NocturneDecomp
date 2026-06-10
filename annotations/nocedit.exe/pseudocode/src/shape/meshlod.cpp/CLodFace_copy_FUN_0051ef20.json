@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 128,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 38,
-    "suspect_count": 8,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 148
   },
   "cross_references": [],
@@ -92,6 +89,80 @@
     },
     "pcode_op_count": 341
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(float *)((int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar1 + 0x24) = other->edge_dot_products[0];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(float *)((int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar1 + 0x28) = other->edge_dot_products[1];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(float *)((int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar1 + 0x2c) = other->edge_dot_products[2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(int *)((int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 0x30) = other->visited_stamp;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(int *)((int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 0x34) = other->affected_by_edge_stamp;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 13,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr->submesh_id = other->submesh_id;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (8 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 24,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr->edge_idx_0 = other->edge_idx_0;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0051ef47, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 18,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0051ef47: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -115,72 +186,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(float *)((int)pvVar1",
-      "severity": "moderate",
-      "text": "*(float *)((int)pvVar1 + 0x24) = other->edge_dot_products[0];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(float *)((int)pvVar1",
-      "severity": "moderate",
-      "text": "*(float *)((int)pvVar1 + 0x28) = other->edge_dot_products[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(float *)((int)pvVar1",
-      "severity": "moderate",
-      "text": "*(float *)((int)pvVar1 + 0x2c) = other->edge_dot_products[2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(int *)((int)pvVar1",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 0x30) = other->visited_stamp;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(int *)((int)pvVar1",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 0x34) = other->affected_by_edge_stamp;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 13,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "this_ptr->submesh_id = other->submesh_id;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (8 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 24,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "this_ptr->edge_idx_0 = other->edge_idx_0;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 0051ef47, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 18,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0051ef47: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

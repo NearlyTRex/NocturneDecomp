@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6359 (98.5%)
+Clean functions: 6387 (99.0%)
 Files at 100%: 211
-Files at 90%+: 211
+Files at 90%+: 212
 Files at 50%+: 214
 
 ====================================================================================================
@@ -231,7 +231,21 @@ Total: 211 files
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-Total: 0 files
+   91.1% | shape/meshlod.cpp
+         113/124 clean, 11 remaining
+           - shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (384 lines) [bitcast_double_pair, pointer_cast, shadow_pointer_walk, sub84_truncation, unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (108 lines) [pointer_cast, unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (192 lines) [pointer_cast, unrolled_memcpy, warning_inlined_function]
+           - shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 (90 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (449 lines) [pointer_cast, shadow_pointer_walk]
+           - shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (377 lines) [unrolled_memcpy]
+           - shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (131 lines) [pointer_cast, unrolled_memcpy]
+           - shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0 (178 lines) [unrolled_memcpy, unrolled_memset]
+           - shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (82 lines) [pointer_cast]
+           - shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (47 lines) [pointer_cast, shadow_pointer_walk, sub84_truncation]
+           - shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (89 lines) [pointer_cast]
+
+Total: 1 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -296,49 +310,8 @@ FILES AT 50-89%
            - shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (101 lines) [pointer_cast, warning_inlined_function]
            - shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (164 lines) [unaffected_reg]
            - shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70 (48 lines) [pointer_cast]
-   68.5% | shape/meshlod.cpp
-         85/124 clean, 39 remaining
-           - shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 (30 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (384 lines) [bitcast_double_pair, pointer_cast, shadow_pointer_walk, sub84_truncation, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (108 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480 (74 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 (53 lines) [pointer_cast]
-           - shape_meshlod.cpp_crc32UpdateDword2_FUN_0051c540 (74 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (192 lines) [pointer_cast, unrolled_memcpy, warning_inlined_function]
-           - shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 (90 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 (125 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (53 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (143 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0 (404 lines) [shadow_pointer_walk]
-           - shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 (123 lines) [pointer_cast, shadow_pointer_walk]
-           - shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 (71 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 (449 lines) [pointer_cast, shadow_pointer_walk]
-           - shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (60 lines) [pointer_cast, stack_alignment_array]
-           - shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (377 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (100 lines) [pointer_cast, unrolled_strcpy, warning_inlined_function]
-           - shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000 (131 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620 (157 lines) [pointer_cast, self_copy_guard]
-           - shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0 (34 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0 (39 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300 (41 lines) [pointer_cast, sub84_truncation]
-           - shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420 (22 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0 (78 lines) [unrolled_memcpy]
-           - shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70 (17 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
-           - shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600 (72 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0 (54 lines) [shadow_pointer_walk, unrolled_memset]
-           - shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0 (178 lines) [unrolled_memcpy, unrolled_memset]
-           - shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0 (24 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 (28 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (79 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (49 lines) [pointer_cast, warning_inlined_function]
-           - shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000 (143 lines) [shadow_pointer_walk]
-           - shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20 (38 lines) [pointer_cast, unrolled_memcpy]
-           - shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (82 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (47 lines) [pointer_cast, shadow_pointer_walk, sub84_truncation]
-           - shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (89 lines) [pointer_cast]
-           - shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0 (26 lines) [pointer_cast]
 
-Total: 3 files
+Total: 2 files
 
 ====================================================================================================
 FILES BELOW 50%

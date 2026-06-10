@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 91,
+    "complexity_score": 41,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 41,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "sub84_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 130
   },
   "cross_references": [
@@ -174,6 +171,44 @@
     },
     "pcode_op_count": 409
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(CLodFace *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "face = (CLodFace *)((int)this_ptr->tri_data->attribute_indices + local_18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 26,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_28 = SUB84(__BITCAST_UINT64(dVar2),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 15,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&sample_point->distance_to_triangle + 4) = 0x46293e59;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 30,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&sample_point->distance_to_triangle + 4) = uStack_24;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 52,
     "local_size": 44,
@@ -235,38 +270,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(CLodFace *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "face = (CLodFace *)((int)this_ptr->tri_data->attribute_indices + local_18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 26,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_28 = SUB84(__BITCAST_UINT64(dVar2),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 15,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&sample_point->distance_to_triangle + 4) = 0x46293e59;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 30,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&sample_point->distance_to_triangle + 4) = uStack_24;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

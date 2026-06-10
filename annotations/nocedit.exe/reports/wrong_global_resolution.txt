@@ -37,8 +37,8 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 38 (these need manual review)
-  Raw .cpp files with issues: 36
+  .keep files with issues: 39 (these need manual review)
+  Raw .cpp files with issues: 35
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -445,6 +445,14 @@ shape_design.c_showPointEditor_FUN_0045c6c0  [.keep]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0  [.keep]  (1 suspicious globals)
+  File: shape/meshlod.cpp
+
+  g_ReplayLodFilename
+    Used at lines: 24, 25, 26, 27, 28, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0  [.keep]  (1 suspicious globals)
   File: sound/sndmain.cpp
 
@@ -702,14 +710,6 @@ shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060 
 
   g_ConfirmationMessageBuffer
     Used at lines: 17, 23
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0  [.cpp]  (1 suspicious globals)
-  File: shape/meshlod.cpp
-
-  g_ReplayLodFilename
-    Used at lines: 31, 32, 33, 34, 35, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

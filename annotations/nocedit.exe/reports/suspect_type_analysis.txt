@@ -4,85 +4,62 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                     491 ( 65.6%)
-  static_uninitvar                  62 (  8.3%)
-  unrolled_memcpy                   58 (  7.7%)
-  shadow_pointer_walk               43 (  5.7%)
-  bitcast_double_pair               36 (  4.8%)
-  static_shift_too_many_bits        10 (  1.3%)
-  sub84_truncation                   9 (  1.2%)
-  warning_inlined_function           6 (  0.8%)
-  unaffected_reg                     6 (  0.8%)
-  static_invalid_pointer_cast        6 (  0.8%)
-  static_identical_inner_condition     3 (  0.4%)
-  static_object_index                3 (  0.4%)
-  unrolled_strcpy                    3 (  0.4%)
-  static_self_assignment             3 (  0.4%)
-  unrolled_memset                    2 (  0.3%)
+  pointer_cast                     438 ( 67.0%)
+  static_uninitvar                  62 (  9.5%)
+  unrolled_memcpy                   38 (  5.8%)
+  bitcast_double_pair               36 (  5.5%)
+  shadow_pointer_walk               31 (  4.7%)
+  static_shift_too_many_bits        10 (  1.5%)
+  sub84_truncation                   8 (  1.2%)
+  unaffected_reg                     6 (  0.9%)
+  static_invalid_pointer_cast        6 (  0.9%)
+  warning_inlined_function           4 (  0.6%)
+  static_identical_inner_condition     3 (  0.5%)
+  static_self_assignment             3 (  0.5%)
   raw_address_constant               2 (  0.3%)
-  unrolled_strchr                    1 (  0.1%)
-  static_null_pointer_arithmetic     1 (  0.1%)
-  static_null_pointer                1 (  0.1%)
-  static_legacy_uninitvar            1 (  0.1%)
-  stack_alignment_array              1 (  0.1%)
-  self_copy_guard                    1 (  0.1%)
+  unrolled_strcpy                    2 (  0.3%)
+  unrolled_strchr                    1 (  0.2%)
+  static_null_pointer_arithmetic     1 (  0.2%)
+  static_null_pointer                1 (  0.2%)
+  static_legacy_uninitvar            1 (  0.2%)
+  unrolled_memset                    1 (  0.2%)
 
 ====================================================================================================
-TYPE: pointer_cast (491 occurrences)
+TYPE: pointer_cast (438 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   242x  (int)&NAME used in byte-offset arithmetic
-    22x  (uint *)((int)this_ptr
-    20x  (int *)((int)this_ptr
-    13x  (int *)((int)pCVar1
+   229x  (int)&NAME used in byte-offset arithmetic
+    17x  (uint *)((int)this_ptr
+    15x  (int *)((int)this_ptr
     12x  (byte *)((int)this_ptr
     12x  (double *)((int)pdVar2
     12x  (double *)((int)pdVar4
     11x  (double *)((int)pdVar9
-    10x  (uint *)((int)pCVar1
      9x  (double *)((int)pdVar11
      9x  (double *)((int)pdVar6
+     8x  (uint *)((int)pCVar1
      8x  (int *)((int)g_ModelPolygonData
+     5x  (int *)((int)pCVar1
      5x  (int *)((int)aiStack_4e8
      5x  (double *)((int)pdVar10
-     4x  (uint *)((int)puVar1
      4x  (uint *)((int)g_SampleDistances
-     4x  (float *)((int)pCVar1
      4x  (float *)((int)afStack_4e0
      4x  (double *)((int)pdVar7
      4x  (double *)((int)pdVar8
+     4x  (uint *)((int)other
+     4x  (double *)((int)pdVar3
 
 Functions:
-  shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20
-  shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0
-  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
-  shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0
   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
   shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
   shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
   shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000
-  shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
-  shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0
-  shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920
-  shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420
   shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080
-  shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40
-  shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40
   shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
-  shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0
   shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0
-  shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
-  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-  shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0
-  shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
-  shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
   shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
-  shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
-  shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480
-  shape_meshlod.cpp_crc32UpdateDword2_FUN_0051c540
-  shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600
   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
@@ -154,29 +131,21 @@ Functions:
   shape_superopt.cpp_CPoly_transform_FUN_005ccc30
 
 ====================================================================================================
-TYPE: unrolled_memcpy (58 occurrences)
+TYPE: unrolled_memcpy (38 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    34x  field-by-field struct copy
-    16x  MOVSD.REP
-     7x  for (...; != 0; ... + -1)
+    19x  field-by-field struct copy
+    12x  MOVSD.REP
+     6x  for (...; != 0; ... + -1)
      1x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
-  shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870
-  shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0
-  shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20
   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-  shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
   shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-  shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
   shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000
-  shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
-  shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0
   shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0
-  shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
   shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
@@ -195,52 +164,6 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (43 occurrences)
-====================================================================================================
-
-Unique patterns:
-     7x  pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)
-     4x  pCVar11 = (T *)&pCVar11->FIELD
-     3x  this_ptr = (T *)&this_ptr->FIELD
-     2x  local_1c = (T *)&local_1c->FIELD
-     2x  pCVar8 = (T *)(pCVar8->attribute_indices + CONST)
-     2x  pCVar4 = (T *)(pCVar4->attribute_indices + CONST)
-     2x  pCVar6 = (T *)&pCVar6->FIELD
-     2x  pCVar5 = (T *)((int)&(pCVar5->FIELD).SUBFIELD + CONST)
-     1x  pCVar10 = (T *)&pCVar10->FIELD
-     1x  pCVar7 = (T *)&pCVar7->FIELD
-     1x  pCVar2 = (T *)&pCVar2->FIELD
-     1x  local_24 = (T *)&local_24->FIELD
-     1x  pCVar1 = (T *)(pCVar1->attribute_indices + CONST)
-     1x  pCVar9 = (T *)&pCVar9->FIELD
-     1x  local_50 = (T *)(local_50->attribute_indices + CONST)
-     1x  local_48 = (T *)&local_48->FIELD
-     1x  local_40 = (T *)&local_40->FIELD
-     1x  local_34 = (T *)&local_34->FIELD
-     1x  local_2c = (T *)&local_2c->FIELD
-     1x  source = (T *)&(source->FIELD).SUBFIELD
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0
-  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
-  shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
-  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
-  shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
-  shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
-  shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
-  shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
-  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
-  shape_superopt.cpp_CP3D_add1_FUN_005d8520
-  shape_superopt.cpp_CP3D_add2_FUN_005d85a0
-  shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
-  shape_superopt.cpp_CP3D_scale_FUN_005d8630
-  shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
-  shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
-  shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
-
-====================================================================================================
 TYPE: bitcast_double_pair (36 occurrences)
 ====================================================================================================
 
@@ -256,6 +179,44 @@ Functions:
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 
 ====================================================================================================
+TYPE: shadow_pointer_walk (31 occurrences)
+====================================================================================================
+
+Unique patterns:
+     7x  pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)
+     4x  pCVar11 = (T *)&pCVar11->FIELD
+     3x  this_ptr = (T *)&this_ptr->FIELD
+     2x  pCVar8 = (T *)(pCVar8->attribute_indices + CONST)
+     2x  pCVar4 = (T *)(pCVar4->attribute_indices + CONST)
+     2x  pCVar5 = (T *)((int)&(pCVar5->FIELD).SUBFIELD + CONST)
+     1x  pCVar10 = (T *)&pCVar10->FIELD
+     1x  pCVar7 = (T *)&pCVar7->FIELD
+     1x  pCVar2 = (T *)&pCVar2->FIELD
+     1x  local_24 = (T *)&local_24->FIELD
+     1x  local_50 = (T *)(local_50->attribute_indices + CONST)
+     1x  local_48 = (T *)&local_48->FIELD
+     1x  local_40 = (T *)&local_40->FIELD
+     1x  local_34 = (T *)&local_34->FIELD
+     1x  local_2c = (T *)&local_2c->FIELD
+     1x  local_1c = (T *)&local_1c->FIELD
+     1x  pCStack_60 = (T *)&pCStack_60[N].SUBFIELD
+
+Functions:
+  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
+  shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
+  shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
+  shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
+  shape_superopt.cpp_CP3D_add1_FUN_005d8520
+  shape_superopt.cpp_CP3D_add2_FUN_005d85a0
+  shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
+  shape_superopt.cpp_CP3D_scale_FUN_005d8630
+  shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
+  shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
+  shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
+
+====================================================================================================
 TYPE: static_shift_too_many_bits (10 occurrences)
 ====================================================================================================
 
@@ -267,34 +228,18 @@ Functions:
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
 
 ====================================================================================================
-TYPE: sub84_truncation (9 occurrences)
+TYPE: sub84_truncation (8 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     9x  SUB84(
+     8x  SUB84(
 
 Functions:
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
   shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
   shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
   shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
-
-====================================================================================================
-TYPE: warning_inlined_function (6 occurrences)
-====================================================================================================
-
-Unique patterns:
-     6x  WARNING: Inlined function:
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-  shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
-  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
-  shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
-  shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
 TYPE: unaffected_reg (6 occurrences)
@@ -317,6 +262,19 @@ Functions:
   shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
 
 ====================================================================================================
+TYPE: warning_inlined_function (4 occurrences)
+====================================================================================================
+
+Unique patterns:
+     4x  WARNING: Inlined function:
+
+Functions:
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
+  shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
+  shape_quantize.cpp_displayProgressBar_FUN_005568f0
+
+====================================================================================================
 TYPE: static_identical_inner_condition (3 occurrences)
 ====================================================================================================
 
@@ -327,27 +285,6 @@ Functions:
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
   shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
   shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
-
-====================================================================================================
-TYPE: static_object_index (3 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  Cppcheck: pointer-to-object indexed past bounds
-
-Functions:
-  shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870
-
-====================================================================================================
-TYPE: unrolled_strcpy (3 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  do {
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
 TYPE: static_self_assignment (3 occurrences)
@@ -362,17 +299,6 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: unrolled_memset (2 occurrences)
-====================================================================================================
-
-Unique patterns:
-     2x  cascade_constant_fill
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
-  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
-
-====================================================================================================
 TYPE: raw_address_constant (2 occurrences)
 ====================================================================================================
 
@@ -382,6 +308,16 @@ Unique patterns:
 
 Functions:
   shape_superopt.cpp_COptimize_cleanup_FUN_005d7000
+  shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
+
+====================================================================================================
+TYPE: unrolled_strcpy (2 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  do {
+
+Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
@@ -425,21 +361,11 @@ Functions:
   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
 
 ====================================================================================================
-TYPE: stack_alignment_array (1 occurrences)
+TYPE: unrolled_memset (1 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     1x  acStackY_1406
+     1x  cascade_constant_fill
 
 Functions:
-  shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0
-
-====================================================================================================
-TYPE: self_copy_guard (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }
-
-Functions:
-  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
+  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0

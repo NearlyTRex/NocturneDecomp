@@ -84,16 +84,12 @@ LAB_0051d5ec:
              shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
                        (this_ptr,&local_40,&local_58.min);
     if (&local_58 != pCVar2) {
-      local_58.min.x = (pCVar2->min).x;
-      local_58.min.y = (pCVar2->min).y;
-      local_58.min.z = (pCVar2->min).z;
+      local_58.min = pCVar2->min;
     }
     pCVar3 = shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
                        (this_ptr,&local_34,&local_58.max);
     if (&local_58.max != pCVar3) {
-      local_58.max.x = pCVar3->x;
-      local_58.max.y = pCVar3->y;
-      local_58.max.z = pCVar3->z;
+      local_58.max = *pCVar3;
     }
     fVar1 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_58);
     _sprintf(local_bc,"Pixel Height: %d",(int)ROUND(ROUND(fVar1)));

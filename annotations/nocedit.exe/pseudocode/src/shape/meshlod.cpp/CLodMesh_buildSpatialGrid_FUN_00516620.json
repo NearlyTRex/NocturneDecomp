@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 355,
-    "complexity_score": 207,
+    "complexity_score": 157,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 157,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "self_copy_guard"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 512
   },
   "cross_references": [
@@ -228,6 +225,44 @@
     },
     "pcode_op_count": 1710
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + local_28) = local_24;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->spatial_grid_data + local_18) = iVar12;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_60 != &local_54)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 87,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&local_60 != &local_54) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 94,
+      "match": "(int *)(iVar11 + 0x10)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2 = this_ptr->vertex_data + *(int *)(iVar11 + 0x10);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 128,
     "local_size": 124,
@@ -422,38 +457,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + local_28) = local_24;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 132,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->spatial_grid_data + local_18) = iVar12;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom dead self-copy guard: `if (&local_60 != &local_54)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 87,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
-      "severity": "moderate",
-      "text": "if (&local_60 != &local_54) {",
-      "type": "self_copy_guard"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 94,
-      "match": "(int *)(iVar11 + 0x10)",
-      "severity": "moderate",
-      "text": "pCVar2 = this_ptr->vertex_data + *(int *)(iVar11 + 0x10);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

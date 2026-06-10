@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 738,
-    "complexity_score": 419,
+    "complexity_score": 404,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 404,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1142
   },
   "cross_references": [
@@ -93,6 +91,17 @@
     },
     "pcode_op_count": 2838
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_1c->owner`). Replace `local_1c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 109,
+      "match": "local_1c = (T *)&local_1c->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c = (CLodMesh *)&local_1c->vertex_data;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 88,
     "local_size": 80,
@@ -238,14 +247,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_1c->owner`). Replace `local_1c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 109,
-      "match": "local_1c = (T *)&local_1c->FIELD",
-      "severity": "moderate",
-      "text": "local_1c = (CLodMesh *)&local_1c->vertex_data;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 99,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 74,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 197
   },
   "cross_references": [],
@@ -71,6 +69,26 @@
     },
     "pcode_op_count": 502
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(uint *)((int)puVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)puVar1 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uint *)((int)puVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)puVar1 + 1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -94,22 +112,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(uint *)((int)puVar1",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)puVar1 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(uint *)((int)puVar1",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)puVar1 + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }
