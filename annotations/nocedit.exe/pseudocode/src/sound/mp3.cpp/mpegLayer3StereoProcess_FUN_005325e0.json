@@ -1309,5 +1309,39 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "mpegLayer3StereoProcess_FUN_005325e0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 70,
+          "line": 259,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        },
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 74,
+          "line": 363,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        },
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 72,
+          "line": 472,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        },
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 74,
+          "line": 564,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

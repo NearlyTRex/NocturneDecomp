@@ -1647,25 +1647,25 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     # cap concurrency by available RAM (~1.5GB budget per worker). Override with
     # NOCTURNE_SA_THREADS=<n>.
     sa_threads = num_threads
-    sa_env = os.environ.get('NOCTURNE_SA_THREADS')
-    if sa_env and sa_env.isdigit() and int(sa_env) > 0:
-        sa_threads = min(num_threads, int(sa_env))
-    else:
-        try:
-            avail_kb = 0
-            with open('/proc/meminfo') as mf:
-                for line in mf:
-                    if line.startswith('MemAvailable:'):
-                        avail_kb = int(line.split()[1])
-                        break
-            if avail_kb:
-                mem_cap = max(1, int(avail_kb / 1024 / 1024 / 1.5))  # ~1.5GB/worker
-                sa_threads = min(num_threads, mem_cap)
-        except Exception:
-            pass  # fall back to num_threads if memory probing fails
-    if sa_threads != num_threads:
-        log_info("Static analysis: capping to %d threads (from %d) to limit memory use" % (
-            sa_threads, num_threads))
+    # sa_env = os.environ.get('NOCTURNE_SA_THREADS')
+    # if sa_env and sa_env.isdigit() and int(sa_env) > 0:
+    #     sa_threads = min(num_threads, int(sa_env))
+    # else:
+    #     try:
+    #         avail_kb = 0
+    #         with open('/proc/meminfo') as mf:
+    #             for line in mf:
+    #                 if line.startswith('MemAvailable:'):
+    #                     avail_kb = int(line.split()[1])
+    #                     break
+    #         if avail_kb:
+    #             mem_cap = max(1, int(avail_kb / 1024 / 1024 / 1.5))  # ~1.5GB/worker
+    #             sa_threads = min(num_threads, mem_cap)
+    #     except Exception:
+    #         pass  # fall back to num_threads if memory probing fails
+    # if sa_threads != num_threads:
+    #     log_info("Static analysis: capping to %d threads (from %d) to limit memory use" % (
+    #         sa_threads, num_threads))
     sa_result = run_static_analysis_after_export(
         pseudocode_dir,
         num_threads=sa_threads,

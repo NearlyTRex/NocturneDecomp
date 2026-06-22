@@ -6,19 +6,19 @@ PASS-BY-VALUE STRUCT ARGUMENTS REPORT
 
 ====================================================================================================
 
-crt_stdio.c_fwrite_FUN_005fdc00
-  Params: arg1=?struct_8 (0x8)
-  Call sites (2):
-    cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 @ 0x0054b61d   1x ?struct_28 (0x1c)
-    cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930 @ 0x0054b967   1x ?struct_8 (0x8)
-
---------------------------------------------------------------------------------
-
 engine_3d.c_clipAndDrawLine2D_FUN_00407d70
   Params: arg1=?struct_96 (0x60)
   Call sites (2):
     core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 @ 0x005ba148   1x SRenderVertex
     engine_3d.c_drawLine2DFromIndices_FUN_00407cf0 @ 0x00407d55   1x ?struct_96 (0x60)
+
+--------------------------------------------------------------------------------
+
+crt_stdio.c_fwrite_FUN_005fdc00
+  Params: arg1=?struct_28 (0x1c)
+  Call sites (2):
+    cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 @ 0x0054b61d   1x ?struct_28 (0x1c)
+    cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930 @ 0x0054b967   1x ?struct_8 (0x8)
 
 --------------------------------------------------------------------------------
 
@@ -29,17 +29,17 @@ engine_3d.c_clipAndDrawLine3D_FUN_00408070
 
 --------------------------------------------------------------------------------
 
-sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
-  Params: arg1=?struct_44 (0x2c)
-  Call sites (1):
-    sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0 @ 0x005a5b10   1x ?struct_44 (0x2c)
-
---------------------------------------------------------------------------------
-
 core_actor.cpp_archiveString_FUN_0040b5c0
   Params: arg1=?struct_300 (0x12c)
   Call sites (1):
     core_actor.cpp_archiveLocalizedString_FUN_0040b6e0 @ 0x0040b735   1x ?struct_300 (0x12c)
+
+--------------------------------------------------------------------------------
+
+sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
+  Params: arg1=?struct_44 (0x2c)
+  Call sites (1):
+    sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0 @ 0x005a5b10   1x ?struct_44 (0x2c)
 
 --------------------------------------------------------------------------------
 

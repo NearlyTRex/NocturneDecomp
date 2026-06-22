@@ -15,8 +15,8 @@ SUSPECT TYPE COUNTS
   static_self_assignment             3 (  1.2%)
   warning_inlined_function           2 (  0.8%)
   unrolled_strcpy                    2 (  0.8%)
-  static_null_pointer                1 (  0.4%)
   static_identical_inner_condition     1 (  0.4%)
+  static_null_pointer                1 (  0.4%)
   raw_address_constant               1 (  0.4%)
 
 ====================================================================================================
@@ -29,21 +29,21 @@ Unique patterns:
      8x  (uint *)((int)this_ptr
      6x  (uint *)((int)pCVar1
      5x  (double *)((int)pdVar10
-     4x  (double *)((int)pdVar8
      4x  (double *)((int)pdVar11
-     3x  (double *)((int)pdVar9
+     4x  (double *)((int)pdVar8
      3x  (double *)((int)pdVar4
+     3x  (double *)((int)pdVar9
      2x  (int *)((int)g_MaxNeighborVerts
-     2x  (double *)((int)pdVar7
      2x  (uint *)((int)pvVar1
      2x  (SExpandedEdge *)((int)pvVar1
      2x  (uint *)((int)edge_b
+     2x  (double *)((int)pdVar7
      2x  (double *)((int)pdVar2
      2x  (float *)((int)g_ModelPolygonData
-     1x  (uint **)((int)(*bitmap_ptr)->row_table
-     1x  (uint *)((int)puVar10
-     1x  (uint *)((int)puVar13
-     1x  (uint *)(local_44 + (int)this_ptr
+     1x  (int *)((int)pCVar15
+     1x  (int *)((int)g_TempNeighborFaces
+     1x  (double *)((int)g_SampleDistances
+     1x  (uint **)((int)bitmap
 
 Functions:
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
@@ -119,10 +119,10 @@ TYPE: shadow_pointer_walk (7 occurrences)
 
 Unique patterns:
      3x  pCVar11 = (T *)&pCVar11->FIELD
+     1x  local_24 = (T *)&local_24->FIELD
+     1x  pCVar2 = (T *)&pCVar2->FIELD
      1x  pCVar10 = (T *)&pCVar10->FIELD
      1x  pCVar7 = (T *)&pCVar7->FIELD
-     1x  pCVar2 = (T *)&pCVar2->FIELD
-     1x  local_24 = (T *)&local_24->FIELD
 
 Functions:
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
@@ -195,16 +195,6 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: static_null_pointer (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  Cppcheck: null pointer dereference
-
-Functions:
-  shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
-
-====================================================================================================
 TYPE: static_identical_inner_condition (1 occurrences)
 ====================================================================================================
 
@@ -213,6 +203,16 @@ Unique patterns:
 
 Functions:
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+
+====================================================================================================
+TYPE: static_null_pointer (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  Cppcheck: null pointer dereference
+
+Functions:
+  shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
 
 ====================================================================================================
 TYPE: raw_address_constant (1 occurrences)

@@ -5,6 +5,138 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
+Clang-Tidy (quick) (28 diagnostics)
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+bugprone-integer-division (16)
+----------------------------------------------------------------------------------------------------
+
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_ line 107
+    File: core/charactr.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_dfilter.cpp_CDemonFilter_init_FUN_004705a0    line 33
+    File: core/dfilter.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_dlight.cpp_CDemonLight_renderRadialVolumetric line 70
+    File: core/dlight.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_dlight.cpp_CDemonLight_renderRadialVolumetric line 72
+    File: core/dlight.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 184
+    File: core/dtrace.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 187
+    File: core/dtrace.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_ line 190
+    File: core/dtrace.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_script.cpp_CScript_getLetterboxHeight_FUN_005 line 13
+    File: core/script.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  core_script.cpp_CScript_getLetterboxHeight_FUN_005 line 13
+    File: core/script.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00 line 23
+    File: sound/mp3.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00 line 28
+    File: sound/mp3.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 259
+    File: sound/mp3.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 363
+    File: sound/mp3.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 472
+    File: sound/mp3.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 564
+    File: sound/mp3.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackP line 40
+    File: sound/snddx.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+----------------------------------------------------------------------------------------------------
+ (5)
+----------------------------------------------------------------------------------------------------
+
+  engine_2d.c_drawStringHighlighted_FUN_004020e0     line 22
+    File: engine/2d.c
+    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+  engine_2d.c_drawStringMasked_FUN_00402030          line 22
+    File: engine/2d.c
+    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+  engine_2d.c_drawString_FUN_00402080                line 22
+    File: engine/2d.c
+    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+  engine_2d.c_drawTextWrappedColor_FUN_00401eb0      line 29
+    File: engine/2d.c
+    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+  engine_2d.c_drawTextWrapped_FUN_00401c60           line 29
+    File: engine/2d.c
+    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+----------------------------------------------------------------------------------------------------
+cert-flp30-c (4)
+----------------------------------------------------------------------------------------------------
+
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_ line 73
+    File: core/charactr.cpp
+    loop induction expression should not have floating-point type
+
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_ line 116
+    File: core/charactr.cpp
+    loop induction expression should not have floating-point type
+
+  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880      line 90
+    File: core/cloth.cpp
+    loop induction expression should not have floating-point type
+
+  core_game.cpp_CGame_finishAct_FUN_004e3b90         line 45
+    File: core/game.cpp
+    loop induction expression should not have floating-point type
+
+----------------------------------------------------------------------------------------------------
+bugprone-swapped-arguments (3)
+----------------------------------------------------------------------------------------------------
+
+  core_flame.cpp_CFlame_process_FUN_004c9c00         line 94
+    File: core/flame.cpp
+    argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments.
+
+  core_flame.cpp_CFlame_process_FUN_004c9c00         line 123
+    File: core/flame.cpp
+    argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments.
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 720
+    File: core/skeledit.cpp
+    argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments.
+
+====================================================================================================
 Cppcheck (quick) (120 diagnostics)
 ====================================================================================================
 
@@ -501,14 +633,6 @@ selfAssignment (3)
     Redundant assignment of 'iVar7' to itself.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (1)
-----------------------------------------------------------------------------------------------------
-
-  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
-    File: shape/quantize.cpp
-    Possible null pointer dereference: local_20
-
-----------------------------------------------------------------------------------------------------
 nullPointerArithmeticRedundantCheck (1)
 ----------------------------------------------------------------------------------------------------
 
@@ -523,6 +647,14 @@ identicalInnerCondition (1)
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 315
     File: shape/meshlod.cpp
     Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+nullPointer (1)
+----------------------------------------------------------------------------------------------------
+
+  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
+    File: shape/quantize.cpp
+    Possible null pointer dereference: local_20
 
 ----------------------------------------------------------------------------------------------------
 memleak (1)

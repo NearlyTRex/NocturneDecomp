@@ -483,6 +483,28 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CFlame_process_FUN_004c9c00.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-swapped-arguments",
+          "column": 13,
+          "line": 94,
+          "message": "argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments."
+        },
+        {
+          "check_name": "bugprone-swapped-arguments",
+          "column": 15,
+          "line": 123,
+          "message": "argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments."
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [],
   "vtable_info": {
     "entries": [

@@ -535,5 +535,33 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CCharacter_moveOutOfHeroWay_FUN_0042ede0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_name": "cert-flp30-c",
+          "column": 24,
+          "line": 73,
+          "message": "loop induction expression should not have floating-point type"
+        },
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 29,
+          "line": 107,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        },
+        {
+          "check_name": "cert-flp30-c",
+          "column": 24,
+          "line": 116,
+          "message": "loop induction expression should not have floating-point type"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

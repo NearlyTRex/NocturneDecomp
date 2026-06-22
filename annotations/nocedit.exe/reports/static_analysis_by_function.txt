@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 37
-  Total diagnostics: 120
+  Functions with findings: 54
+  Total diagnostics: 148
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 32, raw .cpp files: 5
+  .keep.cpp files: 48, raw .cpp files: 6
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -154,12 +154,37 @@ shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010  [.cpp] [Cppcheck (quick)]
   Line  106: [uninitvar] Uninitialized variable: local_70
 
 ----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0  [.keep] [Clang-Tidy (quick)]
+  File: sound/mp3.cpp  (4 diagnostics)
+
+  Line  259: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line  363: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line  472: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line  564: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+
+----------------------------------------------------------------------------------------------------
 core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppcheck (quick)]
   File: core/actor.cpp  (3 diagnostics)
 
   Line   64: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
   Line   65: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
   Line   66: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+----------------------------------------------------------------------------------------------------
+core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0  [.keep] [Clang-Tidy (quick)]
+  File: core/charactr.cpp  (3 diagnostics)
+
+  Line   73: [cert-flp30-c] loop induction expression should not have floating-point type
+  Line  107: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line  116: [cert-flp30-c] loop induction expression should not have floating-point type
+
+----------------------------------------------------------------------------------------------------
+core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50  [.keep] [Clang-Tidy (quick)]
+  File: core/dtrace.cpp  (3 diagnostics)
+
+  Line  184: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line  187: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line  190: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
 
 ----------------------------------------------------------------------------------------------------
 shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180  [.keep] [Cppcheck (quick)]
@@ -184,6 +209,27 @@ core_cloth.cpp_fastInvSqrt_FUN_0043e2a0  [.keep] [Cppcheck (quick)]
   Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
+core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210  [.keep] [Clang-Tidy (quick)]
+  File: core/dlight.cpp  (2 diagnostics)
+
+  Line   70: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line   72: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+
+----------------------------------------------------------------------------------------------------
+core_flame.cpp_CFlame_process_FUN_004c9c00  [.keep] [Clang-Tidy (quick)]
+  File: core/flame.cpp  (2 diagnostics)
+
+  Line   94: [bugprone-swapped-arguments] argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments.
+  Line  123: [bugprone-swapped-arguments] argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments.
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0  [.keep] [Clang-Tidy (quick)]
+  File: core/script.cpp  (2 diagnostics)
+
+  Line   13: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line   13: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+
+----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppcheck (quick)]
   File: core/skeledit.cpp  (2 diagnostics)
 
@@ -196,6 +242,25 @@ shape_quantize.cpp_quantizeRawPixelData_FUN_00556490  [.keep] [Cppcheck (quick)]
 
   Line  116: [nullPointerRedundantCheck] Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
   Line  124: [nullPointerRedundantCheck] Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
+
+----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540  [.cpp] [Clang-Tidy (quick)]
+  File: sound/mp3.cpp  (2 diagnostics)
+
+  Line   23: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line   28: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+
+----------------------------------------------------------------------------------------------------
+core_cloth.cpp_CCloth_boneEditor_FUN_0043c880  [.keep] [Clang-Tidy (quick)]
+  File: core/cloth.cpp  (1 diagnostics)
+
+  Line   90: [cert-flp30-c] loop induction expression should not have floating-point type
+
+----------------------------------------------------------------------------------------------------
+core_dfilter.cpp_CDemonFilter_init_FUN_004705a0  [.keep] [Clang-Tidy (quick)]
+  File: core/dfilter.cpp  (1 diagnostics)
+
+  Line   33: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
 
 ----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170  [.keep] [Cppcheck (quick)]
@@ -214,6 +279,12 @@ core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20  [.keep] 
   File: core/fileman.cpp  (1 diagnostics)
 
   Line   75: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_finishAct_FUN_004e3b90  [.keep] [Clang-Tidy (quick)]
+  File: core/game.cpp  (1 diagnostics)
+
+  Line   45: [cert-flp30-c] loop induction expression should not have floating-point type
 
 ----------------------------------------------------------------------------------------------------
 core_script.cpp_CScript_collectLabels_FUN_00566fa0  [.keep] [Cppcheck (quick)]
@@ -238,6 +309,42 @@ core_setutil.cpp_C3DSCamera_load_FUN_00585420  [.keep] [Cppcheck (quick)]
   File: core/setutil.cpp  (1 diagnostics)
 
   Line   20: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep] [Clang-Tidy (quick)]
+  File: core/skeledit.cpp  (1 diagnostics)
+
+  Line  720: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments.
+
+----------------------------------------------------------------------------------------------------
+engine_2d.c_drawStringHighlighted_FUN_004020e0  [.keep] [Clang-Tidy (quick)]
+  File: engine/2d.c  (1 diagnostics)
+
+  Line   22: [] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+----------------------------------------------------------------------------------------------------
+engine_2d.c_drawStringMasked_FUN_00402030  [.keep] [Clang-Tidy (quick)]
+  File: engine/2d.c  (1 diagnostics)
+
+  Line   22: [] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+----------------------------------------------------------------------------------------------------
+engine_2d.c_drawString_FUN_00402080  [.keep] [Clang-Tidy (quick)]
+  File: engine/2d.c  (1 diagnostics)
+
+  Line   22: [] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+----------------------------------------------------------------------------------------------------
+engine_2d.c_drawTextWrappedColor_FUN_00401eb0  [.keep] [Clang-Tidy (quick)]
+  File: engine/2d.c  (1 diagnostics)
+
+  Line   29: [] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+----------------------------------------------------------------------------------------------------
+engine_2d.c_drawTextWrapped_FUN_00401c60  [.keep] [Clang-Tidy (quick)]
+  File: engine/2d.c  (1 diagnostics)
+
+  Line   29: [] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
 
 ----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
@@ -310,6 +417,12 @@ sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
   Line   29: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+----------------------------------------------------------------------------------------------------
+sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60  [.keep] [Clang-Tidy (quick)]
+  File: sound/snddx.cpp  (1 diagnostics)
+
+  Line   40: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660  [.keep] [Cppcheck (quick)]

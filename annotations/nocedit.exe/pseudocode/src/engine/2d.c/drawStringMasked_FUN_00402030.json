@@ -118,5 +118,21 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "drawStringMasked_FUN_00402030.keep.c",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "",
+          "column": 15,
+          "line": 22,
+          "message": "'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

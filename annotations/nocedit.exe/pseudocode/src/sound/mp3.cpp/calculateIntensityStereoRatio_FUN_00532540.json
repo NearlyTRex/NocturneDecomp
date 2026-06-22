@@ -173,5 +173,27 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "calculateIntensityStereoRatio_FUN_00532540.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 44,
+          "line": 23,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        },
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 42,
+          "line": 28,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
   "suspects": []
 }

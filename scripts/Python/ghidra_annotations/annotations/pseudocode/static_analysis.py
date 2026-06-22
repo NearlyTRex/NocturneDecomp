@@ -547,6 +547,25 @@ def run_clang_tidy(cpp_path, include_dir, timeout=180, repo_dir=None, deep=False
         '-bugprone-narrowing-conversions',
         '-bugprone-reserved-identifier',
         '-bugprone-suspicious-include',
+        # Out of scope for faithful decompilation: this project reproduces the
+        # original binary's behavior, not idiomatic/safe/portable C++. The
+        # checks below flag either the original code's own (faithfully
+        # reproduced) idioms, decompiler-representation artifacts, or C code
+        # linted under C++ rules — none indicate a wrong type guess. We keep
+        # bugprone-integer-division, bugprone-swapped-arguments, and
+        # cert-flp30-c, which CAN surface a mis-typed param/var/field.
+        '-bugprone-assignment-in-if-condition',  # Ghidra emits `if (x = f())` pervasively
+        '-bugprone-switch-missing-default-case',  # adding a default would diverge from original
+        '-bugprone-branch-clone',                # control-flow fidelity, not typing
+        '-bugprone-multi-level-implicit-pointer-conversion',  # all targets are void*; legal in C, flagged only under -x c++
+        '-cert-err33-c',                         # original ignores return values
+        '-cert-err34-c',                         # atoi->strtol idiom modernization
+        '-cert-msc30-c',                         # rand() usage is original behavior
+        '-cert-msc32-c',                         # predictable srand seed is original behavior
+        '-cert-env33-c',                         # system() call is original behavior
+        '-cert-dcl50-cpp',                       # functions genuinely variadic in original
+        '-cert-dcl37-c',                         # reserved id __return_storage_ptr__ (Ghidra name)
+        '-cert-dcl51-cpp',                       # reserved id __return_storage_ptr__ (Ghidra name)
     ])
 
     try:

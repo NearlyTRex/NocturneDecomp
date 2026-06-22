@@ -485,5 +485,27 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonLight_renderRadialVolumetricScattering_FUN_00475210.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 26,
+          "line": 70,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        },
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 26,
+          "line": 72,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

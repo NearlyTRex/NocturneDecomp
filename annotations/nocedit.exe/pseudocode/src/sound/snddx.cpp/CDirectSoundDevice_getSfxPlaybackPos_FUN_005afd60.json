@@ -216,6 +216,22 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 19,
+          "line": 40,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [],
   "vtable_info": {
     "entries": [
