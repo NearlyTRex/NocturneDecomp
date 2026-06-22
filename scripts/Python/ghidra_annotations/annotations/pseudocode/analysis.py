@@ -1159,6 +1159,17 @@ def load_function_data(pseudocode_src_dir):
                 except Exception as e:
                     log_info("Warning: Failed to load %s: %s" % (json_path, str(e)))
 
+    # Return in a deterministic order. os.walk yields entries in arbitrary OS
+    # order, and the downstream reports sort by non-unique keys (line count,
+    # complexity score, suspect count) relying on Python's stable sort, so any
+    # ties — and the insertion order of the count dicts built from this list —
+    # would otherwise vary run-to-run and produce spurious report diffs. Sort
+    # by the unique function address (json_path as final tiebreak).
+    functions.sort(key=lambda d: (
+        d.get('function', {}).get('address', ''),
+        d.get('_json_path', ''),
+    ))
+
     return functions
 
 

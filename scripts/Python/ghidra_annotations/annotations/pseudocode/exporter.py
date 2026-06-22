@@ -1640,9 +1640,35 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     # Run static analysis (after compilation, before report generation)
     timer.start_phase("Static analysis")
     log_info("Running static analysis...")
+    # Static analysis is far more memory-hungry than decompilation/compilation:
+    # each worker runs clang-tidy + clang-analyzer + cppcheck, every invocation
+    # re-parsing the ~6MB header tree (hundreds of MB resident). Reusing the
+    # decompile thread count (12) OOM-killed the process on smaller machines, so
+    # cap concurrency by available RAM (~1.5GB budget per worker). Override with
+    # NOCTURNE_SA_THREADS=<n>.
+    sa_threads = num_threads
+    sa_env = os.environ.get('NOCTURNE_SA_THREADS')
+    if sa_env and sa_env.isdigit() and int(sa_env) > 0:
+        sa_threads = min(num_threads, int(sa_env))
+    else:
+        try:
+            avail_kb = 0
+            with open('/proc/meminfo') as mf:
+                for line in mf:
+                    if line.startswith('MemAvailable:'):
+                        avail_kb = int(line.split()[1])
+                        break
+            if avail_kb:
+                mem_cap = max(1, int(avail_kb / 1024 / 1024 / 1.5))  # ~1.5GB/worker
+                sa_threads = min(num_threads, mem_cap)
+        except Exception:
+            pass  # fall back to num_threads if memory probing fails
+    if sa_threads != num_threads:
+        log_info("Static analysis: capping to %d threads (from %d) to limit memory use" % (
+            sa_threads, num_threads))
     sa_result = run_static_analysis_after_export(
         pseudocode_dir,
-        num_threads=num_threads,
+        num_threads=sa_threads,
         reports_dir=reports_dir,
         repo_dir=repo_dir,
         deep=deep_analysis
