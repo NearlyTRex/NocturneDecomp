@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 116,
+    "complexity_score": 51,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 51,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 178
   },
   "cross_references": [],
@@ -115,6 +113,62 @@
     ],
     "vtable_offset": 84
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)pCVar1->uv_coords + iVar4 + -0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar4 + -0xc) = uVar2 - 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(uint *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)pCVar1->uv_coords + iVar4 + -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar4 + -8) = uVar2 - 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)pCVar1->uv_coords + iVar4 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)pCVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar4 + -4) = uVar2 - 1;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -138,56 +192,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(uint *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)pCVar1->uv_coords + iVar4 + -0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(uint *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar4 + -0xc) = uVar2 - 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(uint *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)pCVar1->uv_coords + iVar4 + -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(uint *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar4 + -8) = uVar2 - 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(uint *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)pCVar1->uv_coords + iVar4 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(uint *)((int)pCVar1",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar4 + -4) = uVar2 - 1;",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        22 ( 0.3%)
+  Functions with type issues:        20 ( 0.3%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      22
+    Undefined types in variables:      20
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   195 functions
+  Excluded (.keep / MMX / by-value):   197 functions
     Wrong calling convention:          0
-    Undefined types in variables:      195
+    Undefined types in variables:      197
     Unresolved stack params:           0
 
 ====================================================================================================
@@ -81,18 +81,8 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (22)
+Undefined types in variables (20)
 --------------------------------------------------------------------------------
-
-  CPoly_rayIntersect
-    Address: 0x005d0010  File: shape/superopt.cpp
-    Locals:  local_c8 (undefined4[4]), local_b8 (undefined4), local_b4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CComplexPolygon_mergeAdjacentEdges
-    Address: 0x005c7dc0  File: shape/superopt.cpp
-    Locals:  local_38 (undefined4 *), local_34 (undefined4 *)
-    Suggested: Resolve undefined types to concrete types
 
   CFireEffect_load
     Address: 0x004c9300  File: core/fire.cpp
@@ -203,7 +193,7 @@ manual .keep.cpp files, MMX inline assembly transforms, or by-value struct
 passing patterns. Issues here are expected and not actionable.
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (195)
+Undefined types - .keep overrides (197)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -636,6 +626,11 @@ Undefined types - .keep overrides (195)
     Locals:  local_f8 (undefined4[4]), local_e8 (undefined4), local_e4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CPoly_rayIntersect
+    Address: 0x005d0010  File: shape/superopt.cpp
+    Locals:  local_c8 (undefined4[4]), local_b8 (undefined4), local_b4 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   buildSockaddrIn
     Address: 0x005e19d0  File: support/trisock.cpp
     Locals:  auStackY_17f4 (undefined4[1524]), local_18 (undefined4), auStack_10 (undefined4[2])
@@ -719,6 +714,11 @@ Undefined types - .keep overrides (195)
   CLodMesh_replayLodGeneration
     Address: 0x005173f0  File: shape/meshlod.cpp
     Locals:  auStackY_100c (undefined2[2026]), uStack_20 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CComplexPolygon_mergeAdjacentEdges
+    Address: 0x005c7dc0  File: shape/superopt.cpp
+    Locals:  local_38 (undefined4 *), local_34 (undefined4 *)
     Suggested: Resolve undefined types to concrete types
 
   CComplexPolygon_validateSubChainVisibility

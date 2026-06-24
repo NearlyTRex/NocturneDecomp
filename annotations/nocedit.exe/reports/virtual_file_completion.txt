@@ -6,8 +6,8 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6438 (99.8%)
-Files at 100%: 209
+Clean functions: 6453 (100.0%)
+Files at 100%: 213
 Files at 90%+: 214
 Files at 50%+: 214
 
@@ -85,6 +85,7 @@ FILES AT 100% (COMPLETE)
   core/flies.cpp: 22 functions, 681 lines
   core/frankgen.cpp: 24 functions, 662 lines
   core/gabriela.cpp: 38 functions, 2677 lines
+  core/game.cpp: 66 functions, 6745 lines
   core/gargoyle.cpp: 16 functions, 941 lines
   core/gasmask.cpp: 14 functions, 131 lines
   core/ghoul.cpp: 18 functions, 1799 lines
@@ -137,6 +138,7 @@ FILES AT 100% (COMPLETE)
   core/podmain.cpp: 4 functions, 64 lines
   core/procedur.cpp: 4 functions, 234 lines
   core/scat.cpp: 25 functions, 1292 lines
+  core/script.cpp: 96 functions, 10011 lines
   core/sentinel.cpp: 14 functions, 737 lines
   core/set.cpp: 87 functions, 5059 lines
   core/setcolid.cpp: 40 functions, 1555 lines
@@ -212,9 +214,11 @@ FILES AT 100% (COMPLETE)
   shape/memdbg.cpp: 26 functions, 605 lines
   shape/meshlod.cpp: 124 functions, 6913 lines
   shape/multicrm.cpp: 6 functions, 115 lines
+  shape/quantize.cpp: 33 functions, 1466 lines
   shape/spotview.cpp: 6 functions, 215 lines
   sound/mp3.cpp: 57 functions, 4680 lines
   sound/snddx.cpp: 32 functions, 1433 lines
+  sound/sndmain.cpp: 193 functions, 6577 lines
   sound/sndwav.cpp: 35 functions, 765 lines
   support/codec.cpp: 40 functions, 821 lines
   support/newmsg.cpp: 4 functions, 210 lines
@@ -224,43 +228,16 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 209 files
+Total: 213 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   99.5% | sound/sndmain.cpp
-         192/193 clean, 1 remaining
-           - sound_sndmain.cpp_readIni_FUN_005abf20 (89 lines) [unrolled_memcpy]
+   99.5% | shape/superopt.cpp
+         185/186 clean, 1 remaining
+           - shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00 (165 lines) [raw_address_constant]
 
-   99.0% | core/script.cpp
-         95/96 clean, 1 remaining
-           - core_script.cpp_readActorReference_FUN_00560760 (28 lines) [unrolled_memcpy]
-
-   98.5% | core/game.cpp
-         65/66 clean, 1 remaining
-           - core_game.cpp_joinNetworkGame_FUN_004e2fc0 (36 lines) [unrolled_memcpy]
-
-   97.0% | shape/quantize.cpp
-         32/33 clean, 1 remaining
-           - shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 (195 lines) [pointer_cast, shadow_pointer_walk]
-
-   93.5% | shape/superopt.cpp
-         174/186 clean, 12 remaining
-           - shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90 (30 lines) [pointer_cast]
-           - shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0 (81 lines) [pointer_cast]
-           - shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0 (214 lines) [pointer_cast]
-           - shape_superopt.cpp_CPoly_flipNormal_FUN_005cdfe0 (33 lines) [pointer_cast]
-           - shape_superopt.cpp_CPoly_getBounds_FUN_005ce3e0 (72 lines) [pointer_cast]
-           - shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 (114 lines) [pointer_cast]
-           - shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30 (63 lines) [pointer_cast, unrolled_memcpy]
-           - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
-           - shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (51 lines) [pointer_cast]
-           - shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60 (52 lines) [pointer_cast]
-           - shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350 (58 lines) [pointer_cast]
-           - shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00 (165 lines) [pointer_cast, raw_address_constant, unrolled_strcpy]
-
-Total: 5 files
+Total: 1 files
 
 ====================================================================================================
 FILES AT 50-89%

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 132,
+    "complexity_score": 87,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 87,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 287
   },
   "cross_references": [],
@@ -100,6 +98,44 @@
     },
     "pcode_op_count": 1469
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(double *)((int)pdVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(double *)((int)pdVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(double *)((int)pdVar8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(double *)((int)pdVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 232,
     "local_size": 228,
@@ -266,110 +302,7 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CPoly_isValid_FUN_005d1ff0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 24,
-          "line": 60,
-          "message": "Uninitialized variable: local_40",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 68,
-          "line": 60,
-          "message": "Uninitialized variable: local_48",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 24,
-          "line": 76,
-          "message": "Uninitialized variable: local_70",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 68,
-          "line": 76,
-          "message": "Uninitialized variable: local_78",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(double *)((int)pdVar7",
-      "severity": "moderate",
-      "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(double *)((int)pdVar10",
-      "severity": "moderate",
-      "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(double *)((int)pdVar8",
-      "severity": "moderate",
-      "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(double *)((int)pdVar9",
-      "severity": "moderate",
-      "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: local_40",
-      "line": 60,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "dVar1 = 1.0 / SQRT(local_40 * local_40 + local_50 * local_50 + local_48 * local_48);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_48",
-      "line": 60,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "dVar1 = 1.0 / SQRT(local_40 * local_40 + local_50 * local_50 + local_48 * local_48);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_70",
-      "line": 76,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "dVar5 = 1.0 / SQRT(local_70 * local_70 + local_80 * local_80 + local_78 * local_78);",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: local_78",
-      "line": 76,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "dVar5 = 1.0 / SQRT(local_70 * local_70 + local_80 * local_80 + local_78 * local_78);",
-      "type": "static_uninitvar"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

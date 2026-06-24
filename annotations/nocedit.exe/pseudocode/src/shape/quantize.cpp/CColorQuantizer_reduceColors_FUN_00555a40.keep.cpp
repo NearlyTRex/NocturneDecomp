@@ -32,9 +32,10 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_reduceColors_FUN_00555a40(CColorQ
   int local_30;
   int local_2c;
   int local_28;
-  CColorQuantizer *pCVar2;
+  byte *pb;
   uint uVar1;
-  
+
+  pb = (byte *)this_ptr->pixel_data;
   local_48 = 0;
   iVar5 = local_48;
   while( true ) {
@@ -50,16 +51,14 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_reduceColors_FUN_00555a40(CColorQ
     local_60 = this_ptr->boxes[0].weighted_variance;
     iVar5 = 1;
     local_50 = this_ptr->boxes[0].final_metric;
-    pCVar2 = this_ptr;
     if (0 < local_48) {
       do {
-        if (local_60 < pCVar2->boxes[1].weighted_variance) {
-          local_60 = pCVar2->boxes[1].weighted_variance;
-          local_50 = pCVar2->boxes[1].final_metric;
+        if (local_60 < this_ptr->boxes[iVar5].weighted_variance) {
+          local_60 = this_ptr->boxes[iVar5].weighted_variance;
+          local_50 = this_ptr->boxes[iVar5].final_metric;
           local_4c = iVar5;
         }
         iVar5 = iVar5 + 1;
-        pCVar2 = (CColorQuantizer *)&pCVar2->current_b;
       } while (iVar5 <= local_48);
     }
     if (local_60 <= 0.0) {
@@ -73,17 +72,17 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_reduceColors_FUN_00555a40(CColorQ
       if (local_30 < iVar8) {
         local_44 = local_30 * 4;
         do {
-          if (iVar9 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_44)) {
+          if (iVar9 < (int)(uint)pb[local_44]) {
             for (iVar1 = iVar8 * 4;
                 (local_30 * 4 < iVar1 &&
-                (iVar9 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar1)));
+                (iVar9 < (int)(uint)pb[iVar1]));
                 iVar1 = iVar1 + -4) {
               iVar8 = iVar8 + -1;
             }
-            puVar2 = (uint *)(local_44 + (int)this_ptr->pixel_data);
+            puVar2 = (uint *)(local_44 + pb);
             uVar1 = *puVar2;
-            *puVar2 = *(uint *)((int)this_ptr->pixel_data + iVar8 * 4);
-            *(uint *)((int)this_ptr->pixel_data + iVar8 * 4) = uVar1;
+            *puVar2 = *(uint *)(pb + iVar8 * 4);
+            *(uint *)(pb + iVar8 * 4) = uVar1;
           }
           local_44 = local_44 + 4;
           local_30 = local_30 + 1;
@@ -106,17 +105,17 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_reduceColors_FUN_00555a40(CColorQ
       if (local_2c < iVar8) {
         local_38 = local_2c * 4;
         do {
-          if (iVar9 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_38 + 1)) {
+          if (iVar9 < (int)(uint)pb[local_38 + 1]) {
             iVar1 = iVar8 * 4;
             while ((local_2c * 4 < iVar1 &&
-                   (iVar9 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar1 + 1)))) {
+                   (iVar9 < (int)(uint)pb[iVar1 + 1]))) {
               iVar8 = iVar8 + -1;
               iVar1 = iVar1 + -4;
             }
-            puVar2 = (uint *)(local_38 + (int)this_ptr->pixel_data);
+            puVar2 = (uint *)(local_38 + pb);
             uVar1 = *puVar2;
-            *puVar2 = *(uint *)((int)this_ptr->pixel_data + iVar8 * 4);
-            *(uint *)((int)this_ptr->pixel_data + iVar8 * 4) = uVar1;
+            *puVar2 = *(uint *)(pb + iVar8 * 4);
+            *(uint *)(pb + iVar8 * 4) = uVar1;
           }
           local_38 = local_38 + 4;
           local_2c = local_2c + 1;
@@ -139,17 +138,17 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_reduceColors_FUN_00555a40(CColorQ
       if (local_34 < iVar9) {
         local_40 = local_34 * 4;
         do {
-          if (iVar8 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_40 + 2)) {
+          if (iVar8 < (int)(uint)pb[local_40 + 2]) {
             iVar1 = iVar9 * 4;
             while ((local_34 * 4 < iVar1 &&
-                   (iVar8 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar1 + 2)))) {
+                   (iVar8 < (int)(uint)pb[iVar1 + 2]))) {
               iVar9 = iVar9 + -1;
               iVar1 = iVar1 + -4;
             }
-            puVar2 = (uint *)(local_40 + (int)this_ptr->pixel_data);
+            puVar2 = (uint *)(local_40 + pb);
             uVar1 = *puVar2;
-            *puVar2 = *(uint *)((int)this_ptr->pixel_data + iVar9 * 4);
-            *(uint *)((int)this_ptr->pixel_data + iVar9 * 4) = uVar1;
+            *puVar2 = *(uint *)(pb + iVar9 * 4);
+            *(uint *)(pb + iVar9 * 4) = uVar1;
           }
           local_40 = local_40 + 4;
           local_34 = local_34 + 1;
@@ -172,17 +171,17 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_reduceColors_FUN_00555a40(CColorQ
       if (local_28 < iVar7) {
         local_3c = local_28 * 4;
         do {
-          if (iVar1 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_3c + 3)) {
+          if (iVar1 < (int)(uint)pb[local_3c + 3]) {
             iVar4 = iVar7 * 4;
             while ((local_28 * 4 < iVar4 &&
-                   (iVar1 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar4 + 3)))) {
+                   (iVar1 < (int)(uint)pb[iVar4 + 3]))) {
               iVar7 = iVar7 + -1;
               iVar4 = iVar4 + -4;
             }
-            puVar5 = (uint *)(local_3c + (int)this_ptr->pixel_data);
+            puVar5 = (uint *)(local_3c + pb);
             uVar1 = *puVar5;
-            *puVar5 = *(uint *)((int)this_ptr->pixel_data + iVar7 * 4);
-            *(uint *)((int)this_ptr->pixel_data + iVar7 * 4) = uVar1;
+            *puVar5 = *(uint *)(pb + iVar7 * 4);
+            *(uint *)(pb + iVar7 * 4) = uVar1;
           }
           local_3c = local_3c + 4;
           local_28 = local_28 + 1;

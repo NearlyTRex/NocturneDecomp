@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 196,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 81,
-    "suspect_count": 11,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 271
   },
   "cross_references": [
@@ -111,6 +109,107 @@
     },
     "pcode_op_count": 812
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_38 = (uint *)((int)pvVar1 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(uint *)((int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34 = (uint *)((int)pvVar1 + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(uint *)(iVar3 + 0x10 + (int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)(iVar3 + 0x10 + (int)pvVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(SExpandedEdge *)((int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "edge_b = (SExpandedEdge *)((int)pvVar1 + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(void *)(iVar3 + 0x60 + (int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_20 = (void *)(iVar3 + 0x60 + (int)pvVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(SExpandedEdge *)((int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "edge_a = (SExpandedEdge *)((int)pvVar1 + local_2c * 0x60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(uint *)((int)edge_b",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34[0xb] = *(uint *)((int)edge_b->end_uv + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(uint *)((int)edge_b",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34[0xd] = *(uint *)((int)edge_b->end_uv + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(void *)((int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_20 = (void *)((int)local_20 + 0x60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34[1] = *(uint *)((int)&(edge_b->end_pos).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 45,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34[3] = *(uint *)((int)&(edge_b->end_pos).y + 4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 64,
     "local_size": 60,
@@ -162,94 +261,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(uint *)((int)pvVar1",
-      "severity": "moderate",
-      "text": "local_38 = (uint *)((int)pvVar1 + 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(uint *)((int)pvVar1",
-      "severity": "moderate",
-      "text": "local_34 = (uint *)((int)pvVar1 + 0x28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(uint *)(iVar3 + 0x10 + (int)pvVar1",
-      "severity": "moderate",
-      "text": "puVar4 = (uint *)(iVar3 + 0x10 + (int)pvVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(SExpandedEdge *)((int)pvVar1",
-      "severity": "moderate",
-      "text": "edge_b = (SExpandedEdge *)((int)pvVar1 + iVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(void *)(iVar3 + 0x60 + (int)pvVar1",
-      "severity": "moderate",
-      "text": "local_20 = (void *)(iVar3 + 0x60 + (int)pvVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(SExpandedEdge *)((int)pvVar1",
-      "severity": "moderate",
-      "text": "edge_a = (SExpandedEdge *)((int)pvVar1 + local_2c * 0x60);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(uint *)((int)edge_b",
-      "severity": "moderate",
-      "text": "local_34[0xb] = *(uint *)((int)edge_b->end_uv + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(uint *)((int)edge_b",
-      "severity": "moderate",
-      "text": "local_34[0xd] = *(uint *)((int)edge_b->end_uv + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(void *)((int)local_20",
-      "severity": "moderate",
-      "text": "local_20 = (void *)((int)local_20 + 0x60);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "local_34[1] = *(uint *)((int)&(edge_b->end_pos).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 45,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "local_34[3] = *(uint *)((int)&(edge_b->end_pos).y + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

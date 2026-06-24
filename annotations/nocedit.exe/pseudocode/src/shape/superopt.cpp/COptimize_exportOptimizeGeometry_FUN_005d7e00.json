@@ -4,20 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 280,
+    "complexity_score": 180,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 44,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 165,
-    "suspect_count": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "raw_address_constant",
-      "unrolled_strcpy"
+      "raw_address_constant"
     ],
     "total_lines": 435
   },
@@ -389,6 +387,89 @@
     },
     "pcode_op_count": 1135
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(CComplexPolygon **)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CComplexPolygon **)((int)this_ptr->complex_polygons + local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 135,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + 4) = iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(float *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_ModelPolygonData[0].uv_u + iVar7 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(float *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_ModelPolygonData[0].uv_v + iVar7 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 98,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 109,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 70,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 72,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 74,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar5) =",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 68,
     "local_size": 64,
@@ -482,56 +563,7 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "COptimize_exportOptimizeGeometry_FUN_005d7e00.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 21,
-          "line": 151,
-          "message": "Redundant assignment of 'iVar7' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(CComplexPolygon **)((int)this_ptr",
-      "severity": "moderate",
-      "text": "this_ptr_00 = *(CComplexPolygon **)((int)this_ptr->complex_polygons + local_38);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 135,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + 4) = iVar5;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 136,
-      "match": "(float *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(float *)((int)g_ModelPolygonData[0].uv_u + iVar7 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 142,
-      "match": "(float *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(float *)((int)g_ModelPolygonData[0].uv_v + iVar7 + 4) =",
-      "type": "pointer_cast"
-    },
     {
       "description": "Raw hex literal 0x766880 matches address of g_RenderVertexBuffer (+911468 bytes into) (type SRenderVertex[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 41,
@@ -539,54 +571,6 @@
       "severity": "moderate",
       "text": "memset(g_ModelPolygonData,0,0x766880);",
       "type": "raw_address_constant"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 98,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 109,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 70,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar5) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 72,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar5) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 74,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar5) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Redundant assignment of 'iVar7' to itself.",
-      "line": 151,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "iVar7 = iVar7;",
-      "type": "static_self_assignment"
     }
   ]
 }
