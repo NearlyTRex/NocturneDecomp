@@ -126,6 +126,33 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 18,
+      "match": "(int *)((int)(pCVar1->uv_coords + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)(pCVar1->uv_coords + -1) + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 19,
+      "match": "(int *)((int)(pCVar1->uv_coords + -2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)(pCVar1->uv_coords + -2) + iVar6 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 21,
+      "match": "(int *)((int)(pCVar1->uv_coords + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(iVar4 = *(int *)((int)(pCVar1->uv_coords + -1) + iVar6 + 4), iVar3 == iVar4)) ||",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(uint *)((int)pCVar1",

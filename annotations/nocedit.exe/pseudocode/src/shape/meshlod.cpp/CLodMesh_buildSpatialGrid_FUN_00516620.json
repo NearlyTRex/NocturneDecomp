@@ -236,6 +236,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 80,
+      "match": "(int *)((int)(pCVar1->uv_coords + -2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10 = this_ptr->vertex_data + *(int *)((int)(pCVar1->uv_coords + -2) + local_20 + 4)",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 132,
       "match": "(int *)((int)this_ptr",

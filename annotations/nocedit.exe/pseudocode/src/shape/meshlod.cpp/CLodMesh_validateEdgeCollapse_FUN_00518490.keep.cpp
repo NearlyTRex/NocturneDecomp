@@ -82,17 +82,17 @@ int __cdecl shape_meshlod_cpp_CLodMesh_validateEdgeCollapse_FUN_00518490(CLodMes
       if (2 < iVar5) {
         iVar5 = 0;
       }
-      if ((this_ptr->edges_ptr[*(int *)((int)(pCVar7->uv_coords + 3) + iVar7 * 4)].
+      if ((this_ptr->edges_ptr[(&pCVar7->edge_idx_0)[iVar7]].
            collapse_viability != 0) &&
-         (this_ptr->edges_ptr[*(int *)((int)(pCVar7->uv_coords + 3) + iVar5 * 4)].collapse_viability
+         (this_ptr->edges_ptr[(&pCVar7->edge_idx_0)[iVar5]].collapse_viability
           != 0)) {
         return -1;
       }
-      if (1 < this_ptr->edges_ptr[*(int *)((int)(pCVar7->uv_coords + 3) + iVar7 * 4)].
+      if (1 < this_ptr->edges_ptr[(&pCVar7->edge_idx_0)[iVar7]].
               collapse_viability) {
         return -1;
       }
-      if (1 < this_ptr->edges_ptr[*(int *)((int)(pCVar7->uv_coords + 3) + iVar5 * 4)].
+      if (1 < this_ptr->edges_ptr[(&pCVar7->edge_idx_0)[iVar5]].
               collapse_viability) {
         return -1;
       }

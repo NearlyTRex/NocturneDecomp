@@ -181,6 +181,16 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\(\w+(?:\s+\w+)*\s*\*+\s*\)\s*\([^)]*\(int\)\s*'
      r'(?:\([^()]*\)\s*(?:->|\.)\s*\w+|\w+)(?!\w|\s*\()',
      'pointer_cast', 'Complex pointer cast'),
+    # Sibling of the above: `(T *)(...(int)(EXPR) +/- ...)` where the `(int)`
+    # casts a *parenthesized* pointer-arithmetic expression and the result is
+    # used in further +/- byte arithmetic (NOT a `.`/`->` field access, which
+    # the rule above already covers). Watcom's 1-based array-base trampoline —
+    # e.g. `*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -2) + iVar16 + 4)`
+    # writes a struct field via a negative array offset plus a record-stride
+    # byte offset. The inner `[^()]*` forbids nested parens, so genuine numeric
+    # casts wrapping a call — `(int)(ROUND(x) + y)` — never match.
+    (r'\(\w+(?:\s+\w+)*\s*\*+\s*\)\s*\([^)]*\(int\)\s*\([^()]*\)\s*[-+]',
+     'pointer_cast', 'Complex pointer cast (int-cast of parenthesized pointer arithmetic)'),
     # Primitive-pointer cast on a typed struct-array element address —
     # Ghidra walks the struct field-by-field via `(int *)[N]` / `(uint *)[N]`
     # / `(SIZE_T *)[N]` indexing after losing the struct type for the local.
@@ -1326,6 +1336,19 @@ _UNROLLED_MEMCPY_BYTE_FOR_RE = re.compile(
     r"^\s*for\s*\(\s*(\w+)\s*=\s*(.+?)\s*&\s*3\s*;\s*\1\s*!=\s*0\s*;\s*"
     r"\1\s*=\s*\1\s*(?:\+\s*-?1|-\s*1)\s*\)\s*\{?\s*$")
 
+# Watcom's plainest inline-memcpy lowering: a countdown loop with a
+# *cast* dword store (`*(uint *)dst = *(uint *)src;`) and both pointers
+# stepped by `+ 4` (the dword stride). Emitted when the copy count is a
+# constant (e.g. a fixed 768-byte palette = 0xc0 dwords) so Watcom never
+# splits off a `>> 2` / `& 3` tail. The TYPED-pair detector in
+# `identify_unrolled_memcpy_loops` misses this because that one requires an
+# uncast `*ptr = *src;` store and a `+ 1` increment.
+_UNROLLED_MEMCPY_DWORD_CAST_STORE_RE = re.compile(
+    r"^\s*\*\s*\(\s*u?int\s*\*\s*\)\s*\w+\s*=\s*"
+    r"\*\s*\(\s*u?int\s*\*\s*\)\s*\w+\s*;\s*$")
+_UNROLLED_MEMCPY_STRIDE4_INC_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*\1\s*\+\s*4\s*;\s*$")
+
 
 def identify_unrolled_memcpy_dword_byte_split(decompiled_code):
     """Detect Watcom's REP MOVSD + trailing-byte-copy memcpy lowering.
@@ -1496,6 +1519,93 @@ def identify_unrolled_memcpy_loops(decompiled_code):
                 'MOVSD lowering fingerprint). Replace the whole loop with '
                 'memcpy(dst, src, count * stride) or a struct assignment '
                 'in a .keep.'),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
+def identify_unrolled_memcpy_dword_cast_loop(decompiled_code):
+    """Detect Watcom's constant-count cast-dword inline-memcpy loop.
+
+    Canonical shape (no direction idiom, no `>> 2` / `& 3` tail split):
+        for (iVar = 0xc0; iVar != 0; iVar = iVar + -1) {
+            *(uint *)dst = *(uint *)src;
+            src = src + 4;
+            dst = dst + 4;
+        }
+
+    This is Watcom's REP MOVSD lowering when the copy count is a constant
+    (the dword count is baked in, e.g. a fixed 768-byte / 0xc0-dword palette
+    copy in CColorQuantizer_applyQuantization), so there is no `N >> 2`
+    dword loop paired with an `N & 3` byte tail. The two existing for-loop
+    detectors both miss it:
+      * identify_unrolled_memcpy_loops requires either the `(uint)bool`
+        direction idiom or an *uncast* `*ptr = *src;` store with a `+ 1`
+        increment — this shape has a *cast* store and `+ 4` advances.
+      * identify_unrolled_memcpy_dword_byte_split requires the `>> 2` / `& 3`
+        header pair.
+
+    The cast-dword store plus BOTH pointers stepped by exactly the dword
+    stride (`+ 4`) is an unambiguous fingerprint — a generic "do N times"
+    countdown loop does not move two pointers in lockstep by 4 bytes.
+
+    Replace the loop with `memcpy(dst, src, count * 4)` in a .keep.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per detected loop.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    for i in range(n - 2):
+        if not _UNROLLED_MEMCPY_FOR_RE.match(lines[i]):
+            continue
+        # The `N >> 2` / `N & 3` paired form is identify_unrolled_memcpy_
+        # dword_byte_split's territory — skip so we never double-flag its
+        # dword half (which has the same cast-store + `+ 4` body).
+        if (_UNROLLED_MEMCPY_DWORD_FOR_RE.match(lines[i]) or
+                _UNROLLED_MEMCPY_BYTE_FOR_RE.match(lines[i])):
+            continue
+        has_cast_store = False
+        has_direction = False
+        stride4_incs = 0
+        close_line = None
+        for fwd in range(1, 8):
+            if i + fwd >= n:
+                break
+            body = lines[i + fwd]
+            if _UNROLLED_MEMCPY_DIR_RE.search(body):
+                has_direction = True
+            if _UNROLLED_MEMCPY_DWORD_CAST_STORE_RE.match(body):
+                has_cast_store = True
+            if _UNROLLED_MEMCPY_STRIDE4_INC_RE.match(body):
+                stride4_incs += 1
+            if body.strip().startswith('}'):
+                close_line = i + fwd
+                break
+        # A direction idiom means identify_unrolled_memcpy_loops already
+        # flags this loop — stay quiet to avoid duplicate diagnostics.
+        if has_direction:
+            continue
+        # Require the cast-dword store AND both pointers advanced by +4.
+        if not (has_cast_store and stride4_incs >= 2 and close_line):
+            continue
+        suspects.append({
+            'line': i + 1,
+            'type': 'unrolled_memcpy',
+            'match': 'for (X = N; ...) { *(uint *)d = *(uint *)s; d/s += 4; }',
+            'text': lines[i].strip()[:120],
+            'description': (
+                'Watcom loop-unrolled memcpy (constant-count countdown loop '
+                'with a cast-dword store `*(uint *)dst = *(uint *)src;` and '
+                'both pointers stepped by +4 — REP MOVSD lowering with a '
+                'baked-in dword count). Replace the loop with '
+                'memcpy(dst, src, count * 4) in a .keep.'),
             'severity': 'moderate',
         })
     return suspects
@@ -6649,6 +6759,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_memcpy_oversized_source(code))
     found.extend(identify_dropped_loop_counter(code))
     found.extend(identify_unrolled_memcpy_dword_byte_split(code))
+    found.extend(identify_unrolled_memcpy_dword_cast_loop(code))
     found.extend(identify_unrolled_memcpy_index_form(code))
     found.extend(identify_unrolled_field_copy(code, struct_layout_map))
     found.extend(identify_unrolled_offset_copy(code))

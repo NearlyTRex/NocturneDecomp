@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 164,
+    "complexity_score": 174,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
@@ -249,6 +249,14 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(int *)((int)pvVar3",
+      "severity": "moderate",
+      "text": "*(void ***)((int)(&p_Var6->_ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 50,
+      "match": "(void ***)((int)(&p_Var6->_ios + -1) +",
       "severity": "moderate",
       "text": "*(void ***)((int)(&p_Var6->_ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
       "type": "pointer_cast"

@@ -123,6 +123,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Watcom loop-unrolled memcpy (constant-count countdown loop with a cast-dword store `*(uint *)dst = *(uint *)src;` and both pointers stepped by +4 \u2014 REP MOVSD lowering with a baked-in dword count). Replace the loop with memcpy(dst, src, count * 4) in a .keep.",
+      "line": 60,
+      "match": "for (X = N; ...) { *(uint *)d = *(uint *)s; d/s += 4; }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x3e; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 46,
       "match": "field-by-field struct copy",

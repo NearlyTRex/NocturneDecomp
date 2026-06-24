@@ -187,6 +187,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 34,
+      "match": "(uint *)((int)(pCVar2->uv_coords + -2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)(pCVar2->uv_coords + -2) + iVar7 + 4),",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(float *)((int)pCVar2",
@@ -202,6 +211,15 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[0] + iVar7 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 37,
+      "match": "(uint *)((int)(pCVar2->uv_coords + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7),",
       "type": "pointer_cast"
     },
     {
@@ -221,6 +239,15 @@
       "severity": "moderate",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(__BITCAST_UINT64(dVar1),0),",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 40,
+      "match": "(uint *)((int)(pCVar2->uv_coords + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7 + 4),",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

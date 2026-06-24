@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 373,
-    "complexity_score": 229,
+    "complexity_score": 164,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 164,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 537
   },
   "cross_references": [
@@ -316,6 +314,60 @@
   },
   "resolved_suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_ESI",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 43,
+      "match": "unaff_ESI",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "unaff_ESI = 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_ESI",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "unaff_ESI = 2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_ESI",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "unaff_ESI = 3;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 61,
+      "match": "unaff_ESI",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "unaff_ESI = 4;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 71,
+      "match": "unaff_ESI",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar5 = width * height * unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 73,
       "match": "for (...; != 0; ... + -1)",
@@ -476,78 +528,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "quantizeRawPixelData_FUN_00556490.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 29,
-          "line": 116,
-          "message": "Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 25,
-          "line": 124,
-          "message": "Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 52,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = 2;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 57,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = 3;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 61,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI = 4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 71,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uVar5 = width * height * unaff_ESI;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

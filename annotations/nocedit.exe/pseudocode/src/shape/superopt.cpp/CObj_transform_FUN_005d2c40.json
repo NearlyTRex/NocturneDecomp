@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 118,
+    "complexity_score": 83,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 83,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 215
   },
   "cross_references": [],
@@ -148,6 +146,33 @@
       "severity": "moderate",
       "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 75,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar2->position).x + 4) = uStack_74;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 77,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar2->position).y + 4) = uStack_6c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 79,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(pCVar2->position).z + 4) = uStack_64;",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -205,102 +230,7 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CObj_transform_FUN_005d2c40.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 38,
-          "line": 50,
-          "message": "Uninitialized variable: dStack_38",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 67,
-          "line": 51,
-          "message": "Uninitialized variable: dStack_40",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 58,
-          "message": "Uninitialized variable: dStack_a0",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 59,
-          "message": "Uninitialized variable: dStack_98",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 75,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(pCVar2->position).x + 4) = uStack_74;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 77,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(pCVar2->position).y + 4) = uStack_6c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 79,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(pCVar2->position).z + 4) = uStack_64;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: dStack_38",
-      "line": 50,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "dStack_30 = matrix->m[0].z * dStack_38 +",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: dStack_40",
-      "line": 51,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "matrix->m[0].x * dStack_48 + matrix->m[0].y * dStack_40;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: dStack_a0",
-      "line": 58,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "dStack_58 = dStack_a0 + pivot->y;",
-      "type": "static_uninitvar"
-    },
-    {
-      "description": "Uninitialized variable: dStack_98",
-      "line": 59,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "dStack_50 = dStack_98 + pivot->z;",
-      "type": "static_uninitvar"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

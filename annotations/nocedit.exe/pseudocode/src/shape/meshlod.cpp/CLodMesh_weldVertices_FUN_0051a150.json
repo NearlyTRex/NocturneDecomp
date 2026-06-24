@@ -146,6 +146,24 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 60,
+      "match": "(int *)((int)(this_ptr->tri_data->uv_coords + -2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar3 + local_24) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 61,
+      "match": "(int *)((int)(this_ptr->tri_data->uv_coords + -2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr->vertex_data[*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar1 + 4)].",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 72,
       "match": "(int *)((int)this_ptr",

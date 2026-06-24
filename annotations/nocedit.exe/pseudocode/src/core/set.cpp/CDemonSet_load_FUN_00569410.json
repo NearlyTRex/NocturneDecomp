@@ -744,6 +744,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 227,
+      "match": "(CMatrix3x3f *)((int)(this_ptr_03 + 1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_03 = (CMatrix3x3f *)((int)(this_ptr_03 + 1) + 0x20);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 106,
       "match": "do {",

@@ -25,8 +25,8 @@ SUMMARY STATISTICS
     Undefined types in variables:      22
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   196 functions
-    Wrong calling convention:          1
+  Excluded (.keep / MMX / by-value):   195 functions
+    Wrong calling convention:          0
     Undefined types in variables:      195
     Unresolved stack params:           0
 
@@ -201,28 +201,6 @@ EXCLUDED: FUNCTIONS WITH .keep / MMX / BY-VALUE STRUCT OVERRIDES
 These functions have known decompiler limitations that are handled by
 manual .keep.cpp files, MMX inline assembly transforms, or by-value struct
 passing patterns. Issues here are expected and not actionable.
-
---------------------------------------------------------------------------------
-Wrong calling convention - .keep overrides (1)
---------------------------------------------------------------------------------
-
-  quantizeRawPixelData
-    Address: 0x00556490  File: shape/quantize.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,int width,int height ,uint bit_depth,int line_number,int show_progress)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
---------------------------------------------------------------------------------
-Wrong calling convention - MMX functions (0)
---------------------------------------------------------------------------------
-
-  (none)
-
---------------------------------------------------------------------------------
-Wrong calling convention - by-value struct passing (0)
---------------------------------------------------------------------------------
-
-  (none)
 
 --------------------------------------------------------------------------------
 Undefined types - .keep overrides (195)

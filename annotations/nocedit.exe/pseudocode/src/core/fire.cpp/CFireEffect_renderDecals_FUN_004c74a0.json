@@ -292,12 +292,30 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 62,
+      "match": "(int *)((int)(g_CraterPool[0].smoke_positions + -2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) != 0) &&",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 64,
       "match": "(CCrater *)((int)g_CraterPool",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "((CCrater *)((int)g_CraterPool[0].smoke_positions + iVar2 + -0x1c)),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 66,
+      "match": "(uint *)((int)(g_CraterPool[0].smoke_positions + -2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) = 0;",
       "type": "pointer_cast"
     },
     {

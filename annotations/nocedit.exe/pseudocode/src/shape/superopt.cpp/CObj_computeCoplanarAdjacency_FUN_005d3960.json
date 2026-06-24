@@ -93,6 +93,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 64,
+      "match": "(uint *)((int)(pCVar1->uv_coords + 4) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar13 = (uint *)((int)(pCVar1->uv_coords + 4) + local_64 + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(int *)((int)pCVar1",

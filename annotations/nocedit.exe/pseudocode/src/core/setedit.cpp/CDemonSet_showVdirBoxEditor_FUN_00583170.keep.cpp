@@ -12,7 +12,6 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
 {
   CVector3f *pCVar1;
   bool bVar2;
-  CMatrix3x3f *pCVar3;
   CVector3f *pCVar4;
   CVector3f *pCVar5;
   uint text_color;
@@ -204,10 +203,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
             core_setedit_cpp_renderColoredBox_FUN_005817d0(&local_140,pCVar1,0.2,0,0,0xff);
           }
         }
-        pCVar3 = local_34;
         iVar12 = iVar12 + 1;
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
-        local_34 = (CMatrix3x3f *)((int)(pCVar3 + 1) + 0x20);
+        local_34 = &local_44[iVar12].rotation_matrix;
       } while (iVar12 < this_ptr->vdir_box_count);
     }
     local_30 = 0;

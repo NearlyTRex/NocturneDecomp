@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090(CColorQuantizer *this_ptr,int box_index)
 
 {
@@ -21,9 +19,7 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_0055509
   float fVar9;
   int iVar10;
   uint uVar11;
-  uint uVar12;
   uint uVar13;
-  uint uVar14;
   int iVar13;
   byte *pbVar14;
   int iVar15;
@@ -51,7 +47,7 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_0055509
     local_38 = 0.0;
     local_3c = 0.0;
     local_44 = 0.0;
-    pbVar14 = (byte *)(iVar13 * 4 + (int)this_ptr->pixel_data);
+    pbVar14 = (byte *)this_ptr->pixel_data + iVar13 * 4;
     do {
       iVar13 = iVar13 + 1;
       local_44 = (float)*pbVar14 + local_44;
@@ -78,27 +74,20 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_0055509
   local_2c = 0.0;
   this_ptr->boxes[box_index].weighted_variance = 0.0;
   this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar13));
+  pbVar14 = (byte *)this_ptr->pixel_data;
   for (iVar15 = this_ptr->boxes[box_index].start_index * 4; iVar15 < iVar10 * 4; iVar15 = iVar15 + 4
       ) {
-    uVar11 = (int)this_ptr->boxes[box_index].avg_red -
-             (uint)*(byte *)(iVar15 + (int)this_ptr->pixel_data);
-    uVar12 = (int)uVar11 >> 0x1f;
-    fVar5 = (float)(int)((uVar11 ^ uVar12) - uVar12);
-    uVar13 = (int)this_ptr->boxes[box_index].avg_green -
-             (uint)*(byte *)(iVar15 + 1 + (int)this_ptr->pixel_data);
-    uVar14 = (int)uVar13 >> 0x1f;
-    fVar6 = (float)(int)((uVar13 ^ uVar14) - uVar14);
-    uVar13 = (int)this_ptr->boxes[box_index].avg_blue -
-             (uint)*(byte *)(iVar15 + 2 + (int)this_ptr->pixel_data);
-    uVar14 = (int)uVar13 >> 0x1f;
-    fVar7 = (float)(int)((uVar13 ^ uVar14) - uVar14);
-    uVar13 = (int)this_ptr->boxes[box_index].avg_intensity -
-             (uint)*(byte *)(iVar15 + 3 + (int)this_ptr->pixel_data);
-    uVar14 = (int)uVar13 >> 0x1f;
+    uVar11 = (int)this_ptr->boxes[box_index].avg_red - (uint)pbVar14[iVar15];
+    fVar5 = (float)ABS((int)uVar11);
+    uVar13 = (int)this_ptr->boxes[box_index].avg_green - (uint)pbVar14[iVar15 + 1];
+    fVar6 = (float)ABS((int)uVar13);
+    uVar13 = (int)this_ptr->boxes[box_index].avg_blue - (uint)pbVar14[iVar15 + 2];
+    fVar7 = (float)ABS((int)uVar13);
+    uVar13 = (int)this_ptr->boxes[box_index].avg_intensity - (uint)pbVar14[iVar15 + 3];
     fVar2 = this_ptr->boxes[box_index].green_variance;
     fVar11 = this_ptr->boxes[box_index].blue_variance;
     fVar3 = this_ptr->boxes[box_index].intensity_variance;
-    b = (float)(int)((uVar13 ^ uVar14) - uVar14);
+    b = (float)ABS((int)uVar13);
     this_ptr->boxes[box_index].red_variance = this_ptr->boxes[box_index].red_variance + fVar5;
     this_ptr->boxes[box_index].green_variance = fVar2 + fVar6;
     this_ptr->boxes[box_index].blue_variance = fVar11 + fVar7;

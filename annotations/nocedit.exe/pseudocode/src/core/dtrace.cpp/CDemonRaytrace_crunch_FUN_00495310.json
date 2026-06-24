@@ -272,6 +272,15 @@
       "type": "warning_inlined_function"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 235,
+      "match": "(CBoundingBox3D *)((int)(pCVar14 + -2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar14 = (CBoundingBox3D *)((int)(pCVar14 + -2) + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 295,
       "match": "(float *)((int)pfVar12",

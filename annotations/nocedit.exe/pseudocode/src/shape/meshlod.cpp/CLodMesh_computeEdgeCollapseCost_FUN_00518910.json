@@ -7,20 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 846,
-    "complexity_score": 549,
+    "complexity_score": 384,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 48,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 384,
-    "suspect_count": 14,
-    "suspect_types": [
-      "bitcast_double_pair",
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "sub84_truncation",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1230
   },
   "cross_references": [
@@ -470,6 +464,123 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(int *)((int)pCVar15",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar16 = *(int *)((int)pCVar15[local_1c].adjacent_edge_indices + local_48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 135,
+      "match": "(int *)((int)g_MaxNeighborVerts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_MaxNeighborVerts + local_38) = iVar16;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 161,
+      "match": "(int *)((int)(g_TempNeighborFaces[0].uv_coords + -2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -2) + iVar16 + 4) = local_1c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 163,
+      "match": "(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 167,
+      "match": "(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16 + 4) = iVar11;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 171,
+      "match": "(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 177,
+      "match": "(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 188,
+      "match": "(int *)((int)g_TempNeighborFaces",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_TempNeighborFaces[0].edge_dot_products + iVar16 + 0xc) = iVar14;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 236,
+      "match": "(int *)((int)g_MaxNeighborVerts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar8 = this_ptr->vertex_data + *(int *)((int)g_MaxNeighborVerts + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 301,
+      "match": "(double *)((int)g_SampleDistances",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar1 = (double *)((int)g_SampleDistances + iVar16);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 344,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (dVar20 < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 345,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_108 = SUB84(__BITCAST_UINT64(dVar20),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 355,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar2 = sample_point->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) +",
+      "type": "bitcast_double_pair"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 369,
       "match": "._4_4_",
@@ -479,6 +590,51 @@
       "type": "unknown_field"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 228,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_SamplePointArray[0].x = (pCVar15->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 283,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar12 = (float *)((int)&g_SamplePointArray[0].x + iVar14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 286,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_SamplePointArray[0].y + iVar14) = local_b8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 287,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_SamplePointArray[0].z + iVar14) = local_b4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 332,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&(this_ptr->sample_points_ptr->position).x + local_4c);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 369,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -486,6 +642,15 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar7->collapse_cost + 4) = local_110._4_4_;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_24->owner`). Replace `local_24->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 191,
+      "match": "local_24 = (T *)&local_24->FIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24 = (CLodEdge *)&local_24->vertex_idx_2;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar17` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCVar17) + offsetof(subfield)` equals the real array stride. Replace `pCVar17->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
@@ -880,143 +1045,5 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CLodMesh_computeEdgeCollapseCost_FUN_00518910.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "identicalInnerCondition",
-          "column": 21,
-          "line": 315,
-          "message": "Identical inner 'if' condition is always true.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 119,
-      "match": "(int *)((int)pCVar15",
-      "severity": "moderate",
-      "text": "iVar16 = *(int *)((int)pCVar15[local_1c].adjacent_edge_indices + local_48);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 135,
-      "match": "(int *)((int)g_MaxNeighborVerts",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_MaxNeighborVerts + local_38) = iVar16;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 188,
-      "match": "(int *)((int)g_TempNeighborFaces",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_TempNeighborFaces[0].edge_dot_products + iVar16 + 0xc) = iVar14;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 236,
-      "match": "(int *)((int)g_MaxNeighborVerts",
-      "severity": "moderate",
-      "text": "pCVar8 = this_ptr->vertex_data + *(int *)((int)g_MaxNeighborVerts + iVar10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 301,
-      "match": "(double *)((int)g_SampleDistances",
-      "severity": "moderate",
-      "text": "pdVar1 = (double *)((int)g_SampleDistances + iVar16);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 344,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "if (dVar20 < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 345,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_108 = SUB84(__BITCAST_UINT64(dVar20),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 355,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "fVar2 = sample_point->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) +",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 228,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_SamplePointArray[0].x = (pCVar15->position).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 283,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pfVar12 = (float *)((int)&g_SamplePointArray[0].x + iVar14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 286,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_SamplePointArray[0].y + iVar14) = local_b8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 287,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_SamplePointArray[0].z + iVar14) = local_b4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 332,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((int)&(this_ptr->sample_points_ptr->position).x + local_4c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_24->owner`). Replace `local_24->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 191,
-      "match": "local_24 = (T *)&local_24->FIELD",
-      "severity": "moderate",
-      "text": "local_24 = (CLodEdge *)&local_24->vertex_idx_2;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Identical inner 'if' condition is always true.",
-      "line": 315,
-      "match": "Cppcheck: inner condition identical to outer",
-      "severity": "mild",
-      "text": "if (0 < this_ptr->sample_point_count) {",
-      "type": "static_identical_inner_condition"
-    }
-  ]
+  "suspects": []
 }

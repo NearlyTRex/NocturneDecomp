@@ -18,10 +18,8 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
   int iVar3;
   void *pvVar9;
   int iVar10;
-  int iVar4;
   CPodFile *this_ptr_00;
   CPodFile *pCVar5;
-  char *pcVar6;
   CPickList local_4fc;
   char local_154 [260];
   CStrList local_50;
@@ -31,13 +29,7 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
   int local_1c;
   WatcomTypeInfo *type_info;
   
-  pcVar8 = g_DirectoryBufferTemplate;
-  pcVar6 = local_154;
-  for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(uint *)pcVar6 = *(uint *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar6 = pcVar6 + 4;
-  }
+  memcpy(local_154,g_DirectoryBufferTemplate,0x104);
   if (pod_filename == (char *)0x0) {
     _getcwd(local_154,0x104);
   }

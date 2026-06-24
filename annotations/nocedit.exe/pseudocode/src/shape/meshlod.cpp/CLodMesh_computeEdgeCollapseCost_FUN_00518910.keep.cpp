@@ -32,16 +32,11 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
   CVector3f *pCVar17;
   int iVar10;
   CLodFace *pCVar11;
-  float *pfVar12;
-  int iVar13;
   CLodFace *pCVar18;
   int iVar19;
   double dVar20;
-  uint local_118;
-  uint uStack_114;
-  ulonglong local_110;
-  uint local_108;
-  uint uStack_104;
+  double local_110;
+  double min_dist;
   int local_100;
   CVector3f local_d4;
   float local_bc;
@@ -58,19 +53,14 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
   int local_64;
   int local_54;
   int local_50;
-  int local_4c;
-  int local_48;
   int local_44;
   int local_40;
   int local_3c;
-  int local_38;
   int local_28;
-  CLodEdge *local_24;
   int local_20;
   int local_1c;
   double max_search_radius;
   float fVar2;
-  double *pdVar1;
   
   pCVar7 = this_ptr->edges_ptr + edge_index;
   pCVar7->collapse_cost = 9.9999999999999997e+34;
@@ -101,12 +91,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
           local_1c = pCVar7->vertex_idx_2;
         }
         local_50 = 0;
-        local_38 = local_3c << 2;
-        local_48 = 0;
         while( true ) {
           pCVar15 = this_ptr->vertex_data;
           if (pCVar15[local_1c].adjacent_edge_count <= local_50) break;
-          iVar16 = *(int *)((int)pCVar15[local_1c].adjacent_edge_indices + local_48);
+          iVar16 = pCVar15[local_1c].adjacent_edge_indices[local_50];
           pCVar12 = this_ptr->edges_ptr + iVar16;
           if (iVar16 != edge_index) {
             if (199 < local_3c) {
@@ -122,21 +110,16 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
             else {
               iVar16 = pCVar12->vertex_idx_1;
             }
-            *(int *)((int)g_MaxNeighborVerts + local_38) = iVar16;
-            local_38 = local_38 + 4;
+            g_MaxNeighborVerts[local_3c] = iVar16;
             local_3c = local_3c + 1;
             local_20 = 0;
             if (0 < pCVar12->adjacent_tri_count) {
-              iVar16 = iVar19 * 0x8c;
-              local_24 = pCVar12;
               do {
-                iVar11 = g_LodGenerationStamp;
-                iVar14 = local_24->adjacent_tri_indices[0];
+                iVar14 = pCVar12->adjacent_tri_indices[local_20];
                 pCVar18 = this_ptr->tri_data;
-                iVar13 = iVar16;
                 if (g_LodGenerationStamp != pCVar18[iVar14].visited_stamp) {
                   pCVar18[iVar14].affected_by_edge_stamp = g_LodTempFaceStamp;
-                  pCVar18[iVar14].visited_stamp = iVar11;
+                  pCVar18[iVar14].visited_stamp = g_LodGenerationStamp;
                   if (((pCVar18[iVar14].vertex_idx_0 != local_28) &&
                       (local_28 != pCVar18[iVar14].vertex_idx_1)) &&
                      (local_28 != pCVar18[iVar14].vertex_idx_2)) {
@@ -148,44 +131,35 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
                       core_main_c_displayErrorAndQuit_FUN_00506f10
                                 ("Too many neighboring faces!");
                     }
-                    *(int *)((int)(g_TempNeighborFaces[0].uv_coords + -2) + iVar16 + 4) = local_1c;
+                    g_TempNeighborFaces[iVar19].vertex_idx_0 = local_1c;
                     if (local_1c == pCVar18[iVar14].vertex_idx_0) {
-                      *(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16) =
-                           pCVar18[iVar14].vertex_idx_1;
+                      g_TempNeighborFaces[iVar19].vertex_idx_1 = pCVar18[iVar14].vertex_idx_1;
                       iVar11 = pCVar18[iVar14].vertex_idx_2;
-LAB_0051919d:
-                      *(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16 + 4) = iVar11;
+                    }
+                    else if (local_1c == pCVar18[iVar14].vertex_idx_1) {
+                      g_TempNeighborFaces[iVar19].vertex_idx_1 = pCVar18[iVar14].vertex_idx_2;
+                      iVar11 = pCVar18[iVar14].vertex_idx_0;
+                    }
+                    else if (local_1c == pCVar18[iVar14].vertex_idx_2) {
+                      g_TempNeighborFaces[iVar19].vertex_idx_1 = pCVar18[iVar14].vertex_idx_0;
+                      iVar11 = pCVar18[iVar14].vertex_idx_1;
                     }
                     else {
-                      if (local_1c == pCVar18[iVar14].vertex_idx_1) {
-                        *(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16) =
-                             pCVar18[iVar14].vertex_idx_2;
-                        iVar11 = pCVar18[iVar14].vertex_idx_0;
-                        goto LAB_0051919d;
-                      }
-                      if (local_1c == pCVar18[iVar14].vertex_idx_2) {
-                        *(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16) =
-                             pCVar18[iVar14].vertex_idx_0;
-                        iVar11 = pCVar18[iVar14].vertex_idx_1;
-                        goto LAB_0051919d;
-                      }
                       g_CurrentFilename = "..\\shape\\meshlod.cpp";
                       g_CurrentLineNumber = 0xc06;
                       core_main_c_displayErrorAndQuit_FUN_00506f10("Bug!");
+                      iVar11 = 0;
                     }
-                    iVar13 = iVar16 + 0x8c;
+                    g_TempNeighborFaces[iVar19].vertex_idx_2 = iVar11;
+                    g_TempNeighborFaces[iVar19].visited_stamp = iVar14;
                     iVar19 = iVar19 + 1;
-                    *(int *)((int)g_TempNeighborFaces[0].edge_dot_products + iVar16 + 0xc) = iVar14;
                   }
                 }
-                local_24 = (CLodEdge *)&local_24->vertex_idx_2;
                 local_20 = local_20 + 1;
-                iVar16 = iVar13;
               } while (local_20 < pCVar12->adjacent_tri_count);
             }
           }
           local_50 = local_50 + 1;
-          local_48 = local_48 + 4;
         }
         local_6c = local_6c + 1;
       } while (local_6c < 2);
@@ -214,15 +188,13 @@ LAB_0051919d:
             pCVar15 = this_ptr->vertex_data + pCVar7->vertex_idx_1;
             g_SamplePointCount = 1;
             if (pCVar15 != (CLodVert *)g_SamplePointArray) {
-              g_SamplePointArray[0].x = (pCVar15->position).x;
-              g_SamplePointArray[0].z = (pCVar15->position).z;
-              g_SamplePointArray[0].y = (pCVar15->position).y;
+              g_SamplePointArray[0] = pCVar15->position;
             }
             if (0 < local_3c) {
               iVar10 = 0;
               do {
                 iVar16 = g_SamplePointCount;
-                pCVar8 = this_ptr->vertex_data + *(int *)((int)g_MaxNeighborVerts + iVar10);
+                pCVar8 = this_ptr->vertex_data + g_MaxNeighborVerts[iVar10];
                 pCVar15 = this_ptr->vertex_data + pCVar7->vertex_idx_1;
                 local_d4.x = ((pCVar15->position).x + (pCVar8->position).x) / 2.0f;
                 local_d4.y = ((pCVar15->position).y + (pCVar8->position).y) * 0.5f;
@@ -235,8 +207,8 @@ LAB_0051919d:
                   g_SamplePointArray[iVar16].y = local_d4.y;
                   g_SamplePointArray[iVar16].z = local_d4.z;
                 }
-                iVar10 = iVar10 + 4;
-              } while (iVar10 < local_3c << 2);
+                iVar10 = iVar10 + 1;
+              } while (iVar10 < local_3c);
             }
             local_44 = 0;
             if (0 < iVar19) {
@@ -261,7 +233,7 @@ LAB_0051919d:
               iVar16 = 1;
               local_54 = g_SamplePointCount;
               if (1 < g_SamplePointCount) {
-                iVar14 = g_SamplePointCount * 0xc;
+                iVar14 = g_SamplePointCount;
                 pCVar17 = g_SamplePointArray;
                 do {
                   pCVar17 = pCVar17 + 1;
@@ -269,14 +241,11 @@ LAB_0051919d:
                   local_b8 = (g_SamplePointArray[0].y + pCVar17->y) * 0.5f;
                   local_b4 = (g_SamplePointArray[0].z + pCVar17->z) * 0.5f;
                   local_54 = local_54 + 1;
-                  pfVar12 = (float *)((int)&g_SamplePointArray[0].x + iVar14);
-                  if (pfVar12 != &local_bc) {
-                    *pfVar12 = local_bc;
-                    *(float *)((int)&g_SamplePointArray[0].y + iVar14) = local_b8;
-                    *(float *)((int)&g_SamplePointArray[0].z + iVar14) = local_b4;
-                  }
+                  g_SamplePointArray[iVar14].x = local_bc;
+                  g_SamplePointArray[iVar14].y = local_b8;
+                  g_SamplePointArray[iVar14].z = local_b4;
                   iVar16 = iVar16 + 1;
-                  iVar14 = iVar14 + 0xc;
+                  iVar14 = iVar14 + 1;
                 } while (iVar16 < g_SamplePointCount);
               }
               g_SamplePointCount = local_54;
@@ -286,10 +255,9 @@ LAB_0051919d:
             if (0 < g_SamplePointCount) {
               iVar16 = 0;
               do {
-                pdVar1 = (double *)((int)g_SampleDistances + iVar16);
-                iVar16 = iVar16 + 8;
-                local_110 = *pdVar1 * max_search_radius + local_110;
-              } while (iVar16 < g_SamplePointCount * 8);
+                local_110 = g_SampleDistances[iVar16] * max_search_radius + local_110;
+                iVar16 = iVar16 + 1;
+              } while (iVar16 < g_SamplePointCount);
             }
             if (pCVar7->collapse_cost < local_110) goto LAB_00518f71;
           }
@@ -312,40 +280,30 @@ LAB_0051919d:
               local_100 = 0;
               local_40 = 0;
               fVar2 = 0.0;
-              if (0 < this_ptr->sample_point_count) {
-                local_4c = 0;
-                do {
-                  sample_point = (SLodSamplePoint *)
-                                 ((int)&(this_ptr->sample_points_ptr->position).x + local_4c);
-                  if (g_LodTempFaceStamp ==
-                      this_ptr->tri_data[sample_point->closest_triangle_idx].affected_by_edge_stamp)
-                  {
-                    local_118 = 0x39a08ce9;
-                    uStack_114 = 0x46293e59;
-                    iVar16 = 0;
-                    if (0 < iVar19) {
-                      pCVar18 = g_TempNeighborFaces;
-                      do {
-                        dVar20 = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
-                                           (this_ptr,sample_point,pCVar18);
-                        if (dVar20 < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {
-                          local_108 = SUB84(__BITCAST_UINT64(dVar20),0);
-                          local_118 = local_108;
-                          uStack_104 = (uint)((ulonglong)dVar20 >> 0x20);
-                          uStack_114 = uStack_104;
-                        }
-                        iVar16 = iVar16 + 1;
-                        pCVar18 = pCVar18 + 1;
-                      } while (iVar16 < iVar19);
-                    }
-                    local_100 = local_100 + 1;
-                    fVar2 = sample_point->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) +
-                            fVar2;
+              do {
+                sample_point = this_ptr->sample_points_ptr + local_40;
+                if (g_LodTempFaceStamp ==
+                    this_ptr->tri_data[sample_point->closest_triangle_idx].affected_by_edge_stamp)
+                {
+                  min_dist = 9.999999999999999e+29;
+                  iVar16 = 0;
+                  if (0 < iVar19) {
+                    pCVar18 = g_TempNeighborFaces;
+                    do {
+                      dVar20 = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
+                                         (this_ptr,sample_point,pCVar18);
+                      if (dVar20 < min_dist) {
+                        min_dist = dVar20;
+                      }
+                      iVar16 = iVar16 + 1;
+                      pCVar18 = pCVar18 + 1;
+                    } while (iVar16 < iVar19);
                   }
-                  local_4c = local_4c + 0x1c;
-                  local_40 = local_40 + 1;
-                } while (local_40 < this_ptr->sample_point_count);
-              }
+                  local_100 = local_100 + 1;
+                  fVar2 = sample_point->weight * (float)min_dist + fVar2;
+                }
+                local_40 = local_40 + 1;
+              } while (local_40 < this_ptr->sample_point_count);
               if (0 < local_100) {
                 local_110 = (double)(((1.0 - 0.75f) * fVar2 * 1e+10) /
                                      (float)local_100 + (float)local_110);

@@ -672,6 +672,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 123,
+      "match": "(CVector3f *)((int)(pCVar7 + 0x17) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 0x17) + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 230,
       "match": "SUB84(",

@@ -573,6 +573,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 394,
+      "match": "(uint *)((int)(pafVar13 + 0x20) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((*(uint *)((int)(pafVar13 + 0x20) + iVar12 * 4) & 0x7fffffff) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 408,
       "match": "(int *)((int)g_Layer3BandIndex",
@@ -1317,25 +1326,25 @@
         {
           "check_name": "bugprone-integer-division",
           "column": 70,
-          "line": 259,
+          "line": 258,
           "message": "result of integer division used in a floating point context; possible loss of precision"
         },
         {
           "check_name": "bugprone-integer-division",
           "column": 74,
-          "line": 363,
+          "line": 362,
           "message": "result of integer division used in a floating point context; possible loss of precision"
         },
         {
           "check_name": "bugprone-integer-division",
           "column": 72,
-          "line": 472,
+          "line": 471,
           "message": "result of integer division used in a floating point context; possible loss of precision"
         },
         {
           "check_name": "bugprone-integer-division",
           "column": 74,
-          "line": 564,
+          "line": 561,
           "message": "result of integer division used in a floating point context; possible loss of precision"
         }
       ],

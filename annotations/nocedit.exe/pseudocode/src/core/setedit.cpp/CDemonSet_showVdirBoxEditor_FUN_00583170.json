@@ -824,6 +824,15 @@
       "type": "stack_ref"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 271,
+      "match": "(CMatrix3x3f *)((int)(pCVar3 + 1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34 = (CMatrix3x3f *)((int)(pCVar3 + 1) + 0x20);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 387,
       "match": "&stack0xfffffd64",
@@ -1434,6 +1443,24 @@
       "severity": "moderate",
       "text": "((CBoundingBox3D *)&stack0xfffffdf4,&local_110,&local_98,",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 1469,
+      "match": "(CVector3f *)((int)(pCVar4 + 5) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CVector3f *)((int)(pCVar4 + 5) + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 1471,
+      "match": "(CMatrix3x3f *)((int)(local_1c + 1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

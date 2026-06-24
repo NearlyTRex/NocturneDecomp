@@ -56,19 +56,19 @@ bugprone-integer-division (16)
     File: sound/mp3.cpp
     result of integer division used in a floating point context; possible loss of precision
 
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 259
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 258
     File: sound/mp3.cpp
     result of integer division used in a floating point context; possible loss of precision
 
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 363
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 362
     File: sound/mp3.cpp
     result of integer division used in a floating point context; possible loss of precision
 
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 472
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 471
     File: sound/mp3.cpp
     result of integer division used in a floating point context; possible loss of precision
 
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 564
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 561
     File: sound/mp3.cpp
     result of integer division used in a floating point context; possible loss of precision
 
@@ -137,7 +137,7 @@ bugprone-swapped-arguments (3)
     argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments.
 
 ====================================================================================================
-Cppcheck (quick) (120 diagnostics)
+Cppcheck (quick) (100 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -385,40 +385,8 @@ invalidscanf (60)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (30)
+uninitvar (22)
 ----------------------------------------------------------------------------------------------------
-
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 51
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_98
-
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 52
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_a0
-
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 59
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_58
-
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 60
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_50
-
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 50
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_38
-
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 51
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_40
-
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 58
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_a0
-
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 59
-    File: shape/superopt.cpp
-    Uninitialized variable: dStack_98
 
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 115
     File: shape/superopt.cpp
@@ -509,7 +477,7 @@ uninitvar (30)
     Uninitialized variable: local_70
 
 ----------------------------------------------------------------------------------------------------
-nullPointerRedundantCheck (12)
+nullPointerRedundantCheck (8)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 64
@@ -535,22 +503,6 @@ nullPointerRedundantCheck (12)
   shape_design.c_getVertexCountFromModel_FUN_0046808 line 15
     File: shape/design.c
     Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.
-
-  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 45
-    File: shape/quantize.cpp
-    Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
-
-  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 47
-    File: shape/quantize.cpp
-    Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
-
-  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 116
-    File: shape/quantize.cpp
-    Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
-
-  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 124
-    File: shape/quantize.cpp
-    Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
   sound_snddx.cpp_CDirectSoundDevice_initPropertySet line 42
     File: sound/snddx.cpp
@@ -581,26 +533,6 @@ invalidPointerCast (4)
     Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (4)
-----------------------------------------------------------------------------------------------------
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 85
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 89
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 93
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 97
-    File: shape/quantize.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
 invalidScanfArgType_int (3)
 ----------------------------------------------------------------------------------------------------
 
@@ -617,22 +549,6 @@ invalidScanfArgType_int (3)
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (3)
-----------------------------------------------------------------------------------------------------
-
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEd line 64
-    File: shape/superopt.cpp
-    Redundant assignment of 'pdVar4' to itself.
-
-  shape_superopt.cpp_CComplexPolygon_findReflexVerte line 65
-    File: shape/superopt.cpp
-    Redundant assignment of 'pdVar4' to itself.
-
-  shape_superopt.cpp_COptimize_exportOptimizeGeometr line 151
-    File: shape/superopt.cpp
-    Redundant assignment of 'iVar7' to itself.
-
-----------------------------------------------------------------------------------------------------
 nullPointerArithmeticRedundantCheck (1)
 ----------------------------------------------------------------------------------------------------
 
@@ -641,25 +557,17 @@ nullPointerArithmeticRedundantCheck (1)
     Either the condition 'user_ptr!=(void*)0x0' is redundant or there is overflow in pointer subtraction.
 
 ----------------------------------------------------------------------------------------------------
-identicalInnerCondition (1)
-----------------------------------------------------------------------------------------------------
-
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 315
-    File: shape/meshlod.cpp
-    Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-nullPointer (1)
-----------------------------------------------------------------------------------------------------
-
-  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
-    File: shape/quantize.cpp
-    Possible null pointer dereference: local_20
-
-----------------------------------------------------------------------------------------------------
 memleak (1)
 ----------------------------------------------------------------------------------------------------
 
   shape_superopt.cpp_COptimize_addComplexPolygon_FUN line 27
     File: shape/superopt.cpp
     Memory leak: ppCVar2
+
+----------------------------------------------------------------------------------------------------
+selfAssignment (1)
+----------------------------------------------------------------------------------------------------
+
+  shape_superopt.cpp_COptimize_exportOptimizeGeometr line 151
+    File: shape/superopt.cpp
+    Redundant assignment of 'iVar7' to itself.

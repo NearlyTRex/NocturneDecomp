@@ -118,6 +118,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 64,
+      "match": "(CVector3f *)((int)(pCVar7 + 4) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 4) + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 38,
       "match": "field-by-field struct copy",

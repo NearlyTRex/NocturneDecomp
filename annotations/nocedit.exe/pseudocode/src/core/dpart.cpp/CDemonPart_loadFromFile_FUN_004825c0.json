@@ -249,6 +249,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 58,
+      "match": "(uint *)((int)(g_FaceConversionBuffer[0].vertices + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)(g_FaceConversionBuffer[0].vertices + -1) + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 60,
       "match": "(uint *)((int)g_FaceConversionBuffer",

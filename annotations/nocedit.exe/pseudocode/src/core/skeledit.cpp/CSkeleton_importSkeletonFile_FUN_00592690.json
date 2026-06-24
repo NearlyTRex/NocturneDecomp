@@ -1567,6 +1567,24 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 1417,
+      "match": "(CMatrix3x4f *)((int)(local_48 + 2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_48 = (CMatrix3x4f *)((int)(local_48 + 2) + 0x24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 1454,
+      "match": "(CMatrix3x4f *)((int)(local_4c + 2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_4c = (CMatrix3x4f *)((int)(local_4c + 2) + 0x24);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
       "line": 1598,
       "match": "SBORROW4",

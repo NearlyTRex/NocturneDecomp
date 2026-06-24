@@ -141,6 +141,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 50,
+      "match": "(CVector3f *)((int)(pCVar10 + 0x17) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 45,
       "match": "(int)&NAME used in byte-offset arithmetic",

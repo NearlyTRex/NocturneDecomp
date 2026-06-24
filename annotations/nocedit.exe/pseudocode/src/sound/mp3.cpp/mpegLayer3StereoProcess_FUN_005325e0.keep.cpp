@@ -62,7 +62,6 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
   int iVar11;
   float (*pafVar12) [18];
   int iVar12;
-  float (*pafVar13) [18];
   float10 fVar14;
   float10 fVar13;
   // MPEG-2 LSF intensity-stereo step base. Originally split across two adjacent
@@ -524,15 +523,13 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
           iVar11 = 2;
           iVar12 = 0x11;
           local_1c = -1;
-          pafVar13 = input_lr_samples->channels[0].samples + 2;
           do {
-            if ((*(uint *)((int)(pafVar13 + 0x20) + iVar12 * 4) & 0x7fffffff) != 0) {
+            if ((*(uint *)&input_lr_samples->channels[1].samples[iVar11][iVar12] & 0x7fffffff) != 0) {
               local_1c = iVar11 * 0x12 + iVar12;
               break;
             }
             iVar12 = iVar12 + -1;
             if (iVar12 < 0) {
-              pafVar13 = pafVar13 + -1;
               iVar11 = iVar11 + -1;
               iVar12 = 0x11;
             }

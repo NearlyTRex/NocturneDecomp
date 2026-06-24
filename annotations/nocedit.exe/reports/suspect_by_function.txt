@@ -5,81 +5,21 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6431 (99.6%)
-With suspects: 23
-Total suspects: 240
+Clean: 6438 (99.8%)
+With suspects: 16
+Total suspects: 148
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (15 suspects)
-  File: shape/meshlod.cpp
+core_game.cpp_joinNetworkGame_FUN_004e2fc0 (1 suspect)
+  File: core/game.cpp
 ====================================================================================================
-  Line 119 [pointer_cast]: iVar16 = *(int *)((int)pCVar15[local_1c].adjacent_edge_indices + local_48);
-  Line 135 [pointer_cast]: *(int *)((int)g_MaxNeighborVerts + local_38) = iVar16;
-  Line 188 [pointer_cast]: *(int *)((int)g_TempNeighborFaces[0].edge_dot_products + iVar16 + 0xc) = iVar14;
-  Line 191 [shadow_pointer_walk]: local_24 = (CLodEdge *)&local_24->vertex_idx_2;
-  Line 228 [unrolled_memcpy]: g_SamplePointArray[0].x = (pCVar15->position).x;
-  Line 236 [pointer_cast]: pCVar8 = this_ptr->vertex_data + *(int *)((int)g_MaxNeighborVerts + iVar10);
-  Line 283 [pointer_cast]: pfVar12 = (float *)((int)&g_SamplePointArray[0].x + iVar14);
-  Line 286 [pointer_cast]: *(float *)((int)&g_SamplePointArray[0].y + iVar14) = local_b8;
-  Line 287 [pointer_cast]: *(float *)((int)&g_SamplePointArray[0].z + iVar14) = local_b4;
-  Line 301 [pointer_cast]: pdVar1 = (double *)((int)g_SampleDistances + iVar16);
-  Line 315 [static_identical_inner_condition]: if (0 < this_ptr->sample_point_count) {
-  Line 332 [pointer_cast]: ((int)&(this_ptr->sample_points_ptr->position).x + local_4c);
-  Line 344 [bitcast_double_pair]: if (dVar20 < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {
-  Line 345 [sub84_truncation]: local_108 = SUB84(__BITCAST_UINT64(dVar20),0);
-  Line 355 [bitcast_double_pair]: fVar2 = sample_point->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) +
+  Line 15 [unrolled_memcpy]: for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {
 
 ====================================================================================================
-shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (7 suspects)
-  File: shape/quantize.cpp
+core_script.cpp_readActorReference_FUN_00560760 (1 suspect)
+  File: core/script.cpp
 ====================================================================================================
-  Line 42 [static_null_pointer]: local_1c = (uchar *)*local_20->row_table;
-  Line 57 [unrolled_memcpy]: for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {
-  Line 62 [unrolled_memcpy]: for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
-  Line 79 [unrolled_memcpy]: for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-  Line 108 [pointer_cast]: puVar10 = *(uint **)((int)(*bitmap_ptr)->row_table + local_18);
-  Line 118 [pointer_cast]: puVar10 = (uint *)((int)puVar10 + (uint)bVar15 * -2 + 1);
-  Line 119 [pointer_cast]: puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);
-
-====================================================================================================
-shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 (10 suspects)
-  File: shape/quantize.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 49 [pointer_cast]: pbVar14 = (byte *)(iVar13 * 4 + (int)this_ptr->pixel_data);
-  Line 79 [pointer_cast]: (uint)*(byte *)(iVar15 + (int)this_ptr->pixel_data);
-  Line 84 [pointer_cast]: uVar13 = (iVar2 >> 0x10) - (uint)*(byte *)(iVar15 + 1 + (int)this_ptr->pixel_data);
-  Line 85 [static_shift_too_many_bits]: uVar12 = (int)uVar11 >> 0x1f;
-  Line 89 [pointer_cast]: uVar13 = (iVar3 >> 0x10) - (uint)*(byte *)(iVar15 + 2 + (int)this_ptr->pixel_data);
-  Line 89 [static_shift_too_many_bits]: uVar14 = (int)uVar13 >> 0x1f;
-  Line 93 [static_shift_too_many_bits]: uVar14 = (int)uVar13 >> 0x1f;
-  Line 94 [pointer_cast]: uVar13 = (iVar4 >> 0x10) - (uint)*(byte *)(iVar15 + 3 + (int)this_ptr->pixel_data);
-  Line 97 [static_shift_too_many_bits]: uVar14 = (int)uVar13 >> 0x1f;
-
-====================================================================================================
-shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0 (6 suspects)
-  File: shape/quantize.cpp
-====================================================================================================
-  Line 46 [shadow_pointer_walk]: pCVar10 = (CColorQuantizer *)&pCVar10->current_b;
-  Line 47 [shadow_pointer_walk]: pCVar7 = (CColorQuantizer *)&pCVar7->error_buffer_r;
-  Line 61 [unrolled_memcpy]: pCVar11->palette[0].r = pCVar11->palette[1].r;
-  Line 70 [shadow_pointer_walk]: pCVar11 = (CColorQuantizer *)&pCVar11->error_buffer_r;
-  Line 74 [shadow_pointer_walk]: pCVar11 = (CColorQuantizer *)&pCVar11->error_buffer_r;
-  Line 94 [shadow_pointer_walk]: pCVar11 = (CColorQuantizer *)&pCVar11->error_buffer_r;
-
-====================================================================================================
-shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (9 suspects)
-  File: shape/quantize.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 60 [pointer_cast]: puVar9 = *(uint **)((int)bitmap->row_table + local_2c);
-  Line 76 [pointer_cast]: bVar1 = *(byte *)(iVar3 + (int)pvVar1);
-  Line 77 [pointer_cast]: bVar2 = *(byte *)(iVar3 + 1 + (int)pvVar1);
-  Line 78 [pointer_cast]: bVar3 = *(byte *)(iVar3 + 2 + (int)pvVar1);
-  Line 83 [pointer_cast]: *(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = bVar1;
-  Line 84 [pointer_cast]: *(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) = bVar2;
-  Line 85 [pointer_cast]: *(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) = bVar3;
-  Line 86 [pointer_cast]: *(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) =
+  Line 14 [unrolled_memcpy]: for (iVar3 = 0x32; iVar3 != 0; iVar3 = iVar3 + -1) {
 
 ====================================================================================================
 shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 (21 suspects)
@@ -108,17 +48,6 @@ shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 (21 suspects)
   Line 180 [pointer_cast]: *(uint *)((int)this_ptr->pixel_data + iVar7 * 4) = uVar1;
 
 ====================================================================================================
-shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (6 suspects)
-  File: shape/quantize.cpp
-====================================================================================================
-  Line 18 [unaffected_reg]: int unaff_ESI;
-  Line 43 [unaffected_reg]: unaff_ESI = 1;
-  Line 52 [unaffected_reg]: unaff_ESI = 2;
-  Line 57 [unaffected_reg]: unaff_ESI = 3;
-  Line 61 [unaffected_reg]: unaff_ESI = 4;
-  Line 71 [unaffected_reg]: uVar5 = width * height * unaff_ESI;
-
-====================================================================================================
 shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90 (6 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
@@ -128,44 +57,6 @@ shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90 (6 suspects)
   Line 18 [pointer_cast]: *(uint *)((int)&(poly->normal).impl.y + 4);
   Line 20 [pointer_cast]: *(uint *)((int)&(this_ptr->normal).z + 4) =
   Line 21 [pointer_cast]: *(uint *)((int)&(poly->normal).impl.z + 4);
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 (14 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 48 [unrolled_memcpy]: // 005c8eee: MOVSD.REP ES:EDI,ESI
-  Line 57 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 64 [static_self_assignment]: pdVar4 = pdVar4;
-  Line 70 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);
-  Line 75 [bitcast_double_pair]: dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->z -
-  Line 76 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->y;
-  Line 77 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->x -
-  Line 78 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->z;
-  Line 79 [bitcast_double_pair]: dVar2 = __BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->y -
-  Line 80 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->x;
-  Line 100 [sub84_truncation]: local_34 = SUB84(__BITCAST_UINT64(dVar7),0);
-  Line 102 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar7) {
-  Line 109 [sub84_truncation]: local_34 = SUB84(__BITCAST_UINT64(dVar8),0);
-  Line 111 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar8) {
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 (14 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 49 [unrolled_memcpy]: // 005c8bd2: MOVSD.REP ES:EDI,ESI
-  Line 58 [unrolled_memcpy]: for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 65 [static_self_assignment]: pdVar4 = pdVar4;
-  Line 71 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);
-  Line 76 [bitcast_double_pair]: dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14->z -
-  Line 77 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * local_14->y;
-  Line 78 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * local_14->x -
-  Line 79 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14->z;
-  Line 80 [bitcast_double_pair]: dVar2 = __BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14->y -
-  Line 81 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14->x;
-  Line 117 [sub84_truncation]: local_3c = SUB84(__BITCAST_UINT64(dVar8),0);
-  Line 119 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < dVar8) {
-  Line 128 [sub84_truncation]: local_3c = SUB84(__BITCAST_UINT64(dVar7),0);
-  Line 130 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < dVar7) {
 
 ====================================================================================================
 shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0 (11 suspects)
@@ -210,30 +101,6 @@ shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (6 suspects)
   Line 37 [pointer_cast]: *(uint *)((int)pCVar1->uv_coords + iVar4 + -8) = uVar2 - 1;
   Line 39 [pointer_cast]: uVar2 = *(uint *)((int)pCVar1->uv_coords + iVar4 + -4);
   Line 41 [pointer_cast]: *(uint *)((int)pCVar1->uv_coords + iVar4 + -4) = uVar2 - 1;
-
-====================================================================================================
-shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0 (7 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 51 [static_uninitvar]: dStack_78 = matrix->m[0].z * dStack_98 +
-  Line 52 [static_uninitvar]: matrix->m[0].x * dStack_a8 + matrix->m[0].y * dStack_a0;
-  Line 59 [static_uninitvar]: dStack_28 = dStack_58 + pivot->y;
-  Line 60 [static_uninitvar]: dStack_20 = dStack_50 + pivot->z;
-  Line 76 [pointer_cast]: *(uint *)((int)&(pCVar2->position).x + 4) = uStack_8c;
-  Line 78 [pointer_cast]: *(uint *)((int)&(pCVar2->position).y + 4) = uStack_84;
-  Line 80 [pointer_cast]: *(uint *)((int)&(pCVar2->position).z + 4) = uStack_7c;
-
-====================================================================================================
-shape_superopt.cpp_CObj_transform_FUN_005d2c40 (7 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 50 [static_uninitvar]: dStack_30 = matrix->m[0].z * dStack_38 +
-  Line 51 [static_uninitvar]: matrix->m[0].x * dStack_48 + matrix->m[0].y * dStack_40;
-  Line 58 [static_uninitvar]: dStack_58 = dStack_a0 + pivot->y;
-  Line 59 [static_uninitvar]: dStack_50 = dStack_98 + pivot->z;
-  Line 75 [pointer_cast]: *(uint *)((int)&(pCVar2->position).x + 4) = uStack_74;
-  Line 77 [pointer_cast]: *(uint *)((int)&(pCVar2->position).y + 4) = uStack_6c;
-  Line 79 [pointer_cast]: *(uint *)((int)&(pCVar2->position).z + 4) = uStack_64;
 
 ====================================================================================================
 shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00 (11 suspects)
@@ -363,3 +230,9 @@ shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 (12 suspects)
   Line 108 [pointer_cast]: *(uint *)((int)&out_hit_point->x + 4) = local_c8[1];
   Line 110 [pointer_cast]: *(uint *)((int)&out_hit_point->y + 4) = local_c8[3];
   Line 112 [pointer_cast]: *(uint *)((int)&out_hit_point->z + 4) = local_b4;
+
+====================================================================================================
+sound_sndmain.cpp_readIni_FUN_005abf20 (1 suspect)
+  File: sound/sndmain.cpp
+====================================================================================================
+  Line 26 [unrolled_memcpy]: for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {

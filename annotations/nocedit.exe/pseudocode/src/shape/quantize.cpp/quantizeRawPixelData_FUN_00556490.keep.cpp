@@ -20,7 +20,7 @@ int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixe
   CBitmap *ptr_00;
   uint uVar5;
   int iVar4;
-  int unaff_ESI;
+  int bytes_per_pixel;
   char local_dc [200];
   CBitmap *local_14;
   byte bVar9;
@@ -39,11 +39,12 @@ int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixe
     g_CurrentFilename = "..\\shape\\quantize.cpp";
     g_CurrentLineNumber = 0x3f0;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_dc);
+    return 0;
   }
   if (bit_depth < 0x10) {
     if (7 < bit_depth) {
       if (bit_depth < 9) {
-        unaff_ESI = 1;
+        bytes_per_pixel = 1;
         goto LAB_00556524;
       }
       if (bit_depth == 0xf) goto LAB_00556829;
@@ -52,16 +53,16 @@ int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixe
   else {
     if (bit_depth < 0x11) {
 LAB_00556829:
-      unaff_ESI = 2;
+      bytes_per_pixel = 2;
       goto LAB_00556524;
     }
     if (0x17 < bit_depth) {
       if (bit_depth < 0x19) {
-        unaff_ESI = 3;
+        bytes_per_pixel = 3;
         goto LAB_00556524;
       }
       if (bit_depth == 0x20) {
-        unaff_ESI = 4;
+        bytes_per_pixel = 4;
         goto LAB_00556524;
       }
     }
@@ -71,7 +72,7 @@ LAB_00556829:
   g_CurrentFilename = "..\\shape\\quantize.cpp";
   core_main_c_displayErrorAndQuit_FUN_00506f10(local_dc);
 LAB_00556524:
-  uVar5 = width * height * unaff_ESI;
+  uVar5 = width * height * bytes_per_pixel;
   memcpy(*local_14->row_table,src_pixel_data,uVar5);
   if (show_progress != 0) {
     _sprintf(local_dc,"%d-bit color                                                                  ",bit_depth);
@@ -128,10 +129,8 @@ LAB_00556524:
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x444;
-    if (local_14 != (CBitmap *)0x0) {
-      ptr_00 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(local_14,0);
-      shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr_00);
-    }
+    ptr_00 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(local_14,0);
+    shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr_00);
     iVar4 = 1;
   }
   return iVar4;

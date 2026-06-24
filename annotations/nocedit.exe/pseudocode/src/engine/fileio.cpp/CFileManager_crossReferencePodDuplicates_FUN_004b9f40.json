@@ -393,6 +393,15 @@
       "type": "unrolled_strcpy"
     },
     {
+      "description": "Watcom loop-unrolled memcpy (constant-count countdown loop with a cast-dword store `*(uint *)dst = *(uint *)src;` and both pointers stepped by +4 \u2014 REP MOVSD lowering with a baked-in dword count). Replace the loop with memcpy(dst, src, count * 4) in a .keep.",
+      "line": 39,
+      "match": "for (X = N; ...) { *(uint *)d = *(uint *)s; d/s += 4; }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 125,
       "match": "(int)&NAME used in byte-offset arithmetic",

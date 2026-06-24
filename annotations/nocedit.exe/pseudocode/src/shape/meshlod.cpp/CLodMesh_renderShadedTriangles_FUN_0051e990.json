@@ -175,12 +175,48 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 27,
+      "match": "(int *)((int)(pCVar1->uv_coords + -2) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SStack_60.vertices[0].vertex_index = *(int *)((int)(pCVar1->uv_coords + -2) + iVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 28,
+      "match": "(int *)((int)(pCVar1->uv_coords + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SStack_60.vertices[1].vertex_index = *(int *)((int)(pCVar1->uv_coords + -1) + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 29,
+      "match": "(int *)((int)(pCVar1->uv_coords + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SStack_60.vertices[2].vertex_index = *(int *)((int)(pCVar1->uv_coords + -1) + iVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 33,
       "match": "(float *)((int)pCVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 35,
+      "match": "(float *)((int)(pCVar1->edge_perpendiculars + -1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)ROUND(ROUND(*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) *",
       "type": "pointer_cast"
     },
     {

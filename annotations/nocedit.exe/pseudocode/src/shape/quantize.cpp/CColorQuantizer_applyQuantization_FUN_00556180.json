@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 231,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 161,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 406
   },
   "cross_references": [
@@ -188,11 +185,47 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 108,
+      "match": "(uint **)((int)(*bitmap_ptr)->row_table",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar10 = *(uint **)((int)(*bitmap_ptr)->row_table + local_18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 108,
+      "match": "(uint **)((int)(*bitmap_ptr)-",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar10 = *(uint **)((int)(*bitmap_ptr)->row_table + local_18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 110,
       "match": "(uint **)((int)ppCVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint **)((int)ppCVar9 + -4) = puVar13;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 118,
+      "match": "(uint *)((int)puVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(uint *)((int)puVar13",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -449,6 +482,24 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 57,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 62,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 111,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
@@ -580,94 +631,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CColorQuantizer_applyQuantization_FUN_00556180.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 24,
-          "line": 42,
-          "message": "Possible null pointer dereference: local_20",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 27,
-          "line": 45,
-          "message": "Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 31,
-          "line": 47,
-          "message": "Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 108,
-      "match": "(uint **)((int)(*bitmap_ptr)->row_table",
-      "severity": "moderate",
-      "text": "puVar10 = *(uint **)((int)(*bitmap_ptr)->row_table + local_18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 118,
-      "match": "(uint *)((int)puVar10",
-      "severity": "moderate",
-      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar15 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 119,
-      "match": "(uint *)((int)puVar13",
-      "severity": "moderate",
-      "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 57,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 62,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (REP MOVSD + trailing-byte tail: dword countdown over N >> 2 followed by byte countdown over N & 3). Replace both loops with memcpy(dst, src, N) in a .keep.",
-      "introduced_by": "keep",
-      "line": 79,
-      "match": "for (X = N >> 2; ...) { } for (Y = N & 3; ...)",
-      "severity": "moderate",
-      "text": "for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Possible null pointer dereference: local_20",
-      "line": 42,
-      "match": "Cppcheck: null pointer dereference",
-      "severity": "major",
-      "text": "local_1c = (uchar *)*local_20->row_table;",
-      "type": "static_null_pointer"
-    }
-  ]
+  "suspects": []
 }

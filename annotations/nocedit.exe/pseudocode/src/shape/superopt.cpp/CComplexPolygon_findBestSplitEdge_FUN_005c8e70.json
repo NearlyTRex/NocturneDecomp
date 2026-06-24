@@ -7,19 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 269,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 119,
-    "suspect_count": 13,
-    "suspect_types": [
-      "bitcast_double_pair",
-      "pointer_cast",
-      "sub84_truncation",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 387
   },
   "cross_references": [
@@ -135,6 +130,114 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(double *)((int)pdVar4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 75,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->z -",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 76,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->y;",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 77,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->x -",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 78,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->z;",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 79,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->y -",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 80,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->x;",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 100,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34 = SUB84(__BITCAST_UINT64(dVar7),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 102,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar7) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 109,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34 = SUB84(__BITCAST_UINT64(dVar8),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 111,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar8) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 57,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 69,
       "match": "for (...; != 0; ... + -1)",
@@ -186,6 +289,15 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "// 005c8ebc: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005c8eee, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 48,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 005c8eee: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
     }
   ],
@@ -387,135 +499,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CComplexPolygon_findBestSplitEdge_FUN_005c8e70.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 16,
-          "line": 64,
-          "message": "Redundant assignment of 'pdVar4' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(double *)((int)pdVar4",
-      "severity": "moderate",
-      "text": "pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 75,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->z -",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 76,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->y;",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 77,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->x -",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 78,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->z;",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 79,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->y -",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 80,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->x;",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 100,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_34 = SUB84(__BITCAST_UINT64(dVar7),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 102,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar7) {",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 109,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_34 = SUB84(__BITCAST_UINT64(dVar8),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 111,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar8) {",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 57,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at 005c8eee, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 48,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 005c8eee: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Redundant assignment of 'pdVar4' to itself.",
-      "line": 64,
-      "match": "Cppcheck: redundant self-assignment",
-      "severity": "mild",
-      "text": "pdVar4 = pdVar4;",
-      "type": "static_self_assignment"
-    }
-  ]
+  "suspects": []
 }

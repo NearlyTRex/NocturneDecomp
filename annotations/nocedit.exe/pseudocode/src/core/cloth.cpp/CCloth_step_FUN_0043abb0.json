@@ -195,6 +195,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 280,
+      "match": "(CVector3f *)((int)(pCVar12 + 0x17) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar12 = (CVector3f *)((int)(pCVar12 + 0x17) + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 297,
       "match": "(int *)((int)this_ptr",

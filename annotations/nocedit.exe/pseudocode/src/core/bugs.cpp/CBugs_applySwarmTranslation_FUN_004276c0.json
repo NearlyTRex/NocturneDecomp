@@ -147,6 +147,15 @@
       "type": "warning_type_propagation"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 38,
+      "match": "(CVector3f *)((int)(pCVar8 + 5) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(float *)((int)pcVar9",

@@ -244,12 +244,39 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 157,
+      "match": "(CVector3f *)((int)(pCVar14 + 4) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 158,
+      "match": "(CVector3f *)((int)(pCVar16 + 4) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar16 = (CVector3f *)((int)(pCVar16 + 4) + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 273,
       "match": "(CMatrix3x3f *)((int)pCVar15",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pCVar15 = (CMatrix3x3f *)((int)pCVar15 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 304,
+      "match": "(CVector3f *)((int)(pCVar14 + 4) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);",
       "type": "pointer_cast"
     },
     {

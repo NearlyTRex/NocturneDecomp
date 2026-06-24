@@ -20,7 +20,6 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   int iVar7;
   int iVar6;
   char *pcVar8;
-  char *pcVar9;
   CPickList local_13c8;
   SFoundFileInfo local_1020;
   SFoundFileInfo local_e0c;
@@ -52,13 +51,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   char *pcVar13;
   int local_30;
 
-  pcVar8 = g_DefaultCheckOutPath;
-  pcVar9 = local_a68;
-  for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *(uint *)pcVar9 = *(uint *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar9 = pcVar9 + 4;
-  }
+  memcpy(local_a68,g_DefaultCheckOutPath,0x104);
   local_48 = (_FILE *)0x0;
   local_2c = (_FILE *)0x0;
   local_28 = (_FILE *)0x0;

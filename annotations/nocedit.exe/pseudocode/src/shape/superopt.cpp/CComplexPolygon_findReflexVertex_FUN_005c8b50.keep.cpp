@@ -16,24 +16,12 @@ SExpandedEdge * __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_
   int iVar4;
   int iVar5;
   SExpandedEdge *edge;
-  double *pdVar4;
-  uint *puVar6;
-  byte bVar6;
   double dVar7;
   double dVar8;
-  uint local_cc;
-  uint uStack_c8;
-  uint local_c4;
-  uint uStack_c0;
-  uint local_bc;
-  uint uStack_b8;
   CVector3d local_b4;
   double local_84;
   CVector3d local_6c;
-  uint local_44;
-  uint uStack_40;
-  uint local_3c;
-  uint uStack_38;
+  double best_area;
   int local_2c;
   int local_28;
   uint local_20;
@@ -43,11 +31,9 @@ SExpandedEdge * __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_
   double local_7c;
   double local_74;
   
-  bVar6 = 0;
   local_1c = (SExpandedEdge *)0x0;
   local_20 = 0;
-  local_44 = 0;
-  uStack_40 = 0;
+  best_area = 0.0;
   if (this_ptr->expanded_edge_count != 0) {
     local_14 = &this_ptr->normal;
     do {
@@ -57,20 +43,9 @@ SExpandedEdge * __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_
       local_84 = edge->end_pos.x - edge->start_pos.x;
       local_7c = edge->end_pos.y - edge->start_pos.y;
       local_74 = edge->end_pos.z - edge->start_pos.z;
-      pdVar4 = &local_84;
-      puVar6 = &local_cc;
-      for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-        pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);
-        *puVar6 = *(uint *)pdVar4;
-        pdVar4 = pdVar4;
-        puVar6 = puVar6 + (uint)bVar6 * -2 + 1;
-      }
-      dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14->z -
-              __BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * local_14->y;
-      dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * local_14->x -
-              __BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14->z;
-      dVar2 = __BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14->y -
-              __BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14->x;
+      dVar8 = local_7c * local_14->z - local_74 * local_14->y;
+      dVar1 = local_74 * local_14->x - local_84 * local_14->z;
+      dVar2 = local_84 * local_14->y - local_7c * local_14->x;
       dVar3 = 1.0 / SQRT(dVar2 * dVar2 + dVar8 * dVar8 + dVar1 * dVar1);
       local_b4.x = dVar8 * dVar3;
       local_b4.y = dVar1 * dVar3;
@@ -106,22 +81,16 @@ SExpandedEdge * __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_
           if (iVar5 == 0) {
             dVar8 = shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100
                               (this_ptr,buf_b,local_28);
-            local_3c = SUB84(__BITCAST_UINT64(dVar8),0);
-            uStack_38 = (uint)((ulonglong)dVar8 >> 0x20);
-            if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < dVar8) {
-              local_44 = local_3c;
-              uStack_40 = uStack_38;
+            if (best_area < dVar8) {
+              best_area = dVar8;
               local_1c = local_18;
             }
           }
           else {
             dVar7 = shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100
                               (this_ptr,buf_a,local_2c);
-            local_3c = SUB84(__BITCAST_UINT64(dVar7),0);
-            uStack_38 = (uint)((ulonglong)dVar7 >> 0x20);
-            if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < dVar7) {
-              local_44 = local_3c;
-              uStack_40 = uStack_38;
+            if (best_area < dVar7) {
+              best_area = dVar7;
               local_1c = local_18;
             }
           }

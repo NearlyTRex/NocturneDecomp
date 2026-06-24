@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 201,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 101,
-    "suspect_count": 9,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 324
   },
   "cross_references": [
@@ -172,6 +169,24 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(uint **)((int)bitmap",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar9 = *(uint **)((int)bitmap->row_table + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(uint *)((int)puVar12",
@@ -187,6 +202,69 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(byte *)(iVar3 + (int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)(iVar3 + (int)pvVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(byte *)(iVar3 + 1 + (int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)(iVar3 + 1 + (int)pvVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(byte *)(iVar3 + 2 + (int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar3 = *(byte *)(iVar3 + 2 + (int)pvVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(byte *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = bVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(byte *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) = bVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(byte *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) = bVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(byte *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) =",
       "type": "pointer_cast"
     },
     {
@@ -261,78 +339,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(uint **)((int)bitmap",
-      "severity": "moderate",
-      "text": "puVar9 = *(uint **)((int)bitmap->row_table + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(byte *)(iVar3 + (int)pvVar1",
-      "severity": "moderate",
-      "text": "bVar1 = *(byte *)(iVar3 + (int)pvVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(byte *)(iVar3 + 1 + (int)pvVar1",
-      "severity": "moderate",
-      "text": "bVar2 = *(byte *)(iVar3 + 1 + (int)pvVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(byte *)(iVar3 + 2 + (int)pvVar1",
-      "severity": "moderate",
-      "text": "bVar3 = *(byte *)(iVar3 + 2 + (int)pvVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 83,
-      "match": "(byte *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = bVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(byte *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) = bVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(byte *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) = bVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(byte *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) =",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

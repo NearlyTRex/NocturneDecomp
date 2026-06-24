@@ -15,7 +15,6 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
   uint uVar5;
   CKeyFramedModel *model_ptr;
   int iVar6;
-  char *pcVar7;
   int iVar8;
   char local_4fc [260];
   char local_3f8 [260];
@@ -34,16 +33,8 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
   uint local_1c;
   int local_18;
   int local_14;
-  byte bVar10;
-  
-  bVar10 = 0;
-  pcVar4 = g_CourseLastPthPath;
-  pcVar7 = local_1f0;
-  for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *(uint *)pcVar7 = *(uint *)pcVar4;
-    pcVar4 = pcVar4 + 4;
-    pcVar7 = pcVar7 + 4;
-  }
+
+  memcpy(local_1f0,g_CourseLastPthPath,0x104);
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demon Course system menu",0,0);

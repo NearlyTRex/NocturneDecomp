@@ -330,6 +330,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 99,
+      "match": "(CVector3f *)((int)(pCVar5 + 4) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar5 = (CVector3f *)((int)(pCVar5 + 4) + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 100,
       "match": "(uint *)((int)g_ModelPolygonData",

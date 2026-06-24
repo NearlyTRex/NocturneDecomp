@@ -517,12 +517,30 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 203,
+      "match": "(CDemonActor **)((int)(&this_ptr->morph + 1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar5 = *(CDemonActor **)((int)(&this_ptr->morph + 1) + (this_ptr->waypoint_index + 7) * 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 444,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar18),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 485,
+      "match": "(CDemonActor **)((int)(&this_ptr->morph + 1) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar21 + 7) * 4),0.2,999999.0,",
       "type": "pointer_cast"
     },
     {

@@ -178,7 +178,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
       }
     }
     else if (this_ptr->bat_ai_state == 3) {
-      pCVar5 = *(CDemonActor **)((int)(&this_ptr->morph + 1) + (this_ptr->waypoint_index + 7) * 4);
+      pCVar5 = (&this_ptr->way_point_0)[this_ptr->waypoint_index];
       if ((CLocation *)&local_b8 != &pCVar5->location) {
         local_b8 = (pCVar5->location).position.x;
         local_b4 = (pCVar5->location).position.y;
@@ -442,7 +442,7 @@ LAB_005e648e:
       (this_ptr->base).base.walk_step_speed = 10.0f * delta_time;
       core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0
                 ((CCharacter *)this_ptr,
-                 *(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar21 + 7) * 4),0.2,999999.0,
+                 (&this_ptr->way_point_0)[iVar21],0.2,999999.0,
                  &this_ptr->follow_result);
       switch(this_ptr->follow_result) {
       default:

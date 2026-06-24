@@ -336,6 +336,24 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 161,
+      "match": "(CVector3f *)((int)(pCVar7 + 0x17) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 0x17) + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 169,
+      "match": "(CVector3f *)((int)(pCVar8 + 0x17) +",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 0x17) + 8);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 301,
       "match": "(int *)((int)this_ptr_00",

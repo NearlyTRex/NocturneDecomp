@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 202,
+    "complexity_score": 132,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 132,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 454
   },
   "cross_references": [
@@ -258,6 +255,33 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(byte *)(iVar13 * 4 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pbVar14 = (byte *)(iVar13 * 4 + (int)this_ptr->pixel_data);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(byte *)(iVar15 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(uint)*(byte *)(iVar15 + (int)this_ptr->pixel_data);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 82,
       "match": "._0_2_",
@@ -274,6 +298,15 @@
       "severity": "mild",
       "text": "iVar2._2_2_ = this_ptr->boxes[box_index].avg_green;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(byte *)(iVar15 + 1 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar13 = (iVar2 >> 0x10) - (uint)*(byte *)(iVar15 + 1 + (int)this_ptr->pixel_data);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
@@ -294,6 +327,15 @@
       "type": "unknown_field"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(byte *)(iVar15 + 2 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar13 = (iVar3 >> 0x10) - (uint)*(byte *)(iVar15 + 2 + (int)this_ptr->pixel_data);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 92,
       "match": "._0_2_",
@@ -310,6 +352,15 @@
       "severity": "mild",
       "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_intensity;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(byte *)(iVar15 + 3 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar13 = (iVar4 >> 0x10) - (uint)*(byte *)(iVar15 + 3 + (int)this_ptr->pixel_data);",
+      "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
@@ -400,124 +451,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CColorQuantizer_computeBoxStatistics_FUN_00555090.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 26,
-          "line": 85,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 26,
-          "line": 89,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 26,
-          "line": 93,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 26,
-          "line": 97,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(byte *)(iVar13 * 4 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "pbVar14 = (byte *)(iVar13 * 4 + (int)this_ptr->pixel_data);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(byte *)(iVar15 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "(uint)*(byte *)(iVar15 + (int)this_ptr->pixel_data);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(byte *)(iVar15 + 1 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "uVar13 = (iVar2 >> 0x10) - (uint)*(byte *)(iVar15 + 1 + (int)this_ptr->pixel_data);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(byte *)(iVar15 + 2 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "uVar13 = (iVar3 >> 0x10) - (uint)*(byte *)(iVar15 + 2 + (int)this_ptr->pixel_data);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(byte *)(iVar15 + 3 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "uVar13 = (iVar4 >> 0x10) - (uint)*(byte *)(iVar15 + 3 + (int)this_ptr->pixel_data);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 85,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar12 = (int)uVar11 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 89,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar14 = (int)uVar13 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 93,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar14 = (int)uVar13 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    },
-    {
-      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 97,
-      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
-      "severity": "moderate",
-      "text": "uVar14 = (int)uVar13 >> 0x1f;",
-      "type": "static_shift_too_many_bits"
-    }
-  ]
+  "suspects": []
 }
