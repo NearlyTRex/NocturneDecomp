@@ -5,12 +5,16 @@
 # work BEFORE cmake has ever run, so it lives at the repo root and is
 # hand-maintained.
 #
-# Default preset is `exe-linux-asan` (matches what dbg.sh / build/exe-linux-asan
-# expects). Override via the first arg or the BUILD_PRESET env var:
+# Default preset is `exe-linux-asan` (32-bit ASan, the binary-matching target;
+# links a runnable exe, needs i386 multilib). Override via the first arg or the
+# BUILD_PRESET env var:
 #
-#   ./build.sh                     # build exe-linux-asan (default)
-#   ./build.sh exe-linux           # build the non-ASan exe
-#   ./build.sh check-linux         # syntax-check only
+#   ./build.sh                     # build exe-linux-asan (default, 32-bit)
+#   ./build.sh exe-linux           # build the non-ASan 32-bit exe
+#   ./build.sh check-linux         # syntax-check only (32-bit)
+#   ./build.sh exe-linux-asan-x86_64   # native 64-bit lane (no multilib; won't
+#                                      # link until pointer truncations are ported)
+#   ./build.sh check-linux-x86_64      # fast 64-bit syntax-check lane
 #   BUILD_PRESET=exe-linux ./build.sh
 #
 # Extra args after the preset get passed through to cmake --build:

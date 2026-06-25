@@ -87,15 +87,30 @@ sudo apt install cmake clang ninja-build pkg-config python3 \
                  libc6-dev-i386 libstdc++-dev:i386
 ```
 
-**Additional for `exe-linux` / `exe-linux-asan` (full link):** 32-bit development
-packages for SDL2, SDL2_ttf, and FFmpeg. The shims consume these to provide a
-cross-platform substrate for the decompiled game's Windows APIs.
+**Additional for `exe-linux` / `exe-linux-asan` (full link):** the shims consume
+SDL2, SDL2_ttf, and FFmpeg to provide a cross-platform substrate for the
+decompiled game's Windows APIs. The 32-bit build compiles these **from source**
+(`cmake/i386libs.cmake`, fetched/built at configure+build time) — do **not**
+install the `*-dev:i386` apt packages.
+
+> ⚠️ Do not `apt install libsdl2-dev:i386` (or the other `*-dev:i386` libs). On a
+> multiarch amd64 desktop, apt resolves the i386 `-dev` dependency chain by
+> **removing the amd64 desktop** (cinnamon/xorg/network-manager/clang-tidy). The
+> source-build path exists specifically to avoid this. See `cmake/i386libs.cmake`.
+
+Only the co-installable i386 **runtime** libs are needed — source-built SDL2
+`dlopen`s them at run time:
 
 ```sh
-sudo apt install libsdl2-dev:i386 libsdl2-ttf-dev:i386 \
-                 libavformat-dev:i386 libavcodec-dev:i386 \
-                 libavutil-dev:i386 libswscale-dev:i386
+sudo apt install libx11-6:i386 libxext6:i386 libxrandr2:i386 libxcursor1:i386 \
+                 libxi6:i386 libxfixes3:i386 libxss1:i386 libxkbcommon0:i386 \
+                 libgl1:i386 libegl1:i386 libdrm2:i386 \
+                 libwayland-client0:i386 libwayland-egl1:i386 libwayland-cursor0:i386 \
+                 libpulse0:i386 libasound2:i386
 ```
+
+First `exe-linux*` configure clones and builds SDL2/SDL2_ttf/FFmpeg (a few
+minutes, FFmpeg dominates); they're cached for subsequent builds.
 
 **Additional for `exe-linux-asan` (readable sanitizer reports):** `llvm` provides
 `llvm-symbolizer`, which turns raw addresses in ASan/UBSan output into

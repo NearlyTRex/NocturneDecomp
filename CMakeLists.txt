@@ -54,15 +54,27 @@ set(NOCTURNE_CHECKS_DIR   "${NOCTURNE_PSEUDOCODE_DIR}/checks")
 
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
 
-# SDL2 — consumed by the DirectDraw/DirectSound/kernel32 shims. Required only
-# when linking the exe; the check-linux preset skips the shims. pkg-config is
-# used because it handles the Ubuntu multi-arch i386 sysroot cleanly.
+# SDL2 / SDL2_ttf / FFmpeg — consumed by the DirectDraw/DirectSound/kernel32
+# and mci_video shims. Required only when linking the exe; the check-linux
+# preset skips the shims.
+#
+# 32-bit (i686) lane: build these from source (cmake/i386libs.cmake). The
+# Ubuntu `*-dev:i386` packages drag in a conflicting i386 -dev chain that apt
+# resolves by removing the amd64 desktop, so we avoid them entirely. Source
+# builds set the same SDL2_*/SDL2TTF_*/FFMPEG_* variables pkg-config did.
+#
+# Native 64-bit (x86_64) experiment lane: the amd64 -dev packages are not
+# multi-arch-conflicting, so pkg-config off the system is fine there.
+set(NOCTURNE_FFMPEG_DEP "")
 if(NOCTURNE_BUILD_EXE)
-    find_package(PkgConfig REQUIRED)
-    pkg_check_modules(SDL2    REQUIRED sdl2)
-    pkg_check_modules(SDL2TTF REQUIRED SDL2_ttf)
-    # FFmpeg libs consumed by the mci_video shim (video playback).
-    pkg_check_modules(FFMPEG REQUIRED libavformat libavcodec libavutil libswscale)
+    if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
+        find_package(PkgConfig REQUIRED)
+        pkg_check_modules(SDL2    REQUIRED sdl2)
+        pkg_check_modules(SDL2TTF REQUIRED SDL2_ttf)
+        pkg_check_modules(FFMPEG REQUIRED libavformat libavcodec libavutil libswscale)
+    else()
+        include("${CMAKE_SOURCE_DIR}/cmake/i386libs.cmake")
+    endif()
 endif()
 
 # -----------------------------------------------------------------------------
@@ -134,6 +146,17 @@ set(NOCTURNE_COMMON_WARNINGS
     -Wtautological-compare
 )
 
+# Target arch flag. The decomp is natively 32-bit (-m32, matches the original
+# binary's pointer width / struct layout), selected by the linux-i686 toolchain.
+# The linux-x86_64 toolchain (CMAKE_SYSTEM_PROCESSOR x86_64) builds native 64-bit
+# with no multilib — leave this empty there so no -m32 leaks onto the command
+# line. Used by both the syntax-check command and the exe target options below.
+if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
+    set(NOCTURNE_ARCH_FLAGS "")
+else()
+    set(NOCTURNE_ARCH_FLAGS -m32)
+endif()
+
 set(NOCTURNE_INCLUDE_FLAGS
     -I "${NOCTURNE_INCLUDE_DIR}"
     -I "${NOCTURNE_SHIMS_DIR}"
@@ -164,7 +187,7 @@ if(NOCTURNE_BUILD_CHECK)
             add_custom_command(
                 OUTPUT  "${_stamp}"
                 COMMAND "${CMAKE_CXX_COMPILER}"
-                        -m32 -fsyntax-only -std=gnu++11
+                        ${NOCTURNE_ARCH_FLAGS} -fsyntax-only -std=gnu++11
                         -x c++
                         ${NOCTURNE_COMMON_WARNINGS}
                         ${NOCTURNE_INCLUDE_FLAGS}
@@ -218,7 +241,7 @@ if(NOCTURNE_BUILD_EXE)
             target_include_directories(nocturne_${_module} PRIVATE
                 "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
             target_compile_options(nocturne_${_module} PRIVATE
-                -m32 ${NOCTURNE_COMMON_WARNINGS}
+                ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_COMMON_WARNINGS}
                 ${NOCTURNE_SANITIZE_FLAGS})
             target_compile_features(nocturne_${_module} PRIVATE cxx_std_17)
 
@@ -266,10 +289,16 @@ if(NOCTURNE_BUILD_EXE)
         "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}"
         ${SDL2_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIRS} ${FFMPEG_INCLUDE_DIRS})
     target_compile_options(nocturne_shims PRIVATE
-        -m32 ${NOCTURNE_COMMON_WARNINGS}
+        ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_COMMON_WARNINGS}
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_compile_features(nocturne_shims PRIVATE cxx_std_17)
+
+    # FFmpeg (i686 lane) is built by ExternalProject at build time; its headers
+    # must exist before the shim TU that includes them compiles.
+    if(NOCTURNE_FFMPEG_DEP)
+        add_dependencies(nocturne_shims ${NOCTURNE_FFMPEG_DEP})
+    endif()
 
     add_executable(nocturne)
     target_compile_features(nocturne PRIVATE cxx_std_17)
@@ -277,10 +306,10 @@ if(NOCTURNE_BUILD_EXE)
         "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}"
         ${SDL2_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIRS} ${FFMPEG_INCLUDE_DIRS})
     target_compile_options(nocturne PRIVATE
-        -m32 ${NOCTURNE_COMMON_WARNINGS}
+        ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_COMMON_WARNINGS}
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
-    target_link_options(nocturne PRIVATE -m32 ${NOCTURNE_SANITIZE_FLAGS})
+    target_link_options(nocturne PRIVATE ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_SANITIZE_FLAGS})
 
     foreach(_lib IN LISTS _module_libs)
         target_link_libraries(nocturne PRIVATE ${_lib})

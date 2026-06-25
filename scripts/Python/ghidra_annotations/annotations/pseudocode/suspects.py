@@ -73,6 +73,7 @@ SUSPECT_SEVERITY = {
     'suspect_float': 'mild',
     'nonstandard_int': 'mild',
     'pointer_cast': 'moderate',
+    'pointer_truncation': 'moderate',
     'displaced_global_access': 'moderate',
     'wrong_global': 'moderate',
     'suspicious_cast': 'moderate',
@@ -876,6 +877,269 @@ def identify_suspicious_cast_suspects(decompiled_code, global_interval_map=None)
                 'text': stripped,
                 'description': desc,
                 'severity': SUSPECT_SEVERITY.get('suspicious_cast', 'moderate'),
+            })
+
+    return suspects
+
+
+# Narrowing casts: target types strictly smaller than a 64-bit pointer (8 bytes
+# on the LP64 native build). Casting a pointer to any of these truncates the
+# high 32 bits — fine on the 32-bit matching build, a hard `cast from pointer to
+# smaller type loses information` error at 64-bit. Deliberately EXCLUDES the
+# pointer-width types (`long`/`ulong`/`longlong`/`size_t`/`intptr_t`/
+# `uintptr_t`/`undefined8`), which are the correct destinations for a pointer
+# value and the target of the eventual fix.
+_PTR_TRUNC_NARROW_TYPES = frozenset({
+    'int', 'uint', 'short', 'ushort', 'char', 'uchar', 'byte', 'bool',
+    'undefined1', 'undefined2', 'undefined4',
+    'int3', 'uint3', 'byte2', 'byte3',
+})
+# `(TYPE)` immediately followed by the operand. Operand capture starts after.
+_PTR_TRUNC_CAST_RE = re.compile(
+    r'\((' + '|'.join(sorted(_PTR_TRUNC_NARROW_TYPES, key=len, reverse=True)) +
+    r')\)\s*')
+# An access-path operand: optional `&`, a root identifier, then any number of
+# `->field` / `.field` / `[..]` steps. Stops at the first operator / paren /
+# whitespace so we capture exactly one operand.
+_PTR_TRUNC_OPERAND_RE = re.compile(
+    r'(&)?\s*([A-Za-z_]\w*)((?:\s*(?:->|\.)\s*[A-Za-z_]\w*|\s*\[[^\]]*\])*)')
+_PTR_TRUNC_LAST_STEP_RE = re.compile(
+    r'(?:->|\.)\s*([A-Za-z_]\w*)\s*(\[[^\]]*\])?\s*$')
+
+
+def _ptr_trunc_decl_pointer_vars(code):
+    """Identifiers declared as pointers in this function's text.
+
+    Reads the `// Signature:` params and local `T *name;` declarations,
+    PRESERVING pointer-ness (unlike `_sfo_resolve_var_types`, which strips the
+    `*` to map vars to struct names for field-walking). Returns (ptr_vars,
+    var_struct) where ptr_vars is the set of pointer identifiers and var_struct
+    maps identifier -> declared base type name (for struct field resolution).
+    """
+    ptr_vars = set()
+    var_struct = {}
+    lines = code.split('\n')
+    for line in lines:
+        m = _SFO_SIG_RE.search(line)
+        if not m:
+            continue
+        for part in m.group(1).split(','):
+            part = part.strip()
+            pm = _SFO_PTR_PARAM_RE.match(part)
+            if pm:
+                ptr_vars.add(pm.group(2))
+                var_struct[pm.group(2)] = pm.group(1)
+            else:
+                vm = _SFO_VAL_PARAM_RE.match(part)
+                if vm:
+                    var_struct[vm.group(2)] = vm.group(1)
+        break
+    for line in lines:
+        dm = _SFO_DECL_RE.match(line)
+        if dm and dm.group(1) not in _SFO_NON_TYPE_KEYWORDS:
+            ptr_vars.add(dm.group(2))
+            var_struct[dm.group(2)] = dm.group(1)
+            continue
+        vm = _SFO_VALDECL_RE.match(line)
+        if vm and vm.group(1) not in _SFO_NON_TYPE_KEYWORDS:
+            var_struct.setdefault(vm.group(2), vm.group(1))
+    return ptr_vars, var_struct
+
+
+def _extract_balanced_parens(s):
+    """Given `s` starting with '(', return the balanced '(...)' substring.
+
+    Returns None if the parens never balance within `s` (truncated line).
+    """
+    if not s or s[0] != '(':
+        return None
+    depth = 0
+    for i, ch in enumerate(s):
+        if ch == '(':
+            depth += 1
+        elif ch == ')':
+            depth -= 1
+            if depth == 0:
+                return s[:i + 1]
+    return None
+
+
+def _ptr_trunc_field(struct_name, field, layout):
+    """Look up a field dict in the layout map, or None."""
+    for fl in (layout or {}).get(struct_name, ()):
+        if fl.get('name') == field:
+            return fl
+    return None
+
+
+def _ptr_trunc_operand_is_pointer(amp, root, steps, ptr_vars, var_struct,
+                                  global_ptr, global_arr_ptr, layout):
+    """Decide whether a narrowing-cast operand holds a pointer value.
+
+    amp           '&' if the operand is address-of (always a pointer), else ''.
+    root          leading identifier.
+    steps         trailing '->f'/'.f'/'[..]' text (may be empty).
+    ptr_vars      pointer locals/params.
+    var_struct    identifier -> declared base type name.
+    global_ptr    set of pointer-typed global names.
+    global_arr_ptr set of global names that are arrays-of-pointer.
+    layout        struct field layout map (with 'is_ptr'/'stars'/'n').
+
+    Conservative: returns False ("don't know") rather than guessing, so the
+    64-bit compiler stays the exhaustive backstop and false positives stay low.
+    """
+    if amp:
+        # &EXPR is an address. `&arr[i]`, `&x->f` etc. are all pointers; a
+        # trailing field/element access of an address is still address-typed.
+        return True
+
+    has_subscript = steps.rstrip().endswith(']')
+    last = _PTR_TRUNC_LAST_STEP_RE.search(steps) if steps else None
+
+    if not steps:
+        # Bare identifier.
+        if root in global_arr_ptr or root in global_ptr:
+            # `(int)g_ptr` truncates; `(int)g_ptrArray` (array decay) also.
+            return True
+        return root in ptr_vars
+
+    if last is None:
+        # Steps are only subscripts on the root, e.g. `g_PtrArray[i]`.
+        if has_subscript:
+            if root in global_arr_ptr:
+                return True            # element of void* arr[] is a pointer
+            # element of a pointer-to-scalar (`int *p; p[i]`) is NOT a pointer
+            return False
+        return root in ptr_vars or root in global_ptr
+
+    # Path ends in `->field` / `.field`, optionally with a trailing `[i]`.
+    fname = last.group(1)
+    field_subscript = last.group(2) is not None
+    # Resolve the struct type the final field lives in: walk var_struct ->
+    # layout across the intermediate steps. Reuse resolve_access_path_type on
+    # the path WITHOUT the final field to get the owning struct.
+    prefix = steps[:last.start()]
+    owner = None
+    if not prefix:
+        owner = var_struct.get(root)
+    else:
+        owner = resolve_access_path_type(root + prefix, var_struct, layout)
+    fld = _ptr_trunc_field(owner, fname, layout) if owner else None
+    if not fld or not fld.get('is_ptr'):
+        return False
+    if field_subscript:
+        # `field[i]`: element is a pointer only if the field is an array of
+        # pointers (`T *f[N]`) or a multi-level pointer (`T **f`).
+        return bool(fld.get('n')) or fld.get('stars', 0) >= 2
+    return True
+
+
+def identify_pointer_truncation_suspects(decompiled_code, func_globals=None,
+                                         global_interval_map=None,
+                                         struct_layout_map=None):
+    """Detect pointer values truncated by a cast to a sub-pointer-width int.
+
+    Catches the broad `(int)PTR` / `(uint)PTR` family that the narrow
+    `pointer_cast` / `suspicious_cast` patterns miss: pointer differences
+    (`(int)a - (int)b`), pointer-as-int offsets added to a separately-cast base
+    (`(char*)p + (int)q->field`), address printing (`(uint)this`), pointers
+    stored in int globals (`g = (int)p`), and pointer comparisons
+    (`0 < (int)p`). These compile and run correctly on the 32-bit matching
+    build but are hard errors at 64-bit (`cast from pointer to smaller type
+    loses information`) — the chief obstacle to a multilib-free build.
+
+    Pointer-ness is determined from declared types (params/locals preserving
+    `*`, global types, and struct field layout), NOT from Hungarian naming —
+    so genuinely mistyped operands like `(int)frame_index` (a pointer despite
+    the name) are still caught, and integer locals that merely look pointerish
+    are not falsely flagged. The 64-bit compiler remains the exhaustive oracle;
+    this detector surfaces the same sites in the annotation/review pipeline.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+        func_globals: Unused; kept for caller signature symmetry.
+        global_interval_map: (start, end, name, type) tuples — source of global
+            pointer-ness.
+        struct_layout_map: Per-struct field layout from build_struct_layout_map
+            (must carry the 'is_ptr'/'stars'/'n' keys).
+
+    Returns:
+        List of suspect dicts (type 'pointer_truncation').
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+
+    layout = struct_layout_map or {}
+    ptr_vars, var_struct = _ptr_trunc_decl_pointer_vars(decompiled_code)
+
+    global_ptr = set()
+    global_arr_ptr = set()
+    for _start, _end, name, gtype in (global_interval_map or ()):
+        if gtype and '*' in gtype:
+            global_ptr.add(name)
+            if '[' in gtype:
+                global_arr_ptr.add(name)
+
+    def operand_is_ptr(amp, root, steps):
+        return _ptr_trunc_operand_is_pointer(
+            amp, root, steps, ptr_vars, var_struct,
+            global_ptr, global_arr_ptr, layout)
+
+    seen = set()
+    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+        stripped = line.strip()
+        if stripped.startswith('//') or stripped.startswith('#') or stripped.startswith('/*'):
+            continue
+        for cm in _PTR_TRUNC_CAST_RE.finditer(line):
+            rest = line[cm.end():]
+            lead = len(rest) - len(rest.lstrip())
+            if rest[lead:lead + 1] == '(':
+                # Parenthesized operand `(int)(EXPR)` — Watcom pointer
+                # arithmetic, e.g. `(int)(puVar5 + 2)` or `(int)(a - ptr)`.
+                # Test the FIRST access-path inside the parens; for pointer
+                # arithmetic that leading term is the pointer. Plain numeric
+                # exprs `(int)(uVar1 + 3 & ...)` lead with a non-pointer and
+                # are left alone.
+                expr = _extract_balanced_parens(rest[lead:])
+                if expr is None:
+                    continue
+                inner = expr[1:-1].strip()
+                im = _PTR_TRUNC_OPERAND_RE.match(inner)
+                if not im or not operand_is_ptr(
+                        im.group(1) or '', im.group(2), im.group(3) or ''):
+                    continue
+                operand = expr
+            else:
+                om = _PTR_TRUNC_OPERAND_RE.match(line, cm.end())
+                # A cast-of-a-cast (`(int)(uint)x`) has no identifier where the
+                # operand regex expects one; `om` won't match, so we skip safely.
+                if not om:
+                    continue
+                amp = om.group(1) or ''
+                root = om.group(2)
+                steps = om.group(3) or ''
+                if not operand_is_ptr(amp, root, steps):
+                    continue
+                operand = (amp + root + steps).strip()
+            cast_type = cm.group(1)
+            key = (line_no, cm.start())
+            if key in seen:
+                continue
+            seen.add(key)
+            suspects.append({
+                'line': line_no,
+                'type': 'pointer_truncation',
+                'match': '(%s)%s' % (cast_type, operand),
+                'text': stripped,
+                'description': (
+                    'Pointer value `%s` truncated by cast to `%s` (sub-pointer '
+                    'width) — correct on the 32-bit matching build, a hard '
+                    '`cast from pointer to smaller type` error at 64-bit. If the '
+                    'value is used as an integer (delta, address print, hash), '
+                    'rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.'
+                    % (operand, cast_type)),
+                'severity': SUSPECT_SEVERITY.get('pointer_truncation', 'moderate'),
             })
 
     return suspects
@@ -6211,6 +6475,7 @@ def build_struct_layout_map(data_types_path):
                 # 'CPodDirectoryEntry' from 'CPodDirectoryEntry *' /
                 # 'SNetworkAddr' from 'SNetworkAddr' / 'char' from 'char[20]'.
                 base = re.sub(r'\[.*$', '', ftype)
+                stars = base.count('*')
                 base = base.replace('*', '').strip()
                 base = re.sub(r'^(?:struct|union|enum)\s+', '', base)
                 parsed.append({
@@ -6219,6 +6484,11 @@ def build_struct_layout_map(data_types_path):
                     'len': flen,
                     'n': int(dim.group(1)) if dim else None,
                     'type': base,
+                    # Pointer-ness preserved for the pointer_truncation detector
+                    # (the 'type' base above deliberately strips '*' for the
+                    # struct-walk field resolvers, which lose this signal).
+                    'stars': stars,
+                    'is_ptr': stars > 0,
                 })
             parsed.sort(key=lambda fl: fl['offset'])
             layout[name] = parsed
@@ -6749,6 +7019,8 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
         code, func_globals, global_interval_map))
     found.extend(identify_suspicious_cast_suspects(
         code, global_interval_map))
+    found.extend(identify_pointer_truncation_suspects(
+        code, func_globals, global_interval_map, struct_layout_map))
     found.extend(identify_raw_address_constant_suspects(
         code, address_interval_map))
     found.extend(identify_raw_address_in_local(code))

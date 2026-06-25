@@ -95,6 +95,8 @@ def run_detectors(susp, code, struct_layout_map=None):
     found.extend(susp.identify_suspect_lines(code))
     found.extend(susp.identify_wrong_global_suspects(code))
     found.extend(susp.identify_suspicious_cast_suspects(code))
+    found.extend(susp.identify_pointer_truncation_suspects(
+        code, None, None, struct_layout_map))
     found.extend(susp.identify_raw_address_constant_suspects(code))
     found.extend(susp.identify_raw_address_in_local(code))
     found.extend(susp.identify_format_string_mismatch(code))

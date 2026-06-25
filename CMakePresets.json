@@ -36,11 +36,41 @@
         "NOCTURNE_ASAN": "ON",
         "CMAKE_BUILD_TYPE": "Debug"
       }
+    },
+    {
+      "name": "check-linux-x86_64",
+      "displayName": "Syntax check (Linux native 64-bit)",
+      "description": "Per-file -fsyntax-only verification, native x86_64 (no multilib).",
+      "inherits": "check-linux",
+      "binaryDir": "${sourceDir}/build/check-linux-x86_64",
+      "toolchainFile": "${sourceDir}/cmake/toolchains/linux-x86_64.cmake"
+    },
+    {
+      "name": "exe-linux-x86_64",
+      "displayName": "Full exe (Linux native 64-bit)",
+      "description": "Compile and link nocturne, native x86_64 (no multilib).",
+      "inherits": "exe-linux",
+      "binaryDir": "${sourceDir}/build/exe-linux-x86_64",
+      "toolchainFile": "${sourceDir}/cmake/toolchains/linux-x86_64.cmake"
+    },
+    {
+      "name": "exe-linux-asan-x86_64",
+      "displayName": "Full exe (Linux native 64-bit) with ASan + UBSan",
+      "description": "Compile and link nocturne with AddressSanitizer and UBSan, native x86_64 (no multilib). Debug build type adds -g for gdb usability.",
+      "inherits": "exe-linux-x86_64",
+      "binaryDir": "${sourceDir}/build/exe-linux-asan-x86_64",
+      "cacheVariables": {
+        "NOCTURNE_ASAN": "ON",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
     }
   ],
   "buildPresets": [
-    { "name": "check-linux",     "configurePreset": "check-linux",     "targets": ["nocturne_check"] },
-    { "name": "exe-linux",       "configurePreset": "exe-linux",       "targets": ["nocturne"] },
-    { "name": "exe-linux-asan",  "configurePreset": "exe-linux-asan",  "targets": ["nocturne"] }
+    { "name": "check-linux",            "configurePreset": "check-linux",            "targets": ["nocturne_check"] },
+    { "name": "exe-linux",              "configurePreset": "exe-linux",              "targets": ["nocturne"] },
+    { "name": "exe-linux-asan",         "configurePreset": "exe-linux-asan",         "targets": ["nocturne"] },
+    { "name": "check-linux-x86_64",     "configurePreset": "check-linux-x86_64",     "targets": ["nocturne_check"] },
+    { "name": "exe-linux-x86_64",       "configurePreset": "exe-linux-x86_64",       "targets": ["nocturne"] },
+    { "name": "exe-linux-asan-x86_64",  "configurePreset": "exe-linux-asan-x86_64",  "targets": ["nocturne"] }
   ]
 }
