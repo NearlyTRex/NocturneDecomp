@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 542
+// Structs : 543
 
 #include "nocturne.h"
 
@@ -8755,6 +8755,18 @@ static_assert(__builtin_offsetof(SLodSamplePoint, distance_to_triangle) == 16,
               "offsetof(SLodSamplePoint, distance_to_triangle) != 16");
 static_assert(__builtin_offsetof(SLodSamplePoint, weight) == 24,
               "offsetof(SLodSamplePoint, weight) != 24");
+
+// ---- SLodUvAccum (16 bytes) ----
+static_assert(sizeof(SLodUvAccum) == 16,
+              "sizeof(SLodUvAccum) != 16");
+static_assert(__builtin_offsetof(SLodUvAccum, attr_id) == 0,
+              "offsetof(SLodUvAccum, attr_id) != 0");
+static_assert(__builtin_offsetof(SLodUvAccum, count) == 4,
+              "offsetof(SLodUvAccum, count) != 4");
+static_assert(__builtin_offsetof(SLodUvAccum, u) == 8,
+              "offsetof(SLodUvAccum, u) != 8");
+static_assert(__builtin_offsetof(SLodUvAccum, v) == 12,
+              "offsetof(SLodUvAccum, v) != 12");
 
 // ---- SMRGLAnimatedTexture (28 bytes) ----
 static_assert(sizeof(SMRGLAnimatedTexture) == 28,
