@@ -257,7 +257,7 @@ CDemonTriangle * __cdecl CDemonTriangle::dtor(CDemonTriangle *this_ptr,uint flag
 
 // Original: core_dmodel.cpp_CDemonTriangle_copy_FUN_0047ef10
 // Address: 0047ef10
-int __cdecl CDemonTriangle::copy(CDemonTriangle *this_ptr,CDemonTriangle *other);
+void __cdecl CDemonTriangle::copy(CDemonTriangle *this_ptr,CDemonTriangle *other);
 
 // Original: core_dmodel.cpp_SRA4HQPoint_copy_FUN_0047ef60
 // Address: 0047ef60

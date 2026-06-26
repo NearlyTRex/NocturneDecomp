@@ -122,7 +122,7 @@ void __cdecl core_game_cpp_drawHealthBar_FUN_004d7fa0(int x1,int y1,int x2,int y
 void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004d85a0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setFudgeTarget_FUN_004d8730(CGame *this_ptr,CVector3f *fudge_target,float fudge_step);
-int __cdecl core_game_cpp_CGame_processFudge_FUN_004d8750(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_processFudge_FUN_004d8750(CGame *this_ptr);
 void __cdecl core_game_cpp_drawCreditsLine_FUN_004d8890(char *text_string);
 void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004d8910(EInputCodeType key_code,char *action_name);
 void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame *this_ptr);

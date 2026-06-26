@@ -125,7 +125,7 @@ void __cdecl engine_2d_c_fillRectWithBorder_FUN_00403200(int x1,int y1,int x2,in
 void __cdecl engine_2d_c_clearInputAndWait_FUN_00403260(void);
 int __cdecl engine_2d_c_getInputWithPrompt_FUN_004032c0(char *buffer,int max_length,int x,int y,char *prompt);
 void __cdecl engine_2d_c_setSolidColor_FUN_004033a0(int red_component,int green_component,int blue_component);
-int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(int width,int height,int bits_per_pixel,int stride,void *frame_buffer);
+int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(void *frame_buffer,int width,int height,int bits_per_pixel,int stride);
 int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_00403650(void);
 void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00403670(void);
 void * __cdecl engine_3d_c_oldFunction1_FUN_00403740(SMRGLHeaderPrimitive *prim);

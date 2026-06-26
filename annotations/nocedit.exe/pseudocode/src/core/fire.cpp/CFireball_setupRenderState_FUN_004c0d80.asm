@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004c0d80(CFireball *this_ptr)
+; void __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004c0d80(CFireball *this_ptr)
 ;
 ; Parameters:
 ; CFireball *      Stack[0x4]:4   this_ptr

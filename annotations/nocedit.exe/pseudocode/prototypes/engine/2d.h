@@ -297,7 +297,7 @@ void __cdecl setSolidColor(int red_component,int green_component,int blue_compon
 
 // Original: engine_2d.c_mapFrameBuffer_FUN_00403430
 // Address: 00403430
-int __cdecl mapFrameBuffer(int width,int height,int bits_per_pixel,int stride,void *frame_buffer);
+int __cdecl mapFrameBuffer(void *frame_buffer,int width,int height,int bits_per_pixel,int stride);
 
 // Original: engine_2d.c_mapTextureFrameBuffer_FUN_00403650
 // Address: 00403650

@@ -99,7 +99,7 @@ section .text
     PUSH 0x2d62ea8                      ; 004c71dd | g_FireballPool
     MOV EBX,0x2d62ea8                   ; 004c71e2 | g_FireballPool
     CALL core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80 ; 004c71e7
-        ;   XREF to: 004c0d80 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80(CFireball * this_ptr)
+        ;   XREF to: 004c0d80 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80(CFireball * this_ptr)
     ADD ESP,0x4                         ; 004c71ec
     LEA ESI,[EBX + 0x2700]              ; 004c71ef | g_RockAllocIndex
     FLD float ptr [EBX + 0x18]          ; 004c71f5 | g_FireballPool[0].base.lifetime_remaining | g_FireballPool[1].base.lifetime_remaining
@@ -179,7 +179,7 @@ section .text
         ;   Label: LAB_004c729d
     MOV EBX,0x2d141ec                   ; 004c72a2 | g_SmokeParticlePool
     CALL core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 ; 004c72a7
-        ;   XREF to: 004bf1f0 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0(CSmokeParticle * this_ptr)
+        ;   XREF to: 004bf1f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0(CSmokeParticle * this_ptr)
     ADD ESP,0x4                         ; 004c72ac
     LEA ESI,[EBX + 0x16000]             ; 004c72af | g_BulletHoleActiveCount
     MOV EAX,dword ptr [EBX]             ; 004c72b5 | g_SmokeParticlePool | g_SmokeParticlePool[1].active
@@ -235,7 +235,7 @@ section .text
         ;   Label: LAB_004c7320
     MOV EBX,0x2d53e00                   ; 004c7325 | g_SparkPool
     CALL core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 ; 004c732a
-        ;   XREF to: 004c0300 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CSpark_setupRenderState_FUN_004c0300(CSpark * this_ptr)
+        ;   XREF to: 004c0300 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSpark_setupRenderState_FUN_004c0300(CSpark * this_ptr)
     ADD ESP,0x4                         ; 004c732f
     LEA ESI,[EBX + 0x4c00]              ; 004c7332 | g_MuzzleFlashAllocIndex
     FLD float ptr [EBX + 0x18]          ; 004c7338 | g_SparkPool[0].base.lifetime_remaining | g_SparkPool[1].base.lifetime_remaining

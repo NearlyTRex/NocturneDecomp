@@ -61,7 +61,7 @@ void __cdecl CGame::setFudgeTarget(CGame *this_ptr,CVector3f *fudge_target,float
 
 // Original: core_game.cpp_CGame_processFudge_FUN_004d8750
 // Address: 004d8750
-int __cdecl CGame::processFudge(CGame *this_ptr);
+void __cdecl CGame::processFudge(CGame *this_ptr);
 
 // Original: core_game.cpp_drawCreditsLine_FUN_004d8890
 // Address: 004d8890

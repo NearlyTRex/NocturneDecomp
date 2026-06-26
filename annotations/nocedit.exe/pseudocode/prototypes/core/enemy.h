@@ -73,7 +73,7 @@ int __cdecl CEnemy::countSameClassAttackingHero(CEnemy *this_ptr);
 
 // Original: core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
 // Address: 004aa170
-int __cdecl CEnemy::getPropertyList(CEnemy *this_ptr,CActorPropertyList *property_list);
+void __cdecl CEnemy::getPropertyList(CEnemy *this_ptr,CActorPropertyList *property_list);
 
 // Original: core_enemy.cpp_CEnemy_randomize_FUN_004aa250
 // Address: 004aa250

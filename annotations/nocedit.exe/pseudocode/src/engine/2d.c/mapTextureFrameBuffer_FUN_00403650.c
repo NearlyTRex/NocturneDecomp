@@ -12,7 +12,7 @@ int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_00403650(void)
   int iVar1;
   
   iVar1 = engine_2d_c_mapFrameBuffer_FUN_00403430
-                    ((int)g_CurrentTextureData,g_CurrentTextureDimension,g_CurrentTextureDimension,8
-                     ,(void *)g_CurrentTextureDimension);
+                    (g_CurrentTextureData,g_CurrentTextureDimension,g_CurrentTextureDimension,8,
+                     g_CurrentTextureDimension);
   return iVar1;
 }

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 63,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 27,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 48,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 192
   },
   "cross_references": [
@@ -45,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CSpark_setupRenderState_FUN_004c0300",
-    "signature": "int __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)"
+    "signature": "void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)"
   },
   "function_calls": [
     {
@@ -403,14 +401,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Pointer value `pCVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
-      "match": "(int)pCVar1",
-      "severity": "moderate",
-      "text": "return (int)pCVar1;",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

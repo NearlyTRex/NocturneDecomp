@@ -25,7 +25,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 00424b16
     PUSH ECX                            ; 00424b1a
     CALL core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170 ; 00424b1b
-        ;   XREF to: 004aa170 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy * this_ptr, CActorPropertyList * property_list)
+        ;   XREF to: 004aa170 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 00424b20
     MOV EAX,dword ptr [ESP + 0x8]       ; 00424b23
     PUSH 0x0                            ; 00424b27

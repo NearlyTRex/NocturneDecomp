@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6352 (98.4%)
-Functions with suspects: 102 (1.6%)
+Clean functions: 6385 (98.9%)
+Functions with suspects: 69 (1.1%)
 
-Total suspect patterns: 220
+Total suspect patterns: 182
 Average suspects per function: 0.03
 
-Virtual files: 214 total, 166 at 100%, 209 at 90%+
+Virtual files: 214 total, 179 at 100%, 210 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -28,7 +28,7 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_truncation        181
+  pointer_truncation        143
   static_integer_division   16
   static_null_pointer_redundant_check 8
   static_signed_char_misuse 5
@@ -90,11 +90,11 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00419000: core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000 (4 lines)
   00419f50: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_00419f50 (4 lines)
   0041a040: core_bodypart.cpp_CBodyPart_getCarrier_FUN_0041a040 (4 lines)
-  ... and 6302 more
+  ... and 6335 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
-  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3372, suspects: 3, lines: 3337)
+  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3362, suspects: 2, lines: 3337)
   004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2163, suspects: 2, lines: 2138)
   00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 1852, suspects: 0, lines: 1852)
   004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1728, suspects: 0, lines: 1728)
@@ -128,18 +128,18 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_truncation (102 functions):
+  pointer_truncation (69 functions):
     00401d80: engine_2d.c_wrapTextToWidth_FUN_00401d80
-    00403430: engine_2d.c_mapFrameBuffer_FUN_00403430
-    00403650: engine_2d.c_mapTextureFrameBuffer_FUN_00403650
     00409470: core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
     0040ac80: core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-    004204f0: core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
     00431410: cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
     00431d00: cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
     00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
     00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
-    ... and 92 more
+    004326a0: cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
+    00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    0043c320: core_cloth.cpp_CClothList_render_FUN_0043c320
+    ... and 59 more
 
   static_integer_division (0 functions):
 

@@ -271,7 +271,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 004bf77e | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EAX                            ; 004bf783 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110 ; 004bf784
-        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
+        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 004bf789
     PUSH EBP                            ; 004bf78c
     MOV EAX,[0x00823a74]                ; 004bf78d | g_CurrentSceneCamera

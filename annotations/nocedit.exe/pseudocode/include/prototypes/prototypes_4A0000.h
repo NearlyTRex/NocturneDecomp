@@ -191,7 +191,7 @@ int __cdecl core_enemy_cpp_CEnemy_updatePatrol_FUN_004a9fd0(CEnemy *this_ptr,flo
 void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_004aa030(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_004aa0c0(CEnemy *this_ptr,CDemonActor *lost_actor);
 int __cdecl core_enemy_cpp_CEnemy_countSameClassAttackingHero_FUN_004aa0f0(CEnemy *this_ptr);
-int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy *this_ptr,CActorPropertyList *property_list);
+void __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_enemy_cpp_CEnemy_randomize_FUN_004aa250(CEnemy *this_ptr);
 void __cdecl core_event_cpp_staticInit_FUN_004aa260(void);
 int __cdecl core_event_cpp_setEventError_FUN_004aa270(char *source_file,int source_line,char *error_message);

@@ -2,11 +2,11 @@
 // Address: 004aa170
 // Address Range: [[004aa170, 004aa24f]]
 // Convention: __cdecl
-// Signature: int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy *this_ptr,CActorPropertyList *property_list)
+// Signature: void __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy *this_ptr,CActorPropertyList *property_list)
 
 #include "nocturne.h"
 
-int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy *this_ptr,CActorPropertyList *property_list)
+void __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy *this_ptr,CActorPropertyList *property_list)
 
 {
   CActorProperty *pCVar1;
@@ -30,8 +30,8 @@ int __cdecl core_enemy_cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy *this_ptr,
   core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0
             (property_list,"Guard distance",&this_ptr->guard_distance,1.0,400.0,
              (CActorPropertyValidatorFunc *)0x0);
-  pCVar1 = core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
-                     (property_list,"Victim height",&this_ptr->victim_height,
-                      (CActorPropertyValidatorFunc *)0x0);
-  return (int)pCVar1;
+  core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160
+            (property_list,"Victim height",&this_ptr->victim_height,
+             (CActorPropertyValidatorFunc *)0x0);
+  return;
 }

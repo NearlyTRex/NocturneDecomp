@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 32,
+    "complexity_score": 17,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 86
   },
   "cross_references": [
@@ -89,7 +87,7 @@
     ],
     "convention": "__stack3_esi",
     "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0",
-    "signature": "CVector3i * __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr)"
+    "signature": "int __stack3_esi core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr)"
   },
   "function_calls": [],
   "globals": [
@@ -329,14 +327,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Pointer value `pCVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 18,
-      "match": "(int)pCVar1",
-      "severity": "moderate",
-      "text": "output_ptr->z = (int)pCVar1;",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

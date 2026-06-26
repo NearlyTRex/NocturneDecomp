@@ -144,8 +144,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
       }
     }
     else {
-      local_18 = (CVector3f *)(this_ptr->course).len;
-      local_2e8 = 1.0 / (float)(int)local_18;
+      local_2e8 = 1.0 / (float)(this_ptr->course).len;
     }
     iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
     if (iVar3 != 0) {

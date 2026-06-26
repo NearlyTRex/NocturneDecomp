@@ -2,13 +2,13 @@
 // Address: 004c0300
 // Address Range: [[004c0300, 004c041c] [006108e2, 00610902] [03fc5492, 03fc553e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)
+// Signature: void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-int __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)
+void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)
 
 {
   CVector3i *pCVar1;
@@ -41,8 +41,8 @@ int __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)
   g_RenderVertexBuffer[3].v = 0x80000;
   g_BillboardPrimitive.vertices[2] = 2;
   g_BillboardPrimitive.vertices[3] = 3;
-  pCVar1 = engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
-                     (g_CDemonRendererPtr2,&local_18);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
+            (g_CDemonRendererPtr2,&local_18);
   g_BillboardCameraRight.x = local_18.x;
   g_BillboardCameraRight.z = local_18.z;
   g_BillboardCameraRight.y = 0;
@@ -55,5 +55,5 @@ int __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)
   g_BillboardCameraUp.z =
        (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[2].z *
                         -65536));
-  return (int)pCVar1;
+  return;
 }

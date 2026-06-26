@@ -279,7 +279,7 @@ section .text
     MOV ESI,dword ptr [0x006810c8]      ; 004c6b38 | g_CDemonSetPtr
     PUSH ESI                            ; 004c6b3e | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110 ; 004c6b3f
-        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
+        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 004c6b44
     PUSH 0x1                            ; 004c6b47
     MOV EDI,dword ptr [0x006703ec]      ; 004c6b49 | g_CDemonRendererPtr2

@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 111,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 32,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 66,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 237
   },
   "cross_references": [
@@ -37,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_2d.c_mapFrameBuffer_FUN_00403430",
-    "signature": "int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(int width,int height,int bits_per_pixel,int stride,void *frame_buffer)"
+    "signature": "int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(void *frame_buffer,int width,int height,int bits_per_pixel,int stride)"
   },
   "function_calls": [
     {
@@ -301,11 +299,38 @@
     {
       "description": "Complex pointer cast",
       "line": 63,
-      "match": "(int *)((int)g_ScreenBufferArray",
+      "match": "(void **)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "*(int *)((int)g_ScreenBufferArray + iVar1) = width;",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar1) = frame_buffer;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(void *)((int)frame_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "frame_buffer = (void *)((int)frame_buffer + stride);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 55,
+      "match": "(int)g_ScreenBufferArray[1]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_ScreenBufferStride = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 55,
+      "match": "(int)g_ScreenBufferArray[0]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_ScreenBufferStride = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -313,7 +338,7 @@
       "match": "(int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "*(int *)((int)g_ScreenBufferArray + iVar1) = width;",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar1) = frame_buffer;",
       "type": "pointer_truncation"
     }
   ],
@@ -326,75 +351,40 @@
     "variables": [
       {
         "is_param": true,
-        "name": "width",
+        "name": "frame_buffer",
         "offset": 4,
         "size": 4,
-        "type": "int"
+        "type": "void *"
       },
       {
         "is_param": true,
-        "name": "height",
+        "name": "width",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "bits_per_pixel",
+        "name": "height",
         "offset": 12,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "stride",
+        "name": "bits_per_pixel",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "frame_buffer",
+        "name": "stride",
         "offset": 20,
         "size": 4,
-        "type": "void *"
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer value `g_ScreenBufferArray[1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
-      "match": "(int)g_ScreenBufferArray[1]",
-      "severity": "moderate",
-      "text": "g_ScreenBufferStride = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `g_ScreenBufferArray[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
-      "match": "(int)g_ScreenBufferArray[0]",
-      "severity": "moderate",
-      "text": "g_ScreenBufferStride = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `frame_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "introduced_by": "keep",
-      "line": 28,
-      "match": "(int)frame_buffer",
-      "severity": "moderate",
-      "text": "if (ABS((int)frame_buffer) < height * stride / 8) {",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `frame_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "introduced_by": "keep",
-      "line": 70,
-      "match": "(int)frame_buffer",
-      "severity": "moderate",
-      "text": "width = width + (int)frame_buffer;",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

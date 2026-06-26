@@ -55,12 +55,12 @@
 void __cdecl core_fire_cpp_CStake_render_FUN_004c0140(CStake *this_ptr);
 void __cdecl core_fire_cpp_CStake_process_FUN_004c0210(CStake *this_ptr);
 void __cdecl core_fire_cpp_CSpark_process_FUN_004c0240(CSpark *this_ptr);
-int __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr);
+void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr);
 void __cdecl core_fire_cpp_CSpark_render_FUN_004c0420(CSpark *this_ptr);
 int __cdecl core_fire_cpp_CSpark_onCollision_FUN_004c0ac0(CSpark *this_ptr,CVector3f *collision_normal);
 void __cdecl core_fire_cpp_loadFireBallAssets_FUN_004c0ad0(void);
 void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr);
-int __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004c0d80(CFireball *this_ptr);
+void __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004c0d80(CFireball *this_ptr);
 void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr);
 int __cdecl core_fire_cpp_CFireball_onCollision_FUN_004c1690(CFireball *this_ptr,CVector3f *collision_normal);
 void __cdecl core_fire_cpp_CRock_setup_FUN_004c17c0(CRock *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);

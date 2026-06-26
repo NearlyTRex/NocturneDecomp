@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6352 (98.4%)
-Files at 100%: 166
-Files at 90%+: 209
+Clean functions: 6385 (98.9%)
+Files at 100%: 179
+Files at 90%+: 210
 Files at 50%+: 214
 
 ====================================================================================================
@@ -31,6 +31,7 @@ FILES AT 100% (COMPLETE)
   core/biggs.cpp: 14 functions, 366 lines
   core/bodypart.cpp: 45 functions, 1562 lines
   core/boneguy.cpp: 28 functions, 1348 lines
+  core/box.cpp: 30 functions, 2014 lines
   core/boxactor.cpp: 46 functions, 1100 lines
   core/bride.cpp: 14 functions, 771 lines
   core/bugs.cpp: 44 functions, 1795 lines
@@ -51,6 +52,7 @@ FILES AT 100% (COMPLETE)
   core/dglobe.cpp: 6 functions, 237 lines
   core/dimage.cpp: 6 functions, 131 lines
   core/dirmat.cpp: 7 functions, 336 lines
+  core/dmodel.cpp: 66 functions, 4574 lines
   core/dog.cpp: 13 functions, 455 lines
   core/door.cpp: 28 functions, 995 lines
   core/dpart.cpp: 15 functions, 711 lines
@@ -63,8 +65,10 @@ FILES AT 100% (COMPLETE)
   core/dynamite.cpp: 12 functions, 163 lines
   core/elephant.cpp: 10 functions, 409 lines
   core/emitter.cpp: 20 functions, 850 lines
+  core/enemy.cpp: 19 functions, 495 lines
   core/fileman.cpp: 12 functions, 577 lines
   core/filmreel.cpp: 28 functions, 382 lines
+  core/fire.cpp: 185 functions, 5789 lines
   core/flame.cpp: 17 functions, 681 lines
   core/flamecan.cpp: 16 functions, 261 lines
   core/flamegun.cpp: 10 functions, 143 lines
@@ -72,6 +76,7 @@ FILES AT 100% (COMPLETE)
   core/flattn.cpp: 2 functions, 11 lines
   core/flies.cpp: 22 functions, 681 lines
   core/frankgen.cpp: 24 functions, 662 lines
+  core/gabriela.cpp: 38 functions, 2677 lines
   core/gargoyle.cpp: 16 functions, 941 lines
   core/gasmask.cpp: 14 functions, 131 lines
   core/glass.cpp: 24 functions, 1468 lines
@@ -114,9 +119,12 @@ FILES AT 100% (COMPLETE)
   core/passngr.cpp: 11 functions, 348 lines
   core/path.cpp: 25 functions, 1391 lines
   core/pendulum.cpp: 20 functions, 668 lines
+  core/platfrm.cpp: 30 functions, 1576 lines
   core/podmain.cpp: 4 functions, 64 lines
   core/procedur.cpp: 4 functions, 234 lines
+  core/scat.cpp: 25 functions, 1292 lines
   core/sentinel.cpp: 14 functions, 737 lines
+  core/set.cpp: 87 functions, 5059 lines
   core/setcolid.cpp: 40 functions, 1555 lines
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
@@ -148,6 +156,7 @@ FILES AT 100% (COMPLETE)
   core/water.cpp: 8 functions, 326 lines
   core/wateract.cpp: 23 functions, 769 lines
   core/waypoint.cpp: 19 functions, 519 lines
+  core/weapon.cpp: 27 functions, 449 lines
   core/weather.cpp: 10 functions, 555 lines
   core/werewolf.cpp: 21 functions, 1396 lines
   core/xform.cpp: 61 functions, 2831 lines
@@ -171,48 +180,59 @@ FILES AT 100% (COMPLETE)
   engine/prim.c: 21 functions, 1870 lines
   engine/texture.cpp: 22 functions, 654 lines
   shape/design.c: 163 functions, 11811 lines
+  shape/dsemodel.cpp: 10 functions, 329 lines
   shape/meshlod.cpp: 124 functions, 6913 lines
   shape/multicrm.cpp: 6 functions, 115 lines
   shape/spotview.cpp: 6 functions, 215 lines
+  shape/superopt.cpp: 186 functions, 10000 lines
+  sound/snddx.cpp: 32 functions, 1433 lines
   sound/sndwav.cpp: 35 functions, 765 lines
+  support/codec.cpp: 40 functions, 821 lines
   support/newmsg.cpp: 4 functions, 210 lines
   support/trisock.cpp: 32 functions, 355 lines
   wincore/wddvmem.cpp: 28 functions, 1016 lines
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 166 files
+Total: 179 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
+   99.3% | shape/edittool.cpp
+         150/151 clean, 1 remaining
+           - shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (55 lines) [pointer_truncation]
+
    99.1% | core/skeleton.cpp
          116/117 clean, 1 remaining
            - core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (200 lines) [pointer_truncation]
-
-   98.9% | shape/superopt.cpp
-         184/186 clean, 2 remaining
-           - shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90 (30 lines) [pointer_truncation]
-           - shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50 (25 lines) [pointer_truncation]
 
    98.9% | core/actor.cpp
          181/183 clean, 2 remaining
            - core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 (149 lines) [pointer_truncation]
            - core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 (116 lines) [pointer_truncation]
 
-   98.9% | core/set.cpp
-         86/87 clean, 1 remaining
-           - core_set.cpp_CDemonSet_computeLighting_FUN_0056e110 (14 lines) [pointer_truncation]
+   98.7% | engine/2d.c
+         75/76 clean, 1 remaining
+           - engine_2d.c_wrapTextToWidth_FUN_00401d80 (80 lines) [pointer_truncation]
+
+   98.6% | wincore/windll.cpp
+         71/72 clean, 1 remaining
+           - wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322 (121 lines) [pointer_truncation]
 
    98.6% | core/skeledit.cpp
          69/70 clean, 1 remaining
            - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1076 lines) [pointer_truncation, unrolled_memcpy]
 
-   98.4% | core/fire.cpp
-         182/185 clean, 3 remaining
-           - core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 (40 lines) [pointer_truncation]
-           - core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 (48 lines) [pointer_truncation]
-           - core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80 (40 lines) [pointer_truncation]
+   98.5% | core/game.cpp
+         65/66 clean, 1 remaining
+           - core_game.cpp_CGame_runGameSession_FUN_004daf80 (363 lines) [pointer_truncation]
+
+   98.4% | sound/sndmain.cpp
+         190/193 clean, 3 remaining
+           - sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0 (47 lines) [pointer_truncation]
+           - sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (319 lines) [pointer_truncation]
+           - sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 (51 lines) [pointer_truncation]
 
    98.2% | sound/mp3.cpp
          56/57 clean, 1 remaining
@@ -221,12 +241,6 @@ FILES AT 90-99% (ALMOST COMPLETE)
    98.2% | core/cloth.cpp
          54/55 clean, 1 remaining
            - core_cloth.cpp_CClothList_render_FUN_0043c320 (23 lines) [pointer_truncation]
-
-   98.0% | shape/edittool.cpp
-         148/151 clean, 3 remaining
-           - shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (55 lines) [pointer_truncation]
-           - shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830 (32 lines) [pointer_truncation]
-           - shape_edittool.cpp_CEdCheck_handleInput_FUN_004a6d20 (41 lines) [pointer_truncation]
 
    97.9% | core/script.cpp
          94/96 clean, 2 remaining
@@ -238,17 +252,18 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - engine_drender.cpp_renderTriangleSimple_FUN_004839f0 (229 lines) [pointer_truncation]
            - engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50 (23 lines) [pointer_truncation]
 
+   97.7% | core/inv.cpp
+         42/43 clean, 1 remaining
+           - core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (366 lines) [pointer_truncation]
+
    97.6% | core/setutil.cpp
          40/41 clean, 1 remaining
            - core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0 (30 lines) [pointer_truncation]
 
-   97.5% | support/codec.cpp
-         39/40 clean, 1 remaining
-           - support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0 (36 lines) [pointer_truncation]
-
-   97.4% | core/gabriela.cpp
-         37/38 clean, 1 remaining
-           - core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540 (160 lines) [pointer_truncation]
+   97.3% | engine/fileio.cpp
+         71/73 clean, 2 remaining
+           - engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030 (100 lines) [pointer_truncation]
+           - engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0 (137 lines) [pointer_truncation]
 
    97.1% | core/dlight.cpp
          33/34 clean, 1 remaining
@@ -258,26 +273,9 @@ FILES AT 90-99% (ALMOST COMPLETE)
          33/34 clean, 1 remaining
            - engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 (188 lines) [pointer_truncation]
 
-   97.0% | core/dmodel.cpp
-         64/66 clean, 2 remaining
-           - core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (152 lines) [pointer_truncation]
-           - core_dmodel.cpp_CDemonTriangle_copy_FUN_0047ef10 (13 lines) [pointer_truncation]
-
    97.0% | shape/quantize.cpp
          32/33 clean, 1 remaining
            - shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0 (94 lines) [pointer_truncation]
-
-   96.9% | sound/snddx.cpp
-         31/32 clean, 1 remaining
-           - sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20 (4 lines) [pointer_truncation]
-
-   96.7% | core/box.cpp
-         29/30 clean, 1 remaining
-           - core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 (62 lines) [pointer_truncation]
-
-   96.7% | core/platfrm.cpp
-         29/30 clean, 1 remaining
-           - core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 (210 lines) [pointer_truncation]
 
    96.6% | core/setedit.cpp
          56/58 clean, 2 remaining
@@ -289,69 +287,18 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (2138 lines) [pointer_truncation]
            - core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (1591 lines) [pointer_truncation]
 
-   96.4% | sound/sndmain.cpp
-         186/193 clean, 7 remaining
-           - sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0 (47 lines) [pointer_truncation]
-           - sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (319 lines) [pointer_truncation]
-           - sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 (51 lines) [pointer_truncation]
-           - sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 (16 lines) [pointer_truncation]
-           - sound_sndmain.cpp_isSampleLoaded_FUN_005aa3c0 (8 lines) [pointer_truncation]
-           - sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530 (4 lines) [pointer_truncation]
-           - sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970 (4 lines) [pointer_truncation]
-
-   96.3% | core/weapon.cpp
-         26/27 clean, 1 remaining
-           - core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830 (63 lines) [pointer_truncation]
-
-   96.1% | engine/2d.c
-         73/76 clean, 3 remaining
-           - engine_2d.c_wrapTextToWidth_FUN_00401d80 (80 lines) [pointer_truncation]
-           - engine_2d.c_mapFrameBuffer_FUN_00403430 (66 lines) [pointer_truncation]
-           - engine_2d.c_mapTextureFrameBuffer_FUN_00403650 (8 lines) [pointer_truncation]
-
-   96.0% | core/scat.cpp
-         24/25 clean, 1 remaining
-           - core_scat.cpp_CScat_updateAiming_FUN_00558720 (151 lines) [pointer_truncation]
-
    95.9% | engine/font.cpp
          47/49 clean, 2 remaining
            - engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (152 lines) [pointer_truncation]
            - engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (189 lines) [pointer_truncation]
 
-   95.9% | engine/fileio.cpp
-         70/73 clean, 3 remaining
-           - engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70 (23 lines) [pointer_truncation]
-           - engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030 (100 lines) [pointer_truncation]
-           - engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0 (137 lines) [pointer_truncation]
-
-   95.8% | wincore/windll.cpp
-         69/72 clean, 3 remaining
-           - wincore_windll.cpp_fillDepthRegion_FUN_005b3fc2 (25 lines) [pointer_truncation]
-           - wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322 (121 lines) [pointer_truncation]
-           - wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0 (56 lines) [pointer_truncation]
-
    95.7% | core/vampboss.cpp
          22/23 clean, 1 remaining
            - core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 (626 lines) [pointer_truncation]
 
-   95.5% | core/game.cpp
-         63/66 clean, 3 remaining
-           - core_game.cpp_CGame_processFudge_FUN_004d8750 (43 lines) [pointer_truncation]
-           - core_game.cpp_CGame_runGameSession_FUN_004daf80 (363 lines) [pointer_truncation]
-           - core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 (414 lines) [pointer_truncation]
-
-   95.3% | core/inv.cpp
-         41/43 clean, 2 remaining
-           - core_inv.cpp_CInventory_select_FUN_004ff800 (134 lines) [pointer_truncation]
-           - core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (366 lines) [pointer_truncation]
-
    95.2% | shape/cramtex.cpp
          20/21 clean, 1 remaining
            - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (832 lines) [pointer_truncation]
-
-   94.7% | core/enemy.cpp
-         18/19 clean, 1 remaining
-           - core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170 (27 lines) [pointer_truncation]
 
    94.4% | core/ghoul.cpp
          17/18 clean, 1 remaining
@@ -362,19 +309,23 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0 (20 lines) [pointer_truncation]
            - core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830 (21 lines) [pointer_truncation]
 
-   92.9% | core/moon.cpp
-         13/14 clean, 1 remaining
-           - core_moon.cpp_CMoon_render_FUN_00529ed0 (125 lines) [pointer_truncation]
-
-   91.9% | core/dcamera.cpp
-         79/86 clean, 7 remaining
-           - core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0 (17 lines) [pointer_truncation]
+   93.0% | core/dcamera.cpp
+         80/86 clean, 6 remaining
            - core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 (193 lines) [pointer_truncation]
            - core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360 (165 lines) [pointer_truncation]
            - core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790 (215 lines) [pointer_truncation]
            - core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 (271 lines) [pointer_truncation]
            - core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900 (20 lines) [pointer_truncation]
            - core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0 (79 lines) [pointer_truncation]
+
+   92.9% | core/moon.cpp
+         13/14 clean, 1 remaining
+           - core_moon.cpp_CMoon_render_FUN_00529ed0 (125 lines) [pointer_truncation]
+
+   92.3% | shape/memdbg.cpp
+         24/26 clean, 2 remaining
+           - shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020 (41 lines) [pointer_truncation]
+           - shape_memdbg.cpp_debugRealloc_FUN_0050f540 (55 lines) [pointer_truncation]
 
    90.3% | core/dstrender.cpp
          28/31 clean, 3 remaining
@@ -391,11 +342,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
          9/10 clean, 1 remaining
            - core_main.c_enterMainGameMenu_FUN_00507a50 (186 lines) [pointer_truncation]
 
-   90.0% | shape/dsemodel.cpp
-         9/10 clean, 1 remaining
-           - shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0 (46 lines) [pointer_truncation]
-
-Total: 43 files
+Total: 31 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -411,11 +358,6 @@ FILES AT 50-89%
    88.9% | engine/winfont.cpp
          8/9 clean, 1 remaining
            - engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440 (140 lines) [pointer_truncation]
-   88.5% | shape/memdbg.cpp
-         23/26 clean, 3 remaining
-           - shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020 (41 lines) [pointer_truncation]
-           - shape_memdbg.cpp_debugFree_FUN_0050f460 (26 lines) [pointer_truncation]
-           - shape_memdbg.cpp_debugRealloc_FUN_0050f540 (55 lines) [pointer_truncation]
    78.8% | cockpit/pkbitmap.cpp
          26/33 clean, 7 remaining
            - cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0 (17 lines) [pointer_truncation]
@@ -433,7 +375,7 @@ FILES AT 50-89%
            - core_menu.cpp_showOptionsScreen_FUN_00512d30 (68 lines) [pointer_truncation]
            - core_menu.cpp_showMainGameMenu_FUN_00512f40 (200 lines) [pointer_truncation]
 
-Total: 5 files
+Total: 4 files
 
 ====================================================================================================
 FILES BELOW 50%

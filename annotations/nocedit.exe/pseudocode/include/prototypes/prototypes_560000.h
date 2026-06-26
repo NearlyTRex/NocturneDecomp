@@ -147,7 +147,7 @@ void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet
 int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix);
 int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal);
 void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,int skip_lighting_calculation);
-int __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count);
+void __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count);
 void __cdecl core_set_cpp_computeTriangleNormal_FUN_0056e180(CVector3i *vertex_array,SMRGLPrimitiveTriangle *triangle);
 void __cdecl core_set_cpp_computeTriangleNormalIndexed_FUN_0056e2b0(CVector3i *vertex_array,ushort *triangle_indices,CVector3f *out_normal);
 void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index);

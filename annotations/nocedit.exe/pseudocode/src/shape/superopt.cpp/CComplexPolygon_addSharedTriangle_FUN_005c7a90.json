@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 45,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 97
   },
   "cross_references": [
@@ -176,14 +174,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer value `(ppCVar2 != (CPoly **)0x0)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 32,
-      "match": "(uint)(ppCVar2 != (CPoly **)0x0)",
-      "severity": "moderate",
-      "text": "return (uint)(ppCVar2 != (CPoly **)0x0);",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

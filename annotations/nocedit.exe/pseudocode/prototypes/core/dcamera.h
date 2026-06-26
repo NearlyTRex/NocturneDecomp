@@ -93,7 +93,7 @@ void __cdecl CDemonCamera::updateTransformMatrices(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
 // Address: 0044d2a0
-CVector3i * __stack3_esi CDemonCamera::screenToWorldCoord(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr);
+int __stack3_esi CDemonCamera::screenToWorldCoord(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310
 // Address: 0044d310

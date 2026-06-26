@@ -28,7 +28,7 @@ section .text
     PUSH ESI                            ; 005a381a
     PUSH EBX                            ; 005a381b
     CALL core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170 ; 005a381c
-        ;   XREF to: 004aa170 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy * this_ptr, CActorPropertyList * property_list)
+        ;   XREF to: 004aa170 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170(CEnemy * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 005a3821
     PUSH 0x0                            ; 005a3824
     ADD EBX,0x158                       ; 005a3826

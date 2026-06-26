@@ -274,7 +274,7 @@ section .text
     MOV EBX,dword ptr [0x006810c8]      ; 00430bf7 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 00430bfd | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110 ; 00430bfe
-        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
+        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 00430c03
     LEA EBX,[ESP + 0x50]                ; 00430c06
     MOV EAX,ESI                         ; 00430c0a
@@ -295,7 +295,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 00430c39 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 00430c3e | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110 ; 00430c3f
-        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
+        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 00430c44
     LEA EAX,[ESP + 0x4]                 ; 00430c47
     PUSH EAX                            ; 00430c4b
@@ -435,7 +435,7 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 00430e2f | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 00430e35 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110 ; 00430e36
-        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
+        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 00430e3b
     LEA EBX,[ESP + 0x50]                ; 00430e3e
     MOV EAX,ESI                         ; 00430e42
@@ -456,7 +456,7 @@ section .text
     MOV EBX,dword ptr [0x006810c8]      ; 00430e71 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBX                            ; 00430e77 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110 ; 00430e78
-        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
+        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 00430e7d
     LEA EAX,[ESP + 0x4]                 ; 00430e80
     PUSH EAX                            ; 00430e84

@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(int width,int height,int bits_per_pixel,int stride,void *frame_buffer)
+; int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403430(void *frame_buffer,int width,int height,int bits_per_pixel,int stride)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   width
-; int              Stack[0x8]:4   height
-; int              Stack[0xc]:4   bits_per_pixel
-; int              Stack[0x10]:4   stride
-; void *           Stack[0x14]:4   frame_buffer
+; void *           Stack[0x4]:4   frame_buffer
+; int              Stack[0x8]:4   width
+; int              Stack[0xc]:4   height
+; int              Stack[0x10]:4   bits_per_pixel
+; int              Stack[0x14]:4   stride
 ;
 ; XREF[1]:
 ;   engine_2d.c_mapTextureFrameBuffer_FUN_00403650 at 00403663

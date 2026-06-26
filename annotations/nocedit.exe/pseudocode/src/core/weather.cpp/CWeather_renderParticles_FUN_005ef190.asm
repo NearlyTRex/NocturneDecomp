@@ -238,7 +238,7 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 005ef3a7 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH ECX                            ; 005ef3ad | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_computeLighting_FUN_0056e110 ; 005ef3ae
-        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
+        ;   XREF to: 0056e110 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, ...)
     ADD ESP,0x14                        ; 005ef3b3
     MOV EAX,dword ptr [ESP + 0xf8]      ; 005ef3b6
     CMP dword ptr [EAX],0x2             ; 005ef3bd

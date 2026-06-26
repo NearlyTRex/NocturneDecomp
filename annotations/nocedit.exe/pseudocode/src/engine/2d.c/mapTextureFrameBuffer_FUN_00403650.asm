@@ -25,7 +25,7 @@ section .text
     MOV ESI,dword ptr [0x02d03e80]      ; 0040365c | g_CurrentTextureData
     PUSH ESI                            ; 00403662
     CALL engine_2d.c_mapFrameBuffer_FUN_00403430 ; 00403663
-        ;   XREF to: 00403430 (UNCONDITIONAL_CALL)  ; int engine_2d.c_mapFrameBuffer_FUN_00403430(int width, int height, int bits_per_pixel, int stride, ...)
+        ;   XREF to: 00403430 (UNCONDITIONAL_CALL)  ; int engine_2d.c_mapFrameBuffer_FUN_00403430(void * frame_buffer, int width, int height, int bits_per_pixel, ...)
     ADD ESP,0x14                        ; 00403668
     POP ESI                             ; 0040366b
     RET                                 ; 0040366c

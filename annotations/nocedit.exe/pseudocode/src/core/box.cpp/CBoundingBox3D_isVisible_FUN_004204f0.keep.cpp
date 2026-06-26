@@ -51,7 +51,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D *t
     local_20.y = local_20.y + local_10;
     local_20.z = local_20.z + local_c;
     if (g_CurrentSceneCamera == (CDemonCamera *)0x0) {
-      g_PerspectiveReciprocal = (int)g_CurrentSceneCamera;
+      g_PerspectiveReciprocal = 0;
     }
     else {
       core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0

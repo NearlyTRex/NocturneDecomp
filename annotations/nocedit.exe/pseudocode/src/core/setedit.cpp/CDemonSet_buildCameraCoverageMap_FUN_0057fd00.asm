@@ -134,7 +134,7 @@ section .text
     LEA ESI,[EBP + -0x28]               ; 0057fdbf
     LEA EDI,[EBP + -0x34]               ; 0057fdc2
     CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0 ; 0057fdc5
-        ;   XREF to: 0044d2a0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
+        ;   XREF to: 0044d2a0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[EBP + -0x28]               ; 0057fdca
     JMP 0x0060c692                      ; 0057fdcd
         ;   XREF to: 0060c692 (UNCONDITIONAL_JUMP)  ; LAB_0060c692

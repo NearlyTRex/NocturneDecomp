@@ -909,6 +909,12 @@ _PTR_TRUNC_LAST_STEP_RE = re.compile(
 # in `(int)(&AGG.field)[i]`. Such a subscript dereferences the parenthesized
 # value into an element.
 _PTR_TRUNC_TRAILING_SUB_RE = re.compile(r'\s*(\[[^\]]*\])')
+# A relational/equality operator immediately following the leading operand of a
+# parenthesized cast operand, i.e. the `!=` in `(uint)(PTR != 0)`. When present,
+# the parenthesized expression yields a bool, so the cast widens that bool, not
+# the pointer — not a truncation. Excludes the shift operators `<<`/`>>` (which
+# are not comparisons) via the negative lookaheads.
+_PTR_TRUNC_CMP_RE = re.compile(r'\s*(?:==|!=|<=|>=|<(?!<)|>(?!>))')
 
 
 def _ptr_trunc_decl_pointer_vars(code):
@@ -1111,6 +1117,10 @@ def identify_pointer_truncation_suspects(decompiled_code, func_globals=None,
                 inner = expr[1:-1].strip()
                 im = _PTR_TRUNC_OPERAND_RE.match(inner)
                 if not im:
+                    continue
+                if _PTR_TRUNC_CMP_RE.match(inner, im.end()):
+                    # `(uint)(PTR != 0)` etc. — the parens hold a comparison, so
+                    # the cast widens a bool result, not the pointer. Skip.
                     continue
                 amp_in = im.group(1) or ''
                 after = rest[lead + len(expr):]

@@ -13,7 +13,7 @@ float __cdecl safeAcos(float value);
 
 // Original: core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0
 // Address: 004bf1f0
-int __cdecl CSmokeParticle::setupRenderState(CSmokeParticle *this_ptr);
+void __cdecl CSmokeParticle::setupRenderState(CSmokeParticle *this_ptr);
 
 // Original: core_fire.cpp_CSmokeParticle_reset_FUN_004bf2e0
 // Address: 004bf2e0
@@ -73,7 +73,7 @@ void __cdecl CSpark::process(CSpark *this_ptr);
 
 // Original: core_fire.cpp_CSpark_setupRenderState_FUN_004c0300
 // Address: 004c0300
-int __cdecl CSpark::setupRenderState(CSpark *this_ptr);
+void __cdecl CSpark::setupRenderState(CSpark *this_ptr);
 
 // Original: core_fire.cpp_CSpark_render_FUN_004c0420
 // Address: 004c0420
@@ -93,7 +93,7 @@ void __cdecl CFireball::process(CFireball *this_ptr);
 
 // Original: core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80
 // Address: 004c0d80
-int __cdecl CFireball::setupRenderState(CFireball *this_ptr);
+void __cdecl CFireball::setupRenderState(CFireball *this_ptr);
 
 // Original: core_fire.cpp_CFireball_render_FUN_004c0e70
 // Address: 004c0e70

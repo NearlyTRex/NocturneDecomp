@@ -163,7 +163,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047e
 void __cdecl core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(_FILE *dependency_file,char *model_filename);
 CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_ctor_FUN_0047eef0(CDemonTriangle *this_ptr);
 CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_dtor_FUN_0047ef00(CDemonTriangle *this_ptr,uint flags);
-int __cdecl core_dmodel_cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle *this_ptr,CDemonTriangle *other);
+void __cdecl core_dmodel_cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle *this_ptr,CDemonTriangle *other);
 void __cdecl core_dmodel_cpp_SRA4HQPoint_copy_FUN_0047ef60(SRA4HQPoint *this_ptr,SRA4HQPoint *other);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor_FUN_0047efc0(CKeyFramedModel *objs,uint flags);
 void __cdecl core_dog_cpp_staticInit_FUN_0047efe0(void);

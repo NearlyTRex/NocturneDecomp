@@ -117,7 +117,7 @@ void __cdecl CDemonSet::lightVertexColor(CDemonSet *this_ptr,CVector3i *world_po
 
 // Original: core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 // Address: 0056e110
-int __cdecl CDemonSet::computeLighting(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count);
+void __cdecl CDemonSet::computeLighting(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int start_vertex_index,int vertex_count);
 
 // Original: core_set.cpp_computeTriangleNormal_FUN_0056e180
 // Address: 0056e180
