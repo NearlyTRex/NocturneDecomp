@@ -232,6 +232,33 @@
   },
   "resolved_suspects": [
     {
+      "description": "Pointer value `&g_CramRectangles[0].map_id` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)&g_CramRectangles[0].map_id",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((layer_id == *(int *)((int)&g_CramRectangles[0].map_id + iVar1)) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CramRectangles[0].start_x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)&g_CramRectangles[0].start_x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(start_x == *(int *)((int)&g_CramRectangles[0].start_x + iVar1))) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CramRectangles[0].start_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)&g_CramRectangles[0].start_y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(start_y == *(int *)((int)&g_CramRectangles[0].start_y + iVar1))) {",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 16,
       "match": "(int)&NAME used in byte-offset arithmetic",

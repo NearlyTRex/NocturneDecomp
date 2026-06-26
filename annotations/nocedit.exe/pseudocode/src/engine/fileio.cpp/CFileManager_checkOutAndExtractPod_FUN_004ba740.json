@@ -511,6 +511,33 @@
       "type": "stack_ref"
     },
     {
+      "description": "Pointer value `&p_Var6->_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 61,
+      "match": "(int)&p_Var6->_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "cVar2 = *(char *)((int)&p_Var6->_ptr + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&p_Var6->_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)&p_Var6->_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "p_Var6 = (_FILE *)((int)&p_Var6->_ptr + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&optional_pod_file[0xc04f]._cnt` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 291,
+      "match": "(int)&optional_pod_file[0xc04f]._cnt",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&optional_pod_file[0xc04f]._cnt + 2) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 57,
       "match": "do {",

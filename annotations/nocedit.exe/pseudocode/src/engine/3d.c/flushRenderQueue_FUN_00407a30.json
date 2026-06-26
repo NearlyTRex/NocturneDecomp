@@ -119,6 +119,15 @@
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_RenderFaceArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)g_RenderFaceArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar2);",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

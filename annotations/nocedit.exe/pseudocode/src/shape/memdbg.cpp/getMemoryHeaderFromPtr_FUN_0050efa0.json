@@ -139,5 +139,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Either the condition 'user_ptr!=(void*)0x0' is redundant or there is overflow in pointer subtraction.",
+      "line": 19,
+      "match": "Cppcheck: redundant null check or pointer-subtraction overflow",
+      "severity": "moderate",
+      "text": "return (SMemHead *)((char *)user_ptr - sizeof(SMemHead));",
+      "type": "static_null_pointer_arithmetic_redundant_check"
+    }
+  ]
 }

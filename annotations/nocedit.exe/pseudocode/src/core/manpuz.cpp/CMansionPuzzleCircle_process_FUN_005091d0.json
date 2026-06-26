@@ -127,6 +127,24 @@
   },
   "resolved_suspects": [
     {
+      "description": "Pointer value `&this_ptr->reflectors[1].rotation.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)&this_ptr->reflectors[1].rotation.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->reflectors[1].rotation.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)&this_ptr->reflectors[1].rotation.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) ^ 0x80;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 45,
       "match": "field-by-field struct copy",

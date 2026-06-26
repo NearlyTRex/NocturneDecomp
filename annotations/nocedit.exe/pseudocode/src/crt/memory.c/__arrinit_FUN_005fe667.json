@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 31,
+    "complexity_score": 46,
     "cross_reference_count": 86,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "pointer_truncation"
     ],
     "total_lines": 52
   },
@@ -738,6 +739,14 @@
       "severity": "moderate",
       "text": "param0 = (void *)((int)param0 + iVar2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `param0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)param0",
+      "severity": "moderate",
+      "text": "param0 = (void *)((int)param0 + iVar2);",
+      "type": "pointer_truncation"
     }
   ]
 }

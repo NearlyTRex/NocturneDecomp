@@ -272,6 +272,42 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `&local_934[0].w` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 112,
+      "match": "(int)&local_934[0].w",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte (*) [4])((int)&local_934[0].w + local_44) = local_124;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_934[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 113,
+      "match": "(int)&local_934[0].x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_934[0].x + local_44) = afStack_120[0];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_934[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 114,
+      "match": "(int)&local_934[0].y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_934[0].y + local_44) = afStack_120[1];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_934[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 115,
+      "match": "(int)&local_934[0].z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_934[0].z + local_44) = afStack_120[2];",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 89,
       "match": "field-by-field struct copy",

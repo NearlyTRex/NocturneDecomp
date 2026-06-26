@@ -730,6 +730,555 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 170,
+      "match": "(int)puVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar10 = (uint *)(iVar14 + (int)puVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 190,
+      "match": "(int)&edges[uVar2].start_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_244 = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 192,
+      "match": "(int)&edges[uVar2].start_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_23c = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 194,
+      "match": "(int)&edges[uVar2].start_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_234 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 198,
+      "match": "(int)&edges[uVar2].end_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_244 = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 200,
+      "match": "(int)&edges[uVar2].end_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_23c = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 202,
+      "match": "(int)&edges[uVar2].end_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_234 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 211,
+      "match": "(int)&edges[uVar2].start_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1cc = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 213,
+      "match": "(int)&edges[uVar2].start_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1c4 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 215,
+      "match": "(int)&edges[uVar2].start_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1bc = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 219,
+      "match": "(int)&edges[uVar2].end_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1cc = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 221,
+      "match": "(int)&edges[uVar2].end_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1c4 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 223,
+      "match": "(int)&edges[uVar2].end_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1bc = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 248,
+      "match": "(int)&edges[uVar2].start_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1e4 = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 250,
+      "match": "(int)&edges[uVar2].start_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1dc = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 252,
+      "match": "(int)&edges[uVar2].start_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1d4 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 256,
+      "match": "(int)&edges[uVar2].end_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1e4 = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 258,
+      "match": "(int)&edges[uVar2].end_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1dc = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 260,
+      "match": "(int)&edges[uVar2].end_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1d4 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pdVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 285,
+      "match": "(int)pdVar17",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pdVar18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 286,
+      "match": "(int)pdVar18",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pdVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 304,
+      "match": "(int)pdVar17",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pdVar18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 305,
+      "match": "(int)pdVar18",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 320,
+      "match": "(int)&edges[uVar2].end_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_2bc = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 322,
+      "match": "(int)&edges[uVar2].end_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_2b4 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 324,
+      "match": "(int)&edges[uVar2].end_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar11 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 331,
+      "match": "(int)&edges[uVar2].start_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_2bc = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 333,
+      "match": "(int)&edges[uVar2].start_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_2b4 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 335,
+      "match": "(int)&edges[uVar2].start_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar11 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar1].end_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 342,
+      "match": "(int)&edges[uVar1].end_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_f4 = *(uint *)((int)&edges[uVar1].end_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar1].end_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 344,
+      "match": "(int)&edges[uVar1].end_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_ec = *(uint *)((int)&edges[uVar1].end_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar1].end_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 345,
+      "match": "(int)&edges[uVar1].end_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_e4 = *(uint *)((int)&edges[uVar1].end_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar1].start_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 353,
+      "match": "(int)&edges[uVar1].start_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_f4 = *(uint *)((int)&edges[uVar1].start_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar1].start_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 355,
+      "match": "(int)&edges[uVar1].start_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_ec = *(uint *)((int)&edges[uVar1].start_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar1].start_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 357,
+      "match": "(int)&edges[uVar1].start_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_e4 = *(uint *)((int)&edges[uVar1].start_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pdVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 366,
+      "match": "(int)pdVar17",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pdVar18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 367,
+      "match": "(int)pdVar18",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 416,
+      "match": "(int)&edges[uVar2].start_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_25c = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 418,
+      "match": "(int)&edges[uVar2].start_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_254 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 420,
+      "match": "(int)&edges[uVar2].start_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_24c = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 424,
+      "match": "(int)&edges[uVar2].end_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_25c = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 426,
+      "match": "(int)&edges[uVar2].end_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_254 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 428,
+      "match": "(int)&edges[uVar2].end_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_24c = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 433,
+      "match": "(int)&edges[uVar2].start_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_16c = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 435,
+      "match": "(int)&edges[uVar2].start_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_164 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 437,
+      "match": "(int)&edges[uVar2].start_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_15c = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 441,
+      "match": "(int)&edges[uVar2].end_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_16c = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 443,
+      "match": "(int)&edges[uVar2].end_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_164 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 445,
+      "match": "(int)&edges[uVar2].end_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_15c = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 465,
+      "match": "(int)&edges[uVar2].start_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar2].start_pos.x + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar3].end_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 466,
+      "match": "(int)&edges[uVar3].end_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar3].end_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 468,
+      "match": "(int)&edges[uVar2].start_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar2].start_pos.y + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar3].end_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 469,
+      "match": "(int)&edges[uVar3].end_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar3].end_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].start_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 471,
+      "match": "(int)&edges[uVar2].start_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar2].start_pos.z + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar3].end_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 472,
+      "match": "(int)&edges[uVar3].end_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar3].end_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 481,
+      "match": "(int)&edges[uVar2].end_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar2].end_pos.x + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar3].start_pos.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 482,
+      "match": "(int)&edges[uVar3].start_pos.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar3].start_pos.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 484,
+      "match": "(int)&edges[uVar2].end_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar2].end_pos.y + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar3].start_pos.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 485,
+      "match": "(int)&edges[uVar3].start_pos.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar3].start_pos.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar2].end_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 487,
+      "match": "(int)&edges[uVar2].end_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar2].end_pos.z + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&edges[uVar3].start_pos.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 488,
+      "match": "(int)&edges[uVar3].start_pos.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&edges[uVar3].start_pos.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 283,
       "match": "for (...; != 0; ... + -1)",

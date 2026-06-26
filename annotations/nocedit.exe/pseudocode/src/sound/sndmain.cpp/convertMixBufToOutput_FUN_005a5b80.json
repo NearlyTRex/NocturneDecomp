@@ -174,6 +174,24 @@
       "severity": "moderate",
       "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `local_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)local_30",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)local_30",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

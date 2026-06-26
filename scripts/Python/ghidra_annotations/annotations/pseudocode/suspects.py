@@ -905,6 +905,10 @@ _PTR_TRUNC_OPERAND_RE = re.compile(
     r'(&)?\s*([A-Za-z_]\w*)((?:\s*(?:->|\.)\s*[A-Za-z_]\w*|\s*\[[^\]]*\])*)')
 _PTR_TRUNC_LAST_STEP_RE = re.compile(
     r'(?:->|\.)\s*([A-Za-z_]\w*)\s*(\[[^\]]*\])?\s*$')
+# A subscript applied immediately after a parenthesized operand, i.e. the `[i]`
+# in `(int)(&AGG.field)[i]`. Such a subscript dereferences the parenthesized
+# value into an element.
+_PTR_TRUNC_TRAILING_SUB_RE = re.compile(r'\s*(\[[^\]]*\])')
 
 
 def _ptr_trunc_decl_pointer_vars(code):
@@ -1106,10 +1110,30 @@ def identify_pointer_truncation_suspects(decompiled_code, func_globals=None,
                     continue
                 inner = expr[1:-1].strip()
                 im = _PTR_TRUNC_OPERAND_RE.match(inner)
-                if not im or not operand_is_ptr(
-                        im.group(1) or '', im.group(2), im.group(3) or ''):
+                if not im:
                     continue
-                operand = expr
+                amp_in = im.group(1) or ''
+                after = rest[lead + len(expr):]
+                sub = _PTR_TRUNC_TRAILING_SUB_RE.match(after)
+                if sub:
+                    # `(EXPR)[i]` subscripts the parenthesized operand, which
+                    # dereferences it back into an element. `(&AGG.field)[i]`
+                    # reads a sibling of `field` (Watcom's parallel-array
+                    # idiom) — a scalar unless `field` is itself pointer-typed.
+                    # The widening cast then targets that element, NOT a
+                    # pointer, so resolve the element type (drop the `&`) and
+                    # only flag a genuine pointer element.
+                    if not amp_in:
+                        # `(ptr)[i]` pointee type isn't tracked — stay
+                        # conservative and skip.
+                        continue
+                    if not operand_is_ptr('', im.group(2), im.group(3) or ''):
+                        continue
+                    operand = expr + sub.group(1)
+                elif not operand_is_ptr(amp_in, im.group(2), im.group(3) or ''):
+                    continue
+                else:
+                    operand = expr
             else:
                 om = _PTR_TRUNC_OPERAND_RE.match(line, cm.end())
                 # A cast-of-a-cast (`(int)(uint)x`) has no identifier where the

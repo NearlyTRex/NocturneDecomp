@@ -160,6 +160,78 @@
       "severity": "moderate",
       "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 14,
+      "match": "(int)g_ScreenBufferArray[1]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[0]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 14,
+      "match": "(int)g_ScreenBufferArray[0]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[dest_y + src_y_offset]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)g_ScreenBufferArray[dest_y + src_y_offset]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = (int)g_ScreenBufferArray[dest_y + src_y_offset] + start_x;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)src_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[dest_y + src_y_offset]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)g_ScreenBufferArray[dest_y + src_y_offset]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar5 = (void *)((int)g_ScreenBufferArray[dest_y + src_y_offset] + start_x * 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)pvVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*pCVar2)((void *)((int)pvVar5 + unused_param * -2),src_buffer,count);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)pvVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar5 = (void *)((int)pvVar5 + (iVar1 / 2) * 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `src_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)src_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 133,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "unknown_param"
     ],
     "total_lines": 129
@@ -224,6 +225,22 @@
       "severity": "mild",
       "text": "pTVar3->unknown_10[3] = '\\0';",
       "type": "unknown_param"
+    },
+    {
+      "description": "Pointer value `&DOUBLE_00665f28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)&DOUBLE_00665f28",
+      "severity": "moderate",
+      "text": "((local_28[bVar1 >> 3] & *(byte *)((int)&DOUBLE_00665f28 + (bVar1 & 7))) != 0))) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DOUBLE_00665f28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)&DOUBLE_00665f28",
+      "severity": "moderate",
+      "text": "if ((local_28[bVar2 >> 3] & *(byte *)((int)&DOUBLE_00665f28 + (bVar2 & 7))) != 0) {",
+      "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

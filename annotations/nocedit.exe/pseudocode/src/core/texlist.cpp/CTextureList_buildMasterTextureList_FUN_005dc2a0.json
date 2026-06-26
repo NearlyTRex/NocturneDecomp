@@ -186,6 +186,24 @@
   },
   "resolved_suspects": [
     {
+      "description": "Pointer value `&pFVar4->dwLowDateTime` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)&pFVar4->dwLowDateTime",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)&pFVar4->dwLowDateTime + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pFVar4->dwLowDateTime` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)&pFVar4->dwLowDateTime",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pFVar4 = (FILETIME *)((int)&pFVar4->dwLowDateTime + 2);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 43,
       "match": "do {",

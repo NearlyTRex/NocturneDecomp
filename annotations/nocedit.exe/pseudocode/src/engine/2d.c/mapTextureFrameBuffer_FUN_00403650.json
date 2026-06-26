@@ -7,14 +7,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 8,
+    "complexity_score": 23,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 8,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 22
   },
   "cross_references": [],
@@ -88,5 +90,14 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 8,
+      "match": "(int)g_CurrentTextureData",
+      "severity": "moderate",
+      "text": "((int)g_CurrentTextureData,g_CurrentTextureDimension,g_CurrentTextureDimension,8",
+      "type": "pointer_truncation"
+    }
+  ]
 }

@@ -141,6 +141,15 @@ When you are editing a `.keep` for any reason — creating one for a compile err
 - `static_self_assignment` — cppcheck `selfAssignment`, a `pX = pX;` / `iVar = iVar;` no-op (pre-increment / shadow-walk decompiler residue). Delete the dead self-assign line. If it's the only artifact of a `preinc_loop_idiom`, fix the whole loop per §19 instead.
 - `static_int_to_address` — cppcheck `AssignmentIntegerToAddress`, an integer assigned to a pointer (`*(T **)(... + 0xADDR) = ...`, `frame_buffer = (void *)(N)`). Usually a mistyped local (retype it per §12/§13) or a hardcoded address for a known global (§11) / Watcom 1-based base−stride (§15). Express as the symbolic global + index; if the data shape implies a struct with no existing type, STOP and tell the user what to create in Ghidra.
 - `static_identical_inner_condition` — cppcheck `identicalInnerCondition`, an inner `if` whose condition duplicates the enclosing one. Decompiler-redundant guard; drop the inner test (keep the body), confirming against the asm that the two conditions are truly identical.
+- `pointer_truncation` — §27 (Pointer truncation via `(int)`/`(uint)` cast). A declared-pointer operand narrowed by a sub-pointer-width cast (`(int)a - (int)b`, `(uint)ptr & mask`, `(uint)this` into `%08X`, `g_int = (int)ptr`). Bit-exact on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. Rewrite as `intptr_t`/`uintptr_t` in a `.keep` — **unless** the operand is a mistyped offset field/local (e.g. `void** row_pointers` holding byte offsets), which is a Ghidra-side retype instead. Pointer-ness comes from declared types, not Hungarian naming, so `(int)frame_index` (a pointer despite the name) is caught while integer locals are not.
+
+The next group are **static-analysis-promoted** suspects (synthesized from clang-tidy / cppcheck findings by `static_analysis_suspects.py`, hence the `static_` prefix). Unlike the pattern detectors above they are *review flags*, not guaranteed-mechanical rewrites: each one is a triage between a real `.keep` fix, a Ghidra-side retype, and a faithful-to-the-binary exemption. Always resolve the triage against the `.asm` before editing.
+- `static_swapped_arguments` — §28 (Swapped / mistyped call arguments). clang-tidy `bugprone-swapped-arguments`: a call where one arg converts `double`→`int` and an adjacent arg `int`→`float` (or the reverse). Usually a raw float **bit-pattern** emitted as an int into a `float` param (`.keep` fix — convert to the float literal) or a genuinely wrong callee signature (**STOP**, Ghidra fix). Never blindly reorder the args.
+- `static_integer_division` — clang-tidy `bugprone-integer-division`, integer division whose result feeds a float context (`(double)(a / b)`). Two outcomes: (1) an operand is a struct field/local Ghidra typed `int` that the asm loads as `float` (`FLD`/`FDIV` against that slot) → **Ghidra-side retype** (§12), the division becomes float division and the flag clears; or (2) the asm really does an integer `IDIV`/`SAR` before the convert → **faithful, exempt** (leave it, note it). Index math like `arr[i / 4]` is a false-positive — the quotient is an index, not a value; leave it.
+- `static_float_loop_induction` — clang-tidy `cert-flp30-c`, a floating-point loop counter (`for (f = 0.0; f < n; f += step)`). Almost always **faithful** to Watcom (the binary really counts in `float`) → exempt; leave it and note it. Only fix if the counter is a *mistyped* local that the asm increments/compares as an integer (`INC`/`CMP` on an int slot), in which case retype it to `int` per §13 — confirm against the asm first.
+- `static_signed_char_misuse` — §29 (Signed-char widened to unsigned). clang-tidy `bugprone-signed-char-misuse` (aliased `cert-str34-c`): a `signed char` widened straight to `uint`, so a byte ≥ 0x80 sign-extends to `0xFFFFFFxx`. Triage by the load instruction in the asm: `MOVZX`/partial-byte load that's masked → the value is **unsigned**, the local/field should be `uchar` (Ghidra-side retype) or the read needs a `(uchar)` cast in the `.keep`; `MOVSX` → faithful sign-extension, **exempt**.
+- `static_null_pointer_redundant_check`, `static_null_pointer_arithmetic_redundant_check` — §30 (Redundant null check). cppcheck `nullPointerRedundantCheck` / `nullPointerArithmeticRedundantCheck`: "either this null check is redundant or there's a possible null deref." Usually the `displayErrorAndQuit` fatal-guard pattern (the quit func can't be marked `noreturn`) — apply the documented recipe; sometimes a decompiler-duplicated guard to drop (§23-style). Confirm it's not a genuine missing-null path against the asm before clearing.
+- `static_memleak` — cppcheck `memleak`: an allocation with no freeing path. Two cases: Ghidra **dropped a `free`/`delete`** that the asm still has (a `CALL free`/`operator delete` near the end with no `.cpp` counterpart) → restore it in the `.keep`; or the **original binary genuinely leaks** → faithful, exempt (note it, don't invent a free the binary never made). Cross-check the asm for the dealloc call before deciding.
 
 **Ineligible for `.keep` cleanup — fix upstream in Ghidra instead:** structural suspects like `decompilation_failed`, stack/ESP anchor mismatches, `warning_*` (bad spacebase, unmapped variables, type propagation). See "Prefer Ghidra Fixes Over Code Fixes."
 
@@ -899,6 +908,110 @@ local_30 = g_DeformableModelRayHitNormal;
 ```
 
 **Eligibility:** `.keep`-layer fix. The trigger is either an ASan `stack-buffer-overflow` at a sub-field pointer, or a manual audit that finds `(T *)&local_X.y`-style call arguments. Always confirm the corrected source via asm before rewriting — guessing the axis/field mapping silently produces wrong gameplay (mismatched gravity axis, scrambled vertex positions, etc.).
+
+### 27. Pointer truncation via `(int)`/`(uint)` cast (64-bit build blocker)
+
+**Cause:** Watcom freely cast pointers to `int`/`uint` for pointer differences, alignment masks, address printing, hashing, and storing pointers in int-typed globals/fields. On the 32-bit matching build these are bit-exact, but at 64-bit they are hard errors (`cast from pointer to smaller type loses information`) — the chief obstacle to a multilib-free build. Ghidra reproduces the cast verbatim; the 64-bit compiler is the exhaustive oracle, and the `pointer_truncation` suspect surfaces the same sites in the annotation/review pipeline.
+
+**Symptoms (all from real flags):**
+- Pointer difference: `iVar4 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];`
+- Alignment mask: `if (((uint)p_output & 2) != 0) { ... }`
+- Address print: `displayErrorAndQuit("ptr = %08X", (uint)this_ptr, ...);`
+- Pointer stored in an int global: `g_PerspectiveReciprocal = (int)g_CurrentSceneCamera;`
+- Pointer-as-offset arithmetic with a separately-cast base: `(char *)base + (int)q->field`
+
+Pointer-ness is decided from **declared types** (signature params, local decls, global types, struct field layout), not Hungarian naming — so a genuinely mistyped operand like `(int)frame_index` (declared a pointer despite the name) is caught, while integer locals that merely look pointerish are not.
+
+**Fix:** Replace the narrowing cast with the width-preserving portable form (per the Fidelity Requirements "64-bit-portable forms" rule), keeping the value's role. On `-m32` these are bit-identical; on 64-bit only the wide form survives:
+- `(uintptr_t)ptr` for unsigned uses — alignment masks, address prints, hashes
+- `(intptr_t)ptr` for signed pointer-difference math
+
+```cpp
+// BROKEN (truncates at 64-bit):
+iVar4 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
+if (((uint)p_output & 2) != 0) { ... }
+
+// FIXED (width-preserving, bit-identical on the 32-bit build):
+iVar4 = (intptr_t)g_ScreenBufferArray[1] - (intptr_t)g_ScreenBufferArray[0];
+if (((uintptr_t)p_output & 2) != 0) { ... }
+```
+
+**When it's a Ghidra fix instead — STOP and tell the user:** if the "pointer" operand is actually a **mistyped field/local that holds an integer offset**, the cast is a symptom of the wrong type, not a real pointer truncation. The canonical case is `void** row_pointers` used as `(char *)packed_data + (int)row_pointers[i]` — the slots hold byte offsets into `packed_data`, not addresses. Retype the field in Ghidra (`int *row_pointers`); after re-export the cast becomes `(int)int` and the flag disappears. Do **not** paper over it with `intptr_t` in a `.keep` — that buries a real type bug.
+
+**Not a truncation — a dereference (the detector skips these):** `(uint)(&agg.field)[i]` subscripts the address, reading a **scalar element** — Watcom's parallel-array idiom over sibling `uchar`/`ushort` fields (e.g. `(uint)(&g_Palette.colors[0].b)[i]` reading the blue plane). The cast widens a byte/short, not a pointer, so it is not flagged — unless the subscripted field is itself pointer-typed (`(int)(&this_ptr->actor_ptr)[i]`), which is a real truncation and stays flagged.
+
+**Eligibility:** `.keep`-layer fix for the portability rewrite; Ghidra-side retype when the operand is a mistyped offset field/local. The `pointer_truncation` suspect (moderate) flags every narrowing `(int)`/`(uint)` cast of a declared-pointer operand.
+
+### 28. Swapped / mistyped call arguments (`static_swapped_arguments`)
+
+**Cause:** clang-tidy's `bugprone-swapped-arguments` fires when a call passes one argument that implicitly converts `double`→`int` next to one that converts `int`→`float` (or the reverse). The "swapped" framing is a heuristic; in Ghidra output the real cause is almost always that the **decompiler emitted a raw float bit-pattern as an integer literal** into a `float` parameter, and a neighbouring `0.0` double literal landed in an `int` parameter.
+
+**Symptoms:**
+- A call with adjacent `..., 0.0, 0xNNNNNNNN, ...` arguments where the callee's signature has an `int` then a `float` param (or vice-versa).
+- The integer literal is a recognizable float bit-pattern: `0x40000000` = `2.0f`, `0x3f800000` = `1.0f`, `0x40490fdb` = `pi`.
+
+**Canonical example (`CFlame::process` → `CCharacter::igniteBone`):**
+```cpp
+// Signature: void igniteBone(CCharacter *, CVector3f *, int fire_type, int flame_type, float flame_scale, int include_hero)
+
+// BROKEN — 0.0 into the int flame_type (harmless 0), but 0x40000000 (the bits
+// of 2.0f) converts numerically to 1073741824.0f in the float flame_scale:
+igniteBone(&this_ptr_02->base, &pCVar2->position, 0, 0.0, 0x40000000, 1);
+
+// FIXED — decode the float bits (§18) and pass the real literal:
+igniteBone(&this_ptr_02->base, &pCVar2->position, 0, 0, 2.0f, 1);
+```
+
+**Triage:**
+- If the integer literal decodes to a clean float (see §18 — `python3 -c "import struct; print(struct.unpack('<f', struct.pack('<I', 0xN))[0])"`) and the callee param is `float`, replace it with the float literal in the `.keep`. The adjacent `0.0`→`int` is usually a benign `0`; write it as `0`.
+- If the arguments are genuinely passed in the wrong **order or types** versus what the asm pushes, the callee **signature is wrong** — **STOP** and tell the user to fix it in Ghidra (§"Prefer Ghidra Fixes"). Do not reorder args in the `.keep` to chase the flag.
+
+### 29. Signed char widened to unsigned (`static_signed_char_misuse`)
+
+**Cause:** A `signed char` value (a `char` deref, a `char` field/local) is widened directly to `uint`/`int`, so the sign bit propagates: a byte `>= 0x80` becomes `0xFFFFFFxx` instead of `0x00xx`. clang-tidy flags it as `bugprone-signed-char-misuse` (aliased `cert-str34-c`). It's a **data-model signedness** smell — the byte was almost certainly meant to be unsigned (a glyph index, a palette entry, a raw byte).
+
+**Symptoms:**
+- `uint bVar; ... bVar = *text;` where `text` is `char *` — the assignment sign-extends.
+- A range test that only makes sense for an unsigned byte right after: `if ((0x1f < bVar) && (bVar < 0x100))` — the `< 0x100` guard is the tell that the author expected `0..255`, but a sign-extended high byte fails it and the character silently drops.
+
+**Triage via the asm load:**
+- `MOVZX EAX, byte ptr [...]`, or `MOV AL, [...]` whose upper bits are then masked / the value only ever compared as a byte → the value is **unsigned**. Fix the data model: retype the local/field to `uchar` in Ghidra, or — if it's a `.keep`-local read — cast at the load: `bVar = (uchar)*text;`. Both make the high bytes survive the range test.
+- `MOVSX EAX, byte ptr [...]` → the binary genuinely sign-extends; the behaviour is **faithful**, leave it and note it (exempt).
+
+```cpp
+// BROKEN (uint bVar2; signed-char deref sign-extends; chars >= 0x80 fail the < 0x100 test):
+bVar2 = *text;
+if ((0x1f < bVar2) && (bVar2 < 0x100)) { ... }
+
+// FIXED (asm masks to a byte — treat as unsigned so the full 0x20..0xFF range passes):
+bVar2 = (uchar)*text;
+if ((0x1f < bVar2) && (bVar2 < 0x100)) { ... }
+```
+
+### 30. Redundant null check / possible null deref (`static_null_pointer_redundant_check`)
+
+**Cause:** cppcheck's `nullPointerRedundantCheck` (and the `...ArithmeticRedundantCheck` pointer-subtraction variant) report "either this null check is redundant or there is a possible null dereference" — it saw the pointer dereferenced unconditionally on a path where it could still be null. In Ghidra output this is usually the **fatal-error-guard** pattern: `if (p == 0) { ...; displayErrorAndQuit(...); }` followed by an unconditional deref. Because the quit function can't be marked `noreturn` in Ghidra (it breaks other analysis), cppcheck thinks `p` may still be null afterward.
+
+**Fix (the `displayErrorAndQuit` recipe — both steps; the return alone only shifts the warning):**
+1. Add an explicit `return <fail-value>;` (e.g. `return 0;`) immediately after the `displayErrorAndQuit(...)` call inside the null-failure block. Dead code (quit never returns), behaviour-identical, but it tells cppcheck the null path terminates → `p` is provably non-null past the guard.
+2. Drop any now-provably-redundant downstream `if (p != 0) { ... }` guard, keeping its body un-wrapped (always-true given step 1; same spirit as the §23 redundant-guard removal).
+
+```cpp
+// BROKEN (flagged — cppcheck can't see displayErrorAndQuit as noreturn):
+if (model_ptr == (SMRGLHeaderExtended *)0x0) {
+    displayErrorAndQuit("null model");
+}
+return model_ptr->vertex_count;          // "possible null deref"
+
+// FIXED:
+if (model_ptr == (SMRGLHeaderExtended *)0x0) {
+    displayErrorAndQuit("null model");
+    return 0;                            // terminates the null path for cppcheck
+}
+return model_ptr->vertex_count;
+```
+
+**Triage:** confirm against the asm that the guarded path really terminates (a `CALL` to a fatal-error / `exit` helper) or that the inner check truly duplicates an outer one. If instead the deref is reachable with a real null — a missing early-return the decompiler lost — that's a genuine bug; reconstruct the missing null path from the asm rather than silencing the flag.
 
 ## Workflow
 

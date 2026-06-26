@@ -167,6 +167,24 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `g_PathMapList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)g_PathMapList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_PathMapList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)g_PathMapList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr = *(CPathMap **)((int)g_PathMapList + iVar1);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x461c3c01 is the IEEE 754 bit pattern of 9999f. Rewrite in a .keep as a plain float compare against 9999f.",
       "line": 27,
       "match": "(int)(this_ptr->cached_world_position).x < 0x461c3c01",

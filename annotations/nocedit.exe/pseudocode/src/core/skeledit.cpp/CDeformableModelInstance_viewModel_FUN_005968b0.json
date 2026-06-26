@@ -8,14 +8,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3423,
-    "complexity_score": 1076,
+    "complexity_score": 1106,
     "cross_reference_count": 2,
     "function_call_count": 90,
     "global_count": 144,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 1076,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_truncation",
+      "unrolled_memcpy"
+    ],
     "total_lines": 4499
   },
   "cross_references": [
@@ -1257,8 +1260,8 @@
     },
     {
       "addr": "006819fc",
-      "name": "CVector3f_006819fc",
-      "type": "CVector3f",
+      "name": "CVector3i_006819fc",
+      "type": "CVector3i",
       "value": null
     },
     {
@@ -1492,6 +1495,24 @@
       "type": "suspect_float"
     },
     {
+      "description": "Pointer value `g_CEditorToolsPtr` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 543,
+      "match": "(uint)g_CEditorToolsPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar20 = (ushort)((uint)g_CEditorToolsPtr >> 0x10);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CEditorToolsPtr` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 551,
+      "match": "(uint)g_CEditorToolsPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar20 = (ushort)((uint)g_CEditorToolsPtr >> 0x10);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 504,
       "match": "0xfe0000",
@@ -1538,15 +1559,6 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 189,
-      "match": "field-by-field struct copy",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_184.x = g_ZeroVector.f.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 192,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
@@ -1570,6 +1582,15 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "local_200.orientation.vec.x = pCVar13->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 489,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_154.x = CVector3i_006819fc.x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -2490,5 +2511,31 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 189,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_184.x = g_ZeroVector.f.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Pointer value `local_54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 815,
+      "match": "(int)local_54",
+      "severity": "moderate",
+      "text": "_sprintf(local_46c,\"Bone:\\t%s\",this_ptr_02->bone_list[(int)local_54].bone_name);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments.",
+      "line": 720,
+      "match": "Clang-Tidy: potentially swapped arguments (param-type mismatch)",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0",
+      "type": "static_swapped_arguments"
+    }
+  ]
 }

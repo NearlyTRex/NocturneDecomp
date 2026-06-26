@@ -274,6 +274,177 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `&g_GlobalEdgeTable[1].x_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 104,
+      "match": "(int)&g_GlobalEdgeTable[1].x_start",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) <",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[0].x_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 105,
+      "match": "(int)&g_GlobalEdgeTable[0].x_start",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_GlobalEdgeTable[0].x_start + iVar9)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[0].x_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)&g_GlobalEdgeTable[0].x_start",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[0].y_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 107,
+      "match": "(int)&g_GlobalEdgeTable[0].y_start",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)&g_GlobalEdgeTable[0].y_start + iVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[0].x_fixed_point` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 108,
+      "match": "(int)&g_GlobalEdgeTable[0].x_fixed_point",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar3 = *(uint *)((int)&g_GlobalEdgeTable[0].x_fixed_point + iVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[0].x_increment` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 109,
+      "match": "(int)&g_GlobalEdgeTable[0].x_increment",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar10 = *(int *)((int)&g_GlobalEdgeTable[0].x_increment + iVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[0].x_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 110,
+      "match": "(int)&g_GlobalEdgeTable[0].x_start",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar9) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[1].x_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 111,
+      "match": "(int)&g_GlobalEdgeTable[1].x_start",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[0].y_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 112,
+      "match": "(int)&g_GlobalEdgeTable[0].y_start",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].y_start + iVar9) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[1].y_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 113,
+      "match": "(int)&g_GlobalEdgeTable[1].y_start",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].y_start + iVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[0].x_fixed_point` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 114,
+      "match": "(int)&g_GlobalEdgeTable[0].x_fixed_point",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].x_fixed_point + iVar9) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[1].x_fixed_point` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 115,
+      "match": "(int)&g_GlobalEdgeTable[1].x_fixed_point",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_fixed_point + iVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[0].x_increment` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 116,
+      "match": "(int)&g_GlobalEdgeTable[0].x_increment",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].x_increment + iVar9) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[1].x_increment` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 117,
+      "match": "(int)&g_GlobalEdgeTable[1].x_increment",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_increment + iVar9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[1].x_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 118,
+      "match": "(int)&g_GlobalEdgeTable[1].x_start",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) = uVar1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[1].y_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 119,
+      "match": "(int)&g_GlobalEdgeTable[1].y_start",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].y_start + iVar9) = uVar2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[1].x_fixed_point` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 120,
+      "match": "(int)&g_GlobalEdgeTable[1].x_fixed_point",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_fixed_point + iVar9) = uVar3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[1].x_increment` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 121,
+      "match": "(int)&g_GlobalEdgeTable[1].x_increment",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_GlobalEdgeTable[1].x_increment + iVar9) = iVar10;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_GlobalEdgeTable[0].x_start` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 135,
+      "match": "(int)&g_GlobalEdgeTable[0].x_start",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)((int)&g_GlobalEdgeTable[0].x_start + local_18) <= local_14));",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 104,
       "match": "(int)&NAME used in byte-offset arithmetic",

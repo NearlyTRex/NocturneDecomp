@@ -938,6 +938,15 @@
       "type": "unknown_field"
     },
     {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 94,
+      "match": "(int)local_24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while ((int)local_24 < vertex_count);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 92,
       "match": "(int)&NAME used in byte-offset arithmetic",

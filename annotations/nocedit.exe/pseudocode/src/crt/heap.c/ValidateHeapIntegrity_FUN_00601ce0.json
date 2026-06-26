@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 132,
+    "complexity_score": 227,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 8,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "register_param"
     ],
     "total_lines": 180
@@ -234,6 +235,78 @@
       "severity": "mild",
       "text": "CoalesceAndAddFreeBlock(ptr,(HeapBlock *)(uint)in_DS,(ushort)pHVar2);",
       "type": "register_param"
+    },
+    {
+      "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)&pHVar2->heap_size",
+      "severity": "moderate",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)&pHVar2->heap_size",
+      "severity": "moderate",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))))) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SecondaryHeap->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)&g_SecondaryHeap->heap_size",
+      "severity": "moderate",
+      "text": "(void *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= ptr)) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)&pHVar2->heap_size",
+      "severity": "moderate",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)&pHVar2->heap_size",
+      "severity": "moderate",
+      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr))))))))))",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pHVar2->heap_size` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)&pHVar2->heap_size",
+      "severity": "moderate",
+      "text": "if ((pHVar2 <= ptr) && (ptr < (void *)((int)&pHVar2->heap_size + pHVar2->heap_size)))",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pHVar2` truncated by cast to `ushort` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(ushort)pHVar2",
+      "severity": "moderate",
+      "text": "CoalesceAndAddFreeBlock(ptr,(HeapBlock *)(uint)in_DS,(ushort)pHVar2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pHVar2[1].next_heap_block` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)pHVar2[1].next_heap_block",
+      "severity": "moderate",
+      "text": "INT_00684edc = (int)pHVar2[1].next_heap_block;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pHVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)pHVar2",
+      "severity": "moderate",
+      "text": "INT_03f9b210 = (int)pHVar2;",
+      "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

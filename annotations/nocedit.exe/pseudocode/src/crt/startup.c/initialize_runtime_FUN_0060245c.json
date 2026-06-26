@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 118,
+    "complexity_score": 143,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 33,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 93,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "pointer_truncation"
     ],
     "total_lines": 310
   },
@@ -340,6 +341,22 @@
       "severity": "moderate",
       "text": "pcVar7 = (char *)((int)pcVar7 + 2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pcVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 80,
+      "match": "(int)pcVar7",
+      "severity": "moderate",
+      "text": "(*(WCHAR *)pcVar7 != L'\\0')); pcVar7 = (char *)((int)pcVar7 + 2)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 84,
+      "match": "(int)pcVar7",
+      "severity": "moderate",
+      "text": "pcVar7 = (char *)((int)pcVar7 + 2);",
+      "type": "pointer_truncation"
     }
   ]
 }

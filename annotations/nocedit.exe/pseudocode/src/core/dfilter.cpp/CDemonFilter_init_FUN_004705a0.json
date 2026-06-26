@@ -248,5 +248,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "result of integer division used in a floating point context; possible loss of precision",
+      "line": 33,
+      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
+      "severity": "mild",
+      "text": "fVar2 = (float)(this_ptr->count / 2 - iVar5);",
+      "type": "static_integer_division"
+    }
+  ]
 }

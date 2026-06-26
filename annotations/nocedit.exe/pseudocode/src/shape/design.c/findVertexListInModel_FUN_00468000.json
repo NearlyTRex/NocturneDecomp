@@ -183,5 +183,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.",
+      "line": 15,
+      "match": "Cppcheck: redundant null check or possible null dereference",
+      "severity": "moderate",
+      "text": "while (((char)(model_ptr->base).type != '\\x02' && ((char)(model_ptr->base).type != '\\0'))) {",
+      "type": "static_null_pointer_redundant_check"
+    }
+  ]
 }

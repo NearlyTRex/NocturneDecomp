@@ -76,6 +76,168 @@
   },
   "resolved_suspects": [
     {
+      "description": "Pointer value `&out_min->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(int)&out_min->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_min->x + 4) = *(uint *)((int)&(pCVar1->position).x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_min->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 14,
+      "match": "(int)&out_min->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_min->y + 4) = *(uint *)((int)&(pCVar1->position).y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_min->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)&out_min->z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_min->z + 4) = *(uint *)((int)&(pCVar1->position).z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_max->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)&out_max->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_max->x + 4) = *(uint *)((int)&(pCVar1->position).x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_max->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)&out_max->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_max->y + 4) = *(uint *)((int)&(pCVar1->position).y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_max->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)&out_max->z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_max->z + 4) = *(uint *)((int)&(pCVar1->position).z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_min->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)&out_min->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_min->x + 4) = *(uint *)((int)&pCVar1[1].position.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar1[1].position.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)&pCVar1[1].position.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_min->x + 4) = *(uint *)((int)&pCVar1[1].position.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_min->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)&out_min->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_min->y + 4) = *(uint *)((int)&pCVar1[1].position.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar1[1].position.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)&pCVar1[1].position.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_min->y + 4) = *(uint *)((int)&pCVar1[1].position.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_min->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)&out_min->z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_min->z + 4) = *(uint *)((int)&pCVar1[1].position.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar1[1].position.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)&pCVar1[1].position.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_min->z + 4) = *(uint *)((int)&pCVar1[1].position.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_max->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)&out_max->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_max->x + 4) = *(uint *)((int)&pCVar1[1].position.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar1[1].position.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)&pCVar1[1].position.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_max->x + 4) = *(uint *)((int)&pCVar1[1].position.x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_max->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)&out_max->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_max->y + 4) = *(uint *)((int)&pCVar1[1].position.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar1[1].position.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)&pCVar1[1].position.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_max->y + 4) = *(uint *)((int)&pCVar1[1].position.y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_max->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)&out_max->z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_max->z + 4) = *(uint *)((int)&pCVar1[1].position.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar1[1].position.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)&pCVar1[1].position.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_max->z + 4) = *(uint *)((int)&pCVar1[1].position.z + 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 12,
       "match": "(int)&NAME used in byte-offset arithmetic",

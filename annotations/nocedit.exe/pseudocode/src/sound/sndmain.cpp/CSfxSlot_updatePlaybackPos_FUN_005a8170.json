@@ -217,6 +217,15 @@
       "type": "unknown_field"
     },
     {
+      "description": "Pointer value `&this_ptr->prev_hardware_playback_pos` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)&this_ptr->prev_hardware_playback_pos",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 33,
       "match": "(int)&NAME used in byte-offset arithmetic",

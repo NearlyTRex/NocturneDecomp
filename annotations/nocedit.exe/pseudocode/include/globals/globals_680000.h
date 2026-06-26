@@ -22,7 +22,6 @@
 #include "types/classes/CSound.h"
 #include "types/classes/CSpotView.h"
 #include "types/classes/CTerrain.h"
-#include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWater.h"
 #include "types/classes/CWeather.h"
@@ -76,11 +75,9 @@ extern CSpotView* g_CSpotViewPtr;
 // CTerrain*
 extern CTerrain* g_CTerrainPtr;
 
-// CVector3f
-extern CVector3f CVector3f_006819fc;
-
 // CVector3i
 extern CVector3i g_GlobalLightDirection;
+extern CVector3i CVector3i_006819fc;
 
 // CWater*
 extern CWater* g_CWaterPtr;

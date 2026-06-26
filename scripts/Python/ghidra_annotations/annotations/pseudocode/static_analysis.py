@@ -243,11 +243,16 @@ def parse_clang_tidy_output(stdout, cpp_path):
         column = int(match.group(3)) if match.group(3) else 0
         message = match.group(5).strip()
 
-        # Extract check name from [check-name] suffix
+        # Extract check name from the [check-name] suffix. clang-tidy aliases a
+        # single diagnostic under several comma-separated checks (e.g.
+        # `[bugprone-signed-char-misuse,cert-str34-c]`); the comma must be in the
+        # character class or the whole tag fails to match and check_name comes
+        # back empty (leaving the tag stranded in the message). Store the primary
+        # (first-listed) check as check_name.
         check_name = ''
-        check_match = re.search(r'\[([a-zA-Z][a-zA-Z0-9._-]*)\]$', message)
+        check_match = re.search(r'\[([a-zA-Z][a-zA-Z0-9._,-]*)\]$', message)
         if check_match:
-            check_name = check_match.group(1)
+            check_name = check_match.group(1).split(',')[0].strip()
             message = message[:check_match.start()].strip()
 
         diagnostics.append({

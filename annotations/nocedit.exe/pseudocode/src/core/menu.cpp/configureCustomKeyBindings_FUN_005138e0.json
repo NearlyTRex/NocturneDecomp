@@ -1658,6 +1658,33 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `g_CustomKeyPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 600,
+      "match": "(int)g_CustomKeyPointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(**(EInputCodeType **)((int)g_CustomKeyPointers + iVar34));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CustomKeyPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 905,
+      "match": "(int)g_CustomKeyPointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(**(int **)((int)g_CustomKeyPointers + iVar30) == *g_CustomKeyPointers[iVar15_00])) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CustomKeyPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 906,
+      "match": "(int)g_CustomKeyPointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "**(int **)((int)g_CustomKeyPointers + iVar30) = 599;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 79,
       "match": "do {",

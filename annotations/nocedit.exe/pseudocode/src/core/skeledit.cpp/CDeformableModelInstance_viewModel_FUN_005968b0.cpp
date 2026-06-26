@@ -493,9 +493,9 @@ LAB_0059722b:
       local_dc.z = -local_100.z;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_d0,&local_dc);
-      local_154.x = (int)CVector3f_006819fc.x;
-      local_154.y = (int)CVector3f_006819fc.y;
-      local_154.z = (int)CVector3f_006819fc.z;
+      local_154.x = CVector3i_006819fc.x;
+      local_154.y = CVector3i_006819fc.y;
+      local_154.z = CVector3i_006819fc.z;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_154);
       local_154.x = 0xf00;

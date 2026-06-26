@@ -594,6 +594,42 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 123,
+      "match": "(int)local_38",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_9e0,(char *)0x0,(char *)0x0,(char *)(local_40 * 0x50 + (int)local_38),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 127,
+      "match": "(int)local_38",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar5 = (char *)(local_40 * 0x50 + (int)local_38);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 165,
+      "match": "(int)local_38",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar6 = (char *)(local_9e4 * 0x50 + (int)local_38);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 176,
+      "match": "(int)local_38",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar6 = (char *)(local_9e4 * 0x50 + (int)local_38);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex literal 0x766880 matches address of g_RenderVertexBuffer (+911468 bytes into) (type SRenderVertex[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 149,
       "match": "0x766880",

@@ -2,17 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 288,
+    "complexity_score": 303,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
       "displaced_global_access",
       "param_count_too_few",
       "pointer_cast",
+      "pointer_truncation",
       "suspicious_cast",
       "unnamed_param"
     ],
@@ -317,6 +318,14 @@
       "severity": "moderate",
       "text": "iVar5 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));",
       "type": "suspicious_cast"
+    },
+    {
+      "description": "Pointer value `&g_PositiveInfinity` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)&g_PositiveInfinity",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)&g_PositiveInfinity + *(int *)(param_1 + 0x10) * 2 + 6);",
+      "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

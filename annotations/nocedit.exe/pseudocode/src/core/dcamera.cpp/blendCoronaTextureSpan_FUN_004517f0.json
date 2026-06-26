@@ -217,6 +217,15 @@
       "type": "nonstandard_int"
     },
     {
+      "description": "Pointer value `pcVar9` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(uint)pcVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "while (((uint)pcVar9 & 3) != 0) {",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Ghidra CONCAT34 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
       "line": 44,
       "match": "CONCAT34",

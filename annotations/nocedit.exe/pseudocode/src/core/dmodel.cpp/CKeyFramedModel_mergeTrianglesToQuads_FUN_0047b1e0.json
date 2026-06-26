@@ -394,6 +394,159 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 99,
+      "match": "(int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar10 = (uint *)(local_7c->part_list[0].poly_count + (int)local_50);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 100,
+      "match": "(int)puVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (this_ptr->poly_count < (int)puVar10) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 105,
+      "match": "(int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int)local_50 < (int)puVar10) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 105,
+      "match": "(int)puVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int)local_50 < (int)puVar10) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_6c = (int)local_50 * 0x48;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 107,
+      "match": "(int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_70 = (int)local_50 << 2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_50` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 112,
+      "match": "(char)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((bVar5) && ((char)local_50 == '\\0')) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 114,
+      "match": "(int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_CEditorToolsPtr,(float)(int)local_50,(float)this_ptr->poly_count);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 116,
+      "match": "(int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_48 = (int)local_50 + 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 117,
+      "match": "(int)puVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (local_48 < (int)puVar10) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 127,
+      "match": "(int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(uchar *)((int)local_50 + (int)puVar2) == puVar2[local_48])))) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 127,
+      "match": "(int)puVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(uchar *)((int)local_50 + (int)puVar2) == puVar2[local_48])))) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 201,
+      "match": "(int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,&local_9c,local_38,(int)local_50);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 279,
+      "match": "(int)puVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (local_48 < (int)puVar10);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 284,
+      "match": "(int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_50 = (uint *)((int)local_50 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 285,
+      "match": "(int)local_50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while ((int)local_50 < (int)puVar10);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 285,
+      "match": "(int)puVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while ((int)local_50 < (int)puVar10);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 308,
       "match": "for (...; != 0; ... + -1)",

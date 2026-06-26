@@ -4,3 +4,241 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
+  pointer_truncation               181 ( 82.3%)
+  static_integer_division           16 (  7.3%)
+  static_null_pointer_redundant_check     8 (  3.6%)
+  static_signed_char_misuse          5 (  2.3%)
+  static_float_loop_induction        4 (  1.8%)
+  static_swapped_arguments           3 (  1.4%)
+  static_null_pointer_arithmetic_redundant_check     1 (  0.5%)
+  unrolled_memcpy                    1 (  0.5%)
+  static_memleak                     1 (  0.5%)
+
+====================================================================================================
+TYPE: pointer_truncation (181 occurrences)
+====================================================================================================
+
+Unique patterns:
+     9x  (int)output_buffer
+     7x  (int)pcVar5
+     7x  (int)local_24
+     6x  (int)this_ptr
+     6x  (int)pCVar1
+     6x  (int)pcVar8
+     5x  (int)g_ScreenBufferArray[1]
+     5x  (int)g_ScreenBufferArray[0]
+     5x  (uint)light_source->precomputed_lighting_textures
+     4x  (uint)this_ptr
+     3x  (int)g_CurrentTextureData
+     3x  (int)local_78
+     3x  (int)scanline_y
+     3x  (int)pvVar2
+     3x  (int)pcVar2
+     3x  (uint)g_ActorNameSentinel
+     3x  (uint)(header + 1)
+     3x  (int)this_ptr->row_pointers[0]
+     3x  (int)this_ptr->row_pointers[local_18 + 1]
+     2x  (int)frame_buffer
+
+Functions:
+  cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
+  cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
+  cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
+  cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
+  cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
+  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+  cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440
+  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
+  cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0
+  cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
+  core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
+  core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
+  core_cloth.cpp_CClothList_render_FUN_0043c320
+  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
+  core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
+  core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
+  core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
+  core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900
+  core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0
+  core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390
+  core_dmodel.cpp_CDemonTriangle_copy_FUN_0047ef10
+  core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10
+  core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
+  core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7
+  core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d
+  core_enemy.cpp_CEnemy_getPropertyList_FUN_004aa170
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
+  core_event.cpp_CEventList_executeCommand_FUN_004aacc0
+  core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80
+  core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0
+  core_fire.cpp_CSpark_setupRenderState_FUN_004c0300
+  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
+  core_game.cpp_CGame_processFudge_FUN_004d8750
+  core_game.cpp_CGame_runGameSession_FUN_004daf80
+  core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30
+  core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0
+  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
+  core_inv.cpp_CInventory_select_FUN_004ff800
+  core_main.c_enterMainGameMenu_FUN_00507a50
+  core_menu.cpp_configureCustomKeys_FUN_00511890
+  core_menu.cpp_configureGraphicsOptions_FUN_00510c80
+  core_menu.cpp_configureSoundOptions_FUN_00511e50
+  core_menu.cpp_showMainGameMenu_FUN_00512f40
+  core_menu.cpp_showOptionsScreen_FUN_00512d30
+  core_moon.cpp_CMoon_render_FUN_00529ed0
+  core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
+  core_scat.cpp_CScat_updateAiming_FUN_00558720
+  core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
+  core_script.cpp_CScript_step_FUN_0055a810
+  core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
+  core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0
+  core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830
+  core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310
+  core_setedit.cpp_editGroundTypes_FUN_00578630
+  core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460
+  core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
+  core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830
+  engine_2d.c_mapFrameBuffer_FUN_00403430
+  engine_2d.c_mapTextureFrameBuffer_FUN_00403650
+  engine_2d.c_wrapTextToWidth_FUN_00401d80
+  engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50
+  engine_drender.cpp_renderTriangleSimple_FUN_004839f0
+  engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
+  engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70
+  engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
+  engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
+  engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
+  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
+  engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
+  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
+  shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0
+  shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830
+  shape_edittool.cpp_CEdCheck_handleInput_FUN_004a6d20
+  shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+  shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020
+  shape_memdbg.cpp_debugFree_FUN_0050f460
+  shape_memdbg.cpp_debugRealloc_FUN_0050f540
+  shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
+  shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90
+  shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
+  sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20
+  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
+  sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
+  sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970
+  sound_sndmain.cpp_isSampleLoaded_FUN_005aa3c0
+  sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+  sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530
+  support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0
+  wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0
+  wincore_windll.cpp_fillDepthRegion_FUN_005b3fc2
+  wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322
+
+====================================================================================================
+TYPE: static_integer_division (16 occurrences)
+====================================================================================================
+
+Unique patterns:
+    16x  Clang-Tidy: integer division in floating-point context (possible mistyped field)
+
+Functions:
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
+  core_dfilter.cpp_CDemonFilter_init_FUN_004705a0
+  core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210
+  core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
+  core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0
+  sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
+  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
+
+====================================================================================================
+TYPE: static_null_pointer_redundant_check (8 occurrences)
+====================================================================================================
+
+Unique patterns:
+     8x  Cppcheck: redundant null check or possible null dereference
+
+Functions:
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
+  core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170
+  shape_design.c_findVertexListInModel_FUN_00468000
+  shape_design.c_getVertexCountFromModel_FUN_00468080
+  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
+  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
+
+====================================================================================================
+TYPE: static_signed_char_misuse (5 occurrences)
+====================================================================================================
+
+Unique patterns:
+     5x  Clang-Tidy: signed char widened to unsigned (signedness data-model smell)
+
+Functions:
+  engine_2d.c_drawStringHighlighted_FUN_004020e0
+  engine_2d.c_drawStringMasked_FUN_00402030
+  engine_2d.c_drawString_FUN_00402080
+  engine_2d.c_drawTextWrappedColor_FUN_00401eb0
+  engine_2d.c_drawTextWrapped_FUN_00401c60
+
+====================================================================================================
+TYPE: static_float_loop_induction (4 occurrences)
+====================================================================================================
+
+Unique patterns:
+     4x  Clang-Tidy: floating-point loop induction variable
+
+Functions:
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
+  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
+  core_game.cpp_CGame_finishAct_FUN_004e3b90
+
+====================================================================================================
+TYPE: static_swapped_arguments (3 occurrences)
+====================================================================================================
+
+Unique patterns:
+     3x  Clang-Tidy: potentially swapped arguments (param-type mismatch)
+
+Functions:
+  core_flame.cpp_CFlame_process_FUN_004c9c00
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+
+====================================================================================================
+TYPE: static_null_pointer_arithmetic_redundant_check (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  Cppcheck: redundant null check or pointer-subtraction overflow
+
+Functions:
+  shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0
+
+====================================================================================================
+TYPE: unrolled_memcpy (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  field-by-field struct copy
+
+Functions:
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+
+====================================================================================================
+TYPE: static_memleak (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  Cppcheck: memory leak
+
+Functions:
+  shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0

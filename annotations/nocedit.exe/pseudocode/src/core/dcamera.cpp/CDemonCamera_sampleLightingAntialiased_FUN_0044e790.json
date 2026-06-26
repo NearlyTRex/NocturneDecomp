@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 515,
-    "complexity_score": 215,
+    "complexity_score": 270,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 215,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 730
   },
   "cross_references": [
@@ -167,6 +169,51 @@
   },
   "resolved_suspects": [
     {
+      "description": "Pointer value `&pCVar8->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 142,
+      "match": "(int)&pCVar8->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "psVar1 = (short *)((int)&pCVar8->x + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar8->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 180,
+      "match": "(int)&pCVar8->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(short *)((int)&pCVar8->y + 2) = *(short *)((int)&pCVar8->y + 2) + 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar8->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 180,
+      "match": "(int)&pCVar8->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(short *)((int)&pCVar8->y + 2) = *(short *)((int)&pCVar8->y + 2) + 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar8->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 181,
+      "match": "(int)&pCVar8->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(short *)((int)&pCVar8->x + 2) = *(short *)((int)&pCVar8->x + 2) + 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar8->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 181,
+      "match": "(int)&pCVar8->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(short *)((int)&pCVar8->x + 2) = *(short *)((int)&pCVar8->x + 2) + 1;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 142,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -238,5 +285,51 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `light_source->precomputed_lighting_textures` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 140,
+      "match": "(uint)light_source->precomputed_lighting_textures",
+      "severity": "moderate",
+      "text": "(int)((uint)light_source->precomputed_lighting_textures",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `light_source->precomputed_lighting_textures` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 156,
+      "match": "(uint)light_source->precomputed_lighting_textures",
+      "severity": "moderate",
+      "text": "(int)((uint)light_source->precomputed_lighting_textures",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `light_source->precomputed_lighting_textures` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 175,
+      "match": "(uint)light_source->precomputed_lighting_textures",
+      "severity": "moderate",
+      "text": "(int)((uint)light_source->precomputed_lighting_textures",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `light_source->precomputed_lighting_textures` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 194,
+      "match": "(uint)light_source->precomputed_lighting_textures",
+      "severity": "moderate",
+      "text": "(int)((uint)light_source->precomputed_lighting_textures",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `light_source->precomputed_lighting_textures` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 212,
+      "match": "(uint)light_source->precomputed_lighting_textures",
+      "severity": "moderate",
+      "text": "(int)((uint)light_source->precomputed_lighting_textures",
+      "type": "pointer_truncation"
+    }
+  ]
 }

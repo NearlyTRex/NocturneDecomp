@@ -14,6 +14,7 @@
 
 import json
 import os
+import re
 
 try:
     # When invoked inside the Ghidra/pyghidra runtime, this routes through the
@@ -60,6 +61,29 @@ WHITELIST = {
     ('cppcheck', 'nullPointerArithmetic'): {
         'type': 'static_null_pointer_arithmetic',
         'match': 'Cppcheck: null pointer arithmetic',
+        'severity': 'major',
+    },
+
+    # "Either this null check is redundant or there's a possible null deref" —
+    # cppcheck saw the pointer dereferenced unconditionally elsewhere. In Ghidra
+    # output this often means a guard the decompiler hoisted/duplicated, but it
+    # can also be a genuine missing-null-path bug, so surface it for review.
+    ('cppcheck', 'nullPointerRedundantCheck'): {
+        'type': 'static_null_pointer_redundant_check',
+        'match': 'Cppcheck: redundant null check or possible null dereference',
+        'severity': 'moderate',
+    },
+    ('cppcheck', 'nullPointerArithmeticRedundantCheck'): {
+        'type': 'static_null_pointer_arithmetic_redundant_check',
+        'match': 'Cppcheck: redundant null check or pointer-subtraction overflow',
+        'severity': 'moderate',
+    },
+
+    # Memory leak — cppcheck tracked an allocation with no freeing path. Usually a
+    # real resource bug (or a decompiler-dropped free); always worth a look.
+    ('cppcheck', 'memleak'): {
+        'type': 'static_memleak',
+        'match': 'Cppcheck: memory leak',
         'severity': 'major',
     },
 
@@ -120,6 +144,51 @@ WHITELIST = {
         'type': 'static_identical_inner_condition',
         'match': 'Cppcheck: inner condition identical to outer',
         'severity': 'mild',
+    },
+
+    # Potentially-swapped call arguments — clang-tidy flags a call where one arg
+    # converts double->int and an adjacent arg converts int->float (or the
+    # reverse). In Ghidra output this almost always means a real data-model
+    # defect: the callee signature's param types don't match what the asm pushes,
+    # or a raw float bit-pattern was emitted as an int into a float param
+    # (e.g. `igniteBone(..., 0.0, 0x40000000, 1)` where `0x40000000` is the bits
+    # of `2.0f` going into a `float` param). Worth a human look at the signature.
+    ('clang_tidy', 'bugprone-swapped-arguments'): {
+        'type': 'static_swapped_arguments',
+        'match': 'Clang-Tidy: potentially swapped arguments (param-type mismatch)',
+        'severity': 'moderate',
+    },
+
+    # Integer division whose result feeds a floating-point context — clang-tidy
+    # flags `(double)(a / b)`-style expressions. Often a struct field or local
+    # that Ghidra typed `int` but the asm uses as `float` (an `FLD`/`FDIV` slot),
+    # so the "integer division" is really a mistyped operand. Noisier than the
+    # other promotions (some are faithful Watcom integer math), hence `mild`:
+    # surface it for review without raising the function's headline severity.
+    ('clang_tidy', 'bugprone-integer-division'): {
+        'type': 'static_integer_division',
+        'match': 'Clang-Tidy: integer division in floating-point context (possible mistyped field)',
+        'severity': 'mild',
+    },
+
+    # Floating-point loop induction variable (`for (f = 0.0; f < n; f += ...)`).
+    # Usually faithful to Watcom, but a float counter can also be a mistyped
+    # local that should be an int index; flag it for review at low severity.
+    ('clang_tidy', 'cert-flp30-c'): {
+        'type': 'static_float_loop_induction',
+        'match': 'Clang-Tidy: floating-point loop induction variable',
+        'severity': 'mild',
+    },
+
+    # `signed char` widened straight to `uint` — the sign bit propagates, so a
+    # byte >= 0x80 becomes a huge unsigned value. A data-model signedness smell:
+    # the local/field is often really a `uchar` (Ghidra picked `char`), or the
+    # use needs a `(uchar)` cast before widening. Note: clang-tidy aliases this
+    # as `bugprone-signed-char-misuse,cert-str34-c`; we key on the primary name.
+    ('clang_tidy', 'bugprone-signed-char-misuse'): {
+        'type': 'static_signed_char_misuse',
+        'match': 'Clang-Tidy: signed char widened to unsigned (signedness data-model smell)',
+        'severity': 'moderate',
     },
 }
 
@@ -190,20 +259,57 @@ def _tool_from_key(sa_key):
     return sa_key
 
 
+# Trailing `[check-a,check-b]` tag clang-tidy appends to its message. Used to
+# recover check names from exports made before the parser learned to split the
+# comma-aliased tag (those left check_name empty and the tag in the message).
+_TIDY_TAG_RE = re.compile(r'\[([a-zA-Z][a-zA-Z0-9._,-]*)\]\s*$')
+
+
+def _candidate_checks(diag):
+    """Yield the check identifiers a diagnostic could be whitelisted under.
+
+    cppcheck names its check in `check_id`; clang-tidy in `check_name`, which may
+    be a comma-aliased list (`bugprone-signed-char-misuse,cert-str34-c`). Older
+    exports stored an empty check_name and left the `[...]` tag in the message,
+    so fall back to parsing that tag. Every comma-separated alias is a candidate.
+    """
+    seen = []
+
+    def add(name):
+        name = (name or '').strip()
+        if name and name not in seen:
+            seen.append(name)
+
+    add(diag.get('check_id'))
+    for part in (diag.get('check_name') or '').split(','):
+        add(part)
+    tag = _TIDY_TAG_RE.search(diag.get('message') or '')
+    if tag:
+        for part in tag.group(1).split(','):
+            add(part)
+    return seen
+
+
 def synthesize_suspect(tool, diag, cpp_path):
     """Convert a single static-analysis diagnostic into a suspect entry.
 
-    Returns None if the (tool, check_id) is not whitelisted.
+    Returns None if none of the diagnostic's check identifiers are whitelisted.
     """
-    check_id = diag.get('check_id', '')
-    spec = WHITELIST.get((tool, check_id))
+    spec = None
+    for check in _candidate_checks(diag):
+        spec = WHITELIST.get((tool, check))
+        if spec:
+            break
     if not spec:
         return None
     line_no = diag.get('line', 0) or 0
+    # Strip any stranded `[check,...]` tag so the description matches what a
+    # parser-fixed re-export would store.
+    description = _TIDY_TAG_RE.sub('', diag.get('message', '') or '').strip()
     return {
         'type': spec['type'],
         'match': spec['match'],
-        'description': diag.get('message', '') or '',
+        'description': description,
         'line': line_no,
         'severity': spec['severity'],
         'text': _read_line(cpp_path, line_no),

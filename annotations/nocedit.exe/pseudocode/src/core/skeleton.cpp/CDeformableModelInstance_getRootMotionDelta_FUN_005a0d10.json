@@ -169,6 +169,33 @@
       "type": "warning_inlined_function"
     },
     {
+      "description": "Pointer value `&pCVar9->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)&pCVar9->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30 = local_30 + *(float *)((int)&pCVar9->x + iVar14);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar9->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)&pCVar9->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_2c = local_2c + *(float *)((int)&pCVar9->y + iVar14);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar9->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)&pCVar9->z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_28 = local_28 + *(float *)((int)&pCVar9->z + iVar14);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 30,
       "match": "field-by-field struct copy",

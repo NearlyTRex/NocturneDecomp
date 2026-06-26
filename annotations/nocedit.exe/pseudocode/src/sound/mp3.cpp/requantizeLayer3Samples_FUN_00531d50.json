@@ -304,6 +304,51 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 102,
+      "match": "(int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int)local_20 < g_Layer3BandIndex[iVar7].l[8]) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 132,
+      "match": "(int)local_38",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = ((int)local_38 - local_2c) / local_28;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 163,
+      "match": "(int)local_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_20 = (float *)((int)local_20 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 164,
+      "match": "(int)local_38",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_38 = (float *)((int)local_38 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_6c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 170,
+      "match": "(int)local_6c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_6c = (float *)((int)local_6c + 0x12);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Loop body reassigns `base` (initialized to a literal constant before the loop) via swap-chain `base = fVar7; fVar7 = fVar5;`, corrupting the loop's math after iter 0. Ghidra register-spill artifact \u2014 drop the swap-chain lines in a .keep so the loop runs with its original constants.",
       "line": 64,
       "match": "do { ...A used in math...; A = B; B = C; ...} with pre-loop `A = <literal>;`",

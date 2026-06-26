@@ -377,6 +377,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `g_ActorClassRegistrations` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)g_ActorClassRegistrations",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar8);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 93,
       "match": "pCVar6 = (T *)&pCVar6->FIELD",

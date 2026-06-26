@@ -124,15 +124,24 @@
       "diagnostic_count": 1,
       "diagnostics": [
         {
-          "check_name": "",
+          "check_name": "bugprone-signed-char-misuse",
           "column": 15,
           "line": 22,
-          "message": "'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]"
+          "message": "'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first."
         }
       ],
       "error": null
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.",
+      "line": 22,
+      "match": "Clang-Tidy: signed char widened to unsigned (signedness data-model smell)",
+      "severity": "moderate",
+      "text": "bVar2 = *text;",
+      "type": "static_signed_char_misuse"
+    }
+  ]
 }

@@ -401,6 +401,60 @@
   },
   "resolved_suspects": [
     {
+      "description": "Pointer value `&g_CubeClippedTriangleBuffer[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 126,
+      "match": "(int)&g_CubeClippedTriangleBuffer[0].y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].y + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CubeClippedTriangleBuffer[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 127,
+      "match": "(int)&g_CubeClippedTriangleBuffer[0].z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar3 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].z + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CubeClippedTriangleBuffer[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 129,
+      "match": "(int)&g_CubeClippedTriangleBuffer[0].x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_LoadedVertices[uVar2].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[0].x + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CubeClippedTriangleBuffer[1].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 133,
+      "match": "(int)&g_CubeClippedTriangleBuffer[1].y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar4 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].y + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CubeClippedTriangleBuffer[1].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 134,
+      "match": "(int)&g_CubeClippedTriangleBuffer[1].z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar5 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].z + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CubeClippedTriangleBuffer[1].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 135,
+      "match": "(int)&g_CubeClippedTriangleBuffer[1].x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_LoadedVertices[uVar1].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[1].x + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 23,
       "match": "field-by-field struct copy",

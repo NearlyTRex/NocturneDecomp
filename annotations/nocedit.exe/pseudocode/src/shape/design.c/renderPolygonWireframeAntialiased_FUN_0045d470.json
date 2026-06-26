@@ -158,6 +158,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `pSVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 64,
+      "match": "(int)pSVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 30,
       "match": "field-by-field struct copy",

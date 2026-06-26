@@ -150,6 +150,15 @@
       "severity": "moderate",
       "text": "if (*(char *)(local_18 + local_14 * g_CurrentTextureDimension + (int)g_CurrentTextureData) ==",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(char *)(local_18 + local_14 * g_CurrentTextureDimension + (int)g_CurrentTextureData) ==",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

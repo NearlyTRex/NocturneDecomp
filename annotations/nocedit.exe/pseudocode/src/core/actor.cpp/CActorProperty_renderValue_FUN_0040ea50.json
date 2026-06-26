@@ -510,6 +510,33 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `piVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 174,
+      "match": "(int)piVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)piVar9 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 175,
+      "match": "(int)piVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar9 = (int *)((int)piVar9 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_PropertyFlagDefinitions[0].mask` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 259,
+      "match": "(int)&g_PropertyFlagDefinitions[0].mask",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar13)) != 0) {",
+      "type": "pointer_truncation"
+    },
+    {
       "actual_args": 0,
       "description": "Format \"Unknown CActorProperty type: %d\" has 1 specifiers but 0 arguments after it",
       "expected_args": 1,

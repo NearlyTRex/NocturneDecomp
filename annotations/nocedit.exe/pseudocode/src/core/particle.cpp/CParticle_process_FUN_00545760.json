@@ -267,6 +267,24 @@
       "type": "extra_output"
     },
     {
+      "description": "Pointer value `&local_74` truncated by cast to `byte` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(byte)&local_74",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)afStack_34[1] + -0xb) = *(byte *)((int)afStack_34[1] + -0xb) ^ (byte)&local_74;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_74.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)&local_74.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_74.x = (int)&local_74.x + (int)auStack_38;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex literal 0x134bb95 matches address of g_CoronaLightCache (+170381 bytes into) (type SCoronaLightCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 44,
       "match": "0x134bb95",

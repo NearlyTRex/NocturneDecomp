@@ -268,6 +268,51 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `puVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)puVar12",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)puVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 76,
+      "match": "(int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)(iVar3 + (int)pvVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 77,
+      "match": "(int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)(iVar3 + 1 + (int)pvVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 78,
+      "match": "(int)pvVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar3 = *(byte *)(iVar3 + 2 + (int)pvVar1);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 62,
       "match": "for (...; != 0; ... + -1)",

@@ -563,5 +563,30 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "loop induction expression should not have floating-point type",
+      "line": 73,
+      "match": "Clang-Tidy: floating-point loop induction variable",
+      "severity": "mild",
+      "text": "fStack_110 = fStack_110 + -1.0f) {",
+      "type": "static_float_loop_induction"
+    },
+    {
+      "description": "result of integer division used in a floating point context; possible loss of precision",
+      "line": 107,
+      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
+      "severity": "mild",
+      "text": "fStack_20 = (float)((int)uStack_18 / 2) * (float)1.57079632675 * (float)0.25;",
+      "type": "static_integer_division"
+    },
+    {
+      "description": "loop induction expression should not have floating-point type",
+      "line": 116,
+      "match": "Clang-Tidy: floating-point loop induction variable",
+      "severity": "mild",
+      "text": "fStack_118 = fStack_118 + -1.0f) {",
+      "type": "static_float_loop_induction"
+    }
+  ]
 }

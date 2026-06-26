@@ -377,6 +377,33 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 124,
+      "match": "(int)pSVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar3->vertices[0].vertex_index = *(int *)((int)pSVar6 + iVar7 + 0x18);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 125,
+      "match": "(int)pSVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar3->vertices[0].texture_u = *(int *)((int)pSVar6 + iVar7 + 0x1c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 126,
+      "match": "(int)pSVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar7 = *(int *)((int)pSVar6 + iVar7 + 0x20);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
       "line": 129,
       "match": "(SMRGLPrimitiveQuad *)(iVar7 + 0xc)",

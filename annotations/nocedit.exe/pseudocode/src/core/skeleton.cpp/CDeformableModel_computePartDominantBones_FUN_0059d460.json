@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 390,
-    "complexity_score": 200,
+    "complexity_score": 275,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 200,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 7,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 590
   },
   "cross_references": [
@@ -577,5 +579,62 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 97,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "if (0 < (int)local_24) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 98,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "iVar10 = (int)local_24 * 4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 168,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "if (1 < (int)local_24) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 176,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "} while (iVar12 < (int)local_24);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 191,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "if (0 < (int)local_24) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 198,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "} while (iVar3 < (int)local_24);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 202,
+      "match": "(int)local_24",
+      "severity": "moderate",
+      "text": "return (int)local_24;",
+      "type": "pointer_truncation"
+    }
+  ]
 }

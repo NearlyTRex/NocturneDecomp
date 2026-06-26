@@ -1342,6 +1342,42 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `pSVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 479,
+      "match": "(int)pSVar14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar14 = (SShapeEditorPolygon *)((int)pSVar14 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 480,
+      "match": "(int)pSVar15",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar15 = (SShapeEditorPolygon *)((int)pSVar15 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 549,
+      "match": "(int)pSVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 550,
+      "match": "(int)pSVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex literal 0x16e9964 matches address of g_ModelPolygonData (+84 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 434,
       "match": "0x16e9964",

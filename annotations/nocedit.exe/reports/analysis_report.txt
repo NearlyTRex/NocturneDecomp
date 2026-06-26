@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6454 (100.0%)
-Functions with suspects: 0 (0.0%)
+Clean functions: 6352 (98.4%)
+Functions with suspects: 102 (1.6%)
 
-Total suspect patterns: 0
-Average suspects per function: 0.00
+Total suspect patterns: 220
+Average suspects per function: 0.03
 
-Virtual files: 214 total, 214 at 100%, 214 at 90%+
+Virtual files: 214 total, 166 at 100%, 209 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 47.8
+Average complexity score: 48.1
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,6 +28,15 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
+  pointer_truncation        181
+  static_integer_division   16
+  static_null_pointer_redundant_check 8
+  static_signed_char_misuse 5
+  static_float_loop_induction 4
+  static_swapped_arguments  3
+  static_null_pointer_arithmetic_redundant_check 1
+  unrolled_memcpy           1
+  static_memleak            1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -81,35 +90,35 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00419000: core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000 (4 lines)
   00419f50: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_00419f50 (4 lines)
   0041a040: core_bodypart.cpp_CBodyPart_getCarrier_FUN_0041a040 (4 lines)
-  ... and 6404 more
+  ... and 6302 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
-  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3337, suspects: 0, lines: 3337)
-  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2138, suspects: 0, lines: 2138)
+  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3372, suspects: 3, lines: 3337)
+  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2163, suspects: 2, lines: 2138)
   00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 1852, suspects: 0, lines: 1852)
   004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1728, suspects: 0, lines: 1728)
-  004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1591, suspects: 0, lines: 1591)
+  004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1636, suspects: 4, lines: 1591)
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 1474, suspects: 0, lines: 1474)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 1437, suspects: 0, lines: 1437)
   004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 1153, suspects: 0, lines: 1153)
   005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1140, suspects: 0, lines: 1140)
-  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1076, suspects: 0, lines: 1076)
-  004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 1052, suspects: 0, lines: 1052)
+  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1106, suspects: 2, lines: 1076)
+  004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 1067, suspects: 1, lines: 1052)
   0046bb80: shape_design.c_cramTextureList_FUN_0046bb80 (score: 1047, suspects: 0, lines: 1047)
   005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470 (score: 1031, suspects: 0, lines: 1031)
   005390f0: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (score: 997, suspects: 0, lines: 997)
   005138e0: core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (score: 917, suspects: 0, lines: 917)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 917, suspects: 0, lines: 917)
+  00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (score: 857, suspects: 2, lines: 832)
   0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 857, suspects: 0, lines: 857)
-  00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (score: 832, suspects: 0, lines: 832)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 810, suspects: 0, lines: 810)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 809, suspects: 0, lines: 809)
   0041e350: core_box.cpp_CBox_processPhysics_FUN_0041e350 (score: 779, suspects: 0, lines: 779)
+  00511e50: core_menu.cpp_configureSoundOptions_FUN_00511e50 (score: 758, suspects: 1, lines: 743)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 752, suspects: 0, lines: 752)
   00484410: core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (score: 752, suspects: 0, lines: 752)
   00562920: core_script.cpp_editParameterValue_FUN_00562920 (score: 751, suspects: 0, lines: 751)
-  00511e50: core_menu.cpp_configureSoundOptions_FUN_00511e50 (score: 743, suspects: 0, lines: 743)
   005b9c10: core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (score: 716, suspects: 0, lines: 716)
   0058c190: core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (score: 715, suspects: 0, lines: 715)
   005efde0: core_werewolf.cpp_CWerewolf_process_FUN_005efde0 (score: 714, suspects: 0, lines: 714)
@@ -118,3 +127,33 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
+
+  pointer_truncation (102 functions):
+    00401d80: engine_2d.c_wrapTextToWidth_FUN_00401d80
+    00403430: engine_2d.c_mapFrameBuffer_FUN_00403430
+    00403650: engine_2d.c_mapTextureFrameBuffer_FUN_00403650
+    00409470: core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
+    0040ac80: core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
+    004204f0: core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
+    00431410: cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
+    00431d00: cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
+    00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
+    00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
+    ... and 92 more
+
+  static_integer_division (0 functions):
+
+  static_null_pointer_redundant_check (0 functions):
+
+  static_signed_char_misuse (0 functions):
+
+  static_float_loop_induction (0 functions):
+
+  static_swapped_arguments (0 functions):
+
+  static_null_pointer_arithmetic_redundant_check (0 functions):
+
+  unrolled_memcpy (1 functions):
+    005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+
+  static_memleak (0 functions):

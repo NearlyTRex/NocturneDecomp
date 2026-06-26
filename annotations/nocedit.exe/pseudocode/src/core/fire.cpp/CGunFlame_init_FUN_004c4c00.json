@@ -187,6 +187,24 @@
       "severity": "moderate",
       "text": "this_ptr_01 = *(CFlameCan **)((int)g_FlameCans + iVar5);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_CharactersOnFire` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)g_CharactersOnFire",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_02 = *(CCharacter **)((int)g_CharactersOnFire + local_20);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_FlameCans` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)g_FlameCans",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_01 = *(CFlameCan **)((int)g_FlameCans + iVar5);",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

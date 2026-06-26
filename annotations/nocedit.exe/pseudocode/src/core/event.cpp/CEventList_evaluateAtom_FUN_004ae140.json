@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3369,
-    "complexity_score": 1591,
+    "complexity_score": 1636,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 231,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 1591,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 4960
   },
   "cross_references": [
@@ -2770,5 +2772,38 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `pCVar12` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1147,
+      "match": "(uint)pCVar12",
+      "severity": "moderate",
+      "text": "local_e0 = (uint)pCVar12 ^ (uint)g_ActorNameSentinel;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ActorNameSentinel` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1147,
+      "match": "(uint)g_ActorNameSentinel",
+      "severity": "moderate",
+      "text": "local_e0 = (uint)pCVar12 ^ (uint)g_ActorNameSentinel;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `this_ptr_01` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1246,
+      "match": "(uint)this_ptr_01",
+      "severity": "moderate",
+      "text": "local_e0 = (uint)this_ptr_01 ^ (uint)g_ActorNameSentinel;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ActorNameSentinel` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1246,
+      "match": "(uint)g_ActorNameSentinel",
+      "severity": "moderate",
+      "text": "local_e0 = (uint)this_ptr_01 ^ (uint)g_ActorNameSentinel;",
+      "type": "pointer_truncation"
+    }
+  ]
 }

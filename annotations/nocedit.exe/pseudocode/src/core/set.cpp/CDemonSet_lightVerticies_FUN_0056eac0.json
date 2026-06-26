@@ -798,6 +798,429 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 119,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_16c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 121,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_16c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 123,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_16c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 128,
+      "match": "(int)&g_RenderVertexBuffer[0].a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].a + iVar24) = g_PerspectiveReciprocal;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 140,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_13c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 142,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_13c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 144,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_13c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TransformedVertexArray[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 148,
+      "match": "(int)&g_TransformedVertexArray[0].x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_TransformedVertexArray[0].x + local_6c) = local_118.x;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TransformedVertexArray[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 149,
+      "match": "(int)&g_TransformedVertexArray[0].y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_TransformedVertexArray[0].y + local_6c) = local_118.y;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TransformedVertexArray[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 150,
+      "match": "(int)&g_TransformedVertexArray[0].z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_TransformedVertexArray[0].z + local_6c) = local_118.z;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 224,
+      "match": "(int)pvVar14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar19 = *(int *)((int)pvVar14 + 0x24);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 225,
+      "match": "(int)pvVar14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar17 = *(int *)((int)pvVar14 + 0x18);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 228,
+      "match": "(int)pvVar14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)pvVar14 + 0x30);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 244,
+      "match": "(int)pvVar14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar14 + 8) = fVar8 * fVar9;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 245,
+      "match": "(int)pvVar14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar14 + 0xc) = fVar11 * fVar9;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 246,
+      "match": "(int)pvVar14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)pvVar14 + 0x10) = fVar10 * fVar9;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 248,
+      "match": "(int)pvVar14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar14 = (void *)((int)pvVar14 + 0x48);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 251,
+      "match": "(int)pvVar14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar14 = (void *)((int)pvVar14 + 0x3c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 319,
+      "match": "(int)&g_RenderVertexBuffer[0].a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].a + local_64) = g_PerspectiveReciprocal;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 356,
+      "match": "(int)&g_RenderVertexBuffer[0].a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].a + local_58) = g_PerspectiveReciprocal;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex.transformed_x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 370,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_e8.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex.transformed_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 372,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_e8.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex.transformed_z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 374,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_e8.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TransformedVertexArray[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 378,
+      "match": "(int)&g_TransformedVertexArray[0].x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_TransformedVertexArray[0].x + local_5c) = local_130.x;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TransformedVertexArray[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 379,
+      "match": "(int)&g_TransformedVertexArray[0].y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_TransformedVertexArray[0].y + local_5c) = local_130.y;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TransformedVertexArray[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 380,
+      "match": "(int)&g_TransformedVertexArray[0].z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_TransformedVertexArray[0].z + local_5c) = local_130.z;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 466,
+      "match": "(int)&g_RenderVertexBuffer[0].a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].a + iVar19) = g_PerspectiveReciprocal;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex.transformed_x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 480,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_10c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex.transformed_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 482,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_10c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].projected_vertex.transformed_z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 484,
+      "match": "(int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_10c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 490,
+      "match": "(int)&g_RenderVertexBuffer[0].a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].a + iVar24) = g_PerspectiveReciprocal;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 499,
+      "match": "(int)&g_RenderVertexBuffer[0].r",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = (this_ptr->mirror_cached_color).r;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 500,
+      "match": "(int)&g_RenderVertexBuffer[0].g",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = (this_ptr->mirror_cached_color).g;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 502,
+      "match": "(int)&g_RenderVertexBuffer[0].b",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = (this_ptr->mirror_cached_color).b;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 515,
+      "match": "(int)&g_RenderVertexBuffer[0].a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 528,
+      "match": "(int)&g_RenderVertexBuffer[0].r",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = (this_ptr->flat_color).r;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 529,
+      "match": "(int)&g_RenderVertexBuffer[0].g",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = (this_ptr->flat_color).g;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 531,
+      "match": "(int)&g_RenderVertexBuffer[0].b",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = (this_ptr->flat_color).b;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 532,
+      "match": "(int)&g_RenderVertexBuffer[0].a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 543,
+      "match": "(int)&g_RenderVertexBuffer[0].r",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar19) = 0xffff;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 544,
+      "match": "(int)&g_RenderVertexBuffer[0].g",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar19) = 0xffff;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 545,
+      "match": "(int)&g_RenderVertexBuffer[0].b",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].b + iVar19) = 0xffff;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 546,
+      "match": "(int)&g_RenderVertexBuffer[0].a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 559,
+      "match": "(int)&g_RenderVertexBuffer[0].r",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar13) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 560,
+      "match": "(int)&g_RenderVertexBuffer[0].g",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar13) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 561,
+      "match": "(int)&g_RenderVertexBuffer[0].b",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].b + iVar13) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_RenderVertexBuffer[0].a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 562,
+      "match": "(int)&g_RenderVertexBuffer[0].a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar13) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 128,
       "match": "(int)&NAME used in byte-offset arithmetic",

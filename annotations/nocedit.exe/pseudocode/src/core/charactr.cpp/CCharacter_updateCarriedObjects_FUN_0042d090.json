@@ -294,6 +294,33 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)local_18",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,(int)local_18,in_stack_fffffd80);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_18->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)&local_18->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 = (CVector3f *)((int)&local_18->x + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 108,
+      "match": "(int)local_18",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while ((int)local_18 < 2);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 70,
       "match": "field-by-field struct copy",

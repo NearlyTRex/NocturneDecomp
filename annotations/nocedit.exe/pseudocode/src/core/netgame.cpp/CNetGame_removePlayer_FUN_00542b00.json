@@ -202,6 +202,24 @@
       "severity": "moderate",
       "text": "dest_00 = (void *)((int)dest_00 + 0x114);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `src` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)src",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "src = (void *)((int)src + 0x114);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `dest_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)dest_00",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dest_00 = (void *)((int)dest_00 + 0x114);",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

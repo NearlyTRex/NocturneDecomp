@@ -200,6 +200,24 @@
       "severity": "moderate",
       "text": "if (light == *(CDemonLight **)((int)g_SpotLightList + iVar3)) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_MasterLightList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)g_MasterLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "light = *(CDemonLight **)((int)g_MasterLightList + local_14);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_SpotLightList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (light == *(CDemonLight **)((int)g_SpotLightList + iVar3)) {",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

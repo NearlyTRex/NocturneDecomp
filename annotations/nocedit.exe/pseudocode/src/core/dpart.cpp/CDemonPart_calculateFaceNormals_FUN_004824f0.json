@@ -112,6 +112,33 @@
   },
   "resolved_suspects": [
     {
+      "description": "Pointer value `&this_ptr->face_data->vertex_index_1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)&this_ptr->face_data->vertex_index_1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->face_data->vertex_index_2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)&this_ptr->face_data->vertex_index_2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->face_data->vertex_index_3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)&this_ptr->face_data->vertex_index_3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar1);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 15,
       "match": "(int)&NAME used in byte-offset arithmetic",

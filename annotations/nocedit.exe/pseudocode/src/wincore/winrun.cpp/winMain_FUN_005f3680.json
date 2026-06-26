@@ -456,6 +456,33 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `stackProbe` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)stackProbe",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "stackProbe = (WNDCLASSA *)((int)stackProbe + -0x80);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `stackProbe` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)stackProbe",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (iVar7 < (int)stackProbe);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ArgVector` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 67,
+      "match": "(int)g_ArgVector",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char **)((int)g_ArgVector + iVar7) = pcVar9;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 47,
       "match": "do {",

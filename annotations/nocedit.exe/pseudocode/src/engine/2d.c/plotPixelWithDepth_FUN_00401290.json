@@ -198,6 +198,33 @@
       "severity": "moderate",
       "text": "*(ushort *)(x_coord * 2 + (int)g_ScreenBufferArray[y_coord]) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[y_coord]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(int)g_ScreenBufferArray[y_coord]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)g_ScreenBufferArray[y_coord] + x_coord) = (byte)g_ActiveRenderColor",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[y_coord]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)g_ScreenBufferArray[y_coord]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(x_coord * 4 + (int)g_ScreenBufferArray[y_coord]) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[y_coord]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)g_ScreenBufferArray[y_coord]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)(x_coord * 2 + (int)g_ScreenBufferArray[y_coord]) =",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

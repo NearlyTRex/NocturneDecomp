@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 465,
-    "complexity_score": 229,
+    "complexity_score": 264,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 22,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 229,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 694
   },
   "cross_references": [
@@ -395,5 +397,30 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `scanline_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 167,
+      "match": "(int)scanline_y",
+      "severity": "moderate",
+      "text": "if ((local_14->base).y_max <= (int)scanline_y) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `scanline_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 185,
+      "match": "(int)scanline_y",
+      "severity": "moderate",
+      "text": "if ((local_18->base).y_max <= (int)scanline_y) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `scanline_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 204,
+      "match": "(int)scanline_y",
+      "severity": "moderate",
+      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(local_18,local_14,(int)scanline_y);",
+      "type": "pointer_truncation"
+    }
+  ]
 }

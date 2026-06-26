@@ -236,6 +236,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `g_OmniLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)g_OmniLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_OmniLights + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Inlined fast sqrt bit-trick. Replace with `fastSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_00431350).",
       "line": 28,
       "match": "fVar4 = (float)(((int)(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) >> 1) + g_",

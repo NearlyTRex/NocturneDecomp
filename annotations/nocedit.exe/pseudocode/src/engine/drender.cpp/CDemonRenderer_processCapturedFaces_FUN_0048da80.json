@@ -318,6 +318,33 @@
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)g_CapturedFacePointers + iVar5);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_CapturedFacePointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)g_CapturedFacePointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(SFace **)((int)g_CapturedFacePointers + iVar3) = pSVar4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CapturedFacePointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)g_CapturedFacePointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = **(int **)((int)g_CapturedFacePointers + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CapturedFacePointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)g_CapturedFacePointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_CapturedFacePointers + iVar5);",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

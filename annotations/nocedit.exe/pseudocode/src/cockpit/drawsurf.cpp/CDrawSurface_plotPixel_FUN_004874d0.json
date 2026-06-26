@@ -358,6 +358,69 @@
       "severity": "moderate",
       "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f)",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[iVar4]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)g_ScreenBufferArray[iVar4]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)(iVar3 + (int)g_ScreenBufferArray[iVar4]) = (byte)g_CurrentDrawColor;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[iVar4]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)g_ScreenBufferArray[iVar4]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) = (ushort)g_CurrentDrawColor;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[iVar4]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)g_ScreenBufferArray[iVar4]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(iVar1 + (int)g_ScreenBufferArray[iVar4]) = g_CurrentDrawColor;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[iVar4]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)g_ScreenBufferArray[iVar4]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[iVar4]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)g_ScreenBufferArray[iVar4]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >>",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[iVar4]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)g_ScreenBufferArray[iVar4]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[iVar4]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 54,
+      "match": "(int)g_ScreenBufferArray[iVar4]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f)",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

@@ -237,6 +237,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)puVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)(local_20 + (int)puVar6);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Ghidra pre-increment-array-walk loop artifact on `piVar3` (struct-field or pointer-arithmetic advance + constant index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
       "line": 112,
       "match": "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",

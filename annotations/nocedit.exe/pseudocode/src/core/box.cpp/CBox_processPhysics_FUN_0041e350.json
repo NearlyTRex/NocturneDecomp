@@ -289,6 +289,42 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `(pCVar14 + 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 157,
+      "match": "(int)(pCVar14 + 4)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(pCVar16 + 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 158,
+      "match": "(int)(pCVar16 + 4)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar16 = (CVector3f *)((int)(pCVar16 + 4) + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar15` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 273,
+      "match": "(int)pCVar15",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar15 = (CMatrix3x3f *)((int)pCVar15 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(pCVar14 + 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 304,
+      "match": "(int)(pCVar14 + 4)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 272,
       "match": "for (...; != 0; ... + -1)",

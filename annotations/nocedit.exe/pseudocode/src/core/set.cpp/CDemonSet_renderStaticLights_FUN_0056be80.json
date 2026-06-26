@@ -382,6 +382,24 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `g_DynamicLights` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2 = *(CDemonLight **)((int)g_DynamicLights + local_30);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_SpotLightList` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 78,
+      "match": "(int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_01 = *(CDemonLight **)((int)g_SpotLightList + local_2c);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 60,
       "match": "pCVar6 = (T *)pCVar6->ARRAY",

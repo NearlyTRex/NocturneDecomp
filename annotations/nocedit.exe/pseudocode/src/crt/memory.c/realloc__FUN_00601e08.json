@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 103,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "unrolled_memcpy"
     ],
     "total_lines": 133
@@ -147,6 +148,22 @@
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

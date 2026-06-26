@@ -275,6 +275,42 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `&pCVar9->width` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)&pCVar9->width",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 = (CProceduralTexture *)((int)&pCVar9->width + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar7->width` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)&pCVar7->width",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7 = (CProceduralTexture *)((int)&pCVar7->width + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 107,
+      "match": "(int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar8 = *(int **)((int)g_ScreenBufferArray + iVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar10->width` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 110,
+      "match": "(int)&pCVar10->width",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar10->width + 1);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
       "line": 111,
       "match": "CONCAT11",

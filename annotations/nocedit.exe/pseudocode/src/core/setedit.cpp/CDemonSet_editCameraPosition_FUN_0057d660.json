@@ -858,6 +858,51 @@
       "type": "stack_ref"
     },
     {
+      "description": "Pointer value `p_Stack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 287,
+      "match": "(int)p_Stack_20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(*piVar2 * 0x1a4 + (int)p_Stack_20));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvStack_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 297,
+      "match": "(int)pvStack_1c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)pvStack_1c + 0x144) == 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(pCStack_34 == (C3DSCamera *)0x0)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 380,
+      "match": "(uint)(pCStack_34 == (C3DSCamera *)0x0)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCStack_34 = (C3DSCamera *)(uint)(pCStack_34 == (C3DSCamera *)0x0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(piStack_30 == (int *)0x0)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 383,
+      "match": "(uint)(piStack_30 == (int *)0x0)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piStack_30 = (int *)(uint)(piStack_30 == (int *)0x0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(pvStack_1c == (void *)0x0)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 402,
+      "match": "(uint)(pvStack_1c == (void *)0x0)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvStack_1c = (void *)(uint)(pvStack_1c == (void *)0x0);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 75,
       "match": "do {",

@@ -273,6 +273,69 @@
       "severity": "moderate",
       "text": "*(int *)((int)g_ChannelSecondaryBuffersB + iVar2) = (int)pfVar1 + iVar5;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ChannelPrimaryBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)g_ChannelPrimaryBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float **)((int)g_ChannelPrimaryBuffers + iVar2) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ChannelTertiaryBuffers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)g_ChannelTertiaryBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelTertiaryBuffers + iVar2) = (int)g_TertiaryMixBuffer + iVar3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_TertiaryMixBuffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)g_TertiaryMixBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelTertiaryBuffers + iVar2) = (int)g_TertiaryMixBuffer + iVar3;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ChannelSecondaryBuffersA` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)g_ChannelSecondaryBuffersA",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersA + iVar2) = (int)g_SecondaryMixBuffer + iVar6;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_SecondaryMixBuffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)g_SecondaryMixBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersA + iVar2) = (int)g_SecondaryMixBuffer + iVar6;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ChannelSecondaryBuffersB` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)g_ChannelSecondaryBuffersB",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersB + iVar2) = (int)pfVar1 + iVar5;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pfVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)pfVar1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersB + iVar2) = (int)pfVar1 + iVar5;",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

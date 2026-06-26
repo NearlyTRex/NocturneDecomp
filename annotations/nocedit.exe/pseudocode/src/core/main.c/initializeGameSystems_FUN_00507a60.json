@@ -905,6 +905,42 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `g_GlobalFilters` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 490,
+      "match": "(int)g_GlobalFilters",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_GlobalFilters + iVar11);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_PlayerFilters` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 500,
+      "match": "(int)g_PlayerFilters",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "**(uint **)((int)g_PlayerFilters + iVar9) = 0x100;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_PlayerFilters` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 502,
+      "match": "(int)g_PlayerFilters",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(*(int *)((int)g_PlayerFilters + iVar9) + 4) = 0x100;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_PlayerFilters` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 503,
+      "match": "(int)g_PlayerFilters",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_PlayerFilters + iVar9);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 84,
       "match": "do {",

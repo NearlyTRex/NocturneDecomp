@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 82,
+    "complexity_score": 117,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
+      "pointer_truncation",
       "register_param"
     ],
     "total_lines": 179
@@ -173,6 +174,30 @@
       "severity": "mild",
       "text": "(size,(HeapBlock *)(uint)in_DS,(ushort)pvVar6), pvVar6 != (void *)0x0",
       "type": "register_param"
+    },
+    {
+      "description": "Pointer value `g_SecondaryHeap` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)g_SecondaryHeap",
+      "severity": "moderate",
+      "text": "INT_00684edc = (int)g_SecondaryHeap;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar6` truncated by cast to `ushort` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(ushort)pvVar6",
+      "severity": "moderate",
+      "text": "(size,(HeapBlock *)(uint)in_DS,(ushort)pvVar6), pvVar6 != (void *)0x0",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pHVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)pHVar1",
+      "severity": "moderate",
+      "text": "INT_00684edc = (int)pHVar1;",
+      "type": "pointer_truncation"
     }
   ]
 }

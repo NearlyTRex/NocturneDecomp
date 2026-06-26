@@ -363,6 +363,213 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 102,
+      "match": "(int)piVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)piVar2 + local_e0 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 103,
+      "match": "(int)piVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar14 = *(int *)((int)piVar2 + local_e0 + 0x44) + iVar2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 120,
+      "match": "(int)piVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)piVar6 + local_c4 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 131,
+      "match": "(int)piVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(iVar2 <= *(int *)((int)piVar6 + local_c4 + 0x44) + iVar3 + -1)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 145,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 146,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 159,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 160,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 187,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 188,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 202,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 203,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 228,
+      "match": "(int)piVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar10 = *(int *)((int)piVar7 + local_50 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 231,
+      "match": "(int)piVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = iVar10 + *(int *)((int)piVar7 + local_50 + 0x44) + -1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 232,
+      "match": "(int)piVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((local_20 < *piVar6 + -1) && (*(int *)((int)piVar6 + local_e0 + 8) < iVar4)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 238,
+      "match": "(int)piVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((local_b4 < *piVar7 + -1) && (*(int *)((int)piVar7 + local_50 + 8) < iVar15)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 254,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 255,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 270,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_TracedEdgeBuffer[iVar11].y1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 271,
+      "match": "(int)&g_TracedEdgeBuffer[iVar11].y1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 305,
+      "match": "(int)pvVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)(*max_x * 8 + (int)pvVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 313,
+      "match": "(int)pSVar12",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar12 = (SEdge *)((int)pSVar12 + (uint)bVar17 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 314,
+      "match": "(int)puVar17",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar17 = (uint *)((int)puVar17 + (uint)bVar17 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 306,
       "match": "for (...; != 0; ... + -1)",

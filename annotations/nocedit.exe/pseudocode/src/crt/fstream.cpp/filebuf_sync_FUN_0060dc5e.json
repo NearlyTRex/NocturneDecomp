@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 37,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 116
   },
   "cross_references": [
@@ -85,5 +87,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `pcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(int)pcVar1",
+      "severity": "moderate",
+      "text": "iVar2 = (int)pcVar1 - (int)(this_ptr->_streambuf).__get_end;",
+      "type": "pointer_truncation"
+    }
+  ]
 }

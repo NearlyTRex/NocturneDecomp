@@ -431,7 +431,16 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.",
+      "line": 71,
+      "match": "Cppcheck: redundant null check or possible null dereference",
+      "severity": "moderate",
+      "text": "(*pIStack_20->vtable->QueryInterface)((IUnknown *)pIStack_20,&g_IID_IDirectSound3DBuffer,(void **)&piStack_1c);",
+      "type": "static_null_pointer_redundant_check"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

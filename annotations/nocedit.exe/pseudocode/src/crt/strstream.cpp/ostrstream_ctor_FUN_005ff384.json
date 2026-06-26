@@ -2,16 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 174,
+    "complexity_score": 209,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 11,
+    "suspect_count": 14,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
+      "pointer_truncation",
       "unrolled_strlen"
     ],
     "total_lines": 123
@@ -260,6 +261,30 @@
       "severity": "moderate",
       "text": "*(void ***)((int)(&p_Var6->_ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `ppvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)ppvVar1",
+      "severity": "moderate",
+      "text": "*(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&p_Var6->_ios + -1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)(&p_Var6->_ios + -1)",
+      "severity": "moderate",
+      "text": "*(void ***)((int)(&p_Var6->_ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)pvVar3",
+      "severity": "moderate",
+      "text": "*(void ***)((int)(&p_Var6->_ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",

@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 23,
+    "complexity_score": 38,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 82
   },
   "cross_references": [
@@ -157,5 +159,15 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `model_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 21,
+      "match": "(int)model_ptr",
+      "severity": "moderate",
+      "text": "core_cloth_cpp_CCloth_render_FUN_0043bae0(this_ptr->cloths[iVar2],(int)model_ptr);",
+      "type": "pointer_truncation"
+    }
+  ]
 }

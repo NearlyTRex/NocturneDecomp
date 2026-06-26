@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 300,
-    "complexity_score": 125,
+    "complexity_score": 150,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 39,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 125,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 425
   },
   "cross_references": [
@@ -513,6 +515,105 @@
       "type": "suspect_float"
     },
     {
+      "description": "Pointer value `&g_MoonBats[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)&g_MoonBats[0].course_position",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar5)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_MoonBats[0].course_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 64,
+      "match": "(int)&g_MoonBats[0].course_index",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar5),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_MoonBats[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 65,
+      "match": "(int)&g_MoonBats[0].course_position",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar5),&local_44,&local_50);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_MoonBats[0].random_offset.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 66,
+      "match": "(int)&g_MoonBats[0].random_offset.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_44.x = local_44.x + *(float *)((int)&g_MoonBats[0].random_offset.x + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_MoonBats[0].random_offset.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 67,
+      "match": "(int)&g_MoonBats[0].random_offset.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_44.y = local_44.y + *(float *)((int)&g_MoonBats[0].random_offset.y + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_MoonBats[0].random_offset.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)&g_MoonBats[0].random_offset.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_MoonBats[0].animation_frame` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 76,
+      "match": "(int)&g_MoonBats[0].animation_frame",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5))),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_MoonBats[0].course_position` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 79,
+      "match": "(int)&g_MoonBats[0].course_position",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar1 = *(float *)((int)&g_MoonBats[0].course_position + iVar5) /",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_MoonBats[0].course_index` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 80,
+      "match": "(int)&g_MoonBats[0].course_index",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar5)].len;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar3` truncated by cast to `byte` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 110,
+      "match": "(byte)pcVar3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[(byte)pcVar3[((uVar4 >> 2) + iVar4 & 0xff) * 0x100 +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar3` truncated by cast to `byte` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 113,
+      "match": "(byte)pcVar3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[(byte)pcVar3[((uVar4 >> 2) + iVar4 & 0xff) * 0x100 +",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
       "line": 103,
       "match": "CONCAT44",
@@ -712,5 +813,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `pcVar3` truncated by cast to `byte` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 104,
+      "match": "(byte)pcVar3",
+      "severity": "moderate",
+      "text": "[(byte)pcVar3[((uVar4 >> 1) + iVar4 & 0xff) * 0x100 +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar3` truncated by cast to `byte` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 107,
+      "match": "(byte)pcVar3",
+      "severity": "moderate",
+      "text": "[(byte)pcVar3[((uVar4 >> 1) + iVar4 & 0xff) * 0x100 +",
+      "type": "pointer_truncation"
+    }
+  ]
 }

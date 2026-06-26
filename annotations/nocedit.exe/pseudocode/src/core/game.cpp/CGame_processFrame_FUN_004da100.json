@@ -976,6 +976,33 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 200,
+      "match": "(int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 339,
+      "match": "(int)piVar20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char *)((int)piVar20 + 1) = cVar1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 340,
+      "match": "(int)piVar20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar20 = (int *)((int)piVar20 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex literal 0x3275924 matches address of g_CDemonCameraInstance (+64 bytes into) (type CDemonCamera). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 245,
       "match": "0x3275924",

@@ -1138,7 +1138,7 @@ section .text
     LEA EAX,[EBP + -0x4e]               ; 005973af
     LEA EDI,[EBP + 0xffffff3a]          ; 005973b2
     MOV EDX,dword ptr [0x006703ec]      ; 005973b8 | g_CDemonRendererPtr2
-    MOV ESI,0x6819fc                    ; 005973be | CVector3f_006819fc
+    MOV ESI,0x6819fc                    ; 005973be | CVector3i_006819fc
     FXCH ST2                            ; 005973c3
     FCHS                                ; 005973c5
     FXCH                                ; 005973c7

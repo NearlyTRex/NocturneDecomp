@@ -169,6 +169,42 @@
       "severity": "moderate",
       "text": "local_28 = (float *)((int)local_28 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `local_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)local_2c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)local_28",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_2c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)local_2c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_2c = (float *)((int)local_2c + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 61,
+      "match": "(int)local_28",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_28 = (float *)((int)local_28 + 1);",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

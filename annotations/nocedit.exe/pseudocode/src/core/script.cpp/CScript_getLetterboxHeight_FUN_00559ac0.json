@@ -212,5 +212,22 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "result of integer division used in a floating point context; possible loss of precision",
+      "line": 13,
+      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
+      "severity": "mild",
+      "text": "return (int)ROUND(ROUND((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *",
+      "type": "static_integer_division"
+    },
+    {
+      "description": "result of integer division used in a floating point context; possible loss of precision",
+      "line": 13,
+      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
+      "severity": "mild",
+      "text": "return (int)ROUND(ROUND((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *",
+      "type": "static_integer_division"
+    }
+  ]
 }

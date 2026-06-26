@@ -178,6 +178,114 @@
   },
   "resolved_suspects": [
     {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(fVar10 = *(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((vertex->world_position).y <= *(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11)))",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 64,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].x + iVar11),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 66,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].z + iVar11),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((*(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11) <= (vertex->world_position).y)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 70,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "&& (fVar10 = *(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 74,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].x + iVar11);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 76,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].z + iVar11);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 80,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11) <",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 91,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].x + iVar11);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 94,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CVector3f_ARRAY_008879c0[0].z + iVar11);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CVector3f_ARRAY_008879c0[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 112,
+      "match": "(int)&CVector3f_ARRAY_008879c0[0].y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar17 = *(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 43,
       "match": "cascade_constant_fill",

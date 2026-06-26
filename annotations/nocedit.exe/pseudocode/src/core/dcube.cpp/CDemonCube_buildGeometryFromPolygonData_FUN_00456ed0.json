@@ -287,6 +287,60 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `&this_ptr->vertex_buffer->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)&this_ptr->vertex_buffer->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->vertex_buffer->x + iVar1) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_LoadedVertices[0].vertex.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)&g_LoadedVertices[0].vertex.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->vertex_buffer->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)&this_ptr->vertex_buffer->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->vertex_buffer->y + iVar1) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_LoadedVertices[0].vertex.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)&g_LoadedVertices[0].vertex.y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->vertex_buffer->z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)&this_ptr->vertex_buffer->z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->vertex_buffer->z + iVar1) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_LoadedVertices[0].vertex.z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)&g_LoadedVertices[0].vertex.z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar5);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
       "line": 70,
       "match": "(TYPE *) ((int)NAME ...) split across lines",

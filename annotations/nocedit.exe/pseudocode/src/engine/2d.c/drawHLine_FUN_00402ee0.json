@@ -367,6 +367,33 @@
       "severity": "moderate",
       "text": "puVar4 = (uint *)(x1 * 4 + (int)g_ScreenBufferArray[y]);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)g_ScreenBufferArray[y]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((void *)(x1 + (int)g_ScreenBufferArray[y]),g_ActiveRenderColor,count);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)g_ScreenBufferArray[y]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar3 = (ushort *)(x1 * 2 + (int)g_ScreenBufferArray[y]);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)g_ScreenBufferArray[y]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)(x1 * 4 + (int)g_ScreenBufferArray[y]);",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

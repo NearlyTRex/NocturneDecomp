@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 134,
+    "complexity_score": 149,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 24,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 134,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 416
   },
   "cross_references": [
@@ -458,5 +460,14 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `(pCVar5->carrier == (CDemonActor *)0x0)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(uint)(pCVar5->carrier == (CDemonActor *)0x0)",
+      "severity": "moderate",
+      "text": "pCVar5->carrier = (CDemonActor *)(uint)(pCVar5->carrier == (CDemonActor *)0x0);",
+      "type": "pointer_truncation"
+    }
+  ]
 }

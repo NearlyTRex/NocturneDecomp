@@ -2,16 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 361,
+    "complexity_score": 376,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 29,
+    "suspect_count": 30,
     "suspect_types": [
       "carry_arith_idiom",
       "extra_output",
+      "pointer_truncation",
       "register_param",
       "unnamed_param"
     ],
@@ -348,6 +349,14 @@
       "severity": "mild",
       "text": "*(short *)(in_EDX + 2) = (short)in_EAX;",
       "type": "register_param"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `short` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(short)in_EAX",
+      "severity": "moderate",
+      "text": "*(short *)(in_EDX + 2) = (short)in_EAX;",
+      "type": "pointer_truncation"
     }
   ]
 }

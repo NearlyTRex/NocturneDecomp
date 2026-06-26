@@ -362,6 +362,15 @@
       "severity": "moderate",
       "text": "*(void **)((int)g_ZBufferScanlineArray + iVar3),this_ptr->framebuffer_width << 2)",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)g_ZBufferScanlineArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ZBufferScanlineArray + iVar3),this_ptr->framebuffer_width << 2)",
+      "type": "pointer_truncation"
     }
   ],
   "stack_frame": {

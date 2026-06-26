@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 116,
+    "complexity_score": 161,
     "cross_reference_count": 51,
     "function_call_count": 2,
     "global_count": 17,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 116,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 344
   },
   "cross_references": [
@@ -670,6 +672,60 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)pCVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonActor *)((int)pCVar2 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)pCVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonActor *)((int)pCVar2 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)pCVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 73,
+      "match": "(int)pCVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 99,
+      "match": "(int)pCVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 104,
+      "match": "(int)pCVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
       "actual_args": 1,
       "description": "Format \"NULL actor pointer detected, %s line %d\" has 2 specifiers but 1 arguments after it",
       "expected_args": 2,
@@ -883,5 +939,66 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `this_ptr` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 34,
+      "match": "(uint)this_ptr",
+      "severity": "moderate",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid actor pointer %08X detected at %s, line %d\",(uint)this_ptr,context_file,context_line);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `this_ptr` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 41,
+      "match": "(uint)this_ptr",
+      "severity": "moderate",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\ncreateStatus = %d\",context_file,context_line,(uint)this_ptr,g_ActorDebugBuffer,this_ptr->lifecycle_state);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `this_ptr` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 55,
+      "match": "(uint)this_ptr",
+      "severity": "moderate",
+      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\npos = %g,%g,%g\",context_file,context_line,(uint)this_ptr,",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `this_ptr` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 74,
+      "match": "(uint)this_ptr",
+      "severity": "moderate",
+      "text": "(\"Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\",context_file,context_line,(uint)this_ptr,",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+      "line": 64,
+      "match": "Cppcheck: redundant null check or possible null dereference",
+      "severity": "moderate",
+      "text": "dVar6 = (double)(this_ptr->location).position.z;",
+      "type": "static_null_pointer_redundant_check"
+    },
+    {
+      "description": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+      "line": 65,
+      "match": "Cppcheck: redundant null check or possible null dereference",
+      "severity": "moderate",
+      "text": "dVar5 = (double)(this_ptr->location).position.y;",
+      "type": "static_null_pointer_redundant_check"
+    },
+    {
+      "description": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+      "line": 66,
+      "match": "Cppcheck: redundant null check or possible null dereference",
+      "severity": "moderate",
+      "text": "dVar4 = (double)(this_ptr->location).position.x;",
+      "type": "static_null_pointer_redundant_check"
+    }
+  ]
 }

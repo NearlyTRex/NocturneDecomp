@@ -391,6 +391,24 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `pSVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 315,
+      "match": "(int)pSVar8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 318,
+      "match": "(int)pSVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 257,
       "match": "0xf80000",

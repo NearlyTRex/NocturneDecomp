@@ -2,14 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 52,
+    "complexity_score": 107,
     "cross_reference_count": 34,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 165
   },
   "cross_references": [
@@ -438,5 +440,46 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `src` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)src",
+      "severity": "moderate",
+      "text": "strncpy_safe(dir,path,(int)src - (int)path,0xff);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `src_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)src_00",
+      "severity": "moderate",
+      "text": "strncpy_safe(fname,src,(int)src_00 - (int)src,0xff);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `src` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)src",
+      "severity": "moderate",
+      "text": "strncpy_safe(fname,src,(int)src_00 - (int)src,0xff);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `str` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)str",
+      "severity": "moderate",
+      "text": "strncpy_safe(ext,src_00,(int)str - (int)src_00,0xff);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `src_00` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)src_00",
+      "severity": "moderate",
+      "text": "strncpy_safe(ext,src_00,(int)str - (int)src_00,0xff);",
+      "type": "pointer_truncation"
+    }
+  ]
 }

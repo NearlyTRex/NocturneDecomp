@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 56,
+    "complexity_score": 71,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset"
+      "negative_offset",
+      "pointer_truncation"
     ],
     "total_lines": 91
   },
@@ -114,6 +115,14 @@
       "severity": "mild",
       "text": "puVar1 = pHVar3[-1].free_list_area + (new_block->size - 0x20);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `puVar1` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(uint)puVar1",
+      "severity": "moderate",
+      "text": "new_block->heap_info = (uint)puVar1;",
+      "type": "pointer_truncation"
     }
   ]
 }

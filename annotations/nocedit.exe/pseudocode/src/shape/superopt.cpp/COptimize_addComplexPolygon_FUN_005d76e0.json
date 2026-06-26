@@ -144,7 +144,16 @@
     },
     "file_variant": "raw"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Memory leak: ppCVar2",
+      "line": 27,
+      "match": "Cppcheck: memory leak",
+      "severity": "major",
+      "text": "return (CComplexPolygon *)0x0;",
+      "type": "static_memleak"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

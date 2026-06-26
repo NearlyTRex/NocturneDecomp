@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 26,
+    "complexity_score": 41,
     "cross_reference_count": 75,
     "function_call_count": 8,
     "global_count": 9,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 112
   },
   "cross_references": [
@@ -765,5 +767,15 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `ptr` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 21,
+      "match": "(uint)ptr",
+      "severity": "moderate",
+      "text": "shape_memdbg_cpp_traceMemory_FUN_0050f150(\"debugFree(%08X, %s, %d)\",(uint)ptr,filename,line_number);",
+      "type": "pointer_truncation"
+    }
+  ]
 }

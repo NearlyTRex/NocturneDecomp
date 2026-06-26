@@ -195,5 +195,22 @@
     },
     "file_variant": "raw"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "result of integer division used in a floating point context; possible loss of precision",
+      "line": 23,
+      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
+      "severity": "mild",
+      "text": "fVar1 = pow((float10)ratio,(float10)(intensity_position / 2));",
+      "type": "static_integer_division"
+    },
+    {
+      "description": "result of integer division used in a floating point context; possible loss of precision",
+      "line": 28,
+      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
+      "severity": "mild",
+      "text": "fVar2 = pow((float10)ratio,(float10)((intensity_position + 1) / 2));",
+      "type": "static_integer_division"
+    }
+  ]
 }

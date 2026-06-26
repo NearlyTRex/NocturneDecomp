@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 162,
+    "complexity_score": 197,
     "cross_reference_count": 80,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 11,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "unrolled_memcpy"
     ],
     "total_lines": 93
@@ -636,6 +637,30 @@
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)puVar4 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 24,
+      "match": "(int)puVar3",
+      "severity": "moderate",
+      "text": "puVar3 = (ushort *)((int)puVar3 + -1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)puVar2",
+      "severity": "moderate",
+      "text": "puVar2 = (ushort *)((int)puVar2 - 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + 1);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (REP MOVSD + trailing-byte tail: dword countdown over N >> 2 followed by byte countdown over N & 3). Replace both loops with memcpy(dst, src, N) in a .keep.",

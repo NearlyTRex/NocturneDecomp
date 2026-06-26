@@ -363,6 +363,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `&this_ptr->boxes[box_index + -1].pixel_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 78,
+      "match": "(int)&this_ptr->boxes[box_index + -1].pixel_count",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar11 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 78,
       "match": "(int)&NAME used in byte-offset arithmetic",

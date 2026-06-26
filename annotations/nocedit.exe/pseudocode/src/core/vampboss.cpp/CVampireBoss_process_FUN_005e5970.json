@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1467,
-    "complexity_score": 626,
+    "complexity_score": 641,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 37,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 626,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 2093
   },
   "cross_references": [],
@@ -544,6 +546,33 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 143,
+      "match": "(int)local_18",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((float10)0 != ABS((float10)(int)local_18)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&this_ptr->morph + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 203,
+      "match": "(int)(&this_ptr->morph + 1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar5 = *(CDemonActor **)((int)(&this_ptr->morph + 1) + (this_ptr->waypoint_index + 7) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&this_ptr->morph + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 485,
+      "match": "(int)(&this_ptr->morph + 1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar21 + 7) * 4),0.2,999999.0,",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 284,
       "match": "field-by-field struct copy",
@@ -1055,7 +1084,17 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Pointer value `(&this_ptr->way_point_0)[3 - this_ptr->waypoint_index]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 166,
+      "match": "(int)(&this_ptr->way_point_0)[3 - this_ptr->waypoint_index]",
+      "severity": "moderate",
+      "text": "iVar18 = (int)(&this_ptr->way_point_0)[3 - this_ptr->waypoint_index];",
+      "type": "pointer_truncation"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

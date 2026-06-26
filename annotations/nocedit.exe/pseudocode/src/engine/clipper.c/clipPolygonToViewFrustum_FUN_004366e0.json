@@ -802,6 +802,60 @@
       "type": "unknown_field"
     },
     {
+      "description": "Pointer value `g_ClipperCullingPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 150,
+      "match": "(int)g_ClipperCullingPointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 4),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ClipperCullingPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 151,
+      "match": "(int)g_ClipperCullingPointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 8));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `plVar14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 415,
+      "match": "(int)plVar14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pSVar15->projected_vertex).transformed_y = *(int *)((int)plVar14 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_ClippedVertexBuffer[0].projected_vertex.transformed_z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 428,
+      "match": "(int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `plVar20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 456,
+      "match": "(int)plVar20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar18 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `plVar18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 456,
+      "match": "(int)plVar18",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar18 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 428,
       "match": "(int)&NAME used in byte-offset arithmetic",

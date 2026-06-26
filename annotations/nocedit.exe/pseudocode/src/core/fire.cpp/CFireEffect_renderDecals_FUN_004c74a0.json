@@ -319,6 +319,60 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `&g_BulletHolePool[0].active` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)&g_BulletHolePool[0].active",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((*(int *)((int)&g_BulletHolePool[0].active + iVar1) != 0) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_BulletHolePool[0].actor_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)&g_BulletHolePool[0].actor_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0)) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_BulletHolePool[0].position.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)&g_BulletHolePool[0].position.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1)),",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_BulletHolePool[0].active` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)&g_BulletHolePool[0].active",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_BulletHolePool[0].active + iVar1) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_BulletHolePool[0].actor_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)&g_BulletHolePool[0].actor_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_BulletHolePool[0].position.x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)&g_BulletHolePool[0].position.x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 16,
       "match": "(int)&NAME used in byte-offset arithmetic",

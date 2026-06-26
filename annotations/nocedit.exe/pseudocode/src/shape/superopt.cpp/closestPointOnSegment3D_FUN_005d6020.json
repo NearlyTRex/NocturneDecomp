@@ -343,6 +343,105 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `&segment_start->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)&segment_start->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_14 = *(uint *)((int)&segment_start->x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&segment_start->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 73,
+      "match": "(int)&segment_start->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_34 = *(uint *)((int)&segment_start->y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&segment_end->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)&segment_end->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1c = *(uint *)((int)&segment_end->x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&segment_end->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 84,
+      "match": "(int)&segment_end->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_2c = *(uint *)((int)&segment_end->y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&query_point->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 88,
+      "match": "(int)&query_point->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_24 = *(uint *)((int)&query_point->x + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&query_point->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 91,
+      "match": "(int)&query_point->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)&query_point->y + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pdVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 96,
+      "match": "(int)pdVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pdVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 116,
+      "match": "(int)pdVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pdVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 165,
+      "match": "(int)pdVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_point->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 169,
+      "match": "(int)&out_point->x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_point->x + 4) = local_98[1];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&out_point->y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 171,
+      "match": "(int)&out_point->y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&out_point->y + 4) = local_98[3];",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 71,
       "match": "(int)&NAME used in byte-offset arithmetic",

@@ -194,5 +194,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Either the condition 'pCVar3!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar3.",
+      "line": 44,
+      "match": "Cppcheck: redundant null check or possible null dereference",
+      "severity": "moderate",
+      "text": "if ((pCVar3->voxel_buffer1 != (SVoxelGrid *)0x0) &&",
+      "type": "static_null_pointer_redundant_check"
+    }
+  ]
 }

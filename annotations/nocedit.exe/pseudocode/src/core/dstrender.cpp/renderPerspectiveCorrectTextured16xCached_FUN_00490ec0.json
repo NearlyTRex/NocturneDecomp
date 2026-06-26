@@ -433,6 +433,303 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `g_ScreenBufferArray[scanline_y]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)g_ScreenBufferArray[scanline_y]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 86,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 91,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 96,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 101,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 111,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 116,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 121,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 126,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 131,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 136,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 141,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 146,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 149,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 153,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 177,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[*(byte *)((uint)CONCAT11(uVar9,uVar6) + (int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 183,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 189,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "+ (int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 195,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": ") + (int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 202,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 209,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 216,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 223,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 230,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 237,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 244,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 251,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 258,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 265,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 270,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "+ (int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CurrentTextureData` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 276,
+      "match": "(int)g_CurrentTextureData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_CurrentTextureData)];",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
       "line": 56,
       "match": "g_Global >> 0x1f",

@@ -270,6 +270,33 @@
       "type": "warning_inlined_function"
     },
     {
+      "description": "Pointer value `&this_ptr_01->vertex_buffer_ptr[1].projected_vertex.screen_x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 165,
+      "match": "(int)&this_ptr_01->vertex_buffer_ptr[1].projected_vertex.screen_x",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "psVar1 = (short *)((int)&this_ptr_01->vertex_buffer_ptr[1].projected_vertex.screen_x + 2",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 168,
+      "match": "(int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 169,
+      "match": "(int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) +",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 140,
       "match": "field-by-field struct copy",

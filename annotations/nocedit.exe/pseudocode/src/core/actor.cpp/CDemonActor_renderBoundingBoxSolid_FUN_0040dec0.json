@@ -161,6 +161,60 @@
   },
   "resolved_suspects": [
     {
+      "description": "Pointer value `&g_CDemonRendererPtr2->vertex_buffer_ptr->r` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar1) = red << 8;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr_00->vertex_buffer_ptr->g` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)&this_ptr_00->vertex_buffer_ptr->g",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) = green << 8;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr_00->vertex_buffer_ptr->b` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)&this_ptr_00->vertex_buffer_ptr->b",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->b + iVar1) = blue << 8;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr_00->vertex_buffer_ptr->a` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)&this_ptr_00->vertex_buffer_ptr->a",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->a + iVar1) = alpha << 8;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr_00->vertex_buffer_ptr->u` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 34,
+      "match": "(int)&this_ptr_00->vertex_buffer_ptr->u",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->u + iVar1) = 0x800000;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr_00->vertex_buffer_ptr->v` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)&this_ptr_00->vertex_buffer_ptr->v",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 27,
       "match": "(int)&NAME used in byte-offset arithmetic",

@@ -290,6 +290,60 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `&this_ptr->camera_light_bounds[0].x_min` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 146,
+      "match": "(int)&this_ptr->camera_light_bounds[0].x_min",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar5) = 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->camera_light_bounds[0].x_max` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 147,
+      "match": "(int)&this_ptr->camera_light_bounds[0].x_max",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar5) = 0x13e;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->camera_light_bounds[0].y_min` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 148,
+      "match": "(int)&this_ptr->camera_light_bounds[0].y_min",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar5) = 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->camera_light_bounds[0].y_max` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 149,
+      "match": "(int)&this_ptr->camera_light_bounds[0].y_max",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar5) = 0xee;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_24->x_min` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 152,
+      "match": "(int)&local_24->x_min",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = (int)&local_24->x_min + iVar5;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar4->light_type` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 158,
+      "match": "(int)&pCVar4->light_type",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (C3DSLight *)((int)&pCVar4->light_type + 1);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 146,
       "match": "(int)&NAME used in byte-offset arithmetic",

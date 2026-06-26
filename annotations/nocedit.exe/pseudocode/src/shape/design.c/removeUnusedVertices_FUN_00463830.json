@@ -363,6 +363,51 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(g_ModelPolygonData[local_1c].vertex_indices[local_24] * 4 + (int)dest) = 1",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)(local_1c * 4 + (int)dest) == 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(local_1c * 4 + (int)dest) = 0xffffffff;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)dest + local_1c * 4) = g_VertexCount;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 57,
+      "match": "(int)dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)dest + g_ModelPolygonData[local_1c].vertex_indices[local_2c] * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 44,
       "match": "field-by-field struct copy",

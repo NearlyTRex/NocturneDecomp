@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 62,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "unresolved_funcptr"
     ],
     "total_lines": 78
@@ -115,6 +116,22 @@
       "severity": "moderate",
       "text": "uVar2 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x10))(iVar1);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `&stream->_cnt` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(int)&stream->_cnt",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stream->_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)&stream->_ptr",
+      "severity": "moderate",
+      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

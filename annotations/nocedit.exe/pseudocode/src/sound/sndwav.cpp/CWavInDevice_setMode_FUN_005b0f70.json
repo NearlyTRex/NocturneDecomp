@@ -407,6 +407,69 @@
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Pointer value `&g_WaveInFormatTable[0].format_flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)&g_WaveInFormatTable[0].format_flags",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & uStack_14) != 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_WaveInFormatTable[0].bits_per_sample` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)&g_WaveInFormatTable[0].bits_per_sample",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar4 = (uint)(channels < *(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_WaveInFormatTable[0].bits_per_sample` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)&g_WaveInFormatTable[0].bits_per_sample",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8) < channels) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_WaveInFormatTable[0].sample_rate` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)&g_WaveInFormatTable[0].sample_rate",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (g_WaveInRequestedSampleRate < *(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_WaveInFormatTable[0].sample_rate` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)&g_WaveInFormatTable[0].sample_rate",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8) < g_WaveInRequestedSampleRate",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_WaveInFormatTable[0].channels` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 49,
+      "match": "(int)&g_WaveInFormatTable[0].channels",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (sample_rate < *(int *)((int)&g_WaveInFormatTable[0].channels + iVar8)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_WaveInFormatTable[0].channels` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 52,
+      "match": "(int)&g_WaveInFormatTable[0].channels",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_WaveInFormatTable[0].channels + iVar8) < sample_rate) {",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in fix_compilation.md.",
       "line": 84,
       "match": "g_Global >> 0x1f",

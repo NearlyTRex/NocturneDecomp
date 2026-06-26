@@ -250,6 +250,42 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `pfVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)pfVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar6 = (float *)((int)pfVar6 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pfVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 68,
+      "match": "(int)pfVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int)pfVar6 < this_ptr->count) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pfVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 110,
+      "match": "(int)pfVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((0 < (int)pfVar6) &&",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pfVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 119,
+      "match": "(int)pfVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SStack_188.damage_amount = (float)(int)pfVar6 * (float)0.050000000000000003;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 132,
       "match": "field-by-field struct copy",

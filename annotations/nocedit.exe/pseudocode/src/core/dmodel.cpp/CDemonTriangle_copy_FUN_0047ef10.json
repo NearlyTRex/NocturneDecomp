@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 13,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 39
   },
   "cross_references": [],
@@ -110,5 +112,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)pvVar1",
+      "severity": "moderate",
+      "text": "return (int)pvVar1 + -0x18;",
+      "type": "pointer_truncation"
+    }
+  ]
 }

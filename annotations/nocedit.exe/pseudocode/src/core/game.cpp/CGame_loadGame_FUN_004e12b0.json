@@ -800,6 +800,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `g_HeroActors` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 264,
+      "match": "(int)g_HeroActors",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CHero **)((int)g_HeroActors + iVar2) = pCVar3;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex literal 0x2d82d88 matches address of g_MasterLightStateSaveBuffer (+4 bytes into) (type int[201]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 298,
       "match": "0x2d82d88",

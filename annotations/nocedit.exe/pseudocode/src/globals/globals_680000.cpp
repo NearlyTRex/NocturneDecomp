@@ -41,18 +41,16 @@ CSpotView* g_CSpotViewPtr = (CSpotView*)&g_CSpotViewInstance;
 // CTerrain*
 CTerrain* g_CTerrainPtr = (CTerrain*)&g_CTerrainInstance;
 
-// CVector3f
-CVector3f CVector3f_006819fc = {
-    .x = __BITCAST_FLOAT(0xFFFFF100u),
-    .y = 0.0f,
-    .z = __BITCAST_FLOAT(0xFFFFF100u)
-};
-
 // CVector3i
 CVector3i g_GlobalLightDirection = {
     .x = 0x00000000,
     .y = -46333,
     .z = 0x0000B4FD
+};
+CVector3i CVector3i_006819fc = {
+    .x = -3840,
+    .y = 0x00000000,
+    .z = -3840
 };
 
 // CWater*

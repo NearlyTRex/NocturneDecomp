@@ -232,7 +232,16 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "result of integer division used in a floating point context; possible loss of precision",
+      "line": 40,
+      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
+      "severity": "mild",
+      "text": "return (double)(local_14 / uVar1);",
+      "type": "static_integer_division"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

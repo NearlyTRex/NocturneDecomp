@@ -7,14 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 80,
+    "complexity_score": 105,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 80,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_truncation"
+    ],
     "total_lines": 213
   },
   "cross_references": [],
@@ -176,5 +178,23 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)pcVar5",
+      "severity": "moderate",
+      "text": "uVar4 = (int)output_buffer - (int)pcVar5;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `output_buffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "introduced_by": "keep",
+      "line": 35,
+      "match": "(int)output_buffer",
+      "severity": "moderate",
+      "text": "uVar4 = (int)output_buffer - (int)pcVar5;",
+      "type": "pointer_truncation"
+    }
+  ]
 }
