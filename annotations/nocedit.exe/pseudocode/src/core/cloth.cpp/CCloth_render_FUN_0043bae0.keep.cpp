@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[0043bae0, 0043bf33] [0060c72f, 0060c74d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_joined_light)
+// Signature: void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,CDeformableModelInstance *deformable_model)
 
 #include "nocturne.h"
 
-void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_joined_light)
+void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,CDeformableModelInstance *deformable_model)
 
 {
   int render_alpha;
@@ -41,7 +41,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,(this_ptr->model).vertex_count,(this_ptr->model).poly_count / 2,
                (this_ptr->model).poly_vert_list,(this_ptr->model).vertex_list,4,(CVector3i *)0x0);
-    if (use_joined_light != 0) {
+    if (deformable_model != (CDeformableModelInstance *)0x0) {
       for (iVar4 = 0; iVar4 < this_ptr->locked_vertex_count; iVar4 = iVar4 + 1) {
         pCVar1 = g_CDemonRendererPtr2;
         iVar5 = this_ptr->locked_vertex_indices[iVar4];
@@ -79,7 +79,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,(this_ptr->model).vertex_count,(this_ptr->model).poly_count,
                (this_ptr->model).poly_vert_list,(this_ptr->model).vertex_list,4,(CVector3i *)0x0);
-    if (use_joined_light != 0) {
+    if (deformable_model != (CDeformableModelInstance *)0x0) {
       for (iVar5 = 0; iVar5 < this_ptr->locked_vertex_count; iVar5 = iVar5 + 1) {
         pCVar3 = g_CDemonRendererPtr2;
         iVar7 = this_ptr->locked_vertex_indices[iVar5];

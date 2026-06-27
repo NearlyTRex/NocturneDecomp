@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 685,
-    "complexity_score": 296,
+    "complexity_score": 274,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 41,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 271,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
-    "total_lines": 956
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 274,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 959
   },
   "cross_references": [
     {
@@ -405,7 +403,7 @@
   "resolved_suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 31,
+      "line": 32,
       "match": "aiStackY_107c",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -414,7 +412,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 87,
       "match": "(int *)((int)g_CoronaLeftExtent",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -423,7 +421,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 88,
       "match": "(uint *)((int)g_CoronaRightExtent",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -432,7 +430,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 227,
+      "line": 230,
       "match": "(int *)((int)g_CoronaLeftExtent",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -441,7 +439,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 228,
+      "line": 231,
       "match": "(int *)((int)g_CoronaLeftExtent",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -450,7 +448,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 229,
+      "line": 232,
       "match": "(int *)((int)g_CoronaRightExtent",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -459,7 +457,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 237,
+      "line": 240,
       "match": "SBORROW4",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -467,26 +465,8 @@
       "type": "sign_compare_idiom"
     },
     {
-      "description": "Raw hex literal 0x132220c matches address of g_CoronaLightCache (+4 bytes into) (type SCoronaLightCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 101,
-      "match": "0x132220c",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "iVar13 = iVar1 + 0x132220c;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x132220c matches address of g_CoronaLightCache (+4 bytes into) (type SCoronaLightCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 109,
-      "match": "0x132220c",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(iVar12,*(int *)(iVar13 + 4),*(int *)(iVar13 + 0x3c4),iVar1 + 0x132220c);",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "Raw hex literal 0x1322990 matches address of g_CoronaLightCache (+1928 bytes into) (type SCoronaLightCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 190,
+      "line": 193,
       "match": "0x1322990",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -495,12 +475,30 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 98,
+      "line": 99,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "if (globe == *(CDemonGlobe **)",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 101,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "source_entry = (SCoronaLightEntry *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar19` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar19->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 115,
+      "match": "pSVar19 = (T *)pSVar19->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar19 = (SCoronaLightEntry *)pSVar19->left_extents;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -736,23 +734,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer value `source_buffer_offset` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 202,
-      "match": "(int)source_buffer_offset",
-      "severity": "moderate",
-      "text": "(int)source_buffer_offset);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&g_CoronaLightCache.entries[iVar1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "introduced_by": "keep",
-      "line": 93,
-      "match": "(int)&g_CoronaLightCache.entries[iVar1]",
-      "severity": "moderate",
-      "text": "(int)&g_CoronaLightCache.entries[iVar1]);",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

@@ -3,16 +3,16 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[0044e360, 0044e789] [0060a0a0, 0060a119] [0060c3a4, 0060c3c1]]
 // Convention: __cdecl
-// Signature: CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 
-CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
+void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
 
 {
   int iVar1;
   uint uVar2;
-  CDemonCamera *pCVar2;
+  int loop_bound;
   int iVar3;
   uint uVar4;
   uint uVar3;
@@ -86,11 +86,10 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
   g_LightBufferPoolIndex = 0;
   g_CoronaLightCache.count = 0;
   g_CameraEdgeCount = 0;
-  pCVar2 = this_ptr;
   if (0x1df < this_ptr->framebuffer_height) {
     local_1c = this_ptr->scale_factor;
-    for (; pCVar2 = (CDemonCamera *)(this_ptr->framebuffer_height - this_ptr->scale_factor),
-        (int)local_1c < (int)pCVar2; local_1c = local_1c + 1) {
+    for (; loop_bound = this_ptr->framebuffer_height - this_ptr->scale_factor,
+        (int)local_1c < loop_bound; local_1c = local_1c + 1) {
       uVar10 = this_ptr->scale_factor;
       for (; (int)uVar10 < this_ptr->framebuffer_width + this_ptr->scale_factor * -2;
           uVar10 = uVar10 + 1) {
@@ -142,5 +141,5 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
       }
     }
   }
-  return pCVar2;
+  return;
 }

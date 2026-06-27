@@ -21,7 +21,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450f
   iVar4 = 0;
   local_1c = 0;
   if (0 < this_ptr->display_height) {
-    local_18 = light_source->corona_depth_buffer;
+    local_18 = (int *)light_source->corona_depth_buffer;
     local_14 = light_source->corona_visibility_buffers;
     do {
       iVar1 = light_source->left_extent[0];

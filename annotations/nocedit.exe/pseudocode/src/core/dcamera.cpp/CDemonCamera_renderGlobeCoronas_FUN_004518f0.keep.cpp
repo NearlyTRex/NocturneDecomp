@@ -21,7 +21,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemo
   int iVar15;
   uint uVar5;
   int iVar6;
-  SCoronaLightEntry *source_buffer_offset;
+  SCoronaLightEntry *source_entry;
   CVector3i *pCVar16;
   int iVar7;
   int iVar18;
@@ -90,14 +90,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemo
                         (iVar12,
                          g_CoronaLightCache.entries[iVar1].left_extents[iVar12],
                          g_CoronaLightCache.entries[iVar1].right_extents[iVar12],
-                         (int)&g_CoronaLightCache.entries[iVar1]);
+                         &g_CoronaLightCache.entries[iVar1]);
             }
           }
           return;
         }
       }
       if ((uint)g_CoronaLightCache.count < 8) {
-        source_buffer_offset = g_CoronaLightCache.entries + g_CoronaLightCache.count;
+        source_entry = g_CoronaLightCache.entries + g_CoronaLightCache.count;
         g_CoronaLightCache.count = g_CoronaLightCache.count + 1;
         core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(globe);
         local_54 = 0;
@@ -161,33 +161,33 @@ LAB_00451d8b:
                 puVar19 = puVar19 + (1 << (uVar2 & 0x1f));
                 pcVar14 = pcVar14 + 1;
               }
-              iVar13 = source_buffer_offset->left_extents[local_54];
-              iVar18 = source_buffer_offset->right_extents[local_54];
-              for (pcVar14 = (char *)source_buffer_offset->lightmap
+              iVar13 = source_entry->left_extents[local_54];
+              iVar18 = source_entry->right_extents[local_54];
+              for (pcVar14 = (char *)source_entry->lightmap
                              + local_54 * 320 + iVar13;
                   (iVar13 < iVar18 && (*pcVar14 == '\0')); pcVar14 = pcVar14 + 1) {
                 iVar13 = iVar13 + 1;
               }
-              for (pcVar14 = (char *)source_buffer_offset->lightmap
+              for (pcVar14 = (char *)source_entry->lightmap
                              + local_54 * 320 + iVar18 - 1;
                   (iVar13 < iVar18 && (*pcVar14 == '\0')); pcVar14 = pcVar14 + -1) {
                 iVar18 = iVar18 + -1;
               }
-              source_buffer_offset->left_extents[local_54] = iVar13;
-              source_buffer_offset->right_extents[local_54] = iVar18;
+              source_entry->left_extents[local_54] = iVar13;
+              source_entry->right_extents[local_54] = iVar18;
               core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0
                         (local_54,g_CoronaLeftExtent[local_54],g_CoronaRightExtent[local_54],
-                         (int)source_buffer_offset);
+                         source_entry);
             }
             local_6c = local_6c + 0x140;
             local_70 = local_70 + 1;
             local_68 = local_68 + 0x140;
-            source_buffer_offset->left_extents[local_54] = g_CoronaLeftExtent[local_54];
-            source_buffer_offset->right_extents[local_54] = g_CoronaRightExtent[local_54];
+            source_entry->left_extents[local_54] = g_CoronaLeftExtent[local_54];
+            source_entry->right_extents[local_54] = g_CoronaRightExtent[local_54];
             local_54 = local_54 + 1;
           } while (local_54 < this_ptr->display_height);
         }
-        source_buffer_offset->globe = globe;
+        source_entry->globe = globe;
         return;
       }
       g_CoronaVisibilityEnabled = 0;

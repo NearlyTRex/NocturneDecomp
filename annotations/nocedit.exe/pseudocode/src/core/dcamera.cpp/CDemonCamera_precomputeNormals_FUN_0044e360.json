@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 392,
-    "complexity_score": 180,
+    "complexity_score": 164,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 165,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
-    "total_lines": 557
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 164,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 556
   },
   "cross_references": [
     {
@@ -52,7 +50,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360",
-    "signature": "CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)"
   },
   "function_calls": [
     {
@@ -303,7 +301,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 117,
       "match": "(int *)((int)g_ZBufferScanlineArray",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -312,7 +310,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 138,
       "match": "(int *)((int)g_CameraEdgeOffsetY",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -321,7 +319,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 140,
       "match": "(int *)((int)g_CameraEdgeOffsetX",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -330,7 +328,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 143,
       "match": "(int *)((int)g_CameraEdgeOffsetY",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -339,7 +337,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 145,
       "match": "(int *)((int)g_CameraEdgeOffsetX",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -348,7 +346,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 148,
       "match": "(int *)((int)g_CameraEdgeOffsetX",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -357,7 +355,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 149,
       "match": "(int *)((int)g_CameraEdgeOffsetY",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -446,8 +444,17 @@
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 111,
+      "match": "(int)pCVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)local_1c < (int)pCVar2; local_1c = local_1c + 1) {",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 118,
+      "line": 117,
       "match": "(int)g_ZBufferScanlineArray",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -709,14 +716,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 112,
-      "match": "(int)pCVar2",
-      "severity": "moderate",
-      "text": "(int)local_1c < (int)pCVar2; local_1c = local_1c + 1) {",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

@@ -5359,8 +5359,8 @@ static_assert(__builtin_offsetof(CPackedBitmap, width) == 24,
               "offsetof(CPackedBitmap, width) != 24");
 static_assert(__builtin_offsetof(CPackedBitmap, height) == 28,
               "offsetof(CPackedBitmap, height) != 28");
-static_assert(__builtin_offsetof(CPackedBitmap, row_pointers) == 32,
-              "offsetof(CPackedBitmap, row_pointers) != 32");
+static_assert(__builtin_offsetof(CPackedBitmap, row_offsets) == 32,
+              "offsetof(CPackedBitmap, row_offsets) != 32");
 
 // ---- CPackedBitmapSet (40 bytes) ----
 static_assert(sizeof(CPackedBitmapSet) == 40,

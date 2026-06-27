@@ -4,21 +4,12 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6444 functions
-  1 suspects: 2 functions
-  2 suspects: 7 functions
-  6 suspects: 1 functions
+  0 suspects: 6448 functions
+  2 suspects: 6 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
-
-  [pointer_truncation] (2 functions)
-  ------------------------------------------------------------
-    core_dcamera.cpp_CDemonCamera_testVisibility_FUN_0 ( 79 lines)
-      local_38.base.surface_normal.D.i = (uint)corners ^ (uint)pCV...
-    core_dcamera.cpp_CDemonCamera_precomputeNormals_FU (165 lines)
-      (int)local_1c < (int)pCVar2; local_1c = local_1c + 1) {...
 
 ========================================================================================================================
 FUNCTIONS WITH 2-3 SUSPECTS
@@ -35,5 +26,3 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: cockpit/ckptutil.c, Lines: 88, Types: ['pointer_truncation']
   cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
     File: cockpit/ckptutil.c, Lines: 93, Types: ['pointer_truncation']
-  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f
-    File: core/dcamera.cpp, Lines: 271, Types: ['pointer_truncation']

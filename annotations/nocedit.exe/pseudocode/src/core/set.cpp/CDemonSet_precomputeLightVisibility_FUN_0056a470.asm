@@ -289,7 +289,7 @@ section .text
     ADD ESP,0x8                         ; 0056a7a1
     PUSH 0x32758e4                      ; 0056a7a4 | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360 ; 0056a7a9
-        ;   XREF to: 0044e360 (UNCONDITIONAL_CALL)  ; CDemonCamera * core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera * this_ptr)
+        ;   XREF to: 0044e360 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 0056a7ae
     LEA EAX,[ESP + 0x100]               ; 0056a7b1
     PUSH EAX                            ; 0056a7b8

@@ -492,7 +492,7 @@ section .text
     PUSH 0x32758e4                      ; 0056b3ee | g_CDemonCameraInstance
     MOV dword ptr [0x032bd77c],EDI      ; 0056b3f3 | g_InMirrorRenderPass
     CALL core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360 ; 0056b3f9
-        ;   XREF to: 0044e360 (UNCONDITIONAL_CALL)  ; CDemonCamera * core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera * this_ptr)
+        ;   XREF to: 0044e360 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 0056b3fe
     PUSH 0x32758e4                      ; 0056b401 | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_004544a0 ; 0056b406

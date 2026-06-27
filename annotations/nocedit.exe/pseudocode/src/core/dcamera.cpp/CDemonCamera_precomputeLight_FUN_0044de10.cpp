@@ -76,7 +76,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCa
     pacVar1 = (char (*) [307200])0x0;
   }
   g_LightBufferPoolIndex = uVar5;
-  light_source->corona_depth_buffer = (int *)pacVar1;
+  light_source->corona_depth_buffer = (ushort **)pacVar1;
   g_LightBufferPoolIndex = g_LightBufferPoolIndex + 1;
   pacVar1 = g_LightBufferPool + uVar5;
   if (0x18 < (uint)g_LightBufferPoolIndex) {
@@ -84,7 +84,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCa
   }
   light_source->corona_lightmap_indices = (int *)pacVar1;
   if (((light_source->corona_visibility_buffers == (int *)0x0) ||
-      (light_source->corona_depth_buffer == (int *)0x0)) ||
+      (light_source->corona_depth_buffer == (ushort **)0x0)) ||
      (light_source->corona_lightmap_indices == (int *)0x0)) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
     g_CurrentLineNumber = 0x6ba;

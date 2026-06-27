@@ -12,7 +12,7 @@ typedef struct CDemonLight {
     int left_extent[240]; // 0x14c8
     int right_extent[240]; // 0x1888
     int* corona_visibility_buffers; // 0x1c48
-    int* corona_depth_buffer; // 0x1c4c
+    ushort** corona_depth_buffer; // 0x1c4c
     int* corona_lightmap_indices; // 0x1c50
     uchar* precomputed_lighting_textures; // 0x1c54
     int texture_width; // 0x1c58

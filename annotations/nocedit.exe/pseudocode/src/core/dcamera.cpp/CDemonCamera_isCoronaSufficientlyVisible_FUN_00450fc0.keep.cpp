@@ -12,11 +12,11 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450f
 {
   int iVar1;
   uint *puVar1;
-  int *piVar2;
+  ushort **ppDepth;
   int iVar3;
   int iVar4;
   int local_1c;
-  int *local_18;
+  ushort **local_18;
   int *local_14;
   
   iVar4 = 0;
@@ -26,13 +26,13 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450f
     for (local_1c = 0; local_1c < this_ptr->display_height; local_1c = local_1c + 1) {
       iVar1 = light_source->left_extent[local_1c];
       puVar1 = (uint *)(local_14 + iVar1);
-      piVar2 = local_18 + iVar1;
+      ppDepth = local_18 + iVar1;
       for (iVar3 = (light_source->right_extent[local_1c] - iVar1) + 1; 0 < iVar3; iVar3 = iVar3 + -1) {
-        if ((*puVar1 != 0) && (*puVar1 < (uint)*(ushort *)*piVar2)) {
+        if ((*puVar1 != 0) && (*puVar1 < (uint)**ppDepth)) {
           iVar4 = iVar4 + 1;
         }
         puVar1 = puVar1 + 1;
-        piVar2 = piVar2 + 1;
+        ppDepth = ppDepth + 1;
       }
       if (0x300 < iVar4) {
         return 1;

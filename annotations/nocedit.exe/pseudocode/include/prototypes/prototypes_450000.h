@@ -13,6 +13,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SCorona.h"
+#include "types/structs/SCoronaLightEntry.h"
 #include "types/structs/SFog.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
@@ -45,7 +46,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(CDe
 int __cdecl core_dcamera_cpp_testCoronaVisibility_FUN_00451250(int start_x,int start_y,int depth_reciprocal);
 void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340(int row_index,int column_start,int column_end);
 void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_start,int x_end,SCorona *corona);
-void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,int source_buffer_offset);
+void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry);
 void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render);
 void __cdecl core_dcamera_cpp_transformAndStoreVertex_FUN_00452110(int vertex_index,float x,float y,float z);
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max);

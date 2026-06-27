@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0",
-    "signature": "void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,int source_buffer_offset)"
+    "signature": "void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry)"
   },
   "function_calls": [],
   "globals": [
@@ -319,10 +319,10 @@
       },
       {
         "is_param": true,
-        "name": "source_buffer_offset",
+        "name": "source_entry",
         "offset": 16,
         "size": 4,
-        "type": "int"
+        "type": "SCoronaLightEntry *"
       }
     ]
   },

@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6420 (99.5%)
-With suspects: 34
-Total suspects: 57
+Clean: 6424 (99.5%)
+With suspects: 30
+Total suspects: 47
 
 ====================================================================================================
 cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0 (2 suspects)
@@ -64,36 +64,6 @@ core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (1 suspect)
   File: core/cloth.cpp
 ====================================================================================================
   Line 90 [static_float_loop_induction]: fStack_14 = fStack_14 - fStack_1c) {
-
-====================================================================================================
-core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 (6 suspects)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 48 [pointer_truncation]: g_CoronaLightCache.count = (int)rect;
-  Line 49 [pointer_truncation]: g_LightBufferPoolIndex = (int)rect;
-  Line 101 [pointer_truncation]: if (0 < (int)local_78) {
-  Line 108 [pointer_truncation]: } while (iVar8 < (int)local_78);
-  Line 122 [pointer_truncation]: if ((int)local_78 <= local_74) {
-  Line 137 [pointer_truncation]: *puVar5 = (uint)puVar4;
-
-====================================================================================================
-core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360 (1 suspect)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 112 [pointer_truncation]: (int)local_1c < (int)pCVar2; local_1c = local_1c + 1) {
-
-====================================================================================================
-core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 (2 suspects)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 93 [pointer_truncation]: (int)&g_CoronaLightCache.entries[iVar1]);
-  Line 202 [pointer_truncation]: (int)source_buffer_offset);
-
-====================================================================================================
-core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0 (1 suspect)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 23 [pointer_truncation]: local_38.base.surface_normal.D.i = (uint)corners ^ (uint)pCVar2;
 
 ====================================================================================================
 core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 (1 suspect)

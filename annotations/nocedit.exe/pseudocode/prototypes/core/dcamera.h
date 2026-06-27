@@ -133,7 +133,7 @@ void __cdecl CDemonCamera::precomputeLight(CDemonCamera *this_ptr,CDemonLight *l
 
 // Original: core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
 // Address: 0044e360
-CDemonCamera * __cdecl CDemonCamera::precomputeNormals(CDemonCamera *this_ptr);
+void __cdecl CDemonCamera::precomputeNormals(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
 // Address: 0044e790
@@ -229,7 +229,7 @@ void __cdecl processCoronaScanline(int row,int x_start,int x_end,SCorona *corona
 
 // Original: core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
 // Address: 004517f0
-void __cdecl blendCoronaTextureSpan(int scanline_y,int x_start,int x_end,int source_buffer_offset);
+void __cdecl blendCoronaTextureSpan(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry);
 
 // Original: core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
 // Address: 004518f0

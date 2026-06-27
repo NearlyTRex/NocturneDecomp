@@ -309,7 +309,11 @@ if(NOCTURNE_BUILD_EXE)
         ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_COMMON_WARNINGS}
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
-    target_link_options(nocturne PRIVATE ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_SANITIZE_FLAGS})
+    # -no-pie: ffmpeg's 32-bit inline asm (e.g. lpc_init.o) emits absolute
+    # R_386_32 relocations into .text that aren't PIC-safe even with ffmpeg's
+    # --enable-pic. In a PIE those become runtime text relocations (DT_TEXTREL),
+    # which ld warns about; linking non-PIE resolves them at link time instead.
+    target_link_options(nocturne PRIVATE ${NOCTURNE_ARCH_FLAGS} ${NOCTURNE_SANITIZE_FLAGS} -no-pie)
 
     foreach(_lib IN LISTS _module_libs)
         target_link_libraries(nocturne PRIVATE ${_lib})

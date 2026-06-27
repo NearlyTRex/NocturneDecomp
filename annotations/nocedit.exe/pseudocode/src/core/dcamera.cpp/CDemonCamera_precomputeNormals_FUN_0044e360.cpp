@@ -2,11 +2,11 @@
 // Address: 0044e360
 // Address Range: [[0044e360, 0044e789] [0060a0a0, 0060a119] [0060c3a4, 0060c3c1]]
 // Convention: __cdecl
-// Signature: CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
 
-CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
+void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
 
 {
   int iVar1;
@@ -111,7 +111,6 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
   g_LightBufferPoolIndex = 0;
   g_CoronaLightCache.count = 0;
   g_CameraEdgeCount = 0;
-  pCVar2 = this_ptr;
   if (0x1df < this_ptr->framebuffer_height) {
     local_1c = this_ptr->scale_factor;
     local_48 = local_1c << 2;
@@ -171,5 +170,5 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
       local_48 = local_48 + 4;
     }
   }
-  return pCVar2;
+  return;
 }

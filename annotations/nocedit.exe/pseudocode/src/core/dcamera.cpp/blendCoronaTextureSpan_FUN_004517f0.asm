@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,int source_buffer_offset)
+; void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   scanline_y
 ; int              Stack[0x8]:4   x_start
 ; int              Stack[0xc]:4   x_end
-; int              Stack[0x10]:4   source_buffer_offset
+; SCoronaLightEntry * Stack[0x10]:4   source_entry
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 at 00451e6d

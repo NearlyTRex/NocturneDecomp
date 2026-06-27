@@ -4,43 +4,14 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_truncation                22 ( 38.6%)
-  static_integer_division           16 ( 28.1%)
-  static_signed_char_misuse          5 (  8.8%)
-  static_null_pointer_redundant_check     5 (  8.8%)
-  static_float_loop_induction        4 (  7.0%)
-  static_swapped_arguments           3 (  5.3%)
-  static_null_pointer_arithmetic_redundant_check     1 (  1.8%)
-  static_memleak                     1 (  1.8%)
-
-====================================================================================================
-TYPE: pointer_truncation (22 occurrences)
-====================================================================================================
-
-Unique patterns:
-     4x  (int)g_ScreenBufferArray[1]
-     4x  (int)g_ScreenBufferArray[0]
-     3x  (int)local_78
-     2x  (uint)p_output
-     2x  (int)span_data_buffer
-     2x  (int)rect
-     1x  (uint)puVar4
-     1x  (int)pCVar2
-     1x  (int)source_buffer_offset
-     1x  (int)&g_CoronaLightCache.entries[iVar1]
-     1x  (uint)pCVar2
-
-Functions:
-  cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
-  cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
-  cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
-  cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
-  cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
-  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
-  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
-  core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
-  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
-  core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0
+  static_integer_division           16 ( 34.0%)
+  pointer_truncation                12 ( 25.5%)
+  static_signed_char_misuse          5 ( 10.6%)
+  static_null_pointer_redundant_check     5 ( 10.6%)
+  static_float_loop_induction        4 (  8.5%)
+  static_swapped_arguments           3 (  6.4%)
+  static_null_pointer_arithmetic_redundant_check     1 (  2.1%)
+  static_memleak                     1 (  2.1%)
 
 ====================================================================================================
 TYPE: static_integer_division (16 occurrences)
@@ -58,6 +29,24 @@ Functions:
   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540
   sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
+
+====================================================================================================
+TYPE: pointer_truncation (12 occurrences)
+====================================================================================================
+
+Unique patterns:
+     4x  (int)g_ScreenBufferArray[1]
+     4x  (int)g_ScreenBufferArray[0]
+     2x  (uint)p_output
+     2x  (int)span_data_buffer
+
+Functions:
+  cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
+  cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
+  cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
+  cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
+  cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
+  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
 
 ====================================================================================================
 TYPE: static_signed_char_misuse (5 occurrences)

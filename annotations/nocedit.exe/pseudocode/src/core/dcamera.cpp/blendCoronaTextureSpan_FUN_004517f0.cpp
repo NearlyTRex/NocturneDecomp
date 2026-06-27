@@ -2,11 +2,11 @@
 // Address: 004517f0
 // Address Range: [[004517f0, 004518e3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,int source_buffer_offset)
+// Signature: void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,int source_buffer_offset)
+void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry)
 
 {
   bool bVar1;
@@ -29,7 +29,7 @@ void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y
   uint uVar1;
   
   pcVar9 = g_CoronaBlurOutputBuffer[scanline_y] + x_start;
-  pbVar5 = (byte *)(scanline_y * 0x140 + source_buffer_offset + 0x784 + x_start);
+  pbVar5 = (byte *)(source_entry->lightmap[scanline_y] + x_start);
   uVar8 = (uint)g_CurrentGlobe->intensity_multiplier >> 10;
   uVar16 = (uint7)uVar8 | (uint7)uVar8 << 0x18 | (uint7)uVar8 << 0x10 | (uint7)uVar8 << 8;
   uVar3 = (ushort)(((uVar16 >> 0x18) << 0x30) >> 0x28);

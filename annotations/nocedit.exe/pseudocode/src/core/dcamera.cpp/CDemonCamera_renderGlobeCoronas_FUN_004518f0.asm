@@ -275,7 +275,7 @@ section .text
     PUSH EAX                            ; 00451b96
     PUSH ESI                            ; 00451b97
     CALL core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0 ; 00451b98
-        ;   XREF to: 004517f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y, int x_start, int x_end, int source_buffer_offset)
+        ;   XREF to: 004517f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y, int x_start, int x_end, SCoronaLightEntry * source_entry)
     ADD ESP,0x10                        ; 00451b9d
     JMP 0x00451a7f                      ; 00451ba0
         ;   XREF to: 00451a7f (UNCONDITIONAL_JUMP)  ; LAB_00451a7f
@@ -502,7 +502,7 @@ section .text
     PUSH ECX                            ; 00451e6b
     PUSH EAX                            ; 00451e6c
     CALL core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0 ; 00451e6d
-        ;   XREF to: 004517f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y, int x_start, int x_end, int source_buffer_offset)
+        ;   XREF to: 004517f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y, int x_start, int x_end, SCoronaLightEntry * source_entry)
     ADD ESP,0x10                        ; 00451e72
     MOV ESI,dword ptr [ESP + 0x28]      ; 00451e75
         ;   Label: LAB_00451e75

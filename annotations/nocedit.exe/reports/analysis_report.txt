@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6444 (99.8%)
-Functions with suspects: 10 (0.2%)
+Clean functions: 6448 (99.9%)
+Functions with suspects: 6 (0.1%)
 
-Total suspect patterns: 57
+Total suspect patterns: 47
 Average suspects per function: 0.01
 
-Virtual files: 214 total, 212 at 100%, 213 at 90%+
+Virtual files: 214 total, 213 at 100%, 213 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -28,8 +28,8 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_truncation        22
   static_integer_division   16
+  pointer_truncation        12
   static_signed_char_misuse 5
   static_null_pointer_redundant_check 5
   static_float_loop_induction 4
@@ -89,7 +89,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00419000: core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000 (4 lines)
   00419f50: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_00419f50 (4 lines)
   0041a040: core_bodypart.cpp_CBodyPart_getCarrier_FUN_0041a040 (4 lines)
-  ... and 6394 more
+  ... and 6398 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -127,19 +127,15 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_truncation (10 functions):
+  static_integer_division (0 functions):
+
+  pointer_truncation (6 functions):
     00431410: cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
     00431d00: cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
     00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
     00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
     004326a0: cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
     00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
-    0044de10: core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
-    0044e360: core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
-    004518f0: core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
-    004544f0: core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0
-
-  static_integer_division (0 functions):
 
   static_signed_char_misuse (0 functions):
 
