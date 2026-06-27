@@ -184,6 +184,7 @@
 #include "types/structs/SResolutionEntry.h"
 #include "types/structs/SRoom.h"
 #include "types/structs/SS3DFaceMatch.h"
+#include "types/structs/SScanlineSpans.h"
 #include "types/structs/SScrape.h"
 #include "types/structs/SScreenCoord.h"
 #include "types/structs/SScriptLine.h"

@@ -4453,6 +4453,10 @@
       "type":"struct"
     },
     {
+      "name":"SScanlineSpans",
+      "type":"struct"
+    },
+    {
       "name":"SScrape",
       "type":"struct"
     },
@@ -60474,6 +60478,36 @@
       "importable":true,
       "len":60,
       "name":"SS3DFaceMatch",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"span_count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":64,
+          "name":"starts",
+          "offset":4,
+          "type":"int[16]"
+        },
+        {
+          "len":64,
+          "name":"lengths",
+          "offset":68,
+          "type":"int[16]"
+        }
+      ],
+      "importable":true,
+      "len":132,
+      "name":"SScanlineSpans",
       "pack":false,
       "type":"struct"
     },

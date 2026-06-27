@@ -7,17 +7,17 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 99,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
+    "pseudocode_lines": 76,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_truncation"
     ],
-    "total_lines": 240
+    "total_lines": 242
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730",
-    "signature": "void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bitmap_buffer,char *filename,int width,int height,void *span_data_buffer,int transparent_color_index)"
+    "signature": "void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bitmap_buffer,char *filename,SScanlineSpans *span_output,int width,int height,int transparent_color_index)"
   },
   "function_calls": [
     {
@@ -144,6 +144,35 @@
     },
     "pcode_op_count": 671
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(int *)((int)span_output",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)span_output->lengths + iVar1) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(int *)((int)span_output",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(iVar5 - *(int *)((int)span_output->starts + iVar1)) + 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(int *)((int)span_output",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)span_output->starts + iVar1) = iVar2;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 332,
     "local_size": 308,
@@ -230,24 +259,24 @@
       },
       {
         "is_param": true,
-        "name": "width",
+        "name": "span_output",
         "offset": 12,
         "size": 4,
-        "type": "int"
+        "type": "SScanlineSpans *"
       },
       {
         "is_param": true,
-        "name": "height",
+        "name": "width",
         "offset": 16,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "span_data_buffer",
+        "name": "height",
         "offset": 20,
         "size": 4,
-        "type": "void *"
+        "type": "int"
       },
       {
         "is_param": true,

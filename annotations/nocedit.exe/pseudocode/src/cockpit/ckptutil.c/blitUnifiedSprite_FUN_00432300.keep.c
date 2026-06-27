@@ -29,7 +29,7 @@ void __cdecl cockpit_ckptutil_c_blitUnifiedSprite_FUN_00432300(void *sprite_data
   byte *p_sprite;
 
   iVar6 = g_ClipRight - dest_x;
-  iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
+  iVar1 = (intptr_t)g_ScreenBufferArray[1] - (intptr_t)g_ScreenBufferArray[0];
   iVar8 = g_ClipLeft - dest_x;
   if (sprite_data != (void *)0x0) {
     pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00431760();

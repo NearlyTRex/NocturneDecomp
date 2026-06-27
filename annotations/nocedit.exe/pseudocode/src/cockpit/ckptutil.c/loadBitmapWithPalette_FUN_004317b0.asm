@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_004317b0(char *filename,int width,int height,void *span_data_buffer,void *buffer,int transparent_color_index)
+; void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_004317b0(char *filename,int width,int height,SScanlineSpans *span_data_buffer,void *buffer,int transparent_color_index)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; int              Stack[0x8]:4   width
 ; int              Stack[0xc]:4   height
-; void *           Stack[0x10]:4   span_data_buffer
+; SScanlineSpans * Stack[0x10]:4   span_data_buffer
 ; void *           Stack[0x14]:4   buffer
 ; int              Stack[0x18]:4   transparent_color_index
 ;
@@ -67,7 +67,7 @@ section .text
     PUSH EBP                            ; 00431800
     PUSH EBX                            ; 00431801
     CALL cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730 ; 00431802
-        ;   XREF to: 00435730 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730(void * bitmap_buffer, char * filename, int width, int height, ...)
+        ;   XREF to: 00435730 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730(void * bitmap_buffer, char * filename, SScanlineSpans * span_output, int width, ...)
     ADD ESP,0x18                        ; 00431807
     MOV EAX,EDI                         ; 0043180a
         ;   Label: LAB_0043180a

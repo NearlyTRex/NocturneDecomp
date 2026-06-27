@@ -7,15 +7,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 21,
+    "complexity_score": 20,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 20,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 88
+    "total_lines": 87
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0",
-    "signature": "void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_004317b0(char *filename,int width,int height,void *span_data_buffer,void *buffer,int transparent_color_index)"
+    "signature": "void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_004317b0(char *filename,int width,int height,SScanlineSpans *span_data_buffer,void *buffer,int transparent_color_index)"
   },
   "function_calls": [
     {
@@ -128,7 +128,7 @@
         "name": "span_data_buffer",
         "offset": 16,
         "size": 4,
-        "type": "void *"
+        "type": "SScanlineSpans *"
       },
       {
         "is_param": true,

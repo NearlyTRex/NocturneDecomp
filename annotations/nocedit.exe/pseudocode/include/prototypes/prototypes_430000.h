@@ -31,6 +31,7 @@
 #include "types/structs/SEdgeList.h"
 #include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SScanlineSpans.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x430000
@@ -59,7 +60,7 @@ ColorConversionFunc * __cdecl cockpit_ckptutil_c_getColorConversionFunction_FUN_
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_getRGBConvertersionFunction_FUN_00431770(void);
 OptimizedMemcpyFunc * __cdecl cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_00431780(void);
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_get16BitConversionFunction_FUN_004317a0(void);
-void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_004317b0(char *filename,int width,int height,void *span_data_buffer,void *buffer,int transparent_color_index);
+void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_004317b0(char *filename,int width,int height,SScanlineSpans *span_data_buffer,void *buffer,int transparent_color_index);
 void __cdecl cockpit_ckptutil_c_applyColorPalette_FUN_00431830(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_00431870(char *filename,void *buffer,int size);
 void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_004319b0(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
@@ -104,7 +105,7 @@ void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_00434870(uchar *source_data,int
 void __cdecl cockpit_ckptutil_c_setEdgeData_FUN_00434a50(SEdge *edge_array,int edge_index,int x1,int y1,int x2,int y2,int flag_bit);
 SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal);
 void __cdecl cockpit_ckptutil_c_flipEdgeArrayHorizontally_FUN_004355c0(SEdge *edge_array,int edge_count,int flip_width);
-void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bitmap_buffer,char *filename,int width,int height,void *span_data_buffer,int transparent_color_index);
+void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bitmap_buffer,char *filename,SScanlineSpans *span_output,int width,int height,int transparent_color_index);
 SRenderVertex * __cdecl engine_clipper_c_allocateClipVertex_FUN_00435980(void);
 void __cdecl engine_clipper_c_setNearPlaneDistance_FUN_004359d0(int distance);
 int __cdecl engine_clipper_c_getNearPlaneDistance_FUN_004359f0(void);

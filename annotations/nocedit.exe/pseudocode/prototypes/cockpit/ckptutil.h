@@ -41,7 +41,7 @@ ColorConversionFunc * __cdecl get16BitConversionFunction(void);
 
 // Original: cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0
 // Address: 004317b0
-void * __cdecl loadBitmapWithPalette(char *filename,int width,int height,void *span_data_buffer,void *buffer,int transparent_color_index);
+void * __cdecl loadBitmapWithPalette(char *filename,int width,int height,SScanlineSpans *span_data_buffer,void *buffer,int transparent_color_index);
 
 // Original: cockpit_ckptutil.c_applyColorPalette_FUN_00431830
 // Address: 00431830
@@ -221,4 +221,4 @@ void __cdecl flipEdgeArrayHorizontally(SEdge *edge_array,int edge_count,int flip
 
 // Original: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
 // Address: 00435730
-void __cdecl generateTransparencySpans(void *bitmap_buffer,char *filename,int width,int height,void *span_data_buffer,int transparent_color_index);
+void __cdecl generateTransparencySpans(void *bitmap_buffer,char *filename,SScanlineSpans *span_output,int width,int height,int transparent_color_index);

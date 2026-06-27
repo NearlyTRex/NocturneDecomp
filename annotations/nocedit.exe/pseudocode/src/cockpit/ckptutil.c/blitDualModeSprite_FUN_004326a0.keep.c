@@ -22,7 +22,7 @@ void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004326a0(void *sprite_dat
   ushort *local_14;
   byte *p_sprite;
 
-  iVar4 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
+  iVar4 = (intptr_t)g_ScreenBufferArray[1] - (intptr_t)g_ScreenBufferArray[0];
   if (sprite_data != (void *)0x0) {
     pCVar5 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00431760();
     p_sprite = (byte *)sprite_data;

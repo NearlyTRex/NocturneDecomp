@@ -28,7 +28,7 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00431d00(void *sprite_da
   ushort *local_18;
   byte *p_sprite;
 
-  iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
+  iVar1 = (intptr_t)g_ScreenBufferArray[1] - (intptr_t)g_ScreenBufferArray[0];
   iVar6 = src_x + g_WindowWidth / 2;
   iVar8 = iVar6 + 1;
   if (sprite_data != (void *)0x0) {

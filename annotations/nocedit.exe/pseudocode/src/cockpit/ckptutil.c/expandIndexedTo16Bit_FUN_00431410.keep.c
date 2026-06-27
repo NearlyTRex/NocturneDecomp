@@ -16,7 +16,7 @@ void __cdecl cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410(void *output_b
   p_input = (byte *)indexed_input_buffer;
   p_output = (ushort *)output_buffer;
   if (g_CPUFamily < 6) {
-    if (((uint)p_output & 2) != 0) {
+    if (((uintptr_t)p_output & 2) != 0) {
       *p_output = g_Hardware16BitPalette[*p_input];
       p_output = p_output + 1;
       p_input = p_input + 1;
@@ -35,7 +35,7 @@ void __cdecl cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410(void *output_b
     }
     return;
   }
-  if (((uint)p_output & 2) != 0) {
+  if (((uintptr_t)p_output & 2) != 0) {
     *p_output = g_Hardware16BitPalette[*p_input];
     p_output = p_output + 1;
     p_input = p_input + 1;

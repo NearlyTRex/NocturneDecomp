@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bitmap_buffer,char *filename,int width,int height,void *span_data_buffer,int transparent_color_index)
+; void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bitmap_buffer,char *filename,SScanlineSpans *span_output,int width,int height,int transparent_color_index)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   bitmap_buffer
 ; char *           Stack[0x8]:4   filename
-; int              Stack[0xc]:4   width
-; int              Stack[0x10]:4   height
-; void *           Stack[0x14]:4   span_data_buffer
+; SScanlineSpans * Stack[0xc]:4   span_output
+; int              Stack[0x10]:4   width
+; int              Stack[0x14]:4   height
 ; int              Stack[0x18]:4   transparent_color_index
 ; Local Variables:
 ; char[256]        Stack[-0x130]:256  local_130

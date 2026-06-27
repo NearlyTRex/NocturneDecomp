@@ -5,44 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6424 (99.5%)
-With suspects: 30
-Total suspects: 47
-
-====================================================================================================
-cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0 (2 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 24 [pointer_truncation]: iVar4 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
-  Line 24 [pointer_truncation]: iVar4 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
-
-====================================================================================================
-cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40 (2 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 23 [pointer_truncation]: iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
-  Line 23 [pointer_truncation]: iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
-
-====================================================================================================
-cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00 (2 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 23 [pointer_truncation]: iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
-  Line 23 [pointer_truncation]: iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
-
-====================================================================================================
-cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300 (2 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 24 [pointer_truncation]: iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
-  Line 24 [pointer_truncation]: iVar1 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
-
-====================================================================================================
-cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410 (2 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 19 [pointer_truncation]: if (((uint)p_output & 2) != 0) {
-  Line 38 [pointer_truncation]: if (((uint)p_output & 2) != 0) {
+Clean: 6429 (99.6%)
+With suspects: 25
+Total suspects: 37
 
 ====================================================================================================
 cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730 (2 suspects)
