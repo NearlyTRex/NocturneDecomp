@@ -34,7 +34,7 @@ void * __cdecl shape_memdbg_cpp_debugMalloc_FUN_0050f250(int size,char *filename
     uint back_guard = GAME_BEEFDEAD;
     memcpy((char *)user_data + size, &back_guard, sizeof(back_guard));
     shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(header);
-    shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",(uint)user_data);
+    shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",(uintptr_t)user_data);
     wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
     return user_data;
   }

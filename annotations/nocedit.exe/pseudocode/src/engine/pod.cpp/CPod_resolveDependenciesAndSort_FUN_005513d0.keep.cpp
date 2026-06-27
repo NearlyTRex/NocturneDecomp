@@ -111,7 +111,7 @@ LAB_0055145b:
             do {
               pCVar3 = local_ab0[local_14 * 2 + 1];
               if (pCVar3 == local_38[1]) {
-                uVar3 = (uint)pCVar3 ^ (uint)local_38[1];
+                uVar3 = 0;
                 if (0 < iVar8) {
                   do {
                     if (this_ptr->pod_files[uVar3] == local_ab0[local_14 * 2]) break;

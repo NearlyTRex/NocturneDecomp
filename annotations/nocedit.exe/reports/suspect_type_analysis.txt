@@ -4,41 +4,31 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_truncation                95 ( 70.9%)
-  static_integer_division           16 ( 11.9%)
-  static_null_pointer_redundant_check     8 (  6.0%)
-  static_signed_char_misuse          5 (  3.7%)
-  static_float_loop_induction        4 (  3.0%)
-  static_swapped_arguments           3 (  2.2%)
-  static_null_pointer_arithmetic_redundant_check     1 (  0.7%)
-  unrolled_memcpy                    1 (  0.7%)
-  static_memleak                     1 (  0.7%)
+  pointer_truncation                22 ( 38.6%)
+  static_integer_division           16 ( 28.1%)
+  static_signed_char_misuse          5 (  8.8%)
+  static_null_pointer_redundant_check     5 (  8.8%)
+  static_float_loop_induction        4 (  7.0%)
+  static_swapped_arguments           3 (  5.3%)
+  static_null_pointer_arithmetic_redundant_check     1 (  1.8%)
+  static_memleak                     1 (  1.8%)
 
 ====================================================================================================
-TYPE: pointer_truncation (95 occurrences)
+TYPE: pointer_truncation (22 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     9x  (int)output_buffer
-     7x  (int)pcVar5
-     7x  (int)local_24
-     6x  (int)pcVar8
-     5x  (uint)light_source->precomputed_lighting_textures
-     4x  (uint)this_ptr
      4x  (int)g_ScreenBufferArray[1]
      4x  (int)g_ScreenBufferArray[0]
      3x  (int)local_78
-     3x  (int)scanline_y
-     3x  (int)pcVar2
-     3x  (uint)(header + 1)
      2x  (uint)p_output
      2x  (int)span_data_buffer
-     2x  (int)this_ptr
      2x  (int)rect
-     2x  (int)pvVar2
-     2x  (byte)pcVar3
-     2x  (int)puVar8
-     1x  (int)frame_index
+     1x  (uint)puVar4
+     1x  (int)pCVar2
+     1x  (int)source_buffer_offset
+     1x  (int)&g_CoronaLightCache.entries[iVar1]
+     1x  (uint)pCVar2
 
 Functions:
   cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
@@ -47,42 +37,10 @@ Functions:
   cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
   cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
   cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-  core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
-  core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0
-  core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7
-  core_game.cpp_CGame_runGameSession_FUN_004daf80
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600
-  core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30
-  core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0
-  core_main.c_enterMainGameMenu_FUN_00507a50
-  core_menu.cpp_showOptionsScreen_FUN_00512d30
-  core_moon.cpp_CMoon_render_FUN_00529ed0
-  core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
-  core_script.cpp_CScript_step_FUN_0055a810
-  core_setedit.cpp_editGroundTypes_FUN_00578630
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460
-  core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
-  engine_2d.c_wrapTextToWidth_FUN_00401d80
-  engine_drender.cpp_renderTriangleSimple_FUN_004839f0
-  engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
-  engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
-  engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
-  engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
-  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
-  engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
-  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
-  shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-  shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020
-  shape_memdbg.cpp_debugRealloc_FUN_0050f540
-  shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
 
 ====================================================================================================
 TYPE: static_integer_division (16 occurrences)
@@ -102,21 +60,6 @@ Functions:
   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
 
 ====================================================================================================
-TYPE: static_null_pointer_redundant_check (8 occurrences)
-====================================================================================================
-
-Unique patterns:
-     8x  Cppcheck: redundant null check or possible null dereference
-
-Functions:
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-  core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170
-  shape_design.c_findVertexListInModel_FUN_00468000
-  shape_design.c_getVertexCountFromModel_FUN_00468080
-  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
-  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
-
-====================================================================================================
 TYPE: static_signed_char_misuse (5 occurrences)
 ====================================================================================================
 
@@ -129,6 +72,20 @@ Functions:
   engine_2d.c_drawString_FUN_00402080
   engine_2d.c_drawTextWrappedColor_FUN_00401eb0
   engine_2d.c_drawTextWrapped_FUN_00401c60
+
+====================================================================================================
+TYPE: static_null_pointer_redundant_check (5 occurrences)
+====================================================================================================
+
+Unique patterns:
+     5x  Cppcheck: redundant null check or possible null dereference
+
+Functions:
+  core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170
+  shape_design.c_findVertexListInModel_FUN_00468000
+  shape_design.c_getVertexCountFromModel_FUN_00468080
+  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
+  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
 
 ====================================================================================================
 TYPE: static_float_loop_induction (4 occurrences)
@@ -162,16 +119,6 @@ Unique patterns:
 
 Functions:
   shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0
-
-====================================================================================================
-TYPE: unrolled_memcpy (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  field-by-field struct copy
-
-Functions:
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
 
 ====================================================================================================
 TYPE: static_memleak (1 occurrences)

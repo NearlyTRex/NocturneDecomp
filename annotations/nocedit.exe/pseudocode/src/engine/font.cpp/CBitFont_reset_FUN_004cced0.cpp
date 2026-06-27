@@ -31,7 +31,7 @@ void __cdecl engine_font_cpp_CBitFont_reset_FUN_004cced0(CBitFont *this_ptr)
     pCVar2->char_widths[0] = 0;
     pCVar2->char_heights[0] = 0;
     pCVar2->char_y_offsets[0] = 0;
-    pCVar2->char_positions[0] = 0;
+    pCVar2->char_positions[0] = (uchar *)0x0;
     pCVar2 = (CBitFont *)pacVar1;
   } while (pacVar1 != (char (*) [80])(this_ptr->palette_data + 0x29c));
   this_ptr->max_char_height = 0;

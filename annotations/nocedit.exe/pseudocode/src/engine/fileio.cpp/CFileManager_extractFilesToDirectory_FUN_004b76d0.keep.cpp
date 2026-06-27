@@ -17,7 +17,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
   int iVar3;
   _tm *p_Var4;
   _tm *time_ptr;
-  char *output_buffer;
+  int selected_index;
   CPodDirectoryEntry *pCVar5;
   CPodFile local_1108;
   SFoundFileInfo local_cdc;
@@ -63,17 +63,17 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
       iVar4 = iVar4 + 1;
     } while (iVar4 < local_1108.file_count);
   }
-  output_buffer = (char *)0xffffffff;
+  selected_index = -1;
   while (0 < local_8dc.base.item_count) {
-    if (local_8dc.base.item_count <= (int)output_buffer) {
-      output_buffer = (char *)(local_8dc.base.item_count + -1);
+    if (local_8dc.base.item_count <= selected_index) {
+      selected_index = local_8dc.base.item_count + -1;
     }
-    output_buffer =
-         (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                           (&local_8dc,"Select file to extract",(int)output_buffer,0);
-    if ((int)output_buffer < 0) break;
+    selected_index =
+         shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                           (&local_8dc,"Select file to extract",selected_index,0);
+    if (selected_index < 0) break;
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-              (&local_8dc.base,local_120,(int)output_buffer,0);
+              (&local_8dc.base,local_120,selected_index,0);
     iVar4 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(&local_1108,local_120);
     if (iVar4 < 0) {
       g_CurrentFilename = "..\\engine\\fileio.cpp";
@@ -109,7 +109,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
                   (g_CEditorToolsPtr,"Unable to extract file:\n%s",dest_filename);
       }
       else {
-        shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(&local_8dc.base,(int)output_buffer);
+        shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(&local_8dc.base,selected_index);
       }
     }
   }

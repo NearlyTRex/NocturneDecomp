@@ -30,7 +30,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
   double dVar17;
   double local_c0;
   int local_a8;
-  int aiStack_a4 [8];
+  float *saved_channel_buffers [8];
   float local_7c [4];
   int local_58;
   int local_48;
@@ -75,10 +75,10 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
         uVar6 = this_ptr->channel_current_buffer_offsets[iVar16] -
                 this_ptr->channel_target_buffer_offsets[iVar16];
         if (ABS((int)uVar6) < 2) {
-          aiStack_a4[iVar16] = 0;
+          saved_channel_buffers[iVar16] = 0;
         }
         else {
-          aiStack_a4[iVar16] = (int)mix_buffer.channel_buffers[iVar16];
+          saved_channel_buffers[iVar16] = mix_buffer.channel_buffers[iVar16];
           mix_buffer.channel_buffers[iVar16] = g_ChannelTertiaryBuffers[iVar16];
           memset
                     (mix_buffer.channel_buffers[iVar16],0,mix_buffer.num_output_samples << 2);
@@ -261,15 +261,15 @@ LAB_005a770c:
     local_58 = 0;
     if (0 < mix_buffer.num_channels) {
       do {
-        if (aiStack_a4[local_58] != 0) {
+        if (saved_channel_buffers[local_58] != 0) {
           iVar12 = 0;
           iVar14 = (iVar10 + this_ptr->channel_target_buffer_offsets[local_58]) -
                    this_ptr->channel_current_buffer_offsets[local_58];
           iVar11 = 0;
           if (0 < iVar14) {
             do {
-              pfVar1 = (float *)aiStack_a4[local_58] + iVar11;
-              ((float *)aiStack_a4[local_58])[iVar11] =
+              pfVar1 = saved_channel_buffers[local_58] + iVar11;
+              saved_channel_buffers[local_58][iVar11] =
                    ((float *)g_ChannelTertiaryBuffers[local_58])[iVar12 / iVar14] + *pfVar1;
               iVar11 = iVar11 + 1;
               iVar12 = iVar12 + iVar10;

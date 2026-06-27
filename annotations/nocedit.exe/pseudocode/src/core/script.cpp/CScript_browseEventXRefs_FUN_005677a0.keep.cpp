@@ -133,7 +133,7 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
             if (actor == (CDemonActor *)0x0) {
               iVar5 = pSVar5->line_number + -1;
               if (iVar5 != g_CurrentEditingLine) {
-                g_CurrentEditingColumn = (int)actor;
+                g_CurrentEditingColumn = 0;
                 g_CurrentEditingLine = iVar5;
                 core_script_cpp_clearSelections_FUN_005644e0();
                 core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);

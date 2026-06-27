@@ -4,57 +4,21 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 6412 functions
-  1 suspects: 18 functions
-  2 suspects: 13 functions
-  3 suspects: 4 functions
-  4 suspects: 1 functions
-  5 suspects: 2 functions
-  6 suspects: 2 functions
-  7 suspects: 2 functions
+  0 suspects: 6444 functions
+  1 suspects: 2 functions
+  2 suspects: 7 functions
+  6 suspects: 1 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [pointer_truncation] (18 functions)
+  [pointer_truncation] (2 functions)
   ------------------------------------------------------------
-    shape_memdbg.cpp_debugRealloc_FUN_0050f540         ( 55 lines)
-      ("debugRealloc(%08X, %d, %s, %d)",(uint)ptr,new_size,filenam...
-    core_dstrender.cpp_renderTexturedAlphaMMXScanline_ ( 64 lines)
-      (uVar5 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) + (int...
-    core_menu.cpp_showOptionsScreen_FUN_00512d30       ( 68 lines)
-      *(char (**) [256])((int)g_OptionsMenuPointers + iVar2) = pac...
     core_dcamera.cpp_CDemonCamera_testVisibility_FUN_0 ( 79 lines)
       local_38.base.surface_normal.D.i = (uint)corners ^ (uint)pCV...
-    core_ground.cpp_CGround_getHeightAtPosition_FUN_00 ( 96 lines)
-      iVar9 = this_ptr->height_scale * (int)*(short *)((int)pvVar1...
-    core_ground.cpp_CGround_getNormalAtPosition_FUN_00 (106 lines)
-      iVar7 = (int)*(short *)((int)pvVar2 + ((this_ptr->width_minu...
-    core_actor.cpp_CDemonActor_rayIntersect_FUN_004094 (149 lines)
-      (this_ptr_01,(int)frame_index,ray_origin_00,pCVar2,output_no...
-    engine_font.cpp_CBitFont_parseCharacterMetrics_FUN (152 lines)
-      this_ptr->char_positions[iVar9] = (int)local_1c;...
     core_dcamera.cpp_CDemonCamera_precomputeNormals_FU (165 lines)
       (int)local_1c < (int)pCVar2; local_1c = local_1c + 1) {...
-    core_script.cpp_CScript_browseEventXRefs_FUN_00567 (172 lines)
-      g_CurrentEditingColumn = (int)actor;...
-    core_main.c_enterMainGameMenu_FUN_00507a50         (186 lines)
-      *(char (**) [256])((int)g_MenuTextPointers + iVar4) = pacVar...
-    engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN (188 lines)
-      uVar3 = (uint)pCVar3 ^ (uint)local_38[1];...
-    engine_font.cpp_CBitFont_render3DCharacter_FUN_004 (189 lines)
-      (int)this_ptr->bitmap_data[this_ptr->char_bitmap_index[chara...
-    sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0        (319 lines)
-      aiStack_a4[iVar16] = (int)mix_buffer.channel_buffers[iVar16]...
-    core_game.cpp_CGame_runGameSession_FUN_004daf80    (363 lines)
-      engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePt...
-    sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (541 lines)
-      local_b0 = (int)local_b4 + local_78;...
-    core_vampboss.cpp_CVampireBoss_process_FUN_005e597 (626 lines)
-      iVar18 = (int)(&this_ptr->way_point_0)[3 - this_ptr->waypoin...
-    core_ghoul.cpp_CGhoul_process_FUN_004e6600         (1052 lines)
-      (g_CGorePtr,&local_168.vec,(CVector3f *)0x0,(int)local_70,0)...
 
 ========================================================================================================================
 FUNCTIONS WITH 2-3 SUSPECTS
@@ -63,8 +27,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: cockpit/ckptutil.c, Lines: 45, Types: ['pointer_truncation']
   cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
     File: cockpit/ckptutil.c, Lines: 74, Types: ['pointer_truncation']
-  engine_2d.c_wrapTextToWidth_FUN_00401d80
-    File: engine/2d.c, Lines: 80, Types: ['pointer_truncation']
   cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
     File: cockpit/ckptutil.c, Lines: 80, Types: ['pointer_truncation']
   cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
@@ -73,23 +35,5 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: cockpit/ckptutil.c, Lines: 88, Types: ['pointer_truncation']
   cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
     File: cockpit/ckptutil.c, Lines: 93, Types: ['pointer_truncation']
-  shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN
-    File: shape/quantize.cpp, Lines: 94, Types: ['pointer_truncation']
-  core_moon.cpp_CMoon_render_FUN_00529ed0
-    File: core/moon.cpp, Lines: 125, Types: ['pointer_truncation']
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f
     File: core/dcamera.cpp, Lines: 271, Types: ['pointer_truncation']
-  shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN
-    File: shape/cramtex.cpp, Lines: 832, Types: ['pointer_truncation']
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005
-    File: core/skeledit.cpp, Lines: 1076, Types: ['pointer_truncation', 'unrolled_memcpy']
-  core_script.cpp_CScript_step_FUN_0055a810
-    File: core/script.cpp, Lines: 3337, Types: ['pointer_truncation']
-  shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020
-    File: shape/memdbg.cpp, Lines: 41, Types: ['pointer_truncation']
-  engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5
-    File: engine/fileio.cpp, Lines: 100, Types: ['pointer_truncation']
-  core_setedit.cpp_editGroundTypes_FUN_00578630
-    File: core/setedit.cpp, Lines: 122, Types: ['pointer_truncation']
-  engine_drender.cpp_renderTriangleSimple_FUN_004839f0
-    File: engine/drender.cpp, Lines: 229, Types: ['pointer_truncation']

@@ -72,7 +72,7 @@ section .text
     PUSH EBX                            ; 00554d29
     MOV dword ptr [EBX + 0x4],0x0       ; 00554d2a
     CALL shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0 ; 00554d31
-        ;   XREF to: 00555ff0 (UNCONDITIONAL_CALL)  ; int shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer * this_ptr, uchar * output_buffer)
+        ;   XREF to: 00555ff0 (UNCONDITIONAL_CALL)  ; void shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer * this_ptr, uchar * output_buffer)
     MOV EAX,0x1                         ; 00554d36
     ADD ESP,0x8                         ; 00554d3b
     POP EBX                             ; 00554d3e

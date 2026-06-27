@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 353,
-    "complexity_score": 157,
+    "complexity_score": 122,
     "cross_reference_count": 2,
     "function_call_count": 20,
     "global_count": 26,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 122,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 475
   },
   "cross_references": [
@@ -365,6 +363,35 @@
     },
     "pcode_op_count": 1140
   },
+  "resolved_suspects": [
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)pcVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&local_bdc,\"Editing ground types, press ESC when done.\",(int)pcVar5,0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)pcVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (-1 < (int)pcVar5) break;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 92,
+      "match": "(int)pcVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_bdc.base,local_6c,(int)pcVar5,0);",
+      "type": "pointer_truncation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 3044,
     "local_size": 3040,
@@ -423,30 +450,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
-      "match": "(int)pcVar5",
-      "severity": "moderate",
-      "text": "(&local_bdc,\"Editing ground types, press ESC when done.\",(int)pcVar5,0);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
-      "match": "(int)pcVar5",
-      "severity": "moderate",
-      "text": "if (-1 < (int)pcVar5) break;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 92,
-      "match": "(int)pcVar5",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_bdc.base,local_6c,(int)pcVar5,0);",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

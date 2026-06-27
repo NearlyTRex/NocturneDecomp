@@ -955,7 +955,7 @@ section .text
         ;   XREF to: 0059c1ac (CONDITIONAL_JUMP)  ; LAB_0059c1ac
     PUSH EBX                            ; 0059c1a3
     CALL core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 ; 0059c1a4
-        ;   XREF to: 0059d460 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeformableModel * this_ptr)
+        ;   XREF to: 0059d460 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0059c1a9
     TEST byte ptr [ESI + 0xc],0x20      ; 0059c1ac
         ;   Label: LAB_0059c1ac

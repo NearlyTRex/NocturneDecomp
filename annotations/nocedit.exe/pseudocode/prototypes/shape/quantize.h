@@ -49,7 +49,7 @@ int __cdecl CColorQuantizer::reduceColors(CColorQuantizer *this_ptr);
 
 // Original: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
 // Address: 00555ff0
-int __cdecl CColorQuantizer::generateSortedPalette(CColorQuantizer *this_ptr,uchar *output_buffer);
+void __cdecl CColorQuantizer::generateSortedPalette(CColorQuantizer *this_ptr,uchar *output_buffer);
 
 // Original: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
 // Address: 00556180

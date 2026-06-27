@@ -50,7 +50,7 @@ void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id
       } while (-1 < iVar3);
     }
     if (iVar3 < 0) {
-      local_14->occupant = 0;
+      local_14->occupant = (CCramTex *)0x0;
       local_14->active_flag = 1;
       local_14->map_id = layer_id;
       local_14->start_x = start_x;

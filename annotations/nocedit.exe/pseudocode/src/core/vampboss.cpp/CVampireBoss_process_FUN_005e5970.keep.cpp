@@ -23,6 +23,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
   int iVar9;
   SMotion *pSVar10;
   int iVar18;
+  CDemonActor *waypoint;
   CBoundingBox3D *pCVar11;
   SMotion *pSVar19;
   CBoundingBox3D *pCVar20;
@@ -163,11 +164,11 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     local_b0 = (pCVar12->base).base.location.position.z;
     if (this_ptr->bat_ai_state == 2) {
       this_ptr->flee_timer = this_ptr->flee_timer - delta_time;
-      iVar18 = (int)(&this_ptr->way_point_0)[3 - this_ptr->waypoint_index];
-      if (&local_b8 != (float *)(iVar18 + 0x20)) {
-        local_b8 = *(float *)(iVar18 + 0x20);
-        local_b4 = *(float *)(iVar18 + 0x24);
-        local_b0 = *(float *)(iVar18 + 0x28);
+      waypoint = (&this_ptr->way_point_0)[3 - this_ptr->waypoint_index];
+      if (&local_b8 != &waypoint->location.position.x) {
+        local_b8 = waypoint->location.position.x;
+        local_b4 = waypoint->location.position.y;
+        local_b0 = waypoint->location.position.z;
       }
       if ((this_ptr->flee_timer <= 0.0) ||
          (fVar10 = local_b8 - (this_ptr->base).base.base.location.position.x,

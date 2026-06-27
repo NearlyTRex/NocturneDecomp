@@ -3,6 +3,7 @@
 // Forward declarations
 struct CCharacter;
 struct CDemonActor;
+struct CDoor;
 struct CMatrix3x4f;
 struct CVector3f;
 struct SDamageInfo;

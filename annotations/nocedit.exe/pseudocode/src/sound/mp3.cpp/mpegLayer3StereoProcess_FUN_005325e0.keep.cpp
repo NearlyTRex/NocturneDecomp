@@ -100,7 +100,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
   int local_c0;
   int local_bc;
   int *local_b4;
-  int local_b0;
+  intptr_t local_b0;
   int intensity_stereo_enabled;
   int local_a8;
   int local_a4;
@@ -352,7 +352,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
                 iVar6 = iVar11 * 2;
                 // 0x154 = sizeof(granule[0]) (0xf8) + offsetof(short_scalefactors)
                 // (0x5c) — i.e. &scalefactor_data->granules[1].short_scalefactors[0].
-                local_b0 = (int)local_b4 + local_78;
+                local_b0 = (intptr_t)local_b4 + local_78;
                 local_80 = iVar11 * 4;
                 do {
                   sVar3 = *(short *)(local_b0 + 0x154);

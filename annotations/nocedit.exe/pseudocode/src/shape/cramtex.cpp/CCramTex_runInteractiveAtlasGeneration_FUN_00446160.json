@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1969,
-    "complexity_score": 857,
+    "complexity_score": 833,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 101,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 832,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
-    "total_lines": 2801
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 833,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 2802
   },
   "cross_references": [
     {
@@ -277,8 +275,8 @@
     {
       "addr": "0065c238",
       "name": "g_CramInvalidMarker",
-      "type": "int",
-      "value": "-0x1"
+      "type": "CCramTex*",
+      "value": "ffffffff"
     },
     {
       "addr": "0083c1a0",
@@ -821,7 +819,7 @@
   "resolved_suspects": [
     {
       "description": "Pointer value `&g_CramRectangles[0].map_id` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 232,
+      "line": 233,
       "match": "(int)&g_CramRectangles[0].map_id",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -830,7 +828,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].start_x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 233,
+      "line": 234,
       "match": "(int)&g_CramRectangles[0].start_x",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -839,7 +837,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].start_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 234,
+      "line": 235,
       "match": "(int)&g_CramRectangles[0].start_y",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -848,7 +846,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].map_id` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 286,
+      "line": 287,
       "match": "(int)&g_CramRectangles[0].map_id",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -857,7 +855,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].start_x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 287,
+      "line": 288,
       "match": "(int)&g_CramRectangles[0].start_x",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -866,7 +864,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].start_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 288,
+      "line": 289,
       "match": "(int)&g_CramRectangles[0].start_y",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -875,7 +873,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].map_id` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 364,
+      "line": 365,
       "match": "(int)&g_CramRectangles[0].map_id",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -884,7 +882,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].start_x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 365,
+      "line": 366,
       "match": "(int)&g_CramRectangles[0].start_x",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -893,7 +891,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].start_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 366,
+      "line": 367,
       "match": "(int)&g_CramRectangles[0].start_y",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -902,7 +900,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].map_id` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 418,
+      "line": 419,
       "match": "(int)&g_CramRectangles[0].map_id",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -911,7 +909,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].start_x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 419,
+      "line": 420,
       "match": "(int)&g_CramRectangles[0].start_x",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -920,7 +918,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].start_y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 420,
+      "line": 421,
       "match": "(int)&g_CramRectangles[0].start_y",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -929,7 +927,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].occupant` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 476,
+      "line": 477,
       "match": "(int)&g_CramRectangles[0].occupant",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -938,7 +936,7 @@
     },
     {
       "description": "Pointer value `&g_CramRectangles[0].occupant` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 477,
+      "line": 478,
       "match": "(int)&g_CramRectangles[0].occupant",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -947,7 +945,7 @@
     },
     {
       "description": "Pointer value `&g_CramSortedTextureEntries[0].working_top` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 763,
+      "line": 764,
       "match": "(int)&g_CramSortedTextureEntries[0].working_top",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -956,7 +954,7 @@
     },
     {
       "description": "Pointer value `&g_CramSortedTextureEntries[0].working_width` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 765,
+      "line": 766,
       "match": "(int)&g_CramSortedTextureEntries[0].working_width",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -965,7 +963,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 232,
+      "line": 233,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -974,7 +972,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 233,
+      "line": 234,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -983,7 +981,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 234,
+      "line": 235,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -992,20 +990,11 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 286,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar23)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 287,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(local_80 == *(int *)((int)&g_CramRectangles[0].start_x + iVar23))) &&",
+      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar23)) &&",
       "type": "pointer_cast"
     },
     {
@@ -1014,16 +1003,16 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_y + iVar23)))",
+      "text": "(local_80 == *(int *)((int)&g_CramRectangles[0].start_x + iVar23))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 364,
+      "line": 289,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar25)) &&",
+      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_y + iVar23)))",
       "type": "pointer_cast"
     },
     {
@@ -1032,7 +1021,7 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_x + iVar25))) &&",
+      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar25)) &&",
       "type": "pointer_cast"
     },
     {
@@ -1041,16 +1030,16 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(iVar23 == *(int *)((int)&g_CramRectangles[0].start_y + iVar25)))",
+      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_x + iVar25))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 418,
+      "line": 367,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar23)) &&",
+      "text": "(iVar23 == *(int *)((int)&g_CramRectangles[0].start_y + iVar25)))",
       "type": "pointer_cast"
     },
     {
@@ -1059,7 +1048,7 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_x + iVar23))) &&",
+      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar23)) &&",
       "type": "pointer_cast"
     },
     {
@@ -1068,16 +1057,16 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(local_6c == *(int *)((int)&g_CramRectangles[0].start_y + iVar23)))",
+      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_x + iVar23))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 476,
+      "line": 421,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "if (this_ptr == *(CCramTex **)((int)&g_CramRectangles[0].occupant + iVar22)) {",
+      "text": "(local_6c == *(int *)((int)&g_CramRectangles[0].start_y + iVar23)))",
       "type": "pointer_cast"
     },
     {
@@ -1086,12 +1075,21 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
+      "text": "if (this_ptr == *(CCramTex **)((int)&g_CramRectangles[0].occupant + iVar22)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 478,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
       "text": "*(uint *)((int)&g_CramRectangles[0].occupant + iVar22) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 763,
+      "line": 764,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1100,7 +1098,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 765,
+      "line": 766,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1302,24 +1300,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Pointer value `this_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "introduced_by": "keep",
-      "line": 199,
-      "match": "(int)this_ptr",
-      "severity": "moderate",
-      "text": "pSVar24->occupant = (int)this_ptr;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `this_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "introduced_by": "keep",
-      "line": 482,
-      "match": "(int)this_ptr",
-      "severity": "moderate",
-      "text": "if ((int)this_ptr == g_CramRectangles[iVar22].occupant) {",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

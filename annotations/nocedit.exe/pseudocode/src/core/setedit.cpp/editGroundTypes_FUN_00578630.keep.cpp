@@ -20,7 +20,7 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
   EGroundType type;
   char (*pacVar4) [40];
   char (*pacVar6) [40];
-  char *pcVar5;
+  int selected_index;
   CPickList local_bdc;
   CPickList local_834;
   char local_48c [400];
@@ -36,7 +36,7 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
     return;
   }
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_bdc);
-  pcVar5 = (char *)0x0;
+  selected_index = 0;
   shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_bdc,1);
   do {
     while( true ) {
@@ -54,9 +54,9 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
         } while (iVar3 < g_GroundTextureCount);
       }
       shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_bdc.base);
-      pcVar5 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                                 (&local_bdc,"Editing ground types, press ESC when done.",(int)pcVar5,0);
-      if (-1 < (int)pcVar5) break;
+      selected_index = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                                 (&local_bdc,"Editing ground types, press ESC when done.",selected_index,0);
+      if (-1 < selected_index) break;
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_834);
       shape_edittool_cpp_CPickList_clear_FUN_004a5770(&local_834);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -97,7 +97,7 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_834,0);
     }
-    shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_bdc.base,local_6c,(int)pcVar5,0);
+    shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_bdc.base,local_6c,selected_index,0);
     iVar5 = 0;
     engine_dosio_cpp_splitPath_FUN_00481f20(local_6c,(char *)0x0,(char *)0x0,local_16c,(char *)0x0);
     if (0 < g_GroundTextureCount) {

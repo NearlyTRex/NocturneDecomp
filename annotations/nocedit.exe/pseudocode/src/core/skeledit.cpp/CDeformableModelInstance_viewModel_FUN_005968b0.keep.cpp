@@ -447,9 +447,7 @@ LAB_0059722b:
       local_dc.z = -local_100.z;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_d0,&local_dc);
-      local_154.x = CVector3i_006819fc.x;
-      local_154.y = CVector3i_006819fc.y;
-      local_154.z = CVector3i_006819fc.z;
+      local_154 = CVector3i_006819fc;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_154);
       local_154.x = 0xf00;
@@ -812,7 +810,7 @@ LAB_0059722b:
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_e08);
           _sprintf(local_46c,"Model:\t%s",(char *)&g_SkeleditViewModel);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base,local_46c);
-          _sprintf(local_46c,"Bone:\t%s",this_ptr_02->bone_list[(int)local_54].bone_name);
+          _sprintf(local_46c,"Bone:\t%s",this_ptr_02->bone_list[local_64].bone_name);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_e08.base,local_46c);
           _sprintf(local_46c,"Pos: %5.3f %5.3f %5.3f",
                    (double)local_174,(double)local_170,(double)local_16c.x);

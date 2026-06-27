@@ -32,7 +32,7 @@ void __cdecl engine_2d_c_wrapTextToWidth_FUN_00401d80(char *input_text,int max_w
         cVar2 = *output_buffer;
         if (((cVar2 == '\0') || ((g_CharacterClassificationTable[(byte)(cVar2 + 1)] & 2) != 0)) ||
            (cVar2 == '\n')) {
-          uVar4 = (int)output_buffer - (int)pcVar5;
+          uVar4 = (intptr_t)output_buffer - (intptr_t)pcVar5;
           memcpy(acStack_114,pcVar5,uVar4);
           acStack_114[uVar4] = '\0';
           iVar4 = engine_2d_c_getStringWidth_FUN_004018a0(acStack_114);

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 121,
+    "complexity_score": 106,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 106,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 378
   },
   "cross_references": [],
@@ -118,6 +116,15 @@
       "severity": "moderate",
       "text": "(int)*(short *)((int)pvVar2 +",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)pvVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar7 = (int)*(short *)((int)pvVar2 + ((this_ptr->width_minus_1 & uVar1) + iVar6) * 4) *",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -252,14 +259,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 51,
-      "match": "(int)pvVar2",
-      "severity": "moderate",
-      "text": "iVar7 = (int)*(short *)((int)pvVar2 + ((this_ptr->width_minus_1 & uVar1) + iVar6) * 4) *",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

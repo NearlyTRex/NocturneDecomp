@@ -196,7 +196,7 @@ LAB_004461b1:
                    (((this_ptr->working_right < pSVar24->end_y &&
                      (pSVar24->start_x < this_ptr->working_top)) &&
                     (pSVar24->start_y < this_ptr->working_width)))) {
-                  pSVar24->occupant = (int)this_ptr;
+                  pSVar24->occupant = this_ptr;
                 }
                 iVar29 = iVar29 + 1;
                 pSVar24 = pSVar24 + 1;
@@ -479,7 +479,7 @@ LAB_00446f96:
             if (0 < iVar29) {
               iVar22 = 0;
               do {
-                if ((int)this_ptr == g_CramRectangles[iVar22].occupant) {
+                if (this_ptr == g_CramRectangles[iVar22].occupant) {
                   g_CramRectangles[iVar22].occupant = 0;
                 }
                 iVar22 = iVar22 + 1;

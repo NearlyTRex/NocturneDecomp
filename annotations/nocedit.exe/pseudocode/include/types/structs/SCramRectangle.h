@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CCramTex;
+
 // Dependencies
 #include "system/basetypes.h"
 
@@ -13,7 +16,7 @@ typedef struct SCramRectangle {
     int end_x; // 0xc
     int end_y; // 0x10
     int orientation; // 0x14
-    int occupant; // 0x18
+    struct CCramTex* occupant; // 0x18
     int candidate_end_x; // 0x1c
     int candidate_end_y; // 0x20
     int active_flag; // 0x24

@@ -24,7 +24,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
   CVector3f *pCVar10;
   float fVar7;
   CCharacter *pCVar27;
-  CDemonActor_vtable *pCVar8;
+  int health_bar_value;
   CMotionList *this_ptr_00;
   CTrigger *pCVar25;
   CPlatform *pCVar9;
@@ -1044,12 +1044,12 @@ LAB_0055cd52:
                                                   goto joined_r0x0055c026;
                                                   iVar8 = _stricmp
                                                                     (local_1f4c,"false");
-                                                  pCVar8 = (CDemonActor_vtable *)0x0;
+                                                  health_bar_value = 0;
                                                   if (iVar8 != 0) {
                                                     iVar8 = _stricmp
                                                                       (local_1f4c,"true");
                                                     if (iVar8 == 0) {
-                                                      pCVar8 = (CDemonActor_vtable *)0x1;
+                                                      health_bar_value = 1;
                                                     }
                                                     else {
                                                       iVar8 = _stricmp
@@ -1062,11 +1062,11 @@ LAB_0055cd52:
                                                   "Invalid health bar mode '%s'",local_1f4c);
                                                   return -1;
                                                   }
-                                                  pCVar8 = (CDemonActor_vtable *)0x2;
+                                                  health_bar_value = 2;
                                                   }
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    pCVar27->health_bar_mode = (int)pCVar8;
+                                                    pCVar27->health_bar_mode = health_bar_value;
                                                   }
                                                   }
                                                   else {
@@ -1774,7 +1774,7 @@ joined_r0x0055c026:
                                                     }
                                                     else {
                                                       (*(((pCVar17->base).vtable._uc)->_uc).
-                                                        setDoorTarget)(pCVar17,(uint)pCVar23);
+                                                        setDoorTarget)(pCVar17,pCVar23);
                                                       this_ptr->cmd_timer = 1.0;
                                                     }
                                                   }

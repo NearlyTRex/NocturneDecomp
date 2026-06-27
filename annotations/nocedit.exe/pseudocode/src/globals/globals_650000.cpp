@@ -428,6 +428,9 @@ CCodec_vtable g_CLZWDecompressVTable = {
     .finalizeBuffer = (CCodec_finalizeBuffer *)support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50
 };
 
+// CCramTex*
+CCramTex* g_CramInvalidMarker = (CCramTex*)0xFFFFFFFF;
+
 // CDemonActor*
 CDemonActor* g_ActorNameSentinel = (CDemonActor*)0x0FFFFFFF; // DAT_0fffffff
 
@@ -6146,5 +6149,4 @@ int INT_00658bf4 = 0xA;
 int INT_00658c04 = 0x4D41;
 int INT_00658c08 = 0x4D50;
 int INT_00658c0c = 0x9;
-int g_CramInvalidMarker = -1;
 

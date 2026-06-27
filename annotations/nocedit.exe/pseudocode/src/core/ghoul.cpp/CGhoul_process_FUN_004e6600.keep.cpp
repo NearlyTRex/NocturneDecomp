@@ -86,7 +86,7 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   float local_84;
   float local_7c;
   float local_78;
-  CMotionList *local_70;
+  int burst_count;
   float local_6c;
   float local_68;
   float local_64;
@@ -202,10 +202,9 @@ LAB_004e6a5f:
                       (pCVar3,&local_29c);
             local_ac = (double)local_29c.damage_amount;
             if (0.0 < local_ac) {
-              local_70 = (CMotionList *)
-                         (int)ROUND(ROUND(local_ac * 2.5 * 0.25));
+              burst_count = (int)ROUND(ROUND(local_ac * 2.5 * 0.25));
               core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-                        (g_CGorePtr,&local_168.vec,(CVector3f *)0x0,(int)local_70,0);
+                        (g_CGorePtr,&local_168.vec,(CVector3f *)0x0,burst_count,0);
             }
             pCVar3 = (this_ptr->base).victim;
             if (pCVar3->hit_points <= 0.0) {

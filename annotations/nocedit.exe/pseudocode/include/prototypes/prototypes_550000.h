@@ -97,7 +97,7 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_0055509
 int __cdecl shape_quantize_cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500(CColorQuantizer *this_ptr,int num_entries);
 void __cdecl shape_quantize_cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer *this_ptr,uchar *src_pixels,uchar *dest_indices,short start_x,short end_x,short num_palette_entries);
 int __cdecl shape_quantize_cpp_CColorQuantizer_reduceColors_FUN_00555a40(CColorQuantizer *this_ptr);
-int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer *this_ptr,uchar *output_buffer);
+void __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer *this_ptr,uchar *output_buffer);
 int __cdecl shape_quantize_cpp_CColorQuantizer_applyQuantization_FUN_00556180(CColorQuantizer *this_ptr,CBitmap **bitmap_ptr);
 int __cdecl shape_quantize_cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0(CColorQuantizer *this_ptr,int bitmap_count,CBitmap **bitmap_array);
 int __cdecl shape_quantize_cpp_CColorQuantizer_quantizeBitmap_FUN_00556470(CColorQuantizer *this_ptr,CBitmap **bitmap_ptr);

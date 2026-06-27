@@ -119,7 +119,7 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
             g_CurrentFilename = "..\\engine\\font.cpp";
             core_main_c_displayErrorAndQuit_FUN_00506f10(local_16c);
           }
-          this_ptr->char_positions[iVar9] = (int)local_1c;
+          this_ptr->char_positions[iVar9] = local_1c;
           local_28 = iVar7;
         }
         local_1c = local_1c + 1;

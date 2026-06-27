@@ -6,6 +6,7 @@
 #include "types/classes/CCameraView_vtable.h"
 #include "types/classes/CCharacter_full_vtable.h"
 #include "types/classes/CCodec_vtable.h"
+#include "types/classes/CCramTex.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CEnemy_full_vtable.h"
@@ -34,6 +35,9 @@ extern CCharacter_full_vtable g_CHighPriestOfGardathVTable;
 extern CCodec_vtable g_CCodecVTable;
 extern CCodec_vtable g_CLZWCompressVTable;
 extern CCodec_vtable g_CLZWDecompressVTable;
+
+// CCramTex*
+extern CCramTex* g_CramInvalidMarker;
 
 // CDemonActor*
 extern CDemonActor* g_ActorNameSentinel;
@@ -299,5 +303,4 @@ extern int INT_00658bf4;
 extern int INT_00658c04;
 extern int INT_00658c08;
 extern int INT_00658c0c;
-extern int g_CramInvalidMarker;
 

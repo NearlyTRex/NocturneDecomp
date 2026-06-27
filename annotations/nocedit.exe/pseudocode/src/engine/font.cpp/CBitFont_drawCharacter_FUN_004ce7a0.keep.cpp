@@ -64,7 +64,7 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(CBitFont *this_p
               (this_ptr,character_code,x + this_ptr->shadow_offset_x,y + this_ptr->shadow_offset_y,
                color_value,-1);
   }
-  local_d4 = (byte *)this_ptr->char_positions[character_code];
+  local_d4 = this_ptr->char_positions[character_code];
   y = y + this_ptr->char_y_offsets[character_code];
   local_d0 = x + this_ptr->char_widths[character_code] + -1;
   local_cc = y + -1 + this_ptr->char_heights[character_code];

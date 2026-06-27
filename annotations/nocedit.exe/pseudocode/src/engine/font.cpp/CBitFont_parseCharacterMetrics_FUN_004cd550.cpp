@@ -134,8 +134,8 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
           this_ptr->max_char_width = iVar2;
         }
         iVar8 = engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004cda20
-                          (this_ptr,(uchar *)this_ptr->char_positions[iVar9],
-                           this_ptr->char_widths[iVar9],local_30[1] - (*local_30 + 1),bitmap_width);
+                          (this_ptr,this_ptr->char_positions[iVar9],this_ptr->char_widths[iVar9],
+                           local_30[1] - (*local_30 + 1),bitmap_width);
         this_ptr->char_heights[iVar9] = iVar8;
         if (this_ptr->max_char_height < iVar8) {
           this_ptr->max_char_height = iVar8;

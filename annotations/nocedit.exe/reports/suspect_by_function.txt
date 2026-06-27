@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6390 (99.0%)
-With suspects: 64
-Total suspects: 134
+Clean: 6420 (99.5%)
+With suspects: 34
+Total suspects: 57
 
 ====================================================================================================
 cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0 (2 suspects)
@@ -52,24 +52,6 @@ cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730 (2 suspects)
   Line 81 [pointer_truncation]: } while (local_20 < (int)span_data_buffer);
 
 ====================================================================================================
-core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 (7 suspects)
-  File: core/actor.cpp
-====================================================================================================
-  Line 34 [pointer_truncation]: core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid actor pointer %08X detected at %s, line %d",(uint)this_ptr,context_file,context_line);
-  Line 41 [pointer_truncation]: core_main_c_displayErrorAndQuit_FUN_00506f10("Dangling/corrupt actor pointer detected at %s line %d:\nptr = %08X\nname = %s\ncreateStatus = %d",context_file,context_line,(uint)this_ptr,g_ActorDebugBuffer,this_ptr->lifecycle_state);
-  Line 55 [pointer_truncation]: ("Dangling/corrupt actor pointer detected at %s line %d:\nptr = %08X\nname = %s\npos = %g,%g,%g",context_file,context_line,(uint)this_ptr,
-  Line 64 [static_null_pointer_redundant_check]: dVar6 = (double)(this_ptr->location).position.z;
-  Line 65 [static_null_pointer_redundant_check]: dVar5 = (double)(this_ptr->location).position.y;
-  Line 66 [static_null_pointer_redundant_check]: dVar4 = (double)(this_ptr->location).position.x;
-  Line 74 [pointer_truncation]: ("Dangling/corrupt actor pointer detected at %s line %d:\nptr = %08X\nname = %s",context_file,context_line,(uint)this_ptr,
-
-====================================================================================================
-core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 (1 suspect)
-  File: core/actor.cpp
-====================================================================================================
-  Line 107 [pointer_truncation]: (this_ptr_01,(int)frame_index,ray_origin_00,pCVar2,output_normal);
-
-====================================================================================================
 core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 (3 suspects)
   File: core/charactr.cpp
 ====================================================================================================
@@ -108,16 +90,6 @@ core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 (2 suspects)
   Line 202 [pointer_truncation]: (int)source_buffer_offset);
 
 ====================================================================================================
-core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790 (5 suspects)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 140 [pointer_truncation]: (int)((uint)light_source->precomputed_lighting_textures
-  Line 156 [pointer_truncation]: (int)((uint)light_source->precomputed_lighting_textures
-  Line 175 [pointer_truncation]: (int)((uint)light_source->precomputed_lighting_textures
-  Line 194 [pointer_truncation]: (int)((uint)light_source->precomputed_lighting_textures
-  Line 212 [pointer_truncation]: (int)((uint)light_source->precomputed_lighting_textures
-
-====================================================================================================
 core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0 (1 suspect)
   File: core/dcamera.cpp
 ====================================================================================================
@@ -135,12 +107,6 @@ core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210 (2 sus
 ====================================================================================================
   Line 70 [static_integer_division]: fVar11 = (float)(this_ptr->shadow_map_height / 2);
   Line 72 [static_integer_division]: fVar14 = (float)(this_ptr->shadow_map_width / 2);
-
-====================================================================================================
-core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 54 [pointer_truncation]: (uVar5 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) + (int)pvVar2) != '\0')
 
 ====================================================================================================
 core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170 (1 suspect)
@@ -170,55 +136,6 @@ core_game.cpp_CGame_finishAct_FUN_004e3b90 (1 suspect)
   Line 45 [static_float_loop_induction]: for (local_550 = 5.0; 0.0 < local_550; local_550 = local_550 - this_ptr->delta_time_float) {
 
 ====================================================================================================
-core_game.cpp_CGame_runGameSession_FUN_004daf80 (1 suspect)
-  File: core/game.cpp
-====================================================================================================
-  Line 47 [pointer_truncation]: engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"ESP: %08X\n",(uint)&local_870);
-
-====================================================================================================
-core_ghoul.cpp_CGhoul_process_FUN_004e6600 (1 suspect)
-  File: core/ghoul.cpp
-====================================================================================================
-  Line 236 [pointer_truncation]: (g_CGorePtr,&local_168.vec,(CVector3f *)0x0,(int)local_70,0);
-
-====================================================================================================
-core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30 (1 suspect)
-  File: core/ground.cpp
-====================================================================================================
-  Line 75 [pointer_truncation]: iVar9 = this_ptr->height_scale * (int)*(short *)((int)pvVar1 + (uVar12 + iVar8) * 4);
-
-====================================================================================================
-core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0 (1 suspect)
-  File: core/ground.cpp
-====================================================================================================
-  Line 51 [pointer_truncation]: iVar7 = (int)*(short *)((int)pvVar2 + ((this_ptr->width_minus_1 & uVar1) + iVar6) * 4) *
-
-====================================================================================================
-core_main.c_enterMainGameMenu_FUN_00507a50 (1 suspect)
-  File: core/main.c
-====================================================================================================
-  Line 94 [pointer_truncation]: *(char (**) [256])((int)g_MenuTextPointers + iVar4) = pacVar6;
-
-====================================================================================================
-core_menu.cpp_showOptionsScreen_FUN_00512d30 (1 suspect)
-  File: core/menu.cpp
-====================================================================================================
-  Line 22 [pointer_truncation]: *(char (**) [256])((int)g_OptionsMenuPointers + iVar2) = pacVar4;
-
-====================================================================================================
-core_moon.cpp_CMoon_render_FUN_00529ed0 (2 suspects)
-  File: core/moon.cpp
-====================================================================================================
-  Line 104 [pointer_truncation]: [(byte)pcVar3[((uVar4 >> 1) + iVar4 & 0xff) * 0x100 +
-  Line 107 [pointer_truncation]: [(byte)pcVar3[((uVar4 >> 1) + iVar4 & 0xff) * 0x100 +
-
-====================================================================================================
-core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 (1 suspect)
-  File: core/script.cpp
-====================================================================================================
-  Line 140 [pointer_truncation]: g_CurrentEditingColumn = (int)actor;
-
-====================================================================================================
 core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0 (2 suspects)
   File: core/script.cpp
 ====================================================================================================
@@ -226,45 +143,10 @@ core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0 (2 suspects)
   Line 13 [static_integer_division]: return (int)ROUND(ROUND((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
 
 ====================================================================================================
-core_script.cpp_CScript_step_FUN_0055a810 (2 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 1154 [pointer_truncation]: pCVar27->health_bar_mode = (int)pCVar8;
-  Line 1882 [pointer_truncation]: setDoorTarget)(pCVar17,(uint)pCVar23);
-
-====================================================================================================
-core_setedit.cpp_editGroundTypes_FUN_00578630 (3 suspects)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 50 [pointer_truncation]: (&local_bdc,"Editing ground types, press ESC when done.",(int)pcVar5,0);
-  Line 51 [pointer_truncation]: if (-1 < (int)pcVar5) break;
-  Line 92 [pointer_truncation]: shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_bdc.base,local_6c,(int)pcVar5,0);
-
-====================================================================================================
-core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (3 suspects)
+core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1 suspect)
   File: core/skeledit.cpp
 ====================================================================================================
-  Line 189 [unrolled_memcpy]: local_184.x = g_ZeroVector.f.x;
-  Line 720 [static_swapped_arguments]: shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-  Line 815 [pointer_truncation]: _sprintf(local_46c,"Bone:\t%s",this_ptr_02->bone_list[(int)local_54].bone_name);
-
-====================================================================================================
-core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (7 suspects)
-  File: core/skeleton.cpp
-====================================================================================================
-  Line 97 [pointer_truncation]: if (0 < (int)local_24) {
-  Line 98 [pointer_truncation]: iVar10 = (int)local_24 * 4;
-  Line 168 [pointer_truncation]: if (1 < (int)local_24) {
-  Line 176 [pointer_truncation]: } while (iVar12 < (int)local_24);
-  Line 191 [pointer_truncation]: if (0 < (int)local_24) {
-  Line 198 [pointer_truncation]: } while (iVar3 < (int)local_24);
-  Line 202 [pointer_truncation]: return (int)local_24;
-
-====================================================================================================
-core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 (1 suspect)
-  File: core/vampboss.cpp
-====================================================================================================
-  Line 166 [pointer_truncation]: iVar18 = (int)(&this_ptr->way_point_0)[3 - this_ptr->waypoint_index];
+  Line 718 [static_swapped_arguments]: shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
 
 ====================================================================================================
 engine_2d.c_drawStringHighlighted_FUN_004020e0 (1 suspect)
@@ -297,75 +179,6 @@ engine_2d.c_drawTextWrapped_FUN_00401c60 (1 suspect)
   Line 29 [static_signed_char_misuse]: bVar2 = *text;
 
 ====================================================================================================
-engine_2d.c_wrapTextToWidth_FUN_00401d80 (2 suspects)
-  File: engine/2d.c
-====================================================================================================
-  Line 35 [pointer_truncation]: uVar4 = (int)output_buffer - (int)pcVar5;
-  Line 44 [pointer_truncation]: uVar4 = (int)output_buffer - (int)pcVar5;
-
-====================================================================================================
-engine_drender.cpp_renderTriangleSimple_FUN_004839f0 (3 suspects)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 167 [pointer_truncation]: if ((local_14->base).y_max <= (int)scanline_y) {
-  Line 185 [pointer_truncation]: if ((local_18->base).y_max <= (int)scanline_y) {
-  Line 204 [pointer_truncation]: wincore_windll_cpp_renderScanline_FUN_005b5710(local_18,local_14,(int)scanline_y);
-
-====================================================================================================
-engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030 (3 suspects)
-  File: engine/fileio.cpp
-====================================================================================================
-  Line 75 [pointer_truncation]: (&local_86c,"Select file to check out",(int)pcVar5,0);
-  Line 76 [pointer_truncation]: if ((int)pcVar5 < 0) {
-  Line 83 [pointer_truncation]: (&local_86c.base,output_filename_buffer,(int)pcVar5,0);
-
-====================================================================================================
-engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0 (5 suspects)
-  File: engine/fileio.cpp
-====================================================================================================
-  Line 79 [pointer_truncation]: if (local_8dc.base.item_count <= (int)output_buffer) {
-  Line 84 [pointer_truncation]: (&local_8dc,"Select file to extract",(int)output_buffer,0);
-  Line 85 [pointer_truncation]: if ((int)output_buffer < 0) break;
-  Line 87 [pointer_truncation]: (&local_8dc.base,local_120,(int)output_buffer,0);
-  Line 132 [pointer_truncation]: shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(&local_8dc.base,(int)output_buffer);
-
-====================================================================================================
-engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (1 suspect)
-  File: engine/font.cpp
-====================================================================================================
-  Line 122 [pointer_truncation]: this_ptr->char_positions[iVar9] = (int)local_1c;
-
-====================================================================================================
-engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (1 suspect)
-  File: engine/font.cpp
-====================================================================================================
-  Line 108 [pointer_truncation]: (int)this_ptr->bitmap_data[this_ptr->char_bitmap_index[character_code]];
-
-====================================================================================================
-engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 (1 suspect)
-  File: engine/pod.cpp
-====================================================================================================
-  Line 155 [pointer_truncation]: uVar3 = (uint)pCVar3 ^ (uint)local_38[1];
-
-====================================================================================================
-engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440 (6 suspects)
-  File: engine/winfont.cpp
-====================================================================================================
-  Line 90 [pointer_truncation]: if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
-  Line 90 [pointer_truncation]: if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
-  Line 93 [pointer_truncation]: puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + x * 2);
-  Line 123 [pointer_truncation]: if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
-  Line 123 [pointer_truncation]: if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
-  Line 126 [pointer_truncation]: piVar9 = (int *)(x * 4 + (int)g_ScreenBufferArray[(int)pcVar8]);
-
-====================================================================================================
-shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (2 suspects)
-  File: shape/cramtex.cpp
-====================================================================================================
-  Line 199 [pointer_truncation]: pSVar24->occupant = (int)this_ptr;
-  Line 482 [pointer_truncation]: if ((int)this_ptr == g_CramRectangles[iVar22].occupant) {
-
-====================================================================================================
 shape_design.c_findVertexListInModel_FUN_00468000 (1 suspect)
   File: shape/design.c
 ====================================================================================================
@@ -378,43 +191,10 @@ shape_design.c_getVertexCountFromModel_FUN_00468080 (1 suspect)
   Line 15 [static_null_pointer_redundant_check]: while (((char)(model_ptr->base).type != '\x02' && ((char)(model_ptr->base).type != '\0'))) {
 
 ====================================================================================================
-shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 (7 suspects)
-  File: shape/edittool.cpp
-====================================================================================================
-  Line 31 [pointer_truncation]: (&local_8bc.base,local_314,(int)output_buffer,0);
-  Line 33 [pointer_truncation]: (&local_8bc.base,local_514,(int)output_buffer,1);
-  Line 41 [pointer_truncation]: } while ((int)output_buffer < local_8bc.base.item_count);
-  Line 44 [pointer_truncation]: (&local_8bc,dialog_title,(int)pcVar1,0);
-  Line 45 [pointer_truncation]: if ((int)pcVar2 < 0) {
-  Line 49 [pointer_truncation]: shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_8bc.base,local_314,(int)pcVar2,0);
-  Line 50 [pointer_truncation]: shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_8bc.base,local_514,(int)pcVar2,1);
-
-====================================================================================================
-shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020 (3 suspects)
-  File: shape/memdbg.cpp
-====================================================================================================
-  Line 39 [pointer_truncation]: ("Head memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d.\n(Last ok check was at %s line %d)",iVar2,(uint)(header + 1),header->source_file,iVar1,
-  Line 48 [pointer_truncation]: ("Tail memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d\n(Last ok check was at %s line %d)",header->num_bytes,(uint)(header + 1),header->source_file,
-  Line 60 [pointer_truncation]: ("List memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d\n(Last ok check was at %s line %d)",header->num_bytes,(uint)(header + 1),header->source_file,
-
-====================================================================================================
-shape_memdbg.cpp_debugRealloc_FUN_0050f540 (1 suspect)
-  File: shape/memdbg.cpp
-====================================================================================================
-  Line 22 [pointer_truncation]: ("debugRealloc(%08X, %d, %s, %d)",(uint)ptr,new_size,filename,line_number);
-
-====================================================================================================
 shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0 (1 suspect)
   File: shape/memdbg.cpp
 ====================================================================================================
   Line 19 [static_null_pointer_arithmetic_redundant_check]: return (SMemHead *)((char *)user_ptr - sizeof(SMemHead));
-
-====================================================================================================
-shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0 (2 suspects)
-  File: shape/quantize.cpp
-====================================================================================================
-  Line 83 [pointer_truncation]: if (0 < (int)puVar8) {
-  Line 97 [pointer_truncation]: return (int)puVar8;
 
 ====================================================================================================
 shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0 (1 suspect)
@@ -430,10 +210,9 @@ sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540 (2 suspects)
   Line 28 [static_integer_division]: fVar2 = pow((float10)ratio,(float10)((intensity_position + 1) / 2));
 
 ====================================================================================================
-sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (5 suspects)
+sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (4 suspects)
   File: sound/mp3.cpp
 ====================================================================================================
-  Line 244 [pointer_truncation]: local_b0 = (int)local_b4 + local_78;
   Line 258 [static_integer_division]: fVar13 = (float10)fptan((float10)is_pos_per_sample[iVar6 / 2] *
   Line 362 [static_integer_division]: fVar14 = (float10)fptan((float10)is_pos_per_sample[iVar6 / 2] *
   Line 471 [static_integer_division]: fVar14 = (float10)fptan((float10)is_pos_per_sample[iVar6 / 2] *
@@ -456,9 +235,3 @@ sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830 (1 suspect)
   File: sound/snddx.cpp
 ====================================================================================================
   Line 71 [static_null_pointer_redundant_check]: (*pIStack_20->vtable->QueryInterface)((IUnknown *)pIStack_20,&g_IID_IDirectSound3DBuffer,(void **)&piStack_1c);
-
-====================================================================================================
-sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (1 suspect)
-  File: sound/sndmain.cpp
-====================================================================================================
-  Line 81 [pointer_truncation]: aiStack_a4[iVar16] = (int)mix_buffer.channel_buffers[iVar16];

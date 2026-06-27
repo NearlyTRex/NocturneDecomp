@@ -28,7 +28,7 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
   CVector3f local_3c;
   CVector3f local_30;
   CVector3f CStack_24;
-  CDeformableModelInstance *frame_index;
+  CDeformableModelInstance *deformable_model;
   int triangle_index;
   CDemonSet *pCVar1;
 
@@ -94,13 +94,13 @@ LAB_004095c9:
   pCVar1 = g_CDemonSetPtr;
   out_hit->part_index = -1;
   if (pCVar1->skip_exact_collisions == 0) {
-    frame_index = collision_info->deformable_model;
-    if (frame_index == (CDeformableModelInstance *)0x0) {
+    deformable_model = collision_info->deformable_model;
+    if (deformable_model == (CDeformableModelInstance *)0x0) {
       if (collision_info->keyframed_model != (CKeyFramedModelInstance *)0x0) {
         this_ptr_01 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                                 (collision_info->keyframed_model);
         local_a0 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
-                             (this_ptr_01,(int)frame_index,&local_3c,&local_54,&local_30);
+                             (this_ptr_01,0,&local_3c,&local_54,&local_30);
         if (local_a0 < 0.0) {
           return 2.0;
         }

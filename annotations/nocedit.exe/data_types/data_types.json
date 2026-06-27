@@ -3745,10 +3745,6 @@
       "type":"struct"
     },
     {
-      "name":"SCramRectangle",
-      "type":"struct"
-    },
-    {
       "name":"SCurtainVertex",
       "type":"struct"
     },
@@ -4554,6 +4550,10 @@
     },
     {
       "name":"CCramTex",
+      "type":"struct"
+    },
+    {
+      "name":"SCramRectangle",
       "type":"struct"
     },
     {
@@ -11975,8 +11975,8 @@
           "type":"CCharacter*"
         },
         {
-          "name":"event_id",
-          "type":"uint"
+          "name":"door_target",
+          "type":"CDoor*"
         }
       ],
       "return_type":"void",
@@ -27358,7 +27358,7 @@
           "len":1024,
           "name":"char_positions",
           "offset":7528,
-          "type":"int[256]"
+          "type":"uchar*[256]"
         },
         {
           "len":1024,
@@ -54774,7 +54774,7 @@
           "len":4,
           "name":"occupant",
           "offset":24,
-          "type":"int"
+          "type":"CCramTex*"
         },
         {
           "len":4,

@@ -209,7 +209,7 @@ int __cdecl shape_cramtex_cpp_generateTextureAtlasLayout_FUN_00444d90(int textur
         } while (-1 < iVar15);
       }
       if (iVar15 < 0) {
-        local_20->occupant = 0;
+        local_20->occupant = (CCramTex *)0x0;
         local_20->active_flag = 1;
         local_20->map_id = 0;
         local_20->start_x = 0;
@@ -258,7 +258,7 @@ LAB_004451a8:
         } while (-1 < iVar16);
       }
       if (iVar16 < 0) {
-        local_1c->occupant = 0;
+        local_1c->occupant = (CCramTex *)0x0;
         local_1c->active_flag = 1;
         local_1c->map_id = 0;
         local_1c->start_x = iVar12;
@@ -306,7 +306,7 @@ LAB_004451f7:
             } while (-1 < iVar17);
           }
           if (iVar17 < 0) {
-            local_18->occupant = 0;
+            local_18->occupant = (CCramTex *)0x0;
             local_18->active_flag = 1;
             local_18->map_id = local_14;
             local_18->start_x = 0;

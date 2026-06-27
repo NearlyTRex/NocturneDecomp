@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 187,
+    "complexity_score": 172,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 40,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 172,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 538
   },
   "cross_references": [
@@ -486,6 +484,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Pointer value `actor` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 140,
+      "match": "(int)actor",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CurrentEditingColumn = (int)actor;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 83,
       "match": "do {",
@@ -590,14 +597,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer value `actor` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 140,
-      "match": "(int)actor",
-      "severity": "moderate",
-      "text": "g_CurrentEditingColumn = (int)actor;",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

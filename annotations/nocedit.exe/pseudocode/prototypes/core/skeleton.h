@@ -177,7 +177,7 @@ void __cdecl CDeformableModel::shatter(CDeformableModel *this_ptr,CVector3f *cen
 
 // Original: core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460
 // Address: 0059d460
-int __cdecl CDeformableModel::computePartDominantBones(CDeformableModel *this_ptr);
+void __cdecl CDeformableModel::computePartDominantBones(CDeformableModel *this_ptr);
 
 // Original: core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0
 // Address: 0059d9e0

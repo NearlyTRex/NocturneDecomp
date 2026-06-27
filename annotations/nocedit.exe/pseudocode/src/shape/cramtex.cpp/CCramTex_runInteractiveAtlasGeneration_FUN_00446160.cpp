@@ -87,7 +87,7 @@ int __cdecl shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_0044616
     do {
       pSVar19->active_flag = 0;
       iVar29 = g_CramBestSolutionMetric1;
-      if ((pSVar19->occupant == 0) &&
+      if ((pSVar19->occupant == (CCramTex *)0x0) &&
          ((this_ptr->padded_height != this_ptr->padded_width || (pSVar19->orientation == 0)))) {
         if (pSVar19->orientation == 0) {
           iVar32 = pSVar19->start_x + this_ptr->padded_width;
@@ -192,12 +192,13 @@ LAB_004461b1:
             if (0 < g_CramRectangleCount) {
               pSVar24 = g_CramRectangles;
               do {
-                if ((((pSVar24->occupant == 0) && (pSVar24->map_id == this_ptr->assigned_map_number)
-                     ) && (this_ptr->placement_bottom < pSVar24->end_x)) &&
+                if ((((pSVar24->occupant == (CCramTex *)0x0) &&
+                     (pSVar24->map_id == this_ptr->assigned_map_number)) &&
+                    (this_ptr->placement_bottom < pSVar24->end_x)) &&
                    (((this_ptr->working_right < pSVar24->end_y &&
                      (pSVar24->start_x < this_ptr->working_top)) &&
                     (pSVar24->start_y < this_ptr->working_width)))) {
-                  pSVar24->occupant = (int)this_ptr;
+                  pSVar24->occupant = this_ptr;
                 }
                 iVar29 = iVar29 + 1;
                 pSVar24 = pSVar24 + 1;
@@ -266,7 +267,7 @@ LAB_004461b1:
                           } while (-1 < iVar27);
                         }
                         if (iVar27 < 0) {
-                          local_54->occupant = 0;
+                          local_54->occupant = (CCramTex *)0x0;
                           local_54->active_flag = 1;
                           local_54->map_id = iVar32;
                           local_54->start_x = iVar23;
@@ -320,7 +321,7 @@ LAB_00446d87:
                     } while (-1 < iVar28);
                   }
                   if (iVar28 < 0) {
-                    local_4c->occupant = 0;
+                    local_4c->occupant = (CCramTex *)0x0;
                     local_4c->active_flag = 1;
                     local_4c->map_id = iVar32;
                     local_4c->start_x = local_80;
@@ -398,7 +399,7 @@ LAB_00446df8:
                           } while (-1 < iVar16);
                         }
                         if (iVar16 < 0) {
-                          local_48->occupant = 0;
+                          local_48->occupant = (CCramTex *)0x0;
                           local_48->active_flag = 1;
                           local_48->map_id = iVar32;
                           local_48->start_x = iVar22;
@@ -452,7 +453,7 @@ LAB_00446f25:
                     } while (-1 < iVar17);
                   }
                   if (iVar17 < 0) {
-                    local_40->occupant = 0;
+                    local_40->occupant = (CCramTex *)0x0;
                     local_40->active_flag = 1;
                     local_40->map_id = iVar32;
                     local_40->start_x = iVar22;

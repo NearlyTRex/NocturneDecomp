@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 390,
-    "complexity_score": 275,
+    "complexity_score": 201,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 200,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
-    "total_lines": 590
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 201,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 591
   },
   "cross_references": [
     {
@@ -37,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460",
-    "signature": "int __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeformableModel *this_ptr)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeformableModel *this_ptr)"
   },
   "function_calls": [
     {
@@ -215,7 +213,7 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 103,
       "match": "(uint *)((int)local_230",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -224,16 +222,70 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 172,
       "match": "(float *)((int)local_230",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "if (local_230[iVar3] < *(float *)((int)local_230 + iVar2)) {",
+      "text": "if (local_230[iVar4] < *(float *)((int)local_230 + iVar3)) {",
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 98,
+      "match": "(int)local_24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0 < (int)local_24) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 99,
+      "match": "(int)local_24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar10 = (int)local_24 * 4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 169,
+      "match": "(int)local_24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (1 < (int)local_24) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 177,
+      "match": "(int)local_24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (iVar12 < (int)local_24);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 192,
+      "match": "(int)local_24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (0 < (int)local_24) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 199,
+      "match": "(int)local_24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (iVar4 < (int)local_24);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom dead self-copy guard: `if (&local_a0 != &local_58)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 127,
+      "line": 128,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -242,7 +294,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_88 != &local_7c)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 135,
+      "line": 136,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -251,7 +303,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_64 != &local_94)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 143,
+      "line": 144,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -260,7 +312,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 111,
+      "line": 112,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -269,7 +321,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 157,
+      "line": 158,
       "match": "pSVar8 = (T *)pSVar8->ARRAY",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -278,7 +330,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar11` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 158,
+      "line": 159,
       "match": "pSVar11 = (T *)pSVar11->ARRAY",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -287,7 +339,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_2c`. Replace those `local_2c->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 180,
+      "line": 181,
       "match": "local_2c = (T *)(local_2c->tri_count + CONST)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -296,7 +348,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar14` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 197,
+      "line": 198,
       "match": "pCVar14 = (T *)pCVar14->ARRAY",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -579,62 +631,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 97,
-      "match": "(int)local_24",
-      "severity": "moderate",
-      "text": "if (0 < (int)local_24) {",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 98,
-      "match": "(int)local_24",
-      "severity": "moderate",
-      "text": "iVar10 = (int)local_24 * 4;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 168,
-      "match": "(int)local_24",
-      "severity": "moderate",
-      "text": "if (1 < (int)local_24) {",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 176,
-      "match": "(int)local_24",
-      "severity": "moderate",
-      "text": "} while (iVar12 < (int)local_24);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 191,
-      "match": "(int)local_24",
-      "severity": "moderate",
-      "text": "if (0 < (int)local_24) {",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 198,
-      "match": "(int)local_24",
-      "severity": "moderate",
-      "text": "} while (iVar3 < (int)local_24);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `local_24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 202,
-      "match": "(int)local_24",
-      "severity": "moderate",
-      "text": "return (int)local_24;",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

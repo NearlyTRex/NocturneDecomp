@@ -19,7 +19,7 @@ void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size
     wincore_winrun_cpp_waitForMutex_FUN_005f3ff0(g_FileMutex);
   }
   shape_memdbg_cpp_traceMemory_FUN_0050f150
-            ("debugRealloc(%08X, %d, %s, %d)",(uint)ptr,new_size,filename,line_number);
+            ("debugRealloc(%08X, %d, %s, %d)",(uintptr_t)ptr,new_size,filename,line_number);
   if (ptr != (void *)0x0) {
     if (new_size == 0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,filename,line_number);
@@ -43,7 +43,7 @@ void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size
         uint back_guard = GAME_BEEFDEAD;
         memcpy((char *)user_data + new_size, &back_guard, sizeof(back_guard));
         shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(header);
-        shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",(uint)user_data);
+        shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",(uintptr_t)user_data);
         wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
         return user_data;
       }

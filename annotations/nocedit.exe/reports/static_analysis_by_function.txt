@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 41
-  Total diagnostics: 105
+  Functions with findings: 40
+  Total diagnostics: 102
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 39, raw .cpp files: 2
+  .keep.cpp files: 38, raw .cpp files: 2
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -92,14 +92,6 @@ sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0  [.keep] [Clang-Tidy (quick)]
   Line  362: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
   Line  471: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
   Line  561: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-
-----------------------------------------------------------------------------------------------------
-core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppcheck (quick)]
-  File: core/actor.cpp  (3 diagnostics)
-
-  Line   64: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-  Line   65: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-  Line   66: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
 ----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0  [.keep] [Clang-Tidy (quick)]
@@ -230,7 +222,7 @@ core_setutil.cpp_C3DSCamera_load_FUN_00585420  [.keep] [Cppcheck (quick)]
 core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep] [Clang-Tidy (quick)]
   File: core/skeledit.cpp  (1 diagnostics)
 
-  Line  720: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments.
+  Line  718: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments.
 
 ----------------------------------------------------------------------------------------------------
 engine_2d.c_drawStringHighlighted_FUN_004020e0  [.keep] [Clang-Tidy (quick)]

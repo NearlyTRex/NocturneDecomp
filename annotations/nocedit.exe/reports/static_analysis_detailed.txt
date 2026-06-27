@@ -132,12 +132,12 @@ bugprone-swapped-arguments (3)
     File: core/flame.cpp
     argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments.
 
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 720
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 718
     File: core/skeledit.cpp
     argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments.
 
 ====================================================================================================
-Cppcheck (quick) (77 diagnostics)
+Cppcheck (quick) (74 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -385,20 +385,8 @@ invalidscanf (60)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-nullPointerRedundantCheck (8)
+nullPointerRedundantCheck (5)
 ----------------------------------------------------------------------------------------------------
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 64
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 65
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 66
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
   core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPos line 44
     File: core/dtrace.cpp

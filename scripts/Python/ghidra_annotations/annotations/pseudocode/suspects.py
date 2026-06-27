@@ -1163,17 +1163,27 @@ def identify_pointer_truncation_suspects(decompiled_code, func_globals=None,
                 amp = om.group(1) or ''
                 root = om.group(2)
                 steps = om.group(3) or ''
-                # A subscript Ghidra wrapped onto the next line
-                # (`(uint)p->field\n        [i]`) is invisible to this
-                # line-based scan, so a pointer-to-scalar field reads as a bare
-                # truncated pointer and false-positives. If the operand runs to
-                # end-of-line and the next line leads with `[...]`, fold that
-                # subscript in so the deref is seen (scalar element -> skip;
-                # pointer element -> still flagged).
-                if not line[om.end():].strip() and line_no < len(_lines):
-                    wm = _PTR_TRUNC_WRAP_SUB_RE.match(_lines[line_no])
-                    if wm:
-                        steps = steps + wm.group(1).rstrip()
+                # Fold a subscript/field path that Ghidra wrapped across lines so
+                # the pointer-vs-scalar decision sees the full deref (scalar
+                # element -> skip; pointer element -> still flagged). Two shapes:
+                # a subscript that OPENS on this line but closes on a later one
+                # (`(int)p[(a +\n b)].height`), and one that BEGINS on the next
+                # line (`(uint)p->field\n  [i]`). Without this a pointer-to-scalar
+                # access reads as a bare truncated pointer and false-positives.
+                joined = line[om.end():]
+                li = line_no            # 0-based index of the NEXT line
+                guard = 0
+                while (li < len(_lines) and guard < 6 and
+                       (joined.count('[') > joined.count(']') or
+                        (not joined.strip() and
+                         _lines[li].lstrip().startswith('[')))):
+                    joined += ' ' + _lines[li]
+                    li += 1
+                    guard += 1
+                wm = re.match(
+                    r'\s*((?:\[[^\]]*\]|\s*(?:->|\.)\s*[A-Za-z_]\w*)+)', joined)
+                if wm and wm.group(1).strip():
+                    steps = steps + wm.group(1).strip()
                 if not operand_is_ptr(amp, root, steps):
                     continue
                 operand = (amp + root + steps).strip()
@@ -6471,8 +6481,13 @@ _struct_layout_cache = None
 
 _SFO_ACCESS_RE = re.compile(r'\b([A-Za-z_]\w*)\s*(?:->|\.)\s*([A-Za-z_]\w*)\s*\[')
 _SFO_SIG_RE = re.compile(r'//\s*Signature:.*?\((.*)\)')
+# `TYPE *NAME;` or `TYPE *NAME = <init>;` — the optional initializer lets
+# mid-block pointer decls (`void *user_data = (void *)(h + 1);`) register as
+# pointer locals, so a later `(uint)user_data` truncation isn't missed. The
+# `\*+` still requires a real `TYPE *NAME` shape, so assignments/derefs (no
+# type token, or leading `*`) don't match.
 _SFO_DECL_RE = re.compile(
-    r'^\s*([A-Za-z_]\w*)\s*\*+\s*([A-Za-z_]\w*)\s*;\s*$')
+    r'^\s*([A-Za-z_]\w*)\s*\*+\s*([A-Za-z_]\w*)\s*(?:=[^;]*)?;\s*$')
 _SFO_VALDECL_RE = re.compile(
     r'^\s*([A-Za-z_]\w*)\s+([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;\s*$')
 _SFO_PTR_PARAM_RE = re.compile(r'^([A-Za-z_]\w*)\s*\*+\s*([A-Za-z_]\w*)$')

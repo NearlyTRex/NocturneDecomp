@@ -2,13 +2,13 @@
 // Address: 00555ff0
 // Address Range: [[00555ff0, 00556178] [0060f3fe, 0060f469]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer *this_ptr,uchar *output_buffer)
+// Signature: void __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer *this_ptr,uchar *output_buffer)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer *this_ptr,uchar *output_buffer)
+void __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer *this_ptr,uchar *output_buffer)
 
 {
   float fVar1;
@@ -84,10 +84,9 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff
       iVar12 = iVar12 + 1;
     } while (iVar12 < this_ptr->num_colors);
   }
-  puVar8 = (uchar *)this_ptr->num_colors;
   iVar12 = 0;
   pCVar11 = this_ptr;
-  if (0 < (int)puVar8) {
+  if (0 < this_ptr->num_colors) {
     do {
       puVar8 = output_buffer + 3;
       local_14 = (uchar)(int)ROUND(ROUND(pCVar11->palette[0].r));
@@ -101,5 +100,5 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff
       pCVar11 = (CColorQuantizer *)&pCVar11->error_buffer_r;
     } while (iVar12 < this_ptr->num_colors);
   }
-  return (int)puVar8;
+  return;
 }

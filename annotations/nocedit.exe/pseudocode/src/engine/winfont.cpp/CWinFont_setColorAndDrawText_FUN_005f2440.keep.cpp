@@ -13,7 +13,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   int iVar6;
   int iVar3;
   int iVar7;
-  char *pcVar8;
+  int pcVar8;
   int iVar4;
   int iVar5;
   uint uVar6;
@@ -21,8 +21,8 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   int *piVar9;
   int iVar9;
   COLORREF CStack_24;
-  char *pcStack_20;
-  char *pcStack_1c;
+  int pcStack_20;
+  int pcStack_1c;
   COLORREF CStack_18;
   ushort uVar2;
   
@@ -68,13 +68,13 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   if (g_BitsPerPixel == 0x10) {
     CStack_18 = 0;
     if (0 < (int)CStack_24) {
-      pcStack_1c = (char *)y_position;
+      pcStack_1c = y_position;
       do {
         pcVar8 = pcStack_1c + this_ptr->y_offset1;
-        if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
+        if ((-1 < pcVar8) && (pcVar8 < g_WindowHeight)) {
           iVar4 = 0;
           if (0 < iVar7) {
-            puVar8 = (ushort *)g_ScreenBufferArray[(int)pcVar8] + x_position;
+            puVar8 = (ushort *)g_ScreenBufferArray[pcVar8] + x_position;
             do {
               uVar2 = ((ushort *)this_ptr->ppv_bits)[CStack_18 * this_ptr->right + iVar4];
               if (uVar2 != 0x7c1f) {
@@ -100,13 +100,13 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   else {
     iVar9 = 0;
     if (0 < (int)CStack_24) {
-      pcStack_20 = (char *)y_position;
+      pcStack_20 = y_position;
       do {
         pcVar8 = pcStack_20 + this_ptr->y_offset1;
-        if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
+        if ((-1 < pcVar8) && (pcVar8 < g_WindowHeight)) {
           iVar5 = 0;
           if (0 < iVar7) {
-            piVar9 = (int *)g_ScreenBufferArray[(int)pcVar8] + x_position;
+            piVar9 = (int *)g_ScreenBufferArray[pcVar8] + x_position;
             do {
               iVar6 = ((int *)this_ptr->ppv_bits)[this_ptr->right * iVar9 + iVar5];
               if (iVar6 != GAME_COLOR_MAGENTA_TRANSPARENT) {

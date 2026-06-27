@@ -105,7 +105,7 @@ LAB_004ce397:
   engine_matrix_c_projectCachedPoint_FUN_0050cda0(0x4e1e);
   engine_matrix_c_projectCachedPoint_FUN_0050cda0(19999);
   iVar6 = this_ptr->char_positions[character_code] -
-          (int)this_ptr->bitmap_data[this_ptr->char_bitmap_index[character_code]];
+          (uchar *)this_ptr->bitmap_data[this_ptr->char_bitmap_index[character_code]];
   g_RenderVertexBuffer[0x4e1c].u =
        (iVar6 % this_ptr->bitmap_widths[this_ptr->char_bitmap_index[character_code]]) * 0x10000 +
        -0x1000;

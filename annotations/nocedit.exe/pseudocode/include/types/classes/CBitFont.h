@@ -17,7 +17,7 @@ typedef struct CBitFont {
     char palette_data[3072]; // 0x164
     uint palettes_display[4][256]; // 0xd64
     int is_initialized; // 0x1d64
-    int char_positions[256]; // 0x1d68
+    uchar* char_positions[256]; // 0x1d68
     int char_bitmap_index[256]; // 0x2168
     int char_widths[256]; // 0x2568
     int char_heights[256]; // 0x2968

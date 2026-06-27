@@ -36,7 +36,7 @@ void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header
     iVar2 = header->num_bytes;
     header->source_file[0x13] = '\0';
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Head memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d.\n(Last ok check was at %s line %d)",iVar2,(uint)(header + 1),header->source_file,iVar1,
+              ("Head memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d.\n(Last ok check was at %s line %d)",iVar2,(uintptr_t)(header + 1),header->source_file,iVar1,
                filename,line_number,pcVar4,iVar5);
   }
   int back_guard_val;
@@ -45,7 +45,7 @@ void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
     g_CurrentLineNumber = 0xb2;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Tail memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d\n(Last ok check was at %s line %d)",header->num_bytes,(uint)(header + 1),header->source_file,
+              ("Tail memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d\n(Last ok check was at %s line %d)",header->num_bytes,(uintptr_t)(header + 1),header->source_file,
                header->source_line,filename,line_number,g_MemCheckLastFile,g_MemCheckLastLine);
   }
   pSVar3 = g_MemoryListHead;
@@ -57,7 +57,7 @@ void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
     g_CurrentLineNumber = 0xb8;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("List memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d\n(Last ok check was at %s line %d)",header->num_bytes,(uint)(header + 1),header->source_file,
+              ("List memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d\n(Last ok check was at %s line %d)",header->num_bytes,(uintptr_t)(header + 1),header->source_file,
                header->source_line,filename,line_number,g_MemCheckLastFile,g_MemCheckLastLine);
 LAB_0050f0dd:
   } while ((header->next != (SMemHead *)0x0) && (header != header->next->prev));

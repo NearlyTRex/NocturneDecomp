@@ -14,7 +14,7 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
   int iVar3;
   int iVar4;
   int iVar5;
-  byte *scanline_y;
+  int scanline_y;
   int iVar6;
   uint uVar7;
   uint uVar4;
@@ -156,16 +156,16 @@ LAB_00483be4:
       }
       local_18 = (SSoftwareEdge *)0x0;
 LAB_00483c1d:
-      scanline_y = (byte *)g_RenderTriangleMinScanlineY;
+      scanline_y = g_RenderTriangleMinScanlineY;
       if (local_18 != (SSoftwareEdge *)0x0) {
         do {
-          if ((local_14->base).y_max <= (int)scanline_y) {
+          if ((local_14->base).y_max <= scanline_y) {
             (local_14->base).y_min = -1;
             local_14 = g_EdgeInterpolationArray;
             iVar7 = 0;
             if (0 < g_RenderTriangleEdgeCount) {
               do {
-                if ((scanline_y == (byte *)(local_14->base).y_min) && (local_14 != local_18))
+                if ((scanline_y == (local_14->base).y_min) && (local_14 != local_18))
                 goto LAB_00483c78;
                 iVar7 = iVar7 + 1;
                 local_14 = local_14 + 1;
@@ -177,13 +177,13 @@ LAB_00483c78:
               return;
             }
           }
-          if ((local_18->base).y_max <= (int)scanline_y) {
+          if ((local_18->base).y_max <= scanline_y) {
             (local_18->base).y_min = -1;
             local_18 = g_EdgeInterpolationArray;
             iVar7 = 0;
             if (0 < g_RenderTriangleEdgeCount) {
               do {
-                if ((scanline_y == (byte *)(local_18->base).y_min) && (local_18 != local_14))
+                if ((scanline_y == (local_18->base).y_min) && (local_18 != local_14))
                 goto LAB_00483cc8;
                 iVar7 = iVar7 + 1;
                 local_18 = local_18 + 1;
@@ -197,7 +197,7 @@ LAB_00483cc8:
           }
           local_74[0] = (SRenderVertex *)0x483ceb;
           wincore_windll_cpp_renderScanline_FUN_005b5710
-                    (local_18,local_14,(int)scanline_y);
+                    (local_18,local_14,scanline_y);
           if (g_RenderAbortFlag != 0) {
             return;
           }

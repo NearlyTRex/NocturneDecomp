@@ -1886,7 +1886,7 @@ joined_r0x0055c026:
                                                     }
                                                     else {
                                                       (*(((pCVar17->base).vtable._uc)->_uc).
-                                                        setDoorTarget)(pCVar17,(uint)pCVar23);
+                                                        setDoorTarget)(pCVar17,pCVar23);
                                                       this_ptr->cmd_timer = 1.0;
                                                     }
                                                   }

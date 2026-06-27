@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 449,
-    "complexity_score": 204,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 38,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 189,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 638
   },
   "cross_references": [
@@ -520,15 +518,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer value `this_ptr->bitmap_data[this_ptr->char_bitmap_index[character_code]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "introduced_by": "keep",
-      "line": 108,
-      "match": "(int)this_ptr->bitmap_data[this_ptr->char_bitmap_index[character_code]",
-      "severity": "moderate",
-      "text": "(int)this_ptr->bitmap_data[this_ptr->char_bitmap_index[character_code]];",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }
