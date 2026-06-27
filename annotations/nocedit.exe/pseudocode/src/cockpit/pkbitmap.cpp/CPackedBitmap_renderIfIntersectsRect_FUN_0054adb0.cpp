@@ -16,7 +16,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054a
   int local_18;
   int local_14;
   
-  if ((((this_ptr->row_pointers != (void **)0x0) && (this_ptr->packed_data != (ushort *)0x0)) &&
+  if ((((this_ptr->row_offsets != (int *)0x0) && (this_ptr->packed_data != (ushort *)0x0)) &&
       (dest_x <= rect_right)) && (dest_y <= rect_bottom)) {
     iVar2 = this_ptr->width + dest_x + -1;
     iVar1 = this_ptr->height + dest_y + -1;

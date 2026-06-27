@@ -22,17 +22,17 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa2
   int iVar4;
   int iVar3;
   
-  if ((this_ptr->row_pointers != (void **)0x0) && (this_ptr->packed_data != (ushort *)0x0)) {
+  if ((this_ptr->row_offsets != (int *)0x0) && (this_ptr->packed_data != (ushort *)0x0)) {
     iVar6 = dest_x * g_BitsPerPixel;
     iVar7 = iVar6 >> 0x1f;
     pCVar5 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00431760();
     local_18 = 0;
     local_1c = 0;
     local_20 = dest_y << 2;
-    puVar9 = (ushort *)((int)this_ptr->packed_data + (int)*this_ptr->row_pointers);
+    puVar9 = (ushort *)((int)this_ptr->packed_data + *this_ptr->row_offsets);
     do {
       pcVar2 = (char *)this_ptr->packed_data;
-      iVar3 = *(int *)((int)this_ptr->row_pointers + local_1c + 4);
+      iVar3 = *(int *)((int)this_ptr->row_offsets + local_1c + 4);
       iVar4 = *(int *)((int)g_ScreenBufferArray + local_20);
       for (; puVar9 < pcVar2 + iVar3;
           puVar9 = (ushort *)((uVar1 + 3 & 0xfffffffc) + (int)(puVar9 + 2))) {

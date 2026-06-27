@@ -64,7 +64,7 @@ section .text
     ADD EBX,0x4                         ; 0043c372
     INC ESI                             ; 0043c375
     CALL core_cloth.cpp_CCloth_render_FUN_0043bae0 ; 0043c376
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, int use_joined_light)
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
     MOV EAX,dword ptr [EDI]             ; 0043c37b
     ADD ESP,0x8                         ; 0043c37d
     CMP ESI,EAX                         ; 0043c380

@@ -54,8 +54,7 @@ LAB_004734b7:
                         [iVar3 / 0x100 + iVar5 / 0x100 * this_ptr->shadow_map_width]
           ;
           if ((uVar1 < 0xffff) && (uVar1 != 0)) {
-            *(int *)((screen_x + iVar3 / iVar1) * 4 +
-                    (int)g_ScreenBufferArray[screen_y + iVar5 / iVar1]) =
+            ((int *)g_ScreenBufferArray[screen_y + iVar5 / iVar1])[screen_x + iVar3 / iVar1] =
                  ((int)((uVar1 - local_14) * 0xff) / (int)(uVar4 - local_14)) * 0x10101;
           }
         }

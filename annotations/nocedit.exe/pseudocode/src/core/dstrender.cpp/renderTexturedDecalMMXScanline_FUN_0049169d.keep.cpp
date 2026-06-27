@@ -56,9 +56,9 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_0049169
       if (*(int *)((char *)g_PerspectiveScanlineZPtr + uVar6) <= (int)uVar1) {
         *(uint *)((char *)g_PerspectiveScanlineColorPtr + uVar6) =
              g_Hardware32BitPalette
-             [*(byte *)((uVar3 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
-                        (uVar4 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) +
-                       (int)g_CurrentTextureData)];
+             [((byte *)g_CurrentTextureData)
+              [(uVar3 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
+               (uVar4 >> g_TextureShift2.mm & g_TextureMask2.u32[0])]];
       }
       uVar6 = uVar6 + 4;
       if ((uint)g_PerspectiveScanlinePixelCount < uVar6) break;

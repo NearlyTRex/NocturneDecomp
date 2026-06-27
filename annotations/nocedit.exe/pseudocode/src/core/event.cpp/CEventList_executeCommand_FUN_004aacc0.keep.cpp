@@ -558,7 +558,7 @@ LAB_004aaf38:
                             return 0;
                           }
                           if (pCVar9 == (CCharacter *)g_ActorNameSentinel) {
-                            local_f0 = (uint)pCVar9 ^ (uint)g_ActorNameSentinel;
+                            local_f0 = 0;
                           }
                           iVar2 = core_event_cpp_parseDamageType_FUN_004aa960
                                             (local_2e1 + 1,&local_ac);

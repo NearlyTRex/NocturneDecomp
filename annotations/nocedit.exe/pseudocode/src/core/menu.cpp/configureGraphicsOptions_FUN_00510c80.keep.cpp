@@ -32,7 +32,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
   pacVar6 = g_GraphicsMenuTextBuffers;
   iVar4 = 0;
   do {
-    *(char (**) [256])((int)g_GraphicsMenuTextPointers + iVar4) = pacVar6;
+    g_GraphicsMenuTextPointers[iVar4 / 4] = (char *)pacVar6;
     iVar4 = iVar4 + 4;
     pacVar6 = pacVar6 + 1;
   } while (iVar4 != 0x24);

@@ -4,25 +4,24 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_truncation               143 ( 78.6%)
-  static_integer_division           16 (  8.8%)
-  static_null_pointer_redundant_check     8 (  4.4%)
-  static_signed_char_misuse          5 (  2.7%)
-  static_float_loop_induction        4 (  2.2%)
-  static_swapped_arguments           3 (  1.6%)
-  static_null_pointer_arithmetic_redundant_check     1 (  0.5%)
-  unrolled_memcpy                    1 (  0.5%)
-  static_memleak                     1 (  0.5%)
+  pointer_truncation                95 ( 70.9%)
+  static_integer_division           16 ( 11.9%)
+  static_null_pointer_redundant_check     8 (  6.0%)
+  static_signed_char_misuse          5 (  3.7%)
+  static_float_loop_induction        4 (  3.0%)
+  static_swapped_arguments           3 (  2.2%)
+  static_null_pointer_arithmetic_redundant_check     1 (  0.7%)
+  unrolled_memcpy                    1 (  0.7%)
+  static_memleak                     1 (  0.7%)
 
 ====================================================================================================
-TYPE: pointer_truncation (143 occurrences)
+TYPE: pointer_truncation (95 occurrences)
 ====================================================================================================
 
 Unique patterns:
      9x  (int)output_buffer
      7x  (int)pcVar5
      7x  (int)local_24
-     6x  (int)this_ptr
      6x  (int)pcVar8
      5x  (uint)light_source->precomputed_lighting_textures
      4x  (uint)this_ptr
@@ -30,15 +29,16 @@ Unique patterns:
      4x  (int)g_ScreenBufferArray[0]
      3x  (int)local_78
      3x  (int)scanline_y
-     3x  (int)pvVar2
      3x  (int)pcVar2
-     3x  (uint)g_ActorNameSentinel
      3x  (uint)(header + 1)
-     3x  (int)this_ptr->row_pointers[0]
-     3x  (int)this_ptr->row_pointers[local_18 + 1]
      2x  (uint)p_output
      2x  (int)span_data_buffer
+     2x  (int)this_ptr
      2x  (int)rect
+     2x  (int)pvVar2
+     2x  (byte)pcVar3
+     2x  (int)puVar8
+     1x  (int)frame_index
 
 Functions:
   cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
@@ -47,52 +47,28 @@ Functions:
   cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
   cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
   cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
-  cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440
-  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
-  cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0
-  cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
-  core_cloth.cpp_CClothList_render_FUN_0043c320
   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
   core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
-  core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900
   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0
-  core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390
-  core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
   core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7
-  core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
-  core_event.cpp_CEventList_executeCommand_FUN_004aacc0
   core_game.cpp_CGame_runGameSession_FUN_004daf80
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
   core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30
   core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0
-  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
   core_main.c_enterMainGameMenu_FUN_00507a50
-  core_menu.cpp_configureCustomKeys_FUN_00511890
-  core_menu.cpp_configureGraphicsOptions_FUN_00510c80
-  core_menu.cpp_configureSoundOptions_FUN_00511e50
-  core_menu.cpp_showMainGameMenu_FUN_00512f40
   core_menu.cpp_showOptionsScreen_FUN_00512d30
   core_moon.cpp_CMoon_render_FUN_00529ed0
   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
   core_script.cpp_CScript_step_FUN_0055a810
-  core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0
-  core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830
-  core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310
   core_setedit.cpp_editGroundTypes_FUN_00578630
-  core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460
   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
   engine_2d.c_wrapTextToWidth_FUN_00401d80
-  engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50
   engine_drender.cpp_renderTriangleSimple_FUN_004839f0
   engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
@@ -106,10 +82,7 @@ Functions:
   shape_memdbg.cpp_debugRealloc_FUN_0050f540
   shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
   sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
-  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
-  sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
-  wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322
 
 ====================================================================================================
 TYPE: static_integer_division (16 occurrences)

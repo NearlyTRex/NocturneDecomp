@@ -51,7 +51,7 @@ void __cdecl core_dcamera_cpp_transformAndStoreVertex_FUN_00452110(int vertex_in
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max);
 int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00452730(CDemonCamera *this_ptr,CVector3f *position,float radius);
 void __cdecl core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera *this_ptr,float intensity);
-void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera *this_ptr,CVector3f *output_ray,CVector3i *screen_coords,int depth);
+void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera *this_ptr,CVector3f *output_ray,int screen_x,int screen_y);
 void __cdecl core_dcamera_cpp_CDemonCamera_generateFogGrid_FUN_004529a0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamera *this_ptr);
 void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(CDemonCamera *this_ptr,int plane_index);

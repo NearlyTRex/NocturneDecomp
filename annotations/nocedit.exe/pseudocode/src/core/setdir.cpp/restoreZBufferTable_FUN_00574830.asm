@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setdir_cpp_CZThumb_restoreZBufferTable_FUN_00574830(CZThumb *this_ptr,int count)
+; void __cdecl core_setdir_cpp_restoreZBufferTable_FUN_00574830(int count)
 ;
 ; Parameters:
-; CZThumb *        Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   count
+; int              Stack[0x4]:4   count
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setdir_cpp_00646433
@@ -25,7 +24,7 @@
 section .text
 
     PUSH ESI                            ; 00574830
-        ;   Label: core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830
+        ;   Label: core_setdir.cpp_restoreZBufferTable_FUN_00574830
     PUSH EDI                            ; 00574831
     CMP dword ptr [0x0336362c],0x0      ; 00574832 | g_ZBufferScanlineArrayBackup
     JZ 0x0057486b                       ; 00574839

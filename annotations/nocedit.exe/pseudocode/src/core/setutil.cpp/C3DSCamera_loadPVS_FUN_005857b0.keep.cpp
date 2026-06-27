@@ -11,8 +11,6 @@ void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_p
 
 {
   int *piVar1;
-  int iVar2;
-  int iVar3;
   int iVar4;
   
   _fscanf(file_handle,"%d\n",&this_ptr->pvs_count);
@@ -28,12 +26,9 @@ void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_p
     }
     iVar4 = 0;
     if (0 < this_ptr->pvs_count) {
-      iVar3 = 0;
       do {
-        iVar2 = (int)this_ptr->pvs_list + iVar3;
+        _fscanf(file_handle,"\t%d\n",this_ptr->pvs_list + iVar4);
         iVar4 = iVar4 + 1;
-        iVar3 = iVar3 + 4;
-        _fscanf(file_handle,"\t%d\n",(int *)iVar2);
       } while (iVar4 < this_ptr->pvs_count);
     }
   }

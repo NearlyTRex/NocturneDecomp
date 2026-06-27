@@ -60,7 +60,7 @@ section .text
     LEA EAX,[EBX + 0xbf84]              ; 00520911
     PUSH EAX                            ; 00520917
     CALL core_cloth.cpp_CCloth_render_FUN_0043bae0 ; 00520918
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, int use_joined_light)
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
     ADD ESP,0x8                         ; 0052091d
     PUSH EBX                            ; 00520920
         ;   Label: LAB_00520920

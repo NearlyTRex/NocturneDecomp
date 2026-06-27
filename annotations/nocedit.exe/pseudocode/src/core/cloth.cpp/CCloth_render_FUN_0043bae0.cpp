@@ -2,13 +2,13 @@
 // Address: 0043bae0
 // Address Range: [[0043bae0, 0043bf33] [0060c72f, 0060c74d]]
 // Convention: __cdecl
-// Signature: void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_joined_light)
+// Signature: void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,CDeformableModelInstance *deformable_model)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_joined_light)
+void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,CDeformableModelInstance *deformable_model)
 
 {
   int render_alpha;
@@ -49,8 +49,8 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,(this_ptr->model).vertex_count,(this_ptr->model).poly_count / 2,
                (this_ptr->model).poly_vert_list,(this_ptr->model).vertex_list,4,(CVector3i *)0x0);
-    if ((use_joined_light != 0) && (iVar4 = 0, pCVar4 = this_ptr, 0 < this_ptr->locked_vertex_count)
-       ) {
+    if ((deformable_model != (CDeformableModelInstance *)0x0) &&
+       (iVar4 = 0, pCVar4 = this_ptr, 0 < this_ptr->locked_vertex_count)) {
       do {
         pCVar1 = g_CDemonRendererPtr2;
         iVar5 = pCVar4->locked_vertex_indices[0];
@@ -90,8 +90,8 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
     core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               (g_CDemonSetPtr,(this_ptr->model).vertex_count,(this_ptr->model).poly_count,
                (this_ptr->model).poly_vert_list,(this_ptr->model).vertex_list,4,(CVector3i *)0x0);
-    if ((use_joined_light != 0) && (iVar5 = 0, pCVar2 = this_ptr, 0 < this_ptr->locked_vertex_count)
-       ) {
+    if ((deformable_model != (CDeformableModelInstance *)0x0) &&
+       (iVar5 = 0, pCVar2 = this_ptr, 0 < this_ptr->locked_vertex_count)) {
       do {
         pCVar3 = g_CDemonRendererPtr2;
         iVar7 = pCVar2->locked_vertex_indices[0];

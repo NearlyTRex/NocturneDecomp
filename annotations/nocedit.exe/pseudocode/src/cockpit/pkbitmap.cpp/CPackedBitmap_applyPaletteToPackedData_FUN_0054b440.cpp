@@ -17,8 +17,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_005
   char *pcVar1;
   
   pcVar1 = (char *)this_ptr->packed_data;
-  pvVar2 = this_ptr->row_pointers[this_ptr->height];
-  pbVar6 = (byte *)((int)*this_ptr->row_pointers + (int)pcVar1);
+  pvVar2 = (void *)this_ptr->row_offsets[this_ptr->height];
+  pbVar6 = (byte *)(pcVar1 + *this_ptr->row_offsets);
   while (pbVar6 < (byte *)((int)pvVar2 + (int)pcVar1)) {
     uVar5 = (uint)*(ushort *)(pbVar6 + 2);
     pbVar3 = pbVar6 + 4;

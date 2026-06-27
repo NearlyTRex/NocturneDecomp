@@ -9,7 +9,7 @@
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0054acb0(CPackedBitmap *this_ptr,int dest_x,int dest_y,int src_left,int src_top,int width,int height)
 
 {
-  if ((this_ptr->row_pointers != (void **)0x0) && (this_ptr->packed_data != (ushort *)0x0)) {
+  if ((this_ptr->row_offsets != (int *)0x0) && (this_ptr->packed_data != (ushort *)0x0)) {
     if (dest_x < g_ClipLeft) {
       src_left = src_left + (g_ClipLeft - dest_x);
       dest_x = g_ClipLeft;

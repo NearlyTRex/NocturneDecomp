@@ -7,13 +7,13 @@
 // Address: 00574790
 void __cdecl staticInit(void);
 
-// Original: core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0
+// Original: core_setdir.cpp_backupZBufferScanlines_FUN_005747d0
 // Address: 005747d0
-void __cdecl CZThumb::backupZBufferScanlines(CZThumb *this_ptr,int count);
+void __cdecl backupZBufferScanlines(int count);
 
-// Original: core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830
+// Original: core_setdir.cpp_restoreZBufferTable_FUN_00574830
 // Address: 00574830
-void __cdecl CZThumb::restoreZBufferTable(CZThumb *this_ptr,int count);
+void __cdecl restoreZBufferTable(int count);
 
 // Original: core_setdir.cpp_setPixelGrayscale_FUN_005748a0
 // Address: 005748a0

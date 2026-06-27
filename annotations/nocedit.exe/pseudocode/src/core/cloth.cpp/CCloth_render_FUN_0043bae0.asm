@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_joined_light)
+; void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,CDeformableModelInstance *deformable_model)
 ;
 ; Parameters:
 ; CCloth *         Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   use_joined_light
+; CDeformableModelInstance * Stack[0x8]:4   deformable_model
 ; Local Variables:
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18

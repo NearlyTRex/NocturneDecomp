@@ -29,7 +29,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_
   local_14 = 0;
   local_18 = 0;
   do {
-    piVar5 = (int *)((int)this_ptr->row_pointers + local_14);
+    piVar5 = (int *)((int)this_ptr->row_offsets + local_14);
     puVar1 = this_ptr->packed_data;
     iVar4 = piVar5[1];
     puVar7 = (ushort *)(*piVar5 + (int)puVar1);

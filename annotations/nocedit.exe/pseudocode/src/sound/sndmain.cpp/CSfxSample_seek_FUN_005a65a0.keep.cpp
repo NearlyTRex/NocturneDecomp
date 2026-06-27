@@ -42,7 +42,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr
     }
     iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
     _fseek(this_ptr->file_handle,iVar1 * this_ptr->stream_read_position + this_ptr->file_offset,
-               (int)this_ptr_00);
+               0);
   }
   else {
     iVar2 = sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(this_ptr_00,this_ptr->stream_read_position);

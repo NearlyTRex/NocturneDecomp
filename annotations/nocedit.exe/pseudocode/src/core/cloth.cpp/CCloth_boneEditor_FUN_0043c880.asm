@@ -333,7 +333,7 @@ section .text
     PUSH 0x0                            ; 0043caf6
     PUSH ESI                            ; 0043caf8
     CALL core_cloth.cpp_CCloth_render_FUN_0043bae0 ; 0043caf9
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, int use_joined_light)
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
     ADD ESP,0x8                         ; 0043cafe
     PUSH 0x3e                           ; 0043cb01
         ;   Label: LAB_0043cb01

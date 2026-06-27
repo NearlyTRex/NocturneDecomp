@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera *this_ptr,CVector3f *output_ray,CVector3i *screen_coords,int depth)
+; void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera *this_ptr,CVector3f *output_ray,int screen_x,int screen_y)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   output_ray
-; CVector3i *      Stack[0xc]:4   screen_coords
-; int              Stack[0x10]:4   depth
+; int              Stack[0xc]:4   screen_x
+; int              Stack[0x10]:4   screen_y
 ; Local Variables:
 ; int[1015]        Stack[-0x1028]:4060  aiStackY_1028
 ; int              Stack[-0x40]:4  local_40

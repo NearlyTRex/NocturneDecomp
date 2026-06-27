@@ -62,7 +62,7 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
     pacVar9 = g_MainMenuTextBuffers;
     iVar6 = 0;
     do {
-      *(char (**) [256])((int)g_MenuTextPointers + iVar6) = pacVar9;
+      g_MenuTextPointers[iVar6 / 4] = (char *)pacVar9;
       iVar6 = iVar6 + 4;
       pacVar9 = pacVar9 + 1;
     } while (iVar6 != 0x10);

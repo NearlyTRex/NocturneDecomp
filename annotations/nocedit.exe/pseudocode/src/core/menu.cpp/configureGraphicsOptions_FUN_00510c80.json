@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1082,
-    "complexity_score": 622,
+    "complexity_score": 607,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 110,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 607,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1689
   },
   "cross_references": [
@@ -836,6 +834,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Pointer value `g_GraphicsMenuTextPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)g_GraphicsMenuTextPointers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char (**) [256])((int)g_GraphicsMenuTextPointers + iVar4) = pacVar6;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex literal 0xb71b01 matches address of g_PrecomputedSurfaceNormals (+699789 bytes into) (type CVector3f[241][320]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 453,
       "match": "0xb71b01",
@@ -1041,14 +1048,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Pointer value `g_GraphicsMenuTextPointers` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 38,
-      "match": "(int)g_GraphicsMenuTextPointers",
-      "severity": "moderate",
-      "text": "*(char (**) [256])((int)g_GraphicsMenuTextPointers + iVar4) = pacVar6;",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

@@ -27,7 +27,7 @@ void __cdecl core_menu_cpp_configureCustomKeys_FUN_00511890(void)
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   iVar4 = 0;
   do {
-    *(char (**) [256])((int)g_ControlOptionsMenuPointers + iVar4) = pacVar7;
+    g_ControlOptionsMenuPointers[iVar4 / 4] = (char *)pacVar7;
     iVar4 = iVar4 + 4;
     pacVar7 = pacVar7 + 1;
   } while (iVar4 != 0x24);

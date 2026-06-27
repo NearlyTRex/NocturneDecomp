@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 103,
+    "complexity_score": 68,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 68,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 289
   },
   "cross_references": [
@@ -189,6 +187,17 @@
     },
     "pcode_op_count": 1646
   },
+  "resolved_suspects": [
+    {
+      "description": "Pointer value `g_ScreenBufferArray[screen_y + iVar5 / iVar1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 57,
+      "match": "(int)g_ScreenBufferArray[screen_y + iVar5 / iVar1]",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)g_ScreenBufferArray[screen_y + iVar5 / iVar1]) =",
+      "type": "pointer_truncation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 56,
     "local_size": 40,
@@ -240,32 +249,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer value `g_ScreenBufferArray[screen_y + iVar5 / iVar1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
-      "match": "(int)g_ScreenBufferArray[screen_y + iVar5 / iVar1]",
-      "severity": "moderate",
-      "text": "(int)g_ScreenBufferArray[screen_y + iVar5 / iVar1]) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `this_ptr->shadow_depth_buffer` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "introduced_by": "keep",
-      "line": 32,
-      "match": "(uint)this_ptr->shadow_depth_buffer",
-      "severity": "moderate",
-      "text": "uVar2 = (uint)this_ptr->shadow_depth_buffer",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `this_ptr->shadow_depth_buffer` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "introduced_by": "keep",
-      "line": 53,
-      "match": "(uint)this_ptr->shadow_depth_buffer",
-      "severity": "moderate",
-      "text": "uVar1 = (uint)this_ptr->shadow_depth_buffer",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

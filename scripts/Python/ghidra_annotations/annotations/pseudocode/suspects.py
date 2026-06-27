@@ -909,6 +909,10 @@ _PTR_TRUNC_LAST_STEP_RE = re.compile(
 # in `(int)(&AGG.field)[i]`. Such a subscript dereferences the parenthesized
 # value into an element.
 _PTR_TRUNC_TRAILING_SUB_RE = re.compile(r'\s*(\[[^\]]*\])')
+# One or more subscript groups at the START of a line — used to fold a
+# subscript that Ghidra wrapped onto the next line (`(uint)p->field\n[i]`)
+# back onto its operand, so the pointer-vs-scalar decision sees the deref.
+_PTR_TRUNC_WRAP_SUB_RE = re.compile(r'\s*((?:\[[^\]]*\]\s*)+)')
 # A relational/equality operator immediately following the leading operand of a
 # parenthesized cast operand, i.e. the `!=` in `(uint)(PTR != 0)`. When present,
 # the parenthesized expression yields a bool, so the cast widens that bool, not
@@ -1017,7 +1021,12 @@ def _ptr_trunc_operand_is_pointer(amp, root, steps, ptr_vars, var_struct,
         # Steps are only subscripts on the root, e.g. `g_PtrArray[i]`.
         if has_subscript:
             if root in global_arr_ptr:
-                return True            # element of void* arr[] is a pointer
+                # `T* arr[N]`: ONE subscript yields the pointer element
+                # (`arr[i]` -> `T*`, a real truncation target). A SECOND
+                # subscript dereferences that element into a scalar
+                # (`arr[i][j]` -> `T`, e.g. a z-buffer depth value), which is
+                # not a pointer — so only a single subscript flags here.
+                return len(re.findall(r'\[[^\]]*\]', steps)) == 1
             # element of a pointer-to-scalar (`int *p; p[i]`) is NOT a pointer
             return False
         return root in ptr_vars or root in global_ptr
@@ -1097,7 +1106,8 @@ def identify_pointer_truncation_suspects(decompiled_code, func_globals=None,
             global_ptr, global_arr_ptr, layout)
 
     seen = set()
-    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+    _lines = decompiled_code.split('\n')
+    for line_no, line in enumerate(_lines, 1):
         stripped = line.strip()
         if stripped.startswith('//') or stripped.startswith('#') or stripped.startswith('/*'):
             continue
@@ -1153,6 +1163,17 @@ def identify_pointer_truncation_suspects(decompiled_code, func_globals=None,
                 amp = om.group(1) or ''
                 root = om.group(2)
                 steps = om.group(3) or ''
+                # A subscript Ghidra wrapped onto the next line
+                # (`(uint)p->field\n        [i]`) is invisible to this
+                # line-based scan, so a pointer-to-scalar field reads as a bare
+                # truncated pointer and false-positives. If the operand runs to
+                # end-of-line and the next line leads with `[...]`, fold that
+                # subscript in so the deref is seen (scalar element -> skip;
+                # pointer element -> still flagged).
+                if not line[om.end():].strip() and line_no < len(_lines):
+                    wm = _PTR_TRUNC_WRAP_SUB_RE.match(_lines[line_no])
+                    if wm:
+                        steps = steps + wm.group(1).rstrip()
                 if not operand_is_ptr(amp, root, steps):
                     continue
                 operand = (amp + root + steps).strip()

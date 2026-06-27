@@ -41,7 +41,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   }
   ppvVar2 = (void **)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                       ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x378);
-  this_ptr->row_pointers = ppvVar2;
+  this_ptr->row_offsets = (int *)ppvVar2;
   if (ppvVar2 == (void **)0x0) {
     g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
     g_CurrentLineNumber = 0x37a;
@@ -53,7 +53,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   local_28 = 0;
   local_18 = 0;
   do {
-    *(int *)((int)this_ptr->row_pointers + local_28) = new_size;
+    *(int *)((int)this_ptr->row_offsets + local_28) = new_size;
     if (this_ptr->height <= local_24) {
       puVar1 = (ushort *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                          (this_ptr->packed_data,new_size,"..\\cockpit\\pkbitmap.cpp",0x3d6);

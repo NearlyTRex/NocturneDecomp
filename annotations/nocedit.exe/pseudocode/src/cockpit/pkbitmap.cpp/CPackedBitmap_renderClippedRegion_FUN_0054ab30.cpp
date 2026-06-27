@@ -25,14 +25,14 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
   int local_20;
   int iVar1;
   
-  if ((this_ptr->row_pointers != (void **)0x0) && (this_ptr->packed_data != (ushort *)0x0)) {
+  if ((this_ptr->row_offsets != (int *)0x0) && (this_ptr->packed_data != (ushort *)0x0)) {
     iVar4 = (dest_x - clip_left) * g_BitsPerPixel;
     iVar5 = iVar4 >> 0x1f;
     pCVar2 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00431760();
     local_24 = dest_y << 2;
     local_20 = start_row << 2;
     do {
-      piVar6 = (int *)((int)this_ptr->row_pointers + local_20);
+      piVar6 = (int *)((int)this_ptr->row_offsets + local_20);
       puVar9 = (ushort *)(*piVar6 + (int)this_ptr->packed_data);
       puVar7 = (ushort *)(piVar6[1] + (int)this_ptr->packed_data);
       iVar1 = *(int *)((int)g_ScreenBufferArray + local_24);

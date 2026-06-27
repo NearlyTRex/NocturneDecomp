@@ -53,7 +53,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
   pacVar8 = g_SoundMenuTextBuffers;
   iVar2 = 0;
   do {
-    *(char (**) [256])((int)g_SoundOptionsMenuPointers + iVar2) = pacVar8;
+    g_SoundOptionsMenuPointers[iVar2 / 4] = (char *)pacVar8;
     iVar2 = iVar2 + 4;
     pacVar8 = pacVar8 + 1;
   } while (iVar2 != 0x28);

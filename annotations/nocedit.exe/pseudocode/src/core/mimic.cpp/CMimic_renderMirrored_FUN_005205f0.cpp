@@ -46,7 +46,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
         g_TransformMatrix.m[0].z = -g_TransformMatrix.m[0].z;
         core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                   (&(this_ptr->base).base.model,-1,0xffffffff,1,0);
-        core_cloth_cpp_CCloth_render_FUN_0043bae0(&this_ptr->cloth,0);
+        core_cloth_cpp_CCloth_render_FUN_0043bae0(&this_ptr->cloth,(CDeformableModelInstance *)0x0);
         pCVar2 = (CStranger *)
                  core_actor_cpp_castToClassHash_FUN_0040c790
                            ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],

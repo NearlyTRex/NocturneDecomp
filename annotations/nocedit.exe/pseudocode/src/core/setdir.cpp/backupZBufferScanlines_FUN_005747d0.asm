@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setdir_cpp_CZThumb_backupZBufferScanlines_FUN_005747d0(CZThumb *this_ptr,int count)
+; void __cdecl core_setdir_cpp_backupZBufferScanlines_FUN_005747d0(int count)
 ;
 ; Parameters:
-; CZThumb *        Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   count
+; int              Stack[0x4]:4   count
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setdir_cpp_006463fe
@@ -25,7 +24,7 @@
 section .text
 
     PUSH ESI                            ; 005747d0
-        ;   Label: core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0
+        ;   Label: core_setdir.cpp_backupZBufferScanlines_FUN_005747d0
     CMP dword ptr [0x0336362c],0x0      ; 005747d1 | g_ZBufferScanlineArrayBackup
     JNZ 0x00574802                      ; 005747d8
         ;   XREF to: 00574802 (CONDITIONAL_JUMP)  ; LAB_00574802

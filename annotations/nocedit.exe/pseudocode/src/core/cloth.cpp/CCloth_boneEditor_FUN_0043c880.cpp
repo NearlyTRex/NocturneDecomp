@@ -154,7 +154,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
                 (&g_CDeformableModelInstanceInstance,-1,0xffffffff,1,0);
     }
     if (local_50 != 0) {
-      core_cloth_cpp_CCloth_render_FUN_0043bae0(this_ptr,0);
+      core_cloth_cpp_CCloth_render_FUN_0043bae0(this_ptr,(CDeformableModelInstance *)0x0);
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
     if (iVar2 != 0) {

@@ -115,7 +115,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
                               (uVar3 >> (g_TextureShift1.b32[0].bytes[0] & 0x1f) &
                               g_TextureMask1.u32[0]))];
           }
-          *(ushort *)((uVar10 >> 1) + (int)g_CurrentScreenPtr) = uVar2;
+          *(ushort *)((char *)g_CurrentScreenPtr + (uVar10 >> 1)) = uVar2;
           if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
             *(int *)((char *)g_CurrentZBufferPtr + uVar10) = iVar8;
           }

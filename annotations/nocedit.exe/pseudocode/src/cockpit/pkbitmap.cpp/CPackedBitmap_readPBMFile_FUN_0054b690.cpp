@@ -13,7 +13,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
   int iVar2;
   void **ppvVar3;
   SIZE_T SVar2;
-  void **ppvVar4;
+  int *piVar3;
   char *buffer;
   int iVar4;
   int iVar5;
@@ -57,20 +57,20 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
           (this_ptr->height + -1 != local_2c.bottom_max)))) goto LAB_0054b6da;
       ppvVar3 = (void **)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                           ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x4c6);
-      this_ptr->row_pointers = ppvVar3;
+      this_ptr->row_offsets = (int *)ppvVar3;
       if (ppvVar3 != (void **)0x0) {
-        SVar2 = _fread(this_ptr->row_pointers,(this_ptr->height + 1) * 4,1,file_handle);
+        SVar2 = _fread(this_ptr->row_offsets,(this_ptr->height + 1) * 4,1,file_handle);
         if (SVar2 == 1) {
           iVar5 = 0;
           if (0 < this_ptr->height) {
-            ppvVar4 = this_ptr->row_pointers;
+            piVar3 = this_ptr->row_offsets;
             do {
-              if ((int)ppvVar4[1] < (int)*ppvVar4) goto LAB_0054b6da;
+              if (piVar3[1] < *piVar3) goto LAB_0054b6da;
               iVar5 = iVar5 + 1;
-              ppvVar4 = ppvVar4 + 1;
+              piVar3 = piVar3 + 1;
             } while (iVar5 < this_ptr->height);
           }
-          size = this_ptr->row_pointers[this_ptr->height];
+          size = (void *)this_ptr->row_offsets[this_ptr->height];
           if (skip_data_load != 0) {
             _fseek(file_handle,(long)size,1);
             return;

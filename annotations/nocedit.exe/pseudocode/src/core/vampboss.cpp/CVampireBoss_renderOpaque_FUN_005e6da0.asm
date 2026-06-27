@@ -86,13 +86,13 @@ section .text
     PUSH 0x0                            ; 005e6e1c
     PUSH EDI                            ; 005e6e1e
     CALL core_cloth.cpp_CCloth_render_FUN_0043bae0 ; 005e6e1f
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, int use_joined_light)
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
     ADD ESP,0x8                         ; 005e6e24
     PUSH 0x0                            ; 005e6e27
     MOV ESI,dword ptr [ESP + 0x2c]      ; 005e6e29
     PUSH ESI                            ; 005e6e2d
     CALL core_cloth.cpp_CCloth_render_FUN_0043bae0 ; 005e6e2e
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, int use_joined_light)
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
         ;   Label: LAB_005e6e2e
     ADD ESP,0x8                         ; 005e6e33
         ;   Label: LAB_005e6e33

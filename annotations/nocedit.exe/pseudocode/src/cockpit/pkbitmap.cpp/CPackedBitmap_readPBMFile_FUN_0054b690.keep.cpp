@@ -12,13 +12,13 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
 {
   SIZE_T SVar1;
   int iVar2;
-  void **ppvVar3;
+  int *ppvVar3;
   SIZE_T SVar2;
-  void **ppvVar4;
+  int *ppvVar4;
   char *buffer;
   int iVar5;
   SPBMFileHeader local_2c;
-  void *size;
+  int size;
 
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0054a8e0(this_ptr);
   do {
@@ -31,28 +31,28 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
       if (((local_2c.reserved1 != 0) || (local_2c.reserved2 != 0)) ||
          ((this_ptr->width + -1 != local_2c.right_max ||
           (this_ptr->height + -1 != local_2c.bottom_max)))) goto LAB_0054b6da;
-      ppvVar3 = (void **)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
+      ppvVar3 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                           ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x4c6);
-      this_ptr->row_pointers = ppvVar3;
-      if (ppvVar3 != (void **)0x0) {
-        SVar2 = _fread(this_ptr->row_pointers,(this_ptr->height + 1) * 4,1,file_handle);
+      this_ptr->row_offsets = ppvVar3;
+      if (ppvVar3 != (int *)0x0) {
+        SVar2 = _fread(this_ptr->row_offsets,(this_ptr->height + 1) * 4,1,file_handle);
         if (SVar2 == 1) {
           iVar5 = 0;
           if (0 < this_ptr->height) {
-            ppvVar4 = this_ptr->row_pointers;
+            ppvVar4 = this_ptr->row_offsets;
             do {
-              if ((int)ppvVar4[1] < (int)*ppvVar4) goto LAB_0054b6da;
+              if (ppvVar4[1] < *ppvVar4) goto LAB_0054b6da;
               iVar5 = iVar5 + 1;
               ppvVar4 = ppvVar4 + 1;
             } while (iVar5 < this_ptr->height);
           }
-          size = this_ptr->row_pointers[this_ptr->height];
+          size = this_ptr->row_offsets[this_ptr->height];
           if (skip_data_load != 0) {
-            _fseek(file_handle,(long)size,1);
+            _fseek(file_handle,size,1);
             return;
           }
           buffer = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                             ((int)size,"..\\cockpit\\pkbitmap.cpp",0x4de);
+                             (size,"..\\cockpit\\pkbitmap.cpp",0x4de);
           this_ptr->packed_data = (ushort *)buffer;
           if (buffer == (char *)0x0) goto LAB_0054b6fd;
           SVar2 = _fread(buffer,(SIZE_T)size,1,file_handle);

@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[00452900, 00452994] [0060a512, 0060a54f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera *this_ptr,CVector3f *output_ray,CVector3i *screen_coords,int depth)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera *this_ptr,CVector3f *output_ray,int screen_x,int screen_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera *this_ptr,CVector3f *output_ray,CVector3i *screen_coords,int depth)
+void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera *this_ptr,CVector3f *output_ray,int screen_x,int screen_y)
 
 {
   CVector3i local_34;
@@ -16,7 +16,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonC
   float fVar1;
   
   core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-            (this_ptr,(int)screen_coords,depth,&local_34);
+            (this_ptr,screen_x,screen_y,&local_34);
   core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370(this_ptr,&local_1c,&local_28);
   fVar1 = (float)0.00390625;
   output_ray->x = (float)local_28.x * fVar1;

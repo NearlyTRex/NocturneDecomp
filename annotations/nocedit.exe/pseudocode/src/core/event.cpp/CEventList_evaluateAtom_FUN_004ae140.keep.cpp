@@ -730,7 +730,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                           return -1;
                         }
                         if (pCVar12 == (CCharacter *)g_ActorNameSentinel) {
-                          local_e0 = (uint)pCVar12 ^ (uint)g_ActorNameSentinel;
+                          local_e0 = 0;
                         }
                         else if (pCVar12->speech_timer <= 0.0) {
                           local_e0 = 0;
@@ -803,7 +803,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                             return -1;
                           }
                           if (this_ptr_01 == (CHero *)g_ActorNameSentinel) {
-                            local_e0 = (uint)this_ptr_01 ^ (uint)g_ActorNameSentinel;
+                            local_e0 = 0;
                           }
                           else {
                             local_e0 = (*(((this_ptr_01->base).base.vtable._uh)->_uh).isWeaponDrawn)

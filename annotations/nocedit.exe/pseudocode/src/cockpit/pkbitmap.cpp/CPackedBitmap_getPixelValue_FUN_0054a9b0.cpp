@@ -13,9 +13,8 @@ int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0(CPacke
   uint uVar2;
   
   if ((-1 < row_index) && (row_index < this_ptr->height)) {
-    for (puVar1 = (ushort *)((int)this_ptr->row_pointers[row_index] + (int)this_ptr->packed_data);
-        (puVar1 < (ushort *)
-                  ((int)this_ptr->packed_data + (int)(this_ptr->row_pointers + row_index)[1]) &&
+    for (puVar1 = (ushort *)(this_ptr->row_offsets[row_index] + (int)this_ptr->packed_data);
+        (puVar1 < (ushort *)((int)this_ptr->packed_data + (this_ptr->row_offsets + row_index)[1]) &&
         (uVar2 = (uint)*puVar1, (int)uVar2 <= x_coordinate));
         puVar1 = (ushort *)((int)puVar1 + (puVar1[1] + 3 & 0xfffffffc) + 4)) {
       if (x_coordinate < (int)(uVar2 + puVar1[1])) {

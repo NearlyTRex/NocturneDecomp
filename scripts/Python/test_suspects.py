@@ -82,21 +82,67 @@ OMIT_SUSPECT_TYPES = {
 }
 
 
-def run_detectors(susp, code, struct_layout_map=None):
+# An `extern TYPE name[opt];` declaration in include/globals/*.h. The trailing
+# `;` anchor forces `name` to be the last identifier, so multi-word and
+# pointer types (`unsigned int`, `void*`, `char*`) land wholly in group 1.
+_GLOBAL_EXTERN_RE = re.compile(
+    r'^\s*extern\s+(.*?)\s*([A-Za-z_]\w*)\s*(\[[^;]*\])?\s*;\s*$')
+
+
+def build_global_ptr_intervals(repo_root):
+    """Parse include/globals/*.h into (0, 0, name, gtype) tuples.
+
+    The full export gets global types from Ghidra and feeds them to the
+    pointer_truncation detector via build_global_interval_map(); outside the
+    pipeline the committed extern declarations are the source of truth. This
+    mirrors that map's (start, end, name, type) shape — start/end are unused by
+    identify_pointer_truncation_suspects, which decides pointer-ness from
+    `'*' in gtype` / `'[' in gtype`. Without this, bare pointer-typed globals
+    (`(int)g_SomeVoidPtr`) slip past the source-text harness.
+    """
+    import glob as _glob
+    intervals = []
+    seen = set()
+    pattern = os.path.join(
+        repo_root, 'annotations', '*', 'pseudocode', 'include', 'globals',
+        '*.h')
+    for hdr in _glob.glob(pattern):
+        try:
+            with open(hdr, 'r') as f:
+                lines = f.read().split('\n')
+        except OSError:
+            continue
+        for line in lines:
+            m = _GLOBAL_EXTERN_RE.match(line)
+            if not m:
+                continue
+            name = m.group(2)
+            if name in seen:
+                continue
+            seen.add(name)
+            gtype = (m.group(1) + (m.group(3) or '')).strip()
+            intervals.append((0, 0, name, gtype))
+    return intervals
+
+
+def run_detectors(susp, code, struct_layout_map=None,
+                  global_interval_map=None):
     """Run the source-text-only content detectors on `code`.
 
-    Mirrors detect_content_suspects() but with no func_globals / interval
-    map / func_calls — those require Ghidra-extracted state that isn't
-    available outside the export pipeline. The detectors that take those
-    as optional arguments still run and produce best-effort output (they
-    silently skip the rules that need the missing context).
+    Mirrors detect_content_suspects() but with no func_globals / func_calls —
+    those require Ghidra-extracted state that isn't available outside the
+    export pipeline. `global_interval_map`, when supplied (built from the
+    committed globals headers by build_global_ptr_intervals), gives the
+    pointer_truncation detector the global pointer types it needs to flag
+    `(int)g_SomePtr` truncations; the address-based detectors still run
+    map-free and skip the rules that need real addresses.
     """
     found = []
     found.extend(susp.identify_suspect_lines(code))
     found.extend(susp.identify_wrong_global_suspects(code))
     found.extend(susp.identify_suspicious_cast_suspects(code))
     found.extend(susp.identify_pointer_truncation_suspects(
-        code, None, None, struct_layout_map))
+        code, None, global_interval_map, struct_layout_map))
     found.extend(susp.identify_raw_address_constant_suspects(code))
     found.extend(susp.identify_raw_address_in_local(code))
     found.extend(susp.identify_format_string_mismatch(code))
@@ -255,6 +301,11 @@ def main(argv=None):
         if struct_layout_map:
             break
 
+    # Global pointer types for the pointer_truncation detector, parsed from the
+    # committed include/globals/*.h headers (the export pipeline sources these
+    # from Ghidra; here the headers are the source of truth).
+    global_interval_map = build_global_ptr_intervals(REPO_ROOT)
+
     cppcheck_warned_missing = False
     total_visible = 0
     for path in args.files:
@@ -263,7 +314,8 @@ def main(argv=None):
             continue
         with open(path, 'r') as f:
             code = f.read()
-        suspects = run_detectors(susp, code, struct_layout_map)
+        suspects = run_detectors(susp, code, struct_layout_map,
+                                 global_interval_map)
 
         cppcheck_diags = []
         if not args.no_cppcheck:

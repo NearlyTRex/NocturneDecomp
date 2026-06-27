@@ -24,7 +24,7 @@ void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_005208b0(CMimic *this_pt
     if (iVar1 != 0) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                 (&(this_ptr->base).base.model,-1,0xffffffff,1,0);
-      core_cloth_cpp_CCloth_render_FUN_0043bae0(&this_ptr->cloth,0);
+      core_cloth_cpp_CCloth_render_FUN_0043bae0(&this_ptr->cloth,(CDeformableModelInstance *)0x0);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }

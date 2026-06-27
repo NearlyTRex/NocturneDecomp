@@ -113,8 +113,8 @@ SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_ctor_FUN_0
 SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_dtor_FUN_00574760(SCollisionReturnInfo *this_ptr,uint flags);
 SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_arrdtor_FUN_00574770(SRaytraceState *objs,uint flags);
 void __cdecl core_setdir_cpp_staticInit_FUN_00574790(void);
-void __cdecl core_setdir_cpp_CZThumb_backupZBufferScanlines_FUN_005747d0(CZThumb *this_ptr,int count);
-void __cdecl core_setdir_cpp_CZThumb_restoreZBufferTable_FUN_00574830(CZThumb *this_ptr,int count);
+void __cdecl core_setdir_cpp_backupZBufferScanlines_FUN_005747d0(int count);
+void __cdecl core_setdir_cpp_restoreZBufferTable_FUN_00574830(int count);
 void __cdecl core_setdir_cpp_setPixelGrayscale_FUN_005748a0(int x,int y,int grayscale_value);
 CZThumb * __cdecl core_setdir_cpp_CZThumb_ctor_FUN_005748d0(CZThumb *this_ptr);
 CZThumb * __cdecl core_setdir_cpp_CZThumb_dtor_FUN_005748f0(CZThumb *this_ptr,uint flags);

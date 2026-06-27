@@ -14,17 +14,17 @@ PRIORITY 1: Files with 1-2 functions remaining
     - engine_2d.c_wrapTextToWidth_FUN_00401d80
       Suspects: pointer_truncation, pointer_truncation
 
-  core/cloth.cpp (1 remaining of 55)
-    - core_cloth.cpp_CClothList_render_FUN_0043c320
-      Suspects: pointer_truncation
-
   shape/cramtex.cpp (1 remaining of 21)
     - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
       Suspects: pointer_truncation, pointer_truncation
 
-  core/dlight.cpp (1 remaining of 34)
-    - core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390
+  engine/drender.cpp (1 remaining of 88)
+    - engine_drender.cpp_renderTriangleSimple_FUN_004839f0
       Suspects: pointer_truncation, pointer_truncation, pointer_truncation
+
+  core/dstrender.cpp (1 remaining of 31)
+    - core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7
+      Suspects: pointer_truncation
 
   shape/edittool.cpp (1 remaining of 151)
     - shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
@@ -38,12 +38,12 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_ghoul.cpp_CGhoul_process_FUN_004e6600
       Suspects: pointer_truncation
 
-  core/inv.cpp (1 remaining of 43)
-    - core_inv.cpp_CInventory_renderAllItems_FUN_00500690
-      Suspects: pointer_truncation, pointer_truncation
-
   core/main.c (1 remaining of 10)
     - core_main.c_enterMainGameMenu_FUN_00507a50
+      Suspects: pointer_truncation
+
+  core/menu.cpp (1 remaining of 22)
+    - core_menu.cpp_showOptionsScreen_FUN_00512d30
       Suspects: pointer_truncation
 
   core/moon.cpp (1 remaining of 14)
@@ -62,9 +62,9 @@ PRIORITY 1: Files with 1-2 functions remaining
     - shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
       Suspects: pointer_truncation, pointer_truncation
 
-  core/setutil.cpp (1 remaining of 41)
-    - core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0
-      Suspects: pointer_truncation
+  core/setedit.cpp (1 remaining of 58)
+    - core_setedit.cpp_editGroundTypes_FUN_00578630
+      Suspects: pointer_truncation, pointer_truncation, pointer_truncation
 
   core/skeledit.cpp (1 remaining of 70)
     - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
@@ -74,8 +74,8 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460
       Suspects: pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation
 
-  wincore/windll.cpp (1 remaining of 72)
-    - wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322
+  sound/sndmain.cpp (1 remaining of 193)
+    - sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
       Suspects: pointer_truncation
 
   core/vampboss.cpp (1 remaining of 23)
@@ -91,18 +91,6 @@ PRIORITY 1: Files with 1-2 functions remaining
       Suspects: pointer_truncation
     - core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
       Suspects: pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation, static_null_pointer_redundant_check, static_null_pointer_redundant_check, static_null_pointer_redundant_check
-
-  engine/drender.cpp (2 remaining of 88)
-    - engine_drender.cpp_renderTriangleSimple_FUN_004839f0
-      Suspects: pointer_truncation, pointer_truncation, pointer_truncation
-    - engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50
-      Suspects: pointer_truncation
-
-  core/event.cpp (2 remaining of 56)
-    - core_event.cpp_CEventList_executeCommand_FUN_004aacc0
-      Suspects: pointer_truncation, pointer_truncation
-    - core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
-      Suspects: pointer_truncation, pointer_truncation, pointer_truncation, pointer_truncation
 
   engine/fileio.cpp (2 remaining of 73)
     - engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030
@@ -134,33 +122,18 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
       Suspects: pointer_truncation
 
-  core/setdir.cpp (2 remaining of 32)
-    - core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0
-      Suspects: pointer_truncation, pointer_truncation
-    - core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830
-      Suspects: pointer_truncation, pointer_truncation
-
-  core/setedit.cpp (2 remaining of 58)
-    - core_setedit.cpp_editGroundTypes_FUN_00578630
-      Suspects: pointer_truncation, pointer_truncation, pointer_truncation
-    - core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310
-      Suspects: pointer_truncation
-
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [pointer_truncation] - 6 functions
-    core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900            ( 20 lines)
-    core_cloth.cpp_CClothList_render_FUN_0043c320                          ( 23 lines)
-    engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50               ( 23 lines)
-    core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0                       ( 30 lines)
-    sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0                         ( 47 lines)
-    core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9      ( 49 lines)
-
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
+
+  sound/sndmain.cpp (99.5% complete)
+    1 functions remaining:
+      sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (319 lines)
+        Types: ['pointer_truncation']
 
   shape/edittool.cpp (99.3% complete)
     1 functions remaining:
@@ -179,14 +152,14 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 (116 lines)
         Types: ['pointer_truncation']
 
+  engine/drender.cpp (98.9% complete)
+    1 functions remaining:
+      engine_drender.cpp_renderTriangleSimple_FUN_004839f0 (229 lines)
+        Types: ['pointer_truncation']
+
   engine/2d.c (98.7% complete)
     1 functions remaining:
       engine_2d.c_wrapTextToWidth_FUN_00401d80 (80 lines)
-        Types: ['pointer_truncation']
-
-  wincore/windll.cpp (98.6% complete)
-    1 functions remaining:
-      wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322 (121 lines)
         Types: ['pointer_truncation']
 
   core/skeledit.cpp (98.6% complete)
@@ -199,23 +172,14 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_game.cpp_CGame_runGameSession_FUN_004daf80 (363 lines)
         Types: ['pointer_truncation']
 
-  sound/sndmain.cpp (98.4% complete)
-    3 functions remaining:
-      sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0 (47 lines)
-        Types: ['pointer_truncation']
-      sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (319 lines)
-        Types: ['pointer_truncation']
-      sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 (51 lines)
+  core/setedit.cpp (98.3% complete)
+    1 functions remaining:
+      core_setedit.cpp_editGroundTypes_FUN_00578630 (122 lines)
         Types: ['pointer_truncation']
 
   sound/mp3.cpp (98.2% complete)
     1 functions remaining:
       sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (541 lines)
-        Types: ['pointer_truncation']
-
-  core/cloth.cpp (98.2% complete)
-    1 functions remaining:
-      core_cloth.cpp_CClothList_render_FUN_0043c320 (23 lines)
         Types: ['pointer_truncation']
 
   core/script.cpp (97.9% complete)
@@ -225,33 +189,11 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 (172 lines)
         Types: ['pointer_truncation']
 
-  engine/drender.cpp (97.7% complete)
-    2 functions remaining:
-      engine_drender.cpp_renderTriangleSimple_FUN_004839f0 (229 lines)
-        Types: ['pointer_truncation']
-      engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50 (23 lines)
-        Types: ['pointer_truncation']
-
-  core/inv.cpp (97.7% complete)
-    1 functions remaining:
-      core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (366 lines)
-        Types: ['pointer_truncation']
-
-  core/setutil.cpp (97.6% complete)
-    1 functions remaining:
-      core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0 (30 lines)
-        Types: ['pointer_truncation']
-
   engine/fileio.cpp (97.3% complete)
     2 functions remaining:
       engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030 (100 lines)
         Types: ['pointer_truncation']
       engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0 (137 lines)
-        Types: ['pointer_truncation']
-
-  core/dlight.cpp (97.1% complete)
-    1 functions remaining:
-      core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390 (68 lines)
         Types: ['pointer_truncation']
 
   engine/pod.cpp (97.1% complete)
@@ -264,18 +206,9 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0 (94 lines)
         Types: ['pointer_truncation']
 
-  core/setedit.cpp (96.6% complete)
-    2 functions remaining:
-      core_setedit.cpp_editGroundTypes_FUN_00578630 (122 lines)
-        Types: ['pointer_truncation']
-      core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 (79 lines)
-        Types: ['pointer_truncation']
-
-  core/event.cpp (96.4% complete)
-    2 functions remaining:
-      core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (2138 lines)
-        Types: ['pointer_truncation']
-      core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (1591 lines)
+  core/dstrender.cpp (96.8% complete)
+    1 functions remaining:
+      core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7 (64 lines)
         Types: ['pointer_truncation']
 
   engine/font.cpp (95.9% complete)
@@ -290,6 +223,11 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 (626 lines)
         Types: ['pointer_truncation']
 
+  core/menu.cpp (95.5% complete)
+    1 functions remaining:
+      core_menu.cpp_showOptionsScreen_FUN_00512d30 (68 lines)
+        Types: ['pointer_truncation']
+
   shape/cramtex.cpp (95.2% complete)
     1 functions remaining:
       shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (832 lines)
@@ -300,15 +238,8 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_ghoul.cpp_CGhoul_process_FUN_004e6600 (1052 lines)
         Types: ['pointer_truncation']
 
-  core/setdir.cpp (93.8% complete)
-    2 functions remaining:
-      core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0 (20 lines)
-        Types: ['pointer_truncation']
-      core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830 (21 lines)
-        Types: ['pointer_truncation']
-
-  core/dcamera.cpp (93.0% complete)
-    6 functions remaining:
+  core/dcamera.cpp (94.2% complete)
+    5 functions remaining:
       core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 (193 lines)
         Types: ['pointer_truncation']
       core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360 (165 lines)
@@ -316,8 +247,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790 (215 lines)
         Types: ['pointer_truncation']
       core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 (271 lines)
-        Types: ['pointer_truncation']
-      core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900 (20 lines)
         Types: ['pointer_truncation']
       core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0 (79 lines)
         Types: ['pointer_truncation']
@@ -332,15 +261,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020 (41 lines)
         Types: ['pointer_truncation']
       shape_memdbg.cpp_debugRealloc_FUN_0050f540 (55 lines)
-        Types: ['pointer_truncation']
-
-  core/dstrender.cpp (90.3% complete)
-    3 functions remaining:
-      core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7 (64 lines)
-        Types: ['pointer_truncation']
-      core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d (60 lines)
-        Types: ['pointer_truncation']
-      core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9 (49 lines)
         Types: ['pointer_truncation']
 
   core/ground.cpp (90.0% complete)
@@ -359,5 +279,3 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 ALL REMAINING FILES
 ====================================================================================================
   cockpit/ckptutil.c                                            89.1%  (49/55 clean, 6 remaining)
-  cockpit/pkbitmap.cpp                                          78.8%  (26/33 clean, 7 remaining)
-  core/menu.cpp                                                 77.3%  (17/22 clean, 5 remaining)

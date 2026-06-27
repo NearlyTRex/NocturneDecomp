@@ -253,7 +253,7 @@ void __cdecl CDemonCamera::setEffectIntensity(CDemonCamera *this_ptr,float inten
 
 // Original: core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900
 // Address: 00452900
-void __cdecl CDemonCamera::screenToWorldRay(CDemonCamera *this_ptr,CVector3f *output_ray,CVector3i *screen_coords,int depth);
+void __cdecl CDemonCamera::screenToWorldRay(CDemonCamera *this_ptr,CVector3f *output_ray,int screen_x,int screen_y);
 
 // Original: core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_004529a0
 // Address: 004529a0

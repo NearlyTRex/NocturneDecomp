@@ -150,7 +150,7 @@ void __cdecl core_cloth_cpp_CCloth_step_FUN_0043abb0(CCloth *this_ptr,CVector3f 
 void __cdecl core_cloth_cpp_CCloth_renderCollisionBones_FUN_0043b790(CCloth *this_ptr);
 void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_0043b7e0(CCloth *this_ptr,int bone_index,int show_labels);
 int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
-void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_joined_light);
+void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
 CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_0043bf40(CClothList *this_ptr);
 CClothList * __cdecl core_cloth_cpp_CClothList_dtor_FUN_0043bf80(CClothList *this_ptr,uint flags);
 void __cdecl core_cloth_cpp_CClothList_load_FUN_0043bfa0(CClothList *this_ptr);

@@ -37,10 +37,10 @@ int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_005e6da0(CVampireBos
   if (this_ptr->form == 0) {
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
               (model_ptr,-1,0xffffffff,1,0);
-    core_cloth_cpp_CCloth_render_FUN_0043bae0(this_ptr_03,0);
+    core_cloth_cpp_CCloth_render_FUN_0043bae0(this_ptr_03,(CDeformableModelInstance *)0x0);
     this_ptr_02 = model_ptr_00;
 LAB_005e6e2e:
-    core_cloth_cpp_CCloth_render_FUN_0043bae0(this_ptr_02,0);
+    core_cloth_cpp_CCloth_render_FUN_0043bae0(this_ptr_02,(CDeformableModelInstance *)0x0);
   }
   else {
     this_ptr_02 = &this_ptr->wing_cloth;

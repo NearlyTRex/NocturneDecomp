@@ -73,7 +73,7 @@ int __cdecl CCloth::saveJoinedLight(CCloth *this_ptr,CDeformableModelInstance *m
 
 // Original: core_cloth.cpp_CCloth_render_FUN_0043bae0
 // Address: 0043bae0
-void __cdecl CCloth::render(CCloth *this_ptr,int use_joined_light);
+void __cdecl CCloth::render(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
 
 // Original: core_cloth.cpp_CClothList_ctor_FUN_0043bf40
 // Address: 0043bf40

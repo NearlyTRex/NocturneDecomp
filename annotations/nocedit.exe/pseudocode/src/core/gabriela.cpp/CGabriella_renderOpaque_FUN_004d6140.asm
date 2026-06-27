@@ -63,7 +63,7 @@ section .text
     LEA EAX,[EBX + 0x1fc14]             ; 004d617e
     PUSH EAX                            ; 004d6184
     CALL core_cloth.cpp_CCloth_render_FUN_0043bae0 ; 004d6185
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, int use_joined_light)
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_render_FUN_0043bae0(CCloth * this_ptr, CDeformableModelInstance * deformable_model)
     ADD ESP,0x8                         ; 004d618a
     MOV EDX,dword ptr [0x006703ec]      ; 004d618d | g_CDemonRendererPtr2
     PUSH EDX                            ; 004d6193 | g_CDemonRendererInstance

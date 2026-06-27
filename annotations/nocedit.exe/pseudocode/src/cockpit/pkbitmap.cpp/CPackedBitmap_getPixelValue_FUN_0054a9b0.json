@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 42,
+    "complexity_score": 16,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 17,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_truncation"
-    ],
-    "total_lines": 74
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -106,15 +104,24 @@
     {
       "description": "Complex pointer cast",
       "line": 9,
-      "match": "(ushort *)((int)this_ptr",
+      "match": "(ushort *)(this_ptr->row_offsets[row_index] + (int)this_ptr",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "for (puVar1 = (ushort *)((int)this_ptr->row_pointers[row_index] + (int)this_ptr->packed_data);",
+      "text": "for (puVar1 = (ushort *)(this_ptr->row_offsets[row_index] + (int)this_ptr->packed_data);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 13,
+      "line": 10,
+      "match": "(ushort *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(puVar1 < (ushort *)((int)this_ptr->packed_data + (this_ptr->row_offsets + row_index)[1]) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
       "match": "(ushort *)((int)puVar1",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -123,7 +130,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 14,
       "match": "(byte *)((int)puVar1",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -132,7 +139,7 @@
     },
     {
       "description": "Pointer value `puVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 13,
+      "line": 12,
       "match": "(int)puVar1",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -141,21 +148,12 @@
     },
     {
       "description": "Pointer value `puVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 15,
+      "line": 14,
       "match": "(int)puVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "return (uint)*(byte *)((int)puVar1 + (x_coordinate - uVar2) + 4);",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 10,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(puVar1 < (ushort *)",
-      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -188,24 +186,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer value `this_ptr->row_pointers[row_index]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "introduced_by": "keep",
-      "line": 18,
-      "match": "(int)this_ptr->row_pointers[row_index]",
-      "severity": "moderate",
-      "text": "(int)this_ptr->row_pointers[row_index]);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `this_ptr->row_pointers[row_index + 1]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "introduced_by": "keep",
-      "line": 20,
-      "match": "(int)this_ptr->row_pointers[row_index + 1]",
-      "severity": "moderate",
-      "text": "(int)this_ptr->row_pointers[row_index + 1]) &&",
-      "type": "pointer_truncation"
-    }
-  ]
+  "suspects": []
 }

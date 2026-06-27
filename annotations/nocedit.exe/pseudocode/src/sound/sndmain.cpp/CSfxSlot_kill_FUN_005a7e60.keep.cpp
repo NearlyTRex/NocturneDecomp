@@ -49,7 +49,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot *slot)
         g_CurrentLineNumber = 0xb50;
         core_main_c_displayErrorAndQuit_FUN_00506f10("refCount for streaming Sfx %s > 1",(pCVar2->sample_info).name);
       }
-      if (((int)slot - (int)g_SfxSlots) / 0x128 != pCVar2->streaming_slot_index) {
+      if (slot - g_SfxSlots != pCVar2->streaming_slot_index) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
         g_CurrentLineNumber = 0xb51;
         core_main_c_displayErrorAndQuit_FUN_00506f10("streaming sample sfx index mismatch on %s",(pCVar2->sample_info).name);
