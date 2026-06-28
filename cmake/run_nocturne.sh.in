@@ -57,4 +57,13 @@ done
 
 export ASAN_SYMBOLIZER_PATH UBSAN_SYMBOLIZER_PATH UBSAN_OPTIONS ASAN_OPTIONS
 
+# Runtime dlopen compat shim — SDL2's X11/audio backends dlopen unversioned
+# sonames (libX11.so, ...) provided only by *-dev:i386 packages we don't install
+# (multilib hazard). The build creates the missing symlinks in ./i386-compat;
+# put it on LD_LIBRARY_PATH so those dlopens resolve (else SDL falls back to the
+# headless "offscreen" driver and no window appears).
+if [[ -d "${SCRIPT_DIR}/i386-compat" ]]; then
+    export LD_LIBRARY_PATH="${SCRIPT_DIR}/i386-compat${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+fi
+
 exec "${EXE}" "${GAME_ARGS[@]}"

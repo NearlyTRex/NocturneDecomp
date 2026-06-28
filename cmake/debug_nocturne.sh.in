@@ -68,6 +68,16 @@ done
 
 export ASAN_SYMBOLIZER_PATH UBSAN_SYMBOLIZER_PATH UBSAN_OPTIONS ASAN_OPTIONS
 
+# Runtime dlopen compat shim. SDL2's X11 and ALSA/Pulse backends dlopen the
+# UNVERSIONED soname (libX11.so, ...), which only ships in the *-dev:i386
+# packages we deliberately don't install (multilib hazard). The build creates
+# the missing unversioned->versioned symlinks in ./i386-compat; put it on
+# LD_LIBRARY_PATH so those dlopens resolve — otherwise SDL silently falls back
+# to the headless "offscreen" video driver and no window appears.
+if [[ -d "${SCRIPT_DIR}/i386-compat" ]]; then
+    export LD_LIBRARY_PATH="${SCRIPT_DIR}/i386-compat${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
+fi
+
 BREAK_ARGS=()
 if [[ -n "${NOCTURNE_BREAKS:-}" ]]; then
     IFS=',' read -ra _breaks <<< "${NOCTURNE_BREAKS}"

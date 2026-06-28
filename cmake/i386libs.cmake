@@ -66,6 +66,34 @@ FetchContent_Declare(sdl2_ttf
 message(STATUS "i386libs: fetching SDL2 ${NOCTURNE_SDL2_TAG} + SDL2_ttf ${NOCTURNE_SDL2TTF_TAG} (first configure clones + builds; cached after)")
 FetchContent_MakeAvailable(sdl2 sdl2_ttf)
 
+# ----------------------------------------------------------------------------
+# Runtime dlopen compat shim.
+# SDL2's X11 and ALSA/Pulse backends dlopen the UNVERSIONED soname (libX11.so,
+# libpulse.so, ...). Those unversioned symlinks ship in the *-dev:i386 packages,
+# which we deliberately don't install (multilib hazard — they make apt remove the
+# amd64 desktop). Only the versioned runtime libs (libX11.so.6, ...) are present,
+# so the unversioned dlopen fails and SDL silently falls back to the headless
+# "offscreen" video driver → no window. Recreate the unversioned symlinks in a
+# build-local dir and put that dir on SDL2's RUNPATH so the dlopens resolve with
+# no system change and no LD_LIBRARY_PATH at launch.
+set(_sdl_compat_dir "${CMAKE_BINARY_DIR}/i386-compat")
+file(MAKE_DIRECTORY "${_sdl_compat_dir}")
+set(_i386_libdir "/usr/lib/i386-linux-gnu")
+foreach(_soname X11 Xext Xcursor Xi Xfixes Xrandr Xss pulse asound)
+    file(GLOB _versioned "${_i386_libdir}/lib${_soname}.so.[0-9]*")
+    if(_versioned)
+        list(SORT _versioned)
+        list(GET _versioned 0 _target)   # soname (e.g. libX11.so.6) sorts before libX11.so.6.4.0
+        file(CREATE_LINK "${_target}" "${_sdl_compat_dir}/lib${_soname}.so" SYMBOLIC)
+    else()
+        message(STATUS "i386libs: no i386 runtime lib for lib${_soname}.so (backend will be unavailable)")
+    endif()
+endforeach()
+# The launchers (debug.sh / run.sh) put ${_sdl_compat_dir} on LD_LIBRARY_PATH so
+# SDL's dlopens resolve there. (RUNPATH-on-SDL2.so would also work but SDL2's
+# CMake skips build rpath, and the exe uses non-transitive DT_RUNPATH, so
+# LD_LIBRARY_PATH from the launcher is the reliable mechanism.)
+
 # The shims include <SDL.h> / <SDL_ttf.h> (no SDL2/ prefix), and SDL2's headers
 # live across the source tree plus a generated-config dir. Forward the targets'
 # INTERFACE_INCLUDE_DIRECTORIES so the shim OBJECT library — which only gets
