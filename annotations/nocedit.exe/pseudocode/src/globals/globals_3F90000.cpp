@@ -23,6 +23,10 @@ CDemonGlobe g_WeaponCoronaGlobe = {};
 // CRITICAL_SECTION[64]
 CRITICAL_SECTION g_StaticCriticalSectionArray[64] = {};
 
+// CVector3f
+CVector3f g_WerewolfEyeGlowOffsetLeft = {};
+CVector3f g_WerewolfEyeGlowOffsetRight = {};
+
 // CVector3f[200]
 CVector3f g_WeatherParticlePositions[200] = {};
 
@@ -142,14 +146,6 @@ double g_TimerCalibration = {};
 
 // dword
 dword DWORD_03f9d000 = 0x1000;
-
-// float
-float FLOAT_03f96b44 = {};
-float FLOAT_03f96b48 = {};
-float FLOAT_03f96b4c = {};
-float FLOAT_03f96b50 = {};
-float FLOAT_03f96b54 = {};
-float FLOAT_03f96b58 = {};
 
 // float[200]
 float g_WeatherParticleGroundHeights[200] = {};

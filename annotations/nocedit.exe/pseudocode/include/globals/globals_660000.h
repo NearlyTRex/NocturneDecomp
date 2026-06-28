@@ -34,6 +34,7 @@
 #include "types/funcdefs/MRGLBlockHandlerFunc.h"
 #include "types/structs/SEnumPair.h"
 #include "types/structs/SFontGlyph.h"
+#include "types/structs/SLightGlowTable.h"
 #include "types/structs/SMRGLLightPrimitive.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SPropertyFlag.h"
@@ -182,6 +183,9 @@ extern SEnumPair g_BoxActorPickupTypePairs[5];
 // SFontGlyph[224]
 extern SFontGlyph g_FontTable[224];
 
+// SLightGlowTable
+extern SLightGlowTable g_LightGlow;
+
 // SMRGLLightPrimitive[84]
 extern SMRGLLightPrimitive g_CoronaFacePrimitives[84];
 
@@ -191,9 +195,6 @@ extern SMRGLTextureBasic SMRGLTextureBasic_0066e460;
 extern SMRGLTextureBasic SMRGLTextureBasic_0066e784;
 extern SMRGLTextureBasic g_CameraBackdropTexture;
 extern SMRGLTextureBasic g_CoronaHeadliteTexture;
-
-// SMRGLTextureBasic[20]
-extern SMRGLTextureBasic g_LightTextures[20];
 
 // SMRGLTextureBasic[6]
 extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0066e6b0[6];

@@ -131,7 +131,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
     this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
     this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr_00,g_LightTextures + 1);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+              (this_ptr_00,&g_LightGlow.headlight);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     local_d4.base.base.count = 4;
     local_d4.base.surface_normal.A.i = 0;

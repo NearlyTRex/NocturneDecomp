@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 25,
     "complexity_score": 12,
@@ -47,27 +47,27 @@
   "globals": [
     {
       "addr": "0066fef0",
-      "name": "g_LightTextures[1].base.type",
+      "name": "g_LightGlow.headlight.base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0066ff08",
-      "name": "g_LightTextures[2].base.type",
+      "name": "g_LightGlow.sprites[0].texture.base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0066ff38",
-      "name": "g_LightTextures[4].base.type",
+      "name": "g_LightGlow.sprites[1].texture.base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006700b8",
-      "name": "g_LightTexturesEnd",
-      "type": "SMRGLTextureBasic*",
-      "value": "00000000"
+      "name": "DAT_006700b8",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "006703ec",
@@ -127,6 +127,26 @@
     },
     "pcode_op_count": 79
   },
+  "resolved_suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_006700b8",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "} while (texture != (SMRGLTextureBasic *)&DAT_006700b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `texture` was initialized to the address of an array element's subfield (`texture = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*texture)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `texture->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 12,
+      "match": "texture = texture + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "texture = texture + 2;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,

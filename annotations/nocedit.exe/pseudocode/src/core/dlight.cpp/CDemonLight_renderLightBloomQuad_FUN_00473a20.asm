@@ -39,7 +39,7 @@
 ;   double DOUBLE_0061f14b = 0.00390625
 ;   double DOUBLE_0061f153 = 65536
 ;   float FLOAT_0065c900 = 256
-;   undefined4 g_LightTextures[1].base.type
+;   undefined4 g_LightGlow.headlight.base.type
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -372,7 +372,7 @@ section .text
     MOV dword ptr [EBX + 0xb0],0xffff   ; 00473ea1
     MOV EDX,dword ptr [EAX]             ; 00473eab | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0xb4],0xffff   ; 00473ead
-    PUSH 0x66fef0                       ; 00473eb7 | g_LightTextures[1].base.type
+    PUSH 0x66fef0                       ; 00473eb7 | g_LightGlow.headlight.base.type
     MOV EDX,dword ptr [EAX]             ; 00473ebc | g_CDemonRendererInstance
     PUSH EAX                            ; 00473ebe | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0xb8],0xffff   ; 00473ebf

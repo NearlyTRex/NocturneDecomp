@@ -5481,6 +5481,109 @@ SFontGlyph g_FontTable[224] = {
     }
 };
 
+// SLightGlowTable
+SLightGlowTable g_LightGlow = {
+    .fuzz = {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "LITEFUZZ.RAW"
+    },
+    .headlight = {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "HEADLITE.RAW"
+    },
+    .sprites = {{
+        .texture = {
+            .base = {.type = 0x0000000D, .count = 0x00000000},
+            .texture_name = "SUN06.RAW"
+        },
+        .params = {
+            .flare_axis_pos = 0.2f,
+            .size = 0.046943232f,
+            .uv = {0x00000008, 0x00000008, 0x000000F8, 0x000000F8}
+        }
+    }, {
+        .texture = {
+            .base = {.type = 0x0000000D, .count = 0x00000000},
+            .texture_name = "SUN07.RAW"
+        },
+        .params = {
+            .flare_axis_pos = -0.271f,
+            .size = 0.012008734f,
+            .uv = {0x00000008, 0x00000008, 0x000000F8, 0x000000F8}
+        }
+    }, {
+        .texture = {
+            .base = {.type = 0x0000000D, .count = 0x00000000},
+            .texture_name = "SUN09.RAW"
+        },
+        .params = {
+            .flare_axis_pos = -0.41600001f,
+            .size = 0.087336242f,
+            .uv = {0x00000008, 0x00000008, 0x000000F8, 0x000000F8}
+        }
+    }, {
+        .texture = {
+            .base = {.type = 0x0000000D, .count = 0x00000000},
+            .texture_name = "SUNCRAM.RAW"
+        },
+        .params = {
+            .flare_axis_pos = -0.447f,
+            .size = 0.15611354f,
+            .uv = {0x00000082, 0x00000082, 0x000000FE, 0x000000FE}
+        }
+    }, {
+        .texture = {
+            .base = {.type = 0x0000000D, .count = 0x00000000},
+            .texture_name = "SUN11.RAW"
+        },
+        .params = {
+            .flare_axis_pos = -0.47499999f,
+            .size = 0.044759825f,
+            .uv = {0x00000008, 0x00000008, 0x000000F8, 0x000000F8}
+        }
+    }, {
+        .texture = {
+            .base = {.type = 0x0000000D, .count = 0x00000000},
+            .texture_name = "SUN12.RAW"
+        },
+        .params = {
+            .flare_axis_pos = -0.64300001f,
+            .size = 0.066593885f,
+            .uv = {0x00000008, 0x00000008, 0x000000F8, 0x000000F8}
+        }
+    }, {
+        .texture = {
+            .base = {.type = 0x0000000D, .count = 0x00000000},
+            .texture_name = "SUN13.RAW"
+        },
+        .params = {
+            .flare_axis_pos = -0.67400002f,
+            .size = 0.065502182f,
+            .uv = {0x00000008, 0x00000008, 0x000000F8, 0x000000F8}
+        }
+    }, {
+        .texture = {
+            .base = {.type = 0x0000000D, .count = 0x00000000},
+            .texture_name = "SUNCRAM.RAW"
+        },
+        .params = {
+            .flare_axis_pos = -1.0f,
+            .size = 0.23253275f,
+            .uv = {0x00000082, 0x00000002, 0x000000FE, 0x0000007E}
+        }
+    }, {
+        .texture = {
+            .base = {.type = 0x0000000D, .count = 0x00000000},
+            .texture_name = "SUNCRAM.RAW"
+        },
+        .params = {
+            .flare_axis_pos = -1.3329999f,
+            .size = 0.44759825f,
+            .uv = {0x00000002, 0x00000082, 0x0000007E, 0x000000FE}
+        }
+    }}
+};
+
 // SMRGLLightPrimitive[84]
 SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
@@ -6345,90 +6448,6 @@ SMRGLTextureBasic g_CameraBackdropTexture = {
 SMRGLTextureBasic g_CoronaHeadliteTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
-};
-
-// SMRGLTextureBasic[20]
-SMRGLTextureBasic g_LightTextures[20] = {
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "LITEFUZZ.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "HEADLITE.RAW"
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SUN06.RAW"
-    },
-    {
-        .base = {.type = 0x3E4CCCCD, .count = 0x3D40478C},
-        .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SUN07.RAW"
-    },
-    {
-        .base = {.type = -1098203005, .count = 0x3C44C048},
-        .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SUN09.RAW"
-    },
-    {
-        .base = {.type = -1093337612, .count = 0x3DB2DD58},
-        .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SUNCRAM.RAW"
-    },
-    {
-        .base = {.type = -1092297425, .count = 0x3E1FDC3A},
-        .texture_name = {-126, 0x00, 0x00, 0x00, -126, 0x00, 0x00, 0x00, -2, 0x00, 0x00, 0x00, -2, 0x00, 0x00, 0x00}
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SUN11.RAW"
-    },
-    {
-        .base = {.type = -1091357901, .count = 0x3D375614},
-        .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SUN12.RAW"
-    },
-    {
-        .base = {.type = -1088119898, .count = 0x3D886260},
-        .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SUN13.RAW"
-    },
-    {
-        .base = {.type = -1087599804, .count = 0x3D862602},
-        .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SUNCRAM.RAW"
-    },
-    {
-        .base = {.type = -1082130432, .count = 0x3E6E1D11},
-        .texture_name = {-126, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, -2, 0x00, 0x00, 0x00, 0x7E, 0x00, 0x00, 0x00}
-    },
-    {
-        .base = {.type = 0x0000000D, .count = 0x00000000},
-        .texture_name = "SUNCRAM.RAW"
-    },
-    {
-        .base = {.type = -1079337026, .count = 0x3EE52B99},
-        .texture_name = {0x02, 0x00, 0x00, 0x00, -126, 0x00, 0x00, 0x00, 0x7E, 0x00, 0x00, 0x00, -2, 0x00, 0x00, 0x00}
-    }
 };
 
 // SMRGLTextureBasic[6]

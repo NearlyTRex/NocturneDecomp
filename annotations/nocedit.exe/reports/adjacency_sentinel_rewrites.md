@@ -6,18 +6,12 @@ globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.
 
 ## Summary
 
-- Rewrites applied: **72**
-- Functions touched: **26**
-- Pools indexed: **494**
-- Adjacency pairs in lookup: **494**
+- Rewrites applied: **71**
+- Functions touched: **25**
+- Pools indexed: **493**
+- Adjacency pairs in lookup: **493**
 
 ## Rewrites by function
-
-### `core_dlight.cpp_captureLightTextures_FUN_00474a90`
-
-- Pool `g_LightTextures` sentinel `g_LightTexturesEnd` (count 20)
-  - Before: `while (texture != (SMRGLTextureBasic *)&g_LightTexturesEnd)`
-  - After:  `while (texture != g_LightTextures + 20)`
 
 ### `core_dmodel.cpp_freeAllModels_FUN_00478cb0`
 

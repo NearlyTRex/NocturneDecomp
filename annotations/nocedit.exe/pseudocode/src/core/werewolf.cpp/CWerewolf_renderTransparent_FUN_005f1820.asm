@@ -16,8 +16,8 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   UVector3 g_ZeroVector
-;   float FLOAT_03f96b44
-;   float FLOAT_03f96b50
+;   CVector3f g_WerewolfEyeGlowOffsetLeft
+;   CVector3f g_WerewolfEyeGlowOffsetRight
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -104,12 +104,12 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005f18f2
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 005f18f7
-    PUSH 0x3f96b44                      ; 005f18fa | FLOAT_03f96b44
+    PUSH 0x3f96b44                      ; 005f18fa | g_WerewolfEyeGlowOffsetLeft
     PUSH EBX                            ; 005f18ff
     CALL core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005f1230 ; 005f1900
         ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005f1230(CWerewolf * this_ptr, CVector3f * eye_position)
     ADD ESP,0x8                         ; 005f1905
-    PUSH 0x3f96b50                      ; 005f1908 | FLOAT_03f96b50
+    PUSH 0x3f96b50                      ; 005f1908 | g_WerewolfEyeGlowOffsetRight
     PUSH EBX                            ; 005f190d
     CALL core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005f1230 ; 005f190e
         ;   XREF to: 005f1230 (UNCONDITIONAL_CALL)  ; void core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005f1230(CWerewolf * this_ptr, CVector3f * eye_position)

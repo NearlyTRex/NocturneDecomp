@@ -110,7 +110,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                       (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_c8);
             engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                      (g_CDemonRendererPtr2,g_LightTextures + 1);
+                      (g_CDemonRendererPtr2,&g_LightGlow.headlight);
             this_ptr_00 = g_CDemonRendererPtr2;
             local_12c.base.base.count = 4;
             local_12c.base.surface_normal.D.i = 0;

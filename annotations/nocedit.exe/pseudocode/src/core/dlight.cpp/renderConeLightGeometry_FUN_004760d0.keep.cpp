@@ -43,7 +43,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *pos
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,rotation,(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-            (g_CDemonRendererPtr2,g_LightTextures);
+            (g_CDemonRendererPtr2,&g_LightGlow.fuzz);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   iVar11 = 1;
   do {

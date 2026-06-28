@@ -2,9 +2,9 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19526
-  Named globals:             19515
-  DAT_ globals:              11
+Total globals analyzed:      19522
+  Named globals:             19510
+  DAT_ globals:              12
 Gaps found:                  1765
   With exact size bounds:    1674
   With estimated bounds:     91
@@ -719,7 +719,7 @@ ALL EXACT GAPS (1674) - size bounds are known precisely
           36 bytes  at 0x00662390  between g_CPlatformVTable              and g_CPodVTable
           36 bytes  at 0x00663708  between g_CTempleStoneTypeInfo         and FLOAT_0066372c
           36 bytes  at 0x00664e58  between g_CTVBatTypeInfo               and FLOAT_00664e7c
-          36 bytes  at 0x006700bc  between g_LightTexturesEnd             and g_CKeyFramedModelPoolDestructo
+          36 bytes  at 0x006700bc  between DAT_006700b8                   and g_CKeyFramedModelPoolDestructo
           36 bytes  at 0x0067037c  between g_CDoorClassVersion            and WatcomStaticDestructorNode_006
           36 bytes  at 0x00679358  between g_CEmitterClassVersion         and g_CEnemyClassVersion
           36 bytes  at 0x0067b52c  between SMRGLTextureBasic_0067b514     and g_FontTextureInfo
@@ -41071,7 +41071,7 @@ OVERLAPS (13365) - next global starts inside previous
     g_CActorDestinationClassVersion          int                  at 0x0066ef3c
   24 bytes overlap ~
     g_LightBitMaskLookup                     uchar[8]             at 0x0066fed0  size=32
-    g_LightTextures                          SMRGLTextureBasic[20 at 0x0066fed8
+    g_LightGlow                              SLightGlowTable      at 0x0066fed8
   112 bytes overlap
     g_ModelLastScaleInput                    char[116]            at 0x00670210  size=116
     g_ModelLastScaleInput+4                  undefined4           at 0x00670214

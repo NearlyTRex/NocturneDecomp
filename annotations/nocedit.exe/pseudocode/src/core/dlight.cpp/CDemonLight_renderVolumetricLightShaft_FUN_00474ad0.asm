@@ -56,7 +56,7 @@
 ;   double DOUBLE_0061f203 = 8192
 ;   float FLOAT_0065c900 = 256
 ;   float FLOAT_0065c908 = 0.00390625
-;   undefined4 g_LightTextures[1].base.type
+;   undefined4 g_LightGlow.headlight.base.type
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   undefined4 g_LightBufferPool[11][183800]
@@ -452,7 +452,7 @@ section .text
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0047504a
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0047504f
-    PUSH 0x66fef0                       ; 00475052 | g_LightTextures[1].base.type
+    PUSH 0x66fef0                       ; 00475052 | g_LightGlow.headlight.base.type
     MOV EDX,dword ptr [0x006703ec]      ; 00475057 | g_CDemonRendererPtr2
     PUSH EDX                            ; 0047505d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0047505e

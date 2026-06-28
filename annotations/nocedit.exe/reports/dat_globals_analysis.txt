@@ -2,20 +2,22 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 11
+Total DAT_ globals found: 12
 Filtered out (inside named data): 2
 Immediate constants (not real globals): 0
-Real globals remaining: 9
+Real globals remaining: 10
 
 Current type breakdown:
-  undefined4                     9
+  undefined4                     10
 
-DAT_ globals with type hints: 4 / 9
+DAT_ globals with type hints: 5 / 10
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (3)
+HIGH CONFIDENCE INFERENCES (4)
 --------------------------------------------------------------------------------
   DAT_00002424                    addr=00002424    current=undefined4      likely=float           refs=21
+  DAT_006700b8                    addr=006700b8    current=undefined4      likely=SMRGLTextureBasic *  refs=1
+    nearby: g_CKeyFramedModelPoolDestructorNode (WatcomStaticDestructorNode) at offset -40
   DAT_0068528c                    addr=0068528c    current=undefined4      likely=function_ptr    refs=1
     nearby: g_SpecialDeviceCleanupFunc (SPECIAL_DEVICE_CLEANUP_FUNC*) at offset +4
   DAT_02d831d6                    addr=02d831d6    current=undefined4      likely=byte            refs=3
@@ -47,6 +49,7 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_00800000                    addr=00800000    refs=12    type=undefined4    
   DAT_02d831d6                    addr=02d831d6    refs=3     type=undefined4      likely=byte  nearby: g_InputHistory(-1)
   DAT_00412b41                    addr=00412b41    refs=1     type=undefined4    
+  DAT_006700b8                    addr=006700b8    refs=1     type=undefined4      likely=SMRGLTextureBasic *  nearby: g_CKeyFramedModelPoolDestructorNode(-40)
   DAT_006852db                    addr=006852db    refs=1     type=undefined4      likely=byte  nearby: g_TempDirectoryBuffer(-1)
   DAT_0068528c                    addr=0068528c    refs=1     type=undefined4      likely=function_ptr  nearby: g_SpecialDeviceCleanupFunc(+4)
   DAT_00665f3a                    addr=00665f3a    refs=1     type=undefined4      nearby: g_DaysInMonth_Normal(+2)

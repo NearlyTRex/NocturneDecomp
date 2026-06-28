@@ -108,9 +108,6 @@ extern SMRGLTextureBasic g_Inventory3DTextureAtlas;
 extern SMRGLTextureBasic g_LoadingMoonGlowTexture;
 extern SMRGLTextureBasic SMRGLTextureBasic_0067d150;
 
-// SMRGLTextureBasic*
-extern SMRGLTextureBasic* g_LightTexturesEnd;
-
 // SMRGLTextureBasic[116]
 extern SMRGLTextureBasic g_BloodPoolAnimTextures[116];
 

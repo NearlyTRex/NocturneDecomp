@@ -3993,6 +3993,10 @@
       "type":"struct"
     },
     {
+      "name":"SLightGlowParams",
+      "type":"struct"
+    },
+    {
       "name":"SLineStrip",
       "type":"struct"
     },
@@ -4070,6 +4074,14 @@
     },
     {
       "name":"CTrail",
+      "type":"struct"
+    },
+    {
+      "name":"SLightGlowSprite",
+      "type":"struct"
+    },
+    {
+      "name":"SLightGlowTable",
       "type":"struct"
     },
     {
@@ -56698,6 +56710,90 @@
       "importable":true,
       "len":56,
       "name":"SLayerAction",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"flare_axis_pos",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"size",
+          "offset":4,
+          "type":"float"
+        },
+        {
+          "len":16,
+          "name":"uv",
+          "offset":8,
+          "type":"int[4]"
+        }
+      ],
+      "importable":true,
+      "len":24,
+      "name":"SLightGlowParams",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"texture",
+          "offset":0,
+          "type":"SMRGLTextureBasic"
+        },
+        {
+          "len":24,
+          "name":"params",
+          "offset":24,
+          "type":"SLightGlowParams"
+        }
+      ],
+      "importable":true,
+      "len":48,
+      "name":"SLightGlowSprite",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"fuzz",
+          "offset":0,
+          "type":"SMRGLTextureBasic"
+        },
+        {
+          "len":24,
+          "name":"headlight",
+          "offset":24,
+          "type":"SMRGLTextureBasic"
+        },
+        {
+          "len":432,
+          "name":"sprites",
+          "offset":48,
+          "type":"SLightGlowSprite[9]"
+        }
+      ],
+      "importable":true,
+      "len":480,
+      "name":"SLightGlowTable",
       "pack":false,
       "type":"struct"
     },

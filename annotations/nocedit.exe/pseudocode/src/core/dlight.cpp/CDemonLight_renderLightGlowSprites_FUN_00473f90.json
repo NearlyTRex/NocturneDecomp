@@ -166,37 +166,37 @@
     },
     {
       "addr": "0066ff08",
-      "name": "g_LightTextures[2].base.type",
+      "name": "g_LightGlow.sprites[0].texture.base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0066ff24",
-      "name": "g_LightTextures[3].base.count",
+      "name": "g_LightGlow.sprites[0].params.size",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0066ff28",
-      "name": "g_LightTextures[3].texture_name[0]",
+      "name": "g_LightGlow.sprites[0].params.uv[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0066ff2c",
-      "name": "g_LightTextures[3].texture_name[4]",
+      "name": "g_LightGlow.sprites[0].params.uv[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0066ff30",
-      "name": "g_LightTextures[3].texture_name[8]",
+      "name": "g_LightGlow.sprites[0].params.uv[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0066ff34",
-      "name": "g_LightTextures[3].texture_name[12]",
+      "name": "g_LightGlow.sprites[0].params.uv[3]",
       "type": "undefined4",
       "value": null
     },
@@ -348,7 +348,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 116,
+      "line": 115,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -357,7 +357,7 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 173,
+      "line": 172,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -366,12 +366,21 @@
     },
     {
       "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
-      "line": 180,
+      "line": 179,
       "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "this_ptr_00->vertex_buffer_ptr[3].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `texture` was initialized to the address of an array element's subfield (`texture = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*texture)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `texture->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 187,
+      "match": "texture = texture + N",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "texture = texture + 2;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

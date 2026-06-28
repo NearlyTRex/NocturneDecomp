@@ -214,9 +214,6 @@ SMRGLTextureBasic SMRGLTextureBasic_0067d150 = {
     .texture_name = "SPARK.RAW"
 };
 
-// SMRGLTextureBasic*
-SMRGLTextureBasic* g_LightTexturesEnd = nullptr;
-
 // SMRGLTextureBasic[116]
 SMRGLTextureBasic g_BloodPoolAnimTextures[116] = {
     {

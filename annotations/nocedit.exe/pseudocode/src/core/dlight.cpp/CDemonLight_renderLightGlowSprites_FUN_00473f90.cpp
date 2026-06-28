@@ -105,9 +105,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
                     1.525902e-05f) {
             iVar7 = (int)ROUND(ROUND(fVar9 * (float)65535));
             engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-            texture = g_LightTextures;
+            texture = &g_LightGlow.sprites[0].texture;
             do {
-              texture = texture + 2;
               fVar9 = 0.1111111f * 0.0 * (this_ptr->base).max_distance;
               fVar3 = fVar9 * (float)0.25;
               fVar9 = (float)texture[1].base.count * (float)0.5 *
@@ -192,6 +191,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               engine_drender_cpp_CDemonRenderer_renderOverlayDirect_FUN_0048bf10
                         (this_ptr_00,&local_138.base);
               engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
+              texture = texture + 2;
             } while( true );
           }
         }
