@@ -541,36 +541,20 @@ def run_clang_tidy(cpp_path, include_dir, timeout=180, repo_dir=None, deep=False
     """
     result = {'diagnostics': [], 'diagnostic_count': 0, 'error': None}
 
+    # Allowlist only the four checks the suspect mapper actually consumes
+    # (see WHITELIST in static_analysis_suspects.py). Every other bugprone-*/
+    # cert-* diagnostic is discarded downstream, so enabling the full families
+    # just runs hundreds of matchers over the header AST for nothing — that
+    # traversal, not parsing, was ~4s of the ~4.8s per-file clang-tidy cost.
+    # Restricting to these four is output-identical and ~5x faster. Each CAN
+    # surface a mis-typed param/var/field; cert-str34-c is clang-tidy's alias
+    # for bugprone-signed-char-misuse and need not be listed separately.
     checks = ','.join([
         '-*',
-        'bugprone-*',
-        'cert-*',
-        '-cert-err58-cpp',
-        '-cert-msc50-cpp',
-        '-cert-msc51-cpp',
-        '-bugprone-easily-swappable-parameters',
-        '-bugprone-narrowing-conversions',
-        '-bugprone-reserved-identifier',
-        '-bugprone-suspicious-include',
-        # Out of scope for faithful decompilation: this project reproduces the
-        # original binary's behavior, not idiomatic/safe/portable C++. The
-        # checks below flag either the original code's own (faithfully
-        # reproduced) idioms, decompiler-representation artifacts, or C code
-        # linted under C++ rules — none indicate a wrong type guess. We keep
-        # bugprone-integer-division, bugprone-swapped-arguments, and
-        # cert-flp30-c, which CAN surface a mis-typed param/var/field.
-        '-bugprone-assignment-in-if-condition',  # Ghidra emits `if (x = f())` pervasively
-        '-bugprone-switch-missing-default-case',  # adding a default would diverge from original
-        '-bugprone-branch-clone',                # control-flow fidelity, not typing
-        '-bugprone-multi-level-implicit-pointer-conversion',  # all targets are void*; legal in C, flagged only under -x c++
-        '-cert-err33-c',                         # original ignores return values
-        '-cert-err34-c',                         # atoi->strtol idiom modernization
-        '-cert-msc30-c',                         # rand() usage is original behavior
-        '-cert-msc32-c',                         # predictable srand seed is original behavior
-        '-cert-env33-c',                         # system() call is original behavior
-        '-cert-dcl50-cpp',                       # functions genuinely variadic in original
-        '-cert-dcl37-c',                         # reserved id __return_storage_ptr__ (Ghidra name)
-        '-cert-dcl51-cpp',                       # reserved id __return_storage_ptr__ (Ghidra name)
+        'bugprone-swapped-arguments',
+        'bugprone-integer-division',
+        'bugprone-signed-char-misuse',
+        'cert-flp30-c',
     ])
 
     try:
@@ -1022,8 +1006,8 @@ if __name__ == '__main__':
                         choices=['clang-analyzer', 'cppcheck', 'clang-tidy'],
                         default=None,
                         help='Tools to run (default: all available)')
-    parser.add_argument('--threads', type=int, default=8,
-                        help='Number of parallel analysis threads')
+    parser.add_argument('--threads', type=int, default=(os.cpu_count() or 8),
+                        help='Number of parallel analysis threads (default: CPU count)')
     parser.add_argument('--all', action='store_true',
                         help='Analyze all .cpp files, not just .keep.cpp')
     parser.add_argument('--deep', action='store_true',
