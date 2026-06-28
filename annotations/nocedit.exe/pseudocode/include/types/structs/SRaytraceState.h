@@ -17,7 +17,7 @@ typedef struct SRaytraceState {
     CVector3f saved_ray_origin; // 0x44
     CVector3f saved_ray_target; // 0x50
     float raycast_distance; // 0x5c
-    int voxel_distance; // 0x60
+    float voxel_distance; // 0x60
     CVector3f voxel_hit_point; // 0x64
     int voxel_surface_type; // 0x70
     int saved_skip_exact_collision; // 0x74

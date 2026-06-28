@@ -97,7 +97,7 @@ typedef struct CDemonSet {
     int collision_flag; // 0x15f698
     struct CDemonActor* ignore_list[10]; // 0x15f69c
     float raycast_distance; // 0x15f6c4
-    int voxel_distance; // 0x15f6c8
+    float voxel_distance; // 0x15f6c8
     CVector3f voxel_hit_point; // 0x15f6cc
     int voxel_surface_type; // 0x15f6d8
     int skip_exact_collisions; // 0x15f6dc

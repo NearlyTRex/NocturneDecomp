@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 543
+// Structs : 544
 
 #include "nocturne.h"
 
@@ -9947,6 +9947,16 @@ static_assert(__builtin_offsetof(SS3DFaceMatch, texture_index) == 20,
               "offsetof(SS3DFaceMatch, texture_index) != 20");
 static_assert(__builtin_offsetof(SS3DFaceMatch, vertices) == 24,
               "offsetof(SS3DFaceMatch, vertices) != 24");
+
+// ---- SScanlineSpans (132 bytes) ----
+static_assert(sizeof(SScanlineSpans) == 132,
+              "sizeof(SScanlineSpans) != 132");
+static_assert(__builtin_offsetof(SScanlineSpans, span_count) == 0,
+              "offsetof(SScanlineSpans, span_count) != 0");
+static_assert(__builtin_offsetof(SScanlineSpans, starts) == 4,
+              "offsetof(SScanlineSpans, starts) != 4");
+static_assert(__builtin_offsetof(SScanlineSpans, lengths) == 68,
+              "offsetof(SScanlineSpans, lengths) != 68");
 
 // ---- SScrape (52 bytes) ----
 static_assert(sizeof(SScrape) == 52,

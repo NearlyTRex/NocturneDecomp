@@ -23,7 +23,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_refinedRaycast_FUN_005726c0(CDemonSet 
   float fVar4;
   float fVar8;
   
-  if (this_ptr->raycast_distance < (float)this_ptr->voxel_distance) {
+  if (this_ptr->raycast_distance < this_ptr->voxel_distance) {
     if (&this_ptr->collision_normal != &this_ptr->voxel_hit_point) {
       this_ptr->collision_normal = this_ptr->voxel_hit_point;
     }
@@ -31,7 +31,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_refinedRaycast_FUN_005726c0(CDemonSet 
     this_ptr->ground_type = this_ptr->voxel_surface_type;
     fVar9 = core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
                       (this_ptr,this_ptr->raycast_distance,ray_origin,&this_ptr->ray_target,
-                       (float)this_ptr->voxel_distance);
+                       this_ptr->voxel_distance);
     this_ptr->raycast_distance = fVar9;
     if (this_ptr->raycast_distance <= 1.0) {
       fVar1 = (this_ptr->ray_target).y;

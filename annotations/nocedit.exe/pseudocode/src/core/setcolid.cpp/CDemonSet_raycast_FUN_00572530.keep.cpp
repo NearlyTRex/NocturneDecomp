@@ -33,16 +33,16 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(CDemonSet *this_p
   fVar1 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
                     (&g_CDemonRaytraceInstance,ray_origin,ray_target,out_intersection_point,
                      &this_ptr->voxel_surface_type);
-  this_ptr->voxel_distance = (int)fVar1;
+  this_ptr->voxel_distance = fVar1;
   if (&this_ptr->collision_normal != out_intersection_point) {
     this_ptr->collision_normal = *out_intersection_point;
   }
   this_ptr->ground_type = this_ptr->voxel_surface_type;
-  if ((float)this_ptr->voxel_distance < 0.0) {
-    this_ptr->voxel_distance = 0x3f8147ae;
+  if (this_ptr->voxel_distance < 0.0) {
+    this_ptr->voxel_distance = 1.01f;
   }
   fVar9 = core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
-                    (this_ptr,-1.0,ray_origin,ray_target,(float)this_ptr->voxel_distance);
+                    (this_ptr,-1.0,ray_origin,ray_target,this_ptr->voxel_distance);
   this_ptr->raycast_distance = fVar9;
   if (this_ptr->raycast_distance <= 1.0) {
     fVar1 = ray_target->y;
