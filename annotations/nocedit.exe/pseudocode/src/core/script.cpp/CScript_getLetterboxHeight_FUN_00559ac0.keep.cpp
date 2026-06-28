@@ -10,6 +10,8 @@
 int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_00559ac0(CScript *this_ptr)
 
 {
-  return (int)ROUND(ROUND((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
-                          g_ScriptTimeScale));
+  int iVar1;
+
+  iVar1 = (g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2;
+  return (int)ROUND(ROUND((float)iVar1 * g_ScriptTimeScale));
 }

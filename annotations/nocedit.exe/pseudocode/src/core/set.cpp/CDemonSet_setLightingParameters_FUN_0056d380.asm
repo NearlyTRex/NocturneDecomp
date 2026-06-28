@@ -19,7 +19,7 @@
 ;   core_fire.cpp_CStake_render_FUN_004c0140 at 004c01f4
 ;   core_gore.cpp_CGore_renderParticles_FUN_004ed7b0 at 004ed7e8
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0056aca0 at 0056ad28
-;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056cbcf
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990 at 0056cbcf
 ;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60 at 0056ce1b
 ;   core_set.cpp_CDemonSet_renderTransparentActors_FUN_0056cf00 at 0056cfbb
 ;   ... and 1 more

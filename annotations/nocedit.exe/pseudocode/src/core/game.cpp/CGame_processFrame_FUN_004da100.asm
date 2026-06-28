@@ -360,8 +360,8 @@ section .text
         ;   XREF to: 004da44f (CONDITIONAL_JUMP)  ; LAB_004da44f
     MOV EDI,dword ptr [0x006810c8]      ; 004da440 | g_CDemonSetPtr
     PUSH EDI                            ; 004da446 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 ; 004da447
-        ;   XREF to: 0056c990 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990 ; 004da447
+        ;   XREF to: 0056c990 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004da44c
     MOV EAX,dword ptr [EBP + 0x92]      ; 004da44f
         ;   Label: LAB_004da44f

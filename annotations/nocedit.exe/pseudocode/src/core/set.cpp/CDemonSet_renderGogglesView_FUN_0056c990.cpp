@@ -1,14 +1,14 @@
-// Name: core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990
+// Name: core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990
 // Address: 0056c990
 // Address Range: [[0056c990, 0056cd56]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSet *this_ptr)
+// Signature: void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSet *this_ptr)
+void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *this_ptr)
 
 {
   CSkeleton *this_ptr_02;

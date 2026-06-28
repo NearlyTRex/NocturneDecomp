@@ -1,13 +1,13 @@
-// Name: core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990
+// Name: core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990
 // Address: 0056c990
 // MANUAL RECONSTRUCTION
 // Address Range: [[0056c990, 0056cd56]]
 // Convention: __cdecl
-// Signature: void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSet *this_ptr)
+// Signature: void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSet *this_ptr)
+void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *this_ptr)
 
 {
   CSkeleton *this_ptr_02;
@@ -98,7 +98,7 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
   }
   g_UseExternalRenderer = 0;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (g_CDemonRendererPtr2,(CVector3f *)&local_2c);
+            (g_CDemonRendererPtr2,&local_2c);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,32.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2,&local_20)
   ;

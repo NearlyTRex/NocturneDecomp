@@ -9,7 +9,7 @@
 ;
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056ab6b
-;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056cad7
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990 at 0056cad7
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80 at 0056bf82
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 at 0056b5e5
 ;

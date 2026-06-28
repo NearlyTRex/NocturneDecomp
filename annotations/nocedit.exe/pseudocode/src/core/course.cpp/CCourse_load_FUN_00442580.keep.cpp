@@ -45,7 +45,7 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00442580(CCourse *this_ptr,char *f
       iVar4 = iVar4 + 1;
       _fscanf(file,"%f,%f,%f, %f,%f,%f,%f\n",
                  &frame->pos.x,&frame->pos.y,&frame->pos.z,
-                 &frame->orient.x,&frame->orient.y,&frame->orient.z,&frame->orient.w);
+                 &frame->orient.w,&frame->orient.x,&frame->orient.y,&frame->orient.z);
     } while (iVar4 < this_ptr->len);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",0x9e);

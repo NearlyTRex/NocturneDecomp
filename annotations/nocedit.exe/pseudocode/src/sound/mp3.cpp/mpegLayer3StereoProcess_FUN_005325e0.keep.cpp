@@ -49,6 +49,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
   float fVar2;
   short sVar3;
   int iVar5;
+  int iVar1;
   float (*pafVar6) [18];
   float *pfVar4;
   int iVar7;
@@ -251,11 +252,11 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
               // 0xf8 = sizeof(SMpegLayer3ScalefactorGranule); steps to granule[1]
               // (right channel) long_scalefactors[band].
               sVar2 = *(short *)(local_a8 + 0xf8);
-              is_pos_per_sample[iVar6 / 2] = sVar2;
+              iVar1 = iVar6 / 2; is_pos_per_sample[iVar1] =sVar2;
               if (sVar2 != 7) {
                 if (is_mpeg2_lsf == 0) {
                   // MPEG-1: tan(pos * pi/12), pi/12 ≈ 0.2617993878
-                  fVar13 = (float10)fptan((float10)is_pos_per_sample[iVar6 / 2] *
+                  fVar13 = (float10)fptan((float10)is_pos_per_sample[iVar1] *
                                           (float10)0.26179938779914902);
                   is_pos_tan[local_90 / 4] = (float)fVar13;
                 }
@@ -356,10 +357,10 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
                 local_80 = iVar11 * 4;
                 do {
                   sVar3 = *(short *)(local_b0 + 0x154);
-                  is_pos_per_sample[iVar6 / 2] = sVar3;
+                  iVar1 = iVar6 / 2; is_pos_per_sample[iVar1] =sVar3;
                   if (sVar3 != 7) {
                     if (is_mpeg2_lsf == 0) {
-                      fVar14 = (float10)fptan((float10)is_pos_per_sample[iVar6 / 2] *
+                      fVar14 = (float10)fptan((float10)is_pos_per_sample[iVar1] *
                                               (float10)0.26179938779914902);
                       is_pos_tan[local_80 / 4] = (float)fVar14;
                     }
@@ -465,10 +466,10 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
                 // [window][sfb] — 0x55 ints is 0x154 bytes (granule[0] size +
                 // short_scalefactors offset).
                 iVar9 = local_c8[0x55];
-                is_pos_per_sample[iVar6 / 2] = (short)iVar9;
+                iVar1 = iVar6 / 2; is_pos_per_sample[iVar1] =(short)iVar9;
                 if ((short)iVar9 != 7) {
                   if (is_mpeg2_lsf == 0) {
-                    fVar14 = (float10)fptan((float10)is_pos_per_sample[iVar6 / 2] *
+                    fVar14 = (float10)fptan((float10)is_pos_per_sample[iVar1] *
                                             (float10)0.26179938779914902);
                     is_pos_tan[local_70 / 4] = (float)fVar14;
                   }
@@ -555,10 +556,10 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
                 local_64 = iVar11 * 4;
                 do {
                   iVar9 = local_c4[0x3e];
-                  is_pos_per_sample[iVar6 / 2] = (short)iVar9;
+                  iVar1 = iVar6 / 2; is_pos_per_sample[iVar1] =(short)iVar9;
                   if ((short)iVar9 != 7) {
                     if (is_mpeg2_lsf == 0) {
-                      fVar14 = (float10)fptan((float10)is_pos_per_sample[iVar6 / 2] *
+                      fVar14 = (float10)fptan((float10)is_pos_per_sample[iVar1] *
                                               (float10)0.26179938779914902);
                       is_pos_tan[local_64 / 4] = (float)fVar14;
                     }

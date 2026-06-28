@@ -12,6 +12,7 @@ double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
 {
   uint uVar2;
   uint uVar1;
+  uint uVar3;
   char *pcVar3;
   char acStack_1b0 [408];
   DWORD local_18;
@@ -37,5 +38,6 @@ double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
     return -1.0;
   }
   uVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(slot->sample);
-  return (double)(local_14 / uVar1);
+  uVar3 = local_14 / uVar1;
+  return (double)uVar3;
 }

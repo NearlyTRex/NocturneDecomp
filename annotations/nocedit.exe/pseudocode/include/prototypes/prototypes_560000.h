@@ -135,7 +135,7 @@ void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(CDemonSet *this_pt
 void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr,int skip_prerender);
-void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_0056cf00(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(CDemonSet *this_ptr,CDemonLight *light);

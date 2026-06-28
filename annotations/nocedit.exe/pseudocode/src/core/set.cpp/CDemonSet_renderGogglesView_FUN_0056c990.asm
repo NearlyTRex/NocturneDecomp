@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSet *this_ptr)
+; void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(CDemonSet *this_ptr)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
@@ -58,7 +58,7 @@
 section .text
 
     PUSH EBX                            ; 0056c990
-        ;   Label: core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990
+        ;   Label: core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990
     PUSH ESI                            ; 0056c991
     PUSH EDI                            ; 0056c992
     PUSH EBP                            ; 0056c993

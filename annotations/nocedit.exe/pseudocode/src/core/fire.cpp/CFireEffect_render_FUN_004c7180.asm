@@ -8,7 +8,7 @@
 ;
 ; XREF[4]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a375
-;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056cb86
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990 at 0056cb86
 ;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c511
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80 at 0056c072
 ;

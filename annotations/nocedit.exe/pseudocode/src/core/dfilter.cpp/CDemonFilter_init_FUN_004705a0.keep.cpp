@@ -11,6 +11,7 @@ void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_
 
 {
   float fVar3;
+  int iVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -29,8 +30,9 @@ void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_
       if (0 < this_ptr->size) {
         do {
           iVar3 = this_ptr->size / 2;
+          iVar2 = this_ptr->count / 2;
           fVar1 = (float)(iVar3 - iVar4);
-          fVar2 = (float)(this_ptr->count / 2 - iVar5);
+          fVar2 = (float)(iVar2 - iVar5);
           local_28 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) / (float)iVar3;
           if (1.0 < local_28) {
             local_28 = 1.0;

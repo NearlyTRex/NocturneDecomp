@@ -67,9 +67,9 @@ void __cdecl CDemonSet::renderStaticLights(CDemonSet *this_ptr);
 // Address: 0056c1a0
 void __cdecl CDemonSet::renderScene(CDemonSet *this_ptr,int skip_prerender);
 
-// Original: core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990
+// Original: core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990
 // Address: 0056c990
-void __cdecl CDemonSet::renderFlashlightShadow(CDemonSet *this_ptr);
+void __cdecl CDemonSet::renderGogglesView(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60
 // Address: 0056cd60

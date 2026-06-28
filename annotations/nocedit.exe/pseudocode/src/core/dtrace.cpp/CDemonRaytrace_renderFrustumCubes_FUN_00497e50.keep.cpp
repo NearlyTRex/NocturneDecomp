@@ -21,6 +21,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
   int iVar11;
   int iVar4;
   int iVar5;
+  int iVar12;
   int frustum_corners[15];
   CVector3i local_150;
   int local_108;
@@ -180,14 +181,15 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
   iVar2 = -999;
   iVar5 = -999;
   do {
+    iVar12 = iVar3 / 4;
     iVar1 = (int)ROUND(ROUND((double)iVar9 +
-                             (double)frustum_corners[iVar3 / 4] /
+                             (double)frustum_corners[iVar12] /
                              ((double)(this_ptr->cell_size).x * 256)));
     iVar6 = (int)ROUND(ROUND((double)iVar10 +
-                             (double)frustum_corners[iVar3 / 4 + 1] /
+                             (double)frustum_corners[iVar12 + 1] /
                              ((double)(this_ptr->cell_size).y * 256)));
     iVar8 = (int)ROUND(ROUND((double)iVar11 +
-                             (double)frustum_corners[iVar3 / 4 + 2] /
+                             (double)frustum_corners[iVar12 + 2] /
                              ((double)(this_ptr->cell_size).z * 256)));
     if (iVar1 < local_108) {
       local_108 = iVar1;

@@ -37,6 +37,15 @@ set(SDL_SHARED ON  CACHE BOOL "" FORCE)
 set(SDL_STATIC OFF CACHE BOOL "" FORCE)
 set(SDL_TEST   OFF CACHE BOOL "" FORCE)
 set(SDL2_DISABLE_INSTALL ON CACHE BOOL "" FORCE)
+# Optional input/IME backends that need build-time -dev HEADERS (libudev.h,
+# dbus/dbus.h, ibus). We never install *-dev:i386 (multilib hazard), and these
+# features — joystick hotplug, dbus screensaver/IME — are unused by this render/
+# audio harness. Force them off so the from-source 32-bit SDL2 build doesn't
+# depend on those headers being present on the host.
+set(SDL_LIBUDEV OFF CACHE BOOL "" FORCE)
+set(SDL_DBUS    OFF CACHE BOOL "" FORCE)
+set(SDL_IBUS    OFF CACHE BOOL "" FORCE)
+set(SDL_HIDAPI  OFF CACHE BOOL "" FORCE)
 FetchContent_Declare(sdl2
     GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
     GIT_TAG        ${NOCTURNE_SDL2_TAG}

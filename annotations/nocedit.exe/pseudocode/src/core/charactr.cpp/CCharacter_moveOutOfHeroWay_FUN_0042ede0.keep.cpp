@@ -14,6 +14,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacte
   float fVar2;
   bool bVar3;
   float fVar4;
+  int iVar1;
   int iVar3;
   CHero *pCVar4;
   CVector3f *pCVar5;
@@ -104,7 +105,8 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacte
       pCVar7 = &this_ptr->move_away_target;
       uStack_18 = 0;
       do {
-        fStack_20 = (float)((int)uStack_18 / 2) * (float)1.57079632675 * (float)0.25;
+        iVar1 = (int)uStack_18 / 2;
+        fStack_20 = (float)iVar1 * (float)1.57079632675 * (float)0.25;
         if ((uStack_18 & 1) != 0) {
           fStack_20 = -fStack_20;
         }

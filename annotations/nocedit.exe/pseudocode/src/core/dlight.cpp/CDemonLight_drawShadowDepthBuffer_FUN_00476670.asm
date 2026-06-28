@@ -19,7 +19,7 @@
 ; ushort *         Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056cc86
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990 at 0056cc86
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

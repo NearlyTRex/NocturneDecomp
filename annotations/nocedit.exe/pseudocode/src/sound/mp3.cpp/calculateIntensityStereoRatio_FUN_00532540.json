@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 57,
     "complexity_score": 23,
@@ -173,44 +173,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "calculateIntensityStereoRatio_FUN_00532540.cpp",
-    "clang_tidy_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_name": "bugprone-integer-division",
-          "column": 44,
-          "line": 23,
-          "message": "result of integer division used in a floating point context; possible loss of precision"
-        },
-        {
-          "check_name": "bugprone-integer-division",
-          "column": 42,
-          "line": 28,
-          "message": "result of integer division used in a floating point context; possible loss of precision"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "result of integer division used in a floating point context; possible loss of precision",
-      "line": 23,
-      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
-      "severity": "mild",
-      "text": "fVar1 = pow((float10)ratio,(float10)(intensity_position / 2));",
-      "type": "static_integer_division"
-    },
-    {
-      "description": "result of integer division used in a floating point context; possible loss of precision",
-      "line": 28,
-      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
-      "severity": "mild",
-      "text": "fVar2 = pow((float10)ratio,(float10)((intensity_position + 1) / 2));",
-      "type": "static_integer_division"
-    }
-  ]
+  "suspects": []
 }

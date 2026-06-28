@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 544
+// Structs : 547
 
 #include "nocturne.h"
 
@@ -8711,6 +8711,34 @@ static_assert(__builtin_offsetof(SLayerAction, frame_count) == 48,
               "offsetof(SLayerAction, frame_count) != 48");
 static_assert(__builtin_offsetof(SLayerAction, duration) == 52,
               "offsetof(SLayerAction, duration) != 52");
+
+// ---- SLightGlowParams (24 bytes) ----
+static_assert(sizeof(SLightGlowParams) == 24,
+              "sizeof(SLightGlowParams) != 24");
+static_assert(__builtin_offsetof(SLightGlowParams, flare_axis_pos) == 0,
+              "offsetof(SLightGlowParams, flare_axis_pos) != 0");
+static_assert(__builtin_offsetof(SLightGlowParams, size) == 4,
+              "offsetof(SLightGlowParams, size) != 4");
+static_assert(__builtin_offsetof(SLightGlowParams, uv) == 8,
+              "offsetof(SLightGlowParams, uv) != 8");
+
+// ---- SLightGlowSprite (48 bytes) ----
+static_assert(sizeof(SLightGlowSprite) == 48,
+              "sizeof(SLightGlowSprite) != 48");
+static_assert(__builtin_offsetof(SLightGlowSprite, texture) == 0,
+              "offsetof(SLightGlowSprite, texture) != 0");
+static_assert(__builtin_offsetof(SLightGlowSprite, params) == 24,
+              "offsetof(SLightGlowSprite, params) != 24");
+
+// ---- SLightGlowTable (480 bytes) ----
+static_assert(sizeof(SLightGlowTable) == 480,
+              "sizeof(SLightGlowTable) != 480");
+static_assert(__builtin_offsetof(SLightGlowTable, fuzz) == 0,
+              "offsetof(SLightGlowTable, fuzz) != 0");
+static_assert(__builtin_offsetof(SLightGlowTable, headlight) == 24,
+              "offsetof(SLightGlowTable, headlight) != 24");
+static_assert(__builtin_offsetof(SLightGlowTable, sprites) == 48,
+              "offsetof(SLightGlowTable, sprites) != 48");
 
 // ---- SLineStrip (8 bytes) ----
 static_assert(sizeof(SLineStrip) == 8,

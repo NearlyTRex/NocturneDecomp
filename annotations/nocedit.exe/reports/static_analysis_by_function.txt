@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 32
-  Total diagnostics: 93
+  Functions with findings: 25
+  Total diagnostics: 77
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 30, raw .cpp files: 2
+  .keep.cpp files: 24, raw .cpp files: 1
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -85,36 +85,18 @@ core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690  [.keep] [Cppcheck (
   Line 1730: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0  [.keep] [Clang-Tidy (quick)]
-  File: sound/mp3.cpp  (4 diagnostics)
-
-  Line  258: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-  Line  362: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-  Line  471: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-  Line  561: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-
-----------------------------------------------------------------------------------------------------
-core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0  [.keep] [Clang-Tidy (quick)]
-  File: core/charactr.cpp  (3 diagnostics)
-
-  Line   73: [cert-flp30-c] loop induction expression should not have floating-point type
-  Line  107: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-  Line  116: [cert-flp30-c] loop induction expression should not have floating-point type
-
-----------------------------------------------------------------------------------------------------
-core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50  [.keep] [Clang-Tidy (quick)]
-  File: core/dtrace.cpp  (3 diagnostics)
-
-  Line  184: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-  Line  187: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-  Line  190: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-
-----------------------------------------------------------------------------------------------------
 core_chain.cpp_fastSqrt_FUN_00431350  [.keep] [Cppcheck (quick)]
   File: core/chain.cpp  (2 diagnostics)
 
   Line   13: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
   Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
+core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0  [.keep] [Clang-Tidy (quick)]
+  File: core/charactr.cpp  (2 diagnostics)
+
+  Line   74: [cert-flp30-c] loop induction expression should not have floating-point type
+  Line  118: [cert-flp30-c] loop induction expression should not have floating-point type
 
 ----------------------------------------------------------------------------------------------------
 core_cloth.cpp_fastInvSqrt_FUN_0043e2a0  [.keep] [Cppcheck (quick)]
@@ -124,20 +106,6 @@ core_cloth.cpp_fastInvSqrt_FUN_0043e2a0  [.keep] [Cppcheck (quick)]
   Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
-core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210  [.keep] [Clang-Tidy (quick)]
-  File: core/dlight.cpp  (2 diagnostics)
-
-  Line   70: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-  Line   72: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-
-----------------------------------------------------------------------------------------------------
-core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0  [.keep] [Clang-Tidy (quick)]
-  File: core/script.cpp  (2 diagnostics)
-
-  Line   13: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-  Line   13: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-
-----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppcheck (quick)]
   File: core/skeledit.cpp  (2 diagnostics)
 
@@ -145,23 +113,10 @@ core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppch
   Line   19: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540  [.cpp] [Clang-Tidy (quick)]
-  File: sound/mp3.cpp  (2 diagnostics)
-
-  Line   23: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-  Line   28: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
-
-----------------------------------------------------------------------------------------------------
 core_cloth.cpp_CCloth_boneEditor_FUN_0043c880  [.keep] [Clang-Tidy (quick)]
   File: core/cloth.cpp  (1 diagnostics)
 
   Line   90: [cert-flp30-c] loop induction expression should not have floating-point type
-
-----------------------------------------------------------------------------------------------------
-core_dfilter.cpp_CDemonFilter_init_FUN_004705a0  [.keep] [Clang-Tidy (quick)]
-  File: core/dfilter.cpp  (1 diagnostics)
-
-  Line   33: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
 
 ----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170  [.keep] [Cppcheck (quick)]
@@ -252,12 +207,6 @@ sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
   Line   29: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
-
-----------------------------------------------------------------------------------------------------
-sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60  [.keep] [Clang-Tidy (quick)]
-  File: sound/snddx.cpp  (1 diagnostics)
-
-  Line   40: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660  [.keep] [Cppcheck (quick)]

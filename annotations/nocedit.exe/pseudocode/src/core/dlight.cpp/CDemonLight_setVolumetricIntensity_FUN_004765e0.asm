@@ -10,7 +10,7 @@
 ; XREF[7]:
 ;   core_elephant.cpp_CElephantGun_process_FUN_004a7070 at 004a7130
 ;   core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0 at 00505b61
-;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056ca95
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990 at 0056ca95
 ;   core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 at 0057b00f
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00586bf0 at 00586c56
 ;   core_shotgun.cpp_CShotgun_process_FUN_00587f70 at 00588030

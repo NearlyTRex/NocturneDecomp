@@ -20,6 +20,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   CDemonRenderer *this_ptr_00;
   float fVar14;
   int iVar2;
+  int iVar4;
+  int iVar5;
   float10 fVar3;
   float10 fVar4;
   float10 fVar15;
@@ -67,9 +69,11 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
         fVar16 = (float10)fcos(fVar9);
         fVar7 = (float10)(float)fVar3;
         fVar8 = (float)(fVar15 * fVar7);
-        fVar11 = (float)(this_ptr->shadow_map_height / 2);
+        iVar4 = this_ptr->shadow_map_height / 2;
+        fVar11 = (float)iVar4;
         fVar10 = (float)(fVar5 * fVar7);
-        fVar14 = (float)(this_ptr->shadow_map_width / 2);
+        iVar5 = this_ptr->shadow_map_width / 2;
+        fVar14 = (float)iVar5;
         fVar11 = (float)this_ptr->shadow_depth_buffer
                         [(int)ROUND(ROUND(fVar11 - fVar11 * fVar8)) * this_ptr->shadow_map_width +
                          (int)ROUND(ROUND(fVar14 * fVar10 + fVar14))] * (float)0.00390625;

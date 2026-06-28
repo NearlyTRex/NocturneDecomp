@@ -17,7 +17,7 @@
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70 at 0052b144
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a395
 ;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0056aca0 at 0056ad98
-;   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 at 0056cb5a
+;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0056c990 at 0056cb5a
 ;   ... and 9 more
 ;
 ; Referenced Globals:

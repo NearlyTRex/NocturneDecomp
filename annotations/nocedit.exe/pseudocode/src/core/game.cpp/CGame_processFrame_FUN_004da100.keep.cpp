@@ -127,7 +127,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
     if (this_ptr->skip_frame_render == 0) {
       wincore_windll_cpp_lockFrame_FUN_005b7210();
       if (this_ptr->goggles_active != 0) {
-        core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(g_CDemonSetPtr);
+        core_set_cpp_CDemonSet_renderGogglesView_FUN_0056c990(g_CDemonSetPtr);
       }
       if (((this_ptr->developer_mode_enabled != 0) ||
           (pcVar7 = getenv("SPOOKHOUSE"), pcVar7 != (char *)0x0)) &&

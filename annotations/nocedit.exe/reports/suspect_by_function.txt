@@ -5,17 +5,16 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6438 (99.8%)
-With suspects: 16
-Total suspects: 26
+Clean: 6445 (99.9%)
+With suspects: 9
+Total suspects: 10
 
 ====================================================================================================
-core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 (3 suspects)
+core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 (2 suspects)
   File: core/charactr.cpp
 ====================================================================================================
-  Line 73 [static_float_loop_induction]: fStack_110 = fStack_110 + -1.0f) {
-  Line 107 [static_integer_division]: fStack_20 = (float)((int)uStack_18 / 2) * (float)1.57079632675 * (float)0.25;
-  Line 116 [static_float_loop_induction]: fStack_118 = fStack_118 + -1.0f) {
+  Line 74 [static_float_loop_induction]: fStack_110 = fStack_110 + -1.0f) {
+  Line 118 [static_float_loop_induction]: fStack_118 = fStack_118 + -1.0f) {
 
 ====================================================================================================
 core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (1 suspect)
@@ -24,44 +23,16 @@ core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (1 suspect)
   Line 90 [static_float_loop_induction]: fStack_14 = fStack_14 - fStack_1c) {
 
 ====================================================================================================
-core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 (1 suspect)
-  File: core/dfilter.cpp
-====================================================================================================
-  Line 33 [static_integer_division]: fVar2 = (float)(this_ptr->count / 2 - iVar5);
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210 (2 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 70 [static_integer_division]: fVar11 = (float)(this_ptr->shadow_map_height / 2);
-  Line 72 [static_integer_division]: fVar14 = (float)(this_ptr->shadow_map_width / 2);
-
-====================================================================================================
 core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170 (1 suspect)
   File: core/dtrace.cpp
 ====================================================================================================
   Line 44 [static_null_pointer_redundant_check]: if ((pCVar3->voxel_buffer1 != (SVoxelGrid *)0x0) &&
 
 ====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (3 suspects)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 184 [static_integer_division]: (double)frustum_corners[iVar3 / 4] /
-  Line 187 [static_integer_division]: (double)frustum_corners[iVar3 / 4 + 1] /
-  Line 190 [static_integer_division]: (double)frustum_corners[iVar3 / 4 + 2] /
-
-====================================================================================================
 core_game.cpp_CGame_finishAct_FUN_004e3b90 (1 suspect)
   File: core/game.cpp
 ====================================================================================================
   Line 45 [static_float_loop_induction]: for (local_550 = 5.0; 0.0 < local_550; local_550 = local_550 - this_ptr->delta_time_float) {
-
-====================================================================================================
-core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0 (2 suspects)
-  File: core/script.cpp
-====================================================================================================
-  Line 13 [static_integer_division]: return (int)ROUND(ROUND((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
-  Line 13 [static_integer_division]: return (int)ROUND(ROUND((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
 
 ====================================================================================================
 shape_design.c_findVertexListInModel_FUN_00468000 (1 suspect)
@@ -80,28 +51,6 @@ shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0 (1 suspect)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 27 [static_memleak]: return (CComplexPolygon *)0x0;
-
-====================================================================================================
-sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540 (2 suspects)
-  File: sound/mp3.cpp
-====================================================================================================
-  Line 23 [static_integer_division]: fVar1 = pow((float10)ratio,(float10)(intensity_position / 2));
-  Line 28 [static_integer_division]: fVar2 = pow((float10)ratio,(float10)((intensity_position + 1) / 2));
-
-====================================================================================================
-sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (4 suspects)
-  File: sound/mp3.cpp
-====================================================================================================
-  Line 258 [static_integer_division]: fVar13 = (float10)fptan((float10)is_pos_per_sample[iVar6 / 2] *
-  Line 362 [static_integer_division]: fVar14 = (float10)fptan((float10)is_pos_per_sample[iVar6 / 2] *
-  Line 471 [static_integer_division]: fVar14 = (float10)fptan((float10)is_pos_per_sample[iVar6 / 2] *
-  Line 561 [static_integer_division]: fVar14 = (float10)fptan((float10)is_pos_per_sample[iVar6 / 2] *
-
-====================================================================================================
-sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60 (1 suspect)
-  File: sound/snddx.cpp
-====================================================================================================
-  Line 40 [static_integer_division]: return (double)(local_14 / uVar1);
 
 ====================================================================================================
 sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660 (1 suspect)
