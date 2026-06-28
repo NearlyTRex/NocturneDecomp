@@ -19,7 +19,7 @@ void __cdecl engine_2d_c_drawStringMasked_FUN_00402030(char *text,int x_pos,int 
   iVar5 = 0;
   if (0 < len) {
     do {
-      bVar2 = *text;
+      bVar2 = (uchar)*text;
       if ((0x1f < bVar2) && (bVar2 < 0x100)) {
         iVar3 = engine_2d_c_drawCharacterMasked_FUN_00401900((uint)bVar2,x_pos,y_pos);
         x_pos = x_pos + iVar3;

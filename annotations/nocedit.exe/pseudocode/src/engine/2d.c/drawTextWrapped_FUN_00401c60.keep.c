@@ -26,7 +26,7 @@ void __cdecl engine_2d_c_drawTextWrapped_FUN_00401c60(char *text,int x_start,int
       if ((*text == 10) && (y_start = y_start + 0xb, iVar6 = x_start, y_max < y_start)) {
         return;
       }
-      bVar2 = *text;
+      bVar2 = (uchar)*text;
       if ((0x1f < bVar2) && (bVar2 < 0x100)) {
         iVar3 = engine_2d_c_drawCharacter_FUN_00401610((uint)bVar2,iVar6,y_start);
         iVar6 = iVar6 + iVar3;

@@ -118,30 +118,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "drawStringMasked_FUN_00402030.keep.c",
-    "clang_tidy_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_name": "bugprone-signed-char-misuse",
-          "column": 15,
-          "line": 22,
-          "message": "'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first."
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.",
-      "line": 22,
-      "match": "Clang-Tidy: signed char widened to unsigned (signedness data-model smell)",
-      "severity": "moderate",
-      "text": "bVar2 = *text;",
-      "type": "static_signed_char_misuse"
-    }
-  ]
+  "suspects": []
 }

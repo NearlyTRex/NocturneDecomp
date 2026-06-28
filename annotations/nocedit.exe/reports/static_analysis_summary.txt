@@ -9,27 +9,25 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 40
+  Functions with static analysis data: 32
   Functions flagged by multiple tools: 0
 
   Clang-Tidy (quick):
-    Files analyzed:      17
-    Files with findings: 17
-    Total diagnostics:   28
+    Files analyzed:      10
+    Files with findings: 10
+    Total diagnostics:   20
 
   Cppcheck (quick):
-    Files analyzed:      23
-    Files with findings: 23
-    Total diagnostics:   74
+    Files analyzed:      22
+    Files with findings: 22
+    Total diagnostics:   73
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
 ====================================================================================================
 
   bugprone-integer-division                                  16  [likely decompiler artifact]
-  bugprone-signed-char-misuse                                 5
   cert-flp30-c                                                4
-  bugprone-swapped-arguments                                  3
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
@@ -39,5 +37,4 @@ TOP FINDINGS - Cppcheck (quick)
   nullPointerRedundantCheck                                   5
   invalidPointerCast                                          4
   invalidScanfArgType_int                                     3
-  nullPointerArithmeticRedundantCheck                         1
   memleak                                                     1

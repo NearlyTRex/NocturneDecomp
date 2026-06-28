@@ -5,16 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6429 (99.6%)
-With suspects: 25
-Total suspects: 37
-
-====================================================================================================
-cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730 (2 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 34 [pointer_truncation]: if (0 < (int)span_data_buffer) {
-  Line 81 [pointer_truncation]: } while (local_20 < (int)span_data_buffer);
+Clean: 6438 (99.8%)
+With suspects: 16
+Total suspects: 26
 
 ====================================================================================================
 core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 (3 suspects)
@@ -58,13 +51,6 @@ core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (3 suspects)
   Line 190 [static_integer_division]: (double)frustum_corners[iVar3 / 4 + 2] /
 
 ====================================================================================================
-core_flame.cpp_CFlame_process_FUN_004c9c00 (2 suspects)
-  File: core/flame.cpp
-====================================================================================================
-  Line 94 [static_swapped_arguments]: core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-  Line 123 [static_swapped_arguments]: core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-
-====================================================================================================
 core_game.cpp_CGame_finishAct_FUN_004e3b90 (1 suspect)
   File: core/game.cpp
 ====================================================================================================
@@ -78,42 +64,6 @@ core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0 (2 suspects)
   Line 13 [static_integer_division]: return (int)ROUND(ROUND((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1 suspect)
-  File: core/skeledit.cpp
-====================================================================================================
-  Line 718 [static_swapped_arguments]: shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-
-====================================================================================================
-engine_2d.c_drawStringHighlighted_FUN_004020e0 (1 suspect)
-  File: engine/2d.c
-====================================================================================================
-  Line 22 [static_signed_char_misuse]: bVar2 = *text;
-
-====================================================================================================
-engine_2d.c_drawStringMasked_FUN_00402030 (1 suspect)
-  File: engine/2d.c
-====================================================================================================
-  Line 22 [static_signed_char_misuse]: bVar2 = *text;
-
-====================================================================================================
-engine_2d.c_drawString_FUN_00402080 (1 suspect)
-  File: engine/2d.c
-====================================================================================================
-  Line 22 [static_signed_char_misuse]: bVar2 = *text;
-
-====================================================================================================
-engine_2d.c_drawTextWrappedColor_FUN_00401eb0 (1 suspect)
-  File: engine/2d.c
-====================================================================================================
-  Line 29 [static_signed_char_misuse]: bVar2 = *text;
-
-====================================================================================================
-engine_2d.c_drawTextWrapped_FUN_00401c60 (1 suspect)
-  File: engine/2d.c
-====================================================================================================
-  Line 29 [static_signed_char_misuse]: bVar2 = *text;
-
-====================================================================================================
 shape_design.c_findVertexListInModel_FUN_00468000 (1 suspect)
   File: shape/design.c
 ====================================================================================================
@@ -124,12 +74,6 @@ shape_design.c_getVertexCountFromModel_FUN_00468080 (1 suspect)
   File: shape/design.c
 ====================================================================================================
   Line 15 [static_null_pointer_redundant_check]: while (((char)(model_ptr->base).type != '\x02' && ((char)(model_ptr->base).type != '\0'))) {
-
-====================================================================================================
-shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0 (1 suspect)
-  File: shape/memdbg.cpp
-====================================================================================================
-  Line 19 [static_null_pointer_arithmetic_redundant_check]: return (SMemHead *)((char *)user_ptr - sizeof(SMemHead));
 
 ====================================================================================================
 shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0 (1 suspect)

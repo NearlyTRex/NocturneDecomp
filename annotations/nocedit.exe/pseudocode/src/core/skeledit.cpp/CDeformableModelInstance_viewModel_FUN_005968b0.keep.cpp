@@ -712,13 +712,12 @@ LAB_0059722b:
     }
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F);
     if (iVar7 != 0) {
-      fVar9 = 0.0;
       pSVar11 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&this_ptr->motion_controller);
       shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                 (g_CEditorToolsPtr,"Enter frame number",
                  &(this_ptr->motion_controller).current_frame_number,1,0.0,
-                 (float)pSVar11->frame_count,(int)fVar9);
+                 (float)pSVar11->frame_count,0);
     }
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
     if (iVar7 != 0) {

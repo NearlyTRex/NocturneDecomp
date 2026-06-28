@@ -92,7 +92,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
              (ABS((this_ptr_02->base).base.location.position.z -
                   (this_ptr->base).location.position.z) < fVar2)) {
             core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-                      (&this_ptr_02->base,&pCVar2->position,0,0.0,0x40000000,1);
+                      (&this_ptr_02->base,&pCVar2->position,0,0,2.0f,1);
           }
         }
       }
@@ -121,7 +121,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
                && (ABS((this_ptr_03->base).base.location.position.z -
                        (this_ptr->base).location.position.z) < fVar3)) {
               core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-                        (&this_ptr_03->base,&pCVar2->position,0,0.0,0x40000000,0);
+                        (&this_ptr_03->base,&pCVar2->position,0,0,2.0f,0);
             }
           }
         }

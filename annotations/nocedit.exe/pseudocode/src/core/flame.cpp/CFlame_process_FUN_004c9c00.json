@@ -483,46 +483,7 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CFlame_process_FUN_004c9c00.keep.cpp",
-    "clang_tidy_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_name": "bugprone-swapped-arguments",
-          "column": 13,
-          "line": 94,
-          "message": "argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments."
-        },
-        {
-          "check_name": "bugprone-swapped-arguments",
-          "column": 15,
-          "line": 123,
-          "message": "argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments."
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments.",
-      "line": 94,
-      "match": "Clang-Tidy: potentially swapped arguments (param-type mismatch)",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0",
-      "type": "static_swapped_arguments"
-    },
-    {
-      "description": "argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments.",
-      "line": 123,
-      "match": "Clang-Tidy: potentially swapped arguments (param-type mismatch)",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0",
-      "type": "static_swapped_arguments"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

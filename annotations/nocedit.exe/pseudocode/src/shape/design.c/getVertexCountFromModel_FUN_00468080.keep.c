@@ -20,6 +20,7 @@ int __cdecl shape_design_c_getVertexCountFromModel_FUN_00468080(SMRGLHeaderExten
     g_CurrentFilename = "..\\shape\\design.c";
     g_CurrentLineNumber = 0x21e2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find vlist");
+    return 0;
   }
   return model_ptr->child_count;
 }

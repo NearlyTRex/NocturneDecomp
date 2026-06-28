@@ -4,14 +4,10 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  static_integer_division           16 ( 43.2%)
-  static_signed_char_misuse          5 ( 13.5%)
-  static_null_pointer_redundant_check     5 ( 13.5%)
-  static_float_loop_induction        4 ( 10.8%)
-  static_swapped_arguments           3 (  8.1%)
-  pointer_truncation                 2 (  5.4%)
-  static_null_pointer_arithmetic_redundant_check     1 (  2.7%)
-  static_memleak                     1 (  2.7%)
+  static_integer_division           16 ( 61.5%)
+  static_null_pointer_redundant_check     5 ( 19.2%)
+  static_float_loop_induction        4 ( 15.4%)
+  static_memleak                     1 (  3.8%)
 
 ====================================================================================================
 TYPE: static_integer_division (16 occurrences)
@@ -29,20 +25,6 @@ Functions:
   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540
   sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
-
-====================================================================================================
-TYPE: static_signed_char_misuse (5 occurrences)
-====================================================================================================
-
-Unique patterns:
-     5x  Clang-Tidy: signed char widened to unsigned (signedness data-model smell)
-
-Functions:
-  engine_2d.c_drawStringHighlighted_FUN_004020e0
-  engine_2d.c_drawStringMasked_FUN_00402030
-  engine_2d.c_drawString_FUN_00402080
-  engine_2d.c_drawTextWrappedColor_FUN_00401eb0
-  engine_2d.c_drawTextWrapped_FUN_00401c60
 
 ====================================================================================================
 TYPE: static_null_pointer_redundant_check (5 occurrences)
@@ -69,37 +51,6 @@ Functions:
   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
   core_game.cpp_CGame_finishAct_FUN_004e3b90
-
-====================================================================================================
-TYPE: static_swapped_arguments (3 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  Clang-Tidy: potentially swapped arguments (param-type mismatch)
-
-Functions:
-  core_flame.cpp_CFlame_process_FUN_004c9c00
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-
-====================================================================================================
-TYPE: pointer_truncation (2 occurrences)
-====================================================================================================
-
-Unique patterns:
-     2x  (int)span_data_buffer
-
-Functions:
-  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
-
-====================================================================================================
-TYPE: static_null_pointer_arithmetic_redundant_check (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  Cppcheck: redundant null check or pointer-subtraction overflow
-
-Functions:
-  shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0
 
 ====================================================================================================
 TYPE: static_memleak (1 occurrences)

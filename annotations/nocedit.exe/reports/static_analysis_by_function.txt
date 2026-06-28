@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 40
-  Total diagnostics: 102
+  Functions with findings: 32
+  Total diagnostics: 93
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 38, raw .cpp files: 2
+  .keep.cpp files: 30, raw .cpp files: 2
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -131,13 +131,6 @@ core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210  [.kee
   Line   72: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
 
 ----------------------------------------------------------------------------------------------------
-core_flame.cpp_CFlame_process_FUN_004c9c00  [.keep] [Clang-Tidy (quick)]
-  File: core/flame.cpp  (2 diagnostics)
-
-  Line   94: [bugprone-swapped-arguments] argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments.
-  Line  123: [bugprone-swapped-arguments] argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments.
-
-----------------------------------------------------------------------------------------------------
 core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0  [.keep] [Clang-Tidy (quick)]
   File: core/script.cpp  (2 diagnostics)
 
@@ -219,42 +212,6 @@ core_setutil.cpp_C3DSCamera_load_FUN_00585420  [.keep] [Cppcheck (quick)]
   Line   20: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep] [Clang-Tidy (quick)]
-  File: core/skeledit.cpp  (1 diagnostics)
-
-  Line  718: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments.
-
-----------------------------------------------------------------------------------------------------
-engine_2d.c_drawStringHighlighted_FUN_004020e0  [.keep] [Clang-Tidy (quick)]
-  File: engine/2d.c  (1 diagnostics)
-
-  Line   22: [bugprone-signed-char-misuse] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.
-
-----------------------------------------------------------------------------------------------------
-engine_2d.c_drawStringMasked_FUN_00402030  [.keep] [Clang-Tidy (quick)]
-  File: engine/2d.c  (1 diagnostics)
-
-  Line   22: [bugprone-signed-char-misuse] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.
-
-----------------------------------------------------------------------------------------------------
-engine_2d.c_drawString_FUN_00402080  [.keep] [Clang-Tidy (quick)]
-  File: engine/2d.c  (1 diagnostics)
-
-  Line   22: [bugprone-signed-char-misuse] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.
-
-----------------------------------------------------------------------------------------------------
-engine_2d.c_drawTextWrappedColor_FUN_00401eb0  [.keep] [Clang-Tidy (quick)]
-  File: engine/2d.c  (1 diagnostics)
-
-  Line   29: [bugprone-signed-char-misuse] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.
-
-----------------------------------------------------------------------------------------------------
-engine_2d.c_drawTextWrapped_FUN_00401c60  [.keep] [Clang-Tidy (quick)]
-  File: engine/2d.c  (1 diagnostics)
-
-  Line   29: [bugprone-signed-char-misuse] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.
-
-----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (1 diagnostics)
 
@@ -271,12 +228,6 @@ shape_design.c_getVertexCountFromModel_FUN_00468080  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (1 diagnostics)
 
   Line   15: [nullPointerRedundantCheck] Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.
-
-----------------------------------------------------------------------------------------------------
-shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0  [.keep] [Cppcheck (quick)]
-  File: shape/memdbg.cpp  (1 diagnostics)
-
-  Line   19: [nullPointerArithmeticRedundantCheck] Either the condition 'user_ptr!=(void*)0x0' is redundant or there is overflow in pointer subtraction.
 
 ----------------------------------------------------------------------------------------------------
 shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0  [.cpp] [Cppcheck (quick)]

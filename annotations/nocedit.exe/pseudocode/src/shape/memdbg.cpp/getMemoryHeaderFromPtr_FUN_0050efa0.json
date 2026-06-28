@@ -122,31 +122,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "getMemoryHeaderFromPtr_FUN_0050efa0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointerArithmeticRedundantCheck",
-          "column": 40,
-          "line": 19,
-          "message": "Either the condition 'user_ptr!=(void*)0x0' is redundant or there is overflow in pointer subtraction.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Either the condition 'user_ptr!=(void*)0x0' is redundant or there is overflow in pointer subtraction.",
-      "line": 19,
-      "match": "Cppcheck: redundant null check or pointer-subtraction overflow",
-      "severity": "moderate",
-      "text": "return (SMemHead *)((char *)user_ptr - sizeof(SMemHead));",
-      "type": "static_null_pointer_arithmetic_redundant_check"
-    }
-  ]
+  "suspects": []
 }

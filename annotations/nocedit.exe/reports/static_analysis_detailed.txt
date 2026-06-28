@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (28 diagnostics)
+Clang-Tidy (quick) (20 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -77,30 +77,6 @@ bugprone-integer-division (16)
     result of integer division used in a floating point context; possible loss of precision
 
 ----------------------------------------------------------------------------------------------------
-bugprone-signed-char-misuse (5)
-----------------------------------------------------------------------------------------------------
-
-  engine_2d.c_drawStringHighlighted_FUN_004020e0     line 22
-    File: engine/2d.c
-    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.
-
-  engine_2d.c_drawStringMasked_FUN_00402030          line 22
-    File: engine/2d.c
-    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.
-
-  engine_2d.c_drawString_FUN_00402080                line 22
-    File: engine/2d.c
-    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.
-
-  engine_2d.c_drawTextWrappedColor_FUN_00401eb0      line 29
-    File: engine/2d.c
-    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.
-
-  engine_2d.c_drawTextWrapped_FUN_00401c60           line 29
-    File: engine/2d.c
-    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first.
-
-----------------------------------------------------------------------------------------------------
 cert-flp30-c (4)
 ----------------------------------------------------------------------------------------------------
 
@@ -120,24 +96,8 @@ cert-flp30-c (4)
     File: core/game.cpp
     loop induction expression should not have floating-point type
 
-----------------------------------------------------------------------------------------------------
-bugprone-swapped-arguments (3)
-----------------------------------------------------------------------------------------------------
-
-  core_flame.cpp_CFlame_process_FUN_004c9c00         line 94
-    File: core/flame.cpp
-    argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments.
-
-  core_flame.cpp_CFlame_process_FUN_004c9c00         line 123
-    File: core/flame.cpp
-    argument with implicit conversion from 'double' to 'int' followed by argument converted from 'int' to 'float', potentially swapped arguments.
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 718
-    File: core/skeledit.cpp
-    argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments.
-
 ====================================================================================================
-Cppcheck (quick) (74 diagnostics)
+Cppcheck (quick) (73 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -443,14 +403,6 @@ invalidScanfArgType_int (3)
   sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 line 29
     File: sound/mp3.cpp
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
-
-----------------------------------------------------------------------------------------------------
-nullPointerArithmeticRedundantCheck (1)
-----------------------------------------------------------------------------------------------------
-
-  shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050ef line 19
-    File: shape/memdbg.cpp
-    Either the condition 'user_ptr!=(void*)0x0' is redundant or there is overflow in pointer subtraction.
 
 ----------------------------------------------------------------------------------------------------
 memleak (1)
