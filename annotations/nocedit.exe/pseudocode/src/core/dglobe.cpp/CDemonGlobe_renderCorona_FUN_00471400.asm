@@ -41,7 +41,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0
 ;   crt_math.c_round_FUN_005fe6b0
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -66,8 +66,8 @@ section .text
     PUSH EAX                            ; 00471420
     MOV ECX,dword ptr [0x006703ec]      ; 00471421 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00471427 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 00471428
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780 ; 00471428
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 0047142d
     LEA EAX,[ESP + 0x40]                ; 00471430
     FLD float ptr [ESP + 0x4c]          ; 00471434

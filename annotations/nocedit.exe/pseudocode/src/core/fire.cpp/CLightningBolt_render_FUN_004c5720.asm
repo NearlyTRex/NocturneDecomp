@@ -52,7 +52,7 @@
 ;   crt_stdlib.c_rand_FUN_005feb5c
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0048bcf0
@@ -169,8 +169,8 @@ section .text
     PUSH EAX                            ; 004c588b
     MOV ESI,dword ptr [0x006703ec]      ; 004c588c | g_CDemonRendererPtr2
     PUSH ESI                            ; 004c5892 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800 ; 004c5893
-        ;   XREF to: 0048c800 (UNCONDITIONAL_CALL)  ; float * engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer * this_ptr, float * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800 ; 004c5893
+        ;   XREF to: 0048c800 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 004c5898
     PUSH EDI                            ; 004c589b
     LEA EAX,[ESP + 0xc8]                ; 004c589c

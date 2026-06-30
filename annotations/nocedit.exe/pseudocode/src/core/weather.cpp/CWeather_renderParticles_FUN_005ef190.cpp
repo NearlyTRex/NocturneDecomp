@@ -51,8 +51,8 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
   if (this_ptr->weather_type == WEATHER_TYPE_NONE) {
     return;
   }
-  engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-            (g_CDemonRendererPtr2,&local_b0.x);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
+            (g_CDemonRendererPtr2,&local_b0);
   if (this_ptr->weather_type == WEATHER_TYPE_RAIN) {
     local_b0.x = 0.0;
   }

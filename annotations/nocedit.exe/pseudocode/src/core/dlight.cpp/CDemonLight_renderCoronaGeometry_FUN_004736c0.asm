@@ -42,7 +42,7 @@
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
@@ -169,8 +169,8 @@ section .text
     PUSH EAX                            ; 00473826
     MOV ESI,dword ptr [0x006703ec]      ; 00473827 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0047382d | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 0047382e
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780 ; 0047382e
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 00473833
     MOV EDX,dword ptr [EBP + 0x14]      ; 00473836
     FLD float ptr [EAX]                 ; 00473839

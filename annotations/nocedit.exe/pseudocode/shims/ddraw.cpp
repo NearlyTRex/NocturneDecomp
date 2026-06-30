@@ -949,6 +949,61 @@ HRESULT DirectDrawCreate(GUID* lpGUID, LPDIRECTDRAW* lplpDD, IUnknown* pUnkOuter
 }
 
 // =============================================================================
+// Front-buffer dump (debug) — what the user actually sees on screen
+// =============================================================================
+//
+// Declared in shims/dump.h. Reads back the presented image straight from the
+// SDL renderer, so it captures the final, post-everything frame (mirror passes,
+// HUD, present-time copy all included) regardless of where in the frame it is
+// called — unlike nocturne_dump_screenshot which reads the mid-render
+// g_BackBuffer. Output is a PPM at the renderer's output size (which includes
+// any integer up-scaling of the 640x480 logical surface).
+
+#include "dump.h"
+#include <cstdio>
+
+extern "C" int nocturne_dump_frontbuffer(const char *path)
+{
+#if NOCTURNE_DUMP_TOOLS
+    if (path == nullptr || g_ddraw_shim == nullptr || g_ddraw_shim->renderer == nullptr) {
+        return -1;
+    }
+
+    SDL_Renderer *renderer = g_ddraw_shim->renderer;
+    int w = 0, h = 0;
+    if (SDL_GetRendererOutputSize(renderer, &w, &h) != 0 || w <= 0 || h <= 0) {
+        return -1;
+    }
+
+    const size_t row_bytes = (size_t)w * 3;
+    unsigned char *buf = (unsigned char *)malloc(row_bytes * (size_t)h);
+    if (buf == nullptr) {
+        return -1;
+    }
+
+    // SDL_PIXELFORMAT_RGB24 yields bytes in R,G,B order — exactly PPM order.
+    if (SDL_RenderReadPixels(renderer, nullptr, SDL_PIXELFORMAT_RGB24, buf, (int)row_bytes) != 0) {
+        free(buf);
+        return -1;
+    }
+
+    FILE *f = std::fopen(path, "wb");
+    if (f == nullptr) {
+        free(buf);
+        return -1;
+    }
+    std::fprintf(f, "P6\n%d %d\n255\n", w, h);
+    std::fwrite(buf, 1, row_bytes * (size_t)h, f);
+    std::fclose(f);
+    free(buf);
+    return 0;
+#else
+    (void)path;
+    return -1;
+#endif
+}
+
+// =============================================================================
 // Shim Init - Wire up global function pointer
 // =============================================================================
 

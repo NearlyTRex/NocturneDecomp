@@ -27,7 +27,7 @@
 ;   core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30
 ;   core_ground.cpp_CGround_render_FUN_004efc90
 ;   crt_math.c_round_FUN_005fe6b0
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
 ;   engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 ;
@@ -57,8 +57,8 @@ section .text
     PUSH EAX                            ; 005e1f6e
     MOV ECX,dword ptr [0x006703ec]      ; 005e1f6f | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 005e1f75 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 005e1f76
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780 ; 005e1f76
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 005e1f7b
     MOV EBX,0x40800                     ; 005e1f7e
     PUSH EBX                            ; 005e1f83

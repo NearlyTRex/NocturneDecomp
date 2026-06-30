@@ -96,8 +96,8 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   if (fVar6 == 0.0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,world_position);
-    engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-              (g_CDemonRendererPtr2,&local_24.x);
+    engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
+              (g_CDemonRendererPtr2,&local_24);
     local_24.x = fVar6;
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr2,&local_24,(CVector3f *)0x0);

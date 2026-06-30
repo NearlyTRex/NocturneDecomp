@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer *this_ptr,float *output)
+; CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800(CDemonRenderer *this_ptr,CVector3f *output)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
-; float *          Stack[0x8]:4   output
+; CVector3f *      Stack[0x8]:4   output
 ; Local Variables:
 ; CVector3i        Stack[-0x20]:12  local_20
 ;
@@ -34,7 +34,7 @@
 section .text
 
     PUSH EBX                            ; 0048c800
-        ;   Label: engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
+        ;   Label: engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
     PUSH ESI                            ; 0048c801
     PUSH EBP                            ; 0048c802
     MOV EBP,ESP                         ; 0048c803

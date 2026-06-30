@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 37,
+    "complexity_score": 36,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 36,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 126
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -80,12 +80,12 @@
     {
       "addr": "0048c780",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780"
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780"
     },
     {
       "addr": "0048c800",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800"
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800"
     },
     {
       "addr": "0048cdf0",
@@ -313,7 +313,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 23,
+      "line": 22,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",

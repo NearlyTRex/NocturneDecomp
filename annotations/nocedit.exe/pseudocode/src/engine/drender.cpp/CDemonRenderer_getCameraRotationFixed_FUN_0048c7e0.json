@@ -8,7 +8,7 @@
   "complexity": {
     "assembly_lines": 29,
     "complexity_score": 9,
-    "cross_reference_count": 9,
+    "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -19,91 +19,79 @@
   },
   "cross_references": [
     {
-      "addr": "0044d1c0",
-      "from_addr": "0044d241",
-      "name": "core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0",
+      "addr": "004c0d80",
+      "from_addr": "004c0de1",
+      "name": "core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004758d0",
-      "from_addr": "00475924",
-      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0",
+      "addr": "004c64c0",
+      "from_addr": "004c654c",
+      "name": "core_fire.cpp_CPopcorn_render_FUN_004c64c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00473a20",
-      "from_addr": "00473a93",
-      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20",
+      "addr": "004c6830",
+      "from_addr": "004c68bf",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004c6830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00473f90",
-      "from_addr": "00474102",
-      "name": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90",
+      "addr": "004bf1f0",
+      "from_addr": "004bf251",
+      "name": "core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00474ad0",
-      "from_addr": "00474c37",
-      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0",
+      "addr": "004c0300",
+      "from_addr": "004c039b",
+      "name": "core_fire.cpp_CSpark_setupRenderState_FUN_004c0300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00497e50",
-      "from_addr": "00497ea4",
-      "name": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50",
+      "addr": "004ca110",
+      "from_addr": "004ca219",
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_004ca110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056fbd0",
-      "from_addr": "0056fbfc",
-      "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00570040",
-      "from_addr": "00570095",
-      "name": "core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005702b0",
-      "from_addr": "005702ff",
-      "name": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0",
+      "addr": "004eb9d0",
+      "from_addr": "004eba31",
+      "name": "core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
-    "address": "0048c760",
+    "address": "0048c7e0",
     "address_range": [
       [
-        "0048c760",
-        "0048c77c"
+        "0048c7e0",
+        "0048c7fc"
       ],
       [
-        "00608ca5",
-        "00608cc1"
+        "00608c88",
+        "00608ca4"
       ]
     ],
     "convention": "__stack_esi",
-    "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760",
-    "signature": "CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer *this_ptr,CVector3i *output)"
+    "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0",
+    "signature": "CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0(CDemonRenderer *this_ptr,CVector3i *output)"
   },
   "function_calls": [
     {
-      "addr": "0050e2c0",
+      "addr": "0050e2f0",
       "is_variadic": false,
-      "name": "engine_matrix.c_getCameraOrigin_FUN_0050e2c0"
+      "name": "engine_matrix.c_getCameraRotation_FUN_0050e2f0"
     }
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 9,
+    "call_site_count": 8,
     "call_sites": [
       {
-        "call_addr": "0044d241",
+        "call_addr": "004c0de1",
         "call_type": "direct",
-        "caller": "core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0",
+        "caller": "core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,9 +102,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "00497ea4",
+        "call_addr": "004bf251",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50",
+        "caller": "core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -127,9 +115,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "00570095",
+        "call_addr": "004eba31",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040",
+        "caller": "core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -140,9 +128,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "0056fbfc",
+        "call_addr": "004c039b",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0",
+        "caller": "core_fire.cpp_CSpark_setupRenderState_FUN_004c0300",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,9 +141,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "005702ff",
+        "call_addr": "004c654c",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0",
+        "caller": "core_fire.cpp_CPopcorn_render_FUN_004c64c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,9 +154,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "00475924",
+        "call_addr": "004c68bf",
         "call_type": "direct",
-        "caller": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0",
+        "caller": "core_fire.cpp_CRainDrop_render_FUN_004c6830",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -179,9 +167,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "00473a93",
+        "call_addr": "004ca219",
         "call_type": "direct",
-        "caller": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20",
+        "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_004ca110",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,22 +180,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "00474c37",
+        "call_addr": "004ca28b",
         "call_type": "direct",
-        "caller": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [
-          "ESI"
-        ],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "00474102",
-        "call_type": "direct",
-        "caller": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90",
+        "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_004ca110",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -271,14 +246,14 @@
     ],
     "patterns": [
       {
-        "address": "0048c767",
+        "address": "0048c7e7",
         "description": "Alternative frame pointer (ESI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV ESI,ESP",
         "pattern_id": "alt_frame_pointer"
       },
       {
-        "address": "0048c770",
+        "address": "0048c7f0",
         "description": "Alternative frame pointer (ESI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV ESI,ESP",

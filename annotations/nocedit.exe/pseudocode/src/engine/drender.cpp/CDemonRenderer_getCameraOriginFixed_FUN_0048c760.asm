@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer *this_ptr,CVector3i *output)
+; CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760(CDemonRenderer *this_ptr,CVector3i *output)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
@@ -25,7 +25,7 @@
 section .text
 
     PUSH EBX                            ; 0048c760
-        ;   Label: engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+        ;   Label: engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760
     PUSH EDI                            ; 0048c761
     SUB ESP,0xc                         ; 0048c762
     MOV EBX,ESI                         ; 0048c765

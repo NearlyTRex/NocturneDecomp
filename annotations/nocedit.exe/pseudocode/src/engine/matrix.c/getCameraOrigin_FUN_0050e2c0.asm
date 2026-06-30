@@ -7,8 +7,8 @@
 ; XREF[4]:
 ;   core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00453950 at 00453957
 ;   core_ground.cpp_CGround_render_FUN_004efc90 at 004efc9c
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 at 0048c790
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 at 0048c76b
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760 at 0048c76b
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780 at 0048c790
 ;
 ; Referenced Globals:
 ;   int g_CameraOriginX

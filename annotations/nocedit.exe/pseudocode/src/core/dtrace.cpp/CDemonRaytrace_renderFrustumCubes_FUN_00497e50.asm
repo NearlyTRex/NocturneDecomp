@@ -124,7 +124,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
 ;
 ; *****************************************************************************
@@ -157,8 +157,8 @@ section .text
     PUSH ESI                            ; 00497e9b | g_CDemonRendererInstance
     LEA ESI,[ESP + 0x64]                ; 00497e9c
     LEA EDI,[ESP + 0x7c]                ; 00497ea0
-    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 ; 00497ea4
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760 ; 00497ea4
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x64]                ; 00497ea9
     ADD ESP,0x4                         ; 00497ead
     JMP 0x0060c3df                      ; 00497eb0

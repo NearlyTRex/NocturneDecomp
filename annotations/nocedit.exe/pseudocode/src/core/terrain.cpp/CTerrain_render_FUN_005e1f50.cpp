@@ -19,7 +19,7 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr,in
   if (g_CTerrainInstance.initialized == 0) {
     return;
   }
-  engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
             (g_CDemonRendererPtr2,(CVector3f *)&local_30);
   local_24.x = 0x40800;
   local_24.z = 0;

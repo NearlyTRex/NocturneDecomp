@@ -87,7 +87,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
   if (((this_ptr->volumetric_enabled != 0) &&
       ((float)0.10000000000000001 <= (g_CDemonSetPtr->active_fog).density_multiplier)) &&
      (g_CGamePtr->halo_mode != 0)) {
-    engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+    engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760
               (g_CDemonRendererPtr2,&local_f0);
     fVar3 = (float)local_f0.x * 0.00390625f - (this_ptr->base).base.position.f.x;
     fVar4 = (float)local_f0.y * 0.00390625f - (this_ptr->base).base.position.f.y;
@@ -98,7 +98,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
       local_120.z = 1.0;
       this_ptr_01 = &(this_ptr->base).base.rotation_matrix;
       core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(this_ptr_01,&local_108,&local_120);
-      engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+      engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
                 (g_CDemonRendererPtr2,&local_138);
       local_138.x = local_138.x - (this_ptr->base).base.position.f.x;
       local_138.y = local_138.y - (this_ptr->base).base.position.f.y;

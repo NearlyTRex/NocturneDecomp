@@ -51,11 +51,11 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   world_position_00 = &(this_ptr->base).base.position;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&world_position_00->f);
-  engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-            (g_CDemonRendererPtr2,&local_34.x);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
+            (g_CDemonRendererPtr2,&local_34);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_34,(CVector3f *)0x0);
-  engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760
             (g_CDemonRendererPtr2,&local_7c);
   fVar1 = (float)0.00390625;
   local_a0 = (world_position_00->f).x - (float)local_7c.x * fVar1;

@@ -26,7 +26,21 @@ extern "C" {
 // Frame buffer (color) — writes <path> PPM + <path>.txt metadata.
 // Captures camera transform, render flags, vertex lighting, rasterizer
 // cursors, and a per-pixel-brightness histogram.
+//
+// NOTE: this reads g_BackBuffer (the software render TARGET), which is the
+// scene MID-render. It is NOT necessarily what the user sees — post-render
+// passes (mirror reflections, HUD) and the present-time copy can differ.
+// For "what's actually on screen", use nocturne_dump_frontbuffer.
 int nocturne_dump_screenshot(const char *path);
+
+// Front buffer — writes <path> PPM of the ACTUAL presented image (what the
+// user sees on screen), read back from the SDL renderer / primary surface in
+// the DirectDraw shim. Unlike nocturne_dump_screenshot, this captures the
+// final, post-everything frame regardless of where in the frame you call it
+// (it reflects the last present), so it is the reliable way to capture a
+// visual bug. Implemented in shims/ddraw.cpp (needs SDL/surface access).
+// Returns 0 on success, -1 if the shim/surface isn't available.
+int nocturne_dump_frontbuffer(const char *path);
 
 // Z-buffer — writes <path> PPM (grayscale, normalized) + <path>.txt metadata.
 // Reads g_ZBufferScanlineArray[0..g_WindowHeight] row pointers. Sidecar

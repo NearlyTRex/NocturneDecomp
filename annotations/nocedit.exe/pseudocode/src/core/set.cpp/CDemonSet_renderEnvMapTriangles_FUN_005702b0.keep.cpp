@@ -32,7 +32,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
               (g_CDemonRendererPtr2,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   }
-  engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760
             (g_CDemonRendererPtr2,&local_44);
   local_28[2] = 0;
   if (0 < count) {

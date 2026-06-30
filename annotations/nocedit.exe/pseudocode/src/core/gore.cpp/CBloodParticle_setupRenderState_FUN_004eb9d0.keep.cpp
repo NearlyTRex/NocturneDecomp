@@ -21,7 +21,7 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodPa
   g_GoreQuadPrimitive.vertices[1] = 1;
   g_GoreQuadPrimitive.vertices[2] = 2;
   g_GoreQuadPrimitive.vertices[3] = 3;
-  engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
+  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0
             (g_CDemonRendererPtr2,&local_18);
   g_ParticleCameraRotation.x = local_18.x;
   g_ParticleCameraRotation.z = local_18.z;

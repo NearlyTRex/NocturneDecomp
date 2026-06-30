@@ -1,13 +1,13 @@
-// Name: engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+// Name: engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
 // Address: 0048c780
 // MANUAL RECONSTRUCTION
 // Address Range: [[0048c780, 0048c7d3]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output)
+// Signature: CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output)
+CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output)
 
 {
   float fVar1;

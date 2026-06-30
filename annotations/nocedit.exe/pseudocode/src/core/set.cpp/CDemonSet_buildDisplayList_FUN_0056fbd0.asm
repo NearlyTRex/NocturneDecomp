@@ -51,8 +51,8 @@
 ;   core_set.cpp_CDemonSet_isCameraPanning_FUN_00571320
 ;   crt_stdlib.c__qsort_FUN_005fdf38
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
 ; *****************************************************************************
@@ -75,16 +75,16 @@ section .text
     PUSH EBX                            ; 0056fbf1 | g_CDemonRendererInstance
     LEA ESI,[ESP + 0x28]                ; 0056fbf2
     MOV dword ptr [0x03342b4c],ECX      ; 0056fbf6 | g_SetDisplayListCount
-    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 ; 0056fbfc
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760 ; 0056fbfc
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 0056fc01
     LEA EAX,[ESP + 0x18]                ; 0056fc04
     PUSH EAX                            ; 0056fc08
     MOV ESI,dword ptr [0x006703ec]      ; 0056fc09 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0056fc0f | g_CDemonRendererInstance
     MOV EDI,0xc                         ; 0056fc10
-    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 0056fc15
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780 ; 0056fc15
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 0056fc1a
     MOV EBP,dword ptr [0x032776b4]      ; 0056fc1d | g_DynamicLightCount
     MOV dword ptr [ESP + 0x60],EDI      ; 0056fc23

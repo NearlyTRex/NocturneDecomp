@@ -35,8 +35,8 @@
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
 ;   engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870
 ;   engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-;   engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
 ;   engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH EAX                            ; 005709ef
     MOV EDX,dword ptr [0x006703ec]      ; 005709f0 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 005709f6 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 005709f7
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780 ; 005709f7
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 005709fc
     CMP EAX,0x33469d0                   ; 005709ff | g_SavedCameraOrigin
     JZ 0x00570a20                       ; 00570a04
@@ -71,8 +71,8 @@ section .text
     PUSH EAX                            ; 00570a22
     MOV ECX,dword ptr [0x006703ec]      ; 00570a23 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00570a29 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800 ; 00570a2a
-        ;   XREF to: 0048c800 (UNCONDITIONAL_CALL)  ; float * engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer * this_ptr, float * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800 ; 00570a2a
+        ;   XREF to: 0048c800 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 00570a2f
     CMP EAX,0x33469dc                   ; 00570a32 | g_SavedCameraRotation
     JZ 0x00570a53                       ; 00570a37

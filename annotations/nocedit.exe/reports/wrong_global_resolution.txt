@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 74
-  Total suspicious global references: 123
+  Functions with suspicious globals: 75
+  Total suspicious global references: 124
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 39 (these need manual review)
+  .keep files with issues: 40 (these need manual review)
   Raw .cpp files with issues: 35
 
 ====================================================================================================
@@ -386,6 +386,14 @@ engine_3d.c_renderPolygonFullEffectsDirectOp66_FUN_00407470  [.keep]  (1 suspici
 
   g_RenderVertexBuffer
     Used at lines: 51
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800  [.keep]  (1 suspicious globals)
+  File: engine/drender.cpp
+
+  g_Pi
+    Used at lines: 18
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

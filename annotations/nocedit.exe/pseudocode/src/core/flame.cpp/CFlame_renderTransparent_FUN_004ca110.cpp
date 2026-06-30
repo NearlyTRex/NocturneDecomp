@@ -73,7 +73,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       core_set_cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140(g_CDemonSetPtr,&this_ptr->globe);
     }
     if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != 3)) {
-      engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
+      engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0
                 (g_CDemonRendererPtr2,&CStack_64);
       CStack_58.x = 0;
       CStack_58.y = 0;
@@ -82,7 +82,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       CStack_ac.x = 0;
       CStack_ac.y = 0;
       CStack_ac.z = 0;
-      engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
+      engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0
                 (g_CDemonRendererPtr2,&CStack_a0);
       iStack_18 = 1;
       if ((0x2000 < CStack_a0.x) || (CStack_a0.x < -0x2000)) {
@@ -179,8 +179,8 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
     if ((this_ptr->which_flame == 1) &&
        (fVar1 = (this_ptr->flame_size).y, fVar5 = (float)2, this_ptr->is_visible != 0)
        ) {
-      engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-                (g_CDemonRendererPtr2,&CStack_88.y);
+      engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
+                (g_CDemonRendererPtr2,(CVector3f *)&CStack_88.y);
       CStack_28.z = (this_ptr->flame_size).y * (float)0.5;
       CStack_28.y = 0.0;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

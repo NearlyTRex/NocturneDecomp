@@ -39,7 +39,7 @@
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0048b1e0
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0048b970
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
@@ -74,8 +74,8 @@ section .text
         ;   Label: LAB_00570088
     PUSH EAX                            ; 0057008d | g_CDemonRendererInstance
     LEA ESI,[ESP + 0xd8]                ; 0057008e
-    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 ; 00570095
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760 ; 00570095
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 0057009a
     XOR EDX,EDX                         ; 0057009d
     MOV ECX,dword ptr [ESP + 0x100]     ; 0057009f

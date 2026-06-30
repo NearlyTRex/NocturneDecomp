@@ -15,7 +15,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(
 
   this_ptr->source_matrix = g_TransformMatrix;
   this_ptr_00 = g_CDemonRendererPtr2;
-  engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(this_ptr_00,&local_18);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760(this_ptr_00,&local_18);
   this_ptr->camera_origin = local_18;
   this_ptr->cached_projection = g_Projection;
   core_dcamera_cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20(this_ptr);

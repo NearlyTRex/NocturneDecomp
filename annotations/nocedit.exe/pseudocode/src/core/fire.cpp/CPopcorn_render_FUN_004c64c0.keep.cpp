@@ -37,7 +37,7 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
-  engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
+  engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0
             (g_CDemonRendererPtr2,&local_78);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
             (g_CDemonRendererPtr2,&local_60,(CVector3i *)0x0);

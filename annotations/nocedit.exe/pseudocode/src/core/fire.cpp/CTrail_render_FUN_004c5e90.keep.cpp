@@ -39,8 +39,8 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&this_ptr->position);
-  engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-            (g_CDemonRendererPtr2,(float *)&local_20);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
+            (g_CDemonRendererPtr2,&local_20);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_20,(CVector3f *)0x0);
   fVar1 = this_ptr->size * this_ptr->current_alpha;

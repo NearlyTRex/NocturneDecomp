@@ -127,7 +127,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   local_2e0 = this_ptr->beam_width;
   local_2f4 = this_ptr->reticle_intensity;
   local_2e8 = 0.0;
-  pfVar4 = &engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+  pfVar4 = &engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
                       (g_CDemonRendererPtr2,&local_f0)->x;
   local_144 = *pfVar4 - (this_ptr->origin).x;
   local_140 = pfVar4[1] - (this_ptr->origin).y;
@@ -148,7 +148,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   fVar8 = local_118 * local_1d8 + local_120 * local_1e0 + local_11c * local_1dc;
   if (0.0 < fVar8) {
     if (this_ptr->cone_angle <= 0.0) {
-      engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+      engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
                 (g_CDemonRendererPtr2,&local_1d4);
       local_1d4.x = local_1d4.x - (this_ptr->origin).x;
       local_1d4.y = local_1d4.y - (this_ptr->origin).y;
@@ -204,8 +204,8 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       }
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                 (g_CDemonRendererPtr2,&local_168);
-      engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-                (g_CDemonRendererPtr2,&local_1f8.x);
+      engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
+                (g_CDemonRendererPtr2,&local_1f8);
       local_1f8.z = (float)iVar6 + local_1f8.z;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_1f8,(CVector3f *)0x0);

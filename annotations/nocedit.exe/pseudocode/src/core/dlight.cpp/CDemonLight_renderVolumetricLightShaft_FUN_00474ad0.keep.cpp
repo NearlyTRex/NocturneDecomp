@@ -38,7 +38,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
   float fVar2;
   
   if ((this_ptr->volumetric_enabled != 0) && (g_CGamePtr->halo_mode == 2)) {
-    engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+    engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
               (g_CDemonRendererPtr2,&local_8c);
     local_8c.x = local_8c.x - (this_ptr->base).base.position.f.x;
     local_8c.y = local_8c.y - (this_ptr->base).base.position.f.y;
@@ -52,7 +52,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
     fVar3 = fVar3 * fVar3;
     if (fVar8 <= fVar3) {
       fVar1 = fVar8 / fVar3;
-      engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+      engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760
                 (g_CDemonRendererPtr2,&local_d4);
       fVar8 = (float)local_d4.x * 0.00390625f - (this_ptr->base).base.position.f.x;
       fVar3 = (float)local_d4.y * 0.00390625f - (this_ptr->base).base.position.f.y;
@@ -82,8 +82,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             local_e0 = local_a4;
             engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                       (g_CDemonRendererPtr2,&local_e0);
-            engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-                      (g_CDemonRendererPtr2,&local_98.x);
+            engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
+                      (g_CDemonRendererPtr2,&local_98);
             engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                       (g_CDemonRendererPtr2,&local_98,(CVector3f *)0x0);
             local_74.x = (int)ROUND(fVar3 * 256.0f);

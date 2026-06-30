@@ -4,126 +4,147 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
-    "assembly_lines": 38,
-    "complexity_score": 14,
-    "cross_reference_count": 11,
+    "assembly_lines": 33,
+    "complexity_score": 11,
+    "cross_reference_count": 10,
     "function_call_count": 1,
-    "global_count": 2,
+    "global_count": 1,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 14,
+    "pseudocode_lines": 11,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 52
+    "total_lines": 44
   },
   "cross_references": [
     {
-      "addr": "00473a20",
-      "from_addr": "00473a64",
-      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20",
+      "addr": "00471400",
+      "from_addr": "00471428",
+      "name": "core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004736c0",
+      "from_addr": "0047382e",
+      "name": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004758d0",
+      "from_addr": "00475a13",
+      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00473f90",
-      "from_addr": "004743d2",
+      "from_addr": "00473fc1",
       "name": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00474ad0",
-      "from_addr": "00474ebd",
+      "from_addr": "00474b0c",
       "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c3b10",
-      "from_addr": "004c3b8a",
-      "name": "core_fire.cpp_CExplosion_render_FUN_004c3b10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004c50b0",
-      "from_addr": "004c512a",
+      "from_addr": "004c5190",
       "name": "core_fire.cpp_CGunFlame_render_FUN_004c50b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c25c0",
-      "from_addr": "004c29eb",
+      "from_addr": "004c268a",
       "name": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c5720",
-      "from_addr": "004c5893",
-      "name": "core_fire.cpp_CLightningBolt_render_FUN_004c5720",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004c5e90",
-      "from_addr": "004c5f37",
-      "name": "core_fire.cpp_CTrail_render_FUN_004c5e90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ca110",
-      "from_addr": "004ca6a5",
-      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_004ca110",
+      "addr": "0056fbd0",
+      "from_addr": "0056fc15",
+      "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005709e0",
-      "from_addr": "00570a2a",
+      "from_addr": "005709f7",
       "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005ef190",
-      "from_addr": "005ef1bb",
-      "name": "core_weather.cpp_CWeather_renderParticles_FUN_005ef190",
+      "addr": "005e1f50",
+      "from_addr": "005e1f76",
+      "name": "core_terrain.cpp_CTerrain_render_FUN_005e1f50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
-    "address": "0048c800",
+    "address": "0048c780",
     "address_range": [
       [
-        "0048c800",
-        "0048c861"
+        "0048c780",
+        "0048c7d3"
       ]
     ],
     "convention": "__cdecl",
     "is_ebp_frame": true,
-    "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800",
-    "signature": "float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer *this_ptr,float *output)"
+    "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780",
+    "signature": "CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output)"
   },
   "function_calls": [
     {
-      "addr": "0050e2f0",
+      "addr": "0050e2c0",
       "is_variadic": false,
-      "name": "engine_matrix.c_getCameraRotation_FUN_0050e2f0"
+      "name": "engine_matrix.c_getCameraOrigin_FUN_0050e2c0"
     }
   ],
   "globals": [
     {
-      "addr": "00622065",
-      "name": "g_AngleToRadianScale",
+      "addr": "0062205d",
+      "name": "g_CameraOriginScale",
       "type": "double",
-      "value": "0.000030517578125"
-    },
-    {
-      "addr": "0062206d",
-      "name": "g_Pi_0062206d",
-      "type": "double",
-      "value": "3.14159265350000"
+      "value": "0.00390625"
     }
   ],
   "param_estimates": {
     "call_site_count": 11,
     "call_sites": [
       {
-        "call_addr": "00570a2a",
+        "call_addr": "00471428",
+        "call_type": "direct",
+        "caller": "core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056fc15",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005e1f76",
+        "call_type": "direct",
+        "caller": "core_terrain.cpp_CTerrain_render_FUN_005e1f50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005709f7",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0",
         "estimated_params": 2,
@@ -134,9 +155,9 @@
         "stack_params": 2
       },
       {
-        "call_addr": "005ef1bb",
+        "call_addr": "0047382e",
         "call_type": "direct",
-        "caller": "core_weather.cpp_CWeather_renderParticles_FUN_005ef190",
+        "caller": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,9 +166,9 @@
         "stack_params": 2
       },
       {
-        "call_addr": "00473a64",
+        "call_addr": "00475a13",
         "call_type": "direct",
-        "caller": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20",
+        "caller": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +177,7 @@
         "stack_params": 2
       },
       {
-        "call_addr": "00474ebd",
+        "call_addr": "00474b0c",
         "call_type": "direct",
         "caller": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0",
         "estimated_params": 2,
@@ -167,7 +188,7 @@
         "stack_params": 2
       },
       {
-        "call_addr": "004743d2",
+        "call_addr": "00473fc1",
         "call_type": "direct",
         "caller": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90",
         "estimated_params": 2,
@@ -178,7 +199,7 @@
         "stack_params": 2
       },
       {
-        "call_addr": "004c29eb",
+        "call_addr": "004c268a",
         "call_type": "direct",
         "caller": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0",
         "estimated_params": 2,
@@ -189,42 +210,9 @@
         "stack_params": 2
       },
       {
-        "call_addr": "004c3b8a",
+        "call_addr": "004c30ce",
         "call_type": "direct",
-        "caller": "core_fire.cpp_CExplosion_render_FUN_004c3b10",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "004c512a",
-        "call_type": "direct",
-        "caller": "core_fire.cpp_CGunFlame_render_FUN_004c50b0",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "004c5893",
-        "call_type": "direct",
-        "caller": "core_fire.cpp_CLightningBolt_render_FUN_004c5720",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "004c5f37",
-        "call_type": "direct",
-        "caller": "core_fire.cpp_CTrail_render_FUN_004c5e90",
+        "caller": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -240,13 +228,13 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.333333333333333,
-    "instruction_count": 36,
+    "avg_pcode_per_instr": 5.290322580645161,
+    "instruction_count": 31,
     "opcode_distribution": {
       "CALL": 1,
-      "COPY": 120,
-      "FLOAT2FLOAT": 5,
-      "FLOAT_MULT": 6,
+      "COPY": 96,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_MULT": 3,
       "INT2FLOAT": 3,
       "INT_ADD": 15,
       "INT_AND": 5,
@@ -260,7 +248,7 @@
       "RETURN": 1,
       "STORE": 10
     },
-    "pcode_op_count": 192
+    "pcode_op_count": 164
   },
   "stack_frame": {
     "frame_size": 44,
@@ -288,7 +276,7 @@
         "name": "output",
         "offset": 8,
         "size": 4,
-        "type": "float *"
+        "type": "CVector3f *"
       }
     ]
   },
@@ -301,14 +289,14 @@
     ],
     "patterns": [
       {
-        "address": "0048c808",
+        "address": "0048c788",
         "description": "Stack alignment (AND ESP, 0xfffffff8)",
         "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
         "instruction": "AND ESP,0xfffffff8",
         "pattern_id": "stack_alignment"
       },
       {
-        "address": "0048c80e",
+        "address": "0048c78e",
         "description": "Alternative frame pointer (ESI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV ESI,ESP",

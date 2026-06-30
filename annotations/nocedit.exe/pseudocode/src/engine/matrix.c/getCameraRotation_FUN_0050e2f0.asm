@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800 at 0048c810
-;   engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 at 0048c7eb
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0 at 0048c7eb
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800 at 0048c810
 ;
 ; Referenced Globals:
 ;   int g_CameraRotationPitch

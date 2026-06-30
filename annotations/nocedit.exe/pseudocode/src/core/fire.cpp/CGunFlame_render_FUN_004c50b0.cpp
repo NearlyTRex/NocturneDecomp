@@ -60,8 +60,8 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
             (g_CDemonRendererPtr2,g_GunFlameTextures + (int)ROUND(ROUND(this_ptr->anim_frame)));
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&this_ptr->position);
-  engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-            (g_CDemonRendererPtr2,&local_84.x);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
+            (g_CDemonRendererPtr2,&local_84);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_84,(CVector3f *)0x0);
   fVar13 = ((float10)2.0f - (float10)this_ptr->lifetime) / (float10)2.0f;
@@ -69,7 +69,7 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   fVar2 = (float)(fVar13 * (float10)4 + (float10)0.40000000000000002);
   local_d0 = fVar2;
   if ((float10)(double)fVar13 < (float10)0.40000000000000002) {
-    pfVar7 = &engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+    pfVar7 = &engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
                         (g_CDemonRendererPtr2,(CVector3f *)local_90)->x;
     fVar7 = *pfVar7 - (this_ptr->position).x;
     fVar8 = (float10)pfVar7[1] - (float10)(this_ptr->position).y;

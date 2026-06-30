@@ -37,8 +37,8 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
              (int)ROUND(ROUND((1.0 - this_ptr->lifetime) * (float)27)) * 2);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&this_ptr->position);
-  engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-            (g_CDemonRendererPtr2,&local_58.x);
+  engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
+            (g_CDemonRendererPtr2,&local_58);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_58,(CVector3f *)0x0);
   local_10 = (int)ROUND(ROUND(this_ptr->scale * (float)148 * (float)0.00390625));

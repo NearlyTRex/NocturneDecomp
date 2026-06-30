@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer *this_ptr,CVector3i *output)
+; CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0(CDemonRenderer *this_ptr,CVector3i *output)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
@@ -23,7 +23,7 @@
 section .text
 
     PUSH EBX                            ; 0048c7e0
-        ;   Label: engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
+        ;   Label: engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0
     PUSH EDI                            ; 0048c7e1
     SUB ESP,0xc                         ; 0048c7e2
     MOV EBX,ESI                         ; 0048c7e5

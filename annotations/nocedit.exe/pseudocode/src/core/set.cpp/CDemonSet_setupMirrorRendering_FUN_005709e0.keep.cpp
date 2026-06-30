@@ -12,18 +12,18 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet 
 {
   UVector3 *pUVar1;
   CVector3f *pCVar2;
-  float afStack_2c [3];
+  CVector3f afStack_2c;
   CVector3f local_20;
   
   pUVar1 = (UVector3 *)
-           engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+           engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
                      (g_CDemonRendererPtr2,&local_20);
   if (pUVar1 != &g_SavedCameraOrigin) {
     g_SavedCameraOrigin.f = pUVar1->f;
   }
   pCVar2 = (CVector3f *)
-           engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-                     (g_CDemonRendererPtr2,afStack_2c);
+           engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800
+                     (g_CDemonRendererPtr2,&afStack_2c);
   if (pCVar2 != &g_SavedCameraRotation) {
     g_SavedCameraRotation = *pCVar2;
   }

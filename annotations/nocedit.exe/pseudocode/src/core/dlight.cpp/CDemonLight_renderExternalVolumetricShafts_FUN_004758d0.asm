@@ -82,8 +82,8 @@
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-;   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
@@ -128,8 +128,8 @@ section .text
     PUSH EBX                            ; 0047591d | g_CDemonRendererInstance
     LEA ESI,[EBP + -0x62]               ; 0047591e
     LEA EDI,[EBP + -0xe]                ; 00475921
-    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 ; 00475924
-        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760 ; 00475924
+        ;   XREF to: 0048c760 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[EBP + -0x62]               ; 00475929
     LEA EAX,[EBP + -0xe]                ; 0047592c
     LEA EBX,[EBP + 0xffffff7a]          ; 0047592f
@@ -205,8 +205,8 @@ section .text
     PUSH EAX                            ; 00475a0b
     MOV EDX,dword ptr [0x006703ec]      ; 00475a0c | g_CDemonRendererPtr2
     PUSH EDX                            ; 00475a12 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 00475a13
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780 ; 00475a13
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     FLD float ptr [EBP + 0xffffff56]    ; 00475a18
     FLD float ptr [EBP + 0xffffff5a]    ; 00475a1e
     FLD float ptr [EBP + 0xffffff5e]    ; 00475a24

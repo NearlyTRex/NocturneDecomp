@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output)
+; CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
@@ -32,7 +32,7 @@
 section .text
 
     PUSH EBX                            ; 0048c780
-        ;   Label: engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+        ;   Label: engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
     PUSH ESI                            ; 0048c781
     PUSH EBP                            ; 0048c782
     MOV EBP,ESP                         ; 0048c783

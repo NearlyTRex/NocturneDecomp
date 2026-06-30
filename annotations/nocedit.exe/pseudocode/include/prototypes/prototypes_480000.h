@@ -286,10 +286,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0048c690(CD
 void __cdecl engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0(CDemonRenderer *this_ptr,CVector3i *direction);
 void __cdecl engine_drender_cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0048c6e0(CDemonRenderer *this_ptr,CVector3f *light_direction);
 void __cdecl engine_drender_cpp_CDemonRenderer_calculateVertexLight_FUN_0048c740(CDemonRenderer *this_ptr,int vertex_index,CVector3i *vertex_position);
-CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer *this_ptr,CVector3i *output);
-CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output);
-CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer *this_ptr,CVector3i *output);
-float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer *this_ptr,float *output);
+CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760(CDemonRenderer *this_ptr,CVector3i *output);
+CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output);
+CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0048c7e0(CDemonRenderer *this_ptr,CVector3i *output);
+CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_0048c800(CDemonRenderer *this_ptr,CVector3f *output);
 float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *this_ptr,int x,int y,int width,int height);
 void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer *this_ptr);

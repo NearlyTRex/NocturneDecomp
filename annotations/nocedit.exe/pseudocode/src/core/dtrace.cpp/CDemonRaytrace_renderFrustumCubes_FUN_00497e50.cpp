@@ -125,7 +125,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50(CDem
   g_CubesVisibleCount = 0;
   g_CubesRenderedCount = 0;
   g_PVSDrawnCubeCount = 0;
-  engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760
             (g_CDemonRendererPtr1,&local_150);
   fVar1 = (float)0.00390625;
   local_15c = (float)local_150.x * fVar1;

@@ -42,9 +42,9 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *thi
     local_2c = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }
   g_SetDisplayListCount = 0;
-  engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0048c760
             (g_CDemonRendererPtr2,&local_64);
-  engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+  engine_drender_cpp_CDemonRenderer_getCameraOriginWorld_FUN_0048c780
             (g_CDemonRendererPtr2,(CVector3f *)local_70);
   local_28 = 0xc;
   if ((g_DynamicLightCount != 0) || (g_CGamePtr->goggles_active != 0)) {
