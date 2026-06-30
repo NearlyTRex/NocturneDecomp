@@ -24,8 +24,8 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
   CVector3f scaled_adjacent;
   CVector3f scaled_current;
   CVector3f midpoint;
-  CVector3f current_fixed;
-  CVector3f midpoint_fixed;
+  CVector3i current_fixed;
+  CVector3i midpoint_fixed;
 
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(this_ptr);
   this_ptr_00 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr, &bbox);
@@ -60,11 +60,11 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
 
       core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&current_copy, &current_fixed);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&pCVar1->vertex_buffer_ptr->projected_vertex, (CVector3i *)&current_fixed);
+                (&pCVar1->vertex_buffer_ptr->projected_vertex, &current_fixed);
       pCVar1 = g_CDemonRendererPtr1;
       core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&midpoint, &midpoint_fixed);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&pCVar1->vertex_buffer_ptr[1].projected_vertex, (CVector3i *)&midpoint_fixed);
+                (&pCVar1->vertex_buffer_ptr[1].projected_vertex, &midpoint_fixed);
 
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70
                 (pCVar1->vertex_buffer_ptr[0], pCVar1->vertex_buffer_ptr[1]);

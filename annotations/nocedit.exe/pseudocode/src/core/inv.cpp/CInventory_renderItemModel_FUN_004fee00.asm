@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,int rotation_y,int alpha)
+; void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   viewport_x
 ; int              Stack[0x10]:4   viewport_y
 ; int              Stack[0x14]:4   viewport_size
-; int              Stack[0x18]:4   rotation_y
+; float            Stack[0x18]:4   rotation_y
 ; int              Stack[0x1c]:4   alpha
 ; Local Variables:
 ; CVector3f        Stack[-0x50]:12  local_50

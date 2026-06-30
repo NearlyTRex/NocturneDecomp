@@ -4,18 +4,20 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "keep.cpp",
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 88,
+    "complexity_score": 104,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 88,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 366
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 89,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_inlined_function"
+    ],
+    "total_lines": 367
   },
   "cross_references": [
     {
@@ -197,17 +199,6 @@
     },
     "pcode_op_count": 1320
   },
-  "resolved_suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    }
-  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 32,
@@ -238,5 +229,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    }
+  ]
 }

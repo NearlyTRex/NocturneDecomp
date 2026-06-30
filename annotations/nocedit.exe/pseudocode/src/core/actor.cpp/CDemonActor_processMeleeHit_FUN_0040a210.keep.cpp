@@ -57,7 +57,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
   // corresponding world-coord point into local_c8.
   local_d4.x = 0.0;
   local_d4.y = 0.0;
-  pCVar1 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *)&local_110.min.y);
+  pCVar1 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&local_110);
   local_d4.z = (pCVar1->max).z;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(this_ptr,&local_c8,&local_d4);
 

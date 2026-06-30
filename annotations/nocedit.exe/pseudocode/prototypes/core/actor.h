@@ -689,7 +689,7 @@ void __cdecl CVector3f::zero(CVector3f *this_ptr);
 
 // Original: core_actor.cpp_CVector3f_toFixed8_FUN_004103d0
 // Address: 004103d0
-void __cdecl CVector3f::toFixed8(CVector3f *this_ptr,CVector3f *other);
+void __cdecl CVector3f::toFixed8(CVector3f *this_ptr,CVector3i *other);
 
 // Original: core_actor.cpp_CSlew_ctor_FUN_00410400
 // Address: 00410400

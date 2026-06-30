@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f *this_ptr,CVector3f *other)
+; void __cdecl core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f *this_ptr,CVector3i *other)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   this_ptr
-; CVector3f *      Stack[0x8]:4   other
+; CVector3i *      Stack[0x8]:4   other
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 at 0040dc84

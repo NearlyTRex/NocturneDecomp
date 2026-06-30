@@ -70,17 +70,13 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
         if (uVar2 == 0) {
           (*pIStack_20->vtable->QueryInterface)((IUnknown *)pIStack_20,&g_IID_IDirectSound3DBuffer,(void **)&piStack_1c);
           if (piStack_1c == (IDirectSound3DBuffer *)0x0) {
-            if (pIStack_20 != (IDirectSoundBuffer *)0x0) {
-              (*pIStack_20->vtable->Release)((IUnknown *)pIStack_20);
-              pIStack_20 = (IDirectSoundBuffer *)0x0;
-            }
+            (*pIStack_20->vtable->Release)((IUnknown *)pIStack_20);
+            pIStack_20 = (IDirectSoundBuffer *)0x0;
           }
           else {
             (*piStack_1c->vtable->QueryInterface)((IUnknown *)piStack_1c,&g_IID_IKsPropertySet,(void **)&g_DirectSoundPropertySet);
-            if (pIStack_20 != (IDirectSoundBuffer *)0x0) {
-              (*pIStack_20->vtable->Release)((IUnknown *)pIStack_20);
-              pIStack_20 = (IDirectSoundBuffer *)0x0;
-            }
+            (*pIStack_20->vtable->Release)((IUnknown *)pIStack_20);
+            pIStack_20 = (IDirectSoundBuffer *)0x0;
             if (piStack_1c != (IDirectSound3DBuffer *)0x0) {
               (*piStack_1c->vtable->Release)((IUnknown *)piStack_1c);
               piStack_1c = (IDirectSound3DBuffer *)0x0;

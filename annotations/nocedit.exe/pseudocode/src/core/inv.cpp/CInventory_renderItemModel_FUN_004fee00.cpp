@@ -2,11 +2,11 @@
 // Address: 004fee00
 // Address Range: [[004fee00, 004ff201]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,int rotation_y,int alpha)
+// Signature: void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,int rotation_y,int alpha)
+void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha)
 
 {
   int iVar11;
@@ -92,7 +92,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     g_PerspectiveReciprocal = 0;
     local_2c.x = 0.0;
     local_2c.z = 0.0;
-    local_2c.y = (float)rotation_y;
+    local_2c.y = rotation_y;
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(item,"CKeyActor");
     if (iVar1 != 0) {
       local_2c.x = local_2c.x + 1.570796f;

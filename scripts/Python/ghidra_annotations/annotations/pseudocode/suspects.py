@@ -102,6 +102,8 @@ SUSPECT_SEVERITY = {
     'loop_clobbered_constant': 'moderate',
     'primitive_walker_cast': 'moderate',
     'subfield_vector_pun': 'moderate',
+    'vector_type_pun': 'moderate',
+    'baked_self_address': 'moderate',
     'sign_compare_idiom': 'moderate',
     'carry_arith_idiom': 'moderate',
     'signed_shift_global_idiom': 'moderate',
@@ -4830,6 +4832,185 @@ def identify_subfield_vector_pun(decompiled_code):
     return suspects
 
 
+# Value-typed vector locals: `CVector3f foo;` / `CVector3i bar;` (NOT pointers).
+_VEC_DECL_RE = re.compile(r'^\s*(CVector3[fi])\s+(\w+)\s*;')
+# A cast of (the address of) a bare local to a vector pointer of the OTHER
+# element kind: `(CVector3f *)&bar`, `(CVector3i *)&foo`.
+_VEC_CAST_RE = re.compile(r'\(\s*(CVector3[fi])\s*\*\s*\)\s*&\s*(\w+)')
+
+
+def identify_vector_type_pun(decompiled_code):
+    """Detect int/float vector type-puns: `(CVector3f *)&LOCAL` where LOCAL is
+    declared `CVector3i` (or the reverse).
+
+    Watcom reuses one stack slot as both a float vector and an integer vector
+    (§13). Ghidra picks one element type for the local and casts the other
+    uses through a vector pointer of the wrong kind. Because the int and float
+    members alias the same bytes, the callee then reads integer bit-patterns
+    as floats (or vice-versa) — e.g. `local_44.z = (int)(-size*2)` stored into
+    a `CVector3i`, then passed as `(CVector3f *)&local_44`, so the camera
+    origin reads `-2` as a denormal/NaN and the model renders nowhere
+    (CInventory::renderItemModel). Whole-local casts only (field-address puns
+    are §26 / subfield_vector_pun).
+
+    Returns: list of suspect dicts.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    decl = {}
+    for line in lines:
+        m = _VEC_DECL_RE.match(line)
+        if m:
+            decl[m.group(2)] = m.group(1)
+    if not decl:
+        return suspects
+    for line_no, line in enumerate(lines, 1):
+        stripped = line.lstrip()
+        if (stripped.startswith('//') or stripped.startswith('/*') or
+                stripped.startswith('*')):
+            continue
+        for m in _VEC_CAST_RE.finditer(line):
+            # Skip field-address puns like `(CVector3f *)&x.y` — those are the
+            # subfield_vector_pun detector's job.
+            if m.end() < len(line) and line[m.end()] == '.':
+                continue
+            cast_type, name = m.group(1), m.group(2)
+            decl_type = decl.get(name)
+            if decl_type is None or decl_type == cast_type:
+                continue
+            suspects.append({
+                'line': line_no,
+                'type': 'vector_type_pun',
+                'match': '(%s *)&%s' % (cast_type, name),
+                'text': line.strip()[:120],
+                'description': (
+                    'Vector type-pun — `%s` is declared `%s` but its address is '
+                    'cast to `(%s *)` and read as the other element kind, so '
+                    'integer bits are reinterpreted as floats (or vice-versa). '
+                    'Stack-slot reuse Ghidra mistyped (§13): retype the local '
+                    'to the element kind the .asm stores/reads (FSTP/FLD = '
+                    'float, MOV = int), drop the `(int)`/`(float)` truncation '
+                    'on its components, and drop the cast.' % (
+                        name, decl_type, cast_type)),
+                'severity': 'moderate',
+            })
+    return suspects
+
+
+# Function's own code range, from the `// Address Range: [[s, e] [s, e]]`
+# header. Addresses are bare hex (no 0x prefix).
+_ADDR_RANGE_HDR_RE = re.compile(r'//\s*Address Range:\s*(.+)')
+_ADDR_RANGE_PAIR_RE = re.compile(r'\[\s*([0-9a-fA-F]+)\s*,\s*([0-9a-fA-F]+)\s*\]')
+# Candidate baked-address literals in code: 0x-prefixed hex (5-8 digits) and
+# decimal floats whose integer part is code-address magnitude (7-9 digits).
+_BAKED_HEX_RE = re.compile(r'\b0x([0-9a-fA-F]{5,8})\b')
+_BAKED_FLOAT_RE = re.compile(r'(?<![\w.])(\d{7,9})\.\d+')
+# §14 phantom assignment targets — a self-address stored into one of these is a
+# return-address dead store, not a baked data field.
+_DEAD_STORE_LHS_RE = re.compile(
+    r'\b(in_stack_|unaff_|extraout_|register0x|in_[A-Z]{2,3}\b)')
+
+
+def identify_baked_self_address(decompiled_code):
+    """Detect numeric literals that fall inside the function's OWN code range.
+
+    When Ghidra mistracks an internal address reference — a `MOV reg,ESP`, a
+    `LEA`, a cave-block jump target — it bakes the raw address in as a data
+    constant. The tell is that the value lands inside the function's own
+    `// Address Range:`. Distinct from `raw_address_constant`, which only
+    matches data-symbol / string addresses; these are `.text` self-addresses
+    that detector never sees.
+
+    Catches both forms Watcom/Ghidra emit:
+      - hex:   `output->x = 0x48c770;`            (CDemonRenderer::getCameraOriginFixed)
+      - float: `output->x = fVar1 * 4769685.0;`   (...getCameraOriginWorld; 4769685 = 0x48c795)
+
+    The per-function range is tiny (tens of bytes), so a real data constant
+    colliding with it is virtually impossible — high precision.
+
+    Returns: list of suspect dicts.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    ranges = []
+    for line in lines:
+        m = _ADDR_RANGE_HDR_RE.search(line)
+        if not m:
+            continue
+        for pm in _ADDR_RANGE_PAIR_RE.finditer(m.group(1)):
+            try:
+                start = int(pm.group(1), 16)
+                end = int(pm.group(2), 16)
+            except ValueError:
+                continue
+            if start <= end:
+                ranges.append((start, end))
+        break
+    if not ranges:
+        return suspects
+
+    def in_range(v):
+        return any(s <= v <= e for (s, e) in ranges)
+
+    def is_dead_store_context(line, match_start):
+        # §14 return-address dead stores assign a code address to a decompiler
+        # phantom (`in_stack_ffffffe0 = 0x5ffe31;`) or into a pointer slot
+        # (`x = (CGore *)0x4e6b5b;`). Those are a different artifact (remove the
+        # store), not a data-field baked into a numeric — skip them here.
+        lhs = line.split('=', 1)[0]
+        if _DEAD_STORE_LHS_RE.search(lhs):
+            return True
+        before = line[:match_start].rstrip()
+        if before.endswith('*)'):
+            return True
+        return False
+
+    for line_no, line in enumerate(lines, 1):
+        stripped = line.strip()
+        if (stripped.startswith('//') or stripped.startswith('#') or
+                stripped.startswith('/*') or stripped.startswith('*')):
+            continue
+        if stripped.startswith('case '):
+            continue
+        for m in _BAKED_HEX_RE.finditer(line):
+            try:
+                v = int(m.group(1), 16)
+            except ValueError:
+                continue
+            if in_range(v) and not is_dead_store_context(line, m.start()):
+                suspects.append(_baked_self_address_suspect(line_no, line, '0x%x' % v, v))
+        for m in _BAKED_FLOAT_RE.finditer(line):
+            try:
+                v = int(m.group(1))
+            except ValueError:
+                continue
+            if in_range(v) and not is_dead_store_context(line, m.start()):
+                suspects.append(_baked_self_address_suspect(
+                    line_no, line, m.group(0), v))
+    return suspects
+
+
+def _baked_self_address_suspect(line_no, line, match_text, value):
+    return {
+        'line': line_no,
+        'type': 'baked_self_address',
+        'match': match_text,
+        'text': line.strip()[:120],
+        'description': (
+            'Literal %s (= 0x%x) falls inside this function\'s own code range '
+            '(// Address Range). Ghidra mistracked an internal address '
+            'reference (a MOV reg,ESP / LEA / cave-block target) and baked it '
+            'in as a data constant — the value is meaningless at runtime. '
+            'Recover the real expression from the .asm (usually a register/'
+            'stack copy, not a constant) in a .keep.' % (match_text, value)),
+        'severity': 'moderate',
+    }
+
+
 # Watcom's REP SCASB strlen idiom. ECX is initialized to -1 (0xFFFFFFFF),
 # then decremented inside a do-while that reads a byte per iteration. The
 # `(uint)<bool> * -2 + 1` direction trick picks the step (1 forward, -1
@@ -7119,6 +7300,8 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_pointer_int_offset_access(code))
     found.extend(identify_shadow_pointer_walk(code))
     found.extend(identify_subfield_vector_pun(code))
+    found.extend(identify_vector_type_pun(code))
+    found.extend(identify_baked_self_address(code))
     found.extend(identify_unrolled_strlen_loops(code))
     found.extend(identify_unrolled_strcat_loops(code))
     found.extend(identify_unrolled_strchr_loops(code))

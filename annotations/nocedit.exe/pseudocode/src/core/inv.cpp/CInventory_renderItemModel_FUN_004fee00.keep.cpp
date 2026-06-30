@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[004fee00, 004ff201]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,int rotation_y,int alpha)
+// Signature: void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,int rotation_y,int alpha)
+void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha)
 
 {
   int iVar11;
@@ -19,7 +19,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
   float fVar10;
   float fVar11;
   CVector3f local_50;
-  CVector3i local_44;
+  CVector3f local_44;
   CVector3f local_2c;
   float local_14;
   float fVar8;
@@ -69,11 +69,11 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
        (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(item,"CKeyActor"), iVar1 != 0)) {
       local_14 = local_14 * (float)2;
     }
-    local_44.z = (int)(-local_14 * (float)2);
-    local_44.x = 0;
-    local_44.y = 0;
+    local_44.z = -local_14 * (float)2;
+    local_44.x = 0.0;
+    local_44.y = 0.0;
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-              (g_CDemonRendererPtr2,(CVector3f *)&local_44);
+              (g_CDemonRendererPtr2,&local_44);
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,36.0);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
               (g_CDemonRendererPtr2,&g_ZeroVector.f);
@@ -85,7 +85,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     g_PerspectiveReciprocal = 0;
     local_2c.x = 0.0;
     local_2c.z = 0.0;
-    local_2c.y = (float)rotation_y;
+    local_2c.y = rotation_y;
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(item,"CKeyActor");
     if (iVar1 != 0) {
       local_2c.x = local_2c.x + 1.570796f;

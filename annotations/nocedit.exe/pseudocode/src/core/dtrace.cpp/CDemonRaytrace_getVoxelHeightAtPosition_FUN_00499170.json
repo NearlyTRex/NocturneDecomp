@@ -177,31 +177,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 12,
-          "line": 44,
-          "message": "Either the condition 'pCVar3!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar3.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Either the condition 'pCVar3!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar3.",
-      "line": 44,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "if ((pCVar3->voxel_buffer1 != (SVoxelGrid *)0x0) &&",
-      "type": "static_null_pointer_redundant_check"
-    }
-  ]
+  "suspects": []
 }

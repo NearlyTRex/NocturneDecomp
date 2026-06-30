@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6454 (100.0%)
-Functions with suspects: 0 (0.0%)
+Clean functions: 6453 (100.0%)
+Functions with suspects: 1 (0.0%)
 
-Total suspect patterns: 10
+Total suspect patterns: 7
 Average suspects per function: 0.00
 
-Virtual files: 214 total, 214 at 100%, 214 at 90%+
+Virtual files: 214 total, 213 at 100%, 214 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -28,8 +28,9 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  static_null_pointer_redundant_check 5
   static_float_loop_induction 4
+  warning_inlined_function  1
+  static_null_pointer_redundant_check 1
   static_memleak            1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
@@ -84,7 +85,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00419000: core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000 (4 lines)
   00419f50: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_00419f50 (4 lines)
   0041a040: core_bodypart.cpp_CBodyPart_getCarrier_FUN_0041a040 (4 lines)
-  ... and 6404 more
+  ... and 6403 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -122,8 +123,11 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  static_null_pointer_redundant_check (0 functions):
-
   static_float_loop_induction (0 functions):
+
+  warning_inlined_function (1 functions):
+    00500370: core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370
+
+  static_null_pointer_redundant_check (0 functions):
 
   static_memleak (0 functions):

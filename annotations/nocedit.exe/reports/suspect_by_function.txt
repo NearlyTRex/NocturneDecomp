@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6445 (99.9%)
-With suspects: 9
-Total suspects: 10
+Clean: 6448 (99.9%)
+With suspects: 6
+Total suspects: 7
 
 ====================================================================================================
 core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 (2 suspects)
@@ -23,28 +23,16 @@ core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (1 suspect)
   Line 90 [static_float_loop_induction]: fStack_14 = fStack_14 - fStack_1c) {
 
 ====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170 (1 suspect)
-  File: core/dtrace.cpp
-====================================================================================================
-  Line 44 [static_null_pointer_redundant_check]: if ((pCVar3->voxel_buffer1 != (SVoxelGrid *)0x0) &&
-
-====================================================================================================
 core_game.cpp_CGame_finishAct_FUN_004e3b90 (1 suspect)
   File: core/game.cpp
 ====================================================================================================
   Line 45 [static_float_loop_induction]: for (local_550 = 5.0; 0.0 < local_550; local_550 = local_550 - this_ptr->delta_time_float) {
 
 ====================================================================================================
-shape_design.c_findVertexListInModel_FUN_00468000 (1 suspect)
-  File: shape/design.c
+core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370 (1 suspect)
+  File: core/inv.cpp
 ====================================================================================================
-  Line 15 [static_null_pointer_redundant_check]: while (((char)(model_ptr->base).type != '\x02' && ((char)(model_ptr->base).type != '\0'))) {
-
-====================================================================================================
-shape_design.c_getVertexCountFromModel_FUN_00468080 (1 suspect)
-  File: shape/design.c
-====================================================================================================
-  Line 15 [static_null_pointer_redundant_check]: while (((char)(model_ptr->base).type != '\x02' && ((char)(model_ptr->base).type != '\0'))) {
+  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
 shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0 (1 suspect)
@@ -57,9 +45,3 @@ sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660 (1 suspect)
   File: sound/snddx.cpp
 ====================================================================================================
   Line 42 [static_null_pointer_redundant_check]: (*local_18->vtable->QueryInterface)((IUnknown *)local_18,&g_IID_IDirectSound3DBuffer,(void **)&local_14);
-
-====================================================================================================
-sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830 (1 suspect)
-  File: sound/snddx.cpp
-====================================================================================================
-  Line 71 [static_null_pointer_redundant_check]: (*pIStack_20->vtable->QueryInterface)((IUnknown *)pIStack_20,&g_IID_IDirectSound3DBuffer,(void **)&piStack_1c);

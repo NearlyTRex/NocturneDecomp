@@ -57,7 +57,7 @@ CVector3f * __cdecl core_actor_cpp_CVector_dtor_FUN_00410350(CVector3f *this_ptr
 void __cdecl core_actor_cpp_copyVector_FUN_00410360(CVector3f *dst_ptr,CVector3f *src_ptr);
 float __cdecl core_actor_cpp_CVector3f_length_FUN_00410380(CVector3f *this_ptr);
 void __cdecl core_actor_cpp_CVector3f_zero_FUN_004103b0(CVector3f *this_ptr);
-void __cdecl core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f *this_ptr,CVector3f *other);
+void __cdecl core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f *this_ptr,CVector3i *other);
 CSlew * __cdecl core_actor_cpp_CSlew_ctor_FUN_00410400(CSlew *this_ptr);
 CSlew * __cdecl core_actor_cpp_CSlew_dtor_FUN_00410410(CSlew *this_ptr,uint flags);
 SDamageInfo * __cdecl core_actor_cpp_SDamageInfo_dtor_FUN_00410420(SDamageInfo *this_ptr,uint flags);

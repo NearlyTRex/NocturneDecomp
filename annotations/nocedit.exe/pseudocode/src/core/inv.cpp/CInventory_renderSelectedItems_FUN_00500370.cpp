@@ -61,7 +61,7 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
       }
       core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
                 (this_ptr,&this_ptr->selected_weapon->base,iVar5 - iVar1,iVar6 - iVar1,iVar7,
-                 0x3fc90fdb,local_1c);
+                 1.5707964,local_1c);
     }
     if ((this_ptr->selected_item != (CDemonActor *)0x0) && (0.0 < this_ptr->item_highlight_timer)) {
       iVar10 = 0x10;
@@ -92,7 +92,8 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
                    g_WindowHeight + -1,alpha);
       }
       core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
-                (this_ptr,this_ptr->selected_item,iVar8 - iVar10,iVar9 - iVar10,iVar11,0,local_18);
+                (this_ptr,this_ptr->selected_item,iVar8 - iVar10,iVar9 - iVar10,iVar11,0.0,local_18)
+      ;
     }
   }
   return;

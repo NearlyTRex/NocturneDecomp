@@ -149,31 +149,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "getVertexCountFromModel_FUN_00468080.keep.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 18,
-          "line": 15,
-          "message": "Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.",
-      "line": 15,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "while (((char)(model_ptr->base).type != '\\x02' && ((char)(model_ptr->base).type != '\\0'))) {",
-      "type": "static_null_pointer_redundant_check"
-    }
-  ]
+  "suspects": []
 }

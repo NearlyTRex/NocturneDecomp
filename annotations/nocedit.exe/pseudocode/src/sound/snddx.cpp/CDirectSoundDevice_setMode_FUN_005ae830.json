@@ -414,33 +414,7 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDirectSoundDevice_setMode_FUN_005ae830.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 13,
-          "line": 71,
-          "message": "Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.",
-      "line": 71,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "(*pIStack_20->vtable->QueryInterface)((IUnknown *)pIStack_20,&g_IID_IDirectSound3DBuffer,(void **)&piStack_1c);",
-      "type": "static_null_pointer_redundant_check"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

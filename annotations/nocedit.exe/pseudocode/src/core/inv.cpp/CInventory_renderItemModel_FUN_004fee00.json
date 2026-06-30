@@ -36,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004fee00",
-    "signature": "void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,int rotation_y,int alpha)"
+    "signature": "void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha)"
   },
   "function_calls": [
     {
@@ -376,6 +376,15 @@
       "severity": "moderate",
       "text": "(uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2);",
       "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Vector type-pun \u2014 `local_44` is declared `CVector3i` but its address is cast to `(CVector3f *)` and read as the other element kind, so integer bits are reinterpreted as floats (or vice-versa). Stack-slot reuse Ghidra mistyped (\u00a713): retype the local to the element kind the .asm stores/reads (FSTP/FLD = float, MOV = int), drop the `(int)`/`(float)` truncation on its components, and drop the cast.",
+      "line": 76,
+      "match": "(CVector3f *)&local_44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_CDemonRendererPtr2,(CVector3f *)&local_44);",
+      "type": "vector_type_pun"
     }
   ],
   "stack_frame": {
@@ -481,7 +490,7 @@
         "name": "rotation_y",
         "offset": 24,
         "size": 4,
-        "type": "int"
+        "type": "float"
       },
       {
         "is_param": true,

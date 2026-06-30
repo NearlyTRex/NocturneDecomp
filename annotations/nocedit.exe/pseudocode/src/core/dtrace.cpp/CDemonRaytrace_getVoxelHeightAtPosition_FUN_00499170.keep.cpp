@@ -39,8 +39,10 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_004991
     local_2c = -999.0;
   }
   else {
-    while (pCVar3 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
-                              (this_ptr,grid_x,local_1c,grid_z), pCVar3 != (CDemonCube *)0x0) {
+    while (1) {
+      pCVar3 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
+                         (this_ptr,grid_x,local_1c,grid_z);
+      if (pCVar3 == (CDemonCube *)0x0) break;
       if ((pCVar3->voxel_buffer1 != (SVoxelGrid *)0x0) &&
          ((pCVar3->voxel_buffer1->voxels[iVar2][local_18] & g_VoxelYBitMasks[iVar1]) != 0)) {
         return (float)local_18 * (this_ptr->cell_size).y * 0.125f +

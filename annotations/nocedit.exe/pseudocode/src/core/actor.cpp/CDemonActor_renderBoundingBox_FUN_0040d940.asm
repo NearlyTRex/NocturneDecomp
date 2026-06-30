@@ -161,7 +161,7 @@ section .text
     PUSH EBX                            ; 0040daba
     FSTP float ptr [ESP + 0x40]         ; 0040dabb
     CALL core_actor.cpp_CVector3f_toFixed8_FUN_004103d0 ; 0040dabf
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3f * other)
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3i * other)
     ADD ESP,0x8                         ; 0040dac4
     LEA EBX,[ESP + 0x108]               ; 0040dac7
     PUSH EBX                            ; 0040dace
@@ -176,7 +176,7 @@ section .text
     PUSH EBX                            ; 0040dae6
     MOV ESI,dword ptr [0x006703e8]      ; 0040dae7 | g_CDemonRendererPtr1
     CALL core_actor.cpp_CVector3f_toFixed8_FUN_004103d0 ; 0040daed
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3f * other)
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3i * other)
     ADD ESP,0x8                         ; 0040daf2
     LEA EBX,[ESP + 0xf0]                ; 0040daf5
     PUSH EBX                            ; 0040dafc
@@ -293,7 +293,7 @@ section .text
     PUSH EBX                            ; 0040dc7c
     FSTP float ptr [ESP + 0xdc]         ; 0040dc7d
     CALL core_actor.cpp_CVector3f_toFixed8_FUN_004103d0 ; 0040dc84
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3f * other)
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3i * other)
     ADD ESP,0x8                         ; 0040dc89
     LEA EBX,[ESP + 0x3c]                ; 0040dc8c
     PUSH EBX                            ; 0040dc90
@@ -308,7 +308,7 @@ section .text
     PUSH EBX                            ; 0040dca8
     MOV ESI,dword ptr [0x006703e8]      ; 0040dca9 | g_CDemonRendererPtr1
     CALL core_actor.cpp_CVector3f_toFixed8_FUN_004103d0 ; 0040dcaf
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3f * other)
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3i * other)
     ADD ESP,0x8                         ; 0040dcb4
     LEA EBX,[ESP + 0x54]                ; 0040dcb7
     PUSH EBX                            ; 0040dcbb
@@ -424,7 +424,7 @@ section .text
     PUSH ESI                            ; 0040de15
     FSTP float ptr [ESP + 0xb8]         ; 0040de16
     CALL core_actor.cpp_CVector3f_toFixed8_FUN_004103d0 ; 0040de1d
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3f * other)
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3i * other)
     ADD ESP,0x8                         ; 0040de22
     LEA ESI,[ESP + 0x78]                ; 0040de25
     PUSH ESI                            ; 0040de29
@@ -439,7 +439,7 @@ section .text
     PUSH EBX                            ; 0040de44
     MOV ESI,dword ptr [0x006703e8]      ; 0040de45 | g_CDemonRendererPtr1
     CALL core_actor.cpp_CVector3f_toFixed8_FUN_004103d0 ; 0040de4b
-        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3f * other)
+        ;   XREF to: 004103d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CVector3f_toFixed8_FUN_004103d0(CVector3f * this_ptr, CVector3i * other)
     ADD ESP,0x8                         ; 0040de50
     LEA EBX,[ESP + 0x12c]               ; 0040de53
     PUSH EBX                            ; 0040de5a

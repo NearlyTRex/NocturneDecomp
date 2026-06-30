@@ -85,7 +85,7 @@ void __cdecl CInventory::cycleWeaponOfSameClass(CInventory *this_ptr,int directi
 
 // Original: core_inv.cpp_CInventory_renderItemModel_FUN_004fee00
 // Address: 004fee00
-void __cdecl CInventory::renderItemModel(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,int rotation_y,int alpha);
+void __cdecl CInventory::renderItemModel(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha);
 
 // Original: core_inv.cpp_CInventory_save_FUN_004ff210
 // Address: 004ff210

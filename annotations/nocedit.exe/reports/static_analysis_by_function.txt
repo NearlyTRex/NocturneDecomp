@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 25
-  Total diagnostics: 77
+  Functions with findings: 21
+  Total diagnostics: 73
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 24, raw .cpp files: 1
+  .keep.cpp files: 20, raw .cpp files: 1
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -119,12 +119,6 @@ core_cloth.cpp_CCloth_boneEditor_FUN_0043c880  [.keep] [Clang-Tidy (quick)]
   Line   90: [cert-flp30-c] loop induction expression should not have floating-point type
 
 ----------------------------------------------------------------------------------------------------
-core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170  [.keep] [Cppcheck (quick)]
-  File: core/dtrace.cpp  (1 diagnostics)
-
-  Line   44: [nullPointerRedundantCheck] Either the condition 'pCVar3!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar3.
-
-----------------------------------------------------------------------------------------------------
 core_event.cpp_parseVectorLocation_FUN_004aa530  [.keep] [Cppcheck (quick)]
   File: core/event.cpp  (1 diagnostics)
 
@@ -173,18 +167,6 @@ engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
   Line   24: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-shape_design.c_findVertexListInModel_FUN_00468000  [.keep] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   15: [nullPointerRedundantCheck] Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_getVertexCountFromModel_FUN_00468080  [.keep] [Cppcheck (quick)]
-  File: shape/design.c  (1 diagnostics)
-
-  Line   15: [nullPointerRedundantCheck] Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.
-
-----------------------------------------------------------------------------------------------------
 shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0  [.cpp] [Cppcheck (quick)]
   File: shape/superopt.cpp  (1 diagnostics)
 
@@ -213,9 +195,3 @@ sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660  [.keep] [Cppche
   File: sound/snddx.cpp  (1 diagnostics)
 
   Line   42: [nullPointerRedundantCheck] Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.
-
-----------------------------------------------------------------------------------------------------
-sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830  [.keep] [Cppcheck (quick)]
-  File: sound/snddx.cpp  (1 diagnostics)
-
-  Line   71: [nullPointerRedundantCheck] Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
