@@ -13,7 +13,7 @@ void __cdecl core_script_cpp_CScript_addEventXRef_FUN_00567510(CScript *this_ptr
   SScriptXRef *pSVar1;
 
   pSVar1 = (SScriptXRef *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (this_ptr->xref_entries,(this_ptr->xref_count + 1) * 0x114,
+                     (this_ptr->xref_entries,(this_ptr->xref_count + 1) * sizeof(SScriptXRef),
                       "..\\core\\script.cpp",0x1d37);
   this_ptr->xref_entries = pSVar1;
   if (pSVar1 == (SScriptXRef *)0x0) {

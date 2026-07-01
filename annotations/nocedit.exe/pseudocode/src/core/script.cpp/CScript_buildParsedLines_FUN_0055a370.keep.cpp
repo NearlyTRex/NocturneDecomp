@@ -29,7 +29,7 @@ void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_0055a370(CScript *this
     core_script_cpp_trimLine_FUN_005592c0(pcVar3,pcVar7);
     if (g_ScriptLineBuffer[0] != '\0') {
       pSVar4 = (SScriptLine *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                         (this_ptr->parsed_lines,(this_ptr->parsed_line_count + 1) * 8,
+                         (this_ptr->parsed_lines,(this_ptr->parsed_line_count + 1) * sizeof(SScriptLine),
                           "..\\core\\script.cpp",0x397);
       this_ptr->parsed_lines = pSVar4;
       if (pSVar4 == (SScriptLine *)0x0) {

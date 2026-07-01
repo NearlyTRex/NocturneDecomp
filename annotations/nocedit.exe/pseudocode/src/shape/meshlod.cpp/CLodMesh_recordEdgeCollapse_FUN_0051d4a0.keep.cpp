@@ -16,7 +16,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0(CLodMesh
   iVar2 = this_ptr->lod_level_count + 1;
   this_ptr->lod_level_count = iVar2;
   pCVar1 = (CLodEdge *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (this_ptr->lod_levels_ptr,iVar2 * 0xf0,"..\\shape\\meshlod.cpp",0x14a4);
+                     (this_ptr->lod_levels_ptr,iVar2 * sizeof(CLodEdge),"..\\shape\\meshlod.cpp",0x14a4);
   this_ptr->lod_levels_ptr = pCVar1;
   if (pCVar1 == (CLodEdge *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";

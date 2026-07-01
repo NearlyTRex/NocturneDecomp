@@ -82,7 +82,7 @@ int __cdecl shape_superopt_cpp_CObj_removeUnusedVertices_FUN_005d44d0(CObj *this
         local_14 = local_14 + 1;
       } while (local_14 < uVar6);
     }
-    CVert *pCVar4 = (CVert *)realloc(this_ptr->vertex_data,uVar6 * 0x38);
+    CVert *pCVar4 = (CVert *)realloc(this_ptr->vertex_data,uVar6 * sizeof(CVert));
     if (pCVar4 != (CVert *)0x0) {
       this_ptr->vertex_data = pCVar4;
     }

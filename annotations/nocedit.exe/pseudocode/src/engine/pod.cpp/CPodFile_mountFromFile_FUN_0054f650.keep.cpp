@@ -58,7 +58,7 @@ LAB_0054f786:
     strcpy(this_ptr->description, local_370.description);
     this_ptr->file_count = local_370.file_count;
     pCVar4 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                       (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x16c);
+                       (this_ptr->file_count * sizeof(CPodDirectoryEntry),"..\\engine\\pod.cpp",0x16c);
     this_ptr->directory_entries = pCVar4;
     if (pCVar4 == (CPodDirectoryEntry *)0x0) {
 LAB_0054f6fe:
@@ -117,7 +117,7 @@ LAB_0054f6fe:
       this_ptr->dependency_count = local_490.dependency_count;
       this_ptr->mount_priority = local_490.mount_priority;
       pCVar5 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                         (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1ab);
+                         (this_ptr->file_count * sizeof(CPodDirectoryEntry),"..\\engine\\pod.cpp",0x1ab);
       this_ptr->directory_entries = pCVar5;
       if (pCVar5 != (CPodDirectoryEntry *)0x0) {
         _fseek(p_Var3,local_490.data_start_offset,0);
@@ -156,7 +156,7 @@ LAB_0054f6fe:
       this_ptr->file_count = local_160.file_count;
       this_ptr->audit_count = local_160.audit_count;
       pCVar5 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                         (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1da);
+                         (this_ptr->file_count * sizeof(CPodDirectoryEntry),"..\\engine\\pod.cpp",0x1da);
       this_ptr->directory_entries = pCVar5;
       if (pCVar5 != (CPodDirectoryEntry *)0x0) {
         _fread(pCVar5,this_ptr->file_count,0x14,file);
@@ -184,7 +184,7 @@ LAB_0054f6fe:
     strcpy(this_ptr->description, local_100.description);
     this_ptr->file_count = local_100.file_count;
     pCVar5 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                       (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x20a);
+                       (this_ptr->file_count * sizeof(CPodDirectoryEntry),"..\\engine\\pod.cpp",0x20a);
     this_ptr->directory_entries = pCVar5;
     if (pCVar5 == (CPodDirectoryEntry *)0x0) goto LAB_0054f6fe;
     size = 0;

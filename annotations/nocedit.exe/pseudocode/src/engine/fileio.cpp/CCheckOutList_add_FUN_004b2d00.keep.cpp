@@ -13,7 +13,7 @@ int __cdecl engine_fileio_cpp_CCheckOutList_add_FUN_004b2d00(CCheckOutList *this
   CCheckOutItem *pCVar1;
 
   pCVar1 = (CCheckOutItem *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (this_ptr->items,(this_ptr->count + 1) * 0x168,"..\\engine\\fileio.cpp",
+                     (this_ptr->items,(this_ptr->count + 1) * sizeof(CCheckOutItem),"..\\engine\\fileio.cpp",
                       0x2e7);
   this_ptr->items = pCVar1;
   if (pCVar1 == (CCheckOutItem *)0x0) {

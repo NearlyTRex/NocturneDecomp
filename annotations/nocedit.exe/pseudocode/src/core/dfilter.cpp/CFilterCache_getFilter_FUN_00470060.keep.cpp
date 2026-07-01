@@ -37,7 +37,7 @@ CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFil
   this_ptr->filter_count = this_ptr->filter_count + 1;
   strcpy(*pacVar5, filter_name);
   this_ptr_00 = (CDemonFilter *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                          (0x4c,"..\\core\\dfilter.cpp",0x58);
+                          (sizeof(CDemonFilter),"..\\core\\dfilter.cpp",0x58);
   pCVar3 = (CDemonFilter *)0x0;
   if (this_ptr_00 != (CDemonFilter *)0x0) {
     pCVar3 = core_dfilter_cpp_CDemonFilter_ctor_FUN_004701f0(this_ptr_00);

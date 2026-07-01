@@ -17,7 +17,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280(
   int iVar7;
   bool bVar1;
 
-  sorted = (SExpandedEdge *)shape_memdbg_cpp_malloc_FUN_006021da(edge_count * 0x60);
+  sorted = (SExpandedEdge *)shape_memdbg_cpp_malloc_FUN_006021da(edge_count * sizeof(SExpandedEdge));
   iVar7 = 0;
   if (sorted == (SExpandedEdge *)0x0) {
     return 0;

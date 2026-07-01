@@ -80,7 +80,7 @@ LAB_0050740e:
         }
         else if (uVar1 < 0x36) {
           this_ptr = (CKeyFramedModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                               (0x56d8,"..\\core\\main.c",0x274);
+                               (sizeof(CKeyFramedModel),"..\\core\\main.c",0x274);
           pCVar6 = (CKeyFramedModel *)0x0;
           if (this_ptr != (CKeyFramedModel *)0x0) {
             pCVar6 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(this_ptr);
@@ -115,7 +115,7 @@ LAB_0050740e:
           }
           else if (uVar1 == 0x42) {
             this_ptr_00 = (CMorph *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                                    (0xc2c,"..\\core\\main.c",0x292);
+                                    (sizeof(CMorph),"..\\core\\main.c",0x292);
             morph = (CMorph *)0x0;
             if (this_ptr_00 != (CMorph *)0x0) {
               morph = core_morph_cpp_CMorph_ctor_FUN_0052b310(this_ptr_00);

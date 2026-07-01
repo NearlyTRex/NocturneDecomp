@@ -37,7 +37,7 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
       }
       g_BackupVertices = (SVertexData *)
            shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                     ((g_VertexCount + 0x32) * 0x14,"..\\shape\\design.c",0x1a98);
+                     ((g_VertexCount + 0x32) * sizeof(SVertexData),"..\\shape\\design.c",0x1a98);
       if (g_BackupVertices == (SVertexData *)0x0) {
         g_CurrentFilename = "..\\shape\\design.c";
         g_CurrentLineNumber = 0x1a9a;
@@ -45,7 +45,7 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
       }
       g_BackupPolygons = (SShapeEditorPolygon *)
            shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                     ((g_PolygonCount + 0x32) * 0x184,"..\\shape\\design.c",0x1a9c);
+                     ((g_PolygonCount + 0x32) * sizeof(SShapeEditorPolygon),"..\\shape\\design.c",0x1a9c);
       if (g_BackupPolygons == (SShapeEditorPolygon *)0x0) {
         g_CurrentFilename = "..\\shape\\design.c";
         g_CurrentLineNumber = 0x1a9e;

@@ -137,7 +137,7 @@ LAB_00599119:
                           (g_CEditorToolsPtr,"Select model to view","models",
                            "*.dfm",local_118,0), iVar5 != 0)) {
       this_ptr = (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                           (0x22b4,"..\\core\\skeledit.cpp",0x1b79);
+                           (sizeof(CDeformableModelInstance),"..\\core\\skeledit.cpp",0x1b79);
       this_ptr_00 = (CDeformableModelInstance *)0x0;
       if (this_ptr != (CDeformableModelInstance *)0x0) {
         this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(this_ptr);

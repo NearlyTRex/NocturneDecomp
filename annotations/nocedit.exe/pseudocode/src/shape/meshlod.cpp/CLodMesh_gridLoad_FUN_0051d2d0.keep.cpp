@@ -17,7 +17,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
   int local_14;
   
   pSVar1 = (SSpatialGrid *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (this_ptr->spatial_grid_ptr,0x4004,"..\\shape\\meshlod.cpp",0x146f);
+                     (this_ptr->spatial_grid_ptr,sizeof(SSpatialGrid),"..\\shape\\meshlod.cpp",0x146f);
   this_ptr->spatial_grid_ptr = pSVar1;
   if (pSVar1 == (SSpatialGrid *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";

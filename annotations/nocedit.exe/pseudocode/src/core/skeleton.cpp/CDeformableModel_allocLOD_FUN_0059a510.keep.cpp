@@ -46,7 +46,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510(CDeformabl
   pSVar1 = (SVert *)__vec_new(array_memory,element_count,type_info);
   this_ptr->vertex_data_ptr[lod_index] = pSVar1;
   pSVar2 = (SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     ((this_ptr->cap_tri_count[lod_index] + this_ptr->tri_count[lod_index]) * 0x12,
+                     ((this_ptr->cap_tri_count[lod_index] + this_ptr->tri_count[lod_index]) * sizeof(SInputFace),
                       "..\\core\\skeleton.cpp",0x29d);
   this_ptr->tri_data_ptr[lod_index] = pSVar2;
   piVar3 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0

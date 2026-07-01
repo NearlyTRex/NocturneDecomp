@@ -116,7 +116,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
             local_3c8 = local_500;
             g_AuditRecordsArray =
                  (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                           (g_AuditRecordsArray,g_AuditRecordCount * 0x138,
+                           (g_AuditRecordsArray,g_AuditRecordCount * sizeof(CPodAuditRecord),
                             "..\\engine\\fileio.cpp",0x7a1);
             if (g_AuditRecordsArray == (CPodAuditRecord *)0x0) {
               g_CurrentFilename = "..\\engine\\fileio.cpp";
@@ -170,7 +170,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
               g_AuditRecordCount = g_AuditRecordCount + 1;
               g_AuditRecordsArray =
                    (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                             (g_AuditRecordsArray,g_AuditRecordCount * 0x138,
+                             (g_AuditRecordsArray,g_AuditRecordCount * sizeof(CPodAuditRecord),
                               "..\\engine\\fileio.cpp",0x7a1);
               if (g_AuditRecordsArray == (CPodAuditRecord *)0x0) {
                 g_CurrentFilename = "..\\engine\\fileio.cpp";
@@ -304,7 +304,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 g_AuditRecordCount = iVar7;
                 g_AuditRecordsArray =
                      (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                               (g_AuditRecordsArray,iVar7 * 0x138,"..\\engine\\fileio.cpp",0x7a1
+                               (g_AuditRecordsArray,iVar7 * sizeof(CPodAuditRecord),"..\\engine\\fileio.cpp",0x7a1
                                );
                 if (g_AuditRecordsArray == (CPodAuditRecord *)0x0) {
                   g_CurrentFilename = "..\\engine\\fileio.cpp";
@@ -326,7 +326,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 g_AuditRecordCount = iVar7;
                 g_AuditRecordsArray =
                      (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                               (g_AuditRecordsArray,iVar7 * 0x138,"..\\engine\\fileio.cpp",0x7a1
+                               (g_AuditRecordsArray,iVar7 * sizeof(CPodAuditRecord),"..\\engine\\fileio.cpp",0x7a1
                                );
                 if (g_AuditRecordsArray == (CPodAuditRecord *)0x0) {
                   g_CurrentFilename = "..\\engine\\fileio.cpp";

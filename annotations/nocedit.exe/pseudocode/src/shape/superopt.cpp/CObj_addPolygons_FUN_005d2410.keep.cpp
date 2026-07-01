@@ -16,7 +16,7 @@ int __cdecl shape_superopt_cpp_CObj_addPolygons_FUN_005d2410(CObj *this_ptr,int 
   CPoly local_78;
 
   pCVar1 = (CPoly *)realloc
-                     (this_ptr->poly_array,(this_ptr->poly_count + add_count) * 0x68);
+                     (this_ptr->poly_array,(this_ptr->poly_count + add_count) * sizeof(CPoly));
   if (pCVar1 != (CPoly *)0x0) {
     this_ptr->poly_array = pCVar1;
     shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_78,(CObj *)0x0);

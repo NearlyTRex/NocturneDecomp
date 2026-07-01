@@ -34,7 +34,7 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
   
   bVar13 = 0;
   workspace = (SColorQuantMapper *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                        (0x8308,"..\\engine\\palette.cpp",0xb4);
+                        (sizeof(SColorQuantMapper),"..\\engine\\palette.cpp",0xb4);
   color_count = 0;
   if (workspace == (SColorQuantMapper *)0x0) {
     g_CurrentFilename = "..\\engine\\palette.cpp";

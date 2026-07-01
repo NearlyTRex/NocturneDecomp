@@ -101,7 +101,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
             } while (iVar1 < buffer->triangle_count);
           }
           pCVar6 = (CDemonPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                             (0x388,"..\\core\\dtrace.cpp",0x17a);
+                             (sizeof(CDemonPart),"..\\core\\dtrace.cpp",0x17a);
           pCVar7 = (CDemonPart *)0x0;
           if (pCVar6 != (CDemonPart *)0x0) {
             pCVar7 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(pCVar6);
@@ -133,7 +133,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
         }
         else {
           this_ptr_00 = (CDemonPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                                  (0x388,"..\\core\\dtrace.cpp",0x19a);
+                                  (sizeof(CDemonPart),"..\\core\\dtrace.cpp",0x19a);
           pCVar2 = (CDemonPart *)0x0;
           if (this_ptr_00 != (CDemonPart *)0x0) {
             pCVar2 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(this_ptr_00);

@@ -353,7 +353,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           _fprintf(local_180,"Automap capped faces is active\n");
         }
         local_184 = (SS3DFaceMatch *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                              ((int)local_16c * 0x3c,"..\\core\\skeledit.cpp",0xc4e);
+                              ((int)local_16c * sizeof(SS3DFaceMatch),"..\\core\\skeledit.cpp",0xc4e);
         if (local_184 == (SS3DFaceMatch *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0xc4f;
@@ -545,7 +545,7 @@ LAB_005902c8:
         _fprintf(local_180,"Scale = %7.3f %7.3f %7.3f\n",(double)local_1dc,(double)local_1d8,
                    (double)local_1d4);
         pCVar19 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                            ((int)local_16c * 0xc + 4,"..\\core\\skeledit.cpp",0xd0f);
+                            ((int)local_16c * sizeof(CVector3f) + 4,"..\\core\\skeledit.cpp",0xd0f);
         local_17c = pCVar19;
         if (pCVar19 != (CVector3f *)0x0) {
           local_17c = (CVector3f *)&pCVar19->y;
@@ -553,7 +553,7 @@ LAB_005902c8:
         }
         fVar8 = (float)this_ptr->tri_count[0];
         pCVar19 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                            ((int)fVar8 * 0xc + 4,"..\\core\\skeledit.cpp",0xd10);
+                            ((int)fVar8 * sizeof(CVector3f) + 4,"..\\core\\skeledit.cpp",0xd10);
         local_178 = pCVar19;
         if (pCVar19 != (CVector3f *)0x0) {
           local_178 = (CVector3f *)&pCVar19->y;
@@ -987,7 +987,7 @@ LAB_00591f48:
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Finding capped faces in %s",entry->s3d_filename);
           pSVar14 = (SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                              ((this_ptr->tri_count[0] + local_158) * 0x12,
+                              ((this_ptr->tri_count[0] + local_158) * sizeof(SInputFace),
                                "..\\core\\skeledit.cpp",0xf1a);
           local_150 = pSVar14;
           local_14c = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0

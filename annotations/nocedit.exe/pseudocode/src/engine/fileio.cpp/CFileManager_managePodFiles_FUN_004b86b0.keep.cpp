@@ -89,7 +89,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
       engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0(this_ptr,&local_84);
       local_48 = local_94.item_count;
       local_44 = (SPodManageRecord *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                           (local_94.item_count * 0x39c,"..\\engine\\fileio.cpp",0xc0e);
+                           (local_94.item_count * sizeof(SPodManageRecord),"..\\engine\\fileio.cpp",0xc0e);
       if (local_44 == (SPodManageRecord *)0x0) {
         g_CurrentFilename = "..\\engine\\fileio.cpp";
         g_CurrentLineNumber = 0xc0f;

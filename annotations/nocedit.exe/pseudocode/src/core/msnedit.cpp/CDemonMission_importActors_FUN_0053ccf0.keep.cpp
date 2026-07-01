@@ -47,7 +47,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Creating temp mission");
   this_ptr_00 = (CDemonMission *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                          (0x27d0,"..\\core\\msnedit.cpp",0xbef);
+                          (sizeof(CDemonMission),"..\\core\\msnedit.cpp",0xbef);
   if (this_ptr_00 == (CDemonMission *)0x0) {
     g_CurrentFilename = "..\\core\\msnedit.cpp";
     g_CurrentLineNumber = 0xbf0;

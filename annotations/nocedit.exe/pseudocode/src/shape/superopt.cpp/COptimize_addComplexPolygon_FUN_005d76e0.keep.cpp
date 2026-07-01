@@ -15,11 +15,11 @@ CComplexPolygon * __cdecl shape_superopt_cpp_COptimize_addComplexPolygon_FUN_005
   CComplexPolygon *pCVar3;
 
   ppCVar2 = (CComplexPolygon **)realloc
-                      (this_ptr->complex_polygons,(this_ptr->complex_polygon_count + 1) * 4);
+                      (this_ptr->complex_polygons,(this_ptr->complex_polygon_count + 1) * sizeof(CComplexPolygon *));
   pCVar3 = (CComplexPolygon *)0x0;
   if (ppCVar2 != (CComplexPolygon **)0x0) {
     if (polygon == (CComplexPolygon *)0x0) {
-      pCVar3 = (CComplexPolygon *)shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(0x34);
+      pCVar3 = (CComplexPolygon *)shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(sizeof(CComplexPolygon));
       polygon = (CComplexPolygon *)0x0;
       if (pCVar3 != (CComplexPolygon *)0x0) {
         polygon = shape_superopt_cpp_CComplexPolygon_ctor_FUN_005c79a0(pCVar3);

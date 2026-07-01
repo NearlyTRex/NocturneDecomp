@@ -216,7 +216,7 @@ LAB_005c6fd0:
      (fVar4 = this_ptr->morph_timer + delta_time, this_ptr->morph_timer = fVar4,
      4.0f < fVar4)) {
     this_ptr_00 = (CHotDemon *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                            (0xbef0,"..\\core\\succubus.cpp",0x16c);
+                            (sizeof(CHotDemon),"..\\core\\succubus.cpp",0x16c);
     pCVar11 = (CHotDemon *)0x0;
     if (this_ptr_00 != (CHotDemon *)0x0) {
       pCVar11 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(this_ptr_00);

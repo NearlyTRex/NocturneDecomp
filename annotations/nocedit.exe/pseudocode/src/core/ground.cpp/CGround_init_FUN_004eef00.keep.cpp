@@ -1,0 +1,40 @@
+// Name: core_ground.cpp_CGround_init_FUN_004eef00
+// Address: 004eef00
+// MANUAL RECONSTRUCTION
+// Address Range: [[004eef00, 004eefaa]]
+// Convention: __cdecl
+// Signature: void __cdecl core_ground_cpp_CGround_init_FUN_004eef00(CGround *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_ground_cpp_CGround_init_FUN_004eef00(CGround *this_ptr)
+
+{
+  SGroundCell *pSVar1;
+  CTextureList *this_ptr_00;
+  CTextureList *pCVar2;
+  
+  core_ground_cpp_CGround_free_FUN_004eefb0(this_ptr);
+  pSVar1 = (SGroundCell *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                     (this_ptr->width * this_ptr->height * sizeof(SGroundCell),"..\\core\\ground.cpp",0xd2);
+  this_ptr->terrain_data = pSVar1;
+  if (pSVar1 == (SGroundCell *)0x0) {
+    g_CurrentFilename = "..\\core\\ground.cpp";
+    g_CurrentLineNumber = 0xd3;
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CGround::init - Out of memory");
+  }
+  this_ptr_00 = (CTextureList *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
+                          (sizeof(CTextureList),"..\\core\\ground.cpp",0xd7);
+  pCVar2 = (CTextureList *)0x0;
+  if (this_ptr_00 != (CTextureList *)0x0) {
+    pCVar2 = core_texlist_cpp_CTextureList_ctor_FUN_005dbdd0(this_ptr_00);
+  }
+  this_ptr->texture_list = pCVar2;
+  if (pCVar2 != (CTextureList *)0x0) {
+    return;
+  }
+  g_CurrentFilename = "..\\core\\ground.cpp";
+  g_CurrentLineNumber = 0xd8;
+  core_main_c_displayErrorAndQuit_FUN_00506f10("CGround::init - Out of memory2");
+  return;
+}

@@ -22,7 +22,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90(CC
     this_ptr->material_id = poly->material_id;
   }
   ppCVar2 = (CPoly **)realloc
-                      (this_ptr->polygon_list,(this_ptr->polygon_count + 1) * 4);
+                      (this_ptr->polygon_list,(this_ptr->polygon_count + 1) * sizeof(CPoly *));
   if (ppCVar2 != (CPoly **)0x0) {
     this_ptr->polygon_list = ppCVar2;
     iVar1 = this_ptr->polygon_count;

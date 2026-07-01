@@ -1,0 +1,22 @@
+// Name: core_hostage.cpp_factoryFunc_FUN_004f4800
+// Address: 004f4800
+// MANUAL RECONSTRUCTION
+// Address Range: [[004f4800, 004f4822]]
+// Convention: __cdecl
+// Signature: CHostage * __cdecl core_hostage_cpp_factoryFunc_FUN_004f4800(void)
+
+#include "nocturne.h"
+
+CHostage * __cdecl core_hostage_cpp_factoryFunc_FUN_004f4800(void)
+
+{
+  CHostage *pCVar1;
+  
+  pCVar1 = (CHostage *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
+                     (sizeof(CHostage),"..\\core\\hostage.cpp",0x59);
+  if (pCVar1 == (CHostage *)0x0) {
+    return (CHostage *)0x0;
+  }
+  pCVar1 = core_hostage_cpp_CHostage_ctor_FUN_004f4840(pCVar1);
+  return pCVar1;
+}

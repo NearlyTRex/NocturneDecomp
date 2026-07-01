@@ -199,13 +199,13 @@ joined_r0x005e8664:
     goto joined_r0x005e8664;
   }
   this_ptr_00 = (CMobster *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                          (0xbf94,"..\\core\\vehicle.cpp",0x15d);
+                          (sizeof(CMobster),"..\\core\\vehicle.cpp",0x15d);
   this_ptr_01 = (CMobster *)0x0;
   if (this_ptr_00 != (CMobster *)0x0) {
     this_ptr_01 = core_mobster_cpp_CMobster_ctor_FUN_00525200(this_ptr_00);
   }
   this_ptr_02 = (CTommyGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                          (0x584,"..\\core\\vehicle.cpp",0x15e);
+                          (sizeof(CTommyGun),"..\\core\\vehicle.cpp",0x15e);
   actor = (CTommyGun *)0x0;
   if (this_ptr_02 != (CTommyGun *)0x0) {
     actor = core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(this_ptr_02);

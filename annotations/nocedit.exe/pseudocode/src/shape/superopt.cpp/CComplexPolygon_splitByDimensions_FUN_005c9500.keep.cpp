@@ -141,7 +141,7 @@ CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_splitByDimensions_F
           return (CComplexPolygon *)0x0;
         }
       }
-      this_ptr_00 = (CComplexPolygon *)shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(0x34);
+      this_ptr_00 = (CComplexPolygon *)shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(sizeof(CComplexPolygon));
       pCVar6 = (CComplexPolygon *)0x0;
       if (this_ptr_00 != (CComplexPolygon *)0x0) {
         pCVar6 = shape_superopt_cpp_CComplexPolygon_ctor_FUN_005c79a0(this_ptr_00);

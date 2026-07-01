@@ -41,7 +41,7 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20(C
             core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze finding hero.");
           }
           this_ptr_00 = (CHeroPlaceholder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                                  (0x15c,"..\\core\\mission.cpp",0x689);
+                                  (sizeof(CHeroPlaceholder),"..\\core\\mission.cpp",0x689);
           actor = (CHeroPlaceholder *)0x0;
           if (this_ptr_00 != (CHeroPlaceholder *)0x0) {
             actor = core_hero_cpp_CHeroPlaceholder_ctor_FUN_004f3c00(this_ptr_00);

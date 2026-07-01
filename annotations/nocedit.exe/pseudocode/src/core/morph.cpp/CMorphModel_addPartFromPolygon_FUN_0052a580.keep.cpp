@@ -39,7 +39,7 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphMo
                      (this_ptr->points,this_ptr->num_points << 4,"..\\core\\morph.cpp",0x89);
   this_ptr->points = pSVar3;
   pSVar4 = (SMRGLPrimitiveTriangle *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (this_ptr->faces,this_ptr->num_faces * 0x3c,"..\\core\\morph.cpp",0x8a);
+                     (this_ptr->faces,this_ptr->num_faces * sizeof(SMRGLPrimitiveTriangle),"..\\core\\morph.cpp",0x8a);
   this_ptr->faces = pSVar4;
   this_ptr->part_count = this_ptr->part_count + 1;
   if ((this_ptr->points == (SMorphPoint *)0x0) || (this_ptr->faces == (SMRGLPrimitiveTriangle *)0x0)

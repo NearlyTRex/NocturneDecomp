@@ -27,7 +27,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
   memset(coverage_map,0,g_WindowWidth * g_WindowHeight);
   ptr = (CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                   (g_CDemonCameraInstance.framebuffer_height *
-                   g_CDemonCameraInstance.framebuffer_width * 0xc,"..\\core\\setedit.cpp",0xf22)
+                   g_CDemonCameraInstance.framebuffer_width * sizeof(CVector3i),"..\\core\\setedit.cpp",0xf22)
   ;
   if (ptr == (CVector3i *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
