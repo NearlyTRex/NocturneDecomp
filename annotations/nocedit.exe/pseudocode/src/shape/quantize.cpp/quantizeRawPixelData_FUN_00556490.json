@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 373,
-    "complexity_score": 164,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 164,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 537
   },
   "cross_references": [
@@ -528,5 +530,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x28 == sizeof(CBitmap). Replace the magic with sizeof(CBitmap) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 27,
+      "match": "(CBitmap*) alloc stride 0x28",
+      "severity": "moderate",
+      "text": "(CBitmap *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x28,\"..\\\\shape\\\\quantize.cpp\",0x3ec)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x4b44 == sizeof(CColorQuantizer). Replace the magic with sizeof(CColorQuantizer) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 87,
+      "match": "(CColorQuantizer*) alloc stride 0x4b44",
+      "severity": "moderate",
+      "text": "(CColorQuantizer *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x4b44,\"..\\\\shape\\\\quantize.cpp\",0x417)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

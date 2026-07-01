@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 24,
+    "complexity_score": 39,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 78
   },
   "cross_references": [
@@ -198,5 +200,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x114 == sizeof(SScriptXRef). Replace the magic with sizeof(SScriptXRef) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 10,
+      "match": "(SScriptXRef*) alloc stride 0x114",
+      "severity": "moderate",
+      "text": "(SScriptXRef *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->xref_entries,(this_ptr->xref_count + 1) * 0x114, \"..\\\\core\\\\script.cpp\",0x1d37)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

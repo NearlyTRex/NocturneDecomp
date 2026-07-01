@@ -126,7 +126,7 @@ def build_global_ptr_intervals(repo_root):
 
 
 def run_detectors(susp, code, struct_layout_map=None,
-                  global_interval_map=None):
+                  global_interval_map=None, struct_size_map=None):
     """Run the source-text-only content detectors on `code`.
 
     Mirrors detect_content_suspects() but with no func_globals / func_calls —
@@ -177,6 +177,7 @@ def run_detectors(susp, code, struct_layout_map=None,
     found.extend(susp.identify_fast_sqrt_inline(code))
     found.extend(susp.identify_bit_int_float_compare(code))
     found.extend(susp.identify_struct_field_overrun(code, struct_layout_map))
+    found.extend(susp.identify_alloc_magic_size(code, struct_size_map))
     return found
 
 
@@ -297,10 +298,12 @@ def main(argv=None):
     # Build the struct layout map (for the type-aware struct_field_overrun
     # detector) from data_types.json under annotations/<exe>/.
     struct_layout_map = {}
+    struct_size_map = {}
     import glob as _glob
     for _dt in _glob.glob(os.path.join(
             REPO_ROOT, 'annotations', '*', 'data_types', 'data_types.json')):
         struct_layout_map = susp.build_struct_layout_map(_dt)
+        struct_size_map = susp.build_struct_size_map(_dt)
         if struct_layout_map:
             break
 
@@ -318,7 +321,7 @@ def main(argv=None):
         with open(path, 'r') as f:
             code = f.read()
         suspects = run_detectors(susp, code, struct_layout_map,
-                                 global_interval_map)
+                                 global_interval_map, struct_size_map)
 
         cppcheck_diags = []
         if not args.no_cppcheck:

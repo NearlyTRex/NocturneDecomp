@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6454 (100.0%)
-Functions with suspects: 0 (0.0%)
+Clean functions: 6262 (97.0%)
+Functions with suspects: 192 (3.0%)
 
-Total suspect patterns: 0
-Average suspects per function: 0.00
+Total suspect patterns: 231
+Average suspects per function: 0.04
 
-Virtual files: 214 total, 214 at 100%, 214 at 90%+
+Virtual files: 214 total, 79 at 100%, 202 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 47.8
+Average complexity score: 48.3
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,6 +28,7 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
+  alloc_magic_size          231
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -81,17 +82,17 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00419000: core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000 (4 lines)
   00419f50: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_00419f50 (4 lines)
   0041a040: core_bodypart.cpp_CBodyPart_getCarrier_FUN_0041a040 (4 lines)
-  ... and 6404 more
+  ... and 6212 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
   0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3337, suspects: 0, lines: 3337)
   004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2138, suspects: 0, lines: 2138)
   00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 1852, suspects: 0, lines: 1852)
-  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1728, suspects: 0, lines: 1728)
+  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1743, suspects: 1, lines: 1728)
   004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1591, suspects: 0, lines: 1591)
+  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 1482, suspects: 4, lines: 1437)
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 1474, suspects: 0, lines: 1474)
-  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 1437, suspects: 0, lines: 1437)
   004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 1153, suspects: 0, lines: 1153)
   005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1140, suspects: 0, lines: 1140)
   005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1076, suspects: 0, lines: 1076)
@@ -103,7 +104,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 917, suspects: 0, lines: 917)
   0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 857, suspects: 0, lines: 857)
   00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (score: 833, suspects: 0, lines: 833)
-  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 810, suspects: 0, lines: 810)
+  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 825, suspects: 1, lines: 810)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 809, suspects: 0, lines: 809)
   0041e350: core_box.cpp_CBox_processPhysics_FUN_0041e350 (score: 779, suspects: 0, lines: 779)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 752, suspects: 0, lines: 752)
@@ -118,3 +119,16 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
+
+  alloc_magic_size (192 functions):
+    00403790: wincore_wddvmem.cpp_initTextureCache_FUN_00403790
+    00410d80: core_ammo.cpp_factoryFunc_FUN_00410d80
+    00411560: core_ammobox.cpp_factoryFunc_FUN_00411560
+    00411700: core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411700
+    00411ca0: core_anvil.cpp_factoryFunc_FUN_00411ca0
+    00412160: core_armour.cpp_factoryFunc_FUN_00412160
+    00412770: core_backgnd.cpp_factoryFunc_FUN_00412770
+    00412b80: core_baron.cpp_factoryFuncBaron_FUN_00412b80
+    00413d00: core_baron.cpp_factoryFuncBaronWeapon_FUN_00413d00
+    00414180: core_barrier.cpp_factoryFunc_FUN_00414180
+    ... and 182 more

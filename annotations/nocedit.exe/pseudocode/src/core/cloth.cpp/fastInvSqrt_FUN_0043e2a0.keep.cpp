@@ -10,6 +10,6 @@
 float __cdecl core_cloth_cpp_fastInvSqrt_FUN_0043e2a0(float dist_sq)
 
 {
-  int bits = g_FastInvSqrtMagic - (*(int *)&dist_sq >> 1);
-  return *(float *)&bits;
+  int bits = g_FastInvSqrtMagic - ((int)__BITCAST_UINT32(dist_sq) >> 1);
+  return __BITCAST_FLOAT(bits);
 }

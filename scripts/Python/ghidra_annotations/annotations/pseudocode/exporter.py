@@ -78,7 +78,7 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     detect_content_suspects, build_global_interval_map,
     identify_missing_cave_copy, identify_unrolled_memset_blocks,
     identify_unrolled_memcpy_blocks, extract_unreachable_block_addrs,
-    get_struct_layout_map
+    get_struct_layout_map, get_struct_size_map
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -485,6 +485,7 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
         address_interval_map=address_interval_map,
         func_calls=result.func_calls,
         struct_layout_map=get_struct_layout_map(pseudocode_src_dir),
+        struct_size_map=get_struct_size_map(pseudocode_src_dir),
     )
     suspects = list(content_suspects_cpp)
 
@@ -611,6 +612,7 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
                 address_interval_map=address_interval_map,
                 func_calls=result.func_calls,
                 struct_layout_map=get_struct_layout_map(pseudocode_src_dir),
+                struct_size_map=get_struct_size_map(pseudocode_src_dir),
             )
             # Re-run cross-source detectors that take .cpp text against the keep.
             cave_copy_suspects_keep = identify_missing_cave_copy(

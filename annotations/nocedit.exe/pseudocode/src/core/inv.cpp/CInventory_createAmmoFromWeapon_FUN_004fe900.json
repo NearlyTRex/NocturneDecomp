@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 38,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 9,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 125
   },
   "cross_references": [],
@@ -195,5 +197,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x31c == sizeof(CAmmo). Replace the magic with sizeof(CAmmo) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 13,
+      "match": "(CAmmo*) alloc stride 0x31c",
+      "severity": "moderate",
+      "text": "(CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,\"..\\\\core\\\\inv.cpp\",0x2fc)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

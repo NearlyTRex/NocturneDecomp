@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 39,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 183
   },
   "cross_references": [
@@ -218,5 +220,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x3c == sizeof(SMRGLPrimitiveTriangle). Replace the magic with sizeof(SMRGLPrimitiveTriangle) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 22,
+      "match": "(SMRGLPrimitiveTriangle*) alloc stride 0x3c",
+      "severity": "moderate",
+      "text": "(SMRGLPrimitiveTriangle *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->faces,this_ptr->num_faces * 0x3c,\"..\\\\core\\\\morph.cpp\",0xbf)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 549,
-    "complexity_score": 200,
+    "complexity_score": 305,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 51,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 200,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 10,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 749
   },
   "cross_references": [
@@ -439,5 +441,86 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x3198 == sizeof(CBitFont). Replace the magic with sizeof(CBitFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 10,
+      "match": "(CBitFont*) alloc stride 0x3198",
+      "severity": "moderate",
+      "text": "(CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,\"..\\\\core\\\\dfont.cpp\",0x3f)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x3198 == sizeof(CBitFont). Replace the magic with sizeof(CBitFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 32,
+      "match": "(CBitFont*) alloc stride 0x3198",
+      "severity": "moderate",
+      "text": "(CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,\"..\\\\core\\\\dfont.cpp\",0x4f)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x3198 == sizeof(CBitFont). Replace the magic with sizeof(CBitFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 53,
+      "match": "(CBitFont*) alloc stride 0x3198",
+      "severity": "moderate",
+      "text": "(CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,\"..\\\\core\\\\dfont.cpp\",0x5e)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x3198 == sizeof(CBitFont). Replace the magic with sizeof(CBitFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 76,
+      "match": "(CBitFont*) alloc stride 0x3198",
+      "severity": "moderate",
+      "text": "(CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,\"..\\\\core\\\\dfont.cpp\",0x6f)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x3198 == sizeof(CBitFont). Replace the magic with sizeof(CBitFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 98,
+      "match": "(CBitFont*) alloc stride 0x3198",
+      "severity": "moderate",
+      "text": "(CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,\"..\\\\core\\\\dfont.cpp\",0x82)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x3198 == sizeof(CBitFont). Replace the magic with sizeof(CBitFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 119,
+      "match": "(CBitFont*) alloc stride 0x3198",
+      "severity": "moderate",
+      "text": "(CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,\"..\\\\core\\\\dfont.cpp\",0x94)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x13c == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 142,
+      "match": "(CWinFont*) alloc stride 0x13c",
+      "severity": "moderate",
+      "text": "(CWinFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x13c,\"..\\\\core\\\\dfont.cpp\",0xa4)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x13c == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 157,
+      "match": "(CWinFont*) alloc stride 0x13c",
+      "severity": "moderate",
+      "text": "(CWinFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x13c,\"..\\\\core\\\\dfont.cpp\",0xaa)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x13c == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 172,
+      "match": "(CWinFont*) alloc stride 0x13c",
+      "severity": "moderate",
+      "text": "(CWinFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x13c,\"..\\\\core\\\\dfont.cpp\",0xb0)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x13c == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 187,
+      "match": "(CWinFont*) alloc stride 0x13c",
+      "severity": "moderate",
+      "text": "(CWinFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x13c,\"..\\\\core\\\\dfont.cpp\",0xb6)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

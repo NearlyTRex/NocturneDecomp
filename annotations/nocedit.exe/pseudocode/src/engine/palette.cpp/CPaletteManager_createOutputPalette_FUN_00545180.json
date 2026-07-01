@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 243,
+    "complexity_score": 258,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 47,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 243,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 747
   },
   "cross_references": [],
@@ -581,5 +583,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x8308 == sizeof(SColorQuantMapper). Replace the magic with sizeof(SColorQuantMapper) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 37,
+      "match": "(SColorQuantMapper*) alloc stride 0x8308",
+      "severity": "moderate",
+      "text": "(SColorQuantMapper *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x8308,\"..\\\\engine\\\\palette.cpp\",0xb4)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

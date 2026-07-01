@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 12,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 12,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 15
   },
   "cross_references": [
@@ -76,5 +78,14 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x1400c == sizeof(CTextureCache). Replace the magic with sizeof(CTextureCache) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 7,
+      "match": "(CTextureCache*) alloc stride 0x1400c",
+      "severity": "moderate",
+      "text": "(CTextureCache *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1400c,\"..\\\\engine\\\\texture.cpp\",0x278)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

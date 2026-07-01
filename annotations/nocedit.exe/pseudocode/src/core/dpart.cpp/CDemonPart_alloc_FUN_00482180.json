@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 39,
+    "complexity_score": 74,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 11,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 143
   },
   "cross_references": [
@@ -230,5 +232,30 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 12,
+      "match": "(CVector3i*) alloc stride 0xc",
+      "severity": "moderate",
+      "text": "(CVector3i *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->vertex_count,0xc,\"..\\\\core\\\\dpart.cpp\",0x87)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 21,
+      "match": "(CVector3i*) alloc stride 0xc",
+      "severity": "moderate",
+      "text": "(CVector3i *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->vertex_count,0xc,\"..\\\\core\\\\dpart.cpp\",0x90)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x20 == sizeof(SSurfacePlane). Replace the magic with sizeof(SSurfacePlane) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 31,
+      "match": "(SSurfacePlane*) alloc stride 0x20",
+      "severity": "moderate",
+      "text": "(SSurfacePlane *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->face_count,0x20,\"..\\\\core\\\\dpart.cpp\",0x98)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

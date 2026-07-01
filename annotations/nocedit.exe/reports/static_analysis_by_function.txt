@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 19
-  Total diagnostics: 71
+  Functions with findings: 14
+  Total diagnostics: 64
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 19, raw .cpp files: 0
+  .keep.cpp files: 14, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -85,25 +85,11 @@ core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690  [.keep] [Cppcheck (
   Line 1730: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-core_chain.cpp_fastSqrt_FUN_00431350  [.keep] [Cppcheck (quick)]
-  File: core/chain.cpp  (2 diagnostics)
-
-  Line   13: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-  Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0  [.keep] [Clang-Tidy (quick)]
   File: core/charactr.cpp  (2 diagnostics)
 
   Line   74: [cert-flp30-c] loop induction expression should not have floating-point type
   Line  118: [cert-flp30-c] loop induction expression should not have floating-point type
-
-----------------------------------------------------------------------------------------------------
-core_cloth.cpp_fastInvSqrt_FUN_0043e2a0  [.keep] [Cppcheck (quick)]
-  File: core/cloth.cpp  (2 diagnostics)
-
-  Line   13: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-  Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppcheck (quick)]
@@ -165,21 +151,3 @@ engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (1 diagnostics)
 
   Line   24: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680  [.keep] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (1 diagnostics)
-
-  Line   46: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
-
-----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_00533f80  [.keep] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (1 diagnostics)
-
-  Line   30: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
-
-----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30  [.keep] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (1 diagnostics)
-
-  Line   29: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.

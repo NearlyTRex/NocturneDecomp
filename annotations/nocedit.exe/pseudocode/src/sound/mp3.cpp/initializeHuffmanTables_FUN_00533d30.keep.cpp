@@ -15,7 +15,7 @@ int __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533d30(void)
   int iVar2;
   int iVar4;
   uint uVar5;
-  int local_1c;
+  uint local_1c;
 
   iVar4 = 0;
   do {

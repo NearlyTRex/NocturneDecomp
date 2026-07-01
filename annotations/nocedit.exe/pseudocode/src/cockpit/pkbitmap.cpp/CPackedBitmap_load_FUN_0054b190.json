@@ -247,6 +247,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Pointer-array allocation strides by 4 (== 32-bit sizeof(void *)). Replace the magic 4 with sizeof(void *): a raw 4 under-allocates and corrupts memory once pointers are 8 bytes at 64-bit (\u00a727).",
+      "line": 35,
+      "match": "(void**) alloc stride 4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(void **)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((this_ptr->height + 1) * 4,\"..\\\\cockpit\\\\pkbitmap.cpp\",0x378)",
+      "type": "alloc_magic_size"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 0054b347, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 145,
       "match": "MOVSD.REP",

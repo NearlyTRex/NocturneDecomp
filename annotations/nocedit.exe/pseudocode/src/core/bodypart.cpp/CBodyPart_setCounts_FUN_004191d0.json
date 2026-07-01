@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 40,
+    "complexity_score": 75,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 10,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 154
   },
   "cross_references": [
@@ -277,5 +279,30 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 11,
+      "match": "(CVector3i*) alloc stride 0xc",
+      "severity": "moderate",
+      "text": "(CVector3i *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->vertices,this_ptr->vertex_count * 0xc,\"..\\\\core\\\\bodypart.cpp\", 0xa8)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 15,
+      "match": "(CVector3i*) alloc stride 0xc",
+      "severity": "moderate",
+      "text": "(CVector3i *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->normals,this_ptr->vertex_count * 0xc,\"..\\\\core\\\\bodypart.cpp\", 0xa9)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x3c == sizeof(SMRGLPrimitiveTriangle). Replace the magic with sizeof(SMRGLPrimitiveTriangle) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 19,
+      "match": "(SMRGLPrimitiveTriangle*) alloc stride 0x3c",
+      "severity": "moderate",
+      "text": "(SMRGLPrimitiveTriangle *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->faces,this_ptr->tri_count * 0x3c,\"..\\\\core\\\\bodypart.cpp\",0xab)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

@@ -26,7 +26,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(C
   int local_44;
   int local_40;
   int local_3c;
-  int local_38;
+  uint local_38;
   int local_34;
   SHuffmanTable *local_28;
   int local_20;

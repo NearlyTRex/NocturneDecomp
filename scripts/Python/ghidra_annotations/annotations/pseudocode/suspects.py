@@ -108,6 +108,7 @@ SUSPECT_SEVERITY = {
     'carry_arith_idiom': 'moderate',
     'signed_shift_global_idiom': 'moderate',
     'struct_field_overrun': 'moderate',
+    'alloc_magic_size': 'moderate',
 }
 
 
@@ -6659,6 +6660,7 @@ def identify_unrolled_memcpy_blocks(assembly_code, unreachable_addrs=None):
 # builds the map from data_types.json.
 
 _struct_layout_cache = None
+_struct_size_cache = None
 
 _SFO_ACCESS_RE = re.compile(r'\b([A-Za-z_]\w*)\s*(?:->|\.)\s*([A-Za-z_]\w*)\s*\[')
 _SFO_SIG_RE = re.compile(r'//\s*Signature:.*?\((.*)\)')
@@ -6765,6 +6767,156 @@ def get_struct_layout_map(pseudocode_src_dir):
         layout = build_struct_layout_map(path)
     _struct_layout_cache = layout
     return layout
+
+
+def build_struct_size_map(data_types_path):
+    """Parse data_types.json into a struct/union name -> total byte size map.
+
+    The struct-level `len` field is the exact Ghidra size (e.g. SVertexData
+    -> 20, CComplexPolygon -> 52). Used by identify_alloc_magic_size to detect
+    a magic allocation stride that equals sizeof(T). Returns {} if the file is
+    missing or unreadable.
+    """
+    try:
+        with open(data_types_path) as f:
+            data = json.load(f)
+    except (IOError, ValueError):
+        return {}
+    sizes = {}
+    for section in ('structs', 'unions'):
+        for entry in data.get(section, []):
+            name = entry.get('name')
+            length = entry.get('len')
+            if name and isinstance(length, int) and length > 0:
+                sizes[name] = length
+    return sizes
+
+
+def get_struct_size_map(pseudocode_src_dir):
+    """Cached struct/union name -> size map, located like get_struct_layout_map."""
+    global _struct_size_cache
+    if _struct_size_cache is not None:
+        return _struct_size_cache
+    base = pseudocode_src_dir
+    while base and os.path.basename(base) != 'pseudocode':
+        base = os.path.dirname(base)
+    sizes = {}
+    if base:
+        path = os.path.join(os.path.dirname(base), 'data_types', 'data_types.json')
+        sizes = build_struct_size_map(path)
+    _struct_size_cache = sizes
+    return sizes
+
+
+# Allocation-family callee: libc malloc/calloc/realloc plus Watcom debug-heap
+# wrappers (debugAlloc, shape_memdbg_cpp_malloc_FUN_..., debugMalloc). The alt
+# matches any callee name carrying a '[Mm]alloc'/'[Aa]lloc' segment; `realloc`
+# and `calloc` already contain 'alloc'.
+_ALLOC_CAST_CALL_RE = re.compile(
+    r'\(\s*([A-Za-z_]\w*)\s*(\*+)\s*\)\s*'
+    r'([A-Za-z_]\w*(?:[Mm]alloc|[Aa]lloc)[A-Za-z0-9_]*)\s*\(')
+# A numeric constant used as a multiplicative stride: `* N` or `N *`.
+_ALLOC_STRIDE_RE = re.compile(
+    r'\*\s*(0x[0-9a-fA-F]+|\d+)\b|\b(0x[0-9a-fA-F]+|\d+)\s*\*')
+# A single argument that is a bare numeric constant (single-object / calloc size).
+_ALLOC_BARE_CONST_RE = re.compile(r'^\s*(0x[0-9a-fA-F]+|\d+)\s*$')
+
+
+def identify_alloc_magic_size(code, struct_size_map=None):
+    """Flag allocation sizes that hardcode a struct byte-size as a magic number.
+
+    Watcom baked struct sizes as immediate values, so the decompiler emits e.g.
+        pv = (SVertexData *)debugMalloc(count * 0x14);      // 0x14 == sizeof
+        pp = (CComplexPolygon **)realloc(old, (n + 1) * 4); // 4 == 32-bit ptr
+    On the 32-bit matching build these are correct, but at 64-bit a struct that
+    contains a pointer grows and a pointer itself becomes 8 bytes, so the magic
+    stride is silently wrong. Using sizeof(T) keeps the size correct across
+    layout and word-size changes (fix_compilation.md §17/§18; a 64-bit item like
+    pointer_truncation §27).
+
+    Detection is type-resolved via the inline cast on the allocation, so it only
+    fires when the element type is known and the magic exactly matches:
+      - single-star cast `(T *)`  and a size constant == sizeof(T)  -> struct.
+      - multi-star  cast `(T **)` and a size constant == 4          -> pointer
+        array (the direct 64-bit break: 4 -> 8).
+    An unresolved type or a non-matching constant yields no flag, so bare
+    int/short strides never noise.
+
+    Args:
+        code: source text.
+        struct_size_map: struct/union name -> byte size (build_struct_size_map /
+            get_struct_size_map). Without a map, nothing is flagged.
+
+    Returns:
+        List of suspect dicts (type alloc_magic_size), one per matched site.
+    """
+    suspects = []
+    if not code or not struct_size_map:
+        return suspects
+
+    # Match across the whole blob (not line-by-line): Ghidra frequently wraps a
+    # long allocation so the cast+callee and its `(args)` land on separate lines
+    # (`(CPoly *)realloc\n  (old, n * 0x68)`). `\s*` between callee and `(`
+    # spans the newline, and _extract_balanced_parens walks the args across it.
+    for m in _ALLOC_CAST_CALL_RE.finditer(code):
+        # Skip a match whose cast sits on a comment line.
+        line_start = code.rfind('\n', 0, m.start()) + 1
+        nl = code.find('\n', m.start())
+        first_line = code[line_start:(nl if nl != -1 else len(code))].strip()
+        if first_line.startswith(('//', '#', '/*', '*')):
+            continue
+
+        elem_type, stars = m.group(1), m.group(2)
+        call = _extract_balanced_parens(code[m.end() - 1:])
+        if call is None:
+            continue
+        args = call[1:-1]  # strip the outer parens
+
+        consts = set()
+        for sm in _ALLOC_STRIDE_RE.finditer(args):
+            cs = sm.group(1) or sm.group(2)
+            consts.add(int(cs, 16) if cs.startswith('0x') else int(cs))
+        for piece in args.split(','):  # bare-constant size arg (calloc/single)
+            bm = _ALLOC_BARE_CONST_RE.match(piece)
+            if bm:
+                cs = bm.group(1)
+                consts.add(int(cs, 16) if cs.startswith('0x') else int(cs))
+        if not consts:
+            continue
+
+        if len(stars) >= 2:
+            if 4 not in consts:
+                continue
+            desc = (
+                'Pointer-array allocation strides by 4 (== 32-bit '
+                'sizeof(%s *)). Replace the magic 4 with sizeof(%s *): a raw '
+                '4 under-allocates and corrupts memory once pointers are 8 '
+                'bytes at 64-bit (§27).' % (elem_type, elem_type))
+            match = '(%s%s) alloc stride 4' % (elem_type, stars)
+        else:
+            tsize = struct_size_map.get(elem_type)
+            if tsize is None or tsize not in consts:
+                continue
+            desc = (
+                'Allocation size hardcodes 0x%x == sizeof(%s). Replace the '
+                'magic with sizeof(%s) so it stays correct if the struct '
+                'layout (or a contained pointer) changes size at 64-bit '
+                '(§17/§18).' % (tsize, elem_type, elem_type))
+            match = '(%s%s) alloc stride 0x%x' % (elem_type, stars, tsize)
+
+        # Line of the cast; snippet is the cast..call collapsed to one line.
+        line_no = code.count('\n', 0, m.start()) + 1
+        snippet = re.sub(r'\s+', ' ', m.group(0)[:-1] + call).strip()
+        suspects.append({
+            'line': line_no,
+            'type': 'alloc_magic_size',
+            'match': match,
+            'text': snippet[:200],
+            'description': desc,
+            'severity': SUSPECT_SEVERITY.get('alloc_magic_size', 'moderate'),
+        })
+
+    return suspects
 
 
 def _sfo_resolve_var_types(code):
@@ -7242,7 +7394,7 @@ def identify_struct_field_overrun(code, struct_layout_map=None):
 
 def detect_content_suspects(code, func_globals=None, global_interval_map=None,
                             address_interval_map=None, func_calls=None,
-                            struct_layout_map=None):
+                            struct_layout_map=None, struct_size_map=None):
     """Run all content-based (source-text) suspect detectors on a code blob.
 
     Used to re-evaluate a .keep file against the original .cpp to determine
@@ -7258,6 +7410,8 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
         func_calls: Function-call metadata (for format_string_mismatch).
         struct_layout_map: Per-struct field layout (for struct_field_overrun);
             from get_struct_layout_map() / build_struct_layout_map().
+        struct_size_map: Struct/union name -> byte size (for alloc_magic_size);
+            from get_struct_size_map() / build_struct_size_map().
 
     Returns:
         Flat list of suspect dicts, all of CONTENT_SUSPECT_TYPES.
@@ -7310,6 +7464,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_fast_sqrt_inline(code))
     found.extend(identify_bit_int_float_compare(code))
     found.extend(identify_struct_field_overrun(code, struct_layout_map))
+    found.extend(identify_alloc_magic_size(code, struct_size_map))
     return found
 
 

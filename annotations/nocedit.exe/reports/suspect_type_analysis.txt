@@ -4,3 +4,224 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
+  alloc_magic_size                 231 (100.0%)
+
+====================================================================================================
+TYPE: alloc_magic_size (231 occurrences)
+====================================================================================================
+
+Unique patterns:
+     8x  (CVector3i*) alloc stride 0xc
+     6x  (CBitFont*) alloc stride 0x3198
+     6x  (CPodAuditRecord*) alloc stride 0x138
+     6x  (CDeformableModelInstance*) alloc stride 0x22b4
+     5x  (CVector3f*) alloc stride 0xc
+     5x  (CMP3Decoder*) alloc stride 0x8630
+     4x  (CAmmo*) alloc stride 0x31c
+     4x  (SVoxelGrid*) alloc stride 0x40
+     4x  (CWinFont*) alloc stride 0x13c
+     4x  (CPodDirectoryEntry*) alloc stride 0x14
+     4x  (CVert*) alloc stride 0x38
+     3x  (SMRGLPrimitiveTriangle*) alloc stride 0x3c
+     3x  (CLodEdge*) alloc stride 0xf0
+     3x  (CPoly*) alloc stride 0x68
+     2x  (CTextureCache*) alloc stride 0x1400c
+     2x  (CBodyPart*) alloc stride 0xf30
+     2x  (CBoxActor*) alloc stride 0x66c
+     2x  (CCloth*) alloc stride 0x3fe70
+     2x  (CKeyFramedModel*) alloc stride 0x56d8
+     2x  (CDemonPart*) alloc stride 0x388
+
+Functions:
+  core_ammo.cpp_factoryFunc_FUN_00410d80
+  core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411700
+  core_ammobox.cpp_factoryFunc_FUN_00411560
+  core_anvil.cpp_factoryFunc_FUN_00411ca0
+  core_armour.cpp_factoryFunc_FUN_00412160
+  core_backgnd.cpp_factoryFunc_FUN_00412770
+  core_baron.cpp_factoryFuncBaronWeapon_FUN_00413d00
+  core_baron.cpp_factoryFuncBaron_FUN_00412b80
+  core_barrier.cpp_factoryFunc_FUN_00414180
+  core_bat.cpp_factoryFunc_FUN_00414790
+  core_batcreat.cpp_factoryFunc_FUN_004150b0
+  core_batman.cpp_factoryFunc_FUN_00416410
+  core_battery.cpp_factoryFunc_FUN_00417e50
+  core_beast.cpp_factoryFunc_FUN_004181e0
+  core_biggs.cpp_factoryFunc_FUN_00418580
+  core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
+  core_bodypart.cpp_createBodyPart_FUN_00418e10
+  core_bodypart.cpp_factoryFunc_FUN_00418fd0
+  core_boneguy.cpp_factoryFunc_FUN_0041b820
+  core_boxactor.cpp_factoryFuncBoxActor_FUN_004216c0
+  core_boxactor.cpp_factoryFuncLightActor_FUN_00422950
+  core_bride.cpp_factoryFunc_FUN_00423760
+  core_bugs.cpp_factoryFunc_FUN_00424c70
+  core_chain.cpp_factoryFunc_FUN_0042fb40
+  core_cloth.cpp_CClothList_load_FUN_0043bfa0
+  core_colonel.cpp_factoryFunc_FUN_0043f7a0
+  core_conveyor.cpp_factoryFunc_FUN_00441c60
+  core_cow.cpp_factoryFunc_FUN_00444100
+  core_crate.cpp_factoryFunc_FUN_00448490
+  core_crossbow.cpp_factoryFunc_FUN_00448c30
+  core_curtain.cpp_factoryFunc_FUN_00449660
+  core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840
+  core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_004567b0
+  core_dest.cpp_factoryFunc_FUN_0046f8c0
+  core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060
+  core_dfont.cpp_initFonts_FUN_004709a0
+  core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0
+  core_dmodel.cpp_writeModelDependencies_FUN_0047ee30
+  core_dog.cpp_factoryFunc_FUN_0047f010
+  core_door.cpp_factoryFunc_FUN_0047fa90
+  core_dpart.cpp_CDemonPart_alloc_FUN_00482180
+  core_dracbrid.cpp_factoryFunc_FUN_00483f80
+  core_drip.cpp_factoryFunc_FUN_0048dfc0
+  core_drone.cpp_factoryFunc_FUN_0048eb10
+  core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00494270
+  core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0
+  core_dynamite.cpp_factoryFunc_FUN_0049cd80
+  core_elephant.cpp_factoryFunc_FUN_004a6fa0
+  core_emitter.cpp_factoryFunc_FUN_004a7c60
+  core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150
+  core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070
+  core_filmreel.cpp_factoryFuncFilmProjector_FUN_004bea00
+  core_filmreel.cpp_factoryFuncFilmReel_FUN_004be670
+  core_flame.cpp_factoryFunc_FUN_004c9a60
+  core_flamecan.cpp_factoryFunc_FUN_004cb120
+  core_flamegun.cpp_factoryFunc_FUN_004cb840
+  core_flashlit.cpp_factoryFunc_FUN_004cbb80
+  core_flies.cpp_factoryFunc_FUN_004cbd20
+  core_frankgen.cpp_factoryFunc_FUN_004d16e0
+  core_gabriela.cpp_factoryFunc_FUN_004d2ae0
+  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
+  core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930
+  core_gargoyle.cpp_factoryFunc_FUN_004e44a0
+  core_gasmask.cpp_factoryFunc_FUN_004e5cc0
+  core_ghoul.cpp_factoryFunc_FUN_004e5ff0
+  core_glass.cpp_factoryFunc_FUN_004e9000
+  core_gore.cpp_CGore_spawnFlies_FUN_004edf30
+  core_grave.cpp_factoryFunc_FUN_004ee4d0
+  core_ground.cpp_CGround_init_FUN_004eef00
+  core_gun.cpp_factoryFunc_FUN_004f02b0
+  core_haystack.cpp_factoryFunc_FUN_004f0bd0
+  core_health.cpp_factoryFunc_FUN_004f1d90
+  core_hero.cpp_factoryFunc_FUN_004f3bc0
+  core_hiram.cpp_getFactoryFunc_FUN_004f43b0
+  core_hostage.cpp_factoryFunc_FUN_004f4800
+  core_hotdemon.cpp_factoryFunc_FUN_004f6c60
+  core_hpriest.cpp_factoryFunc_FUN_004f7b30
+  core_icepick.cpp_factoryFunc_FUN_004f7db0
+  core_imp.cpp_factoryFunc_FUN_004f9860
+  core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900
+  core_keyactor.cpp_factoryFunc_FUN_00501650
+  core_ladder.cpp_factoryFunc_FUN_00502500
+  core_larva.cpp_factoryFunc_FUN_00502f50
+  core_lever.cpp_factoryFunc_FUN_00504790
+  core_lightgun.cpp_factoryFunc_FUN_005058c0
+  core_litecone.cpp_factoryFunc_FUN_00506ad0
+  core_main.c_showDeveloperToolsMenu_FUN_005073a0
+  core_manpuz.cpp_factoryFuncMansionPuzzleCircle_FUN_005088e0
+  core_manpuz.cpp_factoryFuncMirrorHack_FUN_0050b0d0
+  core_marquee.cpp_factoryFunc_FUN_0050bb20
+  core_melee.cpp_factoryFunc_FUN_0050e790
+  core_mimic.cpp_factoryFunc_FUN_0051f190
+  core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20
+  core_mobster.cpp_factoryFunc_FUN_005251c0
+  core_moloch.cpp_factoryFunc_FUN_00528af0
+  core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580
+  core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710
+  core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
+  core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0
+  core_npc.cpp_factoryFunc_FUN_005447a0
+  core_passngr.cpp_factoryFunc_FUN_00545af0
+  core_pendulum.cpp_factoryFunc_FUN_00549350
+  core_platfrm.cpp_factoryFunc_FUN_0054c810
+  core_scat.cpp_factoryFunc_FUN_00556e90
+  core_script.cpp_CScript_addEventXRef_FUN_00567510
+  core_script.cpp_CScript_buildParsedLines_FUN_0055a370
+  core_script.cpp_CScript_dbLoad_FUN_005603c0
+  core_sentinel.cpp_factoryFunc_FUN_00567d70
+  core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00
+  core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310
+  core_setutil.cpp_C3DSLight_create_FUN_00586a90
+  core_shotgun.cpp_factoryFunc_FUN_00587ea0
+  core_shovel.cpp_factoryFunc_FUN_00588b60
+  core_simbox.cpp_factoryFunc_FUN_00588d00
+  core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690
+  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
+  core_skeledit.cpp_CDeformableModel_groundBias_FUN_0058e4e0
+  core_skeledit.cpp_previewModel_FUN_00598f10
+  core_skeledit.cpp_viewModel_FUN_00598fc0
+  core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0
+  core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510
+  core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0
+  core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460
+  core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910
+  core_smiley.cpp_factorFunc_FUN_005a23f0
+  core_spike.cpp_factoryFunc_FUN_005b81e0
+  core_stairs.cpp_factoryFunc_FUN_005b9b30
+  core_stone.cpp_factoryFunc_FUN_005bacd0
+  core_stranger.cpp_factoryFunc_FUN_005bb0e0
+  core_succubus.cpp_CSuccubus_process_FUN_005c6e90
+  core_succubus.cpp_factoryFunc_FUN_005c6a40
+  core_svetlana.cpp_factoryFunc_FUN_005d8810
+  core_tbplayer.cpp_factoryFuncBassPlayer_FUN_005da020
+  core_tbplayer.cpp_factoryFuncDrummer_FUN_005da280
+  core_teleport.cpp_factoryFuncTeleportDest_FUN_005da730
+  core_teleport.cpp_factoryFuncTeleport_FUN_005da9a0
+  core_tentacle.cpp_factoryFunc_FUN_005daf20
+  core_tommygun.cpp_factoryFunc_FUN_005dda50
+  core_trap.cpp_factoryFunc_FUN_005de650
+  core_trash.cpp_factoryFunc_FUN_005deb30
+  core_trigger.cpp_factoryFunc_FUN_005df800
+  core_turret.cpp_factoryFunc_FUN_005e20b0
+  core_tvbat.cpp_factoryFunc_FUN_005e3e80
+  core_vampboss.cpp_factoryFunc_FUN_005e5550
+  core_vehicle.cpp_CVehicle_process_FUN_005e7e80
+  core_vehicle.cpp_factoryFunc_FUN_005e7900
+  core_vessel.cpp_factoryFunc_FUN_005e8e20
+  core_wateract.cpp_factoryFunc_FUN_005ea860
+  core_waypoint.cpp_factoryFunc_FUN_005ebe30
+  core_werewolf.cpp_factoryFunc_FUN_005efbd0
+  core_zombie.cpp_factoryFunc_FUN_005f8fa0
+  engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
+  engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70
+  engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
+  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
+  engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
+  engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180
+  engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
+  engine_pod.cpp_CPod_mount_FUN_00550a10
+  engine_texture.cpp_initTextureCache_FUN_005dd760
+  shape_design.c_allocateSpatialTreeNode_FUN_00457ed0
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
+  shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0
+  shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0
+  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
+  shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50
+  shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790
+  shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
+  shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
+  shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180
+  shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0
+  shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70
+  shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
+  shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+  shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90
+  shape_superopt.cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280
+  shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500
+  shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20
+  shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
+  shape_superopt.cpp_CObj_addVertices_FUN_005d2580
+  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
+  shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500
+  shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50
+  shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
+  shape_superopt.cpp_CObj_removeVertex_FUN_005d3140
+  shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0
+  sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210
+  sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20
+  sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200
+  sound_sndmain.cpp_startSfx_FUN_005a8e90
+  wincore_wddvmem.cpp_initTextureCache_FUN_00403790

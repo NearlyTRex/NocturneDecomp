@@ -10,6 +10,6 @@
 float __cdecl core_chain_cpp_fastSqrt_FUN_00431350(float value)
 
 {
-  int bits = (*(int *)&value >> 1) + g_FastSqrtMagic;
-  return *(float *)&bits;
+  int bits = ((int)__BITCAST_UINT32(value) >> 1) + g_FastSqrtMagic;
+  return __BITCAST_FLOAT(bits);
 }

@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 11,
+    "complexity_score": 26,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 11,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 28
   },
   "cross_references": [
@@ -96,5 +98,14 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0xbef0 == sizeof(CHotDemon). Replace the magic with sizeof(CHotDemon) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 7,
+      "match": "(CHotDemon*) alloc stride 0xbef0",
+      "severity": "moderate",
+      "text": "(CHotDemon *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbef0,\"..\\\\core\\\\hotdemon.cpp\",0x54)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

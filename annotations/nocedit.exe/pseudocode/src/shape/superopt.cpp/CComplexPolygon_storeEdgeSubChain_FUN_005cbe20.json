@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 34,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 104
   },
   "cross_references": [
@@ -182,6 +184,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Allocation size hardcodes 0x8 == sizeof(SEdgeChainEntry). Replace the magic with sizeof(SEdgeChainEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 13,
+      "match": "(SEdgeChainEntry*) alloc stride 0x8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SEdgeChainEntry *)realloc(this_ptr->edge_array,(this_ptr->edge_count + 1) * 8)",
+      "type": "alloc_magic_size"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 005cbe95, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 57,
       "match": "MOVSD.REP",
@@ -221,5 +232,15 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x60 == sizeof(SExpandedEdge). Replace the magic with sizeof(SExpandedEdge) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "introduced_by": "keep",
+      "line": 22,
+      "match": "(SExpandedEdge*) alloc stride 0x60",
+      "severity": "moderate",
+      "text": "(SExpandedEdge *)shape_memdbg_cpp_malloc_FUN_006021da(edge_count * 0x60)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

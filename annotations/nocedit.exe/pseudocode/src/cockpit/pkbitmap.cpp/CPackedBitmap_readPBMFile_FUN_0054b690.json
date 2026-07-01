@@ -234,6 +234,15 @@
       "severity": "moderate",
       "text": "((int)size,\"..\\\\cockpit\\\\pkbitmap.cpp\",0x4de);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer-array allocation strides by 4 (== 32-bit sizeof(void *)). Replace the magic 4 with sizeof(void *): a raw 4 under-allocates and corrupts memory once pointers are 8 bytes at 64-bit (\u00a727).",
+      "line": 51,
+      "match": "(void**) alloc stride 4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(void **)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((this_ptr->height + 1) * 4,\"..\\\\cockpit\\\\pkbitmap.cpp\",0x4c6)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {

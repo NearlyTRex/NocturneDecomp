@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 18,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 71
   },
   "cross_references": [],
@@ -140,7 +142,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x38 == sizeof(CVert). Replace the magic with sizeof(CVert) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 8,
+      "match": "(CVert*) alloc stride 0x38",
+      "severity": "moderate",
+      "text": "(CVert *)malloc(vertex_count * 0x38)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

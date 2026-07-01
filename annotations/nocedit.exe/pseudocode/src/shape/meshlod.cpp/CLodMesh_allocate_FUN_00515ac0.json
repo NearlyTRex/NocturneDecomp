@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 30,
+    "complexity_score": 65,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 116
   },
   "cross_references": [
@@ -249,5 +251,30 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x4c4 == sizeof(CLodVert). Replace the magic with sizeof(CLodVert) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 15,
+      "match": "(CLodVert*) alloc stride 0x4c4",
+      "severity": "moderate",
+      "text": "(CLodVert *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->max_vertex_count,0x4c4,\"..\\\\shape\\\\meshlod.cpp\",0x231)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x8c == sizeof(CLodFace). Replace the magic with sizeof(CLodFace) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 18,
+      "match": "(CLodFace*) alloc stride 0x8c",
+      "severity": "moderate",
+      "text": "(CLodFace *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->max_tri_count,0x8c,\"..\\\\shape\\\\meshlod.cpp\",0x232)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x48 == sizeof(SMRGLTextureLod). Replace the magic with sizeof(SMRGLTextureLod) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 21,
+      "match": "(SMRGLTextureLod*) alloc stride 0x48",
+      "severity": "moderate",
+      "text": "(SMRGLTextureLod *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->lod_texture_count,0x48,\"..\\\\shape\\\\meshlod.cpp\",0x233)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

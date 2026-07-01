@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 45,
+    "complexity_score": 60,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 132
   },
   "cross_references": [],
@@ -217,5 +219,15 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x138 == sizeof(CPodAuditRecord). Replace the magic with sizeof(CPodAuditRecord) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "introduced_by": "keep",
+      "line": 17,
+      "match": "(CPodAuditRecord*) alloc stride 0x138",
+      "severity": "moderate",
+      "text": "(CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (g_AuditRecordsArray,g_AuditRecordCount * 0x138,\"..\\\\engine\\\\fileio.cpp\",0x7a1)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

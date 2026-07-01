@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 27,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 81
   },
   "cross_references": [],
@@ -127,7 +129,24 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Pointer-array allocation strides by 4 (== 32-bit sizeof(CComplexPolygon *)). Replace the magic 4 with sizeof(CComplexPolygon *): a raw 4 under-allocates and corrupts memory once pointers are 8 bytes at 64-bit (\u00a727).",
+      "line": 9,
+      "match": "(CComplexPolygon**) alloc stride 4",
+      "severity": "moderate",
+      "text": "(CComplexPolygon **)realloc (this_ptr->complex_polygons,(this_ptr->complex_polygon_count + 1) * 4)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x34 == sizeof(CComplexPolygon). Replace the magic with sizeof(CComplexPolygon) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 14,
+      "match": "(CComplexPolygon*) alloc stride 0x34",
+      "severity": "moderate",
+      "text": "(CComplexPolygon *)shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(0x34)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

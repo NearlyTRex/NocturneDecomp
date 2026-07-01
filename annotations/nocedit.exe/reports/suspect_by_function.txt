@@ -5,6 +5,1197 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 6454 (100.0%)
-With suspects: 0
-Total suspects: 0
+Clean: 6262 (97.0%)
+With suspects: 192
+Total suspects: 231
+
+====================================================================================================
+core_ammo.cpp_factoryFunc_FUN_00410d80 (1 suspect)
+  File: core/ammo.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,"..\\core\\ammo.cpp",0x1e)
+
+====================================================================================================
+core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411700 (1 suspect)
+  File: core/ammobox.cpp
+====================================================================================================
+  Line 19 [alloc_magic_size]: (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,"..\\core\\ammobox.cpp",0xa1)
+
+====================================================================================================
+core_ammobox.cpp_factoryFunc_FUN_00411560 (1 suspect)
+  File: core/ammobox.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CAmmoBox *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x34c,"..\\core\\ammobox.cpp",0x25)
+
+====================================================================================================
+core_anvil.cpp_factoryFunc_FUN_00411ca0 (1 suspect)
+  File: core/anvil.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CAnvil *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x344,"..\\core\\anvil.cpp",0x20)
+
+====================================================================================================
+core_armour.cpp_factoryFunc_FUN_00412160 (1 suspect)
+  File: core/armour.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CArmour *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbf20,"..\\core\\armour.cpp",0x2f)
+
+====================================================================================================
+core_backgnd.cpp_factoryFunc_FUN_00412770 (1 suspect)
+  File: core/backgnd.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBackgroundActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2dc,"..\\core\\backgnd.cpp",0x26)
+
+====================================================================================================
+core_baron.cpp_factoryFuncBaronWeapon_FUN_00413d00 (1 suspect)
+  File: core/baron.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBaronWeapon *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x57c,"..\\core\\baron.cpp",0x2ab)
+
+====================================================================================================
+core_baron.cpp_factoryFuncBaron_FUN_00412b80 (1 suspect)
+  File: core/baron.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBaron *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1fcd4,"..\\core\\baron.cpp",0x52)
+
+====================================================================================================
+core_barrier.cpp_factoryFunc_FUN_00414180 (1 suspect)
+  File: core/barrier.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBarrier *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x230,"..\\core\\barrier.cpp",0x26)
+
+====================================================================================================
+core_bat.cpp_factoryFunc_FUN_00414790 (1 suspect)
+  File: core/bat.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBat *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x388,"..\\core\\bat.cpp",0x5c)
+
+====================================================================================================
+core_batcreat.cpp_factoryFunc_FUN_004150b0 (1 suspect)
+  File: core/batcreat.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBatCreature *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbf04,"..\\core\\batcreat.cpp",0x4d)
+
+====================================================================================================
+core_batman.cpp_factoryFunc_FUN_00416410 (1 suspect)
+  File: core/batman.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBatman *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbf78,"..\\core\\batman.cpp",0x58)
+
+====================================================================================================
+core_battery.cpp_factoryFunc_FUN_00417e50 (1 suspect)
+  File: core/battery.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBattery *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2e0,"..\\core\\battery.cpp",0x1f)
+
+====================================================================================================
+core_beast.cpp_factoryFunc_FUN_004181e0 (1 suspect)
+  File: core/beast.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBeast *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbebc,"..\\core\\beast.cpp",0x2d)
+
+====================================================================================================
+core_biggs.cpp_factoryFunc_FUN_00418580 (1 suspect)
+  File: core/biggs.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBiggs *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xccd0,"..\\core\\biggs.cpp",0x52)
+
+====================================================================================================
+core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0 (3 suspects)
+  File: core/bodypart.cpp
+====================================================================================================
+  Line 11 [alloc_magic_size]: (CVector3i *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->vertices,this_ptr->vertex_count * 0xc,"..\\core\\bodypart.cpp", 0xa8)
+  Line 15 [alloc_magic_size]: (CVector3i *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->normals,this_ptr->vertex_count * 0xc,"..\\core\\bodypart.cpp", 0xa9)
+  Line 19 [alloc_magic_size]: (SMRGLPrimitiveTriangle *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->faces,this_ptr->tri_count * 0x3c,"..\\core\\bodypart.cpp",0xab)
+
+====================================================================================================
+core_bodypart.cpp_createBodyPart_FUN_00418e10 (1 suspect)
+  File: core/bodypart.cpp
+====================================================================================================
+  Line 16 [alloc_magic_size]: (CBodyPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xf30,"..\\core\\bodypart.cpp",0x31)
+
+====================================================================================================
+core_bodypart.cpp_factoryFunc_FUN_00418fd0 (1 suspect)
+  File: core/bodypart.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBodyPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xf30,"..\\core\\bodypart.cpp",0x7c)
+
+====================================================================================================
+core_boneguy.cpp_factoryFunc_FUN_0041b820 (1 suspect)
+  File: core/boneguy.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBoneGuy *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xc4e4,"..\\core\\boneguy.cpp",0x74)
+
+====================================================================================================
+core_boxactor.cpp_factoryFuncBoxActor_FUN_004216c0 (1 suspect)
+  File: core/boxactor.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBoxActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x66c,"..\\core\\boxactor.cpp",0x39)
+
+====================================================================================================
+core_boxactor.cpp_factoryFuncLightActor_FUN_00422950 (1 suspect)
+  File: core/boxactor.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CLightActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x3678,"..\\core\\boxactor.cpp",0x2e3)
+
+====================================================================================================
+core_bride.cpp_factoryFunc_FUN_00423760 (1 suspect)
+  File: core/bride.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBride *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbeec,"..\\core\\bride.cpp",0x53)
+
+====================================================================================================
+core_bugs.cpp_factoryFunc_FUN_00424c70 (1 suspect)
+  File: core/bugs.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBugs *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x199f8,"..\\core\\bugs.cpp",0x3e)
+
+====================================================================================================
+core_chain.cpp_factoryFunc_FUN_0042fb40 (1 suspect)
+  File: core/chain.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CChain *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x578,"..\\core\\chain.cpp",0x30)
+
+====================================================================================================
+core_cloth.cpp_CClothList_load_FUN_0043bfa0 (1 suspect)
+  File: core/cloth.cpp
+====================================================================================================
+  Line 23 [alloc_magic_size]: (CCloth *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x3fe70,"..\\core\\cloth.cpp",0x5a8)
+
+====================================================================================================
+core_colonel.cpp_factoryFunc_FUN_0043f7a0 (1 suspect)
+  File: core/colonel.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CColonel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1fbec,"..\\core\\colonel.cpp",0x7e)
+
+====================================================================================================
+core_conveyor.cpp_factoryFunc_FUN_00441c60 (1 suspect)
+  File: core/conveyor.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CConveyor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x860,"..\\core\\conveyor.cpp",0x23)
+
+====================================================================================================
+core_cow.cpp_factoryFunc_FUN_00444100 (1 suspect)
+  File: core/cow.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CZombieCow *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbef0,"..\\core\\cow.cpp",0x36)
+
+====================================================================================================
+core_crate.cpp_factoryFunc_FUN_00448490 (1 suspect)
+  File: core/crate.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CCrate *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2fc,"..\\core\\crate.cpp",0x1f)
+
+====================================================================================================
+core_crossbow.cpp_factoryFunc_FUN_00448c30 (1 suspect)
+  File: core/crossbow.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CCrossbow *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x820,"..\\core\\crossbow.cpp",0x2f)
+
+====================================================================================================
+core_curtain.cpp_factoryFunc_FUN_00449660 (1 suspect)
+  File: core/curtain.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CCurtain *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x65b38,"..\\core\\curtain.cpp",0x36)
+
+====================================================================================================
+core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840 (3 suspects)
+  File: core/dcube.cpp
+====================================================================================================
+  Line 13 [alloc_magic_size]: (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar1 * 0xc + 4,"..\\core\\dcube.cpp",0x5ff)
+  Line 42 [alloc_magic_size]: (SVoxelGrid *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x40,"..\\core\\dcube.cpp",0x605)
+  Line 49 [alloc_magic_size]: (SVoxelGrid *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x40,"..\\core\\dcube.cpp",0x607)
+
+====================================================================================================
+core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_004567b0 (2 suspects)
+  File: core/dcube.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (SVoxelGrid *)shape_memdbg_cpp_debugCalloc_FUN_0050f350(0x40,1,"..\\core\\dcube.cpp",0x5f2)
+  Line 14 [alloc_magic_size]: (SVoxelGrid *)shape_memdbg_cpp_debugCalloc_FUN_0050f350(0x40,1,"..\\core\\dcube.cpp",0x5f4)
+
+====================================================================================================
+core_dest.cpp_factoryFunc_FUN_0046f8c0 (1 suspect)
+  File: core/dest.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CActorDestination *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(500,"..\\core\\dest.cpp",0x29)
+
+====================================================================================================
+core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060 (1 suspect)
+  File: core/dfilter.cpp
+====================================================================================================
+  Line 42 [alloc_magic_size]: (CDemonFilter *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x4c,"..\\core\\dfilter.cpp",0x58)
+
+====================================================================================================
+core_dfont.cpp_initFonts_FUN_004709a0 (10 suspects)
+  File: core/dfont.cpp
+====================================================================================================
+  Line 10 [alloc_magic_size]: (CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,"..\\core\\dfont.cpp",0x3f)
+  Line 32 [alloc_magic_size]: (CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,"..\\core\\dfont.cpp",0x4f)
+  Line 53 [alloc_magic_size]: (CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,"..\\core\\dfont.cpp",0x5e)
+  Line 76 [alloc_magic_size]: (CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,"..\\core\\dfont.cpp",0x6f)
+  Line 98 [alloc_magic_size]: (CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,"..\\core\\dfont.cpp",0x82)
+  Line 119 [alloc_magic_size]: (CBitFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3198,"..\\core\\dfont.cpp",0x94)
+  Line 142 [alloc_magic_size]: (CWinFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x13c,"..\\core\\dfont.cpp",0xa4)
+  Line 157 [alloc_magic_size]: (CWinFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x13c,"..\\core\\dfont.cpp",0xaa)
+  Line 172 [alloc_magic_size]: (CWinFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x13c,"..\\core\\dfont.cpp",0xb0)
+  Line 187 [alloc_magic_size]: (CWinFont *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x13c,"..\\core\\dfont.cpp",0xb6)
+
+====================================================================================================
+core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0 (3 suspects)
+  File: core/dmodel.cpp
+====================================================================================================
+  Line 27 [alloc_magic_size]: (CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->frame_count * this_ptr->vertex_count * 0xc, "..\\core\\dmodel.cpp",0x2c5)
+  Line 31 [alloc_magic_size]: (SMRGLPrimitiveQuad *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->poly_count * 0x48,"..\\core\\dmodel.cpp",0x2c6)
+  Line 63 [alloc_magic_size]: (CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->vertex_count * 0xc,"..\\core\\dmodel.cpp",0x2d9)
+
+====================================================================================================
+core_dmodel.cpp_writeModelDependencies_FUN_0047ee30 (1 suspect)
+  File: core/dmodel.cpp
+====================================================================================================
+  Line 9 [alloc_magic_size]: (CKeyFramedModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x56d8,"..\\core\\dmodel.cpp",0xe8a)
+
+====================================================================================================
+core_dog.cpp_factoryFunc_FUN_0047f010 (1 suspect)
+  File: core/dog.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CZombieDog *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbec8,"..\\core\\dog.cpp",0x37)
+
+====================================================================================================
+core_door.cpp_factoryFunc_FUN_0047fa90 (1 suspect)
+  File: core/door.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CDoor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x9e0,"..\\core\\door.cpp",0x33)
+
+====================================================================================================
+core_dpart.cpp_CDemonPart_alloc_FUN_00482180 (3 suspects)
+  File: core/dpart.cpp
+====================================================================================================
+  Line 12 [alloc_magic_size]: (CVector3i *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->vertex_count,0xc,"..\\core\\dpart.cpp",0x87)
+  Line 21 [alloc_magic_size]: (CVector3i *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->vertex_count,0xc,"..\\core\\dpart.cpp",0x90)
+  Line 31 [alloc_magic_size]: (SSurfacePlane *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->face_count,0x20,"..\\core\\dpart.cpp",0x98)
+
+====================================================================================================
+core_dracbrid.cpp_factoryFunc_FUN_00483f80 (1 suspect)
+  File: core/dracbrid.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CDraculaBride *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbfec,"..\\core\\dracbrid.cpp",0x78)
+
+====================================================================================================
+core_drip.cpp_factoryFunc_FUN_0048dfc0 (1 suspect)
+  File: core/drip.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CDrip *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x33c,"..\\core\\drip.cpp",0x32)
+
+====================================================================================================
+core_drone.cpp_factoryFunc_FUN_0048eb10 (1 suspect)
+  File: core/drone.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CDrone *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbed4,"..\\core\\drone.cpp",0x38)
+
+====================================================================================================
+core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00494270 (1 suspect)
+  File: core/dtrace.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (SVoxelCubeMetadata *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (0x58,(this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z,"..\\core\\dtrace.cpp",0x87)
+
+====================================================================================================
+core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0 (2 suspects)
+  File: core/dtrace.cpp
+====================================================================================================
+  Line 102 [alloc_magic_size]: (CDemonPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x388,"..\\core\\dtrace.cpp",0x17a)
+  Line 137 [alloc_magic_size]: (CDemonPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x388,"..\\core\\dtrace.cpp",0x19a)
+
+====================================================================================================
+core_dynamite.cpp_factoryFunc_FUN_0049cd80 (1 suspect)
+  File: core/dynamite.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CDynamite *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x58c,"..\\core\\dynamite.cpp",0x21)
+
+====================================================================================================
+core_elephant.cpp_factoryFunc_FUN_004a6fa0 (1 suspect)
+  File: core/elephant.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CElephantGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x584,"..\\core\\elephant.cpp",0x2e)
+
+====================================================================================================
+core_emitter.cpp_factoryFunc_FUN_004a7c60 (1 suspect)
+  File: core/emitter.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CEmitter *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x494,"..\\core\\emitter.cpp",0x3a)
+
+====================================================================================================
+core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150 (1 suspect)
+  File: core/fileman.cpp
+====================================================================================================
+  Line 10 [alloc_magic_size]: (CCloth *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x3fe70,"..\\core\\fileman.cpp",0x153)
+
+====================================================================================================
+core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070 (1 suspect)
+  File: core/fileman.cpp
+====================================================================================================
+  Line 11 [alloc_magic_size]: (CDeformableModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x9000,"..\\core\\fileman.cpp",0x143)
+
+====================================================================================================
+core_filmreel.cpp_factoryFuncFilmProjector_FUN_004bea00 (1 suspect)
+  File: core/filmreel.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CFilmProjector *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3e4,"..\\core\\filmreel.cpp",0xf3)
+
+====================================================================================================
+core_filmreel.cpp_factoryFuncFilmReel_FUN_004be670 (1 suspect)
+  File: core/filmreel.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CFilmReel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,"..\\core\\filmreel.cpp",0x22)
+
+====================================================================================================
+core_flame.cpp_factoryFunc_FUN_004c9a60 (1 suspect)
+  File: core/flame.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CFlame *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2a4,"..\\core\\flame.cpp",0x75)
+
+====================================================================================================
+core_flamecan.cpp_factoryFunc_FUN_004cb120 (1 suspect)
+  File: core/flamecan.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CFlameCan *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x5e8,"..\\core\\flamecan.cpp",0x22)
+
+====================================================================================================
+core_flamegun.cpp_factoryFunc_FUN_004cb840 (1 suspect)
+  File: core/flamegun.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CFlameThrower *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x588,"..\\core\\flamegun.cpp",0x2a)
+
+====================================================================================================
+core_flashlit.cpp_factoryFunc_FUN_004cbb80 (1 suspect)
+  File: core/flashlit.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CFlashlight *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x578,"..\\core\\flashlit.cpp",0x2b)
+
+====================================================================================================
+core_flies.cpp_factoryFunc_FUN_004cbd20 (1 suspect)
+  File: core/flies.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CFlies *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2a20,"..\\core\\flies.cpp",0x19)
+
+====================================================================================================
+core_frankgen.cpp_factoryFunc_FUN_004d16e0 (1 suspect)
+  File: core/frankgen.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CFrankenstienMachine *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x49c,"..\\core\\frankgen.cpp",0x75)
+
+====================================================================================================
+core_gabriela.cpp_factoryFunc_FUN_004d2ae0 (1 suspect)
+  File: core/gabriela.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CGabriella *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x5fa88,"..\\core\\gabriela.cpp",0xf0)
+
+====================================================================================================
+core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1 suspect)
+  File: core/game.cpp
+====================================================================================================
+  Line 1562 [alloc_magic_size]: (CGasMask *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x2d8,"..\\core\\game.cpp",0xbb0)
+
+====================================================================================================
+core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 (1 suspect)
+  File: core/game.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,"..\\core\\game.cpp",0xa1c)
+
+====================================================================================================
+core_gargoyle.cpp_factoryFunc_FUN_004e44a0 (1 suspect)
+  File: core/gargoyle.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CGargoyle *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbf18,"..\\core\\gargoyle.cpp",0x58)
+
+====================================================================================================
+core_gasmask.cpp_factoryFunc_FUN_004e5cc0 (1 suspect)
+  File: core/gasmask.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CGasMask *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2d8,"..\\core\\gasmask.cpp",0x1e)
+
+====================================================================================================
+core_ghoul.cpp_factoryFunc_FUN_004e5ff0 (1 suspect)
+  File: core/ghoul.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CGhoul *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbf38,"..\\core\\ghoul.cpp",0x9e)
+
+====================================================================================================
+core_glass.cpp_factoryFunc_FUN_004e9000 (1 suspect)
+  File: core/glass.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CGlass *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xb40,"..\\core\\glass.cpp",0x2c)
+
+====================================================================================================
+core_gore.cpp_CGore_spawnFlies_FUN_004edf30 (1 suspect)
+  File: core/gore.cpp
+====================================================================================================
+  Line 10 [alloc_magic_size]: (CFlies *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x2a20,"..\\core\\gore.cpp",0x67c)
+
+====================================================================================================
+core_grave.cpp_factoryFunc_FUN_004ee4d0 (1 suspect)
+  File: core/grave.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CGrave *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x3b0,"..\\core\\grave.cpp",0x26)
+
+====================================================================================================
+core_ground.cpp_CGround_init_FUN_004eef00 (2 suspects)
+  File: core/ground.cpp
+====================================================================================================
+  Line 10 [alloc_magic_size]: (SGroundCell *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (this_ptr->width * this_ptr->height * 4,"..\\core\\ground.cpp",0xd2)
+  Line 18 [alloc_magic_size]: (CTextureList *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1a5ec,"..\\core\\ground.cpp",0xd7)
+
+====================================================================================================
+core_gun.cpp_factoryFunc_FUN_004f02b0 (1 suspect)
+  File: core/gun.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x578,"..\\core\\gun.cpp",0x29)
+
+====================================================================================================
+core_haystack.cpp_factoryFunc_FUN_004f0bd0 (1 suspect)
+  File: core/haystack.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CHaystack *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1fbec,"..\\core\\haystack.cpp",0x5c)
+
+====================================================================================================
+core_health.cpp_factoryFunc_FUN_004f1d90 (1 suspect)
+  File: core/health.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CHealthItem *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2dc,"..\\core\\health.cpp",0x22)
+
+====================================================================================================
+core_hero.cpp_factoryFunc_FUN_004f3bc0 (1 suspect)
+  File: core/hero.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CHeroPlaceholder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x15c,"..\\core\\hero.cpp",0x527)
+
+====================================================================================================
+core_hiram.cpp_getFactoryFunc_FUN_004f43b0 (1 suspect)
+  File: core/hiram.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CHiram *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1f76c,"..\\core\\hiram.cpp",0x2c)
+
+====================================================================================================
+core_hostage.cpp_factoryFunc_FUN_004f4800 (1 suspect)
+  File: core/hostage.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CHostage *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1faf0,"..\\core\\hostage.cpp",0x59)
+
+====================================================================================================
+core_hotdemon.cpp_factoryFunc_FUN_004f6c60 (1 suspect)
+  File: core/hotdemon.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CHotDemon *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbef0,"..\\core\\hotdemon.cpp",0x54)
+
+====================================================================================================
+core_hpriest.cpp_factoryFunc_FUN_004f7b30 (1 suspect)
+  File: core/hpriest.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CHighPriestOfGardath *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1f76c,"..\\core\\hpriest.cpp",0x1d)
+
+====================================================================================================
+core_icepick.cpp_factoryFunc_FUN_004f7db0 (1 suspect)
+  File: core/icepick.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CIcePick *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1fc04,"..\\core\\icepick.cpp",0x66)
+
+====================================================================================================
+core_imp.cpp_factoryFunc_FUN_004f9860 (1 suspect)
+  File: core/imp.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CImp *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbef4,"..\\core\\imp.cpp",0x59)
+
+====================================================================================================
+core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900 (1 suspect)
+  File: core/inv.cpp
+====================================================================================================
+  Line 13 [alloc_magic_size]: (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,"..\\core\\inv.cpp",0x2fc)
+
+====================================================================================================
+core_keyactor.cpp_factoryFunc_FUN_00501650 (1 suspect)
+  File: core/keyactor.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CKeyActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,"..\\core\\keyactor.cpp",0x24)
+
+====================================================================================================
+core_ladder.cpp_factoryFunc_FUN_00502500 (1 suspect)
+  File: core/ladder.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CLadder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x300,"..\\core\\ladder.cpp",0x2d)
+
+====================================================================================================
+core_larva.cpp_factoryFunc_FUN_00502f50 (1 suspect)
+  File: core/larva.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CLarva *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbec8,"..\\core\\larva.cpp",0x36)
+
+====================================================================================================
+core_lever.cpp_factoryFunc_FUN_00504790 (1 suspect)
+  File: core/lever.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CLever *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x814,"..\\core\\lever.cpp",0x29)
+
+====================================================================================================
+core_lightgun.cpp_factoryFunc_FUN_005058c0 (1 suspect)
+  File: core/lightgun.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CLightGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x590,"..\\core\\lightgun.cpp",0x3a)
+
+====================================================================================================
+core_litecone.cpp_factoryFunc_FUN_00506ad0 (1 suspect)
+  File: core/litecone.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CLightCone *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x22c,"..\\core\\litecone.cpp",0x26)
+
+====================================================================================================
+core_main.c_showDeveloperToolsMenu_FUN_005073a0 (2 suspects)
+  File: core/main.c
+====================================================================================================
+  Line 80 [alloc_magic_size]: (CKeyFramedModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x56d8,"..\\core\\main.c",0x274)
+  Line 115 [alloc_magic_size]: (CMorph *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xc2c,"..\\core\\main.c",0x292)
+
+====================================================================================================
+core_manpuz.cpp_factoryFuncMansionPuzzleCircle_FUN_005088e0 (1 suspect)
+  File: core/manpuz.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CMansionPuzzleCircle *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1514,"..\\core\\manpuz.cpp",0xeb)
+
+====================================================================================================
+core_manpuz.cpp_factoryFuncMirrorHack_FUN_0050b0d0 (1 suspect)
+  File: core/manpuz.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CMirrorHack *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2d8,"..\\core\\manpuz.cpp",0x616)
+
+====================================================================================================
+core_marquee.cpp_factoryFunc_FUN_0050bb20 (1 suspect)
+  File: core/marquee.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CMarquee *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1bc,"..\\core\\marquee.cpp",0x22)
+
+====================================================================================================
+core_melee.cpp_factoryFunc_FUN_0050e790 (1 suspect)
+  File: core/melee.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CMelee *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x6cc,"..\\core\\melee.cpp",0x26)
+
+====================================================================================================
+core_mimic.cpp_factoryFunc_FUN_0051f190 (1 suspect)
+  File: core/mimic.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CMimic *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x4ca58,"..\\core\\mimic.cpp",0x77)
+
+====================================================================================================
+core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20 (1 suspect)
+  File: core/mission.cpp
+====================================================================================================
+  Line 35 [alloc_magic_size]: (CHeroPlaceholder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x15c,"..\\core\\mission.cpp",0x689)
+
+====================================================================================================
+core_mobster.cpp_factoryFunc_FUN_005251c0 (1 suspect)
+  File: core/mobster.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CMobster *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbf94,"..\\core\\mobster.cpp",0x85)
+
+====================================================================================================
+core_moloch.cpp_factoryFunc_FUN_00528af0 (1 suspect)
+  File: core/moloch.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CMoloch *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x22b98,"..\\core\\moloch.cpp",0x2e)
+
+====================================================================================================
+core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580 (1 suspect)
+  File: core/morph.cpp
+====================================================================================================
+  Line 33 [alloc_magic_size]: (SMRGLPrimitiveTriangle *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->faces,this_ptr->num_faces * 0x3c,"..\\core\\morph.cpp",0x8a)
+
+====================================================================================================
+core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710 (1 suspect)
+  File: core/morph.cpp
+====================================================================================================
+  Line 22 [alloc_magic_size]: (SMRGLPrimitiveTriangle *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->faces,this_ptr->num_faces * 0x3c,"..\\core\\morph.cpp",0xbf)
+
+====================================================================================================
+core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 (1 suspect)
+  File: core/msnedit.cpp
+====================================================================================================
+  Line 72 [alloc_magic_size]: (CBoxActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b)
+
+====================================================================================================
+core_msnedit.cpp_CDemonMission_importActors_FUN_0053ccf0 (1 suspect)
+  File: core/msnedit.cpp
+====================================================================================================
+  Line 45 [alloc_magic_size]: (CDemonMission *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x27d0,"..\\core\\msnedit.cpp",0xbef)
+
+====================================================================================================
+core_npc.cpp_factoryFunc_FUN_005447a0 (1 suspect)
+  File: core/npc.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CNPC *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1f708,"..\\core\\npc.cpp",0x2d)
+
+====================================================================================================
+core_passngr.cpp_factoryFunc_FUN_00545af0 (1 suspect)
+  File: core/passngr.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CPassenger *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x20448,"..\\core\\passngr.cpp",0x43)
+
+====================================================================================================
+core_pendulum.cpp_factoryFunc_FUN_00549350 (1 suspect)
+  File: core/pendulum.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CPendulum *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x444,"..\\core\\pendulum.cpp",0x2b)
+
+====================================================================================================
+core_platfrm.cpp_factoryFunc_FUN_0054c810 (1 suspect)
+  File: core/platfrm.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CPlatform *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x72c,"..\\core\\platfrm.cpp",0x31)
+
+====================================================================================================
+core_scat.cpp_factoryFunc_FUN_00556e90 (1 suspect)
+  File: core/scat.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CScat *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1fc00,"..\\core\\scat.cpp",0x87)
+
+====================================================================================================
+core_script.cpp_CScript_addEventXRef_FUN_00567510 (1 suspect)
+  File: core/script.cpp
+====================================================================================================
+  Line 10 [alloc_magic_size]: (SScriptXRef *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->xref_entries,(this_ptr->xref_count + 1) * 0x114, "..\\core\\script.cpp",0x1d37)
+
+====================================================================================================
+core_script.cpp_CScript_buildParsedLines_FUN_0055a370 (1 suspect)
+  File: core/script.cpp
+====================================================================================================
+  Line 29 [alloc_magic_size]: (SScriptLine *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->parsed_lines,(this_ptr->parsed_line_count + 1) * 8, "..\\core\\script.cpp",0x397)
+
+====================================================================================================
+core_script.cpp_CScript_dbLoad_FUN_005603c0 (1 suspect)
+  File: core/script.cpp
+====================================================================================================
+  Line 109 [alloc_magic_size]: (SDialogEntry *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->dialog_entries,iVar6 * 0x226,"..\\core\\script.cpp",0xefa)
+
+====================================================================================================
+core_sentinel.cpp_factoryFunc_FUN_00567d70 (1 suspect)
+  File: core/sentinel.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CSentinel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbec4,"..\\core\\sentinel.cpp",0x5f)
+
+====================================================================================================
+core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 (1 suspect)
+  File: core/setedit.cpp
+====================================================================================================
+  Line 25 [alloc_magic_size]: (CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (g_CDemonCameraInstance.framebuffer_height * g_CDemonCameraInstance.framebuffer_width * 0xc,"..\\core\\setedit.cpp",0xf22)
+
+====================================================================================================
+core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 (1 suspect)
+  File: core/setedit.cpp
+====================================================================================================
+  Line 20 [alloc_magic_size]: (SCameraDepthEntry *) shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->camera_count * 0x4b030,"..\\core\\setedit.cpp",0x1007)
+
+====================================================================================================
+core_setutil.cpp_C3DSLight_create_FUN_00586a90 (1 suspect)
+  File: core/setutil.cpp
+====================================================================================================
+  Line 17 [alloc_magic_size]: (CDemonLight *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x2fac,"..\\core\\setutil.cpp",0x2f8)
+
+====================================================================================================
+core_shotgun.cpp_factoryFunc_FUN_00587ea0 (1 suspect)
+  File: core/shotgun.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CShotgun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x584,"..\\core\\shotgun.cpp",0x2e)
+
+====================================================================================================
+core_shovel.cpp_factoryFunc_FUN_00588b60 (1 suspect)
+  File: core/shovel.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CShovel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x578,"..\\core\\shovel.cpp",0x20)
+
+====================================================================================================
+core_simbox.cpp_factoryFunc_FUN_00588d00 (1 suspect)
+  File: core/simbox.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CSimBox *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x5cc,"..\\core\\simbox.cpp",0x22)
+
+====================================================================================================
+core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (1 suspect)
+  File: core/skeledit.cpp
+====================================================================================================
+  Line 41 [alloc_magic_size]: (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x22b4,"..\\core\\skeledit.cpp",0x9fd)
+
+====================================================================================================
+core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (4 suspects)
+  File: core/skeledit.cpp
+====================================================================================================
+  Line 414 [alloc_magic_size]: (SS3DFaceMatch *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)local_16c * 0x3c,"..\\core\\skeledit.cpp",0xc4e)
+  Line 619 [alloc_magic_size]: (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)local_16c * 0xc + 4,"..\\core\\skeledit.cpp",0xd0f)
+  Line 627 [alloc_magic_size]: (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar8 * 0xc + 4,"..\\core\\skeledit.cpp",0xd10)
+  Line 1132 [alloc_magic_size]: (SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((this_ptr->tri_count[0] + local_158) * 0x12, "..\\core\\skeledit.cpp",0xf1a)
+
+====================================================================================================
+core_skeledit.cpp_CDeformableModel_groundBias_FUN_0058e4e0 (1 suspect)
+  File: core/skeledit.cpp
+====================================================================================================
+  Line 13 [alloc_magic_size]: (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x22b4,"..\\core\\skeledit.cpp",0x9bc)
+
+====================================================================================================
+core_skeledit.cpp_previewModel_FUN_00598f10 (1 suspect)
+  File: core/skeledit.cpp
+====================================================================================================
+  Line 8 [alloc_magic_size]: (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x22b4,"..\\core\\skeledit.cpp",0x1b79)
+
+====================================================================================================
+core_skeledit.cpp_viewModel_FUN_00598fc0 (1 suspect)
+  File: core/skeledit.cpp
+====================================================================================================
+  Line 145 [alloc_magic_size]: (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x22b4,"..\\core\\skeledit.cpp",0x1b79)
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 12 [alloc_magic_size]: (CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (iVar1 * 0xc,"..\\core\\skeleton.cpp",0x8f9)
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 40 [alloc_magic_size]: (SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((this_ptr->cap_tri_count[lod_index] + this_ptr->tri_count[lod_index]) * 0x12, "..\\core\\skeleton.cpp",0x29d)
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 42 [alloc_magic_size]: (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x22b4,"..\\core\\skeleton.cpp",0x5ef)
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 76 [alloc_magic_size]: (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x22b4,"..\\core\\skeleton.cpp",0x7d2)
+
+====================================================================================================
+core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910 (3 suspects)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 18 [alloc_magic_size]: (CQuaternion4f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->bone_count * this_ptr->frame_count * 0x10, "..\\core\\skeleton.cpp",0xcf)
+  Line 23 [alloc_magic_size]: (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar1 * 0xc + 4,"..\\core\\skeleton.cpp",0xd0)
+  Line 32 [alloc_magic_size]: (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar1 * 0xc + 4,"..\\core\\skeleton.cpp",0xd1)
+
+====================================================================================================
+core_smiley.cpp_factorFunc_FUN_005a23f0 (1 suspect)
+  File: core/smiley.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CSmiley *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbf00,"..\\core\\smiley.cpp",0x6e)
+
+====================================================================================================
+core_spike.cpp_factoryFunc_FUN_005b81e0 (1 suspect)
+  File: core/spike.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CSpike *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x560,"..\\core\\spike.cpp",0x21)
+
+====================================================================================================
+core_stairs.cpp_factoryFunc_FUN_005b9b30 (1 suspect)
+  File: core/stairs.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CStairs *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xa34,"..\\core\\stairs.cpp",0x6f)
+
+====================================================================================================
+core_stone.cpp_factoryFunc_FUN_005bacd0 (1 suspect)
+  File: core/stone.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTempleStone *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x670,"..\\core\\stone.cpp",0x1e)
+
+====================================================================================================
+core_stranger.cpp_factoryFunc_FUN_005bb0e0 (1 suspect)
+  File: core/stranger.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CStranger *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1fe70,"..\\core\\stranger.cpp",0x1d3)
+
+====================================================================================================
+core_succubus.cpp_CSuccubus_process_FUN_005c6e90 (1 suspect)
+  File: core/succubus.cpp
+====================================================================================================
+  Line 235 [alloc_magic_size]: (CHotDemon *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbef0,"..\\core\\succubus.cpp",0x16c)
+
+====================================================================================================
+core_succubus.cpp_factoryFunc_FUN_005c6a40 (1 suspect)
+  File: core/succubus.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CSuccubus *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xef68,"..\\core\\succubus.cpp",0x4b)
+
+====================================================================================================
+core_svetlana.cpp_factoryFunc_FUN_005d8810 (1 suspect)
+  File: core/svetlana.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CSvetlana *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x9f8d8,"..\\core\\svetlana.cpp",0x6e)
+
+====================================================================================================
+core_tbplayer.cpp_factoryFuncBassPlayer_FUN_005da020 (1 suspect)
+  File: core/tbplayer.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CBassPlayer *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1f710,"..\\core\\tbplayer.cpp",0x20)
+
+====================================================================================================
+core_tbplayer.cpp_factoryFuncDrummer_FUN_005da280 (1 suspect)
+  File: core/tbplayer.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CDrummer *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1f710,"..\\core\\tbplayer.cpp",0x7a)
+
+====================================================================================================
+core_teleport.cpp_factoryFuncTeleportDest_FUN_005da730 (1 suspect)
+  File: core/teleport.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTeleportDest *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x158,"..\\core\\teleport.cpp",0x2a)
+
+====================================================================================================
+core_teleport.cpp_factoryFuncTeleport_FUN_005da9a0 (1 suspect)
+  File: core/teleport.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTeleport *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x168,"..\\core\\teleport.cpp",0x8b)
+
+====================================================================================================
+core_tentacle.cpp_factoryFunc_FUN_005daf20 (1 suspect)
+  File: core/tentacle.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTentacle *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbf2c,"..\\core\\tentacle.cpp",0x67)
+
+====================================================================================================
+core_tommygun.cpp_factoryFunc_FUN_005dda50 (1 suspect)
+  File: core/tommygun.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTommyGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x584,"..\\core\\tommygun.cpp",0x2f)
+
+====================================================================================================
+core_trap.cpp_factoryFunc_FUN_005de650 (1 suspect)
+  File: core/trap.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTrap *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2dc,"..\\core\\trap.cpp",0x20)
+
+====================================================================================================
+core_trash.cpp_factoryFunc_FUN_005deb30 (1 suspect)
+  File: core/trash.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTrash *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x328,"..\\core\\trash.cpp",0x43)
+
+====================================================================================================
+core_trigger.cpp_factoryFunc_FUN_005df800 (1 suspect)
+  File: core/trigger.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTrigger *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x370,"..\\core\\trigger.cpp",0x35)
+
+====================================================================================================
+core_turret.cpp_factoryFunc_FUN_005e20b0 (1 suspect)
+  File: core/turret.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTurret *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x8bc,"..\\core\\turret.cpp",0xa2)
+
+====================================================================================================
+core_tvbat.cpp_factoryFunc_FUN_005e3e80 (1 suspect)
+  File: core/tvbat.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTVBat *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xc0f4,"..\\core\\tvbat.cpp",0x39)
+
+====================================================================================================
+core_vampboss.cpp_factoryFunc_FUN_005e5550 (1 suspect)
+  File: core/vampboss.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CVampireBoss *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xce920,"..\\core\\vampboss.cpp",0x60)
+
+====================================================================================================
+core_vehicle.cpp_CVehicle_process_FUN_005e7e80 (2 suspects)
+  File: core/vehicle.cpp
+====================================================================================================
+  Line 215 [alloc_magic_size]: (CMobster *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbf94,"..\\core\\vehicle.cpp",0x15d)
+  Line 221 [alloc_magic_size]: (CTommyGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x584,"..\\core\\vehicle.cpp",0x15e)
+
+====================================================================================================
+core_vehicle.cpp_factoryFunc_FUN_005e7900 (1 suspect)
+  File: core/vehicle.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CVehicle *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1078,"..\\core\\vehicle.cpp",0x40)
+
+====================================================================================================
+core_vessel.cpp_factoryFunc_FUN_005e8e20 (1 suspect)
+  File: core/vessel.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CCryptVessel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x7f4,"..\\core\\vessel.cpp",0x26)
+
+====================================================================================================
+core_wateract.cpp_factoryFunc_FUN_005ea860 (1 suspect)
+  File: core/wateract.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CWaterActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x2b238,"..\\core\\wateract.cpp",0x55)
+
+====================================================================================================
+core_waypoint.cpp_factoryFunc_FUN_005ebe30 (1 suspect)
+  File: core/waypoint.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CWayPoint *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x558,"..\\core\\waypoint.cpp",0x53)
+
+====================================================================================================
+core_werewolf.cpp_factoryFunc_FUN_005efbd0 (1 suspect)
+  File: core/werewolf.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CWerewolf *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbf04,"..\\core\\werewolf.cpp",0x59)
+
+====================================================================================================
+core_zombie.cpp_factoryFunc_FUN_005f8fa0 (1 suspect)
+  File: core/zombie.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CZombie *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbfac,"..\\core\\zombie.cpp",200)
+
+====================================================================================================
+engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00 (1 suspect)
+  File: engine/fileio.cpp
+====================================================================================================
+  Line 10 [alloc_magic_size]: (CCheckOutItem *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->items,(this_ptr->count + 1) * 0x168,"..\\engine\\fileio.cpp", 0x2e7)
+
+====================================================================================================
+engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70 (1 suspect)
+  File: engine/fileio.cpp
+====================================================================================================
+  Line 19 [alloc_magic_size]: (CCheckOutItem *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->items,this_ptr->count * 0x168,"..\\engine\\fileio.cpp",0x2f8)
+
+====================================================================================================
+engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950 (1 suspect)
+  File: engine/fileio.cpp
+====================================================================================================
+  Line 17 [alloc_magic_size]: (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (g_AuditRecordsArray,g_AuditRecordCount * 0x138,"..\\engine\\fileio.cpp",0x7a1)
+
+====================================================================================================
+engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (1 suspect)
+  File: engine/fileio.cpp
+====================================================================================================
+  Line 110 [alloc_magic_size]: (SPodManageRecord *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (local_94.item_count * 0x39c,"..\\engine\\fileio.cpp",0xc0e)
+
+====================================================================================================
+engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (4 suspects)
+  File: engine/fileio.cpp
+====================================================================================================
+  Line 118 [alloc_magic_size]: (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (g_AuditRecordsArray,g_AuditRecordCount * 0x138, "..\\engine\\fileio.cpp",0x7a1)
+  Line 172 [alloc_magic_size]: (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (g_AuditRecordsArray,g_AuditRecordCount * 0x138, "..\\engine\\fileio.cpp",0x7a1)
+  Line 306 [alloc_magic_size]: (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (g_AuditRecordsArray,iVar7 * 0x138,"..\\engine\\fileio.cpp",0x7a1 )
+  Line 328 [alloc_magic_size]: (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (g_AuditRecordsArray,iVar7 * 0x138,"..\\engine\\fileio.cpp",0x7a1 )
+
+====================================================================================================
+engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (1 suspect)
+  File: engine/fileio.cpp
+====================================================================================================
+  Line 74 [alloc_magic_size]: (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (g_AuditRecordsArray,g_AuditRecordCount * 0x138, "..\\engine\\fileio.cpp",0x7a1)
+
+====================================================================================================
+engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180 (1 suspect)
+  File: engine/palette.cpp
+====================================================================================================
+  Line 37 [alloc_magic_size]: (SColorQuantMapper *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x8308,"..\\engine\\palette.cpp",0xb4)
+
+====================================================================================================
+engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (4 suspects)
+  File: engine/pod.cpp
+====================================================================================================
+  Line 88 [alloc_magic_size]: (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x16c)
+  Line 197 [alloc_magic_size]: (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1ab)
+  Line 247 [alloc_magic_size]: (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1da)
+  Line 285 [alloc_magic_size]: (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x20a)
+
+====================================================================================================
+engine_pod.cpp_CPod_mount_FUN_00550a10 (1 suspect)
+  File: engine/pod.cpp
+====================================================================================================
+  Line 14 [alloc_magic_size]: (CPodFile *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x42c,"..\\engine\\pod.cpp",0x39f)
+
+====================================================================================================
+engine_texture.cpp_initTextureCache_FUN_005dd760 (1 suspect)
+  File: engine/texture.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTextureCache *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1400c,"..\\engine\\texture.cpp",0x278)
+
+====================================================================================================
+shape_design.c_allocateSpatialTreeNode_FUN_00457ed0 (1 suspect)
+  File: shape/design.c
+====================================================================================================
+  Line 7 [alloc_magic_size]: (STreeNode *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x1c,"..\\shape\\design.c",0x166)
+
+====================================================================================================
+shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 (2 suspects)
+  File: shape/design.c
+====================================================================================================
+  Line 38 [alloc_magic_size]: (SVertexData *) shape_memdbg_cpp_debugMalloc_FUN_0050f250 ((g_VertexCount + 0x32) * 0x14,"..\\shape\\design.c",0x1a98)
+  Line 46 [alloc_magic_size]: (SShapeEditorPolygon *) shape_memdbg_cpp_debugMalloc_FUN_0050f250 ((g_PolygonCount + 0x32) * 0x184,"..\\shape\\design.c",0x1a9c)
+
+====================================================================================================
+shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 19 [alloc_magic_size]: (char **)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->data_array,new_capacity * 4,"..\\shape\\edittool.cpp",0xb50)
+
+====================================================================================================
+shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0 (3 suspects)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 15 [alloc_magic_size]: (CLodVert *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->max_vertex_count,0x4c4,"..\\shape\\meshlod.cpp",0x231)
+  Line 18 [alloc_magic_size]: (CLodFace *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->max_tri_count,0x8c,"..\\shape\\meshlod.cpp",0x232)
+  Line 21 [alloc_magic_size]: (SMRGLTextureLod *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->lod_texture_count,0x48,"..\\shape\\meshlod.cpp",0x233)
+
+====================================================================================================
+shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620 (1 suspect)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 43 [alloc_magic_size]: (SSpatialGrid *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->spatial_grid_ptr,0x4004,"..\\shape\\meshlod.cpp",0x43f)
+
+====================================================================================================
+shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50 (1 suspect)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 14 [alloc_magic_size]: (CLodMesh *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x74,"..\\shape\\meshlod.cpp",0x560)
+
+====================================================================================================
+shape_meshlod.cpp_CLodMesh_findOrAddLodTexture_FUN_00518790 (1 suspect)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 25 [alloc_magic_size]: (SMRGLTextureLod *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->lod_textures,(this_ptr->lod_texture_count + 1) * 0x48, "..\\shape\\meshlod.cpp",0xb6d)
+
+====================================================================================================
+shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0 (1 suspect)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 29 [alloc_magic_size]: (CLodEdge *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->edges_ptr,(this_ptr->edge_count + 1) * 0xf0, "..\\shape\\meshlod.cpp",0x325)
+
+====================================================================================================
+shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0 (1 suspect)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 13 [alloc_magic_size]: (SSpatialGrid *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->spatial_grid_ptr,0x4004,"..\\shape\\meshlod.cpp",0x146f)
+
+====================================================================================================
+shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180 (1 suspect)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 15 [alloc_magic_size]: (CLodEdge *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (this_ptr->lod_level_count,0xf0,"..\\shape\\meshlod.cpp",0x1446)
+
+====================================================================================================
+shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0 (1 suspect)
+  File: shape/meshlod.cpp
+====================================================================================================
+  Line 12 [alloc_magic_size]: (CLodEdge *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->lod_levels_ptr,iVar2 * 0xf0,"..\\shape\\meshlod.cpp",0x14a4)
+
+====================================================================================================
+shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70 (1 suspect)
+  File: shape/multicrm.cpp
+====================================================================================================
+  Line 17 [alloc_magic_size]: (CDSEModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1f20dc,"..\\shape\\multicrm.cpp",0x42)
+
+====================================================================================================
+shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (1 suspect)
+  File: shape/quantize.cpp
+====================================================================================================
+  Line 33 [alloc_magic_size]: (CBitmap *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",900)
+
+====================================================================================================
+shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (2 suspects)
+  File: shape/quantize.cpp
+====================================================================================================
+  Line 27 [alloc_magic_size]: (CBitmap *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x28,"..\\shape\\quantize.cpp",0x3ec)
+  Line 87 [alloc_magic_size]: (CColorQuantizer *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x4b44,"..\\shape\\quantize.cpp",0x417)
+
+====================================================================================================
+shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 24 [alloc_magic_size]: (CPoly **)realloc (this_ptr->polygon_list,(this_ptr->polygon_count + 1) * 4)
+
+====================================================================================================
+shape_superopt.cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 20 [alloc_magic_size]: (SExpandedEdge *)shape_memdbg_cpp_malloc_FUN_006021da(edge_count * 0x60)
+
+====================================================================================================
+shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 246 [alloc_magic_size]: (CComplexPolygon *)shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(0x34)
+
+====================================================================================================
+shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 22 [alloc_magic_size]: (SExpandedEdge *)shape_memdbg_cpp_malloc_FUN_006021da(edge_count * 0x60)
+
+====================================================================================================
+shape_superopt.cpp_CObj_addPolygons_FUN_005d2410 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 17 [alloc_magic_size]: (CPoly *)realloc (this_ptr->poly_array,(this_ptr->poly_count + add_count) * 0x68)
+
+====================================================================================================
+shape_superopt.cpp_CObj_addVertices_FUN_005d2580 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CVert *)realloc (this_ptr->vertex_data,(this_ptr->vertex_count + add_count) * 0x38)
+
+====================================================================================================
+shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 17 [alloc_magic_size]: (CPoly *)malloc(poly_count * 0x68)
+
+====================================================================================================
+shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 8 [alloc_magic_size]: (CVert *)malloc(vertex_count * 0x38)
+
+====================================================================================================
+shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 19 [alloc_magic_size]: (CPoly *)realloc(this_ptr->poly_array,this_ptr->poly_count * 0x68)
+
+====================================================================================================
+shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 108 [alloc_magic_size]: (CVert *)realloc(this_ptr->vertex_data,uVar6 * 0x38)
+
+====================================================================================================
+shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 22 [alloc_magic_size]: (CVert *)realloc(this_ptr->vertex_data,this_ptr->vertex_count * 0x38)
+
+====================================================================================================
+shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0 (2 suspects)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 9 [alloc_magic_size]: (CComplexPolygon **)realloc (this_ptr->complex_polygons,(this_ptr->complex_polygon_count + 1) * 4)
+  Line 14 [alloc_magic_size]: (CComplexPolygon *)shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(0x34)
+
+====================================================================================================
+sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 (2 suspects)
+  File: sound/mp3.cpp
+====================================================================================================
+  Line 25 [alloc_magic_size]: (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8)
+  Line 30 [alloc_magic_size]: (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8)
+
+====================================================================================================
+sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (1 suspect)
+  File: sound/sndmain.cpp
+====================================================================================================
+  Line 45 [alloc_magic_size]: (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x8630,"..\\sound\\sndmain.cpp",0x1773)
+
+====================================================================================================
+sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200 (1 suspect)
+  File: sound/sndmain.cpp
+====================================================================================================
+  Line 48 [alloc_magic_size]: (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x8630,"..\\sound\\sndmain.cpp",0x3c5)
+
+====================================================================================================
+sound_sndmain.cpp_startSfx_FUN_005a8e90 (1 suspect)
+  File: sound/sndmain.cpp
+====================================================================================================
+  Line 142 [alloc_magic_size]: (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x8630,"..\\sound\\sndmain.cpp",0x3c5)
+
+====================================================================================================
+wincore_wddvmem.cpp_initTextureCache_FUN_00403790 (1 suspect)
+  File: wincore/wddvmem.cpp
+====================================================================================================
+  Line 7 [alloc_magic_size]: (CTextureCache *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1400c,"..\\engine\\texture.cpp",0x278)

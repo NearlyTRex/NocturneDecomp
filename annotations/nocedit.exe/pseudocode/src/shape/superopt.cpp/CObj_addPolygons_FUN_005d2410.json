@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 46,
+    "complexity_score": 61,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 145
   },
   "cross_references": [],
@@ -275,7 +277,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x68 == sizeof(CPoly). Replace the magic with sizeof(CPoly) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 17,
+      "match": "(CPoly*) alloc stride 0x68",
+      "severity": "moderate",
+      "text": "(CPoly *)realloc (this_ptr->poly_array,(this_ptr->poly_count + add_count) * 0x68)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

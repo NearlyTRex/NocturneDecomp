@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 56,
+    "complexity_score": 71,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 187
   },
   "cross_references": [
@@ -240,5 +242,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x4c == sizeof(CDemonFilter). Replace the magic with sizeof(CDemonFilter) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 42,
+      "match": "(CDemonFilter*) alloc stride 0x4c",
+      "severity": "moderate",
+      "text": "(CDemonFilter *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x4c,\"..\\\\core\\\\dfilter.cpp\",0x58)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

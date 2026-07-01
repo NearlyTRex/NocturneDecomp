@@ -7,14 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 306,
-    "complexity_score": 168,
+    "complexity_score": 193,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 39,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 168,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 474
   },
   "cross_references": [
@@ -821,5 +823,24 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x14 == sizeof(SVertexData). Replace the magic with sizeof(SVertexData) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "introduced_by": "keep",
+      "line": 38,
+      "match": "(SVertexData*) alloc stride 0x14",
+      "severity": "moderate",
+      "text": "(SVertexData *) shape_memdbg_cpp_debugMalloc_FUN_0050f250 ((g_VertexCount + 0x32) * 0x14,\"..\\\\shape\\\\design.c\",0x1a98)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x184 == sizeof(SShapeEditorPolygon). Replace the magic with sizeof(SShapeEditorPolygon) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "introduced_by": "keep",
+      "line": 46,
+      "match": "(SShapeEditorPolygon*) alloc stride 0x184",
+      "severity": "moderate",
+      "text": "(SShapeEditorPolygon *) shape_memdbg_cpp_debugMalloc_FUN_0050f250 ((g_PolygonCount + 0x32) * 0x184,\"..\\\\shape\\\\design.c\",0x1a9c)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

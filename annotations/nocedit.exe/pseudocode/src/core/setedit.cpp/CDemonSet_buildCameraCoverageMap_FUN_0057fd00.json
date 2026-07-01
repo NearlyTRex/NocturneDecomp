@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 102,
+    "complexity_score": 117,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 15,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 102,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 373
   },
   "cross_references": [
@@ -430,5 +432,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 25,
+      "match": "(CVector3i*) alloc stride 0xc",
+      "severity": "moderate",
+      "text": "(CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (g_CDemonCameraInstance.framebuffer_height * g_CDemonCameraInstance.framebuffer_width * 0xc,\"..\\\\core\\\\setedit.cpp\",0xf22)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

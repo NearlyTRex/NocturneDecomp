@@ -29,7 +29,7 @@ cert-flp30-c (4)
     loop induction expression should not have floating-point type
 
 ====================================================================================================
-Cppcheck (quick) (67 diagnostics)
+Cppcheck (quick) (60 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -275,39 +275,3 @@ invalidscanf (60)
   engine_fileio.cpp_parseTimestampRecord_FUN_004b227 line 24
     File: engine/fileio.cpp
     sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-invalidPointerCast (4)
-----------------------------------------------------------------------------------------------------
-
-  core_chain.cpp_fastSqrt_FUN_00431350               line 13
-    File: core/chain.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_chain.cpp_fastSqrt_FUN_00431350               line 14
-    File: core/chain.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 13
-    File: core/cloth.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 14
-    File: core/cloth.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-----------------------------------------------------------------------------------------------------
-invalidScanfArgType_int (3)
-----------------------------------------------------------------------------------------------------
-
-  sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Sampl line 46
-    File: sound/mp3.cpp
-    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
-
-  sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_0053 line 30
-    File: sound/mp3.cpp
-    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
-
-  sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 line 29
-    File: sound/mp3.cpp
-    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.

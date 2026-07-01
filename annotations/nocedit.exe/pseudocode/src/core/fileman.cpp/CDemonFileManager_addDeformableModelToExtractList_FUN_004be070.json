@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 30,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 12,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 119
   },
   "cross_references": [
@@ -225,5 +227,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x9000 == sizeof(CDeformableModel). Replace the magic with sizeof(CDeformableModel) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 11,
+      "match": "(CDeformableModel*) alloc stride 0x9000",
+      "severity": "moderate",
+      "text": "(CDeformableModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x9000,\"..\\\\core\\\\fileman.cpp\",0x143)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

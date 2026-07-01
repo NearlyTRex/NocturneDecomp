@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 15,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 15,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 50
   },
   "cross_references": [
@@ -143,5 +145,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x58 == sizeof(SVoxelCubeMetadata). Replace the magic with sizeof(SVoxelCubeMetadata) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 7,
+      "match": "(SVoxelCubeMetadata*) alloc stride 0x58",
+      "severity": "moderate",
+      "text": "(SVoxelCubeMetadata *)shape_memdbg_cpp_debugCalloc_FUN_0050f350 (0x58,(this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z,\"..\\\\core\\\\dtrace.cpp\",0x87)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }
