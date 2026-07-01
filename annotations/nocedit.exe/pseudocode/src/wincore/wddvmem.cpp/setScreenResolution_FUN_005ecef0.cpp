@@ -41,29 +41,29 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int h
   g_UseSoftwareRendering = 0;
   g_WindowHeight = height;
   if (g_BackBuffer != (void *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackBuffer,"..\\wincore\\wddvmem.cpp",0xff);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackBuffer,"..\\wincore\\wddvmem.cpp",255);
     g_BackBuffer = (void *)0x0;
   }
   if (g_SoftwareFrameBuffer != (void *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (g_SoftwareFrameBuffer,"..\\wincore\\wddvmem.cpp",0x107);
+              (g_SoftwareFrameBuffer,"..\\wincore\\wddvmem.cpp",263);
     g_SoftwareZBuffer = (void *)0x0;
   }
   g_BackBuffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                            (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
                                   (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *
-                            g_WindowHeight * g_WindowWidth,"..\\wincore\\wddvmem.cpp",0xe9);
+                            g_WindowHeight * g_WindowWidth,"..\\wincore\\wddvmem.cpp",233);
   if (g_BackBuffer == (void *)0x0) {
     g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
-    g_CurrentLineNumber = 0xea;
+    g_CurrentLineNumber = 234;
     core_main_c_displayErrorAndQuit_FUN_00506f10("WDDVMEM: Fatal - out of frame buffer memory");
   }
   g_SoftwareFrameBuffer =
        shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                 (g_WindowWidth * g_WindowHeight * 4 + 0x40,"..\\wincore\\wddvmem.cpp",0xee);
+                 (g_WindowWidth * g_WindowHeight * 4 + 0x40,"..\\wincore\\wddvmem.cpp",238);
   if (g_SoftwareFrameBuffer == (void *)0x0) {
     g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
-    g_CurrentLineNumber = 0xef;
+    g_CurrentLineNumber = 239;
     core_main_c_displayErrorAndQuit_FUN_00506f10("WDDVMEM: Fatal - out of Z buffer memory");
   }
   g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);
@@ -134,7 +134,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int h
     return 1;
   }
   g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
-  g_CurrentLineNumber = 0x1d7;
+  g_CurrentLineNumber = 471;
   core_main_c_displayErrorAndQuit_FUN_00506f10("setScreenResolution - Create back buffer failed!");
   return 0;
 }

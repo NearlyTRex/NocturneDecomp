@@ -12,7 +12,7 @@ CColonel * __cdecl core_colonel_cpp_factoryFunc_FUN_0043f7a0(void)
   CColonel *pCVar1;
   
   pCVar1 = (CColonel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (0x1fbec,"..\\core\\colonel.cpp",0x7e);
+                     (0x1fbec,"..\\core\\colonel.cpp",126);
   if (pCVar1 == (CColonel *)0x0) {
     return (CColonel *)0x0;
   }

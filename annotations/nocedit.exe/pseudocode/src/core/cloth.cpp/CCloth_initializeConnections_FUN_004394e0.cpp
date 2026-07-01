@@ -83,7 +83,7 @@ LAB_004395fb:
                   local_2c->connected_count = iVar7;
                   if (0xf < iVar7) {
                     g_CurrentFilename = "..\\core\\cloth.cpp";
-                    g_CurrentLineNumber = 0x1c3;
+                    g_CurrentLineNumber = 451;
                     core_main_c_displayErrorAndQuit_FUN_00506f10
                               ("Too many connecting verticies");
                     iVar3 = iVar3 + 1;

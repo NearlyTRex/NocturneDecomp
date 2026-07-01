@@ -10,7 +10,7 @@ void __cdecl core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(CDemonAc
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x58c);
+            (this_ptr,"..\\core\\actor.cpp",1420);
   out_info->can_interact = 0;
   out_info->interacting_actor = (CDemonActor *)0x0;
   out_info->yaw_max = 0.0;

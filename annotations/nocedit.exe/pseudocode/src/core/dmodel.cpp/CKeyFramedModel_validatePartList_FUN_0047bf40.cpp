@@ -40,7 +40,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyF
                             iVar6 + local_18);
             if ((iVar1 < iVar5) || (iVar4 <= iVar1)) {
               g_CurrentFilename = "..\\core\\dmodel.cpp";
-              g_CurrentLineNumber = 0xab6;
+              g_CurrentLineNumber = 2742;
               core_main_c_displayErrorAndQuit_FUN_00506f10("CKeyFramedModel part vertex overlap detected!");
               iVar3 = iVar3 + 1;
               iVar6 = iVar6 + 0xc;
@@ -63,7 +63,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyF
     return;
   }
   g_CurrentFilename = "..\\core\\dmodel.cpp";
-  g_CurrentLineNumber = 0xabf;
+  g_CurrentLineNumber = 2751;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CKeyFramedModel partList/mastercount mismatch detected.");
   return;
 }

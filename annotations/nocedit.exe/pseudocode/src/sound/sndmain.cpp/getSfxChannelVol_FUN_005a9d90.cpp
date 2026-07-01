@@ -13,7 +13,7 @@ float __cdecl sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(int channel_index)
     return g_SfxChannelVolumes[channel_index];
   }
   g_CurrentFilename = "..\\sound\\sndmain.cpp";
-  g_CurrentLineNumber = 0xf96;
+  g_CurrentLineNumber = 3990;
   core_main_c_displayErrorAndQuit_FUN_00506f10("getSfxChannelVol - invalid channel index: %d",channel_index);
   return g_SfxChannelVolumes[channel_index];
 }

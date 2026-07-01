@@ -44,23 +44,23 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_errorDiffusionBuffers_FUN_0055550
   }
   count = num_entries * 8;
   pfVar1 = (float *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     (count,"..\\shape\\quantize.cpp",0x28d);
+                     (count,"..\\shape\\quantize.cpp",653);
   this_ptr->error_buffer_r = pfVar1;
   if (pfVar1 != (float *)0x0) {
     pfVar1 = (float *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                       (count,"..\\shape\\quantize.cpp",0x290);
+                       (count,"..\\shape\\quantize.cpp",656);
     this_ptr->error_buffer_g = pfVar1;
     if (pfVar1 != (float *)0x0) {
       pfVar1 = (float *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                         (count,"..\\shape\\quantize.cpp",0x293);
+                         (count,"..\\shape\\quantize.cpp",659);
       this_ptr->error_buffer_b = pfVar1;
       if (pfVar1 != (float *)0x0) {
         pfVar1 = (float *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                           (count,"..\\shape\\quantize.cpp",0x296);
+                           (count,"..\\shape\\quantize.cpp",662);
         this_ptr->error_buffer_i = pfVar1;
         if (pfVar1 != (float *)0x0) {
           puVar2 = (uchar *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                             (num_entries,"..\\shape\\quantize.cpp",0x299);
+                             (num_entries,"..\\shape\\quantize.cpp",665);
           this_ptr->flags_buffer = puVar2;
           if (puVar2 != (uchar *)0x0) {
             memset(this_ptr->error_buffer_r,0,count);

@@ -71,10 +71,10 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Saving %s...",filename);
           file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                           (filename,(char *)0x0,"wt","..\\core\\setedit.cpp",0x326);
+                           (filename,(char *)0x0,"wt","..\\core\\setedit.cpp",806);
           if (file == (_FILE *)0x0) {
             g_CurrentFilename = "..\\core\\setedit.cpp";
-            g_CurrentLineNumber = 0x327;
+            g_CurrentLineNumber = 807;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",filename);
           }
           iVar5 = 0;
@@ -88,7 +88,7 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
               pacVar6 = pacVar6 + 1;
             } while (iVar5 < g_GroundTextureCount);
           }
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x32b);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",811);
         }
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_834,0);
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_bdc,0);
@@ -112,7 +112,7 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
 LAB_00578779:
     if (iVar5 < 0) {
       g_CurrentFilename = "..\\core\\setedit.cpp";
-      g_CurrentLineNumber = 0x332;
+      g_CurrentLineNumber = 818;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find ground texture in list!");
     }
     type = GROUND_TYPE_DEFAULT;

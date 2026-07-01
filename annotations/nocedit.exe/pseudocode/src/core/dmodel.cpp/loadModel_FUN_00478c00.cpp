@@ -27,7 +27,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00478c00(char *filename)
   }
   if (0xff < g_KeyframeModelCount) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
-    g_CurrentLineNumber = 0x4cd;
+    g_CurrentLineNumber = 1229;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't load %s because keyFrame model manager is full.  (Size is %d)",filename,0x100)
     ;
   }

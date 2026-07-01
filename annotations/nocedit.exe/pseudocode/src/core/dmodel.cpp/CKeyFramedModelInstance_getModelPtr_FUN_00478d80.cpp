@@ -13,7 +13,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FU
     return this_ptr->model_ptr;
   }
   g_CurrentFilename = "..\\core\\dmodel.cpp";
-  g_CurrentLineNumber = 0x52d;
+  g_CurrentLineNumber = 1325;
   core_main_c_displayErrorAndQuit_FUN_00506f10
             ("Tried to do something with model %s, but modelPtr not set.  (CKeyFramedModelInstance::preCache not called.",this_ptr->model_name);
   return this_ptr->model_ptr;

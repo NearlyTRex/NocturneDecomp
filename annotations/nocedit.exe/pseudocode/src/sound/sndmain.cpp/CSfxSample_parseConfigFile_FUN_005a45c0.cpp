@@ -127,7 +127,7 @@ joined_r0x005a47dc:
       if (iVar7 == 1) {
         if (local_20 != 0) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
-          g_CurrentLineNumber = 0x290;
+          g_CurrentLineNumber = 656;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("Reference distance specified in %s on line %d, then again on line %d",local_138,local_20,local_18);
         }
@@ -137,7 +137,7 @@ joined_r0x005a47dc:
           uStack_474 = (uint)((ulonglong)(double)fVar1 >> 0x20);
           local_478 = SUB84(__BITCAST_UINT64((double)fVar1),0);
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
-          g_CurrentLineNumber = 0x292;
+          g_CurrentLineNumber = 658;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("Reference volume distance %g is too small in %s line %d!",local_478,uStack_474,local_138,local_18);
         }
@@ -151,7 +151,7 @@ joined_r0x005a47dc:
         if (iVar7 == 1) {
           if (local_1c != 0) {
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
-            g_CurrentLineNumber = 0x298;
+            g_CurrentLineNumber = 664;
             core_main_c_displayErrorAndQuit_FUN_00506f10
                       ("Minimum distance specified in %s on line %d, then again on line %d",local_138,local_1c,local_18);
           }
@@ -162,7 +162,7 @@ joined_r0x005a47dc:
             uStack_46c = (uint)((ulonglong)dVar3 >> 0x20);
             local_470 = SUB84(__BITCAST_UINT64(dVar3),0);
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
-            g_CurrentLineNumber = 0x29a;
+            g_CurrentLineNumber = 666;
             core_main_c_displayErrorAndQuit_FUN_00506f10
                       ("Reference volume distance %g is too small in %s line %d!",local_470,uStack_46c,local_138,local_18);
           }
@@ -174,13 +174,13 @@ joined_r0x005a47dc:
             if (iVar7 == 1) {
               if (local_20 == 0) {
                 g_CurrentFilename = "..\\sound\\sndmain.cpp";
-                g_CurrentLineNumber = 0x2a4;
+                g_CurrentLineNumber = 676;
                 core_main_c_displayErrorAndQuit_FUN_00506f10
                           ("%s specified maxVol on line %d without first specifying reference distance",local_138,local_18);
               }
               if (local_1c != 0) {
                 g_CurrentFilename = "..\\sound\\sndmain.cpp";
-                g_CurrentLineNumber = 0x2a5;
+                g_CurrentLineNumber = 677;
                 core_main_c_displayErrorAndQuit_FUN_00506f10
                           ("Minimum distance specified in %s on line %d, then again on line %d",local_138,local_1c,local_18);
               }
@@ -189,7 +189,7 @@ joined_r0x005a47dc:
                 g_CurrentFilename = "..\\sound\\sndmain.cpp";
                 uStack_47c = (uint)((ulonglong)(double)local_468 >> 0x20);
                 local_480 = SUB84(__BITCAST_UINT64((double)local_468),0);
-                g_CurrentLineNumber = 0x2a7;
+                g_CurrentLineNumber = 679;
                 core_main_c_displayErrorAndQuit_FUN_00506f10
                           ("maxVol %g is too small in %s line %d!",local_480,uStack_47c,local_138,
                            local_18);
@@ -202,12 +202,12 @@ joined_r0x005a47dc:
               if (iVar7 == 1) {
                 if (-1 < (this_ptr->sample_info).sample_count) {
                   g_CurrentFilename = "..\\sound\\sndmain.cpp";
-                  g_CurrentLineNumber = 0x2ae;
+                  g_CurrentLineNumber = 686;
                   core_main_c_displayErrorAndQuit_FUN_00506f10
                             ("Length for %s already known, then specified again in %s line %d",this_ptr,local_138,local_18);
                 }
                 if (local_38 < 1) {
-                  g_CurrentLineNumber = 0x2af;
+                  g_CurrentLineNumber = 687;
                   g_CurrentFilename = "..\\sound\\sndmain.cpp";
                   core_main_c_displayErrorAndQuit_FUN_00506f10
                             ("Invalid length %d in %s line %d",local_38,local_138,local_18);
@@ -235,6 +235,6 @@ joined_r0x005a47dc:
       }
     }
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\sound\\sndmain.cpp",0x2bf);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\sound\\sndmain.cpp",703);
   return;
 }

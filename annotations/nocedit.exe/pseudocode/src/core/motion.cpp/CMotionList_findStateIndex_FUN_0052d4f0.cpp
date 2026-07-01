@@ -29,7 +29,7 @@ int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList 
     return -1;
   }
   g_CurrentFilename = "..\\core\\motion.cpp";
-  g_CurrentLineNumber = 0x113;
+  g_CurrentLineNumber = 275;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find state \"%s\" in motion list",state_name);
   return -1;
 }

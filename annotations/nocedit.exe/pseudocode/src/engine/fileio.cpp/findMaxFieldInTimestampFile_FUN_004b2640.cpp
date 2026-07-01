@@ -21,7 +21,7 @@ int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *dir
   iVar4 = 0;
   do {
     local_18 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                         (filename,(char *)0x0,"rt","..\\engine\\fileio.cpp",0x153);
+                         (filename,(char *)0x0,"rt","..\\engine\\fileio.cpp",339);
     if (local_18 != (_FILE *)0x0) {
       _setvbuf(local_18,(char *)0x0,0,0x400);
       goto LAB_004b2681;
@@ -40,7 +40,7 @@ LAB_004b2681:
   iVar1 = engine_fileio_cpp_readTimestampFile_FUN_004b23a0
                     ((_FILE *)&local_18,&local_14,directory,filename);
   if (local_18 != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",196);
     local_18 = (_FILE *)0x0;
   }
   uVar5 = 0xffffffff;
@@ -59,7 +59,7 @@ LAB_004b2681:
     }
   }
   if (local_14 != (STimestampRecord *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(local_14,"..\\engine\\fileio.cpp",0x201);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(local_14,"..\\engine\\fileio.cpp",513);
   }
   return uVar5;
 }

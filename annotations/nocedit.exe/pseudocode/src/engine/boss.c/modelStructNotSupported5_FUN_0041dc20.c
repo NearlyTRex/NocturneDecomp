@@ -10,7 +10,7 @@ void __cdecl engine_boss_c_modelStructNotSupported5_FUN_0041dc20(SMRGLHeaderExte
 
 {
   g_CurrentFilename = "..\\engine\\boss.c";
-  g_CurrentLineNumber = 0x49;
+  g_CurrentLineNumber = 73;
   core_main_c_displayErrorAndQuit_FUN_00506f10("modelStruct not supported");
   return;
 }

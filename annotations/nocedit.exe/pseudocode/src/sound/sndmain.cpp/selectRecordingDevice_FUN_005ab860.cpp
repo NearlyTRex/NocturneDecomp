@@ -14,7 +14,7 @@ void __cdecl sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860(int device_id)
   iVar1 = sound_sndmain_cpp_isRecordingSystemActive_FUN_005ab970();
   if (iVar1 != 0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x1447;
+    g_CurrentLineNumber = 5191;
     core_main_c_displayErrorAndQuit_FUN_00506f10("selectRecordingDevice - device already open.");
   }
   if (device_id < 0) {

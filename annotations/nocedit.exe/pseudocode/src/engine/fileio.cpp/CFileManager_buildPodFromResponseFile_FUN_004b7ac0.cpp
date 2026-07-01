@@ -24,7 +24,7 @@ void __cdecl engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac
     return;
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (local_5c,(char *)0x0,"rt","..\\engine\\fileio.cpp",0xa67);
+                   (local_5c,(char *)0x0,"rt","..\\engine\\fileio.cpp",2663);
   if (file != (_FILE *)0x0) {
     engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10(this_ptr);
     while( true ) {
@@ -56,8 +56,8 @@ void __cdecl engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac
         _fputc(character,this_ptr->file_ptr);
       }
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(this_ptr->file_ptr,"..\\engine\\fileio.cpp",0xa79);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0xa7a);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(this_ptr->file_ptr,"..\\engine\\fileio.cpp",2681);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",2682);
     engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(this_ptr,(char *)0x0,(char *)0x0);
     return;
   }

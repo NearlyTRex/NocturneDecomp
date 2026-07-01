@@ -13,7 +13,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample *th
   
   if (this_ptr->ref_count != 0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x710;
+    g_CurrentLineNumber = 1808;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::freeMemory - freeing sample in use!");
   }
   sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(this_ptr);
@@ -28,7 +28,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample *th
   this_ptr->mp3_data = (CMP3Decoder *)0x0;
   if (this_ptr->file_handle != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0
-              (this_ptr->file_handle,"..\\sound\\sndmain.cpp",0x723);
+              (this_ptr->file_handle,"..\\sound\\sndmain.cpp",1827);
     this_ptr->file_handle = (_FILE *)0x0;
   }
   this_ptr->taken = 0;

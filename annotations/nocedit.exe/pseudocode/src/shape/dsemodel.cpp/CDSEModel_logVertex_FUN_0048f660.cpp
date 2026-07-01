@@ -20,7 +20,7 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_logVertex_FUN_0048f660(CDSEModel *this
     this_ptr->vertex_count = this_ptr->vertex_count + 1;
     if (4999 < this_ptr->vertex_count) {
       g_CurrentFilename = "..\\shape\\dsemodel.cpp";
-      g_CurrentLineNumber = 0x4a;
+      g_CurrentLineNumber = 74;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDSEModel::logVertex - Rich, you need to increase MAX_DSE_POINTS");
     }
   }

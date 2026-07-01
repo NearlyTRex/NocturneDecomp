@@ -29,7 +29,7 @@ void __cdecl engine_2d_c_drawVLine_FUN_00402ff0(int x,int y1,int y2)
         if (g_BitsPerPixel != 8) {
 LAB_004030ee:
           g_CurrentFilename = "..\\engine\\2d.c";
-          g_CurrentLineNumber = 0x8d8;
+          g_CurrentLineNumber = 2264;
           core_main_c_displayErrorAndQuit_FUN_00506f10("vLine - invalid bitsPerPixel");
           return;
         }

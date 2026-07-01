@@ -21,7 +21,7 @@ void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(CNetGame 
       (this_ptr->network_mode == NET_MODE_PLAYING)) && (-1 < this_ptr->server_player_index)) {
     if (this_ptr->local_player_index < 0) {
       g_CurrentFilename = "..\\core\\netgame.cpp";
-      g_CurrentLineNumber = 0x97c;
+      g_CurrentLineNumber = 2428;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::processClientFrame - I'm not in player list!");
     }
     core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(this_ptr,this_ptr->server_player_index,10.0);

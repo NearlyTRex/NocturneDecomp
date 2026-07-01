@@ -26,7 +26,7 @@ void __cdecl core_actor_cpp_CDemonActor_renderTargetPoints_FUN_00409b90(CDemonAc
   int iVar2;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x4ff);
+            (this_ptr,"..\\core\\actor.cpp",1279);
   __arrinit(local_9c,10,&g_CVectorTypeInfo);
   iVar3 = (*((this_ptr->vtable)._ub)->getTargetPoints)(this_ptr,local_9c);
   pCVar7 = local_9c;

@@ -113,7 +113,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDe
                 else {
 LAB_00573d6f:
                   g_CurrentFilename = "..\\core\\setcolid.cpp";
-                  g_CurrentLineNumber = 0x3f1;
+                  g_CurrentLineNumber = 1009;
                   core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid collision type!");
                 }
               }
@@ -209,7 +209,7 @@ LAB_00573d6f:
                                       (local_f0.keyframed_model);
               if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
                 g_CurrentFilename = "..\\core\\setcolid.cpp";
-                g_CurrentLineNumber = 0x389;
+                g_CurrentLineNumber = 905;
                 core_main_c_displayErrorAndQuit_FUN_00506f10
                           ("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",this_ptr_00);
               }

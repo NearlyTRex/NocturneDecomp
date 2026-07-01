@@ -20,7 +20,7 @@ void __cdecl core_skeledit_cpp_loadIni_FUN_005897b0(void)
   
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    ("skeledit.ini",(char *)0x0,"rt","..\\core\\skeledit.cpp",
-                    0x124);
+                    292);
   if (file == (_FILE *)0x0) {
     return;
   }
@@ -31,7 +31,7 @@ void __cdecl core_skeledit_cpp_loadIni_FUN_005897b0(void)
   } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
   _fscanf(file,"%d\n",&local_10);
   if (local_10 != 1) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x12d);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",301);
     shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
               (g_CEditorToolsPtr,"Deleting old %s file.","skeledit.ini");
     remove("skeledit.ini");
@@ -118,6 +118,6 @@ LAB_005898a6:
     pcVar3 = pcVar3 + 1;
   }
 LAB_00589923:
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x13f);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",319);
   return;
 }

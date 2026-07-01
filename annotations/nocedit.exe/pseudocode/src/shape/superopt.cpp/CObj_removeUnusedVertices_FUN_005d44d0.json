@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 130,
+    "complexity_score": 115,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 115,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 341
   },
   "cross_references": [],
@@ -333,6 +331,15 @@
       "severity": "moderate",
       "text": "pdVar7 = (double *)((int)&(this_ptr->vertex_data->position).x + local_18);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Allocation size hardcodes 0x38 == sizeof(CVert). Replace the magic with sizeof(CVert) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 108,
+      "match": "(CVert*) alloc stride 0x38",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVert *)realloc(this_ptr->vertex_data,uVar6 * 0x38)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -393,16 +400,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x38 == sizeof(CVert). Replace the magic with sizeof(CVert) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 108,
-      "match": "(CVert*) alloc stride 0x38",
-      "severity": "moderate",
-      "text": "(CVert *)realloc(this_ptr->vertex_data,uVar6 * 0x38)",
-      "type": "alloc_magic_size"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

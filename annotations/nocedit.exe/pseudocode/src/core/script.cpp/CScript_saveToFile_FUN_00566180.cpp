@@ -32,7 +32,7 @@ void __cdecl core_script_cpp_CScript_saveToFile_FUN_00566180(CScript *this_ptr,c
       iVar1 = iVar1 + 1;
       _fprintf(file_ptr,"%s\n",pcVar3);
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\script.cpp",0x1a65);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\script.cpp",6757);
     return;
   }
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

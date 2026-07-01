@@ -48,7 +48,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_hideActorsMenu_FUN_0053dcf0(CDemonMi
         pCVar1 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,name);
         if (pCVar1 == (CDemonActor *)0x0) {
           g_CurrentFilename = "..\\core\\msnedit.cpp";
-          g_CurrentLineNumber = 0xdd9;
+          g_CurrentLineNumber = 3545;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
         }
         pCVar1->is_editor_hidden = 1;

@@ -25,7 +25,7 @@ uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(CMP3Decoder *this_p
       (this_ptr->memory_bitstream).current_dword_index = uVar4;
       if ((this_ptr->memory_bitstream).buffer_size_limit < uVar4) {
         g_CurrentFilename = "..\\sound\\mp3.cpp";
-        g_CurrentLineNumber = 0x2c1;
+        g_CurrentLineNumber = 705;
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("Buffer overflow!!  File: %s",g_CurrentMp3Filename);
       }

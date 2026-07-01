@@ -82,11 +82,11 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
   type_info = &g_CPodFileTypeInfo;
   iVar5 = local_50.item_count;
   pvVar2 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     (local_50.item_count * 0x42c + 4,"..\\engine\\fileio.cpp",0xe36);
+                     (local_50.item_count * 0x42c + 4,"..\\engine\\fileio.cpp",3638);
   object_ptr = (CPodFile *)__vec_new(pvVar2,iVar5,type_info);
   if (object_ptr == (CPodFile *)0x0) {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
-    g_CurrentLineNumber = 0xe37;
+    g_CurrentLineNumber = 3639;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430

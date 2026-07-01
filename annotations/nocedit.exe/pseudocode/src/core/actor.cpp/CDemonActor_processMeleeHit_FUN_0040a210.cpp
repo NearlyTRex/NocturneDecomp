@@ -60,7 +60,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
   CDemonActor *pCStack_14;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x5ea);
+            (this_ptr,"..\\core\\actor.cpp",1514);
   local_d4.y = 0.0;
   local_d4.z = 0.0;
   pCVar1 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *)&local_110.min.y);

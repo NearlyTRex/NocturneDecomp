@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 634,
-    "complexity_score": 274,
+    "complexity_score": 249,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 23,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 249,
-    "suspect_count": 2,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 883
   },
   "cross_references": [
@@ -442,6 +440,24 @@
       "severity": "moderate",
       "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar9),file_handle);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Allocation size hardcodes 0x388 == sizeof(CDemonPart). Replace the magic with sizeof(CDemonPart) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 102,
+      "match": "(CDemonPart*) alloc stride 0x388",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CDemonPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x388,\"..\\\\core\\\\dtrace.cpp\",378)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x388 == sizeof(CDemonPart). Replace the magic with sizeof(CDemonPart) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 137,
+      "match": "(CDemonPart*) alloc stride 0x388",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CDemonPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x388,\"..\\\\core\\\\dtrace.cpp\",410)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -551,22 +567,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x388 == sizeof(CDemonPart). Replace the magic with sizeof(CDemonPart) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 102,
-      "match": "(CDemonPart*) alloc stride 0x388",
-      "severity": "moderate",
-      "text": "(CDemonPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x388,\"..\\\\core\\\\dtrace.cpp\",0x17a)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0x388 == sizeof(CDemonPart). Replace the magic with sizeof(CDemonPart) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 137,
-      "match": "(CDemonPart*) alloc stride 0x388",
-      "severity": "moderate",
-      "text": "(CDemonPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x388,\"..\\\\core\\\\dtrace.cpp\",0x19a)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

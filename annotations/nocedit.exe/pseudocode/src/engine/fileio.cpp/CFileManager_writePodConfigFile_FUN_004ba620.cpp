@@ -15,11 +15,11 @@ void __cdecl engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620(CFil
   char *format;
   
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   ("pod.ini",(char *)0x0,"wt","..\\engine\\fileio.cpp",0xe94)
+                   ("pod.ini",(char *)0x0,"wt","..\\engine\\fileio.cpp",3732)
   ;
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
-    g_CurrentLineNumber = 0xe95;
+    g_CurrentLineNumber = 3733;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create POD.INI!");
   }
   pcVar1 = (char *)pod_list->item_count;
@@ -32,6 +32,6 @@ void __cdecl engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620(CFil
     format = "%s\n";
     index = index + 1;
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0xe9b);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",3739);
   return;
 }

@@ -31,7 +31,7 @@ _FILE * __cdecl engine_dosio_cpp_getFile_FUN_00481a50(char *directory,char *file
         _mkdir(directory);
       }
       p_Var4 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                         (local_220.found_path,(char *)0x0,mode,"..\\engine\\dosio.c",0x198);
+                         (local_220.found_path,(char *)0x0,mode,"..\\engine\\dosio.c",408);
       return p_Var4;
     }
     pbVar1 = pbVar5 + 1;

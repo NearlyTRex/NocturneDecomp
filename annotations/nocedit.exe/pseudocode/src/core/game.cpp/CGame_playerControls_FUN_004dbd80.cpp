@@ -37,7 +37,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
     }
     else {
       g_CurrentFilename = "..\\core\\game.cpp";
-      g_CurrentLineNumber = 0x728;
+      g_CurrentLineNumber = 1832;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CGame::playerControls - unknown control type");
     }
     pcVar3 = g_KeyboardState;

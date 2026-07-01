@@ -14,7 +14,7 @@ void __cdecl core_setdir_cpp_CZThumb_free_FUN_00574b50(CZThumb *this_ptr)
     this_ptr->width = this_ptr->height;
     return;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->zbuffer_data,"..\\core\\setdir.cpp",0xbb);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->zbuffer_data,"..\\core\\setdir.cpp",187);
   this_ptr->zbuffer_data = (void *)0x0;
   this_ptr->height = 0;
   this_ptr->width = this_ptr->height;

@@ -253,7 +253,7 @@ LAB_005fba18:
     if (uVar2 != 1) {
 LAB_005fbae6:
       g_CurrentFilename = "..\\core\\zombie.cpp";
-      g_CurrentLineNumber = 0x5d0;
+      g_CurrentLineNumber = 1488;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid zombie object shape!");
       return 1;
     }

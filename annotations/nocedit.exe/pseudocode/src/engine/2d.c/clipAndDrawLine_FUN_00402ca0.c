@@ -100,7 +100,7 @@ void __cdecl engine_2d_c_clipAndDrawLine_FUN_00402ca0(int x1,int y1,int x2,int y
   } while (local_1c < 100);
   if (local_1c == 100) {
     g_CurrentFilename = "..\\engine\\2d.c";
-    g_CurrentLineNumber = 0x870;
+    g_CurrentLineNumber = 2160;
     core_main_c_displayErrorAndQuit_FUN_00506f10("2d line clipping exceeded max iterations");
   }
   if (local_20 != 0) {

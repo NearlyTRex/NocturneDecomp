@@ -51,7 +51,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_0052f350(CMP3Decoder *th
     uVar4 = uVar4 >> 1;
   } while ((uVar4 != 0) || (uVar3 < (uint)g_HuffmanTables[0].table_size));
   g_CurrentFilename = "..\\sound\\mp3.cpp";
-  g_CurrentLineNumber = 0x321;
+  g_CurrentLineNumber = 801;
   core_main_c_displayErrorAndQuit_FUN_00506f10
             ("Illegal Huffman code in data.  File: %s",g_CurrentMp3Filename);
 LAB_0052f3b9:

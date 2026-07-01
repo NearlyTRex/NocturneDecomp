@@ -17,7 +17,7 @@ int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(C
   float fVar2;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x5ae);
+            (this_ptr,"..\\core\\actor.cpp",1454);
   pCVar4 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&local_30);
   fVar1 = (pCVar4->max).x - (pCVar4->min).x;
   uVar5 = 0;

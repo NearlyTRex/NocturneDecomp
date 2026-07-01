@@ -18,7 +18,7 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *
   local_14 = 0;
   if (0x20 < num_bits) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
-    g_CurrentLineNumber = 0x267;
+    g_CurrentLineNumber = 615;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Cannot read or write more than %d bits at a time.  File: %s",0x20,g_CurrentMp3Filename);
   }

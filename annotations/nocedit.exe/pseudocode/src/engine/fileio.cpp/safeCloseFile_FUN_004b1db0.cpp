@@ -12,7 +12,7 @@ void __cdecl engine_fileio_cpp_safeCloseFile_FUN_004b1db0(_FILE **file_ptr)
   if (*file_ptr == (_FILE *)0x0) {
     return;
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file_ptr,"..\\engine\\fileio.cpp",0xc4);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file_ptr,"..\\engine\\fileio.cpp",196);
   *file_ptr = (_FILE *)0x0;
   return;
 }

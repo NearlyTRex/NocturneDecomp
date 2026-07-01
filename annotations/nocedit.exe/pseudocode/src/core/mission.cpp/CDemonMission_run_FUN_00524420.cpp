@@ -19,12 +19,12 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
   while( true ) {
     if (g_HeroCount < 1) {
       g_CurrentFilename = "..\\core\\mission.cpp";
-      g_CurrentLineNumber = 0x4c5;
+      g_CurrentLineNumber = 1221;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::run - hero list empty");
     }
     if (g_HeroActors[g_LocalHeroIndex] == (CHero *)0x0) {
       g_CurrentFilename = "..\\core\\mission.cpp";
-      g_CurrentLineNumber = 0x4c6;
+      g_CurrentLineNumber = 1222;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::run - no gLocalHero");
     }
     core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0

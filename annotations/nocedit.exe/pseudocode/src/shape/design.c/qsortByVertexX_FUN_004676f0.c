@@ -33,7 +33,7 @@ int __cdecl shape_design_c_qsortByVertexX_FUN_004676f0(SVertexPair *a,SVertexPai
         }
         else {
           g_CurrentFilename = "..\\shape\\design.c";
-          g_CurrentLineNumber = 0x2062;
+          g_CurrentLineNumber = 8290;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
           local_24 = 0;
         }

@@ -20,7 +20,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_005af220(CDirectSo
   }
   if (g_DirectSoundBufferMetadata[buffer_id].pvLockedAudio1 != (LPVOID)0x0) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
-    g_CurrentLineNumber = 0x2c4;
+    g_CurrentLineNumber = 708;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::lockSample - already locked!");
   }
   error_code = (*g_DirectSoundSampleBuffers[buffer_id]->vtable->Lock)

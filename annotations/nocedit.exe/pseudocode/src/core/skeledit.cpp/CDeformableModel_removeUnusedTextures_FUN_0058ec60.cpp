@@ -24,7 +24,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec6
   
   if (this_ptr->num_texture_sets != 1) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0xa72;
+    g_CurrentLineNumber = 2674;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::removeUnusedTextures() - textureSetCount must be 1.");
   }
   iVar4 = 0;

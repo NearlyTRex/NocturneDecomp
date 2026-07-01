@@ -81,7 +81,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
       return 0;
     }
     g_CurrentFilename = "..\\engine\\pod.cpp";
-    g_CurrentLineNumber = 0x2e6;
+    g_CurrentLineNumber = 742;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Invalid pod version for %s: %d",this_ptr->filename,iVar8);
   }
@@ -89,16 +89,16 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Verifying CRC for %s...",pcVar2);
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (pcVar2,(char *)0x0,"rb","..\\engine\\pod.cpp",0x2ef);
+                     (pcVar2,(char *)0x0,"rb","..\\engine\\pod.cpp",751);
   if (p_Var3 == (_FILE *)0x0) {
     return 0;
   }
   _fseek(p_Var3,iVar7 + -4,0);
   _fread(&local_20,4,1,p_Var3);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\pod.cpp",0x2f3);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\pod.cpp",755);
   iVar4 = engine_dosio_cpp_getFileSize_FUN_00481880(&s_EmptyChar_0064015e,pcVar2);
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (pcVar2,(char *)0x0,"rb","..\\engine\\pod.cpp",0xf2);
+                   (pcVar2,(char *)0x0,"rb","..\\engine\\pod.cpp",242);
   uVar8 = 0xffffffff;
   local_1c = file;
   _fseek(file,iVar7,0);
@@ -125,6 +125,6 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
       uVar8 = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(uVar8,data_byte);
     } while (uVar3 < size);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\pod.cpp",0xfb);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\pod.cpp",251);
   return (uint)(uVar8 == local_20);
 }

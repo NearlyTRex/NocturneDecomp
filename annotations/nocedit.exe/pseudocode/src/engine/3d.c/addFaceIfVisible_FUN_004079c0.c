@@ -15,7 +15,7 @@ void __cdecl engine_3d_c_addFaceIfVisible_FUN_004079c0(SMRGLHeaderPrimitive *cul
   if (iVar1 != 0) {
     if (1999 < g_RenderFaceCount) {
       g_CurrentFilename = "..\\engine\\3d.c";
-      g_CurrentLineNumber = 0xca7;
+      g_CurrentLineNumber = 3239;
       core_main_c_displayErrorAndQuit_FUN_00506f10("renderFaceList - too many faces");
     }
     g_RenderFaceArray[g_RenderFaceCount] = cull_reference;

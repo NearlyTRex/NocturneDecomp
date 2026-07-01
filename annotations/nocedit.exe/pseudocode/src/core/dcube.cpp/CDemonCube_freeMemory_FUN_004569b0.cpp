@@ -23,16 +23,16 @@ void __cdecl core_dcube_cpp_CDemonCube_freeMemory_FUN_004569b0(CDemonCube *this_
   }
   if (this_ptr->ground_type_memory != (void *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->ground_type_memory,"..\\core\\dcube.cpp",0x61c);
+              (this_ptr->ground_type_memory,"..\\core\\dcube.cpp",1564);
     this_ptr->ground_type_memory = (void *)0x0;
   }
   if (this_ptr->voxel_buffer1 != (SVoxelGrid *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->voxel_buffer1,"..\\core\\dcube.cpp",0x620)
+    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->voxel_buffer1,"..\\core\\dcube.cpp",1568)
     ;
     this_ptr->voxel_buffer1 = (SVoxelGrid *)0x0;
   }
   if (this_ptr->voxel_buffer2 != (SVoxelGrid *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->voxel_buffer2,"..\\core\\dcube.cpp",0x624)
+    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->voxel_buffer2,"..\\core\\dcube.cpp",1572)
     ;
     this_ptr->voxel_buffer2 = (SVoxelGrid *)0x0;
     return;

@@ -14,7 +14,7 @@ int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_00481cf0(CFileFinder *this
   
   if (this_ptr->has_results == 0) {
     g_CurrentFilename = "..\\engine\\dosio.c";
-    g_CurrentLineNumber = 0x244;
+    g_CurrentLineNumber = 580;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CFileFinder::open - search not opened!");
   }
   BVar1 = (*g_FindNextFileAFunc)(this_ptr->search_handle,&_Stack_148);

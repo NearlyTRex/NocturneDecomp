@@ -44,7 +44,7 @@ CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c2e0(CDemonA
   this_ptr->name_hash = uVar4;
   if (199 < iVar3) {
     g_CurrentFilename = "..\\core\\actor.cpp";
-    g_CurrentLineNumber = 0xa0a;
+    g_CurrentLineNumber = 2570;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many actor types!");
   }
   g_ActorClassRegistrations[g_NumActorClassTypes] = this_ptr;

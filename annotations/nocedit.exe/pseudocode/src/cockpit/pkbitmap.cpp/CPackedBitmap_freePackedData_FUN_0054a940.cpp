@@ -13,7 +13,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_freePackedData_FUN_0054a940(CPac
     return;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f460
-            (this_ptr->packed_data,"..\\cockpit\\pkbitmap.cpp",0xa4);
+            (this_ptr->packed_data,"..\\cockpit\\pkbitmap.cpp",164);
   this_ptr->packed_data = (ushort *)0x0;
   return;
 }

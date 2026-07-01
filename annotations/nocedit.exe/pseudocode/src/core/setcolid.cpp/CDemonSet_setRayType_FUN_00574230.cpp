@@ -14,7 +14,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(CDemonSet *this
     return;
   }
   g_CurrentFilename = "..\\core\\setcolid.cpp";
-  g_CurrentLineNumber = 0x49a;
+  g_CurrentLineNumber = 1178;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::setRayType - use setRayTypeLaser");
   return;
 }

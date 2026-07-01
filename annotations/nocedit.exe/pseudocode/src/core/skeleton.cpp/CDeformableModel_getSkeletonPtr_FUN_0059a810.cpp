@@ -13,7 +13,7 @@ CSkeleton * __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a8
     return this_ptr->skeleton_ptr;
   }
   g_CurrentFilename = "..\\core\\skeleton.cpp";
-  g_CurrentLineNumber = 0x2e6;
+  g_CurrentLineNumber = 742;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to do something with the skeleton, but skeleton ptr not set!");
   return this_ptr->skeleton_ptr;
 }

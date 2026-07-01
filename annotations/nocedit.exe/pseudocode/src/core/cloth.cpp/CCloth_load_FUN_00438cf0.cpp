@@ -44,14 +44,14 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   stream = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rt");
   if (stream == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
-    g_CurrentLineNumber = 0x9b;
+    g_CurrentLineNumber = 155;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::load - Unable to open file %s",filename);
   }
   _fgets(local_138,0xff,stream);
   _fscanf(stream,"%d\n",&this_ptr->version_num);
   if (3 < this_ptr->version_num) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
-    g_CurrentLineNumber = 0xa2;
+    g_CurrentLineNumber = 162;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("%s is version %d, this .EXE is old and can only handle up to version %d",filename,this_ptr->version_num,3);
   }
@@ -137,7 +137,7 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
     } while (iVar2 < this_ptr->collide_bone_count);
   }
   iVar16 = 0;
-  iVar2 = shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\core\\cloth.cpp",0x112);
+  iVar2 = shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\core\\cloth.cpp",274);
   if (0 < (this_ptr->model).vertex_count) {
     pCVar10 = &this_ptr->vertices[0].offset_pos;
     iVar13 = 0;

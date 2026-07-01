@@ -83,7 +83,7 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x1f6;
+    g_CurrentLineNumber = 502;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - must be locked!");
   }
   uVar12 = 0;
@@ -147,7 +147,7 @@ LAB_005a900a:
         iVar7 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",local_390);
         if (0 < iVar7) {
           this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                               (0x8630,"..\\sound\\sndmain.cpp",0x3c5);
+                               (0x8630,"..\\sound\\sndmain.cpp",965);
           pCVar8 = (CMP3Decoder *)0x0;
           if (this_ptr != (CMP3Decoder *)0x0) {
             pCVar8 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(this_ptr);
@@ -155,7 +155,7 @@ LAB_005a900a:
           local_18->mp3_data = pCVar8;
           if (pCVar8 == (CMP3Decoder *)0x0) {
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
-            g_CurrentLineNumber = 0x3c6;
+            g_CurrentLineNumber = 966;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory.");
           }
           sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(local_18->mp3_data,local_390);

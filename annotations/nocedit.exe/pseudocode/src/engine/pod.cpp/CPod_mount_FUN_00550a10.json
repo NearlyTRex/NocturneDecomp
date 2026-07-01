@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 49,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 34,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 117
   },
   "cross_references": [],
@@ -145,6 +143,17 @@
     },
     "pcode_op_count": 263
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x42c == sizeof(CPodFile). Replace the magic with sizeof(CPodFile) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 14,
+      "match": "(CPodFile*) alloc stride 0x42c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CPodFile *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x42c,\"..\\\\engine\\\\pod.cpp\",927)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -168,16 +177,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x42c == sizeof(CPodFile). Replace the magic with sizeof(CPodFile) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 14,
-      "match": "(CPodFile*) alloc stride 0x42c",
-      "severity": "moderate",
-      "text": "(CPodFile *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x42c,\"..\\\\engine\\\\pod.cpp\",0x39f)",
-      "type": "alloc_magic_size"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

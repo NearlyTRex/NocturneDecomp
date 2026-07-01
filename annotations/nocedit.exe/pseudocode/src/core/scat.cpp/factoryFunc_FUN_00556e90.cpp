@@ -11,7 +11,7 @@ CScat * __cdecl core_scat_cpp_factoryFunc_FUN_00556e90(void)
 {
   CScat *pCVar1;
   
-  pCVar1 = (CScat *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1fc00,"..\\core\\scat.cpp",0x87);
+  pCVar1 = (CScat *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1fc00,"..\\core\\scat.cpp",135);
   if (pCVar1 == (CScat *)0x0) {
     return (CScat *)0x0;
   }

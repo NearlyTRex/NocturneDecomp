@@ -22,7 +22,7 @@ void __cdecl engine_fileio_cpp_buildCheckoutFilePath_FUN_004b1e60(char *dest_buf
   bVar5 = 0;
   if (g_VersionControlDirectory[0] == '\0') {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
-    g_CurrentLineNumber = 0xdd;
+    g_CurrentLineNumber = 221;
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
   engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_c,local_10c);

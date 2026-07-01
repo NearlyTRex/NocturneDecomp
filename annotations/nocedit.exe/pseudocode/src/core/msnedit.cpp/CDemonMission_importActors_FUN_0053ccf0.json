@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 433,
-    "complexity_score": 179,
+    "complexity_score": 164,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 34,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 164,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 597
   },
   "cross_references": [
@@ -436,6 +434,15 @@
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Allocation size hardcodes 0x27d0 == sizeof(CDemonMission). Replace the magic with sizeof(CDemonMission) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 45,
+      "match": "(CDemonMission*) alloc stride 0x27d0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CDemonMission *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x27d0,\"..\\\\core\\\\msnedit.cpp\",3055)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -489,14 +496,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x27d0 == sizeof(CDemonMission). Replace the magic with sizeof(CDemonMission) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 45,
-      "match": "(CDemonMission*) alloc stride 0x27d0",
-      "severity": "moderate",
-      "text": "(CDemonMission *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x27d0,\"..\\\\core\\\\msnedit.cpp\",0xbef)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

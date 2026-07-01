@@ -33,7 +33,7 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0049d8f0(CInputString *thi
     }
     if (0x3ff < (uint)char_index) {
       g_CurrentFilename = "..\\shape\\edittool.cpp";
-      g_CurrentLineNumber = 0x1be;
+      g_CurrentLineNumber = 446;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CInputString::calcX - string too big for hidden text!");
     }
     memset(g_TempStringBuffer,0x2a,char_index);

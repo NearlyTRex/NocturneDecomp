@@ -15,7 +15,7 @@ void __cdecl engine_pod_cpp_CPod_dismountPod_FUN_005518c0(CPod *this_ptr,int ind
   
   if ((index < 0) || (this_ptr->pod_file_count <= index)) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
-    g_CurrentLineNumber = 0x5fd;
+    g_CurrentLineNumber = 1533;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPod::dismountPod - invalid index");
   }
   g_CurrentDebugLine = 0x602;

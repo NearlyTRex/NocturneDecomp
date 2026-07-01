@@ -10,6 +10,6 @@ int __cdecl core_actor_cpp_CDemonActor_allowBulletHoles_FUN_004098a0(CDemonActor
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x4b0);
+            (this_ptr,"..\\core\\actor.cpp",1200);
   return 0;
 }

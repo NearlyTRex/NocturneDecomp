@@ -141,7 +141,7 @@ static int CEventList_executeCommand_chunk_0_branch_0(CEventList_executeCommand_
       if (local_f0 != 0) {
         if (local_44 == (CDemonLight *)0x0) {
           g_CurrentFilename = "..\\core\\event.cpp";
-          g_CurrentLineNumber = 0x27f;
+          g_CurrentLineNumber = 639;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find CDemonLight for light %s in advanceLightFilter meta-command");
         }
         core_setutil_cpp_C3DSLight_advanceFilter_FUN_00586e70(local_e8,local_44);
@@ -1742,7 +1742,7 @@ LAB_004aad41:
                                               if (local_f0 != 0) {
                                                 if (local_4c == (CDemonLight *)0x0) {
                                                   g_CurrentFilename = "..\\core\\event.cpp";
-                                                  g_CurrentLineNumber = 0x4e0;
+                                                  g_CurrentLineNumber = 1248;
                                                   core_main_c_displayErrorAndQuit_FUN_00506f10
                                                             ("Can't find CDemonLight for light %s in setLightFilterFrame meta-command");
                                                 }

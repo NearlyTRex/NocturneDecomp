@@ -18,6 +18,6 @@ void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00575b40(CDemonSet *thi
     return;
   }
   core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(this_ptr,file_handle);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\setdir.cpp",0x363);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\setdir.cpp",867);
   return;
 }

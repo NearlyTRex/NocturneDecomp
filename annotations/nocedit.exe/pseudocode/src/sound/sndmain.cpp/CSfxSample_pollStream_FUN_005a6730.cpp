@@ -40,14 +40,14 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample *thi
   bVar11 = 0;
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x7c4;
+    g_CurrentLineNumber = 1988;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::pollStream - must be locked!");
   }
   iVar1 = this_ptr->streaming_slot_index;
   if (-1 < iVar1) {
     if ((g_SfxSlots[iVar1].playback_state == 0) || (this_ptr != g_SfxSlots[iVar1].sample)) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
-      g_CurrentLineNumber = 0x7d1;
+      g_CurrentLineNumber = 2001;
       core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::pollStream - my sfx isn't active with me!");
     }
     if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
@@ -56,7 +56,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample *thi
     }
     if (this_ptr->loop_marker_count != 1) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
-      g_CurrentLineNumber = 0x7e2;
+      g_CurrentLineNumber = 2018;
       core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::pollStream - cannot stream sample with exotic loop points: %s",this_ptr);
     }
     if (g_SfxSlots[iVar1].hardware_buffer_handle != 0) {
@@ -98,7 +98,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample *thi
         if ((this_ptr->stream_write_position < 0) ||
            (this_ptr->streaming_buffer_size <= this_ptr->stream_write_position)) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
-          g_CurrentLineNumber = 0x827;
+          g_CurrentLineNumber = 2087;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("nextLoadSampleDest = %d, allocLength = %d",this_ptr->stream_write_position,
                      this_ptr->streaming_buffer_size);
@@ -147,7 +147,7 @@ LAB_005a6ab8:
           if (uVar3 < 8) {
 LAB_005a6adf:
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
-            g_CurrentLineNumber = 0x5ca;
+            g_CurrentLineNumber = 1482;
             core_main_c_displayErrorAndQuit_FUN_00506f10("generateSilence - invalid bit depth!");
           }
           else if (uVar3 < 9) {
@@ -161,7 +161,7 @@ LAB_005a6adf:
         else if (this_ptr->mp3_data == (CMP3Decoder *)0x0) {
           if (this_ptr->file_handle == (_FILE *)0x0) {
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
-            g_CurrentLineNumber = 0x879;
+            g_CurrentLineNumber = 2169;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Can't stream unless we have mp3 decoder or open wav file!");
           }
           file = this_ptr->file_handle;
@@ -204,7 +204,7 @@ LAB_005a6b5d:
         else if (bVar3) goto LAB_005a6b5d;
         if ((int)lock_length < (int)local_14) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
-          g_CurrentLineNumber = 0x8a0;
+          g_CurrentLineNumber = 2208;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("MP3 decoded more than batch: r = %d, batch = %d",local_14,lock_length);
         }

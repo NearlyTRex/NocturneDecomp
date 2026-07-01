@@ -18,7 +18,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_0040384
   g_CurrentVertexData = input;
   if (20000 < mrgl->child_count) {
     g_CurrentFilename = "..\\engine\\3d.c";
-    g_CurrentLineNumber = 0x15c;
+    g_CurrentLineNumber = 348;
     core_main_c_displayErrorAndQuit_FUN_00506f10("vlist - too many verticies");
   }
   g_VertexProcessingEnabled = 1;

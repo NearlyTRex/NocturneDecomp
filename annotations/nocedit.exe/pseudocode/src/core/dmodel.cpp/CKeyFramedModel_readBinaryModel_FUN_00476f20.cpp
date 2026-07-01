@@ -25,7 +25,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20(CKeyFr
   do {
     if ((local_2c < 3) || (4 < local_2c)) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
-      g_CurrentLineNumber = 0xed;
+      g_CurrentLineNumber = 237;
       core_main_c_displayErrorAndQuit_FUN_00506f10("KFM file is invalid version %d",local_2c);
     }
     local_14 = 0;
@@ -61,7 +61,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20(CKeyFr
     }
 LAB_00476f99:
     g_CurrentFilename = "..\\core\\dmodel.cpp";
-    g_CurrentLineNumber = 0xe7;
+    g_CurrentLineNumber = 231;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Error reading keyframed model file");
   } while( true );
 }

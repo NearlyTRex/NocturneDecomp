@@ -17,7 +17,7 @@ void __cdecl sound_sndmain_cpp_getRecordingDeviceInfo_FUN_005ab780(int index,SRe
   iVar1 = sound_sndmain_cpp_getRecordingDeviceCount_FUN_005ab720();
   if ((index < 0) || (iVar1 <= index)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x141b;
+    g_CurrentLineNumber = 5147;
     core_main_c_displayErrorAndQuit_FUN_00506f10("getRecordingDeviceInfo - invalid index");
   }
   pSVar2 = g_RecordingDevices + index;

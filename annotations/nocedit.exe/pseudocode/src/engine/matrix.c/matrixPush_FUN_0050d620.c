@@ -29,7 +29,7 @@ void __cdecl engine_matrix_c_matrixPush_FUN_0050d620(void)
     return;
   }
   g_CurrentFilename = "..\\engine\\matrix.c";
-  g_CurrentLineNumber = 0x34b;
+  g_CurrentLineNumber = 843;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Matrix unbalance");
   return;
 }

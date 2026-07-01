@@ -148,7 +148,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         }
         if (iVar5 != local_e0.bitrate_index) {
           g_CurrentFilename = "..\\sound\\mp3.cpp";
-          g_CurrentLineNumber = 0x1a2;
+          g_CurrentLineNumber = 418;
           core_main_c_displayErrorAndQuit_FUN_00506f10("MPEG Layer 2 - pick_table - can't load tables!  File: %s");
         }
       }
@@ -161,7 +161,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         iVar6 = *(int *)(iVar6 + 0x20);
         if ((((iVar5 < 1) || (3 < iVar5)) || (iVar6 < 0)) || (3 < iVar6)) {
           g_CurrentFilename = "..\\sound\\mp3.cpp";
-          g_CurrentLineNumber = 0x1b2;
+          g_CurrentLineNumber = 434;
           core_main_c_displayErrorAndQuit_FUN_00506f10("js_bound bad layer/modext (%d/%d)  File: %s");
         }
         local_e0.padding = g_MpegLayer2AllocationTables[iVar5][iVar6];
@@ -362,7 +362,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         this_ptr->main_data_offset = this_ptr->main_data_offset + iVar5;
         if (local_70 < 0) {
           g_CurrentFilename = "..\\sound\\mp3.cpp";
-          g_CurrentLineNumber = 0xf9a;
+          g_CurrentLineNumber = 3994;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Not enough main data to decode frame %d.");
         }
         for (; 0 < local_70; local_70 = local_70 + -1) {

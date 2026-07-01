@@ -20,13 +20,13 @@ void __cdecl core_script_cpp_CScript_freeParsedLines_FUN_005598f0(CScript *this_
       do {
         ptr = *(void **)((int)&this_ptr->parsed_lines->text + iVar1);
         if (ptr != (void *)0x0) {
-          shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\script.cpp",0x1ce);
+          shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\script.cpp",462);
         }
         iVar2 = iVar2 + 1;
         iVar1 = iVar1 + 8;
       } while (iVar2 < this_ptr->parsed_line_count);
     }
-    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->parsed_lines,"..\\core\\script.cpp",0x1d0)
+    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->parsed_lines,"..\\core\\script.cpp",464)
     ;
     this_ptr->parsed_lines = (SScriptLine *)0x0;
   }

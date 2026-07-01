@@ -16,7 +16,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapo
   if ((this_ptr->base).weapon_state == 2) {
     if (target == (CDemonActor *)0x0) {
       g_CurrentFilename = "..\\core\\baron.cpp";
-      g_CurrentLineNumber = 0x31c;
+      g_CurrentLineNumber = 796;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CBaronWeapon::setWeaponState - I'm drawn, but nobody's carrying me??");
     }
     core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20(this_ptr);

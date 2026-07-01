@@ -15,7 +15,7 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index,f
   
   if ((channel_index < 0) || (0x1f < channel_index)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0xf81;
+    g_CurrentLineNumber = 3969;
     core_main_c_displayErrorAndQuit_FUN_00506f10("setSfxChannelVol - invalid channel index: %d",channel_index);
   }
   pCVar1 = g_CSoundDevicePtr;

@@ -10,6 +10,6 @@ ECollisionType __cdecl core_actor_cpp_CDemonActor_getCollisionType_FUN_00408ca0(
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x27e);
+            (this_ptr,"..\\core\\actor.cpp",638);
   return COLLISION_TYPE_MESH;
 }

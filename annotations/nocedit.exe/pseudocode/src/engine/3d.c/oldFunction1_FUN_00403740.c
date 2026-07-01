@@ -12,7 +12,7 @@ void * __cdecl engine_3d_c_oldFunction1_FUN_00403740(SMRGLHeaderPrimitive *prim)
   char local_54 [80];
   
   _sprintf(local_54,"Old func : %d",(prim->base).type);
-  g_CurrentLineNumber = 0xda;
+  g_CurrentLineNumber = 218;
   g_CurrentFilename = "..\\engine\\3d.c";
   core_main_c_displayErrorAndQuit_FUN_00506f10(local_54);
   return &g_RenderResult;

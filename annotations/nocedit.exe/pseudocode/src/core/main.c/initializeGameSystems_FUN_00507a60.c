@@ -43,14 +43,14 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
     g_SoftwareRenderingForced = 1;
   }
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       ("stderr.txt",(char *)0x0,"rb","..\\core\\main.c",0x3bc
+                       ("stderr.txt",(char *)0x0,"rb","..\\core\\main.c",956
                        );
   if (file_ptr != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\main.c",0x3be);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\main.c",958);
     DVar7 = engine_dosio_cpp_setReadonlyAttribute_FUN_00600c30("stderr.txt",0x1c0);
     if (DVar7 != 0) {
       g_CurrentFilename = "..\\core\\main.c";
-      g_CurrentLineNumber = 0x3c0;
+      g_CurrentLineNumber = 960;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Please copy Nocturne to your hard drive");
     }
   }
@@ -67,7 +67,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   core_mmx_c_detectCPUFeatures_FUN_00524f10();
   if (g_MMXSupported == 0) {
     g_CurrentFilename = "..\\core\\main.c";
-    g_CurrentLineNumber = 0x3eb;
+    g_CurrentLineNumber = 1003;
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("This CPU does not have an MMX unit.")
     ;
     core_main_c_displayErrorAndQuit_FUN_00506f10(pcVar8);
@@ -81,7 +81,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   iVar9 = wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(0x280,0x1e0,0x20);
   if (iVar9 == 0) {
     g_CurrentFilename = "..\\core\\main.c";
-    g_CurrentLineNumber = 0x403;
+    g_CurrentLineNumber = 1027;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to set 640x480x32bpp.  Please make sure that you have a video card with a minimum of 2MB of RAM, and the latest DirectDraw video drivers.");
   }
   core_dfont_cpp_initFonts_FUN_004709a0();
@@ -517,6 +517,6 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   core_netgame_cpp_CNetGame_init_FUN_0053f780(g_CNetGamePtr);
   wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290
             ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank","0");
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",0x49b);
+  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",1179);
   return;
 }

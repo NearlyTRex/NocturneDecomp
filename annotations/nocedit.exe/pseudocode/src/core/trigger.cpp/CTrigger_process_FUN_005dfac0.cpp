@@ -78,7 +78,7 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr,f
     }
     if (this_ptr->cached_actor != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                (this_ptr->cached_actor,"..\\core\\trigger.cpp",0xee);
+                (this_ptr->cached_actor,"..\\core\\trigger.cpp",238);
       pCVar9 = this_ptr->cached_actor;
       if (((pCVar9->lifecycle_state == ACTOR_CREATED) &&
           (fVar5 = (this_ptr->base).location.position.x - (pCVar9->location).position.x,

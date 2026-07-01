@@ -207,7 +207,7 @@ LAB_005e4342:
     }
     if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
       g_CurrentFilename = "..\\core\\tvbat.cpp";
-      g_CurrentLineNumber = 0x10a;
+      g_CurrentLineNumber = 266;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CTVBat::process - can't follow orders in network game!");
     }
     pCVar10 = g_HeroActors[g_LocalHeroIndex];

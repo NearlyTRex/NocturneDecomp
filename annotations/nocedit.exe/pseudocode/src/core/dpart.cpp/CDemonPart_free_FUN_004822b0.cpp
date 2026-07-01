@@ -11,17 +11,17 @@ void __cdecl core_dpart_cpp_CDemonPart_free_FUN_004822b0(CDemonPart *this_ptr)
 {
   if (this_ptr->vertex_positions != (CVector3i *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->vertex_positions,"..\\core\\dpart.cpp",0xa9);
+              (this_ptr->vertex_positions,"..\\core\\dpart.cpp",169);
     this_ptr->vertex_positions = (CVector3i *)0x0;
   }
   if (this_ptr->face_data != (SSurfacePlane *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->face_data,"..\\core\\dpart.cpp",0xae);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->face_data,"..\\core\\dpart.cpp",174);
     this_ptr->face_data = (SSurfacePlane *)0x0;
   }
   if (this_ptr->vertex_normals == (CVector3i *)0x0) {
     return;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->vertex_normals,"..\\core\\dpart.cpp",0xb3);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->vertex_normals,"..\\core\\dpart.cpp",179);
   this_ptr->vertex_normals = (CVector3i *)0x0;
   return;
 }

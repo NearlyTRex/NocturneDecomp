@@ -14,7 +14,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890(CE
   
   if (g_EditorFont == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
-    g_CurrentLineNumber = 0x8d;
+    g_CurrentLineNumber = 141;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
   g_FontCharacterHeight = g_EditorFont->max_char_width;

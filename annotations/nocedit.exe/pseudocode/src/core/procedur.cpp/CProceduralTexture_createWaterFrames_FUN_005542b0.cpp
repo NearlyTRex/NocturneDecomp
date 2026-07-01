@@ -90,12 +90,12 @@ void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't write water frame");
     }
     _fwrite(this_ptr->texture,0x100,0x100,p_Var6);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\core\\procedur.cpp",0x66);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\core\\procedur.cpp",102);
     _sprintf(local_130,"water%d.act",local_1c);
     file = engine_dosio_cpp_getFile_FUN_00481a50("art",local_130,"wb");
     if (file == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\procedur.cpp";
-      g_CurrentLineNumber = 0x69;
+      g_CurrentLineNumber = 105;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't write water frame");
     }
     iVar11 = 0;
@@ -105,7 +105,7 @@ void __cdecl core_procedur_cpp_CProceduralTexture_createWaterFrames_FUN_005542b0
       _fputc(iVar11,file);
       iVar11 = iVar11 + 1;
     } while (iVar11 < 0x100);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\procedur.cpp",0x6f);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\procedur.cpp",111);
     iVar14 = 0;
     iVar1 = 0;
     local_18 = (CProceduralTexture *)(this_ptr->texture + 0xf8);

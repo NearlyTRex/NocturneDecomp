@@ -13,12 +13,12 @@ void __cdecl core_script_cpp_CScript_clear_FUN_00559870(CScript *this_ptr)
   core_script_cpp_CScript_freeParsedLines_FUN_005598f0(this_ptr);
   if (this_ptr->dialog_entries != (SDialogEntry *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->dialog_entries,"..\\core\\script.cpp",0x1b5);
+              (this_ptr->dialog_entries,"..\\core\\script.cpp",437);
     this_ptr->dialog_entries = (SDialogEntry *)0x0;
   }
   this_ptr->dialog_entry_count = 0;
   if (this_ptr->xref_entries != (SScriptXRef *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->xref_entries,"..\\core\\script.cpp",0x1bc)
+    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->xref_entries,"..\\core\\script.cpp",444)
     ;
     this_ptr->xref_entries = (SScriptXRef *)0x0;
   }

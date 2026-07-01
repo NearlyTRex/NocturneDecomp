@@ -82,7 +82,7 @@ LAB_00576e23:
      (p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("data",local_118,"rb"),
      p_Var2 != (_FILE *)0x0)) {
     _fread(g_ThumbnailImageBuffer,0x2ee000,1,p_Var2);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\setedit.cpp",0x152);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\setedit.cpp",338);
     return;
   }
   memset(g_ThumbnailImageBuffer,0,0x2ee000);
@@ -130,11 +130,11 @@ LAB_00576e23:
   file = engine_dosio_cpp_getFile_FUN_00481a50("data",local_118,"wb");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0x17d;
+    g_CurrentLineNumber = 381;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write thumbs");
   }
   _fwrite(g_ThumbnailImageBuffer,0x2ee000,1,file);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x17f);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",383);
   core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60(this_ptr);
   pcVar3 = this_ptr->geometry_filename;
   do {

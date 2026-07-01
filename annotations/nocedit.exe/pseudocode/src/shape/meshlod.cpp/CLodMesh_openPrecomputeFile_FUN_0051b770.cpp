@@ -25,6 +25,6 @@ _FILE * __cdecl shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodM
   _sprintf(local_310,"%08X",local_10);
   makepath(local_514,local_c,local_410,local_310,"lod");
   p_Var1 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (local_514,(char *)0x0,mode,"..\\shape\\meshlod.cpp",0x1239);
+                     (local_514,(char *)0x0,mode,"..\\shape\\meshlod.cpp",4665);
   return p_Var1;
 }

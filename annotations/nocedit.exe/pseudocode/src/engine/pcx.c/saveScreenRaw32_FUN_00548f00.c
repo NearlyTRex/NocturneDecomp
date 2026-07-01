@@ -49,7 +49,7 @@ void __cdecl engine_pcx_c_saveScreenRaw32_FUN_00548f00(char *filename)
 LAB_00548f43:
   if (pcVar7 == (char *)0x0) {
     g_CurrentFilename = "..\\engine\\pcx.c";
-    g_CurrentLineNumber = 0x98;
+    g_CurrentLineNumber = 152;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveScreenRaw32 - No ext found");
   }
   pcVar4 = ".RAW";
@@ -63,10 +63,10 @@ LAB_00548f43:
     pcVar7 = pcVar7 + 2;
   } while (cVar2 != '\0');
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (local_6c,(char *)0x0,"wb","..\\engine\\pcx.c",0x9d);
+                   (local_6c,(char *)0x0,"wb","..\\engine\\pcx.c",157);
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pcx.c";
-    g_CurrentLineNumber = 0x9e;
+    g_CurrentLineNumber = 158;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveScreenRaw32 - Unable to open output");
   }
   local_14 = 0;
@@ -91,6 +91,6 @@ LAB_00548f43:
       local_14 = local_14 + 1;
     } while (local_14 < g_WindowHeight);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pcx.c",0xb5);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pcx.c",181);
   return;
 }

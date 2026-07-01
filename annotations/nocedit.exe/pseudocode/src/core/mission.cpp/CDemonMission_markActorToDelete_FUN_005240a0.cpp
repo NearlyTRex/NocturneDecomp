@@ -12,7 +12,7 @@ void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemo
   int iVar1;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (actor,"..\\core\\mission.cpp",0x403);
+            (actor,"..\\core\\mission.cpp",1027);
   this_ptr->delete_queue_actors[this_ptr->delete_queue_count] = actor;
   this_ptr->delete_queue_flags[this_ptr->delete_queue_count] = flags;
   iVar1 = this_ptr->delete_queue_count + 1;
@@ -21,7 +21,7 @@ void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemo
     return;
   }
   g_CurrentFilename = "..\\core\\mission.cpp";
-  g_CurrentLineNumber = 0x408;
+  g_CurrentLineNumber = 1032;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::markActorToDelete - Too many of them!");
   return;
 }

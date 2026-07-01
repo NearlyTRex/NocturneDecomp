@@ -48,7 +48,7 @@ int __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533d30(void)
     sscanf(str_00->table_id,"%u",&local_1c);
     if (iVar4 != local_1c) {
       g_CurrentFilename = "..\\sound\\mp3.cpp";
-      g_CurrentLineNumber = 0xd72;
+      g_CurrentLineNumber = 3442;
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("wrong table number %u.  File: %s",iVar4,g_CurrentMp3Filename);
     }
@@ -57,7 +57,7 @@ int __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533d30(void)
       if (iVar5 != -1) {
         pcVar8 = "huffman decodertable error at table %d.  File: %s";
         g_CurrentFilename = "..\\sound\\mp3.cpp";
-        g_CurrentLineNumber = 0xd94;
+        g_CurrentLineNumber = 3476;
         goto LAB_00533e4e;
       }
       uVar6 = *(uint *)(g_HuffmanTables[0].huffman_data + iVar3 + 0x804);
@@ -68,7 +68,7 @@ int __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533d30(void)
       pcVar7[3] = -1;
       if (0x400 < uVar6) {
         g_CurrentFilename = "..\\sound\\mp3.cpp";
-        g_CurrentLineNumber = 0xd85;
+        g_CurrentLineNumber = 3461;
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("MP3 Huffman tree overflow!  File: %s",g_CurrentMp3Filename);
       }
@@ -105,7 +105,7 @@ int __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533d30(void)
          (g_HuffmanTables[iVar5].ylen != *(int *)(g_HuffmanTables[0].table_id + iVar3 + 8))) {
         pcVar8 = "wrong table %u reference.  File: %s";
         g_CurrentFilename = "..\\sound\\mp3.cpp";
-        g_CurrentLineNumber = 0xd7d;
+        g_CurrentLineNumber = 3453;
 LAB_00533e4e:
         core_main_c_displayErrorAndQuit_FUN_00506f10(pcVar8,iVar4,g_CurrentMp3Filename);
       }

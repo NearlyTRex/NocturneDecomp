@@ -17,7 +17,7 @@ void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr
   core_waypoint_cpp_CWayPoint_removeAllAdjTo_FUN_005ec640(this_ptr,target);
   if (0x3b < this_ptr->num_adjacent_waypoints) {
     g_CurrentFilename = "..\\core\\waypoint.cpp";
-    g_CurrentLineNumber = 0x188;
+    g_CurrentLineNumber = 392;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CWayPoint::addAdj - too many adjacent waypoints!");
   }
   this_ptr->adjacency[this_ptr->num_adjacent_waypoints].waypoint = target;

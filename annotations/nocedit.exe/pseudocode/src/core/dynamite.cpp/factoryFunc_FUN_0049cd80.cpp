@@ -11,7 +11,7 @@ CDynamite * __cdecl core_dynamite_cpp_factoryFunc_FUN_0049cd80(void)
 {
   CDynamite *pCVar1;
   
-  pCVar1 = (CDynamite *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x58c,"..\\core\\dynamite.cpp",0x21)
+  pCVar1 = (CDynamite *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x58c,"..\\core\\dynamite.cpp",33)
   ;
   if (pCVar1 == (CDynamite *)0x0) {
     return (CDynamite *)0x0;

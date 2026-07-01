@@ -28,7 +28,7 @@ CDeformableModel * __cdecl core_skeleton_cpp_getDeformableModel_FUN_005a1cf0(cha
   }
   if (0x3f < g_DeformableModelCount) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
-    g_CurrentLineNumber = 0x1057;
+    g_CurrentLineNumber = 4183;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Can't load %s because deformable model manager is full.  (Size is %d)",model_filename,0x40);
   }

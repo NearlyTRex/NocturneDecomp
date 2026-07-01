@@ -49,7 +49,7 @@ LAB_004811fd:
         return 1;
       default:
         g_CurrentFilename = "..\\core\\door.cpp";
-        g_CurrentLineNumber = 0x39e;
+        g_CurrentLineNumber = 926;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CDoor::getMoveType - invalid door!");
         return 0;
       }

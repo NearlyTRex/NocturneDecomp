@@ -31,7 +31,7 @@ void __cdecl shape_design_c_showHelpFile_FUN_00457f00(char *help_filename)
         local_14 = 0;
       }
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\shape\\design.c",0x186);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\shape\\design.c",390);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
   }

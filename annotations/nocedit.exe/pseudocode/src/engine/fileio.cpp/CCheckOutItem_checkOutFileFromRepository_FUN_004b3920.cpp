@@ -91,7 +91,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3
 LAB_004b39fc:
   if (g_VersionControlDirectory[0] == '\0') {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
-    g_CurrentLineNumber = 0xdd;
+    g_CurrentLineNumber = 221;
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
   engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_124);
@@ -122,7 +122,7 @@ LAB_004b39fc:
   iVar3 = 0;
   do {
     stream_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                           (local_228,(char *)0x0,"r+t","..\\engine\\fileio.cpp",0x153)
+                           (local_228,(char *)0x0,"r+t","..\\engine\\fileio.cpp",339)
     ;
     if (stream_ptr != (_FILE *)0x0) {
       _setvbuf(stream_ptr,(char *)0x0,0,0x400);
@@ -146,7 +146,7 @@ LAB_004b3ae9:
     iVar3 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(&local_24,&local_1c);
     if (iVar3 == 0) {
       if (local_1c != (_FILE *)0x0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\fileio.cpp",0xc4);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\fileio.cpp",196);
         local_1c = (_FILE *)0x0;
         goto LAB_004b3b18;
       }
@@ -179,7 +179,7 @@ LAB_004b3ae9:
         iVar3 = engine_fileio_cpp_CCheckOutList_add_FUN_004b2d00(&local_24,&local_390);
         if (iVar3 == 0) {
           if (local_1c != (_FILE *)0x0) {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\fileio.cpp",0xc4);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\fileio.cpp",196);
             local_1c = (_FILE *)0x0;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -189,7 +189,7 @@ LAB_004b3ae9:
           iVar3 = engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(&local_24,&local_1c);
           if (iVar3 != 0) {
             if (local_1c != (_FILE *)0x0) {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\fileio.cpp",0xc4);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\fileio.cpp",196);
               local_1c = (_FILE *)0x0;
             }
             engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
@@ -222,7 +222,7 @@ LAB_004b3f0c:
       }
       else {
         if (local_1c != (_FILE *)0x0) {
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\fileio.cpp",0xc4);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\fileio.cpp",196);
           local_1c = (_FILE *)0x0;
         }
         iVar5 = _stricmp
@@ -243,7 +243,7 @@ LAB_004b3f0c:
   }
 LAB_004b3af1:
   if (local_1c != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\fileio.cpp",0xc4);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\fileio.cpp",196);
     local_1c = (_FILE *)0x0;
   }
 LAB_004b3b18:

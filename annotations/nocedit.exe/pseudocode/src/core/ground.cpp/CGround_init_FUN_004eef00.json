@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 54,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 29,
-    "suspect_count": 2,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 96
   },
   "cross_references": [
@@ -167,6 +165,26 @@
     },
     "pcode_op_count": 230
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x4 == sizeof(SGroundCell). Replace the magic with sizeof(SGroundCell) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 10,
+      "match": "(SGroundCell*) alloc stride 0x4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SGroundCell *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (this_ptr->width * this_ptr->height * 4,\"..\\\\core\\\\ground.cpp\",210)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x1a5ec == sizeof(CTextureList). Replace the magic with sizeof(CTextureList) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 18,
+      "match": "(CTextureList*) alloc stride 0x1a5ec",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CTextureList *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1a5ec,\"..\\\\core\\\\ground.cpp\",215)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -183,22 +201,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x4 == sizeof(SGroundCell). Replace the magic with sizeof(SGroundCell) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 10,
-      "match": "(SGroundCell*) alloc stride 0x4",
-      "severity": "moderate",
-      "text": "(SGroundCell *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (this_ptr->width * this_ptr->height * 4,\"..\\\\core\\\\ground.cpp\",0xd2)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0x1a5ec == sizeof(CTextureList). Replace the magic with sizeof(CTextureList) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 18,
-      "match": "(CTextureList*) alloc stride 0x1a5ec",
-      "severity": "moderate",
-      "text": "(CTextureList *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1a5ec,\"..\\\\core\\\\ground.cpp\",0xd7)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

@@ -60,7 +60,7 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this
           pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);
         }
         g_CurrentFilename = "..\\core\\platfrm.cpp";
-        g_CurrentLineNumber = 0x3d0;
+        g_CurrentLineNumber = 976;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CPlatform::attachActor - too many!");
         return;
       }

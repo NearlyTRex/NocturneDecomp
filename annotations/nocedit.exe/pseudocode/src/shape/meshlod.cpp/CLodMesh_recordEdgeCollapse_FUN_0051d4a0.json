@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 39,
+    "complexity_score": 24,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 24,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 77
   },
   "cross_references": [
@@ -173,6 +171,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Allocation size hardcodes 0xf0 == sizeof(CLodEdge). Replace the magic with sizeof(CLodEdge) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 12,
+      "match": "(CLodEdge*) alloc stride 0xf0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CLodEdge *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->lod_levels_ptr,iVar2 * 0xf0,\"..\\\\shape\\\\meshlod.cpp\",5284)",
+      "type": "alloc_magic_size"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 0051d4f3, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 37,
       "match": "MOVSD.REP",
@@ -205,14 +212,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0xf0 == sizeof(CLodEdge). Replace the magic with sizeof(CLodEdge) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 12,
-      "match": "(CLodEdge*) alloc stride 0xf0",
-      "severity": "moderate",
-      "text": "(CLodEdge *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->lod_levels_ptr,iVar2 * 0xf0,\"..\\\\shape\\\\meshlod.cpp\",0x14a4)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

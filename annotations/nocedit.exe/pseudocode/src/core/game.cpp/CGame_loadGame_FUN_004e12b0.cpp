@@ -154,7 +154,7 @@ LAB_004e17ac:
     }
     if (iVar2 == 0) {
 LAB_004e14f5:
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",0xdef);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",3567);
       local_30 = engine_dosio_cpp_getFileSize_FUN_00481880("save",local_638);
       local_30 = local_30 + -4;
       crt_fstream_cpp_ifstream_ctor_FUN_005ff8f0(local_168,0);
@@ -201,10 +201,10 @@ LAB_004e14f5:
       }
       file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
                               ("save\\$$SAVE$$.TMP",(char *)0x0,"rt",
-                               "..\\core\\game.cpp",0xe1e);
+                               "..\\core\\game.cpp",3614);
       if (file_handle == (_FILE *)0x0) {
         g_CurrentFilename = "..\\core\\game.cpp";
-        g_CurrentLineNumber = 0xe1f;
+        g_CurrentLineNumber = 3615;
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("Can't reopen %s","save\\$$SAVE$$.TMP");
       }
@@ -236,14 +236,14 @@ LAB_004e14f5:
     _fgets(local_330,0xff,file_handle);
     iVar2 = _strnicmp(local_330,"CInventory",10);
     if (iVar2 == 0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",0xe28);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",3624);
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                 (g_CEditorToolsPtr,"Can't load old save game file %s.  Sorry.",local_638);
     }
     else {
       _fscanf(file_handle,"%d\n",&local_34);
       if (local_34 < 3) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",0xe37);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",3639);
         shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                   (g_CEditorToolsPtr,"Can't load old save game file %s.  Sorry.",local_638);
       }
@@ -270,7 +270,7 @@ LAB_004e14f5:
             pCVar3 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,uVar12);
             *(CHero **)((int)g_HeroActors + iVar2) = pCVar3;
             if (pCVar3 == (CHero *)0x0) {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",0xe4a);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",3658);
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                         (g_CEditorToolsPtr,"Can't find hero %s.  Sorry.",local_230);
             }
@@ -318,7 +318,7 @@ LAB_004e14f5:
         if (8 < local_34) {
           core_set_cpp_CDemonSet_loadStateInfo_FUN_00571230(g_CDemonSetPtr,file_handle);
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",0xe8c);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",3724);
         if (load_mode == 0) {
           return;
         }

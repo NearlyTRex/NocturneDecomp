@@ -18,7 +18,7 @@ CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_00546450(CPathMap *this_ptr)
   core_path_cpp_CPathMap_reset_FUN_00548510(this_ptr);
   if (199 < g_PathMapCount) {
     g_CurrentFilename = "..\\core\\path.cpp";
-    g_CurrentLineNumber = 0x123;
+    g_CurrentLineNumber = 291;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many pathmaps!");
   }
   g_PathMapList[g_PathMapCount] = this_ptr;

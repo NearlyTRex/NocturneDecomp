@@ -39,7 +39,7 @@ void __cdecl core_texlist_cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0(C
     find_handle = _findfirst("art\\*.raw",&_Stack_1e0);
     if (find_handle == (HANDLE)0xffffffff) {
       g_CurrentFilename = "..\\core\\texlist.cpp";
-      g_CurrentLineNumber = 0xff;
+      g_CurrentLineNumber = 255;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to build list of *.raw files!");
     }
     shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0049e940
@@ -84,7 +84,7 @@ void __cdecl core_texlist_cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0(C
         this_ptr->master_texture_count = iVar3;
         if (4999 < iVar3) {
           g_CurrentFilename = "..\\core\\texlist.cpp";
-          g_CurrentLineNumber = 0x124;
+          g_CurrentLineNumber = 292;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many editable textures!");
         }
       }

@@ -63,17 +63,17 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   _FILE *p_Var1;
   
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (output_filename,(char *)0x0,"wt","..\\core\\skeledit.cpp",0x155d);
+                   (output_filename,(char *)0x0,"wt","..\\core\\skeledit.cpp",5469);
   if (file == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't create %s");
     return;
   }
   dest = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                   (this_ptr->vertex_count[lod_level] << 2,"..\\core\\skeledit.cpp",0x1565);
+                   (this_ptr->vertex_count[lod_level] << 2,"..\\core\\skeledit.cpp",5477);
   if (dest == (int *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0x1566;
+    g_CurrentLineNumber = 5478;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
   iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -168,7 +168,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
       }
       if (local_3c != local_44) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
-        g_CurrentLineNumber = 0x15a8;
+        g_CurrentLineNumber = 5544;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze");
       }
       if (iVar1 != 0) {
@@ -190,7 +190,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
         }
         if (local_40 != local_48) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
-          g_CurrentLineNumber = 0x15b5;
+          g_CurrentLineNumber = 5557;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze");
         }
       }
@@ -255,7 +255,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   }
   _fprintf(file,"// lightList: \"name\", type, x,y,z, r,g,b, (type-specific info)\n");
   _fprintf(file,"// cameraList: \"name\", x,y,z, p,b,h, fov(rad)\n");
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x15ea);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",5610);
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_c8,0);
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_b8,0);
   return;

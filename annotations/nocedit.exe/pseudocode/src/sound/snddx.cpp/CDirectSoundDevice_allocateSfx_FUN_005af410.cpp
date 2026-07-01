@@ -25,13 +25,13 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_005af410(CDirectS
       (g_DirectSoundSampleBuffers[sample_buffer_id] == (IDirectSoundBuffer *)0x0)) ||
      ((int)g_DirectSoundBufferMetadata[sample_buffer_id].dwBytesPerSample < 1)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
-    g_CurrentLineNumber = 0x2ed;
+    g_CurrentLineNumber = 749;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("DirectSoundDevice::allocateSfx - Invalid sample handle: %d",sample_buffer_id);
   }
   if (g_DirectSound == (IDirectSound *)0x0) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
-    g_CurrentLineNumber = 0x2ee;
+    g_CurrentLineNumber = 750;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::allocateSfx - dSound not allocated?");
   }
   iVar7 = 1;

@@ -18,13 +18,13 @@ void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...)
   }
   stream = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("log.txt",(char *)0x0,"at","..\\shape\\superopt.cpp",
-                      0x34);
+                      52);
   if (stream == (_FILE *)0x0) {
     return;
   }
   VA_START_T(local_8, format);
   _fprintf(stream,format,&local_8);
   VA_END_T(local_8);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\shape\\superopt.cpp",0x3a);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\shape\\superopt.cpp",58);
   return;
 }

@@ -36,11 +36,11 @@ CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(C
   }
   if (this_ptr->scanline_buffer != (void *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->scanline_buffer,"..\\shape\\quantize.cpp",0x79);
+              (this_ptr->scanline_buffer,"..\\shape\\quantize.cpp",121);
   }
   if (this_ptr->pixel_data == (void *)0x0) {
     return this_ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->pixel_data,"..\\shape\\quantize.cpp",0x79);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->pixel_data,"..\\shape\\quantize.cpp",121);
   return this_ptr;
 }

@@ -11,7 +11,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_putByte_FUN_0052f260(CMP3Decoder *this_pt
 {
   if (bits_per_byte != 8) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
-    g_CurrentLineNumber = 0x2d5;
+    g_CurrentLineNumber = 725;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("hputbuf - Not Supported yet!!  File: %s",g_CurrentMp3Filename);
   }

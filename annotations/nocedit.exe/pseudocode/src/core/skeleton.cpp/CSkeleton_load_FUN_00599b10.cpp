@@ -28,10 +28,10 @@ void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00599b10(CSkeleton *this_ptr,c
   file_handle = engine_dosio_cpp_getFile_FUN_00481a50("data",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
-    g_CurrentLineNumber = 0xf6;
+    g_CurrentLineNumber = 246;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CSkeleton::load - Can't open %s",filename);
   }
   core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(this_ptr,file_handle);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\skeleton.cpp",0xf8);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\skeleton.cpp",248);
   return;
 }

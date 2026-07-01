@@ -33,17 +33,17 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(C
   bVar9 = 0;
   if (this_ptr == (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\actor.cpp";
-    g_CurrentLineNumber = 0x70a;
+    g_CurrentLineNumber = 1802;
     core_main_c_displayErrorAndQuit_FUN_00506f10("NULL actor pointer detected, %s line %d",context_file);
   }
   if (((CDemonActor *)0xfeffffff < this_ptr) || ((int)this_ptr < 0x1000)) {
     g_CurrentFilename = "..\\core\\actor.cpp";
-    g_CurrentLineNumber = 0x70e;
+    g_CurrentLineNumber = 1806;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid actor pointer %08X detected at %s, line %d");
   }
   if ((int *)this_ptr->validation_magic != &g_ActorMagicNumber) {
     g_CurrentFilename = "..\\core\\actor.cpp";
-    g_CurrentLineNumber = 0x718;
+    g_CurrentLineNumber = 1816;
     memset(g_ActorDebugBuffer,0,0x32);
     pCVar2 = this_ptr;
     pcVar3 = g_ActorDebugBuffer;
@@ -67,7 +67,7 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(C
     dVar11 = (double)(this_ptr->location).position.y;
     dVar10 = (double)(this_ptr->location).position.x;
     g_CurrentFilename = "..\\core\\actor.cpp";
-    g_CurrentLineNumber = 0x723;
+    g_CurrentLineNumber = 1827;
     memset(g_ActorDebugBuffer,0,0x32);
     pCVar6 = this_ptr;
     pcVar3 = g_ActorDebugBuffer;
@@ -96,7 +96,7 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(C
       dVar5 = (double)(this_ptr->location).position.y;
       dVar4 = (double)(this_ptr->location).position.x;
       g_CurrentFilename = "..\\core\\actor.cpp";
-      g_CurrentLineNumber = 0x731;
+      g_CurrentLineNumber = 1841;
       memset(g_ActorDebugBuffer,0,0x32);
       if (this_ptr != (CDemonActor *)0x0) {
         pCVar7 = this_ptr;

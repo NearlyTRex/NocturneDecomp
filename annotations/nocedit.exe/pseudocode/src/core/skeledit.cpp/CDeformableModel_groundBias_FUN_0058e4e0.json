@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 60,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 45,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 162
   },
   "cross_references": [],
@@ -185,6 +183,17 @@
     },
     "pcode_op_count": 368
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x22b4 == sizeof(CDeformableModelInstance). Replace the magic with sizeof(CDeformableModelInstance) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 13,
+      "match": "(CDeformableModelInstance*) alloc stride 0x22b4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x22b4,\"..\\\\core\\\\skeledit.cpp\",2492)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 36,
@@ -229,14 +238,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x22b4 == sizeof(CDeformableModelInstance). Replace the magic with sizeof(CDeformableModelInstance) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 13,
-      "match": "(CDeformableModelInstance*) alloc stride 0x22b4",
-      "severity": "moderate",
-      "text": "(CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x22b4,\"..\\\\core\\\\skeledit.cpp\",0x9bc)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

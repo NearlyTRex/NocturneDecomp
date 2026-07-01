@@ -727,7 +727,7 @@ LAB_0040fdd3:
     return 0;
   default:
     g_CurrentFilename = "..\\core\\actor.cpp";
-    g_CurrentLineNumber = 0x119f;
+    g_CurrentLineNumber = 4511;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown CActorProperty type: %d",this_ptr->type)
     ;
     return 0;

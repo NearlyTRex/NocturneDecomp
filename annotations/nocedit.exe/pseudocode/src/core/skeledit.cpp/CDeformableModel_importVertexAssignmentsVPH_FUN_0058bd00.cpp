@@ -46,16 +46,16 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing vertex assignments from %s...",filename);
   local_28 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       (filename,(char *)0x0,"rb","..\\core\\skeledit.cpp",0x593);
+                       (filename,(char *)0x0,"rb","..\\core\\skeledit.cpp",1427);
   if (local_28 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0x594;
+    g_CurrentLineNumber = 1428;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::importVertexAssignmentsVPH can't open %s",filename);
   }
   _fread(&local_110,0x36,1,local_28);
   if (200 < local_110.bone_count) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0x59b;
+    g_CurrentLineNumber = 1435;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Too many links in %s: %d, max is %d",filename,local_110.bone_count,200);
   }
@@ -100,7 +100,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
         iVar2 = aiStack_430[iVar1];
         if (iVar2 < 0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
-          g_CurrentLineNumber = 0x5cc;
+          g_CurrentLineNumber = 1484;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("vertex %d is influenced by bone %s, but this bone isn't in the .BON file!",local_2c,g_SkeletonBoneNames + iVar1);
         }
@@ -142,7 +142,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
       local_2c = local_2c + 1;
     } while (local_2c < local_38);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\core\\skeledit.cpp",0x5f9);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\core\\skeledit.cpp",1529);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Imported vertex assignments from %s OK",filename);
   return;

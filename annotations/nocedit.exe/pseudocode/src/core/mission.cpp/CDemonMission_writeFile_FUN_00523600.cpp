@@ -22,7 +22,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
   int *piVar1;
   CDemonActor *pCVar2;
   
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x1ae);
+  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",430);
   if (this_ptr->actors_prepared == 0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Preparing actors...");
@@ -79,7 +79,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
     _fprintf(file_handle,"%s \"%s\"\n",pcVar4,pCVar5);
     if (1999 < this_ptr->actor_lookup_count) {
       g_CurrentFilename = "..\\core\\mission.cpp";
-      g_CurrentLineNumber = 0x1e9;
+      g_CurrentLineNumber = 489;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Too many actors");
     }
     this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] = pCVar1;

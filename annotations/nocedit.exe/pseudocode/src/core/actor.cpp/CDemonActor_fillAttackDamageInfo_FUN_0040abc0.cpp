@@ -12,7 +12,7 @@ void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0(CDemon
   CDemonActor *pCVar1;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x6e4);
+            (this_ptr,"..\\core\\actor.cpp",1764);
   out_damage_info->damage_amount = 5.0;
   out_damage_info->damage_type = DAMAGE_TYPE_MELEE;
   out_damage_info->dismember_prob = 0.2;

@@ -11,7 +11,7 @@ CArmour * __cdecl core_armour_cpp_factoryFunc_FUN_00412160(void)
 {
   CArmour *pCVar1;
   
-  pCVar1 = (CArmour *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbf20,"..\\core\\armour.cpp",0x2f);
+  pCVar1 = (CArmour *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbf20,"..\\core\\armour.cpp",47);
   if (pCVar1 == (CArmour *)0x0) {
     return (CArmour *)0x0;
   }

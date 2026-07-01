@@ -28,10 +28,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,_
   local_20 = 1;
   _fscanf(file_handle,"%d\n",&local_38);
   local_34 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
-                       (local_38,0xf0,"..\\shape\\meshlod.cpp",0x13e4);
+                       (local_38,0xf0,"..\\shape\\meshlod.cpp",5092);
   if (local_34 == (void *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0x13e5;
+    g_CurrentLineNumber = 5093;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
   if (local_38 != this_ptr->edge_count) {
@@ -52,7 +52,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,_
 LAB_0051d075:
         if (iVar3 != 4) {
           g_CurrentFilename = "..\\shape\\meshlod.cpp";
-          g_CurrentLineNumber = 0x13fa;
+          g_CurrentLineNumber = 5114;
           core_main_c_displayErrorAndQuit_FUN_00506f10("LodMesh::eqLoad - file is corrupt.");
         }
       }
@@ -86,7 +86,7 @@ LAB_0051d075:
   }
   if (local_20 == 0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0x1419;
+    g_CurrentLineNumber = 5145;
     core_main_c_displayErrorAndQuit_FUN_00506f10("LodMesh::eqLoad - EQ is not not up to date.");
     shape_meshlod_cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710(this_ptr);
   }
@@ -112,6 +112,6 @@ LAB_0051d075:
       } while (iVar1 < this_ptr->edge_count);
     }
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(local_34,"..\\shape\\meshlod.cpp",0x141f);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(local_34,"..\\shape\\meshlod.cpp",5151);
   return;
 }

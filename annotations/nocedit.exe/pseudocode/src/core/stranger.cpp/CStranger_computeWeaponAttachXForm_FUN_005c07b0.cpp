@@ -408,7 +408,7 @@ LAB_005c1504:
       }
       if (EVar1 != LIGHT_TYPE_GLOBE) {
         g_CurrentFilename = "..\\core\\stranger.cpp";
-        g_CurrentLineNumber = 0xc4d;
+        g_CurrentLineNumber = 3149;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Don't know how to carry light %s",pCVar2);
         goto LAB_005c10ab;
       }

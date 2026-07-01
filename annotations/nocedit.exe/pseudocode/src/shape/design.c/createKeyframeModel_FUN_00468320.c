@@ -106,13 +106,13 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
           file = engine_dosio_cpp_getFile_FUN_00481a50("models",local_10c,"wb");
           if (file == (_FILE *)0x0) {
             g_CurrentFilename = "..\\shape\\design.c";
-            g_CurrentLineNumber = 0x2277;
+            g_CurrentLineNumber = 8823;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write keyframed model");
           }
           _fwrite(&local_264,1,0x158,file);
           local_18 = 0;
           _fwrite(&local_18,1,4,file);
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x227c);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",8828);
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
           engine_2d_c_getInputWithPrompt_FUN_004032c0
                     ((char *)local_6c,1,0,0,"Use keyframe 0 to center (Y/N) ? ");

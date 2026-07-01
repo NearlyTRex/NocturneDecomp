@@ -17,14 +17,14 @@ void __cdecl core_inv_cpp_CInventory_createAmmoFromWeapon_FUN_004fe900(CInventor
   if (weapon->ammo_type == -1) {
     return;
   }
-  pCVar2 = (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,"..\\core\\inv.cpp",0x2fc);
+  pCVar2 = (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,"..\\core\\inv.cpp",764);
   this_ptr_00 = (CAmmo *)0x0;
   if (pCVar2 != (CAmmo *)0x0) {
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_00410dc0(pCVar2);
   }
   if (this_ptr_00 == (CAmmo *)0x0) {
     g_CurrentFilename = "..\\core\\inv.cpp";
-    g_CurrentLineNumber = 0x2fd;
+    g_CurrentLineNumber = 765;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
   this_ptr_00->ammo_count = weapon->ammo_count;

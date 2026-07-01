@@ -43,7 +43,7 @@ void __cdecl engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(CPalette
     return;
   }
   g_CurrentFilename = "..\\engine\\palette.cpp";
-  g_CurrentLineNumber = 0x5d;
+  g_CurrentLineNumber = 93;
   core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::addTexture - Too many textures!");
   return;
 }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 104,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 24,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 89,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 511
   },
   "cross_references": [
@@ -319,6 +317,17 @@
     },
     "pcode_op_count": 2172
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x1f20dc == sizeof(CDSEModel). Replace the magic with sizeof(CDSEModel) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 17,
+      "match": "(CDSEModel*) alloc stride 0x1f20dc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CDSEModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1f20dc,\"..\\\\shape\\\\multicrm.cpp\",66)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 292,
     "local_size": 288,
@@ -363,14 +372,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x1f20dc == sizeof(CDSEModel). Replace the magic with sizeof(CDSEModel) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 17,
-      "match": "(CDSEModel*) alloc stride 0x1f20dc",
-      "severity": "moderate",
-      "text": "(CDSEModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x1f20dc,\"..\\\\shape\\\\multicrm.cpp\",0x42)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

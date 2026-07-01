@@ -15,6 +15,6 @@ int __cdecl shape_meshlod_cpp_CLodMesh_loadPrecomputeFile_FUN_0051b6f0(CLodMesh 
   if (file_ptr == (_FILE *)0x0) {
     return 0;
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\meshlod.cpp",0x1210);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\meshlod.cpp",4624);
   return 1;
 }

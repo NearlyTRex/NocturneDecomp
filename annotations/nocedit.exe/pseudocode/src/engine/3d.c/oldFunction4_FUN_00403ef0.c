@@ -10,7 +10,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction4_FUN_00403ef0(SMRGLHeaderE
 
 {
   g_CurrentFilename = "..\\engine\\3d.c";
-  g_CurrentLineNumber = 0x375;
+  g_CurrentLineNumber = 885;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Old func");
   return (SMRGLHeaderExtended *)0x0;
 }

@@ -10,6 +10,6 @@ int __cdecl core_actor_cpp_CDemonActor_canLookAt_FUN_00409f20(CDemonActor *this_
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x530);
+            (this_ptr,"..\\core\\actor.cpp",1328);
   return 0;
 }

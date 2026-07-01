@@ -11,12 +11,12 @@ void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004fbb20(CIniFile *this_ptr,c
 {
   if (this_ptr->filename[0] == '\0') {
     g_CurrentFilename = "..\\engine\\ini.cpp";
-    g_CurrentLineNumber = 0x26f;
+    g_CurrentLineNumber = 623;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CIniFile::getString - filename not write!");
   }
   if (this_ptr->section[0] == '\0') {
     g_CurrentFilename = "..\\engine\\ini.cpp";
-    g_CurrentLineNumber = 0x270;
+    g_CurrentLineNumber = 624;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CIniFile::getString - section not write!");
   }
   engine_ini_cpp_getProfileString_FUN_004fb960

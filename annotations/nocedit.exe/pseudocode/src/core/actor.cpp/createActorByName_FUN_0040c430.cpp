@@ -15,12 +15,12 @@ CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c430(char *class_
   pCVar1 = core_actor_cpp_getActorClassByName_FUN_0040c3c0(class_name);
   if (pCVar1 == (CDemonActorType *)0x0) {
     g_CurrentFilename = "..\\core\\actor.cpp";
-    g_CurrentLineNumber = 0xa3b;
+    g_CurrentLineNumber = 2619;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create actor of unknown class type: %s",class_name);
   }
   if (pCVar1->factory_func == (CDemonActor_FactoryFunc *)0x0) {
     g_CurrentFilename = "..\\core\\actor.cpp";
-    g_CurrentLineNumber = 0xa41;
+    g_CurrentLineNumber = 2625;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create instance of abstract type %s",class_name);
   }
   pCVar2 = (*pCVar1->factory_func)();
@@ -28,7 +28,7 @@ CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c430(char *class_
     return pCVar2;
   }
   g_CurrentFilename = "..\\core\\actor.cpp";
-  g_CurrentLineNumber = 0xa4a;
+  g_CurrentLineNumber = 2634;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Not enough memory to create %s",class_name);
   return (CDemonActor *)0x0;
 }

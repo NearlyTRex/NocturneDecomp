@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 37,
+    "complexity_score": 22,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 22,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 68
   },
   "cross_references": [
@@ -178,6 +176,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Allocation size hardcodes 0x168 == sizeof(CCheckOutItem). Replace the magic with sizeof(CCheckOutItem) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 10,
+      "match": "(CCheckOutItem*) alloc stride 0x168",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CCheckOutItem *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->items,(this_ptr->count + 1) * 0x168,\"..\\\\engine\\\\fileio.cpp\", 743)",
+      "type": "alloc_magic_size"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 004b2d60, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 40,
       "match": "MOVSD.REP",
@@ -210,14 +217,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x168 == sizeof(CCheckOutItem). Replace the magic with sizeof(CCheckOutItem) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 10,
-      "match": "(CCheckOutItem*) alloc stride 0x168",
-      "severity": "moderate",
-      "text": "(CCheckOutItem *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->items,(this_ptr->count + 1) * 0x168,\"..\\\\engine\\\\fileio.cpp\", 0x2e7)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

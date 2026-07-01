@@ -12,7 +12,7 @@ void __cdecl core_actor_cpp_CDemonActor_spawnFlies_FUN_00409e70(CDemonActor *thi
   CFlies *pCVar1;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x510);
+            (this_ptr,"..\\core\\actor.cpp",1296);
   pCVar1 = core_flies_cpp_findFliesByFollowActor_FUN_004cca50(this_ptr);
   if (pCVar1 != (CFlies *)0x0) {
     return;

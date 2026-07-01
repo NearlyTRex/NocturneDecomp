@@ -10,6 +10,6 @@ int __cdecl core_actor_cpp_CDemonActor_getTargetPoints_FUN_004098e0(CDemonActor 
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x4c8);
+            (this_ptr,"..\\core\\actor.cpp",1224);
   return 0;
 }

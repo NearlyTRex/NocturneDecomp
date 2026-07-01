@@ -73,7 +73,7 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   iVar5 = (int)keyframe_model->base_keyframes;
   if (*(int *)(iVar5 + 8) != 2) {
     g_CurrentFilename = "..\\engine\\keyframe.c";
-    g_CurrentLineNumber = 0x16b;
+    g_CurrentLineNumber = 363;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad keyframe 1");
   }
   local_18 = (int *)(keyframe_model->loaded_frames[iVar17] + 1);
@@ -135,7 +135,7 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   }
   if (*piVar12 != 0x17) {
     g_CurrentFilename = "..\\engine\\keyframe.c";
-    g_CurrentLineNumber = 0x1a6;
+    g_CurrentLineNumber = 422;
     core_main_c_displayErrorAndQuit_FUN_00506f10("ZBP not found!");
   }
   texture = (SMRGLPrimitiveTriangle *)(piVar12 + 3);

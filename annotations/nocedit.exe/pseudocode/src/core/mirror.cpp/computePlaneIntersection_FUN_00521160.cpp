@@ -24,7 +24,7 @@ void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_00521160(SClipPlane *c
           (vertex_b->y - vertex_a->y) * (clip_plane->B).f;
   if (ABS(fVar7) == 0.0) {
     g_CurrentFilename = "..\\core\\mirror.cpp";
-    g_CurrentLineNumber = 0x42;
+    g_CurrentLineNumber = 66;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad clip!");
   }
   fVar7 = -((clip_plane->C).f * vertex_a->z +

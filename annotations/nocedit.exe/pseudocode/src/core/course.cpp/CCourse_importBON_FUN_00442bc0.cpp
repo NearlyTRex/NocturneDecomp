@@ -18,7 +18,7 @@ int __cdecl core_course_cpp_CCourse_importBON_FUN_00442bc0(CCourse *this_ptr,cha
   int local_14;
   
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (filename,(char *)0x0,"rt","..\\core\\course.cpp",0x14b);
+                   (filename,(char *)0x0,"rt","..\\core\\course.cpp",331);
   if (file == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",filename);
@@ -37,7 +37,7 @@ int __cdecl core_course_cpp_CCourse_importBON_FUN_00442bc0(CCourse *this_ptr,cha
   if (local_18 != 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"%s contains %d nodes - must only contain 1!",filename,local_18);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",0x161);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",353);
     return 0;
   }
   do {
@@ -57,6 +57,6 @@ int __cdecl core_course_cpp_CCourse_importBON_FUN_00442bc0(CCourse *this_ptr,cha
             (g_CEditorToolsPtr,local_184);
   core_course_cpp_CCourse_importMatrices_FUN_00442ea0(this_ptr,file,local_14);
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",0x178);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",376);
   return 1;
 }

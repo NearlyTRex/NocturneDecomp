@@ -107,7 +107,7 @@ LAB_004b5706:
   this_ptr->tracked_file_count = iVar7;
   if (9999 < iVar7) {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
-    g_CurrentLineNumber = 0x767;
+    g_CurrentLineNumber = 1895;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many files - get Mark");
   }
   engine_dosio_cpp_splitPath_FUN_00481f20(local_64,(char *)0x0,local_47c,local_27c,local_37c);
@@ -130,7 +130,7 @@ LAB_004b5706:
   if (iVar7 != iVar3) {
     _sprintf(local_17c,"%s is not the same size as %s",local_580,local_64);
     g_CurrentFilename = "..\\engine\\fileio.cpp";
-    g_CurrentLineNumber = 0x786;
+    g_CurrentLineNumber = 1926;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_17c);
   }
   engine_fileio_cpp_CFileManager_registerFiles_FUN_004b5640(this_ptr,local_580);

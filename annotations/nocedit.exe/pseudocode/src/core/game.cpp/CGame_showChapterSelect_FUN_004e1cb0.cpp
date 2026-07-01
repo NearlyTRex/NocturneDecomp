@@ -41,7 +41,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50
                      (&s_EmptyChar_0062cc98,"enemy.pod","rb");
   if (p_Var2 != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xecf);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",3791);
   }
   local_14 = (uint)(p_Var2 == (_FILE *)0x0);
   this_ptr->damageable_enemy_count = 0;
@@ -52,9 +52,9 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   local_1c = g_EditorFont;
   g_EditorFont = g_ThemeFont;
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     ("pod.ini",(char *)0x0,"rt","..\\core\\game.cpp",0xeea);
+                     ("pod.ini",(char *)0x0,"rt","..\\core\\game.cpp",3818);
   if (p_Var3 != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",0xeec);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",3820);
   }
   bVar8 = select_mode == 1;
   if (local_14 != 0) {
@@ -127,7 +127,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_6ec,iVar7,0);
             }
             else {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",0xf29);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",3881);
             }
             iVar7 = iVar7 + 1;
             iVar4 = iVar4 + 0x34;
@@ -185,7 +185,7 @@ LAB_004e2250:
               iVar7 = iVar7 + 4;
             }
             else {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",0xec1);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",3777);
               iVar4 = iVar4 + 1;
               iVar7 = iVar7 + 4;
             }
@@ -230,7 +230,7 @@ LAB_004e2250:
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_6ec,iVar4,0);
             }
             else {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",0xec1);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",3777);
             }
             iVar7 = iVar7 + 4;
           }
@@ -284,7 +284,7 @@ LAB_004e2250:
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_6ec,iVar4,0);
             }
             else {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",0xec1);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",3777);
             }
             iVar7 = iVar7 + 4;
           }
@@ -317,7 +317,7 @@ LAB_004e2250:
               shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_6ec,iVar4,0);
             }
             else {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",0xec1);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",3777);
             }
             iVar7 = iVar7 + 4;
           }
@@ -341,7 +341,7 @@ LAB_004e2250:
             shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(&local_6ec,iVar4,0);
           }
           else {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",0xec1);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",3777);
           }
           iVar7 = iVar7 + 4;
         }
@@ -376,7 +376,7 @@ LAB_004e2376:
       return;
     }
     pcVar9 = g_ChapterDisplayName;
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",0xf77);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",3959);
     g_ChapterDisplayYear = g_ChapterDisplayYears[iVar3];
     pcVar8 = local_40[iVar3];
     do {

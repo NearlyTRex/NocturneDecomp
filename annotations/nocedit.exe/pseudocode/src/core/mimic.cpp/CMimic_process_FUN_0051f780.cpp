@@ -16,7 +16,7 @@ void __cdecl core_mimic_cpp_CMimic_process_FUN_0051f780(CMimic *this_ptr,float d
   
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
     g_CurrentFilename = "..\\core\\mimic.cpp";
-    g_CurrentLineNumber = 0x130;
+    g_CurrentLineNumber = 304;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::setup - can't use mimic in multi-player!");
   }
   iVar3 = g_LocalHeroIndex;

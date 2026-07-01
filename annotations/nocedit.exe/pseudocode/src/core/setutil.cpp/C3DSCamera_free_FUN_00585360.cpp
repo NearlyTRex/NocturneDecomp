@@ -13,7 +13,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_free_FUN_00585360(C3DSCamera *this_ptr)
     this_ptr->pvs_count = 0;
     return;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->pvs_list,"..\\core\\setutil.cpp",0x61);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->pvs_list,"..\\core\\setutil.cpp",97);
   this_ptr->pvs_list = (int *)0x0;
   this_ptr->pvs_count = 0;
   return;

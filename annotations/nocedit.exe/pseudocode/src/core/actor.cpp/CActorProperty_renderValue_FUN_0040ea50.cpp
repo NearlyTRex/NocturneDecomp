@@ -276,7 +276,7 @@ void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProper
     break;
   default:
     g_CurrentFilename = "..\\core\\actor.cpp";
-    g_CurrentLineNumber = 0xfc9;
+    g_CurrentLineNumber = 4041;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown CActorProperty type: %d");
     return;
   }

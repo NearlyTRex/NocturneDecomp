@@ -48,7 +48,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df9
         pCVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,name);
         if (pCVar2 == (CDemonActor *)0x0) {
           g_CurrentFilename = "..\\core\\msnedit.cpp";
-          g_CurrentLineNumber = 0xe1a;
+          g_CurrentLineNumber = 3610;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
         }
         core_msnedit_cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80(this_ptr,pCVar2,1);

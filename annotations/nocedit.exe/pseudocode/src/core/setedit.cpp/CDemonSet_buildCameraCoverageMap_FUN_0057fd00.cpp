@@ -31,11 +31,11 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
   memset(coverage_map,0,g_WindowWidth * g_WindowHeight);
   ptr = (CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                   (g_CDemonCameraInstance.framebuffer_height *
-                   g_CDemonCameraInstance.framebuffer_width * 0xc,"..\\core\\setedit.cpp",0xf22)
+                   g_CDemonCameraInstance.framebuffer_width * 0xc,"..\\core\\setedit.cpp",3874)
   ;
   if (ptr == (CVector3i *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0xf23;
+    g_CurrentLineNumber = 3875;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
   pCVar3 = ptr;

@@ -1567,7 +1567,7 @@ LAB_004df408:
       if (iStack_108 == ~uVar10 - 1) {
         g_InputHistory[1] = '\0';
         this_ptr_02 = (CGasMask *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                                (0x2d8,"..\\core\\game.cpp",0xbb0);
+                                (0x2d8,"..\\core\\game.cpp",2992);
         actor = (CGasMask *)0x0;
         if (this_ptr_02 != (CGasMask *)0x0) {
           actor = core_gasmask_cpp_CGasMask_ctor_FUN_004e5d00(this_ptr_02);

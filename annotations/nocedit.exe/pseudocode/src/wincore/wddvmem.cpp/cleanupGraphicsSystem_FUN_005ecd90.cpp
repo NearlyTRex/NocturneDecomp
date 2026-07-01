@@ -10,12 +10,12 @@ void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_005ecd90(void)
 
 {
   if (g_BackBuffer != (void *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackBuffer,"..\\wincore\\wddvmem.cpp",0xff);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackBuffer,"..\\wincore\\wddvmem.cpp",255);
     g_BackBuffer = (void *)0x0;
   }
   if (g_SoftwareFrameBuffer != (void *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (g_SoftwareFrameBuffer,"..\\wincore\\wddvmem.cpp",0x107);
+              (g_SoftwareFrameBuffer,"..\\wincore\\wddvmem.cpp",263);
     g_SoftwareZBuffer = (void *)0x0;
   }
   wincore_windll_cpp_kill_FUN_005b71e0();

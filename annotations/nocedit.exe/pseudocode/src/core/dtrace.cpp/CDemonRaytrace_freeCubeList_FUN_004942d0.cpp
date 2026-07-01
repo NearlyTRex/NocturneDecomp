@@ -32,7 +32,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_freeCubeList_FUN_004942d0(CDemonRayt
       iVar3 = iVar3 + 0x58;
       puVar1[3] = 0;
     }
-    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->cube_list,"..\\core\\dtrace.cpp",0xa0);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->cube_list,"..\\core\\dtrace.cpp",160);
   }
   this_ptr->cube_list = (SVoxelCubeMetadata *)0x0;
   return;

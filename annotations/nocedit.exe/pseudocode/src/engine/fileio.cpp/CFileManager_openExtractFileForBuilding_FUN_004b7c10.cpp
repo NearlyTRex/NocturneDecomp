@@ -13,13 +13,13 @@ void __cdecl engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7
   
   p_Var1 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("level.lst",(char *)0x0,"wt","..\\engine\\fileio.cpp",
-                      0xa8c);
+                      2700);
   this_ptr->file_ptr = p_Var1;
   if (p_Var1 != (_FILE *)0x0) {
     return;
   }
   g_CurrentFilename = "..\\engine\\fileio.cpp";
-  g_CurrentLineNumber = 0xa8e;
+  g_CurrentLineNumber = 2702;
   core_main_c_displayErrorAndQuit_FUN_00506f10("fileManager::openExtractFile - Unable to open level.lst");
   return;
 }

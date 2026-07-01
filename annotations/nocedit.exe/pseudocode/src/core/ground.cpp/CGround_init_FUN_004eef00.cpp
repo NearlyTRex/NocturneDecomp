@@ -15,15 +15,15 @@ void __cdecl core_ground_cpp_CGround_init_FUN_004eef00(CGround *this_ptr)
   
   core_ground_cpp_CGround_free_FUN_004eefb0(this_ptr);
   pSVar1 = (SGroundCell *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                     (this_ptr->width * this_ptr->height * 4,"..\\core\\ground.cpp",0xd2);
+                     (this_ptr->width * this_ptr->height * 4,"..\\core\\ground.cpp",210);
   this_ptr->terrain_data = pSVar1;
   if (pSVar1 == (SGroundCell *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
-    g_CurrentLineNumber = 0xd3;
+    g_CurrentLineNumber = 211;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CGround::init - Out of memory");
   }
   this_ptr_00 = (CTextureList *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                          (0x1a5ec,"..\\core\\ground.cpp",0xd7);
+                          (0x1a5ec,"..\\core\\ground.cpp",215);
   pCVar2 = (CTextureList *)0x0;
   if (this_ptr_00 != (CTextureList *)0x0) {
     pCVar2 = core_texlist_cpp_CTextureList_ctor_FUN_005dbdd0(this_ptr_00);
@@ -33,7 +33,7 @@ void __cdecl core_ground_cpp_CGround_init_FUN_004eef00(CGround *this_ptr)
     return;
   }
   g_CurrentFilename = "..\\core\\ground.cpp";
-  g_CurrentLineNumber = 0xd8;
+  g_CurrentLineNumber = 216;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CGround::init - Out of memory2");
   return;
 }

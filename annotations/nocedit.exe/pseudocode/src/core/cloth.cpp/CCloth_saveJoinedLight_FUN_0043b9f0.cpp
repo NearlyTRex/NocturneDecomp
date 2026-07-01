@@ -18,13 +18,13 @@ int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth *this_ptr,
   
   if (model_ptr == (CDeformableModelInstance *)0x0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
-    g_CurrentLineNumber = 0x4e3;
+    g_CurrentLineNumber = 1251;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::saveJoinedLight - Can't save light with no model!");
   }
   iVar1 = model_ptr->cached_skinned_lod_index;
   if (iVar1 < 0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
-    g_CurrentLineNumber = 0x4e8;
+    g_CurrentLineNumber = 1256;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::saveJoinedLight - Model wasn't drawn");
   }
   pCVar4 = (CCloth *)this_ptr->locked_vertex_count;

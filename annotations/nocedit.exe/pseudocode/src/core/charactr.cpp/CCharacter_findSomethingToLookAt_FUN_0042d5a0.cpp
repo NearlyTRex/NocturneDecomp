@@ -157,7 +157,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
                        (&this_ptr->look_at_candidate->base,g_CCharacterClassInfo.name_hash);
     if (pCVar4 == (CCharacter *)0x0) {
       g_CurrentFilename = "..\\core\\charactr.cpp";
-      g_CurrentLineNumber = 0xda0;
+      g_CurrentLineNumber = 3488;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::findSomethingToLookAt - Should be a character");
     }
     EVar1 = (*(((pCVar4->base).vtable._uc)->_uc).getDeathState)(pCVar4);

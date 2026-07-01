@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 36,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 21,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 67
   },
   "cross_references": [
@@ -143,6 +141,17 @@
     },
     "pcode_op_count": 182
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 12,
+      "match": "(CVector3i*) alloc stride 0xc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (iVar1 * 0xc,\"..\\\\core\\\\skeleton.cpp\",2297)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -159,14 +168,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 12,
-      "match": "(CVector3i*) alloc stride 0xc",
-      "severity": "moderate",
-      "text": "(CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (iVar1 * 0xc,\"..\\\\core\\\\skeleton.cpp\",0x8f9)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

@@ -62,7 +62,7 @@ LAB_004d21b9:
     break;
   default:
     g_CurrentFilename = "..\\core\\frankgen.cpp";
-    g_CurrentLineNumber = 0x1bb;
+    g_CurrentLineNumber = 443;
     core_main_c_displayErrorAndQuit_FUN_00506f10("WTF!");
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);

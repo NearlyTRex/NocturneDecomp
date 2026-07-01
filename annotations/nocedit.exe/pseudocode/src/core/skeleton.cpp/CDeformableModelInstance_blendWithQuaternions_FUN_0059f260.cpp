@@ -114,7 +114,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
     }
     else {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
-      g_CurrentLineNumber = 0xad5;
+      g_CurrentLineNumber = 2773;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Write me!");
     }
     if (bone_index < 0) {

@@ -76,7 +76,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_slew_cpp_CSlew_init_FUN_005a2060(&local_bc);
   iVar2 = g_CDemonCameraInstance.corona_blend_factor;
-  pCVar3 = (CBoxActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b)
+  pCVar3 = (CBoxActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",3707)
   ;
   actor_00 = (CBoxActor *)0x0;
   if (pCVar3 != (CBoxActor *)0x0) {
@@ -84,7 +84,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
   }
   if (actor_00 == (CBoxActor *)0x0) {
     g_CurrentFilename = "..\\core\\msnedit.cpp";
-    g_CurrentLineNumber = 0xe7c;
+    g_CurrentLineNumber = 3708;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::editGore - Out of memory");
   }
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

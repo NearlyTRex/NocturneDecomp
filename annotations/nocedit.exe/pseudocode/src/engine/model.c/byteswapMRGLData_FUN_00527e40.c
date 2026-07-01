@@ -89,7 +89,7 @@ joined_r0x00527e4d:
       goto switchD_00527e66_caseD_40;
     default:
       g_CurrentFilename = "..\\engine\\model.c";
-      g_CurrentLineNumber = 0xce;
+      g_CurrentLineNumber = 206;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Need a new byteswap!");
       data_size = data_size - uVar1;
       mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);

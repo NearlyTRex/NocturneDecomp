@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 44,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 29,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 118
   },
   "cross_references": [
@@ -204,6 +202,17 @@
     },
     "pcode_op_count": 265
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x3fe70 == sizeof(CCloth). Replace the magic with sizeof(CCloth) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 10,
+      "match": "(CCloth*) alloc stride 0x3fe70",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CCloth *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x3fe70,\"..\\\\core\\\\fileman.cpp\",339)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -227,14 +236,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x3fe70 == sizeof(CCloth). Replace the magic with sizeof(CCloth) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 10,
-      "match": "(CCloth*) alloc stride 0x3fe70",
-      "severity": "moderate",
-      "text": "(CCloth *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x3fe70,\"..\\\\core\\\\fileman.cpp\",0x153)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

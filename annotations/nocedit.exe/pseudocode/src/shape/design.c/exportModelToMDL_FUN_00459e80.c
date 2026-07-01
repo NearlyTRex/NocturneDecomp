@@ -72,7 +72,7 @@ void __cdecl shape_design_c_exportModelToMDL_FUN_00459e80(char *mdl_filename)
       _fprintf(file,"%d\n");
     }
     shape_design_c_writeBinaryTreeNode_FUN_00457fd0(g_SpatialTreeRoot,file,1);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x604);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",1540);
   }
   return;
 }

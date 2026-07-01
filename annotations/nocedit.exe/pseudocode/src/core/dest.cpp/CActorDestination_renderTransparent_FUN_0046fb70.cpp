@@ -33,7 +33,7 @@ int __cdecl core_dest_cpp_CActorDestination_renderTransparent_FUN_0046fb70(CActo
                                (this_ptr->dest_actor,g_CBoxActorClassInfo.name_hash);
             if (pCVar3 == (CBoxActor *)0x0) {
               g_CurrentFilename = "..\\core\\dest.cpp";
-              g_CurrentLineNumber = 0xa5;
+              g_CurrentLineNumber = 165;
               core_main_c_displayErrorAndQuit_FUN_00506f10("CDestActor::renderTransparent - Catch 22");
             }
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60

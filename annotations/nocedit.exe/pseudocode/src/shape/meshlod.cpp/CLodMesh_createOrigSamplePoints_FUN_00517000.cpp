@@ -42,14 +42,14 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createOrigSamplePoints_FUN_00517000(CLod
   
   if (this_ptr->next_lod == (CLodMesh *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0x56f;
+    g_CurrentLineNumber = 1391;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't call LodMesh::createOrigSamplePoints unless we have an original mesh!");
   }
   pCVar1 = this_ptr->next_lod;
   iVar7 = pCVar1->vertex_count + pCVar1->edge_count + pCVar1->tri_count;
   this_ptr->sample_point_count = iVar7;
   piVar2 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     (iVar7 * 0x1c + 4,"..\\shape\\meshlod.cpp",0x577);
+                     (iVar7 * 0x1c + 4,"..\\shape\\meshlod.cpp",1399);
   pSVar3 = (SLodSamplePoint *)piVar2;
   if (piVar2 != (int *)0x0) {
     pSVar3 = (SLodSamplePoint *)(piVar2 + 1);
@@ -58,7 +58,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createOrigSamplePoints_FUN_00517000(CLod
   this_ptr->sample_points_ptr = pSVar3;
   if (pSVar3 == (SLodSamplePoint *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0x578;
+    g_CurrentLineNumber = 1400;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
   sample_point_index = 0;
@@ -135,7 +135,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createOrigSamplePoints_FUN_00517000(CLod
     return;
   }
   g_CurrentFilename = "..\\shape\\meshlod.cpp";
-  g_CurrentLineNumber = 0x5c8;
+  g_CurrentLineNumber = 1480;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Bug!");
   return;
 }

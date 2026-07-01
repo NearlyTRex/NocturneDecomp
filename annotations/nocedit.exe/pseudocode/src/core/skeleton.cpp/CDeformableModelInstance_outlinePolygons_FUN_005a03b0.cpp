@@ -14,7 +14,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_005a
   
   if (this_ptr->cached_skinned_lod_index < 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
-    g_CurrentLineNumber = 0xd33;
+    g_CurrentLineNumber = 3379;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModelInstance::outlinePolygons called but LOD is not set!");
   }
   lod_level = this_ptr->cached_skinned_lod_index;

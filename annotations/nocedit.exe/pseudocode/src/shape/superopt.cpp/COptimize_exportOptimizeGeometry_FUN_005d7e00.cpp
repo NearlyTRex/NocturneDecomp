@@ -65,7 +65,7 @@ LAB_005d7e9e:
         local_1c = *local_2c;
         if (20000 < g_VertexCount + local_1c) {
           g_CurrentFilename = "..\\shape\\superopt.cpp";
-          g_CurrentLineNumber = 0x25b3;
+          g_CurrentLineNumber = 9651;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many points!");
         }
         uVar8 = 0;
@@ -94,7 +94,7 @@ LAB_005d7e9e:
           }
           if (19999 < g_PolygonCount) {
             g_CurrentFilename = "..\\shape\\superopt.cpp";
-            g_CurrentLineNumber = 0x25c1;
+            g_CurrentLineNumber = 9665;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Too many polys!");
           }
           iVar5 = g_PolygonCount;

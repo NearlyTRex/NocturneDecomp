@@ -47,7 +47,7 @@ LAB_00465e13:
     if (bVar2) {
       if (19999 < g_VertexCount) {
         g_CurrentFilename = "..\\shape\\design.c";
-        g_CurrentLineNumber = 0x1d5a;
+        g_CurrentLineNumber = 7514;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Cannot add any more points!");
       }
       iVar3 = g_VertexCount;

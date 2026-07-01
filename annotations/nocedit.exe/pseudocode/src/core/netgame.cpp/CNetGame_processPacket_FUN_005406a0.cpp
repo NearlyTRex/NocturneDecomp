@@ -390,7 +390,7 @@ LAB_00541015:
       do {
         if (iVar5 < 0) {
           g_CurrentFilename = "..\\core\\netgame.cpp";
-          g_CurrentLineNumber = 0x596;
+          g_CurrentLineNumber = 1430;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Player list mismatch processing SimFrame Update packet!");
         }
         dest->player_input[iVar5].action_state.walk =

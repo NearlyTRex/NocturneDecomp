@@ -189,7 +189,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_saveStream_FUN_0058f120(CDeforma
   }
   if ((file_handle->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0xbab;
+    g_CurrentLineNumber = 2987;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::saveStream - error writing file!");
     return;
   }

@@ -10,6 +10,6 @@ void __cdecl core_actor_cpp_CDemonActor_renderBackground_FUN_00408ae0(CDemonActo
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x201);
+            (this_ptr,"..\\core\\actor.cpp",513);
   return;
 }

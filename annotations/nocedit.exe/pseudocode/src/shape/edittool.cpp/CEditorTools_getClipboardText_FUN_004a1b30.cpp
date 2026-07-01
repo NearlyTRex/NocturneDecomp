@@ -33,7 +33,7 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEd
       uVar4 = ~uVar4;
       g_ClipboardBackupText =
            shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (g_ClipboardBackupText,uVar4,"..\\shape\\edittool.cpp",0x94e);
+                     (g_ClipboardBackupText,uVar4,"..\\shape\\edittool.cpp",2382);
       if (g_ClipboardBackupText != (char *)0x0) {
         pcVar6 = g_ClipboardBackupText;
         for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {

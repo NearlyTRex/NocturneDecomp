@@ -12,7 +12,7 @@ void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor *this_ptr
   CPathMap *this_ptr_00;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x23f);
+            (this_ptr,"..\\core\\actor.cpp",575);
   this_ptr->blood_effect_timer = 0;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(this_ptr);
   this_ptr_00 = (*((this_ptr->vtable)._ub)->getPathMap)(this_ptr);

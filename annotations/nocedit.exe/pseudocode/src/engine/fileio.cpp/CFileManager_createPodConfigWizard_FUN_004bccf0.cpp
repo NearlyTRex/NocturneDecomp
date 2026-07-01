@@ -17,9 +17,9 @@ int __cdecl engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(CF
   
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        ("pod.ini",(char *)0x0,"rt","..\\engine\\fileio.cpp",
-                        0x1076);
+                        4214);
   if (file_ptr != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0x1078);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",4216);
     return 1;
   }
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_4d0);

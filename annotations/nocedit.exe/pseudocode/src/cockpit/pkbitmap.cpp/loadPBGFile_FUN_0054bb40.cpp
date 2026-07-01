@@ -21,14 +21,14 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_loadPBGFile_FUN_0054bb40(CPackedBit
   file_handle = engine_dosio_cpp_getFile_FUN_00481a50("art",pbg_filename,"rb");
   if (file_handle == (_FILE *)0x0) {
     _sprintf(local_78,"Unable to open PBG file %s",pbg_filename);
-    g_CurrentLineNumber = 0x595;
+    g_CurrentLineNumber = 1429;
     g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_78);
   }
   pCVar1 = cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0
                      (bitmap_set_ptr,file_handle,frames_per_bitmap,skip_data_load,
                       selected_bitmap_index);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\cockpit\\pkbitmap.cpp",0x59a);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\cockpit\\pkbitmap.cpp",1434);
   iVar2 = 0;
   pCVar2 = pCVar1;
   if (0 < bitmap_set_ptr->bitmap_count) {

@@ -25,10 +25,10 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
   if ((g_CameraDepthData == (SCameraDepthEntry *)0x0) && (0 < this_ptr->camera_count)) {
     g_CameraDepthData =
          shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                   (this_ptr->camera_count * 0x4b030,"..\\core\\setedit.cpp",0x1007);
+                   (this_ptr->camera_count * 0x4b030,"..\\core\\setedit.cpp",4103);
     if (g_CameraDepthData == (SCameraDepthEntry *)0x0) {
       g_CurrentFilename = "..\\core\\setedit.cpp";
-      g_CurrentLineNumber = 0x1008;
+      g_CurrentLineNumber = 4104;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
     }
     local_18 = 0;

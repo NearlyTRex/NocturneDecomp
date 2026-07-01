@@ -16,7 +16,7 @@ uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_005e1750(uchar *de
     return dest_ip;
   }
   g_CurrentFilename = "..\\support\\trisock.cpp";
-  g_CurrentLineNumber = 0x41;
+  g_CurrentLineNumber = 65;
   core_main_c_displayErrorAndQuit_FUN_00506f10
             ("Invalid IP values: %d, %d, %d, %d",octet1,octet2,octet3,octet4);
   return dest_ip;

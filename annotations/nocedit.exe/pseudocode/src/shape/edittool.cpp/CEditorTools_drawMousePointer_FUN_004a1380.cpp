@@ -170,7 +170,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEdit
   }
   else {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
-    g_CurrentLineNumber = 0x932;
+    g_CurrentLineNumber = 2354;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CEditorTools::setMousePointerType - invalid type!");
   }
   return;

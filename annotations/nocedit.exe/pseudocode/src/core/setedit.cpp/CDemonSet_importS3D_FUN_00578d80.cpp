@@ -141,7 +141,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   _fscanf(file_handle,"%d\n",&local_5c);
   if (local_5c != 0x67) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0x490;
+    g_CurrentLineNumber = 1168;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't import S3D file version %d, I can only do version %d.",local_5c,0x67);
   }
   do {
@@ -152,12 +152,12 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
              &local_44,&local_40);
   if (local_4c != 1) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0x49a;
+    g_CurrentLineNumber = 1178;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Scene contains %d frames.  Only single-frame scenes supported.",local_4c);
   }
   if ((local_6c != 0) && (0xfa < local_40)) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0x4a1;
+    g_CurrentLineNumber = 1185;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Scene contains %d cameras.  Maximum number of cameras is %d.",local_40,0xfa);
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -195,7 +195,7 @@ LAB_00578fc0:
                 (g_CEditorToolsPtr,"Reading textures");
       if (1000 < local_58) {
         g_CurrentFilename = "..\\core\\setedit.cpp";
-        g_CurrentLineNumber = 0x4cc;
+        g_CurrentLineNumber = 1228;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Too many textures!");
       }
       iVar5 = 0;
@@ -253,7 +253,7 @@ LAB_0057981a:
           *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;
           if ((int)uVar4 < 0) {
             file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                             (local_6a8,(char *)0x0,"a+t","..\\core\\setedit.cpp",0x4e1
+                             (local_6a8,(char *)0x0,"a+t","..\\core\\setedit.cpp",1249
                              );
             if (file == (_FILE *)0x0) {
               if (INT_03365cb8 == 0) {
@@ -267,7 +267,7 @@ LAB_0057981a:
                         (local_5a4,(char *)0x0,(char *)0x0,local_3a0,(char *)0x0);
               pcVar13 = core_ground_cpp_getGroundTypeName_FUN_004eed80(GROUND_TYPE_DEFAULT);
               _fprintf(file,"%s, %s\n",local_3a0,pcVar13);
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x4eb);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",1259);
             }
             *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;
             core_setedit_cpp_addGroundType_FUN_00578290(local_5a4,0);
@@ -295,7 +295,7 @@ LAB_0057981a:
       iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_be0,local_838,-1,0);
       if (iVar5 < 0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\setedit.cpp",0x516);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\setedit.cpp",1302);
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_be0,0);
         return;
       }
@@ -365,7 +365,7 @@ LAB_0057911a:
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (this_ptr_00,"Reading vertices");
     piVar5 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                       (local_50 * 0xc + 4,"..\\core\\setedit.cpp",0x547);
+                       (local_50 * 0xc + 4,"..\\core\\setedit.cpp",1351);
     local_38 = piVar5;
     if (piVar5 != (int *)0x0) {
       local_38 = piVar5 + 1;
@@ -373,7 +373,7 @@ LAB_0057911a:
     }
     if (local_38 == (int *)0x0) {
       g_CurrentFilename = "..\\core\\setedit.cpp";
-      g_CurrentLineNumber = 0x548;
+      g_CurrentLineNumber = 1352;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't allocate memory for %d vertices",local_50);
     }
     do {
@@ -388,7 +388,7 @@ LAB_0057911a:
         iVar6 = _fscanf(file_handle,"%f,%f,%f\n",local_38 + iVar5 * 3,piVar16,piVar15);
         if (iVar6 != 3) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
-          g_CurrentLineNumber = 0x54f;
+          g_CurrentLineNumber = 1359;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("File is corrupt on vertex %d of %d",iVar5,local_50);
         }
@@ -426,7 +426,7 @@ LAB_00579173:
         iVar4 = local_70;
         if ((iVar6 != 0) && (iVar4 = local_74, iVar6 != 1)) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
-          g_CurrentLineNumber = 0x56b;
+          g_CurrentLineNumber = 1387;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("unknown light type: %d",pCVar8->lights[0].light_type);
           iVar4 = local_24;
@@ -463,14 +463,14 @@ LAB_00579173:
         }
         else {
           g_CurrentFilename = "..\\core\\setedit.cpp";
-          g_CurrentLineNumber = 0x589;
+          g_CurrentLineNumber = 1417;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("unknown light type: %d",local_2478.light_type);
         }
         if (local_20 != 0) {
           if (199 < this_ptr->light_count) {
             g_CurrentFilename = "..\\core\\setedit.cpp";
-            g_CurrentLineNumber = 0x58f;
+            g_CurrentLineNumber = 1423;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Too many lights!");
           }
           pCVar10 = local_1c + this_ptr->light_count;
@@ -614,7 +614,7 @@ LAB_0057a07e:
                            local_a0,&local_84,local_90,local_9c,&local_80,local_8c,local_98);
         if (iVar6 != 10) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
-          g_CurrentLineNumber = 0x5ed;
+          g_CurrentLineNumber = 1517;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("File is corrupt on poly %d of %d",iVar5,local_54);
         }
@@ -663,7 +663,7 @@ LAB_0057a07e:
         piVar15 = pCVar7->cameras[0].pvs_list;
         pCVar7->cameras[0].pvs_count = 0;
         if (piVar15 != (int *)0x0) {
-          shape_memdbg_cpp_debugFree_FUN_0050f460(piVar15,"..\\core\\setedit.cpp",0x634);
+          shape_memdbg_cpp_debugFree_FUN_0050f460(piVar15,"..\\core\\setedit.cpp",1588);
           pCVar7->cameras[0].pvs_list = (int *)0x0;
         }
         pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;

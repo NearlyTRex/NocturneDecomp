@@ -17,14 +17,14 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(CDemon
   element_count = (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
   type_info = &g_CDemonCubeTypeInfo;
   array_memory = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                           (element_count * 0x34 + 4,"..\\core\\dtrace.cpp",0xad);
+                           (element_count * 0x34 + 4,"..\\core\\dtrace.cpp",173);
   pCVar1 = (CDemonCube *)__vec_new(array_memory,element_count,type_info);
   this_ptr->cube_data = pCVar1;
   if (pCVar1 != (CDemonCube *)0x0) {
     return;
   }
   g_CurrentFilename = "..\\core\\dtrace.cpp";
-  g_CurrentLineNumber = 0xae;
+  g_CurrentLineNumber = 174;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::allocNewCubeList - Out of memory!");
   return;
 }

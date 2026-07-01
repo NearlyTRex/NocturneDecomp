@@ -37,7 +37,7 @@ void __cdecl core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(char *prefix,char
   
   if (0xf9 < thumbnail_index) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0xd3;
+    g_CurrentLineNumber = 211;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many thumbs!");
   }
   _sprintf(local_5c,"%s%s.raw",prefix,name);
@@ -60,12 +60,12 @@ void __cdecl core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(char *prefix,char
   }
   file = engine_dosio_cpp_getFile_FUN_00481a50(directory,local_4c,mode);
   if (file == (_FILE *)0x0) {
-    g_CurrentLineNumber = 0xfd;
+    g_CurrentLineNumber = 253;
     g_CurrentFilename = "..\\core\\setedit.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",local_4c);
   }
   _fread(g_ThumbnailPalette,0x300,1,file);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0xff);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",255);
   if (uVar3 < 0x40000) {
     if (0xffff < uVar3) {
       if (uVar3 < 0x10001) {
@@ -73,10 +73,10 @@ void __cdecl core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(char *prefix,char
         local_2c = 0x100;
 LAB_00576b4f:
         buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                           (local_2c * count,"..\\core\\setedit.cpp",0x121);
+                           (local_2c * count,"..\\core\\setedit.cpp",289);
         if (buffer == (void *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
-          g_CurrentLineNumber = 0x122;
+          g_CurrentLineNumber = 290;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
         }
         _fread(buffer,local_2c,count,local_3c);
@@ -100,8 +100,8 @@ LAB_00576b4f:
           local_20 = local_20 + 1;
           local_24 = local_24 + count;
         } while (local_20 < 0x30);
-        shape_memdbg_cpp_debugFree_FUN_0050f460(buffer,"..\\core\\setedit.cpp",0x133);
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_3c,"..\\core\\setedit.cpp",0x134);
+        shape_memdbg_cpp_debugFree_FUN_0050f460(buffer,"..\\core\\setedit.cpp",307);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_3c,"..\\core\\setedit.cpp",308);
         return;
       }
       if (uVar3 == 0x3f010) {
@@ -130,7 +130,7 @@ LAB_00576b4f:
       }
     }
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_3c,"..\\core\\setedit.cpp",0x11a);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_3c,"..\\core\\setedit.cpp",282);
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
             (g_CEditorToolsPtr,"Can't figure out image dimensions for %s",local_5c);
 LAB_00576a3d:

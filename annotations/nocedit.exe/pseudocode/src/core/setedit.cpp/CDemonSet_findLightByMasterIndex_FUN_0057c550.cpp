@@ -27,7 +27,7 @@ int __cdecl core_setedit_cpp_CDemonSet_findLightByMasterIndex_FUN_0057c550(CDemo
     } while (iVar2 < this_ptr->light_count);
   }
   g_CurrentFilename = "..\\core\\setedit.cpp";
-  g_CurrentLineNumber = 0xaa8;
+  g_CurrentLineNumber = 2728;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Can't resolve master light number");
   return -1;
 }

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 139,
+    "complexity_score": 124,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 17,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 124,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 391
   },
   "cross_references": [],
@@ -303,6 +301,15 @@
       "severity": "moderate",
       "text": "pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Allocation size hardcodes 0x8630 == sizeof(CMP3Decoder). Replace the magic with sizeof(CMP3Decoder) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 48,
+      "match": "(CMP3Decoder*) alloc stride 0x8630",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x8630,\"..\\\\sound\\\\sndmain.cpp\",965)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -342,14 +349,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x8630 == sizeof(CMP3Decoder). Replace the magic with sizeof(CMP3Decoder) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 48,
-      "match": "(CMP3Decoder*) alloc stride 0x8630",
-      "severity": "moderate",
-      "text": "(CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x8630,\"..\\\\sound\\\\sndmain.cpp\",0x3c5)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

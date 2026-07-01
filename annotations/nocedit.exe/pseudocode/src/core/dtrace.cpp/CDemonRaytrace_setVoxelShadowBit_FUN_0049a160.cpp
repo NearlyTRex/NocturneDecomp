@@ -31,7 +31,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160(CDemo
                             (this_ptr,local_28.x,local_28.y,local_28.z);
     if (this_ptr_00 == (CDemonCube *)0x0) {
       g_CurrentFilename = "..\\core\\dtrace.cpp";
-      g_CurrentLineNumber = 0xb19;
+      g_CurrentLineNumber = 2841;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Parity Check 999");
     }
     if (this_ptr_00->voxel_buffer1 == (SVoxelGrid *)0x0) {

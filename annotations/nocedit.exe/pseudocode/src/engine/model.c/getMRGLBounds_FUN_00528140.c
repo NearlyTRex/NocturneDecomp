@@ -67,14 +67,14 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
     piVar3 = &mrgl_data[2].count;
     if (mrgl_data->type != 0x14) {
       g_CurrentFilename = "..\\engine\\model.c";
-      g_CurrentLineNumber = 0x172;
+      g_CurrentLineNumber = 370;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to read magnify!");
     }
     iVar4 = (int)(0x7fffffff / (longlong)mrgl_data->count) * 2;
     if (mrgl_data[1].type != 2) {
       _sprintf(local_160,"Unable to read verticies in model!");
       g_CurrentFilename = "..\\engine\\model.c";
-      g_CurrentLineNumber = 0x176;
+      g_CurrentLineNumber = 374;
       core_main_c_displayErrorAndQuit_FUN_00506f10(local_160);
     }
     iVar7 = 0;

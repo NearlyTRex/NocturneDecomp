@@ -19,7 +19,7 @@ int __cdecl engine_ini_cpp_getProfileInteger_FUN_004fb9a0(char *section,char *ke
                     (&g_CIniInstance,section,key,local_10c,local_20c,0xff,filename);
   if (iVar1 == 0) {
     g_CurrentFilename = "..\\engine\\ini.cpp";
-    g_CurrentLineNumber = 0x235;
+    g_CurrentLineNumber = 565;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad ini read!");
   }
   iVar2 = atoi(local_20c);

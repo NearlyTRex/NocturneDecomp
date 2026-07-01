@@ -31,7 +31,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToDSE_FUN_0047e810(CKeyFramed
   
   if (1 < this_ptr->frame_count) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
-    g_CurrentLineNumber = 0xe07;
+    g_CurrentLineNumber = 3591;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CKeyFramedModel::exportToDSE - can't export multiple-frame model to DSE");
   }
   g_VertexCount = this_ptr->vertex_count;

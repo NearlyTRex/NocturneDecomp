@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 60,
+    "complexity_score": 45,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 45,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 156
   },
   "cross_references": [
@@ -208,6 +206,15 @@
       "severity": "moderate",
       "text": "pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Allocation size hardcodes 0x31c == sizeof(CAmmo). Replace the magic with sizeof(CAmmo) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 19,
+      "match": "(CAmmo*) alloc stride 0x31c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,\"..\\\\core\\\\ammobox.cpp\",161)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -233,14 +240,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x31c == sizeof(CAmmo). Replace the magic with sizeof(CAmmo) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 19,
-      "match": "(CAmmo*) alloc stride 0x31c",
-      "severity": "moderate",
-      "text": "(CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,\"..\\\\core\\\\ammobox.cpp\",0xa1)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

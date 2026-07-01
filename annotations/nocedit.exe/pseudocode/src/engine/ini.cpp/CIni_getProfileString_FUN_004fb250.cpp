@@ -30,10 +30,10 @@ int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004fb250(CIni *this_ptr,cha
   bVar8 = 0;
   bVar3 = false;
   stream = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (filename,(char *)0x0,"rt","..\\engine\\ini.cpp",0x56);
+                     (filename,(char *)0x0,"rt","..\\engine\\ini.cpp",86);
   if (stream == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\ini.cpp";
-    g_CurrentLineNumber = 0x57;
+    g_CurrentLineNumber = 87;
     core_main_c_displayErrorAndQuit_FUN_00506f10("cIni::getProfileString: Unable to open input");
   }
   _sprintf(local_110,"[%s]\n",section);
@@ -68,7 +68,7 @@ LAB_004fb3b0:
   } while( true );
   bVar3 = true;
 LAB_004fb2d7:
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\ini.cpp",0x99);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\ini.cpp",153);
   if (bVar3) {
     pcVar6 = local_e1 + 1;
     uVar7 = 0xffffffff;

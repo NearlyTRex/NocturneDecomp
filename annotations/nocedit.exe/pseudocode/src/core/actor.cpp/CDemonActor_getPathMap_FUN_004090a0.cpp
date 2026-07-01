@@ -10,6 +10,6 @@ CPathMap * __cdecl core_actor_cpp_CDemonActor_getPathMap_FUN_004090a0(CDemonActo
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x36c);
+            (this_ptr,"..\\core\\actor.cpp",876);
   return (CPathMap *)0x0;
 }

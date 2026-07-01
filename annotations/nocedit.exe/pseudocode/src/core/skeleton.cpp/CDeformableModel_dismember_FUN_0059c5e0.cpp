@@ -43,7 +43,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
   if (body_part_ptr != (CBodyPart *)0x0) {
     if (this_ptr->lod_info[lod_index].shadow_only_flag != 0) {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
-      g_CurrentLineNumber = 0x63d;
+      g_CurrentLineNumber = 1597;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::dismember - can't dismember shadow LOD.");
     }
     iVar12 = (int)this_ptr->lod_info + lod_index * 4 + -4;
@@ -62,7 +62,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
     iVar12 = local_30 + this_ptr->parts[part_index].cap_tri_counts[lod_index];
     if (4000 < this_ptr->vertex_count[lod_index]) {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
-      g_CurrentLineNumber = 0x652;
+      g_CurrentLineNumber = 1618;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::dismember - too many vertices!");
     }
     memset(g_VertexRemapTable,0,this_ptr->vertex_count[lod_index] << 2);
@@ -126,7 +126,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
     }
     if (iVar5 != body_part_ptr->vertex_count) {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
-      g_CurrentLineNumber = 0x688;
+      g_CurrentLineNumber = 1672;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::dismember - Hell froze 1!");
     }
     if (local_2c < iVar8) {
@@ -199,7 +199,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
     }
     if (local_14 != body_part_ptr->tri_count) {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
-      g_CurrentLineNumber = 0x6bf;
+      g_CurrentLineNumber = 1727;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::dismember - Hell froze 2!");
       return;
     }

@@ -15,7 +15,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(
   iVar1 = (this_ptr->course).len;
   if (iVar1 < 1) {
     g_CurrentFilename = "..\\core\\frankgen.cpp";
-    g_CurrentLineNumber = 0x1dc;
+    g_CurrentLineNumber = 476;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CFrankenstienMachine::setCourseFrame - no course!");
   }
   local_20 = ((float)iVar1 * (this_ptr->master_frame - start_frame)) / (end_frame - start_frame);

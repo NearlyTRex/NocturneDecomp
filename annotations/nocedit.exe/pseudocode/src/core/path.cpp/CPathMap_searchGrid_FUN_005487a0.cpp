@@ -38,7 +38,7 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_005487a0(CPathMap *this_ptr,i
     }
     if (g_PathfindingQueueHead == g_PathfindingQueueTail) {
       g_CurrentFilename = "..\\core\\path.cpp";
-      g_CurrentLineNumber = 0xdf;
+      g_CurrentLineNumber = 223;
       core_main_c_displayErrorAndQuit_FUN_00506f10("queuePop - empty queue?!");
     }
     grid_x = g_PathfindingQueue[g_PathfindingQueueHead].x;

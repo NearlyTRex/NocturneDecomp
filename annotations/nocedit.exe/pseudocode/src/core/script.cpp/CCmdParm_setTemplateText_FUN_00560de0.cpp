@@ -379,7 +379,7 @@ LAB_00560ead:
         while (cVar2 != '\'') {
           if (*pcVar6 == '\0') {
             g_CurrentFilename = "..\\core\\script.cpp";
-            g_CurrentLineNumber = 0x1188;
+            g_CurrentLineNumber = 4488;
             core_main_c_displayErrorAndQuit_FUN_00506f10
                       ("Missing closing ' in template string: %s",this_ptr->template_name);
           }

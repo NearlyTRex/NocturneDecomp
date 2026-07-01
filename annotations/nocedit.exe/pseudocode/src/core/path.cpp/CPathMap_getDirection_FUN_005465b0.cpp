@@ -111,7 +111,7 @@ switchD_0054667e_default:
       return local_a0 + (float)-2.356194490125;
     default:
       g_CurrentFilename = "..\\core\\path.cpp";
-      g_CurrentLineNumber = 0x183;
+      g_CurrentLineNumber = 387;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CPathMap::getDirection - Should never get here either");
     }
   }

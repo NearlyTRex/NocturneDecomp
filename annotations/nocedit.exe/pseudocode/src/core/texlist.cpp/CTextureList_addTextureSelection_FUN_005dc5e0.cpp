@@ -41,7 +41,7 @@ int __cdecl core_texlist_cpp_CTextureList_addTextureSelection_FUN_005dc5e0(CText
     return iVar3;
   }
   g_CurrentFilename = "..\\core\\texlist.cpp";
-  g_CurrentLineNumber = 0x15e;
+  g_CurrentLineNumber = 350;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureList::addTextureSelection - Too many textures!");
   return iVar3;
 }

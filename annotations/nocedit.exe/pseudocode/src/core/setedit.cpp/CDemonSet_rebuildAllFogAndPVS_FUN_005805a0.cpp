@@ -32,7 +32,7 @@ void __cdecl core_setedit_cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0(CDemonS
       ptr = pCVar2->cameras[0].pvs_list;
       pCVar2->cameras[0].pvs_count = 0;
       if (ptr != (int *)0x0) {
-        shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",0x1059);
+        shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",4185);
         pCVar2->cameras[0].pvs_list = (int *)0x0;
       }
       pCVar2 = (CDemonSet *)&pCVar2->cameras[0].enabled;

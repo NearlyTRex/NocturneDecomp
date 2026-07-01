@@ -19,7 +19,7 @@ void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(CNetGame *this_pt
   
   if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
-    g_CurrentLineNumber = 0x735;
+    g_CurrentLineNumber = 1845;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::updatePing - invalid player index");
   }
   iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();

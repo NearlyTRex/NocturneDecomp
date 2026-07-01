@@ -24,7 +24,7 @@ void __cdecl core_setutil_cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight *this_p
     return;
   }
   g_CurrentFilename = "..\\core\\setutil.cpp";
-  g_CurrentLineNumber = 0x4c5;
+  g_CurrentLineNumber = 1221;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown light type!");
   return;
 }

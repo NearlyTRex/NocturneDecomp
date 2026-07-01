@@ -11,7 +11,7 @@ CBaronWeapon * __cdecl core_baron_cpp_factoryFuncBaronWeapon_FUN_00413d00(void)
 {
   CBaronWeapon *pCVar1;
   
-  pCVar1 = (CBaronWeapon *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x57c,"..\\core\\baron.cpp",0x2ab);
+  pCVar1 = (CBaronWeapon *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x57c,"..\\core\\baron.cpp",683);
   if (pCVar1 == (CBaronWeapon *)0x0) {
     return (CBaronWeapon *)0x0;
   }

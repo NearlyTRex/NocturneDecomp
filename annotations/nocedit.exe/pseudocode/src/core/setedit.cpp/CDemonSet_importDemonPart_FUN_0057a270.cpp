@@ -10,7 +10,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importDemonPart_FUN_0057a270(CDemonSet *
 
 {
   g_CurrentFilename = "..\\core\\setedit.cpp";
-  g_CurrentLineNumber = 0x6c0;
+  g_CurrentLineNumber = 1728;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Import set from demon part is broken again");
   return;
 }

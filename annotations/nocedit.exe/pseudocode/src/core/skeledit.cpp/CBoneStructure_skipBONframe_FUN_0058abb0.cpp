@@ -20,7 +20,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStr
         return;
       }
       g_CurrentFilename = "..\\core\\skeledit.cpp";
-      g_CurrentLineNumber = 0x34a;
+      g_CurrentLineNumber = 842;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneStructure::skipBONframe - error reading file!");
       return;
     }

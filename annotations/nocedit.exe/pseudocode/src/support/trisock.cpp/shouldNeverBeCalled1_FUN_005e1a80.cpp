@@ -10,7 +10,7 @@ int __cdecl support_trisock_cpp_shouldNeverBeCalled1_FUN_005e1a80(int unknown1,i
 
 {
   g_CurrentFilename = "..\\support\\trisock.cpp";
-  g_CurrentLineNumber = 0xd0;
+  g_CurrentLineNumber = 208;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Should never be called!");
   return unknown1;
 }

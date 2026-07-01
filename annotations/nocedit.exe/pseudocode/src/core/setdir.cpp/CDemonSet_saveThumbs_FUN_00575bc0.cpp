@@ -108,7 +108,7 @@ LAB_00575c24:
       }
       if (uVar3 < 6) break;
       g_CurrentFilename = "..\\core\\setdir.cpp";
-      g_CurrentLineNumber = 0x39d;
+      g_CurrentLineNumber = 925;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze");
     }
   } while( true );

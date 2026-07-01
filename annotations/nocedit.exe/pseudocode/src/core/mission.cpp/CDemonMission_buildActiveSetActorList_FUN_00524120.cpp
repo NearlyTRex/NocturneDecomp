@@ -22,7 +22,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
       return;
     }
     core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-              (this_ptr_00,"..\\core\\mission.cpp",0x423);
+              (this_ptr_00,"..\\core\\mission.cpp",1059);
     if ((this_ptr_00->location).area_id == this_ptr->current_set_index) {
       if (this_ptr_00->lifecycle_state == ACTOR_NOT_CREATED) {
         if (this_ptr_00->create_event[0] != '\0') {
@@ -41,7 +41,7 @@ void __cdecl core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120
 LAB_005241b1:
           if (1999 < g_CDemonSetPtr->actor_count) {
             g_CurrentFilename = "..\\core\\mission.cpp";
-            g_CurrentLineNumber = 0x44e;
+            g_CurrentLineNumber = 1102;
             core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::buildActiveSetActorList - Too many actors in current set!");
           }
           pCVar1 = g_CDemonSetPtr;

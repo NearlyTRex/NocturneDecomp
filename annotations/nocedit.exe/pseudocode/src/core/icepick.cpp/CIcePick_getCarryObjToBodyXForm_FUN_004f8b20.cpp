@@ -43,7 +43,7 @@ void __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20(
   }
   else {
     g_CurrentFilename = "..\\core\\icepick.cpp";
-    g_CurrentLineNumber = 0x28a;
+    g_CurrentLineNumber = 650;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&local_78,&local_3c,&local_24);

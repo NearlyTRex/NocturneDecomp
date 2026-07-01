@@ -54,7 +54,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_setup_FUN_0041bd90(CBoneGuy *this_ptr)
   this_ptr->box_count = iVar1;
   if (0x14 < iVar1) {
     g_CurrentFilename = "..\\core\\boneguy.cpp";
-    g_CurrentLineNumber = 0x12f;
+    g_CurrentLineNumber = 303;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneGuy::explode - Not enough containers");
   }
   (this_ptr->base).base.carry_hands[0].bone_index = g_BoneGuyIndices[1];

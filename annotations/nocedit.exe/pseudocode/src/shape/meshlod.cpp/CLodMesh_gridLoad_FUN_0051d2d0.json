@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 61,
+    "complexity_score": 46,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 46,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 167
   },
   "cross_references": [
@@ -186,6 +184,17 @@
     },
     "pcode_op_count": 422
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x4004 == sizeof(SSpatialGrid). Replace the magic with sizeof(SSpatialGrid) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 13,
+      "match": "(SSpatialGrid*) alloc stride 0x4004",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SSpatialGrid *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->spatial_grid_ptr,0x4004,\"..\\\\shape\\\\meshlod.cpp\",5231)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 32,
     "local_size": 24,
@@ -216,14 +225,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x4004 == sizeof(SSpatialGrid). Replace the magic with sizeof(SSpatialGrid) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 13,
-      "match": "(SSpatialGrid*) alloc stride 0x4004",
-      "severity": "moderate",
-      "text": "(SSpatialGrid *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->spatial_grid_ptr,0x4004,\"..\\\\shape\\\\meshlod.cpp\",0x146f)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

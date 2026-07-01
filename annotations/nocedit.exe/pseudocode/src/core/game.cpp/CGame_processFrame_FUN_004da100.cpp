@@ -231,7 +231,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                   local_38 = local_38 + 1;
                 } while (local_38 < g_MovieRecordingHeight);
               }
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_34,"..\\core\\game.cpp",0x110);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_34,"..\\core\\game.cpp",272);
               engine_2d_c_drawText_FUN_00401fd0(local_1dc,0,0);
               g_MovieRecordingFrameCounter = g_MovieRecordingFrameCounter + 1;
             }

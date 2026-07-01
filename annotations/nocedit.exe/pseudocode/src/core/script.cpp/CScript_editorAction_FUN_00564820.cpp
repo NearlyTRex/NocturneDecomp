@@ -44,7 +44,7 @@ void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr
                         (this_ptr,g_CurrentEditingLine,g_CurrentEditingColumn);
       if ((int)uVar9 < 1) {
         g_CurrentFilename = "..\\core\\script.cpp";
-        g_CurrentLineNumber = 0x16c1;
+        g_CurrentLineNumber = 5825;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze");
       }
       core_script_cpp_CScript_loadLineToBuffer_FUN_00566230(this_ptr,g_CurrentEditingLine);
@@ -154,10 +154,10 @@ void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr
         }
         local_20 = ((local_28 + iVar12) - local_2c) + 1;
         local_14 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                             (local_14,local_20,"..\\core\\script.cpp",0x172e);
+                             (local_14,local_20,"..\\core\\script.cpp",5934);
         if (local_14 == (char *)0x0) {
           g_CurrentFilename = "..\\core\\script.cpp";
-          g_CurrentLineNumber = 0x172f;
+          g_CurrentLineNumber = 5935;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
         }
         pcVar11 = g_CurrentLineBuffer + local_2c + 1;
@@ -185,7 +185,7 @@ void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr
     if (local_14 == (char *)0x0) {
       return;
     }
-    shape_memdbg_cpp_debugFree_FUN_0050f460(local_14,"..\\core\\script.cpp",0x173c);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(local_14,"..\\core\\script.cpp",5948);
     return;
   case ACTION_TYPE_PASTE:
     core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CUT,0);
@@ -317,7 +317,7 @@ void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr
                         (this_ptr,g_CurrentEditingLine,g_CurrentEditingColumn);
       if (iVar3 < 1) {
         g_CurrentFilename = "..\\core\\script.cpp";
-        g_CurrentLineNumber = 0x177c;
+        g_CurrentLineNumber = 6012;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze");
       }
       core_script_cpp_CScript_loadLineToBuffer_FUN_00566230(this_ptr,g_CurrentEditingLine);
@@ -430,7 +430,7 @@ void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr
     break;
   default:
     g_CurrentFilename = "..\\core\\script.cpp";
-    g_CurrentLineNumber = 0x180d;
+    g_CurrentLineNumber = 6157;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CScript::editorAction - unknown action: %d parm %d",action_type,action_parm);
     return;

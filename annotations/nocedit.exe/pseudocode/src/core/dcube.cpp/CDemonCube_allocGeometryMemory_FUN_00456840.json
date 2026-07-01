@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 90,
+    "complexity_score": 55,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 17,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 55,
-    "suspect_count": 3,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 182
   },
   "cross_references": [
@@ -245,6 +243,35 @@
     },
     "pcode_op_count": 445
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3f). Replace the magic with sizeof(CVector3f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 13,
+      "match": "(CVector3f*) alloc stride 0xc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar1 * 0xc + 4,\"..\\\\core\\\\dcube.cpp\",1535)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x40 == sizeof(SVoxelGrid). Replace the magic with sizeof(SVoxelGrid) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 42,
+      "match": "(SVoxelGrid*) alloc stride 0x40",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SVoxelGrid *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x40,\"..\\\\core\\\\dcube.cpp\",1541)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x40 == sizeof(SVoxelGrid). Replace the magic with sizeof(SVoxelGrid) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 49,
+      "match": "(SVoxelGrid*) alloc stride 0x40",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SVoxelGrid *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x40,\"..\\\\core\\\\dcube.cpp\",1543)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -261,30 +288,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0xc == sizeof(CVector3f). Replace the magic with sizeof(CVector3f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 13,
-      "match": "(CVector3f*) alloc stride 0xc",
-      "severity": "moderate",
-      "text": "(CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar1 * 0xc + 4,\"..\\\\core\\\\dcube.cpp\",0x5ff)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0x40 == sizeof(SVoxelGrid). Replace the magic with sizeof(SVoxelGrid) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 42,
-      "match": "(SVoxelGrid*) alloc stride 0x40",
-      "severity": "moderate",
-      "text": "(SVoxelGrid *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x40,\"..\\\\core\\\\dcube.cpp\",0x605)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0x40 == sizeof(SVoxelGrid). Replace the magic with sizeof(SVoxelGrid) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 49,
-      "match": "(SVoxelGrid*) alloc stride 0x40",
-      "severity": "moderate",
-      "text": "(SVoxelGrid *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x40,\"..\\\\core\\\\dcube.cpp\",0x607)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

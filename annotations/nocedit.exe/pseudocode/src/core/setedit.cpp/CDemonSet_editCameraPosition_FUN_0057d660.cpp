@@ -101,7 +101,7 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
 LAB_0057d6df:
   if (pcVar16 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0xc3b;
+    g_CurrentLineNumber = 3131;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find .GEO");
   }
   _sprintf(pcVar16,".KFM");
@@ -128,11 +128,11 @@ LAB_0057d6df:
   p_Stack_20 = p_Var10;
   if (p_Var10 != (_FILE *)0x0) {
     pvStack_24 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                           (0x4b000,"..\\core\\setedit.cpp",0xc64);
+                           (0x4b000,"..\\core\\setedit.cpp",3172);
     if (pvStack_24 != (void *)0x0) {
       _fread(pvStack_24,0x280,0x1e0,p_Var10);
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_20,"..\\core\\setedit.cpp",0xc68);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_20,"..\\core\\setedit.cpp",3176);
     _sprintf(acStack_f0,"%s.act",this_ptr->cameras + camera_index);
     p_Stack_20 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",acStack_f0,"rb")
     ;
@@ -159,16 +159,16 @@ LAB_0057d6df:
         *(int *)(&stack0xffffee80 + iVar21) = (int)uVar12 / 3 + (int)fStack_50 + iStack_4c;
         iVar21 = iVar14;
       } while (iVar14 != 0x400);
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_20,"..\\core\\setedit.cpp",0xc73);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_20,"..\\core\\setedit.cpp",3187);
     }
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   pvStack_1c = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                         (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",0xc81);
+                         (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",3201);
   if (pvStack_1c == (void *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0xc82;
+    g_CurrentLineNumber = 3202;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
   fStack_58 = 0.0;
@@ -264,7 +264,7 @@ LAB_0057db4e:
         engine_2d_c_setupViewportAndClipping_FUN_00401800
                   (0,0,g_WindowWidth + -1,g_WindowHeight + -1);
         if (local_s1 != (char *)0x0) {
-          shape_memdbg_cpp_debugFree_FUN_0050f460(local_s1,"..\\core\\setedit.cpp",0xd8c);
+          shape_memdbg_cpp_debugFree_FUN_0050f460(local_s1,"..\\core\\setedit.cpp",3468);
           return iStack_44;
         }
         return iStack_44;
@@ -316,7 +316,7 @@ LAB_0057db4e:
     else {
       if ((g_WindowWidth != 0x280) || (g_WindowHeight != 0x1e0)) {
         g_CurrentFilename = "..\\core\\setedit.cpp";
-        g_CurrentLineNumber = 0xc92;
+        g_CurrentLineNumber = 3218;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Screen must be 640x480!");
       }
       p_Stack_20 = (_FILE *)0x0;

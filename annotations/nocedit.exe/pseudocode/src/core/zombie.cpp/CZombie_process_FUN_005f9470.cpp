@@ -296,7 +296,7 @@ LAB_005f9541:
       iVar6 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005fbd00(this_ptr,2);
       if (iVar6 < 0) {
         g_CurrentFilename = "..\\core\\zombie.cpp";
-        g_CurrentLineNumber = 0x1ee;
+        g_CurrentLineNumber = 494;
         core_main_c_displayErrorAndQuit_FUN_00506f10("WTF!");
       }
       pCVar18 = (this_ptr->base).base.carry_hands[iVar6].carry_actor;
@@ -316,7 +316,7 @@ LAB_005f9541:
       iVar6 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005fbd00(this_ptr,3);
       if (iVar6 < 0) {
         g_CurrentFilename = "..\\core\\zombie.cpp";
-        g_CurrentLineNumber = 0x205;
+        g_CurrentLineNumber = 517;
         core_main_c_displayErrorAndQuit_FUN_00506f10("WTF!");
       }
       pCVar18 = (this_ptr->base).base.carry_hands[iVar6].carry_actor;

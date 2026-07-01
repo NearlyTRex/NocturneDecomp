@@ -15,7 +15,7 @@ void __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive
   
   if (primitive == (SMRGLHeaderPrimitive *)0x0) {
     g_CurrentFilename = "..\\engine\\3d.c";
-    g_CurrentLineNumber = 0xc82;
+    g_CurrentLineNumber = 3202;
     core_main_c_displayErrorAndQuit_FUN_00506f10("renderPrim: Bad input pointer");
   }
   iVar1 = (primitive->base).type;
@@ -25,7 +25,7 @@ void __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive
   }
   _sprintf(local_104,"Bad prim : %d",iVar1);
   g_CurrentFilename = "..\\engine\\3d.c";
-  g_CurrentLineNumber = 0xc8b;
+  g_CurrentLineNumber = 3211;
   core_main_c_displayErrorAndQuit_FUN_00506f10(local_104);
   return;
 }

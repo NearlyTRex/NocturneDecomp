@@ -18,7 +18,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_addTriangle_FUN_00495100(CDemonRaytr
   this_ptr->triangle_count = iVar1;
   if (199999 < iVar1) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
-    g_CurrentLineNumber = 0x290;
+    g_CurrentLineNumber = 656;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::addTriangle - Too many triangles!");
   }
   if (vertex1->x < (this_ptr->bbox_min).x) {

@@ -11,7 +11,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0054a8e0(CPackedBitmap 
 {
   if (this_ptr->packed_data != (ushort *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->packed_data,"..\\cockpit\\pkbitmap.cpp",0x98);
+              (this_ptr->packed_data,"..\\cockpit\\pkbitmap.cpp",152);
   }
   g_CurrentDebugFilename = "..\\cockpit\\pkbitmap.cpp";
   g_CurrentDebugLine = 0x99;

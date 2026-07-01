@@ -10,7 +10,7 @@ void __cdecl core_dpart_cpp_CDemonPart_load_FUN_00482490(CDemonPart *this_ptr)
 
 {
   g_CurrentFilename = "..\\core\\dpart.cpp";
-  g_CurrentLineNumber = 0x128;
+  g_CurrentLineNumber = 296;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonPart::load is no longer needed");
   return;
 }

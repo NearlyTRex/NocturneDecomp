@@ -46,7 +46,7 @@ LAB_00556b15:
   }
   _sprintf(local_68,"Invalid bit depth [%d] for bitmap",bit_depth & 0xff);
   g_CurrentFilename = "..\\shape\\quantize.cpp";
-  g_CurrentLineNumber = 0x67;
+  g_CurrentLineNumber = 103;
   core_main_c_displayErrorAndQuit_FUN_00506f10(local_68);
 LAB_00556a6b:
   this_ptr->height = (short)height;
@@ -56,22 +56,22 @@ LAB_00556a6b:
   this_ptr->bytes_per_row = uVar5;
   pvVar1 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      ((uint)(ushort)this_ptr->height * (uint)uVar5,"..\\shape\\quantize.cpp",
-                      0x498);
+                      1176);
   this_ptr->pixel_data = pvVar1;
   if (pvVar1 == (void *)0x0) {
     g_CurrentFilename = "..\\shape\\quantize.cpp";
-    g_CurrentLineNumber = 0x67;
+    g_CurrentLineNumber = 103;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Could not allocate data buffer.");
   }
   ppvVar2 = (void **)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                      ((uint)(ushort)this_ptr->height << 2,"..\\shape\\quantize.cpp",0x49d);
+                      ((uint)(ushort)this_ptr->height << 2,"..\\shape\\quantize.cpp",1181);
   this_ptr->row_table = ppvVar2;
   if (ppvVar2 == (void **)0x0) {
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x4a1;
     shape_memdbg_cpp_free_FUN_005fe659(this_ptr->pixel_data);
     g_CurrentFilename = "..\\shape\\quantize.cpp";
-    g_CurrentLineNumber = 0x67;
+    g_CurrentLineNumber = 103;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Could not allocate row table.");
   }
   iVar4 = 0;
@@ -82,11 +82,11 @@ LAB_00556a6b:
   }
   if (this_ptr->bit_depth == '\b') {
     pvVar2 = shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                       (0x300,"..\\shape\\quantize.cpp",0x4ac);
+                       (0x300,"..\\shape\\quantize.cpp",1196);
     this_ptr->palette = pvVar2;
     if (pvVar2 == (void *)0x0) {
       g_CurrentFilename = "..\\shape\\quantize.cpp";
-      g_CurrentLineNumber = 0x67;
+      g_CurrentLineNumber = 103;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to allocate memory for palette.");
       return this_ptr;
     }

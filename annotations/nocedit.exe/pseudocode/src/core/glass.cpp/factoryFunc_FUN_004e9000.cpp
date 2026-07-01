@@ -11,7 +11,7 @@ CGlass * __cdecl core_glass_cpp_factoryFunc_FUN_004e9000(void)
 {
   CGlass *pCVar1;
   
-  pCVar1 = (CGlass *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xb40,"..\\core\\glass.cpp",0x2c);
+  pCVar1 = (CGlass *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xb40,"..\\core\\glass.cpp",44);
   if (pCVar1 == (CGlass *)0x0) {
     return (CGlass *)0x0;
   }

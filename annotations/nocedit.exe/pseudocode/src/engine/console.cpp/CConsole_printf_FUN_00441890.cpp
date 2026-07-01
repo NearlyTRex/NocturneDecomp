@@ -42,10 +42,10 @@ void __cdecl engine_console_cpp_CConsole_printf_FUN_00441890(CConsole *this_ptr,
   if (this_ptr->file_logging_enabled != 0) {
     file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (g_ConsoleLogFilename,(char *)0x0,"at","..\\engine\\console.cpp",
-                      0x4a);
+                      74);
     if (file != (_FILE *)0x0) {
       _fprintf(file,"%s",local_1014);
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\console.cpp",0x4d);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\console.cpp",77);
       return;
     }
   }

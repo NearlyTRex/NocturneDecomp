@@ -514,7 +514,7 @@ LAB_005327f7:
             goto LAB_005327f7;
           }
           g_CurrentFilename = "..\\sound\\mp3.cpp";
-          g_CurrentLineNumber = 0x9bd;
+          g_CurrentLineNumber = 2493;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("Error in streo processing.  File: %s",g_CurrentMp3Filename);
         }

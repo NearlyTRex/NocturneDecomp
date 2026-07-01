@@ -51,14 +51,14 @@ void __cdecl core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bd
                           (g_CEditorToolsPtr,"Enter volume name",local_1a4,100,1),
        iVar3 != 0)) {
       file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       (local_598,(char *)0x0,"rt","..\\core\\fileman.cpp",0xb9);
+                       (local_598,(char *)0x0,"rt","..\\core\\fileman.cpp",185);
       engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10(&this_ptr->base);
 LAB_004bdb2c:
       do {
         do {
           iVar3 = _fscanf(file," %[^\n]\n",local_798);
           if (iVar3 != 1) {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\fileman.cpp",0x12d);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\fileman.cpp",301);
             engine_fileio_cpp_CFileManager_closeExtractFile_FUN_004b7c60(&this_ptr->base);
             engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                       (&this_ptr->base,local_140,(char *)0x0);
@@ -259,7 +259,7 @@ LAB_004bdb2c:
                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                 (g_CEditorToolsPtr,"Invalid tag \"%s\"",local_2a5 + 1);
                       shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                                (file,"..\\core\\fileman.cpp",0x126);
+                                (file,"..\\core\\fileman.cpp",294);
                       return;
                     }
                     core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0

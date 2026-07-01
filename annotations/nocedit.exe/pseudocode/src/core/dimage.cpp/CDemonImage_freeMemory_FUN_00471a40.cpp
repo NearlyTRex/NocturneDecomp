@@ -12,7 +12,7 @@ void __cdecl core_dimage_cpp_CDemonImage_freeMemory_FUN_00471a40(CDemonImage *th
   if (this_ptr->data == (void *)0x0) {
     return;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->data,"..\\core\\dimage.cpp",0x36);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->data,"..\\core\\dimage.cpp",54);
   this_ptr->data = (void *)0x0;
   return;
 }

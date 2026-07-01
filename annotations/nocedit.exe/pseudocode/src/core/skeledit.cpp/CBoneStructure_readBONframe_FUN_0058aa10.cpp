@@ -26,7 +26,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStr
       do {
         do {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
-          g_CurrentLineNumber = 0x310;
+          g_CurrentLineNumber = 784;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneStructure::readBONframe - file is corrupt!");
 LAB_0058aa88:
           iVar4 = _fscanf(file,"%f,%f,%f\n",&this_ptr->bones[iVar3].world_matrix.m[0].x,
@@ -75,7 +75,7 @@ LAB_0058aa88:
     return;
   }
   g_CurrentFilename = "..\\core\\skeledit.cpp";
-  g_CurrentLineNumber = 0x33b;
+  g_CurrentLineNumber = 827;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneStructure::readBONframe - error reading file!");
   return;
 }

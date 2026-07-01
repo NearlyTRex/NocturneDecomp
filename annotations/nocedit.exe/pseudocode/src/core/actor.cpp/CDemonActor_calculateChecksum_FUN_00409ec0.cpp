@@ -10,7 +10,7 @@ void __cdecl core_actor_cpp_CDemonActor_calculateChecksum_FUN_00409ec0(CDemonAct
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x522);
+            (this_ptr,"..\\core\\actor.cpp",1314);
   core_actor_cpp_crc32ProcessString_FUN_0040cf90(out_crc,this_ptr->actor_name);
   core_actor_cpp_crc32ProcessVector_FUN_0040cf70(out_crc,&(this_ptr->location).position);
   core_actor_cpp_crc32ProcessVector_FUN_0040cf70(out_crc,&(this_ptr->orient).vec);

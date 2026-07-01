@@ -18,14 +18,14 @@ void __cdecl core_skeledit_cpp_CDeformableModel_groundBias_FUN_0058e4e0(CDeforma
   int local_14;
   
   this_ptr_00 = (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                          (0x22b4,"..\\core\\skeledit.cpp",0x9bc);
+                          (0x22b4,"..\\core\\skeledit.cpp",2492);
   this_ptr_01 = (CDeformableModelInstance *)0x0;
   if (this_ptr_00 != (CDeformableModelInstance *)0x0) {
     this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(this_ptr_00);
   }
   if (this_ptr_01 == (CDeformableModelInstance *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0x9bd;
+    g_CurrentLineNumber = 2493;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::groundBias - out of memory!");
   }
   core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480(this_ptr_01,this_ptr);

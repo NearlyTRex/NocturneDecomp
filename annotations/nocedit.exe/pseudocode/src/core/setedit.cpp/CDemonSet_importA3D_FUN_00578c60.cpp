@@ -10,7 +10,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importA3D_FUN_00578c60(CDemonSet *this_p
 
 {
   g_CurrentFilename = "..\\core\\setedit.cpp";
-  g_CurrentLineNumber = 0x41b;
+  g_CurrentLineNumber = 1051;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Import A3D is broken again");
   return;
 }

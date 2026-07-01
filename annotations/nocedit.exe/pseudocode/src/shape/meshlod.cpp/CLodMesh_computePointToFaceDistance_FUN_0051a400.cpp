@@ -96,7 +96,7 @@ double __cdecl shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a40
     return (double)(fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4);
   default:
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0xec8;
+    g_CurrentLineNumber = 3784;
     core_main_c_displayErrorAndQuit_FUN_00506f10("!");
     pCVar4 = shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870(this_ptr,&local_80,face);
     fVar4 = (sample_point->position).x - pCVar4->x;

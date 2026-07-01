@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 620,
-    "complexity_score": 241,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 54,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 216,
-    "suspect_count": 2,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 836
   },
   "cross_references": [
@@ -748,6 +746,24 @@
       "severity": "mild",
       "text": "aiStack_1c[1]._3_1_ = \"memdump.txt\"[0xb];",
       "type": "unknown_field"
+    },
+    {
+      "description": "Allocation size hardcodes 0x56d8 == sizeof(CKeyFramedModel). Replace the magic with sizeof(CKeyFramedModel) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 80,
+      "match": "(CKeyFramedModel*) alloc stride 0x56d8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CKeyFramedModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x56d8,\"..\\\\core\\\\main.c\",628)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0xc2c == sizeof(CMorph). Replace the magic with sizeof(CMorph) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 115,
+      "match": "(CMorph*) alloc stride 0xc2c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CMorph *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xc2c,\"..\\\\core\\\\main.c\",658)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -822,22 +838,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x56d8 == sizeof(CKeyFramedModel). Replace the magic with sizeof(CKeyFramedModel) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 80,
-      "match": "(CKeyFramedModel*) alloc stride 0x56d8",
-      "severity": "moderate",
-      "text": "(CKeyFramedModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x56d8,\"..\\\\core\\\\main.c\",0x274)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0xc2c == sizeof(CMorph). Replace the magic with sizeof(CMorph) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 115,
-      "match": "(CMorph*) alloc stride 0xc2c",
-      "severity": "moderate",
-      "text": "(CMorph *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xc2c,\"..\\\\core\\\\main.c\",0x292)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

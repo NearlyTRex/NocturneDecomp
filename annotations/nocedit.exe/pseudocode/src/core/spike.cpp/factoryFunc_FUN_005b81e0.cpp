@@ -11,7 +11,7 @@ CSpike * __cdecl core_spike_cpp_factoryFunc_FUN_005b81e0(void)
 {
   CSpike *pCVar1;
   
-  pCVar1 = (CSpike *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x560,"..\\core\\spike.cpp",0x21);
+  pCVar1 = (CSpike *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x560,"..\\core\\spike.cpp",33);
   if (pCVar1 == (CSpike *)0x0) {
     return (CSpike *)0x0;
   }

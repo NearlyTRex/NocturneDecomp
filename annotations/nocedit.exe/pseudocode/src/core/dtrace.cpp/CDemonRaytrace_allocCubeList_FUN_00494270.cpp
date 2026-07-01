@@ -13,13 +13,13 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00494270(CDemonRay
   
   pSVar1 = (SVoxelCubeMetadata *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (0x58,(this_ptr->grid_coord).x * (this_ptr->grid_coord).y *
-                           (this_ptr->grid_coord).z,"..\\core\\dtrace.cpp",0x87);
+                           (this_ptr->grid_coord).z,"..\\core\\dtrace.cpp",135);
   this_ptr->cube_list = pSVar1;
   if (pSVar1 != (SVoxelCubeMetadata *)0x0) {
     return;
   }
   g_CurrentFilename = "..\\core\\dtrace.cpp";
-  g_CurrentLineNumber = 0x88;
+  g_CurrentLineNumber = 136;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::allocCubeList - Out of memory!");
   return;
 }

@@ -8,16 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 1482,
+    "complexity_score": 1437,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 1437,
-    "suspect_count": 4,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 4837
   },
   "cross_references": [
@@ -2243,6 +2241,42 @@
       "type": "shadow_pointer_walk"
     },
     {
+      "description": "Allocation size hardcodes 0x3c == sizeof(SS3DFaceMatch). Replace the magic with sizeof(SS3DFaceMatch) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 414,
+      "match": "(SS3DFaceMatch*) alloc stride 0x3c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SS3DFaceMatch *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)local_16c * 0x3c,\"..\\\\core\\\\skeledit.cpp\",3150)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3f). Replace the magic with sizeof(CVector3f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 619,
+      "match": "(CVector3f*) alloc stride 0xc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)local_16c * 0xc + 4,\"..\\\\core\\\\skeledit.cpp\",3343)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3f). Replace the magic with sizeof(CVector3f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 627,
+      "match": "(CVector3f*) alloc stride 0xc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar8 * 0xc + 4,\"..\\\\core\\\\skeledit.cpp\",3344)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x12 == sizeof(SInputFace). Replace the magic with sizeof(SInputFace) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 1132,
+      "match": "(SInputFace*) alloc stride 0x12",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((this_ptr->tri_count[0] + local_158) * 0x12, \"..\\\\core\\\\skeledit.cpp\",3866)",
+      "type": "alloc_magic_size"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 00591694, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 2229,
       "match": "MOVSD.REP",
@@ -3659,38 +3693,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x3c == sizeof(SS3DFaceMatch). Replace the magic with sizeof(SS3DFaceMatch) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 414,
-      "match": "(SS3DFaceMatch*) alloc stride 0x3c",
-      "severity": "moderate",
-      "text": "(SS3DFaceMatch *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)local_16c * 0x3c,\"..\\\\core\\\\skeledit.cpp\",0xc4e)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0xc == sizeof(CVector3f). Replace the magic with sizeof(CVector3f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 619,
-      "match": "(CVector3f*) alloc stride 0xc",
-      "severity": "moderate",
-      "text": "(CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)local_16c * 0xc + 4,\"..\\\\core\\\\skeledit.cpp\",0xd0f)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0xc == sizeof(CVector3f). Replace the magic with sizeof(CVector3f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 627,
-      "match": "(CVector3f*) alloc stride 0xc",
-      "severity": "moderate",
-      "text": "(CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar8 * 0xc + 4,\"..\\\\core\\\\skeledit.cpp\",0xd10)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0x12 == sizeof(SInputFace). Replace the magic with sizeof(SInputFace) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 1132,
-      "match": "(SInputFace*) alloc stride 0x12",
-      "severity": "moderate",
-      "text": "(SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((this_ptr->tri_count[0] + local_158) * 0x12, \"..\\\\core\\\\skeledit.cpp\",0xf1a)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

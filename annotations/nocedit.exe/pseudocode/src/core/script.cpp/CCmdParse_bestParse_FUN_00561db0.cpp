@@ -43,7 +43,7 @@ int __cdecl core_script_cpp_CCmdParse_bestParse_FUN_00561db0(CCmdParse *this_ptr
         }
         else if (0x13 < iVar4) {
           g_CurrentFilename = "..\\core\\script.cpp";
-          g_CurrentLineNumber = 0x1289;
+          g_CurrentLineNumber = 4745;
           core_main_c_displayErrorAndQuit_FUN_00506f10("SCmdParse::bestParse - too many matches!");
         }
         local_6c[iVar4] = iVar7;

@@ -22,7 +22,7 @@ uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,in
   
   iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880(&s_EmptyChar_0064015e,filename);
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0xf2);
+                   (filename,(char *)0x0,"rb","..\\engine\\pod.cpp",242);
   size = iVar2 - start_offset;
   current_crc = 0xffffffff;
   _fseek(file,start_offset,0);
@@ -48,6 +48,6 @@ uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,in
       uVar2 = uVar2 + 1;
     } while (uVar2 < size);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pod.cpp",0xfb);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pod.cpp",251);
   return current_crc;
 }

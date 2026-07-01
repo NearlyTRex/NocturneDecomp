@@ -577,10 +577,10 @@ LAB_00447500:
       }
       p_Var11 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                           ("..\\shape\\cramlog.txt",(char *)0x0,"at",
-                           "..\\shape\\cramtex.cpp",0x30d);
+                           "..\\shape\\cramtex.cpp",781);
       if (p_Var11 != (_FILE *)0x0) {
         _fprintf(p_Var11,"New best solution found!  thisSquareSize = %d\n",iVar18);
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var11,"..\\shape\\cramtex.cpp",0x310);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var11,"..\\shape\\cramtex.cpp",784);
       }
       if (iVar18 < g_CramBestSolutionMetric1) {
         iVar29 = 0;
@@ -724,12 +724,12 @@ LAB_00447500:
         shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(1,0,0);
         p_Var19 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                             ("..\\shape\\cramlog.txt",(char *)0x0,"at",
-                             "..\\shape\\cramtex.cpp",0x359);
+                             "..\\shape\\cramtex.cpp",857);
         if (p_Var19 != (_FILE *)0x0) {
           _fprintf(p_Var19,"Checking if solution acceptable.\n");
           _fprintf(p_Var19,"  bestSquareSize = %d, acceptableSize = %d\n",g_CramCurrentAcceptableSize,
                      g_CramAcceptableSize);
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var19,"..\\shape\\cramtex.cpp",0x35d);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var19,"..\\shape\\cramtex.cpp",861);
         }
         if (g_CramCurrentAcceptableSize <= g_CramAcceptableSize) {
           g_CramCandidateWriteCursor = ppSVar18;
@@ -783,7 +783,7 @@ joined_r0x00446b0b:
       else {
         p_Var19 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                             ("..\\shape\\cramlog.txt",(char *)0x0,"at",
-                             "..\\shape\\cramtex.cpp",0x318);
+                             "..\\shape\\cramtex.cpp",792);
         if (p_Var19 != (_FILE *)0x0) {
           _fprintf(p_Var19,"\n\nCRAMTEX BUG!\n");
           _fprintf(p_Var19,"bestSquareSize = %d, thisSquareSize = %d, mustBeatSquareSize = %d\n",g_CramCurrentAcceptableSize,iVar18,
@@ -832,7 +832,7 @@ joined_r0x00446b0b:
               iVar29 = iVar32;
             } while (iVar32 < g_CramTextureCount);
           }
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var19,"..\\shape\\cramtex.cpp",0x32f);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var19,"..\\shape\\cramtex.cpp",815);
         }
       }
     }

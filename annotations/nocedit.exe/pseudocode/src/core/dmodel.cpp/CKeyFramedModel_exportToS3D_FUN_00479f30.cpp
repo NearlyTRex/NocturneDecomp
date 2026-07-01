@@ -40,7 +40,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
   double dVar4;
   
   p_Var5 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (filename,(char *)0x0,"wt","..\\core\\dmodel.cpp",0x75b);
+                     (filename,(char *)0x0,"wt","..\\core\\dmodel.cpp",1883);
   if (p_Var5 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't create %s",filename);
@@ -119,6 +119,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
   }
   _fprintf(p_Var5,"// lightList: \"name\", type, x,y,z, r,g,b, (type-specific info)\n");
   _fprintf(p_Var5,"// cameraList: \"name\", x,y,z, p,b,h, fov(rad)\n");
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\dmodel.cpp",0x7a0);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\dmodel.cpp",1952);
   return;
 }

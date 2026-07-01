@@ -25,7 +25,7 @@ void __cdecl core_setedit_cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0(CDem
   file = engine_dosio_cpp_getFile_FUN_00481a50("models",local_214,"wt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0x659;
+    g_CurrentLineNumber = 1625;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create models\\%s",local_214);
   }
   _fprintf(file,"// version\n");
@@ -53,7 +53,7 @@ void __cdecl core_setedit_cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0(CDem
       this_ptr_00 = this_ptr_00 + 1;
     } while (iVar2 < this_ptr->camera_count);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x672);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",1650);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Exported %s OK.",local_214);
   return;

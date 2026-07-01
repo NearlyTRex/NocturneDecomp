@@ -102,7 +102,7 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004d7810(void)
             iStack_30 = iStack_30 + 1;
           } while (iStack_30 < g_MovieRecordingHeight);
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_2c,"..\\core\\game.cpp",0x110);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_2c,"..\\core\\game.cpp",272);
         engine_2d_c_drawText_FUN_00401fd0(acStack_160,0,0);
         g_MovieRecordingFrameCounter = g_MovieRecordingFrameCounter + 1;
         return;

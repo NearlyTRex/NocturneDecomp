@@ -28,7 +28,7 @@ CSkeleton * __cdecl core_skeleton_cpp_loadSkeleton_FUN_005a1df0(char *filename)
   }
   if (0x27 < g_SkeletonPoolCount) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
-    g_CurrentLineNumber = 0x1093;
+    g_CurrentLineNumber = 4243;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't load %s because skeleton manager is full.  (Size is %d)",filename,0x28);
   }
   this_ptr = g_SkeletonPool + g_SkeletonPoolCount;

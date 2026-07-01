@@ -249,7 +249,7 @@ LAB_00458b67:
           ;
         }
         g_SpatialTreeRoot = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(file);
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x371);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",881);
         shape_design_c_calculateVertexNormals_FUN_0045be40();
         local_24 = 1;
       }
@@ -273,7 +273,7 @@ LAB_00458b67:
         g_PolygonCount = 0;
         g_VertexCount = 0;
         g_SelectedPolygonIndex = -1;
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x33b);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",827);
         local_24 = 0;
       }
     }
@@ -297,7 +297,7 @@ LAB_00458b67:
       g_PolygonCount = 0;
       g_VertexCount = 0;
       g_SelectedPolygonIndex = -1;
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x329);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",809);
       local_24 = 0;
     }
   }

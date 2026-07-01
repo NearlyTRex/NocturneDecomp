@@ -14,7 +14,7 @@ void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_004317b0(char *filen
   
   size = width * height;
   if (buffer == (void *)0x0) {
-    buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\cockpit\\ckptutil.c",0x99);
+    buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\cockpit\\ckptutil.c",153);
     if (buffer == (void *)0x0) {
       return (void *)0x0;
     }

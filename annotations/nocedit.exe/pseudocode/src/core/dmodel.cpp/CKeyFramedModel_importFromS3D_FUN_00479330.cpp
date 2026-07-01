@@ -102,11 +102,11 @@ LAB_00479383:
     }
   }
   local_20 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       (filename,(char *)0x0,"rt","..\\core\\dmodel.cpp",0x60f);
+                       (filename,(char *)0x0,"rt","..\\core\\dmodel.cpp",1551);
 LAB_004793ab:
   if (local_20 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
-    g_CurrentLineNumber = 0x613;
+    g_CurrentLineNumber = 1555;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",filename);
   }
   p_Var5 = local_20;
@@ -121,12 +121,12 @@ LAB_00479417:
   do {
     do {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
-      g_CurrentLineNumber = 0x61e;
+      g_CurrentLineNumber = 1566;
       core_main_c_displayErrorAndQuit_FUN_00506f10("%s is corrupt!",filename);
 LAB_00479441:
       if ((local_54 < 0x66) || (0x67 < local_54)) {
         g_CurrentFilename = "..\\core\\dmodel.cpp";
-        g_CurrentLineNumber = 0x623;
+        g_CurrentLineNumber = 1571;
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("Can't import S3D file version %d, I can only do up to version %d.",local_54,0x67);
       }
@@ -232,20 +232,20 @@ LAB_0047983f:
         }
         else {
           g_CurrentFilename = "..\\core\\dmodel.cpp";
-          g_CurrentLineNumber = 0x6a9;
+          g_CurrentLineNumber = 1705;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
         }
         makepath(local_4a4,(char *)0x0,"art",local_3a0,local_2a0);
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Copying %s -> %s",local_7b0,local_4a4);
         p_Var8 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                           (local_7b0,(char *)0x0,"rb","..\\core\\dmodel.cpp",0x5ef);
+                           (local_7b0,(char *)0x0,"rb","..\\core\\dmodel.cpp",1519);
         if (p_Var8 != (_FILE *)0x0) {
           local_24 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                               (local_4a4,(char *)0x0,"wb","..\\core\\dmodel.cpp",0x5f2
+                               (local_4a4,(char *)0x0,"wb","..\\core\\dmodel.cpp",1522
                                );
           if (local_24 == (_FILE *)0x0) {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var8,"..\\core\\dmodel.cpp",0x5f4);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var8,"..\\core\\dmodel.cpp",1524);
           }
           else {
             while (iVar9 = _fgetc(p_Var8), -1 < iVar9) {
@@ -257,8 +257,8 @@ LAB_0047983f:
             else {
               bVar4 = false;
             }
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var8,"..\\core\\dmodel.cpp",0x600);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\core\\dmodel.cpp",0x601);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var8,"..\\core\\dmodel.cpp",1536);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\core\\dmodel.cpp",1537);
             if (bVar4) goto LAB_004797c3;
           }
         }
@@ -359,7 +359,7 @@ LAB_00479c73:
     p_Var5 = local_20;
     iVar8 = _fscanf(local_20," %s %d\n",local_a0,local_14);
     if (iVar8 != 2) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\dmodel.cpp",0x741);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\dmodel.cpp",1857);
       core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);
       core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
       this_ptr->transparent_pixel_flag = 0;
@@ -379,7 +379,7 @@ LAB_00479c73:
     }
     if ((uint)local_14[0] + (this_ptr->texture_count + 1) * -3 != 0) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
-      g_CurrentLineNumber = 0x70e;
+      g_CurrentLineNumber = 1806;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid matProp format!");
     }
     p_Var5 = local_20;
@@ -413,11 +413,11 @@ LAB_00479c73:
       auStack_8dc[iVar8] = (uchar)local_1c;
     }
     puVar9 = (uchar *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                       (this_ptr->poly_count,"..\\core\\dmodel.cpp",0x725);
+                       (this_ptr->poly_count,"..\\core\\dmodel.cpp",1829);
     this_ptr->env_map_opac_list = puVar9;
     if (puVar9 == (uchar *)0x0) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
-      g_CurrentLineNumber = 0x726;
+      g_CurrentLineNumber = 1830;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for envMapOpacList");
     }
     bVar3 = true;

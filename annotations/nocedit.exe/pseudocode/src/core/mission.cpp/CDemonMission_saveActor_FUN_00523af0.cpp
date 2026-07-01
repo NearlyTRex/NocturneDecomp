@@ -16,7 +16,7 @@ void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_00523af0(CDemonMission
     pcVar1 = g_DefaultMissionIdentifier;
     if (actor_ptr != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                (actor_ptr,"..\\core\\mission.cpp",0x273);
+                (actor_ptr,"..\\core\\mission.cpp",627);
       pcVar1 = actor_ptr->actor_name;
     }
     format = "\"%s\"";

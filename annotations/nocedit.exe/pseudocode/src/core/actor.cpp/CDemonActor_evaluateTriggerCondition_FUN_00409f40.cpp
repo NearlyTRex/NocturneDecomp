@@ -10,6 +10,6 @@ float __cdecl core_actor_cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40(C
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x545);
+            (this_ptr,"..\\core\\actor.cpp",1349);
   return -1.0;
 }

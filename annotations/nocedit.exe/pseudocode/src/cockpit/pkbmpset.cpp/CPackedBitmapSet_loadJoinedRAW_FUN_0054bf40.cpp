@@ -30,7 +30,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CP
   if (file == (_FILE *)0x0) {
     _sprintf(local_1a8,"Unable to open %s in CPackedBitmapSet::loadJoinedRAW",filename);
     g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
-    g_CurrentLineNumber = 0xba;
+    g_CurrentLineNumber = 186;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_1a8);
   }
   size = bitmap_width * bitmap_height;
@@ -45,12 +45,12 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CP
   cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_0054bdb0(this_ptr,iVar2);
   this_ptr->height = bitmap_height;
   this_ptr->width = bitmap_width;
-  bitmap_data = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\cockpit\\pkbmpset.cpp",0xd3)
+  bitmap_data = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\cockpit\\pkbmpset.cpp",211)
   ;
   if (bitmap_data == (uchar *)0x0) {
     _sprintf(local_e0,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW",size);
     g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
-    g_CurrentLineNumber = 0xd8;
+    g_CurrentLineNumber = 216;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_e0);
   }
   iVar4 = 0;
@@ -61,7 +61,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CP
       if (SVar3 != 1) {
         _sprintf(local_7c,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW",filename);
         g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
-        g_CurrentLineNumber = 0xe2;
+        g_CurrentLineNumber = 226;
         core_main_c_displayErrorAndQuit_FUN_00506f10(local_7c);
       }
       iVar4 = iVar4 + 1;
@@ -71,8 +71,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CP
       iVar3 = iVar3 + 0x24;
     } while (iVar4 < this_ptr->bitmap_count);
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(bitmap_data,"..\\cockpit\\pkbmpset.cpp",0xec);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\pkbmpset.cpp",0xed);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(bitmap_data,"..\\cockpit\\pkbmpset.cpp",236);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\pkbmpset.cpp",237);
   cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0(this_ptr,filename);
   if (apply_palette_flag == 0) {
     return;

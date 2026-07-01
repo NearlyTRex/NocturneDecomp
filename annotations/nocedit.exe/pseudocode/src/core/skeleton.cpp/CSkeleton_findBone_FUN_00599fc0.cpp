@@ -29,7 +29,7 @@ int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton *this_pt
     return -1;
   }
   g_CurrentFilename = "..\\core\\skeleton.cpp";
-  g_CurrentLineNumber = 0x16d;
+  g_CurrentLineNumber = 365;
   core_main_c_displayErrorAndQuit_FUN_00506f10
             ("Can't find bone %s in skeleton %s!",bone_name,this_ptr->loaded_filename);
   return -1;

@@ -11,7 +11,7 @@ CBaron * __cdecl core_baron_cpp_factoryFuncBaron_FUN_00412b80(void)
 {
   CBaron *pCVar1;
   
-  pCVar1 = (CBaron *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1fcd4,"..\\core\\baron.cpp",0x52);
+  pCVar1 = (CBaron *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1fcd4,"..\\core\\baron.cpp",82);
   if (pCVar1 == (CBaron *)0x0) {
     return (CBaron *)0x0;
   }

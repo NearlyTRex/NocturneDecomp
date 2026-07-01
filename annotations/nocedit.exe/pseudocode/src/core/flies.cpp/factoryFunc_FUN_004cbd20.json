@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 25,
+    "complexity_score": 10,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 10,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 27
   },
   "cross_references": [
@@ -90,6 +88,17 @@
     },
     "pcode_op_count": 53
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x2a20 == sizeof(CFlies). Replace the magic with sizeof(CFlies) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 7,
+      "match": "(CFlies*) alloc stride 0x2a20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CFlies *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2a20,\"..\\\\core\\\\flies.cpp\",25)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -98,14 +107,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x2a20 == sizeof(CFlies). Replace the magic with sizeof(CFlies) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 7,
-      "match": "(CFlies*) alloc stride 0x2a20",
-      "severity": "moderate",
-      "text": "(CFlies *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2a20,\"..\\\\core\\\\flies.cpp\",0x19)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

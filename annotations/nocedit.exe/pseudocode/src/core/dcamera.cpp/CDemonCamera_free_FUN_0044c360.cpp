@@ -11,12 +11,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_free_FUN_0044c360(CDemonCamera *this_
 {
   if (this_ptr->framebuffer_raw != (void *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->framebuffer_raw,"..\\core\\dcamera.cpp",0x25a);
+              (this_ptr->framebuffer_raw,"..\\core\\dcamera.cpp",602);
   }
   this_ptr->framebuffer_raw = (void *)0x0;
   this_ptr->framebuffer_aligned = (void *)0x0;
   if (this_ptr->zbuffer_raw != (void *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->zbuffer_raw,"..\\core\\dcamera.cpp",0x25e)
+    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->zbuffer_raw,"..\\core\\dcamera.cpp",606)
     ;
   }
   this_ptr->zbuffer_raw = (void *)0x0;

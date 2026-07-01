@@ -48,11 +48,11 @@ void __cdecl shape_meshlod_cpp_CLodMesh_buildSpatialGrid_FUN_00516620(CLodMesh *
   
   local_24 = 0;
   pSVar8 = (SSpatialGrid *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (this_ptr->spatial_grid_ptr,0x4004,"..\\shape\\meshlod.cpp",0x43f);
+                     (this_ptr->spatial_grid_ptr,0x4004,"..\\shape\\meshlod.cpp",1087);
   this_ptr->spatial_grid_ptr = pSVar8;
   if (pSVar8 == (SSpatialGrid *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0x440;
+    g_CurrentLineNumber = 1088;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
@@ -128,11 +128,11 @@ void __cdecl shape_meshlod_cpp_CLodMesh_buildSpatialGrid_FUN_00516620(CLodMesh *
             {
               piVar9 = (int *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                                  (this_ptr->spatial_grid_data,local_1c,"..\\shape\\meshlod.cpp",
-                                  0x464);
+                                  1124);
               this_ptr->spatial_grid_data = piVar9;
               if (piVar9 == (int *)0x0) {
                 g_CurrentFilename = "..\\shape\\meshlod.cpp";
-                g_CurrentLineNumber = 0x465;
+                g_CurrentLineNumber = 1125;
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory creating gridList");
               }
               local_1c = local_1c + 4;
@@ -158,7 +158,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_buildSpatialGrid_FUN_00516620(CLodMesh *
   } while (local_78 < 0x10);
   if (local_24 < this_ptr->tri_count) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0x46d;
+    g_CurrentLineNumber = 1133;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bug creating grid!");
   }
   this_ptr->spatial_grid_ptr->triangle_count = local_24;

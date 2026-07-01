@@ -10,7 +10,7 @@ void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0(C
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x56e);
+            (this_ptr,"..\\core\\actor.cpp",1390);
   (this_ptr->location).position.x = new_position->x;
   (this_ptr->location).position.y = new_position->y;
   (this_ptr->location).position.z = new_position->z;

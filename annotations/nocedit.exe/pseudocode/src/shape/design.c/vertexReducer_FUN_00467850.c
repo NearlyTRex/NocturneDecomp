@@ -101,7 +101,7 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
     do {
       iVar6 = g_VertexCount;
       base = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                       (g_VertexCount << 3,"..\\shape\\design.c",0x20b8);
+                       (g_VertexCount << 3,"..\\shape\\design.c",8376);
       if (base == (void *)0x0) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("ERROR: Can't allocate memory for vertex reducer array.",0,0);
@@ -117,9 +117,9 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
                 (base,g_VertexCount,8,shape_design_c_qsortByVertexX_FUN_004676f0);
       if (bVar9) {
         local_14 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                             (g_VertexCount << 2,"..\\shape\\design.c",0x20dc);
+                             (g_VertexCount << 2,"..\\shape\\design.c",8412);
         if (local_14 == (void *)0x0) {
-          shape_memdbg_cpp_debugFree_FUN_0050f460(base,"..\\shape\\design.c",0x20de);
+          shape_memdbg_cpp_debugFree_FUN_0050f460(base,"..\\shape\\design.c",8414);
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
           engine_2d_c_drawText_FUN_00401fd0("ERROR: Can't allocate memory for vertex reducer array.",0,0);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -182,9 +182,9 @@ LAB_00467b49:
         }
       }
       if (bVar9) {
-        shape_memdbg_cpp_debugFree_FUN_0050f460(local_14,"..\\shape\\design.c",0x2138);
+        shape_memdbg_cpp_debugFree_FUN_0050f460(local_14,"..\\shape\\design.c",8504);
       }
-      shape_memdbg_cpp_debugFree_FUN_0050f460(base,"..\\shape\\design.c",0x213c);
+      shape_memdbg_cpp_debugFree_FUN_0050f460(base,"..\\shape\\design.c",8508);
       shape_design_c_removeUnusedVertices_FUN_00463830();
     } while (g_VertexCount != iVar6);
     shape_design_c_removeDegenerateTriangles_FUN_00463a20();

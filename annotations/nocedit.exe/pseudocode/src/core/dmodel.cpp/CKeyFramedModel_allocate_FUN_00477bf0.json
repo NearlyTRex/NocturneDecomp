@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 106,
+    "complexity_score": 71,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 71,
-    "suspect_count": 3,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 258
   },
   "cross_references": [
@@ -254,6 +252,35 @@
     },
     "pcode_op_count": 795
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 27,
+      "match": "(CVector3i*) alloc stride 0xc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->frame_count * this_ptr->vertex_count * 0xc, \"..\\\\core\\\\dmodel.cpp\",709)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x48 == sizeof(SMRGLPrimitiveQuad). Replace the magic with sizeof(SMRGLPrimitiveQuad) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 31,
+      "match": "(SMRGLPrimitiveQuad*) alloc stride 0x48",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SMRGLPrimitiveQuad *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->poly_count * 0x48,\"..\\\\core\\\\dmodel.cpp\",710)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 63,
+      "match": "(CVector3i*) alloc stride 0xc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->vertex_count * 0xc,\"..\\\\core\\\\dmodel.cpp\",729)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 28,
     "local_size": 4,
@@ -305,30 +332,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 27,
-      "match": "(CVector3i*) alloc stride 0xc",
-      "severity": "moderate",
-      "text": "(CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->frame_count * this_ptr->vertex_count * 0xc, \"..\\\\core\\\\dmodel.cpp\",0x2c5)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0x48 == sizeof(SMRGLPrimitiveQuad). Replace the magic with sizeof(SMRGLPrimitiveQuad) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 31,
-      "match": "(SMRGLPrimitiveQuad*) alloc stride 0x48",
-      "severity": "moderate",
-      "text": "(SMRGLPrimitiveQuad *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->poly_count * 0x48,\"..\\\\core\\\\dmodel.cpp\",0x2c6)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0xc == sizeof(CVector3i). Replace the magic with sizeof(CVector3i) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 63,
-      "match": "(CVector3i*) alloc stride 0xc",
-      "severity": "moderate",
-      "text": "(CVector3i *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->vertex_count * 0xc,\"..\\\\core\\\\dmodel.cpp\",0x2d9)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

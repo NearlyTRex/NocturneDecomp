@@ -25,7 +25,7 @@ int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *file_ptr,char *source
       return 0;
     }
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
-    g_CurrentLineNumber = 0x216;
+    g_CurrentLineNumber = 534;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Tried to close NULL file pointer at %s line %d",source_file,line_number);
   }
@@ -62,7 +62,7 @@ int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *file_ptr,char *source
   wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
   if (g_RecursiveCallFlag == 0) {
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
-    g_CurrentLineNumber = 0x235;
+    g_CurrentLineNumber = 565;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Tried to close file which which was never opened.  (Possibly closing a file twice?)\n%s line %d",source_file,line_number);
   }

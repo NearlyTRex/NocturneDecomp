@@ -30,19 +30,19 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,i
   g_PrimaryMixBuffer =
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
                  (g_PrimaryMixBuffer,num_buffers * iVar1 * g_AudioChannelCount,
-                  "..\\sound\\sndmain.cpp",0x4a2);
+                  "..\\sound\\sndmain.cpp",1186);
   g_SecondaryMixBuffer =
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
                  (g_SecondaryMixBuffer,g_AudioChannelCount * iVar1 * 2,"..\\sound\\sndmain.cpp",
-                  0x4a3);
+                  1187);
   g_TertiaryMixBuffer =
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                 (g_TertiaryMixBuffer,iVar1 * g_AudioChannelCount,"..\\sound\\sndmain.cpp",0x4a4
+                 (g_TertiaryMixBuffer,iVar1 * g_AudioChannelCount,"..\\sound\\sndmain.cpp",1188
                  );
   if (((g_PrimaryMixBuffer == (float *)0x0) || (g_SecondaryMixBuffer == (float *)0x0)) ||
      (g_TertiaryMixBuffer == (float *)0x0)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x4aa;
+    g_CurrentLineNumber = 1194;
     core_main_c_displayErrorAndQuit_FUN_00506f10("allocMixBuffers - out of memory");
   }
   iVar4 = 0;

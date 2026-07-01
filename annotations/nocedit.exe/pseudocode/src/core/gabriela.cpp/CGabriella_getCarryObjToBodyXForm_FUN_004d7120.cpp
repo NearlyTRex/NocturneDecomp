@@ -76,7 +76,7 @@ void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d71
     }
     else {
       g_CurrentFilename = "..\\core\\gabriela.cpp";
-      g_CurrentLineNumber = 0x945;
+      g_CurrentLineNumber = 2373;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Don't know how to carry light %s",pCVar1);
     }
     goto LAB_004d719a;

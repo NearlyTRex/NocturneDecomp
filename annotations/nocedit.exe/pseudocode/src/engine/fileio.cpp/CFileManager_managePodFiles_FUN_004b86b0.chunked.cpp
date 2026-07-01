@@ -133,7 +133,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_0(CFileManager_mana
           } while (cVar1 != '\0');
           iVar2 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_fbc);
           if (iVar2 == 0) {
-            g_CurrentLineNumber = 0xc25;
+            g_CurrentLineNumber = 3109;
             g_CurrentFilename = "..\\engine\\fileio.cpp";
             core_main_c_displayErrorAndQuit_FUN_00506f10
                       ("Can't querry for pod file info: %s",&local_fbc);
@@ -346,10 +346,10 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_1(CFileManager_mana
             local_2c = local_2c + 0x39c;
             local_48 = local_48 + 1;
             local_44 = (SPodManageRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                                 (local_44,local_2c,"..\\engine\\fileio.cpp",0xcd3);
+                                 (local_44,local_2c,"..\\engine\\fileio.cpp",3283);
             if (local_44 == (SPodManageRecord *)0x0) {
               g_CurrentFilename = "..\\engine\\fileio.cpp";
-              g_CurrentLineNumber = 0xcd4;
+              g_CurrentLineNumber = 3284;
               core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
             }
             dest = local_44[1].base_name + local_28;
@@ -473,7 +473,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_local_60_3(CFileManag
           break;
         default:
           g_CurrentFilename = "..\\engine\\fileio.cpp";
-          g_CurrentLineNumber = 0xd1c;
+          g_CurrentLineNumber = 3356;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
           goto LAB_004b9590;
         }
@@ -673,18 +673,18 @@ LAB_004b9af4:
               do {
                 stream_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                        (pcVar12,(char *)0x0,"rb",
-                                        "..\\engine\\fileio.cpp",0x153);
+                                        "..\\engine\\fileio.cpp",339);
                 if (stream_ptr != (_FILE *)0x0) {
                   _setvbuf(stream_ptr,(char *)0x0,0,0x400);
                   if (stream_ptr != (_FILE *)0x0) {
                     pcVar12 = local_44[local_20].pod_name;
                     dest_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                           (pcVar12,(char *)0x0,"wb",
-                                           "..\\engine\\fileio.cpp",0xdbb);
+                                           "..\\engine\\fileio.cpp",3515);
                     if (dest_file == (_FILE *)0x0) {
                       if (stream_ptr != (_FILE *)0x0) {
                         shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                                  (stream_ptr,"..\\engine\\fileio.cpp",0xc4);
+                                  (stream_ptr,"..\\engine\\fileio.cpp",196);
                       }
                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                 (g_CEditorToolsPtr,"Can't create local %s",
@@ -697,12 +697,12 @@ LAB_004b9af4:
                       pcVar12 = engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
                                           (stream_ptr,dest_file,pcVar3,pcVar12,uVar5);
                       shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                                (stream_ptr,"..\\engine\\fileio.cpp",0xdc5);
+                                (stream_ptr,"..\\engine\\fileio.cpp",3525);
                       shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                                (dest_file,"..\\engine\\fileio.cpp",0xdc6);
+                                (dest_file,"..\\engine\\fileio.cpp",3526);
                       if (pcVar12 != (char *)0x0) {
                         g_CurrentFilename = "..\\engine\\fileio.cpp";
-                        g_CurrentLineNumber = 0xdc7;
+                        g_CurrentLineNumber = 3527;
                         core_main_c_displayErrorAndQuit_FUN_00506f10(pcVar12);
                       }
                       local_5c = local_5c + 1;
@@ -924,10 +924,10 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
       engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0(this_ptr,&local_84);
       local_48 = local_94.item_count;
       local_44 = (SPodManageRecord *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                           (local_94.item_count * 0x39c,"..\\engine\\fileio.cpp",0xc0e);
+                           (local_94.item_count * 0x39c,"..\\engine\\fileio.cpp",3086);
       if (local_44 == (SPodManageRecord *)0x0) {
         g_CurrentFilename = "..\\engine\\fileio.cpp";
-        g_CurrentLineNumber = 0xc0f;
+        g_CurrentLineNumber = 3087;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
       }
       local_74.count = 0;
@@ -997,7 +997,7 @@ LAB_004b8d5b:
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0(g_CEditorToolsPtr,local_598);
 LAB_004b901b:
       if (local_44 != (SPodManageRecord *)0x0) {
-        shape_memdbg_cpp_debugFree_FUN_0050f460(local_44,"..\\engine\\fileio.cpp",0xe10);
+        shape_memdbg_cpp_debugFree_FUN_0050f460(local_44,"..\\engine\\fileio.cpp",3600);
       }
       engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_74);
       shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_84,0);

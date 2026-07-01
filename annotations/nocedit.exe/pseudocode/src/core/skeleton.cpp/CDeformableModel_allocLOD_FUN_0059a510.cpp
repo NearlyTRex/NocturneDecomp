@@ -18,7 +18,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510(CDeformabl
   
   if ((lod_index < 0) || (this_ptr->num_lods <= lod_index)) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
-    g_CurrentLineNumber = 0x28a;
+    g_CurrentLineNumber = 650;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::allocLOD - invalid lod number %d",lod_index);
   }
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
@@ -41,23 +41,23 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510(CDeformabl
   type_info = &g_SVertTypeInfo;
   element_count = this_ptr->vertex_count[lod_index];
   pvVar1 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     (element_count * 0x34 + 4,"..\\core\\skeleton.cpp",0x29c);
+                     (element_count * 0x34 + 4,"..\\core\\skeleton.cpp",668);
   pSVar2 = (SVert *)__vec_new(pvVar1,element_count,type_info);
   this_ptr->vertex_data_ptr[lod_index] = pSVar2;
   pSVar3 = (SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      ((this_ptr->cap_tri_count[lod_index] + this_ptr->tri_count[lod_index]) * 0x12,
-                      "..\\core\\skeleton.cpp",0x29d);
+                      "..\\core\\skeleton.cpp",669);
   this_ptr->tri_data_ptr[lod_index] = pSVar3;
   piVar4 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      ((this_ptr->tri_count[lod_index] + this_ptr->cap_tri_count[lod_index]) * 4,
-                      "..\\core\\skeleton.cpp",0x29e);
+                      "..\\core\\skeleton.cpp",670);
   this_ptr->index_data_ptr[lod_index] = piVar4;
   if (this_ptr->cap_tri_count[lod_index] < 1) {
     this_ptr->cap_index_ptr[lod_index] = (int *)0x0;
   }
   else {
     piVar4 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                       (this_ptr->cap_tri_count[lod_index] * 4,"..\\core\\skeleton.cpp",0x2a0);
+                       (this_ptr->cap_tri_count[lod_index] * 4,"..\\core\\skeleton.cpp",672);
     this_ptr->cap_index_ptr[lod_index] = piVar4;
   }
   if ((((this_ptr->vertex_data_ptr[lod_index] != (SVert *)0x0) &&
@@ -69,7 +69,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510(CDeformabl
   }
   core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(this_ptr);
   g_CurrentFilename = "..\\core\\skeleton.cpp";
-  g_CurrentLineNumber = 0x2ae;
+  g_CurrentLineNumber = 686;
   core_main_c_displayErrorAndQuit_FUN_00506f10
             ("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d",this_ptr->vertex_count,this_ptr->tri_count,
              this_ptr->cap_tri_count);

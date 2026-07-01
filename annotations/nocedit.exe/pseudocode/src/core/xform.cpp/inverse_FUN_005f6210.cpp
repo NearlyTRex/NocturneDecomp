@@ -60,7 +60,7 @@ CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *matri
   local_98 = SUB84(__BITCAST_UINT64(dVar5),0);
   if ((((ulonglong)dVar5 & 0x7fffffff00000000) == 0) && (local_98 == 0)) {
     g_CurrentFilename = "..\\core\\xform.cpp";
-    g_CurrentLineNumber = 0x23e;
+    g_CurrentLineNumber = 574;
     core_main_c_displayErrorAndQuit_FUN_00506f10("inverse() - Singular matrix");
   }
   dVar10 = 1.0 / dVar5;

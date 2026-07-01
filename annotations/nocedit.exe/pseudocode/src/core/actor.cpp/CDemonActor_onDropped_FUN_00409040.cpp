@@ -10,6 +10,6 @@ void __cdecl core_actor_cpp_CDemonActor_onDropped_FUN_00409040(CDemonActor *this
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x348);
+            (this_ptr,"..\\core\\actor.cpp",840);
   return;
 }

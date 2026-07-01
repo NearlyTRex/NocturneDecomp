@@ -13,7 +13,7 @@ int __cdecl sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(int channel_index
     return g_SfxChannelEnabled[channel_index];
   }
   g_CurrentFilename = "..\\sound\\sndmain.cpp";
-  g_CurrentLineNumber = 0xfb0;
+  g_CurrentLineNumber = 4016;
   core_main_c_displayErrorAndQuit_FUN_00506f10("isSfxChannelEnabled - invalid channel index: %d",channel_index);
   return g_SfxChannelEnabled[channel_index];
 }

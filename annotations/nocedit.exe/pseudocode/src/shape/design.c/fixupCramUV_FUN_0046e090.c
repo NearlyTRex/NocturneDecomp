@@ -55,7 +55,7 @@ void __cdecl shape_design_c_fixupCramUV_FUN_0046e090(int atlas_texture_index,flo
       (*u_coord < (float)-0.01)) || (*v_coord < (float)-0.01)) {
     _sprintf(local_94,"fixupCramUV - UV out of range: %f, %f",(double)*u_coord,(double)*v_coord);
     g_CurrentFilename = "..\\shape\\design.c";
-    g_CurrentLineNumber = 0x2c3b;
+    g_CurrentLineNumber = 11323;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_94);
   }
   if (*u_coord < 0.0) {

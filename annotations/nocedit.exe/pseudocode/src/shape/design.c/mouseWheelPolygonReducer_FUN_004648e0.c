@@ -39,12 +39,12 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
       g_PolygonReducerEnabled = g_PolygonReducerEnabled ^ 1;
       if (g_PolygonReducerEnabled == 0) {
         if (g_BackupPolygons != (SShapeEditorPolygon *)0x0) {
-          shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackupPolygons,"..\\shape\\design.c",0x1aaa)
+          shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackupPolygons,"..\\shape\\design.c",6826)
           ;
           g_BackupPolygons = (SShapeEditorPolygon *)0x0;
         }
         if (g_BackupVertices != (SVertexData *)0x0) {
-          shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackupVertices,"..\\shape\\design.c",0x1aae)
+          shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackupVertices,"..\\shape\\design.c",6830)
           ;
           g_BackupVertices = (SVertexData *)0x0;
         }
@@ -52,18 +52,18 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
       }
       g_BackupVertices =
            shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                     ((g_VertexCount + 0x32) * 0x14,"..\\shape\\design.c",0x1a98);
+                     ((g_VertexCount + 0x32) * 0x14,"..\\shape\\design.c",6808);
       if (g_BackupVertices == (SVertexData *)0x0) {
         g_CurrentFilename = "..\\shape\\design.c";
-        g_CurrentLineNumber = 0x1a9a;
+        g_CurrentLineNumber = 6810;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to get mem for vertices in mouse wheel polygon reducer!");
       }
       g_BackupPolygons =
            shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                     ((g_PolygonCount + 0x32) * 0x184,"..\\shape\\design.c",0x1a9c);
+                     ((g_PolygonCount + 0x32) * 0x184,"..\\shape\\design.c",6812);
       if (g_BackupPolygons == (SShapeEditorPolygon *)0x0) {
         g_CurrentFilename = "..\\shape\\design.c";
-        g_CurrentLineNumber = 0x1a9e;
+        g_CurrentLineNumber = 6814;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to get mem for polygons in mouse wheel polygon reducer!");
       }
       g_BackupVertexCount = g_VertexCount;
@@ -163,11 +163,11 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
     }
     else {
       if (g_BackupPolygons != (SShapeEditorPolygon *)0x0) {
-        shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackupPolygons,"..\\shape\\design.c",0x1ac1);
+        shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackupPolygons,"..\\shape\\design.c",6849);
         g_BackupPolygons = (SShapeEditorPolygon *)0x0;
       }
       if (g_BackupVertices != (SVertexData *)0x0) {
-        shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackupVertices,"..\\shape\\design.c",0x1ac5);
+        shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackupVertices,"..\\shape\\design.c",6853);
         g_BackupVertices = (SVertexData *)0x0;
       }
       g_PolygonReducerEnabled = 0;

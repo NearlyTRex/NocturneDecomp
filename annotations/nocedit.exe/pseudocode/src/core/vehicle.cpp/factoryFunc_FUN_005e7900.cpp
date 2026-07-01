@@ -11,7 +11,7 @@ CVehicle * __cdecl core_vehicle_cpp_factoryFunc_FUN_005e7900(void)
 {
   CVehicle *pCVar1;
   
-  pCVar1 = (CVehicle *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1078,"..\\core\\vehicle.cpp",0x40)
+  pCVar1 = (CVehicle *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x1078,"..\\core\\vehicle.cpp",64)
   ;
   if (pCVar1 == (CVehicle *)0x0) {
     return (CVehicle *)0x0;

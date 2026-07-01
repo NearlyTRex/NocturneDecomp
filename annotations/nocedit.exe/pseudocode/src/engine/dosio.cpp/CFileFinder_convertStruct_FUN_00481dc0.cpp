@@ -33,7 +33,7 @@ void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder
   }
   if ((find_data->nFileSizeHigh != 0) || (0x7fffffff < find_data->nFileSizeLow)) {
     g_CurrentFilename = "..\\engine\\dosio.c";
-    g_CurrentLineNumber = 0x2a7;
+    g_CurrentLineNumber = 679;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CFileFinder::convertStruct - file too big!");
   }
   finder->timestamp = find_data->nFileSizeLow;

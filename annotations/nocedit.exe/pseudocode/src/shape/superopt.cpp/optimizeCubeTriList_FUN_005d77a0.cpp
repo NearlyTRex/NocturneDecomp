@@ -46,7 +46,7 @@ void __cdecl shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0(void)
   _sprintf(local_100,"reduce\\cube%04d.txt");
   iVar5 = 0;
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (local_100,(char *)0x0,"wt","..\\shape\\superopt.cpp",0x252f);
+                   (local_100,(char *)0x0,"wt","..\\shape\\superopt.cpp",9519);
   if (0 < g_PolygonCount) {
     iVar2 = 0;
     do {
@@ -117,7 +117,7 @@ LAB_005d7a1a:
       if (iVar6 < 0) {
         if (0x31 < g_TriListTextureCount) {
           g_CurrentFilename = "..\\shape\\superopt.cpp";
-          g_CurrentLineNumber = 0x255b;
+          g_CurrentLineNumber = 9563;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many textures!");
         }
         iVar6 = g_TriListTextureCount;
@@ -187,7 +187,7 @@ LAB_005d7a1a:
     } while (local_30 < g_PolygonCount);
   }
   if (file != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\superopt.cpp",0x2571);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\superopt.cpp",9585);
   }
   shape_superopt_cpp_COptimize_ctor_FUN_005d6f90(&local_9c);
   fVar8 = (float10)fcos((float10)0.069813169999999994);

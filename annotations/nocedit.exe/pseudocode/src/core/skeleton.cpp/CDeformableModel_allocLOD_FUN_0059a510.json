@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 82,
+    "complexity_score": 67,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 17,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 67,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 248
   },
   "cross_references": [
@@ -289,6 +287,17 @@
     },
     "pcode_op_count": 733
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x12 == sizeof(SInputFace). Replace the magic with sizeof(SInputFace) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 40,
+      "match": "(SInputFace*) alloc stride 0x12",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((this_ptr->cap_tri_count[lod_index] + this_ptr->tri_count[lod_index]) * 0x12, \"..\\\\core\\\\skeleton.cpp\",669)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 24,
     "local_size": 4,
@@ -333,14 +342,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x12 == sizeof(SInputFace). Replace the magic with sizeof(SInputFace) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 40,
-      "match": "(SInputFace*) alloc stride 0x12",
-      "severity": "moderate",
-      "text": "(SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((this_ptr->cap_tri_count[lod_index] + this_ptr->tri_count[lod_index]) * 0x12, \"..\\\\core\\\\skeleton.cpp\",0x29d)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

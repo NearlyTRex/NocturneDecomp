@@ -12,7 +12,7 @@ CCurtain * __cdecl core_curtain_cpp_factoryFunc_FUN_00449660(void)
   CCurtain *pCVar1;
   
   pCVar1 = (CCurtain *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (0x65b38,"..\\core\\curtain.cpp",0x36);
+                     (0x65b38,"..\\core\\curtain.cpp",54);
   if (pCVar1 == (CCurtain *)0x0) {
     return (CCurtain *)0x0;
   }

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 1743,
+    "complexity_score": 1728,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 197,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 1728,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 5675
   },
   "cross_references": [
@@ -1965,6 +1963,15 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
+    },
+    {
+      "description": "Allocation size hardcodes 0x2d8 == sizeof(CGasMask). Replace the magic with sizeof(CGasMask) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 1562,
+      "match": "(CGasMask*) alloc stride 0x2d8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CGasMask *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x2d8,\"..\\\\core\\\\game.cpp\",2992)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -3211,14 +3218,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x2d8 == sizeof(CGasMask). Replace the magic with sizeof(CGasMask) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 1562,
-      "match": "(CGasMask*) alloc stride 0x2d8",
-      "severity": "moderate",
-      "text": "(CGasMask *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x2d8,\"..\\\\core\\\\game.cpp\",0xbb0)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

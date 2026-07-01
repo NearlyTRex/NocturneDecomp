@@ -10,7 +10,7 @@ void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_00409840(CDemonActor *thi
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x495);
+            (this_ptr,"..\\core\\actor.cpp",1173);
   laser_info->reflectivity = 0.0;
   laser_info->transparency = 0.0;
   laser_info->stored_angle = laser_info->incidence_angle;

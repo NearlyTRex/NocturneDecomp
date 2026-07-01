@@ -30,7 +30,7 @@ void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(int max_vertices)
       while (local_1c < (int)(g_ModelPolygonData[local_14].vertex_indices_count - 1)) {
         if (19999 < g_PolygonCount) {
           g_CurrentFilename = "..\\shape\\design.c";
-          g_CurrentLineNumber = 0x2c8f;
+          g_CurrentLineNumber = 11407;
           core_main_c_displayErrorAndQuit_FUN_00506f10("triangulateDSE - too many faces!");
         }
         iVar2 = g_PolygonCount;

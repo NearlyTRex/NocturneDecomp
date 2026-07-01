@@ -14,7 +14,7 @@ void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0(void)
     return;
   }
   g_CurrentFilename = "..\\sound\\sndmain.cpp";
-  g_CurrentLineNumber = 0xd2f;
+  g_CurrentLineNumber = 3375;
   core_main_c_displayErrorAndQuit_FUN_00506f10("popSfxOptions - stack empty");
   return;
 }

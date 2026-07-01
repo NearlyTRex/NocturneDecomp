@@ -10,8 +10,8 @@ int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50(CDemonA
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x29d);
-  g_CurrentLineNumber = 0x29e;
+            (this_ptr,"..\\core\\actor.cpp",669);
+  g_CurrentLineNumber = 670;
   g_CurrentFilename = "..\\core\\actor.cpp";
   core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonActor::customGetFloorHeight should not be called for this base class");
   return 0;

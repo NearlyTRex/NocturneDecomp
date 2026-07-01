@@ -14,7 +14,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionMode_FUN_0048a700(CD
     return;
   }
   g_CurrentFilename = "..\\engine\\drender.cpp";
-  g_CurrentLineNumber = 0x9c;
+  g_CurrentLineNumber = 156;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Ortho isn't supported any more");
   return;
 }

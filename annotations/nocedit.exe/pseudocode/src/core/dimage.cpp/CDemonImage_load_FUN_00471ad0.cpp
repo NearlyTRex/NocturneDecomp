@@ -39,14 +39,14 @@ void __cdecl core_dimage_cpp_CDemonImage_load_FUN_00471ad0(CDemonImage *this_ptr
   p_Var6 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_11c,"rb");
   if (p_Var6 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dimage.cpp";
-    g_CurrentLineNumber = 0x68;
+    g_CurrentLineNumber = 104;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonImage::load - Unable to load image!");
   }
   this_ptr->width = width;
   this_ptr->height = height;
   core_dimage_cpp_CDemonImage_allocMemory_FUN_004719e0(this_ptr);
   _fread(this_ptr->data,width,height,p_Var6);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\core\\dimage.cpp",0x76);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\core\\dimage.cpp",118);
   do {
     pcVar10 = pcVar8;
     if (*pcVar8 == '.') goto LAB_00471b94;
@@ -59,7 +59,7 @@ void __cdecl core_dimage_cpp_CDemonImage_load_FUN_00471ad0(CDemonImage *this_ptr
 LAB_00471b94:
   if (pcVar10 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\dimage.cpp";
-    g_CurrentLineNumber = 0x7b;
+    g_CurrentLineNumber = 123;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonImage::load - Unable to find extention!");
   }
   pcVar8 = ".ACT";
@@ -75,11 +75,11 @@ LAB_00471b94:
   p_Var6 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_11c,"rb");
   if (p_Var6 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dimage.cpp";
-    g_CurrentLineNumber = 0x7f;
+    g_CurrentLineNumber = 127;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonImage::load - Unable to load palette!");
   }
   _fread(&this_ptr->palette,0x100,3,p_Var6);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\core\\dimage.cpp",0x81);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\core\\dimage.cpp",129);
   pCVar7 = this_ptr;
   pCVar9 = this_ptr;
   pCVar11 = this_ptr;

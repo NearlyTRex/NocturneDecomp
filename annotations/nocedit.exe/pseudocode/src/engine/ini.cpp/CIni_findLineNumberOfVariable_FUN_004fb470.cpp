@@ -27,10 +27,10 @@ int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004fb470(CIni *this
   bVar2 = false;
   this_ptr->initialized = 1;
   stream = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (value,(char *)0x0,"rt","..\\engine\\ini.cpp",0xf4);
+                     (value,(char *)0x0,"rt","..\\engine\\ini.cpp",244);
   if (stream == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\ini.cpp";
-    g_CurrentLineNumber = 0xf5;
+    g_CurrentLineNumber = 245;
     core_main_c_displayErrorAndQuit_FUN_00506f10("cIni::FindLineNumberOfVariable: Unable to open input");
   }
   _sprintf(local_114,"[%s]\n",section);
@@ -45,7 +45,7 @@ int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004fb470(CIni *this
     iVar6 = iVar6 + 1;
   }
 LAB_004fb5ab:
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\ini.cpp",0x154);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\ini.cpp",340);
   if (bVar2) {
     return iVar6;
   }

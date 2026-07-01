@@ -18,7 +18,7 @@ void __cdecl engine_2d_c_draw320x200SizeDot_FUN_00402a8e(int x_3d,int y_3d,int z
       if (g_WindowHeight != 200) {
 LAB_00402be6:
         g_CurrentFilename = "..\\engine\\2d.c";
-        g_CurrentLineNumber = 0x7df;
+        g_CurrentLineNumber = 2015;
         core_main_c_displayErrorAndQuit_FUN_00506f10("draw320x200SizeDot: unknown graphics option");
         return;
       }

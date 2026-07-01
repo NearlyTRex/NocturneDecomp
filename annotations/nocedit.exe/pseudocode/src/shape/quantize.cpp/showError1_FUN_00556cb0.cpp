@@ -10,7 +10,7 @@ void __cdecl shape_quantize_cpp_showError1_FUN_00556cb0(char *error)
 
 {
   g_CurrentFilename = "..\\shape\\quantize.cpp";
-  g_CurrentLineNumber = 0x61;
+  g_CurrentLineNumber = 97;
   core_main_c_displayErrorAndQuit_FUN_00506f10(error);
   return;
 }

@@ -10,6 +10,6 @@ EGroundType __cdecl core_actor_cpp_CDemonActor_getGroundType_FUN_00408d90(CDemon
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x2a9);
+            (this_ptr,"..\\core\\actor.cpp",681);
   return GROUND_TYPE_DEFAULT;
 }

@@ -12,7 +12,7 @@ CDraculaBride * __cdecl core_dracbrid_cpp_factoryFunc_FUN_00483f80(void)
   CDraculaBride *pCVar1;
   
   pCVar1 = (CDraculaBride *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (0xbfec,"..\\core\\dracbrid.cpp",0x78);
+                     (0xbfec,"..\\core\\dracbrid.cpp",120);
   if (pCVar1 == (CDraculaBride *)0x0) {
     return (CDraculaBride *)0x0;
   }

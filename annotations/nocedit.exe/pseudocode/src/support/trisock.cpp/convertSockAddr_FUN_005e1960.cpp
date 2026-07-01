@@ -15,7 +15,7 @@ SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_005e1960(SNetworkA
   
   if (src_addr->sin_family != 2) {
     g_CurrentFilename = "..\\support\\trisock.cpp";
-    g_CurrentLineNumber = 0xa5;
+    g_CurrentLineNumber = 165;
     core_main_c_displayErrorAndQuit_FUN_00506f10("sockaddr is not of AF_INET family!");
   }
   uVar1 = ntohs(src_addr->sin_port);

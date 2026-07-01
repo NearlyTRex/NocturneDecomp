@@ -81,7 +81,7 @@ int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,ch
         if (iVar9 != 0xd) {
           if (iVar9 == 10) goto LAB_0055a085;
           if (iVar9 == 0) {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\script.cpp",0x31b);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\script.cpp",795);
             iVar5 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"Probable non-text file %s detected near line %d.  Cannot use script.",filename,iVar5 + 1);
@@ -97,12 +97,12 @@ LAB_0055a085:
       local_3e8[iVar5] = '\0';
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(local_18,local_3e8);
     } while (local_14 != 0);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\script.cpp",0x32d);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\script.cpp",813);
     core_script_cpp_CScript_buildParsedLines_FUN_0055a370(this_ptr);
     iVar5 = 0;
     file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("script.txt",(char *)0x0,"wt","..\\core\\script.cpp",
-                      0x336);
+                      822);
     if (0 < this_ptr->parsed_line_count) {
       iVar2 = 0;
       do {
@@ -113,7 +113,7 @@ LAB_0055a085:
         _fprintf(file,"%4d | %s\n",*puVar1,*puVar2);
       } while (iVar5 < this_ptr->parsed_line_count);
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\script.cpp",0x33a);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\script.cpp",826);
     if (skip_validation != 0) {
 LAB_0055a34a:
       core_script_cpp_CScript_initRuntime_FUN_0055a540(this_ptr);

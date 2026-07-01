@@ -21,10 +21,10 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
   
   size = width * height;
   if (buffer == (char *)0x0) {
-    buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\cockpit\\ckptutil.c",0x7bd);
+    buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\cockpit\\ckptutil.c",1981);
     if (buffer == (char *)0x0) {
       _sprintf(local_6c,"Unable to allocate %u bytes for rotated bitmap file (%s).",size,filename);
-      g_CurrentLineNumber = 0x7c0;
+      g_CurrentLineNumber = 1984;
       g_CurrentFilename = "..\\cockpit\\ckptutil.c";
       core_main_c_displayErrorAndQuit_FUN_00506f10(local_6c);
     }
@@ -33,7 +33,7 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
   if (file == (_FILE *)0x0) {
     _sprintf(local_6c,"Unable to open bitmap file (%s).",filename);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
-    g_CurrentLineNumber = 0x7c9;
+    g_CurrentLineNumber = 1993;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_6c);
   }
   local_18 = 0;
@@ -46,8 +46,8 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
           iVar1 = _fgetc(file);
           if (iVar1 == -1) {
             _sprintf(local_6c,"Unable to read bitmap file (%s).",filename);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",0x7d5);
-            g_CurrentLineNumber = 0x7d6;
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",2005);
+            g_CurrentLineNumber = 2006;
             g_CurrentFilename = "..\\cockpit\\ckptutil.c";
             core_main_c_displayErrorAndQuit_FUN_00506f10(local_6c);
           }
@@ -60,7 +60,7 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
       local_18 = local_18 + 1;
     } while (local_18 < (uint)height);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",0x7de);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",2014);
   if (apply_palette == 0) {
     return buffer;
   }

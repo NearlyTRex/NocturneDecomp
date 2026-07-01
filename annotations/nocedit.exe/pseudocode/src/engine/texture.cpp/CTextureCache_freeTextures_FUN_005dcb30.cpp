@@ -28,12 +28,12 @@ void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005dcb30(CTexture
       }
       if (pCVar1->texture_opacity_ptrs[0] != (void *)0x0) {
         shape_memdbg_cpp_debugFree_FUN_0050f460
-                  (pCVar1->texture_opacity_ptrs[0],"..\\engine\\texture.cpp",0xcc);
+                  (pCVar1->texture_opacity_ptrs[0],"..\\engine\\texture.cpp",204);
         pCVar1->texture_opacity_ptrs[0] = (void *)0x0;
       }
       if (pCVar1->texture_palette_ptrs[0] != (byte *)0x0) {
         shape_memdbg_cpp_debugFree_FUN_0050f460
-                  (pCVar1->texture_palette_ptrs[0],"..\\engine\\texture.cpp",0xd0);
+                  (pCVar1->texture_palette_ptrs[0],"..\\engine\\texture.cpp",208);
         pCVar1->texture_palette_ptrs[0] = (byte *)0x0;
       }
       iVar3 = iVar3 + 1;

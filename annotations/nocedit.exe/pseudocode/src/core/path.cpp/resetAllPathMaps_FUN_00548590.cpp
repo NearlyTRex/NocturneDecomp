@@ -19,7 +19,7 @@ void __cdecl core_path_cpp_resetAllPathMaps_FUN_00548590(void)
     do {
       if (*(int *)((int)g_PathMapList + iVar2) == 0) {
         g_CurrentFilename = "..\\core\\path.cpp";
-        g_CurrentLineNumber = 0x6a1;
+        g_CurrentLineNumber = 1697;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Global pathmap list corruption");
       }
       puVar1 = (uint *)((int)g_PathMapList + iVar2);

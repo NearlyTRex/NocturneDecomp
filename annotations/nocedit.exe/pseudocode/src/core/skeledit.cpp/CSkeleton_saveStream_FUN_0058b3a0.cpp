@@ -103,7 +103,7 @@ void __cdecl core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this
   }
   if ((file_handle->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0x49f;
+    g_CurrentLineNumber = 1183;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CSkeleton::saveStream - error writing file.");
     return;
   }

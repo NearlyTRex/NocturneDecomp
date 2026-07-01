@@ -31,11 +31,11 @@ int __cdecl shape_meshlod_cpp_CLodMesh_findOrAddLodTexture_FUN_00518790(CLodMesh
   }
   pSVar3 = (SMRGLTextureLod *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->lod_textures,(this_ptr->lod_texture_count + 1) * 0x48,
-                      "..\\shape\\meshlod.cpp",0xb6d);
+                      "..\\shape\\meshlod.cpp",2925);
   this_ptr->lod_textures = pSVar3;
   if (pSVar3 == (SMRGLTextureLod *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0xb6e;
+    g_CurrentLineNumber = 2926;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory.");
   }
   pcVar6 = this_ptr->lod_textures[this_ptr->lod_texture_count].textures[0].texture_name;

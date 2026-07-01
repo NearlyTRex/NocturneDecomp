@@ -10,6 +10,6 @@ int __cdecl core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0(CDemonActo
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x59d);
+            (this_ptr,"..\\core\\actor.cpp",1437);
   return 0;
 }

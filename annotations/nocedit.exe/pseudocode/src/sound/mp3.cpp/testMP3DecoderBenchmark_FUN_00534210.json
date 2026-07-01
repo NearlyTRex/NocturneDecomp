@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 115,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 31,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 90,
-    "suspect_count": 2,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 340
   },
   "cross_references": [],
@@ -342,6 +340,26 @@
     },
     "pcode_op_count": 869
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x8630 == sizeof(CMP3Decoder). Replace the magic with sizeof(CMP3Decoder) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 25,
+      "match": "(CMP3Decoder*) alloc stride 0x8630",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x8630,\"..\\\\sound\\\\mp3.cpp\",3528)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x8630 == sizeof(CMP3Decoder). Replace the magic with sizeof(CMP3Decoder) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 30,
+      "match": "(CMP3Decoder*) alloc stride 0x8630",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x8630,\"..\\\\sound\\\\mp3.cpp\",3528)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 60,
     "local_size": 60,
@@ -438,22 +456,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x8630 == sizeof(CMP3Decoder). Replace the magic with sizeof(CMP3Decoder) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 25,
-      "match": "(CMP3Decoder*) alloc stride 0x8630",
-      "severity": "moderate",
-      "text": "(CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x8630,\"..\\\\sound\\\\mp3.cpp\",0xdc8)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0x8630 == sizeof(CMP3Decoder). Replace the magic with sizeof(CMP3Decoder) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 30,
-      "match": "(CMP3Decoder*) alloc stride 0x8630",
-      "severity": "moderate",
-      "text": "(CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x8630,\"..\\\\sound\\\\mp3.cpp\",0xdc8)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

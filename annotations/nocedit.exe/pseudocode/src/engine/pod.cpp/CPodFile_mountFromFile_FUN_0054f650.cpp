@@ -71,7 +71,7 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_pt
   } while (cVar2 != '\0');
   this_ptr->timestamp = local_6a4.timestamp;
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0x150);
+                     (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",336);
   local_20 = p_Var3;
   if (p_Var3 == (_FILE *)0x0) goto LAB_0054f6fe;
   engine_dosio_cpp_splitPath_FUN_00481f20
@@ -93,12 +93,12 @@ LAB_0054f786:
       pcVar13 = pcVar13 + 2;
     } while (cVar2 != '\0');
     pCVar4 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                       (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x16c);
+                       (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",364);
     this_ptr->directory_entries = pCVar4;
     if (pCVar4 == (CPodDirectoryEntry *)0x0) {
 LAB_0054f6fe:
       if (local_20 != (_FILE *)0x0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\pod.cpp",0x153);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\pod.cpp",339);
       }
       engine_pod_cpp_CPodFile_cleanup_FUN_00550090(this_ptr);
       return 0;
@@ -123,11 +123,11 @@ LAB_0054f6fe:
         if (local_2c < (int)size) {
           local_2c = (this_ptr->file_count - local_28) * 0x30 + size;
           pcVar13 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                              (this_ptr->file_data_buffer,local_2c,"..\\engine\\pod.cpp",0x17b);
+                              (this_ptr->file_data_buffer,local_2c,"..\\engine\\pod.cpp",379);
           this_ptr->file_data_buffer = pcVar13;
           if (pcVar13 == (char *)0x0) {
             g_CurrentFilename = "..\\engine\\pod.cpp";
-            g_CurrentLineNumber = 0x17c;
+            g_CurrentLineNumber = 380;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
           }
         }
@@ -202,7 +202,7 @@ LAB_0054f6fe:
       this_ptr->dependency_count = local_490.dependency_count;
       this_ptr->mount_priority = local_490.mount_priority;
       pCVar5 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                         (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1ab);
+                         (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",427);
       this_ptr->directory_entries = pCVar5;
       if (pCVar5 != (CPodDirectoryEntry *)0x0) {
         _fseek(p_Var3,local_490.data_start_offset,0);
@@ -212,11 +212,11 @@ LAB_0054f6fe:
           if ((this_ptr->file_count <= (int)local_490.total_file_size) &&
              ((int)local_490.total_file_size <= this_ptr->file_count * 0x100)) {
             pcVar13 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                                (local_490.total_file_size,"..\\engine\\pod.cpp",0x1ba);
+                                (local_490.total_file_size,"..\\engine\\pod.cpp",442);
             this_ptr->file_data_buffer = pcVar13;
             if (pcVar13 == (char *)0x0) {
               g_CurrentFilename = "..\\engine\\pod.cpp";
-              g_CurrentLineNumber = 0x1bb;
+              g_CurrentLineNumber = 443;
               core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
             }
             file_handle = local_20;
@@ -252,18 +252,18 @@ LAB_0054f6fe:
       this_ptr->file_count = local_160.file_count;
       this_ptr->audit_count = local_160.audit_count;
       pCVar5 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                         (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1da);
+                         (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",474);
       this_ptr->directory_entries = pCVar5;
       if (pCVar5 != (CPodDirectoryEntry *)0x0) {
         _fread(pCVar5,this_ptr->file_count,0x14,file);
         iVar4 = this_ptr->file_count;
         size = (this_ptr->directory_entries->offset - 0x60) + iVar4 * -0x14;
         if (((int)size < iVar4) || (iVar4 * 0x100 < (int)size)) goto LAB_0054f6fe;
-        pcVar13 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\engine\\pod.cpp",0x1e7);
+        pcVar13 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\engine\\pod.cpp",487);
         this_ptr->file_data_buffer = pcVar13;
         if (pcVar13 == (char *)0x0) {
           g_CurrentFilename = "..\\engine\\pod.cpp";
-          g_CurrentLineNumber = 0x1e8;
+          g_CurrentLineNumber = 488;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
         }
         _fread(this_ptr->file_data_buffer,size,1,local_20);
@@ -290,7 +290,7 @@ LAB_0054f6fe:
       pcVar13 = pcVar13 + 2;
     } while (cVar2 != '\0');
     pCVar5 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                       (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x20a);
+                       (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",522);
     this_ptr->directory_entries = pCVar5;
     if (pCVar5 == (CPodDirectoryEntry *)0x0) goto LAB_0054f6fe;
     size = 0;
@@ -313,11 +313,11 @@ LAB_0054f6fe:
         if (local_1c < (int)size) {
           local_1c = (this_ptr->file_count - local_24) * 0x30 + size;
           pcVar13 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                              (this_ptr->file_data_buffer,local_1c,"..\\engine\\pod.cpp",0x219);
+                              (this_ptr->file_data_buffer,local_1c,"..\\engine\\pod.cpp",537);
           this_ptr->file_data_buffer = pcVar13;
           if (pcVar13 == (char *)0x0) {
             g_CurrentFilename = "..\\engine\\pod.cpp";
-            g_CurrentLineNumber = 0x21a;
+            g_CurrentLineNumber = 538;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
           }
         }
@@ -349,14 +349,14 @@ LAB_0054f6fe:
     bVar3 = true;
   }
 LAB_0054f9a8:
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\pod.cpp",0x22d);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\pod.cpp",557);
   if (bVar3) {
     pcVar13 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                        (this_ptr->file_data_buffer,size,"..\\engine\\pod.cpp",0x233);
+                        (this_ptr->file_data_buffer,size,"..\\engine\\pod.cpp",563);
     this_ptr->file_data_buffer = pcVar13;
     if (pcVar13 == (char *)0x0) {
       g_CurrentFilename = "..\\engine\\pod.cpp";
-      g_CurrentLineNumber = 0x235;
+      g_CurrentLineNumber = 565;
       core_main_c_displayErrorAndQuit_FUN_00506f10("realloc returns NULL shrinking filenameBlockSize to fit.");
     }
   }

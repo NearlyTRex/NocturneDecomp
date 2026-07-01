@@ -59,7 +59,7 @@ int __cdecl engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *bas
   do {
     stream_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                            (local_53c.found_path,(char *)0x0,"rb",
-                            "..\\engine\\fileio.cpp",0x153);
+                            "..\\engine\\fileio.cpp",339);
     if (stream_ptr != (_FILE *)0x0) {
       _setvbuf(stream_ptr,(char *)0x0,0,0x400);
       goto LAB_004b32cc;
@@ -74,7 +74,7 @@ LAB_004b32cc:
   if ((stream_ptr == (_FILE *)0x0) ||
      (iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_53c), iVar3 == 0)) {
     if (stream_ptr != (_FILE *)0x0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",196);
       stream_ptr = (_FILE *)0x0;
     }
     pcVar4 = "Can't access %s.\nPerhaps someone else is checking it in, and it's taking a while?\nTry again in a few minutes, and if that doesn't work, get Fletch";
@@ -101,10 +101,10 @@ LAB_004b32cc:
       remove(local_328.found_path);
       dest_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                             (local_328.found_path,(char *)0x0,"wb",
-                             "..\\engine\\fileio.cpp",0x3c5);
+                             "..\\engine\\fileio.cpp",965);
       if (dest_file == (_FILE *)0x0) {
         if (stream_ptr != (_FILE *)0x0) {
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",196);
           stream_ptr = (_FILE *)0x0;
         }
         pSVar5 = &local_328;
@@ -115,11 +115,11 @@ LAB_004b32cc:
                          (stream_ptr,dest_file,local_53c.found_path,local_328.found_path,
                           local_53c.file_size);
       if (stream_ptr != (_FILE *)0x0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",196);
         stream_ptr = (_FILE *)0x0;
       }
       if (dest_file != (_FILE *)0x0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(dest_file,"..\\engine\\fileio.cpp",0xc4);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(dest_file,"..\\engine\\fileio.cpp",196);
       }
       if (pcVar4 != (char *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar4);
@@ -134,7 +134,7 @@ LAB_004b32cc:
       }
     }
     if (stream_ptr != (_FILE *)0x0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",196);
     }
     stream_ptr = (_FILE *)0x0;
     uVar3 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_328.found_path);
@@ -151,7 +151,7 @@ LAB_004b32fe:
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar4,pSVar5);
 LAB_004b3306:
   if (stream_ptr != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",196);
   }
   return 0;
 }

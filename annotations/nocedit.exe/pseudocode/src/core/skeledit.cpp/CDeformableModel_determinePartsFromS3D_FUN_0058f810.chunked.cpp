@@ -795,7 +795,7 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_
               else if (iVar30 == 1) {
                 if (0x1d < this_ptr->num_parts) {
                   g_CurrentFilename = "..\\core\\skeledit.cpp";
-                  g_CurrentLineNumber = 0xeaf;
+                  g_CurrentLineNumber = 3759;
                   core_main_c_displayErrorAndQuit_FUN_00506f10("Too many parts");
                 }
                 pcVar38 = "MySpecialTriangles";
@@ -1022,7 +1022,7 @@ static int CDeformableModel_determinePartsFromS3D_else_0_check_this_ptr_5_check_
                       if (this_ptr->num_textures <= iVar18) {
                         if (0x4f < this_ptr->num_textures) {
                           g_CurrentFilename = "..\\core\\skeledit.cpp";
-                          g_CurrentLineNumber = 0xf5d;
+                          g_CurrentLineNumber = 3933;
                           core_main_c_displayErrorAndQuit_FUN_00506f10
                                     ("Too many model textures!");
                         }
@@ -1423,7 +1423,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
   bVar39 = 0;
   if (this_ptr->num_lods != 1) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0xbc8;
+    g_CurrentLineNumber = 3016;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::determinePartsFromS3D - can't do this before building LODs!");
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -1438,17 +1438,17 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
   local_f0 = (int *)0x0;
   local_ec = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (entry->s3d_filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",
-                        0xbde);
+                        3038);
   if (local_ec == (_FILE *)0x0) {
     pcVar38 = "Can't open %s";
   }
   else {
     local_180 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                           ("parts.log",(char *)0x0,"wt",
-                           "..\\core\\skeledit.cpp",0xbee);
+                           "..\\core\\skeledit.cpp",3054);
     if (local_180 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\skeledit.cpp";
-      g_CurrentLineNumber = 0xbef;
+      g_CurrentLineNumber = 3055;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create log file!");
     }
     _fprintf(local_180,"Matching skeleton parts for %s\n");
@@ -1515,7 +1515,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         } while ((iVar18 != 10) || (iVar30 = iVar30 + -1, 0 < iVar30));
         if (0x96 < local_e4) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
-          g_CurrentLineNumber = 0xc24;
+          g_CurrentLineNumber = 3108;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many textures in parts .S3D!");
         }
         iVar30 = 0;
@@ -1548,10 +1548,10 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           if (_rc == GOTO_LAB_0058f8e7) goto LAB_0058f8e7;
         }
         local_184 = (SS3DFaceMatch *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                              ((int)local_16c * 0x3c,"..\\core\\skeledit.cpp",0xc4e);
+                              ((int)local_16c * 0x3c,"..\\core\\skeledit.cpp",3150);
         if (local_184 == (SS3DFaceMatch *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
-          g_CurrentLineNumber = 0xc4f;
+          g_CurrentLineNumber = 3151;
           core_main_c_displayErrorAndQuit_FUN_00506f10("out of memory in CDeformableModel::determinePartsFromS3D");
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -1570,7 +1570,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           if (_rc == GOTO_LAB_00590a70) goto LAB_00590a70;
         }
         pfVar10 = (float *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                            ((int)local_168 * 0xc + 4,"..\\core\\skeledit.cpp",0xc7c);
+                            ((int)local_168 * 0xc + 4,"..\\core\\skeledit.cpp",3196);
         local_188 = (CVector3f *)pfVar10;
         if (pfVar10 != (float *)0x0) {
           local_188 = (CVector3f *)(pfVar10 + 1);
@@ -1578,7 +1578,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         }
         if (local_188 == (CVector3f *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
-          g_CurrentLineNumber = 0xc7d;
+          g_CurrentLineNumber = 3197;
           core_main_c_displayErrorAndQuit_FUN_00506f10("out of memory in CDeformableModel::determinePartsFromS3D");
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -1603,7 +1603,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
             local_8c = local_8c + 3;
           } while (iVar30 < (int)local_168);
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_ec,"..\\core\\skeledit.cpp",0xc8c);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_ec,"..\\core\\skeledit.cpp",3212);
         local_ec = (_FILE *)0x0;
         _fprintf(local_180,"Removing duplicate faces\n");
         local_28 = 0;
@@ -1684,7 +1684,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         _fprintf(local_180,"Scale = %7.3f %7.3f %7.3f\n",(double)local_1dc,(double)local_1d8,
                    (double)local_1d4);
         pCVar19 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                            ((int)local_16c * 0xc + 4,"..\\core\\skeledit.cpp",0xd0f);
+                            ((int)local_16c * 0xc + 4,"..\\core\\skeledit.cpp",3343);
         local_17c = pCVar19;
         if (pCVar19 != (CVector3f *)0x0) {
           local_17c = (CVector3f *)&pCVar19->y;
@@ -1692,7 +1692,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         }
         fVar8 = (float)this_ptr->tri_count[0];
         pCVar19 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                            ((int)fVar8 * 0xc + 4,"..\\core\\skeledit.cpp",0xd10);
+                            ((int)fVar8 * 0xc + 4,"..\\core\\skeledit.cpp",3344);
         local_178 = pCVar19;
         if (pCVar19 != (CVector3f *)0x0) {
           local_178 = (CVector3f *)&pCVar19->y;
@@ -1700,7 +1700,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         }
         if ((local_17c == (CVector3f *)0x0) || (local_178 == (CVector3f *)0x0)) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
-          g_CurrentLineNumber = 0xd11;
+          g_CurrentLineNumber = 3345;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
         }
         iVar30 = 0;
@@ -1719,10 +1719,10 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         _fprintf(local_180,"Matching faces in %s\n");
         if (this_ptr->tri_count[0] <= (int)local_16c) {
           local_174 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                                (this_ptr->tri_count[0] * 4,"..\\core\\skeledit.cpp",0xd42);
+                                (this_ptr->tri_count[0] * 4,"..\\core\\skeledit.cpp",3394);
           if (local_174 == (void *)0x0) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
-            g_CurrentLineNumber = 0xd43;
+            g_CurrentLineNumber = 3395;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
           }
           local_15c = local_184;
@@ -1776,13 +1776,13 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
             } while (iVar30 < this_ptr->num_parts);
           }
           puVar13 = (uint *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                              (this_ptr->tri_count[0] << 2,"..\\core\\skeledit.cpp",0xe56);
+                              (this_ptr->tri_count[0] << 2,"..\\core\\skeledit.cpp",3670);
           local_170 = puVar13;
           local_f0 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                               (this_ptr->tri_count[0] << 2,"..\\core\\skeledit.cpp",0xe57);
+                               (this_ptr->tri_count[0] << 2,"..\\core\\skeledit.cpp",3671);
           if ((puVar13 == (uint *)0x0) || (local_f0 == (int *)0x0)) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
-            g_CurrentLineNumber = 0xe58;
+            g_CurrentLineNumber = 3672;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
           }
           iVar30 = 0;
@@ -1866,14 +1866,14 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
                     (g_CEditorToolsPtr,"Finding capped faces in %s");
           pSVar14 = (SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                               ((this_ptr->tri_count[0] + local_158) * 0x12,
-                               "..\\core\\skeledit.cpp",0xf1a);
+                               "..\\core\\skeledit.cpp",3866);
           local_150 = pSVar14;
           local_14c = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                                 ((this_ptr->tri_count[0] + local_158) * 4,
-                                 "..\\core\\skeledit.cpp",0xf1b);
+                                 "..\\core\\skeledit.cpp",3867);
           if ((pSVar14 == (SInputFace *)0x0) || (local_14c == (int *)0x0)) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
-            g_CurrentLineNumber = 0xf1c;
+            g_CurrentLineNumber = 3868;
             core_main_c_displayErrorAndQuit_FUN_00506f10("out of memory in CDeformableModel::determinePartsFromS3D");
           }
           pSVar37 = local_150;
@@ -1922,11 +1922,11 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           this_ptr->cap_index_ptr[0] = (int *)0x0;
           if (0 < local_158) {
             piVar15 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                                (local_158 * 4,"..\\core\\skeledit.cpp",0xf2b);
+                                (local_158 * 4,"..\\core\\skeledit.cpp",3883);
             this_ptr->cap_index_ptr[0] = piVar15;
             if (piVar15 == (int *)0x0) {
               g_CurrentFilename = "..\\core\\skeledit.cpp";
-              g_CurrentLineNumber = 0xf2c;
+              g_CurrentLineNumber = 3884;
               core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory.");
             }
           }
@@ -1938,7 +1938,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         }
           if (local_158 != this_ptr->cap_tri_count[0]) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
-            g_CurrentLineNumber = 0xfbe;
+            g_CurrentLineNumber = 4030;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze after adding capped triangles.");
           }
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -1963,7 +1963,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           p_Var8 = local_180;
           if (local_180 != (_FILE *)0x0) {
             _fprintf(local_180,"Determined parts using %s OK!\n");
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var8,"..\\core\\skeledit.cpp",0xffc);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var8,"..\\core\\skeledit.cpp",4092);
           }
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Determined parts using %s OK!");
@@ -1983,10 +1983,10 @@ LAB_0058f8da:
   _sprintf(g_SkeleditStatusMessage,pcVar38);
 LAB_0058f8e7:
   if (local_ec != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_ec,"..\\core\\skeledit.cpp",0xbe2);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_ec,"..\\core\\skeledit.cpp",3042);
   }
   if (local_180 != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_180,"..\\core\\skeledit.cpp",0xbe3);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_180,"..\\core\\skeledit.cpp",3043);
   }
   g_CurrentDebugLine = 0xbe4;
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";

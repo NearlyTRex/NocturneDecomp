@@ -278,7 +278,7 @@ LAB_005f094d:
           if ((this_ptr->alpha1 == (CDemonActor *)0x0) || (this_ptr->alpha2 == (CDemonActor *)0x0))
           {
             g_CurrentFilename = "..\\core\\werewolf.cpp";
-            g_CurrentLineNumber = 0x1ad;
+            g_CurrentLineNumber = 429;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Alpha werewolf requires 2 waypoints");
           }
           engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Phase: %d, Timer: %f\n");

@@ -10,7 +10,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_importFromUnknown_FUN_0051b2b0(CLodMesh 
 
 {
   g_CurrentFilename = "..\\shape\\meshlod.cpp";
-  g_CurrentLineNumber = 0x1180;
+  g_CurrentLineNumber = 4480;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Write me!");
   return;
 }

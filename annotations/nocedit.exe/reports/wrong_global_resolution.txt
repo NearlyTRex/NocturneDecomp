@@ -37,8 +37,8 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
 
-  .keep files with issues: 39 (these need manual review)
-  Raw .cpp files with issues: 35
+  .keep files with issues: 40 (these need manual review)
+  Raw .cpp files with issues: 34
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -469,6 +469,14 @@ sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0  [.keep]  (1 suspicious global
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+wincore_wddvmem.cpp_initTextureCache_FUN_00403790  [.keep]  (1 suspicious globals)
+  File: wincore/wddvmem.cpp
+
+  g_TextureCacheInstance
+    Used at lines: 18, 21, 22
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 wincore_winrun.cpp_enqueueInput_FUN_005f2f30  [.keep]  (1 suspicious globals)
   File: wincore/winrun.cpp
 
@@ -822,12 +830,4 @@ sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60  [.cpp]  (1 suspicious globals)
 
   g_SfxOptions
     Used at lines: 12
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-wincore_wddvmem.cpp_initTextureCache_FUN_00403790  [.cpp]  (1 suspicious globals)
-  File: wincore/wddvmem.cpp
-
-  g_TextureCacheInstance
-    Used at lines: 17, 20, 21
     NOT found in function reference list

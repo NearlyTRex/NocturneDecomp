@@ -72,7 +72,7 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr
       core_actor_cpp_archiveInteger_FUN_0040b7f0(&local_1c,"attachCount");
       if (10 < local_1c) {
         g_CurrentFilename = "..\\core\\platfrm.cpp";
-        g_CurrentLineNumber = 0x316;
+        g_CurrentLineNumber = 790;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CPlatform::archive - too many attached actors.");
       }
       iVar3 = 0;

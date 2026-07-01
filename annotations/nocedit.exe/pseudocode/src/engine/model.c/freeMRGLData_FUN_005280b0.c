@@ -25,11 +25,11 @@ void __cdecl engine_model_c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended *mrgl_
           pSVar2 = (SMRGLHeaderExtended *)&(pSVar2->base).count;
         } while (iVar1 < mrgl_data->child_count);
       }
-      shape_memdbg_cpp_debugFree_FUN_0050f460(mrgl_data,"..\\engine\\model.c",0x133);
+      shape_memdbg_cpp_debugFree_FUN_0050f460(mrgl_data,"..\\engine\\model.c",307);
       return;
     }
     if (iVar1 != 0x26) {
-      shape_memdbg_cpp_debugFree_FUN_0050f460(mrgl_data,"..\\engine\\model.c",0x13c);
+      shape_memdbg_cpp_debugFree_FUN_0050f460(mrgl_data,"..\\engine\\model.c",316);
       return;
     }
     engine_boss_c_modelStructNotSupported3_FUN_0041dbb0(mrgl_data);

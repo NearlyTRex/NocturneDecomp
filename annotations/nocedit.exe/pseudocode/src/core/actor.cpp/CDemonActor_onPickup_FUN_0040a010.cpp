@@ -10,6 +10,6 @@ void __cdecl core_actor_cpp_CDemonActor_onPickup_FUN_0040a010(CDemonActor *this_
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x580);
+            (this_ptr,"..\\core\\actor.cpp",1408);
   return;
 }

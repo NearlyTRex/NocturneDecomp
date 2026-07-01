@@ -10,8 +10,8 @@ int __cdecl core_actor_cpp_CDemonActor_processActionButton_FUN_00409f60(CDemonAc
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x559);
-  g_CurrentLineNumber = 0x560;
+            (this_ptr,"..\\core\\actor.cpp",1369);
+  g_CurrentLineNumber = 1376;
   g_CurrentFilename = "..\\core\\actor.cpp";
   core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonActor::processActionButton - should never be called for this base class!");
   return 1;

@@ -13,17 +13,17 @@ void __cdecl shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540(CPickList *
   
   if ((item_index < 0) || ((this_ptr->base).item_count <= item_index)) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
-    g_CurrentLineNumber = 0x104e;
+    g_CurrentLineNumber = 4174;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::setItemHotKey - invalid index");
   }
   if (this_ptr->hotkey_capacity <= item_index) {
     piVar1 = (int *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                        (this_ptr->hotkey_array,(this_ptr->base).item_count << 2,
-                        "..\\shape\\edittool.cpp",0x1054);
+                        "..\\shape\\edittool.cpp",4180);
     this_ptr->hotkey_array = piVar1;
     if (piVar1 == (int *)0x0) {
       g_CurrentFilename = "..\\shape\\edittool.cpp";
-      g_CurrentLineNumber = 0x1055;
+      g_CurrentLineNumber = 4181;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
     }
     while (this_ptr->hotkey_capacity < (this_ptr->base).item_count) {

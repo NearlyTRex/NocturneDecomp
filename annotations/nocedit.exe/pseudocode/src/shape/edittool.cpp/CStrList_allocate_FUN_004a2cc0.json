@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 42,
+    "complexity_score": 27,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 27,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 99
   },
   "cross_references": [
@@ -190,6 +188,17 @@
     },
     "pcode_op_count": 205
   },
+  "resolved_suspects": [
+    {
+      "description": "Pointer-array allocation strides by 4 (== 32-bit sizeof(char *)). Replace the magic 4 with sizeof(char *): a raw 4 under-allocates and corrupts memory once pointers are 8 bytes at 64-bit (\u00a727).",
+      "line": 19,
+      "match": "(char**) alloc stride 4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(char **)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->data_array,new_capacity * 4,\"..\\\\shape\\\\edittool.cpp\",2896)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -213,14 +222,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer-array allocation strides by 4 (== 32-bit sizeof(char *)). Replace the magic 4 with sizeof(char *): a raw 4 under-allocates and corrupts memory once pointers are 8 bytes at 64-bit (\u00a727).",
-      "line": 19,
-      "match": "(char**) alloc stride 4",
-      "severity": "moderate",
-      "text": "(char **)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->data_array,new_capacity * 4,\"..\\\\shape\\\\edittool.cpp\",0xb50)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

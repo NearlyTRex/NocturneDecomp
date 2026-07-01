@@ -19,14 +19,14 @@ CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_005505
   bVar4 = 0;
   if ((record_index < 0) || (this_ptr->audit_count <= record_index)) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
-    g_CurrentLineNumber = 0x308;
+    g_CurrentLineNumber = 776;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPodFile::getAuditRecord - invalid index.  Pod not mounted?");
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0x30c);
+                   (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",780);
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
-    g_CurrentLineNumber = 0x30d;
+    g_CurrentLineNumber = 781;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CPodFile::getAuditRecord - can't open %s",this_ptr->filename);
   }
@@ -34,7 +34,7 @@ CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_005505
   _fread(local_144,0x138,1,file);
   if ((file->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
-    g_CurrentLineNumber = 0x31b;
+    g_CurrentLineNumber = 795;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CPodFile::getAuditRecord - error reading %s",this_ptr->filename);
   }

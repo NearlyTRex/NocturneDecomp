@@ -46,10 +46,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
   core_setedit_cpp_CDemonSet_clearCameraDepthData_FUN_00580560(this_ptr);
   core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(this_ptr);
   coverage_map = (char *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                           (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",0x786);
+                           (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",1926);
   if (coverage_map == (char *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0x787;
+    g_CurrentLineNumber = 1927;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
   while( true ) {

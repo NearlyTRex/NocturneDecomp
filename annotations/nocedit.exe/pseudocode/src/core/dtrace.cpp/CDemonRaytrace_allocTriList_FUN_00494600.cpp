@@ -16,7 +16,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_00494600(CDemonRayt
   
   iVar1 = this_ptr->triangle_count;
   piVar2 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     (iVar1 * 0x38 + 4,"..\\core\\dtrace.cpp",0xf7);
+                     (iVar1 * 0x38 + 4,"..\\core\\dtrace.cpp",247);
   pCVar3 = (CDemonTriangle *)0x0;
   if (piVar2 != (int *)0x0) {
     pCVar3 = (CDemonTriangle *)(piVar2 + 1);
@@ -24,13 +24,13 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_00494600(CDemonRayt
   }
   this_ptr->triangle_list = pCVar3;
   puVar4 = (uchar *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     (this_ptr->triangle_count,"..\\core\\dtrace.cpp",0xf8);
+                     (this_ptr->triangle_count,"..\\core\\dtrace.cpp",248);
   this_ptr->triangle_flags = puVar4;
   if ((this_ptr->triangle_list != (CDemonTriangle *)0x0) && (puVar4 != (uchar *)0x0)) {
     return;
   }
   g_CurrentFilename = "..\\core\\dtrace.cpp";
-  g_CurrentLineNumber = 0xf9;
+  g_CurrentLineNumber = 249;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::allocTriList - Out of memory!");
   return;
 }

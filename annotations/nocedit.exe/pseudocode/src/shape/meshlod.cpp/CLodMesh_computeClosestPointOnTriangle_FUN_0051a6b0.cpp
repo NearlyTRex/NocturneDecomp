@@ -80,7 +80,7 @@ CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeClosestPointOnTriangle_FUN
     return output_point;
   default:
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0xf22;
+    g_CurrentLineNumber = 3874;
     core_main_c_displayErrorAndQuit_FUN_00506f10("!");
     shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870(this_ptr,output_point,triangle_ptr);
     return output_point;

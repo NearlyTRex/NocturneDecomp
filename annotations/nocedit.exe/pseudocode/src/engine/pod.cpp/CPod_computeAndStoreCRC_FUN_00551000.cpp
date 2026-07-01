@@ -33,7 +33,7 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,
   iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(&local_44c,pod_filename);
   if (iVar2 == 0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
-    g_CurrentLineNumber = 0x49d;
+    g_CurrentLineNumber = 1181;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't mount %s to check version",pod_filename);
   }
   engine_pod_cpp_CPodFile_cleanup_FUN_00550090(&local_44c);
@@ -47,14 +47,14 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,
   else {
     if (local_44c.pod_format_version == 100) goto LAB_00551212;
     g_CurrentFilename = "..\\engine\\pod.cpp";
-    g_CurrentLineNumber = 0x4ae;
+    g_CurrentLineNumber = 1198;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Invalid pod version for %s: %d",pod_filename,local_44c.pod_format_version);
   }
   iVar1 = engine_dosio_cpp_getFileSize_FUN_00481880(&s_EmptyChar_0064015e,pod_filename);
   size = iVar1 - local_18;
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (pod_filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0xf2);
+                     (pod_filename,(char *)0x0,"rb","..\\engine\\pod.cpp",242);
   current_crc = 0xffffffff;
   local_1c = p_Var3;
   _fseek(p_Var3,local_18,0);
@@ -81,13 +81,13 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,
       current_crc = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(current_crc,data_byte);
     } while (uVar3 < size);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\pod.cpp",0xfb);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\engine\\pod.cpp",251);
   local_20 = current_crc;
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (pod_filename,(char *)0x0,"rb+","..\\engine\\pod.cpp",0x4b8);
+                   (pod_filename,(char *)0x0,"rb+","..\\engine\\pod.cpp",1208);
   _fseek(file,local_18 + -4,0);
   _fwrite(&local_20,4,1,file);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pod.cpp",0x4bb);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pod.cpp",1211);
 LAB_00551212:
   engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_44c,0);
   return;

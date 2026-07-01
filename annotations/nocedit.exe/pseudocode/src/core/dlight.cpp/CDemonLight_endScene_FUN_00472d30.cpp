@@ -18,7 +18,7 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this
   
   if ((this_ptr->base).scene_open_flag == 0) {
     g_CurrentFilename = "..\\core\\dlight.cpp";
-    g_CurrentLineNumber = 0x164;
+    g_CurrentLineNumber = 356;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonLight::endScene - Scene not open");
   }
   if ((this_ptr->base).skip_clear_buffer_flag == 0) {

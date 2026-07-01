@@ -13,7 +13,7 @@ void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_00407890(SMRGLHeaderExtended
   
   if (chain == (SMRGLHeaderExtended *)0x0) {
     g_CurrentFilename = "..\\engine\\3d.c";
-    g_CurrentLineNumber = 0xc5f;
+    g_CurrentLineNumber = 3167;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad pointer!");
   }
   while( true ) {
@@ -21,7 +21,7 @@ void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_00407890(SMRGLHeaderExtended
     if (iVar1 == 0) break;
     if ((iVar1 < 0) || (0x42 < iVar1)) {
       g_CurrentFilename = "..\\engine\\3d.c";
-      g_CurrentLineNumber = 0xc68;
+      g_CurrentLineNumber = 3176;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Bad code!");
     }
     chain = (*g_MRGLBlockHandlerTable[iVar1])(chain);

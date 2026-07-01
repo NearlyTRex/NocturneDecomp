@@ -56,7 +56,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
   if (0 < this_ptr->actor_count) {
     do {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                (pCVar4->actors[0],"..\\core\\set.cpp",0x593);
+                (pCVar4->actors[0],"..\\core\\set.cpp",1427);
       iVar9 = iVar9 + 1;
       pCVar4 = (CDemonSet *)pCVar4->cameras;
     } while (iVar9 < this_ptr->actor_count);
@@ -268,7 +268,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
     if (0 < this_ptr->actor_count) {
       do {
         core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                  (pCVar11->actors[0],"..\\core\\set.cpp",0x654);
+                  (pCVar11->actors[0],"..\\core\\set.cpp",1620);
         iVar2 = iVar2 + 1;
         pCVar11 = (CDemonSet *)pCVar11->cameras;
       } while (iVar2 < this_ptr->actor_count);

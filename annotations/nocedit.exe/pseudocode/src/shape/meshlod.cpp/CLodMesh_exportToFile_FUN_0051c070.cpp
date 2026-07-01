@@ -14,13 +14,13 @@ void __cdecl shape_meshlod_cpp_CLodMesh_exportToFile_FUN_0051c070(CLodMesh *this
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Exporting %s",filename);
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       (filename,(char *)0x0,"wt","..\\shape\\meshlod.cpp",0x133e);
+                       (filename,(char *)0x0,"wt","..\\shape\\meshlod.cpp",4926);
   if (file_ptr == (_FILE *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0x133f;
+    g_CurrentLineNumber = 4927;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",filename);
   }
   shape_meshlod_cpp_CLodMesh_exportToS3D_FUN_0051c100(this_ptr,file_ptr);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\meshlod.cpp",0x1347);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\meshlod.cpp",4935);
   return;
 }

@@ -17,7 +17,7 @@ int __cdecl core_course_cpp_CCourse_importCRS_FUN_00442d70(CCourse *this_ptr,cha
   int local_10;
   
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (filename,(char *)0x0,"rt","..\\core\\course.cpp",0x184);
+                   (filename,(char *)0x0,"rt","..\\core\\course.cpp",388);
   if (file == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",filename);
@@ -42,6 +42,6 @@ int __cdecl core_course_cpp_CCourse_importCRS_FUN_00442d70(CCourse *this_ptr,cha
             (g_CEditorToolsPtr,local_17c);
   core_course_cpp_CCourse_importMatrices_FUN_00442ea0(this_ptr,file,local_10);
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",0x1a7);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",423);
   return 1;
 }

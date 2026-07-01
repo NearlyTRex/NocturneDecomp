@@ -27,11 +27,11 @@ void __cdecl core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(CDemonMissi
     }
     file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
                             ("$$UNDO$$.TMP",(char *)0x0,"wt",
-                             "..\\core\\msnedit.cpp",0x9fe);
+                             "..\\core\\msnedit.cpp",2558);
     if (file_handle != (_FILE *)0x0) {
       core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0();
       core_actor_cpp_CDemonActor_save_FUN_0040af30(this_ptr->selected_actor,file_handle);
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\msnedit.cpp",0xa02);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\msnedit.cpp",2562);
       return;
     }
   }

@@ -61,7 +61,7 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SMRGLHeaderExtended
 LAB_00407c82:
           _sprintf(local_110,"Unknown primitive : %d",
                      (uint)(byte)(((SMRGLHeaderPrimitive *)mrgl)->base).type);
-          g_CurrentLineNumber = 0xcf1;
+          g_CurrentLineNumber = 3313;
           g_CurrentFilename = "..\\engine\\3d.c";
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_110);
         }
@@ -107,7 +107,7 @@ LAB_00407c82:
         if (iVar3 != 0) {
           if (1999 < g_RenderFaceCount) {
             g_CurrentFilename = "..\\engine\\3d.c";
-            g_CurrentLineNumber = 0xca7;
+            g_CurrentLineNumber = 3239;
             core_main_c_displayErrorAndQuit_FUN_00506f10("renderFaceList - too many faces");
           }
           g_RenderFaceArray[g_RenderFaceCount] = (SMRGLHeaderPrimitive *)mrgl;

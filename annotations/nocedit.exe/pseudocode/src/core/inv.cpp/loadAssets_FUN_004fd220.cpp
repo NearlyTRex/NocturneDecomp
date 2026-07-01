@@ -17,7 +17,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004fd220(void)
                      ("data","invsize.txt","rt");
   if (p_Var1 != (_FILE *)0x0) {
     _fscanf(p_Var1,"%d,%d\n",&g_InventoryWidth,&g_InventoryHeight);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\inv.cpp",0x139);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\inv.cpp",313);
   }
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
             (&g_InvBackgroundBitmap,"invback",g_InventoryWidth,g_InventoryHeight);
@@ -70,7 +70,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004fd220(void)
       if (iVar2 == 0) break;
       g_ItemDefinitionCount = g_ItemDefinitionCount + 1;
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\inv.cpp",0x169);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\inv.cpp",361);
   }
   return;
 }

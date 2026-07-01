@@ -16,7 +16,7 @@ _FILE * __cdecl engine_fileio_cpp_openFileWithRetry_FUN_004b2200(char *filename,
   iVar2 = 0;
   while( true ) {
     stream_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                           (filename,(char *)0x0,mode,"..\\engine\\fileio.cpp",0x153);
+                           (filename,(char *)0x0,mode,"..\\engine\\fileio.cpp",339);
     if (stream_ptr != (_FILE *)0x0) {
       _setvbuf(stream_ptr,(char *)0x0,0,0x400);
       return stream_ptr;

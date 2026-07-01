@@ -39,25 +39,25 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880((char *)0x0,mp3_filename);
   if (iVar2 < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x176c;
+    g_CurrentLineNumber = 5996;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",mp3_filename);
   }
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (mp3_filename,(char *)0x0,"rb","..\\sound\\sndmain.cpp",0x176e);
+                     (mp3_filename,(char *)0x0,"rb","..\\sound\\sndmain.cpp",5998);
   if (p_Var3 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 5999;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",mp3_filename);
   }
   this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                       (0x8630,"..\\sound\\sndmain.cpp",0x1773);
+                       (0x8630,"..\\sound\\sndmain.cpp",6003);
   pCVar4 = (CMP3Decoder *)0x0;
   if (this_ptr != (CMP3Decoder *)0x0) {
     pCVar4 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(this_ptr);
   }
   if (pCVar4 == (CMP3Decoder *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x1774;
+    g_CurrentLineNumber = 6004;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
   sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(pCVar4,p_Var3,iVar2);
@@ -74,7 +74,7 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   splitpath(mp3_filename,local_14,local_12c,local_22c,(char *)0x0);
   makepath(local_330,local_14,local_12c,local_22c,"sfx");
   p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (local_330,(char *)0x0,"rt","..\\sound\\sndmain.cpp",0x1791);
+                     (local_330,(char *)0x0,"rt","..\\sound\\sndmain.cpp",6033);
   iVar1 = -1;
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_2c);
   if (p_Var2 != (_FILE *)0x0) {
@@ -140,14 +140,14 @@ joined_r0x005ad2dc:
       if (iVar4 == 0) {
         if (-1 < iVar1) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
-          g_CurrentLineNumber = 0x179d;
+          g_CurrentLineNumber = 6045;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("Multiple 'length' statements found in %s",local_330);
         }
         iVar1 = local_2c.item_count + -1;
       }
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\sound\\sndmain.cpp",0x17a2);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\sound\\sndmain.cpp",6050);
   }
   _sprintf(local_45c,"length = %d",local_1c);
   if (iVar1 < 0) {
@@ -157,10 +157,10 @@ joined_r0x005ad2dc:
     shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120(&local_2c,iVar1,local_45c);
   }
   p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (local_330,(char *)0x0,"wt","..\\sound\\sndmain.cpp",0x17ac);
+                     (local_330,(char *)0x0,"wt","..\\sound\\sndmain.cpp",6060);
   if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x17ad;
+    g_CurrentLineNumber = 6061;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",local_330);
   }
   iVar1 = 0;
@@ -171,7 +171,7 @@ joined_r0x005ad2dc:
       iVar1 = iVar1 + 1;
     } while (iVar1 < local_2c.item_count);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\sound\\sndmain.cpp",0x17b1);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\sound\\sndmain.cpp",6065);
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_2c,0);
   return;
 }

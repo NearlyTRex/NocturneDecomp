@@ -17,7 +17,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CE
   
   if (g_WindowStackCount < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
-    g_CurrentLineNumber = 0x8c6;
+    g_CurrentLineNumber = 2246;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CEditorTools::paintWindow() called but no window was opened!");
   }
   iVar2 = g_ActiveRenderColor;

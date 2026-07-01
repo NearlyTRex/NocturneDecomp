@@ -10,6 +10,6 @@ int __cdecl core_actor_cpp_CDemonActor_getBlockVirtualDirectorFlag_FUN_00409880(
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x4a5);
+            (this_ptr,"..\\core\\actor.cpp",1189);
   return 0;
 }

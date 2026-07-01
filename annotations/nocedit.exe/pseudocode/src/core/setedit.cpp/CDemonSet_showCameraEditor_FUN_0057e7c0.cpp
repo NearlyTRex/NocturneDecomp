@@ -466,7 +466,7 @@ LAB_0057eb3b:
         p_Var13 = engine_dosio_cpp_getFile_FUN_00481a50("models",local_9bc,"rt");
         if (p_Var13 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
-          g_CurrentLineNumber = 0xe68;
+          g_CurrentLineNumber = 3688;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open LC file");
         }
         _fgets((char *)(abStack_4be + 2),0xff,p_Var13);
@@ -474,7 +474,7 @@ LAB_0057eb3b:
         _fscanf(p_Var13,"%d\n",&local_6c);
         if (local_6c != 1) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
-          g_CurrentLineNumber = 0xe6c;
+          g_CurrentLineNumber = 3692;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't merge version %d LC file",local_6c)
           ;
         }
@@ -506,7 +506,7 @@ LAB_0057eb3b:
           }
           iVar11 = this_ptr->camera_count;
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",0xe7f);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",3711);
         goto LAB_0057eb3b;
       }
       break;
@@ -528,7 +528,7 @@ LAB_0057eb3b:
           ptr = pCVar12->cameras[0].pvs_list;
           pCVar12->cameras[0].pvs_count = 0;
           if (ptr != (int *)0x0) {
-            shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",0xe97);
+            shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",3735);
             pCVar12->cameras[0].pvs_list = (int *)0x0;
           }
           core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,iVar11);
@@ -554,7 +554,7 @@ LAB_0057eb3b:
         local_58 = engine_dosio_cpp_getFile_FUN_00481a50("models",local_2bc,"rt");
         if (local_58 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
-          g_CurrentLineNumber = 0xeae;
+          g_CurrentLineNumber = 3758;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open LC file");
         }
         p_Var13 = local_58;
@@ -563,7 +563,7 @@ LAB_0057eb3b:
         _fscanf(p_Var13,"%d\n",&local_54);
         if (local_54 != 1) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
-          g_CurrentLineNumber = 0xeb2;
+          g_CurrentLineNumber = 3762;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't merge version %d LC file",local_54)
           ;
         }
@@ -610,8 +610,8 @@ LAB_0057f7c1:
               iVar10 = iVar10 + 1;
               _fputc(character,p_Var14);
             } while (iVar10 < 0x4b000);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\core\\setedit.cpp",0xecd);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",0xece);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\core\\setedit.cpp",3789);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",3790);
             _sprintf(local_6bc,"%s.act",&local_b60);
             local_48 = engine_dosio_cpp_getFile_FUN_00481a50
                                  ("backdrop",local_6bc,"rb");
@@ -626,14 +626,14 @@ LAB_0057f7c1:
               iVar11 = iVar11 + 1;
               _fputc(iVar10,p_Var17);
             } while (iVar11 < 0x300);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",0xed6);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var14,"..\\core\\setedit.cpp",0xed7);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",3798);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var14,"..\\core\\setedit.cpp",3799);
           }
 LAB_0057fa1d:
           local_4c = local_4c + -1;
           core_setutil_cpp_C3DSCamera_dtor_FUN_00585340(&local_b60,0);
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_58,"..\\core\\setedit.cpp",0xede);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_58,"..\\core\\setedit.cpp",3806);
         goto LAB_0057eb3b;
       }
       break;
@@ -669,8 +669,8 @@ LAB_0057fa1d:
               iVar11 = iVar11 + 1;
               _fputc(iVar10,p_Var20);
             } while (iVar11 < 0x4b000);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xef5);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\setedit.cpp",0xef6);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",3829);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\setedit.cpp",3830);
             _sprintf(local_8bc,"%s.act",local_24);
             _sprintf(local_1bc,"%s%d.act",local_ac,local_18 + 1);
             p_Var13 = engine_dosio_cpp_getFile_FUN_00481a50
@@ -684,8 +684,8 @@ LAB_0057fa1d:
               iVar11 = iVar11 + 1;
               _fputc(iVar10,p_Var17);
             } while (iVar11 < 0x300);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",0xefe);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var14,"..\\core\\setedit.cpp",0xeff);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",3838);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var14,"..\\core\\setedit.cpp",3839);
             pCVar15 = local_20;
             iVar11 = local_18 + 1;
             _sprintf(local_20->name,"%s%d",local_ac,iVar11);

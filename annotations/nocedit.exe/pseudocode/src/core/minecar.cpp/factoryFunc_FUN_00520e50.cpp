@@ -13,7 +13,7 @@ CMineCar * __cdecl core_minecar_cpp_factoryFunc_FUN_00520e50(void)
   CMineCar *pCVar1;
   
   this_ptr = (CPlatform *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                       (0x730,"..\\core\\minecar.cpp",0x39);
+                       (0x730,"..\\core\\minecar.cpp",57);
   if (this_ptr == (CPlatform *)0x0) {
     return (CMineCar *)0x0;
   }

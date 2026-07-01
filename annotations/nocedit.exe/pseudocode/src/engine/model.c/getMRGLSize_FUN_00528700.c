@@ -69,7 +69,7 @@ int __cdecl engine_model_c_getMRGLSize_FUN_00528700(SMRGLHeaderExtended *header)
   default:
     _sprintf(local_100,"MRGLSize: Bad type : %d",iVar1);
     g_CurrentFilename = "..\\engine\\model.c";
-    g_CurrentLineNumber = 0x25b;
+    g_CurrentLineNumber = 603;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_100);
     return 4;
   case 0x16:

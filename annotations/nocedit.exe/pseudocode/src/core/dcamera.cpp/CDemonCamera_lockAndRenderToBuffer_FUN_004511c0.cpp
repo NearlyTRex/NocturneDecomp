@@ -18,7 +18,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(CDe
     iVar1 = wincore_windll_cpp_lockHoldBuffer_FUN_005b7df0();
     if (iVar1 == 0) {
       g_CurrentFilename = "..\\core\\dcamera.cpp";
-      g_CurrentLineNumber = 0xe37;
+      g_CurrentLineNumber = 3639;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to lock hold buffer.   Please set 640x480 as your resolution.");
     }
   }

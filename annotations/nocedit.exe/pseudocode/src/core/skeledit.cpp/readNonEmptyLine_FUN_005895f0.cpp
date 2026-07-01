@@ -18,7 +18,7 @@ int __cdecl core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,_FILE *
       if (iVar1 == -1) {
         if (require_content != 0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
-          g_CurrentLineNumber = 0xd0;
+          g_CurrentLineNumber = 208;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Unexpected end of file!");
         }
         return 0;

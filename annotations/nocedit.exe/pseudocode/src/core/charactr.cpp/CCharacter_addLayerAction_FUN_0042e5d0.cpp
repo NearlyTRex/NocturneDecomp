@@ -16,7 +16,7 @@ void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter
   
   if (0x13 < this_ptr->layer_action_count) {
     g_CurrentFilename = "..\\core\\charactr.cpp";
-    g_CurrentLineNumber = 0xf42;
+    g_CurrentLineNumber = 3906;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::addLayerAction - too many");
   }
   iVar2 = this_ptr->layer_action_count;

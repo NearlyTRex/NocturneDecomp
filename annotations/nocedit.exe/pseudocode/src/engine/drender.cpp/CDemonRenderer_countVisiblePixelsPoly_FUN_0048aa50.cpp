@@ -43,7 +43,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0048aa5
     }
     else {
       g_CurrentFilename = "..\\engine\\drender.cpp";
-      g_CurrentLineNumber = 0x29d;
+      g_CurrentLineNumber = 669;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't use demonZFacetCount in shadow mode!");
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740

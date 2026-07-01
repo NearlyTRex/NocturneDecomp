@@ -15,7 +15,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070(CSfx
   
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x942;
+    g_CurrentLineNumber = 2370;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::autoCalcDelayRemaining - must be locked!");
   }
   if (((this_ptr->options).flags & 1) != 0) {

@@ -13,7 +13,7 @@ void __cdecl core_event_cpp_CRuleList_remove_FUN_004b17c0(CRuleList *this_ptr,in
   
   if ((index < 0) || (this_ptr->list_size <= index)) {
     g_CurrentFilename = "..\\core\\event.cpp";
-    g_CurrentLineNumber = 0xcef;
+    g_CurrentLineNumber = 3311;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CRuleList::remove - invalid index");
   }
   iVar1 = this_ptr->list_size + -1;

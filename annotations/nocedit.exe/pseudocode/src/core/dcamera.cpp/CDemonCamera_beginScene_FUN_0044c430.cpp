@@ -83,7 +83,7 @@ switchD_0044c448_caseD_3:
   }
   else {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
-    g_CurrentLineNumber = 0x2e2;
+    g_CurrentLineNumber = 738;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCamera::beginScene - Scene already open!");
   }
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0(this_ptr,skip_clear_buffers);

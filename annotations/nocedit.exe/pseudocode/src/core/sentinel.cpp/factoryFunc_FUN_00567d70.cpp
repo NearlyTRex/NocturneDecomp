@@ -12,7 +12,7 @@ CSentinel * __cdecl core_sentinel_cpp_factoryFunc_FUN_00567d70(void)
   CSentinel *pCVar1;
   
   pCVar1 = (CSentinel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (0xbec4,"..\\core\\sentinel.cpp",0x5f);
+                     (0xbec4,"..\\core\\sentinel.cpp",95);
   if (pCVar1 == (CSentinel *)0x0) {
     return (CSentinel *)0x0;
   }

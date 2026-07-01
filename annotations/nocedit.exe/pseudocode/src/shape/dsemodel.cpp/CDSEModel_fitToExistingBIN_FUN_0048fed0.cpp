@@ -36,7 +36,7 @@ int __cdecl shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel
   
   file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rb");
   if (file_ptr != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\dsemodel.cpp",0x180);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\dsemodel.cpp",384);
     mrgl_data = engine_model_c_loadModelFile_FUN_00527ec0(filename);
     engine_model_c_getMRGLBounds_FUN_00528140(&mrgl_data->base,&local_c4);
     fVar1 = (float)0.00390625;

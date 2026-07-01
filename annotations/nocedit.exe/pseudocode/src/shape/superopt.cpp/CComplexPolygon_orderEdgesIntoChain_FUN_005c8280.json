@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 231,
-    "complexity_score": 125,
+    "complexity_score": 110,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 110,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 341
   },
   "cross_references": [
@@ -332,15 +330,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x60 == sizeof(SExpandedEdge). Replace the magic with sizeof(SExpandedEdge) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "introduced_by": "keep",
-      "line": 20,
-      "match": "(SExpandedEdge*) alloc stride 0x60",
-      "severity": "moderate",
-      "text": "(SExpandedEdge *)shape_memdbg_cpp_malloc_FUN_006021da(edge_count * 0x60)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

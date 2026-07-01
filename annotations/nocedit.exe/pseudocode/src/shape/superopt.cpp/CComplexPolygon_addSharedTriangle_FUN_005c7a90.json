@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 45,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 97
   },
   "cross_references": [
@@ -151,6 +149,15 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&(poly->normal).impl.z + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer-array allocation strides by 4 (== 32-bit sizeof(CPoly *)). Replace the magic 4 with sizeof(CPoly *): a raw 4 under-allocates and corrupts memory once pointers are 8 bytes at 64-bit (\u00a727).",
+      "line": 24,
+      "match": "(CPoly**) alloc stride 4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CPoly **)realloc (this_ptr->polygon_list,(this_ptr->polygon_count + 1) * 4)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -176,14 +183,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer-array allocation strides by 4 (== 32-bit sizeof(CPoly *)). Replace the magic 4 with sizeof(CPoly *): a raw 4 under-allocates and corrupts memory once pointers are 8 bytes at 64-bit (\u00a727).",
-      "line": 24,
-      "match": "(CPoly**) alloc stride 4",
-      "severity": "moderate",
-      "text": "(CPoly **)realloc (this_ptr->polygon_list,(this_ptr->polygon_count + 1) * 4)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

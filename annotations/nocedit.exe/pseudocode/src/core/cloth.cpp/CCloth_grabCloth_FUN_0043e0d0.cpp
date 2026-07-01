@@ -25,7 +25,7 @@ void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr,char 
   }
   if (iVar2 == this_ptr->collide_bone_count) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
-    g_CurrentLineNumber = 0xaa7;
+    g_CurrentLineNumber = 2727;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::grabCloth - Can't find bone %s",bone_name);
   }
   this_ptr->vertices[vertex_index].locked = 1;

@@ -26,15 +26,15 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBi
   if (file == (_FILE *)0x0) {
     _sprintf(local_e4,"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW",this_ptr->filename);
     g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
-    g_CurrentLineNumber = 0x108;
+    g_CurrentLineNumber = 264;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_e4);
   }
   size = this_ptr->width * this_ptr->height;
   raw_bitmap_data =
-       shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\cockpit\\pkbmpset.cpp",0x110);
+       shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\cockpit\\pkbmpset.cpp",272);
   if (raw_bitmap_data == (uchar *)0x0) {
     _sprintf(local_148,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW",size);
-    g_CurrentLineNumber = 0x115;
+    g_CurrentLineNumber = 277;
     g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_148);
   }
@@ -46,7 +46,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBi
         SVar1 = _fread(raw_bitmap_data,size,1,file);
         if (SVar1 != 1) {
           _sprintf(local_80,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW",this_ptr->filename);
-          g_CurrentLineNumber = 0x128;
+          g_CurrentLineNumber = 296;
           g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_80);
         }
@@ -61,8 +61,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBi
       iVar3 = iVar3 + 0x24;
     } while (iVar2 < this_ptr->bitmap_count);
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(raw_bitmap_data,"..\\cockpit\\pkbmpset.cpp",0x132);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\pkbmpset.cpp",0x133);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(raw_bitmap_data,"..\\cockpit\\pkbmpset.cpp",306);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\pkbmpset.cpp",307);
   if (apply_palette_flag == 0) {
     return;
   }

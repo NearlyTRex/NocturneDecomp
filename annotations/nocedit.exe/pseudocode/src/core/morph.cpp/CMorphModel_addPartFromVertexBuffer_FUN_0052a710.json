@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 54,
+    "complexity_score": 39,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 39,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 183
   },
   "cross_references": [
@@ -162,6 +160,17 @@
     },
     "pcode_op_count": 760
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x3c == sizeof(SMRGLPrimitiveTriangle). Replace the magic with sizeof(SMRGLPrimitiveTriangle) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 22,
+      "match": "(SMRGLPrimitiveTriangle*) alloc stride 0x3c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SMRGLPrimitiveTriangle *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->faces,this_ptr->num_faces * 0x3c,\"..\\\\core\\\\morph.cpp\",191)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 32,
     "local_size": 4,
@@ -220,14 +229,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x3c == sizeof(SMRGLPrimitiveTriangle). Replace the magic with sizeof(SMRGLPrimitiveTriangle) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 22,
-      "match": "(SMRGLPrimitiveTriangle*) alloc stride 0x3c",
-      "severity": "moderate",
-      "text": "(SMRGLPrimitiveTriangle *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->faces,this_ptr->num_faces * 0x3c,\"..\\\\core\\\\morph.cpp\",0xbf)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

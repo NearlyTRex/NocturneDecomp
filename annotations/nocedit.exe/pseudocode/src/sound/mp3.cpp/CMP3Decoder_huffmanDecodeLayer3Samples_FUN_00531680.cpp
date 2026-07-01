@@ -67,7 +67,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(C
       sscanf(str->table_id,"%u",&local_38);
       if (iVar11 != local_38) {
         g_CurrentFilename = "..\\sound\\mp3.cpp";
-        g_CurrentLineNumber = 0xd72;
+        g_CurrentLineNumber = 3442;
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("wrong table number %u.  File: %s",iVar11,g_CurrentMp3Filename);
       }
@@ -75,7 +75,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(C
       if (iVar10 < 0) {
         if (iVar10 != -1) {
           g_CurrentFilename = "..\\sound\\mp3.cpp";
-          g_CurrentLineNumber = 0xd94;
+          g_CurrentLineNumber = 3476;
           pcVar12 = "huffman decodertable error at table %d.  File: %s";
           goto LAB_00531a14;
         }
@@ -87,7 +87,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(C
         pcVar3[3] = -1;
         if (0x400 < uVar4) {
           g_CurrentFilename = "..\\sound\\mp3.cpp";
-          g_CurrentLineNumber = 0xd85;
+          g_CurrentLineNumber = 3461;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("MP3 Huffman tree overflow!  File: %s",g_CurrentMp3Filename);
         }
@@ -124,7 +124,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(C
         if ((*(int *)(g_HuffmanTables[0].table_id + iVar12 + 4) != g_HuffmanTables[iVar10].xlen) ||
            (g_HuffmanTables[iVar10].ylen != *(int *)(g_HuffmanTables[0].table_id + iVar12 + 8))) {
           g_CurrentFilename = "..\\sound\\mp3.cpp";
-          g_CurrentLineNumber = 0xd7d;
+          g_CurrentLineNumber = 3453;
           pcVar12 = "wrong table %u reference.  File: %s";
 LAB_00531a14:
           core_main_c_displayErrorAndQuit_FUN_00506f10(pcVar12,iVar11,g_CurrentMp3Filename);
@@ -137,7 +137,7 @@ LAB_00531a14:
     } while (iVar11 < 0x22);
     if (iVar11 != 0x22) {
       g_CurrentFilename = "..\\sound\\mp3.cpp";
-      g_CurrentLineNumber = 0xda8;
+      g_CurrentLineNumber = 3496;
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("decoder table read error.  File: %s",g_CurrentMp3Filename);
     }

@@ -90,7 +90,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
   }
   else {
     _fread(local_630,1,0x300,p_Var4);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\game.cpp",0xfff);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\game.cpp",4095);
     iVar4 = 0;
     iVar8 = 0;
     local_20 = 0;
@@ -127,18 +127,18 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        (this_ptr->bitmap_width * this_ptr->bitmap_height,"..\\core\\game.cpp",
-                        0x1016);
+                        4118);
     if (buffer != (void *)0x0) {
       file = engine_dosio_cpp_getFile_FUN_00481a50
                        ("art",this_ptr->bitmap_filename,"rb");
       if (file == (_FILE *)0x0) {
         g_CurrentFilename = "..\\core\\game.cpp";
-        g_CurrentLineNumber = 0x101f;
+        g_CurrentLineNumber = 4127;
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("Can't open %s",this_ptr->bitmap_filename);
       }
       _fread(buffer,this_ptr->bitmap_width,this_ptr->bitmap_height,file);
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\game.cpp",0x1021);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\game.cpp",4129);
       local_1c = 0;
       if (0 < g_WindowHeight) {
         local_24 = 0;
@@ -195,7 +195,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
       core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
       core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr);
       this_ptr->bitmap_filename[0] = '\0';
-      shape_memdbg_cpp_debugFree_FUN_0050f460(buffer,"..\\core\\game.cpp",0x1057);
+      shape_memdbg_cpp_debugFree_FUN_0050f460(buffer,"..\\core\\game.cpp",4183);
       return;
     }
   }

@@ -21,14 +21,14 @@ uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_005507f0(CPodFile *this_
   
   if ((file_index < 0) || (this_ptr->file_count <= file_index)) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
-    g_CurrentLineNumber = 0x354;
+    g_CurrentLineNumber = 852;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPodFile::computeOneFileCRC - invalid index");
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0x358);
+                   (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",856);
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
-    g_CurrentLineNumber = 0x359;
+    g_CurrentLineNumber = 857;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CPodFile::computeOneFileCRC - can't open %s",this_ptr->filename);
   }
@@ -57,6 +57,6 @@ uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_005507f0(CPodFile *this_
       current_crc = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(current_crc,data_byte);
     } while (uVar3 < size);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pod.cpp",0x365);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pod.cpp",869);
   return current_crc;
 }

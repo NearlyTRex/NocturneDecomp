@@ -246,7 +246,7 @@ void __cdecl engine_matrix_c_matrixPushAndRotate_FUN_0050db00(int rotation_x,int
     return;
   }
   g_CurrentFilename = "..\\engine\\matrix.c";
-  g_CurrentLineNumber = 0x4c9;
+  g_CurrentLineNumber = 1225;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Matrix unbalance");
   return;
 }

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 556,
-    "complexity_score": 294,
+    "complexity_score": 279,
     "cross_reference_count": 24,
     "function_call_count": 27,
     "global_count": 47,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 279,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 835
   },
   "cross_references": [
@@ -931,6 +929,15 @@
       "type": "preinc_loop_idiom"
     },
     {
+      "description": "Allocation size hardcodes 0x8630 == sizeof(CMP3Decoder). Replace the magic with sizeof(CMP3Decoder) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 142,
+      "match": "(CMP3Decoder*) alloc stride 0x8630",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x8630,\"..\\\\sound\\\\sndmain.cpp\",965)",
+      "type": "alloc_magic_size"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 005a8fb2, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 111,
       "match": "MOVSD.REP",
@@ -1036,14 +1043,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x8630 == sizeof(CMP3Decoder). Replace the magic with sizeof(CMP3Decoder) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 142,
-      "match": "(CMP3Decoder*) alloc stride 0x8630",
-      "severity": "moderate",
-      "text": "(CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x8630,\"..\\\\sound\\\\sndmain.cpp\",0x3c5)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

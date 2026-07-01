@@ -19,7 +19,7 @@ void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *class_name)
            core_actor_cpp_castToClassHash_FUN_0040c790(actor,g_CWeaponClassInfo.name_hash);
   if (pCVar1 == (CWeapon *)0x0) {
     g_CurrentFilename = "..\\core\\game.cpp";
-    g_CurrentLineNumber = 0xa14;
+    g_CurrentLineNumber = 2580;
     core_main_c_displayErrorAndQuit_FUN_00506f10("giveHeroWeapon - This is not a weapon");
   }
   pCVar1->ammo_count = 500;

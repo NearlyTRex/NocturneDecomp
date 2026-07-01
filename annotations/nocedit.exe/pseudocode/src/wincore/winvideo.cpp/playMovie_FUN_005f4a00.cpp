@@ -30,11 +30,11 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
   
   _sprintf(local_74,"%s\\%s",directory_path,movie_filename);
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       (local_74,(char *)0x0,"rb","..\\wincore\\winvideo.cpp",0x12e);
+                       (local_74,(char *)0x0,"rb","..\\wincore\\winvideo.cpp",302);
   if (file_ptr == (_FILE *)0x0) {
     return 0;
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\wincore\\winvideo.cpp",0x132);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\wincore\\winvideo.cpp",306);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   hWnd = g_MainWindowHandle;

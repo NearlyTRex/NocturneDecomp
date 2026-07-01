@@ -11,7 +11,7 @@ CBride * __cdecl core_bride_cpp_factoryFunc_FUN_00423760(void)
 {
   CBride *pCVar1;
   
-  pCVar1 = (CBride *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbeec,"..\\core\\bride.cpp",0x53);
+  pCVar1 = (CBride *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbeec,"..\\core\\bride.cpp",83);
   if (pCVar1 == (CBride *)0x0) {
     return (CBride *)0x0;
   }

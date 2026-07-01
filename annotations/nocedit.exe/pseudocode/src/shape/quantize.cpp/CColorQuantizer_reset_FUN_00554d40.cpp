@@ -39,10 +39,10 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantiz
   }
   if (this_ptr->scanline_buffer != (void *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->scanline_buffer,"..\\shape\\quantize.cpp",0x79);
+              (this_ptr->scanline_buffer,"..\\shape\\quantize.cpp",121);
   }
   if (this_ptr->pixel_data != (void *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->pixel_data,"..\\shape\\quantize.cpp",0x79)
+    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->pixel_data,"..\\shape\\quantize.cpp",121)
     ;
   }
   pCVar1 = this_ptr->progress_callback;

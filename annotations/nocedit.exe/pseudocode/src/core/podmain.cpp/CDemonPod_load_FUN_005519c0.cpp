@@ -16,7 +16,7 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005519c0(CDemonPod *this_ptr)
   int local_c;
   
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   ("pod.ini",(char *)0x0,"rt","..\\core\\podmain.cpp",0x2f);
+                   ("pod.ini",(char *)0x0,"rt","..\\core\\podmain.cpp",47);
   if (file == (_FILE *)0x0) {
     engine_dosio_cpp_CFileFinder_ctor_FUN_00481c30(&local_170);
     engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(&local_170,"*.pod");
@@ -38,7 +38,7 @@ void __cdecl core_podmain_cpp_CDemonPod_load_FUN_005519c0(CDemonPod *this_ptr)
       iVar1 = iVar1 + 1;
     } while (iVar1 < local_c);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\podmain.cpp",0x43);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\podmain.cpp",67);
   engine_pod_cpp_CPod_resolveDependenciesAndSort_FUN_005513d0((CPod *)this_ptr);
   return;
 }

@@ -44,7 +44,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750(CDirectSou
       (g_DirectSoundHardwareSfxBuffers[iVar2] == (IDirectSoundBuffer *)0x0)) ||
      (g_DirectSound3DBufferInterfaces[iVar2] == (IDirectSound3DBuffer *)0x0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
-    g_CurrentLineNumber = 0x322;
+    g_CurrentLineNumber = 802;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::setSfxPos - invalid handle");
   }
   uVar4 = 1;
@@ -170,7 +170,7 @@ LAB_005af8a8:
 LAB_005af982:
     if (g_DirectSound3DListener == (IDirectSound3DListener *)0x0) {
       g_CurrentFilename = "..\\sound\\snddx.cpp";
-      g_CurrentLineNumber = 0x3ab;
+      g_CurrentLineNumber = 939;
       core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::setSfxOpt - no 3d listener allocated?!");
     }
     uVar5 = (*g_DirectSound3DListener->vtable->CommitDeferredSettings)(g_DirectSound3DListener);

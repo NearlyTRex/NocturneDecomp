@@ -12,7 +12,7 @@ void __cdecl shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(SMemHead *header)
   if (header->prev == (SMemHead *)0x0) {
     if (header != g_MemoryListHead) {
       g_CurrentFilename = "..\\shape\\memdbg.cpp";
-      g_CurrentLineNumber = 0x8b;
+      g_CurrentLineNumber = 139;
       core_main_c_displayErrorAndQuit_FUN_00506f10("SMemHead::remove - list corruption!");
     }
     g_MemoryListHead = header->next;

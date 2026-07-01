@@ -17,7 +17,7 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_005acdb0(void)
   
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x1718;
+    g_CurrentLineNumber = 5912;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - must be locked!");
   }
   sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530();

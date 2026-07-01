@@ -8,16 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2078,
-    "complexity_score": 825,
+    "complexity_score": 810,
     "cross_reference_count": 0,
     "function_call_count": 51,
     "global_count": 109,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 810,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2888
   },
   "cross_references": [],
@@ -1111,6 +1109,15 @@
       "severity": "moderate",
       "text": "puVar11 = (uint *)((int)&(local_1b38.directory_entries)->name + local_68);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Allocation size hardcodes 0x39c == sizeof(SPodManageRecord). Replace the magic with sizeof(SPodManageRecord) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 110,
+      "match": "(SPodManageRecord*) alloc stride 0x39c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SPodManageRecord *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (local_94.item_count * 0x39c,\"..\\\\engine\\\\fileio.cpp\",3086)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -1416,14 +1423,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x39c == sizeof(SPodManageRecord). Replace the magic with sizeof(SPodManageRecord) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 110,
-      "match": "(SPodManageRecord*) alloc stride 0x39c",
-      "severity": "moderate",
-      "text": "(SPodManageRecord *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (local_94.item_count * 0x39c,\"..\\\\engine\\\\fileio.cpp\",0xc0e)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

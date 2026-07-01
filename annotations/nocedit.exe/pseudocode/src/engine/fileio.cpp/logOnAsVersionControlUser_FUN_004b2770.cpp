@@ -16,7 +16,7 @@ int __cdecl engine_fileio_cpp_logOnAsVersionControlUser_FUN_004b2770(void)
   }
   if (g_VersionControlSession.session_handle != (HANDLE)0x0) {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
-    g_CurrentLineNumber = 0x215;
+    g_CurrentLineNumber = 533;
     core_main_c_displayErrorAndQuit_FUN_00506f10("fileManager::logOnAsVersionControlUser - already logged on!");
   }
   BVar1 = (*g_LogonUserAFunc)(g_VersionControlSession.network_username,

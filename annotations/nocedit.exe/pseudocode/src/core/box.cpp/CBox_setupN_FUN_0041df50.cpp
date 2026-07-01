@@ -25,7 +25,7 @@ void __cdecl core_box_cpp_CBox_setupN_FUN_0041df50(CBox *this_ptr,CVector3f *pos
   
   if (8 < point_count) {
     g_CurrentFilename = "..\\core\\box.cpp";
-    g_CurrentLineNumber = 0x80;
+    g_CurrentLineNumber = 128;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CBox::setupN - Too many scrape points");
   }
   local_18 = 999.0;

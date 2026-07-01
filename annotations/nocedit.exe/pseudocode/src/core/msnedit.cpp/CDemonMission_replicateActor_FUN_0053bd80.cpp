@@ -41,25 +41,25 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   local_20 = (char  [4])"DUPACTOR.TMP"._0_4_;
   core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0();
   p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (local_20,(char *)0x0,"wt","..\\core\\msnedit.cpp",0x965);
+                     (local_20,(char *)0x0,"wt","..\\core\\msnedit.cpp",2405);
   if (p_Var2 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't create temp file to replicate actor!");
     return;
   }
   core_actor_cpp_CDemonActor_save_FUN_0040af30(this_ptr->selected_actor,p_Var2);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\msnedit.cpp",0x96b);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\msnedit.cpp",2411);
   class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor);
   this_ptr_00 = core_actor_cpp_createActorByName_FUN_0040c430(class_name);
   file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                          (local_20,(char *)0x0,"rt","..\\core\\msnedit.cpp",0x973);
+                          (local_20,(char *)0x0,"rt","..\\core\\msnedit.cpp",2419);
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\msnedit.cpp";
-    g_CurrentLineNumber = 0x974;
+    g_CurrentLineNumber = 2420;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't reopen %s",local_20);
   }
   core_actor_cpp_CDemonActor_load_FUN_0040b050(this_ptr_00,file_handle);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\msnedit.cpp",0x976);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\msnedit.cpp",2422);
   remove(local_20);
   pCVar6 = this_ptr->selected_actor;
   do {

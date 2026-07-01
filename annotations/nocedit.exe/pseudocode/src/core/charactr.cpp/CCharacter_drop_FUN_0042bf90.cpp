@@ -12,9 +12,9 @@ void __cdecl core_charactr_cpp_CCharacter_drop_FUN_0042bf90(CCharacter *this_ptr
   SCarryHand *pSVar1;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (carrier,"..\\core\\charactr.cpp",0x954);
+            (carrier,"..\\core\\charactr.cpp",2388);
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (&this_ptr->base,"..\\core\\charactr.cpp",0x955);
+            (&this_ptr->base,"..\\core\\charactr.cpp",2389);
   pSVar1 = this_ptr->carry_hands;
   do {
     while (carrier == pSVar1->carry_actor) {

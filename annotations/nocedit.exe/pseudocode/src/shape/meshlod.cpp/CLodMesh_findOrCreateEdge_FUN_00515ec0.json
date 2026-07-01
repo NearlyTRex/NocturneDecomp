@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 61,
+    "complexity_score": 46,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 46,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 184
   },
   "cross_references": [
@@ -208,6 +206,17 @@
     },
     "pcode_op_count": 834
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0xf0 == sizeof(CLodEdge). Replace the magic with sizeof(CLodEdge) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 29,
+      "match": "(CLodEdge*) alloc stride 0xf0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CLodEdge *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->edges_ptr,(this_ptr->edge_count + 1) * 0xf0, \"..\\\\shape\\\\meshlod.cpp\",805)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -245,14 +254,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0xf0 == sizeof(CLodEdge). Replace the magic with sizeof(CLodEdge) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 29,
-      "match": "(CLodEdge*) alloc stride 0xf0",
-      "severity": "moderate",
-      "text": "(CLodEdge *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->edges_ptr,(this_ptr->edge_count + 1) * 0xf0, \"..\\\\shape\\\\meshlod.cpp\",0x325)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

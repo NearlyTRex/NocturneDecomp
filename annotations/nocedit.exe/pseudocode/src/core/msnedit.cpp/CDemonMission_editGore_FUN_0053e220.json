@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 647,
-    "complexity_score": 238,
+    "complexity_score": 223,
     "cross_reference_count": 1,
     "function_call_count": 43,
     "global_count": 43,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 223,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 870
   },
   "cross_references": [
@@ -708,6 +706,15 @@
       "severity": "moderate",
       "text": "(actor_00->base).orient.vec.z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "Allocation size hardcodes 0x66c == sizeof(CBoxActor). Replace the magic with sizeof(CBoxActor) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 72,
+      "match": "(CBoxActor*) alloc stride 0x66c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CBoxActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x66c,\"..\\\\core\\\\msnedit.cpp\",3707)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -911,14 +918,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x66c == sizeof(CBoxActor). Replace the magic with sizeof(CBoxActor) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 72,
-      "match": "(CBoxActor*) alloc stride 0x66c",
-      "severity": "moderate",
-      "text": "(CBoxActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x66c,\"..\\\\core\\\\msnedit.cpp\",0xe7b)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

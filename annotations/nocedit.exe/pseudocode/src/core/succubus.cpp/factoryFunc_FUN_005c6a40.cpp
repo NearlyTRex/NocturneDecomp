@@ -12,7 +12,7 @@ CSuccubus * __cdecl core_succubus_cpp_factoryFunc_FUN_005c6a40(void)
   CSuccubus *pCVar1;
   
   pCVar1 = (CSuccubus *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (0xef68,"..\\core\\succubus.cpp",0x4b);
+                     (0xef68,"..\\core\\succubus.cpp",75);
   if (pCVar1 == (CSuccubus *)0x0) {
     return (CSuccubus *)0x0;
   }

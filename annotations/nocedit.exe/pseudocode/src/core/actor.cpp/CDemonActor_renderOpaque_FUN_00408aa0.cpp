@@ -10,6 +10,6 @@ int __cdecl core_actor_cpp_CDemonActor_renderOpaque_FUN_00408aa0(CDemonActor *th
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x1e8);
+            (this_ptr,"..\\core\\actor.cpp",488);
   return 0;
 }

@@ -55,7 +55,7 @@ int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMe
           this_ptr->precompute_file = p_Var2;
           if (p_Var2 == (_FILE *)0x0) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
-            g_CurrentLineNumber = 0x179;
+            g_CurrentLineNumber = 377;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create mesh precompute file.");
           }
           core_skeledit_cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0

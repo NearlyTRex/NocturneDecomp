@@ -41,15 +41,15 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50(CColorQ
   iVar11 = (uint)uVar5 * (uint)uVar4 * 4;
   pvVar7 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->pixel_data,this_ptr->pixel_count + iVar11,
-                      "..\\shape\\quantize.cpp",0x73);
+                      "..\\shape\\quantize.cpp",115);
   if (pvVar7 != (void *)0x0) {
     this_ptr->pixel_data = pvVar7;
     this_ptr->pixel_count = this_ptr->pixel_count + iVar11;
     pvVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                       (this_ptr->scanline_buffer,(uint)uVar6,"..\\shape\\quantize.cpp",0x73);
+                       (this_ptr->scanline_buffer,(uint)uVar6,"..\\shape\\quantize.cpp",115);
     if (pvVar1 == (void *)0x0) {
       g_CurrentFilename = "..\\shape\\quantize.cpp";
-      g_CurrentLineNumber = 0x61;
+      g_CurrentLineNumber = 97;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to allocate memory for scanline array.");
       return 0;
     }
@@ -106,7 +106,7 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50(CColorQ
     } while( true );
   }
   g_CurrentFilename = "..\\shape\\quantize.cpp";
-  g_CurrentLineNumber = 0x61;
+  g_CurrentLineNumber = 97;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to allocate memory for Pix array.");
   return 0;
 }

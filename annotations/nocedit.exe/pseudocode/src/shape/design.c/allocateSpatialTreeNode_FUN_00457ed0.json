@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 28
   },
   "cross_references": [
@@ -126,6 +124,17 @@
     },
     "pcode_op_count": 70
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x1c == sizeof(STreeNode). Replace the magic with sizeof(STreeNode) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 7,
+      "match": "(STreeNode*) alloc stride 0x1c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(STreeNode *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x1c,\"..\\\\shape\\\\design.c\",358)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -134,14 +143,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x1c == sizeof(STreeNode). Replace the magic with sizeof(STreeNode) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 7,
-      "match": "(STreeNode*) alloc stride 0x1c",
-      "severity": "moderate",
-      "text": "(STreeNode *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x1c,\"..\\\\shape\\\\design.c\",0x166)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

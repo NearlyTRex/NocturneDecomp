@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 84,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 69,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 202
   },
   "cross_references": [
@@ -191,6 +189,15 @@
       "severity": "moderate",
       "text": "pCVar4 = (C3DSLight *)pCVar4->name;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Allocation size hardcodes 0x2fac == sizeof(CDemonLight). Replace the magic with sizeof(CDemonLight) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 17,
+      "match": "(CDemonLight*) alloc stride 0x2fac",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CDemonLight *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x2fac,\"..\\\\core\\\\setutil.cpp\",760)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -209,14 +216,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x2fac == sizeof(CDemonLight). Replace the magic with sizeof(CDemonLight) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 17,
-      "match": "(CDemonLight*) alloc stride 0x2fac",
-      "severity": "moderate",
-      "text": "(CDemonLight *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x2fac,\"..\\\\core\\\\setutil.cpp\",0x2f8)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

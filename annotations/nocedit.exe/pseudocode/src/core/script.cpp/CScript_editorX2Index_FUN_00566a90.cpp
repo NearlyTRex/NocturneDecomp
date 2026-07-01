@@ -15,7 +15,7 @@ int __cdecl core_script_cpp_CScript_editorX2Index_FUN_00566a90(CScript *this_ptr
   
   if (line_number < 0) {
     g_CurrentFilename = "..\\core\\script.cpp";
-    g_CurrentLineNumber = 0x1bc5;
+    g_CurrentLineNumber = 7109;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CScript::editorX2Index - invalid y");
   }
   iVar1 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);

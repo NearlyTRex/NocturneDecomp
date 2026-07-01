@@ -13,7 +13,7 @@ void __cdecl sound_sndmain_cpp_lockSound_FUN_005abd30(void)
     g_SoundMutex = wincore_winrun_cpp_createMutex_FUN_005f3fe0();
     if (g_SoundMutex == (HANDLE)0x0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
-      g_CurrentLineNumber = 0x1575;
+      g_CurrentLineNumber = 5493;
       core_main_c_displayErrorAndQuit_FUN_00506f10("lockSound - unable to create mutex object");
     }
   }
@@ -23,7 +23,7 @@ void __cdecl sound_sndmain_cpp_lockSound_FUN_005abd30(void)
     return;
   }
   g_CurrentFilename = "..\\sound\\sndmain.cpp";
-  g_CurrentLineNumber = 0x157f;
+  g_CurrentLineNumber = 5503;
   core_main_c_displayErrorAndQuit_FUN_00506f10("lockSound - lock imbalance?");
   return;
 }

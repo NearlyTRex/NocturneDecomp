@@ -10,6 +10,6 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_getCarrier_FUN_00409060(CDemonA
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x353);
+            (this_ptr,"..\\core\\actor.cpp",851);
   return (CDemonActor *)0x0;
 }

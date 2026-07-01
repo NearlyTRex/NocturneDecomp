@@ -15,7 +15,7 @@ CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_dtor_FUN_0049dfb0(CEditor
   if (g_ClipboardBackupText == (char *)0x0) {
     return this_ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(g_ClipboardBackupText,"..\\shape\\edittool.cpp",0x2bd)
+  shape_memdbg_cpp_debugFree_FUN_0050f460(g_ClipboardBackupText,"..\\shape\\edittool.cpp",701)
   ;
   g_ClipboardBackupText = (char *)0x0;
   return this_ptr;

@@ -136,7 +136,7 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface
   } while (local_20 < 100);
   if (local_20 == 100) {
     g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
-    g_CurrentLineNumber = 0x369;
+    g_CurrentLineNumber = 873;
     core_main_c_displayErrorAndQuit_FUN_00506f10("2d line clipping exceeded max iterations");
     return local_40;
   }

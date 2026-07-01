@@ -33,7 +33,7 @@ void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_0054b930(int total_entries,
     return;
   }
   g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
-  g_CurrentLineNumber = 0x538;
+  g_CurrentLineNumber = 1336;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing PBG header");
   return;
 }

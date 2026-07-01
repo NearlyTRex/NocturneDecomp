@@ -57,7 +57,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
                           g_CWeaponClassInfo.name_hash);
       if (pCVar2 == (CWeapon *)0x0) {
         g_CurrentFilename = "..\\core\\mobster.cpp";
-        g_CurrentLineNumber = 0x323;
+        g_CurrentLineNumber = 803;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CMobster::aimTommyGun - I'm not carrying one!");
       }
       local_88 = 0.7853982;

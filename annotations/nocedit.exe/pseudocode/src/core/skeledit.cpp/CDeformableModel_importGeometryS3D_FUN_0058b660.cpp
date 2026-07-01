@@ -32,10 +32,10 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importGeometryS3D_FUN_0058b660(C
             (g_CEditorToolsPtr,"Importing deformable model from %s...",filename);
   core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(this_ptr);
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x4ba);
+                   (filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",1210);
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0x4bb;
+    g_CurrentLineNumber = 1211;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",filename);
   }
   iVar2 = 1;
@@ -47,7 +47,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importGeometryS3D_FUN_0058b660(C
   _fscanf(file,"%d\n",&local_44);
   if ((local_44 < 0x65) || (0x67 < local_44)) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0x4c2;
+    g_CurrentLineNumber = 1218;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("%s has incorrect S3D version %d in CDeformableModel::importGeometryS3D",filename,local_44);
   }
@@ -62,7 +62,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importGeometryS3D_FUN_0058b660(C
   if (iVar4 == 7) goto LAB_0058b7a0;
   do {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0x4ca;
+    g_CurrentLineNumber = 1226;
     core_main_c_displayErrorAndQuit_FUN_00506f10("%s is corrupt!",filename);
 LAB_0058b7a0:
     core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0(this_ptr,1,1,local_40,1);
@@ -87,7 +87,7 @@ LAB_0058b7a0:
         iVar4 != 0)) &&
        (iVar4 = core_skeledit_cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40(this_ptr,file),
        iVar4 != 0)) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x4e7);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",1255);
       core_skeledit_cpp_CDeformableModel_initSinglePart_FUN_0058f790(this_ptr);
       core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(this_ptr);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790

@@ -13,7 +13,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(CLodMes
     return;
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0
-            (this_ptr->precompute_file,"..\\shape\\meshlod.cpp",0x123e);
+            (this_ptr->precompute_file,"..\\shape\\meshlod.cpp",4670);
   this_ptr->precompute_file = (_FILE *)0x0;
   return;
 }

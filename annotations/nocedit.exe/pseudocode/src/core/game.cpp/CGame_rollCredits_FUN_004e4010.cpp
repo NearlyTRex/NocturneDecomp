@@ -69,11 +69,11 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
       cVar2 = *pcVar6;
       pcVar6 = pcVar6 + (uint)bVar10 * -2 + 1;
     } while (cVar2 != '\0');
-    pvVar5 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(~uVar6 + 9,"..\\core\\game.cpp",0x1237);
+    pvVar5 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(~uVar6 + 9,"..\\core\\game.cpp",4663);
     *(void **)((int)local_1134 + iVar7) = pvVar5;
     if (pvVar5 == (void *)0x0) {
       g_CurrentFilename = "..\\core\\game.cpp";
-      g_CurrentLineNumber = 0x1239;
+      g_CurrentLineNumber = 4665;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CGame::rollCredits - Out of memory");
     }
     pcVar6 = local_134;
@@ -89,7 +89,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
     } while (cVar1 != '\0');
     local_14 = local_14 + 1;
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\core\\game.cpp",0x123e);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\core\\game.cpp",4670);
   sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
   sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
   local_20 = 0;
@@ -146,7 +146,7 @@ LAB_004e43c1:
           do {
             puVar1 = (uint *)((int)local_1134 + iVar2);
             iVar2 = iVar2 + 4;
-            shape_memdbg_cpp_debugFree_FUN_0050f460((void *)*puVar1,"..\\core\\game.cpp",0x1294)
+            shape_memdbg_cpp_debugFree_FUN_0050f460((void *)*puVar1,"..\\core\\game.cpp",4756)
             ;
           } while (iVar2 < local_14 * 4);
         }

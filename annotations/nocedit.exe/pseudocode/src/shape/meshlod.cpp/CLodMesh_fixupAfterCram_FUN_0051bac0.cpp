@@ -36,7 +36,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *th
         iVar3 = shape_design_c_findTextureByFilename_FUN_0046dfc0
                           (this_ptr->lod_textures[*piVar5].textures[0].texture_name);
         if (iVar3 < 0) {
-          g_CurrentLineNumber = 0x12c0;
+          g_CurrentLineNumber = 4800;
           g_CurrentFilename = "..\\shape\\meshlod.cpp";
           core_main_c_displayErrorAndQuit_FUN_00506f10("LodMesh::fixupAfterCram - texture %s not found in cram list.");
         }

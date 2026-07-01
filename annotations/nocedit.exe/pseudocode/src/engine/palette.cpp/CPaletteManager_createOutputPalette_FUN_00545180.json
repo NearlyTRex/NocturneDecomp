@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 258,
+    "complexity_score": 243,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 47,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 243,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 747
   },
   "cross_references": [],
@@ -502,6 +500,15 @@
       "type": "unrolled_strchr"
     },
     {
+      "description": "Allocation size hardcodes 0x8308 == sizeof(SColorQuantMapper). Replace the magic with sizeof(SColorQuantMapper) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 37,
+      "match": "(SColorQuantMapper*) alloc stride 0x8308",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SColorQuantMapper *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x8308,\"..\\\\engine\\\\palette.cpp\",180)",
+      "type": "alloc_magic_size"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 00545538, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 408,
       "match": "MOVSD.REP",
@@ -583,14 +590,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x8308 == sizeof(SColorQuantMapper). Replace the magic with sizeof(SColorQuantMapper) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 37,
-      "match": "(SColorQuantMapper*) alloc stride 0x8308",
-      "severity": "moderate",
-      "text": "(SColorQuantMapper *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x8308,\"..\\\\engine\\\\palette.cpp\",0xb4)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

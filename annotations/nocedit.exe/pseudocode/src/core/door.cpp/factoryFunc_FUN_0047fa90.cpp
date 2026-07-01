@@ -11,7 +11,7 @@ CDoor * __cdecl core_door_cpp_factoryFunc_FUN_0047fa90(void)
 {
   CDoor *pCVar1;
   
-  pCVar1 = (CDoor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x9e0,"..\\core\\door.cpp",0x33);
+  pCVar1 = (CDoor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x9e0,"..\\core\\door.cpp",51);
   if (pCVar1 == (CDoor *)0x0) {
     return (CDoor *)0x0;
   }

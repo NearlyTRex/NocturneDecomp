@@ -56,10 +56,10 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
     local_7e = 0x1df;
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (filename,(char *)0x0,"wb","..\\engine\\pcx.c",0xec);
+                   (filename,(char *)0x0,"wb","..\\engine\\pcx.c",236);
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pcx.c";
-    g_CurrentLineNumber = 0xed;
+    g_CurrentLineNumber = 237;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Cannot write .PCX");
   }
   iVar2 = 0;
@@ -109,7 +109,7 @@ LAB_00549250:
     }
     iVar3 = iVar3 + 1;
     if (0x2ff < iVar3) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pcx.c",0x104);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pcx.c",260);
       return;
     }
   } while( true );

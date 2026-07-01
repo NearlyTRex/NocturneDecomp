@@ -213,7 +213,7 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   bVar26 = 0;
   core_skeleton_cpp_CSkeleton_free_FUN_00599a50(this_ptr);
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x103c);
+                     (filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",4156);
   local_11c = p_Var3;
   if (p_Var3 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -232,7 +232,7 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   _fscanf(local_11c,"%d\n");
   if (0x50 < local_114) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0x104a;
+    g_CurrentLineNumber = 4170;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("%s has %d states, max is %d",filename,local_114);
   }
@@ -321,7 +321,7 @@ LAB_00592a67:
           iVar4 == 0)) && (iVar16 != 0)) {
         local_fc = g_MotionFilenames + (this_ptr->motion_list).motion_count;
         p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                           (*local_fc,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x10a4)
+                           (*local_fc,(char *)0x0,"rt","..\\core\\skeledit.cpp",4260)
         ;
         if (p_Var3 == (_FILE *)0x0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -336,7 +336,7 @@ LAB_00592a67:
         } while ((iVar4 != 10) || (iVar16 = iVar16 + -1, 0 < iVar16));
         _fscanf(p_Var3,"%d\n");
         core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(&local_a9b0,p_Var3,&local_58);
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\skeledit.cpp",0x10b8);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\skeledit.cpp",4280);
         if (0x1869e < local_104) {
           local_104 = local_58 + -1;
         }
@@ -368,7 +368,7 @@ LAB_00592a67:
       if (local_c8 == 0) {
         if ((this_ptr->motion_list).motion_count < 1) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
-          g_CurrentLineNumber = 0x1159;
+          g_CurrentLineNumber = 4441;
           core_main_c_displayErrorAndQuit_FUN_00506f10("No motions defined in %s");
         }
         if (0 < local_2ca8.base.item_count) {
@@ -448,7 +448,7 @@ LAB_00592a67:
               iVar16 = core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_20a4,p_Var3,1);
               if (iVar16 == 0) {
                 g_CurrentFilename = "..\\core\\skeledit.cpp";
-                g_CurrentLineNumber = 0x11a5;
+                g_CurrentLineNumber = 4517;
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Error parsing file!");
               }
               iVar4 = _strnicmp(local_20a4,"animation",9);
@@ -773,7 +773,7 @@ LAB_00592a67:
                             sscanf(pcVar7,"%s%n",local_2b4);
                             if (local_64 < 1) {
                               g_CurrentFilename = "..\\core\\skeledit.cpp";
-                              g_CurrentLineNumber = 0x129f;
+                              g_CurrentLineNumber = 4767;
                               core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze!");
                             }
                             iVar16 = core_skeledit_cpp_parseTransitionType_FUN_005925c0(local_2b4);
@@ -1295,7 +1295,7 @@ LAB_0059518b:
             pacVar22 = local_e8;
             p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                (*local_e8,(char *)0x0,"rt","..\\core\\skeledit.cpp",
-                                0x13d8);
+                                5080);
             local_c0 = p_Var3;
             if (p_Var3 == (_FILE *)0x0) {
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -1332,7 +1332,7 @@ LAB_0059518b:
                 if (local_b8 < 1) {
                   if (iVar16 != local_ec->frame_count) {
                     g_CurrentFilename = "..\\core\\skeledit.cpp";
-                    g_CurrentLineNumber = 0x1408;
+                    g_CurrentLineNumber = 5128;
                     core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze!");
                   }
                   break;
@@ -1466,7 +1466,7 @@ LAB_0059518b:
                 local_34 = local_34 + 1;
               } while (local_34 <= local_ec->frame_count);
             }
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_c0,"..\\core\\skeledit.cpp",0x147a);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_c0,"..\\core\\skeledit.cpp",5242);
             local_204 = 0.0;
             local_200 = 0.0;
             local_1fc = 0.0;
@@ -1620,7 +1620,7 @@ LAB_00595723:
           } while (local_38 < (this_ptr->motion_list).motion_count);
         }
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_11c,"..\\core\\skeledit.cpp",0x14ef);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_11c,"..\\core\\skeledit.cpp",5359);
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Biasing motions.");
         local_118 = 0;
@@ -1742,7 +1742,7 @@ LAB_00595eb8:
             iVar16 = sscanf(pcVar18,"\"%[^\"]\"");
             if (iVar16 != 1) {
               g_CurrentFilename = "..\\core\\skeledit.cpp";
-              g_CurrentLineNumber = 0x112f;
+              g_CurrentLineNumber = 4399;
               core_main_c_displayErrorAndQuit_FUN_00506f10
                         ("Error parsing \"filename\" statement for animation %s in %s:\n%s",pacVar22,filename);
             }
@@ -1759,14 +1759,14 @@ LAB_00595eb8:
             }
             p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                (*pacVar22,(char *)0x0,"rt","..\\core\\skeledit.cpp",
-                                0x1139);
+                                4409);
             if (p_Var3 == (_FILE *)0x0) {
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                         (g_CEditorToolsPtr,"Can't open %s mentioned in %s",pacVar22);
               shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
               goto LAB_005927ee;
             }
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\skeledit.cpp",0x113e);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\skeledit.cpp",4414);
           }
           else {
             iVar16 = _strnicmp(local_21d0,"frames",6);
@@ -1852,7 +1852,7 @@ LAB_005927ee:
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
   }
   if (local_11c != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_11c,"..\\core\\skeledit.cpp",0x1052);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_11c,"..\\core\\skeledit.cpp",4178);
   }
   return 0;
 LAB_00593749:

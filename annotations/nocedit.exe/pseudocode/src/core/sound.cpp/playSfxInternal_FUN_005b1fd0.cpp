@@ -55,7 +55,7 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0(void *user_data,char *s
         sscanf(local_38,"[%d,%d]%n");
         if ((local_34 < 5) || (local_2c < local_30)) {
           g_CurrentFilename = "..\\core\\sound.cpp";
-          g_CurrentLineNumber = 0x137;
+          g_CurrentLineNumber = 311;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid sfx string: %s");
         }
         iVar2 = _sprintf(pcVar7,"?");
@@ -190,7 +190,7 @@ LAB_005b20b2:
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_MissingSoundsList,local_114);
         file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          ("\\\\q\\xfer\\fletch\\missingwavs.txt",(char *)0x0,"at",
-                          "..\\core\\sound.cpp",0x181);
+                          "..\\core\\sound.cpp",385);
         if (file != (_FILE *)0x0) {
           _fprintf(file,"----------------------------------------------------------------\n");
           _time(&local_28);
@@ -222,7 +222,7 @@ LAB_005b20b2:
           sscanf(local_38,"@%f%n",&local_17c);
           if ((local_24 < 2) || (local_17c < 0.0)) {
             g_CurrentFilename = "..\\core\\sound.cpp";
-            g_CurrentLineNumber = 0x1a4;
+            g_CurrentLineNumber = 420;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid sfx string: %s");
             local_38 = local_38 + local_24;
           }
@@ -235,7 +235,7 @@ LAB_005b20b2:
           sscanf(local_38,"*%f%n",&local_180);
           if ((local_20 < 2) || (local_180 <= 0.0)) {
             g_CurrentFilename = "..\\core\\sound.cpp";
-            g_CurrentLineNumber = 0x1aa;
+            g_CurrentLineNumber = 426;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid sfx string: %s");
             local_38 = local_38 + local_20;
           }
@@ -245,7 +245,7 @@ LAB_005b20b2:
         }
         else {
           g_CurrentFilename = "..\\core\\sound.cpp";
-          g_CurrentLineNumber = 0x1ad;
+          g_CurrentLineNumber = 429;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid sfx string: %s");
         }
       }

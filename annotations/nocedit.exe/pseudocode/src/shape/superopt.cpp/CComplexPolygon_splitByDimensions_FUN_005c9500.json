@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 287,
+    "complexity_score": 272,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 272,
-    "suspect_count": 1,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 827
   },
   "cross_references": [],
@@ -739,6 +737,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Allocation size hardcodes 0x34 == sizeof(CComplexPolygon). Replace the magic with sizeof(CComplexPolygon) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 246,
+      "match": "(CComplexPolygon*) alloc stride 0x34",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CComplexPolygon *)shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(0x34)",
+      "type": "alloc_magic_size"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 005c9537, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 21,
       "match": "MOVSD.REP",
@@ -1038,14 +1045,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x34 == sizeof(CComplexPolygon). Replace the magic with sizeof(CComplexPolygon) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 246,
-      "match": "(CComplexPolygon*) alloc stride 0x34",
-      "severity": "moderate",
-      "text": "(CComplexPolygon *)shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(0x34)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

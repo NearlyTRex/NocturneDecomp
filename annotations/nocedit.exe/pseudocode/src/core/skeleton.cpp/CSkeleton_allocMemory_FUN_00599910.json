@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 81,
+    "complexity_score": 46,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 46,
-    "suspect_count": 3,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 151
   },
   "cross_references": [
@@ -183,6 +181,35 @@
     },
     "pcode_op_count": 458
   },
+  "resolved_suspects": [
+    {
+      "description": "Allocation size hardcodes 0x10 == sizeof(CQuaternion4f). Replace the magic with sizeof(CQuaternion4f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 18,
+      "match": "(CQuaternion4f*) alloc stride 0x10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CQuaternion4f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->bone_count * this_ptr->frame_count * 0x10, \"..\\\\core\\\\skeleton.cpp\",207)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3f). Replace the magic with sizeof(CVector3f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 23,
+      "match": "(CVector3f*) alloc stride 0xc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar1 * 0xc + 4,\"..\\\\core\\\\skeleton.cpp\",208)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0xc == sizeof(CVector3f). Replace the magic with sizeof(CVector3f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 32,
+      "match": "(CVector3f*) alloc stride 0xc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar1 * 0xc + 4,\"..\\\\core\\\\skeleton.cpp\",209)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -213,30 +240,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0x10 == sizeof(CQuaternion4f). Replace the magic with sizeof(CQuaternion4f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 18,
-      "match": "(CQuaternion4f*) alloc stride 0x10",
-      "severity": "moderate",
-      "text": "(CQuaternion4f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->bone_count * this_ptr->frame_count * 0x10, \"..\\\\core\\\\skeleton.cpp\",0xcf)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0xc == sizeof(CVector3f). Replace the magic with sizeof(CVector3f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 23,
-      "match": "(CVector3f*) alloc stride 0xc",
-      "severity": "moderate",
-      "text": "(CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar1 * 0xc + 4,\"..\\\\core\\\\skeleton.cpp\",0xd0)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0xc == sizeof(CVector3f). Replace the magic with sizeof(CVector3f) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 32,
-      "match": "(CVector3f*) alloc stride 0xc",
-      "severity": "moderate",
-      "text": "(CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((int)fVar1 * 0xc + 4,\"..\\\\core\\\\skeleton.cpp\",0xd1)",
-      "type": "alloc_magic_size"
-    }
-  ]
+  "suspects": []
 }

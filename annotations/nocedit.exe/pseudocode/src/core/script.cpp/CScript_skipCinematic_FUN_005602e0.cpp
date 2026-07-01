@@ -32,7 +32,7 @@ int __cdecl core_script_cpp_CScript_skipCinematic_FUN_005602e0(CScript *this_ptr
     }
     iVar3 = iVar3 + 1;
     if (300 < iVar3) {
-      g_CurrentLineNumber = 0xea5;
+      g_CurrentLineNumber = 3749;
       g_CurrentFilename = "..\\core\\script.cpp";
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("Infinite loop detected trying to skip cinematic, at script line %d",

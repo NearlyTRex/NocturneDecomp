@@ -19,7 +19,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createNextLOD_FUN_00516f50(CLodMesh *thi
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pCVar1);
   }
   this_ptr_00 = (CLodMesh *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                          (0x74,"..\\shape\\meshlod.cpp",0x560);
+                          (0x74,"..\\shape\\meshlod.cpp",1376);
   pCVar1 = (CLodMesh *)0x0;
   if (this_ptr_00 != (CLodMesh *)0x0) {
     pCVar1 = shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840(this_ptr_00);
@@ -30,7 +30,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createNextLOD_FUN_00516f50(CLodMesh *thi
     return;
   }
   g_CurrentFilename = "..\\shape\\meshlod.cpp";
-  g_CurrentLineNumber = 0x561;
+  g_CurrentLineNumber = 1377;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(this_ptr->next_lod,this_ptr);
   return;

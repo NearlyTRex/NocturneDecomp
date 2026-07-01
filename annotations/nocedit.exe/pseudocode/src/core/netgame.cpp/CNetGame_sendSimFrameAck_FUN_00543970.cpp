@@ -14,22 +14,22 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
   
   if (this_ptr->connection_type != CONNECTION_CLIENT) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
-    g_CurrentLineNumber = 0xa29;
+    g_CurrentLineNumber = 2601;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - should only be called in client mode");
   }
   if (this_ptr->network_mode != NET_MODE_PLAYING) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
-    g_CurrentLineNumber = 0xa2a;
+    g_CurrentLineNumber = 2602;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - should only be called in the game loop");
   }
   if (this_ptr->server_player_index < 0) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
-    g_CurrentLineNumber = 0xa2b;
+    g_CurrentLineNumber = 2603;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - server not in player list");
   }
   if (this_ptr->local_player_index < 0) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
-    g_CurrentLineNumber = 0xa2c;
+    g_CurrentLineNumber = 2604;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - I'm not in player list");
   }
   local_48.header.size = 0x35;

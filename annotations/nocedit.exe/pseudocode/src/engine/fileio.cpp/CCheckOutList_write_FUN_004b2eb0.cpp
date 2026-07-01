@@ -36,7 +36,7 @@ int __cdecl engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(CCheckOutList *th
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
             (g_CEditorToolsPtr,"File I/O error accessing checkout file.\nGet Fletch, this is a serious situation.");
   if (*file_handle != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file_handle,"..\\engine\\fileio.cpp",0xc4);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file_handle,"..\\engine\\fileio.cpp",196);
     *file_handle = (_FILE *)0x0;
   }
   return 0;

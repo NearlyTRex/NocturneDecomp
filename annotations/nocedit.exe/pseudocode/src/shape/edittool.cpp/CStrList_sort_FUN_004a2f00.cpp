@@ -12,7 +12,7 @@ void __cdecl shape_edittool_cpp_CStrList_sort_FUN_004a2f00(CStrList *this_ptr,in
   if (sort_type < sort_order) {
     if ((sort_type < 0) || (this_ptr->item_count <= sort_order)) {
       g_CurrentFilename = "..\\shape\\edittool.cpp";
-      g_CurrentLineNumber = 0xbaa;
+      g_CurrentLineNumber = 2986;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CStrList::sort - invalid range!");
     }
     _qsort

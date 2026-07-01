@@ -39,7 +39,7 @@ void __cdecl core_waypoint_cpp_CWaypoint_setup_FUN_005ebeb0(CWayPoint *this_ptr)
     if ((iVar6 != 0) &&
        (iVar6 = _stricmp(str1,"true"), iVar6 != 0)) {
       g_CurrentFilename = "..\\core\\waypoint.cpp";
-      g_CurrentLineNumber = 0x79;
+      g_CurrentLineNumber = 121;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't have creation event for waypoint.");
       return;
     }

@@ -13,7 +13,7 @@ void __cdecl engine_fileio_cpp_CFileManager_freeAuditRecords_FUN_004b5910(CFileM
   if (g_AuditRecordsArray == (CPodAuditRecord *)0x0) {
     return;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(g_AuditRecordsArray,"..\\engine\\fileio.cpp",0x79a);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(g_AuditRecordsArray,"..\\engine\\fileio.cpp",1946);
   g_AuditRecordsArray = (CPodAuditRecord *)0x0;
   return;
 }

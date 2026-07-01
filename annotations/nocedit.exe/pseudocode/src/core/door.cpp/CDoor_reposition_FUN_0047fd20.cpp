@@ -108,7 +108,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
     break;
   default:
     g_CurrentFilename = "..\\core\\door.cpp";
-    g_CurrentLineNumber = 0xf8;
+    g_CurrentLineNumber = 248;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDoor::reposition - Unknown type");
     goto LAB_0047fe19;
   }

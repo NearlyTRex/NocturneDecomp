@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 686,
-    "complexity_score": 321,
+    "complexity_score": 296,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 33,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 296,
-    "suspect_count": 2,
-    "suspect_types": [
-      "alloc_magic_size"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 982
   },
   "cross_references": [],
@@ -468,6 +466,24 @@
       "severity": "moderate",
       "text": "pCVar10 = (CVehicle *)((pCVar10->model).part_visibility_flags + 0x17);",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Allocation size hardcodes 0xbf94 == sizeof(CMobster). Replace the magic with sizeof(CMobster) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 215,
+      "match": "(CMobster*) alloc stride 0xbf94",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CMobster *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbf94,\"..\\\\core\\\\vehicle.cpp\",349)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x584 == sizeof(CTommyGun). Replace the magic with sizeof(CTommyGun) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 221,
+      "match": "(CTommyGun*) alloc stride 0x584",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CTommyGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x584,\"..\\\\core\\\\vehicle.cpp\",350)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {
@@ -685,24 +701,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Allocation size hardcodes 0xbf94 == sizeof(CMobster). Replace the magic with sizeof(CMobster) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 215,
-      "match": "(CMobster*) alloc stride 0xbf94",
-      "severity": "moderate",
-      "text": "(CMobster *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0xbf94,\"..\\\\core\\\\vehicle.cpp\",0x15d)",
-      "type": "alloc_magic_size"
-    },
-    {
-      "description": "Allocation size hardcodes 0x584 == sizeof(CTommyGun). Replace the magic with sizeof(CTommyGun) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
-      "line": 221,
-      "match": "(CTommyGun*) alloc stride 0x584",
-      "severity": "moderate",
-      "text": "(CTommyGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0 (0x584,\"..\\\\core\\\\vehicle.cpp\",0x15e)",
-      "type": "alloc_magic_size"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

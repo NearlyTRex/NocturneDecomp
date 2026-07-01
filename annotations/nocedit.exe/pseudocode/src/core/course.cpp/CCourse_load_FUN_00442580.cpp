@@ -21,7 +21,7 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00442580(CCourse *this_ptr,char *f
   file = engine_dosio_cpp_getFile_FUN_00481a50("data",filename,"rt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\course.cpp";
-    g_CurrentLineNumber = 0x7c;
+    g_CurrentLineNumber = 124;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCourse::load - can't open data\\%s",filename);
   }
   do {
@@ -50,6 +50,6 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00442580(CCourse *this_ptr,char *f
                  iVar2 + 0x14,iVar2 + 0x18);
     } while (iVar4 < this_ptr->len);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",0x9e);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",158);
   return;
 }

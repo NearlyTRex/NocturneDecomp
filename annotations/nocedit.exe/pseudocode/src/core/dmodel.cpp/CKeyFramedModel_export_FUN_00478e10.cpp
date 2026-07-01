@@ -59,11 +59,11 @@ LAB_00478e57:
     }
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (output_filename,(char *)0x0,"wt","..\\core\\dmodel.cpp",0x569);
+                   (output_filename,(char *)0x0,"wt","..\\core\\dmodel.cpp",1385);
 LAB_00478e7f:
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
-    g_CurrentLineNumber = 0x56d;
+    g_CurrentLineNumber = 1389;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Can't create demon model %s",output_filename);
   }
@@ -153,10 +153,10 @@ LAB_00478e7f:
   }
   if ((file->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
-    g_CurrentLineNumber = 0x5e1;
+    g_CurrentLineNumber = 1505;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Error writing model to %s",output_filename);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\dmodel.cpp",0x5e5);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\dmodel.cpp",1509);
   return;
 }

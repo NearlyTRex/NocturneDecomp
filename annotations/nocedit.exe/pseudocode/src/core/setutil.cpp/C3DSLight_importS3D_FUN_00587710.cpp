@@ -27,7 +27,7 @@ void __cdecl core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(C3DSLight *this_p
     else {
       if (this_ptr->light_type != 1) {
         g_CurrentFilename = "..\\core\\setutil.cpp";
-        g_CurrentLineNumber = 0x4a9;
+        g_CurrentLineNumber = 1193;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown light type!");
         return;
       }
@@ -45,7 +45,7 @@ void __cdecl core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(C3DSLight *this_p
     }
 LAB_00587796:
     g_CurrentFilename = "..\\core\\setutil.cpp";
-    g_CurrentLineNumber = 0x49d;
+    g_CurrentLineNumber = 1181;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't parse light from S3D file.");
   } while( true );
 }

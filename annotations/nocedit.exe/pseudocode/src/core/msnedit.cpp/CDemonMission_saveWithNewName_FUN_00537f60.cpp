@@ -49,14 +49,14 @@ void __cdecl core_msnedit_cpp_CDemonMission_saveWithNewName_FUN_00537f60(CDemonM
   if (-1 < iVar2) {
     file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("world",local_31c,"rb");
     if (file_ptr == (_FILE *)0x0) {
-      g_CurrentLineNumber = 0x2eb;
+      g_CurrentLineNumber = 747;
       g_CurrentFilename = "..\\core\\msnedit.cpp";
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open world\\%s",local_31c);
     }
     file_ptr_00 = engine_dosio_cpp_getFile_FUN_00481a50("world",local_420,"wb");
     if (file_ptr_00 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\msnedit.cpp";
-      g_CurrentLineNumber = 0x2ed;
+      g_CurrentLineNumber = 749;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create world\\%s",local_420);
     }
     for (; 0 < iVar2; iVar2 = iVar2 + -1) {
@@ -66,16 +66,16 @@ void __cdecl core_msnedit_cpp_CDemonMission_saveWithNewName_FUN_00537f60(CDemonM
     }
     if ((file_ptr->_flag & 0x20) != 0) {
       g_CurrentFilename = "..\\core\\msnedit.cpp";
-      g_CurrentLineNumber = 0x2f2;
+      g_CurrentLineNumber = 754;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Error reading world\\%s",local_31c);
     }
     if ((file_ptr_00->_flag & 0x20) != 0) {
       g_CurrentFilename = "..\\core\\msnedit.cpp";
-      g_CurrentLineNumber = 0x2f3;
+      g_CurrentLineNumber = 755;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing world\\%s",local_420);
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\msnedit.cpp",0x2f4);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr_00,"..\\core\\msnedit.cpp",0x2f5);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\msnedit.cpp",756);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr_00,"..\\core\\msnedit.cpp",757);
     shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
               (g_CEditorToolsPtr,"Copied %s\\%s to %s\\%s","world",local_31c,
                "world",local_420);

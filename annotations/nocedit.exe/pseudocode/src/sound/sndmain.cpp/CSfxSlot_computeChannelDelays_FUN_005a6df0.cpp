@@ -22,7 +22,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0(CSfxSl
   
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x8f5;
+    g_CurrentLineNumber = 2293;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - must be locked!");
   }
   if (g_AudioChannelCount < 2) {

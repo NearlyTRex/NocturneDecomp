@@ -13,7 +13,7 @@ void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacte
   
   if ((hand_index < 0) || (1 < hand_index)) {
     g_CurrentFilename = "..\\core\\charactr.cpp";
-    g_CurrentLineNumber = 0xbd3;
+    g_CurrentLineNumber = 3027;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::pickupObjectNow - invalid hand index");
   }
   if (object != (CDemonActor *)0x0) {
@@ -23,7 +23,7 @@ void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacte
        ((this_ptr->model).part_data.visibility_flags[pSVar1->secondary_bone_index] != 0)) {
       if (pSVar1->bone_index < 0) {
         g_CurrentFilename = "..\\core\\charactr.cpp";
-        g_CurrentLineNumber = 0xbeb;
+        g_CurrentLineNumber = 3051;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::pickupObjectNow - invalid bone!");
       }
       (*((object->vtable)._ub)->pickup)(object,&this_ptr->base);

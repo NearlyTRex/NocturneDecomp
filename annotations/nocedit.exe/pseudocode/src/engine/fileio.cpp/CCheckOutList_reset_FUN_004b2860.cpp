@@ -13,7 +13,7 @@ void __cdecl engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(CCheckOutList *t
   if (this_ptr->items == (CCheckOutItem *)0x0) {
     return;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->items,"..\\engine\\fileio.cpp",0x277);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->items,"..\\engine\\fileio.cpp",631);
   this_ptr->items = (CCheckOutItem *)0x0;
   return;
 }

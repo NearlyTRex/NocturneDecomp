@@ -11,7 +11,7 @@ CCrossbow * __cdecl core_crossbow_cpp_factoryFunc_FUN_00448c30(void)
 {
   CCrossbow *pCVar1;
   
-  pCVar1 = (CCrossbow *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x820,"..\\core\\crossbow.cpp",0x2f)
+  pCVar1 = (CCrossbow *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x820,"..\\core\\crossbow.cpp",47)
   ;
   if (pCVar1 == (CCrossbow *)0x0) {
     return (CCrossbow *)0x0;

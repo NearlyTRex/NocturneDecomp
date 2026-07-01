@@ -13,7 +13,7 @@ SRenderVertex * __cdecl engine_clipper_c_allocateClipVertex_FUN_00435980(void)
   
   if (0xb < g_ClipperTempCount) {
     g_CurrentFilename = "..\\engine\\clipper.c";
-    g_CurrentLineNumber = 0x5e;
+    g_CurrentLineNumber = 94;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Ran out of clipped verts!");
   }
   iVar1 = g_ClipperTempCount;

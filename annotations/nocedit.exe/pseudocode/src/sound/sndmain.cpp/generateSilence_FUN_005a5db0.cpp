@@ -25,7 +25,7 @@ void __cdecl sound_sndmain_cpp_generateSilence_FUN_005a5db0(void *buffer,uint bi
   }
 LAB_005a5de0:
   g_CurrentFilename = "..\\sound\\sndmain.cpp";
-  g_CurrentLineNumber = 0x5ca;
+  g_CurrentLineNumber = 1482;
   core_main_c_displayErrorAndQuit_FUN_00506f10("generateSilence - invalid bit depth!");
   return;
 }

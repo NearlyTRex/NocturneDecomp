@@ -27,7 +27,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr
   
   if (3 < this_ptr->bitmap_count) {
     g_CurrentFilename = "..\\engine\\font.cpp";
-    g_CurrentLineNumber = 0xd6;
+    g_CurrentLineNumber = 214;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many bitmaps");
   }
   pacVar7 = this_ptr->bitmap_files + this_ptr->bitmap_count;
@@ -48,14 +48,14 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr
   if (iVar2 < iVar5) {
     _sprintf(local_43c,"Invalid font file size (%s).",filename);
     g_CurrentFilename = "..\\engine\\font.cpp";
-    g_CurrentLineNumber = 0xeb;
+    g_CurrentLineNumber = 235;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_43c);
   }
-  pvVar3 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0(iVar5,"..\\engine\\font.cpp",0xf0);
+  pvVar3 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0(iVar5,"..\\engine\\font.cpp",240);
   this_ptr->bitmap_data[this_ptr->bitmap_count] = pvVar3;
   if (this_ptr->bitmap_data[this_ptr->bitmap_count] == (void *)0x0) {
     _sprintf(local_43c,"Unable to allocate memory for font bitmap (%s).",filename);
-    g_CurrentLineNumber = 0xf3;
+    g_CurrentLineNumber = 243;
     g_CurrentFilename = "..\\engine\\font.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_43c);
   }
@@ -76,7 +76,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr
       this_ptr->palette_data[iVar4 + this_ptr->bitmap_count * 0x300 + 2] = (char)iVar3;
       iVar4 = iVar6;
     } while (iVar6 != 0x300);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\font.cpp",0x10a);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\font.cpp",266);
   }
   engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
             (this_ptr,this_ptr->bitmap_count,width,height,first_char);

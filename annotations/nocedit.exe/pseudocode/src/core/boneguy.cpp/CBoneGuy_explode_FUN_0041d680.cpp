@@ -44,7 +44,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d680(CBoneGuy *this_ptr)
   this_ptr->box_count = iVar2;
   if (0x14 < iVar2) {
     g_CurrentFilename = "..\\core\\boneguy.cpp";
-    g_CurrentLineNumber = 0x443;
+    g_CurrentLineNumber = 1091;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneGuy::explode - Not enough containers");
   }
   local_18 = 0;

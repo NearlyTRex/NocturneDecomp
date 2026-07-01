@@ -27,7 +27,7 @@ void __cdecl core_fire_cpp_initProcess_FUN_004c4b00(void)
       if (iVar2 != 0) {
         if (0x31 < g_CharactersOnFireCount) {
           g_CurrentFilename = "..\\core\\fire.cpp";
-          g_CurrentLineNumber = 0xd0f;
+          g_CurrentLineNumber = 3343;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CGunFlame::initProcess - too many characters!");
         }
         g_CharactersOnFire[g_CharactersOnFireCount] = this_ptr;

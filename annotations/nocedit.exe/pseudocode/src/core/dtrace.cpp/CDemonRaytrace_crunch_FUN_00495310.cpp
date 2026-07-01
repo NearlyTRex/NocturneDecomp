@@ -113,7 +113,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
   core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(this_ptr);
   iVar15 = this_ptr->triangle_count;
   piVar8 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     (iVar15 * 0x1c + 4,"..\\core\\dtrace.cpp",0x2ed);
+                     (iVar15 * 0x1c + 4,"..\\core\\dtrace.cpp",749);
   local_44 = (STriangleBoundsEntry *)piVar8;
   if (piVar8 != (int *)0x0) {
     local_44 = (STriangleBoundsEntry *)(piVar8 + 1);
@@ -121,7 +121,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
   }
   if (local_44 == (STriangleBoundsEntry *)0x0) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
-    g_CurrentLineNumber = 0x2ee;
+    g_CurrentLineNumber = 750;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::crunch - out of refList memory");
   }
   iVar9 = 0;

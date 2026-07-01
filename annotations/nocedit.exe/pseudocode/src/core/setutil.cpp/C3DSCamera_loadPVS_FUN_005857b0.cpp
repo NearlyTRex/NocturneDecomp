@@ -16,12 +16,12 @@ void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera *this_p
   
   _fscanf(file_handle,"%d\n",&this_ptr->pvs_count);
   piVar1 = (int *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (this_ptr->pvs_list,this_ptr->pvs_count << 2,"..\\core\\setutil.cpp",0xe2);
+                     (this_ptr->pvs_list,this_ptr->pvs_count << 2,"..\\core\\setutil.cpp",226);
   this_ptr->pvs_list = piVar1;
   if (0 < this_ptr->pvs_count) {
     if (piVar1 == (int *)0x0) {
       g_CurrentFilename = "..\\core\\setutil.cpp";
-      g_CurrentLineNumber = 0xe4;
+      g_CurrentLineNumber = 228;
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("Out of memory for pvsList - %d",this_ptr->pvs_count);
     }

@@ -10,7 +10,7 @@ int __cdecl core_motion_cpp_CMotionController_findPatchToFrame_FUN_0052dc80(CMot
 
 {
   g_CurrentFilename = "..\\core\\motion.cpp";
-  g_CurrentLineNumber = 0x2ca;
+  g_CurrentLineNumber = 714;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CMotionController::findPatchToFrame should never be called for this base class!");
   return 0;
 }

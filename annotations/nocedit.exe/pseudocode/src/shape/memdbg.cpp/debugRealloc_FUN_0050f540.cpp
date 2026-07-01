@@ -29,7 +29,7 @@ void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size
     else {
       if (ptr == (void *)0x0) {
         g_CurrentFilename = "..\\shape\\memdbg.cpp";
-        g_CurrentLineNumber = 0x99;
+        g_CurrentLineNumber = 153;
         core_main_c_displayErrorAndQuit_FUN_00506f10("headFromPtr - NULL ptr");
       }
       pSVar1 = (SMemHead *)((int)ptr + -0x28);

@@ -14,7 +14,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot *slot)
   
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0xb22;
+    g_CurrentLineNumber = 2850;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - must be locked!");
   }
   if (slot->is_active != 0) {
@@ -35,7 +35,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot *slot)
   if (slot->sample != (CSfxSample *)0x0) {
     if (slot->sample->ref_count < 1) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
-      g_CurrentLineNumber = 0xb41;
+      g_CurrentLineNumber = 2881;
       core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - ref count out of balance!");
     }
     piVar1 = &slot->sample->ref_count;
@@ -45,12 +45,12 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot *slot)
     if (-1 < pCVar2->streaming_slot_index) {
       if (pCVar2->ref_count != 0) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
-        g_CurrentLineNumber = 0xb50;
+        g_CurrentLineNumber = 2896;
         core_main_c_displayErrorAndQuit_FUN_00506f10("refCount for streaming Sfx %s > 1",pCVar2);
       }
       if ((int)&slot[-0x36cd9].options.current_volume / 0x128 != pCVar2->streaming_slot_index) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
-        g_CurrentLineNumber = 0xb51;
+        g_CurrentLineNumber = 2897;
         core_main_c_displayErrorAndQuit_FUN_00506f10("streaming sample sfx index mismatch on %s",pCVar2);
       }
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(pCVar2);

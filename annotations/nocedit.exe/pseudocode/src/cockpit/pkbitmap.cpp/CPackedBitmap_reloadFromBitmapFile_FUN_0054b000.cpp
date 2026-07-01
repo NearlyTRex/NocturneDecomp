@@ -17,7 +17,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b00
                           (this_ptr->filename,(void *)0x0,height * width);
   cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190
             (this_ptr,bitmap_data,width,height,transparency_color,width);
-  shape_memdbg_cpp_debugFree_FUN_0050f460(bitmap_data,"..\\cockpit\\pkbitmap.cpp",0x2fb);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(bitmap_data,"..\\cockpit\\pkbitmap.cpp",763);
   if (apply_palette_flag == 0) {
     return;
   }

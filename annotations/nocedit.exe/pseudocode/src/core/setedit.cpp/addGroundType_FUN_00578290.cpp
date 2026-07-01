@@ -33,7 +33,7 @@ void __cdecl core_setedit_cpp_addGroundType_FUN_00578290(char *filename,int grou
         if (-1 < iVar4) {
           if ((uint)(byte)g_GroundTextureTypes[iVar4] != ground_type) {
             g_CurrentFilename = "..\\core\\setedit.cpp";
-            g_CurrentLineNumber = 0x29e;
+            g_CurrentLineNumber = 670;
             core_main_c_displayErrorAndQuit_FUN_00506f10
                       ("Tried to define texture %s as ground type %d, but it was already defined as %d",filename,ground_type,
                        (uint)(byte)g_GroundTextureTypes[iVar4]);
@@ -50,7 +50,7 @@ void __cdecl core_setedit_cpp_addGroundType_FUN_00578290(char *filename,int grou
   engine_dosio_cpp_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,local_10c,(char *)0x0);
   if (499 < g_GroundTextureCount) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0x2ab;
+    g_CurrentLineNumber = 683;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Ground type list is full!  (Max is %d)",500);
   }
   uVar3 = 0xffffffff;
@@ -63,7 +63,7 @@ void __cdecl core_setedit_cpp_addGroundType_FUN_00578290(char *filename,int grou
   } while (cVar1 != '\0');
   if (0x27 < ~uVar3 - 1) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0x2b1;
+    g_CurrentLineNumber = 689;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Texture filename %s is too long to add to CGroundTypeList!",filename);
   }
   pcVar5 = local_10c;

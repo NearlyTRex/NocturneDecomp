@@ -34,7 +34,7 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDef
   }
   if (5000 < this_ptr->vertex_count[lod_index]) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
-    g_CurrentLineNumber = 0x6d2;
+    g_CurrentLineNumber = 1746;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::exactRayTrace - too many vertices!");
   }
   pCVar1 = g_FloatVertexArray;

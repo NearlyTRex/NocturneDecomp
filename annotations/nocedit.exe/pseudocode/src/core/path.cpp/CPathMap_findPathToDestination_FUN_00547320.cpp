@@ -230,22 +230,22 @@ LAB_005473e0:
         iVar3 = iVar3 - g_PathfindingDeltaZ[uVar6];
         if (iVar2 < 0) {
           g_CurrentFilename = "..\\core\\path.cpp";
-          g_CurrentLineNumber = 0x547;
+          g_CurrentLineNumber = 1351;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of bounds1!");
         }
         if (iVar3 < 0) {
           g_CurrentFilename = "..\\core\\path.cpp";
-          g_CurrentLineNumber = 0x548;
+          g_CurrentLineNumber = 1352;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of bounds2!");
         }
         if (99 < iVar2) {
           g_CurrentFilename = "..\\core\\path.cpp";
-          g_CurrentLineNumber = 0x549;
+          g_CurrentLineNumber = 1353;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of bounds3!");
         }
         if (99 < iVar3) {
           g_CurrentFilename = "..\\core\\path.cpp";
-          g_CurrentLineNumber = 0x54a;
+          g_CurrentLineNumber = 1354;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of bounds4!");
         }
         uVar5 = uVar6;

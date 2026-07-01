@@ -81,7 +81,7 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
   if ((this_ptr->connection_type != CONNECTION_CLIENT) || (this_ptr->network_mode != NET_MODE_LOBBY)
      ) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
-    g_CurrentLineNumber = 0x7e6;
+    g_CurrentLineNumber = 2022;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::applyNewGameSettings - should only call this in client lobby mode");
   }
   piVar12 = aiStack_170;
@@ -145,7 +145,7 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
       if (iVar6 == local_113) {
         if (local_44[3] == this_ptr->local_player_index) {
           g_CurrentFilename = "..\\core\\netgame.cpp";
-          g_CurrentLineNumber = 0x811;
+          g_CurrentLineNumber = 2065;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze");
         }
         core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(this_ptr,local_44[3]);

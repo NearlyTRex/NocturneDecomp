@@ -20,14 +20,14 @@ void __cdecl shape_edittool_cpp_CStrList_clear_FUN_004a2b10(CStrList *this_ptr)
       do {
         ptr = *(void **)((int)this_ptr->data_array + iVar1);
         if (ptr != (void *)0x0) {
-          shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\shape\\edittool.cpp",0xb0b);
+          shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\shape\\edittool.cpp",2827);
         }
         iVar2 = iVar2 + 1;
         iVar1 = iVar1 + 4;
       } while (iVar2 < this_ptr->item_count);
     }
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (this_ptr->data_array,"..\\shape\\edittool.cpp",0xb0d);
+              (this_ptr->data_array,"..\\shape\\edittool.cpp",2829);
   }
   this_ptr->data_array = (char **)0x0;
   this_ptr->capacity = 0;

@@ -17,7 +17,7 @@ void __cdecl core_script_cpp_CScript_editorPutLine_FUN_005662a0(CScript *this_pt
     if (line_number < iVar1 + 10) goto LAB_005662c2;
   }
   g_CurrentFilename = "..\\core\\script.cpp";
-  g_CurrentLineNumber = 0x1a83;
+  g_CurrentLineNumber = 6787;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CScript::editorPutLine - invalid line number");
 LAB_005662c2:
   this_ptr_00 = &this_ptr->script_text;

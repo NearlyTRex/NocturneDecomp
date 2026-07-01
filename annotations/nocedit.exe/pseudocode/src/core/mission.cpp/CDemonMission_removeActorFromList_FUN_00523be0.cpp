@@ -16,14 +16,14 @@ void __cdecl core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0(CDe
     return;
   }
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (actor_ptr,"..\\core\\mission.cpp",0x2c8);
+            (actor_ptr,"..\\core\\mission.cpp",712);
   pCVar1 = this_ptr->first_actor;
   while( true ) {
     if (pCVar1 == (CDemonActor *)0x0) {
       return;
     }
     core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-              (pCVar1,"..\\core\\mission.cpp",0x2ce);
+              (pCVar1,"..\\core\\mission.cpp",718);
     if (pCVar1 == actor_ptr) break;
     pCVar1 = pCVar1->next_actor;
   }

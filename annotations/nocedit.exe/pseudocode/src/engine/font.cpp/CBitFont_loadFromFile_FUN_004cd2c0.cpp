@@ -37,7 +37,7 @@ void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_004cd2c0(CBitFont *this_p
   _fscanf(stream,"%d\n",&local_18);
   _fgets(local_12c,0xff,stream);
   _fscanf(stream,"%d,%d\n",&local_14,&local_10);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\font.cpp",0x159);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\font.cpp",345);
   if ((local_24 == 0x20) && (local_20 == 0xff)) {
     engine_font_cpp_CBitFont_openFontFile_FUN_004ccfc0
               (this_ptr,local_22c,local_2c,local_28,local_1c);
