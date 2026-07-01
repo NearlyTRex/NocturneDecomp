@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 21
-  Total diagnostics: 73
+  Functions with findings: 19
+  Total diagnostics: 71
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 20, raw .cpp files: 1
+  .keep.cpp files: 19, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -167,12 +167,6 @@ engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
   Line   24: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0  [.cpp] [Cppcheck (quick)]
-  File: shape/superopt.cpp  (1 diagnostics)
-
-  Line   27: [memleak] Memory leak: ppCVar2
-
-----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
@@ -189,9 +183,3 @@ sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
   Line   29: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
-
-----------------------------------------------------------------------------------------------------
-sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660  [.keep] [Cppcheck (quick)]
-  File: sound/snddx.cpp  (1 diagnostics)
-
-  Line   42: [nullPointerRedundantCheck] Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.

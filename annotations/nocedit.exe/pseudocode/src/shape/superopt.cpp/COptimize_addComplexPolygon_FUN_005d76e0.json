@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 54,
     "complexity_score": 27,
@@ -127,33 +127,7 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "COptimize_addComplexPolygon_FUN_005d76e0.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "memleak",
-          "column": 9,
-          "line": 27,
-          "message": "Memory leak: ppCVar2",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "raw"
-  },
-  "suspects": [
-    {
-      "description": "Memory leak: ppCVar2",
-      "line": 27,
-      "match": "Cppcheck: memory leak",
-      "severity": "major",
-      "text": "return (CComplexPolygon *)0x0;",
-      "type": "static_memleak"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -278,31 +278,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CDirectSoundDevice_initPropertySet_FUN_005ae660.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointerRedundantCheck",
-          "column": 7,
-          "line": 42,
-          "message": "Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.",
-      "line": 42,
-      "match": "Cppcheck: redundant null check or possible null dereference",
-      "severity": "moderate",
-      "text": "(*local_18->vtable->QueryInterface)((IUnknown *)local_18,&g_IID_IDirectSound3DBuffer,(void **)&local_14);",
-      "type": "static_null_pointer_redundant_check"
-    }
-  ]
+  "suspects": []
 }

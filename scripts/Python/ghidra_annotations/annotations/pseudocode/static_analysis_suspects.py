@@ -246,6 +246,87 @@ def _is_sanctioned_bitcast_helper(cpp_path):
     return any(tok in src for tok in _SANCTIONED_BITCAST_GLOBALS)
 
 
+# x87 FPU compare mnemonics. A genuine floating-point loop tests its induction
+# variable with one of these (the result is bridged to EFLAGS via FNSTSW/SAHF,
+# or set directly by FCOMI*). A loop whose counter is really an integer that
+# Ghidra mistyped as `float` tests it with an integer CMP/DEC instead, so no
+# FPU compare appears inside the loop's back-edge.
+_FPU_COMPARE_MNEMONICS = frozenset((
+    'FCOM', 'FCOMP', 'FCOMPP', 'FUCOM', 'FUCOMP', 'FUCOMPP',
+    'FICOM', 'FICOMP', 'FCOMI', 'FCOMIP', 'FUCOMI', 'FUCOMIP', 'FTST',
+))
+
+# Matches an exported asm line: `    MNEMONIC operands    ; 004e3bed`.
+# group(1)=mnemonic, group(2)=operands, group(3)=this instruction's address.
+_ASM_LINE_RE = re.compile(r'^\s*([A-Z][A-Z0-9]*)\b(.*?);\s*([0-9a-fA-F]{4,8})\s*$')
+# First hex immediate in a branch operand (the jump target).
+_ASM_TARGET_RE = re.compile(r'0x([0-9a-fA-F]+)')
+
+
+def _asm_path_for(cpp_path):
+    """Return the sibling `.asm` path for an analyzed source file, or None.
+
+    The exporter writes `<base>.asm` next to `<base>.cpp` / `<base>.keep.cpp`.
+    Returns None if the file can't be located.
+    """
+    if not cpp_path:
+        return None
+    base = cpp_path
+    for suffix in ('.keep.cpp', '.keep.c', '.cpp', '.c'):
+        if base.endswith(suffix):
+            base = base[: -len(suffix)]
+            break
+    asm = base + '.asm'
+    return asm if os.path.exists(asm) else None
+
+
+def _float_loop_is_genuine(asm_path):
+    """True if the function's asm contains a float-controlled loop.
+
+    Parses the exported `.asm`, finds every backward jump (a conditional `Jcc`
+    or unconditional `JMP`/`LOOP*` whose target precedes it — a loop back-edge),
+    and returns True if any back-edge body contains an x87 FPU compare. That
+    means the binary really drives the loop with floating-point control flow, so
+    a clang-tidy `cert-flp30-c` float-induction finding is faithful to Watcom
+    (fix_compilation.md §static_float_loop_induction) and should not be promoted.
+
+    Returns False on any uncertainty (missing/unparseable asm, no back-edge, no
+    FPU compare inside a back-edge) so we err toward keeping the flag rather than
+    silently hiding a genuinely mistyped integer counter.
+    """
+    if not asm_path:
+        return False
+    try:
+        with open(asm_path, 'r', errors='replace') as f:
+            raw = f.readlines()
+    except OSError:
+        return False
+
+    fp_addrs = []       # addresses of FPU compare instructions
+    back_edges = []     # (target_addr, branch_addr) for backward jumps
+    for line in raw:
+        m = _ASM_LINE_RE.match(line)
+        if not m:
+            continue
+        mnem, operands, addr_hex = m.group(1), m.group(2), m.group(3)
+        addr = int(addr_hex, 16)
+        if mnem in _FPU_COMPARE_MNEMONICS:
+            fp_addrs.append(addr)
+        elif mnem.startswith('J') or mnem.startswith('LOOP'):
+            tgt = _ASM_TARGET_RE.search(operands)
+            if tgt:
+                target = int(tgt.group(1), 16)
+                if target < addr:
+                    back_edges.append((target, addr))
+
+    if not fp_addrs or not back_edges:
+        return False
+    return any(
+        any(target <= a <= branch for a in fp_addrs)
+        for target, branch in back_edges
+    )
+
+
 def _tool_from_key(sa_key):
     """Extract the tool name from a static_analysis subkey.
 
@@ -350,6 +431,7 @@ def apply_to_json(json_path):
 
     # Synthesize fresh ones from current diagnostics.
     suppress_bitcast = None  # lazily computed on first invalidPointerCast diag
+    flp_genuine = None       # lazily computed on first cert-flp30-c diag
     synthesized = []
     for sa_key, sa_val in sa.items():
         if not isinstance(sa_val, dict):
@@ -367,6 +449,15 @@ def apply_to_json(json_path):
                 if suppress_bitcast is None:
                     suppress_bitcast = _is_sanctioned_bitcast_helper(cpp_path)
                 if suppress_bitcast:
+                    continue
+            # Don't promote a cert-flp30-c float-loop finding when the asm shows
+            # the loop is genuinely float-controlled (an FPU compare inside a
+            # back-edge). Those are faithful to Watcom; only a float-typed
+            # counter the binary actually drives with integer ops stays flagged.
+            if tool == 'clang_tidy' and 'cert-flp30-c' in _candidate_checks(diag):
+                if flp_genuine is None:
+                    flp_genuine = _float_loop_is_genuine(_asm_path_for(cpp_path))
+                if flp_genuine:
                     continue
             suspect = synthesize_suspect(tool, diag, cpp_path)
             if suspect:

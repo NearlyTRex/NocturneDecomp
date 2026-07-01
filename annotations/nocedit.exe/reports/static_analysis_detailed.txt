@@ -29,7 +29,7 @@ cert-flp30-c (4)
     loop induction expression should not have floating-point type
 
 ====================================================================================================
-Cppcheck (quick) (69 diagnostics)
+Cppcheck (quick) (67 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -311,19 +311,3 @@ invalidScanfArgType_int (3)
   sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 line 29
     File: sound/mp3.cpp
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
-
-----------------------------------------------------------------------------------------------------
-nullPointerRedundantCheck (1)
-----------------------------------------------------------------------------------------------------
-
-  sound_snddx.cpp_CDirectSoundDevice_initPropertySet line 42
-    File: sound/snddx.cpp
-    Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.
-
-----------------------------------------------------------------------------------------------------
-memleak (1)
-----------------------------------------------------------------------------------------------------
-
-  shape_superopt.cpp_COptimize_addComplexPolygon_FUN line 27
-    File: shape/superopt.cpp
-    Memory leak: ppCVar2

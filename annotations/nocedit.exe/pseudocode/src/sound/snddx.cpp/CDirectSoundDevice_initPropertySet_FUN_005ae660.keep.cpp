@@ -41,16 +41,12 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660(CDi
   if (error_code == 0) {
     (*local_18->vtable->QueryInterface)((IUnknown *)local_18,&g_IID_IDirectSound3DBuffer,(void **)&local_14);
     if (local_14 == (IDirectSound3DBuffer *)0x0) {
-      if (local_18 != (IDirectSoundBuffer *)0x0) {
-        (*local_18->vtable->Release)((IUnknown *)local_18);
-      }
+      (*local_18->vtable->Release)((IUnknown *)local_18);
     }
     else {
       (*local_14->vtable->QueryInterface)((IUnknown *)local_14,&g_IID_IKsPropertySet,(void **)&g_DirectSoundPropertySet);
-      if (local_18 != (IDirectSoundBuffer *)0x0) {
-        (*local_18->vtable->Release)((IUnknown *)local_18);
-        local_18 = (IDirectSoundBuffer *)0x0;
-      }
+      (*local_18->vtable->Release)((IUnknown *)local_18);
+      local_18 = (IDirectSoundBuffer *)0x0;
       if (local_14 != (IDirectSound3DBuffer *)0x0) {
         (*local_14->vtable->Release)((IUnknown *)local_14);
         return;
