@@ -11,7 +11,7 @@ void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0(C
 
 {
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-            (this_ptr,"..\\core\\actor.cpp",0x56e);
+            (this_ptr,"..\\core\\actor.cpp",1390);
   (this_ptr->location).position = *new_position;
   if ((CVector3f *)&this_ptr->orient != new_orientation) {
     (this_ptr->orient).vec = *new_orientation;

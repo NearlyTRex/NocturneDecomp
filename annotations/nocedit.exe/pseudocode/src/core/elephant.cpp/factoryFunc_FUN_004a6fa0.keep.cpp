@@ -12,7 +12,7 @@ CElephantGun * __cdecl core_elephant_cpp_factoryFunc_FUN_004a6fa0(void)
 {
   CElephantGun *pCVar1;
   
-  pCVar1 = (CElephantGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CElephantGun),"..\\core\\elephant.cpp",0x2e)
+  pCVar1 = (CElephantGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CElephantGun),"..\\core\\elephant.cpp",46)
   ;
   if (pCVar1 == (CElephantGun *)0x0) {
     return (CElephantGun *)0x0;

@@ -12,7 +12,7 @@ void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *class_name,EAmm
 {
   CAmmo *pCVar1;
   
-  pCVar1 = (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CAmmo),"..\\core\\game.cpp",0xa1c);
+  pCVar1 = (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CAmmo),"..\\core\\game.cpp",2588);
   if (pCVar1 == (CAmmo *)0x0) {
     return;
   }

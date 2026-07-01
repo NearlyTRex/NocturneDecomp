@@ -27,7 +27,7 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   file = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"wt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0x6d6;
+    g_CurrentLineNumber = 1750;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::Unable to save output");
   }
   _fprintf(file,"%d\n",this_ptr->set_file_version);
@@ -127,7 +127,7 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
       pCVar4 = pCVar4 + 1;
     } while (iVar3 < this_ptr->camera_count);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x74d);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",1869);
   strcpy(local_a0,this_ptr->geometry_filename);
   pcVar4 = strchr(local_a0,'.');
   if (pcVar4 == (char *)0x0) {

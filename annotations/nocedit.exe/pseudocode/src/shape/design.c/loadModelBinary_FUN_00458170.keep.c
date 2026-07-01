@@ -133,7 +133,7 @@ LAB_00458378:
           else if ((0x29 < local_18) &&
                   ((local_18 < 0x34 || ((0x34 < local_18 && (local_18 != 0x3e)))))) {
 LAB_00458677:
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_38,"..\\shape\\design.c",0x2a4);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_38,"..\\shape\\design.c",676);
             wincore_windll_cpp_clearScreen_FUN_005b3e70();
             engine_2d_c_clearInputAndWait_FUN_00403260();
             _sprintf(local_160,"loadBinary: type %d is not known",local_18);
@@ -167,7 +167,7 @@ LAB_00458835:
       local_14 = _fread(&local_18,1,4,local_38);
       _fseek(local_38,-4,1);
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_38,"..\\shape\\design.c",0x2b2);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_38,"..\\shape\\design.c",690);
     shape_design_c_calculateVertexNormals_FUN_0045be40();
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     local_1c = engine_model_c_loadModelFile_FUN_00527ec0(filename);

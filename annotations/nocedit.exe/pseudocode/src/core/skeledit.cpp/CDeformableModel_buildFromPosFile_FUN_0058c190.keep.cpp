@@ -85,7 +85,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   pCVar5 = (CBoneStructure *)
            shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (entry->pos_filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",
-                      0x60a);
+                      1546);
   local_24 = pCVar5;
   if (pCVar5 == (CBoneStructure *)0x0) {
     _sprintf(g_SkeleditStatusMessage,"Can't open %s",entry->pos_filename);
@@ -145,7 +145,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   if (iVar5 != 3) {
 LAB_0058c613:
     _sprintf(g_SkeleditStatusMessage,"%s is corrupt!",entry->pos_filename);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)local_24,"..\\core\\skeledit.cpp",0x647);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)local_24,"..\\core\\skeledit.cpp",1607);
     return 0;
   }
   core_skeleton_cpp_CDeformableModel_allocMemory_FUN_0059a3f0(this_ptr,1,1,local_b0,1);
@@ -209,7 +209,7 @@ LAB_0058c613:
             makepath
                       (local_c24,(char *)0x0,"art",local_818,"tga");
             file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                             (local_a1c,(char *)0x0,"rb","..\\core\\skeledit.cpp",0x6a5
+                             (local_a1c,(char *)0x0,"rb","..\\core\\skeledit.cpp",1701
                              );
             if ((file == (_FILE *)0x0) &&
                (pcVar21 = strstr(local_818,"gore"),
@@ -218,7 +218,7 @@ LAB_0058c613:
                         (local_a1c,"t:","\\enemy",local_818,"tga");
               file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                (local_a1c,(char *)0x0,"rb","..\\core\\skeledit.cpp",
-                                0x6a9);
+                                1705);
             }
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                       (g_CEditorToolsPtr,"Copying %s -> %s",local_a1c,local_c24);
@@ -236,10 +236,10 @@ LAB_0058c613:
             else {
               file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                    (local_c24,(char *)0x0,"wb","..\\core\\skeledit.cpp"
-                                    ,0x6b5);
+                                    ,1717);
               if (file_ptr == (_FILE *)0x0) {
                 g_CurrentFilename = "..\\core\\skeledit.cpp";
-                g_CurrentLineNumber = 0x6b6;
+                g_CurrentLineNumber = 1718;
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",local_c24);
               }
               while (iVar5 = _fgetc(file), -1 < iVar5) {
@@ -247,16 +247,16 @@ LAB_0058c613:
               }
               if ((file->_flag & 0x20) != 0) {
                 g_CurrentFilename = "..\\core\\skeledit.cpp";
-                g_CurrentLineNumber = 0x6bc;
+                g_CurrentLineNumber = 1724;
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Error reading %s",local_a1c);
               }
               if ((file_ptr->_flag & 0x20) != 0) {
-                g_CurrentLineNumber = 0x6bd;
+                g_CurrentLineNumber = 1725;
                 g_CurrentFilename = "..\\core\\skeledit.cpp";
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing %s",local_c24);
               }
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x6be);
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\skeledit.cpp",0x6bf);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",1726);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\skeledit.cpp",1727);
             }
             pcVar16 = pcVar16 + 0x48;
             local_98 = local_98 + 1;
@@ -415,7 +415,7 @@ LAB_0058c601:
       iVar5 = iVar5 + 1;
     } while (iVar5 < this_ptr->num_textures);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)local_24,"..\\core\\skeledit.cpp",0x75a);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)local_24,"..\\core\\skeledit.cpp",1882);
   shape_meshlod_cpp_CLodMesh_postprocessMesh_FUN_0051b330(&local_1f4);
   shape_meshlod_cpp_CLodMesh_copy_FUN_00515860(&local_350,&local_1f4);
   shape_meshlod_cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0(&local_350);
@@ -434,7 +434,7 @@ LAB_0058c601:
          shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(&local_1f4,"wt");
     if (local_1f4.precompute_file == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\skeledit.cpp";
-      g_CurrentLineNumber = 0x179;
+      g_CurrentLineNumber = 377;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create mesh precompute file.");
     }
     core_skeledit_cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0(entry,local_1f4.precompute_file);
@@ -445,7 +445,7 @@ LAB_0058c601:
          shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(&local_350,"wt");
     if (local_350.precompute_file == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\skeledit.cpp";
-      g_CurrentLineNumber = 0x179;
+      g_CurrentLineNumber = 377;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create mesh precompute file.");
     }
     core_skeledit_cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0(entry,local_350.precompute_file);
@@ -507,7 +507,7 @@ LAB_0058c601:
         if (iVar5 == 0) {
           if (local_2dc.lod_texture_count != local_a0) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
-            g_CurrentLineNumber = 0x7bc;
+            g_CurrentLineNumber = 1980;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Texture cram count mismatch!");
           }
           iVar8 = 0;
@@ -561,7 +561,7 @@ LAB_0058c601:
         iVar5 = shape_design_c_getLastTextureProcessIndex_FUN_0046a860();
         if (iVar5 != local_a0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
-          g_CurrentLineNumber = 0x7fe;
+          g_CurrentLineNumber = 2046;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Cram getNumCramsUsed() mismatch!");
         }
         local_74 = 0;

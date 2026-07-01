@@ -37,14 +37,14 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c
   local_44 = 0;
   if (1 < this_ptr->num_parts) {
     pCVar1 = (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                       (sizeof(CDeformableModelInstance),"..\\core\\skeleton.cpp",0x5ef);
+                       (sizeof(CDeformableModelInstance),"..\\core\\skeleton.cpp",1519);
     this_ptr_00 = (CDeformableModelInstance *)0x0;
     if (pCVar1 != (CDeformableModelInstance *)0x0) {
       this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(pCVar1);
     }
     if (this_ptr_00 == (CDeformableModelInstance *)0x0) {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
-      g_CurrentLineNumber = 0x5f0;
+      g_CurrentLineNumber = 1520;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
     }
     core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480

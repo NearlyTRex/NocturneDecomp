@@ -37,7 +37,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   p_Var4 = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rt");
   if (p_Var4 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\set.cpp";
-    g_CurrentLineNumber = 0x122;
+    g_CurrentLineNumber = 290;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::Unable to open %s",filename);
   }
   _fscanf(p_Var4,"%d\n",&this_ptr->set_file_version);
@@ -265,7 +265,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
       } while (iVar2 < this_ptr->camera_count);
     }
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\set.cpp",0x1e8);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\set.cpp",488);
   iVar2 = 0;
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading set geometry");
   core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,pcVar4,iVar2);
@@ -285,7 +285,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     }
     else {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\set.cpp",0x1f1);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\set.cpp",497);
       core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0
                 (&g_CDemonRaytraceInstance,pcVar4);
     }

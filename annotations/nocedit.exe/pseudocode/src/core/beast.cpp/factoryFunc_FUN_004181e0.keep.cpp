@@ -12,7 +12,7 @@ CBeast * __cdecl core_beast_cpp_factoryFunc_FUN_004181e0(void)
 {
   CBeast *pCVar1;
   
-  pCVar1 = (CBeast *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBeast),"..\\core\\beast.cpp",0x2d);
+  pCVar1 = (CBeast *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBeast),"..\\core\\beast.cpp",45);
   if (pCVar1 == (CBeast *)0x0) {
     return (CBeast *)0x0;
   }

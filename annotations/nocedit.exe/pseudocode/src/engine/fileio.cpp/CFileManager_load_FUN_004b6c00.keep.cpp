@@ -24,10 +24,10 @@ void __cdecl engine_fileio_cpp_CFileManager_load_FUN_004b6c00(CFileManager *this
   this_ptr->tracked_file_count = 0;
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    ("level.lst",(char *)0x0,"rt","..\\engine\\fileio.cpp",
-                    0x906);
+                    2310);
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
-    g_CurrentLineNumber = 0x907;
+    g_CurrentLineNumber = 2311;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to open read level.lst");
   }
 LAB_004b6c3c:
@@ -46,7 +46,7 @@ LAB_004b6ca0:
   engine_fileio_cpp_CFileManager_registerFiles_FUN_004b5640(this_ptr,(char *)local_224);
 LAB_004b6cb3:
   if (iVar2 == -1) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x914);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",2324);
     local_20 = 0;
     do {
       if (this_ptr->tracked_file_count + -1 <= local_20) {

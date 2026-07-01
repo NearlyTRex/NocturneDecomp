@@ -41,7 +41,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
   
   for (iVar9 = 0; iVar9 < this_ptr->actor_count; iVar9 = iVar9 + 1) {
     core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-              (this_ptr->actors[iVar9],"..\\core\\set.cpp",0x593);
+              (this_ptr->actors[iVar9],"..\\core\\set.cpp",1427);
   }
   if (g_CGamePtr->profile_mode != 0) {
     local_40 = (float)wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -216,7 +216,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
     }
     for (iVar2 = 0; iVar2 < this_ptr->actor_count; iVar2 = iVar2 + 1) {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                (this_ptr->actors[iVar2],"..\\core\\set.cpp",0x654);
+                (this_ptr->actors[iVar2],"..\\core\\set.cpp",1620);
     }
   }
   return;

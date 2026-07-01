@@ -12,7 +12,7 @@ void __cdecl core_cloth_cpp_CClothList_add_FUN_0043c0f0(CClothList *this_ptr,cha
 {
   if (9 < this_ptr->count) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
-    g_CurrentLineNumber = 0x5d1;
+    g_CurrentLineNumber = 1489;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CClothList::add - list is full");
   }
   strcpy(this_ptr->filenames[this_ptr->count], filename);

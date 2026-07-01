@@ -12,7 +12,7 @@ CFlameCan * __cdecl core_flamecan_cpp_factoryFunc_FUN_004cb120(void)
 {
   CFlameCan *pCVar1;
   
-  pCVar1 = (CFlameCan *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CFlameCan),"..\\core\\flamecan.cpp",0x22)
+  pCVar1 = (CFlameCan *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CFlameCan),"..\\core\\flamecan.cpp",34)
   ;
   if (pCVar1 == (CFlameCan *)0x0) {
     return (CFlameCan *)0x0;

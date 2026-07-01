@@ -34,7 +34,7 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     }
     else {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\design.c",0x1ffd);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\design.c",8189);
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Face map on Z axis (Y/N) ?",0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

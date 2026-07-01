@@ -40,7 +40,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
   _fscanf(file_handle,"%d\n",&g_MessageCount);
   if (local_1c != 0) {
     g_CurrentFilename = "..\\support\\newmsg.cpp";
-    g_CurrentLineNumber = 0x54;
+    g_CurrentLineNumber = 84;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown message file version");
   }
   _fgets(local_31c,0xff,file_handle);
@@ -49,7 +49,7 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
     _fscanf(file_handle," ");
     lVar5 = _ftell(file_handle);
     if (local_18 <= lVar5) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\support\\newmsg.cpp",0x72);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\support\\newmsg.cpp",114);
       for (iVar6 = 0; iVar6 < g_LocalizedStringCount; iVar6 = iVar6 + 1) {
         g_MessageKeys[iVar6] = g_MessageKeyStorage[iVar6];
         g_MessageTexts[iVar6] = g_MessageTextStorage[iVar6];
@@ -77,12 +77,12 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
     iVar6 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\"\n",local_21c,local_11c);
     if (iVar6 != 2) {
       g_CurrentFilename = "..\\support\\newmsg.cpp";
-      g_CurrentLineNumber = 0x65;
+      g_CurrentLineNumber = 101;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Error reading %s",message_file);
     }
     if (499 < g_LocalizedStringCount) {
       g_CurrentFilename = "..\\support\\newmsg.cpp";
-      g_CurrentLineNumber = 0x6a;
+      g_CurrentLineNumber = 106;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Too many messages in %s",message_file);
     }
     strcpy(g_MessageKeyStorage[g_LocalizedStringCount], local_21c);

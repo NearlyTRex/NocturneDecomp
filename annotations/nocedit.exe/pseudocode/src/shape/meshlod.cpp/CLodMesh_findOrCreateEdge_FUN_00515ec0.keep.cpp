@@ -36,11 +36,11 @@ int __cdecl shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0(CLodMesh *t
   }
   pCVar1 = (CLodEdge *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->edges_ptr,(this_ptr->edge_count + 1) * sizeof(CLodEdge),
-                      "..\\shape\\meshlod.cpp",0x325);
+                      "..\\shape\\meshlod.cpp",805);
   this_ptr->edges_ptr = pCVar1;
   if (pCVar1 == (CLodEdge *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0x326;
+    g_CurrentLineNumber = 806;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
   this_ptr->edges_ptr[this_ptr->edge_count].vertex_idx_1 = iVar3;

@@ -101,7 +101,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                         (g_CEditorToolsPtr,"Too many neighboring edges!");
               g_CurrentFilename = "..\\shape\\meshlod.cpp";
-              g_CurrentLineNumber = 0xbca;
+              g_CurrentLineNumber = 3018;
               core_main_c_displayErrorAndQuit_FUN_00506f10("Too many neighboring edges!");
             }
             if (local_1c == pCVar12->vertex_idx_1) {
@@ -127,7 +127,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                 (g_CEditorToolsPtr,"Too many neighboring faces!");
                       g_CurrentFilename = "..\\shape\\meshlod.cpp";
-                      g_CurrentLineNumber = 0xbf4;
+                      g_CurrentLineNumber = 3060;
                       core_main_c_displayErrorAndQuit_FUN_00506f10
                                 ("Too many neighboring faces!");
                     }
@@ -146,7 +146,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
                     }
                     else {
                       g_CurrentFilename = "..\\shape\\meshlod.cpp";
-                      g_CurrentLineNumber = 0xc06;
+                      g_CurrentLineNumber = 3078;
                       core_main_c_displayErrorAndQuit_FUN_00506f10("Bug!");
                       iVar11 = 0;
                     }

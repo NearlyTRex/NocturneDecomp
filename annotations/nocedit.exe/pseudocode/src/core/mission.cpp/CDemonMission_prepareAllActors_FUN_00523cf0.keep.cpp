@@ -20,7 +20,7 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemon
   int iVar6;
   int iVar5;
   
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x335);
+  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",821);
   iVar4 = 0;
   iVar5 = 0;
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Setting up actors");
@@ -33,7 +33,7 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemon
   if (pCVar3 != (CDemonActor *)0x0) {
     do {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                (pCVar3,"..\\core\\mission.cpp",0x33f);
+                (pCVar3,"..\\core\\mission.cpp",831);
       iVar3 = iVar3 + 1;
       (*((pCVar3->vtable)._ub)->setup)(pCVar3);
       if (iVar3 == iVar4 / 4) {
@@ -55,6 +55,6 @@ void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(CDemon
     } while (pCVar3 != (CDemonActor *)0x0);
   }
   this_ptr->actors_prepared = 1;
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x350);
+  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",848);
   return;
 }

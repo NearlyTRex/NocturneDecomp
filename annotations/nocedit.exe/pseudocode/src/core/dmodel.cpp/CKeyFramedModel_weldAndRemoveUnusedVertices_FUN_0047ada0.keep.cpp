@@ -32,10 +32,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_004
   if ((0 < this_ptr->vertex_count) && (0 < this_ptr->frame_count)) {
     core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(this_ptr);
     ptr = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                    (this_ptr->vertex_count << 2,"..\\core\\dmodel.cpp",0x8df);
+                    (this_ptr->vertex_count << 2,"..\\core\\dmodel.cpp",2271);
     if (ptr == (int *)0x0) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
-      g_CurrentLineNumber = 0x8e0;
+      g_CurrentLineNumber = 2272;
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("CKeyFramedModel::removeUnusedVertices out of memory for auxArray, vertexCount = %d",this_ptr->vertex_count);
     }
@@ -63,7 +63,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_004
         iVar1 = local_48->part_list[0].vertex_count + local_24;
         if (this_ptr->vertex_count < iVar1) {
           g_CurrentFilename = "..\\core\\dmodel.cpp";
-          g_CurrentLineNumber = 0x8f8;
+          g_CurrentLineNumber = 2296;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Vertex reducer bug or CKeyFramedModel corruption!");
         }
         if (local_24 < iVar1) {
@@ -110,7 +110,7 @@ LAB_0047b0cc:
     }
     if (iVar1 != this_ptr->vertex_count) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
-      g_CurrentLineNumber = 0x931;
+      g_CurrentLineNumber = 2353;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Vertex reducer bug or CKeyFramedModel corruption!");
     }
     iVar1 = 0;

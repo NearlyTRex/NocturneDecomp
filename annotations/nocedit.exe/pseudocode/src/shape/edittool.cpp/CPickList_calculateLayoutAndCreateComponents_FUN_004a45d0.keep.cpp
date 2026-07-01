@@ -64,7 +64,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
         if (*pcVar3 == '\0') break;
         if (9 < iVar10) {
           g_CurrentFilename = "..\\shape\\edittool.cpp";
-          g_CurrentLineNumber = 0xed6;
+          g_CurrentLineNumber = 3798;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many picklist columns!");
         }
       }

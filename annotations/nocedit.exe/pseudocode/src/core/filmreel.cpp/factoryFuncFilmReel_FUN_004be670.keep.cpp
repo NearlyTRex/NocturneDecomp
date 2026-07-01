@@ -12,7 +12,7 @@ CFilmReel * __cdecl core_filmreel_cpp_factoryFuncFilmReel_FUN_004be670(void)
 {
   CFilmReel *pCVar1;
   
-  pCVar1 = (CFilmReel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CFilmReel),"..\\core\\filmreel.cpp",0x22)
+  pCVar1 = (CFilmReel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CFilmReel),"..\\core\\filmreel.cpp",34)
   ;
   if (pCVar1 == (CFilmReel *)0x0) {
     return (CFilmReel *)0x0;

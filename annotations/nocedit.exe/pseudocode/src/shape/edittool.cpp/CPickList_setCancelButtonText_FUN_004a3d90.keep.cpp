@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90(CPick
   }
   if (99 < strlen(text)) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
-    g_CurrentLineNumber = 0xd87;
+    g_CurrentLineNumber = 3463;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::setCancelButtonText - too long!");
   }
   strcpy(this_ptr->cancel_button_text, text);

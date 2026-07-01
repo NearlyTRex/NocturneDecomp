@@ -34,15 +34,15 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
   
   bVar13 = 0;
   workspace = (SColorQuantMapper *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                        (sizeof(SColorQuantMapper),"..\\engine\\palette.cpp",0xb4);
+                        (sizeof(SColorQuantMapper),"..\\engine\\palette.cpp",180);
   color_count = 0;
   if (workspace == (SColorQuantMapper *)0x0) {
     g_CurrentFilename = "..\\engine\\palette.cpp";
-    g_CurrentLineNumber = 0xb6;
+    g_CurrentLineNumber = 182;
     core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - Unable to create mapper");
   }
   color_data = (char *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
-                         (this_ptr->max_pixel_count,4,"..\\engine\\palette.cpp",0xbb);
+                         (this_ptr->max_pixel_count,4,"..\\engine\\palette.cpp",187);
   iVar4 = 0;
   if (color_data != (char *)0x0) {
     local_1c = 0;
@@ -53,7 +53,7 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
         pcVar5 = strchr(local_6c, '.');
         if (pcVar5 == (char *)0x0) {
           g_CurrentFilename = "..\\engine\\palette.cpp";
-          g_CurrentLineNumber = 0xcb;
+          g_CurrentLineNumber = 203;
           core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - No extension found");
         }
         strcpy(pcVar5, ".ACT");
@@ -72,7 +72,7 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
         }
         else {
           _fread(g_PaletteData,0x300,1,p_Var6);
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\engine\\palette.cpp",0xd9);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\engine\\palette.cpp",217);
         }
         pcVar5 = strchr(this_ptr->texture_names + local_10, '\\');
         if (pcVar5 == (char *)0x0) {
@@ -98,7 +98,7 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
         p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50(pcVar5,pcVar6 + local_10,pcVar14);
         if (p_Var3 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\engine\\palette.cpp";
-          g_CurrentLineNumber = 0xf1;
+          g_CurrentLineNumber = 241;
           core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - Unable to open texture");
         }
         puVar9 = (uchar *)(color_data + color_count * 4);
@@ -126,11 +126,11 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
           iVar7 = iVar7 + -1;
           if ((uint)this_ptr->max_pixel_count < color_count) {
             g_CurrentFilename = "..\\engine\\palette.cpp";
-            g_CurrentLineNumber = 0x10c;
+            g_CurrentLineNumber = 268;
             core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - Too many pixels");
           }
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\palette.cpp",0x110);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\palette.cpp",272);
         local_10 = local_10 + 0x40;
         local_1c = local_1c + 1;
       } while (local_1c < this_ptr->texture_count);
@@ -149,12 +149,12 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
     p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50(pcVar6,output_filename,pcVar7);
     if (p_Var3 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\engine\\palette.cpp";
-      g_CurrentLineNumber = 0x122;
+      g_CurrentLineNumber = 290;
       core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - Unable to create output!");
     }
     _fwrite(pcVar5,0x300,1,p_Var3);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\palette.cpp",0x125);
-    shape_memdbg_cpp_debugFree_FUN_0050f460(color_data,"..\\engine\\palette.cpp",0x129);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\palette.cpp",293);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(color_data,"..\\engine\\palette.cpp",297);
     g_CurrentDebugFilename = "..\\engine\\palette.cpp";
     g_CurrentDebugLine = 0x12a;
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(workspace);

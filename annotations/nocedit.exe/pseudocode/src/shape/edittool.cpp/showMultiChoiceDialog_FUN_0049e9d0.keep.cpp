@@ -46,7 +46,7 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_
 
   if (g_EditorFont == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
-    g_CurrentLineNumber = 0x8d;
+    g_CurrentLineNumber = 141;
     core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
   }
   g_FontCharacterHeight = g_EditorFont->max_char_width;
@@ -57,7 +57,7 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_
   type_info = &g_CEdButtonTypeInfo;
   iVar3 = iVar2;
   pvVar3 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     (iVar2 * 0xe4 + 4,"..\\shape\\edittool.cpp",0x412);
+                     (iVar2 * 0xe4 + 4,"..\\shape\\edittool.cpp",1042);
   object_ptr = (CEdButton *)__vec_new(pvVar3,iVar3,type_info);
   iVar9 = 0;
   local_48 = 0;

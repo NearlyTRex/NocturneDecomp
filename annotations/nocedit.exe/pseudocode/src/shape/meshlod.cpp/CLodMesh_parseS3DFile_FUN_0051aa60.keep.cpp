@@ -38,12 +38,12 @@ LAB_0051aab1:
   do {
     do {
       g_CurrentFilename = "..\\shape\\meshlod.cpp";
-      g_CurrentLineNumber = 0x1080;
+      g_CurrentLineNumber = 4224;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Corruption in S3D detected!");
 LAB_0051aad4:
       if ((local_30 < 0x66) || (0x67 < local_30)) {
         g_CurrentFilename = "..\\shape\\meshlod.cpp";
-        g_CurrentLineNumber = 0x1084;
+        g_CurrentLineNumber = 4228;
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("Can't import S3D file version %d, I can only do up to version %d.",local_30,0x67);
       }

@@ -75,7 +75,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
             }
             if (iVar4 == g_MasterLightCount) {
               g_CurrentFilename = "..\\core\\set.cpp";
-              g_CurrentLineNumber = 0x2fc;
+              g_CurrentLineNumber = 764;
               core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::precomuputeLightVisibility - Unable to find light in master list");
             }
             light_source = g_MasterLightList[iVar4];

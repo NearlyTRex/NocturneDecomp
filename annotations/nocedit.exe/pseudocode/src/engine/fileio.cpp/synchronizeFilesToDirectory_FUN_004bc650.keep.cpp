@@ -41,7 +41,7 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
       iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_53c);
       if (iVar3 == 0) {
         g_CurrentFilename = "..\\engine\\fileio.cpp";
-        g_CurrentLineNumber = 0xfe7;
+        g_CurrentLineNumber = 4071;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Can't get info on %s",local_53c.found_path);
       }
       iVar4 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_750);
@@ -49,18 +49,18 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
           (local_750.timestamp + 1 < local_53c.timestamp)) ||
          (local_53c.file_size != local_750.file_size)) {
         file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                         (full_path,(char *)0x0,"rb","..\\engine\\fileio.cpp",0xff8);
+                         (full_path,(char *)0x0,"rb","..\\engine\\fileio.cpp",4088);
         if (file == (_FILE *)0x0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
-          g_CurrentLineNumber = 0xff9;
+          g_CurrentLineNumber = 4089;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",full_path);
         }
         file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                             (local_328,(char *)0x0,"wb","..\\engine\\fileio.cpp",0xffa
+                             (local_328,(char *)0x0,"wb","..\\engine\\fileio.cpp",4090
                              );
         if (file_ptr == (_FILE *)0x0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
-          g_CurrentLineNumber = 0xffb;
+          g_CurrentLineNumber = 4091;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",local_328);
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -72,16 +72,16 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
         }
         if ((file->_flag & 0x20) != 0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
-          g_CurrentLineNumber = 0x1008;
+          g_CurrentLineNumber = 4104;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Error reading %s",full_path);
         }
         if ((file_ptr->_flag & 0x20) != 0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
-          g_CurrentLineNumber = 0x1009;
+          g_CurrentLineNumber = 4105;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing %s",local_328);
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x100d);
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0x100e);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",4109);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",4110);
         iVar4 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910(local_328,(char *)local_53c.timestamp)
         ;
         if (iVar4 == 0) {

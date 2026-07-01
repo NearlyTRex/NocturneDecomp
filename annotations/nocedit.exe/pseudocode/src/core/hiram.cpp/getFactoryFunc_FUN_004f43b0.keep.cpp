@@ -12,7 +12,7 @@ CHiram * __cdecl core_hiram_cpp_getFactoryFunc_FUN_004f43b0(void)
 {
   CHiram *pCVar1;
   
-  pCVar1 = (CHiram *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CHiram),"..\\core\\hiram.cpp",0x2c);
+  pCVar1 = (CHiram *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CHiram),"..\\core\\hiram.cpp",44);
   if (pCVar1 == (CHiram *)0x0) {
     return (CHiram *)0x0;
   }

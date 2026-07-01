@@ -12,7 +12,7 @@ CShotgun * __cdecl core_shotgun_cpp_factoryFunc_FUN_00587ea0(void)
 {
   CShotgun *pCVar1;
   
-  pCVar1 = (CShotgun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CShotgun),"..\\core\\shotgun.cpp",0x2e);
+  pCVar1 = (CShotgun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CShotgun),"..\\core\\shotgun.cpp",46);
   if (pCVar1 == (CShotgun *)0x0) {
     return (CShotgun *)0x0;
   }

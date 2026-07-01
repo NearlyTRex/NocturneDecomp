@@ -27,7 +27,7 @@ void __cdecl core_setedit_cpp_CDemonSet_writeFileDependencies_FUN_00584e70(CDemo
   pcVar5 = strchr(local_118,'.');
   if (pcVar5 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0x1756;
+    g_CurrentLineNumber = 5974;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to find ext in geomName");
   }
   _sprintf(pcVar5,".zth");
@@ -46,7 +46,7 @@ void __cdecl core_setedit_cpp_CDemonSet_writeFileDependencies_FUN_00584e70(CDemo
         }
         else {
           strcpy(local_218,"backdrop");
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x177e);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",6014);
         }
         _fprintf(file_handle,"%s\\%s.raw\n",local_218,pCVar2->name);
         _fprintf(file_handle,"%s\\%s.act\n",local_218,pCVar2->name);

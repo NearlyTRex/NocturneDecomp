@@ -17,14 +17,14 @@ void __cdecl core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_
             (g_CEditorToolsPtr,"Adding files for %s to extract list...",model_filename);
   _fprintf((file_manager_ptr->base).file_ptr,"models\\%s\n",model_filename);
   this_ptr = (CDeformableModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                       (sizeof(CDeformableModel),"..\\core\\fileman.cpp",0x143);
+                       (sizeof(CDeformableModel),"..\\core\\fileman.cpp",323);
   pCVar1 = (CDeformableModel *)0x0;
   if (this_ptr != (CDeformableModel *)0x0) {
     pCVar1 = core_skeleton_cpp_CDeformableModel_ctor_FUN_0059a160(this_ptr);
   }
   if (pCVar1 == (CDeformableModel *)0x0) {
     g_CurrentFilename = "..\\core\\fileman.cpp";
-    g_CurrentLineNumber = 0x144;
+    g_CurrentLineNumber = 324;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory.");
   }
   core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(pCVar1,model_filename);

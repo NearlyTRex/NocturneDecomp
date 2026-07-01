@@ -31,7 +31,7 @@ void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header
            filename ? filename : "(null)", line_number,
            pcVar4 ? pcVar4 : "(null)", iVar5);
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
-    g_CurrentLineNumber = 0xaf;
+    g_CurrentLineNumber = 175;
     iVar1 = header->source_line;
     iVar2 = header->num_bytes;
     header->source_file[0x13] = '\0';
@@ -43,7 +43,7 @@ void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header
   memcpy(&back_guard_val, (char *)(header + 1) + header->num_bytes, sizeof(back_guard_val));
   if (back_guard_val != GAME_BEEFDEAD) {
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
-    g_CurrentLineNumber = 0xb2;
+    g_CurrentLineNumber = 178;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Tail memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d\n(Last ok check was at %s line %d)",header->num_bytes,(uintptr_t)(header + 1),header->source_file,
                header->source_line,filename,line_number,g_MemCheckLastFile,g_MemCheckLastLine);
@@ -55,7 +55,7 @@ void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header
   if (header == pSVar3) goto LAB_0050f0dd;
   do {
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
-    g_CurrentLineNumber = 0xb8;
+    g_CurrentLineNumber = 184;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("List memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d\n(Last ok check was at %s line %d)",header->num_bytes,(uintptr_t)(header + 1),header->source_file,
                header->source_line,filename,line_number,g_MemCheckLastFile,g_MemCheckLastLine);

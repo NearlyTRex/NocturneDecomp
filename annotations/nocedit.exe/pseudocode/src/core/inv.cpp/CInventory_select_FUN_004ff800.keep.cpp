@@ -55,7 +55,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
                               (actor_ptr,g_CHealthItemClassInfo.name_hash);
       if (this_ptr_00 == (CHealthItem *)0x0) {
         g_CurrentFilename = "..\\core\\inv.cpp";
-        g_CurrentLineNumber = 0x5c9;
+        g_CurrentLineNumber = 1481;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CInventory::select - Catch 22");
       }
       if ((float)98 < (g_HeroActors[g_LocalHeroIndex]->base).hit_points) {
@@ -81,7 +81,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
                                 (actor_ptr,g_CAmmoClassInfo.name_hash);
     if (pCVar3 == (CAmmo *)0x0) {
       g_CurrentFilename = "..\\core\\inv.cpp";
-      g_CurrentLineNumber = 0x5c3;
+      g_CurrentLineNumber = 1475;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CInventory::select - Catch 22");
     }
     core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr,pCVar3->ammo_type)

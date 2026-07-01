@@ -31,9 +31,9 @@ void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filen
   if (SVar2 != 3) {
     _sprintf(local_5c,"Error reading %s.",local_ac);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
-    g_CurrentLineNumber = 0x13d;
+    g_CurrentLineNumber = 317;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_5c);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",0x140);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",320);
   return;
 }

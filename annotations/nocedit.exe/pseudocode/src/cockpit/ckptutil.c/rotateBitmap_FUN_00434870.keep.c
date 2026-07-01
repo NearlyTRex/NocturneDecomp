@@ -28,10 +28,10 @@ void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_00434870(uchar *source_data,int
   bVar8 = 0;
   uVar2 = width * bytes_per_pixel;
   iVar3 = width * height * bytes_per_pixel;
-  ptr = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(iVar3,"..\\cockpit\\ckptutil.c",0x807);
+  ptr = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(iVar3,"..\\cockpit\\ckptutil.c",2055);
   if (ptr == (uchar *)0x0) {
     _sprintf(local_78,"Unable to allocate %u bytes for temporary rotated bitmap.",iVar3);
-    g_CurrentLineNumber = 0x80a;
+    g_CurrentLineNumber = 2058;
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_78);
   }
@@ -76,6 +76,6 @@ void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_00434870(uchar *source_data,int
     }
   }
   memcpy(source_data,ptr,iVar3);
-  shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\cockpit\\ckptutil.c",0x82b);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\cockpit\\ckptutil.c",2091);
   return;
 }

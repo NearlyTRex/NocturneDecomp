@@ -127,7 +127,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                                           (local_158.keyframed_model);
                   if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
                     g_CurrentFilename = "..\\core\\setcolid.cpp";
-                    g_CurrentLineNumber = 0xcb;
+                    g_CurrentLineNumber = 203;
                     core_main_c_displayErrorAndQuit_FUN_00506f10
                               ("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",this_ptr_00->model_filename);
                   }

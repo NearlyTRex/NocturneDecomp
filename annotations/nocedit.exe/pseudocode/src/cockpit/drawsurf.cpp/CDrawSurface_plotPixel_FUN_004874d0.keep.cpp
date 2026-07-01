@@ -37,7 +37,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurfa
       }
     }
     g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
-    g_CurrentLineNumber = 0x18d;
+    g_CurrentLineNumber = 397;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid bitsPerPixel!");
     return;
   }
@@ -61,7 +61,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurfa
     }
   }
   g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
-  g_CurrentLineNumber = 0x19e;
+  g_CurrentLineNumber = 414;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid bitsPerPixel!");
   return;
 }

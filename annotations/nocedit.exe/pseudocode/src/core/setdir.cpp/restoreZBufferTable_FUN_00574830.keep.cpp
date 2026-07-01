@@ -14,7 +14,7 @@ void __cdecl core_setdir_cpp_restoreZBufferTable_FUN_00574830(int count)
 
   if (g_ZBufferScanlineArrayBackup[0] == (uint *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
-    g_CurrentLineNumber = 0x70;
+    g_CurrentLineNumber = 112;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveZBufferTable - not saved!");
   }
   for (iVar2 = 0; iVar2 < count; iVar2 = iVar2 + 1) {

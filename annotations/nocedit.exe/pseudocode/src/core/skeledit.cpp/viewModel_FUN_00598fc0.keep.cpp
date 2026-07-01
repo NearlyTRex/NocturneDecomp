@@ -24,7 +24,7 @@ void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void)
   
   p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("skeledit.ini",(char *)0x0,"rt","..\\core\\skeledit.cpp"
-                      ,0x124);
+                      ,292);
   if (p_Var2 == (_FILE *)0x0) goto LAB_00599119;
   iVar4 = 1;
   do {
@@ -33,7 +33,7 @@ void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void)
   } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
   _fscanf(p_Var2,"%d\n",&local_14);
   if (local_14 != 1) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",0x12d);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",301);
     shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
               (g_CEditorToolsPtr,"Deleting old %s file.","skeledit.ini");
     remove("skeledit.ini");
@@ -120,7 +120,7 @@ LAB_005990c3:
     pcVar7 = pcVar7 + 1;
   }
 LAB_00599106:
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",0x13f);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",319);
 LAB_00599119:
   strcpy(g_MeshLodIdentifier,"z:\\meshlod");
   do {
@@ -137,14 +137,14 @@ LAB_00599119:
                           (g_CEditorToolsPtr,"Select model to view","models",
                            "*.dfm",local_118,0), iVar5 != 0)) {
       this_ptr = (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                           (sizeof(CDeformableModelInstance),"..\\core\\skeledit.cpp",0x1b79);
+                           (sizeof(CDeformableModelInstance),"..\\core\\skeledit.cpp",7033);
       this_ptr_00 = (CDeformableModelInstance *)0x0;
       if (this_ptr != (CDeformableModelInstance *)0x0) {
         this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(this_ptr);
       }
       if (this_ptr_00 == (CDeformableModelInstance *)0x0) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
-        g_CurrentLineNumber = 0x1b7a;
+        g_CurrentLineNumber = 7034;
         core_main_c_displayErrorAndQuit_FUN_00506f10("viewModel - out of memory!");
       }
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_00,local_118);
@@ -160,7 +160,7 @@ LAB_00599119:
   engine_2d_c_clearInputAndWait_FUN_00403260();
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    ("skeledit.ini",(char *)0x0,"wt","..\\core\\skeledit.cpp",
-                    0x144);
+                    324);
   if (file != (_FILE *)0x0) {
     _fprintf(file,"// version\n");
     _fprintf(file,"%d\n",1);
@@ -170,7 +170,7 @@ LAB_00599119:
     _fprintf(file,"\"%s\"\n",g_SkeleditLastMOTImported);
     _fprintf(file,"// lastTestSkeletonDir\n");
     _fprintf(file,"\"%s\"\n",g_SkeleditLastTestSkeletonDir);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x154);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",340);
     return;
   }
   return;

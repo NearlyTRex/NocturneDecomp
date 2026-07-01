@@ -18,18 +18,18 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(CSkeleton *thi
   core_skeleton_cpp_CSkeleton_free_FUN_00599a50(this_ptr);
   if (100 < bone_count) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
-    g_CurrentLineNumber = 0xc6;
+    g_CurrentLineNumber = 198;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too bony!");
   }
   this_ptr->bone_count = bone_count;
   this_ptr->frame_count = frame_count;
   pCVar2 = (CQuaternion4f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      (this_ptr->bone_count * this_ptr->frame_count * sizeof(CQuaternion4f),
-                      "..\\core\\skeleton.cpp",0xcf);
+                      "..\\core\\skeleton.cpp",207);
   fVar1 = (float)this_ptr->frame_count;
   this_ptr->bone_angle_frames = pCVar2;
   pCVar3 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     ((int)fVar1 * sizeof(CVector3f) + 4,"..\\core\\skeleton.cpp",0xd0);
+                     ((int)fVar1 * sizeof(CVector3f) + 4,"..\\core\\skeleton.cpp",208);
   pCVar4 = pCVar3;
   if (pCVar3 != (CVector3f *)0x0) {
     pCVar4 = (CVector3f *)&pCVar3->y;
@@ -38,7 +38,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(CSkeleton *thi
   fVar1 = (float)this_ptr->frame_count;
   this_ptr->frame_positions_1 = pCVar4;
   pCVar3 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     ((int)fVar1 * sizeof(CVector3f) + 4,"..\\core\\skeleton.cpp",0xd1);
+                     ((int)fVar1 * sizeof(CVector3f) + 4,"..\\core\\skeleton.cpp",209);
   pCVar4 = pCVar3;
   if (pCVar3 != (CVector3f *)0x0) {
     pCVar4 = (CVector3f *)&pCVar3->y;
@@ -50,7 +50,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(CSkeleton *thi
     return;
   }
   g_CurrentFilename = "..\\core\\skeleton.cpp";
-  g_CurrentLineNumber = 0xda;
+  g_CurrentLineNumber = 218;
   core_main_c_displayErrorAndQuit_FUN_00506f10
             ("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d",this_ptr->bone_count,this_ptr->frame_count);
   return;

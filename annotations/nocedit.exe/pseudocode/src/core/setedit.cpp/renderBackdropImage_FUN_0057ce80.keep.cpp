@@ -35,11 +35,11 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
   local_1c = (void *)0x0;
   if ((g_WindowWidth <= render_width) || (g_WindowHeight <= render_height)) {
     iVar5 = (render_height + 3) * render_width * 4;
-    pvVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(iVar5,"..\\core\\setedit.cpp",0xbac);
-    local_20 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(iVar5,"..\\core\\setedit.cpp",0xbad);
+    pvVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(iVar5,"..\\core\\setedit.cpp",2988);
+    local_20 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(iVar5,"..\\core\\setedit.cpp",2989);
     if ((pvVar1 == (void *)0x0) || (local_20 == (void *)0x0)) {
       g_CurrentFilename = "..\\core\\setedit.cpp";
-      g_CurrentLineNumber = 0xbaf;
+      g_CurrentLineNumber = 2991;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
     }
     for (iVar2 = 0; iVar2 < render_height; iVar2++) {
@@ -69,7 +69,7 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
   p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",local_f0,"wb");
   if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0xbd9;
+    g_CurrentLineNumber = 3033;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write backdrop");
   }
   iVar6 = 0;
@@ -99,24 +99,24 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
       iVar6 = iVar6 + 1;
     } while (iVar6 < output_height);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\setedit.cpp",0xbeb);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\setedit.cpp",3051);
   _sprintf(local_a0,"%s.act",name);
   p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",local_a0,"wb");
   if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0xbef;
+    g_CurrentLineNumber = 3055;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write act");
   }
   _fwrite(g_SourcePaletteData,0x100,3,p_Var2);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\setedit.cpp",0xbf1);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\setedit.cpp",3057);
   engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(g_CDemonRendererPtr2);
   if (local_1c != (void *)0x0) {
     for (iVar6 = 0; iVar6 < render_height; iVar6++) {
       g_ScreenBufferArray[iVar6] = auStack_266c[iVar6];
       g_ZBufferScanlineArray[iVar6] = auStack_13b0[iVar6];
     }
-    shape_memdbg_cpp_debugFree_FUN_0050f460(local_1c,"..\\core\\setedit.cpp",0xbfc);
-    shape_memdbg_cpp_debugFree_FUN_0050f460(local_20,"..\\core\\setedit.cpp",0xbfd);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(local_1c,"..\\core\\setedit.cpp",3068);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(local_20,"..\\core\\setedit.cpp",3069);
     g_WindowWidth = local_24;
     g_WindowHeight = local_28;
   }

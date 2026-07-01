@@ -46,7 +46,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
       g_MasterLightCount = g_MasterLightCount + 1;
       if (0x60 < g_MasterLightCount) {
         g_CurrentFilename = "..\\core\\set.cpp";
-        g_CurrentLineNumber = 0x39a;
+        g_CurrentLineNumber = 922;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::initScene - Too many spotlights!");
       }
     }

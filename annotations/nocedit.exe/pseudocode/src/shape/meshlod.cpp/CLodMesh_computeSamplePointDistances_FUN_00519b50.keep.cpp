@@ -35,7 +35,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
   
   if (400 < g_SamplePointCount) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0xd78;
+    g_CurrentLineNumber = 3448;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many sample points!");
   }
   local_90.min = g_SamplePointArray[0];

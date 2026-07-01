@@ -29,7 +29,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_replayLodGeneration_FUN_005173f0(CLodMes
   acStack_1c[1] = g_ReplayLodFilename[9];
   acStack_1c[(uint)bVar3 * -4 + 2] = g_ReplayLodFilename[(uint)bVar3 * -4 + 10];
   file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                          (local_24,(char *)0x0,"rt","..\\shape\\meshlod.cpp",0x5f5);
+                          (local_24,(char *)0x0,"rt","..\\shape\\meshlod.cpp",1525);
   if (file_handle == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",local_24);
@@ -56,6 +56,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_replayLodGeneration_FUN_005173f0(CLodMes
   g_LodReplayMode = iVar1;
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
   shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(this_ptr,file_handle);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\shape\\meshlod.cpp",0x60b);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\shape\\meshlod.cpp",1547);
   return;
 }

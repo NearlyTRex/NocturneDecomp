@@ -26,7 +26,7 @@ void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
     if ((20000 < g_VertexCount) || (20000 < triangle_count)) {
       _sprintf(local_120,"Too many! %d, %d",g_VertexCount,triangle_count);
       g_CurrentFilename = "..\\core\\dcube.cpp";
-      g_CurrentLineNumber = 0x716;
+      g_CurrentLineNumber = 1814;
       core_main_c_displayErrorAndQuit_FUN_00506f10(local_120);
     }
     for (iVar6 = 0; iVar6 < triangle_count; iVar6 = iVar6 + 1) {

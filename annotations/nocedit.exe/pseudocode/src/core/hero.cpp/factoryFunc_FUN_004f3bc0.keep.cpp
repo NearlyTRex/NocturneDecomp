@@ -12,7 +12,7 @@ CHeroPlaceholder * __cdecl core_hero_cpp_factoryFunc_FUN_004f3bc0(void)
 {
   CHeroPlaceholder *pCVar1;
   
-  pCVar1 = (CHeroPlaceholder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CHeroPlaceholder),"..\\core\\hero.cpp",0x527);
+  pCVar1 = (CHeroPlaceholder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CHeroPlaceholder),"..\\core\\hero.cpp",1319);
   if (pCVar1 == (CHeroPlaceholder *)0x0) {
     return (CHeroPlaceholder *)0x0;
   }

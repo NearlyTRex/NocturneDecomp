@@ -89,7 +89,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
   pcVar10 = strchr(pcVar22, '.');
   if (pcVar10 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
-    g_CurrentLineNumber = 0x98e;
+    g_CurrentLineNumber = 2446;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCamera::loadImage - no extention");
   }
   strcpy(pcVar10, ".ACT");
@@ -98,13 +98,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
      (p_Var5 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_144,"rb"),
      p_Var5 != (_FILE *)0x0)) {
     _fread(&g_CameraImagePaletteData,0x100,3,p_Var5);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\dcamera.cpp",0x99b);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\dcamera.cpp",2459);
     strcpy(local_f4, filename);
     pcVar10 = local_f4;
     pcVar11 = strchr(pcVar10, '.');
     if (pcVar11 == (char *)0x0) {
       g_CurrentFilename = "..\\core\\dcamera.cpp";
-      g_CurrentLineNumber = 0x9a1;
+      g_CurrentLineNumber = 2465;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCamera::loadImage - no ext");
     }
     strcpy(pcVar11, ".fog");
@@ -130,12 +130,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
           local_9c = iVar2 - 0x1003;
           if ((int)local_9c < 1) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
-            g_CurrentLineNumber = 0x9c1;
+            g_CurrentLineNumber = 2497;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze loading %s",local_f4);
           }
           if (500000 < local_9c) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
-            g_CurrentLineNumber = 0x9c7;
+            g_CurrentLineNumber = 2503;
             core_main_c_displayErrorAndQuit_FUN_00506f10
                       ("%s too big to fit in decompress buffer",local_f4);
           }
@@ -147,7 +147,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
                              (char *)g_CameraImageDecompressBuffer,&local_98,1);
           if (iVar2 == 0) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
-            g_CurrentLineNumber = 0x9d0;
+            g_CurrentLineNumber = 2512;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Error decompressing %s",local_f4);
           }
           local_a4 = 0;
@@ -190,7 +190,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
           _fread(g_CameraImageDecompressBuffer,0x12c00,g_ImageBytesPerPixel,p_Var3);
         }
       }
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\dcamera.cpp",0xa09);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\dcamera.cpp",2569);
     }
     p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",filename,"rb");
     if ((p_Var3 != (_FILE *)0x0) ||
@@ -216,7 +216,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
         iVar2 = iVar9;
       } while (iVar9 != 0x400);
       _fread(g_CameraIndexedImageData,0x280,0x1e0,p_Var3);
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\dcamera.cpp",0xa20);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\dcamera.cpp",2592);
       iVar2 = this_ptr->framebuffer_height;
       if (iVar2 == 0xf0) {
         local_20 = 0;

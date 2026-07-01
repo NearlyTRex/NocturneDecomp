@@ -76,7 +76,7 @@ LAB_005a4cea:
     local_14 = engine_dosio_cpp_getFile_FUN_00481a50("sound",filename,"rb");
     if (local_14 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
-      g_CurrentLineNumber = 0x2fe;
+      g_CurrentLineNumber = 766;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",filename);
     }
     lVar3 = _ftell(local_14);
@@ -107,7 +107,7 @@ LAB_005a4cea:
       SVar4 = _fread(buffer,size,count,file);
       if ((SVar4 == (this_ptr->sample_info).sample_count) && ((local_14->_flag & 0x20) == 0)) {
         sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(this_ptr);
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\sound\\sndmain.cpp",0x337);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\sound\\sndmain.cpp",823);
         return this_ptr;
       }
       pcVar11 = "Error reading file data for %s\n";
@@ -117,7 +117,7 @@ LAB_005a4cea:
     iVar3 = _stricmp(local_114,"mp3");
     if (iVar3 != 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
-      g_CurrentLineNumber = 0x37b;
+      g_CurrentLineNumber = 891;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown sample file format extension: %s",filename);
       return this_ptr;
     }
@@ -130,7 +130,7 @@ LAB_005a4cea:
     sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(this_ptr);
     if ((this_ptr->sample_info).sample_count < 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
-      g_CurrentLineNumber = 0x34d;
+      g_CurrentLineNumber = 845;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Don't know length of sample %s",filename);
     }
     this_ptr->taken = 0;
@@ -164,7 +164,7 @@ LAB_005a4ef8:
   sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(&g_CMP3DecoderInstance);
   sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(this_ptr);
   if (local_14 != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\sound\\sndmain.cpp",0x2eb);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\sound\\sndmain.cpp",747);
   }
   return (CSfxSample *)0x0;
 }

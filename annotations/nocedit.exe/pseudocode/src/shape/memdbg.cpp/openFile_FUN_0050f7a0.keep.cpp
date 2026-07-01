@@ -39,7 +39,7 @@ _FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0(char *filename,char *dire
       return (_FILE *)0x0;
     }
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
-    g_CurrentLineNumber = 0x1f0;
+    g_CurrentLineNumber = 496;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Too many open files trying to open %s, %s line %d",filename,source_file,line_number);
   }

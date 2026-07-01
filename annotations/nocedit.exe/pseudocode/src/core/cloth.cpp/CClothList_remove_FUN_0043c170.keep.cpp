@@ -15,7 +15,7 @@ void __cdecl core_cloth_cpp_CClothList_remove_FUN_0043c170(CClothList *this_ptr,
   
   if ((index < 0) || (this_ptr->count <= index)) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
-    g_CurrentLineNumber = 0x5e4;
+    g_CurrentLineNumber = 1508;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CClothList::remove - invalid index");
   }
   g_CurrentDebugLine = 0x5e8;

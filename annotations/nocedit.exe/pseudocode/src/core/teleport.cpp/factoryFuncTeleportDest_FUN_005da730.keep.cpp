@@ -12,7 +12,7 @@ CTeleportDest * __cdecl core_teleport_cpp_factoryFuncTeleportDest_FUN_005da730(v
 {
   CTeleportDest *pCVar1;
   
-  pCVar1 = (CTeleportDest *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CTeleportDest),"..\\core\\teleport.cpp",0x2a)
+  pCVar1 = (CTeleportDest *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CTeleportDest),"..\\core\\teleport.cpp",42)
   ;
   if (pCVar1 == (CTeleportDest *)0x0) {
     return (CTeleportDest *)0x0;

@@ -12,7 +12,7 @@ CBatman * __cdecl core_batman_cpp_factoryFunc_FUN_00416410(void)
 {
   CBatman *pCVar1;
   
-  pCVar1 = (CBatman *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBatman),"..\\core\\batman.cpp",0x58);
+  pCVar1 = (CBatman *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBatman),"..\\core\\batman.cpp",88);
   if (pCVar1 == (CBatman *)0x0) {
     return (CBatman *)0x0;
   }

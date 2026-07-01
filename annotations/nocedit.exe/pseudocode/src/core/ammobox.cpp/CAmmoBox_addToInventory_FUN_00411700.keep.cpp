@@ -22,14 +22,14 @@ void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_00411700(CAmmoBox *thi
   if (this_ptr->ammo_count == 0) {
     return;
   }
-  pCVar2 = (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CAmmo),"..\\core\\ammobox.cpp",0xa1);
+  pCVar2 = (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CAmmo),"..\\core\\ammobox.cpp",161);
   this_ptr_00 = (CAmmo *)0x0;
   if (pCVar2 != (CAmmo *)0x0) {
     this_ptr_00 = core_ammo_cpp_CAmmo_ctor_FUN_00410dc0(pCVar2);
   }
   if (this_ptr_00 == (CAmmo *)0x0) {
     g_CurrentFilename = "..\\core\\ammobox.cpp";
-    g_CurrentLineNumber = 0xa2;
+    g_CurrentLineNumber = 162;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_00410fd0(this_ptr_00,this_ptr->weapon_class_name);

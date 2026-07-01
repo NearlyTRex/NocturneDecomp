@@ -33,7 +33,7 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
   if (g_TextureManagerMode == 0) {
     local_1c = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          (entry->tga_filename,(char *)0x0,"rb","..\\shape\\design.c",
-                          0x27a2);
+                          10146);
   }
   else {
     local_1c = engine_dosio_cpp_getFile_FUN_00481a50("art",entry->tga_filename,"rb")
@@ -41,20 +41,20 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
   }
   if (local_1c == (_FILE *)0x0) {
     g_CurrentFilename = "..\\shape\\design.c";
-    g_CurrentLineNumber = 0x27a4;
+    g_CurrentLineNumber = 10148;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to load input");
   }
   _fseek(local_1c,0x11,0);
   uVar4 = _fgetc(local_1c);
   ptr = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                   (entry->original_width * entry->original_height * 3,"..\\shape\\design.c",
-                   0x27ad);
+                   10157);
   dest = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                   (entry->original_width * entry->original_height,"..\\shape\\design.c",0x27ae)
+                   (entry->original_width * entry->original_height,"..\\shape\\design.c",10158)
   ;
   if ((ptr == (uchar *)0x0) || (dest == (uchar *)0x0)) {
     g_CurrentFilename = "..\\shape\\design.c";
-    g_CurrentLineNumber = 0x27af;
+    g_CurrentLineNumber = 10159;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of mem!");
   }
   iVar5 = entry->original_width * 3;
@@ -77,12 +77,12 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
   }
   if ((local_1c->_flag & 0x20) != 0) {
     _sprintf(local_148,"Unable to read file (%s).",entry->tga_filename);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\shape\\design.c",0x27c2);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\shape\\design.c",10178);
     g_CurrentFilename = "..\\shape\\design.c";
-    g_CurrentLineNumber = 0x27c3;
+    g_CurrentLineNumber = 10179;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_148);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\shape\\design.c",0x27c5);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\shape\\design.c",10181);
   for (local_44 = 0;
       (iVar1 = entry->original_width * entry->original_height,
       iVar1 - local_44 != 0 && local_44 <= iVar1 && (dest[local_44] == '\0'));
@@ -145,7 +145,7 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
       alpha_buffer[local_150] = local_17c[0];
     }
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\shape\\design.c",0x2818);
-  shape_memdbg_cpp_debugFree_FUN_0050f460(dest,"..\\shape\\design.c",0x2819);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\shape\\design.c",10264);
+  shape_memdbg_cpp_debugFree_FUN_0050f460(dest,"..\\shape\\design.c",10265);
   return;
 }

@@ -361,7 +361,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int ren
     else {
       _fwrite(&local_28,1,4,local_1c);
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\shape\\design.c",0x868);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\shape\\design.c",2152);
   }
   return;
 }

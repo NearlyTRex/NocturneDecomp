@@ -13,7 +13,7 @@ CBatCreature * __cdecl core_batcreat_cpp_factoryFunc_FUN_004150b0(void)
   CBatCreature *pCVar1;
   
   pCVar1 = (CBatCreature *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (sizeof(CBatCreature),"..\\core\\batcreat.cpp",0x4d);
+                     (sizeof(CBatCreature),"..\\core\\batcreat.cpp",77);
   if (pCVar1 == (CBatCreature *)0x0) {
     return (CBatCreature *)0x0;
   }

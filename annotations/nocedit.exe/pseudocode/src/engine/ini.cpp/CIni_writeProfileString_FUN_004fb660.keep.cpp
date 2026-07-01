@@ -30,10 +30,10 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,c
     return 1;
   }
   stream = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (filename,(char *)0x0,"rt","..\\engine\\ini.cpp",0x182);
+                     (filename,(char *)0x0,"rt","..\\engine\\ini.cpp",386);
   if (stream == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\ini.cpp";
-    g_CurrentLineNumber = 0x183;
+    g_CurrentLineNumber = 387;
     core_main_c_displayErrorAndQuit_FUN_00506f10("cIni::writeProfileString: Unable to open input");
   }
   strcpy(acStack_216 + 2,filename);
@@ -45,7 +45,7 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,c
                    (acStack_216 + 2,(char *)0x0,pcVar6,pcVar7,line_number);
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\ini.cpp";
-    g_CurrentLineNumber = 0x187;
+    g_CurrentLineNumber = 391;
     core_main_c_displayErrorAndQuit_FUN_00506f10("cIni::writeProfileString: Unable to open output");
   }
   if (iVar2 == 0) {
@@ -82,8 +82,8 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,c
       bVar3 = (byte)stream->_flag;
     }
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\ini.cpp",0x1e8);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\ini.cpp",0x1e9);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\ini.cpp",488);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\ini.cpp",489);
   remove(filename);
   rename(acStack_216 + 2,filename);
   return 1;

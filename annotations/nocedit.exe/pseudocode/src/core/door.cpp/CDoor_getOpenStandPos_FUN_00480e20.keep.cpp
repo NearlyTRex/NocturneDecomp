@@ -74,7 +74,7 @@ CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this
     break;
   default:
     g_CurrentFilename = "..\\core\\door.cpp";
-    g_CurrentLineNumber = 0x340;
+    g_CurrentLineNumber = 832;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDoor::getOpenStandPos - invalid doorType");
     out_pos->y = (this_ptr->base).location.position.y;
     return out_pos;

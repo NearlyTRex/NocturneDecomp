@@ -37,7 +37,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
   _fscanf(file,"%d\n",&local_44);
   if (local_44 < 5) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
-    g_CurrentLineNumber = 0x128;
+    g_CurrentLineNumber = 296;
     core_main_c_displayErrorAndQuit_FUN_00506f10("KFM file is invalid version %d",local_44);
   }
   if (8 < local_44) {
@@ -125,11 +125,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
   }
   if (local_2c != 0) {
     puVar2 = (uchar *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                       (this_ptr->poly_count,"..\\core\\dmodel.cpp",0x177);
+                       (this_ptr->poly_count,"..\\core\\dmodel.cpp",375);
     this_ptr->env_map_opac_list = puVar2;
     if (puVar2 == (uchar *)0x0) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
-      g_CurrentLineNumber = 0x178;
+      g_CurrentLineNumber = 376;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for envMapOpacList");
     }
     iVar5 = 1;
@@ -175,7 +175,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
   }
   if ((file->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
-    g_CurrentLineNumber = 0x197;
+    g_CurrentLineNumber = 407;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Error reading KFM model");
   }
   if (local_48 != 0) {

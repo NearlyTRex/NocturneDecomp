@@ -32,12 +32,12 @@ void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_00502320(SMRGLPrimit
   }
   if (vertex_data == (CVector3i *)0x0) {
     g_CurrentFilename = "..\\engine\\keyframe.c";
-    g_CurrentLineNumber = 0x1f5;
+    g_CurrentLineNumber = 501;
     core_main_c_displayErrorAndQuit_FUN_00506f10("recomputeKeyFrameNormals: Cannot find vptr");
   }
   if (pSVar3 == (SMRGLPrimitiveTriangle *)0x0) {
     g_CurrentFilename = "..\\engine\\keyframe.c";
-    g_CurrentLineNumber = 0x1f6;
+    g_CurrentLineNumber = 502;
     core_main_c_displayErrorAndQuit_FUN_00506f10("recomputeKeyFrameNormals: Cannot find fptr");
   }
   do {

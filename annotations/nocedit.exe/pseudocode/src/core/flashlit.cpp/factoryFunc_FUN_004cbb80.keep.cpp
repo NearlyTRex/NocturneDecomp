@@ -12,7 +12,7 @@ CFlashlight * __cdecl core_flashlit_cpp_factoryFunc_FUN_004cbb80(void)
 {
   CFlashlight *pCVar1;
   
-  pCVar1 = (CFlashlight *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CFlashlight),"..\\core\\flashlit.cpp",0x2b)
+  pCVar1 = (CFlashlight *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CFlashlight),"..\\core\\flashlit.cpp",43)
   ;
   if (pCVar1 == (CFlashlight *)0x0) {
     return (CFlashlight *)0x0;

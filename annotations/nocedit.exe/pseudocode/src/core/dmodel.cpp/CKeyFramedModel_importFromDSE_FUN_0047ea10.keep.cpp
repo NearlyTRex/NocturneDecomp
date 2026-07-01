@@ -66,7 +66,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
       if (this_ptr->texture_count <= iVar3) {
         if (299 < iVar3) {
           g_CurrentFilename = "..\\core\\dmodel.cpp";
-          g_CurrentLineNumber = 0xe45;
+          g_CurrentLineNumber = 3653;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CKeyFramedModel::exportToDSE() - Too many textures!");
         }
         strcpy(this_ptr->texture_list[iVar3].textures[0].texture_name,

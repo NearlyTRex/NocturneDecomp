@@ -12,7 +12,7 @@ CGhoul * __cdecl core_ghoul_cpp_factoryFunc_FUN_004e5ff0(void)
 {
   CGhoul *pCVar1;
   
-  pCVar1 = (CGhoul *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CGhoul),"..\\core\\ghoul.cpp",0x9e);
+  pCVar1 = (CGhoul *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CGhoul),"..\\core\\ghoul.cpp",158);
   if (pCVar1 == (CGhoul *)0x0) {
     return (CGhoul *)0x0;
   }

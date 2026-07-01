@@ -20,28 +20,28 @@ SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_00528970(char *f
   if (file == (_FILE *)0x0) {
     _sprintf(local_60,"Unable to open model: %s",filename);
     g_CurrentFilename = "..\\engine\\model.c";
-    g_CurrentLineNumber = 0x2e3;
+    g_CurrentLineNumber = 739;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_60);
   }
-  buffer = (SMRGLHeaderExtended *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(model_size + 4,"..\\engine\\model.c",0x2e6)
+  buffer = (SMRGLHeaderExtended *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(model_size + 4,"..\\engine\\model.c",742)
   ;
   if (buffer == (SMRGLHeaderExtended *)0x0) {
     _sprintf(local_60,"Out of partial model mem : %s",filename);
-    g_CurrentLineNumber = 0x2ee;
+    g_CurrentLineNumber = 750;
     g_CurrentFilename = "..\\engine\\model.c";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_60);
   }
   SVar2 = _fread(buffer,1,model_size,file);
   if (SVar2 != model_size) {
     g_CurrentFilename = "..\\engine\\model.c";
-    g_CurrentLineNumber = 0x2f3;
+    g_CurrentLineNumber = 755;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Model read hose");
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\model.c",0x2f4);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\model.c",756);
   cVar1 = (char)(buffer->base).type;
   if ((cVar1 != '\x14') && (cVar1 != ' ')) {
     g_CurrentFilename = "..\\engine\\model.c";
-    g_CurrentLineNumber = 0x2f6;
+    g_CurrentLineNumber = 758;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad model!");
     *(uint *)((char *)buffer + model_size) = 0;
     return buffer;

@@ -33,10 +33,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(C
   core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
   if ((0 < this_ptr->vertex_count) && (0 < this_ptr->frame_count)) {
     dest = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     (this_ptr->vertex_count * 4,"..\\core\\dmodel.cpp",0x868);
+                     (this_ptr->vertex_count * 4,"..\\core\\dmodel.cpp",2152);
     if (dest == (int *)0x0) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
-      g_CurrentLineNumber = 0x869;
+      g_CurrentLineNumber = 2153;
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("CKeyFramedModel::removeUnusedVertices out of memory for auxArray, vertexCount = %d",this_ptr->vertex_count);
     }
@@ -130,7 +130,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(C
                   iVar2 = local_10->vertices[iVar5].vertex_index;
                   if (iVar2 < local_14) {
                     g_CurrentFilename = "..\\core\\dmodel.cpp";
-                    g_CurrentLineNumber = 0x8ae;
+                    g_CurrentLineNumber = 2222;
                     core_main_c_displayErrorAndQuit_FUN_00506f10
                               ("Part vertex overlap detected!");
                   }

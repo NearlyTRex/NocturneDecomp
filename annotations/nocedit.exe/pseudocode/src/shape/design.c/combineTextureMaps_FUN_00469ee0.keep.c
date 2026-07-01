@@ -32,10 +32,10 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_94,0x46,0,0,"Enter response file :");
   if (local_94[0] != '\0') {
     local_40 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                         (local_94,(char *)0x0,"rt","..\\shape\\design.c",0x25a1);
+                         (local_94,(char *)0x0,"rt","..\\shape\\design.c",9633);
     if (local_40 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\shape\\design.c";
-      g_CurrentLineNumber = 0x25a2;
+      g_CurrentLineNumber = 9634;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Bad name");
     }
     _fscanf(local_40,"%s\n",local_134);
@@ -62,7 +62,7 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
         }
       }
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_40,"..\\shape\\design.c",0x25da);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_40,"..\\shape\\design.c",9690);
   }
   return;
 }

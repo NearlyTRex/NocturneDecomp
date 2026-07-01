@@ -25,7 +25,7 @@ void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_004336e0(void *bitmap
         if ((iVar1 < 0) || (iVar2 < iVar1)) {
           _sprintf(local_114,"Edge out of range: edge %d",iVar3);
           g_CurrentFilename = "..\\cockpit\\ckptutil.c";
-          g_CurrentLineNumber = 0x553;
+          g_CurrentLineNumber = 1363;
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_114);
         }
         ((byte *)bitmap_buffer)[iVar1] = 0xfb;
@@ -33,7 +33,7 @@ void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_004336e0(void *bitmap
         if ((iVar4 < 0) || (iVar2 < iVar4)) {
           _sprintf(local_114,"Edge out of range: edge %d",iVar3);
           g_CurrentFilename = "..\\cockpit\\ckptutil.c";
-          g_CurrentLineNumber = 0x55c;
+          g_CurrentLineNumber = 1372;
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_114);
         }
         edge_list = edge_list + 1;

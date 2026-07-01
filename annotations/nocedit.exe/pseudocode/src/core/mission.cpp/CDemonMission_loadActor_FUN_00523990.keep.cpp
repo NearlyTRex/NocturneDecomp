@@ -58,7 +58,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDem
   }
   do {
     g_CurrentFilename = "..\\core\\mission.cpp";
-    g_CurrentLineNumber = 0x22d;
+    g_CurrentLineNumber = 557;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Error reading actor pointer.\nOwner: %s\nDescription: %s\n",current_actor->actor_name,property_description);
 LAB_00523a18:

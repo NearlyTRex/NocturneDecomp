@@ -20,7 +20,7 @@ void __cdecl core_glass_cpp_CGlass_addFilesToExtract_FUN_004eb690(CGlass *this_p
   pcVar6 = strchr(local_110, '.');
   if (pcVar6 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\glass.cpp";
-    g_CurrentLineNumber = 0x3cd;
+    g_CurrentLineNumber = 973;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Cannot find glass texture extension");
   }
   strcpy(pcVar6, ".ACT");
@@ -34,7 +34,7 @@ void __cdecl core_glass_cpp_CGlass_addFilesToExtract_FUN_004eb690(CGlass *this_p
   pcVar6 = strchr(local_110, '.');
   if (pcVar6 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\glass.cpp";
-    g_CurrentLineNumber = 0x3d4;
+    g_CurrentLineNumber = 980;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Cannot find glass texture extension");
   }
   strcpy(pcVar6, ".ACT");

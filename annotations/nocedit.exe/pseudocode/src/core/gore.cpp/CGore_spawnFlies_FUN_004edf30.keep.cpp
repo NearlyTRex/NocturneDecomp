@@ -16,14 +16,14 @@ CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004edf30(CGore *this_ptr,CVe
   CFlies *this_ptr_01;
   
   this_ptr_00 = (CFlies *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                          (sizeof(CFlies),"..\\core\\gore.cpp",0x67c);
+                          (sizeof(CFlies),"..\\core\\gore.cpp",1660);
   this_ptr_01 = (CFlies *)0x0;
   if (this_ptr_00 != (CFlies *)0x0) {
     this_ptr_01 = core_flies_cpp_CFlies_ctor_FUN_004cbd60(this_ptr_00);
   }
   if (this_ptr_01 == (CFlies *)0x0) {
     g_CurrentFilename = "..\\core\\gore.cpp";
-    g_CurrentLineNumber = 0x67d;
+    g_CurrentLineNumber = 1661;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create flies!");
   }
   fVar2 = (float)60;

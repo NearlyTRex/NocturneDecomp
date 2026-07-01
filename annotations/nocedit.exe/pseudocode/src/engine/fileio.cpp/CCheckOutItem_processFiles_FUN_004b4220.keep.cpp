@@ -115,7 +115,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   local_38 = "history";
   if (g_VersionControlDirectory[0] == '\0') {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
-    g_CurrentLineNumber = 0xe7;
+    g_CurrentLineNumber = 231;
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
   _sprintf(local_75c,"history\\%s.%s",filename,local_38);
@@ -132,7 +132,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
             (g_CEditorToolsPtr,"Opening local file %s",local_e0c.found_path);
   local_24 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_e0c.found_path,(char *)0x0,"rb","..\\engine\\fileio.cpp",
-                        0x567);
+                        1383);
   if (local_24 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",local_e0c.found_path);
@@ -153,7 +153,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_a68,0);
   remove(local_a68);
   p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (local_a68,(char *)0x0,"wb","..\\engine\\fileio.cpp",0x591);
+                     (local_a68,(char *)0x0,"wb","..\\engine\\fileio.cpp",1425);
   local_2c = p_Var2;
   if (local_24 == (_FILE *)0x0) {
     pcVar8 = local_a68;
@@ -166,17 +166,17 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
                        (local_24,p_Var2,local_e0c.found_path,"network",local_e0c.file_size)
     ;
     if (local_24 != (_FILE *)0x0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\engine\\fileio.cpp",0xc4);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\engine\\fileio.cpp",196);
       local_24 = (_FILE *)0x0;
     }
     if (local_2c != (_FILE *)0x0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_2c,"..\\engine\\fileio.cpp",0xc4);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_2c,"..\\engine\\fileio.cpp",196);
       local_2c = (_FILE *)0x0;
     }
     if (pcVar8 == (char *)0x0) {
       if (g_VersionControlDirectory[0] == '\0') {
         g_CurrentFilename = "..\\engine\\fileio.cpp";
-        g_CurrentLineNumber = 0xdd;
+        g_CurrentLineNumber = 221;
         core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
       }
       engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_18,local_350);
@@ -191,7 +191,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
         do {
           p_Var6 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                              (local_860,(char *)0x0,"r+t","..\\engine\\fileio.cpp",
-                              0x153);
+                              339);
           if (p_Var6 != (_FILE *)0x0) {
             _setvbuf(p_Var6,(char *)0x0,0,0x400);
             goto LAB_004b4ad9;
@@ -216,7 +216,7 @@ LAB_004b4ad9:
                                (&local_50,local_e0c.found_path);
           if (-1 < local_40) goto LAB_004b4980;
           if (local_48 != (_FILE *)0x0) {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",0xc4);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",196);
             local_48 = (_FILE *)0x0;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -237,7 +237,7 @@ LAB_004b4980:
           if (iVar3 == 0) break;
           if (0x27 < iVar4) {
             if (local_48 != (_FILE *)0x0) {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",0xc4);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",196);
               local_48 = (_FILE *)0x0;
             }
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -269,7 +269,7 @@ LAB_004b4980:
                           (local_1020.found_path,(char *)local_e0c.timestamp);
         if (iVar4 == 0) {
           if (local_48 != (_FILE *)0x0) {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",0xc4);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",196);
             local_48 = (_FILE *)0x0;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -280,7 +280,7 @@ LAB_004b4980:
           iVar4 = engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_1020.found_path,8);
           if (iVar4 == 0) {
             if (local_48 != (_FILE *)0x0) {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",0xc4);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",196);
               local_48 = (_FILE *)0x0;
             }
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -292,7 +292,7 @@ LAB_004b4980:
             do {
               p_Var6 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                  (local_964,(char *)0x0,"at","..\\engine\\fileio.cpp",
-                                  0x153);
+                                  339);
               if (p_Var6 != (_FILE *)0x0) {
                 _setvbuf(p_Var6,(char *)0x0,0,0x400);
                 goto LAB_004b4d50;
@@ -313,7 +313,7 @@ LAB_004b4d50:
                          p_Var5->tm_min,p_Var5->tm_sec,g_VersionControlSession.primary_username);
               _fflush(p_Var6);
               if ((p_Var6->_flag & 0x20) == 0) {
-                shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\engine\\fileio.cpp",0xc4);
+                shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\engine\\fileio.cpp",196);
                 p_Var6 = local_34;
                 local_28 = (_FILE *)0x0;
                 engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
@@ -325,7 +325,7 @@ LAB_004b4d50:
                 if (iVar4 == 0) {
                   if (local_48 != (_FILE *)0x0) {
                     shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                              (local_48,"..\\engine\\fileio.cpp",0xc4);
+                              (local_48,"..\\engine\\fileio.cpp",196);
                     local_48 = p_Var6;
                   }
                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -336,7 +336,7 @@ LAB_004b4d50:
                   if (iVar4 != 0) {
                     if (local_48 != (_FILE *)0x0) {
                       shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                                (local_48,"..\\engine\\fileio.cpp",0xc4);
+                                (local_48,"..\\engine\\fileio.cpp",196);
                       local_48 = (_FILE *)0x0;
                     }
                     iVar4 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960
@@ -357,11 +357,11 @@ LAB_004b4d50:
               }
             }
             if (local_48 != (_FILE *)0x0) {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",0xc4);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",196);
               local_48 = (_FILE *)0x0;
             }
             if (local_28 != (_FILE *)0x0) {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\engine\\fileio.cpp",0xc4);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\engine\\fileio.cpp",196);
               local_28 = (_FILE *)0x0;
             }
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -377,17 +377,17 @@ LAB_004b4d50:
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar13,pcVar8);
 LAB_004b4768:
   if (local_48 != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",0xc4);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",196);
     local_48 = (_FILE *)0x0;
   }
   if (local_2c != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_2c,"..\\engine\\fileio.cpp",0xc4);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_2c,"..\\engine\\fileio.cpp",196);
   }
   if (local_24 != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\engine\\fileio.cpp",0xc4);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\engine\\fileio.cpp",196);
   }
   if (local_28 != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\engine\\fileio.cpp",0xc4);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\engine\\fileio.cpp",196);
   }
   if (local_a68[0] != '\0') {
     remove(local_a68);

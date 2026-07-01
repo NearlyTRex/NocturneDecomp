@@ -56,12 +56,12 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKey
       pSVar2 = keyframe_model->loaded_frames[iVar6];
       if ((pSVar2->header).child_count != 2) {
         g_CurrentFilename = "..\\engine\\keyframe.c";
-        g_CurrentLineNumber = 0xfd;
+        g_CurrentLineNumber = 253;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Bad key frame");
       }
       if ((pSVar2->vertex_header).count != (pSVar1->vertex_header).count) {
         g_CurrentFilename = "..\\engine\\keyframe.c";
-        g_CurrentLineNumber = 0xfe;
+        g_CurrentLineNumber = 254;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Key frame vertex mismatch");
       }
       iVar6 = iVar6 + 1;

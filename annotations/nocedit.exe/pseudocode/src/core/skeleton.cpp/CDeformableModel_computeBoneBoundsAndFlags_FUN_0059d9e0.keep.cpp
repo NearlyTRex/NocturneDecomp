@@ -67,7 +67,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
               iVar1 = pCVar3->bone_list[iVar1].parent_index;
               if (iVar1 < 0) {
                 g_CurrentFilename = "..\\core\\skeleton.cpp";
-                g_CurrentLineNumber = 0x86b;
+                g_CurrentLineNumber = 2155;
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Bug!");
               }
             } while ((this_ptr->bone_flags[iVar1] != 2) && (iVar9 = iVar9 + 1, iVar9 < 2));

@@ -145,7 +145,7 @@ LAB_0057523f:
   g_VDIsActorAreaInvalid = (int)(uStack_24 == 0xffffffff);
   if (g_ZBufferScanlineArrayBackup[0] != (uint *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
-    g_CurrentLineNumber = 0x67;
+    g_CurrentLineNumber = 103;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveZBufferTable - already saved!");
   }
   if (0 < iVar12) {
@@ -249,7 +249,7 @@ LAB_0057523f:
   }
   if (g_ZBufferScanlineArrayBackup[0] == (uint *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
-    g_CurrentLineNumber = 0x70;
+    g_CurrentLineNumber = 112;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveZBufferTable - not saved!");
   }
   if (0 < iVar12) {

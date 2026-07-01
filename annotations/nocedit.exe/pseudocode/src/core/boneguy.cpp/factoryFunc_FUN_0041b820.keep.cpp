@@ -12,7 +12,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_factoryFunc_FUN_0041b820(void)
 {
   CBoneGuy *pCVar1;
   
-  pCVar1 = (CBoneGuy *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBoneGuy),"..\\core\\boneguy.cpp",0x74)
+  pCVar1 = (CBoneGuy *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBoneGuy),"..\\core\\boneguy.cpp",116)
   ;
   if (pCVar1 == (CBoneGuy *)0x0) {
     return (CBoneGuy *)0x0;

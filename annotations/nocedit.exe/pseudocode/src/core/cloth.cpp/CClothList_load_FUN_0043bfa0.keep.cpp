@@ -26,7 +26,7 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_0043bfa0(CClothList *this_ptr)
         shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pCVar2);
       }
       this_ptr_00 = (CCloth *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                              (sizeof(CCloth),"..\\core\\cloth.cpp",0x5a8);
+                              (sizeof(CCloth),"..\\core\\cloth.cpp",1448);
       pCVar2 = (CCloth *)0x0;
       if (this_ptr_00 != (CCloth *)0x0) {
         pCVar2 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(this_ptr_00);
@@ -34,7 +34,7 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_0043bfa0(CClothList *this_ptr)
       this_ptr->cloths[iVar4] = pCVar2;
       if (pCVar2 == (CCloth *)0x0) {
         g_CurrentFilename = "..\\core\\cloth.cpp";
-        g_CurrentLineNumber = 0x5a9;
+        g_CurrentLineNumber = 1449;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CClothList::load - out of memory for CCloth object.");
       }
       core_cloth_cpp_CCloth_load_FUN_00438cf0(this_ptr->cloths[iVar4],*filename);

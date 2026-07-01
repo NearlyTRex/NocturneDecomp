@@ -82,7 +82,7 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
       shape_design_c_skipLines_FUN_00459360(file,1);
       if (0 < local_30[2]) {
         local_38 = (char (*)[80])shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                                            (local_30[2] * 0x50,"..\\shape\\design.c",0x3ec);
+                                            (local_30[2] * 0x50,"..\\shape\\design.c",1004);
         if (local_38 == (char (*)[80])0x0) {
           _sprintf
                     (local_108,"Out of memory for texture list, numTextures = %d",local_30[2]);
@@ -127,9 +127,9 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
       while( true ) {
         if (g_VertexCount <= (int)local_40) {
           if (local_38 != (char (*)[80])0x0) {
-            shape_memdbg_cpp_debugFree_FUN_0050f460(local_38,"..\\shape\\design.c",0x42f);
+            shape_memdbg_cpp_debugFree_FUN_0050f460(local_38,"..\\shape\\design.c",1071);
           }
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x433);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",1075);
           shape_design_c_calculateVertexNormals_FUN_0045be40();
           return 1;
         }
@@ -143,7 +143,7 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
 LAB_00459478:
   _sprintf(local_108,"%s is corrupt.",filename);
 LAB_00459491:
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x3ae);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",942);
   engine_2d_c_drawText_FUN_00401fd0(local_108,0,0x16);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
@@ -153,7 +153,7 @@ LAB_00459491:
   g_PolygonCount = 0;
   g_VertexCount = 0;
   if (local_38 != (char (*)[80])0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(local_38,"..\\shape\\design.c",0x3be);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(local_38,"..\\shape\\design.c",958);
   }
   return 0;
 }

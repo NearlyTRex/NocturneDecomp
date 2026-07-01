@@ -28,7 +28,7 @@ void __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *f
   pcVar3 = strchr(local_cc,'.');
   if (pcVar3 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
-    g_CurrentLineNumber = 0x40;
+    g_CurrentLineNumber = 64;
     core_main_c_displayErrorAndQuit_FUN_00506f10("eopen - ext not found!");
   }
   pcVar3 = pcVar3 + 1;
@@ -36,7 +36,7 @@ void __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *f
   file = engine_dosio_cpp_getFile_FUN_00481a50("data",local_cc,"rb");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
-    g_CurrentLineNumber = 0x44;
+    g_CurrentLineNumber = 68;
     core_main_c_displayErrorAndQuit_FUN_00506f10("eopen - Cannot open file");
   }
   local_18 = 0;
@@ -61,12 +61,12 @@ void __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *f
       local_18 = local_18 + 1;
     } while (local_18 < this_ptr->height);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\ground.cpp",0x102);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\ground.cpp",258);
   strcpy(local_7c,filename);
   pcVar4 = strchr(local_7c,'.');
   if (pcVar4 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
-    g_CurrentLineNumber = 0x40;
+    g_CurrentLineNumber = 64;
     core_main_c_displayErrorAndQuit_FUN_00506f10("eopen - ext not found!");
   }
   pcVar4 = pcVar4 + 1;
@@ -74,7 +74,7 @@ void __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *f
   file_00 = engine_dosio_cpp_getFile_FUN_00481a50("data",local_7c,"rb");
   if (file_00 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
-    g_CurrentLineNumber = 0x44;
+    g_CurrentLineNumber = 68;
     core_main_c_displayErrorAndQuit_FUN_00506f10("eopen - Cannot open file");
   }
   local_14 = 0;
@@ -91,7 +91,7 @@ void __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *f
       local_14 = local_14 + 1;
     } while (local_14 < this_ptr->height);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_00,"..\\core\\ground.cpp",0x10c);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_00,"..\\core\\ground.cpp",268);
   core_texlist_cpp_CTextureList_load_FUN_005dbe00(this_ptr->texture_list,filename);
   return;
 }

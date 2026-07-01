@@ -14,18 +14,18 @@ void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120(CStrList *this
 
   if ((index < 0) || (this_ptr->item_count <= index)) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
-    g_CurrentLineNumber = 0xc13;
+    g_CurrentLineNumber = 3091;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CStrList::set - invalid index");
   }
   if (new_string == (char *)0x0) {
     new_string = &s_EmptyChar_006238a5;
   }
   pcVar2 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (this_ptr->data_array[index],strlen(new_string) + 1,"..\\shape\\edittool.cpp",0xc1b);
+                     (this_ptr->data_array[index],strlen(new_string) + 1,"..\\shape\\edittool.cpp",3099);
   this_ptr->data_array[index] = pcVar2;
   if (this_ptr->data_array[index] == (char *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
-    g_CurrentLineNumber = 0xc1c;
+    g_CurrentLineNumber = 3100;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CStrList::set - out of memory!");
   }
   strcpy(this_ptr->data_array[index],new_string);

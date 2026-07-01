@@ -29,7 +29,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet *this_p
     return;
   }
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       (local_3d8,(char *)0x0,"rt","..\\core\\setedit.cpp",0x36c);
+                       (local_3d8,(char *)0x0,"rt","..\\core\\setedit.cpp",876);
   if (file_ptr != (_FILE *)0x0) {
     engine_dosio_cpp_splitPath_FUN_00481f20(local_3d8,(char *)0x0,(char *)0x0,local_2d8,&local_4d8);
     engine_dosio_cpp_makePath_FUN_00481f50
@@ -44,7 +44,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet *this_p
     else {
       iVar3 = _stricmp(str1,"s3d");
       if (iVar3 != 0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x38f);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",911);
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("Can't decide how to process file based on extension!",0,0);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -53,7 +53,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet *this_p
       }
       core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(this_ptr,file_ptr);
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x399);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",921);
     engine_dosio_cpp_makePath_FUN_00481f50
               (local_1d8,(char *)0x0,"data",local_2d8,"zth");
     remove(local_1d8);

@@ -80,7 +80,7 @@ LAB_0055145b:
         else {
           if (199 < local_24) {
             g_CurrentFilename = "..\\engine\\pod.cpp";
-            g_CurrentLineNumber = 0x572;
+            g_CurrentLineNumber = 1394;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Too many POD dependency ordering rules");
           }
           if (local_470.is_required < 0) {
@@ -130,7 +130,7 @@ LAB_0055145b:
       }
       if (this_ptr->pod_file_count <= local_34) {
         g_CurrentFilename = "..\\engine\\pod.cpp";
-        g_CurrentLineNumber = 0x5c4;
+        g_CurrentLineNumber = 1476;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Circular POD mount order dependency detected.");
       }
       pCVar3 = this_ptr->pod_files[local_34];

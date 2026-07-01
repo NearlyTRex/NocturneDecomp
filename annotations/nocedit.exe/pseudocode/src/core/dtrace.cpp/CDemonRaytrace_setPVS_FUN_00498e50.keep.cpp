@@ -27,7 +27,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_00498e50(CDemonRaytrace *
     g_PVSDrawnCubeCount = visible_cube_count;
     if (20000 < visible_cube_count) {
       g_CurrentFilename = "..\\core\\dtrace.cpp";
-      g_CurrentLineNumber = 0x8c9;
+      g_CurrentLineNumber = 2249;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::setPVS - Too many drawn cubes in pvs!");
     }
     iVar11 = 0;

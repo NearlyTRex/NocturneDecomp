@@ -30,7 +30,7 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
   iVar4 = 0;
   do {
     local_18 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                         (local_21c,(char *)0x0,"rt","..\\engine\\fileio.cpp",0x153);
+                         (local_21c,(char *)0x0,"rt","..\\engine\\fileio.cpp",339);
     if (local_18 != (_FILE *)0x0) {
       _setvbuf(local_18,(char *)0x0,0,0x400);
       goto LAB_004b295b;
@@ -45,7 +45,7 @@ LAB_004b295b:
   if (local_18 != (_FILE *)0x0) {
     iVar4 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(this_ptr,&local_18);
     if (local_18 != (_FILE *)0x0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",196);
     }
     return iVar4;
   }

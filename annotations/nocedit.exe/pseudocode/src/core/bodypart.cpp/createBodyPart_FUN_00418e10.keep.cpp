@@ -22,14 +22,14 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(CVector3f *pos
   UOrientationVector *pUVar1;
   
   this_ptr = (CBodyPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                       (sizeof(CBodyPart),"..\\core\\bodypart.cpp",0x31);
+                       (sizeof(CBodyPart),"..\\core\\bodypart.cpp",49);
   this_ptr_00 = (CBodyPart *)0x0;
   if (this_ptr != (CBodyPart *)0x0) {
     this_ptr_00 = core_bodypart_cpp_CBodyPart_ctor_FUN_00419010(this_ptr);
   }
   if (this_ptr_00 == (CBodyPart *)0x0) {
     g_CurrentFilename = "..\\core\\bodypart.cpp";
-    g_CurrentLineNumber = 0x32;
+    g_CurrentLineNumber = 50;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create body part!");
   }
   (this_ptr_00->base).location.position = *position;

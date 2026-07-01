@@ -15,7 +15,7 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710(CMo
   
   if (4 < this_ptr->part_count) {
     g_CurrentFilename = "..\\core\\morph.cpp";
-    g_CurrentLineNumber = 0xac;
+    g_CurrentLineNumber = 172;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::addPart - too many parts!");
   }
   this_ptr->parts[this_ptr->part_count].start_vertex = this_ptr->num_points;
@@ -25,16 +25,16 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710(CMo
   this_ptr->num_points = this_ptr->num_points + this_ptr->parts[this_ptr->part_count].vertex_count;
   this_ptr->num_faces = this_ptr->num_faces + this_ptr->parts[this_ptr->part_count].face_count;
   pSVar1 = (SMorphPoint *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (this_ptr->points,this_ptr->num_points << 4,"..\\core\\morph.cpp",0xbe);
+                     (this_ptr->points,this_ptr->num_points << 4,"..\\core\\morph.cpp",190);
   this_ptr->points = pSVar1;
   pSVar2 = (SMRGLPrimitiveTriangle *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (this_ptr->faces,this_ptr->num_faces * sizeof(SMRGLPrimitiveTriangle),"..\\core\\morph.cpp",0xbf);
+                     (this_ptr->faces,this_ptr->num_faces * sizeof(SMRGLPrimitiveTriangle),"..\\core\\morph.cpp",191);
   this_ptr->faces = pSVar2;
   this_ptr->part_count = this_ptr->part_count + 1;
   if ((this_ptr->points == (SMorphPoint *)0x0) || (this_ptr->faces == (SMRGLPrimitiveTriangle *)0x0)
      ) {
     g_CurrentFilename = "..\\core\\morph.cpp";
-    g_CurrentLineNumber = 0xc5;
+    g_CurrentLineNumber = 197;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::setup - out of memory!");
   }
   if (skinned_vertices != (CVector3i *)0x0) {

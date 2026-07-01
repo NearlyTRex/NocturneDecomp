@@ -115,7 +115,7 @@ LAB_004d59f9:
     if (local_28 != 1) {
 LAB_004d5bd9:
       g_CurrentFilename = "..\\core\\gabriela.cpp";
-      g_CurrentLineNumber = 0x638;
+      g_CurrentLineNumber = 1592;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze - invalid pickUpType: %d",local_28);
       return 1;
     }

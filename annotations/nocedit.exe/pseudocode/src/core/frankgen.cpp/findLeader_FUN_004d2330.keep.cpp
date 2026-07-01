@@ -23,7 +23,7 @@ CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_004d2330(void)
     }
   }
   g_CurrentFilename = "..\\core\\frankgen.cpp";
-  g_CurrentLineNumber = 0x1cf;
+  g_CurrentLineNumber = 463;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CFrankenstienMachine::findLeader - no leader found!");
   return (CDemonActor *)0x0;
 }

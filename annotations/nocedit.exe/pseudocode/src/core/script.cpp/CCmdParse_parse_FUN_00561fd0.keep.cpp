@@ -87,7 +87,7 @@ LAB_005620a2:
     if (template_text[local_24] != '<') break;
     if (9 < this_ptr->param_count) {
       g_CurrentFilename = "..\\core\\script.cpp";
-      g_CurrentLineNumber = 0x1302;
+      g_CurrentLineNumber = 4866;
       core_main_c_displayErrorAndQuit_FUN_00506f10("SCmdParse::parse - too many parms!");
     }
     iVar4 = core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0

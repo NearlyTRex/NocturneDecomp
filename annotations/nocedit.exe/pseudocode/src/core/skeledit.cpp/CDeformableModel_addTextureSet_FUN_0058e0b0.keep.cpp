@@ -21,7 +21,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_addTextureSet_FUN_0058e0b0(CDefo
 
   if (4 < this_ptr->num_texture_sets) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0x912;
+    g_CurrentLineNumber = 2322;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't add another texture set!");
   }
   iVar4 = this_ptr->num_texture_sets;

@@ -55,7 +55,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
       }
       else {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
-        g_CurrentLineNumber = 0x10d3;
+        g_CurrentLineNumber = 4307;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Unknown sample file format extension: %s",(out_sample->sample_info).name)
         ;
       }
@@ -63,7 +63,7 @@ LAB_005aa53c:
       sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(out_sample);
       if ((out_sample->sample_info).sample_count < 1) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
-        g_CurrentLineNumber = 0x10de;
+        g_CurrentLineNumber = 4318;
         core_main_c_displayErrorAndQuit_FUN_00506f10("getSampleInfo - can't determine length for %s",(out_sample->sample_info).name)
         ;
         return 1;
@@ -76,12 +76,12 @@ LAB_005aa53c:
       local_14 = _ftell(file_handle);
       iVar1 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(file_handle,&local_14,out_sample);
       if (iVar1 != 0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",0x10ba);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",4282);
         goto LAB_005aa53c;
       }
     }
     if (file_handle != (_FILE *)0x0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",0x10af);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",4271);
       return 0;
     }
   }

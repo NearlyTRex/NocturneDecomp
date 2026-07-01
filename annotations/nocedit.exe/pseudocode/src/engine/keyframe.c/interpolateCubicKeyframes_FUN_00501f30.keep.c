@@ -67,7 +67,7 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   }
   if ((keyframe_model->base_keyframes->header).child_count != 2) {
     g_CurrentFilename = "..\\engine\\keyframe.c";
-    g_CurrentLineNumber = 0x16b;
+    g_CurrentLineNumber = 363;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad keyframe 1");
   }
   kf_next = keyframe_model->loaded_frames[iVar17]->vertices;
@@ -113,7 +113,7 @@ SMRGLHeaderExtended * __cdecl engine_keyframe_c_interpolateCubicKeyframes_FUN_00
   zbp_block = (SMRGLHeaderExtended *)out_vert;
   if ((zbp_block->base).type != 0x17) {
     g_CurrentFilename = "..\\engine\\keyframe.c";
-    g_CurrentLineNumber = 0x1a6;
+    g_CurrentLineNumber = 422;
     core_main_c_displayErrorAndQuit_FUN_00506f10("ZBP not found!");
   }
   primitive_list = (SMRGLPrimitiveTriangle *)(zbp_block + 1);

@@ -14,11 +14,11 @@ void __cdecl core_script_cpp_CScript_addEventXRef_FUN_00567510(CScript *this_ptr
 
   pSVar1 = (SScriptXRef *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->xref_entries,(this_ptr->xref_count + 1) * sizeof(SScriptXRef),
-                      "..\\core\\script.cpp",0x1d37);
+                      "..\\core\\script.cpp",7479);
   this_ptr->xref_entries = pSVar1;
   if (pSVar1 == (SScriptXRef *)0x0) {
     g_CurrentFilename = "..\\core\\script.cpp";
-    g_CurrentLineNumber = 0x1d38;
+    g_CurrentLineNumber = 7480;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
   pSVar1 = this_ptr->xref_entries + this_ptr->xref_count;

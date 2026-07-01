@@ -38,7 +38,7 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
       do {
         do {
           g_CurrentFilename = "..\\core\\course.cpp";
-          g_CurrentLineNumber = 0x1c2;
+          g_CurrentLineNumber = 450;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CCourse::importMatrices - file is corrupt on frame %d!",iVar4);
 LAB_00442f35:
           iVar2 = _fscanf(file_handle,"%f,%f,%f\n",&local_58.m[0].y,&local_58.m[1].z,

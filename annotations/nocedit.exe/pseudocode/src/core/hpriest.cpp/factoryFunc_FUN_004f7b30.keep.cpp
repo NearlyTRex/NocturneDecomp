@@ -13,7 +13,7 @@ CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFunc_FUN_004f7b30(void)
   CHighPriestOfGardath *pCVar1;
   
   pCVar1 = (CHighPriestOfGardath *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (sizeof(CHighPriestOfGardath),"..\\core\\hpriest.cpp",0x1d);
+                     (sizeof(CHighPriestOfGardath),"..\\core\\hpriest.cpp",29);
   if (pCVar1 == (CHighPriestOfGardath *)0x0) {
     return (CHighPriestOfGardath *)0x0;
   }

@@ -69,7 +69,7 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
   dot = strchr(kfm_path,'.');
   if (dot == (char *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0xc3b;
+    g_CurrentLineNumber = 3131;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find .GEO");
   }
   _sprintf(dot,".KFM");
@@ -84,11 +84,11 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
   file = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",acStack_f0,"rb");
   if (file != (_FILE *)0x0) {
     backdrop_buf = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                             (0x4b000,"..\\core\\setedit.cpp",0xc64);
+                             (0x4b000,"..\\core\\setedit.cpp",3172);
     if (backdrop_buf != (void *)0x0) {
       _fread(backdrop_buf,0x280,0x1e0,file);
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0xc68);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",3176);
     _sprintf(acStack_f0,"%s.act",this_ptr->cameras[camera_index].name);
     file = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",acStack_f0,"rb");
     if (file != (_FILE *)0x0) {
@@ -106,16 +106,16 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
         }
         brightnessTable[i] = byte_b / 3 + byte_r + byte_g;
       }
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0xc73);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",3187);
     }
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   coverage_map = (char *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                         (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",0xc81);
+                         (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",3201);
   if (coverage_map == (char *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
-    g_CurrentLineNumber = 0xc82;
+    g_CurrentLineNumber = 3202;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
   core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(&g_CDemonCameraInstance,0x1e0);
@@ -227,7 +227,7 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
       // ---- "Hold O" / strobe: blit the original backdrop image instead ----
       if ((g_WindowWidth != 0x280) || (g_WindowHeight != 0x1e0)) {
         g_CurrentFilename = "..\\core\\setedit.cpp";
-        g_CurrentLineNumber = 0xc92;
+        g_CurrentLineNumber = 3218;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Screen must be 640x480!");
       }
       src = (byte *)backdrop_buf;
@@ -324,7 +324,7 @@ cleanup:
   engine_2d_c_clearInputAndWait_FUN_00403260();
   engine_2d_c_setupViewportAndClipping_FUN_00401800(0,0,g_WindowWidth + -1,g_WindowHeight + -1);
   if (backdrop_buf != (void *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(backdrop_buf,"..\\core\\setedit.cpp",0xd8c);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(backdrop_buf,"..\\core\\setedit.cpp",3468);
   }
   return result;
 }

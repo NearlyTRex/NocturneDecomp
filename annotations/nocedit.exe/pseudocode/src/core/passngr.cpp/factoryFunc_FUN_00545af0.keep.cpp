@@ -13,7 +13,7 @@ CPassenger * __cdecl core_passngr_cpp_factoryFunc_FUN_00545af0(void)
   CPassenger *pCVar1;
   
   pCVar1 = (CPassenger *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (sizeof(CPassenger),"..\\core\\passngr.cpp",0x43);
+                     (sizeof(CPassenger),"..\\core\\passngr.cpp",67);
   if (pCVar1 == (CPassenger *)0x0) {
     return (CPassenger *)0x0;
   }

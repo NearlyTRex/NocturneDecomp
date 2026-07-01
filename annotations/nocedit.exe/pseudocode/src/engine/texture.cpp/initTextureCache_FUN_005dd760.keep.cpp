@@ -13,7 +13,7 @@ CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_005dd760(void)
   CTextureCache *this_ptr;
   
   this_ptr = (CTextureCache *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                       (sizeof(CTextureCache),"..\\engine\\texture.cpp",0x278);
+                       (sizeof(CTextureCache),"..\\engine\\texture.cpp",632);
   if (this_ptr == (CTextureCache *)0x0) {
     g_TextureCacheInstance = this_ptr;
     return (CTextureCache *)0x0;

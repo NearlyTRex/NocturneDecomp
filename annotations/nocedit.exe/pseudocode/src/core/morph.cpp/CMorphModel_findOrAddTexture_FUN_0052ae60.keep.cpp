@@ -21,7 +21,7 @@ int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel
   }
   if (0x13 < this_ptr->num_textures) {
     g_CurrentFilename = "..\\core\\morph.cpp";
-    g_CurrentLineNumber = 0x1d0;
+    g_CurrentLineNumber = 464;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::findOrAddTexture - too many textures!");
   }
   memset(this_ptr->textures + this_ptr->num_textures,0,0x48);

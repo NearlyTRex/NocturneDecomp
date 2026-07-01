@@ -44,7 +44,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
   }
   source_file_00 =
        shape_memdbg_cpp_openFile_FUN_0050f7a0
-                 (local_1108.filename,(char *)0x0,"rb","..\\engine\\fileio.cpp",0xa00);
+                 (local_1108.filename,(char *)0x0,"rb","..\\engine\\fileio.cpp",2560);
   if (source_file_00 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",local_1108.filename);
@@ -77,7 +77,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
     iVar4 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(&local_1108,local_120);
     if (iVar4 < 0) {
       g_CurrentFilename = "..\\engine\\fileio.cpp";
-      g_CurrentLineNumber = 0xa20;
+      g_CurrentLineNumber = 2592;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze finding file in pod!");
     }
     pCVar5 = local_1108.directory_entries + iVar4;
@@ -113,7 +113,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
       }
     }
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(source_file_00,"..\\engine\\fileio.cpp",0xa4b);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(source_file_00,"..\\engine\\fileio.cpp",2635);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_8dc,0);
   engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1108,0);
   return;

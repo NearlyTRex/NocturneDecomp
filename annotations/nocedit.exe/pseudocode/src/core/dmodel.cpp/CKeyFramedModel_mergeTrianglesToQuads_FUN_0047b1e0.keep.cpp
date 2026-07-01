@@ -67,7 +67,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
         puVar10 = this_ptr->part_list[local_84].poly_count + local_50;
         if (this_ptr->poly_count < puVar10) {
           g_CurrentFilename = "..\\core\\dmodel.cpp";
-          g_CurrentLineNumber = 0x986;
+          g_CurrentLineNumber = 2438;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Vertex reducer bug or CKeyFramedModel corruption!");
         }
         if (local_50 < puVar10) {

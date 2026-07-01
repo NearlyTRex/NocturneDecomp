@@ -35,11 +35,11 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
     row_stride = this_ptr->width;
   }
   ppvVar2 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                      ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x378);
+                      ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",888);
   this_ptr->row_offsets = ppvVar2;
   if (ppvVar2 == (int *)0x0) {
     g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
-    g_CurrentLineNumber = 0x37a;
+    g_CurrentLineNumber = 890;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to allocate memory for rowOffset table in CPackedBitmap::load");
   }
   new_size = 0;
@@ -50,7 +50,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
     this_ptr->row_offsets[local_24] = new_size;
     if (this_ptr->height <= local_24) {
       puVar1 = (ushort *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                         (this_ptr->packed_data,new_size,"..\\cockpit\\pkbitmap.cpp",0x3d6);
+                         (this_ptr->packed_data,new_size,"..\\cockpit\\pkbitmap.cpp",982);
       this_ptr->packed_data = puVar1;
       return;
     }
@@ -75,14 +75,14 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
           if (local_18 < new_size) {
             local_18 = iVar4 + 0x4004;
             pcVar5 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                               (this_ptr->packed_data,local_18,"..\\cockpit\\pkbitmap.cpp",0x3ac
+                               (this_ptr->packed_data,local_18,"..\\cockpit\\pkbitmap.cpp",940
                                );
             this_ptr->packed_data = (ushort *)pcVar5;
             if (pcVar5 == (char *)0x0) {
               _sprintf
                         (local_154,"Out of memory packing file \"%s\" on row %u trying to get %u bytes",this_ptr->filename,local_24,local_18);
               g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
-              g_CurrentLineNumber = 0x3b2;
+              g_CurrentLineNumber = 946;
               core_main_c_displayErrorAndQuit_FUN_00506f10(local_154);
             }
           }

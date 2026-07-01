@@ -12,7 +12,7 @@ CBat * __cdecl core_bat_cpp_factoryFunc_FUN_00414790(void)
 {
   CBat *pCVar1;
   
-  pCVar1 = (CBat *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBat),"..\\core\\bat.cpp",0x5c);
+  pCVar1 = (CBat *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBat),"..\\core\\bat.cpp",92);
   if (pCVar1 == (CBat *)0x0) {
     return (CBat *)0x0;
   }

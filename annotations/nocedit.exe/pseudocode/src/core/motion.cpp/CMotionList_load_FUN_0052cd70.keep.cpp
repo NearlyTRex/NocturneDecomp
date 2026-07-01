@@ -32,12 +32,12 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_0052cd70(CMotionList *this_ptr
   _fscanf(file_handle,"%d\n",&local_34);
   if (local_34 < 0) {
     g_CurrentFilename = "..\\core\\motion.cpp";
-    g_CurrentLineNumber = 0x5b;
+    g_CurrentLineNumber = 91;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Error reading motion list.");
   }
   if (2 < local_34) {
     g_CurrentFilename = "..\\core\\motion.cpp";
-    g_CurrentLineNumber = 0x5d;
+    g_CurrentLineNumber = 93;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't read motion list - it's version %d, and I can only handle up to version %d.  (Probably you have an old .exe)",local_34,2);
   }
   do {

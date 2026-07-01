@@ -14,13 +14,13 @@ void __cdecl shape_edittool_cpp_CStrList_remove_FUN_004a2e00(CStrList *this_ptr,
   
   if (((start_index < 0) || (this_ptr->item_count <= end_index)) || (end_index < start_index)) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
-    g_CurrentLineNumber = 0xb7b;
+    g_CurrentLineNumber = 2939;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CStrList::remove - invalid range");
   }
   for (iVar1 = start_index; iVar1 <= end_index; iVar1 = iVar1 + 1) {
     if (this_ptr->data_array[iVar1] != (char *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460
-                (this_ptr->data_array[iVar1],"..\\shape\\edittool.cpp",0xb80);
+                (this_ptr->data_array[iVar1],"..\\shape\\edittool.cpp",2944);
     }
   }
   iVar1 = this_ptr->item_count - ((end_index - start_index) + 1);

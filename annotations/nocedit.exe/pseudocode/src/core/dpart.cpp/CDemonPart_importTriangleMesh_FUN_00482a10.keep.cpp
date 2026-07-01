@@ -25,7 +25,7 @@ int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart
   this_ptr->vertex_group_size = 1;
   if ((20000 < this_ptr->vertex_count) || (20000 < this_ptr->face_count)) {
     _sprintf(local_134,"Too many! %d, %d",this_ptr->vertex_count,this_ptr->face_count);
-    g_CurrentLineNumber = 0x267;
+    g_CurrentLineNumber = 615;
     g_CurrentFilename = "..\\core\\dpart.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_134);
   }

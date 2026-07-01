@@ -12,7 +12,7 @@ CZombieCow * __cdecl core_cow_cpp_factoryFunc_FUN_00444100(void)
 {
   CZombieCow *pCVar1;
   
-  pCVar1 = (CZombieCow *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CZombieCow),"..\\core\\cow.cpp",0x36);
+  pCVar1 = (CZombieCow *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CZombieCow),"..\\core\\cow.cpp",54);
   if (pCVar1 == (CZombieCow *)0x0) {
     return (CZombieCow *)0x0;
   }

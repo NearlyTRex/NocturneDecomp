@@ -12,6 +12,6 @@ STreeNode * __cdecl shape_design_c_allocateSpatialTreeNode_FUN_00457ed0(void)
 {
   STreeNode *pSVar1;
   
-  pSVar1 = (STreeNode *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(sizeof(STreeNode),"..\\shape\\design.c",0x166);
+  pSVar1 = (STreeNode *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(sizeof(STreeNode),"..\\shape\\design.c",358);
   return pSVar1;
 }

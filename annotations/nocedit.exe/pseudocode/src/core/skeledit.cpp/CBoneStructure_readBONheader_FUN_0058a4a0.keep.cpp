@@ -31,7 +31,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   _fscanf(file,"%d,%d\n",&this_ptr->bone_count,frame_count_out);
   if (100 < this_ptr->bone_count) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
-    g_CurrentLineNumber = 0x2a6;
+    g_CurrentLineNumber = 678;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too bony!");
   }
   uVar3 = 1;
@@ -97,7 +97,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
       this_ptr->shuffled_bone_indices[uVar3] = iVar3;
       if (iVar3 < 0) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
-        g_CurrentLineNumber = 0x2e8;
+        g_CurrentLineNumber = 744;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze while shuffling bones...");
       }
       uVar3 = uVar3 + 1;
@@ -112,7 +112,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
          (iVar3 = this_ptr->shuffled_bone_indices[iVar3], this_ptr->bones[uVar3].parent_index = iVar3,
          uVar3 <= iVar3)) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
-        g_CurrentLineNumber = 0x2f0;
+        g_CurrentLineNumber = 752;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze while shuffling parent bones...");
       }
       uVar3 = uVar3 + 1;

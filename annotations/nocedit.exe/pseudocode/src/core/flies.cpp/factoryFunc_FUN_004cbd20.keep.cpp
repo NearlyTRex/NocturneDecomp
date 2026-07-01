@@ -12,7 +12,7 @@ CFlies * __cdecl core_flies_cpp_factoryFunc_FUN_004cbd20(void)
 {
   CFlies *pCVar1;
   
-  pCVar1 = (CFlies *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CFlies),"..\\core\\flies.cpp",0x19);
+  pCVar1 = (CFlies *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CFlies),"..\\core\\flies.cpp",25);
   if (pCVar1 == (CFlies *)0x0) {
     return (CFlies *)0x0;
   }

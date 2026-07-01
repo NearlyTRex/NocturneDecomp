@@ -12,7 +12,7 @@ CLarva * __cdecl core_larva_cpp_factoryFunc_FUN_00502f50(void)
 {
   CLarva *pCVar1;
   
-  pCVar1 = (CLarva *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CLarva),"..\\core\\larva.cpp",0x36);
+  pCVar1 = (CLarva *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CLarva),"..\\core\\larva.cpp",54);
   if (pCVar1 == (CLarva *)0x0) {
     return (CLarva *)0x0;
   }

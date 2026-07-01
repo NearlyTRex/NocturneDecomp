@@ -28,7 +28,7 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s\n",local_528);
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    ("\\\\q\\xfer\\fletch\\sounderr.txt",(char *)0x0,"at",
-                    "..\\sound\\sndmain.cpp",0x186e);
+                    "..\\sound\\sndmain.cpp",6254);
   if (file == (_FILE *)0x0) {
     return;
   }
@@ -64,6 +64,6 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
   _fprintf(file,"Channels: %d\n",iVar3);
   iVar3 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
   _fprintf(file,"Hz: %d\n",iVar3);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\sound\\sndmain.cpp",0x188b);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\sound\\sndmain.cpp",6283);
   return;
 }

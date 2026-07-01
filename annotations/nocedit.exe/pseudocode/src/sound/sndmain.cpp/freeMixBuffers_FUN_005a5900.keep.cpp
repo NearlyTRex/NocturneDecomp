@@ -13,16 +13,16 @@ void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_005a5900(void)
   int iVar2;
 
   if (g_PrimaryMixBuffer != (float *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(g_PrimaryMixBuffer,"..\\sound\\sndmain.cpp",0x4bc);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(g_PrimaryMixBuffer,"..\\sound\\sndmain.cpp",1212);
     g_PrimaryMixBuffer = (float *)0x0;
   }
   if (g_SecondaryMixBuffer != (float *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(g_SecondaryMixBuffer,"..\\sound\\sndmain.cpp",0x4c0)
+    shape_memdbg_cpp_debugFree_FUN_0050f460(g_SecondaryMixBuffer,"..\\sound\\sndmain.cpp",1216)
     ;
     g_SecondaryMixBuffer = (float *)0x0;
   }
   if (g_TertiaryMixBuffer != (float *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(g_TertiaryMixBuffer,"..\\sound\\sndmain.cpp",0x4c4);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(g_TertiaryMixBuffer,"..\\sound\\sndmain.cpp",1220);
     g_TertiaryMixBuffer = (float *)0x0;
   }
   for (iVar2 = 0; iVar2 < 8; iVar2 = iVar2 + 1) {

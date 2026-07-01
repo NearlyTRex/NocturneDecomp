@@ -1032,7 +1032,7 @@ switchD_004ae724_caseD_5:
     default:
 switchD_004ae724_default:
       g_CurrentFilename = "..\\core\\event.cpp";
-      g_CurrentLineNumber = 0x765;
+      g_CurrentLineNumber = 1893;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
     }
 LAB_004ae5e7:

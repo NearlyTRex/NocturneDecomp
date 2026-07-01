@@ -59,7 +59,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
     break;
   default:
     g_CurrentFilename = "..\\core\\wateract.cpp";
-    g_CurrentLineNumber = 0x1a5;
+    g_CurrentLineNumber = 421;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CWaterActor::process - Bad state");
   }
   (this_ptr->base).location.position.y = this_ptr->height_delta * this_ptr->param + this_ptr->base_y

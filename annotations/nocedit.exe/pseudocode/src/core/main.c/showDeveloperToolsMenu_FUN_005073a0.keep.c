@@ -80,14 +80,14 @@ LAB_0050740e:
         }
         else if (uVar1 < 0x36) {
           this_ptr = (CKeyFramedModel *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                               (sizeof(CKeyFramedModel),"..\\core\\main.c",0x274);
+                               (sizeof(CKeyFramedModel),"..\\core\\main.c",628);
           pCVar6 = (CKeyFramedModel *)0x0;
           if (this_ptr != (CKeyFramedModel *)0x0) {
             pCVar6 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(this_ptr);
           }
           if (pCVar6 == (CKeyFramedModel *)0x0) {
             g_CurrentFilename = "..\\core\\main.c";
-            g_CurrentLineNumber = 0x275;
+            g_CurrentLineNumber = 629;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
           }
           core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(pCVar6);
@@ -115,7 +115,7 @@ LAB_0050740e:
           }
           else if (uVar1 == 0x42) {
             this_ptr_00 = (CMorph *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                                    (sizeof(CMorph),"..\\core\\main.c",0x292);
+                                    (sizeof(CMorph),"..\\core\\main.c",658);
             morph = (CMorph *)0x0;
             if (this_ptr_00 != (CMorph *)0x0) {
               morph = core_morph_cpp_CMorph_ctor_FUN_0052b310(this_ptr_00);
@@ -144,14 +144,14 @@ LAB_0050740e:
                     (g_CEditorToolsPtr,local_328);
           strcpy(local_20, "memdump.txt");
           output_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                                  (local_20,(char *)0x0,"wt","..\\core\\main.c",0x2c0);
+                                  (local_20,(char *)0x0,"wt","..\\core\\main.c",704);
           if (output_file == (_FILE *)0x0) {
             g_CurrentFilename = "..\\core\\main.c";
-            g_CurrentLineNumber = 0x2c1;
+            g_CurrentLineNumber = 705;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Can't createpen %s",local_20);
           }
           shape_memdbg_cpp_debugMemdump_FUN_0050f6c0(output_file);
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(output_file,"..\\core\\main.c",0x2c3);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(output_file,"..\\core\\main.c",707);
           shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                     (g_CEditorToolsPtr,"%s\nAlso dumped memory usage to %s",local_328,local_20);
         }

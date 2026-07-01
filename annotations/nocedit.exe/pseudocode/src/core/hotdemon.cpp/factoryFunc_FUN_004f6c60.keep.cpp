@@ -13,7 +13,7 @@ CHotDemon * __cdecl core_hotdemon_cpp_factoryFunc_FUN_004f6c60(void)
   CHotDemon *pCVar1;
   
   pCVar1 = (CHotDemon *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (sizeof(CHotDemon),"..\\core\\hotdemon.cpp",0x54);
+                     (sizeof(CHotDemon),"..\\core\\hotdemon.cpp",84);
   if (pCVar1 == (CHotDemon *)0x0) {
     return (CHotDemon *)0x0;
   }

@@ -36,7 +36,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *t
   
   if (this_ptr->weapon == (CWeapon *)0x0) {
     g_CurrentFilename = "..\\core\\stranger.cpp";
-    g_CurrentLineNumber = 0x10c0;
+    g_CurrentLineNumber = 4288;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CStranger::aimLeftPistol - no weapon?");
   }
   (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).canWalk)

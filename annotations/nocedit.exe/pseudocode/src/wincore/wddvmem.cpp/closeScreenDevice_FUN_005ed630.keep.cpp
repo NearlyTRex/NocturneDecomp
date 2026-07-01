@@ -35,7 +35,7 @@ void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630(void)
     HVar3 = (*g_SoftwareRenderSurface->vtable->Unlock)(g_SoftwareRenderSurface,(void *)0x0);
     if (HVar3 != 0) {
       g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
-      g_CurrentLineNumber = 0x27f;
+      g_CurrentLineNumber = 639;
       core_main_c_displayErrorAndQuit_FUN_00506f10("closeScreenDevice - Unable to unlock");
     }
     g_RenderingInProgress = 1;

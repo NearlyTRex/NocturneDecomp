@@ -20,7 +20,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
   int iVar5;
   char local_110 [256];
 
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",0x4f9);
+  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",1273);
   file_ptr = engine_dosio_cpp_getFile_FUN_00481a50
                        (&s_EmptyChar_0063564e,"enemy.pod","rb");
   if (file_ptr == (_FILE *)0x0) {
@@ -74,7 +74,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
     engine_alphabit_cpp_CAlphaBitmap_free_FUN_00410560(&g_LoadingScreenBitmap2);
   }
   else {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\main.c",0x503);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\main.c",1283);
   }
   core_netgame_cpp_CNetGame_shutdown_FUN_0053f830(g_CNetGamePtr);
   engine_ncursfx_cpp_CMouse_reset_FUN_00544500(g_CMousePtr);
@@ -91,6 +91,6 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
   wincore_winrun_cpp_doNothing2_FUN_005f4380();
   engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
   core_inivar_cpp_writeIniData_FUN_004fc510();
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",0x530);
+  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",1328);
   return;
 }

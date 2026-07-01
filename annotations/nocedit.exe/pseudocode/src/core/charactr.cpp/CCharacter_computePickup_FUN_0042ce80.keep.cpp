@@ -20,7 +20,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
   pSVar2 = this_ptr->carry_hands + hand_index;
   if (pSVar2->bone_index < 0) {
     g_CurrentFilename = "..\\core\\charactr.cpp";
-    g_CurrentLineNumber = 0xc00;
+    g_CurrentLineNumber = 3072;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::computePickup - invalid bone!");
   }
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390

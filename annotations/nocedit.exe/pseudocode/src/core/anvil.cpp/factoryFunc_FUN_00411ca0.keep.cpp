@@ -12,7 +12,7 @@ CAnvil * __cdecl core_anvil_cpp_factoryFunc_FUN_00411ca0(void)
 {
   CAnvil *pCVar1;
   
-  pCVar1 = (CAnvil *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CAnvil),"..\\core\\anvil.cpp",0x20);
+  pCVar1 = (CAnvil *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CAnvil),"..\\core\\anvil.cpp",32);
   if (pCVar1 == (CAnvil *)0x0) {
     return (CAnvil *)0x0;
   }

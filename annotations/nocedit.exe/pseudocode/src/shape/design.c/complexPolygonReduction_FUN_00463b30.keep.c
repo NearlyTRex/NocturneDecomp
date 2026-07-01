@@ -42,10 +42,10 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
   memcpy(local_160,g_PolygonReductionParams,sizeof(local_160));
   local_14 = (int *)0x0;
   local_14 = (int *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                       (g_PolygonCount * 0xc,"..\\shape\\design.c",0x1921);
+                       (g_PolygonCount * 0xc,"..\\shape\\design.c",6433);
   if (local_14 == (int *)0x0) {
     g_CurrentFilename = "..\\shape\\design.c";
-    g_CurrentLineNumber = 0x1922;
+    g_CurrentLineNumber = 6434;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to get mem in wheel polygon reducer!");
   }
   if (((int)g_ModelPolygonData[selected_polygon_index].vertex_indices_count < 3) ||
@@ -239,10 +239,10 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
             g_ModelPolygonData[selected_polygon_index].uv_v[local_4c] = afStack_110[local_4c];
           }
           local_20 = (int *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                               (local_3c * 4 + -4,"..\\shape\\design.c",0x1a1b);
+                               (local_3c * 4 + -4,"..\\shape\\design.c",6683);
           if (local_20 == (int *)0x0) {
             g_CurrentFilename = "..\\shape\\design.c";
-            g_CurrentLineNumber = 0x1a1c;
+            g_CurrentLineNumber = 6684;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to get mem in wheel polygon reducer!");
           }
           local_1c = local_38;
@@ -276,7 +276,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
           if (local_20[local_3c - 2] < selected_polygon_index) {
             selected_polygon_index = local_20[local_3c - 2];
           }
-          shape_memdbg_cpp_debugFree_FUN_0050f460(local_20,"..\\shape\\design.c",0x1a4d);
+          shape_memdbg_cpp_debugFree_FUN_0050f460(local_20,"..\\shape\\design.c",6733);
           g_PolygonCount = g_PolygonCount - (local_3c - 1);
           shape_design_c_removeUnusedVertices_FUN_00463830();
         }
@@ -309,7 +309,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
   }
 LAB_00464840:
   if (local_14 != (int *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(local_14,"..\\shape\\design.c",0x1a59);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(local_14,"..\\shape\\design.c",6745);
   }
   return selected_polygon_index;
 }

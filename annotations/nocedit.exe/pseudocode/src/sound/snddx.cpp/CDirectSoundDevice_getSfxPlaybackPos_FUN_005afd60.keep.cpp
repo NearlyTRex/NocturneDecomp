@@ -24,7 +24,7 @@ double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
       (g_DirectSoundHardwareSfxBuffers[iVar1] == (IDirectSoundBuffer *)0x0)) ||
      (g_DirectSound3DBufferInterfaces[iVar1] == (IDirectSound3DBuffer *)0x0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
-    g_CurrentLineNumber = 0x3d6;
+    g_CurrentLineNumber = 982;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::getSfxPlaybackPos - invalid handle");
   }
   uVar2 = (*g_DirectSoundHardwareSfxBuffers[iVar1]->vtable->GetCurrentPosition)

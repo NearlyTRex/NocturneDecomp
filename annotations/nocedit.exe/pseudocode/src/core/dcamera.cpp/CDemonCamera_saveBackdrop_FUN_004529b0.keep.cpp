@@ -53,14 +53,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
   _sprintf(local_274,"%s.fog",this_ptr->camera_name);
   file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",local_274,"rb");
   if (file_ptr != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\dcamera.cpp",0x12d5);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\dcamera.cpp",4821);
     return;
   }
   _sprintf(local_f8,"backdrop\\%s",local_274);
   std::ofstream ofs(local_f8, std::ios::out | std::ios::binary);
   if (ofs.fail()) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
-    g_CurrentLineNumber = 0x12dc;
+    g_CurrentLineNumber = 4828;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",local_f8);
   }
   ofs.write((char *)&g_CameraFogGrid, 0x1000);
@@ -155,17 +155,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
                            watcom_ostream_from(ofs));
         if (iVar4 == 0) {
           g_CurrentFilename = "..\\core\\dcamera.cpp";
-          g_CurrentLineNumber = 0x1349;
+          g_CurrentLineNumber = 4937;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Error compressing %s",local_f8);
         }
         if (local_4c != 0) {
           g_CurrentFilename = "..\\core\\dcamera.cpp";
-          g_CurrentLineNumber = 0x134b;
+          g_CurrentLineNumber = 4939;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Not all bytes consumed compressing %s",local_f8)
           ;
         }
         if (ofs.fail()) {
-          g_CurrentLineNumber = 0x134c;
+          g_CurrentLineNumber = 4940;
           g_CurrentFilename = "..\\core\\dcamera.cpp";
           core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing compressed file %s",local_f8)
           ;

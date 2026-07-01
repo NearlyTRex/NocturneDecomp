@@ -23,10 +23,10 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
   
   if (g_RecursiveCallFlag != 0) {
     file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     ("gtfo.txt",(char *)0x0,"at","..\\core\\main.c",0x80);
+                     ("gtfo.txt",(char *)0x0,"at","..\\core\\main.c",128);
     if (file != (_FILE *)0x0) {
       _fprintf(file,"Recursive GTFO!\n");
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\main.c",0x83);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\main.c",131);
     }
     notifyAbnormalTermination();
   }
@@ -53,7 +53,7 @@ LAB_00506f71:
       if (pcVar4 == (char *)0x0) {
         p_Var1 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                            ("gtfo.txt",(char *)0x0,"at","..\\core\\main.c",
-                            0xa4);
+                            164);
         if (p_Var1 != (_FILE *)0x0) {
           _fprintf(p_Var1,"----------------------------------------------------------------\n");
           _time(&local_10);
@@ -66,7 +66,7 @@ LAB_00506f71:
           pcVar1 = strerror(*piVar2);
           puVar3 = _errno();
           _fprintf(p_Var1,"errno = %d (%s)\n",*puVar3,pcVar1);
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\main.c",0xad);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\main.c",173);
         }
         core_sound_cpp_CSound_dtor_FUN_005b2d60(g_CSoundPtr);
         engine_2d_c_cleanupGraphicsSystem_FUN_00401130();

@@ -28,7 +28,7 @@ void __cdecl core_setedit_cpp_loadGroundTypes_FUN_00578420(char *filename)
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing texture ground type list from %s...",filename);
   stream = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (filename,(char *)0x0,"rt","..\\core\\setedit.cpp",0x2c3);
+                     (filename,(char *)0x0,"rt","..\\core\\setedit.cpp",707);
   if (stream != (_FILE *)0x0) {
     iVar5 = 0;
     while (pcVar2 = _fgets(local_19c,200,stream), pcVar2 != (char *)0x0) {
@@ -67,14 +67,14 @@ void __cdecl core_setedit_cpp_loadGroundTypes_FUN_00578420(char *filename)
         local_c = EVar1;
         if ((int)local_c < 0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
-          g_CurrentLineNumber = 0x2f0;
+          g_CurrentLineNumber = 752;
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("Error parsing %s line %d:\n\"%s\"",filename,iVar5,local_19c);
         }
         core_setedit_cpp_addGroundType_FUN_00578290(local_70,local_c);
       }
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\core\\setedit.cpp",0x2f4);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\core\\setedit.cpp",756);
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Imported texture ground type list from %s OK.",filename);
   }

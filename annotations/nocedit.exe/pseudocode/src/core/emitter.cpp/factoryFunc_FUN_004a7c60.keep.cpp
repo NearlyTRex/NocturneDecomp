@@ -12,7 +12,7 @@ CEmitter * __cdecl core_emitter_cpp_factoryFunc_FUN_004a7c60(void)
 {
   CEmitter *pCVar1;
   
-  pCVar1 = (CEmitter *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CEmitter),"..\\core\\emitter.cpp",0x3a);
+  pCVar1 = (CEmitter *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CEmitter),"..\\core\\emitter.cpp",58);
   if (pCVar1 == (CEmitter *)0x0) {
     return (CEmitter *)0x0;
   }

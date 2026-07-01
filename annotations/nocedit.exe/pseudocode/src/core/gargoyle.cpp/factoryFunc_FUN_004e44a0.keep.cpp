@@ -13,7 +13,7 @@ CGargoyle * __cdecl core_gargoyle_cpp_factoryFunc_FUN_004e44a0(void)
   CGargoyle *pCVar1;
   
   pCVar1 = (CGargoyle *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (sizeof(CGargoyle),"..\\core\\gargoyle.cpp",0x58);
+                     (sizeof(CGargoyle),"..\\core\\gargoyle.cpp",88);
   if (pCVar1 == (CGargoyle *)0x0) {
     return (CGargoyle *)0x0;
   }

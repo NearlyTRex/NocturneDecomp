@@ -21,7 +21,7 @@ void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(CPickList *pi
       shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(pick_list,item_index,0);
     }
     else {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\game.cpp",0xec1);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\game.cpp",3777);
     }
   }
   return;

@@ -61,7 +61,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemo
                 iVar4 = iVar4 + 1;
                 if (1999 < iVar4) {
                   g_CurrentFilename = "..\\engine\\drender.cpp";
-                  g_CurrentLineNumber = 0xa30;
+                  g_CurrentLineNumber = 2608;
                   core_main_c_displayErrorAndQuit_FUN_00506f10
                             ("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar4);
                 }

@@ -21,7 +21,7 @@ CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChec
       p_Var2 = (_FILE *)fopen("memdbg.txt","at");
       if (p_Var2 == (_FILE *)0x0) {
         g_CurrentFilename = "..\\shape\\memdbg.cpp";
-        g_CurrentLineNumber = 0x26e;
+        g_CurrentLineNumber = 622;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Files left open, but can't log them.");
       }
       iVar4 = 0;
@@ -41,7 +41,7 @@ CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChec
       }
       _fclose(p_Var2);
       g_CurrentFilename = "..\\shape\\memdbg.cpp";
-      g_CurrentLineNumber = 0x27e;
+      g_CurrentLineNumber = 638;
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("Files were left open.  Check %s","memdbg.txt");
     }
@@ -51,7 +51,7 @@ CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChec
       pSVar1 = g_MemoryListHead;
       if (p_Var2 == (_FILE *)0x0) {
         g_CurrentFilename = "..\\shape\\memdbg.cpp";
-        g_CurrentLineNumber = 0x289;
+        g_CurrentLineNumber = 649;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Memory leaks detected, but can't log them.");
         pSVar1 = g_MemoryListHead;
       }
@@ -60,7 +60,7 @@ CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChec
                    pSVar1->source_line);
       }
       _fclose(p_Var2);
-      g_CurrentLineNumber = 0x297;
+      g_CurrentLineNumber = 663;
       g_CurrentFilename = "..\\shape\\memdbg.cpp";
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("Memory leaks detected.  Check %s","memdbg.txt");

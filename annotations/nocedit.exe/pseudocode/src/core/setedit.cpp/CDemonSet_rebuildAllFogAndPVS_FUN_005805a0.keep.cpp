@@ -31,7 +31,7 @@ void __cdecl core_setedit_cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0(CDemonS
       ptr = pCVar4->pvs_list;
       pCVar4->pvs_count = 0;
       if (ptr != (int *)0x0) {
-        shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",0x1059);
+        shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",4185);
         pCVar4->pvs_list = (int *)0x0;
       }
       iVar3 = iVar3 + 1;

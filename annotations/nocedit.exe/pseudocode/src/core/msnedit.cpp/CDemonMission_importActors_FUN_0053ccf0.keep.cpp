@@ -47,10 +47,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Creating temp mission");
   this_ptr_00 = (CDemonMission *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                          (sizeof(CDemonMission),"..\\core\\msnedit.cpp",0xbef);
+                          (sizeof(CDemonMission),"..\\core\\msnedit.cpp",3055);
   if (this_ptr_00 == (CDemonMission *)0x0) {
     g_CurrentFilename = "..\\core\\msnedit.cpp";
-    g_CurrentLineNumber = 0xbf0;
+    g_CurrentLineNumber = 3056;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create temp mission!");
   }
   core_mission_cpp_CDemonMission_reset_FUN_00522c80(this_ptr_00);
@@ -117,7 +117,7 @@ LAB_0053ce9f:
         pCVar5 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr_00,pcVar4);
         if (pCVar5 == (CDemonActor *)0x0) {
           g_CurrentFilename = "..\\core\\msnedit.cpp";
-          g_CurrentLineNumber = 0xc2b;
+          g_CurrentLineNumber = 3115;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze finding actor in temp mission!");
         }
         core_mission_cpp_CDemonMission_removeActorFromList_FUN_00523be0(this_ptr_00,pCVar5);

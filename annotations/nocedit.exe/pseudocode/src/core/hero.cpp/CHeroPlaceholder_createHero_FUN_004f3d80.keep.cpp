@@ -48,7 +48,7 @@ CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlac
     break;
   default:
     g_CurrentFilename = "..\\core\\hero.cpp";
-    g_CurrentLineNumber = 0x578;
+    g_CurrentLineNumber = 1400;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CHeroPlaceholder::createHero - invalid hero type.");
     goto LAB_004f3db9;
   }
@@ -58,7 +58,7 @@ CHero * __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlac
 LAB_004f3db9:
   if (pCVar2 == (CHero *)0x0) {
     g_CurrentFilename = "..\\core\\hero.cpp";
-    g_CurrentLineNumber = 0x57d;
+    g_CurrentLineNumber = 1405;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CHeroPlaceholder::createHero - failed.");
   }
   core_mission_cpp_CDemonMission_generateActorName_FUN_00524700

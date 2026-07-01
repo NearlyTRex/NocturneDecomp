@@ -24,7 +24,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr,i
   
   if ((this_ptr->next_lod == (CLodMesh *)0x0) || (this_ptr->lod_level_count < 1)) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0x1279;
+    g_CurrentLineNumber = 4729;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't call LodMesh::getLOD until after simplify() has been called!");
   }
   shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(output_mesh,this_ptr->next_lod);

@@ -1355,6 +1355,40 @@ def transform_sub_float_bitcast(code):
     return ''.join(result)
 
 
+# A `g_CurrentLineNumber = 0xNN;` assignment (the global set before a
+# displayErrorAndQuit / logging call). The RHS is unambiguously a source line.
+_LINE_NUM_GLOBAL_RE = re.compile(r'(g_CurrentLineNumber\s*=\s*)0x([0-9a-fA-F]+)')
+# The __LINE__ argument immediately after a "...\file.cpp" path literal in the
+# debug-heap / error helpers (e.g. `debugMalloc(sizeof(T), "..\core\a.cpp", 0x1e)`).
+# The string alternation puts `cpp` first so `.cpp"` matches fully, not `.c`.
+_LINE_NUM_AFTER_FILE_RE = re.compile(
+    r'("(?:[^"\\]|\\.)*\.(?:cpp|c|h)"\s*,\s*)0x([0-9a-fA-F]+)\b')
+
+
+def transform_decimalize_line_numbers(code):
+    """Render source line numbers as decimal instead of Ghidra's hex.
+
+    Two faithful (bit-identical) rewrites make line numbers read as line numbers
+    and pull them out of the hex-constant population that struct-size searches
+    (alloc_magic_size, manual greps for `0xNN` sizes) have to sift through:
+      1. `g_CurrentLineNumber = 0xd72;`            -> `g_CurrentLineNumber = 3442;`
+      2. the __LINE__ arg after a source-file path ->
+         `debugMalloc(sizeof(T), "..\\core\\ammo.cpp", 0x1e)`
+                                    -> `..., "..\\core\\ammo.cpp", 30)`
+
+    Both operands are unambiguously line numbers (the global's name; the arg
+    position right after a "...file.cpp" literal), so decimalizing is safe and
+    changes no compiled output. Notably, a hex line number can collide with a
+    struct size (line 40 == 0x28 == sizeof(CBitmap)); decimalizing removes that
+    ambiguity from size searches.
+    """
+    code = _LINE_NUM_GLOBAL_RE.sub(
+        lambda m: m.group(1) + str(int(m.group(2), 16)), code)
+    code = _LINE_NUM_AFTER_FILE_RE.sub(
+        lambda m: m.group(1) + str(int(m.group(2), 16)), code)
+    return code
+
+
 def apply_all_transforms(code, transforms=None, var_info=None, func_name=None):
     """Apply all or specified transforms to decompiled code.
 
@@ -1385,6 +1419,7 @@ def apply_all_transforms(code, transforms=None, var_info=None, func_name=None):
         ('adjusted_pointer_types', transform_adjusted_pointer_types),
         ('render_state_flags', transform_render_state_flags),
         ('adjacency_sentinels', transform_adjacency_sentinels),
+        ('decimalize_line_numbers', transform_decimalize_line_numbers),
     ]
 
     if transforms is None:

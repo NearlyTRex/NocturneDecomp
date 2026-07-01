@@ -227,7 +227,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
   bVar22 = 0;
   if ((this_ptr->next_cmd < 0) || (this_ptr->parsed_line_count <= this_ptr->next_cmd)) {
     g_CurrentFilename = "..\\core\\script.cpp";
-    g_CurrentLineNumber = 0x46d;
+    g_CurrentLineNumber = 1133;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CScript::step - Invalid instruction pointer!\n(This is an internal script processing error,\nand doesn't mean there's anything wrong with the\nscript file.)");
   }
   strcpy(g_ScriptErrorBuffer,"(no error message provided)");
@@ -257,7 +257,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
       iVar6 = core_script_cpp_CScript_findLabelIndex_FUN_00560160(this_ptr,local_11c);
       if (iVar6 < 0) {
         g_CurrentFilename = "..\\core\\script.cpp";
-        g_CurrentLineNumber = 0x49f;
+        g_CurrentLineNumber = 1183;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Internal script error checking for duplicate label.");
       }
       if (iVar6 != local_110) {
@@ -2174,7 +2174,7 @@ LAB_0055e656:
                                                       if (actor_ptr == (CWeapon *)0x0) {
                                                         g_CurrentFilename =
                                                              "..\\core\\script.cpp";
-                                                        g_CurrentLineNumber = 0xad9;
+                                                        g_CurrentLineNumber = 2777;
                                                         core_main_c_displayErrorAndQuit_FUN_00506f10
                                                                   (
                                                   "script selectWeapon() command - hell froze.");

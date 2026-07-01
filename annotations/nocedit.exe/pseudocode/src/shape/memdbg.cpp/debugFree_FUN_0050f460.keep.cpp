@@ -21,11 +21,11 @@ void __cdecl shape_memdbg_cpp_debugFree_FUN_0050f460(void *ptr,char *filename,in
   shape_memdbg_cpp_traceMemory_FUN_0050f150("debugFree(%08X, %s, %d)",(uintptr_t)ptr,filename,line_number);
   if (ptr == (void *)0x0) {
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
-    g_CurrentLineNumber = 0x168;
+    g_CurrentLineNumber = 360;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Tried to free NULL pointer at %s line %d",filename,line_number);
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
-    g_CurrentLineNumber = 0x99;
+    g_CurrentLineNumber = 153;
     core_main_c_displayErrorAndQuit_FUN_00506f10("headFromPtr - NULL ptr");
   }
   header = (SMemHead *)((char *)ptr - sizeof(SMemHead));

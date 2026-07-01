@@ -12,7 +12,7 @@ CTommyGun * __cdecl core_tommygun_cpp_factoryFunc_FUN_005dda50(void)
 {
   CTommyGun *pCVar1;
   
-  pCVar1 = (CTommyGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CTommyGun),"..\\core\\tommygun.cpp",0x2f)
+  pCVar1 = (CTommyGun *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CTommyGun),"..\\core\\tommygun.cpp",47)
   ;
   if (pCVar1 == (CTommyGun *)0x0) {
     return (CTommyGun *)0x0;

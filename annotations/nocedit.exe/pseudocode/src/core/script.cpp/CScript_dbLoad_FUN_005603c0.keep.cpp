@@ -32,7 +32,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
   file_handle = engine_dosio_cpp_getFile_FUN_00481a50("world",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\script.cpp";
-    g_CurrentLineNumber = 0xec2;
+    g_CurrentLineNumber = 3778;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open world\\%s",filename);
   }
   lVar2 = _ftell(file_handle);
@@ -40,13 +40,13 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
     _fscanf(file_handle," ");
     lVar5 = _ftell(file_handle);
     if (iVar4 + lVar2 <= lVar5) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\script.cpp",0xf02);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\script.cpp",3842);
       return;
     }
     iVar3 = _fscanf(file_handle,"%[^,], %[^,], %[^\n]\n",local_334,local_2bc,local_29e);
     if (iVar3 != 3) {
       g_CurrentFilename = "..\\core\\script.cpp";
-      g_CurrentLineNumber = 0xed6;
+      g_CurrentLineNumber = 3798;
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
     }
@@ -76,11 +76,11 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
     iVar6 = this_ptr->dialog_entry_count + 1;
     this_ptr->dialog_entry_count = iVar6;
     pSVar4 = (SDialogEntry *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                       (this_ptr->dialog_entries,iVar6 * sizeof(SDialogEntry),"..\\core\\script.cpp",0xefa);
+                       (this_ptr->dialog_entries,iVar6 * sizeof(SDialogEntry),"..\\core\\script.cpp",3834);
     this_ptr->dialog_entries = pSVar4;
     if (pSVar4 == (SDialogEntry *)0x0) {
       g_CurrentFilename = "..\\core\\script.cpp";
-      g_CurrentLineNumber = 0xefb;
+      g_CurrentLineNumber = 3835;
       core_main_c_displayErrorAndQuit_FUN_00506f10("SCScipt::dbLoad - out of memory");
     }
     pSVar9 = this_ptr->dialog_entries + this_ptr->dialog_entry_count + -1;

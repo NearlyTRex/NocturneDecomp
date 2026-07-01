@@ -14,7 +14,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(CDemonCamera *t
 
   if (this_ptr->scene_open_flag == 0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
-    g_CurrentLineNumber = 0x3e9;
+    g_CurrentLineNumber = 1001;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCamera::endScene - Scene not open!");
   }
   else {

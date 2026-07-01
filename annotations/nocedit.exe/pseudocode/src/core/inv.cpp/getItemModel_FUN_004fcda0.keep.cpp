@@ -34,7 +34,7 @@ CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004fcda0(CDemonA
      (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CBattery"),
      class_name_hash = g_CBatteryClassInfo.name_hash, iVar1 == 0)) {
     g_CurrentFilename = "..\\core\\inv.cpp";
-    g_CurrentLineNumber = 0x9d;
+    g_CurrentLineNumber = 157;
     core_main_c_displayErrorAndQuit_FUN_00506f10("getModel - Can't classify : %s",actor_ptr->actor_name);
     return (CKeyFramedModelInstance *)0x0;
   }

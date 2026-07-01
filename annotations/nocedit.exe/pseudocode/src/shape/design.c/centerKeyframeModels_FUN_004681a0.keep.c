@@ -35,11 +35,11 @@ void __cdecl shape_design_c_centerKeyframeModels_FUN_004681a0(SMRGLKeyframeModel
                        ("models",keyframe_model->filenames[local_24],"wb");
       if (file == (_FILE *)0x0) {
         g_CurrentFilename = "..\\shape\\design.c";
-        g_CurrentLineNumber = 0x2235;
+        g_CurrentLineNumber = 8757;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Can't write key model");
       }
       _fwrite(target_model,size,1,file);
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x2237);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",8759);
       engine_model_c_freeMRGLData_FUN_005280b0(target_model);
     }
     engine_model_c_freeMRGLData_FUN_005280b0(model_ptr);

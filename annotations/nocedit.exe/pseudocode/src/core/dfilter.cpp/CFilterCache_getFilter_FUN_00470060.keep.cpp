@@ -30,14 +30,14 @@ CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFil
   }
   if (0x3f < this_ptr->filter_count) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
-    g_CurrentLineNumber = 0x55;
+    g_CurrentLineNumber = 85;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CFilterCache::getFilter - Too many filters");
   }
   pacVar5 = this_ptr->filter_names + iVar4;
   this_ptr->filter_count = this_ptr->filter_count + 1;
   strcpy(*pacVar5, filter_name);
   this_ptr_00 = (CDemonFilter *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                          (sizeof(CDemonFilter),"..\\core\\dfilter.cpp",0x58);
+                          (sizeof(CDemonFilter),"..\\core\\dfilter.cpp",88);
   pCVar3 = (CDemonFilter *)0x0;
   if (this_ptr_00 != (CDemonFilter *)0x0) {
     pCVar3 = core_dfilter_cpp_CDemonFilter_ctor_FUN_004701f0(this_ptr_00);
@@ -45,7 +45,7 @@ CDemonFilter * __cdecl core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060(CFil
   this_ptr->filters[iVar4] = pCVar3;
   if (pCVar3 == (CDemonFilter *)0x0) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
-    g_CurrentLineNumber = 0x59;
+    g_CurrentLineNumber = 89;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CFilterCache::getFilter - Out of memory");
   }
   core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(this_ptr->filters[iVar4],filter_name);

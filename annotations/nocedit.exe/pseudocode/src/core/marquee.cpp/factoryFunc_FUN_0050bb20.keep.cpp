@@ -12,7 +12,7 @@ CMarquee * __cdecl core_marquee_cpp_factoryFunc_FUN_0050bb20(void)
 {
   CMarquee *pCVar1;
   
-  pCVar1 = (CMarquee *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CMarquee),"..\\core\\marquee.cpp",0x22);
+  pCVar1 = (CMarquee *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CMarquee),"..\\core\\marquee.cpp",34);
   if (pCVar1 == (CMarquee *)0x0) {
     return (CMarquee *)0x0;
   }

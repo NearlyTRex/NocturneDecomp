@@ -32,10 +32,10 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
   byte *local_14;
 
   ptr = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                  (bitmap_height * 4,"..\\engine\\font.cpp",0x1b7);
+                  (bitmap_height * 4,"..\\engine\\font.cpp",439);
   if (ptr == (int *)0x0) {
     g_CurrentFilename = "..\\engine\\font.cpp";
-    g_CurrentLineNumber = 0x1b8;
+    g_CurrentLineNumber = 440;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
   pbVar6 = (byte *)this_ptr->bitmap_data[bitmap_count];
@@ -53,7 +53,7 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
   if (local_20 == this_ptr->load_flags) {
     _sprintf
               (local_16c,"No character markers found in font file (%s).",this_ptr->bitmap_files[bitmap_count]);
-    g_CurrentLineNumber = 0x1cd;
+    g_CurrentLineNumber = 461;
     g_CurrentFilename = "..\\engine\\font.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_16c);
   }
@@ -115,7 +115,7 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
             _sprintf
                       (local_16c,"Too many chars: fontfile %s, chars %d",
                        this_ptr->bitmap_files[bitmap_count],iVar9);
-            g_CurrentLineNumber = 0x201;
+            g_CurrentLineNumber = 513;
             g_CurrentFilename = "..\\engine\\font.cpp";
             core_main_c_displayErrorAndQuit_FUN_00506f10(local_16c);
           }

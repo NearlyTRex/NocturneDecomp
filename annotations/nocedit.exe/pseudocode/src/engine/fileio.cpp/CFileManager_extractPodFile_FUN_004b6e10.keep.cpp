@@ -64,7 +64,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
   }
   local_20 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (CStack_e84.filename,(char *)0x0,"rb","..\\engine\\fileio.cpp",
-                        0x94f);
+                        2383);
   if (local_20 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",CStack_e84.filename);
@@ -133,7 +133,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
       local_18 = local_18 + 1;
     } while (local_18 < CStack_e84.file_count);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\fileio.cpp",0x99a);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\fileio.cpp",2458);
   engine_2d_c_drawText_FUN_00401fd0("End.",0,g_WindowHeight + -0xc);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   if (this_ptr->batch_mode == 0) {

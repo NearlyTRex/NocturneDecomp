@@ -57,16 +57,16 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCa
   }
   _sprintf(local_114,"CTextureCache::load - Bad texture length : %s,%d",texture_name,size)
   ;
-  g_CurrentLineNumber = 0x101;
+  g_CurrentLineNumber = 257;
   g_CurrentFilename = "..\\engine\\texture.cpp";
   core_main_c_displayErrorAndQuit_FUN_00506f10(local_114);
 LAB_005dcc85:
   if (cache->texture_palette_ptrs[cache->current_texture_count] == (byte *)0x0) {
-    pbVar2 = (byte *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x300,"..\\engine\\texture.cpp",0x107);
+    pbVar2 = (byte *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x300,"..\\engine\\texture.cpp",263);
     cache->texture_palette_ptrs[cache->current_texture_count] = pbVar2;
     if (cache->texture_palette_ptrs[cache->current_texture_count] == (byte *)0x0) {
       g_CurrentFilename = "..\\engine\\texture.cpp";
-      g_CurrentLineNumber = 0x109;
+      g_CurrentLineNumber = 265;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureCache::load - Out of memory.  Heap is probably trashed or you're out of VM");
     }
   }
@@ -74,7 +74,7 @@ LAB_005dcc85:
   pcVar7 = strchr(local_114,'.');
   if (pcVar7 == (char *)0x0) {
     g_CurrentFilename = "..\\engine\\texture.cpp";
-    g_CurrentLineNumber = 0x111;
+    g_CurrentLineNumber = 273;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureCache::load - Can't find extension");
   }
   _sprintf(pcVar7,".act");
@@ -84,22 +84,22 @@ LAB_005dcc85:
   }
   else {
     _fread(cache->texture_palette_ptrs[cache->current_texture_count],0x100,3,p_Var3);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\texture.cpp",0x117);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\texture.cpp",279);
   }
   strcpy(cache->texture_names[cache->current_texture_count],texture_name);
   if (width != cache->texture_dimensions[cache->current_texture_count]) {
     if (cache->texture_data_ptrs[cache->current_texture_count] != (void *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460
                 (cache->texture_data_ptrs[cache->current_texture_count],
-                 "..\\engine\\texture.cpp",0x124);
+                 "..\\engine\\texture.cpp",292);
       if (cache->texture_opacity_ptrs[cache->current_texture_count] != (void *)0x0) {
         shape_memdbg_cpp_debugFree_FUN_0050f460
                   (cache->texture_opacity_ptrs[cache->current_texture_count],
-                   "..\\engine\\texture.cpp",0x126);
+                   "..\\engine\\texture.cpp",294);
         cache->texture_opacity_ptrs[cache->current_texture_count] = (void *)0x0;
       }
     }
-    pvVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\engine\\texture.cpp",0x12a);
+    pvVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\engine\\texture.cpp",298);
     cache->texture_data_ptrs[cache->current_texture_count] = pvVar4;
     if (cache->texture_data_ptrs[cache->current_texture_count] == (void *)0x0) {
       g_CurrentFilename = "..\\engine\\texture.cpp";
@@ -117,7 +117,7 @@ LAB_005dcc85:
   }
   else {
     _fread(cache->texture_data_ptrs[cache->current_texture_count],width,width,p_Var3);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\texture.cpp",0x13a);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\texture.cpp",314);
   }
   strcpy(local_114,texture_name);
   pcVar7 = strchr(local_114,'.');
@@ -127,7 +127,7 @@ LAB_005dcc85:
     if (cache->texture_opacity_ptrs[cache->current_texture_count] != (void *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460
                 (cache->texture_opacity_ptrs[cache->current_texture_count],
-                 "..\\engine\\texture.cpp",0x14e);
+                 "..\\engine\\texture.cpp",334);
       cache->texture_opacity_ptrs[cache->current_texture_count] = (void *)0x0;
     }
   }
@@ -136,13 +136,13 @@ LAB_005dcc85:
       if (cache->texture_opacity_ptrs[cache->current_texture_count] != (void *)0x0) {
         shape_memdbg_cpp_debugFree_FUN_0050f460
                   (cache->texture_opacity_ptrs[cache->current_texture_count],
-                   "..\\engine\\texture.cpp",0x146);
+                   "..\\engine\\texture.cpp",326);
       }
-      pvVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\engine\\texture.cpp",0x148);
+      pvVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\engine\\texture.cpp",328);
       cache->texture_opacity_ptrs[cache->current_texture_count] = pvVar4;
     }
     _fread(cache->texture_opacity_ptrs[cache->current_texture_count],width,width,p_Var3);
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\texture.cpp",0x14b);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\texture.cpp",331);
   }
   cache->texture_dimensions[cache->current_texture_count] = width;
   iVar5 = cache->current_texture_count;

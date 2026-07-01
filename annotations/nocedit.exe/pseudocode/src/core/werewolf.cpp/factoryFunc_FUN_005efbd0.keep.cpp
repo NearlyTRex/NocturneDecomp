@@ -13,7 +13,7 @@ CWerewolf * __cdecl core_werewolf_cpp_factoryFunc_FUN_005efbd0(void)
   CWerewolf *pCVar1;
   
   pCVar1 = (CWerewolf *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (sizeof(CWerewolf),"..\\core\\werewolf.cpp",0x59);
+                     (sizeof(CWerewolf),"..\\core\\werewolf.cpp",89);
   if (pCVar1 == (CWerewolf *)0x0) {
     return (CWerewolf *)0x0;
   }

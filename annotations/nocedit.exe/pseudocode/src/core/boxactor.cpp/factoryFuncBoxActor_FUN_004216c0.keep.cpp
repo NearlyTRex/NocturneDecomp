@@ -12,7 +12,7 @@ CBoxActor * __cdecl core_boxactor_cpp_factoryFuncBoxActor_FUN_004216c0(void)
 {
   CBoxActor *pCVar1;
   
-  pCVar1 = (CBoxActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBoxActor),"..\\core\\boxactor.cpp",0x39)
+  pCVar1 = (CBoxActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBoxActor),"..\\core\\boxactor.cpp",57)
   ;
   if (pCVar1 == (CBoxActor *)0x0) {
     return (CBoxActor *)0x0;

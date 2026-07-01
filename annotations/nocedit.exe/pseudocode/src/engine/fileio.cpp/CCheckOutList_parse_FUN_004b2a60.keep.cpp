@@ -29,7 +29,7 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
       iVar3 = _fscanf(*file,"%[^=]= %[^\n]\n",local_178.name,local_178.value);
       if (iVar3 != 2) {
         if (*file != (_FILE *)0x0) {
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",0xc4);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",196);
           *file = (_FILE *)0x0;
         }
         pcVar7 = "Checkout file is corrupt, or file I/O error.\nGet Fletch, this is a serious situation.";
@@ -66,7 +66,7 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
       iVar3 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(this_ptr,local_178.name);
       if (-1 < iVar3) {
         if (*file != (_FILE *)0x0) {
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",0xc4);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",196);
           *file = (_FILE *)0x0;
         }
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -77,7 +77,7 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
       iVar3 = engine_fileio_cpp_CCheckOutList_add_FUN_004b2d00(this_ptr,&local_178);
     } while (iVar3 != 0);
     if (*file != (_FILE *)0x0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",0xc4);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",196);
       *file = (_FILE *)0x0;
     }
     pcVar7 = "Out of memory reading checkout file...Restart the application NOW.\nBetter yet, reboot the computer.";
@@ -89,7 +89,7 @@ LAB_004b2acd:
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7);
 LAB_004b2ad5:
   if (*file != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",0xc4);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(*file,"..\\engine\\fileio.cpp",196);
     *file = (_FILE *)0x0;
   }
   engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(this_ptr);

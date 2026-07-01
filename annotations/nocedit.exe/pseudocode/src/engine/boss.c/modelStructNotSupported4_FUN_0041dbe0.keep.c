@@ -11,7 +11,7 @@ void __stack_esi engine_boss_c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeader
 
 {
   g_CurrentFilename = "..\\engine\\boss.c";
-  g_CurrentLineNumber = 0x44;
+  g_CurrentLineNumber = 68;
   core_main_c_displayErrorAndQuit_FUN_00506f10("modelStruct not supported");
   return;
 }

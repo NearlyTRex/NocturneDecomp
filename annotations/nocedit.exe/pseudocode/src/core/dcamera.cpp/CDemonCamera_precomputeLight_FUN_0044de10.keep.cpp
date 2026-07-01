@@ -72,7 +72,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCa
       (light_source->corona_depth_buffer == (ushort **)0x0)) ||
      (light_source->corona_lightmap_indices == (int *)0x0)) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
-    g_CurrentLineNumber = 0x6ba;
+    g_CurrentLineNumber = 1722;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CDemonCamera::precomputeLight - Too many lights visible from camera %s",this_ptr->camera_name);
   }

@@ -18,7 +18,7 @@ void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
   
   if (0 < g_VertexCount) {
     dest = (uint *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                     (g_VertexCount << 2,"..\\shape\\design.c",0x189a);
+                     (g_VertexCount << 2,"..\\shape\\design.c",6298);
     if (dest == (uint *)0x0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("ERROR: Can't allocate memory to remove unused vertices.",0,0);
@@ -54,7 +54,7 @@ void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
                dest[g_ModelPolygonData[local_1c].vertex_indices[local_2c]];
         }
       }
-      shape_memdbg_cpp_debugFree_FUN_0050f460(dest,"..\\shape\\design.c",0x18d4);
+      shape_memdbg_cpp_debugFree_FUN_0050f460(dest,"..\\shape\\design.c",6356);
     }
   }
   return;

@@ -44,7 +44,7 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_p
   }
   if (local_18 < 0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
-    g_CurrentLineNumber = 0x2bf;
+    g_CurrentLineNumber = 703;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't orient bone with no children!");
   }
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830

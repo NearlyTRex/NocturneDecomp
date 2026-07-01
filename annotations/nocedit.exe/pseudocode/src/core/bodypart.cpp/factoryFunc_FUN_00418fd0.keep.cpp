@@ -12,7 +12,7 @@ CBodyPart * __cdecl core_bodypart_cpp_factoryFunc_FUN_00418fd0(void)
 {
   CBodyPart *pCVar1;
   
-  pCVar1 = (CBodyPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBodyPart),"..\\core\\bodypart.cpp",0x7c)
+  pCVar1 = (CBodyPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBodyPart),"..\\core\\bodypart.cpp",124)
   ;
   if (pCVar1 == (CBodyPart *)0x0) {
     return (CBodyPart *)0x0;

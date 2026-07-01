@@ -14,7 +14,7 @@ CVector3i * __cdecl shape_design_c_findVertexListInModel_FUN_00468000(SMRGLHeade
   
   if (model_ptr == (SMRGLHeaderExtended *)0x0) {
     g_CurrentFilename = "..\\shape\\design.c";
-    g_CurrentLineNumber = 0x21ce;
+    g_CurrentLineNumber = 8654;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find vlist");
     return (CVector3i *)0x0;
   }

@@ -30,12 +30,12 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   remove("test.raw");
   local_20 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                        (g_CEditorToolsPtr,"Write file?");
-  pCVar1 = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CMP3Decoder),"..\\sound\\mp3.cpp",0xdc8);
+  pCVar1 = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CMP3Decoder),"..\\sound\\mp3.cpp",3528);
   local_24 = (CMP3Decoder *)0x0;
   if (pCVar1 != (CMP3Decoder *)0x0) {
     local_24 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(pCVar1);
   }
-  this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CMP3Decoder),"..\\sound\\mp3.cpp",0xdc8)
+  this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CMP3Decoder),"..\\sound\\mp3.cpp",3528)
   ;
   pCVar2 = (CMP3Decoder *)0x0;
   if (this_ptr != (CMP3Decoder *)0x0) {
@@ -48,18 +48,18 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   samples_requested = (SIZE_T)(0x20000 / (longlong)(int)local_1c);
   local_28 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        ("pixies.raw",(char *)0x0,"wb","..\\sound\\mp3.cpp",
-                        0xdd2);
+                        3538);
   if (local_28 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
-    g_CurrentLineNumber = 0xdd3;
+    g_CurrentLineNumber = 3539;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Hose!");
   }
   local_30 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        ("pixies2.raw",(char *)0x0,"wb","..\\sound\\mp3.cpp",
-                        0xdd4);
+                        3540);
   if (local_30 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
-    g_CurrentLineNumber = 0xdd5;
+    g_CurrentLineNumber = 3541;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Hose!");
   }
   iVar2 = 0;
@@ -77,8 +77,8 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
                 (g_CEditorToolsPtr,"%.1fk",(double)iVar2 * 0.0009765625);
     }
   } while (size == samples_requested);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\sound\\mp3.cpp",0xde8);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_30,"..\\sound\\mp3.cpp",0xde9);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\sound\\mp3.cpp",3560);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_30,"..\\sound\\mp3.cpp",3561);
   g_CurrentDebugFilename = "..\\sound\\mp3.cpp";
   g_CurrentDebugLine = 0xdeb;
   pCVar2 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(local_24,0);
@@ -91,7 +91,7 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   }
   _time(&local_34);
   local_14 = local_34 - local_38;
-  g_CurrentLineNumber = 0xdf1;
+  g_CurrentLineNumber = 3569;
   g_CurrentFilename = "..\\sound\\mp3.cpp";
   local_18 = iVar2;
   core_main_c_displayErrorAndQuit_FUN_00506f10

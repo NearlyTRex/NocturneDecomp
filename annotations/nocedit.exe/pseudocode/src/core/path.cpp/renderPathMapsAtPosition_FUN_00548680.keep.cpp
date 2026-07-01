@@ -21,7 +21,7 @@ void __cdecl core_path_cpp_renderPathMapsAtPosition_FUN_00548680(CVector3f *posi
     do {
       if (g_PathMapList[iVar2] == (CPathMap *)0x0) {
         g_CurrentFilename = "..\\core\\path.cpp";
-        g_CurrentLineNumber = 0x6b5;
+        g_CurrentLineNumber = 1717;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Global pathmap list corruption");
       }
       this_ptr = g_PathMapList[iVar2];

@@ -57,7 +57,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(int color_v
     }
   }
   g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
-  g_CurrentLineNumber = 0xf6;
+  g_CurrentLineNumber = 246;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid bitsPerPixel in CDrawSurface::setColor");
   return;
 }

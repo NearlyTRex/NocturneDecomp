@@ -12,7 +12,7 @@ void __cdecl core_game_cpp_CGame_slamDT_FUN_004e3080(CGame *this_ptr,float delta
 {
   if (delta_time < 0.0) {
     g_CurrentFilename = "..\\core\\game.cpp";
-    g_CurrentLineNumber = 0x10ac;
+    g_CurrentLineNumber = 4268;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CGame::slamDT - invalid dt!");
   }
   this_ptr->delta_time_float = delta_time;

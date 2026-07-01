@@ -251,7 +251,7 @@ LAB_005c17d2:
     break;
   default:
     g_CurrentFilename = "..\\core\\stranger.cpp";
-    g_CurrentLineNumber = 0xd3a;
+    g_CurrentLineNumber = 3386;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze - invalid pickUpType: %d",iStack_30);
     goto LAB_005c1c40;
   }

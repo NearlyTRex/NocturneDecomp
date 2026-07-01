@@ -138,7 +138,7 @@ LAB_005e24c7:
     break;
   default:
     g_CurrentFilename = "..\\core\\turret.cpp";
-    g_CurrentLineNumber = 0x15a;
+    g_CurrentLineNumber = 346;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTurret::process - invalid state");
   }
   if (-1 < (this_ptr->base).muzzle_flash_color.r) {

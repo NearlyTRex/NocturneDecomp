@@ -32,7 +32,7 @@ void __cdecl core_fileman_cpp_preprocessMusicFiles_FUN_004bd750(char *source_dir
       strcpy(local_64c.found_path,pcVar2);
       iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_64c);
       if (iVar3 == 0) {
-        g_CurrentLineNumber = 0x3c;
+        g_CurrentLineNumber = 60;
         g_CurrentFilename = "..\\core\\fileman.cpp";
         core_main_c_displayErrorAndQuit_FUN_00506f10("Can't access %s",local_64c.found_path);
       }

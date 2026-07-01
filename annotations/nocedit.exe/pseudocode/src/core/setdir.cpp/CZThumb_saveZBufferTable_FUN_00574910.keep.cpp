@@ -27,11 +27,11 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this
   this_ptr->height = height;
   this_ptr->projection_scale = projection_scale;
   pvVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                     (this_ptr->width * this_ptr->height * 4,"..\\core\\setdir.cpp",0x9e);
+                     (this_ptr->width * this_ptr->height * 4,"..\\core\\setdir.cpp",158);
   this_ptr->zbuffer_data = pvVar2;
   if (pvVar2 == (void *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
-    g_CurrentLineNumber = 0x9f;
+    g_CurrentLineNumber = 159;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
   if (file_handle != (_FILE *)0x0) {
@@ -43,7 +43,7 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this
   iVar1 = this_ptr->height;
   if (g_ZBufferScanlineArrayBackup[0] != (uint *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
-    g_CurrentLineNumber = 0x67;
+    g_CurrentLineNumber = 103;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveZBufferTable - already saved!");
   }
   if (0 < iVar1) {
@@ -64,7 +64,7 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this
   iVar1 = this_ptr->height;
   if (g_ZBufferScanlineArrayBackup[0] == (uint *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
-    g_CurrentLineNumber = 0x70;
+    g_CurrentLineNumber = 112;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveZBufferTable - not saved!");
   }
   if (0 < iVar1) {

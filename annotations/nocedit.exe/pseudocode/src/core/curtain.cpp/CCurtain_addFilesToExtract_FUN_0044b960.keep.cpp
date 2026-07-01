@@ -20,7 +20,7 @@ void __cdecl core_curtain_cpp_CCurtain_addFilesToExtract_FUN_0044b960(CCurtain *
   pcVar5 = strchr(local_108,'.');
   if (pcVar5 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\curtain.cpp";
-    g_CurrentLineNumber = 0x438;
+    g_CurrentLineNumber = 1080;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Cannot find curtain texture extension");
   }
   strcpy(pcVar5,".ACT");

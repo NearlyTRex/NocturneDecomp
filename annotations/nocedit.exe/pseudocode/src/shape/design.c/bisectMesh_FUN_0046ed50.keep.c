@@ -36,7 +36,7 @@ void __cdecl shape_design_c_bisectMesh_FUN_0046ed50(void)
     pSVar16 = g_ModelPolygonData + local_18;
     if (g_ModelPolygonData[local_18].vertex_indices_count != 3) {
       g_CurrentFilename = "..\\shape\\design.c";
-      g_CurrentLineNumber = 0x2dac;
+      g_CurrentLineNumber = 11692;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Not 3 faces");
     }
     iVar14 = g_PolygonCount;

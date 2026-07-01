@@ -44,12 +44,12 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
   _fread(&local_2c,4,1,file_handle);
   if (local_2c < 1) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
-    g_CurrentLineNumber = 0x148;
+    g_CurrentLineNumber = 328;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::loadBinary - invalid version");
   }
   if (g_GeoFileFormatVersion < local_2c) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
-    g_CurrentLineNumber = 0x14b;
+    g_CurrentLineNumber = 331;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::loadBinary - file is newer than .exe!");
   }
   _fread(&this_ptr->grid_coord,4,1,file_handle);
@@ -77,7 +77,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
         SVar1 = buffer->triangle_count;
         if (SVar1 != 0) {
           pSVar3 = (SIZE_T *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                             (SVar1 * 0x38 + 4,"..\\core\\dtrace.cpp",0x172);
+                             (SVar1 * 0x38 + 4,"..\\core\\dtrace.cpp",370);
           pSVar4 = pSVar3;
           if (pSVar3 != (SIZE_T *)0x0) {
             pSVar4 = pSVar3 + 1;
@@ -85,11 +85,11 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
           }
           buffer->triangle_list = (CDemonTriangle *)pSVar4;
           pvVar5 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                             (buffer->triangle_count,"..\\core\\dtrace.cpp",0x173);
+                             (buffer->triangle_count,"..\\core\\dtrace.cpp",371);
           buffer->triangle_flags = (uchar *)pvVar5;
           if ((buffer->triangle_list == (CDemonTriangle *)0x0) || (pvVar5 == (void *)0x0)) {
             g_CurrentFilename = "..\\core\\dtrace.cpp";
-            g_CurrentLineNumber = 0x175;
+            g_CurrentLineNumber = 373;
             core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::loadBinary - out of memory!");
           }
           if (0 < buffer->triangle_count) {
@@ -101,7 +101,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
             } while (iVar1 < buffer->triangle_count);
           }
           pCVar6 = (CDemonPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                             (sizeof(CDemonPart),"..\\core\\dtrace.cpp",0x17a);
+                             (sizeof(CDemonPart),"..\\core\\dtrace.cpp",378);
           pCVar7 = (CDemonPart *)0x0;
           if (pCVar6 != (CDemonPart *)0x0) {
             pCVar7 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(pCVar6);
@@ -133,7 +133,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
         }
         else {
           this_ptr_00 = (CDemonPart *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                                  (sizeof(CDemonPart),"..\\core\\dtrace.cpp",0x19a);
+                                  (sizeof(CDemonPart),"..\\core\\dtrace.cpp",410);
           pCVar2 = (CDemonPart *)0x0;
           if (this_ptr_00 != (CDemonPart *)0x0) {
             pCVar2 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(this_ptr_00);
@@ -141,7 +141,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
           piVar4->part_ptr = pCVar2;
           if (pCVar2 == (CDemonPart *)0x0) {
             g_CurrentFilename = "..\\core\\dtrace.cpp";
-            g_CurrentLineNumber = 0x19b;
+            g_CurrentLineNumber = 411;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for cube model loading dtrace database");
           }
           core_dtrace_cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710
@@ -224,7 +224,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
   }
   if ((file_handle->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
-    g_CurrentLineNumber = 0x1ff;
+    g_CurrentLineNumber = 511;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::loadBinary - error reading file");
     return;
   }

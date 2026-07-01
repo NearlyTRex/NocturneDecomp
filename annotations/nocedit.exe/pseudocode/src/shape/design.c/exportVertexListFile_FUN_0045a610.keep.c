@@ -17,7 +17,7 @@ void __cdecl shape_design_c_exportVertexListFile_FUN_0045a610(void)
   file = engine_dosio_cpp_getFile_FUN_00481a50("models","input.lst","wt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\shape\\design.c";
-    g_CurrentLineNumber = 0x6ca;
+    g_CurrentLineNumber = 1738;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to open input.lst");
   }
   _fprintf(file,"%d\n",g_VertexCount);
@@ -35,6 +35,6 @@ void __cdecl shape_design_c_exportVertexListFile_FUN_0045a610(void)
     }
     _fprintf(file,"\n");
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x6d8);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",1752);
   return;
 }

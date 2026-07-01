@@ -12,7 +12,7 @@ void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_00513460(int *key_code_ptr,ch
 {
   if (0x1d < g_CustomKeyCount) {
     g_CurrentFilename = "..\\core\\menu.cpp";
-    g_CurrentLineNumber = 0x82b;
+    g_CurrentLineNumber = 2091;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many custom keys!");
   }
   g_CustomKeyPointers[g_CustomKeyCount] = key_code_ptr;

@@ -98,7 +98,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
     g_AuditRecordCount = 0;
     if (g_AuditRecordsArray != (CPodAuditRecord *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460
-                (g_AuditRecordsArray,"..\\engine\\fileio.cpp",0x79a);
+                (g_AuditRecordsArray,"..\\engine\\fileio.cpp",1946);
       g_AuditRecordsArray = (CPodAuditRecord *)0x0;
     }
     iVar3 = engine_fileio_cpp_establishUserIdentity_FUN_004b1c00();
@@ -117,10 +117,10 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
             g_AuditRecordsArray =
                  (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                            (g_AuditRecordsArray,g_AuditRecordCount * sizeof(CPodAuditRecord),
-                            "..\\engine\\fileio.cpp",0x7a1);
+                            "..\\engine\\fileio.cpp",1953);
             if (g_AuditRecordsArray == (CPodAuditRecord *)0x0) {
               g_CurrentFilename = "..\\engine\\fileio.cpp";
-              g_CurrentLineNumber = 0x7a2;
+              g_CurrentLineNumber = 1954;
               core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
             }
             pCVar4 = g_AuditRecordsArray + g_AuditRecordCount + -1;
@@ -171,10 +171,10 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
               g_AuditRecordsArray =
                    (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                              (g_AuditRecordsArray,g_AuditRecordCount * sizeof(CPodAuditRecord),
-                              "..\\engine\\fileio.cpp",0x7a1);
+                              "..\\engine\\fileio.cpp",1953);
               if (g_AuditRecordsArray == (CPodAuditRecord *)0x0) {
                 g_CurrentFilename = "..\\engine\\fileio.cpp";
-                g_CurrentLineNumber = 0x7a2;
+                g_CurrentLineNumber = 1954;
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
               }
               pCVar5 = g_AuditRecordsArray + g_AuditRecordCount + -1;
@@ -188,10 +188,10 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
         }
       }
       ptr = (SIZE_T *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
-                      (this_ptr->tracked_file_count,0x14,"..\\engine\\fileio.cpp",0x825);
+                      (this_ptr->tracked_file_count,0x14,"..\\engine\\fileio.cpp",2085);
       if (ptr == (SIZE_T *)0x0) {
         g_CurrentFilename = "..\\engine\\fileio.cpp";
-        g_CurrentLineNumber = 0x826;
+        g_CurrentLineNumber = 2086;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
       }
       local_44 = 0;
@@ -205,10 +205,10 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
         } while (iVar3 < this_ptr->tracked_file_count);
       }
       ptr_00 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                         (local_44,"..\\engine\\fileio.cpp",0x82e);
+                         (local_44,"..\\engine\\fileio.cpp",2094);
       if (ptr_00 == (void *)0x0) {
         g_CurrentFilename = "..\\engine\\fileio.cpp";
-        g_CurrentLineNumber = 0x82f;
+        g_CurrentLineNumber = 2095;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
       }
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -244,13 +244,13 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
       if (local_140c.base.item_count == 0) {
         if (local_30 != local_44) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
-          g_CurrentLineNumber = 0x861;
+          g_CurrentLineNumber = 2145;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Creating %s...",local_290);
         local_20 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                             (local_290,(char *)0x0,"wb","..\\engine\\fileio.cpp",0x866
+                             (local_290,(char *)0x0,"wb","..\\engine\\fileio.cpp",2150
                              );
         if (local_20 != (_FILE *)0x0) {
           _sprintf(local_aa8,"Building %s...",local_290);
@@ -267,7 +267,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
               _fseek(local_20,local_28[2],0);
               local_18 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                    (*local_5c,(char *)0x0,"rb","..\\engine\\fileio.cpp"
-                                    ,0x876);
+                                    ,2166);
               if (local_18 == (_FILE *)0x0) {
                 pcVar11 = "Can't open %s";
                 goto LAB_004b629d;
@@ -290,7 +290,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                   goto LAB_004b629d;
                 }
               }
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0x88e);
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",2190);
               strcpy(g_WorkingAuditRecord.filename,*pacVar10);
               g_WorkingAuditRecord.file_offset = local_28[3];
               g_WorkingAuditRecord.compressed_size = local_28[1];
@@ -304,11 +304,11 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 g_AuditRecordCount = iVar7;
                 g_AuditRecordsArray =
                      (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                               (g_AuditRecordsArray,iVar7 * sizeof(CPodAuditRecord),"..\\engine\\fileio.cpp",0x7a1
+                               (g_AuditRecordsArray,iVar7 * sizeof(CPodAuditRecord),"..\\engine\\fileio.cpp",1953
                                );
                 if (g_AuditRecordsArray == (CPodAuditRecord *)0x0) {
                   g_CurrentFilename = "..\\engine\\fileio.cpp";
-                  g_CurrentLineNumber = 0x7a2;
+                  g_CurrentLineNumber = 1954;
                   core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
                 }
                 pCVar5 = g_AuditRecordsArray + g_AuditRecordCount + -1;
@@ -326,11 +326,11 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 g_AuditRecordCount = iVar7;
                 g_AuditRecordsArray =
                      (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                               (g_AuditRecordsArray,iVar7 * sizeof(CPodAuditRecord),"..\\engine\\fileio.cpp",0x7a1
+                               (g_AuditRecordsArray,iVar7 * sizeof(CPodAuditRecord),"..\\engine\\fileio.cpp",1953
                                );
                 if (g_AuditRecordsArray == (CPodAuditRecord *)0x0) {
                   g_CurrentFilename = "..\\engine\\fileio.cpp";
-                  g_CurrentLineNumber = 0x7a2;
+                  g_CurrentLineNumber = 1954;
                   core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
                 }
                 pCVar15 = g_AuditRecordsArray + g_AuditRecordCount + -1;
@@ -355,13 +355,13 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
           _fwrite(&local_c8,sizeof(SPod2Header),1,local_20);
           _fwrite(ptr,0x14,this_ptr->tracked_file_count,local_20);
           _fwrite(ptr_00,1,local_44,local_20);
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\fileio.cpp",0x8c3);
-          shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\engine\\fileio.cpp",0x8c8);
-          shape_memdbg_cpp_debugFree_FUN_0050f460(ptr_00,"..\\engine\\fileio.cpp",0x8ca);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\fileio.cpp",2243);
+          shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\engine\\fileio.cpp",2248);
+          shape_memdbg_cpp_debugFree_FUN_0050f460(ptr_00,"..\\engine\\fileio.cpp",2250);
           g_AuditRecordCount = 0;
           if (g_AuditRecordsArray != (CPodAuditRecord *)0x0) {
             shape_memdbg_cpp_debugFree_FUN_0050f460
-                      (g_AuditRecordsArray,"..\\engine\\fileio.cpp",0x79a);
+                      (g_AuditRecordsArray,"..\\engine\\fileio.cpp",1946);
             g_AuditRecordsArray = (CPodAuditRecord *)0x0;
           }
           engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000((CPod *)g_CDemonPodPtr,local_290);
@@ -415,17 +415,17 @@ LAB_004b629d:
       g_AuditRecordCount = 0;
       if (g_AuditRecordsArray != (CPodAuditRecord *)0x0) {
         shape_memdbg_cpp_debugFree_FUN_0050f460
-                  (g_AuditRecordsArray,"..\\engine\\fileio.cpp",0x79a);
+                  (g_AuditRecordsArray,"..\\engine\\fileio.cpp",1946);
         g_AuditRecordsArray = (CPodAuditRecord *)0x0;
       }
       if (local_20 != (_FILE *)0x0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\fileio.cpp",0x85b);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\fileio.cpp",2139);
       }
       if (local_18 != (_FILE *)0x0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0x85c);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",2140);
       }
       if (ptr != (SIZE_T *)0x0) {
-        shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\engine\\fileio.cpp",0x85d);
+        shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\engine\\fileio.cpp",2141);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_140c,0);
       engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1838,0);

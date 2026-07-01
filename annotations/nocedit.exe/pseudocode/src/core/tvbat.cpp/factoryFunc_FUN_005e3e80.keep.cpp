@@ -12,7 +12,7 @@ CTVBat * __cdecl core_tvbat_cpp_factoryFunc_FUN_005e3e80(void)
 {
   CTVBat *pCVar1;
   
-  pCVar1 = (CTVBat *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CTVBat),"..\\core\\tvbat.cpp",0x39);
+  pCVar1 = (CTVBat *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CTVBat),"..\\core\\tvbat.cpp",57);
   if (pCVar1 == (CTVBat *)0x0) {
     return (CTVBat *)0x0;
   }

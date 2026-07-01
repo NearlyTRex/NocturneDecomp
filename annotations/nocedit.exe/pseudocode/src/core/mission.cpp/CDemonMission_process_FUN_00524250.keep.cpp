@@ -18,7 +18,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
     if (0 < this_ptr->delete_queue_count) {
       do {
         core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                  (this_ptr->delete_queue_actors[iVar3],"..\\core\\mission.cpp",0x46b);
+                  (this_ptr->delete_queue_actors[iVar3],"..\\core\\mission.cpp",1131);
         core_mission_cpp_CDemonMission_removeActor_FUN_00523f20
                   (this_ptr,this_ptr->delete_queue_actors[iVar3],this_ptr->delete_queue_flags[iVar3]);
         iVar3 = iVar3 + 1;

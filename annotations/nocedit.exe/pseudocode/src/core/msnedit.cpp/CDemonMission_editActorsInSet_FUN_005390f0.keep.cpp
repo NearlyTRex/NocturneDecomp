@@ -281,7 +281,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         break;
       default:
         g_CurrentFilename = "..\\core\\msnedit.cpp";
-        g_CurrentLineNumber = 0x595;
+        g_CurrentLineNumber = 1429;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid cameraMode!");
       }
       core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
@@ -761,7 +761,7 @@ LAB_00539e00:
             pCVar11 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,pcVar13);
             if (pCVar11 == (CDemonActor *)0x0) {
               g_CurrentFilename = "..\\core\\msnedit.cpp";
-              g_CurrentLineNumber = 0x739;
+              g_CurrentLineNumber = 1849;
               core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze.");
             }
             pCVar11->is_editor_hidden = 0;
@@ -861,7 +861,7 @@ LAB_0053a88c:
         break;
       default:
         g_CurrentFilename = "..\\core\\msnedit.cpp";
-        g_CurrentLineNumber = 0x78b;
+        g_CurrentLineNumber = 1931;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid cameraMode!");
       }
       FLOAT_02f7c540 = 5.0f;

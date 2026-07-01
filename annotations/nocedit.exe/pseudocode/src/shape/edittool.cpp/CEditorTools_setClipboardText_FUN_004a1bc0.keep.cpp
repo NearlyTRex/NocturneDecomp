@@ -37,7 +37,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEdit
   }
   g_ClipboardBackupText = (char *)
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                 (g_ClipboardBackupText,uVar4,"..\\shape\\edittool.cpp",0x99f);
+                 (g_ClipboardBackupText,uVar4,"..\\shape\\edittool.cpp",2463);
   if (g_ClipboardBackupText == (char *)0x0) {
     return;
   }

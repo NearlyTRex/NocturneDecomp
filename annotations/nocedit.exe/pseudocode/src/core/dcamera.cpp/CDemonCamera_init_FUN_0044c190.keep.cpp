@@ -35,21 +35,21 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(CDemonCamera *this_
   }
   pvVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      (this_ptr->framebuffer_width * this_ptr->framebuffer_height * 4 + 0x1010,
-                      "..\\core\\dcamera.cpp",0x240);
+                      "..\\core\\dcamera.cpp",576);
   this_ptr->framebuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
-    g_CurrentLineNumber = 0x241;
+    g_CurrentLineNumber = 577;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCamera::init - Unable to alloc frame buffer");
   }
   memset(pvVar2,0,this_ptr->framebuffer_width * this_ptr->framebuffer_height * 4 + 0x1010);
   pvVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      (this_ptr->framebuffer_width * this_ptr->framebuffer_height * 4 + 0x1010,
-                      "..\\core\\dcamera.cpp",0x245);
+                      "..\\core\\dcamera.cpp",581);
   this_ptr->zbuffer_raw = pvVar2;
   if (pvVar2 == (void *)0x0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
-    g_CurrentLineNumber = 0x246;
+    g_CurrentLineNumber = 582;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCamera::init - Unable to alloc z buffer");
   }
   memset(pvVar2,0,this_ptr->framebuffer_width * this_ptr->framebuffer_height * 4 + 0x1010);

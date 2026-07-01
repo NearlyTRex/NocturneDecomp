@@ -12,7 +12,7 @@ CBarrier * __cdecl core_barrier_cpp_factoryFunc_FUN_00414180(void)
 {
   CBarrier *pCVar1;
   
-  pCVar1 = (CBarrier *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBarrier),"..\\core\\barrier.cpp",0x26);
+  pCVar1 = (CBarrier *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CBarrier),"..\\core\\barrier.cpp",38);
   if (pCVar1 == (CBarrier *)0x0) {
     return (CBarrier *)0x0;
   }

@@ -12,7 +12,7 @@ CAmmoBox * __cdecl core_ammobox_cpp_factoryFunc_FUN_00411560(void)
 {
   CAmmoBox *pCVar1;
   
-  pCVar1 = (CAmmoBox *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CAmmoBox),"..\\core\\ammobox.cpp",0x25);
+  pCVar1 = (CAmmoBox *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CAmmoBox),"..\\core\\ammobox.cpp",37);
   if (pCVar1 == (CAmmoBox *)0x0) {
     return (CAmmoBox *)0x0;
   }

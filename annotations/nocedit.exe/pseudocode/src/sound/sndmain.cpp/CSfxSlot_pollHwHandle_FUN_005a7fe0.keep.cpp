@@ -22,7 +22,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
   }
   if (this_ptr->sample == (CSfxSample *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0xb71;
+    g_CurrentLineNumber = 2929;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::pollHwHandle - no sample?");
   }
   iVar1 = (*g_CSoundDevicePtr->vtable->isSfxPlaying)(g_CSoundDevicePtr,this_ptr);

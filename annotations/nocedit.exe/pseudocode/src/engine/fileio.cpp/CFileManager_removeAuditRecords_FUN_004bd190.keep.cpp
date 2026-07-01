@@ -57,7 +57,7 @@ LAB_004bd3c3:
     g_AuditRecordCount = 0;
     if (g_AuditRecordsArray != (CPodAuditRecord *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460
-                (g_AuditRecordsArray,"..\\engine\\fileio.cpp",0x79a);
+                (g_AuditRecordsArray,"..\\engine\\fileio.cpp",1946);
       g_AuditRecordsArray = (CPodAuditRecord *)0x0;
     }
     record_index = 0;
@@ -73,10 +73,10 @@ LAB_004bd3c3:
           g_AuditRecordsArray =
                (CPodAuditRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                          (g_AuditRecordsArray,g_AuditRecordCount * sizeof(CPodAuditRecord),
-                          "..\\engine\\fileio.cpp",0x7a1);
+                          "..\\engine\\fileio.cpp",1953);
           if (g_AuditRecordsArray == (CPodAuditRecord *)0x0) {
             g_CurrentFilename = "..\\engine\\fileio.cpp";
-            g_CurrentLineNumber = 0x7a2;
+            g_CurrentLineNumber = 1954;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
           }
           pCVar3 = g_AuditRecordsArray + g_AuditRecordCount + -1;
@@ -95,7 +95,7 @@ LAB_004bd3c3:
     else {
       file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_9d8.filename,(char *)0x0,"r+b","..\\engine\\fileio.cpp",
-                        0x1170);
+                        4464);
       if (file == (_FILE *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't open %s to remove audit records",local_9d8.filename); // NOTE: original binary is missing this argument (bug)
@@ -110,12 +110,12 @@ LAB_004bd3c3:
         g_AuditRecordCount = 0;
         if (g_AuditRecordsArray != (CPodAuditRecord *)0x0) {
           shape_memdbg_cpp_debugFree_FUN_0050f460
-                    (g_AuditRecordsArray,"..\\engine\\fileio.cpp",0x79a);
+                    (g_AuditRecordsArray,"..\\engine\\fileio.cpp",1946);
           g_AuditRecordsArray = (CPodAuditRecord *)0x0;
         }
         _fflush(file);
         if ((file->_flag & 0x20) == 0) {
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x118b);
+          shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",4491);
           engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000((CPod *)g_CDemonPodPtr,local_204);
           engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8,0);
           return;
@@ -125,12 +125,12 @@ LAB_004bd3c3:
       }
     }
     if (file != (_FILE *)0x0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x1169);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",4457);
     }
     g_AuditRecordCount = 0;
     if (g_AuditRecordsArray != (CPodAuditRecord *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460
-                (g_AuditRecordsArray,"..\\engine\\fileio.cpp",0x79a);
+                (g_AuditRecordsArray,"..\\engine\\fileio.cpp",1946);
       g_AuditRecordsArray = (CPodAuditRecord *)0x0;
     }
     engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8,0);

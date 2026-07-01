@@ -139,7 +139,7 @@ switchD_004d1aab_caseD_7:
     return;
   default:
     g_CurrentFilename = "..\\core\\frankgen.cpp";
-    g_CurrentLineNumber = 0x13e;
+    g_CurrentLineNumber = 318;
     core_main_c_displayErrorAndQuit_FUN_00506f10("WTF!");
     return;
   }

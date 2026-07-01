@@ -13,7 +13,7 @@ CGabriella * __cdecl core_gabriela_cpp_factoryFunc_FUN_004d2ae0(void)
   CGabriella *pCVar1;
   
   pCVar1 = (CGabriella *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (sizeof(CGabriella),"..\\core\\gabriela.cpp",0xf0);
+                     (sizeof(CGabriella),"..\\core\\gabriela.cpp",240);
   if (pCVar1 == (CGabriella *)0x0) {
     return (CGabriella *)0x0;
   }

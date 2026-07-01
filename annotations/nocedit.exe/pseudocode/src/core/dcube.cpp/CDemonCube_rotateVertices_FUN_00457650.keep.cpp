@@ -31,7 +31,7 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *t
             (g_CDemonRendererPtr2,&g_ZeroVector.f);
   if (20000 < this_ptr->vertex_count) {
     g_CurrentFilename = "..\\core\\dcube.cpp";
-    g_CurrentLineNumber = 0x7bb;
+    g_CurrentLineNumber = 1979;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CDemonCube::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d",this_ptr->vertex_count,20000);
   }

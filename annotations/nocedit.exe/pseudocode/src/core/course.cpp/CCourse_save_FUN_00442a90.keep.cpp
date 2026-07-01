@@ -35,6 +35,6 @@ void __cdecl core_course_cpp_CCourse_save_FUN_00442a90(CCourse *this_ptr,char *f
       iVar10 = iVar10 + 1;
     } while (iVar10 < this_ptr->len);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",0x140);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",320);
   return;
 }

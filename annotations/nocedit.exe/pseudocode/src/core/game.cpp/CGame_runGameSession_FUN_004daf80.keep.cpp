@@ -122,7 +122,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
     core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
     core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(g_CNetGamePtr);
     core_level_cpp_CLevelLoader_cleanup_FUN_00504720(g_CLevelLoaderPtr);
-    shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\game.cpp",0x581);
+    shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\game.cpp",1409);
     g_HeroActors[g_LocalHeroIndex]->aim_mode = this_ptr->aim_mode;
     this_ptr->act_completion_state = 0;
     while( true ) {
@@ -345,7 +345,7 @@ LAB_004db434:
   fVar6 = (float)core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_00524e00
                            (g_CDemonMissionPtr);
   this_ptr->damageable_enemy_count = (int)fVar6;
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\game.cpp",0x683);
+  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\game.cpp",1667);
   engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);
   core_sound_cpp_CSound_shutdown_FUN_005b2f70(g_CSoundPtr);
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(this_ptr);
@@ -354,6 +354,6 @@ LAB_004db434:
   this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
   core_inv_cpp_freeInventory_FUN_004fd510();
-  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\game.cpp",0x6a7);
+  shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\game.cpp",1703);
   return local_1c;
 }

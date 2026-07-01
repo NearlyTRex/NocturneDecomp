@@ -60,7 +60,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this
                        (this_ptr,vertex_idx_1,vertex_idx_2,0);
   if (local_bc < 0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
-    g_CurrentLineNumber = 0x824;
+    g_CurrentLineNumber = 2084;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to collapse edge that doesn't exist!");
   }
   pCVar10 = this_ptr->vertex_data;
@@ -235,7 +235,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this
       }
       else {
         g_CurrentFilename = "..\\shape\\meshlod.cpp";
-        g_CurrentLineNumber = 0x992;
+        g_CurrentLineNumber = 2450;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Bug!");
       }
       if (local_84 < 0) {

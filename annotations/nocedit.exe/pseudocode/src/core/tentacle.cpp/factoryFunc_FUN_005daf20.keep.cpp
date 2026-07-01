@@ -13,7 +13,7 @@ CTentacle * __cdecl core_tentacle_cpp_factoryFunc_FUN_005daf20(void)
   CTentacle *pCVar1;
   
   pCVar1 = (CTentacle *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (sizeof(CTentacle),"..\\core\\tentacle.cpp",0x67);
+                     (sizeof(CTentacle),"..\\core\\tentacle.cpp",103);
   if (pCVar1 == (CTentacle *)0x0) {
     return (CTentacle *)0x0;
   }

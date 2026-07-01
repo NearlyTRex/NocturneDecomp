@@ -15,12 +15,12 @@ void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr,in
 
   if ((index < 0) || (this_ptr->list_size < index)) {
     g_CurrentFilename = "..\\core\\event.cpp";
-    g_CurrentLineNumber = 0xcd9;
+    g_CurrentLineNumber = 3289;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CRuleList::insert - invalid index");
   }
   if (4 < this_ptr->list_size) {
     g_CurrentFilename = "..\\core\\event.cpp";
-    g_CurrentLineNumber = 0xcda;
+    g_CurrentLineNumber = 3290;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CRuleList::insert - list full");
   }
   src = this_ptr->conditions + index;

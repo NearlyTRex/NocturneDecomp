@@ -18,7 +18,7 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *th
   dVar1 = (double)duration;
   if (dVar1 < 0.0) {
     g_CurrentFilename = "..\\core\\event.cpp";
-    g_CurrentLineNumber = 0xa5d;
+    g_CurrentLineNumber = 2653;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CEventList::setTimerEvent - invalid duration for %s: %f",name,dVar1);
   }
@@ -27,7 +27,7 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *th
     if (0.0 < duration) {
       if (9 < (this_ptr->timers).count) {
         g_CurrentFilename = "..\\core\\event.cpp";
-        g_CurrentLineNumber = 0xa7e;
+        g_CurrentLineNumber = 2686;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setTimerEvent - too many timers!");
       }
       pacVar5 = (this_ptr->timers).names + (this_ptr->timers).count;

@@ -13,7 +13,7 @@ CDrummer * __cdecl core_tbplayer_cpp_factoryFuncDrummer_FUN_005da280(void)
   CDrummer *pCVar1;
   
   pCVar1 = (CDrummer *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (sizeof(CDrummer),"..\\core\\tbplayer.cpp",0x7a);
+                     (sizeof(CDrummer),"..\\core\\tbplayer.cpp",122);
   if (pCVar1 == (CDrummer *)0x0) {
     return (CDrummer *)0x0;
   }

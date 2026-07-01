@@ -98,17 +98,17 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
       if ((iVar3 != this_ptr->tri_count[lod_index]) ||
          (iVar20 != this_ptr->cap_tri_count[lod_index])) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
-        g_CurrentLineNumber = 0x89c;
+        g_CurrentLineNumber = 2204;
         core_main_c_displayErrorAndQuit_FUN_00506f10("BUG! Count mismatch!!");
       }
       if (0 < this_ptr->cap_tri_count[lod_index]) {
         piVar9 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                            (this_ptr->cap_tri_count[lod_index] * 4,"..\\core\\skeledit.cpp",
-                            0x8a1);
+                            2209);
         this_ptr->cap_index_ptr[lod_index] = piVar9;
         if (piVar9 == (int *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
-          g_CurrentLineNumber = 0x8a2;
+          g_CurrentLineNumber = 2210;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
         }
         local_1c = 0;
@@ -163,7 +163,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
     }
     if (pfVar18->num_bone_influences == 0) {
       g_CurrentFilename = "..\\core\\skeledit.cpp";
-      g_CurrentLineNumber = 0x856;
+      g_CurrentLineNumber = 2134;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find any bones influencing vertex!");
     }
     for (iVar3 = 0; iVar3 < (int)(uint)pfVar18->num_bone_influences; iVar3 = iVar3 + 1) {

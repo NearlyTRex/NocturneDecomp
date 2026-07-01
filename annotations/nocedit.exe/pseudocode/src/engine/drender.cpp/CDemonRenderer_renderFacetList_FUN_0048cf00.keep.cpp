@@ -65,7 +65,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0048cf00(CDem
               polygon_count = polygon_count + 1;
               if (1999 < polygon_count) {
                 g_CurrentFilename = "..\\engine\\drender.cpp";
-                g_CurrentLineNumber = 0x9b6;
+                g_CurrentLineNumber = 2486;
                 core_main_c_displayErrorAndQuit_FUN_00506f10
                           ("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",polygon_count);
               }

@@ -14,14 +14,14 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004a0ea0(CEditor
   
   if (g_WindowStackCount < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
-    g_CurrentLineNumber = 0x856;
+    g_CurrentLineNumber = 2134;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CEditorTools::popWindow() called but no window was opened!");
   }
   iVar1 = g_WindowStackCount + -1;
   g_WindowStackCount = iVar1;
   if (g_WindowStack[iVar1].screen_backup_buffer != (void *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460
-              (g_WindowStack[iVar1].screen_backup_buffer,"..\\shape\\edittool.cpp",0x861);
+              (g_WindowStack[iVar1].screen_backup_buffer,"..\\shape\\edittool.cpp",2145);
     g_WindowStack[iVar1].screen_backup_buffer = (void *)0x0;
   }
   g_ClipLeft = g_WindowStack[iVar1].saved_clip.left;

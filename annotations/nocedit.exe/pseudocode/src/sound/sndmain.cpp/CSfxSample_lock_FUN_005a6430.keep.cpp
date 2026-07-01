@@ -15,18 +15,18 @@ void * __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_p
   
   if (this_ptr->locked_length != 0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x753;
+    g_CurrentLineNumber = 1875;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - already locked!");
   }
   if ((lock_offset < 0) || (this_ptr->streaming_buffer_size < lock_offset + lock_length)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
-    g_CurrentLineNumber = 0x758;
+    g_CurrentLineNumber = 1880;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - invalid region");
   }
   if (this_ptr->buffer_id == 0) {
     if (this_ptr->sample_data == (short *)0x0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
-      g_CurrentLineNumber = 0x75f;
+      g_CurrentLineNumber = 1887;
       core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - nothing allocated!");
     }
     iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);

@@ -18,7 +18,7 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSample
       else if (input_type == 2) {
         if (this_ptr->sample_count < 1) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
-          g_CurrentLineNumber = 0xc44;
+          g_CurrentLineNumber = 3140;
           core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr->name)
           ;
           position = (double)this_ptr->sample_count * position;
@@ -29,7 +29,7 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSample
       }
       else {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
-        g_CurrentLineNumber = 0xc49;
+        g_CurrentLineNumber = 3145;
         core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
       }
     }
@@ -40,7 +40,7 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSample
       else if (output_type == 2) {
         if (this_ptr->sample_count < 1) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
-          g_CurrentLineNumber = 0xc57;
+          g_CurrentLineNumber = 3159;
           core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr->name)
           ;
           position = position / (double)this_ptr->sample_count;
@@ -51,7 +51,7 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSample
       }
       else {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
-        g_CurrentLineNumber = 0xc5c;
+        g_CurrentLineNumber = 3164;
         core_main_c_displayErrorAndQuit_FUN_00506f10("SampleInfo::cvtPlaybackPos - Invalid input sample pos type");
       }
     }

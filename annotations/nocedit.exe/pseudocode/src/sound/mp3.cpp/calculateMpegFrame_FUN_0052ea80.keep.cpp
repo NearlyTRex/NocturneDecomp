@@ -51,7 +51,7 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_0052ea80(SMpegFrame *frame)
     }
     if (iVar6 != frame->table_index) {
       g_CurrentFilename = "..\\sound\\mp3.cpp";
-      g_CurrentLineNumber = 0x1a2;
+      g_CurrentLineNumber = 418;
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("MPEG Layer 2 - pick_table - can't load tables!  File: %s",g_CurrentMp3Filename);
     }
@@ -68,7 +68,7 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_0052ea80(SMpegFrame *frame)
   iVar2 = pSVar1->mode_extension;
   if ((((iVar1 < 1) || (3 < iVar1)) || (iVar2 < 0)) || (3 < iVar2)) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
-    g_CurrentLineNumber = 0x1b2;
+    g_CurrentLineNumber = 434;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("js_bound bad layer/modext (%d/%d)  File: %s",iVar1,iVar2,g_CurrentMp3Filename);
   }

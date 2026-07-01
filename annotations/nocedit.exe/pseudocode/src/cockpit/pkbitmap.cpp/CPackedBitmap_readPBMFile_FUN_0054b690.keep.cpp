@@ -32,7 +32,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
          ((this_ptr->width + -1 != local_2c.right_max ||
           (this_ptr->height + -1 != local_2c.bottom_max)))) goto LAB_0054b6da;
       ppvVar3 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                          ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x4c6);
+                          ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",1222);
       this_ptr->row_offsets = ppvVar3;
       if (ppvVar3 != (int *)0x0) {
         SVar2 = _fread(this_ptr->row_offsets,(this_ptr->height + 1) * 4,1,file_handle);
@@ -52,7 +52,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
             return;
           }
           buffer = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                             (size,"..\\cockpit\\pkbitmap.cpp",0x4de);
+                             (size,"..\\cockpit\\pkbitmap.cpp",1246);
           this_ptr->packed_data = (ushort *)buffer;
           if (buffer == (char *)0x0) goto LAB_0054b6fd;
           SVar2 = _fread(buffer,(SIZE_T)size,1,file_handle);
@@ -62,7 +62,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
         }
 LAB_0054b71f:
         g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
-        g_CurrentLineNumber = 0x4ad;
+        g_CurrentLineNumber = 1197;
         core_main_c_displayErrorAndQuit_FUN_00506f10("IO error reading PBM (possibly corrupt file).");
         goto LAB_0054b6da;
       }
@@ -70,12 +70,12 @@ LAB_0054b71f:
     else {
 LAB_0054b6da:
       g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
-      g_CurrentLineNumber = 0x4ae;
+      g_CurrentLineNumber = 1198;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Corrupt data detected reading PBM.");
     }
 LAB_0054b6fd:
     g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
-    g_CurrentLineNumber = 0x4af;
+    g_CurrentLineNumber = 1199;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory reading PBM");
   } while( true );
 }

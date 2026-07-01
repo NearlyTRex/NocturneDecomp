@@ -12,7 +12,7 @@ CFlameThrower * __cdecl core_flamegun_cpp_factoryFunc_FUN_004cb840(void)
 {
   CFlameThrower *pCVar1;
   
-  pCVar1 = (CFlameThrower *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CFlameThrower),"..\\core\\flamegun.cpp",0x2a)
+  pCVar1 = (CFlameThrower *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CFlameThrower),"..\\core\\flamegun.cpp",42)
   ;
   if (pCVar1 == (CFlameThrower *)0x0) {
     return (CFlameThrower *)0x0;

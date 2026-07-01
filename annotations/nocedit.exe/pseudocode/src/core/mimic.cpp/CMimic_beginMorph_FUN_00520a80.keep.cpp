@@ -16,7 +16,7 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr)
   
   if (this_ptr->morph_target_actor == (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\mimic.cpp";
-    g_CurrentLineNumber = 0x499;
+    g_CurrentLineNumber = 1177;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::beginMorph() - can't do this unless morphActor has been created!");
   }
   this_ptr->morph_target_actor->scale = (this_ptr->base).base.base.scale;

@@ -37,7 +37,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_0051830
     return;
   }
   g_CurrentFilename = "..\\shape\\meshlod.cpp";
-  g_CurrentLineNumber = 0xa30;
+  g_CurrentLineNumber = 2608;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find closest face!");
   return;
 }

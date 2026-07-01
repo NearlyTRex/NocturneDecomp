@@ -34,12 +34,12 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder *this
   pCVar8 = &this_ptr->file_bitstream;
   local_24 = file_size;
   if (pCVar8->file_handle != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pCVar8->file_handle,"..\\sound\\mp3.cpp",0x20b);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pCVar8->file_handle,"..\\sound\\mp3.cpp",523);
     pCVar8->file_handle = (_FILE *)0x0;
   }
   ptr = (this_ptr->file_bitstream).buffer;
   if (ptr != (char *)0x0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\sound\\mp3.cpp",0x210);
+    shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\sound\\mp3.cpp",528);
     (this_ptr->file_bitstream).buffer = (char *)0x0;
   }
   pCVar8->file_handle = file_handle;
@@ -47,11 +47,11 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder *this
   (this_ptr->file_bitstream).stream_start_position = lVar2;
   (this_ptr->file_bitstream).stream_length = local_24;
   (this_ptr->file_bitstream).buffer_size = local_1c;
-  pcVar3 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(local_1c,"..\\sound\\mp3.cpp",0x1ff);
+  pcVar3 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(local_1c,"..\\sound\\mp3.cpp",511);
   (this_ptr->file_bitstream).buffer = pcVar3;
   if (pcVar3 == (char *)0x0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
-    g_CurrentLineNumber = 0x200;
+    g_CurrentLineNumber = 512;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("Out of memory.  File: %s",g_CurrentMp3Filename);
   }
@@ -102,7 +102,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder *this
     }
     if (iVar6 != frame.table_index) {
       g_CurrentFilename = "..\\sound\\mp3.cpp";
-      g_CurrentLineNumber = 0x1a2;
+      g_CurrentLineNumber = 418;
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("MPEG Layer 2 - pick_table - can't load tables!  File: %s",g_CurrentMp3Filename);
     }
@@ -116,7 +116,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder *this
     iVar1 = frame.header->mode_extension;
     if ((((iVar3 < 1) || (3 < iVar3)) || (iVar1 < 0)) || (3 < iVar1)) {
       g_CurrentFilename = "..\\sound\\mp3.cpp";
-      g_CurrentLineNumber = 0x1b2;
+      g_CurrentLineNumber = 434;
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("js_bound bad layer/modext (%d/%d)  File: %s",iVar3,iVar1,g_CurrentMp3Filename);
     }

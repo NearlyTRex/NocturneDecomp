@@ -23,7 +23,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera *this
                      &(this_ptr->orientation).y,&this_ptr->projection_scale);
   if (iVar1 != 8) {
     g_CurrentFilename = "..\\core\\setutil.cpp";
-    g_CurrentLineNumber = 0x1d3;
+    g_CurrentLineNumber = 467;
     core_main_c_displayErrorAndQuit_FUN_00506f10("File is corrupt in C3DSCamera::importS3D");
   }
   fVar2 = (float10)fptan((float10)this_ptr->projection_scale * (float10)0.5);

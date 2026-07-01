@@ -44,7 +44,7 @@ int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
   _fseek(source_file,file_offset,0);
   _mkdir(local_114);
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       (dest_filename,(char *)0x0,"wb","..\\engine\\fileio.cpp",0xae4);
+                       (dest_filename,(char *)0x0,"wb","..\\engine\\fileio.cpp",2788);
   uVar4 = 0;
   if (file_ptr != (_FILE *)0x0) {
     iVar6 = 0;
@@ -92,7 +92,7 @@ LAB_004b7e34:
     if ((file_ptr->_flag & 0x20) != 0) {
       uVar4 = 0;
     }
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0xaf5);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",2805);
     iVar6 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910(dest_filename,timestamp_source);
     if (iVar6 == 0) {
       uVar4 = 0;

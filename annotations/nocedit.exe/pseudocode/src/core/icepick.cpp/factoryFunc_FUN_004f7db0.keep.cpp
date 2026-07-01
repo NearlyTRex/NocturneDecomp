@@ -13,7 +13,7 @@ CIcePick * __cdecl core_icepick_cpp_factoryFunc_FUN_004f7db0(void)
   CIcePick *pCVar1;
   
   pCVar1 = (CIcePick *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                     (sizeof(CIcePick),"..\\core\\icepick.cpp",0x66);
+                     (sizeof(CIcePick),"..\\core\\icepick.cpp",102);
   if (pCVar1 == (CIcePick *)0x0) {
     return (CIcePick *)0x0;
   }

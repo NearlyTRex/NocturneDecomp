@@ -12,7 +12,7 @@ CGrave * __cdecl core_grave_cpp_factoryFunc_FUN_004ee4d0(void)
 {
   CGrave *pCVar1;
   
-  pCVar1 = (CGrave *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CGrave),"..\\core\\grave.cpp",0x26);
+  pCVar1 = (CGrave *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(sizeof(CGrave),"..\\core\\grave.cpp",38);
   if (pCVar1 == (CGrave *)0x0) {
     return (CGrave *)0x0;
   }

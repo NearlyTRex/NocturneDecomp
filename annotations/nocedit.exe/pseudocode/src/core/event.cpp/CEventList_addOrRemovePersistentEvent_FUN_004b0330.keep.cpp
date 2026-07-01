@@ -28,12 +28,12 @@ void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330(C
     else if (iVar2 < 0) {
       if (99 < (this_ptr->persistent_events).count) {
         g_CurrentFilename = "..\\core\\event.cpp";
-        g_CurrentLineNumber = 0x9f5;
+        g_CurrentLineNumber = 2549;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Too many persistent events!");
       }
       if (0x1f < (int)strlen(name)) {
         g_CurrentFilename = "..\\core\\event.cpp";
-        g_CurrentLineNumber = 0x9fb;
+        g_CurrentLineNumber = 2555;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Event name %s too long!",name);
       }
       strcpy((this_ptr->persistent_events).names[(this_ptr->persistent_events).count],name);

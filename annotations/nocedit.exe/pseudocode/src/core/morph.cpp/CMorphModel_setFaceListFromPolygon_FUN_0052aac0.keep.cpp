@@ -22,14 +22,14 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMor
 
   if ((part_index < 0) || (this_ptr->part_count <= part_index)) {
     g_CurrentFilename = "..\\core\\morph.cpp";
-    g_CurrentLineNumber = 0x152;
+    g_CurrentLineNumber = 338;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::setFaceList - invalid part index");
   }
   iVar2 = this_ptr->parts[part_index].start_face;
   local_18 = start_face + iVar2;
   if (iVar2 + this_ptr->parts[part_index].face_count < poly_count + local_18) {
     g_CurrentFilename = "..\\core\\morph.cpp";
-    g_CurrentLineNumber = 0x159;
+    g_CurrentLineNumber = 345;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::setFaceList - invalid vertex range");
   }
   start_vertex = this_ptr->parts[part_index].start_vertex;

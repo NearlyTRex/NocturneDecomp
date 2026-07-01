@@ -18,7 +18,7 @@ void __cdecl core_cloth_cpp_CCloth_save_FUN_00439260(CCloth *this_ptr,char *file
   file = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"wt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
-    g_CurrentLineNumber = 0x12d;
+    g_CurrentLineNumber = 301;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCloth::save - Unable to open file");
   }
   _fprintf(file,"version\n");
@@ -58,6 +58,6 @@ void __cdecl core_cloth_cpp_CCloth_save_FUN_00439260(CCloth *this_ptr,char *file
       pSVar2 = pSVar2 + 1;
     } while (iVar2 < this_ptr->collide_bone_count);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\cloth.cpp",0x17b);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\cloth.cpp",379);
   return;
 }

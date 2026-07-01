@@ -35,14 +35,14 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
     this_ptr_01 = this_ptr->carry_hands[iVar9].carry_actor;
     if (this_ptr_01 != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                (this_ptr_01,"..\\core\\charactr.cpp",0x106);
+                (this_ptr_01,"..\\core\\charactr.cpp",262);
       pCVar5 = (CCharacter *)(*((this_ptr_01->vtable)._ub)->getCarrier)(this_ptr_01);
       if (pCVar5 == (CCharacter *)0x0) {
         (*((this_ptr_01->vtable)._ub)->pickup)(this_ptr_01,&this_ptr->base);
       }
       else if (pCVar5 != this_ptr) {
         g_CurrentFilename = "..\\core\\charactr.cpp";
-        g_CurrentLineNumber = 0x10b;
+        g_CurrentLineNumber = 267;
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("%s is carrying %s, but %s thinks it is being carried by %s",
                    (this_ptr->base).actor_name,this_ptr_01->actor_name,

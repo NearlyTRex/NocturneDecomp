@@ -31,7 +31,7 @@ void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040b210(char *pro
     pcVar3 = "save";
   }
   g_CurrentFilename = "..\\core\\actor.cpp";
-  g_CurrentLineNumber = 0x7ec;
+  g_CurrentLineNumber = 2028;
   core_main_c_displayErrorAndQuit_FUN_00506f10
             ("Error %sing actor property.\nActor name: %s\nActor type: %s\nProperty description: %s\nProperty type: %s\n",pcVar3,pActorName,pcVar2,property_type,
              property_description);

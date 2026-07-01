@@ -17,7 +17,7 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
   iVar2 = wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ecc10(g_WindowWidth,g_WindowHeight);
   if (iVar2 == 0) {
     g_CurrentFilename = "..\\engine\\2d.c";
-    g_CurrentLineNumber = 0x86;
+    g_CurrentLineNumber = 134;
     core_main_c_displayErrorAndQuit_FUN_00506f10("No room for frame buffer.  Please run SETUP");
   }
   wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0

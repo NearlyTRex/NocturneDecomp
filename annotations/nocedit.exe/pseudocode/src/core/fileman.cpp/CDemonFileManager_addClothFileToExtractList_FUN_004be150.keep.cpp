@@ -16,14 +16,14 @@ void __cdecl core_fileman_cpp_CDemonFileManager_addClothFileToExtractList_FUN_00
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Adding files for %s to extract list...",cloth_filename);
   this_ptr = (CCloth *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
-                       (sizeof(CCloth),"..\\core\\fileman.cpp",0x153);
+                       (sizeof(CCloth),"..\\core\\fileman.cpp",339);
   pCVar1 = (CCloth *)0x0;
   if (this_ptr != (CCloth *)0x0) {
     pCVar1 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(this_ptr);
   }
   if (pCVar1 == (CCloth *)0x0) {
     g_CurrentFilename = "..\\core\\fileman.cpp";
-    g_CurrentLineNumber = 0x154;
+    g_CurrentLineNumber = 340;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't allocate cloth");
   }
   core_cloth_cpp_CCloth_load_FUN_00438cf0(pCVar1,cloth_filename);

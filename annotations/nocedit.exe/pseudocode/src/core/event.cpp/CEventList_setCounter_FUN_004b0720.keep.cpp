@@ -18,7 +18,7 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_
     if (value != 0) {
       if (9 < (this_ptr->counters).count) {
         g_CurrentFilename = "..\\core\\event.cpp";
-        g_CurrentLineNumber = 0xab2;
+        g_CurrentLineNumber = 2738;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setCounter - too many counters!");
       }
       strcpy((this_ptr->counters).names[(this_ptr->counters).count], name);

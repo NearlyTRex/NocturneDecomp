@@ -14,7 +14,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr
 
   if (this_ptr->is_panning != 0) {
     g_CurrentFilename = "..\\core\\setutil.cpp";
-    g_CurrentLineNumber = 0xf7;
+    g_CurrentLineNumber = 247;
     core_main_c_displayErrorAndQuit_FUN_00506f10("C3DSCamera::apply - shouldn't ever do this on panning camera '%s'!",this_ptr->name);
   }
   pUVar1 = &(camera->base).position;

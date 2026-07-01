@@ -32,18 +32,18 @@ int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file_handle,
         return local_18;
       }
       shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                ((_FILE *)file_handle->_ptr,"..\\engine\\fileio.cpp",0xc4);
+                ((_FILE *)file_handle->_ptr,"..\\engine\\fileio.cpp",196);
       file_handle->_ptr = (char *)0x0;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"Error reading %s",filename);
 LAB_004b246f:
       if ((_FILE *)file_handle->_ptr != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                  ((_FILE *)file_handle->_ptr,"..\\engine\\fileio.cpp",0xc4);
+                  ((_FILE *)file_handle->_ptr,"..\\engine\\fileio.cpp",196);
         file_handle->_ptr = (char *)0x0;
       }
       if (*records != (STimestampRecord *)0x0) {
-        shape_memdbg_cpp_debugFree_FUN_0050f460(*records,"..\\engine\\fileio.cpp",0x1ae);
+        shape_memdbg_cpp_debugFree_FUN_0050f460(*records,"..\\engine\\fileio.cpp",430);
         *records = (STimestampRecord *)0x0;
       }
       return -1;
@@ -52,7 +52,7 @@ LAB_004b246f:
     if (iVar3 == 0) {
       if ((_FILE *)file_handle->_ptr != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                  ((_FILE *)file_handle->_ptr,"..\\engine\\fileio.cpp",0xc4);
+                  ((_FILE *)file_handle->_ptr,"..\\engine\\fileio.cpp",196);
         file_handle->_ptr = (char *)0x0;
       }
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -61,12 +61,12 @@ LAB_004b246f:
     }
     strcpy(local_160.filename,directory);
     pSVar4 = (STimestampRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                       (*records,new_size,"..\\engine\\fileio.cpp",0x1c2);
+                       (*records,new_size,"..\\engine\\fileio.cpp",450);
     *records = pSVar4;
     if (pSVar4 == (STimestampRecord *)0x0) {
       if ((_FILE *)file_handle->_ptr != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                  ((_FILE *)file_handle->_ptr,"..\\engine\\fileio.cpp",0xc4);
+                  ((_FILE *)file_handle->_ptr,"..\\engine\\fileio.cpp",196);
         file_handle->_ptr = (char *)0x0;
       }
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

@@ -58,7 +58,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurfac
           if ((this_ptr->clip_top <= iVar6) && (iVar8 <= this_ptr->clip_bottom)) {
             if (0x27 < local_20) {
               g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
-              g_CurrentLineNumber = 0x578;
+              g_CurrentLineNumber = 1400;
               core_main_c_displayErrorAndQuit_FUN_00506f10("CDrawSurface::fillPoly - too many edges!");
             }
             pSVar13->x_fixed_point = iVar12 << 0x10;

@@ -128,7 +128,7 @@ LAB_005a41f8:
             ("WAV file is invalid: %s\n","No \"data\" chunk found");
 LAB_005a4007:
   if (file_handle != (_FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",0x181);
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",385);
   }
   return 0;
 }

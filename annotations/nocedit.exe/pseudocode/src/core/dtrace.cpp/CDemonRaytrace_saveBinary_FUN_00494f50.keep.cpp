@@ -28,7 +28,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytra
     return;
   }
   g_CurrentFilename = "..\\core\\dtrace.cpp";
-  g_CurrentLineNumber = 0x251;
+  g_CurrentLineNumber = 593;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::saveBinary - error writing file");
   return;
 }

@@ -23,7 +23,7 @@ void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004d02a0(CBitFont *this_p
         if (g_BitsPerPixel != 8) {
 LAB_004d044b:
           g_CurrentFilename = "..\\engine\\font.cpp";
-          g_CurrentLineNumber = 0x686;
+          g_CurrentLineNumber = 1670;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CBitFont::remapPalette - Invalid bitsPerPixel");
         }
       }

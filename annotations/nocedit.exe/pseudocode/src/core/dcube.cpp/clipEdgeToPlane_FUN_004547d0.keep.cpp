@@ -17,7 +17,7 @@ void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004547d0(CVector3f *vertex1,CVec
           (vertex2->x - vertex1->x) * (float)plane_nx + (vertex2->y - vertex1->y) * (float)plane_ny;
   if (fVar2 == 0.0) {
     g_CurrentFilename = "..\\core\\dcube.cpp";
-    g_CurrentLineNumber = 0x6e;
+    g_CurrentLineNumber = 110;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad clip!");
   }
   fVar1 = -(vertex1->z * (float)plane_nz +
