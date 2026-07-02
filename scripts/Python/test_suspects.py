@@ -33,12 +33,15 @@ PSEUDOCODE_DIR = os.path.join(
 
 
 def _load_suspects_module():
-    """Load suspects.py without triggering the package's Ghidra-dep init.
+    """Load the suspects package without triggering the parent's Ghidra-dep init.
 
-    suspects.py itself imports from
-    `ghidra_annotations.annotations.pseudocode.pass_by_value`, which is
-    pure Python. We stub the parent package modules and load both files
-    by path so the dotted import resolves.
+    `suspects` is a package (suspects/__init__.py re-exports its theme
+    submodules — _common, _structtypes, content, assembly, stack). Its
+    submodules import `...pseudocode.pass_by_value` (pure Python) and each
+    other via relative imports. We stub the parent package modules, load
+    pass_by_value by path, then load the suspects package with its
+    submodule_search_locations set so the relative `from ._common import …`
+    imports resolve to the files in suspects/.
     """
     for pkg_name in (
         'ghidra_annotations',
@@ -56,9 +59,11 @@ def _load_suspects_module():
     sys.modules[pbv_spec.name] = pbv_mod
     pbv_spec.loader.exec_module(pbv_mod)
 
+    susp_dir = os.path.join(PSEUDOCODE_DIR, 'suspects')
     susp_spec = importlib.util.spec_from_file_location(
         'ghidra_annotations.annotations.pseudocode.suspects',
-        os.path.join(PSEUDOCODE_DIR, 'suspects.py'),
+        os.path.join(susp_dir, '__init__.py'),
+        submodule_search_locations=[susp_dir],
     )
     susp_mod = importlib.util.module_from_spec(susp_spec)
     sys.modules[susp_spec.name] = susp_mod

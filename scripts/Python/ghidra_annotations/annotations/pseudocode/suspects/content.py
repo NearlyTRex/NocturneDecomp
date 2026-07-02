@@ -1,146 +1,20 @@
-# Suspect pattern detection for pseudocode export
-# Identifies problematic patterns in decompiled code that may need manual review
+# Auto-split from the former monolithic suspects.py — see suspects/__init__.py.
+"""Source-text (decompiled-code) suspect detectors and their aggregator
+`detect_content_suspects`. The large bulk of the detector suite."""
 
 import bisect
-import json
-import os
 import re
-from collections import defaultdict
-
-from ghidra_annotations.annotations.pseudocode.pass_by_value import BYVALUE_CALLEES
-
-# Safe decompiler intrinsics - these are detected as suspects but do NOT count
-# against a function's "clean" status in reports. These intrinsics have valid
-# C macro definitions in the intrinsics header and compile successfully.
-SAFE_INTRINSICS = frozenset({
-    # Offset pointer adjustment
-    'ADJ',      # #define ADJ(x) (x) - identity macro
-    # Math intrinsics (uppercase Ghidra names)
-    'ROUND',    # #define ROUND(x) - valid rounding implementation
-    'SQRT',     # #define SQRT(x) sqrt(x)
-    'TRUNC',    # #define TRUNC(x) ((int)(x))
-    'FLOOR',    # #define FLOOR(x) floor(x)
-    'CEIL',     # #define CEIL(x) ceil(x)
-    'ABS',      # #define ABS(x) ((x) < 0 ? -(x) : (x))
-    # NAN removed: all NAN() occurrences in codebase are FNSTSW artifacts,
-    # not legitimate isnan() calls. Caught by nan_function_artifact pattern.
-    # FPU intrinsics (x87 mnemonic names -> standard C math)
-    'fsin',     # #define fsin(x) sin(x)
-    'fcos',     # #define fcos(x) cos(x)
-    'fptan',    # #define fptan(x) tan(x)
-    'fpatan',   # #define fpatan(y, x) atan2(y, x)
-    'fsqrt',    # #define fsqrt(x) sqrt(x)
-    'fabs',     # #define fabs(x) fabs(x)
-})
+from ._common import (
+    SUSPECT_SEVERITY, _extract_balanced_parens, _find_format_string_index, _find_global_at,
+    _find_neighbor_after, _parse_call_arguments, count_format_specifiers
+)
+from ._structtypes import (
+    _SFO_ACCESS_RE, _SFO_DECL_RE, _SFO_NON_TYPE_KEYWORDS, _SFO_PTR_PARAM_RE, _SFO_SIG_RE,
+    _SFO_VALDECL_RE, _SFO_VAL_PARAM_RE, _sfo_field_base_deref_overruns, _sfo_index_const,
+    _sfo_resolve_var_types, resolve_access_path_type
+)
 
 
-SUSPECT_SEVERITY = {
-    # Severe: code is essentially unreadable
-    'fnstsw_flag_artifact': 'severe',
-    'nan_function_artifact': 'severe',
-    'badspacebase': 'severe',
-    'warning_spacebase': 'severe',
-    'warning_max_restarts': 'severe',
-    'decompilation_failed': 'severe',
-    # Moderate: significant artifacts, partially readable
-    'double_reconstruction': 'moderate',
-    'concat_reconstruction': 'moderate',
-    'sub84_truncation': 'moderate',
-    'bare_stack_ref': 'moderate',
-    'stack_alignment_array': 'moderate',
-    'stack_ref': 'moderate',
-    'stack_param': 'moderate',
-    'undefined_type': 'moderate',
-    'undefined_ptr_cast': 'moderate',
-    'extra_output': 'moderate',
-    'unaffected_reg': 'moderate',
-    'unresolved_funcptr': 'moderate',
-    'warning_unmapped_variable': 'moderate',
-    'warning_type_propagation': 'moderate',
-    'warning_partial_indirect': 'moderate',
-    'warning_unable_to_use_type': 'moderate',
-    'warning_inlined_function': 'mild',
-    'warning_is_inlined': 'mild',
-    # Mild: minor issues, code is readable
-    'unnamed_param': 'mild',
-    'unknown_field': 'mild',
-    'undefined_ram': 'mild',
-    'unnamed_field': 'mild',
-    'unknown_param': 'mild',
-    'register_param': 'mild',
-    'negative_offset': 'mild',
-    'decompiler_intrinsic': 'mild',
-    'suspect_float': 'mild',
-    'nonstandard_int': 'mild',
-    'pointer_cast': 'moderate',
-    'pointer_truncation': 'moderate',
-    'displaced_global_access': 'moderate',
-    'wrong_global': 'moderate',
-    'suspicious_cast': 'moderate',
-    'raw_address_constant': 'moderate',
-    'unrolled_strcpy': 'moderate',
-    'unrolled_memcpy': 'moderate',
-    'unrolled_memset': 'moderate',
-    'unrolled_strlen': 'moderate',
-    'unrolled_strcat': 'moderate',
-    'unrolled_strchr': 'moderate',
-    'preinc_loop_idiom': 'moderate',
-    'missing_cave_copy': 'moderate',
-    'fast_sqrt_inline': 'moderate',
-    'fast_inv_sqrt_inline': 'moderate',
-    'bit_int_float_compare': 'moderate',
-    'bitcast_double_pair': 'moderate',
-    'bitcast_double': 'moderate',
-    'bitcast_double_numeric': 'moderate',
-    'sibling_array_undersized': 'moderate',
-    'self_copy_guard': 'moderate',
-    'dropped_self_copy': 'moderate',
-    'tautological_addr_guard': 'moderate',
-    'shadow_pointer_walk': 'moderate',
-    'memcpy_oversized_source': 'moderate',
-    'dropped_loop_counter': 'moderate',
-    'loop_clobbered_constant': 'moderate',
-    'primitive_walker_cast': 'moderate',
-    'subfield_vector_pun': 'moderate',
-    'vector_type_pun': 'moderate',
-    'baked_self_address': 'moderate',
-    'sign_compare_idiom': 'moderate',
-    'carry_arith_idiom': 'moderate',
-    'signed_shift_global_idiom': 'moderate',
-    'struct_field_overrun': 'moderate',
-    'alloc_magic_size': 'moderate',
-    'mem_magic_size': 'moderate',
-}
-
-
-def is_safe_suspect(suspect):
-    """Check if a suspect is a safe intrinsic that doesn't affect clean status.
-
-    Args:
-        suspect: A suspect dictionary with 'type' and 'match' keys
-
-    Returns:
-        True if this suspect is a safe decompiler intrinsic
-    """
-    return (suspect.get('type') == 'decompiler_intrinsic' and
-            suspect.get('match') in SAFE_INTRINSICS)
-
-
-def has_only_safe_suspects(suspects):
-    """Check if all suspects in a list are safe intrinsics.
-
-    A function with only safe suspects is considered "effectively clean"
-    for reporting purposes.
-
-    Args:
-        suspects: List of suspect dictionaries
-
-    Returns:
-        True if the list is empty or contains only safe intrinsics
-    """
-    if not suspects:
-        return True
-    return all(is_safe_suspect(s) for s in suspects)
 
 
 # Patterns that indicate potential issues in decompiled code
@@ -364,11 +238,15 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\bfield_0x[0-9a-fA-F]+\b', 'unnamed_field', 'Auto-generated struct field name'),
 ]
 
+
+
 # Pre-compiled patterns for performance (compiled once at module load)
 SUSPECT_PATTERNS = [
     (re.compile(pattern), issue_type, description)
     for pattern, issue_type, description in _SUSPECT_PATTERN_DEFS
 ]
+
+
 
 
 def identify_suspect_lines(decompiled_code):
@@ -405,327 +283,6 @@ def identify_suspect_lines(decompiled_code):
     return suspects
 
 
-def identify_assembly_suspects(assembly_code, func_calls=None):
-    """Identify suspect patterns in assembly code.
-
-    Currently detects:
-    - MMX instructions (MOVQ, EMMS, etc.) which indicate SIMD code that
-      may not decompile cleanly
-    - CPU detection instructions (CPUID, PUSHFD, POPFD) which indicate
-      CPU feature detection code that may have unusual decompilation
-    - By-value struct passing: detected by checking if the function calls
-      any known by-value callee (clipAndDrawLine2D, clipAndDrawLine3D,
-      calculateMainDataSize, CSfxSlot_mix)
-
-    Args:
-        assembly_code: The assembly code as a string
-        func_calls: Optional list of called function dicts with 'name' keys
-
-    Returns:
-        A list of suspect dictionaries with line, type, match, text, and description
-    """
-    suspects = []
-
-    if not assembly_code:
-        return suspects
-
-    # MMX instruction patterns
-    mmx_pattern = re.compile(
-        r'\b(MOVQ|MOVD|PACKSSWB|PACKSSDW|PACKUSWB|PUNPCKHBW|PUNPCKHWD|PUNPCKHDQ|'
-        r'PUNPCKLBW|PUNPCKLWD|PUNPCKLDQ|PADDB|PADDW|PADDD|PADDSB|PADDSW|PADDUSB|'
-        r'PADDUSW|PSUBB|PSUBW|PSUBD|PSUBSB|PSUBSW|PSUBUSB|PSUBUSW|PMULLW|PMULHW|'
-        r'PMADDWD|PCMPEQB|PCMPEQW|PCMPEQD|PCMPGTB|PCMPGTW|PCMPGTD|PAND|PANDN|'
-        r'POR|PXOR|PSLLW|PSLLD|PSLLQ|PSRLW|PSRLD|PSRLQ|PSRAW|PSRAD|EMMS)\b',
-        re.IGNORECASE
-    )
-
-    # MM register pattern (MM0-MM7)
-    mm_reg_pattern = re.compile(r'\bMM[0-7]\b', re.IGNORECASE)
-
-    # CPU detection instruction patterns (CPUID, EFLAGS manipulation)
-    cpuid_pattern = re.compile(r'\bCPUID\b', re.IGNORECASE)
-    eflags_pattern = re.compile(r'\b(PUSHFD?|POPFD?|LAHF|SAHF)\b', re.IGNORECASE)
-
-    lines = assembly_code.split('\n')
-    mmx_found = False
-    first_mmx_line = None
-    mmx_instructions = set()
-
-    for line_num, line in enumerate(lines, 1):
-        line_stripped = line.strip()
-        if not line_stripped or line_stripped.startswith(';'):
-            continue
-
-        # Check for MMX instructions
-        mmx_match = mmx_pattern.search(line)
-        if mmx_match:
-            mmx_found = True
-            mmx_instructions.add(mmx_match.group(1).upper())
-            if first_mmx_line is None:
-                first_mmx_line = line_num
-
-        # Also check for MM register usage
-        if mm_reg_pattern.search(line) and not mmx_found:
-            mmx_found = True
-            if first_mmx_line is None:
-                first_mmx_line = line_num
-
-    # Add a single suspect for MMX usage (not one per instruction)
-    if mmx_found:
-        suspects.append({
-            'line': first_mmx_line or 1,
-            'type': 'mmx_assembly',
-            'match': ', '.join(sorted(mmx_instructions)[:5]) if mmx_instructions else 'MMX',
-            'text': 'Function uses MMX instructions',
-            'description': 'MMX/SIMD assembly - may not decompile to clean C code'
-        })
-
-    # Check for CPUID instructions (CPU feature detection)
-    cpuid_found = False
-    eflags_manip = False
-    first_cpuid_line = None
-
-    for line_num, line in enumerate(lines, 1):
-        line_stripped = line.strip()
-        if not line_stripped or line_stripped.startswith(';'):
-            continue
-
-        if cpuid_pattern.search(line):
-            cpuid_found = True
-            if first_cpuid_line is None:
-                first_cpuid_line = line_num
-
-        if eflags_pattern.search(line):
-            eflags_manip = True
-
-    # Add suspect for CPUID usage
-    if cpuid_found:
-        desc = 'CPU detection code using CPUID'
-        if eflags_manip:
-            desc += ' with EFLAGS manipulation'
-        suspects.append({
-            'line': first_cpuid_line or 1,
-            'type': 'cpuid_assembly',
-            'match': 'CPUID',
-            'text': 'Function uses CPUID instruction',
-            'description': desc + ' - expected unusual decompilation patterns'
-        })
-
-    # Check for by-value struct passing by matching called function addresses
-    # against BYVALUE_CALLEES (pass_by_value.py).
-    if func_calls:
-        matched_callees = []
-        for call in func_calls:
-            addr = call.get('addr', '').lower().lstrip('0') or '0'
-            if addr in BYVALUE_CALLEES:
-                matched_callees.append(BYVALUE_CALLEES[addr])
-        if matched_callees:
-            suspects.append({
-                'line': 1,
-                'type': 'byvalue_struct_passing',
-                'match': ', '.join(sorted(set(matched_callees))),
-                'text': 'Function calls by-value struct passing functions',
-                'description': 'Calls %s - decompiler cannot recognize by-value pattern' % ', '.join(sorted(set(matched_callees)))
-            })
-
-    return suspects
-
-
-# SIB addressing pattern: [REG*SCALE + 0xADDRESS] in assembly
-# Captures: (1) scale factor and (2) hex displacement address
-# Matches patterns like: [EAX*0x8 + 0x3342b48], [EBX*0x4 + 0x2d01924]
-_SIB_PATTERN = re.compile(
-    r'\[\w+\*(?:0x)?([0-9a-fA-F]+)\s*\+\s*(?:0x)?([0-9a-fA-F]{6,8})\]'
-)
-
-
-def build_global_interval_map(globals_list):
-    """Build a sorted interval map from a globals list for displaced access detection.
-
-    Args:
-        globals_list: List of global dicts with 'name', 'address', 'size', and 'type' keys.
-                      Typically from extract_globals_and_constants().
-
-    Returns:
-        A sorted list of (start_addr_int, end_addr_int, name, type) tuples.
-    """
-    intervals = []
-    for g in globals_list:
-        name = g.get('name', '')
-        addr_str = g.get('address', '')
-        size = g.get('size', 0)
-        gtype = g.get('type', '')
-        if not addr_str or size <= 0:
-            continue
-        try:
-            addr_int = int(addr_str.replace('0x', ''), 16)
-        except (ValueError, AttributeError):
-            continue
-        intervals.append((addr_int, addr_int + size, name, gtype))
-
-    intervals.sort()
-    return intervals
-
-
-def _find_global_at(addr_int, global_interval_map):
-    """Find which global (if any) contains the given address.
-
-    Returns (name, type, start_addr) or None.
-    """
-    # Binary search for the interval that might contain addr_int
-    starts = [iv[0] for iv in global_interval_map]
-    idx = bisect.bisect_right(starts, addr_int) - 1
-    if idx < 0:
-        return None
-    start, end, name, gtype = global_interval_map[idx]
-    if start <= addr_int < end:
-        return (name, gtype, start)
-    return None
-
-
-def _find_global_in_range(low, high, global_interval_map, exclude_name=None):
-    """Find a global that starts within (low, high] exclusive of low.
-
-    Returns (name, type, start_addr) or None.
-    """
-    starts = [iv[0] for iv in global_interval_map]
-    # Find first global starting after low
-    idx = bisect.bisect_right(starts, low)
-    while idx < len(global_interval_map):
-        start = global_interval_map[idx][0]
-        if start > high:
-            break
-        name = global_interval_map[idx][2]
-        if name != exclude_name:
-            return (name, global_interval_map[idx][3], start)
-        idx += 1
-    return None
-
-
-def identify_displaced_global_access(assembly_code, global_interval_map=None):
-    """Detect compiler-displaced scaled index addressing in assembly.
-
-    When the compiler optimizes scaled index addressing (e.g. [EAX*8 + base]),
-    it may fold a register increment into the displacement, shifting the base
-    address by one scale factor. If this shifted address lands inside an
-    adjacent global's memory range, Ghidra misresolves the access through
-    the wrong global.
-
-    Detection: scan assembly for [REG*SCALE + DISP] patterns where:
-    1. DISP falls inside global A's range (but NOT at A's start address,
-       since that would be a normal array access into A)
-    2. A different global B starts within (DISP, DISP+SCALE] — meaning the
-       scaled access crosses from A into B's territory
-
-    Args:
-        assembly_code: The assembly code as a string
-        global_interval_map: Sorted interval map from build_global_interval_map().
-                             If None, detection is skipped.
-
-    Returns:
-        A list of suspect dictionaries
-    """
-    suspects = []
-
-    if not assembly_code or not global_interval_map:
-        return suspects
-
-    lines = assembly_code.split('\n')
-    seen = set()  # Deduplicate by (address, displacement)
-
-    for line_num, line in enumerate(lines, 1):
-        line_stripped = line.strip()
-        if not line_stripped or line_stripped.startswith(';'):
-            continue
-
-        # Extract instruction address if present (format: "INSTR ... ; 0xADDR")
-        instr_addr = ''
-        semi_idx = line.rfind(';')
-        if semi_idx >= 0:
-            addr_part = line[semi_idx + 1:].strip().split()[0] if line[semi_idx + 1:].strip() else ''
-            if addr_part and all(c in '0123456789abcdefABCDEF' for c in addr_part):
-                instr_addr = addr_part
-
-        for m in _SIB_PATTERN.finditer(line):
-            scale_str, disp_str = m.group(1), m.group(2)
-            try:
-                scale = int(scale_str, 16)
-                disp = int(disp_str, 16)
-            except ValueError:
-                continue
-
-            # Skip tiny scales (not array indexing) or unreasonable ones
-            if scale < 2 or scale > 64:
-                continue
-
-            dedup_key = (instr_addr, disp)
-            if dedup_key in seen:
-                continue
-
-            # Check: does disp fall inside global A (but NOT at its start)?
-            containing = _find_global_at(disp, global_interval_map)
-            if containing is None:
-                continue
-
-            container_name, container_type, container_start = containing
-
-            # Look up the interval to get the size of the containing global
-            starts = [iv[0] for iv in global_interval_map]
-            c_idx = bisect.bisect_right(starts, disp) - 1
-            container_end = global_interval_map[c_idx][1]
-            container_size = container_end - container_start
-
-            # If disp is at the start of a global that is large enough for the
-            # scale factor, this is a normal array access (e.g. [EAX*4 + g_Array])
-            if disp == container_start and container_size >= scale * 2:
-                continue
-
-            # Check: is there a different global B starting within (disp, disp+scale]?
-            # This means the access crosses from A into B's territory
-            target = _find_global_in_range(disp, disp + scale, global_interval_map, container_name)
-
-            if target is None:
-                continue
-
-            target_name, target_type, target_start = target
-
-            # Skip if the target is a sub-element of the container
-            # (e.g. g_Array[1] inside g_Array, or DAT_ inside a named global)
-            if (target_name.startswith(container_name + '[') or
-                    target_name.startswith(container_name + '.')):
-                continue
-            # Skip DAT_ targets that are inside the container's range
-            # (these are unnamed sub-references, not real separate globals)
-            if target_name.startswith('DAT_') and target_start < container_start + container_size:
-                continue
-            # Skip switch table data (not real globals)
-            if (container_name.startswith('switchdata') or
-                    container_name.startswith('PTR_case') or
-                    target_name.startswith('switchdata') or
-                    target_name.startswith('PTR_case')):
-                continue
-
-            seen.add(dedup_key)
-
-            suspects.append({
-                'line': line_num,
-                'type': 'displaced_global_access',
-                'match': '0x%x' % disp,
-                'text': line_stripped,
-                'description': (
-                    'Compiler displaced index base: [reg*%d + 0x%x] lands in %s '
-                    'but intended target is %s at 0x%x (displaced by %d bytes)'
-                    % (scale, disp, container_name,
-                       target_name, target_start, target_start - disp)),
-                'severity': SUSPECT_SEVERITY.get('displaced_global_access', 'moderate'),
-                'displaced_from': container_name,
-                'intended_global': target_name,
-                'displacement': '0x%x' % disp,
-                'scale': scale,
-                'instruction_address': instr_addr,
-            })
-
-    return suspects
 
 
 # Canonical Watcom base-shift shape: (&g_Scalar)[idx]
@@ -736,6 +293,8 @@ _WRONG_GLOBAL_RE = re.compile(
     r'\(\s*&\s*(g_[A-Za-z_][A-Za-z0-9_]*)\s*\)\s*\['
 )
 
+
+
 # Byte-offset variant: *(type *)(&g_Scalar + expr) or *(type *)(&g_Scalar - expr)
 # Same root cause as _WRONG_GLOBAL_RE but with byte-level arithmetic rather
 # than a scaled index, so the cast names an explicit element type.
@@ -744,27 +303,13 @@ _SUSPICIOUS_CAST_RE = re.compile(
     r'\s*\(\s*&\s*(g_[A-Za-z_][A-Za-z0-9_]*)\s*[+\-]'
 )
 
+
+
 # Raw hex literal with at least 6 hex digits (>= 0x100000 = 1 MiB). Smaller
 # constants are almost always numeric values, not addresses.
 _RAW_ADDR_RE = re.compile(r'\b0x([0-9a-fA-F]{6,})\b')
 
 
-def _find_neighbor_after(addr_int, global_interval_map):
-    """Find the global whose interval begins at or just after addr_int.
-
-    For wrong_global / suspicious_cast, the likely real target of the access
-    is the global that sits immediately after the flagged scalar in memory.
-
-    Returns (name, type, start_addr) or None.
-    """
-    if not global_interval_map:
-        return None
-    starts = [iv[0] for iv in global_interval_map]
-    idx = bisect.bisect_left(starts, addr_int + 1)
-    if idx >= len(global_interval_map):
-        return None
-    start, _end, name, gtype = global_interval_map[idx]
-    return (name, gtype, start)
 
 
 def identify_wrong_global_suspects(decompiled_code, func_globals=None, global_interval_map=None):
@@ -829,6 +374,8 @@ def identify_wrong_global_suspects(decompiled_code, func_globals=None, global_in
     return suspects
 
 
+
+
 def identify_suspicious_cast_suspects(decompiled_code, global_interval_map=None):
     """Detect Watcom base-shift accesses of the form *(T *)(&g_Scalar +/- expr).
 
@@ -886,6 +433,8 @@ def identify_suspicious_cast_suspects(decompiled_code, global_interval_map=None)
     return suspects
 
 
+
+
 # Narrowing casts: target types strictly smaller than a 64-bit pointer (8 bytes
 # on the LP64 native build). Casting a pointer to any of these truncates the
 # high 32 bits — fine on the 32-bit matching build, a hard `cast from pointer to
@@ -898,31 +447,45 @@ _PTR_TRUNC_NARROW_TYPES = frozenset({
     'undefined1', 'undefined2', 'undefined4',
     'int3', 'uint3', 'byte2', 'byte3',
 })
+
+
 # `(TYPE)` immediately followed by the operand. Operand capture starts after.
 _PTR_TRUNC_CAST_RE = re.compile(
     r'\((' + '|'.join(sorted(_PTR_TRUNC_NARROW_TYPES, key=len, reverse=True)) +
     r')\)\s*')
+
+
 # An access-path operand: optional `&`, a root identifier, then any number of
 # `->field` / `.field` / `[..]` steps. Stops at the first operator / paren /
 # whitespace so we capture exactly one operand.
 _PTR_TRUNC_OPERAND_RE = re.compile(
     r'(&)?\s*([A-Za-z_]\w*)((?:\s*(?:->|\.)\s*[A-Za-z_]\w*|\s*\[[^\]]*\])*)')
+
+
 _PTR_TRUNC_LAST_STEP_RE = re.compile(
     r'(?:->|\.)\s*([A-Za-z_]\w*)\s*(\[[^\]]*\])?\s*$')
+
+
 # A subscript applied immediately after a parenthesized operand, i.e. the `[i]`
 # in `(int)(&AGG.field)[i]`. Such a subscript dereferences the parenthesized
 # value into an element.
 _PTR_TRUNC_TRAILING_SUB_RE = re.compile(r'\s*(\[[^\]]*\])')
+
+
 # One or more subscript groups at the START of a line — used to fold a
 # subscript that Ghidra wrapped onto the next line (`(uint)p->field\n[i]`)
 # back onto its operand, so the pointer-vs-scalar decision sees the deref.
 _PTR_TRUNC_WRAP_SUB_RE = re.compile(r'\s*((?:\[[^\]]*\]\s*)+)')
+
+
 # A relational/equality operator immediately following the leading operand of a
 # parenthesized cast operand, i.e. the `!=` in `(uint)(PTR != 0)`. When present,
 # the parenthesized expression yields a bool, so the cast widens that bool, not
 # the pointer — not a truncation. Excludes the shift operators `<<`/`>>` (which
 # are not comparisons) via the negative lookaheads.
 _PTR_TRUNC_CMP_RE = re.compile(r'\s*(?:==|!=|<=|>=|<(?!<)|>(?!>))')
+
+
 
 
 def _ptr_trunc_decl_pointer_vars(code):
@@ -964,22 +527,6 @@ def _ptr_trunc_decl_pointer_vars(code):
     return ptr_vars, var_struct
 
 
-def _extract_balanced_parens(s):
-    """Given `s` starting with '(', return the balanced '(...)' substring.
-
-    Returns None if the parens never balance within `s` (truncated line).
-    """
-    if not s or s[0] != '(':
-        return None
-    depth = 0
-    for i, ch in enumerate(s):
-        if ch == '(':
-            depth += 1
-        elif ch == ')':
-            depth -= 1
-            if depth == 0:
-                return s[:i + 1]
-    return None
 
 
 def _ptr_trunc_field(struct_name, field, layout):
@@ -988,6 +535,8 @@ def _ptr_trunc_field(struct_name, field, layout):
         if fl.get('name') == field:
             return fl
     return None
+
+
 
 
 def _ptr_trunc_operand_is_pointer(amp, root, steps, ptr_vars, var_struct,
@@ -1055,6 +604,8 @@ def _ptr_trunc_operand_is_pointer(amp, root, steps, ptr_vars, var_struct,
         # pointers (`T *f[N]`) or a multi-level pointer (`T **f`).
         return bool(fld.get('n')) or fld.get('stars', 0) >= 2
     return True
+
+
 
 
 def identify_pointer_truncation_suspects(decompiled_code, func_globals=None,
@@ -1214,6 +765,8 @@ def identify_pointer_truncation_suspects(decompiled_code, func_globals=None,
     return suspects
 
 
+
+
 def identify_raw_address_constant_suspects(decompiled_code, address_interval_map=None):
     """Detect raw hex literals that match the address of a known global or string.
 
@@ -1341,6 +894,8 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
     return suspects
 
 
+
+
 def _looks_like_pointer_address(addr):
     """Heuristic: does this integer look like a baked-in symbol address?
 
@@ -1387,12 +942,16 @@ def _looks_like_pointer_address(addr):
     return True
 
 
+
+
 # A bare local assigned a raw hex literal: `iVar5 = 0x3f95dfc;`. LHS is a plain
 # identifier (no `->`, `.`, `[`, `*`) so struct-field / global-array stores
 # don't match. The constant has >= 6 hex digits (>= 0x100000) to skip small
 # numeric literals before the value-range filter even runs.
 _INT_ADDR_ASSIGN_RE = re.compile(
     r"^\s*([A-Za-z_]\w*)\s*=\s*0x([0-9a-fA-F]{6,})\s*;\s*$")
+
+
 
 
 def identify_raw_address_in_local(decompiled_code):
@@ -1471,6 +1030,8 @@ def identify_raw_address_in_local(decompiled_code):
     return suspects
 
 
+
+
 # Watcom's loop-unrolled strcpy copies 2 bytes per iteration and checks for
 # null termination in the middle of the body. The distinguishing line is
 # a null-check that exits the loop, immediately after `*<dst> = <byte_var>;`
@@ -1479,12 +1040,16 @@ def identify_raw_address_in_local(decompiled_code):
 # terminal inside (Watcom sometimes emits the divergent branch both ways).
 _UNROLLED_BYTE_STORE_RE = re.compile(
     r"^\s*\*?(\w+)(?:\[\d+\])?\s*=\s*(\w+)\s*;\s*$")
+
+
 # Cast-wrapped destination form: `(*(char (*) [N])dst)[0] = cVar;`. Watcom
 # emits this when the destination local is typed as a fixed-size char array
 # (e.g. g_MessageKeyStorage[i] : char[128]). Group 2 still captures the byte
 # source var so the null-break cross-check remains the same.
 _UNROLLED_CASTED_BYTE_STORE_RE = re.compile(
     r"^\s*\(\s*\*.*\)\s*\[\d+\]\s*=\s*(\w+)\s*;\s*$")
+
+
 # Struct-field destination form: `obj->field[N] = cVar;` / `obj->field = cVar;` /
 # `obj.field = cVar;` / `(obj->field).array[N] = cVar;`. The destination starts
 # with either a bare identifier or a parenthesized `ident(->field|.field)*`
@@ -1498,23 +1063,39 @@ _UNROLLED_STRUCT_BYTE_STORE_RE = re.compile(
     r"(?:\(\s*[*&]?\s*\w+(?:->\w+|\.\w+)*\s*\)|\w+)"
     r"(?:->\w+|\.\w+|\[[^\]]+\])+"
     r"\s*=\s*(\w+)\s*;\s*$")
+
+
 _UNROLLED_NULL_BREAK_RE = re.compile(
     r"^\s*if\s*\(\s*(\w+)\s*==\s*'\\0'\s*\)\s*break\s*;\s*$")
+
+
 _UNROLLED_NULL_RETURN_RE = re.compile(
     r"^\s*if\s*\(\s*(\w+)\s*==\s*'\\0'\s*\)\s*return\b[^;]*;\s*$")
+
+
 _UNROLLED_NULL_BLOCK_RE = re.compile(
     r"^\s*if\s*\(\s*(\w+)\s*==\s*'\\0'\s*\)\s*\{\s*$")
+
+
 _UNROLLED_TERMINAL_RE = re.compile(
     r"^\s*(?:break|return\b[^;]*|continue|goto\s+\w+)\s*;\s*$")
+
+
 _UNROLLED_DO_RE = re.compile(r"^\s*do\s*\{?\s*$")
+
+
 _UNROLLED_WHILE_RE = re.compile(
     r"^\s*\}\s*while\s*\(\s*\w+\s*!=\s*'\\0'\s*\)\s*;\s*$")
+
+
 # A loop-invariant capture (`tmp = ident;`) that Watcom sometimes hoists
 # between the byte store and the null-break inside an unrolled strcpy, e.g.
 # `pacVar6 = pacVar3;` (buildMasterTextureList sort) or `pcVar4 = local_12c;`
 # (CTextureList::load). LHS and RHS are both bare identifiers — NOT a byte
 # store (`*dst`/`dst[1]`), pointer advance (`p = p + 2`), or comparison.
 _UNROLLED_INTERLEAVED_ASSIGN_RE = re.compile(r"^\s*\w+\s*=\s*\w+\s*;\s*$")
+
+
 
 
 def identify_unrolled_strcpy_loops(decompiled_code):
@@ -1623,6 +1204,8 @@ def identify_unrolled_strcpy_loops(decompiled_code):
     return suspects
 
 
+
+
 # Watcom's loop-unrolled memcpy copies N dwords (or words/bytes) per
 # iteration inside a countdown for loop. The tell-tale combination is a
 # countdown header plus the `((uint)<bool> * -2 + 1)` arithmetic, which is
@@ -1636,16 +1219,22 @@ def identify_unrolled_strcpy_loops(decompiled_code):
 _UNROLLED_MEMCPY_FOR_RE = re.compile(
     r"^\s*for\s*\(\s*(?:(\w+)\s*=\s*[^;]+?)?\s*;\s*[^;]*?(\w+)\s*!=\s*0(?:\.0+)?f?\s*;\s*"
     r"\2\s*=\s*[^;]*?\b\2\b\s*(?:\+\s*-?1|-\s*1)[^;]*?\)\s*\{?\s*$")
+
+
 # Pointer-deref store. RHS may be `*src` (Watcom typed-pair lowering) or a
 # field/expr like `(p->field).x` (Ghidra rendering when src walks a struct).
 # The strong signal is the direction idiom; the store check just rejects
 # loops that don't store through a pointer.
 _UNROLLED_MEMCPY_STORE_RE = re.compile(
     r"^\s*\*\s*(?:\(\s*\w+\s*\*\s*\)\s*)?\w+\s*=\s*.+;\s*$")
+
+
 # The `(uint)bVar * -2 + 1` direction trick — very specific to Watcom's
 # REP MOVSD lowering. `* -8 + 4` is the dword-scaled variant.
 _UNROLLED_MEMCPY_DIR_RE = re.compile(
     r"\(\s*uint\s*\)\s*\w+\s*\*\s*-?\d+\s*\+\s*\d+")
+
+
 # Typed-pair memcpy: paired `*ptr = *src;` deref store and `ptr = ptr + 1;`
 # typed-pointer increment. This is Watcom's no-direction-idiom variant of
 # REP MOVSD lowering — emitted when type info lets Ghidra render typed
@@ -1653,8 +1242,12 @@ _UNROLLED_MEMCPY_DIR_RE = re.compile(
 # memcpy.
 _UNROLLED_MEMCPY_TYPED_STORE_RE = re.compile(
     r"^\s*\*\s*\w+\s*=\s*\*\s*\w+\s*;\s*$")
+
+
 _UNROLLED_MEMCPY_TYPED_INC_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\1\s*\+\s*1\s*;\s*$")
+
+
 
 
 # Watcom's other inline-memcpy lowering: a dword countdown over `N >> 2`
@@ -1665,9 +1258,13 @@ _UNROLLED_MEMCPY_TYPED_INC_RE = re.compile(
 _UNROLLED_MEMCPY_DWORD_FOR_RE = re.compile(
     r"^\s*for\s*\(\s*(\w+)\s*=\s*(.+?)\s*>>\s*2\s*;\s*\1\s*!=\s*0\s*;\s*"
     r"\1\s*=\s*\1\s*(?:\+\s*-?1|-\s*1)\s*\)\s*\{?\s*$")
+
+
 _UNROLLED_MEMCPY_BYTE_FOR_RE = re.compile(
     r"^\s*for\s*\(\s*(\w+)\s*=\s*(.+?)\s*&\s*3\s*;\s*\1\s*!=\s*0\s*;\s*"
     r"\1\s*=\s*\1\s*(?:\+\s*-?1|-\s*1)\s*\)\s*\{?\s*$")
+
+
 
 # Watcom's plainest inline-memcpy lowering: a countdown loop with a
 # *cast* dword store (`*(uint *)dst = *(uint *)src;`) and both pointers
@@ -1679,8 +1276,12 @@ _UNROLLED_MEMCPY_BYTE_FOR_RE = re.compile(
 _UNROLLED_MEMCPY_DWORD_CAST_STORE_RE = re.compile(
     r"^\s*\*\s*\(\s*u?int\s*\*\s*\)\s*\w+\s*=\s*"
     r"\*\s*\(\s*u?int\s*\*\s*\)\s*\w+\s*;\s*$")
+
+
 _UNROLLED_MEMCPY_STRIDE4_INC_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\1\s*\+\s*4\s*;\s*$")
+
+
 
 
 def identify_unrolled_memcpy_dword_byte_split(decompiled_code):
@@ -1781,6 +1382,8 @@ def identify_unrolled_memcpy_dword_byte_split(decompiled_code):
     return suspects
 
 
+
+
 def identify_unrolled_memcpy_loops(decompiled_code):
     """Detect Watcom's loop-unrolled memcpy artifacts.
 
@@ -1855,6 +1458,8 @@ def identify_unrolled_memcpy_loops(decompiled_code):
             'severity': 'moderate',
         })
     return suspects
+
+
 
 
 def identify_unrolled_memcpy_dword_cast_loop(decompiled_code):
@@ -1944,6 +1549,8 @@ def identify_unrolled_memcpy_dword_cast_loop(decompiled_code):
     return suspects
 
 
+
+
 # Single-line indexed copy of the form `[*]IDENT[A] = [*]IDENT[B];` —
 # captures (lhs_deref_ident, lhs_index_ident, lhs_index_N,
 # rhs_deref_ident, rhs_index_ident, rhs_index_N). Either deref or index
@@ -1958,12 +1565,16 @@ _INDEX_COPY_LINE_RE = re.compile(
     r'(?:\*\s*(\w+)|(\w+)\s*\[\s*(\d+|0x[0-9a-fA-F]+)\s*\])'
     r'\s*;\s*$'
 )
+
+
 # Minimum run length (number of consecutive matching `ptr[N] = ptr[N+K];`
 # lines) before flagging as an unrolled memcpy. 4+ avoids false positives
 # on small swaps or scattered assignments; real Watcom struct copies
 # unrolled this way are typically 6+ (e.g. a CVector3d's 3 doubles =
 # 6 dwords, a CMatrix3x4f's 48 bytes = 12 dwords).
 _INDEX_COPY_MIN_RUN = 4
+
+
 
 
 def identify_unrolled_memcpy_index_form(decompiled_code):
@@ -2070,6 +1681,8 @@ def identify_unrolled_memcpy_index_form(decompiled_code):
     return suspects
 
 
+
+
 # Variant of `_UNROLLED_MEMCPY_FOR_RE` that also captures the literal
 # iteration count from the for-init. Only used by
 # `identify_memcpy_oversized_source` — the regular unrolled-memcpy detector
@@ -2078,16 +1691,22 @@ def identify_unrolled_memcpy_index_form(decompiled_code):
 _COUNTDOWN_INIT_LITERAL_RE = re.compile(
     r"^\s*for\s*\(\s*(\w+)\s*=\s*(\d+|0x[0-9a-fA-F]+)\s*;\s*\1\s*!=\s*0(?:\.0+)?f?\s*;\s*"
     r"\1\s*=\s*[^;]*?\b\1\b\s*(?:\+\s*-?1|-\s*1)[^;]*?\)\s*\{?\s*$")
+
+
 # `*DST = *SRC;` body line — captures the source pointer. Allows optional
 # typed casts on either side (`*(uint *)dst = *(uint *)src;`).
 _DEREF_STORE_SRC_RE = re.compile(
     r"^\s*\*\s*(?:\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*)?\w+\s*=\s*"
     r"\*\s*(?:\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*)?(\w+)\s*;\s*$")
+
+
 # `ptr = NAME;` or `ptr = NAME + literal;` (with optional cast). Used to find
 # which array a memcpy source pointer was initialized from.
 _PTR_FROM_ARRAY_RE = re.compile(
     r"^\s*(\w+)\s*=\s*(?:\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*)?(\w+)"
     r"(?:\s*\+\s*\d+)?\s*;\s*$")
+
+
 # Local array declaration with a literal element count: `T NAME[N];` or
 # `T *NAME[N];` (allows multi-word types like `unsigned int`). The size must
 # be a decimal literal — non-literal sizes can't be compared against the
@@ -2102,6 +1721,8 @@ _PTR_FROM_ARRAY_RE = re.compile(
 _LOCAL_ARRAY_DECL_RE = re.compile(
     r"^\s*\w+(?:\s+\w+)*(?:\s+\**\s*|\s*\*+\s*)([A-Za-z_]\w*)"
     r"\s*\[\s*(\d+)\s*\]\s*;\s*$")
+
+
 
 
 def identify_memcpy_oversized_source(decompiled_code):
@@ -2218,6 +1839,8 @@ def identify_memcpy_oversized_source(decompiled_code):
     return suspects
 
 
+
+
 # Co-occurrence of `WARNING: Removing unreachable block` + a
 # `do { ... } while (true);` in the same function. Each in isolation is mild,
 # but together they're a strong fingerprint for Ghidra dropping a loop
@@ -2234,7 +1857,11 @@ def identify_memcpy_oversized_source(decompiled_code):
 # restores the counter (init / multiplier / bounds check) and the post-loop
 # tail (visible in the asm past the JL backedge).
 _INFINITE_DOWHILE_RE = re.compile(r"^\s*\}\s*while\s*\(\s*true\s*\)\s*;\s*$")
+
+
 _REMOVING_UNREACHABLE_RE = re.compile(r"WARNING:\s*Removing unreachable block")
+
+
 
 
 def identify_dropped_loop_counter(decompiled_code):
@@ -2275,6 +1902,8 @@ def identify_dropped_loop_counter(decompiled_code):
     return suspects
 
 
+
+
 # Field-by-field struct copy: a run of consecutive `dst.field = src.field;`
 # lines covering many struct fields. Watcom emits this when copying a struct
 # whose field count exceeds the threshold for a REP MOVSD lowering, or for
@@ -2298,12 +1927,18 @@ def identify_dropped_loop_counter(decompiled_code):
 # the Ghidra-emitted shape is integer `+ N`.
 _POINTER_ALIAS_ADD_RE = re.compile(
     r"^\s*(\w+)\s*=\s*(\w+)\s*\+\s*(\d+)\s*;\s*$")
+
+
 _POINTER_ALIAS_ADDR_RE = re.compile(
     r"^\s*(\w+)\s*=\s*&\s*(\S.*?)\s*;\s*$")
+
+
 # Any assignment to a bare identifier — used to invalidate a tracked alias
 # when the alias name is reassigned to anything not matching the patterns
 # above.
 _ANY_ASSIGN_LHS_RE = re.compile(r"^\s*(\w+)\s*=")
+
+
 # Pure scalar rename: `IDENT = IDENT2;` with no arithmetic. Watcom spills a
 # loop count/index into a second local at the top of a loop body, then
 # writes one struct field through the original count and the rest through
@@ -2313,8 +1948,12 @@ _ANY_ASSIGN_LHS_RE = re.compile(r"^\s*(\w+)\s*=")
 # rename, and must NOT create a `count -> 0` alias.
 _SCALAR_ALIAS_RENAME_RE = re.compile(r"^\s*(\w+)\s*=\s*([A-Za-z_]\w*)\s*;\s*$")
 
+
+
 _FIELD_COPY_RE = re.compile(
     r"^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(.+?)(?:\.|->)\2\s*;\s*$")
+
+
 # Same shape as _FIELD_COPY_RE but with separate field-name captures on each
 # side (no backreference). Used by the suppression check below to detect a
 # `lhs.X = rhs.Y;` cross-type rename line adjacent to a same-name run, which
@@ -2322,12 +1961,16 @@ _FIELD_COPY_RE = re.compile(
 # to `dst = src;` / `memcpy`.
 _FIELD_RENAME_COPY_RE = re.compile(
     r"^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(.+?)(?:\.|->)(\w+)\s*;\s*$")
+
+
 # Identifier at the very start of an expression, ignoring leading parens
 # and dereference operators. Used to confirm the LHS and RHS of a field-copy
 # run share a common root variable (e.g. both rooted at `pSVar5`), so we
 # don't flag copies between unrelated structs that happen to share field
 # names.
 _ROOT_IDENT_RE = re.compile(r"\s*[\(\*]*\s*(\w+)")
+
+
 
 
 def _is_pure_path_expr(expr):
@@ -2374,6 +2017,8 @@ def _is_pure_path_expr(expr):
     # dots, and whitespace.
     s = s.replace('->', '.')
     return re.fullmatch(r'\s*[\w\.\s]*\s*', s) is not None
+
+
 
 
 def _resolve_pointer_aliases(decompiled_code):
@@ -2449,6 +2094,8 @@ def _resolve_pointer_aliases(decompiled_code):
     return '\n'.join(out)
 
 
+
+
 def _resolve_scalar_index_aliases(decompiled_code):
     """Normalize array subscripts that use a pure-rename scalar alias.
 
@@ -2509,6 +2156,8 @@ def _resolve_scalar_index_aliases(decompiled_code):
     return '\n'.join(out)
 
 
+
+
 def _field_copy_run_is_contiguous(struct_name, field_names, layout):
     """Return True if `field_names` occupy a single contiguous byte span in
     `struct_name` (sorted by offset, no gaps), False if they don't, or None
@@ -2538,6 +2187,8 @@ def _field_copy_run_is_contiguous(struct_name, field_names, layout):
         if extents[k][0] != extents[k - 1][1]:
             return False
     return True
+
+
 
 
 def identify_unrolled_field_copy(decompiled_code, struct_layout_map=None):
@@ -2818,6 +2469,8 @@ def identify_unrolled_field_copy(decompiled_code, struct_layout_map=None):
     return suspects
 
 
+
+
 # Raw-offset unrolled struct copy. Where `identify_unrolled_field_copy`
 # catches named-field copies (`dst.field = src.field`), Ghidra sometimes
 # loses the struct type entirely and emits a run of pointer-cast writes
@@ -2838,6 +2491,8 @@ _OFFSET_COPY_RE = re.compile(
     r'\*\s*\(\s*(\w+)\s*\*\s*\)\s*'                      # = *(TYPE *)
     r'\(\s*(\w+)\s*\+\s*(0[xX][0-9a-fA-F]+|\d+)\s*\)'    # (BASE2 + OFF2)
     r'\s*;\s*$')
+
+
 # Cast type -> byte width. Used to require the copied words be contiguous
 # (stride == width) so a run of unrelated scattered pointer writes that
 # happen to share a base isn't mistaken for a block copy.
@@ -2848,6 +2503,8 @@ _OFFSET_COPY_WIDTH = {
     'long': 4, 'ulong': 4, 'dword': 4,
     'longlong': 8, 'ulonglong': 8, 'double': 8, 'undefined8': 8, 'qword': 8,
 }
+
+
 
 
 def identify_unrolled_offset_copy(decompiled_code):
@@ -2951,6 +2608,8 @@ def identify_unrolled_offset_copy(decompiled_code):
     return suspects
 
 
+
+
 # Cascade constant fill: a Watcom optimization that sets multiple sibling
 # fields of one struct/array to the same constant by storing the constant
 # once and forwarding it through prior slots:
@@ -2987,25 +2646,37 @@ _CASCADE_CONST_RE = re.compile(
     r'(0\.0f?|0\.0+f?|0|0x0+|NULL|nullptr|'
     r'\(\s*[A-Za-z_][\w\s\*]*\s*\)\s*0x0*|'
     r'\(\s*[A-Za-z_][\w\s\*]*\s*\)\s*0)\s*;\s*$')
+
+
 _CASCADE_CHAIN_RE = re.compile(
     r'^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(.+?)(?:\.|->)(\w+)\s*;\s*$')
+
+
 # Bare `<var> = &<path>;` alias declaration. LHS must be a simple
 # identifier; RHS is anything-after-`&` up to the trailing `;`.
 _CASCADE_ALIAS_RE = re.compile(
     r'^\s*(\w+)\s*=\s*&\s*(.+?)\s*;\s*$')
+
+
 # Temp-float save: `<tmp> = <path>.<field>;` — LHS is a bare identifier,
 # RHS is a struct/pointer access. Caller filters by path/field equality.
 _CASCADE_TEMP_SAVE_RE = re.compile(
     r'^\s*(\w+)\s*=\s*(.+?)(?:\.|->)(\w+)\s*;\s*$')
+
+
 # Temp-float use: `<lhs>.<field> = <tmp>;` — RHS is a bare identifier.
 # Caller verifies `<tmp>` matches the armed bounce var.
 _CASCADE_TEMP_USE_RE = re.compile(
     r'^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(\w+)\s*;\s*$')
+
+
 # Leading tokens that disqualify a statement from being skipped as a benign
 # interleaved bookkeeping line inside a cascade run (control flow / calls).
 _CASCADE_INTERLEAVE_STOP = frozenset((
     'if', 'else', 'for', 'while', 'do', 'switch', 'case', 'return',
     'goto', 'break', 'continue'))
+
+
 
 
 def _join_wrapped_statements(lines):
@@ -3035,6 +2706,8 @@ def _join_wrapped_statements(lines):
             cur = ''
     if cur_start is not None:
         yield (cur_start, cur)
+
+
 
 
 def identify_cascade_constant_fill(decompiled_code):
@@ -3213,6 +2886,8 @@ def identify_cascade_constant_fill(decompiled_code):
     return suspects
 
 
+
+
 # Self-copy guard: an `if (&LOCAL_A != &LOCAL_B) { LOCAL_A = LOCAL_B; ... }`
 # block where both sides are bare addresses of stack locals. Watcom emitted
 # this when the source code wrote `if (&dst != &src) dst = src;` to guard a
@@ -3227,8 +2902,12 @@ def identify_cascade_constant_fill(decompiled_code):
 # leave those alone.
 _SELF_COPY_GUARD_IF_RE = re.compile(
     r"^\s*if\s*\(\s*&(\w+)\s*!=\s*&(\w+)\s*\)\s*\{?\s*$")
+
+
 _SELF_COPY_FIRST_ASSIGN_RE = re.compile(
     r"^\s*(\w+)\s*=\s*(\w+)\s*;\s*$")
+
+
 
 
 def identify_self_copy_guard(decompiled_code):
@@ -3294,6 +2973,8 @@ def identify_self_copy_guard(decompiled_code):
     return suspects
 
 
+
+
 # Inverted self-copy guard: an `if (&LOCAL_A == &LOCAL_B) goto LABEL;`
 # single-statement line where both sides are bare addresses of stack locals
 # (A != B). This is the inverted mirror of `self_copy_guard`. The original
@@ -3320,6 +3001,8 @@ def identify_self_copy_guard(decompiled_code):
 _DROPPED_SELF_COPY_RE = re.compile(
     r"^\s*if\s*\(\s*&(\w+)\s*==\s*&(\w+)\s*\)\s*(?:\{\s*)?"
     r"(?:goto\s+\w+|break|continue)\s*;\s*\}?\s*$")
+
+
 
 
 def identify_dropped_self_copy(decompiled_code):
@@ -3376,6 +3059,8 @@ def identify_dropped_self_copy(decompiled_code):
     return suspects
 
 
+
+
 # Tautological address-of guard. Watcom self-copy / defensive guards
 # (`if (&dst != &src) dst = src;`) sometimes survive decompilation with one
 # operand resolved to a non-object SENTINEL and the other to the address of a
@@ -3402,11 +3087,15 @@ def identify_dropped_self_copy(decompiled_code):
 # (`&*p` IS `p`, a genuine null check), and no stack-phantom-vs-stack-phantom
 # comparison. Those forms are deliberately left alone.
 _TAUT_SENTINEL = r"(?:\([A-Za-z_]\w*\s*\*\)\s*)?(?:0x0|&stack0x[0-9a-fA-F]+)"
+
+
 _TAUT_ADDR_GUARD_RE = re.compile(
     r"^\s*if\s*\(\s*"
     r"(?:" + _TAUT_SENTINEL + r"\s*(?P<op_a>!=|==)\s*&(?P<addr_a>\w+(?:\.\w+)*)"
     r"|&(?P<addr_b>\w+(?:\.\w+)*)\s*(?P<op_b>!=|==)\s*" + _TAUT_SENTINEL + r")"
     r"\s*\)")
+
+
 
 
 def identify_tautological_addr_guard(decompiled_code):
@@ -3456,6 +3145,8 @@ def identify_tautological_addr_guard(decompiled_code):
     return suspects
 
 
+
+
 # Signed shift-right-by-31 of a global operand (`g_Foo >> 0x1f`, optionally
 # `(int)`-cast, with member/index access). This is the same Watcom signed-
 # divide-by-power-of-2 / branchless-abs sign-mask idiom that cppcheck flags as
@@ -3471,6 +3162,8 @@ _SIGNED_SHIFT_GLOBAL_RE = re.compile(
 )
 
 
+
+
 # Ghidra's CONCAT{N}(hi, lo) intrinsic stitches narrow values into a wider one
 # (e.g. two uint halves into a 64-bit value, a sign word + value for a 64-bit
 # sign-extend). It is always a Watcom wide-value artifact, never legitimate C.
@@ -3480,9 +3173,17 @@ _SIGNED_SHIFT_GLOBAL_RE = re.compile(
 # those and counts every *other* CONCAT, which previously fell only into the
 # omitted `decompiler_intrinsic` bucket and went unreported.
 _CONCAT_RE = re.compile(r'\bCONCAT(\d+)\s*\(')
+
+
 _CONCAT_DOUBLE_RE = re.compile(r'\(double\)\s*CONCAT44\s*\(')
+
+
 _CONCAT_BITCAST_RE = re.compile(r'__BITCAST_DOUBLE\s*\(\s*CONCAT44\s*\(')
+
+
 _CONCAT_FNSTSW_RE = re.compile(r'CONCAT22\s*\(.*>>\s*0x10')
+
+
 
 
 def identify_concat_reconstruction(decompiled_code):
@@ -3527,6 +3228,8 @@ def identify_concat_reconstruction(decompiled_code):
             'severity': 'moderate',
         })
     return suspects
+
+
 
 
 def identify_signed_shift_global_idiom(decompiled_code):
@@ -3579,11 +3282,15 @@ def identify_signed_shift_global_idiom(decompiled_code):
     return suspects
 
 
+
+
 # Local-array declaration of the form `T NAME[N];`. Accepts multi-word
 # types (`unsigned int`, `struct CFoo`) and optional pointer asterisks.
 _LOCAL_ARRAY_DECL_RE = re.compile(
     r'^\s+([A-Za-z_][\w\s\*]*?)\s+([A-Za-z_]\w*)\s*\[\s*(\d+)\s*\]\s*;\s*$'
 )
+
+
 
 # Primitive element types where varying array sizes are routine and
 # almost always intentional (char string buffers, int counters, float
@@ -3599,6 +3306,8 @@ _SIBLING_ARRAY_PRIMITIVE_TYPES = frozenset((
     'size_t', 'ssize_t', 'ptrdiff_t', 'intptr_t', 'uintptr_t',
     'wchar_t',
 ))
+
+
 
 
 def identify_sibling_array_undersized(decompiled_code):
@@ -3687,6 +3396,8 @@ def identify_sibling_array_undersized(decompiled_code):
     return suspects
 
 
+
+
 # Multi-line variant of the `pointer_cast` regex. The single-line detector
 # in `identify_suspect_lines` iterates per-line, so it misses cases where
 # Ghidra split `(TYPE *)` onto one line and the `((int)NAME ...)` operand
@@ -3696,6 +3407,8 @@ def identify_sibling_array_undersized(decompiled_code):
 _POINTER_CAST_FULLTEXT_RE = re.compile(
     r'\(\w+(?:\s+\w+)*\s*\*+\s*\)\s*\([^)]*\(int\)\s*'
     r'(?:\([^()]*\)\s*(?:->|\.)\s*\w+|\w+)(?!\w|\s*\()')
+
+
 
 
 def identify_pointer_cast_multiline(decompiled_code):
@@ -3756,6 +3469,8 @@ def identify_pointer_cast_multiline(decompiled_code):
     return suspects
 
 
+
+
 # `(int)&NAME` used in arithmetic. Watcom emits this when struct/local
 # addresses are converted to int and used in byte-offset math — almost
 # always a sign that the original source did struct field access by name
@@ -3772,13 +3487,19 @@ _NESTED_PAREN = (
     r'|\((?:[^()]'
     r'|\([^()]*\))*\))*\))*\)'
 )
+
+
 # Base of the address after `&`: either a parenthesized expression followed
 # by a struct access, or a bare identifier.
 _INT_ADDR_BASE = r'(?:' + _NESTED_PAREN + r'\s*(?:->|\.)\s*\w+|\w+)'
+
+
 # Address tail: struct fields, arrow chains, bracketed indices. Balanced
 # `[...]` is consumed as a unit so a `+`/`-` inside an array index
 # (e.g. `[i + 1]`) doesn't trigger the arithmetic-context match.
 _INT_ADDR_TAIL = r'(?:\.\w+|->\w+|\[[^\]]*\])*'
+
+
 
 _INT_ADDR_ARITH_RE = re.compile(
     # (int)&NAME(.field|->field|[...])* +/- ...
@@ -3795,6 +3516,8 @@ _INT_ADDR_ARITH_RE = re.compile(
     r'|'
     r'[\+\-]\s*\(int\)\s*&' + _INT_ADDR_BASE + _INT_ADDR_TAIL
 )
+
+
 
 
 def identify_int_address_arithmetic(decompiled_code):
@@ -3842,6 +3565,8 @@ def identify_int_address_arithmetic(decompiled_code):
     return suspects
 
 
+
+
 # Multi-line variant of `_INT_ADDR_ARITH_RE`. The per-line pass in
 # `identify_int_address_arithmetic` misses byte-offset walks that Ghidra
 # wrapped across physical lines, e.g.
@@ -3860,11 +3585,15 @@ def identify_int_address_arithmetic(decompiled_code):
 # regex).
 _INT_ADDR_TAIL_ML = r'(?:\s*\.\s*\w+|\s*->\s*\w+|\s*\[[^\]]*\])*'
 
+
+
 _INT_ADDR_ARITH_MULTILINE_RE = re.compile(
     r'\(int\)\s*&' + _INT_ADDR_BASE + _INT_ADDR_TAIL_ML + r'\s*[\+\-]'
     r'|'
     r'[\+\-]\s*\(int\)\s*&' + _INT_ADDR_BASE + _INT_ADDR_TAIL_ML
 )
+
+
 
 
 def identify_int_address_arithmetic_multiline(decompiled_code):
@@ -3925,6 +3654,8 @@ def identify_int_address_arithmetic_multiline(decompiled_code):
     return suspects
 
 
+
+
 # Subobject-reach byte-offset cast: `(T *)(IDENT[N].FIELD + 0xOFF)`.
 # Watcom/Ghidra computes the address of an EMBEDDED member through a phantom
 # array index one element past the base, a sibling field whose array decays
@@ -3947,6 +3678,8 @@ _SUBOBJ_BYTE_OFFSET_CAST_RE = re.compile(
     r'\s*(?:\.|->)\s*\w+'             # .field / ->field   (decays to pointer)
     r'\s*\+\s*0x[0-9a-fA-F]+'         # + 0xHEX   (byte offset)
     r'\s*\)')                         # )
+
+
 
 
 def identify_subobject_byte_offset_cast(decompiled_code):
@@ -3997,6 +3730,8 @@ def identify_subobject_byte_offset_cast(decompiled_code):
     return suspects
 
 
+
+
 # Pointer-variable cast to int + hex byte offset, dereferenced — raw struct
 # access that should be a named field / array index. Ghidra casts a `this`/
 # param pointer to int, does byte arithmetic, and derefs with a hex offset:
@@ -4010,16 +3745,24 @@ def identify_subobject_byte_offset_cast(decompiled_code):
 # NOT fire on the thousands of ordinary `*(T*)(intvar + off)` buffer/loop/string
 # accesses whose base isn't a pointer.
 _PTRISH = r"(?:this_ptr|param_\d+|p[A-Z]\w*|[A-Za-z_]\w*_ptr)"
+
+
 # LHS local assigned from an RHS that contains `(int)<ptrish>` → the local holds
 # a raw `pointer + offset` struct address.
 _PTR_INT_ASSIGN_RE = re.compile(
     r"^\s*(\w+)\s*=\s*[^;]*\(int\)\s*" + _PTRISH + r"\b")
+
+
 # `(TYPE *)(BASE +/- 0xNNN)` where BASE is an identifier or `(int)<ident>`.
 _PTR_OFFSET_CAST_RE = re.compile(
     r"\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*\(\s*"
     r"(?P<base>(?:\(int\)\s*)?[A-Za-z_]\w*)\s*[-+]\s*0x[0-9a-fA-F]+\s*\)")
+
+
 # Inline pointer-cast base: `(int)<ptrish>`.
 _INLINE_PTR_BASE_RE = re.compile(r"^\(int\)\s*" + _PTRISH + r"\Z")
+
+
 
 
 def identify_pointer_int_offset_access(decompiled_code):
@@ -4076,6 +3819,8 @@ def identify_pointer_int_offset_access(decompiled_code):
     return suspects
 
 
+
+
 # Watcom shadow-pointer walk. The compiler used a struct-field-array's
 # address as a base and advanced it by element size each iteration so that
 # `shadow->bone_list[0]` resolved to `original->bone_list[i]`. Ghidra
@@ -4099,6 +3844,8 @@ def identify_pointer_int_offset_access(decompiled_code):
 # bare `\d+` silently skips every hex-constant walk.
 _SPW_INT = r'(?:0[xX][0-9a-fA-F]+|\d+)'
 
+
+
 _SHADOW_PTR_WALK_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # LHS identifier
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
@@ -4106,6 +3853,8 @@ _SHADOW_PTR_WALK_RE = re.compile(
     r'\s*\.\s*\w+\s*\[\s*' + _SPW_INT + r'\s*\]'     # .ARRAY[N]
     r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
+
+
 # Address-of-field variant: `IDENT = (T *)&(IDENT->FIELD).SUBFIELD;` —
 # Watcom advances the pointer by the byte offset of a sibling field
 # whose offset happens to equal the array stride. Same antipattern as
@@ -4120,6 +3869,8 @@ _SHADOW_PTR_WALK_ADDR_RE = re.compile(
     r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'  # .SUBFIELD[N]?(.SUBFIELD[N]?)*
     r'\s*;\s*$'                                      # ;
 )
+
+
 # Unparenthesized arrow variant: `IDENT = (T *)&IDENT->FIELD[N].SUBFIELD(.SUBFIELD)*;`
 # Same antipattern as `_SHADOW_PTR_WALK_ADDR_RE` but the arrow-deref is NOT
 # wrapped in parens and the leading field may itself be array-indexed. Ghidra
@@ -4135,6 +3886,8 @@ _SHADOW_PTR_WALK_ARROW_RE = re.compile(
     r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'   # (.SUBFIELD[N]?)+
     r'\s*;\s*$'                                      # ;
 )
+
+
 # Single-field address variant: `IDENT = (T *)&IDENT->FIELD;` (optionally
 # `&(IDENT->FIELD)`) — Watcom advances the shadow pointer by the byte offset
 # of ONE sibling scalar field whose offset equals the array element stride
@@ -4152,6 +3905,8 @@ _SHADOW_PTR_WALK_ARROW_SINGLE_RE = re.compile(
     r'&\s*(?:\(\s*\1\s*->\s*\w+\s*\)|\1\s*->\s*\w+)'  # &(IDENT->FIELD) | &IDENT->FIELD
     r'\s*;\s*$'                                      # ;
 )
+
+
 # Self-index address variant: `IDENT = (T *)&IDENT[N].SUBFIELD(.SUBFIELD)*;`
 # Watcom advances the shadow pointer by taking the address of a constant
 # index into the pointer itself plus a subfield path, where
@@ -4166,6 +3921,8 @@ _SHADOW_PTR_WALK_SELF_INDEX_RE = re.compile(
     r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'  # .SUBFIELD[N]?(.SUBFIELD[N]?)*
     r'\s*;\s*$'                                      # ;
 )
+
+
 # Self-index array-decay-plus-const variant:
 #   `IDENT = (T *)(IDENT[N].FIELD + CONST);`
 # Watcom advances the shadow pointer by self-indexing a constant element step
@@ -4183,6 +3940,8 @@ _SHADOW_PTR_WALK_SELF_INDEX_DECAY_PLUS_RE = re.compile(
     r'(?:\s*\.\s*\w+)+'                              # .FIELD(.SUBFIELD)*
     r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
+
+
 # Array-decay variant: `IDENT = (T *)IDENT->ARRAY_FIELD;` — Watcom advances
 # the pointer by the byte offset of a sibling array field whose offset
 # happens to equal the element stride (e.g. `lod_info` at offset 0x4 ==
@@ -4193,6 +3952,8 @@ _SHADOW_PTR_WALK_DECAY_RE = re.compile(
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'\1\s*->\s*\w+\s*;\s*$'                         # IDENT->FIELD;
 )
+
+
 # Array-decay-plus-const variant:
 #   `IDENT = (T *)((IDENT->FIELD).SUBFIELD...ARRAY + CONST);`
 # Watcom advances the shadow pointer by pointer arithmetic on an inner
@@ -4208,6 +3969,8 @@ _SHADOW_PTR_WALK_ARRAY_DECAY_PLUS_RE = re.compile(
     r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)+
     r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
+
+
 # Arrow-indexed array-decay-plus-const variant:
 #   `IDENT = (T *)(IDENT->FIELD[N].SUBFIELD + CONST);`
 # Same antipattern as `_SHADOW_PTR_WALK_ARRAY_DECAY_PLUS_RE` but the arrow
@@ -4225,6 +3988,8 @@ _SHADOW_PTR_WALK_ARROW_INDEX_DECAY_PLUS_RE = re.compile(
     r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)*
     r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
+
+
 # Int-address-plus-const variant:
 #   `IDENT = (T *)((int)&(IDENT->FIELD).SUBFIELD + CONST);`
 # Watcom advances the shadow pointer by taking the address of a sibling
@@ -4242,6 +4007,8 @@ _SHADOW_PTR_WALK_INT_ADDR_CONST_RE = re.compile(
     r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)*'  # (.SUBFIELD[N]?)*
     r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
+
+
 # Int-element-stride-plus-const variant:
 #   `IDENT = (T *)((int)(IDENT + N) + M);`
 # Watcom advances the shadow pointer by adding `N` *elements* (pointer
@@ -4259,6 +4026,8 @@ _SHADOW_PTR_WALK_INT_ELEM_PLUS_RE = re.compile(
     r'\(\s*\1\s*\+\s*' + _SPW_INT + r'\s*\)'         # ( IDENT + N )
     r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + M );
 )
+
+
 # Two-step variants: same four shapes as above, but the LHS is a scratch
 # `TMP` instead of the rebound `IDENT`. The rebind happens on a later line
 # (`IDENT = TMP;`) — functionally identical to the self-update form. The
@@ -4273,6 +4042,8 @@ _SHADOW_PTR_WALK_TWOSTEP_RE = re.compile(
     r'\s*\.\s*\w+\s*\[\s*' + _SPW_INT + r'\s*\]'     # .ARRAY[N]
     r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
+
+
 _SHADOW_PTR_WALK_TWOSTEP_ADDR_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # TMP identifier
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
@@ -4280,6 +4051,8 @@ _SHADOW_PTR_WALK_TWOSTEP_ADDR_RE = re.compile(
     r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'  # .SUBFIELD[N]?(.SUBFIELD[N]?)*
     r'\s*;\s*$'                                      # ;
 )
+
+
 _SHADOW_PTR_WALK_TWOSTEP_SELF_INDEX_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # TMP identifier
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
@@ -4287,11 +4060,15 @@ _SHADOW_PTR_WALK_TWOSTEP_SELF_INDEX_RE = re.compile(
     r'(?:\s*\.\s*\w+(?:\s*\[\s*' + _SPW_INT + r'\s*\])?)+'  # .SUBFIELD[N]?(.SUBFIELD[N]?)*
     r'\s*;\s*$'                                      # ;
 )
+
+
 _SHADOW_PTR_WALK_TWOSTEP_DECAY_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # TMP identifier
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'(\w+)\s*->\s*\w+\s*;\s*$'                      # IDENT->FIELD;
 )
+
+
 _SHADOW_PTR_WALK_TWOSTEP_ARRAY_DECAY_PLUS_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # TMP identifier
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
@@ -4299,10 +4076,14 @@ _SHADOW_PTR_WALK_TWOSTEP_ARRAY_DECAY_PLUS_RE = re.compile(
     r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)+
     r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
+
+
 # Scan window for the rebind line when matching the two-step form. Loop
 # bodies that emit this pattern are typically ≤20 lines; longer ones are
 # rare and a missed hit is better than scanning the rest of the function.
 _SHADOW_PTR_WALK_TWOSTEP_WINDOW = 20
+
+
 # Plain arrow-decay-plus-const variant:
 #   `IDENT = (T *)(IDENT->FIELD + CONST);`
 # Watcom advances the shadow pointer by dereferencing a sibling array field
@@ -4324,9 +4105,13 @@ _SHADOW_PTR_WALK_ARROW_DECAY_PLUS_RE = re.compile(
     r'\(\s*\1\s*->\s*(\w+)'                          # ( IDENT->FIELD  (FIELD = grp 2)
     r'\s*\+\s*' + _SPW_INT + r'\s*\)\s*;\s*$'        # + CONST );
 )
+
+
 # Window (lines each direction) to scan for a differing-field access when
 # disambiguating the bare arrow-decay-plus form from a string-copy cursor.
 _SHADOW_PTR_WALK_OTHER_FIELD_WINDOW = 25
+
+
 
 # Backward window (lines) to scan from a bare `IDENT = IDENT + N;` advance for the
 # matching `IDENT = &BASE->ARR[K].SUBFIELD;` init. Larger than OTHER_FIELD_WINDOW
@@ -4346,6 +4131,8 @@ _SHADOW_PTR_WALK_OTHER_FIELD_WINDOW = 25
 # monotonic). Regression over core/: +6 TP (setup x2, netgame x3, setedit x1),
 # 0 lost.
 _SHADOW_PTR_WALK_ELEM_INIT_WINDOW = 120
+
+
 
 # Bare element-stride advance variant: `IDENT = IDENT + N;` (no cast, N >= 2).
 # Unlike every other form above, the advance line itself carries no signal — a
@@ -4367,12 +4154,16 @@ _SHADOW_PTR_WALK_ELEM_INIT_WINDOW = 120
 _SHADOW_PTR_WALK_ELEM_ADVANCE_RE = re.compile(
     r'^\s*(\w+)\s*=\s*\1\s*\+\s*(' + _SPW_INT + r')\s*;\s*$'  # IDENT = IDENT + N;
 )
+
+
 _SHADOW_PTR_WALK_ELEM_INIT_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # LHS identifier
     r'&\s*\w+\s*(?:->|\.)\s*\w+\s*\[\s*' + _SPW_INT + r'\s*\]'  # &BASE->ARR[K] (or BASE.ARR)
     r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)*
     r'\s*;\s*$'                                      # ;
 )
+
+
 
 
 def identify_shadow_pointer_walk(decompiled_code):
@@ -4761,6 +4552,8 @@ def identify_shadow_pointer_walk(decompiled_code):
     return suspects
 
 
+
+
 # §26 Sub-field-address vector field-pun. Ghidra splits a contiguous Watcom
 # stack block that holds a 3-component vector across adjacent locals and emits
 # the call argument (or store target) as the address of a *non-first*
@@ -4790,6 +4583,8 @@ _SUBFIELD_VECTOR_PUN_RE = re.compile(
     r'(\w+)'                                     # bare local identifier
     r'\s*\.\s*([yz])\b'                          # .y or .z component
 )
+
+
 
 
 def identify_subfield_vector_pun(decompiled_code):
@@ -4834,11 +4629,17 @@ def identify_subfield_vector_pun(decompiled_code):
     return suspects
 
 
+
+
 # Value-typed vector locals: `CVector3f foo;` / `CVector3i bar;` (NOT pointers).
 _VEC_DECL_RE = re.compile(r'^\s*(CVector3[fi])\s+(\w+)\s*;')
+
+
 # A cast of (the address of) a bare local to a vector pointer of the OTHER
 # element kind: `(CVector3f *)&bar`, `(CVector3i *)&foo`.
 _VEC_CAST_RE = re.compile(r'\(\s*(CVector3[fi])\s*\*\s*\)\s*&\s*(\w+)')
+
+
 
 
 def identify_vector_type_pun(decompiled_code):
@@ -4901,18 +4702,30 @@ def identify_vector_type_pun(decompiled_code):
     return suspects
 
 
+
+
 # Function's own code range, from the `// Address Range: [[s, e] [s, e]]`
 # header. Addresses are bare hex (no 0x prefix).
 _ADDR_RANGE_HDR_RE = re.compile(r'//\s*Address Range:\s*(.+)')
+
+
 _ADDR_RANGE_PAIR_RE = re.compile(r'\[\s*([0-9a-fA-F]+)\s*,\s*([0-9a-fA-F]+)\s*\]')
+
+
 # Candidate baked-address literals in code: 0x-prefixed hex (5-8 digits) and
 # decimal floats whose integer part is code-address magnitude (7-9 digits).
 _BAKED_HEX_RE = re.compile(r'\b0x([0-9a-fA-F]{5,8})\b')
+
+
 _BAKED_FLOAT_RE = re.compile(r'(?<![\w.])(\d{7,9})\.\d+')
+
+
 # §14 phantom assignment targets — a self-address stored into one of these is a
 # return-address dead store, not a baked data field.
 _DEAD_STORE_LHS_RE = re.compile(
     r'\b(in_stack_|unaff_|extraout_|register0x|in_[A-Z]{2,3}\b)')
+
+
 
 
 def identify_baked_self_address(decompiled_code):
@@ -4996,6 +4809,8 @@ def identify_baked_self_address(decompiled_code):
     return suspects
 
 
+
+
 def _baked_self_address_suspect(line_no, line, match_text, value):
     return {
         'line': line_no,
@@ -5013,6 +4828,8 @@ def _baked_self_address_suspect(line_no, line, match_text, value):
     }
 
 
+
+
 # Watcom's REP SCASB strlen idiom. ECX is initialized to -1 (0xFFFFFFFF),
 # then decremented inside a do-while that reads a byte per iteration. The
 # `(uint)<bool> * -2 + 1` direction trick picks the step (1 forward, -1
@@ -5020,20 +4837,32 @@ def _baked_self_address_suspect(line_no, line, match_text, value):
 # `~uVar - 1` (strlen) or `~uVar` (strlen + 1, the malloc-sized form).
 _UNROLLED_STRLEN_INIT_RE = re.compile(
     r"^\s*(\w+)\s*=\s*(?:0xffffffff|-1)\s*;\s*$")
+
+
 _UNROLLED_STRLEN_ECX_BREAK_RE = re.compile(
     r"^\s*if\s*\(\s*(\w+)\s*==\s*0\s*\)\s*break\s*;\s*$")
+
+
 _UNROLLED_STRLEN_DECR_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\1\s*(?:-\s*1|\+\s*-\s*1)\s*;\s*$")
+
+
 _UNROLLED_STRLEN_LOAD_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\*\s*(\w+)\s*;\s*$")
+
+
 _UNROLLED_STRLEN_STEP_RE = re.compile(
     r"^\s*\w+\s*=\s*\w+\s*\+\s*\(\s*uint\s*\)\s*\w+\s*\*\s*-?\d+\s*\+\s*\d+\s*;\s*$")
+
+
 # Plain unit-advance step: `pVar = pVar + 1;`. Watcom emits this (instead of
 # the `(uint)bool * -2 + 1` direction idiom) when the walk direction is known
 # at compile time. Same SCASB strlen — gated by the counter anchor — just a
 # bare increment. Self-advance (`\1`) required so it ties to the walked ptr.
 _UNROLLED_STRLEN_STEP_PLUS1_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\1\s*\+\s*1\s*;\s*$")
+
+
 # Scan-for-null variant: instead of loading the byte into a temp and testing
 # `cVar != '\0'`, the loop keeps a "current position" pointer and tests the
 # byte at it directly: `} while (*pVar != '\0');`. The walk advance varies
@@ -5044,6 +4873,8 @@ _UNROLLED_STRLEN_STEP_PLUS1_RE = re.compile(
 # CPodFile::mountFromFile, the menu builders, etc.
 _UNROLLED_STRLEN_WHILE_DEREF_RE = re.compile(
     r"^\s*\}\s*while\s*\(\s*\*\s*(\w+)\s*!=\s*'\\0'\s*\)\s*;\s*$")
+
+
 # Byte-temp loop close. Ghidra renders the null test as `!= '\0'` when the
 # loaded temp is `char` but as `!= 0` when it is `byte` (unsigned char) — the
 # latter slips past the shared _UNROLLED_WHILE_RE (which only matches '\0').
@@ -5052,6 +4883,8 @@ _UNROLLED_STRLEN_WHILE_DEREF_RE = re.compile(
 # Seen in configureFullPassPolygonReduction / configureSinglePassPolygonReduction.
 _UNROLLED_STRLEN_WHILE_RE = re.compile(
     r"^\s*\}\s*while\s*\(\s*\w+\s*!=\s*(?:'\\0'|0)\s*\)\s*;\s*$")
+
+
 
 
 def identify_unrolled_strlen_loops(decompiled_code):
@@ -5164,12 +4997,16 @@ def identify_unrolled_strlen_loops(decompiled_code):
     return suspects
 
 
+
+
 # Strcat = strlen-scan followed by an unrolled strcpy copying src onto the
 # null terminator of dst. After the strlen loop, the code sets
 # `<pcat> = <pend> + -1;` positioning at the null, then falls into a
 # standard 2-byte-at-a-time strcpy loop writing onto that position.
 _UNROLLED_STRCAT_ADJUST_RE = re.compile(
     r"^\s*(\w+)\s*=\s*(\w+)\s*\+\s*-\s*1\s*;\s*$")
+
+
 # Negative-index adjust variant: `<pcat> = <pwalker>[-1] + CONST;`. When the
 # strlen find-end loop walked an array-of-arrays pointer (`char (*)[N]`),
 # Ghidra positions at the null via `walker[-1] + offset` (e.g.
@@ -5181,6 +5018,8 @@ _UNROLLED_STRCAT_ADJUST_RE = re.compile(
 # configureGraphicsOptions, configureSoundOptions).
 _UNROLLED_STRCAT_ADJUST_NEGIDX_RE = re.compile(
     r"^\s*(\w+)\s*=\s*(\w+)\s*\[\s*-1\s*\]\s*\+\s*(?:0x[0-9a-fA-F]+|\d+)\s*;\s*$")
+
+
 
 
 def identify_unrolled_strcat_loops(decompiled_code):
@@ -5284,11 +5123,15 @@ def identify_unrolled_strcat_loops(decompiled_code):
     return suspects
 
 
+
+
 # Watcom's loop-unrolled strchr checks 2 bytes per iteration, each looked
 # up against the target char OR the null terminator. The pointer snapshot
 # `pA = pB;` at the top preserves the hit position when goto-ing out.
 _UNROLLED_STRCHR_SNAPSHOT_RE = re.compile(
     r"^\s*(\w+)\s*=\s*(\w+)\s*;\s*$")
+
+
 # The hit target may be a C char literal ('.', '\\x2e') OR a raw byte
 # constant (0x2e, 46) — Ghidra renders byte-typed scans with the numeric
 # form, which the char-literal-only pattern used to miss (e.g.
@@ -5296,15 +5139,25 @@ _UNROLLED_STRCHR_SNAPSHOT_RE = re.compile(
 _UNROLLED_STRCHR_CHAR_HIT_RE = re.compile(
     r"^\s*if\s*\(\s*\*\s*(\w+)\s*==\s*"
     r"('(?:\\.|[^'\\])+'|0x[0-9a-fA-F]+|\d+)\s*\)\s*goto\s+\w+\s*;\s*$")
+
+
 # Null terminator likewise appears as '\\0' or as a bare 0 / 0x0 byte.
 _UNROLLED_STRCHR_NULL_BREAK_RE = re.compile(
     r"^\s*if\s*\(\s*\*\s*(\w+)\s*==\s*('\\0'|0x0+|0)\s*\)\s*break\s*;\s*$")
+
+
 _UNROLLED_STRCHR_STEP1_RE = re.compile(
     r"^\s*(\w+)\s*=\s*(\w+)\s*\+\s*1\s*;\s*$")
+
+
 _UNROLLED_STRCHR_STEP2_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\1\s*\+\s*2\s*;\s*$")
+
+
 _UNROLLED_STRCHR_WHILE_RE = re.compile(
     r"^\s*\}\s*while\s*\(\s*\*\s*\w+\s*!=\s*('\\0'|0x0+|0)\s*\)\s*;\s*$")
+
+
 
 
 def _strchr_literal_value(tok):
@@ -5330,6 +5183,8 @@ def _strchr_literal_value(tok):
         return int(tok, 0)
     except ValueError:
         return None
+
+
 
 
 def identify_unrolled_strchr_loops(decompiled_code):
@@ -5424,22 +5279,34 @@ def identify_unrolled_strchr_loops(decompiled_code):
     return suspects
 
 
+
+
 _PREINC_ADVANCE_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\([A-Za-z_]\w*\s*\*\)\s*[^;]*?&[^;]*?\b\1->[^;]*?;\s*$")
+
+
 # Primitive-pointer advance form: `pX = pX + N;` (plain pointer arithmetic on an
 # int*/uint* walker), the counterpart to the struct-field advance above. Seen in
 # the mp3 scalefactor readers, where the walker is a flat `int *` so Ghidra emits
 # `piVar3 = piVar3 + 0xd;` instead of `piVar3 = (T *)&piVar3->field;`.
 _PREINC_ADVANCE_PTRARITH_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\1\s*\+\s*(?:0x[0-9a-fA-F]+|\d+)\s*;\s*$")
+
+
 _PREINC_SELFASSIGN_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\1\s*;\s*$")
+
+
 _PREINC_ARRAY0_RE = re.compile(
     r"\b(\w+)->\w+\[0\]")
+
+
 # Constant-index store on the advanced primitive walker: `pX[K] = ...;`. The flat
 # `int *` counterpart of the `pX->arr[0]` struct-field store.
 _PREINC_INDEX_STORE_RE = re.compile(
     r"^\s*(\w+)\s*\[\s*(?:0x[0-9a-fA-F]+|\d+)\s*\]\s*=")
+
+
 
 
 def identify_preinc_loop_idiom(decompiled_code):
@@ -5535,6 +5402,8 @@ def identify_preinc_loop_idiom(decompiled_code):
     return suspects
 
 
+
+
 # Loop-clobbered constant: a do/while loop body reassigns variables that were
 # initialized to literal constants before the loop, breaking the loop's own
 # math after iteration 0. Ghidra register-spill decompile artifact — the
@@ -5573,7 +5442,11 @@ def identify_preinc_loop_idiom(decompiled_code):
 # bare identifier or the pre-loop literal init isn't there.
 
 _LCC_DO_RE = re.compile(r"^\s*do\s*\{?\s*$")
+
+
 _LCC_SIMPLE_ASSIGN_RE = re.compile(r"^\s*(\w+)\s*=\s*(\w+)\s*;\s*$")
+
+
 # Numeric literal — int, float, hex — with optional cast and unary minus.
 _LCC_LITERAL_INIT_RE = re.compile(
     r"^\s*(\w+)\s*=\s*"
@@ -5585,6 +5458,8 @@ _LCC_LITERAL_INIT_RE = re.compile(
     r"(?:0[xX][\da-fA-F]+|\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?|\.\d+(?:[eE][+\-]?\d+)?)"
     r"[lLfFuU]*\s*;\s*$"
 )
+
+
 
 
 def identify_loop_clobbered_constant(decompiled_code):
@@ -5688,6 +5563,8 @@ def identify_loop_clobbered_constant(decompiled_code):
     return suspects
 
 
+
+
 # Fast-(inverse-)sqrt bit-trick patterns. The Watcom binary has dedicated
 # helpers `fastSqrt_FUN_00431350` and `fastInvSqrt_FUN_0043e2a0`, but the
 # approximation is also frequently inlined at call sites. Ghidra's emit
@@ -5703,15 +5580,21 @@ def identify_loop_clobbered_constant(decompiled_code):
 # `[^()]+` alone missed the parenthesized arithmetic form Ghidra emits when
 # the sqrt argument is computed inline.
 _FS_OPERAND = r"(?:[^()]|\((?:[^()]|\([^()]*\))*\))+?"
+
+
 # Numeric-cast emit (default Ghidra output):
 #   (float)(((int)EXPR >> 1) + g_FastSqrtMagic)
 #   (float)(g_FastInvSqrtMagic - ((int)EXPR >> 1))
 _FAST_SQRT_NUM_RE = re.compile(
     r"\(\s*float\s*\)\s*\(\s*\(\s*\(\s*int\s*\)" + _FS_OPERAND + r">>\s*1\s*\)\s*"
     r"\+\s*(g_FastSqrtMagic|INT_02d7a7b8)\s*\)")
+
+
 _FAST_INV_SQRT_NUM_RE = re.compile(
     r"\(\s*float\s*\)\s*\(\s*(g_FastInvSqrtMagic|g_LightAttenuationMax)\s*-\s*"
     r"\(\s*\(\s*int\s*\)" + _FS_OPERAND + r">>\s*1\s*\)\s*\)")
+
+
 # Bit-cast emit (after a manual keep fix that swaps numeric cast for
 # bit-cast — also wants to be replaced with the helper call):
 #   *(int *)&DST = (*(int *)&SRC >> 1) + g_FastSqrtMagic;
@@ -5720,10 +5603,14 @@ _FAST_SQRT_BIT_RE = re.compile(
     r"\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*=\s*"
     r"\(\s*\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*>>\s*1\s*\)\s*"
     r"\+\s*(g_FastSqrtMagic|INT_02d7a7b8)\s*;")
+
+
 _FAST_INV_SQRT_BIT_RE = re.compile(
     r"\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*=\s*"
     r"(g_FastInvSqrtMagic|g_LightAttenuationMax)\s*-\s*"
     r"\(\s*\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*>>\s*1\s*\)\s*;")
+
+
 
 
 def identify_fast_sqrt_inline(decompiled_code):
@@ -5791,6 +5678,8 @@ def identify_fast_sqrt_inline(decompiled_code):
     return suspects
 
 
+
+
 # Watcom's float-via-int-compare optimization: a float comparison like
 # `if (x >= 20.0f)` gets emitted as `CMP dword ptr [x_bytes], 0x41a00000`
 # (a single-instruction raw-bytes compare, where 0x41a00000 is the IEEE 754
@@ -5808,8 +5697,12 @@ def identify_fast_sqrt_inline(decompiled_code):
 # constant, e.g. `if (x >= 20.0f)`.
 _BIT_INT_HEX_LHS_RE = re.compile(
     r"0x([0-9a-fA-F]{8})\s*(<=?|>=?)\s*\(\s*int\s*\)\s*[\w\[\]>\-.()]+")
+
+
 _BIT_INT_HEX_RHS_RE = re.compile(
     r"\(\s*int\s*\)\s*[\w\[\]>\-.()]+\s*(<=?|>=?)\s*0x([0-9a-fA-F]{8})")
+
+
 
 
 def identify_bit_int_float_compare(decompiled_code):
@@ -5874,939 +5767,6 @@ def identify_bit_int_float_compare(decompiled_code):
     return suspects
 
 
-# Struct-type locals that the missing-cave-copy bug pattern typically affects,
-# mapped to their declared sizes in bytes. Only struct types whose size
-# matches a detected cave block are eligible candidates — a 48-byte cave
-# block can't be the missing copy of a 12-byte `CVector3f` local. Without
-# this filter the detector false-positives on output-param locals (e.g.
-# `getBoundingBox(&local_c4)` where `local_c4` is correctly populated).
-_UNREF_STRUCT_SIZES = {
-    'CMatrix3x4f': 48,
-    'CMatrix3x3f': 36,
-    'CQuaternion4f': 16,
-    'CVector3f': 12,
-    'CVector3i': 12,
-    'CVector2f': 8,
-    'CBoundingBox3D': 24,
-    'SDamageInfo': 60,
-    # Sizes for these are unknown / context-dependent; left out until a
-    # concrete case forces us to fill them in.
-    # 'CLocation', 'UOrientationVector', 'CBox',
-}
-_UNREF_DECL_RE = re.compile(
-    r"^\s*([A-Z][A-Za-z0-9_]*)\s+([a-zA-Z_]\w*)\s*;\s*$")
-_CAVE_SRC_RE = re.compile(r"MOV\s+ECX,\s*dword ptr\s*\[ESI")
-_CAVE_DST_RE = re.compile(r"MOV\s+dword ptr\s*\[EDI(?:\s*\+\s*0x[0-9a-f]+)?\]\s*,\s*ECX")
-# Orphaned cave-copy source: Ghidra emits the source of a dropped struct copy
-# as a raw `(TYPE *)&stack0xXXXXXXXX` (a lost stack slot, §14) rather than a
-# declared local. Captures the struct TYPE so it can be matched against the
-# eligible (cave-block-sized) types.
-_CAVE_STACK0X_SRC_RE = re.compile(
-    r"\(([A-Z][A-Za-z0-9_]*)\s*\*\)\s*&\s*stack0x[0-9a-fA-F]+")
-# Matrix/struct CONSUMER functions whose struct-pointer FIRST argument is a
-# read-only input (they read the matrix and write a *separate* output arg).
-# Used by the secondary missing-cave-copy pass: a local passed only as
-# `CONSUMER(&local, ...)` is read, never produced. Extend as more read-only
-# matrix consumers surface — only add functions whose first pointer arg is
-# input-only (a producer/output-first function here would be the sole FP risk).
-_CAVE_DEST_CONSUMERS = ('getTranslation', 'matrixToEulerAngles')
-
-# Tertiary missing-cave-copy pass ("stale matrix" read). Unlike passes 1/2 the
-# victim local here is fully *initialised* — it just holds an older value than
-# it should because the dropped cave copy would have refreshed it. The shape:
-#   multiplyMatrix3x4(&a, &b, &OUT);   // OUT = fresh world matrix
-#   pos->x = OUT.m[0].z; ...           // OUT decomposed for position
-#   matrixToQuaternion(&STALE, &q);    // orientation taken from a DIFFERENT,
-#                                      //   earlier-built matrix (STALE != OUT)
-# The dropped copy was `STALE = OUT`, so orientation is read pre-transform.
-# Since OUT supplies the position and STALE the orientation of the *same*
-# object, taking them from different matrices is geometrically inconsistent —
-# the tell of an overwrite-dropped cave copy. (CPlatform::processInEditor C/D.)
-_MULT_OUT_RE = re.compile(
-    r"multiplyMatrix3x4\w*\s*\(\s*&\s*\w+\s*,\s*&\s*\w+\s*,\s*&\s*(\w+)\s*\)")
-_ORIENT_CONSUMER_RE = re.compile(
-    r"matrixTo(?:Quaternion|Euler)\w*\s*\(\s*(?:\([^)]*\)\s*)?&\s*(\w+)")
-
-
-def _matrix_is_produced(code, name):
-    """True when `name` is written as a matrix-producer output: the first arg
-    of a buildMatrix* call or the third (output) arg of multiplyMatrix3x4.
-    Distinguishes a *stale* read (produced earlier — flagged by the tertiary
-    pass) from an *uninitialised* read (never produced — already covered by the
-    primary/secondary passes). `\\s` spans newlines so wrapped calls match."""
-    n = re.escape(name)
-    return bool(
-        re.search(r"buildMatrix\w*\s*\(\s*&\s*" + n + r"\b", code)
-        or re.search(r"multiplyMatrix3x4\w*\([^;\n]*,\s*&\s*" + n + r"\s*\)",
-                     code))
-
-
-def _find_cave_copy_blocks(asm_code):
-    """Scan assembly for runs of `MOV ECX, [ESI+N] / MOV [EDI+N], ECX` pairs
-    that copy a struct out of an output buffer into another stack slot.
-
-    Returns a list of byte-sizes of detected blocks. A run of N consecutive
-    matching MOV lines (where N is even — pairs) corresponds to N/2 dword
-    moves = N*2 bytes copied. We return runs with 3+ pairs (≥ 12 bytes):
-    12-byte CVector3i/CVector3f copies are a common dropped-cave shape (a
-    2-pair / 8-byte run is left out as too scalar-move-prone). False positives
-    are guarded downstream by identify_missing_cave_copy's ≥2 dead-local +
-    size-match cross-check, so a stray short run alone can't flag a function.
-
-    Args:
-        asm_code: The function's assembly listing.
-
-    Returns:
-        List of integers (byte sizes of cave blocks found, ordered by
-        appearance in the asm).
-    """
-    if not asm_code:
-        return []
-    consec = 0
-    sizes = []
-    for line in asm_code.split("\n"):
-        if _CAVE_SRC_RE.search(line) or _CAVE_DST_RE.search(line):
-            consec += 1
-        else:
-            if consec >= 6:  # 3 MOV-pairs = 12 bytes minimum (CVector3i/CVector3f)
-                sizes.append((consec // 2) * 4)
-            consec = 0
-    if consec >= 6:
-        sizes.append((consec // 2) * 4)
-    return sizes
-
-
-def _count_cave_copy_blocks(asm_code):
-    """Backwards-compatible wrapper: count of 48-byte (CMatrix3x4f) cave
-    blocks. Kept for any external callers; new code should use
-    `_find_cave_copy_blocks` and inspect the returned sizes directly.
-    """
-    return sum(1 for s in _find_cave_copy_blocks(asm_code) if s >= 48)
-
-
-_OUT_PARAM_NAME_RE = re.compile(r"(?:^|_)(out|dst|dest|result)",
-                                re.IGNORECASE)
-_CALLEE_SIG_RE = re.compile(
-    r";\s*([A-Za-z_][\w:]*(?:\s*\*)?)\s+([\w.]*_FUN_[0-9a-fA-F]+)\s*\((.*)\)\s*$")
-
-
-def _split_top_level(s):
-    """Split `s` on top-level commas (ignoring commas inside parens)."""
-    out, depth, cur = [], 0, []
-    for ch in s:
-        if ch in "([":
-            depth += 1
-        elif ch in ")]":
-            depth -= 1
-        if ch == "," and depth == 0:
-            out.append("".join(cur))
-            cur = []
-        else:
-            cur.append(ch)
-    if cur:
-        out.append("".join(cur))
-    return out
-
-
-def _parse_callee_signatures(assembly_code):
-    """Build {fun_addr: returned_output_arg_index} from asm XREF comments.
-
-    Each XREF line carries the callee signature, e.g.
-    `; CVector3f * ..._FUN_005f7ac0(CVector3f * out_euler, CQuaternion4f * quat_in)`.
-    A callee that returns `T *` hands back one of its `T *` parameters — the
-    OUTPUT buffer. We record which argument position that is so the caller can
-    tell an output buffer (written + returned) from a read-only input. If the
-    output param can't be uniquely identified the callee is omitted.
-    """
-    sigs = {}
-    for line in assembly_code.split("\n"):
-        if "XREF" not in line or "_FUN_" not in line or "(" not in line:
-            continue
-        m = _CALLEE_SIG_RE.search(line)
-        if not m:
-            continue
-        rettype, name, params = m.group(1), m.group(2), m.group(3)
-        ret_base = rettype.replace(" ", "")
-        if "*" not in ret_base:
-            continue
-        am = re.search(r"_FUN_([0-9a-fA-F]+)", name)
-        if not am:
-            continue
-        parsed = []  # (base_type, name)
-        for p in _split_top_level(params):
-            toks = p.split()
-            if len(toks) < 2:
-                parsed.append(("", ""))
-                continue
-            parsed.append(("".join(toks[:-1]), toks[-1]))
-        ptr_idx = [i for i, (t, _n) in enumerate(parsed) if t == ret_base]
-        if len(ptr_idx) == 1:
-            sigs[am.group(1)] = ptr_idx[0]
-        elif len(ptr_idx) > 1:
-            named = [i for i in ptr_idx if _OUT_PARAM_NAME_RE.search(parsed[i][1])]
-            if len(named) == 1:
-                sigs[am.group(1)] = named[0]
-    return sigs
-
-
-def _is_returned_output_buffer(lines, use_idx, var_name, callee_out_arg):
-    """True when `var_name`'s single use is `LHS = callee(... &var_name ...)`,
-    `&var_name` sits at the callee's returned-output argument position, and the
-    captured return `LHS` is read elsewhere.
-
-    Such a local is an output buffer the callee fills and returns; the result
-    is read via the `LHS` alias, so the local only LOOKS unreferenced — it is
-    not a dropped cave copy. A genuine §20 victim is either a read-only INPUT
-    arg (a different, non-output position → not excluded here) or a dead OUTPUT
-    whose return is never captured/used (no live `LHS` → not excluded here), so
-    this exclusion leaves both halves of a real bug flagged.
-    """
-    start, end = use_idx, use_idx
-    # Reconstruct the whole statement: walk back to its start and forward to
-    # the terminating `;` so a call whose args wrap across lines is complete.
-    while start > 0:
-        prev = lines[start - 1].rstrip()
-        if (not prev or prev.endswith((';', '{', '}', ':'))):
-            break
-        start -= 1
-    while end < len(lines) - 1 and ';' not in lines[end]:
-        end += 1
-    stmt = " ".join(lines[k].strip() for k in range(start, end + 1))
-    m = re.match(r"\s*([A-Za-z_]\w*)\s*=\s*([\w:]*_FUN_[0-9a-fA-F]+)\s*\(",
-                 stmt)
-    if not m:
-        return False
-    lhs, callee = m.group(1), m.group(2)
-    am = re.search(r"_FUN_([0-9a-fA-F]+)", callee)
-    out_arg = callee_out_arg.get(am.group(1)) if am else None
-    if out_arg is None:
-        return False
-    # Locate `&var_name`'s argument position in the call.
-    open_paren = stmt.find("(", m.end() - 1)
-    close_paren = stmt.rfind(")")
-    if open_paren < 0 or close_paren < open_paren:
-        return False
-    args = _split_top_level(stmt[open_paren + 1:close_paren])
-    var_re = re.compile(r"&\s*" + re.escape(var_name) + r"\b")
-    arg_idx = next((i for i, a in enumerate(args) if var_re.search(a)), None)
-    if arg_idx != out_arg:
-        return False
-    lhs_re = re.compile(r"\b" + re.escape(lhs) + r"\b")
-    stmt_idx = set(range(start, end + 1))
-    return any(lhs_re.search(line) for j, line in enumerate(lines)
-               if j not in stmt_idx)
-
-
-def identify_missing_cave_copy(decompiled_code, assembly_code):
-    """Detect Watcom post-call struct-memcpy blocks ("cave copies") that
-    Ghidra failed to translate, leaving struct-type locals uninitialized.
-
-    The signal requires both sources:
-    - `.asm` contains ≥ 2 runs of 12+ consecutive MOV-pairs (48-byte struct
-      copies — Ghidra's signature for Watcom's inline struct memcpy).
-    - `.cpp` decompile has ≥ 2 struct-type locals that are declared and
-      passed once by address with no other reference in the function body.
-
-    When both match, the function likely suffers the cave-copy-omission bug:
-    some local passed as an input to a later call is actually uninitialized
-    at runtime because the pre-call `local_dst = local_src` struct copy was
-    dropped by the decompiler. See §20 for the fix pattern.
-
-    Args:
-        decompiled_code: The decompiled C pseudocode string.
-        assembly_code: The function's assembly listing (from `.asm`).
-
-    Returns:
-        List of suspect dicts, one per affected local.
-    """
-    suspects = []
-    if not decompiled_code or not assembly_code:
-        return suspects
-    # Check asm side first — cheaper and rules out most functions. Only
-    # consider candidate locals whose struct size matches an observed
-    # cave-block size, since a 48-byte cave block can't be the missing copy
-    # of a 12-byte struct.
-    cave_sizes = set(_find_cave_copy_blocks(assembly_code))
-    if len(cave_sizes) == 0:
-        return suspects
-    eligible_types = {t for t, sz in _UNREF_STRUCT_SIZES.items()
-                      if sz in cave_sizes}
-    # A 48-byte CMatrix3x4f cave block also satisfies a CMatrix3x3f-typed
-    # destination: matrixToQuaternion/matrixToEulerAngles take a CMatrix3x3f*
-    # but are routinely passed the rotation part of a 3x4 multiply output, so
-    # Ghidra types the dropped-copy destination as the smaller 3x3 and its
-    # 36-byte size never matches the 48-byte cave. (skeledit::importSkeletonFile
-    # local_2e4 = local_314, fed to matrixToQuaternion.)
-    if 48 in cave_sizes:
-        eligible_types.add('CMatrix3x3f')
-    if not eligible_types:
-        return suspects
-    callee_out_arg = _parse_callee_signatures(assembly_code)
-    lines = decompiled_code.split('\n')
-    decls = []
-    for i, line in enumerate(lines):
-        m = _UNREF_DECL_RE.match(line)
-        if not m:
-            continue
-        type_name, var_name = m.group(1), m.group(2)
-        if type_name not in eligible_types:
-            continue
-        decls.append((i, type_name, var_name))
-    candidates = []
-    for decl_line, type_name, var_name in decls:
-        pattern = re.compile(r"\b" + re.escape(var_name) + r"\b")
-        uses = []
-        for j, line in enumerate(lines):
-            if j == decl_line:
-                continue
-            if pattern.search(line):
-                uses.append((j, line))
-        if len(uses) != 1:
-            continue
-        use_line_idx, use_line = uses[0]
-        if not re.search(r"&\s*" + re.escape(var_name) + r"\b", use_line):
-            continue
-        if '(' not in use_line and (use_line_idx == 0
-                                    or '(' not in lines[use_line_idx - 1]):
-            continue
-        # Skip output buffers the callee fills and returns (result read via the
-        # captured-return alias, not a dropped cave copy). See helper docstring.
-        if _is_returned_output_buffer(lines, use_line_idx, var_name,
-                                      callee_out_arg):
-            continue
-        candidates.append((decl_line, type_name, var_name))
-    cave_blocks = sum(1 for s in _find_cave_copy_blocks(assembly_code) if s >= 48)
-    # Primary pass: two-or-more declared struct locals, each passed once by
-    # address with no other reference — the classic dead-output / uninit-input
-    # pair. Requires ≥2 to avoid flagging an ordinary single output-param local.
-    if len(candidates) >= 2:
-        for decl_line, type_name, var_name in candidates:
-            suspects.append({
-                'line': decl_line + 1,
-                'type': 'missing_cave_copy',
-                'match': "{type} {var}; ... f(&{var}, ...);".format(
-                    type=type_name, var=var_name),
-                'text': lines[decl_line].strip()[:120],
-                'description': (
-                    "Struct-type local `{var}` ({type}) is declared and passed "
-                    "once by address with no other reference; the `.asm` has "
-                    "{blocks} cave-block struct copies that the decompile "
-                    "doesn't reflect. Ghidra dropped a post-call memcpy "
-                    "(`local_dst = local_src;`) leaving one local uninitialized "
-                    "at runtime. See §20 — typical fix is to pass the real "
-                    "source local directly instead of the uninitialized "
-                    "scratch.").format(
-                        var=var_name, type=type_name, blocks=cave_blocks),
-                'severity': 'moderate',
-            })
-    # Secondary pass: stack0x-orphaned cave source. Ghidra sometimes emits the
-    # cave-copy SOURCE as a raw `(TYPE *)&stack0xXXXXXXXX` (a lost stack slot,
-    # §14) instead of a declared local, so the pair logic above can't see it.
-    # The dropped copy then leaves a *declared* destination local of the same
-    # eligible type that is read but never produced. We can't tell a producer
-    # output-param write (`build(&local, ..)`, `multiply(.., &local)`) from a
-    # read just by seeing `&local`, so to stay FP-free we flag a destination
-    # ONLY when EVERY one of its uses is `CONSUMER(&local, ...)` — `local` as
-    # the read-only FIRST argument of a known matrix consumer. A local that is
-    # ever a producer output (or used any other way) is excluded. Gated by an
-    # orphan `(eligible TYPE *)&stack0x` source + matching cave block.
-    # Canonical: CStranger::renderOpaque hat transform —
-    #   multiply(.., (CMatrix3x4f *)&stack0x..); getTranslation(&local_13c, ..);
-    #   matrixToEulerAngles(&local_13c, ..)  — local_13c read, never produced.
-    orphan_types = {t for t in _CAVE_STACK0X_SRC_RE.findall(decompiled_code)
-                    if t in eligible_types}
-    if orphan_types:
-        flagged = {s['line'] for s in suspects}
-        consumer_alt = "|".join(_CAVE_DEST_CONSUMERS)
-        for decl_line, type_name, var_name in decls:
-            if type_name not in orphan_types or (decl_line + 1) in flagged:
-                continue
-            var_re = re.compile(r"\b" + re.escape(var_name) + r"\b")
-            consumer_re = re.compile(
-                r"(?:" + consumer_alt + r")\w*\s*\(\s*&\s*"
-                + re.escape(var_name) + r"\b")
-            uses = 0
-            all_consumer = True
-            for j, line in enumerate(lines):
-                if j == decl_line:
-                    continue
-                occ = len(var_re.findall(line))
-                if occ == 0:
-                    continue
-                uses += occ
-                # Every occurrence on this line must be a consumer-first-arg
-                # `&var`. If the count of consumer matches < total occurrences,
-                # `var` is used some other way (producer output, field access,
-                # bare use) → not a pure read-only destination.
-                if len(consumer_re.findall(line)) != occ:
-                    all_consumer = False
-                    break
-            if all_consumer and uses >= 1:
-                suspects.append({
-                    'line': decl_line + 1,
-                    'type': 'missing_cave_copy',
-                    'match': "{type} {var}; (read-only by consumer, never"
-                             " produced; orphan stack0x cave source)".format(
-                                 type=type_name, var=var_name),
-                    'text': lines[decl_line].strip()[:120],
-                    'description': (
-                        "Struct-type local `{var}` ({type}) is only ever read "
-                        "(passed as the first arg of a matrix consumer) and is "
-                        "never produced, while a matching {type} cave-block copy "
-                        "exists in the `.asm` and the decompile has an orphaned "
-                        "`(... *)&stack0xXXXX` cave-copy source. Ghidra dropped "
-                        "the post-call memcpy and emitted its source as a lost "
-                        "stack slot, leaving `{var}` uninitialised at runtime. "
-                        "See §20 — fix by directing the producing call's output "
-                        "into `{var}` (or restoring the `{var} = <src>;` "
-                        "copy).").format(var=var_name, type=type_name),
-                    'severity': 'moderate',
-                })
-    # Tertiary pass: "stale matrix" read by an orientation consumer (an
-    # overwrite-dropped cave copy whose destination was pre-written). See the
-    # comment on `_MULT_OUT_RE` above. Gated on a 48-byte (CMatrix3x4f) cave
-    # block so it only fires where Watcom emitted a matrix copy.
-    if 48 in cave_sizes:
-        flagged_lines = {s['line'] for s in suspects}
-        consumers = []  # (line_idx, stale_matrix_name)
-        for j, line in enumerate(lines):
-            mc = _ORIENT_CONSUMER_RE.search(line)
-            if mc:
-                consumers.append((j, mc.group(1)))
-        for i, line in enumerate(lines):
-            mm = _MULT_OUT_RE.search(line)
-            if not mm:
-                continue
-            out = mm.group(1)
-            # OUT must be decomposed element-wise (its translation extracted).
-            if not re.search(r"\b" + re.escape(out) + r"\.m\[", decompiled_code):
-                continue
-            # OUT must never itself feed an orientation consumer — otherwise the
-            # fresh matrix's orientation IS taken and there is no stale read.
-            if any(stale == out for _, stale in consumers):
-                continue
-            # First orientation consumer shortly after the multiply.
-            stale, cons_idx = None, None
-            for j, st in consumers:
-                if i < j <= i + 25:
-                    stale, cons_idx = st, j
-                    break
-            if stale is None or stale == out:
-                continue
-            if (cons_idx + 1) in flagged_lines:
-                continue
-            # STALE must be a real, earlier-produced matrix (stale, not uninit;
-            # the uninit case is the primary/secondary passes' job).
-            if not _matrix_is_produced(decompiled_code, stale):
-                continue
-            suspects.append({
-                'line': cons_idx + 1,
-                'type': 'missing_cave_copy',
-                'match': "matrixTo...(&{stale}) reads stale matrix; cave copy "
-                         "`{stale} = {out}` (multiply output) was dropped".format(
-                             stale=stale, out=out),
-                'text': lines[cons_idx].strip()[:120],
-                'description': (
-                    "Orientation consumer reads matrix `{stale}` but the "
-                    "adjacent multiply output `{out}` — already decomposed for "
-                    "position (`{out}.m[..]`) just above — is the matrix that "
-                    "should feed it. Watcom copied `{out}` into `{stale}` after "
-                    "the multiply (a 48-byte cave block in the `.asm`); Ghidra "
-                    "dropped that copy, so `{stale}` holds a stale pre-transform "
-                    "value. Taking position from `{out}` and orientation from a "
-                    "different matrix is geometrically inconsistent. See §20 — "
-                    "fix by passing `&{out}` to the consumer (or restoring the "
-                    "`{stale} = {out};` copy).").format(stale=stale, out=out),
-                'severity': 'moderate',
-            })
-    return suspects
-
-
-# Watcom emits inline `memset` as a `REP STOS{B,W,D}` instruction. Ghidra
-# unrolls the REP prefix into a countdown for-loop in the decompile:
-#     for (; iVar != 0; iVar = iVar + -1) { *p = const; p = p + 1; }
-# The source-side pattern is too generic to safely match (any element-wise
-# clear loop looks the same), so we anchor on the asm: `STOS{B,W,D}.REP`
-# with the `.REP` suffix (Ghidra's notation for a REP-prefixed string op) is
-# unambiguous evidence of an inline memset. A bare `STOSD ES:EDI` without
-# `.REP` is a single store and not flagged.
-_REP_STOS_RE = re.compile(r'\bSTOS([BWD])\.REP\b', re.IGNORECASE)
-# Ghidra asm format: `    INSTRUCTION    ; ADDRESS [| optional comment]`
-# Matches the instruction address in either assembly representation:
-#   * raw `generate_assembly_code_rich` form `// 0047a929: MOVSD.REP ...`
-#     (address prefix) — this is what the asm-side detectors actually run
-#     on at export time (`result.assembly_code`).
-#   * reformatted on-disk `.asm` form `MOVSD.REP ... ; 0047a929`
-#     (address suffix) — used by ad-hoc tooling reading the file.
-# `search` returns the leftmost match, so the `// ADDR:` prefix is preferred
-# over any hex that appears inside a trailing `; comment` (e.g. a CALL line
-# whose signature comment contains a `0x...` target address).
-_ASM_LINE_ADDR_RE = re.compile(r'(?:^\s*//\s*|;\s*)([0-9a-fA-F]{6,8})\b')
-
-
-def _collect_rep_sites(assembly_code, rep_re):
-    """Return a list of (line_index, size_letter, raw_line) for each
-    `.REP`-suffixed string instruction matched by `rep_re`. Skips comments
-    and blanks. line_index is 0-based into the .split('\\n') list.
-    """
-    sites = []
-    if not assembly_code:
-        return sites
-    for i, line in enumerate(assembly_code.split('\n')):
-        stripped = line.strip()
-        if not stripped or stripped.startswith(';'):
-            continue
-        m = rep_re.search(line)
-        if not m:
-            continue
-        sites.append((i, m.group(1).upper(), line))
-    return sites
-
-
-def _suppress_byte_tails(sites, lines, max_intervening=5):
-    """Return the set of indices in `sites` whose suspect is suppressed
-    because the site is the byte-tail of a preceding dword/word REP.
-
-    Watcom emits a variable-count REP as a `{D,W}` chunk loop followed by
-    a `B` tail loop:
-        MOV ECX, n
-        SHR ECX, 2
-        MOVSD.REP
-        MOV CL, n_low
-        AND CL, 3
-        MOVSB.REP
-    The MOVSB.REP is not an independent memcpy — it's the tail of the
-    preceding MOVSD.REP. Same for STOSD/STOSW + STOSB. Pair them so the
-    detector reports one suspect per logical memcpy/memset site.
-    """
-    paired = set()
-    for i in range(len(sites) - 1):
-        cur_line_idx, cur_size, _ = sites[i]
-        nxt_line_idx, nxt_size, _ = sites[i + 1]
-        if cur_size not in ('D', 'W') or nxt_size != 'B':
-            continue
-        intervening = 0
-        for j in range(cur_line_idx + 1, nxt_line_idx):
-            s = lines[j].strip()
-            if s and not s.startswith(';'):
-                intervening += 1
-        if intervening <= max_intervening:
-            paired.add(i + 1)
-    return paired
-
-
-# Ghidra emits `/* WARNING: Removing unreachable block (ram,0xADDR) */` for
-# each basic block it proved dead (e.g. a swap guarded by `CMP EAX,EAX; JLE`
-# that always skips it — the faithful no-op sort in sortPolygonsByTexture).
-# A `REP MOVS/STOS` is a hardware loop, so Ghidra always models it as its own
-# basic block — meaning an unreachable REP's instruction address is itself the
-# block-start address listed here. Suppressing asm-side memcpy/memset suspects
-# at these addresses keeps the dead-code copies from being flagged on a keep
-# that correctly omits them.
-_UNREACHABLE_BLOCK_RE = re.compile(
-    r'WARNING:\s*Removing unreachable block\s*\(ram,0x([0-9a-fA-F]+)\)',
-    re.IGNORECASE)
-
-
-def _normalize_addr(addr):
-    """Lowercase, strip an optional 0x prefix and leading zeros (keep one)."""
-    a = addr.lower()
-    if a.startswith('0x'):
-        a = a[2:]
-    return a.lstrip('0') or '0'
-
-
-def extract_unreachable_block_addrs(decompiled_code):
-    """Return the set of normalized addresses Ghidra removed as unreachable.
-
-    Parsed from the `WARNING: Removing unreachable block (ram,0xADDR)`
-    comments at the top of the decompile. Used to suppress asm-side
-    memcpy/memset suspects that live in provably-dead blocks.
-    """
-    if not decompiled_code:
-        return set()
-    return {_normalize_addr(m.group(1))
-            for m in _UNREACHABLE_BLOCK_RE.finditer(decompiled_code)}
-
-
-def identify_unrolled_memset_blocks(assembly_code, unreachable_addrs=None):
-    """Detect Watcom `REP STOS{B,W,D}` (inline memset) instructions.
-
-    Each `.REP`-suffixed STOS in the asm corresponds to a countdown
-    for-loop in the decompile that should collapse to a `memset()` call in
-    a `.keep`. The B/W/D variant tells you the element stride (1/2/4).
-
-    Pairing: a `STOSD/STOSW.REP` followed within a few instructions by
-    `STOSB.REP` is the canonical Watcom variable-count emit (chunk loop
-    plus byte tail) — counted as one site, not two.
-
-    Args:
-        assembly_code: The function's assembly listing (from `.asm`).
-
-    Returns:
-        List of suspect dicts, one per `STOS.REP` site after pairing. The
-        reported `line` is the .asm line number (the .cpp doesn't have a
-        unique anchor — the user finds the matching countdown for-loop in
-        the function body and replaces it with
-        `memset(dst, value, count * stride)`).
-    """
-    suspects = []
-    if not assembly_code:
-        return suspects
-    unreachable_addrs = unreachable_addrs or set()
-    lines = assembly_code.split('\n')
-    sites = _collect_rep_sites(assembly_code, _REP_STOS_RE)
-    paired = _suppress_byte_tails(sites, lines)
-    for idx, (line_idx, size_letter, line) in enumerate(sites):
-        if idx in paired:
-            continue
-        stride = {'B': 1, 'W': 2, 'D': 4}[size_letter]
-        addr_m = _ASM_LINE_ADDR_RE.search(line)
-        addr = addr_m.group(1) if addr_m else '????????'
-        if addr_m and _normalize_addr(addr_m.group(1)) in unreachable_addrs:
-            continue
-        suspects.append({
-            'line': line_idx + 1,
-            'type': 'unrolled_memset',
-            'match': 'STOS%s.REP' % size_letter,
-            'text': line.strip()[:120],
-            'description': (
-                'Watcom inline memset (REP STOS%s at %s, %d-byte stride). '
-                'Ghidra reconstructs this as a countdown for-loop with '
-                'element-by-element writes; replace the loop with '
-                'memset(dst, value, count * %d) in a .keep.' % (
-                    size_letter, addr, stride, stride)),
-            'severity': 'moderate',
-        })
-    return suspects
-
-
-# Same idea as `STOS.REP`, applied to `MOVS{B,W,D}.REP`. Each is an inline
-# `memcpy`/`memmove`. Ghidra reconstructs them as countdown for-loops with
-# either typed pointer dereferences (`*(uint *)dst = *(uint *)src;`) or
-# element-by-element field/index assignments (`dst->m[0].w = src->m[0].w;`).
-# The source-side `unrolled_memcpy` detector catches the first shape via
-# `_UNROLLED_MEMCPY_STORE_RE` but misses the second when the LHS/RHS has an
-# arrow or index — in that case the suspect lands as `pointer_cast` only.
-# The asm-based detector here catches *all* REP MOVS sites unambiguously.
-_REP_MOVS_RE = re.compile(r'\bMOVS([BWD])\.REP\b', re.IGNORECASE)
-
-# Watcom call-ABI struct-by-value pass fingerprint. The compiler lowers
-# pass-by-value of a struct argument to:
-#     SUB ESP, byte_size       ; allocate outgoing-args slot
-#     MOV EDI, ESP             ; EDI -> outgoing-args region
-#     MOV ECX, dword_count     ; size in dwords
-#     LEA/MOV ESI, src
-#     MOVS{B,W,D}.REP
-#     [optionally chain more args, sharing EDI advance through the chain]
-#     CALL target
-# The unique signature is `MOV EDI, ESP` (or `LEA EDI, [ESP+const]`) — a
-# real user-level memcpy never aims at the freshly-allocated outgoing-args
-# slot, so EDI=ESP is exclusive to the call-ABI lowering. Suppressing on
-# this signal eliminates pass-by-value false positives from the asm-side
-# `unrolled_memcpy` detector without risking real memcpys.
-_RE_MOV_EDI_FROM_ESP = re.compile(
-    r'\b(?:MOV\s+EDI\s*,\s*ESP\b|LEA\s+EDI\s*,\s*\[\s*ESP\b)',
-    re.IGNORECASE)
-# Any instruction that re-points EDI at something other than ESP — these
-# break the EDI=ESP-relative chain when scanning backward. MOVSD/MOVSW/MOVSB
-# (with or without REP) advance EDI but preserve the chain, so they're not
-# in this list.
-_RE_EDI_REPOINTED = re.compile(
-    r'\b(?:MOV\s+EDI\s*,(?!\s*ESP\b)|LEA\s+EDI\s*,(?!\s*\[\s*ESP\b)|'
-    r'POP\s+EDI\b|XOR\s+EDI\b|ADD\s+EDI\s*,|SUB\s+EDI\s*,|'
-    r'INC\s+EDI\b|DEC\s+EDI\b)',
-    re.IGNORECASE)
-
-
-def _walkback_finds_edi_esp(lines, start_idx, max_instrs):
-    """Walk backward from start_idx-1 through real asm instructions, looking
-    for `MOV EDI, ESP` (or `LEA EDI, [ESP+const]`) before any EDI-repointing
-    instruction. Returns True on hit, False on chain-break or window-exhausted.
-    """
-    count = 0
-    j = start_idx - 1
-    while j >= 0 and count < max_instrs:
-        s = lines[j].strip()
-        if s and not s.startswith(';'):
-            count += 1
-            if _RE_MOV_EDI_FROM_ESP.search(s):
-                return True
-            if _RE_EDI_REPOINTED.search(s):
-                return False
-        j -= 1
-    return False
-
-
-def _is_call_abi_pass_by_value(rep_line_idx, lines, max_instrs=24,
-                                cave_max_instrs=40):
-    """Check if a `MOVS.REP` at lines[rep_line_idx] is a Watcom call-ABI
-    struct-by-value push (suppress) rather than a user-level memcpy (flag).
-
-    Two probes, both looking for `MOV EDI, ESP` without an intervening
-    EDI-repoint:
-
-    1. Linear walkback through the preceding `max_instrs` real instructions.
-       Catches the simple case where the SUB ESP / MOV EDI ESP / MOVSD.REP
-       block is contiguous with the call site.
-
-    2. Cave-fixup walkback. Some MOVSD.REP sites are reached only via JMP
-       from a far cave block (post-`fix_movsd_caves.py`); the EDI=ESP setup
-       lives in the cave, not in linear order. If the MOVSD.REP's address
-       is the target of any `JMP 0xADDR` in the asm, walk back from each
-       such JMP source up to `cave_max_instrs` (caves typically run 25-30
-       instructions before the JMP-back).
-
-    Real user memcpys aim EDI at a stack local (`LEA EDI, [EBP-N]`) or a
-    heap pointer (`MOV EDI, [some_mem]`) — both hit `_RE_EDI_REPOINTED`
-    first and break the chain, so this rule is FP-safe.
-    """
-    if _walkback_finds_edi_esp(lines, rep_line_idx, max_instrs):
-        return True
-
-    # Cave-fixup probe: find JMPs targeting this MOVSD.REP's address and
-    # walk back from each source.
-    addr_m = _ASM_LINE_ADDR_RE.search(lines[rep_line_idx])
-    if not addr_m:
-        return False
-    addr = addr_m.group(1).lower()
-    addr_norm = addr.lstrip('0') or '0'
-    jmp_re = re.compile(
-        r'\bJMP\s+0x0*' + addr_norm + r'\b', re.IGNORECASE)
-    for i, line in enumerate(lines):
-        if i == rep_line_idx:
-            continue
-        if jmp_re.search(line):
-            if _walkback_finds_edi_esp(lines, i, cave_max_instrs):
-                return True
-    return False
-
-
-def identify_unrolled_memcpy_blocks(assembly_code, unreachable_addrs=None):
-    """Detect Watcom `REP MOVS{B,W,D}` (inline memcpy/memmove) instructions.
-
-    Complements the source-side `identify_unrolled_memcpy_loops` — that
-    detector requires `*ptr = *src` style stores, so it misses cases where
-    the unrolled loop walks via `dst->field` or `dst[i]` accesses. The asm
-    fingerprint `MOVS{B,W,D}.REP` is unambiguous regardless of how Ghidra
-    rendered the body.
-
-    Pairing: a `MOVSD/MOVSW.REP` followed within a few instructions by
-    `MOVSB.REP` is the canonical Watcom variable-count emit (chunk loop
-    plus byte tail) — counted as one site, not two.
-
-    Suppression: sites whose backward scan finds `MOV EDI, ESP` (without
-    an intervening EDI re-point) are Watcom call-ABI struct-by-value
-    pushes, not user-level memcpys. The keep already expresses these
-    correctly via direct by-value passes, so flagging them is a false
-    positive. See `_is_call_abi_pass_by_value`.
-
-    Args:
-        assembly_code: The function's assembly listing (from `.asm`).
-
-    Returns:
-        List of suspect dicts, one per `MOVS.REP` site after pairing and
-        call-ABI suppression. The reported `line` is the .asm line
-        number; the user finds the matching countdown for-loop (or
-        unrolled field-by-field copy) in the function body and replaces
-        it with `memcpy(dst, src, count * stride)` or a struct assignment.
-    """
-    suspects = []
-    if not assembly_code:
-        return suspects
-    unreachable_addrs = unreachable_addrs or set()
-    lines = assembly_code.split('\n')
-    sites = _collect_rep_sites(assembly_code, _REP_MOVS_RE)
-    paired = _suppress_byte_tails(sites, lines)
-    for idx, (line_idx, size_letter, line) in enumerate(sites):
-        if idx in paired:
-            continue
-        if _is_call_abi_pass_by_value(line_idx, lines):
-            continue
-        stride = {'B': 1, 'W': 2, 'D': 4}[size_letter]
-        addr_m = _ASM_LINE_ADDR_RE.search(line)
-        addr = addr_m.group(1) if addr_m else '????????'
-        if addr_m and _normalize_addr(addr_m.group(1)) in unreachable_addrs:
-            continue
-        suspects.append({
-            'line': line_idx + 1,
-            'type': 'unrolled_memcpy',
-            'match': 'MOVS%s.REP' % size_letter,
-            'text': line.strip()[:120],
-            'description': (
-                'Watcom inline memcpy (REP MOVS%s at %s, %d-byte stride). '
-                'Ghidra reconstructs this as a countdown for-loop with '
-                'element-by-element copies; replace the loop with '
-                'memcpy(dst, src, count * %d) or a struct assignment in a '
-                '.keep.' % (size_letter, addr, stride, stride)),
-            'severity': 'moderate',
-        })
-    return suspects
-
-
-# =============================================================================
-# Struct-field array overrun (#15 adjacent-field artifact, struct-member form)
-# =============================================================================
-#
-# Watcom 1-based indexing emits `[base + index]` where `base` is the address of
-# the field BEFORE the real target and the index compensates by overrunning into
-# the next field. The global form (`(&g_Scalar)[idx]`) is caught by
-# identify_wrong_global_suspects; this catches the STRUCT-MEMBER form
-# (`obj->earlier_field[const + var]`) that lands in the following field — e.g.
-# `pick->cancel_button_text[uVar4 + 99]` where cancel_button_text is char[100]
-# and the real target is the adjacent search_text_buffer.
-#
-# Type-aware: needs a struct layout map (field offsets/lengths/array bounds), so
-# it is inert without one and only fires at export time / when test_suspects
-# builds the map from data_types.json.
-
-_struct_layout_cache = None
-_struct_size_cache = None
-
-_SFO_ACCESS_RE = re.compile(r'\b([A-Za-z_]\w*)\s*(?:->|\.)\s*([A-Za-z_]\w*)\s*\[')
-_SFO_SIG_RE = re.compile(r'//\s*Signature:.*?\((.*)\)')
-# `TYPE *NAME;` or `TYPE *NAME = <init>;` — the optional initializer lets
-# mid-block pointer decls (`void *user_data = (void *)(h + 1);`) register as
-# pointer locals, so a later `(uint)user_data` truncation isn't missed. The
-# `\*+` still requires a real `TYPE *NAME` shape, so assignments/derefs (no
-# type token, or leading `*`) don't match.
-_SFO_DECL_RE = re.compile(
-    r'^\s*([A-Za-z_]\w*)\s*\*+\s*([A-Za-z_]\w*)\s*(?:=[^;]*)?;\s*$')
-_SFO_VALDECL_RE = re.compile(
-    r'^\s*([A-Za-z_]\w*)\s+([A-Za-z_]\w*)\s*(?:\[[^\]]*\])?\s*;\s*$')
-_SFO_PTR_PARAM_RE = re.compile(r'^([A-Za-z_]\w*)\s*\*+\s*([A-Za-z_]\w*)$')
-_SFO_VAL_PARAM_RE = re.compile(r'^([A-Za-z_]\w*)\s+([A-Za-z_]\w*)$')
-_SFO_INT_RE = re.compile(r'^(0x[0-9a-fA-F]+|\d+)$')
-_SFO_IDENT_RE = re.compile(r'[A-Za-z_]\w*')
-# Statement keywords that the value-declaration regex would otherwise treat
-# as a "type" — e.g. `return this_ptr;` parses as type=`return`, var=`this_ptr`
-# and clobbers the variable's real (param/decl) type. Guard against that.
-_SFO_NON_TYPE_KEYWORDS = frozenset((
-    'return', 'goto', 'break', 'continue', 'delete', 'case', 'do', 'else',
-    'sizeof', 'new', 'throw',
-))
-# A cast-deref whose inner expression is a pointer plus a byte offset:
-# `*(int *)(p + 0x3f1bc)`. We balanced-extract the inner expr after the final
-# '(' the regex stops on, then resolve the pointer to a struct field.
-_SFO_DEREF_START_RE = re.compile(
-    r'\*\s*\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*\(')
-# A simple `LOCAL = <rhs>;` assignment, used to map a local back to the struct
-# field its pointer was derived from (the two-step base-shift form).
-_SFO_LOCAL_ASSIGN_RE = re.compile(r'^([A-Za-z_]\w*)\s*=\s*(.+?);\s*$')
-
-
-def build_struct_layout_map(data_types_path):
-    """Parse data_types.json into a per-struct field layout.
-
-    Returns dict: struct_name -> list of field dicts sorted by offset, each
-    {'name', 'offset', 'len', 'n'} where 'n' is the first array-dimension
-    element count (None for non-array fields). Returns {} if the file is
-    missing or unreadable.
-    """
-    try:
-        with open(data_types_path) as f:
-            data = json.load(f)
-    except (IOError, ValueError):
-        return {}
-    layout = {}
-    for section in ('structs', 'unions'):
-        for entry in data.get(section, []):
-            name = entry.get('name')
-            fields = entry.get('fields')
-            if not name or not fields:
-                continue
-            parsed = []
-            for fld in fields:
-                fname = fld.get('name')
-                offset = fld.get('offset')
-                flen = fld.get('len')
-                if fname is None or offset is None or flen is None:
-                    continue
-                ftype = fld.get('type', '') or ''
-                dim = re.search(r'\[(\d+)\]', ftype)
-                # Base type name: strip array dims, pointer stars, and a
-                # leading struct/union/enum keyword, leaving e.g.
-                # 'CPodDirectoryEntry' from 'CPodDirectoryEntry *' /
-                # 'SNetworkAddr' from 'SNetworkAddr' / 'char' from 'char[20]'.
-                base = re.sub(r'\[.*$', '', ftype)
-                stars = base.count('*')
-                base = base.replace('*', '').strip()
-                base = re.sub(r'^(?:struct|union|enum)\s+', '', base)
-                parsed.append({
-                    'name': fname,
-                    'offset': offset,
-                    'len': flen,
-                    'n': int(dim.group(1)) if dim else None,
-                    'type': base,
-                    # Pointer-ness preserved for the pointer_truncation detector
-                    # (the 'type' base above deliberately strips '*' for the
-                    # struct-walk field resolvers, which lose this signal).
-                    'stars': stars,
-                    'is_ptr': stars > 0,
-                })
-            parsed.sort(key=lambda fl: fl['offset'])
-            layout[name] = parsed
-    return layout
-
-
-def get_struct_layout_map(pseudocode_src_dir):
-    """Cached struct layout map, located relative to pseudocode_src_dir.
-
-    Mirrors dat_report.build_struct_size_cache's path derivation:
-    pseudocode_src_dir is .../<exe>/pseudocode/src, data_types.json is at
-    .../<exe>/data_types/data_types.json.
-    """
-    global _struct_layout_cache
-    if _struct_layout_cache is not None:
-        return _struct_layout_cache
-    base = pseudocode_src_dir
-    while base and os.path.basename(base) != 'pseudocode':
-        base = os.path.dirname(base)
-    layout = {}
-    if base:
-        path = os.path.join(os.path.dirname(base), 'data_types', 'data_types.json')
-        layout = build_struct_layout_map(path)
-    _struct_layout_cache = layout
-    return layout
-
-
-def build_struct_size_map(data_types_path):
-    """Parse data_types.json into a struct/union name -> total byte size map.
-
-    The struct-level `len` field is the exact Ghidra size (e.g. SVertexData
-    -> 20, CComplexPolygon -> 52). Used by identify_alloc_magic_size to detect
-    a magic allocation stride that equals sizeof(T). Returns {} if the file is
-    missing or unreadable.
-    """
-    try:
-        with open(data_types_path) as f:
-            data = json.load(f)
-    except (IOError, ValueError):
-        return {}
-    sizes = {}
-    for section in ('structs', 'unions'):
-        for entry in data.get(section, []):
-            name = entry.get('name')
-            length = entry.get('len')
-            if name and isinstance(length, int) and length > 0:
-                sizes[name] = length
-    return sizes
-
-
-def get_struct_size_map(pseudocode_src_dir):
-    """Cached struct/union name -> size map, located like get_struct_layout_map."""
-    global _struct_size_cache
-    if _struct_size_cache is not None:
-        return _struct_size_cache
-    base = pseudocode_src_dir
-    while base and os.path.basename(base) != 'pseudocode':
-        base = os.path.dirname(base)
-    sizes = {}
-    if base:
-        path = os.path.join(os.path.dirname(base), 'data_types', 'data_types.json')
-        sizes = build_struct_size_map(path)
-    _struct_size_cache = sizes
-    return sizes
 
 
 # Allocation-family callee: libc malloc/calloc/realloc plus Watcom debug-heap
@@ -6816,11 +5776,17 @@ def get_struct_size_map(pseudocode_src_dir):
 _ALLOC_CAST_CALL_RE = re.compile(
     r'\(\s*([A-Za-z_]\w*)\s*(\*+)\s*\)\s*'
     r'([A-Za-z_]\w*(?:[Mm]alloc|[Aa]lloc)[A-Za-z0-9_]*)\s*\(')
+
+
 # A numeric constant used as a multiplicative stride: `* N` or `N *`.
 _ALLOC_STRIDE_RE = re.compile(
     r'\*\s*(0x[0-9a-fA-F]+|\d+)\b|\b(0x[0-9a-fA-F]+|\d+)\s*\*')
+
+
 # A single argument that is a bare numeric constant (single-object / calloc size).
 _ALLOC_BARE_CONST_RE = re.compile(r'^\s*(0x[0-9a-fA-F]+|\d+)\s*$')
+
+
 
 
 def identify_alloc_magic_size(code, struct_size_map=None):
@@ -6920,360 +5886,6 @@ def identify_alloc_magic_size(code, struct_size_map=None):
     return suspects
 
 
-def _sfo_resolve_var_types(code):
-    """Map identifier -> declared struct type name (pointer/value, deref'd)."""
-    var_types = {}
-    lines = code.split('\n')
-    for line in lines:
-        m = _SFO_SIG_RE.search(line)
-        if not m:
-            continue
-        for part in m.group(1).split(','):
-            part = part.strip()
-            pm = _SFO_PTR_PARAM_RE.match(part) or _SFO_VAL_PARAM_RE.match(part)
-            if pm:
-                var_types[pm.group(2)] = pm.group(1)
-        break
-    for line in lines:
-        m = _SFO_DECL_RE.match(line) or _SFO_VALDECL_RE.match(line)
-        if m and m.group(1) not in _SFO_NON_TYPE_KEYWORDS:
-            var_types[m.group(2)] = m.group(1)
-    return var_types
-
-
-def resolve_access_path_type(path, var_types, layout):
-    """Resolve a pure access-path expression to the struct type at its end.
-
-    Walks `root[->|.]field[idx]...` using `var_types` (identifier -> declared
-    type) for the root and `layout` (struct -> [{name, type, ...}]) for each
-    field step. Array subscripts `[..]` leave the type unchanged (an element
-    of a `T[]` / `T *` field is a `T`, which is what the field's base type
-    already names). Returns the final type name, or None if any step can't be
-    resolved (unknown root, paren-wrapped sub-path, missing field, etc.).
-    Conservative by design: None means "don't know", so callers should not
-    suppress on a None result.
-    """
-    if not path or not layout:
-        return None
-    p = re.sub(r'\s+', '', path)
-    if p[:1] == '&':
-        p = p[1:]
-    m = re.match(r'[A-Za-z_]\w*', p)
-    if not m:
-        return None
-    cur = var_types.get(m.group(0))
-    if not cur:
-        return None
-    pos = m.end()
-    while pos < len(p):
-        ch = p[pos]
-        if ch == '[':
-            depth = 0
-            j = pos
-            while j < len(p):
-                if p[j] == '[':
-                    depth += 1
-                elif p[j] == ']':
-                    depth -= 1
-                    if depth == 0:
-                        break
-                j += 1
-            if j >= len(p):
-                return None
-            pos = j + 1
-        elif p[pos:pos + 2] == '->' or ch == '.':
-            pos += 2 if p[pos:pos + 2] == '->' else 1
-            fm = re.match(r'[A-Za-z_]\w*', p[pos:])
-            if not fm:
-                return None
-            flds = layout.get(cur)
-            if not flds:
-                return None
-            ftype = None
-            for fl in flds:
-                if fl.get('name') == fm.group(0):
-                    ftype = fl.get('type')
-                    break
-            if not ftype:
-                return None
-            cur = ftype
-            pos += fm.end()
-        else:
-            # Leading '(', '*', or any other token -> give up (conservative).
-            return None
-    return cur
-
-
-def _sfo_index_const(idx_expr):
-    """Return (const_sum, has_var) for the top-level additive index expr.
-
-    Only pure integer-literal terms joined by top-level '+' count toward the
-    constant; any term containing an identifier marks has_var. Terms with '*'
-    or nested arithmetic are treated as variable, not added to the constant.
-    """
-    const = 0
-    has_var = False
-    depth = 0
-    term = ''
-    terms = []
-    for ch in idx_expr:
-        if ch in '([':
-            depth += 1
-            term += ch
-        elif ch in ')]':
-            depth -= 1
-            term += ch
-        elif ch == '+' and depth == 0:
-            terms.append(term)
-            term = ''
-        else:
-            term += ch
-    terms.append(term)
-    for t in terms:
-        t = t.strip()
-        if not t:
-            continue
-        if _SFO_INT_RE.match(t):
-            const += int(t, 0)
-        elif _SFO_IDENT_RE.search(t):
-            has_var = True
-    return const, has_var
-
-
-def _sfo_strip_cast(expr):
-    """Strip one leading C pointer cast (`(char *)`, `(int *)`) from expr."""
-    return re.sub(r'^\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*', '', expr.strip()).strip()
-
-
-def _sfo_top_terms(expr):
-    """Split an expression into its top-level '+'/'-' separated terms."""
-    depth, term, terms = 0, '', []
-    for ch in expr:
-        if ch in '([':
-            depth += 1
-            term += ch
-        elif ch in ')]':
-            depth -= 1
-            term += ch
-        elif ch in '+-' and depth == 0:
-            terms.append(term)
-            term = ''
-        else:
-            term += ch
-    terms.append(term)
-    return [t.strip() for t in terms if t.strip()]
-
-
-def _sfo_split_ptr_const(expr):
-    """Split a top-level '+'-joined pointer expression into (base, const_sum).
-
-    const_sum sums the pure integer-literal terms; base is the single remaining
-    non-literal term (the pointer). Returns None unless exactly one non-literal
-    term remains. Only '+' is treated as the join — a '-' would be a negative
-    offset (a different artifact class), so it stays glued to its term and the
-    term fails to resolve as a field (no false flag).
-    """
-    depth, term, terms = 0, '', []
-    for ch in expr:
-        if ch in '([':
-            depth += 1
-            term += ch
-        elif ch in ')]':
-            depth -= 1
-            term += ch
-        elif ch == '+' and depth == 0:
-            terms.append(term)
-            term = ''
-        else:
-            term += ch
-    terms.append(term)
-    const, base_terms = 0, []
-    for t in terms:
-        t = t.strip()
-        if not t:
-            continue
-        if _SFO_INT_RE.match(t):
-            const += int(t, 0)
-        else:
-            base_terms.append(t)
-    if len(base_terms) != 1:
-        return None
-    return (base_terms[0], const)
-
-
-def _sfo_field_extent(path, var_types, layout):
-    """Resolve a field-access path to (root_struct, byte_offset, length, addr).
-
-    `byte_offset` is the position of the path's final field relative to the
-    root variable's struct; `length` is that field's size; `addr` is True when
-    the expression genuinely denotes the field's *address* — either it had a
-    leading '&' or the final field is an array (which decays to its address).
-    `addr` is False for a bare scalar/pointer field, where `field + N` is value
-    arithmetic / a walk of the *pointed-to* buffer, NOT a struct base-shift —
-    callers must not flag those. Handles a leading pointer cast and parens that
-    merely group a sub-path (`(a->b).c`). Returns None on any unresolved
-    root/field, a subscript, or an unexpected token (None = "don't know").
-    """
-    if not path or not layout:
-        return None
-    p = _sfo_strip_cast(path)
-    had_amp = p[:1] == '&'
-    if had_amp:
-        p = p[1:].strip()
-    if '(' in p:
-        # Grouping parens around a sub-path are safe to drop ('(a->b).c' ==
-        # 'a->b.c'); bail if real arithmetic (not the '-' of '->') leaks in.
-        bare = p.replace('(', '').replace(')', '')
-        if re.search(r'[+\-*/%]', bare.replace('->', '')):
-            return None
-        p = bare
-    p = re.sub(r'\s+', '', p)
-    m = re.match(r'[A-Za-z_]\w*', p)
-    if not m:
-        return None
-    root_struct = var_types.get(m.group(0))
-    if not root_struct:
-        return None
-    cur = root_struct
-    offset, final_len, final_is_array, pos = 0, None, False, m.end()
-    while pos < len(p):
-        if p[pos:pos + 2] == '->' or p[pos] == '.':
-            pos += 2 if p[pos:pos + 2] == '->' else 1
-            fm = re.match(r'[A-Za-z_]\w*', p[pos:])
-            if not fm:
-                return None
-            flds = layout.get(cur)
-            if not flds:
-                return None
-            fld = next((fl for fl in flds if fl['name'] == fm.group(0)), None)
-            if fld is None:
-                return None
-            offset += fld['offset']
-            final_len = fld['len']
-            final_is_array = fld.get('n') is not None
-            cur = fld.get('type')
-            pos += fm.end()
-        else:
-            # A subscript or any other token: bail (conservative).
-            return None
-    if final_len is None:
-        return None
-    return (root_struct, offset, final_len, had_amp or final_is_array)
-
-
-def _sfo_field_at_offset(layout, struct_name, off):
-    """Return the field of `struct_name` whose [offset, offset+len) contains
-    `off` (innermost/smallest when several overlap, e.g. unions), or None."""
-    flds = layout.get(struct_name)
-    if not flds:
-        return None
-    best = None
-    for fl in flds:
-        if fl['offset'] <= off < fl['offset'] + fl['len']:
-            if best is None or fl['len'] < best['len']:
-                best = fl
-    return best
-
-
-def _sfo_field_base_deref_overruns(code, var_types, layout, seen):
-    """Detect `*(T *)(p + CONST)` where `p` is derived from a struct field and
-    `field_offset + CONST` lands in a *different* field of the same struct.
-
-    This is the raw-deref sibling of the array-index #15 case: Ghidra anchored
-    the pointer on the wrong field (typically a leading `char[N]` at a small
-    offset) and reaches a far field via a large byte constant. It compiles and
-    runs but forms an out-of-array pointer (UBSan `index N out of bounds`).
-
-    Both the direct form `*(int *)((char *)obj->field + 0xN)` and the two-step
-    form `p = obj.field + var; *(int *)(p + 0xN);` are covered — for the latter
-    we first map each `LOCAL = <field-path> + ...` to that field.
-
-    Low false-positive by construction: the base must resolve to a real struct
-    field, CONST must exceed that field's length (so it isn't ordinary in-field
-    access), and CONST must land inside a *named sibling field* of the same
-    struct (so it isn't arbitrary pointer math or a past-the-struct write).
-    """
-    out = []
-    if not layout:
-        return out
-    # Map locals to the field their pointer was derived from.
-    local_field_base = {}
-    for line in code.split('\n'):
-        s = line.strip()
-        if s.startswith('//') or s.startswith('/*') or s.startswith('*'):
-            continue
-        am = _SFO_LOCAL_ASSIGN_RE.match(s)
-        if not am:
-            continue
-        for term in _sfo_top_terms(am.group(2)):
-            ext = _sfo_field_extent(term, var_types, layout)
-            if ext:
-                local_field_base[am.group(1)] = ext
-                break
-    # Scan cast-derefs.
-    for line_no, line in enumerate(code.split('\n'), 1):
-        s = line.strip()
-        if s.startswith('//') or s.startswith('/*'):
-            continue
-        for dm in _SFO_DEREF_START_RE.finditer(line):
-            start, depth, j = dm.end(), 1, dm.end()
-            while j < len(line):
-                if line[j] == '(':
-                    depth += 1
-                elif line[j] == ')':
-                    depth -= 1
-                    if depth == 0:
-                        break
-                j += 1
-            if depth != 0:
-                continue
-            split = _sfo_split_ptr_const(line[start:j])
-            if not split:
-                continue
-            base_expr, const = split
-            if const <= 0:
-                continue
-            ext = None
-            bm = re.match(r'^([A-Za-z_]\w*)$', base_expr.strip())
-            if bm and bm.group(1) in local_field_base:
-                ext = local_field_base[bm.group(1)]
-            if ext is None:
-                ext = _sfo_field_extent(base_expr, var_types, layout)
-            if ext is None:
-                continue
-            root_struct, foff, flen, addr = ext
-            # Only an array (decays to its address) or an explicit `&field`
-            # forms a struct-base pointer. A scalar/pointer field's value plus
-            # an offset walks elsewhere (the pointed-to buffer, or a mistyped
-            # handle), not the struct — never a base-shift.
-            if not addr:
-                continue
-            if const < flen:
-                continue  # stays within the base field — ordinary access
-            sib = _sfo_field_at_offset(layout, root_struct, foff + const)
-            if sib is None or sib['offset'] == foff:
-                continue
-            key = ('sfo_deref', line_no, base_expr.strip(), const)
-            if key in seen:
-                continue
-            seen.add(key)
-            out.append({
-                'line': line_no,
-                'type': 'struct_field_overrun',
-                'match': '*(...)(%s + 0x%x)' % (base_expr.strip(), const),
-                'text': s[:120],
-                'description': (
-                    '*(...)(%s + 0x%x): the pointer is based on a field at '
-                    'offset 0x%x (size %d in %s) but the +0x%x byte offset '
-                    'lands in field %s (offset 0x%x). Ghidra anchored on the '
-                    'wrong field — rewrite as direct access to %s (#15 '
-                    'base-shift; forms an out-of-array pointer, trips UBSan).'
-                    % (base_expr.strip(), const, foff, flen, root_struct,
-                       const, sib['name'], sib['offset'], sib['name'])),
-                'severity': SUSPECT_SEVERITY.get('struct_field_overrun',
-                                                 'moderate'),
-            })
-    return out
 
 
 def identify_struct_field_overrun(code, struct_layout_map=None):
@@ -7393,18 +6005,28 @@ def identify_struct_field_overrun(code, struct_layout_map=None):
     return suspects
 
 
+
+
 # memcpy/memmove/memset call head; the size is always the LAST argument, so we
 # extract the balanced arg list and look at that arg alone (not the fill byte).
 _MEM_FN_CALL_RE = re.compile(r'\b(memcpy|memmove|memset)\s*\(')
+
+
 # Numeric literal used as a whole size arg or as a multiplicative stride within
 # it (`n * 0x30`, `0x30 * n`, or a bare `0x30`).
 _MEM_SIZE_STRIDE_RE = re.compile(
     r'\*\s*(0x[0-9a-fA-F]+|\d+)\b|\b(0x[0-9a-fA-F]+|\d+)\s*\*')
+
+
 _MEM_SIZE_BARE_RE = re.compile(r'^\s*(0x[0-9a-fA-F]+|\d+)\s*$')
+
+
 
 # Cache of the 64-bit-unstable struct set, keyed by the layout map's identity so
 # a single build is shared across the per-keep calls in one export/test run.
 _UNSTABLE_STRUCT_CACHE = {}
+
+
 
 
 def _mem_split_top_args(arglist):
@@ -7425,6 +6047,8 @@ def _mem_split_top_args(arglist):
     if cur.strip():
         out.append(cur)
     return out
+
+
 
 
 def _struct_grows_at_64bit(layout):
@@ -7467,6 +6091,8 @@ def _struct_grows_at_64bit(layout):
     result = {n for n in layout if unstable(n, frozenset())}
     _UNSTABLE_STRUCT_CACHE[id(layout)] = result
     return result
+
+
 
 
 def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
@@ -7585,6 +6211,8 @@ def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
     return suspects
 
 
+
+
 def detect_content_suspects(code, func_globals=None, global_interval_map=None,
                             address_interval_map=None, func_calls=None,
                             struct_layout_map=None, struct_size_map=None):
@@ -7663,1470 +6291,6 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     return found
 
 
-def calculate_complexity_metrics(decompiled_code, assembly_code, suspects, xrefs, globals_list, func_calls):
-    """Calculate complexity metrics for a function.
-
-    Args:
-        decompiled_code: The decompiled C code
-        assembly_code: The assembly code
-        suspects: List of identified suspect patterns
-        xrefs: Cross-references to this function
-        globals_list: Global variables used by this function
-        func_calls: Functions called by this function
-
-    Returns:
-        A dictionary of complexity metrics
-    """
-    pseudocode_lines = len([l for l in decompiled_code.split('\n') if l.strip()])
-    assembly_lines = len([l for l in assembly_code.split('\n') if l.strip()])
-    suspect_types = set(s['type'] for s in suspects)
-
-    # Determine maximum severity across all suspects
-    severity_order = {'severe': 3, 'moderate': 2, 'mild': 1}
-    max_sev = max((severity_order.get(s.get('severity', 'mild'), 0) for s in suspects), default=0)
-    severity_label = {3: 'severe', 2: 'moderate', 1: 'mild', 0: 'clean'}
-
-    return {
-        'pseudocode_lines': pseudocode_lines,
-        'assembly_lines': assembly_lines,
-        'total_lines': pseudocode_lines + assembly_lines,
-        'suspect_count': len(suspects),
-        'suspect_types': sorted(suspect_types),
-        'max_suspect_severity': severity_label[max_sev],
-        'cross_reference_count': len(xrefs) if xrefs else 0,
-        'global_count': len(globals_list) if globals_list else 0,
-        'function_call_count': len(func_calls) if func_calls else 0,
-        'complexity_score': (
-            pseudocode_lines +
-            (len(suspects) * 10) +  # Each suspect adds significant complexity
-            (len(suspect_types) * 5)  # Variety of issues adds complexity
-        )
-    }
-
-
-def identify_pcode_suspects(pcode_data, assembly_code=None, existing_overrides=None):
-    """Identify fixable suspect patterns from P-code data.
-
-    Detects patterns that can be fixed with P-code overrides:
-    - Type A: CALLIND followed by ADD ESP with uncertain tracking
-    - Type B: Jump targets with ESP mismatch (after RET)
-
-    Separates suspects into unfixed and resolved lists based on existing overrides.
-
-    Args:
-        pcode_data: List of instruction dicts from extract_function_pcode()
-        assembly_code: Optional assembly code string for additional context
-        existing_overrides: Optional dict of address -> pcode_lines from JSON
-
-    Returns:
-        Tuple of (suspects, resolved_suspects) where:
-        - suspects: List of unfixed suspect dictionaries
-        - resolved_suspects: List of suspects that have been fixed by overrides
-    """
-    suspects = []
-    resolved_suspects = []
-
-    if not pcode_data:
-        return suspects, resolved_suspects
-
-    # Normalize existing override addresses for comparison
-    fixed_addresses = set()
-    if existing_overrides:
-        for addr in existing_overrides.keys():
-            # Normalize to lowercase without 0x prefix
-            normalized = addr.lower().replace('0x', '').lstrip('0') or '0'
-            fixed_addresses.add(normalized)
-
-    # Detect Type A: CALLIND + uncertain ADD ESP
-    callind_suspects = _detect_callind_anchor(pcode_data)
-
-    # Detect Type B: Jump target ESP mismatch
-    # Need to parse assembly for jump targets and RET locations
-    mismatch_suspects = []
-    if assembly_code:
-        mismatch_suspects = _detect_jump_target_esp_mismatch(pcode_data, assembly_code)
-
-    # Combine all detected suspects
-    all_suspects = callind_suspects + mismatch_suspects
-
-    # Separate into unfixed and resolved based on existing overrides
-    if fixed_addresses:
-        for suspect in all_suspects:
-            suspect_type = suspect.get('type', '')
-            # For no-frame CALLIND, override is at callind_address, not fix_address
-            if suspect_type in ('callind_preserve', 'callind_preserve_lost'):
-                check_addr = suspect.get('callind_address', '')
-            else:
-                check_addr = suspect.get('fix_address', '')
-            # Normalize for comparison
-            normalized_addr = check_addr.lower().replace('0x', '').lstrip('0') or '0'
-            if normalized_addr in fixed_addresses:
-                resolved_suspects.append(suspect)
-            else:
-                suspects.append(suspect)
-    else:
-        suspects = all_suspects
-
-    return suspects, resolved_suspects
-
-
-def _detect_callind_anchor(pcode_data):
-    """Detect CALLIND instructions followed by ADD ESP with uncertain tracking.
-
-    Pattern: CALLIND makes ESP opaque, subsequent ADD ESP can't resolve it.
-
-    Returns two types of suspects:
-    - callind_anchor: Function has EBP frame, fixable with ESP = EBP - offset
-    - callind_preserve: Function lacks EBP frame, fixable with prologue-based ESP reset
-
-    Returns:
-        List of suspect dictionaries
-    """
-    suspects = []
-
-    if not pcode_data:
-        return suspects
-
-    # Get prologue information (works for all functions)
-    prologue_offset, has_ebp_frame = get_prologue_offset(pcode_data)
-
-    # For EBP-frame functions, also get the frame_offset (SUB ESP value after MOV EBP, ESP)
-    frame_offset = get_frame_offset_from_pcode(pcode_data) if has_ebp_frame else None
-
-    # Find CALLIND instructions and look for ADD ESP after them
-    i = 0
-    while i < len(pcode_data):
-        entry = pcode_data[i]
-        pcode_lines = entry.get('pcode', [])
-
-        # Check if this instruction has CALLIND
-        has_callind = any('CALLIND' in line for line in pcode_lines)
-
-        if has_callind:
-            # Look for ADD ESP in next few instructions
-            for j in range(i + 1, min(i + 5, len(pcode_data))):
-                next_entry = pcode_data[j]
-                next_asm = next_entry.get('assembly', '')
-
-                # Check for ADD ESP, N
-                if next_asm.upper().startswith('ADD ') and 'ESP' in next_asm.upper():
-                    # Check ESP certainty
-                    certainty = next_entry.get('esp_certainty', 'unknown')
-
-                    # If ESP certainty indicates the decompiler may have trouble, create suspect
-                    # cfg_resolved means OUR tracker resolved it, but Ghidra may still struggle
-                    if certainty in ('computed', 'unknown', 'callind_unknown', 'lost',
-                                     'cfg_resolved', 'conflict', 'unreachable'):
-                        # Parse the ADD value
-                        add_value = _parse_add_esp_value(next_asm)
-
-                        if has_ebp_frame and frame_offset is not None:
-                            # Fixable with ESP = EBP - frame_offset
-                            suspects.append({
-                                'type': 'callind_anchor',
-                                'match': 'CALLIND...ADD ESP',
-                                'text': 'CALLIND at %s, ADD ESP at %s' % (
-                                    entry.get('address', '?'), next_entry.get('address', '?')),
-                                'description': 'CALLIND makes ESP uncertain; fixable with ESP anchor',
-                                'fix_type': 'esp_anchor_after_callind',
-                                'fix_address': next_entry.get('address', ''),
-                                'callind_address': entry.get('address', ''),
-                                'add_esp_value': add_value,
-                                'frame_offset': frame_offset
-                            })
-                        else:
-                            # No EBP frame - need to preserve ESP across CALLIND
-                            # Parse the call target from assembly
-                            callind_asm = entry.get('assembly', '')
-                            callind_addr = entry.get('address', '?')
-                            try:
-                                target_type, target_value = _parse_callind_target(callind_asm)
-                            except UnhandledCallIndirectError as e:
-                                raise UnhandledCallIndirectError(
-                                    "At address %s: %s" % (callind_addr, e))
-
-                            # Get return address (next instruction after CALLIND)
-                            return_address = pcode_data[i + 1].get('address', '') if i + 1 < len(pcode_data) else None
-
-                            # Get ESP offset at CALLIND (after the call returns)
-                            # After cdecl call returns, ESP is unchanged from before the call
-                            # After ADD ESP, ESP = esp_at_callind + add_value
-                            esp_at_callind = entry.get('esp_offset')
-                            esp_certainty = entry.get('esp_certainty', 'unknown')
-                            # ESP is lost if None or if CFG analysis found conflict/unreachable
-                            esp_tracking_lost = (
-                                esp_at_callind is None or
-                                esp_certainty in ('lost', 'conflict', 'unreachable')
-                            )
-                            if esp_at_callind is not None and add_value is not None:
-                                expected_esp_offset = esp_at_callind + add_value
-                            else:
-                                expected_esp_offset = None
-
-                            # Use different type if ESP tracking was lost (due to branches)
-                            if esp_tracking_lost:
-                                suspect_type = 'callind_preserve_lost'
-                                description = 'CALLIND with lost ESP tracking (branching code)'
-                            else:
-                                suspect_type = 'callind_preserve'
-                                description = 'CALLIND makes ESP uncertain; fixable with ESP preserve'
-
-                            # Add suspect - build dict and only include ESP fields when known
-                            suspect = {
-                                'type': suspect_type,
-                                'match': 'CALLIND...ADD ESP',
-                                'text': 'CALLIND at %s, ADD ESP at %s (no EBP frame)' % (
-                                    callind_addr, next_entry.get('address', '?')),
-                                'description': description,
-                                'fix_address': next_entry.get('address', ''),
-                                'callind_address': callind_addr,
-                                'callind_assembly': callind_asm,
-                                'return_address': return_address,
-                                'call_target_type': target_type,
-                                'call_target_value': target_value,
-                                'add_esp_value': add_value,
-                                'prologue_offset': prologue_offset,
-                            }
-                            # Only include ESP fields when tracking wasn't lost
-                            if not esp_tracking_lost:
-                                suspect['esp_at_callind'] = esp_at_callind
-                                suspect['expected_esp_offset'] = expected_esp_offset
-                            suspects.append(suspect)
-                    break  # Only look at first ADD ESP after CALLIND
-
-                # Stop if we hit another call or control flow
-                next_pcode = next_entry.get('pcode', [])
-                if any(op in ' '.join(next_pcode) for op in ['CALL', 'CALLIND', 'RETURN', 'BRANCH']):
-                    break
-        i += 1
-    return suspects
-
-
-def _detect_jump_target_esp_mismatch(pcode_data, assembly_code):
-    """Detect jump targets with ESP values that don't match their sources.
-
-    Pattern: Code after RET is only reachable by jumps, but Ghidra computes
-    ESP from sequential fall-through instead of jump sources.
-    Fix: Override first instruction at target to anchor ESP.
-
-    Returns:
-        List of suspect dictionaries
-    """
-    suspects = []
-
-    # Build address to entry map
-    addr_to_entry = {}
-    addr_to_index = {}
-    for idx, entry in enumerate(pcode_data):
-        addr = entry.get('address', '')
-        if addr:
-            addr_to_entry[addr] = entry
-            addr_to_index[addr] = idx
-
-    # Find RET instructions
-    ret_indices = []
-    for idx, entry in enumerate(pcode_data):
-        asm = entry.get('assembly', '').upper()
-        if asm.startswith('RET') or asm.startswith('RETN'):
-            ret_indices.append(idx)
-
-    # Find jump sources and targets from assembly
-    jumps = _parse_jumps_from_assembly(assembly_code)
-
-    # Check each instruction after a RET
-    for ret_idx in ret_indices:
-        if ret_idx + 1 >= len(pcode_data):
-            continue
-
-        target_entry = pcode_data[ret_idx + 1]
-        target_addr = target_entry.get('address', '')
-
-        if not target_addr:
-            continue
-
-        # Check if this address is a jump target
-        if target_addr not in jumps:
-            continue
-
-        # Get sources that jump to this target
-        source_addrs = jumps[target_addr]
-
-        # Get ESP values
-        target_esp = target_entry.get('esp_offset')
-
-        # Check each source for mismatch
-        for source_addr in source_addrs:
-            if source_addr not in addr_to_entry:
-                continue
-            source_entry = addr_to_entry[source_addr]
-            source_esp = source_entry.get('esp_offset')
-
-            # Check for mismatch
-            if source_esp is not None and target_esp is not None:
-                if source_esp != target_esp:
-                    delta = target_esp - source_esp
-
-                    # Add suspect
-                    suspects.append({
-                        'type': 'jump_target_esp_mismatch',
-                        'match': 'ESP:%+d -> ESP:%+d' % (source_esp, target_esp),
-                        'text': 'Jump from %s (ESP:%+d) to %s (ESP:%+d) after RET' % (
-                            source_addr, source_esp, target_addr, target_esp),
-                        'description': 'Jump target has ESP mismatch (%+d bytes) - computed from RET fall-through' % delta,
-                        'fix_type': 'esp_anchor_at_jump_target',
-                        'fix_address': target_addr,
-                        'source_address': source_addr,
-                        'source_esp': source_esp,
-                        'target_esp': target_esp,
-                        'esp_delta': delta,
-                        'target_assembly': target_entry.get('assembly', '')
-                    })
-                    break  # Only report once per target
-    return suspects
-
-
-def _parse_add_esp_value(asm_line):
-    """Parse the value from an ADD ESP, N instruction.
-
-    Args:
-        asm_line: Assembly line like "ADD ESP, 0x10" or "ADD ESP,0x8"
-
-    Returns:
-        Integer value or None if not parseable
-    """
-    # Match ADD ESP, value
-    match = re.search(r'ADD\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', asm_line, re.IGNORECASE)
-    if match:
-        try:
-            return int(match.group(1), 0)
-        except ValueError:
-            pass
-    return None
-
-
-class UnhandledCallIndirectError(Exception):
-    """Raised when a CALLIND target pattern is not recognized."""
-    pass
-
-
-def _parse_callind_target(asm_line):
-    """Parse the target from an indirect CALL instruction.
-
-    Args:
-        asm_line: Assembly line like "CALL dword ptr [ESP + 0x18]" or "CALL EBP"
-
-    Returns:
-        Tuple of (target_type, value) where:
-        - ('reg_offset', {'reg': str, 'offset': int}) for CALL [REG + offset]
-        - ('reg_deref', str) for CALL [REG] (e.g., 'EAX')
-        - ('register', str) for CALL REG (e.g., 'EBP', 'EAX')
-        - ('mem_absolute', int) for CALL [SEG:]?[0xADDRESS]
-        - ('scaled_index', {'reg': str, 'scale': int, 'offset': int}) for CALL [REG*scale + offset]
-
-    Raises:
-        UnhandledCallIndirectError: If the pattern is not recognized
-    """
-    # Pattern for 32-bit registers
-    reg_pattern = r'E[ABCD]X|E[SD]I|E[BS]P'
-    # Pattern for segment registers (optional prefix)
-    seg_pattern = r'(?:[CDEFGS]S:)?'
-
-    # Match CALL dword ptr [REG*scale + offset] (scaled index addressing)
-    # e.g., CALL dword ptr [EAX*0x4 + 0x66df88]
-    match = re.search(
-        r'CALL\s+(?:dword\s+ptr\s+)?' + seg_pattern + r'\[\s*(' + reg_pattern + r')\s*\*\s*(0x[0-9a-fA-F]+|\d+)\s*\+\s*(0x[0-9a-fA-F]+|\d+)\s*\]',
-        asm_line, re.IGNORECASE)
-    if match:
-        try:
-            reg = match.group(1).upper()
-            scale = int(match.group(2), 0)
-            offset = int(match.group(3), 0)
-            return ('scaled_index', {'reg': reg, 'scale': scale, 'offset': offset})
-        except ValueError:
-            pass
-
-    # Match CALL dword ptr [REG + offset] or [REG+offset]
-    match = re.search(
-        r'CALL\s+(?:dword\s+ptr\s+)?' + seg_pattern + r'\[\s*(' + reg_pattern + r')\s*\+\s*(0x[0-9a-fA-F]+|\d+)\s*\]',
-        asm_line, re.IGNORECASE)
-    if match:
-        try:
-            reg = match.group(1).upper()
-            offset = int(match.group(2), 0)
-            return ('reg_offset', {'reg': reg, 'offset': offset})
-        except ValueError:
-            pass
-
-    # Match CALL dword ptr [REG] (no offset)
-    match = re.search(
-        r'CALL\s+(?:dword\s+ptr\s+)?' + seg_pattern + r'\[\s*(' + reg_pattern + r')\s*\]',
-        asm_line, re.IGNORECASE)
-    if match:
-        return ('reg_deref', match.group(1).upper())
-
-    # Match CALL dword ptr [SEG:]?[0xADDRESS] (absolute memory address, optional segment prefix)
-    # e.g., CALL dword ptr [0x00684ee4] or CALL dword ptr CS:[0x6114c8]
-    match = re.search(
-        r'CALL\s+(?:dword\s+ptr\s+)?' + seg_pattern + r'\[\s*(0x[0-9a-fA-F]+)\s*\]',
-        asm_line, re.IGNORECASE)
-    if match:
-        try:
-            return ('mem_absolute', int(match.group(1), 16))
-        except ValueError:
-            pass
-
-    # Match CALL REG (register-based indirect call, not dereferenced)
-    match = re.search(
-        r'CALL\s+(E[ABCD]X|E[SD]I|E[BS]P|[ABCD]X|[SD]I|[BS]P)\s*(?:;|$)',
-        asm_line, re.IGNORECASE)
-    if match:
-        return ('register', match.group(1).upper())
-
-    raise UnhandledCallIndirectError(
-        "Unhandled CALLIND pattern: %r - add support for this register/pattern" % asm_line)
-
-
-def _parse_jumps_from_assembly(assembly_code):
-    """Parse jump instructions from assembly code.
-
-    Args:
-        assembly_code: Full assembly code string
-
-    Returns:
-        Dict mapping target_addr -> [source_addrs]
-    """
-    jumps = defaultdict(list)
-
-    if not assembly_code:
-        return jumps
-
-    # Pattern for jump instructions with target address
-    # Matches: JMP 0x005d5984, JZ 0x005d58ce, JNC 0x005d5984, etc.
-    jump_pattern = re.compile(
-        r'^\s*([0-9a-fA-F]+):\s*(J\w+)\s+(?:dword ptr\s+)?\[?(?:0x)?([0-9a-fA-F]+)\]?',
-        re.IGNORECASE | re.MULTILINE
-    )
-
-    # Also match XREF comments that indicate jump targets
-    # Format: ;   XREF to: 005d5984 (CONDITIONAL_JUMP)
-    xref_pattern = re.compile(
-        r';.*XREF.*:\s*([0-9a-fA-F]+)\s*\((CONDITIONAL_JUMP|UNCONDITIONAL_JUMP)\)',
-        re.IGNORECASE
-    )
-
-    for match in jump_pattern.finditer(assembly_code):
-        source_addr = match.group(1).lower()
-        # mnemonic = match.group(2)
-        target_addr = match.group(3).lower()
-
-        # Normalize addresses (ensure consistent format)
-        if len(source_addr) < 8:
-            source_addr = source_addr.zfill(8)
-        if len(target_addr) < 8:
-            target_addr = target_addr.zfill(8)
-
-        jumps[target_addr].append(source_addr)
-    return jumps
-
-
-def get_frame_offset_from_pcode(pcode_data):
-    """Extract the frame offset (SUB ESP, N value) from function prologue.
-
-    Looks for the SUB ESP, N instruction in the prologue after MOV EBP, ESP.
-
-    Args:
-        pcode_data: List of instruction dicts from extract_function_pcode()
-
-    Returns:
-        Frame offset as integer, or None if not found/not EBP-based frame
-    """
-    found_mov_ebp_esp = False
-    frame_offset = None
-
-    # Only check first 20 instructions (prologue area)
-    for entry in pcode_data[:20]:
-        asm = entry.get('assembly', '')
-
-        # Look for MOV EBP, ESP (frame pointer setup)
-        if re.search(r'MOV\s+EBP\s*,\s*ESP', asm, re.IGNORECASE):
-            found_mov_ebp_esp = True
-
-        # Look for SUB ESP, N after frame pointer setup
-        elif found_mov_ebp_esp:
-            match = re.search(r'SUB\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', asm, re.IGNORECASE)
-            if match:
-                try:
-                    frame_offset = int(match.group(1), 0)
-                    break
-                except ValueError:
-                    pass
-    return frame_offset if found_mov_ebp_esp else None
-
-
-def get_prologue_offset(pcode_data):
-    """Compute total ESP drop from function entry (prologue offset).
-
-    Counts initial PUSH instructions and SUB ESP, N to compute how much
-    ESP drops from function entry. Works for any function, not just EBP-frame.
-
-    Args:
-        pcode_data: List of instruction dicts from extract_function_pcode()
-
-    Returns:
-        Tuple of (prologue_offset, has_ebp_frame) where:
-        - prologue_offset: Total ESP drop in bytes (0 if none found)
-        - has_ebp_frame: True if function has MOV EBP, ESP
-    """
-    if not pcode_data:
-        return 0, False
-
-    push_count = 0
-    sub_esp_value = 0
-    has_ebp_frame = False
-    found_sub_esp = False
-    in_prologue = True
-
-    # Scan prologue area (first ~20 instructions)
-    for entry in pcode_data[:20]:
-        asm = entry.get('assembly', '')
-
-        if not in_prologue:
-            break
-
-        # Count PUSH instructions at start of function
-        if re.match(r'PUSH\s+', asm, re.IGNORECASE):
-            push_count += 1
-            continue
-
-        # Check for MOV EBP, ESP (frame pointer setup)
-        if re.search(r'MOV\s+EBP\s*,\s*ESP', asm, re.IGNORECASE):
-            has_ebp_frame = True
-            continue
-
-        # Look for SUB ESP, N
-        match = re.search(r'SUB\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', asm, re.IGNORECASE)
-        if match:
-            try:
-                sub_esp_value = int(match.group(1), 0)
-                found_sub_esp = True
-            except ValueError:
-                pass
-            # After SUB ESP, prologue is typically done
-            in_prologue = False
-            continue
-
-        # If we hit something other than PUSH/MOV EBP/SUB ESP, prologue may be done
-        # But be lenient - some prologues have MOVs for saving registers to stack
-        if not re.match(r'(MOV|LEA|NOP)\s+', asm, re.IGNORECASE):
-            # If we already have pushes, we might be past prologue
-            if push_count > 0 and not found_sub_esp:
-                # Keep scanning for SUB ESP
-                pass
-            else:
-                in_prologue = False
-
-    # Total offset = (push_count * 4) + sub_esp_value
-    prologue_offset = (push_count * 4) + sub_esp_value
-
-    return prologue_offset, has_ebp_frame
-
-
-def identify_param_count_mismatch(param_estimates, vtable_info, func_signature=None):
-    """Detect parameter count mismatch for non-vtable functions.
-
-    Compares declared parameter count against estimated count from call sites.
-    Only applies to direct calls (non-vtable) since indirect call analysis
-    is unreliable for determining push counts.
-
-    Args:
-        param_estimates: Dict with 'declared_params', 'estimated_params',
-                        'call_site_count', 'confidence',
-                        and 'declared_stack_bytes' (for multi-slot param
-                        detection — doubles and structs take multiple slots).
-        vtable_info: Dict with 'in_vtable' bool
-        func_signature: Optional function signature string. Used to skip
-                        variadic functions (trailing `...`) whose call sites
-                        legitimately push more args than declared.
-
-    Returns:
-        A suspect dict if mismatch found, None otherwise
-    """
-    if not param_estimates:
-        return None
-
-    # Skip vtable functions - indirect call analysis is unreliable
-    if vtable_info and vtable_info.get('in_vtable', False):
-        return None
-
-    # Skip variadic — callers push format-string + arbitrary extras; any
-    # "too few" count is expected and not actionable.
-    if func_signature and '...' in func_signature:
-        return None
-
-    declared = param_estimates.get('declared_params')
-    estimated = param_estimates.get('estimated_params')
-    call_site_count = param_estimates.get('call_site_count', 0)
-
-    # Need both values and at least one call site to compare
-    if declared is None or estimated is None:
-        return None
-    if call_site_count == 0:
-        return None
-
-    # Check for mismatch
-    if declared != estimated:
-        # `estimate_call_site_params` computes a `matches_declared` flag
-        # that already accounts for multi-slot params (doubles, structs)
-        # and register-passed params. If it says the call sites agree
-        # with the signature, trust it and skip the mismatch.
-        if param_estimates.get('matches_declared', False):
-            return None
-        # Backstop for JSONs written before `matches_declared` was stored:
-        # skip when estimated stack bytes match declared stack bytes
-        # (double/struct multi-slot case).
-        declared_stack_bytes = param_estimates.get('declared_stack_bytes')
-        if declared_stack_bytes is not None and estimated * 4 == declared_stack_bytes:
-            return None
-        delta = estimated - declared
-
-        # For the "too many" case (delta < 0), one truncated `push_count` run
-        # at a single call site is enough to drag the most-common estimate
-        # below the declared count even when other call sites confirm the
-        # signature. Two truncation modes are common:
-        #   1. The site's analyzer hit a basic-block boundary, prior CALL, or
-        #      prologue marker before walking back over all the PUSHes — the
-        #      JSON shows method='push_count' with low `instructions_analyzed`.
-        #   2. A different site uses method='add_esp' and reports the full
-        #      count, but the aggregator's `most_common` picked the smaller
-        #      value because the two methods tied 1:1 in frequency.
-        # Suppress the "too many" suspect when any call site provides positive
-        # evidence that the declared count is correct: an `add_esp` measurement
-        # at-or-above declared, OR any single site whose own `estimated_params`
-        # already meets/exceeds declared.
-        if delta < 0:
-            call_sites = param_estimates.get('call_sites', [])
-            for cs in call_sites:
-                site_est = cs.get('estimated_params', 0)
-                if site_est >= declared:
-                    # At least one site corroborates the declared count.
-                    return None
-            # No corroborating site. If *every* call site used the
-            # push_count fallback and stopped short (`instructions_analyzed`
-            # below `2 * declared`), the analyzer didn't see enough of the
-            # caller body to count the PUSHes — every site short-circuited
-            # at a basic-block boundary, prior CALL, or prologue marker.
-            # That's not evidence the signature is wrong; it's evidence the
-            # call-site analysis ran out of context. Suppress.
-            if call_sites and all(
-                cs.get('method') == 'push_count'
-                and cs.get('instructions_analyzed', 0) < max(2 * declared, 8)
-                for cs in call_sites
-            ):
-                return None
-
-        # For the "too few" case (delta > 0), push_count overcounts are common
-        # when Watcom pre-pushes args for a SUBSEQUENT call before the current
-        # CALL, or when caller saved-register PUSHes at a deferred prologue
-        # landing get counted as args. Mirror the delta<0 suppressions:
-        # corroborating add_esp evidence + push_count-only short-context.
-        if delta > 0:
-            call_sites = param_estimates.get('call_sites', [])
-            # Any call site whose `add_esp` measurement matches or undershoots
-            # declared is positive evidence the signature is correct.
-            # `add_esp` reads the actual ADD ESP after the CALL, which is
-            # the ground-truth caller-cleanup byte count and isn't fooled by
-            # pre-pushed args for adjacent calls.
-            for cs in call_sites:
-                if (cs.get('method') == 'add_esp'
-                        and cs.get('estimated_params', 0) <= declared):
-                    return None
-            # No corroborating site. If every site is push_count fallback with
-            # short instructions_analyzed, the count is unreliable — typically
-            # the analyzer crossed a basic-block boundary into pre-pushed args
-            # for an adjacent call, or hit Watcom's interleaved sprintf-style
-            # arg setup. Threshold based on `estimated` so a high count gets
-            # proportionally more scrutiny.
-            if call_sites and all(
-                cs.get('method') == 'push_count'
-                and cs.get('instructions_analyzed', 0) < max(2 * estimated, 8)
-                for cs in call_sites
-            ):
-                return None
-
-        if delta > 0:
-            # Call sites push MORE than declared - missing params in signature
-            return {
-                'type': 'param_count_too_few',
-                'match': 'declared:%d vs estimated:%d' % (declared, estimated),
-                'text': 'Function declares %d params but call sites push %d (%d missing)' % (
-                    declared, estimated, delta),
-                'description': 'Signature has too few params - likely missing this ptr or other params',
-                'fix_type': 'add_params',
-                'declared_params': declared,
-                'estimated_params': estimated,
-                'call_site_count': call_site_count,
-                'param_delta': delta
-            }
-        else:
-            # Call sites push FEWER than declared - extra params in signature
-            return {
-                'type': 'param_count_too_many',
-                'match': 'declared:%d vs estimated:%d' % (declared, estimated),
-                'text': 'Function declares %d params but call sites push %d (%d extra)' % (
-                    declared, estimated, abs(delta)),
-                'description': 'Signature has too many params - likely wrong calling convention',
-                'fix_type': 'remove_params',
-                'declared_params': declared,
-                'estimated_params': estimated,
-                'call_site_count': call_site_count,
-                'param_delta': delta
-            }
-    return None
-
-
-def identify_variadic_calls(pcode_data, func_calls=None, has_stack_issues=False, existing_overrides=None, stack_frame=None):
-    """Identify calls to variadic functions that may need ESP stabilization.
-
-    Variadic functions (sprintf, fscanf, etc.) can have internal stack frame issues
-    that confuse Ghidra's ESP tracking in calling functions.
-
-    Creates two types of suspects based on whether the caller has an EBP frame:
-    - variadic_anchor: Caller has EBP frame, fix by anchoring ESP at ADD ESP
-    - variadic_preserve: Caller lacks EBP frame, fix by preserving ESP across CALL
-
-    Args:
-        pcode_data: List of instruction dicts from extract_function_pcode()
-        func_calls: List of function call dicts with 'addr', 'name', 'is_variadic' keys
-        has_stack_issues: If True, the calling function has badspacebase/stack_param issues
-        existing_overrides: Optional dict of address -> pcode_lines from JSON
-        stack_frame: Optional stack frame dict with 'local_size' for fallback
-
-    Returns:
-        Tuple of (suspects, resolved_suspects) where:
-        - suspects: List of unfixed suspect dictionaries
-        - resolved_suspects: List of suspects that have been fixed by overrides
-    """
-    suspects = []
-    resolved_suspects = []
-
-    if not pcode_data:
-        return suspects, resolved_suspects
-
-    # Build set of variadic function addresses from func_calls
-    variadic_funcs = {}  # addr (normalized) -> name
-    if func_calls:
-        for call in func_calls:
-            if call.get('is_variadic', False):
-                # Normalize address for matching
-                addr = call.get('addr', '').lower().replace('0x', '').lstrip('0') or '0'
-                variadic_funcs[addr] = call.get('name', 'unknown')
-
-    if not variadic_funcs:
-        return suspects, resolved_suspects
-
-    # Get prologue info to determine if caller has EBP frame
-    prologue_offset, has_ebp_frame = get_prologue_offset(pcode_data)
-    frame_offset = get_frame_offset_from_pcode(pcode_data) if has_ebp_frame else None
-
-    # Fallback: use stack_frame.local_size if frame_offset detection failed
-    if has_ebp_frame and (frame_offset is None or frame_offset == 0) and stack_frame:
-        local_size = stack_frame.get('local_size')
-        if local_size and local_size > 0:
-            frame_offset = local_size
-
-    # Normalize existing override addresses for comparison
-    fixed_addresses = set()
-    if existing_overrides:
-        for addr in existing_overrides.keys():
-            normalized = addr.lower().replace('0x', '').lstrip('0') or '0'
-            fixed_addresses.add(normalized)
-
-    # Scan for CALL instructions to variadic functions
-    for i, entry in enumerate(pcode_data):
-        pcode_lines = entry.get('pcode', [])
-        call_addr = entry.get('address', '')
-
-        # Look for CALL (ram,ADDR,4) in pcode
-        for line in pcode_lines:
-            if 'CALL (ram,' not in line:
-                continue
-
-            # Extract target address from CALL (ram,0xADDR,4)
-            match = re.search(r'CALL \(ram,0x([0-9a-fA-F]+),4\)', line)
-            if not match:
-                continue
-
-            target_addr = match.group(1).lower().lstrip('0') or '0'
-
-            # Check if this is a variadic function
-            if target_addr not in variadic_funcs:
-                continue
-
-            func_name = variadic_funcs[target_addr]
-
-            # Get return address (next instruction)
-            return_address = None
-            if i + 1 < len(pcode_data):
-                return_address = pcode_data[i + 1].get('address', '')
-
-            # Check ESP certainty after the call
-            esp_certainty = entry.get('esp_certainty', 'unknown')
-            next_certainty = pcode_data[i + 1].get('esp_certainty', 'unknown') if i + 1 < len(pcode_data) else 'unknown'
-
-            # For EBP-frame functions, find the ADD ESP instruction after the call
-            # This is where we'll anchor ESP instead of overriding the CALL
-            add_esp_address = None
-            add_esp_value = None
-            if has_ebp_frame:
-                # Look for ADD ESP in next few instructions
-                for j in range(i + 1, min(i + 5, len(pcode_data))):
-                    next_entry = pcode_data[j]
-                    next_asm = next_entry.get('assembly', '')
-                    if next_asm.upper().startswith('ADD ') and 'ESP' in next_asm.upper():
-                        add_esp_address = next_entry.get('address', '')
-                        # Parse the ADD value
-                        add_match = re.search(r'ADD\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', next_asm, re.IGNORECASE)
-                        if add_match:
-                            try:
-                                add_esp_value = int(add_match.group(1), 0)
-                            except ValueError:
-                                pass
-                        break
-                    # Stop if we hit another call or control flow
-                    next_pcode = next_entry.get('pcode', [])
-                    if any(op in ' '.join(next_pcode) for op in ['CALL', 'CALLIND', 'RETURN', 'BRANCH']):
-                        break
-
-            # Create suspect based on whether caller has EBP frame and ADD ESP
-            if has_ebp_frame and frame_offset is not None and add_esp_address:
-                # EBP-frame function with ADD ESP: anchor ESP at ADD ESP instruction
-                suspect = {
-                    'type': 'variadic_anchor',
-                    'match': 'CALL %s' % func_name,
-                    'text': 'Call to variadic function %s at %s (EBP frame + ADD ESP)' % (func_name, call_addr),
-                    'description': 'Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP',
-                    'call_address': call_addr,
-                    'return_address': return_address,
-                    'target_address': '0x%s' % target_addr,
-                    'target_function': func_name,
-                    'fix_address': add_esp_address,
-                    'frame_offset': frame_offset,
-                    'add_esp_value': add_esp_value,
-                    'esp_certainty_at_call': esp_certainty,
-                    'esp_certainty_after': next_certainty,
-                    'caller_has_stack_issues': has_stack_issues,
-                }
-                # Check if fix_address already has an override
-                norm_fix = add_esp_address.lower().replace('0x', '').lstrip('0') or '0'
-                if norm_fix in fixed_addresses:
-                    resolved_suspects.append(suspect)
-                else:
-                    suspects.append(suspect)
-            elif has_ebp_frame and frame_offset is not None:
-                # EBP-frame function but no ADD ESP found: preserve ESP across CALL
-                suspect = {
-                    'type': 'variadic_preserve_ebp',
-                    'match': 'CALL %s' % func_name,
-                    'text': 'Call to variadic function %s at %s (EBP frame, no ADD ESP)' % (func_name, call_addr),
-                    'description': 'Variadic call in EBP-frame function without ADD ESP; fix by preserving ESP across CALL',
-                    'call_address': call_addr,
-                    'return_address': return_address,
-                    'target_address': '0x%s' % target_addr,
-                    'target_function': func_name,
-                    'frame_offset': frame_offset,
-                    'esp_certainty_at_call': esp_certainty,
-                    'esp_certainty_after': next_certainty,
-                    'caller_has_stack_issues': has_stack_issues,
-                }
-                # Check if call_address already has an override
-                norm_call = call_addr.lower().replace('0x', '').lstrip('0') or '0'
-                if norm_call in fixed_addresses:
-                    resolved_suspects.append(suspect)
-                else:
-                    suspects.append(suspect)
-            else:
-                # Non-EBP-frame function: preserve ESP across CALL
-                suspect = {
-                    'type': 'variadic_preserve',
-                    'match': 'CALL %s' % func_name,
-                    'text': 'Call to variadic function %s at %s (no EBP frame)' % (func_name, call_addr),
-                    'description': 'Variadic call in non-EBP-frame function; fix by preserving ESP across CALL',
-                    'call_address': call_addr,
-                    'return_address': return_address,
-                    'target_address': '0x%s' % target_addr,
-                    'target_function': func_name,
-                    'prologue_offset': prologue_offset,
-                    'esp_certainty_at_call': esp_certainty,
-                    'esp_certainty_after': next_certainty,
-                    'caller_has_stack_issues': has_stack_issues,
-                }
-                # Check if call_address already has an override
-                norm_call = call_addr.lower().replace('0x', '').lstrip('0') or '0'
-                if norm_call in fixed_addresses:
-                    resolved_suspects.append(suspect)
-                else:
-                    suspects.append(suspect)
-
-    return suspects, resolved_suspects
-
-
-def count_format_specifiers(format_string):
-    """Count the number of format specifiers in a printf/scanf format string.
-
-    Handles:
-    - Basic specifiers: %d, %s, %x, %f, etc.
-    - Width/precision with *: %*d, %.*f, %*.*s (each * consumes an argument)
-    - %% is a literal percent (doesn't consume argument)
-    - Length modifiers: %ld, %lld, %hd, %zu, etc.
-
-    Args:
-        format_string: The format string to parse
-
-    Returns:
-        Number of arguments the format string expects
-    """
-    if not format_string:
-        return 0
-
-    count = 0
-    i = 0
-    while i < len(format_string):
-        if format_string[i] == '%':
-            if i + 1 < len(format_string):
-                next_char = format_string[i + 1]
-                if next_char == '%':
-                    # %% - literal percent, skip both
-                    i += 2
-                    continue
-
-                # Parse the format specifier
-                i += 1  # Skip the %
-
-                # Count * for width (consumes an argument)
-                if i < len(format_string) and format_string[i] == '*':
-                    count += 1
-                    i += 1
-
-                # Skip flags (-, +, space, #, 0)
-                while i < len(format_string) and format_string[i] in '-+ #0':
-                    i += 1
-
-                # Skip width digits
-                while i < len(format_string) and format_string[i].isdigit():
-                    i += 1
-
-                # Check for precision
-                if i < len(format_string) and format_string[i] == '.':
-                    i += 1
-                    # Count * for precision (consumes an argument)
-                    if i < len(format_string) and format_string[i] == '*':
-                        count += 1
-                        i += 1
-                    # Skip precision digits
-                    while i < len(format_string) and format_string[i].isdigit():
-                        i += 1
-
-                # Skip length modifiers (h, hh, l, ll, L, z, j, t, q)
-                while i < len(format_string) and format_string[i] in 'hlLzjtq':
-                    i += 1
-
-                # The actual conversion specifier
-                if i < len(format_string) and format_string[i] in 'diouxXeEfFgGaAcspn':
-                    count += 1
-                    i += 1
-                continue
-        i += 1
-
-    return count
-
-
-def _parse_call_arguments(line, start_pos):
-    """Parse function call arguments from a line starting after the opening paren.
-
-    Args:
-        line: The full line of code
-        start_pos: Position after the opening parenthesis
-
-    Returns:
-        List of argument strings, or None if parsing failed
-    """
-    paren_depth = 1
-    args_str = ''
-    i = start_pos
-
-    while i < len(line) and paren_depth > 0:
-        char = line[i]
-        if char == '(':
-            paren_depth += 1
-        elif char == ')':
-            paren_depth -= 1
-        if paren_depth > 0:
-            args_str += char
-        i += 1
-
-    if paren_depth != 0:
-        return None  # Unbalanced parens
-
-    if not args_str.strip():
-        return []
-
-    # Split arguments (respecting parentheses and quotes)
-    args = []
-    current_arg = ''
-    paren_depth = 0
-    in_string = False
-    escape_next = False
-
-    for char in args_str:
-        if escape_next:
-            current_arg += char
-            escape_next = False
-            continue
-        if char == '\\':
-            current_arg += char
-            escape_next = True
-            continue
-        if char == '"' and not in_string:
-            in_string = True
-            current_arg += char
-        elif char == '"' and in_string:
-            in_string = False
-            current_arg += char
-        elif char == '(' and not in_string:
-            paren_depth += 1
-            current_arg += char
-        elif char == ')' and not in_string:
-            paren_depth -= 1
-            current_arg += char
-        elif char == ',' and paren_depth == 0 and not in_string:
-            args.append(current_arg.strip())
-            current_arg = ''
-        else:
-            current_arg += char
-
-    if current_arg.strip():
-        args.append(current_arg.strip())
-
-    return args
-
-
-def _find_format_string_index(args):
-    """Find the index of the format string argument.
-
-    The format string is the first string literal that contains at least one
-    format specifier (% followed by a conversion character).
-
-    Args:
-        args: List of argument strings
-
-    Returns:
-        Tuple of (index, format_string) or (None, None) if not found
-    """
-    format_spec_pattern = re.compile(r'%[-+ #0]*\*?\d*\.?\*?\d*[hlLzjtq]*[diouxXeEfFgGaAcspn]')
-
-    for i, arg in enumerate(args):
-        # Check if this argument is or contains a string literal
-        string_match = re.search(r'"((?:[^"\\]|\\.)*)"', arg)
-        if string_match:
-            string_content = string_match.group(1)
-            # Check if it has format specifiers
-            if format_spec_pattern.search(string_content):
-                return i, string_content
-
-    return None, None
-
-
-def identify_stack_align_anchor(json_data, pcode_data, existing_overrides=None):
-    """Identify stack alignment instructions that can be fixed with ESP anchor.
-
-    Pattern: AND ESP, 0xFFFFFFF8 (or similar) in EBP-frame function.
-    All stack_alignment functions have EBP frame set BEFORE the AND ESP.
-
-    Fix: Anchor ESP = EBP - (SUB ESP offset) at the AND ESP instruction.
-
-    Args:
-        json_data: The function JSON data containing stack_patterns
-        pcode_data: List of instruction dicts from extract_function_pcode()
-        existing_overrides: Optional dict of address -> pcode_lines from JSON
-
-    Returns:
-        Tuple of (suspects, resolved_suspects)
-    """
-    suspects = []
-    resolved_suspects = []
-
-    if not json_data or not pcode_data:
-        return suspects, resolved_suspects
-
-    # Check if function has stack_alignment pattern
-    stack_patterns = json_data.get('stack_patterns')
-    if not stack_patterns:
-        return suspects, resolved_suspects
-    patterns = stack_patterns.get('patterns', [])
-    align_pattern = None
-    for p in patterns:
-        if p.get('pattern_id') == 'stack_alignment':
-            align_pattern = p
-            break
-
-    if not align_pattern:
-        return suspects, resolved_suspects
-
-    # Must be EBP frame (all stack_alignment functions are in practice)
-    if not json_data.get('function', {}).get('is_ebp_frame', False):
-        return suspects, resolved_suspects
-
-    # Find SUB ESP offset before AND ESP
-    sub_esp_offset = None
-    for entry in pcode_data:
-        if not entry:
-            continue
-        asm = entry.get('assembly', '')
-        if 'SUB' in asm.upper() and 'ESP' in asm.upper():
-            match = re.search(r'SUB\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', asm, re.IGNORECASE)
-            if match:
-                try:
-                    sub_esp_offset = int(match.group(1), 0)
-                    break
-                except ValueError:
-                    pass
-
-    if sub_esp_offset is None:
-        return suspects, resolved_suspects
-
-    fix_address = align_pattern.get('address', '')
-
-    suspect = {
-        'type': 'stack_align_anchor',
-        'match': 'AND ESP',
-        'text': 'Stack alignment at %s (SUB ESP, 0x%x before)' % (fix_address, sub_esp_offset),
-        'description': 'Stack alignment can be anchored: ESP = EBP - 0x%x' % sub_esp_offset,
-        'fix_address': fix_address,
-        'sub_esp_offset': sub_esp_offset,
-        'frame_offset': sub_esp_offset,
-        'align_instruction': align_pattern.get('instruction', 'AND ESP,0xfffffff8'),
-    }
-
-    # Check if already fixed
-    if existing_overrides:
-        normalized = fix_address.lower().replace('0x', '').lstrip('0') or '0'
-        for addr in existing_overrides.keys():
-            if addr.lower().replace('0x', '').lstrip('0') or '0' == normalized:
-                resolved_suspects.append(suspect)
-                return suspects, resolved_suspects
-
-    suspects.append(suspect)
-    return suspects, resolved_suspects
-
-
-def identify_direct_call_esp_uncertainty(pcode_data, func_calls=None, existing_overrides=None, json_data=None):
-    """Identify direct CALL instructions with uncertain ESP after.
-
-    Pattern: Direct CALL (not CALLIND, not variadic) followed by ADD ESP
-    where ESP tracking is uncertain.
-
-    Creates two types of suspects:
-    - call_esp_anchor: Caller has EBP frame, fix by anchoring ESP at ADD ESP
-    - call_esp_preserve: Caller lacks EBP frame, fix by preserving ESP across CALL
-
-    Args:
-        pcode_data: List of instruction dicts from extract_function_pcode()
-        func_calls: Optional list of function call dicts to exclude variadic functions
-        existing_overrides: Optional dict of address -> pcode_lines from JSON
-        json_data: Optional JSON data to get stack_frame.local_size as fallback
-
-    Returns:
-        Tuple of (suspects, resolved_suspects)
-    """
-    suspects = []
-    resolved_suspects = []
-
-    if not pcode_data:
-        return suspects, resolved_suspects
-
-    # Build set of variadic function addresses to exclude
-    variadic_addrs = set()
-    if func_calls:
-        for call in func_calls:
-            if call.get('is_variadic', False):
-                addr = call.get('addr', '').lower().replace('0x', '').lstrip('0') or '0'
-                variadic_addrs.add(addr)
-
-    # Get prologue info
-    prologue_offset, has_ebp_frame = get_prologue_offset(pcode_data)
-    frame_offset = get_frame_offset_from_pcode(pcode_data) if has_ebp_frame else None
-
-    # Fallback: use stack_frame.local_size if frame_offset detection failed
-    if has_ebp_frame and (frame_offset is None or frame_offset == 0) and json_data:
-        local_size = json_data.get('stack_frame', {}).get('local_size', 0)
-        if local_size > 0:
-            frame_offset = local_size
-
-    # Normalize existing override addresses
-    fixed_addresses = set()
-    if existing_overrides:
-        for addr in existing_overrides.keys():
-            normalized = addr.lower().replace('0x', '').lstrip('0') or '0'
-            fixed_addresses.add(normalized)
-
-    # Scan for direct CALL instructions with uncertain ESP after
-    for i, entry in enumerate(pcode_data):
-        if not entry:
-            continue
-        pcode_lines = entry.get('pcode', [])
-        call_addr = entry.get('address', '')
-
-        # Check for direct CALL (ram,ADDR,4) - not CALLIND
-        has_direct_call = any('CALL (ram,' in line for line in pcode_lines)
-        has_callind = any('CALLIND' in line for line in pcode_lines)
-
-        if not has_direct_call or has_callind:
-            continue
-
-        # Extract target address to check if it's variadic
-        target_addr = None
-        for line in pcode_lines:
-            match = re.search(r'CALL \(ram,0x([0-9a-fA-F]+),4\)', line)
-            if match:
-                target_addr = match.group(1).lower().lstrip('0') or '0'
-                break
-
-        # Skip if this is a variadic function (already handled by identify_variadic_calls)
-        if target_addr and target_addr in variadic_addrs:
-            continue
-
-        # Check ESP certainty at and after the call
-        esp_certainty = entry.get('esp_certainty', 'unknown')
-
-        # Look for ADD ESP in next few instructions
-        for j in range(i + 1, min(i + 5, len(pcode_data))):
-            next_entry = pcode_data[j]
-            if not next_entry:
-                continue
-            next_asm = next_entry.get('assembly', '')
-
-            # Check for ADD ESP, N
-            if next_asm.upper().startswith('ADD ') and 'ESP' in next_asm.upper():
-                next_certainty = next_entry.get('esp_certainty', 'unknown')
-
-                # Only flag if ESP is uncertain
-                if next_certainty in ('computed', 'unknown', 'lost', 'cfg_resolved', 'conflict'):
-                    add_esp_value = _parse_add_esp_value(next_asm)
-                    add_esp_address = next_entry.get('address', '')
-
-                    # Get return address
-                    return_address = pcode_data[i + 1].get('address', '') if i + 1 < len(pcode_data) else None
-
-                    if has_ebp_frame and frame_offset is not None:
-                        suspect = {
-                            'type': 'call_esp_anchor',
-                            'match': 'CALL...ADD ESP',
-                            'text': 'Direct CALL at %s, ADD ESP at %s with uncertain ESP' % (call_addr, add_esp_address),
-                            'description': 'Direct CALL makes ESP uncertain; fixable with ESP anchor',
-                            'call_address': call_addr,
-                            'fix_address': add_esp_address,
-                            'return_address': return_address,
-                            'target_address': '0x%s' % target_addr if target_addr else None,
-                            'add_esp_value': add_esp_value,
-                            'frame_offset': frame_offset,
-                            'esp_certainty': next_certainty,
-                        }
-                        # Check if already fixed
-                        norm_fix = add_esp_address.lower().replace('0x', '').lstrip('0') or '0'
-                        if norm_fix in fixed_addresses:
-                            resolved_suspects.append(suspect)
-                        else:
-                            suspects.append(suspect)
-                    else:
-                        suspect = {
-                            'type': 'call_esp_preserve',
-                            'match': 'CALL...ADD ESP',
-                            'text': 'Direct CALL at %s, ADD ESP at %s (no EBP frame)' % (call_addr, add_esp_address),
-                            'description': 'Direct CALL in non-EBP-frame function; fixable with ESP preserve',
-                            'call_address': call_addr,
-                            'fix_address': add_esp_address,
-                            'return_address': return_address,
-                            'target_address': '0x%s' % target_addr if target_addr else None,
-                            'add_esp_value': add_esp_value,
-                            'prologue_offset': prologue_offset,
-                            'esp_certainty': next_certainty,
-                        }
-                        # Check if already fixed
-                        norm_call = call_addr.lower().replace('0x', '').lstrip('0') or '0'
-                        if norm_call in fixed_addresses:
-                            resolved_suspects.append(suspect)
-                        else:
-                            suspects.append(suspect)
-                break  # Only look at first ADD ESP
-
-            # Stop if we hit another call or control flow
-            next_pcode = next_entry.get('pcode', [])
-            if any(op in ' '.join(next_pcode) for op in ['CALL', 'CALLIND', 'RETURN', 'BRANCH']):
-                break
-
-    return suspects, resolved_suspects
-
-
-def identify_lea_esp_stack_addr(pcode_data, json_data=None):
-    """Identify LEA instructions that take the address of ESP-relative stack locations.
-
-    Pattern: LEA REG, [ESP + offset] in non-EBP-frame function.
-    This creates a TypeSpacebase pointer that can't be resolved if ESP is uncertain.
-
-    Args:
-        pcode_data: List of instruction dicts from extract_function_pcode()
-        json_data: Optional JSON data to check EBP frame status
-
-    Returns:
-        List of suspect dictionaries (detection only, no fix yet)
-    """
-    suspects = []
-
-    if not pcode_data:
-        return suspects
-
-    # Check if EBP frame - less concerning if function has EBP frame
-    has_ebp_frame = False
-    if json_data:
-        has_ebp_frame = json_data.get('function', {}).get('is_ebp_frame', False)
-
-    # In EBP-frame functions, LEA ESP is less problematic since EBP provides anchor
-    if has_ebp_frame:
-        return suspects
-
-    # Scan for LEA with ESP-relative addressing
-    for entry in pcode_data:
-        if not entry:
-            continue
-        asm = entry.get('assembly', '')
-        addr = entry.get('address', '')
-
-        # Match LEA REG, [ESP + offset] or [ESP]
-        if re.search(r'LEA\s+\w+\s*,\s*\[ESP', asm, re.IGNORECASE):
-            # Extract the offset if present
-            offset_match = re.search(r'\[ESP\s*\+\s*(0x[0-9a-fA-F]+|\d+)\]', asm, re.IGNORECASE)
-            offset = None
-            if offset_match:
-                try:
-                    offset = int(offset_match.group(1), 0)
-                except ValueError:
-                    pass
-
-            suspects.append({
-                'type': 'lea_esp_stack_addr',
-                'match': 'LEA...ESP',
-                'text': 'LEA takes address of ESP-relative stack location at %s' % addr,
-                'description': 'Takes address of stack variable via ESP in non-EBP-frame function',
-                'address': addr,
-                'instruction': asm,
-                'esp_offset': offset,
-            })
-
-    return suspects
-
-
-def identify_special_functions(json_data, func_addr):
-    """Identify special functions that have expected BADSPACEBASE issues.
-
-    Categories:
-    - Entry point: Program entry has no caller, unusual stack state
-    - CRT functions: C runtime with unusual stack manipulation
-    - Math intrinsics: Math library functions with unusual patterns
-
-    Args:
-        json_data: The function JSON data
-        func_addr: Function entry address
-
-    Returns:
-        List of suspect dictionaries (detection only)
-    """
-    suspects = []
-
-    if not json_data:
-        return suspects
-
-    func_name = json_data.get('function', {}).get('name', '')
-
-    # Check for entry point
-    if func_name == 'entry' or func_name.endswith('_entry'):
-        suspects.append({
-            'type': 'special_entry_point',
-            'match': 'entry',
-            'text': 'Program entry point at %s' % func_addr,
-            'description': 'Entry point has no caller; stack state is OS-provided',
-            'address': func_addr,
-            'function_name': func_name,
-        })
-        return suspects  # Entry point is unique
-
-    # Check for math intrinsics FIRST (before generic CRT check)
-    # Math functions may have crt_math prefix but are distinct
-    math_patterns = [
-        'sin', 'cos', 'tan', 'asin', 'acos', 'atan', 'atan2',
-        'sqrt', 'pow', 'exp', 'log', 'log10', 'log2',
-        'floor', 'ceil', 'round', 'fabs', 'fmod',
-        'sinh', 'cosh', 'tanh', 'ldexp', 'frexp', 'modf'
-    ]
-    func_lower = func_name.lower()
-    for pattern in math_patterns:
-        # Match _pattern_ or ending with _pattern or crt_math containing the pattern
-        if (('_' + pattern + '_') in func_lower or
-            func_lower.endswith('_' + pattern) or
-            ('crt_math' in func_lower and pattern in func_lower)):
-            suspects.append({
-                'type': 'special_math_intrinsic',
-                'match': pattern,
-                'text': 'Math intrinsic (%s) at %s' % (pattern, func_addr),
-                'description': 'Math library function with FPU stack or unusual patterns',
-                'address': func_addr,
-                'function_name': func_name,
-                'math_function': pattern,
-            })
-            return suspects
-
-    # Check for CRT functions by path or name (after math check)
-    if 'crt_' in func_name.lower() or '/crt/' in func_name.lower():
-        # Categorize CRT function type
-        if 'stack' in func_name.lower():
-            crt_type = 'stack manipulation'
-        elif 'except' in func_name.lower() or 'seh' in func_name.lower():
-            crt_type = 'exception handling'
-        elif 'security' in func_name.lower() or 'cookie' in func_name.lower():
-            crt_type = 'security cookie'
-        else:
-            crt_type = 'runtime support'
-
-        suspects.append({
-            'type': 'special_crt_function',
-            'match': 'crt_',
-            'text': 'CRT function (%s) at %s' % (crt_type, func_addr),
-            'description': 'C runtime function with non-standard stack patterns',
-            'address': func_addr,
-            'function_name': func_name,
-            'crt_type': crt_type,
-        })
-        return suspects
-
-    # Check for CPU detection/intrinsic functions (CPUID, MMX detection, etc.)
-    cpu_patterns = [
-        'cpuid', 'detectintel', 'detectamd', 'detectcpu', 'getcpuinfo',
-        'checkmmx', 'checksse', 'detectmmx', 'detectsse', 'cpufeature',
-        'processorinfo', 'cpucaps', 'cpuident'
-    ]
-    for pattern in cpu_patterns:
-        if pattern in func_lower:
-            suspects.append({
-                'type': 'special_cpu_detection',
-                'match': pattern,
-                'text': 'CPU detection function at %s' % func_addr,
-                'description': 'CPU detection code with EFLAGS/CPUID manipulation - expected unusual patterns',
-                'address': func_addr,
-                'function_name': func_name,
-                'cpu_function': pattern,
-            })
-            return suspects
-
-    return suspects
 
 
 def identify_format_string_mismatch(decompiled_code, func_calls=None):
