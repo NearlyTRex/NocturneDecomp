@@ -58,23 +58,16 @@ find_package(Python3 REQUIRED COMPONENTS Interpreter)
 # and mci_video shims. Required only when linking the exe; the check-linux
 # preset skips the shims.
 #
-# 32-bit (i686) lane: build these from source (cmake/i386libs.cmake). The
-# Ubuntu `*-dev:i386` packages drag in a conflicting i386 -dev chain that apt
-# resolves by removing the amd64 desktop, so we avoid them entirely. Source
-# builds set the same SDL2_*/SDL2TTF_*/FFMPEG_* variables pkg-config did.
-#
-# Native 64-bit (x86_64) experiment lane: the amd64 -dev packages are not
-# multi-arch-conflicting, so pkg-config off the system is fine there.
+# Both lanes (32-bit i686 and native 64-bit x86_64) build these from source via
+# cmake/bundledlibs.cmake. The Ubuntu `*-dev:i386` packages drag in a
+# conflicting i386 -dev chain that apt resolves by removing the amd64 desktop,
+# so the 32-bit lane can't use them; we build the 64-bit lane the same way so
+# both lanes are reproducible and don't depend on whatever SDL the host has.
+# The source build sets the same SDL2_*/SDL2TTF_*/FFMPEG_* variables pkg-config
+# did, so the rest of this file is unchanged.
 set(NOCTURNE_FFMPEG_DEP "")
 if(NOCTURNE_BUILD_EXE)
-    if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
-        find_package(PkgConfig REQUIRED)
-        pkg_check_modules(SDL2    REQUIRED sdl2)
-        pkg_check_modules(SDL2TTF REQUIRED SDL2_ttf)
-        pkg_check_modules(FFMPEG REQUIRED libavformat libavcodec libavutil libswscale)
-    else()
-        include("${CMAKE_SOURCE_DIR}/cmake/i386libs.cmake")
-    endif()
+    include("${CMAKE_SOURCE_DIR}/cmake/bundledlibs.cmake")
 endif()
 
 # -----------------------------------------------------------------------------
@@ -294,10 +287,19 @@ if(NOCTURNE_BUILD_EXE)
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_compile_features(nocturne_shims PRIVATE cxx_std_17)
 
-    # FFmpeg (i686 lane) is built by ExternalProject at build time; its headers
-    # must exist before the shim TU that includes them compiles.
+    # FFmpeg is built by ExternalProject at build time; its headers must exist
+    # before the shim TU that includes them compiles.
     if(NOCTURNE_FFMPEG_DEP)
         add_dependencies(nocturne_shims ${NOCTURNE_FFMPEG_DEP})
+    endif()
+    # SDL2's public headers (SDL.h, ...) are copied from the source tree into the
+    # build tree by SDL2's `sdl_headers_copy` custom target. The shim TUs that
+    # `#include <SDL.h>` must wait for that copy — otherwise the compile races
+    # the copy (the ordering is only incidentally correct on a full build, and
+    # building the shims target alone loses the race). Present on both the source
+    # -built lanes (bundledlibs.cmake); absent if SDL came from the system.
+    if(TARGET sdl_headers_copy)
+        add_dependencies(nocturne_shims sdl_headers_copy)
     endif()
 
     add_executable(nocturne)

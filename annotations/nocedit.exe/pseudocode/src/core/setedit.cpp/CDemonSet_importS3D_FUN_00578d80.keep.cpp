@@ -399,7 +399,7 @@ LAB_00579173:
         else {
           iVar6 = this_ptr->light_count + -1;
           this_ptr->light_count = iVar6;
-          memmove(dest,pCVar9,(iVar6 - iVar5) * 0x1898);
+          memmove(dest,pCVar9,(iVar6 - iVar5) * sizeof(C3DSLight));
         }
       } while (iVar5 < this_ptr->light_count);
     }

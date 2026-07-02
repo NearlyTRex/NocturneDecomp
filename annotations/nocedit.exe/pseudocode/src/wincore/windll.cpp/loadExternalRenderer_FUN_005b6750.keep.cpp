@@ -378,7 +378,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
                    (g_RendererDLLHandle,"APIDLLsetFog");
     if (g_DLLFunctionsMissing == 0) {
       g_UseDirect3D = 1;
-      memset(&CStack_9c,0,0x8c);
+      memset(&CStack_9c,0,sizeof(CExternalRendererBridge));
       CStack_9c.red_bit_position = (int *)&g_RedBitPosition;
       CStack_9c.red_scale_factor = &g_RedScaleFactor;
       CStack_9c.red_bit_count = (int *)&g_RedBitCount;

@@ -87,16 +87,17 @@ sudo apt install cmake clang ninja-build pkg-config python3 \
                  libc6-dev-i386 libstdc++-dev:i386
 ```
 
-**Additional for `exe-linux` / `exe-linux-asan` (full link):** the shims consume
-SDL2, SDL2_ttf, and FFmpeg to provide a cross-platform substrate for the
-decompiled game's Windows APIs. The 32-bit build compiles these **from source**
-(`cmake/i386libs.cmake`, fetched/built at configure+build time) — do **not**
-install the `*-dev:i386` apt packages.
+**Additional for `exe-linux` / `exe-linux-asan` / `exe-linux-x86_64` (full link):**
+the shims consume SDL2, SDL2_ttf, and FFmpeg to provide a cross-platform
+substrate for the decompiled game's Windows APIs. Both the 32-bit and native
+64-bit builds compile these **from source** (`cmake/bundledlibs.cmake`,
+fetched/built at configure+build time) — do **not** install the `*-dev:i386`
+apt packages.
 
 > ⚠️ Do not `apt install libsdl2-dev:i386` (or the other `*-dev:i386` libs). On a
 > multiarch amd64 desktop, apt resolves the i386 `-dev` dependency chain by
 > **removing the amd64 desktop** (cinnamon/xorg/network-manager/clang-tidy). The
-> source-build path exists specifically to avoid this. See `cmake/i386libs.cmake`.
+> source-build path exists specifically to avoid this. See `cmake/bundledlibs.cmake`.
 
 Only the co-installable i386 **runtime** libs are needed — source-built SDL2
 `dlopen`s them at run time:

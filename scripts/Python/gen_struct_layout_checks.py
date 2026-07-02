@@ -69,6 +69,13 @@ def emit_file(out_path, leaf, structs):
     lines.append('')
     lines.append('#include "nocturne.h"')
     lines.append('')
+    lines.append('// The assertions below encode the 32-bit (matching-target) struct layout')
+    lines.append('// from Ghidra\'s data_types.json, so they are only valid when pointers are')
+    lines.append('// 4 bytes. On a native 64-bit build, pointer-containing structs')
+    lines.append('// legitimately change size/offset, so the checks are compiled out there;')
+    lines.append('// the file still compiles (catching type/name regressions) in both lanes.')
+    lines.append('#if __SIZEOF_POINTER__ == 4')
+    lines.append('')
     lines.append('namespace nocturne_layout_%s {' % leaf)
     lines.append('')
 
@@ -90,6 +97,8 @@ def emit_file(out_path, leaf, structs):
         lines.append('')
 
     lines.append('} // namespace')
+    lines.append('')
+    lines.append('#endif  // __SIZEOF_POINTER__ == 4 (32-bit layout only)')
     lines.append('')
 
     with open(out_path, 'w') as f:

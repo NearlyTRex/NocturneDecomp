@@ -1,13 +1,14 @@
 # -----------------------------------------------------------------------------
-# i386libs.cmake — build SDL2, SDL2_ttf, and FFmpeg from source for the 32-bit
-# (linux-i686) exe lane.
+# bundledlibs.cmake — build SDL2, SDL2_ttf, and FFmpeg from source for the exe
+# lane, on BOTH the 32-bit (linux-i686) and native 64-bit (linux-x86_64) targets.
 #
 # Why source instead of apt: the Ubuntu `libsdl2-dev:i386` / `libavcodec-dev:i386`
 # packages drag in a conflicting i386 `-dev` chain that apt resolves by REMOVING
-# the amd64 desktop. Building from source means we never install a single
-# `-dev:i386` package, so that cascade can't happen. We still rely on
-# co-installable i386 *runtime* libs (libx11-6:i386, libgl1:i386, …) which SDL2
-# dlopen()s at run time — those install cleanly alongside the amd64 desktop.
+# the amd64 desktop, so the 32-bit lane must build from source. We build the
+# 64-bit lane the same way rather than off system pkg-config: it makes the two
+# lanes reproducible and identical, and avoids depending on whichever SDL the
+# host happens to have (this host, for instance, ships only a source-built SDL3,
+# so `pkg_check_modules(sdl2 REQUIRED)` there would fail configure).
 #
 # This module reproduces the variable contract that pkg_check_modules() set:
 #   SDL2_INCLUDE_DIRS / SDL2_CFLAGS_OTHER / SDL2_LIBRARIES
@@ -15,13 +16,27 @@
 #   FFMPEG_INCLUDE_DIRS / FFMPEG_CFLAGS_OTHER / FFMPEG_LIBRARIES
 # so the rest of CMakeLists.txt consumes them unchanged.
 #
-# -m32 is inherited automatically: the linux-i686 toolchain puts it in
-# CMAKE_C/CXX_FLAGS_INIT, so every FetchContent sub-build compiles 32-bit.
-# FFmpeg (autotools, not CMake) gets -m32 passed explicitly below.
+# Target arch is inherited automatically for the CMake sub-builds (SDL2 /
+# SDL2_ttf): the linux-i686 toolchain puts -m32 in CMAKE_C/CXX_FLAGS_INIT and
+# the linux-x86_64 toolchain omits it, so each FetchContent sub-build compiles
+# for the right word size. FFmpeg (autotools, not CMake) gets the arch passed
+# explicitly below, keyed off CMAKE_SYSTEM_PROCESSOR.
 # -----------------------------------------------------------------------------
 
 include(FetchContent)
 include(ExternalProject)
+
+# Arch split: the x86_64 toolchain sets CMAKE_SYSTEM_PROCESSOR=x86_64, the i686
+# one sets i686. Everything arch-specific below keys off this one flag.
+if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
+    set(_noc_arch64    TRUE)
+    set(_noc_multiarch "x86_64-linux-gnu")
+    set(_noc_ff_arch   "x86_64")
+else()
+    set(_noc_arch64    FALSE)
+    set(_noc_multiarch "i386-linux-gnu")
+    set(_noc_ff_arch   "x86_32")
+endif()
 
 # Pin to the versions Ubuntu 24.04 shipped, so behavior matches the apt path
 # this replaces (SDL 2.30.0, SDL_ttf 2.22.0, FFmpeg 6.1.1).
@@ -31,17 +46,17 @@ set(NOCTURNE_FFMPEG_TAG   "n6.1.1"         CACHE STRING "FFmpeg git tag")
 
 # ----------------------------------------------------------------------------
 # SDL2 (shared). Backends (X11/Wayland/GL/PulseAudio/ALSA) are dlopen'd at
-# runtime, so no i386 -dev packages are needed at build time.
+# runtime, so no -dev packages are needed at build time.
 # ----------------------------------------------------------------------------
 set(SDL_SHARED ON  CACHE BOOL "" FORCE)
 set(SDL_STATIC OFF CACHE BOOL "" FORCE)
 set(SDL_TEST   OFF CACHE BOOL "" FORCE)
 set(SDL2_DISABLE_INSTALL ON CACHE BOOL "" FORCE)
 # Optional input/IME backends that need build-time -dev HEADERS (libudev.h,
-# dbus/dbus.h, ibus). We never install *-dev:i386 (multilib hazard), and these
-# features — joystick hotplug, dbus screensaver/IME — are unused by this render/
-# audio harness. Force them off so the from-source 32-bit SDL2 build doesn't
-# depend on those headers being present on the host.
+# dbus/dbus.h, ibus). We never install those -dev packages (multilib hazard on
+# the 32-bit lane), and these features — joystick hotplug, dbus screensaver/IME
+# — are unused by this render/audio harness. Force them off so the from-source
+# SDL2 build doesn't depend on those headers being present on the host.
 set(SDL_LIBUDEV OFF CACHE BOOL "" FORCE)
 set(SDL_DBUS    OFF CACHE BOOL "" FORCE)
 set(SDL_IBUS    OFF CACHE BOOL "" FORCE)
@@ -53,7 +68,7 @@ FetchContent_Declare(sdl2
 
 # ----------------------------------------------------------------------------
 # SDL2_ttf (shared, vendored freetype + harfbuzz — built static inside the
-# subproject so we don't need libfreetype-dev:i386 either).
+# subproject so we don't need libfreetype-dev either).
 # ----------------------------------------------------------------------------
 set(SDL2TTF_VENDORED ON  CACHE BOOL "" FORCE)
 set(SDL2TTF_SAMPLES  OFF CACHE BOOL "" FORCE)
@@ -63,36 +78,37 @@ FetchContent_Declare(sdl2_ttf
     GIT_TAG        ${NOCTURNE_SDL2TTF_TAG}
     GIT_SHALLOW    TRUE)
 
-message(STATUS "i386libs: fetching SDL2 ${NOCTURNE_SDL2_TAG} + SDL2_ttf ${NOCTURNE_SDL2TTF_TAG} (first configure clones + builds; cached after)")
+message(STATUS "bundledlibs: fetching SDL2 ${NOCTURNE_SDL2_TAG} + SDL2_ttf ${NOCTURNE_SDL2TTF_TAG} for ${_noc_multiarch} (first configure clones + builds; cached after)")
 FetchContent_MakeAvailable(sdl2 sdl2_ttf)
 
 # ----------------------------------------------------------------------------
 # Runtime dlopen compat shim.
 # SDL2's X11 and ALSA/Pulse backends dlopen the UNVERSIONED soname (libX11.so,
-# libpulse.so, ...). Those unversioned symlinks ship in the *-dev:i386 packages,
-# which we deliberately don't install (multilib hazard — they make apt remove the
-# amd64 desktop). Only the versioned runtime libs (libX11.so.6, ...) are present,
-# so the unversioned dlopen fails and SDL silently falls back to the headless
-# "offscreen" video driver → no window. Recreate the unversioned symlinks in a
-# build-local dir and put that dir on SDL2's RUNPATH so the dlopens resolve with
-# no system change and no LD_LIBRARY_PATH at launch.
+# libpulse.so, ...). On the 32-bit lane the unversioned symlinks ship only in
+# the -dev:i386 packages we deliberately don't install (multilib hazard), so
+# the dlopen fails and SDL silently falls back to the headless "offscreen" video
+# driver → no window. Recreate the unversioned symlinks in a build-local dir and
+# put that dir on LD_LIBRARY_PATH (via the launchers) so the dlopens resolve
+# with no system change. On the 64-bit lane the host desktop usually already has
+# the unversioned symlinks, but recreating them from the arch's runtime libdir
+# is harmless and keeps both lanes identical.
+#
+# The dir is named "i386-compat" on both lanes because the run/debug launcher
+# templates check for that literal path; the name is cosmetic (it just holds
+# symlinks), so it is left arch-neutral-by-name to avoid forking the launchers.
 set(_sdl_compat_dir "${CMAKE_BINARY_DIR}/i386-compat")
 file(MAKE_DIRECTORY "${_sdl_compat_dir}")
-set(_i386_libdir "/usr/lib/i386-linux-gnu")
+set(_runtime_libdir "/usr/lib/${_noc_multiarch}")
 foreach(_soname X11 Xext Xcursor Xi Xfixes Xrandr Xss pulse asound)
-    file(GLOB _versioned "${_i386_libdir}/lib${_soname}.so.[0-9]*")
+    file(GLOB _versioned "${_runtime_libdir}/lib${_soname}.so.[0-9]*")
     if(_versioned)
         list(SORT _versioned)
         list(GET _versioned 0 _target)   # soname (e.g. libX11.so.6) sorts before libX11.so.6.4.0
         file(CREATE_LINK "${_target}" "${_sdl_compat_dir}/lib${_soname}.so" SYMBOLIC)
     else()
-        message(STATUS "i386libs: no i386 runtime lib for lib${_soname}.so (backend will be unavailable)")
+        message(STATUS "bundledlibs: no ${_noc_multiarch} runtime lib for lib${_soname}.so (backend will be unavailable)")
     endif()
 endforeach()
-# The launchers (debug.sh / run.sh) put ${_sdl_compat_dir} on LD_LIBRARY_PATH so
-# SDL's dlopens resolve there. (RUNPATH-on-SDL2.so would also work but SDL2's
-# CMake skips build rpath, and the exe uses non-transitive DT_RUNPATH, so
-# LD_LIBRARY_PATH from the launcher is the reliable mechanism.)
 
 # The shims include <SDL.h> / <SDL_ttf.h> (no SDL2/ prefix), and SDL2's headers
 # live across the source tree plus a generated-config dir. Forward the targets'
@@ -108,13 +124,31 @@ set(SDL2TTF_LIBRARIES    SDL2_ttf::SDL2_ttf)
 
 # ----------------------------------------------------------------------------
 # FFmpeg (static, autotools). Every external codec/library dependency is
-# disabled so the static libs need only libc/libm (provided by -m32 multilib) —
-# nothing here pulls an i386 -dev package. Built once via ExternalProject and
-# cached; rebuilds only when NOCTURNE_FFMPEG_TAG changes.
+# disabled so the static libs need only libc/libm — nothing here pulls a -dev
+# package. Built once via ExternalProject and cached; rebuilds only when
+# NOCTURNE_FFMPEG_TAG changes. x86asm stays disabled on both lanes so no
+# nasm/yasm is required (the codecs this harness decodes don't need it).
 # ----------------------------------------------------------------------------
 set(_ff_root    "${CMAKE_BINARY_DIR}/ffmpeg")
 set(_ff_install "${_ff_root}/install")
 set(_ff_libdir  "${_ff_install}/lib")
+
+# Base configure args shared by both arches; --arch is keyed off the target.
+set(_ff_configure
+    <SOURCE_DIR>/configure
+    --prefix=<INSTALL_DIR>
+    --cc=clang --ld=clang
+    --arch=${_noc_ff_arch} --target-os=linux
+    --enable-static --disable-shared --enable-pic
+    --disable-programs --disable-doc --disable-network --disable-debug
+    --disable-x86asm
+    --disable-zlib --disable-bzlib --disable-lzma --disable-iconv
+    --disable-libxcb --disable-sdl2 --disable-autodetect)
+# The 32-bit lane cross-compiles with -m32; the native 64-bit lane needs no
+# arch flag (clang defaults to the host word size).
+if(NOT _noc_arch64)
+    list(APPEND _ff_configure --extra-cflags=-m32 --extra-ldflags=-m32)
+endif()
 
 ExternalProject_Add(ffmpeg_ext
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
@@ -122,15 +156,7 @@ ExternalProject_Add(ffmpeg_ext
     GIT_SHALLOW    TRUE
     PREFIX         "${_ff_root}"
     INSTALL_DIR    "${_ff_install}"
-    CONFIGURE_COMMAND <SOURCE_DIR>/configure
-        --prefix=<INSTALL_DIR>
-        --cc=clang --ld=clang
-        --arch=x86_32 --target-os=linux --extra-cflags=-m32 --extra-ldflags=-m32
-        --enable-static --disable-shared --enable-pic
-        --disable-programs --disable-doc --disable-network --disable-debug
-        --disable-x86asm
-        --disable-zlib --disable-bzlib --disable-lzma --disable-iconv
-        --disable-libxcb --disable-sdl2 --disable-autodetect
+    CONFIGURE_COMMAND ${_ff_configure}
     BUILD_COMMAND   make -j
     INSTALL_COMMAND make install
     BUILD_IN_SOURCE 1

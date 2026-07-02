@@ -6,6 +6,13 @@
 
 #include "nocturne.h"
 
+// The assertions below encode the 32-bit (matching-target) struct layout
+// from Ghidra's data_types.json, so they are only valid when pointers are
+// 4 bytes. On a native 64-bit build, pointer-containing structs
+// legitimately change size/offset, so the checks are compiled out there;
+// the file still compiles (catching type/name regressions) in both lanes.
+#if __SIZEOF_POINTER__ == 4
+
 namespace nocturne_layout_game {
 
 // ---- C3DSCamera (420 bytes) ----
@@ -10559,3 +10566,5 @@ static_assert(__builtin_offsetof(SWindowRect, bottom) == 12,
               "offsetof(SWindowRect, bottom) != 12");
 
 } // namespace
+
+#endif  // __SIZEOF_POINTER__ == 4 (32-bit layout only)

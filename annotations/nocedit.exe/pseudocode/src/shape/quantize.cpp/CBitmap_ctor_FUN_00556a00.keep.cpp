@@ -17,7 +17,7 @@ CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr
   ushort uVar5;
   char local_68 [92];
   
-  memset(this_ptr,0,0x28);
+  memset(this_ptr,0,sizeof(CBitmap));
   if ((byte)bit_depth < 0x10) {
     if (7 < (byte)bit_depth) {
       if ((byte)bit_depth < 9) {

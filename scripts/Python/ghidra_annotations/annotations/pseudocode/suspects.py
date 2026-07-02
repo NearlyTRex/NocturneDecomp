@@ -109,6 +109,7 @@ SUSPECT_SEVERITY = {
     'signed_shift_global_idiom': 'moderate',
     'struct_field_overrun': 'moderate',
     'alloc_magic_size': 'moderate',
+    'mem_magic_size': 'moderate',
 }
 
 
@@ -7392,6 +7393,198 @@ def identify_struct_field_overrun(code, struct_layout_map=None):
     return suspects
 
 
+# memcpy/memmove/memset call head; the size is always the LAST argument, so we
+# extract the balanced arg list and look at that arg alone (not the fill byte).
+_MEM_FN_CALL_RE = re.compile(r'\b(memcpy|memmove|memset)\s*\(')
+# Numeric literal used as a whole size arg or as a multiplicative stride within
+# it (`n * 0x30`, `0x30 * n`, or a bare `0x30`).
+_MEM_SIZE_STRIDE_RE = re.compile(
+    r'\*\s*(0x[0-9a-fA-F]+|\d+)\b|\b(0x[0-9a-fA-F]+|\d+)\s*\*')
+_MEM_SIZE_BARE_RE = re.compile(r'^\s*(0x[0-9a-fA-F]+|\d+)\s*$')
+
+# Cache of the 64-bit-unstable struct set, keyed by the layout map's identity so
+# a single build is shared across the per-keep calls in one export/test run.
+_UNSTABLE_STRUCT_CACHE = {}
+
+
+def _mem_split_top_args(arglist):
+    """Split a balanced argument string (no outer parens) at top-level commas."""
+    depth, cur, out = 0, '', []
+    for ch in arglist:
+        if ch in '([':
+            depth += 1
+            cur += ch
+        elif ch in ')]':
+            depth -= 1
+            cur += ch
+        elif ch == ',' and depth == 0:
+            out.append(cur)
+            cur = ''
+        else:
+            cur += ch
+    if cur.strip():
+        out.append(cur)
+    return out
+
+
+def _struct_grows_at_64bit(layout):
+    """Set of struct/union names whose byte size changes when pointers are 8B.
+
+    A type is 64-bit-unstable if it (transitively) contains a pointer field: a
+    pointer grows 4->8, so the enclosing struct's size and every offset past it
+    shift. A type built only from scalars/floats/fixed arrays keeps its size at
+    64-bit, so a hardcoded byte count over it stays correct — those are NOT
+    flagged. Resolved from build_struct_layout_map's per-field `is_ptr`/`type`.
+    """
+    if not layout:
+        return set()
+    cached = _UNSTABLE_STRUCT_CACHE.get(id(layout))
+    if cached is not None:
+        return cached
+    memo = {}
+
+    def unstable(name, stack):
+        if name in memo:
+            return memo[name]
+        if name in stack:
+            return False  # cycle guard; resolved by the outer frame
+        fields = layout.get(name)
+        if not fields:
+            memo[name] = False
+            return False
+        res = False
+        for fl in fields:
+            if fl.get('is_ptr'):
+                res = True
+                break
+            nested = fl.get('type')
+            if nested and nested in layout and unstable(nested, stack | {name}):
+                res = True
+                break
+        memo[name] = res
+        return res
+
+    result = {n for n in layout if unstable(n, frozenset())}
+    _UNSTABLE_STRUCT_CACHE[id(layout)] = result
+    return result
+
+
+def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
+    """Flag memcpy/memmove/memset whose byte size hardcodes sizeof(an unstable T).
+
+    Sibling of identify_alloc_magic_size for the copy/fill family. Watcom baked
+    struct sizes as immediates, so the decompiler emits e.g.
+        memcpy(this_ptr, other, 0x78);   // 0x78 == sizeof(SNetPlayer)
+        memset(p, 0, 0x2c);              // 0x2c == sizeof(T)
+    On the 32-bit matching build these are correct. They only *break* at 64-bit
+    if sizeof(T) actually changes there — i.e. T (transitively) contains a
+    pointer. A copy of a pure-scalar struct (a float vertex, an RGB palette)
+    keeps its size and is left alone, which is what kills the size-collision
+    noise a bare size==sizeof match would produce.
+
+    Precision comes from resolving the *type* of the destination (and, for
+    memcpy/memmove, the source) access-path via the same var-type + layout
+    machinery struct_field_overrun uses — there is no cast to key off as with
+    alloc. A site fires only when:
+      - the size arg is a numeric literal (bare, or an `n * 0xNN` stride), and
+      - dest or src resolves to a struct type T, and
+      - the literal == sizeof(T), and
+      - T is 64-bit-unstable.
+    An unresolved operand or a non-matching / non-numeric size yields no flag.
+
+    NOTE (serialization): a match is a *candidate*, not an automatic fix. If the
+    copy marshals a struct to/from a fixed on-disk / on-wire buffer, the byte
+    count must stay literal and sizeof(T) would break the format at 64-bit. The
+    description says so; the human triages per site (flag-only detector).
+
+    Args:
+        code: source text.
+        struct_layout_map: struct -> field layout (build_struct_layout_map);
+            needed for type resolution and the unstable-set computation.
+        struct_size_map: struct/union -> byte size (build_struct_size_map).
+
+    Returns:
+        List of suspect dicts (type mem_magic_size), one per matched site.
+    """
+    suspects = []
+    if not code or not struct_layout_map or not struct_size_map:
+        return suspects
+
+    unstable = _struct_grows_at_64bit(struct_layout_map)
+    if not unstable:
+        return suspects
+    var_types = _sfo_resolve_var_types(code)
+
+    for m in _MEM_FN_CALL_RE.finditer(code):
+        # Skip a call whose head sits on a comment line.
+        line_start = code.rfind('\n', 0, m.start()) + 1
+        nl = code.find('\n', m.start())
+        first_line = code[line_start:(nl if nl != -1 else len(code))].strip()
+        if first_line.startswith(('//', '#', '/*', '*')):
+            continue
+
+        fn = m.group(1)
+        call = _extract_balanced_parens(code[m.end() - 1:])
+        if call is None:
+            continue
+        args = _mem_split_top_args(call[1:-1])
+        if len(args) < 3:
+            continue
+
+        size_arg = args[-1]
+        consts = set()
+        for sm in _MEM_SIZE_STRIDE_RE.finditer(size_arg):
+            cs = sm.group(1) or sm.group(2)
+            consts.add(int(cs, 16) if cs.startswith('0x') else int(cs))
+        bm = _MEM_SIZE_BARE_RE.match(size_arg)
+        if bm:
+            cs = bm.group(1)
+            consts.add(int(cs, 16) if cs.startswith('0x') else int(cs))
+        if not consts:
+            continue
+
+        # dest is always the first arg; src only exists for the copy family.
+        operands = [('dest', args[0])]
+        if fn in ('memcpy', 'memmove'):
+            operands.append(('src', args[1]))
+
+        hit = None
+        for role, operand in operands:
+            t = resolve_access_path_type(operand, var_types, struct_layout_map)
+            if not t or t not in unstable:
+                continue
+            tsize = struct_size_map.get(t)
+            if tsize is None or tsize not in consts:
+                continue
+            hit = (role, t, tsize)
+            break
+        if hit is None:
+            continue
+
+        role, t, tsize = hit
+        desc = (
+            "%s size hardcodes 0x%x == sizeof(%s), whose %s resolves to that "
+            "struct. %s is 64-bit-unstable (contains a pointer), so the struct "
+            "grows past 0x%x once pointers are 8 bytes and %s covers only its "
+            "leading 0x%x bytes, leaving the grown tail untouched. Replace the "
+            "magic with sizeof(%s) for an in-memory copy — but if this marshals "
+            "to a fixed file/wire format, keep the literal (sizeof would break "
+            "the format) (§17/§18)."
+            % (fn, tsize, t, role, t, tsize, fn, tsize, t))
+        line_no = code.count('\n', 0, m.start()) + 1
+        snippet = re.sub(r'\s+', ' ', m.group(0)[:-1] + call).strip()
+        suspects.append({
+            'line': line_no,
+            'type': 'mem_magic_size',
+            'match': '%s(%s) size 0x%x == sizeof(%s)' % (fn, role, tsize, t),
+            'text': snippet[:200],
+            'description': desc,
+            'severity': SUSPECT_SEVERITY.get('mem_magic_size', 'moderate'),
+        })
+
+    return suspects
+
+
 def detect_content_suspects(code, func_globals=None, global_interval_map=None,
                             address_interval_map=None, func_calls=None,
                             struct_layout_map=None, struct_size_map=None):
@@ -7465,6 +7658,8 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_bit_int_float_compare(code))
     found.extend(identify_struct_field_overrun(code, struct_layout_map))
     found.extend(identify_alloc_magic_size(code, struct_size_map))
+    found.extend(identify_mem_magic_size(
+        code, struct_layout_map, struct_size_map))
     return found
 
 
