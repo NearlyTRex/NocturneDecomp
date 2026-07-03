@@ -21,8 +21,6 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap *this_pt
   CVector3f local_64;
   int local_58;
   int local_54 [4];
-  int local_2c;
-  int local_18;
   CDemonRenderer *this_ptr_00;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
@@ -61,18 +59,17 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap *this_pt
   iVar5 = green << 8;
   local_58 = 0;
   iVar6 = fog << 8;
-  local_2c = 0;
   do {
-    local_18 = (int)(this_ptr->height_cache + -1) + 0x160 + local_2c;
     local_54[1] = 0;
     do {
-      if ((-1000 < *(int *)(local_18 + 0x9c70)) && (*(int *)(local_18 + 0x9c70) < 1000)) {
+      if ((-1000 < this_ptr->height_cache_tags[local_54[1]][local_58]) &&
+         (this_ptr->height_cache_tags[local_54[1]][local_58] < 1000)) {
         fVar1 = g_CDemonRaytraceInstance.adjusted_size.x * 256.0f;
         fVar2 = g_CDemonRaytraceInstance.adjusted_size.z * 256.0f;
         local_70.x = (int)ROUND(ROUND((float)local_58 * fVar1));
         local_70.z = (int)ROUND(ROUND((float)local_54[1] * fVar2));
         local_70.y = (int)ROUND(ROUND(g_CDemonRaytraceInstance.bbox_min.y * (float)256 +
-                                      (float)*(int *)(local_18 + 0x30) *
+                                      (float)this_ptr->height_cache[local_54[1]][local_58] *
                                       g_CDemonRaytraceInstance.adjusted_size.y * 256.0f +
                                       (float)256));
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
@@ -107,10 +104,8 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap *this_pt
                   (this_ptr_00,(SMRGLPrimitivePoly *)&SMRGLPrimitiveQuad_030d4fd0);
       }
       local_54[1] = local_54[1] + 1;
-      local_18 = local_18 + 400;
     } while (local_54[1] < 100);
     local_58 = local_58 + 1;
-    local_2c = local_2c + 4;
   } while (local_58 < 100);
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,1);
   return;

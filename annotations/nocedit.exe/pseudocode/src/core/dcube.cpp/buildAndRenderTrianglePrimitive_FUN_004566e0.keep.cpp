@@ -1,0 +1,25 @@
+// Name: core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_004566e0
+// Address: 004566e0
+// MANUAL RECONSTRUCTION
+// Address Range: [[004566e0, 0045674e]]
+// Convention: __cdecl
+// Signature: void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0(CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer)
+
+#include "nocturne.h"
+
+void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0(CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer)
+
+{
+  SMRGLPrimitiveTriangleIndex local_30;
+  
+  local_30.base.base.count = 3;
+  local_30.base.surface_normal.D.i = 0;
+  local_30.base.surface_normal.C.i = 0;
+  local_30.base.surface_normal.B.i = 0;
+  local_30.base.surface_normal.A.i = 0;
+  local_30.vertices[0] = (uint)((intptr_t)*triangle_vertex_pointers - (intptr_t)vertex_buffer) / sizeof(CVector3f);
+  local_30.vertices[1] = (uint)((intptr_t)triangle_vertex_pointers[1] - (intptr_t)vertex_buffer) / sizeof(CVector3f);
+  local_30.vertices[2] = (uint)((intptr_t)triangle_vertex_pointers[2] - (intptr_t)vertex_buffer) / sizeof(CVector3f);
+  core_set_cpp_CDemonSet_renderPrimitiveList_FUN_005708e0(g_CDemonSetPtr,&local_30.base,1);
+  return;
+}

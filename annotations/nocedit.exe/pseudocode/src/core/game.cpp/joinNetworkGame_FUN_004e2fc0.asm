@@ -64,7 +64,7 @@ section .text
     LEA EAX,[ESP + 0x68]                ; 004e3001
     PUSH EAX                            ; 004e3005
     CALL support_trisock.cpp_parseIPAddress_FUN_005e1700 ; 004e3006
-        ;   XREF to: 005e1700 (UNCONDITIONAL_CALL)  ; uint support_trisock.cpp_parseIPAddress_FUN_005e1700(uint * result_ptr, char * dotted_decimal_string)
+        ;   XREF to: 005e1700 (UNCONDITIONAL_CALL)  ; uint * support_trisock.cpp_parseIPAddress_FUN_005e1700(uint * result_ptr, char * dotted_decimal_string)
     ADD ESP,0x8                         ; 004e300b
     PUSH EAX                            ; 004e300e
     MOV ECX,dword ptr [0x00680a00]      ; 004e300f | g_CNetGamePtr | g_CNetGameInstance

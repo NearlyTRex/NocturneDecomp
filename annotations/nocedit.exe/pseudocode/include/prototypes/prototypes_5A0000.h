@@ -318,7 +318,7 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,int sample_count);
 int __cdecl sound_snddx_cpp_isValidSampleBuffer_FUN_005af150(int buffer_id);
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_005af190(CDirectSoundDevice *this_ptr,int buffer_id);
-int __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_005af220(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size);
+void * __cdecl sound_snddx_cpp_CDirectSoundDevice_lockSample_FUN_005af220(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size);
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_005af320(CDirectSoundDevice *this_ptr,int buffer_id);
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_005af410(CDirectSoundDevice *this_ptr,int sample_buffer_id);
 int __cdecl sound_snddx_cpp_isValidSfxHandle_FUN_005af720(int sfx_handle);

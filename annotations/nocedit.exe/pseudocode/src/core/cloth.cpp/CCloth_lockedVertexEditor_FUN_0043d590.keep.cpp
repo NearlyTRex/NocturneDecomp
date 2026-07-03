@@ -11,6 +11,8 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
 
 {
   SRenderVertex *pSVar3;
+  SMRGLPrimitiveQuad *quad;
+  int count;
   int iVar6;
   CSpotView *pCVar7;
   int iVar9;
@@ -36,7 +38,6 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
   int local_28;
   int local_24;
   int local_20;
-  int local_1c;
   int local_18;
   int local_14;
   SRenderVertex *pSVar2;
@@ -101,26 +102,15 @@ void __cdecl core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(CCloth *this_
     }
     engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr2,0xff)
     ;
-    local_14 = 0;
-    if (0 < (this_ptr->model).poly_count) {
-      local_1c = 0;
-      do {
-        iVar9 = (int)&(((SMRGLPrimitiveQuad *)(((this_ptr->model).poly_vert_list)->vertices + -2))->
-                      base).base.type + local_1c;
-        iVar11 = 0;
-        iVar12 = iVar9;
-        if (0 < *(int *)(iVar9 + 4)) {
-          do {
-            iVar11 = iVar11 + 1;
-            engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-                      (g_CDemonRendererPtr2,*(int *)(iVar12 + 0x18),
-                       *(int *)((iVar11 % *(int *)(iVar9 + 4)) * 0xc + 0x18 + iVar9));
-            iVar12 = iVar12 + 0xc;
-          } while (iVar11 < *(int *)(iVar9 + 4));
-        }
-        local_1c = local_1c + 0x48;
-        local_14 = local_14 + 1;
-      } while (local_14 < (this_ptr->model).poly_count);
+    for (local_14 = 0; local_14 < (this_ptr->model).poly_count; local_14 = local_14 + 1) {
+      quad = (this_ptr->model).poly_vert_list + local_14;
+      count = quad->base.base.count;
+      // Draw the polygon outline: an edge from each corner to the next (wrapping).
+      for (iVar11 = 0; iVar11 < count; iVar11 = iVar11 + 1) {
+        engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
+                  (g_CDemonRendererPtr2,quad->vertices[iVar11].vertex_index,
+                   quad->vertices[(iVar11 + 1) % count].vertex_index);
+      }
     }
     if (local_34 < 0) {
       local_28 = -999;

@@ -71,7 +71,7 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight 
 CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight *this_ptr,uint flags);
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_004727c0(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_free_FUN_004728b0(CDemonLight *this_ptr);
-int __cdecl core_dlight_cpp_getRestoreMemory_FUN_00472950(int pixel_count);
+void * __cdecl core_dlight_cpp_getRestoreMemory_FUN_00472950(int pixel_count);
 void __cdecl core_dlight_cpp_resetRestoreMemoryAllocator_FUN_004729c0(void);
 void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0(CDemonLight *this_ptr);
 void __cdecl core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_00472a50(CDemonLight *this_ptr);

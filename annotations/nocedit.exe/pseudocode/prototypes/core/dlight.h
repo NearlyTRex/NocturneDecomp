@@ -25,7 +25,7 @@ void __cdecl CDemonLight::free(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_getRestoreMemory_FUN_00472950
 // Address: 00472950
-int __cdecl getRestoreMemory(int pixel_count);
+void * __cdecl getRestoreMemory(int pixel_count);
 
 // Original: core_dlight.cpp_resetRestoreMemoryAllocator_FUN_004729c0
 // Address: 004729c0

@@ -33,7 +33,6 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
   char local_24c [252];
   SRenderVertex *auStack_150 [32];
   SRenderVertex *local_cc [32];
-  int local_4c;
   int local_48;
   int local_44;
   int local_40;
@@ -152,7 +151,6 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
     iVar7 = 0;
     local_48 = vertex_count;
     g_ClipperTempCount = 0;
-    local_4c = (int)local_cc;
     local_44 = 0;
     if (0 < vertex_count) {
       puVar14 = auStack_150;
@@ -168,9 +166,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
         }
         switch(bVar7) {
         case 0:
-          iVar10 = iVar7 * 4;
+          local_cc[iVar7] = pSVar11;
           iVar7 = iVar7 + 1;
-          *(SRenderVertex **)(iVar10 + local_4c) = pSVar11;
           break;
         case 1:
           if (0xb < g_ClipperTempCount) {
@@ -180,14 +177,13 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
           }
           pSVar16 = g_ClipperTempBuffer + g_ClipperTempCount;
           g_ClipperTempCount = g_ClipperTempCount + 1;
-          iVar10 = iVar7 * 4;
+          local_cc[iVar7] = pSVar16;
           iVar7 = iVar7 + 1;
-          *(SRenderVertex **)(iVar10 + local_4c) = pSVar16;
           engine_clipper_c_interpolateVertexLeftClip_FUN_00435a00(pSVar15,pSVar11,pSVar16);
           break;
         case 2:
           iVar12 = iVar7 + 1;
-          *(SRenderVertex **)(iVar7 * 4 + local_4c) = pSVar11;
+          local_cc[iVar7] = pSVar11;
           if (0xb < iVar10) {
             g_CurrentFilename = "..\\engine\\clipper.c";
             g_CurrentLineNumber = 94;
@@ -196,7 +192,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
           pSVar16 = g_ClipperTempBuffer + g_ClipperTempCount;
           g_ClipperTempCount = g_ClipperTempCount + 1;
           iVar7 = iVar7 + 2;
-          *(SRenderVertex **)(iVar12 * 4 + local_4c) = pSVar16;
+          local_cc[iVar12] = pSVar16;
           engine_clipper_c_interpolateVertexLeftClip_FUN_00435a00(pSVar11,pSVar15,pSVar16);
         }
         local_44 = local_44 + 1;

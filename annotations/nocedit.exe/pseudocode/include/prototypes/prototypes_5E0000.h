@@ -65,7 +65,7 @@ void __cdecl core_trigger_cpp_CTrigger_showEditorHelp_FUN_005e1350(CTrigger *thi
 CTrigger * __cdecl core_trigger_cpp_CTrigger_dtor_FUN_005e1660(CTrigger *this_ptr,uint flags);
 void __cdecl support_trisock_cpp_staticInit_FUN_005e16b0(void);
 uint * __cdecl support_trisock_cpp_copyIPAddress_FUN_005e16f0(uint *dest_ip,uint *src_ip);
-uint __cdecl support_trisock_cpp_parseIPAddress_FUN_005e1700(uint *result_ptr,char *dotted_decimal_string);
+uint * __cdecl support_trisock_cpp_parseIPAddress_FUN_005e1700(uint *result_ptr,char *dotted_decimal_string);
 uint8_t * __cdecl support_trisock_cpp_buildIPAddressOrDie_FUN_005e1750(uchar *dest_ip,int octet1,int octet2,int octet3,int octet4);
 void __cdecl support_trisock_cpp_formatIPAddress_FUN_005e17c0(char *output_buffer,uchar *ip_bytes);
 int __cdecl support_trisock_cpp_parseIPComponents_FUN_005e1800(uint *result_ptr,char *dotted_decimal_string);

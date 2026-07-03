@@ -16,8 +16,8 @@ void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0(CDemonL
     g_CurrentLineNumber = 205;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonLight::allocMasterZBuffer - We already have one!");
   }
-  pvVar1 = (void *)core_dlight_cpp_getRestoreMemory_FUN_00472950
-                             (this_ptr->shadow_map_width * this_ptr->shadow_map_height);
+  pvVar1 = core_dlight_cpp_getRestoreMemory_FUN_00472950
+                     (this_ptr->shadow_map_width * this_ptr->shadow_map_height);
   this_ptr->master_zbuffer = pvVar1;
   _memcpy
             (this_ptr->master_zbuffer,this_ptr->shadow_depth_buffer,

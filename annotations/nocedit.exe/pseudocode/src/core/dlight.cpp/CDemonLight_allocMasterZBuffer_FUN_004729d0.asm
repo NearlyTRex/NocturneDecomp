@@ -36,7 +36,7 @@ section .text
     IMUL EAX,dword ptr [EBX + 0x1cc4]   ; 004729e5
     PUSH EAX                            ; 004729ec
     CALL core_dlight.cpp_getRestoreMemory_FUN_00472950 ; 004729ed
-        ;   XREF to: 00472950 (UNCONDITIONAL_CALL)  ; int core_dlight.cpp_getRestoreMemory_FUN_00472950(int pixel_count)
+        ;   XREF to: 00472950 (UNCONDITIONAL_CALL)  ; void * core_dlight.cpp_getRestoreMemory_FUN_00472950(int pixel_count)
     MOV dword ptr [EBX + 0x2f9c],EAX    ; 004729f2
     MOV EBP,dword ptr [EBX + 0x1cc4]    ; 004729f8
     MOV EAX,dword ptr [EBX + 0x1cc0]    ; 004729fe

@@ -81,7 +81,7 @@ void __cdecl CDirectSoundDevice::freeSample(CDirectSoundDevice *this_ptr,int buf
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_005af220
 // Address: 005af220
-int __cdecl CDirectSoundDevice::lockSample(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size);
+void * __cdecl CDirectSoundDevice::lockSample(CDirectSoundDevice *this_ptr,int buffer_id,int offset,int size);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_005af320
 // Address: 005af320

@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 99,
     "complexity_score": 37,
@@ -165,6 +165,17 @@
     },
     "pcode_op_count": 349
   },
+  "resolved_suspects": [
+    {
+      "description": "memset size hardcodes 0x1898 == sizeof(C3DSLight), whose dest resolves to that struct. C3DSLight is 64-bit-unstable (contains a pointer), so the struct grows past 0x1898 once pointers are 8 bytes and memset covers only its leading 0x1898 bytes, leaving the grown tail untouched. Replace the magic with sizeof(C3DSLight) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
+      "line": 14,
+      "match": "memset(dest) size 0x1898 == sizeof(C3DSLight)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(this_ptr_00,0,0x1898)",
+      "type": "mem_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,

@@ -13,7 +13,7 @@ uint * __cdecl copyIPAddress(uint *dest_ip,uint *src_ip);
 
 // Original: support_trisock.cpp_parseIPAddress_FUN_005e1700
 // Address: 005e1700
-uint __cdecl parseIPAddress(uint *result_ptr,char *dotted_decimal_string);
+uint * __cdecl parseIPAddress(uint *result_ptr,char *dotted_decimal_string);
 
 // Original: support_trisock.cpp_buildIPAddressOrDie_FUN_005e1750
 // Address: 005e1750

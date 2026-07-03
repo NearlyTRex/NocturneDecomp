@@ -103,7 +103,6 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
   int *local_b4;
   intptr_t local_b0;
   int intensity_stereo_enabled;
-  int local_a8;
   int local_a4;
   int local_a0;
   int local_9c;
@@ -246,12 +245,10 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
           iVar12 = band_idx_l[local_8c / 4 + 1] - band_idx_l[local_8c / 4];
           if (0 < iVar12) {
             iVar6 = iVar11 * 2;
-            local_a8 = (int)scalefactor_data->granules[0].long_scalefactors + local_88;
             local_90 = iVar11 * 4;
             do {
-              // 0xf8 = sizeof(SMpegLayer3ScalefactorGranule); steps to granule[1]
-              // (right channel) long_scalefactors[band].
-              sVar2 = *(short *)(local_a8 + 0xf8);
+              // right-channel (granule[1]) scalefactor for this band, low 16 bits
+              sVar2 = *(short *)&scalefactor_data->granules[1].long_scalefactors[local_e8];
               iVar1 = iVar6 / 2; is_pos_per_sample[iVar1] =sVar2;
               if (sVar2 != 7) {
                 if (is_mpeg2_lsf == 0) {

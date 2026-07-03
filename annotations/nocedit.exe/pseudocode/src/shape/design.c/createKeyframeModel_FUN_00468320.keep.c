@@ -20,7 +20,7 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
   int local_18;
   float local_14;
 
-  memset(&local_264,0,0x158);
+  memset(&local_264,0,sizeof(SMRGLKeyframeModel));
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0
             (local_10c,0x28,0,0,"Enter in final model name : ");

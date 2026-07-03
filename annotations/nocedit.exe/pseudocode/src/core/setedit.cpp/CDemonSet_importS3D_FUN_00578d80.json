@@ -930,6 +930,15 @@
       "type": "unrolled_strchr"
     },
     {
+      "description": "memmove size hardcodes 0x1898 == sizeof(C3DSLight), whose dest resolves to that struct. C3DSLight is 64-bit-unstable (contains a pointer), so the struct grows past 0x1898 once pointers are 8 bytes and memmove covers only its leading 0x1898 bytes, leaving the grown tail untouched. Replace the magic with sizeof(C3DSLight) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
+      "line": 437,
+      "match": "memmove(dest) size 0x1898 == sizeof(C3DSLight)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove(dest,pCVar9,(iVar6 - iVar5) * 0x1898)",
+      "type": "mem_magic_size"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 00579d7f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 1393,
       "match": "MOVSD.REP",

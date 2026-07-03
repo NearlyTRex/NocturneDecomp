@@ -27,7 +27,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
   CVector3f aCStack_6c [2];
   int iStack_18;
   char *commands;
-  int iVar1;
+  CDemonActor *iVar1;
   
   fVar1 = (this_ptr->base).location.position.x;
   fVar2 = (this_ptr->base).location.position.y;
@@ -115,17 +115,17 @@ LAB_004801a8:
     iStack_18 = 0;
     while( true ) {
       if (g_CDemonSetPtr->character_count <= iStack_18) break;
-      iVar1 = (int)g_CDemonSetPtr->characters[iStack_18];
+      iVar1 = (CDemonActor *)g_CDemonSetPtr->characters[iStack_18];
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_d0);
-      iVar2 = (*(((CDemonActor *)iVar1)->vtable._ub)->getCollisionType)((CDemonActor *)iVar1,&SStack_d0);
+      iVar2 = (*iVar1->vtable._ub->getCollisionType)(iVar1,&SStack_d0);
       if (((iVar2 == 2) &&
-          (SStack_d0.cylinder_bottom_y + *(float *)(iVar1 + 0x24) <=
+          (SStack_d0.cylinder_bottom_y + iVar1->location.position.y <=
            (this_ptr->base).location.position.y + local_a8.max.y)) &&
          ((this_ptr->base).location.position.y + local_a8.min.y <=
-          SStack_d0.cylinder_top_y + *(float *)(iVar1 + 0x24))) {
-        CStack_84.x = *(float *)(iVar1 + 0x20) - (this_ptr->base).location.position.x;
-        CStack_84.y = *(float *)(iVar1 + 0x24) - (this_ptr->base).location.position.y;
-        CStack_84.z = *(float *)(iVar1 + 0x28) - (this_ptr->base).location.position.z;
+          SStack_d0.cylinder_top_y + iVar1->location.position.y)) {
+        CStack_84.x = iVar1->location.position.x - (this_ptr->base).location.position.x;
+        CStack_84.y = iVar1->location.position.y - (this_ptr->base).location.position.y;
+        CStack_84.z = iVar1->location.position.z - (this_ptr->base).location.position.z;
         pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                            (&(this_ptr->base).orient_matrix,&CStack_90,&CStack_84);
         if (aCStack_6c != pCVar3) {

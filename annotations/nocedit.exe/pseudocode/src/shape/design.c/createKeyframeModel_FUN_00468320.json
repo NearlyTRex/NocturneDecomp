@@ -298,6 +298,15 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
+    },
+    {
+      "description": "memset size hardcodes 0x158 == sizeof(SMRGLKeyframeModel), whose dest resolves to that struct. SMRGLKeyframeModel is 64-bit-unstable (contains a pointer), so the struct grows past 0x158 once pointers are 8 bytes and memset covers only its leading 0x158 bytes, leaving the grown tail untouched. Replace the magic with sizeof(SMRGLKeyframeModel) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
+      "line": 28,
+      "match": "memset(dest) size 0x158 == sizeof(SMRGLKeyframeModel)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(&local_264,0,0x158)",
+      "type": "mem_magic_size"
     }
   ],
   "stack_frame": {

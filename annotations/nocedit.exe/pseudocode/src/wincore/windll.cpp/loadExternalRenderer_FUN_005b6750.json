@@ -1045,6 +1045,17 @@
     },
     "pcode_op_count": 2218
   },
+  "resolved_suspects": [
+    {
+      "description": "memset size hardcodes 0x8c == sizeof(CExternalRendererBridge), whose dest resolves to that struct. CExternalRendererBridge is 64-bit-unstable (contains a pointer), so the struct grows past 0x8c once pointers are 8 bytes and memset covers only its leading 0x8c bytes, leaving the grown tail untouched. Replace the magic with sizeof(CExternalRendererBridge) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
+      "line": 373,
+      "match": "memset(dest) size 0x8c == sizeof(CExternalRendererBridge)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(&CStack_9c,0,0x8c)",
+      "type": "mem_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,

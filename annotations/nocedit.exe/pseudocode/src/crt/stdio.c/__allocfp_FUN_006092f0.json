@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 93,
+    "complexity_score": 108,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "mem_magic_size",
       "pointer_cast",
       "pointer_truncation"
     ],
@@ -210,6 +211,14 @@
       "severity": "moderate",
       "text": "dest = (_FILE **)((int)&psVar1->__put_end + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "memset size hardcodes 0x1a == sizeof(_FILE), whose dest resolves to that struct. _FILE is 64-bit-unstable (contains a pointer), so the struct grows past 0x1a once pointers are 8 bytes and memset covers only its leading 0x1a bytes, leaving the grown tail untouched. Replace the magic with sizeof(_FILE) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
+      "line": 38,
+      "match": "memset(dest) size 0x1a == sizeof(_FILE)",
+      "severity": "moderate",
+      "text": "memset(dest,0,0x1a)",
+      "type": "mem_magic_size"
     }
   ]
 }

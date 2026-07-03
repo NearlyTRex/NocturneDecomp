@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dlight_cpp_getRestoreMemory_FUN_00472950(int pixel_count)
+; void * __cdecl core_dlight_cpp_getRestoreMemory_FUN_00472950(int pixel_count)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   pixel_count
