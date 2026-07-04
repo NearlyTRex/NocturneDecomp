@@ -29,6 +29,8 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_pt
   SPod1Header local_100;
   SEpdDirEntry local_ac;
   SPod1DirEntry local_5c;
+  SPodDirEntryOnDisk disk_entry;
+  int rec_idx;
   char pod_magic [4];
   int local_2c;
   int local_28;
@@ -121,7 +123,14 @@ LAB_0054f6fe:
       this_ptr->directory_entries = pCVar5;
       if (pCVar5 != (CPodDirectoryEntry *)0x0) {
         _fseek(p_Var3,local_490.data_start_offset,0);
-        _fread(this_ptr->directory_entries,this_ptr->file_count,0x14,p_Var3);
+        for (rec_idx = 0; rec_idx < this_ptr->file_count; rec_idx = rec_idx + 1) {
+          _fread(&disk_entry,1,0x14,p_Var3);
+          this_ptr->directory_entries[rec_idx].name = (char *)(size_t)disk_entry.name_offset;
+          this_ptr->directory_entries[rec_idx].size = disk_entry.size;
+          this_ptr->directory_entries[rec_idx].offset = disk_entry.offset;
+          this_ptr->directory_entries[rec_idx].timestamp = disk_entry.timestamp;
+          this_ptr->directory_entries[rec_idx].checksum = disk_entry.checksum;
+        }
         if ((p_Var3->_flag & 0x20) == 0) {
           if ((this_ptr->file_count <= (int)local_490.total_file_size) &&
              ((int)local_490.total_file_size <= this_ptr->file_count * 0x100)) {
@@ -159,7 +168,14 @@ LAB_0054f6fe:
                          (this_ptr->file_count * sizeof(CPodDirectoryEntry),"..\\engine\\pod.cpp",474);
       this_ptr->directory_entries = pCVar5;
       if (pCVar5 != (CPodDirectoryEntry *)0x0) {
-        _fread(pCVar5,this_ptr->file_count,0x14,file);
+        for (rec_idx = 0; rec_idx < this_ptr->file_count; rec_idx = rec_idx + 1) {
+          _fread(&disk_entry,1,0x14,file);
+          this_ptr->directory_entries[rec_idx].name = (char *)(size_t)disk_entry.name_offset;
+          this_ptr->directory_entries[rec_idx].size = disk_entry.size;
+          this_ptr->directory_entries[rec_idx].offset = disk_entry.offset;
+          this_ptr->directory_entries[rec_idx].timestamp = disk_entry.timestamp;
+          this_ptr->directory_entries[rec_idx].checksum = disk_entry.checksum;
+        }
         iVar4 = this_ptr->file_count;
         size = (this_ptr->directory_entries->offset - 0x60) + iVar4 * -0x14;
         if (((int)size < iVar4) || (iVar4 * 0x100 < (int)size)) goto LAB_0054f6fe;
@@ -239,7 +255,7 @@ LAB_0054f9a8:
     } while (iVar4 < this_ptr->file_count);
   }
   _qsort
-            (this_ptr->directory_entries,this_ptr->file_count,0x14,
+            (this_ptr->directory_entries,this_ptr->file_count,sizeof(CPodDirectoryEntry),
              engine_pod_cpp_qsortByFilename_FUN_0054f630);
   DLOG("mounted %s: %d files, version=%d",
        this_ptr->filename, this_ptr->file_count, this_ptr->pod_format_version);

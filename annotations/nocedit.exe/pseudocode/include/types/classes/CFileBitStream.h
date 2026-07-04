@@ -18,7 +18,7 @@ typedef struct CFileBitStream {
     int bits_available; // 0x14
     int end_of_stream_flag; // 0x18
     int error_flag; // 0x1c
-    long stream_start_position; // 0x20
+    int stream_start_position; // 0x20
     int stream_length; // 0x24
     int bytes_remaining; // 0x28
 } CFileBitStream;

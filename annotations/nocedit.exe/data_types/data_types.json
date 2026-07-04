@@ -1337,6 +1337,10 @@
       "type":"struct"
     },
     {
+      "name":"CPodAuditRecord",
+      "type":"struct"
+    },
+    {
       "name":"CPodDependencyRecord",
       "type":"struct"
     },
@@ -4045,6 +4049,10 @@
       "type":"struct"
     },
     {
+      "name":"SMRGLKeyframeModelOnDisk",
+      "type":"struct"
+    },
+    {
       "name":"SMRGLModelBounds",
       "type":"struct"
     },
@@ -4370,6 +4378,10 @@
     },
     {
       "name":"SPod3Header",
+      "type":"struct"
+    },
+    {
+      "name":"SPodDirEntryOnDisk",
       "type":"struct"
     },
     {
@@ -7215,10 +7227,6 @@
     {
       "name":"time_t",
       "type":"typedef"
-    },
-    {
-      "name":"CPodAuditRecord",
-      "type":"struct"
     },
     {
       "name":"_find_t",
@@ -35295,7 +35303,7 @@
           "len":4,
           "name":"stream_start_position",
           "offset":32,
-          "type":"long"
+          "type":"int"
         },
         {
           "len":4,
@@ -43107,7 +43115,7 @@
           "len":4,
           "name":"timestamp",
           "offset":32,
-          "type":"time_t"
+          "type":"uint"
         },
         {
           "len":4,
@@ -58167,6 +58175,54 @@
       "desc":"",
       "fields":[
         {
+          "len":12,
+          "name":"header",
+          "offset":0,
+          "type":"SMRGLHeaderExtended"
+        },
+        {
+          "len":4,
+          "name":"cycle_length",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"current_position",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"base_keyframes",
+          "offset":20,
+          "type":"uint"
+        },
+        {
+          "len":256,
+          "name":"filenames",
+          "offset":24,
+          "type":"char[16][16]"
+        },
+        {
+          "len":64,
+          "name":"loaded_frames",
+          "offset":280,
+          "type":"uint[16]"
+        }
+      ],
+      "importable":true,
+      "len":344,
+      "name":"SMRGLKeyframeModelOnDisk",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"base",
           "offset":0,
@@ -59634,7 +59690,7 @@
           "len":4,
           "name":"data_start_offset",
           "offset":256,
-          "type":"long"
+          "type":"int"
         },
         {
           "len":4,
@@ -59682,6 +59738,48 @@
       "importable":true,
       "len":288,
       "name":"SPod3Header",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"name_offset",
+          "offset":0,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"size",
+          "offset":4,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"offset",
+          "offset":8,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"timestamp",
+          "offset":12,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"checksum",
+          "offset":16,
+          "type":"uint"
+        }
+      ],
+      "importable":true,
+      "len":20,
+      "name":"SPodDirEntryOnDisk",
       "pack":false,
       "type":"struct"
     },

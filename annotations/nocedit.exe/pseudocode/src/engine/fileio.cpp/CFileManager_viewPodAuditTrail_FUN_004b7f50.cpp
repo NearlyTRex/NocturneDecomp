@@ -93,7 +93,7 @@ void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFile
         piVar5 = piVar5;
         piVar7 = piVar7;
       }
-      time_ptr = _localtime(&local_308.timestamp);
+      time_ptr = _localtime((time_t *)&local_308.timestamp);
       _strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
       pcVar4 = "???";
       if (local_308.operation_type == 0) {

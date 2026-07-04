@@ -167,7 +167,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
         pCVar15->user_path[1] = cVar2;
         pCVar15 = (CPodAuditRecord *)(pCVar15->user_path + 2);
       } while (cVar2 != '\0');
-      _time(&g_WorkingAuditRecord.timestamp);
+      _time((time_t *)&g_WorkingAuditRecord.timestamp);
       engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0(&local_1838);
       iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(&local_1838,local_290);
       if (iVar3 != 0) {

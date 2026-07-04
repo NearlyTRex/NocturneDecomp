@@ -2,14 +2,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "system/time.h"
 
 // Structure: CPodAuditRecord
 // Ghidra size: 0x138 (312 bytes)
 #pragma pack(push, 1)
 typedef struct CPodAuditRecord {
     char user_path[32]; // 0x0
-    time_t timestamp; // 0x20
+    uint timestamp; // 0x20
     int operation_type; // 0x24
     char filename[256]; // 0x28
     int original_timestamp; // 0x128

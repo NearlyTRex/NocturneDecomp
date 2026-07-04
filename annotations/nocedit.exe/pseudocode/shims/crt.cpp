@@ -685,7 +685,8 @@ time_t _mktime(_tm* t) {
 static thread_local _tm s_localtime_buf;
 
 _tm* _localtime(const void* timer) {
-    struct tm* libc_result = localtime(reinterpret_cast<const time_t*>(timer));
+    time_t t = *reinterpret_cast<const int*>(timer);
+    struct tm* libc_result = localtime(&t);
     if (!libc_result) return nullptr;
     libc_to_watcom_tm(libc_result, &s_localtime_buf);
     return &s_localtime_buf;

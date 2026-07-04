@@ -7,8 +7,22 @@
 // It must be included first to break circular dependencies between system headers.
 
 // Standard includes
-#include <stddef.h>  // for wchar_t
+#include <stddef.h>  // for wchar_t, size_t
+#include <stdint.h>  // for intptr_t/uintptr_t (pointer-width types)
 #include <stdbool.h>  // for bool
+
+// =============================================================================
+// Integer width model: Win32 LLP64 (NOT the host's data model)
+// =============================================================================
+// The binary was compiled for 32-bit Watcom where `long` == 4 bytes. On a
+// 64-bit Linux host `long` == 8 (LP64), which would silently grow every
+// struct that has a `long`/`ulong`/`dword`/`DWORD`/`ULONG` field and break
+// every baked 32-bit layout, memcpy size, and raw fread/fwrite record.
+// So the fixed-width integer typedefs below are pinned to 32 bits (matching
+// real Win32 semantics, where DWORD/LONG are 32-bit even on Win64). Only the
+// *_PTR / SIZE_T family is genuinely pointer-width and uses intptr_t/size_t.
+// A literal `long`/`unsigned long` field cannot be pinned here (it's a builtin
+// keyword) \u2014 retype those few fields to a fixed-width type in Ghidra instead.
 
 // =============================================================================
 // Calling Convention Macros
@@ -70,12 +84,15 @@ typedef unsigned char byte;
 typedef unsigned char uchar;
 typedef unsigned short ushort;
 typedef unsigned int uint;
-typedef unsigned long ulong;
+typedef unsigned long ulong;     // MUST stay `unsigned long`: glibc <sys/types.h> defines
+                                 // this BSD alias identically; a mismatch is a redefinition
+                                 // error. 8 bytes @64-bit \u2014 retype `ulong` struct FIELDS to
+                                 // `uint` in Ghidra instead (same as literal `long`).
 typedef long long longlong;
 typedef unsigned long long ulonglong;
 
 // Lowercase aliases (Ghidra sometimes uses these)
-typedef unsigned long dword;
+typedef unsigned int dword;      // 32-bit (Win32 DWORD width)
 typedef unsigned short word;
 
 // Undefined types (placeholder bytes for unknown data)
@@ -119,13 +136,13 @@ typedef int BOOL;
 typedef unsigned char BYTE;
 typedef char CHAR;
 typedef unsigned short WORD;
-typedef unsigned long DWORD;
+typedef unsigned int DWORD;      // 32-bit even on Win64 (LLP64)
 typedef short SHORT;
-typedef long LONG;
+typedef int LONG;               // 32-bit even on Win64 (LLP64)
 typedef int INT;
 typedef unsigned int UINT;
 typedef unsigned short USHORT;
-typedef unsigned long ULONG;
+typedef unsigned int ULONG;     // 32-bit even on Win64 (LLP64)
 typedef unsigned char UCHAR;
 typedef float FLOAT;
 typedef double DOUBLE;
@@ -134,13 +151,13 @@ typedef long long LONGLONG;
 typedef unsigned long long ULONGLONG;
 typedef unsigned long long QWORD;
 
-// Pointer-sized types (32-bit)
-typedef long LONG_PTR;
-typedef unsigned long ULONG_PTR;
-typedef unsigned long DWORD_PTR;
-typedef unsigned long SIZE_T;
-typedef unsigned int UINT_PTR;
-typedef int INT_PTR;
+// Pointer-sized types (genuinely pointer-width: 4 bytes @32-bit, 8 @64-bit)
+typedef intptr_t LONG_PTR;
+typedef uintptr_t ULONG_PTR;
+typedef uintptr_t DWORD_PTR;
+typedef size_t SIZE_T;
+typedef uintptr_t UINT_PTR;
+typedef intptr_t INT_PTR;
 
 // Handle types
 typedef void* HANDLE;

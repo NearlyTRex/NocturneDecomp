@@ -519,7 +519,7 @@ static HANDLE shim_FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFi
 
 static BOOL shim_FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData) {
     FindHandle* fh = (FindHandle*)hFindFile;
-    if (!fh || fh->tag != HANDLE_TAG_FIND) return 0;
+    if (!fh || fh == INVALID_HANDLE || fh->tag != HANDLE_TAG_FIND) return 0;
     if (fh->currentIndex >= fh->matches.size()) {
         s_lastError = 18; // ERROR_NO_MORE_FILES
         return 0;
@@ -531,7 +531,7 @@ static BOOL shim_FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileDa
 
 static BOOL shim_FindClose(HANDLE hFindFile) {
     FindHandle* fh = (FindHandle*)hFindFile;
-    if (!fh || fh->tag != HANDLE_TAG_FIND) return 0;
+    if (!fh || fh == INVALID_HANDLE || fh->tag != HANDLE_TAG_FIND) return 0;
     delete fh;
     return 1;
 }

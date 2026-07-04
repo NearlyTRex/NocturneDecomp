@@ -104,7 +104,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
     iVar3 = engine_fileio_cpp_establishUserIdentity_FUN_004b1c00();
     if (iVar3 != 0) {
       strcpy(g_WorkingAuditRecord.user_path,g_VersionControlSession.primary_username);
-      _time(&g_WorkingAuditRecord.timestamp);
+      g_WorkingAuditRecord.timestamp = (uint)_time((time_t *)0x0);
       engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0(&local_1838);
       iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(&local_1838,local_290);
       if (iVar3 != 0) {
