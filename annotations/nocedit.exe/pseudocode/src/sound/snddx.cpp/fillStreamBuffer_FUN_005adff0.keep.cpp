@@ -44,7 +44,7 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_005adff0(void)
         do {
           apvStack_40[iVar3] = pvVar5;
           iVar3 = iVar3 + 1;
-          pvVar5 = (LPVOID)((int)pvVar5 + iVar2);
+          pvVar5 = (LPVOID)((char *)pvVar5 + iVar2);
         } while (iVar3 < g_StreamChannelCount);
       }
       sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90

@@ -6,6 +6,9 @@ struct CBattery;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CBattery.h"
 // Adjusted pointer: CBattery_ptr_344
 // Points to CKeyFramedModelInstance at offset 0x158 in CBattery
 // 32-bit pointer to CBattery
@@ -17,7 +20,7 @@ struct CBattery_ptr_344 {
     template<typename T> CBattery_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CBattery_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CBattery* adj() const { return (CBattery*)((char*)_raw - 344); }
+    CBattery* adj() const { return (CBattery*)((char*)_raw - offsetof(CBattery, model)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

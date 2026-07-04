@@ -6,6 +6,9 @@ struct CPickList;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CPickList.h"
 // Adjusted pointer: CPickList_ptr_420
 // Points to CEdScrollBar at offset 0x1a4 in CPickList
 // 32-bit pointer to CPickList
@@ -17,7 +20,7 @@ struct CPickList_ptr_420 {
     template<typename T> CPickList_ptr_420(T* p) : _raw((void*)p) {}
     template<typename T> CPickList_ptr_420& operator=(T* p) { _raw = (void*)p; return *this; }
     CEdScrollBar* operator->() const { return (CEdScrollBar*)_raw; }
-    CPickList* adj() const { return (CPickList*)((char*)_raw - 420); }
+    CPickList* adj() const { return (CPickList*)((char*)_raw - offsetof(CPickList, scrollbar)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

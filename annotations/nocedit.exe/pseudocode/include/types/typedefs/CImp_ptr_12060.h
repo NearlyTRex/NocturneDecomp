@@ -6,6 +6,9 @@ struct CImp;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CImp.h"
 // Adjusted pointer: CImp_ptr_12060
 // Points to CImp at offset 0x2f1c in CImp
 // 32-bit pointer to CImp
@@ -16,7 +19,7 @@ struct CImp_ptr_12060 {
     template<typename T> CImp_ptr_12060(T* p) : _raw((void*)p) {}
     template<typename T> CImp_ptr_12060& operator=(T* p) { _raw = (void*)p; return *this; }
     CImp* operator->() const { return (CImp*)_raw; }
-    CImp* adj() const { return (CImp*)((char*)_raw - 12060); }
+    CImp* adj() const { return (CImp*)((char*)_raw - offsetof(CImp, base.base.fires)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

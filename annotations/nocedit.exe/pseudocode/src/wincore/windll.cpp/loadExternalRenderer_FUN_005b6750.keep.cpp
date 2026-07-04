@@ -28,7 +28,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
   }
   g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(g_RendererDllPath);
   if (g_RendererDLLHandle == (HMODULE)0x0) {
-    g_UseDirect3D = (int)g_RendererDLLHandle;
+    g_UseDirect3D = 0;
     return 0;
   }
   pFVar2 = wincore_wddvmem_cpp_getProcAddress_FUN_005ede20

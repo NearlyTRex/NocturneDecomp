@@ -678,6 +678,113 @@ def format_pointer_initializer(currentProgram, int_val, type_name):
         return (initializer, comment_symbol)
 
 
+# Cache of {type_name -> Ghidra byte length}, keyed by program identity, so the
+# WatcomTypeInfo sizeof() resolution doesn't rescan getAllDataTypes() per global.
+_STRUCT_SIZE_CACHE = {}
+
+
+def _struct_size_map(currentProgram):
+    key = id(currentProgram)
+    m = _STRUCT_SIZE_CACHE.get(key)
+    if m is None:
+        m = {}
+        dtm = currentProgram.getDataTypeManager()
+        for dt in dtm.getAllDataTypes():
+            try:
+                n = dt.getName()
+                ln = dt.getLength()
+            except Exception:
+                continue
+            if n and ln and ln > 0:
+                m[n] = ln
+        _STRUCT_SIZE_CACHE[key] = m
+    return m
+
+
+def _watcom_type_candidates(symbol_name):
+    """Extract candidate C type names from a WatcomTypeInfo-related symbol.
+
+    Handles ctor/dtor function symbols (``..._<Class>_ctor_FUN_...``) and the
+    class_name string symbol (``s_<Class>_<hexaddr>``). The string form's prefix
+    is inconsistent (``s_SfxSlot`` for CSfxSlot vs ``s_CObj`` for CObj), so we
+    yield both the bare token and a ``C``-prefixed variant; the size check picks
+    the real one.
+    """
+    cands = []
+    if not symbol_name:
+        return cands
+    for marker in ('_ctor', '_dtor'):
+        if marker in symbol_name:
+            tok = symbol_name.split(marker)[0].rsplit('_', 1)[-1]
+            if tok and tok[0].isalpha():
+                cands.append(tok)
+    if symbol_name.startswith('s_'):
+        base = symbol_name[2:]
+        parts = base.rsplit('_', 1)
+        if len(parts) == 2 and parts[1] and all(c in '0123456789abcdefABCDEF' for c in parts[1]):
+            base = parts[0]
+        if base and base[0].isalpha():
+            cands.append(base)
+            if not base.startswith('C'):
+                cands.append('C' + base)
+    return cands
+
+
+def watcom_typeinfo_sizeof_type(data_type, raw_bytes, currentProgram):
+    """For a WatcomTypeInfo initializer, return the C type name to use in
+    ``(int)sizeof(T)`` for its .instance_size field, or None if unresolvable.
+
+    .instance_size is the *32-bit* object size baked into the matched binary.
+    Watcom's array runtime (__arrinit/__vec_new/__arrcopy/__arrdtor) uses it as
+    the element stride, so on a 64-bit build a baked literal strides short of the
+    compiler's real layout and ctors scribble across neighbouring elements. We
+    derive the type from the ctor/dtor symbols and the class_name string, and
+    only return a candidate whose Ghidra size matches the baked value exactly --
+    that both validates the guess and guarantees byte-identical output at 32-bit.
+    Types with a pure-virtual-stub ctor resolve via class_name instead.
+    """
+    if currentProgram is None:
+        return None
+    try:
+        if data_type.getName() != "WatcomTypeInfo":
+            return None
+    except Exception:
+        return None
+
+    inst_size = None
+    ptr_fields = {}  # field name -> address
+    for comp in data_type.getComponents():
+        fname = comp.getFieldName()
+        off, ln = comp.getOffset(), comp.getLength()
+        if off + ln > len(raw_bytes):
+            continue
+        val = bytes_to_int_le(raw_bytes[off:off + ln])
+        if fname == "instance_size":
+            inst_size = val
+        elif fname in ("ctor", "dtor", "class_name"):
+            ptr_fields[fname] = val
+    if not inst_size:
+        return None
+
+    # Gather candidate type names from ctor, dtor, and the class_name string.
+    candidates = []
+    for fname in ("ctor", "dtor", "class_name"):
+        addr = ptr_fields.get(fname)
+        if not addr:
+            continue
+        usable, comment = resolve_pointer_to_symbol(currentProgram, addr)
+        for cand in _watcom_type_candidates(comment or usable):
+            if cand not in candidates:
+                candidates.append(cand)
+
+    # Accept the first candidate whose 32-bit size matches the baked value.
+    size_map = _struct_size_map(currentProgram)
+    for cand in candidates:
+        if size_map.get(cand) == inst_size:
+            return cand
+    return None
+
+
 def format_struct_initializer(data_type, raw_bytes, currentProgram=None, use_designated=True, indent_level=1):
     """Build a proper struct initializer by introspecting the struct's field layout.
 
@@ -722,6 +829,17 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None, use_des
         components = data_type.getComponents()
         if not components:
             return None
+
+        # WatcomTypeInfo.instance_size bakes a 32-bit object size but is used as
+        # an array stride at runtime; emit (int)sizeof(T) so it's correct on a
+        # 64-bit build. Resolve the type once here; None -> keep literal + FIXME.
+        try:
+            is_watcom_typeinfo = data_type.getName() == "WatcomTypeInfo"
+        except Exception:
+            is_watcom_typeinfo = False
+        watcom_sizeof_type = (
+            watcom_typeinfo_sizeof_type(data_type, raw_bytes, currentProgram)
+            if is_watcom_typeinfo else None)
 
         # Check for overlapping fields (indicates union-like structure) - skip these
         offsets_seen = set()
@@ -880,6 +998,16 @@ def format_struct_initializer(data_type, raw_bytes, currentProgram=None, use_des
             # Helper to append field with optional name
             def append_field(value):
                 field_values.append((field_name, value))
+
+            # WatcomTypeInfo.instance_size: emit an arch-portable sizeof() (see
+            # watcom_typeinfo_sizeof_type). Unresolved -> literal + loud FIXME.
+            if is_watcom_typeinfo and field_name == "instance_size":
+                if watcom_sizeof_type is not None:
+                    append_field("(int)sizeof(%s)" % watcom_sizeof_type)
+                else:
+                    lit = format_signed_int(bytes_to_int_le(field_bytes), length, comp_type_name)
+                    append_field("%s /* FIXME(64bit): unresolved WatcomTypeInfo type, 32-bit-only size */" % lit)
+                continue
 
             # Handle different field types
             if is_wchar_array:

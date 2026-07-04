@@ -244,8 +244,6 @@
 #include "types/typedefs/CMoloch_ptr_130004.h"
 #include "types/typedefs/CMoloch_ptr_139100.h"
 #include "types/typedefs/CMoon_ptr_8.h"
-#include "types/typedefs/CMorphModel_ptr_842948.h"
-#include "types/typedefs/CMorphModel_ptr_844436.h"
 #include "types/typedefs/CMouse_ptr_160.h"
 #include "types/typedefs/CMouse_ptr_300.h"
 #include "types/typedefs/CNPC_ptr_10900.h"
@@ -366,7 +364,6 @@
 #include "types/typedefs/CZombie_ptr_12060.h"
 #include "types/typedefs/CZombie_ptr_13260.h"
 #include "types/typedefs/CZombie_ptr_344.h"
-#include "types/typedefs/SBitBuffer_ptr_8.h"
 #include "types/typedefs/SBodyPartFire_ptr_12.h"
 #include "types/typedefs/SBodyPartModel_ptr_24.h"
 #include "types/typedefs/SClothVertex_ptr_236.h"
@@ -375,6 +372,5 @@
 #include "types/typedefs/SGem_ptr_60.h"
 #include "types/typedefs/SMessageHandler.h"
 #include "types/typedefs/SMorphControlPoint_ptr_8.h"
-#include "types/typedefs/SScrape_ptr_1020.h"
 #include "types/typedefs/SVert_ptr_16.h"
 

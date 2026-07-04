@@ -6,6 +6,9 @@ struct CHealthItem;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CHealthItem.h"
 // Adjusted pointer: CHealthItem_ptr_344
 // Points to CKeyFramedModelInstance at offset 0x158 in CHealthItem
 // 32-bit pointer to CHealthItem
@@ -17,7 +20,7 @@ struct CHealthItem_ptr_344 {
     template<typename T> CHealthItem_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CHealthItem_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CHealthItem* adj() const { return (CHealthItem*)((char*)_raw - 344); }
+    CHealthItem* adj() const { return (CHealthItem*)((char*)_raw - offsetof(CHealthItem, model)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

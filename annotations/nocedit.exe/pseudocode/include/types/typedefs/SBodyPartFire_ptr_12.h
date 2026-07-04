@@ -6,6 +6,9 @@ struct SBodyPartFire;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/structs/SBodyPartFire.h"
 // Adjusted pointer: SBodyPartFire_ptr_12
 // Points to CFlame at offset 0xc in SBodyPartFire
 // 32-bit pointer to SBodyPartFire
@@ -17,7 +20,7 @@ struct SBodyPartFire_ptr_12 {
     template<typename T> SBodyPartFire_ptr_12(T* p) : _raw((void*)p) {}
     template<typename T> SBodyPartFire_ptr_12& operator=(T* p) { _raw = (void*)p; return *this; }
     CFlame* operator->() const { return (CFlame*)_raw; }
-    SBodyPartFire* adj() const { return (SBodyPartFire*)((char*)_raw - 12); }
+    SBodyPartFire* adj() const { return (SBodyPartFire*)((char*)_raw - offsetof(SBodyPartFire, flame)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

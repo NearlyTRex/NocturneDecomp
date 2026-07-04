@@ -6,6 +6,9 @@ struct CSmiley;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CSmiley.h"
 // Adjusted pointer: CSmiley_ptr_11356
 // Points to CSmiley at offset 0x2c5c in CSmiley
 // 32-bit pointer to CSmiley
@@ -16,7 +19,7 @@ struct CSmiley_ptr_11356 {
     template<typename T> CSmiley_ptr_11356(T* p) : _raw((void*)p) {}
     template<typename T> CSmiley_ptr_11356& operator=(T* p) { _raw = (void*)p; return *this; }
     CSmiley* operator->() const { return (CSmiley*)_raw; }
-    CSmiley* adj() const { return (CSmiley*)((char*)_raw - 11356); }
+    CSmiley* adj() const { return (CSmiley*)((char*)_raw - offsetof(CSmiley, base.base.collision_test_points)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

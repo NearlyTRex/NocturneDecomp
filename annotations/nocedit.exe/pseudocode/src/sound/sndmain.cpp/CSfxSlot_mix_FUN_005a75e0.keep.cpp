@@ -146,9 +146,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
                   do {
                     uVar15 = uVar11 & 1;
                     ppfVar3 = mix_buffer.channel_buffers + uVar11;
-                    *(float *)((int)*ppfVar3 + local_20) =
+                    *(float *)((intptr_t)*ppfVar3 + local_20) =
                          local_7c[uVar15 + 2] * this_ptr->channel_volumes[uVar11] +
-                         *(float *)((int)*ppfVar3 + local_20);
+                         *(float *)((intptr_t)*ppfVar3 + local_20);
                     uVar11 = uVar11 + 1;
                   } while ((int)uVar11 < mix_buffer.num_channels);
                 }
@@ -165,9 +165,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
               if (0 < mix_buffer.num_channels) {
                 do {
                   ppfVar1 = mix_buffer.channel_buffers + iVar7;
-                  *(float *)((int)*ppfVar1 + iVar12) =
+                  *(float *)((intptr_t)*ppfVar1 + iVar12) =
                        (float)(int)(bVar3 - 0x80) * this_ptr->channel_volumes[iVar7] +
-                       *(float *)((int)*ppfVar1 + iVar12);
+                       *(float *)((intptr_t)*ppfVar1 + iVar12);
                   iVar7 = iVar7 + 1;
                 } while (iVar7 < mix_buffer.num_channels);
               }
@@ -194,9 +194,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
                 do {
                   uVar15 = uVar11 & 1;
                   ppfVar1 = mix_buffer.channel_buffers + uVar11;
-                  *(float *)((int)*ppfVar1 + local_24) =
+                  *(float *)((intptr_t)*ppfVar1 + local_24) =
                        local_7c[uVar15] * this_ptr->channel_volumes[uVar11] +
-                       *(float *)((int)*ppfVar1 + local_24);
+                       *(float *)((intptr_t)*ppfVar1 + local_24);
                   uVar11 = uVar11 + 1;
                 } while ((int)uVar11 < mix_buffer.num_channels);
               }
@@ -219,9 +219,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
             if (0 < mix_buffer.num_channels) {
               do {
                 ppfVar1 = mix_buffer.channel_buffers + iVar14;
-                *(float *)((int)*ppfVar1 + iVar12) =
+                *(float *)((intptr_t)*ppfVar1 + iVar12) =
                      (float)sVar2 * this_ptr->channel_volumes[iVar14] +
-                     *(float *)((int)*ppfVar1 + iVar12);
+                     *(float *)((intptr_t)*ppfVar1 + iVar12);
                 iVar14 = iVar14 + 1;
               } while (iVar14 < mix_buffer.num_channels);
             }

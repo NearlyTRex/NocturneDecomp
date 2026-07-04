@@ -6,6 +6,9 @@ struct CBugs;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CBugs.h"
 // Adjusted pointer: CBugs_ptr_344
 // Points to CBugs at offset 0x158 in CBugs
 // 32-bit pointer to CBugs
@@ -16,7 +19,7 @@ struct CBugs_ptr_344 {
     template<typename T> CBugs_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CBugs_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CBugs* operator->() const { return (CBugs*)_raw; }
-    CBugs* adj() const { return (CBugs*)((char*)_raw - 344); }
+    CBugs* adj() const { return (CBugs*)((char*)_raw - offsetof(CBugs, base.base.model)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

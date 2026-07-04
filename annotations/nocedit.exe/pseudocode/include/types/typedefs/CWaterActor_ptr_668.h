@@ -6,6 +6,9 @@ struct CWaterActor;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CWaterActor.h"
 // Adjusted pointer: CWaterActor_ptr_668
 // Points to SWaterVertex at offset 0x29c in CWaterActor
 // 32-bit pointer to CWaterActor
@@ -17,7 +20,7 @@ struct CWaterActor_ptr_668 {
     template<typename T> CWaterActor_ptr_668(T* p) : _raw((void*)p) {}
     template<typename T> CWaterActor_ptr_668& operator=(T* p) { _raw = (void*)p; return *this; }
     SWaterVertex* operator->() const { return (SWaterVertex*)_raw; }
-    CWaterActor* adj() const { return (CWaterActor*)((char*)_raw - 668); }
+    CWaterActor* adj() const { return (CWaterActor*)((char*)_raw - offsetof(CWaterActor, vertices)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -6,6 +6,9 @@ struct CCrossbow;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CCrossbow.h"
 // Adjusted pointer: CCrossbow_ptr_1404
 // Points to CFlame at offset 0x57c in CCrossbow
 // 32-bit pointer to CCrossbow
@@ -17,7 +20,7 @@ struct CCrossbow_ptr_1404 {
     template<typename T> CCrossbow_ptr_1404(T* p) : _raw((void*)p) {}
     template<typename T> CCrossbow_ptr_1404& operator=(T* p) { _raw = (void*)p; return *this; }
     CFlame* operator->() const { return (CFlame*)_raw; }
-    CCrossbow* adj() const { return (CCrossbow*)((char*)_raw - 1404); }
+    CCrossbow* adj() const { return (CCrossbow*)((char*)_raw - offsetof(CCrossbow, bolt_flame)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

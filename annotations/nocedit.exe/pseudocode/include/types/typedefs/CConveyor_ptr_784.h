@@ -6,6 +6,9 @@ struct CConveyor;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CConveyor.h"
 // Adjusted pointer: CConveyor_ptr_784
 // Points to CConveyor at offset 0x310 in CConveyor
 // 32-bit pointer to CConveyor
@@ -16,7 +19,7 @@ struct CConveyor_ptr_784 {
     template<typename T> CConveyor_ptr_784(T* p) : _raw((void*)p) {}
     template<typename T> CConveyor_ptr_784& operator=(T* p) { _raw = (void*)p; return *this; }
     CConveyor* operator->() const { return (CConveyor*)_raw; }
-    CConveyor* adj() const { return (CConveyor*)((char*)_raw - 784); }
+    CConveyor* adj() const { return (CConveyor*)((char*)_raw - offsetof(CConveyor, base.course)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -427,14 +427,22 @@ def _find_format_string_index(args):
         Tuple of (index, format_string) or (None, None) if not found
     """
     format_spec_pattern = re.compile(r'%[-+ #0]*\*?\d*\.?\*?\d*[hlLzjtq]*[diouxXeEfFgGaAcspn]')
+    string_frag_pattern = re.compile(r'"((?:[^"\\]|\\.)*)"')
 
     for i, arg in enumerate(args):
-        # Check if this argument is or contains a string literal
-        string_match = re.search(r'"((?:[^"\\]|\\.)*)"', arg)
-        if string_match:
-            string_content = string_match.group(1)
+        # Expand known printf-format macros so a macro-concatenated format
+        # string (`"a" NOCTURNE_FMT_PTR "b"`) is counted correctly.
+        # NOCTURNE_FMT_PTR is the pointer-print portability macro; it expands
+        # to "%08X" on the 32-bit matching build this annotation targets.
+        expanded = arg.replace('NOCTURNE_FMT_PTR', '"%08X"')
+        # C concatenates adjacent string literals within one argument, so join
+        # every quoted fragment in the arg into the effective format string
+        # rather than looking only at the first literal.
+        frags = string_frag_pattern.findall(expanded)
+        if frags:
+            format_string = ''.join(frags)
             # Check if it has format specifiers
-            if format_spec_pattern.search(string_content):
-                return i, string_content
+            if format_spec_pattern.search(format_string):
+                return i, format_string
 
     return None, None

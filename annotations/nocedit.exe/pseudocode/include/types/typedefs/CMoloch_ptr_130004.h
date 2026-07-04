@@ -6,6 +6,9 @@ struct CMoloch;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CMoloch.h"
 // Adjusted pointer: CMoloch_ptr_130004
 // Points to CDeformableModelInstance at offset 0x1fbd4 in CMoloch
 // 32-bit pointer to CMoloch
@@ -17,7 +20,7 @@ struct CMoloch_ptr_130004 {
     template<typename T> CMoloch_ptr_130004(T* p) : _raw((void*)p) {}
     template<typename T> CMoloch_ptr_130004& operator=(T* p) { _raw = (void*)p; return *this; }
     CDeformableModelInstance* operator->() const { return (CDeformableModelInstance*)_raw; }
-    CMoloch* adj() const { return (CMoloch*)((char*)_raw - 130004); }
+    CMoloch* adj() const { return (CMoloch*)((char*)_raw - offsetof(CMoloch, model)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

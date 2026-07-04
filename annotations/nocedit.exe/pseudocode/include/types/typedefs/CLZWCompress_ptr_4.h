@@ -6,6 +6,9 @@ struct CLZWCompress;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CLZWCompress.h"
 // Adjusted pointer: CLZWCompress_ptr_4
 // Points to CLZWDictionary at offset 0x4 in CLZWCompress
 // 32-bit pointer to CLZWCompress
@@ -17,7 +20,7 @@ struct CLZWCompress_ptr_4 {
     template<typename T> CLZWCompress_ptr_4(T* p) : _raw((void*)p) {}
     template<typename T> CLZWCompress_ptr_4& operator=(T* p) { _raw = (void*)p; return *this; }
     CLZWDictionary* operator->() const { return (CLZWDictionary*)_raw; }
-    CLZWCompress* adj() const { return (CLZWCompress*)((char*)_raw - 4); }
+    CLZWCompress* adj() const { return (CLZWCompress*)((char*)_raw - offsetof(CLZWCompress, dictionary)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

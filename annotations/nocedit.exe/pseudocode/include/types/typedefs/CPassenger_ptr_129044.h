@@ -6,6 +6,9 @@ struct CPassenger;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CPassenger.h"
 // Adjusted pointer: CPassenger_ptr_129044
 // Points to CMorph at offset 0x1f814 in CPassenger
 // 32-bit pointer to CPassenger
@@ -17,7 +20,7 @@ struct CPassenger_ptr_129044 {
     template<typename T> CPassenger_ptr_129044(T* p) : _raw((void*)p) {}
     template<typename T> CPassenger_ptr_129044& operator=(T* p) { _raw = (void*)p; return *this; }
     CMorph* operator->() const { return (CMorph*)_raw; }
-    CPassenger* adj() const { return (CPassenger*)((char*)_raw - 129044); }
+    CPassenger* adj() const { return (CPassenger*)((char*)_raw - offsetof(CPassenger, morph)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

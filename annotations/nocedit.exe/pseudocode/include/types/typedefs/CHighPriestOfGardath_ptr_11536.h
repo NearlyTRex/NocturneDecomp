@@ -6,6 +6,9 @@ struct CHighPriestOfGardath;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CHighPriestOfGardath.h"
 // Adjusted pointer: CHighPriestOfGardath_ptr_11536
 // Points to CHighPriestOfGardath at offset 0x2d10 in CHighPriestOfGardath
 // 32-bit pointer to CHighPriestOfGardath
@@ -16,7 +19,7 @@ struct CHighPriestOfGardath_ptr_11536 {
     template<typename T> CHighPriestOfGardath_ptr_11536(T* p) : _raw((void*)p) {}
     template<typename T> CHighPriestOfGardath_ptr_11536& operator=(T* p) { _raw = (void*)p; return *this; }
     CHighPriestOfGardath* operator->() const { return (CHighPriestOfGardath*)_raw; }
-    CHighPriestOfGardath* adj() const { return (CHighPriestOfGardath*)((char*)_raw - 11536); }
+    CHighPriestOfGardath* adj() const { return (CHighPriestOfGardath*)((char*)_raw - offsetof(CHighPriestOfGardath, base.base.collision_test_normals)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

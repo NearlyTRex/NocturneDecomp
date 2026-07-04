@@ -8,6 +8,47 @@
 // behavior toggles below).
 #include "shim_constants.h"
 
+// NOCTURNE_AUTHENTIC_FORMAT_STRINGS
+//   Controls how pointer values are printed through the NOCTURNE_FMT_PTR /
+//   NOCTURNE_ARG_PTR tokens (see below). The original nocedit.exe printed
+//   pointers with a "%08X" field — 8 zero-padded hex digits, a 32-bit value.
+//   1: authentic — reproduce the original "%08X" field exactly. On the 32-bit
+//      matching build this is byte-identical and lossless. On the 64-bit build
+//      the argument is narrowed to its low 32 bits so it still matches "%08X"
+//      (compiles clean, but the printed address is truncated — authentic-
+//      looking, lossy).
+//   0: dev-friendly — print pointers at their native width so the full address
+//      is visible: still "%08X" on 32-bit, but "%016lX" on 64-bit. Not
+//      byte-identical to the original strings on 64-bit.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_FORMAT_STRINGS=0 for full-width 64-bit
+//   pointer diagnostics.
+#ifndef NOCTURNE_AUTHENTIC_FORMAT_STRINGS
+#define NOCTURNE_AUTHENTIC_FORMAT_STRINGS 1
+#endif
+
+// NOCTURNE_FMT_PTR / NOCTURNE_ARG_PTR — build-selected pointer-hex format field
+// and its matching argument, resolved together so they always agree.
+//
+// A "%08X" pointer field baked into a keep's format literal is a hard
+// -Werror,-Wformat error at 64-bit (pointer is 8 bytes, "%08X" wants 4). Rather
+// than edit the authentic string literal, split the pointer field out of it and
+// concatenate this token; pass the pointer through NOCTURNE_ARG_PTR:
+//
+//   traceMemory("debugFree(" NOCTURNE_FMT_PTR ", %s, %d)",
+//               NOCTURNE_ARG_PTR(ptr), filename, line_number);
+//
+// The authentic text on both sides of the token is preserved verbatim, so in
+// authentic mode the 32-bit reconstruction is byte-exact ("debugFree(%08X, ...)").
+#include <inttypes.h>
+#if NOCTURNE_AUTHENTIC_FORMAT_STRINGS || !(defined(__SIZEOF_POINTER__) && __SIZEOF_POINTER__ == 8)
+#define NOCTURNE_FMT_PTR "%08X"
+#define NOCTURNE_ARG_PTR(p) ((unsigned int)(uintptr_t)(p))
+#else
+#define NOCTURNE_FMT_PTR "%016" PRIXPTR
+#define NOCTURNE_ARG_PTR(p) ((uintptr_t)(p))
+#endif
+
 // NOCTURNE_AUTHENTIC_WINDOWS
 //   1: game behaves like the original Windows binary. Main loop pauses while
 //      the window is unfocused, the window auto-minimizes on deactivation,

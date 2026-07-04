@@ -6,6 +6,9 @@ struct CLadder;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CLadder.h"
 // Adjusted pointer: CLadder_ptr_344
 // Points to CKeyFramedModelInstance at offset 0x158 in CLadder
 // 32-bit pointer to CLadder
@@ -17,7 +20,7 @@ struct CLadder_ptr_344 {
     template<typename T> CLadder_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CLadder_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CLadder* adj() const { return (CLadder*)((char*)_raw - 344); }
+    CLadder* adj() const { return (CLadder*)((char*)_raw - offsetof(CLadder, model)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

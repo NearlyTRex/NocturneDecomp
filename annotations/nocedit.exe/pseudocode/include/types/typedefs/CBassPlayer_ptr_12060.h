@@ -6,6 +6,9 @@ struct CBassPlayer;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CBassPlayer.h"
 // Adjusted pointer: CBassPlayer_ptr_12060
 // Points to CBassPlayer at offset 0x2f1c in CBassPlayer
 // 32-bit pointer to CBassPlayer
@@ -16,7 +19,7 @@ struct CBassPlayer_ptr_12060 {
     template<typename T> CBassPlayer_ptr_12060(T* p) : _raw((void*)p) {}
     template<typename T> CBassPlayer_ptr_12060& operator=(T* p) { _raw = (void*)p; return *this; }
     CBassPlayer* operator->() const { return (CBassPlayer*)_raw; }
-    CBassPlayer* adj() const { return (CBassPlayer*)((char*)_raw - 12060); }
+    CBassPlayer* adj() const { return (CBassPlayer*)((char*)_raw - offsetof(CBassPlayer, base.base.fires)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

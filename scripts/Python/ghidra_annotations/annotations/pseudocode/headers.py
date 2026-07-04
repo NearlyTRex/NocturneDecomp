@@ -827,6 +827,97 @@ def generate_individual_enum_header(currentProgram, enum, type_to_path_map=None)
     return "\n".join(content)
 
 
+def _unwrap_typedef(dt):
+    """Peel Ghidra TypeDef layers to reach the underlying struct/array/primitive."""
+    while isinstance(dt, TypeDef):
+        dt = dt.getBaseDataType()
+    return dt
+
+
+def _containing_component(dt, offset):
+    """First *named* component of a Structure/Union whose byte range covers `offset`.
+
+    Unlike Structure.getComponentAt(), which returns None for an offset interior
+    to a field (not at its start), this scans defined components by [start,end)
+    so nested paths resolve. For a Union every member starts at 0, so this picks
+    the first member long enough to contain `offset`. Returns None for offsets in
+    undefined padding (no defined component covers them).
+    """
+    get_components = getattr(dt, "getComponents", None)
+    if get_components is None:
+        return None
+    for c in get_components():
+        if not c.getFieldName():
+            continue
+        start = c.getOffset()
+        if start <= offset < start + c.getLength():
+            return c
+    return None
+
+
+def build_member_designator(dt, offset):
+    """Build an offsetof() member designator reaching `offset` inside `dt`.
+
+    Returns (designator, residual) where `designator` is a C member-designator
+    string (e.g. ``.base.base.collision_test_points`` or ``.layer_actions[3].x``)
+    such that ``offsetof(dt, designator) + residual == offset``, and `residual`
+    is confined to a single primitive leaf (hence architecture-invariant).
+
+    Recurses through nested structs/unions/arrays so the designator names the
+    deepest real field. This is what makes adj() arch-portable: offsetof() over
+    the full path re-derives the field's true offset per target, whereas the
+    raw 32-bit `offset` literal (or a top-level-field + literal delta) skews on a
+    64-bit build because pointers along the path grow 4->8 bytes.
+
+    Returns None when no named path reaches `offset` (padding / undefined /
+    unmodelled type); the caller then falls back to the raw literal.
+    """
+    dt = _unwrap_typedef(dt)
+
+    if isinstance(dt, Array):
+        stride = dt.getElementLength()
+        if stride <= 0:
+            return None
+        idx = offset // stride
+        num = dt.getNumElements()
+        if num is not None and num >= 0 and idx >= num:
+            return None
+        within = offset - idx * stride
+        if within == 0:
+            return ("[%d]" % idx, 0)  # element start: index is enough
+        elem = _unwrap_typedef(dt.getDataType())
+        if isinstance(elem, (Structure, Union, Array)):
+            sub = build_member_designator(elem, within)
+            if sub is None:
+                return None
+            sub_d, sub_r = sub
+            return ("[%d]%s" % (idx, sub_d), sub_r)
+        # Interior of one primitive element: residual is arch-invariant.
+        return ("[%d]" % idx, within)
+
+    if isinstance(dt, (Structure, Union)):
+        comp = _containing_component(dt, offset)
+        if comp is None:
+            return None
+        fname = comp.getFieldName()
+        if not fname:
+            return None  # padding / undefined component -> no named path
+        within = offset - comp.getOffset()
+        if within == 0:
+            return (".%s" % fname, 0)  # field start: name is enough, no deeper recursion
+        child = _unwrap_typedef(comp.getDataType())
+        if isinstance(child, (Structure, Union, Array)):
+            sub = build_member_designator(child, within)
+            if sub is None:
+                return None
+            sub_d, sub_r = sub
+            return (".%s%s" % (fname, sub_d), sub_r)
+        # Interior of one primitive field: residual is arch-invariant.
+        return (".%s" % fname, within)
+
+    return None
+
+
 def generate_individual_typedef_header(currentProgram, typedef, type_to_path_map=None):
     """Generate header content for an individual typedef.
 
@@ -866,24 +957,55 @@ def generate_individual_typedef_header(currentProgram, typedef, type_to_path_map
         struct_name = ptr_match.group(1)
         offset = int(ptr_match.group(2))
 
-        # Look up the subobject type at the given offset in the base struct
+        # Look up the subobject type at the given offset and build the nested
+        # member designator that names the deepest real field there.
         member_type_name = struct_name  # fallback to base class
+        designator = None               # e.g. ".base.base.collision_test_points"
+        residual = 0                    # arch-invariant bytes past the named field
         dtm = currentProgram.getDataTypeManager()
         # Search for the base struct in the data type manager
         for dt_candidate in dtm.getAllDataTypes():
             if dt_candidate.getName() == struct_name and isinstance(dt_candidate, Structure):
                 comp = dt_candidate.getComponentAt(offset)
                 if comp and comp.getDataType():
-                    comp_type = comp.getDataType()
+                    comp_type = _unwrap_typedef(comp.getDataType())
                     # Unwrap array types to get the base element type
                     # e.g. SBodyPartFire[2] -> SBodyPartFire
                     while isinstance(comp_type, Array):
-                        comp_type = comp_type.getDataType()
+                        comp_type = _unwrap_typedef(comp_type.getDataType())
                     # Only use the member type if it's a struct/union
                     # (primitives, typedefs, enums can't be forward-declared as structs)
                     if isinstance(comp_type, (Structure, Union)):
                         member_type_name = comp_type.getName()
+                path = build_member_designator(dt_candidate, offset)
+                if path is not None:
+                    designator, residual = path
                 break
+
+        # Build an arch-portable offset expression for adj(). The Ghidra `offset`
+        # is a *32-bit* layout offset; on a 64-bit build pointers along the path
+        # grow, so a baked-in literal recovers the wrong base and overflows the
+        # last field (ASan global-buffer-overflow). offsetof() over the full
+        # nested member designator re-derives the correct offset per target. It
+        # needs the full base definition in scope, so we also emit an #include
+        # for the base struct's header. Fall back to the raw 32-bit-only literal
+        # only when no named field path reaches the offset.
+        base_header = None
+        if type_to_path_map is not None:
+            base_header = type_to_path_map.get(struct_name)
+        if designator is not None and base_header is not None:
+            member = designator[1:] if designator.startswith(".") else designator
+            if residual:
+                offset_expr = "(offsetof(%s, %s) + %d)" % (struct_name, member, residual)
+            else:
+                offset_expr = "offsetof(%s, %s)" % (struct_name, member)
+            content.append('#include <cstddef> // offsetof')
+            content.append('// Full base definition required for offsetof() in adj().')
+            content.append('#include "%s"' % base_header)
+        else:
+            # Unresolved: no named field path (padding / unmodelled type) or no
+            # base header. This literal is correct at 32-bit only; flag it loudly.
+            offset_expr = "%d /* FIXME(64bit): unresolved field path, 32-bit-only offset */" % offset
 
         content.append("// Adjusted pointer: %s" % td_name)
         content.append("// Points to %s at offset 0x%x in %s" % (member_type_name, offset, struct_name))
@@ -901,13 +1023,13 @@ def generate_individual_typedef_header(currentProgram, typedef, type_to_path_map
         content.append("    template<typename T> %s(T* p) : _raw((void*)p) {}" % td_name)
         content.append("    template<typename T> %s& operator=(T* p) { _raw = (void*)p; return *this; }" % td_name)
         content.append("    %s* operator->() const { return (%s*)_raw; }" % (member_type_name, member_type_name))
-        # adj() subtracts the encoded offset to recover the base pointer.
+        # adj() subtracts the field offset to recover the base pointer.
         # _raw holds the Watcom-adjusted pointer (base + offset); callers that
         # want the base must go through adj() / ADJ(). Without the subtraction,
         # every ADJ(ptr)->field write lands at the wrong struct offset — ASan
         # catches it as a global-buffer-overflow when the base global's size
         # leaves less than `offset` bytes of room past the last declared field.
-        content.append("    %s* adj() const { return (%s*)((char*)_raw - %d); }" % (struct_name, struct_name, offset))
+        content.append("    %s* adj() const { return (%s*)((char*)_raw - %s); }" % (struct_name, struct_name, offset_expr))
         content.append("    template<typename T> operator T*() const { return (T*)_raw; }")
         content.append("    explicit operator bool() const { return _raw != 0; }")
         content.append("};")
@@ -1682,6 +1804,20 @@ def generate_type_definition(currentProgram, dt):
         lines.append("// Structure: %s" % dt_name)
         if dt.getDescription():
             lines.append("// %s" % dt.getDescription())
+        if dt_name == "va_list_t":
+            # va_list_t stores a full __builtin_va_list. Ghidra models it as a
+            # single `char* value[1]` -- correct at 32-bit, where SysV va_list is
+            # a char* -- but on x86-64 __builtin_va_list is a 24-byte
+            # __va_list_tag[1] (gp/fp offsets + overflow_arg_area + reg_save_area).
+            # A 1-element array drops 16 of those bytes, so every variadic callee
+            # reads a garbage va_list and crashes on the first %s. Size the array
+            # to the target's builtin so VA_START_T can round-trip the whole thing.
+            lines.append("#pragma pack(push, 1)")
+            lines.append("typedef struct va_list_t {")
+            lines.append("    char* value[(sizeof(__builtin_va_list) + sizeof(char*) - 1) / sizeof(char*)];")
+            lines.append("} va_list_t;")
+            lines.append("#pragma pack(pop)")
+            return lines
         pack_value, align_attr = _packing_and_alignment(dt)
         if pack_value is not None:
             lines.append("#pragma pack(push, %d)" % pack_value)
@@ -2455,13 +2591,13 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
             content.append("//")
             content.append("// Delegate to the compiler intrinsic __builtin_va_start so the")
             content.append("// correct position is picked regardless of relocations, then stash")
-            content.append("// the resulting pointer into our value[0] slot (on i386 SysV,")
-            content.append("// va_list is a char*, so this is size-compatible). Consumers")
-            content.append("// memcpy value[0] back into a real va_list when calling glibc.")
+            content.append("// the whole __builtin_va_list into value[] (one char* on i386 SysV,")
+            content.append("// a 24-byte __va_list_tag[1] on x86-64 SysV -- va_list_t is sized to")
+            content.append("// fit). Consumers memcpy value[] back into a real va_list for glibc.")
             content.append("#define VA_START_T(ap, last) do { \\")
             content.append("    __builtin_va_list _va_start_tmp; \\")
             content.append("    __builtin_va_start(_va_start_tmp, (last)); \\")
-            content.append("    __builtin_memcpy(&(ap).value[0], &_va_start_tmp, sizeof(char*)); \\")
+            content.append("    __builtin_memcpy(&(ap).value[0], &_va_start_tmp, sizeof(__builtin_va_list)); \\")
             content.append("    __builtin_va_end(_va_start_tmp); \\")
             content.append("} while(0)")
             content.append('#define VA_END_T(ap) do { (ap).value[0] = (char*)0; } while(0)')

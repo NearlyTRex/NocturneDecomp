@@ -6,6 +6,9 @@ struct CFrankenstienMachine;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CFrankenstienMachine.h"
 // Adjusted pointer: CFrankenstienMachine_ptr_768
 // Points to CCourse at offset 0x300 in CFrankenstienMachine
 // 32-bit pointer to CFrankenstienMachine
@@ -17,7 +20,7 @@ struct CFrankenstienMachine_ptr_768 {
     template<typename T> CFrankenstienMachine_ptr_768(T* p) : _raw((void*)p) {}
     template<typename T> CFrankenstienMachine_ptr_768& operator=(T* p) { _raw = (void*)p; return *this; }
     CCourse* operator->() const { return (CCourse*)_raw; }
-    CFrankenstienMachine* adj() const { return (CFrankenstienMachine*)((char*)_raw - 768); }
+    CFrankenstienMachine* adj() const { return (CFrankenstienMachine*)((char*)_raw - offsetof(CFrankenstienMachine, course)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

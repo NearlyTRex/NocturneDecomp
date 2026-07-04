@@ -23,7 +23,7 @@ void * __cdecl shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T siz
   shape_memdbg_cpp_traceMemory_FUN_0050f150
             ("debugCalloc(%d, %d, %s, %d)",(int)count,(int)size,filename,line_number);
   if (count_00 != 0) {
-    header = (SMemHead *)malloc(count_00 + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
+    header = (SMemHead *)malloc(count_00 + sizeof(SMemHead) + sizeof(uint));
     if (header == (SMemHead *)0x0) {
       shape_memdbg_cpp_traceMemory_FUN_0050f150("   !!FAILED!!");
       wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
@@ -38,7 +38,7 @@ void * __cdecl shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T siz
     memcpy((char *)user_data + count_00, &back_guard, sizeof(back_guard));
     shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(header);
     memset(user_data,0,count_00);
-    shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",(uintptr_t)user_data);
+    shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns " NOCTURNE_FMT_PTR,NOCTURNE_ARG_PTR(user_data));
     wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
     return user_data;
   }

@@ -6,6 +6,9 @@ struct CGlassParticle;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CGlassParticle.h"
 // Adjusted pointer: CGlassParticle_ptr_120
 // Points to STriangleVertices at offset 0x78 in CGlassParticle
 // 32-bit pointer to CGlassParticle
@@ -17,7 +20,7 @@ struct CGlassParticle_ptr_120 {
     template<typename T> CGlassParticle_ptr_120(T* p) : _raw((void*)p) {}
     template<typename T> CGlassParticle_ptr_120& operator=(T* p) { _raw = (void*)p; return *this; }
     STriangleVertices* operator->() const { return (STriangleVertices*)_raw; }
-    CGlassParticle* adj() const { return (CGlassParticle*)((char*)_raw - 120); }
+    CGlassParticle* adj() const { return (CGlassParticle*)((char*)_raw - offsetof(CGlassParticle, triangle_delta)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -6,6 +6,9 @@ struct CVampireBoss;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CVampireBoss.h"
 // Adjusted pointer: CVampireBoss_ptr_57712
 // Points to CCloth at offset 0xe170 in CVampireBoss
 // 32-bit pointer to CVampireBoss
@@ -17,7 +20,7 @@ struct CVampireBoss_ptr_57712 {
     template<typename T> CVampireBoss_ptr_57712(T* p) : _raw((void*)p) {}
     template<typename T> CVampireBoss_ptr_57712& operator=(T* p) { _raw = (void*)p; return *this; }
     CCloth* operator->() const { return (CCloth*)_raw; }
-    CVampireBoss* adj() const { return (CVampireBoss*)((char*)_raw - 57712); }
+    CVampireBoss* adj() const { return (CVampireBoss*)((char*)_raw - offsetof(CVampireBoss, wing_cloth)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -19,7 +19,7 @@ void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size
     wincore_winrun_cpp_waitForMutex_FUN_005f3ff0(g_FileMutex);
   }
   shape_memdbg_cpp_traceMemory_FUN_0050f150
-            ("debugRealloc(%08X, %d, %s, %d)",(uintptr_t)ptr,new_size,filename,line_number);
+            ("debugRealloc(" NOCTURNE_FMT_PTR ", %d, %s, %d)",NOCTURNE_ARG_PTR(ptr),new_size,filename,line_number);
   if (ptr != (void *)0x0) {
     if (new_size == 0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,filename,line_number);
@@ -33,7 +33,7 @@ void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size
       SMemHead *old_header = (SMemHead *)((char *)ptr - sizeof(SMemHead));
       shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(old_header,filename,line_number);
       shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(old_header);
-      header = (SMemHead *)realloc(old_header,new_size + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
+      header = (SMemHead *)realloc(old_header,new_size + sizeof(SMemHead) + sizeof(uint));
       if (header != (SMemHead *)0x0) {
         header->num_bytes = new_size;
         shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(header,filename);
@@ -43,7 +43,7 @@ void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size
         uint back_guard = GAME_BEEFDEAD;
         memcpy((char *)user_data + new_size, &back_guard, sizeof(back_guard));
         shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(header);
-        shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",(uintptr_t)user_data);
+        shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns " NOCTURNE_FMT_PTR,NOCTURNE_ARG_PTR(user_data));
         wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
         return user_data;
       }

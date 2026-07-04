@@ -6,6 +6,9 @@ struct CBackgroundActor;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CBackgroundActor.h"
 // Adjusted pointer: CBackgroundActor_ptr_344
 // Points to CKeyFramedModelInstance at offset 0x158 in CBackgroundActor
 // 32-bit pointer to CBackgroundActor
@@ -17,7 +20,7 @@ struct CBackgroundActor_ptr_344 {
     template<typename T> CBackgroundActor_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CBackgroundActor_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CBackgroundActor* adj() const { return (CBackgroundActor*)((char*)_raw - 344); }
+    CBackgroundActor* adj() const { return (CBackgroundActor*)((char*)_raw - offsetof(CBackgroundActor, model)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

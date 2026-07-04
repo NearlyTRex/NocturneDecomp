@@ -6,6 +6,9 @@ struct CBoxActor;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CBoxActor.h"
 // Adjusted pointer: CBoxActor_ptr_344
 // Points to CKeyFramedModelInstance at offset 0x158 in CBoxActor
 // 32-bit pointer to CBoxActor
@@ -17,7 +20,7 @@ struct CBoxActor_ptr_344 {
     template<typename T> CBoxActor_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CBoxActor_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CBoxActor* adj() const { return (CBoxActor*)((char*)_raw - 344); }
+    CBoxActor* adj() const { return (CBoxActor*)((char*)_raw - offsetof(CBoxActor, model)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

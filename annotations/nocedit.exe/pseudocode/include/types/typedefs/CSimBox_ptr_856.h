@@ -6,6 +6,9 @@ struct CSimBox;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CSimBox.h"
 // Adjusted pointer: CSimBox_ptr_856
 // Points to CBox at offset 0x358 in CSimBox
 // 32-bit pointer to CSimBox
@@ -17,7 +20,7 @@ struct CSimBox_ptr_856 {
     template<typename T> CSimBox_ptr_856(T* p) : _raw((void*)p) {}
     template<typename T> CSimBox_ptr_856& operator=(T* p) { _raw = (void*)p; return *this; }
     CBox* operator->() const { return (CBox*)_raw; }
-    CSimBox* adj() const { return (CSimBox*)((char*)_raw - 856); }
+    CSimBox* adj() const { return (CSimBox*)((char*)_raw - offsetof(CSimBox, physics_box)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

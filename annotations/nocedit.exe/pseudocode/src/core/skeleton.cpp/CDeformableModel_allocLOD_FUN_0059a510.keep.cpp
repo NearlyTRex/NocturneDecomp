@@ -72,7 +72,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510(CDeformabl
   g_CurrentFilename = "..\\core\\skeleton.cpp";
   g_CurrentLineNumber = 686;
   core_main_c_displayErrorAndQuit_FUN_00506f10
-            ("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d",(int)this_ptr->vertex_count,(int)this_ptr->tri_count,
-             (int)this_ptr->cap_tri_count);
+            ("Out of hunk in CDeformableModel::allocMemory.  vertexCount=%d, triCount=%d, capTriCount=%d",(int)(intptr_t)this_ptr->vertex_count,(int)(intptr_t)this_ptr->tri_count,
+             (int)(intptr_t)this_ptr->cap_tri_count);
   return;
 }

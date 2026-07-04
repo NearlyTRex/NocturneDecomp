@@ -611,12 +611,14 @@ _FILE* _freopen(const char* filename, const char* mode, _FILE* stream) {
 // but in the full game build vsprintf read zeros). Copying the raw pointer
 // byte-wise into a real `va_list` sidesteps the aliasing question entirely.
 int _vsprintf(char* buffer, const char* format, va_list_t args) {
-#if defined(__i386__)
-    static_assert(sizeof(va_list) == sizeof(char*),
-                  "this bridge assumes i386 SysV va_list == char*");
-#endif
+    // va_list_t carries a full __builtin_va_list (VA_START_T copied all of it);
+    // copy the whole thing back, not just a leading char*. On x86-64 SysV a
+    // va_list is a 24-byte __va_list_tag[1], so a char*-sized copy dropped the
+    // overflow_arg_area/reg_save_area pointers and vsprintf crashed on %s.
+    static_assert(sizeof(va_list) <= sizeof(va_list_t),
+                  "va_list_t must be large enough to hold a full va_list");
     va_list va;
-    __builtin_memcpy(&va, &args.value[0], sizeof(char*));
+    __builtin_memcpy(&va, &args.value[0], sizeof(va_list));
     return vsprintf(buffer, format, va);
 }
 

@@ -6,6 +6,9 @@ struct CZombieDog;
 // Dependencies
 #include "system/basetypes.h"
 
+#include <cstddef> // offsetof
+// Full base definition required for offsetof() in adj().
+#include "types/classes/CZombieDog.h"
 // Adjusted pointer: CZombieDog_ptr_10900
 // Points to CZombieDog at offset 0x2a94 in CZombieDog
 // 32-bit pointer to CZombieDog
@@ -16,7 +19,7 @@ struct CZombieDog_ptr_10900 {
     template<typename T> CZombieDog_ptr_10900(T* p) : _raw((void*)p) {}
     template<typename T> CZombieDog_ptr_10900& operator=(T* p) { _raw = (void*)p; return *this; }
     CZombieDog* operator->() const { return (CZombieDog*)_raw; }
-    CZombieDog* adj() const { return (CZombieDog*)((char*)_raw - 10900); }
+    CZombieDog* adj() const { return (CZombieDog*)((char*)_raw - offsetof(CZombieDog, base.base.cloth_list)); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };
