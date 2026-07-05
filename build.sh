@@ -5,16 +5,17 @@
 # work BEFORE cmake has ever run, so it lives at the repo root and is
 # hand-maintained.
 #
-# Default preset is `exe-linux-asan` (32-bit ASan, the binary-matching target;
-# links a runnable exe, needs i386 multilib). Override via the first arg or the
-# BUILD_PRESET env var:
+# Default preset is `exe-linux-asan-x86_64` (native 64-bit ASan, no multilib).
+# Now that the 64-bit port links and runs, this is the default lane for finding
+# and fixing the remaining bugs. Override via the first arg or the BUILD_PRESET
+# env var:
 #
-#   ./build.sh                     # build exe-linux-asan (default, 32-bit)
-#   ./build.sh exe-linux           # build the non-ASan 32-bit exe
+#   ./build.sh                     # build exe-linux-asan-x86_64 (default, 64-bit ASan)
+#   ./build.sh exe-linux-x86_64    # build the non-ASan 64-bit exe
+#   ./build.sh check-linux-x86_64  # fast 64-bit syntax-check lane
+#   ./build.sh exe-linux-asan      # 32-bit binary-matching ASan lane (needs i386 multilib)
+#   ./build.sh exe-linux           # non-ASan 32-bit exe
 #   ./build.sh check-linux         # syntax-check only (32-bit)
-#   ./build.sh exe-linux-asan-x86_64   # native 64-bit lane (no multilib; won't
-#                                      # link until pointer truncations are ported)
-#   ./build.sh check-linux-x86_64      # fast 64-bit syntax-check lane
 #   BUILD_PRESET=exe-linux ./build.sh
 #
 # Extra args after the preset get passed through to cmake --build:
@@ -37,7 +38,7 @@ set -u
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 cd "${SCRIPT_DIR}"
 
-PRESET="${1:-${BUILD_PRESET:-exe-linux-asan}}"
+PRESET="${1:-${BUILD_PRESET:-exe-linux-asan-x86_64}}"
 [ $# -ge 1 ] && shift
 
 BUILD_DIR="${SCRIPT_DIR}/build/${PRESET}"
