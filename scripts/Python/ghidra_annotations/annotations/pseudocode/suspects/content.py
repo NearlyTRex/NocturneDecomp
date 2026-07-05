@@ -5820,6 +5820,125 @@ def _alloc_stride_consts(args):
 
 
 
+# `(uintptr_t)ptr & MASK` where MASK is a 32-bit alignment constant whose high
+# 32 bits are zero — truncates the pointer at 64-bit. The (uintptr_t) cast is
+# correct, so identify_pointer_truncation_suspects (keyed on (int)/(uint)) can't
+# see it; the bug is the MASK constant. Shapes seen in the wild:
+#   `((uintptr_t)p + 0x10U) & ~0xFu`   (~0xFu == 0xFFFFFFF0, a 32-bit complement)
+#   `(uintptr_t)(...) & 0xfffffff8`    (bare 32-bit align literal)
+# The correct `& ~(uintptr_t)0xF` / `& ~0xFULL` forms carry a cast or 64-bit
+# width between `~`/`&` and the constant, so the regex skips them.
+_TPM_UINTPTR_RE = re.compile(r'\(\s*uintptr_t\s*\)')
+_TPM_MASK_RE = re.compile(r'&\s*(~\s*)?(0x[0-9a-fA-F]+|\d+)([uUlL]*)')
+
+
+def identify_truncating_pointer_mask(code):
+    """Flag alignment masks that truncate a (uintptr_t) pointer to 32 bits.
+
+    Args:
+        code: source text.
+
+    Returns:
+        List of suspect dicts (type 'pointer_truncation').
+    """
+    suspects = []
+    if not code:
+        return suspects
+    for line_no, line in enumerate(code.split('\n'), 1):
+        s = line.strip()
+        if s.startswith(('//', '#', '/*', '*')):
+            continue
+        if not _TPM_UINTPTR_RE.search(line):
+            continue
+        for m in _TPM_MASK_RE.finditer(line):
+            neg, cs, suf = m.group(1), m.group(2), m.group(3)
+            val = int(cs, 16) if cs.startswith('0x') else int(cs)
+            wide = 'l' in suf.lower()  # UL / ULL -> 64-bit-width constant
+            if neg:
+                # `~SMALL` complements at the constant's width; a truncating
+                # alignment mask only when SMALL is small and not 64-bit-wide.
+                if wide or not (0 < val < 0x10000):
+                    continue
+                clear = val
+                shown = '~%s%s' % (cs, suf)
+            else:
+                # bare literal align mask: top bits set within 32, a few low bits
+                # clear (0xFFFFFF00..0xFFFFFFFE). Its high 32 bits are zero
+                # regardless of suffix, so it truncates the pointer.
+                if not (0xFFFFFF00 <= val <= 0xFFFFFFFE):
+                    continue
+                clear = 0xFFFFFFFF ^ val
+                shown = '%s%s' % (cs, suf)
+            suspects.append({
+                'line': line_no,
+                'type': 'pointer_truncation',
+                'match': '(uintptr_t) ... & %s' % shown,
+                'text': s[:200],
+                'description': (
+                    'Alignment mask `& %s` on a (uintptr_t) pointer is a 32-bit '
+                    'constant (high 32 bits zero), so it truncates the pointer at '
+                    '64-bit. Use a pointer-width mask: `& ~(uintptr_t)0x%x` (§27).'
+                    % (shown, clear)),
+                'severity': SUSPECT_SEVERITY.get('pointer_truncation', 'moderate'),
+            })
+    return suspects
+
+
+# `LOCAL = (int *)STRUCT_PTR;` reinterprets a whole struct as a primitive array,
+# then walks it via `LOCAL[N]` with N encoding a 32-bit field byte-offset. If the
+# struct has pointer fields before the walked one, they grow at 64-bit and the
+# indices read the wrong fields. The existing primitive_walker_cast regex only
+# catches the `(int *)&arr[i]` address form, not this bare struct reinterpret
+# (e.g. CPickList_renderDialog's `piVar = (int*)this_ptr; ... piVar[4]`).
+_STRUCT_REINTERP_RE = re.compile(
+    r'(\w+)\s*=\s*\(\s*'
+    r'(?:int|uint|SIZE_T|size_t|long|unsigned\s+long|unsigned\s+int)\s*\*\s*\)\s*'
+    r'(\w+)\s*;')
+
+
+def identify_struct_reinterpret_walk(code, struct_size_map=None):
+    """Flag a struct pointer reinterpreted as a primitive array and indexed.
+
+    Args:
+        code: source text.
+        struct_size_map: struct/union name -> size (confirms the operand is a
+            real struct pointer, not a void*/int* cast). Inert without it.
+
+    Returns:
+        List of suspect dicts (type 'primitive_walker_cast').
+    """
+    suspects = []
+    if not code or not struct_size_map:
+        return suspects
+    ptr_vars, var_struct = _ptr_trunc_decl_pointer_vars(code)
+    for m in _STRUCT_REINTERP_RE.finditer(code):
+        local, ptr = m.group(1), m.group(2)
+        base = var_struct.get(ptr)
+        # The operand must be a pointer to a KNOWN struct (so this is a struct
+        # reinterpret, not a `(int *)voidptr` / numeric cast).
+        if ptr not in ptr_vars or base not in struct_size_map:
+            continue
+        # The primitive-pointer result must be walked as an array; a one-off
+        # `(int *)p` with no `p[...]` is a plain cast, not a field walk.
+        if not re.search(r'(?<![A-Za-z0-9_])' + re.escape(local) + r'\s*\[', code):
+            continue
+        line_no = code.count('\n', 0, m.start()) + 1
+        suspects.append({
+            'line': line_no,
+            'type': 'primitive_walker_cast',
+            'match': '(int *)%s reinterpreted as %s[...]' % (ptr, local),
+            'text': code.split('\n')[line_no - 1].strip()[:200],
+            'description': (
+                'Reinterprets the %s struct `%s` as a primitive array `%s[...]`; '
+                'the hardcoded indices are 32-bit field byte-offsets. If %s has '
+                'pointer fields before the walked one they shift at 64-bit and the '
+                'walk reads the wrong data. Retype to named struct-field access '
+                '(§12).' % (base, ptr, local, base)),
+            'severity': SUSPECT_SEVERITY.get('primitive_walker_cast', 'moderate'),
+        })
+    return suspects
+
+
 def identify_alloc_magic_size(code, struct_size_map=None):
     """Flag allocation sizes that hardcode a struct byte-size as a magic number.
 
@@ -6308,6 +6427,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
         code, global_interval_map))
     found.extend(identify_pointer_truncation_suspects(
         code, func_globals, global_interval_map, struct_layout_map))
+    found.extend(identify_truncating_pointer_mask(code))
     found.extend(identify_raw_address_constant_suspects(
         code, address_interval_map))
     found.extend(identify_raw_address_in_local(code))
@@ -6347,6 +6467,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_bit_int_float_compare(code))
     found.extend(identify_struct_field_overrun(code, struct_layout_map))
     found.extend(identify_alloc_magic_size(code, struct_size_map))
+    found.extend(identify_struct_reinterpret_walk(code, struct_size_map))
     found.extend(identify_mem_magic_size(
         code, struct_layout_map, struct_size_map))
     return found

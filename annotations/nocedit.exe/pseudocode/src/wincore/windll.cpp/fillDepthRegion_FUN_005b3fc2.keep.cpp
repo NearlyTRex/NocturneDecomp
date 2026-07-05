@@ -21,7 +21,7 @@ void __cdecl wincore_windll_cpp_fillDepthRegion_FUN_005b3fc2(int left,int right,
     return;
   }
   do {
-    pdVar4 = (double *)((uintptr_t)(g_ZBufferScanlineArray[top] + left) & 0xfffffff8);
+    pdVar4 = (double *)((uintptr_t)(g_ZBufferScanlineArray[top] + left) & ~(uintptr_t)7);
     uVar3 = (right - left) + 1U >> 1;
     do {
       *pdVar4 = dVar2;

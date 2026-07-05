@@ -13,7 +13,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDem
   int iVar2;
   uint *puVar3;
   int *piVar4;
-  uint *puVar8;
+  ushort **ppDepth;
   char *pcVar9;
   char (*local_20) [320];
   int local_1c;
@@ -28,18 +28,18 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDem
       if (0 < iVar2) {
         puVar3 = (uint *)((char *)light_source->corona_visibility_buffers +
                          light_source->left_extent[local_1c] * 4 + local_18);
-        puVar8 = (uint *)((char *)light_source->corona_depth_buffer +
-                         light_source->left_extent[local_1c] * 4 + local_18);
+        ppDepth = light_source->corona_depth_buffer +
+                  light_source->left_extent[local_1c] + local_1c * 0x140;
         piVar4 = (int *)((char *)light_source->corona_lightmap_indices +
                         light_source->left_extent[local_1c] * 4 + local_18);
         pcVar9 = *local_20 + light_source->left_extent[local_1c];
         g_CoronaLightingTextureData = (char *)light_source->precomputed_lighting_textures;
         do {
-          if ((*puVar3 != 0) && (*puVar3 <= (uint)*(ushort *)*puVar8)) {
+          if ((*puVar3 != 0) && (*puVar3 <= (uint)**ppDepth)) {
             *pcVar9 = *pcVar9 + g_CoronaLightingTextureData[*piVar4];
           }
           puVar3 = puVar3 + 1;
-          puVar8 = puVar8 + 1;
+          ppDepth = ppDepth + 1;
           piVar4 = piVar4 + 1;
           pcVar9 = pcVar9 + 1;
           iVar2 = iVar2 - 1;
