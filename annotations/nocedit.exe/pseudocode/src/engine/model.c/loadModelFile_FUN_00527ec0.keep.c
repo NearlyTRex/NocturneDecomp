@@ -17,6 +17,8 @@ SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00527ec0(char *fi
   int iVar4;
   SMRGLHeaderExtended *pSVar1;
   char *pcVar5;
+  SMRGLKeyframeModelOnDisk *on_disk;
+  SMRGLKeyframeModel *native;
   char local_5c [80];
   char cVar1;
 
@@ -63,6 +65,27 @@ SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00527ec0(char *fi
     g_CurrentFilename = "..\\engine\\model.c";
     g_CurrentLineNumber = 269;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_5c);
+  }
+  if (cVar1 == ' ') {
+    /* Keyframe model (type 0x20): copy the on-disk record into a native
+       SMRGLKeyframeModel; its runtime pointer fields overrun this file buffer at 64-bit. */
+    on_disk = (SMRGLKeyframeModelOnDisk *)pSVar2;
+    native = (SMRGLKeyframeModel *)
+             shape_memdbg_cpp_debugMalloc_FUN_0050f250(sizeof(SMRGLKeyframeModel),"..\\engine\\model.c",248);
+    if (native == (SMRGLKeyframeModel *)0x0) {
+      _sprintf(local_5c,"Out of model memory: %s",filename);
+      g_CurrentFilename = "..\\engine\\model.c";
+      g_CurrentLineNumber = 256;
+      core_main_c_displayErrorAndQuit_FUN_00506f10(local_5c);
+      return (SMRGLHeaderExtended *)0x0;
+    }
+    memset(native,0,sizeof(SMRGLKeyframeModel));
+    native->header = on_disk->header;
+    native->cycle_length = on_disk->cycle_length;
+    native->current_position = on_disk->current_position;
+    memcpy(native->filenames,on_disk->filenames,sizeof(native->filenames));
+    shape_memdbg_cpp_debugFree_FUN_0050f460(pSVar2,"..\\engine\\model.c",265);
+    return (SMRGLHeaderExtended *)native;
   }
   return pSVar2;
 }

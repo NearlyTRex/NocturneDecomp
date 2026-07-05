@@ -27,6 +27,6 @@ void __cdecl shape_edittool_cpp_CStrList_remove_FUN_004a2e00(CStrList *this_ptr,
   this_ptr->item_count = iVar1;
   memmove
             (this_ptr->data_array + start_index,this_ptr->data_array + end_index + 1,
-             (iVar1 - start_index) * 4);
+             (iVar1 - start_index) * sizeof(char *));
   return;
 }

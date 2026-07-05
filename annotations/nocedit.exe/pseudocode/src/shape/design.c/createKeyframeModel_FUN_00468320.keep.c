@@ -14,6 +14,7 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
   int iVar2;
   double dVar8;
   SMRGLKeyframeModel local_264;
+  SMRGLKeyframeModelOnDisk on_disk;
   char local_10c [80];
   char local_bc [80];
   byte local_6c [80];
@@ -54,7 +55,12 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
             g_CurrentLineNumber = 8823;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write keyframed model");
           }
-          _fwrite(&local_264,1,0x158,file);
+          memset(&on_disk,0,sizeof(SMRGLKeyframeModelOnDisk));
+          on_disk.header = local_264.header;
+          on_disk.cycle_length = local_264.cycle_length;
+          on_disk.current_position = local_264.current_position;
+          memcpy(on_disk.filenames,local_264.filenames,sizeof(on_disk.filenames));
+          _fwrite(&on_disk,1,sizeof(SMRGLKeyframeModelOnDisk),file);
           local_18 = 0;
           _fwrite(&local_18,1,4,file);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",8828);

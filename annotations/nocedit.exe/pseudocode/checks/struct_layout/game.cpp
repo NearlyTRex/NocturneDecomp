@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 547
+// Structs : 549
 
 #include "nocturne.h"
 
@@ -8883,6 +8883,22 @@ static_assert(__builtin_offsetof(SMRGLKeyframeModel, filenames) == 24,
 static_assert(__builtin_offsetof(SMRGLKeyframeModel, loaded_frames) == 280,
               "offsetof(SMRGLKeyframeModel, loaded_frames) != 280");
 
+// ---- SMRGLKeyframeModelOnDisk (344 bytes) ----
+static_assert(sizeof(SMRGLKeyframeModelOnDisk) == 344,
+              "sizeof(SMRGLKeyframeModelOnDisk) != 344");
+static_assert(__builtin_offsetof(SMRGLKeyframeModelOnDisk, header) == 0,
+              "offsetof(SMRGLKeyframeModelOnDisk, header) != 0");
+static_assert(__builtin_offsetof(SMRGLKeyframeModelOnDisk, cycle_length) == 12,
+              "offsetof(SMRGLKeyframeModelOnDisk, cycle_length) != 12");
+static_assert(__builtin_offsetof(SMRGLKeyframeModelOnDisk, current_position) == 16,
+              "offsetof(SMRGLKeyframeModelOnDisk, current_position) != 16");
+static_assert(__builtin_offsetof(SMRGLKeyframeModelOnDisk, base_keyframes) == 20,
+              "offsetof(SMRGLKeyframeModelOnDisk, base_keyframes) != 20");
+static_assert(__builtin_offsetof(SMRGLKeyframeModelOnDisk, filenames) == 24,
+              "offsetof(SMRGLKeyframeModelOnDisk, filenames) != 24");
+static_assert(__builtin_offsetof(SMRGLKeyframeModelOnDisk, loaded_frames) == 280,
+              "offsetof(SMRGLKeyframeModelOnDisk, loaded_frames) != 280");
+
 // ---- SMRGLLightPrimitive (36 bytes) ----
 static_assert(sizeof(SMRGLLightPrimitive) == 36,
               "sizeof(SMRGLLightPrimitive) != 36");
@@ -9690,6 +9706,20 @@ static_assert(__builtin_offsetof(SPod3Header, audit_count) == 280,
               "offsetof(SPod3Header, audit_count) != 280");
 static_assert(__builtin_offsetof(SPod3Header, unk3) == 284,
               "offsetof(SPod3Header, unk3) != 284");
+
+// ---- SPodDirEntryOnDisk (20 bytes) ----
+static_assert(sizeof(SPodDirEntryOnDisk) == 20,
+              "sizeof(SPodDirEntryOnDisk) != 20");
+static_assert(__builtin_offsetof(SPodDirEntryOnDisk, name_offset) == 0,
+              "offsetof(SPodDirEntryOnDisk, name_offset) != 0");
+static_assert(__builtin_offsetof(SPodDirEntryOnDisk, size) == 4,
+              "offsetof(SPodDirEntryOnDisk, size) != 4");
+static_assert(__builtin_offsetof(SPodDirEntryOnDisk, offset) == 8,
+              "offsetof(SPodDirEntryOnDisk, offset) != 8");
+static_assert(__builtin_offsetof(SPodDirEntryOnDisk, timestamp) == 12,
+              "offsetof(SPodDirEntryOnDisk, timestamp) != 12");
+static_assert(__builtin_offsetof(SPodDirEntryOnDisk, checksum) == 16,
+              "offsetof(SPodDirEntryOnDisk, checksum) != 16");
 
 // ---- SPodManageRecord (924 bytes) ----
 static_assert(sizeof(SPodManageRecord) == 924,

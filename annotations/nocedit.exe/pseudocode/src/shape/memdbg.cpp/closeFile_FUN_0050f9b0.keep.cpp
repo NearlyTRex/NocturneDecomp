@@ -51,7 +51,7 @@ int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *file_ptr,char *source
         g_OpenFileCount = g_OpenFileCount + -1;
         memmove
                   (g_FileRegistry + iVar2,g_FileRegistry + iVar2 + 1,
-                   (g_OpenFileCount - iVar2) * 0x328);
+                   (g_OpenFileCount - iVar2) * sizeof(SFileTrackingEntry));
         wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
         iVar3 = _fclose(file_ptr);
         return iVar3;
