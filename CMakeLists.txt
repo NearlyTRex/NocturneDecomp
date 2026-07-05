@@ -210,7 +210,7 @@ if(NOCTURNE_BUILD_EXE)
     if(NOCTURNE_ASAN)
         list(APPEND NOCTURNE_SANITIZE_FLAGS
             -fsanitize=address,undefined
-            -fno-sanitize=function,shift,signed-integer-overflow
+            -fno-sanitize=function,shift,signed-integer-overflow,alignment
             -fwrapv
             -fno-omit-frame-pointer
             -fno-sanitize-recover=all)
@@ -218,7 +218,10 @@ if(NOCTURNE_BUILD_EXE)
         # -fno-sanitize=shift: fixed-point math left-shifts negative values pervasively
         # -fno-sanitize=signed-integer-overflow + -fwrapv: Watcom-compiled arithmetic
         #   assumes x86 two's-complement wrap (e.g. INT_MIN - N), pervasive in the binary
-        message(STATUS "AddressSanitizer + UBSan enabled (function-type, shift, and signed-overflow checks disabled)")
+        # -fno-sanitize=alignment: structs are #pragma pack(1) to preserve the 32-bit
+        #   Watcom layout, so 8-byte pointer fields land at 4-mod-8 offsets at 64-bit;
+        #   misaligned scalar/pointer access is benign on x86-64 and pervasive/intentional
+        message(STATUS "AddressSanitizer + UBSan enabled (function-type, shift, signed-overflow, and alignment checks disabled)")
     endif()
 
     # PCH: every decompiled TU opens with #include "nocturne.h", which pulls in

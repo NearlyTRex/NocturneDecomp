@@ -64,7 +64,7 @@ LAB_00556a6b:
     core_main_c_displayErrorAndQuit_FUN_00506f10("Could not allocate data buffer.");
   }
   ppvVar2 = (void **)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                      ((uint)(ushort)this_ptr->height << 2,"..\\shape\\quantize.cpp",1181);
+                      ((uint)(ushort)this_ptr->height * (int)sizeof(void *),"..\\shape\\quantize.cpp",1181);
   this_ptr->row_table = ppvVar2;
   if (ppvVar2 == (void **)0x0) {
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";

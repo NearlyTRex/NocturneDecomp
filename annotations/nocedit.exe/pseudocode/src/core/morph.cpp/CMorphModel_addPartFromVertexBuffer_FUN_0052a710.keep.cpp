@@ -25,7 +25,7 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710(CMo
   this_ptr->num_points = this_ptr->num_points + this_ptr->parts[this_ptr->part_count].vertex_count;
   this_ptr->num_faces = this_ptr->num_faces + this_ptr->parts[this_ptr->part_count].face_count;
   pSVar1 = (SMorphPoint *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (this_ptr->points,this_ptr->num_points << 4,"..\\core\\morph.cpp",190);
+                     (this_ptr->points,this_ptr->num_points * (int)sizeof(SMorphPoint),"..\\core\\morph.cpp",190);
   this_ptr->points = pSVar1;
   pSVar2 = (SMRGLPrimitiveTriangle *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->faces,this_ptr->num_faces * sizeof(SMRGLPrimitiveTriangle),"..\\core\\morph.cpp",191);

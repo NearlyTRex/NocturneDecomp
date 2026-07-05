@@ -5783,8 +5783,39 @@ _ALLOC_STRIDE_RE = re.compile(
     r'\*\s*(0x[0-9a-fA-F]+|\d+)\b|\b(0x[0-9a-fA-F]+|\d+)\s*\*')
 
 
+# A left-shift stride: `count << K` allocates `count * (1 << K)` bytes. Watcom
+# emits power-of-two struct sizes as shifts (e.g. `triangle_count << 5` == * 0x20).
+_ALLOC_SHIFT_RE = re.compile(r'<<\s*(\d+)\b')
+
+
 # A single argument that is a bare numeric constant (single-object / calloc size).
 _ALLOC_BARE_CONST_RE = re.compile(r'^\s*(0x[0-9a-fA-F]+|\d+)\s*$')
+
+
+# Watcom array-new: `(T *)__vec_new(mem, count, ti)` / `__arrinit(...)`. The
+# element type comes from the cast here, while the size is in a *separate* alloc
+# that fed `mem` — so the inline-cast alloc loop can't see the type. Capture the
+# element type and the `mem` variable to back-reference the allocation.
+_VEC_NEW_CAST_RE = re.compile(
+    r'\(\s*([A-Za-z_]\w*)\s*\*\s*\)\s*(?:__vec_new|__arrinit)\w*\s*\(\s*([A-Za-z_]\w*)\s*,')
+
+
+def _alloc_stride_consts(args):
+    """Extract every numeric stride constant from an allocation's size args:
+    `* N` / `N *` multiplies, `<< K` shifts (as `1 << K`), and a bare-constant
+    size argument. Returns a set of ints."""
+    consts = set()
+    for sm in _ALLOC_STRIDE_RE.finditer(args):
+        cs = sm.group(1) or sm.group(2)
+        consts.add(int(cs, 16) if cs.startswith('0x') else int(cs))
+    for sm in _ALLOC_SHIFT_RE.finditer(args):
+        consts.add(1 << int(sm.group(1)))
+    for piece in args.split(','):  # bare-constant size arg (calloc/single)
+        bm = _ALLOC_BARE_CONST_RE.match(piece)
+        if bm:
+            cs = bm.group(1)
+            consts.add(int(cs, 16) if cs.startswith('0x') else int(cs))
+    return consts
 
 
 
@@ -5839,15 +5870,7 @@ def identify_alloc_magic_size(code, struct_size_map=None):
             continue
         args = call[1:-1]  # strip the outer parens
 
-        consts = set()
-        for sm in _ALLOC_STRIDE_RE.finditer(args):
-            cs = sm.group(1) or sm.group(2)
-            consts.add(int(cs, 16) if cs.startswith('0x') else int(cs))
-        for piece in args.split(','):  # bare-constant size arg (calloc/single)
-            bm = _ALLOC_BARE_CONST_RE.match(piece)
-            if bm:
-                cs = bm.group(1)
-                consts.add(int(cs, 16) if cs.startswith('0x') else int(cs))
+        consts = _alloc_stride_consts(args)
         if not consts:
             continue
 
@@ -5880,6 +5903,44 @@ def identify_alloc_magic_size(code, struct_size_map=None):
             'match': match,
             'text': snippet[:200],
             'description': desc,
+            'severity': SUSPECT_SEVERITY.get('alloc_magic_size', 'moderate'),
+        })
+
+    # Second pass: Watcom array-new. `(T *)__vec_new(mem, count, ti)` casts the
+    # result here, but the element stride lives in a *separate* alloc that fed
+    # `mem` (`mem = alloc(count * STRIDE [+ 4])`) — invisible to the inline-cast
+    # loop above. Resolve T from the cast, back-reference the nearest preceding
+    # alloc that assigned `mem`, and flag when its stride equals sizeof(T).
+    for m in _VEC_NEW_CAST_RE.finditer(code):
+        elem_type, mem_var = m.group(1), m.group(2)
+        tsize = struct_size_map.get(elem_type)
+        if tsize is None:
+            continue
+        assign_re = re.compile(
+            r'(?<![A-Za-z0-9_])' + re.escape(mem_var) +
+            r'\s*=\s*(?:\([^)]*\)\s*)?[A-Za-z_]\w*(?:[Mm]alloc|[Aa]lloc)[A-Za-z0-9_]*\s*\(')
+        best = None
+        for am in assign_re.finditer(code, 0, m.start()):
+            best = am  # nearest preceding assignment
+        if best is None:
+            continue
+        call = _extract_balanced_parens(code[best.end() - 1:])
+        if call is None:
+            continue
+        if tsize not in _alloc_stride_consts(call[1:-1]):
+            continue
+        line_no = code.count('\n', 0, best.start()) + 1
+        snippet = re.sub(r'\s+', ' ', code[best.start():best.end() - 1] + call).strip()
+        suspects.append({
+            'line': line_no,
+            'type': 'alloc_magic_size',
+            'match': '(%s *) array-new alloc stride 0x%x' % (elem_type, tsize),
+            'text': snippet[:200],
+            'description': (
+                'Watcom array-new allocation hardcodes 0x%x == sizeof(%s) as the '
+                'element stride (the buffer fed to __vec_new). Replace with '
+                'sizeof(%s) so it stays correct if the struct grows at 64-bit '
+                '(§17/§18).' % (tsize, elem_type, elem_type)),
             'severity': SUSPECT_SEVERITY.get('alloc_magic_size', 'moderate'),
         })
 

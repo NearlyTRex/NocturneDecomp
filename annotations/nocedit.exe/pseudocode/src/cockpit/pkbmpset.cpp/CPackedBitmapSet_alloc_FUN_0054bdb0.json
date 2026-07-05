@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 66,
     "complexity_score": 26,
@@ -187,6 +187,17 @@
     },
     "pcode_op_count": 308
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom array-new allocation hardcodes 0x24 == sizeof(CPackedBitmap) as the element stride (the buffer fed to __vec_new). Replace with sizeof(CPackedBitmap) so it stays correct if the struct grows at 64-bit (\u00a717/\u00a718).",
+      "line": 17,
+      "match": "(CPackedBitmap *) array-new alloc stride 0x24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "array_memory = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (bitmap_count * 0x24 + 4,\"..\\\\cockpit\\\\pkbmpset.cpp\",100)",
+      "type": "alloc_magic_size"
+    }
+  ],
   "stack_frame": {
     "frame_size": 220,
     "local_size": 212,

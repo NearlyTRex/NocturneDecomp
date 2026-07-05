@@ -254,6 +254,15 @@
       "type": "alloc_magic_size"
     },
     {
+      "description": "Allocation size hardcodes 0x20 == sizeof(CDemonCubeTriangle). Replace the magic with sizeof(CDemonCubeTriangle) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 26,
+      "match": "(CDemonCubeTriangle*) alloc stride 0x20",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CDemonCubeTriangle *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (this_ptr->triangle_count << 5,\"..\\\\core\\\\dcube.cpp\",1537)",
+      "type": "alloc_magic_size"
+    },
+    {
       "description": "Allocation size hardcodes 0x40 == sizeof(SVoxelGrid). Replace the magic with sizeof(SVoxelGrid) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
       "line": 42,
       "match": "(SVoxelGrid*) alloc stride 0x40",

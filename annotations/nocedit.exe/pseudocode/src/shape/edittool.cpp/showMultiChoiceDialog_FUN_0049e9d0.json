@@ -452,6 +452,15 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom array-new allocation hardcodes 0xe4 == sizeof(CEdButton) as the element stride (the buffer fed to __vec_new). Replace with sizeof(CEdButton) so it stays correct if the struct grows at 64-bit (\u00a717/\u00a718).",
+      "line": 63,
+      "match": "(CEdButton *) array-new alloc stride 0xe4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar3 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (iVar2 * 0xe4 + 4,\"..\\\\shape\\\\edittool.cpp\",1042)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {

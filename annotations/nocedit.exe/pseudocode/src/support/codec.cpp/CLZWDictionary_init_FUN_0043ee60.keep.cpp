@@ -1,0 +1,33 @@
+// Name: support_codec.cpp_CLZWDictionary_init_FUN_0043ee60
+// Address: 0043ee60
+// MANUAL RECONSTRUCTION
+// Address Range: [[0043ee60, 0043eee1]]
+// Convention: __cdecl
+// Signature: void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits)
+
+#include "nocturne.h"
+
+void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *this_ptr,int new_dict_size,int new_num_bits)
+
+{
+  CLZWDictionaryNode *pCVar1;
+  
+  if ((new_dict_size != this_ptr->table_capacity) ||
+     (this_ptr->node_table == (CLZWDictionaryNode *)0x0)) {
+    this_ptr->table_capacity = new_dict_size;
+    pCVar1 = (CLZWDictionaryNode *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                       (this_ptr->node_table,new_dict_size * (int)sizeof(CLZWDictionaryNode),"..\\support\\codec.cpp",710);
+    this_ptr->node_table = pCVar1;
+    if (pCVar1 == (CLZWDictionaryNode *)0x0) {
+      g_CurrentFilename = "..\\support\\codec.cpp";
+      g_CurrentLineNumber = 711;
+      core_main_c_displayErrorAndQuit_FUN_00506f10("CLZWDictionary::init - out of memory");
+      this_ptr->num_bits = new_num_bits;
+      support_codec_cpp_CLZWDictionary_initTable_FUN_0043eef0(this_ptr);
+      return;
+    }
+  }
+  this_ptr->num_bits = new_num_bits;
+  support_codec_cpp_CLZWDictionary_initTable_FUN_0043eef0(this_ptr);
+  return;
+}

@@ -32,7 +32,7 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00456840(CDemonCu
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCube::allocMemory - Out of vertex memory");
   }
   pCVar4 = (CDemonCubeTriangle *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     (this_ptr->triangle_count << 5,"..\\core\\dcube.cpp",1537);
+                     (this_ptr->triangle_count * (int)sizeof(CDemonCubeTriangle),"..\\core\\dcube.cpp",1537);
   this_ptr->triangle_buffer = pCVar4;
   if (pCVar4 == (CDemonCubeTriangle *)0x0) {
     g_CurrentFilename = "..\\core\\dcube.cpp";

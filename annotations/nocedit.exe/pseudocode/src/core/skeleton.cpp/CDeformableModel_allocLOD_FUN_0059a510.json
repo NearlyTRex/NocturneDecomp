@@ -296,6 +296,15 @@
       "severity": "moderate",
       "text": "(SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 ((this_ptr->cap_tri_count[lod_index] + this_ptr->tri_count[lod_index]) * 0x12, \"..\\\\core\\\\skeleton.cpp\",669)",
       "type": "alloc_magic_size"
+    },
+    {
+      "description": "Watcom array-new allocation hardcodes 0x34 == sizeof(SVert) as the element stride (the buffer fed to __vec_new). Replace with sizeof(SVert) so it stays correct if the struct grows at 64-bit (\u00a717/\u00a718).",
+      "line": 36,
+      "match": "(SVert *) array-new alloc stride 0x34",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar1 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (element_count * 0x34 + 4,\"..\\\\core\\\\skeleton.cpp\",668)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {

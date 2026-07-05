@@ -42,7 +42,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510(CDeformabl
   type_info = &g_SVertTypeInfo;
   element_count = this_ptr->vertex_count[lod_index];
   array_memory = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                           (element_count * 0x34 + 4,"..\\core\\skeleton.cpp",668);
+                           (element_count * (int)sizeof(SVert) + 4,"..\\core\\skeleton.cpp",668);
   pSVar1 = (SVert *)__vec_new(array_memory,element_count,type_info);
   this_ptr->vertex_data_ptr[lod_index] = pSVar1;
   pSVar2 = (SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0

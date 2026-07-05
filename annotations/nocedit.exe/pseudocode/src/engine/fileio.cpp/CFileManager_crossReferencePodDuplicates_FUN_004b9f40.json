@@ -436,6 +436,15 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&local_40->directory_entries->checksum + local_34)",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom array-new allocation hardcodes 0x42c == sizeof(CPodFile) as the element stride (the buffer fed to __vec_new). Replace with sizeof(CPodFile) so it stays correct if the struct grows at 64-bit (\u00a717/\u00a718).",
+      "line": 77,
+      "match": "(CPodFile *) array-new alloc stride 0x42c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar2 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0 (local_50.item_count * 0x42c + 4,\"..\\\\engine\\\\fileio.cpp\",3638)",
+      "type": "alloc_magic_size"
     }
   ],
   "stack_frame": {

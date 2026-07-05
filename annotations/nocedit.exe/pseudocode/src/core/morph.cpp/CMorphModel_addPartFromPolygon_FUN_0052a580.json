@@ -241,6 +241,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Allocation size hardcodes 0x10 == sizeof(SMorphPoint). Replace the magic with sizeof(SMorphPoint) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 30,
+      "match": "(SMorphPoint*) alloc stride 0x10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(SMorphPoint *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->points,this_ptr->num_points << 4,\"..\\\\core\\\\morph.cpp\",137)",
+      "type": "alloc_magic_size"
+    },
+    {
       "description": "Allocation size hardcodes 0x3c == sizeof(SMRGLPrimitiveTriangle). Replace the magic with sizeof(SMRGLPrimitiveTriangle) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
       "line": 33,
       "match": "(SMRGLPrimitiveTriangle*) alloc stride 0x3c",
