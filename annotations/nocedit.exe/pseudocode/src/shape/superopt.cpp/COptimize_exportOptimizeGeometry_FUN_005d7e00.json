@@ -502,6 +502,15 @@
       "severity": "moderate",
       "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar5) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `iVar7` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `iVar7 = iVar7;` self-assign or two-var `tmp = &iVar7->field; iVar7 = tmp;` ping-pong \u2014 plus a constant-index store on `iVar7`). The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 133,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     }
   ],
   "stack_frame": {

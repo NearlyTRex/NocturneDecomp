@@ -34,6 +34,17 @@ GLOBAL_TYPE_OVERRIDES = {
     # constants_560000.h still type-check (a 2-D shape would make the inner
     # element a CVector3i[320] row with no .y member).
     'g_PrecomputedWorldPositions': 'CVector3i[77120]',
+
+    # g_LightBufferPool hands out three 307200-byte scratch slots per light in
+    # CDemonCamera_precomputeLight: corona_visibility_buffers (int*),
+    # corona_depth_buffer (ushort**), corona_lightmap_indices (int*). The
+    # 307200 = 320*240*4 slot sizing assumes 4-byte elements — correct on 32-bit,
+    # but at 64-bit the ushort** depth grid stores 8-byte pointers (320*240*8 =
+    # 614400), so a full-height light's depth buffer overruns its slot into the
+    # adjacent light's lightmap slot at row 120 (silent — one big .bss array, so
+    # ASan can't see it). Widen each slot to 614400 (same element count, 8-byte
+    # element) so the depth grid fits; 32-bit just leaves the upper half unused.
+    'g_LightBufferPool': 'char[24][614400]',
 }
 
 

@@ -1301,9 +1301,9 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar8` (struct-field or pointer-arithmetic advance + constant index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar8` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar8 = pCVar8;` self-assign or two-var `tmp = &pCVar8->field; pCVar8 = tmp;` ping-pong \u2014 plus a constant-index store on `pCVar8`). The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
       "line": 588,
-      "match": "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "do {",

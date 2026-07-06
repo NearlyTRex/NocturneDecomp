@@ -541,6 +541,15 @@
       "severity": "moderate",
       "text": "*(float *)((int)&g_PrecomputedSurfaceNormals[0][0].z + iVar4) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Partial cave copy: `local_60` (CVector3i) receives ONLY field `.z` from `local_84` and is then passed by address to a call, but the `.asm` has a full CVector3i-sized cave-block struct copy. Ghidra truncated a `local_60 = local_84;` struct copy to one field, leaving `local_60`'s other fields uninitialised at runtime. See \u00a720 \u2014 restore the full copy `local_60 = local_84;`.",
+      "line": 59,
+      "match": "local_60.z = local_84.z; (partial struct copy \u2014 expected local_60 = local_84;)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_60.z = local_84.z;",
+      "type": "missing_cave_copy"
     }
   ],
   "stack_frame": {

@@ -11,8 +11,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCa
 
 {
   int iVar1;
-  char (*pacVar2) [307200];
-  char (*pacVar1) [307200];
+  char (*pacVar2) [614400];
+  char (*pacVar1) [614400];
   CVector3i *input_ptr;
   CVector3f *pCVar2;
   int iVar3;
@@ -51,21 +51,21 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCa
   uVar6 = g_LightBufferPoolIndex + 1;
   pacVar2 = g_LightBufferPool + g_LightBufferPoolIndex;
   if (0x18 < uVar6) {
-    pacVar2 = (char (*) [307200])0x0;
+    pacVar2 = (char (*) [614400])0x0;
   }
   g_LightBufferPoolIndex = uVar6;
   light_source->corona_visibility_buffers = (int *)pacVar2;
   uVar5 = g_LightBufferPoolIndex + 1;
   pacVar1 = g_LightBufferPool + uVar6;
   if (0x18 < uVar5) {
-    pacVar1 = (char (*) [307200])0x0;
+    pacVar1 = (char (*) [614400])0x0;
   }
   g_LightBufferPoolIndex = uVar5;
   light_source->corona_depth_buffer = (ushort **)pacVar1;
   g_LightBufferPoolIndex = g_LightBufferPoolIndex + 1;
   pacVar1 = g_LightBufferPool + uVar5;
   if (0x18 < (uint)g_LightBufferPoolIndex) {
-    pacVar1 = (char (*) [307200])0x0;
+    pacVar1 = (char (*) [614400])0x0;
   }
   light_source->corona_lightmap_indices = (int *)pacVar1;
   if (((light_source->corona_visibility_buffers == (int *)0x0) ||

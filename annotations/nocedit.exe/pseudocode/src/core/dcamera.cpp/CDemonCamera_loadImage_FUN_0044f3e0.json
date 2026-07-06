@@ -941,6 +941,33 @@
       "type": "unrolled_strchr"
     },
     {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `iVar16` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `iVar16 = iVar16;` self-assign or two-var `tmp = &iVar16->field; iVar16 = tmp;` ping-pong \u2014 plus a constant-index store on `iVar16`). The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 461,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `iVar16` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `iVar16 = iVar16;` self-assign or two-var `tmp = &iVar16->field; iVar16 = tmp;` ping-pong \u2014 plus a constant-index store on `iVar16`). The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 464,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `iVar16` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `iVar16 = iVar16;` self-assign or two-var `tmp = &iVar16->field; iVar16 = tmp;` ping-pong \u2014 plus a constant-index store on `iVar16`). The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 470,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 0044fa93, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 535,
       "match": "MOVSD.REP",

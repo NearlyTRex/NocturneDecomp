@@ -1581,6 +1581,15 @@
       "type": "shadow_pointer_walk"
     },
     {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `iVar13` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `iVar13 = iVar13;` self-assign or two-var `tmp = &iVar13->field; iVar13 = tmp;` ping-pong \u2014 plus a constant-index store on `iVar13`). The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 557,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    },
+    {
       "description": "Inlined fast inverse sqrt bit-trick. Replace with `fastInvSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_0043e2a0).",
       "line": 185,
       "match": "fVar6 = (float)(g_FastInvSqrtMagic - ((int)(fVar7 * fVar7 + fVar5 * fVar5 + fVar",

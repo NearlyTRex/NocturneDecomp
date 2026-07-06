@@ -5307,6 +5307,54 @@ _PREINC_INDEX_STORE_RE = re.compile(
     r"^\s*(\w+)\s*\[\s*(?:0x[0-9a-fA-F]+|\d+)\s*\]\s*=")
 
 
+# --- Two-variable ping-pong advance form ---------------------------------
+# Instead of the single-variable `pX = (T *)&pX->field; ...; pX = pX;` shape,
+# Watcom/Ghidra sometimes split the pre-increment across a temporary:
+#     pTmp = &(pBase->field)...;   // temp gets the address of a sub-field (stride)
+#     pBase->arr[0]... = value;    // constant-[0] store on the walked pointer
+#     pBase = (T *)pTmp;           // advance pBase to the temp
+# This is the same always-wrong artifact (byte-offset stride baked from the
+# original struct layout — overruns on any layout change, e.g. the 64-bit port),
+# but there is no `pX = pX;` self-assign to key on. Canonical instance:
+# CHero::reset clearing carry_hands[i].carry_actor.
+#
+# Address-of-a-field-within-pBase temp assignment: `pTmp = ...&pBase->...;`
+# group(1) = temp var, group(2) = base (walked) var.
+_PREINC_ADDR_TEMP_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*[^;]*&\s*\(?\s*(\w+)->[^;]*;\s*$")
+
+
+# Plain (optionally cast) copy advance: `pBase = (T *)pTmp;` / `pBase = pTmp;`.
+# group(1) = base (walked) var, group(2) = source (temp) var.
+_PREINC_COPY_ADVANCE_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*(?:\(\s*[\w\s\*]+\)\s*)?(\w+)\s*;\s*$")
+
+
+# Any constant [K] subscript, used to spot nested-field const-index stores like
+# `(pBase->base).carry_hands[0].carry_actor = 0;` that the direct
+# `pX->arr[0]` / `pX[K] =` regexes miss.
+_PREINC_CONST_INDEX_RE = re.compile(r"\[\s*(?:0x[0-9a-fA-F]+|\d+)\s*\]")
+
+
+def _preinc_const_index_store_on(body_lines, var):
+    """True if some body line stores through a constant [K] index on `var`.
+
+    Covers nested-field LHS forms (`(var->base).arr[0].member = v;`) beyond the
+    direct `var->arr[0]` / `var[K] =` shapes. Only the assignment LHS is
+    inspected: the line is split on a standalone `=` (one that is not part of
+    `==`/`!=`/`<=`/`>=`, and not the `>` of a `->`), so comparisons don't match.
+    """
+    for bl in body_lines:
+        parts = re.split(r"(?<![=<>!])=(?!=)", bl, maxsplit=1)
+        if len(parts) < 2:
+            continue
+        lhs = parts[0]
+        if (re.search(r"\b" + re.escape(var) + r"\b", lhs)
+                and _PREINC_CONST_INDEX_RE.search(lhs)):
+            return True
+    return False
+
+
 
 
 def identify_preinc_loop_idiom(decompiled_code):
@@ -5328,6 +5376,13 @@ def identify_preinc_loop_idiom(decompiled_code):
             ...
             pX = pX;                         // self-assignment no-op
         } while (pX != end_marker);
+
+        pA = start;                          // two-variable ping-pong variant
+        do {
+            pTmp = &(pA->field)...;          // temp = address of a sub-field (stride)
+            (pA->base).arr[0].member = value; // constant-index store on pA
+            pA = (T *)pTmp;                  // advance pA to temp (no `pA = pA;`)
+        } while (pTmp != end_marker);
 
     The flat-walker variant is the one behind the mp3 scalefactor skip-row bugs:
     the store offset Ghidra emits already folds in the per-iteration advance, so
@@ -5362,16 +5417,39 @@ def identify_preinc_loop_idiom(decompiled_code):
             if depth == 0:
                 break
         body_text = "\n".join(body_lines)
-        # Must contain all three markers referring to the same variable.
-        advance_match = None
+        # Resolve the walked variable via one of two advance shapes.
+        var = None
+        # (a) Single-variable form: `pX = (T*)&pX->...;` (or `pX = pX + N;`) plus
+        #     a `pX = pX;` self-assign no-op.
         for bl in body_lines:
             m = _PREINC_ADVANCE_RE.match(bl) or _PREINC_ADVANCE_PTRARITH_RE.match(bl)
-            if m:
-                advance_match = m
+            if not m:
+                continue
+            candidate = m.group(1)
+            if any(_PREINC_SELFASSIGN_RE.match(b2)
+                   and _PREINC_SELFASSIGN_RE.match(b2).group(1) == candidate
+                   for b2 in body_lines):
+                var = candidate
                 break
-        if not advance_match:
+        # (b) Two-variable ping-pong form: `pTmp = &pBase->...;` paired with a
+        #     `pBase = (T*)pTmp;` advance. No self-assign to key on.
+        if var is None:
+            for bl in body_lines:
+                tm = _PREINC_ADDR_TEMP_RE.match(bl)
+                if not tm:
+                    continue
+                temp_var, base_var = tm.group(1), tm.group(2)
+                if temp_var == base_var:
+                    continue
+                paired = any(
+                    (cm := _PREINC_COPY_ADVANCE_RE.match(b2))
+                    and cm.group(1) == base_var and cm.group(2) == temp_var
+                    for b2 in body_lines)
+                if paired:
+                    var = base_var
+                    break
+        if var is None:
             continue
-        var = advance_match.group(1)
         has_array0 = any(
             m.group(1) == var
             for m in _PREINC_ARRAY0_RE.finditer(body_text))
@@ -5379,21 +5457,22 @@ def identify_preinc_loop_idiom(decompiled_code):
             _PREINC_INDEX_STORE_RE.match(bl)
             and _PREINC_INDEX_STORE_RE.match(bl).group(1) == var
             for bl in body_lines)
-        has_selfassign = any(
-            _PREINC_SELFASSIGN_RE.match(bl)
-            and _PREINC_SELFASSIGN_RE.match(bl).group(1) == var
-            for bl in body_lines)
-        if not ((has_array0 or has_index_store) and has_selfassign):
+        if not (has_array0 or has_index_store
+                or _preinc_const_index_store_on(body_lines, var)):
             continue
         suspects.append({
             'line': i + 1,
             'type': 'preinc_loop_idiom',
-            'match': "do { var = var(+N|->...); var[K]/arr[0]...; var = var; ...}",
+            'match': "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
             'text': lines[i].strip()[:120],
             'description': (
                 "Ghidra pre-increment-array-walk loop artifact on `{var}` "
-                "(struct-field or pointer-arithmetic advance + constant index + "
-                "self-assign no-op). Always wrong as-decoded; cross-reference "
+                "(per-iteration advance via struct-field/pointer arithmetic — "
+                "single-var `{var} = {var};` self-assign or two-var `tmp = "
+                "&{var}->field; {var} = tmp;` ping-pong — plus a constant-index "
+                "store on `{var}`). The stride/sentinel are baked from the "
+                "original struct layout, so it overruns on any layout change "
+                "(e.g. the 64-bit port). Always wrong as-decoded; cross-reference "
                 ".asm and rewrite as a straightforward for-loop in a .keep "
                 "(watch for the skip-row store-offset bug).").format(
                     var=var),

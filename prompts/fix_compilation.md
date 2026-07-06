@@ -538,14 +538,22 @@ cost_matrix[i][j] = 1e10f;
 
 **Cause:** Watcom emitted array-init/walk loops using compensated offsets (e.g. `ADD EAX, stride; MOV [EAX + (array_base - stride)], value`) or unrolled struct copies. Ghidra mistranslates these into a `do { ... } while(...)` loop with a pre-incremented pointer walked via struct-field pointer arithmetic, a constant `[0]` index on the advanced pointer, and a `pX = pX;` self-assign no-op.
 
-**Symptoms — always all three in the same `do/while` body:**
-- A pre-increment via struct-field arithmetic: `pX = (T *)&(pX->field)...;` or `pX = (T *)((int)&(pX->field) + N);`
-- A constant-index array access on the advanced pointer: `pX->arr[0].member = value;`
-- A self-assignment no-op on the same variable: `pX = pX;`
+**Symptoms — a per-iteration pointer advance + constant-index store on the advanced pointer, in one of two forms:**
+- **Single-variable form** (all three markers on the same `pX` in the `do/while` body):
+  - A pre-increment via struct-field arithmetic: `pX = (T *)&(pX->field)...;` or `pX = (T *)((int)&(pX->field) + N);`
+  - A constant-index array access on the advanced pointer: `pX->arr[0].member = value;`
+  - A self-assignment no-op on the same variable: `pX = pX;`
+- **Two-variable ping-pong form** (no `pX = pX;` — the advance is split across a temp):
+  - A temp gets the *address of a sub-field* within the walked pointer: `pTmp = &(pBase->field)...;` (this is the byte-offset stride)
+  - A constant-index store on the walked pointer, possibly through a nested field: `(pBase->base).arr[0].member = value;`
+  - An advance that copies the temp back: `pBase = (T *)pTmp;`
+  - The `do/while` sentinel compares the temp against a baked address (`pTmp != (T *)(base_field + CONST)`).
+
+Both forms bake the stride and loop bound from the **original 32-bit struct layout**, so they overrun on any layout change — most notably the 64-bit port, where every pointer field widens 4→8 bytes and shifts every offset. `CHero::reset` (clearing `carry_hands[i].carry_actor`), `CTextureCache::ctor` (four parallel `[1024]` pointer arrays), and `CCrater::activate` (`smoke_positions[3]`) are all the two-variable form.
 
 **Canonical examples:**
 ```cpp
-// CPlatform::ctor — compensated-offset array init:
+// CPlatform::ctor — single-variable, compensated-offset array init:
 pCVar6 = this_ptr;
 do {
     pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);
@@ -553,7 +561,7 @@ do {
     pCVar6 = pCVar6;
 } while (pCVar6 != (CPlatform *)((...)->model.model_name + 0x38));
 
-// CDemonCamera::precomputeLight — phantom pre-increment (asm doesn't advance at all):
+// CDemonCamera::precomputeLight — single-variable, phantom pre-increment (asm doesn't advance at all):
 pCVar3 = light_source;
 do {
     pCVar3 = (CDemonLight *)&(pCVar3->base).base.position;
@@ -561,6 +569,15 @@ do {
     pCVar3->right_extent[0] = 0;
     pCVar3 = pCVar3;
 } while (iVar8 < count);
+
+// CHero::reset — two-variable ping-pong (pfVar2 holds the stride, pCVar1 = pfVar2 advances):
+pCVar1 = this_ptr;
+do {
+    pfVar2 = &(pCVar1->base).base.orient_matrix.m[0].z;    // stride = offset of that field
+    (pCVar1->base).carry_hands[0].carry_actor = (CDemonActor *)0x0;
+    pCVar1 = (CHero *)pfVar2;
+} while (pfVar2 != (float *)((this_ptr->base).base.create_event + 0x10));
+// FIXED: for (i = 0; i < 2; i++) (this_ptr->base).carry_hands[i].carry_actor = (CDemonActor *)0x0;
 ```
 
 **Why this is always wrong:** The decompile is never semantically correct as-decoded. It either:

@@ -158,6 +158,15 @@
       "severity": "moderate",
       "text": "(uint)((g_FlatShadingLightLevel >> 0x1f) << 7 < 0) >> 8);",
       "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `iVar4` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `iVar4 = iVar4;` self-assign or two-var `tmp = &iVar4->field; iVar4 = tmp;` ping-pong \u2014 plus a constant-index store on `iVar4`). The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 59,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     }
   ],
   "stack_frame": {

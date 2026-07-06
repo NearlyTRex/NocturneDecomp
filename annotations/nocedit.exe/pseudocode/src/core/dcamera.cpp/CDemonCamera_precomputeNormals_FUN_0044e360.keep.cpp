@@ -46,7 +46,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemon
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                     (this_ptr,local_28 * this_ptr->scale_factor,local_38 * this_ptr->scale_factor,
                      &local_84);
-          local_60.z = local_84.z;
+          local_60 = local_84;
           if ((local_84.z != 0x7fffffff) && (local_88 < local_84.z)) {
             local_88 = local_84.z;
           }

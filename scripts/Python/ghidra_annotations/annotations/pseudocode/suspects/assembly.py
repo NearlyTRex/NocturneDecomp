@@ -533,6 +533,17 @@ def _is_returned_output_buffer(lines, use_idx, var_name, callee_out_arg):
 
 
 
+# Partial cave copy: `A.F = B.F;` — a Watcom struct copy that Ghidra truncated
+# to a single field (same field on both sides, both simple struct-local names).
+# Unlike a fully-dropped copy (which leaves an UNreferenced dead local the
+# primary/secondary passes catch), the surviving field makes the destination
+# look initialized+used, so those passes are blind to it. Canonical:
+# precomputeNormals `local_60.z = local_84.z;` (should be `local_60 = local_84;`)
+# → local_60.x/.y left garbage → every world position wrong → env lighting dead.
+_PARTIAL_FIELD_COPY_RE = re.compile(
+    r"^\s*(\w+)\.(\w+)\s*=\s*(\w+)\.(\w+)\s*;\s*$")
+
+
 def identify_missing_cave_copy(decompiled_code, assembly_code):
     """Detect Watcom post-call struct-memcpy blocks ("cave copies") that
     Ghidra failed to translate, leaving struct-type locals uninitialized.
@@ -755,6 +766,56 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
                     "`{stale} = {out};` copy).").format(stale=stale, out=out),
                 'severity': 'moderate',
             })
+    # Quaternary pass: PARTIAL cave copy (one surviving field). The passes above
+    # need the destination to be UNreferenced / passed-once; when Ghidra keeps a
+    # single field of the copy (`A.F = B.F;`) the destination is both assigned
+    # and used, so they can't see it. Flag `A.F = B.F;` where A is a cave-
+    # eligible struct type (size matches a cave block), A is passed by address to
+    # a call, A has NO OTHER field assignment (only the one truncated field), and
+    # B is a distinct struct that was itself filled by a call (`&B` appears) —
+    # keeping this a struct-copy shape, not a scalar extraction.
+    flagged_lines = {s['line'] for s in suspects}
+    eligible_decl = {v: (dl, t) for dl, t, v in decls}
+    for i, line in enumerate(lines):
+        m = _PARTIAL_FIELD_COPY_RE.match(line)
+        if not m:
+            continue
+        dst, dfield, src, sfield = m.group(1), m.group(2), m.group(3), m.group(4)
+        if dst == src or dfield != sfield or dst not in eligible_decl:
+            continue
+        decl_line, type_name = eligible_decl[dst]
+        if (i + 1) in flagged_lines:
+            continue
+        dst_addr_re = re.compile(r"&\s*" + re.escape(dst) + r"\b")
+        src_addr_re = re.compile(r"&\s*" + re.escape(src) + r"\b")
+        dst_field_write_re = re.compile(r"\b" + re.escape(dst) + r"\.\w+\s*=(?!=)")
+        passed_by_addr = other_field_write = src_filled = False
+        for j, l2 in enumerate(lines):
+            if j == decl_line:
+                continue
+            if dst_addr_re.search(l2):
+                passed_by_addr = True
+            if src_addr_re.search(l2):
+                src_filled = True
+            if j != i and dst_field_write_re.search(l2):
+                other_field_write = True
+        if not (passed_by_addr and src_filled) or other_field_write:
+            continue
+        suspects.append({
+            'line': i + 1,
+            'type': 'missing_cave_copy',
+            'match': "{d}.{f} = {s}.{f}; (partial struct copy — expected "
+                     "{d} = {s};)".format(d=dst, s=src, f=dfield),
+            'text': line.strip()[:120],
+            'description': (
+                "Partial cave copy: `{d}` ({t}) receives ONLY field `.{f}` from "
+                "`{s}` and is then passed by address to a call, but the `.asm` "
+                "has a full {t}-sized cave-block struct copy. Ghidra truncated a "
+                "`{d} = {s};` struct copy to one field, leaving `{d}`'s other "
+                "fields uninitialised at runtime. See §20 — restore the full "
+                "copy `{d} = {s};`.").format(d=dst, s=src, t=type_name, f=dfield),
+            'severity': 'moderate',
+        })
     return suspects
 
 

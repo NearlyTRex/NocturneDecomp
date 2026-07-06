@@ -11,8 +11,8 @@
 // SRGBColorPalette
 extern SRGBColorPalette g_CameraImagePaletteData;
 
-// char[24][307200]
-extern char g_LightBufferPool[24][307200];
+// char[24][614400]
+extern char g_LightBufferPool[24][614400];
 
 // int
 extern int INT_00c199f8;

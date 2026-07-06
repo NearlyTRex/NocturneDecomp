@@ -12,8 +12,7 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_004c4200(CCrater *this_ptr,CVect
 {
   CDemonSet *pCVar1;
   float fVar4;
-  CCrater *pCVar5;
-  CVector3f *pCVar6;
+  int i;
   float local_54;
   float local_50;
   float local_4c;
@@ -46,19 +45,14 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_004c4200(CCrater *this_ptr,CVect
   local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                        (pCVar3,&this_ptr->center_position,0.0);
   (this_ptr->center_position).y = local_14;
-  pCVar5 = this_ptr;
-  do {
-    local_18 = -radius;
+  local_18 = -radius;
+  for (i = 0; i < 3; i = i + 1) {
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(local_18,radius);
-    pCVar5->smoke_positions[0].x = local_14 * (float)0.5 + (this_ptr->center_position).x
-    ;
-    pCVar5->smoke_positions[0].y = (this_ptr->center_position).y;
+    this_ptr->smoke_positions[i].x = local_14 * (float)0.5 + (this_ptr->center_position).x;
+    this_ptr->smoke_positions[i].y = (this_ptr->center_position).y;
     local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(local_18,radius);
-    pCVar6 = &pCVar5->center_position;
-    pCVar5->smoke_positions[0].z = local_14 * (float)0.5 + (this_ptr->center_position).z
-    ;
-    pCVar5 = (CCrater *)pCVar6;
-  } while (pCVar6 != (CVector3f *)&this_ptr->smoke_positions[0].z);
+    this_ptr->smoke_positions[i].z = local_14 * (float)0.5 + (this_ptr->center_position).z;
+  }
   local_48 = (this_ptr->center_position).x + local_18;
   local_44 = (this_ptr->center_position).y;
   local_40 = (this_ptr->center_position).z + local_18;
