@@ -30,8 +30,8 @@ CWater g_CWaterInstance = {};
 // SCollisionInfo[100]
 SCollisionInfo SCollisionInfo_ARRAY_03f8fae8[100] = {};
 
-// SMRGLTextureBasic
-SMRGLTextureBasic g_CurrentTexture = {};
+// SMRGLTextureLod
+SMRGLTextureLod g_CurrentTexture = {};
 
 // UVector3
 UVector3 g_ZeroVector = {};

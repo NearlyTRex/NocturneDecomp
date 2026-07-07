@@ -87,7 +87,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN
       }
       pSVar4 = engine_texture_cpp_getCurrentTexture_FUN_005dd9c0();
       iVar3 = g_CurrentAlphaValue;
-      ppSVar9 = g_RenderBufferPool[iVar1].texture_data;
+      ppSVar9 = (SMRGLTextureBasic **)&g_RenderBufferPool[iVar1].texture_data;
       for (iVar4 = 0x12; iVar4 != 0; iVar4 = iVar4 + -1) {
         ppSVar9 = ppSVar9 + (uint)bVar10 * -2 + 1;
         *ppSVar9 = (SMRGLTextureBasic *)(pSVar4->base).type;

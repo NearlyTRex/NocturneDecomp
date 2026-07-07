@@ -55,7 +55,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN
         }
       }
       pSVar4 = engine_texture_cpp_getCurrentTexture_FUN_005dd9c0();
-      memcpy(pSVar3->texture_data, pSVar4, 0x12 * 4);
+      memcpy(&pSVar3->texture_data, pSVar4, sizeof(SMRGLTextureLod));
       pSVar3->alpha_value = g_CurrentAlphaValue;
       pSVar3->min_z_value = iVar7;
       pSVar3->blend_mode = g_BlendMode;

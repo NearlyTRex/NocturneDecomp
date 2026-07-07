@@ -33,7 +33,7 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(CNetGame *this_
   this_ptr->player_count = iVar1;
   memmove
             (this_ptr->players + player_index,this_ptr->players + player_index + 1,
-             (iVar1 - player_index) * 0x78);
+             (iVar1 - player_index) * sizeof(*this_ptr->players));
   iVar2 = 0;
   if (0 < g_ChatOutCount) {
     do {
@@ -42,7 +42,8 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_00542b00(CNetGame *this_
               this_ptr->player_count - player_index);
       memmove(&g_ChatOutMessages[iVar2].player_timestamps[player_index],
               &g_ChatOutMessages[iVar2].player_timestamps[player_index + 1],
-              (this_ptr->player_count - player_index) * 4);
+              (this_ptr->player_count - player_index) *
+              sizeof(g_ChatOutMessages[iVar2].player_timestamps[0]));
       iVar2 = iVar2 + 1;
     } while (iVar2 < g_ChatOutCount);
   }

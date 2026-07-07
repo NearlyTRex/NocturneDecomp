@@ -90,13 +90,13 @@
     },
     {
       "addr": "00772bc4",
-      "name": "g_RenderBufferPool[0].texture_data[0]",
+      "name": "g_RenderBufferPool[0].texture_data.textures[0].base.type",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00772bc8",
-      "name": "g_RenderBufferPool[0].texture_data[1]",
+      "name": "g_RenderBufferPool[0].texture_data.textures[0].base.count",
       "type": "undefined4",
       "value": null
     },
@@ -272,7 +272,7 @@
       "match": "MOVSD.REP",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "// 0040758f: MOVSD.REP ES:EDI,ESI  ; g_RenderBufferPool[0].texture_data[0] | g_RenderBufferPool[0].texture_data[1]",
+      "text": "// 0040758f: MOVSD.REP ES:EDI,ESI  ; g_RenderBufferPool[0].texture_data.textures[0].base.type | g_RenderBufferPool[0].te",
       "type": "unrolled_memcpy"
     }
   ],

@@ -28,7 +28,8 @@ void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004fea70(CInventory *this_pt
         iVar3 = this_ptr->item_count + -1;
         this_ptr->item_count = iVar3;
         memmove
-                  (this_ptr->items + iVar1,this_ptr->items + iVar1 + 1,(iVar3 - iVar1) * 4);
+                  (this_ptr->items + iVar1,this_ptr->items + iVar1 + 1,
+                   (iVar3 - iVar1) * sizeof(*this_ptr->items));
         if (should_delete_actor == 0) {
           return;
         }

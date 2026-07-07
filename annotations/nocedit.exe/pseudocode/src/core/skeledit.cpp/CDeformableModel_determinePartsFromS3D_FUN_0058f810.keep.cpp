@@ -999,12 +999,14 @@ LAB_00591f48:
             core_main_c_displayErrorAndQuit_FUN_00506f10("out of memory in CDeformableModel::determinePartsFromS3D");
           }
           pSVar37 = local_150;
-          memcpy(local_150,this_ptr->tri_data_ptr[0],this_ptr->tri_count[0] * 0x12);
+          memcpy(local_150,this_ptr->tri_data_ptr[0],
+                 this_ptr->tri_count[0] * sizeof(*this_ptr->tri_data_ptr[0]));
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xf1f;
           shape_memdbg_cpp_free_FUN_005fe659(this_ptr->tri_data_ptr[0]);
           this_ptr->tri_data_ptr[0] = pSVar37;
-          memcpy(local_14c,this_ptr->index_data_ptr[0],this_ptr->tri_count[0] * 4);
+          memcpy(local_14c,this_ptr->index_data_ptr[0],
+                 this_ptr->tri_count[0] * sizeof(*this_ptr->index_data_ptr[0]));
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xf24;
           shape_memdbg_cpp_free_FUN_005fe659(this_ptr->index_data_ptr[0]);

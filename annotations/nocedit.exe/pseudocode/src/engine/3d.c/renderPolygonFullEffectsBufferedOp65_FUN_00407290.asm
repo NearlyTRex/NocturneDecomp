@@ -24,8 +24,8 @@
 ;   SRenderBufferEntry[256] g_RenderBufferPool
 ;   undefined4 g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_z
 ;   undefined4 g_RenderBufferPool[0].vertices[1].projected_vertex.transformed_z
-;   undefined4 g_RenderBufferPool[0].texture_data[0]
-;   undefined4 g_RenderBufferPool[0].texture_data[1]
+;   undefined4 g_RenderBufferPool[0].texture_data.textures[0].base.type
+;   undefined4 g_RenderBufferPool[0].texture_data.textures[0].base.count
 ;   undefined4 g_RenderBufferPool[0].alpha_value
 ;   ... and 7 more
 ;
@@ -172,7 +172,7 @@ section .text
     LEA EDI,[EDI + 0xc4]                ; 00407414
     MOV EDX,dword ptr [ESP]             ; 0040741a
     MOV EAX,[0x006793b4]                ; 0040741d | g_CurrentAlphaValue
-    MOVSD.REP ES:EDI,ESI                ; 00407422 | g_RenderBufferPool[0].texture_data[0] | g_RenderBufferPool[0].texture_data[1]
+    MOVSD.REP ES:EDI,ESI                ; 00407422 | g_RenderBufferPool[0].texture_data.textures[0].base.type | g_RenderBufferPool[0].texture_data.textures[0].base.count
     MOV dword ptr [EDX + 0x10c],EAX     ; 00407424 | g_RenderBufferPool[0].alpha_value
     MOV EAX,[0x02d05298]                ; 0040742a | g_BlendMode
     MOV dword ptr [EDX + 0x110],EAX     ; 0040742f | g_RenderBufferPool[0].blend_mode

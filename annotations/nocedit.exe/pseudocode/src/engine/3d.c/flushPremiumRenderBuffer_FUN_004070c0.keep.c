@@ -46,7 +46,7 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070c0(void)
              (ushort)g_RenderVertexBuffer[iVar3].a ^ 0xffff;
         g_ProcessedVertexIndices[iVar3] = iVar3;
       }
-      engine_texture_cpp_loadTextureAndGetData_FUN_005dd8c0((SMRGLTextureBasic *)pSVar1->texture_data);
+      engine_texture_cpp_loadTextureAndGetData_FUN_005dd8c0(&pSVar1->texture_data.textures[0]);
       g_BlendMode = pSVar1->blend_mode;
       g_CurrentAlphaValue = pSVar1->alpha_value;
       engine_clipper_c_clipAndRasterize_FUN_004371b0(pSVar1->vertex_count,g_ProcessedVertexIndices);

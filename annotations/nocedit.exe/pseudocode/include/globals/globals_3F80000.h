@@ -8,7 +8,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWater.h"
 #include "types/structs/SCollisionInfo.h"
-#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMRGLTextureLod.h"
 #include "types/unions/UVector3.h"
 
 // =============================================================================
@@ -41,8 +41,8 @@ extern CWater g_CWaterInstance;
 // SCollisionInfo[100]
 extern SCollisionInfo SCollisionInfo_ARRAY_03f8fae8[100];
 
-// SMRGLTextureBasic
-extern SMRGLTextureBasic g_CurrentTexture;
+// SMRGLTextureLod
+extern SMRGLTextureLod g_CurrentTexture;
 
 // UVector3
 extern UVector3 g_ZeroVector;

@@ -41,7 +41,7 @@
 ;   SMRGLTextureBasic g_RainDropTexture
 ;   SMRGLTextureBasic g_RainSplashTexture
 ;   SMRGLTextureBasic g_SnowflakeTexture
-;   undefined4 g_RenderBufferPool[194].texture_data[3]
+;   undefined4 g_RenderBufferPool[194].texture_data.textures[0].texture_name[4]
 ;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
@@ -115,11 +115,11 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 005ef203 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x1c],0x80000  ; 005ef205
     MOV EDX,dword ptr [EAX]             ; 005ef20c | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x48],0x780000 ; 005ef20e | g_RenderBufferPool[194].texture_data[3]
+    MOV dword ptr [EDX + 0x48],0x780000 ; 005ef20e | g_RenderBufferPool[194].texture_data.textures[0].texture_name[4]
     MOV EDX,dword ptr [EAX]             ; 005ef215 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x4c],0x80000  ; 005ef217
     MOV EDX,dword ptr [EAX]             ; 005ef21e | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x78],0x780000 ; 005ef220 | g_RenderBufferPool[194].texture_data[3]
+    MOV dword ptr [EDX + 0x78],0x780000 ; 005ef220 | g_RenderBufferPool[194].texture_data.textures[0].texture_name[4]
     MOV EDX,dword ptr [EAX]             ; 005ef227 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x7c],0xf80000 ; 005ef229 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 005ef230 | g_CDemonRendererInstance
@@ -408,11 +408,11 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 005ef633 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x1c],0x80000  ; 005ef635
     MOV EDX,dword ptr [EAX]             ; 005ef63c | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x48],0x780000 ; 005ef63e | g_RenderBufferPool[194].texture_data[3]
+    MOV dword ptr [EDX + 0x48],0x780000 ; 005ef63e | g_RenderBufferPool[194].texture_data.textures[0].texture_name[4]
     MOV EDX,dword ptr [EAX]             ; 005ef645 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x4c],0x80000  ; 005ef647
     MOV EDX,dword ptr [EAX]             ; 005ef64e | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x78],0x780000 ; 005ef650 | g_RenderBufferPool[194].texture_data[3]
+    MOV dword ptr [EDX + 0x78],0x780000 ; 005ef650 | g_RenderBufferPool[194].texture_data.textures[0].texture_name[4]
     MOV EDX,dword ptr [EAX]             ; 005ef657 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x7c],0xf80000 ; 005ef659 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 005ef660 | g_CDemonRendererInstance

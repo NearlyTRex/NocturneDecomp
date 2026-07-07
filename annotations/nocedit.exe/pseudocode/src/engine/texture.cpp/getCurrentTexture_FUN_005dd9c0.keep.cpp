@@ -10,9 +10,9 @@
 SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_005dd9c0(void)
 
 {
-  g_CurrentTexture.base.count = g_CurrentTextureIndex;
-  g_CurrentTexture.base.type = 0xd;
-  strcpy(g_CurrentTexture.texture_name,
+  g_CurrentTexture.textures[0].base.count = g_CurrentTextureIndex;
+  g_CurrentTexture.textures[0].base.type = 0xd;
+  strcpy(g_CurrentTexture.textures[0].texture_name,
          g_TextureCacheInstance->texture_names[g_CurrentTextureIndex]);
-  return &g_CurrentTexture;
+  return &g_CurrentTexture.textures[0];
 }
