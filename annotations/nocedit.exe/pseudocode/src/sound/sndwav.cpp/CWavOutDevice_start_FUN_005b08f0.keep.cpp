@@ -17,7 +17,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_005b08f0(CWavOutDevice *thi
   iVar3 = 0;
   if (0 < g_WaveOutNumBuffers) {
     do {
-      memset(g_WaveOutHeaders[iVar3],0,0x20);
+      memset(g_WaveOutHeaders[iVar3],0,sizeof(*g_WaveOutHeaders[iVar3]));
       g_WaveOutHeaders[iVar3]->lpData = (LPSTR)g_WaveOutBuffers[iVar3];
       g_WaveOutHeaders[iVar3]->dwUser = iVar3;
       g_WaveOutHeaders[iVar3]->dwBufferLength =

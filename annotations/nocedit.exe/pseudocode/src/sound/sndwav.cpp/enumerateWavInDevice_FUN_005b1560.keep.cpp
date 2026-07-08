@@ -14,7 +14,7 @@ int __cdecl sound_sndwav_cpp_enumerateWavInDevice_FUN_005b1560(UINT device_id,SR
   char *pcVar3;
   tagWAVEINCAPSA local_38;
 
-  MVar2 = (*g_waveInGetDevCapsAFunc)(device_id,&local_38,0x30);
+  MVar2 = (*g_waveInGetDevCapsAFunc)(device_id,&local_38,sizeof(local_38));
   if (MVar2 != 0) {
     return 0;
   }

@@ -41,7 +41,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *t
       pvVar4 = (*g_GlobalLockFunc)(pvVar3);
       g_WaveOutBuffers[iVar1] = pvVar4;
       if (pvVar4 == (LPVOID)0x0) goto LAB_005b0bdc;
-      pvVar3 = (*g_GlobalAllocFunc)(0x2002,0x20);
+      pvVar3 = (*g_GlobalAllocFunc)(0x2002,sizeof(wavehdr_tag));
       g_WaveOutHeaderHandles[iVar1] = pvVar3;
       if (pvVar3 == (HGLOBAL)0x0) goto LAB_005b0bdc;
       pvVar4 = (*g_GlobalLockFunc)(g_WaveOutHeaderHandles[iVar1]);

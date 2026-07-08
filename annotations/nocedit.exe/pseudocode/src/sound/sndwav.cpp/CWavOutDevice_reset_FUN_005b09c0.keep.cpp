@@ -25,7 +25,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_reset_FUN_005b09c0(CWavOutDevice *thi
   iVar2 = 0;
   do {
     if (g_WaveOutHeaders[iVar2] != (LPWAVEHDR)0x0) {
-      (*g_waveOutUnprepareHeaderFunc)(g_WaveOutHandle,g_WaveOutHeaders[iVar2],0x20);
+      (*g_waveOutUnprepareHeaderFunc)(g_WaveOutHandle,g_WaveOutHeaders[iVar2],sizeof(*g_WaveOutHeaders[iVar2]));
     }
     iVar2 = iVar2 + 1;
   } while (iVar2 != 8);

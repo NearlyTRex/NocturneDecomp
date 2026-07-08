@@ -20,7 +20,7 @@ int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_005b06c0(int buffer_index)
      (g_WaveOutHeaders[buffer_index] == (LPWAVEHDR)0x0)) {
     return 0;
   }
-  MVar3 = (*g_waveOutUnprepareHeaderFunc)(g_WaveOutHandle,g_WaveOutHeaders[buffer_index],0x20);
+  MVar3 = (*g_waveOutUnprepareHeaderFunc)(g_WaveOutHandle,g_WaveOutHeaders[buffer_index],sizeof(*g_WaveOutHeaders[buffer_index]));
   if (MVar3 != 0) {
     sound_sndmain_cpp_logSoundError_FUN_005adba0("waveOutUnprepareHeader failed!");
     return 0;
@@ -40,12 +40,12 @@ int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_005b06c0(int buffer_index)
              g_WaveOutBufferSize,iVar4 * g_WaveOutChannels);
   g_WaveOutHeaders[buffer_index]->dwBufferLength =
        iVar4 * g_WaveOutBufferSize * g_WaveOutChannels;
-  MVar3 = (*g_waveOutPrepareHeaderFunc)(g_WaveOutHandle,g_WaveOutHeaders[buffer_index],0x20);
+  MVar3 = (*g_waveOutPrepareHeaderFunc)(g_WaveOutHandle,g_WaveOutHeaders[buffer_index],sizeof(*g_WaveOutHeaders[buffer_index]));
   if (MVar3 != 0) {
     sound_sndmain_cpp_logSoundError_FUN_005adba0("waveOutPrepareHeader failed!");
     return 0;
   }
-  MVar3 = (*g_waveOutWriteFunc)(g_WaveOutHandle,g_WaveOutHeaders[buffer_index],0x20);
+  MVar3 = (*g_waveOutWriteFunc)(g_WaveOutHandle,g_WaveOutHeaders[buffer_index],sizeof(*g_WaveOutHeaders[buffer_index]));
   if (MVar3 != 0) {
     sound_sndmain_cpp_logSoundError_FUN_005adba0("waveOutWrite failed!");
     return 0;

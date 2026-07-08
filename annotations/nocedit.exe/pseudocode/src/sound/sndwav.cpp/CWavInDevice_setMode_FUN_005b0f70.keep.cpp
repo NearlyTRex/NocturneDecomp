@@ -26,7 +26,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *thi
   if (iVar2 == 0) {
     return 0;
   }
-  MVar3 = (*g_waveInGetDevCapsAFunc)(g_WaveInDeviceID,(LPWAVEINCAPSA)&waveInCaps,0x30);
+  MVar3 = (*g_waveInGetDevCapsAFunc)(g_WaveInDeviceID,(LPWAVEINCAPSA)&waveInCaps,sizeof(waveInCaps));
   if (MVar3 != 0) {
     return 0;
   }
@@ -88,7 +88,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *thi
         pvVar6 = (*g_GlobalLockFunc)(pvVar5);
         g_WaveInBuffers[iVar7] = pvVar6;
         if (pvVar6 == (LPVOID)0x0) break;
-        pvVar5 = (*g_GlobalAllocFunc)(0x2002,0x20);
+        pvVar5 = (*g_GlobalAllocFunc)(0x2002,sizeof(wavehdr_tag));
         g_WaveInHeaderHandles[iVar7] = pvVar5;
         if (pvVar5 == (HGLOBAL)0x0) break;
         iVar7 = iVar7 + 1;

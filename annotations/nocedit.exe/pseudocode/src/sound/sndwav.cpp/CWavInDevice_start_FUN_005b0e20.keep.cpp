@@ -17,7 +17,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_start_FUN_005b0e20(CWavInDevice *this_
   buffer_index = 0;
   if (0 < g_WaveInNumBuffers) {
     do {
-      memset(g_WaveInHeaders[buffer_index],0,0x20);
+      memset(g_WaveInHeaders[buffer_index],0,sizeof(*g_WaveInHeaders[buffer_index]));
       g_WaveInHeaders[buffer_index]->lpData = (LPSTR)g_WaveInBuffers[buffer_index];
       g_WaveInHeaders[buffer_index]->dwUser = buffer_index;
       g_WaveInHeaders[buffer_index]->dwBufferLength =

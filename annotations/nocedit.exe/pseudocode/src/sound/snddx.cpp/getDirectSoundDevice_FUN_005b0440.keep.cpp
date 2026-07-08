@@ -36,8 +36,8 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_005b0440(U
       if (uVar2 == 0) {
         uVar3 = (*g_DirectSound->vtable->SetCooperativeLevel)(g_DirectSound,g_MainWindowHandle,2);
         if (uVar3 == 0) {
-          memset(&DStack_20,0,0x14);
-          DStack_20.dwSize = 0x14;
+          memset(&DStack_20,0,sizeof(DStack_20));
+          DStack_20.dwSize = sizeof(DStack_20);
           DStack_20.dwFlags = 0x11;
           uVar3 = (*g_DirectSound->vtable->CreateSoundBuffer)
                             (g_DirectSound,&DStack_20,&g_DirectSoundPrimaryBuffer,(LPUNKNOWN)0x0);

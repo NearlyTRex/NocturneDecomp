@@ -16,6 +16,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDem
   char local_dc [200];
   CDemonActor *local_14;
   CDemonActor *pCVar1;
+  uint local_ref_value;
 
   if (current_actor == (CDemonActor *)0x0) {
     current_actor = (CDemonActor *)"(unknown)";
@@ -52,7 +53,8 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDem
   }
   else {
     _ungetc(iVar2,file);
-    iVar1 = _fscanf(file,"%x",(uint *)&local_14);
+    iVar1 = _fscanf(file,"%x",&local_ref_value);
+    local_14 = (CDemonActor *)(uintptr_t)local_ref_value;
     pCVar1 = local_14;
     if (iVar1 == 1) goto LAB_00523a18;
   }

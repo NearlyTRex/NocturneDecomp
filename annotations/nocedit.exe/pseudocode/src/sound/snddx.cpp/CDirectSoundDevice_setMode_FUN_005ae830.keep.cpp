@@ -60,9 +60,9 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
         tStack_34.wBitsPerSample = 0x10;
         tStack_34.nBlockAlign = 2;
         tStack_34.nAvgBytesPerSec = 0xac44;
-        memset(&DStack_5c,0,0x14);
+        memset(&DStack_5c,0,sizeof(DStack_5c));
         DStack_5c.lpwfxFormat = &tStack_34;
-        DStack_5c.dwSize = 0x14;
+        DStack_5c.dwSize = sizeof(DStack_5c);
         DStack_5c.dwFlags = 0x12;
         DStack_5c.dwBufferBytes = 0x400;
         uVar2 = (*g_DirectSound->vtable->CreateSoundBuffer)
@@ -107,10 +107,10 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
         g_StreamSamplesPerBlock = g_StreamSamplesPerBlock + 0xfU & 0xfffffff0;
         g_StreamBlockSizeBytes =
              g_StreamSamplesPerBlock * (g_StreamBitsPerSample / 8) * g_StreamChannelCount;
-        memset(&DStack_70,0,0x14);
+        memset(&DStack_70,0,sizeof(DStack_70));
         DStack_70.lpwfxFormat = &local_48;
         DStack_70.dwBufferBytes = g_StreamBlockSizeBytes * g_StreamBlockCount;
-        DStack_70.dwSize = 0x14;
+        DStack_70.dwSize = sizeof(DStack_70);
         DStack_70.dwFlags = 0;
         if (g_DirectSoundSecondaryBuffer != (IDirectSoundBuffer *)0x0) {
           (*g_DirectSoundSecondaryBuffer->vtable->Release)((IUnknown *)g_DirectSoundSecondaryBuffer)

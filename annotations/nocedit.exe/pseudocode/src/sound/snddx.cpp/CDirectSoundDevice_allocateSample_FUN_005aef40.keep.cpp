@@ -37,10 +37,10 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDire
       local_24.nBlockAlign = (short)iVar2 * local_24.nChannels;
       local_24.nAvgBytesPerSec = sample_rate * (uint)local_24.nBlockAlign;
       local_24.wBitsPerSample = (WORD)bits_per_sample;
-      memset(&local_38,0,0x14);
+      memset(&local_38,0,sizeof(local_38));
       local_38.lpwfxFormat = &local_24;
       local_38.dwBufferBytes = channel_count * sample_count * iVar2;
-      local_38.dwSize = 0x14;
+      local_38.dwSize = sizeof(local_38);
       local_38.dwFlags = 0xb0;
       error_code = (*g_DirectSound->vtable->CreateSoundBuffer)
                              (g_DirectSound,&local_38,g_DirectSoundSampleBuffers + iVar4,

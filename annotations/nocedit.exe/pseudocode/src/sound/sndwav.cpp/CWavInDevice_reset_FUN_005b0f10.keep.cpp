@@ -25,7 +25,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_reset_FUN_005b0f10(CWavInDevice *this_
   iVar2 = 0;
   do {
     if (g_WaveInHeaders[iVar2] != (LPWAVEHDR)0x0) {
-      (*g_waveInUnprepareHeaderFunc)(g_WaveInHandle,g_WaveInHeaders[iVar2],0x20);
+      (*g_waveInUnprepareHeaderFunc)(g_WaveInHandle,g_WaveInHeaders[iVar2],sizeof(*g_WaveInHeaders[iVar2]));
     }
     iVar2 = iVar2 + 1;
   } while (iVar2 != 0x14);

@@ -13,7 +13,7 @@ void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(CEventList 
   int iVar3;
   int iVar2;
   SSfxEntry *dest;
-  char local_170 [336];
+  CSfxSample local_170;
   SSfxEntry *local_18;
   int local_14;
 
@@ -24,11 +24,11 @@ void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(CEventList 
     do {
       dest->playback_position = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(dest->sfx_handle,1);
       if (0.0 <= dest->playback_position) {
-        sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)local_170);
+        sound_sndmain_cpp_CSfxSample_init_FUN_005a8480(&local_170);
         iVar3 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
-                          (dest->sfx_handle,(CSfxSample *)local_170);
+                          (dest->sfx_handle,&local_170);
         if (iVar3 == 0) goto LAB_004b0ebe;
-        strcpy(dest->sound_filename,local_170);
+        strcpy(dest->sound_filename,local_170.sample_info.name);
         dest = dest + 1;
         local_18 = local_18 + 1;
         local_14 = local_14 + 1;

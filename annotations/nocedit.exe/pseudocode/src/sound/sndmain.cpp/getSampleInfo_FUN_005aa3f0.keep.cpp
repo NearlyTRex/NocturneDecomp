@@ -22,7 +22,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
     if (0 < g_SfxSamples[iVar4].sample_info.sample_count) {
       iVar2 = _stricmp(g_SfxSamples[iVar4].sample_info.name,(char *)out_sample);
       if (iVar2 == 0) {
-        memcpy(out_sample,&g_SfxSamples[iVar4],0x150);
+        memcpy(out_sample,&g_SfxSamples[iVar4],offsetof(CSfxSample,taken));
         sound_sndmain_cpp_unlockSound_FUN_005abdc0();
         return 1;
       }

@@ -35,8 +35,8 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID d
     return 1;
   }
   if (local_10 != (LPDIRECTSOUND)0x0) {
-    memset(&DStack_70,0,0x60);
-    DStack_70.dwSize = 0x60;
+    memset(&DStack_70,0,sizeof(DStack_70));
+    DStack_70.dwSize = sizeof(DStack_70);
     error_code = (*local_10->vtable->GetCaps)(local_10,&DStack_70);
     if (error_code != 0) {
       pcVar6 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
