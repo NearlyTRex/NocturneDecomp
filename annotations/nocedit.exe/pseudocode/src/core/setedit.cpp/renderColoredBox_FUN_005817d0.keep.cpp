@@ -46,8 +46,8 @@ void __cdecl core_setedit_cpp_renderColoredBox_FUN_005817d0(CVector3f *corner_a,
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2 / 0x30].projected_vertex,&local_2c);
       this_ptr = g_CDemonRendererPtr2;
-      g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2 / 0x30].u = 0x80000;
-      this_ptr->vertex_buffer_ptr[iVar2 / 0x30].v = 0x80000;
+      g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2 / 0x30].u = 0x8 << 16;
+      this_ptr->vertex_buffer_ptr[iVar2 / 0x30].v = 0x8 << 16;
       this_ptr->vertex_buffer_ptr[iVar2 / 0x30].r = r << 8;
       this_ptr->vertex_buffer_ptr[iVar2 / 0x30].g = g << 8;
       this_ptr->vertex_buffer_ptr[iVar2 / 0x30].b = b << 8;

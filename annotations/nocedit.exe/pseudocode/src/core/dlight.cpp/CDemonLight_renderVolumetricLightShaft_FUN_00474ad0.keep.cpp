@@ -142,12 +142,12 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
             this_ptr_00->vertex_buffer_ptr->u = (0xf8 << 16);
             this_ptr_00->vertex_buffer_ptr->v = (0xf8 << 16);
-            this_ptr_00->vertex_buffer_ptr[1].u = 0x80000;
+            this_ptr_00->vertex_buffer_ptr[1].u = (0x8 << 16);
             this_ptr_00->vertex_buffer_ptr[1].v = (0xf8 << 16);
-            this_ptr_00->vertex_buffer_ptr[2].u = 0x80000;
-            this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
+            this_ptr_00->vertex_buffer_ptr[2].u = (0x8 << 16);
+            this_ptr_00->vertex_buffer_ptr[2].v = (0x8 << 16);
             this_ptr_00->vertex_buffer_ptr[3].u = (0xf8 << 16);
-            this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
+            this_ptr_00->vertex_buffer_ptr[3].v = (0x8 << 16);
             engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                       (this_ptr_00,&local_12c.base);
             iVar4 = iVar4 + 1;

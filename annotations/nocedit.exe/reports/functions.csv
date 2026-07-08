@@ -1476,7 +1476,7 @@ shape_design.c_mergeTrianglesIntoQuad_FUN_00462190,00462190,shape/design.c,216,0
 shape_design.c_mergeAdjacentPolygons_FUN_00462b70,00462b70,shape/design.c,227,0,,227
 shape_design.c_findSharedEdge_FUN_004635b0,004635b0,shape/design.c,58,0,,58
 shape_design.c_comparePolygonIndices_FUN_00463800,00463800,shape/design.c,4,0,,4
-shape_design.c_removeUnusedVertices_FUN_00463830,00463830,shape/design.c,61,0,,61
+shape_design.c_removeUnusedVertices_FUN_00463830,00463830,shape/design.c,61,1,pointer_stride_bytecount,76
 shape_design.c_removeDegenerateTriangles_FUN_00463a20,00463a20,shape/design.c,45,0,,45
 shape_design.c_complexPolygonReduction_FUN_00463b30,00463b30,shape/design.c,325,0,,325
 shape_design.c_detectMouseButtonClick_FUN_00464870,00464870,shape/design.c,12,0,,12
@@ -1688,7 +1688,7 @@ core_dmodel.cpp_CKeyFramedModel_createSinglePart_FUN_0047a3b0,0047a3b0,core/dmod
 core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0,0047a3e0,core/dmodel.cpp,175,0,,175
 core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820,0047a820,core/dmodel.cpp,34,0,,34
 core_dmodel.cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00,0047aa00,core/dmodel.cpp,7,0,,7
-core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30,0047aa30,core/dmodel.cpp,169,0,,169
+core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30,0047aa30,core/dmodel.cpp,169,1,pointer_stride_bytecount,184
 core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0,0047ada0,core/dmodel.cpp,143,0,,143
 core_dmodel.cpp_safeAcos_FUN_0047b170,0047b170,core/dmodel.cpp,20,0,,20
 core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0,0047b1e0,core/dmodel.cpp,336,0,,336
@@ -1877,7 +1877,7 @@ cockpit_drawsurf.cpp_setDashAnimationThreshold_FUN_00488ac0,00488ac0,cockpit/dra
 cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0,00488ad0,cockpit/drawsurf.cpp,94,0,,94
 cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_00488c70,00488c70,cockpit/drawsurf.cpp,6,0,,6
 cockpit_drawsurf.cpp_CDrawSurface_renderPackedBitmap_FUN_00488c90,00488c90,cockpit/drawsurf.cpp,7,0,,7
-cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0,00488cd0,cockpit/drawsurf.cpp,198,0,,198
+cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0,00488cd0,cockpit/drawsurf.cpp,198,1,pointer_stride_bytecount,213
 cockpit_drawsurf.cpp_CDrawSurface_drawClosedPolyline_FUN_00489090,00489090,cockpit/drawsurf.cpp,21,0,,21
 cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120,00489120,cockpit/drawsurf.cpp,102,0,,102
 cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0,004893f0,cockpit/drawsurf.cpp,6,0,,6
@@ -2384,7 +2384,7 @@ core_event.cpp_parseDeathType_FUN_004aa7d0,004aa7d0,core/event.cpp,65,0,,65
 core_event.cpp_parseDamageType_FUN_004aa960,004aa960,core/event.cpp,40,0,,40
 core_event.cpp_CEventList_ctor_FUN_004aaa50,004aaa50,core/event.cpp,6,0,,6
 core_event.cpp_CEventList_reset_FUN_004aaa70,004aaa70,core/event.cpp,11,0,,11
-core_event.cpp_CEventList_process_FUN_004aaac0,004aaac0,core/event.cpp,53,0,,53
+core_event.cpp_CEventList_process_FUN_004aaac0,004aaac0,core/event.cpp,53,1,pointer_stride_bytecount,68
 core_event.cpp_CEventList_executeCommands_FUN_004aabe0,004aabe0,core/event.cpp,7,0,,7
 core_event.cpp_CEventList_executeCommandString_FUN_004aac00,004aac00,core/event.cpp,41,0,,41
 core_event.cpp_CEventList_executeCommand_FUN_004aacc0,004aacc0,core/event.cpp,2138,0,,2138
@@ -2399,8 +2399,8 @@ core_event.cpp_CEventList_evaluateLogicalExpr_FUN_004b0270,004b0270,core/event.c
 core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330,004b0330,core/event.cpp,59,0,,59
 core_event.cpp_CEventList_resetGameFlags_FUN_004b0460,004b0460,core/event.cpp,5,0,,5
 core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004b0470,004b0470,core/event.cpp,58,0,,58
-core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0,004b05a0,core/event.cpp,59,0,,59
-core_event.cpp_CEventList_setCounter_FUN_004b0720,004b0720,core/event.cpp,46,0,,46
+core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0,004b05a0,core/event.cpp,59,1,pointer_stride_bytecount,74
+core_event.cpp_CEventList_setCounter_FUN_004b0720,004b0720,core/event.cpp,46,1,pointer_stride_bytecount,61
 core_event.cpp_CEventList_getCounterValue_FUN_004b0830,004b0830,core/event.cpp,9,0,,9
 core_event.cpp_CEventList_findPersistentEvent_FUN_004b0860,004b0860,core/event.cpp,19,0,,19
 core_event.cpp_CEventList_findGameFlag_FUN_004b08b0,004b08b0,core/event.cpp,19,0,,19
@@ -2923,7 +2923,7 @@ core_game.cpp_CGame_displayMessage_FUN_004d7f20,004d7f20,core/game.cpp,27,0,,27
 core_game.cpp_CGame_clearOverlay_FUN_004d7f80,004d7f80,core/game.cpp,6,0,,6
 core_game.cpp_drawHealthBar_FUN_004d7fa0,004d7fa0,core/game.cpp,20,0,,20
 core_game.cpp_CGame_renderOverlay_FUN_004d8040,004d8040,core/game.cpp,138,0,,138
-core_game.cpp_CGame_updateStatusDisplays_FUN_004d85a0,004d85a0,core/game.cpp,49,0,,49
+core_game.cpp_CGame_updateStatusDisplays_FUN_004d85a0,004d85a0,core/game.cpp,49,2,pointer_stride_bytecount,74
 core_game.cpp_CGame_setFudgeTarget_FUN_004d8730,004d8730,core/game.cpp,6,0,,6
 core_game.cpp_CGame_processFudge_FUN_004d8750,004d8750,core/game.cpp,39,0,,39
 core_game.cpp_drawCreditsLine_FUN_004d8890,004d8890,core/game.cpp,12,0,,12
@@ -3711,10 +3711,10 @@ shape_meshlod.cpp_CLodMesh_free_FUN_00515970,00515970,shape/meshlod.cpp,46,0,,46
 shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0,00515ac0,shape/meshlod.cpp,30,0,,30
 shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0,00515ba0,shape/meshlod.cpp,53,0,,53
 shape_meshlod.cpp_CLodEdge_addAdjacentFace_FUN_00515ca0,00515ca0,shape/meshlod.cpp,16,0,,16
-shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10,00515d10,shape/meshlod.cpp,15,0,,15
+shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10,00515d10,shape/meshlod.cpp,15,1,pointer_stride_bytecount,30
 shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60,00515d60,shape/meshlod.cpp,17,0,,17
 shape_meshlod.cpp_CLodVert_addAdjacentEdge_FUN_00515d90,00515d90,shape/meshlod.cpp,13,0,,13
-shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00,00515e00,shape/meshlod.cpp,15,0,,15
+shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00,00515e00,shape/meshlod.cpp,15,1,pointer_stride_bytecount,30
 shape_meshlod.cpp_CLodVert_findEdge_FUN_00515e50,00515e50,shape/meshlod.cpp,17,0,,17
 shape_meshlod.cpp_CLodFace_findVertexIndex_FUN_00515e90,00515e90,shape/meshlod.cpp,13,0,,13
 shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0,00515ec0,shape/meshlod.cpp,46,0,,46
@@ -3793,7 +3793,7 @@ shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0,0051d2d0,shape/meshlod.cpp,46,0
 shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420,0051d420,shape/meshlod.cpp,22,0,,22
 shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0,0051d4a0,shape/meshlod.cpp,24,0,,24
 shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520,0051d520,shape/meshlod.cpp,143,0,,143
-shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990,0051d990,shape/meshlod.cpp,377,0,,377
+shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990,0051d990,shape/meshlod.cpp,377,3,pointer_stride_bytecount,412
 shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0,0051e6b0,shape/meshlod.cpp,34,0,,34
 shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770,0051e770,shape/meshlod.cpp,128,0,,128
 shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830,0051e830,shape/meshlod.cpp,159,0,,159
@@ -4313,7 +4313,7 @@ core_path.cpp_isPathfindingQueueEmpty_FUN_00546330,00546330,core/path.cpp,4,0,,4
 core_path.cpp_queuePush_FUN_00546350,00546350,core/path.cpp,15,0,,15
 core_path.cpp_queuePop_FUN_005463d0,005463d0,core/path.cpp,18,0,,18
 core_path.cpp_CPathMap_ctor_FUN_00546450,00546450,core/path.cpp,17,0,,17
-core_path.cpp_CPathMap_dtor_FUN_005464d0,005464d0,core/path.cpp,24,0,,24
+core_path.cpp_CPathMap_dtor_FUN_005464d0,005464d0,core/path.cpp,24,1,pointer_stride_bytecount,39
 core_path.cpp_CPathMap_getDirection_FUN_005465b0,005465b0,core/path.cpp,134,0,,134
 core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60,00546a60,core/path.cpp,54,0,,54
 core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0,00546ba0,core/path.cpp,23,0,,23
@@ -4512,7 +4512,7 @@ shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40,00554d40,shape/quantize.cp
 shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70,00554e70,shape/quantize.cpp,48,0,,48
 shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0,00554ff0,shape/quantize.cpp,23,0,,23
 shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090,00555090,shape/quantize.cpp,132,0,,132
-shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500,00555500,shape/quantize.cpp,70,0,,70
+shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500,00555500,shape/quantize.cpp,70,4,pointer_stride_bytecount,115
 shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0,005556f0,shape/quantize.cpp,117,0,,117
 shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40,00555a40,shape/quantize.cpp,195,0,,195
 shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0,00555ff0,shape/quantize.cpp,93,0,,93
@@ -5016,7 +5016,7 @@ core_skeledit.cpp_CDeformableModel_offsetRootVertices_FUN_0058e600,0058e600,core
 core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690,0058e690,core/skeledit.cpp,156,0,,156
 core_skeledit.cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0,0058eaa0,core/skeledit.cpp,86,0,,86
 core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60,0058ec60,core/skeledit.cpp,73,0,,73
-core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0,0058ede0,core/skeledit.cpp,85,0,,85
+core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0,0058ede0,core/skeledit.cpp,85,1,pointer_stride_bytecount,100
 core_skeledit.cpp_CDeformableModel_save_FUN_0058f040,0058f040,core/skeledit.cpp,25,0,,25
 core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120,0058f120,core/skeledit.cpp,187,0,,187
 core_skeledit.cpp_CDeformableModel_initSinglePart_FUN_0058f790,0058f790,core/skeledit.cpp,34,0,,34
@@ -5025,7 +5025,7 @@ core_skeledit.cpp_parseBoneParentToken_FUN_00592520,00592520,core/skeledit.cpp,2
 core_skeledit.cpp_parseTransitionType_FUN_005925c0,005925c0,core/skeledit.cpp,29,0,,29
 core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690,00592690,core/skeledit.cpp,1852,0,,1852
 core_skeledit.cpp_CSkeleton_extractBoneScales_FUN_00595f30,00595f30,core/skeledit.cpp,28,0,,28
-core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0,00595fc0,core/skeledit.cpp,252,0,,252
+core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0,00595fc0,core/skeledit.cpp,252,1,pointer_stride_bytecount,267
 core_skeledit.cpp_drawInfoRow_FUN_00596860,00596860,core/skeledit.cpp,8,0,,8
 core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0,005968b0,core/skeledit.cpp,1076,0,,1076
 core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0,00598ee0,core/skeledit.cpp,12,0,,12
@@ -5072,7 +5072,7 @@ core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_0059c220,0059c220,core/skeleto
 core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240,0059c240,core/skeleton.cpp,26,0,,26
 core_skeleton.cpp_CDeformableModel_getBonePart_FUN_0059c2d0,0059c2d0,core/skeleton.cpp,7,0,,7
 core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0,0059c2f0,core/skeleton.cpp,124,0,,124
-core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0,0059c5e0,core/skeleton.cpp,198,0,,198
+core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0,0059c5e0,core/skeleton.cpp,198,1,pointer_stride_bytecount,213
 core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0,0059cba0,core/skeleton.cpp,86,0,,86
 core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40,0059ce40,core/skeleton.cpp,31,0,,31
 core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0,0059cec0,core/skeleton.cpp,179,0,,179
@@ -5187,7 +5187,7 @@ sound_sndmain.cpp_allocateHwSample_FUN_005a5620,005a5620,sound/sndmain.cpp,30,0,
 sound_sndmain.cpp_calculateDistanceGain_FUN_005a56c0,005a56c0,sound/sndmain.cpp,13,0,,13
 sound_sndmain.cpp_allocMixBuffers_FUN_005a5730,005a5730,sound/sndmain.cpp,59,0,,59
 sound_sndmain.cpp_freeMixBuffers_FUN_005a5900,005a5900,sound/sndmain.cpp,32,0,,32
-sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0,005a59c0,sound/sndmain.cpp,99,0,,99
+sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0,005a59c0,sound/sndmain.cpp,99,1,pointer_stride_bytecount,114
 sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80,005a5b80,sound/sndmain.cpp,63,0,,63
 sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00,005a5d00,sound/sndmain.cpp,34,0,,34
 sound_sndmain.cpp_generateSilence_FUN_005a5db0,005a5db0,sound/sndmain.cpp,21,0,,21
@@ -5210,7 +5210,7 @@ sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0,005a6df0,sound/sndm
 sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00,005a6f00,sound/sndmain.cpp,53,0,,53
 sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070,005a7070,sound/sndmain.cpp,23,0,,23
 sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100,005a7100,sound/sndmain.cpp,146,0,,146
-sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0,005a75e0,sound/sndmain.cpp,319,0,,319
+sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0,005a75e0,sound/sndmain.cpp,319,1,pointer_stride_bytecount,334
 sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60,005a7e60,sound/sndmain.cpp,51,0,,51
 sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0,005a7fe0,sound/sndmain.cpp,52,0,,52
 sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0,005a80e0,sound/sndmain.cpp,17,0,,17
@@ -5295,7 +5295,7 @@ sound_sndmain.cpp_convert16BitAudioSignedness_FUN_005aa7d0,005aa7d0,sound/sndmai
 sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0,005aa7f0,sound/sndmain.cpp,286,0,,286
 sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00,005aae00,sound/sndmain.cpp,19,0,,19
 sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0,005aaeb0,sound/sndmain.cpp,14,0,,14
-sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0,005aaef0,sound/sndmain.cpp,61,0,,61
+sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0,005aaef0,sound/sndmain.cpp,61,1,pointer_stride_bytecount,76
 sound_sndmain.cpp_resetSoundDevice_FUN_005ab130,005ab130,sound/sndmain.cpp,14,0,,14
 sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170,005ab170,sound/sndmain.cpp,26,0,,26
 sound_sndmain.cpp_getAudioFormat_FUN_005ab210,005ab210,sound/sndmain.cpp,14,0,,14
@@ -5345,7 +5345,7 @@ sound_sndmain.cpp_readIni_FUN_005abf20,005abf20,sound/sndmain.cpp,89,0,,89
 sound_sndmain.cpp_writeIni_FUN_005ac220,005ac220,sound/sndmain.cpp,65,0,,65
 sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400,005ac400,sound/sndmain.cpp,174,0,,174
 sound_sndmain.cpp_getChannelLevels_FUN_005ac990,005ac990,sound/sndmain.cpp,48,0,,48
-sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90,005aca90,sound/sndmain.cpp,173,0,,173
+sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90,005aca90,sound/sndmain.cpp,173,1,pointer_stride_bytecount,188
 sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0,005acdb0,sound/sndmain.cpp,36,0,,36
 sound_sndmain.cpp_pollAllStreams_FUN_005ace90,005ace90,sound/sndmain.cpp,22,0,,22
 sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20,005acf20,sound/sndmain.cpp,167,0,,167
@@ -5469,7 +5469,7 @@ core_sound.cpp_STrainNoise_ctor_FUN_005b3e00,005b3e00,core/sound.cpp,4,0,,4
 core_sound.cpp_STrainNoise_dtor_FUN_005b3e10,005b3e10,core/sound.cpp,4,0,,4
 wincore_windll.cpp_clearScreen_FUN_005b3e70,005b3e70,wincore/windll.cpp,30,0,,30
 wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4,005b3ed4,wincore/windll.cpp,25,0,,25
-wincore_windll.cpp_clearScreenRegion_FUN_005b3f37,005b3f37,wincore/windll.cpp,41,0,,41
+wincore_windll.cpp_clearScreenRegion_FUN_005b3f37,005b3f37,wincore/windll.cpp,41,1,pointer_stride_bytecount,56
 wincore_windll.cpp_fillDepthRegion_FUN_005b3fc2,005b3fc2,wincore/windll.cpp,25,0,,25
 wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031,005b4031,wincore/windll.cpp,568,0,,568
 wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823,005b4823,wincore/windll.cpp,585,0,,585
@@ -5792,7 +5792,7 @@ shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60,005d3f60,shape/superopt.
 shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070,005d4070,shape/superopt.cpp,36,0,,36
 shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110,005d4110,shape/superopt.cpp,20,0,,20
 shape_superopt.cpp_CObj_weldVertices_FUN_005d4160,005d4160,shape/superopt.cpp,131,0,,131
-shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0,005d44d0,shape/superopt.cpp,115,0,,115
+shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0,005d44d0,shape/superopt.cpp,115,1,pointer_stride_bytecount,130
 shape_superopt.cpp_CObj_removeInvalidPolygons_FUN_005d46f0,005d46f0,shape/superopt.cpp,38,0,,38
 shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0,005d47b0,shape/superopt.cpp,447,0,,447
 shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800,005d5800,shape/superopt.cpp,149,0,,149
@@ -6224,7 +6224,7 @@ core_waypoint.cpp_CWayPoint_onActorDeleted_FUN_005ec610,005ec610,core/waypoint.c
 core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640,005ec640,core/waypoint.cpp,20,0,,20
 core_waypoint.cpp_CWayPoint_showEditorHelp_FUN_005ec690,005ec690,core/waypoint.cpp,14,0,,14
 core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700,005ec700,core/waypoint.cpp,21,0,,21
-core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0,005ec7b0,core/waypoint.cpp,14,0,,14
+core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0,005ec7b0,core/waypoint.cpp,14,1,pointer_stride_bytecount,29
 core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830,005ec830,core/waypoint.cpp,36,0,,36
 core_waypoint.cpp_CWayPoint_dtor_FUN_005ec8d0,005ec8d0,core/waypoint.cpp,16,0,,16
 wincore_wddvmem.cpp_cleanupDirectDrawSurfaces_FUN_005ec920,005ec920,wincore/wddvmem.cpp,17,0,,17

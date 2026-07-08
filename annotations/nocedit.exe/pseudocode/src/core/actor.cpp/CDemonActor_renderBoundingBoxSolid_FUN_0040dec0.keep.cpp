@@ -32,8 +32,8 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDem
     this_ptr_00->vertex_buffer_ptr[corner_index].g = green << 8;
     this_ptr_00->vertex_buffer_ptr[corner_index].b = blue << 8;
     this_ptr_00->vertex_buffer_ptr[corner_index].a = alpha << 8;
-    this_ptr_00->vertex_buffer_ptr[corner_index].u = 0x800000;
-    this_ptr_00->vertex_buffer_ptr[corner_index].v = 0x800000;
+    this_ptr_00->vertex_buffer_ptr[corner_index].u = 0x80 << 16;
+    this_ptr_00->vertex_buffer_ptr[corner_index].v = 0x80 << 16;
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (this_ptr_00,&SMRGLTextureBasic_0066e158);

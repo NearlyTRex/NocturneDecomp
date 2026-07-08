@@ -112,6 +112,8 @@ SUSPECT_SEVERITY = {
     'struct_field_overrun': 'moderate',
     'alloc_magic_size': 'moderate',
     'mem_magic_size': 'moderate',
+    'raw_address_pointer_store': 'moderate',
+    'pointer_stride_bytecount': 'moderate',
 }
 
 

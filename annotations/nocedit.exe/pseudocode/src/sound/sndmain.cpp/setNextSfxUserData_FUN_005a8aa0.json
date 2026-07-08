@@ -133,6 +133,17 @@
     },
     "pcode_op_count": 152
   },
+  "resolved_suspects": [
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 10,
+      "match": "*(void **)(g_SfxLastSlot * 0x70 + 0x3f624fc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(void **)(g_SfxLastSlot * 0x70 + 0x3f624fc + index * 4) = userdata;",
+      "type": "raw_address_pointer_store"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,

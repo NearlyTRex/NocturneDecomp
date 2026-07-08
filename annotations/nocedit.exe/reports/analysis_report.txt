@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 6454 (100.0%)
-Functions with suspects: 0 (0.0%)
+Clean functions: 6432 (99.7%)
+Functions with suspects: 22 (0.3%)
 
-Total suspect patterns: 0
+Total suspect patterns: 28
 Average suspects per function: 0.00
 
-Virtual files: 214 total, 214 at 100%, 214 at 90%+
+Virtual files: 214 total, 200 at 100%, 214 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -28,6 +28,7 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
+  pointer_stride_bytecount  28
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -81,7 +82,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   00419000: core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000 (4 lines)
   00419f50: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_00419f50 (4 lines)
   0041a040: core_bodypart.cpp_CBodyPart_getCarrier_FUN_0041a040 (4 lines)
-  ... and 6404 more
+  ... and 6382 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -118,3 +119,16 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
+
+  pointer_stride_bytecount (22 functions):
+    00463830: shape_design.c_removeUnusedVertices_FUN_00463830
+    0047aa30: core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
+    00488cd0: cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
+    004aaac0: core_event.cpp_CEventList_process_FUN_004aaac0
+    004b05a0: core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0
+    004b0720: core_event.cpp_CEventList_setCounter_FUN_004b0720
+    004d85a0: core_game.cpp_CGame_updateStatusDisplays_FUN_004d85a0
+    00515d10: shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10
+    00515e00: shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00
+    0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    ... and 12 more

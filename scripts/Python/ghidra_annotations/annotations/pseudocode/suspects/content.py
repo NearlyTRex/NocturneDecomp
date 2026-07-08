@@ -90,6 +90,21 @@ _SUSPECT_PATTERN_DEFS = [
      r'&\s*\w+(?:\s*(?:->|\.)\s*\w+)*\s*\[',
      'primitive_walker_cast',
      'Primitive-pointer cast hiding struct field walk — retype to element type'),
+    # Raw-address pointer-array store: `*(TYPE **)(... 0xLARGEHEX ...)`. Ghidra
+    # lost the symbolic global for a pointer array and baked its base address as
+    # a hex constant, storing/reading elements via `index * 4 + 0xADDR`. Two
+    # bugs in one: (1) the raw address SEGVs in the relinked binary, and often
+    # it is the §15 Watcom 1-based form where the constant is `global_base -
+    # element_size` (so identify_raw_address_constant_suspects, which needs the
+    # literal to land *inside* a global interval, misses it); (2) the `* 4`
+    # stride assumes 32-bit pointers and corrupts the array on the 64-bit build.
+    # Fix in a .keep: use the symbolic global indexed by element, e.g.
+    # `g_ClipperCullingPointers[iVar7 + -1] = ...`. The hex is 6-8 digits to stay
+    # in the binary's data-address range (>= 0x100000) and skip small offsets.
+    (r'\*\s*\(\s*\w+(?:\s+\w+)*\s*\*\s*\*\s*\)\s*\(\s*[^)]*0x[0-9a-fA-F]{6,8}\b',
+     'raw_address_pointer_store',
+     'Pointer-array store through a raw address constant (lost symbolic global; '
+     '§11/§15) — use the symbolic global indexed by element'),
     # _._N_N_ field access patterns (mangled/unknown field names)
     (r'\._\d+_\d+_', 'unknown_field', 'Unknown/mangled field access'),
     # `code *` — Ghidra's placeholder type for unresolved function pointers
@@ -6472,6 +6487,100 @@ def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
 
 
 
+# A local assigned a hardcoded power-of-2 element stride: `n = count * 4;`,
+# `sz = w << 2;`. Captures the LHS name so a later mem*(..., n) can be linked
+# back. RHS must END in the stride op (no trailing arithmetic) so `x = y*4 + 3`
+# — a real offset, not a size — doesn't match.
+_STRIDE_ASSIGN_RE = re.compile(
+    r'^\s*([A-Za-z_]\w*)\s*=\s*[^;=]*?(?:\*\s*(?:4|8)|<<\s*(?:2|3))\s*;\s*$')
+# The size argument of a mem* call, ending in a hardcoded power-of-2 stride.
+_TRAILING_STRIDE_RE = re.compile(r'(?:\*\s*(?:4|8)|<<\s*(?:2|3))\s*$')
+_MEMFN_CALL_RE = re.compile(r'\b(memcpy|memmove|memset)\s*(?=\()')
+
+
+def identify_pointer_stride_bytecount(decompiled_code):
+    """Flag mem* byte counts that hardcode a power-of-2 element stride.
+
+    `memmove(dst, src, count * 4)` (or `<< 2`, and the split form
+    `n = count * 4; memmove(dst, src, n);`) bakes the element size as a
+    literal instead of `count * sizeof(*dst)`. When the copied array holds
+    POINTERS this is a silent 64-bit bug — a `* 4` moves only half of each
+    8-byte pointer, corrupting the pool/queue/list (e.g. CInventory::removeItem
+    items[], CWayPoint::findNearestReachable search queue). For value arrays
+    (int/float/pixel) it is width-stable but still wants `count * sizeof(*dst)`
+    for self-documentation. Either way the fix is the same: replace the literal
+    stride with `sizeof(*dst)`. Detector is map-free so it runs in
+    test_suspects.sh per-keep.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts (type pointer_stride_bytecount).
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+
+    # Pass 1: names assigned a bare power-of-2 stride, for the split form.
+    stride_names = set()
+    for line in decompiled_code.split('\n'):
+        m = _STRIDE_ASSIGN_RE.match(line)
+        if m:
+            stride_names.add(m.group(1))
+
+    # Pass 2: mem* calls whose size (last) argument is a hardcoded stride or a
+    # stride-named local. Extract balanced args so multi-line calls are covered.
+    seen = set()
+    for m in _MEMFN_CALL_RE.finditer(decompiled_code):
+        paren = _extract_balanced_parens(decompiled_code[m.end():])
+        if not paren:
+            continue
+        # Split the inside on top-level commas to isolate the size arg.
+        inner = paren[1:-1]
+        args, depth, start = [], 0, 0
+        for i, ch in enumerate(inner):
+            if ch in '([':
+                depth += 1
+            elif ch in ')]':
+                depth -= 1
+            elif ch == ',' and depth == 0:
+                args.append(inner[start:i])
+                start = i + 1
+        args.append(inner[start:])
+        if len(args) < 3:
+            continue
+        size_arg = args[-1].strip()
+        is_literal = bool(_TRAILING_STRIDE_RE.search(size_arg))
+        is_named = size_arg in stride_names
+        if not (is_literal or is_named):
+            continue
+        line_no = decompiled_code[:m.start()].count('\n') + 1
+        if line_no in seen:
+            continue
+        seen.add(line_no)
+        stripped = decompiled_code.split('\n')[line_no - 1].strip()
+        suspects.append({
+            'line': line_no,
+            'type': 'pointer_stride_bytecount',
+            'match': m.group(1),
+            'text': stripped[:200],
+            'description': (
+                'mem* byte count hardcodes a power-of-2 element stride (%s) '
+                'instead of count * sizeof(*dst). If the array holds pointers '
+                'this corrupts it on the 64-bit build (a *4 moves half of each '
+                '8-byte pointer); for value arrays use sizeof for '
+                'self-documentation.' % (
+                    size_arg if is_literal else '%s = count * N' % size_arg)),
+            'severity': SUSPECT_SEVERITY.get(
+                'pointer_stride_bytecount', 'moderate'),
+        })
+
+    return suspects
+
+
+
+
 def detect_content_suspects(code, func_globals=None, global_interval_map=None,
                             address_interval_map=None, func_calls=None,
                             struct_layout_map=None, struct_size_map=None):
@@ -6549,6 +6658,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_struct_reinterpret_walk(code, struct_size_map))
     found.extend(identify_mem_magic_size(
         code, struct_layout_map, struct_size_map))
+    found.extend(identify_pointer_stride_bytecount(code))
     return found
 
 

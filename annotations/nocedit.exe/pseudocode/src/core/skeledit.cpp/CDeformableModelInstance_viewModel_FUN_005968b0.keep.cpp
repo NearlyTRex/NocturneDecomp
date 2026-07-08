@@ -470,10 +470,10 @@ LAB_0059722b:
       local_3a4.base.surface_normal.A.i = 0;
       local_3a4.vertices[0].vertex_index = 0;
       local_3a4.vertices[3].vertex_index = 3;
-      local_3a4.vertices[0].texture_u = 0x20000;
-      local_3a4.vertices[0].texture_v = 0x20000;
-      local_3a4.vertices[1].texture_v = 0x20000;
-      local_3a4.vertices[3].texture_u = 0x20000;
+      local_3a4.vertices[0].texture_u = 0x2 << 16;
+      local_3a4.vertices[0].texture_v = 0x2 << 16;
+      local_3a4.vertices[1].texture_v = 0x2 << 16;
+      local_3a4.vertices[3].texture_u = 0x2 << 16;
       local_3a4.vertices[1].vertex_index = 1;
       local_3a4.vertices[2].vertex_index = 2;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80

@@ -99,8 +99,8 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
         vert->g = 0;
         vert->b = 0xff00;
         vert->a = 0x8000;
-        vert->u = 0x800000;
-        vert->v = 0x800000;
+        vert->u = 0x80 << 16;
+        vert->v = 0x80 << 16;
       }
       if (0 < this_ptr->stair_count) {
         iVar39 = 0;
@@ -157,8 +157,8 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           vert->g = 0xff00;
           vert->b = 0;
           vert->a = 0x8000;
-          vert->u = 0x800000;
-          vert->v = 0x800000;
+          vert->u = 0x80 << 16;
+          vert->v = 0x80 << 16;
         }
         engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0048bad0
                   (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&local_e4.base.surface_normal);

@@ -32,8 +32,8 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemo
     pCVar1 = g_CDemonRendererPtr1;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&pCVar1->vertex_buffer_ptr[iVar3].projected_vertex,&local_1c);
-    pCVar1->vertex_buffer_ptr[iVar3].u = 0x800000;
-    pCVar1->vertex_buffer_ptr[iVar3].v = 0x800000;
+    pCVar1->vertex_buffer_ptr[iVar3].u = 0x80 << 16;
+    pCVar1->vertex_buffer_ptr[iVar3].v = 0x80 << 16;
     pCVar1->vertex_buffer_ptr[iVar3].a = 0x8000;
     pCVar1->vertex_buffer_ptr[iVar3].r = 0xffff;
     pCVar1->vertex_buffer_ptr[iVar3].g = 0xffff;

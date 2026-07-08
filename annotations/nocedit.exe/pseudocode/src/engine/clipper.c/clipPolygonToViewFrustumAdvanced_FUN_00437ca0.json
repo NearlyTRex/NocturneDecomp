@@ -718,6 +718,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 387,
+      "match": "*(SRenderVertex **)(iVar3 * 4 + 0x825424",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(SRenderVertex **)(iVar3 * 4 + 0x825424) = g_RenderVertexBuffer + iVar7;",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 407,
       "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",

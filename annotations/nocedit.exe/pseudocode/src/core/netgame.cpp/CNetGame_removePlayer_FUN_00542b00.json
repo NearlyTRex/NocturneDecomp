@@ -220,6 +220,15 @@
       "severity": "moderate",
       "text": "dest_00 = (void *)((int)dest_00 + 0x114);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "mem* byte count hardcodes a power-of-2 element stride ((this_ptr->player_count - player_index) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 43,
+      "match": "memmove",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove(dest,local_14,(this_ptr->player_count - player_index) * 4);",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

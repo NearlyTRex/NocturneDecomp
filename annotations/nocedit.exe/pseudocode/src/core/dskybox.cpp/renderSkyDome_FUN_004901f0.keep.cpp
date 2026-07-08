@@ -97,17 +97,17 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_te
   this_ptr->vertex_buffer_ptr[3].a = 0;
   local_b4.vertices[0].vertex_index = 0;
   local_b4.vertices[1].vertex_index = 1;
-  local_b4.vertices[0].texture_u = 0x80000;
-  local_b4.vertices[0].texture_v = 0x80000;
-  local_b4.vertices[1].texture_u = 0x80000;
-  local_b4.vertices[1].texture_v = 0x80000;
+  local_b4.vertices[0].texture_u = 0x8 << 16;
+  local_b4.vertices[0].texture_v = 0x8 << 16;
+  local_b4.vertices[1].texture_u = 0x8 << 16;
+  local_b4.vertices[1].texture_v = 0x8 << 16;
   local_b4.vertices[3].vertex_index = 3;
   local_b4.vertices[2].vertex_index = 2;
   iVar7 = 0;
-  local_b4.vertices[2].texture_u = 0x80000;
-  local_b4.vertices[2].texture_v = 0x80000;
-  local_b4.vertices[3].texture_u = 0x80000;
-  local_b4.vertices[3].texture_v = 0x80000;
+  local_b4.vertices[2].texture_u = 0x8 << 16;
+  local_b4.vertices[2].texture_v = 0x8 << 16;
+  local_b4.vertices[3].texture_u = 0x8 << 16;
+  local_b4.vertices[3].texture_v = 0x8 << 16;
   engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0048aeb0
             (this_ptr,(SMRGLPrimitivePoly *)&local_b4,0x2c5);
   local_24 = 0;

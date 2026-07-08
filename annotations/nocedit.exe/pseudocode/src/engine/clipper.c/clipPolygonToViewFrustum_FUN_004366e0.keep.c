@@ -99,7 +99,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
           iVar10 = *vertex_indices;
           iVar7 = iVar7 + 1;
           vertex_indices = vertex_indices + 1;
-          *(SRenderVertex **)(iVar7 * 4 + 0x825424) = g_RenderVertexBuffer + iVar10;
+          g_ClipperCullingPointers[iVar7 + -1] = g_RenderVertexBuffer + iVar10;
         } while (iVar7 < vertex_count);
       }
       if (g_CullingMode != 0) {

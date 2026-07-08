@@ -187,6 +187,7 @@ def run_detectors(susp, code, struct_layout_map=None,
     found.extend(susp.identify_struct_reinterpret_walk(code, struct_size_map))
     found.extend(susp.identify_mem_magic_size(
         code, struct_layout_map, struct_size_map))
+    found.extend(susp.identify_pointer_stride_bytecount(code))
     return found
 
 

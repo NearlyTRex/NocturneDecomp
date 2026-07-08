@@ -41,7 +41,7 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_005ec32
       do {
         pCVar1 = g_WaypointSearchQueue[0];
         iVar2 = iVar2 + -1;
-        n = iVar2 * 4;
+        n = iVar2 * sizeof(*g_WaypointSearchQueue);
         memmove(g_WaypointSearchQueue,g_WaypointSearchQueue + 1,n);
         if (0 < pCVar1->num_adjacent_waypoints) {
           for (local_c = 0; local_c < pCVar1->num_adjacent_waypoints; local_c = local_c + 1) {
@@ -59,7 +59,7 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_005ec32
                 } while (iVar5 < iVar2);
               }
               if (iVar6 == iVar2) {
-                SVar6 = n + 4;
+                SVar6 = n + sizeof(*g_WaypointSearchQueue);
                 g_WaypointSearchQueue[iVar2] = pCVar2;
                 iVar2 = iVar2 + 1;
                 n = SVar6;

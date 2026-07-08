@@ -76,10 +76,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
     SStack_a8.vertices[1].texture_v = 0;
     SStack_a8.vertices[2].vertex_index = 2;
     SStack_a8.vertices[3].texture_u = 0;
-    SStack_a8.vertices[1].texture_u = 0x1000000;
-    SStack_a8.vertices[2].texture_u = 0x1000000;
-    SStack_a8.vertices[2].texture_v = 0x1000000;
-    SStack_a8.vertices[3].texture_v = 0x1000000;
+    SStack_a8.vertices[1].texture_u = 0x100 << 16;
+    SStack_a8.vertices[2].texture_u = 0x100 << 16;
+    SStack_a8.vertices[2].texture_v = 0x100 << 16;
+    SStack_a8.vertices[3].texture_v = 0x100 << 16;
     SStack_a8.vertices[3].vertex_index = 3;
     fVar1 = (pSVar4->hum_color).g * 256.0f;
     fVar2 = (pSVar4->hum_color).b * 256.0f;

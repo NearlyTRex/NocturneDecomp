@@ -55,8 +55,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_CollisionTexture);
   for (iVar10 = 0; iVar10 < 100; iVar10 = iVar10 + 1) {
-    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar10].u = 0x800000;
-    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar10].v = 0x800000;
+    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar10].u = 0x80 << 16;
+    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar10].v = 0x80 << 16;
   }
   local_e8.base.base.count = 3;
   local_e8.vertices[0] = 0;
