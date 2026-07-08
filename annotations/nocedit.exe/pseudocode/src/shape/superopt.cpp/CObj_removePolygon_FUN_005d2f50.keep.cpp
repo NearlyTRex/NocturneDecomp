@@ -20,8 +20,8 @@ int __cdecl shape_superopt_cpp_CObj_removePolygon_FUN_005d2f50(CObj *this_ptr,ui
   this_ptr->poly_count = uVar1;
   if (index < uVar1) {
     memmove
-              (this_ptr->poly_array + index,this_ptr->poly_array + index + 1,(uVar1 - index) * 0x68)
-    ;
+              (this_ptr->poly_array + index,this_ptr->poly_array + index + 1,
+               (uVar1 - index) * sizeof(*this_ptr->poly_array));
   }
   if (this_ptr->poly_count != 0) {
     pCVar2 = (CPoly *)realloc(this_ptr->poly_array,this_ptr->poly_count * sizeof(CPoly));

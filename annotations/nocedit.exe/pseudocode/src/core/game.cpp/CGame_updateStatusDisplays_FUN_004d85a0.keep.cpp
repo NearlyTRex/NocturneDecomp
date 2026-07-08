@@ -37,13 +37,13 @@ void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004d85a0(CGame *this_p
         if (0.0 < fVar2) break;
         iVar2 = this_ptr->status_display_count + -1;
         this_ptr->status_display_count = iVar2;
-        memmove(local_18,local_1c,(iVar2 - iVar3) * 0x100);
+        memmove(local_18,local_1c,(iVar2 - iVar3) * sizeof(*local_18));
         memmove
                   (this_ptr->status_bar_values + iVar3,this_ptr->status_bar_values + iVar3 + 1,
-                   (this_ptr->status_display_count - iVar3) * 4);
+                   (this_ptr->status_display_count - iVar3) * sizeof(*this_ptr->status_bar_values));
         memmove
                   (this_ptr->status_bar_timers + iVar3,this_ptr->status_bar_timers + iVar3 + 1,
-                   (this_ptr->status_display_count - iVar3) * 4);
+                   (this_ptr->status_display_count - iVar3) * sizeof(*this_ptr->status_bar_timers));
         if (this_ptr->status_display_count <= iVar3) {
           return;
         }

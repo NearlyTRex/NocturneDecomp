@@ -21,7 +21,8 @@ void __cdecl core_event_cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330(C
         (this_ptr->persistent_events).count = iVar4;
         memmove
                   ((this_ptr->persistent_events).names + iVar2,
-                   (&this_ptr->game_flags)[1].names + iVar2 + 1,(iVar4 - iVar2) * 0x20);
+                   (&this_ptr->game_flags)[1].names + iVar2 + 1,
+             (iVar4 - iVar2) * sizeof(*(this_ptr->persistent_events).names));
         return;
       }
     }

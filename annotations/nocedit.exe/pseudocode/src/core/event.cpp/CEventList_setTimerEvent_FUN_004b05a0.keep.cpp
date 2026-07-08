@@ -44,10 +44,10 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *th
       memmove
                 ((this_ptr->timers).names + iVar3,
                  ((STimerBlock *)(&this_ptr->persistent_events + 1))->names + iVar3 + 1,
-                 (iVar4 - iVar3) * 0x20);
+                 (iVar4 - iVar3) * sizeof(*(this_ptr->timers).names));
       memmove
                 ((this_ptr->timers).durations + iVar3,(this_ptr->timers).durations + iVar3 + 1,
-                 ((this_ptr->timers).count - iVar3) * 4);
+                 ((this_ptr->timers).count - iVar3) * sizeof(*(this_ptr->timers).durations));
       return;
     }
     (this_ptr->timers).durations[iVar3] = duration;

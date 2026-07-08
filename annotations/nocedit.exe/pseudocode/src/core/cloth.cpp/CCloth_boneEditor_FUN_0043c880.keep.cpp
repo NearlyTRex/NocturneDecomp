@@ -321,7 +321,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
         iVar2 = this_ptr->collide_bone_count + -1;
         this_ptr->collide_bone_count = iVar2;
         memmove
-                  (local_40 + local_24,local_40 + local_24 + 1,(iVar2 - local_24) * 0xac);
+                  (local_40 + local_24,local_40 + local_24 + 1,(iVar2 - local_24) * sizeof(*local_40));
       }
       iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_X);
       if (iVar2 != 0) {

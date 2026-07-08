@@ -37,7 +37,7 @@ void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(CEventList 
 LAB_004b0ebe:
         iVar2 = (this_ptr->sfx_handles).count + -1;
         (this_ptr->sfx_handles).count = iVar2;
-        memmove(dest,local_18,(iVar2 - local_14) * 0x120);
+        memmove(dest,local_18,(iVar2 - local_14) * sizeof(*dest));
       }
     } while (local_14 < (this_ptr->sfx_handles).count);
   }

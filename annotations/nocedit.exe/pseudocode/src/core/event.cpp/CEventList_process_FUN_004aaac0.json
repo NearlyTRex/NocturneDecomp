@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 68,
+    "complexity_score": 53,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 53,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_stride_bytecount"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 157
   },
   "cross_references": [
@@ -123,6 +121,24 @@
   },
   "resolved_suspects": [
     {
+      "description": "mem* byte count hardcodes an element stride ((iVar6 - iVar1) * 0x20) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 42,
+      "match": "memmove",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove(pacVar8,local_14,(iVar6 - iVar1) * 0x20);",
+      "type": "pointer_stride_bytecount"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (((this_ptr->timers).count - iVar1) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 43,
+      "match": "memmove",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 004aaaee, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 19,
       "match": "MOVSD.REP",
@@ -172,14 +188,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "mem* byte count hardcodes a power-of-2 element stride (((this_ptr->timers).count - iVar1) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 43,
-      "match": "memmove",
-      "severity": "moderate",
-      "text": "memmove",
-      "type": "pointer_stride_bytecount"
-    }
-  ]
+  "suspects": []
 }

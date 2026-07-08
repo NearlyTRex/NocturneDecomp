@@ -6,8 +6,8 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 6432 (99.7%)
-Files at 100%: 200
+Clean functions: 6454 (100.0%)
+Files at 100%: 214
 Files at 90%+: 214
 Files at 50%+: 214
 
@@ -15,6 +15,7 @@ Files at 50%+: 214
 FILES AT 100% (COMPLETE)
 ====================================================================================================
   cockpit/ckptutil.c: 55 functions, 2685 lines
+  cockpit/drawsurf.cpp: 93 functions, 1966 lines
   cockpit/pkbitmap.cpp: 33 functions, 953 lines
   cockpit/pkbmpset.cpp: 21 functions, 423 lines
   core/actor.cpp: 183 functions, 5512 lines
@@ -57,6 +58,7 @@ FILES AT 100% (COMPLETE)
   core/dimage.cpp: 6 functions, 131 lines
   core/dirmat.cpp: 7 functions, 336 lines
   core/dlight.cpp: 34 functions, 2235 lines
+  core/dmodel.cpp: 66 functions, 4574 lines
   core/dog.cpp: 13 functions, 455 lines
   core/door.cpp: 28 functions, 995 lines
   core/dpart.cpp: 15 functions, 711 lines
@@ -71,6 +73,7 @@ FILES AT 100% (COMPLETE)
   core/elephant.cpp: 10 functions, 409 lines
   core/emitter.cpp: 20 functions, 850 lines
   core/enemy.cpp: 19 functions, 495 lines
+  core/event.cpp: 56 functions, 5437 lines
   core/fileman.cpp: 12 functions, 577 lines
   core/filmreel.cpp: 28 functions, 382 lines
   core/fire.cpp: 185 functions, 5789 lines
@@ -82,6 +85,7 @@ FILES AT 100% (COMPLETE)
   core/flies.cpp: 22 functions, 681 lines
   core/frankgen.cpp: 24 functions, 662 lines
   core/gabriela.cpp: 38 functions, 2678 lines
+  core/game.cpp: 66 functions, 6741 lines
   core/gargoyle.cpp: 16 functions, 941 lines
   core/gasmask.cpp: 14 functions, 131 lines
   core/ghoul.cpp: 18 functions, 1799 lines
@@ -128,6 +132,7 @@ FILES AT 100% (COMPLETE)
   core/npc.cpp: 14 functions, 341 lines
   core/particle.cpp: 6 functions, 155 lines
   core/passngr.cpp: 11 functions, 348 lines
+  core/path.cpp: 25 functions, 1391 lines
   core/pendulum.cpp: 20 functions, 668 lines
   core/platfrm.cpp: 30 functions, 1576 lines
   core/podmain.cpp: 4 functions, 64 lines
@@ -143,6 +148,8 @@ FILES AT 100% (COMPLETE)
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
   core/simbox.cpp: 15 functions, 319 lines
+  core/skeledit.cpp: 70 functions, 8749 lines
+  core/skeleton.cpp: 117 functions, 5235 lines
   core/slew.cpp: 4 functions, 125 lines
   core/smiley.cpp: 16 functions, 833 lines
   core/sound.cpp: 37 functions, 1364 lines
@@ -170,6 +177,7 @@ FILES AT 100% (COMPLETE)
   core/vessel.cpp: 20 functions, 574 lines
   core/water.cpp: 8 functions, 326 lines
   core/wateract.cpp: 23 functions, 769 lines
+  core/waypoint.cpp: 19 functions, 519 lines
   core/weapon.cpp: 27 functions, 449 lines
   core/weather.cpp: 10 functions, 555 lines
   core/werewolf.cpp: 21 functions, 1397 lines
@@ -200,91 +208,33 @@ FILES AT 100% (COMPLETE)
   engine/texture.cpp: 22 functions, 654 lines
   engine/winfont.cpp: 9 functions, 330 lines
   shape/cramtex.cpp: 21 functions, 2223 lines
+  shape/design.c: 163 functions, 11811 lines
   shape/dsemodel.cpp: 10 functions, 329 lines
   shape/edittool.cpp: 151 functions, 6425 lines
   shape/memdbg.cpp: 26 functions, 605 lines
+  shape/meshlod.cpp: 124 functions, 6913 lines
   shape/multicrm.cpp: 6 functions, 115 lines
+  shape/quantize.cpp: 33 functions, 1465 lines
   shape/spotview.cpp: 6 functions, 215 lines
+  shape/superopt.cpp: 186 functions, 10000 lines
   sound/mp3.cpp: 57 functions, 4680 lines
   sound/snddx.cpp: 32 functions, 1433 lines
+  sound/sndmain.cpp: 193 functions, 6577 lines
   sound/sndwav.cpp: 35 functions, 765 lines
   support/codec.cpp: 40 functions, 821 lines
   support/newmsg.cpp: 4 functions, 210 lines
   support/trisock.cpp: 32 functions, 355 lines
   wincore/wddvmem.cpp: 28 functions, 1016 lines
+  wincore/windll.cpp: 72 functions, 3544 lines
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 200 files
+Total: 214 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   99.5% | shape/superopt.cpp
-         185/186 clean, 1 remaining
-           - shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0 (115 lines) [pointer_stride_bytecount]
-
-   99.4% | shape/design.c
-         162/163 clean, 1 remaining
-           - shape_design.c_removeUnusedVertices_FUN_00463830 (61 lines) [pointer_stride_bytecount]
-
-   99.1% | core/skeleton.cpp
-         116/117 clean, 1 remaining
-           - core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (198 lines) [pointer_stride_bytecount]
-
-   98.9% | cockpit/drawsurf.cpp
-         92/93 clean, 1 remaining
-           - cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0 (198 lines) [pointer_stride_bytecount]
-
-   98.6% | wincore/windll.cpp
-         71/72 clean, 1 remaining
-           - wincore_windll.cpp_clearScreenRegion_FUN_005b3f37 (41 lines) [pointer_stride_bytecount]
-
-   98.5% | core/dmodel.cpp
-         65/66 clean, 1 remaining
-           - core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (169 lines) [pointer_stride_bytecount]
-
-   98.5% | core/game.cpp
-         65/66 clean, 1 remaining
-           - core_game.cpp_CGame_updateStatusDisplays_FUN_004d85a0 (49 lines) [pointer_stride_bytecount]
-
-   97.9% | sound/sndmain.cpp
-         189/193 clean, 4 remaining
-           - sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0 (99 lines) [pointer_stride_bytecount]
-           - sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (319 lines) [pointer_stride_bytecount]
-           - sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 (61 lines) [pointer_stride_bytecount]
-           - sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (173 lines) [pointer_stride_bytecount]
-
-   97.6% | shape/meshlod.cpp
-         121/124 clean, 3 remaining
-           - shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10 (15 lines) [pointer_stride_bytecount]
-           - shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00 (15 lines) [pointer_stride_bytecount]
-           - shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (377 lines) [pointer_stride_bytecount]
-
-   97.1% | core/skeledit.cpp
-         68/70 clean, 2 remaining
-           - core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (85 lines) [pointer_stride_bytecount]
-           - core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (252 lines) [pointer_stride_bytecount]
-
-   97.0% | shape/quantize.cpp
-         32/33 clean, 1 remaining
-           - shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500 (70 lines) [pointer_stride_bytecount]
-
-   96.0% | core/path.cpp
-         24/25 clean, 1 remaining
-           - core_path.cpp_CPathMap_dtor_FUN_005464d0 (24 lines) [pointer_stride_bytecount]
-
-   94.7% | core/waypoint.cpp
-         18/19 clean, 1 remaining
-           - core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0 (14 lines) [pointer_stride_bytecount]
-
-   94.6% | core/event.cpp
-         53/56 clean, 3 remaining
-           - core_event.cpp_CEventList_process_FUN_004aaac0 (53 lines) [pointer_stride_bytecount]
-           - core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0 (59 lines) [pointer_stride_bytecount]
-           - core_event.cpp_CEventList_setCounter_FUN_004b0720 (46 lines) [pointer_stride_bytecount]
-
-Total: 14 files
+Total: 0 files
 
 ====================================================================================================
 FILES AT 50-89%

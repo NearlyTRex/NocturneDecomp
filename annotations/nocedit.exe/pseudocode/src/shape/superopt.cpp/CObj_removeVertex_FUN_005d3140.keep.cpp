@@ -23,7 +23,7 @@ int __cdecl shape_superopt_cpp_CObj_removeVertex_FUN_005d3140(CObj *this_ptr,uin
   if (index < uVar5) {
     memmove
               (this_ptr->vertex_data + index,this_ptr->vertex_data + index + 1,
-               (uVar5 - index) * 0x38);
+               (uVar5 - index) * sizeof(*this_ptr->vertex_data));
   }
   if (this_ptr->vertex_count != 0) {
     pCVar3 = (CVert *)realloc(this_ptr->vertex_data,this_ptr->vertex_count * sizeof(CVert));

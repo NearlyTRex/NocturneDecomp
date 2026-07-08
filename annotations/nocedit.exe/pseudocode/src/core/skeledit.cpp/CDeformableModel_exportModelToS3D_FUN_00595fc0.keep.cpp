@@ -58,7 +58,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   local_84 = 0;
   if (0 < this_ptr->num_parts) {
     do {
-      memset(dest,0,this_ptr->vertex_count[lod_level] << 2);
+      memset(dest,0,this_ptr->vertex_count[lod_level] * sizeof(*dest));
       local_44 = local_3c;
       local_30 = 0;
       if (0 < this_ptr->parts[local_84].tri_counts[lod_level]) {

@@ -99,7 +99,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
         iVar9 = iVar9 + 1;
       } while (iVar9 < this_ptr->fire_count);
     }
-    memset(this_ptr->normals,0,this_ptr->vertex_count * 0xc);
+    memset(this_ptr->normals,0,this_ptr->vertex_count * sizeof(*this_ptr->normals));
     local_20 = 0;
     if (0 < this_ptr->tri_count) {
       do {

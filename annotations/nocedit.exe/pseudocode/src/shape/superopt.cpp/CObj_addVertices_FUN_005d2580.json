@@ -122,6 +122,15 @@
       "severity": "moderate",
       "text": "(CVert *)realloc (this_ptr->vertex_data,(this_ptr->vertex_count + add_count) * 0x38)",
       "type": "alloc_magic_size"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (add_count * 0x38) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 11,
+      "match": "memset",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

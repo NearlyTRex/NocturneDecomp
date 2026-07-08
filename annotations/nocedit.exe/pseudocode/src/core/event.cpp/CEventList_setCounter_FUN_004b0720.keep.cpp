@@ -34,10 +34,10 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_
       memmove
                 ((this_ptr->counters).names + iVar2,
                  ((SCounterBlock *)(&this_ptr->timers + 1))->names + iVar2 + 1,
-                 (iVar3 - iVar2) * 0x20);
+                 (iVar3 - iVar2) * sizeof(*(this_ptr->counters).names));
       memmove
                 ((this_ptr->counters).values + iVar2,(this_ptr->counters).values + iVar2 + 1,
-                 ((this_ptr->counters).count - iVar2) * 4);
+                 ((this_ptr->counters).count - iVar2) * sizeof(*(this_ptr->counters).values));
       return;
     }
     (this_ptr->counters).values[iVar2] = value;

@@ -39,7 +39,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bd
           iVar7 = this_ptr->poly_count + -1;
           this_ptr->poly_count = iVar7;
           memmove(this_ptr->poly_vert_list + local_18,this_ptr->poly_vert_list + (local_18 + 1),
-                  (iVar7 - local_18) * 0x48);
+                  (iVar7 - local_18) * sizeof(*this_ptr->poly_vert_list));
           this_ptr->part_list[local_34].poly_count = this_ptr->part_list[local_34].poly_count + -1;
         }
         else {

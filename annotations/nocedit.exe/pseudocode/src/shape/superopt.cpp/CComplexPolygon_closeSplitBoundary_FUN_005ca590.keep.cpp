@@ -232,7 +232,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590(C
             uVar3 = *puVar16;
             uVar2 = uVar3 + 1;
             memmove
-                      (edges + uVar3 + 2,edges + uVar2,(*edge_count_ptr - uVar2) * 0x60);
+                      (edges + uVar3 + 2,edges + uVar2,(*edge_count_ptr - uVar2) * sizeof(*edges));
             puVar14 = local_1c;
             do {
               if (uVar2 <= *puVar14) {

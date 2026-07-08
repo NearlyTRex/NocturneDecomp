@@ -25,10 +25,10 @@ void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr,in
   }
   src = this_ptr->conditions + index;
   memmove
-            (this_ptr->conditions + index + 1,src,(this_ptr->list_size - index) * 100);
+            (this_ptr->conditions + index + 1,src,(this_ptr->list_size - index) * sizeof(*this_ptr->conditions));
   src_00 = this_ptr->events + index;
   memmove
-            (this_ptr->events + index + 1,src_00,(this_ptr->list_size - index) * 100);
+            (this_ptr->events + index + 1,src_00,(this_ptr->list_size - index) * sizeof(*this_ptr->events));
   this_ptr->list_size = this_ptr->list_size + 1;
   strcpy(*src,condition);
   strcpy(*src_00,event);

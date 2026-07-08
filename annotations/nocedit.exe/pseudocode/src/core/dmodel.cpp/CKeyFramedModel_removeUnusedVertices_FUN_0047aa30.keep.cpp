@@ -40,7 +40,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(C
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("CKeyFramedModel::removeUnusedVertices out of memory for auxArray, vertexCount = %d",this_ptr->vertex_count);
     }
-    memset(dest,0,this_ptr->vertex_count << 2);
+    memset(dest,0,this_ptr->vertex_count * sizeof(*dest));
     iVar6 = 0;
     if (0 < this_ptr->poly_count) {
       do {

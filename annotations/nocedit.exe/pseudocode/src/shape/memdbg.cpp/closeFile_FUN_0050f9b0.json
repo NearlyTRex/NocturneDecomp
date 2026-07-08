@@ -1490,6 +1490,15 @@
       "severity": "moderate",
       "text": "iVar1 + 0x2f0db68,",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((g_OpenFileCount - iVar2) * 0x328) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 44,
+      "match": "memmove",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

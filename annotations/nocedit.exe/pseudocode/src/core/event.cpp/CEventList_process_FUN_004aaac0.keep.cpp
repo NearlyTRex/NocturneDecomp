@@ -34,10 +34,10 @@ void __cdecl core_event_cpp_CEventList_process_FUN_004aaac0(CEventList *this_ptr
       if (fVar2 <= 0.0) {
         iVar6 = (this_ptr->timers).count + -1;
         (this_ptr->timers).count = iVar6;
-        memmove(pacVar8,local_14,(iVar6 - iVar1) * 0x20);
+        memmove(pacVar8,local_14,(iVar6 - iVar1) * sizeof(*pacVar8));
         memmove
                   ((this_ptr->timers).durations + iVar1,(this_ptr->timers).durations + iVar1 + 1,
-                   ((this_ptr->timers).count - iVar1) * 4);
+                   ((this_ptr->timers).count - iVar1) * sizeof(*(this_ptr->timers).durations));
       }
       else {
         pacVar8 = pacVar8 + 1;

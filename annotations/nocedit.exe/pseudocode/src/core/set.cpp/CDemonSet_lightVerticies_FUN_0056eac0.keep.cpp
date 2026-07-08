@@ -148,7 +148,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     pCVar23 = pCVar23 + 1;
                   } while (iVar24 < tri_count);
                 }
-                memset(g_VertexNormalArray,0,vertex_count * 0xc);
+                memset(g_VertexNormalArray,0,vertex_count * sizeof(*g_VertexNormalArray));
                 iVar24 = 0;
                 if (0 < tri_count) {
                   pCVar23 = g_FaceNormalArray;
@@ -206,7 +206,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     iVar24 = iVar24 + 1;
                   } while (iVar24 < tri_count);
                 }
-                memset(g_VertexNormalArray,0,vertex_count * 0xc);
+                memset(g_VertexNormalArray,0,vertex_count * sizeof(*g_VertexNormalArray));
                 iVar24 = 0;
                 if (0 < tri_count) {
                   pvVar14 = (SMRGLPrimitiveTriangle *)face_data;

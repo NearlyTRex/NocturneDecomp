@@ -939,6 +939,15 @@
       "type": "mem_magic_size"
     },
     {
+      "description": "mem* byte count hardcodes an element stride ((iVar6 - iVar5) * 0x1898) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 437,
+      "match": "memmove",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove(dest,pCVar9,(iVar6 - iVar5) * 0x1898);",
+      "type": "pointer_stride_bytecount"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 00579d7f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 1393,
       "match": "MOVSD.REP",

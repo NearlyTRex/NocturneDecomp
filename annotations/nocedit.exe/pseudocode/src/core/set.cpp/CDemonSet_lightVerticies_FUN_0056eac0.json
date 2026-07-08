@@ -1624,6 +1624,24 @@
       "severity": "moderate",
       "text": "fVar5 = (float)(g_FastInvSqrtMagic - ((int)(pCVar22->z * pCVar22->z + pCVar22->x * pCVar22->x + pCVar22->y * pCVar22->y)",
       "type": "fast_inv_sqrt_inline"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (vertex_count * 0xc) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 196,
+      "match": "memset",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(g_VertexNormalArray,0,vertex_count * 0xc);",
+      "type": "pointer_stride_bytecount"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (vertex_count * 0xc) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 256,
+      "match": "memset",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(g_VertexNormalArray,0,vertex_count * 0xc);",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

@@ -153,7 +153,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurfac
                   iVar10 = iVar10 + -1;
                   memmove
                             (&aiStack_d8[iVar11],
-                             &aiStack_d8[iVar11 + 1],(iVar10 - iVar9) * 4);
+                             &aiStack_d8[iVar11 + 1],(iVar10 - iVar9) * sizeof(*aiStack_d8));
                   iVar13 = iVar11;
                 }
                 iVar11 = iVar13;

@@ -160,6 +160,15 @@
       "severity": "moderate",
       "text": "*(int *)((int)&dest->playback_position + 4) = iStack_1c;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar2 - local_14) * 0x120) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 53,
+      "match": "memmove",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove(dest,local_18,(iVar2 - local_14) * 0x120);",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

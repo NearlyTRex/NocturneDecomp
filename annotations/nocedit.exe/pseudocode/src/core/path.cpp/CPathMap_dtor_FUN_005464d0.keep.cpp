@@ -18,7 +18,7 @@ CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_005464d0(CPathMap *this_ptr,u
       if (this_ptr == g_PathMapList[iVar3]) {
         g_PathMapCount = g_PathMapCount + -1;
         memmove(g_PathMapList + iVar3,g_PathMapList + iVar3 + 1,
-                (g_PathMapCount - iVar3) * 4);
+                (g_PathMapCount - iVar3) * sizeof(*g_PathMapList));
         g_PathMapList[g_PathMapCount] = (CPathMap *)0x0;
         return this_ptr;
       }

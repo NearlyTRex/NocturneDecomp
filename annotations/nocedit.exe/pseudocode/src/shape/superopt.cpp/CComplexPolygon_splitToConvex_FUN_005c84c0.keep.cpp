@@ -98,11 +98,11 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_splitToConvex_FUN_005c84c0(CCompl
           return 0;
         }
         if (local_18 == 0) {
-          memcpy(this_ptr->expanded_edges,local_24,local_14 * 0x60);
+          memcpy(this_ptr->expanded_edges,local_24,local_14 * sizeof(*this_ptr->expanded_edges));
           this_ptr->expanded_edge_count = local_14;
         }
         else {
-          memcpy(this_ptr->expanded_edges,local_20,local_18 * 0x60);
+          memcpy(this_ptr->expanded_edges,local_20,local_18 * sizeof(*this_ptr->expanded_edges));
           this_ptr->expanded_edge_count = local_18;
         }
       }
@@ -142,7 +142,7 @@ LAB_005c8a6e:
             return 0;
           }
           if ((local_28 == 0) || (local_2c == 0)) goto LAB_005c8a2a;
-          memcpy(this_ptr->expanded_edges,local_20,local_28 * 0x60);
+          memcpy(this_ptr->expanded_edges,local_20,local_28 * sizeof(*this_ptr->expanded_edges));
           this_ptr->expanded_edge_count = local_28;
           iVar6 = shape_superopt_cpp_CComplexPolygon_splitToConvex_FUN_005c84c0(this_ptr);
           if (iVar6 == 0) {
@@ -150,7 +150,7 @@ LAB_005c8a6e:
             shape_memdbg_cpp_free_FUN_005fe659(local_24);
             return 0;
           }
-          memcpy(this_ptr->expanded_edges,local_24,local_2c * 0x60);
+          memcpy(this_ptr->expanded_edges,local_24,local_2c * sizeof(*this_ptr->expanded_edges));
           this_ptr->expanded_edge_count = local_2c;
           iVar6 = shape_superopt_cpp_CComplexPolygon_splitToConvex_FUN_005c84c0(this_ptr);
           if (iVar6 != 0) {

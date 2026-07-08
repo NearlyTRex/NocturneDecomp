@@ -196,7 +196,7 @@
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "mem* byte count hardcodes a power-of-2 element stride ((iVar3 - iVar1) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "description": "mem* byte count hardcodes an element stride ((iVar3 - iVar1) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 24,
       "match": "memmove",
       "resolution_source": "keep",

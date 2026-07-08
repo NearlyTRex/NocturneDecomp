@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 705,
-    "complexity_score": 334,
+    "complexity_score": 319,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 319,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_stride_bytecount"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1024
   },
   "cross_references": [
@@ -383,6 +381,15 @@
       "severity": "moderate",
       "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (mix_buffer.num_output_samples << 2) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 104,
+      "match": "memset",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {
@@ -621,14 +628,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "mem* byte count hardcodes a power-of-2 element stride (mix_buffer.num_output_samples << 2) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 104,
-      "match": "memset",
-      "severity": "moderate",
-      "text": "memset",
-      "type": "pointer_stride_bytecount"
-    }
-  ]
+  "suspects": []
 }

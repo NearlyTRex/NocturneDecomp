@@ -368,7 +368,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
       iVar7 = this_ptr->room_count + -1;
       this_ptr->room_count = iVar7;
       memmove
-                (local_20 + iVar5,local_20 + iVar5 + 1,(iVar7 - iVar5) * 0x44);
+                (local_20 + iVar5,local_20 + iVar5 + 1,(iVar7 - iVar5) * sizeof(*local_20));
       if (this_ptr->room_count <= iVar5) {
         local_1c = 0;
       }

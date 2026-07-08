@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 490,
-    "complexity_score": 213,
+    "complexity_score": 198,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 198,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_stride_bytecount"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 688
   },
   "cross_references": [
@@ -400,6 +398,15 @@
       "severity": "moderate",
       "text": "local_30 = local_30 + *(int *)(iVar12 + 0x7178);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (this_ptr->vertex_count[lod_index] << 2) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 61,
+      "match": "memset",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(g_VertexRemapTable,0,this_ptr->vertex_count[lod_index] << 2);",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {
@@ -509,14 +516,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "mem* byte count hardcodes a power-of-2 element stride (this_ptr->vertex_count[lod_index] << 2) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 61,
-      "match": "memset",
-      "severity": "moderate",
-      "text": "memset(g_VertexRemapTable,0,this_ptr->vertex_count[lod_index] << 2);",
-      "type": "pointer_stride_bytecount"
-    }
-  ]
+  "suspects": []
 }

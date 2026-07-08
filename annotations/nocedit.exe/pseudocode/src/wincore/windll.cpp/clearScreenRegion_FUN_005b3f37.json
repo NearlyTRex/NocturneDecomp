@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 56,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 41,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_stride_bytecount"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 104
   },
   "cross_references": [],
@@ -175,15 +173,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "mem* byte count hardcodes a power-of-2 element stride (iVar1 * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "introduced_by": "keep",
-      "line": 29,
-      "match": "memset",
-      "severity": "moderate",
-      "text": "memset(puVar4 + g_ClipLeft * 3, 0, iVar1 * 4);",
-      "type": "pointer_stride_bytecount"
-    }
-  ]
+  "suspects": []
 }

@@ -81,7 +81,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
           saved_channel_buffers[iVar16] = mix_buffer.channel_buffers[iVar16];
           mix_buffer.channel_buffers[iVar16] = g_ChannelTertiaryBuffers[iVar16];
           memset
-                    (mix_buffer.channel_buffers[iVar16],0,mix_buffer.num_output_samples << 2);
+                    (mix_buffer.channel_buffers[iVar16],0,
+                     mix_buffer.num_output_samples * sizeof(*mix_buffer.channel_buffers[iVar16]));
         }
         iVar16 = iVar16 + 1;
       } while (iVar16 < mix_buffer.num_channels);

@@ -27,7 +27,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
       g_CurrentLineNumber = 753;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CKeyFramedModel::calcNormals() - vertexNormalList not allocated!");
     }
-    memset(this_ptr->vertex_normal_list,0,this_ptr->vertex_count * 0xc);
+    memset(this_ptr->vertex_normal_list,0,this_ptr->vertex_count * sizeof(*this_ptr->vertex_normal_list));
     local_14 = 0;
     if (0 < this_ptr->poly_count) {
       do {

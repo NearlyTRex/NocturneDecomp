@@ -33,7 +33,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280(
       } while (pSVar2 < edges + edge_count);
     }
     if (iVar5 == edge_count) {
-      memcpy(edges,sorted,edge_count * 0x60);
+      memcpy(edges,sorted,edge_count * sizeof(*edges));
       shape_memdbg_cpp_free_FUN_005fe659(sorted);
       return 1;
     }

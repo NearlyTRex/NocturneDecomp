@@ -54,10 +54,10 @@ LAB_0058ee5a:
                   this_ptr->tri_count[local_50] = iVar4;
                   memmove(&this_ptr->tri_data_ptr[local_50][local_30],
                           &this_ptr->tri_data_ptr[local_50][local_30 + 1],
-                          (iVar4 - local_30) * 0x12);
+                          (iVar4 - local_30) * sizeof(*this_ptr->tri_data_ptr[local_50]));
                   memmove(&this_ptr->index_data_ptr[local_50][local_30],
                           &this_ptr->index_data_ptr[local_50][local_30 + 1],
-                          (this_ptr->tri_count[local_50] - local_30) * 4);
+                          (this_ptr->tri_count[local_50] - local_30) * sizeof(*this_ptr->index_data_ptr[local_50]));
                   local_44 = local_44 + 1;
                   goto LAB_0058ee5a;
                 }

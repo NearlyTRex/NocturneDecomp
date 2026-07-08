@@ -22,7 +22,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(CC
     new_edges = (SExpandedEdge *)shape_memdbg_cpp_malloc_FUN_006021da(edge_count * sizeof(SExpandedEdge));
     entry->edges = new_edges;
     if (new_edges != (SExpandedEdge *)0x0) {
-      memcpy(new_edges,edges,edge_count * 0x60);
+      memcpy(new_edges,edges,edge_count * sizeof(*edges));
       entry->edge_count = edge_count;
       this_ptr->edge_count = this_ptr->edge_count + 1;
       return 1;

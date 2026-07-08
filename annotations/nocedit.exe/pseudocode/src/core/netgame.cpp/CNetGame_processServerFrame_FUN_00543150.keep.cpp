@@ -74,7 +74,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
         if (g_SimFrameHistory[iVar2].sequence_number < iVar1) {
           g_SimFrameCount = g_SimFrameCount + -1;
           memmove(&g_SimFrameHistory[iVar2],&g_SimFrameHistory[iVar2 + 1],
-                  (g_SimFrameCount - iVar2) * 100);
+                  (g_SimFrameCount - iVar2) * sizeof(*g_SimFrameHistory));
         }
         else {
           iVar2 = iVar2 + 1;

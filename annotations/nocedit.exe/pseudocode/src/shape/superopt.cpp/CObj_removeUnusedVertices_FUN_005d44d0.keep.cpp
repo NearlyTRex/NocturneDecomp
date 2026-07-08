@@ -29,7 +29,7 @@ int __cdecl shape_superopt_cpp_CObj_removeUnusedVertices_FUN_005d44d0(CObj *this
       local_20 = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(4);
     }
     // Pass 1: mark used vertices
-    memset(dest,0xff,this_ptr->vertex_count << 2);
+    memset(dest,0xff,this_ptr->vertex_count * sizeof(*dest));
     uVar5 = 0;
     if (this_ptr->poly_count != 0) {
       do {

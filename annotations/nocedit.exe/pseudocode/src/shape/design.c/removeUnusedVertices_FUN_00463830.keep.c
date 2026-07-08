@@ -26,7 +26,7 @@ void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     }
     else {
-      memset(dest,0,g_VertexCount << 2);
+      memset(dest,0,g_VertexCount * sizeof(*dest));
       for (local_1c = 0; iVar1 = g_VertexCount, local_1c < g_PolygonCount; local_1c = local_1c + 1)
       {
         for (local_24 = 0; local_24 < (int)g_ModelPolygonData[local_1c].vertex_indices_count;

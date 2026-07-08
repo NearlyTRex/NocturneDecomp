@@ -27,7 +27,7 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
     g_CurrentLineNumber = 1250;
     core_main_c_displayErrorAndQuit_FUN_00506f10("nextMixingBuffer - shouldn't have any data pending!");
   }
-  bytes_per_buffer = g_MixBufferSize * 4;
+  bytes_per_buffer = g_MixBufferSize * sizeof(*g_ChannelPrimaryBuffers[0]);
   tail_bytes = (g_NumMixBuffers - 1) * bytes_per_buffer;
   for (iVar5 = 0; iVar5 < g_AudioChannelCount; iVar5 = iVar5 + 1) {
     memmove(g_ChannelPrimaryBuffers[iVar5],

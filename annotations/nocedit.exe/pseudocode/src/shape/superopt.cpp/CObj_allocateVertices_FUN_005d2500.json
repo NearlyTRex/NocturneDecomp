@@ -126,6 +126,15 @@
       "severity": "moderate",
       "text": "(CVert *)malloc(vertex_count * 0x38)",
       "type": "alloc_magic_size"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (this_ptr->vertex_count * 0x38) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 19,
+      "match": "memset",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(this_ptr->vertex_data,0,this_ptr->vertex_count * 0x38);",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

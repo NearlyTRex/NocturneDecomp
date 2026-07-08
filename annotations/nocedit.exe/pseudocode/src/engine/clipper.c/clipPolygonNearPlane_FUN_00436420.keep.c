@@ -33,7 +33,7 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
     if (g_NearPlaneDistance <= iVar7) {
       g_SecondaryClipVertexCount = g_ClippedVertexCount;
       iVar6 = 0;
-      memcpy(g_SecondaryClipVertexBuffer, g_ClippedVertexBuffer, g_ClippedVertexCount * 0x30);
+      memcpy(g_SecondaryClipVertexBuffer, g_ClippedVertexBuffer, g_ClippedVertexCount * sizeof(*g_SecondaryClipVertexBuffer));
       g_ClippedVertexCount = 0;
       if (0 < g_SecondaryClipVertexCount) {
         v1 = g_SecondaryClipVertexBuffer;

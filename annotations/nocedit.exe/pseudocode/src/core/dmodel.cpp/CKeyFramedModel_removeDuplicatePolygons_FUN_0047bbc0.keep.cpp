@@ -64,7 +64,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc
           iVar5 = this_ptr->poly_count + -1;
           this_ptr->poly_count = iVar5;
           memmove(this_ptr->poly_vert_list + local_20,this_ptr->poly_vert_list + (local_20 + 1),
-                  (iVar5 - local_20) * 0x48);
+                  (iVar5 - local_20) * sizeof(*this_ptr->poly_vert_list));
           this_ptr->part_list[local_3c].poly_count = this_ptr->part_list[local_3c].poly_count + -1;
         }
         else {

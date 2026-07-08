@@ -15,7 +15,7 @@ void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_00542370(CNetGame *thi
 
   if (399 < g_ChatHistoryCount) {
     g_ChatHistoryCount = g_ChatHistoryCount + -1;
-    memmove(g_ChatHistory,g_ChatHistory + 1,g_ChatHistoryCount * 0x120);
+    memmove(g_ChatHistory,g_ChatHistory + 1,g_ChatHistoryCount * sizeof(*g_ChatHistory));
   }
   iVar3 = g_ChatHistoryCount;
   g_ChatHistory[g_ChatHistoryCount].sender_addr.ip_address = sender_addr->ip_address;

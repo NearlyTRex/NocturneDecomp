@@ -33,7 +33,8 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0(void)
   if (iVar3 != 0) {
     if (0 < g_NumMixBuffers) {
       for (iVar3 = 0; iVar3 < g_AudioChannelCount; iVar3 = iVar3 + 1) {
-        memset(g_ChannelPrimaryBuffers[iVar3],0,g_MixBufferSize * g_NumMixBuffers * 4);
+        memset(g_ChannelPrimaryBuffers[iVar3],0,
+               g_MixBufferSize * g_NumMixBuffers * sizeof(*g_ChannelPrimaryBuffers[iVar3]));
       }
     }
     g_MixBufferReadIndex = 0;

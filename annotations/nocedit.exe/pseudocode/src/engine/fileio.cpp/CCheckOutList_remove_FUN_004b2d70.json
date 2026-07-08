@@ -185,6 +185,15 @@
       "severity": "moderate",
       "text": "(CCheckOutItem *)shape_memdbg_cpp_debugRealloc_FUN_0050f540 (this_ptr->items,this_ptr->count * 0x168,\"..\\\\engine\\\\fileio.cpp\",760)",
       "type": "alloc_magic_size"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar1 - entry_index) * 0x168) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 16,
+      "match": "memmove",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

@@ -21,7 +21,8 @@ void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_004b0470(CEventLi
         (this_ptr->game_flags).count = iVar4;
         memmove
                   ((this_ptr->game_flags).names + iVar2,
-                   (&this_ptr->current_events)[1].names + iVar2 + 1,(iVar4 - iVar2) * 0x20);
+                   (&this_ptr->current_events)[1].names + iVar2 + 1,
+             (iVar4 - iVar2) * sizeof(*(this_ptr->game_flags).names));
         return;
       }
     }

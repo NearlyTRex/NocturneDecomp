@@ -529,7 +529,7 @@ LAB_00583c6f:
       iVar6 = this_ptr->vdir_box_count + -1;
       this_ptr->vdir_box_count = iVar6;
       memmove
-                (local_40 + local_18,local_40 + local_18 + 1,(iVar6 - local_18) * 0x44);
+                (local_40 + local_18,local_40 + local_18 + 1,(iVar6 - local_18) * sizeof(*local_40));
       if (this_ptr->vdir_box_count <= iVar12) {
         local_18 = 0;
       }

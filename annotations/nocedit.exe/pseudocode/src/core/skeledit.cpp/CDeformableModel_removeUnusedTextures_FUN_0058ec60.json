@@ -181,6 +181,15 @@
       "severity": "moderate",
       "text": "pCVar6 = (CDeformableModel *)pCVar6->lod_info;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar6 - iVar4) * 0x48) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 49,
+      "match": "memmove",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove(local_1c,local_20,(iVar6 - iVar4) * 0x48);",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

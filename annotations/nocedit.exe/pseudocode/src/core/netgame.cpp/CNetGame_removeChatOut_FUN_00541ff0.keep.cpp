@@ -86,7 +86,7 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this
         g_ChatOutCount = g_ChatOutCount + -1;
         memmove
                   (g_ChatOutMessages + local_38,g_ChatOutMessages + local_38 + 1,
-                   (g_ChatOutCount - local_38) * 0x114);
+                   (g_ChatOutCount - local_38) * sizeof(*g_ChatOutMessages));
       }
       else {
         local_38 = local_38 + 1;

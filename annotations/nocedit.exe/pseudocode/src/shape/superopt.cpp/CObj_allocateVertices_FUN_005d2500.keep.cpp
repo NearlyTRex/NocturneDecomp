@@ -24,6 +24,6 @@ int __cdecl shape_superopt_cpp_CObj_allocateVertices_FUN_005d2500(CObj *this_ptr
     this_ptr->is_valid = 0;
     return 0;
   }
-  memset(this_ptr->vertex_data,0,this_ptr->vertex_count * 0x38);
+  memset(this_ptr->vertex_data,0,this_ptr->vertex_count * sizeof(*this_ptr->vertex_data));
   return 1;
 }

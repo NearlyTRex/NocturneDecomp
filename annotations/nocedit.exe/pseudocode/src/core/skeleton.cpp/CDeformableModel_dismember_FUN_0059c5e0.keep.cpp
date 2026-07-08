@@ -56,7 +56,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
       g_CurrentLineNumber = 1618;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::dismember - too many vertices!");
     }
-    memset(g_VertexRemapTable,0,this_ptr->vertex_count[lod_index] << 2);
+    memset(g_VertexRemapTable,0,this_ptr->vertex_count[lod_index] * sizeof(*g_VertexRemapTable));
     if (local_2c < iVar8) {
       iVar3 = local_2c;
       do {

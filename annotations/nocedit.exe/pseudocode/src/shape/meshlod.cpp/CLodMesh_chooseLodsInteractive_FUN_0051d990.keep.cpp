@@ -258,7 +258,7 @@ LAB_0051e453:
                         (g_CEditorToolsPtr,local_248);
       if (iVar5 != 0) {
         local_30 = local_30 + -1;
-        n = (local_30 - iVar7) * 4;
+        n = (local_30 - iVar7) * sizeof(*pixel_heights);
         memmove(pixel_heights + iVar7,pixel_heights + iVar7 + 1,n);
         memmove(face_counts + iVar7,face_counts + iVar7 + 1,n);
         memmove(local_3d8 + iVar7,local_3d8 + iVar7 + 1,n);

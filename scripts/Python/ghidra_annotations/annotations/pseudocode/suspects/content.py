@@ -6487,56 +6487,38 @@ def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
 
 
 
-# A local assigned a hardcoded power-of-2 element stride: `n = count * 4;`,
-# `sz = w << 2;`. Captures the LHS name so a later mem*(..., n) can be linked
-# back. RHS must END in the stride op (no trailing arithmetic) so `x = y*4 + 3`
-# — a real offset, not a size — doesn't match.
+# A local assigned a hardcoded element stride: `n = count * 4;`, `sz = w << 2;`,
+# `bytes = n * 0x20;`. Captures the LHS name so a later mem*(..., n) can be
+# linked back. RHS must END in the stride op (no trailing arithmetic) so
+# `x = y*4 + 3` — a real offset, not a size — doesn't match. The stride must be
+# >= 4 bytes (`* 4/8/0xNN/2-digit` or `<< >=2`): smaller multipliers (`* 2`
+# 16bpp, `* 3` RGB triplets) are usually pixel/format math, not element sizes,
+# and generate false positives (see the bpp-ladder suppression below).
 _STRIDE_ASSIGN_RE = re.compile(
-    r'^\s*([A-Za-z_]\w*)\s*=\s*[^;=]*?(?:\*\s*(?:4|8)|<<\s*(?:2|3))\s*;\s*$')
-# The size argument of a mem* call, ending in a hardcoded power-of-2 stride.
-_TRAILING_STRIDE_RE = re.compile(r'(?:\*\s*(?:4|8)|<<\s*(?:2|3))\s*$')
+    r'^\s*([A-Za-z_]\w*)\s*=\s*[^;=]*?'
+    r'(?:\*\s*(?:0[xX][0-9a-fA-F]+|[4-9]|\d{2,})|<<\s*(?:[2-9]|\d{2,}))\s*;\s*$')
+# The size argument of a mem* call, ending in a hardcoded element stride (same
+# >= 4 threshold as above).
+_TRAILING_STRIDE_RE = re.compile(
+    r'(?:\*\s*(?:0[xX][0-9a-fA-F]+|[4-9]|\d{2,})|<<\s*(?:[2-9]|\d{2,}))\s*$')
+# Permissive: ANY trailing `* <int>` / `<< <int>` (incl. *1/*2/*3). Used only to
+# split a mem* size arg into (base count expression, multiplier) so a function's
+# calls can be grouped by base and a bits-per-pixel ladder recognized.
+_ANY_TRAILING_STRIDE_RE = re.compile(
+    r'^(.*?)(?:\*\s*(0[xX][0-9a-fA-F]+|\d+)|<<\s*(\d+))\s*$')
 _MEMFN_CALL_RE = re.compile(r'\b(memcpy|memmove|memset)\s*(?=\()')
 
 
-def identify_pointer_stride_bytecount(decompiled_code):
-    """Flag mem* byte counts that hardcode a power-of-2 element stride.
+def _memfn_size_args(decompiled_code):
+    """Yield (line_no, match_obj, size_arg) for each mem* call with >= 3 args.
 
-    `memmove(dst, src, count * 4)` (or `<< 2`, and the split form
-    `n = count * 4; memmove(dst, src, n);`) bakes the element size as a
-    literal instead of `count * sizeof(*dst)`. When the copied array holds
-    POINTERS this is a silent 64-bit bug — a `* 4` moves only half of each
-    8-byte pointer, corrupting the pool/queue/list (e.g. CInventory::removeItem
-    items[], CWayPoint::findNearestReachable search queue). For value arrays
-    (int/float/pixel) it is width-stable but still wants `count * sizeof(*dst)`
-    for self-documentation. Either way the fix is the same: replace the literal
-    stride with `sizeof(*dst)`. Detector is map-free so it runs in
-    test_suspects.sh per-keep.
-
-    Args:
-        decompiled_code: The decompiled C pseudocode string.
-
-    Returns:
-        List of suspect dicts (type pointer_stride_bytecount).
+    Extracts balanced parens so multi-line calls are handled, then splits on
+    top-level commas to isolate the trailing (size) argument.
     """
-    suspects = []
-    if not decompiled_code:
-        return suspects
-
-    # Pass 1: names assigned a bare power-of-2 stride, for the split form.
-    stride_names = set()
-    for line in decompiled_code.split('\n'):
-        m = _STRIDE_ASSIGN_RE.match(line)
-        if m:
-            stride_names.add(m.group(1))
-
-    # Pass 2: mem* calls whose size (last) argument is a hardcoded stride or a
-    # stride-named local. Extract balanced args so multi-line calls are covered.
-    seen = set()
     for m in _MEMFN_CALL_RE.finditer(decompiled_code):
         paren = _extract_balanced_parens(decompiled_code[m.end():])
         if not paren:
             continue
-        # Split the inside on top-level commas to isolate the size arg.
         inner = paren[1:-1]
         args, depth, start = [], 0, 0
         for i, ch in enumerate(inner):
@@ -6550,12 +6532,87 @@ def identify_pointer_stride_bytecount(decompiled_code):
         args.append(inner[start:])
         if len(args) < 3:
             continue
-        size_arg = args[-1].strip()
+        line_no = decompiled_code[:m.start()].count('\n') + 1
+        yield line_no, m, args[-1].strip()
+
+
+def _stride_base_and_mult(size_arg):
+    """Split a mem* size arg into (normalized_base_expr, multiplier).
+
+    `iVar1 * 4` -> ('iVar1', 4); `iVar1 << 2` -> ('iVar1', 4);
+    `iVar1` -> ('iVar1', 1). Whitespace in the base is collapsed so the same
+    count expression groups regardless of formatting.
+    """
+    m = _ANY_TRAILING_STRIDE_RE.match(size_arg)
+    if not m:
+        base, mult = size_arg, 1
+    elif m.group(2) is not None:
+        base, mult = m.group(1), int(m.group(2), 0)
+    else:
+        base, mult = m.group(1), 1 << int(m.group(3))
+    return re.sub(r'\s+', '', base), mult
+
+
+def identify_pointer_stride_bytecount(decompiled_code):
+    """Flag mem* byte counts that hardcode an element stride.
+
+    `memmove(dst, src, count * 4)` (or `<< 2`, a struct stride like `* 0x20`,
+    and the split form `n = count * 4; memmove(dst, src, n);`) bakes the element
+    size as a literal instead of `count * sizeof(*dst)`. When the copied array
+    holds POINTERS this is a silent 64-bit bug — a `* 4` moves only half of each
+    8-byte pointer, corrupting the pool/queue/list (e.g. CInventory::removeItem
+    items[], CWayPoint::findNearestReachable search queue). For value arrays
+    (int/float/pixel/struct) it is width-stable but still wants
+    `count * sizeof(*dst)` for self-documentation. Either way the fix is the
+    same: replace the literal stride with `sizeof(*dst)`. Detector is map-free so
+    it runs in test_suspects.sh per-keep.
+
+    Bits-per-pixel false positive: a byte-buffer clear that multiplies the same
+    count by the pixel depth across a format switch (8bpp `iVar1`, 16bpp
+    `iVar1 * 2`, 32bpp `iVar1 * 4`, e.g. clearScreenRegion) is NOT an element
+    stride — the `* 4` is bytes-per-pixel on a `byte *`, with no `sizeof(*dst)`
+    to name. Such a base always carries a `* 2` (16bpp) sibling, so a base seen
+    with both `* 2` and `* 4` is skipped. A genuine pointer array is never copied
+    at half-stride, so this never masks a real bug.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts (type pointer_stride_bytecount).
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+
+    # Pass 1: names assigned a bare element stride, for the split form.
+    stride_names = set()
+    for line in decompiled_code.split('\n'):
+        m = _STRIDE_ASSIGN_RE.match(line)
+        if m:
+            stride_names.add(m.group(1))
+
+    # Pass 2 (suppression map): group every mem* size arg by its base count
+    # expression and collect the multipliers it is used with (including the
+    # unflagged * 1 / * 2 forms). A base cleared at both * 2 and * 4 is a
+    # bits-per-pixel ladder on a byte buffer, not an element-stride bug.
+    base_mults = {}
+    for _line_no, _m, size_arg in _memfn_size_args(decompiled_code):
+        base, mult = _stride_base_and_mult(size_arg)
+        base_mults.setdefault(base, set()).add(mult)
+
+    # Pass 3: flag mem* calls whose size arg is a hardcoded element stride or a
+    # stride-named local, unless suppressed as a bits-per-pixel ladder.
+    seen = set()
+    for line_no, m, size_arg in _memfn_size_args(decompiled_code):
         is_literal = bool(_TRAILING_STRIDE_RE.search(size_arg))
         is_named = size_arg in stride_names
         if not (is_literal or is_named):
             continue
-        line_no = decompiled_code[:m.start()].count('\n') + 1
+        base, _mult = _stride_base_and_mult(size_arg)
+        mults = base_mults.get(base, ())
+        if 2 in mults and 4 in mults:
+            continue  # bits-per-pixel ladder, not an element-stride bug
         if line_no in seen:
             continue
         seen.add(line_no)
@@ -6566,9 +6623,9 @@ def identify_pointer_stride_bytecount(decompiled_code):
             'match': m.group(1),
             'text': stripped[:200],
             'description': (
-                'mem* byte count hardcodes a power-of-2 element stride (%s) '
-                'instead of count * sizeof(*dst). If the array holds pointers '
-                'this corrupts it on the 64-bit build (a *4 moves half of each '
+                'mem* byte count hardcodes an element stride (%s) instead of '
+                'count * sizeof(*dst). If the array holds pointers this '
+                'corrupts it on the 64-bit build (a *4 moves half of each '
                 '8-byte pointer); for value arrays use sizeof for '
                 'self-documentation.' % (
                     size_arg if is_literal else '%s = count * N' % size_arg)),

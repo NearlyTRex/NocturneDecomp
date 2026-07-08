@@ -271,6 +271,15 @@
       "severity": "moderate",
       "text": "local_34[3] = *(uint *)((int)&(edge_b->end_pos).y + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (((this_ptr->expanded_edge_count - local_18) + -1) * 0x60) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 64,
+      "match": "memmove",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

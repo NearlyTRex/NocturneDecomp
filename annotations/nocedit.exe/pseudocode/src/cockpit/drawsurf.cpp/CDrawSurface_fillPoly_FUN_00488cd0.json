@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 364,
-    "complexity_score": 213,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 198,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_stride_bytecount"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 562
   },
   "cross_references": [],
@@ -616,6 +614,15 @@
       "severity": "moderate",
       "text": "(*(int *)((int)&g_GlobalEdgeTable[0].x_start + local_18) <= local_14));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar10 - iVar9) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 187,
+      "match": "memmove",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {
@@ -718,14 +725,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "mem* byte count hardcodes a power-of-2 element stride ((iVar10 - iVar9) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 187,
-      "match": "memmove",
-      "severity": "moderate",
-      "text": "memmove",
-      "type": "pointer_stride_bytecount"
-    }
-  ]
+  "suspects": []
 }

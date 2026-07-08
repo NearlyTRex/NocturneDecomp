@@ -708,6 +708,15 @@
       "severity": "moderate",
       "text": "if ((int)(local_18->extents).x < 0x3f800000) {",
       "type": "bit_int_float_compare"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar7 - iVar5) * 0x44) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 392,
+      "match": "memmove",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {

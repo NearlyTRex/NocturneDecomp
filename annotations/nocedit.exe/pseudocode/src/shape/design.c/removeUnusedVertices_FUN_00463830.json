@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 211,
-    "complexity_score": 76,
+    "complexity_score": 61,
     "cross_reference_count": 8,
     "function_call_count": 7,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 61,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_stride_bytecount"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 272
   },
   "cross_references": [
@@ -417,6 +415,15 @@
       "severity": "moderate",
       "text": "g_LoadedVertices[iVar2].vertex.y = g_LoadedVertices[local_1c].vertex.y;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (g_VertexCount << 2) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 27,
+      "match": "memset",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(dest,0,g_VertexCount << 2);",
+      "type": "pointer_stride_bytecount"
     }
   ],
   "stack_frame": {
@@ -449,14 +456,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "mem* byte count hardcodes a power-of-2 element stride (g_VertexCount << 2) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 27,
-      "match": "memset",
-      "severity": "moderate",
-      "text": "memset(dest,0,g_VertexCount << 2);",
-      "type": "pointer_stride_bytecount"
-    }
-  ]
+  "suspects": []
 }

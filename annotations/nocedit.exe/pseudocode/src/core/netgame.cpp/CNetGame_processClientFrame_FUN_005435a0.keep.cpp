@@ -42,7 +42,7 @@ LAB_00543605:
                   if (g_SimFrameHistory[iVar5].sequence_number < iVar4) {
                     g_SimFrameCount = g_SimFrameCount + -1;
                     memmove(&g_SimFrameHistory[iVar5],&g_SimFrameHistory[iVar5 + 1],
-                            (g_SimFrameCount - iVar5) * 100);
+                            (g_SimFrameCount - iVar5) * sizeof(*g_SimFrameHistory));
                   }
                   else {
                     iVar5 = iVar5 + 1;

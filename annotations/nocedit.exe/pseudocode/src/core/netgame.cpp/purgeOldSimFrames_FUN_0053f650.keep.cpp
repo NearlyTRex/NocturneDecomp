@@ -18,7 +18,7 @@ void __cdecl core_netgame_cpp_purgeOldSimFrames_FUN_0053f650(int min_sequence)
       while (g_SimFrameHistory[iVar1].sequence_number < min_sequence) {
         g_SimFrameCount = g_SimFrameCount + -1;
         memmove(&g_SimFrameHistory[iVar1],&g_SimFrameHistory[iVar1 + 1],
-                (g_SimFrameCount - iVar1) * 100);
+                (g_SimFrameCount - iVar1) * sizeof(*g_SimFrameHistory));
         if (g_SimFrameCount <= iVar1) {
           return;
         }
