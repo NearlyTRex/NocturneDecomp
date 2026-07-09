@@ -50,7 +50,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_buildEdges_FUN_00515ba0(CLodMesh *this_pt
                     (this_ptr->edges_ptr + iVar2,local_18);
         } while (iVar4 < 3);
       }
-      local_1c = local_1c + 0x8c;
+      local_1c = local_1c + sizeof(CLodFace);
       local_18 = local_18 + 1;
     } while (local_18 < this_ptr->tri_count);
   }

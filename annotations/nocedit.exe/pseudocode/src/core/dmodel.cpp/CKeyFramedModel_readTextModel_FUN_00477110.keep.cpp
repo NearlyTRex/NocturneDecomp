@@ -157,7 +157,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
     do {
       _fscanf(file,"%[^\n]\n",pcVar4);
       iVar5 = iVar5 + 1;
-      pcVar4 = pcVar4 + 0x48;
+      pcVar4 = pcVar4 + sizeof(SMRGLTextureLod);
     } while (iVar5 < this_ptr->texture_count);
   }
   iVar5 = 1;

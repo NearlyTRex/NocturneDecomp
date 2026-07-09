@@ -98,7 +98,7 @@ LAB_005415cb:
           engine_2d_c_drawText_FUN_00401fd0(local_130,500,iVar4);
         }
         iVar4 = iVar4 + 0xb;
-        local_24 = local_24 + 0x78;
+        local_24 = local_24 + sizeof(SNetPlayer);
       }
       iVar6 = iVar4 + 0x2c;
       iVar7 = (g_ChatHistoryCount - (g_WindowHeight - iVar6) / 0xb) + 1;

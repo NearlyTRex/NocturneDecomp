@@ -91,7 +91,7 @@ LAB_00478e7f:
     do {
       _fprintf(file,"%s\n",pcVar4);
       iVar3 = iVar3 + 1;
-      pcVar4 = pcVar4 + 0x48;
+      pcVar4 = pcVar4 + sizeof(SMRGLTextureLod);
     } while (iVar3 < this_ptr->texture_count);
   }
   _fprintf(file,"// part list (vertexCount, polyCount)\n");

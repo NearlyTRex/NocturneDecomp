@@ -24,7 +24,7 @@ CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_005047d0(CLever *this_ptr)
   ADJ(this_ptr_00)->sound[0] = '\0';
   ADJ(this_ptr_00)->param = 0.0;
   ADJ(this_ptr_00)->momentary_flag = 1;
-  ADJ(this_ptr_00)->linked_lever = 0;
+  ADJ(this_ptr_00)->linked_lever = (CLever *)0x0;
   ADJ(this_ptr_00)->end_vertex_index = 0x17;
   ADJ(this_ptr_00)->moving = 0;
   ADJ(this_ptr_00)->move_to_pct = 0.0;

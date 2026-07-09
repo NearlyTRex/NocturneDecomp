@@ -68,7 +68,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CP
       cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190
                 ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar3),bitmap_data,
                  this_ptr->width,this_ptr->height,transparency_color,bitmap_width);
-      iVar3 = iVar3 + 0x24;
+      iVar3 = iVar3 + sizeof(CPackedBitmap);
     } while (iVar4 < this_ptr->bitmap_count);
   }
   shape_memdbg_cpp_debugFree_FUN_0050f460(bitmap_data,"..\\cockpit\\pkbmpset.cpp",236);

@@ -44,7 +44,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedMod
   iVar1 = this_ptr->frame_count;
   this_ptr->poly_texture_index_list = piVar4;
   piVar4 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     (iVar1 * 0x18 + 4,"..\\core\\dmodel.cpp",712);
+                     (iVar1 * sizeof(CBoundingBox3D) + 4,"..\\core\\dmodel.cpp",712);
   pCVar5 = (CBoundingBox3D *)0x0;
   if (piVar4 != (int *)0x0) {
     pCVar5 = (CBoundingBox3D *)(piVar4 + 1);

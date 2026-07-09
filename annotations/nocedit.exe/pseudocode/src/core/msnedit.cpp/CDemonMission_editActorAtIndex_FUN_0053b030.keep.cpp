@@ -154,7 +154,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorAtIndex_FUN_0053b030(CDemon
               }
               shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&CStack_48,0);
             }
-            pcStack_24 = pcStack_24 + 0xec;
+            pcStack_24 = pcStack_24 + sizeof(CActorProperty);
             iStack_14 = iStack_14 + 1;
           } while (iStack_14 < CStack_2bb0.count);
         }

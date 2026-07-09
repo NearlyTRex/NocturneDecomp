@@ -730,7 +730,7 @@ LAB_0059722b:
         pCVar12 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             (&this_ptr->motion_controller);
         pcVar18 = pCVar12->motions[0].motion_name + iVar7;
-        iVar7 = iVar7 + 0x54c;
+        iVar7 = iVar7 + sizeof(SMotion);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1900.base,pcVar18);
       }
       iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20

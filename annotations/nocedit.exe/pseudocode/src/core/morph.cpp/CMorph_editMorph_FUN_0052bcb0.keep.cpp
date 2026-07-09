@@ -161,7 +161,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
               if (iVar15 == local_4a8[iVar9].vertex_index[picked_side]) {
                 paired_vertex_idx = local_4a8[iVar9].vertex_index[1 - picked_side];
               }
-              iVar6 = iVar6 + 0x20;
+              iVar6 = iVar6 + sizeof(SMorphControlPoint);
               iVar9 = iVar9 + 1;
             } while (iVar6 < iVar4 * 0x20);
           }

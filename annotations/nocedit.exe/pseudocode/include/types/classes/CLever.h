@@ -20,7 +20,7 @@ typedef struct CLever {
     char off_event[100]; // 0x344
     char sound[100]; // 0x3a8
     int momentary_flag; // 0x40c
-    int linked_lever; // 0x410
+    struct CLever* linked_lever; // 0x410
     int end_vertex_index; // 0x414
     int moving; // 0x418
     float move_to_pct; // 0x41c

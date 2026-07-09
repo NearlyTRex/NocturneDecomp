@@ -45,13 +45,13 @@ void __cdecl core_bugs_cpp_CBugs_setup_FUN_00424e50(CBugs *this_ptr)
             core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(local_20,local_1c);
             iVar7 = iVar7 + 1;
             local_20 = local_20 + 1;
-            local_1c = local_1c + 0x17c;
+            local_1c = local_1c + sizeof(CKeyFramedModelInstance);
           } while (iVar7 < this_ptr->model_count);
         }
       }
       else {
         core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(this_ptr->models + iVar6);
-        pcVar9 = pcVar9 + 0x17c;
+        pcVar9 = pcVar9 + sizeof(CKeyFramedModelInstance);
         iVar6 = iVar6 + 1;
       }
     } while (iVar6 < this_ptr->model_count);

@@ -65,7 +65,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
       if (iVar8 <= max_u) {
         shape_design_c_cramTextures_FUN_0046a970(local_3c,iVar8,iVar6,max_u,iVar7);
       }
-      local_3c = local_3c + 0x48;
+      local_3c = local_3c + sizeof(SMRGLTextureLod);
       local_24 = local_24 + 1;
     } while (local_24 < model_ptr->texture_count);
   }
@@ -125,7 +125,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0(
       pcVar5 = shape_design_c_getTextureName_FUN_0046e060(iVar4);
       strcpy(pcStack_34,pcVar5);
       iVar4 = iVar4 + 1;
-      pcStack_34 = pcStack_34 + 0x48;
+      pcStack_34 = pcStack_34 + sizeof(SMRGLTextureLod);
     } while (iVar4 < model_ptr->texture_count);
   }
   core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(model_ptr);

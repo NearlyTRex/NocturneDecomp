@@ -24,11 +24,11 @@ CBoundingBox3D * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN
   }
   iVar3 = 1;
   if (1 < this_ptr->vertex_count) {
-    iVar4 = 0x4c4;
+    iVar4 = sizeof(CLodVert);
     do {
       iVar2 = iVar4 + -0x10;
       iVar3 = iVar3 + 1;
-      iVar4 = iVar4 + 0x4c4;
+      iVar4 = iVar4 + sizeof(CLodVert);
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240
                 (out_bbox,(CVector3f *)(this_ptr->vertex_data->lod_workspace + iVar2));
     } while (iVar3 < this_ptr->vertex_count);

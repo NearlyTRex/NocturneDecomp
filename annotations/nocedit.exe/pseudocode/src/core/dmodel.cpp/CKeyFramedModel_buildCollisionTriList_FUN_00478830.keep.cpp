@@ -31,7 +31,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830(
     } while (iVar4 < this_ptr->poly_count);
     iVar4 = this_ptr->frame_count * this_ptr->collision_triangle_count;
     piVar2 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                       (iVar4 * 0x38 + 4,"..\\core\\dmodel.cpp",1135);
+                       (iVar4 * sizeof(CDemonTriangle) + 4,"..\\core\\dmodel.cpp",1135);
     pCVar3 = (CDemonTriangle *)0x0;
     if (piVar2 != (int *)0x0) {
       pCVar3 = (CDemonTriangle *)(piVar2 + 1);

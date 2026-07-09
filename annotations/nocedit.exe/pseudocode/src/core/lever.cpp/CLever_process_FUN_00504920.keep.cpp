@@ -41,20 +41,20 @@ LAB_005049ad:
       }
     }
   }
-  if ((CLever *)this_ptr->linked_lever != (CLever *)0x0) {
-    core_lever_cpp_CLever_setState_FUN_00504b20((CLever *)this_ptr->linked_lever,this_ptr->param);
+  if (this_ptr->linked_lever != (CLever *)0x0) {
+    core_lever_cpp_CLever_setState_FUN_00504b20(this_ptr->linked_lever,this_ptr->param);
   }
   iVar3 = 0;
   while (iVar3 < g_CDemonSetPtr->actor_count) {
     this_ptr_00 = (CLever *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (g_CDemonSetPtr->actors[iVar3],g_CLeverClassInfo.name_hash);
-    if ((this_ptr_00 == (CLever *)0x0) || (this_ptr != (CLever *)this_ptr_00->linked_lever)) {
+    if ((this_ptr_00 == (CLever *)0x0) || (this_ptr != this_ptr_00->linked_lever)) {
       iVar3 = iVar3 + 1;
     }
     else {
       core_lever_cpp_CLever_setState_FUN_00504b20
-                (this_ptr_00,((CLever *)this_ptr_00->linked_lever)->param);
+                (this_ptr_00,this_ptr_00->linked_lever->param);
       iVar3 = iVar3 + 1;
     }
   }

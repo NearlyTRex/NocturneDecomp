@@ -57,7 +57,7 @@ float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *th
   if (g_ScriptEventsEnabled == 0) {
     strcpy(this_ptr->current_message,dialog_text);
     if (this_ptr->who_is_speaking != (CDemonActor *)0x0) {
-      *(float *)this_ptr->who_is_speaking[0x1c].create_event = local_28;
+      ((CCharacter *)this_ptr->who_is_speaking)->speech_timer = local_28;
     }
     if (local_18 != 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();

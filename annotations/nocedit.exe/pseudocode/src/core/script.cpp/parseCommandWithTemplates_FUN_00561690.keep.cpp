@@ -38,7 +38,7 @@ int __cdecl core_script_cpp_parseCommandWithTemplates_FUN_00561690(char *input_t
       strcat(cmd_name_out,pCVar10->prefix_text);
       strcat(cmd_name_out,local_14);
       iVar5 = iVar5 + 1;
-      local_14 = local_14 + 0x328;
+      local_14 = local_14 + sizeof(CCmdParm);
     } while (iVar5 < iVar4);
   }
   pCVar10 = local_2148.params + iVar4;
@@ -70,7 +70,7 @@ int __cdecl core_script_cpp_parseCommandWithTemplates_FUN_00561690(char *input_t
       strcat(suffix_out,pCVar8->prefix_text);
       iVar5 = iVar5 + 1;
       strcat(suffix_out,pcVar8);
-      pcVar8 = pcVar8 + 0x328;
+      pcVar8 = pcVar8 + sizeof(CCmdParm);
     } while (iVar5 < local_2148.param_count);
   }
   strcat(suffix_out,local_2148.remaining_text);

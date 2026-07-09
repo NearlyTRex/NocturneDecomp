@@ -58,7 +58,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBi
         _fseek(file,size,1);
       }
       iVar2 = iVar2 + 1;
-      iVar3 = iVar3 + 0x24;
+      iVar3 = iVar3 + sizeof(CPackedBitmap);
     } while (iVar2 < this_ptr->bitmap_count);
   }
   shape_memdbg_cpp_debugFree_FUN_0050f460(raw_bitmap_data,"..\\cockpit\\pkbmpset.cpp",306);

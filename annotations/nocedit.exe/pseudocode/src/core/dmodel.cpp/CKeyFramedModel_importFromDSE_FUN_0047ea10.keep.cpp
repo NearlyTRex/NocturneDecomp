@@ -60,7 +60,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFram
           iVar7 = _stricmp(str1,g_ModelPolygonData[local_10].texture_name);
           if (iVar7 == 0) break;
           iVar3 = iVar3 + 1;
-          str1 = str1 + 0x48;
+          str1 = str1 + sizeof(SMRGLTextureLod);
         } while (iVar3 < this_ptr->texture_count);
       }
       if (this_ptr->texture_count <= iVar3) {

@@ -61,7 +61,7 @@ LAB_004b3ff0:
         ;
       }
       iVar5 = iVar5 + 1;
-      iVar7 = iVar7 + 0x168;
+      iVar7 = iVar7 + sizeof(CCheckOutItem);
     } while (iVar5 < local_18.count);
   }
   if (local_3c0.base.item_count < 1) {

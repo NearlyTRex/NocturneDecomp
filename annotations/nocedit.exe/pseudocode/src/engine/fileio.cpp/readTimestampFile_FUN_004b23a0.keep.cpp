@@ -73,9 +73,9 @@ LAB_004b246f:
                 (g_CEditorToolsPtr,"Out of memory reading %s record %d",filename,local_18);
       return -1;
     }
-    new_size = new_size + 0x148;
+    new_size = new_size + sizeof(STimestampRecord);
     memcpy(pSVar4->filename + local_14,&local_160,sizeof(STimestampRecord));
     local_18 = local_18 + 1;
-    local_14 = local_14 + 0x148;
+    local_14 = local_14 + sizeof(STimestampRecord);
   } while( true );
 }

@@ -47,7 +47,7 @@ void __cdecl core_charactr_cpp_CCharacter_buildLayerActionTransitionCosts_FUN_00
                pSVar7->duration;
         }
         iVar6 = iVar6 + 1;
-        pcVar8 = pcVar8 + 0x38;
+        pcVar8 = pcVar8 + sizeof(SLayerAction);
       } while (iVar6 < this_ptr->layer_action_count);
     }
     iVar6 = 0;

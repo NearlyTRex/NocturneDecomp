@@ -85,7 +85,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
         if (0 < vertex_count) {
           pSVar13 = g_ClippedVertexBuffer;
           do {
-            memcpy(pSVar13, g_RenderVertexBuffer + *vertex_indices, 0x30);
+            memcpy(pSVar13, g_RenderVertexBuffer + *vertex_indices, sizeof(SRenderVertex));
             vertex_indices = vertex_indices + 1;
             local_18 = local_18 + 1;
             pSVar13 = pSVar13 + 1;
@@ -365,7 +365,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
               pSVar11 = g_ClippedVertexBuffer;
               iVar7 = 0;
               do {
-                memcpy(pSVar11, auStack_150[iVar7 + 1], 0x30);
+                memcpy(pSVar11, auStack_150[iVar7 + 1], sizeof(SRenderVertex));
                 iVar7 = iVar7 + 1;
                 pSVar11 = pSVar11 + 1;
               } while (iVar7 < g_ClippedVertexCount);
@@ -375,12 +375,12 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
               if (0 < g_ClippedVertexCount) {
                 iVar10 = 0;
                 do {
-                  iVar12 = g_ClippedVertexBuffer[iVar10 / 0x30].projected_vertex.transformed_z;
+                  iVar12 = g_ClippedVertexBuffer[iVar10 / sizeof(SRenderVertex)].projected_vertex.transformed_z;
                   if (iVar7 < iVar12) {
                     iVar7 = iVar12;
                   }
-                  iVar10 = iVar10 + 0x30;
-                } while (iVar10 < g_ClippedVertexCount * 0x30);
+                  iVar10 = iVar10 + sizeof(SRenderVertex);
+                } while (iVar10 < g_ClippedVertexCount * sizeof(SRenderVertex));
               }
               if (g_NearPlaneDistance <= iVar7) {
                 g_SecondaryClipVertexCount = g_ClippedVertexCount;
@@ -401,7 +401,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                     }
                     switch(bVar6) {
                     case 0:
-                      memcpy(g_ClippedVertexBuffer + g_ClippedVertexCount, pSVar11, 0x30);
+                      memcpy(g_ClippedVertexBuffer + g_ClippedVertexCount, pSVar11, sizeof(SRenderVertex));
                       g_ClippedVertexCount = g_ClippedVertexCount + 1;
                       break;
                     case 1:
@@ -411,7 +411,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                       g_ClippedVertexCount = g_ClippedVertexCount + 1;
                       break;
                     case 2:
-                      memcpy(g_ClippedVertexBuffer + g_ClippedVertexCount, pSVar11, 0x30);
+                      memcpy(g_ClippedVertexBuffer + g_ClippedVertexCount, pSVar11, sizeof(SRenderVertex));
                       g_ClippedVertexCount = g_ClippedVertexCount + 1;
                       engine_clipper_c_interpolateVertexNearClip_FUN_00435e00
                                 (pSVar11,g_SecondaryClipVertexBuffer + uVar8,

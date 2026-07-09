@@ -59,7 +59,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(CKeyFramed
     do {
       _fprintf(p_Var5,"%s\n",pcVar9);
       iVar7 = iVar7 + 1;
-      pcVar9 = pcVar9 + 0x48;
+      pcVar9 = pcVar9 + sizeof(SMRGLTextureLod);
     } while (iVar7 < this_ptr->texture_count);
   }
   _fprintf(p_Var5,"// triList: materialIndex,vertices(index, texX, texY)\n");
