@@ -2,16 +2,16 @@
 // Address: 004b31e0
 // Address Range: [[004b31e0, 004b321b]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,char *dest_file)
+// Signature: int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,uint modtime)
 
 #include "nocturne.h"
 
-int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,char *dest_file)
+int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,uint modtime)
 
 {
   int iVar1;
   
-  iVar1 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910(source_file,dest_file);
+  iVar1 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910(source_file,modtime);
   if (iVar1 != 0) {
     return 1;
   }

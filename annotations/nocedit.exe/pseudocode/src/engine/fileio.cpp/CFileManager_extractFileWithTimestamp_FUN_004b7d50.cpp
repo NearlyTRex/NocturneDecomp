@@ -2,11 +2,11 @@
 // Address: 004b7d50
 // Address Range: [[004b7d50, 004b7f42]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,char *timestamp_source,int checksum)
+// Signature: int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,uint modtime,int checksum)
 
 #include "nocturne.h"
 
-int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,char *timestamp_source,int checksum)
+int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,uint modtime,int checksum)
 
 {
   char cVar1;
@@ -107,7 +107,7 @@ LAB_004b7e34:
       uVar4 = 0;
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",2805);
-    iVar6 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910(dest_filename,timestamp_source);
+    iVar6 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910(dest_filename,modtime);
     if (iVar6 == 0) {
       uVar4 = 0;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

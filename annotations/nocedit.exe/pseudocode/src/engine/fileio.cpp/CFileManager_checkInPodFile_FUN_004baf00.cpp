@@ -455,7 +455,7 @@ LAB_004bba53:
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       }
       iVar3 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910
-                        (local_16dc.found_path,(char *)local_12b4.timestamp);
+                        (local_16dc.found_path,local_12b4.timestamp);
       if (iVar3 == 0) {
         if (local_54 != (_FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_54,"..\\engine\\fileio.cpp",196);

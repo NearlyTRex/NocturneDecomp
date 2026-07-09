@@ -27,12 +27,10 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   byte local_40 [4];
   long local_3c;
   int local_38;
-  int local_30;
   int local_2c;
   _FILE *local_28;
   SBoneData *local_24;
-  uchar *local_20;
-  uchar *local_1c;
+  SVert *vert;
   int local_18;
   SIZE_T local_14;
   float fVar2;
@@ -78,9 +76,8 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   local_2c = 0;
   if (0 < local_38) {
     local_24 = bone_structure->bones;
-    local_30 = 0;
     do {
-      local_20 = this_ptr->vertex_data_ptr[0]->bone_indices + local_30 + -1;
+      vert = this_ptr->vertex_data_ptr[0] + local_2c;
       _fread(&local_78,0x20,1,local_28);
       if (local_78.bone_index == 0) {
         iVar2 = 0;
@@ -99,37 +96,29 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
         }
       }
       if ((bone_structure->bones[iVar2].parent_index < 1) || (local_78.bone_index < 1)) {
-        local_20[4] = '\0';
-        local_20[5] = '\0';
-        local_20[6] = 0x80;
-        local_20[7] = '?';
-        *local_20 = '\x01';
-        local_20[1] = (uchar)iVar2;
+        vert->bone_weights[0] = 1.0;
+        vert->num_bone_influences = 1;
+        vert->bone_indices[0] = (uchar)iVar2;
       }
       else {
-        *local_20 = '\x02';
+        vert->num_bone_influences = 2;
         fVar2 = local_78.weight * local_78.weight * local_78.weight;
-        local_20[1] = (uchar)iVar2;
-        *(float *)(local_20 + 4) = fVar2;
-        local_20[2] = (uchar)bone_structure->bones[iVar2].parent_index;
-        *(float *)(local_20 + 8) = 1.0 - fVar2;
+        vert->bone_indices[0] = (uchar)iVar2;
+        vert->bone_weights[0] = fVar2;
+        vert->bone_indices[1] = (uchar)bone_structure->bones[iVar2].parent_index;
+        vert->bone_weights[1] = 1.0 - fVar2;
       }
-      local_58.x = *(float *)(local_20 + 0x10);
-      pCVar5 = (CVector3f *)(local_20 + 0x10);
-      local_58.y = *(float *)(local_20 + 0x14);
-      local_58.z = *(float *)(local_20 + 0x18);
-      local_1c = local_20;
-      for (local_18 = 0; local_18 < (int)(uint)*local_20; local_18 = local_18 + 1) {
-        core_xform_cpp_inverse_FUN_005f6210(&local_24[local_1c[1]].world_matrix,&local_d8);
+      local_58 = vert->position;
+      pCVar5 = &vert->position;
+      for (local_18 = 0; local_18 < (int)(uint)vert->num_bone_influences; local_18 = local_18 + 1) {
+        core_xform_cpp_inverse_FUN_005f6210(&local_24[vert->bone_indices[local_18]].world_matrix,&local_d8);
         local_a8 = local_d8;
         pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_4c,&local_58,&local_a8);
         if (pCVar5 != pCVar4) {
           *pCVar5 = *pCVar4;
         }
         pCVar5 = pCVar5 + 1;
-        local_1c = local_1c + 1;
       }
-      local_30 = local_30 + 0x34;
       local_2c = local_2c + 1;
     } while (local_2c < local_38);
   }

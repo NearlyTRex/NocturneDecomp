@@ -17,12 +17,12 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
   char *pcVar8;
   int iVar9;
   char *pcVar6;
+  SScriptXRef *entry;
   CActorPropertyList CStack_2c4c;
   CPickList local_748;
   char local_3a0 [500];
   char local_1ac [200];
   char local_e4 [200];
-  int local_1c;
   int local_18;
   int iVar2;
   uint window_flags;
@@ -31,18 +31,17 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_748);
   local_18 = 0;
   if (0 < this_ptr->xref_count) {
-    local_1c = 0;
     do {
-      pcVar8 = this_ptr->xref_entries->name + local_1c;
-      iVar3 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base,pcVar8);
+      entry = this_ptr->xref_entries + local_18;
+      iVar3 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base,entry->name);
       if (iVar3 < 0) {
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_748.base,pcVar8);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_748.base,entry->name);
         iVar5 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&local_748.base);
       }
       else {
         iVar5 = iVar3 + 1;
       }
-      switch(*(int *)(pcVar8 + 0x100)) {
+      switch(entry->type) {
       case 0:
         pcVar6 = "Event tested";
         break;
@@ -84,31 +83,30 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
         pcVar6 = "????";
       }
       strcpy(local_1ac,pcVar6);
-      if (*(CDemonActor **)(pcVar8 + 0x104) == (CDemonActor *)0x0) {
-        _sprintf(local_e4,"Script\tLn %d",*(int *)(pcVar8 + 0x10c));
+      if (entry->actor == (CDemonActor *)0x0) {
+        _sprintf(local_e4,"Script\tLn %d",entry->line_number);
       }
       else {
         core_actor_cpp_CActorPropertyList_init_FUN_0040e130(&CStack_2c4c);
-        (*(((*(CDemonActor **)(pcVar8 + 0x104))->vtable)._ub)->getPropertyList)
-                  (*(CDemonActor **)(pcVar8 + 0x104),&CStack_2c4c);
+        (*(((entry->actor)->vtable)._ub)->getPropertyList)
+                  (entry->actor,&CStack_2c4c);
         _sprintf
-                  (local_e4,"%s\t%s",(*(CDemonActor **)(pcVar8 + 0x104))->actor_name,
-                   CStack_2c4c.properties[*(int *)(pcVar8 + 0x108)].name);
+                  (local_e4,"%s\t%s",(entry->actor)->actor_name,
+                   CStack_2c4c.properties[entry->property_index].name);
       }
       _sprintf(local_3a0,"\t%s\t%s",local_1ac,local_e4);
       shape_edittool_cpp_CPickList_insert_FUN_004a5670(&local_748,iVar5,local_3a0);
-      *(int *)(pcVar8 + 0x110) = iVar5;
+      entry->display_index = iVar5;
       if (0 < local_18) {
         iVar4 = 0;
         do {
-          iVar2 = *(int *)(this_ptr->xref_entries->name + iVar4 + 0x110);
+          iVar2 = this_ptr->xref_entries[iVar4].display_index;
           if (iVar5 <= iVar2) {
-            *(int *)(this_ptr->xref_entries->name + iVar4 + 0x110) = iVar2 + 1;
+            this_ptr->xref_entries[iVar4].display_index = iVar2 + 1;
           }
-          iVar4 = iVar4 + 0x114;
-        } while (iVar4 < local_18 * 0x114);
+          iVar4 = iVar4 + 1;
+        } while (iVar4 < local_18);
       }
-      local_1c = local_1c + 0x114;
       local_18 = local_18 + 1;
     } while (local_18 < this_ptr->xref_count);
   }

@@ -465,6 +465,89 @@ def _sfo_field_extent(path, var_types, layout):
 
 
 
+def _sfo_field_owner_offset(path, var_types, layout):
+    """Resolve a field-access path to the struct that DIRECTLY owns its final
+    field, plus that field's offset WITHIN that owner.
+
+    Unlike `_sfo_field_extent` (which accumulates a root-relative offset and so
+    becomes meaningless once the path crosses a pointer hop), this returns the
+    innermost owning struct and the final field's offset inside it — exactly
+    what a `base + CONST` walk needs when `base` is `struct_ptr->field`: the
+    walk indexes elements of `owner` and CONST is a field offset inside one
+    element. Array subscripts (`[i]`) are element steps that preserve the type
+    and leave the owner/offset unchanged.
+
+    Returns (owner_struct, field_offset_in_owner, final_len, is_addr,
+    final_is_ptr) or None if any hop is unresolved. `is_addr` is True when the
+    expression denotes the field's address (leading '&' or the final field is
+    an array, which decays); a bare scalar/pointer field's value + CONST walks
+    the pointed-to buffer, not the struct, so callers must skip those.
+    """
+    if not path or not layout:
+        return None
+    p = _sfo_strip_cast(path)
+    had_amp = p[:1] == '&'
+    if had_amp:
+        p = p[1:].strip()
+    if '(' in p:
+        # Grouping parens around a sub-path are safe to drop ('(a->b).c' ==
+        # 'a->b.c'); bail if real arithmetic (not the '-' of '->') leaks in.
+        bare = p.replace('(', '').replace(')', '')
+        if re.search(r'[+\-*/%]', bare.replace('->', '')):
+            return None
+        p = bare
+    p = re.sub(r'\s+', '', p)
+    m = re.match(r'[A-Za-z_]\w*', p)
+    if not m:
+        return None
+    cur = var_types.get(m.group(0))
+    if not cur:
+        return None
+    owner, field_off, final_len = None, None, None
+    final_is_array, final_is_ptr, pos = False, False, m.end()
+    while pos < len(p):
+        ch = p[pos]
+        if ch == '[':
+            depth, j = 0, pos
+            while j < len(p):
+                if p[j] == '[':
+                    depth += 1
+                elif p[j] == ']':
+                    depth -= 1
+                    if depth == 0:
+                        break
+                j += 1
+            if j >= len(p):
+                return None
+            pos = j + 1  # element step: type/owner/offset unchanged
+        elif p[pos:pos + 2] == '->' or ch == '.':
+            pos += 2 if p[pos:pos + 2] == '->' else 1
+            fm = re.match(r'[A-Za-z_]\w*', p[pos:])
+            if not fm:
+                return None
+            flds = layout.get(cur)
+            if not flds:
+                return None
+            fld = next((fl for fl in flds if fl['name'] == fm.group(0)), None)
+            if fld is None:
+                return None
+            owner = cur
+            field_off = fld['offset']
+            final_len = fld['len']
+            final_is_array = fld.get('n') is not None
+            final_is_ptr = bool(fld.get('is_ptr'))
+            cur = fld.get('type')
+            pos += fm.end()
+        else:
+            # Leading '*' or any other token -> give up (conservative).
+            return None
+    if owner is None or final_len is None:
+        return None
+    return (owner, field_off, final_len, had_amp or final_is_array, final_is_ptr)
+
+
+
+
 def _sfo_field_at_offset(layout, struct_name, off):
     """Return the field of `struct_name` whose [offset, offset+len) contains
     `off` (innermost/smallest when several overlap, e.g. unions), or None."""

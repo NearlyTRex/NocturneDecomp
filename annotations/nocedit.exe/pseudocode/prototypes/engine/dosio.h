@@ -29,7 +29,7 @@ uint __cdecl getFileTimestamp(char *directory_path,char *filename);
 
 // Original: engine_dosio.cpp_copyFileTimestamp_FUN_00481910
 // Address: 00481910
-int __cdecl copyFileTimestamp(char *source_file,char *dest_file);
+int __cdecl copyFileTimestamp(char *source_file,uint modtime);
 
 // Original: engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960
 // Address: 00481960

@@ -19,7 +19,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   _FILE *dest_file;
   int *piVar8;
   SPodManageRecord *filename;
-  char *dest;
+  SPodManageRecord *rec;
   char *pcVar12;
   int iVar3;
   char local_2338 [2048];
@@ -48,10 +48,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   int local_48;
   SPodManageRecord *local_44;
   int local_40;
-  char *local_34;
-  char *local_30;
   int local_2c;
-  int local_28;
   char *local_24;
   int local_20;
   int local_1c;
@@ -102,19 +99,17 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
                 (g_CEditorToolsPtr,"Scanning pods");
       local_64 = 0;
       if (0 < local_94.item_count) {
-        local_34 = local_44->pod_name;
-        local_30 = local_44->network_path;
         do {
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                     (g_CEditorToolsPtr,(float)local_64,(float)local_94.item_count);
           filename = local_44 + local_64;
           pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_94,local_64);
-          strcpy(local_30,pcVar3);
+          strcpy(filename->network_path,pcVar3);
           engine_dosio_cpp_splitPath_FUN_00481f20
-                    (local_30,(char *)0x0,(char *)0x0,filename->base_name,(char *)0x0);
+                    (filename->network_path,(char *)0x0,(char *)0x0,filename->base_name,(char *)0x0);
           engine_dosio_cpp_makePath_FUN_00481f50
-                    (local_34,(char *)0x0,(char *)0x0,filename->base_name,"pod");
-          strcpy(local_fbc.found_path,local_30);
+                    (filename->pod_name,(char *)0x0,(char *)0x0,filename->base_name,"pod");
+          strcpy(local_fbc.found_path,filename->network_path);
           iVar2 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_fbc);
           if (iVar2 == 0) {
             g_CurrentLineNumber = 3109;
@@ -250,30 +245,25 @@ LAB_004b8c1d:
             filename->action_index = 0;
           }
           engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_1b38,0);
-          local_34 = local_34 + 0x39c;
-          local_30 = local_30 + 0x39c;
           local_64 = local_64 + 1;
         } while (local_64 < local_94.item_count);
       }
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       local_1c = 0;
       if (0 < local_84.item_count) {
-        local_2c = local_94.item_count * 0x39c;
-        local_28 = local_2c + -0x39c;
+        local_2c = local_94.item_count * sizeof(SPodManageRecord);
         do {
           pcVar12 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_84,local_1c);
           iVar2 = 0;
           if (0 < local_48) {
-            pcVar3 = local_44->pod_name;
             do {
-              iVar4 = _stricmp(pcVar12,pcVar3);
+              iVar4 = _stricmp(pcVar12,local_44[iVar2].pod_name);
               if (iVar4 == 0) break;
               iVar2 = iVar2 + 1;
-              pcVar3 = pcVar3 + 0x39c;
             } while (iVar2 < local_48);
           }
           if (local_48 <= iVar2) {
-            local_2c = local_2c + 0x39c;
+            local_2c = local_2c + sizeof(SPodManageRecord);
             local_48 = local_48 + 1;
             local_44 = (SPodManageRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                                  (local_44,local_2c,"..\\engine\\fileio.cpp",3283);
@@ -282,23 +272,22 @@ LAB_004b8c1d:
               g_CurrentLineNumber = 3284;
               core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
             }
-            dest = local_44[1].base_name + local_28;
-            memset(dest,0,0x39c);
-            strcpy(dest + 0x100,pcVar12);
+            rec = local_44 + (local_48 + -1);
+            memset(rec,0,sizeof(SPodManageRecord));
+            strcpy(rec->pod_name,pcVar12);
             engine_dosio_cpp_splitPath_FUN_00481f20(local_598,local_14,local_394,local_194,local_294);
             engine_dosio_cpp_makePath_FUN_00481f50
                       (local_494,(char *)0x0,local_394,local_194,local_294);
             engine_dosio_cpp_splitPath_FUN_00481f20
                       (pcVar12,(char *)0x0,(char *)0x0,local_194,local_294);
             engine_dosio_cpp_makePath_FUN_00481f50
-                      (dest + 0x204,local_14,local_494,local_194,local_294);
-            strcpy(dest,local_194);
-            dest[0x308] = '\0';
-            *(int *)(dest + 0x370) = 5;
-            *(char **)(dest + 0x36c) = "POD not under version control";
-            *(int *)(dest + 0x378) = 0;
-            *(int *)(dest + 0x374) = 1;
-            local_28 = local_28 + 0x39c;
+                      (rec->network_path,local_14,local_494,local_194,local_294);
+            strcpy(rec->base_name,local_194);
+            rec->checked_out_by[0] = '\0';
+            rec->comparison_result = 5;
+            rec->status_description = "POD not under version control";
+            rec->action_index = 0;
+            rec->is_mounted = 1;
           }
           local_1c = local_1c + 1;
         } while (local_1c < local_84.item_count);
@@ -605,7 +594,7 @@ LAB_004b9af4:
                       local_5c = local_5c + 1;
                       iVar2 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910
                                         (local_44[local_20].pod_name,
-                                         (char *)local_44[local_20].timestamp);
+                                         local_44[local_20].timestamp);
                       if (iVar2 == 0) {
                         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                   (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)",
@@ -661,7 +650,7 @@ LAB_004b9af4:
             }
           }
 LAB_004b8f32:
-          local_24 = local_24 + 0x39c;
+          local_24 = local_24 + sizeof(SPodManageRecord);
           local_20 = local_20 + 1;
         } while (local_20 < local_48);
       }

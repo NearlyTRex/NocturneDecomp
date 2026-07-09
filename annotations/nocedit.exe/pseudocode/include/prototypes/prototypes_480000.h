@@ -86,7 +86,7 @@ int __cdecl engine_dosio_cpp_findFile_FUN_00481760(SFoundFileInfo *context);
 int __cdecl engine_dosio_cpp_findFileNormally_FUN_004817c0(SFoundFileInfo *info);
 int __cdecl engine_dosio_cpp_getFileSize_FUN_00481880(char *directory,char *filename);
 uint __cdecl engine_dosio_cpp_getFileTimestamp_FUN_004818d0(char *directory_path,char *filename);
-int __cdecl engine_dosio_cpp_copyFileTimestamp_FUN_00481910(char *source_file,char *dest_file);
+int __cdecl engine_dosio_cpp_copyFileTimestamp_FUN_00481910(char *source_file,uint modtime);
 int __cdecl engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960(char *directory,char *filename);
 int __cdecl engine_dosio_cpp_setFileAttributes_FUN_004819f0(char *filename,byte flags);
 int __cdecl engine_dosio_cpp_truncateFile_FUN_00481a20(_FILE *file_handle,long new_size_bytes);

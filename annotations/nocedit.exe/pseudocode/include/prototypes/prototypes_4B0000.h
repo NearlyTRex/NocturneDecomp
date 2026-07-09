@@ -88,7 +88,7 @@ int __cdecl engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(CCheckOutList
 int __cdecl engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(CCheckOutList *this_ptr,_FILE **file_handle);
 int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90(char *dialog_title,int *overwrite_state);
 int __cdecl engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120(char *target_filename,char *source_directory);
-int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,char *dest_file);
+int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,uint modtime);
 int __cdecl engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,char *filename);
 int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,char *filename);
 int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920(CCheckOutItem *this_ptr,char *filename);
@@ -114,7 +114,7 @@ void __cdecl engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac
 void __cdecl engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10(CFileManager *this_ptr);
 void __cdecl engine_fileio_cpp_CFileManager_closeExtractFile_FUN_004b7c60(CFileManager *this_ptr);
 void __cdecl engine_fileio_cpp_CFileManager_verifyPodCRC_FUN_004b7c90(CFileManager *this_ptr,char *pod_filename);
-int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,char *timestamp_source,int checksum);
+int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,uint modtime,int checksum);
 void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFileManager *this_ptr,char *pod_filename);
 void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(CFileManager *this_ptr,char *pod_filename);
 void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileManager *this_ptr,char *pod_directory_path);

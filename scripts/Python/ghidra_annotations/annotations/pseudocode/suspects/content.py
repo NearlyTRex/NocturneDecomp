@@ -9,9 +9,12 @@ from ._common import (
     _find_neighbor_after, _parse_call_arguments, count_format_specifiers
 )
 from ._structtypes import (
-    _SFO_ACCESS_RE, _SFO_DECL_RE, _SFO_NON_TYPE_KEYWORDS, _SFO_PTR_PARAM_RE, _SFO_SIG_RE,
-    _SFO_VALDECL_RE, _SFO_VAL_PARAM_RE, _sfo_field_base_deref_overruns, _sfo_index_const,
-    _sfo_resolve_var_types, resolve_access_path_type
+    _SFO_ACCESS_RE, _SFO_DECL_RE, _SFO_DEREF_START_RE, _SFO_LOCAL_ASSIGN_RE,
+    _SFO_NON_TYPE_KEYWORDS, _SFO_PTR_PARAM_RE, _SFO_SIG_RE,
+    _SFO_VALDECL_RE, _SFO_VAL_PARAM_RE, _sfo_field_at_offset,
+    _sfo_field_base_deref_overruns, _sfo_field_owner_offset, _sfo_index_const,
+    _sfo_resolve_var_types, _sfo_split_ptr_const,
+    resolve_access_path_type
 )
 
 
@@ -6369,6 +6372,201 @@ def _struct_grows_at_64bit(layout):
 
 
 
+_DIVERGENCE_OFFSET_CACHE = {}
+
+
+def _struct_divergence_offset_64bit(layout):
+    """Map each 64-bit-unstable struct to the smallest field offset at which its
+    32- and 64-bit layouts can diverge.
+
+    Every field strictly before this offset is a scalar / fixed non-pointer
+    array whose offset is identical at 32- and 64-bit, so a hardcoded byte
+    offset that lands before it is provably safe. At or after it — the first
+    pointer field, or the first field that is itself a 64-bit-unstable struct —
+    pointer widening (4->8) and re-alignment shift the true 64-bit offset, so a
+    baked 32-bit offset there is stale. Only unstable structs get an entry.
+    """
+    if not layout:
+        return {}
+    cached = _DIVERGENCE_OFFSET_CACHE.get(id(layout))
+    if cached is not None:
+        return cached
+    unstable = _struct_grows_at_64bit(layout)
+    result = {}
+    for name in unstable:
+        best = None
+        for fl in layout.get(name, ()):
+            if fl.get('is_ptr') or fl.get('type') in unstable:
+                if best is None or fl['offset'] < best:
+                    best = fl['offset']
+        if best is not None:
+            result[name] = best
+    _DIVERGENCE_OFFSET_CACHE[id(layout)] = result
+    return result
+
+
+def identify_stale_struct_offset_64bit(code, struct_layout_map=None):
+    """Flag `*(T *)(base + 0xNN)` raw struct-offset derefs that go stale at 64-bit.
+
+    Watcom-lowered code walks an array of structs (or reaches a field) via a
+    `char *` / typed pointer plus a hardcoded byte offset that equals a field's
+    32-bit offset — e.g. `*(CDemonActor **)(pcVar8 + 0x104)` where `pcVar8`
+    walks `SScriptXRef` and its `actor` field sits at 0x104. On the 32-bit
+    matching build the offset is exactly right, so it compiles and runs, and NO
+    existing detector or compiler diagnostic fires: the base is a genuine
+    pointer (not an `(int)ptr` truncation, so identify_pointer_int_offset_access
+    skips it) and the offset lands on the intended field (not a sibling, so
+    struct_field_overrun skips it).
+
+    But once pointers are 8 bytes the struct grows and every field at/after its
+    first pointer re-aligns/shifts — `actor` moves to 0x108 — so the baked 0x104
+    reads/writes half-padding, half-pointer garbage. This is the silent-64bit
+    class the mem*/alloc stride detectors don't reach: those flag a byte *count*;
+    this is a field *offset*.
+
+    Fires only when the base resolves — directly, or via a `LOCAL = obj->field`
+    walker assignment (the two-step form) — to a struct T that is 64-bit-unstable
+    AND the accessed offset is at or past T's divergence offset (its first
+    pointer / nested-unstable field). Offsets before that point are identical at
+    64-bit and are not flagged, which kills the width-stable value-struct noise
+    (same _struct_grows_at_64bit gate as mem_magic_size). Fix: de-pun to named
+    field access on a correctly-typed pointer (§de-pun / §12).
+
+    Needs struct_layout_map (inert without it, like struct_field_overrun /
+    mem_magic_size); runs at export and in test_suspects.sh, which builds the map.
+
+    Args:
+        code: source text.
+        struct_layout_map: struct -> field layout (build_struct_layout_map).
+
+    Returns:
+        List of suspect dicts (type stale_struct_offset_64bit).
+    """
+    suspects = []
+    if not code or not struct_layout_map:
+        return suspects
+    unstable = _struct_grows_at_64bit(struct_layout_map)
+    if not unstable:
+        return suspects
+    div = _struct_divergence_offset_64bit(struct_layout_map)
+    var_types = _sfo_resolve_var_types(code)
+    if not var_types:
+        return suspects
+
+    # Two-step walker form: map a local to the struct field its pointer was
+    # derived from (`pcVar8 = obj->field + i; *(T*)(pcVar8 + 0xNN);`).
+    local_owner = {}
+    for line in code.split('\n'):
+        s = line.strip()
+        if s.startswith('//') or s.startswith('/*') or s.startswith('*'):
+            continue
+        am = _SFO_LOCAL_ASSIGN_RE.match(s)
+        if not am:
+            continue
+        # Split the RHS on top-level '+' only — a base-shift walker is
+        # `field-path + index`, and splitting on '-' (as _sfo_top_terms does)
+        # would shred the '->' inside the field path.
+        depth, term, terms = 0, '', []
+        for ch in am.group(2):
+            if ch in '([':
+                depth += 1
+                term += ch
+            elif ch in ')]':
+                depth -= 1
+                term += ch
+            elif ch == '+' and depth == 0:
+                terms.append(term)
+                term = ''
+            else:
+                term += ch
+        terms.append(term)
+        for term in terms:
+            ext = _sfo_field_owner_offset(
+                term.strip(), var_types, struct_layout_map)
+            if ext:
+                local_owner[am.group(1)] = ext
+                break
+
+    seen = set()
+    for line_no, line in enumerate(code.split('\n'), 1):
+        s = line.strip()
+        if s.startswith('//') or s.startswith('/*'):
+            continue
+        for dm in _SFO_DEREF_START_RE.finditer(line):
+            start, depth, j = dm.end(), 1, dm.end()
+            while j < len(line):
+                if line[j] == '(':
+                    depth += 1
+                elif line[j] == ')':
+                    depth -= 1
+                    if depth == 0:
+                        break
+                j += 1
+            if depth != 0:
+                continue
+            split = _sfo_split_ptr_const(line[start:j])
+            if not split:
+                continue
+            base_expr, const = split
+            if const <= 0:
+                continue
+            ext = None
+            bm = re.match(r'^([A-Za-z_]\w*)$', base_expr.strip())
+            if bm and bm.group(1) in local_owner:
+                ext = local_owner[bm.group(1)]
+            if ext is None:
+                ext = _sfo_field_owner_offset(
+                    base_expr, var_types, struct_layout_map)
+            if ext is None:
+                continue
+            owner, base_off, flen, addr, _fptr = ext
+            # Only an array (decays to its address) or an explicit `&field`
+            # forms a struct-base pointer; a scalar/pointer field's value + off
+            # walks the pointed-to buffer, not the struct.
+            if not addr or owner not in unstable:
+                continue
+            # The offset must cross OUT of the base field into a sibling. An
+            # access that stays within the base array (`dll_identifier + 0xfe`,
+            # 0xfe < 256) is ordinary in-array byte indexing — the compiler
+            # relocates the named field correctly, so it is width-stable, not a
+            # baked cross-field offset.
+            if const < flen:
+                continue
+            accessed = base_off + const
+            dvg = div.get(owner)
+            if dvg is None or accessed < dvg:
+                continue
+            # Require the offset to land on a real field of the 32-bit layout —
+            # a genuine field access, not past-struct pointer math.
+            sib = _sfo_field_at_offset(struct_layout_map, owner, accessed)
+            if sib is None:
+                continue
+            key = (line_no, base_expr.strip(), const)
+            if key in seen:
+                continue
+            seen.add(key)
+            cast_ptr = '**' in re.sub(r'\s+', '', dm.group(0))
+            suspects.append({
+                'line': line_no,
+                'type': 'stale_struct_offset_64bit',
+                'match': '*(...)(%s + 0x%x)' % (base_expr.strip(), const),
+                'text': s[:120],
+                'description': (
+                    '*(...)(%s + 0x%x) reaches field %s (0x%x) of %s via a baked '
+                    '32-bit offset. %s is 64-bit-unstable (grows past its first '
+                    'pointer/unstable field at 0x%x); on the 64-bit build field '
+                    'offsets at/after 0x%x shift, so this reads/writes the wrong '
+                    'bytes%s. De-pun to named field access on a %s * (§de-pun/§12).'
+                    % (base_expr.strip(), const, sib['name'], sib['offset'],
+                       owner, owner, dvg, dvg,
+                       ' (and the accessed value is itself a pointer)'
+                       if cast_ptr else '', owner)),
+                'severity': SUSPECT_SEVERITY.get(
+                    'stale_struct_offset_64bit', 'moderate'),
+            })
+    return suspects
+
+
 def identify_mem_magic_size(code, struct_layout_map=None, struct_size_map=None):
     """Flag memcpy/memmove/memset whose byte size hardcodes sizeof(an unstable T).
 
@@ -6716,6 +6914,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_mem_magic_size(
         code, struct_layout_map, struct_size_map))
     found.extend(identify_pointer_stride_bytecount(code))
+    found.extend(identify_stale_struct_offset_64bit(code, struct_layout_map))
     return found
 
 

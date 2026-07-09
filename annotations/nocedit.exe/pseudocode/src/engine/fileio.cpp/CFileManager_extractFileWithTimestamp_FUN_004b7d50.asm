@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,char *timestamp_source,int checksum)
+; int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,uint modtime,int checksum)
 ;
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   dest_filename
 ; int              Stack[0x10]:4   file_size
 ; int              Stack[0x14]:4   file_offset
-; char *           Stack[0x18]:4   timestamp_source
+; uint             Stack[0x18]:4   modtime
 ; int              Stack[0x1c]:4   checksum
 ; Local Variables:
 ; char[256]        Stack[-0x114]:256  local_114
@@ -173,7 +173,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x1c]      ; 004b7e71
     PUSH EBX                            ; 004b7e74
     CALL engine_dosio.cpp_copyFileTimestamp_FUN_00481910 ; 004b7e75
-        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
+        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, uint modtime)
     ADD ESP,0x8                         ; 004b7e7a
     TEST EAX,EAX                        ; 004b7e7d
     JNZ 0x004b7e98                      ; 004b7e7f

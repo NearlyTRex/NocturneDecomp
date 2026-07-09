@@ -8,15 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2078,
-    "complexity_score": 810,
+    "complexity_score": 809,
     "cross_reference_count": 0,
     "function_call_count": 51,
     "global_count": 109,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 810,
+    "pseudocode_lines": 809,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 2888
+    "total_lines": 2887
   },
   "cross_references": [],
   "function": {
@@ -1004,7 +1004,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 802,
+      "line": 801,
       "match": "(char **)((int)g_PodFileActionNames",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1085,7 +1085,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 776,
+      "line": 775,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1118,6 +1118,42 @@
       "severity": "moderate",
       "text": "(SPodManageRecord *)shape_memdbg_cpp_debugMalloc_FUN_0050f250 (local_94.item_count * 0x39c,\"..\\\\engine\\\\fileio.cpp\",3086)",
       "type": "alloc_magic_size"
+    },
+    {
+      "description": "*(...)(dest + 0x370) reaches field comparison_result (0x370) of SPodManageRecord via a baked 32-bit offset. SPodManageRecord is 64-bit-unstable (grows past its first pointer/unstable field at 0x36c); on the 64-bit build field offsets at/after 0x36c shift, so this reads/writes the wrong bytes. De-pun to named field access on a SPodManageRecord * (\u00a7de-pun/\u00a712).",
+      "line": 388,
+      "match": "*(...)(dest + 0x370)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(dest + 0x370) = 5;",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(dest + 0x36c) reaches field status_description (0x36c) of SPodManageRecord via a baked 32-bit offset. SPodManageRecord is 64-bit-unstable (grows past its first pointer/unstable field at 0x36c); on the 64-bit build field offsets at/after 0x36c shift, so this reads/writes the wrong bytes (and the accessed value is itself a pointer). De-pun to named field access on a SPodManageRecord * (\u00a7de-pun/\u00a712).",
+      "line": 389,
+      "match": "*(...)(dest + 0x36c)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char **)(dest + 0x36c) = \"POD not under version control\";",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(dest + 0x378) reaches field action_index (0x378) of SPodManageRecord via a baked 32-bit offset. SPodManageRecord is 64-bit-unstable (grows past its first pointer/unstable field at 0x36c); on the 64-bit build field offsets at/after 0x36c shift, so this reads/writes the wrong bytes. De-pun to named field access on a SPodManageRecord * (\u00a7de-pun/\u00a712).",
+      "line": 390,
+      "match": "*(...)(dest + 0x378)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(dest + 0x378) = 0;",
+      "type": "stale_struct_offset_64bit"
+    },
+    {
+      "description": "*(...)(dest + 0x374) reaches field is_mounted (0x374) of SPodManageRecord via a baked 32-bit offset. SPodManageRecord is 64-bit-unstable (grows past its first pointer/unstable field at 0x36c); on the 64-bit build field offsets at/after 0x36c shift, so this reads/writes the wrong bytes. De-pun to named field access on a SPodManageRecord * (\u00a7de-pun/\u00a712).",
+      "line": 391,
+      "match": "*(...)(dest + 0x374)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(dest + 0x374) = 1;",
+      "type": "stale_struct_offset_64bit"
     }
   ],
   "stack_frame": {

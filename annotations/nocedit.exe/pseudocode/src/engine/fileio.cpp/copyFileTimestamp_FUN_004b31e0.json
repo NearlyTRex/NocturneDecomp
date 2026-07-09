@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fileio.cpp_copyFileTimestamp_FUN_004b31e0",
-    "signature": "int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,char *dest_file)"
+    "signature": "int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,uint modtime)"
   },
   "function_calls": [
     {
@@ -109,10 +109,10 @@
       },
       {
         "is_param": true,
-        "name": "dest_file",
+        "name": "modtime",
         "offset": 8,
         "size": 4,
-        "type": "char *"
+        "type": "uint"
       }
     ]
   },

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_dosio_cpp_copyFileTimestamp_FUN_00481910(char *source_file,char *dest_file)
+; int __cdecl engine_dosio_cpp_copyFileTimestamp_FUN_00481910(char *source_file,uint modtime)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   source_file
-; char *           Stack[0x8]:4   dest_file
+; uint             Stack[0x8]:4   modtime
 ; Local Variables:
 ; _stat            Stack[-0x50]:70  _Stack_50
 ; _utimbuf         Stack[-0x8]:8  local_8

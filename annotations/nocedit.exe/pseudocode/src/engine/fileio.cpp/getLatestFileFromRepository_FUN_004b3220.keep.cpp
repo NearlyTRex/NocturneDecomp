@@ -89,7 +89,7 @@ LAB_004b32cc:
         goto LAB_004b3306;
       }
       iVar3 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910
-                        (local_328.found_path,(char *)local_53c.timestamp);
+                        (local_328.found_path,local_53c.timestamp);
       if (iVar3 == 0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)",local_328.found_path);

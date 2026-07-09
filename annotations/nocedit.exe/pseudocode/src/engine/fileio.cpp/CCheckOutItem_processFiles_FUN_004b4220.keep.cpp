@@ -18,7 +18,6 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   int *piVar4;
   _tm *p_Var5;
   int iVar7;
-  int iVar6;
   char *pcVar8;
   CPickList local_13c8;
   SFoundFileInfo local_1020;
@@ -266,7 +265,7 @@ LAB_004b4980:
           shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
         }
         iVar4 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910
-                          (local_1020.found_path,(char *)local_e0c.timestamp);
+                          (local_1020.found_path,local_e0c.timestamp);
         if (iVar4 == 0) {
           if (local_48 != (_FILE *)0x0) {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\engine\\fileio.cpp",196);

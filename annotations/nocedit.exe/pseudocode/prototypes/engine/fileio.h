@@ -97,7 +97,7 @@ int __cdecl checkFileOverwriteCondition(char *target_filename,char *source_direc
 
 // Original: engine_fileio.cpp_copyFileTimestamp_FUN_004b31e0
 // Address: 004b31e0
-int __cdecl copyFileTimestamp(char *source_file,char *dest_file);
+int __cdecl copyFileTimestamp(char *source_file,uint modtime);
 
 // Original: engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220
 // Address: 004b3220
@@ -201,7 +201,7 @@ void __cdecl CFileManager::verifyPodCRC(CFileManager *this_ptr,char *pod_filenam
 
 // Original: engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
 // Address: 004b7d50
-int __cdecl CFileManager::extractFileWithTimestamp(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,char *timestamp_source,int checksum);
+int __cdecl CFileManager::extractFileWithTimestamp(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,uint modtime,int checksum);
 
 // Original: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
 // Address: 004b7f50

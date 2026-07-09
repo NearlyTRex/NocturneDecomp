@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,char *dest_file)
+; int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,uint modtime)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   source_file
-; char *           Stack[0x8]:4   dest_file
+; uint             Stack[0x8]:4   modtime
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_WARNING_Error_setting_da_00626577
@@ -26,7 +26,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 004b31e5
     PUSH ECX                            ; 004b31e9
     CALL engine_dosio.cpp_copyFileTimestamp_FUN_00481910 ; 004b31ea
-        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
+        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, uint modtime)
     ADD ESP,0x8                         ; 004b31ef
     TEST EAX,EAX                        ; 004b31f2
     JZ 0x004b31fc                       ; 004b31f4

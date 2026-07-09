@@ -140,8 +140,8 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
       pcVar6 = "(skipped)";
       if ((0 < local_14) || (iVar4 == 0)) {
         iVar5 = engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
-                          (this_ptr,local_20,pcVar9,local_40[0],local_40[1],(char *)local_40[2],
-                           local_40[3]);
+                          (this_ptr,local_20,pcVar9,local_40[0],local_40[1],local_40[2],local_40[3])
+        ;
         if (iVar5 == 0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Unable to extract file:\n%s",pcVar9);

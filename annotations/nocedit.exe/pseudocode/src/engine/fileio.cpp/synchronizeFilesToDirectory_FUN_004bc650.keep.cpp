@@ -82,7 +82,7 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
         }
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",4109);
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",4110);
-        iVar4 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910(local_328,(char *)local_53c.timestamp)
+        iVar4 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910(local_328,local_53c.timestamp)
         ;
         if (iVar4 == 0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

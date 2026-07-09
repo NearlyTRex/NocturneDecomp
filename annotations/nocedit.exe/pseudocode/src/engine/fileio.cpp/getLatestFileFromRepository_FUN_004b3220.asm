@@ -329,7 +329,7 @@ section .text
     LEA EAX,[ESP + 0x218]               ; 004b34c8
     PUSH EAX                            ; 004b34cf
     CALL engine_dosio.cpp_copyFileTimestamp_FUN_00481910 ; 004b34d0
-        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
+        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, uint modtime)
     ADD ESP,0x8                         ; 004b34d5
     TEST EAX,EAX                        ; 004b34d8
     JZ 0x004b3539                       ; 004b34da

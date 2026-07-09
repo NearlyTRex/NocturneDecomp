@@ -1971,7 +1971,7 @@ section .text
     PUSH EBX                            ; 004b9d1e
     MOV dword ptr [ESP + 0x22e4],ECX    ; 004b9d1f
     CALL engine_dosio.cpp_copyFileTimestamp_FUN_00481910 ; 004b9d26
-        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
+        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, uint modtime)
     ADD ESP,0x8                         ; 004b9d2b
     TEST EAX,EAX                        ; 004b9d2e
     JZ 0x004b9dee                       ; 004b9d30

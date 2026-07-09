@@ -42,7 +42,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50",
-    "signature": "int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,char *timestamp_source,int checksum)"
+    "signature": "int __cdecl engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager *this_ptr,_FILE *source_file,char *dest_filename,int file_size,int file_offset,uint modtime,int checksum)"
   },
   "function_calls": [
     {
@@ -289,10 +289,10 @@
       },
       {
         "is_param": true,
-        "name": "timestamp_source",
+        "name": "modtime",
         "offset": 24,
         "size": 4,
-        "type": "char *"
+        "type": "uint"
       },
       {
         "is_param": true,

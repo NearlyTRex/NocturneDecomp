@@ -103,7 +103,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
     if (iVar4 != 0) {
       iVar4 = engine_fileio_cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
                         (this_ptr,source_file_00,dest_filename,local_1c[0],local_1c[1],
-                         (char *)local_1c[2],local_1c[3]);
+                         local_1c[2],local_1c[3]);
       if (iVar4 == 0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Unable to extract file:\n%s",dest_filename);
