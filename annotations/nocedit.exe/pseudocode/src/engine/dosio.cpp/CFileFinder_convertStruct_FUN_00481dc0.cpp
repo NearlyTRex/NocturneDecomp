@@ -18,26 +18,26 @@ void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder
   
   memset(finder,0,0x100);
   _strncpy(finder->filename,find_data->cFileName,0xff);
-  finder->file_size = 0;
+  finder->attributes = 0;
   if ((find_data->dwFileAttributes & 0x20) != 0) {
-    *(byte *)&finder->file_size = (byte)finder->file_size | 1;
+    *(byte *)&finder->attributes = (byte)finder->attributes | 1;
   }
   if ((find_data->dwFileAttributes & 2) != 0) {
-    *(byte *)&finder->file_size = (byte)finder->file_size | 2;
+    *(byte *)&finder->attributes = (byte)finder->attributes | 2;
   }
   if ((find_data->dwFileAttributes & 0x10) != 0) {
-    *(byte *)&finder->file_size = (byte)finder->file_size | 4;
+    *(byte *)&finder->attributes = (byte)finder->attributes | 4;
   }
   if ((find_data->dwFileAttributes & 1) != 0) {
-    *(byte *)&finder->file_size = (byte)finder->file_size | 8;
+    *(byte *)&finder->attributes = (byte)finder->attributes | 8;
   }
   if ((find_data->nFileSizeHigh != 0) || (0x7fffffff < find_data->nFileSizeLow)) {
     g_CurrentFilename = "..\\engine\\dosio.c";
     g_CurrentLineNumber = 679;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CFileFinder::convertStruct - file too big!");
   }
-  finder->timestamp = find_data->nFileSizeLow;
-  finder->attributes = 0;
+  finder->file_size = find_data->nFileSizeLow;
+  finder->timestamp = 0;
   BVar1 = (*g_FileTimeToLocalFileTimeFunc)(&find_data->ftLastWriteTime,&local_18);
   if (BVar1 != 0) {
     BVar2 = (*g_FileTimeToSystemTimeFunc)(&local_18,&_Stack_28);
@@ -50,7 +50,7 @@ void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder
       _Stack_4c.tm_year = _Stack_28.wYear - 0x76c;
       _Stack_4c.tm_isdst = 0;
       uVar2 = _mktime(&_Stack_4c);
-      finder->attributes = uVar2;
+      finder->timestamp = uVar2;
       return;
     }
   }

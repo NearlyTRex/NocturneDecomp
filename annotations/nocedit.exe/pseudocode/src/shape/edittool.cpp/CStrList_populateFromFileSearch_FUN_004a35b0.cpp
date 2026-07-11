@@ -67,7 +67,7 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0(CSt
   engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(&local_528,local_310);
   while (local_528.filename[0] != '\0') {
     shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
-              (this_ptr,local_528.filename,(char *)0x0,local_528.timestamp,local_528.attributes);
+              (this_ptr,local_528.filename,(char *)0x0,local_528.file_size,local_528.timestamp);
     engine_dosio_cpp_CFileFinder_findNext_FUN_00481cf0(&local_528);
   }
   engine_dosio_cpp_CFileFinder_closeSearch_FUN_00481d70(&local_528);

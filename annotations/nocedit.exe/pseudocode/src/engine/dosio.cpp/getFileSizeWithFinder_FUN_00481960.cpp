@@ -18,7 +18,7 @@ int __cdecl engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960(char *directory,
   iVar1 = engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(&local_118,local_32c);
   if (iVar1 != 0) {
     engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(&local_118,0);
-    return local_118.file_size;
+    return local_118.attributes;
   }
   engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(&local_118,0);
   return -1;
