@@ -391,6 +391,16 @@ def should_track_as_dependency(type_name):
     # Normalize the name
     normalized_name = normalize_data_type_name(type_name).lower()
 
+    # Resolve bitfields to their base type. Ghidra names a bitfield "<base>:<bits>"
+    # (e.g. "dword:31" for a 31-bit field over dword), so strip a trailing ":<digits>"
+    # suffix and let the primitive/builtin checks below apply to the base type. Only
+    # a numeric suffix is stripped, so C++ qualified names like "foo::bar" are left
+    # untouched.
+    if ':' in normalized_name:
+        base_name, _, bit_width = normalized_name.rpartition(':')
+        if base_name and bit_width.isdigit():
+            normalized_name = base_name
+
     # Check against primitive types
     primitive_names = set(k.lower() for k in get_primitive_data_types().keys())
     if normalized_name in primitive_names:

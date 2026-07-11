@@ -170,6 +170,31 @@ def run_export(currentProgram, output_folder, categories=None, strict=False,
     log_info("=" * 60)
 
 
+def list_project_program_paths(project):
+    """Return a list of (pathname, name) for every Program in the project.
+
+    Walks the project's folder tree recursively so programs nested in subfolders
+    are included. Only domain files whose content type is "Program" are returned;
+    data type archives and other file types are skipped. Pathnames start with "/"
+    as required by pyghidra.program_context().
+    """
+    program_paths = []
+
+    def walk(folder):
+        for domain_file in folder.getFiles():
+            try:
+                content_type = domain_file.getContentType()
+            except Exception:
+                content_type = None
+            if content_type == "Program":
+                program_paths.append((domain_file.getPathname(), domain_file.getName()))
+        for subfolder in folder.getFolders():
+            walk(subfolder)
+
+    walk(project.getProjectData().getRootFolder())
+    return program_paths
+
+
 def main():
     """Entry point for PyGhidra headless execution"""
     parser = argparse.ArgumentParser(
@@ -195,6 +220,10 @@ Available categories:
                         help="Exit with error if compilation fails (for pseudocode export)")
     parser.add_argument("--deep-analysis", action="store_true",
                         help="Deep static analysis mode: longer timeouts, more thorough checks")
+    parser.add_argument("--all-programs", action="store_true",
+                        help="Export every program in the project. In this mode program_name is "
+                             "ignored and output_folder is treated as a parent directory: each "
+                             "program is exported to <output_folder>/<program_name>.")
     args = parser.parse_args()
 
     # Import pyghidra
@@ -209,28 +238,65 @@ Available categories:
     print("Starting PyGhidra...")
     pyghidra.start()
 
-    # Open the project and program
+    # Parse categories (shared across every exported program)
+    categories = None
+    if args.categories.lower() != "all":
+        categories = [c.strip() for c in args.categories.split(",")]
+
+    # Open the project
     print("Opening project: %s/%s" % (args.project_path, args.project_name))
-    print("Opening program: %s" % args.program_name)
     exit_code = 0
+    project = None
     try:
         project = pyghidra.open_project(args.project_path, args.project_name)
-        with pyghidra.program_context(project, "/" + args.program_name) as currentProgram:
 
-            # Parse categories
-            categories = None
-            if args.categories.lower() != "all":
-                categories = [c.strip() for c in args.categories.split(",")]
+        # Determine which programs to export
+        if args.all_programs:
+            program_paths = list_project_program_paths(project)
+            if not program_paths:
+                print("ERROR: No programs found in project '%s'" % args.project_name)
+                os._exit(1)
+            print("Found %d program(s): %s" % (
+                len(program_paths), ", ".join(name for _, name in program_paths)))
+        else:
+            program_paths = [("/" + args.program_name, args.program_name)]
 
-            # Run export
-            run_export(currentProgram, args.output_folder, categories=categories,
-                       strict=args.strict, deep_analysis=args.deep_analysis)
-        project.close()
+        # Export each program. In --all-programs mode output_folder is a parent
+        # directory and each program lands in <output_folder>/<program_name>
+        # (matching the existing annotations/<program_name> layout). In single-
+        # program mode output_folder is used verbatim for backward compatibility.
+        for pathname, name in program_paths:
+            if args.all_programs:
+                out_folder = os.path.join(args.output_folder, name)
+            else:
+                out_folder = args.output_folder
+
+            print("Opening program: %s -> %s" % (pathname, out_folder))
+            try:
+                with pyghidra.program_context(project, pathname) as currentProgram:
+                    run_export(currentProgram, out_folder, categories=categories,
+                               strict=args.strict, deep_analysis=args.deep_analysis)
+            except SystemExit as e:
+                # A library deep in the export (e.g. data-type dependency resolution)
+                # may call sys.exit() on a per-program problem. SystemExit is a
+                # BaseException, so it would otherwise bypass the handler below and
+                # abort the whole batch, skipping the remaining programs.
+                code = e.code if isinstance(e.code, int) else 1
+                print("ERROR exporting '%s': export exited with code %s" % (name, code))
+                exit_code = code or 1
+            except Exception as e:
+                print("ERROR exporting '%s': %s" % (name, str(e)))
+                import traceback
+                traceback.print_exc()
+                exit_code = 1
     except Exception as e:
         print("ERROR: %s" % str(e))
         import traceback
         traceback.print_exc()
         exit_code = 1
+    finally:
+        if project is not None:
+            project.close()
 
     # Force exit - JVM shutdown can hang
     os._exit(exit_code)

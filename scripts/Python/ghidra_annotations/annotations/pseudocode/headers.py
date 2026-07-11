@@ -283,6 +283,17 @@ def format_field_declaration(field_type, field_name):
     Returns:
         Formatted declaration string
     """
+    # Bitfields are named "<base>:<bits>" by Ghidra (e.g. "dword:31"). Emit them
+    # as real C bitfield syntax "<base> <name> : <bits>" instead of treating the
+    # whole "dword:31" as the type. The base has no colon, so a single colon
+    # followed by digits unambiguously distinguishes a bitfield from a C++
+    # qualified name like "Foo::Bar".
+    bitfield_match = re.match(r'^([^:]+):(\d+)$', field_type)
+    if bitfield_match:
+        base_type = bitfield_match.group(1)
+        bit_width = bitfield_match.group(2)
+        return "%s %s : %s" % (base_type, field_name, bit_width)
+
     # C++ allows a struct member to share a name with its type (name lookup
     # disambiguates by context), so we emit the Ghidra-recorded field name
     # verbatim. Keeping this lets Ghidra stay the source of truth and lets
@@ -2701,10 +2712,11 @@ def generate_types_aggregate(pseudocode_dir):
     Args:
         pseudocode_dir: Base directory for headers
     """
-    types_dir = os.path.join(pseudocode_dir, "types")
-    if not os.path.exists(types_dir):
-        log_info("Types directory does not exist, skipping types.h generation")
-        return
+    # types.h is always written, even when there are no game types to aggregate
+    # (e.g. a freshly imported, unanalyzed program with no types/ dir). nocturne.h
+    # includes "types.h" unconditionally, so a missing types.h breaks every
+    # downstream TU. generate_type_category_aggregate() already returns 0 for a
+    # missing category dir, so with no types/ dir we simply emit an empty aggregate.
 
     # Generate aggregates for each category
     # Order matters for dependencies: base types first, then typedefs, then classes
@@ -2738,6 +2750,59 @@ def generate_types_aggregate(pseudocode_dir):
     write_header_file(types_path, "\n".join(content))
     total = sum(category_counts.values())
     log_info("Created types aggregate: %s (%d total headers)" % (types_path, total))
+
+
+def ensure_default_stdarg_header(pseudocode_dir):
+    """Write a default system/stdarg.h when the program has no va_list_t type.
+
+    crt.h (generate_crt_header) is emitted unconditionally and always
+    `#include "system/stdarg.h"` for va_list_t. Otherwise stdarg.h is only
+    produced by the per-type system-header pass when Ghidra actually has a
+    va_list_t data type. A freshly imported / unanalyzed program (e.g.
+    nocturne.exe) has no such type, so stdarg.h would be missing and every TU
+    that pulls in crt.h fails to compile. When stdarg.h already exists (the
+    normal analyzed case) it is left untouched, so this never overrides the
+    Ghidra-derived header.
+    """
+    system_dir = os.path.join(pseudocode_dir, "system")
+    stdarg_path = os.path.join(system_dir, "stdarg.h")
+    if os.path.exists(stdarg_path):
+        return
+    make_dirs(system_dir)
+    content = [
+        "#pragma once",
+        "",
+        "// Dependencies",
+        '#include "system/basetypes.h"',
+        "",
+        "// =============================================================================",
+        "// STDARG - System Header (default)",
+        "// =============================================================================",
+        "// Emitted because this program has no va_list_t data type of its own, yet",
+        "// crt.h unconditionally depends on it. Mirrors the analyzed-program stdarg.h.",
+        "",
+        "// Structure: va_list_t",
+        "#pragma pack(push, 1)",
+        "typedef struct va_list_t {",
+        "    char* value[(sizeof(__builtin_va_list) + sizeof(char*) - 1) / sizeof(char*)];",
+        "} va_list_t;",
+        "#pragma pack(pop)",
+        "",
+        "// Variadic argument macros for va_list_t. Delegate to the compiler",
+        "// intrinsics so the first-arg position is correct even under ASan's",
+        "// shadow-stack parameter relocation; consumers memcpy value[] back into a",
+        "// real va_list for glibc.",
+        "#define VA_START_T(ap, last) do { \\",
+        "    __builtin_va_list _va_start_tmp; \\",
+        "    __builtin_va_start(_va_start_tmp, (last)); \\",
+        "    __builtin_memcpy(&(ap).value[0], &_va_start_tmp, sizeof(__builtin_va_list)); \\",
+        "    __builtin_va_end(_va_start_tmp); \\",
+        "} while(0)",
+        '#define VA_END_T(ap) do { (ap).value[0] = (char*)0; } while(0)',
+        "",
+    ]
+    write_header_file(stdarg_path, "\n".join(content))
+    log_info("Created default system/stdarg.h (no va_list_t type in program)")
 
 
 def generate_system_aggregate(pseudocode_dir):
@@ -2971,6 +3036,11 @@ def export_header_files(currentProgram, pseudocode_dir):
 
     # Generate intrinsics header (must be before system aggregate so it gets included)
     write_intrinsics_header(pseudocode_dir)
+
+    # Ensure crt.h's unconditional dependency on system/stdarg.h is satisfied even
+    # for programs with no va_list_t type. Must run after the per-type system
+    # headers (so a real stdarg.h is preferred) and before the system aggregate.
+    ensure_default_stdarg_header(pseudocode_dir)
 
     # Generate aggregate headers
     generate_system_aggregate(pseudocode_dir)
