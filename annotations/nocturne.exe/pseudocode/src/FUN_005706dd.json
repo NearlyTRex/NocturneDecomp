@@ -1,0 +1,657 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 123,
+    "complexity_score": 437,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 72,
+    "suspect_count": 34,
+    "suspect_types": [
+      "bitcast_double_pair",
+      "param_count_too_few",
+      "unaffected_reg",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 195
+  },
+  "cross_references": [
+    {
+      "addr": "0056bd22",
+      "from_addr": "0056bd96",
+      "name": "FUN_0056bd22",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005706aa",
+      "from_addr": "005706b9",
+      "name": "FUN_005706aa",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005706dd",
+    "address_range": [
+      [
+        "005706dd",
+        "005707da"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "FUN_005706dd",
+    "signature": "undefined8 FUN_005706dd(uint param_1,undefined4 *param_2,undefined4 *param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "00572a35",
+      "is_variadic": false,
+      "name": "FUN_00572a35"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005a4b78",
+      "name": "DAT_005a4b78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005a4b7c",
+      "name": "DAT_005a4b7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c206c",
+      "name": "DAT_005c206c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0056bd96",
+        "call_type": "direct",
+        "caller": "FUN_0056bd22",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005706b9",
+        "call_type": "direct",
+        "caller": "FUN_005706aa",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 5,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.488888888888889,
+    "instruction_count": 90,
+    "opcode_distribution": {
+      "BRANCH": 9,
+      "CALL": 1,
+      "CBRANCH": 10,
+      "COPY": 99,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_NEG": 1,
+      "INT_ADD": 36,
+      "INT_AND": 41,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 30,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 15,
+      "INT_SUB": 6,
+      "INT_XOR": 2,
+      "LOAD": 18,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 314
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_005706dd.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "legacyUninitvar",
+          "column": 14,
+          "line": 79,
+          "message": "Uninitialized variable: unaff_EBX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ulonglong FUN_005706dd(uint param_1,uint *param_2,uint *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "ulonglong FUN_005706dd(uint param_1,uint *param_2,uint *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "ulonglong FUN_005706dd(uint param_1,uint *param_2,uint *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_34 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_30 = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_2c = *param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_28 = param_3[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 & 0x40) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 & 0x80) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 & 0x100) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 & 0x800) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 & 0x200) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 & 0x400) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = 5;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = 6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = 4;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = 3;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 43,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = 2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 47,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_38 = (&DAT_005c206c)[param_1 & 0x1f];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_005c206c",
+      "severity": "mild",
+      "text": "local_38 = (&DAT_005c206c)[param_1 & 0x1f];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 & 0x1000) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 & 0x2000) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 & 0x4000) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_005a4b78",
+      "severity": "mild",
+      "text": "uVar2 = DAT_005a4b78;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 & 0x8000) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uVar3 = param_3[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uVar2 = *param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 59,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "local_24 = __BITCAST_DOUBLE(CONCAT44(uVar3,uVar2));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 70,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "local_24 = -__BITCAST_DOUBLE(CONCAT44(0x7FF00000,DAT_005a4b78));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_005a4b78",
+      "severity": "mild",
+      "text": "local_24 = -__BITCAST_DOUBLE(CONCAT44(0x7FF00000,DAT_005a4b78));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 72,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "local_3c = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EBX",
+      "line": 79,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "local_3c = unaff_EBX;",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

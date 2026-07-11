@@ -1,0 +1,398 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 108,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 8,
+    "suspect_types": [
+      "fpu_register_input",
+      "register_param"
+    ],
+    "total_lines": 54
+  },
+  "cross_references": [
+    {
+      "addr": "00565c76",
+      "from_addr": "00565c80",
+      "name": "FUN_00565c76",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00565ca4",
+      "from_addr": "00565cc6",
+      "name": "FUN_00565ca4",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056c5a8",
+    "address_range": [
+      [
+        "0056c5a8",
+        "0056c5e5"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "FUN_0056c5a8",
+    "signature": "undefined4 FUN_0056c5a8(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005707db",
+      "is_variadic": false,
+      "name": "FUN_005707db"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00565c80",
+        "call_type": "direct",
+        "caller": "FUN_00565c76",
+        "estimated_params": 0,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00565cc6",
+        "call_type": "direct",
+        "caller": "FUN_00565ca4",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.714285714285714,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLOTHER": 2,
+      "CBRANCH": 2,
+      "COPY": 45,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SQRT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 9,
+      "INT_AND": 9,
+      "INT_EQUAL": 4,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 6,
+      "INT_ZEXT": 4,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 132
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0056c5a8.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 7,
+          "line": 20,
+          "message": "Uninitialized variable: in_ST0",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 9,
+          "line": 21,
+          "message": "Uninitialized variable: in_AL",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 16,
+          "line": 22,
+          "message": "Uninitialized variable: in_ST1",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_AL",
+      "severity": "mild",
+      "text": "char in_AL;",
+      "type": "register_param"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 7,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "float10 in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 8,
+      "match": "in_ST1",
+      "severity": "mild",
+      "text": "float10 in_ST1;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 13,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "if (in_ST0 < (float10)0) {",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_AL",
+      "severity": "mild",
+      "text": "if (in_AL != '\\x03') {",
+      "type": "register_param"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 15,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "in_ST0 = in_ST1;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 15,
+      "match": "in_ST1",
+      "severity": "mild",
+      "text": "in_ST0 = in_ST1;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 17,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "FUN_005707db((double)in_ST0);",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "Uninitialized variable: in_ST0",
+      "line": 20,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (in_ST0 < (float10)0) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_AL",
+      "line": 21,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (in_AL != '\\x03') {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_ST1",
+      "line": 22,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "in_ST0 = in_ST1;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

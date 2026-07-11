@@ -1,0 +1,362 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 149,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 10,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 37
+  },
+  "cross_references": [
+    {
+      "addr": "0040e710",
+      "from_addr": "0040e750",
+      "name": "FUN_0040e710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040e8c0",
+      "from_addr": "0040e8e3",
+      "name": "FUN_0040e8c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dec50",
+      "from_addr": "004deec2",
+      "name": "FUN_004dec50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040eab0",
+    "address_range": [
+      [
+        "0040eab0",
+        "0040ead5"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0040eab0",
+    "signature": "void FUN_0040eab0(int param_1)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c00024",
+      "name": "DAT_01c00024",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00028",
+      "name": "DAT_01c00028",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c00029",
+      "name": "DAT_01c00029",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0040e750",
+        "call_type": "direct",
+        "caller": "FUN_0040e710",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040e8e3",
+        "call_type": "direct",
+        "caller": "FUN_0040e8c0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004deec2",
+        "call_type": "direct",
+        "caller": "FUN_004dec50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.705882352941177,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 2,
+      "CBRANCH": 2,
+      "COPY": 24,
+      "INT_ADD": 10,
+      "INT_AND": 17,
+      "INT_EQUAL": 7,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 10,
+      "INT_ZEXT": 4,
+      "LOAD": 8,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 114
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0040eab0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar2 = *(uint **)(param_1 + 8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_01c00024",
+      "severity": "mild",
+      "text": "puVar3 = (uint *)&DAT_01c00024;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)puVar2",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)puVar2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(uint *)((int)puVar3",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)puVar3 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)puVar2",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)puVar2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)puVar3",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)puVar3 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 11,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x100; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0040eac9, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 11,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0040eac9: MOVSD.REP ES:EDI,ESI  ; DAT_01c00024 | DAT_01c00028",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

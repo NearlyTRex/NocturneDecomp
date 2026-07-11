@@ -1,0 +1,346 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 63,
+    "complexity_score": 141,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 7,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unrolled_memcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 109
+  },
+  "cross_references": [
+    {
+      "addr": "0046f330",
+      "from_addr": "0046f33d",
+      "name": "FUN_0046f330",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00472c90",
+    "address_range": [
+      [
+        "00472c90",
+        "00472d0f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00472c90",
+    "signature": "char * FUN_00472c90(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000024",
+      "is_variadic": false,
+      "name": "CloseClipboard"
+    },
+    {
+      "addr": "00564a70",
+      "is_variadic": false,
+      "name": "FUN_00564a70"
+    },
+    {
+      "addr": "EXTERNAL:0000002a",
+      "is_variadic": false,
+      "name": "GetClipboardData"
+    },
+    {
+      "addr": "EXTERNAL:00000033",
+      "is_variadic": false,
+      "name": "OpenClipboard"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00575418",
+      "name": "PTR_CloseClipboard_00575418",
+      "type": "void*",
+      "value": "00175904"
+    },
+    {
+      "addr": "00575430",
+      "name": "PTR_GetClipboardData_00575430",
+      "type": "void*",
+      "value": "0017596c"
+    },
+    {
+      "addr": "00575454",
+      "name": "PTR_OpenClipboard_00575454",
+      "type": "void*",
+      "value": "001759fc"
+    },
+    {
+      "addr": "0057ea91",
+      "name": "DAT_0057ea91",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bcd078",
+      "name": "DAT_01bcd078",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de2098",
+      "name": "DAT_02de2098",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0046f33d",
+        "call_type": "direct",
+        "caller": "FUN_0046f330",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.153846153846154,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BRANCH": 3,
+      "CALL": 1,
+      "CALLIND": 3,
+      "CBRANCH": 8,
+      "COPY": 54,
+      "INT_ADD": 14,
+      "INT_AND": 41,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 28,
+      "INT_LESS": 2,
+      "INT_MULT": 5,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 13,
+      "INT_SUB": 25,
+      "INT_XOR": 1,
+      "INT_ZEXT": 5,
+      "LOAD": 12,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 14
+    },
+    "pcode_op_count": 268
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_0057ea91",
+      "severity": "mild",
+      "text": "return &DAT_0057ea91;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 32,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 37,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 22,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00472cf7, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 49,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00472cf7: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

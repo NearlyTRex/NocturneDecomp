@@ -125,3 +125,7 @@ IMAGE_SECTION_HEADER DAT_00400240 = {
     .Characteristics = 0x40000040
 };
 
+// void*
+void* switchdataD_0040db0c = (void*)0x0040DC5B; // caseD_0
+void* switchdataD_0040ed54 = (void*)0x0040EDC2; // caseD_1
+

@@ -1,0 +1,110 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    FUN_004bedc0
+# Entry:       004bedc0
+# Signature:   void FUN_004bedc0(undefined4 *param_1)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@004bedc0 [ESP:+0]  # MOV EAX, dword ptr [ESP + 0x4]
+INT_ADD (unique,0x7600,4) = (const,0x4,4), (register,0x10,4) /* ESP */
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
+
+@004bedc4 [ESP:+0]  # MOV dword ptr [EAX + 0x32c], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x32c,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bedce [ESP:+0]  # MOV dword ptr [EAX + 0x330], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x330,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bedd8 [ESP:+0]  # MOV dword ptr [EAX + 0x334], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x334,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bede2 [ESP:+0]  # MOV dword ptr [EAX], 0x42c80000
+COPY (unique,0xa300,4) = (const,0x42c80000,4)
+STORE (const,0x1a1,4), (register,0x0,4) /* EAX */, (unique,0xa300,4)
+
+@004bede8 [ESP:+0]  # MOV dword ptr [EAX + 0x4], 0x0
+INT_ADD (unique,0x6600,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
+
+@004bedef [ESP:+0]  # MOV dword ptr [EAX + 0x338], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x338,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bedf9 [ESP:+0]  # MOV dword ptr [EAX + 0x33c], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x33c,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bee03 [ESP:+0]  # MOV dword ptr [EAX + 0x340], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x340,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bee0d [ESP:+0]  # MOV dword ptr [EAX + 0x44c], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x44c,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bee17 [ESP:+0]  # MOV dword ptr [EAX + 0x450], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x450,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bee21 [ESP:+0]  # MOV dword ptr [EAX + 0x454], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x454,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bee2b [ESP:+0]  # MOV dword ptr [EAX + 0x344], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x344,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bee35 [ESP:+0]  # MOV byte ptr [EAX + 0x34c], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x34c,4)
+COPY (unique,0xa100,1) = (const,0x0,1)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa100,1)
+
+@004bee3c [ESP:+0]  # MOV dword ptr [EAX + 0x458], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x458,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bee46 [ESP:+0]  # MOV dword ptr [EAX + 0x45c], 0x0
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x45c,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
+
+@004bee50 [ESP:+0]  # MOV dword ptr [EAX + 0x8], 0x0
+INT_ADD (unique,0x6600,4) = (register,0x0,4) /* EAX */, (const,0x8,4)
+COPY (unique,0xa300,4) = (const,0x0,4)
+STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
+
+@004bee57 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 18 instructions, 53 P-code ops
+# ============================================================================

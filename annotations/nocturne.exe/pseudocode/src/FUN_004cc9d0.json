@@ -1,0 +1,360 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 99,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 6,
+    "suspect_types": [
+      "extra_output",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 75
+  },
+  "cross_references": [
+    {
+      "addr": "004c85f0",
+      "from_addr": "004c873b",
+      "name": "FUN_004c85f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cc9d0",
+    "address_range": [
+      [
+        "004cc9d0",
+        "004cca4f"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "FUN_004cc9d0",
+    "signature": "int FUN_004cc9d0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "FUN_00563a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005881c3",
+      "name": "DAT_005881c3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005881cb",
+      "name": "DAT_005881cb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005881d3",
+      "name": "DAT_005881d3",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c873b",
+        "call_type": "direct",
+        "caller": "FUN_004c85f0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.634146341463414,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CALLOTHER": 2,
+      "CBRANCH": 1,
+      "COPY": 133,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 4,
+      "INT2FLOAT": 1,
+      "INT_ADD": 11,
+      "INT_AND": 15,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 14,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 7,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "LOAD": 4,
+      "POPCOUNT": 7,
+      "ROUND": 2,
+      "STORE": 8,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 231
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004cc9d6",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_004cc9d0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 35,
+          "message": "Uninitialized variable: extraout_EDX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 36,
+          "message": "Uninitialized variable: extraout_ECX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 28,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "*(int *)(extraout_EDX + 0x1cc490c) = (int)ROUND(fVar6);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 29,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "iVar1 = extraout_ECX + 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "*(int *)(extraout_EDX + 0x1cc4d10) = (int)ROUND(fVar5);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Uninitialized variable: extraout_EDX",
+      "line": 35,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*(int *)(extraout_EDX + 0x1cc490c) = (int)ROUND(fVar6);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: extraout_ECX",
+      "line": 36,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "iVar1 = extraout_ECX + 1;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+// Name: FUN_004ee9e0
+// Address: 004ee9e0
+// Address Range: [[004ee9e0, 004eea17]]
+// Convention: unknown
+// Signature: void FUN_004ee9e0(int param_1)
+
+#include "nocturne.h"
+
+void FUN_004ee9e0(int param_1)
+
+{
+  int iVar1;
+  
+  FUN_00424260(param_1);
+  iVar1 = FUN_00564520(param_1 + 0x23b0,"priest.dfm");
+  if (iVar1 != 0) {
+    return;
+  }
+  *(uint *)(param_1 + 0x2608) = 2;
+  return;
+}

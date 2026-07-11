@@ -1,0 +1,171 @@
+#pragma once
+
+// Type dependencies
+#include "system/basetypes.h"
+
+// =============================================================================
+// GLOBAL VARIABLES - Range 0x5C0000
+// =============================================================================
+
+// string
+extern string s_d3d_dll_005c0e83;
+extern string DAT_005C0FE0;
+extern string DAT_005C0FF8;
+extern string DAT_005C102C;
+extern string DAT_005C105C;
+extern string DAT_005C1088;
+extern string DAT_005C10A0;
+extern string DAT_005C10B8;
+extern string DAT_005C10E0;
+extern string DAT_005C1138;
+extern string DAT_005C1150;
+extern string DAT_005C1190;
+extern string DAT_005C11CC;
+extern string DAT_005C11FC;
+extern string DAT_005C1214;
+extern string DAT_005C122C;
+extern string DAT_005C1244;
+extern string DAT_005C125C;
+extern string DAT_005C1274;
+extern string DAT_005C128C;
+extern string DAT_005C12A4;
+extern string DAT_005C12BC;
+extern string DAT_005C12D4;
+extern string DAT_005C12EC;
+extern string DAT_005C1304;
+extern string DAT_005C131C;
+extern string DAT_005C1334;
+extern string DAT_005C134C;
+extern string DAT_005C1364;
+extern string DAT_005C13D4;
+extern string DAT_005C13EC;
+extern string DAT_005C1404;
+extern string DAT_005C141C;
+extern string DAT_005C1434;
+extern string DAT_005C144C;
+extern string DAT_005C1464;
+extern string DAT_005C147C;
+extern string DAT_005C1494;
+extern string DAT_005C14AC;
+extern string DAT_005C14C4;
+extern string DAT_005C14DC;
+extern string DAT_005C14F4;
+extern string DAT_005C150C;
+extern string DAT_005C1524;
+extern string DAT_005C153C;
+extern string DAT_005C1554;
+extern string DAT_005C1568;
+extern string DAT_005C1598;
+extern string DAT_005C15C4;
+extern string DAT_005C15DC;
+extern string DAT_005C15F4;
+extern string DAT_005C1608;
+extern string DAT_005C1620;
+extern string DAT_005C179C;
+extern string DAT_005C17AB;
+extern string DAT_005C17CB;
+extern string DAT_005C17DA;
+extern string DAT_005C1D2C;
+extern string DAT_005C1D3D;
+
+// undefined1
+extern undefined1 DAT_005c0e80;
+extern undefined1 DAT_005c0e81;
+extern undefined1 DAT_005c0e82;
+extern undefined1 DAT_005c1b23;
+extern undefined1 DAT_005c1b24;
+extern undefined1 DAT_005c1b25;
+extern undefined1 DAT_005c1b26;
+extern undefined1 DAT_005c1b27;
+extern undefined1 DAT_005c1d0f;
+extern undefined1 DAT_005c1e89;
+extern undefined1 DAT_005c1f20;
+extern undefined1 DAT_005c2050;
+extern undefined1 DAT_005c2140;
+extern undefined1 DAT_005c2302;
+extern undefined1 DAT_005c2308;
+extern undefined1 DAT_005c26ce;
+extern undefined1 DAT_005c26d4;
+extern undefined1 DAT_005c26f8;
+
+// undefined2
+extern undefined2 DAT_005c1d11;
+extern undefined2 DAT_005c1f4c;
+
+// undefined4
+extern undefined4 DAT_005c1660;
+extern undefined4 DAT_005c1668;
+extern undefined4 DAT_005c1680;
+extern undefined4 DAT_005c1684;
+extern undefined4 DAT_005c1688;
+extern undefined4 DAT_005c1ab8;
+extern undefined4 DAT_005c1b04;
+extern undefined4 DAT_005c1c28;
+extern undefined4 DAT_005c1cc8;
+extern undefined4 DAT_005c1ccc;
+extern undefined4 DAT_005c1cf0;
+extern undefined4 DAT_005c1cf8;
+extern undefined4 DAT_005c1d17;
+extern undefined4 DAT_005c1d1b;
+extern undefined4 DAT_005c1d50;
+extern undefined4 DAT_005c1d54;
+extern undefined4 DAT_005c1d58;
+extern undefined4 DAT_005c1d5c;
+extern undefined4 DAT_005c1d60;
+extern undefined4 DAT_005c1d7c;
+extern undefined4 DAT_005c1d80;
+extern undefined4 DAT_005c1d88;
+extern undefined4 DAT_005c1d90;
+extern undefined4 DAT_005c1d94;
+extern undefined4 DAT_005c1dd8;
+extern undefined4 DAT_005c1ddc;
+extern undefined4 DAT_005c1de0;
+extern undefined4 DAT_005c1de4;
+extern undefined4 DAT_005c1de8;
+extern undefined4 DAT_005c1dec;
+extern undefined4 DAT_005c1dfc;
+extern undefined4 DAT_005c1e00;
+extern undefined4 DAT_005c1e04;
+extern undefined4 DAT_005c1f14;
+extern undefined4 DAT_005c1f1c;
+extern undefined4 DAT_005c1f50;
+extern undefined4 DAT_005c1f54;
+extern undefined4 DAT_005c1f58;
+extern undefined4 DAT_005c1f5c;
+extern undefined4 DAT_005c1f6c;
+extern undefined4 DAT_005c1f70;
+extern undefined4 DAT_005c204c;
+extern undefined4 DAT_005c206c;
+extern undefined4 DAT_005c20d0;
+extern undefined4 DAT_005c20d4;
+extern undefined4 DAT_005c5010;
+extern undefined4 DAT_005c5014;
+extern undefined4 DAT_005c5018;
+extern undefined4 DAT_005c501c;
+extern undefined4 DAT_005c5024;
+extern undefined4 DAT_005c502c;
+extern undefined4 DAT_005c5034;
+extern undefined4 DAT_005c5038;
+extern undefined4 DAT_005c503c;
+extern undefined4 DAT_005c5040;
+extern undefined4 DAT_005c5044;
+extern undefined4 DAT_005c5048;
+extern undefined4 DAT_005c504c;
+extern undefined4 DAT_005c5054;
+extern undefined4 DAT_005c5064;
+extern undefined4 DAT_005c5068;
+extern undefined4 DAT_005c506c;
+extern undefined4 DAT_005c5070;
+extern undefined4 DAT_005c5084;
+extern undefined4 DAT_005c5094;
+extern undefined4 DAT_005c5098;
+extern undefined4 DAT_005c509c;
+extern undefined4 DAT_005c50b4;
+extern undefined4 DAT_005c50c4;
+extern undefined4 DAT_005c50c8;
+extern undefined4 DAT_005c50cc;
+extern undefined4 DAT_005c50e4;
+extern undefined4 DAT_005c5114;
+extern undefined4 DAT_005c5144;
+extern undefined4 DAT_005c5174;
+

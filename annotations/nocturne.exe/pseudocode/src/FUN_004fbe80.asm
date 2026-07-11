@@ -1,0 +1,74 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_004fbe80(int param_1)
+;
+;
+; Referenced Globals:
+;   string s_CBaronWeapon_0058de58
+;   string s_BaronProxy_0058de65
+;   undefined4 s_aronProxy_0058de65+1
+;   undefined4 s_ronProxy_0058de65+2
+;   undefined4 s_onProxy_0058de65+3
+;
+; Called Functions:
+;   FUN_0040d540
+;   FUN_004bef10
+;   FUN_004bf360
+;   FUN_004c0850
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004fbe80
+        ;   Label: FUN_004fbe80
+    PUSH ESI                            ; 004fbe81
+    PUSH EDI                            ; 004fbe82
+    MOV EBX,dword ptr [ESP + 0x10]      ; 004fbe83
+    ADD EBX,0x1f5a0                     ; 004fbe87
+    PUSH EBX                            ; 004fbe8d
+    CALL FUN_004bef10                   ; 004fbe8e
+        ;   XREF to: 004bef10 (UNCONDITIONAL_CALL)  ; undefined FUN_004bef10()
+    ADD ESP,0x4                         ; 004fbe93
+    PUSH 0x58de58                       ; 004fbe96 | = "CBaronWeapon"
+    MOV ESI,0x58de65                    ; 004fbe9b | = "BaronProxy"
+    CALL FUN_0040d540                   ; 004fbea0
+        ;   XREF to: 0040d540 (UNCONDITIONAL_CALL)  ; undefined FUN_0040d540()
+    ADD ESP,0x4                         ; 004fbea5
+    MOV EDI,EAX                         ; 004fbea8
+    MOV EDX,EAX                         ; 004fbeaa
+    PUSH EDI                            ; 004fbeac
+    MOV AL,byte ptr [ESI]               ; 004fbead | = "BaronProxy" | s_ronProxy_0058de65+2
+        ;   Label: LAB_004fbead
+    MOV byte ptr [EDI],AL               ; 004fbeaf
+    CMP AL,0x0                          ; 004fbeb1
+    JZ 0x004fbec5                       ; 004fbeb3
+        ;   XREF to: 004fbec5 (CONDITIONAL_JUMP)  ; LAB_004fbec5
+    MOV AL,byte ptr [ESI + 0x1]         ; 004fbeb5 | s_aronProxy_0058de65+1 | s_onProxy_0058de65+3
+    ADD ESI,0x2                         ; 004fbeb8
+    MOV byte ptr [EDI + 0x1],AL         ; 004fbebb
+    ADD EDI,0x2                         ; 004fbebe
+    CMP AL,0x0                          ; 004fbec1
+    JNZ 0x004fbead                      ; 004fbec3
+        ;   XREF to: 004fbead (CONDITIONAL_JUMP)  ; LAB_004fbead
+    POP EDI                             ; 004fbec5
+        ;   Label: LAB_004fbec5
+    PUSH 0x1                            ; 004fbec6
+    PUSH EDX                            ; 004fbec8
+    PUSH EBX                            ; 004fbec9
+    CALL FUN_004bf360                   ; 004fbeca
+        ;   XREF to: 004bf360 (UNCONDITIONAL_CALL)  ; undefined FUN_004bf360()
+    ADD ESP,0xc                         ; 004fbecf
+    PUSH 0x1                            ; 004fbed2
+    PUSH 0x5                            ; 004fbed4
+    PUSH 0x0                            ; 004fbed6
+    PUSH EBX                            ; 004fbed8
+    CALL FUN_004c0850                   ; 004fbed9
+        ;   XREF to: 004c0850 (UNCONDITIONAL_CALL)  ; undefined FUN_004c0850()
+    ADD ESP,0x10                        ; 004fbede
+    POP EDI                             ; 004fbee1
+    POP ESI                             ; 004fbee2
+    POP EBX                             ; 004fbee3
+    RET                                 ; 004fbee4
+

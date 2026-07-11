@@ -1,0 +1,37 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_004c6d90(int param_1,undefined4 *param_2)
+;
+;
+; Referenced Globals:
+;   undefined4 DAT_005c5034
+;
+; Called Functions:
+;   FUN_004c6a70
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004c6d90
+        ;   Label: FUN_004c6d90
+    MOV EAX,dword ptr [ESP + 0xc]       ; 004c6d91
+    MOV EDX,dword ptr [EAX + 0x8]       ; 004c6d95
+    PUSH EDX                            ; 004c6d98
+    MOV ECX,dword ptr [EAX + 0x4]       ; 004c6d99
+    PUSH ECX                            ; 004c6d9c
+    MOV EBX,dword ptr [EAX]             ; 004c6d9d
+    PUSH EBX                            ; 004c6d9f
+    CALL FUN_004c6a70                   ; 004c6da0
+        ;   XREF to: 004c6a70 (UNCONDITIONAL_CALL)  ; undefined FUN_004c6a70()
+    ADD ESP,0xc                         ; 004c6da5
+    MOV EDX,dword ptr [ESP + 0x8]       ; 004c6da8
+    MOV ECX,EAX                         ; 004c6dac
+    LEA EAX,[EDX*0x4 + 0x0]             ; 004c6dae
+    SUB EAX,EDX                         ; 004c6db5
+    SHL EAX,0x4                         ; 004c6db7
+    MOV dword ptr [EAX + 0x5c5034],ECX  ; 004c6dba | DAT_005c5034
+    POP EBX                             ; 004c6dc0
+    RET                                 ; 004c6dc1
+

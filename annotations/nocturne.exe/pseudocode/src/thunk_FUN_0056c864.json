@@ -1,0 +1,855 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 729,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 99,
+    "suspect_count": 61,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 102
+  },
+  "cross_references": [
+    {
+      "addr": "00456800",
+      "from_addr": "00456847",
+      "name": "FUN_00456800",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00565dc0",
+    "address_range": [
+      [
+        "00565dc0",
+        "00565dc4"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "thunk_FUN_0056c864",
+    "signature": "undefined4 thunk_FUN_0056c864(LPCSTR param_1,int *param_2)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00456847",
+        "call_type": "direct",
+        "caller": "FUN_00456800",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "BRANCH": 1
+    },
+    "pcode_op_count": 1
+  },
+  "stack_frame": {
+    "frame_size": 876,
+    "local_size": 876,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_368",
+        "offset": -872,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_364",
+        "offset": -868,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_35c",
+        "offset": -860,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_354",
+        "offset": -852,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_348",
+        "offset": -840,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_33c",
+        "offset": -828,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_228",
+        "offset": -552,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_227",
+        "offset": -551,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_226",
+        "offset": -550,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_225",
+        "offset": -549,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 2,
+        "type": "undefined2"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "thunk_FUN_0056c864.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 70,
+          "line": 39,
+          "message": "Uninitialized variable: cStack_227",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 11,
+          "line": 40,
+          "message": "Uninitialized variable: cStack_226",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 36,
+          "line": 40,
+          "message": "Uninitialized variable: cStack_225",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint thunk_FUN_0056c864(LPCSTR param_1,int *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint thunk_FUN_0056c864(LPCSTR param_1,int *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*param_1 == '\\0') || (iVar3 = FUN_00570870(param_1,&DAT_00598be4), iVar3 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*param_1 == '\\0') || (iVar3 = FUN_00570870(param_1,&DAT_00598be4), iVar3 != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_00598be4",
+      "severity": "mild",
+      "text": "if ((*param_1 == '\\0') || (iVar3 = FUN_00570870(param_1,&DAT_00598be4), iVar3 != 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = FUN_00565d00(&cStack_228,param_1,0x104);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_005c168c",
+      "severity": "mild",
+      "text": "((((((&DAT_005c168c)[(byte)(cStack_228 + 1)] & 0xc0) != 0 && (cStack_227 == ':')) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar5 = (char *)FUN_0056da80(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar6 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar6 = param_1 + 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = FUN_00566570(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "hFindFile = FindFirstFileA(param_1,&_Stack_368);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar6 = (char *)FUN_0056da80(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "aCStack_124[0] = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = iVar3 + -0x61;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar3 = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = iVar3 + -1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(int *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(int *)((int)param_2 + 0x12) = iVar3 + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(int *)((int)param_2 + 0x12) = iVar3 + -1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(DWORD *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(DWORD *)((int)param_2 + 0x16) = _Stack_368.nFileSizeLow;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(DWORD *)((int)param_2 + 0x16) = _Stack_368.nFileSizeLow;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(ushort *)(param_2 + 2) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uint *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_2 + 0x1e) = uVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)((int)param_2 + 0x1e) = uVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(uint *)((int)param_2",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)((int)param_2 + 0x1e);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 75,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar4 = *(uint *)((int)param_2 + 0x1e);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(uint *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_2 + 0x22) = uVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)((int)param_2 + 0x22) = uVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(uint *)((int)param_2",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)((int)param_2 + 0x1e);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar4 = *(uint *)((int)param_2 + 0x1e);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(uint *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_2 + 0x1a) = uVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)((int)param_2 + 0x1a) = uVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(ushort *)(param_2 + 4) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(ushort *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)param_2 + 10) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(ushort *)((int)param_2 + 10) = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[3] = (int)(short)param_2[4];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 91,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[3] = (int)(short)param_2[4];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = (int)(short)param_2[4];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = (int)(short)param_2[4];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(uint *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_2 + 0x2e) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 93,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)((int)param_2 + 0x2e) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(DWORD *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(DWORD *)((int)param_2 + 0x2a) = _Stack_368.dwFileAttributes;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(DWORD *)((int)param_2 + 0x2a) = _Stack_368.dwFileAttributes;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(uint *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_2 + 0x32) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)((int)param_2 + 0x32) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(ushort *)((int)param_2",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)param_2 + 0x36) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(ushort *)((int)param_2 + 0x36) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(byte *)(param_2 + 0xe) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 98,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_00565f70((int)param_2 + 0x39,_Stack_368.cFileName,0xd);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 66,
+      "match": "(int *)((int)param_2 + 0x12)",
+      "severity": "moderate",
+      "text": "*(int *)((int)param_2 + 0x12) = iVar3 + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 67,
+      "match": "(DWORD *)((int)param_2 + 0x16)",
+      "severity": "moderate",
+      "text": "*(DWORD *)((int)param_2 + 0x16) = _Stack_368.nFileSizeLow;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 72,
+      "match": "(uint *)((int)param_2 + 0x1e)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_2 + 0x1e) = uVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 75,
+      "match": "(uint *)((int)param_2 + 0x1e)",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)((int)param_2 + 0x1e);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 80,
+      "match": "(uint *)((int)param_2 + 0x22)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_2 + 0x22) = uVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 83,
+      "match": "(uint *)((int)param_2 + 0x1e)",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)((int)param_2 + 0x1e);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 88,
+      "match": "(uint *)((int)param_2 + 0x1a)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_2 + 0x1a) = uVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 93,
+      "match": "(uint *)((int)param_2 + 0x2e)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_2 + 0x2e) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 94,
+      "match": "(DWORD *)((int)param_2 + 0x2a)",
+      "severity": "moderate",
+      "text": "*(DWORD *)((int)param_2 + 0x2a) = _Stack_368.dwFileAttributes;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 95,
+      "match": "(uint *)((int)param_2 + 0x32)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_2 + 0x32) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 96,
+      "match": "(ushort *)((int)param_2 + 0x36)",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)param_2 + 0x36) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: cStack_227",
+      "line": 39,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "((((((&DAT_005c168c)[(byte)(cStack_228 + 1)] & 0xc0) != 0 && (cStack_227 == ':')) &&",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: cStack_226",
+      "line": 40,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(cStack_226 == '\\\\')) && (cStack_225 == '\\0')))) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: cStack_225",
+      "line": 40,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(cStack_226 == '\\\\')) && (cStack_225 == '\\0')))) {",
+      "type": "static_uninitvar"
+    }
+  ]
+}

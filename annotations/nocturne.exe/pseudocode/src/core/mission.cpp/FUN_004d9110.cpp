@@ -1,0 +1,27 @@
+// Name: FUN_004d9110
+// Address: 004d9110
+// Address Range: [[004d9110, 004d9170]]
+// Convention: unknown
+// Signature: void FUN_004d9110(int param_1,undefined4 param_2,undefined4 param_3)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_004d9110(int param_1,uint param_2,uint param_3)
+
+{
+  int iVar1;
+  
+  *(uint *)(param_1 + 0x530 + *(int *)(param_1 + 0x52c) * 4) = param_2;
+  *(uint *)(param_1 + 0x6c0 + *(int *)(param_1 + 0x52c) * 4) = param_3;
+  iVar1 = *(int *)(param_1 + 0x52c) + 1;
+  *(int *)(param_1 + 0x52c) = iVar1;
+  if (iVar1 < 100) {
+    return;
+  }
+  _DAT_01cc4800 = "..\\core\\mission.cpp";
+  _DAT_01cc4804 = 0x408;
+  FUN_004c8440("CDemonMission::markActorToDelete - Too many of them!");
+  return;
+}

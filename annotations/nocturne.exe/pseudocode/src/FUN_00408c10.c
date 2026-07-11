@@ -1,0 +1,54 @@
+// Name: FUN_00408c10
+// Address: 00408c10
+// Address Range: [[00408c10, 00408d02]]
+// Convention: unknown
+// Signature: void FUN_00408c10(int param_1,uint param_2,int param_3)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00408c10(int param_1,uint param_2,int param_3)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00404610(param_1 + 8);
+  if (iVar1 != 0) {
+    if (_DAT_01c03948 == 0) {
+      if (DAT_005b7624 == 0x20) {
+        _DAT_01c00c7c = &LAB_005300ec;
+      }
+      else {
+        _DAT_01c00c7c = &LAB_00530322;
+      }
+    }
+    else if (DAT_005b7624 == 0x20) {
+      _DAT_01c00c7c = &LAB_0052f031;
+    }
+    else {
+      _DAT_01c00c7c = &LAB_0052f823;
+    }
+    _DAT_01c039a0 = param_2;
+    if ((param_2 & 0x10) != 0) {
+      _DAT_01c00c74 =
+           FUN_004c6cc0(*(uint *)(param_1 + 8),*(uint *)(param_1 + 0xc),
+                        *(uint *)(param_1 + 0x10));
+    }
+    _DAT_01c039a4 = param_3;
+    if (param_3 == 0) {
+      if ((param_2 & 0xc0) != 0) {
+        _DAT_01c039a4 = 1;
+      }
+    }
+    else {
+      _DAT_01c039a4 = 5;
+    }
+    if (_DAT_01c00c78 == 0) {
+      FUN_004349a0(*(uint *)(param_1 + 4),param_1 + 0x18);
+      return;
+    }
+    FUN_00432cd0(*(uint *)(param_1 + 4),param_1 + 0x18);
+  }
+  return;
+}

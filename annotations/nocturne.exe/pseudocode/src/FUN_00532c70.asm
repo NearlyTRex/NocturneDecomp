@@ -1,0 +1,31 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; undefined4 FUN_00532c70(undefined4 param_1)
+;
+;
+; XREF[2]:
+;   FUN_00440a20 at 00440b05
+;   FUN_00440c50 at 00440d2f
+;
+; Referenced Globals:
+;   undefined4 DAT_01c02594
+;   undefined4 DAT_02dc9de8
+;
+; *****************************************************************************
+
+section .text
+
+    CMP dword ptr [0x01c02594],0x0      ; 00532c70 | DAT_01c02594
+        ;   Label: FUN_00532c70
+    JNZ 0x00532c7c                      ; 00532c77
+        ;   XREF to: 00532c7c (CONDITIONAL_JUMP)  ; LAB_00532c7c
+    XOR EAX,EAX                         ; 00532c79
+    RET                                 ; 00532c7b
+    MOV ECX,dword ptr [ESP + 0x4]       ; 00532c7c
+        ;   Label: LAB_00532c7c
+    PUSH ECX                            ; 00532c80
+    CALL dword ptr [0x02dc9de8]         ; 00532c81 | DAT_02dc9de8
+    ADD ESP,0x4                         ; 00532c87
+    RET                                 ; 00532c8a
+

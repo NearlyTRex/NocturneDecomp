@@ -1,0 +1,351 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 150,
+    "cross_reference_count": 6,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 90
+  },
+  "cross_references": [
+    {
+      "addr": "004d12e0",
+      "from_addr": "004d18a1",
+      "name": "FUN_004d12e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005282c0",
+      "from_addr": "005282c7",
+      "name": "FUN_005282c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00528320",
+      "from_addr": "00528328",
+      "name": "FUN_00528320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00528410",
+      "from_addr": "00528428",
+      "name": "FUN_00528410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005289f0",
+      "from_addr": "00528a3c",
+      "name": "FUN_005289f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00528c80",
+      "from_addr": "00528cae",
+      "name": "FUN_00528c80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00528230",
+    "address_range": [
+      [
+        "00528230",
+        "005282bd"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00528230",
+    "signature": "int FUN_00528230(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00528800",
+      "is_variadic": false,
+      "name": "FUN_00528800"
+    },
+    {
+      "addr": "00528890",
+      "is_variadic": false,
+      "name": "FUN_00528890"
+    },
+    {
+      "addr": "0052be40",
+      "is_variadic": false,
+      "name": "FUN_0052be40"
+    },
+    {
+      "addr": "0052c6c0",
+      "is_variadic": false,
+      "name": "FUN_0052c6c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bea70",
+      "name": "DAT_005bea70",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.795918367346939,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "CALL": 4,
+      "CBRANCH": 6,
+      "COPY": 38,
+      "INT_ADD": 13,
+      "INT_AND": 37,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 35,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 6,
+      "INT_SLESS": 17,
+      "INT_SUB": 13,
+      "INT_XOR": 3,
+      "LOAD": 5,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 10,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 235
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "if (-1 < DAT_005bea70) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "return DAT_005bea70;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "DAT_005bea70 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "iVar1 = FUN_0052c6c0(iVar2,DAT_005bea70 * 0x118 + 0x2dc7a58);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "DAT_005bea70 = DAT_005bea70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "DAT_005bea70 = DAT_005bea70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "} while (DAT_005bea70 < 8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "while ((DAT_005bea70 < 8 &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "(iVar1 = FUN_0052be40(iVar2,DAT_005bea70 * 0x118 + 0x2dc7a58), iVar1 != 0))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "DAT_005bea70 = DAT_005bea70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "DAT_005bea70 = DAT_005bea70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_005bea70",
+      "severity": "mild",
+      "text": "return DAT_005bea70;",
+      "type": "undefined_data"
+    }
+  ]
+}

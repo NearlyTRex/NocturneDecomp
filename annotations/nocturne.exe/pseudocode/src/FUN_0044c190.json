@@ -1,0 +1,601 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 297,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 47,
+    "suspect_count": 23,
+    "suspect_types": [
+      "extra_output",
+      "param_count_too_few",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 176
+  },
+  "cross_references": [
+    {
+      "addr": "0044bd20",
+      "from_addr": "0044be0e",
+      "name": "FUN_0044bd20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c85f0",
+      "from_addr": "004c8cc4",
+      "name": "FUN_004c85f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044c190",
+    "address_range": [
+      [
+        "0044c190",
+        "0044c2aa"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "FUN_0044c190",
+    "signature": "void FUN_0044c190(int *param_1,float param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044bf20",
+      "is_variadic": false,
+      "name": "FUN_0044bf20"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "FUN_00563a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057c05d",
+      "name": "DAT_0057c05d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0057c065",
+      "name": "DAT_0057c065",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004c8cc4",
+        "call_type": "direct",
+        "caller": "FUN_004c85f0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c8d18",
+        "call_type": "direct",
+        "caller": "FUN_004c85f0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0044be0e",
+        "call_type": "direct",
+        "caller": "FUN_0044bd20",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 5,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.3076923076923075,
+    "instruction_count": 104,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 4,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 210,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 2,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 6,
+      "INT_ADD": 31,
+      "INT_AND": 87,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 56,
+      "INT_LEFT": 4,
+      "INT_LESS": 9,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 13,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 6,
+      "INT_SLESS": 27,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 18,
+      "INT_XOR": 3,
+      "INT_ZEXT": 5,
+      "LOAD": 29,
+      "POPCOUNT": 27,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 17,
+      "SUBPIECE": 4,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 656
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0044c199",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0044c190.c",
+    "clang_tidy_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 27,
+          "line": 32,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        },
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 27,
+          "line": 33,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        },
+        {
+          "check_name": "bugprone-integer-division",
+          "column": 68,
+          "line": 34,
+          "message": "result of integer division used in a floating point context; possible loss of precision"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 40,
+          "line": 50,
+          "message": "Uninitialized variable: extraout_ECX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0044c190(int *param_1,float param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_0044c190(int *param_1,float param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void FUN_0044c190(int *param_1,float param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0044bf20(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < param_1[1]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (float)(*param_1 / 2 - iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = (float)(param_1[1] / 2 - iVar4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_28 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) / (float)(*param_1 / 2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar1 = (1.0 - local_28) * param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = (float10)*(byte *)(param_1[0x12] + *param_1 * iVar4 + iVar3) * (float10)fVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar5 = (float10)*(byte *)(param_1[0x12] + *param_1 * iVar4 + iVar3) * (float10)fVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 43,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "*(byte *)(*param_1 * iVar4 + extraout_ECX + param_1[0x12]) = local_1c;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)(*param_1 * iVar4 + extraout_ECX + param_1[0x12]) = local_1c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)(*param_1 * iVar4 + extraout_ECX + param_1[0x12]) = local_1c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 44,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "iVar3 = extraout_ECX + 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar3 < *param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar4 < param_1[1]);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "result of integer division used in a floating point context; possible loss of precision",
+      "line": 32,
+      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
+      "severity": "mild",
+      "text": "fVar1 = (float)(*param_1 / 2 - iVar3);",
+      "type": "static_integer_division"
+    },
+    {
+      "description": "result of integer division used in a floating point context; possible loss of precision",
+      "line": 33,
+      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
+      "severity": "mild",
+      "text": "fVar2 = (float)(param_1[1] / 2 - iVar4);",
+      "type": "static_integer_division"
+    },
+    {
+      "description": "result of integer division used in a floating point context; possible loss of precision",
+      "line": 34,
+      "match": "Clang-Tidy: integer division in floating-point context (possible mistyped field)",
+      "severity": "mild",
+      "text": "local_28 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) / (float)(*param_1 / 2);",
+      "type": "static_integer_division"
+    },
+    {
+      "description": "Uninitialized variable: extraout_ECX",
+      "line": 50,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*(byte *)(*param_1 * iVar4 + extraout_ECX + param_1[0x12]) = local_1c;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

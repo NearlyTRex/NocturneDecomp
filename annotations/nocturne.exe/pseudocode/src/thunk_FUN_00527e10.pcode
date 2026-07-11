@@ -1,0 +1,24 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    thunk_FUN_00527e10
+# Entry:       0052dd80
+# Signature:   void thunk_FUN_00527e10(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@0052dd80 [ESP:+0]  # JMP 0x00527e10
+BRANCH (ram,0x527e10,4)
+
+# ============================================================================
+# Summary: 1 instructions, 1 P-code ops
+# ============================================================================

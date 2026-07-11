@@ -1,0 +1,233 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 6,
+    "complexity_score": 35,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 2,
+    "suspect_types": [
+      "register_param"
+    ],
+    "total_lines": 16
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005670b1",
+    "address_range": [
+      [
+        "005670b1",
+        "005670c0"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_005670b1",
+    "signature": "undefined4 FUN_005670b1(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005670c1",
+      "is_variadic": false,
+      "name": "FUN_005670c1"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLOTHER": 2,
+      "COPY": 4,
+      "INT_ADD": 4,
+      "INT_SUB": 1,
+      "LOAD": 3,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 18
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_005670b1.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 20,
+          "line": 17,
+          "message": "Uninitialized variable: in_EAX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uStack00000004 = in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Uninitialized variable: in_EAX",
+      "line": 17,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "uStack00000004 = in_EAX;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

@@ -1,0 +1,784 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 251,
+    "complexity_score": 723,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 108,
+    "suspect_count": 61,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 359
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056a6dc",
+    "address_range": [
+      [
+        "0056a5ff",
+        "0056a696"
+      ],
+      [
+        "0056a6dc",
+        "0056a826"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0056a6dc",
+    "signature": "undefined2 FUN_0056a6dc(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056a697",
+      "is_variadic": false,
+      "name": "FUN_0056a697"
+    },
+    {
+      "addr": "0056a827",
+      "is_variadic": false,
+      "name": "FUN_0056a827"
+    },
+    {
+      "addr": "0056aa38",
+      "is_variadic": false,
+      "name": "FUN_0056aa38"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.628272251308901,
+    "instruction_count": 191,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 6,
+      "BRANCH": 8,
+      "CALL": 3,
+      "CBRANCH": 24,
+      "COPY": 257,
+      "FLOAT_MULT": 1,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 77,
+      "INT_AND": 113,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 100,
+      "INT_LESS": 10,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 1,
+      "INT_SBORROW": 16,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 49,
+      "INT_SUB": 36,
+      "INT_XOR": 4,
+      "LOAD": 46,
+      "POPCOUNT": 49,
+      "ROUND": 1,
+      "STORE": 42,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 884
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": true,
+        "name": "local_res0",
+        "offset": 0,
+        "size": 2,
+        "type": "undefined2"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0056a6dc.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 6,
+          "line": 22,
+          "message": "Uninitialized variable: unaff_EBX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 16,
+          "line": 23,
+          "message": "Uninitialized variable: unaff_EBP",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 12,
+          "line": 50,
+          "message": "Uninitialized variable: unaff_ESI",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "byte *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*unaff_EBX = 0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(byte **)(unaff_EBP + -0x1c) = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(byte **)(unaff_EBP + -0x1c) = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + -0x24) = *(int *)(unaff_EBP + -0x24) + 8;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + -0x24) = *(int *)(unaff_EBP + -0x24) + 8;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iStack00000004 = *(int *)(unaff_EBP + -0x18);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(*(int *)(unaff_EBP + -0x18) = iStack00000004 + -8,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(*(ushort *)(unaff_EBP + -0x40) & 0x7fff) == 0)) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)(unaff_EBP + -0x18)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(float10 *)(unaff_EBP + -0x54) = (float10)(int)ROUND(*(float10 *)(unaff_EBP + -0x48));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(float10 *)(unaff_EBP + -0x54) = (float10)(int)ROUND(*(float10 *)(unaff_EBP + -0x48));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(float10 *)(unaff_EBP + -0x48) =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(float10 *)(unaff_EBP + -0x48) - *(float10 *)(unaff_EBP + -0x54);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(float10 *)(unaff_EBP + -0x48) - *(float10 *)(unaff_EBP + -0x54);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(ushort *)(unaff_EBP + -0x4c) = 0x4019;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + -0x50) = 3200000000;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + -0x54) = 0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(float10 *)(unaff_EBP + -0x48) =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(float10 *)(unaff_EBP + -0x54) * *(float10 *)(unaff_EBP + -0x48);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(float10 *)(unaff_EBP + -0x54) * *(float10 *)(unaff_EBP + -0x48);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = *(byte **)(unaff_EBP + -0x1c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBX = *(byte **)(unaff_EBP + -0x1c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 36,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)(unaff_EBP + -0x24);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 37,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)(unaff_EBP + -0x20) + 7;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "for (pcVar1 = (char *)(unaff_EBP + -0x93); *(int *)(unaff_EBP + -0x20) = iVar3, *pcVar1 == '0';",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "for (pcVar1 = (char *)(unaff_EBP + -0x93); *(int *)(unaff_EBP + -0x20) = iVar3, *pcVar1 == '0';",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 41,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)(unaff_EBP + -0x20) + -1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 43,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar3 = *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if ((*(byte *)(unaff_ESI + 2) & 2) == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if ((*(byte *)(unaff_ESI + 2) & 1) != 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if (unaff_ESI[1] < 1) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 47,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar3 = iVar3 + unaff_ESI[1];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + -0x20) = (*(int *)(unaff_EBP + -0x20) + 1) - unaff_ESI[1];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + -0x20) = (*(int *)(unaff_EBP + -0x20) + 1) - unaff_ESI[1];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + -0x20) = (*(int *)(unaff_EBP + -0x20) + 1) - unaff_ESI[1];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_EBP + -0x20) + unaff_ESI[1];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_EBP + -0x20) + unaff_ESI[1];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + -0x20) = iVar2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 65,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if ((*(byte *)(unaff_ESI + 2) & 0x20) != 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 68,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if ((*(byte *)(unaff_ESI + 2) & 0x40) != 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 74,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(byte *)(unaff_EBP + -0x10) = 0x30;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 76,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(byte *)(unaff_EBP + -0x10) = 0x39;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 83,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if (*pcVar1 != *(char *)(unaff_EBP + -0x10)) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 86,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if (*(char *)(unaff_EBP + -0x10) == '9') {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 91,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + -0x20) = *(int *)(unaff_EBP + -0x20) + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 91,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + -0x20) = *(int *)(unaff_EBP + -0x20) + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 95,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + -0x20) = 0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 96,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(byte *)(unaff_EBP + -0x94) = 0x30;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 97,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[5] = 0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 99,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "if (((*(byte *)(unaff_ESI + 2) & 2) == 0) &&",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 100,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(((*(byte *)(unaff_ESI + 2) & 4) == 0 ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 101,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(((*(int *)(unaff_EBP + -0x20) < -4 || (*unaff_ESI <= *(int *)(unaff_EBP + -0x20))) &&",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 101,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(((*(int *)(unaff_EBP + -0x20) < -4 || (*unaff_ESI <= *(int *)(unaff_EBP + -0x20))) &&",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 101,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(((*(int *)(unaff_EBP + -0x20) < -4 || (*unaff_ESI <= *(int *)(unaff_EBP + -0x20))) &&",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 102,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "((*(byte *)(unaff_ESI + 2) & 8) == 0)))))) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 103,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iStack00000004 = *(uint *)(unaff_EBP + 0x10);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 107,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iStack00000004 = *(uint *)(unaff_EBP + 0x10);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 110,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "return *(ushort *)(unaff_EBP + -0x14);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EBX",
+      "line": 22,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*unaff_EBX = 0;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EBP",
+      "line": 23,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*(byte **)(unaff_EBP + -0x1c) = unaff_EBX;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_ESI",
+      "line": 50,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "iVar3 = *unaff_ESI;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

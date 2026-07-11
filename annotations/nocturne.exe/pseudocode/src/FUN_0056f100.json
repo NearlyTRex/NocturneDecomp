@@ -1,0 +1,402 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 221,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 19,
+    "suspect_types": [
+      "carry_arith_idiom",
+      "register_param"
+    ],
+    "total_lines": 58
+  },
+  "cross_references": [
+    {
+      "addr": "00567d88",
+      "from_addr": "00568078",
+      "name": "FUN_00567d88",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056f100",
+    "address_range": [
+      [
+        "0056f100",
+        "0056f14b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0056f100",
+    "signature": "uint FUN_0056f100(void)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00568078",
+        "call_type": "direct",
+        "caller": "FUN_00567d88",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.033333333333333,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 4,
+      "CBRANCH": 4,
+      "COPY": 18,
+      "INT_ADD": 18,
+      "INT_AND": 34,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 1,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 1,
+      "INT_OR": 3,
+      "INT_RIGHT": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 18,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "INT_ZEXT": 5,
+      "LOAD": 6,
+      "POPCOUNT": 16,
+      "RETURN": 3,
+      "STORE": 1
+    },
+    "pcode_op_count": 211
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0056f100.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 8,
+          "line": 18,
+          "message": "Uninitialized variable: in_EDX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uint in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "if ((in_EDX & 0x7ff00000) != 0) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uVar1 = (uint)(CARRY4(in_EDX,in_EDX) || CARRY4(in_EDX * 2,(uint)CARRY4(in_EAX,in_EAX))) << 0x1f;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uVar1 = (uint)(CARRY4(in_EDX,in_EDX) || CARRY4(in_EDX * 2,(uint)CARRY4(in_EAX,in_EAX))) << 0x1f;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uVar1 = (uint)(CARRY4(in_EDX,in_EDX) || CARRY4(in_EDX * 2,(uint)CARRY4(in_EAX,in_EAX))) << 0x1f;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar1 = (uint)(CARRY4(in_EDX,in_EDX) || CARRY4(in_EDX * 2,(uint)CARRY4(in_EAX,in_EAX))) << 0x1f;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar1 = (uint)(CARRY4(in_EDX,in_EDX) || CARRY4(in_EDX * 2,(uint)CARRY4(in_EAX,in_EAX))) << 0x1f;",
+      "type": "register_param"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 12,
+      "match": "CARRY4(in_EDX,in_EDX)",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)(CARRY4(in_EDX,in_EDX) || CARRY4(in_EDX * 2,(uint)CARRY4(in_EAX,in_EAX))) << 0x1f;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 12,
+      "match": "CARRY4(in_EDX * 2,(uint)",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)(CARRY4(in_EDX,in_EDX) || CARRY4(in_EDX * 2,(uint)CARRY4(in_EAX,in_EAX))) << 0x1f;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 12,
+      "match": "CARRY4(in_EAX,in_EAX)",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)(CARRY4(in_EDX,in_EDX) || CARRY4(in_EDX * 2,(uint)CARRY4(in_EAX,in_EAX))) << 0x1f;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar2 = in_EAX * 2 + 0x20000000;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uVar3 = in_EDX * 2 + (uint)CARRY4(in_EAX,in_EAX) + (uint)(0xdfffffff < in_EAX * 2);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar3 = in_EDX * 2 + (uint)CARRY4(in_EAX,in_EAX) + (uint)(0xdfffffff < in_EAX * 2);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar3 = in_EDX * 2 + (uint)CARRY4(in_EAX,in_EAX) + (uint)(0xdfffffff < in_EAX * 2);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uVar3 = in_EDX * 2 + (uint)CARRY4(in_EAX,in_EAX) + (uint)(0xdfffffff < in_EAX * 2);",
+      "type": "register_param"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 14,
+      "match": "CARRY4(in_EAX,in_EAX)",
+      "severity": "moderate",
+      "text": "uVar3 = in_EDX * 2 + (uint)CARRY4(in_EAX,in_EAX) + (uint)(0xdfffffff < in_EAX * 2);",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 19,
+      "match": "CARRY4(uVar2,uVar2)",
+      "severity": "moderate",
+      "text": "return ((uVar3 + 0x90000000) * 2 + (uint)CARRY4(uVar2,uVar2)) * 2 +",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 20,
+      "match": "CARRY4(uVar2 * 2,uVar2 * 2)",
+      "severity": "moderate",
+      "text": "(uint)CARRY4(uVar2 * 2,uVar2 * 2) | uVar1;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Uninitialized variable: in_EDX",
+      "line": 18,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if ((in_EDX & 0x7ff00000) != 0) {",
+      "type": "static_uninitvar"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_005652fe(undefined4 *param_1,byte param_2)
+;
+;
+; XREF[2]:
+;   FUN_004a3b90 at 004a3e44
+;   FUN_004a4170 at 004a43fe
+;
+; Referenced Globals:
+;   undefined4 DAT_005a47a4
+;   undefined4 DAT_005a47ac
+;   void* PTR_FUN_005a47b8 = 00565264
+;   void* PTR_LAB_005a47c0 = 005650f0
+;   void* PTR_LAB_005a47c8 = 00565106
+;
+; Called Functions:
+;   FUN_0056b503
+;   FUN_0056b67d
+;   FUN_0056b896
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 005652fe
+        ;   Label: FUN_005652fe
+    TEST byte ptr [ESP + 0x8],0x1       ; 00565302
+    JZ 0x0056534c                       ; 00565307
+        ;   XREF to: 0056534c (CONDITIONAL_JUMP)  ; LAB_0056534c
+    PUSH 0x1                            ; 00565309
+        ;   Label: LAB_00565309
+    PUSH EAX                            ; 0056530b
+    CALL FUN_0056b896                   ; 0056530c
+        ;   XREF to: 0056b896 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b896()
+    ADD ESP,0x8                         ; 00565311
+    PUSH 0x1                            ; 00565314
+    ADD EAX,0x44                        ; 00565316
+    PUSH EAX                            ; 00565319
+    CALL FUN_0056b67d                   ; 0056531a
+        ;   XREF to: 0056b67d (UNCONDITIONAL_CALL)  ; undefined FUN_0056b67d()
+    SUB EAX,0x44                        ; 0056531f
+    MOV EDX,dword ptr [EAX]             ; 00565322
+    MOV EDX,dword ptr [EDX + 0x4]       ; 00565324
+    LEA ECX,[EAX + EDX*0x1]             ; 00565327
+    MOV dword ptr [ECX + -0x4],EDX      ; 0056532a
+    MOV dword ptr [EAX + 0x40],0x5a47b8 ; 0056532d | PTR_FUN_005a47b8
+    MOV EDX,dword ptr [EAX]             ; 00565334
+    MOV dword ptr [EAX + 0x4c],0x5a47c0 ; 00565336 | PTR_LAB_005a47c0
+    MOV EDX,dword ptr [EDX + 0x4]       ; 0056533d
+    ADD ESP,0x8                         ; 00565340
+    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a47c8 ; 00565343 | PTR_LAB_005a47c8
+    RET                                 ; 0056534b
+    MOV dword ptr [EAX],0x5a47a4        ; 0056534c | DAT_005a47a4
+        ;   Label: LAB_0056534c
+    ADD EAX,0x54                        ; 00565352
+    PUSH EAX                            ; 00565355
+    MOV dword ptr [EAX + -0x10],0x5a47ac ; 00565356 | DAT_005a47ac
+    CALL FUN_0056b503                   ; 0056535d
+        ;   XREF to: 0056b503 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b503()
+    ADD ESP,0x4                         ; 00565362
+    SUB EAX,0x54                        ; 00565365
+    JMP 0x00565309                      ; 00565368
+        ;   XREF to: 00565309 (UNCONDITIONAL_JUMP)  ; LAB_00565309
+

@@ -1,0 +1,430 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 249,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 19,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d5770",
+    "address_range": [
+      [
+        "004d5770",
+        "004d5858"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004d5770",
+    "signature": "void FUN_004d5770(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d890",
+      "is_variadic": false,
+      "name": "FUN_0040d890"
+    },
+    {
+      "addr": "004359e0",
+      "is_variadic": false,
+      "name": "FUN_004359e0"
+    },
+    {
+      "addr": "0043ac60",
+      "is_variadic": false,
+      "name": "FUN_0043ac60"
+    },
+    {
+      "addr": "004e1660",
+      "is_variadic": false,
+      "name": "FUN_004e1660"
+    },
+    {
+      "addr": "004e16b0",
+      "is_variadic": false,
+      "name": "FUN_004e16b0"
+    },
+    {
+      "addr": "004e1960",
+      "is_variadic": false,
+      "name": "FUN_004e1960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00589487",
+      "name": "s_%s_attacking_hero_00589485+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ad350",
+      "name": "PTR_DAT_005ad350",
+      "type": "void*",
+      "value": "0077ad0c"
+    },
+    {
+      "addr": "0077ad0c",
+      "name": "DAT_0077ad0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c71420",
+      "name": "DAT_01c71420",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cae0e8",
+      "name": "DAT_01cae0e8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.352112676056338,
+    "instruction_count": 71,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CBRANCH": 3,
+      "COPY": 78,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 32,
+      "INT_AND": 53,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 17,
+      "INT_SUB": 35,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 12,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 29
+    },
+    "pcode_op_count": 380
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_004d5770(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x4691c) = 2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004359e0(param_1 + 0xbdec,param_1 + 0x20,param_1 + 0x30,param_1 + 0x150);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004359e0(param_1 + 0xbdec,param_1 + 0x20,param_1 + 0x30,param_1 + 0x150);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004359e0(param_1 + 0xbdec,param_1 + 0x20,param_1 + 0x30,param_1 + 0x150);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004359e0(param_1 + 0xbdec,param_1 + 0x20,param_1 + 0x30,param_1 + 0x150);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar5 = (uint *)(param_1 + 0xc184);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "for (uVar3 = *(int *)(param_1 + 0xbef0) * 0x47 & 0x3fffffff; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(uint *)((int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(uint *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004e1960(param_1 + 0x150,uVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_004e16b0(param_1 + 0x150,1,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0043ac60(PTR_DAT_005ad350,\"@@%s attacking hero\\n\" + 2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 21,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = *(int *)(param_1 + 0xbef0) * 0x47 & 0x3fffffff; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 26,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004d5849, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 75,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004d5849: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

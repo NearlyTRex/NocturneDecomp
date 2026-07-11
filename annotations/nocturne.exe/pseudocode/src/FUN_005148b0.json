@@ -1,0 +1,538 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 326,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 41,
+    "suspect_count": 26,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 123
+  },
+  "cross_references": [
+    {
+      "addr": "005088f0",
+      "from_addr": "00508a45",
+      "name": "FUN_005088f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005148b0",
+    "address_range": [
+      [
+        "005148b0",
+        "0051497d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_005148b0",
+    "signature": "void FUN_005148b0(char *param_1,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043ac60",
+      "is_variadic": false,
+      "name": "FUN_0043ac60"
+    },
+    {
+      "addr": "00446740",
+      "is_variadic": false,
+      "name": "FUN_00446740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00590d03",
+      "name": "s_Ambient_set_low_by_script_00590d03",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00590d1e",
+      "name": "s_Ambient_set_ridiculously_high_00590d1e",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00590d41",
+      "name": "DAT_00590d41",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ad350",
+      "name": "PTR_DAT_005ad350",
+      "type": "void*",
+      "value": "0077ad0c"
+    },
+    {
+      "addr": "005be368",
+      "name": "DAT_005be368",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0077ad0c",
+      "name": "DAT_0077ad0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fa3fec",
+      "name": "DAT_01fa3fec",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00508a45",
+        "call_type": "direct",
+        "caller": "FUN_005088f0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 5,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.147058823529412,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 108,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT_ADD": 34,
+      "INT_AND": 26,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 17,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 8,
+      "INT_SUB": 19,
+      "INT_ZEXT": 10,
+      "LOAD": 22,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 20
+    },
+    "pcode_op_count": 350
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_005148b0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "invalidPointerCast",
+          "column": 8,
+          "line": 44,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 8,
+          "line": 47,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_005148b0(char *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_005148b0(char *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 + 0x104 != param_1 + 0x100) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_2 + 0x104 != param_1 + 0x100) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)(param_2 + 0x104) = *(uint *)(param_1 + 0x100);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_2 + 0x104) = *(uint *)(param_1 + 0x100);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)(param_2 + 0x108) = *(uint *)(param_1 + 0x104);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_2 + 0x108) = *(uint *)(param_1 + 0x104);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)(param_2 + 0x10c) = *(uint *)(param_1 + 0x108);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_2 + 0x10c) = *(uint *)(param_1 + 0x108);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar3 = param_1 + 0x118;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar4 = param_2 + 0x110;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)(param_2 + 0x138) = *(uint *)(param_1 + 0x140);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_2 + 0x138) = *(uint *)(param_1 + 0x140);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar3 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar4 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_00446740(param_2,*(uint *)(param_1 + 0x144));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_00446740(param_2,*(uint *)(param_1 + 0x144));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(float *)(param_1 + 0x144) < *(float *)(0x01E57284 + 0x14cd68)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(float *)(param_1 + 0x144) <= (float)_DAT_00590d41) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 27,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (constant-count countdown loop with a cast-dword store `*(uint *)dst = *(uint *)src;` and both pointers stepped by +4 \u2014 REP MOVSD lowering with a baked-in dword count). Replace the loop with memcpy(dst, src, count * 4) in a .keep.",
+      "line": 19,
+      "match": "for (X = N; ...) { *(uint *)d = *(uint *)s; d/s += 4; }",
+      "severity": "moderate",
+      "text": "for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 13,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(param_2 + 0x104) = *(uint *)(param_1 + 0x100);",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005148ec, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 22,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005148ec: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 44,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "if (*(float *)(param_1 + 0x144) < *(float *)(0x01E57284 + 0x14cd68)) {",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 47,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "if (*(float *)(param_1 + 0x144) <= (float)_DAT_00590d41) {",
+      "type": "static_invalid_pointer_cast"
+    }
+  ]
+}

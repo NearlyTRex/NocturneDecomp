@@ -1,0 +1,36 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_004eb3c0(int param_1,undefined4 param_2,int *param_3)
+;
+;
+; XREF[4]:
+;   FUN_004ea830 at 004ea9f3
+;   FUN_004eb350 at 004eb381
+;   FUN_004ec180 at 004ec4c3
+;   FUN_004edab0 at 004edad7
+;
+; Called Functions:
+;   FUN_00549090
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,dword ptr [ESP + 0xc]       ; 004eb3c0
+        ;   Label: FUN_004eb3c0
+    MOV ECX,dword ptr [ESP + 0x8]       ; 004eb3c4
+    MOV EAX,dword ptr [EDX]             ; 004eb3c8
+    PUSH ECX                            ; 004eb3ca
+    SUB EAX,0x4                         ; 004eb3cb
+    PUSH EAX                            ; 004eb3ce
+    LEA EAX,[EDX + 0x4]                 ; 004eb3cf
+    PUSH EAX                            ; 004eb3d2
+    MOV EAX,dword ptr [ESP + 0x10]      ; 004eb3d3
+    ADD EAX,0x170                       ; 004eb3d7
+    PUSH EAX                            ; 004eb3dc
+    CALL FUN_00549090                   ; 004eb3dd
+        ;   XREF to: 00549090 (UNCONDITIONAL_CALL)  ; undefined FUN_00549090()
+    ADD ESP,0x10                        ; 004eb3e2
+    RET                                 ; 004eb3e5
+

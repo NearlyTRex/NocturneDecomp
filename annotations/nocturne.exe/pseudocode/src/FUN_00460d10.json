@@ -1,0 +1,492 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 73,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 5,
+    "suspect_types": [
+      "param_count_too_few",
+      "unaffected_reg"
+    ],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "00440fe0",
+      "from_addr": "00441061",
+      "name": "FUN_00440fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044f430",
+      "from_addr": "0044f4a6",
+      "name": "FUN_0044f430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044f9b0",
+      "from_addr": "0044fb30",
+      "name": "FUN_0044f9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00450520",
+      "from_addr": "00450695",
+      "name": "FUN_00450520",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00451350",
+      "from_addr": "004513a4",
+      "name": "FUN_00451350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00469ce0",
+      "from_addr": "00469d34",
+      "name": "FUN_00469ce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050d2d0",
+      "from_addr": "0050d303",
+      "name": "FUN_0050d2d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050d6a0",
+      "from_addr": "0050d6f5",
+      "name": "FUN_0050d6a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050d910",
+      "from_addr": "0050d95f",
+      "name": "FUN_0050d910",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00460d10",
+    "address_range": [
+      [
+        "00460d10",
+        "00460d2c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00460d10",
+    "signature": "void FUN_00460d10(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ce760",
+      "is_variadic": false,
+      "name": "FUN_004ce760"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "00441061",
+        "call_type": "direct",
+        "caller": "FUN_00440fe0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00469d34",
+        "call_type": "direct",
+        "caller": "FUN_00469ce0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0044f4a6",
+        "call_type": "direct",
+        "caller": "FUN_0044f430",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0044fb30",
+        "call_type": "direct",
+        "caller": "FUN_0044f9b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00450695",
+        "call_type": "direct",
+        "caller": "FUN_00450520",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004513a4",
+        "call_type": "direct",
+        "caller": "FUN_00451350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050d303",
+        "call_type": "direct",
+        "caller": "FUN_0050d2d0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050d6f5",
+        "call_type": "direct",
+        "caller": "FUN_0050d6a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050d95f",
+        "call_type": "direct",
+        "caller": "FUN_0050d910",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.125,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 20,
+      "INT_ADD": 10,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 10,
+      "INT_ZEXT": 6,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 82
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00460d17",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00460d20",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_00460d10.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 4,
+          "line": 18,
+          "message": "Uninitialized variable: unaff_ESI",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 16,
+          "line": 18,
+          "message": "Uninitialized variable: auStack_ffc",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = auStack_ffc[0x3fa];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = auStack_ffc[(uint)bVar1 * -2 + 0x3fb];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =",
+      "type": "unaffected_reg"
+    },
+    {
+      "call_site_count": 9,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: unaff_ESI",
+      "line": 18,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*unaff_ESI = auStack_ffc[0x3fa];",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: auStack_ffc",
+      "line": 18,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "*unaff_ESI = auStack_ffc[0x3fa];",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

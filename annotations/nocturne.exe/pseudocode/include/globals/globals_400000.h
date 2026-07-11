@@ -19,3 +19,7 @@ extern IMAGE_SECTION_HEADER DAT_004001F0;
 extern IMAGE_SECTION_HEADER DAT_00400218;
 extern IMAGE_SECTION_HEADER DAT_00400240;
 
+// void*
+extern void* switchdataD_0040db0c;
+extern void* switchdataD_0040ed54;
+

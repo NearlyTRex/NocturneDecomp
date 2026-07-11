@@ -5,17 +5,17 @@ GLOBALS GAP ANALYSIS REPORT
 Total globals analyzed:      19522
   Named globals:             19510
   DAT_ globals:              12
-Gaps found:                  2394
+Gaps found:                  2392
   With exact size bounds:    1297
-  With estimated bounds:     1097
-Total gap bytes:             48,872,342
+  With estimated bounds:     1095
+Total gap bytes:             48,872,336
   Exact gap bytes:           12,431,071
-Overlaps (size <= 0):        13334
+Overlaps (size <= 0):        13336
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          486
+  1-4 bytes (likely padding/alignment)          484
   5-16 bytes (small vars)                       546
   17-64 bytes (structs/small arrays)            604
   65-256 bytes (medium data)                    258
@@ -1480,7 +1480,7 @@ ALL EXACT GAPS (1297) - size bounds are known precisely
            1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlerStatusStart
 
 --------------------------------------------------------------------------------
-OVERLAPS (13334) - next global starts inside previous
+OVERLAPS (13336) - next global starts inside previous
 --------------------------------------------------------------------------------
   241 bytes overlap ~
     s_engine_2d_c_00613004                   TerminatedCString    at 0x00613004  size=256
@@ -41454,6 +41454,12 @@ OVERLAPS (13334) - next global starts inside previous
   199 bytes overlap
     g_WeatherParticleHitGround               char[200]            at 0x03f96a78  size=200
     g_WeatherParticleHitGround+1             undefined4           at 0x03f96a79
+  4 bytes overlap
+    g_PerformanceCounter                     _struct_19           at 0x03f96ba8  size=8
+    g_PerformanceCounter+4                   undefined4           at 0x03f96bac
+  4 bytes overlap
+    g_PerformanceFrequency                   _struct_19           at 0x03f96bb0  size=8
+    g_PerformanceFrequency+4                 undefined4           at 0x03f96bb4
   1 bytes overlap ~
     g_WindowMessageHandlers                  SMessageHandler[4]   at 0x03f98de0  size=16
     g_WindowMessageHandlers[3]+3             undefined4           at 0x03f98def

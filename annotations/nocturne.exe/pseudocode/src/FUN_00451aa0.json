@@ -1,0 +1,402 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 86,
+    "complexity_score": 201,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 36,
+    "suspect_count": 16,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 122
+  },
+  "cross_references": [
+    {
+      "addr": "0041cce0",
+      "from_addr": "0041ce5d",
+      "name": "FUN_0041cce0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00451aa0",
+    "address_range": [
+      [
+        "00451aa0",
+        "00451b64"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00451aa0",
+    "signature": "undefined4 FUN_00451aa0(int param_1,int *param_2)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 9.76,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 63,
+      "BOOL_OR": 6,
+      "BOOL_XOR": 4,
+      "CBRANCH": 5,
+      "COPY": 68,
+      "INT_ADD": 38,
+      "INT_AND": 186,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 68,
+      "INT_LEFT": 8,
+      "INT_LESS": 13,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 35,
+      "INT_OR": 52,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 5,
+      "INT_SEXT": 3,
+      "INT_SLESS": 35,
+      "INT_SRIGHT": 16,
+      "INT_SUB": 29,
+      "INT_XOR": 5,
+      "INT_ZEXT": 4,
+      "LOAD": 35,
+      "POPCOUNT": 27,
+      "RETURN": 2,
+      "STORE": 4,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 732
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_00451aa0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 39,
+          "line": 19,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 43,
+          "line": 20,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 17,
+          "line": 23,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 39,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_00451aa0(int param_1,int *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint FUN_00451aa0(int param_1,int *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = (int)((*param_2 + (*param_2 >> 0x1f) * -8) - (uint)((*param_2 >> 0x1f) << 2 < 0)) >> 3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = (int)((*param_2 + (*param_2 >> 0x1f) * -8) - (uint)((*param_2 >> 0x1f) << 2 < 0)) >> 3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = (int)((*param_2 + (*param_2 >> 0x1f) * -8) - (uint)((*param_2 >> 0x1f) << 2 < 0)) >> 3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = (int)((param_2[1] + (param_2[1] >> 0x1f) * -8) - (uint)((param_2[1] >> 0x1f) << 2 < 0)) >>",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = (int)((param_2[1] + (param_2[1] >> 0x1f) * -8) - (uint)((param_2[1] >> 0x1f) << 2 < 0)) >>",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = (int)((param_2[1] + (param_2[1] >> 0x1f) * -8) - (uint)((param_2[1] >> 0x1f) << 2 < 0)) >>",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar4 = param_2[2] * *(int *)(param_1 + 0x1cc0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 = param_2[2] * *(int *)(param_1 + 0x1cc0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)(param_1 + 0x2fa0) + ((int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar4 = param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (iVar4 <= param_2[3]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar6 = *(int *)(param_1 + 0x1cc0) >> 0x1f;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = iVar5 + ((int)((*(int *)(param_1 + 0x1cc0) + iVar6 * -8) - (uint)(iVar6 << 2 < 0)) >>",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "} while (iVar4 <= param_2[3]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 19,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "iVar1 = (int)((*param_2 + (*param_2 >> 0x1f) * -8) - (uint)((*param_2 >> 0x1f) << 2 < 0)) >> 3;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 20,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "iVar2 = (int)((param_2[1] + (param_2[1] >> 0x1f) * -8) - (uint)((param_2[1] >> 0x1f) << 2 < 0)) >>",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 23,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "iVar5 = iVar4 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 39,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)(param_1 + 0x1cc0) >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    }
+  ]
+}

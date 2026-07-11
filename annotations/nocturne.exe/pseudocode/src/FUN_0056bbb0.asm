@@ -1,0 +1,44 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_0056bbb0(int param_1)
+;
+;
+; XREF[2]:
+;   FUN_0056551c at 0056561f
+;   FUN_00568ed0 at 00568ed7
+;
+; Called Functions:
+;   FUN_005705c0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 0056bbb0
+        ;   Label: FUN_0056bbb0
+    MOV EBX,dword ptr [ESP + 0x8]       ; 0056bbb1
+    TEST byte ptr [EBX + 0xd],0x20      ; 0056bbb5
+    JNZ 0x0056bbe1                      ; 0056bbb9
+        ;   XREF to: 0056bbe1 (CONDITIONAL_JUMP)  ; LAB_0056bbe1
+    MOV EDX,dword ptr [EBX + 0x10]      ; 0056bbbb
+    PUSH EDX                            ; 0056bbbe
+    CALL FUN_005705c0                   ; 0056bbbf
+        ;   XREF to: 005705c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005705c0()
+    ADD ESP,0x4                         ; 0056bbc4
+    TEST EAX,EAX                        ; 0056bbc7
+    JZ 0x0056bbe1                       ; 0056bbc9
+        ;   XREF to: 0056bbe1 (CONDITIONAL_JUMP)  ; LAB_0056bbe1
+    MOV DL,byte ptr [EBX + 0xd]         ; 0056bbcb
+    OR DL,0x20                          ; 0056bbce
+    MOV byte ptr [EBX + 0xd],DL         ; 0056bbd1
+    TEST DL,0x7                         ; 0056bbd4
+    JNZ 0x0056bbe1                      ; 0056bbd7
+        ;   XREF to: 0056bbe1 (CONDITIONAL_JUMP)  ; LAB_0056bbe1
+    MOV CL,DL                           ; 0056bbd9
+    OR CL,0x2                           ; 0056bbdb
+    MOV byte ptr [EBX + 0xd],CL         ; 0056bbde
+    POP EBX                             ; 0056bbe1
+        ;   Label: LAB_0056bbe1
+    RET                                 ; 0056bbe2
+

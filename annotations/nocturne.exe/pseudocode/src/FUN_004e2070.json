@@ -1,0 +1,707 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 113,
+    "complexity_score": 515,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 50,
+    "suspect_count": 44,
+    "suspect_types": [
+      "extra_output",
+      "fnstsw_flag_artifact",
+      "nan_function_artifact",
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 163
+  },
+  "cross_references": [
+    {
+      "addr": "0051b920",
+      "from_addr": "0051b95d",
+      "name": "FUN_0051b920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051c3d0",
+      "from_addr": "0051c412",
+      "name": "FUN_0051c3d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051e350",
+      "from_addr": "0051e386",
+      "name": "FUN_0051e350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e2070",
+    "address_range": [
+      [
+        "004e2070",
+        "004e2170"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004e2070",
+    "signature": "int FUN_004e2070(int *param_1,int param_2,float param_3,int *param_4,int *param_5,float *param_6)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "FUN_00563a30"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0051b95d",
+        "call_type": "direct",
+        "caller": "FUN_0051b920",
+        "estimated_params": 9,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0051c412",
+        "call_type": "direct",
+        "caller": "FUN_0051c3d0",
+        "estimated_params": 9,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0051e386",
+        "call_type": "direct",
+        "caller": "FUN_0051e350",
+        "estimated_params": 9,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 9,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.13265306122449,
+    "instruction_count": 98,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 5,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 5,
+      "COPY": 227,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 7,
+      "INT_ADD": 48,
+      "INT_AND": 43,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 29,
+      "INT_LEFT": 12,
+      "INT_LESS": 3,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 15,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 6,
+      "INT_SLESS": 14,
+      "INT_SUB": 13,
+      "INT_ZEXT": 12,
+      "LOAD": 44,
+      "POPCOUNT": 14,
+      "RETURN": 3,
+      "ROUND": 2,
+      "STORE": 21,
+      "SUBPIECE": 4,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 601
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_004e2070.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 8,
+          "line": 31,
+          "message": "Uninitialized variable: extraout_ECX_00",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 22,
+          "line": 47,
+          "message": "Uninitialized variable: extraout_EDX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 8,
+          "line": 55,
+          "message": "Uninitialized variable: extraout_ECX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int FUN_004e2070(int *param_1,int param_2,float param_3,int *param_4,int *param_5,float *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int FUN_004e2070(int *param_1,int param_2,float param_3,int *param_4,int *param_5,float *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "int FUN_004e2070(int *param_1,int param_2,float param_3,int *param_4,int *param_5,float *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "int FUN_004e2070(int *param_1,int param_2,float param_3,int *param_4,int *param_5,float *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "int FUN_004e2070(int *param_1,int param_2,float param_3,int *param_4,int *param_5,float *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "int FUN_004e2070(int *param_1,int param_2,float param_3,int *param_4,int *param_5,float *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "int *extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "int *extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = param_2 * 0x54c + *param_1 + 0x968;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = param_2 * 0x54c + *param_1 + 0x968;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 <= 0.0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "*param_4 = iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "*param_5 = iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "*param_6 = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 < (float)(*(int *)(iVar1 + 100) + -1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "fVar3 = (float10)*(int *)(iVar1 + 0x60) + (float10)param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 24,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "*extraout_ECX_00 = (int)ROUND(fVar3);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "*param_5 = *extraout_ECX_00 + 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "*param_5 = *extraout_ECX_00 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "*param_6 = (float)(fVar2 - (float10)*extraout_ECX_00);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "*param_6 = (float)(fVar2 - (float10)*extraout_ECX_00);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "*param_4 = *(int *)(iVar1 + 0x60) + *(int *)(iVar1 + 100) + -1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar1 = *param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "*param_5 = iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "*param_6 = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = (float10)*(int *)(*param_1 + 0x9c8 + *(int *)(iVar1 + 0x34) * 0x54c) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "*param_5 = (int)ROUND(fVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 40,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(extraout_EDX + 100) + -1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = param_3 - (float)iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_3 = param_3 - (float)iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "*param_6 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*param_6 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 43,
+      "match": "CONCAT22((short)((uint)iVar1 >> 0x10",
+      "severity": "severe",
+      "text": "iVar1 = CONCAT22((short)((uint)iVar1 >> 0x10),",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(ushort)(1.0 < param_3) << 8 | (ushort)NAN(param_3) << 10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(ushort)(1.0 < param_3) << 8 | (ushort)NAN(param_3) << 10 |",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "NAN() function call (FNSTSW comparison artifact)",
+      "line": 44,
+      "match": "NAN(",
+      "severity": "severe",
+      "text": "(ushort)(1.0 < param_3) << 8 | (ushort)NAN(param_3) << 10 |",
+      "type": "nan_function_artifact"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(ushort)(param_3 == 1.0) << 0xe);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (1.0 < param_3 || (param_3 == 1.0) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (1.0 < param_3 || (param_3 == 1.0) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar1 = *param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 48,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "*extraout_ECX = iVar1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "*param_6 = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 9,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:9",
+      "param_delta": 9,
+      "text": "Function declares 0 params but call sites push 9 (9 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: extraout_ECX_00",
+      "line": 31,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*extraout_ECX_00 = (int)ROUND(fVar3);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: extraout_EDX",
+      "line": 47,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "iVar1 = *(int *)(extraout_EDX + 100) + -1;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: extraout_ECX",
+      "line": 55,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*extraout_ECX = iVar1;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

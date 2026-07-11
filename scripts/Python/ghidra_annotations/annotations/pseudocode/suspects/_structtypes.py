@@ -27,10 +27,13 @@ from ._common import (SUSPECT_SEVERITY)
 # it is inert without one and only fires at export time / when test_suspects
 # builds the map from data_types.json.
 
-_struct_layout_cache = None
+# Keyed by resolved data_types.json path so a multi-program export in one
+# process (export_annotations.py --all-programs) doesn't leak one program's
+# struct map into another's suspect detection.
+_struct_layout_cache = {}
 
 
-_struct_size_cache = None
+_struct_size_cache = {}
 
 
 
@@ -151,18 +154,15 @@ def get_struct_layout_map(pseudocode_src_dir):
     pseudocode_src_dir is .../<exe>/pseudocode/src, data_types.json is at
     .../<exe>/data_types/data_types.json.
     """
-    global _struct_layout_cache
-    if _struct_layout_cache is not None:
-        return _struct_layout_cache
     base = pseudocode_src_dir
     while base and os.path.basename(base) != 'pseudocode':
         base = os.path.dirname(base)
-    layout = {}
+    path = None
     if base:
         path = os.path.join(os.path.dirname(base), 'data_types', 'data_types.json')
-        layout = build_struct_layout_map(path)
-    _struct_layout_cache = layout
-    return layout
+    if path not in _struct_layout_cache:
+        _struct_layout_cache[path] = build_struct_layout_map(path) if path else {}
+    return _struct_layout_cache[path]
 
 
 
@@ -194,18 +194,15 @@ def build_struct_size_map(data_types_path):
 
 def get_struct_size_map(pseudocode_src_dir):
     """Cached struct/union name -> size map, located like get_struct_layout_map."""
-    global _struct_size_cache
-    if _struct_size_cache is not None:
-        return _struct_size_cache
     base = pseudocode_src_dir
     while base and os.path.basename(base) != 'pseudocode':
         base = os.path.dirname(base)
-    sizes = {}
+    path = None
     if base:
         path = os.path.join(os.path.dirname(base), 'data_types', 'data_types.json')
-        sizes = build_struct_size_map(path)
-    _struct_size_cache = sizes
-    return sizes
+    if path not in _struct_size_cache:
+        _struct_size_cache[path] = build_struct_size_map(path) if path else {}
+    return _struct_size_cache[path]
 
 
 

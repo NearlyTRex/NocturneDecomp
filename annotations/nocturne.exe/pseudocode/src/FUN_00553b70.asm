@@ -1,0 +1,40 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_00553b70(void)
+;
+;
+; Referenced Globals:
+;   void* PTR_ShowWindow_0057547c = 00175aa2
+;   undefined4 DAT_02dc9d60
+;   undefined4 DAT_02ddf568
+;   undefined4 DAT_02de2098
+;
+; Called Functions:
+;   FUN_005325f0
+;   ShowWindow
+;
+; *****************************************************************************
+
+section .text
+
+    CMP dword ptr [0x02dc9d60],0x0      ; 00553b70 | DAT_02dc9d60
+        ;   Label: FUN_00553b70
+    JZ 0x00553b82                       ; 00553b77
+        ;   XREF to: 00553b82 (CONDITIONAL_JUMP)  ; LAB_00553b82
+    CMP dword ptr [0x02ddf568],0x0      ; 00553b79 | DAT_02ddf568
+    JNZ 0x00553b83                      ; 00553b80
+        ;   XREF to: 00553b83 (CONDITIONAL_JUMP)  ; LAB_00553b83
+    RET                                 ; 00553b82
+        ;   Label: LAB_00553b82
+    PUSH EBX                            ; 00553b83
+        ;   Label: LAB_00553b83
+    CALL FUN_005325f0                   ; 00553b84
+        ;   XREF to: 005325f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005325f0()
+    PUSH 0x6                            ; 00553b89
+    MOV EBX,dword ptr [0x02de2098]      ; 00553b8b | DAT_02de2098
+    PUSH EBX                            ; 00553b91
+    CALL dword ptr CS:[0x57547c]        ; 00553b92 | PTR_ShowWindow_0057547c
+    POP EBX                             ; 00553b99
+    RET                                 ; 00553b9a
+

@@ -1,0 +1,423 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 115,
+    "complexity_score": 211,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 46,
+    "suspect_count": 14,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unknown_field",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 161
+  },
+  "cross_references": [
+    {
+      "addr": "0056fb98",
+      "from_addr": "0056fbf8",
+      "name": "FUN_0056fb98",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056fa80",
+    "address_range": [
+      [
+        "0056fa80",
+        "0056fb97"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0056fa80",
+    "signature": "uint FUN_0056fa80(HANDLE param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00571440",
+      "is_variadic": false,
+      "name": "FUN_00571440"
+    },
+    {
+      "addr": "EXTERNAL:0000007b",
+      "is_variadic": false,
+      "name": "ReadConsoleInputA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00575578",
+      "name": "PTR_ReadConsoleInputA_00575578",
+      "type": "void*",
+      "value": "00175f2c"
+    },
+    {
+      "addr": "005c204c",
+      "name": "DAT_005c204c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de5d50",
+      "name": "DAT_02de5d50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de5d54",
+      "name": "DAT_02de5d54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de5d58",
+      "name": "DAT_02de5d58",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056fbf8",
+        "call_type": "direct",
+        "caller": "FUN_0056fb98",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5517241379310347,
+    "instruction_count": 87,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 1,
+      "BRANCH": 5,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 10,
+      "COPY": 83,
+      "INT_ADD": 21,
+      "INT_AND": 47,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 38,
+      "INT_LESS": 3,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 19,
+      "INT_SUB": 15,
+      "INT_XOR": 3,
+      "INT_ZEXT": 1,
+      "LOAD": 15,
+      "POPCOUNT": 19,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 309
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a",
+        "offset": -26,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_17",
+        "offset": -23,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_0056fa80(HANDLE param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005c204c",
+      "severity": "mild",
+      "text": "if (DAT_005c204c != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005c204c",
+      "severity": "mild",
+      "text": "if (DAT_005c204c < 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005c204c",
+      "severity": "mild",
+      "text": "DAT_005c204c = 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005c204c",
+      "severity": "mild",
+      "text": "DAT_005c204c = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005c204c",
+      "severity": "mild",
+      "text": "if (DAT_005c204c == 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_005c204c",
+      "severity": "mild",
+      "text": "DAT_005c204c = (uint)(_DAT_02de5d58 != 0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "BVar1 = ReadConsoleInputA(param_1,&local_28,1,&local_14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 37,
+      "match": "._2_1_",
+      "severity": "mild",
+      "text": "_DAT_02de5d54 = (uint)(byte)local_28.Event.MouseEvent.dwControlKeyState._2_1_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 38,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "if (((local_28.Event.KeyEvent.dwControlKeyState._1_1_ & 1) == 0) && (_DAT_02de5d54 != 0)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_005c204c",
+      "severity": "mild",
+      "text": "DAT_005c204c = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005c204c",
+      "severity": "mild",
+      "text": "DAT_005c204c = 2;",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

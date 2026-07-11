@@ -1,0 +1,115 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_0046fff0(undefined4 param_1,undefined4 param_2)
+;
+; Local Variables:
+; undefined4       Stack[-0x14]:4  local_14
+;
+; XREF[2]:
+;   FUN_004d2d00 at 004d3d4c
+;   FUN_004d8720 at 004d8740
+;
+; Referenced Globals:
+;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1
+;   string s_gEdFont_must_be_set_by_the_appli_0057e510
+;   undefined4 DAT_005b761c
+;   undefined4 DAT_005b7620
+;   undefined4 DAT_01bcd070
+;   undefined4 DAT_01bcd9b8
+;   undefined4 DAT_01bcd9bc
+;   undefined4 DAT_01bcdde8
+;   undefined4 DAT_01cc4800
+;   undefined4 DAT_01cc4804
+;
+; Called Functions:
+;   FUN_00408370
+;   FUN_00490ce0
+;   FUN_004930e0
+;   FUN_004c8440
+;   FUN_0052ee70
+;   FUN_00553910
+;   FUN_00563a08
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 0046fff0
+        ;   Label: FUN_0046fff0
+    PUSH ESI                            ; 0046fff1
+    PUSH EDI                            ; 0046fff2
+    PUSH EBP                            ; 0046fff3
+    SUB ESP,0x4                         ; 0046fff4
+    CMP dword ptr [0x01bcd070],0x0      ; 0046fff7 | DAT_01bcd070
+    JZ 0x0047009f                       ; 0046fffe
+        ;   XREF to: 0047009f (CONDITIONAL_JUMP)  ; LAB_0047009f
+    MOV EAX,[0x01bcd070]                ; 00470004 | DAT_01bcd070
+        ;   Label: LAB_00470004
+    PUSH 0x6a                           ; 00470009
+    MOV EDX,dword ptr [EAX + 0x3168]    ; 0047000b
+    PUSH EAX                            ; 00470011
+    MOV dword ptr [0x01bcd9b8],EDX      ; 00470012 | DAT_01bcd9b8
+    CALL FUN_004930e0                   ; 00470018
+        ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004930e0()
+    ADD ESP,0x8                         ; 0047001d
+    MOV [0x01bcd9bc],EAX                ; 00470020 | DAT_01bcd9bc
+    LEA EAX,[ESP + 0x20]                ; 00470025
+    MOV dword ptr [ESP],EAX             ; 00470029
+    MOV EAX,ESP                         ; 0047002c
+    PUSH EAX                            ; 0047002e
+    MOV ESI,dword ptr [ESP + 0x20]      ; 0047002f
+    PUSH ESI                            ; 00470033
+    PUSH 0x1bcacd0                      ; 00470034
+    XOR EDI,EDI                         ; 00470039
+    CALL FUN_00563a08                   ; 0047003b
+        ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; undefined FUN_00563a08()
+    ADD ESP,0xc                         ; 00470040
+    MOV dword ptr [ESP],EDI             ; 00470043
+    CALL FUN_0052ee70                   ; 00470046
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ee70()
+    PUSH 0xffff                         ; 0047004b
+    CALL FUN_00408370                   ; 00470050
+        ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined FUN_00408370()
+    MOV EAX,[0x005b7620]                ; 00470055 | DAT_005b7620
+    MOV EDX,EAX                         ; 0047005a
+    SAR EDX,0x1f                        ; 0047005c
+    SUB EAX,EDX                         ; 0047005f
+    SAR EAX,0x1                         ; 00470061
+    ADD ESP,0x4                         ; 00470063
+    PUSH 0x1bcacd0                      ; 00470066
+    PUSH -0x1                           ; 0047006b
+    MOV EBP,dword ptr [0x01bcdde8]      ; 0047006d | DAT_01bcdde8
+    PUSH EBP                            ; 00470073
+    PUSH EAX                            ; 00470074
+    MOV EAX,[0x005b761c]                ; 00470075 | DAT_005b761c
+    MOV EDX,EAX                         ; 0047007a
+    SAR EDX,0x1f                        ; 0047007c
+    SUB EAX,EDX                         ; 0047007f
+    SAR EAX,0x1                         ; 00470081
+    PUSH EAX                            ; 00470083
+    MOV EAX,[0x01bcd070]                ; 00470084 | DAT_01bcd070
+    PUSH EAX                            ; 00470089
+    CALL FUN_00490ce0                   ; 0047008a
+        ;   XREF to: 00490ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_00490ce0()
+    ADD ESP,0x18                        ; 0047008f
+    CALL FUN_00553910                   ; 00470092
+        ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined FUN_00553910()
+    ADD ESP,0x4                         ; 00470097
+    POP EBP                             ; 0047009a
+    POP EDI                             ; 0047009b
+    POP ESI                             ; 0047009c
+    POP EBX                             ; 0047009d
+    RET                                 ; 0047009e
+    MOV ECX,0x57e4fa                    ; 0047009f | s_..\shape\edittool.cpp_0057e4f9+1
+        ;   Label: LAB_0047009f
+    MOV EBX,0x8b                        ; 004700a4
+    PUSH 0x57e510                       ; 004700a9 | = "gEdFont must be set by the application."
+    MOV dword ptr [0x01cc4800],ECX      ; 004700ae | DAT_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004700b4 | DAT_01cc4804
+    CALL FUN_004c8440                   ; 004700ba
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    ADD ESP,0x4                         ; 004700bf
+    JMP 0x00470004                      ; 004700c2
+        ;   XREF to: 00470004 (UNCONDITIONAL_JUMP)  ; LAB_00470004
+

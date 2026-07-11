@@ -1,0 +1,266 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 80,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 61
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0044b7a0",
+    "address_range": [
+      [
+        "0044b7a0",
+        "0044b809"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0044b7a0",
+    "signature": "int FUN_0044b7a0(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00409d30",
+      "is_variadic": false,
+      "name": "FUN_00409d30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0057be09",
+      "name": "DAT_0057be09",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "0057be0a",
+      "name": "DAT_0057be0a",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "0057be0b",
+      "name": "DAT_0057be0b",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "0057be0c",
+      "name": "DAT_0057be0c",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "0059be64",
+      "name": "PTR_FUN_0059be64",
+      "type": "undefined1*",
+      "value": "0044b810"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 24,
+      "INT_ADD": 16,
+      "INT_AND": 10,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 7,
+      "LOAD": 7,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 111
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int FUN_0044b7a0(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_0057be09",
+      "severity": "mild",
+      "text": "pcVar3 = &DAT_0057be09;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = FUN_00409d30(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 14,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

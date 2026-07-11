@@ -1,0 +1,272 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 38,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 88
+  },
+  "cross_references": [
+    {
+      "addr": "0056e390",
+      "from_addr": "0056e3c2",
+      "name": "FUN_0056e390",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e6e4",
+      "from_addr": "0056e79a",
+      "name": "FUN_0056e6e4",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056e254",
+    "address_range": [
+      [
+        "0056e254",
+        "0056e2f6"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0056e254",
+    "signature": "LPCRITICAL_SECTION FUN_0056e254(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00564a70",
+      "is_variadic": false,
+      "name": "FUN_00564a70"
+    },
+    {
+      "addr": "00565c50",
+      "is_variadic": false,
+      "name": "FUN_00565c50"
+    },
+    {
+      "addr": "0056ddc0",
+      "is_variadic": false,
+      "name": "FUN_0056ddc0"
+    },
+    {
+      "addr": "EXTERNAL:00000073",
+      "is_variadic": false,
+      "name": "InitializeCriticalSection"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00575558",
+      "name": "PTR_InitializeCriticalSection_00575558",
+      "type": "void*",
+      "value": "00175e76"
+    },
+    {
+      "addr": "00598c1c",
+      "name": "s_Unable_to_allocate_semaphore_dat_00598c1c",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00598c40",
+      "name": "s_Unable_to_allocate_semaphore_dat_00598c40",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "02de5c10",
+      "name": "DAT_02de5c10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de5c14",
+      "name": "DAT_02de5c14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de5c18",
+      "name": "DAT_02de5c18",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 41,
+      "INT_ADD": 14,
+      "INT_AND": 48,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 16,
+      "INT_SUB": 21,
+      "INT_XOR": 2,
+      "LOAD": 4,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 260
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

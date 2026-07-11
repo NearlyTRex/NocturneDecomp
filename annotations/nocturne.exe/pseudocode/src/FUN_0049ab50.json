@@ -1,0 +1,826 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 405,
+    "complexity_score": 418,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 143,
+    "suspect_count": 25,
+    "suspect_types": [
+      "param_count_too_few",
+      "raw_address_constant",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 548
+  },
+  "cross_references": [
+    {
+      "addr": "0049cc10",
+      "from_addr": "0049d07b",
+      "name": "FUN_0049cc10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049ab50",
+    "address_range": [
+      [
+        "0049ab50",
+        "0049b0a0"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "FUN_0049ab50",
+    "signature": "void FUN_0049ab50(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403e60",
+      "is_variadic": false,
+      "name": "FUN_00403e60"
+    },
+    {
+      "addr": "00403ef0",
+      "is_variadic": false,
+      "name": "FUN_00403ef0"
+    },
+    {
+      "addr": "00408370",
+      "is_variadic": false,
+      "name": "FUN_00408370"
+    },
+    {
+      "addr": "00490980",
+      "is_variadic": false,
+      "name": "FUN_00490980"
+    },
+    {
+      "addr": "00492da0",
+      "is_variadic": false,
+      "name": "FUN_00492da0"
+    },
+    {
+      "addr": "00492f30",
+      "is_variadic": false,
+      "name": "FUN_00492f30"
+    },
+    {
+      "addr": "004930b0",
+      "is_variadic": false,
+      "name": "FUN_004930b0"
+    },
+    {
+      "addr": "004930e0",
+      "is_variadic": false,
+      "name": "FUN_004930e0"
+    },
+    {
+      "addr": "004fe710",
+      "is_variadic": false,
+      "name": "FUN_004fe710"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "FUN_00563a30"
+    },
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "FUN_00563c90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005823da",
+      "name": "s_%d_-_%s_005823d9+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005823e2",
+      "name": "s__005823d9+9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005823ea",
+      "name": "DAT_005823ea",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005823f2",
+      "name": "DAT_005823f2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b761c",
+      "name": "DAT_005b761c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b7620",
+      "name": "DAT_005b7620",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005be220",
+      "name": "DAT_005be220",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b98f8",
+      "name": "DAT_014b98f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b98fc",
+      "name": "DAT_014b98fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b9900",
+      "name": "DAT_014b9900",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b9904",
+      "name": "DAT_014b9904",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c789c0",
+      "name": "DAT_01c789c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78ac0",
+      "name": "DAT_01c78ac0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c78ac4",
+      "name": "DAT_01c78ac4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e56da0",
+      "name": "DAT_01e56da0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb8644",
+      "name": "DAT_01fb8644",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0049d07b",
+        "call_type": "direct",
+        "caller": "FUN_0049cc10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.444767441860465,
+    "instruction_count": 344,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 52,
+      "BOOL_OR": 12,
+      "BOOL_XOR": 1,
+      "BRANCH": 3,
+      "CALL": 20,
+      "CBRANCH": 19,
+      "COPY": 386,
+      "FLOAT2FLOAT": 11,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 8,
+      "INT2FLOAT": 3,
+      "INT_ADD": 124,
+      "INT_AND": 278,
+      "INT_CARRY": 26,
+      "INT_EQUAL": 165,
+      "INT_LEFT": 22,
+      "INT_LESS": 29,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 57,
+      "INT_OR": 61,
+      "INT_SBORROW": 30,
+      "INT_SCARRY": 29,
+      "INT_SDIV": 4,
+      "INT_SEXT": 7,
+      "INT_SLESS": 78,
+      "INT_SREM": 4,
+      "INT_SRIGHT": 18,
+      "INT_SUB": 120,
+      "INT_XOR": 3,
+      "INT_ZEXT": 25,
+      "LOAD": 61,
+      "POPCOUNT": 76,
+      "RETURN": 1,
+      "ROUND": 2,
+      "STORE": 112,
+      "SUBPIECE": 10,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 1873
+  },
+  "stack_frame": {
+    "frame_size": 372,
+    "local_size": 372,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_170",
+        "offset": -368,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_168",
+        "offset": -360,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_164",
+        "offset": -356,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0049ab5c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0049ab50.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 11,
+          "line": 118,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 22,
+          "line": 100,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0049ab50(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "local_60 = DAT_005b761c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "local_5c = DAT_005b7620;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "local_64 = DAT_005b7620;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(uint *)(param_1 + 900) & 0x7fffffff) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (1.0 <= *(float *)(param_1 + 900)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar7 = (float10)*(float *)(param_1 + 900) * (float10)ram0x005823e2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 55,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_00492f30(local_38,param_1 + 0x284,0x1c71430,10,0x100,(_DAT_01fb8644 * 9) / 10);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "iVar5 = DAT_005b7620 - iVar5 * iVar3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "local_4c = DAT_005b761c + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if ((DAT_005b7620 < 0x1e0) && (iVar5 = _DAT_014b98fc, DAT_005b7620 < 0x180)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "if ((DAT_005b7620 < 0x1e0) && (iVar5 = _DAT_014b98fc, DAT_005b7620 < 0x180)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 87,
+      "match": "DAT_005b7620",
+      "severity": "mild",
+      "text": "iVar4 = DAT_005b7620 - iVar4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 89,
+      "match": "DAT_01c789c0",
+      "severity": "mild",
+      "text": "FUN_00563c90(local_164,\"?%d - %s\" + 1,_DAT_01c78ac0,&DAT_01c789c0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0x228) == 0) && (0 < *(int *)(param_1 + 0x388))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0x228) == 0) && (0 < *(int *)(param_1 + 0x388))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 97,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if (0x280 < DAT_005b761c) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_005b761c",
+      "severity": "mild",
+      "text": "if (800 < DAT_005b761c) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 111,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(param_1 + 0x388)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 112,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_1c = param_1 + 0x38c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 114,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_18 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 143,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (local_20 < *(int *)(param_1 + 0x388));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x1c71430 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 67,
+      "match": "0x1c71430",
+      "severity": "moderate",
+      "text": "iVar2 = 0x1c71430;",
+      "type": "raw_address_constant"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Identical inner 'if' condition is always true.",
+      "line": 118,
+      "match": "Cppcheck: inner condition identical to outer",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(param_1 + 0x388)) {",
+      "type": "static_identical_inner_condition"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 100,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "iVar2 = local_60 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_005624e0(int param_1)
+;
+;
+; XREF[1]:
+;   FUN_00561010 at 00561413
+;
+; Referenced Globals:
+;   string s_CHASE_2_005989a8
+;
+; Called Functions:
+;   FUN_0040de00
+;   FUN_004e10a0
+;   FUN_004e16b0
+;   FUN_004e1890
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 005624e0
+        ;   Label: FUN_005624e0
+    PUSH 0x0                            ; 005624e1
+    MOV EBX,dword ptr [ESP + 0xc]       ; 005624e3
+    PUSH 0x5989a8                       ; 005624e7 | = "CHASE_2"
+    ADD EBX,0x150                       ; 005624ec
+    PUSH EBX                            ; 005624f2
+    CALL FUN_004e1890                   ; 005624f3
+        ;   XREF to: 004e1890 (UNCONDITIONAL_CALL)  ; undefined FUN_004e1890()
+    ADD ESP,0x4                         ; 005624f8
+    PUSH EAX                            ; 005624fb
+    CALL FUN_004e10a0                   ; 005624fc
+        ;   XREF to: 004e10a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e10a0()
+    ADD ESP,0xc                         ; 00562501
+    CMP EAX,0x16                        ; 00562504
+    JNZ 0x00562539                      ; 00562507
+        ;   XREF to: 00562539 (CONDITIONAL_JUMP)  ; LAB_00562539
+    MOV EAX,dword ptr [ESP + 0x8]       ; 00562509
+    MOV EDX,dword ptr [EAX + 0xbdac]    ; 0056250d
+    TEST EDX,EDX                        ; 00562513
+    JZ 0x00562526                       ; 00562515
+        ;   XREF to: 00562526 (CONDITIONAL_JUMP)  ; LAB_00562526
+    PUSH 0x1                            ; 00562517
+    PUSH 0x16                           ; 00562519
+    PUSH EBX                            ; 0056251b
+        ;   Label: LAB_0056251b
+    CALL FUN_004e16b0                   ; 0056251c
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e16b0()
+    ADD ESP,0xc                         ; 00562521
+    POP EBX                             ; 00562524
+    RET                                 ; 00562525
+    PUSH 0x1                            ; 00562526
+        ;   Label: LAB_00562526
+    PUSH 0x2                            ; 00562528
+    PUSH EDX                            ; 0056252a
+    CALL FUN_0040de00                   ; 0056252b
+        ;   XREF to: 0040de00 (UNCONDITIONAL_CALL)  ; undefined FUN_0040de00()
+    ADD ESP,0x8                         ; 00562530
+    ADD EAX,0x15                        ; 00562533
+    PUSH EAX                            ; 00562536
+    JMP 0x0056251b                      ; 00562537
+        ;   XREF to: 0056251b (UNCONDITIONAL_JUMP)  ; LAB_0056251b
+    PUSH 0x1                            ; 00562539
+        ;   Label: LAB_00562539
+    PUSH 0x1                            ; 0056253b
+    PUSH EBX                            ; 0056253d
+    CALL FUN_004e16b0                   ; 0056253e
+        ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004e16b0()
+    ADD ESP,0xc                         ; 00562543
+    POP EBX                             ; 00562546
+    RET                                 ; 00562547
+

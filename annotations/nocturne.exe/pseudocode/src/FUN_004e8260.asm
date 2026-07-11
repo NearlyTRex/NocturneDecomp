@@ -1,0 +1,69 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_004e8260(undefined1 *param_1)
+;
+;
+; XREF[4]:
+;   FUN_004e7dd0 at 004e7dd6
+;   FUN_004e7ed0 at 004e7edc
+;   FUN_00522480 at 005226fd
+;   FUN_005279e0 at 00527bc2
+;
+; Called Functions:
+;   FUN_00563380
+;   FUN_005638d0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004e8260
+        ;   Label: FUN_004e8260
+    PUSH ESI                            ; 004e8261
+    PUSH EDI                            ; 004e8262
+    MOV EDI,dword ptr [ESP + 0x10]      ; 004e8263
+    MOV dword ptr [EDI + 0x10c],0x0     ; 004e8267
+    LEA EBX,[EDI + 0x5320]              ; 004e8271
+    MOV dword ptr [EDI + 0x108],0x0     ; 004e8277
+    MOV EDX,dword ptr [EBX]             ; 004e8281
+    MOV ESI,EBX                         ; 004e8283
+    TEST EDX,EDX                        ; 004e8285
+    JNZ 0x004e8297                      ; 004e8287
+        ;   XREF to: 004e8297 (CONDITIONAL_JUMP)  ; LAB_004e8297
+    MOV EBX,dword ptr [ESI + 0x4]       ; 004e8289
+    TEST EBX,EBX                        ; 004e828c
+    JNZ 0x004e82b4                      ; 004e828e
+        ;   XREF to: 004e82b4 (CONDITIONAL_JUMP)  ; LAB_004e82b4
+    MOV byte ptr [EDI],0x0              ; 004e8290
+    POP EDI                             ; 004e8293
+    POP ESI                             ; 004e8294
+    POP EBX                             ; 004e8295
+    RET                                 ; 004e8296
+    PUSH EDX                            ; 004e8297
+        ;   Label: LAB_004e8297
+    CALL FUN_00563380                   ; 004e8298
+        ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined FUN_00563380()
+    ADD ESP,0x4                         ; 004e829d
+    MOV dword ptr [EBX],0x0             ; 004e82a0
+    MOV EBX,dword ptr [ESI + 0x4]       ; 004e82a6
+    TEST EBX,EBX                        ; 004e82a9
+    JNZ 0x004e82b4                      ; 004e82ab
+        ;   XREF to: 004e82b4 (CONDITIONAL_JUMP)  ; LAB_004e82b4
+    MOV byte ptr [EDI],0x0              ; 004e82ad
+    POP EDI                             ; 004e82b0
+    POP ESI                             ; 004e82b1
+    POP EBX                             ; 004e82b2
+    RET                                 ; 004e82b3
+    PUSH EBX                            ; 004e82b4
+        ;   Label: LAB_004e82b4
+    CALL FUN_005638d0                   ; 004e82b5
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    ADD ESP,0x4                         ; 004e82ba
+    MOV dword ptr [ESI + 0x4],0x0       ; 004e82bd
+    MOV byte ptr [EDI],0x0              ; 004e82c4
+    POP EDI                             ; 004e82c7
+    POP ESI                             ; 004e82c8
+    POP EBX                             ; 004e82c9
+    RET                                 ; 004e82ca
+

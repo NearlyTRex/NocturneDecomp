@@ -1,0 +1,627 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 312,
+    "complexity_score": 453,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 113,
+    "suspect_count": 31,
+    "suspect_types": [
+      "concat_reconstruction",
+      "param_count_too_few",
+      "pointer_cast",
+      "undefined_data",
+      "unknown_field",
+      "unnamed_param"
+    ],
+    "total_lines": 425
+  },
+  "cross_references": [
+    {
+      "addr": "004e5000",
+      "from_addr": "004e504e",
+      "name": "FUN_004e5000",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e4c70",
+    "address_range": [
+      [
+        "004e4c70",
+        "004e4ff4"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004e4c70",
+    "signature": "void FUN_004e4c70(int param_1,undefined4 param_2,int param_3,int param_4,int param_5,int *param_6)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e2cf0",
+      "is_variadic": false,
+      "name": "FUN_004e2cf0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bc470",
+      "name": "DAT_005bc470",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004e504e",
+        "call_type": "direct",
+        "caller": "FUN_004e5000",
+        "estimated_params": 10,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 10,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.8604651162790695,
+    "instruction_count": 258,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 99,
+      "BRANCH": 11,
+      "CALL": 1,
+      "CBRANCH": 20,
+      "COPY": 218,
+      "INT_ADD": 110,
+      "INT_AND": 375,
+      "INT_CARRY": 14,
+      "INT_DIV": 12,
+      "INT_EQUAL": 195,
+      "INT_LEFT": 28,
+      "INT_LESS": 23,
+      "INT_MULT": 13,
+      "INT_NOTEQUAL": 45,
+      "INT_OR": 93,
+      "INT_REM": 12,
+      "INT_RIGHT": 11,
+      "INT_SBORROW": 23,
+      "INT_SCARRY": 18,
+      "INT_SEXT": 7,
+      "INT_SLESS": 109,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 47,
+      "INT_XOR": 31,
+      "INT_ZEXT": 36,
+      "LOAD": 39,
+      "POPCOUNT": 88,
+      "STORE": 58,
+      "SUBPIECE": 26
+    },
+    "pcode_op_count": 1770
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1e",
+        "offset": -30,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a",
+        "offset": -26,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_16",
+        "offset": -22,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_004e4c70.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 18,
+          "line": 46,
+          "message": "Uninitialized variable: local_1a",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 28,
+          "line": 104,
+          "message": "Uninitialized variable: local_16",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 37,
+          "line": 56,
+          "message": "Uninitialized variable: local_1a",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 37,
+          "line": 66,
+          "message": "Uninitialized variable: local_1a",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_004e4c70(int param_1,uint param_2,int param_3,int param_4,int param_5,int *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_004e4c70(int param_1,uint param_2,int param_3,int param_4,int param_5,int *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void FUN_004e4c70(int param_1,uint param_2,int param_3,int param_4,int param_5,int *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void FUN_004e4c70(int param_1,uint param_2,int param_3,int param_4,int param_5,int *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void FUN_004e4c70(int param_1,uint param_2,int param_3,int param_4,int param_5,int *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "void FUN_004e4c70(int param_1,uint param_2,int param_3,int param_4,int param_5,int *param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar1 = param_3 + param_5 * 0xa0 + 0x18 + param_4 * 0x48;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar1 = param_3 + param_5 * 0xa0 + 0x18 + param_4 * 0x48;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar1 = param_3 + param_5 * 0xa0 + 0x18 + param_4 * 0x48;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "iVar5 = *param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if (((iVar1 != 1) && (iVar1 != 3)) || (param_5 != 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar1 = param_3 + param_5 * 0xa0 + param_4 * 0x48;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar1 = param_3 + param_5 * 0xa0 + param_4 * 0x48;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar1 = param_3 + param_5 * 0xa0 + param_4 * 0x48;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if (((iVar5 == 1) || (iVar5 == 3)) && (param_5 == 1)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar5 = param_4 * 0x48 + param_3 + 0xa0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar5 = param_4 * 0x48 + param_3 + 0xa0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x7358 + sVar4 * 4) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_005bc470",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_005bc470 +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x7358 + sVar4 * 4) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = FUN_004e2cf0(param_1,local_34[(int)local_16 >> 0x10]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x7358 + sVar4 * 4) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 113,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "local_16 = CONCAT22(local_16._2_2_ + 1,(ushort)local_16);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 49,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "local_1a = CONCAT22(1,(ushort)local_1a);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 59,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "local_1a = CONCAT22(2,(ushort)local_1a);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 73,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "local_1a = CONCAT22(3,(ushort)local_1a);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 82,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "local_1a = CONCAT22(4,(ushort)local_1a);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 90,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "local_1a = CONCAT22(5,(ushort)local_1a);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 113,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "local_16 = CONCAT22(local_16._2_2_ + 1,(ushort)local_16);",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 101,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "*(uint *)(&DAT_005bc470 +",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 10,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:10",
+      "param_delta": 10,
+      "text": "Function declares 0 params but call sites push 10 (10 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: local_1a",
+      "line": 46,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_1a = local_1a & 0xffff;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_16",
+      "line": 104,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_16 = (uint)(ushort)local_16;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_1a",
+      "line": 56,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "local_1a = CONCAT22(1,(ushort)local_1a);",
+      "type": "static_legacy_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_1a",
+      "line": 66,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "local_1a = CONCAT22(2,(ushort)local_1a);",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

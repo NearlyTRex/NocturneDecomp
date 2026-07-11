@@ -1,0 +1,69 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    FUN_00563a30
+# Entry:       00563a30
+# Signature:   void FUN_00563a30(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@00563a30 [ESP:-4](-4)  # PUSH EAX
+COPY (unique,0x41500,4) = (register,0x0,4) /* EAX */
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
+
+@00563a31 [ESP:-4]  # FSTCW word ptr [ESP]
+COPY (unique,0xa200,2) = (register,0x10a0,2)
+STORE (const,0x1a1,4), (register,0x10,4) /* ESP */, (unique,0xa200,2)
+
+@00563a35 [ESP:-4]  # WAIT
+# (no p-code)
+
+@00563a36 [ESP:-8](-4)  # PUSH dword ptr [ESP]
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (register,0x10,4) /* ESP */
+COPY (unique,0x41500,4) = (unique,0x17200,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
+
+@00563a39 [ESP:-8]  # MOV byte ptr [ESP + 0x1], 0x1f
+INT_ADD (unique,0x7600,4) = (const,0x1,4), (register,0x10,4) /* ESP */
+COPY (unique,0xa100,1) = (const,0x1f,1)
+STORE (const,0x1a1,4), (unique,0x7600,4), (unique,0xa100,1)
+
+@00563a3e [ESP:-8]  # FLDCW word ptr [ESP]
+LOAD (unique,0xa200,2) = (const,0x1a1,4), (register,0x10,4) /* ESP */
+COPY (register,0x10a0,2) = (unique,0xa200,2)
+
+@00563a41 [ESP:-8]  # FRNDINT
+COPY (register,0x10ac,4) = (const,0x563a41,4)
+ROUND (register,0x1100,10) = (register,0x1100,10)
+
+@00563a43 [ESP:-8]  # FLDCW word ptr [ESP + 0x4]
+INT_ADD (unique,0x7600,4) = (const,0x4,4), (register,0x10,4) /* ESP */
+LOAD (unique,0xa200,2) = (const,0x1a1,4), (unique,0x7600,4)
+COPY (register,0x10a0,2) = (unique,0xa200,2)
+
+@00563a47 [ESP:-8]  # WAIT
+# (no p-code)
+
+@00563a48 [ESP:-8]  # LEA ESP, [ESP + 0x8]
+INT_ADD (unique,0x7600,4) = (const,0x8,4), (register,0x10,4) /* ESP */
+COPY (register,0x10,4) /* ESP */ = (unique,0x7600,4)
+
+@00563a4c [ESP:-4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 11 instructions, 24 P-code ops
+# ============================================================================

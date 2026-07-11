@@ -1,0 +1,323 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 60,
+    "complexity_score": 136,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 10,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 81
+  },
+  "cross_references": [
+    {
+      "addr": "00535900",
+      "from_addr": "005373c1",
+      "name": "FUN_00535900",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b5b00",
+    "address_range": [
+      [
+        "004b5b00",
+        "004b5b6e"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "FUN_004b5b00",
+    "signature": "undefined4 FUN_004b5b00(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d7e0",
+      "is_variadic": false,
+      "name": "FUN_0040d7e0"
+    },
+    {
+      "addr": "004b5950",
+      "is_variadic": false,
+      "name": "FUN_004b5950"
+    },
+    {
+      "addr": "004c1580",
+      "is_variadic": false,
+      "name": "FUN_004c1580"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005858d3",
+      "name": "s_CHealthItem_005858d1+2",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005373c1",
+        "call_type": "direct",
+        "caller": "FUN_00535900",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.346938775510204,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 52,
+      "INT_ADD": 26,
+      "INT_AND": 24,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 20,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 10,
+      "INT_SUB": 13,
+      "INT_XOR": 2,
+      "LOAD": 21,
+      "POPCOUNT": 10,
+      "RETURN": 4,
+      "STORE": 13
+    },
+    "pcode_op_count": 213
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_004b5b00(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x1f8d4) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = FUN_0040d7e0(*(int *)(param_1 + 0x1f8d4),\"N@CHealthItem\" + 2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x140))(param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x140))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x140))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = FUN_004b5950(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = FUN_004c1580(param_1 + 0x1f5a0,*(uint *)(param_1 + 0x1f8d4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = FUN_004c1580(param_1 + 0x1f5a0,*(uint *)(param_1 + 0x1f8d4));",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

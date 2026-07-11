@@ -1,0 +1,28 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; undefined4 FUN_0046ed80(int param_1)
+;
+;
+; XREF[1]:
+;   FUN_0053f310 at 0053f4a6
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 0046ed80
+        ;   Label: FUN_0046ed80
+    FLD float ptr [EAX + 0x570]         ; 0046ed84
+    FLDZ                                ; 0046ed8a
+    FCOMPP                              ; 0046ed8c
+    FNSTSW AX                           ; 0046ed8e
+    SAHF                                ; 0046ed90
+    JNC 0x0046ed99                      ; 0046ed91
+        ;   XREF to: 0046ed99 (CONDITIONAL_JUMP)  ; LAB_0046ed99
+    MOV EAX,0x1                         ; 0046ed93
+    RET                                 ; 0046ed98
+    XOR EAX,EAX                         ; 0046ed99
+        ;   Label: LAB_0046ed99
+    RET                                 ; 0046ed9b
+

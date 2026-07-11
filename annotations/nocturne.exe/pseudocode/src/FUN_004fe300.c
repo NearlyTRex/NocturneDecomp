@@ -1,0 +1,47 @@
+// Name: FUN_004fe300
+// Address: 004fe300
+// Address Range: [[004fe300, 004fe3cd]]
+// Convention: unknown
+// Signature: int FUN_004fe300(int param_1,undefined4 param_2)
+
+#include "nocturne.h"
+
+int FUN_004fe300(int param_1,uint param_2)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00564520(param_2,&DAT_0058e16d);
+  if (iVar1 == 0) {
+    return param_1;
+  }
+  iVar1 = FUN_00564520(param_2,"backup");
+  if (iVar1 == 0) {
+    return param_1 + 4;
+  }
+  iVar1 = FUN_00564520(param_2,&DAT_0058e179);
+  if (iVar1 == 0) {
+    return param_1 + 8;
+  }
+  iVar1 = FUN_00564520(param_2,&DAT_0058e17d);
+  if (iVar1 == 0) {
+    return param_1 + 0xc;
+  }
+  iVar1 = FUN_00564520(param_2,"useItem");
+  if (iVar1 == 0) {
+    return param_1 + 0x10;
+  }
+  iVar1 = FUN_00564520(param_2,"light");
+  if (iVar1 == 0) {
+    return param_1 + 0x14;
+  }
+  iVar1 = FUN_00564520(param_2,&DAT_0058e190);
+  if (iVar1 == 0) {
+    return param_1 + 0x18;
+  }
+  iVar1 = FUN_00564520(param_2,&DAT_0058e195);
+  if (iVar1 == 0) {
+    return param_1 + 0x1c;
+  }
+  return 0;
+}

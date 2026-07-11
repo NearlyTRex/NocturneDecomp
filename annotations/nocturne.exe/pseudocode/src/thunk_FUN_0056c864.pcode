@@ -1,0 +1,24 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    thunk_FUN_0056c864
+# Entry:       00565dc0
+# Signature:   undefined4 thunk_FUN_0056c864(LPCSTR param_1,int *param_2)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@00565dc0 [ESP:+0]  # JMP 0x0056c864
+BRANCH (ram,0x56c864,4)
+
+# ============================================================================
+# Summary: 1 instructions, 1 P-code ops
+# ============================================================================

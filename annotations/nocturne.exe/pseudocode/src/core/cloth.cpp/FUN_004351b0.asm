@@ -1,0 +1,55 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_004351b0(int param_1)
+;
+;
+; XREF[1]:
+;   FUN_00435240 at 0043549a
+;
+; Referenced Globals:
+;   string s_..\\core\\cloth.cpp_0057ac75
+;   string s_CCloth::allocMemory_-_Out_of_mem_0057ac87
+;   undefined4 DAT_01cc4800
+;   undefined4 DAT_01cc4804
+;
+; Called Functions:
+;   FUN_00435210
+;   FUN_004c8440
+;   FUN_00564c18
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004351b0
+        ;   Label: FUN_004351b0
+    MOV EBX,dword ptr [ESP + 0x8]       ; 004351b1
+    PUSH EBX                            ; 004351b5
+    CALL FUN_00435210                   ; 004351b6
+        ;   XREF to: 00435210 (UNCONDITIONAL_CALL)  ; undefined FUN_00435210()
+    MOV EAX,dword ptr [EBX + 0x104]     ; 004351bb
+    ADD ESP,0x4                         ; 004351c1
+    SHL EAX,0x2                         ; 004351c4
+    PUSH EAX                            ; 004351c7
+    CALL FUN_00564c18                   ; 004351c8
+        ;   XREF to: 00564c18 (UNCONDITIONAL_CALL)  ; undefined FUN_00564c18()
+    ADD ESP,0x4                         ; 004351cd
+    MOV dword ptr [EBX + 0x3aafc],EAX   ; 004351d0
+    TEST EAX,EAX                        ; 004351d6
+    JZ 0x004351dc                       ; 004351d8
+        ;   XREF to: 004351dc (CONDITIONAL_JUMP)  ; LAB_004351dc
+    POP EBX                             ; 004351da
+    RET                                 ; 004351db
+    MOV ECX,0x57ac75                    ; 004351dc | = "..\\core\\cloth.cpp"
+        ;   Label: LAB_004351dc
+    MOV EBX,0x77                        ; 004351e1
+    PUSH 0x57ac87                       ; 004351e6 | = "CCloth::allocMemory - Out of memory"
+    MOV dword ptr [0x01cc4800],ECX      ; 004351eb | DAT_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004351f1 | DAT_01cc4804
+    CALL FUN_004c8440                   ; 004351f7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    ADD ESP,0x4                         ; 004351fc
+    POP EBX                             ; 004351ff
+    RET                                 ; 00435200
+

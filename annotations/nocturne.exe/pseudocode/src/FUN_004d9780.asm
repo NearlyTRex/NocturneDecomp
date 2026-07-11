@@ -1,0 +1,158 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; undefined4 FUN_004d9780(int param_1)
+;
+;
+; XREF[3]:
+;   FUN_004a4170 at 004a48cc
+;   FUN_004a4b50 at 004a4ebf
+;   FUN_004d9440 at 004d95a7
+;
+; Referenced Globals:
+;   string s_Can't_run_mission_-_no_heros_00589e67
+;   string s_Can't_run_mission_-_no_local_her_00589e84
+;   string s_Loading_script_00589ea6
+;   undefined4 DAT_005b6d50
+;   undefined4 DAT_005b7650
+;   undefined4 DAT_005b9354
+;   undefined4 DAT_005baca0
+;   undefined4 DAT_005be220
+;   undefined4 DAT_005be368
+;   undefined4 DAT_01c77814
+;   undefined4 DAT_01c77820
+;   undefined4 DAT_01cae0d4
+;   undefined4 DAT_01cae0e8
+;   undefined4 DAT_01e56da0
+;   undefined4 DAT_01e57284
+;
+; Called Functions:
+;   FUN_0046fcd0
+;   FUN_0047aa00
+;   FUN_004c59e0
+;   FUN_004d86d0
+;   FUN_004d8db0
+;   FUN_004d9020
+;   FUN_004ee370
+;   FUN_004feff0
+;   FUN_004ff170
+;   FUN_005135f0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004d9780
+        ;   Label: FUN_004d9780
+    PUSH ESI                            ; 004d9781
+    PUSH EDI                            ; 004d9782
+    PUSH EBP                            ; 004d9783
+    MOV EBX,dword ptr [ESP + 0x14]      ; 004d9784
+    CMP dword ptr [0x01cae0d4],0x1      ; 004d9788 | DAT_01cae0d4
+    JL 0x004d9847                       ; 004d978f
+        ;   XREF to: 004d9847 (CONDITIONAL_JUMP)  ; LAB_004d9847
+    MOV EAX,[0x01cae0e8]                ; 004d9795 | DAT_01cae0e8
+    CMP dword ptr [EAX*0x4 + 0x1cae0d8],0x0 ; 004d979a
+    JZ 0x004d9862                       ; 004d97a2
+        ;   XREF to: 004d9862 (CONDITIONAL_JUMP)  ; LAB_004d9862
+    PUSH EBX                            ; 004d97a8
+    CALL FUN_004d8db0                   ; 004d97a9
+        ;   XREF to: 004d8db0 (UNCONDITIONAL_CALL)  ; undefined FUN_004d8db0()
+    ADD ESP,0x4                         ; 004d97ae
+    LEA EAX,[EBX + 0x51c]               ; 004d97b1
+    MOV dword ptr [EBX + 0x528],0xffffffff ; 004d97b7
+    MOV ESI,dword ptr [0x005b7650]      ; 004d97c1 | DAT_005b7650
+    MOV dword ptr [EAX + 0x8],0x0       ; 004d97c7
+    PUSH ESI                            ; 004d97ce
+    MOV EDX,dword ptr [EAX + 0x8]       ; 004d97cf
+    MOV dword ptr [EAX + 0x4],EDX       ; 004d97d2
+    MOV EDX,dword ptr [EAX + 0x4]       ; 004d97d5
+    MOV dword ptr [EAX],EDX             ; 004d97d8
+    CALL FUN_0047aa00                   ; 004d97da
+        ;   XREF to: 0047aa00 (UNCONDITIONAL_CALL)  ; undefined FUN_0047aa00()
+    MOV EAX,[0x005b9354]                ; 004d97df | DAT_005b9354
+    MOV dword ptr [EAX + 0x228],0x0     ; 004d97e4 | DAT_01c77814
+    MOV EAX,[0x01cae0e8]                ; 004d97ee | DAT_01cae0e8
+    MOV EAX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d97f3
+    ADD ESP,0x4                         ; 004d97fa
+    MOV EDI,dword ptr [EAX + 0x2c]      ; 004d97fd
+    PUSH EDI                            ; 004d9800
+    PUSH EBX                            ; 004d9801
+    CALL FUN_004d9020                   ; 004d9802
+        ;   XREF to: 004d9020 (UNCONDITIONAL_CALL)  ; undefined FUN_004d9020()
+    ADD ESP,0x8                         ; 004d9807
+    PUSH 0x0                            ; 004d980a
+    PUSH 0x589ea6                       ; 004d980c | = "Loading script"
+    CALL FUN_004ee370                   ; 004d9811
+        ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined FUN_004ee370()
+    ADD ESP,0x4                         ; 004d9816
+    PUSH EAX                            ; 004d9819
+    MOV EBP,dword ptr [0x005baca0]      ; 004d981a | DAT_005baca0
+    PUSH EBP                            ; 004d9820
+    CALL FUN_004c59e0                   ; 004d9821
+        ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004c59e0()
+    MOV EAX,[0x005b9354]                ; 004d9826 | DAT_005b9354
+    ADD ESP,0xc                         ; 004d982b
+    MOV EDX,dword ptr [EAX + 0x234]     ; 004d982e | DAT_01c77820
+    PUSH EDX                            ; 004d9834
+    PUSH EBX                            ; 004d9835
+    CALL FUN_004d86d0                   ; 004d9836
+        ;   XREF to: 004d86d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004d86d0()
+    ADD ESP,0x8                         ; 004d983b
+    TEST EAX,EAX                        ; 004d983e
+    JNZ 0x004d987d                      ; 004d9840
+        ;   XREF to: 004d987d (CONDITIONAL_JUMP)  ; LAB_004d987d
+    POP EBP                             ; 004d9842
+    POP EDI                             ; 004d9843
+    POP ESI                             ; 004d9844
+    POP EBX                             ; 004d9845
+    RET                                 ; 004d9846
+    PUSH 0x589e67                       ; 004d9847 | = "Can't run mission - no heros"
+        ;   Label: LAB_004d9847
+    MOV EBP,dword ptr [0x005b6d50]      ; 004d984c | DAT_005b6d50
+    PUSH EBP                            ; 004d9852
+    CALL FUN_0046fcd0                   ; 004d9853
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    ADD ESP,0x8                         ; 004d9858
+    XOR EAX,EAX                         ; 004d985b
+    POP EBP                             ; 004d985d
+    POP EDI                             ; 004d985e
+    POP ESI                             ; 004d985f
+    POP EBX                             ; 004d9860
+    RET                                 ; 004d9861
+    PUSH 0x589e84                       ; 004d9862 | = "Can't run mission - no local hero"
+        ;   Label: LAB_004d9862
+    MOV EDI,dword ptr [0x005b6d50]      ; 004d9867 | DAT_005b6d50
+    PUSH EDI                            ; 004d986d
+    CALL FUN_0046fcd0                   ; 004d986e
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    ADD ESP,0x8                         ; 004d9873
+    XOR EAX,EAX                         ; 004d9876
+    POP EBP                             ; 004d9878
+    POP EDI                             ; 004d9879
+    POP ESI                             ; 004d987a
+    POP EBX                             ; 004d987b
+    RET                                 ; 004d987c
+    MOV ECX,dword ptr [0x005be220]      ; 004d987d | DAT_005be220
+        ;   Label: LAB_004d987d
+    PUSH ECX                            ; 004d9883 | DAT_01e56da0
+    CALL FUN_004feff0                   ; 004d9884
+        ;   XREF to: 004feff0 (UNCONDITIONAL_CALL)  ; undefined FUN_004feff0()
+    ADD ESP,0x4                         ; 004d9889
+    MOV EBX,dword ptr [0x005be220]      ; 004d988c | DAT_005be220
+    PUSH EBX                            ; 004d9892 | DAT_01e56da0
+    CALL FUN_004ff170                   ; 004d9893
+        ;   XREF to: 004ff170 (UNCONDITIONAL_CALL)  ; undefined FUN_004ff170()
+    ADD ESP,0x4                         ; 004d9898
+    MOV ESI,dword ptr [0x005be368]      ; 004d989b | DAT_005be368
+    PUSH ESI                            ; 004d98a1 | DAT_01e57284
+    CALL FUN_005135f0                   ; 004d98a2
+        ;   XREF to: 005135f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005135f0()
+    MOV EAX,0x1                         ; 004d98a7
+    ADD ESP,0x4                         ; 004d98ac
+    POP EBP                             ; 004d98af
+    POP EDI                             ; 004d98b0
+    POP ESI                             ; 004d98b1
+    POP EBX                             ; 004d98b2
+    RET                                 ; 004d98b3
+

@@ -1,0 +1,39 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_004b0670(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+;
+;
+; XREF[1]:
+;   FUN_0040b090 at 0040b0ba
+;
+; Called Functions:
+;   FUN_004b0580
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004b0670
+        ;   Label: FUN_004b0670
+    PUSH ESI                            ; 004b0671
+    MOV EBX,dword ptr [ESP + 0x10]      ; 004b0672
+    MOV EDX,dword ptr [ESP + 0x1c]      ; 004b0676
+    PUSH EDX                            ; 004b067a
+    MOV ECX,dword ptr [ESP + 0x18]      ; 004b067b
+    PUSH dword ptr [ESP + 0x1c]         ; 004b067f
+    PUSH ECX                            ; 004b0683
+    LEA EAX,[EBX + 0x20]                ; 004b0684
+    PUSH EAX                            ; 004b0687
+    MOV ESI,dword ptr [ESP + 0x1c]      ; 004b0688
+    PUSH ESI                            ; 004b068c
+    CALL FUN_004b0580                   ; 004b068d
+        ;   XREF to: 004b0580 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0580()
+    MOV EDX,dword ptr [EBX + 0x2c]      ; 004b0692
+    MOV dword ptr [EAX + 0x2c],EDX      ; 004b0695
+    ADD ESP,0x14                        ; 004b0698
+    MOV dword ptr [EAX + 0x2a00],EBX    ; 004b069b
+    POP ESI                             ; 004b06a1
+    POP EBX                             ; 004b06a2
+    RET                                 ; 004b06a3
+

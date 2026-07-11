@@ -1,0 +1,111 @@
+#pragma once
+
+// Dependencies
+#include "system/basetypes.h"
+
+// =============================================================================
+// FUNCTION PROTOTYPES - Range 0x4D0000
+// =============================================================================
+
+void FUN_004d0080(void);
+void FUN_004d0d20(void);
+void FUN_004d12e0(void);
+void FUN_004d21c0(int param_1);
+int FUN_004d23d0(void);
+char * FUN_004d2900(int param_1);
+undefined4 FUN_004d2b40(uint *param_1);
+void FUN_004d2d00(void);
+void FUN_004d4370(undefined4 param_1);
+void FUN_004d4ba0(int param_1);
+void FUN_004d4f30(int param_1,float param_2);
+void FUN_004d5770(int param_1);
+int FUN_004d5860(int param_1);
+void FUN_004d5d00(int param_1);
+int FUN_004d5e20(int param_1,float param_2);
+void FUN_004d6170(float *param_1,float *param_2,float *param_3,float *param_4);
+void FUN_004d62f0(float *param_1,float *param_2,float *param_3,float *param_4);
+void FUN_004d6420(float *param_1,float *param_2,uint param_3,int param_4,int *param_5);
+int FUN_004d6550(int param_1);
+int FUN_004d6570(int param_1);
+void FUN_004d6590(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4,undefined4 *param_5);
+void FUN_004d6610(int param_1);
+void FUN_004d6650(float *param_1,float *param_2,undefined4 param_3,float param_4);
+undefined4 FUN_004d7480(int param_1,undefined4 param_2,undefined4 param_3);
+undefined4 FUN_004d74a0(int param_1,int param_2);
+void FUN_004d76e0(int param_1,undefined4 param_2);
+void FUN_004d7720(int param_1,undefined4 param_2);
+void FUN_004d7980(float *param_1);
+void FUN_004d7b30(undefined4 param_1,int *param_2);
+void FUN_004d7bd0(undefined4 param_1,int *param_2,int *param_3);
+void FUN_004d7d90(undefined4 param_1);
+void FUN_004d7e00(int param_1);
+void FUN_004d7e90(undefined4 param_1);
+void FUN_004d7ea0(int param_1);
+void FUN_004d7ee0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void FUN_004d7fe0(undefined4 *param_1,undefined4 param_2,int param_3);
+void FUN_004d8640(int param_1,undefined4 param_2);
+void FUN_004d86d0(int param_1,undefined4 param_2);
+void FUN_004d8720(int param_1,undefined4 param_2);
+int FUN_004d8aa0(undefined4 param_1,undefined4 param_2,char *param_3,char *param_4);
+void FUN_004d8c00(undefined4 param_1,char *param_2,undefined4 param_3,undefined4 param_4,int param_5 );
+void FUN_004d8c60(int param_1,char *param_2);
+void FUN_004d8cd0(int param_1,int param_2);
+int FUN_004d8d80(int param_1);
+void FUN_004d8db0(int param_1);
+void FUN_004d8ee0(int *param_1);
+void FUN_004d8f90(undefined4 param_1,int param_2,int param_3);
+void FUN_004d8fc0(int param_1);
+void FUN_004d9020(int *param_1,int param_2);
+int FUN_004d90a0(int param_1,undefined4 param_2);
+void FUN_004d90e0(int param_1,undefined4 *param_2);
+void FUN_004d9110(int param_1,undefined4 param_2,undefined4 param_3);
+void FUN_004d9180(int *param_1);
+void FUN_004d92a0(int *param_1);
+void FUN_004d9440(undefined4 param_1);
+void FUN_004d9650(undefined4 param_1,char *param_2);
+void FUN_004d9680(int param_1,undefined4 param_2,char *param_3);
+void FUN_004d9720(undefined4 param_1,char *param_2);
+undefined4 FUN_004d9780(int param_1);
+void FUN_004d9900(void);
+undefined4 FUN_004d9920(int param_1,int param_2,undefined4 param_3,int param_4);
+undefined4 FUN_004d9a80(int param_1,undefined4 param_2);
+void FUN_004d9c20(int param_1);
+int FUN_004d9df0(int param_1);
+undefined4 FUN_004d9e70(void);
+undefined8 FUN_004d9eac(void);
+undefined4 FUN_004d9f59(void);
+int FUN_004da150(undefined4 param_1);
+void FUN_004da5a0(int param_1);
+void FUN_004da670(int param_1);
+void FUN_004db6f0(int param_1,float param_2);
+undefined4 FUN_004dbce0(int param_1,float param_2);
+void FUN_004dc110(int param_1);
+void FUN_004dc2d0(int param_1,int *param_2);
+void FUN_004dc940(int param_1,int param_2);
+char * FUN_004dcd10(char *param_1);
+int FUN_004dd520(undefined4 *param_1);
+char * FUN_004dd790(undefined4 param_1,int param_2);
+void FUN_004de1b0(int param_1,float param_2);
+void FUN_004de700(int param_1);
+void FUN_004de860(int *param_1);
+void FUN_004dea60(int *param_1);
+void FUN_004deae0(int param_1,float param_2);
+void FUN_004dec50(int param_1);
+void FUN_004df040(int param_1);
+undefined4 FUN_004df170(void);
+void FUN_004df290(undefined4 *param_1);
+void FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,undefined4 param_7,undefined4 param_8);
+void FUN_004df460(int *param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7);
+void FUN_004df5b0(undefined4 param_1,int param_2);
+void FUN_004df610(undefined4 param_1,int param_2,undefined4 param_3);
+void FUN_004df660(int *param_1,int param_2,int *param_3,int param_4,int param_5);
+void FUN_004df770(undefined4 param_1,undefined4 param_2,int param_3);
+void FUN_004df7c0(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4);
+void FUN_004df800(int *param_1,int param_2,int param_3,int param_4,int param_5,int *param_6,int param_7,int param_8);
+void FUN_004df9e0(int *param_1,int param_2,ushort *param_3,int param_4,int *param_5,int param_6,int param_7);
+int FUN_004dfba0(int param_1,char *param_2);
+void FUN_004dfc70(undefined4 param_1,float param_2,undefined4 param_3);
+void FUN_004dfcb0(int param_1,float param_2,int param_3);
+void FUN_004dfea0(int param_1,float param_2);
+int FUN_004dffc0(int param_1,float *param_2);
+

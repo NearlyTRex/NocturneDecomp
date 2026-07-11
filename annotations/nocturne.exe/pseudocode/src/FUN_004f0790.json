@@ -1,0 +1,1434 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 467,
+    "complexity_score": 1159,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 129,
+    "suspect_count": 101,
+    "suspect_types": [
+      "param_count_too_few",
+      "unaffected_reg",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 596
+  },
+  "cross_references": [
+    {
+      "addr": "004f0c20",
+      "from_addr": "004f1158",
+      "name": "FUN_004f0c20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f0790",
+    "address_range": [
+      [
+        "004f0790",
+        "004f0bf1"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004f0790",
+    "signature": "undefined4 FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f04a0",
+      "is_variadic": false,
+      "name": "FUN_004f04a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01e312f4",
+      "name": "DAT_01e312f4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f1158",
+        "call_type": "direct",
+        "caller": "FUN_004f0c20",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 8,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.612244897959184,
+    "instruction_count": 392,
+    "opcode_distribution": {
+      "BOOL_AND": 12,
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 8,
+      "BRANCH": 6,
+      "CALL": 20,
+      "CBRANCH": 28,
+      "COPY": 289,
+      "INT_ADD": 141,
+      "INT_AND": 229,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 234,
+      "INT_LESS": 52,
+      "INT_NOTEQUAL": 10,
+      "INT_SBORROW": 58,
+      "INT_SCARRY": 29,
+      "INT_SEXT": 16,
+      "INT_SLESS": 111,
+      "INT_SUB": 162,
+      "INT_XOR": 17,
+      "LOAD": 78,
+      "POPCOUNT": 111,
+      "RETURN": 3,
+      "STORE": 135,
+      "SUBPIECE": 16
+    },
+    "pcode_op_count": 1808
+  },
+  "stack_frame": {
+    "frame_size": 112,
+    "local_size": 112,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_004f0790.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 14,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 22,
+          "line": 35,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 33,
+          "line": 55,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 37,
+          "line": 58,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 36,
+          "line": 61,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 22,
+          "line": 68,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 35,
+          "line": 75,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 39,
+          "line": 78,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 38,
+          "line": 81,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 33,
+          "line": 101,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 37,
+          "line": 104,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 36,
+          "line": 107,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 35,
+          "line": 120,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 39,
+          "line": 123,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 38,
+          "line": 126,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uint FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "uint FUN_004f0790(int param_1,int param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar1 = param_2 - param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uVar1 = param_2 - param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uVar2 = param_3 - param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "uVar2 = param_3 - param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "local_14 = param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = FUN_004f04a0(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar3 = FUN_004f04a0(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar3 = FUN_004f04a0(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = FUN_004f04a0(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar5 = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 47,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = FUN_004f04a0(param_1,param_5,iVar4,iVar3);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "unaff_EDI = FUN_004f04a0(param_1,param_5,iVar4,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "unaff_EDI = FUN_004f04a0(param_1,param_5,iVar4,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 49,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (((_DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7)) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + -1,iVar5,iVar3),",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + -1,iVar5,iVar3),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + -1,iVar5,iVar3),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 53,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + 1,iVar5,iVar3),",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + 1,iVar5,iVar3),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + 1,iVar5,iVar3),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 54,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 55,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = FUN_004f04a0(param_1,param_5,iVar4,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar3 = FUN_004f04a0(param_1,param_5,iVar4,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 67,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = FUN_004f04a0(param_1,iVar4,iVar5,iVar3);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "unaff_EDI = FUN_004f04a0(param_1,iVar4,iVar5,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 68,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (((_DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8)) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 70,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,local_14,iVar5 + -1,iVar3),",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,local_14,iVar5 + -1,iVar3),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 71,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 72,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 73,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,local_14,iVar5 + 1,iVar3),",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,local_14,iVar5 + 1,iVar3),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 74,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 75,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = FUN_004f04a0(param_1,iVar4,iVar5,iVar3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar5 = FUN_004f04a0(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(iVar5 = FUN_004f04a0(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(iVar5 = FUN_004f04a0(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar5 = FUN_004f04a0(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 83,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI == iVar5)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_18 = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_004f04a0(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar5 = FUN_004f04a0(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar5 = FUN_004f04a0(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_004f04a0(param_1,param_5,param_4,*(uint *)(param_1 + 0x1c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar3 = local_40 + param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 93,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = FUN_004f04a0(param_1,iVar3,param_4,iVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 93,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "unaff_EDI = FUN_004f04a0(param_1,iVar3,param_4,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 93,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "unaff_EDI = FUN_004f04a0(param_1,iVar3,param_4,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 94,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 95,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (((_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2)) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 96,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5,param_4 + -1,iVar5),",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5,param_4 + -1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5,param_4 + -1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5,param_4 + -1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 97,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 98,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 99,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5,param_4 + 1,iVar5),",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5,param_4 + 1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5,param_4 + 1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 99,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5,param_4 + 1,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 100,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 101,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_004f04a0(param_1,iVar3,param_4,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar5 = FUN_004f04a0(param_1,iVar3,param_4,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "param_5 = iVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 112,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = FUN_004f04a0(param_1,param_5,iVar3,iVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 112,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "unaff_EDI = FUN_004f04a0(param_1,param_5,iVar3,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 112,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "unaff_EDI = FUN_004f04a0(param_1,param_5,iVar3,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 113,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 114,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (((_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1)) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 115,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + -1,local_18,iVar5),",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + -1,local_18,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 115,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + -1,local_18,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 116,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 117,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 118,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + 1,local_18,iVar5),",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 118,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + 1,local_18,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 118,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(unaff_EDI = FUN_004f04a0(param_1,param_5 + 1,local_18,iVar5),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 119,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 120,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_DAT_01e312f4 < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 121,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = FUN_004f04a0(param_1,param_5,iVar3,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 121,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar5 = FUN_004f04a0(param_1,param_5,iVar3,iVar5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 127,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar5 = FUN_004f04a0(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 127,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(iVar5 = FUN_004f04a0(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 127,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(iVar5 = FUN_004f04a0(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 127,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar5 = FUN_004f04a0(param_1,param_3,param_2,*(uint *)(param_1 + 0x10)),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 128,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI == iVar5)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 8,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:8",
+      "param_delta": 8,
+      "text": "Function declares 0 params but call sites push 8 (8 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 35,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar6 = (int)uVar1 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 55,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 58,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 61,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 68,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar7 = (int)uVar2 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 75,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 78,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 81,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 101,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 104,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 107,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 120,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f;",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 123,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    },
+    {
+      "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+      "line": 126,
+      "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
+      "severity": "moderate",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "static_shift_too_many_bits"
+    }
+  ]
+}

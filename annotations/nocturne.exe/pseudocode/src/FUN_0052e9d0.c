@@ -1,0 +1,33 @@
+// Name: FUN_0052e9d0
+// Address: 0052e9d0
+// Address Range: [[0052e9d0, 0052ea31]]
+// Convention: unknown
+// Signature: void FUN_0052e9d0(undefined4 param_1,char *param_2)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_0052e9d0(uint param_1,char *param_2)
+
+{
+  char cVar1;
+  char *pcVar2;
+  
+  FUN_0052ebb0(param_1,_DAT_02dc9c90);
+  pcVar2 = &DAT_02dc9c68;
+  do {
+    cVar1 = *param_2;
+    *pcVar2 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = param_2[1];
+    param_2 = param_2 + 2;
+    pcVar2[1] = cVar1;
+    pcVar2 = pcVar2 + 2;
+  } while (cVar1 != '\0');
+  if (_DAT_02dc9c94 == 0) {
+    return;
+  }
+  _DAT_02dc9c90 = FUN_0052ea40(param_1,0x01E57284,&DAT_02dc9c68);
+  return;
+}

@@ -1,0 +1,82 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_0048c0d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+;
+;
+; XREF[4]:
+;   FUN_00427ab0 at 00427b37
+;   FUN_0043cdb0 at 0043ce34
+;   FUN_0047ac50 at 0047b187
+;   FUN_004874d0 at 0048753d
+;
+; Referenced Globals:
+;   string s_xplode?.wav_@_6.0_005814f4
+;   undefined4 DAT_005b9284
+;   undefined4 DAT_005bed68
+;   undefined4 DAT_01c5d704
+;
+; Called Functions:
+;   FUN_00486e40
+;   FUN_0048c370
+;   FUN_004940d0
+;   FUN_0052ea60
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 0048c0d0
+        ;   Label: FUN_0048c0d0
+    PUSH EDI                            ; 0048c0d1
+    PUSH EBP                            ; 0048c0d2
+    MOV EBX,dword ptr [ESP + 0x14]      ; 0048c0d3
+    MOV EAX,[0x01c5d704]                ; 0048c0d7 | DAT_01c5d704
+    SHL EAX,0x2                         ; 0048c0dc
+    PUSH dword ptr [ESP + 0x1c]         ; 0048c0df
+    MOV EDX,EAX                         ; 0048c0e3
+    SHL EAX,0x3                         ; 0048c0e5
+    PUSH dword ptr [ESP + 0x1c]         ; 0048c0e8
+    SUB EAX,EDX                         ; 0048c0ec
+    PUSH EBX                            ; 0048c0ee
+    ADD EAX,0x1c5d708                   ; 0048c0ef
+    PUSH EAX                            ; 0048c0f4
+    CALL FUN_00486e40                   ; 0048c0f5
+        ;   XREF to: 00486e40 (UNCONDITIONAL_CALL)  ; undefined FUN_00486e40()
+    MOV EDX,dword ptr [0x01c5d704]      ; 0048c0fa | DAT_01c5d704
+    INC EDX                             ; 0048c100
+    ADD ESP,0x10                        ; 0048c101
+    MOV dword ptr [0x01c5d704],EDX      ; 0048c104 | DAT_01c5d704
+    CMP EDX,0xa                         ; 0048c10a
+    JL 0x0048c119                       ; 0048c10d
+        ;   XREF to: 0048c119 (CONDITIONAL_JUMP)  ; LAB_0048c119
+    PUSH ESI                            ; 0048c10f
+    XOR ESI,ESI                         ; 0048c110
+    MOV dword ptr [0x01c5d704],ESI      ; 0048c112 | DAT_01c5d704
+    POP ESI                             ; 0048c118
+    PUSH EBX                            ; 0048c119
+        ;   Label: LAB_0048c119
+    PUSH 0x5814f4                       ; 0048c11a | = "xplode?.wav @ 6.0"
+    MOV EDI,dword ptr [ESP + 0x18]      ; 0048c11f
+    PUSH EDI                            ; 0048c123
+    MOV EBP,dword ptr [0x005bed68]      ; 0048c124 | DAT_005bed68
+    PUSH EBP                            ; 0048c12a
+    CALL FUN_0052ea60                   ; 0048c12b
+        ;   XREF to: 0052ea60 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ea60()
+    ADD ESP,0x10                        ; 0048c130
+    PUSH dword ptr [ESP + 0x20]         ; 0048c133
+    PUSH EBX                            ; 0048c137
+    PUSH EDI                            ; 0048c138
+    CALL FUN_0048c370                   ; 0048c139
+        ;   XREF to: 0048c370 (UNCONDITIONAL_CALL)  ; undefined FUN_0048c370()
+    ADD ESP,0xc                         ; 0048c13e
+    MOV EDX,dword ptr [0x005b9284]      ; 0048c141 | DAT_005b9284
+    PUSH EDX                            ; 0048c147
+    CALL FUN_004940d0                   ; 0048c148
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
+    ADD ESP,0x4                         ; 0048c14d
+    POP EBP                             ; 0048c150
+    POP EDI                             ; 0048c151
+    POP EBX                             ; 0048c152
+    RET                                 ; 0048c153
+

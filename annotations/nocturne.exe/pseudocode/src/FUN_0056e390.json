@@ -1,0 +1,340 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 151,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 21,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 65
+  },
+  "cross_references": [
+    {
+      "addr": "0056e6e4",
+      "from_addr": "0056e739",
+      "name": "FUN_0056e6e4",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "0056e390",
+    "address_range": [
+      [
+        "0056e390",
+        "0056e3f1"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0056e390",
+    "signature": "void FUN_0056e390(undefined4 *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000049",
+      "is_variadic": false,
+      "name": "EnterCriticalSection"
+    },
+    {
+      "addr": "0056e254",
+      "is_variadic": false,
+      "name": "FUN_0056e254"
+    },
+    {
+      "addr": "0056e3f4",
+      "is_variadic": false,
+      "name": "FUN_0056e3f4"
+    },
+    {
+      "addr": "EXTERNAL:0000005d",
+      "is_variadic": false,
+      "name": "GetCurrentThreadId"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005754b0",
+      "name": "PTR_EnterCriticalSection_005754b0",
+      "type": "void*",
+      "value": "00175b72"
+    },
+    {
+      "addr": "00575500",
+      "name": "PTR_GetCurrentThreadId_00575500",
+      "type": "void*",
+      "value": "00175ce8"
+    },
+    {
+      "addr": "02de5be0",
+      "name": "DAT_02de5be0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.294117647058823,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 3,
+      "CALLIND": 2,
+      "CBRANCH": 3,
+      "COPY": 29,
+      "INT_ADD": 15,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 14,
+      "LOAD": 15,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 146
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0056e390(uint *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (DVar1 != param_1[2]) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1] == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_02de5be0",
+      "severity": "mild",
+      "text": "FUN_0056e390(&DAT_02de5be0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1] == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1] = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_02de5be0",
+      "severity": "mild",
+      "text": "FUN_0056e3f4(&DAT_02de5be0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "EnterCriticalSection((LPCRITICAL_SECTION)*param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2] = DVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3] = param_1[3] + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3] = param_1[3] + 1;",
+      "type": "unnamed_param"
+    }
+  ]
+}

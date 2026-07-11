@@ -1,0 +1,89 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_0040c880(float *param_1,undefined4 param_2)
+;
+; Local Variables:
+; undefined8       Stack[-0x10]:8  local_10
+;
+; XREF[9]:
+;   FUN_0040d2d0 at 0040d31d
+;   FUN_0041ec60 at 0041ec98
+;   FUN_004244b0 at 004244d0
+;   FUN_004796c0 at 004796f1
+;   FUN_004b49a0 at 004b4a28
+;   FUN_004eed10 at 004eed93
+;   FUN_004f6fa0 at 004f7082
+;   FUN_00548170 at 0054821c
+;   FUN_00554170 at 0055423c
+;
+; Referenced Globals:
+;   undefined4 DAT_00577c79
+;   undefined4 DAT_00577c7c
+;   string s_Floating_point_value_005acc60
+;   undefined1 DAT_005acc90
+;   undefined4 DAT_00763e84
+;   undefined4 DAT_00763e88
+;
+; Called Functions:
+;   FUN_0040c320
+;   FUN_0040c3a0
+;   FUN_00563350
+;   FUN_005644f0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 0040c880
+        ;   Label: FUN_0040c880
+    PUSH EDI                            ; 0040c881
+    MOV EAX,dword ptr [ESP + 0xc]       ; 0040c882
+    CMP dword ptr [0x00763e88],0x1      ; 0040c886 | DAT_00763e88
+    JNZ 0x0040c8d4                      ; 0040c88d
+        ;   XREF to: 0040c8d4 (CONDITIONAL_JUMP)  ; LAB_0040c8d4
+    PUSH EAX                            ; 0040c88f
+    PUSH 0x577c79                       ; 0040c890 | DAT_00577c79
+    MOV EBX,dword ptr [0x00763e84]      ; 0040c895 | DAT_00763e84
+    PUSH EBX                            ; 0040c89b
+    CALL FUN_00563350                   ; 0040c89c
+        ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined FUN_00563350()
+    ADD ESP,0xc                         ; 0040c8a1
+    CMP EAX,0x1                         ; 0040c8a4
+    JNZ 0x0040c8be                      ; 0040c8a7
+        ;   XREF to: 0040c8be (CONDITIONAL_JUMP)  ; LAB_0040c8be
+    MOV EDI,dword ptr [ESP + 0x10]      ; 0040c8a9
+        ;   Label: LAB_0040c8a9
+    PUSH EDI                            ; 0040c8ad
+    PUSH 0x5acc60                       ; 0040c8ae | = "Floating point value"
+    CALL FUN_0040c3a0                   ; 0040c8b3
+        ;   XREF to: 0040c3a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c3a0()
+    ADD ESP,0x8                         ; 0040c8b8
+    POP EDI                             ; 0040c8bb
+    POP EBX                             ; 0040c8bc
+    RET                                 ; 0040c8bd
+    PUSH ESI                            ; 0040c8be
+        ;   Label: LAB_0040c8be
+    MOV ESI,dword ptr [ESP + 0x14]      ; 0040c8bf
+    PUSH ESI                            ; 0040c8c3
+    PUSH 0x5acc60                       ; 0040c8c4 | = "Floating point value"
+    CALL FUN_0040c320                   ; 0040c8c9
+        ;   XREF to: 0040c320 (UNCONDITIONAL_CALL)  ; undefined FUN_0040c320()
+    ADD ESP,0x8                         ; 0040c8ce
+    POP ESI                             ; 0040c8d1
+    JMP 0x0040c8a9                      ; 0040c8d2
+        ;   XREF to: 0040c8a9 (UNCONDITIONAL_JUMP)  ; LAB_0040c8a9
+    SUB ESP,0x8                         ; 0040c8d4
+        ;   Label: LAB_0040c8d4
+    FLD float ptr [EAX]                 ; 0040c8d7
+    FSTP double ptr [ESP]               ; 0040c8d9
+    PUSH 0x5acc90                       ; 0040c8dc | DAT_005acc90
+    PUSH 0x577c7c                       ; 0040c8e1 | DAT_00577c7c
+    MOV ECX,dword ptr [0x00763e84]      ; 0040c8e6 | DAT_00763e84
+    PUSH ECX                            ; 0040c8ec
+    CALL FUN_005644f0                   ; 0040c8ed
+        ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005644f0()
+    ADD ESP,0x14                        ; 0040c8f2
+    JMP 0x0040c8a9                      ; 0040c8f5
+        ;   XREF to: 0040c8a9 (UNCONDITIONAL_JUMP)  ; LAB_0040c8a9
+

@@ -1,0 +1,238 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 25,
+        "line": 26,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 268,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 268,
+        "message": "invalid digit 'C' in decimal constant"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 269,
+        "message": "invalid suffix 'x' on integer constant"
+      },
+      {
+        "category": "other",
+        "column": 40,
+        "line": 269,
+        "message": "exponent has no digits"
+      },
+      {
+        "category": "other",
+        "column": 95,
+        "line": 102,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 92,
+        "line": 104,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 83,
+        "line": 105,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 76,
+        "line": 110,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 31,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 33,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 67,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 74,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 78,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 81,
+        "message": "unknown type name 'HWND'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 17,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 35,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 65,
+        "line": 37,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 144,
+        "message": "unknown type name 'HMODULE'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 29,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 41
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00571170",
+    "address_range": [
+      [
+        "00571170",
+        "005711a6"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00571170",
+    "signature": "LPVOID FUN_00571170(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056ddc0",
+      "is_variadic": false,
+      "name": "FUN_0056ddc0"
+    },
+    {
+      "addr": "0056e608",
+      "is_variadic": false,
+      "name": "FUN_0056e608"
+    },
+    {
+      "addr": "EXTERNAL:0000008f",
+      "is_variadic": false,
+      "name": "TlsGetValue"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005755c8",
+      "name": "PTR_TlsGetValue_005755c8",
+      "type": "void*",
+      "value": "0017609c"
+    },
+    {
+      "addr": "00599174",
+      "name": "s_Thread_has_no_thread-specific_da_00599174",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "005c1ab8",
+      "name": "DAT_005c1ab8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.15,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 17,
+      "INT_ADD": 4,
+      "INT_AND": 12,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 2,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 83
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_005c1ab8",
+      "severity": "mild",
+      "text": "pvVar2 = TlsGetValue(DAT_005c1ab8);",
+      "type": "undefined_data"
+    }
+  ]
+}

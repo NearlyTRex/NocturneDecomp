@@ -1,0 +1,76 @@
+#pragma once
+
+// Dependencies
+#include "system/basetypes.h"
+
+// =============================================================================
+// FUNCTION PROTOTYPES - Range 0x530000
+// =============================================================================
+
+undefined8 FUN_0053055c(undefined4 *param_1,byte *param_2,byte *param_3,uint param_4,int param_5);
+undefined8 FUN_005305f7(ushort *param_1,byte *param_2,byte *param_3,uint param_4,int param_5);
+void FUN_00530710(void);
+void FUN_0053075c(uint *param_1,int *param_2);
+void FUN_00530a25(uint *param_1,int *param_2);
+void FUN_00530d40(void);
+undefined4 FUN_00531780(int param_1);
+undefined4 FUN_005322b0(void);
+undefined4 FUN_005322e0(void);
+undefined4 FUN_00532320(void);
+undefined4 FUN_00532340(void);
+undefined4 FUN_00532360(void);
+undefined4 FUN_00532400(undefined4 param_1,undefined4 param_2);
+undefined4 FUN_00532440(undefined4 param_1,undefined4 param_2);
+undefined4 FUN_005324a0(undefined4 param_1,undefined4 param_2,int param_3);
+undefined4 FUN_005325f0(void);
+undefined4 FUN_00532620(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+undefined4 FUN_00532650(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+undefined4 FUN_00532680(int param_1,int *param_2,int param_3,undefined4 param_4);
+undefined4 FUN_005327c0(int param_1,undefined4 *param_2,int param_3,undefined4 param_4);
+undefined4 FUN_005329a0(void);
+undefined4 FUN_00532af0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+undefined4 FUN_00532b30(void);
+undefined4 FUN_00532b50(void);
+undefined4 FUN_00532ba0(void);
+undefined4 FUN_00532c70(undefined4 param_1);
+undefined4 FUN_00532c90(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+undefined4 FUN_00532cd0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+undefined4 FUN_00532d00(undefined4 param_1);
+undefined4 FUN_00532d20(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+undefined4 FUN_00532d60(void);
+undefined4 FUN_00532d80(void);
+void FUN_00532da0(int param_1);
+bool FUN_00532df0(int param_1,int param_2);
+void FUN_00533750(int param_1);
+void FUN_00533ce0(float *param_1,float param_2,float param_3);
+float * FUN_00533f10(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5,float *param_6);
+float * FUN_005340d0(int param_1,float *param_2,float *param_3,float *param_4,float *param_5,float *param_6);
+void FUN_00534260(undefined4 *param_1,uint param_2);
+void FUN_00534ad0(int param_1);
+void FUN_00534c80(undefined4 param_1);
+float FUN_00534fc0(undefined4 param_1);
+void FUN_00535900(int param_1,float param_2);
+void FUN_00537cd0(int param_1,float param_2);
+float * FUN_00538440(int param_1,float *param_2);
+void FUN_005384d0(int param_1);
+void FUN_005396d0(int param_1,undefined4 param_2);
+void FUN_005397b0(int param_1,float param_2);
+void FUN_00539b10(int param_1);
+void FUN_0053a260(int param_1,int param_2);
+void FUN_0053a660(int param_1,int param_2);
+undefined4 * FUN_0053a760(int param_1,int param_2,int param_3);
+undefined4 FUN_0053b630(int param_1,undefined4 param_2);
+void FUN_0053beb0(int param_1);
+void FUN_0053bf30(int param_1);
+undefined4 FUN_0053bf90(int param_1);
+undefined4 FUN_0053c3b0(int param_1);
+undefined4 FUN_0053c800(int param_1);
+void FUN_0053d910(int param_1,int param_2,float param_3);
+void FUN_0053e320(int param_1);
+void FUN_0053ecc0(int param_1,float param_2,int param_3);
+undefined4 FUN_0053f260(int param_1,undefined4 param_2);
+void FUN_0053f310(int param_1,float param_2);
+void FUN_0053fc60(int param_1);
+undefined4 FUN_0053ff50(int param_1);
+void FUN_0053ffe0(int param_1);
+

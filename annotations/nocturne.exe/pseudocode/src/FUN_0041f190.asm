@@ -1,0 +1,90 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_0041f190(int param_1)
+;
+; Local Variables:
+; undefined        Stack[-0x40]:1  local_40
+; undefined        Stack[-0x1c]:1  local_1c
+; undefined        Stack[-0x10]:1  local_10
+;
+; XREF[1]:
+;   FUN_0041ef90 at 0041f098
+;
+; Called Functions:
+;   FUN_0040a240
+;   FUN_0040a290
+;   FUN_0041e160
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 0041f190
+        ;   Label: FUN_0041f190
+    SUB ESP,0x3c                        ; 0041f191
+    MOV EBX,dword ptr [ESP + 0x44]      ; 0041f194
+    MOV EDX,dword ptr [EBX + 0x31c]     ; 0041f198
+    TEST EDX,EDX                        ; 0041f19e
+    JNZ 0x0041f1a7                      ; 0041f1a0
+        ;   XREF to: 0041f1a7 (CONDITIONAL_JUMP)  ; LAB_0041f1a7
+    ADD ESP,0x3c                        ; 0041f1a2
+    POP EBX                             ; 0041f1a5
+    RET                                 ; 0041f1a6
+    LEA EAX,[EBX + 0x20]                ; 0041f1a7
+        ;   Label: LAB_0041f1a7
+    PUSH EAX                            ; 0041f1aa
+    LEA EAX,[ESP + 0x28]                ; 0041f1ab
+    PUSH EAX                            ; 0041f1af
+    PUSH EDX                            ; 0041f1b0
+    CALL FUN_0040a290                   ; 0041f1b1
+        ;   XREF to: 0040a290 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a290()
+    ADD ESP,0xc                         ; 0041f1b6
+    LEA EAX,[ESP + 0x24]                ; 0041f1b9
+    PUSH EAX                            ; 0041f1bd
+    LEA EAX,[ESP + 0x34]                ; 0041f1be
+    PUSH EAX                            ; 0041f1c2
+    LEA EDX,[ESP + 0x8]                 ; 0041f1c3
+    PUSH EDX                            ; 0041f1c7
+    MOV EAX,dword ptr [EBX + 0x31c]     ; 0041f1c8
+    PUSH EAX                            ; 0041f1ce
+    MOV ECX,dword ptr [EAX + 0x14c]     ; 0041f1cf
+    CALL dword ptr [ECX + 0x14]         ; 0041f1d5
+    ADD ESP,0x8                         ; 0041f1d8
+    PUSH EAX                            ; 0041f1db
+    CALL FUN_0041e160                   ; 0041f1dc
+        ;   XREF to: 0041e160 (UNCONDITIONAL_CALL)  ; undefined FUN_0041e160()
+    MOV EDX,EAX                         ; 0041f1e1
+    LEA EAX,[ESP + 0x30]                ; 0041f1e3
+    ADD ESP,0xc                         ; 0041f1e7
+    CMP EAX,EDX                         ; 0041f1ea
+    JZ 0x0041f202                       ; 0041f1ec
+        ;   XREF to: 0041f202 (CONDITIONAL_JUMP)  ; LAB_0041f202
+    MOV EAX,dword ptr [EDX]             ; 0041f1ee
+    MOV dword ptr [ESP + 0x24],EAX      ; 0041f1f0
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0041f1f4
+    MOV dword ptr [ESP + 0x28],EAX      ; 0041f1f7
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0041f1fb
+    MOV dword ptr [ESP + 0x2c],EAX      ; 0041f1fe
+    PUSH ESI                            ; 0041f202
+        ;   Label: LAB_0041f202
+    LEA EAX,[ESP + 0x28]                ; 0041f203
+    PUSH EAX                            ; 0041f207
+    LEA EAX,[ESP + 0x20]                ; 0041f208
+    PUSH EAX                            ; 0041f20c
+    MOV ESI,dword ptr [EBX + 0x31c]     ; 0041f20d
+    PUSH ESI                            ; 0041f213
+    CALL FUN_0040a240                   ; 0041f214
+        ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined FUN_0040a240()
+    FLD float ptr [EAX]                 ; 0041f219
+    ADD ESP,0xc                         ; 0041f21b
+    FSTP float ptr [EBX + 0x20]         ; 0041f21e
+    MOV EDX,dword ptr [EAX + 0x4]       ; 0041f221
+    MOV dword ptr [EBX + 0x24],EDX      ; 0041f224
+    MOV EDX,dword ptr [EAX + 0x8]       ; 0041f227
+    MOV dword ptr [EBX + 0x28],EDX      ; 0041f22a
+    POP ESI                             ; 0041f22d
+    ADD ESP,0x3c                        ; 0041f22e
+    POP EBX                             ; 0041f231
+    RET                                 ; 0041f232
+
