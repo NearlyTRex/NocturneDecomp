@@ -8,6 +8,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_0043b310 at 0043b316
+;
 ; Referenced Globals:
 ;   undefined4 s_modelName_0058d784+1
 ;   string s_toStartEvent_0058d78f

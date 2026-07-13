@@ -4,6 +4,12 @@
 ; void FUN_004eed10(int param_1)
 ;
 ;
+; XREF[4]:
+;   FUN_004b68b0 at 004b68b5
+;   FUN_004b8320 at 004b8327
+;   FUN_004b9b50 at 004b9b55
+;   FUN_004efb30 at 004efb37
+;
 ; Referenced Globals:
 ;   undefined4 s_hitPoints_0058cb31+2
 ;   string s_modelName_0058cb3d

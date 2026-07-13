@@ -4,9 +4,11 @@
 ; bool FUN_00549110(undefined4 *param_1)
 ;
 ;
-; XREF[2]:
+; XREF[4]:
 ;   FUN_004e99c0 at 004e99d9
+;   FUN_004e9d50 at 004e9d72
 ;   FUN_00548ee0 at 00548ee6
+;   FUN_00548f30 at 00548f36
 ;
 ; Called Functions:
 ;   FUN_00548f60

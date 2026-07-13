@@ -4,6 +4,19 @@
 ; void FUN_004796c0(int param_1)
 ;
 ;
+; XREF[26]:
+;   FUN_00412d80 at 00412d87
+;   FUN_00414510 at 00414517
+;   FUN_00415160 at 00415167
+;   FUN_00415870 at 00415877
+;   FUN_00419ce0 at 00419cec
+;   FUN_00420970 at 00420976
+;   FUN_00421880 at 00421889
+;   FUN_0043c2e0 at 0043c2e6
+;   FUN_00454dc0 at 00454dc6
+;   FUN_0045a450 at 0045a45c
+;   ... and 16 more
+;
 ; Referenced Globals:
 ;   string s_speed_0057f2c2
 ;   string s_hitPoints_0057f2c8

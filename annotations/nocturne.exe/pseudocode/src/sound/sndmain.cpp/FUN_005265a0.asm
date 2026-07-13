@@ -14,18 +14,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[12]:
+; XREF[15]:
 ;   FUN_0045ab40 at 0045aff5
 ;   FUN_00480eb0 at 00480f09
+;   FUN_00484b60 at 00484c06
 ;   FUN_00494e30 at 00494e6f
 ;   FUN_004a6e90 at 004a7212
+;   FUN_004c79a0 at 004c7c36
 ;   FUN_004caef0 at 004cafe3
 ;   FUN_004cb5a0 at 004cb704
 ;   FUN_004cb740 at 004cb7ba
 ;   FUN_004d12e0 at 004d1d07
-;   FUN_0052d120 at 0052d357
-;   FUN_0052dff0 at 0052e54f
-;   ... and 2 more
+;   ... and 5 more
 ;
 ; Referenced Globals:
 ;   string s_..\\sound\\sndmain.cpp_005922b0

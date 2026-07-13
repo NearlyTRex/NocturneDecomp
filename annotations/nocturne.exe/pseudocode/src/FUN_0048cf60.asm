@@ -6,6 +6,12 @@
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
+; XREF[4]:
+;   FUN_004180a0 at 004180a8
+;   FUN_0043cf10 at 0043cf24
+;   FUN_0048e370 at 0048e394
+;   FUN_0054f920 at 0054f944
+;
 ; Referenced Globals:
 ;   undefined1* PTR_FUN_0059d584 = 0048d050
 ;

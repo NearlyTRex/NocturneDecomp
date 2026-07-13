@@ -4,6 +4,9 @@
 ; int FUN_00571e75(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
 ;
 ;
+; XREF[1]:
+;   FUN_005700d0 at 00570122
+;
 ; *****************************************************************************
 
 section .text

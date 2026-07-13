@@ -4,6 +4,10 @@
 ; int FUN_00495240(void)
 ;
 ;
+; XREF[2]:
+;   FUN_00494950 at 00494967
+;   FUN_00494e80 at 00494e9a
+;
 ; Referenced Globals:
 ;   string s_..\\core\\frankgen.cpp_00581d72
 ;   string s_CFrankenstienMachine::findLeader_00581d87

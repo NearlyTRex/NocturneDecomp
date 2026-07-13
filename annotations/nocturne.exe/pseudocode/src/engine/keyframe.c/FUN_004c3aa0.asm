@@ -7,6 +7,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_004c3c90 at 004c4029
+;
 ; Referenced Globals:
 ;   undefined4 s_..\\engine\\keyframe.c_005875db+1
 ;   string s_Bad_key_frame_005875f1

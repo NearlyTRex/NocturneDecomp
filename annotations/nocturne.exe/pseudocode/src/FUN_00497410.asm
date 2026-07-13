@@ -19,6 +19,9 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
+; XREF[1]:
+;   FUN_00495a20 at 00495ac0
+;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004973b4 = 00497448
 ;   string s_kick1.wav_005820ba

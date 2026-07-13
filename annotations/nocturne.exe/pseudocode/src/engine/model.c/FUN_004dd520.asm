@@ -6,8 +6,11 @@
 ; Local Variables:
 ; undefined        Stack[-0x100]:1  local_100
 ;
-; XREF[1]:
+; XREF[4]:
 ;   FUN_004c3aa0 at 004c3abd
+;   FUN_004c3c90 at 004c3ff4
+;   FUN_004c4080 at 004c40ea
+;   FUN_004dcc90 at 004dcca0
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004dd40c = 004dd53f

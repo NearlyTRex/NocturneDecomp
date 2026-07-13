@@ -38,7 +38,7 @@ LAB_00403cb2:
         param_3 = FUN_00563cc0(param_1 + *(int *)(&DAT_01bd2fa0 + param_2),_DAT_01c00c70,param_3);
       }
       else if (DAT_005b7624 < 0x11) {
-        uVar1 = *(ushort *)(_DAT_01c00c70 * 2 + 0x1bff720);
+        uVar1 = *(ushort *)(&DAT_01bff720 + _DAT_01c00c70 * 2);
         puVar4 = (ushort *)(param_1 * 2 + *(int *)(&DAT_01bd2fa0 + param_2));
         if (0 < param_3) {
           do {

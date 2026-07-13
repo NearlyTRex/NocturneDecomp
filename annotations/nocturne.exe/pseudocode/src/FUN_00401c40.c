@@ -63,7 +63,7 @@ int FUN_00401c40(int param_1,int param_2,int param_3)
             pbVar2 = pbVar2 + 1;
             puVar3 = puVar4 + 1;
             iVar11 = iVar11 + 1;
-            *puVar4 = *(ushort *)((uint)bVar1 * 2 + 0x1bff720);
+            *puVar4 = *(ushort *)(&DAT_01bff720 + (uint)bVar1 * 2);
             puVar4 = puVar3;
           } while (iVar11 < (int)uVar10);
         }

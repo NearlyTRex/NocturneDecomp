@@ -4,6 +4,9 @@
 ; void FUN_004c3350(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0053e860 at 0053e937
+;
 ; Referenced Globals:
 ;   string s_Auto_use_selected_health_0058752f
 ;   string s_Auto_use_health_00587549

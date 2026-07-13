@@ -19,6 +19,11 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[3]:
+;   FUN_00558060 at 0055806b
+;   FUN_00558710 at 00558721
+;   FUN_00558770 at 00558782
+;
 ; Referenced Globals:
 ;   void* PTR_CreateBrushIndirect_00575398 = 001756fc
 ;   void* PTR_CreateCompatibleDC_0057539c = 00175712

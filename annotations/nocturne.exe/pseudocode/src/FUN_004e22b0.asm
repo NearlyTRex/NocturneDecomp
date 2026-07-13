@@ -16,9 +16,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined        Stack[-0x10]:1  local_10
 ;
-; XREF[2]:
+; XREF[9]:
+;   FUN_004110f0 at 00411280
+;   FUN_00414340 at 00414413
+;   FUN_00415760 at 0041583c
 ;   FUN_00426440 at 004264d3
+;   FUN_0045a260 at 0045a333
 ;   FUN_004d5860 at 004d5aa1
+;   FUN_004de550 at 004de632
+;   FUN_00541640 at 005416fc
+;   FUN_0054dac0 at 0054db86
 ;
 ; Referenced Globals:
 ;   string s_%s_->_%s_0058b4cc

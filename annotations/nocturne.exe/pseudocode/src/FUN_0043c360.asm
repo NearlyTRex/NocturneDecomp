@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_0043c5e0 at 0043c5ed
+;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0043c350 = 0043c39d
 ;   string s_limb?.wav_0057b3ed

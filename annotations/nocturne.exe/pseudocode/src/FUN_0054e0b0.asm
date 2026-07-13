@@ -4,6 +4,9 @@
 ; void FUN_0054e0b0(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0054c690 at 0054d1a9
+;
 ; Referenced Globals:
 ;   string s_voicusummon.wav_00597229
 ;   undefined4 DAT_005be368

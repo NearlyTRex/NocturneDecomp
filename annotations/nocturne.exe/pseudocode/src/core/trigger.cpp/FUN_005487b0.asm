@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined        Stack[-0x7c]:1  local_7c
 ;
+; XREF[1]:
+;   FUN_00547b30 at 00547ba1
+;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\trigger.cpp_00596b22+1
 ;   string s_CTrigger::containsActor_-_invali_00596b37

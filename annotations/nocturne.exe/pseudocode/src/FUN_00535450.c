@@ -1,0 +1,75 @@
+// Name: FUN_00535450
+// Address: 00535450
+// Address Range: [[00535450, 00535778]]
+// Convention: unknown
+// Signature: void FUN_00535450(int param_1)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00535450(int param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  uint *puVar3;
+  byte local_24 [12];
+  byte local_18 [12];
+  
+  FUN_004b48d0(param_1);
+  iVar1 = param_1 + 0x150;
+  uVar2 = FUN_0051e0a0(iVar1);
+  _DAT_02dc9f50 = FUN_005179d0(uVar2,"Bip01 head",1);
+  _DAT_02dc9f54 = FUN_005179d0(uVar2,"Bip01 L Clavicle",1);
+  _DAT_02dc9f58 = FUN_005179d0(uVar2,"Bip01 R Clavicle",1);
+  _DAT_02dc9f5c = FUN_005179d0(uVar2,"Bip01 L UpperArm",1);
+  _DAT_02dc9f60 = FUN_005179d0(uVar2,"Bip01 R UpperArm",1);
+  _DAT_02dc9f64 = FUN_005179d0(uVar2,"Bip01 L ForeArm",1);
+  _DAT_02dc9f68 = FUN_005179d0(uVar2,"Bip01 R ForeArm",1);
+  _DAT_02dc9f6c = FUN_005179d0(uVar2,"Bip01 L Foot",1);
+  _DAT_02dc9f70 = FUN_005179d0(uVar2,"Bip01 R Foot",1);
+  _DAT_02dc9f74 = FUN_005179d0(uVar2,"Bip01 L Thigh",1);
+  _DAT_02dc9f78 = FUN_005179d0(uVar2,"Bip01 R Thigh",1);
+  _DAT_02dc9f7c = FUN_005179d0(uVar2,"Bip01 L Calf",1);
+  _DAT_02dc9f80 = FUN_005179d0(uVar2,"Bip01 R Calf",1);
+  _DAT_02dc9f84 = FUN_005179d0(uVar2,"Bip01 L Hand",1);
+  _DAT_02dc9f88 = FUN_005179d0(uVar2,"Bip01 R Hand",1);
+  _DAT_02dc9f8c = FUN_005179d0(uVar2,"Bip01 Neck",1);
+  _DAT_02dc9f90 = FUN_005179d0(uVar2,"Bip01 Spine2",1);
+  _DAT_02dc9f94 = FUN_005179d0(uVar2,"Bip01 Spine1",1);
+  _DAT_02dc9f98 = FUN_005179d0(uVar2,"Bip01 Spine",1);
+  _DAT_02dc9f9c = FUN_005179d0(uVar2,"Bip01 Pelvis",1);
+  *(uint *)(param_1 + 0x24a4) = _DAT_02dc9f84;
+  *(uint *)(param_1 + 0x24e8) = _DAT_02dc9f88;
+  uVar2 = FUN_004e1890(iVar1,"turnlstart",1);
+  _DAT_02dc9fa0 = FUN_004e1010(uVar2);
+  uVar2 = FUN_004e1890(iVar1,"turnrstart",1);
+  _DAT_02dc9fa4 = FUN_004e1010(uVar2);
+  uVar2 = FUN_004e1890(iVar1,"pickup",1);
+  uVar2 = FUN_004e1010(uVar2);
+  FUN_0051b8f0(iVar1,uVar2,0x41b00000);
+  puVar3 = (uint *)FUN_0051d2a0(iVar1,local_18,_DAT_02dc9f88);
+  if ((uint *)(param_1 + 0x1fb24) != puVar3) {
+    *(uint *)(param_1 + 0x1fb24) = *puVar3;
+    *(uint *)(param_1 + 0x1fb28) = puVar3[1];
+    *(uint *)(param_1 + 0x1fb2c) = puVar3[2];
+  }
+  puVar3 = (uint *)FUN_0051d2a0(param_1 + 0x150,local_24,_DAT_02dc9f60);
+  if ((uint *)(param_1 + 0x1fb30) != puVar3) {
+    *(uint *)(param_1 + 0x1fb30) = *puVar3;
+    *(uint *)(param_1 + 0x1fb34) = puVar3[1];
+    *(uint *)(param_1 + 0x1fb38) = puVar3[2];
+  }
+  FUN_005384d0(param_1);
+  *(uint *)(param_1 + 0x1fb3c) = 0;
+  *(uint *)(param_1 + 0x1fccc) = 0;
+  FUN_00454580(param_1 + 0x1fb40,"stranger-hat.kfm");
+  FUN_00454510(param_1 + 0x1fb40);
+  *(uint *)(param_1 + 0x1fcd4) = 0;
+  *(uint *)(param_1 + 0x1fab0) = 0;
+  *(uint *)(param_1 + 0x1fab4) = 0;
+  uVar2 = FUN_0051e020(param_1 + 0x150);
+  _DAT_02dc9fa8 = FUN_00519b30(uVar2,"head01",1);
+  return;
+}

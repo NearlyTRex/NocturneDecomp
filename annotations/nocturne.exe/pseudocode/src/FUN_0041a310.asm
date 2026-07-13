@@ -7,6 +7,9 @@
 ; undefined        Stack[-0x24]:1  local_24
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_00418a00 at 00418ac4
+;
 ; Referenced Globals:
 ;   string s_boneguy-comeback.wav_00579561
 ;

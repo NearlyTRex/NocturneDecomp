@@ -1,0 +1,45 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_00417f10(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4)
+;
+; Local Variables:
+; undefined4       Stack[-0xc]:4  local_c
+;
+; Called Functions:
+;   FUN_0040bca0
+;   FUN_0040dda0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00417f10
+        ;   Label: FUN_00417f10
+    PUSH ESI                            ; 00417f11
+    SUB ESP,0x4                         ; 00417f12
+    MOV EBX,dword ptr [ESP + 0x18]      ; 00417f15
+    MOV EDX,dword ptr [ESP + 0x1c]      ; 00417f19
+    PUSH EDX                            ; 00417f1d
+    PUSH EBX                            ; 00417f1e
+    MOV ECX,dword ptr [ESP + 0x1c]      ; 00417f1f
+    PUSH ECX                            ; 00417f23
+    MOV ESI,dword ptr [ESP + 0x1c]      ; 00417f24
+    PUSH ESI                            ; 00417f28
+    CALL FUN_0040bca0                   ; 00417f29
+        ;   XREF to: 0040bca0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040bca0()
+    ADD ESP,0x10                        ; 00417f2e
+    PUSH 0x41700000                     ; 00417f31
+    PUSH 0x40a00000                     ; 00417f36
+    CALL FUN_0040dda0                   ; 00417f3b
+        ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040dda0()
+    MOV dword ptr [ESP + 0x8],EAX       ; 00417f40
+    MOV dword ptr [EBX + 0x2c],0x3ca3d70a ; 00417f44
+    MOV EAX,dword ptr [ESP + 0x8]       ; 00417f4b
+    MOV dword ptr [EBX + 0x4],EAX       ; 00417f4f
+    ADD ESP,0x8                         ; 00417f52
+    ADD ESP,0x4                         ; 00417f55
+    POP ESI                             ; 00417f58
+    POP EBX                             ; 00417f59
+    RET                                 ; 00417f5a
+

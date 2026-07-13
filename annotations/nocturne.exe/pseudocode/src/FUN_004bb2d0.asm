@@ -4,6 +4,9 @@
 ; void FUN_004bb2d0(int param_1,float param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_004b9fe0 at 004ba083
+;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004bb2ac = 004bb304
 ;   undefined4 DAT_01cae2bc

@@ -44,8 +44,17 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[10]:
+;   FUN_0040b300 at 0040b7a0
+;   FUN_0043d1c0 at 0043d7b4
+;   FUN_00477890 at 00477f49
+;   FUN_004ac3f0 at 004ac429
+;   FUN_004b27c0 at 004b2ef2
+;   FUN_004b6770 at 004b6864
 ;   FUN_00509140 at 005094fc
+;   FUN_00515ea0 at 00516590
+;   FUN_00545c30 at 005463ac
+;   FUN_0054ab10 at 0054afc2
 ;
 ; Referenced Globals:
 ;   undefined4 s_7YEARS.RAW_00585047+1

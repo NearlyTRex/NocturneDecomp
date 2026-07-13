@@ -19,7 +19,8 @@
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined8       Stack[-0x18]:8  local_18
 ;
-; XREF[12]:
+; XREF[14]:
+;   FUN_00418a00 at 00418bb6
 ;   FUN_00429e60 at 00429f09
 ;   FUN_0043b890 at 0043b9d5
 ;   FUN_00497900 at 00497bba
@@ -29,8 +30,7 @@
 ;   FUN_0051c3d0 at 0051c4fa
 ;   FUN_0051cae0 at 0051cbc8
 ;   FUN_0051cfd0 at 0051d082
-;   FUN_00539b10 at 00539e6c
-;   ... and 2 more
+;   ... and 4 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059836e

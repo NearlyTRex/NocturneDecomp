@@ -1,0 +1,29 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_005524d0(undefined4 param_1)
+;
+;
+; Referenced Globals:
+;   undefined1* PTR_FUN_005a4034 = 00552510
+;
+; Called Functions:
+;   FUN_005478b0
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,dword ptr [ESP + 0x4]       ; 005524d0
+        ;   Label: FUN_005524d0
+    PUSH EDX                            ; 005524d4
+    CALL FUN_005478b0                   ; 005524d5
+        ;   XREF to: 005478b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005478b0()
+    MOV dword ptr [EAX + 0x14c],0x5a4034 ; 005524da | PTR_FUN_005a4034
+    MOV dword ptr [EAX + 0x158],0x3f000000 ; 005524e4
+    MOV dword ptr [EAX + 0x15c],0x3f800000 ; 005524ee
+    MOV dword ptr [EAX + 0x160],0x3f000000 ; 005524f8
+    ADD ESP,0x4                         ; 00552502
+    MOV dword ptr [EAX + 0x368],0x0     ; 00552505
+    RET                                 ; 0055250f
+

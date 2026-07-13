@@ -4,18 +4,18 @@
 ; void FUN_004e16b0(undefined4 *param_1,int param_2,int param_3)
 ;
 ;
-; XREF[34]:
+; XREF[98]:
+;   FUN_00410490 at 0041061c
 ;   FUN_00410a80 at 00410b6b
 ;   FUN_00410bb0 at 00410bd4
+;   FUN_00412480 at 004129cc
+;   FUN_00413040 at 00413107
 ;   FUN_00413780 at 004137a0
-;   FUN_004196b0 at 00419981
-;   FUN_0047ac50 at 0047cf59
-;   FUN_00497410 at 00497528
-;   FUN_004983f0 at 00498735
-;   FUN_004987e0 at 00498a27
-;   FUN_00498bd0 at 00498bf5
-;   FUN_004b81a0 at 004b8285
-;   ... and 24 more
+;   FUN_00413800 at 00413d66
+;   FUN_00414930 at 004149f7
+;   FUN_004154b0 at 0041556b
+;   FUN_00415900 at 00415940
+;   ... and 88 more
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\motion.cpp_0058b2cc+1

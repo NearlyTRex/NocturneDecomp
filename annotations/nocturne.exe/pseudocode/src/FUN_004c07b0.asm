@@ -4,12 +4,13 @@
 ; void FUN_004c07b0(int param_1,int param_2,int param_3)
 ;
 ;
-; XREF[5]:
+; XREF[6]:
 ;   FUN_004bee80 at 004beea3
 ;   FUN_004c1580 at 004c177e
 ;   FUN_004c3280 at 004c32bc
 ;   FUN_004ff2c0 at 00502f0a
 ;   FUN_0053f310 at 0053f58d
+;   FUN_0054dd50 at 0054df0e
 ;
 ; Called Functions:
 ;   FUN_00409cd0

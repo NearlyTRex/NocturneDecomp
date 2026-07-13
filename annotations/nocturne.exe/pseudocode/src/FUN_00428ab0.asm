@@ -4,6 +4,9 @@
 ; void FUN_00428ab0(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
 ;
 ;
+; XREF[1]:
+;   FUN_00557020 at 0055704d
+;
 ; Referenced Globals:
 ;   undefined4 s_STAND_0057a0f9+1
 ;   string s_STAND_0057a100

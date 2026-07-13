@@ -59,15 +59,18 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[8]:
+; XREF[27]:
+;   FUN_00412480 at 00412b19
+;   FUN_00413800 at 004141de
+;   FUN_00418a00 at 004193d1
 ;   FUN_004196b0 at 00419918
+;   FUN_0041fe40 at 0042017b
 ;   FUN_00428780 at 00428a53
 ;   FUN_00428c00 at 00428d22
 ;   FUN_0042a1e0 at 0042a4bc
 ;   FUN_0042af70 at 0042afe0
-;   FUN_004d4f30 at 004d53b0
-;   FUN_004dbce0 at 004dbf74
-;   FUN_00561010 at 005613c6
+;   FUN_0043bdb0 at 0043c25c
+;   ... and 17 more
 ;
 ; Referenced Globals:
 ;   string s_CCharacter::walkToPoint_-_go_som_00579ed8

@@ -4,9 +4,10 @@
 ; bool FUN_00558b70(void)
 ;
 ;
-; XREF[5]:
+; XREF[6]:
 ;   FUN_0046f7e0 at 0046f8ca
 ;   FUN_00470eb0 at 004710f9
+;   FUN_00474ea0 at 00474f0c
 ;   FUN_004a0550 at 004a05ff
 ;   FUN_004a57c0 at 004a5b8e
 ;   FUN_0055a510 at 0055a80c

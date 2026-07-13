@@ -8,10 +8,18 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ; undefined8       Stack[-0x10]:8  local_10
 ;
-; XREF[3]:
+; XREF[24]:
+;   FUN_00411800 at 0041181a
+;   FUN_00414510 at 004145c0
+;   FUN_00419ce0 at 00419e3b
 ;   FUN_0041ec60 at 0041ecc0
-;   FUN_004f6fa0 at 004f726b
-;   FUN_00548170 at 0054819f
+;   FUN_0041f600 at 0041f63c
+;   FUN_0043b310 at 0043b32a
+;   FUN_0043f6b0 at 0043f6cd
+;   FUN_00455ee0 at 00455fc3
+;   FUN_0045a450 at 0045a68a
+;   FUN_004621d0 at 0046222a
+;   ... and 14 more
 ;
 ; Referenced Globals:
 ;   string s_%f,%f,%f_00577c04

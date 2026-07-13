@@ -4,7 +4,8 @@
 ; void FUN_00530d40(void)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00530e60 at 00531750
 ;   FUN_00531780 at 0053226f
 ;   FUN_005322b0 at 005322c5
 ;

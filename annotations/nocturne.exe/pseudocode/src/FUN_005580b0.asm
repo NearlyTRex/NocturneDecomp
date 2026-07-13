@@ -7,6 +7,9 @@
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x28]:4  local_28
 ;
+; XREF[1]:
+;   FUN_00558060 at 0055809a
+;
 ; Referenced Globals:
 ;   void* PTR_SetTextColor_005753c8 = 001757c6
 ;   void* PTR_TextOutA_005753cc = 001757d6

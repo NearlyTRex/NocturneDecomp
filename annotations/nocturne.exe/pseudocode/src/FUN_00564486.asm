@@ -4,18 +4,18 @@
 ; void FUN_00564486(undefined4 param_1)
 ;
 ;
-; XREF[34]:
+; XREF[145]:
 ;   FUN_00409ea0 at 00409ee0
-;   FUN_00435210 at 00435222
-;   FUN_00438f30 at 00438f60
-;   FUN_0043b7c0 at 0043b7df
-;   FUN_0044adf0 at 0044ae05
-;   FUN_00452f10 at 00452f1f
-;   FUN_00453ff0 at 004540e6
-;   FUN_004673a0 at 004673b7
-;   FUN_004675e0 at 004675f4
-;   FUN_00473b80 at 00473bb6
-;   ... and 24 more
+;   FUN_0040fcf0 at 0040fd90
+;   FUN_0040fdc0 at 0040fdf5
+;   FUN_004100f0 at 00410125
+;   FUN_00411610 at 00411645
+;   FUN_00411660 at 00411695
+;   FUN_004118c0 at 004118f5
+;   FUN_00412000 at 0041204c
+;   FUN_004132c0 at 00413360
+;   FUN_00414c60 at 00414d00
+;   ... and 135 more
 ;
 ; Called Functions:
 ;   FUN_00564494

@@ -4,8 +4,13 @@
 ; undefined4 FUN_004b5490(int param_1)
 ;
 ;
-; XREF[1]:
+; XREF[6]:
+;   FUN_00439f50 at 0043a365
+;   FUN_00495a20 at 00496bc1
+;   FUN_004b32d0 at 004b3732
+;   FUN_004b9fe0 at 004ba555
 ;   FUN_00537cd0 at 005382ab
+;   FUN_00541d00 at 0054223d
 ;
 ; Called Functions:
 ;   FUN_004c6500

@@ -9,8 +9,11 @@
 ; undefined        Stack[-0x94]:1  local_94
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[4]:
 ;   FUN_00416b00 at 00416bed
+;   FUN_0043cfd0 at 0043d060
+;   FUN_0048e5a0 at 0048e5f2
+;   FUN_0054fc60 at 0054ff63
 ;
 ; Referenced Globals:
 ;   string s_torch.wav_*_%f_00581546

@@ -4,6 +4,9 @@
 ; int FUN_005478b0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_005524d0 at 005524d5
+;
 ; Referenced Globals:
 ;   string s_nobody_00596988
 ;   undefined4 s_obody_00596988+1

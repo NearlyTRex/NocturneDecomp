@@ -4,8 +4,9 @@
 ; void FUN_004ece70(int *param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_004ea830 at 004ea923
+;   FUN_004eb520 at 004eb843
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\netgame.cpp_0058c430

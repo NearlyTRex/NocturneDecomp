@@ -4,7 +4,7 @@
 ; int FUN_0040d540(undefined4 param_1)
 ;
 ;
-; XREF[10]:
+; XREF[12]:
 ;   FUN_00411530 at 0041158c
 ;   FUN_004a02e0 at 004a02e9
 ;   FUN_004a0550 at 004a10f3
@@ -13,8 +13,9 @@
 ;   FUN_004bef10 at 004bef6a
 ;   FUN_004bf360 at 004bfafb
 ;   FUN_004c1190 at 004c143c
+;   FUN_004d4650 at 004d4851
 ;   FUN_004d7fe0 at 004d855f
-;   FUN_004fbe80 at 004fbea0
+;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\actor.cpp_00577f63

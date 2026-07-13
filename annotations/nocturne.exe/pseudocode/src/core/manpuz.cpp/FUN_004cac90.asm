@@ -4,6 +4,9 @@
 ; void FUN_004cac90(int param_1,int param_2,float param_3)
 ;
 ;
+; XREF[1]:
+;   FUN_004c9cf0 at 004c9d17
+;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\manpuz.cpp_00587f71+1
 ;   string s_CMansionPuzzleCircle::processPan_00587f85

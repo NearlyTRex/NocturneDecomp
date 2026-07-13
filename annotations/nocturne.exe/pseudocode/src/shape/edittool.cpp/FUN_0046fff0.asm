@@ -6,9 +6,12 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[2]:
+; XREF[5]:
 ;   FUN_004d2d00 at 004d3d4c
 ;   FUN_004d8720 at 004d8740
+;   FUN_004e9a90 at 004e9b62
+;   FUN_004e9d50 at 004e9d63
+;   FUN_004eb520 at 004ebb0c
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1

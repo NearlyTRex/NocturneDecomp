@@ -31,7 +31,7 @@ void FUN_004b63f0(void)
       pbVar3 = (byte *)(iVar6 + 0x1c0064a);
       iVar8 = iVar5 + 2;
       iVar6 = iVar6 + 3;
-      *(ushort *)(iVar5 + 0x1bff720) =
+      *(ushort *)(&DAT_01bff720 + iVar5) =
            (ushort)(*pbVar3 / _DAT_01c00640 << (DAT_01c0063c & 0x1f)) |
            (ushort)(*pbVar1 / _DAT_01c00628 << (DAT_01c00624 & 0x1f)) |
            (ushort)(*pbVar2 / _DAT_01c00634 << (DAT_01c00630 & 0x1f));

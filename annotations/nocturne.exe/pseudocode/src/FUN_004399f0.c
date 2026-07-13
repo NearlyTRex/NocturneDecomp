@@ -13,7 +13,7 @@ void FUN_004399f0(uint param_1,uint param_2,uint param_3)
   
   iVar1 = FUN_00438f20(param_1);
   iVar1 = FUN_00439350(iVar1 + 4);
-  *(byte ***)(iVar1 + -4) = &PTR_LAB_0059b444;
+  *(byte ***)(iVar1 + -4) = &PTR_FUN_0059b444;
   *(uint *)(iVar1 + 0x1c) = param_2;
   *(uint *)(iVar1 + 0x20) = param_3;
   return;

@@ -4,6 +4,10 @@
 ; void FUN_00557060(int param_1)
 ;
 ;
+; XREF[2]:
+;   FUN_00555c60 at 005567c3
+;   FUN_00557940 at 00557a5b
+;
 ; Referenced Globals:
 ;   string s_were?.wav_00597e29
 ;

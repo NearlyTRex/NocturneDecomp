@@ -4,12 +4,13 @@
 ; undefined4 FUN_004bf360(int param_1,int param_2,int param_3)
 ;
 ;
-; XREF[7]:
+; XREF[8]:
 ;   FUN_0040f1a0 at 0040f1c4
 ;   FUN_004a02e0 at 004a0364
 ;   FUN_004a0550 at 004a115f
 ;   FUN_004b4dd0 at 004b4e37
 ;   FUN_004b5c70 at 004b5c9c
+;   FUN_004b6d80 at 004b7078
 ;   FUN_004fbe80 at 004fbeca
 ;   FUN_004ff2c0 at 00500788
 ;

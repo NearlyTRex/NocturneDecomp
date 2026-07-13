@@ -4,6 +4,9 @@
 ; void FUN_0045a6a0(int param_1,int *param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_0045a6f0 at 0045a75e
+;
 ; Referenced Globals:
 ;   string s_Shot_thru_the_heart_0057d812
 ;   undefined4 DAT_0057d82e

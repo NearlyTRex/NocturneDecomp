@@ -4,6 +4,16 @@
 ; void FUN_004ef010(int param_1)
 ;
 ;
+; XREF[8]:
+;   FUN_0048c960 at 0048c965
+;   FUN_0048c990 at 0048c995
+;   FUN_0048c9c0 at 0048c9c5
+;   FUN_0048cb00 at 0048cb05
+;   FUN_0048cb80 at 0048cb85
+;   FUN_0048cbb0 at 0048cbb5
+;   FUN_0048cbe0 at 0048cbe5
+;   FUN_004b0a30 at 004b0a35
+;
 ; Referenced Globals:
 ;   undefined1* PTR_FUN_005a1034 = 004ef040
 ;

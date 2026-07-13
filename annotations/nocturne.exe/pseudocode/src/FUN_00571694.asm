@@ -4,7 +4,8 @@
 ; bool FUN_00571694(void)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00571718 at 0057179a
 ;   FUN_005717d8 at 0057183e
 ;
 ; Referenced Globals:

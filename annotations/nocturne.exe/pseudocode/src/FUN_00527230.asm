@@ -4,18 +4,18 @@
 ; undefined4 FUN_00527230(undefined4 param_1)
 ;
 ;
-; XREF[14]:
+; XREF[48]:
+;   FUN_00413040 at 00413056
+;   FUN_00414930 at 00414946
+;   FUN_00418a00 at 00418c97
+;   FUN_00419f40 at 00419f4c
+;   FUN_00420c40 at 00420c56
 ;   FUN_00424f40 at 00424f6e
 ;   FUN_004259f0 at 00425c04
 ;   FUN_004269b0 at 00426cf3
 ;   FUN_00427b60 at 00427b82
-;   FUN_0047ac50 at 0047b2dd
-;   FUN_004874d0 at 0048754c
-;   FUN_004b56f0 at 004b572f
-;   FUN_004caef0 at 004caffe
-;   FUN_004fe5b0 at 004fe6fb
-;   FUN_0052df90 at 0052dfa6
-;   ... and 4 more
+;   FUN_0042bca0 at 0042c3aa
+;   ... and 38 more
 ;
 ; Called Functions:
 ;   FUN_005234b0

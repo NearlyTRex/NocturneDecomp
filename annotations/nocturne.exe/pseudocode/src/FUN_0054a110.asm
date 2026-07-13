@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined        Stack[-0xb4]:1  local_b4
 ;
+; XREF[1]:
+;   FUN_005497f0 at 005499e6
+;
 ; Referenced Globals:
 ;   string s_%s_has_no_guard_trigger!_00596e78
 ;   undefined4 DAT_00596e95

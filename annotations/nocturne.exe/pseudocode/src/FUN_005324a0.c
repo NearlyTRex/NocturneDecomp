@@ -27,7 +27,7 @@ uint FUN_005324a0(uint param_1,uint param_2,int param_3)
     _DAT_01c02594 = iVar2;
     return 0;
   }
-  (*_DAT_02dc9ddc)(&DAT_01c00648,0x1bff720);
+  (*_DAT_02dc9ddc)(&DAT_01c00648,&DAT_01bff720);
   FUN_004b63f0();
   (*_DAT_02dc9dcc)(_DAT_02dc9e0c,_DAT_02dc9e10,_DAT_02dc9e14);
   _DAT_01c02594 = 1;

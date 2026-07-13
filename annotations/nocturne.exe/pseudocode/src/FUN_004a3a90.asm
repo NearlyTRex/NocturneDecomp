@@ -4,6 +4,10 @@
 ; void FUN_004a3a90(void)
 ;
 ;
+; XREF[2]:
+;   FUN_004996b0 at 00499898
+;   FUN_0053e860 at 0053eb8d
+;
 ; Referenced Globals:
 ;   undefined4 DAT_01cae0e8
 ;

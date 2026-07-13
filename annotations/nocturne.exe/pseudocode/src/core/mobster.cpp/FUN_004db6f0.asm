@@ -21,6 +21,9 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
+; XREF[1]:
+;   FUN_004da790 at 004dacae
+;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\mobster.cpp_0058a35f+2
 ;   string s_CMobster::aimTommyGun_-_I'm_not_c_0058a375

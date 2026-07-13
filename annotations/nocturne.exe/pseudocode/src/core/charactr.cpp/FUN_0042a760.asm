@@ -4,6 +4,10 @@
 ; void FUN_0042a760(int param_1,undefined4 param_2,undefined4 param_3,char *param_4,undefined4 param_5 )
 ;
 ;
+; XREF[2]:
+;   FUN_004fbc00 at 004fbc9f
+;   FUN_005350c0 at 005352e3
+;
 ; Referenced Globals:
 ;   string s_..\\core\\charactr.cpp_0057a3d5
 ;   string s_CCharacter::addLayerAction_-_too_0057a3ea

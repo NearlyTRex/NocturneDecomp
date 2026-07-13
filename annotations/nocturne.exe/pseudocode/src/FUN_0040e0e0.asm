@@ -4,8 +4,9 @@
 ; void FUN_0040e0e0(undefined4 param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_0040b0d0 at 0040b103
+;   FUN_00429f70 at 00429f98
 ;
 ; Called Functions:
 ;   FUN_0040e0a0

@@ -1,0 +1,69 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int FUN_00481c30(undefined4 param_1)
+;
+;
+; Referenced Globals:
+;   string s_filmreel.kfm_00580f8c
+;   undefined1 DAT_00580f99
+;   undefined1 DAT_00580f9a
+;   undefined1 DAT_00580f9b
+;   undefined1 DAT_00580f9c
+;   undefined1* PTR_FUN_0059cf84 = 00481ca0
+;
+; Called Functions:
+;   FUN_00409d30
+;   FUN_00454490
+;   FUN_00454580
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00481c30
+        ;   Label: FUN_00481c30
+    PUSH ESI                            ; 00481c31
+    PUSH EDI                            ; 00481c32
+    MOV EBX,dword ptr [ESP + 0x10]      ; 00481c33
+    PUSH EBX                            ; 00481c37
+    CALL FUN_00409d30                   ; 00481c38
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    ADD ESP,0x4                         ; 00481c3d
+    ADD EAX,0x150                       ; 00481c40
+    PUSH EAX                            ; 00481c45
+    CALL FUN_00454490                   ; 00481c46
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined FUN_00454490()
+    ADD ESP,0x4                         ; 00481c4b
+    LEA EBX,[EAX + 0xfffffeb0]          ; 00481c4e
+    PUSH 0x580f8c                       ; 00481c54 | = "filmreel.kfm"
+    LEA EAX,[EBX + 0x150]               ; 00481c59
+    PUSH EAX                            ; 00481c5f
+    MOV dword ptr [EBX + 0x14c],0x59cf84 ; 00481c60 | PTR_FUN_0059cf84
+    CALL FUN_00454580                   ; 00481c6a
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined FUN_00454580()
+    ADD ESP,0x8                         ; 00481c6f
+    MOV ESI,0x580f99                    ; 00481c72 | DAT_00580f99
+    LEA EDI,[EBX + 0x2d0]               ; 00481c77
+    PUSH EDI                            ; 00481c7d
+    MOV AL,byte ptr [ESI]               ; 00481c7e | DAT_00580f99 | DAT_00580f9b
+        ;   Label: LAB_00481c7e
+    MOV byte ptr [EDI],AL               ; 00481c80
+    CMP AL,0x0                          ; 00481c82
+    JZ 0x00481c96                       ; 00481c84
+        ;   XREF to: 00481c96 (CONDITIONAL_JUMP)  ; LAB_00481c96
+    MOV AL,byte ptr [ESI + 0x1]         ; 00481c86 | DAT_00580f9a | DAT_00580f9c
+    ADD ESI,0x2                         ; 00481c89
+    MOV byte ptr [EDI + 0x1],AL         ; 00481c8c
+    ADD EDI,0x2                         ; 00481c8f
+    CMP AL,0x0                          ; 00481c92
+    JNZ 0x00481c7e                      ; 00481c94
+        ;   XREF to: 00481c7e (CONDITIONAL_JUMP)  ; LAB_00481c7e
+    POP EDI                             ; 00481c96
+        ;   Label: LAB_00481c96
+    MOV EAX,EBX                         ; 00481c97
+    POP EDI                             ; 00481c99
+    POP ESI                             ; 00481c9a
+    POP EBX                             ; 00481c9b
+    RET                                 ; 00481c9c
+

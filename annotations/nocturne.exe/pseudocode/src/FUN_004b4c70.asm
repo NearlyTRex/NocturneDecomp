@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
 ;
+; XREF[1]:
+;   FUN_00540770 at 005407ab
+;
 ; Referenced Globals:
 ;   string s_GETGRABBED_0058579d
 ;   string s_GETGRABBED_FRONT_005857a8

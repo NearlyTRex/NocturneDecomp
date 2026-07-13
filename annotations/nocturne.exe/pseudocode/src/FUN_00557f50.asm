@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateFontA_005753a4 = 0017573c
-;   undefined1* PTR_LAB_005a4484 = 00558000
+;   undefined1* PTR_FUN_005a4484 = 00558000
 ;
 ; Called Functions:
 ;   CreateFontA
@@ -30,7 +30,7 @@ section .text
     PUSH ECX                            ; 00557f62
     PUSH 0x0                            ; 00557f63
     PUSH 0x0                            ; 00557f65
-    MOV dword ptr [EAX],0x5a4484        ; 00557f67 | PTR_LAB_005a4484
+    MOV dword ptr [EAX],0x5a4484        ; 00557f67 | PTR_FUN_005a4484
     PUSH 0x0                            ; 00557f6d
     MOV dword ptr [EAX + 0x4],0x0       ; 00557f6f
     PUSH 0x0                            ; 00557f76

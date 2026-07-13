@@ -10,9 +10,10 @@
 ; undefined4       Stack[-0x3a]:4  local_3a
 ; undefined4       Stack[-0x32]:4  local_32
 ;
-; XREF[2]:
+; XREF[3]:
 ;   FUN_004567a0 at 004567e1
 ;   FUN_004c85f0 at 004c86e7
+;   FUN_004f8a10 at 004f8a46
 ;
 ; Called Functions:
 ;   FUN_00565d00

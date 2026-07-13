@@ -4,9 +4,18 @@
 ; int FUN_00409ea0(int param_1,uint param_2)
 ;
 ;
-; XREF[2]:
-;   FUN_004b4800 at 004b48af
-;   FUN_00553ea0 at 00553ed0
+; XREF[88]:
+;   FUN_0040fcf0 at 0040fd6a
+;   FUN_0040fdc0 at 0040fdcf
+;   FUN_004100f0 at 004100ff
+;   FUN_004118c0 at 004118cf
+;   FUN_00412000 at 00412026
+;   FUN_004132c0 at 0041333a
+;   FUN_00414c60 at 00414cda
+;   FUN_00414fa0 at 00414faf
+;   FUN_00415250 at 004152ca
+;   FUN_00415a30 at 00415aba
+;   ... and 78 more
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_FUN_005992d4 = 00409fc0
@@ -38,8 +47,6 @@ section .text
     LEA EAX,[EAX]                       ; 00409ec5
     LEA EDX,[EDX]                       ; 00409ecb
     MOV EBX,EBX                         ; 00409ece
-    RET                                 ; 00409ed0
-        ;   Label: LAB_00409ed0
     PUSH 0x5993d0                       ; 00409ed1 | DAT_005993d0
         ;   Label: LAB_00409ed1
     PUSH EBX                            ; 00409ed6

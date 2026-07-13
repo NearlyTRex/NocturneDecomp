@@ -12,7 +12,7 @@
 ;   FUN_004b0580 at 004b065b
 ;
 ; Referenced Globals:
-;   undefined1* PTR_LAB_0059da34 = 0048efb0
+;   undefined1* PTR_FUN_0059da34 = 0048efb0
 ;   undefined4 DAT_0059db10
 ;
 ; Called Functions:
@@ -38,7 +38,7 @@ section .text
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined FUN_005644a7()
     LEA EDX,[EAX + 0xfffffea0]          ; 0048ef15
     MOV ECX,0x40a00000                  ; 0048ef1b
-    MOV dword ptr [EDX + 0x14c],0x59da34 ; 0048ef20 | PTR_LAB_0059da34
+    MOV dword ptr [EDX + 0x14c],0x59da34 ; 0048ef20 | PTR_FUN_0059da34
     ADD ESP,0xc                         ; 0048ef2a
     MOV dword ptr [EDX + 0x15c],0x14    ; 0048ef2d
     MOV EAX,ESP                         ; 0048ef37

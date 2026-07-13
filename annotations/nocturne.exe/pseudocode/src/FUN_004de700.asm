@@ -4,6 +4,9 @@
 ; void FUN_004de700(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004ddb20 at 004ddf04
+;
 ; Referenced Globals:
 ;   string s_moloch-morph-todemon.wav_0058a87c
 ;   string s_moloch-morph-tohuman.wav_0058a895

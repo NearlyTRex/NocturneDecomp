@@ -4,18 +4,18 @@
 ; int FUN_004678d0(int param_1,int param_2,int param_3,int param_4)
 ;
 ;
-; XREF[11]:
+; XREF[12]:
 ;   FUN_00467a00 at 00467dfd
 ;   FUN_004680b0 at 004683b7
 ;   FUN_00468580 at 0046868d
 ;   FUN_004687e0 at 0046892c
 ;   FUN_00468af0 at 00468c5c
 ;   FUN_00469390 at 004693f9
+;   FUN_0046aff0 at 0046b0fc
 ;   FUN_0046b1b0 at 0046b491
 ;   FUN_0046b8d0 at 0046b962
 ;   FUN_0046bcf0 at 0046bd29
-;   FUN_0046bfe0 at 0046c095
-;   ... and 1 more
+;   ... and 2 more
 ;
 ; *****************************************************************************
 

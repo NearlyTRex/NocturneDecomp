@@ -20,7 +20,7 @@ int FUN_004da150(uint param_1)
   char *pcVar7;
   
   iVar4 = FUN_00479560(param_1);
-  *(byte ***)(iVar4 + 0x14c) = &PTR_LAB_005a0934;
+  *(byte ***)(iVar4 + 0x14c) = &PTR_FUN_005a0934;
   FUN_0051e0c0(iVar4 + 0x150,"?mobster1.dfm" + 1);
   uVar5 = _DAT_005a0920;
   *(uint *)(iVar4 + 0x2dd4) = 0x3f19999a;

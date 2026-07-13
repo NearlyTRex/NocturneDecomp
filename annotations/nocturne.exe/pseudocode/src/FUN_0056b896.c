@@ -21,7 +21,7 @@ int * FUN_0056b896(uint *param_1,byte param_2)
   piVar1 = (int *)(iVar2 + -4);
   *(int *)((int)piVar1 + *(int *)(*piVar1 + 4) + -4) = *(int *)(*piVar1 + 4);
   *(byte ***)(iVar2 + 0x3c) = &PTR_FUN_005a4a24;
-  *(byte ***)(iVar2 + 0x24 + *(int *)(*piVar1 + 4)) = &PTR_LAB_005a4a2c;
+  *(byte ***)(iVar2 + 0x24 + *(int *)(*piVar1 + 4)) = &PTR_FUN_005a4a2c;
   FUN_0056ff2a(*(int *)(*piVar1 + 4) + (int)piVar1,iVar2);
   return piVar1;
 }

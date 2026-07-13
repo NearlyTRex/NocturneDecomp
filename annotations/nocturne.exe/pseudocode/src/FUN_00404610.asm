@@ -4,18 +4,18 @@
 ; undefined4 FUN_00404610(int *param_1)
 ;
 ;
-; XREF[24]:
-;   FUN_00406c60 at 00406c6e
-;   FUN_00406d80 at 00406d8e
-;   FUN_00406f30 at 00406f3e
-;   FUN_00408c10 at 00408c1c
-;   FUN_0041d050 at 0041d191
-;   FUN_0045ee60 at 0045eea9
-;   FUN_0045eee0 at 0045ef5a
-;   FUN_0045ef90 at 0045f056
-;   FUN_0045f090 at 0045f149
-;   FUN_0045f190 at 0045f22c
-;   ... and 14 more
+; XREF[71]:
+;   FUN_004047e0 at 004047ee
+;   FUN_004048b0 at 004048be
+;   FUN_004049d0 at 004049de
+;   FUN_00404a70 at 00404a7e
+;   FUN_00405200 at 00405209
+;   FUN_00405240 at 0040524d
+;   FUN_00405440 at 0040544e
+;   FUN_00405540 at 00405552
+;   FUN_004057a0 at 004057ae
+;   FUN_00405c90 at 00405ca4
+;   ... and 61 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006b026c

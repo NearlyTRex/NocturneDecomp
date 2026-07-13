@@ -4,18 +4,18 @@
 ; float * FUN_0055a8b0(float *param_1,float *param_2,float *param_3)
 ;
 ;
-; XREF[24]:
+; XREF[51]:
+;   FUN_00410490 at 0041087b
 ;   FUN_00410cc0 at 00410f4a
+;   FUN_00412480 at 004127ac
+;   FUN_00413800 at 00413f2e
+;   FUN_00418a00 at 004190ee
+;   FUN_004194b0 at 004195dc
+;   FUN_0041fe40 at 0042036f
+;   FUN_00420eb0 at 00420f02
 ;   FUN_00422c70 at 00422e5e
 ;   FUN_004266a0 at 004268d4
-;   FUN_004269b0 at 00426bc9
-;   FUN_004277f0 at 0042786d
-;   FUN_00427eb0 at 0042807a
-;   FUN_0042abd0 at 0042aca3
-;   FUN_0042b890 at 0042b8c8
-;   FUN_004359e0 at 00435eb7
-;   FUN_00436e80 at 00436f99
-;   ... and 14 more
+;   ... and 41 more
 ;
 ; *****************************************************************************
 

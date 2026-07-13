@@ -4,11 +4,13 @@
 ; bool FUN_004775b0(byte *param_1,byte *param_2,int param_3)
 ;
 ;
-; XREF[5]:
+; XREF[7]:
 ;   FUN_0042a1e0 at 0042a2de
 ;   FUN_004a9040 at 004a90ff
 ;   FUN_004f8da0 at 004f8e48
+;   FUN_0052c930 at 0052c962
 ;   FUN_0052d030 at 0052d076
+;   FUN_00547b30 at 00548046
 ;   FUN_005485a0 at 005485d5
 ;
 ; Called Functions:

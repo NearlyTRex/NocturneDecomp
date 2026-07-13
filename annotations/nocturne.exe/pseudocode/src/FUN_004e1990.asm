@@ -4,12 +4,14 @@
 ; void FUN_004e1990(int param_1,undefined4 param_2,float param_3)
 ;
 ;
-; XREF[5]:
+; XREF[7]:
+;   FUN_00418a00 at 00418a6b
 ;   FUN_0047ac50 at 0047d550
 ;   FUN_004d9920 at 004d9a17
 ;   FUN_004e1500 at 004e1585
 ;   FUN_004e1770 at 004e1801
 ;   FUN_004e1960 at 004e1981
+;   FUN_004ef6d0 at 004ef87b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0058b381

@@ -4,16 +4,18 @@
 ; undefined4 * FUN_0051d380(int param_1,undefined4 *param_2,int param_3)
 ;
 ;
-; XREF[9]:
-;   FUN_004278e0 at 0042791e
-;   FUN_00427990 at 004279ce
-;   FUN_00429730 at 00429b39
-;   FUN_0045ab40 at 0045abc5
-;   FUN_004b3f40 at 004b3f5c
-;   FUN_004bb3c0 at 004bb3dc
-;   FUN_004d4f30 at 004d548f
-;   FUN_00535900 at 00536821
-;   FUN_00542b70 at 00542bdd
+; XREF[46]:
+;   FUN_00413040 at 00413094
+;   FUN_00413250 at 00413274
+;   FUN_00413800 at 00413b09
+;   FUN_00414930 at 00414984
+;   FUN_00414b40 at 00414b67
+;   FUN_004151e0 at 004151f9
+;   FUN_004159c0 at 004159d9
+;   FUN_00419fc0 at 00419ff3
+;   FUN_00420c40 at 00420c83
+;   FUN_00420e20 at 00420e55
+;   ... and 36 more
 ;
 ; *****************************************************************************
 

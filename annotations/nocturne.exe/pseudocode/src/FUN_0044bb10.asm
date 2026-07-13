@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined        Stack[-0x104]:1  local_104
 ;
+; XREF[1]:
+;   FUN_004822c0 at 004822c6
+;
 ; Referenced Globals:
 ;   undefined4 s_whoGoesHere_0057be1e+1
 ;   string s_whatEvent_0057be2b

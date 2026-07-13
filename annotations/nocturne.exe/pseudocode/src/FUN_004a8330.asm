@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_004a85d0 at 004a863d
+;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004a8318 = 004a836d
 ;   undefined4 DAT_00584a58

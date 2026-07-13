@@ -14,7 +14,7 @@ int FUN_0048eef0(uint param_1)
   
   iVar1 = FUN_00409d30(param_1);
   iVar1 = FUN_005644a7(iVar1 + 0x160,200,&DAT_0059db10);
-  *(byte ***)(iVar1 + -0x14) = &PTR_LAB_0059da34;
+  *(byte ***)(iVar1 + -0x14) = &PTR_FUN_0059da34;
   *(uint *)(iVar1 + -4) = 0x14;
   if ((uint *)(iVar1 + -0x10) != local_c) {
     *(uint *)(iVar1 + -0x10) = 0x40a00000;

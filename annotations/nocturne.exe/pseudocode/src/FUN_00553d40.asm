@@ -4,7 +4,8 @@
 ; void FUN_00553d40(HMODULE param_1,LPCSTR param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00530e60 at 00530e92
 ;   FUN_00531780 at 005317e7
 ;
 ; Referenced Globals:

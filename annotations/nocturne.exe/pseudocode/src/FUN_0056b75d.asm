@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005a4a18
 ;   void* PTR_FUN_005a4a24 = 0056b810
-;   void* PTR_LAB_005a4a2c = 0056b7f8
+;   void* PTR_FUN_005a4a2c = 0056b7f8
 ;
 ; Called Functions:
 ;   FUN_0056b327
@@ -52,7 +52,7 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 0056b797
     MOV dword ptr [EBX + 0x40],0x5a4a24 ; 0056b799 | PTR_FUN_005a4a24
     MOV EAX,dword ptr [EAX + 0x4]       ; 0056b7a0
-    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a4a2c ; 0056b7a3 | PTR_LAB_005a4a2c
+    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a4a2c ; 0056b7a3 | PTR_FUN_005a4a2c
     MOV EAX,dword ptr [EBX]             ; 0056b7ab
     ADD ESP,0x4                         ; 0056b7ad
     LEA ESI,[EBX + 0x4]                 ; 0056b7b0

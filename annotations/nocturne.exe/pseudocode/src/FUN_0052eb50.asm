@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined8       Stack[-0xc]:8  local_c
 ;
+; XREF[1]:
+;   FUN_0040a350 at 0040a36a
+;
 ; Called Functions:
 ;   FUN_00526210
 ;   FUN_00526340

@@ -9,15 +9,18 @@
 ; undefined        Stack[-0x24]:1  local_24
 ; undefined        Stack[-0x18]:1  local_18
 ;
-; XREF[8]:
+; XREF[31]:
+;   FUN_00412480 at 004126a3
+;   FUN_00413800 at 00413a51
+;   FUN_004154b0 at 00415708
+;   FUN_00418a00 at 00418d92
+;   FUN_0041fe40 at 0041ffe3
 ;   FUN_0043a980 at 0043a9c3
-;   FUN_00497410 at 004977ff
-;   FUN_004b3e00 at 004b3f29
-;   FUN_004bb2d0 at 004bb3b1
-;   FUN_004eea20 at 004eea90
-;   FUN_004fca50 at 004fca79
-;   FUN_00537cd0 at 00538390
-;   FUN_00542ad0 at 00542b4d
+;   FUN_0043bdb0 at 0043c004
+;   FUN_00454750 at 004549bb
+;   FUN_00458a90 at 00458ca3
+;   FUN_00462a60 at 00462d2f
+;   ... and 21 more
 ;
 ; Referenced Globals:
 ;   undefined4 s_Bip01_L_Foot_0057a499+1

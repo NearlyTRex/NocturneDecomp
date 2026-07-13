@@ -48,7 +48,7 @@ int * FUN_00564d92(uint *param_1,byte param_2,char *param_3,uint param_4,byte pa
   piVar1 = (int *)(iVar5 + -0x48);
   *(int *)((int)piVar1 + *(int *)(*piVar1 + 4) + -4) = *(int *)(*piVar1 + 4);
   *(byte ***)(iVar5 + -4) = &PTR_FUN_005a46cc;
-  *(byte ***)(iVar5 + 4) = &PTR_LAB_005a46d4;
-  *(byte ***)(iVar5 + -0x20 + *(int *)(*piVar1 + 4)) = &PTR_LAB_005a46dc;
+  *(byte ***)(iVar5 + 4) = &PTR_FUN_005a46d4;
+  *(byte ***)(iVar5 + -0x20 + *(int *)(*piVar1 + 4)) = &PTR_FUN_005a46dc;
   return piVar1;
 }

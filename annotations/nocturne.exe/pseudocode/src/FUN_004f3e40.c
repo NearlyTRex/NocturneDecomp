@@ -1,0 +1,25 @@
+// Name: FUN_004f3e40
+// Address: 004f3e40
+// Address Range: [[004f3e40, 004f3e8d]]
+// Convention: unknown
+// Signature: undefined4 FUN_004f3e40(undefined4 param_1,byte param_2)
+
+#include "nocturne.h"
+
+uint FUN_004f3e40(uint param_1,byte param_2)
+
+{
+  uint uVar1;
+  
+  if ((param_2 & 4) != 0) {
+    uVar1 = FUN_0056445f(param_1,&DAT_005a1320);
+    FUN_00564486(uVar1);
+    return param_1;
+  }
+  uVar1 = FUN_00409ea0(param_1,1);
+  if ((param_2 & 2) == 0) {
+    return uVar1;
+  }
+  FUN_00564494(uVar1);
+  return uVar1;
+}

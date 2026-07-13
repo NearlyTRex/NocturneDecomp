@@ -34,18 +34,18 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[11]:
+; XREF[14]:
 ;   FUN_00429560 at 00429625
+;   FUN_0042a700 at 0042a748
 ;   FUN_00497900 at 00497c7c
 ;   FUN_004998c0 at 00499ac6
 ;   FUN_00499b00 at 00499bd0
+;   FUN_004a9270 at 004a9576
+;   FUN_004b6d80 at 004b80c8
 ;   FUN_004ba740 at 004ba7c0
 ;   FUN_004db6f0 at 004db942
 ;   FUN_004fcff0 at 004fd18b
-;   FUN_0051b8a0 at 0051b8d9
-;   FUN_005384d0 at 005396b3
-;   FUN_00539b10 at 00539e29
-;   ... and 1 more
+;   ... and 4 more
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\skeleton.cpp_00591b67+4

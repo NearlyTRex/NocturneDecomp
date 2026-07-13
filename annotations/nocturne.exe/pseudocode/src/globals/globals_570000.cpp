@@ -187,15 +187,7 @@ dword DAT_00575090 = 0;
 dword DAT_00575094 = 0;
 
 // string
-string DAT_0057719A = "..\\engine\\2d.c";
-string DAT_005771A9 = "Unable to read fog table.";
-string DAT_005771CA = "..\\engine\\2d.c";
-string DAT_005771D9 = "Unable to write fog tab";
 string DAT_00577243 = "?..\\engine\\2d.c";
-string DAT_00577296 = "..\\engine\\2d.c";
-string DAT_005772A5 = "draw320x200SizeDot: unknown graphics option";
-string DAT_005772D1 = "..\\engine\\2d.c";
-string DAT_005772E0 = "2d line clipping exceeded max iterations";
 string DAT_0057736B = "..\\engine\\2d.c";
 string DAT_0057737A = "mapFrameBuffer - already mapped!";
 string DAT_0057739B = "..\\engine\\2d.c";
@@ -208,8 +200,6 @@ string DAT_0057742A = "..\\engine\\2d.c";
 string DAT_00577439 = "mapFrameBuffer - ySize too big!";
 string DAT_00577459 = "..\\engine\\2d.c";
 string DAT_00577468 = "mapFrameBuffer - invalid buffer!";
-string DAT_00577489 = "..\\engine\\2d.c";
-string DAT_00577498 = "unmapFrameBuffer - frame buffer was not mapped!";
 string DAT_0057751C = "..\\engine\\3d.c";
 string DAT_0057752B = "renderFaceList - too many faces";
 string DAT_0057754B = "Unknown primitive : %d";

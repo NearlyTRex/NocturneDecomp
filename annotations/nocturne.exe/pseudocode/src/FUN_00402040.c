@@ -53,7 +53,7 @@ int FUN_00402040(int param_1,int param_2,int param_3,int param_4)
         if (uVar5 != 0) {
           do {
             if (*pcVar1 != '\0') {
-              *puVar7 = *(ushort *)(param_4 * 2 + 0x1bff720);
+              *puVar7 = *(ushort *)(&DAT_01bff720 + param_4 * 2);
             }
             pcVar1 = pcVar1 + 1;
             iVar2 = iVar2 + 1;

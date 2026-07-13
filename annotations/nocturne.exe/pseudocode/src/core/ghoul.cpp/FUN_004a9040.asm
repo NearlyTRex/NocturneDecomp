@@ -10,6 +10,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_004a9270 at 004aa38d
+;
 ; Referenced Globals:
 ;   string s_..\\core\\ghoul.cpp_00584be4
 ;   string s_CGhoul::findDarkWayPoint_-_Can't_00584bf6

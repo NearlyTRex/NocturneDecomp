@@ -25,12 +25,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[5]:
-;   FUN_00406c60 at 00406cbd
-;   FUN_00406d80 at 00406ddd
-;   FUN_00406f30 at 00406f82
-;   FUN_00408c10 at 00408c99
-;   FUN_0045ed80 at 0045ee4b
+; XREF[48]:
+;   FUN_004047e0 at 00404861
+;   FUN_004048b0 at 0040490a
+;   FUN_004049d0 at 00404a28
+;   FUN_00404a70 at 00404ac2
+;   FUN_00405240 at 00405312
+;   FUN_00405440 at 0040549c
+;   FUN_00405540 at 00405716
+;   FUN_004057a0 at 004057f2
+;   FUN_00405c90 at 00405df4
+;   FUN_00405e10 at 00405fe5
+;   ... and 38 more
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00432c7c = 00432f87

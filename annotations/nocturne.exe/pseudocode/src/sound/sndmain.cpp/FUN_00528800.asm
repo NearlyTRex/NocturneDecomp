@@ -4,17 +4,18 @@
 ; void FUN_00528800(void)
 ;
 ;
-; XREF[10]:
+; XREF[12]:
 ;   FUN_005234b0 at 005234fb
 ;   FUN_005265a0 at 00526649
 ;   FUN_005272b0 at 005272b7
 ;   FUN_005272e0 at 0052733a
 ;   FUN_00527410 at 00527452
+;   FUN_005278e0 at 005278e6
 ;   FUN_005279e0 at 005279f1
 ;   FUN_00527c30 at 00527c32
 ;   FUN_00527e40 at 00527e78
 ;   FUN_00528230 at 00528246
-;   FUN_005298f0 at 005298fb
+;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   string s_..\\sound\\sndmain.cpp_00593909

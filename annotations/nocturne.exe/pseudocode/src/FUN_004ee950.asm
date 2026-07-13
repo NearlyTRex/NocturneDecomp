@@ -4,6 +4,14 @@
 ; int FUN_004ee950(undefined4 param_1)
 ;
 ;
+; XREF[6]:
+;   FUN_004b6610 at 004b6618
+;   FUN_004b69f0 at 004b69f8
+;   FUN_004b9af0 at 004b9af8
+;   FUN_004ef4e0 at 004ef4e8
+;   FUN_00543150 at 00543156
+;   FUN_005433a0 at 005433a6
+;
 ; Referenced Globals:
 ;   string s_priest.dfm_0058cac0
 ;   undefined1* PTR_FUN_005a0eb4 = 004ee9e0

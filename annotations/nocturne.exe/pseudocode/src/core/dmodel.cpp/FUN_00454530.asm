@@ -4,18 +4,18 @@
 ; undefined4 FUN_00454530(int param_1)
 ;
 ;
-; XREF[20]:
+; XREF[75]:
 ;   FUN_0040a740 at 0040a9fa
+;   FUN_0040fff0 at 0040ffff
+;   FUN_004100a0 at 004100b9
+;   FUN_00411c40 at 00411d28
+;   FUN_00411ea0 at 00411ec1
+;   FUN_00414f50 at 00414f5f
+;   FUN_00415430 at 00415473
+;   FUN_00415760 at 004157e9
 ;   FUN_0041e430 at 0041e452
 ;   FUN_0041e5e0 at 0041e5f9
-;   FUN_004544d0 at 004544f0
-;   FUN_00483320 at 00483468
-;   FUN_004835d0 at 00483607
-;   FUN_00486e40 at 00486f59
-;   FUN_004873b0 at 00487428
-;   FUN_004874d0 at 00487578
-;   FUN_004950a0 at 00495105
-;   ... and 10 more
+;   ... and 65 more
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\dmodel.cpp_0057cea8

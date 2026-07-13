@@ -1,6 +1,6 @@
 // Name: FUN_0056a6dc
 // Address: 0056a6dc
-// Address Range: [[0056a5ff, 0056a696] [0056a6dc, 0056a826]]
+// Address Range: [[0056a6dc, 0056a826]]
 // Convention: unknown
 // Signature: undefined2 FUN_0056a6dc(void)
 

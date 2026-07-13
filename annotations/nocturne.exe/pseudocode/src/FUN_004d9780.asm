@@ -4,10 +4,11 @@
 ; undefined4 FUN_004d9780(int param_1)
 ;
 ;
-; XREF[3]:
+; XREF[4]:
 ;   FUN_004a4170 at 004a48cc
 ;   FUN_004a4b50 at 004a4ebf
 ;   FUN_004d9440 at 004d95a7
+;   FUN_004eb520 at 004ebb5f
 ;
 ; Referenced Globals:
 ;   string s_Can't_run_mission_-_no_heros_00589e67

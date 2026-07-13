@@ -5,6 +5,15 @@
 // =============================================================================
 
 // undefined4
+undefined4 DAT_006b023c = {};
+undefined4 DAT_006b0240 = {};
+undefined4 DAT_006b0244 = {};
+undefined4 DAT_006b0248 = {};
+undefined4 DAT_006b024c = {};
+undefined4 DAT_006b0250 = {};
+undefined4 DAT_006b0254 = {};
+undefined4 DAT_006b0258 = {};
+undefined4 DAT_006b025c = {};
 undefined4 DAT_006b0260 = {};
 undefined4 DAT_006b0264 = {};
 undefined4 DAT_006b026c = {};

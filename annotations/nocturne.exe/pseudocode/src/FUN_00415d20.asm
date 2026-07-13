@@ -8,7 +8,7 @@
 ;   FUN_00415b30 at 00415c32
 ;
 ; Referenced Globals:
-;   undefined1* PTR_LAB_0059a744 = 00416500
+;   undefined1* PTR_FUN_0059a744 = 00416500
 ;   undefined4 DAT_0059a820
 ;   undefined4 DAT_0059a840
 ;
@@ -46,7 +46,7 @@ section .text
     CALL FUN_0041a610                   ; 00415d5d
         ;   XREF to: 0041a610 (UNCONDITIONAL_CALL)  ; undefined FUN_0041a610()
     SUB EAX,0xcb4                       ; 00415d62
-    MOV dword ptr [EAX + 0x14c],0x59a744 ; 00415d67 | PTR_LAB_0059a744
+    MOV dword ptr [EAX + 0x14c],0x59a744 ; 00415d67 | PTR_FUN_0059a744
     MOV dword ptr [EAX + 0xf10],0x0     ; 00415d71
     MOV dword ptr [EAX + 0x16c],0x0     ; 00415d7b
     MOV dword ptr [EAX + 0x170],0x0     ; 00415d85

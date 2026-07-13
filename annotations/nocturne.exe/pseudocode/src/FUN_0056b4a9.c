@@ -18,6 +18,6 @@ void FUN_0056b4a9(int *param_1,byte param_2)
   }
   *(int *)((int)param_1 + *(int *)(*param_1 + 4) + -4) = *(int *)(*param_1 + 4);
   param_1[1] = (int)&PTR_FUN_005a4914;
-  *(byte ***)(*(int *)(*param_1 + 4) + 0x28 + (int)param_1) = &PTR_LAB_005a491c;
+  *(byte ***)(*(int *)(*param_1 + 4) + 0x28 + (int)param_1) = &PTR_FUN_005a491c;
   return;
 }

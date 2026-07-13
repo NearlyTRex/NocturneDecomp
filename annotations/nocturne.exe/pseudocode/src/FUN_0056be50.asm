@@ -4,6 +4,11 @@
 ; uint FUN_0056be50(int param_1,uint param_2,ushort param_3,undefined4 param_4,uint param_5,uint param_6)
 ;
 ;
+; XREF[3]:
+;   FUN_0056c403 at 0056c40d
+;   FUN_0056c416 at 0056c420
+;   FUN_0056c429 at 0056c433
+;
 ; Referenced Globals:
 ;   undefined4 DAT_005c3f68
 ;   undefined4 DAT_005c3f78

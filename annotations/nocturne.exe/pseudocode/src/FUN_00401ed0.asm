@@ -4,7 +4,11 @@
 ; int FUN_00401ed0(byte *param_1)
 ;
 ;
-; XREF[3]:
+; XREF[7]:
+;   FUN_004023b0 at 0040240a
+;   FUN_004027f0 at 004027fb
+;   FUN_004028b0 at 004028bb
+;   FUN_00402980 at 00402996
 ;   FUN_00402b60 at 00402b6b
 ;   FUN_00402c20 at 00402c2b
 ;   FUN_00402cf0 at 00402d06
@@ -16,13 +20,6 @@
 
 section .text
 
-    MOV EAX,ESI                         ; 0040151f
-        ;   Label: LAB_0040151f
-    POP EBP                             ; 00401521
-    POP EDI                             ; 00401522
-    POP ESI                             ; 00401523
-    POP EBX                             ; 00401524
-    RET                                 ; 00401525
     PUSH EBX                            ; 00401ed0
         ;   Label: FUN_00401ed0
     PUSH ESI                            ; 00401ed1

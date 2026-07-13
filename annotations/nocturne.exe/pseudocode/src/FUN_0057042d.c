@@ -13,6 +13,6 @@ void FUN_0057042d(uint param_1)
   
   iVar1 = FUN_0056fe12(param_1);
   *(uint *)(iVar1 + 0x2c) = 0xffffffff;
-  *(byte ***)(iVar1 + 0x28) = &PTR_LAB_005a4b0c;
+  *(byte ***)(iVar1 + 0x28) = &PTR_FUN_005a4b0c;
   return;
 }

@@ -1,0 +1,46 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int FUN_004b30a0(undefined4 param_1)
+;
+;
+; Referenced Globals:
+;   string s_haystack.dfm_0058544f
+;   undefined1* PTR_FUN_0059e884 = 004b3110
+;
+; Called Functions:
+;   FUN_004b46d0
+;   FUN_0051e0c0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004b30a0
+        ;   Label: FUN_004b30a0
+    MOV EDX,dword ptr [ESP + 0x8]       ; 004b30a1
+    PUSH EDX                            ; 004b30a5
+    CALL FUN_004b46d0                   ; 004b30a6
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b46d0()
+    MOV EBX,EAX                         ; 004b30ab
+    ADD EAX,0x150                       ; 004b30ad
+    ADD ESP,0x4                         ; 004b30b2
+    MOV dword ptr [EAX + -0x4],0x59e884 ; 004b30b5 | PTR_FUN_0059e884
+    PUSH 0x58544f                       ; 004b30bc | = "haystack.dfm"
+    MOV dword ptr [EAX + 0x1f8ec],0x0   ; 004b30c1
+    PUSH EAX                            ; 004b30cb
+    MOV dword ptr [EAX + 0x1f8f0],0x0   ; 004b30cc
+    CALL FUN_0051e0c0                   ; 004b30d6
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
+    LEA EAX,[EBX + 0x1fa44]             ; 004b30db
+    MOV dword ptr [EBX + 0x1fa50],0x3f800000 ; 004b30e1
+    MOV dword ptr [EAX + 0x8],0x0       ; 004b30eb
+    ADD ESP,0x8                         ; 004b30f2
+    MOV EDX,dword ptr [EAX + 0x8]       ; 004b30f5
+    MOV dword ptr [EAX + 0x4],EDX       ; 004b30f8
+    MOV EDX,dword ptr [EAX + 0x4]       ; 004b30fb
+    MOV dword ptr [EAX],EDX             ; 004b30fe
+    MOV EAX,EBX                         ; 004b3100
+    POP EBX                             ; 004b3102
+    RET                                 ; 004b3103
+

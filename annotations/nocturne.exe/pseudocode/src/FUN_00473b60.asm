@@ -4,8 +4,9 @@
 ; void FUN_00473b60(undefined4 *param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_00474c90 at 00474c95
+;   FUN_004fe490 at 004fe498
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_FUN_0059ca74 = 00473b80

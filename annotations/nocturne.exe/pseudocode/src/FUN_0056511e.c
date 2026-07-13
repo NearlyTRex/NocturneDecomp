@@ -23,7 +23,7 @@ void FUN_0056511e(uint *param_1,byte param_2,uint param_3,uint param_4,uint para
   piVar2 = (int *)(iVar1 + -0x44);
   *(int *)((int)piVar2 + *(int *)(*piVar2 + 4) + -4) = *(int *)(*piVar2 + 4);
   *(byte ***)(iVar1 + -4) = &PTR_FUN_005a4824;
-  *(byte ***)(iVar1 + 4) = &PTR_LAB_005a482c;
-  *(byte ***)(*(int *)(*piVar2 + 4) + 0x28 + (int)piVar2) = &PTR_LAB_005a4834;
+  *(byte ***)(iVar1 + 4) = &PTR_FUN_005a482c;
+  *(byte ***)(*(int *)(*piVar2 + 4) + 0x28 + (int)piVar2) = &PTR_FUN_005a4834;
   return;
 }

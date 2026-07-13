@@ -1,6 +1,6 @@
 // Name: FUN_00409ea0
 // Address: 00409ea0
-// Address Range: [[00409ea0, 00409ef8]]
+// Address Range: [[00409ea0, 00409ecf] [00409ed1, 00409ef8]]
 // Convention: unknown
 // Signature: int FUN_00409ea0(int param_1,uint param_2)
 

@@ -15,8 +15,8 @@ int * FUN_00564fd8(int *param_1,byte param_2)
   if ((param_2 & 4) == 0) {
     *(int *)((int)param_1 + *(int *)(*param_1 + 4) + -4) = *(int *)(*param_1 + 4);
     param_1[0x11] = (int)&PTR_FUN_005a4744;
-    param_1[0x14] = (int)&PTR_LAB_005a474c;
-    *(byte ***)((int)param_1 + *(int *)(*param_1 + 4) + 0x28) = &PTR_LAB_005a4754;
+    param_1[0x14] = (int)&PTR_FUN_005a474c;
+    *(byte ***)((int)param_1 + *(int *)(*param_1 + 4) + 0x28) = &PTR_FUN_005a4754;
     iVar1 = FUN_0056b6e8(param_1 + 0x12,1);
     param_1 = (int *)FUN_0056b5ad(iVar1 + -0x48,1);
     if ((param_2 & 1) == 0) {

@@ -60,6 +60,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined        Stack[-0x10]:1  local_10
 ;
+; XREF[1]:
+;   FUN_004d49f0 at 004d4a72
+;
 ; Referenced Globals:
 ;   string s_gh-alrt[1,4].wav_00589414
 ;   string s_gh-hits[1,4].wav_00589425

@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
+; XREF[1]:
+;   FUN_004d49f0 at 004d4b4b
+;
 ; Referenced Globals:
 ;   undefined4 s_%s_attacking_hero_00589485+2
 ;   void* PTR_DAT_005ad350 = 0077ad0c

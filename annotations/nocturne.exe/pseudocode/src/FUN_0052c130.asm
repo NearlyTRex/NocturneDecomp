@@ -7,6 +7,10 @@
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[2]:
+;   FUN_0052c340 at 0052c38c
+;   FUN_0052c640 at 0052c697
+;
 ; Referenced Globals:
 ;   void* PTR_waveOutPrepareHeader_005753fc = 0017588c
 ;   void* PTR_waveOutUnprepareHeader_00575404 = 001758b4

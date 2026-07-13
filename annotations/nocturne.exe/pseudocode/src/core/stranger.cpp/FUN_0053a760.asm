@@ -192,8 +192,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined        Stack[-0xc]:1  local_c
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_0053a660 at 0053a6b6
+;   FUN_0053f210 at 0053f236
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\stranger.cpp_0059596e+1

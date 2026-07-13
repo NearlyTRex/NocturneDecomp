@@ -7,6 +7,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_0052a970 at 0052a994
+;
 ; Referenced Globals:
 ;   string s_..\\sound\\sndmain.cpp_00593b25
 ;   string s_SfxSlot::kill_-_must_be_locked!_00593b3a

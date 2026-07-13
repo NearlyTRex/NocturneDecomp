@@ -30,6 +30,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_00555c60 at 00556068
+;
 ; Referenced Globals:
 ;   string s_Chain_stretched_to_%f_00597ef1
 ;   undefined4 DAT_00597f09

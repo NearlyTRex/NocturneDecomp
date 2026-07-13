@@ -4,12 +4,18 @@
 ; void FUN_00511800(int param_1,int param_2)
 ;
 ;
-; XREF[5]:
+; XREF[14]:
+;   FUN_0040b300 at 0040b7ca
 ;   FUN_00429730 at 00429aad
+;   FUN_0043d1c0 at 0043d321
+;   FUN_00477890 at 00477a93
 ;   FUN_00496d10 at 00497199
 ;   FUN_00498de0 at 00499015
+;   FUN_004b27c0 at 004b2944
+;   FUN_004c71a0 at 004c7343
 ;   FUN_004fda20 at 004fdc55
-;   FUN_0053d910 at 0053e050
+;   FUN_00515ea0 at 005160d8
+;   ... and 4 more
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\setcolid.cpp_00590b80

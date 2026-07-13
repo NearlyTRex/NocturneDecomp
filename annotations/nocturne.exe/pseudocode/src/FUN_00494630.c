@@ -1,0 +1,24 @@
+// Name: FUN_00494630
+// Address: 00494630
+// Address Range: [[00494630, 00494699]]
+// Convention: unknown
+// Signature: int FUN_00494630(undefined4 param_1)
+
+#include "nocturne.h"
+
+int FUN_00494630(uint param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00409d30(param_1);
+  iVar1 = FUN_00454490(iVar1 + 0x17c);
+  iVar1 = FUN_0043b5d0(iVar1 + 0x17c);
+  iVar1 = FUN_00454490(iVar1 + 0xc);
+  *(byte ***)(iVar1 + -0x1b8) = &PTR_FUN_0059db84;
+  *(uint *)(iVar1 + -0x1b0) = 0;
+  *(byte *)(iVar1 + -0x1ac) = 0;
+  *(uint *)(iVar1 + -0x18c) = 0;
+  *(uint *)(iVar1 + 0x180) = 0;
+  return iVar1 + -0x304;
+}

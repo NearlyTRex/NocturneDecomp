@@ -4,8 +4,9 @@
 ; undefined4 * FUN_00438210(undefined4 *param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_00423f40 at 00423f64
+;   FUN_00540b40 at 00540b64
 ;
 ; Called Functions:
 ;   FUN_00563cc0

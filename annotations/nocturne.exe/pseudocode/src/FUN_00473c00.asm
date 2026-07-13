@@ -4,6 +4,9 @@
 ; int FUN_00473c00(int param_1,int *param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_00473bd0 at 00473bef
+;
 ; Called Functions:
 ;   FUN_00473cb0
 ;   FUN_00473de0

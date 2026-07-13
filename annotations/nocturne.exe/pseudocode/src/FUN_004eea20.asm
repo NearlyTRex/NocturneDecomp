@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
 ;
+; XREF[1]:
+;   FUN_004b9b80 at 004b9b8a
+;
 ; Referenced Globals:
 ;   string s_STAND_0058cad6
 ;   string s_%s_confused_while_walking_to_scr_0058cadc

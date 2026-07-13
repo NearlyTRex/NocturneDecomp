@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   string s_gasmask.kfm_00584aa1
-;   undefined1* PTR_LAB_0059e0e4 = 004a8a60
+;   undefined1* PTR_FUN_0059e0e4 = 004a8a60
 ;
 ; Called Functions:
 ;   FUN_00409d30
@@ -36,7 +36,7 @@ section .text
     PUSH 0x584aa1                       ; 004a8a32 | = "gasmask.kfm"
     LEA EAX,[EBX + 0x150]               ; 004a8a37
     PUSH EAX                            ; 004a8a3d
-    MOV dword ptr [EBX + 0x14c],0x59e0e4 ; 004a8a3e | PTR_LAB_0059e0e4
+    MOV dword ptr [EBX + 0x14c],0x59e0e4 ; 004a8a3e | PTR_FUN_0059e0e4
     CALL FUN_00454580                   ; 004a8a48
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined FUN_00454580()
     ADD ESP,0x8                         ; 004a8a4d

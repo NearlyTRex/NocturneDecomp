@@ -8,8 +8,10 @@
 ; Local Variables:
 ; undefined2       Stack[-0x4]:2  local_4
 ;
+; XREF[1]:
+;   FUN_0056a388 at 0056a695
+;
 ; Called Functions:
-;   FUN_0056a697
 ;   FUN_0056a827
 ;   FUN_0056aa38
 ;
@@ -17,73 +19,6 @@
 
 section .text
 
-    MOV ECX,dword ptr [EBP + -0x18]     ; 0056a5ff
-        ;   Label: LAB_0056a5ff
-    TEST ECX,ECX                        ; 0056a602
-    JLE 0x0056a6f5                      ; 0056a604
-        ;   XREF to: 0056a6f5 (CONDITIONAL_JUMP)  ; LAB_0056a6f5
-    LEA EAX,[ECX + -0x8]                ; 0056a60a
-    MOV dword ptr [EBP + -0x18],EAX     ; 0056a60d
-    TEST EDI,EDI                        ; 0056a610
-    JNZ 0x0056a689                      ; 0056a612
-        ;   XREF to: 0056a689 (CONDITIONAL_JUMP)  ; LAB_0056a689
-    TEST word ptr [EBP + -0x40],0x7fff  ; 0056a614
-    JZ 0x0056a6f5                       ; 0056a61a
-        ;   XREF to: 0056a6f5 (CONDITIONAL_JUMP)  ; LAB_0056a6f5
-    LEA EAX,[EBP + -0x48]               ; 0056a620
-    FLD extended double ptr [EAX]       ; 0056a623
-    PUSH EAX                            ; 0056a625
-    PUSH EAX                            ; 0056a626
-    FSTCW word ptr [ESP]                ; 0056a627
-    POP EAX                             ; 0056a62b
-    PUSH EAX                            ; 0056a62c
-    OR AH,0xc                           ; 0056a62d
-    PUSH EAX                            ; 0056a630
-    FLDCW word ptr [ESP]                ; 0056a631
-    POP EAX                             ; 0056a634
-    FISTP dword ptr [ESP + 0x4]         ; 0056a635
-    FLDCW word ptr [ESP]                ; 0056a639
-    POP EAX                             ; 0056a63c
-    POP EAX                             ; 0056a63d
-    MOV EDX,dword ptr [EBP + -0x18]     ; 0056a63e
-    MOV EDI,EAX                         ; 0056a641
-    TEST EDX,EDX                        ; 0056a643
-    JLE 0x0056a689                      ; 0056a645
-        ;   XREF to: 0056a689 (CONDITIONAL_JUMP)  ; LAB_0056a689
-    LEA EDX,[EBP + -0x54]               ; 0056a647
-    LEA EBX,[EBP + -0x48]               ; 0056a64a
-    PUSH EAX                            ; 0056a64d
-    FILD dword ptr [ESP]                ; 0056a64e
-    POP EAX                             ; 0056a651
-    FSTP extended double ptr [EDX]      ; 0056a652
-    LEA EDX,[EBP + -0x54]               ; 0056a654
-    LEA EAX,[EBP + -0x48]               ; 0056a657
-    FLD extended double ptr [EAX]       ; 0056a65a
-    FLD extended double ptr [EDX]       ; 0056a65c
-    FSUBP                               ; 0056a65e
-    FSTP extended double ptr [EBX]      ; 0056a660
-    MOV ECX,0x4019                      ; 0056a662
-    MOV EBX,0xbebc2000                  ; 0056a667
-    LEA EDX,[EBP + -0x54]               ; 0056a66c
-    LEA EAX,[EBP + -0x48]               ; 0056a66f
-    MOV word ptr [EBP + -0x4c],CX       ; 0056a672
-    MOV dword ptr [EBP + -0x50],EBX     ; 0056a676
-    XOR ECX,ECX                         ; 0056a679
-    LEA EBX,[EBP + -0x48]               ; 0056a67b
-    MOV dword ptr [EBP + -0x54],ECX     ; 0056a67e
-    FLD extended double ptr [EAX]       ; 0056a681
-    FLD extended double ptr [EDX]       ; 0056a683
-    FMULP                               ; 0056a685
-    FSTP extended double ptr [EBX]      ; 0056a687
-    MOV EBX,dword ptr [EBP + -0x1c]     ; 0056a689
-        ;   Label: LAB_0056a689
-    MOV EAX,EDI                         ; 0056a68c
-    PUSH ECX                            ; 0056a68e
-    PUSH EDX                            ; 0056a68f
-    CALL FUN_0056a697                   ; 0056a690
-        ;   XREF to: 0056a697 (UNCONDITIONAL_CALL)  ; undefined FUN_0056a697()
-    JMP 0x0056a6dc                      ; 0056a695
-        ;   XREF to: 0056a6dc (UNCONDITIONAL_JUMP)
     POP EDX                             ; 0056a6dc
         ;   Label: FUN_0056a6dc
     POP ECX                             ; 0056a6dd

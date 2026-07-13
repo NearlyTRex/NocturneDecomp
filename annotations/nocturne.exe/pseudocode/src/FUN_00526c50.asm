@@ -4,18 +4,18 @@
 ; bool FUN_00526c50(undefined4 param_1)
 ;
 ;
-; XREF[11]:
+; XREF[53]:
+;   FUN_00411c40 at 00411dab
+;   FUN_00412480 at 004129db
+;   FUN_00413040 at 00413145
+;   FUN_00413800 at 00413e1d
+;   FUN_00414930 at 00414a35
+;   FUN_00418a00 at 00418fee
+;   FUN_0041fe40 at 0041ff02
+;   FUN_00420c40 at 00420e01
+;   FUN_0042bca0 at 0042c3b9
 ;   FUN_00456650 at 0045665c
-;   FUN_0045ab40 at 0045ab8c
-;   FUN_0045b020 at 0045b0c8
-;   FUN_004a6e90 at 004a70bd
-;   FUN_004caef0 at 004caf52
-;   FUN_004dc940 at 004dca28
-;   FUN_0052dff0 at 0052e3f8
-;   FUN_0052eba0 at 0052eba5
-;   FUN_00535900 at 005364e4
-;   FUN_00554980 at 00554b60
-;   ... and 1 more
+;   ... and 43 more
 ;
 ; Called Functions:
 ;   FUN_005234b0

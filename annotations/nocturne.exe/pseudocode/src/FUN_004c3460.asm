@@ -1,0 +1,45 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int FUN_004c3460(undefined4 param_1)
+;
+;
+; Referenced Globals:
+;   string s_key1.kfm_0058757e
+;   undefined1* PTR_FUN_0059f824 = 004c34c0
+;
+; Called Functions:
+;   FUN_00409d30
+;   FUN_00454490
+;   FUN_00454580
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004c3460
+        ;   Label: FUN_004c3460
+    MOV EBX,dword ptr [ESP + 0x8]       ; 004c3461
+    PUSH EBX                            ; 004c3465
+    CALL FUN_00409d30                   ; 004c3466
+        ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined FUN_00409d30()
+    ADD ESP,0x4                         ; 004c346b
+    ADD EAX,0x150                       ; 004c346e
+    PUSH EAX                            ; 004c3473
+    CALL FUN_00454490                   ; 004c3474
+        ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined FUN_00454490()
+    ADD ESP,0x4                         ; 004c3479
+    LEA EBX,[EAX + 0xfffffeb0]          ; 004c347c
+    PUSH 0x58757e                       ; 004c3482 | = "key1.kfm"
+    LEA EAX,[EBX + 0x150]               ; 004c3487
+    PUSH EAX                            ; 004c348d
+    MOV dword ptr [EBX + 0x14c],0x59f824 ; 004c348e | PTR_FUN_0059f824
+    CALL FUN_00454580                   ; 004c3498
+        ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined FUN_00454580()
+    ADD ESP,0x8                         ; 004c349d
+    MOV dword ptr [EBX + 0x2cc],0x1     ; 004c34a0
+    MOV EAX,EBX                         ; 004c34aa
+    MOV dword ptr [EBX + 0x2d0],0x0     ; 004c34ac
+    POP EBX                             ; 004c34b6
+    RET                                 ; 004c34b7
+

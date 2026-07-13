@@ -6,9 +6,18 @@
 ; Local Variables:
 ; undefined        Stack[-0x3c]:1  local_3c
 ;
-; XREF[2]:
-;   FUN_004eea20 at 004eeb2a
-;   FUN_00535900 at 00537116
+; XREF[30]:
+;   FUN_00410490 at 004105e9
+;   FUN_00412480 at 00412528
+;   FUN_00413800 at 004138ab
+;   FUN_004154b0 at 0041553c
+;   FUN_00418a00 at 00418e11
+;   FUN_00439f50 at 00439ff2
+;   FUN_0043bdb0 at 0043be58
+;   FUN_00454750 at 0045480f
+;   FUN_00458a90 at 00458cfe
+;   FUN_00462a60 at 00462b19
+;   ... and 20 more
 ;
 ; Referenced Globals:
 ;   string s_%s_can't_figure_out_next_waypoin_0057a106

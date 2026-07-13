@@ -4,8 +4,9 @@
 ; void FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,undefined4 param_7,undefined4 param_8)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_004df610 at 004df64e
+;   FUN_004e00b0 at 004e00f9
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\morph.cpp_0058aa7c

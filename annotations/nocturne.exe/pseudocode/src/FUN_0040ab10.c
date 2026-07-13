@@ -1,6 +1,6 @@
 // Name: FUN_0040ab10
 // Address: 0040ab10
-// Address Range: [[0040ab10, 0040ab30]]
+// Address Range: [[0040ab10, 0040ab2f]]
 // Convention: unknown
 // Signature: undefined8 FUN_0040ab10(undefined4 param_1,int param_2)
 

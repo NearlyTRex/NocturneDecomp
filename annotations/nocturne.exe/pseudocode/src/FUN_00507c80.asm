@@ -8,7 +8,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[5]:
+; XREF[6]:
+;   FUN_00507f80 at 00508061
 ;   FUN_005084c0 at 00508634
 ;   FUN_005088f0 at 00508b2f
 ;   FUN_00509760 at 0050988e

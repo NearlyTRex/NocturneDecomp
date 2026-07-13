@@ -4,12 +4,16 @@
 ; int * FUN_00564d92(undefined4 *param_1,byte param_2,char *param_3,undefined4 param_4,byte param_5)
 ;
 ;
+; XREF[2]:
+;   FUN_00439000 at 0043902c
+;   FUN_004392d0 at 004392f4
+;
 ; Referenced Globals:
 ;   undefined4 DAT_005a46b8
 ;   undefined4 DAT_005a46c0
 ;   void* PTR_FUN_005a46cc = 00564e98
-;   void* PTR_LAB_005a46d4 = 00564e3d
-;   void* PTR_LAB_005a46dc = 00564e53
+;   void* PTR_FUN_005a46d4 = 00564e3d
+;   void* PTR_FUN_005a46dc = 00564e53
 ;
 ; Called Functions:
 ;   FUN_0056b405
@@ -68,10 +72,10 @@ section .text
     MOV dword ptr [ECX + -0x4],EAX      ; 00564def
     MOV dword ptr [EDX + 0x44],0x5a46cc ; 00564df2 | PTR_FUN_005a46cc
     MOV EAX,dword ptr [EDX]             ; 00564df9
-    MOV dword ptr [EDX + 0x4c],0x5a46d4 ; 00564dfb | PTR_LAB_005a46d4
+    MOV dword ptr [EDX + 0x4c],0x5a46d4 ; 00564dfb | PTR_FUN_005a46d4
     MOV EAX,dword ptr [EAX + 0x4]       ; 00564e02
     ADD ESP,0x8                         ; 00564e05
-    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a46dc ; 00564e08 | PTR_LAB_005a46dc
+    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a46dc ; 00564e08 | PTR_FUN_005a46dc
     MOV EAX,EDX                         ; 00564e10
     POP EBX                             ; 00564e12
     RET                                 ; 00564e13

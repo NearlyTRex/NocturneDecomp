@@ -11,6 +11,9 @@
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
 ;
+; XREF[1]:
+;   FUN_004d6040 at 004d604a
+;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004f6150 = 004f61c1
 ;   undefined4 DAT_0058d76d

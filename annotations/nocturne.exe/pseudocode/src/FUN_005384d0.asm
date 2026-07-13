@@ -123,7 +123,8 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00535450 at 005356f7
 ;   FUN_00535900 at 005362ed
 ;
 ; Referenced Globals:

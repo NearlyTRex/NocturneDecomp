@@ -4,8 +4,9 @@
 ; undefined2 FUN_00565ca4(void)
 ;
 ;
-; XREF[7]:
+; XREF[8]:
 ;   FUN_0044dbd0 at 0044def8
+;   FUN_00482630 at 0048266f
 ;   FUN_0048b6f0 at 0048c0a8
 ;   FUN_005384d0 at 005389f8
 ;   FUN_0053e320 at 0053e73f

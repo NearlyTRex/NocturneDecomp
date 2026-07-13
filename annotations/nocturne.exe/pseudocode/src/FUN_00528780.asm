@@ -4,8 +4,10 @@
 ; bool FUN_00528780(void)
 ;
 ;
-; XREF[1]:
+; XREF[3]:
 ;   FUN_005286d0 at 005286d7
+;   FUN_0052a0d0 at 0052a168
+;   FUN_0052c3f0 at 0052c426
 ;
 ; Referenced Globals:
 ;   undefined4 s_killSoundThread_-_failed!_005938ea+4

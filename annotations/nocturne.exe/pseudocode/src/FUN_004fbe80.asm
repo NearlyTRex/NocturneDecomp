@@ -4,6 +4,9 @@
 ; void FUN_004fbe80(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004fbc00 at 004fbc57
+;
 ; Referenced Globals:
 ;   string s_CBaronWeapon_0058de58
 ;   string s_BaronProxy_0058de65

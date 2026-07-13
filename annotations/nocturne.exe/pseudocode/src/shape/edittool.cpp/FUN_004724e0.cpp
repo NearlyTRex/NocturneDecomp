@@ -25,7 +25,7 @@ void FUN_004724e0(uint param_1,int param_2)
           (_DAT_01c00c5c <= _DAT_01bd1d90)) && (_DAT_01bd1d90 < _DAT_01c00c64)))))) {
       FUN_00401530(_DAT_01bd1d8c,_DAT_01bd1d90);
     }
-    for (iVar3 = 1; iVar3 <= 0x00000009 / 2; iVar3 = iVar3 + 1) {
+    for (iVar3 = 1; iVar3 <= DAT_005b6d54 / 2; iVar3 = iVar3 + 1) {
       iVar1 = _DAT_01bd1d8c - iVar3;
       if ((((-1 < iVar1) && (-1 < _DAT_01bd1d90)) &&
           ((iVar1 < DAT_005b761c && (_DAT_01bd1d90 < DAT_005b7620)))) &&
@@ -44,7 +44,7 @@ void FUN_004724e0(uint param_1,int param_2)
       }
     }
     iVar3 = 1;
-    while (iVar3 <= 0x00000009 / 2) {
+    while (iVar3 <= DAT_005b6d58 / 2) {
       iVar1 = _DAT_01bd1d90 - iVar3;
       if ((((-1 < _DAT_01bd1d8c) && (-1 < iVar1)) &&
           ((_DAT_01bd1d8c < DAT_005b761c && (iVar1 < DAT_005b7620)))) &&
@@ -68,8 +68,8 @@ void FUN_004724e0(uint param_1,int param_2)
     }
   }
   else if (_DAT_01bcd9c0 < 2) {
-    iVar4 = _DAT_01bd1d90 - 0x00000009 / 2;
-    iVar1 = 0x00000009 + iVar4 + -1;
+    iVar4 = _DAT_01bd1d90 - DAT_005b6d58 / 2;
+    iVar1 = DAT_005b6d58 + iVar4 + -1;
     iVar3 = iVar4;
     while (iVar3 = iVar3 + 1, iVar3 < iVar1) {
       if (((((-1 < _DAT_01bd1d8c) && (-1 < iVar3)) && (_DAT_01bd1d8c < DAT_005b761c)) &&
@@ -81,7 +81,7 @@ void FUN_004724e0(uint param_1,int param_2)
       }
     }
     iVar3 = 1;
-    while (iVar3 <= 0x00000009 / 2) {
+    while (iVar3 <= DAT_005b6d54 / 2) {
       iVar2 = _DAT_01bd1d8c - iVar3;
       if ((((-1 < iVar2) && (-1 < iVar4)) && ((iVar2 < DAT_005b761c && (iVar4 < DAT_005b7620)))) &&
          ((param_2 == 0 ||
@@ -125,7 +125,7 @@ void FUN_004724e0(uint param_1,int param_2)
       FUN_00401530(_DAT_01bd1d8c,_DAT_01bd1d90);
     }
     iVar3 = 1;
-    while (iVar3 <= 0x00000009 / 2) {
+    while (iVar3 <= DAT_005b6d54 / 2) {
       iVar4 = _DAT_01bd1d8c - iVar3;
       iVar1 = _DAT_01bd1d90 - iVar3;
       if ((((-1 < iVar4) && (-1 < iVar1)) && (iVar4 < DAT_005b761c)) &&

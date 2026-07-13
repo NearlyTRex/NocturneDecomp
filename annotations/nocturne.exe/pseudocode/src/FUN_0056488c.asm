@@ -4,18 +4,18 @@
 ; uint FUN_0056488c(void)
 ;
 ;
-; XREF[33]:
+; XREF[37]:
 ;   FUN_0040dda0 at 0040ddeb
 ;   FUN_0040de00 at 0040de35
 ;   FUN_0040dea0 at 0040dedd
 ;   FUN_00410cc0 at 00410e63
 ;   FUN_00412de0 at 00412e00
 ;   FUN_004145f0 at 00414610
+;   FUN_0041f3d0 at 0041f4aa
 ;   FUN_00420a10 at 00420a33
 ;   FUN_004270e0 at 0042714a
 ;   FUN_0043c360 at 0043c380
-;   FUN_0043fa50 at 0043faa8
-;   ... and 23 more
+;   ... and 27 more
 ;
 ; Called Functions:
 ;   FUN_00564880

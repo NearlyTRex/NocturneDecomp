@@ -4,6 +4,9 @@
 ; void FUN_004672a0(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00467220 at 00467226
+;
 ; Called Functions:
 ;   FUN_00456f40
 ;   FUN_005638d0

@@ -31,7 +31,7 @@ void FUN_005591c0(void)
       TranslateMessage(&local_28);
       DispatchMessageA(&local_28);
     }
-    if (((DAT_005c1660 != 0) || (_DAT_02de20a0 != 0)) || (0x00000001 == 0)) break;
+    if (((DAT_005c1660 != 0) || (_DAT_02de20a0 != 0)) || (DAT_005c1664 == 0)) break;
     Sleep(0x14);
   }
   return;

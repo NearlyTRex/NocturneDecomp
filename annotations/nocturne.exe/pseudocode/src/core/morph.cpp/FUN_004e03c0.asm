@@ -48,6 +48,15 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[7]:
+;   FUN_00415430 at 00415488
+;   FUN_004d4650 at 004d49aa
+;   FUN_004dda70 at 004ddaf0
+;   FUN_004ddb20 at 004de145
+;   FUN_004ef6d0 at 004ef761
+;   FUN_00540c20 at 00540ee4
+;   FUN_0054c3e0 at 0054c585
+;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\morph.cpp_0058ad77+1
 ;   string s_CMorph::getReady_-_can't_do_this_0058ad8a

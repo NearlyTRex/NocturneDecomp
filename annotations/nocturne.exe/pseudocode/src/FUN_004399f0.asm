@@ -8,7 +8,7 @@
 ;   FUN_004a4170 at 004a44b1
 ;
 ; Referenced Globals:
-;   undefined1* PTR_LAB_0059b444 = 00439c10
+;   undefined1* PTR_FUN_0059b444 = 00439c10
 ;
 ; Called Functions:
 ;   FUN_00438f20
@@ -31,7 +31,7 @@ section .text
     ADD ESP,0x4                         ; 00439a06
     SUB EAX,0x4                         ; 00439a09
     MOV EDX,dword ptr [ESP + 0x8]       ; 00439a0c
-    MOV dword ptr [EAX],0x59b444        ; 00439a10 | PTR_LAB_0059b444
+    MOV dword ptr [EAX],0x59b444        ; 00439a10 | PTR_FUN_0059b444
     MOV dword ptr [EAX + 0x20],EDX      ; 00439a16
     MOV EDX,dword ptr [ESP + 0xc]       ; 00439a19
     MOV dword ptr [EAX + 0x24],EDX      ; 00439a1d

@@ -7,18 +7,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[17]:
+; XREF[20]:
 ;   FUN_00470550 at 004706ea
 ;   FUN_00471360 at 00471409
 ;   FUN_00471430 at 004714ef
+;   FUN_00471530 at 004715ee
 ;   FUN_004a0550 at 004a1e34
 ;   FUN_004a3b90 at 004a4015
 ;   FUN_004a4170 at 004a46be
 ;   FUN_004a57c0 at 004a5bd1
 ;   FUN_004d2d00 at 004d434b
 ;   FUN_004d8aa0 at 004d8bc0
-;   FUN_004d9780 at 004d9853
-;   ... and 7 more
+;   ... and 10 more
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\shape\\edittool.cpp_0057e4f9+1

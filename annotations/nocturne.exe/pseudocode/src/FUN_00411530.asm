@@ -4,6 +4,12 @@
 ; void FUN_00411530(int param_1)
 ;
 ;
+; XREF[4]:
+;   FUN_004113d0 at 004113d5
+;   FUN_00411400 at 00411406
+;   FUN_00411440 at 00411446
+;   FUN_004114a0 at 004114f9
+;
 ; Referenced Globals:
 ;   string s_CBaron_00578729
 ;   undefined4 DAT_005baf90

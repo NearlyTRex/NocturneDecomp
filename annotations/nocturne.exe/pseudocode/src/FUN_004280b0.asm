@@ -4,6 +4,9 @@
 ; undefined4 FUN_004280b0(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004b4d50 at 004b4dc0
+;
 ; *****************************************************************************
 
 section .text
@@ -24,5 +27,4 @@ section .text
     CALL dword ptr [ECX + 0xf4]         ; 004280d3
     ADD ESP,0x8                         ; 004280d9
     LEA EAX,[EAX]                       ; 004280dc
-    RET                                 ; 004280e0
 

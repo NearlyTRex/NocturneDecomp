@@ -4,8 +4,14 @@
 ; void FUN_00408e80(int *param_1)
 ;
 ;
+; XREF[4]:
+;   FUN_00404b10 at 00405098
+;   FUN_004051e0 at 004051eb
+;   FUN_00405200 at 0040521b
+;   FUN_004c3c90 at 004c4011
+;
 ; Referenced Globals:
-;   undefined1* PTR_LAB_005acab8 = 004044a0
+;   undefined1* PTR_FUN_005acab8 = 004044a0
 ;   undefined4 DAT_005b7644
 ;
 ; *****************************************************************************
@@ -34,7 +40,7 @@ section .text
         ;   Label: LAB_00408ea1
     PUSH EDX                            ; 00408ea2
         ;   Label: LAB_00408ea2
-    CALL dword ptr [EAX*0x4 + 0x5acab8] ; 00408ea3 | PTR_LAB_005acab8
+    CALL dword ptr [EAX*0x4 + 0x5acab8] ; 00408ea3 | PTR_FUN_005acab8
     ADD ESP,0x4                         ; 00408eaa
     MOV EDX,EAX                         ; 00408ead
     JMP 0x00408e8a                      ; 00408eaf

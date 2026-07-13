@@ -4,8 +4,9 @@
 ; undefined4 FUN_004d9f59(void)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_004d9e70 at 004d9e76
+;   FUN_004d9f6f at 004d9f85
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bb11d

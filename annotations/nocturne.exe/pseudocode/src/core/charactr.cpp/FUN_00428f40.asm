@@ -4,10 +4,15 @@
 ; void FUN_00428f40(int param_1,int param_2,int param_3,undefined4 param_4)
 ;
 ;
-; XREF[3]:
+; XREF[8]:
+;   FUN_00418a00 at 00418dc5
 ;   FUN_004b5c30 at 004b5c4e
 ;   FUN_004bb2d0 at 004bb38c
+;   FUN_004da790 at 004daa4e
 ;   FUN_0053f310 at 0053f5b6
+;   FUN_0054dd50 at 0054df2f
+;   FUN_0054eae0 at 0054f1c8
+;   FUN_0055ef50 at 0055f427
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\charactr.cpp_0057a149+1

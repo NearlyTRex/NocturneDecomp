@@ -325,7 +325,7 @@ LAB_004eaf88:
     }
     if (((*param_1 == 2) && (-1 < (int)uVar2)) && (uVar2 == param_1[0x44])) {
       FUN_004e9e90(param_1,0);
-      uVar3 = FUN_00548d30(local_34,0x2dd10c4,0,0,&DAT_0058c059,
+      uVar3 = FUN_00548d30(local_34,&DAT_02dd10c4,0,0,&DAT_0058c059,
                            "You have been disconnected from the game");
       FUN_004ec500(param_1,uVar3);
       return;

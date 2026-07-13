@@ -4,6 +4,9 @@
 ; int FUN_004da150(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0054eae0 at 0054f083
+;
 ; Referenced Globals:
 ;   undefined4 s_mobster1.dfm_0058a180+1
 ;   undefined1 DAT_0058a18e
@@ -12,7 +15,7 @@
 ;   undefined1 DAT_0058a191
 ;   undefined4 DAT_005a0920
 ;   undefined4 DAT_005a0924
-;   undefined1* PTR_LAB_005a0934 = 004da290
+;   undefined1* PTR_FUN_005a0934 = 004da290
 ;
 ; Called Functions:
 ;   FUN_0040de00
@@ -36,7 +39,7 @@ section .text
     MOV EBX,EAX                         ; 004da165
     ADD EAX,0x150                       ; 004da167
     PUSH EAX                            ; 004da16c
-    MOV dword ptr [EAX + -0x4],0x5a0934 ; 004da16d | PTR_LAB_005a0934
+    MOV dword ptr [EAX + -0x4],0x5a0934 ; 004da16d | PTR_FUN_005a0934
     CALL FUN_0051e0c0                   ; 004da174
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
     FLD float ptr [0x005a0920]          ; 004da179 | DAT_005a0920

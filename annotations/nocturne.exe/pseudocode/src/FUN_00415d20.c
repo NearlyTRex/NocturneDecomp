@@ -15,7 +15,7 @@ void FUN_00415d20(uint param_1)
   iVar1 = FUN_005644a7(iVar1 + 0x288,3,&DAT_0059a820);
   iVar1 = FUN_005644a7(iVar1 + 0x4c0,2,&DAT_0059a840);
   iVar1 = FUN_0041a610(iVar1 + 0x56c);
-  *(byte ***)(iVar1 + -0xb68) = &PTR_LAB_0059a744;
+  *(byte ***)(iVar1 + -0xb68) = &PTR_FUN_0059a744;
   *(uint *)(iVar1 + 0x25c) = 0;
   *(uint *)(iVar1 + -0xb48) = 0;
   *(uint *)(iVar1 + -0xb44) = 0;

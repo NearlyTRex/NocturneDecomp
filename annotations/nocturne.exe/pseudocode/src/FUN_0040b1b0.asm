@@ -4,6 +4,10 @@
 ; undefined4 * FUN_0040b1b0(undefined4 param_1,undefined4 *param_2)
 ;
 ;
+; XREF[2]:
+;   FUN_004cbce0 at 004cbceb
+;   FUN_0054a800 at 0054a80c
+;
 ; *****************************************************************************
 
 section .text
@@ -20,6 +24,4 @@ section .text
     MOV dword ptr [EAX],0x0             ; 0040b1e5
     LEA EAX,[EAX]                       ; 0040b1eb
     MOV ECX,ECX                         ; 0040b1ee
-    RET                                 ; 0040b1f0
-        ;   Label: LAB_0040b1f0
 

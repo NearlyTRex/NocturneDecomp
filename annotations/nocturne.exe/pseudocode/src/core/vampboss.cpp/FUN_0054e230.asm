@@ -7,6 +7,9 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
+; XREF[1]:
+;   FUN_0054c690 at 0054d7da
+;
 ; Referenced Globals:
 ;   string s_..\\core\\vampboss.cpp_0059726b
 ;   string s_CVampireBoss::chooseDestWayPoint_00597280

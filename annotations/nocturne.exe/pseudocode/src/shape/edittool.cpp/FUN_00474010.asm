@@ -4,6 +4,9 @@
 ; void FUN_00474010(int *param_1,int param_2,int param_3)
 ;
 ;
+; XREF[1]:
+;   FUN_004761a0 at 004761bf
+;
 ; Referenced Globals:
 ;   string s_..\\shape\\edittool.cpp_0057ecb1
 ;   string s_CStrList::sort_-_invalid_range!_0057ecc7

@@ -1,6 +1,6 @@
 // Name: FUN_00554600
 // Address: 00554600
-// Address Range: [[00554250, 00554252] [00554600, 00554623]]
+// Address Range: [[00554600, 00554623]]
 // Convention: unknown
 // Signature: undefined4 FUN_00554600(int param_1)
 

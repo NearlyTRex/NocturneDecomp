@@ -15,6 +15,10 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
+; XREF[2]:
+;   FUN_004c9580 at 004c9b5c
+;   FUN_004c9cf0 at 004c9d7d
+;
 ; *****************************************************************************
 
 section .text

@@ -4,9 +4,10 @@
 ; undefined4 FUN_0040a200(int param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[26]:
+; XREF[54]:
 ;   FUN_0040a540 at 0040a593
 ;   FUN_0040a740 at 0040a901
+;   FUN_0040b300 at 0040b3aa
 ;   FUN_00410a80 at 00410aeb
 ;   FUN_00410bf0 at 00410c36
 ;   FUN_004145f0 at 00414903
@@ -14,8 +15,7 @@
 ;   FUN_0041e5e0 at 0041e937
 ;   FUN_004247f0 at 00424d4d
 ;   FUN_00425050 at 0042506c
-;   FUN_004277f0 at 004278ac
-;   ... and 16 more
+;   ... and 44 more
 ;
 ; Called Functions:
 ;   FUN_0044da40

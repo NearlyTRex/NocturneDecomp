@@ -4,7 +4,8 @@
 ; int FUN_0044bd20(int *param_1,char *param_2,int param_3)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_004c79a0 at 004c7b51
 ;   FUN_005151f0 at 005152d1
 ;   FUN_00515710 at 005157a3
 ;

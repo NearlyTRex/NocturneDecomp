@@ -8,8 +8,11 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ; undefined8       Stack[-0x10]:8  local_10
 ;
-; XREF[1]:
+; XREF[4]:
 ;   FUN_0040d2d0 at 0040d2f2
+;   FUN_0041f600 at 0041f656
+;   FUN_004cb7f0 at 004cb8b2
+;   FUN_0054a000 at 0054a01a
 ;
 ; Referenced Globals:
 ;   string s_%f,%f,%f_00577c18

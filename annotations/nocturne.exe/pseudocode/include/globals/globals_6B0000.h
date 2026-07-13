@@ -8,6 +8,15 @@
 // =============================================================================
 
 // undefined4
+extern undefined4 DAT_006b023c;
+extern undefined4 DAT_006b0240;
+extern undefined4 DAT_006b0244;
+extern undefined4 DAT_006b0248;
+extern undefined4 DAT_006b024c;
+extern undefined4 DAT_006b0250;
+extern undefined4 DAT_006b0254;
+extern undefined4 DAT_006b0258;
+extern undefined4 DAT_006b025c;
 extern undefined4 DAT_006b0260;
 extern undefined4 DAT_006b0264;
 extern undefined4 DAT_006b026c;

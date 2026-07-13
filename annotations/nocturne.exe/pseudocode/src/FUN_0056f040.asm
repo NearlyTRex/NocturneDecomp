@@ -6,9 +6,10 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[2]:
+; XREF[3]:
 ;   FUN_00567964 at 00567a23
 ;   FUN_00567a5c at 00567b4a
+;   FUN_00574030 at 00574053
 ;
 ; Referenced Globals:
 ;   void* PTR_MultiByteToWideChar_0057556c = 00175ee0

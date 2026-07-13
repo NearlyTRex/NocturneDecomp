@@ -10,109 +10,109 @@
       {
         "category": "other",
         "column": 35,
-        "line": 268,
+        "line": 266,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 268,
+        "line": 266,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 269,
+        "line": 267,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 269,
+        "line": 267,
         "message": "exponent has no digits"
       },
       {
         "category": "other",
         "column": 95,
-        "line": 102,
+        "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 92,
-        "line": 104,
+        "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 83,
-        "line": 105,
+        "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 110,
+        "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 31,
+        "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 33,
+        "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 67,
+        "line": 129,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 74,
+        "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 78,
+        "line": 140,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 81,
+        "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 17,
+        "line": 30,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 35,
+        "line": 49,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 37,
+        "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 144,
+        "line": 170,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -123,7 +123,7 @@
   "complexity": {
     "assembly_lines": 67,
     "complexity_score": 106,
-    "cross_reference_count": 0,
+    "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "mild",
@@ -134,7 +134,32 @@
     ],
     "total_lines": 88
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "004b68b0",
+      "from_addr": "004b68b5",
+      "name": "FUN_004b68b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b8320",
+      "from_addr": "004b8327",
+      "name": "FUN_004b8320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b9b50",
+      "from_addr": "004b9b55",
+      "name": "FUN_004b9b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004efb30",
+      "from_addr": "004efb37",
+      "name": "FUN_004efb30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "004eed10",
     "address_range": [
@@ -218,13 +243,64 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004b68b5",
+        "call_type": "direct",
+        "caller": "FUN_004b68b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b8327",
+        "call_type": "direct",
+        "caller": "FUN_004b8320",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b9b55",
+        "call_type": "direct",
+        "caller": "FUN_004b9b50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004efb37",
+        "call_type": "direct",
+        "caller": "FUN_004efb30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 0,
-    "matches_declared": true
+    "estimated_params": 2,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.568627450980392,
@@ -323,5 +399,26 @@
       "text": "FUN_0040c900(param_1 + 0x1f56c,\"poolMe\");",
       "type": "unnamed_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 204,
+        "vtable_addr": "005a2c04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 204,
+        "vtable_addr": "005a2d44"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 204,
+        "vtable_addr": "005a0eb4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 3
+  }
 }

@@ -4,6 +4,9 @@
 ; undefined4 FUN_00554260(int param_1,undefined4 param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_0054b030 at 0054b04c
+;
 ; Referenced Globals:
 ;   string s_CIcePick_00597bf2
 ;   string s_CHero_00597bfb

@@ -9,6 +9,10 @@
 ; undefined        Stack[-0x18]:1  local_18
 ; undefined        Stack[-0x14]:1  local_14
 ;
+; XREF[2]:
+;   FUN_00529f60 at 00529fcc
+;   FUN_0052a970 at 0052aa2f
+;
 ; Referenced Globals:
 ;   string s_DirectSux:_Unable_to_%s._(%s)_005940b7
 ;   string s_Lock_secondary_buffer_005940d6

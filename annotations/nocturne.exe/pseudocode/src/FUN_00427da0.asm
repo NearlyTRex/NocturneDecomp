@@ -4,6 +4,19 @@
 ; undefined4 FUN_00427da0(int param_1,int *param_2)
 ;
 ;
+; XREF[13]:
+;   FUN_004132a0 at 004132aa
+;   FUN_00414c40 at 00414c56
+;   FUN_00415a10 at 00415a1a
+;   FUN_0041a3e0 at 0041a3f6
+;   FUN_0045a240 at 0045a256
+;   FUN_004a88d0 at 004a88da
+;   FUN_004b99b0 at 004b99ba
+;   FUN_004bcfb0 at 004bcfba
+;   FUN_004dc920 at 004dc92a
+;   FUN_00506a60 at 00506a6a
+;   ... and 3 more
+;
 ; *****************************************************************************
 
 section .text

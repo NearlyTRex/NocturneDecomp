@@ -6,6 +6,10 @@
 ; Local Variables:
 ; undefined        Stack[-0xc8]:1  local_c8
 ;
+; XREF[2]:
+;   FUN_00455640 at 00455729
+;   FUN_00456460 at 0045647c
+;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0045528c = 004552da
 ;   string s_..\\core\\door.cpp_0057d077

@@ -6,8 +6,13 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[6]:
+;   FUN_00419ce0 at 00419dd1
+;   FUN_004aae30 at 004aaeef
 ;   FUN_004b49a0 at 004b4a00
+;   FUN_004b8320 at 004b8386
+;   FUN_00544470 at 005444b8
+;   FUN_00561aa0 at 00561b24
 ;
 ; Referenced Globals:
 ;   string s_part_status_opening_brace_00577cdc

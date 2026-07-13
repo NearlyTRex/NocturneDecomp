@@ -47,7 +47,7 @@ void FUN_0045b020(int param_1,float param_2)
   local_30 = &local_64;
   local_2c = &local_60;
   local_34 = &DAT_01b4d280;
-  local_38 = (byte *)0x1b4d478;
+  local_38 = &DAT_01b4d478;
   do {
     local_20 = local_34;
     if (param_1 == *(int *)(local_34 + 0x50)) {

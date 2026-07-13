@@ -13,7 +13,7 @@ uint * FUN_00557f50(uint param_1,LPCSTR param_2,int param_3,uint param_4,uint pa
   HFONT pHVar2;
   
   puVar1 = (uint *)FUN_004eefb0(param_1);
-  *puVar1 = &PTR_LAB_005a4484;
+  *puVar1 = &PTR_FUN_005a4484;
   puVar1[1] = 0;
   puVar1[3] = 0;
   puVar1[4] = 0;

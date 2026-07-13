@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_00474ea0 at 004750d5
+;
 ; Referenced Globals:
 ;   string s_..\\shape\\edittool.cpp_0057ed88
 ;   string s_CStrList::copyToClipboard_-_out_o_0057ed9e

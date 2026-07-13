@@ -6,6 +6,11 @@
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ;
+; XREF[3]:
+;   FUN_00448660 at 0044873c
+;   FUN_004487c0 at 004488a2
+;   FUN_00448bf0 at 00448cd2
+;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\dcube.cpp_0057bb72+1
 ;   string s_Bad_clip!_0057bb85

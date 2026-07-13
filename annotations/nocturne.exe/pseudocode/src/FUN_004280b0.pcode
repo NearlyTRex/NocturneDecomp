@@ -91,11 +91,6 @@ INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 @004280dc [ESP:+0]~  # LEA EAX, [EAX]
 COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
 
-@004280e0 [ESP:+4](+4)~  # RET
-LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
-INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-RETURN (register,0x284,4)
-
 # ============================================================================
-# Summary: 14 instructions, 52 P-code ops
+# Summary: 13 instructions, 49 P-code ops
 # ============================================================================

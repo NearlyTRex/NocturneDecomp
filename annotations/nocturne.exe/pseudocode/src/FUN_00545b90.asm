@@ -4,6 +4,9 @@
 ; int FUN_00545b90(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0054eae0 at 0054f09f
+;
 ; Referenced Globals:
 ;   string s_tommygun.kfm_0059688b
 ;   undefined4 DAT_005a32dc

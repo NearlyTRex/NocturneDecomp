@@ -19,7 +19,7 @@ void FUN_0056b67d(int *param_1,byte param_2)
   }
   *(int *)((int)param_1 + *(int *)(*param_1 + 4) + -4) = *(int *)(*param_1 + 4);
   param_1[2] = (int)&PTR_FUN_005a49c4;
-  *(byte ***)(*(int *)(*param_1 + 4) + 0x28 + (int)param_1) = &PTR_LAB_005a49cc;
+  *(byte ***)(*(int *)(*param_1 + 4) + 0x28 + (int)param_1) = &PTR_FUN_005a49cc;
   param_1[1] = 0;
   pbVar1 = (byte *)(*(int *)(*param_1 + 4) + 0xc + (int)param_1);
   *pbVar1 = *pbVar1 | 1;

@@ -6,9 +6,10 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[2]:
+; XREF[3]:
 ;   FUN_0049da10 at 0049dc82
 ;   FUN_004d92a0 at 004d93b3
+;   FUN_00507f80 at 005083f0
 ;
 ; Referenced Globals:
 ;   string s_Initializing_scene_00590382

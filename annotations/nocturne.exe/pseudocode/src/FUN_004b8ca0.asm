@@ -4,11 +4,14 @@
 ; int FUN_004b8ca0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00540f50 at 00541202
+;
 ; Referenced Globals:
 ;   string s_hotdemon.dfm_00585df7
 ;   undefined4 DAT_0059f0c0
 ;   undefined4 DAT_0059f0c4
-;   undefined1* PTR_LAB_0059f0d4 = 004b8d00
+;   undefined1* PTR_FUN_0059f0d4 = 004b8d00
 ;
 ; Called Functions:
 ;   FUN_00479560
@@ -29,7 +32,7 @@ section .text
     MOV EBX,EAX                         ; 004b8cb3
     ADD EAX,0x150                       ; 004b8cb5
     PUSH EAX                            ; 004b8cba
-    MOV dword ptr [EAX + -0x4],0x59f0d4 ; 004b8cbb | PTR_LAB_0059f0d4
+    MOV dword ptr [EAX + -0x4],0x59f0d4 ; 004b8cbb | PTR_FUN_0059f0d4
     CALL FUN_0051e0c0                   ; 004b8cc2
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
     FLD float ptr [0x0059f0c0]          ; 004b8cc7 | DAT_0059f0c0

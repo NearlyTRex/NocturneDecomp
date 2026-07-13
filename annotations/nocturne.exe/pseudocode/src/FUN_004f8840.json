@@ -10,109 +10,109 @@
       {
         "category": "other",
         "column": 35,
-        "line": 268,
+        "line": 266,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 268,
+        "line": 266,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 269,
+        "line": 267,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 269,
+        "line": 267,
         "message": "exponent has no digits"
       },
       {
         "category": "other",
         "column": 95,
-        "line": 102,
+        "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 92,
-        "line": 104,
+        "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 83,
-        "line": 105,
+        "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 110,
+        "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 31,
+        "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 33,
+        "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 67,
+        "line": 129,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 74,
+        "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 78,
+        "line": 140,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 81,
+        "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 17,
+        "line": 30,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 35,
+        "line": 49,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 37,
+        "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 144,
+        "line": 170,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -121,9 +121,9 @@
   },
   "compile_source": "c",
   "complexity": {
-    "assembly_lines": 41,
+    "assembly_lines": 39,
     "complexity_score": 146,
-    "cross_reference_count": 0,
+    "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "mild",
@@ -133,14 +133,25 @@
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 57
+    "total_lines": 55
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "004f93e0",
+      "from_addr": "004f93ef",
+      "name": "FUN_004f93e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "004f8840",
     "address_range": [
       [
         "004f8840",
+        "004f886f"
+      ],
+      [
+        "004f8871",
         "004f8898"
       ]
     ],
@@ -185,35 +196,49 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f93ef",
+        "call_type": "direct",
+        "caller": "FUN_004f93e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 0,
-    "matches_declared": true
+    "estimated_params": 3,
+    "matches_declared": false
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.967741935483871,
-    "instruction_count": 31,
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 30,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "CALL": 4,
       "CBRANCH": 2,
       "COPY": 22,
-      "INT_ADD": 14,
+      "INT_ADD": 13,
       "INT_AND": 14,
       "INT_CARRY": 4,
       "INT_EQUAL": 12,
       "INT_SCARRY": 4,
       "INT_SLESS": 6,
       "INT_SUB": 10,
-      "LOAD": 9,
+      "LOAD": 8,
       "POPCOUNT": 6,
-      "RETURN": 3,
+      "RETURN": 2,
       "STORE": 11
     },
-    "pcode_op_count": 123
+    "pcode_op_count": 120
   },
   "stack_frame": {
     "frame_size": 4,
@@ -320,5 +345,21 @@
       "text": "return param_1;",
       "type": "unnamed_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "005a1484"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005a14a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

@@ -4,7 +4,7 @@
 ; void FUN_0056c73c(void)
 ;
 ;
-; XREF[16]:
+; XREF[17]:
 ;   FUN_00565d00 at 00565da7
 ;   FUN_00565dd0 at 00565de3
 ;   FUN_00565e40 at 00565e50
@@ -15,7 +15,7 @@
 ;   FUN_00569fb0 at 0056a01c
 ;   FUN_0056b960 at 0056baf0
 ;   FUN_0056bbf0 at 0056bbfe
-;   ... and 6 more
+;   ... and 7 more
 ;
 ; Referenced Globals:
 ;   void* PTR_GetLastError_0057551c = 00175d70

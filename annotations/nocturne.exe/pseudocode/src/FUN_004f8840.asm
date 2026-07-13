@@ -4,6 +4,9 @@
 ; int FUN_004f8840(int param_1,byte param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_004f93e0 at 004f93ef
+;
 ; Referenced Globals:
 ;   undefined1* PTR_FUN_005a1484 = 004f8840
 ;   undefined4 DAT_005a14a0
@@ -36,8 +39,6 @@ section .text
     POP EBX                             ; 004f8868
     LEA EAX,[EAX]                       ; 004f8869
     NOP                                 ; 004f886f
-    RET                                 ; 004f8870
-        ;   Label: LAB_004f8870
     PUSH 0x5a14a0                       ; 004f8871 | DAT_005a14a0
         ;   Label: LAB_004f8871
     PUSH EBX                            ; 004f8876

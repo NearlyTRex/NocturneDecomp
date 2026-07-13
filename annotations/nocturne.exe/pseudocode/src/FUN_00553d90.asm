@@ -4,8 +4,18 @@
 ; int FUN_00553d90(undefined4 param_1)
 ;
 ;
-; XREF[1]:
-;   FUN_00545b90 at 00545b96
+; XREF[13]:
+;   FUN_00411350 at 00411355
+;   FUN_0043cf10 at 0043cf16
+;   FUN_0046ebd0 at 0046ebd6
+;   FUN_00477710 at 00477716
+;   FUN_0048e9c0 at 0048e9c6
+;   FUN_0048ed60 at 0048ed66
+;   FUN_004b2760 at 004b2766
+;   FUN_004c6e30 at 004c6e36
+;   FUN_004cec60 at 004cec68
+;   FUN_00515d20 at 00515d26
+;   ... and 3 more
 ;
 ; Referenced Globals:
 ;   string s_gat.kfm_00597b99

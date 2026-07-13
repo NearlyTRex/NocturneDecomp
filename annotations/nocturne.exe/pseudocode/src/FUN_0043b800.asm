@@ -9,12 +9,14 @@
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined        Stack[-0x18]:1  local_18
 ;
-; XREF[5]:
+; XREF[7]:
 ;   FUN_00411f20 at 00411fbf
 ;   FUN_00495340 at 004953be
 ;   FUN_004cc1b0 at 004cc224
+;   FUN_004cc5d0 at 004cc682
 ;   FUN_004dec50 at 004dedb6
 ;   FUN_004f5ff0 at 004f612d
+;   FUN_0054eae0 at 0054eb37
 ;
 ; Called Functions:
 ;   FUN_0043b890

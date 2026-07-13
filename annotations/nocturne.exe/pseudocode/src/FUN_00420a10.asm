@@ -7,6 +7,9 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_00420c40 at 00420cb3
+;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004209f8 = 00420a50
 ;   string s_limb?.wav_00579ba9

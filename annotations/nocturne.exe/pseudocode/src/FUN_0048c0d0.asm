@@ -4,11 +4,13 @@
 ; void FUN_0048c0d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
 ;
 ;
-; XREF[4]:
+; XREF[6]:
 ;   FUN_00427ab0 at 00427b37
 ;   FUN_0043cdb0 at 0043ce34
 ;   FUN_0047ac50 at 0047b187
 ;   FUN_004874d0 at 0048753d
+;   FUN_0048e5a0 at 0048e6bf
+;   FUN_0054fc60 at 00550120
 ;
 ; Referenced Globals:
 ;   string s_xplode?.wav_@_6.0_005814f4

@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x2c]:1  local_2c
 ; undefined1       Stack[-0x2b]:1  local_2b
 ;
-; XREF[10]:
+; XREF[12]:
 ;   FUN_00411530 at 004115a2
 ;   FUN_00415b30 at 00415be3
 ;   FUN_004a02e0 at 004a02fd
@@ -18,6 +18,7 @@
 ;   FUN_004d5e20 at 004d5eb2
 ;   FUN_004d8c60 at 004d8c9a
 ;   FUN_004d9c20 at 004d9d4d
+;   ... and 2 more
 ;
 ; Called Functions:
 ;   FUN_00409fa0

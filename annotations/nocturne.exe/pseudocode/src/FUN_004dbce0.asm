@@ -9,6 +9,9 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_004da790 at 004db3ea
+;
 ; Referenced Globals:
 ;   undefined4 s_CTommyGun_0058a3b8+1
 ;   undefined4 DAT_0058a3c9

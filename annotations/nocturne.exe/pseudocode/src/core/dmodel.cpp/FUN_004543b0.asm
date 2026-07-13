@@ -4,9 +4,13 @@
 ; int FUN_004543b0(undefined4 param_1)
 ;
 ;
-; XREF[2]:
+; XREF[6]:
 ;   FUN_00454510 at 00454518
+;   FUN_00477fd0 at 00478093
 ;   FUN_004876a0 at 004876a5
+;   FUN_004b27c0 at 004b2b15
+;   FUN_00516620 at 005166f2
+;   FUN_00545c30 at 00546022
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\dmodel.cpp_0057ce51

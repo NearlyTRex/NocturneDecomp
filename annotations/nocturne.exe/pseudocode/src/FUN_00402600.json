@@ -10,109 +10,109 @@
       {
         "category": "other",
         "column": 35,
-        "line": 268,
+        "line": 266,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 268,
+        "line": 266,
         "message": "invalid digit 'C' in decimal constant"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 269,
+        "line": 267,
         "message": "invalid suffix 'x' on integer constant"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 269,
+        "line": 267,
         "message": "exponent has no digits"
       },
       {
         "category": "other",
         "column": 95,
-        "line": 102,
+        "line": 142,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 92,
-        "line": 104,
+        "line": 144,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 83,
-        "line": 105,
+        "line": 145,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 110,
+        "line": 151,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 31,
+        "line": 61,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 33,
+        "line": 63,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 67,
+        "line": 129,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 74,
+        "line": 136,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 78,
+        "line": 140,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 81,
+        "line": 143,
         "message": "unknown type name 'HWND'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 17,
+        "line": 30,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 35,
+        "line": 49,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 37,
+        "line": 51,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 144,
+        "line": 170,
         "message": "unknown type name 'HMODULE'"
       }
     ],
@@ -123,7 +123,7 @@
   "complexity": {
     "assembly_lines": 41,
     "complexity_score": 150,
-    "cross_reference_count": 12,
+    "cross_reference_count": 20,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "mild",
@@ -142,6 +142,36 @@
       "addr": "00402760",
       "from_addr": "00402770",
       "name": "FUN_00402760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402780",
+      "from_addr": "004027d1",
+      "name": "FUN_00402780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004027f0",
+      "from_addr": "00402812",
+      "name": "FUN_004027f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004028b0",
+      "from_addr": "004028db",
+      "name": "FUN_004028b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402980",
+      "from_addr": "004029af",
+      "name": "FUN_00402980",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00403fb0",
+      "from_addr": "00403ffb",
+      "name": "FUN_00403fb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -187,9 +217,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004eb520",
+      "from_addr": "004eb5e1",
+      "name": "FUN_004eb520",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f1500",
+      "from_addr": "004f15a7",
+      "name": "FUN_004f1500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00506f10",
       "from_addr": "00507c4e",
       "name": "FUN_00506f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00507f80",
+      "from_addr": "0050813b",
+      "name": "FUN_00507f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -256,7 +304,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 44,
+    "call_site_count": 50,
     "call_sites": [
       {
         "call_addr": "004c8527",
@@ -510,7 +558,7 @@
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 44,
+      "call_site_count": 50,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 4,

@@ -6,6 +6,10 @@
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
 ;
+; XREF[2]:
+;   FUN_0043b050 at 0043b057
+;   FUN_004d60b0 at 004d60b5
+;
 ; Referenced Globals:
 ;   string s_slider1.kfm_0058d75f
 ;   undefined1* PTR_FUN_005a1384 = 004f5f60

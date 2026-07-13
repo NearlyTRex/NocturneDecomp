@@ -13,6 +13,11 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[3]:
+;   FUN_004946c0 at 00494767
+;   FUN_00494950 at 004949a4
+;   FUN_00494e80 at 00494eac
+;
 ; Referenced Globals:
 ;   void* switchdataD_00495078 = 004950c1
 ;   string s_..\\core\\frankgen.cpp_00581d58

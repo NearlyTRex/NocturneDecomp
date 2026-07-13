@@ -6,13 +6,17 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[6]:
+; XREF[10]:
 ;   FUN_00416030 at 00416050
 ;   FUN_0041dcc0 at 0041dd2b
 ;   FUN_00437db0 at 00437dd4
 ;   FUN_0043f330 at 0043f42f
 ;   FUN_004530c0 at 004530f5
+;   FUN_004ac440 at 004ac52f
+;   FUN_004ac600 at 004ac6ee
+;   FUN_004ac9b0 at 004acaa1
 ;   FUN_00518440 at 0051845f
+;   FUN_00551c00 at 00551d15
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\set.cpp_00590650+2

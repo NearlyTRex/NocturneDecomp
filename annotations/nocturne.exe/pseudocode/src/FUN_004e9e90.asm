@@ -14,11 +14,14 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[4]:
+; XREF[7]:
 ;   FUN_0049da10 at 0049deb9
+;   FUN_004a5e40 at 004a5ed7
 ;   FUN_004e9910 at 004e9996
 ;   FUN_004e99c0 at 004e99c7
+;   FUN_004e9a90 at 004e9aa2
 ;   FUN_004ea830 at 004eb0d3
+;   FUN_004eb520 at 004eb86c
 ;
 ; Referenced Globals:
 ;   string s_Disconnecting_from_server..._0058bc84

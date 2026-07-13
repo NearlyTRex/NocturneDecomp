@@ -4,7 +4,7 @@
 ; void FUN_00566170(undefined4 *param_1,undefined4 *param_2,uint param_3)
 ;
 ;
-; XREF[31]:
+; XREF[38]:
 ;   FUN_0046f150 at 0046f196
 ;   FUN_0046f1e0 at 0046f216
 ;   FUN_00473cf0 at 00473d5f
@@ -15,7 +15,7 @@
 ;   FUN_0047a650 at 0047a72d
 ;   FUN_0047aa50 at 0047ab2e
 ;   FUN_0047ac50 at 0047b0b7
-;   ... and 21 more
+;   ... and 28 more
 ;
 ; *****************************************************************************
 

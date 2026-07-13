@@ -4,8 +4,9 @@
 ; void FUN_00427a60(int param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_00428510 at 004286b1
+;   FUN_004ab450 at 004ab6aa
 ;
 ; Referenced Globals:
 ;   string s_glass-1.wav@2.0_0057a014

@@ -4,7 +4,8 @@
 ; void FUN_00553d30(LPCSTR param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00530e60 at 00530e6d
 ;   FUN_00531780 at 005317be
 ;
 ; Referenced Globals:

@@ -6,8 +6,18 @@
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[1]:
-;   FUN_004eea20 at 004eea33
+; XREF[37]:
+;   FUN_00410490 at 00410538
+;   FUN_00412480 at 0041249c
+;   FUN_00413800 at 0041381c
+;   FUN_004150d0 at 004150e2
+;   FUN_004154b0 at 004154c2
+;   FUN_00418a00 at 00418a7a
+;   FUN_0041fe40 at 0041fe5c
+;   FUN_00421480 at 0042148b
+;   FUN_00439f50 at 00439f66
+;   FUN_0043bdb0 at 0043bdcc
+;   ... and 27 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00579f62

@@ -4,8 +4,9 @@
 ; void FUN_004802e0(int param_1,char *param_2,int param_3)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_0047ac50 at 0047b6d1
+;   FUN_004b6d80 at 004b7ac4
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\event.cpp_00580a05+2

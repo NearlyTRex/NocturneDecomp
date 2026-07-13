@@ -4,8 +4,9 @@
 ; void FUN_00438270(int *param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_00424260 at 004243a7
+;   FUN_00540c20 at 00540c92
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\cloth.cpp_0057aee4+1

@@ -12,7 +12,7 @@ int FUN_00570449(int param_1,byte param_2)
   uint uVar1;
   
   if ((param_2 & 4) == 0) {
-    *(byte ***)(param_1 + 0x28) = &PTR_LAB_005a4b0c;
+    *(byte ***)(param_1 + 0x28) = &PTR_FUN_005a4b0c;
     if (*(int *)(param_1 + 0x2c) != -1) {
       if (*(int *)(param_1 + 0x20) != *(int *)(param_1 + 0x18)) {
         FUN_005723ae(param_1);

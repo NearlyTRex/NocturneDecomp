@@ -4,10 +4,13 @@
 ; undefined4 FUN_005270d0(undefined4 param_1,undefined4 param_2)
 ;
 ;
-; XREF[4]:
+; XREF[7]:
 ;   FUN_004269b0 at 00426b55
 ;   FUN_0047ac50 at 0047b64c
+;   FUN_004c71a0 at 004c793f
+;   FUN_004c79a0 at 004c7a91
 ;   FUN_004caef0 at 004caf89
+;   FUN_0052d790 at 0052db01
 ;   FUN_0052dff0 at 0052e0d3
 ;
 ; Referenced Globals:

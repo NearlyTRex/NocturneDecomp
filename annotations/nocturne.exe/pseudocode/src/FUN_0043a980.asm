@@ -4,6 +4,9 @@
 ; ushort FUN_0043a980(int param_1,float param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_00439f50 at 00439fb4
+;
 ; Called Functions:
 ;   FUN_0042add0
 ;   FUN_004e11c0

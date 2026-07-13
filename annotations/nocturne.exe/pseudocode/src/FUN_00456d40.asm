@@ -4,11 +4,13 @@
 ; void FUN_00456d40(int param_1)
 ;
 ;
-; XREF[4]:
+; XREF[6]:
 ;   FUN_00456c20 at 00456c26
 ;   FUN_00456c40 at 00456c4f
 ;   FUN_004746b0 at 00474858
 ;   FUN_004748b0 at 00474a57
+;   FUN_00474ae0 at 00474c63
+;   FUN_004f92b0 at 004f9323
 ;
 ; Referenced Globals:
 ;   void* PTR_FindClose_005754c8 = 00175bf0

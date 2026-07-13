@@ -6,6 +6,10 @@
 ; Local Variables:
 ; undefined        Stack[-0x104]:1  local_104
 ;
+; XREF[2]:
+;   FUN_004cedb0 at 004cedb6
+;   FUN_0054a000 at 0054a006
+;
 ; Referenced Globals:
 ;   string s_modelName_00597ba1
 ;   string s_carriedByActor_00597bab

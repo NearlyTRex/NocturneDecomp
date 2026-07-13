@@ -4,9 +4,11 @@
 ; undefined4 FUN_00456c40(int param_1,LPCSTR param_2)
 ;
 ;
-; XREF[2]:
+; XREF[4]:
 ;   FUN_004746b0 at 00474801
 ;   FUN_004748b0 at 004749f4
+;   FUN_00474ae0 at 00474bb4
+;   FUN_004f92b0 at 004f92f0
 ;
 ; Referenced Globals:
 ;   void* PTR_FindFirstFileA_005754cc = 00175bfc

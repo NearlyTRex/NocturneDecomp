@@ -13,7 +13,7 @@ int FUN_005701cf(int param_1,byte param_2)
   uint uVar2;
   
   if ((param_2 & 4) == 0) {
-    *(byte ***)(param_1 + 0x28) = &PTR_LAB_005a4884;
+    *(byte ***)(param_1 + 0x28) = &PTR_FUN_005a4884;
     if ((((*(byte *)(param_1 + 0x3c) & 2) != 0) && ((*(byte *)(param_1 + 0x3c) & 1) == 0)) &&
        (iVar1 = *(int *)(param_1 + 4), iVar1 != 0)) {
       if (*(int *)(param_1 + 0x30) == 0) {

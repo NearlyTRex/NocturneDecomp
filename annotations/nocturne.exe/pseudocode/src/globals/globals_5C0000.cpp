@@ -91,6 +91,7 @@ undefined2 DAT_005c1f4c = 0x0000;
 
 // undefined4
 undefined4 DAT_005c1660 = 0xFFFFFFFF;
+undefined4 DAT_005c1664 = 0x00000001;
 undefined4 DAT_005c1668 = 0xFFFFFFFF;
 undefined4 DAT_005c1680 = 0x00000000;
 undefined4 DAT_005c1684 = 0x00000000;

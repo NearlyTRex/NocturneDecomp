@@ -4,12 +4,13 @@
 ; int FUN_00403bd0(int param_1,int param_2,int param_3)
 ;
 ;
-; XREF[5]:
+; XREF[6]:
 ;   FUN_00403e10 at 00403e27
 ;   FUN_00403e60 at 00403ec4
 ;   FUN_004722b0 at 00472467
 ;   FUN_00476260 at 0047628b
 ;   FUN_00476310 at 00476375
+;   FUN_004eb520 at 004eb69e
 ;
 ; Referenced Globals:
 ;   string s_..\\engine\\2d.c_00577309

@@ -13,6 +13,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_0043d1c0 at 0043d7fd
+;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0048b038 = 0048b091
 ;   string s_a-wood?.wav_005814bc

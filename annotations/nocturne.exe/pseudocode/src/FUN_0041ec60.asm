@@ -7,6 +7,10 @@
 ; undefined        Stack[-0x10c]:1  local_10c
 ; undefined4       Stack[-0xc]:4  local_c
 ;
+; XREF[2]:
+;   FUN_0041f600 at 0041f60a
+;   FUN_00534d30 at 00534d35
+;
 ; Referenced Globals:
 ;   undefined4 s_modelName_0057981f+2
 ;   string s_weightInPounds_0057982b

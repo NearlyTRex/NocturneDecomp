@@ -4,18 +4,18 @@
 ; ulonglong FUN_005649c0(uint *param_1,uint *param_2)
 ;
 ;
-; XREF[22]:
+; XREF[29]:
 ;   FUN_0040ed80 at 0040ed9f
 ;   FUN_004386b0 at 004386d0
+;   FUN_0043ebf0 at 0043ec60
 ;   FUN_00441c50 at 00441c7a
 ;   FUN_00443250 at 00443452
 ;   FUN_0044bd20 at 0044bd39
 ;   FUN_0044be60 at 0044be79
-;   FUN_0047e0d0 at 0047e4d8
-;   FUN_004a6e90 at 004a6f51
-;   FUN_004bd0a0 at 004bd1b4
-;   FUN_004bd2b0 at 004bd3a0
-;   ... and 12 more
+;   FUN_004551f0 at 0045521a
+;   FUN_004571f0 at 004572fd
+;   FUN_00478790 at 004787b4
+;   ... and 19 more
 ;
 ; *****************************************************************************
 

@@ -14,6 +14,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_00462300 at 0046239d
+;
 ; Called Functions:
 ;   FUN_00467a00
 ;

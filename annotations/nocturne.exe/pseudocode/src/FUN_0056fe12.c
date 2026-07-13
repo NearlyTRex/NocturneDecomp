@@ -9,7 +9,7 @@
 void FUN_0056fe12(uint *param_1)
 
 {
-  param_1[10] = &PTR_LAB_005a4ab0;
+  param_1[10] = &PTR_FUN_005a4ab0;
   *param_1 = 0;
   param_1[1] = 0;
   param_1[2] = 0;

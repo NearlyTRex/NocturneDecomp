@@ -4,6 +4,19 @@
 ; int FUN_00553ea0(int param_1,byte param_2)
 ;
 ;
+; XREF[13]:
+;   FUN_00411610 at 0041161f
+;   FUN_0043d870 at 0043d896
+;   FUN_0046ef30 at 0046ef3f
+;   FUN_00478310 at 0047831f
+;   FUN_0048ecb0 at 0048ecbf
+;   FUN_0048ee00 at 0048ee0f
+;   FUN_004b2ff0 at 004b2fff
+;   FUN_004c8040 at 004c804f
+;   FUN_004cf1a0 at 004cf1af
+;   FUN_00516960 at 0051696f
+;   ... and 3 more
+;
 ; Referenced Globals:
 ;   undefined1* PTR_FUN_005a4154 = 00553f10
 ;   undefined4 DAT_005a4250

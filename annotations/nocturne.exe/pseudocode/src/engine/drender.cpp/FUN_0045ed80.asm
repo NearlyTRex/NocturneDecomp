@@ -4,7 +4,7 @@
 ; void FUN_0045ed80(int param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[17]:
+; XREF[23]:
 ;   FUN_0045ee60 at 0045ee99
 ;   FUN_0045eee0 at 0045ef49
 ;   FUN_0045ef90 at 0045f03f
@@ -13,9 +13,9 @@
 ;   FUN_0045f3c0 at 0045f408
 ;   FUN_0045f460 at 0045f4ef
 ;   FUN_0045f5e0 at 0045f64a
+;   FUN_0045f700 at 0045f73b
 ;   FUN_0045f790 at 0045f810
-;   FUN_0045f9d0 at 0045fa51
-;   ... and 7 more
+;   ... and 13 more
 ;
 ; Referenced Globals:
 ;   string s_..\\engine\\drender.cpp_0057db72

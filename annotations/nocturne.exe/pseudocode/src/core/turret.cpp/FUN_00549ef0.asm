@@ -9,6 +9,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
+; XREF[2]:
+;   FUN_005496d0 at 0054970b
+;   FUN_00549cd0 at 00549ce9
+;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00549ed4 = 00549f8d
 ;   undefined4 s_..\\core\\turret.cpp_00596da4+1

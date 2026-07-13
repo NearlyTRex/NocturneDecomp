@@ -4,13 +4,14 @@
 ; undefined4 FUN_00570ca0(byte *param_1)
 ;
 ;
-; XREF[6]:
+; XREF[7]:
 ;   FUN_0056db40 at 0056db4e
 ;   FUN_0056dbb0 at 0056dbbe
 ;   FUN_0056dcd0 at 0056dce7
 ;   FUN_00570870 at 0057087b
 ;   FUN_00572a90 at 00572ab9
 ;   FUN_00572d90 at 00572d9c
+;   FUN_00574000 at 00574009
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de5c30

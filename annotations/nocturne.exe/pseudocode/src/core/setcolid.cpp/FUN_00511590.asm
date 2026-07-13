@@ -4,8 +4,11 @@
 ; void FUN_00511590(int param_1)
 ;
 ;
-; XREF[1]:
+; XREF[4]:
+;   FUN_0040a140 at 0040a1e9
 ;   FUN_0048b6f0 at 0048bd16
+;   FUN_004c70a0 at 004c7186
+;   FUN_004c71a0 at 004c73d3
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\setcolid.cpp_00590b04

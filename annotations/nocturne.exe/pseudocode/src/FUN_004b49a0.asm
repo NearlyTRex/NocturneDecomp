@@ -8,6 +8,17 @@
 ; undefined        Stack[-0x70]:1  local_70
 ; undefined        Stack[-0xc]:1  local_c
 ;
+; XREF[9]:
+;   FUN_00411080 at 00411086
+;   FUN_0043a9e0 at 0043a9e5
+;   FUN_00498c10 at 00498c16
+;   FUN_004b3fe0 at 004b3fe5
+;   FUN_004bb4c0 at 004bb4c5
+;   FUN_004de680 at 004de686
+;   FUN_004fcae0 at 004fcae5
+;   FUN_0053cf90 at 0053cf96
+;   FUN_00542d10 at 00542d15
+;
 ; Referenced Globals:
 ;   string s_motion_state_005856ca
 ;   string s_partStatus_005856d7

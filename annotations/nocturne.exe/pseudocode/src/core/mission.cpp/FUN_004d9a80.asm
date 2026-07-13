@@ -4,9 +4,10 @@
 ; undefined4 FUN_004d9a80(int param_1,undefined4 param_2)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
 ;   FUN_004a4b50 at 004a4eac
 ;   FUN_004d9440 at 004d9596
+;   FUN_004eb520 at 004ebb4d
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\mission.cpp_00589f69

@@ -4,18 +4,18 @@
 ; void FUN_00511780(int param_1,int param_2)
 ;
 ;
-; XREF[12]:
+; XREF[38]:
+;   FUN_0040a140 at 0040a166
+;   FUN_0040b300 at 0040b7da
+;   FUN_0040d930 at 0040d999
+;   FUN_0040d9f0 at 0040da6b
+;   FUN_00418a00 at 00418ec2
 ;   FUN_00425050 at 00425193
 ;   FUN_00429730 at 00429a8d
-;   FUN_0048b6f0 at 0048be91
-;   FUN_00496d10 at 004971a9
-;   FUN_00498b60 at 00498b74
-;   FUN_00498de0 at 00499025
-;   FUN_004998c0 at 00499939
-;   FUN_004fda20 at 004fdc65
-;   FUN_0053c800 at 0053ccc4
-;   FUN_0053d910 at 0053e063
-;   ... and 2 more
+;   FUN_0043bdb0 at 0043bf09
+;   FUN_0043d1c0 at 0043d330
+;   FUN_00454750 at 004548c0
+;   ... and 28 more
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\setcolid.cpp_00590b43

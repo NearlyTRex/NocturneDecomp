@@ -6,8 +6,10 @@
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
 ;
-; XREF[1]:
+; XREF[3]:
 ;   FUN_0048ff70 at 00490099
+;   FUN_004f4630 at 004f465e
+;   FUN_004f46b0 at 004f46c1
 ;
 ; Referenced Globals:
 ;   string s_Unable_to_allocate_%u_bytes_for_b_0057a625

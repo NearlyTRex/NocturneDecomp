@@ -94,6 +94,7 @@ extern undefined2 DAT_005c1f4c;
 
 // undefined4
 extern undefined4 DAT_005c1660;
+extern undefined4 DAT_005c1664;
 extern undefined4 DAT_005c1668;
 extern undefined4 DAT_005c1680;
 extern undefined4 DAT_005c1684;

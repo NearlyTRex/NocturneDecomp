@@ -16,6 +16,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[2]:
+;   FUN_00418a00 at 00418a58
+;   FUN_00419f40 at 00419f7b
+;
 ; Referenced Globals:
 ;   string s_..\\core\\boneguy.cpp_0057950d
 ;   string s_CBoneGuy::explode_-_Not_enough_c_00579521

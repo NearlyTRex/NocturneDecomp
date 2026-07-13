@@ -4,8 +4,9 @@
 ; undefined8 FUN_004d9eac(void)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_004d9e70 at 004d9e71
+;   FUN_004d9f6f at 004d9f80
 ;
 ; Referenced Globals:
 ;   string s_GenuineIntel_005bb100

@@ -9,10 +9,10 @@
 ;   FUN_00564f32 at 00564f4c
 ;
 ; Referenced Globals:
-;   undefined1* PTR_LAB_005a4884 = 0056ff82
+;   undefined1* PTR_FUN_005a4884 = 0056ff82
 ;   undefined4 DAT_005a48b0
 ;   void* PTR_FUN_005a48bc = 0056b5ad
-;   void* PTR_LAB_005a48c4 = 0056b491
+;   void* PTR_FUN_005a48c4 = 0056b491
 ;
 ; Called Functions:
 ;   FUN_0056b503
@@ -46,7 +46,7 @@ section .text
     MOV EBX,EAX                         ; 0056b42d
     PUSH EAX                            ; 0056b42f
     SUB EBX,0x4                         ; 0056b430
-    MOV dword ptr [EAX + 0x28],0x5a4884 ; 0056b433 | PTR_LAB_005a4884
+    MOV dword ptr [EAX + 0x28],0x5a4884 ; 0056b433 | PTR_FUN_005a4884
     CALL FUN_0056fe65                   ; 0056b43a
         ;   XREF to: 0056fe65 (UNCONDITIONAL_CALL)  ; undefined FUN_0056fe65()
     MOV EAX,dword ptr [EBX]             ; 0056b43f
@@ -57,7 +57,7 @@ section .text
     MOV dword ptr [EBX + 0x44],0x5a48bc ; 0056b44c | PTR_FUN_005a48bc
     MOV EAX,dword ptr [EAX + 0x4]       ; 0056b453
     ADD ESP,0x10                        ; 0056b456
-    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a48c4 ; 0056b459 | PTR_LAB_005a48c4
+    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x5a48c4 ; 0056b459 | PTR_FUN_005a48c4
     LEA EAX,[EBX + 0x4]                 ; 0056b461
     PUSH EAX                            ; 0056b464
     MOV EAX,dword ptr [EBX]             ; 0056b465

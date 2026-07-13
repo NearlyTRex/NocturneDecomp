@@ -4,7 +4,8 @@
 ; void FUN_00403f50(void)
 ;
 ;
-; XREF[23]:
+; XREF[25]:
+;   FUN_00403fb0 at 00403fd2
 ;   FUN_0046f7e0 at 0046f82d
 ;   FUN_0046fb40 at 0046fc9a
 ;   FUN_0046fcd0 at 0046fe2a
@@ -14,8 +15,7 @@
 ;   FUN_00475470 at 0047594a
 ;   FUN_0049da10 at 0049de84
 ;   FUN_004a57c0 at 004a5b60
-;   FUN_004a6010 at 004a6186
-;   ... and 13 more
+;   ... and 15 more
 ;
 ; Called Functions:
 ;   FUN_00558a30

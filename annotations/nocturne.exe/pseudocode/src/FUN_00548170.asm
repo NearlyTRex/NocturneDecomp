@@ -4,6 +4,9 @@
 ; void FUN_00548170(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_005525e0 at 005525ec
+;
 ; Referenced Globals:
 ;   undefined4 s_triggerState_005969c6+1
 ;   string s_triggerSize_005969d4

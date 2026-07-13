@@ -12,7 +12,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[34]:
+; XREF[39]:
+;   FUN_00403fb0 at 00404003
 ;   FUN_0046f7e0 at 0046f8c5
 ;   FUN_0046fb40 at 0046fc95
 ;   FUN_0046fcd0 at 0046fe25
@@ -22,8 +23,7 @@
 ;   FUN_00471760 at 00471a1d
 ;   FUN_00474d70 at 00474e1b
 ;   FUN_0049d960 at 0049d9e0
-;   FUN_0049da10 at 0049e516
-;   ... and 24 more
+;   ... and 29 more
 ;
 ; Referenced Globals:
 ;   string s_..\\wincore\\wddvmem.cpp_00597ae0

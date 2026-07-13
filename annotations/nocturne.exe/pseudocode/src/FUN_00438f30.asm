@@ -4,7 +4,9 @@
 ; undefined4 * FUN_00438f30(undefined4 *param_1,uint param_2)
 ;
 ;
-; XREF[3]:
+; XREF[5]:
+;   FUN_00439c10 at 00439c30
+;   FUN_00439c70 at 00439c90
 ;   FUN_00446810 at 00446dc8
 ;   FUN_004a3b90 at 004a3f9d
 ;   FUN_004a4170 at 004a4593
@@ -36,7 +38,6 @@ section .text
     MOV EAX,EBX                         ; 00438f47
     POP EBX                             ; 00438f49
     LEA EAX,[EAX]                       ; 00438f4a
-    RET                                 ; 00438f50
     PUSH 0x59b470                       ; 00438f51 | DAT_0059b470
         ;   Label: LAB_00438f51
     PUSH EBX                            ; 00438f56

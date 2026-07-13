@@ -43,7 +43,7 @@ LAB_00403dde:
         }
       }
       else if (DAT_005b7624 < 0x11) {
-        uVar3 = *(ushort *)(_DAT_01c00c70 * 2 + 0x1bff720);
+        uVar3 = *(ushort *)(&DAT_01bff720 + _DAT_01c00c70 * 2);
         if (param_2 <= param_3) {
           param_3 = iVar5;
           do {

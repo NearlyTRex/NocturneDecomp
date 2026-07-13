@@ -4,7 +4,7 @@
 ; uint FUN_00564570(undefined4 *param_1)
 ;
 ;
-; XREF[21]:
+; XREF[22]:
 ;   FUN_0040c3a0 at 0040c3bb
 ;   FUN_0040c6d0 at 0040c6f0
 ;   FUN_0040cb00 at 0040cb1b
@@ -15,7 +15,7 @@
 ;   FUN_0040e3c0 at 0040e563
 ;   FUN_0043b690 at 0043b6c8
 ;   FUN_00452650 at 004526a3
-;   ... and 11 more
+;   ... and 12 more
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1ac0 = 005671e4

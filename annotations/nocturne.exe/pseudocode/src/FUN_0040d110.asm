@@ -4,6 +4,10 @@
 ; void FUN_0040d110(int *param_1,undefined4 param_2)
 ;
 ;
+; XREF[2]:
+;   FUN_00455ee0 at 004560a7
+;   FUN_004c66f0 at 004c6855
+;
 ; Referenced Globals:
 ;   string s_Rule_list_opening_brace_00577e70
 ;   undefined4 DAT_00577e88

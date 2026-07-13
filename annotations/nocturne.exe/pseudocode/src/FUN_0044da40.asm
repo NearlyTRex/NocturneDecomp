@@ -4,7 +4,7 @@
 ; float * FUN_0044da40(float *param_1,float *param_2,float *param_3)
 ;
 ;
-; XREF[40]:
+; XREF[49]:
 ;   FUN_0040a200 at 0040a213
 ;   FUN_0040a240 at 0040a25a
 ;   FUN_0041aaa0 at 0041ac2c
@@ -15,7 +15,7 @@
 ;   FUN_00427b60 at 00427d5e
 ;   FUN_0042af70 at 0042b17d
 ;   FUN_004366f0 at 00436ca3
-;   ... and 30 more
+;   ... and 39 more
 ;
 ; *****************************************************************************
 

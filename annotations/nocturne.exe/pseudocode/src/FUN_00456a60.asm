@@ -8,18 +8,18 @@
 ; undefined        Stack[-0x120]:1  local_120
 ; undefined4       Stack[-0x20]:4  local_20
 ;
-; XREF[43]:
+; XREF[48]:
 ;   FUN_00401010 at 0040109f
 ;   FUN_00401bd0 at 00401be0
+;   FUN_00403070 at 00403086
+;   FUN_00403130 at 00403140
 ;   FUN_00403460 at 00403486
 ;   FUN_00403500 at 00403510
 ;   FUN_00403630 at 004036b8
 ;   FUN_0040e3c0 at 0040e4b4
 ;   FUN_0042d240 at 0042d262
-;   FUN_00435240 at 00435263
-;   FUN_0043b690 at 0043b6b3
-;   FUN_00443250 at 004432f0
-;   ... and 33 more
+;   FUN_0042d480 at 0042d521
+;   ... and 38 more
 ;
 ; Called Functions:
 ;   FUN_00456700

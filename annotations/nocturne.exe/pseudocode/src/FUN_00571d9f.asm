@@ -9,7 +9,7 @@
 ;   FUN_00570449 at 00570487
 ;
 ; Referenced Globals:
-;   undefined1* PTR_LAB_005a4ab0 = 0056ff82
+;   undefined1* PTR_FUN_005a4ab0 = 0056ff82
 ;
 ; Called Functions:
 ;   FUN_00571ef0
@@ -22,7 +22,7 @@ section .text
         ;   Label: FUN_00571d9f
     MOV EBX,dword ptr [ESP + 0x8]       ; 00571da0
     MOV AH,byte ptr [EBX + 0x24]        ; 00571da4
-    MOV dword ptr [EBX + 0x28],0x5a4ab0 ; 00571da7 | PTR_LAB_005a4ab0
+    MOV dword ptr [EBX + 0x28],0x5a4ab0 ; 00571da7 | PTR_FUN_005a4ab0
     TEST AH,0x2                         ; 00571dae
     JNZ 0x00571db7                      ; 00571db1
         ;   XREF to: 00571db7 (CONDITIONAL_JUMP)  ; LAB_00571db7

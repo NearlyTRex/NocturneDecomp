@@ -12,9 +12,6 @@
 
 section .text
 
-    MOV EAX,0x1                         ; 0040a090
-        ;   Label: LAB_0040a090
-    RET                                 ; 0040a095
     MOV ECX,dword ptr [ESP + 0x4]       ; 0040d810
         ;   Label: FUN_0040d810
     MOV EDX,dword ptr [ESP + 0x8]       ; 0040d814
@@ -25,7 +22,7 @@ section .text
     CMP EDX,dword ptr [EAX + 0x38]      ; 0040d81e
         ;   Label: LAB_0040d81e
     JZ 0x0040a090                       ; 0040d821
-        ;   XREF to: 0040a090 (CONDITIONAL_JUMP)  ; LAB_0040a090
+        ;   XREF to: 0040a090 (CONDITIONAL_JUMP)
     MOV EAX,dword ptr [EAX + 0x28]      ; 0040d827
     TEST EAX,EAX                        ; 0040d82a
     JNZ 0x0040d81e                      ; 0040d82c

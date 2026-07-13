@@ -16,8 +16,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_0049da10 at 0049dd51
+;   FUN_004eb520 at 004ebae9
 ;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\netgame.cpp_0058bd29+1

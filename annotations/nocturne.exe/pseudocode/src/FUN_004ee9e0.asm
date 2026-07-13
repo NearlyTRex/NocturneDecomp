@@ -4,6 +4,13 @@
 ; void FUN_004ee9e0(int param_1)
 ;
 ;
+; XREF[5]:
+;   FUN_004b6750 at 004b6755
+;   FUN_004b6b20 at 004b6cbc
+;   FUN_004ef6d0 at 004ef6d8
+;   FUN_00543180 at 00543187
+;   FUN_005433d0 at 005433d7
+;
 ; Referenced Globals:
 ;   string s_priest.dfm_0058cacb
 ;

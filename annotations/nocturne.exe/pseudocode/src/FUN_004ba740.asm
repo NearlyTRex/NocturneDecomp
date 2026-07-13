@@ -7,6 +7,9 @@
 ; undefined        Stack[-0x30]:1  local_30
 ; undefined        Stack[-0x20]:1  local_20
 ;
+; XREF[1]:
+;   FUN_004b9fe0 at 004ba2e7
+;
 ; Referenced Globals:
 ;   string s_shoot_0058618a
 ;   undefined4 DAT_00586192

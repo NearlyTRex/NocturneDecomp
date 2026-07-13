@@ -16,7 +16,7 @@ void FUN_005537e0(void)
   int iVar3;
   
   if (_DAT_01c02594 != 0) {
-    (*_DAT_02dc9ddc)(&DAT_01c00648,0x1bff720);
+    (*_DAT_02dc9ddc)(&DAT_01c00648,&DAT_01bff720);
     FUN_004b63f0();
     return;
   }

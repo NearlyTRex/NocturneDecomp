@@ -4,6 +4,9 @@
 ; void FUN_00438390(int *param_1,char *param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_005350c0 at 00535437
+;
 ; Referenced Globals:
 ;   string s_..\\core\\cloth.cpp_0057af2b
 ;   string s_CClothList::add_-_list_is_full_0057af3d

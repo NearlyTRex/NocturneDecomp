@@ -1,0 +1,55 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; undefined4 FUN_00548af0(undefined4 param_1,undefined4 param_2)
+;
+;
+; XREF[1]:
+;   FUN_004a5e40 at 004a5e86
+;
+; Referenced Globals:
+;   undefined4 DAT_01cc4800
+;   undefined4 DAT_01cc4804
+;
+; Called Functions:
+;   FUN_004c8440
+;   FUN_00548bf0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00548af0
+        ;   Label: FUN_00548af0
+    MOV EBX,dword ptr [ESP + 0x8]       ; 00548af1
+    MOV EDX,dword ptr [ESP + 0xc]       ; 00548af5
+    PUSH EDX                            ; 00548af9
+    PUSH EBX                            ; 00548afa
+    CALL FUN_00548bf0                   ; 00548afb
+        ;   XREF to: 00548bf0 (UNCONDITIONAL_CALL)  ; undefined FUN_00548bf0()
+    ADD ESP,0x8                         ; 00548b00
+    TEST EAX,EAX                        ; 00548b03
+    JZ 0x00548b0b                       ; 00548b05
+        ;   XREF to: 00548b0b (CONDITIONAL_JUMP)  ; LAB_00548b0b
+    MOV EAX,EBX                         ; 00548b07
+    POP EBX                             ; 00548b09
+    RET                                 ; 00548b0a
+    PUSH EDI                            ; 00548b0b
+        ;   Label: LAB_00548b0b
+    PUSH ESI                            ; 00548b0c
+    MOV EDI,dword ptr [ESP + 0x14]      ; 00548b0d
+    PUSH EDI                            ; 00548b11
+    MOV ECX,0x596b9f                    ; 00548b12
+    MOV ESI,0x36                        ; 00548b17
+    PUSH 0x596bb6                       ; 00548b1c
+    MOV dword ptr [0x01cc4800],ECX      ; 00548b21 | DAT_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00548b27 | DAT_01cc4804
+    CALL FUN_004c8440                   ; 00548b2d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    ADD ESP,0x8                         ; 00548b32
+    POP ESI                             ; 00548b35
+    POP EDI                             ; 00548b36
+    MOV EAX,EBX                         ; 00548b37
+    POP EBX                             ; 00548b39
+    RET                                 ; 00548b3a
+

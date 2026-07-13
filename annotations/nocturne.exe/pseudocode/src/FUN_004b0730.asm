@@ -4,6 +4,9 @@
 ; undefined4 FUN_004b0730(undefined4 param_1,float *param_2,undefined4 *param_3)
 ;
 ;
+; XREF[1]:
+;   FUN_0040db50 at 0040dbea
+;
 ; Referenced Globals:
 ;   undefined4 DAT_005851c8
 ;   undefined4 DAT_005851d0

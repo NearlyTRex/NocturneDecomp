@@ -8,7 +8,7 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[29]:
+; XREF[33]:
 ;   FUN_00403f50 at 00403f6d
 ;   FUN_0046f680 at 0046f73d
 ;   FUN_00471660 at 004716ec
@@ -19,7 +19,7 @@
 ;   FUN_0049a890 at 0049a890
 ;   FUN_0049a8a0 at 0049a8a7
 ;   FUN_0049cc10 at 0049ccc4
-;   ... and 19 more
+;   ... and 23 more
 ;
 ; Referenced Globals:
 ;   void* PTR_timeGetTime_005753ec = 0017584a

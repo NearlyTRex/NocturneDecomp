@@ -4,8 +4,9 @@
 ; undefined4 * FUN_00548d50(undefined4 *param_1,short *param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_00549010 at 00549072
+;   FUN_005491e0 at 00549218
 ;
 ; Referenced Globals:
 ;   string s_..\\support\\trisock.cpp_00596c29

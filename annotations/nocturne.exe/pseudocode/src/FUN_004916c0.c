@@ -350,7 +350,7 @@ int FUN_004916c0(int param_1,int param_2,int param_3,int param_4,int param_5,int
         }
       }
       else {
-        uVar1 = *(ushort *)(param_5 * 2 + 0x1bff720);
+        uVar1 = *(ushort *)(&DAT_01bff720 + param_5 * 2);
         if (*(int *)(param_1 + 0x1d64) == 0) {
           for (; param_4 <= local_cc; param_4 = param_4 + 1) {
             puVar14 = (ushort *)(param_3 * 2 + *(int *)(&DAT_01bd2fa0 + iVar7));

@@ -4,9 +4,10 @@
 ; int FUN_00564bc0(byte *param_1,undefined1 *param_2,int param_3)
 ;
 ;
-; XREF[12]:
+; XREF[14]:
 ;   FUN_00425050 at 004255e8
 ;   FUN_00428710 at 00428738
+;   FUN_00478790 at 004789e0
 ;   FUN_0047ac50 at 0047ae25
 ;   FUN_004a4170 at 004a45e4
 ;   FUN_004d9680 at 004d96af
@@ -14,8 +15,7 @@
 ;   FUN_00504c70 at 00504cef
 ;   FUN_00506f10 at 005079a3
 ;   FUN_0050d040 at 0050d15d
-;   FUN_0052c9d0 at 0052cd03
-;   ... and 2 more
+;   ... and 4 more
 ;
 ; *****************************************************************************
 

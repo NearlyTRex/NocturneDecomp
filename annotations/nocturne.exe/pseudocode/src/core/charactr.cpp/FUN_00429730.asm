@@ -4,6 +4,9 @@
 ; void FUN_00429730(int param_1,float param_2,int param_3)
 ;
 ;
+; XREF[1]:
+;   FUN_004b6d80 at 004b736b
+;
 ; Referenced Globals:
 ;   string s_CHero_0057a272
 ;   string s_..\\core\\charactr.cpp_0057a278

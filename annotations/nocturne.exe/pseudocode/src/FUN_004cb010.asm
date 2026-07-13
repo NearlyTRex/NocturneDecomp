@@ -14,6 +14,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_004c9cf0 at 004c9d59
+;
 ; Referenced Globals:
 ;   undefined4 s_manpuz-chargegemloop-red.wav_00587fc8+2
 ;   string s_manpuz-chargegemloop-green.wav_00587fe7

@@ -4,8 +4,11 @@
 ; void FUN_0040cf70(int *param_1,undefined4 param_2)
 ;
 ;
-; XREF[1]:
+; XREF[4]:
 ;   FUN_004244b0 at 004245ba
+;   FUN_004b8320 at 004b83d2
+;   FUN_004dc180 at 004dc1f0
+;   FUN_00561aa0 at 00561ba1
 ;
 ; Referenced Globals:
 ;   string s_Cloth_list_opening_brace_00577dd9

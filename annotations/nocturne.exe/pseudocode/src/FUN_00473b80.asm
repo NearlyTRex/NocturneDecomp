@@ -4,8 +4,9 @@
 ; int FUN_00473b80(int param_1,byte param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_00474cf0 at 00474d26
+;   FUN_004fe4d0 at 004fe4e4
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_FUN_0059ca74 = 00473b80

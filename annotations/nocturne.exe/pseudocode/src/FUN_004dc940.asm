@@ -9,6 +9,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_004da790 at 004daeda
+;
 ; Referenced Globals:
 ;   string s_mobster-cheese-%c-%c-%d.wav_0058a4ad
 ;   undefined4 DAT_0058a4c9

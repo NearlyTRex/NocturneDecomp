@@ -9,6 +9,9 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x18]:4  local_18
 ;
+; XREF[1]:
+;   FUN_00418a00 at 0041936a
+;
 ; Referenced Globals:
 ;   undefined4 s_%s_can't_pick_up_%s,_sombody_els_0057937d+1
 ;   string s_%s_can't_pick_up_%s,_giving_up!!_005793b0

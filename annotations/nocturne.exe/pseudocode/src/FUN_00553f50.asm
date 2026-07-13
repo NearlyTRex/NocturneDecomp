@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
 ;
+; XREF[1]:
+;   FUN_004113f0 at 004113f5
+;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738

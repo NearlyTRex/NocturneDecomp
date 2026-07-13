@@ -21,10 +21,14 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[3]:
+; XREF[7]:
+;   FUN_0040a140 at 0040a18c
+;   FUN_0040d930 at 0040d9ab
+;   FUN_0040d9f0 at 0040da81
 ;   FUN_004876d0 at 00487725
 ;   FUN_004af730 at 004af75b
 ;   FUN_0053c800 at 0053ce36
+;   FUN_00546e10 at 00547456
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\setcolid.cpp_0059097d

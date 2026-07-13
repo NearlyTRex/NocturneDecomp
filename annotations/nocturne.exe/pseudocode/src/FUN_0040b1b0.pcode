@@ -66,11 +66,6 @@ COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
 @0040b1ee [ESP:+0]  # MOV ECX, ECX
 COPY (register,0x4,4) /* ECX */ = (register,0x4,4) /* ECX */
 
-@0040b1f0 [ESP:+4](+4)  # RET
-LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
-INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-RETURN (register,0x284,4)
-
 # ============================================================================
-# Summary: 12 instructions, 31 P-code ops
+# Summary: 11 instructions, 28 P-code ops
 # ============================================================================

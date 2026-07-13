@@ -4,7 +4,8 @@
 ; void FUN_00480410(int param_1)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_0047a9e0 at 0047a9ef
 ;   FUN_004a4170 at 004a42c2
 ;   FUN_004a4b50 at 004a4e29
 ;

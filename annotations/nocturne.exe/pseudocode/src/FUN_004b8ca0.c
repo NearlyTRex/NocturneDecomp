@@ -16,7 +16,7 @@ int FUN_004b8ca0(uint param_1)
   int iVar3;
   
   iVar3 = FUN_00479560(param_1);
-  *(byte ***)(iVar3 + 0x14c) = &PTR_LAB_0059f0d4;
+  *(byte ***)(iVar3 + 0x14c) = &PTR_FUN_0059f0d4;
   FUN_0051e0c0(iVar3 + 0x150,"hotdemon.dfm");
   uVar2 = _DAT_0059f0c4;
   uVar1 = _DAT_0059f0c0;

@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "constants.h"
 
 // =============================================================================
 // CONSTANTS
@@ -225,15 +226,26 @@ static string s_Unable_to_open_font_bin_005770fe = "Unable to open font.bin";
 static string s_default_act_00577119 = "default.act";
 static string s_engine_2d_c_0057715b = "..\\engine\\2d.c";
 static string s_Unable_to_open_VGA_palette_0057716a = "Unable to open VGA palette";
+static string s_engine_2d_c_0057719a = "..\\engine\\2d.c";
+static string s_Unable_to_read_fog_table_005771a9 = "Unable to read fog table.";
+static string s_engine_2d_c_005771ca = "..\\engine\\2d.c";
+static string s_Unable_to_write_fog_tab_005771d9 = "Unable to write fog tab";
 static string s_engine_2d_c_0057720e = "..\\engine\\2d.c";
 static string s_Unable_to_write_light_tab_0057721d = "Unable to write light tab";
 static string s_hose_00577253 = "hose!";
 static string s_engine_2d_c_0057726c = "..\\engine\\2d.c";
 static string s_Unable_to_write_quick_map_0057727b = "Unable to write quick map!";
+static string s_engine_2d_c_00577296 = "..\\engine\\2d.c";
+static string s_draw320x200SizeDot_unknown_grap_005772a5 = "draw320x200SizeDot: unknown graphics option";
+static string s_engine_2d_c_005772d1 = "..\\engine\\2d.c";
+static string s_2d_line_clipping_exceeded_max_it_005772e0 = "2d line clipping exceeded max iterations";
 static string s_engine_2d_c_00577309 = "..\\engine\\2d.c";
 static string s_hLine_invalid_bitsPerPixel_00577318 = "hLine - invalid bitsPerPixel";
 static string s_engine_2d_c_00577335 = "..\\engine\\2d.c";
 static string s_vLine_invalid_bitsPerPixel_00577344 = "vLine - invalid bitsPerPixel";
+static string s_s_s_00577361 = "%s%s_    ";
+static string s_engine_2d_c_00577489 = "..\\engine\\2d.c";
+static string s_unmapFrameBuffer_frame_buffer_w_00577498 = "unmapFrameBuffer - frame buffer was not mapped!";
 static string s_Old_func_d_005774c8 = "Old func : %d";
 static string s_engine_3d_c_005774d6 = "..\\engine\\3d.c";
 static string s_engine_3d_c_005774e5 = "..\\engine\\3d.c";
@@ -1590,7 +1602,6 @@ static void* DAT_005754A4 = (void*)0x00175B34;
 static void* DAT_005754AC = (void*)0x00175B5A;
 static void* DAT_005754D8 = (void*)0x00175C32;
 static void* DAT_005754E0 = (void*)0x00175C5A;
-static void* DAT_005754E4 = (void*)0x00175C64;
 static void* DAT_0057550C = (void*)0x00175D2A;
 static void* DAT_00575510 = (void*)0x00175D40;
 static void* DAT_00575520 = (void*)0x00175D80;
@@ -1601,13 +1612,9 @@ static void* DAT_00575594 = (void*)0x00175FB8;
 static void* DAT_005755A4 = (void*)0x00176006;
 static void* DAT_005755AC = (void*)0x00176024;
 static void* DAT_005755BC = (void*)0x0017606E;
-static void* DAT_00575604 = (void*)0x8000000C;
-static void* DAT_00575608 = (void*)0x80000006;
 static void* DAT_0057560C = (void*)0x80000001;
 static void* DAT_00575610 = (void*)0x8000000D;
 static void* DAT_00575628 = (void*)0x80000004;
-static void* DAT_0057562C = (void*)0x80000002;
-static void* DAT_00575630 = (void*)0x80000017;
 
 // word constants
 static word DAT_005756A6 = 0x1;

@@ -7,18 +7,18 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[24]:
+; XREF[44]:
+;   FUN_00412480 at 0041287b
 ;   FUN_00412de0 at 00412e8a
 ;   FUN_00413780 at 00413785
+;   FUN_00413800 at 00413fa1
 ;   FUN_004145f0 at 0041469a
 ;   FUN_00417eb0 at 00417eb5
+;   FUN_0041fe40 at 004201c7
 ;   FUN_00420a10 at 00420aaf
+;   FUN_00420c40 at 00420d1f
 ;   FUN_004277f0 at 0042783d
-;   FUN_004278e0 at 004278ff
-;   FUN_00427990 at 004279af
-;   FUN_0043c360 at 0043c3e6
-;   FUN_0047e0d0 at 00480091
-;   ... and 14 more
+;   ... and 34 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00578061

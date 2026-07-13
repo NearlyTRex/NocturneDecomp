@@ -4,8 +4,9 @@
 ; LPSTR FUN_00565d00(LPSTR param_1,LPCSTR param_2,uint param_3)
 ;
 ;
-; XREF[4]:
+; XREF[5]:
 ;   FUN_00456800 at 00456832
+;   FUN_00474ae0 at 00474c2c
 ;   FUN_004f7ae0 at 004f7b12
 ;   FUN_005687bc at 00568807
 ;   FUN_0056c864 at 0056c8cd

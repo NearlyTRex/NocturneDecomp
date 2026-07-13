@@ -9,6 +9,9 @@
 ; undefined4       Stack[-0x78]:4  local_78
 ; undefined        Stack[-0x74]:1  local_74
 ;
+; XREF[1]:
+;   FUN_0054c690 at 0054c6e2
+;
 ; Referenced Globals:
 ;   string s_wing?.wav_@%f_00597135
 ;   string s_wing?.wav_@1.5_*1.2_00597143

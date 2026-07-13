@@ -19,9 +19,10 @@
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
-; XREF[2]:
+; XREF[3]:
 ;   FUN_004eea20 at 004eea4a
 ;   FUN_00535900 at 00535a4e
+;   FUN_00541d00 at 00541d6b
 ;
 ; Referenced Globals:
 ;   undefined4 s_Bip01_head_0057a471+1

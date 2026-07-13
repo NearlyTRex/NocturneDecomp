@@ -4,9 +4,18 @@
 ; void FUN_0040cb00(undefined4 param_1,undefined4 param_2)
 ;
 ;
-; XREF[2]:
-;   FUN_004b49a0 at 004b49da
-;   FUN_004eed10 at 004eed4d
+; XREF[28]:
+;   FUN_00412d80 at 00412dbd
+;   FUN_00414510 at 0041454d
+;   FUN_00415160 at 0041519d
+;   FUN_00415870 at 004158ad
+;   FUN_00419ce0 at 00419d41
+;   FUN_00420970 at 004209ee
+;   FUN_0043c2e0 at 0043c32d
+;   FUN_00454dc0 at 00454e0d
+;   FUN_0045a450 at 0045a526
+;   FUN_004630e0 at 0046312d
+;   ... and 18 more
 ;
 ; Referenced Globals:
 ;   string s_motion_state_info_opening_brace_00577c8c

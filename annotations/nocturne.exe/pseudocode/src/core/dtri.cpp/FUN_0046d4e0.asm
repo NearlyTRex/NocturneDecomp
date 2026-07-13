@@ -6,6 +6,11 @@
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ;
+; XREF[3]:
+;   FUN_0046d680 at 0046d75c
+;   FUN_0046d7e0 at 0046d8c2
+;   FUN_0046dc10 at 0046dcf2
+;
 ; Referenced Globals:
 ;   undefined4 s_..\\core\\dtri.cpp_0057e48d+1
 ;   string s_Bad_clip!_0057e49f

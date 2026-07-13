@@ -190,15 +190,7 @@ extern dword DAT_00575090;
 extern dword DAT_00575094;
 
 // string
-extern string DAT_0057719A;
-extern string DAT_005771A9;
-extern string DAT_005771CA;
-extern string DAT_005771D9;
 extern string DAT_00577243;
-extern string DAT_00577296;
-extern string DAT_005772A5;
-extern string DAT_005772D1;
-extern string DAT_005772E0;
 extern string DAT_0057736B;
 extern string DAT_0057737A;
 extern string DAT_0057739B;
@@ -211,8 +203,6 @@ extern string DAT_0057742A;
 extern string DAT_00577439;
 extern string DAT_00577459;
 extern string DAT_00577468;
-extern string DAT_00577489;
-extern string DAT_00577498;
 extern string DAT_0057751C;
 extern string DAT_0057752B;
 extern string DAT_0057754B;

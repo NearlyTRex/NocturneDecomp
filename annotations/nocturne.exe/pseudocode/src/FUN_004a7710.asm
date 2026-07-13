@@ -15,6 +15,9 @@
 ; undefined        Stack[-0x18]:1  local_18
 ; undefined4       Stack[-0xc]:4  local_c
 ;
+; XREF[1]:
+;   FUN_004a7870 at 004a7c66
+;
 ; Referenced Globals:
 ;   undefined4 DAT_00584980
 ;   undefined4 DAT_00584988

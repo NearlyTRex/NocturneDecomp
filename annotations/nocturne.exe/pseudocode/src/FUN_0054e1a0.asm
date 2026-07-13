@@ -4,6 +4,9 @@
 ; void FUN_0054e1a0(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0054c690 at 0054d281
+;
 ; Referenced Globals:
 ;   string s_voicubat.wav_00597249
 ;

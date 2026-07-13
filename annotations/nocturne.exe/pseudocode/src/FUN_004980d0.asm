@@ -30,6 +30,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined        Stack[-0x10]:1  local_10
 ;
+; XREF[1]:
+;   FUN_00495a20 at 00496173
+;
 ; Referenced Globals:
 ;   undefined4 s_CCrossbow_00582129+1
 ;   undefined4 DAT_0059dca4

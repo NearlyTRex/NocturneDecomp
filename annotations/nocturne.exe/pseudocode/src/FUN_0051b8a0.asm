@@ -4,12 +4,18 @@
 ; void FUN_0051b8a0(int param_1)
 ;
 ;
-; XREF[5]:
-;   FUN_00497900 at 0049791c
-;   FUN_004d4f30 at 004d56f9
-;   FUN_004eea20 at 004eec54
-;   FUN_0051b880 at 0051b885
-;   FUN_005384d0 at 00538557
+; XREF[38]:
+;   FUN_00410490 at 004106e4
+;   FUN_00412480 at 00412675
+;   FUN_00413800 at 00413a23
+;   FUN_004150d0 at 0041513c
+;   FUN_004154b0 at 0041568f
+;   FUN_00418a00 at 00418f92
+;   FUN_0041fe40 at 00420888
+;   FUN_00439f50 at 0043a17b
+;   FUN_0043bdb0 at 0043bfd6
+;   FUN_00454750 at 0045498d
+;   ... and 28 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00591b63

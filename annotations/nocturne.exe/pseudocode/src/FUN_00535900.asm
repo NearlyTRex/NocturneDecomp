@@ -7,6 +7,9 @@
 ; undefined        Stack[-0x250]:1  local_250
 ; undefined4       Stack[-0x24]:4  local_24
 ;
+; XREF[1]:
+;   FUN_005357d0 at 00535813
+;
 ; Referenced Globals:
 ;   void* switchdataD_005358a0 = 0053737b
 ;   void* switchdataD_005358b8 = 005371d5

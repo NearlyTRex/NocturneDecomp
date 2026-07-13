@@ -173,6 +173,8 @@ extern undefined4 DAT_005b06e0;
 extern undefined4 DAT_005b06e4;
 extern undefined4 DAT_005b06e8;
 extern undefined4 DAT_005b5d00;
+extern undefined4 DAT_005b6d54;
+extern undefined4 DAT_005b6d58;
 extern undefined4 DAT_005b7078;
 extern undefined4 DAT_005b707c;
 extern undefined4 DAT_005b7278;

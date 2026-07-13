@@ -4,9 +4,18 @@
 ; undefined8 FUN_00529a90(uint param_1)
 ;
 ;
-; XREF[2]:
+; XREF[15]:
 ;   FUN_00529c10 at 00529d5e
-;   FUN_0052bef0 at 0052bf67
+;   FUN_00529f60 at 0052a02e
+;   FUN_0052a0d0 at 0052a196
+;   FUN_0052a450 at 0052a81d
+;   FUN_0052a970 at 0052a9f6
+;   FUN_0052ab60 at 0052acf4
+;   FUN_0052adc0 at 0052ae50
+;   FUN_0052ae90 at 0052af1a
+;   FUN_0052af50 at 0052b122
+;   FUN_0052b270 at 0052b572
+;   ... and 5 more
 ;
 ; Referenced Globals:
 ;   string s_DSERR_ALLOCATED:_The_request_fai_00593b8f

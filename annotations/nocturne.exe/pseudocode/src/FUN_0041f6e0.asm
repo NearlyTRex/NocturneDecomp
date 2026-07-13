@@ -8,6 +8,9 @@
 ; undefined        Stack[-0x90]:1  local_90
 ; undefined4       Stack[-0x18]:4  local_18
 ;
+; XREF[1]:
+;   FUN_0041f3a0 at 0041f3a6
+;
 ; Referenced Globals:
 ;   string s_flashlit.kfm_005799b8
 ;   string s_lantern.kfm_005799c5

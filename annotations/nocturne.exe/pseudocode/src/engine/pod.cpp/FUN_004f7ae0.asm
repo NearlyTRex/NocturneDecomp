@@ -25,6 +25,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[2]:
+;   FUN_004f88a0 at 004f8903
+;   FUN_004f8970 at 004f89b4
+;
 ; Referenced Globals:
 ;   undefined4 DAT_0058d9ac
 ;   string s_..\\engine\\pod.cpp_0058d9af

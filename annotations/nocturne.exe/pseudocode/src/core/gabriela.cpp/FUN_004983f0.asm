@@ -30,6 +30,9 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x18]:4  local_18
 ;
+; XREF[1]:
+;   FUN_00495a20 at 00496721
+;
 ; Referenced Globals:
 ;   string s_..\\core\\gabriela.cpp_00582134
 ;   string s_Hell_froze_-_invalid_pickUpType:_00582149

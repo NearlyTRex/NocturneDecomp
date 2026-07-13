@@ -4,6 +4,14 @@
 ; void FUN_0043cdb0(int param_1)
 ;
 ;
+; XREF[6]:
+;   FUN_0040b300 at 0040bc87
+;   FUN_00477890 at 00477f75
+;   FUN_004b27c0 at 004b2f59
+;   FUN_00515ea0 at 005165bc
+;   FUN_00545c30 at 00546413
+;   FUN_0054ab10 at 0054afea
+;
 ; Referenced Globals:
 ;   undefined4 s_%s_exploding!_0057b45e+1
 ;   void* PTR_DAT_005ad350 = 0077ad0c

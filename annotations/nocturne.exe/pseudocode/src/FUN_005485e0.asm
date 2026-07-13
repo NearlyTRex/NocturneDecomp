@@ -7,8 +7,16 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ; undefined8       Stack[-0xc]:8  local_c
 ;
-; XREF[1]:
+; XREF[9]:
+;   FUN_0040b300 at 0040b6cb
+;   FUN_0043d1c0 at 0043d578
+;   FUN_00477890 at 00477d52
+;   FUN_004b27c0 at 004b2f38
+;   FUN_004c71a0 at 004c7751
 ;   FUN_00509140 at 0050955c
+;   FUN_00515ea0 at 005163ba
+;   FUN_00545c30 at 005463f2
+;   FUN_0054ab10 at 0054af84
 ;
 ; Referenced Globals:
 ;   string s_%s_received_%g_damage,_hitpoints_00596af2

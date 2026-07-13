@@ -12,8 +12,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_004296c0 at 004296e2
+;   FUN_0054c690 at 0054cc3f
 ;
 ; Called Functions:
 ;   FUN_0041cc00

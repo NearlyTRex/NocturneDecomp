@@ -4,9 +4,10 @@
 ; DWORD FUN_0056bc10(uint param_1)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
 ;   FUN_0056582c at 00565950
 ;   FUN_00566e70 at 00566e91
+;   FUN_00571fd1 at 0057211e
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFilePointer_005755a0 = 00175ff4

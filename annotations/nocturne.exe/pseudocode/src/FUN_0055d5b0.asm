@@ -6,9 +6,11 @@
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34
 ;
-; XREF[2]:
+; XREF[4]:
+;   FUN_00418a00 at 00418bd9
 ;   FUN_004f5ff0 at 004f60ee
 ;   FUN_005396d0 at 0053972f
+;   FUN_005497f0 at 00549bdf
 ;
 ; Called Functions:
 ;   FUN_0055b180

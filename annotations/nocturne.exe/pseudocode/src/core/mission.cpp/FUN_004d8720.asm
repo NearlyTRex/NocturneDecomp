@@ -6,8 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_004a3b90 at 004a3ca4
+;   FUN_004d7f80 at 004d7fa5
 ;
 ; Referenced Globals:
 ;   string s_Preparing_actors..._00589a4d

@@ -4,13 +4,18 @@
 ; int FUN_005179d0(int param_1,undefined4 param_2,int param_3)
 ;
 ;
-; XREF[6]:
+; XREF[39]:
+;   FUN_004102c0 at 004102e8
+;   FUN_00412160 at 00412192
+;   FUN_004134a0 at 004134d2
+;   FUN_00418800 at 00418829
+;   FUN_0041fc20 at 0041fc4c
 ;   FUN_00424260 at 004242fd
 ;   FUN_0042abd0 at 0042ac66
 ;   FUN_0042add0 at 0042ae13
 ;   FUN_004363e0 at 00436426
-;   FUN_004a0550 at 004a2d04
-;   FUN_0050a260 at 0050a298
+;   FUN_00439da0 at 00439dc8
+;   ... and 29 more
 ;
 ; Referenced Globals:
 ;   string s_..\\core\\skeleton.cpp_005913b0

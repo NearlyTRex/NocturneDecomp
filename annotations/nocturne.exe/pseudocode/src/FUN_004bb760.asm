@@ -1,0 +1,47 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int FUN_004bb760(undefined4 param_1)
+;
+;
+; Referenced Globals:
+;   string s_imp.dfm_00586282
+;   undefined4 DAT_0059f570
+;   undefined4 DAT_0059f574
+;   undefined1* PTR_FUN_0059f584 = 004bb7d0
+;
+; Called Functions:
+;   FUN_00479560
+;   FUN_0051e0c0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004bb760
+        ;   Label: FUN_004bb760
+    MOV EDX,dword ptr [ESP + 0x8]       ; 004bb761
+    PUSH EDX                            ; 004bb765
+    CALL FUN_00479560                   ; 004bb766
+        ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined FUN_00479560()
+    ADD ESP,0x4                         ; 004bb76b
+    PUSH 0x586282                       ; 004bb76e | = "imp.dfm"
+    MOV EBX,EAX                         ; 004bb773
+    ADD EAX,0x150                       ; 004bb775
+    PUSH EAX                            ; 004bb77a
+    MOV dword ptr [EAX + -0x4],0x59f584 ; 004bb77b | PTR_FUN_0059f584
+    CALL FUN_0051e0c0                   ; 004bb782
+        ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined FUN_0051e0c0()
+    FLD float ptr [0x0059f570]          ; 004bb787 | DAT_0059f570
+    MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 004bb78d
+    FLD float ptr [0x0059f574]          ; 004bb797 | DAT_0059f574
+    MOV dword ptr [EBX + 0x2dd8],0x3f000000 ; 004bb79d
+    ADD ESP,0x8                         ; 004bb7a7
+    MOV dword ptr [EBX + 0x261c],0x0    ; 004bb7aa
+    MOV EAX,EBX                         ; 004bb7b4
+    FXCH                                ; 004bb7b6
+    FSTP float ptr [EBX + 0x2ddc]       ; 004bb7b8
+    FSTP float ptr [EBX + 0x2de0]       ; 004bb7be
+    POP EBX                             ; 004bb7c4
+    RET                                 ; 004bb7c5
+

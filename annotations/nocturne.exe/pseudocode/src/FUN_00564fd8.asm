@@ -4,14 +4,17 @@
 ; int * FUN_00564fd8(int *param_1,byte param_2)
 ;
 ;
-; XREF[1]:
+; XREF[4]:
 ;   FUN_004390b0 at 00439108
+;   FUN_00439120 at 00439190
+;   FUN_00564faa at 00564fb7
+;   FUN_00564fc0 at 00564fcf
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059b4b0
 ;   void* PTR_FUN_005a4744 = 00564fd8
-;   void* PTR_LAB_005a474c = 00564faa
-;   void* PTR_LAB_005a4754 = 00564fc0
+;   void* PTR_FUN_005a474c = 00564faa
+;   void* PTR_FUN_005a4754 = 00564fc0
 ;
 ; Called Functions:
 ;   FUN_0056445f
@@ -38,11 +41,11 @@ section .text
     MOV dword ptr [EBX + 0x44],0x5a4744 ; 00564fef | PTR_FUN_005a4744
     PUSH 0x1                            ; 00564ff6
     MOV EAX,dword ptr [EBX]             ; 00564ff8
-    MOV dword ptr [EBX + 0x50],0x5a474c ; 00564ffa | PTR_LAB_005a474c
+    MOV dword ptr [EBX + 0x50],0x5a474c ; 00564ffa | PTR_FUN_005a474c
     ADD EBX,0x48                        ; 00565001
     MOV EAX,dword ptr [EAX + 0x4]       ; 00565004
     PUSH EBX                            ; 00565007
-    MOV dword ptr [EBX + EAX*0x1 + -0x20],0x5a4754 ; 00565008 | PTR_LAB_005a4754
+    MOV dword ptr [EBX + EAX*0x1 + -0x20],0x5a4754 ; 00565008 | PTR_FUN_005a4754
     CALL FUN_0056b6e8                   ; 00565010
         ;   XREF to: 0056b6e8 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b6e8()
     ADD ESP,0x8                         ; 00565015

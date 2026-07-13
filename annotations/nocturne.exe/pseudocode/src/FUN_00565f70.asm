@@ -4,9 +4,12 @@
 ; char * FUN_00565f70(char *param_1,char *param_2,int param_3)
 ;
 ;
-; XREF[3]:
+; XREF[6]:
 ;   FUN_00456d90 at 00456dbb
 ;   FUN_0046f0a0 at 0046f10c
+;   FUN_004ebfd0 at 004ec0cf
+;   FUN_004f3fc0 at 004f3fcc
+;   FUN_004f8b90 at 004f8cfa
 ;   FUN_0056c864 at 0056cb4b
 ;
 ; *****************************************************************************

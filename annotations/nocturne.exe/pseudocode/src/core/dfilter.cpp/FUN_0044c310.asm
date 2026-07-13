@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined        Stack[-0x10c]:1  local_10c
 ;
+; XREF[1]:
+;   FUN_00482010 at 0048212d
+;
 ; Referenced Globals:
 ;   undefined4 s_movscrn.raw_0057c06c+1
 ;   string s_movscrn.raw_0057c079

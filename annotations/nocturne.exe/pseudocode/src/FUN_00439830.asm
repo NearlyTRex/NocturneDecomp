@@ -9,7 +9,7 @@
 ;   FUN_004a3b90 at 004a3f0a
 ;
 ; Referenced Globals:
-;   undefined1* PTR_LAB_0059b414 = 00439c70
+;   undefined1* PTR_FUN_0059b414 = 00439c70
 ;
 ; Called Functions:
 ;   FUN_00438f20
@@ -37,7 +37,7 @@ section .text
     MOV dword ptr [EAX + 0x24],EDX      ; 00439857
     MOV EDX,0xffffffff                  ; 0043985a
     MOV CL,byte ptr [EAX + 0x24]        ; 0043985f
-    MOV dword ptr [EAX],0x59b414        ; 00439862 | PTR_LAB_0059b414
+    MOV dword ptr [EAX],0x59b414        ; 00439862 | PTR_FUN_0059b414
     SHL EDX,CL                          ; 00439868
     MOV dword ptr [EAX + 0x28],EDX      ; 0043986a
     NOT EDX                             ; 0043986d
