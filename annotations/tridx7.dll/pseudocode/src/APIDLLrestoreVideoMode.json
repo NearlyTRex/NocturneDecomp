@@ -1,0 +1,236 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 139,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 11,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 61
+  },
+  "cross_references": [],
+  "function": {
+    "address": "10002be0",
+    "address_range": [
+      [
+        "10002be0",
+        "10002c46"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "APIDLLrestoreVideoMode",
+    "signature": "undefined4 APIDLLrestoreVideoMode(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10002340",
+      "is_variadic": false,
+      "name": "FUN_10002340"
+    },
+    {
+      "addr": "10002370",
+      "is_variadic": false,
+      "name": "FUN_10002370"
+    },
+    {
+      "addr": "10002c50",
+      "is_variadic": false,
+      "name": "FUN_10002c50"
+    },
+    {
+      "addr": "EXTERNAL:00000044",
+      "is_variadic": false,
+      "name": "ShowCursor"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10014184",
+      "name": "DAT_10014184",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014188",
+      "name": "DAT_10014188",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100141f8",
+      "name": "DAT_100141f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016a14",
+      "name": "s_Cannot_unlock_back_buffe_10016a14",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10138fb8",
+      "name": "DAT_10138fb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10242294",
+      "name": "PTR_ShowCursor_10242294",
+      "type": "void*",
+      "value": "002422f0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5454545454545454,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CALLIND": 4,
+      "CBRANCH": 3,
+      "COPY": 27,
+      "INT_ADD": 6,
+      "INT_AND": 9,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 17,
+      "LOAD": 8,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 117
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_100141f8",
+      "severity": "mild",
+      "text": "if (DAT_100141f8 != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 14,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*DAT_10014184 + 0x28))(DAT_10014184);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_10014184",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014184 + 0x28))(DAT_10014184);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_10014184",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014184 + 0x28))(DAT_10014184);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*DAT_10014188 + 0x4c))(DAT_10014188);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10014188",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014188 + 0x4c))(DAT_10014188);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10014188",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014188 + 0x4c))(DAT_10014188);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,DAT_10138fb8,8);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_10014188",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,DAT_10138fb8,8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_10014188",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,DAT_10138fb8,8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_10138fb8",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014188 + 0x50))(DAT_10014188,DAT_10138fb8,8);",
+      "type": "undefined_data"
+    }
+  ]
+}

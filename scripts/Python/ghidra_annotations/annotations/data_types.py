@@ -1197,9 +1197,18 @@ def export_data_types(currentProgram, path):
                     if dep != dt_name and should_track_as_dependency(dep):
                         struct_deps.add(dep)
 
-                # Also add direct field type if it should be tracked as dependency
+                # Also add direct field type if it should be tracked as dependency.
+                # Pointer fields only need a forward declaration, not a hard
+                # dependency (mirrors the function-parameter handling above), so a
+                # pointer to an otherwise-undefined type must not be tracked here.
+                # Without this, tridx7.dll's Watcom locale struct (which has a
+                # __lc_time_data* field to an undefined __lc_time_data) aborts the
+                # whole program export via resolve_circular_dependencies' sys.exit.
+                dt_field_is_pointer = isinstance(dt_field_type, Pointer)
                 dt_field_type_name_norm = normalize_data_type_name(dt_field_type_name)
-                if should_track_as_dependency(dt_field_type_name_norm) and dt_field_type_name_norm != dt_name:
+                if (not dt_field_is_pointer
+                        and should_track_as_dependency(dt_field_type_name_norm)
+                        and dt_field_type_name_norm != dt_name):
                     struct_deps.add(dt_field_type_name_norm)
 
             # Record struct/union

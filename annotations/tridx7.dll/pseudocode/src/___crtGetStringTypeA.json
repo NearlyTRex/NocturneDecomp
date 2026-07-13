@@ -1,0 +1,293 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 142,
+    "complexity_score": 120,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 50,
+    "suspect_count": 6,
+    "suspect_types": [
+      "param_count_too_many",
+      "undefined_data"
+    ],
+    "total_lines": 192
+  },
+  "cross_references": [
+    {
+      "addr": "10009ac0",
+      "from_addr": "10009b2c",
+      "name": "__isctype",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000bfc0",
+    "address_range": [
+      [
+        "1000bfc0",
+        "1000c0e2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "___crtGetStringTypeA",
+    "signature": "BOOL __cdecl ___crtGetStringTypeA(_locale_t _Plocinfo,DWORD _DWInfoType,LPCSTR _LpSrcStr,int _CchSrc,LPWORD _LpCharType,int _Code_page,BOOL _BError)"
+  },
+  "function_calls": [
+    {
+      "addr": "10005b30",
+      "is_variadic": false,
+      "name": "FUN_10005b30"
+    },
+    {
+      "addr": "1000a750",
+      "is_variadic": false,
+      "name": "FUN_1000a750"
+    },
+    {
+      "addr": "EXTERNAL:00000039",
+      "is_variadic": false,
+      "name": "GetStringTypeA"
+    },
+    {
+      "addr": "EXTERNAL:0000003a",
+      "is_variadic": false,
+      "name": "GetStringTypeW"
+    },
+    {
+      "addr": "EXTERNAL:00000028",
+      "is_variadic": false,
+      "name": "MultiByteToWideChar"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1001276c",
+      "name": "DAT_1001276c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012770",
+      "name": "DAT_10012770",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017760",
+      "name": "DAT_10017760",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017770",
+      "name": "DAT_10017770",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017910",
+      "name": "DAT_10017910",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10242220",
+      "name": "PTR_MultiByteToWideChar_10242220",
+      "type": "void*",
+      "value": "0024257a"
+    },
+    {
+      "addr": "10242264",
+      "name": "PTR_GetStringTypeA_10242264",
+      "type": "void*",
+      "value": "002426b6"
+    },
+    {
+      "addr": "10242268",
+      "name": "PTR_GetStringTypeW_10242268",
+      "type": "void*",
+      "value": "002426c8"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10009b2c",
+        "call_type": "direct",
+        "caller": "__isctype",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 6,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7457627118644066,
+    "instruction_count": 118,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CALLIND": 6,
+      "CBRANCH": 10,
+      "COPY": 117,
+      "INT_ADD": 34,
+      "INT_AND": 45,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 38,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 19,
+      "INT_SUB": 49,
+      "INT_XOR": 3,
+      "LOAD": 27,
+      "POPCOUNT": 19,
+      "RETURN": 3,
+      "STORE": 45
+    },
+    "pcode_op_count": 442
+  },
+  "stack_frame": {
+    "frame_size": 34,
+    "local_size": 6,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2",
+        "offset": -2,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "_Plocinfo",
+        "offset": 4,
+        "size": 4,
+        "type": "_locale_t"
+      },
+      {
+        "is_param": true,
+        "name": "_DWInfoType",
+        "offset": 8,
+        "size": 4,
+        "type": "DWORD"
+      },
+      {
+        "is_param": true,
+        "name": "_LpSrcStr",
+        "offset": 12,
+        "size": 4,
+        "type": "LPCSTR"
+      },
+      {
+        "is_param": true,
+        "name": "_CchSrc",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "_LpCharType",
+        "offset": 20,
+        "size": 4,
+        "type": "LPWORD"
+      },
+      {
+        "is_param": true,
+        "name": "_Code_page",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "_BError",
+        "offset": 28,
+        "size": 4,
+        "type": "BOOL"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_10017910",
+      "severity": "mild",
+      "text": "iVar3 = DAT_10017910;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_10017910",
+      "severity": "mild",
+      "text": "if (DAT_10017910 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_10017910",
+      "severity": "mild",
+      "text": "DAT_10017910 = iVar3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_10017770",
+      "severity": "mild",
+      "text": "_LpCharType = DAT_10017770;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_10017760",
+      "severity": "mild",
+      "text": "_Code_page = DAT_10017760;",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 7,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 6,
+      "fix_type": "remove_params",
+      "match": "declared:7 vs estimated:6",
+      "param_delta": -1,
+      "text": "Function declares 7 params but call sites push 6 (1 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
+}

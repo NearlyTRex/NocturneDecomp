@@ -1,0 +1,240 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 124,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 9,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param",
+      "unrolled_strlen"
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [
+    {
+      "addr": "100070b0",
+      "from_addr": "100070e1",
+      "name": "__cftoe2",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10007210",
+      "from_addr": "10007268",
+      "name": "__cftof2",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100073f0",
+    "address_range": [
+      [
+        "100073f0",
+        "1000741a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "__shift",
+    "signature": "void __shift(char *param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000a4a0",
+      "is_variadic": false,
+      "name": "FID_conflict:_memcpy"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "100070e1",
+        "call_type": "direct",
+        "caller": "__cftoe2",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "10007268",
+        "call_type": "direct",
+        "caller": "__cftof2",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "10007280",
+        "call_type": "direct",
+        "caller": "__cftof2",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "100072ac",
+        "call_type": "direct",
+        "caller": "__cftof2",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.85,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 16,
+      "INT_ADD": 8,
+      "INT_AND": 11,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 11,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 10,
+      "INT_ZEXT": 1,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 97
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void __shift(char *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __shift(char *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar3 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FID_conflict__memcpy(param_1 + param_2,param_1,~uVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FID_conflict__memcpy(param_1 + param_2,param_1,~uVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FID_conflict__memcpy(param_1 + param_2,param_1,~uVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 13,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "call_site_count": 4,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

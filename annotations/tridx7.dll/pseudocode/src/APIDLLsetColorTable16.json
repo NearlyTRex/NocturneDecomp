@@ -1,0 +1,567 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 175,
+    "complexity_score": 371,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 14,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 66,
+    "suspect_count": 29,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memset"
+    ],
+    "total_lines": 241
+  },
+  "cross_references": [],
+  "function": {
+    "address": "10004b30",
+    "address_range": [
+      [
+        "10004b30",
+        "10004d02"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "APIDLLsetColorTable16",
+    "signature": "undefined4 APIDLLsetColorTable16(int param_1,ushort *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "10002340",
+      "is_variadic": false,
+      "name": "FUN_10002340"
+    },
+    {
+      "addr": "10002cb0",
+      "is_variadic": false,
+      "name": "FUN_10002cb0"
+    },
+    {
+      "addr": "10002e20",
+      "is_variadic": false,
+      "name": "FUN_10002e20"
+    },
+    {
+      "addr": "10004d10",
+      "is_variadic": false,
+      "name": "FUN_10004d10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10014180",
+      "name": "DAT_10014180",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016b50",
+      "name": "s_Could_not_lock_back_buff_10016b50",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10016b6c",
+      "name": "s_Could_not_unlock_back_bu_10016b6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10215e40",
+      "name": "DAT_10215e40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10226868",
+      "name": "DAT_10226868",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102268b8",
+      "name": "DAT_102268b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102268bc",
+      "name": "DAT_102268bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102268c0",
+      "name": "DAT_102268c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102268c4",
+      "name": "DAT_102268c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102268c8",
+      "name": "DAT_102268c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102268cc",
+      "name": "DAT_102268cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102268d0",
+      "name": "DAT_102268d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102268d4",
+      "name": "DAT_102268d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102268d8",
+      "name": "DAT_102268d8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.328859060402684,
+    "instruction_count": 149,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 51,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CBRANCH": 10,
+      "COPY": 126,
+      "INT_ADD": 35,
+      "INT_AND": 209,
+      "INT_CARRY": 11,
+      "INT_DIV": 6,
+      "INT_EQUAL": 106,
+      "INT_LEFT": 12,
+      "INT_LESS": 7,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 24,
+      "INT_OR": 53,
+      "INT_REM": 6,
+      "INT_RIGHT": 12,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 60,
+      "INT_SUB": 38,
+      "INT_XOR": 10,
+      "INT_ZEXT": 19,
+      "LOAD": 25,
+      "POPCOUNT": 48,
+      "RETURN": 1,
+      "STORE": 31,
+      "SUBPIECE": 12
+    },
+    "pcode_op_count": 943
+  },
+  "stack_frame": {
+    "frame_size": 128,
+    "local_size": 128,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "APIDLLsetColorTable16.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 16,
+          "line": 41,
+          "message": "Uninitialized variable: local_24",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 16,
+          "line": 49,
+          "message": "Uninitialized variable: local_20",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 16,
+          "line": 57,
+          "message": "Uninitialized variable: local_1c",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 45,
+          "line": 45,
+          "message": "Uninitialized variable: local_24",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 45,
+          "line": 53,
+          "message": "Uninitialized variable: local_20",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 45,
+          "line": 61,
+          "message": "Uninitialized variable: local_1c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint APIDLLsetColorTable16(int param_1,ushort *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint APIDLLsetColorTable16(int param_1,ushort *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "DAT_10215e40 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_10215e40",
+      "severity": "mild",
+      "text": "DAT_10215e40 = param_1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "DAT_10226868 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_10226868",
+      "severity": "mild",
+      "text": "DAT_10226868 = param_2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_10014180",
+      "severity": "mild",
+      "text": "iVar3 = FUN_10002e20(DAT_10014180,local_7c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_10014180",
+      "severity": "mild",
+      "text": "iVar3 = FUN_10002cb0(DAT_10014180);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_102268b8",
+      "severity": "mild",
+      "text": "*(int *)DAT_102268b8 = iVar3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_102268bc",
+      "severity": "mild",
+      "text": "*DAT_102268bc = (uint)(0xff / (ulonglong)(local_24 >> ((byte)iVar3 & 0x1f)));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_102268bc",
+      "severity": "mild",
+      "text": "uVar2 = FUN_10004d10(*DAT_102268bc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_102268c0",
+      "severity": "mild",
+      "text": "*DAT_102268c0 = uVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_102268c4",
+      "severity": "mild",
+      "text": "*(int *)DAT_102268c4 = iVar3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_102268c8",
+      "severity": "mild",
+      "text": "*DAT_102268c8 = (uint)(0xff / (ulonglong)(local_20 >> ((byte)iVar3 & 0x1f)));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_102268c8",
+      "severity": "mild",
+      "text": "uVar2 = FUN_10004d10(*DAT_102268c8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_102268cc",
+      "severity": "mild",
+      "text": "*DAT_102268cc = uVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_102268d0",
+      "severity": "mild",
+      "text": "*(int *)DAT_102268d0 = iVar3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_102268d4",
+      "severity": "mild",
+      "text": "*DAT_102268d4 = (uint)(0xff / (ulonglong)(local_1c >> ((byte)iVar3 & 0x1f)));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_102268d4",
+      "severity": "mild",
+      "text": "uVar2 = FUN_10004d10(*DAT_102268d4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_10226868",
+      "severity": "mild",
+      "text": "puVar6 = DAT_10226868;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_10215e40",
+      "severity": "mild",
+      "text": "pbVar4 = (byte *)(DAT_10215e40 + 2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_102268d8",
+      "severity": "mild",
+      "text": "*DAT_102268d8 = uVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_102268bc",
+      "severity": "mild",
+      "text": "*puVar6 = (short)((uint)pbVar4[-2] / *DAT_102268bc) << (*DAT_102268b8 & 0x1f) |",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_102268b8",
+      "severity": "mild",
+      "text": "*puVar6 = (short)((uint)pbVar4[-2] / *DAT_102268bc) << (*DAT_102268b8 & 0x1f) |",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_102268c8",
+      "severity": "mild",
+      "text": "(short)((uint)pbVar4[-1] / *DAT_102268c8) << (*DAT_102268c4 & 0x1f) |",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_102268c4",
+      "severity": "mild",
+      "text": "(short)((uint)pbVar4[-1] / *DAT_102268c8) << (*DAT_102268c4 & 0x1f) |",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_102268d4",
+      "severity": "mild",
+      "text": "(short)((uint)*pbVar4 / *DAT_102268d4) << (*DAT_102268d0 & 0x1f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_102268d0",
+      "severity": "mild",
+      "text": "(short)((uint)*pbVar4 / *DAT_102268d4) << (*DAT_102268d0 & 0x1f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 10004b5d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 16,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 10004b5d: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Uninitialized variable: local_24",
+      "line": 41,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "for (uVar1 = local_24; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_20",
+      "line": 49,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "for (uVar1 = local_20; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_1c",
+      "line": 57,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "for (uVar1 = local_1c; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_24",
+      "line": 45,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "*DAT_102268bc = (uint)(0xff / (ulonglong)(local_24 >> ((byte)iVar3 & 0x1f)));",
+      "type": "static_legacy_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_20",
+      "line": 53,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "*DAT_102268c8 = (uint)(0xff / (ulonglong)(local_20 >> ((byte)iVar3 & 0x1f)));",
+      "type": "static_legacy_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_1c",
+      "line": 61,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "*DAT_102268d4 = (uint)(0xff / (ulonglong)(local_1c >> ((byte)iVar3 & 0x1f)));",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

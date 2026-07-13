@@ -1,0 +1,274 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 174,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 29,
+    "suspect_count": 13,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 96
+  },
+  "cross_references": [
+    {
+      "addr": "10011360",
+      "from_addr": "100114be",
+      "name": "FUN_10011360",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10011680",
+    "address_range": [
+      [
+        "10011680",
+        "100116ee"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_10011680",
+    "signature": "LPVOID FUN_10011680(LPVOID param_1,uint param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000ab30",
+      "is_variadic": false,
+      "name": "__callnewh"
+    },
+    {
+      "addr": "10005b30",
+      "is_variadic": false,
+      "name": "FUN_10005b30"
+    },
+    {
+      "addr": "10008830",
+      "is_variadic": false,
+      "name": "FUN_10008830"
+    },
+    {
+      "addr": "EXTERNAL:00000005",
+      "is_variadic": false,
+      "name": "HeapReAlloc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10017780",
+      "name": "DAT_10017780",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241974",
+      "name": "DAT_10241974",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10242194",
+      "name": "PTR_HeapReAlloc_10242194",
+      "type": "void*",
+      "value": "002427ae"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "100114be",
+        "call_type": "direct",
+        "caller": "FUN_10011360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "100114ef",
+        "call_type": "direct",
+        "caller": "FUN_10011360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.38,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 50,
+      "INT_ADD": 17,
+      "INT_AND": 28,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 24,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 12,
+      "INT_SUB": 16,
+      "INT_XOR": 3,
+      "LOAD": 14,
+      "POPCOUNT": 12,
+      "RETURN": 3,
+      "STORE": 14
+    },
+    "pcode_op_count": 219
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "LPVOID FUN_10011680(LPVOID param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "LPVOID FUN_10011680(LPVOID param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == (LPVOID)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pvVar1 = (LPVOID)FUN_10008830(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 < 0xffffffe1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pvVar1 = HeapReAlloc(DAT_10241974,0,param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pvVar1 = HeapReAlloc(DAT_10241974,0,param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10241974",
+      "severity": "mild",
+      "text": "pvVar1 = HeapReAlloc(DAT_10241974,0,param_1,param_2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_10017780",
+      "severity": "mild",
+      "text": "if (DAT_10017780 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = __callnewh(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_10005b30(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

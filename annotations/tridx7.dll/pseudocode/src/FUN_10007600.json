@@ -1,0 +1,424 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 294,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 24,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_noreturn"
+    ],
+    "total_lines": 99
+  },
+  "cross_references": [
+    {
+      "addr": "100075e0",
+      "from_addr": "100075e6",
+      "name": "FUN_100075e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100075c0",
+      "from_addr": "100075c9",
+      "name": "__exit",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10007600",
+    "address_range": [
+      [
+        "10007600",
+        "100076ac"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_10007600",
+    "signature": "void FUN_10007600(UINT param_1,int param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "100076e0",
+      "is_variadic": false,
+      "name": "__initterm"
+    },
+    {
+      "addr": "EXTERNAL:00000001",
+      "is_variadic": false,
+      "name": "ExitProcess"
+    },
+    {
+      "addr": "100076c0",
+      "is_variadic": false,
+      "name": "FUN_100076c0"
+    },
+    {
+      "addr": "100076d0",
+      "is_variadic": false,
+      "name": "FUN_100076d0"
+    },
+    {
+      "addr": "EXTERNAL:00000015",
+      "is_variadic": false,
+      "name": "GetCurrentProcess"
+    },
+    {
+      "addr": "EXTERNAL:00000014",
+      "is_variadic": false,
+      "name": "TerminateProcess"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10014024",
+      "name": "DAT_10014024",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1001402c",
+      "name": "DAT_1001402c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014030",
+      "name": "DAT_10014030",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014034",
+      "name": "DAT_10014034",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016d98",
+      "name": "DAT_10016d98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016d9c",
+      "name": "DAT_10016d9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016da0",
+      "name": "DAT_10016da0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241978",
+      "name": "DAT_10241978",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1024197c",
+      "name": "DAT_1024197c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10242184",
+      "name": "PTR_ExitProcess_10242184",
+      "type": "void*",
+      "value": "002422b8"
+    },
+    {
+      "addr": "102421d0",
+      "name": "PTR_TerminateProcess_102421d0",
+      "type": "void*",
+      "value": "00242436"
+    },
+    {
+      "addr": "102421d4",
+      "name": "PTR_GetCurrentProcess_102421d4",
+      "type": "void*",
+      "value": "0024244a"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "100075e6",
+        "call_type": "direct",
+        "caller": "FUN_100075e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "100075c9",
+        "call_type": "direct",
+        "caller": "__exit",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.319148936170213,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 2,
+      "CALL": 4,
+      "CALLIND": 4,
+      "CBRANCH": 7,
+      "COPY": 36,
+      "INT_ADD": 9,
+      "INT_AND": 24,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 22,
+      "INT_LESS": 7,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 11,
+      "INT_SUB": 25,
+      "LOAD": 8,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 203
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_10007600(UINT param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_10007600(UINT param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void FUN_10007600(UINT param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_10016da0",
+      "severity": "mild",
+      "text": "if (DAT_10016da0 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uExitCode = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10016d9c",
+      "severity": "mild",
+      "text": "DAT_10016d9c = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "DAT_10016d98 = (byte)param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_10016d98",
+      "severity": "mild",
+      "text": "DAT_10016d98 = (byte)param_3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_1024197c",
+      "severity": "mild",
+      "text": "if ((DAT_1024197c != (uint *)0x0) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_10241978",
+      "severity": "mild",
+      "text": "(puVar1 = (uint *)(DAT_10241978 + -4), DAT_1024197c <= puVar1)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_1024197c",
+      "severity": "mild",
+      "text": "(puVar1 = (uint *)(DAT_10241978 + -4), DAT_1024197c <= puVar1)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 21,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((code *)*puVar1 != (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 21,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((code *)*puVar1 != (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 22,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)*puVar1)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_1024197c",
+      "severity": "mild",
+      "text": "} while (DAT_1024197c <= puVar1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_10014024",
+      "severity": "mild",
+      "text": "__initterm(&DAT_10014024,&DAT_1001402c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_1001402c",
+      "severity": "mild",
+      "text": "__initterm(&DAT_10014024,&DAT_1001402c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_10014030",
+      "severity": "mild",
+      "text": "__initterm(&DAT_10014030,&DAT_10014034);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_10014034",
+      "severity": "mild",
+      "text": "__initterm(&DAT_10014030,&DAT_10014034);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_10016da0",
+      "severity": "mild",
+      "text": "DAT_10016da0 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 35,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "ExitProcess(param_1);",
+      "type": "unnamed_param"
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 68,
+    "complexity_score": 169,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 11,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 102
+  },
+  "cross_references": [
+    {
+      "addr": "10005b50",
+      "from_addr": "10005b88",
+      "name": "__close",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10005bc0",
+    "address_range": [
+      [
+        "10005bc0",
+        "10005c48"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "__close_lk",
+    "signature": "undefined4 __close_lk(uint param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "100089a0",
+      "is_variadic": false,
+      "name": "__dosmaperr"
+    },
+    {
+      "addr": "EXTERNAL:00000013",
+      "is_variadic": false,
+      "name": "CloseHandle"
+    },
+    {
+      "addr": "10008c30",
+      "is_variadic": false,
+      "name": "FUN_10008c30"
+    },
+    {
+      "addr": "10008cd0",
+      "is_variadic": false,
+      "name": "FUN_10008cd0"
+    },
+    {
+      "addr": "EXTERNAL:00000012",
+      "is_variadic": false,
+      "name": "GetLastError"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10241870",
+      "name": "DAT_10241870",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421c8",
+      "name": "PTR_GetLastError_102421c8",
+      "type": "void*",
+      "value": "00242418"
+    },
+    {
+      "addr": "102421cc",
+      "name": "PTR_CloseHandle_102421cc",
+      "type": "void*",
+      "value": "00242428"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10005b88",
+        "call_type": "direct",
+        "caller": "__close",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.784313725490196,
+    "instruction_count": 51,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CALLIND": 2,
+      "CBRANCH": 5,
+      "COPY": 43,
+      "INT_ADD": 16,
+      "INT_AND": 58,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 34,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 9,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 18,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 20,
+      "INT_XOR": 3,
+      "LOAD": 8,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 295
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 3,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint __close_lk(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 == 1) || (param_1 == 2)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 == 1) || (param_1 == 2)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "hObject = (HANDLE)FUN_10008cd0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_10008c30(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)((int)&DAT_10241870 + ((int)(param_1 & 0xffffffe7) >> 3)) + 4 + (param_1 & 0x1f) * 0x24)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)((int)&DAT_10241870 + ((int)(param_1 & 0xffffffe7) >> 3)) + 4 + (param_1 & 0x1f) * 0x24)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_10241870",
+      "severity": "mild",
+      "text": "(*(int *)((int)&DAT_10241870 + ((int)(param_1 & 0xffffffe7) >> 3)) + 4 + (param_1 & 0x1f) * 0x24)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&DAT_10241870` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 34,
+      "match": "(int)&DAT_10241870",
+      "severity": "moderate",
+      "text": "(*(int *)((int)&DAT_10241870 + ((int)(param_1 & 0xffffffe7) >> 3)) + 4 + (param_1 & 0x1f) * 0x24)",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 34,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(*(int *)((int)&DAT_10241870 + ((int)(param_1 & 0xffffffe7) >> 3)) + 4 + (param_1 & 0x1f) * 0x24)",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

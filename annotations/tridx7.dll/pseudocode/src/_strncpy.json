@@ -1,0 +1,273 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 158,
+    "complexity_score": 233,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 103,
+    "suspect_count": 12,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 261
+  },
+  "cross_references": [
+    {
+      "addr": "10008610",
+      "from_addr": "100086e7",
+      "name": "FUN_10008610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000f6e0",
+      "from_addr": "1000f795",
+      "name": "FUN_1000f6e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10010050",
+      "from_addr": "10010230",
+      "name": "FUN_10010050",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000a9f0",
+    "address_range": [
+      [
+        "1000a9f0",
+        "1000aaed"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "_strncpy",
+    "signature": "char * __cdecl _strncpy(char *_Dest,char *_Source,size_t _Count)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "100086e7",
+        "call_type": "direct",
+        "caller": "FUN_10008610",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10010230",
+        "call_type": "direct",
+        "caller": "FUN_10010050",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "100102fb",
+        "call_type": "direct",
+        "caller": "FUN_10010050",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "1000f795",
+        "call_type": "direct",
+        "caller": "FUN_1000f6e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.431192660550459,
+    "instruction_count": 109,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 26,
+      "BRANCH": 4,
+      "CBRANCH": 24,
+      "COPY": 90,
+      "INT_ADD": 29,
+      "INT_AND": 136,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 87,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 15,
+      "INT_RIGHT": 6,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 45,
+      "INT_SUB": 13,
+      "INT_XOR": 5,
+      "LOAD": 22,
+      "POPCOUNT": 42,
+      "RETURN": 3,
+      "STORE": 13
+    },
+    "pcode_op_count": 592
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "_Dest",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "_Source",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "_Count",
+        "offset": 12,
+        "size": 4,
+        "type": "size_t"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(char *)((int)_Source",
+      "severity": "moderate",
+      "text": "_Source = (char *)((int)_Source + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(uint *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(uint *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(char *)((int)_Source",
+      "severity": "moderate",
+      "text": "_Source = (char *)((int)_Source + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(char *)((int)_Source",
+      "severity": "moderate",
+      "text": "_Source = (char *)((int)_Source + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(uint *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(uint *)((int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(uint)puVar5",
+      "severity": "moderate",
+      "text": "if (((uint)puVar5 & 3) == 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 94,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 99,
+      "match": "(int)puVar5",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
+      "type": "pointer_truncation"
+    }
+  ]
+}

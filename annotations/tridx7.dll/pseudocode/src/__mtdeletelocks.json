@@ -1,0 +1,197 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 46,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 21,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 73
+  },
+  "cross_references": [
+    {
+      "addr": "10007760",
+      "from_addr": "10007760",
+      "name": "__mtterm",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10005930",
+    "address_range": [
+      [
+        "10005930",
+        "10005993"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "__mtdeletelocks",
+    "signature": "void __cdecl __mtdeletelocks(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000000d",
+      "is_variadic": false,
+      "name": "DeleteCriticalSection"
+    },
+    {
+      "addr": "10005b30",
+      "is_variadic": false,
+      "name": "FUN_10005b30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10016c78",
+      "name": "DAT_10016c78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016c7c",
+      "name": "PTR_DAT_10016c7c",
+      "type": "void*",
+      "value": "10240630"
+    },
+    {
+      "addr": "10016c9c",
+      "name": "PTR_DAT_10016c9c",
+      "type": "void*",
+      "value": "10240660"
+    },
+    {
+      "addr": "10016cac",
+      "name": "PTR_DAT_10016cac",
+      "type": "void*",
+      "value": "10240678"
+    },
+    {
+      "addr": "10016cbc",
+      "name": "PTR_DAT_10016cbc",
+      "type": "void*",
+      "value": "10240648"
+    },
+    {
+      "addr": "10240630",
+      "name": "DAT_10240630",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240648",
+      "name": "DAT_10240648",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240660",
+      "name": "DAT_10240660",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10240678",
+      "name": "DAT_10240678",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102421b4",
+      "name": "PTR_DeleteCriticalSection_102421b4",
+      "type": "void*",
+      "value": "002423b4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10007760",
+        "call_type": "direct",
+        "caller": "__mtterm",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.023809523809524,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 5,
+      "CBRANCH": 6,
+      "COPY": 37,
+      "INT_ADD": 7,
+      "INT_AND": 19,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 18,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 9,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 169
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_10016c78",
+      "severity": "mild",
+      "text": "lpCriticalSection = (LPCRITICAL_SECTION)(&DAT_10016c78)[iVar1];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10016c78",
+      "severity": "mild",
+      "text": "FUN_10005b30((&DAT_10016c78)[iVar1]);",
+      "type": "undefined_data"
+    }
+  ]
+}

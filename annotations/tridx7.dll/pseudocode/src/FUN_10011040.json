@@ -1,0 +1,754 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 381,
+    "complexity_score": 720,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 110,
+    "suspect_count": 59,
+    "suspect_types": [
+      "param_count_too_few",
+      "register_param",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 491
+  },
+  "cross_references": [
+    {
+      "addr": "10010cf0",
+      "from_addr": "10010d15",
+      "name": "FUN_10010cf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10011040",
+    "address_range": [
+      [
+        "10011040",
+        "1001132c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_10011040",
+    "signature": "int FUN_10011040(LCID param_1,DWORD param_2,byte *param_3,int param_4,byte *param_5,int param_6,UINT param_7)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000024",
+      "is_variadic": false,
+      "name": "CompareStringA"
+    },
+    {
+      "addr": "EXTERNAL:00000007",
+      "is_variadic": false,
+      "name": "CompareStringW"
+    },
+    {
+      "addr": "10005b30",
+      "is_variadic": false,
+      "name": "FUN_10005b30"
+    },
+    {
+      "addr": "10008830",
+      "is_variadic": false,
+      "name": "FUN_10008830"
+    },
+    {
+      "addr": "10011330",
+      "is_variadic": false,
+      "name": "FUN_10011330"
+    },
+    {
+      "addr": "EXTERNAL:00000004",
+      "is_variadic": false,
+      "name": "GetCPInfo"
+    },
+    {
+      "addr": "EXTERNAL:00000028",
+      "is_variadic": false,
+      "name": "MultiByteToWideChar"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1001276c",
+      "name": "DAT_1001276c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012770",
+      "name": "DAT_10012770",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017770",
+      "name": "DAT_10017770",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10018650",
+      "name": "DAT_10018650",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10242190",
+      "name": "PTR_GetCPInfo_10242190",
+      "type": "void*",
+      "value": "0024253e"
+    },
+    {
+      "addr": "1024219c",
+      "name": "PTR_CompareStringW_1024219c",
+      "type": "void*",
+      "value": "00242782"
+    },
+    {
+      "addr": "10242210",
+      "name": "PTR_CompareStringA_10242210",
+      "type": "void*",
+      "value": "00242770"
+    },
+    {
+      "addr": "10242220",
+      "name": "PTR_MultiByteToWideChar_10242220",
+      "type": "void*",
+      "value": "0024257a"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10010d15",
+        "call_type": "direct",
+        "caller": "FUN_10010cf0",
+        "estimated_params": 10,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 10,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.322475570032573,
+    "instruction_count": 307,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BOOL_OR": 8,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CALLIND": 9,
+      "CBRANCH": 34,
+      "COPY": 306,
+      "INT_ADD": 141,
+      "INT_AND": 145,
+      "INT_CARRY": 24,
+      "INT_EQUAL": 128,
+      "INT_LESS": 18,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 24,
+      "INT_SLESS": 64,
+      "INT_SUB": 95,
+      "INT_XOR": 5,
+      "LOAD": 112,
+      "POPCOUNT": 64,
+      "RETURN": 15,
+      "STORE": 84
+    },
+    "pcode_op_count": 1327
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e",
+        "offset": -14,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_d",
+        "offset": -13,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_10011040.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 22,
+          "message": "Uninitialized variable: in_EAX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int FUN_10011040(LCID param_1,DWORD param_2,byte *param_3,int param_4,byte *param_5,int param_6,UINT param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int FUN_10011040(LCID param_1,DWORD param_2,byte *param_3,int param_4,byte *param_5,int param_6,UINT param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "int FUN_10011040(LCID param_1,DWORD param_2,byte *param_3,int param_4,byte *param_5,int param_6,UINT param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "int FUN_10011040(LCID param_1,DWORD param_2,byte *param_3,int param_4,byte *param_5,int param_6,UINT param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "int FUN_10011040(LCID param_1,DWORD param_2,byte *param_3,int param_4,byte *param_5,int param_6,UINT param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "int FUN_10011040(LCID param_1,DWORD param_2,byte *param_3,int param_4,byte *param_5,int param_6,UINT param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "int FUN_10011040(LCID param_1,DWORD param_2,byte *param_3,int param_4,byte *param_5,int param_6,UINT param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "int in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 15,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "local_18 = in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_10018650",
+      "severity": "mild",
+      "text": "if (DAT_10018650 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_10018650",
+      "severity": "mild",
+      "text": "DAT_10018650 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_10018650",
+      "severity": "mild",
+      "text": "DAT_10018650 = 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (0 < param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_18 = FUN_10011330(param_3,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_18 = FUN_10011330(param_3,param_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4 = local_18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if (0 < param_6) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "local_18 = FUN_10011330(param_5,param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "local_18 = FUN_10011330(param_5,param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "param_6 = local_18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_10018650",
+      "severity": "mild",
+      "text": "if (DAT_10018650 == 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = CompareStringA(param_1,param_2,(PCNZCH)param_3,param_4,(PCNZCH)param_5,param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = CompareStringA(param_1,param_2,(PCNZCH)param_3,param_4,(PCNZCH)param_5,param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar1 = CompareStringA(param_1,param_2,(PCNZCH)param_3,param_4,(PCNZCH)param_5,param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar1 = CompareStringA(param_1,param_2,(PCNZCH)param_3,param_4,(PCNZCH)param_5,param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "iVar1 = CompareStringA(param_1,param_2,(PCNZCH)param_3,param_4,(PCNZCH)param_5,param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "iVar1 = CompareStringA(param_1,param_2,(PCNZCH)param_3,param_4,(PCNZCH)param_5,param_6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_10018650",
+      "severity": "mild",
+      "text": "if (DAT_10018650 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "if (param_7 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "param_7 = DAT_10017770;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_10017770",
+      "severity": "mild",
+      "text": "param_7 = DAT_10017770;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if ((param_4 == 0) || (param_6 == 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if ((param_4 == 0) || (param_6 == 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if (param_6 == param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (param_6 == param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if (1 < param_6) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (1 < param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "BVar2 = GetCPInfo(param_7,&local_14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (0 < param_4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((*pBVar3 <= *param_3) && (*param_3 <= pBVar3[1])) break;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((*pBVar3 <= *param_3) && (*param_3 <= pBVar3[1])) break;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if (0 < param_6) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if ((*pBVar3 <= *param_5) && (*param_5 <= pBVar3[1])) break;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "if ((*pBVar3 <= *param_5) && (*param_5 <= pBVar3[1])) break;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "local_14.MaxCharSize = MultiByteToWideChar(param_7,9,(LPCSTR)param_3,param_4,(LPWSTR)0x0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_14.MaxCharSize = MultiByteToWideChar(param_7,9,(LPCSTR)param_3,param_4,(LPWSTR)0x0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 92,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_14.MaxCharSize = MultiByteToWideChar(param_7,9,(LPCSTR)param_3,param_4,(LPWSTR)0x0,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "iVar1 = MultiByteToWideChar(param_7,1,(LPCSTR)param_3,param_4,lpWideCharStr,local_14.MaxCharSize",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar1 = MultiByteToWideChar(param_7,1,(LPCSTR)param_3,param_4,lpWideCharStr,local_14.MaxCharSize",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 100,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "iVar1 = MultiByteToWideChar(param_7,1,(LPCSTR)param_3,param_4,lpWideCharStr,local_14.MaxCharSize",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "(iVar1 = MultiByteToWideChar(param_7,9,(LPCSTR)param_5,param_6,(LPWSTR)0x0,0), iVar1 != 0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(iVar1 = MultiByteToWideChar(param_7,9,(LPCSTR)param_5,param_6,(LPWSTR)0x0,0), iVar1 != 0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "(iVar1 = MultiByteToWideChar(param_7,9,(LPCSTR)param_5,param_6,(LPWSTR)0x0,0), iVar1 != 0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "(iVar4 = MultiByteToWideChar(param_7,1,(LPCSTR)param_5,param_6,local_20,iVar1), iVar4 != 0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "(iVar4 = MultiByteToWideChar(param_7,1,(LPCSTR)param_5,param_6,local_20,iVar1), iVar4 != 0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "(iVar4 = MultiByteToWideChar(param_7,1,(LPCSTR)param_5,param_6,local_20,iVar1), iVar4 != 0))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_18 = CompareStringW(param_1,param_2,lpWideCharStr,local_14.MaxCharSize,local_20,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_18 = CompareStringW(param_1,param_2,lpWideCharStr,local_14.MaxCharSize,local_20,iVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 10,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:10",
+      "param_delta": 10,
+      "text": "Function declares 0 params but call sites push 10 (10 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: in_EAX",
+      "line": 22,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_18 = in_EAX;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

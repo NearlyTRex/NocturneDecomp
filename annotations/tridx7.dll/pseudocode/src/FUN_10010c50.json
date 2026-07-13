@@ -1,0 +1,239 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 86,
+    "complexity_score": 189,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 12,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_strlen"
+    ],
+    "total_lines": 135
+  },
+  "cross_references": [
+    {
+      "addr": "10010050",
+      "from_addr": "1001007a",
+      "name": "FUN_10010050",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10010c50",
+    "address_range": [
+      [
+        "10010c50",
+        "10010ce5"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_10010c50",
+    "signature": "int FUN_10010c50(char *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "10010cf0",
+      "is_variadic": false,
+      "name": "FUN_10010cf0"
+    },
+    {
+      "addr": "10010d30",
+      "is_variadic": false,
+      "name": "FUN_10010d30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10016d80",
+      "name": "DAT_10016d80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016d88",
+      "name": "DAT_10016d88",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1001007a",
+        "call_type": "direct",
+        "caller": "FUN_10010050",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.9393939393939394,
+    "instruction_count": 66,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 14,
+      "COPY": 63,
+      "INT_ADD": 24,
+      "INT_AND": 43,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 40,
+      "INT_LESS": 9,
+      "INT_MULT": 4,
+      "INT_NEGATE": 2,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 19,
+      "INT_SUB": 23,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 28,
+      "POPCOUNT": 19,
+      "RETURN": 3,
+      "STORE": 9
+    },
+    "pcode_op_count": 326
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int FUN_10010c50(char *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_10016d80",
+      "severity": "mild",
+      "text": "if (DAT_10016d80 == (int *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_10016d88",
+      "severity": "mild",
+      "text": "if ((DAT_10016d88 != 0) && (iVar2 = FUN_10010d30(), iVar2 != 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_10016d80",
+      "severity": "mild",
+      "text": "if (DAT_10016d80 == (int *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 != (char *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar6 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_10016d80",
+      "severity": "mild",
+      "text": "iVar2 = *DAT_10016d80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_10016d80",
+      "severity": "mild",
+      "text": "piVar5 = DAT_10016d80;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar2 = FUN_10010cf0(*piVar5,param_1,uVar3), iVar2 == 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 25,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 37,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

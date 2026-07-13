@@ -1,0 +1,579 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 189,
+    "complexity_score": 569,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 109,
+    "suspect_count": 44,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "unrolled_memset"
+    ],
+    "total_lines": 298
+  },
+  "cross_references": [
+    {
+      "addr": "10002500",
+      "from_addr": "10002a99",
+      "name": "APIDLLsetVideoMode",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10003100",
+    "address_range": [
+      [
+        "10003100",
+        "10003332"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_10003100",
+    "signature": "bool FUN_10003100(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10002340",
+      "is_variadic": false,
+      "name": "FUN_10002340"
+    },
+    {
+      "addr": "10003400",
+      "is_variadic": false,
+      "name": "FUN_10003400"
+    },
+    {
+      "addr": "100035b0",
+      "is_variadic": false,
+      "name": "FUN_100035b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10012178",
+      "name": "DAT_10012178",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100122a8",
+      "name": "DAT_100122a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100122b0",
+      "name": "DAT_100122b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014174",
+      "name": "DAT_10014174",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014178",
+      "name": "DAT_10014178",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014180",
+      "name": "DAT_10014180",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014188",
+      "name": "DAT_10014188",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100141b8",
+      "name": "DAT_100141b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100141dc",
+      "name": "DAT_100141dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100141e0",
+      "name": "DAT_100141e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100141e4",
+      "name": "DAT_100141e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016a9c",
+      "name": "s_Can_t_create_hold_surfac_10016a9c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "101398c8",
+      "name": "DAT_101398c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10226a58",
+      "name": "DAT_10226a58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10226a5c",
+      "name": "DAT_10226a5c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10002a99",
+        "call_type": "direct",
+        "caller": "APIDLLsetVideoMode",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.431137724550898,
+    "instruction_count": 167,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BOOL_XOR": 1,
+      "BRANCH": 4,
+      "CALL": 3,
+      "CALLIND": 8,
+      "CBRANCH": 13,
+      "COPY": 190,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 76,
+      "INT_AND": 73,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 70,
+      "INT_LESS": 6,
+      "INT_MULT": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 33,
+      "INT_SUB": 56,
+      "INT_XOR": 11,
+      "INT_ZEXT": 6,
+      "LOAD": 44,
+      "POPCOUNT": 33,
+      "RETURN": 8,
+      "STORE": 63
+    },
+    "pcode_op_count": 740
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_100141e0",
+      "severity": "mild",
+      "text": "puStack_120 = &DAT_100141e0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_10014180",
+      "severity": "mild",
+      "text": "uStack_124 = DAT_10014180;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_10012178",
+      "severity": "mild",
+      "text": "puStack_128 = &DAT_10012178;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_100141dc",
+      "severity": "mild",
+      "text": "piStack_12c = DAT_100141dc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 31,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x20))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_100141dc",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x20))();",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_100141e0",
+      "severity": "mild",
+      "text": "piStack_138 = DAT_100141e0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 40,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x20))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_100141e0",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x20))();",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_100141e4",
+      "severity": "mild",
+      "text": "puStack_140 = &DAT_100141e4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x18))(DAT_100141dc);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_100141dc",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x18))(DAT_100141dc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_100141dc",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_100141dc + 0x18))(DAT_100141dc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 53,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x14))(DAT_100141e0,DAT_100141e4);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_100141e0",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x14))(DAT_100141e0,DAT_100141e4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_100141e0",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x14))(DAT_100141e0,DAT_100141e4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_100141e4",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_100141e0 + 0x14))(DAT_100141e0,DAT_100141e4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_10014174",
+      "severity": "mild",
+      "text": "puStack_134 = (byte *)DAT_10014174;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_10014178",
+      "severity": "mild",
+      "text": "puStack_130 = (uint *)DAT_10014178;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_10014178",
+      "severity": "mild",
+      "text": "puStack_120 = (uint *)(((float)DAT_10014178 / (float)DAT_10014174) * 2.0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_10014174",
+      "severity": "mild",
+      "text": "puStack_120 = (uint *)(((float)DAT_10014178 / (float)DAT_10014174) * 2.0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 72,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*DAT_100141e4 + 0x44))(DAT_100141e4,&puStack_140);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 72,
+      "match": "DAT_100141e4",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_100141e4 + 0x44))(DAT_100141e4,&puStack_140);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 72,
+      "match": "DAT_100141e4",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_100141e4 + 0x44))(DAT_100141e4,&puStack_140);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 76,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*DAT_100141e0 + 0x30))(DAT_100141e0,DAT_100141e4);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_100141e0",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_100141e0 + 0x30))(DAT_100141e0,DAT_100141e4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_100141e0",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_100141e0 + 0x30))(DAT_100141e0,DAT_100141e4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_100141e4",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_100141e0 + 0x30))(DAT_100141e0,DAT_100141e4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 77,
+      "match": "DAT_101398c8",
+      "severity": "mild",
+      "text": "if (DAT_101398c8 != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 83,
+      "match": "DAT_10226a58",
+      "severity": "mild",
+      "text": "puVar2 = &DAT_10226a58;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 94,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,&uStack_124,&DAT_100141b8,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 94,
+      "match": "DAT_10014188",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,&uStack_124,&DAT_100141b8,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 94,
+      "match": "DAT_10014188",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,&uStack_124,&DAT_100141b8,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 94,
+      "match": "DAT_100141b8",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*DAT_10014188 + 0x18))(DAT_10014188,&uStack_124,&DAT_100141b8,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 104,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_b8);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 104,
+      "match": "DAT_100141b8",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 104,
+      "match": "DAT_100141b8",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_100141b8 + 0x14))(DAT_100141b8,0,0,0,0x1000400,auStack_b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 58,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 79,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x1f; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 85,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 99,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 100031c3, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 83,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 100031c3: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 10003269, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 128,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 10003269: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 100032df, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 157,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 100032df: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    }
+  ]
+}

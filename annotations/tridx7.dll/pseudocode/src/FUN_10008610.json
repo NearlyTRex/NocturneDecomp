@@ -1,0 +1,616 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 180,
+    "complexity_score": 560,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 190,
+    "suspect_count": 34,
+    "suspect_types": [
+      "param_count_too_few",
+      "raw_address_pointer_store",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 370
+  },
+  "cross_references": [
+    {
+      "addr": "100085d0",
+      "from_addr": "100085ec",
+      "name": "__FF_MSGBANNER",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "100058c0",
+      "from_addr": "100058e1",
+      "name": "__amsg_exit",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10008610",
+    "address_range": [
+      [
+        "10008610",
+        "100087fc"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_10008610",
+    "signature": "void FUN_10008610(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000a950",
+      "is_variadic": false,
+      "name": "___crtMessageBoxA"
+    },
+    {
+      "addr": "1000a9f0",
+      "is_variadic": false,
+      "name": "_strncpy"
+    },
+    {
+      "addr": "EXTERNAL:00000023",
+      "is_variadic": false,
+      "name": "GetModuleFileNameA"
+    },
+    {
+      "addr": "EXTERNAL:00000021",
+      "is_variadic": false,
+      "name": "GetStdHandle"
+    },
+    {
+      "addr": "EXTERNAL:0000002d",
+      "is_variadic": false,
+      "name": "WriteFile"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "100125f4",
+      "name": "s_R6009_not_enough_space_f_100125f4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100125f5",
+      "name": "s_R6009_not_enough_space_f_100125f4+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10012674",
+      "name": "s_Microsoft_Visual_C_Runti_10012674",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "1001269c",
+      "name": "DAT_1001269c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1001269d",
+      "name": "DAT_1001269c+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100126a0",
+      "name": "s_Runtime_Error_Program_100126a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100126a4",
+      "name": "s_Runtime_Error_Program_100126a0+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100126bc",
+      "name": "s_anon_100126bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100126c0",
+      "name": "s_program_name_unknown_100126c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "100126c4",
+      "name": "s_program_name_unknown_100126c0+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100126c6",
+      "name": "s_program_name_unknown_100126c0+6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016c70",
+      "name": "DAT_10016c70",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016c74",
+      "name": "DAT_10016c74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10016ff8",
+      "name": "DAT_10016ff8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017000",
+      "name": "DAT_10017000",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017008",
+      "name": "DAT_10017008",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1001700c",
+      "name": "PTR_s_R6009_not_enough_space_f_100125f4_1001700c",
+      "type": "void*",
+      "value": "100125f4"
+    },
+    {
+      "addr": "10017080",
+      "name": "DAT_10017080",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241870",
+      "name": "DAT_10241870",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10242204",
+      "name": "PTR_GetStdHandle_10242204",
+      "type": "void*",
+      "value": "00242506"
+    },
+    {
+      "addr": "1024220c",
+      "name": "PTR_GetModuleFileNameA_1024220c",
+      "type": "void*",
+      "value": "00242528"
+    },
+    {
+      "addr": "10242234",
+      "name": "PTR_WriteFile_10242234",
+      "type": "void*",
+      "value": "002425f2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "100058e1",
+        "call_type": "direct",
+        "caller": "__amsg_exit",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "100085ec",
+        "call_type": "direct",
+        "caller": "__FF_MSGBANNER",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10008604",
+        "call_type": "direct",
+        "caller": "__FF_MSGBANNER",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.484276729559748,
+    "instruction_count": 159,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 28,
+      "BOOL_OR": 1,
+      "BRANCH": 8,
+      "CALL": 2,
+      "CALLIND": 3,
+      "CBRANCH": 36,
+      "COPY": 150,
+      "INT_ADD": 66,
+      "INT_AND": 138,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 118,
+      "INT_LESS": 31,
+      "INT_MULT": 34,
+      "INT_NEGATE": 6,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 15,
+      "INT_RIGHT": 6,
+      "INT_SBORROW": 35,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 52,
+      "INT_SUB": 110,
+      "INT_XOR": 1,
+      "INT_ZEXT": 31,
+      "LOAD": 54,
+      "POPCOUNT": 49,
+      "RETURN": 2,
+      "STORE": 35
+    },
+    "pcode_op_count": 1031
+  },
+  "stack_frame": {
+    "frame_size": 428,
+    "local_size": 428,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1a8",
+        "offset": -424,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a4",
+        "offset": -420,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_13f",
+        "offset": -319,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_10008610(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_10016ff8",
+      "severity": "mild",
+      "text": "piVar2 = &DAT_10016ff8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*piVar2 == param_1) break;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_10017080",
+      "severity": "mild",
+      "text": "} while (piVar2 < &DAT_10017080);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((&DAT_10016ff8)[iVar4 * 2] == param_1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_10016ff8",
+      "severity": "mild",
+      "text": "if ((&DAT_10016ff8)[iVar4 * 2] == param_1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_10016c70",
+      "severity": "mild",
+      "text": "if ((DAT_10016c70 == 1) || ((DAT_10016c70 == 0 && (DAT_10016c74 == 1)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_10016c70",
+      "severity": "mild",
+      "text": "if ((DAT_10016c70 == 1) || ((DAT_10016c70 == 0 && (DAT_10016c74 == 1)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_10016c74",
+      "severity": "mild",
+      "text": "if ((DAT_10016c70 == 1) || ((DAT_10016c70 == 0 && (DAT_10016c74 == 1)))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_10241870",
+      "severity": "mild",
+      "text": "hFile = *(HANDLE *)(DAT_10241870 + 0x48);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 37,
+      "match": "*(char **)(iVar4 * 8 + 0x10016ffc",
+      "severity": "moderate",
+      "text": "pcVar8 = *(char **)(iVar4 * 8 + 0x10016ffc);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "else if (param_1 != 0xfc) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 156,
+      "match": "*(char **)(iVar4 * 8 + 0x10016ffc",
+      "severity": "moderate",
+      "text": "pcVar8 = *(char **)(iVar4 * 8 + 0x10016ffc);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 53,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 5; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 84,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 112,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 117,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 145,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 150,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 178,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 183,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 40,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 64,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 73,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 91,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 102,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 124,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 135,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 157,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 168,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10008727, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 95,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 10008727: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 10008759, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 114,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 10008759: MOVSD.REP ES:EDI,ESI  ; DAT_1001269c",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000878c, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 133,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 1000878c: MOVSD.REP ES:EDI,ESI  ; = \"R6009\\r\\n- not enough space for envir...\"",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

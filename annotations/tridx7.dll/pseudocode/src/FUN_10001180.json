@@ -1,0 +1,286 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 170,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 50,
+    "suspect_count": 11,
+    "suspect_types": [
+      "register_param",
+      "unnamed_param"
+    ],
+    "total_lines": 125
+  },
+  "cross_references": [
+    {
+      "addr": "100015d0",
+      "from_addr": "100015fb",
+      "name": "FUN_100015d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10001180",
+    "address_range": [
+      [
+        "10001180",
+        "100011fa"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_10001180",
+    "signature": "void FUN_10001180(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "10001090",
+      "is_variadic": false,
+      "name": "FUN_10001090"
+    },
+    {
+      "addr": "100030e0",
+      "is_variadic": false,
+      "name": "FUN_100030e0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "100015fb",
+        "call_type": "direct",
+        "caller": "FUN_100015d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000160c",
+        "call_type": "direct",
+        "caller": "FUN_100015d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000161d",
+        "call_type": "direct",
+        "caller": "FUN_100015d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000162e",
+        "call_type": "direct",
+        "caller": "FUN_100015d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.9818181818181815,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 3,
+      "BOOL_XOR": 2,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 47,
+      "INT_ADD": 29,
+      "INT_AND": 50,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 40,
+      "INT_LEFT": 2,
+      "INT_LESS": 9,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 7,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 21,
+      "INT_SUB": 18,
+      "INT_XOR": 3,
+      "INT_ZEXT": 2,
+      "LOAD": 20,
+      "POPCOUNT": 19,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 329
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_10001180.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 20,
+          "line": 22,
+          "message": "Uninitialized variable: in_ECX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_10001180(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "int in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 15,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "bVar7 = *(int *)(in_ECX + 8) == 0;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 16,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(in_ECX + 8)) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "pbVar4 = (byte *)(in_ECX + 0x14);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pbVar6 = (byte *)(param_1 + 8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pbVar6 = (byte *)(param_1 + 8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 44,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "} while (iVar2 < *(int *)(in_ECX + 8));",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 45,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "bVar7 = *(int *)(in_ECX + 8) == iVar2;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 48,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "FUN_100030e0(*(uint *)(iVar2 * 0x48 + 0x10 + in_ECX));",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_10001090(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Uninitialized variable: in_ECX",
+      "line": 22,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "bVar7 = *(int *)(in_ECX + 8) == 0;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 194,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 13,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_memset"
+    ],
+    "total_lines": 113
+  },
+  "cross_references": [
+    {
+      "addr": "10002500",
+      "from_addr": "10002afe",
+      "name": "APIDLLsetVideoMode",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10004840",
+    "address_range": [
+      [
+        "10004840",
+        "1000490d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "APIDLLclear",
+    "signature": "undefined4 APIDLLclear(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10004380",
+      "is_variadic": false,
+      "name": "APIDLLdrawPolygon"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10014174",
+      "name": "DAT_10014174",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014178",
+      "name": "DAT_10014178",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014180",
+      "name": "DAT_10014180",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014204",
+      "name": "DAT_10014204",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102268e8",
+      "name": "DAT_102268e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10226908",
+      "name": "DAT_10226908",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.741379310344827,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BRANCH": 3,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 57,
+      "INT_ADD": 24,
+      "INT_AND": 40,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 22,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 13,
+      "INT_SUB": 20,
+      "INT_XOR": 5,
+      "INT_ZEXT": 2,
+      "LOAD": 8,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 28
+    },
+    "pcode_op_count": 275
+  },
+  "stack_frame": {
+    "frame_size": 196,
+    "local_size": 196,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_10014204",
+      "severity": "mild",
+      "text": "if (DAT_10014204 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 28,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,local_c0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_10014180",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,local_c0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_10014180",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014180 + 0x14))(DAT_10014180,0,0,0,0x1000400,local_c0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_10014174",
+      "severity": "mild",
+      "text": "local_80 = DAT_10014174 << 0x10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_10014178",
+      "severity": "mild",
+      "text": "local_4c = DAT_10014178 << 0x10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_10226908",
+      "severity": "mild",
+      "text": "local_c0[2] = *DAT_10226908;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_10226908",
+      "severity": "mild",
+      "text": "local_88 = *DAT_10226908;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_10226908",
+      "severity": "mild",
+      "text": "local_58 = *DAT_10226908;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_10226908",
+      "severity": "mild",
+      "text": "local_28 = *DAT_10226908;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_102268e8",
+      "severity": "mild",
+      "text": "*DAT_102268e8 = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 1000485c, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 11,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 1000485c: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 100048db, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 48,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 100048db: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    }
+  ]
+}

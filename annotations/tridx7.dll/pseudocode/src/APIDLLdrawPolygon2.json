@@ -1,0 +1,377 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 108,
+    "complexity_score": 329,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 59,
+    "suspect_count": 26,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 167
+  },
+  "cross_references": [
+    {
+      "addr": "10004380",
+      "from_addr": "100043aa",
+      "name": "APIDLLdrawPolygon",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100043c0",
+    "address_range": [
+      [
+        "100043c0",
+        "100044ac"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "APIDLLdrawPolygon2",
+    "signature": "undefined4 APIDLLdrawPolygon2(int *param_1,int param_2,undefined4 param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "10003f10",
+      "is_variadic": false,
+      "name": "FUN_10003f10"
+    },
+    {
+      "addr": "100044b0",
+      "is_variadic": false,
+      "name": "FUN_100044b0"
+    },
+    {
+      "addr": "100047b0",
+      "is_variadic": false,
+      "name": "FUN_100047b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10014204",
+      "name": "DAT_10014204",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10014228",
+      "name": "DAT_10014228",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1001422c",
+      "name": "DAT_1001422c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1013b8d8",
+      "name": "DAT_1013b8d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10238910",
+      "name": "DAT_10238910",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10238912",
+      "name": "DAT_10238912",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10238914",
+      "name": "DAT_10238914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10238916",
+      "name": "DAT_10238916",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10238918",
+      "name": "DAT_10238918",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1023891a",
+      "name": "DAT_1023891a",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.819277108433735,
+    "instruction_count": 83,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 6,
+      "CALL": 4,
+      "CBRANCH": 10,
+      "COPY": 71,
+      "INT_ADD": 39,
+      "INT_AND": 57,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 45,
+      "INT_LEFT": 2,
+      "INT_LESS": 7,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 5,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 24,
+      "INT_SUB": 22,
+      "INT_XOR": 4,
+      "LOAD": 19,
+      "POPCOUNT": 22,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 400
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint APIDLLdrawPolygon2(int *param_1,int param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint APIDLLdrawPolygon2(int *param_1,int param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint APIDLLdrawPolygon2(int *param_1,int param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_10014204",
+      "severity": "mild",
+      "text": "if (DAT_10014204 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "FUN_10003f10(param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar6 = *(int *)(*param_1 + 8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (1 < param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar4 = param_2 + -1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "piVar5 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (0 < param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_100044b0(param_1[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,param_3,iVar6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "FUN_100044b0(param_1[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,param_3,iVar6);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_1013b8d8",
+      "severity": "mild",
+      "text": "FUN_100044b0(param_1[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,param_3,iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_10014228",
+      "severity": "mild",
+      "text": "FUN_100044b0(param_1[iVar4],&DAT_1013b8d8 + (DAT_10014228 + iVar4) * 0x20,param_3,iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "} while (iVar7 < param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar6 = param_2 + -2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_10014228",
+      "severity": "mild",
+      "text": "sVar1 = (short)DAT_10014228;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_1001422c",
+      "severity": "mild",
+      "text": "iVar7 = DAT_1001422c * 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_1001422c",
+      "severity": "mild",
+      "text": "DAT_1001422c = DAT_1001422c + iVar6 * 3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_1001422c",
+      "severity": "mild",
+      "text": "DAT_1001422c = DAT_1001422c + iVar6 * 3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_10238910",
+      "severity": "mild",
+      "text": "psVar3 = (short *)(&DAT_10238910 + iVar7);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "DAT_10014228 = DAT_10014228 + param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_10014228",
+      "severity": "mild",
+      "text": "DAT_10014228 = DAT_10014228 + param_2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_10014228",
+      "severity": "mild",
+      "text": "DAT_10014228 = DAT_10014228 + param_2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_10014228",
+      "severity": "mild",
+      "text": "if (0x3e76 < DAT_10014228) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_1001422c",
+      "severity": "mild",
+      "text": "if (0x3e76 < DAT_1001422c) {",
+      "type": "undefined_data"
+    }
+  ]
+}

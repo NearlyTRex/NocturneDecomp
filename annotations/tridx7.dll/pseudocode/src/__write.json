@@ -1,0 +1,208 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 74,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data"
+    ],
+    "total_lines": 69
+  },
+  "cross_references": [
+    {
+      "addr": "10007420",
+      "from_addr": "10007514",
+      "name": "FUN_10007420",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000a5f0",
+    "address_range": [
+      [
+        "1000a5f0",
+        "1000a667"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "__write",
+    "signature": "int __cdecl __write(int _FileHandle,void *_Buf,uint _MaxCharCount)"
+  },
+  "function_calls": [
+    {
+      "addr": "10008de0",
+      "is_variadic": false,
+      "name": "__lock_fhandle"
+    },
+    {
+      "addr": "1000a670",
+      "is_variadic": false,
+      "name": "__lseek_lk"
+    },
+    {
+      "addr": "10008e50",
+      "is_variadic": false,
+      "name": "__unlock_fhandle"
+    },
+    {
+      "addr": "10008a20",
+      "is_variadic": false,
+      "name": "FUN_10008a20"
+    },
+    {
+      "addr": "10008a30",
+      "is_variadic": false,
+      "name": "FUN_10008a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10241870",
+      "name": "DAT_10241870",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241970",
+      "name": "DAT_10241970",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10007514",
+        "call_type": "direct",
+        "caller": "FUN_10007420",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.463414634146342,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 1,
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 36,
+      "INT_ADD": 16,
+      "INT_AND": 43,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 9,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 11,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 14
+    },
+    "pcode_op_count": 224
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "_FileHandle",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "_Buf",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "_MaxCharCount",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_10241970",
+      "severity": "mild",
+      "text": "if (((uint)_FileHandle < DAT_10241970) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_10241870",
+      "severity": "mild",
+      "text": "((*(byte *)(*(int *)((int)&DAT_10241870 + ((int)(_FileHandle & 0xffffffe7U) >> 3)) + 4 +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&DAT_10241870` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 10,
+      "match": "(int)&DAT_10241870",
+      "severity": "moderate",
+      "text": "((*(byte *)(*(int *)((int)&DAT_10241870 + ((int)(_FileHandle & 0xffffffe7U) >> 3)) + 4 +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 10,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((*(byte *)(*(int *)((int)&DAT_10241870 + ((int)(_FileHandle & 0xffffffe7U) >> 3)) + 4 +",
+      "type": "pointer_cast"
+    }
+  ]
+}

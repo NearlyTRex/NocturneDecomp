@@ -1,0 +1,185 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 8,
+    "complexity_score": 71,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 5,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 14
+  },
+  "cross_references": [
+    {
+      "addr": "10001090",
+      "from_addr": "10001143",
+      "name": "FUN_10001090",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10001180",
+      "from_addr": "100011ec",
+      "name": "FUN_10001180",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "100030e0",
+    "address_range": [
+      [
+        "100030e0",
+        "100030f2"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_100030e0",
+    "signature": "void FUN_100030e0(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "10003a80",
+      "is_variadic": false,
+      "name": "FUN_10003a80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10014138",
+      "name": "DAT_10014138",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "100011ec",
+        "call_type": "direct",
+        "caller": "FUN_10001180",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10001143",
+        "call_type": "direct",
+        "caller": "FUN_10001090",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6666666666666665,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 3,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 2,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 22
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_100030e0(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "DAT_10014138 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_10014138",
+      "severity": "mild",
+      "text": "DAT_10014138 = param_1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_10003a80(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

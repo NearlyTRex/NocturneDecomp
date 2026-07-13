@@ -1,0 +1,463 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 664,
+    "complexity_score": 489,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 394,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 1058
+  },
+  "cross_references": [
+    {
+      "addr": "1000a200",
+      "from_addr": "1000a21a",
+      "name": "FID_conflict:__atodbl",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000a280",
+      "from_addr": "1000a29a",
+      "name": "FID_conflict:__atodbl",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000c7b0",
+    "address_range": [
+      [
+        "1000c7b0",
+        "1000cdd9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "___strgtold12",
+    "signature": "uint __cdecl ___strgtold12(_LDBL12 *pld12,char **p_end_ptr,char *str,int mult12,int scale,int decpt,int implicit_E)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000c6c0",
+      "is_variadic": false,
+      "name": "___mtold12"
+    },
+    {
+      "addr": "1000eba0",
+      "is_variadic": false,
+      "name": "___multtenpow12"
+    },
+    {
+      "addr": "10009ac0",
+      "is_variadic": false,
+      "name": "__isctype"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "1000cddc",
+      "name": "switchdataD_1000cddc",
+      "type": "void*",
+      "value": "1000c81c"
+    },
+    {
+      "addr": "1000cdf9",
+      "name": "PTR_caseD_7_1000cdf8+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1000ce04",
+      "name": "PTR_caseD_a_1000ce04",
+      "type": "void*",
+      "value": "1000cc65"
+    },
+    {
+      "addr": "1000ce0c",
+      "name": "switchdataD_1000ce0c",
+      "type": "void*",
+      "value": "1000c8d1"
+    },
+    {
+      "addr": "1000ce49",
+      "name": "BYTE_1000ce49",
+      "type": "byte",
+      "value": "0x5"
+    },
+    {
+      "addr": "1000ce60",
+      "name": "switchdataD_1000ce60",
+      "type": "void*",
+      "value": "1000c9c0"
+    },
+    {
+      "addr": "1000ce99",
+      "name": "BYTE_1000ce99",
+      "type": "byte",
+      "value": "0x4"
+    },
+    {
+      "addr": "1000ceb0",
+      "name": "switchdataD_1000ceb0",
+      "type": "void*",
+      "value": "1000ca67"
+    },
+    {
+      "addr": "10017480",
+      "name": "PTR_DAT_10017480",
+      "type": "void*",
+      "value": "1001748a"
+    },
+    {
+      "addr": "1001748a",
+      "name": "DAT_1001748a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017690",
+      "name": "DAT_10017690",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10017694",
+      "name": "DAT_10017694",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "1000a21a",
+        "call_type": "direct",
+        "caller": "FID_conflict:__atodbl",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "1000a29a",
+        "call_type": "direct",
+        "caller": "FID_conflict:__atodbl",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.692477876106195,
+    "instruction_count": 452,
+    "opcode_distribution": {
+      "BOOL_AND": 7,
+      "BOOL_NEGATE": 26,
+      "BOOL_OR": 11,
+      "BRANCH": 51,
+      "BRANCHIND": 4,
+      "CALL": 7,
+      "CBRANCH": 68,
+      "COPY": 313,
+      "INT_2COMP": 1,
+      "INT_ADD": 135,
+      "INT_AND": 318,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 317,
+      "INT_LESS": 70,
+      "INT_MULT": 11,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 1,
+      "INT_SBORROW": 81,
+      "INT_SCARRY": 27,
+      "INT_SEXT": 9,
+      "INT_SLESS": 154,
+      "INT_SUB": 107,
+      "INT_XOR": 35,
+      "LOAD": 116,
+      "POPCOUNT": 154,
+      "RETURN": 1,
+      "STORE": 73
+    },
+    "pcode_op_count": 2121
+  },
+  "stack_frame": {
+    "frame_size": 114,
+    "local_size": 86,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_52",
+        "offset": -82,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_11",
+        "offset": -17,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_a",
+        "offset": -10,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6",
+        "offset": -6,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2",
+        "offset": -2,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": true,
+        "name": "pld12",
+        "offset": 4,
+        "size": 4,
+        "type": "_LDBL12 *"
+      },
+      {
+        "is_param": true,
+        "name": "p_end_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "str",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "mult12",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "scale",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "decpt",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "implicit_E",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_10017694",
+      "severity": "mild",
+      "text": "if (DAT_10017694 == bVar9) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_10017694",
+      "severity": "mild",
+      "text": "if (DAT_10017694 == bVar9) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_10017694",
+      "severity": "mild",
+      "text": "if (DAT_10017694 == bVar9) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 122,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 < 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 142,
+      "match": "DAT_10017694",
+      "severity": "mild",
+      "text": "if (DAT_10017694 == bVar9) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 173,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 < 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 208,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 < 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 270,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 < 2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 285,
+      "match": "DAT_10017690",
+      "severity": "mild",
+      "text": "if (DAT_10017690 < 2) {",
+      "type": "undefined_data"
+    }
+  ]
+}

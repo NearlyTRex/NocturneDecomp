@@ -1,0 +1,325 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 184,
+    "complexity_score": 221,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 7,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 81,
+    "suspect_count": 12,
+    "suspect_types": [
+      "stack_ref",
+      "unaffected_reg",
+      "unresolved_funcptr",
+      "warning_max_restarts"
+    ],
+    "total_lines": 265
+  },
+  "cross_references": [
+    {
+      "addr": "10005580",
+      "from_addr": "10005585",
+      "name": "__fpmath",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10006da0",
+    "address_range": [
+      [
+        "10006da0",
+        "10006ee6"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_10006da0",
+    "signature": "undefined4 FUN_10006da0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "10006d50",
+      "is_variadic": false,
+      "name": "__ms_p5_test_fdiv"
+    },
+    {
+      "addr": "EXTERNAL:0000000a",
+      "is_variadic": false,
+      "name": "GetModuleHandleA"
+    },
+    {
+      "addr": "EXTERNAL:00000009",
+      "is_variadic": false,
+      "name": "GetProcAddress"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10012398",
+      "name": "s_GetCurrentThread_10012397+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100123ac",
+      "name": "s_SetThreadAffinityMask_100123ac",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "100123c4",
+      "name": "s_GetCurrentProcess_100123c4",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "100123d8",
+      "name": "s_GetProcessAffinityMask_100123d8",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "100123f0",
+      "name": "s_KERNEL32_100123f0",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "102421a4",
+      "name": "PTR_GetProcAddress_102421a4",
+      "type": "void*",
+      "value": "00242364"
+    },
+    {
+      "addr": "102421a8",
+      "name": "PTR_GetModuleHandleA_102421a8",
+      "type": "void*",
+      "value": "00242376"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10005585",
+        "call_type": "direct",
+        "caller": "__fpmath",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.620915032679738,
+    "instruction_count": 153,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CALLIND": 14,
+      "CBRANCH": 13,
+      "COPY": 172,
+      "INT_ADD": 71,
+      "INT_AND": 88,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 67,
+      "INT_LEFT": 2,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 35,
+      "INT_SUB": 45,
+      "INT_XOR": 9,
+      "LOAD": 53,
+      "POPCOUNT": 33,
+      "RETURN": 9,
+      "STORE": 45
+    },
+    "pcode_op_count": 707
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_10006da0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 7,
+          "line": 56,
+          "message": "Uninitialized variable: unaff_EDI",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 15,
+          "line": 84,
+          "message": "Uninitialized variable: unaff_EBP",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler iteration limit exceeded",
+      "line": 2,
+      "match": "WARNING: Exceeded maximum restarts with more pending",
+      "severity": "severe",
+      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
+      "type": "warning_max_restarts"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "code *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *unaff_EBP;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uint unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 49,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if (unaff_EDI == 1) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 63,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "if ((unaff_EDI & uVar5) != 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 74,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uVar6 = (*pFVar4)(unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 77,
+      "match": "&stack0xffffffe4",
+      "severity": "moderate",
+      "text": "iVar1 = (*unaff_EBP)(uVar3,&stack0xffffffe4,&stack0xffffffd8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 77,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "iVar1 = (*unaff_EBP)(uVar3,&stack0xffffffe4,&stack0xffffffd8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 77,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar1 = (*unaff_EBP)(uVar3,&stack0xffffffe4,&stack0xffffffd8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 84,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "return unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EDI",
+      "line": 56,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (unaff_EDI == 1) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EBP",
+      "line": 84,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "iVar1 = (*unaff_EBP)(uVar3,&stack0xffffffe4,&stack0xffffffd8);",
+      "type": "static_uninitvar"
+    }
+  ]
+}

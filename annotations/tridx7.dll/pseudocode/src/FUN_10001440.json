@@ -1,0 +1,235 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 97,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 8,
+    "suspect_types": [
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "10001200",
+      "from_addr": "100012eb",
+      "name": "FUN_10001200",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10001440",
+    "address_range": [
+      [
+        "10001440",
+        "10001460"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_10001440",
+    "signature": "void FUN_10001440(LPCSTR param_1,LPCSTR param_2,UINT *param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000022",
+      "is_variadic": false,
+      "name": "GetPrivateProfileIntA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10014068",
+      "name": "s_system_render_ini_10014068",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10242208",
+      "name": "PTR_GetPrivateProfileIntA_10242208",
+      "type": "void*",
+      "value": "002422a0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "100012eb",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10001302",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10001319",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10001330",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "10001347",
+        "call_type": "direct",
+        "caller": "FUN_10001200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "COPY": 13,
+      "INT_ADD": 5,
+      "INT_SUB": 6,
+      "LOAD": 6,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 39
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_10001440(LPCSTR param_1,LPCSTR param_2,UINT *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_10001440(LPCSTR param_1,LPCSTR param_2,UINT *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void FUN_10001440(LPCSTR param_1,LPCSTR param_2,UINT *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "UVar1 = GetPrivateProfileIntA(param_1,param_2,*param_3,\".\\\\system\\\\render.ini\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "UVar1 = GetPrivateProfileIntA(param_1,param_2,*param_3,\".\\\\system\\\\render.ini\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "UVar1 = GetPrivateProfileIntA(param_1,param_2,*param_3,\".\\\\system\\\\render.ini\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*param_3 = UVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 5,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

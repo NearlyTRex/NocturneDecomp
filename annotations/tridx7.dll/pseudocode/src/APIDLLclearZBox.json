@@ -1,0 +1,239 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 165,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "unrolled_memset"
+    ],
+    "total_lines": 59
+  },
+  "cross_references": [],
+  "function": {
+    "address": "10004ac0",
+    "address_range": [
+      [
+        "10004ac0",
+        "10004b2e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "APIDLLclearZBox",
+    "signature": "undefined4 APIDLLclearZBox(undefined4 param_1,int param_2,undefined4 param_3,int param_4)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "10014190",
+      "name": "DAT_10014190",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.909090909090909,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 31,
+      "INT_ADD": 20,
+      "INT_AND": 10,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 11,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 129
+  },
+  "stack_frame": {
+    "frame_size": 120,
+    "local_size": 120,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint APIDLLclearZBox(uint param_1,int param_2,uint param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint APIDLLclearZBox(uint param_1,int param_2,uint param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint APIDLLclearZBox(uint param_1,int param_2,uint param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "uint APIDLLclearZBox(uint param_1,int param_2,uint param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_70 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_74 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "local_68 = param_4 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_6c = param_2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 26,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*DAT_10014190 + 0x14))(DAT_10014190,&local_74,0,0,0x3000000,local_64);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_10014190",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014190 + 0x14))(DAT_10014190,&local_74,0,0,0x3000000,local_64);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_10014190",
+      "severity": "mild",
+      "text": "(**(code **)(*DAT_10014190 + 0x14))(DAT_10014190,&local_74,0,0,0x3000000,local_64);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSD at 10004af7, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 17,
+      "match": "STOSD.REP",
+      "severity": "moderate",
+      "text": "// 10004af7: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    }
+  ]
+}
