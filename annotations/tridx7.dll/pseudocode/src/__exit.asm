@@ -6,7 +6,8 @@
 ; Parameters:
 ; int              Stack[0x4]:4   _Code
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_1000bbc0 at 1000bc97
 ;   __amsg_exit at 100058ee
 ;
 ; Called Functions:

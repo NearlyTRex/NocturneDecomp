@@ -6,8 +6,9 @@
 ; Parameters:
 ; undefined4       Stack[0x0]:4   local_res0
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_100093f0 at 1000977c
+;   FUN_1000b4f0 at 1000b52d
 ;
 ; Referenced Globals:
 ;   void* PTR_GetLastError_102421c8 = 00242418

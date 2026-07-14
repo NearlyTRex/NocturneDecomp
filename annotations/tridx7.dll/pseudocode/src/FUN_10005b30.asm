@@ -4,18 +4,18 @@
 ; void FUN_10005b30(LPVOID param_1)
 ;
 ;
-; XREF[21]:
+; XREF[28]:
 ;   FUN_10007b60 at 10007c26
+;   FUN_100081e0 at 100083c4
 ;   FUN_100083e0 at 100084bb
+;   FUN_1000ab70 at 1000abd6
+;   FUN_1000ac10 at 1000ae83
+;   FUN_1000aee0 at 1000b009
+;   FUN_1000b060 at 1000b134
 ;   FUN_1000be00 at 1000bf97
+;   FUN_1000c0f0 at 1000c2ae
 ;   FUN_1000c340 at 1000c4bc
-;   FUN_1000d720 at 1000d731
-;   FUN_1000d960 at 1000da43
-;   FUN_1000df60 at 1000df74
-;   FUN_1000f6e0 at 1000f7a2
-;   FUN_1000f9a0 at 1000fa97
-;   FUN_1000fad0 at 1000fbd5
-;   ... and 11 more
+;   ... and 18 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_10241974

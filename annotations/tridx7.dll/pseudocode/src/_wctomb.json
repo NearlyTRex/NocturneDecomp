@@ -14,19 +14,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 67,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 3,
+    "pseudocode_lines": 21,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "undefined_data"
     ],
-    "total_lines": 64
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -172,16 +171,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_0000000a",
       "severity": "moderate",
       "text": "ushort in_stack_0000000a;",
@@ -189,10 +180,42 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 10,
       "match": "DAT_10240854",
       "severity": "mild",
       "text": "bVar2 = DAT_10240854 == 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + -1;",
       "type": "undefined_data"
     }
   ]

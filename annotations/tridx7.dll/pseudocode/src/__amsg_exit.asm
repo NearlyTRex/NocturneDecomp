@@ -6,9 +6,10 @@
 ; Parameters:
 ; int              Stack[0x4]:4   param_1
 ;
-; XREF[7]:
+; XREF[8]:
 ;   FUN_10007920 at 1000793c
 ;   FUN_10007b60 at 10007bac
+;   FUN_100088b0 at 10008913
 ;   FUN_10011610 at 1001164a
 ;   __fptrap at 10009ab2
 ;   __getptd at 1000780b

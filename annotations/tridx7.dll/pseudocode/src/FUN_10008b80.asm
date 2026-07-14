@@ -4,7 +4,8 @@
 ; undefined4 FUN_10008b80(uint param_1,HANDLE param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_10008d20 at 10008da0
 ;   FUN_100093f0 at 100096c7
 ;
 ; Referenced Globals:

@@ -4,7 +4,8 @@
 ; int FUN_1000fad0(LCID param_1,LCTYPE param_2,LPSTR param_3,int param_4,UINT param_5)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_1000e350 at 1000e5dd
 ;   FUN_1000f6e0 at 1000f718
 ;
 ; Referenced Globals:

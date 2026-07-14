@@ -4,8 +4,9 @@
 ; int FUN_10010c50(char *param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_10010050 at 1001007a
+;   FUN_10010c20 at 10010c30
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_10016d80

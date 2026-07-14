@@ -4,7 +4,8 @@
 ; void __setdefaultprecision(void)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_100098f0 at 100098fa
 ;   __fpmath at 1000558f
 ;
 ; Called Functions:

@@ -4,7 +4,8 @@
 ; undefined4 FUN_10008cd0(uint param_1)
 ;
 ;
-; XREF[3]:
+; XREF[4]:
+;   FUN_10008e80 at 10008ec9
 ;   __chsize_lk at 1000b632
 ;   __close_lk at 10005bd2
 ;   __lseek_lk at 1000a677

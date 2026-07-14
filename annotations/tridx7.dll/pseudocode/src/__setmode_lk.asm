@@ -4,7 +4,8 @@
 ; int __setmode_lk(uint param_1,int param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_1000e810 at 1000e84d
 ;   __chsize_lk at 1000b5c7
 ;
 ; Referenced Globals:

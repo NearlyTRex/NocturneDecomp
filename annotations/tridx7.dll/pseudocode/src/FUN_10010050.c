@@ -24,24 +24,24 @@ void FUN_10010050(void)
   
   bVar9 = 0;
   __lock(0xc);
-  _DAT_102407a0 = 0;
-  _DAT_100185d0 = 0xffffffff;
-  _DAT_100185c0 = 0xffffffff;
+  DAT_102407a0 = 0;
+  DAT_100185d0 = 0xffffffff;
+  DAT_100185c0 = 0xffffffff;
   _Source = (byte *)FUN_10010c50("TZ");
   if (_Source == (byte *)0x0) {
     FUN_10005a10(0xc);
     DVar2 = GetTimeZoneInformation((LPTIME_ZONE_INFORMATION)&DAT_102407a8);
     if (DVar2 != 0) {
       DAT_10018520 = DAT_102407a8 * 0x3c;
-      _DAT_102407a0 = 1;
+      DAT_102407a0 = 1;
       if (DAT_102407ee != 0) {
         DAT_10018520 = DAT_10018520 + DAT_102407fc * 0x3c;
       }
       if ((DAT_10240842 == 0) || (DAT_10240850 == 0)) {
-        _DAT_10018524 = 0;
+        DAT_10018524 = 0;
       }
       else {
-        _DAT_10018524 = 1;
+        DAT_10018524 = 1;
         _DAT_10018528 = (DAT_10240850 - DAT_102407fc) * 0x3c;
       }
       FUN_10010910(PTR_DAT_100185b0,&DAT_102407ac,0x40);
@@ -130,8 +130,8 @@ LAB_100101b8:
         if (bVar9 == 0x2d) {
           DAT_10018520 = -DAT_10018520;
         }
-        _DAT_10018524 = (int)(char)*pbVar6;
-        if (_DAT_10018524 != 0) {
+        DAT_10018524 = (int)(char)*pbVar6;
+        if (DAT_10018524 != 0) {
           _strncpy(PTR_DAT_100185b4,(char *)pbVar6,3);
           PTR_DAT_100185b4[3] = 0;
           return;

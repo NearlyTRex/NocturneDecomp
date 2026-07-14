@@ -15,7 +15,7 @@
   "complexity": {
     "assembly_lines": 43,
     "complexity_score": 91,
-    "cross_reference_count": 4,
+    "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
@@ -30,6 +30,30 @@
     "total_lines": 64
   },
   "cross_references": [
+    {
+      "addr": "10008e80",
+      "from_addr": "10008eb2",
+      "name": "FUN_10008e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000b4f0",
+      "from_addr": "1000b51f",
+      "name": "FUN_1000b4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000b6a0",
+      "from_addr": "1000b6cf",
+      "name": "FUN_1000b6a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000e810",
+      "from_addr": "1000e83f",
+      "name": "FUN_1000e810",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "10008a40",
       "from_addr": "10008b62",
@@ -110,7 +134,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 8,
     "call_sites": [
       {
         "call_addr": "10005b7f",
@@ -149,6 +173,50 @@
         "call_addr": "10008b62",
         "call_type": "direct",
         "caller": "__alloc_osfhnd",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10008eb2",
+        "call_type": "direct",
+        "caller": "FUN_10008e80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000b51f",
+        "call_type": "direct",
+        "caller": "FUN_1000b4f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000b6cf",
+        "call_type": "direct",
+        "caller": "FUN_1000b6a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "1000e83f",
+        "call_type": "direct",
+        "caller": "FUN_1000e810",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

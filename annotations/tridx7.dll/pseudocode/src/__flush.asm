@@ -6,7 +6,8 @@
 ; Parameters:
 ; FILE *           Stack[0x4]:4   _File
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_10005cd0 at 10005cd6
 ;   __fclose_lk at 10005482
 ;   __ftbuf at 10005f13
 ;

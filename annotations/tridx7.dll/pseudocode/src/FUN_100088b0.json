@@ -1,0 +1,284 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 77,
+    "complexity_score": 215,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 40,
+    "suspect_count": 16,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data"
+    ],
+    "total_lines": 117
+  },
+  "cross_references": [],
+  "function": {
+    "address": "100088b0",
+    "address_range": [
+      [
+        "100088b0",
+        "10008976"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_100088b0",
+    "signature": "void FUN_100088b0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "100058c0",
+      "is_variadic": false,
+      "name": "__amsg_exit"
+    },
+    {
+      "addr": "1000a750",
+      "is_variadic": false,
+      "name": "FUN_1000a750"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10017088",
+      "name": "PTR_DAT_10017088",
+      "type": "void*",
+      "value": "10240860"
+    },
+    {
+      "addr": "10017098",
+      "name": "DAT_10017098",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100170a8",
+      "name": "DAT_100170a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100170b8",
+      "name": "DAT_100170b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100170f8",
+      "name": "DAT_100170f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "1024085c",
+      "name": "DAT_1024085c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241860",
+      "name": "DAT_10241860",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "10241870",
+      "name": "DAT_10241870",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.666666666666667,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 8,
+      "COPY": 45,
+      "INT_ADD": 14,
+      "INT_AND": 69,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 45,
+      "INT_LEFT": 2,
+      "INT_LESS": 5,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 9,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 23,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 16,
+      "INT_XOR": 3,
+      "LOAD": 4,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 323
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "if (DAT_10241860 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "DAT_10241860 = 0x200;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "else if (DAT_10241860 < 0x14) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "DAT_10241860 = 0x14;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "DAT_1024085c = FUN_1000a750(DAT_10241860,4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "DAT_1024085c = FUN_1000a750(DAT_10241860,4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "if (DAT_1024085c == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_10241860",
+      "severity": "mild",
+      "text": "DAT_10241860 = 0x14;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "DAT_1024085c = FUN_1000a750(0x14,4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "if (DAT_1024085c == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_1024085c",
+      "severity": "mild",
+      "text": "*(byte ***)(DAT_1024085c + -4 + iVar1) = ppuVar2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_10017098",
+      "severity": "mild",
+      "text": "puVar3 = &DAT_10017098;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_10241870",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(*(int *)((int)&DAT_10241870 + ((int)(uVar4 & 0xffffffe7) >> 3)) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_100170f8",
+      "severity": "mild",
+      "text": "} while (puVar3 < &DAT_100170f8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&DAT_10241870` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 34,
+      "match": "(int)&DAT_10241870",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(*(int *)((int)&DAT_10241870 + ((int)(uVar4 & 0xffffffe7) >> 3)) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 34,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(*(int *)((int)&DAT_10241870 + ((int)(uVar4 & 0xffffffe7) >> 3)) +",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -7,7 +7,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_1000a170 at 1000a1ae
 ;   __ld12cvt at 1000a005
 ;
 ; Called Functions:

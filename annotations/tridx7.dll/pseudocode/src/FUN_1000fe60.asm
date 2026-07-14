@@ -4,7 +4,8 @@
 ; int FUN_1000fe60(byte *param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_1000ff10 at 1000ff15
 ;   FUN_10010050 at 1001024f
 ;
 ; Referenced Globals:

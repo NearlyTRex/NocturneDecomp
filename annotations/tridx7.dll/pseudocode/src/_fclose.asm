@@ -6,9 +6,10 @@
 ; Parameters:
 ; FILE *           Stack[0x4]:4   _File
 ;
-; XREF[2]:
+; XREF[3]:
 ;   APIDLLsetVideoMode at 1000268c
 ;   FUN_10001200 at 100012c9
+;   FUN_1000ab70 at 1000abab
 ;
 ; Called Functions:
 ;   __fclose_lk

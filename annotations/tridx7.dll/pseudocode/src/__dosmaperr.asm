@@ -6,7 +6,8 @@
 ; Parameters:
 ; ulong            Stack[0x4]:4   param_1
 ;
-; XREF[5]:
+; XREF[6]:
+;   FUN_10008d20 at 10008d4d
 ;   FUN_10008fb0 at 10009132
 ;   FUN_100093f0 at 1000965b
 ;   FUN_1000b720 at 1000b7e2

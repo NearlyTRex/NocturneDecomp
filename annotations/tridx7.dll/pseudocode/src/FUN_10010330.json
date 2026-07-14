@@ -1,0 +1,115 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 33,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 27
+  },
+  "cross_references": [],
+  "function": {
+    "address": "10010330",
+    "address_range": [
+      [
+        "10010330",
+        "10010357"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_10010330",
+    "signature": "undefined4 FUN_10010330(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "100059a0",
+      "is_variadic": false,
+      "name": "__lock"
+    },
+    {
+      "addr": "10005a10",
+      "is_variadic": false,
+      "name": "FUN_10005a10"
+    },
+    {
+      "addr": "10010360",
+      "is_variadic": false,
+      "name": "FUN_10010360"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 9,
+      "INT_ADD": 6,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 60
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_10010330(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar1 = FUN_10010360(param_1);",
+      "type": "unnamed_param"
+    }
+  ]
+}

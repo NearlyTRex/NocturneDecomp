@@ -8,8 +8,11 @@
 ; char *           Stack[0x8]:4   _Source
 ; size_t           Stack[0xc]:4   _Count
 ;
-; XREF[3]:
+; XREF[6]:
 ;   FUN_10008610 at 100086e7
+;   FUN_1000ac10 at 1000ad6a
+;   FUN_1000b380 at 1000b442
+;   FUN_1000c0f0 at 1000c284
 ;   FUN_1000f6e0 at 1000f795
 ;   FUN_10010050 at 10010230
 ;

@@ -494,6 +494,9 @@ static string s_D3DERR_MATERIAL_DESTROY_FAILED_T_10015080 = "D3DERR_MATERIAL_DES
 static undefined1 DAT_10012318 = 0x28;
 static undefined1 DAT_10016ef8 = 0x01;
 static undefined1 DAT_10016ef9 = 0x02;
+static undefined1 DAT_100176d4 = 0x0B;
+static undefined1 DAT_10017788 = 0x43;
+static undefined1 DAT_10017870 = 0x43;
 
 // undefined1* constants
 static undefined1* DAT_10014004 = (undefined1*)0x10001000; // LAB_10001000
@@ -502,12 +505,7 @@ static undefined1* DAT_1001400C = (undefined1*)0x10001760; // LAB_10001760
 static undefined1* DAT_10014010 = (undefined1*)0x10001780; // LAB_10001780
 static undefined1* DAT_10016C54 = (undefined1*)0x100055A0; // LAB_100055a0
 static undefined1* DAT_10016C58 = (undefined1*)0x100055A0; // LAB_100055a0
-static undefined1* DAT_10017798 = (undefined1*)0x1000B320; // LAB_1000b320
-static undefined1* DAT_1001779C = (undefined1*)s_LC_COLLATE_10012740;
-static undefined1* DAT_100177A0 = (undefined1*)0x10017788; // DAT_10017788
 static undefined1* DAT_100177A4 = (undefined1*)0x1000E280; // LAB_1000e280
-static undefined1* DAT_100177A8 = (undefined1*)s_LC_CTYPE_10012734;
-static undefined1* DAT_100177AC = (undefined1*)0x10017788; // DAT_10017788
 static undefined1* DAT_100177B0 = (undefined1*)0x1000DFD0; // LAB_1000dfd0
 static undefined1* DAT_100177B4 = (undefined1*)s_LC_MONETARY_10012728;
 static undefined1* DAT_100177B8 = (undefined1*)0x10017788; // DAT_10017788
@@ -515,8 +513,6 @@ static undefined1* DAT_100177BC = (undefined1*)0x1000DCD0; // LAB_1000dcd0
 static undefined1* DAT_100177C0 = (undefined1*)s_LC_NUMERIC_1001271c;
 static undefined1* DAT_100177C4 = (undefined1*)0x10017788; // DAT_10017788
 static undefined1* DAT_100177C8 = (undefined1*)0x1000DA60; // LAB_1000da60
-static undefined1* DAT_100177CC = (undefined1*)s_LC_TIME_10012714;
-static undefined1* DAT_100177D0 = (undefined1*)0x10017788; // DAT_10017788
 static undefined1* DAT_100177D4 = (undefined1*)0x1000D2F0; // LAB_1000d2f0
 static undefined1* DAT_10018164 = (undefined1*)s_Mon_10012e4c;
 static undefined1* DAT_10018168 = (undefined1*)s_Tue_10012e48;
@@ -568,10 +564,13 @@ static undefined2 DAT_10012778 = 0x4E41;
 static undefined2 DAT_10012780 = 0x0046;
 static undefined2 DAT_10012788 = 0x0044;
 static undefined2 DAT_10012790 = 0x4E41;
+static undefined2 DAT_10017af4 = 0x040C;
+static undefined2 DAT_10017ddc = 0x0027;
 
 // undefined4 constants
 static undefined4 DAT_10012408 = 0x30302B65;
 static undefined4 DAT_1001269c = 0x00000A0A;
+static undefined4 DAT_10012754 = 0x0000003B;
 static undefined4 DAT_10012774 = 0x4E512331;
 static undefined4 DAT_1001277c = 0x4E492331;
 static undefined4 DAT_10012784 = 0x4E492331;
@@ -584,8 +583,10 @@ static undefined4 DAT_10017008 = 0x00000009;
 static undefined4 DAT_10017310 = 0x00000001;
 static undefined4 DAT_10017318 = 0x00000002;
 static undefined4 DAT_1001731c = 0x00000002;
+static undefined4 DAT_100176d0 = 0xC0000005;
 static undefined4 DAT_10017748 = 0x00000003;
 static undefined4 DAT_1001774c = 0x00000007;
+static undefined4 DAT_10017750 = 0x00000078;
 static undefined4 DAT_10017754 = 0x0000000A;
 
 // word constants

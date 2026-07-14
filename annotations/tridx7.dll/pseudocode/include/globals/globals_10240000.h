@@ -124,18 +124,34 @@ extern undefined1 DAT_10240798;
 extern undefined1 DAT_1024079a;
 
 // undefined2
+extern undefined2 DAT_102407ec;
 extern undefined2 DAT_102407ee;
+extern undefined2 DAT_102407f0;
+extern undefined2 DAT_102407f2;
+extern undefined2 DAT_102407f4;
+extern undefined2 DAT_102407f6;
+extern undefined2 DAT_102407f8;
+extern undefined2 DAT_102407fa;
+extern undefined2 DAT_10240840;
 extern undefined2 DAT_10240842;
+extern undefined2 DAT_10240844;
+extern undefined2 DAT_10240846;
+extern undefined2 DAT_10240848;
+extern undefined2 DAT_1024084a;
+extern undefined2 DAT_1024084c;
+extern undefined2 DAT_1024084e;
 
 // undefined4
 extern undefined4 DAT_10240610;
 extern undefined4 DAT_1024061c;
 extern undefined4 DAT_10240624;
 extern undefined4 DAT_10240794;
+extern undefined4 DAT_102407a0;
 extern undefined4 DAT_102407a8;
 extern undefined4 DAT_102407fc;
 extern undefined4 DAT_10240850;
 extern undefined4 DAT_10240854;
+extern undefined4 DAT_10240858;
 extern undefined4 DAT_1024085c;
 extern undefined4 DAT_10241860;
 extern undefined4 DAT_10241870;

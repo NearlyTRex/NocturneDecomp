@@ -12,7 +12,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_100093d0 at 100093e1
 ;   __openfile at 10006b8e
 ;
 ; Referenced Globals:

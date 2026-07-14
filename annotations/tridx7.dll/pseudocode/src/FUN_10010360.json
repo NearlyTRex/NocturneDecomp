@@ -1,0 +1,648 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 245,
+    "complexity_score": 579,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 24,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 94,
+    "suspect_count": 47,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 339
+  },
+  "cross_references": [
+    {
+      "addr": "10010330",
+      "from_addr": "10010340",
+      "name": "FUN_10010330",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "10010360",
+    "address_range": [
+      [
+        "10010360",
+        "100105ba"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_10010360",
+    "signature": "undefined4 FUN_10010360(int *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "100105c0",
+      "is_variadic": false,
+      "name": "FUN_100105c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10018524",
+      "name": "DAT_10018524",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185c0",
+      "name": "DAT_100185c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185c4",
+      "name": "DAT_100185c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185c8",
+      "name": "DAT_100185c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185d0",
+      "name": "DAT_100185d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185d4",
+      "name": "DAT_100185d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "100185d8",
+      "name": "DAT_100185d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102407a0",
+      "name": "DAT_102407a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "102407ec",
+      "name": "DAT_102407ec",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "102407ee",
+      "name": "DAT_102407ee",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "102407f0",
+      "name": "DAT_102407f0",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "102407f2",
+      "name": "DAT_102407f2",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "102407f4",
+      "name": "DAT_102407f4",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "102407f6",
+      "name": "DAT_102407f6",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "102407f8",
+      "name": "DAT_102407f8",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "102407fa",
+      "name": "DAT_102407fa",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "10240840",
+      "name": "DAT_10240840",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "10240842",
+      "name": "DAT_10240842",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "10240844",
+      "name": "DAT_10240844",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "10240846",
+      "name": "DAT_10240846",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "10240848",
+      "name": "DAT_10240848",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "1024084a",
+      "name": "DAT_1024084a",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "1024084c",
+      "name": "DAT_1024084c",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "1024084e",
+      "name": "DAT_1024084e",
+      "type": "undefined2",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "10010340",
+        "call_type": "direct",
+        "caller": "FUN_10010330",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.673170731707317,
+    "instruction_count": 205,
+    "opcode_distribution": {
+      "BOOL_AND": 3,
+      "BOOL_NEGATE": 18,
+      "BOOL_OR": 4,
+      "BRANCH": 3,
+      "CALL": 3,
+      "CBRANCH": 18,
+      "COPY": 207,
+      "INT_ADD": 35,
+      "INT_AND": 134,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 119,
+      "INT_LEFT": 4,
+      "INT_LESS": 18,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 60,
+      "INT_SUB": 86,
+      "INT_XOR": 33,
+      "LOAD": 28,
+      "POPCOUNT": 56,
+      "RETURN": 7,
+      "STORE": 66
+    },
+    "pcode_op_count": 958
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_10010360(int *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_10018524",
+      "severity": "mild",
+      "text": "if (DAT_10018524 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = param_1[5];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_100185c0",
+      "severity": "mild",
+      "text": "if ((DAT_100185c0 == iVar2) && (DAT_100185d0 == iVar2)) goto LAB_100104fd;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_100185d0",
+      "severity": "mild",
+      "text": "if ((DAT_100185c0 == iVar2) && (DAT_100185d0 == iVar2)) goto LAB_100104fd;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_102407a0",
+      "severity": "mild",
+      "text": "if (DAT_102407a0 == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = param_1[5];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_10240840",
+      "severity": "mild",
+      "text": "if (DAT_10240840 != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_10240846",
+      "severity": "mild",
+      "text": "uVar8 = DAT_10240846;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_10240844",
+      "severity": "mild",
+      "text": "uVar6 = DAT_10240844;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_10240846",
+      "severity": "mild",
+      "text": "uVar4 = DAT_10240846;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_10240840",
+      "severity": "mild",
+      "text": "FUN_100105c0(1,DAT_10240840 == 0,iVar2,DAT_10240842,uVar4,uVar6,uVar8,DAT_10240848,DAT_1024084a,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_10240842",
+      "severity": "mild",
+      "text": "FUN_100105c0(1,DAT_10240840 == 0,iVar2,DAT_10240842,uVar4,uVar6,uVar8,DAT_10240848,DAT_1024084a,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_10240848",
+      "severity": "mild",
+      "text": "FUN_100105c0(1,DAT_10240840 == 0,iVar2,DAT_10240842,uVar4,uVar6,uVar8,DAT_10240848,DAT_1024084a,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_1024084a",
+      "severity": "mild",
+      "text": "FUN_100105c0(1,DAT_10240840 == 0,iVar2,DAT_10240842,uVar4,uVar6,uVar8,DAT_10240848,DAT_1024084a,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_1024084c",
+      "severity": "mild",
+      "text": "DAT_1024084c,DAT_1024084e);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_1024084e",
+      "severity": "mild",
+      "text": "DAT_1024084c,DAT_1024084e);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_102407fa",
+      "severity": "mild",
+      "text": "uVar6 = DAT_102407fa;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_102407f8",
+      "severity": "mild",
+      "text": "uVar4 = DAT_102407f8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_102407f6",
+      "severity": "mild",
+      "text": "uVar8 = DAT_102407f6;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_102407f4",
+      "severity": "mild",
+      "text": "uVar10 = DAT_102407f4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_102407ee",
+      "severity": "mild",
+      "text": "uVar3 = DAT_102407ee;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_102407ec",
+      "severity": "mild",
+      "text": "if (DAT_102407ec == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = param_1[5];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_102407f0",
+      "severity": "mild",
+      "text": "uVar7 = DAT_102407f0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_102407f2",
+      "severity": "mild",
+      "text": "uVar5 = DAT_102407f2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = param_1[5];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_102407f2",
+      "severity": "mild",
+      "text": "uVar9 = DAT_102407f2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 67,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = param_1[7];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_100185c4",
+      "severity": "mild",
+      "text": "if (DAT_100185c4 < DAT_100185d4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_100185d4",
+      "severity": "mild",
+      "text": "if (DAT_100185c4 < DAT_100185d4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_100185c4",
+      "severity": "mild",
+      "text": "if ((iVar2 < DAT_100185c4) || (DAT_100185d4 < iVar2)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_100185d4",
+      "severity": "mild",
+      "text": "if ((iVar2 < DAT_100185c4) || (DAT_100185d4 < iVar2)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 72,
+      "match": "DAT_100185c4",
+      "severity": "mild",
+      "text": "if ((DAT_100185c4 < iVar2) && (iVar2 < DAT_100185d4)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 72,
+      "match": "DAT_100185d4",
+      "severity": "mild",
+      "text": "if ((DAT_100185c4 < iVar2) && (iVar2 < DAT_100185d4)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 77,
+      "match": "DAT_100185d4",
+      "severity": "mild",
+      "text": "if (iVar2 < DAT_100185d4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_100185c4",
+      "severity": "mild",
+      "text": "if (DAT_100185c4 < iVar2) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 83,
+      "match": "DAT_100185d4",
+      "severity": "mild",
+      "text": "if ((DAT_100185d4 < iVar2) && (iVar2 < DAT_100185c4)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 83,
+      "match": "DAT_100185c4",
+      "severity": "mild",
+      "text": "if ((DAT_100185d4 < iVar2) && (iVar2 < DAT_100185c4)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = ((param_1[2] * 0x3c + param_1[1]) * 0x3c + *param_1) * 1000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = ((param_1[2] * 0x3c + param_1[1]) * 0x3c + *param_1) * 1000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = ((param_1[2] * 0x3c + param_1[1]) * 0x3c + *param_1) * 1000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 88,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[7] == DAT_100185c4) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 88,
+      "match": "DAT_100185c4",
+      "severity": "mild",
+      "text": "if (param_1[7] == DAT_100185c4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 89,
+      "match": "DAT_100185c8",
+      "severity": "mild",
+      "text": "if (iVar2 < DAT_100185c8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 93,
+      "match": "DAT_100185d8",
+      "severity": "mild",
+      "text": "else if (DAT_100185d8 <= iVar2) {",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

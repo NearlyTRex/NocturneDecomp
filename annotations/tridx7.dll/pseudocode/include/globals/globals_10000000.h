@@ -30,6 +30,8 @@ extern byte switchdataD_100068e4;
 extern byte switchdataD_10006bf4;
 extern byte switchdataD_1000817c;
 extern byte switchdataD_1000981c;
+extern byte switchdataD_1000bb10;
+extern byte switchdataD_1000bd88;
 extern byte switchdataD_1000ce24;
 extern byte BYTE_1000ce49;
 extern byte switchdataD_1000ce74;
@@ -39,6 +41,8 @@ extern byte switchdataD_1000f240;
 extern byte switchdataD_1000f660;
 
 // undefined1*
+extern undefined1* switchdataD_1000bafc;
+extern undefined1* switchdataD_1000bd68;
 extern undefined1* switchdataD_1000f1e0;
 
 // void*

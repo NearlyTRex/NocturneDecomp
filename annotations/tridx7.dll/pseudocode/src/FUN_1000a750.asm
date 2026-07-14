@@ -4,7 +4,8 @@
 ; LPVOID FUN_1000a750(int param_1,int param_2)
 ;
 ;
-; XREF[4]:
+; XREF[5]:
+;   FUN_100088b0 at 100088e1
 ;   FUN_1000be00 at 1000bee5
 ;   ___crtGetStringTypeA at 1000c095
 ;   __getptd at 100077d0

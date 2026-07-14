@@ -6,8 +6,13 @@
 ; Parameters:
 ; int              Stack[0x4]:4   _Filehandle
 ;
-; XREF[4]:
+; XREF[9]:
+;   FUN_10008d20 at 10008dc6
+;   FUN_10008e80 at 10008f00
 ;   FUN_100093f0 at 10009664
+;   FUN_1000b4f0 at 1000b538
+;   FUN_1000b6a0 at 1000b6ed
+;   FUN_1000e810 at 1000e858
 ;   __close at 10005b93
 ;   __write at 10008f7d
 ;   __write at 1000a63d

@@ -4,9 +4,13 @@
 ; _ptiddata __cdecl __getptd(void)
 ;
 ;
-; XREF[2]:
+; XREF[6]:
 ;   FUN_10008a20 at 10008a20
 ;   FUN_10008a30 at 10008a30
+;   FUN_1000a7b0 at 1000a7b4
+;   FUN_1000b950 at 1000b9a8
+;   FUN_1000bbc0 at 1000bc01
+;   FUN_1000bdf0 at 1000bdf0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_10016da4

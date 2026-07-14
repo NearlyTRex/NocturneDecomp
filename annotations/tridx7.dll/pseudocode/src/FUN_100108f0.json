@@ -1,0 +1,121 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 50,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 14
+  },
+  "cross_references": [],
+  "function": {
+    "address": "100108f0",
+    "address_range": [
+      [
+        "100108f0",
+        "10010902"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_100108f0",
+    "signature": "void FUN_100108f0(undefined4 param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "10010870",
+      "is_variadic": false,
+      "name": "FUN_10010870"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.857142857142857,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 4,
+      "INT_ADD": 4,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 27
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_100108f0(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_100108f0(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_10010870(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_10010870(param_1,param_2);",
+      "type": "unnamed_param"
+    }
+  ]
+}

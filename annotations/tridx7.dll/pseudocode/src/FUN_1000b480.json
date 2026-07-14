@@ -1,0 +1,269 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 218,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 38,
+    "suspect_count": 16,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 88
+  },
+  "cross_references": [
+    {
+      "addr": "1000b150",
+      "from_addr": "1000b27d",
+      "name": "FUN_1000b150",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000b480",
+    "address_range": [
+      [
+        "1000b480",
+        "1000b4e7"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_1000b480",
+    "signature": "void FUN_1000b480(char *param_1,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000b330",
+      "is_variadic": false,
+      "name": "FUN_1000b330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "10012764",
+      "name": "DAT_10012764",
+      "type": "undefined2",
+      "value": null
+    },
+    {
+      "addr": "10012768",
+      "name": "DAT_10012768",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1000b27d",
+        "call_type": "direct",
+        "caller": "FUN_1000b150",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.744186046511628,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CBRANCH": 6,
+      "COPY": 41,
+      "INT_ADD": 16,
+      "INT_AND": 33,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 24,
+      "INT_LESS": 5,
+      "INT_MULT": 5,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 11,
+      "INT_SUB": 28,
+      "INT_ZEXT": 5,
+      "LOAD": 14,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 247
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_1000b480(char *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_1000b480(char *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar4 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar5 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2[0x40] != '\\0') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_1000b330(param_1,2,&DAT_10012768,param_2 + 0x40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_1000b330(param_1,2,&DAT_10012768,param_2 + 0x40);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_10012768",
+      "severity": "mild",
+      "text": "FUN_1000b330(param_1,2,&DAT_10012768,param_2 + 0x40);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2[0x80] != '\\0') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_1000b330(param_1,2,&DAT_10012764,param_2 + 0x80);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_1000b330(param_1,2,&DAT_10012764,param_2 + 0x80);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_10012764",
+      "severity": "mild",
+      "text": "FUN_1000b330(param_1,2,&DAT_10012764,param_2 + 0x80);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 29,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (REP MOVSD + trailing-byte tail: dword countdown over N >> 2 followed by byte countdown over N & 3). Replace both loops with memcpy(dst, src, N) in a .keep.",
+      "line": 24,
+      "match": "for (X = N >> 2; ...) { } for (Y = N & 3; ...)",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 1000b4a4, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 18,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 1000b4a4: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

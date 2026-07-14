@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_10010910(uint param_1,uint param_2,uint param_3)
 
 {
@@ -16,7 +14,7 @@ uint FUN_10010910(uint param_1,uint param_2,uint param_3)
   
   bVar2 = DAT_10240854 == 0;
   if (bVar2) {
-    _DAT_10240858 = _DAT_10240858 + 1;
+    DAT_10240858 = DAT_10240858 + 1;
   }
   else {
     __lock(0x13);
@@ -26,6 +24,6 @@ uint FUN_10010910(uint param_1,uint param_2,uint param_3)
     FUN_10005a10(0x13);
     return uVar1;
   }
-  _DAT_10240858 = _DAT_10240858 + -1;
+  DAT_10240858 = DAT_10240858 + -1;
   return uVar1;
 }

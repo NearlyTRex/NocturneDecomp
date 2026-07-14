@@ -15,7 +15,7 @@
   "complexity": {
     "assembly_lines": 7,
     "complexity_score": 6,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -25,6 +25,12 @@
     "total_lines": 13
   },
   "cross_references": [
+    {
+      "addr": "100098f0",
+      "from_addr": "100098fa",
+      "name": "FUN_100098f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "10005580",
       "from_addr": "1000558f",
@@ -53,7 +59,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "1000558f",
@@ -65,9 +71,20 @@
         "reg_params": [],
         "stack_bytes": 0,
         "stack_params": 0
+      },
+      {
+        "call_addr": "100098fa",
+        "call_type": "direct",
+        "caller": "FUN_100098f0",
+        "estimated_params": 0,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 0,

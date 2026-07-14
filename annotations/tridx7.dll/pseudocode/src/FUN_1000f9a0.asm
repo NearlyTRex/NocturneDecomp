@@ -4,7 +4,8 @@
 ; int FUN_1000f9a0(LCID param_1,LCTYPE param_2,LPWSTR param_3,int param_4,UINT param_5)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_1000e350 at 1000e52d
 ;   FUN_1000f6e0 at 1000f7f5
 ;
 ; Referenced Globals:

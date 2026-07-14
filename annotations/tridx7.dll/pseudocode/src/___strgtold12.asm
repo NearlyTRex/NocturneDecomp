@@ -30,9 +30,11 @@
 ; undefined4       Stack[-0x6]:4  local_6
 ; undefined2       Stack[-0x2]:2  local_2
 ;
-; XREF[2]:
+; XREF[4]:
 ;   FID_conflict:__atodbl at 1000a21a
 ;   FID_conflict:__atodbl at 1000a29a
+;   FUN_1000a240 at 1000a25a
+;   FUN_1000cf00 at 1000cf1e
 ;
 ; Referenced Globals:
 ;   void* switchdataD_1000cddc = 1000c81c

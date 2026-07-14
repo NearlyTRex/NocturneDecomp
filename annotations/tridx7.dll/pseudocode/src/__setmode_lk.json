@@ -15,7 +15,7 @@
   "complexity": {
     "assembly_lines": 43,
     "complexity_score": 149,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
@@ -31,6 +31,12 @@
     "total_lines": 67
   },
   "cross_references": [
+    {
+      "addr": "1000e810",
+      "from_addr": "1000e84d",
+      "name": "FUN_1000e810",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "1000b560",
       "from_addr": "1000b5c7",
@@ -66,7 +72,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "1000b5c7",
@@ -94,6 +100,19 @@
         "reg_params": [
           "EAX",
           "EBX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000e84d",
+        "call_type": "direct",
+        "caller": "FUN_1000e810",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
         ],
         "stack_bytes": 8,
         "stack_params": 2
@@ -221,7 +240,7 @@
       "type": "pointer_cast"
     },
     {
-      "call_site_count": 2,
+      "call_site_count": 3,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 6,

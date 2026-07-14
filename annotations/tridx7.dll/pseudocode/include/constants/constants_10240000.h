@@ -119,13 +119,6 @@ static dword DAT_10242170 = 0x2422FE;
 // void* constants
 static void* DAT_102421C0 = (void*)0x002423FC;
 static void* DAT_102421F0 = (void*)0x002424B6;
-static void* DAT_10242240 = (void*)0x0024261A;
-static void* DAT_1024224C = (void*)0x0024264E;
-static void* DAT_10242254 = (void*)0x0024267A;
-static void* DAT_10242260 = (void*)0x0024269E;
-static void* DAT_10242270 = (void*)0x002426FA;
-static void* DAT_10242274 = (void*)0x0024270A;
-static void* DAT_10242278 = (void*)0x0024271C;
 
 // word constants
 static word DAT_102422A0 = 0xF9;

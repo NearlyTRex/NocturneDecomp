@@ -10,7 +10,7 @@
 void __cdecl __initptd(_ptiddata _Ptd,pthreadlocinfo _Locale)
 
 {
-  *(byte **)(_Ptd->_con_ch_buf + 4) = &DAT_100176d0;
+  *(uint **)(_Ptd->_con_ch_buf + 4) = &DAT_100176d0;
   _Ptd->_holdrand = 1;
   return;
 }

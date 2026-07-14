@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Library Function - Single Match
 int __cdecl _tolower(int _C)
 
@@ -21,7 +20,7 @@ int __cdecl _tolower(int _C)
   else {
     bVar1 = DAT_10240854 == 0;
     if (bVar1) {
-      _DAT_10240858 = _DAT_10240858 + 1;
+      DAT_10240858 = DAT_10240858 + 1;
     }
     else {
       __lock(0x13);
@@ -31,7 +30,7 @@ int __cdecl _tolower(int _C)
       FUN_10005a10(0x13);
       return _C;
     }
-    _DAT_10240858 = _DAT_10240858 + -1;
+    DAT_10240858 = DAT_10240858 + -1;
   }
   return _C;
 }

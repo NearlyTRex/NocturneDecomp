@@ -14,22 +14,33 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 260,
-    "cross_reference_count": 1,
+    "complexity_score": 284,
+    "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 60,
-    "suspect_count": 18,
+    "pseudocode_lines": 59,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 171
+    "total_lines": 170
   },
   "cross_references": [
+    {
+      "addr": "1000e650",
+      "from_addr": "1000e673",
+      "name": "FUN_1000e650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "1000e6b0",
+      "from_addr": "1000e6d3",
+      "name": "FUN_1000e6b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "1000f3c0",
       "from_addr": "1000f4a2",
@@ -94,7 +105,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 4,
     "call_sites": [
       {
         "call_addr": "1000f4a2",
@@ -117,9 +128,39 @@
         "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
+      },
+      {
+        "call_addr": "1000e673",
+        "call_type": "direct",
+        "caller": "FUN_1000e650",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000e6d3",
+        "call_type": "direct",
+        "caller": "FUN_1000e6b0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 2,
@@ -175,16 +216,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "char FUN_1000ff20(byte *param_1,byte *param_2)",
@@ -192,7 +225,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "char FUN_1000ff20(byte *param_1,byte *param_2)",
@@ -200,7 +233,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 12,
       "match": "DAT_10017760",
       "severity": "mild",
       "text": "if (DAT_10017760 == 0) {",
@@ -208,7 +241,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "bVar4 = *param_2;",
@@ -216,7 +249,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 1;",
@@ -224,7 +257,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 1;",
@@ -232,7 +265,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "bVar3 = *param_1;",
@@ -240,7 +273,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + 1;",
@@ -248,7 +281,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + 1;",
@@ -256,15 +289,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 31,
       "match": "DAT_10240854",
       "severity": "mild",
       "text": "bVar1 = 0 < DAT_10240854;",
       "type": "undefined_data"
     },
     {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + 1;",
+      "type": "undefined_data"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_2",
       "severity": "mild",
       "text": "bVar4 = *param_2;",
@@ -272,7 +321,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 1;",
@@ -280,7 +329,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 1;",
@@ -288,7 +337,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "bVar3 = *param_1;",
@@ -296,7 +345,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + 1;",
@@ -304,14 +353,30 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + 1;",
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 2,
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_10240858",
+      "severity": "mild",
+      "text": "DAT_10240858 = DAT_10240858 + -1;",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 4,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 2,

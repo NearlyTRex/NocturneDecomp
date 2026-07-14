@@ -6,8 +6,9 @@
 ; Parameters:
 ; FILE *           Stack[0x4]:4   _File
 ;
-; XREF[2]:
+; XREF[3]:
 ;   FID_conflict:_fwprintf at 100054d8
+;   FUN_10005c90 at 10005ca8
 ;   _fclose at 1000544e
 ;
 ; Referenced Globals:

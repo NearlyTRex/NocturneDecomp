@@ -15,7 +15,7 @@
   "complexity": {
     "assembly_lines": 77,
     "complexity_score": 235,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
@@ -31,6 +31,12 @@
     "total_lines": 107
   },
   "cross_references": [
+    {
+      "addr": "10008d20",
+      "from_addr": "10008da0",
+      "name": "FUN_10008d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "100093f0",
       "from_addr": "100096c7",
@@ -94,7 +100,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "100096c7",
@@ -106,9 +112,20 @@
         "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
+      },
+      {
+        "call_addr": "10008da0",
+        "call_type": "direct",
+        "caller": "FUN_10008d20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 2,
@@ -290,7 +307,7 @@
       "type": "pointer_cast"
     },
     {
-      "call_site_count": 1,
+      "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 2,

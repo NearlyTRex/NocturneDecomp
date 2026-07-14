@@ -6,18 +6,18 @@
 ; Parameters:
 ; int              Stack[0x4]:4   _File
 ;
-; XREF[15]:
+; XREF[26]:
 ;   FUN_10005a70 at 10005a80
+;   FUN_10005d90 at 10005da1
 ;   FUN_10006c40 at 10006c4a
 ;   FUN_100076c0 at 100076c2
-;   FUN_1000ff20 at 1000ff88
-;   FUN_1000fff0 at 1000fffb
-;   FUN_10010050 at 10010058
-;   FUN_10010910 at 10010922
-;   FUN_100116f0 at 10011714
-;   __alloc_osfhnd at 10008a55
-;   __callnewh at 1000ab32
-;   ... and 5 more
+;   FUN_1000aaf0 at 1000aaf3
+;   FUN_1000ab70 at 1000ab7d
+;   FUN_1000ac10 at 1000ac34
+;   FUN_1000b950 at 1000ba2d
+;   FUN_1000bb30 at 1000bb34
+;   FUN_1000bbc0 at 1000bc5e
+;   ... and 16 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_10016c78

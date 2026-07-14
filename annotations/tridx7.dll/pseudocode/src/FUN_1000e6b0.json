@@ -1,0 +1,214 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "missing_header",
+        "column": 0,
+        "line": 0,
+        "message": "annotations/tridx7.dll/pseudocode/include/nocturne.h:10:10: fatal error: 'shim_config.h' file not found"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 77,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 22,
+    "suspect_count": 4,
+    "suspect_types": [
+      "loop_clobbered_constant",
+      "param_count_too_few",
+      "unnamed_param"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "1000e350",
+      "from_addr": "1000e3d8",
+      "name": "FUN_1000e350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "1000e6b0",
+    "address_range": [
+      [
+        "1000e6b0",
+        "1000e704"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_1000e6b0",
+    "signature": "uint FUN_1000e6b0(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "1000ff20",
+      "is_variadic": false,
+      "name": "FUN_1000ff20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "100128c4",
+      "name": "s_italy_100128c4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10012944",
+      "name": "s_england_10012944",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "10017d28",
+      "name": "PTR_s_england_10012944_10017d28",
+      "type": "void*",
+      "value": "10012944"
+    },
+    {
+      "addr": "10017dd8",
+      "name": "PTR_s_italy_100128c4_10017dd8",
+      "type": "void*",
+      "value": "100128c4"
+    },
+    {
+      "addr": "10017ddc",
+      "name": "DAT_10017ddc",
+      "type": "undefined2",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "1000e3d8",
+        "call_type": "direct",
+        "caller": "FUN_1000e350",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.717948717948718,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 39,
+      "INT_ADD": 15,
+      "INT_AND": 28,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 18,
+      "INT_LESS": 3,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 4,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 8,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 11,
+      "INT_XOR": 2,
+      "LOAD": 13,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 7,
+      "SUBPIECE": 1
+    },
+    "pcode_op_count": 184
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_1000e6b0.c",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-signed-char-misuse",
+          "column": 13,
+          "line": 21,
+          "message": "'signed char' to 'int' conversion; consider casting to 'unsigned char' first."
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_1000e6b0(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = FUN_1000ff20(param_1,*(uint *)(iVar1 * 8 + 0x10017c80));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Loop body reassigns `iVar3` (initialized to a literal constant before the loop) via swap-chain `iVar3 = iVar1; iVar1 = iVar4;`, corrupting the loop's math after iter 0. Ghidra register-spill artifact \u2014 drop the swap-chain lines in a .keep so the loop runs with its original constants.",
+      "line": 19,
+      "match": "do { ...A used in math...; A = B; B = C; ...} with pre-loop `A = <literal>;`",
+      "severity": "moderate",
+      "text": "iVar3 = iVar1;",
+      "type": "loop_clobbered_constant"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "'signed char' to 'int' conversion; consider casting to 'unsigned char' first.",
+      "line": 21,
+      "match": "Clang-Tidy: signed char widened to unsigned (signedness data-model smell)",
+      "severity": "moderate",
+      "text": "iVar2 = FUN_1000ff20(param_1,*(uint *)(iVar1 * 8 + 0x10017c80));",
+      "type": "static_signed_char_misuse"
+    }
+  ]
+}

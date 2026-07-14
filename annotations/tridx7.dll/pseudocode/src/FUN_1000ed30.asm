@@ -4,7 +4,8 @@
 ; void FUN_1000ed30(undefined1 param_1,undefined4 *param_2,int *param_3,int *param_4)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_1000ec20 at 1000ecdf
 ;   FUN_1000f3c0 at 1000f5ea
 ;
 ; Referenced Globals:

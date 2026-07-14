@@ -136,6 +136,8 @@ byte switchdataD_100068e4 = 0;
 byte switchdataD_10006bf4 = 0;
 byte switchdataD_1000817c = 0;
 byte switchdataD_1000981c = 0;
+byte switchdataD_1000bb10 = 0;
+byte switchdataD_1000bd88 = 0;
 byte switchdataD_1000ce24 = 0;
 byte BYTE_1000ce49 = 0x5;
 byte switchdataD_1000ce74 = 0;
@@ -145,6 +147,8 @@ byte switchdataD_1000f240 = 0;
 byte switchdataD_1000f660 = 0;
 
 // undefined1*
+undefined1* switchdataD_1000bafc = (undefined1*)0x1000BAAC; // caseD_2
+undefined1* switchdataD_1000bd68 = (undefined1*)0x1000BBF1; // caseD_2
 undefined1* switchdataD_1000f1e0 = (undefined1*)0x1000ED5A; // caseD_25
 
 // void*

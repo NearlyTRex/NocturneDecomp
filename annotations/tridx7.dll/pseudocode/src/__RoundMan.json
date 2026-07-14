@@ -15,7 +15,7 @@
   "complexity": {
     "assembly_lines": 76,
     "complexity_score": 203,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -30,6 +30,12 @@
     "total_lines": 109
   },
   "cross_references": [
+    {
+      "addr": "1000a170",
+      "from_addr": "1000a1ae",
+      "name": "FUN_1000a170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "10009f60",
       "from_addr": "1000a005",
@@ -63,7 +69,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "1000a005",
@@ -88,6 +94,22 @@
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "1000a1ae",
+        "call_type": "direct",
+        "caller": "FUN_1000a170",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
           "ECX",
           "EDX"
         ],
@@ -272,7 +294,7 @@
       "type": "unrolled_memset"
     },
     {
-      "call_site_count": 2,
+      "call_site_count": 3,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 5,

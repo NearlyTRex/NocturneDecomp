@@ -139,18 +139,34 @@ undefined1 DAT_10240798 = 0x00;
 undefined1 DAT_1024079a = 0x00;
 
 // undefined2
+undefined2 DAT_102407ec = 0x0000;
 undefined2 DAT_102407ee = 0x0000;
+undefined2 DAT_102407f0 = 0x0000;
+undefined2 DAT_102407f2 = 0x0000;
+undefined2 DAT_102407f4 = 0x0000;
+undefined2 DAT_102407f6 = 0x0000;
+undefined2 DAT_102407f8 = 0x0000;
+undefined2 DAT_102407fa = 0x0000;
+undefined2 DAT_10240840 = 0x0000;
 undefined2 DAT_10240842 = 0x0000;
+undefined2 DAT_10240844 = 0x0000;
+undefined2 DAT_10240846 = 0x0000;
+undefined2 DAT_10240848 = 0x0000;
+undefined2 DAT_1024084a = 0x0000;
+undefined2 DAT_1024084c = 0x0000;
+undefined2 DAT_1024084e = 0x0000;
 
 // undefined4
 undefined4 DAT_10240610 = 0x00000000;
 undefined4 DAT_1024061c = 0x00000000;
 undefined4 DAT_10240624 = 0x00000000;
 undefined4 DAT_10240794 = 0x00000000;
+undefined4 DAT_102407a0 = 0x00000000;
 undefined4 DAT_102407a8 = 0x00000000;
 undefined4 DAT_102407fc = 0x00000000;
 undefined4 DAT_10240850 = 0x00000000;
 undefined4 DAT_10240854 = 0x00000000;
+undefined4 DAT_10240858 = 0x00000000;
 undefined4 DAT_1024085c = 0x00000000;
 undefined4 DAT_10241860 = 0x00000000;
 undefined4 DAT_10241870 = 0x00000000;

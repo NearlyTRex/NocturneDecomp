@@ -15,7 +15,7 @@
   "complexity": {
     "assembly_lines": 25,
     "complexity_score": 25,
-    "cross_reference_count": 3,
+    "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
@@ -31,6 +31,12 @@
       "addr": "100054d0",
       "from_addr": "1000550b",
       "name": "FID_conflict:_fwprintf",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "10005c90",
+      "from_addr": "10005cbc",
+      "name": "FUN_10005c90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -91,7 +97,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 3,
+    "call_site_count": 4,
     "call_sites": [
       {
         "call_addr": "10005462",
@@ -119,6 +125,17 @@
         "call_addr": "1000554d",
         "call_type": "direct",
         "caller": "__fsopen",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "10005cbc",
+        "call_type": "direct",
+        "caller": "FUN_10005c90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
