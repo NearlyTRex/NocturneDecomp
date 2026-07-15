@@ -204,6 +204,44 @@ glow). Ground-truthed against the original `nocedit.exe` run under Wine.
 
 ---
 
+### [10-tridx7_crt_identification/](10-tridx7_crt_identification/)
+
+Identification, naming, and signatures for the MSVC VC6 C runtime statically linked into
+`tridx7.dll` (everything ≥ 0x10005400; the `APIDLL*` driver code is below it). 248 CRT functions
+catalogued with snake_case parameters.
+
+| File | Description |
+|------|-------------|
+| `crt_functions.md` | Human catalog: addr, proposed name, signature, confidence, evidence — per CRT source bucket |
+| `crt_functions.tsv` | Machine data the apply tools consume (generated from the md by `extract_crt_catalog.py`) |
+
+**Key outcomes:**
+- All 248 named; 200 signatured (return/params/`__cdecl` + snake_case names)
+- 8 scalar typedefs added + `_LDOUBLE` as a 10-byte struct (export-safe)
+- Tooling: `name_crt_functions.py`, `apply_crt_signatures.py`, `extract_crt_catalog.py`
+
+**Status:** essentially complete (only the naked `_chkstk` left unsignatured)
+
+---
+
+### [11-tridx7_3d_renderer_dll/](11-tridx7_3d_renderer_dll/)
+
+`tridx7.dll` is the retail DirectX7 hardware renderer nocedit.exe loads at runtime; its 37
+`APIDLL*` exports are the render API, called through nocedit's typed `g_APIDLL_*` pointers.
+
+| File | Description |
+|------|-------------|
+| `apidll_signatures_and_bridge.md` | Missing-struct specs for the 7 blocked APIDLL sigs; the 3 exports nocedit couldn't type, derived from DLL asm; and a field-by-field verification of `CExternalRendererBridge` vs the DLL's actual usage |
+
+**Key outcomes:**
+- 27/37 APIDLL signatures applied from nocedit funcdefs (`apply_apidll_signatures.py`)
+- 3 untyped exports derived from asm (`GetDisplayContext`→`void(HDC*)`, `ReleaseDisplayContext`→`void(HDC)`, `setVideoMode`→`int(void**)`)
+- `CExternalRendererBridge` size/layout confirmed (35 dwords / 0x8c); 3 fields proven mislabeled, 11 flagged as DLL-unreferenced guesses
+
+**Status:** 27 applied; 7 pending user-added structs; bridge audited
+
+---
+
 ## Standalone Documents
 
 ### [ghidra_suspect_patterns.md](ghidra_suspect_patterns.md)
@@ -266,10 +304,16 @@ Ghidra source location: `~/Repositories/Ghidra/`
 | Understand render system | [02-mrgl_initial_investigation/3d-rendering-system-analysis.md](02-mrgl_initial_investigation/3d-rendering-system-analysis.md) |
 | Primitive formats | [03-rendering_primitives/19_ALL_PRIMITIVE_FORMATS_FINAL.md](03-rendering_primitives/19_ALL_PRIMITIVE_FORMATS_FINAL.md) |
 | Audio system | [04-mp3_audio_system/mp3_audio_system_analysis.md](04-mp3_audio_system/mp3_audio_system_analysis.md) |
+| tridx7 CRT catalog | [10-tridx7_crt_identification/crt_functions.md](10-tridx7_crt_identification/crt_functions.md) |
+| tridx7 render API + bridge | [11-tridx7_3d_renderer_dll/apidll_signatures_and_bridge.md](11-tridx7_3d_renderer_dll/apidll_signatures_and_bridge.md) |
 
 ---
 
 ## Changelog
+
+### 2026-07-14
+- Added `11-tridx7_3d_renderer_dll/`: applied 27/37 `APIDLL*` export signatures to `tridx7.dll` from nocedit's `g_APIDLL_*` funcdefs (`apply_apidll_signatures.py`), derived the 3 nocedit-untyped exports from DLL asm, and verified `CExternalRendererBridge` against the DLL — size/layout confirmed (35 dwords), with 3 mislabeled fields and 11 DLL-unreferenced fields flagged
+- Added `10-tridx7_crt_identification/` to the indexes: 248 statically-linked MSVC CRT functions named + 200 signatured with snake_case params; catalog (`crt_functions.md`/`.tsv`) + tooling (`name_crt_functions.py`, `apply_crt_signatures.py`, `extract_crt_catalog.py`)
 
 ### 2026-05-27
 - Added `09-flashlight_lighting_investigation/` (open): flashlight/set spot-light not lighting world geometry + volumetric cone as discrete circles, ground-truthed vs the original under Wine. Along the way: rasterizer `-O2` per-file build fix (Debug `-O0` was the stutter), §20 cave-copy fix in `calculateSpatialLighting`, `transformMirrorVertex`→`CVector3i*` Ghidra retype, and widened the `missing_cave_copy` detector 16→12 bytes (280→300 flags, regression-gated)
